@@ -12,7 +12,9 @@
  * @param {object[]} laws  each {slug, name, category, related?: [{slug, kind}]}
  * @returns {{nodes: {slug,name,category}[], edges: {a,b,kind}[]}}
  *
- * nodes: one per law, {slug, name, category}.
+ * nodes: one per law, {slug, name, category, reliability}. reliability is carried
+ *   so the client graph can colour each node by its tier (Empirical / Heuristic /
+ *   Folk-adage / Contested) without a second fetch — a short enum, negligible size.
  * edges: derived from each law's `related[]`. UNDIRECTED + DE-DUPLICATED —
  *   every edge is normalised so a < b (string compare) and a pair appears once
  *   (an A->B and a B->A collapse; a repeated A->B collapses). Edges to a slug
@@ -20,7 +22,7 @@
  */
 export function buildGraph(laws = []) {
   const rows = Array.isArray(laws) ? laws : [];
-  const nodes = rows.map((l) => ({ slug: l.slug, name: l.name, category: l.category }));
+  const nodes = rows.map((l) => ({ slug: l.slug, name: l.name, category: l.category, reliability: l.reliability }));
 
   const known = new Set(nodes.map((n) => n.slug));
   const seen = new Map(); // "ab" -> {a, b, kind} — first kind seen wins

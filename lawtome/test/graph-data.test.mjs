@@ -20,10 +20,10 @@ test('drops edges to unknown slugs', () => {
   assert.equal(buildGraph([{slug:'x', name:'X', category:'economics', related:[{slug:'ghost', kind:'kindred'}]}]).edges.length, 0);
 });
 
-test('node shape is {slug, name, category} only', () => {
-  const n = buildGraph([{slug:'x', name:'X', category:'economics', related:[], no:'001', extra:true}]).nodes[0];
-  assert.deepEqual(Object.keys(n).sort(), ['category','name','slug']);
-  assert.deepEqual(n, { slug:'x', name:'X', category:'economics' });
+test('node shape is {slug, name, category, reliability} only (no other corpus fields leak)', () => {
+  const n = buildGraph([{slug:'x', name:'X', category:'economics', reliability:'Heuristic', related:[], no:'001', extra:true}]).nodes[0];
+  assert.deepEqual(Object.keys(n).sort(), ['category','name','reliability','slug']);
+  assert.deepEqual(n, { slug:'x', name:'X', category:'economics', reliability:'Heuristic' });
 });
 
 test('drops self-loops (a law relating to itself)', () => {

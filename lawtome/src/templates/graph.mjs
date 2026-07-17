@@ -26,7 +26,7 @@ export function graphPage({ base = '/', origin = '', publishedCount } = {}) {
   const count = publishedCount == null ? '—' : nf.format(publishedCount);
 
   const description =
-    'Explore The Law Tome as a graph — start on any law and walk its local neighbourhood of related principles and effects.';
+    'Explore The Law Tome as a graph — the whole corpus as one interactive map of laws and the cross-links between them.';
 
   const section = `<section class="sec" id="graph-explorer">
   <div class="wrap">
@@ -34,9 +34,9 @@ export function graphPage({ base = '/', origin = '', publishedCount } = {}) {
       <h1>The graph</h1>
       <span class="sub">${count} laws, cross-linked</span>
     </div>
-    <p class="graph-intro" style="font-size:15px;color:var(--muted);max-width:640px;margin:6px 0 22px">Every law is a door to three others. Start on one and walk its <b>local neighbourhood</b> — the handful of laws it touches directly. Click any node to re-centre the map on it. This is a focused view, never the whole tangle.</p>
-    <div class="graph-stage graph-band" id="graph" aria-label="Relationship graph explorer" role="img" style="min-height:420px;display:flex;align-items:center;justify-content:center;padding:20px">
-      <div class="graph-empty" id="graph-empty" style="font-family:var(--mono);font-size:13px;color:#a89e84">Loading the graph…</div>
+    <p class="graph-intro" style="font-size:15px;color:var(--muted);max-width:660px;margin:6px 0 22px">The whole corpus as one map — every law a node, every cross-link an edge. <b>Drag</b> a node to pull the web around, <b>scroll</b> to zoom, <b>hover</b> to trace what a law touches, and <b>click</b> to open its page. Colour marks the reliability tier; the better-connected a law, the larger its node.</p>
+    <div class="graph-stage graph-band" id="graph" aria-label="Relationship graph explorer" role="img" style="position:relative;min-height:540px;padding:0;overflow:hidden">
+      <div class="graph-empty" id="graph-empty" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:#a89e84">Loading the graph…</div>
     </div>
   </div>
 </section>
