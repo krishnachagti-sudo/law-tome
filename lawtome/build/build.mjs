@@ -11,7 +11,9 @@ import { validateCorpus } from './validate.mjs';
 import { lawPage } from '../src/templates/law.mjs';
 import { homePage } from '../src/templates/home.mjs';
 import { listingPage } from '../src/templates/listing.mjs';
+import { graphPage } from '../src/templates/graph.mjs';
 import { buildSearchIndex } from './search-index.mjs';
+import { buildGraph } from './graph-data.mjs';
 
 async function writePage(path, html) {
   await mkdir(dirname(path), { recursive: true });
@@ -42,6 +44,12 @@ export async function buildSite(opts) {
     // src/assets/search.js. In the concurrent writes[] so it's covered by the
     // pre-clean rm + Promise.all.
     writePage(join(out, 'search-index.json'), JSON.stringify(buildSearchIndex(laws))),
+    // Prebuilt relationship graph (a DATA file, not a "page"): fetched by
+    // src/assets/graph.js, which renders a local neighbourhood from it. In the
+    // concurrent writes[] so it's covered by the pre-clean rm + Promise.all.
+    writePage(join(out, 'graph.json'), JSON.stringify(buildGraph(laws))),
+    // The graph explorer page (chrome + empty #graph stage; graph.js fills it).
+    writePage(join(out, 'graph', 'index.html'), graphPage({ base, origin, publishedCount })),
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
@@ -76,10 +84,10 @@ export async function buildSite(opts) {
 
   await cp(assetsDir, join(out, 'assets'), { recursive: true });
 
-  // `pages` counts home + one page per law (unchanged semantics). The browse and
-  // per-category listing pages are reported separately so existing build tests
-  // that assert on `pages` stay meaningful.
-  return { pages: laws.length + 1, listings: 1 + present.length };
+  // `pages` counts home + one page per law (unchanged semantics). Browse and
+  // per-category listings are reported in `listings`; the graph explorer is a
+  // distinct page reported separately so no existing count assertion shifts.
+  return { pages: laws.length + 1, listings: 1 + present.length, graph: 1 };
 }
 
 // CLI: only runs when invoked directly (so `npm run build` works, imports don't).
