@@ -113,10 +113,7 @@ ${inner}
   if (Array.isArray(law.confusedWith) && law.confusedWith.length) {
     const links = law.confusedWith.map((slug) => {
       const r = byslug[slug] || {};
-      // Resolved law names are validated corpus data; rendered raw so the
-      // shared escapeHtml (which escapes apostrophes) does not mangle names
-      // like "Campbell's Law". Free-text corpus fields are still escaped.
-      const name = r.name || escapeHtml(slug);
+      const name = escapeHtml(r.name || slug);
       return `          <a href="${permalink(slug)}"><i class="ti ti-arrow-right" aria-hidden="true"></i> ${name}</a>`;
     }).join('\n');
     blocks.push(block('Commonly confused with', `        <div class="confused">\n${links}\n        </div>`));
@@ -125,7 +122,7 @@ ${inner}
   if (Array.isArray(law.related) && law.related.length) {
     const items = law.related.map((rel) => {
       const r = byslug[rel.slug] || {};
-      const name = r.name || escapeHtml(rel.slug); // resolved corpus name, rendered raw (see confusedWith note)
+      const name = escapeHtml(r.name || rel.slug);
       const say = r.statement ? `<div class="rsay">${escapeHtml(r.statement)}</div>` : '';
       const rno = r.no != null ? `<span class="rno">№ ${escapeHtml(r.no)}</span>` : '<span class="rno"></span>';
       const kind = rel.kind ? `<span class="rrel">${escapeHtml(rel.kind)}</span>` : '';
@@ -166,8 +163,8 @@ ${glance}        </div>
   let prevnext = '';
   if (prev || next) {
     const sides = [];
-    if (prev) sides.push(`    <a href="${permalink(prev.slug)}"><span class="lab">← Prev · № ${escapeHtml(prev.no)}</span><span class="t">${prev.name}</span></a>`);
-    if (next) sides.push(`    <a class="n2" href="${permalink(next.slug)}"><span class="lab">Next · № ${escapeHtml(next.no)} →</span><span class="t">${next.name}</span></a>`);
+    if (prev) sides.push(`    <a href="${permalink(prev.slug)}"><span class="lab">← Prev · № ${escapeHtml(prev.no)}</span><span class="t">${escapeHtml(prev.name)}</span></a>`);
+    if (next) sides.push(`    <a class="n2" href="${permalink(next.slug)}"><span class="lab">Next · № ${escapeHtml(next.no)} →</span><span class="t">${escapeHtml(next.name)}</span></a>`);
     prevnext = `\n  <nav class="prevnext">\n${sides.join('\n')}\n  </nav>\n`;
   }
 

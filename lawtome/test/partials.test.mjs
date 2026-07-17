@@ -80,8 +80,8 @@ test('footer injects page scripts before </body>', () => {
 
 // --- escaping (guards the shared HTML layer against corpus text that breaks markup) ---
 
-test('escapeHtml encodes the five HTML-significant characters', () => {
-  assert.equal(escapeHtml(`a & b < c > d " e ' f`), 'a &amp; b &lt; c &gt; d &quot; e &#39; f');
+test('escapeHtml encodes &, <, >, " but leaves apostrophes literal (double-quoted attrs only)', () => {
+  assert.equal(escapeHtml(`a & b < c > d " e ' f`), `a &amp; b &lt; c &gt; d &quot; e ' f`);
 });
 
 test('jsonLd neutralises a </script> breakout in a value', () => {

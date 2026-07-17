@@ -15,11 +15,17 @@
 //   head({...}) + sprite() + header({...}) + '<main>…</main>' + footer({...})
 // head() opens <!doctype>/<html>/<head>/<body>; footer() closes </body>/</html>.
 
-/** Escape a string for safe interpolation into HTML text or a double-quoted attribute. */
+/**
+ * Escape a string for interpolation into HTML text or a DOUBLE-QUOTED attribute.
+ * Encodes &, <, >, and ". Apostrophes are intentionally left literal: they are
+ * safe both in text and inside double-quoted attributes (this codebase never uses
+ * single-quoted attributes), and law names like "Goodhart's Law" must render with
+ * a real apostrophe to match the prototype and the corpus.
+ */
 export function escapeHtml(s) {
   return String(s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    .replace(/"/g, '&quot;');
 }
 
 /**
