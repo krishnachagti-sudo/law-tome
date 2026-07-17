@@ -85,9 +85,11 @@ ${inner}
       </div>`;
 
   if (law.meaning) blocks.push(block('In plain English', `        <p class="lead">${escapeHtml(law.meaning)}</p>`));
+  if (law.mechanism) blocks.push(block('How it works', `        <p class="prose">${escapeHtml(law.mechanism)}</p>`));
   if (law.example) blocks.push(block('An example',
     `        <div class="example"><span class="ex-tag">In practice</span> ${escapeHtml(law.example)}</div>`));
   if (law.whyItMatters) blocks.push(block('Why it matters', `        <p class="prose">${escapeHtml(law.whyItMatters)}</p>`));
+  if (law.misreadings) blocks.push(block("What it doesn't say", `        <p class="prose">${escapeHtml(law.misreadings)}</p>`));
   if (law.origin) blocks.push(block('Origin', `        <p class="prose">${escapeHtml(law.origin)}</p>`));
 
   if (coined) {
