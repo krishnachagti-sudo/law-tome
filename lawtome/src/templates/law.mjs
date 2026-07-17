@@ -95,6 +95,50 @@ ${inner}
   };
 
   if (law.meaning) blocks.push(block('In plain English', `        <p class="lead">${escapeHtml(law.meaning)}</p>`));
+
+  // ---- infographic card: reliability meter + lineage timeline. Both use only
+  // real per-law data (the controlled reliability tier; the coined/popular years),
+  // so nothing here is fabricated — a chart of facts we already hold. ----
+  const RELIABILITY_TIERS = ['Empirical', 'Heuristic', 'Folk-adage', 'Contested'];
+  const TIER_NOTE = {
+    Empirical: 'grounded in studies or measurable evidence',
+    Heuristic: 'a dependable rule of thumb, not a proven theorem',
+    'Folk-adage': 'a proverb or saying, not a scientific finding',
+    Contested: 'disputed — the evidence is debated',
+  };
+  const reliabilityMeter = () => {
+    if (coined || !law.reliability) return '';
+    const segs = RELIABILITY_TIERS.map((name) => {
+      const on = name === law.reliability;
+      return `<span class="mseg${on ? ' on ' + reliabilityClass(name) : ''}">${escapeHtml(name)}</span>`;
+    }).join('');
+    return `      <div class="viz-col">
+        <div class="viz-h">Reliability</div>
+        <div class="meter" role="img" aria-label="Reliability tier: ${escapeHtml(law.reliability)}">${segs}</div>
+        <p class="viz-note">Rated <b>${escapeHtml(law.reliability)}</b> — ${escapeHtml(TIER_NOTE[law.reliability] || 'see the reliability scale')}.</p>
+      </div>`;
+  };
+  const lineageTimeline = () => {
+    const pts = [];
+    if (law.coinedYear != null) pts.push({ y: Number(law.coinedYear), label: 'coined' });
+    if (law.popularYear != null && Number(law.popularYear) !== Number(law.coinedYear)) pts.push({ y: Number(law.popularYear), label: 'popular' });
+    if (!pts.length || pts.some((p) => Number.isNaN(p.y))) return '';
+    let lo = Math.min(...pts.map((p) => p.y)), hi = Math.max(...pts.map((p) => p.y));
+    if (lo === hi) { lo -= 6; hi += 6; }
+    const W = 320, padX = 22, X = (yr) => (padX + (W - 2 * padX) * (yr - lo) / (hi - lo)).toFixed(1);
+    const axis = `<line class="tl-axis" x1="${padX}" y1="42" x2="${W - padX}" y2="42"/>`;
+    const marks = pts.map((p) => {
+      const px = X(p.y);
+      return `<g><line class="tl-axis" x1="${px}" y1="38" x2="${px}" y2="46"/><circle class="tl-dot" cx="${px}" cy="42" r="5"/><text class="tl-year" x="${px}" y="27" text-anchor="middle">${p.y}</text><text class="tl-role" x="${px}" y="60" text-anchor="middle">${escapeHtml(p.label.toUpperCase())}</text></g>`;
+    }).join('');
+    return `      <div class="viz-col">
+        <div class="viz-h">Lineage</div>
+        <svg class="timeline-svg" viewBox="0 0 ${W} 72" width="100%" role="img" aria-label="Timeline of the law's dates">${axis}${marks}</svg>
+      </div>`;
+  };
+  const vizInner = reliabilityMeter() + lineageTimeline();
+  if (vizInner) blocks.push(`      <div class="viz-card" data-reveal>\n${vizInner}\n      </div>`);
+
   if (law.mechanism) blocks.push(block('How it works', `        <p class="prose">${escapeHtml(law.mechanism)}</p>`));
 
   // Examples: prefer the richer `examples[]` ({tag,text} or plain string) and fall
