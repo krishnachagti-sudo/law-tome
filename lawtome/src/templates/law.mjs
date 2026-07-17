@@ -387,11 +387,21 @@ document.getElementById('copy').onclick=function(){
     var apply=function(){
       ticking=false;
       var h=document.documentElement,y=window.scrollY||h.scrollTop,mx=h.scrollHeight-h.clientHeight;
-      // active = section whose heading sits at/above the viewport middle; at the
-      // very bottom, force the last section so short trailing sections still light.
-      var atBottom=(y+h.clientHeight)>=(mx-2),cur;
-      if(atBottom){cur=secs[secs.length-1];}
-      else{var line=y+window.innerHeight*0.42;cur=secs[0];for(var i=0;i<secs.length;i++){if(secs[i].el.getBoundingClientRect().top+y<=line)cur=secs[i];}}
+      // active = the section occupying the most of the viewport right now (area of
+      // overlap between each section's [top,nextTop) band and the viewport). This
+      // reflects what actually dominates the screen — no fixed line to lag behind a
+      // tall section or overshoot a short one. At the very bottom, force the last.
+      var vh=window.innerHeight,vpBot=y+vh,docH=h.scrollHeight,cur;
+      if((y+h.clientHeight)>=(mx-2)){cur=secs[secs.length-1];}
+      else{
+        var tops=[];for(var t=0;t<secs.length;t++)tops.push(secs[t].el.getBoundingClientRect().top+y);
+        var best=-1;cur=secs[0];
+        for(var i=0;i<secs.length;i++){
+          var top=tops[i],bot=(i+1<secs.length)?tops[i+1]:docH;
+          var vis=Math.min(bot,vpBot)-Math.max(top,y);
+          if(vis>best){best=vis;cur=secs[i];}
+        }
+      }
       for(var j=0;j<links.length;j++)links[j].classList.remove('on');
       if(cur){cur.a.classList.add('on');
         // run the rail fill down to the centre of the active item
