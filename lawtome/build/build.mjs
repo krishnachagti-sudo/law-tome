@@ -88,7 +88,7 @@ export async function buildSite(opts) {
   for (const cat of present) {
     writes.push(writePage(
       join(out, 'category', cat, 'index.html'),
-      listingPage(membersByCat.get(cat), { title: categories[cat] || cat, base, kind: 'category', origin }),
+      listingPage(membersByCat.get(cat), { title: categories[cat] || cat, base, kind: 'category', origin, categoryKey: cat }),
     ));
   }
 
@@ -97,10 +97,10 @@ export async function buildSite(opts) {
   // and the Privacy notice backing the coin form's consent link. Not "law pages",
   // so they don't touch `pages`; reported under `listings`.
   const coinedLaws = laws.filter(l => l.provenance === 'coined');
-  writes.push(writePage(join(out, 'coin', 'index.html'), coinPage({ base })));
-  writes.push(writePage(join(out, 'about', 'index.html'), aboutPage({ base })));
-  writes.push(writePage(join(out, 'coined', 'index.html'), coinedIndex(coinedLaws, { base })));
-  writes.push(writePage(join(out, 'privacy', 'index.html'), privacyPage({ base })));
+  writes.push(writePage(join(out, 'coin', 'index.html'), coinPage({ base, count: publishedCount })));
+  writes.push(writePage(join(out, 'about', 'index.html'), aboutPage({ base, count: publishedCount })));
+  writes.push(writePage(join(out, 'coined', 'index.html'), coinedIndex(coinedLaws, { base, count: publishedCount })));
+  writes.push(writePage(join(out, 'privacy', 'index.html'), privacyPage({ base, count: publishedCount })));
 
   // Site files (crawler-facing, NOT "pages"): a sitemap of every crawlable HTML
   // URL, a permissive robots.txt pointing at it, and a Netlify-style redirect map

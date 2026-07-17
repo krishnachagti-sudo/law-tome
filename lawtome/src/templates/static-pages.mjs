@@ -25,7 +25,7 @@ import { head, sprite, header, footer, escapeHtml, lawCard } from './partials.mj
  * @param {object} o
  * @param {string} [o.base='/'] site base path — MUST end with '/'
  */
-export function coinPage({ base = '/' } = {}) {
+export function coinPage({ base = '/', count } = {}) {
   const description =
     'Coin an original law or suggest one for the Canon. Submissions are verified before publication and, if coined, credited to you in the Coined wing.';
 
@@ -77,7 +77,7 @@ export function coinPage({ base = '/' } = {}) {
   return (
     head({ title: 'Coin a law — The Law Tome', description, base }) +
     sprite() +
-    header({ base, active: 'coin' }) +
+    header({ base, active: 'coin', count }) +
     section +
     footer()
   );
@@ -89,7 +89,7 @@ export function coinPage({ base = '/' } = {}) {
  * @param {object} o
  * @param {string} [o.base='/'] site base path
  */
-export function aboutPage({ base = '/' } = {}) {
+export function aboutPage({ base = '/', count } = {}) {
   const description =
     'How The Law Tome is built and verified: enumerate-from-sources, a citation gate, adversarial verification, and source-resolution — curated by The Law Tome editorial team at Conyso, licensed CC BY.';
 
@@ -123,7 +123,7 @@ export function aboutPage({ base = '/' } = {}) {
   return (
     head({ title: 'About — The Law Tome', description, base }) +
     sprite() +
-    header({ base, active: 'about' }) +
+    header({ base, active: 'about', count }) +
     section +
     footer()
   );
@@ -136,7 +136,7 @@ export function aboutPage({ base = '/' } = {}) {
  * @param {object} o
  * @param {string} [o.base='/'] site base path
  */
-export function coinedIndex(coinedLaws = [], { base = '/' } = {}) {
+export function coinedIndex(coinedLaws = [], { base = '/', count } = {}) {
   const rows = (Array.isArray(coinedLaws) ? coinedLaws : []).filter((l) => l && l.provenance === 'coined');
 
   const grid = rows.length
@@ -165,7 +165,7 @@ ${rows.map((l) => lawCard(l, base)).join('\n')}
       base,
     }) +
     sprite() +
-    header({ base, active: 'coin' }) +
+    header({ base, active: 'coin', count }) +
     section +
     footer()
   );
@@ -176,7 +176,7 @@ ${rows.map((l) => lawCard(l, base)).join('\n')}
  * @param {object} o
  * @param {string} [o.base='/'] site base path
  */
-export function privacyPage({ base = '/' } = {}) {
+export function privacyPage({ base = '/', count } = {}) {
   const description =
     'The Law Tome privacy notice: what a coin submission collects, the consent basis for publishing it, and our no-tracking posture.';
 
@@ -201,7 +201,7 @@ export function privacyPage({ base = '/' } = {}) {
   return (
     head({ title: 'Privacy — The Law Tome', description, base }) +
     sprite() +
-    header({ base, active: 'about' }) +
+    header({ base, active: 'about', count }) +
     section +
     footer()
   );

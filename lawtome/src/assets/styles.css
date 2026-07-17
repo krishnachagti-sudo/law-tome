@@ -195,6 +195,53 @@ html[data-theme="dark"] .btn.solid{color:#17130b}
 .prevnext .lab{font-size:10px;color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
 .prevnext a:hover .t{color:var(--accent)}
 
+/* ============ listing + long-form content pages (Task 9 / 14) ============ */
+/* The prototype only ever styled the home + law page. Browse, category, and the
+   coin/about/privacy pages introduced new markup (a section <h1>, prose <h2>/<p>,
+   an <ol class="method">, and a whole coin form) with no matching rules, so they
+   fell back to unstyled browser defaults. These rules give every page type the
+   same Fraunces/Inter/Space-Mono system as the two hero pages. */
+
+/* section <h1> on browse/category/static pages — serif, to match .law-title */
+.sec-head h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4vw,42px);letter-spacing:-.02em;line-height:1.04}
+
+/* a readable measure for the single-column content pages */
+.wrap.narrow{max-width:720px}
+
+/* long-form prose (About / Privacy body, coin-form intro) */
+.narrow .lede{font-family:var(--serif);font-weight:400;font-size:18.5px;line-height:1.6;color:var(--muted);max-width:none;margin:18px 0 6px}
+.narrow .lede b{color:var(--ink);font-weight:600}
+.narrow h2{font-family:var(--serif);font-weight:600;font-size:24px;letter-spacing:-.01em;color:var(--ink);margin:40px 0 13px}
+.narrow p{font-size:16px;line-height:1.76;color:var(--muted);margin-bottom:16px}
+.narrow p b{color:var(--ink);font-weight:600}
+.narrow a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.narrow code{font-family:var(--mono);font-size:.85em;background:var(--surface-2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--accent-ink)}
+.narrow .orn{margin:22px 0 4px}
+.method{margin:8px 0;padding-left:24px}
+.method li{font-size:16px;line-height:1.72;color:var(--muted);margin-bottom:13px;padding-left:6px}
+.method li b{color:var(--ink);font-weight:600}
+
+/* ---- coin form ---- */
+.coin-form{display:flex;flex-direction:column;gap:19px;margin-top:28px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);margin:0;display:block}
+.field .lbl::after{display:none}   /* the shared .lbl adds a trailing rule; unwanted on a form field */
+.field input,.field textarea,.field select{width:100%;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--surface);border:1px solid var(--line-strong);border-radius:10px;padding:12px 14px;outline:none;transition:border-color .2s,box-shadow .2s}
+.field textarea{resize:vertical;min-height:92px;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.field input::placeholder,.field textarea::placeholder{color:var(--faint)}
+.grant{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.grant p{font-size:13.5px;line-height:1.65;color:var(--muted);margin:0}
+.grant b{color:var(--ink);font-weight:600}
+.consent{display:flex;gap:11px;align-items:flex-start;font-size:14px;line-height:1.55;color:var(--muted);cursor:pointer}
+.consent input{margin-top:3px;width:16px;height:16px;accent-color:var(--accent);flex:none}
+.consent a{color:var(--accent);text-decoration:underline}
+.actions{margin-top:6px}
+.coin-form .cta{display:inline-flex;align-items:center;gap:9px;height:50px;padding:0 26px;background:var(--accent);color:#fff;border:none;border-radius:11px;font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer;transition:opacity .2s}
+.coin-form .cta:hover{opacity:.9}
+html[data-theme="dark"] .coin-form .cta{color:#17130b}
+.narrow .fine{font-size:13px;color:var(--faint);margin-top:22px;line-height:1.65}
+
 /* ============ self-hosted fonts (was Google Fonts CDN) ============ */
 /* Fraunces + Inter are variable fonts: ONE rule spans wght 100..900, so the
    browser instantiates the real weight instead of synthesising a fake bold.

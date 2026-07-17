@@ -113,7 +113,14 @@
     var chipsEl = document.getElementById('chips');
     var showing = document.getElementById('showing');
 
-    var activeCat = 'all';
+    // On a category page the server pre-marks that category's chip `.on` and
+    // stamps data-cat on the grid. Honour it so the initial client paint matches
+    // the server-filtered grid instead of clobbering it with every law (the bug
+    // where /category/economics/ silently repainted all 11 laws on load).
+    var onChip = chipsEl && chipsEl.querySelector ? chipsEl.querySelector('.chip.on') : null;
+    var activeCat = (grid && grid.getAttribute('data-cat'))
+      || (onChip && onChip.getAttribute('data-c'))
+      || 'all';
     var query = '';
 
     // Populate chips on the homepage (browse/category pages ship static chips).

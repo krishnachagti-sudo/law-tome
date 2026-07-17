@@ -25,15 +25,24 @@ import { head, sprite, header, footer, escapeHtml, lawCard } from './partials.mj
  * @param {string} [o.active] nav key to mark active (defaults to 'browse')
  * @param {string} [o.origin=''] absolute-URL origin for JSON-LD (optional; degrades to base-relative)
  */
-export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '' } = {}) {
+export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '' } = {}) {
   const rows = Array.isArray(laws) ? laws : [];
 
-  // Chips: "all" + the distinct categories present, in first-seen order.
+  // Chips: "all" + the distinct categories present, in first-seen order. On a
+  // category page the chip for `categoryKey` is the active one (not "all"), so the
+  // client (search.js) initialises its filter to this category instead of clobbering
+  // the server-filtered grid with every law.
   const cats = ['all'];
   for (const l of rows) if (l.category != null && !cats.includes(l.category)) cats.push(l.category);
   const chips = cats
-    .map((c, i) => `<button class="chip${i === 0 ? ' on' : ''}" data-c="${escapeHtml(c)}">${escapeHtml(c)}</button>`)
+    .map((c, i) => {
+      const on = categoryKey ? c === categoryKey : i === 0;
+      return `<button class="chip${on ? ' on' : ''}" data-c="${escapeHtml(c)}">${escapeHtml(c)}</button>`;
+    })
     .join('');
+
+  // data-cat lets search.js honour the category context on first paint.
+  const gridAttr = categoryKey ? ` data-cat="${escapeHtml(categoryKey)}"` : '';
 
   const grid = rows.length
     ? rows.map((l) => lawCard(l, base)).join('\n')
@@ -46,7 +55,7 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
       <span class="sub" id="showing">showing ${rows.length} of ${rows.length}</span>
     </div>
     <div class="chips" id="chips">${chips}</div>
-    <div class="grid" id="grid">
+    <div class="grid" id="grid"${gridAttr}>
 ${grid}
     </div>
   </div>
