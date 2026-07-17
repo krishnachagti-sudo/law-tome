@@ -13,15 +13,16 @@ When in doubt, copy its shape.
 
 ## The rules that fail the build
 
-A later task's validator enforces these. They are not style advice.
+The build validator (`build/validate.mjs`) enforces every one of these. They are not style advice.
 
 1. **Filename === slug.** `slug` must equal the filename stem.
 2. **Closure.** Every slug appearing in `related[].slug` or `confusedWith[]` MUST have its own file
    in the corpus. No dangling cross-references. If you want to link a law that is not in the corpus
    yet, add that law first or drop the reference.
-3. **`statementAccent` must be an exact substring of `statement`.** The page template wraps the
-   accent in a span by string match; if it is not a verbatim substring the accent silently vanishes.
-   Watch for curly vs straight apostrophes and en-dashes.
+3. **`statementAccent`, when present, must be an exact substring of `statement`.** The page template
+   wraps the accent in a span by string match; if it is not a verbatim substring the accent silently
+   vanishes. Watch for curly vs straight apostrophes and en-dashes. The field itself is optional (the
+   template guards its absence) — but a *present* accent that doesn't match fails the build.
 4. **`category` must be a key in `categories.json`** — not a label, not a new tag.
 5. **`reliability` and `provenance` must be one of the enum values below.**
 6. **`no` must be unique** across the corpus.
@@ -78,19 +79,19 @@ one invented citation destroys it. These rules are not negotiable.
 | `slug` | string | Lowercase, hyphenated, apostrophes stripped. `Goodhart's Law` → `goodharts-law`. Must equal the filename stem. |
 | `name` | string | Display name, e.g. `"Goodhart's Law"`. |
 | `statement` | string | The crisp quotable one-liner. Where a canonical verbatim wording exists, use it verbatim. |
-| `statementAccent` | string | A verbatim substring of `statement`. See rule 3. |
 | `meaning` | string | 1–2 sentences, plain English, no jargon. |
 | `example` | string | ONE vivid, concrete, specific example. |
 | `origin` | string | Prose: who, when, where. The place to be candid about disputed or thin attribution. |
 | `category` | string | A key from `categories.json`. |
 | `reliability` | enum | See below. |
 | `provenance` | enum | See below. |
-| `sources` | array | See below. Canon entries need ≥1. |
+| `sources` | array | See below. **Required for `canon`** (≥1 real source — the citation gate); omitted on `coined`, which renders a submitter credit instead. |
 
 ### Optional
 
 | Field | Type | Notes |
 | --- | --- | --- |
+| `statementAccent` | string | Strongly recommended (every seed entry carries one). A **verbatim substring** of `statement`, rendered as a highlighted accent on the law page. Optional — the template guards its absence — but when present it must match exactly, or the build fails (rule 3). |
 | `aliases` | string[] | Other names the law travels under. Omit if none. |
 | `whyItMatters` | string | The "so what". **Omit** where the law is purely descriptive and forcing advice would be strained. |
 | `coinedYear` | number | Year first stated. Omit where genuinely indeterminate — `occams-razor` omits it because Ockham's own formulations are early-14th-century and undated while the famous phrasing is 1639. |
