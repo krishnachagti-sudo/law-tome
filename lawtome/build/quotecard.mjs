@@ -43,7 +43,6 @@ function wrapLines(text, maxChars) {
  * @returns {string} SVG document
  */
 export function quoteCardSvg(law) {
-  const statement = escapeHtml(law.statement ?? '');
   const name = escapeHtml(law.name ?? '');
   const no = escapeHtml(String(law.no ?? ''));
 

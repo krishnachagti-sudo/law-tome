@@ -35,6 +35,15 @@ test('a statement containing & and < is XML-escaped (valid SVG, still renders)',
   assert.deepEqual([...png.subarray(0,4)], [0x89,0x50,0x4e,0x47]);
 });
 
+test('the attribution name is XML-escaped (isolates the name path from the statement)', () => {
+  // Statement is plain ASCII, so any &/< in the SVG must come from the name.
+  const svg = quoteCardSvg({ name: 'A & B <C>', statement: 'plain statement here', no: '001' });
+  assert.match(svg, /A &amp; B &lt;C&gt;/);      // name escaped in place
+  assert.doesNotMatch(svg, /A & B <C>/);         // raw name gone
+  const png = renderPng(svg);                     // whole SVG stays well-formed
+  assert.deepEqual([...png.subarray(0,4)], [0x89,0x50,0x4e,0x47]);
+});
+
 test('a long statement wraps onto multiple lines (multiple tspans)', () => {
   const longLaw = { name: 'Verbose Law', no: '100',
     statement: 'Anything that can possibly go wrong will indeed eventually go wrong at the least convenient possible moment for everyone involved.' };
