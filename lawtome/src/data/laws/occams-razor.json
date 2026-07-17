@@ -1,0 +1,26 @@
+{
+  "no": "023",
+  "slug": "occams-razor",
+  "name": "Occam's Razor",
+  "aliases": ["Ockham's Razor", "Law of Parsimony"],
+  "statement": "Entities should not be multiplied beyond necessity.",
+  "statementAccent": "multiplied beyond necessity",
+  "meaning": "When two explanations both account for the facts, prefer the one that assumes less. It is a tie-breaker between rival explanations, not a general preference for whatever sounds simplest.",
+  "example": "Your site's error rate tripled at 02:00. One story: a coordinated bot attack probing a new endpoint. Another: the deploy that went out at 01:58. Both fit the graph, but the second invents no new actors — check the deploy first.",
+  "whyItMatters": "The razor shaves assumptions, not complexity. Reality is often genuinely complicated, and a simpler theory that fails to explain the evidence is not the winner — it is disqualified. Used honestly, it tells you which hypothesis to test first, not which one is true.",
+  "origin": "Named for the English Franciscan friar William of Ockham (c. 1287–1347), who argued repeatedly for parsimony — \"Pluralitas non est ponenda sine necessitate\" (plurality should not be posited without necessity). The famous Latin phrasing usually put in his mouth, \"Entia non sunt multiplicanda praeter necessitatem\", is nowhere in his surviving works: it was written by the Irish Franciscan John Punch in a 1639 commentary on Duns Scotus, who called it a common axiom of the Scholastics. The name itself came later still — Libert Froidmont claimed to have coined \"novacula occami\" (Occam's razor) in his Philosophia Christiana de Anima of 1649.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "popularYear": 1639,
+  "namedAfter": "William of Ockham",
+  "sources": [
+    {"text": "Ockham, William of. Summa Logicae, part I, ch. 12. — one of Ockham's own statements of the principle.", "type": "primary"},
+    {"text": "\"William of Ockham.\" Stanford Encyclopedia of Philosophy (substantive revision 2024). — \"Although the sentiment is certainly Ockham's, this particular formulation is nowhere to be found in his texts.\"", "url": "https://plato.stanford.edu/entries/ockham/", "type": "secondary"},
+    {"text": "Occam's razor, Wikipedia. — traces the 1639 Punch phrasing and Froidmont's 1649 coinage of the name.", "url": "https://en.wikipedia.org/wiki/Occam%27s_razor", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Occam%27s_razor",
+  "related": [
+    {"slug": "hanlons-razor", "kind": "kindred"}
+  ]
+}

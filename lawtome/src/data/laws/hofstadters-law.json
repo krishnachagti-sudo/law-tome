@@ -1,0 +1,24 @@
+{
+  "no": "020",
+  "slug": "hofstadters-law",
+  "name": "Hofstadter's Law",
+  "statement": "It always takes longer than you expect, even when you take into account Hofstadter's Law.",
+  "statementAccent": "even when you take into account",
+  "meaning": "Estimates run long, and knowing that they run long does not save you — you pad the estimate and it still runs long.",
+  "example": "A team estimates two weeks for a migration, then doubles it to four \"to be safe\". It ships in seven. The padding was applied to the work they could foresee; the overrun came from the certificate renewal, the flaky test, and the one colleague who alone understood the old schema being on leave.",
+  "whyItMatters": "The joke has teeth: the fix is not more introspection but outside data. Estimate from how long comparable work actually took, not from how long this work feels like it should take, and treat schedule buffers as a floor rather than a ceiling.",
+  "origin": "Douglas Hofstadter stated it in his 1979 book Gödel, Escher, Bach: An Eternal Golden Braid (p. 152). The law is deliberately self-referential, in keeping with the book's preoccupation with self-reference and strange loops.",
+  "category": "planning",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1979,
+  "namedAfter": "Douglas Hofstadter",
+  "sources": [
+    {"text": "Hofstadter, D.R. (1979). Gödel, Escher, Bach: An Eternal Golden Braid. New York: Basic Books. p. 152.", "type": "primary"},
+    {"text": "Hofstadter's law, Wikipedia.", "url": "https://en.wikipedia.org/wiki/Hofstadter%27s_law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hofstadter%27s_law",
+  "related": [
+    {"slug": "parkinsons-law", "kind": "kindred"}
+  ]
+}

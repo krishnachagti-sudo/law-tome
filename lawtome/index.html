@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Law Tome — every named law, principle, and effect</title>
+<meta name="description" content="The largest unified, sourced index of named laws, principles, and effects — explained, cross-linked, and searchable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="styles.css">
+<script src="common.js"></script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="seal" viewBox="0 0 100 100">
+    <defs><path id="seal-arc" d="M50,50 m-39,0 a39,39 0 1,1 78,0 a39,39 0 1,1 -78,0" fill="none"/></defs>
+    <circle cx="50" cy="50" r="47.2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    <circle cx="50" cy="50" r="39.5" fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="0.4 3" stroke-linecap="round"/>
+    <text font-family="'Space Mono',monospace" font-size="7" letter-spacing="1.7" fill="currentColor"><textPath href="#seal-arc" startOffset="1%">· THE LAW TOME · A LIVING INDEX · </textPath></text>
+    <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M50,39 v23"/>
+      <path d="M50,39 C43,35 34,35 27,38 L27,58 C34,55 43,55 50,59 Z"/>
+      <path d="M50,39 C57,35 66,35 73,38 L73,58 C66,55 57,55 50,59 Z"/>
+    </g>
+    <g stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+      <path d="M33,43 h10 M33,47.5 h9 M33,52 h8 M57,43 h10 M58,47.5 h9 M59,52 h8"/>
+    </g>
+  </symbol>
+  <symbol id="wax" viewBox="0 0 100 100">
+    <path d="M50,5 C57,4 59,12 65,15 C72,18 80,15 83,22 C87,30 80,36 82,44 C83,52 90,55 87,63 C84,72 74,70 69,76 C64,81 63,90 54,90 C46,91 43,83 36,81 C28,79 20,84 15,77 C10,69 17,62 15,54 C13,46 5,43 8,35 C11,27 20,28 25,23 C30,18 31,9 40,7 C44,6 46,5 50,5 Z" fill="currentColor"/>
+    <circle cx="50" cy="48" r="28" fill="none" stroke="rgba(0,0,0,.17)" stroke-width="1.3"/>
+    <g fill="none" stroke="rgba(0,0,0,.2)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M50,38 v22"/><path d="M50,38 C44,35 37,35 32,37 L32,55 C37,53 44,53 50,56 Z"/>
+      <path d="M50,38 C56,35 63,35 68,37 L68,55 C63,53 56,53 50,56 Z"/>
+    </g>
+  </symbol>
+  <symbol id="orn" viewBox="0 0 120 12">
+    <line x1="0" y1="6" x2="48" y2="6" stroke="currentColor" stroke-width="1"/>
+    <line x1="72" y1="6" x2="120" y2="6" stroke="currentColor" stroke-width="1"/>
+    <path d="M60,1 L64,6 L60,11 L56,6 Z" fill="currentColor"/>
+    <circle cx="49.5" cy="6" r="1.3" fill="currentColor"/><circle cx="70.5" cy="6" r="1.3" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="kicker"><div class="wrap">Vol.&nbsp;I &nbsp;·&nbsp; a living index of named laws &nbsp;·&nbsp; est. mmxxvi &nbsp;·&nbsp; no ads, no tracking</div></div>
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 100 100"><use href="#seal"/></svg>The Law Tome</a>
+    <nav class="links">
+      <a href="#index" class="on">Browse</a>
+      <a href="graph.html">The graph</a>
+      <a href="coin.html">Coin a law</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="right">
+      <span class="count">1,400 laws</span>
+      <button class="icon-btn" id="theme" aria-label="Toggle light and dark theme"><span id="th-ico">☾</span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="hero-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
+  <div class="wrap">
+    <div class="eyebrow">The largest unified index of named laws</div>
+    <p class="lede">Every named law, principle, and effect — <b>explained, sourced, and cross-linked.</b> One place instead of forty half-finished lists.</p>
+    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
+    <div class="stmt-wrap">
+      <div class="stmt-meta"><span id="m-no">№ 001</span><span class="dot"></span><span class="cat" id="m-cat">management</span></div>
+      <div class="stmt" id="stmt"><q>Work expands to fill the <span class="accent">time available</span> for its completion.</q></div>
+      <div class="attrib" id="attrib">— <span class="who">Parkinson's Law</span>, 1955</div>
+    </div>
+    <div class="hero-actions">
+      <label class="search">
+        <i class="ti ti-search" aria-hidden="true"></i>
+        <input id="q" placeholder="Search a law — or describe the feeling…" autocomplete="off" aria-label="Search laws">
+      </label>
+      <button class="ghost" id="rand"><i class="ti ti-arrows-shuffle" aria-hidden="true"></i> Random law</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="index">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Browse the index</h2>
+      <span class="sub" id="showing">showing 10 of 1,400</span>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="sec" id="graph" style="padding-top:12px">
+  <div class="wrap">
+    <div class="graph-band">
+      <div class="gb-eyebrow">The connective tissue</div>
+      <h2>Every law is a door to three others.</h2>
+      <p>Follow Goodhart to Campbell to the Cobra Effect to Streisand. The relationship graph is the thing no flat list can give you.</p>
+      <a class="ghost" href="graph.html"><i class="ti ti-affiliate" aria-hidden="true"></i> Explore the graph</a>
+      <svg class="constellation" viewBox="0 0 440 300" aria-hidden="true">
+        <g stroke="#3c341f" stroke-width="1" fill="none">
+          <path d="M120,150 L230,90"/><path d="M230,90 L330,140"/><path d="M330,140 L300,230"/>
+          <path d="M300,230 L180,240"/><path d="M180,240 L120,150"/><path d="M230,90 L180,240"/>
+          <path d="M330,140 L400,80"/><path d="M120,150 L60,90"/>
+        </g>
+        <g class="node"><circle cx="230" cy="90" r="7" fill="#d8a63f" class="pulse"/><text x="242" y="86">Goodhart</text></g>
+        <g class="node"><circle cx="330" cy="140" r="5" fill="#e05a44"/><text x="342" y="144">Campbell</text></g>
+        <g class="node"><circle cx="300" cy="230" r="5" fill="#c9bf9f"/><text x="312" y="234">Cobra</text></g>
+        <g class="node"><circle cx="180" cy="240" r="5" fill="#c9bf9f"/><text x="192" y="244">Streisand</text></g>
+        <g class="node"><circle cx="120" cy="150" r="6" fill="#d8a63f" class="pulse"/><text x="60" y="150" text-anchor="end" style="fill:#8a8168">Peter</text></g>
+        <g class="node"><circle cx="400" cy="80" r="3.5" fill="#6e6650"/></g>
+        <g class="node"><circle cx="60" cy="90" r="3.5" fill="#6e6650"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="coin" style="padding-top:12px">
+  <div class="wrap">
+    <div class="coin">
+      <svg class="wax" viewBox="0 0 100 100" aria-hidden="true"><use href="#wax"/></svg>
+      <div class="coin-body">
+        <h2>Noticed a pattern that has no name?</h2>
+        <p>Coin it. Submit an original law — if it holds up, we publish it in the Coined wing with your name on it. Nobody else lets you do this.</p>
+      </div>
+      <a class="cta" href="coin.html"><i class="ti ti-feather" aria-hidden="true"></i> Coin a law</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-note">
+      <b>The Law Tome</b> · every entry sourced &amp; cited · corpus licensed CC BY<br>
+      Canon: attested &amp; verified. Coined: original, credited, clearly marked.<br>
+      A reference project — no ads, no tracking of what you read.
+    </div>
+    <div class="foot-seal"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg><span class="seal">Sapere aude.</span></div>
+  </div>
+</footer>
+
+<script>
+const LAWS=[
+ {no:"001",slug:"parkinsons-law",name:"Parkinson's Law",say:"Work expands to fill the time available for its completion.",hero:'Work expands to fill the <span class="accent">time available</span> for its completion.',cat:"management",rel:"Heuristic",year:1955,rels:6},
+ {no:"014",slug:"goodharts-law",name:"Goodhart's Law",say:"When a measure becomes a target, it ceases to be a good measure.",hero:'When a <span class="accent">measure becomes a target</span>, it ceases to be a good measure.',cat:"economics",rel:"Heuristic",year:1975,rels:5},
+ {no:"027",slug:"streisand-effect",name:"Streisand Effect",say:"Trying to suppress information only spreads it further.",hero:'Trying to <span class="accent">suppress</span> information only spreads it further.',cat:"media",rel:"Empirical",year:2005,rels:4},
+ {no:"033",slug:"occams-razor",name:"Occam's Razor",say:"The simplest explanation is usually the right one.",hero:'The <span class="accent">simplest</span> explanation is usually the right one.',cat:"philosophy",rel:"Heuristic",year:1320,rels:7},
+ {no:"041",slug:"hofstadters-law",name:"Hofstadter's Law",say:"It always takes longer than you expect, even when you account for this law.",hero:'It always takes <span class="accent">longer</span> than you expect — even accounting for this law.',cat:"planning",rel:"Folk-adage",year:1979,rels:3},
+ {no:"052",slug:"conways-law",name:"Conway's Law",say:"Systems mirror the communication structure of the org that designed them.",hero:'Systems mirror the <span class="accent">org chart</span> that designed them.',cat:"software",rel:"Empirical",year:1967,rels:5},
+ {no:"068",slug:"hanlons-razor",name:"Hanlon's Razor",say:"Never attribute to malice what is adequately explained by stupidity.",hero:'Never attribute to <span class="accent">malice</span> what stupidity explains.',cat:"psychology",rel:"Heuristic",year:1980,rels:4},
+ {no:"079",slug:"the-peter-principle",name:"The Peter Principle",say:"People rise to their level of incompetence.",hero:'People rise to their level of <span class="accent">incompetence</span>.',cat:"management",rel:"Heuristic",year:1969,rels:4},
+ {no:"090",slug:"dunning-kruger-effect",name:"Dunning–Kruger Effect",say:"The less you know, the more you overestimate what you know.",hero:'The less you know, the more you <span class="accent">overestimate</span> it.',cat:"psychology",rel:"Empirical",year:1999,rels:6},
+ {no:"111",slug:"cobra-effect",name:"Cobra Effect",say:"An incentive meant to fix a problem ends up making it worse.",hero:'A reward to fix a problem can make it <span class="accent">worse</span>.',cat:"economics",rel:"Empirical",year:1902,rels:5}
+];
+const BC={"Empirical":"b-emp","Heuristic":"b-heu","Folk-adage":"b-folk"};
+const cats=["all",...Array.from(new Set(LAWS.map(l=>l.cat)))];
+let active="all", query="";
+
+const grid=document.getElementById('grid'), chipsEl=document.getElementById('chips'), showing=document.getElementById('showing');
+chipsEl.innerHTML=cats.map(c=>`<button class="chip${c==='all'?' on':''}" data-c="${c}">${c}</button>`).join('');
+chipsEl.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;active=b.dataset.c;[...chipsEl.children].forEach(x=>x.classList.toggle('on',x===b));render()};
+
+function render(){
+  const f=LAWS.filter(l=>(active==='all'||l.cat===active)&&(!query||(l.name+' '+l.say+' '+l.cat).toLowerCase().includes(query)));
+  grid.innerHTML=f.length?f.map(l=>`
+   <a class="card" href="laws/${l.slug}.html">
+     <div class="top"><span class="no">№ ${l.no}</span><span class="badge ${BC[l.rel]}">${l.rel}</span></div>
+     <h3>${l.name}</h3>
+     <div class="say">"${l.say}"</div>
+     <div class="foot"><span class="cat">${l.cat}</span><span class="rel"><i class="ti ti-affiliate" style="font-size:13px" aria-hidden="true"></i> ${l.rels} related</span></div>
+   </a>`).join(''):`<div class="empty">No law matches "${query}". Maybe you should <b>coin</b> it.</div>`;
+  showing.textContent=`showing ${f.length} of 1,400`;
+}
+render();
+
+const q=document.getElementById('q');
+q.oninput=()=>{query=q.value.trim().toLowerCase();render();if(query)document.getElementById('index').scrollIntoView({behavior:'smooth'})};
+
+let hi=0;
+function setHero(i){
+  const l=LAWS[i];const s=document.getElementById('stmt');
+  s.style.opacity=0;
+  setTimeout(()=>{
+    document.getElementById('m-no').textContent='№ '+l.no;
+    document.getElementById('m-cat').textContent=l.cat;
+    s.innerHTML=`<q>${l.hero}</q>`;
+    document.getElementById('attrib').innerHTML=`— <span class="who">${l.name}</span>, ${l.year}`;
+    s.style.opacity=1;
+  },300);
+}
+document.getElementById('rand').onclick=()=>{let n;do{n=Math.floor(Math.random()*LAWS.length)}while(n===hi);hi=n;setHero(n)};
+setInterval(()=>{hi=(hi+1)%LAWS.length;setHero(hi)},5200);
+</script>
+</body>
+</html>

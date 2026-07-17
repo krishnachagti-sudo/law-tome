@@ -1,0 +1,26 @@
+{
+  "no": "008",
+  "slug": "conways-law",
+  "name": "Conway's Law",
+  "statement": "Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.",
+  "statementAccent": "a copy of the organization's communication structure",
+  "meaning": "Software ends up shaped like the org chart that built it. The seams in the product fall where the conversations were hardest to have.",
+  "example": "A company splits its payments work across three teams in three time zones who mostly talk through tickets. A year later the checkout has three separate payment services with three slightly different retry rules — not because anyone designed it that way, but because that was the cheapest shape to build across those three conversations.",
+  "whyItMatters": "It runs in reverse too: if you want a particular architecture, arrange the teams to match it — the \"inverse Conway manoeuvre\". Reorganising people is an architectural decision whether you intend it or not.",
+  "origin": "Melvin Conway put the idea forward in his paper \"How Do Committees Invent?\", published in Datamation in April 1968. Conway has written that Harvard Business Review rejected the paper first, on the grounds that he had not proved his thesis. Participants at the 1968 National Symposium on Modular Programming gave the idea the name \"Conway's Law\".",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1968,
+  "namedAfter": "Melvin Conway",
+  "sources": [
+    {"text": "Conway, M.E. (1968). \"How Do Committees Invent?\" Datamation, 14(5), 28–31. Full text hosted by the author.", "url": "https://www.melconway.com/Home/Committees_Paper.html", "type": "primary"},
+    {"text": "Conway, M.E. \"Conway's Law\" — the author's own page, giving his preferred statement of the law and the account of the Harvard Business Review rejection.", "url": "https://www.melconway.com/Home/Conways_Law.html", "type": "primary"},
+    {"text": "Conway's law, Wikipedia.", "url": "https://en.wikipedia.org/wiki/Conway%27s_law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Conway%27s_law",
+  "related": [
+    {"slug": "parkinsons-law", "kind": "kindred"},
+    {"slug": "the-peter-principle", "kind": "kindred"}
+  ]
+}
