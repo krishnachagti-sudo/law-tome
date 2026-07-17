@@ -35,7 +35,7 @@ export function buildGraph(laws = []) {
       if (to === from) continue;            // no self-loops
       if (!known.has(from) || !known.has(to)) continue; // both ends must be nodes
       const [a, b] = from < to ? [from, to] : [to, from]; // normalise a < b
-      const key = a + '' + b;
+      const key = a + ' ' + b; // separator: no slug can contain a space, so distinct pairs never collide
       if (seen.has(key)) continue;          // undirected de-dup
       const edge = { a, b, kind: rel.kind };
       seen.set(key, edge);

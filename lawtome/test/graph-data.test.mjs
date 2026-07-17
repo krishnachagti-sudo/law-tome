@@ -88,3 +88,15 @@ test('build emits graph.json + graph page referencing graph.js', async () => {
   assert.match(page, /id="graph"/);
   await rm(out, { recursive:true, force:true });
 });
+
+test('edge dedup key separates slugs so distinct pairs never collide', () => {
+  // Without a separator, edge ("ab","c") and edge ("a","bc") both key to "abc"
+  // and one is silently dropped. All four slugs are nodes (no dangling).
+  const g = buildGraph([
+    { slug:'ab', name:'AB', category:'x', related:[{ slug:'c', kind:'k' }] },
+    { slug:'c',  name:'C',  category:'x', related:[] },
+    { slug:'a',  name:'A',  category:'x', related:[{ slug:'bc', kind:'k' }] },
+    { slug:'bc', name:'BC', category:'x', related:[] },
+  ]);
+  assert.equal(g.edges.length, 2);
+});
