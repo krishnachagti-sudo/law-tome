@@ -14,6 +14,7 @@ import { listingPage } from '../src/templates/listing.mjs';
 import { graphPage } from '../src/templates/graph.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
+import { quoteCardSvg, renderPng } from './quotecard.mjs';
 
 async function writePage(path, html) {
   await mkdir(dirname(path), { recursive: true });
@@ -57,6 +58,15 @@ export async function buildSite(opts) {
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
   }
 
+  // One Open Graph quote-card PNG per law at og/<slug>.png — matches the
+  // og.image the law page emits (Task 6). Rendering is CPU-bound (resvg is
+  // synchronous), so render each card then write concurrently. The TTFs must be
+  // embedded explicitly (resvg can't fetch fonts or decode WOFF2).
+  for (const law of laws) {
+    const png = renderPng(quoteCardSvg(law));
+    writes.push(writePage(join(out, 'og', `${law.slug}.png`), png));
+  }
+
   // Browse page: every law.
   writes.push(writePage(
     join(out, 'browse', 'index.html'),
@@ -87,7 +97,7 @@ export async function buildSite(opts) {
   // `pages` counts home + one page per law (unchanged semantics). Browse and
   // per-category listings are reported in `listings`; the graph explorer is a
   // distinct page reported separately so no existing count assertion shifts.
-  return { pages: laws.length + 1, listings: 1 + present.length, graph: 1 };
+  return { pages: laws.length + 1, listings: 1 + present.length, graph: 1, og: laws.length };
 }
 
 // CLI: only runs when invoked directly (so `npm run build` works, imports don't).
