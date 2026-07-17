@@ -18,8 +18,9 @@
 
 import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
 
-/** Reliability label -> badge modifier class. */
-const RELIABILITY_BADGE = { Heuristic: 'b-heu', Empirical: 'b-emp', Folk: 'b-folk' };
+// Reliability label -> badge modifier class. Keys are the exact controlled
+// vocabulary from build/validate.mjs (Empirical | Heuristic | Folk-adage | Contested).
+const RELIABILITY_BADGE = { Empirical: 'b-emp', Heuristic: 'b-heu', 'Folk-adage': 'b-folk', Contested: 'b-con' };
 function reliabilityClass(reliability) {
   return RELIABILITY_BADGE[reliability] || 'b-heu';
 }
@@ -34,7 +35,9 @@ function renderStatement(law) {
   const esc = escapeHtml(law.statement);
   if (!law.statementAccent) return esc;
   const escAccent = escapeHtml(law.statementAccent);
-  return esc.replace(escAccent, `<span class="accent">${escAccent}</span>`);
+  // Function replacement (not a string): a string replacement would interpret
+  // $$, $&, $` and $' inside escAccent (escapeHtml does not touch `$`).
+  return esc.replace(escAccent, () => `<span class="accent">${escAccent}</span>`);
 }
 
 /** A single "At a glance" row, only when the value is present. */
@@ -48,7 +51,7 @@ export function lawPage(law, ctx = {}) {
   const coined = law.provenance === 'coined';
   const catLabel = categories[law.category] || law.category || '';
   const canonical = `${origin}${base}laws/${law.slug}/`;
-  const permalink = (slug) => `${base}laws/${slug}/`;
+  const permalink = (slug) => `${base}laws/${escapeHtml(slug)}/`;
   const description = law.meaning || law.statement;
 
   // ---- entry section ----------------------------------------------------

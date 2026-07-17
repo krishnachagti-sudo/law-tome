@@ -50,3 +50,28 @@ test('coined variant renders submitter credit and no Sources block', () => {
   assert.match(c, /Ada/);
   assert.doesNotMatch(c, /class="badge b-heu"/);
 });
+
+// --- Regression guards from the Task 6 code-quality gate ---
+
+test('resolved related/confusedWith/prev/next names are escaped (not raw)', () => {
+  const nasty = lawPage(law, {
+    ...ctx,
+    byslug: { 'campbells-law': { no:'015', slug:'campbells-law', name:'A & B <x> "q"', statement:'T & <u>', reliability:'Heuristic' } },
+    prev: { slug:'p-law', name:'P & <Q>', no:'001' }, next: undefined,
+  });
+  assert.doesNotMatch(nasty, /A & B <x>/);                 // resolved name must not be raw
+  assert.match(nasty, /A &amp; B &lt;x&gt; &quot;q&quot;/);
+  assert.match(nasty, /T &amp; &lt;u&gt;/);                 // resolved statement escaped
+  assert.match(nasty, /P &amp; &lt;Q&gt;/);                 // prev name escaped
+});
+
+test('reliability badge class matches the vocabulary (Folk-adage -> b-folk, not b-heu)', () => {
+  const h = lawPage({ ...law, reliability:'Folk-adage' }, ctx);
+  assert.match(h, /class="badge b-folk">Folk-adage/);
+  assert.doesNotMatch(h, /class="badge b-heu"/);
+});
+
+test('accent containing a $ replacement pattern is not mangled', () => {
+  const h = lawPage({ ...law, statement:'x $& y', statementAccent:'$& y' }, ctx);
+  assert.match(h, /<span class="accent">\$&amp; y<\/span>/);
+});
