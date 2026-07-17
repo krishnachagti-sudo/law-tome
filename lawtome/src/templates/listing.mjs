@@ -13,13 +13,7 @@
 // every slug used in an href goes through escapeHtml — the Task 5/6/7 gates all
 // failed on missed escaping.
 
-import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
-
-// Reliability label -> badge modifier class (same controlled vocabulary as law.mjs).
-const RELIABILITY_BADGE = { Empirical: 'b-emp', Heuristic: 'b-heu', 'Folk-adage': 'b-folk', Contested: 'b-con' };
-function reliabilityClass(reliability) {
-  return RELIABILITY_BADGE[reliability] || 'b-heu';
-}
+import { head, sprite, header, footer, escapeHtml, reliabilityClass } from './partials.mjs';
 
 /** One `.card` anchor, faithful to the prototype's render() markup. */
 function card(law, base) {

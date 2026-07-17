@@ -71,3 +71,9 @@ test('works with only {title, base, kind} and renders chips', () => {
   assert.match(h, /data-c="all"/);
   assert.match(h, /data-c="economics"/);
 });
+
+test('empty laws renders the empty state and does not throw', () => {
+  const h = listingPage([], { title:'Browse', base:'/lawtome/', kind:'browse' });
+  assert.match(h, /class="empty"/);
+  assert.doesNotMatch(h, /class="card"/);
+});

@@ -16,14 +16,7 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
-import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
-
-// Reliability label -> badge modifier class. Keys are the exact controlled
-// vocabulary from build/validate.mjs (Empirical | Heuristic | Folk-adage | Contested).
-const RELIABILITY_BADGE = { Empirical: 'b-emp', Heuristic: 'b-heu', 'Folk-adage': 'b-folk', Contested: 'b-con' };
-function reliabilityClass(reliability) {
-  return RELIABILITY_BADGE[reliability] || 'b-heu';
-}
+import { head, sprite, header, footer, escapeHtml, reliabilityClass } from './partials.mjs';
 
 /**
  * Wrap the accent phrase in <span class="accent"> within the statement. Splits the

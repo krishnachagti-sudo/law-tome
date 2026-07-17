@@ -28,6 +28,16 @@ export function escapeHtml(s) {
     .replace(/"/g, '&quot;');
 }
 
+// Reliability enum -> badge modifier CSS class. Keyed on the exact controlled
+// vocabulary from build/validate.mjs (Empirical | Heuristic | Folk-adage | Contested).
+// Shared here so law.mjs and listing.mjs cannot drift (they diverged once: a 'Folk'
+// vs 'Folk-adage' key mismatch shipped a wrong badge colour).
+export const RELIABILITY_BADGE = { Empirical: 'b-emp', Heuristic: 'b-heu', 'Folk-adage': 'b-folk', Contested: 'b-con' };
+/** Badge class for a reliability value; unknown values fall back to b-heu. */
+export function reliabilityClass(reliability) {
+  return RELIABILITY_BADGE[reliability] || 'b-heu';
+}
+
 /**
  * Serialise a JSON-LD object into a <script type="application/ld+json"> tag.
  * Every `<` in the serialised JSON is replaced with its unicode escape, so a
