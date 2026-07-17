@@ -18,18 +18,7 @@
 //      links to the Privacy page, and the rights-grant + originality warranty copy
 //      (spec §13) is explicit.
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass } from './partials.mjs';
-
-/** One `.card` anchor — mirrors listing.mjs's card markup (do NOT import; keep listing.mjs untouched). */
-function card(law, base) {
-  const rels = Array.isArray(law.related) ? law.related.length : 0;
-  return `   <a class="card" href="${base}laws/${escapeHtml(law.slug)}/">
-     <div class="top"><span class="no">№ ${escapeHtml(law.no)}</span><span class="badge ${reliabilityClass(law.reliability)}">${escapeHtml(law.reliability)}</span></div>
-     <h3>${escapeHtml(law.name)}</h3>
-     <div class="say">"${escapeHtml(law.statement)}"</div>
-     <div class="foot"><span class="cat">${escapeHtml(law.category)}</span><span class="rel"><i class="ti ti-affiliate" style="font-size:13px" aria-hidden="true"></i> ${rels} related</span></div>
-   </a>`;
-}
+import { head, sprite, header, footer, escapeHtml, lawCard } from './partials.mjs';
 
 /**
  * "Coin a law" page — a form that POSTs to ${base}api/submit (no live rendering).
@@ -152,7 +141,7 @@ export function coinedIndex(coinedLaws = [], { base = '/' } = {}) {
 
   const grid = rows.length
     ? `<div class="grid" id="grid">
-${rows.map((l) => card(l, base)).join('\n')}
+${rows.map((l) => lawCard(l, base)).join('\n')}
     </div>`
     : `<div class="empty">No coined laws yet. The Coined wing fills as readers submit original laws that clear verification — <a href="${base}coin/">coin the first one</a>.</div>`;
 

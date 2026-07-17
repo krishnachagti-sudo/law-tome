@@ -17,6 +17,14 @@ test('coined wing lists only coined entries', () => {
   const h = coinedIndex([{slug:'x', name:'X', provenance:'coined', statement:'S', reliability:'Heuristic'}], { base:'/lawtome/' });
   assert.match(h, /href="\/lawtome\/laws\/x\/"/);
 });
+test('coined wing EXCLUDES non-coined entries (exercises the provenance filter)', () => {
+  const h = coinedIndex([
+    { slug:'x', name:'X', provenance:'coined', statement:'S', reliability:'Heuristic' },
+    { slug:'z', name:'Z', provenance:'canon',  statement:'T', reliability:'Empirical' },
+  ], { base:'/lawtome/' });
+  assert.match(h, /href="\/lawtome\/laws\/x\/"/);       // coined shown
+  assert.doesNotMatch(h, /href="\/lawtome\/laws\/z\/"/); // canon excluded
+});
 test('privacy page exists for the consent link', () => assert.match(privacyPage({base:'/lawtome/'}), /consent|data|privacy/i));
 
 // --- added tests (implementer) ---

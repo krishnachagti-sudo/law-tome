@@ -39,6 +39,21 @@ export function reliabilityClass(reliability) {
 }
 
 /**
+ * One `.card` anchor for a law, faithful to the prototype's render() markup.
+ * Shared by the browse/category listings and the Coined wing so the card shape
+ * cannot drift between them. Every corpus string is escaped.
+ */
+export function lawCard(law, base) {
+  const rels = Array.isArray(law.related) ? law.related.length : 0;
+  return `   <a class="card" href="${base}laws/${escapeHtml(law.slug)}/">
+     <div class="top"><span class="no">№ ${escapeHtml(law.no)}</span><span class="badge ${reliabilityClass(law.reliability)}">${escapeHtml(law.reliability)}</span></div>
+     <h3>${escapeHtml(law.name)}</h3>
+     <div class="say">"${escapeHtml(law.statement)}"</div>
+     <div class="foot"><span class="cat">${escapeHtml(law.category)}</span><span class="rel"><i class="ti ti-affiliate" style="font-size:13px" aria-hidden="true"></i> ${rels} related</span></div>
+   </a>`;
+}
+
+/**
  * Serialise a JSON-LD object into a <script type="application/ld+json"> tag.
  * Every `<` in the serialised JSON is replaced with its unicode escape, so a
  * corpus value containing "</script>" cannot close the element and inject markup.

@@ -13,18 +13,7 @@
 // every slug used in an href goes through escapeHtml — the Task 5/6/7 gates all
 // failed on missed escaping.
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass } from './partials.mjs';
-
-/** One `.card` anchor, faithful to the prototype's render() markup. */
-function card(law, base) {
-  const rels = Array.isArray(law.related) ? law.related.length : 0;
-  return `   <a class="card" href="${base}laws/${escapeHtml(law.slug)}/">
-     <div class="top"><span class="no">№ ${escapeHtml(law.no)}</span><span class="badge ${reliabilityClass(law.reliability)}">${escapeHtml(law.reliability)}</span></div>
-     <h3>${escapeHtml(law.name)}</h3>
-     <div class="say">"${escapeHtml(law.statement)}"</div>
-     <div class="foot"><span class="cat">${escapeHtml(law.category)}</span><span class="rel"><i class="ti ti-affiliate" style="font-size:13px" aria-hidden="true"></i> ${rels} related</span></div>
-   </a>`;
-}
+import { head, sprite, header, footer, escapeHtml, lawCard } from './partials.mjs';
 
 /**
  * A browse or per-category listing page — one full HTML document.
@@ -47,7 +36,7 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
     .join('');
 
   const grid = rows.length
-    ? rows.map((l) => card(l, base)).join('\n')
+    ? rows.map((l) => lawCard(l, base)).join('\n')
     : '<div class="empty">No laws to show yet.</div>';
 
   const section = `<section class="sec" id="index">
