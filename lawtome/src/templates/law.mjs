@@ -66,7 +66,7 @@ export function lawPage(law, ctx = {}) {
 
   const entry = `<section class="entry">
   <svg class="entry-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
-  <div class="wrap">
+  <div class="wrap-wide">
     <nav class="crumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}category/${escapeHtml(law.category)}/">${escapeHtml(catLabel)}</a><span class="sep">/</span>${escapeHtml(law.name)}</nav>
     <div class="entry-meta" style="margin-top:18px">
       ${meta.join('\n      ')}
@@ -149,10 +149,10 @@ ${inner}
       const label = s.url
         ? `<a href="${escapeHtml(s.url)}">${escapeHtml(s.text)}</a>`
         : escapeHtml(s.text);
-      const type = s.type ? ` <span class="stype">${escapeHtml(s.type)}</span>` : '';
-      return `          <li><span class="num">${i + 1}</span>${label}${type}</li>`;
+      const type = s.type ? `<span class="stype">${escapeHtml(s.type)}</span>` : '';
+      return `          <li class="source-card"><span class="snum">${i + 1}</span><span class="stext">${label}</span>${type}</li>`;
     }).join('\n');
-    blocks.push(block('Sources', `        <ol class="sources">\n${items}\n        </ol>`));
+    blocks.push(block('Sources', `        <ol class="source-cards">\n${items}\n        </ol>`));
   }
 
   if (Array.isArray(law.confusedWith) && law.confusedWith.length) {
@@ -168,16 +168,15 @@ ${inner}
     const items = law.related.map((rel) => {
       const r = byslug[rel.slug] || {};
       const name = escapeHtml(r.name || rel.slug);
-      const say = r.statement ? `<div class="rsay">${escapeHtml(r.statement)}</div>` : '';
-      const rno = r.no != null ? `<span class="rno">№ ${escapeHtml(r.no)}</span>` : '<span class="rno"></span>';
-      const kind = rel.kind ? `<span class="rrel">${escapeHtml(rel.kind)}</span>` : '';
-      return `          <a class="rel-item" href="${permalink(rel.slug)}">
-            ${rno}
-            <span><span class="rname">${name}</span>${say}</span>
-            ${kind}
+      const say = r.statement ? `<div class="rc-say">"${escapeHtml(r.statement)}"</div>` : '';
+      const rno = r.no != null ? `№ ${escapeHtml(r.no)}` : '';
+      const kind = rel.kind ? `<span class="rc-kind">${escapeHtml(rel.kind)}</span>` : '<span></span>';
+      return `          <a class="rel-card" href="${permalink(rel.slug)}">
+            <div class="rc-top"><span class="rc-no">${rno}</span>${kind}</div>
+            <span class="rc-name">${name}</span>${say}
           </a>`;
     }).join('\n');
-    blocks.push(block('Related laws', `        <div class="rel-list">\n${items}\n        </div>`));
+    blocks.push(block('Related laws', `        <div class="rel-cards">\n${items}\n        </div>`, false));
   }
 
   // ---- dashboard stat strip (under the hero) ----------------------------
@@ -196,7 +195,7 @@ ${inner}
     srcCount ? statTile('Sources', String(srcCount)) : '',
   ].filter(Boolean).join('\n');
   const dash = dashTiles
-    ? `<div class="wrap"><div class="dash" data-reveal>\n${dashTiles}\n</div></div>\n`
+    ? `<div class="wrap-wide"><div class="dash" data-reveal>\n${dashTiles}\n</div></div>\n`
     : '';
 
   // ---- left rail: table of contents (scroll-spy) ------------------------
@@ -251,7 +250,7 @@ ${mapPanel}      <div class="panel">
     prevnext = `\n  <nav class="prevnext">\n${sides.join('\n')}\n  </nav>\n`;
   }
 
-  const layout = `<div class="wrap">
+  const layout = `<div class="wrap-wide">
   <div class="entry-layout">
 ${tocNav}    <main>
 ${blocks.join('\n\n')}
