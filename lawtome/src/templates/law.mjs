@@ -79,13 +79,20 @@ export function lawPage(law, ctx = {}) {
 
   // ---- main blocks ------------------------------------------------------
   const blocks = [];
+  const toc = [];
+  const idify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
   // `reveal` marks the whole block for scroll-reveal. Sections that contain their
   // own card grid (examples, variants) pass reveal=false and let the CARDS reveal
-  // individually (staggered) instead, so nothing double-animates.
-  const block = (label, inner, reveal = true) => `      <div class="block"${reveal ? ' data-reveal' : ''}>
+  // individually (staggered) instead, so nothing double-animates. Each block also
+  // registers a table-of-contents entry (the left scroll-spy rail) via a side effect.
+  const block = (label, inner, reveal = true) => {
+    const id = 'sec-' + idify(label);
+    toc.push({ label, id });
+    return `      <div class="block" id="${id}"${reveal ? ' data-reveal' : ''}>
         <div class="lbl">${label}</div>
 ${inner}
       </div>`;
+  };
 
   if (law.meaning) blocks.push(block('In plain English', `        <p class="lead">${escapeHtml(law.meaning)}</p>`));
   if (law.mechanism) blocks.push(block('How it works', `        <p class="prose">${escapeHtml(law.mechanism)}</p>`));
@@ -173,23 +180,61 @@ ${inner}
     blocks.push(block('Related laws', `        <div class="rel-list">\n${items}\n        </div>`));
   }
 
-  // ---- aside ------------------------------------------------------------
-  const glance =
-    glanceRow('Coined', law.coinedYear) +
-    glanceRow('Popular form', law.popularYear) +
-    glanceRow('Named after', law.namedAfter) +
-    glanceRow('Field', catLabel) +
-    glanceRow('Type', coined ? 'Coined' : law.reliability);
+  // ---- dashboard stat strip (under the hero) ----------------------------
+  const statTile = (k, v) => (v == null || v === '')
+    ? ''
+    : `      <div class="stat"><span class="s-k">${escapeHtml(k)}</span><span class="s-v">${escapeHtml(v)}</span></div>`;
+  const relCount = Array.isArray(law.related) ? law.related.length : 0;
+  const srcCount = Array.isArray(law.sources) ? law.sources.length : 0;
+  const dashTiles = [
+    statTile('Reliability', coined ? 'Coined' : law.reliability),
+    statTile('Coined', law.coinedYear),
+    statTile('Popular form', law.popularYear),
+    statTile('Named after', law.namedAfter),
+    statTile('Field', catLabel),
+    relCount ? statTile('Related', String(relCount)) : '',
+    srcCount ? statTile('Sources', String(srcCount)) : '',
+  ].filter(Boolean).join('\n');
+  const dash = dashTiles
+    ? `<div class="wrap"><div class="dash" data-reveal>\n${dashTiles}\n</div></div>\n`
+    : '';
+
+  // ---- left rail: table of contents (scroll-spy) ------------------------
+  const tocNav = toc.length
+    ? `    <nav class="toc" aria-label="On this page">
+${toc.map((t) => `      <a href="#${t.id}">${escapeHtml(t.label)}</a>`).join('\n')}
+    </nav>\n`
+    : '';
+
+  // ---- right rail: a live relationship mini-map + citation --------------
+  const neighbours = (Array.isArray(law.related) ? law.related : [])
+    .map((r) => byslug[r.slug]).filter(Boolean);
+  const TIER = { Empirical: '#8fbf6f', Heuristic: '#d8a63f', 'Folk-adage': '#b7ab86', Contested: '#e05a44' };
+  const tierColor = (r) => TIER[r] || '#c9bf9f';
+  const miniGraph = () => {
+    const W = 260, H = 190, cx = W / 2, cy = H / 2, R = 62;
+    let edges = '', nodes = '';
+    neighbours.forEach((n, i) => {
+      const a = (-Math.PI / 2) + (2 * Math.PI * i / Math.max(1, neighbours.length));
+      const x = +(cx + R * Math.cos(a)).toFixed(1), y = +(cy + R * Math.sin(a)).toFixed(1);
+      edges += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#5a4f2f" stroke-width="1"/>`;
+      nodes += `<a href="${permalink(n.slug)}"><circle cx="${x}" cy="${y}" r="6" fill="${tierColor(n.reliability)}" stroke="#141109" stroke-width="1.5"/><text x="${x}" y="${(y - 10).toFixed(1)}" text-anchor="middle" font-family="'Space Mono',monospace" font-size="8.5" fill="#cdc3a6">${escapeHtml(n.name)}</text></a>`;
+    });
+    const focus = `<circle cx="${cx}" cy="${cy}" r="8" fill="${tierColor(law.reliability)}" stroke="#141109" stroke-width="2"/><text x="${cx}" y="${cy + 20}" text-anchor="middle" font-family="'Space Mono',monospace" font-size="9" fill="#f1e7cf">${escapeHtml(law.name)}</text>`;
+    return `<svg class="minigraph-svg" viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Relationship map for ${escapeHtml(law.name)}">${edges}${nodes}${focus}</svg>`;
+  };
+  const mapPanel = neighbours.length
+    ? `      <div class="panel">
+        <h4>Related map</h4>
+        <div class="minigraph">${miniGraph()}</div>
+        <a class="mg-link" href="${base}graph/?law=${escapeHtml(law.slug)}">Open in the graph <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>\n`
+    : '';
 
   const citeText = `"${escapeHtml(law.name)}." The Law Tome. ${escapeHtml(origin + base)}laws/${escapeHtml(law.slug)}/`;
 
   const aside = `    <aside class="aside">
-      <div class="panel">
-        <h4>At a glance</h4>
-        <div class="glance">
-${glance}        </div>
-      </div>
-      <div class="panel">
+${mapPanel}      <div class="panel">
         <h4>Cite this entry</h4>
         <div class="cite-box" id="cite">${citeText}</div>
         <button class="btn" id="copy"><i class="ti ti-copy" aria-hidden="true"></i> <span id="copy-t">Copy citation</span></button>
@@ -208,7 +253,7 @@ ${glance}        </div>
 
   const layout = `<div class="wrap">
   <div class="entry-layout">
-    <main>
+${tocNav}    <main>
 ${blocks.join('\n\n')}
     </main>
 
@@ -276,6 +321,13 @@ document.getElementById('copy').onclick=function(){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -6% 0px',threshold:0.06});
     var els=document.querySelectorAll('[data-reveal]');for(var i=0;i<els.length;i++)io.observe(els[i]);
   }
+  // scroll-spy: highlight the left-rail contents link for the section in view
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  if(links.length&&'IntersectionObserver' in window){
+    var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on');});var a=map[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-12% 0px -78% 0px',threshold:0});
+    document.querySelectorAll('.block[id]').forEach(function(s){spy.observe(s);});
+  }
 })();
 </script>`;
 
@@ -292,6 +344,7 @@ document.getElementById('copy').onclick=function(){
     '<div class="progress" id="progress" aria-hidden="true"></div>\n' +
     header({ base, active: 'browse', count: ctx.publishedCount }) +
     entry +
+    dash +
     layout +
     footer({ scripts })
   );
