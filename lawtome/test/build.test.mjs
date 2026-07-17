@@ -54,6 +54,19 @@ test('build returns a page count and home shows real published count', async () 
   await rm(out, { recursive:true, force:true });
 });
 
+test('build emits browse + per-category listing pages', async () => {
+  const out = await mkdtemp(join(tmpdir(), 'lt-'));
+  const r = await buildSite({ dataDir:'src/data/laws', catFile:'src/data/categories.json', assetsDir:'src/assets', out, base:'/lawtome/', origin:'https://conyso.com' });
+  assert.ok(existsSync(join(out, 'browse/index.html')), 'missing browse/index.html');
+  assert.ok(existsSync(join(out, 'category/economics/index.html')), 'missing category/economics/index.html');
+  const browse = await readFile(join(out, 'browse/index.html'), 'utf8');
+  assert.match(browse, /href="\/lawtome\/laws\/goodharts-law\/"/);
+  const cat = await readFile(join(out, 'category/economics/index.html'), 'utf8');
+  assert.match(cat, /"BreadcrumbList"/);
+  assert.ok(r.listings >= 2, 'listings count should include browse + present categories');
+  await rm(out, { recursive:true, force:true });
+});
+
 // --- Task 8 code-quality gate: build robustness ---
 
 test('validation failure writes no partial output', async () => {

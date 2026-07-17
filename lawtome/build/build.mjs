@@ -10,6 +10,7 @@ import { loadCorpus, loadCategories } from './corpus.mjs';
 import { validateCorpus } from './validate.mjs';
 import { lawPage } from '../src/templates/law.mjs';
 import { homePage } from '../src/templates/home.mjs';
+import { listingPage } from '../src/templates/listing.mjs';
 
 async function writePage(path, html) {
   await mkdir(dirname(path), { recursive: true });
@@ -42,11 +43,38 @@ export async function buildSite(opts) {
     const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
   }
+
+  // Browse page: every law.
+  writes.push(writePage(
+    join(out, 'browse', 'index.html'),
+    listingPage(laws, { title: 'Browse', base, kind: 'browse', active: 'browse', origin }),
+  ));
+
+  // One category page per category PRESENT in the corpus, using the label from
+  // categories.json for the page title. First-seen order over corpus order.
+  const present = [];
+  const membersByCat = new Map();
+  for (const law of laws) {
+    const cat = law.category;
+    if (cat == null) continue;
+    if (!membersByCat.has(cat)) { membersByCat.set(cat, []); present.push(cat); }
+    membersByCat.get(cat).push(law);
+  }
+  for (const cat of present) {
+    writes.push(writePage(
+      join(out, 'category', cat, 'index.html'),
+      listingPage(membersByCat.get(cat), { title: categories[cat] || cat, base, kind: 'category', origin }),
+    ));
+  }
+
   await Promise.all(writes);
 
   await cp(assetsDir, join(out, 'assets'), { recursive: true });
 
-  return { pages: laws.length + 1 };
+  // `pages` counts home + one page per law (unchanged semantics). The browse and
+  // per-category listing pages are reported separately so existing build tests
+  // that assert on `pages` stay meaningful.
+  return { pages: laws.length + 1, listings: 1 + present.length };
 }
 
 // CLI: only runs when invoked directly (so `npm run build` works, imports don't).
