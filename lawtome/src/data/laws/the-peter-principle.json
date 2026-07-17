@@ -6,24 +6,85 @@
   "statementAccent": "rise to his level of incompetence",
   "meaning": "Promotion rewards being good at the job you already have, not the job you are moving into. So people keep getting promoted until they land in a role they are bad at — and there they stop, and stay.",
   "mechanism": "Promotion rewards performance in the current role, but each new rung demands different skills. People keep rising as long as they excel and stop the moment they don't — which lands them precisely at the first job they cannot do well. The mechanism selects for competence at the wrong level.",
-  "example": "The best engineer on the team is made engineering manager. The skills that earned the promotion — deep focus, solving it herself — are the ones she must now stop using. She is a mediocre manager, so she is never promoted again, and the team has lost its best engineer twice over.",
   "whyItMatters": "If the only route to more money and status runs through management, you will convert your best specialists into your worst managers. Parallel tracks, trial periods with an honest route back, and promoting on evidence of the next job rather than mastery of the last one are the standard defences.",
   "misreadings": "It is a critique of one promotion mechanism, not a claim that everyone is incompetent or that hierarchies cannot work. Organisations escape it by promoting on demonstrated fitness for the next role, or by rewarding mastery without forcing a move. It names a failure mode to design around, not a fact of human nature.",
-  "origin": "Laurence J. Peter formulated the principle; the 1969 book The Peter Principle was written up with the playwright Raymond Hull. It was framed as satire, but has since found real empirical support: Benson, Li and Shue's study of sales workers at 131 firms found that firms did promote on current sales performance, that the best salespeople made measurably worse managers, and that the resulting mismatch was costly.",
+  "origin": "Coined by the educator Laurence J. Peter and written up with the playwright Raymond Hull in their 1969 book The Peter Principle: 'In a hierarchy, every employee tends to rise to his level of incompetence.' Pitched as satire, it landed as serious management theory and spawned a small literature of corollaries — Peter's own, Scott Adams's Dilbert Principle, and Archibald Putt's competence inversion.",
   "category": "management",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": 1969,
   "namedAfter": "Laurence J. Peter",
   "sources": [
-    {"text": "Peter, L.J., & Hull, R. (1969). The Peter Principle: Why Things Always Go Wrong. New York: William Morrow and Company.", "type": "primary"},
-    {"text": "Benson, A., Li, D., & Shue, K. (2019). \"Promotions and the Peter Principle.\" The Quarterly Journal of Economics, 134(4), 2085–2134. — the published version of record, which reports a sample of 131 firms. Note: the superseded NBER working-paper draft (No. 24343, February 2018) reported 214 firms, and that stale figure is still repeated by the NBER landing page and by Wikipedia. Cite the 131 of the published paper.", "url": "https://doi.org/10.1093/qje/qjz022", "type": "primary"},
-    {"text": "Peter principle, Wikipedia.", "url": "https://en.wikipedia.org/wiki/Peter_principle", "type": "secondary"}
+    {
+      "text": "Peter, L. J. & Hull, R. (1969). The Peter Principle: Why Things Always Go Wrong. William Morrow.",
+      "type": "primary"
+    },
+    {
+      "text": "Peter principle, Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Peter_principle",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Peter_principle",
   "related": [
-    {"slug": "parkinsons-law", "kind": "kindred"},
-    {"slug": "dunning-kruger-effect", "kind": "kindred"}
+    {
+      "slug": "parkinsons-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "dunning-kruger-effect",
+      "kind": "kindred"
+    }
   ],
-  "confusedWith": ["parkinsons-law", "dunning-kruger-effect"]
+  "confusedWith": [
+    "parkinsons-law",
+    "dunning-kruger-effect"
+  ],
+  "examples": [
+    {
+      "tag": "Sales",
+      "text": "A brilliant salesperson is promoted to sales manager — a job about coaching, forecasting, and admin, not selling. The team loses its best closer and gains a mediocre manager, and there they stay."
+    },
+    {
+      "tag": "Engineering",
+      "text": "The strongest engineer is made a lead, then a manager, until they reach a rung where the work is politics and people rather than code. They stop rising precisely where they stop being good."
+    },
+    {
+      "tag": "Academia",
+      "text": "A gifted researcher becomes a department head and spends their days on budgets and committees; the research that earned the promotion is exactly what the promotion ends."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Peter's Corollary",
+      "text": "Peter and Hull's own follow-on: 'In time, every post tends to be occupied by an employee who is incompetent to carry out its duties.' Given enough time, competence drains upward out of every role."
+    },
+    {
+      "name": "The Dilbert Principle",
+      "text": "Scott Adams's darker 1990s twist: companies deliberately promote their least-competent workers into management, to limit the damage they can do to the actual product."
+    },
+    {
+      "name": "Putt's Law",
+      "text": "Archibald Putt's version for technical organisations: 'Technology is dominated by two types of people — those who understand what they do not manage, and those who manage what they do not understand,' producing a 'competence inversion' at the top."
+    }
+  ],
+  "working": [
+    {
+      "lead": "Promote on the next role, not the last",
+      "text": "assess demonstrated fitness for the job you are promoting into, not brilliance at the one being left behind."
+    },
+    {
+      "lead": "Make mastery a ladder of its own",
+      "text": "offer senior individual-contributor tracks so your best specialists can advance in pay and standing without being forced into management."
+    },
+    {
+      "lead": "Try before you promote",
+      "text": "let people act in the higher role — stretch projects, interim cover — before it is permanent, so a bad fit is reversible."
+    },
+    {
+      "lead": "Allow a graceful step back",
+      "text": "if a promotion misfires, a return to the role someone excelled at should be a normal move, not a humiliation."
+    }
+  ],
+  "limits": "It is a critique of one promotion mechanism, not a theorem that everyone ends up incompetent — plenty of people keep growing into larger roles, and organisations that promote well escape it. It bites hardest where promotion rewards current performance and the next role differs in kind; where those conditions are weak, so is the effect."
 }

@@ -6,10 +6,9 @@
   "statementAccent": "expands so as to fill the time available",
   "meaning": "A task will quietly swell to occupy whatever time you give it. The same job takes an afternoon when it is due at five and a fortnight when it is due in a fortnight.",
   "mechanism": "Work has no fixed size; it expands to fill the time allotted because slack invites polishing, second-guessing, and procedural elaboration. A deadline forces prioritisation — it makes the cost of perfectionism visible — which is why the same task finished in a day and in a month can be hard to tell apart.",
-  "example": "Parkinson's own illustration: an elderly lady of leisure spends an entire day sending one postcard to her niece at Bognor Regis. An hour goes on finding the card, another on hunting for her spectacles, half an hour on searching out the address, an hour and a quarter on composing it, and twenty minutes on deciding whether to take an umbrella to the pillar-box in the next street. A busy person would have posted it on the way to something else.",
   "whyItMatters": "Generous deadlines do not buy quality, they buy elaboration. Shorter timeboxes, smaller batches, and a hard question about what would actually be lost by finishing sooner are usually cheaper than more calendar.",
   "misreadings": "It is an observation about how effort fills available time, not proof that every deadline should be brutal or that rushed work is always as good. Squeeze too hard and quality does suffer. The useful reading is that generous time is not free — it quietly recruits busywork — so constrain deliberately.",
-  "origin": "C. Northcote Parkinson, a naval historian, opened a satirical essay in The Economist on 19 November 1955 with this line as a \"commonplace observation\". The bulk of that essay was actually about something else — his finding that bureaucracies grow at a steady rate regardless of the work to be done, driven by what he called the Law of Multiplication of Subordinates. The essay was expanded into the 1958 book Parkinson's Law: The Pursuit of Progress.",
+  "origin": "The naval historian C. Northcote Parkinson opened a satirical essay in The Economist (19 November 1955), later expanded into a 1957 book, with the line that made his name: 'Work expands so as to fill the time available for its completion.' His evidence was the British Admiralty, whose bureaucracy kept growing as the fleet shrank. The same essay introduced the Law of Triviality; the software world later revived it as 'bike-shedding', a term popularised by Poul-Henning Kamp in 1999.",
   "category": "management",
   "reliability": "Heuristic",
   "provenance": "canon",
@@ -17,14 +16,83 @@
   "popularYear": 1958,
   "namedAfter": "C. Northcote Parkinson",
   "sources": [
-    {"text": "Parkinson, C.N. (19 November 1955). \"Parkinson's Law.\" The Economist. — the original essay.", "type": "primary"},
-    {"text": "Parkinson, C.N. (1958). Parkinson's Law: The Pursuit of Progress. London: John Murray.", "type": "primary"},
-    {"text": "Parkinson's law, Wikipedia.", "url": "https://en.wikipedia.org/wiki/Parkinson%27s_law", "type": "secondary"}
+    {
+      "text": "Parkinson, C. N. (19 November 1955). \"Parkinson's Law.\" The Economist.",
+      "type": "primary"
+    },
+    {
+      "text": "Parkinson, C. N. (1957). Parkinson's Law, or The Pursuit of Progress. John Murray.",
+      "type": "primary"
+    },
+    {
+      "text": "Parkinson's law, Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Parkinson%27s_law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Parkinson%27s_law",
   "related": [
-    {"slug": "hofstadters-law", "kind": "kindred"},
-    {"slug": "the-peter-principle", "kind": "kindred"}
+    {
+      "slug": "hofstadters-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-peter-principle",
+      "kind": "kindred"
+    }
   ],
-  "confusedWith": ["the-peter-principle"]
+  "confusedWith": [
+    "the-peter-principle"
+  ],
+  "examples": [
+    {
+      "tag": "Meetings",
+      "text": "Give a status update an hour on the calendar and it fills the hour; give it fifteen minutes and the same ground is covered. The agenda expands to the slot, not the substance."
+    },
+    {
+      "tag": "Bureaucracy",
+      "text": "Parkinson's own evidence: the British Admiralty's officials kept multiplying even as the number of ships fell, because officials make work for one another regardless of the work to be done."
+    },
+    {
+      "tag": "Software",
+      "text": "A team given six months to ship a small feature will find six months of scope — extra configuration, edge cases, polish — where a two-week deadline would have produced the same core in two weeks."
+    },
+    {
+      "tag": "Everywhere",
+      "text": "The generalised form: data expands to fill the disk available, closets fill with clutter, a bigger office simply accumulates more stuff. Slack invites its own consumption."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Law of Triviality",
+      "text": "Also Parkinson's, and now known as bike-shedding: a group spends time on an issue in inverse proportion to its importance. His committee waves through a £10 million reactor but argues for an hour over a £350 bicycle shed — because everyone understands sheds and no one wants to admit they can't follow the reactor."
+    },
+    {
+      "name": "The rising pyramid",
+      "text": "Parkinson's bureaucratic corollary: an organisation's staff grows by a roughly fixed percentage a year — he estimated five to seven — as officials multiply subordinates and make work for each other, independent of the actual workload."
+    },
+    {
+      "name": "Expenditure rises to meet income",
+      "text": "Parkinson's later financial generalisation: money, like time, is consumed by whatever is available. A raise is absorbed by new commitments; a budget is spent because it exists."
+    }
+  ],
+  "working": [
+    {
+      "lead": "Set deadlines deliberately short",
+      "text": "a tight, credible deadline forces prioritisation; a generous one recruits busywork. Time-box tasks rather than leaving them open-ended."
+    },
+    {
+      "lead": "Shrink the container",
+      "text": "cut the meeting to 25 minutes, the doc to one page, the sprint to a week — the work compresses to fit far more often than quality suffers."
+    },
+    {
+      "lead": "Name the trivial-many trap",
+      "text": "when a group over-debates something small, say so out loud; the Law of Triviality loosens its grip once people see they are bikeshedding."
+    },
+    {
+      "lead": "Spend slack on purpose",
+      "text": "some slack is healthy for recovery and thought — but decide where it goes rather than letting the work quietly absorb all of it."
+    }
+  ],
+  "limits": "It is an observation about how effort fills available time, not proof that every deadline should be brutal or that rushed work equals good work. Past a point, compression genuinely destroys quality, and creative or research work needs unpredictable slack. The law warns that generous time is not free — it quietly funds elaboration — not that less time is always better."
 }

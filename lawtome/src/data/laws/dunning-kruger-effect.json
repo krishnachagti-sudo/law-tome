@@ -6,22 +6,67 @@
   "statementAccent": "the same skills you need to know you are doing it badly",
   "meaning": "People who are weakest at something tend to rate themselves most generously, because the competence that would let them spot their mistakes is exactly the competence they lack.",
   "mechanism": "The knowledge you need to perform a task is largely the same knowledge you need to judge how well you performed it. A beginner lacks both at once, so they cannot see the gaps in their own work — their incompetence is invisible to exactly the faculty that would detect it. Growing competence often brings, with it, an awareness of how much remains unknown.",
-  "example": "A new analyst finishes her first pivot table and reports that she is 'basically fluent' in the tool. Two years later, having learned what it can actually do, she rates herself lower than she did in week one — the same person, more skill, less confidence.",
   "whyItMatters": "Self-assessment is a poor instrument at the low end of any skill, so hiring, promotion, and self-directed learning all need an external check. The honest reading is narrower than the internet's: it is a claim about noisy self-knowledge, not a licence to call people you disagree with stupid.",
   "misreadings": "It does not say the incompetent believe they are the best, nor that experts always doubt themselves — the effect is a modest miscalibration, not the pop-culture claim that 'stupid people think they're geniuses'. It is also not licence to dismiss others' confidence; it is a mirror, most useful pointed at your own certainty.",
-  "origin": "Justin Kruger and David Dunning published \"Unskilled and Unaware of It\" in the Journal of Personality and Social Psychology in 1999, based on Cornell studies of humour, logic, and grammar. The finding is robust, but its interpretation is actively debated: critics argue the pattern is substantially produced by regression to the mean and the better-than-average effect rather than a specific metacognitive deficit.",
+  "origin": "Named for the psychologists Justin Kruger and David Dunning, whose 1999 paper 'Unskilled and Unaware of It' (Journal of Personality and Social Psychology) found that low performers on tests of grammar, logic, and humour systematically overestimated their rank. The familiar 'peak of Mount Stupid' curve is a later internet embellishment, not from the paper — and since 2016 several researchers have argued that much of the effect is a statistical artifact.",
   "category": "psychology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1999,
   "namedAfter": "David Dunning and Justin Kruger",
   "sources": [
-    {"text": "Kruger, J., & Dunning, D. (1999). \"Unskilled and Unaware of It: How Difficulties in Recognizing One's Own Incompetence Lead to Inflated Self-Assessments.\" Journal of Personality and Social Psychology, 77(6), 1121–1134.", "url": "https://doi.org/10.1037/0022-3514.77.6.1121", "type": "primary"},
-    {"text": "Dunning–Kruger effect, Wikipedia. — summarises the statistical-artifact debate.", "url": "https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect", "type": "secondary"}
+    {
+      "text": "Kruger, J. & Dunning, D. (1999). \"Unskilled and Unaware of It: How Difficulties in Recognizing One's Own Incompetence Lead to Inflated Self-Assessments.\" Journal of Personality and Social Psychology, 77(6), 1121–1134.",
+      "url": "https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect",
+      "type": "primary"
+    },
+    {
+      "text": "Gignac, G. E. & Zajenkowski, M. (2020) argue much of the effect is a statistical artefact (autocorrelation / regression to the mean).",
+      "type": "secondary"
+    },
+    {
+      "text": "Dunning–Kruger effect, Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect",
   "related": [
-    {"slug": "the-peter-principle", "kind": "kindred"}
+    {
+      "slug": "the-peter-principle",
+      "kind": "kindred"
+    }
   ],
-  "confusedWith": ["the-peter-principle"]
+  "confusedWith": [
+    "the-peter-principle"
+  ],
+  "examples": [
+    {
+      "tag": "Skills",
+      "text": "In the original studies, students who scored in the bottom quarter on tests of grammar, logic, and humour estimated they were near the top — they lacked the very skill needed to notice they lacked it."
+    },
+    {
+      "tag": "Driving",
+      "text": "Most drivers rate themselves 'above average', which cannot be true for most of them; judging driving well takes the same judgement that driving well requires."
+    },
+    {
+      "tag": "Learning",
+      "text": "A little knowledge feels like a lot: after one course or one article confidence spikes, and deeper study reintroduces doubt as the true size of the field comes into view."
+    }
+  ],
+  "working": [
+    {
+      "lead": "Seek the feedback you can't generate",
+      "text": "the blind spot is structural — you cannot self-detect it — so calibrate against tests, peers, and real outcomes rather than your own confidence."
+    },
+    {
+      "lead": "Distrust early certainty",
+      "text": "the steepest confidence often sits on the shallowest knowledge; treat a fresh, total conviction as a prompt to check, not to act."
+    },
+    {
+      "lead": "Point it inward",
+      "text": "the effect is most useful as a mirror. Asking 'what might I not know that I don't know here?' beats using it to dismiss other people."
+    }
+  ],
+  "limits": "The effect is contested. A prominent line of criticism argues the famous chart is partly a statistical artifact: autocorrelation and regression to the mean will produce the same 'low performers overestimate, high performers underestimate' pattern even from random data, because extreme scorers drift toward the average on any second measure. The genuine cognitive effect, if any, is smaller and subtler than the pop-culture 'the stupid think they're brilliant'. Read it as a caution about self-calibration, not a verdict on other people."
 }
