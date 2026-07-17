@@ -171,6 +171,18 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .rel-item .rrel{font-family:var(--mono);font-size:9.5px;color:var(--accent);flex:none;text-transform:uppercase;letter-spacing:.05em;margin-left:auto;align-self:center}
 .minigraph{background:#141109;border-radius:14px;border:1px solid #2e2818;padding:6px;margin-bottom:22px}
 .minigraph text{font-family:var(--mono);font-size:9px;fill:#c9bf9f}
+/* stacked examples: space multiple .example blocks in one section */
+.example+.example{margin-top:12px}
+/* named variants / corollaries (e.g. the four types of Goodhart) */
+.variants{display:flex;flex-direction:column;gap:14px}
+.variant{border-left:2px solid var(--line-strong);padding:2px 0 2px 16px}
+.variant .vname{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:5px}
+.variant .vtext{font-size:15px;line-height:1.66;color:var(--muted)}
+/* "working with it" playbook */
+.playbook{list-style:none;display:flex;flex-direction:column;gap:12px}
+.playbook li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.66;color:var(--muted)}
+.playbook li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border:1.5px solid var(--accent);border-radius:50%}
+.playbook li b{color:var(--ink);font-weight:600}
 
 /* aside */
 .aside{position:sticky;top:88px;display:flex;flex-direction:column;gap:20px}

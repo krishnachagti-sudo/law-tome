@@ -7,7 +7,9 @@
 // ships a page.
 const RELIABILITY = new Set(['Empirical', 'Heuristic', 'Folk-adage', 'Contested']);
 const PROVENANCE = new Set(['canon', 'coined']);
-const REQUIRED = ['no','slug','name','statement','meaning','example','origin','category','reliability','provenance'];
+// `example` is handled separately below: an entry satisfies it with either the
+// singular `example` string or a non-empty `examples[]` array (the richer form).
+const REQUIRED = ['no','slug','name','statement','meaning','origin','category','reliability','provenance'];
 
 // Rule 1 (filename === slug) is checked against the on-disk filename, which the
 // parsed JSON object does not carry. loadCorpus records the source filename stem
@@ -25,6 +27,10 @@ export function validateCorpus(laws, categories) {
   for (const l of laws) {
     const id = l.slug || l.name || '(unknown)';
     for (const f of REQUIRED) if (!l[f]) errs.push(`${id}: missing required field "${f}"`);
+    // At least one worked example, in either the legacy `example` string or the
+    // richer `examples[]` array.
+    if (!l.example && !(Array.isArray(l.examples) && l.examples.length))
+      errs.push(`${id}: missing required field "example"`);
     if (l.slug && slugs.has(l.slug)) errs.push(`duplicate slug "${l.slug}"`);
     if (l.slug) slugs.add(l.slug);
     // Rule 6: `no` must be unique across the corpus.

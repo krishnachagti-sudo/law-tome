@@ -86,9 +86,44 @@ ${inner}
 
   if (law.meaning) blocks.push(block('In plain English', `        <p class="lead">${escapeHtml(law.meaning)}</p>`));
   if (law.mechanism) blocks.push(block('How it works', `        <p class="prose">${escapeHtml(law.mechanism)}</p>`));
-  if (law.example) blocks.push(block('An example',
-    `        <div class="example"><span class="ex-tag">In practice</span> ${escapeHtml(law.example)}</div>`));
+
+  // Examples: prefer the richer `examples[]` ({tag,text} or plain string) and fall
+  // back to the single legacy `example`. Multiple examples => "Where you'll see it".
+  const exItems = (Array.isArray(law.examples) && law.examples.length)
+    ? law.examples
+    : (law.example ? [law.example] : []);
+  if (exItems.length) {
+    const inner = exItems.map((e) => {
+      const text = typeof e === 'string' ? e : (e && e.text) || '';
+      const tag = (e && typeof e === 'object' && e.tag) ? e.tag : 'In practice';
+      return `        <div class="example"><span class="ex-tag">${escapeHtml(tag)}</span> ${escapeHtml(text)}</div>`;
+    }).join('\n');
+    blocks.push(block(exItems.length > 1 ? "Where you'll see it" : 'An example', inner));
+  }
+
+  // Variants: named sub-forms / corollaries ({name, text}) — e.g. the four types of Goodhart.
+  if (Array.isArray(law.variants) && law.variants.length) {
+    const items = law.variants.map((v) =>
+      `          <div class="variant"><span class="vname">${escapeHtml(v.name)}</span><p class="vtext">${escapeHtml(v.text)}</p></div>`
+    ).join('\n');
+    blocks.push(block('Types & variants', `        <div class="variants">\n${items}\n        </div>`));
+  }
+
   if (law.whyItMatters) blocks.push(block('Why it matters', `        <p class="prose">${escapeHtml(law.whyItMatters)}</p>`));
+
+  // Working with it: a practical playbook. Items are {lead, text} (bold lead) or plain strings.
+  if (Array.isArray(law.working) && law.working.length) {
+    const items = law.working.map((w) => {
+      if (w && typeof w === 'object') {
+        const lead = w.lead ? `<b>${escapeHtml(w.lead)}.</b> ` : '';
+        return `          <li>${lead}${escapeHtml(w.text || '')}</li>`;
+      }
+      return `          <li>${escapeHtml(w)}</li>`;
+    }).join('\n');
+    blocks.push(block('Working with it', `        <ul class="playbook">\n${items}\n        </ul>`));
+  }
+
+  if (law.limits) blocks.push(block('Where it breaks down', `        <p class="prose">${escapeHtml(law.limits)}</p>`));
   if (law.misreadings) blocks.push(block("What it doesn't say", `        <p class="prose">${escapeHtml(law.misreadings)}</p>`));
   if (law.origin) blocks.push(block('Origin', `        <p class="prose">${escapeHtml(law.origin)}</p>`));
 
