@@ -3,7 +3,7 @@
 // verbatim copy of the assets directory. Throws before writing anything if the
 // corpus fails validation, so a corpus that breaks any anti-fabrication rule
 // never ships a page.
-import { mkdir, writeFile, cp } from 'node:fs/promises';
+import { mkdir, writeFile, cp, rm } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadCorpus, loadCategories } from './corpus.mjs';
@@ -24,20 +24,25 @@ export async function buildSite(opts) {
   const errs = validateCorpus(laws, categories);
   if (errs.length) throw new Error('validation failed:\n' + errs.join('\n'));
 
+  // Validation passed — clean the output tree so a rebuild can't serve a ghost
+  // page for a since-removed or renamed law. Done AFTER the validation gate, so a
+  // failed build leaves any previous good output intact.
+  await rm(out, { recursive: true, force: true });
+
   const byslug = Object.fromEntries(laws.map(l => [l.slug, l]));
   const publishedCount = opts.publishedCount ?? laws.length;
 
-  // Home: first 12 laws as the featured rotation.
-  await writePage(join(out, 'index.html'), homePage(laws.slice(0, 12), { publishedCount, base }));
-
+  // Render synchronously, then write concurrently (matters at ~1,400-law scale).
+  const writes = [
+    // Home: first 12 laws as the featured rotation.
+    writePage(join(out, 'index.html'), homePage(laws.slice(0, 12), { publishedCount, base })),
+  ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
-    const law = laws[i];
-    const prev = laws[i - 1];
-    const next = laws[i + 1];
-    const html = lawPage(law, { byslug, categories, base, origin, prev, next, publishedCount });
-    await writePage(join(out, 'laws', law.slug, 'index.html'), html);
+    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount });
+    writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
   }
+  await Promise.all(writes);
 
   await cp(assetsDir, join(out, 'assets'), { recursive: true });
 
