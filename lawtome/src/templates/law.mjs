@@ -79,7 +79,10 @@ export function lawPage(law, ctx = {}) {
 
   // ---- main blocks ------------------------------------------------------
   const blocks = [];
-  const block = (label, inner) => `      <div class="block">
+  // `reveal` marks the whole block for scroll-reveal. Sections that contain their
+  // own card grid (examples, variants) pass reveal=false and let the CARDS reveal
+  // individually (staggered) instead, so nothing double-animates.
+  const block = (label, inner, reveal = true) => `      <div class="block"${reveal ? ' data-reveal' : ''}>
         <div class="lbl">${label}</div>
 ${inner}
       </div>`;
@@ -93,20 +96,21 @@ ${inner}
     ? law.examples
     : (law.example ? [law.example] : []);
   if (exItems.length) {
-    const inner = exItems.map((e) => {
+    const cards = exItems.map((e) => {
       const text = typeof e === 'string' ? e : (e && e.text) || '';
       const tag = (e && typeof e === 'object' && e.tag) ? e.tag : 'In practice';
-      return `        <div class="example"><span class="ex-tag">${escapeHtml(tag)}</span> ${escapeHtml(text)}</div>`;
+      return `          <div class="example" data-reveal><span class="ex-tag">${escapeHtml(tag)}</span> ${escapeHtml(text)}</div>`;
     }).join('\n');
-    blocks.push(block(exItems.length > 1 ? "Where you'll see it" : 'An example', inner));
+    const grid = `        <div class="examples-grid">\n${cards}\n        </div>`;
+    blocks.push(block(exItems.length > 1 ? "Where you'll see it" : 'An example', grid, false));
   }
 
   // Variants: named sub-forms / corollaries ({name, text}) — e.g. the four types of Goodhart.
   if (Array.isArray(law.variants) && law.variants.length) {
     const items = law.variants.map((v) =>
-      `          <div class="variant"><span class="vname">${escapeHtml(v.name)}</span><p class="vtext">${escapeHtml(v.text)}</p></div>`
+      `          <div class="variant" data-reveal><span class="vname">${escapeHtml(v.name)}</span><p class="vtext">${escapeHtml(v.text)}</p></div>`
     ).join('\n');
-    blocks.push(block('Types & variants', `        <div class="variants">\n${items}\n        </div>`));
+    blocks.push(block('Types & variants', `        <div class="variants">\n${items}\n        </div>`, false));
   }
 
   if (law.whyItMatters) blocks.push(block('Why it matters', `        <p class="prose">${escapeHtml(law.whyItMatters)}</p>`));
@@ -255,13 +259,24 @@ ${prevnext}</div>
   }
   const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqEntities };
 
-  // ---- copy-button script (ported from the prototype) -------------------
+  // ---- page scripts: copy-citation + reading-progress + scroll-reveal ----
+  // Reveal is a pure enhancement: it only runs when <html> already carries `.anim`
+  // (set in <head> only when JS is on AND motion is allowed). Otherwise every
+  // [data-reveal] element is fully visible via CSS with no dependency on this code.
   const scripts = `<script>
 document.getElementById('copy').onclick=function(){
   var t=document.getElementById('cite').textContent;
   var done=function(){var s=document.getElementById('copy-t');s.textContent='Copied';setTimeout(function(){s.textContent='Copy citation'},1600)};
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}else{done()}
 };
+(function(){
+  var bar=document.getElementById('progress');
+  if(bar){var upd=function(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.transform='scaleX('+(m>0?Math.min(1,h.scrollTop/m):0)+')';};addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();}
+  if(document.documentElement.classList.contains('anim')&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -6% 0px',threshold:0.06});
+    var els=document.querySelectorAll('[data-reveal]');for(var i=0;i<els.length;i++)io.observe(els[i]);
+  }
+})();
 </script>`;
 
   return (
@@ -274,6 +289,7 @@ document.getElementById('copy').onclick=function(){
       jsonld: [definedTerm, article, breadcrumb, faq],
     }) +
     sprite() +
+    '<div class="progress" id="progress" aria-hidden="true"></div>\n' +
     header({ base, active: 'browse', count: ctx.publishedCount }) +
     entry +
     layout +

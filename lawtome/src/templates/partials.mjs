@@ -97,7 +97,10 @@ export function head({ title, description, base = '/', canonical, og, jsonld } =
   out.push(`<link rel="stylesheet" href="${base}assets/icons/tabler.css">`);
   // Inline theme-init (mirrors common.js): set data-theme before first paint so
   // dark-mode readers never flash the light theme. common.js is deferred below.
-  out.push(`<script>(function(){var t;try{t=localStorage.getItem('lt-theme')}catch(e){}if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.setAttribute('data-theme','dark')})();</script>`);
+  // Theme-init (flash-free dark mode) + reveal-arm: add `.anim` before first paint
+  // so scroll-reveal never flashes, but ONLY when motion is allowed and IO exists —
+  // otherwise content stays fully visible with no JS dependency.
+  out.push(`<script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('lt-theme')}catch(e){}if(t)d.setAttribute('data-theme',t);else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)d.setAttribute('data-theme','dark');try{if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)d.classList.add('anim')}catch(e){}})();</script>`);
   out.push(`<script defer src="${base}assets/common.js"></script>`);
   if (Array.isArray(jsonld)) for (const block of jsonld) out.push(jsonLd(block));
   out.push('</head>');

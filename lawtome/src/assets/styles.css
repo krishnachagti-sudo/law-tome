@@ -1,6 +1,6 @@
 :root{
   --bg:#ebe4d1; --surface:#f9f4e9; --surface-2:#f1eadb;
-  --ink:#1f1c16; --muted:#6a6454; --faint:#98917f;
+  --ink:#1f1c16; --muted:#6a6454; --faint:#98917f; --read:#3f3a2c;
   --line:#ddd4be; --line-strong:#c9bea3;
   --accent:#b0392c; --accent-ink:#8a2c22; --accent-soft:#f1e2dc;
   --gold:#a9843c; --gold-soft:#efe4cb;
@@ -9,7 +9,7 @@
 }
 html[data-theme="dark"]{
   --bg:#17130b; --surface:#201b11; --surface-2:#271f13;
-  --ink:#f1e7cf; --muted:#a89e84; --faint:#6e6650;
+  --ink:#f1e7cf; --muted:#a89e84; --faint:#6e6650; --read:#cdc3a6;
   --line:#2e2818; --line-strong:#3c341f;
   --accent:#e05a44; --accent-ink:#f0b7a9; --accent-soft:#2c1c15;
   --gold:#d8a63f; --gold-soft:#2c2413;
@@ -149,8 +149,8 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .lbl::after{content:"";flex:1;height:1px;background:var(--line)}
 .block{margin-bottom:42px}
 .lead{font-family:var(--serif);font-size:21px;line-height:1.55;color:var(--ink)}
-.prose{font-size:15.5px;line-height:1.72;color:var(--muted)}
-.prose b{color:var(--ink);font-weight:500}
+.prose{font-size:16.5px;line-height:1.78;color:var(--read)}
+.prose b{color:var(--ink);font-weight:600}
 .example{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;font-size:15.5px;line-height:1.66;color:var(--ink)}
 .example .ex-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:9px}
 .sources{list-style:none}
@@ -171,18 +171,36 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .rel-item .rrel{font-family:var(--mono);font-size:9.5px;color:var(--accent);flex:none;text-transform:uppercase;letter-spacing:.05em;margin-left:auto;align-self:center}
 .minigraph{background:#141109;border-radius:14px;border:1px solid #2e2818;padding:6px;margin-bottom:22px}
 .minigraph text{font-family:var(--mono);font-size:9px;fill:#c9bf9f}
-/* stacked examples: space multiple .example blocks in one section */
-.example+.example{margin-top:12px}
-/* named variants / corollaries (e.g. the four types of Goodhart) */
-.variants{display:flex;flex-direction:column;gap:14px}
-.variant{border-left:2px solid var(--line-strong);padding:2px 0 2px 16px}
-.variant .vname{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:5px}
-.variant .vtext{font-size:15px;line-height:1.66;color:var(--muted)}
-/* "working with it" playbook */
-.playbook{list-style:none;display:flex;flex-direction:column;gap:12px}
-.playbook li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.66;color:var(--muted)}
-.playbook li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border:1.5px solid var(--accent);border-radius:50%}
+/* worked examples as a card grid (was a stack of full-width boxes) */
+.examples-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:14px}
+.examples-grid .example{margin:0;transition:border-color .2s,transform .2s}
+.examples-grid .example:hover{border-color:var(--line-strong);transform:translateY(-2px)}
+.example .ex-tag{color:var(--accent)}
+/* named variants / corollaries as numbered cards (e.g. the four types of Goodhart) */
+.variants{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;counter-reset:variant}
+.variant{position:relative;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px 16px 18px;counter-increment:variant;transition:border-color .2s,transform .2s}
+.variant:hover{transform:translateY(-2px)}
+.variant .vname{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.variant .vname::before{content:counter(variant,decimal-leading-zero);font-size:10px;color:var(--faint);border:1px solid var(--line-strong);border-radius:5px;padding:1px 5px}
+.variant .vtext{font-size:15px;line-height:1.66;color:var(--read)}
+/* "working with it" playbook — numbered steps */
+.playbook{list-style:none;display:flex;flex-direction:column;gap:12px;counter-reset:step}
+.playbook li{position:relative;padding-left:40px;font-size:16px;line-height:1.68;color:var(--read);counter-increment:step;min-height:26px;display:flex;align-items:center;flex-wrap:wrap}
+.playbook li::before{content:counter(step);position:absolute;left:0;top:1px;width:26px;height:26px;display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--accent);background:var(--accent-soft);border-radius:8px}
 .playbook li b{color:var(--ink);font-weight:600}
+
+/* ---- scroll-reveal + reading progress ----
+   The hidden state is scoped to `.anim`, which graph/law scripts add to <html>
+   ONLY when JS runs AND the visitor hasn't asked for reduced motion. So no-JS and
+   reduced-motion visitors always get fully-visible content — the animation is a
+   pure enhancement, never a prerequisite for reading. */
+.anim [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.22,.7,.2,1),transform .6s cubic-bezier(.22,.7,.2,1)}
+.anim [data-reveal].in{opacity:1;transform:none}
+.anim .examples-grid .example:nth-child(2),.anim .variants .variant:nth-child(2){transition-delay:.06s}
+.anim .examples-grid .example:nth-child(3),.anim .variants .variant:nth-child(3){transition-delay:.12s}
+.anim .examples-grid .example:nth-child(4),.anim .variants .variant:nth-child(4){transition-delay:.18s}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--accent),var(--gold));z-index:60;transition:transform .08s linear;pointer-events:none}
+@media (prefers-reduced-motion: reduce){.progress{display:none}}
 
 /* aside */
 .aside{position:sticky;top:88px;display:flex;flex-direction:column;gap:20px}
@@ -224,7 +242,7 @@ html[data-theme="dark"] .btn.solid{color:#17130b}
 .narrow .lede{font-family:var(--serif);font-weight:400;font-size:18.5px;line-height:1.6;color:var(--muted);max-width:none;margin:18px 0 6px}
 .narrow .lede b{color:var(--ink);font-weight:600}
 .narrow h2{font-family:var(--serif);font-weight:600;font-size:24px;letter-spacing:-.01em;color:var(--ink);margin:40px 0 13px}
-.narrow p{font-size:16px;line-height:1.76;color:var(--muted);margin-bottom:16px}
+.narrow p{font-size:16.5px;line-height:1.8;color:var(--read);margin-bottom:16px}
 .narrow p b{color:var(--ink);font-weight:600}
 .narrow a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
 .narrow code{font-family:var(--mono);font-size:.85em;background:var(--surface-2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--accent-ink)}
