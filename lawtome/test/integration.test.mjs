@@ -36,6 +36,24 @@ test('internalLinkErrors resolves a directory URL to index.html', async () => {
   await rm(out, { recursive:true, force:true });
 });
 
+test('internalLinkErrors flags a dangling src= file link (script/img)', async () => {
+  const out = await mkdtemp(join(tmpdir(),'lt-'));
+  await mkdir(join(out,'assets'), { recursive:true });
+  await writeFile(join(out,'assets','present.js'), 'ok', 'utf8');
+  // present.js exists; missing.js and ghost.png do not. Exercises src= extraction
+  // AND non-dir file resolution (a file link, not a trailing-slash directory URL).
+  await writeFile(join(out,'index.html'),
+    '<script src="/lawtome/assets/present.js"></script>'
+    + '<script src="/lawtome/assets/missing.js"></script>'
+    + "<img src='/lawtome/assets/ghost.png'>", 'utf8');
+  const errs = await internalLinkErrors(out, '/lawtome/');
+  assert.deepEqual(errs.sort(), [
+    'index.html -> /lawtome/assets/ghost.png (no such file)',
+    'index.html -> /lawtome/assets/missing.js (no such file)',
+  ]);
+  await rm(out, { recursive:true, force:true });
+});
+
 test('internalLinkErrors ignores external, mailto, anchor, and api endpoints', async () => {
   const out = await mkdtemp(join(tmpdir(),'lt-'));
   await writeFile(join(out,'index.html'),

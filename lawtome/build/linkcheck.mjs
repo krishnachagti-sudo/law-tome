@@ -42,7 +42,9 @@ function linkToFile(link, base) {
 // against any `api/` path slipping through in an href by skipping it below.)
 function extractLinks(html) {
   const links = [];
-  const re = /\b(?:href|src)\s*=\s*"([^"]*)"/gi;
+  // Match single- OR double-quoted values, so a future template emitting
+  // href='...' can never silently drop out of the gate (a latent false negative).
+  const re = /\b(?:href|src)\s*=\s*["']([^"']*)["']/gi;
   let m;
   while ((m = re.exec(html)) !== null) links.push(m[1]);
   return links;
@@ -62,10 +64,11 @@ function extractLinks(html) {
  * @returns {Promise<string[]>}
  */
 export async function internalLinkErrors(outDir, base) {
-  const files = (await walk(outDir)).filter(f => f.endsWith('.html'));
+  const all = await walk(outDir);                       // one crawl, reused below
+  const files = all.filter(f => f.endsWith('.html'));
   // Set of every emitted file, as site-root-relative POSIX paths, for O(1) lookup.
   const emitted = new Set(
-    (await walk(outDir)).map(f => relative(outDir, f).split(/[\\/]/).join('/')),
+    all.map(f => relative(outDir, f).split(/[\\/]/).join('/')),
   );
   const errors = [];
   for (const file of files) {
