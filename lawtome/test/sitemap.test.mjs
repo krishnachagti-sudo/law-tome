@@ -34,6 +34,12 @@ test('XML-escapes an ampersand in a path', () => {
   assert.doesNotMatch(esc, /&b=2/);
 });
 
+test('XML-escapes <, > and " in a path (not just &)', () => {
+  const esc = buildSitemap(['x/?q=<a>"b"&c'], 'https://conyso.com/lawtome/');
+  assert.match(esc, /q=&lt;a&gt;&quot;b&quot;&amp;c/);
+  assert.doesNotMatch(esc, /q=<a>"b"/);   // no raw <, >, " survive inside the loc
+});
+
 // --- build integration: site files (sitemap.xml, robots.txt, _redirects) ---
 import { existsSync } from 'node:fs';
 import { readFile, writeFile, mkdtemp, rm, cp } from 'node:fs/promises';

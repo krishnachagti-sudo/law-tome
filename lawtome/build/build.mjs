@@ -111,8 +111,11 @@ export async function buildSite(opts) {
   // has none, so the file is just a header comment — its presence proves the hook.
   const redirects = [];
   for (const law of laws) {
-    for (const from of law.redirectFrom || []) {
-      redirects.push(`${base}${from}  ${base}laws/${law.slug}/  301`);
+    // Array.isArray guard: a non-array redirectFrom (a stray string would iterate
+    // characters; a number/object would throw and fail the build) yields no lines.
+    const from = Array.isArray(law.redirectFrom) ? law.redirectFrom : [];
+    for (const old of from) {
+      redirects.push(`${base}${old}  ${base}laws/${law.slug}/  301`);
     }
   }
   const redirectsBody = '# Netlify-style redirect map (from  to  status). Seeded from law.redirectFrom.\n'
