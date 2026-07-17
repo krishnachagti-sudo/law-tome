@@ -15,9 +15,22 @@
 //   head({...}) + sprite() + header({...}) + '<main>…</main>' + footer({...})
 // head() opens <!doctype>/<html>/<head>/<body>; footer() closes </body>/</html>.
 
-/** Serialise a JSON-LD object into a <script type="application/ld+json"> tag. */
+/** Escape a string for safe interpolation into HTML text or a double-quoted attribute. */
+export function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+/**
+ * Serialise a JSON-LD object into a <script type="application/ld+json"> tag.
+ * Every `<` in the serialised JSON is replaced with its unicode escape, so a
+ * corpus value containing "</script>" cannot close the element and inject markup.
+ * application/ld+json is data (not executed JS), so escaping `<` is necessary and
+ * sufficient — no U+2028/U+2029 handling needed.
+ */
 export function jsonLd(obj) {
-  return `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
+  return `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
 }
 
 /**
@@ -25,7 +38,7 @@ export function jsonLd(obj) {
  * @param {object} o
  * @param {string} o.title        document title (required)
  * @param {string} [o.description] meta description; emitted only when given
- * @param {string} [o.base='/']   site base path, e.g. '/lawtome/'
+ * @param {string} [o.base='/']   site base path — MUST end with '/', e.g. '/lawtome/'
  * @param {string} [o.canonical]  canonical URL; emitted only when given
  * @param {object} [o.og]         Open Graph fields {title,description,image,type}
  * @param {object[]} [o.jsonld]   array of JSON-LD objects; each emitted via jsonLd()
@@ -37,15 +50,15 @@ export function head({ title, description, base = '/', canonical, og, jsonld } =
     '<head>',
     '<meta charset="utf-8">',
     '<meta name="viewport" content="width=device-width, initial-scale=1">',
-    `<title>${title}</title>`,
+    `<title>${escapeHtml(title)}</title>`,
   ];
-  if (description) out.push(`<meta name="description" content="${description}">`);
-  if (canonical) out.push(`<link rel="canonical" href="${canonical}">`);
+  if (description) out.push(`<meta name="description" content="${escapeHtml(description)}">`);
+  if (canonical) out.push(`<link rel="canonical" href="${escapeHtml(canonical)}">`);
   if (og) {
-    if (og.title) out.push(`<meta property="og:title" content="${og.title}">`);
-    if (og.description) out.push(`<meta property="og:description" content="${og.description}">`);
-    if (og.image) out.push(`<meta property="og:image" content="${og.image}">`);
-    if (og.type) out.push(`<meta property="og:type" content="${og.type}">`);
+    if (og.title) out.push(`<meta property="og:title" content="${escapeHtml(og.title)}">`);
+    if (og.description) out.push(`<meta property="og:description" content="${escapeHtml(og.description)}">`);
+    if (og.image) out.push(`<meta property="og:image" content="${escapeHtml(og.image)}">`);
+    if (og.type) out.push(`<meta property="og:type" content="${escapeHtml(og.type)}">`);
   }
   // Self-hosted stylesheets — replaces the prototype's Google-Fonts + jsDelivr
   // <link>s. Fonts are pulled in by the @font-face rules inside styles.css.
@@ -53,7 +66,7 @@ export function head({ title, description, base = '/', canonical, og, jsonld } =
   out.push(`<link rel="stylesheet" href="${base}assets/icons/tabler.css">`);
   // Inline theme-init (mirrors common.js): set data-theme before first paint so
   // dark-mode readers never flash the light theme. common.js is deferred below.
-  out.push(`<script>(function(){try{var t=localStorage.getItem('lt-theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.setAttribute('data-theme','dark')}catch(e){}})();</script>`);
+  out.push(`<script>(function(){var t;try{t=localStorage.getItem('lt-theme')}catch(e){}if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.setAttribute('data-theme','dark')})();</script>`);
   out.push(`<script defer src="${base}assets/common.js"></script>`);
   if (Array.isArray(jsonld)) for (const block of jsonld) out.push(jsonLd(block));
   out.push('</head>');

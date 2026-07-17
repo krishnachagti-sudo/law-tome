@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { head, header, footer, sprite, jsonLd } from '../src/templates/partials.mjs';
+import { head, header, footer, sprite, jsonLd, escapeHtml } from '../src/templates/partials.mjs';
 test('head self-hosts css/js/fonts (no third-party CDN) + title + canonical', () => {
   const h = head({ title:'X', base:'/lawtome/', canonical:'https://conyso.com/lawtome/x/' });
   assert.match(h, /assets\/styles\.css/);
@@ -76,4 +76,29 @@ test('head opens the document/body and footer closes them (composable)', () => {
 test('footer injects page scripts before </body>', () => {
   const f = footer({ scripts:'<script>1</script>' });
   assert.match(f, /<script>1<\/script>\s*<\/body>/);
+});
+
+// --- escaping (guards the shared HTML layer against corpus text that breaks markup) ---
+
+test('escapeHtml encodes the five HTML-significant characters', () => {
+  assert.equal(escapeHtml(`a & b < c > d " e ' f`), 'a &amp; b &lt; c &gt; d &quot; e &#39; f');
+});
+
+test('jsonLd neutralises a </script> breakout in a value', () => {
+  const j = jsonLd({ name: '</script><script>alert(document.cookie)</script>' });
+  assert.doesNotMatch(j, /<\/script><script>/);   // the payload cannot close the ld+json element
+  assert.match(j, /\\u003c\/script>/);             // < is emitted as its < escape
+  assert.deepEqual(JSON.parse(j.replace(/^<script[^>]*>/, '').replace(/<\/script>$/, '')).name,
+    '</script><script>alert(document.cookie)</script>'); // still valid JSON that round-trips
+});
+
+test('head escapes double-quotes in attribute values (no attribute breakout)', () => {
+  const h = head({ title:'X', base:'/lawtome/', description:'he said "hi" & bye', og:{ title:'q"q' } });
+  assert.doesNotMatch(h, /content="he said "hi"/);          // the bare " would end the attribute
+  assert.match(h, /content="he said &quot;hi&quot; &amp; bye">/);
+  assert.match(h, /property="og:title" content="q&quot;q">/);
+});
+
+test('head escapes < & in the title', () => {
+  assert.match(head({ title:'A <b> & C', base:'/lawtome/' }), /<title>A &lt;b&gt; &amp; C<\/title>/);
 });
