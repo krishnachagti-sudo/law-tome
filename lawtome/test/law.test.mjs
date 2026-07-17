@@ -75,3 +75,10 @@ test('accent containing a $ replacement pattern is not mangled', () => {
   const h = lawPage({ ...law, statement:'x $& y', statementAccent:'$& y' }, ctx);
   assert.match(h, /<span class="accent">\$&amp; y<\/span>/);
 });
+test('accent that collides with an escaped entity does not corrupt it', () => {
+  // "R&D amp" escapes to "R&amp;D amp"; a naive replace of the accent "amp"
+  // would match inside "&amp;" and split the entity. Split-on-raw wraps the real one.
+  const h = lawPage({ ...law, statement:'R&D amp', statementAccent:'amp' }, ctx);
+  assert.match(h, /R&amp;D <span class="accent">amp<\/span>/);
+  assert.doesNotMatch(h, /&<span class="accent">amp<\/span>;/);
+});

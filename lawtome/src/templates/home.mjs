@@ -29,11 +29,15 @@ import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
  * Mirrors law.mjs renderStatement so the hero highlight matches the law page.
  */
 function renderStatement(statement, accent) {
-  const esc = escapeHtml(statement);
-  if (!accent) return esc;
-  const escAccent = escapeHtml(accent);
-  // Function replacement (not a string) so $-sequences in escAccent are literal.
-  return esc.replace(escAccent, () => `<span class="accent">${escAccent}</span>`);
+  if (!accent) return escapeHtml(statement);
+  const i = statement.indexOf(accent);
+  if (i === -1) return escapeHtml(statement);
+  // Split the RAW statement at the RAW accent, then escape each part. This can
+  // never match the accent inside an entity produced by escaping (e.g. "amp"
+  // within "&amp;"), and sidesteps String.replace's $-pattern handling entirely.
+  return escapeHtml(statement.slice(0, i)) +
+    `<span class="accent">${escapeHtml(accent)}</span>` +
+    escapeHtml(statement.slice(i + accent.length));
 }
 
 export function homePage(featuredLaws = [], { publishedCount, base = '/' } = {}) {

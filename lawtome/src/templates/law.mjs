@@ -26,18 +26,19 @@ function reliabilityClass(reliability) {
 }
 
 /**
- * Escape the statement, then wrap the accent phrase in <span class="accent">.
- * The accent is matched against the ESCAPED statement using the ESCAPED accent,
- * so special characters in either are handled consistently. Absent accent =>
- * plain escaped statement.
+ * Wrap the accent phrase in <span class="accent"> within the statement. Splits the
+ * RAW statement at the RAW accent, then escapes each part — so the accent can never
+ * match inside an HTML entity produced by escaping (e.g. "amp" within "&amp;"), and
+ * String.replace's $-pattern handling is avoided. Absent accent => plain escaped.
  */
 function renderStatement(law) {
-  const esc = escapeHtml(law.statement);
-  if (!law.statementAccent) return esc;
-  const escAccent = escapeHtml(law.statementAccent);
-  // Function replacement (not a string): a string replacement would interpret
-  // $$, $&, $` and $' inside escAccent (escapeHtml does not touch `$`).
-  return esc.replace(escAccent, () => `<span class="accent">${escAccent}</span>`);
+  const { statement, statementAccent } = law;
+  if (!statementAccent) return escapeHtml(statement);
+  const i = statement.indexOf(statementAccent);
+  if (i === -1) return escapeHtml(statement);
+  return escapeHtml(statement.slice(0, i)) +
+    `<span class="accent">${escapeHtml(statementAccent)}</span>` +
+    escapeHtml(statement.slice(i + statementAccent.length));
 }
 
 /** A single "At a glance" row, only when the value is present. */
