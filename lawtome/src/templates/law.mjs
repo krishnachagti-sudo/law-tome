@@ -343,14 +343,16 @@ document.getElementById('copy').onclick=function(){
     var apply=function(){
       ticking=false;
       var h=document.documentElement,y=window.scrollY||h.scrollTop,mx=h.scrollHeight-h.clientHeight;
-      if(toc)toc.style.setProperty('--scroll', mx>0?(y/mx).toFixed(4):0);
       // active = section whose heading sits at/above the viewport middle; at the
       // very bottom, force the last section so short trailing sections still light.
       var atBottom=(y+h.clientHeight)>=(mx-2),cur;
       if(atBottom){cur=secs[secs.length-1];}
       else{var line=y+window.innerHeight*0.42;cur=secs[0];for(var i=0;i<secs.length;i++){if(secs[i].el.getBoundingClientRect().top+y<=line)cur=secs[i];}}
       for(var j=0;j<links.length;j++)links[j].classList.remove('on');
-      if(cur)cur.a.classList.add('on');
+      if(cur){cur.a.classList.add('on');
+        // run the rail fill down to the centre of the active item
+        if(toc)toc.style.setProperty('--fill',(cur.a.offsetTop+cur.a.offsetHeight/2)+'px');
+      }
     };
     var onScroll=function(){ if(!ticking){ticking=true;requestAnimationFrame(apply);} };
     addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);apply();

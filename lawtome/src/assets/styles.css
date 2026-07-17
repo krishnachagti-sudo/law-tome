@@ -163,8 +163,10 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
    an accent fill (--scroll, 0..1, set on scroll) travels down it, and the active
    item grows + turns accent. The active state is driven by scroll position in JS,
    so it tracks instantly rather than lagging behind an IntersectionObserver. */
-.toc{position:sticky;top:76px;align-self:start;height:calc(100vh - 92px);display:flex;flex-direction:column;justify-content:space-between;gap:4px;padding:6px 0 6px 18px;border-left:2px solid var(--line);--scroll:0}
-.toc::before{content:"";position:absolute;left:-2px;top:0;width:2px;height:calc(var(--scroll) * 100%);background:var(--accent)}
+.toc{position:sticky;top:112px;align-self:start;height:calc(100vh - 150px);display:flex;flex-direction:column;justify-content:space-between;gap:6px;padding:10px 0 12px 18px;border-left:2px solid var(--line);--fill:0px}
+/* the accent line runs down to the CURRENT item (its centre), so the indicator
+   tracks the active section name rather than raw scroll position */
+.toc::before{content:"";position:absolute;left:-2px;top:0;width:2px;height:var(--fill);background:var(--accent);transition:height .3s cubic-bezier(.2,.7,.2,1)}
 .toc a{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--faint);padding:5px 0;line-height:1.3;transition:color .3s ease,font-size .35s cubic-bezier(.2,.7,.2,1),padding .3s ease,font-weight .3s}
 .toc a:hover{color:var(--muted)}
 .toc a.on{color:var(--accent);font-size:15px;font-weight:700;padding-left:5px}
@@ -200,9 +202,13 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .rel-card.against:hover{border-color:var(--gold)}
 .rel-card.against .rc-kind{color:var(--gold)}
 .rel-card.against .rc-top::before{content:"\21C4";font-family:var(--mono);color:var(--gold);margin-right:auto}
-.lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:11px}
+.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:12px}
 .lbl::after{content:"";flex:1;height:1px;background:var(--line)}
-.block{margin-bottom:42px}
+/* numbered section labels give the long article visible structure */
+.entry-layout main{counter-reset:sec}
+.entry-layout main .block>.lbl::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);font-size:10px;letter-spacing:.04em;color:var(--faint);border:1px solid var(--line-strong);border-radius:6px;padding:3px 7px}
+.block{margin-bottom:60px}
+.block:last-child{margin-bottom:0}
 .lead{font-family:var(--serif);font-size:21px;line-height:1.55;color:var(--ink)}
 /* drop cap on the opening (plain-English) paragraph */
 .lead::first-letter{float:left;font-family:var(--serif);font-weight:600;font-size:3.5em;line-height:.8;margin:5px 12px 0 0;color:var(--accent)}
@@ -229,13 +235,13 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .minigraph{background:#141109;border-radius:14px;border:1px solid #2e2818;padding:6px;margin-bottom:22px}
 .minigraph text{font-family:var(--mono);font-size:9px;fill:#c9bf9f}
 /* worked examples + variants as fixed 2-column card grids (2×2 for four items) */
-.examples-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.examples-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 @media(max-width:640px){.examples-grid{grid-template-columns:1fr}}
 .examples-grid .example{margin:0;transition:border-color .2s,transform .2s}
 .examples-grid .example:hover{border-color:var(--line-strong);transform:translateY(-2px)}
 .example .ex-tag{color:var(--accent)}
 /* named variants / corollaries as numbered cards (e.g. the four types of Goodhart) */
-.variants{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;counter-reset:variant}
+.variants{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;counter-reset:variant}
 @media(max-width:640px){.variants{grid-template-columns:1fr}}
 .variant{position:relative;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:16px 18px 16px 18px;counter-increment:variant;transition:border-color .2s,transform .2s}
 .variant:hover{transform:translateY(-2px)}
