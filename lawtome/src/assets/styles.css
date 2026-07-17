@@ -159,12 +159,15 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .stat .s-k{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint)}
 .stat .s-v{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--ink);line-height:1.12;letter-spacing:-.01em}
 
-/* left contents rail (scroll-spy). The active item grows and turns accent as the
-   matching section scrolls into view, so the rail tracks reading position. */
-.toc{position:sticky;top:96px;align-self:start;display:flex;flex-direction:column;gap:3px}
-.toc a{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--faint);padding:7px 0 7px 16px;border-left:2px solid var(--line);line-height:1.3;transform-origin:left center;transition:color .35s ease,border-color .35s ease,font-size .35s cubic-bezier(.2,.7,.2,1),padding .35s ease,font-weight .35s}
-.toc a:hover{color:var(--muted);border-color:var(--line-strong)}
-.toc a.on{color:var(--accent);border-color:var(--accent);font-size:15px;font-weight:700;padding-left:20px}
+/* left contents rail. A full-height track line runs the length of the viewport;
+   an accent fill (--scroll, 0..1, set on scroll) travels down it, and the active
+   item grows + turns accent. The active state is driven by scroll position in JS,
+   so it tracks instantly rather than lagging behind an IntersectionObserver. */
+.toc{position:sticky;top:80px;align-self:start;height:calc(100vh - 104px);display:flex;flex-direction:column;justify-content:center;gap:4px;padding-left:18px;border-left:2px solid var(--line);--scroll:0}
+.toc::before{content:"";position:absolute;left:-2px;top:0;width:2px;height:calc(var(--scroll) * 100%);background:var(--accent)}
+.toc a{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--faint);padding:5px 0;line-height:1.3;transition:color .3s ease,font-size .35s cubic-bezier(.2,.7,.2,1),padding .3s ease,font-weight .3s}
+.toc a:hover{color:var(--muted)}
+.toc a.on{color:var(--accent);font-size:15px;font-weight:700;padding-left:5px}
 
 /* right-rail relationship mini-map */
 .minigraph-svg{display:block;width:100%;height:auto;overflow:visible}
@@ -172,14 +175,15 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .mg-link:hover{text-decoration:underline}
 .mg-link i{font-size:14px}
 
-/* sources as cards (replaces the numbered list) */
-.source-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;list-style:none}
-@media(max-width:640px){.source-cards{grid-template-columns:1fr}}
-.source-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:15px 16px;display:flex;flex-direction:column;gap:9px}
-.source-card .snum{font-family:var(--mono);font-size:10px;color:var(--accent);border:1px solid var(--line-strong);border-radius:6px;padding:2px 7px;align-self:flex-start}
-.source-card .stext{font-size:13.5px;line-height:1.55;color:var(--read)}
-.source-card .stext a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
-.source-card .stype{align-self:flex-start;font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);border:1px solid var(--line);border-radius:4px;padding:2px 6px;margin-top:auto}
+/* sources — understated reference list (deliberately quiet: small, muted, thin
+   rules, no card chrome) so citations stay available without competing with the body */
+.sources-list{list-style:none;display:flex;flex-direction:column}
+.sources-list li{display:flex;gap:10px;align-items:baseline;padding:8px 0;border-top:1px solid var(--line);font-size:12.5px;line-height:1.5;color:var(--muted)}
+.sources-list li:first-child{border-top:none}
+.sources-list .snum{font-family:var(--mono);font-size:10.5px;color:var(--faint);flex:none;min-width:14px}
+.sources-list .stext a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.sources-list .stext a:hover{color:var(--accent)}
+.sources-list .stype{font-family:var(--mono);font-size:8.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);flex:none;align-self:center;border:1px solid var(--line);border-radius:3px;padding:1px 4px}
 /* related laws as cards (replaces the row list) */
 .rel-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 @media(max-width:640px){.rel-cards{grid-template-columns:1fr}}
@@ -190,6 +194,12 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .rel-card .rc-kind{color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
 .rel-card .rc-name{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);line-height:1.15}
 .rel-card .rc-say{font-size:13.5px;line-height:1.5;color:var(--muted);font-style:italic}
+/* "in tension with" laws — a visually distinct treatment from kindred relations:
+   a dashed, gold-keyed card that reads as opposition rather than kinship */
+.rel-card.against{border-style:dashed;border-left-width:3px;border-left-color:var(--gold)}
+.rel-card.against:hover{border-color:var(--gold)}
+.rel-card.against .rc-kind{color:var(--gold)}
+.rel-card.against .rc-top::before{content:"\21C4";font-family:var(--mono);color:var(--gold);margin-right:auto}
 .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:11px}
 .lbl::after{content:"";flex:1;height:1px;background:var(--line)}
 .block{margin-bottom:42px}

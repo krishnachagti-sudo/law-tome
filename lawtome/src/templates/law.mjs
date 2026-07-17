@@ -150,9 +150,9 @@ ${inner}
         ? `<a href="${escapeHtml(s.url)}">${escapeHtml(s.text)}</a>`
         : escapeHtml(s.text);
       const type = s.type ? `<span class="stype">${escapeHtml(s.type)}</span>` : '';
-      return `          <li class="source-card"><span class="snum">${i + 1}</span><span class="stext">${label}</span>${type}</li>`;
+      return `          <li><span class="snum">${i + 1}</span><span class="stext">${label}</span>${type}</li>`;
     }).join('\n');
-    blocks.push(block('Sources', `        <ol class="source-cards">\n${items}\n        </ol>`));
+    blocks.push(block('Sources', `        <ol class="sources-list">\n${items}\n        </ol>`));
   }
 
   if (Array.isArray(law.confusedWith) && law.confusedWith.length) {
@@ -164,19 +164,31 @@ ${inner}
     blocks.push(block('Commonly confused with', `        <div class="confused">\n${links}\n        </div>`));
   }
 
+  // Related laws split into kindred vs. opposing ("in tension"). A relation is
+  // treated as opposition when its kind reads that way; the two get distinct UIs.
   if (Array.isArray(law.related) && law.related.length) {
-    const items = law.related.map((rel) => {
+    const isAgainst = (k) => /oppos|contra|tension|versus|counter|against|rival/i.test(k || '');
+    const relCard = (rel, against) => {
       const r = byslug[rel.slug] || {};
       const name = escapeHtml(r.name || rel.slug);
       const say = r.statement ? `<div class="rc-say">"${escapeHtml(r.statement)}"</div>` : '';
       const rno = r.no != null ? `№ ${escapeHtml(r.no)}` : '';
       const kind = rel.kind ? `<span class="rc-kind">${escapeHtml(rel.kind)}</span>` : '<span></span>';
-      return `          <a class="rel-card" href="${permalink(rel.slug)}">
+      return `          <a class="rel-card${against ? ' against' : ''}" href="${permalink(rel.slug)}">
             <div class="rc-top"><span class="rc-no">${rno}</span>${kind}</div>
             <span class="rc-name">${name}</span>${say}
           </a>`;
-    }).join('\n');
-    blocks.push(block('Related laws', `        <div class="rel-cards">\n${items}\n        </div>`, false));
+    };
+    const kindred = law.related.filter((r) => !isAgainst(r.kind));
+    const against = law.related.filter((r) => isAgainst(r.kind));
+    if (kindred.length) {
+      blocks.push(block('Related laws',
+        `        <div class="rel-cards">\n${kindred.map((r) => relCard(r, false)).join('\n')}\n        </div>`, false));
+    }
+    if (against.length) {
+      blocks.push(block('In tension with',
+        `        <div class="rel-cards against">\n${against.map((r) => relCard(r, true)).join('\n')}\n        </div>`, false));
+    }
   }
 
   // ---- dashboard stat strip (under the hero) ----------------------------
@@ -320,12 +332,25 @@ document.getElementById('copy').onclick=function(){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -6% 0px',threshold:0.06});
     var els=document.querySelectorAll('[data-reveal]');for(var i=0;i<els.length;i++)io.observe(els[i]);
   }
-  // scroll-spy: highlight the left-rail contents link for the section in view
+  // scroll-spy + rail progress, driven directly by scroll position (no observer
+  // lag): on each frame, fill the rail track to the scroll fraction and mark the
+  // last section whose top has passed the reading line as active.
+  var toc=document.querySelector('.toc');
   var links=[].slice.call(document.querySelectorAll('.toc a'));
-  if(links.length&&'IntersectionObserver' in window){
-    var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
-    var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on');});var a=map[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-12% 0px -78% 0px',threshold:0});
-    document.querySelectorAll('.block[id]').forEach(function(s){spy.observe(s);});
+  var secs=links.map(function(a){return {a:a,el:document.getElementById(a.getAttribute('href').slice(1))};}).filter(function(o){return o.el;});
+  if(secs.length){
+    var ticking=false;
+    var apply=function(){
+      ticking=false;
+      var h=document.documentElement,y=window.scrollY||h.scrollTop,mx=h.scrollHeight-h.clientHeight;
+      if(toc)toc.style.setProperty('--scroll', mx>0?(y/mx).toFixed(4):0);
+      var line=y+window.innerHeight*0.26,cur=secs[0];
+      for(var i=0;i<secs.length;i++){ if(secs[i].el.getBoundingClientRect().top+y<=line)cur=secs[i]; }
+      for(var j=0;j<links.length;j++)links[j].classList.remove('on');
+      if(cur)cur.a.classList.add('on');
+    };
+    var onScroll=function(){ if(!ticking){ticking=true;requestAnimationFrame(apply);} };
+    addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);apply();
   }
 })();
 </script>`;
