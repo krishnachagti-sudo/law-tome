@@ -2,29 +2,67 @@
   "no": "014",
   "slug": "goodharts-law",
   "name": "Goodhart's Law",
-  "aliases": ["Goodhart–Strathern"],
+  "aliases": [
+    "Goodhart–Strathern"
+  ],
   "statement": "When a measure becomes a target, it ceases to be a good measure.",
   "statementAccent": "measure becomes a target",
   "meaning": "The moment you reward people for hitting a number, they start optimising the number itself — not the thing the number was supposed to stand for. A measure chosen because it tracked something you cared about stops tracking it the instant a reward is pinned to it.",
   "mechanism": "Every metric is a proxy: it stands in for a goal you cannot measure directly — learning, health, productivity, safety. The proxy is useful because it correlates with the goal across the ordinary range of behaviour. Attach a strong enough incentive and people (or markets, or optimisers) push the proxy toward its extreme, and at the extreme two things go wrong at once: the cheapest ways to move the proxy are almost never the ways that move the goal, and the correlation that made the proxy trustworthy quietly stops holding. The number keeps climbing while the thing it was meant to represent stalls or reverses.",
   "examples": [
-    {"tag": "Education", "text": "Rank schools on test scores and teachers teach to the test — drilling exam format, narrowing the curriculum, and in documented cases outright altering answer sheets. Scores rise; the broader learning the scores were meant to signal does not follow."},
-    {"tag": "Healthcare", "text": "Hold emergency departments to a strict waiting-time target and some meet the number by reclassifying patients or holding them in queuing ambulances, so the measured wait falls without the actual wait improving."},
-    {"tag": "Software", "text": "Reward engineers for lines of code or closed tickets and you get bloated code and trivially-split tickets; reward test coverage as a percentage and you get tests that execute code without asserting anything about it."},
-    {"tag": "Research", "text": "Judge scholars by citation counts and the h-index, and citation rings, salami-sliced papers, and self-citation follow — the metric of influence gets optimised in place of influence itself."}
+    {
+      "tag": "Education",
+      "text": "Rank schools on test scores and teachers teach to the test — drilling exam format, narrowing the curriculum, and in documented cases outright altering answer sheets. Scores rise; the broader learning the scores were meant to signal does not follow."
+    },
+    {
+      "tag": "Healthcare",
+      "text": "Hold emergency departments to a strict waiting-time target and some meet the number by reclassifying patients or holding them in queuing ambulances, so the measured wait falls without the actual wait improving."
+    },
+    {
+      "tag": "Software",
+      "text": "Reward engineers for lines of code or closed tickets and you get bloated code and trivially-split tickets; reward test coverage as a percentage and you get tests that execute code without asserting anything about it."
+    },
+    {
+      "tag": "Research",
+      "text": "Judge scholars by citation counts and the h-index, and citation rings, salami-sliced papers, and self-citation follow — the metric of influence gets optimised in place of influence itself."
+    }
   ],
   "variants": [
-    {"name": "Regressional", "text": "The proxy correlates with the goal but is not identical. Select hard for the top of the proxy and you select partly for the goal and partly for the noise that happened to inflate it — so your winners are luckier on the metric than they are good at the thing."},
-    {"name": "Extremal", "text": "A relationship that holds in the normal range breaks down at the extreme you optimise toward. Pushing the proxy drags the system into territory where the original correlation never applied."},
-    {"name": "Causal", "text": "Someone intervenes on the proxy believing it causes the goal, when in fact both share a common cause — so forcing the proxy up does nothing for the goal underneath."},
-    {"name": "Adversarial", "text": "Other agents learn the metric and deliberately manipulate it. This is the outright gaming most people picture, and it arrives fastest wherever the stakes are highest."}
+    {
+      "name": "Regressional",
+      "text": "The proxy correlates with the goal but is not identical. Select hard for the top of the proxy and you select partly for the goal and partly for the noise that happened to inflate it — so your winners are luckier on the metric than they are good at the thing."
+    },
+    {
+      "name": "Extremal",
+      "text": "A relationship that holds in the normal range breaks down at the extreme you optimise toward. Pushing the proxy drags the system into territory where the original correlation never applied."
+    },
+    {
+      "name": "Causal",
+      "text": "Someone intervenes on the proxy believing it causes the goal, when in fact both share a common cause — so forcing the proxy up does nothing for the goal underneath."
+    },
+    {
+      "name": "Adversarial",
+      "text": "Other agents learn the metric and deliberately manipulate it. This is the outright gaming most people picture, and it arrives fastest wherever the stakes are highest."
+    }
   ],
   "whyItMatters": "Any KPI, OKR, bonus, league table, or ranking turns a proxy into a target and invites this law. It is the single most important thing to understand before you attach consequences to a number: the act of attaching them changes what the number means. Whole systems — school-accountability regimes, hospital targets, ad-tech optimisation, the reward functions of AI models — are large bets that Goodhart won't bite, and they often lose.",
   "working": [
-    {"lead": "Keep measures diagnostic, not targets", "text": "watch a metric to learn what is happening, but resist hard-wiring rewards to it. The moment a measure carries consequences it starts to corrode."},
-    {"lead": "Use several imperfect measures", "text": "a basket is harder to game than any single sacred number, because moving all of them the honest way is often the only cheap way to move all of them at once."},
-    {"lead": "Pair every quantity with a quality check", "text": "a human or qualitative review that asks 'did the thing we actually wanted improve?' catches gaming that the number alone will hide."},
-    {"lead": "Rotate and revisit", "text": "a measure that cannot be gamed today becomes gameable once people learn it; retire metrics before they harden into goals."}
+    {
+      "lead": "Keep measures diagnostic, not targets",
+      "text": "watch a metric to learn what is happening, but resist hard-wiring rewards to it. The moment a measure carries consequences it starts to corrode."
+    },
+    {
+      "lead": "Use several imperfect measures",
+      "text": "a basket is harder to game than any single sacred number, because moving all of them the honest way is often the only cheap way to move all of them at once."
+    },
+    {
+      "lead": "Pair every quantity with a quality check",
+      "text": "a human or qualitative review that asks 'did the thing we actually wanted improve?' catches gaming that the number alone will hide."
+    },
+    {
+      "lead": "Rotate and revisit",
+      "text": "a measure that cannot be gamed today becomes gameable once people learn it; retire metrics before they harden into goals."
+    }
   ],
   "limits": "Goodhart's Law is a strong tendency, not a theorem: the size of the effect scales with the optimisation pressure and with the gap between proxy and goal. A well-chosen measure under light incentive can stay useful for a long time, and a measure nearly identical to the goal resists gaming — it is just rarely available. Crucially, measurement is not the enemy; refusing to measure is worse. The law warns against coupling reward to a proxy, not against looking at numbers at all.",
   "misreadings": "It is not an argument against measurement — you cannot manage what you refuse to look at. It says a metric degrades once it becomes the target, not that metrics are worthless. The fix is to keep measures diagnostic — watched, plural, and quietly revised — rather than turning any single one into the prize.",
@@ -36,15 +74,38 @@
   "popularYear": 1997,
   "namedAfter": "Charles Goodhart",
   "sources": [
-    {"text": "Goodhart, C.A.E. (1975). \"Problems of Monetary Management: the U.K. Experience.\"", "type": "primary"},
-    {"text": "Strathern, M. (1997). \"'Improving ratings': audit in the British University system.\" European Review, 5(3), 305–321.", "type": "primary"},
-    {"text": "Manheim, D. & Garrabrant, S. (2018). \"Categorizing Variants of Goodhart's Law.\" Machine Intelligence Research Institute.", "url": "https://intelligence.org/2018/03/27/categorizing-goodhart/", "type": "secondary"},
-    {"text": "Goodhart's law, Wikipedia.", "url": "https://en.wikipedia.org/wiki/Goodhart%27s_law", "type": "secondary"}
+    {
+      "text": "Goodhart, C.A.E. (1975). \"Problems of Monetary Management: the U.K. Experience.\"",
+      "type": "primary"
+    },
+    {
+      "text": "Strathern, M. (1997). \"'Improving ratings': audit in the British University system.\" European Review, 5(3), 305–321.",
+      "type": "primary"
+    },
+    {
+      "text": "Manheim, D. & Garrabrant, S. (2018). \"Categorizing Variants of Goodhart's Law.\" Machine Intelligence Research Institute.",
+      "url": "https://intelligence.org/2018/03/27/categorizing-goodhart/",
+      "type": "secondary"
+    },
+    {
+      "text": "Goodhart's law, Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Goodhart%27s_law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Goodhart%27s_law",
   "related": [
-    {"slug": "campbells-law", "kind": "near-twin"},
-    {"slug": "cobra-effect", "kind": "consequence"}
+    {
+      "slug": "campbells-law",
+      "kind": "near-twin"
+    },
+    {
+      "slug": "cobra-effect",
+      "kind": "consequence"
+    }
   ],
-  "confusedWith": ["campbells-law"]
+  "confusedWith": [
+    "campbells-law"
+  ],
+  "schematic": "goodhart-divergence"
 }

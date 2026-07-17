@@ -2,7 +2,10 @@
   "no": "041",
   "slug": "pareto-principle",
   "name": "The Pareto Principle",
-  "aliases": ["The 80/20 rule", "The law of the vital few"],
+  "aliases": [
+    "The 80/20 rule",
+    "The law of the vital few"
+  ],
   "statement": "Roughly 80% of effects come from 20% of causes.",
   "statementAccent": "20% of causes",
   "meaning": "In many situations a small share of the inputs accounts for most of the output — a vital few matter far more than the trivial many.",
@@ -17,13 +20,30 @@
   "coinedYear": 1941,
   "namedAfter": "Vilfredo Pareto",
   "sources": [
-    {"text": "Pareto, V. (1896). Cours d'économie politique.", "type": "primary"},
-    {"text": "Juran, J. M. (1951). Quality Control Handbook. McGraw-Hill.", "type": "primary"},
-    {"text": "Pareto principle, Wikipedia.", "url": "https://en.wikipedia.org/wiki/Pareto_principle", "type": "secondary"}
+    {
+      "text": "Pareto, V. (1896). Cours d'économie politique.",
+      "type": "primary"
+    },
+    {
+      "text": "Juran, J. M. (1951). Quality Control Handbook. McGraw-Hill.",
+      "type": "primary"
+    },
+    {
+      "text": "Pareto principle, Wikipedia.",
+      "url": "https://en.wikipedia.org/wiki/Pareto_principle",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Pareto_principle",
   "related": [
-    {"slug": "parkinsons-law", "kind": "kindred"},
-    {"slug": "sturgeons-law", "kind": "kindred"}
-  ]
+    {
+      "slug": "parkinsons-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "sturgeons-law",
+      "kind": "kindred"
+    }
+  ],
+  "schematic": "pareto-split"
 }

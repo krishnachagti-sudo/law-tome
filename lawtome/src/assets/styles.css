@@ -223,6 +223,24 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .tl-dot{fill:var(--accent)}
 .tl-year{fill:var(--ink);font-family:var(--mono);font-size:12px}
 .tl-role{fill:var(--faint);font-family:var(--mono);font-size:8.5px;letter-spacing:.06em}
+/* concept schematics — illustrative figures (theme-aware via var()) */
+.sfig{margin:0 0 60px;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:20px 22px}
+.sfig-plot svg{display:block;width:100%;height:auto;overflow:visible}
+.sfig figcaption{margin-top:12px;font-size:12.5px;line-height:1.55;color:var(--muted)}
+.s-illus{display:inline-block;font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);border:1px solid var(--line-strong);border-radius:4px;padding:1px 6px;margin-left:4px;vertical-align:middle}
+.s-axis{stroke:var(--line-strong);stroke-width:1.5;fill:none}
+.s-proxy{stroke:var(--accent);stroke-width:2.6;fill:none;stroke-linecap:round}
+.s-goal{stroke:var(--gold);stroke-width:2.6;fill:none;stroke-linecap:round}
+.s-dot-proxy{fill:var(--accent)}
+.s-dot-goal{fill:var(--gold)}
+.s-proxy-sw{fill:var(--accent)}
+.s-goal-sw{fill:var(--gold)}
+.s-track{fill:var(--surface-2);stroke:var(--line);stroke-width:1}
+.s-fill{fill:var(--accent)}
+.s-label{fill:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.02em}
+.s-inbar{fill:#fff;font-family:var(--mono);font-size:11px}
+html[data-theme="dark"] .s-inbar{fill:#17130b}
+.s-tick{fill:var(--faint);font-family:var(--mono);font-size:9px;letter-spacing:.03em}
 .lead{font-family:var(--serif);font-size:21px;line-height:1.55;color:var(--ink)}
 /* drop cap on the opening (plain-English) paragraph */
 .lead::first-letter{float:left;font-family:var(--serif);font-weight:600;font-size:3.5em;line-height:.8;margin:5px 12px 0 0;color:var(--accent)}
