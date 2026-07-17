@@ -15,6 +15,7 @@ import { graphPage } from '../src/templates/graph.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng } from './quotecard.mjs';
+import { buildSitemap } from './sitemap.mjs';
 
 async function writePage(path, html) {
   await mkdir(dirname(path), { recursive: true });
@@ -89,6 +90,34 @@ export async function buildSite(opts) {
       listingPage(membersByCat.get(cat), { title: categories[cat] || cat, base, kind: 'category', origin }),
     ));
   }
+
+  // Site files (crawler-facing, NOT "pages"): a sitemap of every crawlable HTML
+  // URL, a permissive robots.txt pointing at it, and a Netlify-style redirect map
+  // seeded from any law.redirectFrom (a permalink-lifecycle hook per spec §8A).
+  // The `paths` list is base-relative and ordered home → laws → browse →
+  // categories → graph, so Task 14's coin/about/coined/privacy just append.
+  const paths = [
+    '',                                       // home root
+    ...laws.map(l => `laws/${l.slug}/`),      // one per law
+    'browse/',
+    ...present.map(cat => `category/${cat}/`),// one per present category
+    'graph/',
+  ];
+  writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`)));
+  writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n`));
+
+  // _redirects: one `from  to  301` line per law.redirectFrom entry (each an old
+  // base-relative path that should 301 to the law's current permalink). Seed data
+  // has none, so the file is just a header comment — its presence proves the hook.
+  const redirects = [];
+  for (const law of laws) {
+    for (const from of law.redirectFrom || []) {
+      redirects.push(`${base}${from}  ${base}laws/${law.slug}/  301`);
+    }
+  }
+  const redirectsBody = '# Netlify-style redirect map (from  to  status). Seeded from law.redirectFrom.\n'
+    + (redirects.length ? redirects.join('\n') + '\n' : '');
+  writes.push(writePage(join(out, '_redirects'), redirectsBody));
 
   await Promise.all(writes);
 
