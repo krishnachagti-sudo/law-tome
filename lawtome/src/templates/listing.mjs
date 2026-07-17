@@ -91,6 +91,6 @@ ${grid}
     sprite() +
     header({ base, active, count: rows.length }) +
     section +
-    footer()
+    footer({ scripts: `<script defer src="${base}assets/search.js"></script>` })
   );
 }

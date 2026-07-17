@@ -11,6 +11,7 @@ import { validateCorpus } from './validate.mjs';
 import { lawPage } from '../src/templates/law.mjs';
 import { homePage } from '../src/templates/home.mjs';
 import { listingPage } from '../src/templates/listing.mjs';
+import { buildSearchIndex } from './search-index.mjs';
 
 async function writePage(path, html) {
   await mkdir(dirname(path), { recursive: true });
@@ -37,6 +38,10 @@ export async function buildSite(opts) {
   const writes = [
     // Home: first 12 laws as the featured rotation.
     writePage(join(out, 'index.html'), homePage(laws.slice(0, 12), { publishedCount, base })),
+    // Prebuilt client-search index (a DATA file, not a "page"): fetched by
+    // src/assets/search.js. In the concurrent writes[] so it's covered by the
+    // pre-clean rm + Promise.all.
+    writePage(join(out, 'search-index.json'), JSON.stringify(buildSearchIndex(laws))),
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {

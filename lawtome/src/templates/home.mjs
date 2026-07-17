@@ -170,7 +170,8 @@ const LAWS=${featuredJson};
   }
   setInterval(function(){hi=(hi+1)%LAWS.length;setHero(hi)},5200);
 })();
-</script>`;
+</script>
+<script defer src="${base}assets/search.js"></script>`;
 
   // ---- DefinedTermSet JSON-LD for the directory -------------------------
   const definedTermSet = {
