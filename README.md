@@ -67,9 +67,25 @@ npm run serve     # build + static server → http://localhost:8080/lawtome/
 
 ## Status
 
-Executing `docs/engine-plan.md` (15 TDD tasks, 4 chunks). **Tasks 1–2 complete:** build scaffolding + self-hosted fonts/icons; corpus schema + 11 verified seed laws. Tasks 3–15 pending: slugify, validation, templates, orchestrator, browse/category, search, graph explorer, quote-cards, SEO artifacts, static pages, integration.
+Executing `docs/engine-plan.md` (15 TDD tasks, 4 chunks) via subagent-driven development: each task gets a fresh implementer → spec-compliance review → code-quality review, fixing until both pass.
 
-Scaling the corpus from 11 → ~1,400 is a separate effort (Plan B), which reuses this engine unchanged.
+**Task 1 — DONE.** Build scaffolding, `src/` restructure, self-hosted fonts/icons. Both gates passed after two fix rounds. Review caught: a 4.3 MB icon payload for 7 icons (now a 3.2 KB subset), a path traversal + crash in the `serve` script, variable fonts pinned to single weights, and missing `latin-ext` (which would have broken "Erdős" mid-word — it's a directory of *eponymous* laws).
+
+**Task 2 — IMPLEMENTED, VERIFICATION INCOMPLETE.** Corpus schema + 11 seed laws. First spec review found **no fabrication** across all 10 non-exemplar entries and one must-fix (Peter Principle "214 firms" → **131**; 214 is the superseded NBER draft figure that NBER *and* Wikipedia still propagate). Fixes are applied and self-verified, and chasing them surfaced a second real error (the Campbell's Law attribution chain).
+**Outstanding before Task 2 can be called done:**
+1. Re-run **spec review** on fix commit — independently verify the *corrected* Campbell chain (Visegrád 1974 → Lyons ed. 1975, Dartmouth → WMU Paper #8 reprint 1976 → journal 1979, `coinedYear` 1975). A wrong correction is worse than the original error, so be skeptical.
+2. Run the **code-quality gate** (never ran).
+
+**Tasks 3–15 — pending:** slugify, corpus loader + validation, partials, law template, home template, build orchestrator, browse/category, search + random-law, graph explorer, quote-cards, sitemap/robots/redirects, coin/about/coined/privacy, integration + link check + HTTP smoke.
+
+### Carry-forward notes for whoever continues
+
+- **Task 4 (validation):** consider a check that every corpus string's codepoints are covered by the shipped font subsets (latin + latin-ext only; vietnamese/greek/cyrillic deliberately NOT vendored — see `lawtome/src/assets/fonts/README.md`). An uncovered glyph should *fail the build* rather than silently render in a fallback face mid-word.
+- **Task 12 (quote-cards):** resvg only has Fraunces **weight 400** available, but the site styles statements at 500/600. If cards must match the site, vendor `Fraunces72pt-SemiBold.ttf` too. `Fraunces.ttf` is deliberately the static 72pt instance — resvg does no variable-font instantiation, so the VF would render at its default wght 900 / opsz 9.
+- **`serve` deviates from the plan's literal one-liner on purpose** — the plan's version had a path traversal and died on malformed URIs. The hardened version is correct; don't "restore" it.
+- The plan's Goodhart exemplar originally attached a Wikipedia URL to a *primary* citation; fixed here, since every entry is told to copy that exemplar.
+
+Scaling the corpus from 11 → ~1,400 is a separate effort (Plan B), which reuses this engine unchanged. Plan B **must** include the resolve-and-read source-verification pass: 2 of 11 seed entries had attribution errors that the open web repeats as fact (see anti-fabrication above). Presence-of-a-citation is not enough; the build can only check presence, so "does the source actually say this?" needs a human/agent pass.
 
 ## Licence
 
