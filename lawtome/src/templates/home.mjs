@@ -18,7 +18,9 @@
 //      "</script>" cannot break out of the inline <script> (Task 5/6 lesson).
 //
 // EVERY corpus string rendered directly into markup goes through escapeHtml; the
-// inline JSON blob is neutralised with the `<`-escape above.
+// inline JSON blob is neutralised with the `<`-escape above; and the fields the
+// client rotation writes via innerHTML (`hero`, `nameHtml`) are PRE-escaped in
+// the blob, so the rotation cannot inject markup either.
 
 import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
 
@@ -48,6 +50,7 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/' } = {})
     no: l.no,
     slug: l.slug,
     name: l.name,
+    nameHtml: escapeHtml(l.name), // pre-escaped for the client rotation's innerHTML write
     statement: l.statement,
     statementAccent: l.statementAccent || '',
     hero: renderStatement(l.statement, l.statementAccent),
@@ -157,7 +160,7 @@ const LAWS=${featuredJson};
       document.getElementById('m-no').textContent='№ '+l.no;
       document.getElementById('m-cat').textContent=l.category;
       s.innerHTML='<q>'+l.hero+'</q>';
-      document.getElementById('attrib').innerHTML='— <span class="who">'+l.name+'</span>';
+      document.getElementById('attrib').innerHTML='— <span class="who">'+l.nameHtml+'</span>';
       s.style.opacity=1;
     },300);
   }

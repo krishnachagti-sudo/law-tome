@@ -35,3 +35,13 @@ test('renders the browse-teaser containers Task 10 will wire', () => {
   assert.match(html, /id="q"/);
   assert.match(html, /id="rand"/);
 });
+// Task 7 code-quality gate: the client rotation must write a PRE-escaped name via
+// innerHTML. A static source check can't see the runtime bug (the <-escape hides
+// raw '<' from source; JSON.parse restores it at runtime), so pin the blob field
+// + assert the raw name is never concatenated into markup.
+test('hero rotation writes a pre-escaped name (no runtime innerHTML injection)', () => {
+  const evil = [{ no:'002', slug:'b', name:'B <img onerror=x> & Co', statement:'S', statementAccent:'S', category:'economics', reliability:'Heuristic', related:[] }];
+  const h = homePage(evil, { publishedCount: 5, base:'/lawtome/' });
+  assert.match(h, /"nameHtml":"B &lt;img onerror=x&gt; &amp; Co"/); // escaped name carried in the blob
+  assert.doesNotMatch(h, /\+l\.name\+/);                            // raw name never concatenated into markup
+});
