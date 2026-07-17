@@ -167,7 +167,16 @@ ${inner}
     blocks.push(block('Types & variants', `        <div class="variants">\n${items}\n        </div>`, false));
   }
 
-  if (law.whyItMatters) blocks.push(block('Why it matters', `        <p class="prose">${escapeHtml(law.whyItMatters)}</p>`));
+  // Callout cards give the later, prose-only sections visual weight (inline SVG
+  // icons, since the icon font here is a tiny subset).
+  const CALLOUT_ICON = {
+    key: '<svg class="co-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="3"/></svg>',
+    warn: '<svg class="co-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M12 4l9 16H3z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.4" r=".7" fill="currentColor" stroke="none"/></svg>',
+    info: '<svg class="co-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><path d="M12 11.5v4.5"/><circle cx="12" cy="8" r=".7" fill="currentColor" stroke="none"/></svg>',
+  };
+  const callout = (tone, text) => `        <div class="callout callout--${tone}">${CALLOUT_ICON[tone]}<p>${escapeHtml(text)}</p></div>`;
+
+  if (law.whyItMatters) blocks.push(block('Why it matters', callout('key', law.whyItMatters)));
 
   // Working with it: a practical playbook. Items are {lead, text} (bold lead) or plain strings.
   if (Array.isArray(law.working) && law.working.length) {
@@ -181,8 +190,8 @@ ${inner}
     blocks.push(block('Working with it', `        <ul class="playbook">\n${items}\n        </ul>`));
   }
 
-  if (law.limits) blocks.push(block('Where it breaks down', `        <p class="prose">${escapeHtml(law.limits)}</p>`));
-  if (law.misreadings) blocks.push(block("What it doesn't say", `        <p class="prose">${escapeHtml(law.misreadings)}</p>`));
+  if (law.limits) blocks.push(block('Where it breaks down', callout('warn', law.limits)));
+  if (law.misreadings) blocks.push(block("What it doesn't say", callout('info', law.misreadings)));
   if (law.origin) blocks.push(block('Origin', `        <p class="prose">${escapeHtml(law.origin)}</p>`));
 
   if (coined) {
@@ -390,21 +399,14 @@ document.getElementById('copy').onclick=function(){
     var apply=function(){
       ticking=false;
       var h=document.documentElement,y=window.scrollY||h.scrollTop,mx=h.scrollHeight-h.clientHeight;
-      // active = the section occupying the most of the viewport right now (area of
-      // overlap between each section's [top,nextTop) band and the viewport). This
-      // reflects what actually dominates the screen — no fixed line to lag behind a
-      // tall section or overshoot a short one. At the very bottom, force the last.
-      var vh=window.innerHeight,vpBot=y+vh,docH=h.scrollHeight,cur;
-      if((y+h.clientHeight)>=(mx-2)){cur=secs[secs.length-1];}
-      else{
-        var tops=[];for(var t=0;t<secs.length;t++)tops.push(secs[t].el.getBoundingClientRect().top+y);
-        var best=-1;cur=secs[0];
-        for(var i=0;i<secs.length;i++){
-          var top=tops[i],bot=(i+1<secs.length)?tops[i+1]:docH;
-          var vis=Math.min(bot,vpBot)-Math.max(top,y);
-          if(vis>best){best=vis;cur=secs[i];}
-        }
-      }
+      // active = the last section whose heading has crossed a reading line. The line
+      // sits ~32% down for most of the page (responsive) but DESCENDS toward the
+      // bottom as you approach the end (prog^2 ramp), so it sweeps through the short
+      // trailing sections crammed in the final viewport — every section, however
+      // short, gets its moment as active instead of being skipped.
+      var vh=window.innerHeight,prog=mx>0?Math.min(1,y/mx):1;
+      var line=y+vh*(0.32+prog*prog*0.62),cur=secs[0];
+      for(var i=0;i<secs.length;i++){if(secs[i].el.getBoundingClientRect().top+y<=line)cur=secs[i];}
       for(var j=0;j<links.length;j++)links[j].classList.remove('on');
       if(cur){cur.a.classList.add('on');
         // run the rail fill down to the centre of the active item

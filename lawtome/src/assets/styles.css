@@ -241,6 +241,16 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .s-inbar{fill:#fff;font-family:var(--mono);font-size:11px}
 html[data-theme="dark"] .s-inbar{fill:#17130b}
 .s-tick{fill:var(--faint);font-family:var(--mono);font-size:9px;letter-spacing:.03em}
+/* callout cards — give the later prose sections visual weight */
+.callout{display:flex;gap:15px;border:1px solid var(--line);border-left-width:3px;border-radius:12px;padding:18px 20px;background:var(--surface)}
+.callout .co-ic{flex:none;width:23px;height:23px;margin-top:2px}
+.callout p{margin:0;font-size:16.5px;line-height:1.76;color:var(--read)}
+.callout--key{border-left-color:var(--accent);background:var(--accent-soft)}
+.callout--key .co-ic{color:var(--accent)}
+.callout--warn{border-left-color:var(--gold);background:var(--gold-soft)}
+.callout--warn .co-ic{color:var(--gold)}
+.callout--info{border-left-color:var(--line-strong)}
+.callout--info .co-ic{color:var(--muted)}
 .lead{font-family:var(--serif);font-size:21px;line-height:1.55;color:var(--ink)}
 /* drop cap on the opening (plain-English) paragraph */
 .lead::first-letter{float:left;font-family:var(--serif);font-weight:600;font-size:3.5em;line-height:.8;margin:5px 12px 0 0;color:var(--accent)}
