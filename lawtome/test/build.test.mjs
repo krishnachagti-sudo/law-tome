@@ -1,7 +1,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync } from 'node:fs';
+import { existsSync, readdirSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
+
+// Corpus-relative expectations: derive the law count from the data dir so adding a
+// law never breaks these assertions (they encode relationships, not magic numbers).
+const LAW_COUNT = readdirSync('src/data/laws').filter((f) => f.endsWith('.json')).length;
 import { mkdtemp, rm, mkdir, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -48,9 +52,9 @@ test('prev/next wired: goodharts links its corpus neighbours', async () => {
 test('build returns a page count and home shows real published count', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-'));
   const r = await buildSite({ dataDir:'src/data/laws', catFile:'src/data/categories.json', assetsDir:'src/assets', out, base:'/lawtome/', origin:'https://conyso.com' });
-  assert.equal(r.pages, 12); // home + 11 law pages
+  assert.equal(r.pages, LAW_COUNT + 1); // home + one page per law
   const home = await readFile(join(out, 'index.html'), 'utf8');
-  assert.match(home, /11 laws/);
+  assert.match(home, new RegExp(`${LAW_COUNT} laws`));
   await rm(out, { recursive:true, force:true });
 });
 

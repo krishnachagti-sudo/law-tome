@@ -1,0 +1,28 @@
+{
+  "no": "035",
+  "slug": "brooks-law",
+  "name": "Brooks's Law",
+  "aliases": ["The mythical man-month"],
+  "statement": "Adding manpower to a late software project makes it later.",
+  "statementAccent": "makes it later",
+  "meaning": "Throwing more people at a project that is already behind usually pushes the finish line further out, not closer.",
+  "mechanism": "New people are not instantly productive: someone already on the project has to stop working to train them, and every extra person multiplies the communication channels that must be kept in sync. For a while the ramp-up cost and the coordination overhead outweigh the added labour, so the schedule slips further before it improves — if it improves at all.",
+  "example": "A release is a month late, so management adds five engineers in week one. The existing team spends the next fortnight onboarding them and untangling who owns what; velocity drops before it recovers, and the date slips again.",
+  "whyItMatters": "It punctures the intuition that people and time are interchangeable — that a job needing twelve person-months can be done by twelve people in one. A late project is more often rescued by cutting scope or holding the team steady than by staffing up in a panic.",
+  "misreadings": "It does not say adding people never helps — early, before the crunch, more hands can genuinely speed things up. The claim is narrow: adding people to an already-late project, mid-flight, tends to backfire because the onboarding and coordination costs land exactly when there is no slack to absorb them.",
+  "origin": "Coined by the software engineer Fred Brooks in his 1975 book The Mythical Man-Month, drawing on his experience managing the development of IBM's OS/360.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1975,
+  "namedAfter": "Fred Brooks",
+  "sources": [
+    {"text": "Brooks, F. P. (1975). The Mythical Man-Month: Essays on Software Engineering. Addison-Wesley.", "type": "primary"},
+    {"text": "Brooks's law, Wikipedia.", "url": "https://en.wikipedia.org/wiki/Brooks%27s_law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Brooks%27s_law",
+  "related": [
+    {"slug": "conways-law", "kind": "kindred"},
+    {"slug": "hofstadters-law", "kind": "kindred"}
+  ]
+}

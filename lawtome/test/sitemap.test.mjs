@@ -41,11 +41,21 @@ test('XML-escapes <, > and " in a path (not just &)', () => {
 });
 
 // --- build integration: site files (sitemap.xml, robots.txt, _redirects) ---
-import { existsSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { readFile, writeFile, mkdtemp, rm, cp } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { buildSite } from '../build/build.mjs';
+
+// Corpus-relative sitemap expectations, so adding a law (or a law in a new
+// category) never breaks the count. Locs = home + one per law + browse +
+// one per present category + graph + the 4 static pages (coin/about/coined/privacy).
+const LAW_FILES = readdirSync('src/data/laws').filter((f) => f.endsWith('.json'));
+const LAW_COUNT = LAW_FILES.length;
+const CAT_COUNT = new Set(
+  LAW_FILES.map((f) => JSON.parse(readFileSync(join('src/data/laws', f), 'utf8')).category),
+).size;
+const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 4;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));
@@ -54,8 +64,8 @@ test('build emits a well-formed sitemap.xml listing crawlable pages only', async
   assert.match(sm, /^<\?xml/);
   assert.match(sm, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
   assert.match(sm, /<\/urlset>/);
-  // home + 11 laws + browse + 8 categories + graph + coin/about/coined/privacy = 26.
-  assert.equal((sm.match(/<loc>/g) || []).length, 26);
+  // home + one per law + browse + one per present category + graph + 4 static pages.
+  assert.equal((sm.match(/<loc>/g) || []).length, EXPECTED_LOCS);
   // Home root and a law are absolute base URLs.
   assert.match(sm, /<loc>https:\/\/conyso\.com\/lawtome\/<\/loc>/);
   assert.match(sm, /<loc>https:\/\/conyso\.com\/lawtome\/laws\/goodharts-law\/<\/loc>/);
@@ -101,6 +111,6 @@ test('_redirects emits a 301 line for a law with redirectFrom', async () => {
 test('site files do not inflate the build return counts', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-cnt-'));
   const r = await buildSite({ dataDir:'src/data/laws', catFile:'src/data/categories.json', assetsDir:'src/assets', out, base:'/lawtome/', origin:'https://conyso.com' });
-  assert.equal(r.pages, 12); // home + 11 laws, unchanged
+  assert.equal(r.pages, LAW_COUNT + 1); // home + one page per law
   await rm(out, { recursive:true, force:true });
 });

@@ -1,11 +1,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync } from 'node:fs';
+import { existsSync, readdirSync } from 'node:fs';
 import { readFile, mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { quoteCardSvg, renderPng } from '../build/quotecard.mjs';
 import { buildSite } from '../build/build.mjs';
+// Corpus-relative: one page per law + home, one og card per law.
+const LAW_COUNT = readdirSync('src/data/laws').filter((f) => f.endsWith('.json')).length;
 const law = { name:"Goodhart's Law", statement:'When a measure becomes a target, it ceases to be a good measure.', no:'014' };
 test('svg embeds statement + brand + index code', () => {
   const svg = quoteCardSvg(law);
@@ -55,8 +57,8 @@ test('a long statement wraps onto multiple lines (multiple tspans)', () => {
 test('build emits og/<slug>.png per law as a valid PNG', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-og-'));
   const r = await buildSite({ dataDir:'src/data/laws', catFile:'src/data/categories.json', assetsDir:'src/assets', out, base:'/lawtome/', origin:'https://conyso.com' });
-  assert.equal(r.pages, 12); // unchanged: home + 11 law pages
-  assert.equal(r.og, 11);
+  assert.equal(r.pages, LAW_COUNT + 1); // home + one page per law
+  assert.equal(r.og, LAW_COUNT);         // one og card per law
   const png = await readFile(join(out, 'og/goodharts-law.png'));
   assert.deepEqual([...png.subarray(0,4)], [0x89,0x50,0x4e,0x47]);
   await rm(out, { recursive:true, force:true });

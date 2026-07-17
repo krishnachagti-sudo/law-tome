@@ -1,0 +1,27 @@
+{
+  "no": "038",
+  "slug": "galls-law",
+  "name": "Gall's Law",
+  "statement": "A complex system that works is invariably found to have evolved from a simple system that worked.",
+  "statementAccent": "evolved from a simple system",
+  "meaning": "Working complexity grows out of working simplicity — you rarely get a big system right by designing the whole thing up front.",
+  "mechanism": "A simple system that works is a foundation you can trust: you add to it one change at a time and check that each step still works. A complex system built from scratch has too many interacting parts to get right at once, and too many places for a fault to hide — so it tends not to work, and patching rarely rescues it. Evolution beats grand design because it validates continuously.",
+  "example": "The web began as a plain way to link documents and grew, one working feature at a time, into a platform. Attempts to specify a grand replacement from a blank sheet have mostly stalled.",
+  "whyItMatters": "It is an argument for starting small and iterating: ship a simple thing that works, then grow it, rather than betting that a big up-front design will survive first contact with reality. It underpins the modern preference for MVPs and incremental delivery.",
+  "misreadings": "It does not say planning or architecture are useless, or that any simple thing will grow into the right complex thing — plenty of simple systems evolve into messes. The claim is about the reliable path to working complexity, not a guarantee about the destination.",
+  "origin": "Stated by the author and paediatrician John Gall in his 1975 book General Systemantics (later retitled Systemantics: How Systems Work and Especially How They Fail). The label 'Gall's Law' was attached by later readers, not by the book itself.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1975,
+  "namedAfter": "John Gall",
+  "sources": [
+    {"text": "Gall, J. (1975). General Systemantics: An Essay on How Systems Work, and Especially How They Fail. (p. 71)", "type": "primary"},
+    {"text": "John Gall (author), Wikipedia.", "url": "https://en.wikipedia.org/wiki/John_Gall_(author)", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/John_Gall_(author)",
+  "related": [
+    {"slug": "conways-law", "kind": "kindred"},
+    {"slug": "occams-razor", "kind": "kindred"}
+  ]
+}
