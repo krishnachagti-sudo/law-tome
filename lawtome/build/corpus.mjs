@@ -11,11 +11,16 @@ import { SOURCE_FILE } from './validate.mjs';
 export async function loadCorpus(dir) {
   const files = (await readdir(dir)).filter(f => f.endsWith('.json'));
   const laws = await Promise.all(files.map(async f => {
-    const law = JSON.parse(await readFile(join(dir, f), 'utf8'));
+    let law;
+    try { law = JSON.parse(await readFile(join(dir, f), 'utf8')); }
+    catch (e) { throw new Error(`${f}: invalid JSON — ${e.message}`); }
     Object.defineProperty(law, SOURCE_FILE, { value: basename(f, '.json'), enumerable: false });
     return law;
   }));
-  return laws.sort((a, b) => a.no.localeCompare(b.no));
+  // Tolerate a missing `no` here (|| '') so the loader doesn't throw a file-less
+  // TypeError before validateCorpus can emit its clean "missing required field"
+  // error. Zero-padded 3-digit `no`s sort correctly by plain string comparison.
+  return laws.sort((a, b) => (a.no || '').localeCompare(b.no || ''));
 }
 
 export async function loadCategories(path) { return JSON.parse(await readFile(path, 'utf8')); }

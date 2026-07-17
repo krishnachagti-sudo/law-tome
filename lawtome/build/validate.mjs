@@ -19,7 +19,9 @@ const REQUIRED = ['no','slug','name','statement','meaning','example','origin','c
 export const SOURCE_FILE = Symbol('sourceFile');
 
 export function validateCorpus(laws, categories) {
-  const errs = [], slugs = new Set(), nos = new Set(), known = new Set(laws.map(l => l.slug));
+  // `known` excludes falsy slugs so a dangling ref can't spuriously "resolve"
+  // against an entry that is itself missing its slug (which already errors).
+  const errs = [], slugs = new Set(), nos = new Set(), known = new Set(laws.map(l => l.slug).filter(Boolean));
   for (const l of laws) {
     const id = l.slug || l.name || '(unknown)';
     for (const f of REQUIRED) if (!l[f]) errs.push(`${id}: missing required field "${f}"`);
@@ -28,7 +30,9 @@ export function validateCorpus(laws, categories) {
     // Rule 6: `no` must be unique across the corpus.
     if (l.no && nos.has(l.no)) errs.push(`duplicate no "${l.no}"`);
     if (l.no) nos.add(l.no);
-    if (l.category && !categories[l.category]) errs.push(`${id}: category "${l.category}" not in controlled vocabulary`);
+    // Object.hasOwn, not `categories[l.category]`: a bracket lookup walks the
+    // prototype chain, so keys like "constructor"/"toString" would falsely pass.
+    if (l.category && !Object.hasOwn(categories, l.category)) errs.push(`${id}: category "${l.category}" not in controlled vocabulary`);
     if (l.reliability && !RELIABILITY.has(l.reliability)) errs.push(`${id}: reliability "${l.reliability}" invalid`);
     if (l.provenance && !PROVENANCE.has(l.provenance)) errs.push(`${id}: provenance "${l.provenance}" invalid`);
     if (l.provenance === 'canon' && (!Array.isArray(l.sources) || l.sources.length === 0))

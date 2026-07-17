@@ -64,3 +64,47 @@ test('loadCorpus attaches source filename non-enumerably without leaking into JS
     await rm(dir, { recursive:true, force:true });
   }
 });
+
+// --- Hardening from the Task 4 reviews (spec + code-quality). ---
+
+// Rule 4 (category vocab) must use own-property lookup: a bracket lookup walks the
+// prototype chain, so a key colliding with Object.prototype would falsely pass.
+test('category colliding with an Object.prototype key fails', () =>
+  assert.ok(validateCorpus([{...ok, category:'constructor'}], cats).some(e=>/category/i.test(e))));
+
+// Rule 2 (closure) also covers confusedWith — bare strings on a separate code
+// path from related's {slug} objects, so it needs its own dangling-ref test.
+test('dangling confusedWith reference fails', () =>
+  assert.ok(validateCorpus([{...ok, confusedWith:['ghost']}], cats).some(e=>/ghost/.test(e))));
+
+// Rule 5 (provenance enum) — only reliability was asserted directly above.
+test('bad provenance enum fails', () =>
+  assert.ok(validateCorpus([{...ok, provenance:'invented'}], cats).some(e=>/provenance/i.test(e))));
+
+// loadCorpus robustness: a law missing `no` must not crash the sort before
+// validateCorpus can report it (the loader's error would otherwise name no file).
+test('loadCorpus survives a law missing `no`, letting validateCorpus report it', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'lt-corpus-'));
+  const { no, ...noNo } = ok;
+  await writeFile(join(dir, 'a-law.json'), JSON.stringify(ok));
+  await writeFile(join(dir, 'b-law.json'), JSON.stringify({ ...noNo, slug:'b-law' }));
+  try {
+    const laws = await loadCorpus(dir);                                  // must not throw
+    assert.equal(laws.length, 2);
+    assert.ok(validateCorpus(laws, cats).some(e=>/missing required field "no"/.test(e)));
+  } finally {
+    await rm(dir, { recursive:true, force:true });
+  }
+});
+
+// loadCorpus must name the offending file on malformed JSON (byte position alone
+// is useless once the corpus has hundreds of files).
+test('loadCorpus rejects malformed JSON naming the file', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'lt-corpus-'));
+  await writeFile(join(dir, 'broken.json'), '{ not valid json ');
+  try {
+    await assert.rejects(loadCorpus(dir), /broken\.json/);
+  } finally {
+    await rm(dir, { recursive:true, force:true });
+  }
+});
