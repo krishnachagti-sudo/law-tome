@@ -12,7 +12,7 @@
  * `blob` = name + every alias + statement + category, joined by spaces, lowercased.
  * Pure function — no filesystem or network.
  * @param {object[]} laws
- * @returns {{slug:string,no:string,name:string,aliases:string[],category:string,statement:string,blob:string}[]}
+ * @returns {{slug:string,no:string,name:string,aliases:string[],category:string,statement:string,blob:string,reliability:string,rels:number}[]}
  */
 export function buildSearchIndex(laws = []) {
   const rows = Array.isArray(laws) ? laws : [];
@@ -22,7 +22,14 @@ export function buildSearchIndex(laws = []) {
     const statement = l.statement ?? '';
     const category = l.category ?? '';
     const blob = [name, ...aliases, statement, category].join(' ').toLowerCase();
-    return { slug: l.slug, no: l.no, name, aliases, category, statement, blob };
+    // reliability + rels are DISPLAY-ONLY: the client card renders a reliability
+    // badge and an "N related" line, matching the server-rendered browse card.
+    // They are deliberately NOT part of the search `blob`.
+    return {
+      slug: l.slug, no: l.no, name, aliases, category, statement, blob,
+      reliability: l.reliability ?? '',
+      rels: Array.isArray(l.related) ? l.related.length : 0,
+    };
   });
 }
 

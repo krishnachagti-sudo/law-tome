@@ -81,3 +81,13 @@ test('rankRow scores: -1 miss, 1 statement-only, 2 name/alias', () => {
   assert.equal(rankRow(g, tokenize('measure')), 1);
   assert.equal(rankRow(g, tokenize('absent')), -1);
 });
+
+// Consumer-contract: the client card (search.js buildCard) renders a reliability
+// badge + "N related" line, so the index must carry those display-only fields —
+// and they must NOT leak into the search blob.
+test('rows carry display-only reliability + related count, excluded from blob', () => {
+  const [r] = buildSearchIndex([{ slug:'x', no:'001', name:'X', statement:'S', category:'economics', reliability:'Folk-adage', related:[{slug:'y'},{slug:'z'}] }]);
+  assert.equal(r.reliability, 'Folk-adage');
+  assert.equal(r.rels, 2);
+  assert.doesNotMatch(r.blob, /folk-adage/); // reliability is display-only, not searchable
+});
