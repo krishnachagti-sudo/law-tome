@@ -12,6 +12,7 @@ import { lawPage } from '../src/templates/law.mjs';
 import { homePage } from '../src/templates/home.mjs';
 import { listingPage } from '../src/templates/listing.mjs';
 import { graphPage } from '../src/templates/graph.mjs';
+import { coinPage, aboutPage, coinedIndex, privacyPage } from '../src/templates/static-pages.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng } from './quotecard.mjs';
@@ -91,6 +92,16 @@ export async function buildSite(opts) {
     ));
   }
 
+  // Task 14 static pages: the coin form, About, the Coined wing (only coined
+  // entries — none in the seed corpus, so the built page shows its empty state),
+  // and the Privacy notice backing the coin form's consent link. Not "law pages",
+  // so they don't touch `pages`; reported under `listings`.
+  const coinedLaws = laws.filter(l => l.provenance === 'coined');
+  writes.push(writePage(join(out, 'coin', 'index.html'), coinPage({ base })));
+  writes.push(writePage(join(out, 'about', 'index.html'), aboutPage({ base })));
+  writes.push(writePage(join(out, 'coined', 'index.html'), coinedIndex(coinedLaws, { base })));
+  writes.push(writePage(join(out, 'privacy', 'index.html'), privacyPage({ base })));
+
   // Site files (crawler-facing, NOT "pages"): a sitemap of every crawlable HTML
   // URL, a permissive robots.txt pointing at it, and a Netlify-style redirect map
   // seeded from any law.redirectFrom (a permalink-lifecycle hook per spec §8A).
@@ -102,6 +113,10 @@ export async function buildSite(opts) {
     'browse/',
     ...present.map(cat => `category/${cat}/`),// one per present category
     'graph/',
+    'coin/',                                  // Task 14 static pages
+    'about/',
+    'coined/',
+    'privacy/',
   ];
   writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`)));
   writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n`));
@@ -129,7 +144,9 @@ export async function buildSite(opts) {
   // `pages` counts home + one page per law (unchanged semantics). Browse and
   // per-category listings are reported in `listings`; the graph explorer is a
   // distinct page reported separately so no existing count assertion shifts.
-  return { pages: laws.length + 1, listings: 1 + present.length, graph: 1, og: laws.length };
+  // `listings`: browse + present categories + the 4 Task 14 static pages (coin,
+  // about, coined, privacy). `pages` stays home + one page per law, unchanged.
+  return { pages: laws.length + 1, listings: 1 + present.length + 4, graph: 1, og: laws.length };
 }
 
 // CLI: only runs when invoked directly (so `npm run build` works, imports don't).

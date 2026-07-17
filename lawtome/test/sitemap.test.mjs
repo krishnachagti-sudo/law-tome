@@ -54,8 +54,8 @@ test('build emits a well-formed sitemap.xml listing crawlable pages only', async
   assert.match(sm, /^<\?xml/);
   assert.match(sm, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
   assert.match(sm, /<\/urlset>/);
-  // home + 11 laws + browse + 8 categories + graph = 22.
-  assert.equal((sm.match(/<loc>/g) || []).length, 22);
+  // home + 11 laws + browse + 8 categories + graph + coin/about/coined/privacy = 26.
+  assert.equal((sm.match(/<loc>/g) || []).length, 26);
   // Home root and a law are absolute base URLs.
   assert.match(sm, /<loc>https:\/\/conyso\.com\/lawtome\/<\/loc>/);
   assert.match(sm, /<loc>https:\/\/conyso\.com\/lawtome\/laws\/goodharts-law\/<\/loc>/);
