@@ -1,0 +1,55 @@
+{
+  "no": "190",
+  "slug": "lotka-volterra-equations",
+  "name": "The Lotka-Volterra Equations",
+  "aliases": ["The predator-prey equations"],
+  "statement": "Predator and prey numbers chase each other in endless linked cycles.",
+  "statementAccent": "endless linked cycles",
+  "meaning": "A pair of equations describing how the populations of a predator and its prey rise and fall together. When prey are plentiful, predators multiply; the growing predators eat the prey down; scarce prey then starve the predators; with few predators, prey rebound — and the cycle repeats, with the predator peak lagging behind the prey peak.",
+  "mechanism": "Two coupled nonlinear differential equations. Prey grow exponentially when predators are absent and are lost to predation at a rate proportional to the number of predator-prey encounters, which is the product of the two population sizes; predators decline exponentially without prey and grow from the same encounter term. Prey feed predator growth, rising predators crash the prey, depleted prey starve the predators, and the few remaining predators let the prey recover. The system conserves a quantity that makes its trajectories closed loops in the predator-prey plane, so the oscillations neither grow nor damp away.",
+  "examples": [
+    {
+      "tag": "The Adriatic fishery",
+      "text": "Volterra built the model to explain why the share of predatory fish in Adriatic catches rose during the First World War, when fishing effort fell — a puzzle raised by the marine biologist Umberto D'Ancona, his future son-in-law."
+    },
+    {
+      "tag": "Lynx and hare",
+      "text": "Hudson's Bay Company fur records show roughly nine-to-eleven-year cycles of lynx lagging snowshoe hare, qualitatively matching the model — though the real amplitude and period are irregular and the crashes deeper than the simple equations predict."
+    },
+    {
+      "tag": "Predator and prey in a flask",
+      "text": "Gause's Paramecium-and-Didinium cultures matched the model only after refuges or periodic immigration were added; in a plain homogeneous flask the predator eats the prey to extinction and then starves — partly confirming, partly contradicting the idealised cycles."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Rosenzweig-MacArthur model",
+      "text": "An extension combining logistic prey growth with a saturating predator response, yielding a stable equilibrium or a stable limit cycle rather than the original's neutral orbits."
+    },
+    {
+      "name": "The competitive Lotka-Volterra equations",
+      "text": "The competition version, for two species vying for shared resources rather than eating one another, closely tied to Gause's competitive exclusion principle."
+    }
+  ],
+  "whyItMatters": "They are the founding mathematical model of population ecology, the first to show that predator-prey oscillations can arise from the interaction itself rather than from any external driver. Nearly every modern predator-prey model is a refinement of them, and they remain the standard entry point to theoretical ecology.",
+  "working": [
+    {"lead": "Expect cycles from coupling alone", "text": "recognise that oscillations in predator and prey numbers can emerge from the interaction itself, with no external cause needed."},
+    {"lead": "Read the lag", "text": "look for the predator peak to follow the prey peak, the signature of a population responding to its food supply."},
+    {"lead": "Add realism before trusting fit", "text": "for real systems, expect the bare equations to fail, and add carrying capacity, predator satiation, or spatial structure."}
+  ],
+  "limits": "The model is highly idealised: prey grow without bound when predators are absent, with no carrying capacity, and predators have limitless appetite through a non-saturating response. There is no age, stage, or spatial structure, no environmental variation, and no time delay — each population is a single number. Worse, the closed orbits are only neutrally stable: their amplitude is fixed entirely by initial conditions, and any perturbation to the equations — competition, logistic growth, predator satiation, time delays — destroys them, spiralling toward a stable equilibrium or toward extinction. Real systems, even the lynx and hare, rarely match it cleanly.",
+  "misreadings": "The neutral cycles are structurally fragile, not robust — the model is not saying real populations trace perfect closed loops, but that even this stripped-down coupling produces oscillation. And the exponential prey growth is a deliberate idealisation, not a claim that prey really grow without limit.",
+  "origin": "Derived independently by Alfred J. Lotka, who developed the form from 1910 and applied it to predator-prey systems in his 1925 book, and by Vito Volterra, who published the same equations in 1926 to explain D'Ancona's Adriatic fishery data.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1926,
+  "namedAfter": "Alfred J. Lotka and Vito Volterra",
+  "sources": [
+    {"text": "Lotka-Volterra equations, Wikipedia. — the equations, the neutral-orbit conservation law, the idealised assumptions, and the Lotka/Volterra/D'Ancona history.", "url": "https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations",
+  "related": [
+    {"slug": "gauses-law", "kind": "kindred"}
+  ]
+}

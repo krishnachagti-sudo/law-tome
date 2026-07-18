@@ -1,0 +1,55 @@
+{
+  "no": "195",
+  "slug": "petos-paradox",
+  "name": "Peto's Paradox",
+  "statement": "Whales have vastly more cells than mice, yet no more cancer.",
+  "statementAccent": "yet no more cancer",
+  "meaning": "Across species, cancer rates do not rise with the number of cells in a body. A whale or an elephant has thousands of times more cells than a mouse, and often lives far longer, so it should suffer far more cancer — arguably approaching certainty — yet it does not. That mismatch is the paradox.",
+  "mechanism": "Every cell division carries a small risk of a cancer-causing mutation, so more cells and more time should mean more cancer. The key is to separate two scales. Within a species, cancer risk does rise modestly with body size — taller people have somewhat higher cancer incidence. Across species, no such correlation holds: a survey of dozens of mammals spanning a near hundred-thousand-fold range of body mass found no significant relationship between size and cancer. The resolution is that large-bodied lineages evolved enhanced tumour-suppression — extra tumour-suppressor genes, altered apoptosis thresholds, metabolic and cell-size differences — that offsets the extra risk. So the paradox is specifically a cross-species phenomenon.",
+  "examples": [
+    {
+      "tag": "Elephants and their extra p53",
+      "text": "African elephants carry around twenty copies of the tumour-suppressor gene TP53 against the single copy in humans and most mammals; their cells favour killing damaged cells over risky repair, and the apoptotic response scales with copy number (Abegglen and Schiffman et al., JAMA, 2015)."
+    },
+    {
+      "tag": "The naked mole-rat",
+      "text": "This near-cancer-proof rodent produces an unusually high-molecular-weight form of hyaluronan, linked to the early contact inhibition that helps block tumour growth."
+    },
+    {
+      "tag": "The mouse comparison",
+      "text": "Peto's original framing: on a cell-for-cell basis humans are far less cancer-prone than mice, and applying a human cancer-risk model to a whale-sized body predicts nearly universal cancer by old age, which simply does not occur."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The hypertumor hypothesis",
+      "text": "Nagy and colleagues' proposed resolution: within a large tumour, aggressive cheater lineages parasitise the parent tumour's blood supply, forming self-destructive hypertumors that have more time to evolve in big animals."
+    },
+    {
+      "name": "Comparative oncology",
+      "text": "The field the paradox helped launch — studying how different species resist cancer, in the hope of borrowing their defences for medicine."
+    }
+  ],
+  "whyItMatters": "It turns a puzzle into a research programme: if large animals have evolved potent anti-cancer defences, understanding them could inform human cancer prevention. It sharpened the distinction between within-species and cross-species cancer scaling and drew attention to tumour-suppression mechanisms like the elephant's multiplied TP53.",
+  "working": [
+    {"lead": "Separate the two scales", "text": "distinguish within-species size effects, where bigger does mean more cancer, from the cross-species pattern, where it does not."},
+    {"lead": "Look for evolved defences", "text": "in large, long-lived species, expect enhanced tumour suppression — extra suppressor genes, readier apoptosis, or slower-dividing cells."},
+    {"lead": "Hold explanations loosely", "text": "treat the several proposed resolutions as provisional and non-exclusive, since no single mechanism is agreed."}
+  ],
+  "limits": "The core observation — no cross-species correlation between body size and cancer — is well documented, but its explanations are provisional and several coexist: more tumour-suppressor genes, slower metabolism and larger cells, hypertumors, and stronger immune surveillance, none agreed and none exclusive. The single most important nuance is that within a species cancer does rise with size, so the paradox is strictly cross-species. Recent work also refines its scope: a 2025 analysis argued that larger vertebrate species do show somewhat higher cancer prevalence, but that evolving large size co-drove enhanced growth control — reframing the puzzle rather than dissolving it.",
+  "misreadings": "It does not claim body size never affects cancer risk — within a species it does; the paradox is that the effect vanishes across species. And it is not a mystery without candidate answers: evolved tumour suppression is the leading explanation, even if which mechanisms matter most is unsettled.",
+  "origin": "Named for the English statistician and epidemiologist Richard Peto, who articulated the observation in 1977 while writing on multistage carcinogenesis, noting that cell-for-cell humans are far less cancer-prone than mice and suggesting evolutionary factors explain the difference.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1977,
+  "namedAfter": "Richard Peto",
+  "sources": [
+    {"text": "Peto's paradox, Wikipedia. — the no-correlation observation, the within-versus-across-species distinction, and the elephant TP53 case.", "url": "https://en.wikipedia.org/wiki/Peto's_paradox", "type": "secondary"},
+    {"text": "Abegglen, Schiffman et al., \"Potential Mechanisms for Cancer Resistance in Elephants,\" JAMA 314(17):1850-1860 (2015), PubMed. — the elephant TP53 copy-number finding.", "url": "https://pubmed.ncbi.nlm.nih.gov/26447779/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Peto's_paradox",
+  "related": [
+    {"slug": "kleibers-law", "kind": "kindred"}
+  ]
+}

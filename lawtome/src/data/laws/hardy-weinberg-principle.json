@@ -1,0 +1,55 @@
+{
+  "no": "186",
+  "slug": "hardy-weinberg-principle",
+  "name": "The Hardy-Weinberg Principle",
+  "aliases": ["Hardy-Weinberg equilibrium", "Hardy-Weinberg law"],
+  "statement": "Without disturbing forces, gene frequencies stay put from one generation to the next.",
+  "statementAccent": "gene frequencies stay put",
+  "meaning": "In a large, randomly mating population, the frequencies of gene variants and of genotypes remain constant across generations unless some specific force disturbs them. Inheritance alone does not change how common an allele is; it merely reshuffles the same variants. So the principle describes a population at genetic rest — the baseline against which real change is measured.",
+  "mechanism": "It is a null model. For two alleles at frequencies p and q, random mating produces genotype frequencies of p-squared, 2pq, and q-squared, which then reproduce those same allele frequencies indefinitely. Equilibrium holds only under a strict set of assumptions: no mutation, no migration, no natural selection, no genetic drift (an effectively infinite population), and random mating. Each assumption names a way real populations can evolve, so departures from the predicted ratios point to which force is at work.",
+  "examples": [
+    {
+      "tag": "Estimating carrier frequency",
+      "text": "For a recessive disease affecting q-squared of births, the principle gives the allele frequency q and hence the carrier frequency 2pq — letting geneticists estimate how many unaffected people carry one copy from the disease's incidence alone."
+    },
+    {
+      "tag": "A test for evolution",
+      "text": "Genotype counts that depart significantly from the p-squared, 2pq, q-squared ratios signal that some assumption is broken — selection, non-random mating, or drift — turning the equilibrium into a diagnostic for evolutionary forces."
+    },
+    {
+      "tag": "The 1:1 baseline",
+      "text": "Because inheritance alone preserves frequencies, any observed change over generations must come from outside the shuffle — the principle isolates the causes of evolution by holding heredity constant."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Castle's prior statement",
+      "text": "William Castle described the constant-frequency result in 1903, five years before Hardy and Weinberg, so some call it the Castle-Hardy-Weinberg principle."
+    },
+    {
+      "name": "Multi-allele and multi-locus extensions",
+      "text": "The two-allele formula generalises to many alleles and several linked loci, where linkage disequilibrium adds a further way populations depart from independence."
+    }
+  ],
+  "whyItMatters": "It is the foundational null model of population genetics: by specifying what no evolution looks like, it makes evolution measurable. Nearly every method for detecting selection, inbreeding, or population structure works by measuring departures from Hardy-Weinberg expectations, which is why it opens the subject in every genetics course.",
+  "working": [
+    {"lead": "Use it as a baseline, not a description", "text": "treat the equilibrium as the reference state — real populations rarely meet every assumption, and that is the point."},
+    {"lead": "Read departures as clues", "text": "when genotype ratios deviate, ask which assumption failed — selection, drift, migration, mutation, or non-random mating."},
+    {"lead": "Estimate hidden carriers", "text": "from a recessive condition's frequency, back out the allele frequency and the far larger number of unaffected carriers."}
+  ],
+  "limits": "Its assumptions are idealisations that no real population fully satisfies: populations are finite, so drift always operates; mating is rarely fully random; and mutation, migration, and selection are ubiquitous. The equilibrium is therefore never exactly realised. Its value is precisely as an idealised baseline — the deviations from it are what carry the biological information, so the principle is used to detect the very forces it assumes away.",
+  "misreadings": "It does not claim populations do not evolve — it states what would happen if they did not, so that departures reveal evolution in action. And equilibrium is reached in a single generation of random mating, not gradually approached; the assumptions, not time, are what keep it from holding.",
+  "origin": "Stated independently in 1908 by the English mathematician G. H. Hardy, in a letter to the journal Science, and the German physician Wilhelm Weinberg; the American geneticist William E. Castle had given an equivalent argument in 1903.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1908,
+  "namedAfter": "G. H. Hardy and Wilhelm Weinberg",
+  "sources": [
+    {"text": "Hardy-Weinberg principle, Wikipedia. — the equilibrium, the five assumptions, the p-squared/2pq/q-squared ratios, and the Castle precedence.", "url": "https://en.wikipedia.org/wiki/Hardy%E2%80%93Weinberg_principle", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hardy%E2%80%93Weinberg_principle",
+  "related": [
+    {"slug": "fishers-principle", "kind": "kindred"}
+  ]
+}
