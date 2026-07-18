@@ -1,0 +1,57 @@
+{
+  "no": "059",
+  "slug": "lindy-effect",
+  "name": "The Lindy Effect",
+  "aliases": ["Lindy's Law"],
+  "statement": "For non-perishable things, the longer something has already lasted, the longer it is likely to last.",
+  "statementAccent": "the longer it is likely to last",
+  "meaning": "For things that don't wear out or rot — ideas, technologies, texts — age is not decay but evidence of durability. How long something has survived is the best guide to how much longer it will survive; old survivors are proven, not near death.",
+  "mechanism": "A non-perishable has no fixed natural lifespan, so there is no built-in expiry. Survival is therefore informative: each period a thing endures screens out fragility and revalidates it. Statistically this is a survival distribution with a decreasing hazard rate — the chance of 'dying' per unit time falls as age rises — which Mandelbrot and Taleb frame as a power law, under which expected remaining life grows with current age. It is the exact opposite of biological ageing, where the hazard of death rises with every year.",
+  "examples": [
+    {
+      "tag": "Enduring technology",
+      "text": "The wheel, the book, the chair: in continuous use for centuries or millennia, with nothing about them that 'ages out'. Their long tenure is strong evidence they will persist far longer still."
+    },
+    {
+      "tag": "Books in print",
+      "text": "Taleb's central case: a book in print for forty years can be expected to stay in print another forty, while this year's bestseller is a poor bet to be read in twenty. A text read for two thousand years is likelier to be read in another two thousand than a new one is to survive a decade."
+    },
+    {
+      "tag": "Where it does NOT apply",
+      "text": "People and other living things are the standard counter-example. A ninety-year-old does not have more expected years left than a forty-year-old — biology has a natural lifespan and a rising hazard, so the Lindy effect explicitly excludes it."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Antifragility",
+      "text": "Nassim Taleb's broader framework, in which the Lindy effect sits: time and stressors reveal and reward the robust and the antifragile, and punish the fragile."
+    },
+    {
+      "name": "The Copernican / Gott argument",
+      "text": "J. Richard Gott's 1993 method: from a thing's current age, and the assumption you are observing it at no special moment, bound its likely total lifespan — a rigorous probabilistic cousin of 'age is evidence of longevity'."
+    }
+  ],
+  "whyItMatters": "It is a filter for durability: when you need something that will last — a tool, a format, an idea to build on — the length of its track record is real evidence, often better than novelty or cleverness. It underwrites a bias toward the time-tested when robustness matters more than fashion.",
+  "working": [
+    {"lead": "Treat longevity as evidence of robustness", "text": "for non-perishables, prefer the option with the longer track record when what you need is durability; survival is data."},
+    {"lead": "Bet on the survivor over the novelty", "text": "the forty-year-old technology is usually a safer long-term foundation than this year's replacement, precisely because it has already been tested by time."},
+    {"lead": "Don't mistake age for optimality", "text": "long survival predicts continued survival, not superiority; a better new alternative can still exist, so use Lindy to weight durability, not to veto change."}
+  ],
+  "limits": "It applies only to genuinely non-perishable things — ideas, technologies, texts — and fails for anything with a natural lifespan, like organisms or a machine that wears out. The clean 'remaining life grows with age' result also depends on the lifetime following roughly a power-law, decreasing-hazard distribution; if the real distribution differs, the neat doubling rule breaks. It is easily abused as 'old = good', a blanket case against change, when age is evidence of past fitness, not a guarantee of continued optimality. There is even a provenance twist: the modern version inverts the 1964 original.",
+  "misreadings": "It does not say old things are better, or that nothing new can win — only that, for things without a natural lifespan, past survival is evidence of future survival. Applying it to people, or reading it as a mandate to resist all change, misuses it.",
+  "origin": "The name comes from Lindy's, a New York delicatessen where comedians gathered. Albert Goldman's 1964 article 'Lindy's Law' described a folk belief among them — but his original claim was the reverse of today's: that the more a comedian was exposed, the faster they burned through their material. Benoit Mandelbrot inverted it in The Fractal Geometry of Nature (1982), proposing that future life expectancy rises with past survival, and Nassim Nicholas Taleb adopted and popularised that version, extending it to ideas and technologies in Antifragile (2012).",
+  "category": "statistics",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1964,
+  "popularYear": 2012,
+  "sources": [
+    {"text": "Lindy effect, Wikipedia. — Goldman's 1964 origin, Mandelbrot's 1982 inversion, Taleb's popularisation, and the non-perishable scope.", "url": "https://en.wikipedia.org/wiki/Lindy_effect", "type": "secondary"},
+    {"text": "Taleb, N.N. (2012). Antifragile: Things That Gain from Disorder. Random House. — the modern statement and the books-in-print example.", "type": "primary"},
+    {"text": "Ord, T. (2023). \"The Lindy Effect.\" arXiv:2308.09045. — an academic treatment of its assumptions and the decreasing-hazard mechanism.", "url": "https://arxiv.org/abs/2308.09045", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Lindy_effect",
+  "related": [
+    {"slug": "pareto-principle", "kind": "kindred"}
+  ]
+}

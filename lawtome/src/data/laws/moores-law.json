@@ -1,0 +1,62 @@
+{
+  "no": "057",
+  "slug": "moores-law",
+  "name": "Moore's Law",
+  "statement": "The number of transistors on a chip roughly doubles every two years.",
+  "statementAccent": "doubles every two years",
+  "meaning": "Semiconductor makers have, for decades, been able to pack about twice as many transistors into the same chip area every couple of years — so computing capability per chip grows exponentially while cost per component falls.",
+  "mechanism": "It is not a law of physics but an empirical trend that became an industry roadmap and, in part, a self-fulfilling target. The doubling was sustained by deliberate, coordinated investment in lithography and process technology: because every maker expected its rivals to hit the trend, each planned toward it, which helped make the prediction come true. It is a statement about density and cost economics, not directly about speed.",
+  "examples": [
+    {
+      "tag": "The long doubling",
+      "text": "From a few thousand transistors per chip in the early 1970s to billions today, the roughly two-year doubling held for more than forty years — one of the most durable exponential trends in technology."
+    },
+    {
+      "tag": "The industry roadmap",
+      "text": "The semiconductor industry codified the trend in the International Technology Roadmap for Semiconductors (from 1993), setting node and scaling targets on a fixed schedule so firms could plan to keep pace — the law as coordination device."
+    },
+    {
+      "tag": "The '18 months' myth",
+      "text": "The ubiquitous 'doubles every 18 months' is not Moore's. It came from Intel's David House, who combined the two-year transistor doubling with rising performance to project chip performance doubling every 18 months. Moore said he never used the figure."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Dennard scaling",
+      "text": "Robert Dennard's 1974 companion observation: as transistors shrink, power density stays roughly constant. It broke down around 2005–2006 as leakage currents rose, ending 'free' clock-speed gains and forcing the shift to multi-core."
+    },
+    {
+      "name": "Koomey's law",
+      "text": "Jonathan Koomey's finding that computations per joule of energy doubled about every 1.6 years for half a century — with the doubling slowing after 2000. The efficiency counterpart to Moore's density trend."
+    },
+    {
+      "name": "Wirth's law",
+      "text": "Niklaus Wirth's rejoinder: software gets slower faster than hardware gets faster. Bloat quietly consumes the gains Moore's law delivers."
+    }
+  ],
+  "whyItMatters": "For half a century it was the metronome of the digital age: product roadmaps, software ambitions, and whole business models were built on the assumption that compute would keep getting exponentially cheaper. Understanding that it is an economic trend and not a physical guarantee matters most now, as it slows.",
+  "working": [
+    {"lead": "Plan for exponential change", "text": "when the trend holds, design for the compute you'll have in a few years, not just today's — capabilities that look expensive now may be cheap by the time you ship at scale."},
+    {"lead": "Don't assume it lasts forever", "text": "the doubling is slowing as physical limits approach; roadmaps that bank on indefinite free scaling are increasingly fragile."},
+    {"lead": "Mind Wirth's law", "text": "hardware gains are easily eaten by software bloat; efficiency still has to be earned, not assumed from the trend."}
+  ],
+  "limits": "Moore's law is an observation, not a law of nature — no physical principle guarantees it, and its pace has slowed since about 2010 as scaling approaches atomic and quantum-tunnelling limits and fabrication costs soar. Its 'death' has been declared many times (an Nvidia chief called it dead in 2022; Intel's disagreed days later). It is also partly self-fulfilling: because the industry explicitly targeted the roadmap, its persistence reflects coordinated intent as much as technological inevitability. It describes transistor density; the popular reading as a law of ever-doubling 'speed' conflates it with the separate, and now-broken, Dennard scaling.",
+  "misreadings": "It is not a physical law, and not a promise that computers double in speed every two years — it is about transistor count and cost, was originally stated as yearly (1965) before Moore revised it to two years (1975), and the '18 months' version is David House's performance figure, not Moore's.",
+  "origin": "Stated by Gordon Moore, then head of R&D at Fairchild Semiconductor and later co-founder of Intel, in a 1965 Electronics magazine article, 'Cramming more components onto integrated circuits'. His original rate was a doubling roughly every year; he revised it to every two years in 1975. The name is usually credited to the Caltech professor Carver Mead.",
+  "category": "technology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1965,
+  "popularYear": 1975,
+  "namedAfter": "Gordon Moore",
+  "sources": [
+    {"text": "Moore, G.E. (19 April 1965). \"Cramming more components onto integrated circuits.\" Electronics, 38(8), 114 ff.", "url": "https://www.cs.utexas.edu/~fussell/courses/cs352h/papers/moore.pdf", "type": "primary"},
+    {"text": "Moore's law, Wikipedia. — the 1965 original and 1975 revision, the House '18 months' misattribution, Dennard-scaling breakdown, and the recent slowdown.", "url": "https://en.wikipedia.org/wiki/Moore%27s_law", "type": "secondary"},
+    {"text": "Computer History Museum. \"1965: 'Moore's Law' Predicts the Future of Integrated Circuits.\"", "url": "https://www.computerhistory.org/siliconengine/moores-law-predicts-the-future-of-integrated-circuits/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Moore%27s_law",
+  "related": [
+    {"slug": "metcalfes-law", "kind": "kindred"},
+    {"slug": "amaras-law", "kind": "kindred"}
+  ]
+}

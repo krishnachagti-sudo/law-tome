@@ -1,0 +1,53 @@
+{
+  "no": "060",
+  "slug": "chestertons-fence",
+  "name": "Chesterton's Fence",
+  "statement": "Do not tear down a fence until you know why it was put up.",
+  "statementAccent": "why it was put up",
+  "meaning": "Before you abolish or change an existing rule, institution, or arrangement, first understand why it exists. An arrangement whose purpose you cannot see is not thereby purposeless — your inability to see the reason is a fact about you, not about the fence.",
+  "mechanism": "The fence encodes knowledge that is not visible on its face: someone built it deliberately, at cost, to solve a problem — but the problem may now be invisible, like a wolf the fence keeps out that you can no longer see. The principle shifts the burden of proof onto the reformer: reform is legitimate only after the original rationale has been reconstructed and weighed. It is a hedge against changes that are really deformations — 'fixes' that quietly re-expose a hazard the fence was preventing.",
+  "examples": [
+    {
+      "tag": "Deleting code",
+      "text": "That odd line, guard clause, or ugly workaround is often there because some caller or edge case depends on it — a software echo of Hyrum's law, where any observable behaviour becomes someone's contract. Understand why the code exists before you remove it."
+    },
+    {
+      "tag": "Repealing a rule",
+      "text": "A regulation that looks like pointless red tape may have been written after a specific disaster or fraud. The principle says to reconstruct the harm it was meant to prevent before scrapping it, lest the original harm return."
+    },
+    {
+      "tag": "Abolishing a tradition",
+      "text": "A longstanding ritual, committee, or procedure that 'no one remembers the point of' may quietly coordinate behaviour or defuse a conflict. Its very invisibility is the trap the principle warns about."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Second-order thinking",
+      "text": "The broader habit the fence demands: weighing not just the immediate effect of a change but its downstream consequences — what removing the fence does beyond clearing the road."
+    }
+  ],
+  "whyItMatters": "It is a discipline against confident, ignorant reform — the kind that clears away a safeguard because its purpose has become invisible, and rediscovers that purpose the hard way. It counsels inquiry before demolition, in code, policy, and institutions alike.",
+  "working": [
+    {"lead": "Reconstruct the rationale first", "text": "before removing anything, find out why it was put there; the reason may be obsolete, but you cannot know that until you know the reason."},
+    {"lead": "Then choose deliberately", "text": "armed with the rationale, you can keep the fence, remove it knowing the risk is truly gone, or replace it with something better targeted."},
+    {"lead": "Put the burden on the reformer", "text": "'I don't see the point of this' is not yet an argument for removal; the case has to be made from an understanding of the original purpose, not from ignorance of it."}
+  ],
+  "limits": "The principle can be weaponised to defend any status quo: because some reason can almost always be constructed for why a thing exists, it can shade into an appeal to tradition that resists all change. Some fences really are obsolete — the wolf is gone — and the original rationale may itself have been unjust or mistaken, in which case understanding why the fence was built is precisely the argument for tearing it down. Often, too, the reason is simply unrecoverable, which a strong reading would turn into a permanent veto on reform. It counsels inquiry, not preservation.",
+  "misreadings": "It is not 'never change anything' or 'tradition is always right'. It is pro-reform — but reform after inquiry rather than reform from ignorance. Discovering a fence's purpose can be exactly what justifies removing it.",
+  "origin": "From G.K. Chesterton's 1929 book The Thing, in the essay 'The Drift from Domesticity', where he imagines a reformer who wants to clear away a fence across a road and cannot say what it is for. Chesterton's answer: 'If you don't see the use of it, I certainly won't let you clear it away. Go away and think. Then, when you can come back and tell me that you do see the use of it, I may allow you to destroy it.' The pithy one-line form usually quoted is a later paraphrase.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1929,
+  "namedAfter": "G. K. Chesterton",
+  "sources": [
+    {"text": "Chesterton, G.K. (1929). The Thing, ch. 'The Drift from Domesticity'. — the original fence passage.", "type": "primary"},
+    {"text": "The American Chesterton Society. \"Taking a Fence Down.\" — reproduces the passage and cites The Thing (1929).", "url": "https://www.chesterton.org/taking-a-fence-down/", "type": "secondary"},
+    {"text": "Wikipedia: Chesterton's fence. — the origin, the JFK-attributed paraphrase, and the principle's modern use.", "url": "https://en.wikipedia.org/wiki/Wikipedia:Chesterton%27s_fence", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/G._K._Chesterton",
+  "related": [
+    {"slug": "hyrums-law", "kind": "kindred"},
+    {"slug": "galls-law", "kind": "kindred"}
+  ]
+}

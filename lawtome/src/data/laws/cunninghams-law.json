@@ -1,0 +1,46 @@
+{
+  "no": "053",
+  "slug": "cunninghams-law",
+  "name": "Cunningham's Law",
+  "statement": "The best way to get the right answer on the internet is not to ask a question; it's to post the wrong answer.",
+  "statementAccent": "post the wrong answer",
+  "meaning": "People online are quicker and more energetic about correcting a visible mistake than about answering a neutral request for help — so stating something wrong can summon the right answer faster than politely asking for it.",
+  "mechanism": "A plain question asks a stranger to spend effort for little reward. A wrong statement, by contrast, trips the correction impulse: the urge to set the record straight, show expertise, and win is far more motivating than altruism. The visible error also gives responders a concrete target to react to instead of an open-ended void. The maxim, only half seriously, weaponises pedantry and ego rather than goodwill.",
+  "examples": [
+    {
+      "tag": "The wiki",
+      "text": "Wikipedia is the most-cited demonstration: incorrect or incomplete content tends to attract rapid correction from editors who cannot leave an error standing — fittingly, since Ward Cunningham invented the wiki."
+    },
+    {
+      "tag": "Q&A sites",
+      "text": "On technical forums a confidently wrong proposed solution often draws detailed, better answers faster than a bare question, as experts move to refute it — though many communities explicitly discourage posting answers you know to be wrong."
+    },
+    {
+      "tag": "'Someone is wrong on the internet'",
+      "text": "The compulsion the law exploits is captured by XKCD 386, in which a person refuses to come to bed because 'someone is WRONG on the internet' — 'What do you want me to do? LEAVE? Then they'll keep being wrong!'"
+    }
+  ],
+  "whyItMatters": "It is a wry lesson about what actually moves people to contribute online: correction beats request. Understood honestly, it explains why open, editable systems like wikis self-heal — and why comment sections fill instantly with 'well, actually'.",
+  "working": [
+    {"lead": "Give a correction a target", "text": "the general lesson, applied honestly, is that a concrete claim people can react to draws more engagement than an open question — frame requests so responders have something specific to sharpen against."},
+    {"lead": "Design for the correction impulse", "text": "editable, visibly-wrong-until-fixed systems (wikis, public drafts) harness the same energy to self-correct; build the affordance to fix rather than only to ask."},
+    {"lead": "Don't actually lie to people", "text": "deliberately posting known-false answers pollutes the record and breaks community norms; the useful reading is about human motivation, not a licence to spread misinformation."}
+  ],
+  "limits": "It is a humorous internet aphorism, not a tested principle. Deliberately posting wrong answers is antisocial and against the rules of many communities: readers who see the error but never the correction are left misinformed. It also simply fails a lot of the time — errors are often ignored, downvoted, or met with hostility rather than help, and on quiet or non-expert venues nobody corrects at all. And its own namesake rejects it (see origin), which rather undercuts its authority.",
+  "misreadings": "It is a joke about online behaviour, not genuine advice to lie. The point is that the correction impulse is stronger than the helping impulse — not that manufacturing falsehoods is a good way to run a discourse or a life.",
+  "origin": "Named after Ward Cunningham, the inventor of the wiki — but he did not coin it. The phrasing was written and named by Steven McGeady, who posted it as a comment on the New York Times' 'Schott's Vocab' blog in 2010, attributing it to advice Cunningham had given him in the early 1980s about Usenet. Cunningham has since disowned it, calling it 'a misquote that disproves itself by propagating through the internet as Cunningham's Law' and saying he never suggested asking questions by posting wrong answers.",
+  "category": "media",
+  "reliability": "Folk-adage",
+  "provenance": "canon",
+  "coinedYear": 2010,
+  "namedAfter": "Ward Cunningham",
+  "sources": [
+    {"text": "\"Cunningham's Law.\" Wikimedia Meta-Wiki. — the canonical wording, the McGeady attribution, and the 2010 origin.", "url": "https://meta.wikimedia.org/wiki/Cunningham%27s_Law", "type": "primary"},
+    {"text": "Ward Cunningham, Wikipedia. — documents Cunningham's own disavowal of the law named after him.", "url": "https://en.wikipedia.org/wiki/Ward_Cunningham", "type": "secondary"},
+    {"text": "Munroe, R. \"Duty Calls.\" xkcd #386. — the 'someone is wrong on the internet' comic.", "url": "https://xkcd.com/386/", "type": "secondary"}
+  ],
+  "sameAs": "https://meta.wikimedia.org/wiki/Cunningham%27s_Law",
+  "related": [
+    {"slug": "godwins-law", "kind": "kindred"}
+  ]
+}
