@@ -1,0 +1,55 @@
+{
+  "no": "505",
+  "slug": "cascading-failure",
+  "name": "Cascading Failure",
+  "aliases": ["The domino failure", "Cascade collapse"],
+  "statement": "One component fails, its load falls on the rest, and the overload topples them in turn until much of the system is gone.",
+  "statementAccent": "the overload topples them in turn",
+  "meaning": "A cascading failure is a process in an interconnected system in which the failure of one or a few components triggers the successive failure of others. As a failed element drops out, the load it carried, current, traffic, financial obligations, is redistributed to the remaining components; if that added load pushes them past their capacity, they fail in turn, shedding still more load onto what is left. This positive-feedback chain reaction can propagate until a large fraction of the system collapses, out of all proportion to the size of the initial trigger. The system's very interconnectedness, which makes it efficient, is what lets a local fault become a global one.",
+  "mechanism": "The recipe is load redistribution against finite capacity, closed into a feedback loop. Each element carries a load below some limit; removing one forces its load onto neighbours, which may then exceed their own limits and fail, redistributing more load again. Andrew Motter and Ying-Cheng Lai's 2002 model showed that in networks with uneven load, removing a single high-load node can collapse a large fraction of the whole. When networks depend on one another, cascades are amplified: Buldyrev and colleagues showed in 2010 that failures can bounce back and forth between interdependent networks, producing an abrupt, catastrophic collapse rather than a gradual decline.",
+  "examples": [
+    {
+      "tag": "The 2003 blackout",
+      "text": "On 14 August 2003 a transmission line touching an overgrown tree near Cleveland, compounded by a control-room alarm failure, cascaded across the grid and left roughly 50 million people across the US Northeast and Ontario without power."
+    },
+    {
+      "tag": "Italy, September 2003",
+      "text": "On 28 September 2003 a Swiss line flashed over to a tree, load shifted to a second line that tripped, and within minutes Italy was severed from the European grid, blacking out some 56 million people."
+    },
+    {
+      "tag": "Financial contagion",
+      "text": "In 2008 the failure of one major institution propagated through counterparty exposures and fire-sale deleveraging to others, a cascade of distress through the financial network."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Interdependent-network cascade",
+      "text": "Buldyrev and colleagues' 2010 result that networks depending on one another suffer failures that ricochet between them, giving an abrupt, first-order collapse; a broad degree distribution, protective in a single network, makes interdependent ones more fragile."
+    },
+    {
+      "name": "Robust yet fragile",
+      "text": "Carlson and Doyle's highly optimized tolerance: systems tuned for efficiency are robust to the disturbances they were designed for but hypersensitive to rare, unanticipated ones, so hub-dominated networks shrug off random loss yet shatter under targeted attack."
+    }
+  ],
+  "whyItMatters": "Cascading failure is a central concept for the reliability of power grids, communication networks, supply chains, financial systems, and ecosystems, all of which are interconnected enough for a small fault to bring down the whole. It explains why the largest disasters are often triggered by trivial initial events, why efficiency and tight coupling trade off against resilience, and why redundancy alone is no guarantee of safety. Understanding it drives the engineering of firewalls against propagation, from grid islanding and circuit breakers to financial trading halts, and it reframes catastrophe as a systemic, not a local, property.",
+  "working": [
+    {"lead": "Watch the redistribution", "text": "trace where a failed component's load goes, since a cascade is driven by that load overloading whatever must absorb it."},
+    {"lead": "Mind the coupling", "text": "recognise that tighter interconnection and interdependence spread faults faster, so efficiency can come at the price of fragility."},
+    {"lead": "Build in firebreaks", "text": "add slack, islanding, and circuit breakers so a local failure can be contained before it propagates system-wide."}
+  ],
+  "limits": "The mechanism is real and well modelled, but the models are stylised: Motter-Lai and Buldyrev capture the qualitative overload and interdependence dynamics, not the full electrical or economic detail of any specific system. Mitigation is possible through islanding, redundancy, protective relays and load shedding, and buffers, but redundancy is not a cure-all: Charles Perrow's normal-accident theory argues that in tightly coupled, highly complex systems added redundancy can itself introduce new interactions and hidden failure modes. Some cited examples, such as supply-chain and ecosystem cascades, are valid as a class but harder to pin to a single canonical, fully quantified case.",
+  "misreadings": "A bigger trigger does not mean a bigger cascade; a defining feature is that a tiny fault can bring down the whole, since cascade size depends on load margins and topology, not trigger size. Scale-free, hub-dominated networks are not simply robust: they tolerate random failures well but are fragile to overload and to targeted attacks on hubs, and the two must not be conflated. More redundancy does not always help, since in tightly coupled systems it can add complexity and new failure modes. And cascading failure is not only about interdependent networks; single-network overload cascades count too.",
+  "origin": "A general phenomenon of interconnected systems, formalised in network science by Adilson Motter and Ying-Cheng Lai's 2002 model of load-driven cascades and by Buldyrev, Parshani, Paul, Stanley, and Havlin's 2010 study of interdependent-network collapse, with roots in Charles Perrow's 1984 'Normal Accidents'.",
+  "category": "technology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Motter & Lai, 'Cascade-based attacks on complex networks,' Physical Review E 66:065102(R) (2002). — the load-and-capacity model of overload cascades.", "url": "https://link.aps.org/doi/10.1103/PhysRevE.66.065102", "type": "primary"},
+    {"text": "Buldyrev, Parshani, Paul, Stanley & Havlin, 'Catastrophic cascade of failures in interdependent networks,' Nature 464:1025-1028 (2010), arXiv:0907.1182. — the interdependent-network amplification of cascades.", "url": "https://arxiv.org/abs/0907.1182", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Cascading_failure",
+  "related": [
+    {"slug": "braesss-paradox", "kind": "kindred"},
+    {"slug": "the-law-of-requisite-variety", "kind": "tension"}
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "no": "499",
+  "slug": "power-law-distribution",
+  "name": "The Power-Law Distribution",
+  "aliases": ["Scale-free distribution", "Heavy-tailed distribution"],
+  "statement": "A few events are enormous and almost all are tiny, and the frequency of an event falls as a power of its size.",
+  "statementAccent": "almost all are tiny",
+  "meaning": "A power-law distribution is one whose probability falls off as a power of the value, of the form P(x) proportional to x to the minus alpha, giving it a heavy tail: a small number of events or entities are enormous while the vast majority are minuscule, the pattern behind familiar eighty-twenty style concentration. Its defining mathematical feature is scale invariance: rescaling the argument by a constant leaves the functional form unchanged up to a multiplier, so the distribution looks the same at every scale and has no characteristic size. On a log-log plot a power law appears as a straight line, its most recognisable, and most abused, signature.",
+  "mechanism": "The scaling exponent alpha governs how heavy the tail is, and small exponents make extreme events shockingly common by the standards of a bell curve. When the exponent is low enough the mean and variance can diverge, so ordinary statistical intuitions about a typical value and predictable fluctuations break down, which is why power-law systems throw up rare, gigantic events, the domain of so-called black swans. Power laws can be generated many ways, including preferential attachment, self-organized criticality, optimisation under constraints, and certain multiplicative random processes, so the same heavy-tailed shape can arise from very different underlying dynamics.",
+  "examples": [
+    {
+      "tag": "Word frequencies",
+      "text": "Zipf's law: in natural language a handful of words like the and of are extremely common while most words are rare, with frequency falling roughly as one over rank."
+    },
+    {
+      "tag": "Earthquakes",
+      "text": "The Gutenberg-Richter law relates the frequency of quakes to their magnitude as a power law, so tiny tremors are constant and great earthquakes rare but not vanishingly so."
+    },
+    {
+      "tag": "Wealth",
+      "text": "The Pareto distribution of wealth and income, a specific power law, captures how a small fraction of people hold a large share, the observation that first inspired the eighty-twenty idea."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Pareto distribution",
+      "text": "A specific continuous power law, classically used for wealth and income, and one of the named parametric members of the wider family."
+    },
+    {
+      "name": "Zipf's law",
+      "text": "An empirical rank-frequency regularity, most famous for word frequencies, mathematically a discrete power-law relation and closely related to the Pareto form."
+    }
+  ],
+  "whyItMatters": "Power laws recur across nature and society, in city sizes, word frequencies, earthquakes, wealth, citations, web links, and solar flares, and their heavy tails mean that in these domains averages mislead and rare extremes dominate the totals and the risk. Recognising a distribution as power-law rather than bell-shaped changes how one plans, insures, and prepares, because catastrophes are not off-scale flukes but the fat tail of the ordinary process. The search for common mechanisms behind so many power laws has been a driving question of complexity science, even as the empirical claims themselves demand unusual statistical care.",
+  "working": [
+    {"lead": "Distrust the average", "text": "in a heavy-tailed domain, treat the mean as a poor summary, since a single giant event can dwarf the sum of all the rest."},
+    {"lead": "Expect the extreme", "text": "read a power law as a warning that rare, enormous events are a built-in feature, not an anomaly to be dismissed."},
+    {"lead": "Demand more than a straight line", "text": "require formal goodness-of-fit and comparison against alternatives, since an eyeballed log-log line is necessary but nowhere near sufficient."}
+  ],
+  "limits": "It is statistically hard to confirm a genuine power law rather than a lognormal, stretched exponential, or other heavy-tailed distribution, especially over the limited range of real data, and the range where power-law behaviour begins is itself uncertain. Clauset, Shalizi, and Newman's 2009 study applied rigorous maximum-likelihood and goodness-of-fit tests to two dozen datasets long claimed to be power laws and found the results mixed, with many claims failing to survive. Historically, power laws were asserted from straight-ish log-log plots without formal fitting, so many textbook examples are contested. The exact thresholds at which the mean or variance diverge depend on the parameterisation.",
+  "misreadings": "A power law is not an exponential; an exponential decays far faster and is straight on a log-linear, not a log-log, plot, so confusing the two is a common error. A roughly straight log-log plot is not proof of a power law, only a necessary hint that must be tested. Not every heavy-tailed distribution is a power law; lognormals in particular masquerade as power laws over short ranges. And the exponent matters: only in certain ranges do the mean and variance actually diverge.",
+  "origin": "A general statistical form with a long history in the work of Pareto on wealth and Zipf on word frequencies, and subjected to rigorous empirical scrutiny by Aaron Clauset, Cosma Shalizi, and Mark Newman in their 2009 paper 'Power-law distributions in empirical data'.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Clauset, Shalizi & Newman, 'Power-law distributions in empirical data,' SIAM Review 51(4):661-703 (2009), arXiv:0706.1062. — the rigorous testing framework and the mixed verdict on claimed power laws.", "url": "https://arxiv.org/abs/0706.1062", "type": "primary"},
+    {"text": "Power law, Wikipedia. — scale invariance, heavy tails, log-log signature, and the caveat that a log-log line is insufficient evidence.", "url": "https://en.wikipedia.org/wiki/Power_law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Power_law",
+  "related": [
+    {"slug": "preferential-attachment", "kind": "cause"},
+    {"slug": "zipfs-law", "kind": "kindred"}
+  ]
+}

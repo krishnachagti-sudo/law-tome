@@ -1,0 +1,83 @@
+{
+  "no": "496",
+  "slug": "self-organized-criticality",
+  "name": "Self-Organized Criticality",
+  "aliases": [
+    "SOC",
+    "The sandpile model"
+  ],
+  "statement": "Some systems tune themselves to the brink of a phase transition, where a single grain can trigger an avalanche of any size.",
+  "statementAccent": "a single grain can trigger an avalanche of any size",
+  "meaning": "Self-organized criticality is the property by which certain slowly driven dynamical systems evolve, all on their own, toward a critical state, the knife-edge between order and disorder, without anyone tuning a control parameter to a precise value. At that self-tuned critical point the system has no characteristic scale: disturbances propagate as avalanches whose sizes follow a power law, so most events are tiny but occasionally one spans the whole system. The critical state acts as an attractor the dynamics fall into by themselves, which is why the criticality is called self-organized rather than fine-tuned from outside.",
+  "mechanism": "The idea is captured by the Bak-Tang-Wiesenfeld sandpile, a simple cellular automaton. Grains are dropped one at a time onto a grid; when a site's slope exceeds a threshold it topples, spilling grains to its neighbours, which can push them over their own thresholds in a chain reaction, while grains at the edge fall off and dissipate. Under slow, steady driving the pile builds itself up to a stationary critical slope at which avalanches of every size occur, from a single slip to a system-wide collapse, distributed as a power law. Slow driving plus a threshold instability plus dissipation is the recipe: the system loads itself to the edge and stays there.",
+  "examples": [
+    {
+      "tag": "The sandpile",
+      "text": "The founding model: sand dropped grain by grain organises itself to a critical slope where avalanche sizes follow a power law, the picture that named the field."
+    },
+    {
+      "tag": "Earthquakes",
+      "text": "The Gutenberg-Richter power law relating quake magnitude to frequency is often cited as consistent with self-organized criticality in the stressed crust, though power-law statistics alone do not prove the mechanism."
+    },
+    {
+      "tag": "Neuronal avalanches",
+      "text": "Cascades of cortical activity with power-law size distributions have been observed and proposed as evidence the brain operates near criticality, an active but unsettled research area."
+    }
+  ],
+  "variants": [
+    {
+      "name": "1/f noise",
+      "text": "The original 1987 paper offered self-organized criticality as an explanation for ubiquitous 1/f, or pink, noise, though such noise has many possible sources and is not uniquely diagnostic of the mechanism."
+    },
+    {
+      "name": "The forest-fire model",
+      "text": "A related cellular automaton in which trees grow and lightning starts fires, producing power-law fire sizes, but plagued by finite-size effects that keep it from cleanly matching real fire statistics."
+    }
+  ],
+  "whyItMatters": "Self-organized criticality was a landmark attempt to explain why power laws, fractals, and scale-free avalanches are so common in nature without invoking a delicate tuning of parameters, offering a single dynamical route to the edge of a phase transition. It became a cornerstone idea in complexity science and popularised the intuition that large, rare catastrophes can be the ordinary tail of the same process that produces countless small events, so a system can be built to fail at every scale at once. Its ambition, to find one mechanism behind the ubiquity of scale-free behaviour, made it one of the most cited and most debated ideas in the physics of complex systems.",
+  "working": [
+    {
+      "lead": "Look for self-tuning",
+      "text": "ask whether a system drives itself to a critical state rather than being tuned there, the defining feature of the phenomenon."
+    },
+    {
+      "lead": "Expect avalanches of all sizes",
+      "text": "read power-law event distributions as the signature that small and catastrophic events may share one mechanism, not two."
+    },
+    {
+      "lead": "Do not over-diagnose it",
+      "text": "remember that a power law is necessary but far from sufficient evidence, since many processes produce heavy tails."
+    }
+  ],
+  "limits": "The concept is widely criticised as overextended: Per Bak's programme leapt from sandpiles to earthquakes, extinctions, markets, and the cosmos, and many of those applications are speculative or contested. Observing a power law does not establish the mechanism, since heavy tails arise many ways, and rigorous fits often fail. Physical experiments with real sand and rice piles proved far more sensitive to grain shape and inertia than the idealised model, so actual piles frequently do not behave as clean critical systems. Its boldest claims, such as treating mass extinctions as intrinsic to a critical biosphere and downplaying the asteroid impact, are rejected by most of the relevant field, and whether the brain is truly critical remains open.",
+  "misreadings": "It does not say every power law implies the mechanism; the power law is a symptom, not a proof. It is not ordinary tuned criticality: the whole point is that no external parameter is dialled to a critical value, the system tunes itself. Real sandpiles do not straightforwardly demonstrate it; the pile is a motivating metaphor, and actual granular flow often deviates. And the title of Bak's book, 'How Nature Works', oversells a mixed-support hypothesis as a settled universal law.",
+  "origin": "Introduced by Per Bak, Chao Tang, and Kurt Wiesenfeld in a 1987 paper in Physical Review Letters, 'Self-organized criticality: An explanation of the 1/f noise', and popularised by Bak's 1996 book 'How Nature Works'.",
+  "category": "science",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1987,
+  "namedAfter": "Per Bak",
+  "sources": [
+    {
+      "text": "Bak, Tang & Wiesenfeld, 'Self-organized criticality: An explanation of the 1/f noise,' Physical Review Letters 59, 381 (1987). — the founding paper and the sandpile.",
+      "url": "https://doi.org/10.1103/PhysRevLett.59.381",
+      "type": "primary"
+    },
+    {
+      "text": "Self-organized criticality, Wikipedia. — the self-tuning critical state, the sandpile model, and the criticisms.",
+      "url": "https://en.wikipedia.org/wiki/Self-organized_criticality",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Self-organized_criticality",
+  "related": [
+    {
+      "slug": "power-law-distribution",
+      "kind": "consequence"
+    },
+    {
+      "slug": "the-edge-of-chaos",
+      "kind": "kindred"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "no": "495",
+  "slug": "braesss-paradox",
+  "name": "Braess's Paradox",
+  "aliases": ["The traffic paradox", "Braess' paradox"],
+  "statement": "Add a new road to a congested network and, if drivers choose selfishly, everyone's journey can get slower.",
+  "statementAccent": "everyone's journey can get slower",
+  "meaning": "Braess's paradox is the counterintuitive result that adding a road, or any link, to a congested network can increase everyone's travel time, while closing a road can speed everyone up, even though total demand is unchanged and the new road is a genuine, high-capacity option. The catch is that each driver chooses the route that is fastest for them alone. Their individually rational choices push the system into an equilibrium that is worse for all than if the tempting shortcut had never existed. The extra capacity does not help because self-interested routing steers everyone onto it.",
+  "mechanism": "The stable outcome of selfish routing is a Nash, or Wardrop, equilibrium: no driver can cut their own time by switching routes. That equilibrium is generally not the social optimum that would minimise total travel time, and the gap between them is called the price of anarchy. A new link can create a route each driver is individually tempted to take, and the resulting congestion externality makes the new equilibrium worse for everyone, a structure identical to a prisoner's dilemma. The effect is exactly mirrored by a mechanical spring-and-rope network in which cutting a taut rope can make a hanging weight rise, because severing the link stiffens the whole support.",
+  "examples": [
+    {
+      "tag": "Closing 42nd Street",
+      "text": "When New York shut 42nd Street for Earth Day 1990, the feared Midtown gridlock did not materialise and traffic reportedly improved, a case a New York Times piece tied directly to Braess's paradox."
+    },
+    {
+      "tag": "Seoul's torn-up expressway",
+      "text": "Demolishing the Cheonggyecheon elevated expressway from 2003, a road carrying some 160,000 cars a day, to restore a stream did not paralyse the city and flow improved, though the attribution is observational."
+    },
+    {
+      "tag": "The spring analogue",
+      "text": "In a network of springs and ropes supporting a weight, cutting a connecting rope can raise the weight, the exact mechanical twin of removing a road and speeding traffic."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The price of anarchy",
+      "text": "Roughgarden and Tardos's measure of how much selfish routing costs; for linear travel-time functions the selfish equilibrium is at most four-thirds worse than optimal, a bound that does not hold for general costs."
+    },
+    {
+      "name": "Series-parallel immunity",
+      "text": "The paradox provably cannot occur in series-parallel networks; it needs the right cross-link topology, so not every network can suffer it."
+    }
+  ],
+  "whyItMatters": "Braess's paradox is a foundational lesson in transport planning, network design, and game theory: adding capacity to a decentralised system can make it worse, and removing capacity can make it better, because equilibrium is not optimum. It underpins the study of selfish routing, the price of anarchy, and mechanism design, and it generalises beyond roads to communication networks, power grids, and any system where independent agents share a congestible resource. It is a standing warning that local, individually rational optimisation need not add up to a global good.",
+  "working": [
+    {"lead": "Separate equilibrium from optimum", "text": "remember that where selfish agents settle is generally not where total cost is lowest, and the gap can be large."},
+    {"lead": "Question new capacity", "text": "treat adding a link to a congestible network as something to model, not assume helps, since it can shift everyone onto a worse equilibrium."},
+    {"lead": "Consider removing links", "text": "recognise that closing a road or connection can sometimes improve flow for all, the paradox run in reverse."}
+  ],
+  "limits": "The paradox requires selfish, non-cooperative routing on links whose travel time rises with load; under centralised coordination toward the social optimum, or when links are not congestion-sensitive, it does not arise, and it provably cannot occur in series-parallel networks. Its severity is bounded for linear costs, at most a four-thirds inefficiency, but can be far larger for general cost functions. It is a possibility result, not a claim that adding roads always hurts, and several famous real-world illustrations, notably Stuttgart and to a degree Seoul, rest on observation and anecdote rather than controlled experiment, so their causal attribution to the paradox is not airtight.",
+  "misreadings": "It does not say more roads always cause more congestion; the effect is conditional on topology and selfish routing, and adding roads often helps. It is not the same as induced demand, which is a separate mechanism in which new capacity attracts more trips; Braess's paradox holds demand fixed and is purely about routing. The added road need not have low capacity; a fast new link can still trigger it. And the Seoul and Stuttgart cases are real events whose tie to the paradox is observational, not a proven controlled test.",
+  "origin": "Described by the German mathematician Dietrich Braess in a 1968 paper, 'Über ein Paradoxon aus der Verkehrsplanung', in the journal Unternehmensforschung; an authorised English translation, 'On a Paradox of Traffic Planning', appeared in Transportation Science in 2005.",
+  "category": "planning",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1968,
+  "namedAfter": "Dietrich Braess",
+  "sources": [
+    {"text": "Braess, Nagurney & Wakolbinger, 'On a Paradox of Traffic Planning,' Transportation Science 39(4):446-450 (2005). — the authorised English translation of the 1968 paper.", "url": "https://pubsonline.informs.org/doi/10.1287/trsc.1050.0127", "type": "primary"},
+    {"text": "Braess's paradox, Wikipedia. — the definition, the selfish-routing mechanism, the spring analogue, and the examples.", "url": "https://en.wikipedia.org/wiki/Braess%27s_paradox", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Braess%27s_paradox",
+  "related": [
+    {"slug": "the-tragedy-of-the-commons", "kind": "kindred"},
+    {"slug": "cascading-failure", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "no": "507",
+  "slug": "stigmergy",
+  "name": "Stigmergy",
+  "aliases": [
+    "Indirect coordination",
+    "The work incites the work"
+  ],
+  "statement": "Agents coordinate not by talking but by leaving traces in a shared environment that prompt the next action.",
+  "statementAccent": "leaving traces in a shared environment",
+  "meaning": "Stigmergy is a mechanism of indirect coordination in which the trace left by an action in a shared environment stimulates the next action, by the same or a different agent. Successive actions reinforce and build on one another, so complex, apparently coordinated collective activity emerges without any direct communication between agents, without central control, and without a global plan. Pierre-Paul Grassé, who coined the term, glossed it as the stimulation of workers by the performance they have achieved. Two agents need never meet, act at the same time, or even know of each other; the shared structure itself carries the coordinating information, so the work incites the work.",
+  "mechanism": "The environment acts as a shared external memory closed into a feedback loop. An agent modifies the environment; the modified state cues the next action, which modifies it further, and so on. Positive feedback amplifies successful traces, a larger deposit or a stronger trail attracts still more of the same action, driving the build-up of structure, while negative feedback such as pheromone evaporation prevents runaway reinforcement and lets the system adapt. The coordinating trace can be the physical work itself, called sematectonic stigmergy, or a dedicated marker such as a pheromone with no constructive function, called sign-based or marker-based stigmergy, but in every case it is the trace of prior work that triggers the next.",
+  "examples": [
+    {
+      "tag": "Termite mounds",
+      "text": "Grassé's founding case: each termite deposits a pheromone-laced mudball, and the larger a deposit grows the more it attracts further deposits, self-organising into pillars, arches, and chambers with no blueprint."
+    },
+    {
+      "tag": "Ant trails",
+      "text": "Ants lay pheromone as they forage and preferentially follow stronger trails; shorter paths get reinforced faster, so the colony converges on efficient routes to food, demonstrated in the classic double-bridge experiment."
+    },
+    {
+      "tag": "Human stigmergy",
+      "text": "Contributors to a wiki or an open-source project coordinate largely by editing a shared artefact rather than by direct negotiation, a large-scale human version of the same mechanism."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Sematectonic versus sign-based",
+      "text": "Coordination via the physical work itself, where the state of the construction cues the next act, as against coordination via a dedicated marker like a pheromone that exists only to influence behaviour."
+    },
+    {
+      "name": "Ant colony optimization",
+      "text": "Marco Dorigo's family of algorithms in which artificial ants deposit and follow virtual pheromone to search a solution space, an engineered use of stigmergy, with evaporation built in to avoid premature convergence."
+    }
+  ],
+  "whyItMatters": "Stigmergy explains how vast numbers of simple agents with only local information can build complex, adaptive structures and solve problems, from termite architecture and ant foraging to swarm robotics, optimisation algorithms, and human mass collaboration, all without central control or a shared plan. It is a cornerstone of the study of self-organisation, emergence, and swarm intelligence, and it reframes coordination as something that can live in the environment rather than in messages between agents. That insight, that a shared workspace can itself organise the work, travels far beyond insects.",
+  "working": [
+    {
+      "lead": "Let the trace coordinate",
+      "text": "design so that the state of a shared artefact cues the next action, removing the need for agents to communicate directly."
+    },
+    {
+      "lead": "Balance the feedbacks",
+      "text": "pair amplifying positive feedback with a decay or evaporation, so structure builds but the system can still adapt and not lock in."
+    },
+    {
+      "lead": "Mind the failure mode",
+      "text": "watch for self-reinforcement entrenching a poor path, since positive feedback can amplify a bad choice as readily as a good one."
+    }
+  ],
+  "limits": "Stigmergy is a coordination mechanism, not a complete theory of the agents or of why a structure is adaptive: it does not by itself explain where the individual behavioural rules and thresholds come from, since those arise from evolution, learning, or design, nor does it set goals or handle cases that genuinely require negotiation, planning, or hierarchy. Because it runs on positive feedback it can lock onto and amplify a poor choice, the textbook biological failure being the ant mill, in which army ants follow their own trail in a closed loop until they die, and in optimisation the corresponding risk of premature convergence, which is why evaporation and exploration are built in.",
+  "misreadings": "It is not direct communication; agents read and write a shared environment rather than messaging one another. It is not centrally planned or blueprinted, since there is no master plan and the structure is its own instruction set. The trace need not be a chemical, so reducing stigmergy to pheromones is too narrow; any environmental modification, a wall, a wiki edit, a worn path, can serve. Emergent order is not the same as optimal or intended order, since the mechanism can lock in dysfunction. And it is not exclusive to insects, applying equally to robots, algorithms, and human collaboration.",
+  "origin": "Coined by the French biologist Pierre-Paul Grassé in 1959, from the Greek stigma, a mark or goad, and ergon, work, in his study of nest reconstruction by termites, and later generalised to swarm intelligence, optimisation, and human collaboration by Marco Dorigo, Francis Heylighen, and others.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1959,
+  "namedAfter": "Pierre-Paul Grassé",
+  "sources": [
+    {
+      "text": "Stigmergy, Wikipedia. — the definition, Grassé's coining, sematectonic versus sign-based, and applications from ants to human collaboration.",
+      "url": "https://en.wikipedia.org/wiki/Stigmergy",
+      "type": "secondary"
+    },
+    {
+      "text": "Grassé, 'La reconstruction du nid et les coordinations interindividuelles... La théorie de la stigmergie,' Insectes Sociaux 6:41-80 (1959). — the original coining paper on termite nest-building.",
+      "url": "https://link.springer.com/article/10.1007/BF02223791",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Stigmergy",
+  "related": [
+    {
+      "slug": "self-organized-criticality",
+      "kind": "kindred"
+    }
+  ]
+}

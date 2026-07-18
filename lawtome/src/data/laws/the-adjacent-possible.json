@@ -1,0 +1,79 @@
+{
+  "no": "504",
+  "slug": "the-adjacent-possible",
+  "name": "The Adjacent Possible",
+  "aliases": [
+    "Kauffman's adjacent possible",
+    "The expanding possible"
+  ],
+  "statement": "At any moment a system can only reach what lies one step away, and each step taken opens up new steps that did not exist before.",
+  "statementAccent": "each step taken opens up new steps that did not exist before",
+  "meaning": "The adjacent possible, a concept from the theoretical biologist Stuart Kauffman, is the set of states, configurations, or combinations that lie exactly one step away from a system's current arrangement. At any moment a biological, technological, or cultural system cannot leap arbitrarily far; it can only realise what a single incremental change, a mutation, a new reaction, a recombination of existing parts, makes reachable. The crucial twist is that each new combination actually realised opens up further adjacent possibilities that did not previously exist, so the space of the possible is not fixed but expands as it is explored. Yesterday's adjacent possible becomes today's actual, bounded by a fresh frontier of the possible.",
+  "mechanism": "The engine is recombination at a moving frontier. What exists can be combined and modified in a limited number of ways, defining the immediate neighbourhood of the possible; when one of those possibilities is actualised, it becomes a new building block that itself can be combined with everything already present, enlarging the neighbourhood. One thing genuinely leads to another, and the possibility space is restructured, not merely traversed, at every step. Kauffman argues that the biosphere continually creates the very niches into which it then expands, and that this open-ended, combinatorial unfolding cannot be pre-stated: there is no fixed list of future possibilities to be predicted in advance.",
+  "examples": [
+    {
+      "tag": "Waiting inventions",
+      "text": "In Steven Johnson's account, an innovation like a workable internal-combustion car had to wait until its prerequisite components existed, because it lay outside the adjacent possible until they did."
+    },
+    {
+      "tag": "The expanding biosphere",
+      "text": "Kauffman's picture of evolution as the biosphere exploring molecular and phenotypic space, each new organism or niche opening further niches, so life creates the opportunities it then fills."
+    },
+    {
+      "tag": "Novelty in data",
+      "text": "Loreto and Tria's urn model with triggering, in which drawing a novelty adds new possibilities to the urn, reproduces the statistical regularities of discovery in Wikipedia edits, texts, and music listening."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The urn with triggering",
+      "text": "Tria, Loreto, Servedio, and Strogatz's 2014 model that turns the metaphor into mathematics, deriving Heaps' and Zipf's laws of discovery from expansion into the adjacent possible."
+    },
+    {
+      "name": "No entailing laws",
+      "text": "Kauffman's stronger claim, with Longo and Montevil, that the evolution of the biosphere is not law-entailed like physics and cannot be fully modelled or pre-stated in advance."
+    }
+  ],
+  "whyItMatters": "The adjacent possible reframes creativity and evolution as neighbourhood exploration rather than leaps: novelty comes overwhelmingly from recombining what is already at hand, and each innovation reshapes the landscape of what can come next. It explains why certain discoveries seem to arrive the moment their prerequisites exist, why history has a direction without a destination, and why the future resists prediction even in principle. As a framework it has shaped thinking about innovation, technological and cultural change, and the open-endedness of life, giving a common language to how possibility itself grows.",
+  "working": [
+    {
+      "lead": "Explore the neighbourhood",
+      "text": "seek novelty one recombinant step from what already exists, rather than expecting viable leaps far beyond the frontier."
+    },
+    {
+      "lead": "Expect the frontier to move",
+      "text": "treat each realised possibility as opening new ones, so the space of options expands as you use it."
+    },
+    {
+      "lead": "Accept the unpredictable",
+      "text": "recognise that which specific novelty appears next cannot be pre-stated, only its rough statistical rhythm modelled."
+    }
+  ],
+  "limits": "The adjacent possible is best understood as a generative framework or metaphor rather than a predictive law. By Kauffman's own argument it is non-predictive at the level of specific outcomes: niche creation and the biosphere's trajectory cannot be pre-stated or formally modelled in advance, so the idea describes the shape of novelty without forecasting its content. The quantitative urn models capture statistical regularities of discovery rates, such as Heaps' and Zipf's laws, but do not predict which particular novelty comes next. Critics such as Ragnar van der Merwe argue Kauffman's fuller theory carries unexamined metaphysical commitments and is hard to render as a robust, testable thesis, and even the first-coinage date is stated variously across his books.",
+  "misreadings": "It does not predict the next innovation; it constrains and describes the space of what is reachable and models aggregate statistics, not specific inventions. It does not treat the possibility space as fixed and merely explored; the defining feature is that the space grows as it is explored. It does not imply that big leaps are as likely as small ones, since jumps far outside the adjacent possible tend to fail. And it is a framework with some quantitative support, not an empirically proven physical law.",
+  "origin": "Introduced by the theoretical biologist Stuart Kauffman, most fully in his 2000 book 'Investigations', and popularised for a general audience by Steven Johnson's 2010 book 'Where Good Ideas Come From'; later formalised in the novelty models of Vittorio Loreto and Francesca Tria.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 2000,
+  "namedAfter": "Stuart Kauffman",
+  "sources": [
+    {
+      "text": "Tria, Loreto, Servedio & Strogatz, 'The dynamics of correlated novelties,' Scientific Reports 4:5890 (2014). — the urn-with-triggering model of expansion into the adjacent possible.",
+      "url": "https://www.nature.com/articles/srep05890",
+      "type": "primary"
+    },
+    {
+      "text": "Stuart Kauffman, Wikipedia. — Kauffman's development of the adjacent possible and its role in his account of the biosphere and innovation.",
+      "url": "https://en.wikipedia.org/wiki/Stuart_Kauffman",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Stuart_Kauffman",
+  "related": [
+    {
+      "slug": "more-is-different",
+      "kind": "kindred"
+    }
+  ]
+}
