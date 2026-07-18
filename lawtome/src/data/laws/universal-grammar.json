@@ -1,0 +1,56 @@
+{
+  "no": "547",
+  "slug": "universal-grammar",
+  "name": "Universal Grammar",
+  "aliases": ["The language faculty", "UG"],
+  "statement": "The capacity for language is innate, and all human languages share a deep structure wired into the mind.",
+  "statementAccent": "wired into the mind",
+  "meaning": "Universal grammar is the theory, associated with Noam Chomsky, that the human capacity for language is innate and that all human languages share a common underlying structural basis, a set of principles and constraints built into the mind that limit the form any grammar can take. On this view children are born with a language faculty whose initial state is universal grammar, which is why they acquire language so rapidly and uniformly despite messy and limited input. It reframed the study of language as a window onto the mind, but its core claims, especially strong linguistic universals and a dedicated innate grammar, are seriously and actively contested.",
+  "mechanism": "The theory is motivated by three observations: that the linguistic input to children is too limited and ambiguous to account for the abstract grammar they attain, the poverty of the stimulus; that acquisition is fast and follows similar paths across very different languages; and that certain structural properties recur across the world's languages. In the principles-and-parameters framework, universal principles hold in every language while a finite set of parameters act as switches set by exposure to a particular language, so the child need only fix parameter values and learn the vocabulary. The later minimalist program seeks to reduce universal grammar to the smallest possible core, with the operation Merge and recursion proposed as candidates for what is uniquely human.",
+  "examples": [
+    {
+      "tag": "Structure dependence",
+      "text": "Children form questions using rules sensitive to hierarchical structure rather than simple word order, a property taken as evidence of innate constraints on possible grammars."
+    },
+    {
+      "tag": "Principles and parameters",
+      "text": "A parameter such as whether a language allows subjects to be dropped is set by exposure, so a child fixes a switch rather than learning the rule from scratch."
+    },
+    {
+      "tag": "Recursion as the core",
+      "text": "Hauser, Chomsky, and Fitch proposed in 2002 that the narrow language faculty might consist essentially of recursion, possibly the only uniquely human ingredient."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The minimalist program",
+      "text": "Chomsky's later effort to pare universal grammar down to a minimal computational core, ideally just the recursive combining operation Merge."
+    },
+    {
+      "name": "Usage-based alternatives",
+      "text": "Rival frameworks from Michael Tomasello and Adele Goldberg in which grammar is learned from input by general cognitive abilities, with no dedicated innate universal grammar."
+    }
+  ],
+  "whyItMatters": "Universal grammar has been one of the most influential ideas in the cognitive science of the twentieth century, driving the study of language as a biologically grounded mental faculty and reshaping linguistics, psychology, and philosophy of mind. It framed acquisition as the setting of innate options rather than general learning, generated the principles-and-parameters and minimalist research programs, and set the terms of debate about what, if anything, is special and innate about human language. Even its critics work in reaction to it, which is a measure of how thoroughly it organised the field.",
+  "working": [
+    {"lead": "Read acquisition as innate", "text": "consider that children may bring language-specific knowledge to the task, setting options rather than learning grammar wholly from input."},
+    {"lead": "Separate principles from parameters", "text": "distinguish the universal principles held to be innate from the language-particular parameters fixed by exposure."},
+    {"lead": "Hold it as contested", "text": "treat universal grammar as a major but disputed paradigm, not settled fact, weighing usage-based and statistical-learning alternatives."}
+  ],
+  "limits": "Universal grammar is a major but genuinely contested paradigm. Usage-based and construction-grammar theorists such as Tomasello and Goldberg argue that language is learned from input by general cognition, with no dedicated innate grammar, and connectionist and statistical-learning accounts stress distributional learning. Daniel Everett's claim that Pirahã lacks recursive embedding challenges recursion's status as universal, though the case is disputed, and Evans and Levinson's 2009 survey argues that proposed universals largely do not hold up under typological scrutiny. Even proponents disagree about the exact contents of universal grammar, so its strongest empirical claims remain open rather than established.",
+  "misreadings": "Universal grammar is not a shared list of surface grammatical rules found in every language; it is claimed to be an abstract set of constraints on possible grammars, and its exact contents are debated even among proponents. It does not say all languages are alike on the surface, since it allows wide variation through parameters and the lexicon. It does not claim a whole grammar is innate and children learn nothing, since the lexicon and parameter settings must still be learned. And the idea that universal grammar reduces to recursion is a proposal, not an established fact, and is itself disputed.",
+  "origin": "Developed by Noam Chomsky from the late 1950s, in works including 'Syntactic Structures' (1957) and 'Aspects of the Theory of Syntax' (1965), and contested by usage-based, typological, and statistical-learning approaches.",
+  "category": "media",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1965,
+  "sources": [
+    {"text": "Dąbrowska, 'What exactly is Universal Grammar, and has anyone seen it?', Frontiers in Psychology 6:852 (2015). — the definition, the innateness claim, and the disagreement over its contents.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4477053/", "type": "secondary"},
+    {"text": "Evans & Levinson, 'The myth of language universals,' Behavioral and Brain Sciences 32(5):429-492 (2009). — the typological challenge to proposed universals.", "url": "https://www.umass.edu/preferen/You%20Must%20Read%20This/Evans-Levinson%20BBS%202009.pdf", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Universal_grammar",
+  "related": [
+    {"slug": "the-poverty-of-the-stimulus", "kind": "cause"},
+    {"slug": "the-critical-period-hypothesis", "kind": "kindred"}
+  ]
+}

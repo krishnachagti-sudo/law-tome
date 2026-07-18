@@ -1,0 +1,55 @@
+{
+  "no": "552",
+  "slug": "the-comparative-method",
+  "name": "The Comparative Method",
+  "aliases": ["Comparative reconstruction", "The method of regular correspondences"],
+  "statement": "Compare related languages for regular sound correspondences, and you can prove common descent and rebuild their lost ancestor.",
+  "statementAccent": "prove common descent and rebuild their lost ancestor",
+  "meaning": "The comparative method is the primary technique of historical linguistics for showing that languages are genetically related, descended from a common ancestor, and for reconstructing features of that unattested ancestor, the proto-language. It works by systematically comparing cognates, words of shared origin, across related languages to identify regular sound correspondences, and from those correspondences inferring the ancestral forms. Its power lies in demanding regular, systematic patterns rather than superficial resemblance: isolated look-alikes prove nothing, while recurring correspondences across many words reveal genuine relationship. It is the method that reconstructed Proto-Indo-European and established the family tree of the world's languages.",
+  "mechanism": "The procedure has clear steps: assemble putative cognates across the languages; establish the regular sound correspondences among them; reconstruct the proto-phonemes and proto-forms those correspondences imply; and screen out borrowings and chance resemblances. Everything rests on the regularity of sound change, the Neogrammarian principle that a sound tends to change the same way in every word in the same environment, which is what leaves systematic, recoverable correspondences to exploit. Because English day and Latin dies merely resemble each other without fitting the correspondence sets, they are not cognate, whereas true relationship shows up as patterns repeating across many word pairs. Reconstructed forms are marked with an asterisk to signal they are hypotheses.",
+  "examples": [
+    {
+      "tag": "Reconstructing Proto-Indo-European",
+      "text": "From Sanskrit, Greek, Latin, and Germanic, nineteenth-century scholars reconstructed Proto-Indo-European, the flagship success of the method, enabled by richly attested old languages."
+    },
+    {
+      "tag": "The laryngeal prediction",
+      "text": "Saussure in 1879 posited abstract elements to explain irregular Indo-European vowel alternations; decades later the decipherment of Hittite revealed a consonant that was their direct reflex, a striking confirmation."
+    },
+    {
+      "tag": "Regular, not superficial",
+      "text": "The method rejects mere look-alikes like English day and Latin dies, requiring the systematic correspondences that recur across whole sets of words."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The family tree",
+      "text": "August Schleicher's Stammbaum model, in which languages branch from a common ancestor, the picture the method naturally produces."
+    },
+    {
+      "name": "The wave model",
+      "text": "Johannes Schmidt's alternative, in which innovations spread like ripples across overlapping zones, better capturing dialect continua and contact than a clean tree."
+    }
+  ],
+  "whyItMatters": "The comparative method turned the study of language history into a rigorous, predictive science, letting linguists prove relationships among languages and reconstruct ancestors no one recorded, above all Proto-Indo-European. Its demand for regular correspondences, not chance resemblance, is a model of disciplined inference, and its triumphs, such as Saussure's laryngeal prediction confirmed by Hittite, rank among the most impressive in the human sciences. It remains the gold standard for establishing genetic relationships among languages and for understanding how they diverge over time.",
+  "working": [
+    {"lead": "Demand regular correspondences", "text": "establish relationship through systematic sound correspondences recurring across many words, not through isolated resemblances."},
+    {"lead": "Reconstruct from the patterns", "text": "infer proto-phonemes and proto-forms from the correspondence sets, treating the results as asterisked hypotheses."},
+    {"lead": "Screen out noise", "text": "distinguish inherited cognates from borrowings and chance similarities before drawing conclusions about descent."}
+  ],
+  "limits": "The method requires cognates and regular correspondences, so its signal decays with time depth, and it is generally held unreliable beyond roughly six to ten thousand years, which is why proposed deep macro-families are contested. Borrowing and areal contact features can mimic or obscure genuine genetic signal, and separating inheritance from diffusion is a persistent difficulty. Non-tree-like histories, such as dialect continua and contact-heavy situations, violate the clean branching the method presupposes, so the family-tree model oversimplifies and the wave model is offered as a complement. Language isolates, with no known relatives, cannot be handled at all, and reconstructions are hypotheses, not recovered speech.",
+  "misreadings": "It is regular, systematic correspondences that establish relationship, not surface resemblance, so mass lexical look-alikes prove nothing. A reconstructed proto-form is a hypothesis and a model, conventionally marked with an asterisk, not a directly attested or recovered word. The method needs at least two related languages, so it cannot place an isolate. And the tree it produces is an idealisation, since real language histories involve contact and diffusion that a strict branching diagram cannot capture.",
+  "origin": "Developed through the nineteenth century by Rasmus Rask, Jacob Grimm, and Franz Bopp on Indo-European, with August Schleicher first reconstructing proto-forms and drawing the family tree; its predictive power is epitomised by Saussure's 1879 laryngeal hypothesis, confirmed by Hittite.",
+  "category": "media",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Comparative method, Wikipedia. — the reliance on regular correspondences, the staged procedure, the history, and the limitations.", "url": "https://en.wikipedia.org/wiki/Comparative_method_(linguistics)", "type": "secondary"},
+    {"text": "Laryngeal theory, Wikipedia. — Saussure's 1879 prediction and its confirmation by the decipherment of Hittite.", "url": "https://en.wikipedia.org/wiki/Laryngeal_theory", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Comparative_method_(linguistics)",
+  "related": [
+    {"slug": "the-neogrammarian-hypothesis", "kind": "kindred"},
+    {"slug": "grimms-law", "kind": "kindred"}
+  ]
+}

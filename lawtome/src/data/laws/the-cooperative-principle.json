@@ -1,0 +1,55 @@
+{
+  "no": "550",
+  "slug": "the-cooperative-principle",
+  "name": "The Cooperative Principle",
+  "aliases": ["Grice's maxims", "Gricean pragmatics"],
+  "statement": "We assume our conversational partner is cooperating, and from that assumption we infer what they really mean.",
+  "statementAccent": "we infer what they really mean",
+  "meaning": "The cooperative principle, formulated by the philosopher H. P. Grice, is the assumption that participants in a conversation normally cooperate toward the exchange's shared purpose, contributing what is required, when it is required, by the accepted direction of the talk. From this background expectation, hearers infer meaning that goes beyond the literal words, called conversational implicature. Grice unpacked the principle into four maxims, of quantity, quality, relation, and manner, and showed how apparently obeying, or pointedly breaking, them lets speakers convey far more than they say. It is a foundational idea of modern pragmatics, the study of how context and cooperation generate meaning.",
+  "mechanism": "Grice grouped the maxims under four headings borrowed from Kant. Quantity: be as informative as required, no more. Quality: be truthful, saying neither what you believe false nor what you lack evidence for. Relation: be relevant. Manner: be clear, brief, and orderly, avoiding obscurity and ambiguity. Because hearers assume the speaker is cooperating, a speaker who openly and obviously breaks a maxim, called flouting, triggers an implicature: the hearer reasons that the speaker must mean something beyond the literal to preserve cooperation. So answering a question about a philosopher's ability by praising only their handwriting flouts quantity and relevance to implicate that they are not a good philosopher.",
+  "examples": [
+    {
+      "tag": "Flouting for meaning",
+      "text": "A reference letter for a philosophy job that praises only the candidate's attendance and command of English flouts the maxim of quantity, implicating that the candidate is weak, Grice's own illustration."
+    },
+    {
+      "tag": "Implicature",
+      "text": "Saying some of the guests arrived implicates, without stating, that not all did, an inference the hearer draws by assuming the speaker was as informative as required."
+    },
+    {
+      "tag": "Cancellability",
+      "text": "An implicature can be explicitly withdrawn without contradiction, as in 'some, in fact all, arrived', which distinguishes it from literal entailment."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Flouting versus violating",
+      "text": "Flouting openly breaks a maxim so the hearer notices and infers an implicature, whereas violating quietly breaches it to mislead, generating no cooperative inference."
+    },
+    {
+      "name": "Neo-Gricean reductions",
+      "text": "Later theories, from Horn and Levinson's reduced principles to Sperber and Wilson's relevance theory, which recast the maxims around fewer, more general pragmatic notions."
+    }
+  ],
+  "whyItMatters": "The cooperative principle launched the modern study of conversational implicature and is foundational to pragmatics, showing how meaning is computed from context and mutual assumptions rather than read off words alone. It explains irony, understatement, and indirect speech, and it seeded the neo-Gricean theories of Horn and Levinson and the relevance theory of Sperber and Wilson. Its account of how much we communicate by what we leave unsaid, and by how we say it, reshaped linguistics and the philosophy of language and remains a standard framework for analysing how people mean more than they literally state.",
+  "working": [
+    {"lead": "Assume cooperation", "text": "interpret a speaker on the assumption that they are contributing what the exchange requires, and infer meaning from that."},
+    {"lead": "Read the flout", "text": "when a maxim is openly broken, ask what the speaker must mean beyond the literal to remain cooperative, which is the implicature."},
+    {"lead": "Separate flouting from violating", "text": "distinguish an open breach meant to be noticed, which conveys meaning, from a covert breach meant to deceive, which does not."}
+  ],
+  "limits": "The maxims may reflect Anglo or Western conversational norms rather than universal ones, as Elinor Ochs Keenan's study of a Malagasy community showed, where speakers routinely withhold information at odds with the maxim of quantity. Relevance theorists argue the maxims are not primitive but derive from a single, more general principle of relevance. Politeness and face-saving considerations, studied by Brown and Levinson, can override cooperation, leading speakers to be less informative, direct, or clear. And the maxims are default expectations, not enforceable rules, so they describe how hearers reason rather than dictate how speakers must behave.",
+  "misreadings": "The maxims are not prescriptive commands or rules of etiquette, such as always tell the whole truth briefly; they are default assumptions hearers use to compute meaning. Cooperation is a technical term for jointly pursuing the exchange's purpose, not a claim that people are always agreeable or nice. Flouting is not the same as violating: openly breaching a maxim to communicate generates an implicature, while covertly breaching it to deceive does not. And the famous illustrative examples are conventional teaching cases, not always Grice's own exact words.",
+  "origin": "Introduced by H. P. Grice in his 1967 William James Lectures at Harvard, published as 'Logic and Conversation' in 1975 in 'Syntax and Semantics' volume 3, and collected in his 1989 'Studies in the Way of Words'.",
+  "category": "media",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1975,
+  "sources": [
+    {"text": "Paul Grice, Stanford Encyclopedia of Philosophy. — the cooperative principle, the maxims, implicature and cancellability, and the 1967 lectures.", "url": "https://plato.stanford.edu/entries/grice/", "type": "secondary"},
+    {"text": "Cooperative principle, Wikipedia. — the exact wording, the four maxims, flouting versus violating, and the Malagasy criticism.", "url": "https://en.wikipedia.org/wiki/Cooperative_principle", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Cooperative_principle",
+  "related": [
+    {"slug": "brevity-law", "kind": "kindred"}
+  ]
+}
