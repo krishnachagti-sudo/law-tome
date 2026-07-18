@@ -1,0 +1,57 @@
+{
+  "no": "329",
+  "slug": "hamiltons-rule",
+  "name": "Hamilton's Rule",
+  "statement": "Help a relative when the benefit to them, weighted by kinship, outweighs the cost to you.",
+  "statementAccent": "weighted by kinship",
+  "meaning": "A gene for altruistic behaviour is favoured by natural selection when relatedness times benefit exceeds cost: rB greater than C, where r is the genetic relatedness between actor and recipient, B the reproductive benefit to the recipient, and C the reproductive cost to the actor. It formalises inclusive fitness, the idea that an individual can spread its genes not only by reproducing but by helping relatives who carry copies of them.",
+  "mechanism": "Genes can propagate through relatives who share identical copies of them, so a behaviour that lowers the actor's own reproduction can still spread if it raises a relative's reproduction enough, discounted by how likely the relative is to share the gene. Relatedness is one-half for parent and offspring or full siblings, one-eighth for first cousins. Multiply the benefit to the recipient by this relatedness and compare it to the cost to the actor: when the weighted benefit wins, the altruistic gene increases in frequency. Haldane's quip that he would lay down his life for two brothers or eight cousins captures the arithmetic.",
+  "examples": [
+    {
+      "tag": "Sterile workers",
+      "text": "Sterile worker castes in ants, bees, and wasps forgo their own reproduction to raise the queen's offspring, their siblings — a spectacular case of altruism explained by inclusive fitness, though the old haplodiploidy account of it is now contested."
+    },
+    {
+      "tag": "Alarm calls",
+      "text": "Belding's ground squirrels give risky alarm calls, and females, who live near kin, call more than dispersing males — differential nepotism supporting kin selection, from Sherman's field study."
+    },
+    {
+      "tag": "Helpers at the nest",
+      "text": "In cooperative breeders like long-tailed tits, individuals help raise the young of relatives, aiding kin in line with the rule's prediction."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Inclusive fitness",
+      "text": "The broader concept the rule expresses: an individual's total genetic contribution, its own reproduction plus its effect on relatives' reproduction, each weighted by relatedness."
+    },
+    {
+      "name": "The monogamy hypothesis",
+      "text": "Boomsma's proposal that strict lifetime monogamy, which makes siblings as related as offspring, explains the origin of eusociality across both haplodiploid insects and diplodiploid termites, displacing the haplodiploidy account."
+    }
+  ],
+  "whyItMatters": "It is a foundational result of evolutionary biology, the key to one of Darwin's deepest puzzles — how self-sacrificing behaviour could evolve — and the organising idea of the study of social evolution. From insect societies to cooperative breeding to human kinship, it explains why altruism tends to flow toward relatives, and it recast the unit of selection around the gene.",
+  "working": [
+    {"lead": "Weigh benefit by relatedness", "text": "to judge whether an altruistic act is favoured, compare the cost to the actor against the benefit to the recipient scaled by their relatedness."},
+    {"lead": "Expect nepotism", "text": "look for helping and self-sacrifice to be directed preferentially toward closer relatives, where the rule most easily holds."},
+    {"lead": "Hold the exact form loosely", "text": "treat the simple inequality as exact only under its assumptions, and use the regression-based general version with care."}
+  ],
+  "limits": "The rule is robustly established as a core principle but sits within active theoretical debate. The exact inequality holds only under simplifying assumptions such as additive, non-synergistic costs and benefits; a general version defines the terms as statistical regression coefficients, but critics argue this generality is partly tautological and weak in predictive power. The old haplodiploidy hypothesis for insect eusociality is widely challenged, since eusociality also arose in diplodiploid termites and the relatedness advantage dilutes under multiple mating. And a high-profile 2010 attack on inclusive fitness theory drew a rebuttal from well over a hundred biologists — a genuine rift, though the mainstream view holds the rule valid.",
+  "misreadings": "Organisms do not consciously calculate relatedness or act for the good of the species; the rule describes selection on gene frequencies, not deliberate reasoning or species welfare. It does not require haplodiploidy, which was only one contested special hypothesis. Relatedness is not the fraction of shared DNA overall but a measure of shared genes above the population baseline. And the 2010 critique did not overturn the rule; the field's response reaffirmed it.",
+  "origin": "Introduced by W. D. Hamilton in his two-part 1964 paper 'The Genetical Evolution of Social Behaviour' (Journal of Theoretical Biology), which formalised inclusive fitness; George Price later rederived it from his covariance equation, and its scope remains actively debated.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1964,
+  "namedAfter": "W. D. Hamilton",
+  "sources": [
+    {"text": "The Genetical Evolution of Social Behaviour, Wikipedia. — Hamilton's 1964 papers, inclusive fitness, and the rB greater than C rule.", "url": "https://en.wikipedia.org/wiki/The_Genetical_Evolution_of_Social_Behaviour", "type": "secondary"},
+    {"text": "Nowak, Tarnita & Wilson, \"The evolution of eusociality,\" Nature 466:1057-1062 (2010), and Abbot et al., \"Inclusive fitness theory and eusociality,\" Nature 471:E1-E4 (2011). — the critique of inclusive fitness and the multi-author rebuttal.", "url": "https://www.nature.com/articles/nature09831", "type": "primary"},
+    {"text": "Bourke, \"Hamilton's rule and the causes of social evolution,\" Philosophical Transactions of the Royal Society B (2014). — the exact-versus-general status of the rule.", "url": "https://pubmed.ncbi.nlm.nih.gov/24686934/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Kin_selection",
+  "related": [
+    {"slug": "the-price-equation", "kind": "cause"},
+    {"slug": "the-prisoners-dilemma", "kind": "kindred"}
+  ]
+}

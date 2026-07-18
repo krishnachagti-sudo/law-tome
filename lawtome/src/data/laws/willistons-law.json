@@ -1,0 +1,57 @@
+{
+  "no": "339",
+  "slug": "willistons-law",
+  "name": "Williston's Law",
+  "statement": "Repeated body parts tend, over evolution, to grow fewer and more specialized.",
+  "statementAccent": "fewer and more specialized",
+  "meaning": "Williston's law is a generalisation in evolutionary morphology holding that serially repeated body parts — such as teeth, vertebrae, and the segments and appendages of arthropods — tend, over evolutionary time, to become reduced in number while the remaining parts grow more specialised and differentiated in form and function. Many similar, repeated elements evolve toward fewer, more diverse ones.",
+  "mechanism": "The core idea is a division of labour among serial homologues. When many near-identical parts exist, selection can specialise subsets for distinct functions while redundant elements are lost or fused, so number falls as differentiation rises — what Gregory called the passage from many similar elements to few differentiated ones. Network analyses of the tetrapod skull give a mechanistic account: reduction proceeds by the random loss of poorly connected bones and the selective fusion of highly connected ones, which paradoxically increases the structure's organisation even as the count of bones falls.",
+  "examples": [
+    {
+      "tag": "The tetrapod skull",
+      "text": "Since land vertebrates arose, the skull has simplified by the loss and fusion of bones across major lineages — the classic case on which the law was formalised."
+    },
+    {
+      "tag": "Mammalian teeth",
+      "text": "Evolution ran from a homodont mouthful of many similar teeth toward heterodont dentition, fewer teeth differentiated into incisors, canines, premolars, and molars."
+    },
+    {
+      "tag": "Arthropod bodies",
+      "text": "Arthropods trend from many similar segments toward fewer, grouped into specialised tagmata with regionally differentiated appendages, though this narrative is now being re-examined."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Polyisomerism and anisomerism",
+      "text": "Gregory's technical vocabulary for the two ends of the trend: polyisomerism, many similar serial elements, giving way to anisomerism, their reduction and differentiation."
+    },
+    {
+      "name": "Individualisation of serial homologues",
+      "text": "The framing of the same trend as serial parts acquiring developmental and morphological independence, diverging from one another over evolution."
+    }
+  ],
+  "whyItMatters": "It captures a recurring direction in the evolution of body plans — from repetitive to differentiated — that runs through the history of skulls, teeth, and arthropod bodies, and it links reduction in number to increased specialisation, two faces of the same process. It remains a reference point in evolutionary developmental biology for thinking about serial homology and how repeated structures diversify.",
+  "working": [
+    {"lead": "Expect reduction with specialisation", "text": "in a lineage with many repeated parts, look for the number to fall as the survivors take on distinct, specialised roles."},
+    {"lead": "Read fewer as more organised", "text": "treat a drop in the count of serial elements as often accompanying, not opposing, an increase in structural differentiation and complexity."},
+    {"lead": "Test it clade by clade", "text": "check the trend against the actual phylogeny rather than assuming it, since it holds in some groups and fails in others."}
+  ],
+  "limits": "It is an empirical tendency, not an exceptionless law, holding in some clades and violated in others. It is well supported and mechanistically grounded for tetrapod skull bones, but a rigorous survey of the branchiostegal rays of bony fishes found no overall reduction trend and favoured an early-burst model instead, and jaw evolution has been found to fit neither Williston's reduction nor Dollo's irreversibility. There are reversals in which element number secondarily increases, and genuine debate over whether the pattern reflects a real evolutionary bias or is a post-hoc description of certain lineages.",
+  "misreadings": "It is not an exceptionless law of nature but a trend with documented exceptions. Fewer parts does not mean a simpler organism — reduction in number typically comes with increased specialisation and, in structural terms, greater organisation. Williston stated the observation but did not name it after himself; W. K. Gregory named it Williston's law in 1935. And it is distinct from Dollo's law of irreversibility, which concerns whether lost structures return.",
+  "origin": "Stated informally by the American palaeontologist Samuel Wendell Williston around 1914 in 'Water Reptiles of the Past and Present,' and named Williston's law by William King Gregory in a 1935 study of the evolution of vertebrate skull bones; re-examined with network models and phylogenetic tests in recent decades.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1914,
+  "namedAfter": "Samuel Wendell Williston",
+  "sources": [
+    {"text": "Samuel Wendell Williston, Wikipedia. — the statement of the law and its attribution and history.", "url": "https://en.wikipedia.org/wiki/Samuel_Wendell_Williston", "type": "secondary"},
+    {"text": "Esteve-Altava et al., \"Structural Constraints in the Evolution of the Tetrapod Skull Complexity: Williston's Law Revisited Using Network Models,\" Evolutionary Biology (2013). — the skull-bone support and the loss-and-fusion mechanism.", "url": "https://link.springer.com/article/10.1007/s11692-012-9200-9", "type": "primary"},
+    {"text": "Wilson et al., \"On trends and patterns in macroevolution: Williston's law and the branchiostegal series of extant and extinct osteichthyans,\" BMC Ecology and Evolution (2019). — the fish survey finding no support for the reduction trend.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6558815/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Samuel_Wendell_Williston",
+  "related": [
+    {"slug": "dollos-law", "kind": "tension"},
+    {"slug": "copes-rule", "kind": "kindred"}
+  ]
+}

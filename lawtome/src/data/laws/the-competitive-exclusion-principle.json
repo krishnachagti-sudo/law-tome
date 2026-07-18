@@ -1,0 +1,88 @@
+{
+  "no": "327",
+  "slug": "the-competitive-exclusion-principle",
+  "name": "The Competitive Exclusion Principle",
+  "aliases": [
+    "Gause's law",
+    "One niche, one species"
+  ],
+  "statement": "Two species living the exact same way cannot coexist; one wins out.",
+  "statementAccent": "one wins out",
+  "meaning": "Two species competing for the same limiting resource cannot coexist indefinitely at constant numbers — one will outcompete and exclude the other. Even a slight, persistent advantage compounds over time until the superior competitor drives the weaker to local extinction or forces it into a different niche. In Hardin's phrasing, complete competitors cannot coexist; in the slogan, one niche, one species.",
+  "mechanism": "The stabilising force is niche differentiation. If two species occupy identical niches — the same food, microhabitat, and timing — there is no stable equilibrium with both present, and any arbitrarily small edge grows until exclusion is complete. Coexistence therefore requires that the species differ in how they use resources, so that competition within a species is stronger than competition between them. The word complete is load-bearing: the principle strictly applies only where niches overlap fully, and partial overlap permits both to persist.",
+  "examples": [
+    {
+      "tag": "Gause's paramecia",
+      "text": "Grown alone, two species of Paramecium both thrived; grown together on one bacterial food supply, one competitively excluded the other — the experiment that became the principle's touchstone, though Gause kept the loser alive by varying conditions."
+    },
+    {
+      "tag": "MacArthur's warblers",
+      "text": "Five warbler species coexist in the same spruce trees by foraging in different parts of them — the classic case of resource partitioning letting similar species escape exclusion."
+    },
+    {
+      "tag": "Character displacement",
+      "text": "Where similar species overlap, competition can drive their traits apart, as in the beaks of Darwin's finches, an evolutionary route out of exclusion by reducing niche overlap."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The paradox of the plankton",
+      "text": "Hutchinson's puzzle that many plankton species coexist on just a few shared resources, an apparent violation resolved by non-equilibrium dynamics, environmental variation, spatial structure, predation, or intransitive competition."
+    },
+    {
+      "name": "Niche partitioning",
+      "text": "The general escape from exclusion, in which coexisting species divide resources by food, space, or time so that no two are complete competitors."
+    }
+  ],
+  "whyItMatters": "It is a foundational principle of community ecology, framing why coexisting species tend to differ and giving the niche concept its competitive teeth. It organises how ecologists think about resource partitioning, character displacement, and the structure of communities, and its apparent exceptions, like the plankton, have driven much of the theory of how diversity is maintained.",
+  "working": [
+    {
+      "lead": "Look for niche differences",
+      "text": "where similar species coexist, expect them to differ in resource use, and look for the partitioning that lets them do so."
+    },
+    {
+      "lead": "Mind the conditions",
+      "text": "apply exclusion to stable, equilibrium settings with truly overlapping niches, not as a blanket ban on competing species coexisting."
+    },
+    {
+      "lead": "Treat exceptions as clues",
+      "text": "read apparent violations, like the plankton, as signs that the principle's assumptions of equilibrium and few resources do not hold."
+    }
+  ],
+  "limits": "The principle applies to stable, equilibrium conditions and to truly identical niches; it does not forbid coexistence in general. Niche differentiation, disturbance, predation, spatial heterogeneity, and fluctuating environments all readily permit competing species to persist, and the real world shows widespread coexistence, with clean exclusion rarely observed in nature. There is also a genuine testability problem: because the same niche is hard to define and measure, defining niches by observed coexistence can make the principle circular and hard to falsify.",
+  "misreadings": "It does not say competing species can never coexist — only that species with complete niche overlap under constant conditions cannot, while partial overlap plus differentiation, the norm in nature, permits it. Gause did not coin the law; he supplied the key experiments, and the term came later from Hardin. And the paradox of the plankton does not disprove the principle; it shows that its assumptions rarely hold, which is why exclusion is seldom seen.",
+  "origin": "Rooted in Darwin and in Grinnell's field observations, with the mathematical basis in the Lotka-Volterra competition equations; its empirical touchstone is Gause's 1934 'The Struggle for Existence,' and the term competitive exclusion principle was coined by Garrett Hardin in Science in 1960.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1960,
+  "namedAfter": "Georgy Gause",
+  "sources": [
+    {
+      "text": "Competitive exclusion principle, Wikipedia. — the statement, the Gause and Hardin history, niche differentiation, and the widespread-coexistence caveat.",
+      "url": "https://en.wikipedia.org/wiki/Competitive_exclusion_principle",
+      "type": "secondary"
+    },
+    {
+      "text": "Hardin, \"The Competitive Exclusion Principle,\" Science 131(3409):1292-1297 (1960). — the coining of the term and 'complete competitors cannot coexist.'",
+      "url": "https://www.science.org/doi/10.1126/science.131.3409.1292",
+      "type": "primary"
+    },
+    {
+      "text": "Hutchinson, \"The Paradox of the Plankton,\" The American Naturalist 95(882):137-145 (1961). — the apparent violation and its proposed resolutions.",
+      "url": "https://userpages.umbc.edu/~rostamia/math481/1961-diversity-hutchinson.pdf",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Competitive_exclusion_principle",
+  "related": [
+    {
+      "slug": "lotka-volterra-equations",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-allee-effect",
+      "kind": "kindred"
+    }
+  ]
+}
