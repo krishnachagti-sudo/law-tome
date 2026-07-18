@@ -1,0 +1,57 @@
+{
+  "no": "469",
+  "slug": "the-hodgkin-huxley-model",
+  "name": "The Hodgkin-Huxley Model",
+  "aliases": ["The Hodgkin-Huxley equations", "The conductance-based model of the action potential"],
+  "statement": "The nerve impulse arises from voltage-gated sodium and potassium currents, captured in a set of equations.",
+  "statementAccent": "voltage-gated sodium and potassium currents",
+  "meaning": "The Hodgkin-Huxley model is a mathematical model describing how a neuron's action potential is initiated and propagated. It treats a patch of membrane as an electrical circuit: the lipid bilayer is a capacitor, and voltage-gated ion channels are variable conductances in series with batteries set by the ionic reversal potentials. The membrane potential evolves according to coupled nonlinear differential equations, with separate voltage- and time-dependent conductances for sodium and potassium plus a small constant leak. It was the first quantitative, predictive model of a biological signal.",
+  "mechanism": "The action potential is a choreographed sequence of conductance changes. On depolarisation, voltage-gated sodium channels open fast, governed by an activation variable, and sodium rushing in drives the voltage toward the sodium reversal potential, the rising phase. Then two slower processes end the spike: the sodium channels inactivate, and the slower potassium conductance activates, with potassium flowing out to repolarise the membrane. Each channel's conductance is not fixed but a function of voltage and time, and Hodgkin and Huxley inferred that charged gating particles must move under the membrane field, predicting voltage sensing and gating decades before ion-channel proteins were known.",
+  "examples": [
+    {
+      "tag": "Threshold and all-or-none",
+      "text": "Sodium activation is regenerative: below a critical voltage outward currents win and the perturbation decays, but above it the sodium feedback runs away, so the spike either fires fully or not at all."
+    },
+    {
+      "tag": "The refractory period",
+      "text": "During and just after a spike, inactivated sodium channels cannot reopen until the membrane repolarises, giving an absolute refractory period, while raised potassium conductance makes the cell harder to fire, a relative one."
+    },
+    {
+      "tag": "Computed by hand",
+      "text": "The 1952 solutions were integrated by hand on a mechanical calculator, before Hodgkin and Huxley had access to an electronic computer, yet they reproduced the action-potential waveform and conduction velocity."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The gating variables",
+      "text": "The dimensionless variables between zero and one, sodium activation and inactivation and potassium activation, each following first-order kinetics with voltage-dependent rate constants, whose powers were best fits to the data."
+    },
+    {
+      "name": "Conductance-based descendants",
+      "text": "The many later neuron models built on the same formalism, adding calcium currents, extra channel types, and dendritic structure, on which modern computational neuroscience rests."
+    }
+  ],
+  "whyItMatters": "It was the first quantitative, predictive mathematical model of a biological signal, reproducing the action potential's waveform and properties from independently measured conductances, and it earned Hodgkin and Huxley a share of the 1963 Nobel Prize in Physiology or Medicine. It is the founding framework of computational neuroscience and quantitative electrophysiology, since essentially all conductance-based neuron models descend from it, and it correctly inferred voltage-dependent gating before channel proteins were known, setting the agenda for channel biophysics.",
+  "working": [
+    {"lead": "Model the membrane as a circuit", "text": "treat the bilayer as a capacitor and the channels as voltage- and time-dependent conductances with ionic batteries to capture excitability."},
+    {"lead": "Separate the currents", "text": "explain the spike as a fast inward sodium current followed by inactivation and a slower outward potassium current."},
+    {"lead": "Read gating from voltage", "text": "expect conductances to change with voltage and time, the basis of threshold, all-or-none firing, and refractoriness."}
+  ],
+  "limits": "It is an empirical fit: the rate functions and the powers on the gating variables were curve-fits to voltage-clamp data, not derived from molecular structure, and the model predates knowledge of the actual channel proteins whose gating it inferred. It describes a single, space-clamped, isopotential patch, with propagation added separately via the cable equation, so it omits the spatial complexity of real dendrites. It includes only two active conductances plus a leak, whereas real neurons express many, and it is deterministic, ignoring the stochastic gating of individual channels later captured by patch-clamp work and stochastic variants.",
+  "misreadings": "Hodgkin and Huxley did not discover or identify ion channels; they modelled ionic conductances and inferred gating particles, and the channel proteins were characterised much later by patch-clamp and structural biology. The gating variables are probabilistic quantities in an empirical formalism, not physical gates one can point to, and their exponents do not prove exact subunit counts. Only a tiny fraction of ions cross per spike, so concentrations barely change and are restored by the sodium-potassium pump, which is not part of the spike equations. And the 1963 prize was shared three ways, including John Eccles for synaptic mechanisms.",
+  "origin": "Developed by Alan Hodgkin and Andrew Huxley from voltage-clamp experiments on the squid giant axon, published in a series of Journal of Physiology papers in 1952, culminating in 'A quantitative description of membrane current'; they shared the 1963 Nobel Prize with John Eccles.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1952,
+  "namedAfter": "Alan Hodgkin and Andrew Huxley",
+  "sources": [
+    {"text": "Hodgkin and Huxley, 'A quantitative description of membrane current and its application to conduction and excitation in nerve,' Journal of Physiology 117 (1952): 500-544. — the model and its equations.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1392413/", "type": "primary"},
+    {"text": "Hodgkin-Huxley model, Wikipedia. — the circuit picture, the gating variables, and the model's legacy.", "url": "https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model",
+  "related": [
+    {"slug": "the-all-or-none-law", "kind": "consequence"},
+    {"slug": "the-sodium-potassium-pump", "kind": "kindred"}
+  ]
+}

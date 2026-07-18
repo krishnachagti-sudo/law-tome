@@ -1,0 +1,78 @@
+{
+  "no": "478",
+  "slug": "the-haldane-effect",
+  "name": "The Haldane Effect",
+  "aliases": [
+    "The Christiansen-Douglas-Haldane effect"
+  ],
+  "statement": "Deoxygenated blood carries more carbon dioxide, so unloading oxygen helps the blood pick up carbon dioxide.",
+  "statementAccent": "unloading oxygen helps the blood pick up carbon dioxide",
+  "meaning": "The Haldane effect is the property of hemoglobin whereby deoxygenated blood carries more carbon dioxide than oxygenated blood at any given carbon-dioxide tension. Equivalently, oxygenation of hemoglobin in the lungs promotes the release of carbon dioxide, while deoxygenation in the tissues enhances its uptake. It is the mirror image of the Bohr effect: where the Bohr effect describes how carbon dioxide and acid affect oxygen binding, the Haldane effect describes how oxygen affects the carriage of carbon dioxide, both arising from the same allosteric linkage in hemoglobin.",
+  "mechanism": "Deoxyhemoglobin is a weaker acid and a better proton acceptor than oxyhemoglobin, and this drives two things. As hemoglobin gives up oxygen in the tissues, it more readily binds the hydrogen ions produced when carbon dioxide is hydrated, buffering them and pulling the reaction toward more bicarbonate, so more carbon dioxide is carried indirectly. Deoxyhemoglobin also binds carbon dioxide directly at its terminal amino groups to form carbamino compounds more readily. In the lungs, oxygen binding reverses both processes, making hemoglobin a stronger acid that sheds carbon dioxide and hydrogen ions, helping expel carbon dioxide.",
+  "examples": [
+    {
+      "tag": "Loading in the tissues",
+      "text": "As blood passes through active tissue and gives up oxygen, its deoxyhemoglobin takes up the extra carbon dioxide and acid produced, much of it enabled by the Haldane effect rather than by a rise in carbon-dioxide tension alone."
+    },
+    {
+      "tag": "Unloading in the lungs",
+      "text": "In the alveolar capillaries, oxygenation of hemoglobin actively drives carbon dioxide out, improving its clearance beyond what diffusion gradients alone would give."
+    },
+    {
+      "tag": "Oxygen and carbon dioxide retention",
+      "text": "In some patients with chronic lung disease, giving oxygen oxygenates hemoglobin and releases bound carbon dioxide into the blood, contributing to a rise in carbon dioxide, though it is not the main cause."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The three forms of carbon dioxide transport",
+      "text": "Carbon dioxide travels as bicarbonate, the large majority via the chloride shift and carbonic anhydrase, as carbamino compounds on hemoglobin, and dissolved in plasma; the Haldane effect enhances the first two in the tissues."
+    },
+    {
+      "name": "The reciprocal Bohr effect",
+      "text": "Its counterpart, in which carbon dioxide and acid lower hemoglobin's oxygen affinity; together the two optimise both oxygen and carbon-dioxide exchange at each end of the circulation."
+    }
+  ],
+  "whyItMatters": "It is central to carbon-dioxide transport and respiratory physiology, letting blood take up carbon dioxide in the tissues without a large swing in pH and expel it efficiently in the lungs. Working with the Bohr effect, it optimises both gas exchanges at once: in the tissues, unloading oxygen aids carbon-dioxide pickup, and in the lungs, loading oxygen aids carbon-dioxide release. It also has clinical relevance, contributing, alongside larger factors, to the carbon-dioxide retention seen when oxygen is given to some patients with chronic lung disease.",
+  "working": [
+    {
+      "lead": "Read oxygen state as a carbon dioxide signal",
+      "text": "expect deoxyhemoglobin to carry more carbon dioxide, so oxygen unloading in tissues boosts carbon-dioxide uptake."
+    },
+    {
+      "lead": "Reverse it in the lungs",
+      "text": "expect oxygen loading there to drive carbon dioxide off hemoglobin and out of the blood."
+    },
+    {
+      "lead": "Pair it with the Bohr effect",
+      "text": "treat carbon-dioxide carriage and oxygen delivery as linked, two faces of the same allosteric coupling working in opposite directions at each end."
+    }
+  ],
+  "limits": "The Haldane effect describes carbon-dioxide carriage per unit tension, not a change in ventilation. The proportions of carbon dioxide carried as bicarbonate, carbamino, and dissolved gas are approximate and differ between arterial and venous blood and between sources. In the clinical setting of oxygen-induced carbon-dioxide retention in chronic lung disease, its real-world magnitude is debated and it is a secondary contributor: the primary driver is ventilation-perfusion mismatch from the reversal of hypoxic vasoconstriction, with reduced ventilatory drive and the Haldane effect as lesser factors, so the old idea that oxygen simply knocks out the hypoxic drive is largely a misconception.",
+  "misreadings": "The effect is named for John Scott Haldane, the respiratory physiologist, not his son J. B. S. Haldane, the evolutionary geneticist, a frequent confusion. It should not be swapped with the Bohr effect: the Bohr effect is the influence of carbon dioxide and acid on oxygen binding, while the Haldane effect is the influence of oxygen on carbon-dioxide carriage. And deoxyhemoglobin is not more acidic; it is the weaker acid and better proton acceptor, which is what lets it carry more carbon dioxide.",
+  "origin": "Named after the Scottish physiologist John Scott Haldane and described in the 1914 paper by Christiansen, Douglas, and Haldane, 'The absorption and dissociation of carbon dioxide by human blood', hence also the Christiansen-Douglas-Haldane effect.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1914,
+  "namedAfter": "John Scott Haldane",
+  "sources": [
+    {
+      "text": "Christiansen, Douglas, and Haldane, 'The absorption and dissociation of carbon dioxide by human blood,' Journal of Physiology 48 (1914): 244-271. — the original description.",
+      "url": "https://physoc.onlinelibrary.wiley.com/doi/10.1113/jphysiol.1914.sp001659",
+      "type": "primary"
+    },
+    {
+      "text": "Physiology, Carbon Dioxide Retention, StatPearls (NCBI Bookshelf). — the Haldane effect, carbon-dioxide transport, and the clinical context.",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK532988/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Haldane_effect",
+  "related": [
+    {
+      "slug": "the-bohr-effect",
+      "kind": "kindred"
+    }
+  ]
+}

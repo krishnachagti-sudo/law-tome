@@ -1,0 +1,79 @@
+{
+  "no": "479",
+  "slug": "the-henderson-hasselbalch-equation",
+  "name": "The Henderson-Hasselbalch Equation",
+  "aliases": [
+    "The buffer equation",
+    "The bicarbonate buffer equation"
+  ],
+  "statement": "A buffer's pH equals the acid's pKa plus the log of the base-to-acid ratio.",
+  "statementAccent": "the log of the base-to-acid ratio",
+  "meaning": "The Henderson-Hasselbalch equation relates the pH of a buffer solution to the pKa of the weak acid and the ratio of the concentrations of the conjugate base to the weak acid: pH equals pKa plus the base-ten logarithm of the base-to-acid ratio. When the two concentrations are equal, the logarithm is zero and pH equals pKa, the point of maximum buffering. In physiology it takes a bicarbonate form, expressing blood pH in terms of an apparent pKa of 6.1, the bicarbonate concentration, and the dissolved carbon dioxide set by its partial pressure.",
+  "mechanism": "It follows directly from the acid-dissociation equilibrium. Starting from the equilibrium constant, which sets the hydrogen-ion concentration by the ratio of acid to base, taking the negative base-ten logarithm of both sides and using the definitions of pH and pKa rearranges it into the familiar form. Strictly the constant is defined in terms of activities, and the equation substitutes concentrations for activities, which is the source of its approximation. In the bicarbonate system the denominator, the product of the solubility coefficient and the carbon-dioxide partial pressure, stands in for the effective acid, dissolved carbon dioxide, which is far more abundant than true carbonic acid.",
+  "examples": [
+    {
+      "tag": "Normal blood pH",
+      "text": "With bicarbonate near 24 and dissolved carbon dioxide near 1.2, the ratio is about twenty to one, whose logarithm is about 1.3, so pH is about 6.1 plus 1.3, giving the normal arterial 7.4."
+    },
+    {
+      "tag": "Preparing a buffer",
+      "text": "To make an acetate buffer at pH one unit above acetic acid's pKa of about 4.76, one sets a ten-to-one ratio of acetate to acid, the standard recipe from the equation."
+    },
+    {
+      "tag": "Drug absorption",
+      "text": "For a weak-acid or weak-base drug, the equation gives the ionised-to-un-ionised ratio at a given tissue pH, and since mainly the un-ionised, lipid-soluble form crosses membranes, it predicts where absorption is favoured."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The bicarbonate form",
+      "text": "The physiological version, pH equals 6.1 plus the logarithm of bicarbonate over the dissolved carbon dioxide, underpinning the interpretation of arterial blood gases."
+    },
+    {
+      "name": "The weak-base form",
+      "text": "The version for a weak base, written in terms of the conjugate acid, giving the same relation between pH, the acid's pKa, and the base-to-acid ratio."
+    }
+  ],
+  "whyItMatters": "It is the working tool for predicting the pH of any weak-acid buffer and for designing buffers in the laboratory. In physiology its bicarbonate form explains how the body holds blood pH near 7.4 through a twenty-to-one ratio, with the lungs adjusting carbon dioxide quickly and the kidneys adjusting bicarbonate slowly. It underpins the clinical interpretation of arterial blood gases, distinguishing respiratory from metabolic acid-base disorders, and it informs pharmacology through the ionisation and absorption of drugs.",
+  "working": [
+    {
+      "lead": "Read pH from the ratio",
+      "text": "compute a buffer's pH as the pKa plus the log of the base-to-acid ratio, remembering pH equals pKa when they are equal."
+    },
+    {
+      "lead": "Split respiratory from metabolic",
+      "text": "in the bicarbonate form, attribute a change in carbon dioxide to the lungs and a change in bicarbonate to the kidneys when reading acid-base status."
+    },
+    {
+      "lead": "Predict ionisation",
+      "text": "use the equation to find the ionised fraction of a drug at a given pH, since mainly the un-ionised form crosses membranes."
+    }
+  ],
+  "limits": "It is an approximation, not the exact mass-action law, derived by substituting concentrations for activities, so it ignores ionic strength and activity coefficients and loses accuracy at high ionic strength. It breaks down at extreme pH and in very dilute buffers, where it neglects the self-ionisation of water, and it is least accurate when the base-to-acid ratio is far from one, holding best within about one pH unit of the pKa. The bicarbonate pKa of 6.1 is an apparent, composite value, not the true constant of carbonic acid, and it can shift with temperature and in critically ill patients.",
+  "misreadings": "The bicarbonate pKa of 6.1 is not the true pKa of carbonic acid, which is much lower; 6.1 is an apparent value that absorbs the hydration equilibrium, since most dissolved carbon dioxide is not hydrated. The denominator is in practice dissolved carbon dioxide, far more abundant than true carbonic acid, to which it is proportional. The equation is not exact, assuming activities equal concentrations. And at pH equal to pKa the buffer is not neutral or at pH 7; the acid is simply half dissociated, and that pH is generally not 7.",
+  "origin": "Derived in concentration terms by the American physiologist Lawrence Henderson in 1908 and recast in logarithmic, pH form by the Danish chemist Karl Hasselbalch in 1916, building on Sorensen's pH scale and Hasselbalch's work in Christian Bohr's laboratory.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1916,
+  "namedAfter": "Lawrence Henderson and Karl Hasselbalch",
+  "sources": [
+    {
+      "text": "Henderson-Hasselbalch equation, Wikipedia. — the buffer and bicarbonate forms and the history.",
+      "url": "https://en.wikipedia.org/wiki/Henderson%E2%80%93Hasselbalch_equation",
+      "type": "secondary"
+    },
+    {
+      "text": "de Levie, 'The Henderson-Hasselbalch Equation: Its History and Limitations,' Journal of Chemical Education 80(2) (2003): 146. — the derivation, the history, and the approximation's limits.",
+      "url": "https://pubs.acs.org/doi/10.1021/ed080p146",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Henderson%E2%80%93Hasselbalch_equation",
+  "related": [
+    {
+      "slug": "the-bohr-effect",
+      "kind": "kindred"
+    }
+  ]
+}

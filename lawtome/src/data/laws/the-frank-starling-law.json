@@ -1,0 +1,79 @@
+{
+  "no": "473",
+  "slug": "the-frank-starling-law",
+  "name": "The Frank-Starling Law of the Heart",
+  "aliases": [
+    "Starling's law of the heart",
+    "The Frank-Starling mechanism"
+  ],
+  "statement": "The more the heart fills, the harder it contracts, so it ejects what it receives.",
+  "statementAccent": "the harder it contracts",
+  "meaning": "The Frank-Starling law of the heart holds that stroke volume rises in response to an increase in the volume of blood filling the ventricle before contraction, the end-diastolic volume or preload, when other factors are held constant. The more the heart muscle is stretched during filling, the greater the force of the ensuing contraction and the more blood it ejects, up to a limit. This intrinsic property lets the heart automatically, beat to beat, match its output to the amount of blood returning to it, without any nervous or hormonal signal.",
+  "mechanism": "Greater diastolic stretch lengthens the cardiac sarcomeres toward their optimal length, increasing the force of the next contraction. The modern explanation is length-dependent activation, dominated by an increase in the sensitivity of the contractile filaments, through troponin C, to calcium at longer sarcomere lengths, rather than simply the skeletal-muscle story of filament overlap. Contributing players include titin, the giant elastic protein that senses stretch and reduces the spacing between filaments, coupling the length of the fibre to its activation. The result is that a stretched cardiomyocyte develops more force at a given calcium level.",
+  "examples": [
+    {
+      "tag": "Matching the two ventricles",
+      "text": "If venous return to one side of the heart rises, that ventricle's filling and stroke volume rise to match, so the outputs of the right and left ventricles stay equal and blood does not pool."
+    },
+    {
+      "tag": "More return, more output",
+      "text": "The muscle pump during exercise, lying down, or a rapid fluid infusion all raise venous return and filling, and the heart raises its stroke volume beat to beat in response."
+    },
+    {
+      "tag": "The failing heart",
+      "text": "In heart failure the ventricle operates on a flattened, depressed curve, so a given rise in filling yields little extra output, though the mechanism is blunted rather than abolished."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Ventricular function curves",
+      "text": "The family of Starling curves, each set by a given contractility and afterload; changes in venous return move the operating point along a curve, while changes in contractility shift to a different one."
+    },
+    {
+      "name": "Length-dependent activation",
+      "text": "The modern mechanistic account in which stretch raises the filaments' calcium sensitivity, with titin as a length sensor, rather than the simpler filament-overlap picture."
+    }
+  ],
+  "whyItMatters": "The mechanism lets the heart intrinsically match its output to venous return on every beat, without nervous or hormonal input, and above all it keeps the outputs of the two ventricles equal so blood does not back up in the lungs or the body. It is one of the foundational principles of cardiovascular physiology, it explains why a transplanted, denervated heart still adjusts to loading, and it underlies clinical reasoning in heart failure and in the management of preload during surgery and critical care.",
+  "working": [
+    {
+      "lead": "Read output from filling",
+      "text": "expect stroke volume to rise with end-diastolic volume at constant contractility, the intrinsic preload response."
+    },
+    {
+      "lead": "Move along or shift the curve",
+      "text": "distinguish a change in venous return, which moves the operating point along one curve, from a change in contractility, which shifts to another."
+    },
+    {
+      "lead": "Expect it blunted in failure",
+      "text": "anticipate a flattened curve in heart failure, where extra filling buys little output, so lowering preload relieves congestion without much loss of stroke volume."
+    }
+  ],
+  "limits": "It is one of several controllers of cardiac output, operating alongside neural, humoral, heart-rate, and afterload influences; it governs the intrinsic preload response at constant contractility, not the whole of output regulation. There is a genuine debate about a descending limb: classically, overstretching sarcomeres past the optimum reduces force, but many physiologists argue that in the intact, normal heart the stiff titin and the pericardium prevent sarcomeres from being stretched that far, so a physiologically operative descending limb may not be reached. The thick- versus thin-filament basis of length-dependent activation is also an area of active research.",
+  "misreadings": "It is not simply the skeletal-muscle length-tension curve; for cardiac muscle the dominant contributor is length-dependent activation through increased calcium sensitivity, with filament overlap playing a minor role over the physiological range. It should not be confused with a change in contractility, since the law describes movement along a single ventricular function curve at constant contractility while an inotropic change shifts to a different curve. And it is blunted, not abolished, in heart failure, where the failing heart retains a reduced preload response.",
+  "origin": "Founded on Otto Frank's 1895 work on the isolated frog heart and Ernest Starling's heart-lung experiments in the 1910s; Starling stated the law of the heart in his Linacre Lecture, delivered in 1915 and published in 1918, and the two are co-eponyms.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1918,
+  "namedAfter": "Otto Frank and Ernest Starling",
+  "sources": [
+    {
+      "text": "Physiology, Frank Starling Law, StatPearls (NCBI Bookshelf). — the preload-stroke volume relationship, its mechanism, and clinical relevance.",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470295/",
+      "type": "secondary"
+    },
+    {
+      "text": "Han et al., 'Cardiac efficiency and Starling's Law of the Heart,' Journal of Physiology (2022). — the history and the length-dependent basis of the law.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9826111/",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Frank%E2%80%93Starling_law",
+  "related": [
+    {
+      "slug": "starlings-principle",
+      "kind": "kindred"
+    }
+  ]
+}

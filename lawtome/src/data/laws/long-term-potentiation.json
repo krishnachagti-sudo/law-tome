@@ -1,0 +1,56 @@
+{
+  "no": "471",
+  "slug": "long-term-potentiation",
+  "name": "Long-Term Potentiation",
+  "aliases": ["LTP", "Synaptic potentiation"],
+  "statement": "Brief intense activity can lastingly strengthen a synapse, the leading cellular model of memory.",
+  "statementAccent": "lastingly strengthen a synapse",
+  "meaning": "Long-term potentiation is a persistent, long-lasting strengthening of synaptic transmission, an increase in the efficacy of a synapse, that follows brief high-frequency stimulation of a synaptic pathway. It is the leading candidate cellular mechanism thought to underlie learning and memory in the mammalian brain. In the original experiments the potentiated response lasted hours, and later work showed it can persist for days to weeks, which distinguishes it from short-lived post-tetanic potentiation and makes it a plausible substrate for durable memory.",
+  "mechanism": "In the classic form, the NMDA receptor acts as a coincidence detector. At rest its channel is blocked by magnesium, so induction requires both presynaptic glutamate release and postsynaptic depolarisation: depolarisation expels the block and, with glutamate bound, the channel admits calcium into the spine. The calcium rise activates the enzyme CaMKII, which strengthens the synapse both by making existing AMPA receptors more conductive and by driving more of them into the postsynaptic membrane. Early-phase potentiation modifies existing proteins, while late-phase potentiation requires new gene expression and protein synthesis to consolidate the change.",
+  "examples": [
+    {
+      "tag": "The rabbit hippocampus",
+      "text": "Bliss and Lomo found in 1973 that brief high-frequency stimulation of the perforant path lastingly boosted the response of granule cells in the rabbit dentate gyrus, the first clear demonstration."
+    },
+    {
+      "tag": "The Hebbian properties",
+      "text": "Potentiation is input-specific, cooperative, needing enough co-active fibres, and associative, so a weak input strengthens if active alongside a strong one, the three properties that make it Hebbian."
+    },
+    {
+      "tag": "Writing a memory",
+      "text": "Optogenetic experiments have inactivated a fear memory with a depression protocol and reactivated it with a potentiation protocol, strengthening the causal link between the synaptic change and memory."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Early and late phases",
+      "text": "Early potentiation, lasting under an hour, that traffics existing receptors without new protein, and late potentiation that requires gene expression and protein synthesis to consolidate a longer-lasting change."
+    },
+    {
+      "name": "Long-term depression",
+      "text": "The complementary weakening of synapses, typically induced by prolonged low-frequency stimulation and receptor removal, viewed as preventing potentiation from saturating and widening the dynamic range."
+    }
+  ],
+  "whyItMatters": "It is the dominant model of the synaptic basis of memory and one of the founding discoveries of modern cellular neuroscience. It gave the first concrete, measurable mechanism showing that mammalian synapses can undergo the lasting, activity-dependent, input-specific change Hebb had postulated, providing a physiological substrate for learning and memory. It has shaped decades of research, from NMDA-receptor pharmacology and CaMKII biology to the study of memory engrams, and it links the abstract idea of Hebbian learning to real molecular events at the synapse.",
+  "working": [
+    {"lead": "Require coincidence", "text": "expect strengthening only where presynaptic release and postsynaptic depolarisation occur together, the condition the NMDA receptor detects."},
+    {"lead": "Read the calcium signal", "text": "trace potentiation to a postsynaptic calcium rise that recruits and enhances AMPA receptors, with strong signals strengthening and weak ones depressing."},
+    {"lead": "Separate the phases", "text": "distinguish early potentiation that uses existing proteins from late potentiation that needs new protein synthesis to endure."}
+  ],
+  "limits": "The link to memory is strongly supported but not settled: the stronger claim that potentiation is memory, both necessary and sufficient, remains debated. Much of the work is done in brain slices or anaesthetised animals under artificial, strong stimulation that may not mirror natural learning-induced plasticity, and early evidence was largely correlational, with causal claims strengthened but not fully closed by optogenetic and engram studies. It is also not a single thing: there are mechanistically distinct forms, with the NMDA-receptor-dependent hippocampal case being the textbook example rather than the only one.",
+  "misreadings": "Potentiation is not simply memory; it is a candidate mechanism studied largely at the synaptic level, and equating the electrophysiological phenomenon with memory itself overstates the evidence. It is not one uniform thing but comes in several mechanistically distinct forms. The 1973 paper did not call it long-term potentiation but long-lasting potentiation, the modern name coming later. And in the classic form its expression is substantially postsynaptic, through increased AMPA-receptor conductance and insertion, not purely a matter of more presynaptic glutamate release.",
+  "origin": "First observed by Terje Lomo in 1966 and published by Timothy Bliss and Terje Lomo in 1973, working on the rabbit hippocampus; the NMDA-receptor mechanism was established in the following decade, and it is regarded as the physiological realisation of Hebb's rule.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1973,
+  "namedAfter": "Timothy Bliss and Terje Lomo",
+  "sources": [
+    {"text": "Bliss and Lomo, 'Long-lasting potentiation of synaptic transmission in the dentate area of the anaesthetized rabbit following stimulation of the perforant path,' Journal of Physiology 232 (1973): 331-356. — the first demonstration.", "url": "https://pubmed.ncbi.nlm.nih.gov/4727084/", "type": "primary"},
+    {"text": "Long-term potentiation overview, ScienceDirect Topics. — the NMDA-receptor mechanism, the Hebbian properties, and long-term depression.", "url": "https://www.sciencedirect.com/topics/neuroscience/long-term-potentiation", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Long-term_potentiation",
+  "related": [
+    {"slug": "hebbs-rule", "kind": "cause"}
+  ]
+}
