@@ -1,0 +1,56 @@
+{
+  "no": "397",
+  "slug": "the-optimism-bias",
+  "name": "The Optimism Bias",
+  "aliases": ["Unrealistic optimism", "Comparative optimism"],
+  "statement": "We expect good things to happen to us and bad things to happen to other people.",
+  "statementAccent": "bad things to happen to other people",
+  "meaning": "The optimism bias is the tendency to overestimate the likelihood of good events and underestimate the likelihood of bad ones happening to oneself, relative to other people. It is the it-won't-happen-to-me intuition: we judge ourselves less likely than our peers to divorce, fall ill, or have an accident, and more likely to enjoy positive outcomes. Because this cannot be true for everyone at once, the optimism is, in the aggregate, unrealistic.",
+  "mechanism": "Two accounts are offered. A motivational account holds that we favour flattering beliefs because they are desirable, a form of self-enhancement. A cognitive account, from research on belief updating, finds that people revise their expectations more in response to good news than to bad, an asymmetric updating that lets optimism survive contact with disconfirming reality. The bias is strongest for outcomes people feel they control and for events tied to self-image, and it is related to, but broader than, the planning fallacy about one's own tasks.",
+  "examples": [
+    {
+      "tag": "Underrating personal risk",
+      "text": "People judge themselves less likely than peers to divorce, develop disease, or have accidents, the pattern Weinstein documented across dozens of life events."
+    },
+    {
+      "tag": "The optimistic smoker",
+      "text": "Smokers tend to underestimate their own risk of smoking-related harm relative to other smokers, a case where the effect is robust."
+    },
+    {
+      "tag": "Project over-optimism",
+      "text": "Individuals and organisations routinely underestimate the costs, risks, and timelines of their own ventures, overlapping with the planning fallacy."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Asymmetric belief updating",
+      "text": "Sharot and colleagues' proposal that we update beliefs more from better-than-expected than worse-than-expected information; a mechanism that is itself methodologically contested."
+    },
+    {
+      "name": "The planning fallacy",
+      "text": "The narrower tendency to underestimate one's own task times and costs even knowing past overruns, often seen as a domain-specific manifestation of optimistic prediction."
+    }
+  ],
+  "whyItMatters": "It shapes health behaviour and risk perception, explaining why people underweight personal risk from smoking, unsafe behaviour, or disease, and it feeds over-optimistic forecasting in finance and the chronic cost underestimation of large projects in public policy. Understanding it helps design warnings, defaults, and forecasts that correct for a systematic tilt toward expecting the best for oneself.",
+  "working": [
+    {"lead": "Check your personal odds against the base rate", "text": "compare your own risk estimate to the actual frequency in comparable people, since you likely rate yourself too favourably."},
+    {"lead": "Take an outside view", "text": "for your own projects, use the record of similar past efforts rather than your inside sense of how this one will go."},
+    {"lead": "Design for the tilt", "text": "build warnings, buffers, and defaults that assume people underweight their own risk of bad outcomes."}
+  ],
+  "limits": "It is well established as a group-level phenomenon, but calling any individual's optimism unrealistic is hard, since one usually cannot know that person's true probability, and some who rate their risk below average genuinely are below average. Measurement matters: comparative, indirect, and absolute measures can give different results. The specific asymmetric-belief-updating mechanism is empirically contested, with some studies arguing the effect is partly a statistical artifact, even as the broad optimism bias is not seriously in doubt.",
+  "misreadings": "It is not the same as dispositional optimism or positive thinking; it is a comparative judgement error about probabilities, not a personality trait or mood. It does not brand any given person as provably irrational, since it is a statistical, group-level effect. And the neural belief-updating account should not be treated as settled science, as it remains actively debated. It is also related to but distinct from the planning fallacy.",
+  "origin": "Pioneered by Neil Weinstein's 1980 study of unrealistic optimism about future life events, and later given a cognitive-neuroscience account by Tali Sharot and colleagues.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1980,
+  "sources": [
+    {"text": "Sharot, Korn & Dolan, \"How unrealistic optimism is maintained in the face of reality,\" Nature Neuroscience 14 (2011): 1475-1479. — the asymmetric belief-updating account, building on Weinstein's 1980 work.", "url": "https://www.nature.com/articles/nn.2949", "type": "primary"},
+    {"text": "Optimism bias, Wikipedia. — the comparative-optimism pattern, the motivational and updating accounts, and the measurement caveats.", "url": "https://en.wikipedia.org/wiki/Optimism_bias", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Optimism_bias",
+  "related": [
+    {"slug": "the-planning-fallacy", "kind": "kindred"},
+    {"slug": "the-availability-heuristic", "kind": "kindred"}
+  ]
+}

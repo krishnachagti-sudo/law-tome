@@ -1,0 +1,56 @@
+{
+  "no": "398",
+  "slug": "the-peak-end-rule",
+  "name": "The Peak-End Rule",
+  "aliases": ["Peak-end effect"],
+  "statement": "We judge an experience by its most intense moment and its ending, not its whole.",
+  "statementAccent": "its most intense moment and its ending",
+  "meaning": "The peak-end rule is the finding that people judge a past experience largely by how they felt at its most intense point, the peak, and at its end, rather than by the average or sum of every moment. The overall length of the experience has surprisingly little effect on the remembered impression, a companion finding called duration neglect. Memory keeps something like a snapshot weighted toward the peak and the finish.",
+  "mechanism": "The rule reflects a split between two selves. The experiencing self lives through each moment in real time, while the remembering self forms the retrospective judgement and makes future choices. The remembering self does not integrate the whole stream; it stores a summary anchored on the peak and the ending and largely discards duration. Because it is the remembering self that decides whether to repeat an experience, people can rationally but mistakenly prefer an option that contained more total discomfort but ended more gently.",
+  "examples": [
+    {
+      "tag": "The colonoscopy trial",
+      "text": "Patients remembered a procedure as less unpleasant when a gentler period was added at the end, even though it lengthened the total discomfort, because the ending was milder."
+    },
+    {
+      "tag": "The cold-water study",
+      "text": "People preferred to repeat a longer cold-water trial that ended slightly less painfully over a shorter one, despite more total pain, weighting the end over the sum."
+    },
+    {
+      "tag": "Designing experiences",
+      "text": "Service and product designers engineer a strong high point and a positive ending to shape how customers remember an experience."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Duration neglect",
+      "text": "The companion finding that the length of an experience has little effect on its remembered quality, so a long ordeal and a short one can be recalled similarly if their peaks and ends match."
+    },
+    {
+      "name": "The experiencing and remembering selves",
+      "text": "Kahneman's distinction between the self that lives each moment and the self that remembers and chooses, which the rule shows can disagree."
+    }
+  ],
+  "whyItMatters": "It is foundational in behavioural economics, separating remembered from experienced utility, and it guides the design of medical procedures, customer service, and user experiences, where a strong peak and a good ending shape satisfaction. It reframes how we should evaluate and plan repeat experiences, and it warns that the self that chooses may systematically misjudge the self that lives through the moments.",
+  "working": [
+    {"lead": "Attend to peak and end", "text": "when shaping an experience for others, invest in a strong high point and a positive close, which dominate the memory."},
+    {"lead": "Do not ignore the middle entirely", "text": "remember that the average of the whole experience still predicts memory well, so peak and end are not the only things that matter."},
+    {"lead": "Distinguish living from remembering", "text": "recognise that choices about repeating an experience are made by the remembering self, which can misweigh the actual moments."}
+  ],
+  "limits": "It is well supported within its paradigms and, by meta-analysis, a large and robust effect, but its scope is limited. The same analysis finds the average of the whole experience predicts memory about as well, so the rule is a strong heuristic, not a claim that only peak and end matter. It has boundary conditions and weakens for long, complex, or high-involvement experiences, and duration neglect is not absolute, since duration still has some effect. It applies to pleasant experiences too, though the classic evidence is from aversive ones.",
+  "misreadings": "Duration does not never matter; duration neglect means it matters little relative to peak and end, not nothing. It is not true that only the peak and end count, since the average of the whole experience is a comparably strong predictor. And it does not apply uniformly to every experience, weakening for extended or complex ones. It is also not confined to pain, applying to pleasant experiences as well.",
+  "origin": "Developed by Daniel Kahneman with Barbara Fredrickson, Charles Schreiber, and Donald Redelmeier through the 1993 cold-water study and the 1996 and 2003 colonoscopy studies.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1993,
+  "sources": [
+    {"text": "Redelmeier & Kahneman, \"Patients' memories of painful medical treatments,\" Pain 66 (1996): 3-8. — the colonoscopy study of peak and end.", "url": "https://pubmed.ncbi.nlm.nih.gov/8857625/", "type": "primary"},
+    {"text": "Peak-end rule, Wikipedia. — the rule, duration neglect, the two selves, and the meta-analytic scope.", "url": "https://en.wikipedia.org/wiki/Peak%E2%80%93end_rule", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Peak%E2%80%93end_rule",
+  "related": [
+    {"slug": "the-serial-position-effect", "kind": "kindred"},
+    {"slug": "hyperbolic-discounting", "kind": "kindred"}
+  ]
+}

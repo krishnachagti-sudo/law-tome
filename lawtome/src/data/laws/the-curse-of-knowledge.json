@@ -1,0 +1,56 @@
+{
+  "no": "392",
+  "slug": "the-curse-of-knowledge",
+  "name": "The Curse of Knowledge",
+  "aliases": [],
+  "statement": "Once you know something, you cannot imagine what it is like not to know it.",
+  "statementAccent": "not to know it",
+  "meaning": "The curse of knowledge is a cognitive bias in which people who know something find it hard to imagine not knowing it, so they struggle to take the perspective of someone less informed. Because you cannot easily set aside what you know, you unconsciously assume others share your background, and so experts communicate poorly with novices, taking for granted the context, jargon, and prior understanding their audience actually lacks.",
+  "mechanism": "It is a failure of perspective-taking, closely tied to hindsight bias. Once a piece of information is acquired it cannot be un-known, and the informed mind cannot fully simulate the state of not having it, so it over-projects its own knowledge onto others. The knowledge feels obvious and universal from the inside, which leads the knower to skip the very steps a beginner needs. This is not arrogance but an involuntary limit on imagining an ignorant mind.",
+  "examples": [
+    {
+      "tag": "Tappers and listeners",
+      "text": "In Elizabeth Newton's study, people tapping the rhythm of famous songs expected listeners to identify about half, but listeners recognised only about one in forty, so vivid was the tune in the tapper's own head."
+    },
+    {
+      "tag": "The expert teacher",
+      "text": "A specialist who has long since internalised the basics loses beginners by assuming shared knowledge and reaching for unexplained jargon."
+    },
+    {
+      "tag": "Technical writing",
+      "text": "Documentation written by those who built a system often omits exactly the context newcomers need, because to the author it feels too obvious to state."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Hindsight bias",
+      "text": "The closely related effect of seeing a known outcome as having been obvious all along; the curse of knowledge is broader, projecting current knowledge onto others rather than only onto one's past self."
+    },
+    {
+      "name": "The economic version",
+      "text": "In markets, better-informed agents cannot fully exploit their advantage because they cannot help assuming others know what they know, though market forces reduce the effect without erasing it."
+    }
+  ],
+  "whyItMatters": "It explains a pervasive barrier to clear communication, teaching, writing, and design, and it warns experts that fluency in a subject can make them worse, not better, at conveying it to newcomers. It matters across education, technical documentation, user-interface design, and economics, and it names why the people who know the most often struggle hardest to reach those who know the least.",
+  "working": [
+    {"lead": "Assume less shared knowledge", "text": "when explaining, deliberately spell out the context and terms that feel obvious to you, since your audience may not have them."},
+    {"lead": "Test on a novice", "text": "check your communication against someone who lacks your background, since you cannot reliably simulate their perspective yourself."},
+    {"lead": "Strip the jargon", "text": "translate specialist language into plain terms, because familiarity blinds you to how opaque it is to others."}
+  ],
+  "limits": "It is a real, repeatedly documented bias with an experimental basis in economics and psychology, and reducing the knowledge gap, as market forces can, lessens but does not eliminate it. It is distinct from mere arrogance, being an involuntary cognitive limit rather than an attitude, and it is broader than hindsight bias, which concerns one's own past self rather than others. Some historical details, such as the exact title of Newton's dissertation, are reported inconsistently.",
+  "misreadings": "It is not simple condescension or talking down; it is an unwilled inability to model a less-informed mind. It was not coined by the popularisers who spread it, but by Camerer, Loewenstein, and Weber in 1989. And it is not identical to hindsight bias: hindsight bias is over-assuming past predictability, while the curse of knowledge is projecting present knowledge onto other people.",
+  "origin": "The term was coined by the economists Colin Camerer, George Loewenstein, and Martin Weber in a 1989 paper in the Journal of Political Economy, drawing on Elizabeth Newton's tappers-and-listeners work and popularised by Chip and Dan Heath in 'Made to Stick'.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1989,
+  "sources": [
+    {"text": "Camerer, Loewenstein & Weber, \"The Curse of Knowledge in Economic Settings,\" Journal of Political Economy 97 (1989): 1232-1254. — the coining of the term and the market experiments.", "url": "https://www.cmu.edu/dietrich/sds/docs/loewenstein/CurseknowledgeEconSet.pdf", "type": "primary"},
+    {"text": "Curse of knowledge, Wikipedia. — the perspective-taking failure, the tappers-and-listeners study, and the link to hindsight bias.", "url": "https://en.wikipedia.org/wiki/Curse_of_knowledge", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Curse_of_knowledge",
+  "related": [
+    {"slug": "the-hindsight-bias", "kind": "kindred"},
+    {"slug": "the-spotlight-effect", "kind": "kindred"}
+  ]
+}
