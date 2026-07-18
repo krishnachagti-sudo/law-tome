@@ -1,0 +1,55 @@
+{
+  "no": "251",
+  "slug": "regression-toward-the-mean",
+  "name": "Regression Toward the Mean",
+  "statement": "An extreme measurement tends to be followed by one closer to average.",
+  "statementAccent": "closer to average",
+  "meaning": "If a variable is extreme on its first measurement, it will tend to be closer to the average on a second measurement — and vice versa. Record highs tend to be followed by lower values, record lows by higher ones. Nothing pulls the values back; the drift is a consequence of chance, not of any cause acting on them.",
+  "mechanism": "Any extreme outcome usually mixes a stable underlying factor — real skill, true height, genuine risk — with transient chance, such as luck or measurement noise. Selecting a case because it was extreme partly selects for an unusually large chance component, which is unlikely to recur at the same size, so the next measurement drifts back toward the typical value. It requires only two things and no causal force: an imperfect correlation between the two measurements and selection on one of them. The weaker the correlation, the greater the regression.",
+  "examples": [
+    {
+      "tag": "Tall parents, less tall children",
+      "text": "Galton found that very tall parents have children taller than average but shorter than themselves, and very short parents have children shorter than average but taller than themselves — the deviation shrinking by roughly a third."
+    },
+    {
+      "tag": "The cover jinx",
+      "text": "An athlete lands on a magazine cover after a peak, then performs closer to their usual level, creating the illusion the cover jinxed them — when in fact they were chosen at a chance-inflated high that regressed."
+    },
+    {
+      "tag": "Treating the worst cases",
+      "text": "Select the highest-risk patients for a treatment and their next measurement tends to improve toward the mean even if the treatment is useless — which is exactly why controlled trials with a comparison group are needed."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The regression fallacy",
+      "text": "The error of attributing the natural drift back toward the mean to a cause — a treatment, a punishment, a jinx, a policy — when it is merely a statistical artifact of imperfect correlation."
+    },
+    {
+      "name": "The origin of regression analysis",
+      "text": "The whole field of regression analysis and the least-squares regression line inherit their name from Galton's discovery of this phenomenon."
+    }
+  ],
+  "whyItMatters": "It is a pervasive statistical trap behind countless false conclusions — that a treatment worked, that punishment helps and praise hurts, that a policy fixed a problem — whenever cases are chosen because they were extreme. Understanding it is essential to interpreting any before-and-after comparison, and it is why control groups exist.",
+  "working": [
+    {"lead": "Suspect it after selecting extremes", "text": "whenever you act on cases chosen because they were unusually high or low, expect them to drift toward average regardless of what you did."},
+    {"lead": "Demand a control group", "text": "to know whether an intervention on the worst cases really worked, compare against a similar untreated group, since both will regress."},
+    {"lead": "Do not read it as a force", "text": "treat the return toward the mean as a statistical artifact of imperfect correlation, not as something pulling values back."}
+  ],
+  "limits": "It is a mathematically proven property of any pair of measurements that are imperfectly correlated, requiring only selection on one of them — no causal mechanism. Its central danger is the regression fallacy: mistaking the natural drift for a real effect, which leads to false credit for treatments, punishments, or policies. It is a group tendency, not a guarantee for any single case, and it vanishes when the correlation is perfect. Because it is symmetric in time — predicting backward regresses too — it cannot be a physical force.",
+  "misreadings": "It is not a force pulling values back toward the average — it is a statistical consequence of imperfect correlation plus selection on an extreme. And it does not guarantee any particular extreme case will move toward the mean; it is a tendency across many cases.",
+  "origin": "Discovered by Francis Galton, who first called it 'reversion' from his sweet-pea experiments and renamed it 'regression' in an 1885 address, publishing 'Regression towards mediocrity in hereditary stature' in the Journal of the Anthropological Institute in 1886.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1886,
+  "namedAfter": "Francis Galton",
+  "sources": [
+    {"text": "Regression toward the mean, Wikipedia. — the statement, the imperfect-correlation mechanism, the Galton origin, and the not-a-causal-force point.", "url": "https://en.wikipedia.org/wiki/Regression_toward_the_mean", "type": "secondary"},
+    {"text": "Regression fallacy, Wikipedia. — the error of reading regression as a cause, with the cover-jinx and medical examples.", "url": "https://en.wikipedia.org/wiki/Regression_fallacy", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Regression_toward_the_mean",
+  "related": [
+    {"slug": "law-of-large-numbers", "kind": "kindred"}
+  ]
+}

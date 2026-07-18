@@ -1,0 +1,55 @@
+{
+  "no": "253",
+  "slug": "the-inspection-paradox",
+  "name": "The Inspection Paradox",
+  "aliases": ["Length-biased sampling", "The waiting-time paradox"],
+  "statement": "When you sample by encounter, big things show up more than their share.",
+  "statementAccent": "big things show up more than their share",
+  "meaning": "When items are sampled by encounter rather than one by one, larger or longer items are over-represented, because they are more likely to be run into — which biases observed averages upward. Your bus wait feels longer than half the average gap, and your classes seem bigger than the average class, because the long gaps and big classes catch more of the sampling.",
+  "mechanism": "The probability that an item is sampled is proportional to its size or length, so the observed distribution is shifted toward larger values — each item's chance of being seen is weighted by how much of the timeline or population it occupies. The size of the bias depends on the variance of the size distribution: the more spread out the sizes, the bigger the overstatement. If every item were the same size, there would be no bias at all. It is a real sampling effect, not a logical contradiction.",
+  "examples": [
+    {
+      "tag": "Waiting for the bus",
+      "text": "Arriving at a random time, you are more likely to land in a long gap between buses than a short one, since long gaps fill more of the timeline — so your average wait exceeds half the average gap."
+    },
+    {
+      "tag": "Class sizes",
+      "text": "The average class size students experience is larger than the average the school reports, because a big class is counted by more students — one real survey found fifty-six versus a reported thirty-one."
+    },
+    {
+      "tag": "The friendship paradox",
+      "text": "On average, your friends have more friends than you do, because popular people appear on more friend lists and so are over-sampled — a network form of the same length-biased sampling."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The friendship paradox",
+      "text": "Feld's 1991 result that your friends have, on average, more friends than you — the expected number of a friend's friends exceeds the average whenever the number of friends varies."
+    },
+    {
+      "name": "The waiting-time paradox",
+      "text": "The temporal instance from renewal theory, where the interval you land in when you inspect at an arbitrary time is stochastically longer than a typical interval."
+    }
+  ],
+  "whyItMatters": "It is a pervasive and easily missed source of bias in any data gathered by encounter — waiting times, class sizes, network surveys, fibre lengths, hospital stays. Recognising it prevents systematically overstating averages, and it explains a whole family of counterintuitive everyday experiences that feel like bad luck but are just biased sampling.",
+  "working": [
+    {"lead": "Ask how the sample was drawn", "text": "when averages seem too high, check whether items were sampled by encounter, which over-weights the large and long."},
+    {"lead": "Weight by size to correct", "text": "to recover the true per-item average, undo the length bias by weighting inversely to size."},
+    {"lead": "Watch the variance", "text": "expect the bias to grow with the spread of the sizes, and to vanish when all items are equal."}
+  ],
+  "limits": "It is a genuine sampling bias, not a paradox in the logical sense — the results are counterintuitive but mathematically correct. The magnitude depends on the variance, the second moment, of the size distribution, so it disappears entirely when all items are the same size. Its network form, the friendship paradox, holds for averages: it can fail for medians and does not describe every individual, being a statement about the whole population rather than a guarantee for any one person. The term describes a general statistical effect rather than a single named discovery.",
+  "misreadings": "It is not bad luck or a real change in the items — it is a bias baked into sampling by encounter, and it vanishes if the items are all the same size. And the friendship paradox does not mean you personally are unpopular; it is a fact about averages across the whole network.",
+  "origin": "A general consequence of length-biased sampling, standard in renewal theory and treated in Feller's probability text; the network case, the friendship paradox, was shown by Scott Feld in 'Why your friends have more friends than you do,' American Journal of Sociology 96(6):1464-1477 (1991).",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1991,
+  "sources": [
+    {"text": "Friendship paradox, Wikipedia. — the length-biased sampling mechanism, Feld's 1991 result, and the variance-dependent formula.", "url": "https://en.wikipedia.org/wiki/Friendship_paradox", "type": "secondary"},
+    {"text": "Downey, \"The Inspection Paradox Is Everywhere.\" — the class-size example and the general phenomenon.", "url": "http://allendowney.blogspot.com/2015/08/the-inspection-paradox-is-everywhere.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Friendship_paradox",
+  "related": [
+    {"slug": "the-friendship-paradox", "kind": "kindred"}
+  ]
+}

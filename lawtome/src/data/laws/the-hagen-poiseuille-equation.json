@@ -1,0 +1,56 @@
+{
+  "no": "257",
+  "slug": "the-hagen-poiseuille-equation",
+  "name": "The Hagen-Poiseuille Equation",
+  "aliases": ["Poiseuille's law"],
+  "statement": "Flow through a tube depends on the fourth power of its radius.",
+  "statementAccent": "the fourth power of its radius",
+  "meaning": "The volume of viscous fluid flowing through a cylindrical pipe each second is proportional to the pressure difference across it and to the fourth power of the pipe's radius, and inversely proportional to the pipe's length and the fluid's viscosity. Because the dependence on radius is to the fourth power, small changes in width produce enormous changes in flow.",
+  "mechanism": "For smooth, laminar flow of a Newtonian fluid, the fluid moves in layers with a parabolic velocity profile — fastest at the centre, zero at the wall, where the no-slip condition holds. Balancing the driving pressure gradient against the viscous shear between adjacent layers yields the flow rate. The fourth-power law dominates everything: doubling the radius multiplies flow sixteenfold, while doubling the pressure only doubles it and doubling the length only halves it, so radius is by far the strongest lever.",
+  "examples": [
+    {
+      "tag": "Blood vessels",
+      "text": "Because resistance falls as the fourth power of radius, a small vasoconstriction sharply cuts blood flow and a small vasodilation sharply raises it — halving a vessel's radius raises its resistance about sixteenfold, central to the effects of atherosclerosis and shock."
+    },
+    {
+      "tag": "The IV cannula",
+      "text": "Because flow scales with the fourth power of radius, a wider-bore intravenous line delivers fluid dramatically faster than a narrow one, which is why resuscitation uses large-bore access."
+    },
+    {
+      "tag": "Airway resistance",
+      "text": "The same fourth-power principle governs airflow in the airways, so a small narrowing from bronchoconstriction markedly raises the resistance to breathing."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Vascular resistance",
+      "text": "The physiological restatement, in which resistance to blood flow is proportional to length and viscosity and inversely proportional to the fourth power of vessel radius."
+    },
+    {
+      "name": "Laminar versus turbulent flow",
+      "text": "The boundary of the law's validity — it holds only for smooth laminar flow, below the Reynolds-number threshold where flow becomes turbulent and the relation breaks down."
+    }
+  ],
+  "whyItMatters": "It is the fundamental law of viscous flow through tubes, and its fourth-power dependence on radius makes vessel and airway diameter the dominant control over flow in the body. It underpins the physiology of circulation and breathing, the design of catheters and needles, and the understanding of how narrowing a vessel or airway so drastically restricts flow.",
+  "working": [
+    {"lead": "Prize the radius", "text": "when flow matters, focus on the tube's radius above pressure or length, since flow scales with its fourth power."},
+    {"lead": "Read narrowing as sharp restriction", "text": "expect even a modest reduction in radius, from constriction or blockage, to slash flow dramatically."},
+    {"lead": "Check the assumptions", "text": "apply the law only to steady laminar flow of a simple fluid, and treat it as approximate for blood and elastic vessels."}
+  ],
+  "limits": "The equation holds only under its assumptions: laminar flow of a Newtonian, incompressible fluid through a rigid, straight, uniform cylinder, in steady, fully developed flow. It fails entirely for turbulent flow. In physiology it is an approximation, because blood is non-Newtonian, its viscosity varying with shear and cell concentration; because vessels are elastic, curved, tapering, and branching rather than rigid straight cylinders; and because blood flow is pulsatile, not steady. It captures the dominant relationships, above all the fourth-power radius effect, without being quantitatively exact for the circulation.",
+  "misreadings": "It is not exact for blood flow in the body — blood is non-Newtonian, vessels are elastic and branching, and flow is pulsatile, so the law is a powerful qualitative guide rather than a precise quantitative one. And it applies only to laminar flow; once flow turns turbulent, the relationship no longer holds.",
+  "origin": "Established experimentally and independently by the French physician Jean Leonard Marie Poiseuille, from studies of flow through fine tubes published around 1840, and the German engineer Gotthilf Hagen in 1839; George Stokes later derived it from fluid-mechanics first principles.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1840,
+  "namedAfter": "Jean Leonard Marie Poiseuille and Gotthilf Hagen",
+  "sources": [
+    {"text": "Hagen-Poiseuille equation, Wikipedia. — the fourth-power flow law, the parabolic profile, and the Hagen, Poiseuille, and Stokes history.", "url": "https://en.wikipedia.org/wiki/Hagen%E2%80%93Poiseuille_equation", "type": "secondary"},
+    {"text": "\"Jean-Louis-Marie Poiseuille,\" Encyclopaedia Britannica. — Poiseuille's experiments on flow in narrow tubes and their physiological motivation.", "url": "https://www.britannica.com/biography/Jean-Louis-Marie-Poiseuille", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hagen%E2%80%93Poiseuille_equation",
+  "related": [
+    {"slug": "bernoullis-principle", "kind": "kindred"}
+  ]
+}

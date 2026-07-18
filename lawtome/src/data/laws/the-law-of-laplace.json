@@ -1,0 +1,56 @@
+{
+  "no": "255",
+  "slug": "the-law-of-laplace",
+  "name": "The Law of Laplace",
+  "aliases": ["The Young-Laplace law"],
+  "statement": "In a pressurised sphere or tube, wall tension rises with the radius.",
+  "statementAccent": "wall tension rises with the radius",
+  "meaning": "The tension in the wall of a hollow sphere or cylinder is proportional to the pressure inside times the radius. For a given internal pressure, a larger radius means the wall must bear more force per unit length; equivalently, at a fixed wall tension, a smaller radius can hold a higher pressure. Curvature and size, not pressure alone, govern how hard a wall is loaded.",
+  "mechanism": "The relation comes from a force balance across a curved membrane: the internal pressure pushing outward is balanced by the inward component of the wall's tension acting along the curved surface. Because tension acts tangentially, its net inward pull is proportional to the curvature, so a smaller radius produces a larger pressure jump for the same tension. For a sphere the wall tension is pressure times radius divided by two; the wall stress, which the wall's thickness reduces, is that tension divided by the thickness.",
+  "examples": [
+    {
+      "tag": "Aneurysms",
+      "text": "As an artery balloons into an aneurysm, its larger radius raises the wall stress, which promotes further dilation — a runaway loop that increases the risk of rupture as the aneurysm grows."
+    },
+    {
+      "tag": "The dilated heart",
+      "text": "A dilated, thin-walled failing ventricle must develop far greater wall stress to generate the same pressure, raising its oxygen demand while its perfusion suffers."
+    },
+    {
+      "tag": "Alveoli and surfactant",
+      "text": "The classic account holds that without surfactant, smaller alveoli would empty into larger ones, and surfactant stabilises them by lowering surface tension more in the small ones — though this alveolar story is a contested simplification."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Young-Laplace equation",
+      "text": "The general physics relation that the pressure difference across a curved fluid interface equals the surface tension times the curvature, of which the law of Laplace is the wall-tension application."
+    },
+    {
+      "name": "Wall tension versus wall stress",
+      "text": "Two related quantities often conflated in physiology: tension is force per unit length, while stress is tension divided by wall thickness, so only stress carries the thickness term."
+    }
+  ],
+  "whyItMatters": "It is a physics law with far-reaching applications in physiology and medicine, explaining aneurysm rupture risk, the burden on a dilated failing heart, the scaling of vessel walls, and the role of pulmonary surfactant. It ties the mechanical fate of hollow structures to their size, a first-order tool across cardiovascular and respiratory science.",
+  "working": [
+    {"lead": "Scale wall load by radius", "text": "expect wall tension to grow with the radius, so larger hollow structures are more heavily loaded at the same pressure."},
+    {"lead": "Separate tension from stress", "text": "distinguish wall tension, which ignores thickness, from wall stress, which the wall's thickness reduces."},
+    {"lead": "Treat tissue cases as approximations", "text": "apply the idealised sphere or cylinder result to real, thick, layered tissues only as a first-order guide."}
+  ],
+  "limits": "It assumes thin walls of ideal spherical or cylindrical shape, uniform and static — real tissues like the heart wall and arteries are thick, layered, anisotropic, and viscoelastic, so the simple formula is an approximation. The clean tension form carries no thickness term, which appears only in the wall-stress version, and physiology sources often blur the two. The classic alveolar-stability story is explicitly critiqued in the literature: alveoli are polygonal and interdependent, sharing walls rather than being free spheres, so the small-into-large picture is a simplification.",
+  "misreadings": "The clean 'tension equals pressure times radius' form is wall tension, force per unit length, and does not include wall thickness — thickness enters only in the wall-stress version. And the textbook alveolar account is a contested simplification, since alveoli are not free spheres but shared-walled, interdependent chambers.",
+  "origin": "Rooted in the Young-Laplace equation on curved fluid interfaces, developed qualitatively by Thomas Young around 1804 and mathematically by Pierre-Simon Laplace in 1806; the wall-tension form is a later application to physics and physiology.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1806,
+  "namedAfter": "Pierre-Simon Laplace",
+  "sources": [
+    {"text": "Young-Laplace equation, Wikipedia. — the pressure-curvature-tension relation, the Young and Laplace origins, and the sphere and cylinder forms.", "url": "https://en.wikipedia.org/wiki/Young%E2%80%93Laplace_equation", "type": "secondary"},
+    {"text": "Prange, \"Laplace's law and the alveolus: a misconception of anatomy and a misapplication of physics,\" Advances in Physiology Education (2003), PubMed. — the critique of the alveolar-stability account.", "url": "https://pubmed.ncbi.nlm.nih.gov/12594072/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Young%E2%80%93Laplace_equation",
+  "related": [
+    {"slug": "the-frank-starling-law-of-the-heart", "kind": "kindred"}
+  ]
+}

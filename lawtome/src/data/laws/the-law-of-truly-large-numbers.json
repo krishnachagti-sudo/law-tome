@@ -1,0 +1,56 @@
+{
+  "no": "252",
+  "slug": "the-law-of-truly-large-numbers",
+  "name": "The Law of Truly Large Numbers",
+  "statement": "With enough chances, even the wildly unlikely is bound to happen.",
+  "statementAccent": "bound to happen",
+  "meaning": "Given a large enough number of opportunities, any outrageous coincidence — however improbable in a single instance — becomes likely to occur somewhere, to someone. Miraculous-seeming coincidences are not defiances of probability; they are exactly what probability predicts once the true number of chances is counted.",
+  "mechanism": "The engine is the arithmetic of repeated trials: if a single trial has a small probability, the chance of at least one occurrence across many independent trials rushes toward certainty as the number grows. The key error the law corrects is mis-scoping the sample: we judge a coincidence against the odds of it happening to one person on one occasion, but the world runs an enormous number of trials across a huge population over long stretches of time. Counting near-matches as hits — the multiplicity of endpoints — enlarges the effective number of chances further.",
+  "examples": [
+    {
+      "tag": "Winning twice",
+      "text": "A New Jersey woman won the state lottery twice within months; her personal odds were astronomical, yet the odds that some person somewhere wins two lotteries in a short window are better than one in thirty — the classic re-scoping of the sample."
+    },
+    {
+      "tag": "Everyday miracles",
+      "text": "A one-in-a-million event, in a population of hundreds of millions with millions of daily happenings, is expected many times over each day — so remarkable coincidences are statistically routine, not supernatural."
+    },
+    {
+      "tag": "The birthday room",
+      "text": "In a room of just twenty-three people, two probably share a birthday, because what matters is the number of pairs, not people — again the count of opportunities dwarfs the intuition."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Littlewood's law",
+      "text": "The personal-scale special case, defining a miracle as a one-in-a-million event and arguing that each person experiences one about once a month, given how many small events fill a waking life."
+    },
+    {
+      "name": "The birthday problem",
+      "text": "The concrete demonstration of the same intuition, where the surprisingly high chance of a shared birthday comes from the large number of pairs among even a small group."
+    }
+  ],
+  "whyItMatters": "It is the statistical antidote to belief in the miraculous, explaining why astonishing coincidences are expected rather than meaningful. It disciplines how we interpret rare events, prophetic-seeming dreams, and lucky streaks, and it is a staple of skeptical inquiry into the paranormal.",
+  "working": [
+    {"lead": "Count all the chances", "text": "before marvelling at a coincidence, ask how many opportunities for it existed across all people, times, and near-matches, not just your own."},
+    {"lead": "Rescope from one to many", "text": "shift the question from the odds of this happening to you to the odds of something like it happening to someone, which is often near-certain."},
+    {"lead": "Do not read meaning into the rare", "text": "treat an expected coincidence as evidence of large numbers, not of a hidden cause or design."}
+  ],
+  "limits": "It is a colloquial principle about coincidences, not a formal theorem — it rests on the sound elementary probability that at least one occurrence becomes near-certain over enough trials. It must not be confused with the actual law of large numbers, a rigorously proven theorem about averages converging; the shared wording is a deliberate pun. It assumes the events are roughly independent with roughly constant probability, and it explains the base rate of coincidences without, by itself, ruling out a genuine cause in any particular case.",
+  "misreadings": "It is not the law of large numbers, which is a proven theorem about sample averages converging to the expected value — the two share a name only as a pun. And it does not prove any specific coincidence is meaningless; it shows that coincidences in general are expected, so the burden is on claiming one is special.",
+  "origin": "Named and formalised by Persi Diaconis and Frederick Mosteller in 'Methods for Studying Coincidences,' Journal of the American Statistical Association 84(408):853-861 (1989), as a deliberate play on the law of large numbers.",
+  "category": "statistics",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1989,
+  "namedAfter": "Persi Diaconis and Frederick Mosteller",
+  "sources": [
+    {"text": "Law of truly large numbers, Wikipedia. — the with-enough-chances statement, the complement-rule mechanism, and the distinction from the law of large numbers.", "url": "https://en.wikipedia.org/wiki/Law_of_truly_large_numbers", "type": "secondary"},
+    {"text": "Law of Truly Large Numbers, Wolfram MathWorld. — the Diaconis-Mosteller statement and the Littlewood connection.", "url": "https://mathworld.wolfram.com/LawofTrulyLargeNumbers.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Law_of_truly_large_numbers",
+  "related": [
+    {"slug": "littlewoods-law", "kind": "kindred"},
+    {"slug": "the-birthday-problem", "kind": "kindred"}
+  ]
+}

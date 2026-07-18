@@ -1,0 +1,56 @@
+{
+  "no": "259",
+  "slug": "the-gricean-maxims",
+  "name": "The Gricean Maxims",
+  "aliases": ["The cooperative principle"],
+  "statement": "Conversation works because we assume each other to be cooperating.",
+  "statementAccent": "we assume each other to be cooperating",
+  "meaning": "In conversation, participants are presumed to cooperate toward the purpose of the exchange. Grice's cooperative principle unfolds into four maxims: quantity, be as informative as required but no more; quality, be truthful; relation, be relevant; and manner, be clear, brief, and orderly. Because listeners assume a speaker is following these, they can infer meaning beyond the literal words.",
+  "mechanism": "The bridge between what is said and what is meant is conversational implicature — an implied meaning the hearer works out. Because the listener presumes cooperation, they draw whatever inference is needed to square an apparently deficient utterance with the maxims. The key move is flouting: a speaker openly and obviously fails to fulfil a maxim, not to deceive but to signal that a further meaning is intended, and the hearer, keeping faith with cooperation, reads it off. This differs from quietly violating a maxim, which is how one lies or misleads.",
+  "examples": [
+    {
+      "tag": "Damning with faint praise",
+      "text": "A reference letter that says only that a philosophy candidate has good English and attended tutorials regularly flouts the maxim of quantity — by saying far too little, it implicates that the candidate is no good at philosophy."
+    },
+    {
+      "tag": "Some means not all",
+      "text": "Saying 'some of the students passed' implicates that not all did, since a cooperative speaker who could truthfully have said 'all' would have — a scalar implicature drawn from the maxim of quantity."
+    },
+    {
+      "tag": "Irony",
+      "text": "Saying 'lovely weather' in a blizzard is patently false, so the hearer, keeping the cooperation assumption, infers the opposite is meant — irony as a flouting of the maxim of quality."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Conversational implicature",
+      "text": "The inferred, unstated meaning that the maxims let a hearer calculate — cancellable and context-sensitive, the mechanism by which we mean more than we say."
+    },
+    {
+      "name": "Relevance theory",
+      "text": "Sperber and Wilson's successor framework, which replaces all four maxims with a single principle of relevance, a cost-benefit trade-off between cognitive effect and processing effort."
+    }
+  ],
+  "whyItMatters": "It is the founding framework of linguistic pragmatics, explaining how speakers routinely convey far more than their words literally state and how hearers recover it. It shaped the study of meaning in philosophy of language and linguistics, and its notion of implicature is now basic vocabulary across the field.",
+  "working": [
+    {"lead": "Look past the literal", "text": "when an utterance seems to under- or over-inform, assume cooperation and infer the intended meaning behind it."},
+    {"lead": "Read flouting as a signal", "text": "treat an obvious breach of a maxim as a deliberate cue to look for an implicature, not as a failure to communicate."},
+    {"lead": "Distinguish flouting from lying", "text": "separate open flouting, which conveys extra meaning, from quiet violation, which is how a speaker deceives."}
+  ],
+  "limits": "The maxims are a theoretical framework, not an empirical law, and they sit in tension between description and prescription: read as rules to obey, they are constantly and deliberately flouted, which is precisely how implicature works. They have been challenged as reflecting Anglo-European conversational norms rather than universals, since some cultures handle informativeness differently. Critics argue the maxims overlap and can be reduced. Relevance theory contends they can all be subsumed under a single relevance principle and that implicatures arise even in uncooperative exchanges the framework does not readily explain. The framework is foundational but its formulation remains debated.",
+  "misreadings": "They are not rules speakers must always keep — they are default assumptions from which meaning is inferred, and open flouting of them is exactly how extra meaning is conveyed. And they are not established as universal; how much informativeness or directness a conversation expects varies across cultures.",
+  "origin": "Set out by the philosopher H. Paul Grice in his 1967 William James Lectures at Harvard, and published as 'Logic and Conversation' in Cole and Morgan's Syntax and Semantics, volume 3 (1975); later challenged by Sperber and Wilson's relevance theory.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1975,
+  "namedAfter": "H. Paul Grice",
+  "sources": [
+    {"text": "Cooperative principle, Wikipedia. — the principle, the four maxims and their sub-maxims, flouting versus violating, and the relevance-theory critique.", "url": "https://en.wikipedia.org/wiki/Cooperative_principle", "type": "secondary"},
+    {"text": "\"Implicature,\" Stanford Encyclopedia of Philosophy. — conversational implicature, the reference-letter example, and scalar implicature.", "url": "https://plato.stanford.edu/entries/implicature/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Cooperative_principle",
+  "related": [
+    {"slug": "the-sapir-whorf-hypothesis", "kind": "kindred"}
+  ]
+}
