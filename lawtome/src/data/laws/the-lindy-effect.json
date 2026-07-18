@@ -1,0 +1,55 @@
+{
+  "no": "324",
+  "slug": "the-lindy-effect",
+  "name": "The Lindy Effect",
+  "statement": "For ideas and technologies, the longer they've lasted, the longer they'll likely last.",
+  "statementAccent": "the longer they'll likely last",
+  "meaning": "For things that do not perish — ideas, technologies, books, cultural forms — future life expectancy is proportional to current age. The longer something has already survived, the longer its expected remaining life. A book in print for forty years might be expected to stay in print another forty; survive another decade and the expectation lengthens again. Every stretch of survival is evidence of durability.",
+  "mechanism": "The effect holds for populations whose lifetimes follow a heavy-tailed, power-law distribution, for which expected remaining life increases with age — the opposite of biology, where the risk of death rises with age. Statistically, having survived is evidence of a low failure rate, so long survival predicts long continuation. A refinement notes the effect need not require a strictly falling failure rate: even with a constant or rising rate, uncertainty about how fragile a thing is, updated by its survival, can produce Lindy behaviour. The exact proportionality — remaining life equal to current age — corresponds to a particular power-law exponent.",
+  "examples": [
+    {
+      "tag": "Books in print",
+      "text": "A book that has sold steadily for decades is likely to keep selling; the classics read for centuries are the ones most likely to endure — Taleb's central illustration."
+    },
+    {
+      "tag": "Old technologies",
+      "text": "Ancient, near-invisible technologies like the wheel and fire are expected to persist far longer than the latest gadget, precisely because they have already lasted so long."
+    },
+    {
+      "tag": "The perishable contrast",
+      "text": "A one-year-old person has a far longer expected remaining life than a ninety-year-old — the opposite direction, showing the effect holds only for the non-perishable."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Goldman's original inversion",
+      "text": "The 1964 coinage was the reverse: that a comedian with a fixed stock of material burns out faster the more they appear; Mandelbrot later flipped it into the modern older-lasts-longer form."
+    },
+    {
+      "name": "The power-law basis",
+      "text": "The mathematical footing in the Pareto distribution, where the exponent sets the strength of the effect and one particular value gives the exact remaining-equals-current-age rule."
+    }
+  ],
+  "whyItMatters": "It gives a memorable, statistically grounded rule of thumb for judging the durability of the non-perishable — which books, ideas, and technologies are likely to endure — and a useful corrective to the recency bias that overrates the new. Popularised by Taleb within his framework of antifragility, it has become a widely invoked heuristic for betting on what will last.",
+  "working": [
+    {"lead": "Bet on the old", "text": "for non-perishable things, take long past survival as evidence of long future survival, favouring the time-tested over the novel."},
+    {"lead": "Reverse it for the living", "text": "remember that for people and organisms the opposite holds, so never apply Lindy reasoning to biological life."},
+    {"lead": "Treat it as a tendency", "text": "use it for populations and expectations, not to guarantee the fate of any single book or idea."}
+  ],
+  "limits": "It is a heuristic, a statistical tendency, not a guarantee: it describes populations and cannot predict any individual case, since a long-lived book can still vanish tomorrow. It depends on the lifetime distribution being heavy-tailed, or at least on genuine uncertainty about the failure rate; not everything durable is Lindy, and it holds for some categories and not others. Its very pedigree — coined in show-business banter, later mathematised, and inverted in meaning along the way — is a caution about how loosely the term is used.",
+  "misreadings": "It applies only to non-perishable things — ideas, technologies, texts — and never to people or living things, for which more elapsed life means less remaining life. It cannot predict a specific item's lifespan; it is a statement about expected values across a population. It does not strictly require a falling failure rate, since uncertainty about fragility can produce it too. And the rule that remaining life equals current age holds only for a particular power-law exponent, not for every heavy-tailed distribution.",
+  "origin": "Named for Lindy's delicatessen in New York, from show-business talk about longevity; coined by Albert Goldman in 1964 in an inverted form, reformulated into the modern older-lasts-longer version by Benoit Mandelbrot, and extended to all non-perishables by Nassim Nicholas Taleb in 'Antifragile' (2012).",
+  "category": "statistics",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1964,
+  "sources": [
+    {"text": "Lindy effect, Wikipedia. — the definition, Goldman's 1964 inverse original, Mandelbrot's reformulation, Taleb's extension, and the Pareto mathematics.", "url": "https://en.wikipedia.org/wiki/Lindy_effect", "type": "secondary"},
+    {"text": "Ord, \"The Lindy Effect,\" arXiv:2308.09045 (2023). — the formal statement and the hazard-rate-uncertainty mechanism.", "url": "https://arxiv.org/abs/2308.09045", "type": "primary"},
+    {"text": "Taleb, Antifragile: Things That Gain from Disorder (Random House, 2012), Wikipedia summary. — the extension to non-perishables and the book-in-print illustration.", "url": "https://en.wikipedia.org/wiki/Antifragile_(book)", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Lindy_effect",
+  "related": [
+    {"slug": "the-law-of-truly-large-numbers", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "no": "320",
+  "slug": "the-efficient-market-hypothesis",
+  "name": "The Efficient-Market Hypothesis",
+  "statement": "Asset prices already reflect all available information, so you can't reliably beat the market.",
+  "statementAccent": "you can't reliably beat the market",
+  "meaning": "The efficient-market hypothesis holds that asset prices fully reflect all available information, so it is impossible to earn excess returns consistently, on a risk-adjusted basis, by trading on that information. Prices respond quickly and without bias to new information; only genuinely new, and therefore unpredictable, news moves them. The upshot for investors is that reliably beating the market is extremely hard.",
+  "mechanism": "In a competitive market, any information relevant to an asset's value is already embedded in its price by traders competing to exploit it. Prices move only when new information arrives, and by definition new information is unpredictable, so price changes are unpredictable too. Any pattern that offered easy profit would be arbitraged away. The hypothesis comes in three strengths, according to how much information prices reflect: past prices alone, all public information, or all information including the private.",
+  "examples": [
+    {
+      "tag": "The three forms",
+      "text": "In the weak form, prices reflect all past price data, so charting cannot beat the market; in the semi-strong form, all public information, so fundamental analysis cannot; in the strong form, even private information confers no edge."
+    },
+    {
+      "tag": "Index funds beating the pros",
+      "text": "Most active fund managers underperform low-cost index funds over the long run, a practical corollary that helped drive the rise of passive investing."
+    },
+    {
+      "tag": "The shared Nobel",
+      "text": "Fama, who developed the hypothesis, shared the 2013 Nobel with Robert Shiller, whose behavioural work argues prices are often wrong — a prize that made the unsettled debate official."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Grossman-Stiglitz paradox",
+      "text": "The argument that markets cannot be perfectly efficient: if prices already reflected all information, no one would be paid to gather it, so some inefficiency must remain to reward the search."
+    },
+    {
+      "name": "The joint-hypothesis problem",
+      "text": "Fama's point that any test of efficiency is also a test of a specific asset-pricing model, so an anomaly could mean the market is inefficient, the model is wrong, or both — making the hypothesis hard to reject cleanly."
+    }
+  ],
+  "whyItMatters": "It is the central organising idea of modern finance, the benchmark against which every claim to beat the market is measured, and the intellectual engine behind the index-fund industry. Its robust core — that consistent risk-adjusted outperformance is very hard and most active managers fail — is well supported, even as its stronger claims remain among the most debated propositions in economics.",
+  "working": [
+    {"lead": "Doubt easy edges", "text": "treat claims of a reliable, repeatable way to beat the market with deep suspicion, since competition tends to erase them."},
+    {"lead": "Prefer low-cost diversification", "text": "given how hard outperformance is after costs, favour broad, cheap index investing over costly stock-picking."},
+    {"lead": "Separate efficiency from correctness", "text": "read the hypothesis as a claim about information and difficulty of outperformance, not that prices are always right."}
+  ],
+  "limits": "The hypothesis is contested. Behavioural finance points to excess volatility, bubbles, and documented anomalies — value, momentum, size, calendar effects — that strain strict efficiency, and to crashes like the dot-com collapse and 2008 as episodes where prices detached from fundamentals. The Grossman-Stiglitz paradox shows perfect efficiency is impossible in principle. And the joint-hypothesis problem means efficiency can never be tested apart from a pricing model, making it hard to confirm or refute. The honest verdict: approximately right about the difficulty of outperformance, not a literal account of always-correct prices.",
+  "misreadings": "Efficiency does not mean prices are always correct or equal to true value — information can be incomplete or wrong, and what counts as a correct price depends on a pricing model. It does not require that investors be perfectly rational; offsetting errors and arbitrage can keep prices informationally efficient even with some irrational traders. And it does not say no one ever makes money or gets lucky; it denies a reliable, repeatable edge, not chance. A random walk in prices is related evidence but not the same claim.",
+  "origin": "Formalised by Eugene Fama, whose 1965 doctoral work and 1970 review 'Efficient Capital Markets' codified the weak, semi-strong, and strong forms, building on Bachelier's 1900 work and Samuelson; Fama shared the 2013 Nobel with Robert Shiller and Lars Peter Hansen.",
+  "category": "economics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1970,
+  "namedAfter": "Eugene Fama",
+  "sources": [
+    {"text": "Fama, \"Efficient Capital Markets: A Review of Theory and Empirical Work,\" Journal of Finance 25(2):383-417 (1970). — the definitive statement and the three-form taxonomy.", "url": "https://ideas.repec.org/a/bla/jfinan/v25y1970i2p383-417.html", "type": "primary"},
+    {"text": "Grossman & Stiglitz, \"On the Impossibility of Informationally Efficient Markets,\" American Economic Review 70(3):393-408 (1980). — the paradox that perfect efficiency removes the incentive to gather information.", "url": "https://www.aeaweb.org/aer/top20/70.3.393-408.pdf", "type": "primary"},
+    {"text": "Shiller, \"From Efficient Markets Theory to Behavioral Finance,\" Journal of Economic Perspectives (2003). — the excess-volatility and behavioural critique.", "url": "https://www.aeaweb.org/articles?id=10.1257%2F089533003321164967", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Efficient-market_hypothesis",
+  "related": [
+    {"slug": "the-random-walk-hypothesis", "kind": "kindred"}
+  ]
+}

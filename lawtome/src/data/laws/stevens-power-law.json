@@ -1,0 +1,56 @@
+{
+  "no": "315",
+  "slug": "stevens-power-law",
+  "name": "Stevens' Power Law",
+  "statement": "Perceived intensity rises as a power of the stimulus, the exponent set by the sense.",
+  "statementAccent": "a power of the stimulus",
+  "meaning": "The perceived magnitude of a sensation is a power function of the physical intensity: sensation equals a constant times the stimulus raised to an exponent characteristic of the sense. The underlying principle is that equal ratios of stimulus produce equal ratios of sensation. Proposed as an improvement on Fechner's logarithmic law, it can capture senses that compress and senses that expand alike.",
+  "mechanism": "Stevens measured sensation by magnitude estimation, having people assign numbers directly in proportion to how intense a stimulus felt, rather than building a scale up from just-noticeable differences as Fechner had. Plotting the logarithm of the estimated sensation against the logarithm of the intensity gives a straight line whose slope is the exponent. Where the exponent is below one the sense compresses, growing slower than the stimulus; where it exceeds one the sense expands, growing faster — something a logarithm can never do.",
+  "examples": [
+    {
+      "tag": "Compressing senses",
+      "text": "Brightness has an exponent around a third and loudness around two-thirds, so both grow far slower than the physical intensity — a huge increase in light or sound yields a modest increase in sensation."
+    },
+    {
+      "tag": "Near-linear length",
+      "text": "The perceived length of a line rises almost in direct proportion to its actual length, an exponent near one."
+    },
+    {
+      "tag": "The expanding shock",
+      "text": "Electric shock through the fingers has an exponent around three and a half, so sensation rockets up with current — an expansion no logarithm could describe, and the strongest evidence for a power law over Fechner's."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Cross-modality matching",
+      "text": "A check on the exponents in which people adjust a stimulus in one sense, such as handgrip force, to match the felt intensity in another, such as loudness, without relying on numbers."
+    },
+    {
+      "name": "Fechner's logarithmic law",
+      "text": "The earlier rival Stevens sought to displace, in which sensation grows as the logarithm of intensity — always compressive, and unable to represent the expanding senses."
+    }
+  ],
+  "whyItMatters": "It reframed the central question of psychophysics, offering a single family of curves that fits a wide range of senses, from vision and hearing to taste, warmth, and pain, and handles both compression and expansion. Stevens' magnitude-estimation method reshaped how subjective experience is measured, and the law remains a standard description of the relation between stimulus and sensation.",
+  "working": [
+    {"lead": "Fit a power, not a log", "text": "describe how a sensation grows with intensity by a power function, reading the exponent from the slope of a log-log plot."},
+    {"lead": "Mind whether the sense expands", "text": "note that an exponent above one means sensation escalates faster than the stimulus, as for shock, which a logarithm cannot capture."},
+    {"lead": "Treat exponents as approximate", "text": "use published exponents as averaged first approximations, since they shift with range, context, and method."}
+  ],
+  "limits": "The law is descriptive, not mechanistic: it fits curves to data without explaining the sensory process. The exponents are not fixed constants but vary with the stimulus range, the background, the instructions, and the method — magnitude estimation and magnitude production give systematically different values, the regression effect. The numeric responses are shaped by idiosyncratic use of numbers, and the assumption that people make genuine ratio judgements has been experimentally challenged. Because the power law can even be derived from Fechner's logarithm under some assumptions, the data alone do not decisively settle which law is right, and neither is universally accepted.",
+  "misreadings": "An exponent is not a fixed physical constant of a sense; it is an averaged approximation that shifts with range, context, and method. The differing loudness figures across sources are not a contradiction but reflect whether intensity is measured by sound pressure or by power. A high exponent, as for shock, means sensation expands rapidly with intensity, not that the sense is more acute. And Stevens revived and substantiated the power law rather than inventing it; power forms had been proposed in the nineteenth century.",
+  "origin": "Proposed by the Harvard psychophysicist Stanley Smith Stevens in 'On the Psychophysical Law' (Psychological Review, 1957), using his method of magnitude estimation; Stevens also gave psychology its standard taxonomy of measurement scales.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1957,
+  "namedAfter": "Stanley Smith Stevens",
+  "sources": [
+    {"text": "Stevens, \"On the psychophysical law,\" Psychological Review 64(3):153-181 (1957). — the power-function statement and the magnitude-estimation method.", "url": "https://doi.org/10.1037/h0046162", "type": "primary"},
+    {"text": "Stevens's power law, Wikipedia. — the formula, the modality exponents, and the contrast with the Weber-Fechner law.", "url": "https://en.wikipedia.org/wiki/Stevens's_power_law", "type": "secondary"},
+    {"text": "\"Is Stevens's power law valid?\" Behavioral and Brain Sciences (Cambridge). — the critiques of exponent stability and the ratio-judgement assumption.", "url": "https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/is-stevenss-power-law-valid/76D04D5CE9AAD3F37DA1D31D5E72F951", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Stevens's_power_law",
+  "related": [
+    {"slug": "the-weber-fechner-law", "kind": "tension"}
+  ]
+}

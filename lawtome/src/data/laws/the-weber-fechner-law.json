@@ -1,0 +1,57 @@
+{
+  "no": "314",
+  "slug": "the-weber-fechner-law",
+  "name": "The Weber-Fechner Law",
+  "statement": "To notice a change, the increase must be a fixed fraction of what's already there.",
+  "statementAccent": "a fixed fraction of what's already there",
+  "meaning": "Two linked laws sit under this name. Weber's law, the empirical one, says the smallest detectable change in a stimulus — the just-noticeable difference — is a constant proportion of the stimulus, not a fixed amount: it takes a bigger increment to notice against a bigger background. Fechner's law, built on top of it, says that subjective sensation grows as the logarithm of the physical intensity, so that multiplying the stimulus adds a constant step of sensation.",
+  "mechanism": "Weber's law states that the ratio of the just-noticeable difference to the stimulus is a constant, the Weber fraction, for a given sense. Fechner derived his logarithmic law from it by adding an assumption: that every just-noticeable difference corresponds to an equal step of sensation. Treating those steps as the unit of a sensation scale and integrating Weber's law across intensity yields a logarithm, since a constant relative increment in the stimulus becomes a constant absolute increment in sensation. The two are different levels of claim — one about discrimination thresholds, one about the scale of experience.",
+  "examples": [
+    {
+      "tag": "Lifting weights",
+      "text": "If a hundred grams is just distinguishable from a hundred and five, then at a kilogram you need a change of about fifty grams to notice — the increment scaling with the load, Weber's original finding."
+    },
+    {
+      "tag": "Candles in a room",
+      "text": "Adding one candle to a single candle is obvious; adding one to a room already lit by many is imperceptible, because the increment must be proportional to the light already present."
+    },
+    {
+      "tag": "Logarithmic scales",
+      "text": "The decibel scale for loudness and the magnitude scale for star brightness are logarithmic, echoing the intuition that perception tracks the logarithm of intensity — though such conventions do not themselves prove Fechner's law."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Weber's law alone",
+      "text": "The robust empirical core, that the just-noticeable difference is a constant fraction of the stimulus, which stands whether or not Fechner's derived sensation scale is accepted."
+    },
+    {
+      "name": "Stevens' power law",
+      "text": "The rival account, that sensation is a power of intensity rather than its logarithm, which fits more modalities and, unlike a logarithm, can capture senses like electric shock where sensation grows faster than the stimulus."
+    }
+  ],
+  "whyItMatters": "It founded psychophysics, the quantitative study of the relation between physical stimuli and subjective experience, and gave psychology one of its first mathematical laws. The insight that perception works in ratios, not absolute amounts, runs through the design of sensory scales from decibels to star magnitudes, and remains a basic fact about how the senses compress the enormous range of the physical world.",
+  "working": [
+    {"lead": "Think in proportions", "text": "expect a change to be noticeable only if it is a large enough fraction of what is already present, not a fixed absolute amount."},
+    {"lead": "Separate Weber from Fechner", "text": "treat the proportional threshold as the secure finding and the logarithmic sensation scale as the more contestable derivation built on it."},
+    {"lead": "Consider the power-law rival", "text": "where a logarithm fits poorly, especially for senses that expand with intensity, reach for Stevens' power law instead."}
+  ],
+  "limits": "Weber's law holds well across a broad middle range of intensities but breaks down at the extremes: the Weber fraction rises sharply near the absolute threshold, and for hearing it actually falls slightly at high intensities, the documented near miss. The fraction is not one universal constant but varies by sense. Fechner's law rests on the contested assumption that every just-noticeable difference feels equal, challenged since the nineteenth century. And the logarithmic sensation scale is itself disputed: Stevens' power law often fits better, decisively so for senses like pain and electric shock, where sensation grows faster than the stimulus and no logarithm can describe it.",
+  "misreadings": "Weber's law and Fechner's law are not the same claim: Weber's is the empirical proportional-threshold finding, Fechner's a derived logarithmic scale requiring an extra assumption. The decibel scale does not prove Fechner's law; it is an engineering convention, and loudness is in fact better captured by a power law. And the Weber fraction is not a single universal constant, but varies by sense and drifts at extreme intensities.",
+  "origin": "Founded by the German physiologist Ernst Weber, whose 1830s experiments on weight and touch established the proportional threshold, and by Gustav Fechner, whose 1860 'Elemente der Psychophysik' named Weber's law, coined psychophysics, and derived the logarithmic sensation law.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1860,
+  "namedAfter": "Ernst Weber and Gustav Fechner",
+  "sources": [
+    {"text": "Weber-Fechner law, Wikipedia. — the proportional-threshold and logarithmic-sensation statements, the Weber fraction, the low-intensity breakdown, and the near miss.", "url": "https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law", "type": "secondary"},
+    {"text": "Stevens's power law, Wikipedia. — the power-law rival and the modalities where it supersedes the logarithmic law.", "url": "https://en.wikipedia.org/wiki/Stevens's_power_law", "type": "secondary"},
+    {"text": "Wozniak, \"Introduction to Fechner (1860),\" Classics in the History of Psychology (York University). — the founding of psychophysics in the Elemente der Psychophysik.", "url": "https://psychclassics.yorku.ca/Fechner/wozniak.htm", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law",
+  "related": [
+    {"slug": "stevens-power-law", "kind": "tension"},
+    {"slug": "the-anchoring-effect", "kind": "kindred"}
+  ]
+}

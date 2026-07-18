@@ -1,0 +1,55 @@
+{
+  "no": "321",
+  "slug": "the-random-walk-hypothesis",
+  "name": "The Random Walk Hypothesis",
+  "statement": "Stock prices wander unpredictably; the past path does not forecast the next step.",
+  "statementAccent": "the past path does not forecast the next step",
+  "meaning": "The random walk hypothesis holds that stock prices move according to a random walk, a process whose successive changes are statistically independent, so future price movements cannot be predicted from past prices. The history of a price carries no exploitable information about its next move. In its classic strong form the changes are independent and identically distributed, which makes chart-based forecasting futile.",
+  "mechanism": "The intuitive engine is that current prices already embed all available information, so prices move only on new information — news. Genuine news is by definition unpredictable, because anything foreseeable would already be priced in. Therefore price changes, driven by unforecastable news, must themselves be unforecastable, and any predictable profit would be arbitraged away. This makes prices behave, at least approximately, like a fair game whose expected next change, given the past, is zero.",
+  "examples": [
+    {
+      "tag": "Kendall's surprise",
+      "text": "Maurice Kendall found in 1953 that British stock and commodity price changes looked essentially random, with no discernible predictable pattern — the empirical jolt that launched the modern literature."
+    },
+    {
+      "tag": "The blindfolded monkey",
+      "text": "Burton Malkiel's image of a dart-throwing monkey selecting a portfolio as well as the experts dramatises the difficulty of beating a random market — a metaphor, not a real experiment."
+    },
+    {
+      "tag": "Index funds",
+      "text": "If prices are unpredictable, low-cost diversified indexing tends to beat costly stock-picking after fees, a practical consequence widely borne out."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Random walk versus martingale",
+      "text": "A martingale only requires the expected next change to be zero given the past, a fair game; a random walk is stronger, demanding full independence of the increments, so markets can be martingale-like yet fail a strict random walk."
+    },
+    {
+      "name": "Bachelier's origin",
+      "text": "Louis Bachelier's 1900 thesis modelled price fluctuations as a random walk, anticipating the mathematics of Brownian motion five years before Einstein, though it was ignored for half a century."
+    }
+  ],
+  "whyItMatters": "It is a foundational idea of quantitative finance and the statistical companion of the efficient-market hypothesis, capturing why markets are so hard to beat and why passive investing works. Its history, from Bachelier's forgotten thesis to Samuelson's proof and Malkiel's bestseller, traces the emergence of the modern understanding of how prices move.",
+  "working": [
+    {"lead": "Distrust chart patterns", "text": "treat apparent patterns in past prices as unlikely to forecast future moves, since increments are close to independent."},
+    {"lead": "Index rather than time", "text": "given unpredictability, prefer buying and holding a diversified index to trying to forecast the next move."},
+    {"lead": "Separate walk from martingale", "text": "distinguish the strict random walk from the weaker fair-game condition, which is what efficiency really requires."}
+  ],
+  "limits": "The hypothesis is contested and, in strict form, statistically rejected. Lo and MacKinlay presented variance-ratio evidence against a pure random walk in weekly stock returns, and predictability, though small and unstable, exists as momentum and mean reversion. The random walk is an approximation: real returns show volatility clustering and fat tails, so the Gaussian-increment version fails, as Mandelbrot showed for cotton prices. The weaker claim, that prices are hard to predict and roughly a fair game, has broader support, while behavioural finance argues that mispricings arise from bounded rationality.",
+  "misreadings": "A random walk does not mean prices are pure noise with no direction — they typically drift upward over time, and it is the deviations around that trend that are unpredictable. It is not identical to the efficient-market hypothesis: weak-form efficiency implies unpredictability but not full statistical independence. It does not mean fundamentals are irrelevant; prices move randomly precisely because they absorb new information at once. And rejecting the strict walk does not make markets easily beatable, since the predictability is small and often erased by costs.",
+  "origin": "Anticipated by Louis Bachelier in 1900, given empirical form by Maurice Kendall in 1953 and a theoretical basis by Paul Samuelson in 1965, developed alongside Eugene Fama's efficient-markets work, and popularised by Burton Malkiel's 'A Random Walk Down Wall Street' (1973).",
+  "category": "economics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1900,
+  "sources": [
+    {"text": "Random walk hypothesis, Wikipedia. — the unpredictability statement, the Bachelier-Kendall-Samuelson-Malkiel history, and the martingale distinction.", "url": "https://en.wikipedia.org/wiki/Random_walk_hypothesis", "type": "secondary"},
+    {"text": "Kendall, \"The Analysis of Economic Time-Series - Part I: Prices,\" Journal of the Royal Statistical Society 116:11-34 (1953). — the finding that price changes looked random.", "url": "https://www.scirp.org/reference/referencespapers?referenceid=2914783", "type": "primary"},
+    {"text": "Lo & MacKinlay, A Non-Random Walk Down Wall Street (Princeton University Press, 1999). — variance-ratio evidence rejecting the pure random walk.", "url": "http://www.e-m-h.org/Lo%20&%20MacKinlay%20A%20Non-Random%20Walk%20down%20Wall%20Street%20Introduction.htm", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Random_walk_hypothesis",
+  "related": [
+    {"slug": "the-efficient-market-hypothesis", "kind": "kindred"}
+  ]
+}

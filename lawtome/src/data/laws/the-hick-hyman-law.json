@@ -1,0 +1,57 @@
+{
+  "no": "316",
+  "slug": "the-hick-hyman-law",
+  "name": "The Hick-Hyman Law",
+  "aliases": ["Hick's law"],
+  "statement": "Decision time grows with the logarithm of the number of choices.",
+  "statementAccent": "the logarithm of the number of choices",
+  "meaning": "The time to choose among a set of alternatives rises with the amount of information the choice carries — for equally likely options, with the logarithm of their number. Double the options and you add a roughly constant increment to the decision time, not a doubling. More generally, decision time tracks the information, in bits, that the choice transmits, so unequal probabilities are weighted by their entropy.",
+  "mechanism": "Hick imported Shannon's information theory into psychology, supposing the rate at which a person gains information is roughly constant in time. Since information grows as the logarithm of the number of equally likely alternatives, decision time must grow logarithmically too. Hick's own favoured picture was a series of binary decisions, each eliminating about half the options, like a binary search — which naturally gives a logarithm. Hyman then showed the relation holds whether the information comes from more options, uneven probabilities, or sequences, all collapsing onto a single line when plotted against bits transmitted.",
+  "examples": [
+    {
+      "tag": "The lamps and keys",
+      "text": "Hick pressed one of up to ten keys in response to one of up to ten lamps and found reaction time rising with the logarithm of the number of alternatives, the original demonstration."
+    },
+    {
+      "tag": "Interface design",
+      "text": "The law is treated as a foundation of human-computer interaction, guiding how the number and organisation of menu options shapes how quickly a user can choose."
+    },
+    {
+      "tag": "Naming to entropy",
+      "text": "Hyman varied information three ways — number of options, their probabilities, and their sequence — and showed all collapsed onto one line against bits, generalising the law beyond simple counting."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The entropy form",
+      "text": "The general statement that reaction time rises linearly with the information transmitted in bits, which handles unequal probabilities that simple counting of options cannot."
+    },
+    {
+      "name": "Fitts's law",
+      "text": "The companion from the same information-theory wave, governing the time to move to a target rather than to choose among options — Fitts predicting how long to reach a control, Hick how long to decide which."
+    }
+  ],
+  "whyItMatters": "It was one of the founding demonstrations that human performance could be measured in bits, a landmark of the cognitive revolution, and it became, with Fitts's law, a pillar of interface design. It gives a quantitative handle on how the structure of a set of choices affects the speed of deciding among them.",
+  "working": [
+    {"lead": "Weight by information", "text": "estimate decision time from the information a choice carries, using the logarithm of the number of equally likely options or the entropy for uneven ones."},
+    {"lead": "Organise, don't just cull", "text": "in design, speed choices by grouping and categorising options so users make a fast series of easy decisions, not merely by removing options."},
+    {"lead": "Respect the paradigm", "text": "apply the law to simple choice reactions among well-learned, arbitrarily mapped alternatives, not to every kind of decision."}
+  ],
+  "limits": "The law holds within a specific paradigm: simple choice reactions among roughly equiprobable, well-learned, arbitrarily mapped alternatives. Where the mapping is natural and needs no memory — pressing the key that vibrates under your finger, glancing toward a light — the effect flattens or vanishes. Practice shrinks the slope, sometimes toward independence of set size. It is well established up to about eight alternatives; beyond that results are mixed, and saccadic eye movements can even reverse it. Uneven probabilities require the entropy form, not simple counting.",
+  "misreadings": "The law does not simply mean fewer options are always better in design — the right response to many options is usually better categorisation, letting users make a quick sequence of easy choices. The binary-search mechanism is Hick's hypothesis, not settled fact; modern accounts favour evidence-accumulation and memory-retrieval models. And it is a law about reaction time specifically, not about users abandoning a choice, a common overreach in design writing.",
+  "origin": "Formulated by William Hick in 'On the Rate of Gain of Information' (Quarterly Journal of Experimental Psychology, 1952) and generalised to information more broadly by Ray Hyman in 1953, both applying Shannon's information theory to human reaction time.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1952,
+  "namedAfter": "William Hick and Ray Hyman",
+  "sources": [
+    {"text": "Proctor & Schneider, \"Hick's law for choice reaction time: A review,\" Quarterly Journal of Experimental Psychology 71(6):1281-1299 (2018). — the definitive modern review of the law, its forms, and its boundary conditions.", "url": "https://web.ics.purdue.edu/~dws/pubs/ProctorSchneider_2018_QJEP.pdf", "type": "primary"},
+    {"text": "Hick, \"On the rate of gain of information,\" Quarterly Journal of Experimental Psychology 4:11-26 (1952). — the original logarithmic reaction-time result.", "url": "https://doi.org/10.1080/17470215208416600", "type": "primary"},
+    {"text": "Hick's law, Wikipedia. — the statement, the Shannon connection, and the relation to Fitts's law.", "url": "https://en.wikipedia.org/wiki/Hick%27s_law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hick%27s_law",
+  "related": [
+    {"slug": "fitts-law", "kind": "kindred"}
+  ]
+}
