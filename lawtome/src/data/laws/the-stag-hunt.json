@@ -1,0 +1,56 @@
+{
+  "no": "270",
+  "slug": "the-stag-hunt",
+  "name": "The Stag Hunt",
+  "aliases": ["The assurance game"],
+  "statement": "Both can win big by cooperating, or play safe alone — but only if each trusts the other.",
+  "statementAccent": "only if each trusts the other",
+  "meaning": "A two-player coordination game in which each can hunt a stag, which needs both to cooperate and yields a high payoff, or hunt a hare alone, for a lower but guaranteed reward. Both are better off if both commit to the stag, but doing so requires trusting the partner not to defect for the sure, smaller prize. Unlike the prisoner's dilemma, the dilemma here is trust and risk, not a temptation to exploit.",
+  "mechanism": "The game has two pure-strategy Nash equilibria: both hunting stag and both hunting hare. Both hunting stag is payoff-dominant, giving each the highest reward; both hunting hare is risk-dominant, being the safer choice since the hare payoff does not depend on the partner. Crucially, cooperation is itself a stable equilibrium — there is no dominant strategy to defect. A hunter defects only from fear the other will, so the obstacle is coordination and trust under risk, not a strictly higher payoff from betrayal.",
+  "examples": [
+    {
+      "tag": "The hunt",
+      "text": "Two hunters can bring down a stag only if both hold their posts; if either bolts after a passing hare, the stag escapes and the faithful hunter gets nothing — Rousseau's original parable."
+    },
+    {
+      "tag": "International cooperation",
+      "text": "States share an interest in collective security or joint emissions cuts, but each fears being the lone cooperator, so the payoff-dominant outcome requires mutual assurance — a stag hunt among nations."
+    },
+    {
+      "tag": "Team production",
+      "text": "A joint effort that pays off richly only if everyone contributes, from rowing a boat to building a shared standard, has the stag-hunt structure: high reward for coordination, safe fallback for going it alone."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Payoff-dominant versus risk-dominant",
+      "text": "Harsanyi and Selten's distinction between the equilibrium that pays both the most and the one that is safest — the tension at the heart of which outcome players select."
+    },
+    {
+      "name": "The prisoner's dilemma",
+      "text": "The contrast case, in which defection is a dominant strategy and mutual defection is the only equilibrium — unlike the stag hunt, where cooperation is a genuine equilibrium."
+    }
+  ],
+  "whyItMatters": "It is the canonical model of cooperation as a problem of trust rather than temptation, illuminating collective security, social contracts, team production, and the adoption of shared standards. It shows that where mutual benefit is an equilibrium, the barrier to reaching it is assurance — a very different problem from the prisoner's dilemma, and one with different solutions.",
+  "working": [
+    {"lead": "Diagnose trust, not temptation", "text": "when cooperation is itself an equilibrium, treat the obstacle as fear the other will defect, not as an incentive to exploit."},
+    {"lead": "Build assurance", "text": "to reach the payoff-dominant outcome, create mechanisms that make each side confident the other will cooperate."},
+    {"lead": "Weigh safety against reward", "text": "recognise that players may retreat to the safe, risk-dominant option even when the cooperative one pays more."}
+  ],
+  "limits": "It must not be conflated with the prisoner's dilemma: in the stag hunt, mutual cooperation is a genuine, stable Nash equilibrium and there is no dominant strategy to defect, so the barrier is trust and risk, not a strictly higher payoff from betrayal. The mapping from Rousseau's literary parable to the modern payoff matrix is an interpretive formalisation, and the standard matrix differs from his original narrative. Which of the two equilibria players actually select — the payoff-dominant or the risk-dominant one — is theoretically contested and depends on beliefs, common knowledge, and dynamics.",
+  "misreadings": "It is not the prisoner's dilemma — here cooperation is a stable equilibrium and no one has a dominant reason to defect; the problem is coordinating on the good outcome under uncertainty. And a hunter who abandons the stag does so from fear the partner will, not because betrayal pays more.",
+  "origin": "Drawn from Jean-Jacques Rousseau's parable in his Discourse on the Origin of Inequality (1755); given its modern evolutionary and game-theoretic treatment by Brian Skyrms in The Stag Hunt and the Evolution of Social Structure (2004), with the payoff- and risk-dominance framing from Harsanyi and Selten.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1755,
+  "sources": [
+    {"text": "Stag hunt, Wikipedia. — the coordination-game structure, the two equilibria, the Rousseau origin, and the contrast with the prisoner's dilemma.", "url": "https://en.wikipedia.org/wiki/Stag_hunt", "type": "secondary"},
+    {"text": "Rousseau, Discourse on the Origin of Inequality (1755), Part 2, marxists.org translation. — the original stag-and-hare parable.", "url": "https://www.marxists.org/reference/subject/economics/rousseau/inequality/ch02.htm", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Stag_hunt",
+  "related": [
+    {"slug": "the-prisoners-dilemma", "kind": "tension"},
+    {"slug": "the-nash-equilibrium", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "no": "266",
+  "slug": "moral-hazard",
+  "name": "Moral Hazard",
+  "statement": "Shielded from the consequences, people take more risks than they otherwise would.",
+  "statementAccent": "people take more risks",
+  "meaning": "Moral hazard is the situation in which a party insulated from risk behaves differently — taking greater risks or exercising less care — than if it bore the full consequences of its actions, because another party bears the cost. Insurance, guarantees, or bailouts shift the downside onto someone else, weakening the protected party's incentive to be prudent. It arises after a contract is in place, from hidden action.",
+  "mechanism": "The root is an information asymmetry through hidden action: once the contract exists, one party takes actions the other cannot observe or cheaply monitor, and because that party no longer bears the full cost of a bad outcome, its privately optimal level of risk or care diverges from what the counterparty and social efficiency would want. It is a form of the principal-agent problem, in which an agent's unobservable effort affects an outcome borne partly by the principal.",
+  "examples": [
+    {
+      "tag": "The insured driver",
+      "text": "Someone who has bought comprehensive car insurance may drive a little less carefully or leave the car unlocked, since the insurer, not they, bears the cost of a loss — the phenomenon's original insurance-industry home."
+    },
+    {
+      "tag": "Too big to fail",
+      "text": "Banks that expect a government rescue may take excessive risks with others' money, since they capture the gains while taxpayers absorb the losses — a mechanism cited in the 2008 financial crisis."
+    },
+    {
+      "tag": "Deposit insurance",
+      "text": "Government-backed deposit insurance can weaken depositors' scrutiny of their bank and encourage bank risk-taking — though it also prevents bank runs, a genuine trade-off."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Adverse selection",
+      "text": "The sibling asymmetric-information problem, distinguished by timing and type: adverse selection is hidden information before the contract, while moral hazard is hidden action after it."
+    },
+    {
+      "name": "The principal-agent problem",
+      "text": "The broader class of situations in which an agent's unobservable action affects outcomes borne by a principal, of which moral hazard is the hidden-action case."
+    }
+  ],
+  "whyItMatters": "It is a foundational concept in the economics of information and insurance, explaining why protection against risk changes behaviour and why contracts, regulation, and incentives must be designed to counter it. It shapes the design of insurance, banking regulation, executive pay, and safety nets across the economy.",
+  "working": [
+    {"lead": "Expect protection to change behaviour", "text": "when a party is shielded from the cost of a bad outcome, anticipate more risk-taking or less care than if it bore the cost."},
+    {"lead": "Make the actor share the cost", "text": "counter it with deductibles, co-payments, monitoring, and performance-based incentives that realign the agent's stake in the outcome."},
+    {"lead": "Distinguish it from adverse selection", "text": "keep hidden action after the contract separate from hidden information before it, since the two call for different remedies."}
+  ],
+  "limits": "The core concept is rigorously formalised and empirically studied, but the magnitude of moral hazard in specific settings is genuinely contested. On bailouts, whether it is more costly to rescue large firms or to let them fail cannot be definitively settled; in health insurance, the real argument is subtler than the popular usage, and empirical estimates of its size are debated. The term is also frequently invoked loosely and rhetorically in public debate. So the mechanism is robust, but its practical weight and policy application are areas of legitimate dispute.",
+  "misreadings": "It is not the same as adverse selection — moral hazard is hidden action after a contract, adverse selection is hidden information before it, and conflating them is the most common error. And its everyday size is not settled; the concept is often deployed rhetorically well beyond what the evidence supports.",
+  "origin": "The term originated in the insurance industry, with roots as far back as the seventeenth century and wide use in English insurance by the late nineteenth; the modern economic formalisation began with Kenneth Arrow's 1963 work on medical care and was extended by Pauly, Holmstrom, and others.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1963,
+  "sources": [
+    {"text": "Moral hazard, Wikipedia. — the definition, the hidden-action mechanism, the insurance origin and Arrow formalisation, and the distinction from adverse selection.", "url": "https://en.wikipedia.org/wiki/Moral_hazard", "type": "secondary"},
+    {"text": "Arrow, \"Uncertainty and the Welfare Economics of Medical Care,\" American Economic Review 53:941-973 (1963), PubMed reprint.", "url": "https://pubmed.ncbi.nlm.nih.gov/15042238/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Moral_hazard",
+  "related": [
+    {"slug": "the-market-for-lemons", "kind": "kindred"}
+  ]
+}

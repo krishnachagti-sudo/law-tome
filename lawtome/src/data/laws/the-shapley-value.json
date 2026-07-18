@@ -1,0 +1,55 @@
+{
+  "no": "271",
+  "slug": "the-shapley-value",
+  "name": "The Shapley Value",
+  "statement": "Give each member of a coalition their average contribution across every order of joining.",
+  "statementAccent": "their average contribution across every order of joining",
+  "meaning": "A method in cooperative game theory for fairly dividing the total gains, or costs, of a coalition among its members. Each member is allocated the average of their marginal contribution — how much they add to the group's value — taken across all possible orders in which the members could have joined. It is the unique such division satisfying a short list of fairness conditions.",
+  "mechanism": "A player's Shapley value is their average marginal contribution over every ordering of players joining the group. It is the unique allocation satisfying four axioms: efficiency, that the whole group's value is fully distributed; symmetry, that two players who contribute identically to every coalition get equal shares; the null-player condition, that a player who adds nothing to any coalition gets nothing; and additivity, that the value of a combination of games is the sum of the separate values. Together these pin down exactly one fair distribution.",
+  "examples": [
+    {
+      "tag": "The glove game",
+      "text": "If two players each hold a right glove and one holds a left, and only a matched pair has value, the Shapley values give the holder of the scarce left glove the largest share — two-thirds — reflecting its pivotal role."
+    },
+    {
+      "tag": "Splitting shared costs",
+      "text": "The value is used to divide joint costs or profits fairly among cooperating parties, from allocating airport runway costs by aircraft size to sharing the gains of a joint venture."
+    },
+    {
+      "tag": "Explaining machine learning",
+      "text": "In the SHAP method, a model's features are treated as players and its prediction as the value to be divided, so each feature receives an importance score for a given prediction — a major modern application."
+    }
+  ],
+  "variants": [
+    {
+      "name": "SHAP feature attribution",
+      "text": "Lundberg and Lee's 2017 adaptation to machine learning, which uses Shapley values to attribute a model's prediction to its input features, unifying several earlier explanation methods."
+    },
+    {
+      "name": "The Shapley-Shubik power index",
+      "text": "The specialisation to voting games, measuring how much power each voter holds by how often they are pivotal to forming a winning coalition."
+    }
+  ],
+  "whyItMatters": "It gives a principled, axiomatically justified answer to one of the oldest questions in cooperation — how to fairly divide the spoils of joint effort. Beyond its foundational place in cooperative game theory, it has become central to modern machine-learning explainability, and it contributed to Shapley's share of the 2012 Nobel Prize.",
+  "working": [
+    {"lead": "Average the marginal contributions", "text": "to allocate a shared value fairly, give each member the average of what they add across all orders of joining."},
+    {"lead": "Lean on the axioms", "text": "trust the allocation because it is the unique one satisfying efficiency, symmetry, the null-player condition, and additivity."},
+    {"lead": "Approximate when players are many", "text": "for large numbers of players, use sampling or model-specific methods, since the exact computation grows exponentially."}
+  ],
+  "limits": "The exact computation sums over all coalitions or orderings, which grows exponentially in the number of players and becomes intractable for large numbers. The standard formulation assumes transferable utility, that payoffs can be freely redistributed on a common scale. In machine learning, exact Shapley values are usually infeasible, so approximations are used, which introduce estimation error and can be sensitive to correlated features and to the choice of baseline. The fairness interpretation is a normative choice, and which axioms are the right ones can be debated, though the uniqueness theorem itself is not.",
+  "misreadings": "The 2012 Nobel that Shapley shared with Alvin Roth was awarded for the theory of stable matching and market design, not for the Shapley value itself. And the value is fair only in the specific sense of satisfying its four axioms; it is a principled choice, not the only conceivable notion of fairness.",
+  "origin": "Introduced by Lloyd Shapley in 'A Value for n-Person Games' (1953), building on a 1951 memorandum; Shapley shared the 2012 Nobel Prize with Alvin Roth, and the machine-learning SHAP application came from Lundberg and Lee in 2017.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1953,
+  "namedAfter": "Lloyd Shapley",
+  "sources": [
+    {"text": "Shapley value, Wikipedia. — the marginal-contribution definition, the four axioms, the glove game, and the SHAP application.", "url": "https://en.wikipedia.org/wiki/Shapley_value", "type": "secondary"},
+    {"text": "Lundberg & Lee, \"A Unified Approach to Interpreting Model Predictions,\" NeurIPS (2017), arXiv. — the SHAP feature-attribution method.", "url": "https://arxiv.org/abs/1705.07874", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Shapley_value",
+  "related": [
+    {"slug": "the-nash-equilibrium", "kind": "kindred"}
+  ]
+}

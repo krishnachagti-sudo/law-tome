@@ -1,0 +1,56 @@
+{
+  "no": "265",
+  "slug": "the-free-rider-problem",
+  "name": "The Free-Rider Problem",
+  "statement": "When you benefit whether or not you pay, you are tempted to let others foot the bill.",
+  "statementAccent": "let others foot the bill",
+  "meaning": "The free-rider problem arises when people who benefit from a shared resource, public good, or collective effort do not pay for it or contribute, because they can enjoy the benefit regardless. When enough people reason this way, too little of the good is provided — everyone would be better off if all contributed, yet each has an incentive to let the others do so.",
+  "mechanism": "It is rooted in two properties of public goods: non-excludability, so that once the good exists you cannot practically keep non-payers from benefiting, and non-rivalry, so that one person's use does not reduce it for others. Given these, a self-interested individual reasons that their own benefit depends mostly on others' contributions, that their contribution costs them more than it personally returns, and that their non-contribution barely changes the outcome. So each defers, and the good is under-provided — a problem that intensifies as the group grows and social pressure weakens.",
+  "examples": [
+    {
+      "tag": "The lighthouse",
+      "text": "A coastal lighthouse benefits every passing ship whether or not its owner paid, so no owner volunteers to fund it — the textbook non-excludable public good."
+    },
+    {
+      "tag": "Herd immunity",
+      "text": "An individual can benefit from a vaccinated population without being vaccinated themselves, gaining protection while others bear the cost and risk of the vaccine."
+    },
+    {
+      "tag": "Public broadcasting",
+      "text": "Listeners enjoy a broadcast whether or not they donate, so pledge-supported stations rely on the minority who give while most free-ride on their contributions."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The collective action problem",
+      "text": "Mancur Olson's broader framing, in which large diffuse groups struggle to organise for their shared interest precisely because each member can free-ride, while small concentrated interests organise more easily."
+    },
+    {
+      "name": "The tragedy of the commons",
+      "text": "The over-use analogue, in which each user takes too much from a shared rivalrous resource, as free-riding is the under-contribution counterpart for public goods."
+    }
+  ],
+  "whyItMatters": "It is a central concept in public economics, explaining why markets under-supply public goods like defence, clean air, and basic research, and why government, taxation, or collective institutions are often needed to provide them. It illuminates everything from union organising to climate cooperation to why people so often leave shared work to others.",
+  "working": [
+    {"lead": "Watch non-excludable goods", "text": "expect under-provision wherever a good's benefits cannot be withheld from those who do not pay."},
+    {"lead": "Compel or incentivise contribution", "text": "counter free-riding with taxation, social norms, or assurance mechanisms that condition provision on enough contributors."},
+    {"lead": "Mind group size", "text": "expect the problem to bite hardest in large groups, where each contribution seems negligible and monitoring is weak."}
+  ],
+  "limits": "It is a robust framework, but its predictions are only partly borne out: people contribute more than pure self-interest predicts — through charity, voting, and blood donation — so it should not be overstated as inevitable. Solutions genuinely exist: taxation compels contribution to goods like defence; social norms and peer sanctions sustain cooperation; assurance contracts fund a good only if enough pledge; and Ostrom-style self-governance manages many shared resources. The problem is severe mainly for large groups and genuinely non-excludable goods; small groups, repeated interaction, and excludable club goods reduce or dissolve it.",
+  "misreadings": "It does not mean cooperation always fails — people contribute to public goods far more than pure theory predicts, and taxation, norms, and assurance mechanisms routinely overcome it. And it is distinct from the tragedy of the commons: free-riding is under-contribution to a good, while the commons problem is over-use of a rivalrous resource.",
+  "origin": "Formalised in public-goods economics by Paul Samuelson in 'The Pure Theory of Public Expenditure' (1954), with the term popularised by Mancur Olson in The Logic of Collective Action (1965); the underlying insight was recognised earlier, notably by David Hume.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1965,
+  "namedAfter": "Mancur Olson",
+  "sources": [
+    {"text": "\"The Free Rider Problem,\" Stanford Encyclopedia of Philosophy. — the structure, the non-excludability mechanism, and the solutions.", "url": "https://plato.stanford.edu/entries/free-rider/", "type": "secondary"},
+    {"text": "Free-rider problem, Wikipedia. — the definition, public-goods properties, and the Samuelson and Olson origins.", "url": "https://en.wikipedia.org/wiki/Free-rider_problem", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Free-rider_problem",
+  "related": [
+    {"slug": "the-tragedy-of-the-commons", "kind": "kindred"},
+    {"slug": "the-prisoners-dilemma", "kind": "kindred"}
+  ]
+}

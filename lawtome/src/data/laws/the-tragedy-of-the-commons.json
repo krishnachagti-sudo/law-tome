@@ -1,0 +1,56 @@
+{
+  "no": "264",
+  "slug": "the-tragedy-of-the-commons",
+  "name": "The Tragedy of the Commons",
+  "statement": "Each user, gaining fully but sharing the cost, overuses a shared resource until it is ruined.",
+  "statementAccent": "overuses a shared resource until it is ruined",
+  "meaning": "When many individuals each act in their own self-interest over a shared, finite resource, they collectively overuse and deplete it, contrary to the common good. Each user captures the full private benefit of their extra use, while the cost of depletion is spread across everyone — so the rational individual choice is always to use more, even as the sum of those choices destroys the resource.",
+  "mechanism": "The driver is an asymmetry of incentives. Adding one more cow to a shared pasture gives the herder its full benefit, while the cost of overgrazing is divided among all users, so each herder's private calculation always favours adding more. This works specifically where a resource is non-excludable, so no one can be kept out, but rivalrous, so one person's use subtracts from another's. Individual users do not internalise the full social cost of their use — an externality — and once total use exceeds the resource's carrying capacity, ruin follows.",
+  "examples": [
+    {
+      "tag": "Overfishing",
+      "text": "Fishers each gain fully from every fish caught while the cost of depletion is shared, so a common fishery is overfished toward collapse, as with the Grand Banks cod."
+    },
+    {
+      "tag": "The atmosphere",
+      "text": "The atmosphere is a shared sink into which each emitter releases greenhouse gases at full private benefit and diffuse shared cost — the structure behind climate change and ozone depletion."
+    },
+    {
+      "tag": "Groundwater",
+      "text": "Farmers drawing on a shared aquifer each benefit fully from their own extraction while the cost of depletion is spread, driving over-extraction and collapse, as in the draining of the Aral Sea."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The free-rider problem",
+      "text": "The contribution-side analogue, in which people enjoy a shared good without paying for its upkeep, leading to under-provision rather than over-use."
+    },
+    {
+      "name": "The anticommons",
+      "text": "The mirror-image pathology, in which too many owners each hold a right to exclude, leading to a resource being under-used rather than over-used."
+    }
+  ],
+  "whyItMatters": "It is one of the most influential frames in environmental and resource economics, capturing why shared resources from fisheries to the atmosphere are so prone to depletion. It shaped debates over pollution, conservation, and property rights — even as its central claim of inevitability has been shown to be too strong.",
+  "working": [
+    {"lead": "Watch open-access resources", "text": "expect depletion where a rivalrous resource is open to all, since each user's private benefit is decoupled from the shared cost."},
+    {"lead": "Align private and social cost", "text": "counter the problem by internalising the externality — through rights, quotas, taxes, or shared rules that make users bear the full cost."},
+    {"lead": "Consider self-governance", "text": "do not assume only privatisation or state control can help; communities can and do craft their own durable rules for a commons."}
+  ],
+  "limits": "Its central claim — that ruin is inevitable absent privatisation or state coercion — is refuted as too strong. Elinor Ostrom's Nobel-winning fieldwork showed that communities can and do successfully self-govern shared resources through their own institutions, a demonstrated third path. Hardin himself later conceded his error was omitting the word 'unmanaged': the model describes an unmanaged, open-access resource, whereas historical commons were in fact regulated by custom and law to prevent overgrazing. The depletion mechanism is real, but its framing as an iron law is contested, and Hardin's broader writings are widely criticised for promoting eugenicist and nativist views.",
+  "misreadings": "It does not show that shared resources must inevitably collapse — Ostrom documented communities governing commons successfully without privatising or nationalising them. And it applies to unmanaged, open-access resources, not to the historically regulated commons whose name it borrows.",
+  "origin": "Named and popularised by Garrett Hardin in 'The Tragedy of the Commons,' Science 162:1243-1248 (1968); the overgrazed-pasture parable came earlier from William Forster Lloyd in 1833, and the inevitability claim was later challenged by Elinor Ostrom's Governing the Commons (1990).",
+  "category": "economics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1968,
+  "namedAfter": "Garrett Hardin",
+  "sources": [
+    {"text": "Tragedy of the commons, Wikipedia. — the depletion mechanism, the Hardin 1968 and Lloyd 1833 origins, and Ostrom's refutation of inevitability.", "url": "https://en.wikipedia.org/wiki/Tragedy_of_the_commons", "type": "secondary"},
+    {"text": "Elinor Ostrom, Wikipedia. — Governing the Commons, the design principles for self-governance, and the 2009 Nobel Prize.", "url": "https://en.wikipedia.org/wiki/Elinor_Ostrom", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Tragedy_of_the_commons",
+  "related": [
+    {"slug": "the-free-rider-problem", "kind": "kindred"},
+    {"slug": "the-prisoners-dilemma", "kind": "kindred"}
+  ]
+}

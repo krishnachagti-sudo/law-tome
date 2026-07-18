@@ -1,0 +1,57 @@
+{
+  "no": "267",
+  "slug": "the-market-for-lemons",
+  "name": "The Market for Lemons",
+  "aliases": ["Adverse selection"],
+  "statement": "When buyers can't tell good from bad, the bad drives out the good.",
+  "statementAccent": "the bad drives out the good",
+  "meaning": "When buyers cannot distinguish high-quality goods from defective ones — lemons — because sellers know the quality and they do not, buyers will only pay a price reflecting average quality. That price is too low to keep sellers of genuinely good goods in the market, so those sellers withdraw, average quality falls further, and the market can spiral downward and even collapse. This is adverse selection: a market failure driven by hidden information before a transaction.",
+  "mechanism": "Quality varies but is unobservable to buyers before purchase, favouring sellers with private information. Unable to verify quality, buyers rationally offer only the price of average quality. Sellers of above-average goods find that price below what their good is worth and exit. The average quality of what remains falls, buyers revise their expectations down and offer even less, and the feedback loop — the bad driving out the good, echoing Gresham's law — can drive quality and the market itself toward collapse.",
+  "examples": [
+    {
+      "tag": "Used cars",
+      "text": "A buyer who cannot tell a good used car from a lemon offers only a middling price, so owners of genuinely good cars refuse to sell and keep them, leaving the market disproportionately full of lemons — Akerlof's flagship illustration."
+    },
+    {
+      "tag": "Health insurance",
+      "text": "Because sicker people are more likely to seek coverage and insurers cannot perfectly observe risk, premiums rise, healthier people drop out, and the pool worsens — the textbook adverse-selection spiral."
+    },
+    {
+      "tag": "Credit markets",
+      "text": "When lenders cannot assess borrower quality, they raise rates, which drives out the safest borrowers and leaves a riskier pool, the same hidden-information dynamic in lending."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Signalling and screening",
+      "text": "The remedies developed by Spence and Stiglitz: the informed party takes a costly credible action to reveal quality, or the uninformed party designs choices that make the informed party self-select and reveal their type."
+    },
+    {
+      "name": "Moral hazard",
+      "text": "The sibling problem, distinguished by timing: adverse selection is hidden information before the contract, while moral hazard is hidden action after it."
+    }
+  ],
+  "whyItMatters": "It launched the economics of asymmetric information, showing how hidden quality can unravel a market that would otherwise serve everyone. It reshaped how economists think about insurance, credit, labour, and used goods, and it earned Akerlof a share of the 2001 Nobel Prize, alongside Spence and Stiglitz for the theory of markets with asymmetric information.",
+  "working": [
+    {"lead": "Spot hidden quality", "text": "where sellers know quality and buyers do not, expect prices to sag toward the average and good goods to withdraw."},
+    {"lead": "Restore trust with signals", "text": "counter the spiral with warranties, certifications, reputations, and brands that credibly convey quality to buyers."},
+    {"lead": "Separate it from moral hazard", "text": "distinguish hidden information before the deal from hidden action after it, since the two are different failures."}
+  ],
+  "limits": "Markets do not always collapse; many institutions counteract the lemons problem, several of which Akerlof himself named — warranties, brand-name reputation, licensing and certification, and third-party inspection — and the signalling and screening work of Spence and Stiglitz shows equilibria can be restored without collapse. The empirical strength of adverse selection varies by market, with mixed evidence in some insurance lines. The concept itself is canonical, but specific magnitude claims are context-dependent. Notably, the founding 1970 paper was rejected by several journals as trivial or wrong before it was published.",
+  "misreadings": "It does not predict that every market with quality uncertainty collapses — warranties, reputations, and certification routinely prevent it. And it is distinct from moral hazard: the lemons problem is hidden information before a transaction, not hidden action after one.",
+  "origin": "Introduced by George Akerlof in 'The Market for \"Lemons\": Quality Uncertainty and the Market Mechanism,' Quarterly Journal of Economics 84(3):488-500 (1970); Akerlof shared the 2001 Nobel Prize with Michael Spence and Joseph Stiglitz.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1970,
+  "namedAfter": "George Akerlof",
+  "sources": [
+    {"text": "The Market for Lemons, Wikipedia. — the adverse-selection spiral, the used-car and insurance examples, the countermeasures, and the 2001 Nobel.", "url": "https://en.wikipedia.org/wiki/The_Market_for_Lemons", "type": "secondary"},
+    {"text": "Akerlof (1970) article record, Quarterly Journal of Economics 84(3):488-500, Oxford Academic.", "url": "https://academic.oup.com/qje/article-abstract/84/3/488/1896241", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/The_Market_for_Lemons",
+  "related": [
+    {"slug": "moral-hazard", "kind": "kindred"},
+    {"slug": "greshams-law", "kind": "kindred"}
+  ]
+}

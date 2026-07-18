@@ -1,0 +1,57 @@
+{
+  "no": "262",
+  "slug": "the-prisoners-dilemma",
+  "name": "The Prisoner's Dilemma",
+  "statement": "Two rational players, each better off betraying, both betray and end up worse than if they had cooperated.",
+  "statementAccent": "both betray and end up worse",
+  "meaning": "Two self-interested players each choose to cooperate or defect. For each, defecting yields a higher payoff whatever the other does, so defection is a dominant strategy — and since both reason the same way, both defect and each ends up worse off than if both had cooperated. The dilemma is that individually rational choices produce a collectively worse outcome.",
+  "mechanism": "The payoffs are ordered so that betraying a cooperator is best, mutual cooperation is next, mutual defection is worse, and being the betrayed cooperator is worst. Because betraying beats cooperating both when the other cooperates and when the other defects, defection strictly dominates. Mutual defection is therefore the unique Nash equilibrium, from which neither can improve alone — yet mutual cooperation would have paid both more. That gap between the equilibrium and the better joint outcome is the whole point.",
+  "examples": [
+    {
+      "tag": "Arms races",
+      "text": "Two nations are each better off arming whatever the other does, so both arm and both end up less secure and poorer than if both had disarmed — the classic strategic form of the dilemma."
+    },
+    {
+      "tag": "Price wars",
+      "text": "Firms in a cartel each gain by secretly undercutting the agreed price, so all cut and all earn less than under mutual restraint — cooperation undone by the incentive to defect."
+    },
+    {
+      "tag": "The iterated version",
+      "text": "When the game repeats, cooperation can emerge and persist through reciprocity, as Axelrod's tournaments showed — the shadow of the future changing what rational play looks like."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The iterated prisoner's dilemma",
+      "text": "The game repeated over many rounds, where the prospect of future encounters can sustain cooperation through strategies like tit-for-tat, unlike the one-shot game."
+    },
+    {
+      "name": "The tragedy of the commons",
+      "text": "The multi-player generalisation, in which many users each rationally overuse a shared resource and collectively deplete it."
+    }
+  ],
+  "whyItMatters": "It is the most famous model in game theory, capturing in a single structure why rational self-interest can defeat mutual benefit — from arms races and price wars to pollution and doping. It launched the formal study of cooperation and remains the reference point for understanding when and how self-interested parties fail, or manage, to work together.",
+  "working": [
+    {"lead": "Spot the dominant defection", "text": "identify situations where each party gains by defecting whatever the other does, and expect mutual defection despite a better joint outcome."},
+    {"lead": "Change the game to cooperate", "text": "to escape the trap, alter the payoffs or repeat the interaction, since cooperation can hold when the future casts a long shadow."},
+    {"lead": "Do not expect one-shot cooperation", "text": "in a genuine single encounter with no reputation at stake, treat mutual defection as the rational outcome."}
+  ],
+  "limits": "The stark result applies to the one-shot game: in a single encounter with no communication or future, mutual defection is the unavoidable rational outcome. In repeated play with an uncertain end, cooperation can emerge and stabilise through reciprocity. Real people, including the earliest experimental subjects, cooperate substantially more than pure rational-choice theory predicts, even in one-shot settings. The model also assumes purely self-interested, rational players with common knowledge of payoffs that genuinely satisfy its ordering — where those fail, the predictions change, and the label is often applied loosely to cases that do not meet the formal conditions.",
+  "misreadings": "It does not show that cooperation is always irrational — in the repeated game, reciprocity makes cooperation an equilibrium; the bleak result is specific to the one-shot version. And not every thwarted-cooperation situation is a true prisoner's dilemma; the label requires the specific payoff ordering.",
+  "origin": "Devised by Merrill Flood and Melvin Dresher at the RAND Corporation in 1950; the prison-sentence story and the name came from Albert Tucker later that year, though the phrase first appears in print in Luce and Raiffa's 1957 text.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1950,
+  "namedAfter": "Albert Tucker",
+  "sources": [
+    {"text": "\"Prisoner's Dilemma,\" Stanford Encyclopedia of Philosophy. — the payoff structure, dominance, the Nash equilibrium, and the iterated game.", "url": "https://plato.stanford.edu/entries/prisoner-dilemma/", "type": "secondary"},
+    {"text": "Prisoner's dilemma, Wikipedia. — the Flood-Dresher origin, Tucker's story, the examples, and Axelrod's tournaments.", "url": "https://en.wikipedia.org/wiki/Prisoner%27s_dilemma", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Prisoner%27s_dilemma",
+  "related": [
+    {"slug": "the-nash-equilibrium", "kind": "kindred"},
+    {"slug": "tit-for-tat", "kind": "kindred"},
+    {"slug": "the-tragedy-of-the-commons", "kind": "kindred"}
+  ]
+}
