@@ -1,0 +1,55 @@
+{
+  "no": "162",
+  "slug": "arrhenius-equation",
+  "name": "The Arrhenius Equation",
+  "statement": "A reaction's rate climbs exponentially as the temperature rises.",
+  "statementAccent": "climbs exponentially as the temperature rises",
+  "meaning": "Chemical reactions go faster when hotter, and not gently: the rate constant rises exponentially with absolute temperature. A reaction with a higher activation-energy barrier is more temperature-sensitive, changing more per degree, while a low-barrier reaction is comparatively steady.",
+  "mechanism": "The rate constant equals a pre-exponential factor, capturing how often molecules collide with the right orientation, times a Boltzmann factor — the exponential of the negative activation energy over the gas constant and temperature. That exponential is the fraction of molecules carrying enough energy to clear the barrier, and as temperature rises the energy distribution broadens and that fraction grows.",
+  "examples": [
+    {
+      "tag": "Doubling per ten degrees",
+      "text": "A common rule of thumb is that a reaction's rate roughly doubles for every ten-degree rise, corresponding to a moderate activation energy — though real temperature coefficients fall nearer two to three than exactly two."
+    },
+    {
+      "tag": "Refrigeration",
+      "text": "Cooling food slows the chemical and enzymatic reactions and microbial metabolism that spoil it, extending shelf life — the Arrhenius temperature dependence run in reverse."
+    },
+    {
+      "tag": "The Arrhenius plot",
+      "text": "Plotting the logarithm of the rate constant against inverse temperature gives a straight line whose slope yields the activation energy — the standard experimental method the equation enables."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Transition state theory",
+      "text": "The theoretically grounded successor, the Eyring equation, which recasts the rate in terms of the thermodynamics of the transition state rather than an empirical pre-exponential factor."
+    },
+    {
+      "name": "The van 't Hoff equation",
+      "text": "The historical progenitor: van 't Hoff wrote the equation's functional form for equilibrium constants in 1884, before Arrhenius gave it the activation-energy interpretation."
+    }
+  ],
+  "whyItMatters": "It is the workhorse description of how reaction rates depend on temperature, indispensable across chemistry, biology, food science, and materials, and the basis for extracting activation energies from data. It quantifies the everyday fact that heat speeds reactions and cold slows them.",
+  "working": [
+    {"lead": "Extract activation energy from a plot", "text": "measure rate constants at several temperatures and read the activation energy from the slope of the logarithm against inverse temperature."},
+    {"lead": "Expect high-barrier reactions to be temperature-sensitive", "text": "anticipate that reactions with large activation energies change rate most sharply with temperature, and low-barrier ones least."},
+    {"lead": "Don't assume a straight line", "text": "watch for curved Arrhenius plots and temperature-dependent parameters, which signal non-Arrhenius behaviour or a complex mechanism."}
+  ],
+  "limits": "It is empirical, not a fundamental law. Many reactions show non-Arrhenius behaviour with curved plots rather than straight lines, and the pre-exponential factor and activation energy can themselves depend weakly on temperature, which the simple two-parameter form ignores. It breaks down at very low temperatures where quantum tunnelling speeds reactions beyond its prediction, and in complex multi-step mechanisms, enzyme reactions, glass transitions, and heterogeneous catalysis. Collision theory and transition state theory later gave rate laws a firmer footing, but they are separate frameworks, not derivations of the Arrhenius form.",
+  "misreadings": "It is a robust empirical fit, not a first-principles law, and its straight-line plot is not universal — curvature and temperature-dependent parameters are common. Its history is also shared: van 't Hoff had the mathematical form first, and Arrhenius contributed the activation-energy interpretation that gives the equation its name.",
+  "origin": "Proposed by the Swedish chemist Svante Arrhenius in 1889, building on the functional form Jacobus van 't Hoff had written in 1884; Arrhenius's contribution was the physical interpretation in terms of activation energy.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1889,
+  "namedAfter": "Svante Arrhenius",
+  "sources": [
+    {"text": "Arrhenius equation, Wikipedia. — the equation, the Boltzmann-factor mechanism, the van 't Hoff precedence, and non-Arrhenius deviations.", "url": "https://en.wikipedia.org/wiki/Arrhenius_equation", "type": "secondary"},
+    {"text": "\"The Arrhenius Equation,\" Chemistry LibreTexts. — the activation-energy interpretation and the Arrhenius plot.", "url": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/06%3A_Modeling_Reaction_Kinetics/6.02%3A_Temperature_Dependence_of_Reaction_Rates/6.2.03%3A_The_Arrhenius_Law/6.2.3.01%3A_Arrhenius_Equation", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Arrhenius_equation",
+  "related": [
+    {"slug": "le-chateliers-principle", "kind": "kindred"}
+  ]
+}

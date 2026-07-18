@@ -1,0 +1,56 @@
+{
+  "no": "168",
+  "slug": "kirchhoffs-circuit-laws",
+  "name": "Kirchhoff's Circuit Laws",
+  "aliases": ["Kirchhoff's current and voltage laws"],
+  "statement": "Currents balance at every junction and voltages sum to zero around every loop.",
+  "statementAccent": "voltages sum to zero around every loop",
+  "meaning": "Two rules govern electrical circuits. The current law says the currents flowing into any junction equal those flowing out, so charge does not pile up. The voltage law says that adding up all the rises and drops around any closed loop returns you to the same potential, so they sum to zero.",
+  "mechanism": "The current law follows from conservation of charge: since charge cannot accumulate in a wire or junction, whatever current arrives must leave. The voltage law follows from energy conservation and a single-valued potential — more precisely, in the lumped-element model where changing magnetic fields stay inside components, the field outside is conservative, so the loop sum of voltages is zero.",
+  "examples": [
+    {
+      "tag": "Solving a network",
+      "text": "Writing one current-law equation per junction and one voltage-law equation per loop turns a multi-loop circuit into a system of linear equations to solve for the unknown currents and voltages."
+    },
+    {
+      "tag": "With Ohm's law",
+      "text": "Substituting voltage equals current times resistance into the loop equations converts voltage sums into current-and-resistance sums, letting a resistor network be solved algebraically."
+    },
+    {
+      "tag": "Node and mesh analysis",
+      "text": "The systematic textbook methods — nodal analysis applies the current law at each node, mesh analysis the voltage law around each loop — that make circuit-solving routine."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Ohm's law",
+      "text": "The constitutive relation combined with Kirchhoff's laws to solve networks; Kirchhoff's work generalised Ohm's from a single resistor to whole circuits."
+    },
+    {
+      "name": "Maxwell's equations",
+      "text": "The deeper theory of which both laws are corollaries in the low-frequency limit: the current law expresses charge continuity, the voltage law Faraday's law with negligible changing flux."
+    }
+  ],
+  "whyItMatters": "They are the foundation of circuit analysis, the rules every electrical engineer uses to solve networks of any complexity, taught in the first weeks of the subject. Together with Ohm's law they turn a tangle of components into solvable equations.",
+  "working": [
+    {"lead": "Balance current at nodes", "text": "set the currents into each junction equal to those out to write the current-law equations."},
+    {"lead": "Sum voltages to zero around loops", "text": "add the rises and drops around each closed loop and set the total to zero for the voltage-law equations."},
+    {"lead": "Respect the low-frequency limit", "text": "trust the laws where the circuit is small compared with the signal wavelength; at high frequency use transmission-line theory instead."}
+  ],
+  "limits": "Both laws are the lumped-element idealisation, valid only in the quasi-static, low-frequency regime where the circuit is small compared with the wavelength. The voltage law fails when a time-varying magnetic field threads the loop, as with inductive coupling, since the loop integral of the field is then not zero. The current law fails where charge accumulates, as in high-frequency or capacitive and antenna effects, where the lumped-element model no longer applies. Beyond these limits one must use transmission-line theory or Maxwell's equations directly.",
+  "misreadings": "These are Kirchhoff's circuit laws, about charge and energy in electrical networks — not his separate law of thermal radiation, though the same person gave both. And they are approximations valid at low frequency, failing where changing magnetic fields thread a loop or charge accumulates.",
+  "origin": "Formulated by the German physicist Gustav Kirchhoff in 1845, as a student under Franz Neumann, generalising Ohm's earlier work; both are later understood as corollaries of Maxwell's equations in the low-frequency limit.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1845,
+  "namedAfter": "Gustav Kirchhoff",
+  "sources": [
+    {"text": "Kirchhoff's circuit laws, Wikipedia. — both laws, their conservation-law basis, and the lumped-element limits.", "url": "https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws", "type": "secondary"},
+    {"text": "Gustav Kirchhoff, Wikipedia. — the 1845 formulation as a student under Neumann.", "url": "https://en.wikipedia.org/wiki/Gustav_Kirchhoff", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws",
+  "related": [
+    {"slug": "ohms-law", "kind": "kindred"}
+  ]
+}

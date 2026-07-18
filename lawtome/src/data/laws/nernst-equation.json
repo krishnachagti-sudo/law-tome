@@ -1,0 +1,56 @@
+{
+  "no": "172",
+  "slug": "nernst-equation",
+  "name": "The Nernst Equation",
+  "statement": "A cell's voltage depends on the concentrations of its reactants, not just the standard value.",
+  "statementAccent": "depends on the concentrations of its reactants",
+  "meaning": "The voltage an electrochemical cell actually delivers is its standard potential adjusted by a term that depends on the concentrations — strictly, the activities — of the species involved. As the reaction proceeds toward equilibrium the correction grows and the voltage falls toward zero, which is why a battery goes flat.",
+  "mechanism": "The cell potential equals the standard potential minus a term proportional to absolute temperature and the logarithm of the reaction quotient, divided by the number of electrons transferred and the Faraday constant. It is not an independent postulate but the electrochemical restatement of Gibbs free energy, combining the relation between free energy and the reaction quotient with the expression of free energy as electrical work.",
+  "examples": [
+    {
+      "tag": "A dying battery",
+      "text": "As reactants deplete and products build up, the reaction quotient shifts, the correction term grows, and the terminal voltage falls toward zero at equilibrium — a dead battery is a cell that has reached it."
+    },
+    {
+      "tag": "pH meters and ion sensors",
+      "text": "A measured electrode potential is converted to ion activity through the Nernst relation, the working principle of pH meters and ion-selective electrodes."
+    },
+    {
+      "tag": "The neuron's membrane potential",
+      "text": "The equilibrium voltage across a membrane for a single permeant ion is a Nernst potential, set by the concentration difference across the membrane — foundational to how nerves work."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Goldman equation",
+      "text": "The biological extension handling several permeant ions at once for a membrane potential, of which the single-ion Nernst potential is the special case."
+    },
+    {
+      "name": "Gibbs free energy",
+      "text": "The parent thermodynamic quantity: the Nernst equation is the free-energy relation for a reaction expressed as an electrical potential."
+    }
+  ],
+  "whyItMatters": "It links the voltage of any electrochemical cell to the concentrations inside it, indispensable to batteries, corrosion, electroplating, and the sensors of analytical chemistry, and to the electrophysiology of nerves and muscle. It is the equation that makes electrochemistry quantitative under real, non-standard conditions.",
+  "working": [
+    {"lead": "Correct the standard potential for concentration", "text": "adjust the standard potential by the reaction-quotient term to get the actual voltage under working conditions."},
+    {"lead": "Read the approach to equilibrium", "text": "watch the voltage fall toward zero as the reaction quotient rises toward the equilibrium constant, the signature of a discharging cell."},
+    {"lead": "Use activities in non-ideal solutions", "text": "for concentrated or non-ideal electrolytes, use activities rather than concentrations, and apply it only at negligible net current."}
+  ],
+  "limits": "The equation is rigorous only in terms of activities; using concentrations is valid only in dilute, near-ideal solutions and deviates in concentrated electrolytes. It assumes equilibrium and reversibility, applying only when there is no net current — under significant current, kinetic effects and overpotential make the measured potential depart from the prediction. At extremely low concentrations the logarithm diverges and the prediction becomes unphysical. It is a rigorous consequence of equilibrium thermodynamics whose reliability degrades predictably outside those assumptions.",
+  "misreadings": "It is not an empirical fit but a consequence of equilibrium thermodynamics, and it holds only near equilibrium with negligible current — a cell delivering real current departs from it through overpotential. Its concentration term is strictly in activities, so treating concentrations as activities is an approximation valid only in dilute solutions.",
+  "origin": "Derived by the German physical chemist Walther Nernst in 1889 from the thermodynamics of electrochemical cells; he later won the 1920 Nobel Prize in Chemistry for his work on thermochemistry, though for the heat theorem rather than this equation.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1889,
+  "namedAfter": "Walther Nernst",
+  "sources": [
+    {"text": "Nernst equation, Wikipedia. — the equation, its Gibbs-free-energy derivation, and the activity and no-net-current assumptions.", "url": "https://en.wikipedia.org/wiki/Nernst_equation", "type": "secondary"},
+    {"text": "\"Nernst Equation,\" Chemistry LibreTexts. — the derivation from free energy and the room-temperature form.", "url": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Electrochemistry/Nernst_Equation", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Nernst_equation",
+  "related": [
+    {"slug": "faradays-laws-of-electrolysis", "kind": "kindred"},
+    {"slug": "le-chateliers-principle", "kind": "kindred"}
+  ]
+}

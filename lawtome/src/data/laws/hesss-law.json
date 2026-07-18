@@ -1,0 +1,56 @@
+{
+  "no": "161",
+  "slug": "hesss-law",
+  "name": "Hess's Law",
+  "aliases": ["The law of constant heat summation"],
+  "statement": "A reaction's total heat change is the same whatever path it takes.",
+  "statementAccent": "the same whatever path it takes",
+  "meaning": "Only the starting materials and end products fix the total heat of a reaction — not the route between them or the number of steps. So a reaction's enthalpy change that cannot be measured directly can be built up by adding the enthalpies of other reactions that reach the same start and finish.",
+  "mechanism": "Enthalpy is a state function, depending only on the current state of a system and not its history, so the change in enthalpy between two states is path-independent. This is a direct consequence of the first law of thermodynamics, and at constant pressure the enthalpy change equals the heat exchanged, which makes the step enthalpies simply additive.",
+  "examples": [
+    {
+      "tag": "Summing steps",
+      "text": "The enthalpy of forming carbon monoxide, hard to measure cleanly because carbon dioxide also forms, is obtained by subtracting known combustion enthalpies — the classic use of adding and reversing reactions to reach a target."
+    },
+    {
+      "tag": "The Born–Haber cycle",
+      "text": "A thermodynamic cycle of sublimation, dissociation, ionisation, and lattice formation, closed by Hess's law, yields lattice energies of ionic solids that cannot be measured directly."
+    },
+    {
+      "tag": "Enthalpies of formation",
+      "text": "A reaction's enthalpy is computed as the formation enthalpies of the products minus those of the reactants — the tabulated-value method that is a direct application of the law."
+    }
+  ],
+  "variants": [
+    {
+      "name": "State functions",
+      "text": "The broader principle Hess's law rests on: quantities like enthalpy, entropy, and internal energy that depend only on state, so their changes are path-independent."
+    },
+    {
+      "name": "The first law of thermodynamics",
+      "text": "The deeper law from which Hess's follows — conservation of energy — so that Hess's law is a corollary rather than an independent postulate."
+    }
+  ],
+  "whyItMatters": "It is the founding principle of thermochemistry, letting chemists calculate reaction heats that are impossible to measure directly by assembling them from known steps. It underpins tables of formation enthalpies and the whole practice of thermodynamic cycles.",
+  "working": [
+    {"lead": "Build reactions from known steps", "text": "reach an unmeasurable enthalpy by adding, reversing, and scaling reactions whose enthalpies you know, since only start and finish matter."},
+    {"lead": "Use tabulated formation enthalpies", "text": "compute a reaction's enthalpy as products minus reactants from standard formation values — a direct consequence of the law."},
+    {"lead": "Keep start and finish states fixed", "text": "ensure every pathway you compare has identical initial and final states, and work at constant pressure for enthalpy."}
+  ],
+  "limits": "It requires the same initial and final states for every pathway compared, and it concerns enthalpy at constant pressure. It is essentially exact — a mathematical consequence of energy conservation and the state-function nature of enthalpy, not an empirical approximation that could be wrong, so it is not contested. A separate caution in using its data: a negative enthalpy change does not by itself guarantee a reaction is spontaneous, since entropy also matters.",
+  "misreadings": "It is not an independent law that could fail — it is a corollary of the first law of thermodynamics, holding as surely as energy conservation. And it speaks to heat, not spontaneity: a reaction releasing heat is not thereby guaranteed to proceed, because entropy enters too.",
+  "origin": "Formulated by the Swiss-born Russian chemist Germain Hess in 1840 from calorimetric measurements, and later recognised as a direct consequence of the first law of thermodynamics.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1840,
+  "namedAfter": "Germain Hess",
+  "sources": [
+    {"text": "Hess's law, Wikipedia. — the statement, the state-function basis, and the Born–Haber and formation-enthalpy applications.", "url": "https://en.wikipedia.org/wiki/Hess's_law", "type": "secondary"},
+    {"text": "\"Hess's law of heat summation,\" Encyclopædia Britannica. — that it is a consequence of the first law of thermodynamics.", "url": "https://www.britannica.com/science/Hesss-law-of-heat-summation", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hess's_law",
+  "related": [
+    {"slug": "nernst-equation", "kind": "kindred"}
+  ]
+}

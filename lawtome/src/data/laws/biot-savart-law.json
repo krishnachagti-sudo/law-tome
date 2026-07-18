@@ -1,0 +1,57 @@
+{
+  "no": "171",
+  "slug": "biot-savart-law",
+  "name": "The Biot–Savart Law",
+  "aliases": ["The Biot–Savart–Laplace law"],
+  "statement": "Each element of a current adds a magnetic field that fades with the square of distance.",
+  "statementAccent": "fades with the square of distance",
+  "meaning": "To find the magnetic field of a steady current, chop the wire into tiny pieces. Each piece throws off a small field that circles around it and weakens with the square of the distance, and the total field at any point is the sum of all those contributions over the whole circuit.",
+  "mechanism": "Each current element contributes a field proportional to the current and the element's length, directed perpendicular to both the element and the line to the point, and falling off as one over distance squared. Integrating over the circuit gives the total field. It is the magnetostatic counterpart of Coulomb's law, summing inverse-square contributions of current elements to build the magnetic field just as Coulomb sums those of charges to build the electric one.",
+  "examples": [
+    {
+      "tag": "The straight wire",
+      "text": "Integrating along a long straight wire gives a field that circles it and weakens as one over the distance — the textbook first application of the law."
+    },
+    {
+      "tag": "The current loop",
+      "text": "On the axis of a circular loop the law gives the field in closed form, reducing at the centre to a simple expression in the current and radius — the basis of many magnet designs."
+    },
+    {
+      "tag": "The solenoid",
+      "text": "Summing the loop result along a coil's length yields the nearly uniform interior field of a solenoid, a controllable electromagnet."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Ampère's circuital law",
+      "text": "The equivalent statement for magnetostatics, far easier where the geometry is symmetric — while Biot–Savart works even without symmetry, at the cost of an explicit integral."
+    },
+    {
+      "name": "Coulomb's law",
+      "text": "The electrostatic analogue: an inverse-square law summing the contributions of source elements, with charge in place of current and no cross product."
+    }
+  ],
+  "whyItMatters": "It is the general tool for computing the magnetic field of any steady current, working where the symmetry that Ampère's law needs is absent — finite wires, off-axis points, arbitrary coils. It is a founding relation of magnetostatics and of electromagnet and instrument design.",
+  "working": [
+    {"lead": "Integrate over the circuit", "text": "sum the inverse-square contributions of every current element, with the cross product setting each one's direction, to get the total field."},
+    {"lead": "Use it where symmetry fails", "text": "reach for Biot–Savart when the geometry lacks the symmetry Ampère's law needs, accepting an explicit integral in return."},
+    {"lead": "Restrict to steady currents", "text": "apply it to magnetostatics; for time-varying currents use the full retarded-field equations instead."}
+  ],
+  "limits": "The law is valid only in the magnetostatic approximation, for steady currents. When currents change with time it must be replaced by the full Maxwell treatment — Jefimenko's equations with their finite propagation delay. The elementary form assumes no magnetic materials, with material response folded in through the permeability. A single isolated current element is not physically realisable, since currents must form closed loops, so the elemental contribution is a formal integrand rather than a directly measurable field.",
+  "misreadings": "It holds only for steady currents — time-varying currents need the retarded fields of the full theory. And it is equivalent to Ampère's circuital law for magnetostatics; the practical difference is symmetry, with Ampère's law easy when it is present and Biot–Savart general when it is not.",
+  "origin": "Discovered by the French physicists Jean-Baptiste Biot and Félix Savart in 1820, following Ørsted's finding that a current deflects a compass; the modern integral form owes much to Laplace, hence the occasional name Biot–Savart–Laplace law.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1820,
+  "namedAfter": "Jean-Baptiste Biot and Félix Savart",
+  "sources": [
+    {"text": "Biot–Savart law, Wikipedia. — the statement, the examples, its equivalence to Ampère's law, and the magnetostatics-only limit.", "url": "https://en.wikipedia.org/wiki/Biot%E2%80%93Savart_law", "type": "secondary"},
+    {"text": "\"1820–1829,\" National MagLab electromagnetism timeline. — the 1820 discovery in the wake of Ørsted.", "url": "https://nationalmaglab.org/magnet-academy/history-of-electricity-magnetism/timeline/1820-1829/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Biot%E2%80%93Savart_law",
+  "related": [
+    {"slug": "amperes-law", "kind": "kindred"},
+    {"slug": "coulombs-law", "kind": "kindred"}
+  ]
+}

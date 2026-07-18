@@ -1,0 +1,56 @@
+{
+  "no": "169",
+  "slug": "kirchhoffs-law-of-thermal-radiation",
+  "name": "Kirchhoff's Law of Thermal Radiation",
+  "statement": "At equilibrium, a good absorber of a wavelength is an equally good emitter.",
+  "statementAccent": "a good absorber of a wavelength is an equally good emitter",
+  "meaning": "For a body in thermal equilibrium, its emissivity equals its absorptivity at each wavelength: a surface that absorbs a given wavelength well also emits it well, and a good reflector is a poor emitter. The ideal limit is a black body, a perfect absorber and therefore a perfect emitter.",
+  "mechanism": "It is required by thermodynamic equilibrium and detailed balance. If absorptivity did not equal emissivity, two bodies at the same temperature would exchange net radiant heat, so heat would flow spontaneously between equal-temperature bodies, violating the second law of thermodynamics. Underneath, the equality traces to the reciprocity of Maxwell's equations — the very assumption that recent non-reciprocal materials break.",
+  "examples": [
+    {
+      "tag": "The black body",
+      "text": "A perfect absorber takes in all incident radiation and is therefore the maximal possible emitter — the reference case that anchors the whole theory of thermal radiation."
+    },
+    {
+      "tag": "The space blanket",
+      "text": "A shiny metallised film reflects most radiant heat, so it absorbs little and, by the law, emits little — which is why a thin emergency blanket radiates away so little of a body's warmth."
+    },
+    {
+      "tag": "Spectral lines",
+      "text": "A gas absorbs exactly the wavelengths it would emit, so a cool gas in front of a hot source produces dark absorption lines where it would otherwise glow — the basis of spectroscopy and the solar Fraunhofer lines."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Planck's law",
+      "text": "The explicit form of the universal emissive function that Kirchhoff proved must exist but did not determine; Planck supplied it in 1900."
+    },
+    {
+      "name": "The second law of thermodynamics",
+      "text": "The foundation from which Kirchhoff's law follows — the impossibility of spontaneous net heat flow between bodies at the same temperature."
+    }
+  ],
+  "whyItMatters": "It established that thermal emission is governed by a universal function of wavelength and temperature, the insight that set the stage for black-body radiation and, through Planck, for quantum theory. It also explains everyday radiative behaviour, from why reflective surfaces stay warm to why spectra carry absorption lines.",
+  "working": [
+    {"lead": "Read emissivity from absorptivity", "text": "at equilibrium, take a surface's emissivity at a wavelength to equal its absorptivity there, and treat good reflectors as poor emitters."},
+    {"lead": "Use reflectivity to control radiation", "text": "reduce radiative heat loss with low-absorptivity, high-reflectivity surfaces, which by the law also emit little."},
+    {"lead": "Respect the equilibrium requirement", "text": "apply it only to systems in local thermal equilibrium, not to pumped or non-reciprocal emitters."}
+  ],
+  "limits": "The law requires local thermodynamic equilibrium. It does not apply to systems pumped by an external source — lasers, fluorescence, and negative luminescence all fall outside it. Because it rests on reciprocity, engineered non-reciprocal media can break it: magneto-optical materials in a magnetic field, magnetic Weyl semimetals, and spatiotemporally modulated structures can make emissivity differ from absorptivity, and the first direct experimental violation was reported in 2023. Within equilibrium and reciprocity it is exact, standard physics; it is not a universal identity for all radiating matter.",
+  "misreadings": "It is not Kirchhoff's circuit laws — the same person gave both, on entirely different subjects. And it holds only at thermal equilibrium: pumped systems like lasers and, more recently, deliberately non-reciprocal materials break the emissivity-equals-absorptivity equality.",
+  "origin": "Proposed by the German physicist Gustav Kirchhoff in 1859, with a proof around 1860, out of his spectroscopy collaboration with Robert Bunsen. Kirchhoff proved the universal emissive function must exist but not its form, which Max Planck supplied in 1900.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1859,
+  "namedAfter": "Gustav Kirchhoff",
+  "sources": [
+    {"text": "Kirchhoff's law of thermal radiation, Wikipedia. — the emissivity-absorptivity equality, the second-law basis, and the non-equilibrium and non-reciprocal limits.", "url": "https://en.wikipedia.org/wiki/Kirchhoff's_law_of_thermal_radiation", "type": "secondary"},
+    {"text": "Emergency blanket, Wikipedia. — the low-absorptivity, low-emissivity reflective-film example.", "url": "https://en.wikipedia.org/wiki/Emergency_blanket", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Kirchhoff's_law_of_thermal_radiation",
+  "related": [
+    {"slug": "plancks-law", "kind": "kindred"},
+    {"slug": "stefan-boltzmann-law", "kind": "kindred"}
+  ]
+}

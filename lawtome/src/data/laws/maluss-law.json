@@ -1,0 +1,56 @@
+{
+  "no": "167",
+  "slug": "maluss-law",
+  "name": "Malus's Law",
+  "statement": "Light through a polariser dims with the square of the angle's cosine.",
+  "statementAccent": "the square of the angle's cosine",
+  "meaning": "When linearly polarised light passes through an ideal polariser, the transmitted intensity equals the incident intensity times the square of the cosine of the angle between the light's polarisation and the polariser's axis. Aligned, all the light passes; crossed at ninety degrees, none does; at forty-five degrees, half.",
+  "mechanism": "Only the component of the light's electric field lying along the polariser's transmission axis gets through, and that transmitted amplitude is the incident amplitude times the cosine of the angle. Because intensity is proportional to amplitude squared, the cosine in amplitude becomes a cosine-squared in intensity.",
+  "examples": [
+    {
+      "tag": "Polarised sunglasses",
+      "text": "Lenses oriented to block the horizontally polarised glare reflected off roads and water cut that glare while passing other light — polarisation put to everyday use."
+    },
+    {
+      "tag": "LCD screens",
+      "text": "A liquid-crystal display sandwiches a rotating liquid-crystal layer between crossed and aligned polarisers, switching each pixel light or dark by controlling polarisation."
+    },
+    {
+      "tag": "Crossed polarisers",
+      "text": "Two polarisers at ninety degrees block essentially all light, the classic demonstration of the cosine-squared law and the vanishing transmission at right angles."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Brewster's angle",
+      "text": "The angle of incidence at which reflected light becomes fully polarised — around fifty-seven degrees for glass, a value Malus himself noted — later formalised by David Brewster."
+    },
+    {
+      "name": "Birefringence",
+      "text": "The double-refraction property of crystals like calcite that Malus used as his analyser, splitting light into differently polarised rays."
+    }
+  ],
+  "whyItMatters": "It is the quantitative law of polarised-light transmission, foundational to optics and to technologies from LCD screens and camera filters to polarised sunglasses and optical instruments. Malus's underlying discovery — that reflection can polarise light — opened the whole study of polarisation.",
+  "working": [
+    {"lead": "Predict transmission from the angle", "text": "compute transmitted intensity as the incident intensity times the cosine squared of the angle between polarisation and axis."},
+    {"lead": "Cross polarisers to block light", "text": "orient two polarisers at ninety degrees to extinguish transmission, and align them to pass it fully."},
+    {"lead": "Assume fully polarised input", "text": "apply the cosine-squared form to linearly polarised light; unpolarised light instead loses about half its intensity to an ideal polariser."}
+  ],
+  "limits": "The law is exact only for an ideal polariser and fully polarised, monochromatic incident light. Real polarisers absorb some of the light they should pass — a Polaroid-type film transmits well under half of unpolarised input rather than the ideal half — and leak some cross-polarised light through a finite extinction ratio. For partially polarised or unpolarised light the simple cosine-squared form does not apply directly. It is the ideal-case law, not a full description of any specific physical polariser.",
+  "misreadings": "It applies to already-polarised light through an ideal polariser; unpolarised light instead loses about half its intensity, not a cosine-squared fraction. And real polarisers fall short of the ideal, absorbing some passed light and leaking some blocked light, so the law is a limiting case.",
+  "origin": "Formulated by the French physicist Étienne-Louis Malus around 1808–1809, following his discovery that light becomes polarised on reflection — observed in sunlight off the windows of the Luxembourg Palace through a calcite crystal — for which he coined the term 'polarisation'.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1809,
+  "namedAfter": "Étienne-Louis Malus",
+  "sources": [
+    {"text": "Polarizer, Wikipedia. — the cosine-squared law, the ideal-versus-real polariser, and the half-transmission of unpolarised light.", "url": "https://en.wikipedia.org/wiki/Polarizer", "type": "secondary"},
+    {"text": "Étienne-Louis Malus, Wikipedia. — the discovery of polarisation by reflection and the coining of 'polarisation'.", "url": "https://en.wikipedia.org/wiki/%C3%89tienne-Louis_Malus", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Malus's_law",
+  "related": [
+    {"slug": "beer-lambert-law", "kind": "kindred"},
+    {"slug": "snells-law", "kind": "kindred"}
+  ]
+}
