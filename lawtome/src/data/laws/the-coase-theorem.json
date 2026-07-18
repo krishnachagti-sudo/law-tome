@@ -1,0 +1,55 @@
+{
+  "no": "204",
+  "slug": "the-coase-theorem",
+  "name": "The Coase Theorem",
+  "statement": "With clear property rights and costless bargaining, people reach an efficient outcome no matter who starts with the rights.",
+  "statementAccent": "no matter who starts with the rights",
+  "meaning": "If property rights are well-defined and the cost of bargaining is zero, private parties in conflict over an externality will negotiate their way to an efficient allocation of resources — regardless of how the law initially assigns those rights. The legal starting point then affects who pays whom, but not the efficient result that emerges.",
+  "mechanism": "An externality — pollution, noise, straying cattle — sets two incompatible uses against each other. With clearly defined, tradable rights and no cost to negotiating, the party who values the entitlement most will pay to obtain it, so the resource ends up in its highest-valued use whoever held the right at the start. Bargaining internalises the externality privately, without government intervention. The pivotal ingredient is transaction costs: as the costs of search, bargaining, and enforcement rise, the deal that would produce the efficient result breaks down, and the initial assignment of rights starts to matter.",
+  "examples": [
+    {
+      "tag": "The rancher and the farmer",
+      "text": "Coase's own case: straying cattle damage a neighbour's crops. Whether or not the law makes the rancher liable, costless bargaining leads to the same efficient level of cattle and crops; the liability rule only decides who compensates whom."
+    },
+    {
+      "tag": "Sturges v Bridgman",
+      "text": "A real nuisance case Coase used, where a confectioner's noisy machinery disturbed a doctor's new consulting room — with costless bargaining, the right would go to the higher-valued use regardless of who won in court."
+    },
+    {
+      "tag": "Where it breaks",
+      "text": "With many affected parties, or holdouts who demand excessive payment, or private information about true values, the bargaining fails — and then, as Coase stressed, the legal assignment of rights becomes decisive."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Transaction costs",
+      "text": "The central Coasean concept — the costs of search, bargaining, and enforcement, whose vanishing is exactly what the theorem assumes and whose reality is Coase's actual subject."
+    },
+    {
+      "name": "Pigouvian taxes",
+      "text": "The alternative remedy the theorem is set against: Pigou's proposal to tax the externality-generator, which Coase argued is not automatically superior to a bargaining-and-rights solution."
+    }
+  ],
+  "whyItMatters": "It founded the economic analysis of law and, through its focus on transaction costs, the field of new institutional economics. Its real lesson is the opposite of the frictionless idealisation people remember: because bargaining is rarely costless, the assignment of legal rights matters enormously, and attention should fall on the institutions that shape those costs.",
+  "working": [
+    {"lead": "Ask what blocks the bargain", "text": "when an efficient deal over an externality fails to appear, look to transaction costs and poorly defined rights as the culprits."},
+    {"lead": "Treat the frictionless case as a foil", "text": "use the zero-cost result as a benchmark that highlights real-world frictions, not as a description of how markets actually work."},
+    {"lead": "Design the rights carefully", "text": "where bargaining is costly, recognise that who holds the initial entitlement affects the outcome, and assign rights with that in mind."}
+  ],
+  "limits": "It is a conditional result whose antecedent — zero transaction costs — essentially never holds, so its real-world applicability is genuinely debated. With many parties, coordination costs explode; dispersed rights invite holdouts; assembling contributions invites free-riding. Behavioural evidence on the endowment effect shows willingness-to-accept exceeds willingness-to-pay, so the initial allocation does change outcomes, violating the invariance claim. Information asymmetry defeats the efficient bargain. Its main value is analytical: to reveal that where efficiency fails, transaction costs and ill-defined rights are to blame. The popular version — markets fix externalities, so deregulate — inverts Coase's own institutional message.",
+  "misreadings": "Coase himself did not call it a theorem, nor did he intend the frictionless idealisation as a description of reality — George Stigler named it, and Coase's point was that because transaction costs are real and large, the initial assignment of rights matters greatly. Reading it as a case for laissez-faire reverses its intent.",
+  "origin": "Drawn from Ronald Coase's 'The Problem of Social Cost,' Journal of Law and Economics vol. 3, pp. 1-44 (1960); the term 'Coase theorem' was coined by his colleague George Stigler in The Theory of Price (1966), and Coase received the 1991 Nobel Memorial Prize.",
+  "category": "economics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1960,
+  "namedAfter": "Ronald Coase",
+  "sources": [
+    {"text": "Coase theorem, Wikipedia. — the bargaining-to-efficiency statement, the transaction-cost pivot, and Stigler's naming.", "url": "https://en.wikipedia.org/wiki/Coase_theorem", "type": "secondary"},
+    {"text": "The Problem of Social Cost, Wikipedia. — Coase's rancher/farmer and Sturges v Bridgman examples and his real argument about transaction costs.", "url": "https://en.wikipedia.org/wiki/The_Problem_of_Social_Cost", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Coase_theorem",
+  "related": [
+    {"slug": "the-modigliani-miller-theorem", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "no": "208",
+  "slug": "the-laffer-curve",
+  "name": "The Laffer Curve",
+  "statement": "Beyond some tax rate, raising it further brings in less revenue, not more.",
+  "statementAccent": "raising it further brings in less revenue",
+  "meaning": "Tax revenue is zero at a rate of zero, since nothing is taxed, and zero again at a rate of one hundred percent, since no one bothers to earn taxable income. So somewhere between the two lies a rate that raises the most revenue; past that peak, higher rates bring in less. The curve is the inverted-U mapping tax rate to total revenue. Crucially, it says a peak exists — not where it is, nor which side of it any economy sits on.",
+  "mechanism": "The engine is how people respond to taxation. As the marginal rate rises, they substitute away from taxed activity — work, investment, reported income — toward untaxed alternatives like leisure, avoidance, evasion, or relocation, shrinking the tax base. The shape is governed by the elasticity of taxable income: how strongly reported income reacts to the after-tax rate. Revenue peaks where the base-shrinkage from a further rate rise exactly cancels the gain from the higher rate.",
+  "examples": [
+    {
+      "tag": "The napkin",
+      "text": "The popular story has Arthur Laffer sketching the curve on a restaurant napkin in 1974 to argue against a tax increase, before Dick Cheney, Donald Rumsfeld, and journalist Jude Wanniski — though Laffer himself does not recall the evening and Wanniski named and popularised the idea."
+    },
+    {
+      "tag": "Supply-side economics",
+      "text": "The curve was the intellectual centrepiece of 1980s supply-side policy, used to justify cutting the top United States income-tax rate from seventy percent to twenty-eight percent, on the argument the country sat on the curve's downward side."
+    },
+    {
+      "tag": "Voodoo economics",
+      "text": "The claim that cuts would pay for themselves drew sharp scepticism — George H. W. Bush called it 'voodoo economics' in 1980 — and mainstream economists overwhelmingly doubt it for present-day rich economies."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The revenue-maximizing rate",
+      "text": "The rate at the top of the curve, the empirical quantity in dispute; academic estimates for the top rate range widely, from the low thirties to over seventy percent of income."
+    },
+    {
+      "name": "Optimal taxation",
+      "text": "The welfare-focused counterpart, which asks what rates maximise well-being rather than revenue; the welfare-optimal rate generally lies below the revenue-maximising one."
+    }
+  ],
+  "whyItMatters": "It captures a genuine and important truth — that tax rates can be self-defeating past some point — in a single memorable picture, and it shaped decades of debate over taxation and supply-side policy. But its fame also made it a vehicle for a contested policy claim, which is why it must be read with care.",
+  "working": [
+    {"lead": "Accept that a peak exists", "text": "grant that some revenue-maximising rate lies between zero and one hundred percent, since revenue is zero at both ends."},
+    {"lead": "Ask where the peak is", "text": "treat the location of the peak as the real, disputed question — the curve alone does not tell you which side you are on."},
+    {"lead": "Distrust 'cuts pay for themselves'", "text": "for a developed economy likely on the upward side, expect a rate cut to lose revenue rather than raise it."}
+  ],
+  "limits": "The bare existence of a revenue-maximising peak is nearly uncontroversial, following from the two zero-revenue endpoints. What is fiercely contested is where the peak lies and which side of it an economy is on. Most economists place developed economies on the upward side, so that cuts there typically lose revenue; in a 2012 survey of leading economists, none agreed a US income-tax cut would raise revenue within five years. Estimates of the revenue-maximising top rate span a huge range, and recent work suggests a flat plateau rather than a sharp peak. The concept has repeatedly been used to justify tax cuts that widened deficits rather than paying for themselves.",
+  "misreadings": "It does not show that tax cuts increase revenue — only that they could, if rates were above the peak, which for most modern economies they are not. And that a peak exists is not evidence about where it sits; the sound geometry does not license the contested policy conclusion.",
+  "origin": "Named after the economist Arthur Laffer and popularised under that name by journalist Jude Wanniski in a 1978 article; Laffer disclaimed originality, crediting precedents such as Ibn Khaldun in the fourteenth century and John Maynard Keynes.",
+  "category": "economics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1974,
+  "namedAfter": "Arthur Laffer",
+  "sources": [
+    {"text": "Laffer curve, Wikipedia. — the inverted-U statement, the elasticity mechanism, the napkin story, and the estimate ranges.", "url": "https://en.wikipedia.org/wiki/Laffer_curve", "type": "secondary"},
+    {"text": "\"Laffer Curve,\" Kent Clark Center / IGM Economic Experts Panel (2012). — the survey finding no economist agreed a rate cut would raise revenue.", "url": "https://kentclarkcenter.org/surveys/laffer-curve/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Laffer_curve",
+  "related": [
+    {"slug": "the-lucas-critique", "kind": "kindred"}
+  ]
+}

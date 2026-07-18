@@ -1,0 +1,55 @@
+{
+  "no": "211",
+  "slug": "the-giffen-paradox",
+  "name": "The Giffen Paradox",
+  "aliases": ["Giffen good"],
+  "statement": "A staple so essential to the poor that they buy more of it as its price rises.",
+  "statementAccent": "buy more of it as its price rises",
+  "meaning": "A Giffen good is one for which demand rises as its price rises and falls as its price falls, violating the ordinary law of demand. It happens only in a narrow corner: a cheap, inferior staple that takes up a large share of a poor household's budget. When its price rises, the household becomes effectively poorer, can no longer afford costlier foods it was adding on, and to stave off hunger buys even more of the cheap staple.",
+  "mechanism": "Any price change splits into a substitution effect, which always pushes consumers away from the now-dearer good, and an income effect, which for a price rise reduces real purchasing power. Three conditions must hold together: the good must be inferior, so demand for it falls as income rises; it must have few or no close substitutes; and it must take a large share of the budget. For such a good the income effect works toward buying more, and when the budget share is large enough it dominates and reverses the substitution effect, producing an upward-sloping demand curve — the Slutsky decomposition at work.",
+  "examples": [
+    {
+      "tag": "The disputed potato",
+      "text": "The textbook example — bread or potatoes among the Victorian poor, or during the Irish famine — is the classic illustration, but it has been repeatedly discredited as an actual historical case, so it survives more as folklore than fact."
+    },
+    {
+      "tag": "Rice in Hunan",
+      "text": "The first rigorous evidence came from Jensen and Miller's 2008 field experiment subsidising staples for very poor Chinese households: they found strong Giffen behaviour for rice in Hunan, and weaker evidence for wheat in Gansu."
+    },
+    {
+      "tag": "Why substitutes matter",
+      "text": "The effect needs a staple with no cheaper fallback: if a substitute existed, households would switch to it when the staple's price rose, and demand would fall in the ordinary way."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Inferior goods",
+      "text": "The necessary but not sufficient precondition — all Giffen goods are inferior, meaning demand falls as income rises, but the vast majority of inferior goods are not Giffen."
+    },
+    {
+      "name": "Veblen goods",
+      "text": "A distinct case often confused with it: a Veblen good is bought more as its price rises because the high price itself signals status, a preference effect rather than the income effect behind a Giffen good."
+    }
+  ],
+  "whyItMatters": "It is the textbook exception that proves the rule, the one respectable way demand can slope upward, and a clean demonstration that a strong income effect can overturn the substitution effect. It sharpens the theory of consumer choice and, in its rare real instances, illuminates the economics of subsistence poverty.",
+  "working": [
+    {"lead": "Check all three conditions", "text": "before calling something a Giffen good, confirm it is inferior, lacks close substitutes, and eats a large share of the budget."},
+    {"lead": "Weigh the two effects", "text": "look for a case where the income effect of an inferior staple is large enough to swamp the substitution effect."},
+    {"lead": "Do not confuse it with status goods", "text": "keep Giffen goods, driven by the income effect, separate from Veblen goods, driven by the prestige of a high price."}
+  ],
+  "limits": "Real Giffen goods are extremely rare, and for over a century their very existence was doubted, many economists treating them as a theoretical curiosity. The canonical historical potato-and-bread example is contested and probably apocryphal, repeatedly discredited. Rigorous empirical confirmation is recent and narrow — essentially the single Jensen and Miller experiment, and even there the wheat result was weak. Giffen behaviour appears confined to a specific regime of subsistence poverty rather than being a general phenomenon. The theory is sound; its real-world instantiation is what remains contested.",
+  "misreadings": "It is not the same as a luxury bought for showing off — that is a Veblen good, driven by status, whereas a Giffen good is a cheap staple driven by the income effect. And it is not a common exception to the law of demand: genuine Giffen goods are vanishingly rare, and the famous potato case is largely a myth.",
+  "origin": "Named after the Scottish economist Sir Robert Giffen by Alfred Marshall in his Principles of Economics; whether Giffen himself actually made the claim is disputed, a probable case of Stigler's law of eponymy, and its first rigorous empirical support came only with Jensen and Miller's 2008 study.",
+  "category": "economics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "namedAfter": "Robert Giffen",
+  "sources": [
+    {"text": "Giffen good, Wikipedia. — the upward-sloping-demand statement, the three conditions, the disputed potato example, and the Veblen-good distinction.", "url": "https://en.wikipedia.org/wiki/Giffen_good", "type": "secondary"},
+    {"text": "Jensen & Miller, \"Giffen Behavior and Subsistence Consumption,\" American Economic Review 98(4):1553-1577 (2008). — the rice-and-wheat field experiment providing the first rigorous evidence.", "url": "https://www.aeaweb.org/articles?id=10.1257/aer.98.4.1553", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Giffen_good",
+  "related": [
+    {"slug": "the-law-of-diminishing-marginal-utility", "kind": "tension"}
+  ]
+}
