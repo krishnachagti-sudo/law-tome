@@ -1,0 +1,56 @@
+{
+  "no": "538",
+  "slug": "batesian-mimicry",
+  "name": "Batesian Mimicry",
+  "aliases": ["Protective mimicry", "The palatable mimic"],
+  "statement": "A harmless species evolves to look like a dangerous one, borrowing a warning it never earned.",
+  "statementAccent": "borrowing a warning it never earned",
+  "meaning": "Batesian mimicry is a form of mimicry in which a harmless, palatable species evolves to resemble a harmful or unpalatable species, the model, and thereby gains protection from predators that have learned to avoid the model. The mimic invests nothing in real defences, instead free-riding on, and effectively parasitising, the model's honest warning signal. Named for the naturalist Henry Walter Bates, who described it from Amazonian butterflies, it is one of the classic illustrations of natural selection producing deceptive resemblance, and it stands in instructive contrast to Müllerian mimicry, in which the resemblance is honest and mutual.",
+  "mechanism": "Defended models advertise their toxicity or foul taste through aposematism, conspicuous warning colours and patterns. Predators, typically visually hunting birds, learn to associate that signal with a bad experience and avoid it, and a palatable mimic bearing a similar pattern is then also avoided, gaining protection it never paid for. The relationship is deceptive and slightly parasitic, since each mimic that a predator samples and finds edible weakens the lesson and dilutes the model's protection. This makes the arrangement frequency-dependent: the mimic is best protected when it is rarer than the model, and if mimics grow too common, predators learn to attack the pattern again.",
+  "examples": [
+    {
+      "tag": "Hoverflies",
+      "text": "Harmless hoverflies mimic the black-and-yellow warning colours of stinging wasps and bees, gaining protection without any sting of their own."
+    },
+    {
+      "tag": "Kingsnakes",
+      "text": "Harmless kingsnakes resemble the bright banding of venomous coral snakes, a widely cited case of a defenceless mimic borrowing a dangerous model's signal."
+    },
+    {
+      "tag": "The viceroy correction",
+      "text": "The viceroy butterfly was long taught as a Batesian mimic of the toxic monarch, but the viceroy is itself unpalatable, so the case is now reclassified as Müllerian, not Batesian."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Frequency dependence",
+      "text": "The requirement that the mimic remain rarer than the model, since a mimic too common relative to the model teaches predators to attack the shared pattern."
+    },
+    {
+      "name": "The Batesian-Müllerian spectrum",
+      "text": "The recognition that mildly defended mimics blur the line, forming quasi-Batesian intermediates between pure deception and true mutual warning."
+    }
+  ],
+  "whyItMatters": "Batesian mimicry is a foundational example in evolutionary biology of how natural selection can craft precise, deceptive resemblance, and one of the first phenomena to be explained by Darwinian selection soon after Darwin's own work. It illuminates the economics of warning signals, the dynamics of frequency-dependent selection, and the coevolutionary tension between models, mimics, and predators. As a teaching case it also carries a cautionary tale, since its most famous textbook example, the viceroy and the monarch, turned out to be misclassified, a reminder to check whether a supposed mimic is truly undefended.",
+  "working": [
+    {"lead": "Spot the free rider", "text": "look for a harmless species borrowing the warning signal of a genuinely defended one, gaining protection it did not pay for."},
+    {"lead": "Mind the rarity", "text": "expect the mimic to work only while rarer than its model, since too many edible impostors teach predators to attack the pattern."},
+    {"lead": "Check who is defended", "text": "confirm that the model is genuinely harmful and the mimic genuinely harmless, since two defended look-alikes are Müllerian, not Batesian."}
+  ],
+  "limits": "Batesian mimicry depends on frequency: the mimic is protected only while it stays rarer than the model, and if mimics become too common relative to models, predators encounter the palatable impostor often enough to learn to attack the shared pattern, eroding the protection. Real field systems add nuance, sometimes persisting even where the model is relatively rare. The model must be genuinely defended for the borrowed signal to be worth avoiding, and the boundary with Müllerian mimicry is not sharp, since mildly defended mimics form quasi-Batesian intermediates along a spectrum.",
+  "misreadings": "Batesian mimicry is deceptive and one-sided, involving one undefended mimic parasitising one defended model, which distinguishes it from Müllerian mimicry, in which two or more genuinely defended species share an honest signal mutually. Convergent warning patterns alone do not make a case Batesian; the deciding factor is how many of the species are actually defended. And the viceroy-and-monarch pair, long the flagship textbook example, is now understood as Müllerian, since the viceroy is itself unpalatable, so it should no longer be cited as Batesian without correction.",
+  "origin": "Described by the English naturalist Henry Walter Bates in his 1862 paper 'Contributions to an Insect Fauna of the Amazon Valley', based on his study of Amazonian butterflies.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1862,
+  "namedAfter": "Henry Walter Bates",
+  "sources": [
+    {"text": "Batesian mimicry, Wikipedia. — the palatable-mimic definition, Bates's 1862 paper, aposematism, and frequency dependence.", "url": "https://en.wikipedia.org/wiki/Batesian_mimicry", "type": "secondary"},
+    {"text": "Ritland & Brower, 'The viceroy butterfly is not a Batesian mimic,' Nature 350:497-498 (1991). — the reclassification of the viceroy as unpalatable.", "url": "https://www.nature.com/articles/350497a0", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Batesian_mimicry",
+  "related": [
+    {"slug": "mullerian-mimicry", "kind": "kindred"}
+  ]
+}

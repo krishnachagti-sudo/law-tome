@@ -1,0 +1,56 @@
+{
+  "no": "543",
+  "slug": "the-metabolic-theory-of-ecology",
+  "name": "The Metabolic Theory of Ecology",
+  "aliases": ["MTE", "Metabolic scaling ecology"],
+  "statement": "How fast an organism burns energy, set by its size and temperature, may govern the pace of ecology from cells to ecosystems.",
+  "statementAccent": "set by its size and temperature",
+  "meaning": "The metabolic theory of ecology proposes that metabolic rate, the pace at which organisms take up, transform, and expend energy, is the fundamental biological rate governing most observed patterns in ecology, from individuals through populations and communities to whole ecosystems. It offers a quantitative model of how metabolism scales with body size and temperature and uses that to predict patterns in growth, reproduction, lifespan, population dynamics, and biodiversity from a few first principles. Advanced by James Brown, Geoffrey West, and colleagues in the early 2000s, it is an ambitious and generative attempt to give ecology a unifying, physics-flavoured backbone, though its central claims are genuinely contested.",
+  "mechanism": "The theory's core equation makes an organism's metabolic rate the product of two factors. Body size enters through Kleiber's law, with metabolic rate scaling as mass to the three-quarter power, so larger organisms use more energy in total but less per unit mass. Temperature enters through the Boltzmann-Arrhenius factor, with rate rising exponentially as temperature increases, governed by an activation energy of roughly two-thirds of an electronvolt. Combining them, individual metabolic rate scales as mass to the three-quarter power times the Boltzmann temperature factor. From this single expression the theory derives predictions about rates of growth, reproduction, mortality, and population growth, and even about gradients of biodiversity.",
+  "examples": [
+    {
+      "tag": "Living fast when small",
+      "text": "Because mass-specific metabolic rate falls with size, small organisms grow, reproduce, and die faster than large ones, a pattern the theory derives from the three-quarter-power law."
+    },
+    {
+      "tag": "Warmer, faster",
+      "text": "The Boltzmann factor predicts that metabolic and life-history rates speed up with temperature, linking ecology to the physics of biochemical reactions."
+    },
+    {
+      "tag": "Explaining diversity gradients",
+      "text": "The theory attributes higher species richness in warm climates partly to temperature speeding metabolism and, in some formulations, the pace of evolution."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The WBE network model",
+      "text": "The West-Brown-Enquist derivation of the three-quarter exponent from the geometry of fractal-like, resource-distributing branching networks such as blood vessels."
+    },
+    {
+      "name": "Metabolic-level boundaries",
+      "text": "Douglas Glazier's rival hypothesis that the scaling exponent is not fixed at three-quarters but varies between two-thirds and one with an organism's activity level."
+    }
+  ],
+  "whyItMatters": "The metabolic theory of ecology is one of the boldest attempts to unify ecology under a single quantitative framework, tracing patterns from cells to ecosystems back to the energetics of individual organisms. Whether or not its strongest claims survive, it reframed a swath of ecology around metabolism, generating testable predictions across life history, population dynamics, and biodiversity and prompting a large body of confirming and disconfirming work. As a case study it also illustrates the promise and the peril of seeking universal scaling laws in biology, where variation around a clean prediction is the rule rather than the exception.",
+  "working": [
+    {"lead": "Start from metabolism", "text": "treat an organism's metabolic rate, set by size and temperature, as a baseline predictor of its ecological rates."},
+    {"lead": "Scale by size and heat", "text": "expect metabolic rate to rise as mass to the three-quarter power and to climb exponentially with temperature."},
+    {"lead": "Expect scatter", "text": "read the theory's predictions as first-order baselines around which real data vary substantially, not exact universal constants."}
+  ],
+  "limits": "The theory is influential but contested. The exact scaling exponent is disputed, since a surface-area argument predicts two-thirds while Kleiber and the network model favour three-quarters, and empirical data do not cleanly settle it: Glazier's review found more than half of intraspecific studies with exponents significantly different from three-quarters. The West-Brown-Enquist derivation has been criticised on mathematical and biological grounds, and the metabolic-level-boundaries hypothesis holds that no single universal exponent applies, with the slope varying between two-thirds and one by activity level. The theory yields baseline predictions, and real ecology shows large residual variation around them.",
+  "misreadings": "The three-quarter exponent is an approximation, empirically variable and theoretically disputed, not a settled exact universal constant. The theory offers first-order baseline predictions, not a claim that ecology reduces deterministically to metabolism with no role for evolution, environment, or chance. Whole-organism metabolic rate rising as mass to the three-quarter power is not the same as mass-specific rate, which falls as mass to the minus-one-quarter power and explains why small organisms live fast. And the fractal-network derivation is a debated model, not a proven mechanism.",
+  "origin": "Synthesised by James Brown, James Gillooly, Andrew Allen, Van Savage, and Geoffrey West in their 2004 paper 'Toward a Metabolic Theory of Ecology' in Ecology, building on the 1997 West-Brown-Enquist model of resource-distribution networks.",
+  "category": "science",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 2004,
+  "sources": [
+    {"text": "Brown, Gillooly, Allen, Savage & West, 'Toward a Metabolic Theory of Ecology,' Ecology 85(7):1771-1789 (2004). — the founding synthesis and the size-and-temperature scaling.", "url": "https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1890/03-9000", "type": "primary"},
+    {"text": "Metabolic theory of ecology, Wikipedia. — the size-and-temperature equation, the WBE network model, and the disputed exponent and Glazier critique.", "url": "https://en.wikipedia.org/wiki/Metabolic_theory_of_ecology", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Metabolic_theory_of_ecology",
+  "related": [
+    {"slug": "kleibers-law", "kind": "cause"},
+    {"slug": "the-latitudinal-diversity-gradient", "kind": "kindred"}
+  ]
+}

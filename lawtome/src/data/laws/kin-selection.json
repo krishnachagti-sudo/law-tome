@@ -1,0 +1,56 @@
+{
+  "no": "534",
+  "slug": "kin-selection",
+  "name": "Kin Selection",
+  "aliases": ["Inclusive fitness", "Hamilton's rule"],
+  "statement": "Helping a relative reproduce can spread your own genes, so evolution can favour altruism toward kin.",
+  "statementAccent": "evolution can favour altruism toward kin",
+  "meaning": "Kin selection is the evolutionary process by which natural selection can favour altruistic behaviour directed at relatives. Because relatives share genes by common descent, an individual that helps kin survive and reproduce thereby propagates copies of its own genes indirectly, even at a cost to its own reproduction. This resolves the long-standing puzzle of how self-sacrificing behaviour, from sterile worker insects to alarm calls, could ever evolve if selection favours self-interest. Kin selection is a central explanation for the evolution of cooperation and altruism, and its core is captured in a single inequality, Hamilton's rule.",
+  "mechanism": "The engine is inclusive fitness, which combines an individual's own reproduction with the extra reproduction of relatives that its help enables, each weighted by relatedness. Altruism is favoured when Hamilton's rule holds: the relatedness between actor and recipient, times the reproductive benefit to the recipient, exceeds the cost to the actor. So an act that is costly to you can still spread if it delivers a large enough benefit to a close enough relative. No conscious calculation is involved; the outcome is a statistical consequence of how gene frequencies change when helpers and their kin share genes.",
+  "examples": [
+    {
+      "tag": "Sterile workers",
+      "text": "In eusocial bees, ants, and wasps, sterile workers raise their mother's offspring rather than their own; the haplodiploidy hypothesis linked this to sisters sharing three-quarters of their genes, though that specific explanation is now contested."
+    },
+    {
+      "tag": "Alarm calls",
+      "text": "Belding's ground squirrels give predator alarm calls mainly when kin are nearby, accepting personal risk to warn relatives, a classic demonstration of kin-directed altruism."
+    },
+    {
+      "tag": "Helpers at the nest",
+      "text": "In some cooperatively breeding birds, non-breeding individuals help raise a relative's young, gaining indirect fitness, and long-tailed tits have been used to test Hamilton's rule directly."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Hamilton's rule",
+      "text": "The condition that relatedness times benefit exceeds cost, the compact inequality at the centre of the theory, formalised by W. D. Hamilton in 1964."
+    },
+    {
+      "name": "Green-beard effects",
+      "text": "A distinct route to altruism keyed on a single recognisable marker rather than genealogical kinship, generally unstable and rare, unlike whole-genome relatedness."
+    }
+  ],
+  "whyItMatters": "Kin selection transformed the understanding of social behaviour, showing how altruism and cooperation could evolve through ordinary natural selection rather than requiring the good of the species. It underpins the study of eusociality, cooperative breeding, and social evolution across the animal kingdom, and its central concept, inclusive fitness, reframed the very definition of evolutionary success to include effects on relatives. Few ideas in modern biology have been as generative, or as fiercely debated, and the vocabulary of relatedness, benefit, and cost is now standard across behavioural ecology.",
+  "working": [
+    {"lead": "Apply Hamilton's rule", "text": "expect altruism toward kin to be favoured when relatedness times the benefit to the recipient outweighs the cost to the actor."},
+    {"lead": "Count inclusive fitness", "text": "measure evolutionary success as reproduction plus the aided reproduction of relatives, weighted by how closely related they are."},
+    {"lead": "Drop the intent", "text": "read kin-directed altruism as a statistical outcome of shared genes, not as conscious calculation of relatedness."}
+  ],
+  "limits": "The relationship between kin selection and group selection has been fiercely contested, though many theorists regard the two as mathematically inter-translatable rather than genuine rivals. In 2010 Nowak, Tarnita, and Wilson argued that inclusive-fitness theory works only in a limited domain and should be replaced by standard selection modelling, prompting a rebuttal signed by well over a hundred authors defending it, so the foundations remain debated. The haplodiploidy hypothesis for insect eusociality, once a showcase, is now doubted, since eusociality also arises in diploid termites and the predicted effect has not been clearly demonstrated. Relatedness coefficients are averages, shifted by inbreeding and multiple mating.",
+  "misreadings": "Individuals do not consciously calculate relatedness; kin-directed altruism is a statistical outcome of gene frequencies, not intent. Kin selection does not mean altruism is for the good of the species or group; the classic account works through genes propagating via relatives. The famous Haldane quip about laying down one's life for two brothers or eight cousins is almost certainly apocryphal in its pithy form, reshaped from a longer 1955 passage. And the haplodiploidy story for eusocial insects is a historically influential but now disputed explanation, not settled fact.",
+  "origin": "Formalised by W. D. Hamilton in his 1964 paper 'The Genetical Evolution of Social Behaviour', with the term kin selection coined by John Maynard Smith the same year and an informal precursor credited to J. B. S. Haldane.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1964,
+  "sources": [
+    {"text": "Kin selection, Wikipedia. — inclusive fitness, Hamilton's rule, the eusociality debate, and the green-beard distinction.", "url": "https://en.wikipedia.org/wiki/Kin_selection", "type": "secondary"},
+    {"text": "Nowak, Tarnita & Wilson, 'The evolution of eusociality,' Nature 466:1057-1062 (2010). — the challenge to inclusive-fitness theory that drew a large rebuttal.", "url": "https://www.nature.com/articles/nature09205", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Kin_selection",
+  "related": [
+    {"slug": "hamiltons-rule", "kind": "kindred"},
+    {"slug": "the-selfish-gene", "kind": "kindred"}
+  ]
+}

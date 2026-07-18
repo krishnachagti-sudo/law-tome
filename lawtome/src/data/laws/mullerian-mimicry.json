@@ -1,0 +1,56 @@
+{
+  "no": "539",
+  "slug": "mullerian-mimicry",
+  "name": "Müllerian Mimicry",
+  "aliases": ["Mutual mimicry", "Shared warning signals"],
+  "statement": "Two genuinely dangerous species come to look alike, sharing the cost of teaching predators to stay away.",
+  "statementAccent": "sharing the cost of teaching predators",
+  "meaning": "Müllerian mimicry is a form of mimicry in which two or more genuinely well-defended species that share common predators converge in appearance, coming to resemble one another's honest warning signals. Unlike the deceptive, one-sided Batesian case, this arrangement is mutualistic: by wearing a common warning pattern, the participating species share the cost of educating predators, so each loses fewer individuals to the predators that must sample and learn. Named for the naturalist Fritz Müller, who explained it from Amazonian butterflies, it turns what looks like copying into cooperation, and its analysis provided one of the earliest mathematical models in evolutionary biology.",
+  "mechanism": "Predators learn to avoid a warning pattern by sampling, and killing, some individuals that bear it. If two unpalatable species look alike, the mortality of teaching each new generation of predators is spread across both species, so each loses fewer individuals than if it bore the whole cost alone. Müller argued that the benefit scales with the square of relative abundance, so the rarer species gains disproportionately more from the shared signal. Over evolutionary time, defended species in a region therefore converge on a common pattern, forming mimicry rings, clusters of co-mimetic species all advertising danger with the same colours.",
+  "examples": [
+    {
+      "tag": "Heliconius butterflies",
+      "text": "The classic system: unpalatable Heliconius butterflies across the Neotropics converge into regional mimicry rings, multiple species sharing a warning pattern."
+    },
+    {
+      "tag": "Stinging insects",
+      "text": "Many bees, wasps, and other stinging insects, all genuinely defended, converge on black-and-yellow warning patterns, sharing the burden of predator education."
+    },
+    {
+      "tag": "Viceroy and monarch",
+      "text": "Once taught as Batesian, the viceroy and monarch are now understood as Müllerian, since the viceroy is itself unpalatable, making their resemblance mutual rather than deceptive."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Mimicry rings",
+      "text": "Groups of several co-mimetic species sharing a single warning pattern within a region, well documented in Heliconius and ithomiine butterflies."
+    },
+    {
+      "name": "The Batesian-Müllerian spectrum",
+      "text": "The recognition that the two forms grade into each other, with quasi-Batesian intermediates where a mimic is only weakly defended and still imposes some cost on its co-mimics."
+    }
+  ],
+  "whyItMatters": "Müllerian mimicry resolved a puzzle that Batesian mimicry could not, why many unrelated but equally distasteful species come to look alike, and it did so with one of the first exact models in evolutionary ecology, an early treatment of frequency-dependent selection. It shows how shared signals can evolve as mutual aid rather than deception, illuminating the economics of warning coloration and the coevolution of defended species. The Heliconius mimicry rings it explains have become a premier model system for studying adaptation, speciation, and the genetics of wing patterns.",
+  "working": [
+    {"lead": "Read it as mutual aid", "text": "treat convergence among genuinely defended species as cost-sharing in predator education, not as one species deceiving predators."},
+    {"lead": "Expect mimicry rings", "text": "look for clusters of co-mimetic, defended species sharing a warning pattern in a region, the signature of Müllerian convergence."},
+    {"lead": "Weigh relative abundance", "text": "recognise that the rarer of two co-mimics gains disproportionately, since the benefit scales with the square of relative abundance."}
+  ],
+  "limits": "The boundary with Batesian mimicry is not absolute: the two forms sit at ends of a spectrum, with quasi-Batesian intermediates in which a mildly defended mimic still imposes some cost on its better-defended co-mimics. Because the benefit scales with the square of relative abundance, the rarer species may adverge toward the commoner one rather than the two meeting halfway. Müller's model, though pioneering, assumed a fixed number of prey sacrificed per predator to learn the pattern, an idealisation, and describing his work as the first mathematical model in evolutionary biology is a common paraphrase of the more precise claim that it was the earliest exact model of frequency-dependent selection.",
+  "misreadings": "Müllerian mimicry is mutualistic, not deceptive: all the participating species are genuinely defended, so there is no undefended cheat exploiting the others, which is what separates it from Batesian mimicry. Shared warning patterns among distasteful species are cooperation in disguise, not one species fooling predators with another's signal. And the viceroy-and-monarch pair, long the textbook Batesian example, belongs here, since the viceroy is itself unpalatable and the resemblance is mutual.",
+  "origin": "Proposed by the German-Brazilian zoologist Fritz Müller in 1878, from his study of Neotropical butterflies, providing one of the earliest exact mathematical models of frequency-dependent selection.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1878,
+  "namedAfter": "Fritz Müller",
+  "sources": [
+    {"text": "Müllerian mimicry, Wikipedia. — the mutual, shared-signal definition, Müller's 1878 model, and mimicry rings.", "url": "https://en.wikipedia.org/wiki/M%C3%BCllerian_mimicry", "type": "secondary"},
+    {"text": "Mimicry: Müllerian mimicry, Encyclopaedia Britannica. — the cost-sharing of predator education across species with a shared warning pattern.", "url": "https://www.britannica.com/science/mimicry/Mullerian-mimicry", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/M%C3%BCllerian_mimicry",
+  "related": [
+    {"slug": "batesian-mimicry", "kind": "kindred"}
+  ]
+}

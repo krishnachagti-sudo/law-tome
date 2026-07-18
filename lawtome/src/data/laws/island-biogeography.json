@@ -1,0 +1,56 @@
+{
+  "no": "540",
+  "slug": "island-biogeography",
+  "name": "The Theory of Island Biogeography",
+  "aliases": ["Island biogeography", "The equilibrium theory of insular zoogeography"],
+  "statement": "The number of species on an island settles where the rate of new arrivals balances the rate of extinctions.",
+  "statementAccent": "where the rate of new arrivals balances the rate of extinctions",
+  "meaning": "The theory of island biogeography holds that the number of species on an island represents a dynamic equilibrium between the rate at which new species immigrate from a mainland source and the rate at which species already present go extinct. As species accumulate, immigration of still-newer species slows and extinction rises, and where the two rates cross sets the equilibrium species number. Crucially the equilibrium is dynamic: the total number stays roughly constant while the identity of the species keeps turning over. Developed by Robert MacArthur and Edward O. Wilson, the theory became foundational to ecology and, later, to conservation biology.",
+  "mechanism": "Two physical variables drive the balance. Island size governs extinction: larger islands support larger populations and more habitat, so species go extinct more slowly and more of them persist, the basis of the species-area relationship. Distance from the mainland governs immigration: nearer islands receive colonists more readily, so more species arrive. Combining the two, large and near islands hold the most species and small and far islands the fewest. Because immigration continually replaces species lost to extinction, the community turns over even as its size holds steady, so the roster of species present changes while the count does not.",
+  "examples": [
+    {
+      "tag": "Large-near versus small-far",
+      "text": "A large island close to the mainland accumulates the most species, since extinction is low and immigration high, while a small, remote island holds the fewest."
+    },
+    {
+      "tag": "The mangrove experiment",
+      "text": "Daniel Simberloff and E. O. Wilson fumigated tiny Florida Keys mangrove islands and watched arthropods recolonise to roughly their former numbers but with different species, confirming dynamic equilibrium with turnover."
+    },
+    {
+      "tag": "Habitat fragments as islands",
+      "text": "Patches of habitat left by fragmentation behave like islands, so the theory informs how many species a nature reserve of a given size and isolation can hold."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Species turnover",
+      "text": "The insight that at equilibrium the number of species is roughly constant while their identities change, as ongoing immigration balances ongoing extinction."
+    },
+    {
+      "name": "The SLOSS debate",
+      "text": "The conservation controversy the theory spawned over whether a Single Large Or Several Small reserves better preserve biodiversity, which proved more complex than the simple model implies."
+    }
+  ],
+  "whyItMatters": "The theory of island biogeography gave ecology a simple, quantitative, and testable model of what controls species richness, replacing static species lists with a dynamic balance of colonisation and extinction. It became foundational to conservation biology, framing the design of nature reserves, the study of habitat fragmentation, in which forest patches act as islands, and the general analysis of habitat patchiness. Its concepts of equilibrium, turnover, and the roles of area and isolation remain central tools for predicting and protecting biodiversity in an increasingly fragmented world.",
+  "working": [
+    {"lead": "Balance arrivals and losses", "text": "read an island's species number as the equilibrium where immigration of new species meets extinction of resident ones."},
+    {"lead": "Weigh area and isolation", "text": "expect larger islands to lose fewer species and nearer islands to gain more, so large and near islands are richest."},
+    {"lead": "Expect turnover", "text": "treat the equilibrium as dynamic, with species identities changing even while the total count stays roughly constant."}
+  ],
+  "limits": "The simple model omits much: habitat heterogeneity, differences among species, edge effects, and evolution or speciation, which matters on large islands, and Wilson himself acknowledged its oversimplification and incompleteness. Critics have questioned its assumptions that species and islands are interchangeable and that immigration and extinction are independent. Applying it to reserve design proved more complex than the model suggests, and the SLOSS debate found weak support for the intuition that a single large reserve is always best. Whether communities truly reach equilibrium, and how fast they turn over, has been questioned in some systems.",
+  "misreadings": "The equilibrium is dynamic, not a static, filled-up island, since composition keeps changing through turnover even when the number of species holds steady. The primary effect of island size is on extinction, which it lowers, while the primary effect of distance is on immigration, which nearness raises, and conflating the two is a common error. The theory informs but does not settle reserve design, so it does not simply dictate single large reserves. And the Simberloff and Wilson experiment was broadly supportive, not an outright proof.",
+  "origin": "Developed by Robert MacArthur and E. O. Wilson in their 1963 paper and 1967 book 'The Theory of Island Biogeography', and tested by Daniel Simberloff and Wilson's mangrove-island defaunation experiments published in 1969.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1967,
+  "sources": [
+    {"text": "The Theory of Island Biogeography, Wikipedia. — the immigration-extinction equilibrium, area and distance, turnover, and the SLOSS legacy.", "url": "https://en.wikipedia.org/wiki/The_Theory_of_Island_Biogeography", "type": "secondary"},
+    {"text": "Equilibrium Theory of Island Biogeography: A Review, USDA Forest Service. — the graphical equilibrium model and the Simberloff-Wilson experiment.", "url": "https://www.fs.usda.gov/rm/pubs/rmrs_p021/rmrs_p021_163_171.pdf", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/The_Theory_of_Island_Biogeography",
+  "related": [
+    {"slug": "the-species-area-relationship", "kind": "kindred"},
+    {"slug": "the-competitive-exclusion-principle", "kind": "kindred"}
+  ]
+}

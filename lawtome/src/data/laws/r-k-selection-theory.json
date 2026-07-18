@@ -1,0 +1,55 @@
+{
+  "no": "542",
+  "slug": "r-k-selection-theory",
+  "name": "r/K Selection Theory",
+  "aliases": ["r and K selection", "The quantity-quality life-history spectrum"],
+  "statement": "Some species bet on many cheap offspring in a boom-and-bust world; others on a few well-tended ones near the limit.",
+  "statementAccent": "many cheap offspring in a boom-and-bust world",
+  "meaning": "The r/K selection theory is a model in life-history evolution that places an organism's reproductive strategy along a spectrum from r-selected to K-selected. r-selected species maximise their rate of reproduction: many small offspring, little or no parental care, early maturity, and short lives, thriving in unstable, unpredictable, or uncrowded environments as opportunists pursuing quantity. K-selected species are adapted to stable, crowded environments near the carrying capacity: few large offspring, heavy parental investment, late maturity, and long lives, competing on quality. The letters come from the logistic growth equation, where r is the intrinsic growth rate and K the carrying capacity. Once hugely influential, the theory is now largely superseded.",
+  "mechanism": "In an environment far below carrying capacity, where resources are abundant and mortality is unpredictable, selection favours whoever reproduces fastest, so traits that maximise the intrinsic growth rate, high fecundity and rapid development, win: this is r-selection. In a crowded, stable environment near carrying capacity, where competition is intense and density high, selection favours efficiency and competitive ability, so traits that let a few offspring survive to compete, large size and parental care, win: this is K-selection. Real organisms fall along the continuum between these poles rather than at one extreme, trading offspring number against per-offspring investment.",
+  "examples": [
+    {
+      "tag": "r-strategists",
+      "text": "Insects, weeds, rodents, and many fish produce huge numbers of small offspring quickly, betting on quantity in variable environments."
+    },
+    {
+      "tag": "K-strategists",
+      "text": "Elephants, whales, humans, and long-lived trees produce few, large, well-cared-for offspring slowly, betting on quality near environmental limits."
+    },
+    {
+      "tag": "The island origin",
+      "text": "MacArthur and Wilson introduced the r and K terminology in their 1967 island-biogeography book, contrasting uncrowded and crowded environments."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Pianka's development",
+      "text": "Eric Pianka's 1970 elaboration into a full life-history framework with explicit trait predictions, which popularised the theory even though those predictions did not strictly follow from the original."
+    },
+    {
+      "name": "Age-structured life-history theory",
+      "text": "The more rigorous successor, associated with Stephen Stearns and Brian Charlesworth, that predicts strategies from age-specific mortality and fecundity rather than a simple r/K dichotomy."
+    }
+  ],
+  "whyItMatters": "The r/K selection theory was one of the most influential frameworks in ecology in the 1970s and 1980s, giving biologists an intuitive vocabulary for the trade-off between producing many offspring and investing heavily in a few, and for how that trade-off tracks the stability of the environment. Its rise and fall are themselves instructive: a compelling heuristic that organised a generation of research was gradually replaced by more rigorous, demographically explicit theory. It survives today mainly as a teaching device and a first approximation, a memorable entry point to the deeper study of life histories.",
+  "working": [
+    {"lead": "Place species on the spectrum", "text": "read a life history as more r-selected, favouring many cheap offspring, or more K-selected, favouring few well-tended ones, relative to others."},
+    {"lead": "Link strategy to environment", "text": "expect r-selection where environments are unstable and uncrowded, and K-selection where they are stable and near carrying capacity."},
+    {"lead": "Treat it as heuristic", "text": "use r/K as an intuitive first approximation, not current theory, and reach for age-structured models for rigour."}
+  ],
+  "limits": "The theory has largely been superseded in professional ecology since the late 1970s. Stephen Stearns judged it a once-useful heuristic that no longer serves a purpose, and it was replaced by demographically explicit, age-structured life-history theory that predicts strategies from age-specific mortality and fecundity rather than from crowding alone. Empirical tests gave mixed results, the simple dichotomy oversimplifies a continuum and bundles many traits without a rigorous mechanism, and citations declined sharply. It has also been misappropriated in discredited racist pseudoscience, notably J. P. Rushton's application to human races, which is rejected as unscientific.",
+  "misreadings": "r/K selection describes a spectrum, not a binary; species are more or less r- or K-selected relative to one another, not simply one or the other. It is a historical, heuristic framework, not current cutting-edge ecology, having been superseded by age-structured life-history theory. And its attempted extension to human races by J. P. Rushton is thoroughly discredited pseudoscience that misapplies the model far beyond its scope, not a legitimate use of the theory.",
+  "origin": "The r and K terminology was introduced by Robert MacArthur and E. O. Wilson in their 1967 'The Theory of Island Biogeography' and developed into a life-history framework by Eric Pianka in his 1970 paper 'On r- and K-Selection'.",
+  "category": "science",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1967,
+  "sources": [
+    {"text": "r/K selection theory, Wikipedia. — the r and K contrast, the logistic-equation origin, and the theory's decline and misuse.", "url": "https://en.wikipedia.org/wiki/R/K_selection_theory", "type": "secondary"},
+    {"text": "Pianka, 'On r- and K-Selection,' The American Naturalist 104(940):592-597 (1970). — the life-history elaboration of the framework.", "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/282697", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/R/K_selection_theory",
+  "related": [
+    {"slug": "island-biogeography", "kind": "kindred"}
+  ]
+}
