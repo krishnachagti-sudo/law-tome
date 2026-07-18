@@ -110,16 +110,23 @@ export function lawPage(law, ctx = {}) {
   // own card grid (examples, variants) pass reveal=false and let the CARDS reveal
   // individually (staggered) instead, so nothing double-animates. Each block also
   // registers a table-of-contents entry (the left scroll-spy rail) via a side effect.
-  const block = (label, inner, reveal = true) => {
+  // Each section carries two headings: a short editorial `label` kept as a mono
+  // eyebrow (and as the scroll-rail / anchor id), and a keyword-bearing `heading`
+  // rendered as the real <h2> — so the page has a proper H1→H2 hierarchy for SEO
+  // and answer engines, phrased the way people search ("Examples of X", "How X
+  // works", "The origin of X"). heading defaults to the label when omitted.
+  const block = (label, inner, reveal = true, heading = '') => {
     const id = 'sec-' + idify(label);
     toc.push({ label, id });
+    const h2 = `        <h2 class="block-h">${escapeHtml(heading || label)}</h2>\n`;
     return `      <div class="block" id="${id}"${reveal ? ' data-reveal' : ''}>
-        <div class="lbl">${label}</div>
-${inner}
+        <div class="lbl">${escapeHtml(label)}</div>
+${h2}${inner}
       </div>`;
   };
+  const L = law.name;
 
-  if (law.meaning) blocks.push(block('In plain English', `        <p class="lead">${escapeHtml(law.meaning)}</p>`));
+  if (law.meaning) blocks.push(block('In plain English', `        <p class="lead">${escapeHtml(law.meaning)}</p>`, true, `What ${L} means`));
 
   // ---- infographic card: reliability meter + lineage timeline. Both use only
   // real per-law data (the controlled reliability tier; the coined/popular years),
@@ -164,7 +171,7 @@ ${inner}
   const vizInner = reliabilityMeter() + lineageTimeline();
   if (vizInner) blocks.push(`      <div class="viz-card" data-reveal>\n${vizInner}\n      </div>`);
 
-  if (law.mechanism) blocks.push(block('How it works', `        <p class="prose">${escapeHtml(law.mechanism)}</p>`));
+  if (law.mechanism) blocks.push(block('How it works', `        <p class="prose">${escapeHtml(law.mechanism)}</p>`, true, `How ${L} works`));
   // Concept schematic (illustrative figure), when the law names one.
   if (law.schematic) { const fig = schematicFigure(law.schematic); if (fig) blocks.push(fig); }
 
@@ -180,7 +187,7 @@ ${inner}
       return `          <div class="example" data-reveal><span class="ex-tag">${escapeHtml(tag)}</span> ${escapeHtml(text)}</div>`;
     }).join('\n');
     const grid = `        <div class="examples-grid">\n${cards}\n        </div>`;
-    blocks.push(block(exItems.length > 1 ? "Where you'll see it" : 'An example', grid, false));
+    blocks.push(block(exItems.length > 1 ? "Where you'll see it" : 'An example', grid, false, `Examples of ${L}`));
   }
 
   // Variants: named sub-forms / corollaries ({name, text}) — e.g. the four types of Goodhart.
@@ -188,7 +195,7 @@ ${inner}
     const items = law.variants.map((v) =>
       `          <div class="variant" data-reveal><span class="vname">${escapeHtml(v.name)}</span><p class="vtext">${escapeHtml(v.text)}</p></div>`
     ).join('\n');
-    blocks.push(block('Types & variants', `        <div class="variants">\n${items}\n        </div>`, false));
+    blocks.push(block('Types & variants', `        <div class="variants">\n${items}\n        </div>`, false, `Types and variants of ${L}`));
   }
 
   // Callout cards give the later, prose-only sections visual weight (inline SVG
@@ -200,7 +207,7 @@ ${inner}
   };
   const callout = (tone, text) => `        <div class="callout callout--${tone}">${CALLOUT_ICON[tone]}<p>${escapeHtml(text)}</p></div>`;
 
-  if (law.whyItMatters) blocks.push(block('Why it matters', callout('key', law.whyItMatters)));
+  if (law.whyItMatters) blocks.push(block('Why it matters', callout('key', law.whyItMatters), true, `Why ${L} matters`));
 
   // Working with it: a practical playbook. Items are {lead, text} (bold lead) or plain strings.
   if (Array.isArray(law.working) && law.working.length) {
@@ -211,18 +218,18 @@ ${inner}
       }
       return `          <li>${escapeHtml(w)}</li>`;
     }).join('\n');
-    blocks.push(block('Working with it', `        <ul class="playbook">\n${items}\n        </ul>`));
+    blocks.push(block('Working with it', `        <ul class="playbook">\n${items}\n        </ul>`, true, `How to apply ${L}`));
   }
 
-  if (law.limits) blocks.push(block('Where it breaks down', callout('warn', law.limits)));
-  if (law.misreadings) blocks.push(block("What it doesn't say", callout('info', law.misreadings)));
-  if (law.origin) blocks.push(block('Origin', `        <p class="prose">${escapeHtml(law.origin)}</p>`));
+  if (law.limits) blocks.push(block('Where it breaks down', callout('warn', law.limits), true, `The limits of ${L}`));
+  if (law.misreadings) blocks.push(block("What it doesn't say", callout('info', law.misreadings), true, `Common misconceptions about ${L}`));
+  if (law.origin) blocks.push(block('Origin', `        <p class="prose">${escapeHtml(law.origin)}</p>`, true, `The origin of ${L}`));
 
   if (coined) {
     // Coined laws carry no external sources; credit the submitter instead.
     if (law.submittedBy) {
       blocks.push(block('Submitted by',
-        `        <p class="prose">Coined for The Law Tome by ${escapeHtml(law.submittedBy)}.</p>`));
+        `        <p class="prose">Coined for The Law Tome by ${escapeHtml(law.submittedBy)}.</p>`, true, `Who coined ${L}`));
     }
   } else if (Array.isArray(law.sources) && law.sources.length) {
     const items = law.sources.map((s, i) => {
@@ -232,7 +239,7 @@ ${inner}
       const type = s.type ? `<span class="stype">${escapeHtml(s.type)}</span>` : '';
       return `          <li><span class="snum">${i + 1}</span><span class="stext">${label}</span>${type}</li>`;
     }).join('\n');
-    blocks.push(block('Sources', `        <ol class="sources-list">\n${items}\n        </ol>`));
+    blocks.push(block('Sources', `        <ol class="sources-list">\n${items}\n        </ol>`, true, `Sources & further reading`));
   }
 
   if (Array.isArray(law.confusedWith) && law.confusedWith.length) {
@@ -241,7 +248,7 @@ ${inner}
       const name = escapeHtml(r.name || slug);
       return `          <a href="${permalink(slug)}"><i class="ti ti-arrow-right" aria-hidden="true"></i> ${name}</a>`;
     }).join('\n');
-    blocks.push(block('Commonly confused with', `        <div class="confused">\n${links}\n        </div>`));
+    blocks.push(block('Commonly confused with', `        <div class="confused">\n${links}\n        </div>`, true, `Laws commonly confused with ${L}`));
   }
 
   // Related laws split into kindred vs. opposing ("in tension"). A relation is
@@ -263,11 +270,11 @@ ${inner}
     const against = law.related.filter((r) => isAgainst(r.kind));
     if (kindred.length) {
       blocks.push(block('Related laws',
-        `        <div class="rel-cards">\n${kindred.map((r) => relCard(r, false)).join('\n')}\n        </div>`, false));
+        `        <div class="rel-cards">\n${kindred.map((r) => relCard(r, false)).join('\n')}\n        </div>`, false, `Laws related to ${L}`));
     }
     if (against.length) {
       blocks.push(block('In tension with',
-        `        <div class="rel-cards against">\n${against.map((r) => relCard(r, true)).join('\n')}\n        </div>`, false));
+        `        <div class="rel-cards against">\n${against.map((r) => relCard(r, true)).join('\n')}\n        </div>`, false, `Laws in tension with ${L}`));
     }
   }
 

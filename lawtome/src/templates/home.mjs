@@ -99,7 +99,7 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
   const browse = `<section class="sec" id="index">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Browse the index</h2>
+      <h2>Browse the index of named laws</h2>
       <span class="sub" id="showing">showing 0 of ${count}</span>
     </div>
     <div class="chips" id="chips"></div>

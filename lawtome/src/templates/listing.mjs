@@ -48,10 +48,13 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
     ? rows.map((l) => lawCard(l, base)).join('\n')
     : '<div class="empty">No laws to show yet.</div>';
 
+  // On-page H1: category pages use the field label (already a keyword); the browse
+  // index gets a descriptive, keyword-bearing H1 instead of the bare nav word.
+  const h1 = kind === 'category' ? title : 'Named laws, principles & effects';
   const section = `<section class="sec" id="index">
   <div class="wrap">
     <div class="sec-head">
-      <h1>${escapeHtml(title)}</h1>
+      <h1>${escapeHtml(h1)}</h1>
       <span class="sub" id="showing">showing ${rows.length} of ${rows.length}</span>
     </div>
     <div class="chips" id="chips">${chips}</div>
