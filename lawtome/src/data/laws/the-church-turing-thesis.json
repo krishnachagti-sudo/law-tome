@@ -1,0 +1,55 @@
+{
+  "no": "226",
+  "slug": "the-church-turing-thesis",
+  "name": "The Church-Turing Thesis",
+  "statement": "Anything that can be computed by any mechanical procedure can be computed by a Turing machine.",
+  "statementAccent": "can be computed by a Turing machine",
+  "meaning": "A function is effectively calculable — computable by some intuitive, finite, step-by-step procedure — if and only if it is computable by a Turing machine. In other words, the abstract Turing machine captures exactly what it means for anything to be computable at all; no genuine mechanical method escapes it.",
+  "mechanism": "The thesis draws its force from convergence. Several models of computation, invented independently on entirely different foundations — Turing machines, Church's lambda calculus, the general recursive functions, register machines — were each proven to define exactly the same class of computable functions. A function is computable in one if and only if it is computable in all. This coincidence of unrelated definitions, none ever exceeded by a stronger reasonable model, is the central evidence that they all capture the same intuitive notion.",
+  "examples": [
+    {
+      "tag": "Lambda calculus equals machines",
+      "text": "Anything definable in Church's lambda calculus — a formalism of pure symbolic substitution — can be computed by a Turing machine and vice versa, two utterly different systems picking out one identical class of functions."
+    },
+    {
+      "tag": "Recursive functions equal machines",
+      "text": "The general recursive functions of Herbrand and Godel coincide exactly with the Turing-computable functions — again an independently motivated definition landing on the same class."
+    },
+    {
+      "tag": "No stronger reasonable model",
+      "text": "In ninety years, every proposed model of mechanical computation — cellular automata, real programming languages, quantum machines for what is computable — has turned out to compute at most the Turing-computable functions, never more."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The physical Church-Turing thesis",
+      "text": "The stronger claim that every function computable by any physical process is Turing-computable — a statement about physics, not mathematics, and genuinely debated."
+    },
+    {
+      "name": "The extended thesis",
+      "text": "The efficiency version, that any reasonable model can be simulated with only polynomial slowdown — challenged by quantum computing, where Shor's algorithm gives an apparent super-polynomial speedup."
+    }
+  ],
+  "whyItMatters": "It is the foundational bridge between the informal idea of computation and its precise mathematical model, licensing the whole theory of computability. Because of it, results proved about Turing machines — like the undecidability of the halting problem — are taken to apply to every possible computer and programming language.",
+  "working": [
+    {"lead": "Treat Turing-computable as computable", "text": "when reasoning about what any algorithm can do, use the Turing machine as the stand-in for computation in general."},
+    {"lead": "Read the equivalences as evidence", "text": "take the coincidence of independent models on one function class as the reason to accept the thesis, not a proof of it."},
+    {"lead": "Separate the versions", "text": "keep the original computability thesis distinct from the physical and efficiency versions, which are separate and contested claims."}
+  ],
+  "limits": "It is a thesis, not a theorem, and cannot be formally proved, because one side of it — 'effectively calculable' — is an informal, pre-mathematical notion, and no proof can equate a precise class with a vague intuition. It could in principle be refuted by exhibiting an accepted mechanical procedure that no Turing machine computes, which has never happened. Its physical version, about what real devices can compute, depends on open physics; its efficiency version is challenged by quantum computing. These stronger claims are logically separate from the original and should not be conflated with it.",
+  "misreadings": "It is not a proven theorem — the equivalence of the various computation models is proved, but the thesis linking them to the informal notion of computability is not and cannot be. And the popular slogans about physical devices or efficient simulation are separate, contested theses, not the original claim.",
+  "origin": "Advanced independently in 1936 by Alonzo Church, via the lambda calculus and recursive functions, and Alan Turing, via his machines, with Church publishing slightly earlier; Stephen Kleene later named it, and Godel was persuaded specifically by Turing's analysis.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1936,
+  "namedAfter": "Alonzo Church and Alan Turing",
+  "sources": [
+    {"text": "The Church-Turing Thesis, Stanford Encyclopedia of Philosophy. — the statement, why it is a thesis not a theorem, and the separate physical and extended versions.", "url": "https://plato.stanford.edu/entries/church-turing/", "type": "secondary"},
+    {"text": "Church-Turing thesis, Wikipedia. — the effective-calculability formulation and the convergence of computation models.", "url": "https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis",
+  "related": [
+    {"slug": "the-halting-problem", "kind": "kindred"}
+  ]
+}

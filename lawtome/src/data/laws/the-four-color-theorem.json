@@ -1,0 +1,55 @@
+{
+  "no": "234",
+  "slug": "the-four-color-theorem",
+  "name": "The Four Color Theorem",
+  "statement": "Any map can be coloured with just four colours so no two neighbours match.",
+  "statementAccent": "just four colours",
+  "meaning": "Any map drawn in the plane, or equivalently on a sphere, can be coloured with at most four colours so that no two regions sharing a border segment receive the same colour. Four colours always suffice, no matter how the map is carved up, and some maps genuinely require all four.",
+  "mechanism": "Adjacency means sharing a boundary of non-zero length, not merely touching at a single corner where several regions meet — a distinction that is essential, since otherwise many regions could meet at a point and no bound would exist. Turn each region into a vertex and join two vertices whose regions share a border; the result is always a planar graph, so colouring the map becomes colouring a planar graph with four colours. The proof reduces the infinitude of maps to a finite set of configurations that every map must contain, then shows none can appear in a minimal counterexample.",
+  "examples": [
+    {
+      "tag": "Four mutually bordering regions",
+      "text": "Whenever four regions each share a border with the other three, they need four distinct colours — the reason three colours cannot suffice in general and the bound is four."
+    },
+    {
+      "tag": "Point contact does not count",
+      "text": "A pie of many wedges meeting only at the centre can be coloured with two alternating colours, illustrating why adjacency requires a shared border of real length, not a single shared point."
+    },
+    {
+      "tag": "Other surfaces differ",
+      "text": "The bound of four is special to the plane and sphere; on a torus, up to seven colours can be required, so the theorem is a statement about flat maps specifically."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The five color theorem",
+      "text": "The weaker statement that any planar map can be coloured with five colours, which has a short proof checkable by hand, unlike the four-colour result."
+    },
+    {
+      "name": "The formal Coq proof",
+      "text": "Gonthier and Werner's 2005 formalisation of the entire proof in the Coq proof assistant, which reduced the trust required to the correctness of the proof-checker's kernel."
+    }
+  ],
+  "whyItMatters": "It is a landmark of graph theory and, more famously, the first major theorem proved with substantial computer assistance, which forced mathematicians to debate whether a proof no human can fully survey still counts as a proof. That methodological question, not any doubt about its truth, is its lasting significance.",
+  "working": [
+    {"lead": "Expect four to be enough", "text": "for any planar map, take four colours as sufficient to separate all neighbours, and never reach for a fifth."},
+    {"lead": "Model regions as a graph", "text": "turn a colouring problem into planar graph colouring by making regions vertices and shared borders edges."},
+    {"lead": "Mind the surface", "text": "apply the four-colour bound only to the plane or sphere, since other surfaces like the torus need more."}
+  ],
+  "limits": "Its scope is the plane and sphere; other surfaces require different numbers of colours, a torus needing up to seven. The controversy it sparked was methodological, not mathematical: because the 1976 proof reduced the problem to a large set of configurations checked by computer, it could not be verified by hand, raising the question of whether an un-surveyable proof is a genuine proof. That concern about method has been largely settled on the correctness side by the 2005 machine-verified formalisation; no serious doubt remains that the statement is true.",
+  "misreadings": "It applies only to flat maps — on curved surfaces the number of colours needed changes. And the debate it caused was about what counts as a proof, not about whether the theorem is correct; its truth is not in doubt, especially after the formal machine-checked proof.",
+  "origin": "Conjectured by Francis Guthrie in 1852; Alfred Kempe's 1879 proof was accepted for over a decade until Percy Heawood found its flaw in 1890; finally proved by Kenneth Appel and Wolfgang Haken at the University of Illinois in 1976, with computer assistance.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1976,
+  "namedAfter": "Francis Guthrie",
+  "sources": [
+    {"text": "Four color theorem, Wikipedia. — the statement, the adjacency definition, the Guthrie/Kempe/Appel-Haken history, and the computer-proof debate.", "url": "https://en.wikipedia.org/wiki/Four_color_theorem", "type": "secondary"},
+    {"text": "\"The four colour theorem,\" MacTutor History of Mathematics. — the 1852 origin, Kempe's flawed proof, and the 1976 proof.", "url": "https://mathshistory.st-andrews.ac.uk/HistTopics/The_four_colour_theorem/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Four_color_theorem",
+  "related": [
+    {"slug": "the-pythagorean-theorem", "kind": "kindred"}
+  ]
+}

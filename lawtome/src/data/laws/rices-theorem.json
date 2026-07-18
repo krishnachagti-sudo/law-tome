@@ -1,0 +1,56 @@
+{
+  "no": "232",
+  "slug": "rices-theorem",
+  "name": "Rice's Theorem",
+  "statement": "Every non-trivial question about what a program does is undecidable.",
+  "statementAccent": "what a program does is undecidable",
+  "meaning": "Every non-trivial semantic property of a program — any property of the behaviour or function it computes, that holds for some programs but not all — is undecidable. There is no general algorithm that can decide, for every possible program, any interesting question about what that program actually does.",
+  "mechanism": "The proof reduces from the halting problem. Suppose a decider existed for some non-trivial behavioural property; arrange, without loss of generality, that a never-halting program lacks the property while some program has it. Given any program and input, build a new program that first simulates the given one and, only if that halts, behaves like the program with the property. The new program has the property exactly when the original halts — so deciding the property would decide halting, which is impossible. The property must be semantic, depending only on the function computed, so that two programs computing the same function are treated alike.",
+  "examples": [
+    {
+      "tag": "Does it ever print this?",
+      "text": "Whether an arbitrary program ever outputs a particular value is a non-trivial semantic property — some programs do, some do not — and is therefore undecidable in general."
+    },
+    {
+      "tag": "Are two programs equivalent?",
+      "text": "Deciding whether two arbitrary programs compute the same function is undecidable, since equivalence to a fixed program is a non-trivial behavioural property."
+    },
+    {
+      "tag": "Why perfect analysis is impossible",
+      "text": "The theorem sets a hard limit on static analysis, verification, and optimisation: no general tool can perfectly decide arbitrary behavioural properties, so real tools must approximate soundly and conservatively."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The halting problem",
+      "text": "The special, foundational case that Rice's theorem generalises and that supplies the reduction in its proof — deciding whether a program halts is itself one undecidable behavioural property."
+    },
+    {
+      "name": "The Rice-Shapiro theorem",
+      "text": "A refinement for semi-decidable properties: such a property holding of a function must already hold on some finite part of it, capturing that the only general way to learn a program's behaviour is to run it."
+    }
+  ],
+  "whyItMatters": "It vastly generalises the halting problem, showing that undecidability is not a quirk of one question but pervades every behavioural property of programs. It is the theoretical reason perfect, general-purpose program analysis, verification, and optimisation are impossible, and why such tools rely on sound approximation instead.",
+  "working": [
+    {"lead": "Expect behavioural questions to be undecidable", "text": "for any non-trivial property of what an arbitrary program does, assume no general algorithm can decide it."},
+    {"lead": "Lean on syntactic properties where you can", "text": "note that properties of the source text itself, unlike behaviour, are often decidable and can be checked directly."},
+    {"lead": "Approximate soundly", "text": "since perfect behavioural analysis is impossible, build tools that safely over- or under-approximate rather than aim for exact answers."}
+  ],
+  "limits": "It applies only to semantic, behavioural properties — properties of the function computed. Syntactic properties of the source text, such as its length or whether it contains a certain keyword, are decidable, and the theorem says nothing against them. Trivial properties, true of every program or of none, are also decidable; non-triviality is a required hypothesis. And it concerns general algorithms over all programs — many specific instances, and restricted or finite-state classes, are perfectly decidable.",
+  "misreadings": "It does not say every property of a program is undecidable — syntactic properties of the source are decidable, and so are trivial properties. And it is about general algorithms over all programs, not about any particular program, whose behaviour may well be determinable case by case.",
+  "origin": "Proved by Henry Gordon Rice in 'Classes of recursively enumerable sets and their decision problems,' Transactions of the American Mathematical Society 74:358-366 (1953), drawn from his doctoral work.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1953,
+  "namedAfter": "Henry Gordon Rice",
+  "sources": [
+    {"text": "Rice's theorem, Wikipedia. — the non-trivial-semantic-property statement, the halting-problem reduction, and the semantic-versus-syntactic distinction.", "url": "https://en.wikipedia.org/wiki/Rice%27s_theorem", "type": "secondary"},
+    {"text": "Rice's theorem, Wolfram MathWorld. — the index-set formulation and the 1953 citation.", "url": "https://mathworld.wolfram.com/RicesTheorem.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Rice%27s_theorem",
+  "related": [
+    {"slug": "the-halting-problem", "kind": "cause"},
+    {"slug": "godels-incompleteness-theorems", "kind": "kindred"}
+  ]
+}

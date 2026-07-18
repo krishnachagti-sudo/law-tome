@@ -1,0 +1,54 @@
+{
+  "no": "230",
+  "slug": "the-two-generals-problem",
+  "name": "The Two Generals' Problem",
+  "statement": "Over a channel that can lose messages, two honest parties can never be sure they agree.",
+  "statementAccent": "can never be sure they agree",
+  "meaning": "It is provably impossible for two parties communicating only over an unreliable channel — where any message may be lost — to reach guaranteed agreement on a coordinated action. No finite exchange of confirmations can make both parties simultaneously certain the other is committed, because every message, including every acknowledgement, may itself be lost and so needs its own confirmation.",
+  "mechanism": "Two generals must attack a city at the same time to win; attacking alone means defeat. Their only link is a messenger who may be captured. The first general sends 'attack at dawn,' but cannot know it arrived. The second acknowledges, but cannot know the acknowledgement arrived. The first must confirm the acknowledgement, and so on without end. There is always a last message whose delivery is unconfirmed, and whichever general sent it cannot rely on the plan — so no finite protocol ever leaves both certain, and common knowledge is unattainable over a lossy channel.",
+  "examples": [
+    {
+      "tag": "The captured messenger",
+      "text": "The canonical picture — two generals separated by an enemy valley, sending messengers who may be seized, unable to ever both be sure the attack is jointly agreed."
+    },
+    {
+      "tag": "The TCP handshake",
+      "text": "TCP's connection setup is a pragmatic, not perfect, response: timeouts and retransmissions drive the failure probability low, but no finite exchange of packets yields mathematical certainty that both ends agree."
+    },
+    {
+      "tag": "Committing a transaction",
+      "text": "Two database nodes trying to agree to commit a transaction face exactly this problem, which is why distributed commit protocols settle for high-probability reliability rather than guaranteed certainty."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The coordinated attack problem",
+      "text": "The same impossibility formalised in distributed-computing theory, framed as processes trying to agree on a synchronised action over a lossy network."
+    },
+    {
+      "name": "Common knowledge",
+      "text": "The epistemic framing: the result is equivalent to the statement that common knowledge cannot be achieved by communication over an unreliable channel."
+    }
+  ],
+  "whyItMatters": "It was the first computer-communication problem proved unsolvable, and it draws a permanent line under what reliable coordination can achieve over an imperfect network. It explains why real protocols aim for very high probability of agreement rather than certainty, and why perfect distributed consensus over lossy links is unattainable.",
+  "working": [
+    {"lead": "Do not chase perfect agreement", "text": "over an unreliable channel, accept that guaranteed mutual certainty is impossible and design for high probability instead."},
+    {"lead": "Use timeouts and retries", "text": "drive the chance of coordination failure arbitrarily low with retransmission, as TCP and commit protocols do."},
+    {"lead": "Separate channel from party faults", "text": "recognise this as an unreliable-channel problem with honest parties, distinct from faults caused by malicious participants."}
+  ],
+  "limits": "The impossibility concerns deterministic, guaranteed agreement with perfect certainty; it does not mean coordination is useless in practice. Probabilistic and pragmatic approaches — retries, timeouts, cumulative acknowledgements — drive the failure probability arbitrarily low, giving reasonable confidence rather than proof, which is what real protocols rely on. The result holds within its model: any message may be lost, with no bound on loss. Accepting a tiny residual uncertainty is exactly what makes engineering solutions viable; the impossibility is of perfect certainty, not of practical reliability.",
+  "misreadings": "It does not say networked coordination is hopeless — practical protocols achieve extremely high reliability; it says perfect, guaranteed certainty is unattainable. And it is not the Byzantine generals problem: here the parties are honest and the channel is unreliable, not the reverse.",
+  "origin": "First described and proved unsolvable by Akkoyunlu, Ekanadham, and Huber in 1975 (framed there as communicating gangsters); the memorable 'two generals' name was given by Jim Gray in 1978 in the context of distributed databases.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1975,
+  "sources": [
+    {"text": "Two Generals' Problem, Wikipedia. — the impossibility statement, the acknowledgement regress, the TCP framing, and the Akkoyunlu/Gray attribution.", "url": "https://en.wikipedia.org/wiki/Two_Generals%27_Problem", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Two_Generals%27_Problem",
+  "related": [
+    {"slug": "the-byzantine-generals-problem", "kind": "kindred"},
+    {"slug": "the-cap-theorem", "kind": "kindred"}
+  ]
+}

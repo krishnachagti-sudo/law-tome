@@ -1,0 +1,55 @@
+{
+  "no": "227",
+  "slug": "the-p-versus-np-problem",
+  "name": "The P versus NP Problem",
+  "statement": "If a solution can be checked quickly, can it also be found quickly? Nobody knows.",
+  "statementAccent": "Nobody knows",
+  "meaning": "The problem asks whether every problem whose solution can be verified quickly can also be solved quickly. P is the class of problems solvable in polynomial time; NP is the class whose candidate solutions can be verified in polynomial time. The question — does P equal NP? — is one of the deepest open problems in mathematics and computer science, and remains unsolved.",
+  "mechanism": "Polynomial time is the standard proxy for tractable — running time bounded by a polynomial in the input size. Within NP sit the NP-complete problems, the hardest members: every problem in NP reduces to any one of them in polynomial time, so if a single NP-complete problem had a fast algorithm, all of NP would collapse into P. The Cook-Levin theorem established the first such problem, Boolean satisfiability, proving that any NP problem can be transformed into a satisfiability question — which makes finding a fast algorithm for it equivalent to settling P versus NP.",
+  "examples": [
+    {
+      "tag": "Verifying versus finding",
+      "text": "Checking a completed jigsaw or a filled-in Sudoku is easy, but finding the solution from scratch can be enormously hard — the everyday shape of the gap between verifying and solving."
+    },
+    {
+      "tag": "NP-complete problems",
+      "text": "Boolean satisfiability, the travelling salesman decision problem, and generalised Sudoku are NP-complete: a proposed solution is quick to check, yet no known algorithm finds one quickly, and all share the same fate."
+    },
+    {
+      "tag": "The stakes for cryptography",
+      "text": "Modern public-key encryption relies on problems being hard to solve but easy to verify; were P shown to equal NP with a practical algorithm, much of that security could unravel."
+    }
+  ],
+  "variants": [
+    {
+      "name": "NP-complete and NP-hard",
+      "text": "NP-complete problems lie in NP and are the hardest within it; NP-hard problems are at least as hard but need not lie in NP, or even be decision problems."
+    },
+    {
+      "name": "The Cook-Levin theorem",
+      "text": "The foundational result establishing Boolean satisfiability as the first NP-complete problem, the anchor from which thousands of other problems were shown NP-complete."
+    }
+  ],
+  "whyItMatters": "It is the central open question of computational complexity and one of the seven Clay Millennium Prize Problems, carrying a million-dollar prize. Its answer would reshape cryptography, optimisation, and our understanding of the limits of efficient computation — telling us whether creativity in problem-solving is fundamentally harder than recognising a good answer.",
+  "working": [
+    {"lead": "Separate checking from solving", "text": "when facing a hard problem, distinguish how easily a candidate answer can be verified from how hard it is to find one."},
+    {"lead": "Recognise NP-completeness", "text": "if a problem is NP-complete, expect no known efficient algorithm and reach for approximation or heuristics instead."},
+    {"lead": "Hold the answer as open", "text": "treat P versus NP as unresolved — most believe P is not NP, but neither direction has been proved."}
+  ],
+  "limits": "This is an open, unsolved problem: no proof exists in either direction. The prevailing belief among theorists is that P is not NP — successive expert surveys put agreement above eighty percent — but belief is not proof, and flawed claimed proofs of both possibilities appear regularly, none accepted. The framework around it — the definitions of P, NP, NP-completeness, and the Cook-Levin theorem — is settled mathematics; it is the headline question itself that remains unresolved.",
+  "misreadings": "It is not a solved or nearly-solved question — it is genuinely open, and 'P is not NP' is a widely held conjecture, not an established fact. And a proof that P equals NP would not automatically break all encryption overnight; the practical impact would depend on whether the algorithm it produced were efficient in practice.",
+  "origin": "Formalised by Stephen Cook in 'The Complexity of Theorem-Proving Procedures' (1971), which proved satisfiability NP-complete; Leonid Levin reached the result independently, published in 1973, and it was named a Clay Millennium Prize Problem in 2000.",
+  "category": "software",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1971,
+  "namedAfter": "Stephen Cook and Leonid Levin",
+  "sources": [
+    {"text": "P versus NP problem, Wikipedia. — the definitions, the open status, NP-completeness, the expert surveys, and the Clay prize.", "url": "https://en.wikipedia.org/wiki/P_versus_NP_problem", "type": "secondary"},
+    {"text": "P vs NP, Clay Mathematics Institute. — the official framing of the Millennium Prize Problem.", "url": "https://www.claymath.org/millennium/p-vs-np/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/P_versus_NP_problem",
+  "related": [
+    {"slug": "the-church-turing-thesis", "kind": "kindred"}
+  ]
+}

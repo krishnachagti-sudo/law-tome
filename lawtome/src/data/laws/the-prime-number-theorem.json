@@ -1,0 +1,73 @@
+{
+  "no": "237",
+  "slug": "the-prime-number-theorem",
+  "name": "The Prime Number Theorem",
+  "statement": "Primes thin out predictably: near a number, about one in its natural-log-many is prime.",
+  "meaning": "The number of primes up to a given size is approximately that size divided by its natural logarithm. Equivalently, near a large number the density of primes is about one over its natural logarithm, so the average gap between consecutive primes near it is about that logarithm. Primes become rarer as numbers grow, but in a smooth, predictable way.",
+  "mechanism": "The theorem is an asymptotic statement: the ratio of the true prime count to the estimate approaches one as numbers grow, though the absolute difference does not shrink. A sharper approximation is the logarithmic integral, which accumulates the varying density rather than using a single value. The deep proof runs through the Riemann zeta function: the distribution of primes is controlled by the zeros of that function, and showing it has no zeros on a certain critical line is exactly what forces the asymptotic law.",
+  "examples": [
+    {
+      "tag": "One in a logarithm",
+      "text": "Near a million, whose natural logarithm is about fourteen, roughly one number in fourteen is prime; near a billion, whose logarithm is about twenty-one, roughly one in twenty-one — the density steadily thinning."
+    },
+    {
+      "tag": "The estimate improves",
+      "text": "Dividing by the logarithm consistently undercounts the primes, while the logarithmic integral tracks the true count far more closely, its relative error shrinking as numbers grow."
+    },
+    {
+      "tag": "From guess to proof",
+      "text": "Gauss as a teenager and Legendre both conjectured the law from tables of primes, but it stood unproven for a century until complex analysis of the zeta function settled it."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The logarithmic integral",
+      "text": "The refined approximation to the prime count that integrates the local density, far more accurate than dividing by the logarithm, and asymptotically equal to the true count."
+    },
+    {
+      "name": "The Riemann hypothesis",
+      "text": "The famous unproven conjecture about the zeros of the zeta function, equivalent to the sharpest possible bound on the error in the prime number theorem."
+    }
+  ],
+  "whyItMatters": "It is the central result on how the primes are distributed, turning their apparent randomness into a precise statistical law and founding analytic number theory. Its connection to the Riemann zeta function ties the primes to one of the deepest open problems in mathematics, the Riemann hypothesis, which governs how good its approximation can be.",
+  "working": [
+    {
+      "lead": "Estimate prime counts",
+      "text": "approximate how many primes lie below a number by dividing it by its natural logarithm, or better, using the logarithmic integral."
+    },
+    {
+      "lead": "Expect predictable thinning",
+      "text": "treat the density of primes near a number as about one over its logarithm, so gaps widen slowly as numbers grow."
+    },
+    {
+      "lead": "Read it as asymptotic",
+      "text": "trust the law's relative accuracy for large numbers, remembering the absolute error grows even as the ratio tends to one."
+    }
+  ],
+  "limits": "It is asymptotic: an approximation whose relative accuracy improves as numbers grow, while the absolute difference between the true count and the simple estimate actually diverges. The size of its error term is tied to the still-unproven Riemann hypothesis, so the sharpest bound is only conditional. The logarithmic integral overestimates the true count throughout all reachable ranges, yet Littlewood proved the difference changes sign infinitely often, first flipping at a number so vast it is known only within wide brackets.",
+  "misreadings": "It says the ratio of the true count to the estimate tends to one, not that their difference is small — that difference grows without bound. And though Gauss and Legendre conjectured it, it is now a fully proven theorem, not a mere empirical pattern; only the optimal error term remains open, through the Riemann hypothesis.",
+  "origin": "Conjectured from prime tables by Gauss in the 1790s and Legendre around 1797-1798, and first proved independently in 1896 by Jacques Hadamard and Charles-Jean de la Vallee Poussin using complex analysis of the zeta function; an elementary proof came from Erdos and Selberg in 1948-1949.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1896,
+  "sources": [
+    {
+      "text": "Prime number theorem, Wikipedia. — the asymptotic statement, the logarithmic integral, the zeta-function connection, and the conjecture-to-proof history.",
+      "url": "https://en.wikipedia.org/wiki/Prime_number_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Prime number theorem, Wolfram MathWorld. — the statement, the Riemann-hypothesis error bound, and the proof history.",
+      "url": "https://mathworld.wolfram.com/PrimeNumberTheorem.html",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Prime_number_theorem",
+  "related": [
+    {
+      "slug": "the-fundamental-theorem-of-arithmetic",
+      "kind": "kindred"
+    }
+  ]
+}

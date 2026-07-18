@@ -1,0 +1,55 @@
+{
+  "no": "231",
+  "slug": "the-byzantine-generals-problem",
+  "name": "The Byzantine Generals Problem",
+  "statement": "A system can reach agreement despite traitors only if fewer than a third of its members are faithless.",
+  "statementAccent": "fewer than a third of its members are faithless",
+  "meaning": "A distributed system must reach agreement even when some of its components fail arbitrarily or maliciously, sending conflicting information to different recipients — so-called Byzantine faults. With plain unsigned messages, reliable agreement is achievable only if more than two-thirds of participants are loyal: tolerating a given number of traitors requires more than three times as many participants as traitors.",
+  "mechanism": "Loyal generals surrounding a city must all decide to attack or retreat together, while traitors send contradictory messages to sow disagreement. The requirements are that all loyal generals reach the same decision, and that if the commander is loyal they follow the commander's order. With oral, forgeable messages, the recursive solution relays messages through several rounds and takes majorities, and it works if and only if the total exceeds three times the number of traitors. With just three generals and one traitor, no solution exists — the loyal pair cannot tell which of the conflicting messages to trust.",
+  "examples": [
+    {
+      "tag": "Flight control",
+      "text": "Redundant flight-control computers in aircraft such as the Boeing 777 must agree on sensor readings and commands even if one unit fails arbitrarily — the original motivating domain, from NASA's fault-tolerance research."
+    },
+    {
+      "tag": "Blockchain consensus",
+      "text": "Bitcoin's proof-of-work is widely described as a probabilistic solution to Byzantine agreement in an open, permissionless setting, letting a network converge without a trusted coordinator despite malicious participants."
+    },
+    {
+      "tag": "Replicated services",
+      "text": "Practical Byzantine fault tolerance provides state-machine replication for services that must survive malicious or arbitrarily faulty replicas, underpinning permissioned blockchains and high-integrity databases."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Practical Byzantine fault tolerance",
+      "text": "Castro and Liskov's 1999 protocol, the first efficient Byzantine-fault-tolerant algorithm usable in real partially-synchronous systems, again requiring more than three times as many nodes as faults."
+    },
+    {
+      "name": "The FLP impossibility",
+      "text": "Fischer, Lynch, and Paterson's result that in a fully asynchronous system, no deterministic protocol can guarantee consensus if even one process may simply crash — a related limit on a different axis."
+    }
+  ],
+  "whyItMatters": "It is a foundational result of distributed computing, defining what agreement is possible when components may be not just broken but actively deceptive. It underlies fault-tolerant avionics, high-integrity systems, and the entire field of blockchain consensus, and won its authors the Dijkstra Prize.",
+  "working": [
+    {"lead": "Budget for a third", "text": "to tolerate a number of Byzantine faults with unsigned messages, provision more than three times that many participants."},
+    {"lead": "Reach for signatures to relax the bound", "text": "use unforgeable cryptographic signatures where possible, which prevent traitors from lying about others' messages and loosen the requirement."},
+    {"lead": "Distinguish malicious from unreliable", "text": "treat Byzantine faults as arbitrary or deceptive participants, distinct from an unreliable channel between honest parties."}
+  ],
+  "limits": "The bound of more than three times as many participants as faults applies to the oral, unsigned message model; with cryptographic signatures, which stop a traitor from misrepresenting what a loyal general said, the requirement relaxes and far more faults can be tolerated. It also assumes the fault count stays below the threshold — if traitors exceed a third under oral messages, the guarantee breaks. And it addresses a different axis from the FLP impossibility, which concerns deterministic consensus under crash faults in fully asynchronous systems; practical protocols sidestep FLP by assuming partial synchrony or using randomisation.",
+  "misreadings": "The one-third bound is not unconditional — it holds for unsigned messages, and cryptographic signatures change it. And it is not the two generals' problem: Byzantine faults are malicious participants over a working channel, whereas the two generals problem concerns honest parties over an unreliable channel.",
+  "origin": "Introduced by Leslie Lamport, Robert Shostak, and Marshall Pease in 'The Byzantine Generals Problem' (ACM Transactions on Programming Languages and Systems, 1982); the one-third bound was first proved in their 1980 paper on reaching agreement in the presence of faults.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1982,
+  "namedAfter": "Leslie Lamport, Robert Shostak, and Marshall Pease",
+  "sources": [
+    {"text": "Byzantine fault, Wikipedia. — the problem, the three-times bound, the effect of signatures, and the avionics and blockchain applications.", "url": "https://en.wikipedia.org/wiki/Byzantine_fault", "type": "secondary"},
+    {"text": "Lamport, Shostak & Pease, \"The Byzantine Generals Problem,\" ACM TOPLAS 4(3):382-401 (1982).", "url": "https://dl.acm.org/doi/10.1145/357172.357176", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Byzantine_fault",
+  "related": [
+    {"slug": "the-two-generals-problem", "kind": "kindred"}
+  ]
+}

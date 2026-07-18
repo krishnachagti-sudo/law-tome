@@ -1,0 +1,55 @@
+{
+  "no": "228",
+  "slug": "the-no-free-lunch-theorem",
+  "name": "The No Free Lunch Theorem",
+  "statement": "Averaged over all possible problems, no algorithm beats any other.",
+  "statementAccent": "no algorithm beats any other",
+  "meaning": "Averaged over every possible problem, weighted equally, no optimisation or search algorithm performs better than any other — not even better than blind random search. Superior performance on one class of problems is exactly paid for by inferior performance on another. There is no universally best algorithm; any real advantage must come from exploiting the structure of the particular problems you face.",
+  "mechanism": "The averaging runs over all possible objective functions drawn from a uniform distribution — every function equally likely, equivalently a set closed under permutation. Under that assumption, any performance measure depending only on the sequence of values an algorithm samples comes out identical for every algorithm, because each visits the same collection of values when averaged over all the permuted functions. The exact condition, sharpened later, is that the set of functions be closed under permutation and each equally likely; where some problems are more probable than others, algorithms can and do differ.",
+  "examples": [
+    {
+      "tag": "Optimiser versus coin flip",
+      "text": "Averaged over all cost functions, a sophisticated optimiser obtains exactly the same expected performance as random enumeration — every function it climbs efficiently is offset by an equally likely permuted function that misleads it."
+    },
+    {
+      "tag": "Learning has no free lunch either",
+      "text": "The supervised-learning version shows that, averaged uniformly over all possible target functions, every learning algorithm achieves the same off-training accuracy — chance — so a learner only beats chance by matching real structure."
+    },
+    {
+      "tag": "Benchmarks prove little",
+      "text": "Because no method is best overall, testing an algorithm on a narrow set of problems and declaring it universally superior is invalid; performance claims must be tied to a specified class of problems."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Search versus learning versions",
+      "text": "Wolpert's 1996 result for supervised learning and Wolpert and Macready's 1997 result for optimisation — two distinct but parallel theorems expressing the same underlying point."
+    },
+    {
+      "name": "Inductive bias",
+      "text": "The flip side of the theorem: since no bias-free learner can succeed, every useful algorithm must encode assumptions about its problems, and choosing the right bias is where all real gains come from."
+    }
+  ],
+  "whyItMatters": "It gives a rigorous foundation to a deep intuition: there is no magic general-purpose algorithm, and cleverness must be paid for with assumptions about the problem. It reframes algorithm and model selection as the choice of a bias matched to the structure of the task, and cautions against overselling any method as universally best.",
+  "working": [
+    {"lead": "Match the algorithm to the problem", "text": "expect gains only from exploiting the specific structure of your problems, not from a universally superior method."},
+    {"lead": "Distrust universal claims", "text": "treat any claim that one algorithm is best across the board as unsupported, and ask which problem class it was measured on."},
+    {"lead": "Choose your bias deliberately", "text": "recognise that every effective learner encodes assumptions, and pick those assumptions to fit the task at hand."}
+  ],
+  "limits": "The core theorems are proven mathematics, but their central premise — all problems equally likely, the set closed under permutation — is unrealistic. Real objective functions and learning targets are highly structured and far from uniformly distributed, so the practical relevance is genuinely contested: some hold the theorem conveys a deep limitation, others that it rarely bites because its condition almost never holds. Crucially, it does not say all algorithms are equal on real problems — on structured, realistically distributed problems, algorithm choice matters greatly. Assume a simplicity prior instead of uniformity, and methods like cross-validation provably beat random selection.",
+  "misreadings": "It does not say all algorithms perform equally on real-world problems — only when averaged over a uniform, permutation-closed universe of all problems, which real problems are not. The egalitarian conclusion is an artefact of the uniform assumption, and on structured problems a well-matched algorithm genuinely wins.",
+  "origin": "Proved by David Wolpert for supervised learning in 'The Lack of A Priori Distinctions Between Learning Algorithms' (Neural Computation, 1996), and by Wolpert and William Macready for optimisation in 'No Free Lunch Theorems for Optimization' (IEEE Transactions on Evolutionary Computation, 1997).",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1997,
+  "namedAfter": "David Wolpert and William Macready",
+  "sources": [
+    {"text": "No free lunch theorem, Wikipedia. — the averaged-equivalence statement, the permutation-closure condition, and the two versions.", "url": "https://en.wikipedia.org/wiki/No_free_lunch_theorem", "type": "secondary"},
+    {"text": "Wolpert & Macready, \"No Free Lunch Theorems for Optimization,\" IEEE Transactions on Evolutionary Computation 1(1):67-82 (1997).", "url": "https://ieeexplore.ieee.org/document/585893", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/No_free_lunch_theorem",
+  "related": [
+    {"slug": "the-p-versus-np-problem", "kind": "kindred"}
+  ]
+}
