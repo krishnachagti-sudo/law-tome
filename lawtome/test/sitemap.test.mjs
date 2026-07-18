@@ -84,12 +84,17 @@ test('build emits robots.txt that allows crawling and references the sitemap', a
   await rm(out, { recursive:true, force:true });
 });
 
-test('build emits _redirects (empty header) when no law has redirectFrom', async () => {
+test('build emits a well-formed _redirects map from law.redirectFrom', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-rd-'));
   await buildSite({ dataDir:'src/data/laws', catFile:'src/data/categories.json', assetsDir:'src/assets', out, base:'/lawtome/', origin:'https://conyso.com' });
   assert.ok(existsSync(join(out, '_redirects')), 'missing _redirects');
   const rd = await readFile(join(out, '_redirects'), 'utf8');
-  assert.doesNotMatch(rd, /301/); // seed data has no redirects
+  // The corpus carries permalink redirects (301s seeded from duplicate-slug
+  // cleanup). Every non-comment, non-blank line must be a well-formed
+  // `from  to  301` triple pointing into /lawtome/laws/.
+  const lines = rd.split('\n').filter(l => l.trim() && !l.startsWith('#'));
+  for (const l of lines)
+    assert.match(l, /^\/lawtome\/laws\/\S+\/\s+\/lawtome\/laws\/\S+\/\s+301$/, `malformed redirect line: ${l}`);
   await rm(out, { recursive:true, force:true });
 });
 

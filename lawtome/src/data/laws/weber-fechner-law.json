@@ -36,9 +36,18 @@
   ],
   "whyItMatters": "It founded psychophysics — the quantitative study of how physical stimuli map to sensation — and gave a first mathematical bridge between the outer world and inner experience. Its core insight, that perception is proportional, still explains why so many of our scales (sound, brightness, pitch) are logarithmic.",
   "working": [
-    {"lead": "Think in ratios, not differences", "text": "when designing anything sensed — audio levels, display brightness, pricing tiers — equal perceptual steps mean equal ratios, not equal absolute increments."},
-    {"lead": "Expect it to hold in the middle, not the extremes", "text": "the law is reliable across mid-range intensities and breaks down near threshold and at very high intensities; don't extrapolate to the edges."},
-    {"lead": "Prefer the power law where precision matters", "text": "for exact modelling across a wide range and multiple senses, Stevens's power law often fits better than Fechner's logarithm."}
+    {
+      "lead": "Think in ratios, not differences",
+      "text": "when designing anything sensed — audio levels, display brightness, pricing tiers — equal perceptual steps mean equal ratios, not equal absolute increments."
+    },
+    {
+      "lead": "Expect it to hold in the middle, not the extremes",
+      "text": "the law is reliable across mid-range intensities and breaks down near threshold and at very high intensities; don't extrapolate to the edges."
+    },
+    {
+      "lead": "Prefer the power law where precision matters",
+      "text": "for exact modelling across a wide range and multiple senses, Stevens's power law often fits better than Fechner's logarithm."
+    }
   ],
   "limits": "Both laws fail at the extremes — near the absolute threshold and at very high intensities — and are best in the mid-range. Fechner's specific logarithmic form is challenged and partly superseded by Stevens's power law, which describes a wider range of senses and, for modalities like electric shock, captures sensation growing faster than the stimulus, the opposite of logarithmic compression. Even Weber's fraction is not perfectly constant within a sense; it drifts, especially near threshold. It is a genuine, foundational approximation, not an exact universal model of perception.",
   "misreadings": "Weber's law and Fechner's law are not the same thing, though the joint name invites the confusion: Weber's is the empirical constant-fraction threshold, Fechner's is the derived logarithmic scaling. And the logarithm is not the last word — for many senses Stevens's power law fits better. The durable claim is qualitative: perception responds to proportion, not absolute amount.",
@@ -49,12 +58,30 @@
   "coinedYear": 1860,
   "namedAfter": "Ernst Weber and Gustav Fechner",
   "sources": [
-    {"text": "Weber–Fechner law, Wikipedia. — the two laws, the JND, the decibel and magnitude examples.", "url": "https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law", "type": "secondary"},
-    {"text": "Stevens's power law, Wikipedia. — the modern power-law competitor and its varying exponents.", "url": "https://en.wikipedia.org/wiki/Stevens%27s_power_law", "type": "secondary"},
-    {"text": "Apparent magnitude, Wikipedia. — that the star-brightness scale is now attributed to a power law rather than a logarithmic eye response.", "url": "https://en.wikipedia.org/wiki/Apparent_magnitude", "type": "secondary"}
+    {
+      "text": "Weber–Fechner law, Wikipedia. — the two laws, the JND, the decibel and magnitude examples.",
+      "url": "https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Stevens's power law, Wikipedia. — the modern power-law competitor and its varying exponents.",
+      "url": "https://en.wikipedia.org/wiki/Stevens%27s_power_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Apparent magnitude, Wikipedia. — that the star-brightness scale is now attributed to a power law rather than a logarithmic eye response.",
+      "url": "https://en.wikipedia.org/wiki/Apparent_magnitude",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law",
   "related": [
-    {"slug": "fitts-law", "kind": "kindred"}
+    {
+      "slug": "fitts-law",
+      "kind": "kindred"
+    }
+  ],
+  "redirectFrom": [
+    "laws/the-weber-fechner-law/"
   ]
 }

@@ -2,7 +2,10 @@
   "no": "075",
   "slug": "humes-guillotine",
   "name": "Hume's Guillotine",
-  "aliases": ["Hume's Law", "The is–ought problem"],
+  "aliases": [
+    "Hume's Law",
+    "The is–ought problem"
+  ],
   "statement": "No set of facts about how the world is can by itself entail how it ought to be.",
   "statementAccent": "how it ought to be",
   "meaning": "Facts about how things are — however many, however well established — do not on their own tell you how things ought to be or what you should do. Somewhere in any argument reaching a moral or prescriptive conclusion, a value has to enter; it cannot be conjured from description alone.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It is the standing check against dressing a value judgement as a mere reading of the facts. Whenever an argument slides from what is to what ought to be — in ethics, policy, or science communication — Hume's guillotine says look for the hidden normative premise, because there must be one.",
   "working": [
-    {"lead": "Hunt for the smuggled 'ought'", "text": "when an argument moves from facts to a prescription, find the value premise doing the real work — it is always there, stated or not."},
-    {"lead": "Keep is and ought on separate lines", "text": "settle what the facts are and what you value as distinct questions; conflating them lets a preference masquerade as a discovery."},
-    {"lead": "Use facts to choose means, not ends", "text": "evidence tells you which action best serves a goal; it cannot tell you the goal is worth serving."}
+    {
+      "lead": "Hunt for the smuggled 'ought'",
+      "text": "when an argument moves from facts to a prescription, find the value premise doing the real work — it is always there, stated or not."
+    },
+    {
+      "lead": "Keep is and ought on separate lines",
+      "text": "settle what the facts are and what you value as distinct questions; conflating them lets a preference masquerade as a discovery."
+    },
+    {
+      "lead": "Use facts to choose means, not ends",
+      "text": "evidence tells you which action best serves a goal; it cannot tell you the goal is worth serving."
+    }
   ],
   "limits": "It is an influential philosophical principle, not a proven theorem, and it is genuinely contested. John Searle argued in 1964 that from institutional facts — the fact that someone made a promise — one can derive an obligation, since promising builds obligation into its rules (critics reply the norm was hidden in the institution). Ethical naturalists hold that moral facts just are natural facts, dissolving the gap. And whether Hume himself asserted a strict logical prohibition, or a narrower point about moral sentiment, is a live interpretive dispute.",
   "misreadings": "It does not say facts are irrelevant to ethics, or that you can never reason your way to an 'ought' — only that you cannot get there from descriptive premises alone, without a value in the mix. Nor is it the same as Moore's naturalistic fallacy, though the two are often blurred.",
@@ -47,13 +59,31 @@
   "popularYear": 1964,
   "namedAfter": "David Hume",
   "sources": [
-    {"text": "Hume, D. (1739–40). A Treatise of Human Nature, Book III, Part I, Section I. — the is/ought paragraph.", "url": "https://davidhume.org/texts/t/3/full", "type": "primary"},
-    {"text": "Is–ought problem, Wikipedia. — the principle, Max Black's naming, and Searle's 1964 challenge.", "url": "https://en.wikipedia.org/wiki/Is%E2%80%93ought_problem", "type": "secondary"},
-    {"text": "\"Hume's Moral Philosophy.\" Stanford Encyclopedia of Philosophy. — the Treatise citation and the interpretive controversy.", "url": "https://plato.stanford.edu/entries/hume-moral/", "type": "secondary"}
+    {
+      "text": "Hume, D. (1739–40). A Treatise of Human Nature, Book III, Part I, Section I. — the is/ought paragraph.",
+      "url": "https://davidhume.org/texts/t/3/full",
+      "type": "primary"
+    },
+    {
+      "text": "Is–ought problem, Wikipedia. — the principle, Max Black's naming, and Searle's 1964 challenge.",
+      "url": "https://en.wikipedia.org/wiki/Is%E2%80%93ought_problem",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Hume's Moral Philosophy.\" Stanford Encyclopedia of Philosophy. — the Treatise citation and the interpretive controversy.",
+      "url": "https://plato.stanford.edu/entries/hume-moral/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Is%E2%80%93ought_problem",
   "related": [
-    {"slug": "alders-razor", "kind": "kindred"},
-    {"slug": "hitchenss-razor", "kind": "kindred"}
+    {
+      "slug": "alders-razor",
+      "kind": "kindred"
+    },
+    {
+      "slug": "hitchens-razor",
+      "kind": "kindred"
+    }
   ]
 }

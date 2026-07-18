@@ -2,7 +2,10 @@
   "no": "165",
   "slug": "beer-lambert-law",
   "name": "The Beer–Lambert Law",
-  "aliases": ["The Beer–Lambert–Bouguer law", "Beer's law"],
+  "aliases": [
+    "The Beer–Lambert–Bouguer law",
+    "Beer's law"
+  ],
   "statement": "A sample absorbs light in proportion to its concentration and thickness.",
   "statementAccent": "in proportion to its concentration and thickness",
   "meaning": "The absorbance of a solution rises in direct proportion to how much absorbing substance it contains and how far the light travels through it. Double either the concentration or the path length and you double the absorbance, while the transmitted light falls off exponentially.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It is the foundation of quantitative absorption spectroscopy, the reason a spectrophotometer can turn a colour into a concentration, and it reaches from chemical assays to medical sensors to atmospheric science. It is one of the most-used working relationships in analytical chemistry.",
   "working": [
-    {"lead": "Turn absorbance into concentration", "text": "with a known molar absorptivity and path length, read concentration directly off measured absorbance."},
-    {"lead": "Stay in the linear range", "text": "keep concentrations dilute, roughly below a hundredth molar, and absorbance modest, where the linear relationship holds."},
-    {"lead": "Use monochromatic light", "text": "measure at a single well-defined wavelength, since a broad band of wavelengths breaks the law's single-wavelength assumption."}
+    {
+      "lead": "Turn absorbance into concentration",
+      "text": "with a known molar absorptivity and path length, read concentration directly off measured absorbance."
+    },
+    {
+      "lead": "Stay in the linear range",
+      "text": "keep concentrations dilute, roughly below a hundredth molar, and absorbance modest, where the linear relationship holds."
+    },
+    {
+      "lead": "Use monochromatic light",
+      "text": "measure at a single well-defined wavelength, since a broad band of wavelengths breaks the law's single-wavelength assumption."
+    }
   ],
   "limits": "The linear relationship holds only in dilute, ideal conditions. Above roughly a hundredth molar, absorbing particles stop behaving independently and interactions alter the absorptivity, and the medium's refractive index — on which absorptivity depends — itself shifts with concentration. Instrumental effects also cause deviations: non-monochromatic light, stray light, scattering by turbid samples, and fluorescence all break the assumptions. It is an empirical limiting law, accurate for dilute non-scattering samples and systematically off outside that regime.",
   "misreadings": "It is not linear at all concentrations — above about a hundredth molar it bends as particle interactions and refractive-index changes intrude. Its popular two-name form also under-credits Pierre Bouguer, who published the path-length dependence in 1729, before Lambert, who cited him.",
@@ -46,11 +58,25 @@
   "coinedYear": 1852,
   "namedAfter": "August Beer and Johann Heinrich Lambert",
   "sources": [
-    {"text": "Beer–Lambert law, Wikipedia. — the statement, the Bouguer/Lambert/Beer attribution, and the deviations.", "url": "https://en.wikipedia.org/wiki/Beer%E2%80%93Lambert_law", "type": "secondary"},
-    {"text": "\"The Beer-Lambert Law,\" Chemistry LibreTexts. — absorbance, molar absorptivity, and the high-concentration limits.", "url": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Spectroscopy/Electronic_Spectroscopy/Electronic_Spectroscopy_Basics/The_Beer-Lambert_Law", "type": "secondary"}
+    {
+      "text": "Beer–Lambert law, Wikipedia. — the statement, the Bouguer/Lambert/Beer attribution, and the deviations.",
+      "url": "https://en.wikipedia.org/wiki/Beer%E2%80%93Lambert_law",
+      "type": "secondary"
+    },
+    {
+      "text": "\"The Beer-Lambert Law,\" Chemistry LibreTexts. — absorbance, molar absorptivity, and the high-concentration limits.",
+      "url": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Spectroscopy/Electronic_Spectroscopy/Electronic_Spectroscopy_Basics/The_Beer-Lambert_Law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Beer%E2%80%93Lambert_law",
   "related": [
-    {"slug": "maluss-law", "kind": "kindred"}
+    {
+      "slug": "maluss-law",
+      "kind": "kindred"
+    }
+  ],
+  "redirectFrom": [
+    "laws/the-beer-lambert-law/"
   ]
 }

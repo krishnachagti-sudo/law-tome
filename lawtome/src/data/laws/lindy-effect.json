@@ -2,7 +2,9 @@
   "no": "059",
   "slug": "lindy-effect",
   "name": "The Lindy Effect",
-  "aliases": ["Lindy's Law"],
+  "aliases": [
+    "Lindy's Law"
+  ],
   "statement": "For non-perishable things, the longer something has already lasted, the longer it is likely to last.",
   "statementAccent": "the longer it is likely to last",
   "meaning": "For things that don't wear out or rot — ideas, technologies, texts — age is not decay but evidence of durability. How long something has survived is the best guide to how much longer it will survive; old survivors are proven, not near death.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It is a filter for durability: when you need something that will last — a tool, a format, an idea to build on — the length of its track record is real evidence, often better than novelty or cleverness. It underwrites a bias toward the time-tested when robustness matters more than fashion.",
   "working": [
-    {"lead": "Treat longevity as evidence of robustness", "text": "for non-perishables, prefer the option with the longer track record when what you need is durability; survival is data."},
-    {"lead": "Bet on the survivor over the novelty", "text": "the forty-year-old technology is usually a safer long-term foundation than this year's replacement, precisely because it has already been tested by time."},
-    {"lead": "Don't mistake age for optimality", "text": "long survival predicts continued survival, not superiority; a better new alternative can still exist, so use Lindy to weight durability, not to veto change."}
+    {
+      "lead": "Treat longevity as evidence of robustness",
+      "text": "for non-perishables, prefer the option with the longer track record when what you need is durability; survival is data."
+    },
+    {
+      "lead": "Bet on the survivor over the novelty",
+      "text": "the forty-year-old technology is usually a safer long-term foundation than this year's replacement, precisely because it has already been tested by time."
+    },
+    {
+      "lead": "Don't mistake age for optimality",
+      "text": "long survival predicts continued survival, not superiority; a better new alternative can still exist, so use Lindy to weight durability, not to veto change."
+    }
   ],
   "limits": "It applies only to genuinely non-perishable things — ideas, technologies, texts — and fails for anything with a natural lifespan, like organisms or a machine that wears out. The clean 'remaining life grows with age' result also depends on the lifetime following roughly a power-law, decreasing-hazard distribution; if the real distribution differs, the neat doubling rule breaks. It is easily abused as 'old = good', a blanket case against change, when age is evidence of past fitness, not a guarantee of continued optimality. There is even a provenance twist: the modern version inverts the 1964 original.",
   "misreadings": "It does not say old things are better, or that nothing new can win — only that, for things without a natural lifespan, past survival is evidence of future survival. Applying it to people, or reading it as a mandate to resist all change, misuses it.",
@@ -46,12 +57,29 @@
   "coinedYear": 1964,
   "popularYear": 2012,
   "sources": [
-    {"text": "Lindy effect, Wikipedia. — Goldman's 1964 origin, Mandelbrot's 1982 inversion, Taleb's popularisation, and the non-perishable scope.", "url": "https://en.wikipedia.org/wiki/Lindy_effect", "type": "secondary"},
-    {"text": "Taleb, N.N. (2012). Antifragile: Things That Gain from Disorder. Random House. — the modern statement and the books-in-print example.", "type": "primary"},
-    {"text": "Ord, T. (2023). \"The Lindy Effect.\" arXiv:2308.09045. — an academic treatment of its assumptions and the decreasing-hazard mechanism.", "url": "https://arxiv.org/abs/2308.09045", "type": "primary"}
+    {
+      "text": "Lindy effect, Wikipedia. — Goldman's 1964 origin, Mandelbrot's 1982 inversion, Taleb's popularisation, and the non-perishable scope.",
+      "url": "https://en.wikipedia.org/wiki/Lindy_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Taleb, N.N. (2012). Antifragile: Things That Gain from Disorder. Random House. — the modern statement and the books-in-print example.",
+      "type": "primary"
+    },
+    {
+      "text": "Ord, T. (2023). \"The Lindy Effect.\" arXiv:2308.09045. — an academic treatment of its assumptions and the decreasing-hazard mechanism.",
+      "url": "https://arxiv.org/abs/2308.09045",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Lindy_effect",
   "related": [
-    {"slug": "pareto-principle", "kind": "kindred"}
+    {
+      "slug": "pareto-principle",
+      "kind": "kindred"
+    }
+  ],
+  "redirectFrom": [
+    "laws/the-lindy-effect/"
   ]
 }

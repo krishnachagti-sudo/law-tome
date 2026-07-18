@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is one of the most important and puzzling findings in psychometrics, forcing the recognition that IQ scores are relative to their era and cannot be compared across decades without re-norming. It complicates claims about intelligence, heredity, and group differences, and its recent reversal in rich countries deepens the puzzle of what environmental forces drive it.",
   "working": [
-    {"lead": "Re-norm before comparing", "text": "never compare IQ scores across eras without accounting for the drift, since old norms make modern test-takers look artificially high."},
-    {"lead": "Attribute cause with caution", "text": "treat the gains as environmental and cohort-driven, but do not assert any single cause, since none is established."},
-    {"lead": "Do not infer genetic change", "text": "read the rise as far too fast to be genetic, so it reflects changing environments, not changing genes."}
+    {
+      "lead": "Re-norm before comparing",
+      "text": "never compare IQ scores across eras without accounting for the drift, since old norms make modern test-takers look artificially high."
+    },
+    {
+      "lead": "Attribute cause with caution",
+      "text": "treat the gains as environmental and cohort-driven, but do not assert any single cause, since none is established."
+    },
+    {
+      "lead": "Do not infer genetic change",
+      "text": "read the rise as far too fast to be genetic, so it reflects changing environments, not changing genes."
+    }
   ],
   "limits": "The score gains and the resulting need to re-norm are well documented, but the cause is unknown and debated — no proposed mechanism is established. The effect does not mean genes changed, since the gains are far too rapid for that, nor straightforwardly that each generation is smarter, given the uneven fluid-versus-crystallized pattern. And it has stalled or reversed in several developed countries since around the 1990s; a large Norwegian study found the decline appears within families, ruling out genetic selection or immigration and pointing to environmental drivers for both the rise and the fall. Most data come from developed nations, limiting generalisation.",
   "misreadings": "It does not show that people are becoming genetically smarter — the gains are too fast to be genetic and reflect changing environments. And it is not a permanent, universal climb: scores have plateaued or reversed in several rich countries in recent decades.",
@@ -45,11 +54,22 @@
   "coinedYear": 1994,
   "namedAfter": "James Flynn",
   "sources": [
-    {"text": "Flynn effect, Wikipedia. — the rising-scores statement, the proposed causes, the re-norming, and the negative Flynn effect.", "url": "https://en.wikipedia.org/wiki/Flynn_effect", "type": "secondary"},
-    {"text": "Bratsberg & Rogeberg, \"Flynn effect and its reversal are both environmentally caused,\" PNAS 115(26):6674-6678 (2018).", "url": "https://www.pnas.org/doi/10.1073/pnas.1718793115", "type": "primary"}
+    {
+      "text": "Flynn effect, Wikipedia. — the rising-scores statement, the proposed causes, the re-norming, and the negative Flynn effect.",
+      "url": "https://en.wikipedia.org/wiki/Flynn_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Bratsberg & Rogeberg, \"Flynn effect and its reversal are both environmentally caused,\" PNAS 115(26):6674-6678 (2018).",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.1718793115",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Flynn_effect",
   "related": [
-    {"slug": "the-pygmalion-effect", "kind": "kindred"}
+    {
+      "slug": "pygmalion-effect",
+      "kind": "kindred"
+    }
   ]
 }

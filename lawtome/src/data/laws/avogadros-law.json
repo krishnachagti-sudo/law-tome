@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It supplied the crucial link between the volume of a gas and the count of its molecules, making sense of the whole-number ratios seen in gas reactions and underpinning the mole — the chemist's unit of amount. Long ignored, its revival was what finally let chemists agree on atomic and molecular weights.",
   "working": [
-    {"lead": "Relate volume to moles", "text": "at fixed temperature and pressure, treat volume as proportional to the number of moles, so V₁/n₁ = V₂/n₂."},
-    {"lead": "Keep the law and the constant apart", "text": "the law is a proportionality about gas volume; the Avogadro constant is a separate number of particles per mole named a century later."},
-    {"lead": "Assume ideal-gas conditions", "text": "apply it where the gas is dilute — moderate pressure, not-too-low temperature — and expect deviations otherwise."}
+    {
+      "lead": "Relate volume to moles",
+      "text": "at fixed temperature and pressure, treat volume as proportional to the number of moles, so V₁/n₁ = V₂/n₂."
+    },
+    {
+      "lead": "Keep the law and the constant apart",
+      "text": "the law is a proportionality about gas volume; the Avogadro constant is a separate number of particles per mole named a century later."
+    },
+    {
+      "lead": "Assume ideal-gas conditions",
+      "text": "apply it where the gas is dilute — moderate pressure, not-too-low temperature — and expect deviations otherwise."
+    }
   ],
   "limits": "It is an idealisation exact only for ideal gases. Real gases deviate, significantly at high pressure and low temperature, because molecules have finite volume and exert attractive and repulsive forces. It remains a good approximation under ordinary conditions. It must also not be conflated with the Avogadro constant, a separate quantity named long after the law and never determined by Avogadro himself.",
   "misreadings": "It is not the same thing as 'Avogadro's number' — the law is a statement about gas volumes, the constant a count of particles per mole named by Perrin in 1909. And it is not exact for real gases; it holds in the ideal-gas limit and only approximately elsewhere.",
@@ -45,12 +54,26 @@
   "coinedYear": 1811,
   "namedAfter": "Amedeo Avogadro",
   "sources": [
-    {"text": "Avogadro's law, Wikipedia. — the statement, the ideal-gas mechanism, and the Cannizzaro revival.", "url": "https://en.wikipedia.org/wiki/Avogadro%27s_law", "type": "secondary"},
-    {"text": "Avogadro constant, Wikipedia. — the law-versus-constant distinction and Perrin's 1909 naming.", "url": "https://en.wikipedia.org/wiki/Avogadro_constant", "type": "secondary"}
+    {
+      "text": "Avogadro's law, Wikipedia. — the statement, the ideal-gas mechanism, and the Cannizzaro revival.",
+      "url": "https://en.wikipedia.org/wiki/Avogadro%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Avogadro constant, Wikipedia. — the law-versus-constant distinction and Perrin's 1909 naming.",
+      "url": "https://en.wikipedia.org/wiki/Avogadro_constant",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Avogadro%27s_law",
   "related": [
-    {"slug": "boyles-law", "kind": "kindred"},
-    {"slug": "charless-law", "kind": "kindred"}
+    {
+      "slug": "boyles-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "charles-law",
+      "kind": "kindred"
+    }
   ]
 }

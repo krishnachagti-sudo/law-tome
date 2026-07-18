@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is one of the classic gas laws, capturing how gases swell with heat, and a building block of the ideal gas law that combines the lot. Its extrapolation to zero volume gave one of the first routes to the concept of absolute zero and the Kelvin scale, and its everyday consequences, from balloons to thermometers, make it a staple of introductory science.",
   "working": [
-    {"lead": "Work in kelvin", "text": "always use absolute temperature; the proportionality holds only on the Kelvin scale, so convert from Celsius first."},
-    {"lead": "Hold pressure constant", "text": "apply the law only where the pressure and amount of gas stay fixed, letting volume and temperature vary together."},
-    {"lead": "Expect deviations in the cold", "text": "trust it at ordinary conditions but expect real gases to depart as they approach condensation."}
+    {
+      "lead": "Work in kelvin",
+      "text": "always use absolute temperature; the proportionality holds only on the Kelvin scale, so convert from Celsius first."
+    },
+    {
+      "lead": "Hold pressure constant",
+      "text": "apply the law only where the pressure and amount of gas stay fixed, letting volume and temperature vary together."
+    },
+    {
+      "lead": "Expect deviations in the cold",
+      "text": "trust it at ordinary conditions but expect real gases to depart as they approach condensation."
+    }
   ],
   "limits": "The law is an ideal-gas idealisation, best obeyed at low pressure and high temperature. It fails at low temperatures near a gas's condensation point, where the straight volume-temperature line breaks down, and at high pressures, where intermolecular forces and the finite volume of molecules cause deviations. It demands absolute temperature: the proportionality holds on the Kelvin scale, not in Celsius or Fahrenheit. And the extrapolation to zero volume is exactly that — an extrapolation, since real gases liquefy well before absolute zero.",
   "misreadings": "The volume is proportional to absolute temperature, not to the Celsius reading; heating a gas from ten to twenty degrees Celsius does not double its volume, because that is a rise of only a few per cent on the Kelvin scale. And the volume does not literally reach zero at minus 273 degrees Celsius — the gas condenses first, so that point is an extrapolated limit rather than an observed state.",
@@ -45,12 +54,29 @@
   "coinedYear": 1787,
   "namedAfter": "Jacques Charles",
   "sources": [
-    {"text": "Charles's law, Wikipedia. — the volume-proportional-to-absolute-temperature statement, the attribution to Charles and Gay-Lussac, and the absolute-zero extrapolation.", "url": "https://en.wikipedia.org/wiki/Charles%27s_law", "type": "secondary"},
-    {"text": "Charles's law, Encyclopaedia Britannica. — the statement, the ~1787 dating, and the ideal-gas validity.", "url": "https://www.britannica.com/science/Charless-law", "type": "secondary"}
+    {
+      "text": "Charles's law, Wikipedia. — the volume-proportional-to-absolute-temperature statement, the attribution to Charles and Gay-Lussac, and the absolute-zero extrapolation.",
+      "url": "https://en.wikipedia.org/wiki/Charles%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Charles's law, Encyclopaedia Britannica. — the statement, the ~1787 dating, and the ideal-gas validity.",
+      "url": "https://www.britannica.com/science/Charless-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Charles%27s_law",
   "related": [
-    {"slug": "boyles-law", "kind": "kindred"},
-    {"slug": "the-ideal-gas-law", "kind": "consequence"}
+    {
+      "slug": "boyles-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-ideal-gas-law",
+      "kind": "consequence"
+    }
+  ],
+  "redirectFrom": [
+    "laws/charless-law/"
   ]
 }

@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It links the voltage of any electrochemical cell to the concentrations inside it, indispensable to batteries, corrosion, electroplating, and the sensors of analytical chemistry, and to the electrophysiology of nerves and muscle. It is the equation that makes electrochemistry quantitative under real, non-standard conditions.",
   "working": [
-    {"lead": "Correct the standard potential for concentration", "text": "adjust the standard potential by the reaction-quotient term to get the actual voltage under working conditions."},
-    {"lead": "Read the approach to equilibrium", "text": "watch the voltage fall toward zero as the reaction quotient rises toward the equilibrium constant, the signature of a discharging cell."},
-    {"lead": "Use activities in non-ideal solutions", "text": "for concentrated or non-ideal electrolytes, use activities rather than concentrations, and apply it only at negligible net current."}
+    {
+      "lead": "Correct the standard potential for concentration",
+      "text": "adjust the standard potential by the reaction-quotient term to get the actual voltage under working conditions."
+    },
+    {
+      "lead": "Read the approach to equilibrium",
+      "text": "watch the voltage fall toward zero as the reaction quotient rises toward the equilibrium constant, the signature of a discharging cell."
+    },
+    {
+      "lead": "Use activities in non-ideal solutions",
+      "text": "for concentrated or non-ideal electrolytes, use activities rather than concentrations, and apply it only at negligible net current."
+    }
   ],
   "limits": "The equation is rigorous only in terms of activities; using concentrations is valid only in dilute, near-ideal solutions and deviates in concentrated electrolytes. It assumes equilibrium and reversibility, applying only when there is no net current — under significant current, kinetic effects and overpotential make the measured potential depart from the prediction. At extremely low concentrations the logarithm diverges and the prediction becomes unphysical. It is a rigorous consequence of equilibrium thermodynamics whose reliability degrades predictably outside those assumptions.",
   "misreadings": "It is not an empirical fit but a consequence of equilibrium thermodynamics, and it holds only near equilibrium with negligible current — a cell delivering real current departs from it through overpotential. Its concentration term is strictly in activities, so treating concentrations as activities is an approximation valid only in dilute solutions.",
@@ -45,12 +54,29 @@
   "coinedYear": 1889,
   "namedAfter": "Walther Nernst",
   "sources": [
-    {"text": "Nernst equation, Wikipedia. — the equation, its Gibbs-free-energy derivation, and the activity and no-net-current assumptions.", "url": "https://en.wikipedia.org/wiki/Nernst_equation", "type": "secondary"},
-    {"text": "\"Nernst Equation,\" Chemistry LibreTexts. — the derivation from free energy and the room-temperature form.", "url": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Electrochemistry/Nernst_Equation", "type": "secondary"}
+    {
+      "text": "Nernst equation, Wikipedia. — the equation, its Gibbs-free-energy derivation, and the activity and no-net-current assumptions.",
+      "url": "https://en.wikipedia.org/wiki/Nernst_equation",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Nernst Equation,\" Chemistry LibreTexts. — the derivation from free energy and the room-temperature form.",
+      "url": "https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Electrochemistry/Nernst_Equation",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Nernst_equation",
   "related": [
-    {"slug": "faradays-laws-of-electrolysis", "kind": "kindred"},
-    {"slug": "le-chateliers-principle", "kind": "kindred"}
+    {
+      "slug": "faradays-laws-of-electrolysis",
+      "kind": "kindred"
+    },
+    {
+      "slug": "le-chateliers-principle",
+      "kind": "kindred"
+    }
+  ],
+  "redirectFrom": [
+    "laws/the-nernst-equation/"
   ]
 }

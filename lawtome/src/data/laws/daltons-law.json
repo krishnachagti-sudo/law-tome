@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It lets the pressure of any gas mixture be built up from its components, essential to respiratory physiology, diving, atmospheric science, and chemistry over water. It also connects to Henry's law, since how much of a gas dissolves depends on that gas's partial pressure.",
   "working": [
-    {"lead": "Add the partial pressures", "text": "get a mixture's total pressure by summing each gas's partial pressure, or find a partial pressure as mole fraction times the total."},
-    {"lead": "Subtract water vapour when collecting over water", "text": "correct a gas collected over water by subtracting the temperature-dependent water vapour pressure to get the dry gas."},
-    {"lead": "Track partial pressures with depth", "text": "in diving, follow how rising total pressure raises each gas's partial pressure, since toxicity depends on the partial value."}
+    {
+      "lead": "Add the partial pressures",
+      "text": "get a mixture's total pressure by summing each gas's partial pressure, or find a partial pressure as mole fraction times the total."
+    },
+    {
+      "lead": "Subtract water vapour when collecting over water",
+      "text": "correct a gas collected over water by subtracting the temperature-dependent water vapour pressure to get the dry gas."
+    },
+    {
+      "lead": "Track partial pressures with depth",
+      "text": "in diving, follow how rising total pressure raises each gas's partial pressure, since toxicity depends on the partial value."
+    }
   ],
   "limits": "The law holds accurately only for ideal, non-reacting gases, at low pressure and high temperature. Real gases deviate, more so as pressure rises, because molecular volume becomes significant and intermolecular forces alter the pressure, and it fails entirely if the gases react chemically and change the number of molecules. It is an empirical approximation grounded in the ideal-gas model, not an exact fundamental law.",
   "misreadings": "It is not exact for real gases at high pressure, and it assumes the gases do not react. It is also distinct from Dalton's atomic theory: the same person gave both, but the law of partial pressures is about gas mixtures, not the existence of atoms.",
@@ -45,12 +54,29 @@
   "coinedYear": 1801,
   "namedAfter": "John Dalton",
   "sources": [
-    {"text": "Dalton's law, Wikipedia. — the statement, the mole-fraction relation, the 1801/1802 dating, and the real-gas deviations.", "url": "https://en.wikipedia.org/wiki/Dalton%27s_law", "type": "secondary"},
-    {"text": "\"Dalton's law,\" Encyclopædia Britannica. — the sum-of-partial-pressures statement and its empirical status.", "url": "https://www.britannica.com/science/Daltons-law", "type": "secondary"}
+    {
+      "text": "Dalton's law, Wikipedia. — the statement, the mole-fraction relation, the 1801/1802 dating, and the real-gas deviations.",
+      "url": "https://en.wikipedia.org/wiki/Dalton%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Dalton's law,\" Encyclopædia Britannica. — the sum-of-partial-pressures statement and its empirical status.",
+      "url": "https://www.britannica.com/science/Daltons-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Dalton%27s_law",
   "related": [
-    {"slug": "boyles-law", "kind": "kindred"},
-    {"slug": "henrys-law", "kind": "kindred"}
+    {
+      "slug": "boyles-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "henrys-law",
+      "kind": "kindred"
+    }
+  ],
+  "redirectFrom": [
+    "laws/daltons-law-of-partial-pressures/"
   ]
 }

@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is one of the most common ways intuition goes wrong: because extremes are followed by less-extreme values automatically, we credit or blame whatever we happened to do in between. Recognising regression is what separates a real intervention effect from a statistical mirage — and it is why controls and baselines exist.",
   "working": [
-    {"lead": "Suspect regression whenever you selected on an extreme", "text": "if you picked the top or bottom performers, the worst clinic sites, the hottest stocks, expect their next reading to be less extreme on its own."},
-    {"lead": "Use a control group", "text": "the only clean way to tell a real effect from regression is to compare against a group that regressed but got no treatment."},
-    {"lead": "Don't reward or punish the noise", "text": "before concluding your praise, penalty, or fix caused the change, ask whether the extreme that prompted it would have moved toward average anyway."}
+    {
+      "lead": "Suspect regression whenever you selected on an extreme",
+      "text": "if you picked the top or bottom performers, the worst clinic sites, the hottest stocks, expect their next reading to be less extreme on its own."
+    },
+    {
+      "lead": "Use a control group",
+      "text": "the only clean way to tell a real effect from regression is to compare against a group that regressed but got no treatment."
+    },
+    {
+      "lead": "Don't reward or punish the noise",
+      "text": "before concluding your praise, penalty, or fix caused the change, ask whether the extreme that prompted it would have moved toward average anyway."
+    }
   ],
   "limits": "Regression to the mean is a statistical artefact of imperfect correlation, not a causal effect, and the central error is treating it as one. It does not occur when the two measurements are perfectly correlated, and its strength scales inversely with the correlation. It is also not the gambler's idea that things must 'even out': the variable does not overshoot the mean to compensate, and no single next value is guaranteed — it is a statement about averages over a group selected for being extreme.",
   "misreadings": "It does not say everything tends toward mediocrity, or that a system is 'due' for a correction. It says that a value chosen for being extreme will, on average, be less extreme next time — because luck, unlike skill, does not repeat.",
@@ -45,13 +54,33 @@
   "coinedYear": 1886,
   "namedAfter": "Francis Galton",
   "sources": [
-    {"text": "Galton, F. (1886). \"Regression towards Mediocrity in Hereditary Stature.\" Journal of the Anthropological Institute, 15, 246–263.", "url": "http://www.stat.ucla.edu/~nchristo/statistics100C/history_regression.pdf", "type": "primary"},
-    {"text": "Regression toward the mean, Wikipedia. — the mechanism, the clinical-trial and jinx examples, and the regression fallacy.", "url": "https://en.wikipedia.org/wiki/Regression_toward_the_mean", "type": "secondary"},
-    {"text": "Kahneman, D. (2011). Thinking, Fast and Slow, ch. 17. — the flight-instructor anecdote and the intuition it fools.", "type": "secondary"}
+    {
+      "text": "Galton, F. (1886). \"Regression towards Mediocrity in Hereditary Stature.\" Journal of the Anthropological Institute, 15, 246–263.",
+      "url": "http://www.stat.ucla.edu/~nchristo/statistics100C/history_regression.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Regression toward the mean, Wikipedia. — the mechanism, the clinical-trial and jinx examples, and the regression fallacy.",
+      "url": "https://en.wikipedia.org/wiki/Regression_toward_the_mean",
+      "type": "secondary"
+    },
+    {
+      "text": "Kahneman, D. (2011). Thinking, Fast and Slow, ch. 17. — the flight-instructor anecdote and the intuition it fools.",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Regression_toward_the_mean",
   "related": [
-    {"slug": "littlewoods-law", "kind": "kindred"},
-    {"slug": "twymans-law", "kind": "kindred"}
+    {
+      "slug": "littlewoods-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "twymans-law",
+      "kind": "kindred"
+    }
+  ],
+  "redirectFrom": [
+    "laws/regression-toward-the-mean/"
   ]
 }

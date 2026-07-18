@@ -2,7 +2,9 @@
   "no": "005",
   "slug": "cobra-effect",
   "name": "The Cobra Effect",
-  "aliases": ["Perverse incentive"],
+  "aliases": [
+    "Perverse incentive"
+  ],
   "statement": "A reward offered to solve a problem can end up paying people to manufacture it.",
   "statementAccent": "paying people to manufacture it",
   "meaning": "Put a bounty on the symptom and you create a market for the symptom. People supply whatever you are buying — including more of the thing you wanted less of.",
@@ -27,10 +29,22 @@
   ],
   "whyItMatters": "Before you pay for a proxy, ask who can now profit by producing the thing you are trying to eliminate, and whether they can supply it faster than you can buy it. Bounties, bug-bounty schemes, scrappage programmes, and recycling credits all live in this hazard zone.",
   "working": [
-    {"lead": "Pay for the outcome, not a proxy of it", "text": "reward the end state you actually want — measured air quality, a solved problem — not a countable stand-in that can be produced on its own."},
-    {"lead": "Ask who can now manufacture the problem", "text": "before offering a bounty, work out who profits by producing more of what you're paying to remove, and whether they can outpace your budget."},
-    {"lead": "Verify provenance and cap supply", "text": "was this a wild rat or a farmed one? A real customer or a phantom account? Auditing origin and bounding the quantity is the standard antidote."},
-    {"lead": "Reward the party who can't inflate the metric", "text": "the effect needs a supplier who controls the proxy; put the reward where it can't be gamed into existence."}
+    {
+      "lead": "Pay for the outcome, not a proxy of it",
+      "text": "reward the end state you actually want — measured air quality, a solved problem — not a countable stand-in that can be produced on its own."
+    },
+    {
+      "lead": "Ask who can now manufacture the problem",
+      "text": "before offering a bounty, work out who profits by producing more of what you're paying to remove, and whether they can outpace your budget."
+    },
+    {
+      "lead": "Verify provenance and cap supply",
+      "text": "was this a wild rat or a farmed one? A real customer or a phantom account? Auditing origin and bounding the quantity is the standard antidote."
+    },
+    {
+      "lead": "Reward the party who can't inflate the metric",
+      "text": "the effect needs a supplier who controls the proxy; put the reward where it can't be gamed into existence."
+    }
   ],
   "limits": "The cobra effect is a heuristic about incentive design, not a claim that incentives backfire in general — most incentives work as intended, and this names a specific failure mode. It needs a particular setup: a manufacturable proxy whose supply the sponsor does not control, so the people collecting the reward can produce the thing being counted (rat tails, unauthorised accounts, pull requests). Where the proxy can't be gamed into existence, the effect does not appear, and well-designed schemes that pay for verified outcomes and check provenance avoid it. Many of the vivid cases that circulate — the Delhi cobra farm, colonial pig bounties — rest on thin sourcing and are better treated as folklore than evidence.",
   "misreadings": "The lesson holds even though the famous Delhi cobra story is unverified folklore: the point is not that one anecdote happened, but that a reward attached to a proxy for a problem creates a market in that proxy. It is not a case against all incentives — only against paying for a symptom whose supply you do not control.",
@@ -41,15 +55,42 @@
   "coinedYear": 2001,
   "namedAfter": "Horst Siebert",
   "sources": [
-    {"text": "Siebert, H. (2001). Der Kobra-Effekt. Wie man Irrwege der Wirtschaftspolitik vermeidet. Munich: Deutsche Verlags-Anstalt. ISBN 3-421-05562-9.", "type": "primary"},
-    {"text": "Vann, M.G. (2003). \"Of Rats, Rice, and Race: The Great Hanoi Rat Massacre, an Episode in French Colonial History.\" French Colonial History, 4, 191–203.", "type": "primary"},
-    {"text": "Davis, L.W. (2008). \"The Effect of Driving Restrictions on Air Quality in Mexico City.\" Journal of Political Economy, 116(1), 38–81. — finds the restriction raised vehicle numbers rather than improving air quality.", "url": "https://doi.org/10.1086/529398", "type": "primary"},
-    {"text": "\"The Cobra Effect: Colonial Misinformation Masquerading as Economic Theory.\" Friends of Snakes Society (2025). — traces the Delhi cobra story to an 1873 newspaper allegation and finds no supporting documentation.", "url": "https://friendsofsnakes.org.in/cobra-effect/", "type": "secondary"},
-    {"text": "Perverse incentive, Wikipedia. — the Hanoi rats, Wells Fargo, Fort Benning pig bounty, and Hacktoberfest cases.", "url": "https://en.wikipedia.org/wiki/Perverse_incentive", "type": "secondary"}
+    {
+      "text": "Siebert, H. (2001). Der Kobra-Effekt. Wie man Irrwege der Wirtschaftspolitik vermeidet. Munich: Deutsche Verlags-Anstalt. ISBN 3-421-05562-9.",
+      "type": "primary"
+    },
+    {
+      "text": "Vann, M.G. (2003). \"Of Rats, Rice, and Race: The Great Hanoi Rat Massacre, an Episode in French Colonial History.\" French Colonial History, 4, 191–203.",
+      "type": "primary"
+    },
+    {
+      "text": "Davis, L.W. (2008). \"The Effect of Driving Restrictions on Air Quality in Mexico City.\" Journal of Political Economy, 116(1), 38–81. — finds the restriction raised vehicle numbers rather than improving air quality.",
+      "url": "https://doi.org/10.1086/529398",
+      "type": "primary"
+    },
+    {
+      "text": "\"The Cobra Effect: Colonial Misinformation Masquerading as Economic Theory.\" Friends of Snakes Society (2025). — traces the Delhi cobra story to an 1873 newspaper allegation and finds no supporting documentation.",
+      "url": "https://friendsofsnakes.org.in/cobra-effect/",
+      "type": "secondary"
+    },
+    {
+      "text": "Perverse incentive, Wikipedia. — the Hanoi rats, Wells Fargo, Fort Benning pig bounty, and Hacktoberfest cases.",
+      "url": "https://en.wikipedia.org/wiki/Perverse_incentive",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Perverse_incentive",
   "related": [
-    {"slug": "goodharts-law", "kind": "cause"},
-    {"slug": "campbells-law", "kind": "cause"}
+    {
+      "slug": "goodharts-law",
+      "kind": "cause"
+    },
+    {
+      "slug": "campbells-law",
+      "kind": "cause"
+    }
+  ],
+  "redirectFrom": [
+    "laws/the-cobra-effect/"
   ]
 }

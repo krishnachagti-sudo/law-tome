@@ -2,7 +2,9 @@
   "no": "073",
   "slug": "sagan-standard",
   "name": "The Sagan Standard",
-  "aliases": ["ECREE"],
+  "aliases": [
+    "ECREE"
+  ],
   "statement": "Extraordinary claims require extraordinary evidence.",
   "statementAccent": "extraordinary evidence",
   "meaning": "The further a claim departs from what is already well established, the stronger and more reliable the evidence needed before it should be accepted. Ordinary claims can rest on ordinary evidence; a claim that overturns a large body of prior knowledge demands proportionally more.",
@@ -37,9 +39,18 @@
   ],
   "whyItMatters": "It is the working motto of scientific scepticism: it calibrates belief to prior plausibility, so a surprising result is neither dismissed out of hand nor accepted on thin support. It is the standard by which fringe claims, from ESP to miracle cures, are weighed.",
   "working": [
-    {"lead": "Scale the evidence to the implausibility", "text": "the more a claim would overturn, the stronger and more independent the evidence you should demand before believing it."},
-    {"lead": "Rule out the mundane first", "text": "error, fraud, coincidence, and misperception are the ordinary explanations that must be excluded before an extraordinary one earns consideration."},
-    {"lead": "Insist on replication", "text": "for a claim that breaks with established knowledge, independent confirmation is what turns a startling result into a credible one."}
+    {
+      "lead": "Scale the evidence to the implausibility",
+      "text": "the more a claim would overturn, the stronger and more independent the evidence you should demand before believing it."
+    },
+    {
+      "lead": "Rule out the mundane first",
+      "text": "error, fraud, coincidence, and misperception are the ordinary explanations that must be excluded before an extraordinary one earns consideration."
+    },
+    {
+      "lead": "Insist on replication",
+      "text": "for a claim that breaks with established knowledge, independent confirmation is what turns a startling result into a credible one."
+    }
   ],
   "limits": "The standard's weak point, conceded even by its users, is that 'extraordinary' is undefined and subjective — there is no metric for what makes either a claim or its evidence extraordinary. Applied unevenly it can entrench orthodoxy, letting people demand extraordinary proof for claims that contradict consensus while waving through consensus-friendly claims on weaker evidence, and it can set an unfairly high bar that dismisses genuine but surprising anomalies. It is a disciplined heuristic, not a formula.",
   "misreadings": "It does not say surprising claims are false, only that they carry a heavier burden of proof. Nor does it license rejecting anything that challenges consensus — the demand is for proportionate evidence, not for the claim to be impossible.",
@@ -50,13 +61,30 @@
   "coinedYear": 1980,
   "namedAfter": "Carl Sagan",
   "sources": [
-    {"text": "Sagan, C. (1980). Cosmos: A Personal Voyage, episode 12. — the phrase's popular source.", "type": "primary"},
-    {"text": "\"Extraordinary claims require extraordinary evidence,\" Wikipedia. — the Sagan/Truzzi/Laplace/Hume lineage and the critique of the undefined 'extraordinary'.", "url": "https://en.wikipedia.org/wiki/Extraordinary_claims_require_extraordinary_evidence", "type": "secondary"},
-    {"text": "\"Extraordinary Claims Require Extraordinary Evidence.\" Quote Investigator (2021). — the dated history back through Truzzi and Laplace.", "url": "https://quoteinvestigator.com/2021/12/05/extraordinary/", "type": "secondary"}
+    {
+      "text": "Sagan, C. (1980). Cosmos: A Personal Voyage, episode 12. — the phrase's popular source.",
+      "type": "primary"
+    },
+    {
+      "text": "\"Extraordinary claims require extraordinary evidence,\" Wikipedia. — the Sagan/Truzzi/Laplace/Hume lineage and the critique of the undefined 'extraordinary'.",
+      "url": "https://en.wikipedia.org/wiki/Extraordinary_claims_require_extraordinary_evidence",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Extraordinary Claims Require Extraordinary Evidence.\" Quote Investigator (2021). — the dated history back through Truzzi and Laplace.",
+      "url": "https://quoteinvestigator.com/2021/12/05/extraordinary/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Extraordinary_claims_require_extraordinary_evidence",
   "related": [
-    {"slug": "hitchenss-razor", "kind": "kindred"},
-    {"slug": "russells-teapot", "kind": "kindred"}
+    {
+      "slug": "hitchens-razor",
+      "kind": "kindred"
+    },
+    {
+      "slug": "russells-teapot",
+      "kind": "kindred"
+    }
   ]
 }

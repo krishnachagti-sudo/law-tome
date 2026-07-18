@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is the theoretical bedrock of statistics, sampling, insurance, and gambling — the guarantee that averages of enough independent data are trustworthy. Without it, the whole practice of estimating a quantity by repeated measurement would have no foundation.",
   "working": [
-    {"lead": "Trust averages, not single trials", "text": "rely on the long-run average of many independent trials, and expect no such stability in any one outcome or short run."},
-    {"lead": "Require a finite mean", "text": "the law needs the expected value to exist; it fails for heavy-tailed distributions like the Cauchy that have no finite mean."},
-    {"lead": "Don't expect self-correction", "text": "the average converges by dilution, not by past deviations being made up for, so never bet on a streak reversing."}
+    {
+      "lead": "Trust averages, not single trials",
+      "text": "rely on the long-run average of many independent trials, and expect no such stability in any one outcome or short run."
+    },
+    {
+      "lead": "Require a finite mean",
+      "text": "the law needs the expected value to exist; it fails for heavy-tailed distributions like the Cauchy that have no finite mean."
+    },
+    {
+      "lead": "Don't expect self-correction",
+      "text": "the average converges by dilution, not by past deviations being made up for, so never bet on a streak reversing."
+    }
   ],
   "limits": "It requires a finite expected value and usually independence; it fails for heavy-tailed distributions with no mean, such as the Cauchy. Its central caveat is a misconception: it does not say a coin self-corrects. The proportion of heads approaches one half, but the gap between the head and tail counts need not shrink toward zero — convergence comes from swamping early deviations with volume, not from cancelling them. Treating it as a force that balances short runs is the gambler's fallacy.",
   "misreadings": "It does not mean past deviations must be made up for — that false 'law of averages' is the gambler's fallacy. It concerns long-run averages, not short runs or individual trials, and it says the proportion converges, not that the raw counts even out.",
@@ -44,12 +53,29 @@
   "provenance": "canon",
   "coinedYear": 1713,
   "sources": [
-    {"text": "Law of large numbers, Wikipedia. — the weak and strong forms, the Bernoulli/Poisson history, and the finite-mean requirement.", "url": "https://en.wikipedia.org/wiki/Law_of_large_numbers", "type": "secondary"},
-    {"text": "\"Law of large numbers,\" Encyclopædia Britannica. — the convergence statement and Bernoulli's 1713 proof.", "url": "https://www.britannica.com/science/law-of-large-numbers", "type": "secondary"}
+    {
+      "text": "Law of large numbers, Wikipedia. — the weak and strong forms, the Bernoulli/Poisson history, and the finite-mean requirement.",
+      "url": "https://en.wikipedia.org/wiki/Law_of_large_numbers",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Law of large numbers,\" Encyclopædia Britannica. — the convergence statement and Bernoulli's 1713 proof.",
+      "url": "https://www.britannica.com/science/law-of-large-numbers",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Law_of_large_numbers",
   "related": [
-    {"slug": "central-limit-theorem", "kind": "kindred"},
-    {"slug": "the-gamblers-fallacy", "kind": "tension"}
+    {
+      "slug": "central-limit-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-gamblers-fallacy",
+      "kind": "tension"
+    }
+  ],
+  "redirectFrom": [
+    "laws/the-law-of-large-numbers/"
   ]
 }

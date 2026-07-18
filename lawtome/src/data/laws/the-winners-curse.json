@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is a foundational result of auction theory and a sharp lesson in conditional reasoning: that winning a competitive bid is informative, and usually bad news, about your own valuation. It explains chronic overpayment across oil leases, takeovers, spectrum sales, and sports contracts, and it shaped the design of real auctions, work recognised by the 2020 Nobel in economics.",
   "working": [
-    {"lead": "Shade your bid", "text": "in a common-value auction, bid below your raw estimate, more so the more rivals there are and the noisier your information."},
-    {"lead": "Condition on winning", "text": "ask what the item is worth given that your bid was the highest, not just what your estimate says, since winning signals over-optimism."},
-    {"lead": "Check the value structure", "text": "apply the curse only where value is common and uncertain, not to pure private-value auctions."}
+    {
+      "lead": "Shade your bid",
+      "text": "in a common-value auction, bid below your raw estimate, more so the more rivals there are and the noisier your information."
+    },
+    {
+      "lead": "Condition on winning",
+      "text": "ask what the item is worth given that your bid was the highest, not just what your estimate says, since winning signals over-optimism."
+    },
+    {
+      "lead": "Check the value structure",
+      "text": "apply the curse only where value is common and uncertain, not to pure private-value auctions."
+    }
   ],
   "limits": "The curse requires both a common-value component and genuine uncertainty about that value; it does not apply to pure private-value auctions, and it weakens as uncertainty shrinks. Laboratory studies find even experienced bidders fall prey to it — construction executives did about as badly as students, apparently because their field rules of thumb do not transfer to the lab — so whether experience cures it is mixed. And its magnitude in real markets is contested and hard to identify cleanly, being far better documented in the laboratory than in the field.",
   "misreadings": "The winner's curse is not the same as merely overpaying or feeling buyer's remorse — it is specifically the statistical selection effect that winning correlates with having the most over-optimistic estimate. It is not simple irrationality either: a bidder who shades correctly avoids it, and only one who fails to condition on winning suffers it. It does not apply to private-value auctions, where overbidding, when it occurs, is a different phenomenon. And the winner does not always literally lose money; the claim is a tendency toward overpayment on average.",
@@ -44,13 +53,31 @@
   "provenance": "canon",
   "coinedYear": 1971,
   "sources": [
-    {"text": "Capen, Clapp & Campbell, \"Competitive Bidding in High-Risk Situations,\" Journal of Petroleum Technology 23:641-653 (1971). — the original account from oil-lease bidding.", "url": "https://onepetro.org/JPT/article/23/06/641/163651/Competitive-Bidding-in-High-Risk-Situations", "type": "primary"},
-    {"text": "Thaler, \"Anomalies: The Winner's Curse,\" Journal of Economic Perspectives 2(1):191-202 (1988). — the survey that popularised the effect.", "url": "https://www.aeaweb.org/articles?id=10.1257/jep.2.1.191", "type": "primary"},
-    {"text": "Dyer, Kagel & Levin, \"A Comparison of Naive and Experienced Bidders in Common Value Offer Auctions,\" Economic Journal 99(394):108-115 (1989). — experienced bidders falling prey to the curse in the laboratory.", "url": "https://www.cs.princeton.edu/courses/archive/spr10/cos444/papers/DyerKagelLevin89.pdf", "type": "primary"}
+    {
+      "text": "Capen, Clapp & Campbell, \"Competitive Bidding in High-Risk Situations,\" Journal of Petroleum Technology 23:641-653 (1971). — the original account from oil-lease bidding.",
+      "url": "https://onepetro.org/JPT/article/23/06/641/163651/Competitive-Bidding-in-High-Risk-Situations",
+      "type": "primary"
+    },
+    {
+      "text": "Thaler, \"Anomalies: The Winner's Curse,\" Journal of Economic Perspectives 2(1):191-202 (1988). — the survey that popularised the effect.",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/jep.2.1.191",
+      "type": "primary"
+    },
+    {
+      "text": "Dyer, Kagel & Levin, \"A Comparison of Naive and Experienced Bidders in Common Value Offer Auctions,\" Economic Journal 99(394):108-115 (1989). — experienced bidders falling prey to the curse in the laboratory.",
+      "url": "https://www.cs.princeton.edu/courses/archive/spr10/cos444/papers/DyerKagelLevin89.pdf",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Winner's_curse",
   "related": [
-    {"slug": "the-market-for-lemons", "kind": "kindred"},
-    {"slug": "regression-toward-the-mean", "kind": "cause"}
+    {
+      "slug": "the-market-for-lemons",
+      "kind": "kindred"
+    },
+    {
+      "slug": "regression-to-the-mean",
+      "kind": "cause"
+    }
   ]
 }
