@@ -1,0 +1,57 @@
+{
+  "no": "460",
+  "slug": "the-principle-of-superposition",
+  "name": "The Principle of Superposition",
+  "aliases": ["The law of superposition", "Steno's law of superposition"],
+  "statement": "In undisturbed layered rock, each bed is younger than the one below and older than the one above.",
+  "statementAccent": "each bed is younger than the one below",
+  "meaning": "The principle of superposition holds that in an undeformed sequence of sedimentary rock layers, each layer is younger than the one beneath it and older than the one above it, because the layers were deposited in temporal order from bottom, the oldest, to top, the youngest. It is the most basic rule of relative dating, letting geologists read the order of events directly from a stack of strata. It holds only where the sequence has not been overturned or thrust out of order, a condition that must always be checked.",
+  "mechanism": "Sediment settles under gravity, so each new layer is laid down on top of what came before, building an ordered stack in which depth records age. Superposition sits alongside the companion principles Steno set out: original horizontality, that layers are deposited flat, so tilted or folded strata were moved after deposition; and lateral continuity, that a layer extends sideways until it thins out or meets a barrier. Later principles build on these, including cross-cutting relationships, that a feature slicing through strata is younger than them, and faunal succession, that fossils change in a fixed order up the sequence.",
+  "examples": [
+    {
+      "tag": "Reading the Grand Canyon",
+      "text": "The canyon's stacked, largely undeformed horizontal strata read oldest at the bottom to youngest at the top, letting geologists reconstruct the sequence of ancient environments directly."
+    },
+    {
+      "tag": "Building the geologic column",
+      "text": "By correlating superposed sequences from many places, geologists assembled the composite geologic column and the relative time scale, the periods, long before any numerical dates existed."
+    },
+    {
+      "tag": "Way-up indicators",
+      "text": "Where beds may be overturned, features like graded bedding, cross-bedding, ripple marks, and mud cracks record which way was up, so superposition can be applied even to inverted strata."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Steno's companion principles",
+      "text": "Original horizontality and lateral continuity, articulated with superposition, which together let deformed or discontinuous strata be interpreted against their original deposition."
+    },
+    {
+      "name": "Cross-cutting relationships",
+      "text": "The later principle, associated with James Hutton, that a fault or intrusion cutting across strata must be younger than the rock it cuts, extending relative dating to igneous and structural features."
+    }
+  ],
+  "whyItMatters": "Superposition is foundational to relative dating and to the entire geologic time scale. It was the organising rule that let geology become a historical science, working out the relative order of Earth's rock record in the seventeenth to nineteenth centuries, decades to a century before radiometric dating existed in the twentieth. Radiometric dating later attached numbers to that framework; it did not replace it. Every reconstruction of Earth's layered history rests first on reading which bed came before which.",
+  "working": [
+    {"lead": "Read bottom-up", "text": "in an undisturbed stack, take the lowest bed as oldest and each higher bed as younger, ordering events by depth."},
+    {"lead": "Check for deformation", "text": "confirm the sequence has not been overturned or thrust before trusting the simple bottom-is-oldest rule."},
+    {"lead": "Use way-up structures", "text": "where beds might be inverted, read graded bedding, ripples, or mud cracks to find the original top and apply superposition correctly."}
+  ],
+  "limits": "Superposition holds only for undeformed sequences. Tectonic activity can overturn, fold, or thrust older rocks over younger ones, so in mountain belts and other disturbed terrain the simple bottom-is-oldest rule can fail, which is why geologists rely on way-up indicators to find the original top. It also applies cleanly to sedimentary layering and needs care with igneous bodies, since an intrusion can be younger than rock both below and above it, which is the territory of cross-cutting relationships rather than superposition. And it gives only relative, not numerical, ages.",
+  "misreadings": "It gives relative, not absolute, ages: it tells you a layer is older or younger than its neighbours, not how many years old, which requires radiometric methods. It is not universal, since in overturned, folded, or thrust-faulted strata older rock can sit atop younger, so assuming bottom-is-oldest in deformed terrain is a real error. And it applies to sedimentary layering, needing care with intrusions and with disturbed sequences such as burrows or later human intrusions.",
+  "origin": "Formulated, with the related principles of original horizontality and lateral continuity, by the Danish anatomist and geologist Nicolas Steno in his 'Prodromus' (1669), based on observations in Tuscany.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1669,
+  "namedAfter": "Nicolas Steno",
+  "sources": [
+    {"text": "Law of superposition, Wikipedia. — the principle, its qualifier for undeformed sequences, and Steno's authorship.", "url": "https://en.wikipedia.org/wiki/Law_of_superposition", "type": "secondary"},
+    {"text": "Geologic Principles: Superposition and Original Horizontality, U.S. National Park Service. — the statement and its role in relative dating.", "url": "https://www.nps.gov/articles/geologic-principles-superposition-and-original-horizontality.htm", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Law_of_superposition",
+  "related": [
+    {"slug": "the-principle-of-faunal-succession", "kind": "kindred"},
+    {"slug": "the-uniformitarian-principle", "kind": "kindred"}
+  ]
+}
