@@ -1,0 +1,56 @@
+{
+  "no": "414",
+  "slug": "the-lyon-hypothesis",
+  "name": "The Lyon Hypothesis",
+  "aliases": ["X-inactivation", "Lyonization"],
+  "statement": "In female mammals, one X chromosome in each cell is switched off, making females genetic mosaics.",
+  "statementAccent": "one X chromosome in each cell is switched off",
+  "meaning": "The Lyon hypothesis is the principle that in female mammals, which carry two X chromosomes, one X in each cell is silenced early in development. This equalises the dose of X-linked gene products between females and males, who have a single X, a process called dosage compensation. The silenced X condenses into a compact structure, the Barr body. Because the choice of which X to inactivate is random in each cell but inherited by its descendants, every female is a mosaic of two cell populations.",
+  "mechanism": "Early in a female embryo, each cell randomly silences one of its two X chromosomes, and all the cells descended from it keep the same X inactive, so patches of tissue express one X or the other. The silencing is driven from the X-inactivation centre, where a long non-coding RNA called XIST coats the chosen X and recruits proteins that pack it into repressive heterochromatin through DNA methylation and histone changes. The choice is reversible at first, then locked in and maintained through all later cell divisions, giving stable, clonally inherited mosaicism.",
+  "examples": [
+    {
+      "tag": "The calico cat",
+      "text": "In a tortoiseshell or calico cat, the X-linked coat-colour alleles are expressed in patches, one per region of fur, because different Xs are inactive in different cells, so such cats are almost always female."
+    },
+    {
+      "tag": "The Barr body",
+      "text": "The inactive X condenses into a dense Barr body, discovered in female but not male cells in 1949, later shown to be the silenced X."
+    },
+    {
+      "tag": "Carriers of X-linked disease",
+      "text": "Female carriers of X-linked disorders show mosaic, variable expression because differing proportions of their cells use the normal or the mutant X."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Escape genes",
+      "text": "The roughly fifteen to twenty-five percent of human X-linked genes that escape inactivation, so silencing is not total and compensation is not literally equal for every gene."
+    },
+    {
+      "name": "Imprinted inactivation",
+      "text": "In marsupials the paternal X is always silenced, and rodent extraembryonic tissues also inactivate the paternal X, non-random forms differing from the random choice in placental mammals."
+    }
+  ],
+  "whyItMatters": "It explains dosage compensation, the mosaic expression of X-linked genes, and everyday puzzles like the calico cat, and it accounts for the variable severity of X-linked disorders in female carriers. As a case of chromosome-wide silencing driven by a non-coding RNA and stably inherited, it became a foundational model system for epigenetics, illuminating how genes can be switched off across a whole chromosome and kept off through generations of cells.",
+  "working": [
+    {"lead": "Expect one active X per cell", "text": "reason about female cells as having a single active X, with the other silenced and inherited as such by descendants."},
+    {"lead": "Read mosaicism", "text": "interpret patchy expression of X-linked traits, as in calico cats or female carriers, as the random-then-clonal choice of which X is active."},
+    {"lead": "Allow for escape", "text": "remember that a fraction of X-linked genes escape silencing, so dosage compensation is not perfectly equal for every gene."}
+  ],
+  "limits": "The core phenomenon is well established, but details qualify it. Not all X-linked genes are silenced: up to roughly a quarter escape inactivation in humans, and genes in the pseudoautosomal region escape because both sexes already carry two copies. Inactivation can be skewed, with one X preferentially active in some women, which can unmask X-linked disease. And in marsupials and some extraembryonic tissues the choice is imprinted rather than random. Older dosage-compensation ideas about X up-regulation are also now disputed.",
+  "misreadings": "Both X chromosomes are not inactivated; exactly one is silenced per cell. The maternal X is not always the one silenced in placental mammals, where the choice is random; that holds only for marsupials and imprinted cases. The whole inactive X is not silent, since a substantial fraction of its genes escape. And male calico cats are not impossible; they occur but require an abnormal karyotype rather than the normal male chromosomes.",
+  "origin": "Proposed by the geneticist Mary Lyon in a 1961 Nature paper, building on Murray Barr and Ewart Bertram's 1949 discovery of the Barr body and Susumu Ohno's work on the two X chromosomes.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1961,
+  "namedAfter": "Mary Lyon",
+  "sources": [
+    {"text": "Lyon, \"Gene Action in the X-chromosome of the Mouse,\" Nature 190 (1961): 372-373. — the random-inactivation hypothesis.", "url": "https://www.nature.com/articles/190372a0", "type": "primary"},
+    {"text": "X-inactivation, Wikipedia. — dosage compensation, the XIST mechanism, calico cats, and escape genes.", "url": "https://en.wikipedia.org/wiki/X-inactivation", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/X-inactivation",
+  "related": [
+    {"slug": "mendelian-inheritance", "kind": "kindred"}
+  ]
+}

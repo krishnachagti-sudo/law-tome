@@ -1,0 +1,57 @@
+{
+  "no": "405",
+  "slug": "mendelian-inheritance",
+  "name": "Mendelian Inheritance",
+  "aliases": ["Mendel's laws", "Mendelism"],
+  "statement": "Traits pass to offspring as discrete factors that separate and recombine by simple rules.",
+  "statementAccent": "discrete factors that separate and recombine",
+  "meaning": "Mendelian inheritance is the set of principles Gregor Mendel derived from breeding pea plants, showing that heredity is carried by discrete factors, now called genes, rather than by a blending of parental traits. Each organism carries two versions, or alleles, of each gene; these separate when gametes form and recombine at fertilisation, and one allele can mask another. From these rules follow the familiar ratios of offspring types, the foundation of classical genetics.",
+  "mechanism": "Three principles capture the pattern. The law of segregation says the two alleles for a gene separate during gamete formation, so each gamete carries just one, later understood as the separation of homologous chromosomes in meiosis. The law of independent assortment says the alleles of different genes pass on independently, but only for genes that are unlinked. The principle of dominance says one allele can hide the phenotypic effect of another, so a hidden recessive can reappear in later generations. Together these produce the three-to-one ratio in a one-trait cross and nine-to-three-to-three-to-one in a two-trait cross.",
+  "examples": [
+    {
+      "tag": "The monohybrid cross",
+      "text": "Crossing plants differing in one trait gives a uniform first generation and a three-to-one ratio of dominant to recessive in the next, revealing the hidden recessive allele."
+    },
+    {
+      "tag": "The dihybrid cross",
+      "text": "Following two unlinked traits at once yields the nine-to-three-to-three-to-one ratio, the signature of independent assortment."
+    },
+    {
+      "tag": "Rediscovery in 1900",
+      "text": "Ignored for decades, Mendel's work was rediscovered around 1900 by de Vries, Correns, and Tschermak, launching genetics as a science."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Extensions of the laws",
+      "text": "Incomplete dominance, codominance, multiple alleles, and epistasis alter the phenotype ratios while the alleles still segregate normally, so they extend rather than overturn Mendel's transmission rules."
+    },
+    {
+      "name": "True exceptions",
+      "text": "Genetic linkage breaks independent assortment, and mitochondrial inheritance, genomic imprinting, and meiotic drive genuinely violate one or another Mendelian law."
+    }
+  ],
+  "whyItMatters": "It is the foundation of classical genetics, establishing that heredity is particulate rather than a blending of parents and giving rules that predict how traits pass through generations. Reconciled with chromosome theory and Darwinian evolution in the modern synthesis, it underlies medical genetics, plant and animal breeding, and the whole framework of dominant and recessive traits, turning the abstract idea of a gene into a predictable, testable unit of inheritance.",
+  "working": [
+    {"lead": "Track alleles, not blends", "text": "treat inheritance as discrete factors that segregate and recombine, not as a smooth mixing of parental traits."},
+    {"lead": "Check for linkage before assuming independence", "text": "apply independent assortment only to genes on different chromosomes or far apart, since linked genes travel together."},
+    {"lead": "Read dominance carefully", "text": "remember a dominant allele masks a recessive in the heterozygote but says nothing about which allele is commoner or fitter."}
+  ],
+  "limits": "The laws describe an idealised case of single genes, two alleles, complete dominance, and unlinked, nuclear inheritance, and real genetics departs from it in many documented ways. Independent assortment fails for linked genes, and inheritance can be complicated by incomplete dominance, codominance, polygenic traits, epistasis, sex linkage, mitochondrial inheritance, genomic imprinting, and epigenetic effects. There is also a long-running statistical debate, begun by Fisher in 1936, over whether Mendel's reported ratios fit too closely to be chance, which remains unresolved rather than a proven charge of fabrication.",
+  "misreadings": "Mendel did not discover genes, chromosomes, or DNA; he inferred abstract hereditary factors, whose material basis was identified decades later. Independent assortment is not universal, failing for linked genes, the single most important qualifier. Dominant does not mean commoner, stronger, or better, only that its phenotype shows in the heterozygote. And incomplete dominance and codominance do not disprove Mendel, since the alleles still segregate normally.",
+  "origin": "Derived by Gregor Mendel from pea-plant experiments between 1856 and 1863, published as 'Experiments on Plant Hybridization' in 1866, and largely ignored until rediscovered around 1900 by Hugo de Vries, Carl Correns, and Erich von Tschermak.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1866,
+  "namedAfter": "Gregor Mendel",
+  "sources": [
+    {"text": "Mendelian inheritance, Wikipedia. — the laws of segregation, independent assortment, and dominance, and their extensions and exceptions.", "url": "https://en.wikipedia.org/wiki/Mendelian_inheritance", "type": "secondary"},
+    {"text": "Miko, \"Gregor Mendel and the Principles of Inheritance,\" Nature Education. — the pea experiments, the ratios, and the rediscovery.", "url": "https://www.nature.com/scitable/topicpage/gregor-mendel-and-the-principles-of-inheritance-593/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Mendelian_inheritance",
+  "related": [
+    {"slug": "hardy-weinberg-principle", "kind": "consequence"},
+    {"slug": "the-lyon-hypothesis", "kind": "kindred"}
+  ]
+}

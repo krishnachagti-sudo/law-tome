@@ -1,0 +1,57 @@
+{
+  "no": "415",
+  "slug": "the-weismann-barrier",
+  "name": "The Weismann Barrier",
+  "aliases": ["Germ plasm theory", "The continuity of the germ line"],
+  "statement": "Heredity flows from germ cells to the body, never from the body back to the germ cells.",
+  "statementAccent": "never from the body back",
+  "meaning": "The Weismann barrier is the principle that hereditary information passes only from the germ line, the cells that make eggs and sperm, to the somatic cells of the body, and never in reverse. Because the body cannot feed heritable information back into the germ cells, changes an organism acquires during its life, from injuries to the effects of use and disuse, cannot be passed to its offspring. This is a strong argument against the Lamarckian inheritance of acquired characteristics.",
+  "mechanism": "In animals the germ line is set apart early in development, kept separate from the soma. Germ cells carry the information for the next generation and direct the formation of the body's somatic cells, so information flows from germ to soma. But somatic cells never write information back into the germ plasm, so a mutation or change arising in the body stays in the body and dies with it. The germ line thus forms a continuous, protected thread passed from generation to generation, largely insulated from the fate of the body it builds.",
+  "examples": [
+    {
+      "tag": "The mouse tails",
+      "text": "Weismann cut the tails off mice over successive generations and their offspring were still born with normal tails, offered as an illustration against inherited acquired traits."
+    },
+    {
+      "tag": "Somatic mutations",
+      "text": "A mutation arising in a body cell, such as in skin or liver, is not passed to offspring, because only germ-line changes are inherited."
+    },
+    {
+      "tag": "The continuity of the germ line",
+      "text": "The germ plasm forms an unbroken thread from parent to offspring, keeping heredity separate from the body it produces."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Relation to the central dogma",
+      "text": "An analogy often drawn to Crick's later central dogma, both expressing a one-way flow of information, though at the level of cell lineages rather than molecular sequence."
+    },
+    {
+      "name": "The plant exception",
+      "text": "In plants, which lack an early-sequestered germ line, germ cells arise from somatic tissue, so the barrier does not hold strictly, and some simple animals lack it too."
+    }
+  ],
+  "whyItMatters": "It is a cornerstone of the modern evolutionary synthesis, removing the inheritance of acquired characteristics as a mechanism and clearing the way for a Darwinian and Mendelian account of heredity. By separating the germ line from the soma, it established the distinction between what is inherited and what is merely acquired, and between genotype and phenotype, shaping how biologists understand the transmission of traits across generations.",
+  "working": [
+    {"lead": "Separate germ from soma", "text": "distinguish heritable changes in the germ line from acquired changes in the body, which are not passed on."},
+    {"lead": "Reject inherited acquired traits", "text": "expect injuries, exercise, or use and disuse of the body not to be transmitted to offspring in animals with a sequestered germ line."},
+    {"lead": "Note the animal scope", "text": "apply the barrier chiefly to animals with an early-sequestered germ line, not strictly to plants or all organisms."}
+  ],
+  "limits": "It is a strong generalisation for animals with an early-sequestered germ line, not a universal law. In plants, germ cells arise from somatic tissue that accumulates changes over life, so there is no strict barrier, and some simple animals lack one too. Modern phenomena such as transgenerational epigenetic inheritance and horizontal gene transfer complicate a strict reading, though they do not restore classical Lamarckism, being distinct molecular mechanisms rather than directed inheritance of adaptive traits. Weismann's mouse-tail experiment was also a weak test, since a mutilation is not the kind of adaptive acquired trait Lamarckism concerned.",
+  "misreadings": "It is not an absolute, exceptionless law; it holds strongly for animals with a sequestered germ line but not for plants, some simple animals, or in the light of epigenetic phenomena. Epigenetic inheritance does not prove Lamarck right, since it is not directed inheritance of adaptive acquired characteristics. The mouse-tail experiment did not decisively disprove Lamarckism, because amputation is not an adaptive acquired trait. And the barrier is analogous to, not identical with, the central dogma.",
+  "origin": "Formulated by the German evolutionary biologist August Weismann in his germ plasm theory of the 1880s, set out in 'The Germ-Plasm: A Theory of Heredity' (1892), in explicit contrast to Lamarckism and Darwin's pangenesis.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1892,
+  "namedAfter": "August Weismann",
+  "sources": [
+    {"text": "Weismann barrier, Wikipedia. — the one-way germ-to-soma information flow, the argument against Lamarckism, and the plant and epigenetic caveats.", "url": "https://en.wikipedia.org/wiki/Weismann_barrier", "type": "secondary"},
+    {"text": "Germ plasm, Encyclopaedia Britannica. — Weismann's germ plasm theory and the continuity of the germ line.", "url": "https://www.britannica.com/science/germ-plasm", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Weismann_barrier",
+  "related": [
+    {"slug": "the-central-dogma-of-molecular-biology", "kind": "kindred"},
+    {"slug": "the-baldwin-effect", "kind": "tension"}
+  ]
+}

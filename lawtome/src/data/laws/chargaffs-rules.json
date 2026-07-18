@@ -1,0 +1,56 @@
+{
+  "no": "406",
+  "slug": "chargaffs-rules",
+  "name": "Chargaff's Rules",
+  "aliases": ["Chargaff's parity rules"],
+  "statement": "In DNA, adenine equals thymine and guanine equals cytosine.",
+  "statementAccent": "adenine equals thymine",
+  "meaning": "Chargaff's rules describe the base composition of DNA. The first and main rule states that in double-stranded DNA the amount of adenine equals the amount of thymine, and the amount of guanine equals the amount of cytosine, so the total purines equal the total pyrimidines. A second, approximate rule states that even within a single strand the amount of adenine roughly matches thymine and guanine roughly matches cytosine. The first rule was a key clue to the structure of DNA.",
+  "mechanism": "The first rule follows directly from complementary base pairing in the double helix: every adenine on one strand faces a thymine on the other, and every guanine faces a cytosine, so their totals must be equal. It is thus a structural consequence of the antiparallel double strands. The second rule, the near-equality within a single strand, is not explained by the helix and remains more mysterious, with proposed contributions from large-scale evolutionary and mutational symmetries; it is an empirical regularity rather than a settled deduction.",
+  "examples": [
+    {
+      "tag": "Disproving the tetranucleotide idea",
+      "text": "Chargaff found base ratios differ between species while adenine still equals thymine and guanine equals cytosine within each, overturning the earlier idea that DNA was a monotonous equal repeat too simple to carry genes."
+    },
+    {
+      "tag": "A clue to the double helix",
+      "text": "The one-to-one equalities pointed Watson and Crick toward specific pairing, adenine with thymine and guanine with cytosine, in their 1953 model."
+    },
+    {
+      "tag": "Single-strand parity",
+      "text": "In most large genomes, a single strand shows adenine roughly equal to thymine and guanine roughly equal to cytosine, the approximate second rule."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The first parity rule",
+      "text": "The exact interstrand equality, adenine equals thymine and guanine equals cytosine, a direct consequence of base pairing in double-stranded DNA."
+    },
+    {
+      "name": "The second parity rule",
+      "text": "The approximate intrastrand equality within a single strand, an empirical regularity not explained by the helix and still discussed."
+    }
+  ],
+  "whyItMatters": "It provided decisive evidence toward the structure of DNA: the equal amounts of adenine and thymine, and of guanine and cytosine, pointed directly to complementary base pairing, which Watson and Crick built into the double helix. By showing that base ratios vary between species while these equalities hold within each, Chargaff also demonstrated that DNA had the compositional variety needed to be the genetic material, refuting the view that it was too uniform.",
+  "working": [
+    {"lead": "Use the first rule for double-stranded DNA", "text": "expect adenine to equal thymine and guanine to equal cytosine in duplex DNA, the exact and structurally grounded rule."},
+    {"lead": "Treat the second rule as approximate", "text": "apply single-strand parity loosely, since it is an empirical near-equality with known exceptions, not an exact law."},
+    {"lead": "Read pairing from the equalities", "text": "take the one-to-one ratios as the signature of complementary base pairing that shapes the double helix."}
+  ],
+  "limits": "The first rule holds for double-stranded DNA and does not apply to single-stranded DNA genomes or to RNA, which uses uracil. The second rule is approximate and breaks down for small organellar genomes such as mitochondria and plastids. Base composition, the balance of guanine and cytosine, varies widely between species even though the equalities hold within each. The first rule is essentially exact as a structural consequence of pairing, while the second is an empirical regularity whose full explanation is still debated.",
+  "misreadings": "The rules do not mean all four bases are present in equal amounts; that was the discredited tetranucleotide idea, and Chargaff showed adenine equals thymine and guanine equals cytosine without the two pairs being equal to each other. The exact equalities are a property between the two strands, not within a single strand, where only the approximate second rule holds. And the rules apply to double-stranded DNA, not to single-stranded or RNA genomes.",
+  "origin": "Established by the biochemist Erwin Chargaff around 1950, using paper chromatography, disproving Levene's tetranucleotide hypothesis and supplying key evidence for Watson and Crick's 1953 double-helix model.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1950,
+  "namedAfter": "Erwin Chargaff",
+  "sources": [
+    {"text": "Chargaff's rules, Wikipedia. — the two parity rules, the tetranucleotide disproof, and the role in the double-helix model.", "url": "https://en.wikipedia.org/wiki/Chargaff%27s_rules", "type": "secondary"},
+    {"text": "Erwin Chargaff, Wikipedia. — the chromatography method and the base-ratio findings.", "url": "https://en.wikipedia.org/wiki/Erwin_Chargaff", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Chargaff%27s_rules",
+  "related": [
+    {"slug": "the-central-dogma-of-molecular-biology", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "no": "404",
+  "slug": "the-central-dogma-of-molecular-biology",
+  "name": "The Central Dogma of Molecular Biology",
+  "aliases": ["The central dogma", "Crick's central dogma"],
+  "statement": "Sequence information can flow from nucleic acids into protein, but never back out of protein.",
+  "statementAccent": "never back out of protein",
+  "meaning": "The central dogma is Francis Crick's principle about the direction in which sequence information can travel among DNA, RNA, and protein. Its true content is a prohibition: once the residue-by-residue sequence has passed into protein, it cannot get out again, so information never flows from protein back to protein or to nucleic acid. The familiar slogan that DNA makes RNA makes protein describes the normal pathway of gene expression, but it is not quite what Crick's dogma actually asserts.",
+  "mechanism": "Crick considered all nine possible transfers of sequence information among the three polymers and sorted them into three kinds. General transfers occur in all cells: DNA to DNA in replication, DNA to RNA in transcription, and RNA to protein in translation. Special transfers occur only in particular circumstances, including RNA to DNA by reverse transcription and RNA to RNA. The forbidden transfers, which the dogma says never happen, are the three out of protein: protein to protein, protein to DNA, and protein to RNA, since there is no mechanism to back-translate a protein's sequence into a nucleic acid.",
+  "examples": [
+    {
+      "tag": "The normal pathway",
+      "text": "In gene expression, DNA is transcribed into RNA and RNA is translated into protein, the general transfers that carry information from genes to their products."
+    },
+    {
+      "tag": "Reverse transcription",
+      "text": "Retroviruses copy RNA back into DNA, a special transfer Crick explicitly anticipated as permitted, not a violation of the dogma."
+    },
+    {
+      "tag": "The forbidden direction",
+      "text": "No natural process reads a protein's amino-acid sequence and writes it back into DNA or RNA, the core prohibition the dogma makes."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The sequence hypothesis",
+      "text": "Crick's separate, positive claim that a nucleic acid's sequence specifies a protein's; distinct from the dogma, which is the negative claim that information never flows out of protein."
+    },
+    {
+      "name": "The 1970 clarification",
+      "text": "Crick's Nature paper written to correct the belief that reverse transcription had overturned the dogma, restating that only transfers out of protein are forbidden."
+    }
+  ],
+  "whyItMatters": "It is the foundational organizing principle of molecular biology, framing how genetic information is stored, copied, and expressed. Its empirical core, that sequence information never flows out of protein, has held for decades, and Crick argued that finding even one cell able to perform a forbidden transfer would shake the whole intellectual basis of the field. Properly understood, it remains a central idea, not the crude one-way slogan it is often reduced to.",
+  "working": [
+    {"lead": "State it as a prohibition", "text": "read the dogma as the claim that information cannot leave protein, not merely as DNA to RNA to protein."},
+    {"lead": "Place reverse transcription correctly", "text": "treat RNA-to-DNA copying as a permitted special transfer Crick foresaw, not a counterexample."},
+    {"lead": "Keep information distinct from matter", "text": "remember the arrows track the flow of sequence information between polymers, not the flow of material or metabolism."}
+  ],
+  "limits": "It is an empirical, foundational principle whose core prohibition has held for over sixty years, but its content is narrower than the textbook slogan suggests. The natural DNA-to-protein direct transfer has been seen only as a laboratory artifact, not a biological pathway. Prions, which propagate a protein conformation, are sometimes cited as a challenge but do not transfer sequence information, so under Crick's precise statement they are not a violation, though the framing is debated. The word dogma is a misnomer Crick later admitted using idiosyncratically.",
+  "misreadings": "It is not simply DNA to RNA to protein, one way; that describes the usual pathway, while the dogma is the prohibition on information leaving protein. Reverse transcription did not break or reverse it, since Crick classified RNA-to-DNA transfer as a permitted special case. And it should not be confused with the sequence hypothesis, which is the separate positive claim that nucleic-acid sequence specifies protein.",
+  "origin": "Introduced by Francis Crick in a 1957 lecture and his 1958 paper 'On Protein Synthesis', and restated in his 1970 Nature paper 'Central Dogma of Molecular Biology' to correct misreadings after the discovery of reverse transcriptase.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1958,
+  "namedAfter": "Francis Crick",
+  "sources": [
+    {"text": "Crick, \"Central Dogma of Molecular Biology,\" Nature 227 (1970): 561-563. — the precise statement, the three classes of transfer, and the reverse-transcription clarification.", "url": "https://www.nature.com/articles/227561a0", "type": "primary"},
+    {"text": "Central dogma of molecular biology, Wikipedia. — the general, special, and forbidden transfers and the common misconceptions.", "url": "https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology",
+  "related": [
+    {"slug": "chargaffs-rules", "kind": "kindred"},
+    {"slug": "the-weismann-barrier", "kind": "kindred"}
+  ]
+}

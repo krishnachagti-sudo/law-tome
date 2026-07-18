@@ -1,0 +1,56 @@
+{
+  "no": "413",
+  "slug": "the-monro-kellie-doctrine",
+  "name": "The Monro-Kellie Doctrine",
+  "aliases": ["The Monro-Kellie hypothesis"],
+  "statement": "The skull holds a fixed volume, so more of one thing inside means less of another or the pressure rises.",
+  "statementAccent": "a fixed volume",
+  "meaning": "The Monro-Kellie doctrine holds that the adult cranial cavity is a rigid, essentially fixed-volume container enclosing three near-incompressible components: brain tissue, blood, and cerebrospinal fluid. Their combined volume is constant, so because the skull cannot expand, any increase in one component, or the addition of a mass such as a tumour or a clot, must be offset by a decrease in another, or the pressure inside the skull rises.",
+  "mechanism": "Compensation is staged. When something adds volume, cerebrospinal fluid is first displaced from the skull into the spinal space and venous blood is shunted out, buffering the change with little rise in pressure. But these reserves are finite. Once they are exhausted, the relationship between volume and pressure turns steep, so small further increases produce large rises in intracranial pressure. Sustained, uncompensated pressure reduces blood flow to the brain, causing ischaemia and, ultimately, herniation of brain tissue.",
+  "examples": [
+    {
+      "tag": "The expanding mass",
+      "text": "A growing tumour or a spreading haematoma is buffered at first by displaced fluid and blood, but once compensation fails, pressure climbs sharply."
+    },
+    {
+      "tag": "The compliance curve",
+      "text": "Because reserves run out, the pressure-volume relationship is nearly flat at first and then rises exponentially, so late volume gains are far more dangerous than early ones."
+    },
+    {
+      "tag": "Decompressive craniectomy",
+      "text": "Surgically removing part of the skull relieves dangerous pressure precisely by breaking the rigid-container assumption the doctrine describes."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The addition of cerebrospinal fluid",
+      "text": "The refinement that added cerebrospinal fluid as a compensatory component, since the original doctrine focused on blood and did not treat fluid as a buffer."
+    },
+    {
+      "name": "Monro-Kellie 2.0",
+      "text": "Modern elaborations arguing the classic model oversimplifies dynamic venous and fluid physiology, a refinement rather than a refutation of the core principle."
+    }
+  ],
+  "whyItMatters": "It is foundational to understanding and managing raised intracranial pressure across traumatic brain injury, hydrocephalus, brain tumours, and haemorrhage, and it also explains fluid-depletion syndromes. It underpins the logic of neurocritical care, from monitoring pressure and draining fluid to osmotic therapy and, when all else fails, removing part of the skull, making it an everyday framework at the bedside.",
+  "working": [
+    {"lead": "Track the three components", "text": "reason about intracranial problems in terms of brain, blood, and fluid within a fixed total volume."},
+    {"lead": "Expect a compensation reserve", "text": "anticipate that early volume increases are buffered with little pressure change, and that danger rises sharply once reserves are spent."},
+    {"lead": "Remember it assumes a rigid skull", "text": "apply the doctrine to the fused adult skull, not to infants whose skulls can still expand."}
+  ],
+  "limits": "It applies to the rigid adult skull and does not hold strictly in infants and young children with open fontanelles and unfused sutures, whose crania can expand. The original doctrine was incomplete, focusing on blood and omitting cerebrospinal fluid as a buffer, a role added later. Modern critiques argue the classic model oversimplifies dynamic venous and fluid physiology and call for revision, though these are refinements of a sound core rather than a refutation. The component proportions are approximate teaching figures, not exact constants.",
+  "misreadings": "The total intracranial volume is near-constant rather than absolutely fixed, since the cranial space communicates with the spinal compartment and the components are only near-incompressible. Monro and Kellie did not fully describe the three-component model; cerebrospinal fluid's compensatory role was added later. It does not apply to newborns with open fontanelles. And pressure does not rise linearly with added volume; the relationship is nearly flat and then steep once reserves are exhausted.",
+  "origin": "Founded on Alexander Monro's reasoning in 1783 and George Kellie's confirming observations in 1824, then refined over the nineteenth century to include cerebrospinal fluid and applied to neurosurgery by Harvey Cushing in the early twentieth century.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1783,
+  "namedAfter": "Alexander Monro and George Kellie",
+  "sources": [
+    {"text": "Mokri, \"The Monro-Kellie hypothesis: applications in CSF volume depletion,\" Neurology 56 (2001): 1746-1748. — the doctrine, its history, and the role of cerebrospinal fluid.", "url": "https://pubmed.ncbi.nlm.nih.gov/11425944/", "type": "primary"},
+    {"text": "Intracranial Pressure Monitoring, StatPearls. — the fixed-volume principle, staged compensation, and the pressure-volume curve.", "url": "https://www.ncbi.nlm.nih.gov/books/NBK542298/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Monro%E2%80%93Kellie_doctrine",
+  "related": [
+    {"slug": "the-law-of-laplace", "kind": "kindred"}
+  ]
+}
