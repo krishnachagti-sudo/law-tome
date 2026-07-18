@@ -1,0 +1,57 @@
+{
+  "no": "298",
+  "slug": "the-ringelmann-effect",
+  "name": "The Ringelmann Effect",
+  "statement": "The bigger the team, the less each member pulls.",
+  "statementAccent": "the less each member pulls",
+  "meaning": "As a group grows, each individual member tends to contribute less. The Ringelmann effect is the decline in per-person effort or output as group size increases. Total output may still rise as people are added — it just rises less than proportionally, because each added member pulls a little less than they would alone.",
+  "mechanism": "Two distinct processes drag productivity down. One is coordination loss: as more people act together, their efforts are imperfectly synchronised and partly cancel. The other is motivation loss, later named social loafing: people simply try less hard when their individual contribution is submerged in the group. Ringelmann himself leaned toward coordination as the main cause but was aware of motivation. A clever later study using pseudo-groups — one real puller among confederates only pretending to pull — removed the coordination demand and still found effort declining, proving motivation loss is real and substantial.",
+  "examples": [
+    {
+      "tag": "The rope pull",
+      "text": "In Ringelmann's tug-of-war measurements, a lone puller managed about sixty-three kilograms of force, but eight together produced only around two hundred and fifty rather than eight times as much — roughly half the summed individual capacity."
+    },
+    {
+      "tag": "Shouting in a crowd",
+      "text": "Latane and colleagues found people clapping or shouting with others exerted a smaller fraction of their solo intensity as the group grew, the finding that coined social loafing."
+    },
+    {
+      "tag": "The committee",
+      "text": "Group projects, committees, and other pooled tasks show the pattern: where individual effort is hard to identify, each person tends to ease off."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Social loafing",
+      "text": "The motivation-loss component isolated and named by Latane, Williams, and Harkins, driven by the free-rider problem, diffusion of responsibility, and the wish not to be a sucker for others' loafing."
+    },
+    {
+      "name": "The Kohler effect",
+      "text": "The counter-phenomenon, a motivation gain: in a conjunctive task where the group depends on its weakest link, a weaker member works harder than alone, especially when abilities differ moderately."
+    }
+  ],
+  "whyItMatters": "It was the first documented demonstration that groups can be less than the sum of their parts, founding a century of research into how effort dilutes in collectives. It underlies practical concerns from team design to committee size, and its motivation-loss component, social loafing, is one of the most studied phenomena in social psychology.",
+  "working": [
+    {"lead": "Make effort identifiable", "text": "to counter the effect, structure tasks so each person's contribution can be seen and credited, which curbs loafing."},
+    {"lead": "Keep groups no larger than needed", "text": "recognise that adding members yields less than proportional gain, and sometimes less total effort per head."},
+    {"lead": "Distinguish the two losses", "text": "separate coordination problems, fixable by better organisation, from motivation problems, fixable by accountability."}
+  ],
+  "limits": "The original data are old and thin. Ringelmann gathered them in the 1880s, where the group-versus-individual comparison was a secondary interest, and the exact task behind some figures is not documented — the tug-of-war label is conventional but not certain. The effect entered modern psychology second-hand through Moede and was only checked against the original when Kravitz and Martin located it in 1986. Its magnitude varies with culture, being weaker in collectivist societies, with gender, being reduced for women, and with whether individual effort is identifiable. And it can even reverse into a motivation gain, the Kohler effect, in conjunctive tasks.",
+  "misreadings": "The effect is about per-person effort, not total output — bigger groups usually still produce more in total, just less than proportionally. It is not pure laziness either: it combines coordination loss with motivation loss, and reducing the whole thing to social loafing ignores the coordination half that Ringelmann himself stressed. And Ringelmann was an agricultural engineer studying human labour efficiency, not a psychologist running a tug-of-war study, with the group comparison incidental.",
+  "origin": "First measured by the French agricultural engineer Maximilien Ringelmann, from rope-pulling data gathered in the 1880s and published in 1913; rediscovered by Kravitz and Martin in 1986, with the motivation-loss component isolated by Ingham and colleagues (1974) and named social loafing by Latane, Williams, and Harkins (1979).",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1913,
+  "namedAfter": "Maximilien Ringelmann",
+  "sources": [
+    {"text": "Ringelmann effect, Wikipedia. — the per-person-decline statement, the rope-pulling data, the coordination and motivation components, and the 1913 publication.", "url": "https://en.wikipedia.org/wiki/Ringelmann_effect", "type": "secondary"},
+    {"text": "Kravitz & Martin, \"Ringelmann Rediscovered: The Original Article,\" Journal of Personality and Social Psychology 50(5):936-941 (1986). — the 1880s data, secondary interest, and rediscovery.", "url": "https://mason.gmu.edu/~dkravitz/Pubs/JPSPv50p936.htm", "type": "primary"},
+    {"text": "Latane, Williams & Harkins, \"Many hands make light the work: The causes and consequences of social loafing,\" Journal of Personality and Social Psychology 37(6):822-832 (1979). — the coining and demonstration of social loafing.", "url": "https://www.researchgate.net/publication/209409900_Many_hands_make_light_the_work_The_causes_and_consequences_of_social_loafing", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Ringelmann_effect",
+  "related": [
+    {"slug": "the-free-rider-problem", "kind": "cause"},
+    {"slug": "the-bystander-effect", "kind": "kindred"}
+  ]
+}
