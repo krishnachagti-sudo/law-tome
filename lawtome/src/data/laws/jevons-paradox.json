@@ -1,0 +1,61 @@
+{
+  "no": "092",
+  "slug": "jevons-paradox",
+  "name": "The Jevons Paradox",
+  "statement": "Making a resource more efficient to use can increase, not decrease, how much of it is used.",
+  "statementAccent": "increase, not decrease",
+  "meaning": "Improving the efficiency with which a resource is used lowers the effective cost of using it, which tends to raise demand — often enough to wipe out, and even exceed, the per-unit savings. Efficiency does not automatically cut total consumption; it can raise it.",
+  "mechanism": "An efficiency gain lowers the per-service price of the resource, so the quantity demanded rises — the rebound effect. If demand is elastic enough, the extra use outweighs the per-unit savings and total consumption grows. The Khazzoom–Brookes postulate adds a macro channel: efficiency gains raise real incomes and growth, lifting economy-wide demand further still.",
+  "examples": [
+    {
+      "tag": "Coal and the steam engine",
+      "text": "Jevons's original case: James Watt's more efficient steam engines lowered the cost of coal-powered work, which pushed coal into far more industries and raised total British coal consumption in the nineteenth century — the opposite of the expected saving."
+    },
+    {
+      "tag": "Efficient lighting",
+      "text": "As lighting grew vastly more efficient, total lighting use and light pollution rose; a Sandia study led by Jeff Tsao projected that cheaper solid-state lighting could raise lighting consumption by roughly a factor of ten by 2030."
+    },
+    {
+      "tag": "Fuel-efficient cars",
+      "text": "More efficient vehicles lower the cost per mile and encourage more driving. Here the rebound is usually only partial, so efficiency still nets some saving — an illustration of the effect, not of full backfire."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The rebound effect",
+      "text": "The gap between projected and actual savings — the demand rise that partly or wholly offsets an efficiency gain. Partial rebound leaves net savings; rebound above 100% is 'backfire', which is the full Jevons paradox."
+    },
+    {
+      "name": "The Khazzoom–Brookes postulate",
+      "text": "The macro-level version, named by Harry Saunders (1992): efficiency improvements that make sense case by case can raise economy-wide energy consumption once income and growth effects are counted."
+    },
+    {
+      "name": "Wirth's law (analogue)",
+      "text": "The software echo: as hardware gets faster, software expands to consume the gains, so user-visible performance need not improve — efficiency absorbed by expanded use."
+    }
+  ],
+  "whyItMatters": "It is a hard truth for efficiency-based policy: making cars, chips, or power plants more efficient does not guarantee lower total resource use, because the savings can be spent on more consumption. It reframes conservation as something that has to be captured deliberately — through pricing or caps — not assumed to follow from efficiency.",
+  "working": [
+    {"lead": "Don't assume efficiency cuts total use", "text": "count the rebound: a cheaper-to-run resource invites more use, which can erode or exceed the per-unit saving."},
+    {"lead": "Pair efficiency with a cap or price", "text": "to keep the savings, couple efficiency gains with conservation measures — carbon pricing, caps, quotas — that stop them being spent on more consumption."},
+    {"lead": "Estimate the rebound before claiming a saving", "text": "whether efficiency nets savings depends on the elasticity of demand; measure it rather than assume it."}
+  ],
+  "limits": "The full paradox — total use actually rising — requires the rebound effect to exceed 100%, and in many real cases rebound is only partial, so efficiency still delivers real, if smaller, savings. Economists actively debate the magnitude and prevalence of rebound: evidence for economy-wide backfire is genuine but contested, and the outcome depends on price elasticity, market size, saturation, and time horizon. It is a real and important effect, not a universal law that efficiency always increases consumption.",
+  "misreadings": "It does not say efficiency is pointless or always self-defeating — often the rebound is partial and net savings remain. It is the narrower, contested claim that under the right conditions the savings can be more than spent, so total use rises.",
+  "origin": "Named for the economist William Stanley Jevons, who set it out in The Coal Question (1865), observing that England's coal use soared after more efficient steam engines expanded coal's industrial uses. He put it bluntly: 'It is wholly a confusion of ideas to suppose that the economical use of fuel is equivalent to a diminished consumption. The very contrary is the truth.'",
+  "category": "economics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1865,
+  "namedAfter": "William Stanley Jevons",
+  "sources": [
+    {"text": "Jevons, W.S. (1865). The Coal Question. — the original observation about coal and steam engines.", "url": "https://energyhistory.yale.edu/w-stanley-jevons-the-coal-question-1865/", "type": "primary"},
+    {"text": "Jevons paradox, Wikipedia. — the rebound mechanism, the lighting example, and the debate over backfire.", "url": "https://en.wikipedia.org/wiki/Jevons_paradox", "type": "secondary"},
+    {"text": "Khazzoom–Brookes postulate, Wikipedia. — the macro-level version and Saunders's naming.", "url": "https://en.wikipedia.org/wiki/Khazzoom-Brookes_postulate", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Jevons_paradox",
+  "related": [
+    {"slug": "wirths-law", "kind": "kindred"},
+    {"slug": "cobra-effect", "kind": "kindred"}
+  ]
+}

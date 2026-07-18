@@ -1,0 +1,57 @@
+{
+  "no": "085",
+  "slug": "regression-to-the-mean",
+  "name": "Regression to the Mean",
+  "statement": "Extreme measurements tend to be followed by ones closer to the average.",
+  "statementAccent": "closer to the average",
+  "meaning": "Unusually high or low results tend to be followed by more ordinary ones — not because anything corrected them, but because part of what made them extreme was luck, and luck does not repeat. The best scorers on a first test usually score lower (though still above average) on a retake; the worst usually score higher.",
+  "mechanism": "Any observed value is a stable component plus random noise. To land at an extreme you usually need both a high underlying value and the noise breaking your way; on a re-measurement the stable part persists but the lucky noise, on average, does not, so the total moves back toward the mean. The strength of the effect depends on the correlation between the two measurements: the weaker the correlation, the stronger the regression. It is a property of imperfect correlation, not a causal force.",
+  "examples": [
+    {
+      "tag": "Praise and punishment",
+      "text": "Kahneman's flight-instructor case: cadets praised after an excellent manoeuvre did worse next time, and cadets scolded after a poor one improved — so the instructors concluded punishment works and praise backfires. It was pure regression: an exceptional performance is naturally followed by a more average one, whatever the feedback."
+    },
+    {
+      "tag": "The sophomore slump",
+      "text": "A dazzling rookie season or a magazine cover is earned by a peak that included good luck, so the natural next step is back toward the athlete's true level. The apparent 'jinx' is regression mistaken for a curse."
+    },
+    {
+      "tag": "Clinical trials",
+      "text": "Patients recruited because their symptoms are at an extreme tend to improve on re-measurement even with an ineffective treatment — which is exactly why trials need a control group, lest regression be read as a cure."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The regression fallacy",
+      "text": "The error of pinning a causal story on what is merely regression — 'the punishment worked', 'the treatment cured them', 'the cover jinxed him'."
+    },
+    {
+      "name": "Galton's 'reversion'",
+      "text": "The original name: Galton first found the effect in sweet peas and in human height, calling it reversion before settling on regression."
+    }
+  ],
+  "whyItMatters": "It is one of the most common ways intuition goes wrong: because extremes are followed by less-extreme values automatically, we credit or blame whatever we happened to do in between. Recognising regression is what separates a real intervention effect from a statistical mirage — and it is why controls and baselines exist.",
+  "working": [
+    {"lead": "Suspect regression whenever you selected on an extreme", "text": "if you picked the top or bottom performers, the worst clinic sites, the hottest stocks, expect their next reading to be less extreme on its own."},
+    {"lead": "Use a control group", "text": "the only clean way to tell a real effect from regression is to compare against a group that regressed but got no treatment."},
+    {"lead": "Don't reward or punish the noise", "text": "before concluding your praise, penalty, or fix caused the change, ask whether the extreme that prompted it would have moved toward average anyway."}
+  ],
+  "limits": "Regression to the mean is a statistical artefact of imperfect correlation, not a causal effect, and the central error is treating it as one. It does not occur when the two measurements are perfectly correlated, and its strength scales inversely with the correlation. It is also not the gambler's idea that things must 'even out': the variable does not overshoot the mean to compensate, and no single next value is guaranteed — it is a statement about averages over a group selected for being extreme.",
+  "misreadings": "It does not say everything tends toward mediocrity, or that a system is 'due' for a correction. It says that a value chosen for being extreme will, on average, be less extreme next time — because luck, unlike skill, does not repeat.",
+  "origin": "First described by Francis Galton in his 1886 paper 'Regression towards Mediocrity in Hereditary Stature', which found that the children of very tall or very short parents were closer to average than their parents. Galton had noticed the same in sweet-pea seeds in the 1870s, calling it 'reversion' before the modern term 'regression'; it was later central to Daniel Kahneman's account of how intuition misreads chance.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1886,
+  "namedAfter": "Francis Galton",
+  "sources": [
+    {"text": "Galton, F. (1886). \"Regression towards Mediocrity in Hereditary Stature.\" Journal of the Anthropological Institute, 15, 246–263.", "url": "http://www.stat.ucla.edu/~nchristo/statistics100C/history_regression.pdf", "type": "primary"},
+    {"text": "Regression toward the mean, Wikipedia. — the mechanism, the clinical-trial and jinx examples, and the regression fallacy.", "url": "https://en.wikipedia.org/wiki/Regression_toward_the_mean", "type": "secondary"},
+    {"text": "Kahneman, D. (2011). Thinking, Fast and Slow, ch. 17. — the flight-instructor anecdote and the intuition it fools.", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Regression_toward_the_mean",
+  "related": [
+    {"slug": "littlewoods-law", "kind": "kindred"},
+    {"slug": "twymans-law", "kind": "kindred"}
+  ]
+}

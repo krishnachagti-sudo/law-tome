@@ -1,0 +1,55 @@
+{
+  "no": "087",
+  "slug": "twymans-law",
+  "name": "Twyman's Law",
+  "statement": "Any figure that looks interesting or different is usually wrong.",
+  "statementAccent": "usually wrong",
+  "meaning": "A surprising, striking, or counterintuitive number in your data should trigger suspicion, not celebration. The most exciting-looking results are disproportionately artefacts of measurement, coding, or analysis error — so check before you believe.",
+  "mechanism": "It is a base-rate, Bayesian point. Errors in measurement, logging, and analysis are common and can throw off values wildly; genuine dramatic changes of the same size in the underlying process are rare. Because the pool of possible mistakes is far larger than the pool of true anomalies, a figure that looks astonishing is, conditional on looking astonishing, more likely an error than a discovery.",
+  "examples": [
+    {
+      "tag": "The metric spike",
+      "text": "A user count that doubles overnight, or an A/B test that looks too good to be true, most often traces to a logging bug, a double-fired event, or a broken tracking tag — not a real change in behaviour. Checking the pipeline first is the reflex Twyman's law instils."
+    },
+    {
+      "tag": "The coding error",
+      "text": "An astonishing pattern in a dataset — a suspiciously perfect gap, a clean discontinuity — frequently turns out to be an AM/PM mix-up, a wrong time zone, or a mislabelled column. Fix the coding mistake and the drama disappears."
+    },
+    {
+      "tag": "The impossible score",
+      "text": "Unusually large jumps in test scores, or an anomalous instrument reading, often reflect fraud, miscalibration, or a processing artefact on investigation — hence the experimenter's habit of suspecting the apparatus before claiming a new effect."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Sagan standard",
+      "text": "Its evidential cousin: extraordinary claims require extraordinary evidence — and a surprising figure has not yet supplied any."
+    },
+    {
+      "name": "Check your instruments first",
+      "text": "The experimental-science form of the same discipline: before announcing an anomaly, suspect the measurement that produced it."
+    }
+  ],
+  "whyItMatters": "It is the working motto of data quality: it tells you where to spend your scepticism — on exactly the findings you most want to be true. In analytics, market research, and online experimentation, it is what stops a tracking bug from being launched as a breakthrough.",
+  "working": [
+    {"lead": "Investigate the striking result before acting on it", "text": "the more exciting the number, the more of your verification budget it deserves — validate the pipeline, the definitions, and the query first."},
+    {"lead": "Check, don't dismiss", "text": "the law says scrutinise surprising data, not reject it; a genuine effect survives the scrutiny, and front-loading it just catches the errors sooner."},
+    {"lead": "Beware motivated belief", "text": "a surprising figure that flatters your hopes is the most dangerous kind — apply the same suspicion you would to one you disliked."}
+  ],
+  "limits": "It is a heuristic grounded in base rates, not a law of nature, and over-applied it could suppress genuine discoveries, since real breakthroughs and true anomalies also look 'interesting or different'. The correct reading is to check surprising data, not to reject it — the law tells you where to concentrate verification, not what to conclude. It can also be misused to wave away inconvenient-but-real results, which inverts its purpose. Its attribution is loose: it is an oral maxim named after the audience-research analyst Tony Twyman, popularised by others rather than published by him under that name.",
+  "misreadings": "It does not say surprising results are always false, or that anomalies should be ignored. It says they are more often error than discovery, so they earn the first and hardest look — a rule for allocating scrutiny, not for reaching verdicts.",
+  "origin": "An oral maxim named after Tony Twyman, a British media- and audience-research analyst (a real co-author, with the statistician A.S.C. Ehrenberg, of a 1967 paper on measuring television audiences). No source shows Twyman publishing 'the law' himself under that name; it circulated in market research and was revived by the 21st-century literature on controlled online experiments (notably Kohavi, Tang and Xu).",
+  "category": "statistics",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "namedAfter": "Tony Twyman",
+  "sources": [
+    {"text": "Twyman's law, Wikipedia. — the canonical wording, the base-rate reasoning, and the attribution to Tony Twyman.", "url": "https://en.wikipedia.org/wiki/Twyman%27s_law", "type": "secondary"},
+    {"text": "Kohavi, R., Tang, D. & Xu, Y. (2020). Trustworthy Online Controlled Experiments. Cambridge University Press. — Twyman's law in A/B-testing practice.", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Twyman%27s_law",
+  "related": [
+    {"slug": "sagan-standard", "kind": "kindred"},
+    {"slug": "regression-to-the-mean", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "no": "086",
+  "slug": "simpsons-paradox",
+  "name": "Simpson's Paradox",
+  "aliases": ["The Yule–Simpson effect"],
+  "statement": "A trend that appears in every group of data can reverse when the groups are combined.",
+  "statementAccent": "reverse when the groups are combined",
+  "meaning": "Split data into subgroups and one relationship holds within every subgroup; pool all the data together and the relationship flips the other way or vanishes. The same dataset can say opposite things depending on whether you look at it split up or lumped together.",
+  "mechanism": "It arises from a lurking variable combined with unequal group sizes. When subgroups differ both in their baseline rates and in how many units fall into each, the aggregate is a weighted average whose weights differ across groups — and those weighting effects can overwhelm, and reverse, the within-group trend. The reversal is arithmetically real; which view is the right one is a question about causation, not arithmetic.",
+  "examples": [
+    {
+      "tag": "Berkeley admissions",
+      "text": "In 1973 UC Berkeley's graduate admissions looked biased against women in aggregate (about 44% of men admitted versus 35% of women). Department by department, the bias slightly favoured women — because women applied disproportionately to the most competitive departments, which admitted fewer of everyone."
+    },
+    {
+      "tag": "Kidney stones",
+      "text": "In a 1986 study, one treatment had a higher success rate than another for small stones and for large stones separately, yet a lower rate overall — because it was used on the harder large-stone cases. Winning both subgroups and losing the total is the paradox in one table."
+    },
+    {
+      "tag": "Batting averages",
+      "text": "A player can have a lower batting average than a rival in each of two seasons yet a higher average across the two combined, if the seasons had very different numbers of at-bats — Derek Jeter and David Justice in 1995–96 are the classic case."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The ecological fallacy",
+      "text": "The allied error of inferring individual-level relationships from group-level data — a cousin of Simpson's paradox in the family of aggregation traps."
+    },
+    {
+      "name": "Confounding",
+      "text": "The general phenomenon of a third variable distorting an association; Simpson's paradox is its extreme, sign-reversing case."
+    }
+  ],
+  "whyItMatters": "It is the sharpest warning that a statistic can be true and misleading at once: the direction of an effect can depend entirely on whether — and how — you group the data. It is why 'the numbers speak for themselves' is never quite right, and why causal reasoning has to sit behind the arithmetic.",
+  "working": [
+    {"lead": "Ask what is being averaged", "text": "an aggregate is a weighted average; when subgroups differ in size, check whether the weighting, not the effect, is driving the headline."},
+    {"lead": "Let the causal question decide the grouping", "text": "disaggregating is not automatically right — whether to condition on a variable depends on whether it is a confounder or lies on the causal path."},
+    {"lead": "Show both views", "text": "when a trend reverses on aggregation, present the subgroup and the pooled figures together, and be explicit about which the causal story supports."}
+  ],
+  "limits": "It is a real, provable statistical phenomenon, not a logical paradox — the surprise dissolves once the group sizes are visible. Crucially, which grouping gives the 'correct' answer is not settled by the data alone but by the causal structure behind the variables: as Judea Pearl stresses, conditioning on a confounder (like stone size) is right, but conditioning on a variable that lies on the causal pathway can introduce bias rather than remove it. So 'always look at the subgroups' is not a safe universal rule.",
+  "misreadings": "It is not proof that statistics lie, nor that disaggregated data is always more truthful. It shows that aggregation can reverse a trend, and that deciding which view is valid requires a causal model, not just more arithmetic.",
+  "origin": "Described by Edward H. Simpson in a 1951 paper on contingency tables, though Karl Pearson (1899) and Udny Yule (1903) had noted the effect earlier — hence 'the Yule–Simpson effect'. The name 'Simpson's paradox' was coined by Colin Blyth in 1972.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1951,
+  "popularYear": 1972,
+  "namedAfter": "Edward H. Simpson",
+  "sources": [
+    {"text": "Simpson, E.H. (1951). \"The Interpretation of Interaction in Contingency Tables.\" Journal of the Royal Statistical Society, Series B, 13(2), 238–241.", "type": "primary"},
+    {"text": "Bickel, P., Hammel, E. & O'Connell, J.W. (1975). \"Sex Bias in Graduate Admissions: Data from Berkeley.\" Science, 187(4175), 398–404.", "url": "https://doi.org/10.1126/science.187.4175.398", "type": "primary"},
+    {"text": "Simpson's paradox, Wikipedia. — the mechanism, the Berkeley/kidney-stone/batting cases, and Pearl's causal resolution.", "url": "https://en.wikipedia.org/wiki/Simpson%27s_paradox", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Simpson%27s_paradox",
+  "related": [
+    {"slug": "berksons-paradox", "kind": "kindred"}
+  ]
+}

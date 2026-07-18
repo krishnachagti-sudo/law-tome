@@ -1,0 +1,56 @@
+{
+  "no": "094",
+  "slug": "okuns-law",
+  "name": "Okun's Law",
+  "statement": "A one-point rise in unemployment goes with output falling roughly two percent below its potential.",
+  "statementAccent": "output falling roughly two percent",
+  "meaning": "When the economy slows and output drops below its potential, unemployment rises — but by less than one-for-one with the output loss. Turned around: cutting unemployment by a point takes several points of extra growth above trend. It is a statistical regularity, not a mechanical law.",
+  "mechanism": "Output moves by a larger percentage than the unemployment rate because unemployment captures only part of the fall in labour input. Okun's own accounting spread a one-point unemployment change across several margins: firms hoard labour they do not fully need rather than fire and re-hire; employed workers put in fewer hours; output per hour falls in slack times; and discouraged workers leave the labour force, so the measured unemployment rate understates the true loss. Together these make a given output gap show up as a smaller change in unemployment.",
+  "examples": [
+    {
+      "tag": "The post-war US",
+      "text": "In post-war American data the relationship held reasonably well — years when real GDP grew faster than its roughly 3% trend saw unemployment fall, and vice versa, tracing a recognisable loop through successive recessions."
+    },
+    {
+      "tag": "A drifting coefficient",
+      "text": "The ratio is not universal: Okun's own 1962 estimate was nearer 3, modern US figures nearer 2, and once you control for capacity use and hours it can fall below 1. It also varies markedly across countries and eras."
+    },
+    {
+      "tag": "The 2009 puzzle",
+      "text": "In 2009 output was roughly flat while trend rose about 3%, so Okun's law predicted unemployment should rise about 1.5 points — instead it rose around 3, more than twice predicted, as unusually fast productivity growth let firms shed labour while holding output."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The difference version",
+      "text": "Relates the change in output to the change in unemployment (ΔY/Y ≈ k − c·Δu). It is the more-used form because it needs no unobservable quantities."
+    },
+    {
+      "name": "The gap version",
+      "text": "Relates the output gap to the gap between actual and natural unemployment. Cleaner in theory, but it requires estimating potential GDP and the natural rate — both unobservable."
+    }
+  ],
+  "whyItMatters": "It is the workhorse link between the two headline numbers of a macroeconomy, output and unemployment, and it lets a forecast of one be turned into a rough forecast of the other. Its instability is itself instructive: watching Okun's law break tells you when something unusual — a jobless recovery, a productivity surge — is happening in the labour market.",
+  "working": [
+    {"lead": "Use it for rough short-run translation", "text": "it is a serviceable back-of-envelope tool for turning a growth forecast into an unemployment forecast, and vice versa — for trends, not precision."},
+    {"lead": "Don't treat the coefficient as a constant", "text": "the ratio drifts by country and era, so pick a value for your context and hold it loosely rather than assuming a universal 2."},
+    {"lead": "Read the breakdowns as signals", "text": "when the relationship misses badly — as in 2009 — take it as evidence of an unusual labour-market episode, not just noise."}
+  ],
+  "limits": "Okun's law is an empirical rule of thumb, not a structural law, and its central caveat is that the coefficient is unstable across time and countries — Okun's original estimate was near 3, modern US values near 2, and controlling for hours and capacity can push it below 1. It breaks down in specific episodes: 'jobless recoveries' where output rebounds but employment does not, and the 2009 case where unemployment rose far more than predicted. The gap version also depends on measuring potential output and the natural rate, both unobservable and revised. It should never be treated as an exact constant.",
+  "misreadings": "It is not a precise or permanent equation, and there is no single 'true' Okun coefficient — the roughly-2 figure is a modern convention, not a law of nature. It summarises a historical correlation well enough for rough forecasting, and it fails in exactly the episodes worth noticing.",
+  "origin": "Named for the economist Arthur Okun — later chairman of the Council of Economic Advisers — who set out the relationship in his 1962 paper 'Potential GNP: Its Measurement and Significance'. The law was a byproduct of his real aim, which was to measure potential output; its coefficient has drifted ever since.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1962,
+  "namedAfter": "Arthur Okun",
+  "sources": [
+    {"text": "Okun, A. (1962). \"Potential GNP: Its Measurement and Significance.\" Proceedings of the Business and Economic Statistics Section, American Statistical Association.", "type": "primary"},
+    {"text": "Okun's law, Wikipedia. — the difference and gap versions, the mechanism, and the coefficient's instability.", "url": "https://en.wikipedia.org/wiki/Okun%27s_law", "type": "secondary"},
+    {"text": "Federal Reserve Bank of San Francisco (2010). \"Okun's Law and the Unemployment Surprise of 2009.\"", "url": "https://www.frbsf.org/economic-research/publications/economic-letter/2010/march/okun-law-unemployment-2009/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Okun%27s_law",
+  "related": [
+    {"slug": "says-law", "kind": "kindred"}
+  ]
+}
