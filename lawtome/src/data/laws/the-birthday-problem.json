@@ -1,0 +1,55 @@
+{
+  "no": "177",
+  "slug": "the-birthday-problem",
+  "name": "The Birthday Problem",
+  "aliases": ["The birthday paradox"],
+  "statement": "In a group of just 23 people, two probably share a birthday.",
+  "statementAccent": "just 23 people, two probably share a birthday",
+  "meaning": "With only 23 people the chance that some two of them share a birthday already exceeds a half; by 70 it is virtually certain. It feels impossible, which is why it is called a paradox, but the mathematics is exact — the surprise is entirely psychological.",
+  "mechanism": "The trick is that it counts pairs, not people. A group of 23 offers not 23 chances of a match but 253 pairs, each a chance for a coincidence. You compute it by the complement — one minus the probability that all birthdays differ — which for 23 people works out to about 50.7 percent. Because collisions become likely once the group size nears the square root of the number of possible birthdays, and the square root of 365 is about 19, the threshold falls near 23.",
+  "examples": [
+    {
+      "tag": "The 23 threshold",
+      "text": "Twenty-three people give roughly a 50.7 percent chance of a shared birthday, the headline figure that reliably astonishes audiences."
+    },
+    {
+      "tag": "Near-certainty by 70",
+      "text": "By 70 people the chance passes 99.9 percent, and by 367 a shared birthday is guaranteed outright by the pigeonhole principle, since there are only 366 possible dates."
+    },
+    {
+      "tag": "The birthday attack",
+      "text": "The same square-root mathematics makes finding a hash collision far cheaper than brute force — only about the square root of the number of possible outputs — which is why cryptographic hashes must be long."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The pigeonhole principle",
+      "text": "The deterministic backstop: with only 366 possible birthdays, 367 people force a shared one with certainty — a guarantee, where the birthday problem is about likelihood at just 23."
+    },
+    {
+      "name": "The birthday attack",
+      "text": "The cryptographic application: collisions among values drawn from a large space become likely near the square root of its size, setting the required length of hash functions."
+    }
+  ],
+  "whyItMatters": "It is the classic demonstration that coincidences are far more likely than intuition allows, because we underestimate how many pairs a group contains. Beyond the party trick, its square-root mathematics governs hash-collision security across cryptography.",
+  "working": [
+    {"lead": "Count pairs, not people", "text": "gauge coincidence likelihood by the number of pairs, which grows with the square of the group size, not by the head count."},
+    {"lead": "Use the square-root rule of thumb", "text": "expect collisions to become likely once a sample nears the square root of the number of possible categories."},
+    {"lead": "Size hashes against the birthday bound", "text": "in cryptography, choose hash lengths so that the square-root collision cost stays infeasible."}
+  ],
+  "limits": "The standard result assumes 365 equally likely, independent birthdays and ignores leap years and twins. Real birthday distributions are slightly uneven, but that only increases the collision chance, so the uniform assumption gives a conservative, lowest-case estimate. It is a correct, provable result, not a fallacy — the 'paradox' is only that it defies intuition, a veridical paradox rather than a flawed argument.",
+  "misreadings": "It is not asking whether someone matches your birthday — that would need far more people — but whether any pair among the group matches, which is why 23 suffices. And it is not a trick or a fallacy: the mathematics is exact, and the surprise is purely psychological.",
+  "origin": "A classic result of elementary probability with no single clean originator: the problem is generally attributed to Harold Davenport around 1927, though he did not publish it, and the first published version was by Richard von Mises in 1939.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1939,
+  "sources": [
+    {"text": "Birthday problem, Wikipedia. — the 23/70/367 figures, the pair-counting insight, and the Davenport/von Mises attribution.", "url": "https://en.wikipedia.org/wiki/Birthday_problem", "type": "secondary"},
+    {"text": "Birthday attack, Wikipedia. — the cryptographic application and the square-root birthday bound.", "url": "https://en.wikipedia.org/wiki/Birthday_attack", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Birthday_problem",
+  "related": [
+    {"slug": "the-pigeonhole-principle", "kind": "kindred"}
+  ]
+}

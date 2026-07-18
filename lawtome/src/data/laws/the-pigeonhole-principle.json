@@ -1,0 +1,56 @@
+{
+  "no": "183",
+  "slug": "the-pigeonhole-principle",
+  "name": "The Pigeonhole Principle",
+  "aliases": ["Dirichlet's box principle"],
+  "statement": "More pigeons than holes means at least two must share a hole.",
+  "statementAccent": "at least two must share a hole",
+  "meaning": "If you put more items into containers than there are containers, at least one container must hold more than one item. More objects than boxes forces sharing — it is simply impossible to give every object its own box.",
+  "mechanism": "The principle is almost self-evidently true yet powerfully non-constructive: it proves that a collision must exist without identifying which container is crowded or which items collide. That is the source of its power in existence proofs — you establish that something exists without ever exhibiting it. The generalised form sharpens it: with n items in m boxes, some box holds at least the ceiling of n over m.",
+  "examples": [
+    {
+      "tag": "Guaranteed birthdays",
+      "text": "Among 367 people at least two must share a birthday, since there are only 366 possible dates — a certainty, unlike the merely probable match at 23."
+    },
+    {
+      "tag": "Hairs on heads",
+      "text": "Since a human head has at most about a million hairs and a large city has more people than that, at least two residents must have exactly the same number of hairs."
+    },
+    {
+      "tag": "The generalised form",
+      "text": "Distribute more than a multiple of m items among m boxes and some box must hold more than that multiple — the counting version used throughout combinatorics."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The birthday problem",
+      "text": "The probabilistic cousin: where the pigeonhole principle guarantees a shared birthday at 367 people, the birthday problem asks how likely one is, and finds better-than-even odds at just 23."
+    },
+    {
+      "name": "Ramsey theory",
+      "text": "The far-reaching generalisation about unavoidable structure — that any sufficiently large system must contain some order — of which the pigeonhole principle is the simplest case."
+    }
+  ],
+  "whyItMatters": "It is one of the most useful tools in combinatorics and computer science, proving that collisions and coincidences are unavoidable — from hash collisions to compression limits — with a one-line argument. Its non-constructive power, guaranteeing existence without location, makes it a favourite in elegant proofs.",
+  "working": [
+    {"lead": "Count items against categories", "text": "when items outnumber the possible categories, conclude that some category must be shared, without needing to find which."},
+    {"lead": "Use the generalised bound", "text": "for a guaranteed concentration, note that some box holds at least the ceiling of items over boxes."},
+    {"lead": "Then do the constructive work", "text": "having proved a collision must exist, remember you still have to locate it if you need the specific items."}
+  ],
+  "limits": "It is a proven, elementary theorem with no evidential limitation — it admits no counterexamples and needs no assumptions. Its only genuine constraint is conceptual: it is existence-only, guaranteeing that a collision exists but not where or which items collide, so locating the collision requires additional work. It must also not be confused with the birthday problem: pigeonhole gives a guarantee at 367 people, the birthday problem a probability at 23 — different questions entirely.",
+  "misreadings": "It tells you a shared category must exist, not which one — it is non-constructive, proving existence without identity. And it is not the birthday problem: the birthday problem is about likelihood at small group sizes, while the pigeonhole principle is a hard guarantee once items exceed categories.",
+  "origin": "Commonly called Dirichlet's box principle after Peter Gustav Lejeune Dirichlet's 1834 use of it under the name 'Schubfachprinzip', though this is a naming convention rather than first discovery — an earlier written statement appears in Jean Leurechon's work of 1622.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1834,
+  "namedAfter": "Peter Gustav Lejeune Dirichlet",
+  "sources": [
+    {"text": "Pigeonhole principle, Wikipedia. — the statement, the generalised form, the Dirichlet naming, and the Leurechon precedence.", "url": "https://en.wikipedia.org/wiki/Pigeonhole_principle", "type": "secondary"},
+    {"text": "Birthday problem, Wikipedia. — the guarantee-versus-probability distinction from the birthday problem.", "url": "https://en.wikipedia.org/wiki/Birthday_problem", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Pigeonhole_principle",
+  "related": [
+    {"slug": "the-birthday-problem", "kind": "kindred"}
+  ]
+}

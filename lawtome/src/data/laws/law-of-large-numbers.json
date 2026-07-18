@@ -1,0 +1,55 @@
+{
+  "no": "174",
+  "slug": "law-of-large-numbers",
+  "name": "The Law of Large Numbers",
+  "statement": "The more trials you run, the closer the average gets to the true value.",
+  "statementAccent": "the closer the average gets to the true value",
+  "meaning": "The average of the results from many independent trials converges to the expected value, provided that value exists. It is a statement about the long-run average, not a promise about any single trial or short run — run enough trials and the running average settles near the true mean.",
+  "mechanism": "The weak form says the sample mean converges in probability to the expected value: for any margin, a large enough sample makes it very likely the average falls within it. The strong form says it converges almost surely — with probability one, the average eventually settles and stays within any bound. Convergence happens by early deviations being swamped by sheer volume, not by any corrective force.",
+  "examples": [
+    {
+      "tag": "The fair coin",
+      "text": "Over many flips the proportion of heads approaches one half — though the raw gap between heads and tails counts need not shrink, which is a common source of confusion."
+    },
+    {
+      "tag": "Casinos and insurance",
+      "text": "With a small built-in edge and a very large number of bets or policies, the average outcome per event becomes highly predictable, making the business reliably profitable in aggregate even though each event is random."
+    },
+    {
+      "tag": "Averaging measurements",
+      "text": "Averaging many noisy independent measurements of a fixed quantity drives the average toward the true value, the basis of taking repeated readings."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Weak versus strong law",
+      "text": "The weak law gives convergence in probability; the strong law, due to Borel and Kolmogorov, gives almost-sure convergence — a stronger guarantee that the average eventually settles for good."
+    },
+    {
+      "name": "The central limit theorem",
+      "text": "The companion result often confused with it: the law of large numbers says where the mean goes, the central limit theorem describes the Gaussian shape of the fluctuations around it on the way."
+    }
+  ],
+  "whyItMatters": "It is the theoretical bedrock of statistics, sampling, insurance, and gambling — the guarantee that averages of enough independent data are trustworthy. Without it, the whole practice of estimating a quantity by repeated measurement would have no foundation.",
+  "working": [
+    {"lead": "Trust averages, not single trials", "text": "rely on the long-run average of many independent trials, and expect no such stability in any one outcome or short run."},
+    {"lead": "Require a finite mean", "text": "the law needs the expected value to exist; it fails for heavy-tailed distributions like the Cauchy that have no finite mean."},
+    {"lead": "Don't expect self-correction", "text": "the average converges by dilution, not by past deviations being made up for, so never bet on a streak reversing."}
+  ],
+  "limits": "It requires a finite expected value and usually independence; it fails for heavy-tailed distributions with no mean, such as the Cauchy. Its central caveat is a misconception: it does not say a coin self-corrects. The proportion of heads approaches one half, but the gap between the head and tail counts need not shrink toward zero — convergence comes from swamping early deviations with volume, not from cancelling them. Treating it as a force that balances short runs is the gambler's fallacy.",
+  "misreadings": "It does not mean past deviations must be made up for — that false 'law of averages' is the gambler's fallacy. It concerns long-run averages, not short runs or individual trials, and it says the proportion converges, not that the raw counts even out.",
+  "origin": "First proved for the binomial case by Jacob Bernoulli in Ars Conjectandi, published posthumously in 1713 and which he called his 'golden theorem'; the name 'law of large numbers' comes from Poisson in 1837, and the strong form from Borel and Kolmogorov in the twentieth century.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1713,
+  "sources": [
+    {"text": "Law of large numbers, Wikipedia. — the weak and strong forms, the Bernoulli/Poisson history, and the finite-mean requirement.", "url": "https://en.wikipedia.org/wiki/Law_of_large_numbers", "type": "secondary"},
+    {"text": "\"Law of large numbers,\" Encyclopædia Britannica. — the convergence statement and Bernoulli's 1713 proof.", "url": "https://www.britannica.com/science/law-of-large-numbers", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Law_of_large_numbers",
+  "related": [
+    {"slug": "central-limit-theorem", "kind": "kindred"},
+    {"slug": "the-gamblers-fallacy", "kind": "tension"}
+  ]
+}

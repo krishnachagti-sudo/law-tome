@@ -1,0 +1,52 @@
+{
+  "no": "178",
+  "slug": "the-st-petersburg-paradox",
+  "name": "The St. Petersburg Paradox",
+  "statement": "A gamble worth infinite expected money is one a sensible person will barely pay for.",
+  "statementAccent": "one a sensible person will barely pay for",
+  "meaning": "A coin is tossed until it lands heads; if the first heads comes on toss n, the prize is 2 to the n. The expected payout is infinite, so maximising expected money says you should pay any finite fee to play — yet almost no one would pay more than a few coins. That gap is the paradox, and it shows expected monetary value fails to describe rational choice.",
+  "mechanism": "Each doubling of the prize is exactly cancelled by a halving of its probability, so every term contributes the same amount and the sum of expected value diverges to infinity. But the game is overwhelmingly likely to pay little — half the time just 2, three-quarters of the time no more than 4. A divergent mean sits atop an outcome that almost always pays a modest amount.",
+  "examples": [
+    {
+      "tag": "The coin game",
+      "text": "The lottery itself: an infinite expected value built entirely from vanishingly rare, astronomically large payoffs, which no one will pay much to enter."
+    },
+    {
+      "tag": "The diminishing-utility resolution",
+      "text": "Under Daniel Bernoulli's logarithmic utility, each doubling of money adds only a fixed increment of satisfaction, so the utility series converges to a small finite value — matching the modest fee people will actually pay."
+    },
+    {
+      "tag": "The finite-bankroll resolution",
+      "text": "No real house can pay unbounded prizes; Buffon noted the wealth of a kingdom would be exhausted in a few dozen rounds, and with a finite bank the expected value is merely the logarithm of that wealth."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Expected utility theory",
+      "text": "The framework the paradox launched: valuing gambles by expected utility rather than expected money, with diminishing marginal utility formalising risk aversion."
+    },
+    {
+      "name": "Menger's super-St.-Petersburg game",
+      "text": "The sharpening that keeps it alive: Karl Menger showed any unbounded utility function can be defeated by a game whose prizes grow fast enough, so only bounded utility truly escapes the paradox."
+    }
+  ],
+  "whyItMatters": "It is a founding puzzle of decision theory, the problem that forced economists to replace 'maximise expected money' with expected utility and to formalise risk aversion. That it still resists a single agreed resolution keeps it a live foundational question rather than a settled curiosity.",
+  "working": [
+    {"lead": "Value gambles by utility, not money", "text": "weigh a risky prospect by the satisfaction its outcomes bring, since expected monetary value can be infinite yet worthless."},
+    {"lead": "Respect diminishing marginal utility", "text": "treat each extra unit of money as worth less than the last, which tames the infinite sum toward a sensible figure."},
+    {"lead": "Remember payoffs are bounded in reality", "text": "real bankrolls and lifespans cap the prizes, so the practical value is finite and small however the theory runs."}
+  ],
+  "limits": "There is no single agreed resolution, which is the key nuance. Diminishing marginal utility alone does not settle it: Menger showed that any unbounded utility function can be defeated by a suitably steep super-St.-Petersburg game, so only bounded utility escapes. Competing modern proposals invoke bounded utility, finite resources, or probability weighting, and the paradox remains cited and unsettled. It is a genuine foundational paradox of decision theory, not a trick or a solved curiosity.",
+  "misreadings": "Daniel Bernoulli's diminishing-utility resolution is not the last word — Menger's construction shows it fails for unbounded utility, so bounded utility is required. And the paradox is real, not a sleight of hand: the infinite expected value is genuine, and the point is precisely that expected money cannot capture rational choice.",
+  "origin": "Posed by Nicolas Bernoulli in 1713 and given its famous analysis by his cousin Daniel Bernoulli in 1738 at the St. Petersburg Academy, introducing expected utility and the diminishing marginal utility of money; Gabriel Cramer had proposed a similar idea in 1728.",
+  "category": "statistics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1738,
+  "sources": [
+    {"text": "St. Petersburg paradox, Wikipedia. — the game, the infinite expected value, the Bernoulli/Cramer origin, and the competing resolutions.", "url": "https://en.wikipedia.org/wiki/St._Petersburg_paradox", "type": "secondary"},
+    {"text": "\"The St. Petersburg Paradox,\" Stanford Encyclopedia of Philosophy. — the expected-utility resolution and Menger's super-St.-Petersburg objection.", "url": "https://plato.stanford.edu/entries/paradox-stpetersburg/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/St._Petersburg_paradox",
+  "related": []
+}

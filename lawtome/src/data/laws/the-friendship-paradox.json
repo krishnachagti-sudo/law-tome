@@ -1,0 +1,55 @@
+{
+  "no": "180",
+  "slug": "the-friendship-paradox",
+  "name": "The Friendship Paradox",
+  "statement": "On average, your friends have more friends than you do.",
+  "statementAccent": "your friends have more friends than you do",
+  "meaning": "In almost any social network, the average number of friends that people's friends have exceeds the average number of friends people have. Most individuals therefore come up short when they compare their own friend count to the typical count of the people they know — not from unpopularity, but from how the counting works.",
+  "mechanism": "It is a sampling bias, not a psychological effect. Highly connected people appear on many friend lists, so when you sample 'a friend' you over-select these hubs — each is counted once per friendship they hold, while a random person is counted once. Formally, the average number of friends of a random friend is the mean degree plus the variance over the mean, so whenever people differ in how many friends they have, friends-of-friends average strictly more.",
+  "examples": [
+    {
+      "tag": "Any social network",
+      "text": "Offline or online, most individuals sit below the average friend count of their own contacts, because a minority of hubs inflate everyone's friends-of-friends average."
+    },
+    {
+      "tag": "Early epidemic detection",
+      "text": "Christakis and Fowler tracked friends named by random people — more central by the paradox — and found the friend group caught the flu about two weeks earlier, giving a sensor for outbreaks with no map of the full network."
+    },
+    {
+      "tag": "Popular accounts online",
+      "text": "The accounts you follow tend, on average, to have more followers than you, because popular accounts are followed by many and so are over-represented among the accounts people follow."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The inspection paradox",
+      "text": "The same mathematical family: sampling something in proportion to its size over-represents the large values, whether friendships, waiting times, or class sizes."
+    },
+    {
+      "name": "The generalised friendship paradox",
+      "text": "The extension beyond friend count: your friends are also, on average, more of many correlated things than you — more co-authored, more cited, sometimes wealthier — for the same sampling reason."
+    }
+  ],
+  "whyItMatters": "It is a clean, proven example of how sampling bias produces a genuinely lopsided average from a symmetric relationship, and a caution against the social comparison that makes people feel inadequate against their friends. It has also been put to practical use, from epidemic sensors to vaccination strategies that target well-connected people.",
+  "working": [
+    {"lead": "Read it as sampling, not popularity", "text": "attribute the gap to hubs being over-counted among 'friends', not to any individual being unusually unpopular."},
+    {"lead": "Exploit it to find central people", "text": "to reach well-connected individuals cheaply, sample a random person's friend rather than a random person."},
+    {"lead": "Treat it as an average, not a rule", "text": "expect it to hold in aggregate, not for everyone; a person more connected than all their friends is a valid exception."}
+  ],
+  "limits": "It is a statement about averages, driven by the variance and skew of the degree distribution; it does not hold for every individual, and someone more connected than all their friends is a perfectly valid exception. The inequality is strict only when people's friend counts actually vary — in a perfectly regular network everyone averages the same. It is a real, proven result, not a fallacy or cognitive bias, though it is frequently misdescribed as applying to every person.",
+  "misreadings": "It does not mean you personally are less popular than all your friends — it is an aggregate driven by hubs being over-sampled, and individual exceptions abound. Nor is it a psychological illusion; it is a proven mathematical fact about how averages over a network work.",
+  "origin": "Identified by the sociologist Scott L. Feld in his 1991 paper 'Why Your Friends Have More Friends Than You Do' (American Journal of Sociology), which gave both the observation and the mathematical demonstration.",
+  "category": "sociology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1991,
+  "namedAfter": "Scott L. Feld",
+  "sources": [
+    {"text": "Friendship paradox, Wikipedia. — the statement, the mean-plus-variance-over-mean mechanism, Feld's origin, and the epidemic-detection application.", "url": "https://en.wikipedia.org/wiki/Friendship_paradox", "type": "secondary"},
+    {"text": "Christakis, N.A. & Fowler, J.H. (2010). \"Social Network Sensors for Early Detection of Contagious Outbreaks.\" PLOS ONE, 5(9): e12948.", "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0012948", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Friendship_paradox",
+  "related": [
+    {"slug": "metcalfes-law", "kind": "kindred"}
+  ]
+}

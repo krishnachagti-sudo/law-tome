@@ -1,0 +1,56 @@
+{
+  "no": "175",
+  "slug": "bayes-theorem",
+  "name": "Bayes' Theorem",
+  "statement": "Update your belief in a hypothesis by weighing how well it predicts the evidence.",
+  "statementAccent": "how well it predicts the evidence",
+  "meaning": "Bayes' theorem tells you how to revise the probability of a hypothesis when new evidence arrives. Your updated belief is your starting belief re-weighted by how well the hypothesis predicts the evidence relative to how likely the evidence was overall — surprising evidence moves belief a lot, common evidence little.",
+  "mechanism": "The posterior probability equals the prior times the likelihood, divided by the probability of the evidence: posterior is proportional to likelihood times prior. It is fundamentally a rule for inverting conditional probabilities — turning the probability of the evidence given the cause into the probability of the cause given the evidence — and the denominator simply normalises the result.",
+  "examples": [
+    {
+      "tag": "The rare-disease test",
+      "text": "For a rare condition, even an accurate test yields mostly false positives, because the many healthy people generate more false positives than the few sick generate true ones — so a positive result may leave the probability of disease surprisingly low. The base-rate point in action."
+    },
+    {
+      "tag": "Spam filtering",
+      "text": "A Bayesian spam filter combines the prior probability that mail is spam with how likely its words are in spam versus legitimate mail, updating to a probability the message is spam."
+    },
+    {
+      "tag": "Forensic evidence",
+      "text": "Updating the probability of a match given trace evidence, where ignoring the base rate produces the prosecutor's fallacy — mistaking the probability of the evidence given innocence for the probability of innocence given the evidence."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Cromwell's rule",
+      "text": "The companion caution, named by Dennis Lindley after Cromwell's 'think it possible that you may be mistaken': never assign a prior of exactly zero or one, or no evidence, however strong, could ever change your mind."
+    },
+    {
+      "name": "Bayesian versus frequentist statistics",
+      "text": "The two schools the theorem sits between: frequentists treat a hypothesis as simply true or false, while Bayesians assign it a probability representing a degree of belief that evidence updates."
+    }
+  ],
+  "whyItMatters": "It is the mathematics of learning from evidence, underpinning modern statistics, machine learning, medical diagnosis, and rational updating of belief generally. It is also the corrective to the base-rate fallacy, showing exactly how prior prevalence should temper the reading of any test.",
+  "working": [
+    {"lead": "Start from the base rate", "text": "anchor your estimate on the prior probability, then update it by the evidence, rather than reading the evidence in isolation."},
+    {"lead": "Weigh the evidence by its surprise", "text": "let evidence that is unlikely except under the hypothesis move belief most, and evidence common regardless move it least."},
+    {"lead": "Never use priors of zero or one", "text": "keep some probability open, per Cromwell's rule, so that strong future evidence can still shift your belief."}
+  ],
+  "limits": "The theorem itself is a proven mathematical identity, a direct consequence of the definition of conditional probability, and is not contested. The controversy is over Bayesian inference — the methodology of using it to update degrees of belief. The main objections are the subjectivity of choosing a prior, so different analysts can reach different conclusions; the historical computational cost, eased by modern sampling methods; and the frequentist objection to assigning probabilities to fixed hypotheses at all. The disagreement is philosophical and practical, not about the mathematics.",
+  "misreadings": "The theorem is exact and uncontested; what is debated is the inference method built on it, chiefly the choice of prior. It is also not a licence to ignore base rates — the whole point is that the prior must temper the evidence, which is exactly what the base-rate fallacy forgets.",
+  "origin": "From Thomas Bayes's essay, published posthumously in 1763 by Richard Price; Pierre-Simon Laplace independently developed and generalised it from 1774, putting it into its modern general form.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1763,
+  "namedAfter": "Thomas Bayes",
+  "sources": [
+    {"text": "Bayes' theorem, Wikipedia. — the statement, the Bayes/Price/Laplace origin, and the medical example.", "url": "https://en.wikipedia.org/wiki/Bayes%27_theorem", "type": "secondary"},
+    {"text": "Bayesian probability, Wikipedia. — the Bayesian-versus-frequentist debate and the subjectivity of priors.", "url": "https://en.wikipedia.org/wiki/Bayesian_probability", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Bayes%27_theorem",
+  "related": [
+    {"slug": "the-base-rate-fallacy", "kind": "kindred"},
+    {"slug": "cromwells-rule", "kind": "kindred"}
+  ]
+}

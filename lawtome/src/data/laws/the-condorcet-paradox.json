@@ -1,0 +1,56 @@
+{
+  "no": "185",
+  "slug": "the-condorcet-paradox",
+  "name": "The Condorcet Paradox",
+  "aliases": ["The paradox of voting"],
+  "statement": "Majority preferences can cycle even when every voter is perfectly rational.",
+  "statementAccent": "Majority preferences can cycle",
+  "meaning": "Collective majority preferences can be intransitive: a majority prefers A to B, a majority prefers B to C, yet a majority prefers C to A — even though every individual's own ranking is perfectly consistent. As a result, majority rule over three or more options need not produce any clear winner.",
+  "mechanism": "Take three voters ranking three options in a rotating, rock-paper-scissors pattern. Each pairwise majority favours a different option, so the majorities point in a loop rather than converging: A beats B, B beats C, and C beats A. The cycle arises because the individual rankings are rotations of one another, so there is no option that beats all the others and no consistent group order.",
+  "examples": [
+    {
+      "tag": "The three-voter cycle",
+      "text": "With voters ranking A over B over C, B over C over A, and C over A over B, each pairwise vote splits two to one for a different winner, producing a cycle with no Condorcet winner — the canonical demonstration."
+    },
+    {
+      "tag": "Agenda control",
+      "text": "Because the outcome of sequential pairwise votes depends on their order, whoever sets the agenda can often engineer any of the three options as the final winner by choosing which pairings come first."
+    },
+    {
+      "tag": "Rare in practice",
+      "text": "Real ranked elections show cycles only occasionally — studies find them in well under one percent of cases — because a Condorcet winner usually does exist, especially when preferences line up along a single dimension."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Condorcet winner",
+      "text": "A candidate who beats every other in pairwise majority contests; its non-existence, when preferences cycle, is exactly the paradox, and is why Condorcet methods need a fallback rule for cycles."
+    },
+    {
+      "name": "Arrow's impossibility theorem",
+      "text": "The general result the paradox seeds: Arrow proved that no ranked voting rule can satisfy a small set of fairness conditions for three or more options, turning this local cycle into a universal impossibility."
+    }
+  ],
+  "whyItMatters": "It reveals that 'the will of the majority' can be ill-defined: pairwise majority rule need not yield a coherent collective preference or any winner at all. It launched the formal study of voting and social choice, and it is the concrete puzzle that Arrow's theorem later generalised.",
+  "working": [
+    {"lead": "Don't assume a majority winner exists", "text": "with three or more options, check whether any option actually beats all others pairwise, since a Condorcet winner is not guaranteed."},
+    {"lead": "Watch who sets the agenda", "text": "when preferences may cycle, the order of pairwise votes can decide the outcome, so treat agenda control as a lever for manipulation."},
+    {"lead": "Look for single-peaked structure", "text": "if preferences line up along one dimension, a Condorcet winner reappears — the median voter's choice — and cycles vanish."}
+  ],
+  "limits": "It is a proven possibility, not a claim that cycles always or usually happen — they can occur, but a Condorcet winner often exists, especially under single-peaked or spatial preferences. How often cycles arise depends heavily on the preference distribution: common under the unrealistic 'impartial culture' assumption, rare and declining with electorate size under realistic models, and well under one percent in studied real elections. Its enduring significance is conceptual — that pairwise majority rule can be intransitive — rather than a frequent practical breakdown.",
+  "misreadings": "It does not say majority rule always cycles or always fails — cycles are possible but usually rare, and a clear winner often exists. What it establishes is that intransitivity can occur even with perfectly rational voters, so 'the majority prefers' is not always well-defined.",
+  "origin": "Formalised by the Marquis de Condorcet in his 1785 Essay on the Application of Analysis to the Probability of Majority Decisions; pairwise-comparison voting methods anticipating it were devised by Ramon Llull in the thirteenth century, in manuscripts rediscovered around 2001.",
+  "category": "sociology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1785,
+  "namedAfter": "The Marquis de Condorcet",
+  "sources": [
+    {"text": "Condorcet paradox, Wikipedia. — the statement, the worked cycle, the Llull/Condorcet origin, and the link to Arrow's theorem.", "url": "https://en.wikipedia.org/wiki/Condorcet_paradox", "type": "secondary"},
+    {"text": "Condorcet method, Wikipedia. — the Condorcet winner, its possible non-existence, and single-peakedness.", "url": "https://en.wikipedia.org/wiki/Condorcet_method", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Condorcet_paradox",
+  "related": [
+    {"slug": "arrows-impossibility-theorem", "kind": "kindred"}
+  ]
+}
