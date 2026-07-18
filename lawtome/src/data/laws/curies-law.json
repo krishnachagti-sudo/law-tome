@@ -1,0 +1,55 @@
+{
+  "no": "159",
+  "slug": "curies-law",
+  "name": "Curie's Law",
+  "statement": "A paramagnet's magnetisation grows with the field and weakens as it heats.",
+  "statementAccent": "grows with the field and weakens as it heats",
+  "meaning": "A paramagnetic material magnetises more strongly in a stronger magnetic field and more weakly as its temperature rises. Its magnetic susceptibility falls in inverse proportion to absolute temperature, because heat randomises the atomic magnetic moments that the field is trying to align.",
+  "mechanism": "The law describes a competition between two effects on the material's independent magnetic moments: the applied field, which tends to align them, and thermal agitation, which tends to randomise them. The balance is set by the ratio of magnetic to thermal energy, and Curie's law is the small-ratio, high-temperature limit of the fuller Brillouin and Langevin magnetisation curves, with the Curie constant a material-specific quantity.",
+  "examples": [
+    {
+      "tag": "Magnetic cooling",
+      "text": "In adiabatic demagnetisation, a paramagnetic salt is magnetised in a field and then the field is removed, letting thermal agitation re-randomise the moments and absorb heat — a route to temperatures far below one kelvin."
+    },
+    {
+      "tag": "The straight-line signature",
+      "text": "Plotting the inverse susceptibility of a paramagnet against temperature gives a straight line through the origin, whose slope yields the effective magnetic moment — the classic experimental test."
+    },
+    {
+      "tag": "Curie's oxygen measurement",
+      "text": "Pierre Curie's original observation was that the magnetic susceptibility of oxygen falls off inversely with temperature, the relationship the law captures."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Curie–Weiss law",
+      "text": "The extension for ferromagnetic materials above their Curie point, in which susceptibility varies inversely with temperature minus a critical temperature — adding interactions between moments that Curie's law omits."
+    },
+    {
+      "name": "The Curie temperature",
+      "text": "A separate concept, easily confused: the critical temperature above which a ferromagnet loses its spontaneous magnetisation and becomes paramagnetic — a threshold, not a law."
+    }
+  ],
+  "whyItMatters": "It is the founding quantitative law of paramagnetism, the basis for measuring magnetic moments and for magnetic refrigeration that reaches toward absolute zero. It also anchors a trio of easily confused 'Curie' ideas, distinguishing the susceptibility law from the Curie point and the Curie–Weiss extension.",
+  "working": [
+    {"lead": "Expect susceptibility to fall with heat", "text": "for an ideal paramagnet, treat susceptibility as inversely proportional to absolute temperature, and read the Curie constant from the slope."},
+    {"lead": "Keep the three Curie ideas apart", "text": "distinguish Curie's law of susceptibility from the Curie temperature and the Curie–Weiss law, which describe different things."},
+    {"lead": "Switch models when moments interact or saturate", "text": "use Curie–Weiss or fuller theories where moments interact, and expect saturation at low temperature and high field."}
+  ],
+  "limits": "Curie's law holds only for an ideal paramagnet of non-interacting moments in the high-temperature, low-field regime. At low temperature and high field the magnetisation saturates and no longer scales with field over temperature, and where the moments interact — ferromagnetically or antiferromagnetically — the plain law fails and the Curie–Weiss law or richer models apply; even Curie–Weiss fails right at the Curie point. It is an empirical fit later derived as the high-temperature limit of the quantum theory of magnetic moments.",
+  "misreadings": "It is not the Curie temperature, the point at which a ferromagnet loses its magnetism, nor the Curie–Weiss law for interacting moments above that point — three distinct 'Curie' ideas that are routinely conflated. And it applies only to non-interacting moments at high temperature and low field, not to saturated or strongly interacting magnets.",
+  "origin": "Discovered by the French physicist Pierre Curie in 1895, by fitting experimental data — notably the susceptibility of oxygen falling inversely with temperature. Pierre Weiss extended it to interacting moments as the Curie–Weiss law in 1907.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1895,
+  "namedAfter": "Pierre Curie",
+  "sources": [
+    {"text": "Curie's law, Wikipedia. — the susceptibility statement, the field-versus-thermal mechanism, the 1895 oxygen observation, and saturation.", "url": "https://en.wikipedia.org/wiki/Curie%27s_law", "type": "secondary"},
+    {"text": "Curie–Weiss law, Wikipedia. — the interacting-moment extension and its failure near the Curie point.", "url": "https://en.wikipedia.org/wiki/Curie%E2%80%93Weiss_law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Curie%27s_law",
+  "related": [
+    {"slug": "lenzs-law", "kind": "kindred"}
+  ]
+}

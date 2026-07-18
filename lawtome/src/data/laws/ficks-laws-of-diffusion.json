@@ -1,0 +1,55 @@
+{
+  "no": "154",
+  "slug": "ficks-laws-of-diffusion",
+  "name": "Fick's Laws of Diffusion",
+  "statement": "A substance diffuses from where it is concentrated toward where it is not.",
+  "statementAccent": "from where it is concentrated toward where it is not",
+  "meaning": "Given time, a concentrated substance spreads out to even itself across the available space. Fick's first law says how fast it flows right now — proportionally to the steepness of the concentration gradient — and his second law says how the concentration profile evolves over time.",
+  "mechanism": "The diffusive flux equals the diffusion coefficient times the negative concentration gradient. The net flow comes from random molecular motion: with each particle wandering at random, more happen to leave a crowded region than enter it, giving a net movement down the gradient. Combined with mass conservation, the first law yields the diffusion equation of the second.",
+  "examples": [
+    {
+      "tag": "Spreading through air or water",
+      "text": "A drop of ink in still water or a scent released in a room spreads until evenly mixed, the visible face of countless molecules taking random walks down the gradient."
+    },
+    {
+      "tag": "Gas exchange in the body",
+      "text": "Oxygen crosses the lungs and cell membranes by diffusing from high to low concentration — the physiological transport that was Fick's own motivation."
+    },
+    {
+      "tag": "Doping semiconductors",
+      "text": "Controlled diffusion drives dopant atoms into silicon during chip fabrication, a precise industrial use of the same law."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Fourier's law",
+      "text": "The heat-conduction analogue Fick copied: heat flux proportional to the negative temperature gradient, mathematically identical in form to diffusive flux."
+    },
+    {
+      "name": "Brownian motion",
+      "text": "The microscopic account, given by Einstein in 1905: the diffusion equation derived from random molecular motion, with the Einstein relation linking the diffusion coefficient to temperature and mobility."
+    }
+  ],
+  "whyItMatters": "It is the founding law of diffusion, governing everything from respiration and drug release to metallurgy and semiconductor manufacture, and one of a family of gradient-driven transport laws — alongside Fourier's, Ohm's, and Darcy's — that share the same mathematical form. Einstein's later microscopic derivation tied it to the reality of atoms.",
+  "working": [
+    {"lead": "Drive flux with the gradient", "text": "increase diffusive transport by steepening the concentration gradient or choosing a medium with a higher diffusion coefficient."},
+    {"lead": "Use the second law for time evolution", "text": "when you need how a concentration profile changes over time, solve the diffusion equation rather than the instantaneous flux."},
+    {"lead": "Check dilute, constant-coefficient assumptions", "text": "apply the simple law to dilute solutions with a constant diffusion coefficient, and use richer models for concentrated or coupled systems."}
+  ],
+  "limits": "Fick's laws are phenomenological continuum relations with an experimentally measured coefficient, not first-principles results. They assume dilute solutions, where each species interacts only with the bulk, and a constant diffusion coefficient — both failing in concentrated or multicomponent systems where cross-effects matter. They also break down for anomalous, non-Fickian diffusion in porous or swelling media, and, being parabolic like the heat equation, the second law implies an unphysical infinite propagation speed, corrected by finite-speed telegraph-equation models.",
+  "misreadings": "They do not describe a force pulling matter toward low concentration — nothing pulls; the down-gradient flow is a statistical result of unbiased random motion. And they are not exact universal laws but dilute, constant-coefficient approximations that fail for concentrated solutions and anomalous diffusion.",
+  "origin": "Formulated by the German physiologist Adolf Fick in 1855, built by explicit analogy to Fourier's law of heat conduction and on Thomas Graham's diffusion experiments. Einstein gave the microscopic foundation via Brownian motion in 1905.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1855,
+  "namedAfter": "Adolf Fick",
+  "sources": [
+    {"text": "Fick's laws of diffusion, Wikipedia. — the two laws, the Fourier analogy, and the dilute/constant-coefficient assumptions.", "url": "https://en.wikipedia.org/wiki/Fick%27s_laws_of_diffusion", "type": "secondary"},
+    {"text": "\"On the sesquicentennial of Fick's laws of diffusion,\" Nature Structural & Molecular Biology (2005). — the 1855 origin.", "url": "https://www.nature.com/articles/nsmb0405-280", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fick%27s_laws_of_diffusion",
+  "related": [
+    {"slug": "fouriers-law", "kind": "kindred"}
+  ]
+}

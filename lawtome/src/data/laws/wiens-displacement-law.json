@@ -1,0 +1,56 @@
+{
+  "no": "151",
+  "slug": "wiens-displacement-law",
+  "name": "Wien's Displacement Law",
+  "statement": "The hotter a body, the shorter the wavelength at which it glows most brightly.",
+  "statementAccent": "the shorter the wavelength at which it glows most brightly",
+  "meaning": "The peak of a black body's radiation shifts toward shorter wavelengths as it heats up. A warming object glows red, then orange, yellow, white, and finally blue-white — so the colour of a glowing body is a direct thermometer of its temperature.",
+  "mechanism": "The peak wavelength times the absolute temperature equals a fixed constant, Wien's displacement constant of about 2.9 millimetre-kelvin. This follows from Planck's law: differentiating the black-body spectrum and finding its maximum gives the constant, so as temperature rises the peak wavelength falls in inverse proportion.",
+  "examples": [
+    {
+      "tag": "Star colour",
+      "text": "Cool stars look red, hotter ones white, and the hottest blue — so a star's colour reads its surface temperature, the red of Betelgeuse against the blue-white of Rigel."
+    },
+    {
+      "tag": "The Sun in the visible",
+      "text": "At a surface temperature near 5,800 kelvin the Sun peaks in visible light, around 500 nanometres — the reason its output coincides with the band our eyes evolved to see."
+    },
+    {
+      "tag": "Thermal imaging",
+      "text": "Near-room-temperature objects peak deep in the infrared, around ten micrometres, invisible to the eye — the wavelength band thermal cameras are built to detect."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Planck's law",
+      "text": "The full spectral distribution of which the displacement law simply locates the peak; it is the maximum of the Planck curve."
+    },
+    {
+      "name": "Wien's approximation",
+      "text": "A separate 1896 result, sometimes also called 'Wien's law': an approximate formula for the whole spectrum that fits the short-wavelength end but fails at long wavelengths — not to be confused with the displacement law."
+    }
+  ],
+  "whyItMatters": "It turns colour into a temperature gauge, foundational to astronomy — reading stellar temperatures from starlight — and to thermal imaging and pyrometry. Together with the Stefan–Boltzmann and Planck laws it completes the classical description of how hot bodies glow.",
+  "working": [
+    {"lead": "Read temperature from peak colour", "text": "estimate a black body's temperature from where its emission peaks — bluer means hotter, redder means cooler."},
+    {"lead": "Match detectors to the source", "text": "choose a sensor for the wavelength band where the target actually peaks, which for near-room-temperature objects is the infrared."},
+    {"lead": "Specify the parameterisation of the peak", "text": "state whether you mean the peak per wavelength or per frequency, since the two differ and do not convert by the simple wavelength-frequency relation."}
+  ],
+  "limits": "The law holds strictly only for an ideal black body; real emitters with wavelength-dependent emissivity deviate. There is also a genuine subtlety: the spectrum peaks at a different place depending on whether it is plotted per unit wavelength or per unit frequency, because converting a spectral density introduces a Jacobian factor — so 'the wavelength of maximum emission' is ambiguous until the parameterisation is specified. Its constant is now exact by definition, and it is confirmed continually by spectroscopy and astronomy.",
+  "misreadings": "It is not the same as Wien's approximation of 1896, a distinct formula for the whole spectrum that fails at long wavelengths. And the 'peak wavelength' is not a single unambiguous quantity — it depends on whether the spectrum is measured per wavelength or per frequency, which peak at different places.",
+  "origin": "Derived by the German physicist Wilhelm Wien in 1893, building on earlier observations by Samuel Langley. Wien received the 1911 Nobel Prize for his black-body work; the displacement law was later placed on rigorous footing as a consequence of Planck's law.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1893,
+  "namedAfter": "Wilhelm Wien",
+  "sources": [
+    {"text": "Wien's displacement law, Wikipedia. — the statement, the constant, and the per-wavelength/per-frequency peak subtlety.", "url": "https://en.wikipedia.org/wiki/Wien%27s_displacement_law", "type": "secondary"},
+    {"text": "Wien approximation, Wikipedia. — the distinct 1896 short-wavelength formula that shares the name.", "url": "https://en.wikipedia.org/wiki/Wien_approximation", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Wien%27s_displacement_law",
+  "related": [
+    {"slug": "plancks-law", "kind": "kindred"},
+    {"slug": "stefan-boltzmann-law", "kind": "kindred"}
+  ]
+}

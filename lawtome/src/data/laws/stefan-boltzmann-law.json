@@ -1,0 +1,56 @@
+{
+  "no": "150",
+  "slug": "stefan-boltzmann-law",
+  "name": "The Stefan–Boltzmann Law",
+  "statement": "A body radiates energy in proportion to the fourth power of its absolute temperature.",
+  "statementAccent": "the fourth power of its absolute temperature",
+  "meaning": "Hotter objects radiate dramatically more energy, not just a little more. Because the total power emitted per unit area grows as temperature to the fourth power, doubling the absolute temperature multiplies the radiated power sixteenfold — a steep nonlinearity that makes temperature the dominant driver of radiative energy loss.",
+  "mechanism": "Summing the black body's emission across every wavelength — integrating Planck's law over the whole spectrum — gives a total proportional to temperature to the fourth power, with the Stefan–Boltzmann constant as the accumulated factor. Real surfaces radiate a fraction of that, captured by their emissivity.",
+  "examples": [
+    {
+      "tag": "Weighing the stars",
+      "text": "A star's luminosity equals its surface area times the Stefan–Boltzmann emission, so measuring brightness and spectrum lets astronomers solve for a star's temperature or radius."
+    },
+    {
+      "tag": "A brighter filament",
+      "text": "Because output scales with the fourth power, a modest rise in an incandescent filament's temperature sharply increases its radiated power and shifts its glow toward the visible — disproportionately brighter and whiter."
+    },
+    {
+      "tag": "Planetary temperature",
+      "text": "Balancing absorbed sunlight against fourth-power emission gives a planet's effective radiating temperature, the backbone of simple climate energy-balance models."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Planck's law",
+      "text": "The parent spectral distribution; the Stefan–Boltzmann law is what you get by integrating it over all wavelengths to obtain the total radiated power."
+    },
+    {
+      "name": "The grey-body form",
+      "text": "The correction for real surfaces: radiated power equals emissivity times the black-body value, with emissivity between zero and one accounting for imperfect emitters."
+    }
+  ],
+  "whyItMatters": "It is the master law of thermal radiation, indispensable to astrophysics, climate science, and radiometry, and a rare case where an empirical discovery and an independent thermodynamic derivation converged before quantum theory explained both. Its fourth-power steepness is why temperature dominates radiative heat transfer.",
+  "working": [
+    {"lead": "Respect the fourth power", "text": "expect radiated power to change far faster than temperature — a small temperature rise is a large jump in emission."},
+    {"lead": "Apply emissivity for real surfaces", "text": "multiply the black-body value by the material's emissivity, and use the difference of fourth powers for net exchange between two bodies."},
+    {"lead": "Work in absolute temperature", "text": "the law requires kelvin, so convert before computing radiated power."}
+  ],
+  "limits": "The law is exact only for an ideal black body, a perfect absorber and emitter. Real bodies have emissivity below one, sometimes varying with wavelength and direction, so the grey-body form is itself an approximation. It requires absolute temperature and describes thermal-equilibrium radiation; net radiative exchange between bodies needs the difference of their fourth-power emissions. Within these bounds it is a bedrock, exactly-grounded law, its constant now fixed by fundamental constants.",
+  "misreadings": "It is not a linear rule — radiated power rises with the fourth power of temperature, so intuition that scales it directly with temperature badly underestimates the effect. And it describes an ideal black body; real objects emit less, in proportion to their emissivity.",
+  "origin": "Established empirically by Josef Stefan in 1879 from radiation measurements, and derived thermodynamically by his former student Ludwig Boltzmann in 1884. It is later understood as the wavelength-integral of Planck's quantum law, with a constant fixed by fundamental constants.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1879,
+  "namedAfter": "Josef Stefan and Ludwig Boltzmann",
+  "sources": [
+    {"text": "Stefan–Boltzmann law, Wikipedia. — the statement, the integral of Planck's law, and the black-body/emissivity limits.", "url": "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law", "type": "secondary"},
+    {"text": "\"Stefan–Boltzmann law,\" Encyclopædia Britannica. — the Stefan (1879) and Boltzmann (1884) contributions.", "url": "https://www.britannica.com/science/Stefan-Boltzmann-law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law",
+  "related": [
+    {"slug": "plancks-law", "kind": "kindred"},
+    {"slug": "wiens-displacement-law", "kind": "kindred"}
+  ]
+}

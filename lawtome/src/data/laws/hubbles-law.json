@@ -1,0 +1,56 @@
+{
+  "no": "158",
+  "slug": "hubbles-law",
+  "name": "Hubble's Law",
+  "aliases": ["The Hubble–Lemaître law"],
+  "statement": "The farther away a galaxy is, the faster it recedes from us.",
+  "statementAccent": "the faster it recedes from us",
+  "meaning": "Galaxies move away from us at a speed proportional to their distance, so one twice as far recedes twice as fast. This distance-velocity proportionality is the primary observational evidence that the universe itself is expanding.",
+  "mechanism": "The recession is not motion through space but the metric expansion of space: the space between galaxies stretches, carrying them apart and stretching their light to longer, redder wavelengths. The Hubble constant is the current expansion rate, the proportionality between recession speed and distance.",
+  "examples": [
+    {
+      "tag": "Redshift and distance",
+      "text": "A galaxy's spectral lines shift toward the red by an amount proportional to its distance — the direct observational form of the law, and how expansion was first seen."
+    },
+    {
+      "tag": "Evidence for the Big Bang",
+      "text": "Universal expansion implies a denser, hotter past; running it backward points to a hot dense origin, the foundation of Big Bang cosmology."
+    },
+    {
+      "tag": "The age of the universe",
+      "text": "The inverse of the Hubble constant estimates the expansion timescale — the 'Hubble time' — giving a rough age close to the true figure of about 13.8 billion years."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Hubble–Lemaître law",
+      "text": "The current IAU-recommended name, acknowledging Georges Lemaître, who derived the relation from general relativity and estimated its constant two years before Hubble published."
+    },
+    {
+      "name": "The cosmological principle",
+      "text": "The underlying assumption that the universe is homogeneous and isotropic on large scales, which makes the same expansion law hold for every observer."
+    }
+  ],
+  "whyItMatters": "It is the observational cornerstone of modern cosmology — the discovery that the universe is expanding, and the basis for the Big Bang and estimates of cosmic age. Its central number, the Hubble constant, is now the focus of one of the deepest open problems in physics, the Hubble tension.",
+  "working": [
+    {"lead": "Read distance from redshift", "text": "use the proportionality between recession speed and distance to gauge how far away a galaxy is from its measured redshift."},
+    {"lead": "Treat it as a large-scale average", "text": "apply it to cosmological scales; nearby, local gravity dominates and individual galaxies can even approach us."},
+    {"lead": "Mind which Hubble constant you use", "text": "different methods give different values, so state whether an estimate rests on the early-universe or late-universe measurement."}
+  ],
+  "limits": "The law is a large-scale statistical average. Nearby, local gravity dominates over expansion — the Andromeda galaxy is blueshifted and approaching the Milky Way — and the simple linear form breaks down at very large distances, needing relativistic and cosmological-model corrections. Most strikingly, different methods give inconsistent values of the Hubble constant: early-universe measurements yield about 67 kilometres per second per megaparsec, late-universe ones about 73, a disagreement above the five-sigma level that remains an unresolved crisis known as the Hubble tension.",
+  "misreadings": "It does not mean every galaxy recedes — locally, gravity wins, and some galaxies approach us. Nor is it named for its first discoverer: Lemaître derived and estimated the relation in 1927, two years before Hubble's 1929 paper, which is why the IAU recommended renaming it the Hubble–Lemaître law.",
+  "origin": "Published observationally by Edwin Hubble in 1929, though Georges Lemaître had derived the relation from general relativity and estimated its constant in 1927. In 2018 the International Astronomical Union recommended renaming it the Hubble–Lemaître law.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1929,
+  "namedAfter": "Edwin Hubble",
+  "sources": [
+    {"text": "Hubble's law, Wikipedia. — the statement, the metric-expansion mechanism, the Lemaître priority, and the Hubble tension.", "url": "https://en.wikipedia.org/wiki/Hubble%27s_law", "type": "secondary"},
+    {"text": "\"IAU members vote to recommend renaming the Hubble law as the Hubble–Lemaître law,\" International Astronomical Union (2018).", "url": "https://iauarchive.eso.org/news/pressreleases/detail/iau1812/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hubble%27s_law",
+  "related": [
+    {"slug": "keplers-laws-of-planetary-motion", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "no": "155",
+  "slug": "henrys-law",
+  "name": "Henry's Law",
+  "statement": "The amount of a gas that dissolves in a liquid is proportional to its pressure.",
+  "statementAccent": "proportional to its pressure",
+  "meaning": "At a fixed temperature, the more pressure a gas exerts above a liquid, the more of it dissolves. Double the partial pressure and, in the ideal regime, you roughly double the dissolved amount; release the pressure and the dissolved gas comes back out.",
+  "mechanism": "It is a dynamic equilibrium: gas molecules continually enter and leave the liquid, and at equilibrium the two rates balance. Raising the partial pressure above the liquid drives more molecules in until a new balance is reached, so dissolved concentration tracks partial pressure through the Henry's-law constant, which depends on temperature.",
+  "examples": [
+    {
+      "tag": "Fizzy drinks",
+      "text": "Carbon dioxide is dissolved under pressure in a sealed bottle; opening it drops the pressure, so the gas comes out of solution as bubbles and fizz."
+    },
+    {
+      "tag": "The bends",
+      "text": "At depth, high pressure dissolves extra nitrogen into a diver's blood and tissues; surfacing too fast drops the pressure and the nitrogen forms bubbles — decompression sickness."
+    },
+    {
+      "tag": "Oxygen in blood and water",
+      "text": "How much oxygen dissolves is set by its partial pressure, which matters for respiration and for why less oxygen dissolves at high altitude's lower pressure."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Raoult's law",
+      "text": "The complementary limiting law: in a dilute solution the dilute solute obeys Henry's law while the abundant solvent obeys Raoult's law — the two ends of the same real-solution behaviour."
+    },
+    {
+      "name": "Dalton's law",
+      "text": "The partner for mixtures: because Henry's law depends on each gas's partial pressure, it works together with Dalton's law of partial pressures when several gases share the space above a liquid."
+    }
+  ],
+  "whyItMatters": "It governs how gases dissolve, from carbonated drinks and blood oxygenation to the physics of diving and the exchange of gases between the atmosphere and the oceans. It is a workhorse of chemistry, physiology, and environmental science whenever a gas meets a liquid.",
+  "working": [
+    {"lead": "Control dissolving with pressure", "text": "raise partial pressure to dissolve more gas and lower it to release gas, at fixed temperature."},
+    {"lead": "State the constant's convention", "text": "the Henry's-law constant comes in solubility and volatility forms with different units, so specify which you mean when giving a value."},
+    {"lead": "Watch for reacting gases", "text": "apply it to dilute, non-reacting systems; gases that react or ionise in the solvent, like carbon dioxide or hydrogen chloride, deviate."}
+  ],
+  "limits": "It holds only for dilute solutions at low to moderate pressure, and breaks down at high pressure and high concentration. It also fails when the gas chemically reacts with or dissociates in the solvent — hydrogen chloride ionises in water, and carbon dioxide partly forms carbonic acid, so both deviate and need effective constants that fold in the chemistry. It is an empirical limiting law, accurate within its regime and systematically off outside it.",
+  "misreadings": "It is not exact at all pressures or concentrations — it is a dilute, low-pressure limiting law. Nor does it apply to gases that react with the solvent; the reacting or ionising cases are the conspicuous exceptions, not edge cases to be ignored.",
+  "origin": "Formulated by the English chemist William Henry in 1803, from measurements of how much gas water absorbs at different pressures and temperatures.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1803,
+  "namedAfter": "William Henry",
+  "sources": [
+    {"text": "Henry's law, Wikipedia. — the statement, the examples, the Raoult relationship, and the reacting-gas deviations.", "url": "https://en.wikipedia.org/wiki/Henry%27s_law", "type": "secondary"},
+    {"text": "\"Henry's law,\" Encyclopædia Britannica. — the 1803 origin and the dilute/low-pressure and electrolyte limits.", "url": "https://www.britannica.com/science/Henrys-law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Henry%27s_law",
+  "related": [
+    {"slug": "raoults-law", "kind": "kindred"},
+    {"slug": "daltons-law", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "no": "157",
+  "slug": "daltons-law",
+  "name": "Dalton's Law of Partial Pressures",
+  "statement": "The pressure of a gas mixture is the sum of the pressures each gas would exert alone.",
+  "statementAccent": "the sum of the pressures each gas would exert alone",
+  "meaning": "In a mixture of non-reacting gases, each gas pushes on the container as if it alone filled the whole volume, ignoring the others. That solo pressure is the gas's partial pressure, and the total pressure of the mixture is simply their sum.",
+  "mechanism": "In the ideal-gas picture, molecules occupy negligible volume and exert no forces on one another, so each species contributes pressure independently and the contributions add. A gas's partial pressure is its mole fraction times the total pressure, and for ideal gases pressure, mole, and volume fractions all coincide.",
+  "examples": [
+    {
+      "tag": "The oxygen in air",
+      "text": "Air is about a fifth oxygen by mole, so at sea level oxygen's partial pressure is roughly a fifth of an atmosphere — the quantity that actually matters for breathing."
+    },
+    {
+      "tag": "Diving gases",
+      "text": "As a diver descends, the total pressure rises, so each gas's partial pressure rises even at fixed composition; oxygen becomes toxic above a threshold, which is why breathing mixes are planned with Dalton's law."
+    },
+    {
+      "tag": "Collecting gas over water",
+      "text": "A gas gathered over water is saturated with water vapour, so the dry gas's pressure is the total minus the water vapour's partial pressure."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Amagat's law",
+      "text": "The volume analogue: the total volume of an ideal-gas mixture equals the sum of the partial volumes each component would occupy at the same temperature and pressure."
+    },
+    {
+      "name": "Dalton's atomic theory",
+      "text": "A separate contribution by the same John Dalton — that matter is made of atoms, with the law of multiple proportions — not to be confused with the law of partial pressures."
+    }
+  ],
+  "whyItMatters": "It lets the pressure of any gas mixture be built up from its components, essential to respiratory physiology, diving, atmospheric science, and chemistry over water. It also connects to Henry's law, since how much of a gas dissolves depends on that gas's partial pressure.",
+  "working": [
+    {"lead": "Add the partial pressures", "text": "get a mixture's total pressure by summing each gas's partial pressure, or find a partial pressure as mole fraction times the total."},
+    {"lead": "Subtract water vapour when collecting over water", "text": "correct a gas collected over water by subtracting the temperature-dependent water vapour pressure to get the dry gas."},
+    {"lead": "Track partial pressures with depth", "text": "in diving, follow how rising total pressure raises each gas's partial pressure, since toxicity depends on the partial value."}
+  ],
+  "limits": "The law holds accurately only for ideal, non-reacting gases, at low pressure and high temperature. Real gases deviate, more so as pressure rises, because molecular volume becomes significant and intermolecular forces alter the pressure, and it fails entirely if the gases react chemically and change the number of molecules. It is an empirical approximation grounded in the ideal-gas model, not an exact fundamental law.",
+  "misreadings": "It is not exact for real gases at high pressure, and it assumes the gases do not react. It is also distinct from Dalton's atomic theory: the same person gave both, but the law of partial pressures is about gas mixtures, not the existence of atoms.",
+  "origin": "Observed by the English chemist John Dalton in 1801 and published in 1802, in the Manchester Literary and Philosophical Society's memoirs alongside his work on the thermal expansion of gases.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1801,
+  "namedAfter": "John Dalton",
+  "sources": [
+    {"text": "Dalton's law, Wikipedia. — the statement, the mole-fraction relation, the 1801/1802 dating, and the real-gas deviations.", "url": "https://en.wikipedia.org/wiki/Dalton%27s_law", "type": "secondary"},
+    {"text": "\"Dalton's law,\" Encyclopædia Britannica. — the sum-of-partial-pressures statement and its empirical status.", "url": "https://www.britannica.com/science/Daltons-law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Dalton%27s_law",
+  "related": [
+    {"slug": "boyles-law", "kind": "kindred"},
+    {"slug": "henrys-law", "kind": "kindred"}
+  ]
+}

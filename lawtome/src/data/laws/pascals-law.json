@@ -1,0 +1,57 @@
+{
+  "no": "149",
+  "slug": "pascals-law",
+  "name": "Pascal's Law",
+  "aliases": ["Pascal's principle"],
+  "statement": "Pressure applied to a confined fluid is transmitted undiminished throughout it.",
+  "statementAccent": "transmitted undiminished throughout it",
+  "meaning": "Squeeze a sealed, filled body of fluid anywhere and the added pressure appears everywhere in it, pushing equally and at right angles on every wall. The pressure increase does not weaken with distance from where you pushed — it is felt in full at every point.",
+  "mechanism": "In a confined fluid at rest, an applied pressure change is transmitted equally in all directions. Because pressure is force divided by area, the same pressure acting on a larger piston produces a proportionally larger force — the basis of hydraulic force multiplication, with the larger piston moving a proportionally smaller distance so that work is conserved.",
+  "examples": [
+    {
+      "tag": "The hydraulic press",
+      "text": "A small force on a small piston becomes a large force on a large one through the area ratio — the principle behind hydraulic jacks, presses, and car lifts."
+    },
+    {
+      "tag": "Hydraulic brakes",
+      "text": "Pressure from your foot on the master cylinder is transmitted undiminished through the brake fluid to the larger wheel pistons, multiplying the force that stops the car."
+    },
+    {
+      "tag": "Pascal's barrel",
+      "text": "The legendary demonstration in which a little water poured down a tall thin tube into a sealed full barrel bursts it, by adding pressure felt across the whole vessel — though the experiment may be apocryphal."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Hydraulics",
+      "text": "The whole engineering field built on the law, using confined fluids to transmit and multiply force in jacks, presses, brakes, and heavy machinery."
+    },
+    {
+      "name": "Archimedes' principle",
+      "text": "A companion result of fluid statics: the depth-dependent pressure that Pascal's law describes is what produces the buoyant force on a submerged body."
+    }
+  ],
+  "whyItMatters": "It is the foundation of hydraulics, the reason a light push can lift a car and a foot-pedal can stop a lorry — force multiplied by transmitting pressure through a confined fluid. It turned fluid statics into a practical technology of levers made of liquid.",
+  "working": [
+    {"lead": "Multiply force by area ratio", "text": "size the output piston larger than the input to multiply force, remembering the larger piston moves a shorter distance so work is conserved."},
+    {"lead": "Keep the fluid confined and full", "text": "the law needs a sealed, filled system; air pockets or leaks let the pressure dissipate and break the transmission."},
+    {"lead": "Add the depth term where it matters", "text": "the applied pressure transmits equally, but absolute pressure still varies with depth by the fluid's weight, so account for that in tall columns."}
+  ],
+  "limits": "The law assumes an incompressible fluid at rest in a closed container. It concerns the transmitted pressure change; the total pressure still varies with depth by the hydrostatic term, the fluid's density times gravity times height. Real fluids are slightly compressible, so transmission is not perfectly instantaneous or perfectly undiminished, and the 'at rest' premise excludes flowing fluids. It is an idealisation, exact in the incompressible-static limit.",
+  "misreadings": "It is about the transmitted pressure change, not the absolute pressure — the added pressure appears everywhere equally, but a fluid still weighs more at the bottom, so total pressure varies with depth. And 'undiminished' is an idealisation that assumes incompressibility and a fluid at rest.",
+  "origin": "Formulated by the French mathematician and physicist Blaise Pascal around 1653 and published posthumously in 1663 in his Traité de l'équilibre des liqueurs. The often-told 'Pascal's barrel' demonstration may be apocryphal, as it appears nowhere in his surviving works.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1653,
+  "namedAfter": "Blaise Pascal",
+  "sources": [
+    {"text": "Pascal's law, Wikipedia. — the statement, force multiplication, the depth term, and the possibly-apocryphal barrel experiment.", "url": "https://en.wikipedia.org/wiki/Pascal%27s_law", "type": "secondary"},
+    {"text": "\"Pascal's principle,\" Encyclopædia Britannica. — the canonical statement and the piston force-multiplication illustration.", "url": "https://www.britannica.com/science/Pascals-principle", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Pascal%27s_law",
+  "related": [
+    {"slug": "archimedes-principle", "kind": "kindred"},
+    {"slug": "bernoullis-principle", "kind": "kindred"}
+  ]
+}
