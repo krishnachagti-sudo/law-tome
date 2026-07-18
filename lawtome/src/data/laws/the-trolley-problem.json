@@ -1,0 +1,57 @@
+{
+  "no": "359",
+  "slug": "the-trolley-problem",
+  "name": "The Trolley Problem",
+  "aliases": ["The trolley dilemma"],
+  "statement": "Most would divert a runaway trolley to kill one instead of five, but few would push a man to do the same.",
+  "statementAccent": "kill one instead of five",
+  "meaning": "The trolley problem is a family of ethical thought experiments probing why our moral intuitions diverge across cases that seem numerically alike. In the basic case, a runaway trolley will kill five people on the track; you can pull a lever to divert it onto a side track where it kills one. Most people judge that you may pull the lever. In the footbridge variant, the only way to stop the trolley is to push a large stranger off a bridge into its path, killing him to save five — and most judge that you may not. The puzzle is what accounts for the different verdicts.",
+  "mechanism": "Both cases trade one life for five, yet intuitions split, and the trolley problem is a tool for isolating which morally relevant feature does the work. Candidate distinctions include: harming as a means versus harming as a foreseen side effect, the doctrine of double effect distinguishing intended from merely foreseen harm; doing versus allowing, or killing versus letting die; and the personal, up-close nature of pushing versus the impersonal act of throwing a switch. By varying one feature at a time across cases, philosophers test which factor our judgements actually track, exposing the structure of everyday moral thinking.",
+  "examples": [
+    {
+      "tag": "The switch",
+      "text": "A trolley heads for five; you can divert it to a track with one — most people judge that diverting it is permissible."
+    },
+    {
+      "tag": "The footbridge",
+      "text": "The only way to stop the trolley is to push a large man off a bridge into its path; most judge this impermissible, though it too trades one life for five."
+    },
+    {
+      "tag": "The transplant surgeon",
+      "text": "Thomson's parallel case: a surgeon could save five patients by harvesting the organs of one healthy visitor; almost everyone judges this monstrous, sharpening the puzzle of when killing one to save five is forbidden."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The doctrine of double effect",
+      "text": "The principle that harm intended as a means is worse than equal harm merely foreseen as a side effect, offered to explain why diverting the trolley differs from pushing the man."
+    },
+    {
+      "name": "Greene's dual-process account",
+      "text": "The empirical hypothesis, from Joshua Greene's neuroimaging work, that personal dilemmas like the footbridge engage emotional brain systems while impersonal ones engage deliberative systems, producing the split verdicts."
+    }
+  ],
+  "whyItMatters": "It is the most famous thought experiment in modern moral philosophy, a workbench for testing consequentialist and deontological theories against considered intuitions. It anchors debates over the doctrine of double effect, killing versus letting die, and the moral significance of using a person as a means, and it has shaped experimental moral psychology and public discussion of machine ethics, from medical triage to the programming of autonomous vehicles.",
+  "working": [
+    {"lead": "Vary one feature at a time", "text": "compare cases that differ in a single respect — means versus side effect, personal versus impersonal — to isolate what your intuition is tracking."},
+    {"lead": "Name the distinction you are using", "text": "make explicit whether you appeal to double effect, doing versus allowing, or something else, rather than leaving the verdict unexplained."},
+    {"lead": "Hold intuitions lightly", "text": "treat the split judgements as data to be explained, not as settled ethics, since the artificiality of the cases limits what they can establish."}
+  ],
+  "limits": "It is a thought experiment probing intuitions, not a settled ethical law, and there is no consensus on its resolution. Critics argue the scenarios are so artificial — perfect knowledge, guaranteed outcomes, no alternatives — that they may mislead about real moral life, where uncertainty and relationships dominate. The empirical dual-process findings are influential but contested and have faced replication and interpretation challenges. And applications to self-driving cars are widely questioned, since real driving rarely presents a clean one-versus-five choice, so the puzzle illuminates moral reasoning more than it dictates policy.",
+  "misreadings": "It is not asking for the single correct action so much as why our verdicts differ across similar cases. Foot introduced the original case in 1967, but it was Judith Jarvis Thomson who named it the trolley problem and developed the footbridge and transplant variants in essays from 1976 and 1985. And the neuroscience does not prove which answer is right: showing that emotion drives the footbridge verdict does not by itself show that verdict is mistaken, a further and contested inference.",
+  "origin": "The original case was introduced by Philippa Foot in 'The Problem of Abortion and the Doctrine of the Double Effect' (1967); Judith Jarvis Thomson named it and added the footbridge and transplant variants in 1976 and 1985, and Joshua Greene's team brought neuroimaging to it in 2001.",
+  "category": "philosophy",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1967,
+  "namedAfter": "Philippa Foot",
+  "sources": [
+    {"text": "Doctrine of Double Effect, Stanford Encyclopedia of Philosophy. — Foot's 1967 case, the intended-versus-foreseen distinction, and the trolley cases.", "url": "https://plato.stanford.edu/entries/double-effect/", "type": "secondary"},
+    {"text": "Greene et al., \"An fMRI Investigation of Emotional Engagement in Moral Judgment,\" Science 293 (2001): 2105-2108. — the personal-versus-impersonal dilemma finding.", "url": "https://www.science.org/doi/10.1126/science.1062872", "type": "primary"},
+    {"text": "Trolley problem, Wikipedia. — the switch and footbridge cases and the Foot and Thomson attributions.", "url": "https://en.wikipedia.org/wiki/Trolley_problem", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Trolley_problem",
+  "related": [
+    {"slug": "the-veil-of-ignorance", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "no": "355",
+  "slug": "the-liar-paradox",
+  "name": "The Liar Paradox",
+  "aliases": ["The liar", "The paradox of the liar"],
+  "statement": "\"This sentence is false\" is false if true and true if false.",
+  "statementAccent": "false if true and true if false",
+  "meaning": "The liar paradox arises from a sentence that says of itself that it is false. If the sentence is true, then what it says holds, so it is false; if it is false, then what it says fails, so it is true. Either way it comes out both true and false, which classical logic forbids. The paradox is a direct threat to the principle of bivalence — that every statement is either true or false and not both — and to naive assumptions about truth.",
+  "mechanism": "The engine is self-reference combined with negation: the sentence talks about its own truth value and denies it. Assuming the sentence is either true or false, and that a sentence is true exactly when what it says is the case, both assignments lead immediately to their opposite, generating a contradiction. Strengthened versions resist easy escape: the sentence 'This sentence is not true' blocks the move of calling it merely meaningless or neither-true-nor-false, since 'not true' would then apply and the contradiction returns. The paradox thus pressures the naive theory of truth, the assumption of bivalence, or the legitimacy of unrestricted self-reference.",
+  "examples": [
+    {
+      "tag": "The simple liar",
+      "text": "The sentence 'This sentence is false' cannot consistently be assigned true or false, the bare form of the paradox."
+    },
+    {
+      "tag": "The strengthened liar",
+      "text": "'This sentence is not true' resists the escape of calling it neither true nor false, since that very verdict makes it not true, and so true again."
+    },
+    {
+      "tag": "The Epimenides sentence",
+      "text": "Epimenides the Cretan reportedly said that all Cretans are liars; often cited as an ancestor, though as stated it is not a strict paradox, since it can simply be false without contradiction."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Tarski's hierarchy",
+      "text": "Alfred Tarski's response: no consistent language can contain its own truth predicate, so truth must be defined in a metalanguage above the object language, banning the self-reference that drives the paradox."
+    },
+    {
+      "name": "Kripke's truth-value gaps",
+      "text": "Saul Kripke's theory allows some sentences, including the liar, to be neither true nor false — ungrounded — building truth up in stages so the liar simply never receives a value."
+    }
+  ],
+  "whyItMatters": "It is a foundational problem in logic, semantics, and the theory of truth, forcing any serious account of truth to say what goes wrong. It drove Tarski's influential work on formal semantics and the undefinability of truth, shapes debates over bivalence and self-reference, and connects to the limitative results of twentieth-century logic through the shared machinery of self-reference. Any theory that wants a transparent notion of truth must reckon with the liar.",
+  "working": [
+    {"lead": "Spot the self-reference", "text": "notice when a sentence ascribes a truth value to itself, the ingredient that makes the liar and its kin generate contradiction."},
+    {"lead": "Test against the strengthened form", "text": "check any proposed fix against 'this sentence is not true', which defeats the easy move of declaring the liar meaningless."},
+    {"lead": "Choose what to give up", "text": "recognise that resolving the liar means surrendering something — unrestricted self-reference, bivalence, or the naive truth schema — since it cannot leave all of them intact."}
+  ],
+  "limits": "It is an unresolved paradox with no consensus solution: Tarskian hierarchies, truth-value gaps, paraconsistent logics that tolerate some contradictions, and contextualist accounts all have advocates and recognised costs. The traditional attribution to Eubulides of Miletus in the fourth century BC rests on later reports rather than surviving text, and the Epimenides version, though older and famous, is not strictly paradoxical as usually stated. Every leading treatment must sacrifice some intuitive principle about truth or language, so the liar remains a live problem rather than a solved one.",
+  "misreadings": "It is not a mere trick or play on words — it threatens core logical principles and has driven serious formal work on truth. The Epimenides sentence is a loose ancestor, not the strict paradox, since 'all Cretans are liars' can be simply false. And declaring the liar meaningless does not dissolve it: the strengthened liar returns the contradiction even after that move, which is why the paradox is hard rather than trivial.",
+  "origin": "Traditionally credited to the Megarian philosopher Eubulides of Miletus in the fourth century BC, with the older Epimenides sentence as a folk ancestor; it became central to modern logic through Alfred Tarski's work on truth and semantics in the 1930s.",
+  "category": "philosophy",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "namedAfter": "Eubulides of Miletus",
+  "sources": [
+    {"text": "Liar Paradox, Stanford Encyclopedia of Philosophy. — the self-referential statement, the strengthened liar, and the Tarski and Kripke responses.", "url": "https://plato.stanford.edu/entries/liar-paradox/", "type": "secondary"},
+    {"text": "Liar paradox, Wikipedia. — the Eubulides and Epimenides attributions and the family of self-referential paradoxes.", "url": "https://en.wikipedia.org/wiki/Liar_paradox", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Liar_paradox",
+  "related": [
+    {"slug": "the-sorites-paradox", "kind": "kindred"},
+    {"slug": "russells-paradox", "kind": "kindred"}
+  ]
+}

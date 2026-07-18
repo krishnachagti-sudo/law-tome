@@ -1,0 +1,56 @@
+{
+  "no": "356",
+  "slug": "russells-paradox",
+  "name": "Russell's Paradox",
+  "aliases": ["The Russell paradox", "The barber paradox"],
+  "statement": "The set of all sets that do not contain themselves both must and cannot contain itself.",
+  "statementAccent": "both must and cannot contain itself",
+  "meaning": "Russell's paradox is a contradiction at the heart of naive set theory. Consider the set of all sets that are not members of themselves. Ask whether this set is a member of itself: if it is, then by its own defining condition it is not; if it is not, then it satisfies the condition and so is. Either answer contradicts itself. The paradox showed that the unrestricted assumption that any property defines a set is inconsistent.",
+  "mechanism": "Naive set theory assumed unrestricted comprehension: for any property, there is a set of exactly the things with that property. Take the property 'is not a member of itself' and form its set R. Then R is a member of R if and only if R is not a member of R — a flat contradiction derivable in a few steps. The paradox does not depend on anything exotic; it follows from comprehension and basic logic alone, which is why it was fatal to the naive theory and demanded a restriction on which collections count as sets.",
+  "examples": [
+    {
+      "tag": "The set of non-self-membered sets",
+      "text": "The set R of all sets that are not members of themselves yields a contradiction when you ask whether R belongs to R — the paradox in its exact form."
+    },
+    {
+      "tag": "The barber",
+      "text": "A village barber shaves all and only those who do not shave themselves; asking whether he shaves himself reproduces the structure — though Russell noted the barber is merely an illustration, and that version has no genuine paradox since no such barber can exist."
+    },
+    {
+      "tag": "Frege's system",
+      "text": "Russell communicated the paradox to Gottlob Frege in 1902, showing that Frege's foundational system for arithmetic was inconsistent, just as its second volume was going to press."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Zermelo-Fraenkel set theory",
+      "text": "The standard modern response: replace unrestricted comprehension with restricted axioms, including separation, so sets are built only from existing sets, blocking the formation of the paradoxical R."
+    },
+    {
+      "name": "Russell's theory of types",
+      "text": "Russell's own solution: arrange objects, sets, sets of sets, and so on into a hierarchy of types, so that a set can only contain objects of a lower type, making 'a set that is a member of itself' ill-formed."
+    }
+  ],
+  "whyItMatters": "It is one of the pivotal discoveries in the foundations of mathematics. By exposing a contradiction in the naive notion of a set, it forced the development of axiomatic set theory and the theory of types, reshaping logic and the foundations program of the early twentieth century. The modern edifice of set theory, on which much of mathematics is formally built, exists in the form it does largely to avoid Russell's paradox.",
+  "working": [
+    {"lead": "Distrust unrestricted comprehension", "text": "do not assume that every property defines a set, since the property of non-self-membership provably does not."},
+    {"lead": "Build sets from the bottom up", "text": "use axioms that form new sets only from already-given sets, as in Zermelo-Fraenkel theory, so the paradoxical collection cannot arise."},
+    {"lead": "Treat the barber as illustration", "text": "use the barber to convey the shape of the paradox, but remember it shows only that no such barber exists, not a contradiction in mathematics."}
+  ],
+  "limits": "The paradox itself is not contested — it is a rigorously established contradiction in naive set theory, and its reality is settled. What remains a matter of choice and debate is the best response: Zermelo-Fraenkel set theory, type theory, and other systems each block the paradox differently, and there is no unique forced solution, only alternatives with different strengths. The barber analogy, while vivid, is imperfect, since it proves only the non-existence of the barber rather than exhibiting a genuine logical contradiction.",
+  "misreadings": "It is not a puzzle without an answer — it is a proof that naive set theory is inconsistent, and it demanded a concrete fix, which axiomatic set theory supplies. The barber is an informal illustration, not the paradox itself, and Russell himself flagged that it is not truly paradoxical. And the paradox does not show mathematics to be broken; it shows that one particular naive assumption about sets had to be abandoned, which it was.",
+  "origin": "Discovered by Bertrand Russell in 1901 and reported to Gottlob Frege in a 1902 letter, showing Frege's system inconsistent; it appeared in Russell's 'The Principles of Mathematics' (1903) and was independently found by Ernst Zermelo around the same time.",
+  "category": "philosophy",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1901,
+  "namedAfter": "Bertrand Russell",
+  "sources": [
+    {"text": "Russell's Paradox, Stanford Encyclopedia of Philosophy. — the contradiction, the letter to Frege, and the type-theoretic and axiomatic responses.", "url": "https://plato.stanford.edu/entries/russell-paradox/", "type": "secondary"},
+    {"text": "Russell's paradox, Wikipedia. — the statement, the barber illustration, and Zermelo-Fraenkel set theory as the standard resolution.", "url": "https://en.wikipedia.org/wiki/Russell%27s_paradox", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Russell%27s_paradox",
+  "related": [
+    {"slug": "the-liar-paradox", "kind": "kindred"}
+  ]
+}

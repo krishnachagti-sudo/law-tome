@@ -1,0 +1,56 @@
+{
+  "no": "362",
+  "slug": "poppers-falsifiability",
+  "name": "Popper's Falsifiability",
+  "aliases": ["Falsifiability", "The criterion of demarcation", "Refutability"],
+  "statement": "A theory is scientific only if some possible observation could show it false.",
+  "statementAccent": "could show it false",
+  "meaning": "Falsifiability is Karl Popper's proposed criterion for demarcating empirical science from non-science and pseudoscience. A statement is falsifiable if there is some logically possible observation that would contradict it. Scientific theories, on this view, stick their necks out: they forbid certain outcomes and so make risky, testable predictions. Theories compatible with every conceivable observation — whether because they explain everything or have been endlessly patched to fit — say nothing testable and fall outside empirical science.",
+  "mechanism": "The criterion rests on a logical asymmetry between verification and falsification. No number of confirming instances can prove a universal law, since the next observation might break it; but a single genuine counter-instance can, in logic, refute it. So science advances not by accumulating confirmations but by conjecture and refutation: propose bold theories that forbid much, then subject them to severe tests designed to break them. Theories that survive determined attempts to falsify them are corroborated but never proven; those that fail are discarded. Falsifiability depends on logical form — whether a statement can clash with a possible observation — not on whether it is true.",
+  "examples": [
+    {
+      "tag": "Einstein's risky prediction",
+      "text": "Popper's model of science: general relativity predicted starlight would bend by a specific amount near the sun, a risky forecast that the 1919 eclipse could have refuted but did not."
+    },
+    {
+      "tag": "The unfalsifiable theories",
+      "text": "Popper judged Marxism as practised, Freudian psychoanalysis, and Adler's psychology unscientific because, he argued, no conceivable observation could contradict them — they explained every outcome."
+    },
+    {
+      "tag": "Conjecture and refutation",
+      "text": "Science proceeds by proposing bold theories and trying hard to break them, keeping those that survive severe testing rather than seeking to verify them."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Sophisticated falsificationism",
+      "text": "Imre Lakatos's revision into research programmes: theories come with a protected hard core and adjustable auxiliary hypotheses, and are judged progressive or degenerating over time rather than refuted by a single anomaly."
+    },
+    {
+      "name": "The Duhem-Quine problem",
+      "text": "The objection that hypotheses are tested only in bundles with auxiliary assumptions, so a failed prediction never falsifies one hypothesis unambiguously — you can always blame an auxiliary instead."
+    }
+  ],
+  "whyItMatters": "It is among the most influential ideas in the philosophy of science and by far the most widely known account of what makes something scientific, shaping science education, policy, and courtroom disputes over what counts as science. Popper called demarcation the key to most fundamental problems in the philosophy of science, and even where philosophers reject his answer, falsifiability remains the reference point against which rival criteria are defined.",
+  "working": [
+    {"lead": "Ask what would refute it", "text": "test a claim's scientific standing by asking what possible observation would show it false; if none could, it is not empirically scientific."},
+    {"lead": "Prize risky predictions", "text": "value theories that forbid much and make bold, testable forecasts over ones that accommodate any result after the fact."},
+    {"lead": "Do not over-apply it", "text": "remember that a single anomaly rarely kills a theory in practice, and that auxiliary assumptions complicate any clean refutation."}
+  ],
+  "limits": "Naive falsificationism is widely rejected by philosophers of science, even as falsifiability survives as a useful rough criterion. The Duhem-Quine thesis shows hypotheses are tested in bundles, so no experiment cleanly falsifies one claim; Kuhn argued that normal science retains paradigms through anomalies rather than abandoning them; and the criterion arguably excludes legitimate science while admitting thoroughly falsified pseudosciences like astrology. Popper himself allowed that a single counter-instance is not methodologically decisive. The demarcation problem remains unresolved, so the entry marks falsifiability as influential but contested rather than settled.",
+  "misreadings": "A single anomaly does not automatically kill a theory — Popper distinguished the logic of falsification from scientific practice, where communities accept results by convention and do not abandon a theory at the first conflicting datum. Unfalsifiable does not mean meaningless: Popper separated his demarcation of science from the positivists' theory of meaning and granted that metaphysical claims can be far from meaningless. And falsifiability concerns scientific status, not truth — a falsifiable theory can be false, and an unfalsifiable claim can be true.",
+  "origin": "Proposed by Karl Popper in 'Logik der Forschung' (1934, imprint 1935; translated as 'The Logic of Scientific Discovery', 1959) and developed in 'Conjectures and Refutations' (1963), against the verificationism of the Vienna Circle.",
+  "category": "philosophy",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1934,
+  "namedAfter": "Karl Popper",
+  "sources": [
+    {"text": "Karl Popper, Stanford Encyclopedia of Philosophy. — falsifiability as demarcation, the verification-falsification asymmetry, and conjecture and refutation.", "url": "https://plato.stanford.edu/entries/popper/", "type": "secondary"},
+    {"text": "Science and Pseudo-Science, Stanford Encyclopedia of Philosophy. — the demarcation criterion, its criticisms, and the unresolved status of the problem.", "url": "https://plato.stanford.edu/entries/pseudo-science/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Falsifiability",
+  "related": [
+    {"slug": "the-problem-of-induction", "kind": "tension"}
+  ]
+}

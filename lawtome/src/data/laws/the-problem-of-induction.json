@@ -1,0 +1,56 @@
+{
+  "no": "361",
+  "slug": "the-problem-of-induction",
+  "name": "The Problem of Induction",
+  "aliases": ["Hume's problem", "The problem of inductive justification"],
+  "statement": "That the future will resemble the past cannot be justified without assuming the very thing in question.",
+  "statementAccent": "without assuming the very thing in question",
+  "meaning": "The problem of induction is the challenge, sharpened by David Hume, that inductive reasoning — inferring general laws or future events from past observations — cannot be given a non-circular rational justification. We assume the sun will rise tomorrow because it always has, but this rests on the presumption that nature is uniform, that unobserved cases resemble observed ones. Any attempt to justify that presumption itself relies on induction, so the justification is circular; and no purely logical argument delivers it either.",
+  "mechanism": "Hume framed the challenge as a dilemma. A justification of induction must be either demonstrative or probable. A demonstrative, purely logical argument cannot deliver it, because it is not contradictory to suppose the future will differ from the past; the inference is not valid by logic alone. A probable argument — appealing to induction's past success — already assumes that what has worked will keep working, which is the uniformity of nature, the very principle in question, so it begs the question. With both routes blocked, no non-circular justification remains, and Hume concludes that induction rests not on reason but on custom and habit.",
+  "examples": [
+    {
+      "tag": "The rising sun",
+      "text": "That the sun has risen every day gives no logical guarantee it will rise tomorrow; the inference works only if the future resembles the past, which is what needs justifying."
+    },
+    {
+      "tag": "Relations of ideas and matters of fact",
+      "text": "Hume divided knowledge into relations of ideas, provable by logic alone, and matters of fact, known only through experience; predictions about the unobserved are matters of fact and so cannot be logically demonstrated."
+    },
+    {
+      "tag": "Custom, not reason",
+      "text": "Hume's own diagnosis: we make inductive inferences from habit, a psychological disposition built by repetition, not because reason justifies them."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The new riddle of induction",
+      "text": "Nelson Goodman's deepening of the problem: even granting induction, his predicate 'grue' shows that the same evidence equally supports incompatible generalisations, so which regularities to project is itself unjustified."
+    },
+    {
+      "name": "Pragmatic vindication",
+      "text": "Hans Reichenbach's response: we cannot prove induction will work, but if any method works, induction will, so it is a rational bet even without a guarantee — a vindication rather than a justification."
+    }
+  ],
+  "whyItMatters": "It is a foundational problem for empirical knowledge and science, which depend everywhere on projecting past regularities into the future. By showing that this projection has no non-circular rational ground, Hume set an agenda that runs through all later philosophy of science — Popper's falsificationism, Bayesian confirmation theory, Goodman's new riddle — each an attempt to live with or around the problem. Any account of scientific reasoning must say how it answers, dissolves, or sidesteps it.",
+  "working": [
+    {"lead": "Spot the hidden premise", "text": "notice that every inductive inference assumes the unobserved resembles the observed, a premise experience cannot establish without circularity."},
+    {"lead": "Distinguish justifying from explaining", "text": "separate the question of whether induction is rationally justified from Hume's account of why we do it, which is psychological habit."},
+    {"lead": "Choose a response, not a proof", "text": "recognise that the leading replies vindicate, dissolve, or reframe induction rather than supplying the non-circular justification Hume showed we cannot have."}
+  ],
+  "limits": "It is an unresolved problem with no consensus solution: falsificationism, Bayesian, pragmatic, and ordinary-language responses all have advocates and recognised costs, and none is agreed to supply the missing justification. Goodman's new riddle shows the difficulty runs deeper than Hume's original, reaching the choice of which regularities to project. The problem is also not a claim that induction is worthless — it questions its rational foundation, not its practical indispensability, and most philosophers grant that we cannot and should not stop reasoning inductively.",
+  "misreadings": "Popper did not solve it: rejecting induction in favour of conjecture and refutation is a way of avoiding the problem that many find unsatisfying, since choosing among unrefuted theories for prediction seems to smuggle induction back in. It does not show that science is irrational or that induction should be abandoned — it shows that inductive inference lacks a non-circular justification, which is compatible with its being indispensable. And Hume's point is about justification, not about whether nature is in fact uniform.",
+  "origin": "Formulated by David Hume in 'A Treatise of Human Nature' (1739, Book I) and restated in 'An Enquiry Concerning Human Understanding' (1748); it was deepened by Nelson Goodman's new riddle of induction in 'Fact, Fiction, and Forecast' (1955).",
+  "category": "philosophy",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "namedAfter": "David Hume",
+  "sources": [
+    {"text": "The Problem of Induction, Stanford Encyclopedia of Philosophy. — Hume's dilemma, the circularity of justifying induction, and the range of responses.", "url": "https://plato.stanford.edu/entries/induction-problem/", "type": "secondary"},
+    {"text": "Problem of induction, Wikipedia. — the uniformity-of-nature assumption, Hume's works, and the absence of consensus on a solution.", "url": "https://en.wikipedia.org/wiki/Problem_of_induction", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Problem_of_induction",
+  "related": [
+    {"slug": "poppers-falsifiability", "kind": "tension"},
+    {"slug": "the-munchhausen-trilemma", "kind": "kindred"}
+  ]
+}

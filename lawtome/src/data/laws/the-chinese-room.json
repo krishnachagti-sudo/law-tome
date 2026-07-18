@@ -1,0 +1,56 @@
+{
+  "no": "360",
+  "slug": "the-chinese-room",
+  "name": "The Chinese Room",
+  "aliases": ["The Chinese room argument", "Searle's Chinese room"],
+  "statement": "Following rules to manipulate symbols can pass for understanding without any understanding at all.",
+  "statementAccent": "without any understanding at all",
+  "meaning": "The Chinese room is a thought experiment arguing that running a program is not sufficient for a mind, understanding, or consciousness, however intelligent the behaviour. A person who knows no Chinese sits in a room with boxes of Chinese symbols and an English rulebook for manipulating them; fed Chinese messages, they hand back symbols fluent enough to pass for a native speaker's, yet understand not a word. The lesson John Searle draws is that syntax, the formal shuffling of symbols, is neither constitutive of nor sufficient for semantics, the having of meaning.",
+  "mechanism": "The argument targets the claim that an appropriately programmed computer literally understands. Searle grants that the room can pass the Turing test in Chinese: to an outside observer it is indistinguishable from an understander. But the person inside is doing only what a computer does — matching and returning symbols by rule, with no grasp of what they mean. Since running the program adds no understanding to the person, and the person is the whole processor, the program alone cannot produce understanding. The load-bearing premise is that syntax is not sufficient for semantics: manipulating forms never, by itself, yields meaning.",
+  "examples": [
+    {
+      "tag": "The room",
+      "text": "A person following an English rulebook to answer Chinese messages produces fluent replies while understanding nothing — Searle's core scenario."
+    },
+    {
+      "tag": "Strong versus weak AI",
+      "text": "Searle attacks 'strong AI', the claim that the right program is a mind, while granting 'weak AI', that computers are useful models of the mind — a distinction the argument turns on."
+    },
+    {
+      "tag": "Large language models",
+      "text": "The argument is now invoked about systems like modern chatbots: critics say fluent text-generation is the Chinese room at scale, statistical pattern-matching without genuine understanding — though whether it applies is actively debated."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The systems reply",
+      "text": "The objection that the whole system — person, rulebook, and symbols — understands, even if the person alone does not; Searle answers that the person could internalise the entire system and still understand nothing."
+    },
+    {
+      "name": "The robot reply",
+      "text": "The objection that a program embodied in a robot with sensors, causally connected to the world, would have grounded meaning; Searle answers that sensory input is just more symbols to shuffle."
+    }
+  ],
+  "whyItMatters": "It is probably the most discussed argument in the philosophy of mind since the Turing test, a central reference point in debates over functionalism, the computational theory of mind, intentionality, and machine consciousness. As artificial systems grow more fluent, the question it poses — whether behaving as if one understands is the same as understanding — has moved from seminar rooms to the public argument over what today's machines are actually doing.",
+  "working": [
+    {"lead": "Separate behaving from understanding", "text": "distinguish passing a behavioural test from genuinely grasping meaning, the gap the room is built to expose."},
+    {"lead": "Locate the semantics", "text": "when told a system understands, ask where meaning enters beyond the manipulation of symbols by rule."},
+    {"lead": "Weigh the replies honestly", "text": "treat the systems and robot replies as serious objections with live defenders, not as settled refutations, since the argument remains contested."}
+  ],
+  "limits": "There is no consensus: after more than forty years the argument remains contested, with many philosophers and AI researchers rejecting it, especially via the systems and robot replies. It is widely described as an intuition pump, leaning on intuitions about understanding that critics such as Daniel Dennett argue the scenario distorts, for instance by making the room's slowness bias us against crediting understanding. Its application to modern language models is an open dispute, not a verdict, so the entry marks the argument as influential but unresolved.",
+  "misreadings": "It does not claim that machines cannot think or that artificial intelligence is impossible — Searle holds that brains are machines and that a system with the right causal powers could think; his target is the sufficiency of programs alone. It concerns understanding and meaning, not intelligent behaviour: by hypothesis the room behaves indistinguishably from an understander. And the tidy axioms about syntax and semantics are Searle's later formalisation, not the wording of the original 1980 paper.",
+  "origin": "Introduced by the philosopher John Searle in 'Minds, Brains, and Programs' (Behavioral and Brain Sciences, 1980), published with commentaries from cognitive scientists and his replies; Searle restated it in Scientific American in 1990.",
+  "category": "philosophy",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1980,
+  "namedAfter": "John Searle",
+  "sources": [
+    {"text": "The Chinese Room Argument, Stanford Encyclopedia of Philosophy. — the thought experiment, the syntax-semantics premise, and the major replies.", "url": "https://plato.stanford.edu/entries/chinese-room/", "type": "secondary"},
+    {"text": "Searle, \"Minds, Brains, and Programs,\" Behavioral and Brain Sciences 3(3) (1980): 417-424. — the original argument and the strong-versus-weak-AI distinction.", "url": "https://rintintin.colorado.edu/~vancecd/phil201/Searle.pdf", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Chinese_room",
+  "related": [
+    {"slug": "moravecs-paradox", "kind": "kindred"}
+  ]
+}

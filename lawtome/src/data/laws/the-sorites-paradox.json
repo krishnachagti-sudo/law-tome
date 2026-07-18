@@ -1,0 +1,55 @@
+{
+  "no": "354",
+  "slug": "the-sorites-paradox",
+  "name": "The Sorites Paradox",
+  "aliases": ["The paradox of the heap"],
+  "statement": "One grain isn't a heap, and adding one never makes a heap — yet heaps exist.",
+  "statementAccent": "yet heaps exist",
+  "meaning": "The sorites is a paradox of vague predicates. A single grain of sand is not a heap; adding one grain to something that is not a heap never turns it into one; so, step by step, no number of grains ever makes a heap — which is absurd, since heaps plainly exist. The argument runs in reverse too, removing grains from a heap, and arises for any vague predicate, from bald to tall to rich.",
+  "mechanism": "The paradox is a chain of seemingly valid steps from a true base case, that one grain is not a heap, through a long series of true-looking tolerance premises, that one more grain never makes the difference, to a false conclusion. Because both premises and inference look impeccable, the argument threatens classical logic and the principle that every statement is either true or false. The pressure point is the tolerance premise, that a single grain can never mark the boundary between heap and non-heap; most resolutions locate the fault there.",
+  "examples": [
+    {
+      "tag": "The heap itself",
+      "text": "Grain by grain, no single addition seems to create a heap, so the argument concludes a million grains form no heap — the original, from the Greek soros meaning heap."
+    },
+    {
+      "tag": "The bald man",
+      "text": "One hair does not make the difference between bald and not bald, so by the same reasoning no number of hairs does — the falakros, a companion puzzle from antiquity."
+    },
+    {
+      "tag": "Any vague term",
+      "text": "Tall, rich, old, red: any predicate with borderline cases and no sharp cutoff can be run through a sorites series, one dollar or one nanosecond at a time."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Epistemicism",
+      "text": "Williamson and Sorensen's view that there is a sharp boundary — a precise grain at which non-heap becomes heap — but its location is unknowable, so the tolerance premise is simply false, though we cannot say where."
+    },
+    {
+      "name": "Fuzzy and supervaluationist logics",
+      "text": "Approaches that give up strict two-valuedness: fuzzy logic allows degrees of truth between true and false, while supervaluationism counts a claim true only if true on every way of sharpening the vague term."
+    }
+  ],
+  "whyItMatters": "It is the paradigm case of the problem of vagueness, a central puzzle in the philosophy of language and logic. Because vague predicates pervade ordinary language, the paradox forces a choice about the foundations of logic itself — whether to keep bivalence, admit degrees of truth, or accept unknowable sharp boundaries — and it remains a live test for every theory of how vague words work.",
+  "working": [
+    {"lead": "Locate the vague predicate", "text": "recognise a sorites whenever a predicate has borderline cases and no sharp cutoff, and expect the little-by-little argument to threaten."},
+    {"lead": "Suspect the tolerance premise", "text": "focus scrutiny on the claim that one small step never makes the difference, where most resolutions say the argument fails."},
+    {"lead": "Pick a theory of vagueness", "text": "choose among epistemicism, supervaluationism, degree theories, and the rest, each with its own costs, since none is agreed."}
+  ],
+  "limits": "The paradox is unresolved: most philosophers take the argument to be defective somewhere, but there is no consensus on which resolution is correct, and every leading theory carries recognised costs — epistemicism's unknowable boundary, degree theories' artificially precise truth-values. Its attribution to Eubulides is traditional but rests on later secondhand reports rather than surviving text. And higher-order vagueness, the vagueness of the very notion of a borderline case, remains actively contested, so the problem reaches deeper than any single sorites series.",
+  "misreadings": "It is not just about heaps or a mere word game — it targets all vague predicates and threatens classical logic and bivalence generally. It has no settled solution, competing frameworks persisting. And epistemicism does not claim the boundary is arbitrary or conventional; it claims a genuine sharp boundary fixed by usage whose location is unknowable. Vagueness itself should not be confused with ambiguity or mere imprecision, which are distinct phenomena.",
+  "origin": "Usually credited to the Megarian philosopher Eubulides of Miletus in the fourth century BC, though no original statement survives; it attracted little sustained interest until the late nineteenth century, when the problem of vagueness became central to philosophy of language.",
+  "category": "philosophy",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "namedAfter": "Eubulides of Miletus",
+  "sources": [
+    {"text": "Hyde & Raffman, \"Sorites Paradox,\" Stanford Encyclopedia of Philosophy. — the statement, the vague-predicate framing, and the competing resolutions.", "url": "https://plato.stanford.edu/entries/sorites-paradox/", "type": "secondary"},
+    {"text": "Eubulides, Wikipedia. — the Megarian school and the family of paradoxes including the heap and the bald man.", "url": "https://en.wikipedia.org/wiki/Eubulides", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Sorites_paradox",
+  "related": [
+    {"slug": "the-liar-paradox", "kind": "kindred"}
+  ]
+}
