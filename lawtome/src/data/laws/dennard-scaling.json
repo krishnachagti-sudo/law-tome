@@ -1,0 +1,57 @@
+{
+  "no": "350",
+  "slug": "dennard-scaling",
+  "name": "Dennard Scaling",
+  "aliases": ["MOSFET scaling"],
+  "statement": "As transistors shrink, their power density holds constant — so smaller means faster for free.",
+  "statementAccent": "power density holds constant",
+  "meaning": "Dennard scaling is the observation that as transistors get smaller, their power density stays roughly constant, so power consumption scales with area. As a transistor's dimensions shrink, its voltage and current scale down too, keeping power per unit area fixed while the smaller, faster transistors allow higher clock speeds. For decades it meant each new generation of smaller transistors could run faster within the same power budget on the same chip footprint.",
+  "mechanism": "Shrink a transistor's length, width, oxide thickness, and operating voltage all by the same factor, and the capacitance falls by that factor, the switching delay falls with it so the device is faster, and the power per transistor falls by the square of the factor. Meanwhile the number of transistors per unit area rises by the square. The two effects cancel in power terms: more transistors, each using proportionally less power, leaves the power per unit area constant. So a denser, faster chip did not run hotter — the benefit that, alongside Moore's law, drove decades of rising clock speeds.",
+  "examples": [
+    {
+      "tag": "The free lunch",
+      "text": "For decades, combining Moore's law with Dennard scaling gave the free lunch of clock speeds that climbed each generation without power density rising — programs simply ran faster on new hardware."
+    },
+    {
+      "tag": "The power wall",
+      "text": "Around 2005, as transistors grew tiny, leakage current and voltage limits meant power density began to rise instead of holding constant, and clock frequencies stalled near a few gigahertz."
+    },
+    {
+      "tag": "The multicore turn",
+      "text": "Unable to raise frequency within the power budget, manufacturers turned to multiple cores and parallelism, and to dark silicon, where not all transistors can be powered at once."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Constant-field scaling",
+      "text": "The technical name for the idealised model, in which shrinking dimensions and voltage together keep the electric field constant and the power density fixed."
+    },
+    {
+      "name": "Moore's law",
+      "text": "The companion observation about transistor count doubling, distinct from Dennard scaling's power-and-performance benefit; Moore's law continued after Dennard scaling broke."
+    }
+  ],
+  "whyItMatters": "It was the engine, alongside Moore's law, behind the exponential rise of computer clock speeds through the 1990s and early 2000s — the reason smaller transistors were worth building. Its breakdown around 2005 ended the era of ever-faster single processors and forced the whole industry toward multicore and parallelism, reshaping how software must be written to keep gaining speed.",
+  "working": [
+    {"lead": "Distinguish it from Moore's law", "text": "keep Dennard scaling, about power density and performance per transistor, separate from Moore's law, about transistor count."},
+    {"lead": "Explain the frequency plateau", "text": "attribute the stalling of clock speeds after 2005 to the breakdown of Dennard scaling, not to Moore's law ending."},
+    {"lead": "Expect parallelism, not frequency", "text": "look to more cores and parallel work, rather than higher clock speeds, for performance gains in the post-Dennard era."}
+  ],
+  "limits": "Dennard scaling was an idealised approximation, the constant-field model, that ignored leakage current, which grew from negligible to dominant as transistors shrank. It broke down around 2005 to 2007: as devices reached very small sizes, subthreshold and gate leakage and threshold-voltage limits meant the operating voltage could no longer keep falling, so power density began to rise instead of holding constant. This ended frequency scaling and produced the power wall and dark silicon. It must be kept distinct from Moore's law, which concerns transistor count and continued for years after Dennard scaling failed.",
+  "misreadings": "Dennard scaling is not Moore's law — Moore's law is about transistor count and density, Dennard scaling about power density and performance per transistor, and confusing the two is the commonest error. Clock speeds did not stop rising because Moore's law ended; Moore's law continued, and it was Dennard scaling that broke. And smaller transistors do not automatically mean lower total chip power — that held only while Dennard scaling did, after which leakage made power density climb.",
+  "origin": "Formulated by Robert Dennard and colleagues at IBM in their 1974 paper 'Design of Ion-Implanted MOSFET's with Very Small Physical Dimensions' (IEEE Journal of Solid-State Circuits); named after the lead author and observed to break down around 2005.",
+  "category": "technology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1974,
+  "namedAfter": "Robert Dennard",
+  "sources": [
+    {"text": "Dennard scaling, Wikipedia. — the constant-power-density statement, the scaling relationships, the 1974 origin, and the breakdown and its consequences.", "url": "https://en.wikipedia.org/wiki/Dennard_scaling", "type": "secondary"},
+    {"text": "Dennard et al., \"Design of Ion-Implanted MOSFET's with Very Small Physical Dimensions,\" IEEE Journal of Solid-State Circuits SC-9(5):256-268 (1974), IBM Research. — the original scaling paper.", "url": "https://research.ibm.com/publications/design-of-ion-implanted-mosfets-with-very-small-physical-dimensions", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Dennard_scaling",
+  "related": [
+    {"slug": "moores-law", "kind": "kindred"},
+    {"slug": "kryders-law", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "no": "344",
+  "slug": "the-pareto-principle",
+  "name": "The Pareto Principle",
+  "aliases": ["The 80/20 rule", "The law of the vital few"],
+  "statement": "Roughly 80 percent of results come from 20 percent of causes.",
+  "statementAccent": "20 percent of causes",
+  "meaning": "The Pareto principle holds that for many outcomes, about eighty per cent of the consequences come from around twenty per cent of the causes — a small fraction of inputs accounting for most of the output. It is the idea of the vital few and the trivial many: that effort, sales, faults, or wealth are typically concentrated in a minority of their sources rather than spread evenly.",
+  "mechanism": "The eighty-twenty split is a special case of a power-law distribution, the Pareto distribution, in which a few large contributors dominate a long tail of small ones. The specific split corresponds to a particular value of the distribution's shape parameter, so it is not privileged: distributions with different exponents give ninety-ten, ninety-nine-one, or other splits. The principle captures the concentration such heavy-tailed distributions produce, but the exact numbers are illustrative, not fixed.",
+  "examples": [
+    {
+      "tag": "Wealth and land",
+      "text": "Pareto's original observation was that about eighty per cent of Italy's land was owned by roughly twenty per cent of the population, a concentration he found recurring elsewhere."
+    },
+    {
+      "tag": "Business and software",
+      "text": "The adages that most sales come from a minority of customers, and that a small share of code accounts for most bugs — Microsoft reported that fixing the top fifth of reported bugs removed some eighty per cent of related crashes."
+    },
+    {
+      "tag": "The Pareto chart",
+      "text": "Quality control uses a bar chart of defect causes ordered by frequency to find the vital few problems worth fixing first — a tool Juran brought into the field."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Pareto distribution",
+      "text": "The underlying power law, whose shape parameter sets how concentrated the outcomes are; different exponents yield splits other than eighty-twenty."
+    },
+    {
+      "name": "The vital few and the useful many",
+      "text": "Juran's later revision of his own phrase, replacing trivial with useful to stop the remaining majority being dismissed as worthless."
+    }
+  ],
+  "whyItMatters": "It is one of the most widely used rules of thumb in management, quality control, and time management, a quick guide to where effort will pay off most: focus on the minority of causes that drive the majority of effects. Rooted in the real mathematics of heavy-tailed distributions, it captures a genuine and recurring feature of how outcomes concentrate, even as the precise figures vary.",
+  "working": [
+    {"lead": "Find the vital few", "text": "identify the small share of causes, customers, or faults that drives most of the effect, and concentrate effort there."},
+    {"lead": "Order by impact", "text": "use a Pareto chart or ranking to attack the largest contributors first rather than treating all causes equally."},
+    {"lead": "Treat the split as rough", "text": "take eighty-twenty as illustrative, expecting the real ratio to vary by domain rather than holding exactly."}
+  ],
+  "limits": "The eighty-twenty numbers are a rough heuristic, not a law; the actual split varies widely by domain, and it need not be eighty-twenty at all. The two figures need not even sum to a hundred, since they measure different things — the share of causes and the share of effects — so ninety-ten or seventy-twenty are equally possible. It is descriptive, not predictive: it summarises observed concentration but guarantees no particular split in a new setting, and it describes many but not all distributions, only the heavy-tailed ones. The percentages are often quoted without evidence.",
+  "misreadings": "It is not always exactly eighty-twenty; that is an approximation, and real ratios range across seventy-thirty, ninety-ten, ninety-nine-one, and more. The two numbers do not have to add to a hundred, because they count different quantities. And it is not a proven law of nature but an empirical rule of thumb, apt to be misapplied when the numbers are cited as if fixed.",
+  "origin": "Rooted in Vilfredo Pareto's 1896 observation of the concentration of Italian land ownership; generalised and named the Pareto principle by the quality-management pioneer Joseph Juran, who coined the vital few and the trivial many, from around 1941.",
+  "category": "management",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1941,
+  "namedAfter": "Vilfredo Pareto",
+  "sources": [
+    {"text": "Pareto principle, Wikipedia. — the eighty-twenty statement, Pareto's land observation, Juran's naming, the power-law basis, and the need-not-add-to-100 caveat.", "url": "https://en.wikipedia.org/wiki/Pareto_principle", "type": "secondary"},
+    {"text": "A Guide to the Pareto Principle, Juran Institute. — Juran's generalisation, the vital few, and the Pareto chart.", "url": "https://www.juran.com/blog/a-guide-to-the-pareto-principle-80-20-rule-pareto-analysis/", "type": "secondary"},
+    {"text": "Newman, \"Power laws, Pareto distributions and Zipf's law,\" arXiv:cond-mat/0412004. — the power-law mathematics behind the concentration.", "url": "https://arxiv.org/pdf/cond-mat/0412004", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Pareto_principle",
+  "related": [
+    {"slug": "zipfs-law", "kind": "kindred"},
+    {"slug": "the-lindy-effect", "kind": "kindred"}
+  ]
+}

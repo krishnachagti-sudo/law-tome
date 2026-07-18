@@ -1,0 +1,56 @@
+{
+  "no": "343",
+  "slug": "survivorship-bias",
+  "name": "Survivorship Bias",
+  "statement": "Studying only the winners misleads you, because the losers vanished from view.",
+  "statementAccent": "the losers vanished from view",
+  "meaning": "Survivorship bias is the error of concentrating on the people or things that came through some selection process while overlooking those that did not — usually because the failures have been removed and are invisible. Because the surviving sample is not representative, any conclusion drawn from it tends toward the overly optimistic. It is a species of selection bias, the kind driven by attrition over time.",
+  "mechanism": "The non-survivors are dropped from the dataset before it is analysed, so every statistic computed on the remainder is conditioned on survival and systematically distorted. The failures are not merely under-weighted; they are absent and often unnoticed, so the analyst may not even realise the sample is truncated. Asymmetric visibility is the engine: the winners are on display and the losers are gone, so advice and inference drawn from what remains inherit a hidden upward slant.",
+  "examples": [
+    {
+      "tag": "Wald's bombers",
+      "text": "In the Second World War, Abraham Wald reasoned that armour should go where returning planes had the fewest bullet holes, not the most, since planes hit in those places did not come back — the classic illustration, though the famous dotted-airplane diagram is a later embellishment, not Wald's."
+    },
+    {
+      "tag": "Fund performance",
+      "text": "Poorly performing funds are closed and dropped from databases, so the surviving set overstates average returns, by studies roughly one per cent a year — the finance term is survivorship or backfill bias."
+    },
+    {
+      "tag": "Buildings and dropouts",
+      "text": "We admire old buildings and conclude they built to last, forgetting the flimsy ones long since demolished; we cite successful college dropouts, ignoring the many who dropped out and failed."
+    }
+  ],
+  "variants": [
+    {
+      "name": "A subtype of selection bias",
+      "text": "The general case is any non-random inclusion of observations; survivorship bias is the attrition-driven variety, where the excluded units are the failures that dropped out over time."
+    },
+    {
+      "name": "Cognitive and methodological",
+      "text": "It is at once a reasoning shortcut, ignoring the invisible failures, and a statistical property of a truncated dataset, and the two senses are often conflated."
+    }
+  ],
+  "whyItMatters": "It is one of the most consequential and easily missed errors in reasoning from data, quietly inflating estimates of returns, success rates, and what works across finance, medicine, history, and self-help. Recognising it — asking always what happened to the cases that did not survive to be counted — is a basic discipline of honest inference.",
+  "working": [
+    {"lead": "Ask after the failures", "text": "before drawing a lesson from the survivors, ask what happened to everyone who did the same and did not make it into the sample."},
+    {"lead": "Use survivor-free data", "text": "in finance and elsewhere, prefer datasets that retain the dead funds and delisted firms rather than only today's survivors."},
+    {"lead": "Distrust success formulas", "text": "discount advice distilled only from winners, since the identical behaviour of those who failed is invisible."}
+  ],
+  "limits": "It is both a cognitive bias and a statistical property of a truncated dataset, and conflating the two blurs the concept. The famous Wald anecdote is partly embellished: the vivid dotted-airplane diagram is a designer's later recreation, and Wald's actual 1943 work was dense probability, not a bullet-hole sketch, though the underlying reasoning is genuine. Not every survivor-only dataset is fatally biased; the bias matters when survival correlates with the variable being studied. And some stock examples, like cats surviving high falls, have plausible non-bias explanations too.",
+  "misreadings": "Wald did not draw the red-dotted airplane image, and his contribution was rigorous statistics that accounted for the downed planes, not a memorable diagram; the picture is a teaching device from decades later. The surviving sample is not representative of the whole population — treating it as if it were is the central error the bias names. And it is not the case that survivors are simply the best; they are the ones that happened to remain visible.",
+  "origin": "The core reasoning was made rigorous by Abraham Wald in his 1943 memoranda on estimating aircraft vulnerability from the damage on surviving planes; the naming of survivorship bias as a general fallacy and its attachment to the Wald anecdote came considerably later, its popularity surging after the mid-2000s.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1943,
+  "sources": [
+    {"text": "Survivorship bias, Wikipedia. — the definition as a subtype of selection bias, the Wald example, and the fund-performance and old-buildings cases.", "url": "https://en.wikipedia.org/wiki/Survivorship_bias", "type": "secondary"},
+    {"text": "Wald, A Method of Estimating Plane Vulnerability Based on Damage of Survivors, Center for Naval Analyses reprint (1980). — the original 1943 reasoning that accounts for the downed planes.", "url": "https://www.cna.org/analyses/1980/a-method-of-estimating-plane-vulnerability", "type": "primary"},
+    {"text": "Moll, \"Abraham Wald and the Red Bullet Holes,\" cameronmoll.com. — the origin of the dotted-airplane diagram as a later recreation, not Wald's.", "url": "https://www.cameronmoll.com/journal/abraham-wald-red-bullet-holes-origin-story", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Survivorship_bias",
+  "related": [
+    {"slug": "confirmation-bias", "kind": "kindred"},
+    {"slug": "the-availability-heuristic", "kind": "kindred"}
+  ]
+}

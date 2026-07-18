@@ -1,0 +1,79 @@
+{
+  "no": "349",
+  "slug": "the-fallacies-of-distributed-computing",
+  "name": "The Fallacies of Distributed Computing",
+  "statement": "The network is reliable, instant, infinite, secure, and uniform — all false.",
+  "statementAccent": "all false",
+  "meaning": "The fallacies of distributed computing are a set of false assumptions that engineers routinely make when building systems that span a network — assumptions that hold on a single machine or in the lab but break once a system runs across real networks, spans machines and administrative domains, or scales up. The eight are: the network is reliable, latency is zero, bandwidth is infinite, the network is secure, topology does not change, there is one administrator, transport cost is zero, and the network is homogeneous.",
+  "mechanism": "Each fallacy is a habit of treating a remote interaction as if it were local — cheap, instant, reliable, secure, uniform. Networks drop packets and fail, so calls need retries, timeouts, and idempotency. Latency is bounded below by the speed of light, so chatty remote calls that are fine locally become slow across distance. Bandwidth is finite and shared, security must be built in because traffic crosses infrastructure you do not control, topology shifts with outages and autoscaling, systems span many administrative domains, moving data costs CPU and money, and networks mix protocols and hardware. Designing as if the assumptions held produces systems that fail when the network misbehaves.",
+  "examples": [
+    {
+      "tag": "The cascading failure",
+      "text": "A single missing timeout lets one hanging service exhaust a caller's connection pool, which cascades until the whole system is down — the network-is-reliable fallacy, mitigated by timeouts, backoff, and circuit breakers."
+    },
+    {
+      "tag": "Latency across the world",
+      "text": "In a microservice architecture one user request can fan out into dozens of internal calls, each a few milliseconds, compounding into hundreds — the latency-is-zero fallacy made costly."
+    },
+    {
+      "tag": "The many administrators",
+      "text": "A deployment spanning multiple clouds and networks meets conflicting policies, firewalls, and maintenance windows, with no single point of control — the one-administrator fallacy."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The original four",
+      "text": "Reliability, latency, bandwidth, and security, attributed to Bill Joy and Tom Lyon at Sun before Deutsch and Gosling extended the list."
+    },
+    {
+      "name": "Modern additions",
+      "text": "Later authors proposed further fallacies — that versioning is simple, that compensating updates always work, that observability is optional — extensions to the canonical eight rather than part of them."
+    }
+  ],
+  "whyItMatters": "It is a foundational cautionary checklist in distributed-systems, cloud, and microservice engineering, taught and cited for decades because the move from monoliths to distributed architectures re-exposes engineers to exactly these traps. It motivates the core practices of resilient design: timeouts, retries with backoff and jitter, circuit breakers, service discovery, encryption everywhere, and cost-aware data movement.",
+  "working": [
+    {
+      "lead": "Assume the network fails",
+      "text": "design for dropped packets, timeouts, and partitions with retries, idempotency, and circuit breakers rather than assuming reliability."
+    },
+    {
+      "lead": "Respect latency and bandwidth",
+      "text": "minimise round trips and payloads, since latency is bounded by physics and bandwidth is finite and shared."
+    },
+    {
+      "lead": "Build in security and discovery",
+      "text": "encrypt and authenticate across untrusted networks, and use service discovery for a topology that changes."
+    }
+  ],
+  "limits": "It is a heuristic checklist, a folk aphorism of engineering, not a formal theorem with the guarantees of a result like the CAP theorem. Its provenance is an informally assembled list from several engineers at Sun, without a single founding publication, so the exact dates and per-item authorship are approximate. Each item points to a real engineering truth, but the value is as a reminder, not a predictive model. The canonical set is exactly eight; later additions are extensions by other authors and should not be presented as part of the original.",
+  "misreadings": "The list was not coined by one person; it was collaborative, the original four from Joy and Lyon, assembled and expanded by Deutsch, with the eighth added by Gosling. It is not only about network hardware — several fallacies concern organisational, economic, and protocol diversity. And it is not obsolete in the cloud era; the opposite is argued, since more calls now cross networks and administrative boundaries, making the fallacies more relevant, not less.",
+  "origin": "Assembled at Sun Microsystems in the 1990s: the first four attributed to Bill Joy and Tom Lyon, expanded by L. Peter Deutsch to seven around 1994, with the eighth, that the network is homogeneous, added by James Gosling around 1997.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1994,
+  "namedAfter": "L. Peter Deutsch",
+  "sources": [
+    {
+      "text": "Fallacies of distributed computing, Wikipedia. — the eight fallacies, their wording, and the Joy, Lyon, Deutsch, and Gosling attribution.",
+      "url": "https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing",
+      "type": "secondary"
+    },
+    {
+      "text": "Rotem-Gal-Oz, \"Fallacies of Distributed Computing Explained.\" — the canonical explanation of each fallacy and its engineering consequence.",
+      "url": "https://arnon.me/wp-content/uploads/Files/fallacies.pdf",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing",
+  "related": [
+    {
+      "slug": "the-cap-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-end-to-end-principle",
+      "kind": "kindred"
+    }
+  ]
+}

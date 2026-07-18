@@ -1,0 +1,57 @@
+{
+  "no": "348",
+  "slug": "kerckhoffs-principle",
+  "name": "Kerckhoffs's Principle",
+  "aliases": ["Shannon's maxim"],
+  "statement": "A cipher should stay secure even if everything but the key is public.",
+  "statementAccent": "everything but the key",
+  "meaning": "Kerckhoffs's principle holds that a cryptographic system should remain secure even if everything about it, except the key, is public knowledge. Security must rest on the secrecy of the key alone, never on the secrecy of the algorithm or design. It is the direct opposite of security through obscurity, and the reason modern cryptography publishes its algorithms and hides only its keys.",
+  "mechanism": "Keys are small, changeable at will, and specific to each user, while an algorithm embedded in widely distributed hardware and software cannot be kept secret or changed once fielded — it will eventually be reverse-engineered. So resting security on the key, the one thing that can genuinely be protected and rotated, is the robust choice. Publishing the algorithm also invites open analysis: a design that survives repeated public attack earns justified confidence, whereas secrecy denies that evidence and hides flaws.",
+  "examples": [
+    {
+      "tag": "Open standards",
+      "text": "The Advanced Encryption Standard was chosen through an open international competition and fully published, its security resting on the key and on years of public scrutiny."
+    },
+    {
+      "tag": "Broken secret ciphers",
+      "text": "Ciphers whose security depended on a secret design, such as the GSM cipher A5/1 and the DVD scrambling system, were broken once reverse-engineered — the failure mode the principle warns against."
+    },
+    {
+      "tag": "Shannon's maxim",
+      "text": "Claude Shannon restated the principle as the enemy knows the system, the compact form now widely quoted in cryptography."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The open-competition model",
+      "text": "The NIST practice of selecting standards like the AES block cipher and the SHA-3 hash through public competitions with open analysis, institutionalising the principle."
+    },
+    {
+      "name": "Security through obscurity",
+      "text": "The rejected opposite, resting security on a secret algorithm — fragile because secrets leak, and unable to earn the confidence that public scrutiny provides."
+    }
+  ],
+  "whyItMatters": "It is a foundational norm of modern cryptography, the reason algorithms are published and scrutinised while only keys are kept secret. It underlies the open-competition model by which standards are chosen and analysed in the open, and it explains a recurring lesson of security history: that ciphers relying on secret designs fall once those designs are exposed.",
+  "working": [
+    {"lead": "Rest security on the key", "text": "design so that security depends only on the secret key, assuming the algorithm and system are known to the adversary."},
+    {"lead": "Publish and invite attack", "text": "prefer open, scrutinised algorithms over secret ones, since surviving public analysis is evidence of strength."},
+    {"lead": "Do not lean on obscurity", "text": "treat hiding a design as at most a supplementary layer, never the basis of security."}
+  ],
+  "limits": "The principle is a widely accepted norm and best practice, not a mathematical theorem, and it is occasionally debated at the margins in specific threat models. Obscurity can serve as a supplementary layer of defence in depth, but never as the sole basis of security. And resting all secrecy on the key raises the stakes of key management, which becomes the critical point of protection. It is a guideline for sound design rather than a guarantee that a given key-secret system is unbreakable.",
+  "misreadings": "Obscurity does not have literally zero value — the principle says security must not depend on it, not that concealment can never add a minor layer. Kerckhoffs did not say the algorithm must be published; he said the system must remain secure even if it becomes public, a robustness requirement rather than a mandate to publish. And the crisp phrasing that the enemy knows the system is Shannon's, not Kerckhoffs's own.",
+  "origin": "Stated by the Dutch cryptographer Auguste Kerckhoffs in 'La Cryptographie Militaire' (Journal des sciences militaires, 1883) as one of six design rules for military ciphers, and restated by Claude Shannon in 1949 as the maxim that the enemy knows the system.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1883,
+  "namedAfter": "Auguste Kerckhoffs",
+  "sources": [
+    {"text": "Kerckhoffs's principle, Wikipedia. — the key-secrecy statement, the six rules, the contrast with obscurity, and Shannon's maxim.", "url": "https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle", "type": "secondary"},
+    {"text": "Petitcolas, scans and translation of Kerckhoffs's \"La Cryptographie Militaire\" (1883). — the original statement of the principle.", "url": "https://www.petitcolas.net/kerckhoffs/", "type": "primary"},
+    {"text": "The Cornerstone of Cybersecurity, NIST NCCoE. — the open-competition model for AES and SHA-3 that embodies the principle.", "url": "https://www.nccoe.nist.gov/news-insights/cornerstone-cybersecurity-cryptographic-standards-and-50-year-evolution", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle",
+  "related": [
+    {"slug": "shannons-source-coding-theorem", "kind": "kindred"}
+  ]
+}
