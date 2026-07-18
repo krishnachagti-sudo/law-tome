@@ -332,7 +332,7 @@ ${mapPanel}      <div class="panel">
         <h4>Cite this entry</h4>
         <div class="cite-box" id="cite">${citeText}</div>
         <button class="btn" id="copy"><i class="ti ti-copy" aria-hidden="true"></i> <span id="copy-t">Copy citation</span></button>
-        <button class="btn solid"><i class="ti ti-photo" aria-hidden="true"></i> Share as quote-card</button>
+        <a class="btn solid" href="${base}og/${escapeHtml(law.slug)}.png" target="_blank" rel="noopener"><i class="ti ti-photo" aria-hidden="true"></i> Open quote-card</a>
       </div>
     </aside>`;
 

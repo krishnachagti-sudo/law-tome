@@ -188,7 +188,7 @@ const LAWS=${featuredJson};
     inLanguage: 'en',
     potentialAction: {
       '@type': 'SearchAction',
-      target: { '@type': 'EntryPoint', urlTemplate: `${origin}${base}browse/?q={search_term_string}` },
+      target: { '@type': 'EntryPoint', urlTemplate: `${origin}${base}?q={search_term_string}` },
       'query-input': 'required name=search_term_string',
     },
   };

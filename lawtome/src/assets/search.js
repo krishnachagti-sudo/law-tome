@@ -123,6 +123,14 @@
       || 'all';
     var query = '';
 
+    // Honour a ?q= deep link — the WebSite SearchAction (sitelinks searchbox) and
+    // any external "search this site" link land here. Prefill the box and filter
+    // on first paint so the query the user typed elsewhere is already applied.
+    try {
+      var pq = (new URLSearchParams(location.search).get('q') || '').trim();
+      if (pq) { query = pq.toLowerCase(); if (q) q.value = pq; }
+    } catch (e) { /* URLSearchParams unsupported — ignore */ }
+
     // Populate chips on the homepage (browse/category pages ship static chips).
     if (chipsEl && chipsEl.children.length === 0) {
       var cats = ['all'];
