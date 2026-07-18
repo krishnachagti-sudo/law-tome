@@ -1,0 +1,58 @@
+{
+  "no": "069",
+  "slug": "parkinsons-law-of-triviality",
+  "name": "Parkinson's Law of Triviality",
+  "aliases": ["Bikeshedding", "The bike-shed effect"],
+  "statement": "The time a committee spends on an item is inversely proportional to the money involved.",
+  "statementAccent": "inversely proportional to the money involved",
+  "meaning": "Groups devote disproportionate time and energy to small, familiar, easy-to-grasp matters while waving through the genuinely important, costly, and complex ones. Effort is allocated in inverse proportion to actual stakes.",
+  "mechanism": "People weigh in on what they understand and feel qualified to judge. A multi-million-pound reactor is too technical for the average committee member to engage with, so they defer and approve it quickly. A bicycle shed is within everyone's comprehension — everyone can picture one — so everyone has an opinion and wants to leave a mark, and the trivial item swallows the meeting.",
+  "examples": [
+    {
+      "tag": "The committee",
+      "text": "Parkinson's original: a finance committee approves a £10 million atomic reactor in about two and a half minutes (too big to grasp), argues for three-quarters of an hour over a £350 bicycle shed, and spends over an hour on a £21-a-year refreshment budget — the smallest sum drawing the longest fight."
+    },
+    {
+      "tag": "The software bikeshed",
+      "text": "In 1999 the FreeBSD developer Poul-Henning Kamp, exasperated by an endless mailing-list thread, wrote 'A bike shed (any colour will do)…', popularising 'bikeshedding' for teams that agonise over trivia while real design decisions pass unexamined."
+    },
+    {
+      "tag": "Meetings everywhere",
+      "text": "The everyday form: a group nods through a large budget or a strategy in minutes, then debates the logo colour, the office snacks, or the meeting time at length — the parts everyone feels entitled to judge."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Bikeshedding",
+      "text": "The software world's name for the same law, from Kamp's 1999 email: the urge to argue about the colour of the bike shed — the thing anyone can build over a weekend — rather than the reactor no one dares question."
+    },
+    {
+      "name": "Sayre's law",
+      "text": "The close relative: in any dispute the intensity of feeling is inversely proportional to the value of the issues at stake — which is why the trivial agenda item generates the most heat."
+    }
+  ],
+  "whyItMatters": "It explains a universal failure of meetings: the cheap, comprehensible item crowds out the expensive, consequential one, because scrutiny follows understanding rather than importance. Naming it lets a chair defend the decisions that matter from the ones everyone can weigh in on.",
+  "working": [
+    {"lead": "Put a clock on the trivial", "text": "timebox cheap, easily-understood items so they cannot expand to fill the meeting; the bike shed does not deserve the reactor's hour."},
+    {"lead": "Make scrutiny follow the stakes", "text": "deliberately allocate the most time and the most expert attention to the biggest, most complex decisions — the ones that will otherwise be nodded through."},
+    {"lead": "Watch for everyone-has-an-opinion items", "text": "when a topic draws unusually broad participation, check whether it is drawing that energy because it matters or merely because it is easy to picture."}
+  ],
+  "limits": "It began as satire, not measurement — the figures and timings are an illustrative anecdote, not data — and it is a caricature: real decision processes vary, and some apparently 'trivial' debates (a product name, a UI colour, a policy's wording) genuinely matter. It is nonetheless a widely-recognised organisational tendency with strong face validity. It is best read as a sharp observation about attention, not a quantified law.",
+  "misreadings": "It is not a claim that small things never matter, nor a licence to skip discussion of details. It is the observation that groups systematically over-weight the trivial because it is comprehensible — a prompt to ration attention by stakes, not by how easy something is to have an opinion about.",
+  "origin": "Stated by C. Northcote Parkinson in his 1957 book Parkinson's Law, or The Pursuit of Progress, in the essay 'High Finance, or the Point of Vanishing Interest' — a different essay from, and not to be confused with, his main law that work expands to fill the time available. The software term 'bikeshedding' comes from Poul-Henning Kamp's 1999 FreeBSD email.",
+  "category": "management",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1957,
+  "namedAfter": "C. Northcote Parkinson",
+  "sources": [
+    {"text": "Parkinson, C.N. (1957). Parkinson's Law, or The Pursuit of Progress, essay 'High Finance, or the Point of Vanishing Interest'. — the reactor / bike-shed / refreshments committee.", "type": "primary"},
+    {"text": "Kamp, P.-H. (2 October 1999). \"A bike shed (any colour will do)…\" FreeBSD mailing list. — the origin of 'bikeshedding'.", "url": "http://phk.freebsd.dk/sagas/bikeshed/", "type": "primary"},
+    {"text": "Law of triviality, Wikipedia. — Parkinson's 1957 origin, the agenda figures, and Kamp's 1999 popularisation.", "url": "https://en.wikipedia.org/wiki/Law_of_triviality", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Law_of_triviality",
+  "related": [
+    {"slug": "parkinsons-law", "kind": "kindred"},
+    {"slug": "sayres-law", "kind": "kindred"}
+  ]
+}
