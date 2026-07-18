@@ -1,0 +1,57 @@
+{
+  "no": "375",
+  "slug": "kernighans-law",
+  "name": "Kernighan's Law",
+  "aliases": ["Kernighan's lever (informal)"],
+  "statement": "Debugging is twice as hard as writing the code, so write it less cleverly than you can.",
+  "statementAccent": "twice as hard as writing the code",
+  "meaning": "Kernighan's law is a maxim of software craftsmanship: since finding and fixing bugs is harder than writing code in the first place, you should write code well within your abilities rather than at the very limit of your cleverness. In Brian Kernighan's original words, everyone knows debugging is twice as hard as writing a program, so if you write it as cleverly as you can, how will you ever debug it? The lesson is to prize clarity over cleverness.",
+  "mechanism": "Debugging demands more mental capacity than writing because you must hold both the code and a model of why it is failing in mind at once. If you write at the absolute ceiling of your cleverness, you leave no headroom for that harder task, so the code becomes effectively undebuggable by its own author. Writing simply and clearly, below that ceiling, keeps the margin you will need when something breaks, which it will. The rhetorical 'twice as hard' is not a measurement but a vivid way of saying debugging is the more demanding job.",
+  "examples": [
+    {
+      "tag": "The clever one-liner",
+      "text": "A dense expression that packs several operations into an unreadable line may work, but it leaves nothing to spare when it must be understood and fixed later."
+    },
+    {
+      "tag": "Corner-case tricks",
+      "text": "Code that leans on obscure language quirks or operator-precedence subtleties resists inspection, exactly when inspection is most needed."
+    },
+    {
+      "tag": "Writing for the reader",
+      "text": "Choosing the plain, obvious construction over the ingenious one trades a little elegance for a lot of future debuggability."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Keep it simple",
+      "text": "The wider KISS principle that simple designs are more robust and maintainable, of which Kernighan's law is the debugging-focused case."
+    },
+    {
+      "name": "Avoid premature cleverness",
+      "text": "The companion caution, alongside warnings against premature optimisation, that early ingenuity often costs more in later maintenance than it saves."
+    }
+  ],
+  "whyItMatters": "It is one of the most-quoted maxims in software engineering, a compact argument for readability and maintainability over showing off. In an industry where code is read and debugged far more often than it is written, it reminds programmers to leave themselves room to reason about their own work, and it anchors the cultural preference for clear code that senior engineers pass on.",
+  "working": [
+    {"lead": "Leave cognitive headroom", "text": "write below your ceiling of cleverness so you retain the capacity to debug the result when it fails."},
+    {"lead": "Favour the obvious construction", "text": "prefer the plain, readable form over the ingenious one, since clarity pays off in maintenance."},
+    {"lead": "Write for the reader", "text": "assume code will be read and fixed by someone, possibly you, with less context than you have now."}
+  ],
+  "limits": "It is an aphorism and heuristic, not a measured law, and the 'twice as hard' figure is rhetorical rather than quantitative. It is a guideline about the balance of cleverness and clarity, not a ban on all sophistication, since some problems genuinely require intricate code. Its authority rests on long practitioner experience and the standing of its author rather than on empirical study. The label 'Kernighan's law' was applied by the community; the idea comes from a specific book.",
+  "misreadings": "The memorable form ending 'you are not smart enough to debug it' is a common paraphrase, not Kernighan's exact wording, which asks how you will ever debug code written as cleverly as you can. It does not say cleverness is always bad, only that writing at your limit leaves no room to debug. And it is due to Kernighan with his co-author P. J. Plauger from a specific book, not a free-floating proverb.",
+  "origin": "From Brian Kernighan and P. J. Plauger's 'The Elements of Programming Style' (2nd edition, 1978); the community later attached the name 'Kernighan's law' to the maxim.",
+  "category": "software",
+  "reliability": "Folk-adage",
+  "provenance": "canon",
+  "coinedYear": 1978,
+  "namedAfter": "Brian Kernighan",
+  "sources": [
+    {"text": "Brian Kernighan, Wikiquote. — the verified original wording from The Elements of Programming Style, 2nd edition.", "url": "https://en.wikiquote.org/wiki/Brian_Kernighan", "type": "primary"},
+    {"text": "The Elements of Programming Style, Wikipedia. — the Kernighan and Plauger authorship and the book's editions.", "url": "https://en.wikipedia.org/wiki/The_Elements_of_Programming_Style", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikiquote.org/wiki/Brian_Kernighan",
+  "related": [
+    {"slug": "brooks-law", "kind": "kindred"},
+    {"slug": "law-of-leaky-abstractions", "kind": "kindred"}
+  ]
+}

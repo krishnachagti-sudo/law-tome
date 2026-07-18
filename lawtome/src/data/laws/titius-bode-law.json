@@ -1,0 +1,57 @@
+{
+  "no": "369",
+  "slug": "titius-bode-law",
+  "name": "The Titius-Bode Law",
+  "aliases": ["Bode's law", "The Titius-Bode rule"],
+  "statement": "The planets' distances from the Sun seem to follow a simple doubling pattern — until Neptune.",
+  "statementAccent": "until Neptune",
+  "meaning": "The Titius-Bode law is an empirical rule that the average distances of the planets from the Sun follow an approximate geometric pattern. In one common form, each planet's distance in astronomical units is roughly 0.4 plus 0.3 times a power of two, with the exponent stepping through the planets. It reproduces the spacing of the inner planets and Uranus surprisingly well, but it is a pattern in search of an explanation, and it breaks down badly at Neptune.",
+  "mechanism": "The rule is built from a simple numerical sequence: take the numbers zero, three, six, twelve, and so on doubling, add four to each, and divide by ten, and the results approximate the planetary distances in astronomical units. It is purely descriptive, fitted to the known planets, with no derivation from gravitation or dynamics. Its apparent gap at 2.8 astronomical units, where no planet sat, prompted a search that turned up the asteroid belt, which for a time looked like confirmation.",
+  "examples": [
+    {
+      "tag": "The good fits",
+      "text": "Mercury through Uranus land close to the predicted distances, and the discovery of Uranus near 19 astronomical units in 1781 fit the next slot almost exactly, boosting the rule's credibility."
+    },
+    {
+      "tag": "The asteroid belt",
+      "text": "The rule left an empty slot near 2.8 astronomical units; the search for a missing planet there found Ceres in 1801, now seen as the largest body of the asteroid belt."
+    },
+    {
+      "tag": "The Neptune failure",
+      "text": "The slot after Uranus predicts about 38.8 astronomical units, but Neptune orbits near 30 — a gross miss that broke the rule when Neptune was found in 1846."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The resonance defence",
+      "text": "The argument that orbital resonances and stability constraints make some regular spacing statistically likely in any planetary system, so a Titius-Bode-like pattern need not be pure coincidence — a genuinely unresolved debate."
+    },
+    {
+      "name": "The numerology verdict",
+      "text": "The mainstream view that the rule is a numerical coincidence with no physical basis, fitted after the fact and failing where it should predict, hence a curiosity rather than a law."
+    }
+  ],
+  "whyItMatters": "It is a famous cautionary tale about pattern-finding in science: a simple formula that fit the known data, guided real discoveries like Ceres, and gained authority from the lucky fit of Uranus, yet turned out to lack any accepted physical basis and to fail for Neptune. It illustrates how a suggestive numerical regularity can look like a law long before, and even without, an underlying mechanism.",
+  "working": [
+    {"lead": "Treat it as a pattern, not a law", "text": "use the rule as a rough mnemonic for planetary spacing, not as a physical principle with predictive authority."},
+    {"lead": "Remember it fails at Neptune", "text": "do not extend the pattern past Uranus expecting accuracy, since Neptune breaks it decisively."},
+    {"lead": "Ask for a mechanism", "text": "before trusting a numerical regularity, look for a physical basis, which this rule conspicuously lacks."}
+  ],
+  "limits": "It is contested and widely regarded as a numerical curiosity with no established physical mechanism. It fails for Neptune, which orbits far inside the predicted slot, and its setup is somewhat ad hoc, requiring an infinite exponent for Mercury. Whether any real dynamics, such as orbital resonance, lies behind a rough regularity of spacing is an open and disputed question; the mainstream verdict is coincidence. It is best treated as an empirical pattern that broke down, not a law of nature.",
+  "misreadings": "It is not a physical law derived from gravitation — it is an empirical, even numerological, pattern, which is why it is usually called a rule. It did not predict Neptune; Neptune was found by gravitational calculation and actually violates the rule. And the asteroid belt filling the gap is generally read as coincidence, not as confirmation that the pattern reflects real physics.",
+  "origin": "First stated by Johann Daniel Titius in 1766 and popularised from 1772 by Johann Elert Bode; it gained fame from the fit of Uranus (1781) and the discovery of Ceres (1801), then failed with Neptune (1846).",
+  "category": "science",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1766,
+  "namedAfter": "Johann Daniel Titius and Johann Elert Bode",
+  "sources": [
+    {"text": "Titius-Bode law, Wikipedia. — the distance formula, the Titius and Bode attribution, the Uranus and Ceres fits, and the Neptune failure.", "url": "https://en.wikipedia.org/wiki/Titius%E2%80%93Bode_law", "type": "secondary"},
+    {"text": "Bode's law, Encyclopaedia Britannica. — the empirical distance rule and its status as a numerological curiosity with no known justification.", "url": "https://www.britannica.com/science/Bodes-law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Titius%E2%80%93Bode_law",
+  "related": [
+    {"slug": "keplers-laws-of-planetary-motion", "kind": "kindred"},
+    {"slug": "newtons-law-of-universal-gravitation", "kind": "tension"}
+  ]
+}

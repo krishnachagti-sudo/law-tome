@@ -1,0 +1,57 @@
+{
+  "no": "366",
+  "slug": "stokes-law",
+  "name": "Stokes' Law",
+  "aliases": ["Stokes drag", "Stokes's law"],
+  "statement": "Drag on a tiny sphere creeping through a viscous fluid grows in proportion to its speed.",
+  "statementAccent": "in proportion to its speed",
+  "meaning": "Stokes' law gives the drag force on a small rigid sphere moving slowly through a viscous fluid. That force is six times pi times the fluid's viscosity times the sphere's radius times its speed, and it points opposite the motion. Crucially the drag is proportional to speed itself, not to speed squared, which is the signature of the slow, creeping flow regime the law describes.",
+  "mechanism": "At very low Reynolds number, viscous forces overwhelm inertia, so the flow around the sphere is smooth and laminar with no wake. In this creeping-flow limit the Navier-Stokes equations lose their nonlinear inertial term and can be solved exactly, yielding a drag built from pressure and viscous shear over the sphere's surface, linear in velocity. Balancing this drag against gravity gives a particle's terminal velocity, which scales with the square of its radius, so small particles settle far more slowly than large ones.",
+  "examples": [
+    {
+      "tag": "Settling particles",
+      "text": "Fine sediment or droplets falling through still fluid reach a terminal velocity set by Stokes' law, with tiny grains drifting down slowly because speed scales with radius squared."
+    },
+    {
+      "tag": "The Millikan oil drop",
+      "text": "Millikan used Stokes drag on charged oil droplets to measure the charge of the electron, inferring drop size from their slow fall."
+    },
+    {
+      "tag": "Viscometry",
+      "text": "Dropping a sphere through a liquid and timing its steady fall measures the liquid's viscosity, a direct use of the law."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Terminal velocity",
+      "text": "Setting drag equal to net weight gives a settling speed proportional to the square of the radius and to the density difference, over the viscosity — the working form for sedimentation."
+    },
+    {
+      "name": "The high-Reynolds regime",
+      "text": "Above Reynolds number of order one, flow separates and a wake forms, inertial drag takes over, and the force grows roughly with speed squared — where Stokes' law no longer holds."
+    }
+  ],
+  "whyItMatters": "It is the foundational description of drag in the slow-flow world of small particles, underpinning sedimentation, aerosol and colloid science, viscometry, and the design of experiments from the Millikan oil drop onward. By fixing how quickly small spheres settle or rise, it governs everything from silt in rivers to cells in a centrifuge, and it is the baseline against which more complex drag models are measured.",
+  "working": [
+    {"lead": "Check the Reynolds number", "text": "confirm the flow is slow, Reynolds number well below one, before applying the law, since it fails once inertia and turbulence set in."},
+    {"lead": "Remember drag is linear in speed", "text": "expect force proportional to velocity, not its square, which distinguishes creeping flow from the fast-flow regime."},
+    {"lead": "Mind the assumptions", "text": "use it for a rigid smooth sphere in an unbounded fluid; irregular shapes, nearby walls, or crowding break the simple result."}
+  ],
+  "limits": "It holds only at low Reynolds number, for a rigid smooth sphere in an unbounded incompressible fluid with a no-slip surface and no turbulence. Even at Reynolds number around one the error reaches roughly ten percent, and above it flow separation and a wake make inertial drag dominate, so the force grows closer to the square of speed and the law breaks down. It also does not apply directly to irregular shapes, to particles near walls, or in crowded suspensions where particles interact.",
+  "misreadings": "The drag is proportional to speed, not to speed squared; the quadratic law belongs to the fast, high-Reynolds regime, a different world. It applies to spheres in slow flow, not to any falling object: raindrops, parachutes, and skydivers move at high Reynolds number where Stokes' law does not hold. And terminal velocity is not shape-independent in general; the clean radius-squared result is specific to the creeping-flow sphere.",
+  "origin": "Derived by the British physicist and mathematician George Gabriel Stokes in 1851, from the low-Reynolds-number limit of the equations of viscous fluid motion.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1851,
+  "namedAfter": "George Gabriel Stokes",
+  "sources": [
+    {"text": "Stokes's law, Wikipedia. — the F equals 6 pi mu r v drag force, the creeping-flow derivation, and the low-Reynolds-number condition.", "url": "https://en.wikipedia.org/wiki/Stokes%27_law", "type": "secondary"},
+    {"text": "Stokes's law, Encyclopaedia Britannica. — the drag on a sphere and the resulting terminal-velocity relation.", "url": "https://www.britannica.com/science/Stokess-law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Stokes%27_law",
+  "related": [
+    {"slug": "the-hagen-poiseuille-equation", "kind": "kindred"},
+    {"slug": "bernoullis-principle", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "no": "377",
+  "slug": "teslers-law",
+  "name": "Tesler's Law",
+  "aliases": ["The Law of Conservation of Complexity", "The waterbed theory"],
+  "statement": "Every system has irreducible complexity; you can move it around but never remove it.",
+  "statementAccent": "move it around but never remove it",
+  "meaning": "Tesler's law, the law of conservation of complexity, holds that every application has a core of complexity that cannot be eliminated, only shifted. The real question is who must deal with it: the user, the application developer, or the platform developer. Making things simpler for one party pushes the same complexity onto another. In Larry Tesler's framing, the complexity is inherent and irreducible, so design is about where to place it, not how to make it vanish.",
+  "mechanism": "Treat the complexity a task genuinely requires as a conserved quantity. If you strip it out of the user's experience, it does not disappear; it moves into the software, onto the developers who must now handle the cases the user no longer sees. Push it the other way and the interface gets simpler for engineers but harder for users. Tesler's normative stance was that engineers should absorb the complexity, since a small amount of extra effort by a developer can spare a minute a day for each of a million users, a lopsided trade in the users' favour.",
+  "examples": [
+    {
+      "tag": "Auto-detecting instead of asking",
+      "text": "Software that guesses a format or a recipient rather than asking the user has not removed that work; it has moved it into the code the developers maintain."
+    },
+    {
+      "tag": "The bare-bones product",
+      "text": "A minimal interface that pushes configuration and decisions onto the user is simpler to build but shifts the inherent complexity onto the person using it."
+    },
+    {
+      "tag": "The million-user trade",
+      "text": "Tesler's argument that an engineer spending a week to absorb complexity spares a minute a day from a million users is the case for placing it with the developer."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The waterbed theory",
+      "text": "The same idea by another name: press complexity down in one place and it rises in another, so it can be relocated but not squeezed away."
+    },
+    {
+      "name": "Tognazzini's counterpoint",
+      "text": "The observation that simplifying a tool leads users to attempt more ambitious tasks, so simplification does not straightforwardly reduce the total complexity people face."
+    }
+  ],
+  "whyItMatters": "It is a staple principle of user-experience and interaction design, a reminder that good design does not erase complexity but decides who carries it. It frames the central trade-off of product design between user effort and developer effort, and it supplies the argument for investing engineering work to keep interfaces simple, shaping how teams weigh simplicity against the cost of achieving it.",
+  "working": [
+    {"lead": "Ask who bears the complexity", "text": "for any simplification, identify which party, user, application developer, or platform developer, now has to handle what was removed."},
+    {"lead": "Push it toward the engineer", "text": "prefer to absorb inherent complexity in the software when doing so spares many users repeated effort."},
+    {"lead": "Do not expect it to vanish", "text": "treat the irreducible core as something to place well, not to design away entirely."}
+  ],
+  "limits": "It is a design heuristic and adage, not a measured or scientific law; the word conservation is an analogy to physics, with no literal conserved quantity or unit of complexity. Its authority rests on Tesler's standing and its adoption in the design community rather than on empirical measurement. And the trade-off is not always one-directional: simplifying a tool can lead users to take on more ambitious tasks, so the net complexity people face need not simply fall.",
+  "misreadings": "It does not say complexity can be designed away by cleverness; its whole point is that a core is irreducible and can only be relocated. It is a design principle by analogy, not a physical law with a conserved quantity. And the choice is not simply user versus developer; Tesler's own wording names three parties, the user, the application developer, and the platform developer.",
+  "origin": "Formulated around 1984 by the computer scientist Larry Tesler, a pioneer of modeless editing and cut-copy-paste at Xerox PARC and Apple; it was later popularised in Dan Saffer's 'Designing for Interaction' (2006).",
+  "category": "technology",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1984,
+  "namedAfter": "Larry Tesler",
+  "sources": [
+    {"text": "Larry Tesler, \"The Law of Conservation of Complexity,\" nomodes.com. — the canonical statement and the three parties who may bear the complexity.", "url": "https://www.nomodes.com/larry-tesler-consulting/complexity-law", "type": "primary"},
+    {"text": "Law of conservation of complexity, Wikipedia. — the shifted-not-removed mechanism and its status as a design heuristic.", "url": "https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity",
+  "related": [
+    {"slug": "law-of-leaky-abstractions", "kind": "kindred"},
+    {"slug": "fitts-law", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "no": "376",
+  "slug": "law-of-leaky-abstractions",
+  "name": "The Law of Leaky Abstractions",
+  "aliases": ["Leaky abstraction"],
+  "statement": "All non-trivial abstractions, to some degree, are leaky.",
+  "statementAccent": "to some degree, are leaky",
+  "meaning": "The law of leaky abstractions holds that any abstraction worth having inevitably lets some of the complexity it is meant to hide leak through. An abstraction simplifies by concealing the messy details of a lower layer, but for anything non-trivial that concealment is imperfect: sooner or later the underlying reality shows itself, and the programmer cannot fully ignore what lies beneath. As Joel Spolsky put it, abstractions save time working but do not save time learning.",
+  "mechanism": "An abstraction presents a clean, simple model of something complicated underneath. That model holds most of the time, but when performance suffers, errors arise, or edge cases appear, the hidden layer resurfaces and forces itself on the developer's attention. To diagnose and fix the trouble you must understand the level the abstraction was hiding, so the effort you saved in ordinary use returns as the need to learn the layer beneath. The leak is not a defect in the abstraction so much as reality correctly asserting itself.",
+  "examples": [
+    {
+      "tag": "Reliable connections on an unreliable network",
+      "text": "A network protocol promises reliable, ordered delivery over an unreliable lower layer, but when cables are cut or the network is swamped the reliability abstraction leaks, since it cannot deliver what the wire cannot carry."
+    },
+    {
+      "tag": "Equivalent queries, unequal speed",
+      "text": "Two logically identical database queries can run orders of magnitude apart, leaking the underlying execution and optimisation details the query language was meant to hide."
+    },
+    {
+      "tag": "Remote files that act local",
+      "text": "Accessing files across a network through an interface that makes them look local breaks the moment the connection drops or slows, exposing the network underneath."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Saves working, not learning",
+      "text": "Spolsky's corollary that abstractions can make development harder over time, because you must learn both the abstraction and the thing it abstracts."
+    },
+    {
+      "name": "The non-trivial qualifier",
+      "text": "The load-bearing scope: the claim is not that every abstraction leaks, only that every non-trivial one does, and only to some degree."
+    }
+  ],
+  "whyItMatters": "It is one of the most-cited observations in practical software engineering, explaining why higher-level tools and frameworks never fully free developers from lower-level knowledge. It justifies teaching fundamentals, tempers the promise of no-code and high-abstraction tools, and explains why experienced engineers still must understand networks, memory, databases, and compilers when the tidy surface breaks down.",
+  "working": [
+    {"lead": "Know the layer beneath", "text": "keep enough understanding of what an abstraction hides to diagnose trouble when it leaks, as it eventually will."},
+    {"lead": "Budget for the learning", "text": "expect abstractions to save routine effort but not the cost of learning the underlying system when things go wrong."},
+    {"lead": "Read leaks as reality", "text": "treat a leak as the lower layer asserting itself, a signal to look deeper, not merely a bug in the abstraction."}
+  ],
+  "limits": "It is a heuristic and observation, not a formal or proven law; the word law is rhetorical, as with other memorable software adages. The qualifier non-trivial is essential: the claim is not that all abstractions leak, only that non-trivial ones do, and only to some degree. It describes a real and pervasive tendency rather than a universal certainty, and it is attributed to Spolsky, who popularised the phrase, rather than to a first-ever coinage.",
+  "misreadings": "It does not say abstractions are bad or useless; Spolsky stresses they are valuable and save working time, only that they do not fully insulate you. A leak is not necessarily a bug: often it is the abstraction correctly exposing an underlying reality, like a genuine network failure. And it is a heuristic, not a provable law, with the word law used loosely by convention.",
+  "origin": "Coined and popularised by the software writer Joel Spolsky in his essay 'The Law of Leaky Abstractions' on Joel on Software, dated 11 November 2002.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 2002,
+  "sources": [
+    {"text": "Joel Spolsky, \"The Law of Leaky Abstractions,\" Joel on Software (2002). — the statement, the saves-working-not-learning corollary, and the worked examples.", "url": "https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/", "type": "primary"},
+    {"text": "Leaky abstraction, Wikipedia. — the principle, its popularisation by Spolsky, and related prior work on imperfect abstractions.", "url": "https://en.wikipedia.org/wiki/Leaky_abstraction", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Leaky_abstraction",
+  "related": [
+    {"slug": "conways-law", "kind": "kindred"},
+    {"slug": "teslers-law", "kind": "kindred"}
+  ]
+}

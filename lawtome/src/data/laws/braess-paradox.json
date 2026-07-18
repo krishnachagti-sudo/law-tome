@@ -1,0 +1,57 @@
+{
+  "no": "370",
+  "slug": "braess-paradox",
+  "name": "Braess's Paradox",
+  "aliases": ["The Braess paradox"],
+  "statement": "Adding a road to a congested network can make everyone's journey slower.",
+  "statementAccent": "make everyone's journey slower",
+  "meaning": "Braess's paradox is the counterintuitive result that adding capacity to a network whose users each choose their own route can make overall performance worse, increasing everyone's travel time, while removing a road can improve flow. It arises precisely because users act selfishly, each picking the route that is best for them given what others do. The paradox does not occur when routing is centrally coordinated for the common good.",
+  "mechanism": "When each traveller minimises their own time, the network settles into a Nash equilibrium that is generally not the socially optimal outcome. Adding a new link changes everyone's incentives: a tempting shortcut draws traffic onto shared segments, and the new equilibrium can leave every user worse off than before the link existed. The gap between selfish equilibrium and system optimum is the price of anarchy, and Braess's paradox is a sharp illustration of it, kin to the tragedy of the commons in which individually rational choices produce a collectively bad result.",
+  "examples": [
+    {
+      "tag": "The textbook network",
+      "text": "In the standard four-node example, adding a zero-cost shortcut between two midpoints shifts the selfish equilibrium so that every driver's time rises, even though ignoring the shortcut would keep it lower."
+    },
+    {
+      "tag": "Removing roads to speed traffic",
+      "text": "Cases like Seoul's demolition of the Cheonggyecheon expressway and New York's 1990 closure of 42nd Street are cited as real illustrations, though whether they are strictly Braess's paradox is debated."
+    },
+    {
+      "tag": "The spring-and-string demo",
+      "text": "A mechanical analogue exists in which cutting a connecting link paradoxically raises a suspended weight, mirroring the network effect."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The price of anarchy",
+      "text": "The formal measure of how much selfish routing can exceed the optimum; for networks with linear delays the selfish cost is bounded, but Braess's paradox shows adding capacity can still make it worse."
+    },
+    {
+      "name": "Beyond roads",
+      "text": "The same effect appears in internet packet routing, electrical power grids, and mechanical networks, wherever many agents route flow selfishly through a shared network."
+    }
+  ],
+  "whyItMatters": "It overturns the intuition that more capacity always helps, and it informs traffic engineering, network design, and urban planning, including the counterintuitive case for closing roads. By showing that selfish routing can be defeated by its own new options, it underpins the study of the price of anarchy and the design of incentives and tolls that steer decentralised systems toward better outcomes.",
+  "working": [
+    {"lead": "Distinguish selfish from coordinated", "text": "expect the paradox only where users route themselves; central coordination for the common good avoids it."},
+    {"lead": "Question new links", "text": "before adding capacity to a congested network, check whether the new route could worsen the equilibrium rather than assuming it must help."},
+    {"lead": "Consider removals", "text": "treat closing a road or link as a genuine tool, since it can improve flow under the same selfish-routing conditions."}
+  ],
+  "limits": "It is rigorously demonstrated within the network model but occurs only under specific conditions, not for every added road, and it depends on selfish, uncoordinated routing. Real-world attributions are debated: well-documented events like the Seoul and 42nd Street closures are cited as illustrations, but whether each is strictly Braess's paradox rather than induced demand or traffic evaporation is an interpretation, and some repeated anecdotes are thinly sourced. It holds even with fixed total demand, which distinguishes it from induced demand.",
+  "misreadings": "It does not say more roads always cause congestion, only that under selfish routing and certain conditions a new road can; often new roads help. It is not the same as induced demand, since it occurs even when total travel demand is fixed. And it does not require anyone to behave irrationally; the worse outcome arises precisely because every user chooses rationally for themselves.",
+  "origin": "Discovered by the German mathematician Dietrich Braess in 1968, in his paper 'Über ein Paradoxon aus der Verkehrsplanung' (On a Paradox of Traffic Planning); it was brought to a wider audience by an English translation in 2005.",
+  "category": "planning",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1968,
+  "namedAfter": "Dietrich Braess",
+  "sources": [
+    {"text": "Braess's paradox, Wikipedia. — the added-road-slows-traffic result, the Nash-equilibrium mechanism, and the cited real-world cases.", "url": "https://en.wikipedia.org/wiki/Braess%27s_paradox", "type": "secondary"},
+    {"text": "Braess, Nagurney & Wakolbinger, \"On a Paradox of Traffic Planning,\" Transportation Science 39 (2005): 446-450. — the English translation of the 1968 original.", "url": "https://supernet.isenberg.umass.edu/articles/braess-encyc.pdf", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Braess%27s_paradox",
+  "related": [
+    {"slug": "the-tragedy-of-the-commons", "kind": "kindred"},
+    {"slug": "the-nash-equilibrium", "kind": "cause"}
+  ]
+}
