@@ -1,0 +1,55 @@
+{
+  "no": "222",
+  "slug": "the-halting-problem",
+  "name": "The Halting Problem",
+  "statement": "No program can decide, for every program and input, whether it will finish or loop forever.",
+  "statementAccent": "whether it will finish or loop forever",
+  "meaning": "There is no general algorithm that can determine, for every possible program and input, whether that program will eventually halt or run forever. You cannot write one master checker that reliably inspects any program plus its input and always tells you, in finite time, whether it will finish. Some cases defeat any such universal checker.",
+  "mechanism": "The proof is by contradiction, using diagonalisation. Suppose a total decider H exists that, given any program and input, always correctly answers 'halts' or 'loops.' Build a program G that takes a program's own description, asks H what it would do on itself, and then does the opposite — looping if H says halt, halting if H says loop. Now feed G its own description: H's answer about G is contradicted by construction. The contradiction shows no such total decider can exist.",
+  "examples": [
+    {
+      "tag": "No universal bug-checker",
+      "text": "No tool can, for every program, decide whether it is correct or even runs without hanging; real analysers must over- or under-approximate, accepting false alarms or missed cases."
+    },
+    {
+      "tag": "Rice's theorem",
+      "text": "The sweeping generalisation: every non-trivial property of what a program computes is undecidable in general — not just halting, but equivalence, output, and more."
+    },
+    {
+      "tag": "Link to Gödel",
+      "text": "A form of Gödel's first incompleteness theorem follows quickly: a complete, sound axiomatisation of arithmetic would let you build a halting decider, which is impossible."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Church-Turing thesis",
+      "text": "The principle that anything effectively computable is computable by a Turing machine, which is why the result applies to all algorithms and programming languages, not just one model."
+    },
+    {
+      "name": "Rice's theorem",
+      "text": "H. G. Rice's 1953 generalisation extending undecidability from halting to every non-trivial semantic property of programs."
+    }
+  ],
+  "whyItMatters": "It is the founding undecidability result of computer science, drawing a hard line around what computation can ever do. It answered Hilbert's decision problem in the negative, grounds the theory of computability, and explains why perfect, general-purpose program verification and analysis are impossible in principle.",
+  "working": [
+    {"lead": "Do not seek a universal decider", "text": "for questions about arbitrary program behaviour, accept that no general algorithm can always answer, and design around it."},
+    {"lead": "Approximate deliberately", "text": "since perfect analysis is impossible, build tools that safely over- or under-approximate, and know which errors they make."},
+    {"lead": "Restrict the model when you can", "text": "recognise that finite-memory or total, non-Turing-complete languages sidestep the problem by guaranteeing termination."}
+  ],
+  "limits": "The result concerns the general, universal case. For any specific program and input, the true answer is simply halts or does not halt, and many individual programs' halting can be decided. Restricted models — finite-memory machines — have a decidable halting problem, and total functional languages sidestep it entirely by permitting only programs guaranteed to terminate, at the cost of not being Turing-complete. So the theorem is not the claim that you can never tell whether any program halts, only that no single method works for all.",
+  "misreadings": "It does not say you can never determine whether a given program halts — countless specific cases are decidable; it says no single algorithm decides every case. And it is a proven theorem, not a conjecture or a mere practical difficulty.",
+  "origin": "Established by Alan Turing in 'On Computable Numbers, with an Application to the Entscheidungsproblem' (1936, published 1937), which introduced the Turing machine; the term 'halting problem' was coined later, standardly credited to Martin Davis in 1958, and Alonzo Church reached related undecidability independently.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1936,
+  "namedAfter": "Alan Turing",
+  "sources": [
+    {"text": "Halting problem, Wikipedia. — the undecidability statement, the diagonalisation proof, and the Turing origin and Davis naming.", "url": "https://en.wikipedia.org/wiki/Halting_problem", "type": "secondary"},
+    {"text": "Rice's theorem, Wikipedia. — the generalisation to all non-trivial semantic properties of programs.", "url": "https://en.wikipedia.org/wiki/Rice%27s_theorem", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Halting_problem",
+  "related": [
+    {"slug": "godels-incompleteness-theorems", "kind": "kindred"}
+  ]
+}

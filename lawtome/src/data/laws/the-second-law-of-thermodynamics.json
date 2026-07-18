@@ -1,0 +1,54 @@
+{
+  "no": "215",
+  "slug": "the-second-law-of-thermodynamics",
+  "name": "The Second Law of Thermodynamics",
+  "statement": "Left alone, things run down: disorder increases and heat flows only from hot to cold.",
+  "statementAccent": "disorder increases and heat flows only from hot to cold",
+  "meaning": "The total entropy of an isolated system never decreases; it rises in any spontaneous process and holds constant only for an idealised reversible one. Equivalently, heat does not spontaneously flow from a colder body to a hotter one, and no cyclic engine can turn heat entirely into work. An isolated system drifts toward equilibrium, the state of maximum entropy.",
+  "mechanism": "Statistical mechanics explains it by counting microstates. A macroscopic state corresponds to a vast number of microscopic arrangements, and entropy measures that count through Boltzmann's relation, entropy equals a constant times the logarithm of the number of microstates. Systems evolve toward macrostates with overwhelmingly more microstates, so entropy increase is a statement of probability, not strict mechanical necessity. This gives the law its direction — the arrow of time — since energy is conserved but its quality, its availability to do work, degrades as entropy rises.",
+  "examples": [
+    {
+      "tag": "Heat engines",
+      "text": "No engine can be perfectly efficient; the maximum Carnot efficiency between a hot and a cold reservoir depends only on their absolute temperatures — a direct consequence of the second law and Carnot's 1824 analysis."
+    },
+    {
+      "tag": "Melting ice",
+      "text": "Ice in a warm room melts as heat flows from the warmer surroundings to the colder ice, raising total entropy; the reverse — water spontaneously freezing while warming the room — never happens on its own."
+    },
+    {
+      "tag": "No perpetual motion of the second kind",
+      "text": "A machine that fully converts heat from a single reservoir into work would not violate energy conservation, yet it is forbidden by the second law — which is why such engines cannot be built."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Clausius and Kelvin-Planck statements",
+      "text": "Two equivalent verbal forms — that heat cannot spontaneously pass from cold to hot without other change, and that no cyclic engine can turn heat wholly into work — each provably implying the other and the entropy form."
+    },
+    {
+      "name": "Maxwell's demon",
+      "text": "Maxwell's thought experiment of a being that sorts fast and slow molecules to seemingly lower entropy without work; the resolution charges the entropy cost to the demon's own information processing, preserving the law."
+    }
+  ],
+  "whyItMatters": "It sets the direction of time and the ultimate limits on engines, refrigerators, and every energy conversion, forbidding perpetual motion and defining the price of useful work. It is among the most universal statements in physics, reaching from steam engines to the fate of the cosmos.",
+  "working": [
+    {"lead": "Expect disorder to grow", "text": "in an isolated system, anticipate total entropy rising and processes running one way, not spontaneously reversing."},
+    {"lead": "Respect the efficiency ceiling", "text": "for any heat engine, expect efficiency capped by the temperature difference, never reaching one hundred percent."},
+    {"lead": "Mind the isolated boundary", "text": "allow that local entropy can fall — in a fridge or a growing organism — only because total entropy of system and surroundings rises."}
+  ],
+  "limits": "The law is statistical, not absolute: for an isolated system there is always a vanishingly small probability that entropy briefly decreases, negligible for macroscopic systems but real for tiny ones over short times, as the fluctuation theorem makes precise. The 'isolated system' qualifier is essential — local order can grow at the expense of greater disorder elsewhere. And while the laboratory law is unbroken, its foundational reach is debated: the cosmological 'heat death' extrapolation and the origin of the arrow of time — why the early universe had such low entropy — remain open questions. The 'entropy equals disorder' phrasing is a heuristic, not a rigorous definition.",
+  "misreadings": "It does not forbid local order — living things and refrigerators create it by exporting more disorder to their surroundings. And 'never decreases' holds for macroscopic isolated systems; at the scale of a few molecules, brief spontaneous decreases are permitted and observed.",
+  "origin": "Grounded in Sadi Carnot's 1824 analysis of heat engines; Rudolf Clausius gave formal statements in the 1850s and coined the term 'entropy' in 1865, William Thomson (Lord Kelvin) gave an independent formulation, and Ludwig Boltzmann supplied the statistical interpretation around 1877.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1865,
+  "sources": [
+    {"text": "Second law of thermodynamics, Wikipedia. — the entropy, Clausius, and Kelvin-Planck statements, the statistical basis, and perpetual motion.", "url": "https://en.wikipedia.org/wiki/Second_law_of_thermodynamics", "type": "secondary"},
+    {"text": "Fluctuation theorem, Wikipedia. — the statistical nature of the law and permitted entropy decreases in small systems.", "url": "https://en.wikipedia.org/wiki/Fluctuation_theorem", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Second_law_of_thermodynamics",
+  "related": [
+    {"slug": "the-conservation-of-energy", "kind": "kindred"}
+  ]
+}

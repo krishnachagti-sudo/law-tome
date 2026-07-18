@@ -1,0 +1,56 @@
+{
+  "no": "219",
+  "slug": "the-doppler-effect",
+  "name": "The Doppler Effect",
+  "aliases": ["The Doppler-Fizeau effect"],
+  "statement": "A wave's pitch or colour shifts up as its source approaches and down as it recedes.",
+  "statementAccent": "up as its source approaches and down as it recedes",
+  "meaning": "The frequency of a wave that an observer detects changes when the source and observer move relative to one another. Approaching, the observed frequency is higher than emitted; receding, it is lower. The source's own output never changes — only what the observer receives, because of the relative motion.",
+  "mechanism": "Relative motion compresses or stretches successive wavefronts. As a source approaches, each wave cycle is emitted from a position closer to the observer than the last, shortening the interval between cycles and raising the frequency; as it recedes, the cycles are emitted from ever-farther positions, lengthening the interval and lowering the frequency. The crests bunch up ahead of the moving source and spread out behind it.",
+  "examples": [
+    {
+      "tag": "The passing siren",
+      "text": "An ambulance siren sounds higher-pitched as it approaches and drops abruptly to a lower pitch as it passes and recedes — the everyday demonstration, though the siren's emitted note never changes."
+    },
+    {
+      "tag": "Redshift and blueshift",
+      "text": "The motion of stars and galaxies shifts their spectral lines — toward the blue when approaching, the red when receding — letting astronomers measure velocities across the universe."
+    },
+    {
+      "tag": "Radar and ultrasound",
+      "text": "Police speed guns and weather radar read the frequency shift of reflected waves to find a target's velocity, and medical Doppler ultrasound measures blood flow the same way."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The relativistic Doppler effect",
+      "text": "The version for speeds approaching that of light, where special-relativistic time dilation modifies the classical formula and produces even a transverse shift with no classical counterpart."
+    },
+    {
+      "name": "Cosmological redshift",
+      "text": "The reddening of light from distant galaxies, often described in Doppler terms but more accurately due to the expansion of space itself rather than motion through it."
+    }
+  ],
+  "whyItMatters": "It is a phenomenon of every kind of wave, from sound to light, and one of the most useful in science and technology. It gave astronomy the means to measure cosmic motion and expansion, and it underlies radar, sonar, weather forecasting, and medical imaging.",
+  "working": [
+    {"lead": "Read approach and recession in the shift", "text": "take a rise in observed frequency as motion toward you and a fall as motion away."},
+    {"lead": "Turn the shift into a speed", "text": "use the size of the frequency change to measure how fast a source or reflector is moving, as radar and ultrasound do."},
+    {"lead": "Switch to the relativistic form at high speed", "text": "when relative speeds approach that of light, apply the relativistic formula, which adds time dilation."}
+  ],
+  "limits": "The classical formula assumes relative speeds much smaller than the wave speed; near the speed of light the relativistic version, including time dilation, must be used, and it predicts a transverse shift absent classically. For sound and other waves in a medium, the effect depends separately on the motion of source, observer, and medium, so a moving source is not equivalent to a moving observer; for light in vacuum only the relative velocity matters. Cosmological redshift, though Doppler-like, is better understood as the stretching of space, not motion through it.",
+  "misreadings": "Doppler's own 1842 application was partly wrong: he thought the effect explained the visible colours of stars, but stellar speeds are far too small for that, and the real signature is a shift of spectral lines, as Fizeau clarified. And the cosmological redshift is not simply the Doppler effect — mainstream cosmology attributes it to the expansion of space.",
+  "origin": "Predicted by the Austrian physicist Christian Doppler in an 1842 paper in Prague; tested for sound by Buys Ballot in 1845 using trumpeters on a moving train, and described independently for light by Hippolyte Fizeau in 1848.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1842,
+  "namedAfter": "Christian Doppler",
+  "sources": [
+    {"text": "Doppler effect, Wikipedia. — the frequency-shift statement, the wavefront mechanism, the applications, and the relativistic version.", "url": "https://en.wikipedia.org/wiki/Doppler_effect", "type": "secondary"},
+    {"text": "C. H. D. Buys Ballot, Wikipedia. — the 1845 railway experiment confirming the effect for sound.", "url": "https://en.wikipedia.org/wiki/C._H._D._Buys_Ballot", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Doppler_effect",
+  "related": [
+    {"slug": "hubbles-law", "kind": "kindred"}
+  ]
+}

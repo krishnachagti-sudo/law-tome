@@ -1,0 +1,56 @@
+{
+  "no": "212",
+  "slug": "newtons-laws-of-motion",
+  "name": "Newton's Laws of Motion",
+  "statement": "Bodies keep still or coasting unless pushed; a push changes motion in proportion to force; every push has an equal push back.",
+  "statementAccent": "every push has an equal push back",
+  "meaning": "Three laws that govern how forces change motion. A body stays at rest or moving in a straight line at constant speed unless a net force acts on it. The net force on a body equals its mass times its acceleration. And when one body pushes on another, the second pushes back equally hard in the opposite direction.",
+  "mechanism": "The first law defines inertia — the tendency of a body to resist changes in its motion, with mass as the measure of that resistance. The second, in its general form, says force equals the rate of change of momentum, reducing to force equals mass times acceleration when mass is constant; it quantifies how much motion changes. The third makes forces come in equal and opposite pairs acting on different bodies, which is what yields conservation of momentum. The laws hold only in inertial — non-accelerating — reference frames; in accelerating frames, fictitious forces must be added.",
+  "examples": [
+    {
+      "tag": "The braking car",
+      "text": "When a car stops abruptly, an unbelted passenger keeps moving forward — the first law, the body persisting in uniform motion while the car decelerates around it."
+    },
+    {
+      "tag": "The rocket",
+      "text": "A rocket expels exhaust gas backward and is thrust forward by the equal and opposite reaction — the third law, and a demonstration of momentum conservation."
+    },
+    {
+      "tag": "Force and mass",
+      "text": "Pushing a loaded shopping trolley with the same force as an empty one produces far less acceleration — the second law, since acceleration equals force divided by mass."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Conservation of momentum",
+      "text": "The consequence of the second and third laws: the total momentum of an isolated system stays constant, a principle more fundamental than the third law and surviving into quantum mechanics."
+    },
+    {
+      "name": "Lagrangian and Hamiltonian mechanics",
+      "text": "Equivalent reformulations built on energy and the principle of least action rather than force vectors; they recover Newton's laws but generalise more readily to constraints and to quantum and field theory."
+    }
+  ],
+  "whyItMatters": "They are the foundation of classical mechanics and of nearly all engineering, describing the motion of everything from projectiles to planets with precision. For over two centuries they were the very model of a physical law, and they remain the working tools for all motion at everyday scales and speeds.",
+  "working": [
+    {"lead": "No force, no acceleration", "text": "when a body's velocity is unchanging, conclude the net force on it is zero, and vice versa."},
+    {"lead": "Compute motion from force and mass", "text": "to find how a body accelerates, divide the net force acting on it by its mass."},
+    {"lead": "Remember the reaction acts elsewhere", "text": "note that the equal and opposite reaction acts on a different body, so the paired forces do not cancel."}
+  ],
+  "limits": "The laws are an extremely accurate approximation with a well-defined domain, not a universal truth. Near the speed of light they fail and must be replaced by special relativity; at atomic and subatomic scales they give way to quantum mechanics, though momentum conservation survives. Even the third law, in its simple instantaneous form, can fail when force fields carry momentum, as in electrodynamics — total momentum is conserved only when the field's own momentum is counted. And the laws hold only in inertial frames.",
+  "misreadings": "The third law's 'equal and opposite reaction' does not mean forces cancel — the two act on different bodies. And the first law is not a claim that moving things naturally slow down; absent a net force they keep moving forever, friction being an unseen force, not an exception.",
+  "origin": "Set out by Isaac Newton as axioms in Philosophiae Naturalis Principia Mathematica (1687), building on the concept of inertia developed by Galileo and refined to straight-line motion by Descartes.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1687,
+  "namedAfter": "Isaac Newton",
+  "sources": [
+    {"text": "Newton's laws of motion, Wikipedia. — the three laws in original and modern form, inertial frames, momentum conservation, and the relativistic and quantum limits.", "url": "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion", "type": "secondary"},
+    {"text": "\"Newton's laws of motion,\" Encyclopaedia Britannica. — the statements, the 1687 Principia origin, and F equals ma.", "url": "https://www.britannica.com/science/Newtons-laws-of-motion", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion",
+  "related": [
+    {"slug": "newtons-law-of-universal-gravitation", "kind": "kindred"},
+    {"slug": "the-conservation-of-energy", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "no": "224",
+  "slug": "eulers-identity",
+  "name": "Euler's Identity",
+  "statement": "Raise e to the power of i times pi, add one, and you get exactly zero.",
+  "statementAccent": "you get exactly zero",
+  "meaning": "The equation e to the power of i times pi, plus one, equals zero. It is the special case, at an angle of pi, of Euler's more general formula that e to the power of i times an angle equals the cosine of the angle plus i times its sine. The identity is celebrated for tying together five of mathematics' most fundamental constants in a single line.",
+  "mechanism": "The general formula follows from comparing power series. Expanding e raised to an imaginary power and using the repeating cycle of powers of i splits the series into a real part and an imaginary part, which turn out to be exactly the series for cosine and for sine. So e to the power of i times an angle traces the unit circle in the complex plane, and at an angle of pi — a half-turn — it lands on minus one, giving the identity once one is added.",
+  "examples": [
+    {
+      "tag": "The special case at pi",
+      "text": "Since the cosine of pi is minus one and the sine of pi is zero, Euler's formula gives e to the i pi equal to minus one, which rearranges to the identity — the canonical instance of the general formula."
+    },
+    {
+      "tag": "Rotation in the complex plane",
+      "text": "The expression e to the power of i times an angle is the point on the unit circle at that angle, so multiplying by it rotates a complex number; the identity is a rotation by half a turn onto minus one."
+    },
+    {
+      "tag": "The most beautiful equation",
+      "text": "A 1990 reader poll in The Mathematical Intelligencer ranked the identity the most beautiful theorem in mathematics, and Richard Feynman called the underlying formula 'the most remarkable formula in mathematics' and 'our jewel.'"
+    }
+  ],
+  "variants": [
+    {
+      "name": "Euler's formula",
+      "text": "The general relation that e to the power of i times an angle equals the cosine plus i times the sine of that angle, of which the identity is the case at pi."
+    },
+    {
+      "name": "Roots of unity",
+      "text": "The solutions of raising a number to the nth power to get one, which are equally spaced points on the unit circle given by complex exponentials — a direct consequence of Euler's formula."
+    }
+  ],
+  "whyItMatters": "It unites five fundamental constants — e, the imaginary unit i, pi, one, and zero — with the operations of addition, multiplication, and exponentiation, each appearing once, in a single compact equation. Beyond its celebrated elegance, Euler's formula is the workhorse that connects exponentials to trigonometry and underlies complex analysis, signal processing, and physics.",
+  "working": [
+    {"lead": "See exponentials as rotations", "text": "read a complex exponential as a point on the unit circle, turning the algebra of exponentials into the geometry of rotation."},
+    {"lead": "Bridge exponentials and trig", "text": "use Euler's formula to convert between exponential and trigonometric forms, the basis of much of complex analysis."},
+    {"lead": "Work in radians", "text": "apply the formula with angles measured in radians, for which the series identity holds as written."}
+  ],
+  "limits": "It is an exact mathematical identity, proven from the definitions of the exponential and trigonometric functions, so it has no empirical limits or error bars — its only requirement is that the angle be measured in radians. The frequent descriptions of it as the 'most beautiful' or 'most remarkable' equation are subjective aesthetic judgements from opinion polls, not mathematical facts, and should be attributed as such rather than stated as objective.",
+  "misreadings": "The identity, e to the i pi plus one equals zero, is the special case at pi of Euler's general formula; the two are often conflated, and Feynman's 'jewel' praise was for the general formula, not the compact identity. And it is uncertain whether Euler ever wrote the compact five-constant form himself, though the formula is unquestionably his.",
+  "origin": "Derived from Euler's formula, which Leonhard Euler published in his Introductio in analysin infinitorum (1748); Roger Cotes had given an equivalent logarithmic relation in 1714, and it is unknown who first stated the compact identity explicitly.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1748,
+  "namedAfter": "Leonhard Euler",
+  "sources": [
+    {"text": "Euler's identity, Wikipedia. — the identity, its five constants, the relation to Euler's formula, and the authorship uncertainty.", "url": "https://en.wikipedia.org/wiki/Euler%27s_identity", "type": "secondary"},
+    {"text": "Euler's formula, Wikipedia. — the general formula, its series proof, the Cotes precedent, and roots of unity.", "url": "https://en.wikipedia.org/wiki/Euler%27s_formula", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Euler%27s_identity",
+  "related": [
+    {"slug": "the-pythagorean-theorem", "kind": "kindred"}
+  ]
+}
