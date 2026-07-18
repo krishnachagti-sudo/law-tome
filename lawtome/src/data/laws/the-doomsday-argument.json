@@ -1,0 +1,57 @@
+{
+  "no": "448",
+  "slug": "the-doomsday-argument",
+  "name": "The Doomsday Argument",
+  "aliases": ["The Carter catastrophe", "The Doomsday inference"],
+  "statement": "If you are a random human in the sequence of all who will ever live, humanity is unlikely to last vastly longer.",
+  "statementAccent": "unlikely to last vastly longer",
+  "meaning": "The Doomsday argument is a probabilistic argument that claims to bound the future number of human beings, and hence how much longer humanity will last, from an estimate of how many humans have been born so far and the assumption that you should treat your own position in the sequence of all humans as a random sample. If your birth rank is a random draw from the total, it is improbable that you sit at the extreme beginning, which statistically disfavours hypotheses in which vastly many more humans are yet to come, shifting probability toward a nearer end.",
+  "mechanism": "The engine of the standard version is the self-sampling assumption: reason as if you were a random member of the reference class of all humans who will ever live. Being among the first tiny fraction of a species destined to number in the trillions would be as improbable as drawing a very low number from a large urn, so your finite, roughly known birth rank is evidence against the largest future populations. Taking the total as uniformly distributed a priori gives a ninety-five percent bound that the total is less than twenty times the number born so far. This does not name a cause of extinction; it merely shifts the probabilities.",
+  "examples": [
+    {
+      "tag": "The birth-rank bound",
+      "text": "With roughly sixty billion humans born so far, the rule that the total is likely under twenty times that gives about ninety-five percent confidence in fewer than some 1.2 trillion humans ever."
+    },
+    {
+      "tag": "Gott's temporal version",
+      "text": "J. Richard Gott independently argued from the Copernican principle that, observed at a random moment, a thing's future lasts between a thirty-ninth and thirty-nine times its past, giving humanity roughly 5,100 to 7.8 million more years at ninety-five percent confidence."
+    },
+    {
+      "tag": "The Berlin Wall test",
+      "text": "Gott road-tested his method on the Berlin Wall in 1969, predicting from its eight-year age a window for how long it would stand; it fell in 1989, within his range."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Carter-Leslie versus Gott",
+      "text": "The Carter-Leslie version is a Bayesian shift in the probability of doom given your birth rank, while Gott's is a direct temporal confidence interval from the Copernican principle; they reach similar conclusions by different routes and should not be conflated."
+    },
+    {
+      "name": "The self-indication reply",
+      "text": "The counterargument that the very fact you exist favours worlds with many observers, which combined with self-sampling exactly cancels the Doomsday shift, so your birth rank gives no information about the total."
+    }
+  ],
+  "whyItMatters": "It is one of the earliest formal probabilistic arguments that humanity's extinction may be nearer or more likely than naive optimism suggests, feeding into the study of existential risk. It is also a canonical test case for how to reason under observation-selection effects, alongside puzzles like Sleeping Beauty, and it sharpens debates in the philosophy of probability over indexical information, self-locating belief, and the legitimacy of treating one's own existence and position as evidence.",
+  "working": [
+    {"lead": "Sample yourself randomly", "text": "to run the argument, treat your birth rank as a random draw from all humans who will ever live, the self-sampling assumption."},
+    {"lead": "Read it as a shift, not a date", "text": "take the conclusion as a change in the probability of a nearer end, not a forecast of when extinction occurs."},
+    {"lead": "Fix the reference class", "text": "recognise that the answer depends sharply on who counts as a member of the sampled population, a choice with no principled resolution."}
+  ],
+  "limits": "It is highly contested, with no consensus that it is valid; serious philosophers and physicists line up on both sides. Its numerical output is prior-dependent and reference-class-dependent, so precise years-remaining figures are illustrative only. The self-indication assumption, that your existence favours worlds with more observers, can exactly cancel the Doomsday shift. The reference-class problem, who counts as human, has no principled answer, and Bayesian critics note the conclusion is only a shift from a prior, negligible under broad priors. Carlton Caves' reductio, that Gott's rule predicts a fifty-year-old has a good chance of reaching a hundred and fifty, shows it can give absurd results where a genuine prior exists.",
+  "misreadings": "It does not predict a specific doomsday date; it gives probabilistic bounds or shifts, not a forecast. It identifies no physical cause of extinction, being purely statistical and anthropic. It does not claim being early is impossible, only that large futures make an early rank improbable, which merely shifts probabilities. Gott's version and the Carter-Leslie version are independent and methodologically distinct, not one argument. And its status is genuinely open: the disagreement is about premises, self-sampling versus self-indication, the reference class, and priors, not about arithmetic.",
+  "origin": "Conceived by the astrophysicist Brandon Carter around 1983, developed and defended at book length by the philosopher John Leslie in 'The End of the World' (1996), and independently formulated in temporal form by J. Richard Gott in a 1993 Nature paper.",
+  "category": "philosophy",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1983,
+  "namedAfter": "Brandon Carter",
+  "sources": [
+    {"text": "Doomsday argument, Wikipedia. — the self-sampling reasoning, the birth-rank bound, and the Carter, Leslie, and Gott versions.", "url": "https://en.wikipedia.org/wiki/Doomsday_argument", "type": "secondary"},
+    {"text": "Dieks, 'Doomsday - or: The Dangers of Statistics,' The Philosophical Quarterly 42(166) (1992): 78-86. — the objection that the argument mis-samples one's temporal position.", "url": "https://academic.oup.com/pq/article-abstract/42/166/78/1541942", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Doomsday_argument",
+  "related": [
+    {"slug": "the-copernican-principle", "kind": "cause"},
+    {"slug": "the-great-filter", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "no": "445",
+  "slug": "the-copernican-principle",
+  "name": "The Copernican Principle",
+  "aliases": ["The principle of mediocrity", "The Copernican assumption"],
+  "statement": "We occupy no special or privileged place in the universe; assume our vantage point is typical.",
+  "statementAccent": "no special or privileged place",
+  "meaning": "The Copernican principle holds that humans, the Earth, and our vantage point are not privileged, central, or special observers of the universe. In cosmology it is stated as the assumption that observations made from Earth are representative of what would be seen from an average position, so we should treat our location as typical rather than favoured. It is stronger than mere acentrism, which only denies that we are at the centre; the closely related principle of mediocrity generalises the same 'we are not special' logic to any property, not just position.",
+  "mechanism": "The principle works as a default premise for inference under ignorance: absent evidence that our situation is special, treat our single data point, Earth, humans, now, as a random draw from the underlying population. This licenses generalising from one example, from the physics we see here to the physics everywhere. It is essentially an anti-selection-bias null hypothesis that puts the burden of proof on any claim of specialness. Combined with the direct observation that the universe looks much the same in every direction, it yields the cosmological principle, that on large scales the universe is homogeneous and isotropic.",
+  "examples": [
+    {
+      "tag": "The standard model of cosmology",
+      "text": "Observed isotropy plus the Copernican assumption that our location is not special together imply homogeneity, underwriting the models on which Big Bang cosmology rests."
+    },
+    {
+      "tag": "Astrobiology",
+      "text": "The principle of mediocrity motivates assuming Earth-like conditions and the origin of life are not freakishly unique, feeding estimates of how common life and observers might be."
+    },
+    {
+      "tag": "Gott's temporal argument",
+      "text": "J. Richard Gott applied the principle to time, treating the present as a random moment in a phenomenon's lifetime to estimate its future duration, a contested Doomsday-style inference."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The cosmological principle",
+      "text": "The testable cosmological form: on large scales the universe is homogeneous and isotropic, obtained by adding the Copernican assumption to the observed isotropy around us."
+    },
+    {
+      "name": "The principle of mediocrity",
+      "text": "The near-synonym that stresses statistical typicality in attributes beyond mere location, treating our planet, star, or civilization as a representative sample of its class."
+    }
+  ],
+  "whyItMatters": "It is a foundational working assumption of modern cosmology: without it, large-scale models lose the symmetry that makes them tractable, since we can only observe from one place. It is likewise a cornerstone of astrobiology, where the presumption that Earth, the Sun, and terrestrial life are broadly representative is what allows generalising from our single example to the wider universe. As a disciplined default against assuming we are special, it has shaped scientific reasoning since Copernicus displaced the Earth from the centre.",
+  "working": [
+    {"lead": "Assume typicality", "text": "treat our position and our single example as a random draw from the population unless there is evidence of specialness."},
+    {"lead": "Put the burden on 'special'", "text": "require positive evidence before concluding our situation is privileged, using the principle as a null hypothesis."},
+    {"lead": "Condition on being observers", "text": "temper strict mediocrity with the recognition that we can only find ourselves where observers can exist, so expect typicality among observers, not among all locations."}
+  ],
+  "limits": "It is a methodological assumption, and in its cosmological form a testable hypothesis, not a derived law. It stands in genuine tension with the anthropic principle: our existence as observers is a selection effect, so in some respects we demonstrably do occupy a special place, a habitable planet around a suitable star in a life-permitting universe, precisely because observers cannot arise in typical, lifeless locations. The reconciliation usually offered is that we should expect to be typical among observers, not among all places. Observational anomalies such as very large structures and local voids are also live, if unsettled, tests of the large-scale homogeneity the principle implies.",
+  "misreadings": "It does not merely mean the Earth is not the centre; that is only acentrism, while the Copernican principle makes the stronger claim that our position is typical and representative. It is not a proven law of nature but a working assumption, testable in its cosmological form. Mediocrity does not guarantee we are average in every respect, since the anthropic selection effect shows we are atypical in some, such as sitting on a habitable planet. Gott's Copernican argument does not reliably predict humanity's doom; it is a contested Doomsday-style inference. And Copernicus did not state the principle; it is a later formalisation.",
+  "origin": "Named for Nicolaus Copernicus, whose heliocentric model in 'De revolutionibus' (1543) displaced the Earth from the centre; the named methodological principle is a twentieth-century formalisation commonly credited to the cosmologist Hermann Bondi around 1952, though the exact original wording is not firmly documented.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1952,
+  "namedAfter": "Nicolaus Copernicus",
+  "sources": [
+    {"text": "Copernican principle, Wikipedia. — the typicality claim, the link to the cosmological principle, and Gott's temporal argument.", "url": "https://en.wikipedia.org/wiki/Copernican_principle", "type": "secondary"},
+    {"text": "Cosmological principle, Wikipedia. — homogeneity and isotropy as the empirical cosmological form of the Copernican assumption.", "url": "https://en.wikipedia.org/wiki/Cosmological_principle", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Copernican_principle",
+  "related": [
+    {"slug": "the-anthropic-principle", "kind": "tension"},
+    {"slug": "the-rare-earth-hypothesis", "kind": "tension"}
+  ]
+}

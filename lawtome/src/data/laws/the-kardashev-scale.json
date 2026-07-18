@@ -1,0 +1,77 @@
+{
+  "no": "444",
+  "slug": "the-kardashev-scale",
+  "name": "The Kardashev Scale",
+  "aliases": [
+    "Kardashev civilizations",
+    "The energy scale of civilizations"
+  ],
+  "statement": "A civilization's advancement can be ranked by how much energy it can harness: a planet, a star, or a galaxy.",
+  "statementAccent": "a planet, a star, or a galaxy",
+  "meaning": "The Kardashev scale is a hypothetical way of measuring a civilization's technological advancement by the amount of energy it can harness and use. It defines three types: a Type I civilization commands energy on the scale of its home planet, a Type II commands the full output of its star, and a Type III commands the energy of its whole galaxy, some hundred billion stars. Energy consumption stands in as a proxy for technological capability, giving a single axis on which to compare civilizations regardless of their biology or culture.",
+  "mechanism": "The scale uses energy as a measurable, universal proxy for technological power, on the logic that what a civilization can build, compute, communicate, and expand is capped by the energy it can capture. Kardashev's original three types were separated by enormous, discrete jumps of about ten orders of magnitude, anchored in his 1964 figures to roughly four trillion watts for Type I, near a star's luminosity for Type II, and around a galaxy's output for Type III. Because these energy tiers leave observable radio and thermal signatures across interstellar distances, they give the search for extraterrestrial intelligence a concrete, quantitative target.",
+  "examples": [
+    {
+      "tag": "Where Earth sits",
+      "text": "On Carl Sagan's continuous interpolation, humanity rates about 0.7, well below Type I, since at some tens of terawatts we command far less than all the energy reaching our planet."
+    },
+    {
+      "tag": "The Dyson sphere",
+      "text": "The canonical illustration of a Type II civilization is a megastructure enclosing a star to capture nearly its entire output, on the order of a hundred trillion trillion watts."
+    },
+    {
+      "tag": "Sagan's smoothing",
+      "text": "Finding three discrete types too coarse, Sagan proposed a continuous logarithmic scale interpolating between round anchors, so a civilization can be rated at, say, Type 1.1 or 2.3."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Sagan's interpolation",
+      "text": "Carl Sagan's 1973 continuous formula rating a civilization by the logarithm of its power use, smoothing Kardashev's three coarse steps into a scale that places Earth near 0.7."
+    },
+    {
+      "name": "Later Type IV and V",
+      "text": "Speculative extensions by Michio Kaku, John Barrow, and popular culture reaching to the energy of a galaxy cluster or the universe, which are not part of Kardashev's original three types."
+    }
+  ],
+  "whyItMatters": "It grew directly out of a search-for-extraterrestrial-intelligence paper and gives observers a quantitative target, from the waste heat of a hypothetical Dyson sphere to the energy budget needed for a detectable interstellar beacon. It has also become a common framework in futurology for discussing humanity's possible long-term trajectory, space expansion, and megastructures, offering a single, biology-neutral axis on which to imagine and compare civilizations far beyond our own.",
+  "working": [
+    {
+      "lead": "Rank by energy captured",
+      "text": "place a civilization by the scale of energy it can harness, a planet's, a star's, or a galaxy's, as a proxy for its technological reach."
+    },
+    {
+      "lead": "Use the interpolation for fine grain",
+      "text": "apply Sagan's continuous logarithmic version to rate real cases, since the original three types are separated by vast gaps."
+    },
+    {
+      "lead": "Keep Earth in perspective",
+      "text": "remember that at about 0.7 humanity is far below Type I on a logarithmic scale, needing on the order of a hundred thousand times its current output to reach it."
+    }
+  ],
+  "limits": "Energy is only one dimension of advancement; the scale says nothing about knowledge, efficiency, ethics, or social organisation, and Sagan himself felt energy alone was incomplete. It is speculative: no Type I, II, or III civilization has ever been observed, so it is a conceptual tool, not an empirical finding. It assumes ever-growing energy use, whereas a civilization could plateau, prioritise efficiency, or miniaturise, breaking the monotonic-growth premise. Its tiers are enormous and discrete, which is why interpolation was needed, and its Type IV and V extensions are ill-defined, with no consistent figures across authors.",
+  "misreadings": "Kardashev's original Type I was not ten quadrillion watts, the figure often quoted, but about four trillion watts, pegged to Earth's actual energy use in the 1960s; the larger number is Sagan's later rounded anchor. Type I in Kardashev's sense was not all the sunlight hitting the planet, which is a later reinterpretation. Type IV and V are not part of the original scale, which had only three types. Earth is not nearly Type I; at about 0.7 on a logarithmic scale it is far below. And the scale measures energy harnessed, not intelligence or advancement in general.",
+  "origin": "Proposed by the Soviet astronomer Nikolai Kardashev in his 1964 paper 'Transmission of Information by Extraterrestrial Civilizations', in a search-for-extraterrestrial-intelligence context, and later extended into a continuous scale by Carl Sagan in 'The Cosmic Connection' (1973).",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1964,
+  "namedAfter": "Nikolai Kardashev",
+  "sources": [
+    {
+      "text": "Kardashev scale, Wikipedia. — the three types, Kardashev's original figures, Sagan's interpolation, and the later extensions.",
+      "url": "https://en.wikipedia.org/wiki/Kardashev_scale",
+      "type": "secondary"
+    },
+    {
+      "text": "Kardashev scale, Encyclopaedia Britannica. — the definition, the round power figures, and Earth's rating near 0.7.",
+      "url": "https://www.britannica.com/science/Kardashev-scale",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Kardashev_scale",
+  "related": [
+    {"slug": "drake-equation", "kind": "kindred"},
+    {"slug": "fermi-paradox", "kind": "kindred"}
+  ]
+}
