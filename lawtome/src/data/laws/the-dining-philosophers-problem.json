@@ -1,0 +1,57 @@
+{
+  "no": "568",
+  "slug": "the-dining-philosophers-problem",
+  "name": "The Dining Philosophers Problem",
+  "aliases": ["Dining philosophers", "The five philosophers"],
+  "statement": "Five philosophers share five forks, each needing both neighbours' forks to eat, and a naive protocol leaves them all stuck.",
+  "statementAccent": "a naive protocol leaves them all stuck",
+  "meaning": "The dining philosophers problem is a classic illustration of the challenges of concurrent programming and resource allocation. Five philosophers sit around a table, with a single fork between each pair, five forks in all, and each philosopher alternates thinking and eating. To eat, a philosopher needs both the fork on their left and the one on their right, so neighbours compete for the shared forks. The problem is to devise a protocol under which every philosopher can eventually eat and none starves, while still allowing genuine concurrency. Formulated by Edsger Dijkstra, it is the canonical teaching example for deadlock, synchronisation, and the design of concurrent algorithms.",
+  "mechanism": "The problem dramatises how independent processes competing for shared resources can fail. If every philosopher simultaneously picks up their left fork and then waits for the right one, all are stuck forever, each holding one fork and waiting on a neighbour, a deadlock caused by a circular wait. Deadlock requires four conditions to hold together, the Coffman conditions: mutual exclusion, hold-and-wait, no preemption, and circular wait, and breaking any one prevents it. Dijkstra's resource-ordering solution numbers the forks and has each philosopher pick up the lower-numbered fork first, breaking the circular wait; an arbitrator, or waiter, that grants permission is another remedy, as is limiting how many philosophers may reach for forks at once.",
+  "examples": [
+    {
+      "tag": "The deadlock",
+      "text": "If all five grab their left fork at once and wait for the right, none can proceed, a circular wait in which every philosopher holds one fork and needs a neighbour's, the central illustration."
+    },
+    {
+      "tag": "Resource ordering",
+      "text": "Dijkstra's fix numbers the forks and has each philosopher always take the lower-numbered one first, so the cycle cannot close and deadlock is impossible."
+    },
+    {
+      "tag": "The arbitrator",
+      "text": "A waiter who grants permission to pick up forks serialises the decisions and prevents the simultaneous grab that causes deadlock."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Chandy-Misra solution",
+      "text": "A fully distributed solution using clean and dirty fork labels and message passing, requiring no central coordinator and working for arbitrary graphs of contending processes."
+    },
+    {
+      "name": "Limiting diners",
+      "text": "Allowing at most four philosophers to attempt to eat at once, which prevents the circular wait by ensuring at least one philosopher can always acquire both forks."
+    }
+  ],
+  "whyItMatters": "The dining philosophers problem is the standard vehicle for teaching deadlock, resource allocation, and synchronisation in operating systems and concurrent programming. It makes vivid how individually reasonable rules, each philosopher grabbing a fork and waiting, can combine into a system-wide freeze, and it is the classic setting for the Coffman conditions and the strategies that defeat deadlock, from resource ordering to arbitration. Its lessons generalise far beyond the table, to any system in which concurrent processes contend for shared, limited resources, which is why it remains a fixture of computer-science education.",
+  "working": [
+    {"lead": "Watch the circular wait", "text": "recognise deadlock when each process holds a resource and waits on the next in a cycle, as when every philosopher grabs one fork and waits."},
+    {"lead": "Break a Coffman condition", "text": "prevent deadlock by defeating one of the four necessary conditions, for instance imposing an order on how resources are acquired."},
+    {"lead": "Preserve concurrency", "text": "seek a solution that avoids deadlock and starvation while still letting philosophers eat in parallel, not merely one at a time."}
+  ],
+  "limits": "The dining philosophers problem is an idealised teaching model, not a real system, and its central concern is deadlock via circular wait, with starvation and livelock as secondary issues. Simplistic fixes fail: having each philosopher put a fork down and retry can cause livelock, endless activity with no progress, and the trivial rule of letting only one philosopher eat at a time avoids deadlock but destroys the concurrency the problem exists to preserve. Its value is as a minimal illustration of concurrency hazards, from which real solutions must add care about fairness and progress.",
+  "misreadings": "The problem's central lesson is deadlock through circular wait, not starvation alone. Having philosophers drop and retry their forks is not a real solution, since it can produce livelock rather than progress. Letting only one philosopher eat at a time prevents deadlock but eliminates concurrency, which the problem explicitly seeks to keep. There are five shared forks, one between each adjacent pair, not one per hand. And the philosophers framing is Tony Hoare's retelling; Dijkstra's original 1965 version was about computers competing for tape drives.",
+  "origin": "Formulated by Edsger Dijkstra in 1965 as an examination exercise about computers competing for tape drives, and given its familiar dining-philosophers framing by Tony Hoare; it is the textbook illustration of the Coffman deadlock conditions.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1965,
+  "namedAfter": "Edsger Dijkstra",
+  "sources": [
+    {"text": "Dining philosophers problem, Wikipedia. — the setup, the deadlock via circular wait, and the resource-ordering and arbitrator solutions.", "url": "https://en.wikipedia.org/wiki/Dining_philosophers_problem", "type": "secondary"},
+    {"text": "Deadlock (computer science), Wikipedia. — the four Coffman conditions from Coffman, Elphick, and Shoshani's 1971 'System Deadlocks'.", "url": "https://en.wikipedia.org/wiki/Deadlock_(computer_science)", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Dining_philosophers_problem",
+  "related": [
+    {"slug": "the-two-generals-problem", "kind": "kindred"},
+    {"slug": "the-flp-impossibility", "kind": "kindred"}
+  ]
+}

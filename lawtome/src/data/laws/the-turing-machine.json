@@ -1,0 +1,57 @@
+{
+  "no": "560",
+  "slug": "the-turing-machine",
+  "name": "The Turing Machine",
+  "aliases": ["The a-machine", "The universal computer"],
+  "statement": "A head reading and writing symbols on an endless tape, following a finite table of rules, can compute anything computable.",
+  "statementAccent": "can compute anything computable",
+  "meaning": "The Turing machine is an abstract mathematical model of computation, consisting of an infinite tape divided into cells, a read-write head, a finite set of internal states, and a transition function, a finite table of rules that, from the current state and the symbol under the head, writes a symbol, moves the head one cell, and changes state. Despite this minimalist design it can, in principle, compute anything that is computable. Introduced by Alan Turing in 1936, it gave the first precise definition of an algorithm, founded theoretical computer science, and remains the standard model against which the very idea of computation is defined.",
+  "mechanism": "At each step the machine consults its transition table, keyed on its current internal state and the single symbol beneath the head, and in response writes a symbol on the tape, moves left or right, and enters a new state, repeating until it halts. A universal Turing machine takes on its tape the description of any other Turing machine together with that machine's input and simulates it, the theoretical basis of the stored-program computer, one machine that can run any program. Turing proved his model equivalent in power to Church's lambda calculus and to the general recursive functions, and the Church-Turing thesis holds that anything effectively computable can be computed by such a machine.",
+  "examples": [
+    {
+      "tag": "The universal machine",
+      "text": "A single Turing machine that, given the encoded description of any other machine and its input, simulates it, foreshadowing the general-purpose stored-program computer."
+    },
+    {
+      "tag": "The halting problem",
+      "text": "Turing used the machine to prove that no algorithm can decide, for every machine and input, whether it will halt, the founding example of an undecidable problem."
+    },
+    {
+      "tag": "Turing-complete",
+      "text": "A system is called Turing-complete when it can simulate a Turing machine, the standard bar for a model of computation being maximally powerful."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Church-Turing thesis",
+      "text": "The claim that every effectively computable function can be computed by a Turing machine, equivalently by lambda calculus or the recursive functions, a thesis rather than a provable theorem."
+    },
+    {
+      "name": "Nondeterministic and other variants",
+      "text": "Extensions such as multi-tape, nondeterministic, and probabilistic Turing machines, equivalent in what they can compute but useful for studying efficiency and complexity classes."
+    }
+  ],
+  "whyItMatters": "The Turing machine formalised the intuitive notions of algorithm and computation, making it possible to define with precision what can and cannot be computed, and to prove the existence of undecidable problems such as the halting problem. It founded theoretical computer science, underlies the concept of the general-purpose stored-program computer, and, through the Church-Turing thesis and the notion of Turing-completeness, sets the standard for what it means for a system to be a full-fledged model of computation. Few abstractions have been as consequential for both the theory and the practice of computing.",
+  "working": [
+    {"lead": "Reduce computation to rules", "text": "model any algorithm as a finite table of rules acting on a tape, capturing computation in its simplest possible form."},
+    {"lead": "Exploit universality", "text": "recognise that one machine can simulate any other given its description, the principle behind the general-purpose computer."},
+    {"lead": "Mind the idealisation", "text": "treat the model as a statement about what is computable in principle, abstracting away speed, memory limits, and physical realisability."}
+  ],
+  "limits": "The Turing machine models what is computable in principle, deliberately abstracting away time and space efficiency, and it relies on physically unrealisable idealisations, above all an unbounded tape, so no physical device is strictly a Turing machine. The basic model does not directly capture interaction, concurrency, or resource bounds, which require extensions. And the Church-Turing thesis, that the model captures the informal notion of effective computation, is a widely accepted claim rather than a formally provable theorem, even though the mathematical equivalence of Turing machines, lambda calculus, and recursive functions is proven.",
+  "misreadings": "The Turing machine is an abstract mathematical model, not a physical machine that Turing built. Its infinite tape is an idealisation, so real, finite-memory devices are only approximations of it. Turing called his devices a-machines, or automatic machines; the name Turing machine was given later by Alonzo Church. And the equivalence of Turing machines with lambda calculus and the recursive functions is a proven theorem, whereas the broader Church-Turing thesis is an accepted claim, not a proof.",
+  "origin": "Introduced by Alan Turing in his 1936 paper 'On Computable Numbers, with an Application to the Entscheidungsproblem' in the Proceedings of the London Mathematical Society, and proved equivalent to Alonzo Church's lambda calculus.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1936,
+  "namedAfter": "Alan Turing",
+  "sources": [
+    {"text": "Turing machine, Wikipedia. — the tape-head-states model, the universal machine, and Turing-completeness.", "url": "https://en.wikipedia.org/wiki/Turing_machine", "type": "secondary"},
+    {"text": "The Church-Turing Thesis, Stanford Encyclopedia of Philosophy. — the 1936 paper, the equivalence with lambda calculus, and the thesis.", "url": "https://plato.stanford.edu/entries/church-turing/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Turing_machine",
+  "related": [
+    {"slug": "the-lambda-calculus", "kind": "kindred"},
+    {"slug": "the-halting-problem", "kind": "consequence"}
+  ]
+}

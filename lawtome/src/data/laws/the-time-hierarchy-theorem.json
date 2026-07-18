@@ -1,0 +1,56 @@
+{
+  "no": "564",
+  "slug": "the-time-hierarchy-theorem",
+  "name": "The Time Hierarchy Theorem",
+  "aliases": ["The deterministic time hierarchy", "More time, more power"],
+  "statement": "Give a computer strictly more time and it can solve strictly more problems.",
+  "statementAccent": "solve strictly more problems",
+  "meaning": "The time hierarchy theorem is a foundational result of computational complexity showing that more computation time yields strictly greater computational power. Formally, for reasonable, time-constructible bounds where one grows sufficiently faster than the other, the class of problems solvable in the smaller time bound is strictly contained in the class solvable in the larger one: there are problems that a machine can decide with more time but provably cannot decide with less. It guarantees that complexity classes form a genuine, non-collapsing hierarchy, and it provides some of the very few unconditional separations known in a field where most such questions remain open.",
+  "mechanism": "The proof works by diagonalisation. One builds a machine that, using its extra time, simulates every machine confined to the smaller time bound and deliberately does the opposite of what each does on its own encoding, guaranteeing that the language it decides differs from every language decidable within the smaller bound. This mirrors Cantor's diagonal argument and the halting-problem proof. In the deterministic version a logarithmic factor appears, arising from the overhead of one machine universally simulating another, so the larger bound must exceed the smaller by more than a constant. A concrete consequence is that polynomial time is strictly contained in exponential time, an unconditional separation.",
+  "examples": [
+    {
+      "tag": "P is strictly inside EXPTIME",
+      "text": "The theorem proves that polynomial time is a proper subset of exponential time, so there are problems solvable in exponential time but provably not in polynomial time, a rare unconditional separation."
+    },
+    {
+      "tag": "Diagonalisation",
+      "text": "The constructed machine uses its extra time to simulate and contradict every smaller-time machine on its own description, ensuring its language is genuinely new."
+    },
+    {
+      "tag": "Founding complexity theory",
+      "text": "Hartmanis and Stearns's 1965 paper, which introduced the theorem, founded computational complexity theory and won them the 1993 Turing Award."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The nondeterministic version",
+      "text": "A tighter hierarchy theorem for nondeterministic time, without the logarithmic factor, proved by Cook and generalised by Seiferas, Fischer, and Meyer, using a lazy-diagonalisation argument."
+    },
+    {
+      "name": "The space hierarchy theorem",
+      "text": "The analogous result for memory, which is tighter than the time version because space can be reused, so no logarithmic factor is needed."
+    }
+  ],
+  "whyItMatters": "The time hierarchy theorem is a cornerstone of complexity theory, proving that giving a machine strictly more of the same resource, time, strictly increases what it can compute, so the classes P, EXPTIME, and beyond form a real hierarchy rather than collapsing together. It is one of the few sources of unconditional lower bounds, showing concretely that some problems require more than polynomial time. Its contrast with the still-open P-versus-NP question is instructive: diagonalisation separates different time bounds of the same kind, but not deterministic from nondeterministic computation, marking the limits of the technique.",
+  "working": [
+    {"lead": "Expect a real hierarchy", "text": "trust that strictly more time yields strictly more computational power, so complexity classes by time do not collapse."},
+    {"lead": "Use diagonalisation", "text": "separate a larger time bound from a smaller one by building a machine that simulates and contradicts every smaller-time machine."},
+    {"lead": "Note what it cannot do", "text": "remember that it separates same-kind time bounds but not deterministic from nondeterministic time, so it does not touch P versus NP."}
+  ],
+  "limits": "The theorem requires time-constructible bounds; without constructibility the strict separation can fail, as the Gap theorem shows for pathological bounds. The deterministic version carries an unavoidable logarithmic factor from the overhead of universal simulation, so a bare constant-factor gap does not guarantee separation, and the analogous space hierarchy theorem is tighter because space can be reused. Crucially, the theorem does not resolve P versus NP, because that question compares deterministic against nondeterministic time rather than two deterministic bounds, and diagonalisation alone cannot cross that divide.",
+  "misreadings": "The theorem does not separate P from NP; it separates classes of the same resource at different bounds, such as P from EXPTIME. Deterministic containment is not guaranteed whenever one bound merely dominates another, since for deterministic time the larger bound must exceed the smaller by more than a logarithmic factor. It applies only to time-constructible bounds, not to arbitrary ones. And the logarithmic factor is not sloppiness but real universal-simulation overhead, reducible but not trivially removable in the deterministic case.",
+  "origin": "Proved by Juris Hartmanis and Richard Stearns in their 1965 paper 'On the computational complexity of algorithms', which founded computational complexity theory; they received the 1993 Turing Award.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1965,
+  "sources": [
+    {"text": "Time hierarchy theorem, Wikipedia. — the strict-containment statement, the P-inside-EXPTIME consequence, and the diagonalisation proof.", "url": "https://en.wikipedia.org/wiki/Time_hierarchy_theorem", "type": "secondary"},
+    {"text": "Hartmanis & Stearns, 'On the Computational Complexity of Algorithms,' Transactions of the AMS 117:285-306 (1965). — the founding paper of complexity theory.", "url": "https://www.ams.org/journals/tran/1965-117-00/S0002-9947-1965-0170805-7/S0002-9947-1965-0170805-7.pdf", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Time_hierarchy_theorem",
+  "related": [
+    {"slug": "the-p-versus-np-problem", "kind": "tension"},
+    {"slug": "the-halting-problem", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "no": "570",
+  "slug": "the-stable-marriage-problem",
+  "name": "The Stable Marriage Problem",
+  "aliases": ["Stable matching", "The Gale-Shapley problem"],
+  "statement": "Given two groups ranking each other, you can always pair them so no two would rather abandon their partners for each other.",
+  "statementAccent": "no two would rather abandon their partners",
+  "meaning": "The stable marriage problem asks, given two equal-sized groups whose members each rank all members of the other group by preference, to find a stable matching: a one-to-one pairing with no blocking pair, no two people who both prefer each other to their assigned partners. Gale and Shapley proved that such a stable matching always exists, for any preferences, and can be found efficiently by the deferred-acceptance algorithm. The problem is a cornerstone of matching theory and market design, with the surprising guarantee of a stable outcome and a practical algorithm that together underpin real systems from medical residency matching to school choice.",
+  "mechanism": "The Gale-Shapley, or deferred-acceptance, algorithm proceeds in rounds. Members of one side propose, each to the highest-ranked partner who has not yet rejected them; each recipient tentatively holds the best proposal received so far and rejects the rest, and rejected proposers try their next choice. The process always terminates in a stable matching, in time proportional to the square of the group size. The outcome is proposer-optimal and receiver-pessimal: the proposing side gets the best partner it could have in any stable matching, and the receiving side the worst. Proposing truthfully is optimal for the proposers, while recipients can sometimes gain by misrepresenting preferences.",
+  "examples": [
+    {
+      "tag": "Medical residency",
+      "text": "The National Resident Matching Program uses a deferred-acceptance mechanism to assign graduating doctors to hospital residencies, an application central to Alvin Roth's market-design work."
+    },
+    {
+      "tag": "School choice",
+      "text": "Cities including New York and Boston adopted deferred-acceptance mechanisms to assign students to public schools, redesigned with the help of matching theory."
+    },
+    {
+      "tag": "Proposer advantage",
+      "text": "The side that proposes gets the best stable partner each member could have, while the receiving side gets its worst, so who proposes matters."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Hospitals and residents",
+      "text": "A many-to-one generalisation in which each hospital has a quota of positions, the form used in real residency matching."
+    },
+    {
+      "name": "Stable roommates",
+      "text": "A one-sided version, pairing within a single group, in which a stable matching may fail to exist, unlike the two-sided marriage problem."
+    }
+  ],
+  "whyItMatters": "The stable marriage problem is a foundational result in economics, computer science, and market design, combining a guarantee that a stable outcome always exists with an efficient algorithm to find it. Its deferred-acceptance mechanism is used to run real markets that cannot rely on prices, matching doctors to hospitals, students to schools, and more, and its ideas extend to organ exchange and beyond. Lloyd Shapley and Alvin Roth received the 2012 Nobel Memorial Prize in Economics for the theory of stable allocations and the practice of market design, a recognition of how deeply the idea reshaped both theory and institutions.",
+  "working": [
+    {"lead": "Seek stability", "text": "aim for a matching with no blocking pair, so no two people would both prefer to leave their partners for each other."},
+    {"lead": "Run deferred acceptance", "text": "have one side propose and the other tentatively hold the best offer so far, iterating to a guaranteed stable matching."},
+    {"lead": "Mind who proposes", "text": "remember that the proposing side gets its best stable outcome and the receiving side its worst, so the roles are not symmetric."}
+  ],
+  "limits": "The classic result assumes strict, complete preferences over the other side and equal-sized groups. Variants complicate it: ties in preferences, incomplete lists where some partners are unacceptable, and the many-to-one hospitals-and-residents generalisation with quotas. The one-sided stable roommates problem, pairing within a single set, may have no stable matching at all, unlike the two-sided marriage problem. And the deferred-acceptance outcome is only one extreme, proposer-optimal, among possibly many stable matchings, and is not egalitarian or utilitarian-optimal.",
+  "misreadings": "Stable means there is no blocking pair, not that partners are each other's top choices, nor that the matching maximises total happiness. Proposer-optimality does not mean every proposer gets a first choice; it means each gets the best partner achievable across all stable matchings. Multiple stable matchings can exist, and the algorithm returns one extreme, not all of them. And the always-exists guarantee is specific to the two-sided problem; the one-sided roommates version can lack any stable matching.",
+  "origin": "Introduced by David Gale and Lloyd Shapley in their 1962 paper 'College Admissions and the Stability of Marriage' in the American Mathematical Monthly; Shapley and Alvin Roth won the 2012 Nobel Memorial Prize in Economics for the resulting theory and its applications.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1962,
+  "sources": [
+    {"text": "Gale-Shapley algorithm, Wikipedia. — the stable-matching and blocking-pair definitions, the existence guarantee, and proposer-optimality.", "url": "https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm", "type": "secondary"},
+    {"text": "The Sveriges Riksbank Prize in Economic Sciences 2012, NobelPrize.org. — the award to Roth and Shapley for stable allocations and market design.", "url": "https://www.nobelprize.org/prizes/economic-sciences/2012/summary/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Stable_marriage_problem",
+  "related": [
+    {"slug": "the-shapley-value", "kind": "kindred"},
+    {"slug": "the-secretary-problem", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "no": "563",
+  "slug": "the-cook-levin-theorem",
+  "name": "The Cook-Levin Theorem",
+  "aliases": ["Cook's theorem", "SAT is NP-complete"],
+  "statement": "Boolean satisfiability is NP-complete, so every problem whose answer is easy to check reduces to it.",
+  "statementAccent": "every problem whose answer is easy to check reduces to it",
+  "meaning": "The Cook-Levin theorem states that the Boolean satisfiability problem, SAT, is NP-complete: SAT is in NP, and every problem in NP can be reduced to it in polynomial time. It was the first problem ever proved NP-complete, establishing that NP-complete problems exist at all. Its force is that SAT is at least as hard as any problem in NP, the vast class of problems whose candidate solutions can be checked quickly, so a fast algorithm for SAT would give a fast algorithm for all of them. Proved independently by Stephen Cook and Leonid Levin around 1971, it launched the theory of NP-completeness that pervades computer science.",
+  "mechanism": "The proof shows how to turn any NP problem into a SAT instance. Take a nondeterministic Turing machine that decides the problem in polynomial time; for each input, one constructs a Boolean formula that encodes the machine's entire computation and is satisfiable exactly when the machine has an accepting run on that input. This polynomial-time reduction from an arbitrary NP problem to SAT makes SAT NP-complete. The consequence is direct: if SAT had a deterministic polynomial-time algorithm, that reduction would give one for every NP problem, so P would equal NP, tying the difficulty of SAT to the central open question of complexity theory.",
+  "examples": [
+    {
+      "tag": "Karp's twenty-one",
+      "text": "In 1972 Richard Karp reduced SAT to twenty-one classic problems, including the traveling salesman, clique, and knapsack, showing NP-completeness to be pervasive across computer science."
+    },
+    {
+      "tag": "The P-versus-NP link",
+      "text": "Because every NP problem reduces to SAT, a polynomial-time algorithm for SAT would prove P equals NP, tying SAT to the field's central open problem."
+    },
+    {
+      "tag": "Cook's award",
+      "text": "Stephen Cook received the 1982 Turing Award for the theorem and his broader work on the complexity of computation; Karp received it in 1985."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Levin's version",
+      "text": "Leonid Levin proved essentially the same result independently in the Soviet Union, framed in terms of universal search problems and published in 1973, hence the joint name."
+    },
+    {
+      "name": "The web of reductions",
+      "text": "Karp's reductions turned the single result into a method: proving a new problem NP-complete by reducing a known NP-complete problem to it, now a standard technique."
+    }
+  ],
+  "whyItMatters": "The Cook-Levin theorem founded the theory of NP-completeness, one of the most important frameworks in computer science, by exhibiting the first NP-complete problem and giving a template for proving others complete by reduction. Following Karp's twenty-one problems, NP-completeness turned out to be everywhere, from scheduling and routing to circuit design and biology, so recognising a problem as NP-complete tells a practitioner that a fast, exact, general algorithm is unlikely and that heuristics or approximations are the realistic path. It also anchors the P-versus-NP question, one of the great open problems of mathematics.",
+  "working": [
+    {"lead": "Reduce to SAT", "text": "understand that any NP problem can be encoded as a Boolean formula satisfiable exactly when the problem has a solution, making SAT universally hard within NP."},
+    {"lead": "Prove new problems complete", "text": "show a problem NP-complete by reducing a known NP-complete problem to it, the method the theorem made possible."},
+    {"lead": "Read the P-NP stakes", "text": "recognise that a polynomial-time SAT algorithm would collapse P and NP, so NP-completeness signals likely, not proven, intractability."}
+  ],
+  "limits": "NP-completeness concerns worst-case complexity, so it does not mean every instance of an NP-complete problem is hard, and many such problems have heuristics and modern solvers that perform well on real-world inputs. The theorem does not resolve the P-versus-NP question, which remains open and is one of the Clay Mathematics Institute's Millennium Prize Problems, so no super-polynomial lower bound for SAT is actually known. Its guarantees are asymptotic and about the general problem, not about the tractability of the particular instances one meets in practice.",
+  "misreadings": "NP does not stand for non-polynomial; it means nondeterministic polynomial time, the class of problems whose solutions can be verified quickly. NP-complete does not mean a problem is proven intractable, since no super-polynomial lower bound is known and intractability is only conjectured through the belief that P is not NP. The theorem establishes SAT's status as hardest within NP, not that P differs from NP, which is still open. And practical SAT solvers routinely dispatch huge instances despite the worst-case theory.",
+  "origin": "Proved by Stephen Cook in his 1971 paper 'The Complexity of Theorem-Proving Procedures' and independently by Leonid Levin around the same time, with Richard Karp's 1972 reductions revealing NP-completeness across combinatorial problems.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1971,
+  "sources": [
+    {"text": "Cook-Levin theorem, Wikipedia. — SAT as the first NP-complete problem, the reduction, and the P-versus-NP connection.", "url": "https://en.wikipedia.org/wiki/Cook%E2%80%93Levin_theorem", "type": "secondary"},
+    {"text": "Stephen A. Cook, A.M. Turing Award, ACM. — Cook's 1971 result and the 1982 Turing Award.", "url": "https://amturing.acm.org/award_winners/cook_n991950.cfm", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Cook%E2%80%93Levin_theorem",
+  "related": [
+    {"slug": "the-p-versus-np-problem", "kind": "kindred"},
+    {"slug": "the-traveling-salesman-problem", "kind": "consequence"}
+  ]
+}

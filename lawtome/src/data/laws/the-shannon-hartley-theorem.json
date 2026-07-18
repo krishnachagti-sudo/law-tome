@@ -1,0 +1,56 @@
+{
+  "no": "569",
+  "slug": "the-shannon-hartley-theorem",
+  "name": "The Shannon-Hartley Theorem",
+  "aliases": ["The channel-capacity theorem", "The Shannon limit"],
+  "statement": "A noisy channel of a given bandwidth can carry error-free information only up to a hard limit set by its signal-to-noise ratio.",
+  "statementAccent": "up to a hard limit",
+  "meaning": "The Shannon-Hartley theorem gives the maximum rate at which information can be transmitted over a communications channel of a specified bandwidth in the presence of Gaussian noise, with arbitrarily small error. The capacity, in bits per second, equals the bandwidth in hertz times the base-two logarithm of one plus the signal-to-noise ratio. This capacity is a hard upper bound, the Shannon limit: below it, arbitrarily reliable communication is possible with suitable coding, and above it, reliable communication is impossible. Combining Ralph Hartley's earlier work with Claude Shannon's 1948 theory, it is a founding result of information theory and the benchmark for all digital communication.",
+  "mechanism": "Capacity rises with bandwidth and with the signal-to-noise ratio, the logarithm reflecting that each doubling of that ratio adds a fixed increment of capacity. The signal-to-noise ratio is a power ratio, not a decibel figure. The two resources trade off: a given capacity can be reached by widening the bandwidth at lower signal-to-noise ratio or by raising the ratio in a narrower band. But because noise power grows with bandwidth, widening the band gives diminishing returns, and for fixed signal power and noise spectral density the capacity approaches a finite limit as bandwidth grows without bound. The proof is non-constructive: it shows good codes exist without exhibiting a practical one.",
+  "examples": [
+    {
+      "tag": "The reliability threshold",
+      "text": "If the transmission rate is below the capacity, coding can make the error probability arbitrarily small; if it exceeds capacity, the error rate grows without bound, so capacity is a sharp threshold."
+    },
+    {
+      "tag": "Approaching the limit",
+      "text": "Modern error-correcting codes such as turbo codes and low-density parity-check codes come remarkably close to the Shannon limit, the target the theorem defines."
+    },
+    {
+      "tag": "Trading bandwidth for power",
+      "text": "A system can hit a target capacity with more bandwidth and a weaker signal or less bandwidth and a stronger one, the interchange the formula makes precise."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Hartley's law",
+      "text": "Ralph Hartley's 1928 earlier result relating information to bandwidth, which Shannon's 1948 noisy-channel theory extended into the full capacity formula."
+    },
+    {
+      "name": "The ultimate Shannon limit",
+      "text": "In the infinite-bandwidth regime, the minimum energy per bit relative to noise spectral density for error-free communication, about minus 1.6 decibels, a floor no scheme can beat."
+    }
+  ],
+  "whyItMatters": "The Shannon-Hartley theorem is foundational to information theory and to every form of digital communication, from modems and Wi-Fi to cellular networks, fibre, and deep-space links. By defining the exact ceiling on error-free data rate for a given bandwidth and noise, it sets the theoretical benchmark against which all real systems are measured and drove the decades-long quest for error-correcting codes that approach the Shannon limit. It also frames the fundamental engineering trade-off between bandwidth and signal power, making it one of the most practically consequential theorems in all of technology.",
+  "working": [
+    {"lead": "Read capacity from bandwidth and noise", "text": "compute the maximum error-free rate as the bandwidth times the log of one plus the signal-to-noise ratio, a firm ceiling."},
+    {"lead": "Trade bandwidth for power", "text": "reach a target capacity either by widening the band at lower signal-to-noise ratio or by strengthening the signal in a narrower band."},
+    {"lead": "Aim for the limit", "text": "treat the Shannon limit as the target for code design, knowing arbitrarily reliable communication is possible only below it."}
+  ],
+  "limits": "The theorem assumes additive white Gaussian noise, whereas real channels also suffer fading, interference, and non-Gaussian noise not captured by the basic formula. It gives capacity but not a construction: the proof is non-constructive, showing that good codes exist without exhibiting a practical one, so approaching the limit required decades of separate code design. Capacity is a supremum of achievable error-free rates, approached only with ideal coding and unbounded block length and latency, so real systems operate below it, and widening bandwidth yields diminishing returns because noise power grows with it.",
+  "misreadings": "The signal-to-noise ratio in the formula is a linear power ratio, not a decibel value, so a decibel figure must be converted before use. The capacity is a hard ceiling, the supremum of error-free rates, not a guaranteed throughput, and real systems run below it. The theorem proves good codes exist but does not supply one, so reaching capacity needs separately engineered codes. And more bandwidth does not give proportionally more capacity, since noise power scales with bandwidth and the gains saturate.",
+  "origin": "Formulated from Claude Shannon's 1948 'A Mathematical Theory of Communication' in the Bell System Technical Journal, building on Ralph Hartley's 1928 work, hence the name.",
+  "category": "technology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1948,
+  "sources": [
+    {"text": "Shannon-Hartley theorem, Wikipedia. — the capacity formula, the reliability threshold, the AWGN assumption, and the non-constructive proof.", "url": "https://en.wikipedia.org/wiki/Shannon%E2%80%93Hartley_theorem", "type": "secondary"},
+    {"text": "Shannon, 'A Mathematical Theory of Communication,' Bell System Technical Journal (1948). — the founding theory of channel capacity.", "url": "https://www.essrl.wustl.edu/~jao/itrg/shannon.pdf", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Shannon%E2%80%93Hartley_theorem",
+  "related": [
+    {"slug": "shannons-source-coding-theorem", "kind": "kindred"},
+    {"slug": "the-nyquist-shannon-sampling-theorem", "kind": "kindred"}
+  ]
+}

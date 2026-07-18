@@ -1,0 +1,55 @@
+{
+  "no": "571",
+  "slug": "the-traveling-salesman-problem",
+  "name": "The Traveling Salesman Problem",
+  "aliases": ["TSP", "The shortest-tour problem"],
+  "statement": "Find the shortest route that visits every city once and returns home; it is easy to state and famously hard to solve.",
+  "statementAccent": "easy to state and famously hard to solve",
+  "meaning": "The traveling salesman problem asks, given a list of cities and the pairwise distances between them, for the shortest possible route that visits each city exactly once and returns to the starting city, a minimum-weight Hamiltonian cycle. Simple to state, it is one of the most intensively studied problems in combinatorial optimization and a canonical example of computational hardness: its decision form is NP-complete and its optimization form NP-hard, so no polynomial-time exact algorithm is known, and finding one would resolve P versus NP. Despite this worst-case difficulty, sophisticated methods and heuristics solve enormous real instances in practice.",
+  "mechanism": "Brute force checks every ordering of the cities, taking time on the order of n factorial, hopelessly slow beyond small sizes. The Held-Karp dynamic-programming algorithm solves it exactly in time proportional to n squared times two to the n, better than n factorial but still exponential. Because the general problem cannot be approximated within any constant factor unless P equals NP, practical guarantees rely on structure: for metric instances, where distances satisfy the triangle inequality, the Christofides-Serdyukov algorithm guarantees a tour at most one and a half times the optimal, and a 2020 result nudged that ratio slightly below three-halves. In everyday use, heuristics like nearest-neighbour, 2-opt, and Lin-Kernighan produce near-optimal tours quickly.",
+  "examples": [
+    {
+      "tag": "Christofides",
+      "text": "For metric instances the Christofides-Serdyukov algorithm of 1976 guarantees a tour no more than one and a half times the shortest, the classic approximation result."
+    },
+    {
+      "tag": "Solving huge instances exactly",
+      "text": "The Concorde solver, using cutting planes and branch-and-bound, has found provably optimal tours through tens of thousands of cities, including an instance of 85,900 points."
+    },
+    {
+      "tag": "Karp's reduction",
+      "text": "The traveling salesman problem was among the twenty-one problems Richard Karp proved NP-complete in 1972 by reduction from Boolean satisfiability."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Metric and Euclidean TSP",
+      "text": "Special cases in which distances obey the triangle inequality, or are straight-line distances in the plane, which admit constant-factor approximations the general problem does not."
+    },
+    {
+      "name": "Symmetric versus asymmetric",
+      "text": "Whether the distance from one city to another equals the reverse, distinguishing the symmetric problem from the harder asymmetric one."
+    }
+  ],
+  "whyItMatters": "The traveling salesman problem is the archetypal NP-hard optimization problem and a central benchmark for the entire field of combinatorial optimization, spurring the development of cutting-plane methods, branch-and-bound, approximation algorithms, and metaheuristics. Its applications are everywhere routes and orderings matter, from logistics and vehicle routing to drilling circuit boards, sequencing DNA, and scheduling telescope observations. As a case study it also teaches a crucial lesson: worst-case intractability does not mean practical impossibility, since clever exact and approximate methods conquer instances of remarkable size.",
+  "working": [
+    {"lead": "Recognise the hardness", "text": "treat the traveling salesman problem as NP-hard, with no known polynomial-time exact algorithm, so exact solving is exponential in the worst case."},
+    {"lead": "Exploit structure", "text": "use the triangle inequality of metric instances to get constant-factor approximations, such as Christofides's one-and-a-half guarantee."},
+    {"lead": "Lean on heuristics", "text": "in practice apply nearest-neighbour, 2-opt, or Lin-Kernighan to get near-optimal tours quickly, since worst-case hardness rarely bites real instances."}
+  ],
+  "limits": "NP-hardness is a worst-case statement, so it does not mean every instance is hard, and large instances are routinely solved, exactly with methods like the Concorde solver and approximately with heuristics on millions of nodes. The strong approximation results apply only to structured cases: the general problem cannot be approximated within any constant factor unless P equals NP, and Christofides's guarantee requires the triangle inequality. Exact algorithms remain exponential in the worst case, so scaling depends on instance structure rather than a universal fast method, and the P-versus-NP question the problem embodies is still open.",
+  "misreadings": "NP-hard does not mean unsolvable; it means no polynomial-time exact algorithm is known, while instances are still solved, just at exponential worst-case cost. Large instances are solved in practice, both exactly and approximately, so the problem is not hopeless. The one-and-a-half approximation applies only to metric instances with the triangle inequality, not to the general problem, which resists any constant-factor approximation unless P equals NP. And the earliest documented use of the phrase traveling salesman problem is a 1949 report, though the problem was studied earlier by Menger and others.",
+  "origin": "Brought to mathematicians by Karl Menger around 1930 as the messenger problem, formulated as an integer program with the cutting-plane method by Dantzig, Fulkerson, and Johnson in 1954, and proved NP-complete via Karp's 1972 reductions.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Travelling salesman problem, Wikipedia. — the definition, NP-hardness, Held-Karp, and the heuristics and exact solvers.", "url": "https://en.wikipedia.org/wiki/Travelling_salesman_problem", "type": "secondary"},
+    {"text": "Christofides algorithm, Wikipedia. — the one-and-a-half approximation for metric TSP.", "url": "https://en.wikipedia.org/wiki/Christofides_algorithm", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Travelling_salesman_problem",
+  "related": [
+    {"slug": "the-p-versus-np-problem", "kind": "kindred"},
+    {"slug": "the-cook-levin-theorem", "kind": "cause"}
+  ]
+}

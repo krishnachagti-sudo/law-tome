@@ -1,0 +1,55 @@
+{
+  "no": "566",
+  "slug": "the-master-theorem",
+  "name": "The Master Theorem",
+  "aliases": ["The master method", "The divide-and-conquer recurrence theorem"],
+  "statement": "For a divide-and-conquer algorithm, compare the work of splitting to the work of recursing to read off its running time.",
+  "statementAccent": "compare the work of splitting to the work of recursing",
+  "meaning": "The master theorem is a cookbook formula for the asymptotic running time of divide-and-conquer algorithms whose cost satisfies a recurrence of the form T of n equals a times T of n over b plus f of n, where a is the number of subproblems, b is the factor by which the subproblem size shrinks, and f of n is the cost of dividing the problem and combining the results. By comparing f of n to a critical power of n, the logarithm of a to base b, the theorem sorts the recurrence into one of three cases and reads off the tight running time. It is a staple of algorithm analysis, letting one solve most standard divide-and-conquer recurrences at a glance.",
+  "mechanism": "Everything turns on the critical exponent, the logarithm of a to base b, which measures how fast the number of subproblems grows against how fast their size shrinks, and n raised to that exponent counts the total leaf work of the recursion. In case one, the extra work f of n is polynomially smaller than this, so the leaves dominate and the running time is that power of n. In case two, the two are comparable, and each level contributes about equally, adding a logarithmic factor. In case three, f of n is polynomially larger and, provided a regularity condition holds, the top-level work dominates and the running time is f of n itself.",
+  "examples": [
+    {
+      "tag": "Merge sort",
+      "text": "Merge sort splits into two halves and merges in linear time, giving T of n equals two T of n over two plus n, the balanced case two, so its running time is n log n."
+    },
+    {
+      "tag": "Binary search",
+      "text": "Binary search recurses on one half with constant extra work, T of n equals T of n over two plus a constant, giving a running time of log n."
+    },
+    {
+      "tag": "Karatsuba multiplication",
+      "text": "Karatsuba's algorithm makes three half-size multiplications with linear overhead, T of n equals three T of n over two plus n, the leaf-dominated case one, giving about n to the 1.585."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The three cases",
+      "text": "Leaf-dominated when the extra work is polynomially smaller than the critical power, balanced when they match, and root-dominated when the extra work is polynomially larger and a regularity condition holds."
+    },
+    {
+      "name": "The Akra-Bazzi method",
+      "text": "A more general technique that handles recurrences the master theorem cannot, including unequal subproblem sizes and cases that fall in its gaps."
+    }
+  ],
+  "whyItMatters": "The master theorem is one of the most used tools in the analysis of algorithms, turning the running-time analysis of a whole family of divide-and-conquer algorithms into a quick comparison rather than a laborious unrolling of the recurrence. Popularised by the widely used textbook Introduction to Algorithms, it lets students and practitioners settle the complexity of merge sort, binary search, and countless recursive routines almost by inspection. Where it does not apply, its generalisation, the Akra-Bazzi method, extends the same idea, so the theorem is both a practical shortcut and a gateway to the deeper theory of recurrences.",
+  "working": [
+    {"lead": "Identify a, b, and f", "text": "read off the number of subproblems, the size-shrink factor, and the divide-and-combine cost from the recurrence."},
+    {"lead": "Compare against the critical power", "text": "measure the divide-and-combine work against n raised to the logarithm of a to base b to decide which of the three cases applies."},
+    {"lead": "Read off the case", "text": "take the running time from the leaf-dominated, balanced, or root-dominated case, checking the regularity condition in the third."}
+  ],
+  "limits": "The master theorem does not apply to every recurrence. There are gaps between its cases, when the divide-and-combine cost falls between the polynomial bounds but does not fit the balanced case's form, as with a cost of n over log n. It requires the number of subproblems and the shrink factor to be constants, assumes equal-sized subproblems, and in the root-dominated case needs a regularity condition to hold. When these fail, the more general Akra-Bazzi method is needed, which handles unequal subproblem sizes and the awkward gaps the master theorem leaves open.",
+  "misreadings": "In the balanced case the theorem adds exactly one logarithmic factor, so a cost equal to the critical power gives that power times log n, not the power alone. The root-dominated case is not triggered by the divide-and-combine cost merely being larger; it must be polynomially larger and satisfy the regularity condition, and cases one and three both require a genuine polynomial separation, not just a logarithmic one. The theorem is not universal, since gaps, non-constant subproblem counts, and unequal sizes fall outside it. And b is the size-shrink factor, not the branching depth.",
+  "origin": "First presented by Jon Bentley, Dorothea Haken, and James Saxe in 1980 as a unifying method for divide-and-conquer recurrences, and popularised as the master theorem by the textbook 'Introduction to Algorithms' by Cormen, Leiserson, Rivest, and Stein.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1980,
+  "sources": [
+    {"text": "Master theorem (analysis of algorithms), Wikipedia. — the recurrence form, the three cases and critical exponent, and the Akra-Bazzi generalisation.", "url": "https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)", "type": "secondary"},
+    {"text": "'A Best Possible General Form of the Master Theorem for Divide-and-Conquer Recurrences' (2025), arXiv:2507.16064. — a modern treatment of the theorem and its cases.", "url": "https://arxiv.org/abs/2507.16064", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)",
+  "related": [
+    {"slug": "the-time-hierarchy-theorem", "kind": "kindred"}
+  ]
+}

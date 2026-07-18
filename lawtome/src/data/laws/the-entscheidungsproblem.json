@@ -1,0 +1,56 @@
+{
+  "no": "562",
+  "slug": "the-entscheidungsproblem",
+  "name": "The Entscheidungsproblem",
+  "aliases": ["The decision problem", "Hilbert's decision problem"],
+  "statement": "Hilbert asked for an algorithm to decide whether any logical statement is valid; in 1936 it was proved impossible.",
+  "statementAccent": "in 1936 it was proved impossible",
+  "meaning": "The Entscheidungsproblem, German for the decision problem, is the challenge posed by David Hilbert and Wilhelm Ackermann in 1928 of finding a general effective procedure, an algorithm, that takes any statement of first-order logic and decides in finitely many steps whether it is universally valid. It was the crowning demand of Hilbert's program to place mathematics on a complete, consistent, and decidable footing. In 1936, working independently, Alonzo Church and Alan Turing proved that no such algorithm can exist: first-order validity is undecidable. The effort to prove this impossibility gave birth to the formal theory of computation.",
+  "mechanism": "To prove that no decision procedure exists, Church and Turing first had to define precisely what a procedure is, and each produced a formal model of computation for the purpose, Church the lambda calculus and Turing the machine that bears his name. Turing derived the undecidability of the Entscheidungsproblem from the unsolvability of the halting problem, that no algorithm can decide for every machine and input whether it halts. By the completeness theorem, a first-order formula is provable exactly when it is valid, so the valid formulas are recursively enumerable: a procedure can list every valid one, and so confirm validity when it holds, but it may never halt on an invalid input, which is why validity is semi-decidable but not decidable.",
+  "examples": [
+    {
+      "tag": "Hilbert's ambition",
+      "text": "Hilbert insisted there should be no ignorabimus, declaring at Königsberg in 1930 that we must know, we will know; a decision procedure would have mechanised mathematical truth."
+    },
+    {
+      "tag": "Two independent negatives",
+      "text": "In 1936 Church, via the lambda calculus, and Turing, via his machines and the halting problem, independently proved no such general algorithm exists."
+    },
+    {
+      "tag": "Propositional logic decides",
+      "text": "Validity in propositional logic is decidable by truth tables; it is first-order, predicate logic whose validity is undecidable."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Semi-decidability",
+      "text": "First-order validity is recursively enumerable but not decidable: a procedure can confirm every valid formula yet may run forever on an invalid one, so completeness alone did not solve the problem."
+    },
+    {
+      "name": "Decidable fragments",
+      "text": "Certain restricted fragments of first-order logic, such as monadic predicate logic, are decidable, so the undecidability is a property of the full logic, not every part of it."
+    }
+  ],
+  "whyItMatters": "The negative answer to the Entscheidungsproblem, together with Gödel's incompleteness theorems, ended the strongest ambitions of Hilbert's program, showing that mathematics cannot be reduced to a mechanical decision procedure. Far more than a limiting result, it was generative: the drive to prove impossibility forced the first precise definitions of algorithm and computation, producing Turing machines, the lambda calculus, and the theory of computability, and with them the birth of theoretical computer science. The convergence of these definitions also gave rise to the Church-Turing thesis, the standard by which computation is understood.",
+  "working": [
+    {"lead": "See the demand", "text": "read the Entscheidungsproblem as Hilbert's call for a mechanical procedure to decide the validity of any first-order statement."},
+    {"lead": "Note the impossibility", "text": "understand that Church and Turing proved no such general algorithm exists, so first-order validity is undecidable."},
+    {"lead": "Distinguish confirm from decide", "text": "recognise that valid formulas can be enumerated and confirmed, but there is no procedure guaranteed to halt with a correct yes or no on every input."}
+  ],
+  "limits": "The undecidability is specific to first-order, predicate logic; propositional logic is decidable by truth tables, and certain fragments of first-order logic are decidable too. The result does not say valid formulas cannot be recognised, since they are recursively enumerable and can be confirmed when valid; the obstacle is the lack of a uniform procedure that always halts, especially on invalid inputs. Church's and Turing's proofs rest on the precise but philosophically laden identification of algorithm with lambda-definability or Turing-computability, the content of the Church-Turing thesis.",
+  "misreadings": "Gödel did not solve the Entscheidungsproblem; his incompleteness theorems are related but distinct, and Church and Turing gave the negative solution in 1936. Not all of logic is undecidable, since propositional logic is decidable and some first-order fragments are too. Undecidable does not mean no formula can ever be shown valid, since valid formulas are semi-decidable; the barrier is halting on invalid inputs. And the precise first-order formulation is the 1928 Hilbert-Ackermann version, not something posed by Hilbert alone much earlier.",
+  "origin": "Posed by David Hilbert and Wilhelm Ackermann in their 1928 'Grundzüge der theoretischen Logik' and proved unsolvable independently by Alonzo Church and Alan Turing in 1936.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1928,
+  "sources": [
+    {"text": "The Rise and Fall of the Entscheidungsproblem, Stanford Encyclopedia of Philosophy. — the 1928 formulation, the 1936 negative solution, and the semi-decidability nuance.", "url": "https://plato.stanford.edu/entries/church-turing/decision-problem.html", "type": "secondary"},
+    {"text": "Entscheidungsproblem, Wikipedia. — Hilbert and Ackermann, the Church and Turing proofs, and the link to the birth of computer science.", "url": "https://en.wikipedia.org/wiki/Entscheidungsproblem", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Entscheidungsproblem",
+  "related": [
+    {"slug": "the-turing-machine", "kind": "cause"},
+    {"slug": "the-halting-problem", "kind": "consequence"}
+  ]
+}
