@@ -1,0 +1,56 @@
+{
+  "no": "384",
+  "slug": "coriolis-effect",
+  "name": "The Coriolis Effect",
+  "aliases": ["The Coriolis force"],
+  "statement": "On a spinning Earth, moving air and water veer right in the north and left in the south.",
+  "statementAccent": "veer right in the north",
+  "meaning": "The Coriolis effect is the apparent deflection of a moving object when its motion is described in a rotating reference frame. Because the Earth turns, a freely moving mass of air or water appears to curve away from a straight path: to the right in the Northern Hemisphere and to the left in the Southern. It is not a real force pushing the object but an inertial effect of viewing the motion from a spinning frame, and it shapes the great patterns of weather and ocean currents.",
+  "mechanism": "In a rotating frame, describing motion as if the frame were fixed introduces a fictitious force acting at right angles to the object's velocity and to the rotation axis, proportional to the object's speed. On Earth its horizontal strength grows with latitude, vanishing at the equator for horizontal motion and reaching a maximum at the poles. Over long distances and times this steady sideways nudge accumulates into large curved paths, organising winds and currents even though at everyday scales it is far too weak to notice.",
+  "examples": [
+    {
+      "tag": "Weather systems",
+      "text": "The Coriolis effect makes large low-pressure systems and cyclones rotate counterclockwise in the Northern Hemisphere and clockwise in the Southern, organising storms and prevailing winds."
+    },
+    {
+      "tag": "Ocean gyres",
+      "text": "The deflection of moving water helps drive the great rotating ocean currents, the gyres, that circulate heat around the planet."
+    },
+    {
+      "tag": "Long-range projectiles",
+      "text": "Shells and other objects travelling far and fast are deflected enough by the effect that gunnery and ballistics must correct for it."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Latitude dependence",
+      "text": "The horizontal effect scales with the sine of the latitude, so it is zero at the equator and strongest at the poles, which is why tropical and polar dynamics differ."
+    },
+    {
+      "name": "The Foucault pendulum",
+      "text": "A long pendulum's slow rotation of its swing plane over hours is a direct, visible manifestation of the Earth's rotation through the Coriolis effect."
+    }
+  ],
+  "whyItMatters": "It is foundational to meteorology and oceanography, explaining why storms spin the way they do, why winds and currents follow curved global patterns, and why long-range ballistics must account for the planet's rotation. Understanding it is essential to forecasting weather, modelling climate, and navigating, and it is a clear example of how a rotating frame of reference changes the apparent laws of motion.",
+  "working": [
+    {"lead": "Apply it to large scales", "text": "expect the effect to matter for big, long-lived motions like storms and currents, not for small, brief ones."},
+    {"lead": "Use latitude", "text": "remember the horizontal effect is zero at the equator and greatest at the poles, so its importance varies with location."},
+    {"lead": "Reject the drain myth", "text": "do not attribute the swirl of a sink or toilet to the Coriolis effect, which is utterly negligible at that scale."}
+  ],
+  "limits": "It is a real inertial effect of the Earth's rotation, but it is significant only for large-scale, long-duration motion. At the scale of a sink, bath, or toilet it is thousands of times too weak to set the direction of draining, which is instead governed by basin shape, jet angle, and residual motion. Only under extreme laboratory control, with still, symmetric tanks left for hours, has a Coriolis signature in draining water been measured, confirming the physics is real while underscoring that ordinary draining is dominated by other factors.",
+  "misreadings": "It does not determine which way water spins down a drain; that is a myth, and water drains both ways within the same hemisphere. It is not a real force but a fictitious, inertial one that appears only because the motion is described in a rotating frame. And it deflects to the right in the Northern Hemisphere and to the left in the Southern, not the reverse.",
+  "origin": "Named after the French engineer and mathematician Gaspard-Gustave de Coriolis, who gave the mathematical expression in an 1835 paper on the relative motion of rotating machines; it entered meteorology in the early twentieth century.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1835,
+  "namedAfter": "Gaspard-Gustave de Coriolis",
+  "sources": [
+    {"text": "Coriolis force, Wikipedia. — the rotating-frame deflection, its latitude dependence, and the debunking of the drain myth.", "url": "https://en.wikipedia.org/wiki/Coriolis_force", "type": "secondary"},
+    {"text": "Gaspard-Gustave de Coriolis, Encyclopaedia Britannica. — the 1835 paper and the inertial force acting at right angles to motion.", "url": "https://www.britannica.com/biography/Gaspard-Gustave-de-Coriolis", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Coriolis_force",
+  "related": [
+    {"slug": "bernoullis-principle", "kind": "kindred"}
+  ]
+}

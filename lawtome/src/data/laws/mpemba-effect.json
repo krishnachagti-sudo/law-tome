@@ -1,0 +1,83 @@
+{
+  "no": "386",
+  "slug": "mpemba-effect",
+  "name": "The Mpemba Effect",
+  "aliases": [
+    "Hot water freezing faster"
+  ],
+  "statement": "Hot water is sometimes claimed to freeze faster than cold — but the effect may not be real.",
+  "statementAccent": "freeze faster than cold",
+  "meaning": "The Mpemba effect is the claim that, under some conditions, a quantity of hot water can freeze faster than an equal quantity of cold water. It is a famous piece of counterintuitive folklore, observed on and off since antiquity and named for a schoolboy who noticed it in a freezing ice-cream mix. Yet whether it is a genuine, reproducible phenomenon at all is genuinely disputed, and there is no agreed definition of what freezing faster even means.",
+  "mechanism": "No single mechanism is established, and several proposed causes may be experimental artifacts. Candidates include evaporation, which reduces the mass of hot water left to freeze; convection currents that differ between warm and cool samples; dissolved gases driven out by heating; differences in how far each sample supercools before ice forms; and effects of the surroundings, such as a hot container melting frost and improving thermal contact. Each is contested, and the absence of an agreed cause is itself a reason for scepticism. Part of the trouble is that the result depends sensitively on container, volume, and exactly what counts as frozen.",
+  "examples": [
+    {
+      "tag": "Mpemba's ice cream",
+      "text": "In 1963 the Tanzanian student Erasto Mpemba noticed a hot sugared-milk mix froze faster than a cooler one, later publishing with the physicist Denis Osborne."
+    },
+    {
+      "tag": "Ancient reports",
+      "text": "Aristotle, Francis Bacon, and Descartes each remarked that previously heated water can freeze quickly, so the claim is old, though the observations are anecdotal."
+    },
+    {
+      "tag": "The failed reproduction",
+      "text": "A careful 2016 study by Burridge and Linden found no evidence for a meaningful effect, with apparent results hinging on centimetre-scale differences in thermometer placement."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The ill-posed claim",
+      "text": "Critics argue the effect is too vaguely stated to be scientific, since the outcome depends on container, scale, supercooling, and how freezing is defined, with no robust reproducibility."
+    },
+    {
+      "name": "Statistical-physics analogues",
+      "text": "Recent work studies Mpemba-like behaviour in well-defined abstract systems, where a hotter system can relax to equilibrium faster, even as the original water claim stays unresolved."
+    }
+  ],
+  "whyItMatters": "It is a celebrated case study in how an ill-defined observable can generate decades of debate, and a lesson that experimental conditions and precise definitions matter enormously. It shows how a memorable, counterintuitive claim can persist on anecdote, resist clean confirmation, and yet seed rigorous work on relaxation dynamics, while remaining, in its original form, an open question rather than a settled fact.",
+  "working": [
+    {
+      "lead": "Demand a definition",
+      "text": "insist on specifying what freezing faster means, since the answer changes with container, volume, and whether you measure reaching zero, nucleation, or full solidification."
+    },
+    {
+      "lead": "Control the conditions",
+      "text": "recognise that apparent results can hinge on tiny experimental details like thermometer placement or frost on a shelf."
+    },
+    {
+      "lead": "Hold it as contested",
+      "text": "treat the effect as disputed rather than established, and avoid citing it as a settled physical fact."
+    }
+  ],
+  "limits": "The effect is genuinely contested and may not be a real, reproducible phenomenon. There is no agreed operational definition of freezing faster, no accepted mechanism, and careful controlled experiments have failed to find a meaningful effect, with positive reports proving highly sensitive to setup. Some narrow studies report reproducing something under specific conditions, and the dispute remains open, which is why the honest verdict is contested rather than either established or fully debunked.",
+  "misreadings": "It is not an established fact that hot water freezes faster than cold; its very existence as a robust phenomenon is in doubt. There is no single accepted mechanism, and several proposed causes may be artifacts. It does not hold generally; any reported instances are at most condition-specific and not reliably reproducible. And Mpemba did not discover the idea first, since similar observations reach back to antiquity.",
+  "origin": "Named after the Tanzanian student Erasto Mpemba, who observed it in 1963 and published with the physicist Denis Osborne in 1969; its reality was seriously challenged by Burridge and Linden's 2016 study.",
+  "category": "science",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1969,
+  "namedAfter": "Erasto Mpemba",
+  "sources": [
+    {
+      "text": "Mpemba & Osborne, \"Cool?,\" Physics Education 4 (1969): 172-175. — the original published observation.",
+      "url": "https://iopscience.iop.org/article/10.1088/0031-9120/4/3/312",
+      "type": "primary"
+    },
+    {
+      "text": "Burridge & Linden, \"Questioning the Mpemba effect,\" Scientific Reports 6 (2016): 37665. — the controlled study finding no evidence for a meaningful effect.",
+      "url": "https://www.nature.com/articles/srep37665",
+      "type": "primary"
+    },
+    {
+      "text": "Mpemba effect, Wikipedia. — the claim, the ancient antecedents, the proposed mechanisms, and the contested status.",
+      "url": "https://en.wikipedia.org/wiki/Mpemba_effect",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Mpemba_effect",
+  "related": [
+    {
+      "slug": "newtons-law-of-cooling",
+      "kind": "tension"
+    }
+  ]
+}

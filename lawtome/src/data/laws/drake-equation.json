@@ -1,0 +1,56 @@
+{
+  "no": "380",
+  "slug": "drake-equation",
+  "name": "The Drake Equation",
+  "aliases": ["Drake's equation", "The Green Bank equation"],
+  "statement": "Multiply seven uncertain factors to estimate how many civilizations we might hear from.",
+  "statementAccent": "seven uncertain factors",
+  "meaning": "The Drake equation is a way of estimating the number of communicating civilizations in our galaxy by breaking one impossible question into a chain of smaller ones. It multiplies together the rate of star formation, the fraction of stars with planets, the number of habitable planets per such star, and the fractions on which life, then intelligence, then detectable communication arise, all times the length of time such civilizations broadcast. Its purpose was never to yield a definitive number, but to organise the discussion.",
+  "mechanism": "Each factor narrows the pool: start with how many suitable stars form, keep those with planets, keep the planets that could bear life, then apply the odds that life, intelligence, and signalling technology emerge, and finally weight by how long a civilization stays detectable. The early terms are increasingly measurable thanks to exoplanet surveys, but the later ones, the fractions for life, intelligence, and communication, and the lifetime, are essentially unknown. Because the uncertainties multiply, the final estimate can swing from less than one to millions depending on the guesses fed in.",
+  "examples": [
+    {
+      "tag": "The Green Bank meeting",
+      "text": "Frank Drake wrote the equation in 1961 to structure a small conference at Green Bank on whether searching for other civilizations was worthwhile; Carl Sagan was among the attendees."
+    },
+    {
+      "tag": "The widening uncertainty",
+      "text": "Only the first factor, the star-formation rate, had a firm estimate at the outset; each later factor was more speculative, so the uncertainty compounds down the chain."
+    },
+    {
+      "tag": "The vast range",
+      "text": "Plugging in different but defensible guesses yields answers spanning from we are essentially alone to many millions of civilizations, showing the equation frames rather than settles the question."
+    }
+  ],
+  "variants": [
+    {
+      "name": "A framework, not a prediction",
+      "text": "Drake intended it to stimulate scientific dialogue and decompose the problem, not to compute a reliable count, and he regarded the output as an approximation at best."
+    },
+    {
+      "name": "Link to the Fermi paradox",
+      "text": "The equation parametrises how many civilizations there might be, sharpening the Fermi paradox's puzzle of why, if the number is large, we see no sign of any."
+    }
+  ],
+  "whyItMatters": "It is the conceptual scaffolding of the search for extraterrestrial intelligence and of astrobiology, turning a vague wonder into a structured set of questions that science can chip away at, star by star and planet by planet. Even though it cannot give a trustworthy answer, it clarifies exactly which unknowns matter most, and it frames the Fermi paradox by making the estimated abundance of civilizations explicit.",
+  "working": [
+    {"lead": "Use it to organise, not to answer", "text": "treat the equation as a way to structure the unknowns of the search for life, not as a calculator that outputs a real number."},
+    {"lead": "Track which factors are known", "text": "note that the early astronomical terms are increasingly measured while the biological and social terms remain guesses."},
+    {"lead": "Report the range, not a point", "text": "present estimates as a wide range reflecting the compounding uncertainty, rather than a single confident figure."}
+  ],
+  "limits": "It is a heuristic framework, not a predictive law, and it has never been empirically validated. Several of its factors, the fractions for life, intelligence, and detectable communication, and the lifetime of a broadcasting civilization, are essentially unknown, and because the terms multiply, the combined uncertainty is so large that the equation cannot yield firm conclusions. Its value lies in decomposing the question and directing attention, not in the number it produces.",
+  "misreadings": "It does not give a real answer for how many civilizations exist; its output is only as good as its most uncertain inputs, four of which are essentially unknown. It was not designed to compute a number at all, but to organise a discussion. And not all its factors are measured: only the earliest astronomical terms have observational grounding, while the biological and social ones remain speculative.",
+  "origin": "Devised by the astronomer Frank Drake in 1961 for a small conference at the National Radio Astronomy Observatory in Green Bank, West Virginia, growing directly out of his pioneering Project Ozma search of 1960.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1961,
+  "namedAfter": "Frank Drake",
+  "sources": [
+    {"text": "Drake equation, Wikipedia. — the seven factors, the Green Bank origin, and its purpose as a framework rather than a calculator.", "url": "https://en.wikipedia.org/wiki/Drake_equation", "type": "secondary"},
+    {"text": "Drake equation, Encyclopaedia Britannica. — the factor definitions and the compounding uncertainty down the chain.", "url": "https://www.britannica.com/science/Drake-equation", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Drake_equation",
+  "related": [
+    {"slug": "fermi-paradox", "kind": "kindred"}
+  ]
+}

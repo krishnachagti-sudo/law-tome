@@ -1,0 +1,57 @@
+{
+  "no": "382",
+  "slug": "banach-tarski-paradox",
+  "name": "The Banach-Tarski Paradox",
+  "aliases": ["The pea and the Sun", "Doubling the ball"],
+  "statement": "A solid ball can be cut into a few pieces and rearranged into two balls of the same size.",
+  "statementAccent": "rearranged into two balls",
+  "meaning": "The Banach-Tarski paradox is a theorem that a solid ball in three-dimensional space can be split into a finite number of disjoint pieces, as few as five, and reassembled using only rotations and translations, with no stretching or adding of points, into two solid balls each identical to the original. Volume appears to double out of nothing. It is called a paradox because it violates geometric intuition, not because it is a contradiction.",
+  "mechanism": "The trick is that the pieces are not ordinary solids but non-measurable sets, infinite scatterings of points so pathological that no volume can be assigned to them. Because volume is undefined for these pieces, there is no contradiction when the reassembled balls have twice the volume: the additivity of volume simply does not apply to sets that have none. Constructing such pieces requires the Axiom of Choice to make infinitely many arbitrary selections at once, and the underlying engine is a paradoxical decomposition of the group of rotations in three dimensions.",
+  "examples": [
+    {
+      "tag": "Doubling the ball",
+      "text": "Partition a solid ball into five well-chosen point-sets, rotate and slide them, and reassemble two complete balls each the size of the first."
+    },
+    {
+      "tag": "The pea and the Sun",
+      "text": "A stronger form says any two bounded solids with interior are equivalent by such cuts, so a pea could in principle be redivided and reassembled into a body the size of the Sun."
+    },
+    {
+      "tag": "Failure in the plane",
+      "text": "The paradox needs three or more dimensions; in one or two dimensions the group of rigid motions is too tame and admits an invariant measure, so no such doubling exists."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The role of choice",
+      "text": "The proof depends critically on the Axiom of Choice; in models of set theory where choice fails and every set is measurable, such as Solovay's, the paradox cannot be carried out."
+    },
+    {
+      "name": "A veridical paradox",
+      "text": "It is counterintuitive but true, a valid theorem rather than a flaw, illustrating that geometric intuition is an unreliable guide to abstract point-sets."
+    }
+  ],
+  "whyItMatters": "It is a landmark in the foundations of mathematics and measure theory, the most dramatic demonstration of how strange the Axiom of Choice and non-measurable sets can be. It shows that no finitely additive, rotation-invariant notion of volume can be defined on all subsets of space, which is exactly why measure theory restricts attention to measurable sets, and it remains a touchstone in debates over the axioms of set theory.",
+  "working": [
+    {"lead": "Locate the non-measurability", "text": "recognise that the paradox works only because the pieces have no defined volume, so nothing measurable is conserved or violated."},
+    {"lead": "Credit the Axiom of Choice", "text": "note that the construction requires choice to build the pieces and fails in settings where every set is measurable."},
+    {"lead": "Keep it abstract", "text": "treat it as a fact about idealised point-sets, not about matter, which cannot be divided this way."}
+  ],
+  "limits": "It is a rigorous theorem, not a contradiction; paradox here means counterintuitive, a veridical paradox that follows validly from standard axioms together with the Axiom of Choice. It requires three or more dimensions and fails in the line and the plane. It is physically impossible: the pieces are non-measurable scatterings of points, and real matter is made of finitely many atoms and is not infinitely divisible in this way. And it depends on the Axiom of Choice, without which it can fail.",
+  "misreadings": "It does not let you physically duplicate objects, conjure gold, or turn a pea into the Sun in reality; it concerns abstract point-sets whose pieces cannot be physically realised. It is not a flaw or contradiction in mathematics but a valid theorem, counterintuitive yet consistent. It does not work on a line or in a plane, and the pieces do not have volume that doubles, since they have no volume at all.",
+  "origin": "Proved by the Polish mathematicians Stefan Banach and Alfred Tarski in a 1924 paper in Fundamenta Mathematicae, building on Felix Hausdorff's 1914 paradox and Giuseppe Vitali's non-measurable set.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1924,
+  "namedAfter": "Stefan Banach and Alfred Tarski",
+  "sources": [
+    {"text": "Banach-Tarski paradox, Wikipedia. — the doubling theorem, non-measurable pieces, the Axiom of Choice, and failure in low dimensions.", "url": "https://en.wikipedia.org/wiki/Banach%E2%80%93Tarski_paradox", "type": "secondary"},
+    {"text": "Banach-Tarski Paradox, Wolfram MathWorld. — the five-piece minimum and the equidecomposability statement.", "url": "https://mathworld.wolfram.com/Banach-TarskiParadox.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Banach%E2%80%93Tarski_paradox",
+  "related": [
+    {"slug": "cantors-theorem", "kind": "kindred"},
+    {"slug": "zenos-paradoxes", "kind": "kindred"}
+  ]
+}

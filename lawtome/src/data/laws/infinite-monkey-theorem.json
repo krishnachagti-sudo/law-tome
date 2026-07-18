@@ -1,0 +1,57 @@
+{
+  "no": "383",
+  "slug": "infinite-monkey-theorem",
+  "name": "The Infinite Monkey Theorem",
+  "aliases": ["The monkeys and typewriters"],
+  "statement": "A monkey typing at random for infinite time will almost surely type all of Shakespeare.",
+  "statementAccent": "almost surely",
+  "meaning": "The infinite monkey theorem states that a monkey striking keys at random for an infinite amount of time will almost surely type any given text, such as the complete works of Shakespeare. More formally, in an unending sequence of independent random characters, any fixed finite string appears with probability one, and indeed infinitely often. The vivid image dramatises a precise fact about randomness and infinity, and it is routinely misunderstood.",
+  "mechanism": "For any target string, a single random block of the right length matches with a tiny but positive probability. Over many independent attempts, the chance of never matching falls toward zero, so across infinitely many attempts a match is certain. Because the per-trial probability stays fixed and the trials are independent and endless, the string not only appears but recurs endlessly, a consequence of the Borel-Cantelli reasoning. The phrase almost surely means probability one in this infinite limit, not a guarantee within any finite stretch of typing.",
+  "examples": [
+    {
+      "tag": "The banana block",
+      "text": "On a fifty-key keyboard, a six-letter word matches with probability one in fifteen billion per block; minuscule, yet the chance of never matching over infinitely many blocks is zero."
+    },
+    {
+      "tag": "The Hamlet number",
+      "text": "For the full text of Hamlet the odds on a single pass are astronomically small, so remote that in any operational sense the event has probability zero within the universe's lifetime."
+    },
+    {
+      "tag": "The real monkeys",
+      "text": "A 2002 experiment with macaques and a keyboard produced a few pages dominated by the letter S, with the animals treating the keyboard as anything but a random generator."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The finite reality",
+      "text": "A 2024 analysis found that within the universe's lifespan even a vast troop of typing chimpanzees could almost certainly never produce Shakespeare's works, so the popular version misleads about real time."
+    },
+    {
+      "name": "Borel's original point",
+      "text": "Émile Borel used the image in 1913 to illustrate statistical mechanics, that some outcomes, while not strictly impossible, are so improbable they can be treated as never happening."
+    }
+  ],
+  "whyItMatters": "It is a memorable teaching example for almost-sure events and the gulf between what is possible and what is probable: an outcome can be guaranteed in the infinite limit yet effectively impossible in any physical timeframe. It clarifies why arguments that invoke infinite time must be handled carefully, and it is a favourite illustration of randomness, independence, and the meaning of probability one.",
+  "working": [
+    {"lead": "Read almost surely precisely", "text": "take probability one as a statement about the infinite limit, not a promise of occurrence in any finite run."},
+    {"lead": "Separate possible from probable", "text": "distinguish an event with positive probability, certain over infinite trials, from one likely to occur in a realistic time, which this is not."},
+    {"lead": "Distrust the popular version", "text": "remember that in any physical timeframe the target essentially never appears, so the image dramatises infinity, not achievable typing."}
+  ],
+  "limits": "The theorem is a rigorous probability result, a consequence of independence and the Borel-Cantelli reasoning, but its content is a limit statement about infinity. It says nothing about finite or realistic timeframes, in which the expected time to produce even a short passage vastly exceeds the age and projected lifespan of the universe. It assumes truly independent, uniform random keystrokes, which real monkeys and many software imitations do not provide. Its reliability is high as mathematics and its reputation as a source of confusion is equally high.",
+  "misreadings": "It would not happen in any reasonable timeframe; the expected waiting time dwarfs the lifetime of the cosmos, so probability one here never means soon. Probability one does not mean guaranteed within finite time; it is an asymptotic property that permits the event to be absent from every physically possible run. And software monkeys that use matching shortcuts are not demonstrations of the theorem, which requires genuinely independent random typing.",
+  "origin": "The modern typing-monkeys image is due to the mathematician Émile Borel in 1913, popularised by Arthur Eddington in 1928, with conceptual antecedents in Aristotle and Cicero on atoms and letters.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1913,
+  "namedAfter": "Émile Borel",
+  "sources": [
+    {"text": "Infinite monkey theorem, Wikipedia. — the almost-surely statement, the Borel and Eddington history, and the Hamlet and real-monkey figures.", "url": "https://en.wikipedia.org/wiki/Infinite_monkey_theorem", "type": "secondary"},
+    {"text": "Woodcock & Falletta, \"A numerical evaluation of the Finite Monkeys Theorem,\" reported by Phys.org (2024). — the finding that finite monkeys could not produce Shakespeare within the universe's lifespan.", "url": "https://phys.org/news/2024-10-monkey-unable-hamlet-lifetime-universe.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Infinite_monkey_theorem",
+  "related": [
+    {"slug": "the-law-of-truly-large-numbers", "kind": "kindred"},
+    {"slug": "coupon-collector-problem", "kind": "kindred"}
+  ]
+}

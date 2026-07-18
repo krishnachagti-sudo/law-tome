@@ -1,0 +1,78 @@
+{
+  "no": "385",
+  "slug": "magnus-effect",
+  "name": "The Magnus Effect",
+  "aliases": [
+    "Magnus force"
+  ],
+  "statement": "A spinning ball curves, because its spin pushes the air and the air pushes back sideways.",
+  "statementAccent": "pushes back sideways",
+  "meaning": "The Magnus effect is the sideways force a spinning object feels as it moves through a fluid, directed perpendicular to both its motion and its spin axis. It is why a spinning ball curves in flight, why a topspin shot dives and a backspin shot floats. The spin drags the surrounding air, making the flow faster on one side and slower on the other, and the resulting imbalance produces a net force toward the faster-moving side.",
+  "mechanism": "As the object spins, its surface, through the air's viscosity, drags a thin layer of fluid around with it, adding to the airflow on one side and opposing it on the other. This asymmetry deflects the wake and produces a pressure difference and a net sideways force. The simple picture of faster air meaning lower pressure captures the direction but not the full story: the real flow involves a viscous boundary layer, is often turbulent and separated, and the precise behaviour must be measured rather than read off from a tidy equation.",
+  "examples": [
+    {
+      "tag": "Curveballs and free kicks",
+      "text": "The spin on a pitched baseball, a driven golf ball, or a bent free kick produces a Magnus force that curves the ball's path in flight."
+    },
+    {
+      "tag": "Topspin and backspin",
+      "text": "Topspin adds a downward Magnus force that makes a tennis ball dip, while backspin lifts it, letting players control trajectory through spin."
+    },
+    {
+      "tag": "Rotor ships",
+      "text": "Flettner rotor ships mount tall spinning cylinders that generate thrust from the Magnus force as wind flows past them."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The reverse Magnus effect",
+      "text": "Near a critical range of speeds and surface roughness the flow can go turbulent on one side and stay smooth on the other, flipping the force to the opposite direction, a real and well-documented exception."
+    },
+    {
+      "name": "The rotating-cylinder demonstration",
+      "text": "Magnus's own demonstration used a rapidly spinning brass cylinder in an air stream, showing the sideways deflection that now bears his name."
+    }
+  ],
+  "whyItMatters": "It governs the flight of spinning balls across nearly every sport, making it central to sports ballistics and the design of balls and play. Beyond games it matters in aerodynamics, in the stability of spin-stabilised projectiles, and in propulsion through rotor ships, and it is a vivid demonstration of how rotation couples to a fluid flow to produce lift where intuition might expect none.",
+  "working": [
+    {
+      "lead": "Read the force from the spin",
+      "text": "expect the deflection to point toward the side where the spinning surface moves with the airflow, the faster-flow side."
+    },
+    {
+      "lead": "Use spin to steer",
+      "text": "apply topspin, backspin, or sidespin to control how a ball dips, floats, or curves in flight."
+    },
+    {
+      "lead": "Do not oversimplify the cause",
+      "text": "treat the faster-air-lower-pressure story as a rough guide, since the real flow is viscous, turbulent, and can even reverse the force."
+    }
+  ],
+  "limits": "It is a real, well-established force, but its simple explanation is a simplification: the actual flow around a spinning ball is viscous, unsteady, and separated, so quantitative predictions rely on measured lift coefficients rather than a clean formula. Under certain conditions, near a critical range of speed and roughness, the effect reverses direction, the reverse Magnus effect, so the force is not always toward the naively expected side. Sources also differ on the date of Magnus's demonstration, giving 1852 or 1853.",
+  "misreadings": "It is not fully captured by a simple Bernoulli or equal-transit-time argument; the effect is driven by viscous entrainment turning the flow, and the full picture requires empirical data. The force does not always point the same way for a given spin, since the reverse Magnus effect can flip it near critical speeds. And Magnus did not first discover it: Newton noted it in 1672 and Benjamin Robins explained musket-ball drift in the eighteenth century, with Magnus the later namesake.",
+  "origin": "Named after the German physicist Heinrich Gustav Magnus, who demonstrated it experimentally around 1852; the phenomenon had been noted earlier by Isaac Newton in 1672 and explained for musket balls by Benjamin Robins in 1742.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1852,
+  "namedAfter": "Heinrich Gustav Magnus",
+  "sources": [
+    {
+      "text": "Magnus effect, Wikipedia. — the perpendicular force, the entrainment mechanism, and the reverse Magnus effect.",
+      "url": "https://en.wikipedia.org/wiki/Magnus_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Ideal Lift of a Spinning Ball, NASA Glenn Research Center. — the flow-turning explanation and the complexity of the real boundary layer.",
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-lift-of-a-spinning-ball/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Magnus_effect",
+  "related": [
+    {
+      "slug": "bernoullis-principle",
+      "kind": "kindred"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "no": "387",
+  "slug": "brownian-motion",
+  "name": "Brownian Motion",
+  "aliases": ["Brownian movement", "Pedesis"],
+  "statement": "Tiny suspended particles jiggle at random, kicked about by the unseen molecules of the fluid.",
+  "statementAccent": "kicked about by the unseen molecules",
+  "meaning": "Brownian motion is the ceaseless, erratic movement of microscopic particles suspended in a fluid, whether a liquid or a gas. A speck of pollen or dust in water traces a jittery, unpredictable path, not because it is alive or because of currents, but because it is constantly bombarded from all sides by the fast-moving molecules of the surrounding fluid. The random imbalance of these countless tiny collisions pushes the particle this way and that.",
+  "mechanism": "The molecules of the fluid are in perpetual thermal motion, striking the suspended particle from every direction. At any instant the impacts on opposite sides do not exactly cancel, and the fluctuating imbalance nudges the particle along a random walk. Einstein connected this to measurable quantities, showing that the average of the squared displacement grows in proportion to time, with a rate set by temperature, the fluid's viscosity, and the size of the particle, and inversely related to the number of molecules, so that watching the jiggle could reveal the scale of atoms.",
+  "examples": [
+    {
+      "tag": "Brown's pollen",
+      "text": "Robert Brown watched pollen grains in water dance under the microscope in 1827, and confirmed the motion was not life by seeing the same jiggle in dust from inorganic matter."
+    },
+    {
+      "tag": "Perrin's confirmation",
+      "text": "Jean Perrin's careful experiments around 1908 matched Einstein's predictions and yielded a value for the number of molecules, giving decisive evidence that atoms are real."
+    },
+    {
+      "tag": "The mathematical model",
+      "text": "The idealised version, the Wiener process, is the foundation of stochastic calculus, used to model diffusion and even option prices in finance."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Einstein and Smoluchowski",
+      "text": "Einstein's 1905 theory and Marian Smoluchowski's independent 1906 treatment explained the motion quantitatively from molecular collisions, turning a curiosity into a probe of matter."
+    },
+    {
+      "name": "The Wiener process",
+      "text": "The abstract mathematical idealisation of Brownian motion, with continuous but nowhere-smooth paths, underpinning the modern theory of stochastic processes."
+    }
+  ],
+  "whyItMatters": "It provided some of the most convincing evidence that atoms and molecules physically exist, converting doubters and cementing the kinetic theory of matter. It is foundational to statistical mechanics, and its mathematical idealisation underlies diffusion, noise, and stochastic processes across physics, chemistry, biology, and finance, making a jittering speck of pollen a gateway to both the atomic world and the mathematics of randomness.",
+  "working": [
+    {"lead": "Attribute the jiggle to molecules", "text": "read the random motion as evidence of unseen molecular bombardment, not of currents, evaporation, or life."},
+    {"lead": "Use displacement to measure", "text": "exploit the growth of mean squared displacement with time to infer molecular scales, as Einstein and Perrin did."},
+    {"lead": "Distinguish model from phenomenon", "text": "treat the Wiener process as an idealised model whose infinitely jagged paths are smoother in reality at short enough timescales."}
+  ],
+  "limits": "Brownian motion is a real, thoroughly confirmed phenomenon with a firmly established theory. Its mathematical idealisation, the Wiener process, is a model rather than the phenomenon itself: the ideal process has continuous but nowhere-differentiable paths, whereas a real particle has a finite velocity at short enough timescales. The classic quantitative results assume a small particle in a fluid of many much smaller molecules in thermal equilibrium.",
+  "misreadings": "Robert Brown did not explain the motion; he only observed and described it, and explicitly ruled out life and currents, while the explanation came later from Einstein and Smoluchowski. The motion is not caused by convection, evaporation, or the particle being alive, but by molecular bombardment. And the perfectly jagged mathematical model is an idealisation, not a literal description of a real particle's path at every scale.",
+  "origin": "Observed by the botanist Robert Brown in 1827, explained theoretically by Albert Einstein in 1905 and independently by Marian Smoluchowski in 1906, and confirmed experimentally by Jean Perrin, who received the 1926 Nobel Prize for the work.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1827,
+  "namedAfter": "Robert Brown",
+  "sources": [
+    {"text": "Brownian motion, Wikipedia. — the molecular-bombardment mechanism, the Brown, Einstein, Smoluchowski, and Perrin history, and the Wiener process.", "url": "https://en.wikipedia.org/wiki/Brownian_motion", "type": "secondary"},
+    {"text": "Brownian motion, Encyclopaedia Britannica. — the random movement of suspended particles and its explanation.", "url": "https://www.britannica.com/science/Brownian-motion", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Brownian_motion",
+  "related": [
+    {"slug": "the-second-law-of-thermodynamics", "kind": "kindred"},
+    {"slug": "ficks-laws-of-diffusion", "kind": "kindred"}
+  ]
+}
