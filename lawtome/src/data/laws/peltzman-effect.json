@@ -1,0 +1,62 @@
+{
+  "no": "103",
+  "slug": "peltzman-effect",
+  "name": "The Peltzman Effect",
+  "aliases": ["Risk compensation"],
+  "statement": "Making something safer leads people to behave more riskily, offsetting part of the gain.",
+  "statementAccent": "behave more riskily, offsetting part of the gain",
+  "meaning": "When a safety measure makes an activity less dangerous — seat belts, better brakes, helmets — people tend to spend some of the new safety margin on riskier behaviour rather than banking all of it as reduced harm. The improvement is real, but it is partly eroded by the behaviour it invites.",
+  "mechanism": "People are theorised to carry a target level of risk they are willing to accept. When a safety measure lowers perceived risk, behaviour adjusts back up toward that target — driving faster, following closer, braking later — until perceived risk returns near where it started. In its strongest form, 'risk homeostasis', behaviour fully re-equilibrates to the target; but full homing to a fixed target is contested, and the milder claim is only that some of the safety gain is spent, not all.",
+  "examples": [
+    {
+      "tag": "Seat belts and driving",
+      "text": "Peltzman's original thesis, and a later study, reported belted drivers driving faster or less carefully. But subsequent work found mandatory seat-belt laws unambiguously reduce traffic fatalities — so any behavioural offset is partial, and the net effect still saves lives."
+    },
+    {
+      "tag": "Anti-lock brakes in taxis",
+      "text": "A multi-year comparison of taxis with and without anti-lock brakes found the ABS cabs crashed slightly more, not less, with drivers observed braking harder, cornering tighter, and driving faster — a frequently cited case for risk compensation, though the primary study's exact authorship is often reported second-hand."
+    },
+    {
+      "tag": "Helmets and other gear",
+      "text": "Evidence on ski and football helmets is mixed: some studies find helmeted users go faster or tackle more dangerously, others find no risk compensation and a net reduction in head injury. The direction of the net effect generally still favours the safety gear."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Risk homeostasis",
+      "text": "Gerald Wilde's strongest version (proposed 1982): people hold a fixed target level of risk and fully adjust behaviour to keep perceived risk constant, so safety measures are entirely offset. This full-offset claim is the most contested."
+    },
+    {
+      "name": "Risk compensation",
+      "text": "The general, discipline-neutral name for the same behavioural tendency, without the strong homeostasis assumption — the umbrella under which the partial-offset evidence sits."
+    },
+    {
+      "name": "Moral hazard",
+      "text": "The economic cousin: being insulated from a cost or consequence — by insurance, a bailout, a safety net — induces riskier behaviour, the same logic applied to financial rather than physical risk."
+    }
+  ],
+  "whyItMatters": "It complicates the naive case for safety mandates: a measure's real-world benefit can fall short of its engineering benefit because behaviour adapts. Used honestly it argues for measuring the behavioural response rather than assuming the full paper gain — and used dishonestly it becomes a rhetorical excuse against safety rules the evidence still supports.",
+  "working": [
+    {"lead": "Count the behavioural offset, don't assume the full gain", "text": "estimate how behaviour will adapt to a safety measure rather than crediting the whole engineering improvement to reduced harm."},
+    {"lead": "Don't let it become an anti-safety excuse", "text": "the offset is usually partial and net safety still improves; the effect qualifies safety measures, it does not refute them."},
+    {"lead": "Watch for the strongest form's weakness", "text": "full risk homeostasis — complete offset — is poorly supported; treat 'the measure will be entirely cancelled out' as a claim needing strong evidence."}
+  ],
+  "limits": "The magnitude is heavily contested and is the core caveat. Peltzman's original 'virtually complete offset' finding was disputed — a reanalysis reported errors, and his model failed to predict pre-regulation fatality rates. The broad consensus is that the effect is partial, not complete, commonly offsetting less than half of the direct benefit where it appears at all. Safety measures generally still net-reduce harm: US motor-vehicle deaths per capita fell more than half from the 1960s onward, credited largely to safety standards, and seat belts save lives overall. The theory also does not predict how large the compensating response will be, so it under-determines any specific case.",
+  "misreadings": "It does not say safety measures are futile or self-cancelling. The evidence points to a partial offset with net safety usually still improving; the strong 'risk homeostasis' version, in which the gain is fully erased, is contested and generally unsupported. It qualifies safety policy — measure the behavioural response — rather than arguing against it.",
+  "origin": "Named for the University of Chicago economist Sam Peltzman, whose 1975 paper 'The Effects of Automobile Safety Regulation' (Journal of Political Economy) argued that driver responses to mandated safety devices were 'virtually complete', so regulation had not reduced highway deaths. The broader 'risk compensation' framing and its strongest form, 'risk homeostasis', were developed by Gerald Wilde from 1982.",
+  "category": "psychology",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1975,
+  "namedAfter": "Sam Peltzman",
+  "sources": [
+    {"text": "Peltzman, S. (1975). \"The Effects of Automobile Safety Regulation.\" Journal of Political Economy, 83(4), 677–725.", "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/260352", "type": "primary"},
+    {"text": "Peltzman effect, Wikipedia. — the offset thesis and its disputed magnitude.", "url": "https://en.wikipedia.org/wiki/Peltzman_effect", "type": "secondary"},
+    {"text": "Risk compensation, Wikipedia. — the seat-belt, anti-lock-brake, and helmet evidence, and that net safety generally still improves.", "url": "https://en.wikipedia.org/wiki/Risk_compensation", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Peltzman_effect",
+  "related": [
+    {"slug": "cobra-effect", "kind": "kindred"},
+    {"slug": "jevons-paradox", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "no": "095",
+  "slug": "fitts-law",
+  "name": "Fitts's Law",
+  "statement": "The time to point at a target grows with its distance and shrinks with its size.",
+  "statementAccent": "distance and shrinks with its size",
+  "meaning": "The farther away a target is and the smaller it is, the longer it takes to point at it. Big, close targets are fast; small, distant ones are slow — and the cost grows with the logarithm of the distance-to-size ratio, so doubling the distance costs less than you would guess.",
+  "mechanism": "It formalises the speed–accuracy trade-off: moving fast toward a small target risks overshooting, forcing corrective sub-movements. Fitts treated the distance as signal and the target width as noise and borrowed Shannon's information theory — the 'index of difficulty', in bits, is the information the motor system must transmit to land within tolerance. Movement time is roughly a + b·log₂(2D/W).",
+  "examples": [
+    {
+      "tag": "Bigger, closer buttons",
+      "text": "A primary action rendered as a large, nearby button is acquired faster than a small, distant one — the most direct design consequence of the law, and why important controls are made prominent and close to hand."
+    },
+    {
+      "tag": "Screen edges are infinite targets",
+      "text": "The pointer stops at the screen boundary, so an edge element is effectively infinitely tall in one dimension — you can slam the cursor at it without overshooting. macOS pins its menu bar to the very top edge for exactly this reason."
+    },
+    {
+      "tag": "The magic corners",
+      "text": "Corners are the fastest targets of all, because two edges trap the cursor in both dimensions — a theoretically infinite button. The Windows Start button sits in one, exploiting the effect."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Shannon formulation",
+      "text": "Scott MacKenzie's variant, ID = log₂(D/W + 1), which mirrors the Shannon–Hartley theorem and underlies the ISO 9241 standard for evaluating pointing devices."
+    },
+    {
+      "name": "The steering law",
+      "text": "Accot and Zhai's extension from discrete pointing to moving through a constrained path or tunnel — the model behind navigating cascading menus."
+    },
+    {
+      "name": "Hick's law",
+      "text": "Its companion in interface design: where Fitts's law governs the time to acquire a target, Hick's law governs the time to choose among options."
+    }
+  ],
+  "whyItMatters": "It is the quantitative backbone of interface design — the reason toolbars, menus, and touch targets are sized and placed the way they are. It turns 'make the button easier to click' into a formula, and it explains why edges and corners are prime real estate.",
+  "working": [
+    {"lead": "Make frequent targets big and close", "text": "size and position controls by how often they are used; the common action should be the large, near one."},
+    {"lead": "Exploit edges and corners", "text": "park high-value targets against a screen edge or in a corner, where the cursor cannot overshoot — free acquisition speed."},
+    {"lead": "Bring the action to the cursor", "text": "context menus and radial menus appear where the pointer already is, cutting distance to near zero."}
+  ],
+  "limits": "Fitts originally modelled one-dimensional movement; real pointing is two-dimensional, which needed later 'effective width' models. Its predictive power degrades when distance and size are varied over very wide ranges, where it implies implausibly that they can be rescaled without changing movement time. It does not cover every kind of movement — continuous tracking, purely ballistic actions — and the fitted constants differ by input device, so touch and mouse must be modelled separately.",
+  "misreadings": "It is not just 'bigger is better' — it is a precise trade-off between distance and size measured in bits, and the logarithm means the returns to enlarging a target diminish. Nor does it apply unchanged across devices; its constants have to be re-fit for touch, stylus, or mouse.",
+  "origin": "Stated by the psychologist Paul Fitts in his 1954 paper 'The information capacity of the human motor system in controlling the amplitude of movement' (Journal of Experimental Psychology), which applied Shannon's information theory to human aiming. It became one of the foundational laws of human–computer interaction.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1954,
+  "namedAfter": "Paul Fitts",
+  "sources": [
+    {"text": "Fitts, P.M. (1954). \"The information capacity of the human motor system in controlling the amplitude of movement.\" Journal of Experimental Psychology, 47, 381–391.", "url": "http://www2.psychology.uiowa.edu/faculty/mordkoff/InfoProc/pdfs/Fitts%201954.pdf", "type": "primary"},
+    {"text": "Fitts's law, Wikipedia. — the formula, the edge/corner design consequences, and the Shannon and steering-law variants.", "url": "https://en.wikipedia.org/wiki/Fitts%27s_law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fitts%27s_law",
+  "related": [
+    {"slug": "hicks-law", "kind": "kindred"}
+  ]
+}

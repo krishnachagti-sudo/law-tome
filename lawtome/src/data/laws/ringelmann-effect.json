@@ -1,0 +1,60 @@
+{
+  "no": "105",
+  "slug": "ringelmann-effect",
+  "name": "The Ringelmann Effect",
+  "statement": "As a group grows, each member pulls less of their own weight.",
+  "statementAccent": "each member pulls less of their own weight",
+  "meaning": "When people work together on a shared, additive task, the group's total output grows more slowly than the headcount would predict. Each person added contributes, on average, less than they would working alone — more hands do not translate into proportionally more work.",
+  "mechanism": "Two distinct losses combine as the group grows. Motivation loss: individuals ease off in a group, expecting others to make up the difference or feeling their own contribution is dispensable and unnoticed. Coordination loss: even fully motivated members cannot perfectly synchronise timing and direction, so the combined force falls short of the sum of individual maxima. Both accumulate with size. The motivation component is what was later isolated and renamed social loafing.",
+  "examples": [
+    {
+      "tag": "Pulling the rope",
+      "text": "Ringelmann's canonical task: as more people pulled a rope together, average force per person fell — reported at roughly 85% of solo effort in groups of three and about 49% in groups of eight. These much-quoted percentages descend largely from Moede's 1927 secondhand write-up rather than Ringelmann's own text."
+    },
+    {
+      "tag": "Free-riders on a team",
+      "text": "On group assignments and committees, some members contribute less than they would individually, relying on others to carry the load — and the larger the team, the more per-person slack. An applied extension of the effect rather than a measurement from Ringelmann's own data."
+    },
+    {
+      "tag": "Isolating the motivation",
+      "text": "Ingham and colleagues (1974) had blindfolded participants believe others were pulling with them when they were pulling alone. The effort drop persisted without any real co-pullers, pointing to motivation loss independent of coordination."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Social loafing",
+      "text": "The modern successor, named by Latané, Williams and Harkins (1979), who reproduced the effect with clapping and shouting and argued the decline reflected reduced individual effort, not merely coordination — a far better-studied framing than Ringelmann's original."
+    },
+    {
+      "name": "The free-rider problem",
+      "text": "The economic cousin: individuals enjoy the group's output while under-contributing to it, overlapping directly with the motivation-loss account of the effect."
+    },
+    {
+      "name": "Diffusion of responsibility",
+      "text": "A proposed driver: as the group grows, individual accountability dilutes, so any one person feels less answerable for the outcome and eases off."
+    }
+  ],
+  "whyItMatters": "It is the founding observation behind the whole study of social loafing and a standing caution against assuming that adding people adds proportional output. It reframes group productivity as something that has to be engineered — through visible individual contribution and accountability — rather than assumed to scale with headcount.",
+  "working": [
+    {"lead": "Make individual contribution visible", "text": "the motivation loss shrinks when each person's effort can be identified, so build in individual accountability rather than pooling everything anonymously."},
+    {"lead": "Don't assume output scales with headcount", "text": "expect diminishing per-person returns as teams grow; more people is not the same as more work."},
+    {"lead": "Attack both losses", "text": "reduce coordination loss with better synchronisation and roles, and motivation loss with meaningful, credited individual stakes."}
+  ],
+  "limits": "The original data were thin and long obscure; Ringelmann's report was hard to locate for decades until Kravitz and Martin rediscovered it in 1986, and the widely quoted percentages descend mainly from Moede's 1927 secondhand account. Crucially, Ringelmann's own design could not separate motivation loss from coordination loss — that separation is owed to Ingham and colleagues (1974), and the generalisation and naming to Latané and colleagues (1979). The effect is not universal, either: some evidence suggests people with prior team-sport experience may not show it. It is a genuine foundational finding whose specific original figures should be cited with care.",
+  "misreadings": "It is not that people are simply lazy, nor that the whole decline is one thing: Ringelmann's data mixed coordination loss with motivation loss and could not tell them apart. The motivation component — social loafing — was isolated only by later, better-controlled work, and the famous percentages come largely from a secondhand 1927 report rather than Ringelmann's own paper.",
+  "origin": "Named for Maximilien Ringelmann (1861–1931), a French agricultural engineer who found in rope-pulling and similar tasks that per-person force fell as more people pulled together. His data were gathered from the 1880s and published in 1913; the familiar percentage figures were popularised through Walther Moede's 1927 German write-up, and the original paper was rediscovered by Kravitz and Martin in 1986.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1913,
+  "namedAfter": "Maximilien Ringelmann",
+  "sources": [
+    {"text": "Ringelmann effect, Wikipedia. — the definition, the rope-pulling figures, and the coordination-versus-motivation distinction.", "url": "https://en.wikipedia.org/wiki/Ringelmann_effect", "type": "secondary"},
+    {"text": "Social loafing, Wikipedia. — Ingham et al. (1974) isolating motivation loss and Latané, Williams & Harkins (1979) coining social loafing.", "url": "https://en.wikipedia.org/wiki/Social_loafing", "type": "secondary"},
+    {"text": "Kravitz, D.A. & Martin, B. (1986). \"Ringelmann Rediscovered: The Original Article.\" Journal of Personality and Social Psychology, 50(5), 936–941.", "url": "https://www.researchgate.net/publication/209410111_Ringelmann_Rediscovered_The_Original_Article", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Ringelmann_effect",
+  "related": [
+    {"slug": "brooks-law", "kind": "kindred"}
+  ]
+}

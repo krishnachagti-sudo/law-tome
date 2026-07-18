@@ -1,0 +1,57 @@
+{
+  "no": "096",
+  "slug": "hicks-law",
+  "name": "Hick's Law",
+  "aliases": ["The Hick–Hyman law"],
+  "statement": "The time to decide grows with the logarithm of the number of choices.",
+  "statementAccent": "logarithm of the number of choices",
+  "meaning": "The more options a person faces, the longer they take to pick one — but not in proportion. Because the relationship is logarithmic, doubling the number of choices does not double the decision time; each additional option adds less delay than the one before it.",
+  "mechanism": "Hick cast reaction time as the time to resolve information, measured in bits. Confronted with several equally likely options, a chooser behaves as if subdividing the set into categories and eliminating about half at each step — a binary-search-like process — so the time scales with log₂ of the number of alternatives rather than linearly. Hick found the rate of gain of information was roughly constant, on the order of a few bits per second. The usual form is RT = a + b·log₂(n + 1), where the '+1' covers the uncertainty about whether to respond at all.",
+  "examples": [
+    {
+      "tag": "Menus and controls",
+      "text": "Fewer, well-grouped options let users choose faster, which is why the law is invoked most in navigation menus and button sets. The real lever is often categorisation, not deletion: Amazon expands grouped category links rather than showing everything at once, and a checkout split into sequential screens cuts choices-per-screen while keeping full functionality."
+    },
+    {
+      "tag": "Where it does not apply",
+      "text": "To find a word in a randomly ordered list you must scan each entry, so time is linear and Hick's law does not hold. If the list is alphabetical and you know the word, you can subdivide and the logarithmic relationship returns — the law depends on the choices being structured enough to search by halving."
+    },
+    {
+      "tag": "Knowing what you want",
+      "text": "If a user already knows their target before seeing the list, decision time is far shorter than the law predicts. Hick's law assumes equally probable, un-preselected alternatives; prior intent breaks that assumption."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Hick–Hyman law",
+      "text": "The fuller name once Ray Hyman's 1953 generalisation is included: he related reaction time to the Shannon information entropy of the stimulus set (RT = b·H), extending the rule to choices of unequal probability."
+    },
+    {
+      "name": "Fitts's law",
+      "text": "Its companion in interface design: where Hick's law governs the time to choose among options, Fitts's law governs the time to then move to and acquire the chosen target. Both are logarithmic and both borrow Shannon's bits."
+    }
+  ],
+  "whyItMatters": "It gives interface and cognitive design a quantitative handle on choice: adding options has a real but diminishing cost, and the cost is paid in decision time. It underwrites the case for grouping and hierarchy over flat, sprawling lists — and, read carefully, it also warns against the lazy conclusion that fewer options are always better.",
+  "working": [
+    {"lead": "Structure choices so they can be halved", "text": "the logarithmic speed-up only appears when users can subdivide by category; group and label options rather than merely trimming them."},
+    {"lead": "Don't cut options blindly", "text": "the law is often over-applied to justify 'always fewer choices' — but a searchable, well-organised long list can beat an artificially short one."},
+    {"lead": "Design for known intent", "text": "when users arrive knowing what they want, prioritise findability (search, clear labels) over raw option count, since the law's assumptions no longer bind."}
+  ],
+  "limits": "Hick's law applies to simple choice-reaction tasks with equally likely, known, pre-visible alternatives. It does not straightforwardly cover large menus where users scan (linear time) or must categorise (logarithmic only if the structure supports subdivision). Documented exceptions weaken or reverse it: verbal responses show little reaction-time increase with more elements, saccadic eye movements show no relationship or even faster responses, and sequence learning traces a sigmoid rather than linear curve. Its quantitative predictions are domain-limited, not universal.",
+  "misreadings": "It is not a blanket rule that fewer options are always faster or better — its logarithm means the marginal cost of each added option shrinks, and its scope is narrow. In UX it is routinely overstretched; practitioners note that organisation and hierarchy usually matter more than sheer option count, and that some complexity is irreducible.",
+  "origin": "Stated by the British psychologist William Edmund Hick in his 1952 paper 'On the rate of gain of information' (Quarterly Journal of Experimental Psychology), using an experiment of ten lamps and matching keys. Ray Hyman generalised it the following year, in 'Stimulus information as a determinant of reaction time' (Journal of Experimental Psychology, 1953), which is why the fuller result is called the Hick–Hyman law.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1952,
+  "namedAfter": "William Edmund Hick",
+  "sources": [
+    {"text": "Hick, W.E. (1952). \"On the rate of gain of information.\" Quarterly Journal of Experimental Psychology, 4, 11–26.", "url": "https://journals.sagepub.com/doi/10.1080/17470215208416600", "type": "primary"},
+    {"text": "Hick's law, Wikipedia. — the log₂ and entropy forms, the mechanism, and the scanning/verbal/saccadic exceptions.", "url": "https://en.wikipedia.org/wiki/Hick%27s_law", "type": "secondary"},
+    {"text": "\"Hick's Law,\" Interaction Design Foundation. — the categorisation-over-deletion reading and the known-intent exception.", "url": "https://www.interaction-design.org/literature/topics/hick-s-law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hick%27s_law",
+  "related": [
+    {"slug": "fitts-law", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "no": "100",
+  "slug": "zeigarnik-effect",
+  "name": "The Zeigarnik Effect",
+  "statement": "People remember unfinished tasks better than completed ones.",
+  "statementAccent": "unfinished tasks better than completed ones",
+  "meaning": "Once you start something, your mind holds onto it and keeps it accessible. Finish it and the mental grip releases and the details fade; get interrupted before finishing and the task lingers, intruding into memory and attention until it is resolved.",
+  "mechanism": "The Gestalt account, from Kurt Lewin's field theory: starting a task creates a task-specific psychological tension — an unfinished intention — that raises the cognitive accessibility of the task's contents. Completing the task relieves the tension; interruption leaves it unresolved, so the material stays active in memory. It is a tidy mechanism, but as the replication record shows, a fragile empirical effect.",
+  "examples": [
+    {
+      "tag": "The waiter's open orders",
+      "text": "The origin anecdote, credited to Lewin's observation: a waiter recalls the details of unpaid orders vividly, then forgets them the moment the bill is settled. Compelling, but anecdotal — it should be read as illustration, not evidence."
+    },
+    {
+      "tag": "Cliffhangers",
+      "text": "Serialised stories end mid-arc so the unresolved thread keeps nagging viewers back for the next episode. A widely cited application of the effect to narrative design, if a heuristic one."
+    },
+    {
+      "tag": "Nagging open tabs",
+      "text": "An unfinished work item, an unsent reply, a browser full of open tabs — each kept as an unresolved intention that keeps intruding on thought until closed. A common modern illustration rather than a laboratory finding."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Ovsiankina effect",
+      "text": "The urge to resume an interrupted task, as distinct from remembering it — named for Maria Ovsiankina, Zeigarnik's contemporary. Notably, a 2025 meta-analysis found this resumption tendency held up even as the memory effect did not."
+    },
+    {
+      "name": "Lewin's tension systems",
+      "text": "The theoretical parent: Kurt Lewin's field theory, in which unmet intentions act as tension systems that persist until discharged. The Zeigarnik effect was offered as an empirical demonstration of it."
+    }
+  ],
+  "whyItMatters": "It is one of the most intuitive and widely borrowed ideas in psychology, invoked everywhere from study strategies to television writing to productivity advice. It is also a cautionary case: a famous, plausible, much-taught effect whose central memory claim has repeatedly failed to replicate — a reminder to check whether a beloved finding actually holds.",
+  "working": [
+    {"lead": "Lean on resumption, not memory", "text": "the better-supported cousin is the Ovsiankina effect — the pull to resume interrupted work — so use interruption to drive return, not to aid recall."},
+    {"lead": "Treat it as a design heuristic", "text": "cliffhangers and deliberately-left-open loops can hold attention, but do not rely on the memory advantage as if it were established fact."},
+    {"lead": "Don't cite the waiter as proof", "text": "the origin story is anecdotal; keep it as an illustration and let the mixed evidence set your confidence."}
+  ],
+  "limits": "Replication is shaky. Several later studies in other countries failed to find a significant recall difference between finished and interrupted tasks — Van Bergen's 1968 work is the standard example — and a 2025 systematic review and meta-analysis found no memory advantage for unfinished tasks, while confirming a general tendency to resume them. The much-repeated 'about 90% better recall' figure traces to secondary sources, not the 1927 paper, and the waiter anecdote is not evidence. Proposed moderators for why early results appeared and later ones did not include experimenter authority, situational demand, and whether participants volunteered.",
+  "misreadings": "It is not a robust, established law of memory. The resumption tendency (Ovsiankina) survives scrutiny better than the memory effect (Zeigarnik), which a 2025 meta-analysis found lacks universal validity. The famous recall figures are unsourced to the primary work, and the waiter story is anecdotal — useful as a heuristic and a design idea, not as a reliable empirical constant.",
+  "origin": "Described by the Lithuanian-Soviet psychologist Bluma Zeigarnik, a student of Kurt Lewin, in a 1927 report in Psychologische Forschung. The prompting observation — a waiter who remembered unpaid orders but forgot them once settled — is attributed to Lewin and is anecdotal.",
+  "category": "psychology",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1927,
+  "namedAfter": "Bluma Zeigarnik",
+  "sources": [
+    {"text": "Zeigarnik effect, Wikipedia. — the tension mechanism, the waiter anecdote, and the replication failures including Van Bergen (1968) and the 2025 meta-analysis.", "url": "https://en.wikipedia.org/wiki/Zeigarnik_effect", "type": "secondary"},
+    {"text": "MacLeod, C.M. (2020). \"Zeigarnik and von Restorff: The memory effects and the stories behind them.\" Memory & Cognition (abstract).", "url": "https://pubmed.ncbi.nlm.nih.gov/32291585/", "type": "secondary"},
+    {"text": "\"Interruption, recall and resumption: a meta-analysis of the Zeigarnik and Ovsiankina effects.\" Humanities and Social Sciences Communications (2025).", "url": "https://www.nature.com/articles/s41599-025-05000-w", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Zeigarnik_effect",
+  "related": [
+    {"slug": "ebbinghaus-forgetting-curve", "kind": "kindred"}
+  ]
+}

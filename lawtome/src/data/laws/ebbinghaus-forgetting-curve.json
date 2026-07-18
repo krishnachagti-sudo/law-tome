@@ -1,0 +1,60 @@
+{
+  "no": "106",
+  "slug": "ebbinghaus-forgetting-curve",
+  "name": "The Ebbinghaus Forgetting Curve",
+  "statement": "Memory fades fastest right after learning, then the loss slows.",
+  "statementAccent": "fades fastest right after learning",
+  "meaning": "After you learn something and do nothing to reinforce it, you forget a large share of it quickly — within hours to a day — and then the pace of loss tapers off. Reviewing or re-testing at intervals resets and flattens the curve, so what you retain lasts longer.",
+  "mechanism": "Forgetting is modelled as a function of memory strength and elapsed time. A simple form gives retrievability as R = e^(−t/S), where t is time and S is the relative strength or stability of the memory. Stronger memories — from meaningful encoding or repetition — decay along a shallower curve; weaker ones fall away fast at first and then level toward an asymptote rather than dropping to zero.",
+  "examples": [
+    {
+      "tag": "Steep, then levelling",
+      "text": "Retention drops sharply in the first hours to a day after learning, then the loss decelerates and approaches a floor rather than falling to nothing. This rapid-then-slowing shape is the defining feature of the curve."
+    },
+    {
+      "tag": "Spaced review flattens it",
+      "text": "Repeated, spaced recall raises memory strength and flattens the curve, so each successful review extends the interval before the next lapse. Ebbinghaus himself pointed to repetition, especially spaced repetition, as the countermeasure."
+    },
+    {
+      "tag": "Nonsense syllables",
+      "text": "Ebbinghaus tested himself on lists of consonant–vowel–consonant nonsense syllables like 'WID' or 'ZOF', chosen precisely to strip away prior meaning, and measured how much relearning effort he saved after various delays."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The spacing effect",
+      "text": "Also traced to Ebbinghaus: learning is more durable when study is distributed over time rather than massed into one session — the principle spaced review exploits."
+    },
+    {
+      "name": "The savings method",
+      "text": "Ebbinghaus's own measure of retention: not free recall but how much time or effort is saved when relearning a list, which is faster than first learning even after apparent forgetting."
+    },
+    {
+      "name": "The learning curve",
+      "text": "The acquisition counterpart, also credited to Ebbinghaus's work — how repetition improves learning, loosely the mirror of how disuse erodes it."
+    }
+  ],
+  "whyItMatters": "It was among the first attempts to bring controlled experiment to memory, founding the quantitative study of learning and forgetting, and it still underwrites practical review schedules — from flashcards to spaced-repetition software — built to intercept the curve before each lapse.",
+  "working": [
+    {"lead": "Review before you forget", "text": "schedule recall at expanding intervals to catch the material as retention dips, flattening the curve instead of relearning from scratch."},
+    {"lead": "Space, don't cram", "text": "distribute study over time; massed practice feels productive but decays faster than the same effort spread out."},
+    {"lead": "Encode for meaning", "text": "meaningful, well-connected material has higher strength and a shallower curve than rote or meaningless items, so it survives longer between reviews."}
+  ],
+  "limits": "The original work rested on a single subject — Ebbinghaus himself — and on artificial nonsense syllables chosen to minimise meaning, so the results may not transfer cleanly to meaningful, real-world material, which is encoded and forgotten differently. Emotionally vivid memories do not follow the same decay. A 2015 replication by Murre and Dros largely confirmed the curve's shape but again used essentially one subject, so 'replicated' means the shape reproduces, not that it was validated across a large sample. The exponential form is an approximation, and the curve is not perfectly smooth — the replication found a probable upward jump around the 24-hour mark.",
+  "misreadings": "It is not a precise universal law of how everyone forgets everything: it was derived from one person memorising meaningless syllables, and even its 2015 replication rested on a single subject. Meaningful and emotionally charged material departs from it. The robust, useful takeaways are qualitative — forgetting is fast at first then slows, and spaced review durably counters it.",
+  "origin": "From Hermann Ebbinghaus's self-experiments in the early 1880s, published in 1885 as Über das Gedächtnis (translated 1913 as Memory: A Contribution to Experimental Psychology). He memorised lists of nonsense syllables and measured retention by the savings method. A 2015 study by Murre and Dros in PLOS ONE replicated the curve with similar results.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1885,
+  "namedAfter": "Hermann Ebbinghaus",
+  "sources": [
+    {"text": "Forgetting curve, Wikipedia. — the exponential form R = e^(−t/S), the shape, and the single-subject nonsense-syllable basis.", "url": "https://en.wikipedia.org/wiki/Forgetting_curve", "type": "secondary"},
+    {"text": "Ebbinghaus, H. (1885). Über das Gedächtnis (Memory: A Contribution to Experimental Psychology). — the original self-experiments and savings method.", "url": "https://en.wikipedia.org/wiki/Hermann_Ebbinghaus", "type": "primary"},
+    {"text": "Murre, J.M.J. & Dros, J. (2015). \"Replication and Analysis of Ebbinghaus' Forgetting Curve.\" PLOS ONE, 10(7): e0120644.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4492928/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Forgetting_curve",
+  "related": [
+    {"slug": "millers-law", "kind": "kindred"}
+  ]
+}
