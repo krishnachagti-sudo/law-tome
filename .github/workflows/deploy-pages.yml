@@ -27,9 +27,11 @@ jobs:
           node-version: '22'
       - run: npm install
       - run: npm test
-      # GitHub Pages project sites serve at /<repo-name>/, which differs from
-      # the canonical production base (/lawtome/) — override it for this build only.
-      - run: npm run build -- --base=/${{ github.event.repository.name }}/
+      # GitHub Pages project sites serve at https://<owner>.github.io/<repo>/, which
+      # differs from the canonical production origin+base baked into site.config.json.
+      # Override both for this build so canonical/og/sitemap URLs point at the host
+      # that actually serves the pages.
+      - run: npm run build -- --base=/${{ github.event.repository.name }}/ --origin=https://${{ github.repository_owner }}.github.io
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

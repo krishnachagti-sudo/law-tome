@@ -25,7 +25,7 @@ import { head, sprite, header, footer, escapeHtml, lawCard } from './partials.mj
  * @param {object} o
  * @param {string} [o.base='/'] site base path — MUST end with '/'
  */
-export function coinPage({ base = '/', count } = {}) {
+export function coinPage({ base = '/', origin = '', count } = {}) {
   const description =
     'Coin an original law or suggest one for the Canon. Submissions are verified before publication and, if coined, credited to you in the Coined wing.';
 
@@ -75,11 +75,11 @@ export function coinPage({ base = '/', count } = {}) {
 `;
 
   return (
-    head({ title: 'Coin a law — The Law Tome', description, base }) +
+    head({ title: 'Coin a law — The Law Tome', description, base, origin, path: 'coin/' }) +
     sprite() +
     header({ base, active: 'coin', count }) +
     section +
-    footer()
+    footer({ base })
   );
 }
 
@@ -89,7 +89,7 @@ export function coinPage({ base = '/', count } = {}) {
  * @param {object} o
  * @param {string} [o.base='/'] site base path
  */
-export function aboutPage({ base = '/', count } = {}) {
+export function aboutPage({ base = '/', origin = '', count } = {}) {
   const description =
     'How The Law Tome is built and verified: enumerate-from-sources, a citation gate, adversarial verification, and source-resolution — curated by The Law Tome editorial team at Conyso, licensed CC BY.';
 
@@ -121,11 +121,11 @@ export function aboutPage({ base = '/', count } = {}) {
 `;
 
   return (
-    head({ title: 'About — The Law Tome', description, base }) +
+    head({ title: 'About — The Law Tome', description, base, origin, path: 'about/' }) +
     sprite() +
     header({ base, active: 'about', count }) +
     section +
-    footer()
+    footer({ base })
   );
 }
 
@@ -136,7 +136,7 @@ export function aboutPage({ base = '/', count } = {}) {
  * @param {object} o
  * @param {string} [o.base='/'] site base path
  */
-export function coinedIndex(coinedLaws = [], { base = '/', count } = {}) {
+export function coinedIndex(coinedLaws = [], { base = '/', origin = '', count } = {}) {
   const rows = (Array.isArray(coinedLaws) ? coinedLaws : []).filter((l) => l && l.provenance === 'coined');
 
   const grid = rows.length
@@ -163,11 +163,13 @@ ${rows.map((l) => lawCard(l, base)).join('\n')}
       title: 'The Coined wing — The Law Tome',
       description: 'Original laws coined by readers of The Law Tome — credited, clearly marked, and never laundered as historical Canon.',
       base,
+      origin,
+      path: 'coined/',
     }) +
     sprite() +
     header({ base, active: 'coin', count }) +
     section +
-    footer()
+    footer({ base })
   );
 }
 
@@ -176,7 +178,7 @@ ${rows.map((l) => lawCard(l, base)).join('\n')}
  * @param {object} o
  * @param {string} [o.base='/'] site base path
  */
-export function privacyPage({ base = '/', count } = {}) {
+export function privacyPage({ base = '/', origin = '', count } = {}) {
   const description =
     'The Law Tome privacy notice: what a coin submission collects, the consent basis for publishing it, and our no-tracking posture.';
 
@@ -199,10 +201,10 @@ export function privacyPage({ base = '/', count } = {}) {
 `;
 
   return (
-    head({ title: 'Privacy — The Law Tome', description, base }) +
+    head({ title: 'Privacy — The Law Tome', description, base, origin, path: 'privacy/' }) +
     sprite() +
     header({ base, active: 'about', count }) +
     section +
-    footer()
+    footer({ base })
   );
 }

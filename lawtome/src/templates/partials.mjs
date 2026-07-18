@@ -66,15 +66,26 @@ export function jsonLd(obj) {
 
 /**
  * Document head — everything from <!doctype html> through the opening <body>.
+ *
+ * SEO / AEO / GEO: every page gets a canonical link, a robots directive, Open
+ * Graph + Twitter card meta, and theme-color hints. Canonical/og:url are derived
+ * from `origin`+`base`+`path` when not passed explicitly, so a caller only has to
+ * supply its base-relative `path` to be fully addressable. og:image is promoted
+ * to an absolute URL (crawlers reject relative image refs).
  * @param {object} o
  * @param {string} o.title        document title (required)
  * @param {string} [o.description] meta description; emitted only when given
  * @param {string} [o.base='/']   site base path — MUST end with '/', e.g. '/lawtome/'
- * @param {string} [o.canonical]  canonical URL; emitted only when given
+ * @param {string} [o.origin='']  absolute origin, e.g. 'https://example.com'
+ * @param {string} [o.path]       base-relative page path (e.g. 'laws/goodharts-law/'); used to derive canonical/og:url
+ * @param {string} [o.canonical]  explicit canonical URL (overrides the derived one)
  * @param {object} [o.og]         Open Graph fields {title,description,image,type}
+ * @param {string} [o.siteName='The Law Tome'] og:site_name
+ * @param {string} [o.robots]     robots directive (defaults to a permissive, rich-preview policy)
  * @param {object[]} [o.jsonld]   array of JSON-LD objects; each emitted via jsonLd()
  */
-export function head({ title, description, base = '/', canonical, og, jsonld } = {}) {
+export function head({ title, description, base = '/', origin = '', path, canonical, og, jsonld, siteName = 'The Law Tome', robots } = {}) {
+  const canon = canonical || (path != null ? `${origin}${base}${path}` : undefined);
   const out = [
     '<!DOCTYPE html>',
     '<html lang="en" data-theme="light">',
@@ -84,13 +95,36 @@ export function head({ title, description, base = '/', canonical, og, jsonld } =
     `<title>${escapeHtml(title)}</title>`,
   ];
   if (description) out.push(`<meta name="description" content="${escapeHtml(description)}">`);
-  if (canonical) out.push(`<link rel="canonical" href="${escapeHtml(canonical)}">`);
-  if (og) {
-    if (og.title) out.push(`<meta property="og:title" content="${escapeHtml(og.title)}">`);
-    if (og.description) out.push(`<meta property="og:description" content="${escapeHtml(og.description)}">`);
-    if (og.image) out.push(`<meta property="og:image" content="${escapeHtml(og.image)}">`);
-    if (og.type) out.push(`<meta property="og:type" content="${escapeHtml(og.type)}">`);
+  // Crawler + generative-answer directives: index freely and allow large image /
+  // full-text previews so AI answer engines can quote and cite the entry.
+  out.push(`<meta name="robots" content="${escapeHtml(robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')}">`);
+  if (canon) out.push(`<link rel="canonical" href="${escapeHtml(canon)}">`);
+  // Open Graph — social + generative-engine link unfurls.
+  out.push(`<meta property="og:site_name" content="${escapeHtml(siteName)}">`);
+  out.push('<meta property="og:locale" content="en_US">');
+  out.push(`<meta property="og:type" content="${escapeHtml((og && og.type) || 'website')}">`);
+  if (canon) out.push(`<meta property="og:url" content="${escapeHtml(canon)}">`);
+  const ogTitle = (og && og.title) || title;
+  const ogDesc = (og && og.description) || description;
+  if (ogTitle) out.push(`<meta property="og:title" content="${escapeHtml(ogTitle)}">`);
+  if (ogDesc) out.push(`<meta property="og:description" content="${escapeHtml(ogDesc)}">`);
+  // og:image → absolute (crawlers reject base-relative refs). A caller passes the
+  // base-relative path (starts with `base`, i.e. '/'); prefix the origin.
+  let ogImage = og && og.image;
+  if (ogImage && origin && ogImage.startsWith('/')) ogImage = origin + ogImage;
+  if (ogImage) {
+    out.push(`<meta property="og:image" content="${escapeHtml(ogImage)}">`);
+    out.push('<meta property="og:image:width" content="1200">');
+    out.push('<meta property="og:image:height" content="630">');
   }
+  // Twitter card — mirrors OG so X/other unfurlers get a large-image preview.
+  out.push(`<meta name="twitter:card" content="${ogImage ? 'summary_large_image' : 'summary'}">`);
+  if (ogTitle) out.push(`<meta name="twitter:title" content="${escapeHtml(ogTitle)}">`);
+  if (ogDesc) out.push(`<meta name="twitter:description" content="${escapeHtml(ogDesc)}">`);
+  if (ogImage) out.push(`<meta name="twitter:image" content="${escapeHtml(ogImage)}">`);
+  // Theme-color: match the masthead paper/ink so the browser chrome blends in.
+  out.push('<meta name="theme-color" content="#e7e1d1" media="(prefers-color-scheme: light)">');
+  out.push('<meta name="theme-color" content="#0c0b09" media="(prefers-color-scheme: dark)">');
   // Self-hosted stylesheets — replaces the prototype's Google-Fonts + jsDelivr
   // <link>s. Fonts are pulled in by the @font-face rules inside styles.css.
   out.push(`<link rel="stylesheet" href="${base}assets/styles.css">`);
@@ -142,6 +176,13 @@ export function sprite() {
     <path d="M60,1 L64,6 L60,11 L56,6 Z" fill="currentColor"/>
     <circle cx="49.5" cy="6" r="1.3" fill="currentColor"/><circle cx="70.5" cy="6" r="1.3" fill="currentColor"/>
   </symbol>
+  <symbol id="moon" viewBox="0 0 24 24">
+    <path d="M21 12.9A9 9 0 1 1 11.1 3 7 7 0 0 0 21 12.9Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="sun" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="4.2" fill="currentColor"/>
+    <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2.4v2.4"/><path d="M12 19.2v2.4"/><path d="M4.2 4.2l1.7 1.7"/><path d="M18.1 18.1l1.7 1.7"/><path d="M2.4 12h2.4"/><path d="M19.2 12h2.4"/><path d="M4.2 19.8l1.7-1.7"/><path d="M18.1 5.9l1.7-1.7"/></g>
+  </symbol>
 </svg>
 `;
 }
@@ -161,19 +202,26 @@ export function header({ base = '/', active, count } = {}) {
     ['coin', 'coin/', 'Coin a law'],
     ['about', 'about/', 'About'],
   ]
-    .map(([key, path, label]) => `      <a href="${base}${path}"${key === active ? ' class="on"' : ''}>${label}</a>`)
+    .map(([key, path, label]) => `        <a href="${base}${path}"${key === active ? ' class="on" aria-current="page"' : ''}>${label}</a>`)
     .join('\n');
   const c = count == null ? '—' : count;
   return `<header>
-  <div class="kicker"><div class="wrap">Vol.&nbsp;I &nbsp;·&nbsp; a living index of named laws &nbsp;·&nbsp; est. mmxxvi &nbsp;·&nbsp; no ads, no tracking</div></div>
+  <div class="kicker"><div class="wrap kick-in">
+    <span class="k-l">Vol.&nbsp;I</span>
+    <span class="k-c">a living index of named laws · est.&nbsp;mmxxvi</span>
+    <span class="k-r">no ads · no tracking</span>
+  </div></div>
   <div class="wrap bar">
-    <a class="brand" href="${base}"><svg class="mark" viewBox="0 0 100 100"><use href="#seal"/></svg>The Law Tome</a>
-    <nav class="links">
+    <a class="brand" href="${base}" aria-label="The Law Tome — home">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
+      <span class="brand-txt"><span class="brand-name">The Law Tome</span><span class="brand-sub">index of named laws</span></span>
+    </a>
+    <nav class="links" aria-label="Primary">
 ${nav}
     </nav>
     <div class="right">
-      <span class="count">${c} laws</span>
-      <button class="icon-btn" id="theme" aria-label="Toggle light and dark theme"><span id="th-ico">☾</span></button>
+      <a class="count" href="${base}browse/"><span class="count-n">${c}</span><span class="count-l">entries</span></a>
+      <button class="icon-btn" id="theme" type="button" aria-label="Toggle light and dark theme"><svg class="th-ico th-moon" viewBox="0 0 24 24" aria-hidden="true"><use href="#moon"/></svg><svg class="th-ico th-sun" viewBox="0 0 24 24" aria-hidden="true"><use href="#sun"/></svg></button>
     </div>
   </div>
 </header>
@@ -187,15 +235,27 @@ ${nav}
  * @param {object} [o]
  * @param {string} [o.scripts=''] raw <script> markup to inject before </body>
  */
-export function footer({ scripts = '' } = {}) {
+export function footer({ base = '/', scripts = '' } = {}) {
+  const col = (heading, links) => `      <nav class="foot-col" aria-label="${escapeHtml(heading)}">
+        <h4>${escapeHtml(heading)}</h4>
+${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(label)}</a>`).join('\n')}
+      </nav>`;
   return `<footer>
   <div class="wrap foot-grid">
-    <div class="foot-note">
-      <b>The Law Tome</b> · every entry sourced &amp; cited · corpus licensed CC BY<br>
-      Canon: attested &amp; verified. Coined: original, credited, clearly marked.<br>
-      A reference project — no ads, no tracking of what you read.
+    <div class="foot-brand">
+      <a class="foot-seal" href="${base}" aria-label="The Law Tome — home">
+        <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
+        <span class="brand-name">The Law Tome</span>
+      </a>
+      <p class="foot-blurb">A living, sourced index of named laws, principles, and effects — every entry traced to its origin and cited. No ads, no tracking of what you read.</p>
+      <p class="foot-motto">Sapere aude.</p>
     </div>
-    <div class="foot-seal"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg><span class="seal">Sapere aude.</span></div>
+${col('Explore', [['browse/', 'Browse all'], ['graph/', 'The graph'], ['coined/', 'The Coined wing']])}
+${col('The project', [['about/', 'About & method'], ['coin/', 'Coin a law'], ['privacy/', 'Privacy']])}
+  </div>
+  <div class="wrap foot-rule">
+    <span>Canon: attested &amp; verified. Coined: original, credited, clearly marked.</span>
+    <span>Corpus licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a>.</span>
   </div>
 </footer>
 ${scripts ? scripts + '\n' : ''}</body>

@@ -40,7 +40,7 @@ function renderStatement(statement, accent) {
     escapeHtml(statement.slice(i + accent.length));
 }
 
-export function homePage(featuredLaws = [], { publishedCount, base = '/' } = {}) {
+export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '' } = {}) {
   const nf = new Intl.NumberFormat('en');
   const count = publishedCount == null ? '—' : nf.format(publishedCount);
 
@@ -173,12 +173,39 @@ const LAWS=${featuredJson};
 </script>
 <script defer src="${base}assets/search.js"></script>`;
 
-  // ---- DefinedTermSet JSON-LD for the directory -------------------------
+  // ---- JSON-LD: identify the site + wire the sitelinks searchbox --------
+  // WebSite carries a SearchAction so search engines can surface an in-SERP
+  // searchbox pointing at our client search; Organization gives AI answer engines
+  // a stable publisher entity to attribute; DefinedTermSet types the directory.
+  const homeUrl = `${origin}${base}`;
+  const website = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'The Law Tome',
+    alternateName: 'Law Tome',
+    url: homeUrl,
+    description,
+    inLanguage: 'en',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: { '@type': 'EntryPoint', urlTemplate: `${origin}${base}browse/?q={search_term_string}` },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+  const organization = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'The Law Tome',
+    url: homeUrl,
+    description: 'A living, sourced index of named laws, principles, and effects.',
+  };
   const definedTermSet = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
     name: 'The Law Tome',
-    url: `${base}`,
+    url: homeUrl,
+    description,
+    ...(publishedCount != null ? { hasDefinedTerm: `${publishedCount} named laws, principles, and effects` } : {}),
   };
 
   return (
@@ -186,7 +213,9 @@ const LAWS=${featuredJson};
       title: 'The Law Tome — every named law, principle, and effect',
       description,
       base,
-      jsonld: [definedTermSet],
+      origin,
+      path: '',
+      jsonld: [website, organization, definedTermSet],
     }) +
     sprite() +
     header({ base, active: 'browse', count }) +
@@ -194,6 +223,6 @@ const LAWS=${featuredJson};
     browse +
     graphBand +
     coinBand +
-    footer({ scripts })
+    footer({ base, scripts })
   );
 }

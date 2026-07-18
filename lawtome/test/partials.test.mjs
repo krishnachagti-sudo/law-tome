@@ -12,9 +12,9 @@ test('head self-hosts css/js/fonts (no third-party CDN) + title + canonical', ()
 test('head embeds any provided JSON-LD blocks', () => {
   assert.match(head({ title:'X', base:'/lawtome/', jsonld:[{'@type':'WebPage'}] }), /"@type":"WebPage"/);
 });
-test('header marks the active nav item', () => assert.match(header({base:'/lawtome/', active:'browse'}), /class="on"[^>]*>Browse/));
+test('header marks the active nav item', () => assert.match(header({base:'/lawtome/', active:'browse'}), /class="on" aria-current="page">Browse/));
 test('sprite defines the seal symbol', () => assert.match(sprite(), /<symbol id="seal"/));
-test('footer carries the licence line', () => assert.match(footer(), /CC BY/));
+test('footer carries the licence line', () => assert.match(footer(), /CC&nbsp;BY/));
 test('jsonLd serialises to a script tag', () => assert.match(jsonLd({'@type':'X'}), /application\/ld\+json/));
 
 // --- additional coverage (not part of the 6-test contract) ---
@@ -51,13 +51,13 @@ test('head/header/footer/sprite carry no third-party CDN URLs', () => {
 });
 
 test('header uses the provided count and never hard-codes 1,400', () => {
-  assert.match(header({ base:'/lawtome/', active:'browse', count:11 }), /class="count">11 laws/);
+  assert.match(header({ base:'/lawtome/', active:'browse', count:11 }), /class="count-n">11</);
   assert.doesNotMatch(header({ base:'/lawtome/' }), /1,400/);
 });
 
 test('header links are base-relative', () => {
   const hd = header({ base:'/lawtome/', active:'graph' });
-  assert.match(hd, /href="\/lawtome\/graph\/" class="on">The graph/);
+  assert.match(hd, /href="\/lawtome\/graph\/" class="on" aria-current="page">The graph/);
   assert.match(hd, /class="brand" href="\/lawtome\/"/);
 });
 

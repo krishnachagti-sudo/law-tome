@@ -42,7 +42,7 @@ export async function buildSite(opts) {
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
     // Home: first 12 laws as the featured rotation.
-    writePage(join(out, 'index.html'), homePage(laws.slice(0, 12), { publishedCount, base })),
+    writePage(join(out, 'index.html'), homePage(laws.slice(0, 12), { publishedCount, base, origin })),
     // Prebuilt client-search index (a DATA file, not a "page"): fetched by
     // src/assets/search.js. In the concurrent writes[] so it's covered by the
     // pre-clean rm + Promise.all.
@@ -97,10 +97,10 @@ export async function buildSite(opts) {
   // and the Privacy notice backing the coin form's consent link. Not "law pages",
   // so they don't touch `pages`; reported under `listings`.
   const coinedLaws = laws.filter(l => l.provenance === 'coined');
-  writes.push(writePage(join(out, 'coin', 'index.html'), coinPage({ base, count: publishedCount })));
-  writes.push(writePage(join(out, 'about', 'index.html'), aboutPage({ base, count: publishedCount })));
-  writes.push(writePage(join(out, 'coined', 'index.html'), coinedIndex(coinedLaws, { base, count: publishedCount })));
-  writes.push(writePage(join(out, 'privacy', 'index.html'), privacyPage({ base, count: publishedCount })));
+  writes.push(writePage(join(out, 'coin', 'index.html'), coinPage({ base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'about', 'index.html'), aboutPage({ base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'coined', 'index.html'), coinedIndex(coinedLaws, { base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'privacy', 'index.html'), privacyPage({ base, origin, count: publishedCount })));
 
   // Site files (crawler-facing, NOT "pages"): a sitemap of every crawlable HTML
   // URL, a permissive robots.txt pointing at it, and a Netlify-style redirect map
@@ -152,7 +152,12 @@ export async function buildSite(opts) {
 // CLI: only runs when invoked directly (so `npm run build` works, imports don't).
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const cfg = JSON.parse(await (await import('node:fs/promises')).readFile('site.config.json', 'utf8'));
-  const base = (process.argv.find(a => a.startsWith('--base=')) || '').split('=')[1] || cfg.base;
-  buildSite({ dataDir: 'src/data/laws', catFile: 'src/data/categories.json', assetsDir: 'src/assets', out: 'dist', ...cfg, base })
+  const arg = (name) => (process.argv.find(a => a.startsWith(`--${name}=`)) || '').split('=')[1];
+  const base = arg('base') || cfg.base;
+  // origin override lets a deploy target (e.g. a GitHub Pages project host) emit
+  // canonical/og URLs that point at where the site is ACTUALLY served, instead of
+  // the production origin baked into site.config.json.
+  const origin = arg('origin') || cfg.origin;
+  buildSite({ dataDir: 'src/data/laws', catFile: 'src/data/categories.json', assetsDir: 'src/assets', out: 'dist', ...cfg, base, origin })
     .then(r => console.log('built', r));
 }

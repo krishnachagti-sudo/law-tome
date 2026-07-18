@@ -8,14 +8,12 @@
 
   function wire() {
     var btn = document.getElementById('theme');
-    var ico = document.getElementById('th-ico');
-    function paint() { if (ico) ico.textContent = root.getAttribute('data-theme') === 'dark' ? '☀' : '☾'; }
-    paint();
+    // Which glyph shows (moon vs sun) is driven purely by CSS keyed on
+    // <html data-theme>, so there's no icon to repaint here — just flip the theme.
     if (btn) btn.onclick = function () {
       var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
       try { localStorage.setItem('lt-theme', next); } catch (e) {}
-      paint();
     };
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);

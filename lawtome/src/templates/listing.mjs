@@ -84,11 +84,12 @@ ${grid}
     ? `${title} — named laws, principles, and effects in The Law Tome.`
     : 'Browse every named law, principle, and effect in The Law Tome.';
 
+  const path = kind === 'category' ? `category/${categoryKey}/` : 'browse/';
   return (
-    head({ title, description, base, jsonld }) +
+    head({ title: `${title} — The Law Tome`, description, base, origin, path, jsonld }) +
     sprite() +
     header({ base, active, count: rows.length }) +
     section +
-    footer({ scripts: `<script defer src="${base}assets/search.js"></script>` })
+    footer({ base, scripts: `<script defer src="${base}assets/search.js"></script>` })
   );
 }

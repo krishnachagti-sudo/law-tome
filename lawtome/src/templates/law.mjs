@@ -274,27 +274,54 @@ ${toc.map((t) => `      <a href="#${t.id}">${escapeHtml(t.label)}</a>`).join('\n
     : '';
 
   // ---- right rail: a live relationship mini-map + citation --------------
+  // Keep the relationship KIND alongside each resolved neighbour so the map can
+  // draw tension edges differently from kindred ones. `isTension` matches the same
+  // vocabulary the Related/Tension split below uses.
+  const isTension = (kind = '') => /tension|against|contra|oppos/i.test(kind);
   const neighbours = (Array.isArray(law.related) ? law.related : [])
-    .map((r) => byslug[r.slug]).filter(Boolean);
-  const TIER = { Empirical: '#8fbf6f', Heuristic: '#d8a63f', 'Folk-adage': '#b7ab86', Contested: '#e05a44' };
-  const tierColor = (r) => TIER[r] || '#c9bf9f';
+    .map((r) => ({ law: byslug[r.slug], kind: r.kind || '', tension: isTension(r.kind) }))
+    .filter((n) => n.law);
+  // Node fill by reliability tier — theme-tuned but kept as literal SVG fills
+  // (an <svg> fill can't read a CSS custom property without extra plumbing); the
+  // surrounding chrome (ring, edges, labels) IS theme-aware via CSS classes.
+  const TIER = { Empirical: '#6a9a52', Heuristic: '#c08a2e', 'Folk-adage': '#9c8f6a', Contested: '#c14a38' };
+  const tierColor = (r) => TIER[r] || '#9c8f6a';
   const miniGraph = () => {
-    const W = 260, H = 190, cx = W / 2, cy = H / 2, R = 62;
+    const W = 300, H = 232, cx = W / 2, cy = H / 2 - 4;
+    const n = neighbours.length;
+    // radius adapts a touch so two neighbours don't sit on top of the caption
+    const R = n <= 2 ? 66 : 74;
+    const rings = `<circle class="mg-ring" cx="${cx}" cy="${cy}" r="${R}"/><circle class="mg-ring mg-ring--in" cx="${cx}" cy="${cy}" r="${(R / 2).toFixed(1)}"/>`;
     let edges = '', nodes = '';
-    neighbours.forEach((n, i) => {
-      const a = (-Math.PI / 2) + (2 * Math.PI * i / Math.max(1, neighbours.length));
+    neighbours.forEach((nb, i) => {
+      // start at the top and spread evenly; nudge a single neighbour to upper-right
+      const a = (-Math.PI / 2) + (2 * Math.PI * i / Math.max(1, n)) + (n === 1 ? 0.5 : 0);
       const x = +(cx + R * Math.cos(a)).toFixed(1), y = +(cy + R * Math.sin(a)).toFixed(1);
-      edges += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#5a4f2f" stroke-width="1"/>`;
-      nodes += `<a href="${permalink(n.slug)}"><circle cx="${x}" cy="${y}" r="6" fill="${tierColor(n.reliability)}" stroke="#141109" stroke-width="1.5"/><text x="${x}" y="${(y - 10).toFixed(1)}" text-anchor="middle" font-family="'Space Mono',monospace" font-size="8.5" fill="#cdc3a6">${escapeHtml(n.name)}</text></a>`;
+      const right = x >= cx;
+      const anchor = Math.abs(x - cx) < 14 ? 'middle' : (right ? 'start' : 'end');
+      const lx = +(x + (anchor === 'middle' ? 0 : right ? 11 : -11)).toFixed(1);
+      const above = y < cy;
+      // Stack the two labels OUTWARD from the dot so they never collide: for a node
+      // above the centre the order top→bottom is kind, name, dot; below it's dot,
+      // name, kind. The name always sits closest to its dot.
+      const nameY = +(y + (above ? -13 : 17)).toFixed(1);
+      const kindY = +(y + (above ? -25 : 29)).toFixed(1);
+      edges += `<line class="mg-edge${nb.tension ? ' mg-edge--tension' : ''}" x1="${cx}" y1="${cy}" x2="${x}" y2="${y}"/>`;
+      const kindLab = nb.kind ? `<text class="mg-kind" x="${lx}" y="${kindY}" text-anchor="${anchor}">${escapeHtml(nb.kind)}</text>` : '';
+      nodes += `<a href="${permalink(nb.law.slug)}" class="mg-node"><circle class="mg-hit" cx="${x}" cy="${y}" r="14" fill="transparent"/><circle class="mg-dot" cx="${x}" cy="${y}" r="6.5" fill="${tierColor(nb.law.reliability)}"/><text class="mg-label" x="${lx}" y="${nameY}" text-anchor="${anchor}">${escapeHtml(nb.law.name)}</text>${kindLab}</a>`;
     });
-    const focus = `<circle cx="${cx}" cy="${cy}" r="8" fill="${tierColor(law.reliability)}" stroke="#141109" stroke-width="2"/><text x="${cx}" y="${cy + 20}" text-anchor="middle" font-family="'Space Mono',monospace" font-size="9" fill="#f1e7cf">${escapeHtml(law.name)}</text>`;
-    return `<svg class="minigraph-svg" viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Relationship map for ${escapeHtml(law.name)}">${edges}${nodes}${focus}</svg>`;
+    const focus = `<circle class="mg-focus-halo" cx="${cx}" cy="${cy}" r="13"/><circle class="mg-focus" cx="${cx}" cy="${cy}" r="8.5" fill="${tierColor(law.reliability)}"/><text class="mg-focus-label" x="${cx}" y="${cy + 26}" text-anchor="middle">${escapeHtml(law.name)}</text>`;
+    return `<svg class="minigraph-svg" viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Relationship map for ${escapeHtml(law.name)}: ${n} connected ${n === 1 ? 'law' : 'laws'}">${rings}${edges}${nodes}${focus}</svg>`;
   };
+  const nCount = neighbours.length;
+  const nTension = neighbours.filter((n) => n.tension).length;
+  const mapLegend = `        <div class="mg-legend"><span class="mg-lg"><i class="mg-sw mg-sw--kin"></i>${nCount - nTension} kindred</span>${nTension ? `<span class="mg-lg"><i class="mg-sw mg-sw--ten"></i>${nTension} in tension</span>` : ''}</div>`;
   const mapPanel = neighbours.length
-    ? `      <div class="panel">
+    ? `      <div class="panel panel--map">
         <h4>Related map</h4>
         <div class="minigraph">${miniGraph()}</div>
-        <a class="mg-link" href="${base}graph/?law=${escapeHtml(law.slug)}">Open in the graph <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+${mapLegend}
+        <a class="mg-link" href="${base}graph/?law=${escapeHtml(law.slug)}">Open in the full graph <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
       </div>\n`
     : '';
 
@@ -359,16 +386,23 @@ ${prevnext}</div>
     ],
   };
 
+  // FAQPage — the AEO/GEO surface. Each Q pulls a whole, self-contained corpus
+  // field as its answer (no fabrication, no stitched sentences), so answer engines
+  // can quote a grounded paragraph and cite the entry. Questions are added only
+  // when the field backing them exists.
+  const qa = (name, text) => (text ? { '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } } : null);
   const faqEntities = [
-    { '@type': 'Question', name: `What is ${law.name}?`, acceptedAnswer: { '@type': 'Answer', text: description } },
-  ];
-  if (law.namedAfter && law.coinedYear != null) {
-    faqEntities.push({
-      '@type': 'Question',
-      name: `Who coined ${law.name}?`,
-      acceptedAnswer: { '@type': 'Answer', text: `${law.name} is named after ${law.namedAfter}, dated to ${law.coinedYear}.` },
-    });
-  }
+    qa(`What is ${law.name}?`, description),
+    law.meaning && law.meaning !== description ? qa(`What does ${law.name} mean?`, law.meaning) : null,
+    qa(`Why does ${law.name} matter?`, law.whyItMatters),
+    qa(`How does ${law.name} work?`, law.mechanism),
+    (law.namedAfter || law.origin)
+      ? qa(`Who coined ${law.name}?`, law.origin
+          || `${law.name} is named after ${law.namedAfter}${law.coinedYear != null ? `, dated to ${law.coinedYear}` : ''}.`)
+      : null,
+    qa(`What is commonly misunderstood about ${law.name}?`, law.misreadings),
+    qa(`What are the limits of ${law.name}?`, law.limits),
+  ].filter(Boolean);
   const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqEntities };
 
   // ---- page scripts: copy-citation + reading-progress + scroll-reveal ----
@@ -424,6 +458,8 @@ document.getElementById('copy').onclick=function(){
       title: `${law.name} — The Law Tome`,
       description,
       base,
+      origin,
+      path: `laws/${law.slug}/`,
       canonical,
       og: { title: law.name, description, image: `${base}og/${law.slug}.png`, type: 'article' },
       jsonld: [definedTerm, article, breadcrumb, faq],
@@ -434,6 +470,6 @@ document.getElementById('copy').onclick=function(){
     entry +
     dash +
     layout +
-    footer({ scripts })
+    footer({ base, scripts })
   );
 }

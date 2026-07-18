@@ -54,12 +54,13 @@ export function graphPage({ base = '/', origin = '', publishedCount } = {}) {
       title: 'The graph — The Law Tome',
       description,
       base,
-      canonical: origin ? `${origin}${base}graph/` : undefined,
+      origin,
+      path: 'graph/',
       jsonld: [definedTermSet],
     }) +
     sprite() +
     header({ base, active: 'graph', count }) +
     section +
-    footer({ scripts: `<script defer src="${escapeHtml(base)}assets/graph.js"></script>` })
+    footer({ base, scripts: `<script defer src="${escapeHtml(base)}assets/graph.js"></script>` })
   );
 }
