@@ -1,0 +1,62 @@
+{
+  "no": "077",
+  "slug": "matthew-effect",
+  "name": "The Matthew Effect",
+  "aliases": ["Cumulative advantage", "The Matthew principle"],
+  "statement": "To those who have, more is given: advantage accumulates and the eminent gain more than their share.",
+  "statementAccent": "advantage accumulates",
+  "meaning": "Those who already hold an advantage — status, wealth, citations, attention — tend to gain still more, while those who start with little fall further behind. Initial position, not merit alone, shapes who accumulates rewards.",
+  "mechanism": "A small early lead compounds through positive feedback: early success attracts resources — funding, visibility, collaborators, links — that generate more success, widening gaps over time even when underlying ability is similar. Network science formalises this as preferential attachment: new connections attach preferentially to the already well-connected, producing rich-get-richer distributions.",
+  "examples": [
+    {
+      "tag": "Scientific credit",
+      "text": "Merton's founding case, drawn from Harriet Zuckerman's interviews with Nobel laureates: eminent scientists get outsized credit for joint or simultaneous work, while lesser-known contributors get disproportionately little — the famous name absorbs the recognition."
+    },
+    {
+      "tag": "The relative-age effect",
+      "text": "In elite Canadian youth hockey, a large share of players are born in the first months of the year: a January cut-off gives the oldest children in a cohort an early physical edge that compounds into better coaching and selection. Gladwell opened Outliers with it under this name."
+    },
+    {
+      "tag": "Preferential attachment",
+      "text": "Barabási and Albert's 1999 network model: nodes with many links attract new links in proportion to how many they already have, yielding the scale-free, power-law structure that is the Matthew effect written in mathematics."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Preferential attachment",
+      "text": "The network-science formalisation (Barabási–Albert, 1999): 'the rich get richer' as a growth rule that generates scale-free networks."
+    },
+    {
+      "name": "Cumulative (dis)advantage",
+      "text": "The general sociological mechanism, running in both directions: early advantage compounds upward, early disadvantage compounds down."
+    },
+    {
+      "name": "Stigler's law",
+      "text": "A close cousin in the sociology of credit — discoveries named for the eminent rather than the originator; Stigler himself credited the idea to Merton."
+    }
+  ],
+  "whyItMatters": "It separates reward from underlying merit: because success feeds on success, observed eminence overstates real differences in ability, and small initial edges — a birth month, an early citation, a first-mover link — can decide long-run outcomes. It is central to how inequality, fame, and scientific credit actually accumulate.",
+  "working": [
+    {"lead": "Distinguish merit from accumulated advantage", "text": "when judging success, ask how much reflects ability and how much reflects an early lead that compounded — the two look identical at the finish line."},
+    {"lead": "Intervene early, where leads are small", "text": "because advantage compounds, the cheapest time to change an outcome is before the feedback loop has run; small early help outperforms large late help."},
+    {"lead": "Watch for lock-in", "text": "in markets and networks, a first-mover edge can harden into dominance out of proportion to quality; design for contestability if that is not what you want."}
+  ],
+  "limits": "It is a tendency, not a deterministic law — advantage can stall or reverse at ceilings, through regression, disruption, or scandal, and a 2014 review found mixed evidence including compensatory patterns for capped skills. Its whole critical use is to separate reward from merit, so it should never be read as saying the advantaged deserve their lead. The Biblical framing is an evocative metaphor, not an endorsement, and popular extensions (Gladwell's '10,000 hours') have themselves been challenged.",
+  "misreadings": "It does not claim the successful are undeserving, nor that outcomes are fixed at birth. It claims that advantage compounds, so success reflects starting position and feedback as well as ability — a statement about mechanism, not merit.",
+  "origin": "Named and analysed by the sociologist Robert K. Merton in his 1968 paper 'The Matthew Effect in Science' (Science), after the Gospel of Matthew (25:29): 'unto every one that hath shall be given.' The paper drew heavily on Harriet Zuckerman's research on Nobel laureates; Merton later wrote that it should have appeared under joint authorship.",
+  "category": "sociology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1968,
+  "namedAfter": "the Gospel of Matthew",
+  "sources": [
+    {"text": "Merton, R.K. (1968). \"The Matthew Effect in Science.\" Science, 159(3810), 56–63.", "url": "https://www.science.org/doi/10.1126/science.159.3810.56", "type": "primary"},
+    {"text": "Matthew effect, Wikipedia. — the origin, Zuckerman's contribution, the relative-age and preferential-attachment cases, and the boundary conditions.", "url": "https://en.wikipedia.org/wiki/Matthew_effect", "type": "secondary"},
+    {"text": "Barabási, A.-L. & Albert, R. (1999). \"Emergence of Scaling in Random Networks.\" Science, 286, 509–512. — preferential attachment.", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Matthew_effect",
+  "related": [
+    {"slug": "stiglers-law", "kind": "kindred"},
+    {"slug": "pareto-principle", "kind": "kindred"}
+  ]
+}

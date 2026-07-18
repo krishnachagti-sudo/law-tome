@@ -1,0 +1,62 @@
+{
+  "no": "073",
+  "slug": "sagan-standard",
+  "name": "The Sagan Standard",
+  "aliases": ["ECREE"],
+  "statement": "Extraordinary claims require extraordinary evidence.",
+  "statementAccent": "extraordinary evidence",
+  "meaning": "The further a claim departs from what is already well established, the stronger and more reliable the evidence needed before it should be accepted. Ordinary claims can rest on ordinary evidence; a claim that overturns a large body of prior knowledge demands proportionally more.",
+  "mechanism": "In Bayesian terms, a claim that conflicts with well-supported knowledge starts with a low prior probability, and only evidence with a very high likelihood ratio — far more probable under the extraordinary hypothesis than under mundane alternatives like error, fraud, or coincidence — can raise a low prior to a high posterior. Weak or ambiguous evidence barely moves it. So the strangeness of the claim sets the bar for the proof.",
+  "examples": [
+    {
+      "tag": "Alien visitation",
+      "text": "The claim that UFOs are alien spacecraft contradicts known physics and has no corroborated physical evidence; blurry photos and eyewitness reports are ordinary-grade evidence, far short of what such an extraordinary conclusion would require. Sagan applied the standard to exactly this."
+    },
+    {
+      "tag": "Cold fusion",
+      "text": "The 1989 Fleischmann–Pons claim of room-temperature nuclear fusion contradicted established nuclear physics; when independent laboratories could not replicate it, the evidence never rose to the extraordinary level the claim demanded."
+    },
+    {
+      "tag": "Miracles",
+      "text": "The oldest form of the idea, from Hume: a reported violation of natural law requires testimony whose falsehood would itself be more improbable than the miracle — otherwise the mundane explanation wins."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Truzzi's version",
+      "text": "The sociologist Marcello Truzzi's mid-1970s phrasing, 'an extraordinary claim requires extraordinary proof', which Sagan's line closely echoes."
+    },
+    {
+      "name": "Laplace's principle",
+      "text": "Pierre-Simon Laplace, early 1800s: 'the more extraordinary the event, the greater the need of its being supported by strong proofs' — the same idea, more than a century earlier."
+    },
+    {
+      "name": "Hitchens's razor",
+      "text": "The dismissive corollary: what can be asserted without evidence can be dismissed without evidence — the flip side of demanding proof proportional to the claim."
+    }
+  ],
+  "whyItMatters": "It is the working motto of scientific scepticism: it calibrates belief to prior plausibility, so a surprising result is neither dismissed out of hand nor accepted on thin support. It is the standard by which fringe claims, from ESP to miracle cures, are weighed.",
+  "working": [
+    {"lead": "Scale the evidence to the implausibility", "text": "the more a claim would overturn, the stronger and more independent the evidence you should demand before believing it."},
+    {"lead": "Rule out the mundane first", "text": "error, fraud, coincidence, and misperception are the ordinary explanations that must be excluded before an extraordinary one earns consideration."},
+    {"lead": "Insist on replication", "text": "for a claim that breaks with established knowledge, independent confirmation is what turns a startling result into a credible one."}
+  ],
+  "limits": "The standard's weak point, conceded even by its users, is that 'extraordinary' is undefined and subjective — there is no metric for what makes either a claim or its evidence extraordinary. Applied unevenly it can entrench orthodoxy, letting people demand extraordinary proof for claims that contradict consensus while waving through consensus-friendly claims on weaker evidence, and it can set an unfairly high bar that dismisses genuine but surprising anomalies. It is a disciplined heuristic, not a formula.",
+  "misreadings": "It does not say surprising claims are false, only that they carry a heavier burden of proof. Nor does it license rejecting anything that challenges consensus — the demand is for proportionate evidence, not for the claim to be impossible.",
+  "origin": "Popularised by the astronomer Carl Sagan, who used the phrasing in the 1980 television series Cosmos (and in his 1979 book Broca's Brain). It has clear antecedents — Marcello Truzzi's mid-1970s 'extraordinary proof' formulation, Laplace in the early nineteenth century, and Hume's 1748 essay 'Of Miracles'. Who first attached the name 'Sagan standard' to it is not documented.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1980,
+  "namedAfter": "Carl Sagan",
+  "sources": [
+    {"text": "Sagan, C. (1980). Cosmos: A Personal Voyage, episode 12. — the phrase's popular source.", "type": "primary"},
+    {"text": "\"Extraordinary claims require extraordinary evidence,\" Wikipedia. — the Sagan/Truzzi/Laplace/Hume lineage and the critique of the undefined 'extraordinary'.", "url": "https://en.wikipedia.org/wiki/Extraordinary_claims_require_extraordinary_evidence", "type": "secondary"},
+    {"text": "\"Extraordinary Claims Require Extraordinary Evidence.\" Quote Investigator (2021). — the dated history back through Truzzi and Laplace.", "url": "https://quoteinvestigator.com/2021/12/05/extraordinary/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Extraordinary_claims_require_extraordinary_evidence",
+  "related": [
+    {"slug": "hitchenss-razor", "kind": "kindred"},
+    {"slug": "russells-teapot", "kind": "kindred"}
+  ]
+}

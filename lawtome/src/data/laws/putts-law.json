@@ -1,0 +1,53 @@
+{
+  "no": "080",
+  "slug": "putts-law",
+  "name": "Putt's Law",
+  "statement": "Technology is dominated by two types of people: those who understand what they do not manage, and those who manage what they do not understand.",
+  "statementAccent": "manage what they do not understand",
+  "meaning": "In technical organisations, deep understanding and formal authority tend to sit in different people. The engineers with the best grasp of the work usually are not running it, and the people running it usually do not fully grasp it.",
+  "mechanism": "A form of negative selection. Highly competent technical people are valuable in hands-on roles and tend to stay there; advancement into management pulls people away from the work, so those who climb the hierarchy lose, or never had, hands-on mastery. Over time this produces Putt's Corollary: 'Every technical hierarchy, in time, develops a competence inversion' — the higher you go, the less technical competence is actually present.",
+  "examples": [
+    {
+      "tag": "The competence inversion",
+      "text": "An engineering director sets timelines and architecture for a system whose codebase they can no longer read, relying on summaries from the very engineers whose estimates they are overriding — the corollary in action. (An illustration of the principle, not a documented case.)"
+    },
+    {
+      "tag": "Authority without grasp",
+      "text": "A senior engineer who deeply understands a legacy system is repeatedly denied decision authority over it, while the person with authority cannot independently judge whether the proposed changes are sound."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Putt's Corollary",
+      "text": "'Every technical hierarchy, in time, develops a competence inversion' — the sharper, predictive half of the law: technical competence thins out toward the top."
+    },
+    {
+      "name": "The Peter and Dilbert principles",
+      "text": "The fellow 'negative selection' laws — people rising to their level of incompetence, and the incompetent promoted to limit their damage. Putt's is the R&D-management member of the family."
+    }
+  ],
+  "whyItMatters": "It names the uncomfortable gap between who understands technical work and who directs it — a gap that shapes how engineering organisations make (and mismake) decisions. Its value is as a resonant caution about the competence inversion, not as a measured finding.",
+  "working": [
+    {"lead": "Keep technical judgement near authority", "text": "the inversion bites when decision power drifts away from the people who understand the work; deliberately keep them in the room, or in the role."},
+    {"lead": "Watch for thinning competence up the ladder", "text": "assume each level up may understand the work less well, and build in ways for deep knowledge to reach decisions rather than be summarised away."},
+    {"lead": "Value the ones who understand what they don't manage", "text": "the engineers with the deepest grasp are often the least powerful; a healthy organisation finds ways to weight their judgement."}
+  ],
+  "limits": "It is satire and cynical humour, not an empirical or peer-reviewed finding, written by a pseudonymous author who said the mask let him develop humour 'inappropriate for a man in my position'. It is a sweeping generalisation: plenty of technical managers retain their grasp, and many organisations promote strong technical people who stay competent. No measurement or dataset underlies it — it overstates a real but partial tendency.",
+  "misreadings": "It is not a claim that all managers are incompetent, or that management is worthless. It is a wry observation that understanding and authority often come apart in technical work — a caution about the competence inversion, delivered as a joke.",
+  "origin": "Attributed to 'Archibald Putt', a pseudonym whose real identity has never been publicly confirmed. The law appears in the book Putt's Law and the Successful Technocrat (1981), which grew out of a series of articles Putt wrote for Research/Development magazine in 1976–77; a revised edition was issued by Wiley-IEEE Press in 2006.",
+  "category": "management",
+  "reliability": "Folk-adage",
+  "provenance": "canon",
+  "coinedYear": 1981,
+  "namedAfter": "Archibald Putt",
+  "sources": [
+    {"text": "Putt, A. (1981; rev. 2006). Putt's Law and the Successful Technocrat. Wiley-IEEE Press. — the law and its corollary.", "type": "primary"},
+    {"text": "Putt's Law and the Successful Technocrat, Wikipedia. — the pseudonymous author, the negative-selection framing, and the unconfirmed identity.", "url": "https://en.wikipedia.org/wiki/Putt%27s_Law_and_the_Successful_Technocrat", "type": "secondary"},
+    {"text": "\"Archibald Putt: The Unknown Technocrat Returns.\" IEEE Spectrum. — on the pseudonym and the 2006 edition.", "url": "https://spectrum.ieee.org/archibald-putt-the-unknown-technocrat-returns", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Putt%27s_Law_and_the_Successful_Technocrat",
+  "related": [
+    {"slug": "the-peter-principle", "kind": "kindred"},
+    {"slug": "dilbert-principle", "kind": "kindred"}
+  ]
+}
