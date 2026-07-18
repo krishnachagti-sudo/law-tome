@@ -1,0 +1,52 @@
+{
+  "no": "118",
+  "slug": "koomeys-law",
+  "name": "Koomey's Law",
+  "statement": "The computation you get per unit of energy has doubled about every year and a half.",
+  "statementAccent": "per unit of energy has doubled",
+  "meaning": "The energy efficiency of computing — useful computation per joule dissipated — has improved exponentially over time. It matters most for battery-powered and mobile devices: for a fixed amount of work, the energy, and therefore the battery, needed keeps falling, so devices can do more per charge or shrink.",
+  "mechanism": "Efficiency gains came largely from smaller, lower-power transistors — more and faster switching per unit of energy as feature sizes shrank. Historically this tracked Moore's-law density scaling combined with Dennard scaling, in which power density stayed roughly constant as transistors got smaller.",
+  "examples": [
+    {
+      "tag": "Battery framing",
+      "text": "Koomey put it in battery terms: at a fixed computing load, the amount of battery you need falls by half every year and a half. As efficiency rises, a phone does more computation per charge — or the same work with a smaller cell."
+    },
+    {
+      "tag": "Feasible mobile computing",
+      "text": "The trend underpins ever more capable laptops and smartphones without proportional growth in battery size. For mobile devices, efficiency, not raw speed, is the binding constraint that this law tracks."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Moore's law",
+      "text": "The density counterpart — transistor counts doubling roughly every two years. Koomey's law measures efficiency rather than count, and the two are historically linked but distinct."
+    },
+    {
+      "name": "Dennard scaling",
+      "text": "The principle that power density stays constant as transistors shrink. Its breakdown around 2005 is central to the slowdown of Koomey's law."
+    }
+  ],
+  "whyItMatters": "It reframed the story of computing progress around energy rather than speed, which is the metric that actually governs mobile, embedded, and data-centre computing. With a strong historical fit over roughly half a century, it explained why devices kept doing more on less power — and its slowdown now signals real physical limits ahead.",
+  "working": [
+    {"lead": "Optimise for joules in mobile contexts", "text": "for battery-bound devices, energy per computation is the constraint the law tracks — design and forecast around efficiency, not clock speed."},
+    {"lead": "Expect the doubling to lengthen", "text": "the rate has slowed since about 2000, so plan on a longer doubling time than the historical year-and-a-half."},
+    {"lead": "Respect the thermodynamic floor", "text": "irreversible computation faces Landauer's limit, a hard lower bound on energy per operation, so efficiency gains cannot continue forever."}
+  ],
+  "limits": "The doubling slowed after about 2000, from roughly every 1.57 years toward every 2.6 years, as Dennard scaling ended around 2005 and Moore's law itself decelerated — the difference between about a hundredfold and only a sixteenfold gain per decade. Later analyses report continued deceleration. Landauer's principle sets a thermodynamic lower bound on the energy for irreversible computation, which efficiency gains must eventually hit; estimates of when the bound is approached are projections, not facts. It is an observed historical regularity that has already changed slope, not a guaranteed law of nature, and the headline 1.57-year figure is a trendline fit rather than a round number Koomey advertised.",
+  "misreadings": "It is a fitted empirical trend, not a physical law, and it has measurably slowed — so the year-and-a-half doubling describes the past, not a promise. The 1.57-year figure comes from fitting the long-run data; Koomey himself rounds it to 'about every year and a half'.",
+  "origin": "From work by Jonathan Koomey and colleagues, published as 'Implications of Historical Trends in the Electrical Efficiency of Computing' (IEEE Annals of the History of Computing, 2011) and popularised around 2010–2011. Koomey later documented the post-2000 slowdown himself; the name was applied by others.",
+  "category": "technology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 2011,
+  "namedAfter": "Jonathan Koomey",
+  "sources": [
+    {"text": "Koomey, J., Berard, S., Sanchez, M. & Wong, H. (2011). \"Implications of Historical Trends in the Electrical Efficiency of Computing.\" IEEE Annals of the History of Computing, 33.", "url": "https://en.wikipedia.org/wiki/Koomey%27s_law", "type": "primary"},
+    {"text": "Koomey's law, Wikipedia. — the ~1.57-year doubling, the battery framing, the post-2000 slowdown, and Landauer's limit.", "url": "https://en.wikipedia.org/wiki/Koomey%27s_law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Koomey%27s_law",
+  "related": [
+    {"slug": "moores-law", "kind": "kindred"},
+    {"slug": "kryders-law", "kind": "kindred"}
+  ]
+}

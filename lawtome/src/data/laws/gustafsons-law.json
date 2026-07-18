@@ -1,0 +1,52 @@
+{
+  "no": "109",
+  "slug": "gustafsons-law",
+  "name": "Gustafson's Law",
+  "aliases": ["Gustafson–Barsis's law"],
+  "statement": "Give a bigger machine a bigger problem and speedup grows with the processors.",
+  "statementAccent": "speedup grows with the processors",
+  "meaning": "Amdahl asks how much faster a fixed job runs on more processors, and answers pessimistically. Gustafson reframes it: in practice people who get a bigger machine run a bigger problem in about the same time, not the same problem faster. Under that assumption the serial overhead becomes a shrinking share of the work, so speedup keeps rising with processor count instead of hitting Amdahl's ceiling.",
+  "mechanism": "The scaled speedup is S = N − (1 − p)(N − 1), equivalently S = (1 − p) + p·N, where N is the processor count and p the parallel fraction of the scaled workload. The key modelling move is that problem size grows with N, so the parallel work expands proportionally while the serial part stays roughly constant in absolute time. That makes speedup a straight line in N — slope p, intercept the serial fraction — with no asymptotic wall, in contrast to Amdahl's 1/(1 − p) limit.",
+  "examples": [
+    {
+      "tag": "Filling the supercomputer",
+      "text": "Gustafson's own motivation: on a 1024-processor hypercube at Sandia, real applications reached speedups near a thousandfold, seeming to break Amdahl's ceiling — because the workloads were scaled up with the machine. It became the standard argument for why massively parallel processing is worthwhile."
+    },
+    {
+      "tag": "Finer simulations",
+      "text": "Weather, fluid-dynamics, and finite-element models naturally scale with available compute: a bigger machine runs a finer grid or larger domain, so the per-cell parallel work grows while setup stays fixed — the canonical Gustafson regime."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Amdahl's law",
+      "text": "The fixed-problem-size counterpart it answers. Amdahl holds the problem constant and finds a bounded speedup; Gustafson holds the time constant, scales the problem, and finds a linear one. They are not contradictory — they answer different questions about different quantities."
+    },
+    {
+      "name": "The universal scalability law",
+      "text": "Neil Gunther's model adding both a serial term and a coherency term, so speedup can peak and then fall with more processors — a more realistic curve than either idealisation."
+    }
+  ],
+  "whyItMatters": "It rescued the case for massively parallel computing from Amdahl's gloom by pointing out that ambition scales with capacity: bigger machines are used for bigger problems. It reframed the goal of parallelism from 'finish the same job faster' to 'do more within the same time', which is how large-scale scientific computing actually proceeds.",
+  "working": [
+    {"lead": "Ask which quantity you're holding fixed", "text": "if the problem size is fixed, reason with Amdahl; if you scale the problem to fill the machine, reason with Gustafson — the honest speedup depends on which."},
+    {"lead": "Grow the problem to use the hardware", "text": "for scalable workloads, use added processors to run finer or larger models, where the parallel fraction expands and speedup stays near-linear."},
+    {"lead": "Don't assume all workloads scale", "text": "the linear result depends on the parallel portion growing freely with problem size; fixed-data or strongly sequential problems do not qualify."}
+  ],
+  "limits": "It assumes the parallelisable portion scales freely with problem size and that absolute serial time stays constant — true for many simulations, false for problems with fixed data or hard sequential dependencies. Algorithms with nonlinear complexity do not gain proportionally, since scaling the data inflates work super-linearly. Like Amdahl, it is an idealisation that ignores communication, synchronisation, memory bandwidth, and load imbalance; the universal scalability law exists precisely to capture what both omit. Some also note it is essentially a re-parameterisation of Amdahl — the same mathematics with a different independent variable.",
+  "misreadings": "It does not refute Amdahl's law or repeal the serial bottleneck; it changes the question, holding time rather than problem size fixed. Nor does it promise linear speedup for every workload — only for those whose parallel work grows with problem size. It is an optimistic reframing under a specific, common assumption, not a universal guarantee.",
+  "origin": "Set out by John Gustafson at Sandia National Laboratories, with the reasoning credited jointly to Edwin Barsis, in 'Reevaluating Amdahl's Law' (Communications of the ACM, May 1988). It generalised from measured thousand-processor results and reframed Amdahl's fixed-size analysis as a fixed-time one.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1988,
+  "namedAfter": "John Gustafson",
+  "sources": [
+    {"text": "Gustafson, J.L. (1988). \"Reevaluating Amdahl's Law.\" Communications of the ACM, 31(5), 532–533.", "url": "https://dl.acm.org/doi/10.1145/42411.42415", "type": "primary"},
+    {"text": "Gustafson's law, Wikipedia. — the scaled-speedup formula, the Amdahl framing, and the limitations.", "url": "https://en.wikipedia.org/wiki/Gustafson%27s_law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Gustafson%27s_law",
+  "related": [
+    {"slug": "amdahls-law", "kind": "tension"}
+  ]
+}

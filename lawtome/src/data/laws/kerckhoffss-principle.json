@@ -1,0 +1,57 @@
+{
+  "no": "110",
+  "slug": "kerckhoffss-principle",
+  "name": "Kerckhoffs's Principle",
+  "aliases": ["Shannon's maxim"],
+  "statement": "A cryptosystem should stay secure even if everything but the key is public.",
+  "statementAccent": "everything but the key is public",
+  "meaning": "The strength of a cipher must rest on the secret key alone. You should be able to hand your adversary the full algorithm, source code, and hardware and still be safe, provided the key stays secret. Design as though the system will leak — because it will — and make that leakage harmless.",
+  "mechanism": "Security lives in the secrecy of the key, not the secrecy of the algorithm. That has three consequences: the algorithm can be published and subjected to open, adversarial review that surfaces weaknesses before deployment; a compromised key is cheap to rotate, whereas a compromised secret algorithm is costly to redesign and redistribute; and many users can safely share one well-vetted algorithm while each holds a distinct key.",
+  "examples": [
+    {
+      "tag": "AES in the open",
+      "text": "The Advanced Encryption Standard is a fully public algorithm, specified openly and chosen through a public competition of adversarial review. Only the key is secret — the textbook embodiment of the principle."
+    },
+    {
+      "tag": "Against security through obscurity",
+      "text": "Hiding the algorithm itself is the opposite approach, and a brittle one: once the hidden design leaks through reverse engineering or disclosure, all security is lost and there is no key to rotate. Kerckhoffs's principle is its direct antithesis."
+    },
+    {
+      "tag": "Open cryptanalysis generally",
+      "text": "Modern published ciphers, hash functions, and protocols follow the same model — public algorithm, secret key, open scrutiny — so that many expert eyes can attack the design before it protects anything real."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Shannon's maxim",
+      "text": "Claude Shannon's stronger restatement, 'the enemy knows the system': assume the adversary has full knowledge of the design and rest all security on the key. Essentially the same idea in worst-case form."
+    },
+    {
+      "name": "The full six desiderata",
+      "text": "Kerckhoffs actually listed six requirements for a field cipher; this famous one is the second. The others are practical — the system must be usable, portable, operable by one person, and its key changeable at will."
+    }
+  ],
+  "whyItMatters": "It is the bedrock design principle of modern cryptography and the reason serious ciphers are published rather than hidden. By locating all secrecy in the key, it makes open review possible, key rotation cheap, and 'secret' algorithms suspect — a discipline that has held for roughly 140 years.",
+  "working": [
+    {"lead": "Put all the secrecy in the key", "text": "design so that publishing the algorithm changes nothing; if revealing the design would break you, the design is the flaw."},
+    {"lead": "Prefer public, reviewed algorithms", "text": "choose ciphers that have survived open adversarial cryptanalysis over proprietary ones whose safety rests on staying hidden."},
+    {"lead": "Treat obscurity as at most a thin extra layer", "text": "hiding details can raise an attacker's cost marginally, but it must never be the primary or sole protection."}
+  ],
+  "limits": "It is a design maxim and prudent assumption, not a theorem — it prescribes how to design and by itself proves no system secure. How absolute it should be is debated: in practice obscurity can add marginal defence-in-depth as a supplementary layer, so long as it is never the main protection. Shannon's stronger 'the enemy knows the system' is a worst-case stance; real adversaries do not always have full knowledge, but designing to the worst case is the conservative choice. Its core claim is uncontested; the soft edges are how much residual value obscurity retains.",
+  "misreadings": "It does not say algorithms must be published, only that security must not depend on their secrecy — a subtle difference. Nor does it declare obscurity worthless; it declares obscurity an unacceptable sole defence. The canonical one-line form is a modern paraphrase, and English wordings vary because they translate Kerckhoffs's 1883 French.",
+  "origin": "Set out by the Dutch-born linguist and cryptographer Auguste Kerckhoffs in 'La cryptographie militaire' (Journal des sciences militaires, 1883), as the second of six design requirements for military ciphers. Claude Shannon restated it in 'Communication Theory of Secrecy Systems' (Bell System Technical Journal, 1949) as 'the enemy knows the system' — now called Shannon's maxim.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1883,
+  "namedAfter": "Auguste Kerckhoffs",
+  "sources": [
+    {"text": "Kerckhoffs, A. (1883). \"La cryptographie militaire.\" Journal des sciences militaires, vol. IX. — the six principles; this is the second.", "url": "https://www.petitcolas.net/kerckhoffs/", "type": "primary"},
+    {"text": "Kerckhoffs's principle, Wikipedia. — the canonical statement, the six desiderata, and Shannon's maxim.", "url": "https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle", "type": "secondary"},
+    {"text": "Shannon, C.E. (1949). \"Communication Theory of Secrecy Systems.\" Bell System Technical Journal, 28, 656–715. — the 'enemy knows the system' restatement.", "url": "https://pages.cs.wisc.edu/~rist/642-spring-2014/shannon-secrecy.pdf", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle",
+  "related": [
+    {"slug": "linuss-law", "kind": "kindred"}
+  ]
+}

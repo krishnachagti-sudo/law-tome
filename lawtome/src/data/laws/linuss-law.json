@@ -1,0 +1,56 @@
+{
+  "no": "111",
+  "slug": "linuss-law",
+  "name": "Linus's Law",
+  "statement": "Given enough eyeballs, all bugs are shallow.",
+  "statementAccent": "all bugs are shallow",
+  "meaning": "The more people who can read the source and test a program, the more likely any given bug is spotted, diagnosed, and fixed quickly. What looks like a deep, hard problem to one person is usually obvious to someone in a large enough pool — the case for open, distributed development.",
+  "mechanism": "Bugs surface faster as the number of independent reviewers and testers grows. Open source exposes the code to a wide, distributed base of users and co-developers, so problems get characterised quickly even when no single person understands the whole system — peer review at scale. Raymond's fuller statement: given a large enough beta-tester and co-developer base, almost every problem will be characterised quickly and the fix obvious to someone.",
+  "examples": [
+    {
+      "tag": "The Linux kernel",
+      "text": "The archetypal case Raymond drew on and named the law after: a large distributed base of contributors and testers surfaces and fixes defects rapidly across releases, the bazaar model in action."
+    },
+    {
+      "tag": "Where the eyeballs weren't looking",
+      "text": "Heartbleed (2014) sat for about two years in OpenSSL, deployed across a huge share of HTTPS sites, despite the code being open — because almost no one was actually reviewing it. It is the most-cited apparent refutation of the law."
+    },
+    {
+      "tag": "Enough money, not eyeballs",
+      "text": "Jeff Atwood's riposte, 'given enough money, all bugs are shallow', argues that paid bug bounties and dedicated auditors — not free volunteer attention — are what actually surface deep security flaws."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The many-eyes hypothesis",
+      "text": "The security-specific extension: that open source is more secure because 'many eyes' review the code. This is the contested part, and the one Heartbleed and Shellshock are marshalled against."
+    },
+    {
+      "name": "The cathedral and the bazaar",
+      "text": "Raymond's broader framing, contrasting closed top-down 'cathedral' development with open distributed 'bazaar' development. Linus's law is the bazaar model's central claim."
+    }
+  ],
+  "whyItMatters": "It became the rallying argument for open-source development — the idea that transparency plus many contributors yields faster, more reliable software. Its high-profile security failures make it equally valuable as a cautionary tale: eyeballs only help when qualified people are actually looking.",
+  "working": [
+    {"lead": "Make the code genuinely reviewable", "text": "openness helps only if reviewers can and do read it; invest in readability, documentation, and drawing real attention, not just a public repository."},
+    {"lead": "Don't treat 'open' as 'audited'", "text": "usage is not review — widely deployed open code can still be unexamined, so fund real security audits rather than assuming eyeballs materialise."},
+    {"lead": "Qualify the eyeballs", "text": "bug-finding does not scale with headcount past a few skilled reviewers; prioritise expert attention over sheer numbers."}
+  ],
+  "limits": "The dictum is strongly contested as a security guarantee. Heartbleed (2014) persisted about two years in ubiquitous open-source code, and Shellshock lay latent in Bash for around twenty-five years — both open, both unnoticed. Critics note the eyeballs must be expert and actually looking: OpenSSL was effectively maintained by a couple of developers despite enormous usage, and the Linux Foundation's Jim Zemlin observed that in these cases the eyeballs weren't really looking. Empirical work suggests bug detection does not scale linearly with reviewer count, plateauing around a handful of reviewers. It holds better as a claim about active peer review than as a law.",
+  "misreadings": "Torvalds did not coin it — Eric Raymond did, naming it in his honour — and it is not the joke 'Linus's law' from Torvalds's own book about human motivation. Most importantly, it is not a proof that open source is secure: openness enables review but does not perform it, and famous breaches show the difference.",
+  "origin": "Coined by Eric S. Raymond in 'The Cathedral and the Bazaar' (essay first presented in 1997, book 1999), and named in honour of Linus Torvalds, creator of the Linux kernel. Torvalds did not author the phrase.",
+  "category": "software",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1999,
+  "namedAfter": "Linus Torvalds",
+  "sources": [
+    {"text": "Raymond, E.S. (1999). The Cathedral and the Bazaar. — the 'Release Early, Release Often' section stating Linus's Law.", "url": "http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/ar01s04.html", "type": "primary"},
+    {"text": "Linus's law, Wikipedia. — the canonical and formal statements, the attribution, and the Heartbleed/Shellshock criticism.", "url": "https://en.wikipedia.org/wiki/Linus%27s_law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Linus%27s_law",
+  "related": [
+    {"slug": "brooks-law", "kind": "tension"},
+    {"slug": "kerckhoffss-principle", "kind": "kindred"}
+  ]
+}

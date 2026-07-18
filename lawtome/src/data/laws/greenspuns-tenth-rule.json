@@ -1,0 +1,56 @@
+{
+  "no": "113",
+  "slug": "greenspuns-tenth-rule",
+  "name": "Greenspun's Tenth Rule",
+  "statement": "Any big enough C or Fortran program contains a bad reimplementation of half of Lisp.",
+  "statementAccent": "a bad reimplementation of half of Lisp",
+  "meaning": "Large programs written in low-level languages tend to reinvent — badly — the high-level features Lisp provides natively: garbage collection, dynamic dispatch, first-class functions, an interactive loop, runtime metaprogramming. Instead of getting these for free, the program grows an ad hoc, informally specified, bug-ridden, slow version of each.",
+  "mechanism": "As a system's complexity grows, it accretes configuration formats, macro and preprocessor layers, plugin systems, and eventually an ad hoc embedded interpreter or metaprogramming layer — an unplanned, informal reimplementation of the abstraction machinery a Lisp runtime already supplies.",
+  "examples": [
+    {
+      "tag": "Config languages that grow up",
+      "text": "Large systems frequently sprout their own configuration or expression mini-languages that creep toward Turing-completeness — an ad hoc interpreter reinventing evaluation, exactly as the rule predicts. Illustrative rather than a sourced case study."
+    },
+    {
+      "tag": "Bolted-on rule engines",
+      "text": "Enterprise applications commonly graft on rule engines or embedded scripting to regain the runtime flexibility a Lisp image gives natively — the metaprogramming layer arriving late and awkwardly."
+    },
+    {
+      "tag": "Embedded interpreters",
+      "text": "Games and large C++ applications embed scripting virtual machines once static compiled code proves too rigid — the 'embedded interpreter' the rule anticipates."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Morris's corollary",
+      "text": "Attributed to Robert Morris: '...including Common Lisp.' The joke is that real Lisp implementations often have a compiled low-level core, so they too contain the ad hoc half-of-Lisp. Well-attested folklore rather than a dated source."
+    },
+    {
+      "name": "The inner-platform effect",
+      "text": "A close cousin: a system so configurable it becomes a poor reimplementation of the very platform it runs on — the same convergence toward a homegrown, worse version of what already exists."
+    }
+  ],
+  "whyItMatters": "It captures a genuine pattern in the evolution of large software — the drift toward homegrown, informal versions of abstractions that mature languages already provide — while functioning as a piece of Lisp-advocacy wit. It is a memorable warning that unplanned complexity tends to reinvent, poorly, what better tools offer natively.",
+  "working": [
+    {"lead": "Watch for the accidental interpreter", "text": "when a system starts growing its own config language, rule engine, or scripting layer, recognise it as reinventing evaluation — and decide whether to adopt a real language instead."},
+    {"lead": "Reach for mature abstractions early", "text": "if you find yourself rebuilding garbage collection, dispatch, or metaprogramming by hand, that is the rule biting; prefer tools that supply them."},
+    {"lead": "Take it as folklore, not proof", "text": "it is an in-joke about a tendency, not a measured claim; use it to notice a pattern, not to settle a language war."}
+  ],
+  "limits": "It is a humorous adage and Lisp-advocacy in-joke, not an empirical claim, and it is unfalsifiable as stated — 'sufficiently complicated' and 'half of' are undefined. It is self-aware about its own naming gag (there are no rules one through nine), and Morris's corollary undercuts it by noting Lisp implementations themselves rest on lower-level cores. Cite it as folklore about programming culture, never as measured fact.",
+  "misreadings": "There are no preceding nine rules — the 'tenth' is itself the joke; Greenspun has said he just wanted a memorable name. And it does not literally claim programs contain Lisp; it claims they reinvent Lisp's features informally and badly. The exact punctuation of the line varies between sources, and its date is only approximate.",
+  "origin": "Coined by Philip Greenspun in the early-to-mid 1990s (commonly cited as around 1993, though he says he no longer recalls where he first wrote it). Robert Morris later appended the corollary '...including Common Lisp'.",
+  "category": "software",
+  "reliability": "Folk-adage",
+  "provenance": "canon",
+  "coinedYear": 1993,
+  "namedAfter": "Philip Greenspun",
+  "sources": [
+    {"text": "Greenspun's tenth rule, Wikipedia. — the canonical wording, the 'no rules 1–9' gag, and Morris's corollary.", "url": "https://en.wikipedia.org/wiki/Greenspun%27s_tenth_rule", "type": "secondary"},
+    {"text": "philip.greenspun.com — Greenspun's own page, including his note that he cannot recall the original source.", "url": "https://philip.greenspun.com/research/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Greenspun%27s_tenth_rule",
+  "related": [
+    {"slug": "zawinskis-law", "kind": "kindred"},
+    {"slug": "atwoods-law", "kind": "kindred"}
+  ]
+}

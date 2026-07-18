@@ -1,0 +1,53 @@
+{
+  "no": "116",
+  "slug": "sarnoffs-law",
+  "name": "Sarnoff's Law",
+  "statement": "The value of a broadcast network is proportional to its number of viewers.",
+  "statementAccent": "proportional to its number of viewers",
+  "meaning": "In a one-to-many broadcast system — one transmitter, many receivers — each additional viewer adds a roughly constant increment of value. Double the audience and you double the worth. It is the simplest, linear model of network value, assuming no interaction between the viewers themselves.",
+  "mechanism": "In a one-way network value flows from a single source outward to n passive receivers. There are n such source-to-receiver links, each treated as equally valuable, so total value scales linearly with audience size — in contrast to two-way networks, where value comes from connections among the viewers.",
+  "examples": [
+    {
+      "tag": "Broadcast television",
+      "text": "A network airing a championship game to tens of millions is worth far more than one airing reruns to a handful at the same hour, because value tracks audience size directly."
+    },
+    {
+      "tag": "Advertising rates",
+      "text": "The ad revenue of a radio or TV channel scales with its listeners or viewers — advertisers pay proportionally more for a larger audience, the direct economic embodiment of value proportional to n."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Metcalfe's law",
+      "text": "The quadratic step up: the value of a two-way network grows with the number of possible pairwise connections among users, about n² — worth arising from connection, not just reach."
+    },
+    {
+      "name": "Reed's law",
+      "text": "The exponential top: the value of a group-forming network grows with the number of possible subgroups, about 2^n. Sarnoff, Metcalfe, and Reed form an escalating trio — linear, quadratic, exponential — as networks move from broadcast to peer connection to group formation."
+    }
+  ],
+  "whyItMatters": "It is the baseline of network-value theory — the simplest case against which the richer Metcalfe and Reed models are defined. Naming the linear broadcast regime makes the escalating hierarchy legible: it shows what a passive, one-way audience is worth before interaction and group formation add their steeper returns.",
+  "working": [
+    {"lead": "Use it for one-way reach", "text": "for genuinely broadcast media, value scales with audience, so audience size is the first-order metric of worth."},
+    {"lead": "Know when to leave it behind", "text": "once viewers can connect or form groups, Sarnoff's linear model understates value — switch to Metcalfe or Reed for interactive networks."},
+    {"lead": "Don't treat all viewers as equal", "text": "the linear assumption prices every viewer identically, which rarely holds; weight by attention and advertiser value in practice."}
+  ],
+  "limits": "It is an idealisation: it assumes every viewer is equally valuable and adds constant marginal value, which rarely holds — some audiences are worth far more to advertisers, and attention is finite. It belongs to the same contested family of network-value laws; Odlyzko and colleagues argue connections are not all equally valuable, so laws that assume equal value overstate growth, and the underlying objection also undercuts Sarnoff's flat linear assumption. It has no rigorous empirical validation and functions mainly as a pedagogical baseline and foil.",
+  "misreadings": "It is a simple back-of-envelope model, not an empirically validated law, and it applies only to genuinely one-way broadcast — it understates the value of networks whose members interact. It is used chiefly as the linear floor of the Sarnoff–Metcalfe–Reed comparison, not as a precise predictor.",
+  "origin": "Named for David Sarnoff (1891–1971), the RCA and NBC pioneer who led American broadcasting for decades — though the 'law' is a retrospective coinage in the network-value literature, not Sarnoff's own. The naming is generally attributed to David P. Reed, who around 1999 set the linear Sarnoff case beside Metcalfe's quadratic and his own exponential law.",
+  "category": "technology",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1999,
+  "namedAfter": "David Sarnoff",
+  "sources": [
+    {"text": "Briscoe, B., Odlyzko, A. & Tilly, B. (2006). \"Metcalfe's Law is Wrong.\" IEEE Spectrum. — the Sarnoff/Metcalfe/Reed trio and the equal-value critique.", "url": "https://spectrum.ieee.org/metcalfes-law-is-wrong", "type": "secondary"},
+    {"text": "Reed, D.P. (1999). \"That Sneaky Exponential.\" — presents Sarnoff (linear), Metcalfe (n²), and Reed (2^n) side by side.", "url": "https://www.deepplum.com/gfn/reedslaw.html", "type": "primary"},
+    {"text": "David Sarnoff, Wikipedia. — his RCA/NBC role and the attribution of the linear network-value law to his name.", "url": "https://en.wikipedia.org/wiki/David_Sarnoff", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/David_Sarnoff",
+  "related": [
+    {"slug": "metcalfes-law", "kind": "kindred"},
+    {"slug": "reeds-law", "kind": "kindred"}
+  ]
+}
