@@ -1,0 +1,54 @@
+{
+  "no": "517",
+  "slug": "the-rule-of-72",
+  "name": "The Rule of 72",
+  "aliases": ["The doubling-time rule", "Rule of seventy-two"],
+  "statement": "To find how many years money takes to double, divide 72 by the annual percentage rate.",
+  "statementAccent": "divide 72 by the annual percentage rate",
+  "meaning": "The rule of 72 is a mental shortcut for estimating how long an investment takes to double at a fixed annual compound interest rate: divide 72 by the rate expressed as a whole-number percentage. At eight percent, doubling takes about 72 divided by 8, or nine years, which is almost exactly right. The rule trades a little accuracy for enormous convenience, letting anyone gauge the power of compounding in their head, and it works equally well in reverse for the halving of purchasing power under inflation. It is one of the most useful pieces of practical arithmetic in personal finance.",
+  "mechanism": "The exact doubling time is the natural logarithm of two divided by the logarithm of one plus the rate. Since the natural logarithm of two is about 0.693, the theoretically correct numerator for continuous compounding is roughly 69.3, giving a rule of 69.3. The number 72 is used instead because it is close to that value yet has many small divisors, two, three, four, six, eight, nine, and twelve, so the division is easy to do mentally, and the slight upward nudge happens to improve accuracy for the everyday rates around eight percent that people most care about. It is a first-order approximation dressed up for convenient mental arithmetic.",
+  "examples": [
+    {
+      "tag": "Nine years at eight",
+      "text": "At an eight percent annual return, 72 divided by 8 gives nine years to double, and the exact calculation is about 9.006 years, essentially the same."
+    },
+    {
+      "tag": "Inflation halving value",
+      "text": "Run in reverse, the rule estimates how fast money loses half its purchasing power: at three and a half percent inflation, using the sister rule of 70, about 70 over 3.5, or 20 years."
+    },
+    {
+      "tag": "Tripling and quadrupling",
+      "text": "The same idea gives a rule of 114 for tripling and a rule of 144 for quadrupling, so at six percent tripling takes about 19 years and quadrupling about 24."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Rules of 70 and 69.3",
+      "text": "The rule of 70 is handy for low rates and inflation, and 69.3 is exact for continuous compounding, since the natural logarithm of two is about 0.693."
+    },
+    {
+      "name": "The Eckart-McHale refinement",
+      "text": "A second-order correction, multiplying 69.3 over the rate by 200 over 200 minus the rate, that stays accurate across a wider band of interest rates."
+    }
+  ],
+  "whyItMatters": "The rule of 72 makes the counterintuitive force of compound growth tangible without a calculator, which is why it is a staple of financial literacy, investing, and everyday planning. It lets a saver see instantly how a few percentage points of return, or of inflation, transform wealth over a lifetime, and it applies to any exponential process, from investments and prices to population and debt. As one of the oldest recorded rules of thumb in finance, appearing in a printed text over five centuries ago, it is a small piece of arithmetic with an outsized reach into how people reason about the future.",
+  "working": [
+    {"lead": "Divide 72 by the rate", "text": "estimate doubling time in years by dividing 72 by the annual compound rate written as a whole-number percentage."},
+    {"lead": "Use it both ways", "text": "apply the same rule to the halving of purchasing power under inflation, not only to the growth of investments."},
+    {"lead": "Switch numerators for range", "text": "reach for 70 or 69.3 at low or continuously compounded rates, and 114 or 144 for tripling or quadrupling."}
+  ],
+  "limits": "The rule assumes a fixed rate held constant over the whole period and compound, not simple, interest, and it is an approximation rather than an exact calculation. It is most accurate in the six-to-ten percent band and drifts at very low or very high rates, where the rule of 70, the rule of 69.3, or a second-order correction does better. It is the earliest known reference, in Luca Pacioli's 1494 'Summa de arithmetica', that records the rule, but Pacioli neither derived nor explained it, so the rule is assumed to predate him, and it should be credited as earliest known, not as invented there.",
+  "misreadings": "The rate must be entered as a whole number, so eight percent is 8, not 0.08. The rule gives an estimate, not an exact answer, and drifts outside the six-to-ten percent range. It applies only to compound interest, not simple interest. The numerators must not be confused: 72 for doubling, 114 for tripling, 144 for quadrupling, and 70 or 69.3 for more precise or continuously compounded cases. And Pacioli only recorded the rule in 1494; he did not invent or derive it, so it likely predates his book.",
+  "origin": "A rule of thumb whose earliest known reference is Luca Pacioli's 1494 'Summa de arithmetica', where it is stated without derivation, implying it predates him; grounded mathematically in the natural logarithm of two, about 0.693.",
+  "category": "economics",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Rule of 72, Wikipedia. — the formula, the ln(2) basis, why 72 is chosen, and the rule-of-70 and tripling variants.", "url": "https://en.wikipedia.org/wiki/Rule_of_72", "type": "secondary"},
+    {"text": "The Rule of 72, Stanford University EE204. — the derivation from ln(2) and the accuracy across interest rates.", "url": "https://web.stanford.edu/class/ee204/TheRuleof72.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Rule_of_72",
+  "related": [
+    {"slug": "moores-law", "kind": "kindred"}
+  ]
+}

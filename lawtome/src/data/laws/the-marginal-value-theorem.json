@@ -1,0 +1,55 @@
+{
+  "no": "515",
+  "slug": "the-marginal-value-theorem",
+  "name": "The Marginal Value Theorem",
+  "aliases": ["MVT", "Charnov's theorem", "The patch-leaving rule"],
+  "statement": "A forager should quit a depleting patch the moment its return rate falls to the average for the whole habitat.",
+  "statementAccent": "the moment its return rate falls to the average for the whole habitat",
+  "meaning": "The marginal value theorem is a result in optimal foraging theory that predicts how long an animal should stay in a resource patch before moving on. Resources come in patches separated by travel, and within a patch returns diminish as it is depleted. The theorem says an optimal forager should leave the current patch when its marginal, or instantaneous, rate of energy gain drops to the long-term average rate of gain for the whole environment. Because leaving too early wastes a good patch and staying too long wastes time on a depleted one, the optimum is where the current patch stops beating the environment's average, and all patches are abandoned at that same rate.",
+  "mechanism": "The rule maximises the long-term average rate of gain over the whole cycle of travelling plus foraging, not the yield of any single patch. Charnov gave an elegant geometric solution: plot cumulative energy gain against time in the patch, a concave curve of diminishing returns, and mark travel time to the left of the origin; the line from that travel-time point that is tangent to the gain curve has a slope equal to the environment-wide rate, and the point of tangency gives the optimal patch-residence time. Longer travel between patches shifts the tangent rightward, so the forager should stay longer, and a richer environment steepens the achievable slope, so it should leave sooner.",
+  "examples": [
+    {
+      "tag": "Longer commute, longer stay",
+      "text": "A bird foraging where patches are far apart should stay longer in each, since the cost of travelling to the next one raises the value of squeezing more from the current patch."
+    },
+    {
+      "tag": "Poorer habitat, longer stay",
+      "text": "When the whole environment is lean, the leaving threshold drops, so an optimal forager lingers in each patch rather than abandoning it for a barely better one."
+    },
+    {
+      "tag": "Foraging for information",
+      "text": "Pirolli and Card's information-foraging theory applies the same logic to browsing: as search engines shorten the travel between information patches, users spend less time on each site before moving on."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Charnov tangent",
+      "text": "The graphical construction in which a line from the travel-time point tangent to the cumulative-gain curve locates the optimal leaving time, encoding all the theorem's predictions at once."
+    },
+    {
+      "name": "Beyond foraging",
+      "text": "Extensions to non-feeding decisions with diminishing returns, such as how long a dung fly should copulate, and to human information search on the web."
+    }
+  ],
+  "whyItMatters": "The marginal value theorem is a central result in behavioural ecology, turning the vague idea of not overstaying into a precise, testable prediction about when to quit, and unifying it with the economics of diminishing returns and travel costs. It has organised decades of research on how birds, bees, and other animals exploit patchy environments, and its logic reaches well beyond foraging, into the timing of many when-to-move-on decisions, most notably human information foraging on the web. It is a model of how simple optimisation can illuminate behaviour across very different domains.",
+  "working": [
+    {"lead": "Leave at the average", "text": "quit a patch when its current return rate falls to the long-term average for the whole environment, not when the patch is exhausted."},
+    {"lead": "Weigh the travel cost", "text": "stay longer in each patch when moving to the next one is costly, and leave sooner when the environment overall is rich."},
+    {"lead": "Maximise the whole cycle", "text": "optimise the average rate over travelling plus foraging together, rather than the yield of any single patch."}
+  ],
+  "limits": "The model assumes the forager effectively knows the environment-wide average rate and the shape of the within-patch gain function, an idealisation, since real animals face incomplete information and must learn and estimate patch quality. It is deterministic and energy-focused, so it omits risk-sensitivity, predation, mating, and other currencies, and its empirical support is often qualitative and directional rather than an exact quantitative match. The signature prediction, that patches are left exactly at the habitat average rate, is typically only approximately met, because payoff rates are hard to measure in unpredictable environments.",
+  "misreadings": "It does not say maximise the energy taken from the current patch; that would mean staying until depletion, whereas the theorem says leave earlier, while returns are still positive but have fallen to the habitat average. It does not say leave only when the patch is empty. And it does not predict longer stays in richer environments: a richer overall habitat raises the leaving threshold and shortens stays, so a long stay signals a poorer environment or longer travel, not a better patch. The marginal rate in the patch and the average rate for the habitat are different quantities that merely coincide at the optimum.",
+  "origin": "Formulated by the ecologist Eric Charnov in his 1976 paper 'Optimal foraging, the marginal value theorem' in Theoretical Population Biology, and later extended to human information foraging by Peter Pirolli and Stuart Card.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1976,
+  "sources": [
+    {"text": "Charnov, 'Optimal foraging, the marginal value theorem,' Theoretical Population Biology 9(2):129-136 (1976). — the decision rule and the tangent construction.", "url": "https://pubmed.ncbi.nlm.nih.gov/1273796/", "type": "primary"},
+    {"text": "Marginal value theorem, Wikipedia. — the statement, the graphical solution, the predictions, and the evidence.", "url": "https://en.wikipedia.org/wiki/Marginal_value_theorem", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Marginal_value_theorem",
+  "related": [
+    {"slug": "the-secretary-problem", "kind": "kindred"}
+  ]
+}

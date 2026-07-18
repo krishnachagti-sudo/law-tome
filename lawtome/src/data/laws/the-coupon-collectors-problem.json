@@ -1,0 +1,54 @@
+{
+  "no": "509",
+  "slug": "the-coupon-collectors-problem",
+  "name": "The Coupon Collector's Problem",
+  "aliases": ["The collector's problem", "Completing the set"],
+  "statement": "Collecting the whole set takes far longer than the last few items, because the final ones almost never turn up.",
+  "statementAccent": "the final ones almost never turn up",
+  "meaning": "The coupon collector's problem asks how many random draws it takes to collect a complete set of distinct items when each draw yields one of the items uniformly at random. If there are n different coupons, the expected number of draws to collect them all is n times the nth harmonic number, which for large n is close to n times the natural logarithm of n. The striking feature is how the tail dominates: the early coupons arrive fast, but the last few are agonisingly slow, since once only one is missing each draw has just a one-in-n chance of being the one you need. It is the mathematics of why finishing a sticker album costs so much more than starting one.",
+  "mechanism": "The total wait is a sum of independent geometric waits, one for each new coupon. After you already hold some coupons, the chance that a draw brings a genuinely new one shrinks as the missing set shrinks: with k distinct coupons in hand, a new one appears with probability n minus k over n, so the expected wait for it is n over n minus k. Adding these waits from the first coupon to the last gives n times the harmonic sum, one plus a half plus a third and so on down to one over n. The last term, waiting for the final coupon, alone contributes an expected n draws, which is why the endgame is so long.",
+  "examples": [
+    {
+      "tag": "Fifty coupons",
+      "text": "For a set of 50 coupons the expected number of draws to complete it is about 225, more than four times the set size, most of it spent chasing the last handful."
+    },
+    {
+      "tag": "Sticker albums",
+      "text": "Completing a Panini-style football album of several hundred stickers bought in random packs takes, on average, far more packs than there are stickers, the coupon collector's tail in everyday life."
+    },
+    {
+      "tag": "Coverage testing",
+      "text": "Estimating how many random test runs are needed to exercise every code path, or how many samples to observe every species, is the same calculation."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Gumbel tail",
+      "text": "Erdős and Rényi showed the completion time, once centred and scaled, converges to a Gumbel distribution, so the collection time is concentrated around n log n with a heavy right tail."
+    },
+    {
+      "name": "Unequal coupons",
+      "text": "If some coupons are rarer than others, the expected completion time only grows, since the rarest items come to dominate the wait, which the uniform formula does not capture."
+    }
+  ],
+  "whyItMatters": "The coupon collector's problem is a canonical result in probability with a long practical reach, into card and sticker collecting, software test coverage, ecological species estimation, cache and hashing analysis, and DNA sequencing coverage, wherever one must draw at random until every category is seen. Its central lesson, that completing the set costs vastly more than getting most of it and that the growth is n log n rather than linear, is a durable corrective to the intuition that the last piece should be no harder than the first. It also anchors the analysis of the last-item bottleneck in many randomised systems.",
+  "working": [
+    {"lead": "Expect the tail to dominate", "text": "budget for the last few items, since waiting for the final coupon alone takes on average as many draws as the whole set has coupons."},
+    {"lead": "Scale as n log n", "text": "remember that collecting all of n items grows faster than linearly, so doubling the set more than doubles the expected effort."},
+    {"lead": "Beware unequal odds", "text": "treat the clean formula as a best case, since rarer items make real completion much slower than the uniform result suggests."}
+  ],
+  "limits": "The standard result assumes each draw is independent and every coupon equally likely, an idealisation. When coupons have unequal probabilities, as promotions often arrange, completion takes strictly longer, because the rarest items dominate the wait, and the simple n-times-harmonic formula understates the true effort. The result is about the expected time and its distribution, which has a heavy right tail, so individual attempts vary widely around the average and a run can take far longer than n log n. It also assumes the set size n is fixed and known, and draws are with replacement from a stable pool.",
+  "misreadings": "It does not grow linearly with the number of items; the expected time is about n times the log of n, which is super-linear, so a bigger set is disproportionately harder. It does not say the last coupon is as easy as the first; the final one takes on average n draws by itself. And the clean formula assumes uniform, independent draws, so it is a lower bound on the effort when real-world items are unequally common.",
+  "origin": "A classic problem of elementary probability with roots in the work of de Moivre and Laplace, given its modern distributional treatment by Paul Erdős and Alfréd Rényi in the 1960s.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Coupon collector's problem, Wikipedia. — the n-times-harmonic expectation, the geometric mechanism, the variance bound, and the Erdős-Rényi Gumbel limit.", "url": "https://en.wikipedia.org/wiki/Coupon_collector%27s_problem", "type": "secondary"},
+    {"text": "Coupon Collector Problem, Brilliant Math & Science Wiki. — the expected value and the per-stage geometric derivation.", "url": "https://brilliant.org/wiki/coupon-collector-problem/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Coupon_collector%27s_problem",
+  "related": [
+    {"slug": "the-birthday-paradox", "kind": "kindred"}
+  ]
+}

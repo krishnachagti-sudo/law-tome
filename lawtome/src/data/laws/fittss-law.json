@@ -1,0 +1,56 @@
+{
+  "no": "514",
+  "slug": "fittss-law",
+  "name": "Fitts's Law",
+  "aliases": ["The index of difficulty", "Fitts' law"],
+  "statement": "The time to point at a target grows with its distance and shrinks with its size, but only logarithmically.",
+  "statementAccent": "grows with its distance and shrinks with its size",
+  "meaning": "Fitts's law predicts how long it takes to move rapidly to a target as a function of the distance to the target and its size. The farther away and the smaller the target, the longer the movement, but the dependence is logarithmic, not linear, so doubling the distance adds a fixed increment of time rather than doubling it. Paul Fitts framed the human motor system as an information channel of limited capacity, and the logarithmic term in his formula, the index of difficulty, is measured in bits by analogy with information theory. It is one of the most robust quantitative laws in human performance and a cornerstone of interface design.",
+  "mechanism": "In its original form the movement time equals a constant plus a slope times the base-two logarithm of twice the distance divided by the target width, and the widely used Shannon form writes the logarithm of the distance over width plus one. The logarithmic term is the index of difficulty in bits; the two fitted constants, an intercept and a slope, are empirical and depend on the device and the person. Dividing the index of difficulty by the movement time gives a throughput, a rate in bits per second used to compare pointing devices. Because difficulty scales logarithmically, a target twice as far or half as wide costs only one extra bit of difficulty, a constant, not a doubling.",
+  "examples": [
+    {
+      "tag": "Big buttons win",
+      "text": "Larger click targets are faster and less error-prone to hit, which is why adding a text label to an icon, enlarging the effective target, speeds selection."
+    },
+    {
+      "tag": "Screen edges are infinite",
+      "text": "A cursor stops at the screen boundary, so an edge or corner target is effectively infinitely wide and very fast to reach, the reason macOS puts its menu bar at the top edge."
+    },
+    {
+      "tag": "Comparing devices",
+      "text": "Throughput in bits per second, derived from Fitts's law, is the standard, in the ISO 9241 pointing-device standard, for measuring how efficiently a mouse, trackpad, or touchscreen performs."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Shannon formulation",
+      "text": "MacKenzie's form using the logarithm of distance over width plus one, which always yields a non-negative index of difficulty and fits data better, now the HCI standard."
+    },
+    {
+      "name": "The steering law",
+      "text": "Accot and Zhai's extension to movement along a constrained path or tunnel, such as navigating nested menus, rather than pointing at a single discrete target."
+    }
+  ],
+  "whyItMatters": "Fitts's law is a rare, precise, and broadly replicated model of human movement, and it is the quantitative backbone of user-interface and ergonomic design. It tells designers to make important targets large, to exploit the effectively infinite width of screen edges and corners, and to place frequently used controls close to where the pointer already is, and it gives an objective way, through throughput, to compare input devices. From the Mac menu bar and pie menus to touchscreen target sizing, its fingerprints are on the everyday feel of using a computer.",
+  "working": [
+    {"lead": "Make targets big and near", "text": "reduce movement time by enlarging important targets and placing them close to where the pointer starts."},
+    {"lead": "Exploit the edges", "text": "put high-value controls at screen edges and corners, which act as effectively infinite targets when a cursor stops at the boundary."},
+    {"lead": "Measure with throughput", "text": "compare pointing devices and designs by their bits-per-second throughput, the Fitts's-law-derived rate of aimed movement."}
+  ],
+  "limits": "Fitts's law models rapid, aimed pointing movement, not all motion: it does not cover steering along a path, that is the separate steering law, nor slow or continuous movement. Its fit deteriorates at very small indices of difficulty, for very easy targets, and when distance and width vary over very wide ranges. The intercept and slope constants are empirical and depend on the device, task, and person, so they must be re-measured for each setting, and the information-theoretic bits are an analogy, a channel-capacity model, not literal data throughput of neurons. The edge-as-infinite-target advantage holds only where a cursor is bounded, not on direct-touch screens.",
+  "misreadings": "Doubling the distance does not double the time; the relationship is logarithmic, so it adds a roughly constant increment. Fitts's law is not one universal formula with fixed numbers, since the constants vary by device, task, and person, and only the form is general. The bits of the index of difficulty are an information-theory analogy, not literal information transmitted. Screen edges are effectively infinite targets only where the cursor is stopped by a wall, so the trick does not carry over to touchscreens. And it applies to rapid aimed pointing, not to dragging along a trajectory, which the steering law governs.",
+  "origin": "Formulated by the experimental psychologist Paul M. Fitts in his 1954 paper 'The information capacity of the human motor system in controlling the amplitude of movement' in the Journal of Experimental Psychology, and later refined into the Shannon form by Scott MacKenzie.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1954,
+  "namedAfter": "Paul Fitts",
+  "sources": [
+    {"text": "Fitts's law, Wikipedia. — the formula, the index of difficulty in bits, throughput, the 1954 citation, and the Shannon and steering-law extensions.", "url": "https://en.wikipedia.org/wiki/Fitts%27s_law", "type": "secondary"},
+    {"text": "Fitts's Law and Its Applications in UX, Nielsen Norman Group. — the design implications, larger targets, screen edges, and touchscreen caveats.", "url": "https://www.nngroup.com/articles/fitts-law/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fitts%27s_law",
+  "related": [
+    {"slug": "hicks-law", "kind": "kindred"}
+  ]
+}

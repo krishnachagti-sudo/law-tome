@@ -1,0 +1,57 @@
+{
+  "no": "513",
+  "slug": "the-ellsberg-paradox",
+  "name": "The Ellsberg Paradox",
+  "aliases": ["Ambiguity aversion", "The three-colour urn"],
+  "statement": "People will pay to avoid unknown odds, preferring a known gamble even when it cannot be squared with any consistent belief.",
+  "statementAccent": "preferring a known gamble",
+  "meaning": "The Ellsberg paradox is a decision-theory puzzle showing that people systematically prefer gambles with known probabilities to gambles with unknown or ambiguous ones, in a way that no assignment of subjective probabilities can rationalise. In the classic three-colour urn, most people make a pair of choices that together are inconsistent with expected utility theory. The lesson is ambiguity aversion: beyond ordinary caution about risk, people dislike not knowing the odds at all, and will forgo value to avoid ambiguity. It revived Frank Knight's distinction between measurable risk and unmeasurable uncertainty and launched a large literature on decision-making under ambiguity.",
+  "mechanism": "The setup uses one urn of 90 balls: exactly 30 are red, and the other 60 are black or yellow in unknown proportion. Offered a bet on red, known to be one third, against a bet on black, unknown, most people pick red. Offered a bet on black-or-yellow, known to be two thirds, against red-or-yellow, unknown, most pick black-or-yellow. But preferring red over black implies you think red is likelier than black, while preferring black-or-yellow over red-or-yellow implies the opposite, since yellow is common to both and should cancel. No single probability for black can satisfy both choices, so the pair violates Savage's sure-thing principle, the independence axiom of subjective expected utility.",
+  "examples": [
+    {
+      "tag": "The two bets",
+      "text": "Most people bet on the known one-third red over the ambiguous black, and on the known two-thirds black-or-yellow over the ambiguous red-or-yellow, a pair no consistent belief can justify."
+    },
+    {
+      "tag": "The yellow that should cancel",
+      "text": "Yellow appears identically in the second pair of bets, so by the sure-thing principle it should not affect the choice, yet adding it flips the preference, exposing the inconsistency."
+    },
+    {
+      "tag": "Insurance and finance",
+      "text": "Ambiguity aversion helps explain why investors shun assets with poorly understood risks and why people over-pay for the comfort of known odds, from home bias to reluctance to face novel hazards."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Maxmin expected utility",
+      "text": "Gilboa and Schmeidler's 1989 model in which a decision-maker holds a set of possible probabilities and evaluates each act by its worst-case expected utility, rationalising ambiguity aversion."
+    },
+    {
+      "name": "The smooth ambiguity model",
+      "text": "Klibanoff, Marinacci, and Mukerji's 2005 approach separating ambiguity, a second-order belief over probabilities, from ambiguity attitude, giving a tractable representation."
+    }
+  ],
+  "whyItMatters": "The Ellsberg paradox is one of the most important challenges to the standard theory of rational choice, demonstrating that real preferences violate the axioms of subjective expected utility not through random error but through a systematic, replicable taste for known odds. It established ambiguity aversion as a distinct phenomenon and spurred a rich body of alternative models, from maxmin expected utility to Choquet and smooth-ambiguity representations, that now inform economics, finance, and decision theory. Its author, Daniel Ellsberg, later became famous for releasing the Pentagon Papers, but this urn is his lasting mark on the science of choice.",
+  "working": [
+    {"lead": "Separate ambiguity from risk", "text": "notice when a choice is driven by not knowing the odds at all, distinct from ordinary aversion to a known spread of outcomes."},
+    {"lead": "Watch the common outcome", "text": "recall that an outcome shared by both options should not sway the choice, so a preference that flips when it is added signals an inconsistency."},
+    {"lead": "Model beliefs as a set", "text": "when odds are unknown, consider representing beliefs as a range of probabilities and weighing worst cases, as ambiguity-averse models do."}
+  ],
+  "limits": "Whether ambiguity aversion is a mistake or a reasonable response is genuinely contested: it violates Savage's axioms, yet in a real experiment where the urn's composition is set by another party, avoiding the ambiguous bet is a sensible hedge against being the less-informed side. The effect is strong for gains but can reverse toward ambiguity-seeking in the domain of losses, and its size is sensitive to framing. A substantial minority of people do not show it, behaving consistently with expected utility or even ambiguity-loving, and learning about the paradox reduces but does not eliminate the pattern. The precise prize amount is illustrative; the logic holds for any positive stake.",
+  "misreadings": "Ambiguity aversion is not the same as risk aversion: both known bets in the urn are still risky, and the preference is driven by knowing the odds, not by a smaller spread, so standard risk aversion cannot generate the reversal. The paradox is not dissolved by supposing the urn is rigged, since even with a fair draw no single probability rationalises both choices; the inconsistency is structural. And yellow, the outcome common to the second pair of bets, is exactly what the sure-thing principle says should be irrelevant, which is why its influence is the tell.",
+  "origin": "From Daniel Ellsberg's 1961 paper 'Risk, Ambiguity, and the Savage Axioms' in the Quarterly Journal of Economics, which introduced the urn examples and the concept of ambiguity distinct from risk.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1961,
+  "namedAfter": "Daniel Ellsberg",
+  "sources": [
+    {"text": "Ellsberg paradox, Wikipedia. — the three-colour urn, the preference reversals, and the sure-thing-principle violation.", "url": "https://en.wikipedia.org/wiki/Ellsberg_paradox", "type": "secondary"},
+    {"text": "Ellsberg, 'Risk, Ambiguity, and the Savage Axioms,' Quarterly Journal of Economics 75(4):643-669 (1961). — the original statement and the ambiguity concept.", "url": "https://academic.oup.com/qje/article-abstract/75/4/643/1913802", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Ellsberg_paradox",
+  "related": [
+    {"slug": "the-st-petersburg-paradox", "kind": "kindred"},
+    {"slug": "loss-aversion", "kind": "kindred"}
+  ]
+}

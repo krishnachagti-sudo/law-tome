@@ -1,0 +1,55 @@
+{
+  "no": "508",
+  "slug": "the-birthday-paradox",
+  "name": "The Birthday Paradox",
+  "aliases": ["The birthday problem", "The birthday coincidence"],
+  "statement": "In a room of just 23 people, it is more likely than not that two of them share a birthday.",
+  "statementAccent": "two of them share a birthday",
+  "meaning": "The birthday paradox is the surprising fact that in a group of only 23 people the probability that at least two share a birthday is already greater than one half, about 50.7 percent, and by 70 people it is around 99.9 percent. It is called a paradox not because it is self-contradictory but because it clashes so sharply with intuition: most people guess you would need something closer to half of 365. The result is a staple lesson in how badly human intuition handles combinations and probabilities, and it has a serious edge in cryptography, where the same counting underlies attacks on hash functions.",
+  "mechanism": "The key is that the comparison is over pairs, not people. With 23 people there are 23 times 22 divided by 2, or 253 distinct pairs, and each pair is a separate chance for a match. The probability is easiest to compute by its complement: work out the chance that all 23 birthdays are different, by multiplying 365 over 365, times 364 over 365, and so on down, which comes to about 0.4927, and subtract from one to get roughly 0.5073. The confusion arises because people instinctively solve a different problem, whether anyone shares their own particular birthday, which really would need about 253 other people to reach even odds.",
+  "examples": [
+    {
+      "tag": "The 23 threshold",
+      "text": "Just 23 people suffice for better-than-even odds of a shared birthday, the figure that makes the result feel impossible until the pair count is seen."
+    },
+    {
+      "tag": "The birthday attack",
+      "text": "In cryptography, finding two inputs with the same hash takes only about the square root of the number of possible outputs, roughly two to the N over two for an N-bit hash, which is why collision resistance needs about double the bit length of preimage resistance."
+    },
+    {
+      "tag": "My birthday versus any",
+      "text": "The chance that someone shares your specific birthday needs about 253 people for even odds, a far larger group than the 23 needed for any two people to match, the exact confusion behind the paradox."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Near-matches",
+      "text": "If birthdays only need to fall within a day or two of each other, far fewer people are required, since the number of near-matching pairs grows faster still."
+    },
+    {
+      "name": "The birthday bound",
+      "text": "The general square-root rule, that collisions among items drawn from a space of size N become likely after about the square root of N draws, the form used to size hash functions."
+    }
+  ],
+  "whyItMatters": "The birthday paradox is one of the clearest demonstrations that human intuition systematically underestimates the likelihood of coincidences, because we think in terms of individuals rather than the far more numerous pairs. Beyond its value as a teaching example in probability, it has concrete consequences in computer science and cryptography, where the birthday bound sets the security margin of hash functions and dictates that collision resistance requires roughly twice the output length of preimage resistance. It is a small puzzle with a long reach into how we reason about chance and how we secure information.",
+  "working": [
+    {"lead": "Count the pairs", "text": "when looking for a coincidence in a group, count the number of pairs, which grows with the square of the group, not the number of individuals."},
+    {"lead": "Use the complement", "text": "compute the chance that no match occurs and subtract from one, usually far easier than tallying the matches directly."},
+    {"lead": "Mind the square root", "text": "expect collisions in a space of N possibilities after roughly the square root of N draws, the rule that sizes cryptographic hashes."}
+  ],
+  "limits": "The classic figures assume all 365 days are equally likely, that birthdays are independent, and that leap-day births are ignored. Real birthdays are not perfectly uniform, but any unevenness only makes shared birthdays slightly more likely, never less, so 23 is if anything a conservative threshold. The result is exact within these idealisations and shifts only marginally in the real world. The paradox is a statement about the probability of some shared birthday among any pair, and its figures do not transfer to the different question of matching one particular, fixed birthday.",
+  "misreadings": "It does not say 23 people are enough for someone to share your birthday; that far rarer event needs about 253 people, and confusing the two is the heart of the illusion. It does not require anywhere near 183 people, half of 365, which is the wrong intuition it corrects. And non-uniform real-world birthdays do not weaken the effect but slightly strengthen it, so the everyday world makes coincidences a touch more common, not less.",
+  "origin": "A classic result of elementary probability, often associated with Richard von Mises and widely popularised in the twentieth century, with the modern cryptographic birthday attack building directly on the same counting.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Birthday problem, Wikipedia. — the 50.7 percent at 23 people, the 253 pairs, the complement calculation, and the birthday attack.", "url": "https://en.wikipedia.org/wiki/Birthday_problem", "type": "secondary"},
+    {"text": "Birthday problem, Encyclopaedia Britannica. — independent confirmation of the 50.7 percent at 23 and the complement method.", "url": "https://www.britannica.com/science/birthday-problem", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Birthday_problem",
+  "related": [
+    {"slug": "the-coupon-collectors-problem", "kind": "kindred"},
+    {"slug": "the-law-of-truly-large-numbers", "kind": "kindred"}
+  ]
+}

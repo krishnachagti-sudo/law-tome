@@ -1,0 +1,56 @@
+{
+  "no": "516",
+  "slug": "fishers-fundamental-theorem",
+  "name": "Fisher's Fundamental Theorem of Natural Selection",
+  "aliases": ["The fundamental theorem", "Fisher's theorem"],
+  "statement": "Selection lifts a population's fitness at a rate equal to the additive genetic variance in fitness it has to work with.",
+  "statementAccent": "at a rate equal to the additive genetic variance in fitness",
+  "meaning": "Fisher's fundamental theorem of natural selection, stated by Ronald Fisher in 1930, holds that the rate of increase in fitness of any organism at any time is equal to its genetic variance in fitness at that time. The genetic variance meant here is specifically the additive component, the part of variation that responds cleanly to selection. The theorem ties the speed of adaptation directly to the raw material selection has to act on: the more heritable variation in fitness a population carries, the faster selection raises its mean fitness, and where there is no such variation, selection can make no progress. It is one of the most celebrated, and most misunderstood, results in evolutionary biology.",
+  "mechanism": "Selection sorts among heritable variants, and the additive genetic variance in fitness measures exactly how much fitness differs between genotypes in a way that is passed on. Fisher showed that the rate at which selection increases mean fitness equals this variance, so adaptation is fast when variation is abundant and slows as selection uses that variation up. The subtle point, clarified by George Price in 1972 and later by Warren Ewens and Anthony Edwards, is that the theorem is exact but partial: it gives only the change in mean fitness attributable to changes in gene frequency by selection, holding the environment and genetic background constant, not the total change in mean fitness, which other forces can push the other way.",
+  "examples": [
+    {
+      "tag": "Variation as fuel",
+      "text": "A population rich in additive genetic variance for fitness adapts quickly under selection, while a genetically uniform one, lacking such variance, cannot respond at all."
+    },
+    {
+      "tag": "Price makes it clear",
+      "text": "George Price's 1972 paper showed Fisher's proof was correct but that the theorem describes only the partial change in fitness due to gene-frequency change, resolving decades of confusion."
+    },
+    {
+      "tag": "The environment term",
+      "text": "Fisher embedded the selective gain in a fuller model that subtracts a term for deterioration of the environment, so total mean fitness need not rise even as selection pushes it up."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The partial-change reading",
+      "text": "The modern interpretation that the theorem is exactly true but refers only to the change in mean fitness caused by allele-frequency change, with other factors held fixed."
+    },
+    {
+      "name": "The thermodynamic analogy",
+      "text": "Fisher's own comparison of the theorem to the second law of thermodynamics, which encouraged the mistaken reading that mean fitness always rises."
+    }
+  ],
+  "whyItMatters": "Fisher's fundamental theorem is a cornerstone of population genetics, forging a precise quantitative link between the additive genetic variance a population holds and its rate of adaptation under selection. It shaped the mathematical foundations of the modern evolutionary synthesis and remains one of the most cited and debated statements in the field. Its history is also a lasting lesson in scientific interpretation: a compact, exact result was misread for decades because its scope was not stated clearly, and getting the scope right, exact but partial, is what turns a source of confusion into a genuine insight.",
+  "working": [
+    {"lead": "Tie rate to variance", "text": "expect selection to raise mean fitness fastest where additive genetic variance in fitness is greatest, and not at all where it is absent."},
+    {"lead": "Read it as partial", "text": "take the theorem to describe only the change in fitness due to gene-frequency change by selection, not the total change in mean fitness."},
+    {"lead": "Watch the other forces", "text": "remember that environmental deterioration, epistasis, and dominance can lower total fitness even while selection alone would raise it."}
+  ],
+  "limits": "The theorem is not a law that mean fitness always increases, the most common misreading; it isolates only the partial selective component, and total mean fitness can fall as the environment deteriorates or through epistasis and dominance interactions, which Fisher bundled into an environmental term he subtracted separately. Frequency-dependent selection and changing environments fall outside the partial change it captures, and it holds under specific assumptions, notably additive effects with the background and environment held constant. Empirical tests are rare, because the confounding non-selective terms are hard to isolate in practice, so the theorem is more a conceptual pillar than a routinely measured prediction.",
+  "misreadings": "It does not say populations always get fitter; that is the classic error, since the theorem covers only the partial selective component, not the total change. The genetic variance in the statement means the additive component specifically, not total genetic variance. And it describes the selection-driven part of the change in mean fitness, not the whole change, which is exactly the distinction Fisher left implicit and that George Price made explicit. Fisher's analogy to the second law of thermodynamics is suggestive but should not be read as guaranteeing an ever-rising mean fitness.",
+  "origin": "Stated by Ronald A. Fisher in his 1930 book 'The Genetical Theory of Natural Selection', and given its now-standard exact-but-partial interpretation by George R. Price in 1972 and subsequently by Warren Ewens and Anthony Edwards.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1930,
+  "namedAfter": "Ronald Fisher",
+  "sources": [
+    {"text": "Fisher's fundamental theorem of natural selection, Wikipedia. — the statement, the misunderstanding that fitness always rises, and Price's partial-change clarification.", "url": "https://en.wikipedia.org/wiki/Fisher%27s_fundamental_theorem_of_natural_selection", "type": "secondary"},
+    {"text": "Price, 'Fisher's fundamental theorem made clear,' Annals of Human Genetics 36(2):129-140 (1972). — the demonstration that the theorem is exact but partial.", "url": "https://pubmed.ncbi.nlm.nih.gov/4656569/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fisher%27s_fundamental_theorem_of_natural_selection",
+  "related": [
+    {"slug": "the-price-equation", "kind": "kindred"}
+  ]
+}
