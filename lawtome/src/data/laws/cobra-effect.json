@@ -7,19 +7,45 @@
   "statementAccent": "paying people to manufacture it",
   "meaning": "Put a bounty on the symptom and you create a market for the symptom. People supply whatever you are buying — including more of the thing you wanted less of.",
   "mechanism": "A bounty pays for a measurable outcome on the assumption that the outcome can only be produced by doing the thing you want. When the outcome can instead be manufactured — breed the snakes, farm the rats — the incentive quietly funds a new industry devoted to producing the very problem it was meant to end.",
-  "example": "In 1902, French colonial administrators in Hanoi paid a bounty for each rat killed, with a severed tail as proof. Rat-catchers began cutting the tails off live rats and releasing them back into the sewers, where they would breed and produce more tails to sell.",
+  "examples": [
+    {
+      "tag": "The rat bounty",
+      "text": "In 1902 French colonial administrators in Hanoi paid a bounty for each rat killed, with a severed tail as proof. Rat-catchers began cutting the tails off live rats and releasing them to breed and produce more tails to sell — the documented case behind the law (the more famous Delhi cobra story is unverified folklore)."
+    },
+    {
+      "tag": "The second car",
+      "text": "Mexico City's 1989 'Hoy No Circula' banned each car from the road one weekday a week by licence plate. The economist Lucas Davis found no air-quality gain — instead households bought a second, often older and dirtier, car with a different plate to drive on the banned day, raising total emissions."
+    },
+    {
+      "tag": "The sales quota",
+      "text": "Wells Fargo pushed aggressive cross-sell targets, so employees opened millions of accounts customers never authorised to hit the numbers. The bank paid US$185 million in penalties in 2016 and fired thousands of staff — the metric was met by manufacturing the customers."
+    },
+    {
+      "tag": "The pull-request prize",
+      "text": "DigitalOcean's 2020 Hacktoberfest gave a reward for a threshold number of GitHub pull requests. After a viral how-to, maintainers were buried in spam PRs — the reward counted contributions by volume, so volume is what it got, useful or not."
+    }
+  ],
   "whyItMatters": "Before you pay for a proxy, ask who can now profit by producing the thing you are trying to eliminate, and whether they can supply it faster than you can buy it. Bounties, bug-bounty schemes, scrappage programmes, and recycling credits all live in this hazard zone.",
+  "working": [
+    {"lead": "Pay for the outcome, not a proxy of it", "text": "reward the end state you actually want — measured air quality, a solved problem — not a countable stand-in that can be produced on its own."},
+    {"lead": "Ask who can now manufacture the problem", "text": "before offering a bounty, work out who profits by producing more of what you're paying to remove, and whether they can outpace your budget."},
+    {"lead": "Verify provenance and cap supply", "text": "was this a wild rat or a farmed one? A real customer or a phantom account? Auditing origin and bounding the quantity is the standard antidote."},
+    {"lead": "Reward the party who can't inflate the metric", "text": "the effect needs a supplier who controls the proxy; put the reward where it can't be gamed into existence."}
+  ],
+  "limits": "The cobra effect is a heuristic about incentive design, not a claim that incentives backfire in general — most incentives work as intended, and this names a specific failure mode. It needs a particular setup: a manufacturable proxy whose supply the sponsor does not control, so the people collecting the reward can produce the thing being counted (rat tails, unauthorised accounts, pull requests). Where the proxy can't be gamed into existence, the effect does not appear, and well-designed schemes that pay for verified outcomes and check provenance avoid it. Many of the vivid cases that circulate — the Delhi cobra farm, colonial pig bounties — rest on thin sourcing and are better treated as folklore than evidence.",
   "misreadings": "The lesson holds even though the famous Delhi cobra story is unverified folklore: the point is not that one anecdote happened, but that a reward attached to a proxy for a problem creates a market in that proxy. It is not a case against all incentives — only against paying for a symptom whose supply you do not control.",
   "origin": "The German economist Horst Siebert coined the term in his 2001 book Der Kobra-Effekt. The name comes from a widely repeated story that a British colonial cobra bounty in Delhi led locals to breed cobras. That story has never actually been documented: a 2025 review traced it to an 1873 newspaper report which said only that it \"was alleged\" that natives bred cobras for the reward, and found no contemporary record of any breeding operation or prosecution. The underlying phenomenon of perverse incentives is far better attested than the anecdote that named it.",
   "category": "economics",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": 2001,
+  "namedAfter": "Horst Siebert",
   "sources": [
     {"text": "Siebert, H. (2001). Der Kobra-Effekt. Wie man Irrwege der Wirtschaftspolitik vermeidet. Munich: Deutsche Verlags-Anstalt. ISBN 3-421-05562-9.", "type": "primary"},
     {"text": "Vann, M.G. (2003). \"Of Rats, Rice, and Race: The Great Hanoi Rat Massacre, an Episode in French Colonial History.\" French Colonial History, 4, 191–203.", "type": "primary"},
+    {"text": "Davis, L.W. (2008). \"The Effect of Driving Restrictions on Air Quality in Mexico City.\" Journal of Political Economy, 116(1), 38–81. — finds the restriction raised vehicle numbers rather than improving air quality.", "url": "https://doi.org/10.1086/529398", "type": "primary"},
     {"text": "\"The Cobra Effect: Colonial Misinformation Masquerading as Economic Theory.\" Friends of Snakes Society (2025). — traces the Delhi cobra story to an 1873 newspaper allegation and finds no supporting documentation.", "url": "https://friendsofsnakes.org.in/cobra-effect/", "type": "secondary"},
-    {"text": "Perverse incentive, Wikipedia.", "url": "https://en.wikipedia.org/wiki/Perverse_incentive", "type": "secondary"}
+    {"text": "Perverse incentive, Wikipedia. — the Hanoi rats, Wells Fargo, Fort Benning pig bounty, and Hacktoberfest cases.", "url": "https://en.wikipedia.org/wiki/Perverse_incentive", "type": "secondary"}
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Perverse_incentive",
   "related": [
