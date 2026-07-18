@@ -16,11 +16,14 @@ function xmlEscape(s) {
  * @param {string[]} paths base-relative page paths (e.g. 'laws/goodharts-law/',
  *   'browse/', '' for the home root). Each becomes an absolute <loc> = origin + path.
  * @param {string} origin absolute prefix already ending in '/' (origin + base).
+ * @param {string} [lastmod] optional ISO date (e.g. '2026-07-18') added as
+ *   <lastmod> to every URL — a crawl freshness hint for search + answer engines.
  * @returns {string} well-formed sitemap XML.
  */
-export function buildSitemap(paths, origin) {
+export function buildSitemap(paths, origin, lastmod) {
+  const mod = lastmod ? `<lastmod>${xmlEscape(lastmod)}</lastmod>` : '';
   const urls = paths
-    .map(p => `  <url><loc>${xmlEscape(origin + p)}</loc></url>`)
+    .map(p => `  <url><loc>${xmlEscape(origin + p)}</loc>${mod}</url>`)
     .join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

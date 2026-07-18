@@ -84,7 +84,7 @@ export function jsonLd(obj) {
  * @param {string} [o.robots]     robots directive (defaults to a permissive, rich-preview policy)
  * @param {object[]} [o.jsonld]   array of JSON-LD objects; each emitted via jsonLd()
  */
-export function head({ title, description, base = '/', origin = '', path, canonical, og, jsonld, siteName = 'The Law Tome', robots } = {}) {
+export function head({ title, description, base = '/', origin = '', path, canonical, og, jsonld, siteName = 'The Law Tome', robots, modified, published } = {}) {
   const canon = canonical || (path != null ? `${origin}${base}${path}` : undefined);
   const out = [
     '<!DOCTYPE html>',
@@ -108,6 +108,12 @@ export function head({ title, description, base = '/', origin = '', path, canoni
   const ogDesc = (og && og.description) || description;
   if (ogTitle) out.push(`<meta property="og:title" content="${escapeHtml(ogTitle)}">`);
   if (ogDesc) out.push(`<meta property="og:description" content="${escapeHtml(ogDesc)}">`);
+  // Article freshness signals (GEO): AI answer engines favour recently-updated
+  // sources. Emitted only for og:type=article and only when a date is supplied.
+  if (og && og.type === 'article') {
+    if (published) out.push(`<meta property="article:published_time" content="${escapeHtml(published)}">`);
+    if (modified) out.push(`<meta property="article:modified_time" content="${escapeHtml(modified)}">`);
+  }
   // og:image → absolute (crawlers reject base-relative refs). A caller passes the
   // base-relative path (starts with `base`, i.e. '/'); prefix the origin.
   let ogImage = og && og.image;

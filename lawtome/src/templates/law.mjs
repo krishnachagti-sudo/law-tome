@@ -42,12 +42,36 @@ function glanceRow(k, v) {
 }
 
 export function lawPage(law, ctx = {}) {
-  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next } = ctx;
+  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, buildDate } = ctx;
   const coined = law.provenance === 'coined';
   const catLabel = categories[law.category] || law.category || '';
   const canonical = `${origin}${base}laws/${law.slug}/`;
   const permalink = (slug) => `${base}laws/${escapeHtml(slug)}/`;
-  const description = law.meaning || law.statement;
+  // The substantive one-paragraph answer — used verbatim as the DefinedTerm/Article
+  // description, the OG description, and the "What is X?" FAQ answer. Kept distinct
+  // from the marketing meta description below so answer engines get the real
+  // definition, not a keyword-facet blurb.
+  const answer = law.meaning || law.statement;
+  const firstExample = Array.isArray(law.examples) && law.examples[0]
+    ? (law.examples[0].text || '')
+    : (law.example || '');
+
+  // ---- SEO title + meta description --------------------------------------
+  // Ranking pages for named laws title as "<Law>: Definition, Examples & Facts".
+  // Mirror that: front-load the law name (the primary keyword), then only the
+  // content facets this entry actually has — never claim examples/origin we lack.
+  const facets = ['Meaning'];
+  if (firstExample) facets.push('Examples');
+  if (law.origin) facets.push('Origin');
+  const facetList = facets.length > 1
+    ? facets.slice(0, -1).join(', ') + ' & ' + facets[facets.length - 1]
+    : facets[0];
+  const pageTitle = `${law.name}: ${facetList} | The Law Tome`;
+  // Meta description leads with the one-line statement (the featured-snippet
+  // payload), then the facets and a trust signal. Falls back to the answer.
+  const metaDescription = law.statement
+    ? `${law.name}: “${law.statement}” — what it means${firstExample ? ', real examples' : ''}${law.origin ? ', and where it came from' : ''}. Clearly explained, cross-linked, and sourced.`
+    : answer;
 
   // ---- entry section ----------------------------------------------------
   const metaBadge = coined
@@ -357,13 +381,20 @@ ${prevnext}</div>
 `;
 
   // ---- JSON-LD stack ----------------------------------------------------
+  const publisher = { '@type': 'Organization', name: 'The Law Tome', url: `${origin}${base}` };
+  // Search keywords: the name, its real aliases, the field, and the generic terms
+  // people pair with a named law. All honest synonyms — nothing invented.
+  const keywords = [law.name, ...(Array.isArray(law.aliases) ? law.aliases : []), catLabel, 'law', 'principle', 'effect', 'meaning', 'definition', 'examples']
+    .filter(Boolean).join(', ');
+
   const definedTerm = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
     name: law.name,
     ...(Array.isArray(law.aliases) && law.aliases.length ? { alternateName: law.aliases } : {}),
-    description: law.statement,
-    inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'The Law Tome' },
+    description: answer,
+    ...(law.no ? { termCode: law.no } : {}),
+    inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'The Law Tome', url: `${origin}${base}browse/` },
     ...(law.sameAs ? { sameAs: law.sameAs } : {}),
     ...(coined ? { additionalType: 'coined', disambiguatingDescription: 'Original law coined for The Law Tome — credited and clearly marked.' } : {}),
   };
@@ -372,8 +403,19 @@ ${prevnext}</div>
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: law.name,
-    description,
-    ...(law.namedAfter ? { author: { '@type': 'Person', name: law.namedAfter } } : {}),
+    ...(Array.isArray(law.aliases) && law.aliases.length ? { alternativeHeadline: law.aliases[0] } : {}),
+    name: law.name,
+    description: answer,
+    keywords,
+    about: { '@type': 'Thing', name: law.name, ...(law.sameAs ? { sameAs: law.sameAs } : {}) },
+    inLanguage: 'en',
+    isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
+    mainEntityOfPage: canonical,
+    author: publisher,
+    publisher,
+    ...(buildDate ? { dateModified: buildDate } : {}),
+    // Voice/assistant answer target: read the title and the plain-English definition.
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.law-title', '.lead'] },
   };
 
   const breadcrumb = {
@@ -392,8 +434,11 @@ ${prevnext}</div>
   // when the field backing them exists.
   const qa = (name, text) => (text ? { '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } } : null);
   const faqEntities = [
-    qa(`What is ${law.name}?`, description),
-    law.meaning && law.meaning !== description ? qa(`What does ${law.name} mean?`, law.meaning) : null,
+    qa(`What is ${law.name}?`, answer),
+    law.meaning && law.meaning !== answer ? qa(`What does ${law.name} mean?`, law.meaning) : null,
+    // "What is an example of X?" is one of the most common People-Also-Ask / voice
+    // queries for a named law — answer it with a real corpus example.
+    qa(`What is an example of ${law.name}?`, firstExample),
     qa(`Why does ${law.name} matter?`, law.whyItMatters),
     qa(`How does ${law.name} work?`, law.mechanism),
     (law.namedAfter || law.origin)
@@ -455,13 +500,14 @@ document.getElementById('copy').onclick=function(){
 
   return (
     head({
-      title: `${law.name} — The Law Tome`,
-      description,
+      title: pageTitle,
+      description: metaDescription,
       base,
       origin,
       path: `laws/${law.slug}/`,
       canonical,
-      og: { title: law.name, description, image: `${base}og/${law.slug}.png`, type: 'article' },
+      modified: buildDate,
+      og: { title: `${law.name}: ${facetList}`, description: answer, image: `${base}og/${law.slug}.png`, type: 'article' },
       jsonld: [definedTerm, article, breadcrumb, faq],
     }) +
     sprite() +

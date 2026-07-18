@@ -81,12 +81,18 @@ ${grid}
       }];
 
   const description = kind === 'category'
-    ? `${title} — named laws, principles, and effects in The Law Tome.`
-    : 'Browse every named law, principle, and effect in The Law Tome.';
+    ? `${title} — named laws, principles, and effects, each explained with examples, origin, and sources in The Law Tome.`
+    : 'Browse every named law, principle, and effect — each with its meaning, examples, origin, and sources. The complete index of The Law Tome.';
+
+  // SEO title: keyword-led and distinct from the on-page <h1> (which stays the
+  // short section label). Category pages target "<Field> laws & principles".
+  const seoTitle = kind === 'category'
+    ? `${title} Laws & Principles — Meaning & Examples | The Law Tome`
+    : 'All Named Laws, Principles & Effects — Index | The Law Tome';
 
   const path = kind === 'category' ? `category/${categoryKey}/` : 'browse/';
   return (
-    head({ title: `${title} — The Law Tome`, description, base, origin, path, jsonld }) +
+    head({ title: seoTitle, description, base, origin, path, jsonld }) +
     sprite() +
     header({ base, active, count: rows.length }) +
     section +

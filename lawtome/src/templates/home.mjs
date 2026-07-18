@@ -210,7 +210,7 @@ const LAWS=${featuredJson};
 
   return (
     head({
-      title: 'The Law Tome — every named law, principle, and effect',
+      title: 'The Law Tome — Named Laws, Principles & Effects, Explained & Sourced',
       description,
       base,
       origin,

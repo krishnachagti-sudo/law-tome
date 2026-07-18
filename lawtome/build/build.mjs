@@ -38,6 +38,11 @@ export async function buildSite(opts) {
 
   const byslug = Object.fromEntries(laws.map(l => [l.slug, l]));
   const publishedCount = opts.publishedCount ?? laws.length;
+  // A single build timestamp shared by every page, surfaced as the JSON-LD
+  // dateModified + article:modified_time freshness signal. Honest: it records
+  // when the page was last generated. Overridable so a reproducible build can
+  // pin it. ISO 8601 (date only keeps it stable across a day's rebuilds).
+  const buildDate = opts.buildDate ?? new Date().toISOString().slice(0, 10);
 
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
@@ -56,7 +61,7 @@ export async function buildSite(opts) {
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
-    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount });
+    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, buildDate });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
   }
 
@@ -118,7 +123,7 @@ export async function buildSite(opts) {
     'coined/',
     'privacy/',
   ];
-  writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`)));
+  writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate)));
   writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n`));
 
   // _redirects: one `from  to  301` line per law.redirectFrom entry (each an old
