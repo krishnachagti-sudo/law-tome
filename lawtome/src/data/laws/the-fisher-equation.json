@@ -1,0 +1,56 @@
+{
+  "no": "419",
+  "slug": "the-fisher-equation",
+  "name": "The Fisher Equation",
+  "aliases": ["The Fisher relation", "The Fisher effect", "The Fisher hypothesis"],
+  "statement": "The nominal interest rate is roughly the real interest rate plus expected inflation.",
+  "statementAccent": "the real interest rate plus expected inflation",
+  "meaning": "The Fisher equation relates the nominal interest rate that is quoted and paid to the real interest rate that measures actual purchasing power and to inflation. In exact form one plus the nominal rate equals one plus the real rate times one plus inflation; for small rates this reduces to the familiar approximation that the nominal rate is the real rate plus inflation. The relevant inflation is what people expect, so the real return a lender contracts for is the nominal rate minus expected inflation.",
+  "mechanism": "The nominal rate is what a loan pays in money terms; inflation erodes the purchasing power of that money, so the real rate is what is left after adjusting for it. Because borrowers and lenders agree terms in advance, the rate they care about uses expected inflation, giving the ex ante real rate; the realised, ex post real rate is known only afterwards and differs when actual inflation departs from what was expected. The approximation drops a small cross-product term, which stays negligible while rates are low but grows large under high inflation, where the exact multiplicative form is needed.",
+  "examples": [
+    {
+      "tag": "Reading a real return",
+      "text": "A bond paying a nominal five percent when inflation is expected at two percent offers a real return of about three percent, the nominal rate less expected inflation."
+    },
+    {
+      "tag": "Breakeven inflation",
+      "text": "The gap between a nominal Treasury yield and the yield on an inflation-protected security of the same maturity is a market reading of expected inflation, a direct use of the Fisher decomposition."
+    },
+    {
+      "tag": "The one-for-one claim",
+      "text": "The Fisher effect is the further hypothesis that the real rate is set by non-monetary forces, so nominal rates move point-for-point with expected inflation, leaving the real rate unchanged in the long run."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Identity versus hypothesis",
+      "text": "The equation itself is a definitional identity, true by construction; the Fisher effect is a separate, empirical claim that the real rate stays constant so nominal rates track expected inflation one-for-one."
+    },
+    {
+      "name": "The international Fisher effect",
+      "text": "An extension to exchange rates, predicting currency movements from differences in nominal interest rates across countries, linked to uncovered interest parity."
+    }
+  ],
+  "whyItMatters": "It is a building block of monetary economics and finance. It underpins the view that in the long run monetary policy moves nominal rates and inflation together while leaving the real rate roughly unchanged, and it is basic to bond pricing, the computation of real returns, and inflation-protected securities. By separating the nominal rate into a real component and an inflation component, it gives central bankers and investors a common language for thinking about interest, inflation, and purchasing power.",
+  "working": [
+    {"lead": "Separate real from nominal", "text": "read a quoted interest rate as a real return plus compensation for expected inflation, not as a single undifferentiated number."},
+    {"lead": "Use expected, not realised, inflation", "text": "apply the expected inflation the parties contracted on for the ex ante real rate, and reserve realised inflation for the ex post outcome."},
+    {"lead": "Switch to the exact form when rates are high", "text": "use the multiplicative version once inflation is large, since the simple sum then materially understates the required nominal rate."}
+  ],
+  "limits": "The one-for-one Fisher effect holds better in the long run than the short run, and empirical estimates of the pass-through often fall short of one, a recognised puzzle with mixed evidence across countries and periods. Darby and Feldstein argued that because interest income is taxed, nominal rates should rise more than one-for-one to keep after-tax real returns unchanged, though support for that stronger effect is itself mixed. The hypothesis may break down near the zero lower bound and under unconventional policy such as quantitative easing, and it relies on accurate inflation expectations and a stable real rate, both contestable.",
+  "misreadings": "The equation and the effect are not the same thing: the equation is always true by definition, while the Fisher effect, that the real rate is unchanged and nominal rates track expected inflation one-for-one, is a separate and empirically contested claim. Using realised inflation to compute the real rate a loan was contracted at confuses the forward-looking expected rate with the backward-looking realised one. And the simple approximation is not safe at high inflation, where it understates the nominal rate and the exact form is required.",
+  "origin": "Formulated by the American economist Irving Fisher, who set out the relation in 'Appreciation and Interest' (1896) and gave it mature treatment in 'The Theory of Interest' (1930); Fisher acknowledged he synthesised rather than invented the underlying ideas.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1896,
+  "namedAfter": "Irving Fisher",
+  "sources": [
+    {"text": "Fisher equation, Wikipedia. — the exact and approximate forms and the role of expected inflation.", "url": "https://en.wikipedia.org/wiki/Fisher_equation", "type": "secondary"},
+    {"text": "Dimand and Gomez Betancourt, 'Retrospectives: Irving Fisher's Appreciation and Interest (1896) and the Fisher Relation,' Journal of Economic Perspectives 26(4) (2012): 185-196. — the origin of the relation and Fisher's own synthesis.", "url": "https://www.aeaweb.org/articles?id=10.1257/jep.26.4.185", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fisher_equation",
+  "related": [
+    {"slug": "purchasing-power-parity", "kind": "kindred"}
+  ]
+}

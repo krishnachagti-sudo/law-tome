@@ -1,0 +1,55 @@
+{
+  "no": "429",
+  "slug": "the-dictator-game",
+  "name": "The Dictator Game",
+  "aliases": ["The dictator experiment"],
+  "statement": "Given money to split with a powerless stranger, people give away more than pure self-interest predicts.",
+  "statementAccent": "more than pure self-interest predicts",
+  "meaning": "The dictator game is a simple experimental game in which one player, the dictator, is given a sum of money and unilaterally decides how to divide it with a second player, the recipient. The recipient is entirely passive: they have no move, cannot accept or reject, and simply receive whatever the dictator chooses to give, possibly nothing. Because the recipient has no power to respond, the dictator's choice reflects preferences alone rather than strategy. Under the assumption of pure self-interest the prediction is unambiguous: keep everything and give zero.",
+  "mechanism": "By stripping out any strategic response, the design isolates the dictator's own preferences. Whatever they give cannot be explained by fear of rejection or retaliation, since the recipient can do nothing, so a positive gift must reflect an other-regarding motive, altruism, fairness, or adherence to a social norm. The game is best understood as the ultimatum game with the recipient's power removed, and the gap between what dictators give and what ultimatum proposers offer measures the purely strategic component of generosity, the part driven by fear that a stingy offer would be rejected.",
+  "examples": [
+    {
+      "tag": "The average gift",
+      "text": "Engel's meta-study of 129 papers finds dictators give about 28 percent of the pie on average, with the hypothesis of zero giving strongly rejected."
+    },
+    {
+      "tag": "A tri-modal split",
+      "text": "Giving is unevenly distributed: roughly 36 percent of dictators give nothing, about 17 percent choose an equal split, and a small fraction give everything."
+    },
+    {
+      "tag": "The vanishing generosity",
+      "text": "When dictators earn their endowment and choose under double-blind anonymity, giving collapses; Cherry, Frykblom, and Shogren found about 95 percent gave nothing."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The ultimatum contrast",
+      "text": "The ultimatum game lets the recipient reject an offer, in which case both get nothing, so proposer offers mix fairness with strategic fear; dictators, facing no rejection, give less, isolating the strategic part."
+    },
+    {
+      "name": "The take frame",
+      "text": "Bardsley's variant, extending the choice so dictators may also take from the recipient, in which apparent generosity collapses, suggesting some of it is an artefact of the experimental setup."
+    }
+  ],
+  "whyItMatters": "It is foundational empirical evidence in behavioural economics for social preferences and fairness, and a core building block for formal models of other-regarding behaviour such as inequity aversion. By removing strategy entirely, it provides a clean window onto what people are willing to give when nothing compels them, and its comparison with the ultimatum game separates genuine fairness from strategic calculation. Run across many populations, it has become a standard tool for probing how far real behaviour departs from the self-interested ideal.",
+  "working": [
+    {"lead": "Isolate preference from strategy", "text": "use the powerless recipient to read a gift as a pure expression of the dictator's preferences, not a response to threat."},
+    {"lead": "Compare with the ultimatum game", "text": "read the gap between dictator gifts and ultimatum offers as the strategic component driven by fear of rejection."},
+    {"lead": "Mind the design", "text": "expect giving to move sharply with anonymity, earned versus windfall money, and framing, so treat the average as design-dependent."}
+  ],
+  "limits": "Results are highly sensitive to experimental design. The robust claim is only that average giving is above zero; its magnitude moves dramatically with the protocol. Double-blind anonymity lowers giving, as does having dictators earn rather than be handed the money, and combining the two can push nearly all dictators to give nothing. Extending the choice set so dictators may take rather than only give can erase or reverse apparent generosity. Framing, the recipient's identity, the stakes, and repetition all matter. Between-study heterogeneity is very large, so the headline average is a grand mean over widely varying setups, not a fixed constant.",
+  "misreadings": "It does not prove people are fundamentally altruistic; giving is real but fragile, shrinking or vanishing under take-frames, earned money, and full anonymity. It is not the same as the ultimatum game, whose defining difference is that the recipient can reject. Dictators do not typically split evenly: the single most common choice is to give nothing, around 36 percent, while the mean near 28 percent is pulled up by a spread of positive givers. And a nonzero average does not mean almost everyone gives, since over a third give exactly zero, consistent with self-interest for those individuals.",
+  "origin": "Developed from an early three-party version by Kahneman, Knetsch, and Thaler (1986) and established in its now-standard two-player form by Forsythe, Horowitz, Savin, and Sefton (1994), who used it to test whether fairness alone could explain generous offers in the ultimatum game.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1994,
+  "sources": [
+    {"text": "Forsythe, Horowitz, Savin, and Sefton, 'Fairness in Simple Bargaining Experiments,' Games and Economic Behavior 6(3) (1994): 347-369. — the standard two-player dictator design and the comparison with the ultimatum game.", "url": "https://www.sciencedirect.com/science/article/abs/pii/S0899825684710219", "type": "primary"},
+    {"text": "Engel, 'Dictator games: a meta study,' Experimental Economics 14(4) (2011): 583-610. — the average gift, the tri-modal distribution, and the design sensitivities.", "url": "https://link.springer.com/article/10.1007/s10683-011-9283-7", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Dictator_game",
+  "related": [
+    {"slug": "the-ultimatum-game", "kind": "kindred"}
+  ]
+}

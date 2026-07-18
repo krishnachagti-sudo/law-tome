@@ -1,0 +1,56 @@
+{
+  "no": "426",
+  "slug": "the-median-voter-theorem",
+  "name": "The Median Voter Theorem",
+  "aliases": ["Black's median voter theorem", "The Hotelling-Downs model"],
+  "statement": "Under majority rule on a single issue, the median voter's preferred option beats every other.",
+  "statementAccent": "the median voter's preferred option beats every other",
+  "meaning": "The median voter theorem holds that under majority rule, if voters' preferences are single-peaked along a single one-dimensional spectrum, then the alternative most preferred by the median voter beats every other alternative in pairwise majority votes. The median voter's ideal point is the Condorcet winner, the unique majority-rule equilibrium. A closely related corollary, from spatial models of elections, is that two vote-seeking candidates competing on one dimension are drawn toward the median voter's position, so both converge on the centre.",
+  "mechanism": "Three ingredients drive the result: single-peaked preferences, in which each voter has one ideal point and support falls off with distance from it; a one-dimensional issue space that orders the alternatives from one end to the other; and majority rule by pairwise comparison. Because exactly half of the voters lie on each side of the median, any proposal moved away from the median loses majority support to one closer to it. The median position therefore cannot be beaten. In the electoral corollary, candidates chasing votes have every incentive to move toward that decisive median voter.",
+  "examples": [
+    {
+      "tag": "The decisive middle",
+      "text": "On a single left-right issue, a proposal at the median defeats any rival, because whichever direction a challenger moves, it loses the voters on the far side of the median."
+    },
+    {
+      "tag": "Convergence to the centre",
+      "text": "Two vote-maximising parties on one dimension are pulled toward the median voter, the spatial logic Hotelling and Downs used to explain why rivals cluster in the middle."
+    },
+    {
+      "tag": "Cycling without single peaks",
+      "text": "If preferences are not single-peaked, majority voting can cycle, with A beating B, B beating C, and C beating A, so no Condorcet winner exists."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Hotelling-Downs convergence result",
+      "text": "The distinct claim, from Hotelling's principle of minimum differentiation and Downs's electoral model, that two vote-seeking candidates converge on the median; it depends on extra assumptions and is often loosely called the theorem itself."
+    },
+    {
+      "name": "The multidimensional breakdown",
+      "text": "The McKelvey-Schofield chaos theorems, showing that with two or more issue dimensions majority preference generally has no stable winner, so agenda-setting can reach almost any outcome."
+    }
+  ],
+  "whyItMatters": "It is foundational in public choice and social choice theory, political economy, and spatial models of voting, providing one of the few clean equilibrium-existence results for majority rule. It explains the theoretical pressure toward party and candidate convergence on the centre and underpins much formal modelling of elections, legislatures, and referendums. Even where its assumptions fail, it serves as the benchmark against which real political divergence and instability are understood.",
+  "working": [
+    {"lead": "Find the median", "text": "on a single-dimensional issue with single-peaked preferences, expect the median voter's ideal point to be the majority-rule winner."},
+    {"lead": "Watch for convergence", "text": "predict that two vote-seeking candidates on one dimension are pulled toward the centre, while noting the extra assumptions that requires."},
+    {"lead": "Distrust it off the line", "text": "abandon the clean prediction once preferences are not single-peaked or the issue space has more than one dimension."}
+  ],
+  "limits": "The theorem holds only under strong assumptions that often fail. Preferences must be single-peaked, or a Condorcet winner may not exist and voting can cycle. One-dimensionality is critical: with two or more dimensions majority rule generally has no stable winner, as the McKelvey-Schofield chaos theorems show, since a stable multidimensional equilibrium requires a knife-edge median in all directions that almost never exists. It also assumes sincere voting, full turnout, exactly two options, and complete information. In practice politics is multidimensional, candidates often diverge rather than converge, driven by primaries, activists, abstention, and non-policy valence, and common voting systems are not Condorcet-consistent.",
+  "misreadings": "Parties and candidates do not always converge on the centre; convergence is a conditional corollary, not a robust law, and divergence is common once valence, primaries, abstention, or more than two candidates enter. The theorem does not hold in multiple dimensions, where multidimensionality generically destroys the stable outcome. And the existence result, that the median is the Condorcet winner, should not be conflated with the Downsian prediction that candidates move to the median; these are separate claims resting on different assumptions.",
+  "origin": "Credited to Duncan Black's 1948 paper 'On the Rationale of Group Decision-making', with the electoral convergence corollary drawn from Harold Hotelling's 1929 'Stability in Competition' and popularised by Anthony Downs in 'An Economic Theory of Democracy' (1957).",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1948,
+  "namedAfter": "Duncan Black",
+  "sources": [
+    {"text": "Black, 'On the Rationale of Group Decision-making,' Journal of Political Economy 56(1) (1948): 23-34. — the theorem that the median voter's motion beats every other under single-peaked preferences.", "url": "https://www.jstor.org/stable/1825026", "type": "primary"},
+    {"text": "Median voter theorem, Wikipedia. — single-peakedness, the Condorcet-winner result, the Hotelling-Downs corollary, and the multidimensional breakdown.", "url": "https://en.wikipedia.org/wiki/Median_voter_theorem", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Median_voter_theorem",
+  "related": [
+    {"slug": "the-condorcet-paradox", "kind": "tension"}
+  ]
+}
