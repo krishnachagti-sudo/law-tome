@@ -6,18 +6,53 @@
   "statementAccent": "will go wrong",
   "meaning": "If there is a way for something to fail, then eventually — often at the worst possible moment — it will.",
   "mechanism": "Over enough trials, every possible failure mode gets its chance: a low-probability fault becomes nearly certain if the system runs long enough or often enough. Read as engineering rather than gloom, the 'law' is a design stance — assume the unlikely failure will occur, and build so it cannot, or so it fails safely when it does.",
-  "example": "A part can be fitted two ways and only one is correct. Murphy's Law says that on some assembly, someone will fit it the wrong way — so the real fix is to make the wrong way physically impossible.",
+  "examples": [
+    {
+      "tag": "The origin incident",
+      "text": "In the MX981 rocket-sled tests around 1949, strain-gauge transducers wired to a harness returned zero readings because they had been installed the wrong way round. That single miswiring — a part that could be fitted two ways, fitted the wrong way — is the documented event the maxim was drawn from."
+    },
+    {
+      "tag": "Defensive design",
+      "text": "A connector that can be plugged in upside-down eventually will be, so good hardware makes the wrong orientation physically impossible — asymmetric, keyed, or shaped to fit only one way. This 'mistake-proofing' (poka-yoke) is Murphy's Law used as a design rule rather than a lament."
+    },
+    {
+      "tag": "Everyday (folk illustration)",
+      "text": "The buttered toast that lands butter-side down and the queue that always moves slowest are the popular illustrations. These are memory and selection effects — we notice and retell the annoying coincidences — not evidence of a hostile universe."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Finagle's law",
+      "text": "'Anything that can go wrong, will — at the worst possible moment.' It adds the sting of timing to Murphy's plain statement, and was popularised in science fiction by Larry Niven."
+    },
+    {
+      "name": "Sod's law",
+      "text": "The chiefly British cousin, more fatalistic in tone — the sense that misfortune is personally aimed at you. Cited in the New Statesman as early as 1970."
+    },
+    {
+      "name": "Yhprum's law",
+      "text": "'Murphy' reversed, and its optimistic inverse: sometimes systems that should not work, work anyway. The economist Richard Zeckhauser's version has been invoked to explain why reputation systems like eBay's function despite their flaws."
+    }
+  ],
   "whyItMatters": "As discipline rather than fatalism it drives defensive design: foolproofing, redundancy, and testing for the failure you are sure won't happen. Designing as though Murphy is right is how you keep him wrong.",
+  "working": [
+    {"lead": "Design as if it will fail", "text": "list the failure modes before they list themselves, and assume each one eventually happens on a long enough run."},
+    {"lead": "Make the wrong way impossible", "text": "where a step can be done incorrectly, remove the option — key the connector, guard the input, constrain the interface — rather than trusting care."},
+    {"lead": "Add redundancy and fail-safes", "text": "for the failures you cannot design out, arrange that the system degrades safely instead of catastrophically."},
+    {"lead": "Test the failure you're sure won't happen", "text": "the untested path is the one that bites; rehearse the unlikely fault deliberately."}
+  ],
+  "limits": "Murphy's Law is a folk adage, not a physical law — it predicts nothing on any single run. Much of its force is an artefact of attention: across enough events some failures are statistically inevitable (the statistician David Hand's 'law of truly large numbers'), and we remember the failures while forgetting the vastly more numerous times nothing went wrong. Its defensible core is the constructive one its originators intended — a prompt to anticipate failure and design against it — not the fatalistic belief that everything is doomed to break.",
   "misreadings": "It is not a claim that the universe is malicious or that everything always fails — it is a prompt to take low-probability failures seriously, not a prediction that they are certain on any single run. Treated as gloom it is useless; treated as a design checklist it is invaluable.",
-  "origin": "Attributed to the aerospace engineer Edward A. Murphy Jr. around 1949, during rocket-sled deceleration tests (project MX981) at what became Edwards Air Force Base, and popularised by the project's lead, Colonel John Stapp, at a press conference.",
+  "origin": "Attributed to the aerospace engineer Edward A. Murphy Jr. around 1949, during rocket-sled deceleration tests (project MX981) at what became Edwards Air Force Base, and popularised by the project's lead, Colonel John Stapp, at a press conference — where he framed it constructively, as the team's habit of designing against every failure they could imagine. The events are anecdotal and the exact original wording is genuinely contested (Murphy's son and colleagues recalled materially different phrasings); the earliest firm printed appearance of 'if anything can go wrong, it will' is in Anne Roe's 1952 book The Making of a Scientist, credited to an unnamed physicist.",
   "category": "planning",
   "reliability": "Folk-adage",
   "provenance": "canon",
   "coinedYear": 1949,
   "namedAfter": "Edward A. Murphy Jr.",
   "sources": [
-    {"text": "Spark, N. T. (2006). A History of Murphy's Law.", "type": "secondary"},
-    {"text": "Murphy's law, Wikipedia.", "url": "https://en.wikipedia.org/wiki/Murphy%27s_law", "type": "secondary"}
+    {"text": "Spark, N. T. (2006). A History of Murphy's Law. Periscope Film.", "type": "secondary"},
+    {"text": "\"The Real-Life Murphy and How 'Murphy's Law' Came to Be.\" Military.com. — corroborates the MX981 'Gee Whiz' sled, the Murphy team, and Stapp's press-conference popularisation.", "url": "https://www.military.com/history/real-life-murphy-and-how-murphys-law-came-be.html", "type": "secondary"},
+    {"text": "Murphy's law, Wikipedia. — origin, contested wording, the 1952 Anne Roe citation, and the Hand/Dawkins selection-bias critiques.", "url": "https://en.wikipedia.org/wiki/Murphy%27s_law", "type": "secondary"}
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Murphy%27s_law",
   "related": [

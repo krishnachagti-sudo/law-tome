@@ -6,10 +6,44 @@
   "statementAccent": "adequately explained by stupidity",
   "meaning": "Most of what looks like someone plotting against you is someone being careless, rushed, or badly informed. Incompetence is simply far more common than conspiracy.",
   "mechanism": "Malice requires intent, coordination, and the assumption that you were worth targeting — all costly and all rare. Ordinary error, haste, and inattention are abundant and require none of that. Given a bad outcome, the explanation that demands the fewest special assumptions is usually incompetence, which is why it makes the better first bet.",
-  "example": "Your name is missing from the invite to the planning meeting. It reads like a snub — until you learn the organiser built the list from a stale team page that was never updated after you moved desks.",
+  "examples": [
+    {
+      "tag": "A misread message",
+      "text": "A terse, punctuation-free reply lands like a slap. Read as contempt, it starts a cold war — but the sender was rushed, or simply writes that way. The duller reading is almost always the true one."
+    },
+    {
+      "tag": "An institutional slight",
+      "text": "The refund never came, the application vanished, your request went unanswered. It feels personal, but it is usually understaffing, a broken form, or a queue — not a plot aimed at you."
+    },
+    {
+      "tag": "Cock-up before conspiracy",
+      "text": "Sir Bernard Ingham, press secretary to Margaret Thatcher, put the working version bluntly: 'Many journalists have fallen for the conspiracy theory of government. I do assure you that they would produce more accurate work if they adhered to the cock-up theory.'"
+    }
+  ],
+  "variants": [
+    {
+      "name": "Grey's law",
+      "text": "'Any sufficiently advanced incompetence is indistinguishable from malice.' The reminder that from the outside the two can look identical — and that the distinction is about cause, not consequence."
+    },
+    {
+      "name": "The cock-up theory of government",
+      "text": "The chiefly British framing (Ingham) that sets 'cock-up' against 'conspiracy' as rival explanations of institutional behaviour, and bets on the former."
+    },
+    {
+      "name": "Heinlein's razor",
+      "text": "A name some use for the close 1941 antecedent in Robert Heinlein's 'Logic of Empire' — and for the theory that 'Hanlon' is a corruption of 'Heinlein'. The theory is unproven; Hanlon's 1980 printed credit is the firmer anchor."
+    }
+  ],
   "whyItMatters": "Assuming malice escalates: you retaliate, they retaliate, and a clerical error becomes a feud. Reaching for the duller explanation first costs you nothing and defuses most of them. It is a prior, not a guarantee — genuine malice exists, and the razor is not a reason to ignore evidence of it.",
+  "working": [
+    {"lead": "Start from the cheaper explanation", "text": "before assuming intent, ask whether haste, ignorance, or a broken process would produce the same result — they usually would."},
+    {"lead": "Look for the system before the schemer", "text": "most institutional slights come from understaffing, bad tooling, or a form lost in a queue, not a decision to wrong you."},
+    {"lead": "Update on real evidence of intent", "text": "the razor sets the starting bet; a pattern, a motive, and a paper trail can and should override it."},
+    {"lead": "Don't let it launder harm", "text": "used to wave away every failure as 'just a cock-up', it becomes a shield for the careless and the culpable alike — hold the outcome accountable even when no one meant it."}
+  ],
+  "limits": "The razor is a heuristic default, not a law — malice is real, and applied dogmatically the rule breeds naïveté and lets genuine bad actors off the hook (sophisticated malice happily disguises itself as incompetence, which is Grey's law). 'Stupidity' is also an uncharitable, imprecise word: most misfires come from ignorance, constraint, haste, or systemic failure rather than low intelligence, and gentler framings are usually more accurate. And it speaks only to individual intent — structural harms can be real, patterned, and worth confronting even when no single person coordinated them. It tells you where to start, not what is true.",
   "misreadings": "It is a razor, not a law of nature — a rule of thumb for a first guess, not proof that malice never happens. Applied dogmatically it becomes a way to excuse real harm. The point is to start from the cheaper explanation and then update the moment genuine evidence of intent appears.",
-  "origin": "The adage first appeared in print in Arthur Bloch's Murphy's Law Book Two (1980, p. 52), where it was titled \"Hanlon's razor\" with no indication of who Hanlon was. It is generally credited to Robert J. Hanlon of Scranton, Pennsylvania, who is reported to have submitted it to a reader contest for that book, though the evidence is second-hand. A close antecedent appears in Robert A. Heinlein's 1941 novella \"Logic of Empire\" — \"You have attributed conditions to villainy that simply result from stupidity\" — which led the Jargon File to speculate that the name might be a corruption of \"Heinlein's Razor\".",
+  "origin": "The adage first appeared in print in Arthur Bloch's Murphy's Law Book Two (1980, p. 52), where it was titled \"Hanlon's razor\" with no indication of who Hanlon was. It is generally credited to Robert J. Hanlon, reported to have submitted it to a reader contest for that book, though the biographical detail is second-hand. A close antecedent appears in Robert A. Heinlein's 1941 novella \"Logic of Empire\" — \"You have attributed conditions to villainy that simply result from stupidity\" — and the sentiment is older still, with versions in Goethe (1774) and others.",
   "category": "psychology",
   "reliability": "Folk-adage",
   "provenance": "canon",
@@ -18,7 +52,8 @@
   "sources": [
     {"text": "Bloch, A. (1980). Murphy's Law Book Two: More Reasons Why Things Go Wrong! Price/Stern/Sloan. p. 52. ISBN 0-8431-0674-3. — first known appearance in print.", "type": "primary"},
     {"text": "Heinlein, R.A. (1941). \"Logic of Empire.\" Astounding Science Fiction, March 1941. — contains the antecedent phrasing.", "type": "primary"},
-    {"text": "Hanlon's razor, Wikipedia. — sets out the attribution uncertainty and the Heinlein antecedent.", "url": "https://en.wikipedia.org/wiki/Hanlon%27s_razor", "type": "secondary"}
+    {"text": "\"Never Attribute to Malice That Which Is Adequately Explained by Stupidity.\" Quote Investigator (2016). — dated timeline from Hume to Hanlon; debunks the Napoleon attribution.", "url": "https://quoteinvestigator.com/2016/12/30/not-malice/", "type": "secondary"},
+    {"text": "Hanlon's razor, Wikipedia. — attribution uncertainty, the Heinlein antecedent, and Grey's law.", "url": "https://en.wikipedia.org/wiki/Hanlon%27s_razor", "type": "secondary"}
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Hanlon%27s_razor",
   "related": [

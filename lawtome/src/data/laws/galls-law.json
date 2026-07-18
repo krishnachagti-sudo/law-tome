@@ -6,18 +6,49 @@
   "statementAccent": "evolved from a simple system",
   "meaning": "Working complexity grows out of working simplicity — you rarely get a big system right by designing the whole thing up front.",
   "mechanism": "A simple system that works is a foundation you can trust: you add to it one change at a time and check that each step still works. A complex system built from scratch has too many interacting parts to get right at once, and too many places for a fault to hide — so it tends not to work, and patching rarely rescues it. Evolution beats grand design because it validates continuously.",
-  "example": "The web began as a plain way to link documents and grew, one working feature at a time, into a platform. Attempts to specify a grand replacement from a blank sheet have mostly stalled.",
+  "examples": [
+    {
+      "tag": "Grew from simple",
+      "text": "The web began as a plain way to link documents and grew, one working feature at a time, into a platform. It is the standard illustration of the law — a complex system whose every layer was added to something that already worked."
+    },
+    {
+      "tag": "The rewrite trap",
+      "text": "In 'Things You Should Never Do' (2000), Joel Spolsky called a from-scratch rewrite 'the single worst strategic mistake' a software company can make, citing Netscape: rewriting the browser stalled releases for years while competitors advanced. Old code encodes hard-won fixes a blank sheet discards."
+    },
+    {
+      "tag": "The big-bang launch",
+      "text": "Healthcare.gov (2013) went live as a vast system wiring together many agencies and insurers at once, and collapsed for most users on launch day — a complex system built and switched on whole, rather than evolved from a working simple one."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Worse is better",
+      "text": "Richard Gabriel's thesis (c. 1989–91): a simpler design that ships and spreads often beats the more correct, more complete one that arrives late. A close cousin — simplicity wins by getting into the world and evolving there."
+    },
+    {
+      "name": "The MVP / incremental delivery",
+      "text": "The modern descendant: ship a minimal product that works, then grow it from real use. Agile and MVP practice are Gall's Law turned into method."
+    }
+  ],
   "whyItMatters": "It is an argument for starting small and iterating: ship a simple thing that works, then grow it, rather than betting that a big up-front design will survive first contact with reality. It underpins the modern preference for MVPs and incremental delivery.",
+  "working": [
+    {"lead": "Ship a simple thing that works first", "text": "get a small end-to-end system running before you elaborate it; a working core is the foundation everything else validates against."},
+    {"lead": "Grow it one change at a time", "text": "add complexity incrementally and confirm the whole still works at each step, so a fault has nowhere to hide."},
+    {"lead": "Resist the big-bang rewrite", "text": "starting over from a blank sheet throws away the edge cases the working system already handles; prefer refactoring the thing that runs."},
+    {"lead": "Remember simple is necessary, not sufficient", "text": "Gall's own caveat is that 'a simple system may or may not work' — starting small buys you a path, not a guarantee."}
+  ],
+  "limits": "Gall wrote Systemantics as satire, and the law is an aphorism, not a proven theorem — there is no study behind it. It leans on survivorship bias: we observe the complex systems that survived and infer they all grew from simple ones, without seeing the simple systems that never grew or the clean-slate designs that quietly succeeded. Clean-sheet redesign is sometimes genuinely necessary, and the strong 'never rewrite' reading is contested — documented cases exist on both sides. And Gall's own qualifier undercuts naïve optimism: a simple system may or may not work, so starting small is necessary but never sufficient.",
   "misreadings": "It does not say planning or architecture are useless, or that any simple thing will grow into the right complex thing — plenty of simple systems evolve into messes. The claim is about the reliable path to working complexity, not a guarantee about the destination.",
-  "origin": "Stated by the author and paediatrician John Gall in his 1975 book General Systemantics (later retitled Systemantics: How Systems Work and Especially How They Fail). The label 'Gall's Law' was attached by later readers, not by the book itself.",
+  "origin": "Stated by the author and paediatrician John Gall in his 1975 book General Systemantics (later retitled Systemantics, then The Systems Bible). The book pairs it with a blunt corollary — 'a complex system designed from scratch never works and cannot be patched up to make it work; you have to start over, beginning with a working simple system' — and a caution that 'a simple system may or may not work'. The label 'Gall's Law' was attached by later readers, not by the book itself.",
   "category": "software",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": 1975,
   "namedAfter": "John Gall",
   "sources": [
-    {"text": "Gall, J. (1975). General Systemantics: An Essay on How Systems Work, and Especially How They Fail. (p. 71)", "type": "primary"},
-    {"text": "John Gall (author), Wikipedia.", "url": "https://en.wikipedia.org/wiki/John_Gall_(author)", "type": "secondary"}
+    {"text": "Gall, J. (1975). General Systemantics: An Essay on How Systems Work, and Especially How They Fail. (both halves of the law at pp. 65 and 71)", "type": "primary"},
+    {"text": "Spolsky, J. (6 April 2000). \"Things You Should Never Do, Part I.\" Joel on Software. — the Netscape from-scratch-rewrite cautionary tale.", "url": "https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/", "type": "secondary"},
+    {"text": "John Gall (author), Wikipedia. — editions, the exact wording, and the note that 'Gall's Law' is a later label.", "url": "https://en.wikipedia.org/wiki/John_Gall_(author)", "type": "secondary"}
   ],
   "sameAs": "https://en.wikipedia.org/wiki/John_Gall_(author)",
   "related": [

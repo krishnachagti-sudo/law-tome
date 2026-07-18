@@ -6,10 +6,44 @@
   "statementAccent": "a copy of the organization's communication structure",
   "meaning": "Software ends up shaped like the org chart that built it. The seams in the product fall where the conversations were hardest to have.",
   "mechanism": "Designing a system means dividing the work, and those divisions follow the lines along which people already communicate. Two teams that rarely talk build two loosely-coupled components with an awkward seam between them, because the interface mirrors the conversation that did — or didn't — happen. The software ends up a cast of the org chart.",
-  "example": "A company splits its payments work across three teams in three time zones who mostly talk through tickets. A year later the checkout has three separate payment services with three slightly different retry rules — not because anyone designed it that way, but because that was the cheapest shape to build across those three conversations.",
+  "examples": [
+    {
+      "tag": "Software",
+      "text": "A company splits its payments work across three teams in three time zones who mostly talk through tickets. A year later the checkout has three separate payment services with three slightly different retry rules — not because anyone designed it that way, but because that was the cheapest shape to build across those three conversations."
+    },
+    {
+      "tag": "The empirical test",
+      "text": "MacCormack, Baldwin and Rusnak (2012) compared software products of near-identical function built by tightly-coupled commercial firms versus loosely-coupled open-source communities. The products' modularity mirrored the coupling of the organisations that made them — direct support for the 'mirroring hypothesis'."
+    },
+    {
+      "tag": "The compiler aphorism",
+      "text": "Eric Raymond's popular gloss: 'If you have four groups working on a compiler, you'll get a four-pass compiler.' An illustration of the law's spirit rather than a documented case — but the one most engineers remember."
+    },
+    {
+      "tag": "Microservices in practice",
+      "text": "Team Topologies (Skelton & Pais, 2019) turns the law into method: to get small, independently-deployable services, build small, autonomous teams aligned to business capabilities — because the architecture will copy the teams either way."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The inverse Conway manoeuvre",
+      "text": "Run the law backwards on purpose: to obtain a target architecture, first restructure the teams and communication paths to match it. Coined by Jonny LeRoy and Matt Simons (2010) and popularised by the ThoughtWorks Technology Radar."
+    },
+    {
+      "name": "The mirroring hypothesis",
+      "text": "The research-management framing: organisational architecture and product architecture 'mirror' each other. It is the scholarly construct behind the empirical tests of Conway's Law."
+    }
+  ],
   "whyItMatters": "It runs in reverse too: if you want a particular architecture, arrange the teams to match it — the \"inverse Conway manoeuvre\". Reorganising people is an architectural decision whether you intend it or not.",
+  "working": [
+    {"lead": "Pick team boundaries you can live with as seams", "text": "wherever two teams meet, an interface will appear — so draw the org chart along the module lines you actually want."},
+    {"lead": "To get an architecture, arrange the teams first", "text": "the inverse Conway manoeuvre: reshape communication paths toward the design you want rather than fighting the ones you have."},
+    {"lead": "Put each seam where one team can own it", "text": "components straddling two teams inherit both teams' friction; give every interface a clear single owner."},
+    {"lead": "Mind distance and time zones", "text": "physical and temporal separation is the real communication graph the law copies — remote seams harden into architectural ones."}
+  ],
+  "limits": "Conway's Law is a strong empirical tendency, not an iron law. A small, co-located team with easy informal communication can build a well-factored monolith without any visible mirroring, and reorganising teams will not instantly refactor a rigid legacy system — the organisation and the codebase have to co-evolve. The mapping can also be countered deliberately (that is exactly what the inverse manoeuvre does), and interpretations differ on whether the mirroring is helpful alignment, an unwanted bias, or an unavoidable compromise. Harvard Business Review famously rejected Conway's original paper for not proving its thesis; the empirical support arrived decades later.",
   "misreadings": "It is a description, not an insult: it does not say organisations are dysfunctional, only that structure leaks into architecture. The 'inverse Conway manoeuvre' — reshaping teams to get the architecture you want — takes the law seriously rather than refuting it. And it states a strong tendency, not an inescapable rule.",
-  "origin": "Melvin Conway put the idea forward in his paper \"How Do Committees Invent?\", published in Datamation in April 1968. Conway has written that Harvard Business Review rejected the paper first, on the grounds that he had not proved his thesis. Participants at the 1968 National Symposium on Modular Programming gave the idea the name \"Conway's Law\".",
+  "origin": "Melvin Conway put the idea forward in his paper \"How Do Committees Invent?\", published in Datamation in April 1968, after Harvard Business Review rejected it on the grounds that he had not proved his thesis. His own wording was that organisations \"are constrained to produce designs which are copies of the communication structures of these organizations.\" Participants at the 1968 National Symposium on Modular Programming gave the idea the name \"Conway's Law\", and Fred Brooks later cited and popularised it in The Mythical Man-Month (1975).",
   "category": "software",
   "reliability": "Heuristic",
   "provenance": "canon",
@@ -17,7 +51,9 @@
   "namedAfter": "Melvin Conway",
   "sources": [
     {"text": "Conway, M.E. (1968). \"How Do Committees Invent?\" Datamation, 14(5), 28–31. Full text hosted by the author.", "url": "https://www.melconway.com/Home/Committees_Paper.html", "type": "primary"},
-    {"text": "Conway, M.E. \"Conway's Law\" — the author's own page, giving his preferred statement of the law and the account of the Harvard Business Review rejection.", "url": "https://www.melconway.com/Home/Conways_Law.html", "type": "primary"},
+    {"text": "Conway, M.E. \"Conway's Law\" — the author's own page, giving his preferred statement and the account of the Harvard Business Review rejection.", "url": "https://www.melconway.com/Home/Conways_Law.html", "type": "primary"},
+    {"text": "MacCormack, A., Baldwin, C. & Rusnak, J. (2012). \"Exploring the Duality Between Product and Organizational Architectures: A Test of the 'Mirroring' Hypothesis.\" Research Policy, 41(8), 1309–1324.", "url": "https://dash.harvard.edu/handle/1/34403525", "type": "primary"},
+    {"text": "Fowler, M. \"Conway's Law.\" — the Brooks naming, the inverse Conway manoeuvre, and the scope caveats.", "url": "https://martinfowler.com/bliki/ConwaysLaw.html", "type": "secondary"},
     {"text": "Conway's law, Wikipedia.", "url": "https://en.wikipedia.org/wiki/Conway%27s_law", "type": "secondary"}
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Conway%27s_law",
