@@ -1,0 +1,56 @@
+{
+  "no": "434",
+  "slug": "heaps-law",
+  "name": "Heaps' Law",
+  "aliases": ["Herdan's law", "The Herdan-Heaps law"],
+  "statement": "The number of distinct words in a text grows as a fractional power of its length.",
+  "statementAccent": "grows as a fractional power of its length",
+  "meaning": "Heaps' law is an empirical regularity of texts: the size of the vocabulary, the number of distinct words or types, grows as a power of the total number of words, the tokens. Written as V equals K times n to the power beta, with the exponent beta between about 0.4 and 0.6 for English, it says vocabulary grows sublinearly. Each further block of text adds proportionally fewer new words than the block before, because the common words are quickly used up and most later words are repeats.",
+  "mechanism": "The deceleration follows from the skewed frequency of words, the pattern captured by Zipf's law: a handful of word types account for a huge share of tokens, while most types are rare. Early in a text almost every token is a word not yet seen, so vocabulary rises steeply; as the text lengthens the frequent words are exhausted and new types arrive ever more slowly, giving an exponent below one. Yet vocabulary never saturates, because the long tail of rare words, proper names, technical terms, coinages, is effectively inexhaustible. Notably the law survives shuffling the text at random, since it depends only on the frequency distribution, not word order.",
+  "examples": [
+    {
+      "tag": "Sizing a search index",
+      "text": "Heaps' original motivation: engineers building an inverted index estimate how large the term dictionary will grow, and thus the memory it needs, by extrapolating distinct-word counts from a sample rather than scanning the whole collection."
+    },
+    {
+      "tag": "Fitting real corpora",
+      "text": "The law fits real texts with parameters that vary by author and genre; one analysis found the King James Bible fit K about 10.6 and beta about 0.52, and Jane Austen's novels K about 121 and beta about 0.34."
+    },
+    {
+      "tag": "A diagnostic of the tail",
+      "text": "Because real text reliably obeys it, departures from Heaps' law can flag something unusual, from non-linguistic data to machine-generated text."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The link to Zipf's law",
+      "text": "Heaps' law can be derived from a Zipfian frequency distribution and is asymptotically equivalent to it under mild assumptions; if word frequency falls as rank to the power minus alpha, the standard result gives beta about one over alpha."
+    },
+    {
+      "name": "The dual name",
+      "text": "It is called Herdan's law in statistical linguistics, honouring Gustav Herdan's 1960 priority, and Heaps' law in information retrieval, after Harold Stanley Heaps's 1978 book; the hyphenated Herdan-Heaps law acknowledges both."
+    }
+  ],
+  "whyItMatters": "It gives a cheap, principled way to forecast vocabulary size, index size, and memory footprint for search engines and language pipelines from a small sample. As one of a small family of robust statistical laws of language, alongside Zipf's law, it links directly to word-frequency structure and serves as a testbed for theories of how language and other generative systems keep producing new elements over time. Because real text obeys it so reliably, it also works as a diagnostic when data does not.",
+  "working": [
+    {"lead": "Extrapolate from a sample", "text": "estimate a collection's eventual vocabulary and index size by fitting the power law to a manageable sample rather than processing everything."},
+    {"lead": "Read beta as growth rate", "text": "treat the exponent, not the raw vocabulary count, as the measure of how fast new words keep arriving."},
+    {"lead": "Expect no ceiling", "text": "plan for vocabulary to keep growing without bound, since the rare-word tail never runs out at realistic text sizes."}
+  ],
+  "limits": "It is an empirical regularity, not a theorem, fitting observed data well but resting on an underlying Zipfian distribution rather than being derived from first principles. Its parameters are not universal: K and beta vary with language, genre, author, and how a word is defined, whether case is folded, words are lemmatised, or numbers and punctuation are counted. A pure power law implies vocabulary tends to infinity, which cannot be literally true of a finite lexicon, though the power law fits better than saturating alternatives at realistic sizes, and some authors argue the exponent drifts across scales. The Zipf link holds only asymptotically and under assumptions.",
+  "misreadings": "Heaps did not discover it: Herdan described it earlier, in 1960, which is why it is also called Herdan's law. Vocabulary does not eventually stop growing; under the law it keeps rising, just ever more slowly, because the rare-word tail is effectively inexhaustible. It is a power law, a straight line of slope beta on a log-log plot, not a saturating logarithmic curve. And it is not unrelated to Zipf's law but a mathematical consequence of the same frequency structure, so word order does not matter and the law survives shuffling.",
+  "origin": "Discovered by Gustav Herdan in 'Type-Token Mathematics' (1960) and independently formulated by Harold Stanley Heaps in 'Information Retrieval: Computational and Theoretical Aspects' (1978), whose name it carries in computer science; it is closely tied to Zipf's law.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1978,
+  "namedAfter": "Harold Stanley Heaps and Gustav Herdan",
+  "sources": [
+    {"text": "Heaps' law, Wikipedia. — the V=K n^beta form, the K and beta ranges, the Herdan 1960 and Heaps 1978 attributions, and the Zipf link.", "url": "https://en.wikipedia.org/wiki/Heaps%27_law", "type": "secondary"},
+    {"text": "Cook, 'Heaps' law: estimating vocabulary size from total words' (2019). — the formula, parameter ranges, and empirical fits to the King James Bible and Jane Austen.", "url": "https://www.johndcook.com/blog/2019/08/27/heaps-law/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Heaps%27_law",
+  "related": [
+    {"slug": "zipfs-law", "kind": "cause"}
+  ]
+}

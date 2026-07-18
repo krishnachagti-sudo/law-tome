@@ -1,0 +1,57 @@
+{
+  "no": "438",
+  "slug": "the-experience-curve",
+  "name": "The Experience Curve",
+  "aliases": ["The experience curve effect", "The BCG experience curve"],
+  "statement": "Each time cumulative production doubles, unit costs fall by a roughly constant percentage.",
+  "statementAccent": "unit costs fall by a roughly constant percentage",
+  "meaning": "The experience curve holds that each time a firm's cumulative production of a good doubles, its inflation-adjusted unit cost falls by a roughly constant percentage, typically twenty to thirty percent. In the Boston Consulting Group's formulation this applies not just to labour but to total cost, from manufacturing and research to marketing, distribution, and overhead. Because the decline is a constant percentage per doubling, cost falls as a power of cumulative volume, appearing as a straight line on a log-log plot, so the more a firm has ever produced, the lower its costs should be.",
+  "mechanism": "The gains are aggregated under the single heading of experience. Workers learn by doing, getting faster and making fewer errors with repetition; tasks and designs are specialised and standardised as volume grows; processes and tooling are improved; products are redesigned to engineer out cost once demand is proven; and larger volume spreads fixed costs and improves purchasing leverage. The Boston Consulting Group folded scale effects into experience, though analysts note the two are hard to disentangle. Crucially, the reductions are not automatic: they depend on management actively seeking ways to force costs down as volume expands.",
+  "examples": [
+    {
+      "tag": "The Model T",
+      "text": "As cumulative output of the Ford Model T grew, its inflation-adjusted price fell at roughly fifteen percent per doubling of cumulative production, a canonical illustration of the effect in mass production."
+    },
+    {
+      "tag": "Semiconductors",
+      "text": "The industry in which the Boston Consulting Group first identified the effect, from a 1966 client analysis, has seen chip costs fall along a steep experience curve for decades as cumulative volume exploded."
+    },
+    {
+      "tag": "Solar modules",
+      "text": "Swanson's law is an industry-specific instance: solar photovoltaic module prices fall roughly twenty percent for every doubling of cumulative shipped volume."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The learning curve",
+      "text": "The older, narrower concept from Theodore Wright in 1936, tracking direct labour time per unit rather than total cost; the experience curve deliberately broadened it to all value-added costs and reframed it as strategy."
+    },
+    {
+      "name": "The growth-share matrix",
+      "text": "Henderson's 1970 portfolio framework of stars, cash cows, question marks, and dogs, built on experience-curve logic, using relative market share as a proxy for the cost advantage that greater cumulative volume implies."
+    }
+  ],
+  "whyItMatters": "Bruce Henderson turned the descriptive curve into a prescriptive strategy: if cost falls predictably with cumulative volume, the market-share leader should have the lowest costs, a self-reinforcing advantage. This underpinned a whole doctrine of pricing low to buy volume and defending share, and it grounds the Boston Consulting Group's growth-share matrix, in which relative share stands in for competitive advantage precisely because, through the experience curve, more share implies lower cost. It shaped corporate strategy through the 1970s and still informs cost forecasting in high-volume industries.",
+  "working": [
+    {"lead": "Track cumulative volume", "text": "forecast unit cost from total accumulated production, not from calendar time or the current rate of output."},
+    {"lead": "Force the cost down", "text": "treat the cost reductions as something management must actively pursue, since they are not guaranteed by volume alone."},
+    {"lead": "Price against the curve", "text": "weigh the strategy of pricing ahead of falling costs to build share, while watching for its well-known traps."}
+  ],
+  "limits": "The doctrine drew heavy criticism after the 1970s. The push to gain share at all costs and price down the curve could drive whole industries to overinvest in capacity and cut prices, eroding profitability. Riding the curve of an existing product can breed complacency and leave an incumbent open to a rival adopting a new technology that resets the curve, since the model assumes stable technology and environment. Experience effects are also so intertwined with economies of scale as to be nearly impossible to separate, and the approach works best in high-volume, standardised, stable settings and can mislead in differentiated or fast-changing markets.",
+  "misreadings": "It is not the same as economies of scale, which concern cost at a given rate of output, whereas the experience curve concerns cost falling with cumulative output over time, driven substantially by learning and innovation; the two overlap but are distinct. It is not the same as the plain learning curve, which tracks labour time per unit rather than total cost. Cost falls with cumulative volume, not with time or current production rate, and only if management drives it. And the reduction is per doubling, not linear, so early doublings bring large drops while later ones, taking years, slow the pace.",
+  "origin": "Developed by Bruce Henderson and the Boston Consulting Group from a 1966 semiconductor cost analysis and publicised from 1968, generalising the older learning curve of Theodore Wright (1936) from labour time to total cost and recasting it as a doctrine of pricing and market share.",
+  "category": "management",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1968,
+  "namedAfter": "Bruce Henderson and the Boston Consulting Group",
+  "sources": [
+    {"text": "Experience curve effects, Wikipedia. — the constant-percentage-per-doubling form, the mechanisms, the Henderson-Wright relationship, and the criticisms.", "url": "https://en.wikipedia.org/wiki/Experience_curve_effects", "type": "secondary"},
+    {"text": "Boston Consulting Group, 'BCG Classics Revisited: The Experience Curve' (2013). — the 1966 semiconductor origin and the 20-30 percent per doubling figure.", "url": "https://www.bcg.com/publications/2013/growth-business-unit-strategy-experience-curve-bcg-classics-revisited", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Experience_curve_effects",
+  "related": [
+    {"slug": "wrights-law", "kind": "kindred"},
+    {"slug": "swansons-law", "kind": "consequence"}
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "no": "442",
+  "slug": "beckstroms-law",
+  "name": "Beckstrom's Law",
+  "aliases": ["The economics of networks", "The transaction theory of network value"],
+  "statement": "A network is worth the net value it adds to all the transactions its users conduct through it.",
+  "statementAccent": "the net value it adds to all the transactions",
+  "meaning": "Beckstrom's law proposes that the value of a network equals the net value added to each user's transactions conducted through that network, summed over all users. Rather than counting nodes or links, it values a network from its edge, by the transactions it enables. The intuition is to imagine switching the network off and asking what additional cost or loss each user would then bear. Summing benefit minus cost across every transaction and user, discounted to present value, gives the network's worth in monetary terms, a figure that can even be negative.",
+  "mechanism": "The mechanism is transaction-value summation. For each user, one enumerates the transactions they conduct via the network, computes the benefit minus the cost of each, discounts it to present value, and sums across all transactions and users. This looks at what flows through the network and the value added to each flow, in deliberate contrast to laws that infer value from topology or headcount. Because costs and losses are subtracted, the framework can capture congestion and service degradation as more users crowd in, and value stolen by bad actors, so a network overrun by costs or attackers can carry a negative value.",
+  "examples": [
+    {
+      "tag": "Switch it off",
+      "text": "To value a network, imagine it disappearing and total the extra transaction costs and losses each user would then incur; that sum is what the network is worth to them."
+    },
+    {
+      "tag": "The crowded club",
+      "text": "Beckstrom's golf-club illustration shows diminishing and even negative marginal value, since past some point adding members can make everyone worse off, which pure size-based laws cannot express."
+    },
+    {
+      "tag": "Security economics",
+      "text": "Because losses and security spending enter the formula directly, a network's value falls, or turns negative, when attackers extract more than users gain, the motivation for his cybersecurity presentations."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The size-based laws",
+      "text": "The family Beckstrom positioned against: Sarnoff's law with value proportional to users, Metcalfe's law with the square of users, and Reed's law with the exponential of users, all valuing a network purely by its size."
+    },
+    {
+      "name": "The security decomposition",
+      "text": "An applied cybersecurity form in which a network's value equals its benefit minus non-security costs, security investment, and losses from poor security, distinct from the general present-value formula."
+    }
+  ],
+  "whyItMatters": "It offers a way to put a currency figure on a network grounded in actual usage rather than headcount, attractive to analysts who found the size-based laws overstated the value of large networks. Because losses and security investment enter directly, it frames security spending as protecting transaction value and lets a network's worth fall, or go negative, when attackers extract more than users gain. It is a notable attempt to generalise network valuation beyond node-counting and to bring cost, congestion, and cybersecurity into the same accounting.",
+  "working": [
+    {"lead": "Value from the edge", "text": "estimate a network's worth from the transactions it enables and the net value each adds, not from how many nodes or links it has."},
+    {"lead": "Subtract the costs", "text": "include congestion, service degradation, and losses to bad actors, since these can lower a network's value or make it negative."},
+    {"lead": "Contrast with size laws", "text": "use it where node-counting laws mislead, treating it as a more general accounting rather than a competing exponent."}
+  ],
+  "limits": "It is a proposed valuation framework, not an empirically established or peer-reviewed law, and commentary at its debut questioned both the lack of peer review and whether 'law' is the right word. It is hard to compute in practice, since it requires enumerating and valuing every transaction's benefit and cost per user, plus discount rates, data rarely available, unlike simply counting users. It has not displaced the size-based laws in common usage despite Beckstrom's claim that it replaces them, and it exists in more than one published form, so it is best treated as a useful conceptual lens rather than a validated predictive law.",
+  "misreadings": "It is not an established law like Metcalfe's; it is a proposed model, and even Metcalfe's law is itself a heuristic. It is better framed as a more general accounting that subsumes size-based intuitions while adding costs and losses, not as a refutation of them by a competing exponent. There is not one Beckstrom formula: a general discounted transaction form and a security-specific decomposition both exist, so presenting only the security form as the law would mislead. And Beckstrom's network-value law is not the same as his separate set of cybersecurity laws.",
+  "origin": "Proposed by the entrepreneur Rod Beckstrom, former director of the US National Cybersecurity Center and later CEO of ICANN, in a 2009 paper on the economics of networks and a talk at DEF CON that July.",
+  "category": "technology",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 2009,
+  "namedAfter": "Rod Beckstrom",
+  "sources": [
+    {"text": "Beckstrom's law, Wikipedia. — the transaction-summation statement, the general formula, the contrast with Metcalfe's and Reed's laws, and the negative-value example.", "url": "https://en.wikipedia.org/wiki/Beckstrom%27s_law", "type": "secondary"},
+    {"text": "Lemos, 'Taking on Security with Beckstrom's Law,' MIT Technology Review, 3 August 2009. — the security decomposition and the degradation and bad-actor rationale.", "url": "https://www.technologyreview.com/2009/08/03/210590/taking-on-security-with-beckstroms-law/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Beckstrom%27s_law",
+  "related": [
+    {"slug": "metcalfes-law", "kind": "tension"},
+    {"slug": "reeds-law", "kind": "tension"},
+    {"slug": "the-network-effect", "kind": "kindred"}
+  ]
+}

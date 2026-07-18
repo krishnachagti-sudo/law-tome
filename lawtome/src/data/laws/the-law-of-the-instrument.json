@@ -1,0 +1,57 @@
+{
+  "no": "430",
+  "slug": "the-law-of-the-instrument",
+  "name": "The Law of the Instrument",
+  "aliases": ["Maslow's hammer", "The golden hammer", "The law of the hammer"],
+  "statement": "If the only tool you have is a hammer, everything starts to look like a nail.",
+  "statementAccent": "everything starts to look like a nail",
+  "meaning": "The law of the instrument names the over-reliance on a familiar tool: once someone has mastered a particular method, they tend to apply it to problems for which it is ill-suited, and even to perceive problems in terms that make that tool the answer. Kaplan put it as a small boy who, given a hammer, finds that everything he meets needs pounding; Maslow, in its most famous form, wrote that if the only tool you have is a hammer, it is tempting to treat everything as a nail. The bias is not reuse itself but its obsessive, inappropriate application.",
+  "mechanism": "Several reinforcing dynamics drive it. People frame problems so that their existing competence supplies the solution, rather than choosing methods from the problem's actual demands. A mastered tool is low-effort and low-risk, while learning a new approach carries cost and uncertainty, so the familiar one wins by default even when it fits poorly. Once it is chosen, confirmation bias over-weights evidence that suits it and discounts the rest. The pattern is close to functional fixedness and the Einstellung effect, in which prior success with a method blinds one to alternatives, and to the professional's habit of seeing the world through their discipline's lens.",
+  "examples": [
+    {
+      "tag": "Maslow's washing machine",
+      "text": "Maslow imagined a machine built to wash cars that then treats everything fed into it as a car to be washed, the tool imposing its logic on every input."
+    },
+    {
+      "tag": "The golden hammer in software",
+      "text": "A team expert in one database or framework builds every new system on it, including projects whose scale or constraints make it a poor fit, rather than weighing alternatives."
+    },
+    {
+      "tag": "Seeing every problem through one lens",
+      "text": "A specialist whose main tool is one kind of intervention frames every case in its terms, reaching for the familiar remedy even where another discipline's approach would fit better."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The golden hammer anti-pattern",
+      "text": "The software-engineering form, catalogued in 'AntiPatterns' (1998) as a familiar technology applied obsessively to many problems because a team's competence lies in one product."
+    },
+    {
+      "name": "Loevinger's law of irresistible use",
+      "text": "Lee Loevinger's 1967 rebranding aimed at regulators, who apply regulation because regulation is the tool they hold; a later riff on the same idea."
+    }
+  ],
+  "whyItMatters": "It is a durable warning across fields, from software architecture to education, medicine, policy, and research methodology, that expertise can quietly narrow judgement. Naming the bias helps practitioners notice when they are defining a problem to suit the method they already command rather than selecting the method the problem needs. Kaplan's original concern was that behavioural scientists pick problems to fit their available techniques, a caution that generalises wherever a mastered tool tempts its owner to force it onto every task.",
+  "working": [
+    {"lead": "Start from the problem", "text": "choose a method from the problem's actual requirements rather than framing the problem to suit the tool you already know."},
+    {"lead": "Distrust cognitive ease", "text": "treat the pull toward the familiar tool as a warning sign, since low effort and comfort, not fit, may be driving the choice."},
+    {"lead": "Separate reuse from obsession", "text": "keep sensible standardisation, but watch for the point where a default tool is being applied where it plainly does not belong."}
+  ],
+  "limits": "It is a heuristic and an aphorism, not an empirically measured law; the word 'law' is rhetorical, and Kaplan named it half-playfully. Tool familiarity is often rational, since reusing a well-understood tool reduces risk, cost, and error, and standardisation has real benefits, so the bias lies in obsessive or inappropriate application, not in reuse, and telling a sensible default from a golden hammer takes judgement. As a named effect it is not a cleanly lab-established bias in its own right but overlaps with and is partly explained by better-studied phenomena such as functional fixedness, the Einstellung effect, and confirmation bias.",
+  "misreadings": "It was not said by Mark Twain, the most common misattribution, for which there is no evidence. Maslow did not coin it: he gave the most famous phrasing in 1966, but the naming and formulation predate him in Kaplan's work, so 'Maslow's hammer' credits the phrasing, not the invention. The popular line 'if all you have is a hammer, everything looks like a nail' is a paraphrase, not a verbatim quote from either man. And it does not mean tools should never be reused; it warns against inappropriate over-application, not against expertise or standardisation.",
+  "origin": "Named and formalised by the philosopher Abraham Kaplan in 'The Conduct of Inquiry' (1964), after airing it in a 1962 talk; its most famous hammer-and-nail phrasing is Abraham Maslow's, in 'The Psychology of Science' (1966), which is why the bias is popularly called Maslow's hammer.",
+  "category": "psychology",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1964,
+  "namedAfter": "Abraham Kaplan and Abraham Maslow",
+  "sources": [
+    {"text": "Law of the instrument, Wikipedia. — Kaplan's naming, Maslow's phrasing, Tomkins, and the golden-hammer anti-pattern.", "url": "https://en.wikipedia.org/wiki/Law_of_the_instrument", "type": "secondary"},
+    {"text": "'If Your Only Tool Is a Hammer Then Every Problem Looks Like a Nail,' Quote Investigator. — the sourced origin chronology and the debunking of the Twain attribution.", "url": "https://quoteinvestigator.com/2014/05/08/hammer-nail/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Law_of_the_instrument",
+  "related": [
+    {"slug": "confirmation-bias", "kind": "kindred"},
+    {"slug": "the-law-of-triviality", "kind": "kindred"}
+  ]
+}

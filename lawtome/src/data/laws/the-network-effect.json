@@ -1,0 +1,55 @@
+{
+  "no": "432",
+  "slug": "the-network-effect",
+  "name": "The Network Effect",
+  "aliases": ["Network externality", "Demand-side economies of scale"],
+  "statement": "A network grows more valuable to each user as more people join it.",
+  "statementAccent": "more valuable to each user as more people join",
+  "meaning": "A network effect is the phenomenon by which a good or service becomes more valuable to each user as more people use it. A user's benefit from adopting a product depends positively on the total number of others using it or compatible products. The alternative name, network externality, captures the economic subtlety that each new adopter confers a benefit on existing users that the adopter is not paid for and does not fully account for, an external effect on others that ordinary market prices do not capture.",
+  "mechanism": "Network effects come in two main forms. Direct, or same-side, effects arise when a user's value rises with the number of other users of the same product, as with a telephone or a messaging app. Indirect, or cross-side, effects arise on platforms with two interdependent groups, where value on one side grows as the other grows, as more app developers make an operating system more valuable to users and the reverse. Both feed a positive loop: once a network passes critical mass, each new adopter makes the product more attractive, drawing more adopters, which can tip a market toward one dominant network and lock in an installed base.",
+  "examples": [
+    {
+      "tag": "The telephone",
+      "text": "A telephone in isolation is useless; every additional subscriber raises the value of all existing phones, the point Theodore Vail pressed in AT&T's 1908 annual report."
+    },
+    {
+      "tag": "The fax machine",
+      "text": "A fax machine has value only if others own compatible machines, so adoption in the 1980s snowballed as the installed base grew, a textbook direct network effect."
+    },
+    {
+      "tag": "Platforms and marketplaces",
+      "text": "A social network is more useful the more of your contacts are on it, while marketplaces and app stores show indirect effects, more buyers drawing more sellers and the reverse."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Two-sided markets",
+      "text": "The economics of platforms serving two interdependent groups, formalised by Jean-Charles Rochet and Jean Tirole in 2003, where pricing must balance both sides to ignite the cross-side effect."
+    },
+    {
+      "name": "Negative network effects",
+      "text": "The case where more users lower value through congestion or quality dilution, as with road traffic, bandwidth, or spam, so growth is not unboundedly beneficial."
+    }
+  ],
+  "whyItMatters": "Network effects are the core engine of platform and multi-sided business models and a leading source of durable competitive advantage. Through tipping and positive feedback they can concentrate a market on one or a few dominant networks, producing winner-take-all or winner-take-most outcomes. Because they entrench incumbents and raise entry barriers, they are central to modern competition policy and platform regulation. As the demand-side counterpart of economies of scale, they explain why value, not just cost, can improve with size.",
+  "working": [
+    {"lead": "Chase critical mass", "text": "recognise that a network's value compounds only past a threshold of users, so early adoption is the decisive hurdle."},
+    {"lead": "Tell direct from indirect", "text": "identify whether value rises with users of the same product or with a second interdependent group, since the strategy differs."},
+    {"lead": "Watch for congestion", "text": "expect that beyond some scale more users can subtract value, so the effect is not monotonic without limit."}
+  ],
+  "limits": "Network effects are not unbounded. Beyond some point congestion, coordination costs, moderation burdens, and quality dilution can reduce value, producing negative effects. When users can cheaply belong to several competing networks at once, so-called multihoming, tipping and lock-in weaken and rival platforms coexist. And the effect is often confused with economies of scale: network effects act on the demand side, raising users' willingness to pay as the network grows, whereas economies of scale act on the supply side, lowering the seller's unit cost. A firm can have one without the other.",
+  "misreadings": "A network effect is not the same as virality: virality is how fast a product spreads, while a network effect is why it becomes more valuable once many use it, and a product can go viral without any network effect or have strong effects without being viral. It is not the same as economies of scale, which act on cost rather than user value. And it is not Metcalfe's law, which makes the sharper, contested claim that value grows with the square of the number of users; one can accept network effects while rejecting that exact formula.",
+  "origin": "Practised early by Theodore Vail at Bell Telephone, who argued the case in AT&T's 1908 annual report; the economic theory was advanced between 1985 and 1995 by Michael Katz, Carl Shapiro, Joseph Farrell, and Garth Saloner, and the popular framing spread with Robert Metcalfe and the 1990s internet.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Network effect, Wikipedia. — the definition, direct and indirect effects, tipping and lock-in, and the contrast with economies of scale.", "url": "https://en.wikipedia.org/wiki/Network_effect", "type": "secondary"},
+    {"text": "Katz and Shapiro, 'Network Externalities, Competition, and Compatibility,' American Economic Review 75(3) (1985): 424-440. — the canonical economic formalisation.", "url": "https://www.jstor.org/stable/1814809", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Network_effect",
+  "related": [
+    {"slug": "metcalfes-law", "kind": "kindred"},
+    {"slug": "reeds-law", "kind": "kindred"}
+  ]
+}
