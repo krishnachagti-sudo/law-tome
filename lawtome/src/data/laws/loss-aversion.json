@@ -1,0 +1,55 @@
+{
+  "no": "242",
+  "slug": "loss-aversion",
+  "name": "Loss Aversion",
+  "statement": "Losses hurt more than equivalent gains please.",
+  "statementAccent": "more than equivalent gains please",
+  "meaning": "People feel the pain of a loss more strongly than the pleasure of an equal-sized gain, and so work harder to avoid losses than to acquire equivalent gains. Outcomes are judged not by final wealth but as gains or losses relative to a reference point, and the losing side of that point carries more psychological weight. The magnitude is often quoted as losses looming about twice as large as gains.",
+  "mechanism": "In prospect theory, value is carried by a reference-dependent function defined over changes rather than absolute wealth. The function is concave for gains and convex for losses, giving risk aversion for gains and risk seeking to avoid losses, and it is steeper on the loss side than the gain side. That kink at the reference point is loss aversion itself; cumulative prospect theory later attached a loss-aversion coefficient with a median estimate around 2.25.",
+  "examples": [
+    {
+      "tag": "The rejected coin flip",
+      "text": "Most people decline a fifty-fifty bet to win or lose the same amount, and typically demand the potential win be roughly double the potential loss before accepting — the everyday face of the asymmetry."
+    },
+    {
+      "tag": "The disposition effect",
+      "text": "Investors tend to sell winning stocks too early and hold losing ones too long, readily realising gains but reluctant to lock in a loss, which loss aversion helps explain."
+    },
+    {
+      "tag": "Framing",
+      "text": "The same option is chosen more or less often depending on whether it is described as a loss avoided or a gain achieved — a discount for cash feels better than a surcharge for credit, though they are identical."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Prospect theory",
+      "text": "The broader descriptive model of choice under risk that houses loss aversion, combining the reference-dependent value function with a probability-weighting function — the influential framework as a whole."
+    },
+    {
+      "name": "The endowment effect",
+      "text": "The higher value people place on things they own, originally explained as loss aversion applied to ownership, since parting with a possession is coded as a loss."
+    }
+  ],
+  "whyItMatters": "Loss aversion is one of the most cited ideas in behavioural economics, invoked to explain the endowment effect, the disposition effect, status quo bias, and the power of loss framing in policy and marketing. It sits at the heart of prospect theory, the framework that earned Daniel Kahneman a Nobel Prize and reshaped how economists model decisions.",
+  "working": [
+    {"lead": "Watch the reference point", "text": "notice that whether an outcome feels like a gain or a loss depends on the baseline it is compared against, which framing can shift."},
+    {"lead": "Expect resistance to giving up", "text": "anticipate that people will demand more to surrender something than they would pay to get it, and that losses will weigh heavily in their choices."},
+    {"lead": "Hold the magnitude loosely", "text": "treat the roughly twofold figure as a rough approximation, not a fixed constant, since it varies with stakes and context."}
+  ],
+  "limits": "The broad prospect-theory framework is influential and well replicated, but loss aversion specifically is genuinely contested. The roughly twofold coefficient comes from a small early sample and varies from about one-and-a-half to two-and-a-half across studies, depending on stakes, framing, and population; small stakes often show little or none. Gal and Rucker have argued loss aversion is substantially overstated and often absent, with many effects better explained by inertia or the status quo, calling it essentially a fallacy as a general bias. Defenders find real but variable support. The qualitative claim that losses often weigh more is solid; the fixed magnitude and universality are not.",
+  "misreadings": "It is not an exact law that losing hurts precisely twice as much as winning feels good — the magnitude is context-dependent and disputed. And loss aversion specifically should not be conflated with the whole of prospect theory, which is broadly influential even where loss aversion as a universal bias is challenged.",
+  "origin": "Introduced by Daniel Kahneman and Amos Tversky in 'Prospect Theory: An Analysis of Decision under Risk,' Econometrica 47(2):263-291 (1979), with the loss-aversion coefficient refined in their 1992 cumulative prospect theory; Kahneman received the 2002 Nobel, Tversky having died in 1996.",
+  "category": "psychology",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1979,
+  "namedAfter": "Daniel Kahneman and Amos Tversky",
+  "sources": [
+    {"text": "Loss aversion, Wikipedia. — the losses-loom-larger statement, the roughly twofold ratio, and the Gal-Rucker critique.", "url": "https://en.wikipedia.org/wiki/Loss_aversion", "type": "secondary"},
+    {"text": "Prospect theory, Wikipedia. — the value function, the 1979 and 1992 papers, and the framework's status.", "url": "https://en.wikipedia.org/wiki/Prospect_theory", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Loss_aversion",
+  "related": [
+    {"slug": "the-endowment-effect", "kind": "consequence"}
+  ]
+}

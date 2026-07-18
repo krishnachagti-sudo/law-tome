@@ -1,0 +1,55 @@
+{
+  "no": "240",
+  "slug": "confirmation-bias",
+  "name": "Confirmation Bias",
+  "statement": "We seek, read, and remember evidence that confirms what we already believe.",
+  "statementAccent": "confirms what we already believe",
+  "meaning": "The tendency to search for, interpret, favour, and recall information in ways that support one's existing beliefs, while giving disproportionately less weight to evidence that would challenge them. It operates largely automatically and unintentionally, and affects even intelligent, well-informed people, so a prior belief tends to get reinforced rather than genuinely tested.",
+  "mechanism": "It works through several sub-processes. Biased search means testing a hypothesis one-sidedly, looking for evidence that fits rather than evidence that could refute it. Biased interpretation means reading the same ambiguous data as support for what one already holds. Biased memory means recalling confirming instances more readily than disconfirming ones. Underlying these is often motivated reasoning: when a person wants to reach a particular conclusion, reasoning is deployed to build a case for it rather than to find the truth.",
+  "examples": [
+    {
+      "tag": "The 2-4-6 task",
+      "text": "Told that 2-4-6 fits a hidden rule and invited to test their own triples, most people propose only sequences consistent with a narrow guess and so never discover the rule was simply any ascending numbers — testing to confirm, not to refute."
+    },
+    {
+      "tag": "Politically motivated reasoning",
+      "text": "People rate the same evidence more favourably when it supports their political side and more critically when it opposes it, so shared facts can drive opposing camps further apart rather than together."
+    },
+    {
+      "tag": "Myside bias",
+      "text": "In generating and weighing evidence on an issue, people favour arguments for their own prior position — an absence of active open-mindedness that shows up even in the highly educated."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Belief perseverance",
+      "text": "The tendency for a belief to persist even after the evidence that first produced it has been discredited, a close relative fed by biased memory and interpretation."
+    },
+    {
+      "name": "The backfire effect",
+      "text": "The much-cited but now contested claim that corrections can make people believe a falsehood more strongly — later research has largely failed to replicate it, so it should not be confused with confirmation bias itself."
+    }
+  ],
+  "whyItMatters": "It is one of the most robust and consequential findings in the psychology of reasoning, shaping how people form and hold beliefs across science, politics, medicine, and everyday life. It explains why debate often entrenches rather than resolves disagreement, and why deliberately seeking disconfirming evidence is such a hard, valuable discipline.",
+  "working": [
+    {"lead": "Try to refute, not confirm", "text": "when testing a belief, actively look for evidence that would prove it wrong rather than evidence that fits."},
+    {"lead": "Steelman the other side", "text": "seek out the strongest version of opposing views, since your instinct is to dismiss disconfirming evidence."},
+    {"lead": "Notice motivated reasoning", "text": "ask whether you want a conclusion to be true, and treat that wish as a warning that your reasoning may be slanted."}
+  ],
+  "limits": "The core phenomenon is extremely well documented, but its framing carries nuances. Mercier and Sperber argue that confirmation bias is not a malfunction but the expected signature of reasoning that evolved to build and evaluate arguments for persuasion — a reinterpretation, not a denial. And the backfire effect, often bundled with it, has weak and contested empirical support, with corrections generally moving beliefs toward the facts; it should be kept clearly separate and not lent confirmation bias's credibility.",
+  "misreadings": "It is not the same as the backfire effect, which is contested and distinct; confirmation bias is about favouring confirming evidence, not about corrections strengthening false beliefs. And it is not confined to the unintelligent — it operates automatically in everyone, and expertise offers little protection.",
+  "origin": "The phenomenon was noted for centuries, from Francis Bacon onward, but the modern experimental construct and the name are attributed to Peter Wason, whose 1960 rule-discovery task and 1966 selection task demonstrated the failure to seek disconfirming evidence.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1960,
+  "namedAfter": "Peter Wason",
+  "sources": [
+    {"text": "Confirmation bias, Wikipedia. — the biased search, interpretation, and memory processes, the Wason tasks, and the contested backfire effect.", "url": "https://en.wikipedia.org/wiki/Confirmation_bias", "type": "secondary"},
+    {"text": "Mercier & Sperber, \"Why do humans reason? Arguments for an argumentative theory,\" Behavioral and Brain Sciences 34(2):57-74 (2011). — the argumentative reinterpretation.", "url": "https://pubmed.ncbi.nlm.nih.gov/21447233/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Confirmation_bias",
+  "related": [
+    {"slug": "the-availability-heuristic", "kind": "kindred"}
+  ]
+}

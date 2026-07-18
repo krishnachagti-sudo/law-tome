@@ -1,0 +1,57 @@
+{
+  "no": "238",
+  "slug": "the-anchoring-effect",
+  "name": "The Anchoring Effect",
+  "aliases": ["Anchoring bias"],
+  "statement": "The first number you hear drags your estimate toward it, even when it's irrelevant.",
+  "statementAccent": "drags your estimate toward it",
+  "meaning": "When making an estimate under uncertainty, people lean too heavily on the first number they encounter — the anchor — and adjust away from it insufficiently, so their final answer is pulled toward it. The anchor biases the judgement even when it is obviously random or has nothing to do with the question.",
+  "mechanism": "Two accounts compete, and the mechanism is genuinely debated. In anchoring-and-adjustment, people start from the anchor and adjust step by step toward a plausible answer, but stop as soon as they reach the edge of an acceptable range, so the adjustment falls short. In selective accessibility, merely considering the anchor activates anchor-consistent information in memory, which then biases the estimate much as priming does. The first account seems to fit self-generated anchors, the second experimenter-supplied ones, though the split is not clean.",
+  "examples": [
+    {
+      "tag": "The rigged wheel",
+      "text": "Tversky and Kahneman had a wheel stop at a number arranged to be ten or sixty-five, then asked what share of UN countries are African; the median answer was about twenty-five percent after ten and forty-five after sixty-five — a plainly random number moving factual estimates."
+    },
+    {
+      "tag": "Judges and dice",
+      "text": "In one study, experienced judges' sentencing recommendations shifted toward a demanded sentence even when it was set by a throw of dice they rolled themselves — expertise did not protect against the pull."
+    },
+    {
+      "tag": "Estimating a product",
+      "text": "Asked to estimate eight times seven and so on down to one in a few seconds, people gave a far higher median than for the same product written one times two up to eight — the first few visible digits anchoring the guess."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Self-generated versus supplied anchors",
+      "text": "A key distinction: anchors people generate themselves seem to bias via insufficient adjustment, while anchors handed to them seem to bias via selective accessibility."
+    },
+    {
+      "name": "The Many Labs replication",
+      "text": "A large multi-site replication found anchoring among the most robust of the effects tested, in sharp contrast to several social-priming effects that failed to replicate."
+    }
+  ],
+  "whyItMatters": "It is one of the founding results of the heuristics-and-biases programme and among the most robustly replicated, surviving the replication crisis that felled many priming effects. It shapes negotiations, pricing, valuations, and legal judgements, showing how an arbitrary starting figure can steer decisions that ought to be independent of it.",
+  "working": [
+    {"lead": "Question the starting number", "text": "when an estimate follows a stated figure, ask whether that figure is anchoring you and whether it deserves any weight."},
+    {"lead": "Generate your own anchor first", "text": "before hearing someone else's number, form an independent estimate so their figure has less pull."},
+    {"lead": "Do not trust expertise to shield you", "text": "recognise that even experts are anchored, and usually unaware of it, so build in explicit checks."}
+  ],
+  "limits": "The existence and direction of the effect are firmly established, but its mechanism is unsettled — anchoring-and-adjustment and selective accessibility remain competing accounts, and both may contribute. There are boundary conditions: some studies using transparently random anchors, such as a visible die roll, have failed to reproduce it, suggesting strength depends on the anchor's apparent relevance. Early hopes that expertise offers protection are not borne out — judges and real-estate agents alike are affected, and typically deny the influence.",
+  "misreadings": "It does not require the anchor to be relevant or even credible — obviously random numbers still bias estimates. And it is not overcome by expertise or intelligence; experts are pulled too, and often least aware of it.",
+  "origin": "Introduced by Amos Tversky and Daniel Kahneman in 'Judgment under Uncertainty: Heuristics and Biases,' Science 185:1124-1131 (1974), one of three heuristics presented there.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1974,
+  "namedAfter": "Amos Tversky and Daniel Kahneman",
+  "sources": [
+    {"text": "Anchoring effect, Wikipedia. — the statement, the competing mechanisms, the wheel and multiplication examples, and the replication record.", "url": "https://en.wikipedia.org/wiki/Anchoring_effect", "type": "secondary"},
+    {"text": "Tversky & Kahneman, \"Judgment under Uncertainty: Heuristics and Biases,\" Science 185:1124-1131 (1974).", "url": "https://www.science.org/doi/10.1126/science.185.4157.1124", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Anchoring_effect",
+  "related": [
+    {"slug": "the-availability-heuristic", "kind": "kindred"},
+    {"slug": "the-base-rate-fallacy", "kind": "kindred"}
+  ]
+}

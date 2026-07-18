@@ -1,0 +1,56 @@
+{
+  "no": "239",
+  "slug": "the-availability-heuristic",
+  "name": "The Availability Heuristic",
+  "statement": "We judge how likely something is by how easily examples come to mind.",
+  "statementAccent": "how easily examples come to mind",
+  "meaning": "People estimate the probability or frequency of an event by how readily instances of it spring to mind. Things that are more memorable, vivid, recent, or emotionally striking feel more common than they really are. It is usually a serviceable shortcut, since genuinely common things are often easy to recall — but it misfires when ease of recall has little to do with true frequency.",
+  "mechanism": "It works by substitution: the hard question, how frequent is this, is quietly swapped for an easier one, how easily can I bring examples to mind. Retrieval fluency stands in for a frequency count. Because ease of recall is driven not only by real frequency but also by vividness, recency, media coverage, and emotional charge, the shortcut produces systematic, directional errors rather than random ones. A refinement holds that it is the felt ease of retrieval, not the number of examples recalled, that drives the judgement.",
+  "examples": [
+    {
+      "tag": "The letter K",
+      "text": "Asked whether more English words begin with K or have K as their third letter, most people say the first — yet third-position K is about twice as common; words are indexed in memory by first letter, so those come to mind far more easily."
+    },
+    {
+      "tag": "Dramatic deaths",
+      "text": "People overestimate rare, dramatic, heavily reported causes of death like accidents and homicide and underestimate common quiet ones like disease, because the vivid cases are more retrievable — a distortion that tracks media coverage."
+    },
+    {
+      "tag": "Recent and vivid",
+      "text": "After seeing news of a plane crash or a shark attack, people rate those dangers as far more likely than duller but deadlier risks, simply because the striking image is fresh and easy to recall."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The availability cascade",
+      "text": "Kuran and Sunstein's self-reinforcing process in which a belief gains currency through repetition, becoming ever more available and more believed, propelled by availability entrepreneurs."
+    },
+    {
+      "name": "The affect heuristic",
+      "text": "The closely related shortcut in which judgements are driven by an emotional good-or-bad response, intertwined with availability because emotional events are highly memorable."
+    }
+  ],
+  "whyItMatters": "It is a cornerstone of the heuristics-and-biases account of human judgement, explaining why perceived risk so often diverges from statistical reality. It shapes fear of rare dangers, public reaction to vivid events, and the outsized influence of the media on how people gauge what is common — with real consequences for policy and personal decisions.",
+  "working": [
+    {"lead": "Distrust the vivid", "text": "when a risk feels alarming, ask whether it is truly common or merely memorable, dramatic, or recent."},
+    {"lead": "Reach for base rates", "text": "for frequency judgements, look up actual statistics rather than trusting how many examples you can summon."},
+    {"lead": "Watch the media's pull", "text": "notice that heavy coverage makes an event feel more common, and correct for that inflation."}
+  ],
+  "limits": "The phenomenon is well replicated, but its precise mechanism is contested. Schwarz and colleagues showed that recalling many examples of a trait can make people believe they have less of it, since the effort feels difficult — suggesting the driver is the metacognitive feeling of ease, not the count of items recalled. That specific ease-of-retrieval paradigm has faced replication scrutiny, even as the core finding stands. Some early commentators also argued that part of the effect may reflect response artefacts rather than pure cognition. The bias is real; the interpretation is still debated.",
+  "misreadings": "It is not that memory is simply unreliable — the shortcut is usually reasonable, because common things often are easy to recall; it fails specifically when ease of recall is inflated by vividness or coverage. And it does not claim people ignore statistics entirely, only that ease of retrieval crowds them out.",
+  "origin": "Identified by Amos Tversky and Daniel Kahneman in 'Availability: A heuristic for judging frequency and probability,' Cognitive Psychology 5(2):207-232 (1973), part of the heuristics-and-biases programme.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1973,
+  "namedAfter": "Amos Tversky and Daniel Kahneman",
+  "sources": [
+    {"text": "Availability heuristic, Wikipedia. — the ease-of-retrieval statement, the letter-K and lethal-events examples, and the ease-versus-content debate.", "url": "https://en.wikipedia.org/wiki/Availability_heuristic", "type": "secondary"},
+    {"text": "Tversky & Kahneman, \"Availability: A heuristic for judging frequency and probability,\" Cognitive Psychology 5(2):207-232 (1973).", "url": "https://www.sciencedirect.com/science/article/abs/pii/0010028573900339", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Availability_heuristic",
+  "related": [
+    {"slug": "the-base-rate-fallacy", "kind": "kindred"},
+    {"slug": "the-anchoring-effect", "kind": "kindred"}
+  ]
+}
