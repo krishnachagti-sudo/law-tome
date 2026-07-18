@@ -1,0 +1,56 @@
+{
+  "no": "523",
+  "slug": "the-schwarzschild-radius",
+  "name": "The Schwarzschild Radius",
+  "aliases": ["The gravitational radius", "The event-horizon radius"],
+  "statement": "Compress any mass inside this radius and not even light can escape, and it becomes a black hole.",
+  "statementAccent": "not even light can escape",
+  "meaning": "The Schwarzschild radius is the radius that defines the event horizon of a non-rotating, uncharged black hole, the boundary at which the escape velocity equals the speed of light. It marks the size to which a given mass must be compressed to become a black hole: squeeze any object within its Schwarzschild radius and its gravity becomes so strong that nothing, not even light, can escape from inside. The radius is directly proportional to the object's mass, so more massive black holes have larger horizons. It comes from the first exact solution of Einstein's equations of general relativity and is a cornerstone of black-hole physics.",
+  "mechanism": "The radius equals twice the gravitational constant times the mass, divided by the speed of light squared. This can be reached by a Newtonian shortcut, setting the escape velocity equal to the speed of light, which happens to give the right answer, but the rigorous derivation comes from the Schwarzschild solution of general relativity. The result is an event horizon, a one-way boundary in spacetime rather than any solid surface: anything crossing inward can never return, and to a distant observer the horizon is where signals from infalling matter fade away. The horizon is distinct from the central singularity at zero radius, where the curvature genuinely blows up.",
+  "examples": [
+    {
+      "tag": "The Sun",
+      "text": "If the Sun were compressed to a ball of radius about 2.95 kilometres, it would become a black hole; that is its Schwarzschild radius, though the Sun will never actually collapse this way."
+    },
+    {
+      "tag": "The Earth",
+      "text": "The Earth's Schwarzschild radius is only about 8.87 millimetres, the size to which our entire planet would have to be crushed to become a black hole."
+    },
+    {
+      "tag": "Scaling with mass",
+      "text": "Because the radius is proportional to mass, a supermassive black hole of billions of solar masses has an event horizon larger than the Solar System, while a stellar one spans a few kilometres."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Kerr solution",
+      "text": "The Schwarzschild radius describes a non-rotating black hole; a spinning one is governed by the separate Kerr solution, with a more complex horizon structure."
+    },
+    {
+      "name": "Coordinate versus true singularity",
+      "text": "The apparent singularity at the Schwarzschild radius is a coordinate artefact, removable by a change of coordinates, whereas the real, physical singularity lies at the centre."
+    }
+  ],
+  "whyItMatters": "The Schwarzschild radius is the defining scale of a black hole, fixing where its event horizon lies and giving a sharp criterion for when gravitational collapse produces a black hole at all. As the first exact solution of Einstein's field equations, found within months of general relativity's completion, it opened the entire study of black holes and strong-field gravity, from stellar remnants to the supermassive giants at galactic centres. It remains the simplest and most fundamental black-hole formula, the starting point for thinking about horizons, escape, and the limits of gravity.",
+  "working": [
+    {"lead": "Set the compression threshold", "text": "treat the Schwarzschild radius as the size a mass must be squeezed within to become a black hole, twice its mass times G over c squared."},
+    {"lead": "Read the horizon as one-way", "text": "understand the event horizon as a boundary in spacetime, not a surface, that lets matter and light in but never back out."},
+    {"lead": "Scale with mass", "text": "expect the horizon to grow in direct proportion to mass, from kilometres for stars to Solar-System scales for supermassive black holes."}
+  ],
+  "limits": "The Schwarzschild radius applies to an idealised non-rotating, uncharged, spherically symmetric mass; real black holes usually spin, and are then described by the Kerr rather than the Schwarzschild solution. The apparent singularity at the radius is only a coordinate artefact that vanishes under a suitable change of coordinates, so it is not a physical edge; the genuine singularity lies at the centre. The escape-velocity-equals-light-speed derivation is a heuristic that gives the correct number by a happy coincidence, but the rigorous account requires general relativity, not Newtonian mechanics.",
+  "misreadings": "The event horizon is not a solid surface; an infalling observer crosses it without hitting any local barrier, even though escape becomes impossible. The Newtonian escape-velocity argument is a shortcut that happens to give the right radius, not the real derivation, which comes from the Schwarzschild metric of general relativity. The horizon is not the singularity: the coordinate singularity at the Schwarzschild radius is removable, while the true, physical singularity is at zero radius. And the simple formula holds only for a non-rotating black hole.",
+  "origin": "Derived by Karl Schwarzschild in 1916 as the first exact solution of Einstein's general-relativity field equations, worked out while he served on the First World War front shortly before his death.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1916,
+  "namedAfter": "Karl Schwarzschild",
+  "sources": [
+    {"text": "Schwarzschild radius, Wikipedia. — the formula, the Sun and Earth values, the event horizon, and the coordinate-versus-true singularity.", "url": "https://en.wikipedia.org/wiki/Schwarzschild_radius", "type": "secondary"},
+    {"text": "Karl Schwarzschild, Wikipedia. — the 1916 solution of Einstein's field equations and its wartime origin.", "url": "https://en.wikipedia.org/wiki/Karl_Schwarzschild", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Schwarzschild_radius",
+  "related": [
+    {"slug": "the-chandrasekhar-limit", "kind": "kindred"}
+  ]
+}

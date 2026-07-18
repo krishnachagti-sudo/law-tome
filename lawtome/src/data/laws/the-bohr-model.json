@@ -1,0 +1,57 @@
+{
+  "no": "522",
+  "slug": "the-bohr-model",
+  "name": "The Bohr Model",
+  "aliases": ["The Bohr atom", "The Rutherford-Bohr model"],
+  "statement": "Electrons circle the nucleus only in fixed, quantized orbits, jumping between them by emitting or absorbing a single photon.",
+  "statementAccent": "jumping between them by emitting or absorbing a single photon",
+  "meaning": "The Bohr model, proposed by Niels Bohr in 1913, pictures the atom as electrons orbiting the nucleus only in certain allowed, quantized circular orbits, called stationary states, in which they do not radiate energy. An electron changes orbits only by emitting or absorbing a single photon whose energy equals the difference between the two orbits' energies. By allowing only discrete orbits, Bohr solved the puzzle of why atoms are stable and why they emit light at sharp, specific wavelengths. It was a bold, half-classical, half-quantum bridge that explained the hydrogen spectrum and set physics on the road to full quantum mechanics.",
+  "mechanism": "Bohr made two quantum postulates on top of Rutherford's nuclear atom. First, electrons occupy only orbits in which their angular momentum is a whole-number multiple of the reduced Planck constant, so the orbits, and their energies, are discrete. Second, radiation is emitted or absorbed only when an electron jumps between orbits, with the photon energy equal to the energy gap. Applying these to hydrogen gave energy levels of minus 13.6 electronvolts divided by the square of the level number, a smallest orbit of about 0.529 angstroms, the Bohr radius, and, from first principles, the Rydberg formula that had been found empirically for hydrogen's spectral lines.",
+  "examples": [
+    {
+      "tag": "The hydrogen spectrum",
+      "text": "The model derived hydrogen's discrete emission lines and the Rydberg formula, matching the observed wavelengths and explaining why atoms glow at sharp, characteristic colours."
+    },
+    {
+      "tag": "Energy levels",
+      "text": "Bohr's minus 13.6 electronvolts over n-squared gives the ionisation energy of hydrogen and the ladder of levels electrons jump between, a result still taught as a first picture of the atom."
+    },
+    {
+      "tag": "Sommerfeld's ellipses",
+      "text": "Arnold Sommerfeld extended the model to allow elliptical orbits, accounting in part for the fine splitting of spectral lines the simple circular version could not."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The old quantum theory",
+      "text": "The Bohr-Sommerfeld framework of the 1910s and early 1920s, a patchwork of classical orbits with quantum rules, that preceded and prepared the way for full quantum mechanics."
+    },
+    {
+      "name": "Hydrogen-like ions",
+      "text": "The model works for any one-electron system, such as singly ionised helium, by scaling the energy with the square of the nuclear charge, but not for atoms with more than one electron."
+    }
+  ],
+  "whyItMatters": "The Bohr model was a turning point in physics, the first theory to explain atomic stability and the discrete spectral lines of hydrogen by quantizing the atom, and it won Bohr the 1922 Nobel Prize. It made the radical idea of quantized energy, introduced by Planck and Einstein for radiation, concrete for matter, and it introduced the language of energy levels and quantum jumps that still pervades chemistry and physics. Though soon superseded, it remains the indispensable first picture of the atom, both historically and in teaching.",
+  "working": [
+    {"lead": "Quantize the orbits", "text": "allow electrons only discrete orbits set by whole-number angular momentum, which makes atomic energies come in a fixed ladder."},
+    {"lead": "Link light to jumps", "text": "read each spectral line as an electron jumping between two levels, emitting or absorbing a photon of exactly the energy gap."},
+    {"lead": "Know its range", "text": "trust the model for hydrogen and one-electron ions, but not for multi-electron atoms, where it breaks down."}
+  ],
+  "limits": "The model works only for hydrogen and other one-electron, hydrogen-like ions and fails for neutral helium and heavier atoms. It cannot explain fine and hyperfine structure, the relative intensities of lines, the Zeeman effect in detail, chemical bonding, or the true, non-orbital nature of electron states, and by assigning electrons definite orbits with definite radii and speeds it violates the uncertainty principle. It was superseded in 1925 and 1926 by matrix mechanics and Schrödinger's wave mechanics, which replaced fixed orbits with probability clouds, or orbitals, and it survives now as an approximation and a teaching tool rather than a correct description.",
+  "misreadings": "Electrons do not orbit the nucleus like planets on fixed circular tracks; that picture is a useful fiction, since real electron states are three-dimensional probability distributions. The model is not a correct description of the atom but a historically crucial approximation, accurate only for one-electron systems. And it does not stand on its own quantum footing consistently, since its definite orbits conflict with the uncertainty principle that the later full theory made central.",
+  "origin": "Proposed by Niels Bohr in his 1913 trilogy 'On the Constitution of Atoms and Molecules' in the Philosophical Magazine, building on Rutherford's nuclear atom and the quantization ideas of Planck and Einstein.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1913,
+  "namedAfter": "Niels Bohr",
+  "sources": [
+    {"text": "Bohr model, Wikipedia. — the quantized orbits, the minus 13.6 eV levels and 0.529 angstrom radius, and the model's failures.", "url": "https://en.wikipedia.org/wiki/Bohr_model", "type": "secondary"},
+    {"text": "Niels Bohr, Encyclopaedia Britannica. — the 1913 model, its explanation of the hydrogen spectrum, and the 1922 Nobel Prize.", "url": "https://www.britannica.com/biography/Niels-Bohr", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Bohr_model",
+  "related": [
+    {"slug": "the-heisenberg-uncertainty-principle", "kind": "tension"},
+    {"slug": "the-rydberg-formula", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "no": "526",
+  "slug": "the-carnot-theorem",
+  "name": "Carnot's Theorem",
+  "aliases": ["The Carnot limit", "Carnot's principle"],
+  "statement": "No heat engine between two temperatures can beat the efficiency of a reversible one, set only by those two temperatures.",
+  "statementAccent": "set only by those two temperatures",
+  "meaning": "Carnot's theorem states that no heat engine working between a hot and a cold reservoir can be more efficient than a reversible engine running between the same two reservoirs, and that all reversible engines between those reservoirs have exactly the same efficiency, whatever their working substance. That maximum efficiency, the Carnot efficiency, is one minus the ratio of the cold to the hot absolute temperature. It sets an unbreakable ceiling on how much heat any engine can turn into work, dictated solely by the two temperatures, and it is one of the foundations of the second law of thermodynamics and of the very notion of absolute temperature.",
+  "mechanism": "The theorem follows from the impossibility of a perpetual-motion machine. If any engine could beat a reversible one, coupling it to a reversed reversible engine would move heat from cold to hot with no other effect, violating the second law, so no engine can exceed the reversible efficiency, and all reversible engines must share it. The Carnot cycle that achieves this bound consists of two reversible isothermal steps and two reversible adiabatic steps. Its efficiency, one minus the cold over the hot absolute temperature, is below one for any finite hot temperature and reaches one only in the unattainable limits of an infinitely hot source or a cold sink at absolute zero.",
+  "examples": [
+    {
+      "tag": "The power-plant ceiling",
+      "text": "A steam turbine drawing on a hot source and rejecting heat to the environment can never exceed one minus the ratio of the two absolute temperatures, no matter how cleverly it is engineered."
+    },
+    {
+      "tag": "Substance-independent",
+      "text": "Two reversible engines between the same reservoirs, one using steam and one using any other fluid, have identical maximum efficiency, since it depends only on the temperatures."
+    },
+    {
+      "tag": "Why waste heat is unavoidable",
+      "text": "Because the Carnot efficiency is always below one, some heat must always be dumped to the cold reservoir, which is why no heat engine can be perfectly efficient."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Curzon-Ahlborn efficiency",
+      "text": "A finite-time refinement giving the efficiency of an engine optimised for maximum power, one minus the square root of the ratio of the cold to the hot temperature, lower than the Carnot bound."
+    },
+    {
+      "name": "The absolute temperature scale",
+      "text": "Because the reversible efficiency depends only on the temperatures, Carnot's result lets Kelvin define a thermodynamic, substance-independent absolute temperature scale."
+    }
+  ],
+  "whyItMatters": "Carnot's theorem sets the fundamental upper bound on the efficiency of every heat engine, from car engines to power plants, and shows that some waste heat is unavoidable in principle, not just in practice. It is a pillar of the second law of thermodynamics and led directly to the concepts of entropy and absolute temperature developed by Clausius and Kelvin. Remarkably, Carnot reached the correct result in 1824 using the mistaken caloric theory and before the first law was even formulated, a striking case of a right answer found on partly wrong foundations.",
+  "working": [
+    {"lead": "Bound efficiency by temperature", "text": "take one minus the ratio of the cold to the hot absolute temperature as the ceiling no engine between those reservoirs can beat."},
+    {"lead": "Treat it as a ceiling", "text": "remember the Carnot efficiency is an idealised maximum, achieved only by a reversible, infinitely slow engine, so real engines fall below it."},
+    {"lead": "Ignore the working fluid", "text": "recognise that the maximum efficiency depends only on the two temperatures, not on the substance or design of the engine."}
+  ],
+  "limits": "The Carnot efficiency is an idealisation: reversibility requires an infinitely slow, quasi-static process that produces zero power, so any real engine running at a finite rate is less efficient. For engines optimised to deliver maximum power rather than maximum efficiency, the relevant figure is the lower Curzon-Ahlborn efficiency, one minus the square root of the temperature ratio, which characterises finite-time operation rather than an absolute bound. The theorem also assumes operation between just two reservoirs at fixed temperatures, and Carnot's original derivation used the flawed caloric theory even though it reached the correct result.",
+  "misreadings": "The Carnot efficiency is a theoretical ceiling, not a value achievable in practice, since real, finite-speed engines are always less efficient. It depends only on the two reservoir temperatures, not on the working fluid or the engine's design, which is exactly the substance-independence the theorem asserts. And it does not say efficiency can reach one for ordinary systems, since that requires an unattainable cold reservoir at absolute zero or an infinitely hot source.",
+  "origin": "Established by Sadi Carnot in his 1824 'Réflexions sur la puissance motrice du feu', before the first law of thermodynamics and using the caloric theory, and later put on rigorous footing by Rudolf Clausius and Lord Kelvin in the 1850s.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1824,
+  "namedAfter": "Sadi Carnot",
+  "sources": [
+    {"text": "Carnot's theorem (thermodynamics), Wikipedia. — the maximum-efficiency statement, the one-minus-temperature-ratio formula, and the caloric-theory origin.", "url": "https://en.wikipedia.org/wiki/Carnot%27s_theorem_(thermodynamics)", "type": "secondary"},
+    {"text": "Reflections on the Motive Power of Fire, Wikipedia. — Carnot's 1824 work and its foundational role in thermodynamics.", "url": "https://en.wikipedia.org/wiki/Reflections_on_the_Motive_Power_of_Fire", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Carnot%27s_theorem_(thermodynamics)",
+  "related": [
+    {"slug": "the-second-law-of-thermodynamics", "kind": "kindred"},
+    {"slug": "the-equipartition-theorem", "kind": "kindred"}
+  ]
+}

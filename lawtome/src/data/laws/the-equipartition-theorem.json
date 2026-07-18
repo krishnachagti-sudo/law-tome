@@ -1,0 +1,56 @@
+{
+  "no": "530",
+  "slug": "the-equipartition-theorem",
+  "name": "The Equipartition Theorem",
+  "aliases": ["Equipartition of energy", "The half-kT rule"],
+  "statement": "In a system at temperature T, every way of holding energy that counts quadratically gets the same average share, half of kT.",
+  "statementAccent": "gets the same average share",
+  "meaning": "The equipartition theorem is a result of classical statistical mechanics stating that, in thermal equilibrium, energy is shared equally among all the degrees of freedom that enter the energy quadratically, with each such degree of freedom carrying an average energy of one half the Boltzmann constant times the absolute temperature. A degree of freedom is an independent way of storing energy, such as motion along an axis or a spring-like vibration. The theorem turns counting these quadratic terms into predictions of heat capacities, and its dramatic failures at low temperature became one of the crucial clues that led to quantum theory.",
+  "mechanism": "Any coordinate or velocity that appears squared in the energy, kinetic energy going as speed squared, a spring's potential energy as displacement squared, contributes an average of one half the Boltzmann constant times temperature in equilibrium. So a monatomic gas, with three directions of translational motion, has an average energy of three halves that quantity per atom, giving a molar heat capacity of three halves the gas constant; a diatomic gas adds two rotational degrees for five halves at moderate temperatures. A solid, with three kinetic and three potential quadratic terms per atom, gives a molar heat capacity of about three times the gas constant, the Dulong-Petit law.",
+  "examples": [
+    {
+      "tag": "Monatomic gas",
+      "text": "A monatomic ideal gas has three translational degrees of freedom, so each atom holds on average three halves of the Boltzmann constant times temperature, and the molar heat capacity is three halves the gas constant."
+    },
+    {
+      "tag": "The Dulong-Petit law",
+      "text": "Treating a solid's atoms as having three kinetic and three potential quadratic terms gives a molar heat capacity near three times the gas constant, matching many solids at ordinary temperatures."
+    },
+    {
+      "tag": "The ultraviolet catastrophe",
+      "text": "Applying equipartition to the infinitely many modes of the electromagnetic field predicts a blackbody energy that diverges at short wavelengths, a classical absurdity resolved only by quantizing energy."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Frozen-out modes",
+      "text": "When the spacing between a mode's quantum energy levels exceeds the thermal energy, the mode contributes less than its classical share and effectively freezes out, so heat capacities fall at low temperature."
+    },
+    {
+      "name": "The general form",
+      "text": "For energies that are not purely quadratic, the theorem generalises to a statement about the average of each coordinate times its derivative of the energy, equal to the thermal energy."
+    }
+  ],
+  "whyItMatters": "The equipartition theorem is a foundational tool of classical statistical mechanics, explaining the heat capacities of gases and solids by simply counting degrees of freedom, and giving the Dulong-Petit law and the ideal-gas heat capacities their theoretical basis. Just as importantly, its failures were historically decisive: its prediction of an infinite blackbody energy, the ultraviolet catastrophe, and its inability to explain why heat capacities fall at low temperature, could be resolved only by quantizing energy, helping to usher in quantum mechanics through the work of Planck and Einstein. It is both a workhorse and a signpost to the quantum world.",
+  "working": [
+    {"lead": "Count quadratic freedoms", "text": "assign each degree of freedom that enters the energy quadratically an average of one half the Boltzmann constant times temperature."},
+    {"lead": "Predict heat capacities", "text": "add up those contributions to estimate the heat capacity of a gas or solid, as in three halves the gas constant for a monatomic gas."},
+    {"lead": "Watch for freezing out", "text": "expect the classical prediction to fail when quantum level spacing exceeds the thermal energy, as modes freeze out at low temperature."}
+  ],
+  "limits": "Equipartition applies only to degrees of freedom that enter the energy quadratically, not to arbitrary ones, and it is a purely classical result. It fails whenever the quantum spacing between a mode's energy levels exceeds the thermal energy, so at low temperature or high frequency the affected modes freeze out and contribute less than their classical share, which is why heat capacities drop as temperature falls and why the classical prediction of blackbody radiation diverges. These very failures, the ultraviolet catastrophe and the low-temperature behaviour of heat capacities, were resolved only by the quantization of energy.",
+  "misreadings": "The theorem applies only to quadratic degrees of freedom; contributions from non-quadratic terms follow a different, generalised rule, not the simple half-kT count. It is a classical result and does not hold once quantum effects matter, so it fails at low temperature and high frequency, where modes freeze out. The diatomic gas value of five halves the gas constant reflects vibrational modes being frozen out, not their absence, since full classical excitation would give seven halves. And its breakdown, not its success, is what pointed physics toward quantum theory.",
+  "origin": "Developed through the nineteenth century by John James Waterston, James Clerk Maxwell, and Ludwig Boltzmann, with the general theorem usually credited to Boltzmann around 1876 building on Maxwell's work.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1876,
+  "sources": [
+    {"text": "Equipartition theorem, Wikipedia. — the half-kT rule, the heat-capacity consequences, and the frozen-out-modes and ultraviolet-catastrophe failures.", "url": "https://en.wikipedia.org/wiki/Equipartition_theorem", "type": "secondary"},
+    {"text": "Equipartition of energy, Encyclopaedia Britannica. — the half-kT-per-degree-of-freedom statement and the monatomic and solid heat capacities.", "url": "https://www.britannica.com/science/equipartition-of-energy", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Equipartition_theorem",
+  "related": [
+    {"slug": "plancks-law", "kind": "tension"},
+    {"slug": "the-carnot-theorem", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "no": "524",
+  "slug": "keplers-third-law",
+  "name": "Kepler's Third Law",
+  "aliases": [
+    "The harmonic law",
+    "The law of periods"
+  ],
+  "statement": "The square of a planet's orbital period is proportional to the cube of its distance from the Sun.",
+  "statementAccent": "proportional to the cube of its distance",
+  "meaning": "Kepler's third law, the harmonic law, states that the square of a planet's orbital period is proportional to the cube of the semi-major axis of its orbit. For bodies orbiting the same central mass, the ratio of the period squared to the semi-major axis cubed is the same constant, so a planet farther from the Sun not only travels a longer path but moves more slowly, taking disproportionately longer to complete an orbit. It is the last and most quantitative of Kepler's three laws of planetary motion, and it converts a simple measurement of an orbit's size and period into deep information about the system, above all the mass of the central body.",
+  "mechanism": "In its full Newtonian form the period squared equals four pi squared divided by the gravitational constant times the total mass, all multiplied by the semi-major axis cubed. Because the period and the orbit's size can both be measured, the relation can be solved for the central mass, which is how astronomers weigh the Sun, stars in binaries, planets by their moons, and the supermassive black holes at galactic centres. Kepler found the law empirically from Tycho Brahe's precise observations, and Newton later derived it, along with the other two laws, from his law of universal gravitation, confirming the inverse-square law of gravity.",
+  "examples": [
+    {
+      "tag": "Years and astronomical units",
+      "text": "For bodies orbiting the Sun, measuring the period in years and the distance in astronomical units makes the law exact and simple: the period squared equals the distance cubed."
+    },
+    {
+      "tag": "Weighing the Sun",
+      "text": "Knowing Earth's one-year period and one-astronomical-unit orbit, the Newtonian form of the law yields the mass of the Sun, the archetype of using orbits to weigh a central body."
+    },
+    {
+      "tag": "Finding exoplanets",
+      "text": "The law connects an exoplanet's orbital period to its distance from its star, underpinning the radial-velocity and transit-timing methods used to detect and characterise other worlds."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The other two laws",
+      "text": "Kepler's first law, that orbits are ellipses with the Sun at one focus, and his second, that a planet sweeps equal areas in equal times, which is conservation of angular momentum."
+    },
+    {
+      "name": "The Newtonian correction",
+      "text": "The precise form includes the sum of both masses, so the simple period-squared-over-distance-cubed constant holds exactly only when the orbiting body's mass is negligible."
+    }
+  ],
+  "whyItMatters": "Kepler's third law is a foundation of celestial mechanics and one of the great triumphs of empirical science, distilling Tycho Brahe's mountain of observations into a single exact proportion. It gave Newton a crucial test for universal gravitation and remains the everyday workhorse for measuring masses across astronomy, from planets and stars to galactic black holes, and for detecting and characterising exoplanets. That a planet's year and its distance are locked together by so simple a rule is a lasting emblem of the hidden order in the heavens.",
+  "working": [
+    {
+      "lead": "Link period to distance",
+      "text": "expect the square of an orbital period to track the cube of the orbit's semi-major axis, so distant bodies orbit disproportionately slowly."
+    },
+    {
+      "lead": "Weigh the central body",
+      "text": "use the Newtonian form, with its four-pi-squared-over-G-times-mass factor, to turn a measured orbit into the mass of what it circles."
+    },
+    {
+      "lead": "Mind the units",
+      "text": "in years and astronomical units around the Sun the law is simply period squared equals distance cubed, but the constant differs for other central masses."
+    }
+  ],
+  "limits": "The clean proportionality with a single universal constant holds exactly only when the orbiting mass is negligible compared with the central mass; the precise form carries the sum of both masses, so bodies of appreciable mass give slightly different ratios. The laws are idealisations of the two-body problem and ignore the mutual gravitational tugs between planets, which cause small perturbations, as well as relativistic effects, the classic example being the anomalous precession of Mercury's orbit that only general relativity explains. The law uses the semi-major axis of the ellipse, not the instantaneous distance.",
+  "misreadings": "The distance in the law is the semi-major axis of the elliptical orbit, not the instantaneous distance or the closest or farthest point. The proportionality constant is not truly universal across all systems; it depends on the central mass, so the period-squared-over-distance-cubed ratio is constant only among bodies orbiting the same body, and only when the orbiting mass is negligible. The tidy period-squared-equals-distance-cubed identity holds only in years and astronomical units around the Sun. And Kepler found the law empirically; the gravitational explanation is Newton's.",
+  "origin": "Discovered empirically by Johannes Kepler from Tycho Brahe's observations of Mars and published in his 1619 'Harmonices Mundi', his first two laws having appeared in the 1609 'Astronomia nova'; later derived by Newton from universal gravitation.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1619,
+  "namedAfter": "Johannes Kepler",
+  "sources": [
+    {
+      "text": "Kepler's laws of planetary motion, Wikipedia. — the harmonic law, the Newtonian form with the total mass, and the three laws in context.",
+      "url": "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion",
+      "type": "secondary"
+    },
+    {
+      "text": "Astronomia nova, Wikipedia. — the 1609 work grounding the first two laws in Tycho Brahe's observations of Mars.",
+      "url": "https://en.wikipedia.org/wiki/Astronomia_nova",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion",
+  "related": [
+    {
+      "slug": "the-virial-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "titius-bode-law",
+      "kind": "kindred"
+    }
+  ]
+}

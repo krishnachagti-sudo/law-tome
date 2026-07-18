@@ -1,0 +1,57 @@
+{
+  "no": "527",
+  "slug": "the-chandrasekhar-limit",
+  "name": "The Chandrasekhar Limit",
+  "aliases": ["The white-dwarf mass limit", "Chandrasekhar's limit"],
+  "statement": "Above about 1.4 solar masses, a white dwarf can no longer hold itself up and must collapse.",
+  "statementAccent": "can no longer hold itself up",
+  "meaning": "The Chandrasekhar limit is the maximum mass a stable white dwarf star can have, about 1.4 times the mass of the Sun, above which the quantum pressure of its electrons can no longer resist gravity and the star must collapse. A white dwarf is the dead core of a Sun-like star, supported not by heat but by electron degeneracy pressure, a purely quantum effect. As mass is added the electrons are forced to move faster, approaching the speed of light, and beyond the limit their pressure can no longer grow fast enough to balance gravity. The limit is a cornerstone of stellar astrophysics and the key to Type Ia supernovae.",
+  "mechanism": "White dwarfs are held up by electron degeneracy pressure, which arises because electrons are fermions and, by the Pauli exclusion principle, cannot share the same quantum state, so squeezing them forces them into higher-energy states and generates outward pressure. As the star's mass rises and gravity compresses it further, the electrons become relativistic, moving near the speed of light, and because nothing can exceed that speed, their pressure cannot increase quickly enough to keep pace with gravity. Above the limiting mass, near 1.4 solar masses for a typical carbon-oxygen composition, the balance fails and gravitational collapse follows.",
+  "examples": [
+    {
+      "tag": "Type Ia supernovae",
+      "text": "A white dwarf accreting matter from a companion and nearing the Chandrasekhar limit ignites a runaway thermonuclear detonation, a Type Ia supernova, whose uniform brightness makes it a cosmic standard candle."
+    },
+    {
+      "tag": "The voyage calculation",
+      "text": "Subrahmanyan Chandrasekhar derived the limit around 1930, aged about nineteen, on his sea voyage from India to England, by combining special relativity with the physics of degenerate electrons."
+    },
+    {
+      "tag": "The Eddington clash",
+      "text": "Arthur Eddington publicly ridiculed the result in 1935, insisting something must stop stars behaving so absurdly; Chandrasekhar was later vindicated and won the 1983 Nobel Prize."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The neutron-star limit",
+      "text": "The analogous ceiling for neutron stars, supported by neutron degeneracy pressure, is the separate Tolman-Oppenheimer-Volkoff limit, above which they collapse to black holes."
+    },
+    {
+      "name": "The super-Chandrasekhar puzzle",
+      "text": "Some peculiar Type Ia supernovae imply progenitor masses well above the standard limit, attributed to rapid rotation, strong magnetic fields, or white-dwarf mergers, and still debated."
+    }
+  ],
+  "whyItMatters": "The Chandrasekhar limit is one of the most important numbers in astrophysics, marking the boundary between stars that die quietly as white dwarfs and those that collapse into neutron stars or black holes. It underpins the theory of stellar death and, through Type Ia supernovae, provides the standard candles that let astronomers measure cosmic distances and discover the accelerating expansion of the universe. Its history, from a teenager's calculation to a bitter public dispute with the era's most eminent astrophysicist to a Nobel Prize, is also one of science's great vindication stories.",
+  "working": [
+    {"lead": "Cap the white dwarf", "text": "treat about 1.4 solar masses as the ceiling above which electron degeneracy pressure can no longer support a white dwarf against gravity."},
+    {"lead": "Trace it to quantum pressure", "text": "understand the support as electron degeneracy pressure from the Pauli exclusion principle, which fails once the electrons turn relativistic."},
+    {"lead": "Link it to supernovae", "text": "connect a white dwarf approaching the limit to the runaway detonation of a Type Ia supernova and its use as a standard candle."}
+  ],
+  "limits": "The exact value depends on composition, through the mean molecular weight per electron, so the standard 1.4 solar masses is a rounded figure and about 1.44 for a carbon-oxygen white dwarf. Rotation and strong magnetic fields can raise the effective limit, and several observed super-Chandrasekhar Type Ia supernovae seem to require progenitor masses above the standard value, a puzzle still under investigation and variously attributed to spin, magnetism, or mergers. The limit applies specifically to white dwarfs supported by electron degeneracy pressure, not to other compact objects with different support.",
+  "misreadings": "The Chandrasekhar limit is the maximum mass of a white dwarf, held up by electron degeneracy pressure, not the mass limit of a neutron star, which is the separate Tolman-Oppenheimer-Volkoff limit set by neutron degeneracy. The commonly quoted 1.4 solar masses is a rounded value; the composition-dependent figure is about 1.44 for a typical white dwarf. And the limit is not an absolute constant for all cases, since rotation and magnetic fields can shift it, as the super-Chandrasekhar supernovae suggest.",
+  "origin": "Derived by Subrahmanyan Chandrasekhar around 1930 and developed through 1935, famously disputed by Arthur Eddington in 1935; Chandrasekhar shared the 1983 Nobel Prize in Physics with William Fowler.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1931,
+  "namedAfter": "Subrahmanyan Chandrasekhar",
+  "sources": [
+    {"text": "Chandrasekhar limit, Wikipedia. — the 1.4-solar-mass value, the electron-degeneracy mechanism, the Eddington dispute, and the Type Ia connection.", "url": "https://en.wikipedia.org/wiki/Chandrasekhar_limit", "type": "secondary"},
+    {"text": "The Chandrasekhar limit: Why only some stars become supernovas, Space.com. — the limit, the white-dwarf physics, and the supernova link.", "url": "https://www.space.com/chandrasekhar-limit", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Chandrasekhar_limit",
+  "related": [
+    {"slug": "the-schwarzschild-radius", "kind": "kindred"},
+    {"slug": "the-pauli-exclusion-principle", "kind": "cause"}
+  ]
+}
