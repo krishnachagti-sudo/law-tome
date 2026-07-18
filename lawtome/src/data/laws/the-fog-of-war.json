@@ -1,0 +1,57 @@
+{
+  "no": "482",
+  "slug": "the-fog-of-war",
+  "name": "The Fog of War",
+  "aliases": ["Clausewitzian uncertainty", "The uncertainty of war"],
+  "statement": "In war, information is pervasively uncertain, so commanders must act on conjecture, not knowledge.",
+  "statementAccent": "act on conjecture, not knowledge",
+  "meaning": "The fog of war denotes the pervasive uncertainty, ambiguity, and unreliability of information that commanders and combatants face during military operations. It covers imperfect knowledge of one's own forces and their condition, of the enemy's capabilities, dispositions, and intentions, and of the evolving battlefield situation itself. Because information in war is typically incomplete, delayed, contradictory, or false, decisions must be made on the basis of conjecture rather than certainty. It is the epistemic condition of warfare, the reason plans built on perfect knowledge so often fail.",
+  "mechanism": "Uncertainty enters at every point. Reports arrive late, garbled, or false; the enemy conceals and deceives; the situation shifts faster than it can be observed. Clausewitz captured this in a family of metaphors, describing war as the realm of uncertainty in which most of the factors that action rests on are wrapped in a fog, and picturing the commander groping in a twilight where a clear view is difficult. The practical consequence is that a commander must decide and act on guesses at truth, relying on judgement and on some inner light to find the way when the facts are obscured.",
+  "examples": [
+    {
+      "tag": "Reconnaissance failures",
+      "text": "Commanders repeatedly act on incomplete or wrong reports of enemy strength and location, making decisions on guesses at truth compounded by delayed and garbled orders."
+    },
+    {
+      "tag": "The shrouded map",
+      "text": "Strategy games literally implement a fog of war as an unexplored map that reveals terrain and enemy units only within a unit's line of sight, modelling incomplete situational awareness."
+    },
+    {
+      "tag": "Persisting despite sensors",
+      "text": "Even with satellites, drones, and networked sensors, forces still misidentify targets and receive contradictory intelligence, so the fog is reduced but not lifted."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Friction",
+      "text": "Clausewitz's companion concept, the accumulation of countless small unpredictable difficulties that make even simple actions hard to execute; friction is a practical problem of resistance, distinct from fog, which is a problem of information."
+    },
+    {
+      "name": "The information-superiority debate",
+      "text": "The claim by some that advanced sensors and networks could lift the fog, against critics who hold that technology reduces some uncertainty while multiplying new sources of error."
+    }
+  ],
+  "whyItMatters": "It explains why rigid, over-detailed plans fail and why doctrine favours decentralised command, commander's intent, and initiative, the logic of mission command. It frames intelligence as risk reduction under irreducible uncertainty rather than the delivery of certainty, and it is a foundational metaphor for acting rationally with incomplete, unreliable data. The phrase has spread far beyond the military, into business, management, emergency response, and policy, wherever leaders must decide amid ambiguity.",
+  "working": [
+    {"lead": "Plan for uncertainty", "text": "build flexible plans and decentralised command rather than assume the perfect information you will never have."},
+    {"lead": "Separate fog from friction", "text": "distinguish not knowing, the information problem, from things going wrong in execution, the resistance problem, since each needs a different remedy."},
+    {"lead": "Expect new error with new sensors", "text": "treat more information channels as reducing some uncertainty while adding fresh ways to be misled, not as ending the fog."}
+  ],
+  "limits": "Technology reduces but does not eliminate the fog. Advanced sensors and networks shrink some uncertainty while adding new failure modes, data overload, false or spoofed information, sensor gaps, and more points at which error can enter, so the claim that information superiority could lift the fog is widely judged unrealistic. Clausewitz's figure that three-quarters of the factors are wrapped in fog is rhetorical emphasis, not a measured proportion. The concept is a heuristic framing of an enduring condition of war, not a quantitative law.",
+  "misreadings": "Clausewitz did not coin the crisp phrase 'fog of war' or its German equivalent; he used fog, twilight, and moonlight metaphors for uncertainty, and the polished phrasing is a later paraphrase, prominent partly through a twentieth-century translation choosing the word fog. Fog and friction are not the same: fog is the uncertainty of information, while friction is the accumulated practical difficulty of execution. And modern technology has not ended the fog of war; it reduces some uncertainty while introducing new sources of error and confusion.",
+  "origin": "Associated with the Prussian theorist Carl von Clausewitz and his posthumous 'On War' (1832), which conveyed the uncertainty of war through fog, twilight, and moonlight metaphors; the crisp English phrase is a later crystallisation by translators and interpreters.",
+  "category": "planning",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1832,
+  "namedAfter": "Carl von Clausewitz",
+  "sources": [
+    {"text": "Fog of war, Wikipedia. — the definition, the coinage flag, and the concept's spread.", "url": "https://en.wikipedia.org/wiki/Fog_of_war", "type": "secondary"},
+    {"text": "Clausewitz, On War, Book 1, Chapter 3 (Graham translation, ClausewitzStudies.org). — the uncertainty, twilight, and guesses-at-truth passages.", "url": "https://clausewitzstudies.org/readings/OnWar1873/BK1ch03.html", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fog_of_war",
+  "related": [
+    {"slug": "the-culminating-point-of-victory", "kind": "kindred"},
+    {"slug": "the-ooda-loop", "kind": "kindred"}
+  ]
+}

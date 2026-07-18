@@ -1,0 +1,56 @@
+{
+  "no": "483",
+  "slug": "lanchesters-laws",
+  "name": "Lanchester's Laws",
+  "aliases": ["Lanchester's square law", "The N-squared law"],
+  "statement": "Under aimed fire, a force's combat power grows with the square of its numbers, rewarding concentration.",
+  "statementAccent": "the square of its numbers",
+  "meaning": "Lanchester's laws are a pair of mathematical formulae for the relative strengths of opposing military forces, describing how each side's casualty rate depends on its numbers and its per-unit fighting effectiveness. They come in two forms. The linear law applies to ancient, one-to-one, or unaimed combat, where combat power is proportional to numbers. The square law applies to modern aimed fire, where each unit can engage any enemy unit, so combat power is proportional to the square of the number of units, making numbers matter disproportionately.",
+  "mechanism": "For aimed fire, each side's loss rate depends only on the number of enemy units still firing, since fire concentrates onto the remaining targets. Writing the two forces and their per-unit effectiveness into coupled differential equations and integrating yields a conserved quantity: effectiveness times numbers squared, differenced across the two sides, stays constant. So a force twice as large is four times as powerful, all else equal, which is the mathematical basis for the principle of concentration of force. To offset being outnumbered two to one, each unit must be four times as effective, the square of the numerical ratio.",
+  "examples": [
+    {
+      "tag": "Concentration of force",
+      "text": "Because power scales with the square of numbers, a unified force can destroy a divided enemy piecemeal while suffering far fewer proportional losses, the formal core of divide and conquer and defeating an enemy in detail."
+    },
+    {
+      "tag": "The linear case",
+      "text": "In ancient hand-to-hand combat, where each soldier can engage only one opponent, power is merely proportional to numbers, so the survivors of the larger army roughly equal the numerical difference between the two."
+    },
+    {
+      "tag": "Combat modelling",
+      "text": "Modified Lanchester equations remain embedded in military simulations and have been used to model engagements from the Battle of Britain to hypothetical modern conflicts."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Linear versus square",
+      "text": "The linear law for unaimed or one-to-one combat, where power scales with numbers, and the square law for aimed fire, where it scales with numbers squared; inverting the two is the commonest error."
+    },
+    {
+      "name": "Osipov's independent derivation",
+      "text": "M. Osipov derived similar attrition equations in Russia in 1915, apparently unaware of Lanchester, obtaining a similar effect with an exponent nearer three-halves."
+    }
+  ],
+  "whyItMatters": "Lanchester's laws are foundational to operations research and to quantitative military modelling and wargaming. They gave militaries a first-principles mathematical argument for concentrating force and for the disproportionate value of numerical superiority under aimed fire, and they seeded a whole family of attrition models still used in defence analysis a century later, from wartime operational research to modern combat simulations.",
+  "working": [
+    {"lead": "Match the law to the fire", "text": "use the square law for modern aimed fire and the linear law for unaimed or one-to-one ancient combat."},
+    {"lead": "Concentrate", "text": "exploit the square law by massing force and engaging fractions of the enemy separately, since power grows with numbers squared."},
+    {"lead": "Price effectiveness against numbers", "text": "recognise that offsetting a numerical disadvantage under aimed fire requires a per-unit effectiveness advantage equal to the square of the numerical ratio."}
+  ],
+  "limits": "The models are highly idealised. They assume homogeneous forces with constant effectiveness and continuous, deterministic attrition, and they ignore terrain, morale, tactics, surprise, logistics, the fog of war, command and control, and reinforcements. The square law does not apply cleanly to whole armies, since not all units are engaged at once, nor to area weapons like artillery or nuclear arms. Guerrilla and asymmetric warfare do not obey the standard laws, prompting separate variants, and empirical validation is mixed, with real combat often fitting an intermediate exponent nearer three-halves than one or two.",
+  "misreadings": "The two laws are frequently inverted: the square law applies to aimed, ranged, modern fire, and the linear law to unaimed or one-to-one ancient combat, not the other way round. The square law is not a universal rule that a bigger army always wins by the square; it holds only under its idealised aimed-fire assumptions with full mutual engagement. And the exact form of the linear law varies by author, so the standard rendering is a textbook version, not Lanchester's verbatim notation.",
+  "origin": "Published by the English engineer and polymath Frederick William Lanchester in his 1916 book 'Aircraft in Warfare: The Dawn of the Fourth Arm', developed from 1914 articles, and derived independently by M. Osipov in Russia in 1915.",
+  "category": "planning",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1916,
+  "namedAfter": "Frederick William Lanchester",
+  "sources": [
+    {"text": "Lanchester's laws, Wikipedia. — the linear and square laws, the mathematics, and the Osipov derivation.", "url": "https://en.wikipedia.org/wiki/Lanchester%27s_laws", "type": "secondary"},
+    {"text": "Lanchester, Aircraft in Warfare: The Dawn of the Fourth Arm (1916), Internet Archive. — the original formulation and the principle of concentration.", "url": "https://archive.org/details/aircraftinwarfar00lancrich", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Lanchester%27s_laws",
+  "related": [
+    {"slug": "the-culminating-point-of-victory", "kind": "kindred"}
+  ]
+}
