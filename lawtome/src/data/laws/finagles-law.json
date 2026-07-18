@@ -1,0 +1,57 @@
+{
+  "no": "129",
+  "slug": "finagles-law",
+  "name": "Finagle's Law",
+  "aliases": ["Finagle's law of dynamic negatives"],
+  "statement": "Anything that can go wrong, will — at the worst possible moment.",
+  "statementAccent": "at the worst possible moment",
+  "meaning": "A hyperbolic, more cynical intensification of Murphy's law. Where Murphy says whatever can go wrong will, Finagle adds the pessimistic twist that it will happen at the least convenient, most damaging time — maximum inconvenience, not just eventual failure.",
+  "mechanism": "A folk adage expressing the felt perversity of inanimate objects — the sense that equipment and circumstances actively conspire and choose the worst timing. Its apparent truth rests on selective memory: the dramatic, worst-timed failures are salient and retold, while the countless times things simply worked go uncounted.",
+  "examples": [
+    {
+      "tag": "The demo that fails",
+      "text": "Gear that ran flawlessly for weeks fails precisely during the crucial live demonstration — the worst-possible-moment timing that distinguishes Finagle's law from plain Murphy's law."
+    },
+    {
+      "tag": "Buttered toast",
+      "text": "Dropped toast landing butter-side down is the pop-culture emblem of perverse-timing bad luck this family of adages captures — an illustration rather than a sourced case."
+    },
+    {
+      "tag": "The Belter religion",
+      "text": "Larry Niven's asteroid-miner stories popularised the name, depicting a frontier culture that worshipped 'the dread god Finagle and his mad prophet Murphy' — the running joke that carried the phrase into science-fiction fandom."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Murphy's law",
+      "text": "The milder canonical form — 'anything that can go wrong will go wrong' — which Finagle's law intensifies by insisting on the worst possible timing."
+    },
+    {
+      "name": "The Finagle factor",
+      "text": "An ad hoc fudge factor 'justified only by the fact that it gives more correct results' — sometimes defined as the correct answer divided by your answer — the companion joke to the law."
+    }
+  ],
+  "whyItMatters": "It is the darkest and most fatalistic member of the misfortune-law family, the version engineers and scientists reach for when timing turns a small failure into a disaster. As folklore it names a real feeling; as a claim it is a lesson in how selective memory manufactures a sense of malicious inevitability.",
+  "working": [
+    {"lead": "Design for the worst moment", "text": "the useful reading is defensive: assume failures will cluster at the least convenient time and build in slack, backups, and rehearsals accordingly."},
+    {"lead": "Check your memory before believing it", "text": "the felt truth comes from remembering catastrophes and forgetting routine successes; correct for that before concluding events are conspiring."},
+    {"lead": "Keep it separate from Murphy", "text": "the distinguishing claim is the timing — 'at the worst possible moment' — not merely that things go wrong."}
+  ],
+  "limits": "It is a humorous adage, not a scientific law, and its perceived truth is explained by selection and confirmation bias: memorable, worst-timed failures are noticed and retold while routine successes go uncounted, creating an illusion of malicious inevitability. Its wording is not fixed, its personal-name origin is murky, and even the Campbell attribution is only an association rather than clean authorship.",
+  "misreadings": "It is not an empirical finding that failures really do cluster at the worst moment — that impression is manufactured by memory. Its exact wording varies, and the boundary with Murphy's and Sod's law is fuzzy; the load-bearing distinction from Murphy is simply the 'worst possible moment' clause.",
+  "origin": "Often associated with the science-fiction editor John W. Campbell Jr., though the attribution is an association rather than documented authorship; the earliest dated instance is a 1962 'Finagle Factors' piece bylined 'I. Finaglin'. The name was popularised by Larry Niven's 'Belter' stories, and it stands as the darker corollary to Murphy's law (Muroc Army Air Field, 1948–49).",
+  "category": "media",
+  "reliability": "Folk-adage",
+  "provenance": "canon",
+  "coinedYear": 1962,
+  "namedAfter": "The fictional Finagle",
+  "sources": [
+    {"text": "Finagle's law, Wikipedia. — the statement, the Campbell association, the 1962 dated instance, and Niven's popularisation.", "url": "https://en.wikipedia.org/wiki/Finagle%27s_law", "type": "secondary"},
+    {"text": "Murphy's law, Wikipedia. — the milder canonical form and its 1948–49 origin, for the distinction.", "url": "https://en.wikipedia.org/wiki/Murphy%27s_law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Finagle%27s_law",
+  "related": [
+    {"slug": "murphys-law", "kind": "kindred"},
+    {"slug": "sods-law", "kind": "kindred"}
+  ]
+}

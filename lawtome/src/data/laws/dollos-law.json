@@ -1,0 +1,56 @@
+{
+  "no": "121",
+  "slug": "dollos-law",
+  "name": "Dollo's Law of Irreversibility",
+  "statement": "Evolution does not retrace its steps: a lost complex structure is essentially never regained exactly.",
+  "statementAccent": "does not retrace its steps",
+  "meaning": "Once a lineage loses a complex ancestral structure, that exact structure, with its precise genetic basis, is essentially never regained — even if the environment reverts to the ancestral conditions. It is a claim about exact retracing, not a ban on regaining a function by some new route.",
+  "mechanism": "Complex adaptations depend on many interacting genes and developmental structures. Once lost, reconstituting them identically is statistically near-impossible: the genetic information degrades, and true reversal would require many independent changes to reverse at once by chance. Dawkins frames it as a statement about the improbability of following the same evolutionary trajectory twice, and molecular work describes an 'epistatic ratchet' in which neutral mutations accumulate that destabilise the old state, so returning would need them all to revert by luck. It is probabilistic, not an absolute physical bar.",
+  "examples": [
+    {
+      "tag": "Stick-insect wings",
+      "text": "Whiting, Bradler and Maxwell (2003) reconstructed a phylogeny suggesting wings were lost in the stick-insect ancestor and later re-evolved, implying the wing developmental pathway was retained and re-expressed. It is the flagship apparent counterexample — though Trueman and colleagues (2004) questioned whether the phylogeny really supports re-gain."
+    },
+    {
+      "tag": "Digit loss in lizards",
+      "text": "Cases such as apparent re-evolution of digits in Bachia lizards are cited as violations, but Galis and colleagues (2010) argue many rest on tenuous molecular phylogenies that may be revised — so the counterexamples are themselves contested."
+    },
+    {
+      "tag": "Atavisms",
+      "text": "The occasional reappearance of an ancestral trait in an individual — hind-limb structures in whales, for instance — reflects retained latent pathways rather than a lineage re-evolving the lost organ, and so does not truly overturn the law."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Evolutionary constraint",
+      "text": "The broader idea Dollo's law is one case of: the developmental, genetic, and phylogenetic limits on which trajectories a lineage can actually take, biasing what evolution can and cannot revisit."
+    },
+    {
+      "name": "The epistatic ratchet",
+      "text": "A molecular restatement: after an adaptive change, later neutral substitutions make the ancestral protein state unstable, so reverting exactly becomes vanishingly unlikely — a mechanism for the law's statistical irreversibility."
+    }
+  ],
+  "whyItMatters": "It is a foundational generalisation about the direction and irreversibility of evolutionary change, shaping how palaeontologists and biologists read the fossil and molecular record. Its modern reframing — from an absolute law to a statistical near-certainty — is itself a lesson in how such rules survive by softening.",
+  "working": [
+    {"lead": "Read irreversibility as improbability", "text": "treat the law as a statement about the statistical unlikelihood of exact reversal, not an inviolable physical prohibition."},
+    {"lead": "Separate function from structure", "text": "a lineage may regain a capability by a new developmental route without re-evolving the lost structure identically — the law targets exact retracing, not functional recovery."},
+    {"lead": "Scrutinise the counterexamples", "text": "claimed violations often hinge on phylogenies that may be revised, so weigh the evidence for re-evolution before treating the law as broken."}
+  ],
+  "limits": "Modern molecular-phylogenetic examples of apparent re-evolution — stick-insect wings, digit and oviparity reappearances — challenge a strict reading, and the consensus now treats Dollo's law as statistical rather than inviolable. The irreversibility concerns exact retracing of a complex structure and its genetic basis; it does not mean traits can never be functionally regained, since latent pathways can be re-expressed. Critics also note that many claimed violations depend on phylogenies that may not be robust, so the counterexamples are themselves contested. Dollo's own meaning also differed somewhat from the modern 'no re-evolution of complex structures' reading.",
+  "misreadings": "It does not say a lineage can never regain a lost function — only that it essentially never rebuilds the exact lost structure and its precise genetic basis. Nor is it an absolute physical law; it is a statement about overwhelming improbability, and apparent violations exist and are debated.",
+  "origin": "Stated by the Belgian palaeontologist Louis Dollo in 'Les lois de l'évolution' (Bulletin de la Société Belge de Géologie, de Paléontologie et d'Hydrologie, 1893). The term 'Dollo's law' was applied later, and Stephen Jay Gould's 'Dollo on Dollo's law' (1970) traced how Dollo's own meaning differed from modern usage.",
+  "category": "science",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1893,
+  "namedAfter": "Louis Dollo",
+  "sources": [
+    {"text": "Dollo's law of irreversibility, Wikipedia. — the formulation, the mechanism, and the re-evolution counterexamples.", "url": "https://en.wikipedia.org/wiki/Dollo%27s_law_of_irreversibility", "type": "secondary"},
+    {"text": "Whiting, M.F., Bradler, S. & Maxwell, T. (2003). \"Loss and recovery of wings in stick insects.\" Nature, 421, 264–267.", "url": "https://www.nature.com/articles/nature01313", "type": "primary"},
+    {"text": "Gould, S.J. (1970). \"Dollo on Dollo's law: irreversibility and the status of evolutionary laws.\" Journal of the History of Biology.", "url": "https://link.springer.com/article/10.1007/BF00137351", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Dollo%27s_law_of_irreversibility",
+  "related": [
+    {"slug": "copes-rule", "kind": "kindred"}
+  ]
+}

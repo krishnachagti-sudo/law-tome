@@ -1,0 +1,60 @@
+{
+  "no": "133",
+  "slug": "cheops-law",
+  "name": "Cheops' Law",
+  "statement": "Nothing ever gets built on schedule or within budget.",
+  "statementAccent": "on schedule or within budget",
+  "meaning": "Projects — especially large construction and engineering ones — reliably overrun both their planned schedule and their planned budget. A humorous statement of the near-universal tendency for big builds to come in late and over cost, named for the pharaoh who built the Great Pyramid.",
+  "mechanism": "The overruns the adage names are attributed in the empirical literature to a cluster of causes: optimism bias, in which planners systematically underestimate time, cost, and risk; the planning fallacy, in which forecasts ignore the historical base rates of similar projects; scope creep; and strategic misrepresentation, in which promoters deliberately lowball costs and inflate benefits to get projects approved.",
+  "examples": [
+    {
+      "tag": "The Sydney Opera House",
+      "text": "The canonical overrun: a building estimated in the single-digit millions that finished vastly more expensive and roughly a decade late — the textbook case cited in megaproject research, though exact figures should be checked against primary sources."
+    },
+    {
+      "tag": "Megaprojects in general",
+      "text": "Bent Flyvbjerg's research finds that around ninety percent of megaprojects experience cost overruns, a pattern persisting for a century across rail, roads, tunnels, dams, and Olympics — the empirical substance behind the quip."
+    },
+    {
+      "tag": "The Great Pyramid",
+      "text": "The namesake, invoked humorously as the original over-budget build. There is no ancient budget record showing the pyramid overran; the 'ur-example' framing is retrospective joke, not documented fact."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Hofstadter's law",
+      "text": "The time-estimation cousin, cross-referenced with Cheops' law: it always takes longer than you expect, even when you account for Hofstadter's law — recursive pessimism about schedules."
+    },
+    {
+      "name": "The planning fallacy",
+      "text": "Kahneman and Tversky's cognitive account: the systematic tendency to underestimate how long a task will take, ignoring the base rates of similar tasks — a documented driver of the overruns the adage names."
+    },
+    {
+      "name": "Reference-class forecasting",
+      "text": "Flyvbjerg's proposed remedy: forecast a project by comparing it to the actual outcomes of a class of similar past projects, rather than from the inside — a way to fight optimism bias with base rates."
+    }
+  ],
+  "whyItMatters": "It is the folk motto of every over-budget megaproject, memorable precisely because the phenomenon behind it is so well documented. The joke belongs to folklore, but the substance — systematic schedule and cost overruns on large projects — is one of the better-established findings in project research, which is what gives the quip its bite.",
+  "working": [
+    {"lead": "Forecast from the outside", "text": "resist inside-view estimates; predict a project's time and cost from the actual record of similar past projects — reference-class forecasting."},
+    {"lead": "Budget for overrun", "text": "since large builds reliably run late and over cost, treat generous contingencies as the base case, not a pessimistic add-on."},
+    {"lead": "Watch for strategic lowballing", "text": "early estimates may be optimistic by design to win approval; discount them and probe how the numbers were produced."}
+  ],
+  "limits": "As a 'law' it is folklore — an epigram coined in fiction, and even the authorship of the underlying idea is uncertain, since the sentiment long predates its famous phrasing. The pyramid connection is a retrospective joke with no documented budget behind it. What is real is the phenomenon it points at: systematic overruns are empirically well supported. But the causes are contested — Flyvbjerg emphasises optimism bias and strategic misrepresentation, while critics argue the root cause lies more in project complexity — so the quip is folklore, the phenomenon is real, and the mechanism is debated.",
+  "misreadings": "It is a literary quip, not a measured law, and its pyramid namesake is humour, not evidence — there is no record that the Great Pyramid overran. It should be cited as folklore for the joke and Flyvbjerg or Kahneman for the substance; the real, well-documented claim is that large projects systematically overrun, not that building anything on budget is literally impossible.",
+  "origin": "The phrasing was written by Robert A. Heinlein and given to his character Lazarus Long in the 1973 novel Time Enough for Love, later collected in The Notebooks of Lazarus Long; Heinlein is the standard documented source, though the underlying sentiment predates him. It is named in jest for Cheops, the pharaoh Khufu, builder of the Great Pyramid of Giza.",
+  "category": "planning",
+  "reliability": "Folk-adage",
+  "provenance": "canon",
+  "coinedYear": 1973,
+  "namedAfter": "The pharaoh Cheops",
+  "sources": [
+    {"text": "Cheops law, Wikipedia. — the statement, the Heinlein / Time Enough for Love attribution, and the Hofstadter's-law cross-reference.", "url": "https://en.wikipedia.org/wiki/Cheops_law", "type": "secondary"},
+    {"text": "Flyvbjerg, B. et al. \"Underestimating Costs in Public Works Projects.\" — megaproject cost-overrun evidence.", "url": "https://documents1.worldbank.org/curated/en/968761468141298118/pdf/wps3781.pdf", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Cheops_law",
+  "related": [
+    {"slug": "hofstadters-law", "kind": "kindred"},
+    {"slug": "parkinsons-law", "kind": "kindred"}
+  ]
+}
