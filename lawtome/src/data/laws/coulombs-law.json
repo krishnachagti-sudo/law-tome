@@ -1,0 +1,56 @@
+{
+  "no": "143",
+  "slug": "coulombs-law",
+  "name": "Coulomb's Law",
+  "statement": "The force between two charges grows with their product and falls with the square of their distance.",
+  "statementAccent": "falls with the square of their distance",
+  "meaning": "Two charged objects push or pull on each other along the line joining them. Bigger charges mean a stronger force; move them twice as far apart and the force drops to a quarter. Like charges repel, opposite charges attract — the key contrast with gravity, which only ever attracts.",
+  "mechanism": "It is an inverse-square central force whose strength is set by the product of the charges and Coulomb's constant. In the field view, a charge fills the space around it with an electric field, and a second charge feels a force equal to its charge times that field — a formulation that extends the law from two points to any distribution of charge by superposition.",
+  "examples": [
+    {
+      "tag": "Static cling",
+      "text": "Rubbing a balloon transfers charge, and the opposite charges on balloon and hair or wall attract — the everyday face of the electrostatic force."
+    },
+    {
+      "tag": "Holding atoms together",
+      "text": "The attraction between negatively charged electrons and the positive nucleus binds atoms, though the full account needs quantum mechanics, not the classical force alone."
+    },
+    {
+      "tag": "The torsion balance",
+      "text": "Coulomb's own apparatus: two like-charged spheres repel, twisting a fine fibre, and the twist measures the force — showing it quadruples when the separation is halved."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Gauss's law",
+      "text": "A mathematically equivalent statement for charges at rest, often far easier to use for symmetric charge distributions."
+    },
+    {
+      "name": "Newton's gravitation",
+      "text": "The structural twin: an inverse-square force with the same 1/r² form, but always attractive and vastly weaker, with mass in place of charge."
+    }
+  ],
+  "whyItMatters": "It is the founding quantitative law of electricity, the electrostatic counterpart to Newton's gravitation and the starting point for the whole theory of the electric field. It governs everything from static shocks to the binding of matter, within its domain of charges at rest.",
+  "working": [
+    {"lead": "Scale by the inverse square", "text": "remember that halving the distance quadruples the force, and doubling it cuts the force to a quarter."},
+    {"lead": "Sum forces by superposition", "text": "for many charges, add the pairwise Coulomb forces as vectors to get the net force on any one."},
+    {"lead": "Switch to full electrodynamics for motion", "text": "the law is electrostatic; once charges move, magnetic and retardation effects appear and Maxwell's equations are needed."}
+  ],
+  "limits": "Coulomb's law is strictly valid only for point charges or non-overlapping spherically symmetric charges at rest, in vacuum or a uniform medium — the electrostatic approximation. It breaks down for moving charges, where magnetic forces and retardation arise and the full electrodynamics of Maxwell's equations is required, and at subatomic scales, where quantum electrodynamics supersedes the classical force. It is superbly verified within its domain but is the static limit of a deeper theory, not a standalone fundamental law.",
+  "misreadings": "It is not the whole story of the electric force — it describes charges at rest, and moving charges demand the magnetic and relativistic corrections of full electromagnetism. Its name also flatters a latecomer: Priestley conjectured the inverse-square form and Cavendish established it earlier, though Cavendish left his work unpublished.",
+  "origin": "Published by the French physicist Charles-Augustin de Coulomb in 1785, measured with a torsion balance. Joseph Priestley had conjectured the inverse-square relationship in 1767 and Henry Cavendish had established it in the early 1770s without publishing, so Coulomb's name attaches to a result others reached first.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1785,
+  "namedAfter": "Charles-Augustin de Coulomb",
+  "sources": [
+    {"text": "Coulomb's law, Wikipedia. — the statement, the field formulation, the Priestley/Cavendish precedence, and the electrostatics-only limits.", "url": "https://en.wikipedia.org/wiki/Coulomb%27s_law", "type": "secondary"},
+    {"text": "\"Torsion Balance (1785),\" National MagLab Magnet Academy. — Coulomb's apparatus and measurement.", "url": "https://nationalmaglab.org/magnet-academy/history-of-electricity-magnetism/museum/torsion-balance-1785/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Coulomb%27s_law",
+  "related": [
+    {"slug": "keplers-laws-of-planetary-motion", "kind": "kindred"},
+    {"slug": "ohms-law", "kind": "kindred"}
+  ]
+}

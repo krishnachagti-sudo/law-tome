@@ -1,0 +1,56 @@
+{
+  "no": "137",
+  "slug": "charless-law",
+  "name": "Charles's Law",
+  "statement": "At constant pressure, a gas's volume grows in proportion to its absolute temperature.",
+  "statementAccent": "grows in proportion to its absolute temperature",
+  "meaning": "Heat a fixed amount of gas while holding its pressure steady and it expands; cool it and it contracts, with the volume tracking absolute temperature. Double the temperature in kelvin and, at constant pressure, the volume doubles.",
+  "mechanism": "Temperature measures the average kinetic energy of the gas molecules. Heated, they move faster and strike the walls harder and more often; at constant pressure the gas must expand to keep the collision force per unit area unchanged. The proportionality only works from absolute zero, which is why it is stated in kelvin, not Celsius.",
+  "examples": [
+    {
+      "tag": "The hot-air balloon",
+      "text": "Heating the air inside at roughly constant pressure expands it, lowering its density so the balloon rises — the everyday embodiment of volume growing with temperature."
+    },
+    {
+      "tag": "A balloon in the cold",
+      "text": "A filled balloon visibly shrinks when taken into the cold as the chilled gas contracts, then re-expands on warming — the law running in reverse."
+    },
+    {
+      "tag": "The path to absolute zero",
+      "text": "Extrapolating the volume toward zero points to about −273 °C, the reasoning that helped fix the absolute temperature scale — though real gases condense long before they get there."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Boyle's law",
+      "text": "The constant-temperature sibling: at fixed temperature, pressure varies inversely with volume."
+    },
+    {
+      "name": "The ideal gas law",
+      "text": "Charles's law is the constant-pressure, fixed-amount slice of PV = nRT, the unified relation for ideal gases."
+    }
+  ],
+  "whyItMatters": "It fixed the direct link between a gas's volume and its temperature, a founding component of the gas laws and of the reasoning that led to the absolute temperature scale. Its tangled authorship also makes it a textbook case of how a law comes to bear a particular name.",
+  "working": [
+    {"lead": "Work in kelvin", "text": "the proportionality holds only for absolute temperature, so convert to kelvin before applying it — using Celsius breaks the relationship."},
+    {"lead": "Hold pressure and amount fixed", "text": "the law applies to a fixed quantity of gas at constant pressure; change either and it no longer holds."},
+    {"lead": "Expect deviation near condensation", "text": "as a gas approaches liquefaction, treat the law as approximate; real gases stray at low temperature and high pressure."}
+  ],
+  "limits": "Charles's law holds only for an ideal gas and requires absolute temperature. Real gases deviate as they approach condensation — Gay-Lussac himself stressed that the relationship breaks down at low temperatures where gases liquefy — so the volume-to-zero extrapolation is unphysical because the gas condenses first. It is an idealised empirical regularity that real gases only approximate at sufficiently low pressure and high temperature.",
+  "misreadings": "It is not exact for real gases, and it fails outright near liquefaction; the neat extrapolation to zero volume is a mathematical idealisation, not a physical prediction. Its name is also historically arbitrary: Charles never published it, and the person who did — Gay-Lussac — credited him.",
+  "origin": "Named for the French physicist Jacques Charles, who studied the volume-temperature relationship around 1787 but never published it. Joseph Louis Gay-Lussac published it in 1802, crediting Charles's earlier work; Guillaume Amontons had anticipated the idea around 1700, and John Dalton demonstrated gas expansion independently in 1801 — a genuinely tangled attribution.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1802,
+  "namedAfter": "Jacques Charles",
+  "sources": [
+    {"text": "Charles's law, Wikipedia. — the statement, the kinetic mechanism, and the Charles/Gay-Lussac/Amontons/Dalton attribution.", "url": "https://en.wikipedia.org/wiki/Charles's_law", "type": "secondary"},
+    {"text": "\"Charles's law,\" Encyclopædia Britannica. — the canonical wording and the real-gas breakdown near liquefaction.", "url": "https://www.britannica.com/science/Charless-law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Charles's_law",
+  "related": [
+    {"slug": "boyles-law", "kind": "kindred"},
+    {"slug": "stiglers-law", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "no": "145",
+  "slug": "lenzs-law",
+  "name": "Lenz's Law",
+  "statement": "An induced current flows so as to oppose the change that created it.",
+  "statementAccent": "oppose the change that created it",
+  "meaning": "When a changing magnetic field induces a current, that current's own magnetic field pushes back against the change. Move a magnet toward a loop and the loop repels it; pull the magnet away and the loop tries to hold it. Nature, as the phrase goes, abhors a change in flux.",
+  "mechanism": "It is a consequence of the conservation of energy. If the induced current aided the change instead of opposing it, the motion would amplify itself and you would get energy for nothing — a perpetual-motion machine. Because the current opposes the motion, you must do work to move the magnet, and that work appears as resistive heating. This opposition is exactly what the minus sign in Faraday's law expresses.",
+  "examples": [
+    {
+      "tag": "The falling magnet",
+      "text": "A magnet dropped through a copper tube descends in slow motion: its changing flux induces eddy currents whose field opposes the fall, braking it without any contact."
+    },
+    {
+      "tag": "Eddy-current braking",
+      "text": "The same opposition is harnessed in contactless brakes, where induced currents fight the relative motion and dissipate kinetic energy as heat."
+    },
+    {
+      "tag": "Lagging behind free fall",
+      "text": "A dropped magnet near a conductor lags a freely falling object, because the induced force always retards, never assists, its motion."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Faraday's law",
+      "text": "The quantitative partner: Faraday gives the size of the induced electromotive force, and Lenz's law supplies its direction — the minus sign in the equation."
+    },
+    {
+      "name": "Le Chatelier's principle",
+      "text": "The conceptual cousin from chemistry: a system disturbed from equilibrium responds so as to counteract the disturbance — the same 'resist the change' logic in another domain."
+    }
+  ],
+  "whyItMatters": "It fixes the direction of every induced current and, in doing so, makes electromagnetic induction consistent with energy conservation — without it, generators and transformers would violate the first law of thermodynamics. It also underlies practical contactless braking and damping.",
+  "working": [
+    {"lead": "Find the direction by the opposition", "text": "the induced current always opposes the change in flux, so its field points to counteract whatever is changing."},
+    {"lead": "Read it as energy conservation", "text": "treat the law as a bookkeeping rule that forbids free energy from induction, which is why the opposition is never optional."},
+    {"lead": "Get magnitude from Faraday", "text": "Lenz's law gives only direction; pair it with Faraday's law and the circuit resistance to find how large the current is."}
+  ],
+  "limits": "It is a qualitative rule: it specifies the direction of the induced current but says nothing about its magnitude, which comes from Faraday's law and the circuit's resistance. It is not so much limited as narrow in scope — a direction and sign rule, essentially conservation of energy applied to induction, rather than an independent dynamical law.",
+  "misreadings": "It does not tell you how big the induced current is, only which way it flows. And its 'opposition' is not a quirk of magnetism but a restatement of energy conservation — the induced effect must fight its cause, or perpetual motion would follow.",
+  "origin": "Stated by the physicist Heinrich Lenz in 1834. It follows from the conservation of energy and supplies the sign in Faraday's law of induction.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1834,
+  "namedAfter": "Heinrich Lenz",
+  "sources": [
+    {"text": "Lenz's law, Wikipedia. — the statement, the energy-conservation basis, and its role as the sign of Faraday's law.", "url": "https://en.wikipedia.org/wiki/Lenz%27s_law", "type": "secondary"},
+    {"text": "\"Lenz's law,\" Encyclopædia Britannica. — the perpetual-motion argument and 1834 origin.", "url": "https://www.britannica.com/science/Lenzs-law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Lenz%27s_law",
+  "related": [
+    {"slug": "faradays-law-of-induction", "kind": "kindred"}
+  ]
+}

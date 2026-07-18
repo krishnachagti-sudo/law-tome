@@ -1,0 +1,55 @@
+{
+  "no": "140",
+  "slug": "newtons-law-of-cooling",
+  "name": "Newton's Law of Cooling",
+  "statement": "A body loses heat at a rate proportional to how much hotter it is than its surroundings.",
+  "statementAccent": "proportional to how much hotter it is than its surroundings",
+  "meaning": "The bigger the temperature gap between an object and its environment, the faster it sheds heat. As the gap shrinks the cooling slows, so the object's temperature approaches ambient along an exponential curve — fast at first, then ever more gradually.",
+  "mechanism": "The instantaneous rate of heat loss is proportional to the temperature difference, so the difference itself decays exponentially toward zero — the classic e-to-the-minus-t curve. Physically the linear-in-difference assumption models convective exchange with a surrounding fluid whose transport properties stay roughly constant over the temperature range.",
+  "examples": [
+    {
+      "tag": "Cooling coffee",
+      "text": "A hot drink loses heat fastest right after pouring, when the gap to room temperature is largest, and slows as it nears ambient — the textbook illustration of the curve."
+    },
+    {
+      "tag": "Time of death",
+      "text": "A body cools toward ambient after death, and investigators fit a cooling curve to estimate the interval — though real bodies depart from ideal cooling, so forensic models are empirically corrected."
+    },
+    {
+      "tag": "Anything approaching ambient",
+      "text": "A cooling engine part or a dish out of the oven follows the same exponential approach to room temperature, steep then shallow."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The heat equation",
+      "text": "The partial differential equation governing how temperature spreads through a body in space and time, for which Newton's law often serves as the convective boundary condition at the surface."
+    },
+    {
+      "name": "Radiative cooling",
+      "text": "The contrasting regime described by the Stefan–Boltzmann law, where radiated power grows as the fourth power of absolute temperature — not linearly in the difference — so Newton's law fails when radiation dominates."
+    }
+  ],
+  "whyItMatters": "It is the simplest usable model of how things cool, good enough for coffee, forensics, and countless engineering estimates, and a standard first encounter with exponential decay in physics. Its narrow domain — small differences, convective transfer — also teaches when a tidy linear law must give way to the nonlinear truth.",
+  "working": [
+    {"lead": "Use it for modest temperature gaps", "text": "the linear approximation is best when the difference is small and heat leaves by convection; apply it there and expect a clean exponential."},
+    {"lead": "Switch models for hot bodies", "text": "when radiation dominates, use the Stefan–Boltzmann fourth-power law instead, since cooling is then far steeper than linear."},
+    {"lead": "Check the body is uniform", "text": "the law assumes one internal temperature, valid for small or well-conducting objects; large or insulating bodies develop internal gradients it ignores."}
+  ],
+  "limits": "It is an empirical approximation, not a fundamental law. It holds best for forced convection and modest temperature differences, where the heat-transfer coefficient is roughly constant, and fails for large differences, where natural convection and radiation grow nonlinearly — radiative loss follows the fourth power of absolute temperature. It also assumes a uniform internal temperature, valid only for small or well-conducting bodies. It is superseded by the heat equation for conduction and the Stefan–Boltzmann law for radiation when those regimes matter.",
+  "misreadings": "It is not exact and not universal — for hot, radiation-dominated bodies the true cooling is much steeper than linear. Even the clean 'rate proportional to the difference' statement is a later reconstruction: Newton's 1701 paper was chiefly about building a temperature scale, and the modern form was distilled from it afterward.",
+  "origin": "Published anonymously by Isaac Newton in 1701 as 'Scala graduum caloris' in the Royal Society's Philosophical Transactions, primarily to establish a temperature scale. The clean 'rate proportional to temperature difference' statement now attached to his name is a later reconstruction of his remarks.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1701,
+  "namedAfter": "Isaac Newton",
+  "sources": [
+    {"text": "Newton's law of cooling, Wikipedia. — the statement, the exponential-decay solution, and the small-difference/convection limits.", "url": "https://en.wikipedia.org/wiki/Newton%27s_law_of_cooling", "type": "secondary"},
+    {"text": "Stefan–Boltzmann law, Wikipedia. — the fourth-power radiative contrast that bounds Newton's linear law.", "url": "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Newton%27s_law_of_cooling",
+  "related": [
+    {"slug": "keplers-laws-of-planetary-motion", "kind": "kindred"}
+  ]
+}
