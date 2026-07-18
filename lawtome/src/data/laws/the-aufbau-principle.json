@@ -1,0 +1,57 @@
+{
+  "no": "277",
+  "slug": "the-aufbau-principle",
+  "name": "The Aufbau Principle",
+  "aliases": ["The building-up principle"],
+  "statement": "Electrons fill the lowest-energy orbitals first, building an atom up from the bottom.",
+  "statementAccent": "building an atom up from the bottom",
+  "meaning": "To find an atom's ground-state electron configuration, add its electrons one at a time to the available orbitals, always taking the lowest-energy vacancy first. The German name means building-up: the atom is assembled from the ground up, shell by shell. Paired with the rule that each orbital holds at most two electrons and the rule that degenerate orbitals fill singly first, it predicts the electron arrangement of most elements.",
+  "mechanism": "The order of filling follows the empirical Madelung rule: orbitals fill by increasing sum of the two quantum numbers n and l, and ties break in favour of the lower n. This gives the familiar sequence 1s, 2s, 2p, 3s, 3p, 4s, 3d, and onward. Underneath it is energy minimisation — the atom settles into its lowest total energy — but the ordering is subtler than a fixed ladder of one-electron energies, because it depends on how much each orbital penetrates toward the nucleus and is shielded from it, and on the repulsion between electrons. The rule captures the pattern; the true determinant is the whole many-electron energy.",
+  "examples": [
+    {
+      "tag": "The 4s-before-3d step",
+      "text": "In building up potassium and calcium the 4s orbital fills before the 3d, the most-cited illustration of the n-plus-l ordering and the moment the sequence departs from simple shell order."
+    },
+    {
+      "tag": "The chromium anomaly",
+      "text": "Chromium breaks the prediction: instead of an argon core with four 3d and two 4s electrons it takes five 3d and a single 4s, one of about twenty elements where the rule fails."
+    },
+    {
+      "tag": "The copper anomaly",
+      "text": "Copper likewise adopts a filled 3d shell and a lone 4s electron rather than the predicted arrangement — the standard companion exception to chromium."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Madelung rule",
+      "text": "The specific ordering by increasing n plus l, lower n breaking ties, first tabulated by Janet and stated empirically by Madelung, with a later theoretical rationale from Klechkowski."
+    },
+    {
+      "name": "The exceptions",
+      "text": "Roughly twenty elements, chromium and copper among them, whose measured configurations depart from the rule, especially across the transition metals, lanthanides, and actinides."
+    }
+  ],
+  "whyItMatters": "It is how the periodic table is built: the order in which orbitals fill explains the table's blocks and periods and predicts each element's outer-electron structure, from which its chemistry largely follows. As a bookkeeping device for ground-state configurations it is one of the most useful rules a chemistry student learns, even where the explanation usually attached to it does not hold up.",
+  "working": [
+    {"lead": "Fill from the bottom", "text": "assign electrons to the lowest-energy orbital available, following the Madelung order, before moving to higher ones."},
+    {"lead": "Expect the transition-metal exceptions", "text": "watch for anomalies like chromium and copper, and treat the rule as a strong pattern rather than an exceptionless law."},
+    {"lead": "Distrust the neat energy story", "text": "do not lean on the claim that 4s simply sits below 3d; the configurations are real facts, but that explanation is a simplification specialists reject."}
+  ],
+  "limits": "The rule is a heuristic, not a law, with roughly twenty known exceptions concentrated among the transition metals, lanthanides, and actinides, where competing configurations lie very close in energy and some heavy-element cases are experimentally uncertain. Its usual justification is shakier than the rule itself: the claim that 4s lies below 3d fails across the d-block, where 3d is in fact the lower orbital from scandium onward, and the paradox that 4s fills first yet empties first on ionisation exposes the trouble. The textbook appeal to special stability of half-filled and filled subshells to explain chromium and copper is likewise a post-hoc story that does not survive careful analysis. What is solid is the set of configurations it predicts, most of which match experiment; what is weak is the simple energy-level picture used to explain them.",
+  "misreadings": "It is not that 4s is simply lower in energy than 3d — that ordering does not hold for the transition metals, and the filling-order and ionisation-order appear reversed. And the special stability of half-filled and full subshells, wheeled out to explain chromium and copper, is an oversimplification, not the established cause; the real driver is minimisation of the total atomic energy.",
+  "origin": "The building-up concept traces to Niels Bohr's early-1920s quantum account of electron arrangement; the German term Aufbauprinzip comes from that literature. The n-plus-l ordering was arranged by Charles Janet around 1929, stated empirically by Erwin Madelung in 1936, and given a theoretical rationale by V. M. Klechkowski around 1962.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1936,
+  "sources": [
+    {"text": "Aufbau principle, Wikipedia. — the lowest-energy-first statement, the Madelung n-plus-l ordering, the chromium and copper anomalies, and the roughly twenty exceptions.", "url": "https://en.wikipedia.org/wiki/Aufbau_principle", "type": "secondary"},
+    {"text": "Vanquickenborne, Pierloot & Devoghel, \"Transition Metals and the Aufbau Principle,\" J. Chem. Educ. 71(6):469-471 (1994). — the crossing of the 3d and 4s orbital energies near scandium.", "url": "https://pubs.acs.org/doi/10.1021/ed071p469", "type": "primary"},
+    {"text": "Scerri, \"The trouble with the aufbau principle,\" Education in Chemistry (2013). — the contradiction between the 4s-below-3d claim and 4s being lost first on ionisation.", "url": "https://edu.rsc.org/feature/the-trouble-with-the-aufbau-principle/2000133.article", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Aufbau_principle",
+  "related": [
+    {"slug": "hunds-rule", "kind": "kindred"},
+    {"slug": "the-pauli-exclusion-principle", "kind": "kindred"}
+  ]
+}

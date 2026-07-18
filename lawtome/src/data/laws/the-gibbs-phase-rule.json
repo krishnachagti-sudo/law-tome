@@ -1,0 +1,58 @@
+{
+  "no": "280",
+  "slug": "the-gibbs-phase-rule",
+  "name": "The Gibbs Phase Rule",
+  "aliases": ["The phase rule"],
+  "statement": "Degrees of freedom equal components minus phases, plus two.",
+  "statementAccent": "components minus phases, plus two",
+  "meaning": "For a system at equilibrium, the phase rule counts how many intensive variables — temperature, pressure, concentrations — you can vary independently while keeping the same set of phases coexisting. That number, the degrees of freedom, is F = C minus P plus 2: the number of chemically independent components, less the number of phases present, plus two for temperature and pressure. It tells you whether a state is a region, a line, or a single fixed point on a phase diagram.",
+  "mechanism": "The rule is a tally of variables minus constraints. To fix each phase's composition you need its concentrations; across all the phases, together with the shared temperature and pressure, that is a fixed count of variables. Equilibrium then demands that each component have the same chemical potential in every phase, and each such equality is a constraint that removes a degree of freedom. Subtract the constraints from the variables and the phase rule, F = C minus P plus 2, is what remains. The two counts temperature and pressure; hold one of them fixed and it drops to plus one.",
+  "examples": [
+    {
+      "tag": "The single phase",
+      "text": "Liquid water alone is one component in one phase, so F equals two: both temperature and pressure can vary freely across an area of the phase diagram without a new phase appearing."
+    },
+    {
+      "tag": "The coexistence curve",
+      "text": "Where liquid water and its vapour coexist there are two phases, so F equals one: choosing the temperature fixes the pressure, and the states trace a line — the boiling curve."
+    },
+    {
+      "tag": "The triple point",
+      "text": "Ice, liquid, and vapour together make three phases of one component, so F equals zero: they can coexist only at a single fixed temperature and pressure, which is why the water triple point once defined the kelvin."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The condensed phase rule",
+      "text": "When pressure is held fixed, as for solids and liquids in metallurgy, one variable is removed and the rule becomes F = C minus P plus 1 — though it should not be used for condensed systems at high pressure, as in geology."
+    },
+    {
+      "name": "The generalised rule",
+      "text": "Replacing the two with N gives F = C minus P plus N, where N counts every independent way of doing work, letting the rule accommodate magnetic or electric fields beyond temperature and pressure."
+    }
+  ],
+  "whyItMatters": "It is the organising principle of phase diagrams, the master relation that says how many degrees of freedom a system of coexisting phases has, and so how those diagrams must be built. From metallurgy and materials science to geology and chemical engineering, it governs how many conditions can be tuned before a phase appears or vanishes — and it is one of the founding results of chemical thermodynamics.",
+  "working": [
+    {"lead": "Count components and phases", "text": "identify the number of independent components and the number of coexisting phases, then apply F = C minus P plus 2."},
+    {"lead": "Read the geometry", "text": "let F tell you the shape of the state: two for an area, one for a line, zero for a fixed point like a triple point."},
+    {"lead": "Count independent components, not species", "text": "reduce the component count by every independent chemical reaction and constraint, since it is the minimum set that fixes all compositions."}
+  ],
+  "limits": "The rule holds only at thermodynamic equilibrium; it says nothing about metastable states, kinetics, or rates. The two applies specifically to temperature and pressure — fix one and it becomes plus one, and other intensive variables such as magnetic or electric fields change it again, calling for the generalised form. Components must be counted as the minimum number of independent constituents: each independent chemical reaction at equilibrium, and constraints like electroneutrality, reduce the count, and mistaking species for components is the commonest error. Only intensive variables count; the amounts of each phase do not. A negative result signals that too many phases were assumed to coexist.",
+  "misreadings": "The component count is not simply the number of chemical species present; it is the number of independent components, which reactions and constraints reduce. And degrees of freedom count only independent intensive variables — the relative amounts of the phases, being extensive, do not enter, so F equal to zero does not mean the amounts cannot change, only that no intensive variable can be tuned freely while the phases coexist.",
+  "origin": "Derived by the American physicist Josiah Willard Gibbs in his monograph 'On the Equilibrium of Heterogeneous Substances,' published by the Connecticut Academy of Arts and Sciences in two parts in 1875 and 1878, the work that founded chemical thermodynamics and introduced the chemical potential on which the rule rests.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1875,
+  "namedAfter": "Josiah Willard Gibbs",
+  "sources": [
+    {"text": "Phase rule, Wikipedia. — the F = C minus P plus 2 relation, the water examples, the condensed variant, and the Gibbs attribution.", "url": "https://en.wikipedia.org/wiki/Phase_rule", "type": "secondary"},
+    {"text": "On the Equilibrium of Heterogeneous Substances, Wikipedia. — Gibbs's 1875-1878 monograph and its founding role in chemical thermodynamics.", "url": "https://en.wikipedia.org/wiki/On_the_Equilibrium_of_Heterogeneous_Substances", "type": "secondary"},
+    {"text": "The Gibbs Phase Rule, Chemistry LibreTexts. — the derivation as variables minus chemical-potential constraints and the interpretation of the degrees of freedom.", "url": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Free_Energy_1e_(Snee)/08:_Phase_Changes/8.01:_The_Gibbs_Phase_Rule", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Phase_rule",
+  "related": [
+    {"slug": "the-ideal-gas-law", "kind": "kindred"},
+    {"slug": "the-second-law-of-thermodynamics", "kind": "kindred"}
+  ]
+}

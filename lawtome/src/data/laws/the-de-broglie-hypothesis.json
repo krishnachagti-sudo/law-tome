@@ -1,0 +1,58 @@
+{
+  "no": "285",
+  "slug": "the-de-broglie-hypothesis",
+  "name": "The de Broglie Hypothesis",
+  "aliases": ["Matter waves"],
+  "statement": "All matter has a wavelength, inversely proportional to its momentum.",
+  "statementAccent": "All matter has a wavelength",
+  "meaning": "Not only light but all matter has wave properties. To any particle belongs a wavelength — the de Broglie wavelength — equal to Planck's constant divided by the particle's momentum. The faster and heavier the particle, the shorter its wavelength. It was the audacious proposal that the wave-particle duality already known for light must run the other way too, from waves to matter.",
+  "mechanism": "De Broglie reasoned by symmetry. Light, long treated as a wave, had been shown to carry particle-like quanta obeying a relation between momentum and wavelength. If waves have a particle character, he argued, then particles should have a wave character and obey the same relation, giving a wavelength equal to Planck's constant over momentum. Because Planck's constant is so tiny, the wavelength is appreciable only for very light, slow particles like electrons; for anything macroscopic it is unimaginably small. The idea launched wave mechanics and fed directly into Schrodinger's wave equation.",
+  "examples": [
+    {
+      "tag": "Electron diffraction",
+      "text": "Davisson and Germer scattered electrons off a nickel crystal in 1927 and saw them diffract like waves, at the wavelength de Broglie had predicted — the first direct confirmation; G. P. Thomson showed the same through metal foils."
+    },
+    {
+      "tag": "The electron microscope",
+      "text": "Fast electrons have a wavelength far shorter than visible light, so a microscope using them can resolve structures far below the optical limit — a practical harvest of the hypothesis."
+    },
+    {
+      "tag": "Waves of large molecules",
+      "text": "Matter-wave interference has been shown not only for electrons and neutrons but for whole atoms and molecules, from carbon-sixty in 1999 to engineered molecules of thousands of atoms and tens of thousands of daltons by 2019."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Schrodinger wavefunction",
+      "text": "The full quantum theory that subsumes the hypothesis: the matter wave becomes the wavefunction, whose squared magnitude gives the probability of finding the particle, exact where de Broglie's relation is only a free-particle heuristic."
+    },
+    {
+      "name": "The pilot-wave interpretation",
+      "text": "De Broglie's own later, and separate, proposal that particles have definite trajectories guided by a physical wave, revived by Bohm in 1952 — a minority interpretation, not to be confused with the universally accepted matter-wave hypothesis itself."
+    }
+  ],
+  "whyItMatters": "It universalised wave-particle duality, extending to all matter the strange double nature first seen in light, and it was the seed of wave mechanics — the form of quantum theory Schrodinger built the following year. From the electron microscope to neutron and atom interferometry, its consequences are everyday tools, and its confirmation reshaped the picture of what a particle is.",
+  "working": [
+    {"lead": "Compute the wavelength from momentum", "text": "assign a particle its de Broglie wavelength as Planck's constant divided by its momentum, to judge when wave behaviour will show."},
+    {"lead": "Exploit short electron wavelengths", "text": "use the tiny wavelength of fast electrons to resolve detail far beyond what light can, as in electron microscopy."},
+    {"lead": "Keep the hypothesis apart from the interpretation", "text": "treat the matter-wave relation as settled physics, distinct from de Broglie's separate and contested pilot-wave picture."}
+  ],
+  "limits": "The wavelength is inversely proportional to momentum, so for macroscopic objects it is so vanishingly small that no wave behaviour is ever observable — which is why baseballs and people show none, and why even the heaviest molecules made to interfere have wavelengths a tiny fraction of an atom's width. The relation is exact for a free particle of definite momentum but only a heuristic for a particle in a potential, where the full wavefunction is needed; the hypothesis is contained within and superseded by modern quantum mechanics. And de Broglie's pilot-wave interpretation is a separate, minority stance that should not be read into the hypothesis.",
+  "misreadings": "Matter waves are not electromagnetic or any oscillation of a physical medium; the wave is a probability amplitude, and the particle is still detected as one localised object even though its statistics follow wave interference. And when a large molecule interferes, it does not smear across the laboratory — its centre-of-mass quantum state passes the grating while the molecule stays intact.",
+  "origin": "Proposed by Louis de Broglie in his 1924 doctoral thesis, 'Researches on the Theory of the Quanta,' extending the wave-particle duality of light to matter; confirmed by the electron-diffraction experiments of Davisson and Germer and of G. P. Thomson in 1927, and recognised by the Nobel Prize in Physics in 1929.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1924,
+  "namedAfter": "Louis de Broglie",
+  "sources": [
+    {"text": "Matter wave, Wikipedia. — the wavelength-equals-Planck's-constant-over-momentum relation, the reasoning from light to matter, and the confirming experiments.", "url": "https://en.wikipedia.org/wiki/Matter_wave", "type": "secondary"},
+    {"text": "Davisson-Germer experiment, Wikipedia. — the 1927 electron diffraction from a nickel crystal confirming the predicted wavelength.", "url": "https://en.wikipedia.org/wiki/Davisson%E2%80%93Germer_experiment", "type": "secondary"},
+    {"text": "Fein, Arndt et al., \"Quantum superposition of molecules beyond 25 kDa,\" Nature Physics (2019). — matter-wave interference of molecules of thousands of atoms.", "url": "https://www.nature.com/articles/s41567-019-0663-9", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Matter_wave",
+  "related": [
+    {"slug": "the-photoelectric-effect", "kind": "kindred"},
+    {"slug": "heisenbergs-uncertainty-principle", "kind": "kindred"}
+  ]
+}

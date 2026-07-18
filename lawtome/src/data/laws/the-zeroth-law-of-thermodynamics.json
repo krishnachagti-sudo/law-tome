@@ -1,0 +1,56 @@
+{
+  "no": "282",
+  "slug": "the-zeroth-law-of-thermodynamics",
+  "name": "The Zeroth Law of Thermodynamics",
+  "statement": "Two things each in equilibrium with a third are in equilibrium with each other.",
+  "statementAccent": "in equilibrium with each other",
+  "meaning": "If system A is in thermal equilibrium with system C, and system B is also in thermal equilibrium with system C, then A and B are in thermal equilibrium with each other. Thermal equilibrium is transitive. This apparently obvious statement is what makes temperature a meaningful, well-defined property and what allows a thermometer to work.",
+  "mechanism": "Treat thermal equilibrium as a relation between systems. It is reflexive, symmetric, and — this is the law's real content — transitive, which together make it an equivalence relation. An equivalence relation sorts all systems into disjoint classes, and every system in a class shares one label. That label is temperature: two systems have the same temperature exactly when they would sit in thermal equilibrium if brought into contact. Transitivity is precisely what lets you compare two systems that have never touched, by comparing each against a common reference — the logic on which all thermometry rests.",
+  "examples": [
+    {
+      "tag": "The thermometer",
+      "text": "A thermometer is the third system: bring it into contact with an object until it stops changing, and its reading labels the object's equilibrium class, letting you compare two objects that never touch."
+    },
+    {
+      "tag": "The common reference",
+      "text": "If two bodies are each separately brought to equilibrium with a reference body, the law guarantees they are at the same temperature as each other."
+    },
+    {
+      "tag": "Maxwell's statement",
+      "text": "Maxwell put the underlying idea plainly in the 1870s: if two bodies placed in thermal communication exchange no net heat, they are said to have equal temperatures."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The existence of temperature",
+      "text": "Fowler and Guggenheim framed the law as the postulate of the existence of temperature, since it is exactly what licenses assigning a single temperature to each equilibrium class."
+    },
+    {
+      "name": "Empirical versus absolute temperature",
+      "text": "The law licenses only an empirical temperature — any consistent labelling of the classes; fixing the absolute thermodynamic scale requires the second law, not the zeroth."
+    }
+  ],
+  "whyItMatters": "It is the logical foundation of temperature and thermometry, the reason a single number can characterise how hot a thing is and why measuring instruments give comparable readings. Numbered zero because it is prior to the first and second laws yet was named after them, it supplies the concept those later laws take for granted.",
+  "working": [
+    {"lead": "Trust the reference", "text": "compare two systems that never meet by comparing each with a common third — a thermometer — relying on transitivity."},
+    {"lead": "Read equal temperature as equilibrium", "text": "take two systems to have the same temperature exactly when they would exchange no net heat in contact."},
+    {"lead": "Separate scale from concept", "text": "use the zeroth law to establish that temperature exists, but look to the second law to fix the absolute scale."}
+  ],
+  "limits": "In classical thermodynamics the law is a postulate, not a theorem. The step from transitivity to a single real-valued temperature function is not automatic: it needs reflexivity and symmetry assumed alongside transitivity, plus regularity assumptions, and the rigorous-foundations literature shows a global temperature need not follow from local results without added structure. The law holds for conventional short-range systems with non-negative heat capacity; explicit violations have been constructed for non-ergodic or non-additive interactions and for negative-heat-capacity states such as some self-gravitating systems. And the exact year the term was coined is uncertain, somewhere in the later 1930s.",
+  "misreadings": "It does not say heat flows from hot to cold, nor even fix what final state two unequal systems reach in contact — that directionality is the second law. And it does not fix the temperature scale: it licenses only an empirical temperature, any consistent labelling of the equilibrium classes, while the absolute scale comes from the second law.",
+  "origin": "The concept is Maxwell-era, from the 1870s; the name is a twentieth-century retrofit. Ralph Fowler is credited, per Sommerfeld, with coining 'zeroth law,' and it appears in print in Fowler and Guggenheim's Statistical Thermodynamics of about 1939; Saha and Srivastava had stated the transitivity idea explicitly in 1935.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1939,
+  "namedAfter": "Ralph Fowler",
+  "sources": [
+    {"text": "Zeroth law of thermodynamics, Wikipedia. — the transitivity statement, the equivalence-relation structure, and the history from Maxwell through Saha and Srivastava to Fowler.", "url": "https://en.wikipedia.org/wiki/Zeroth_law_of_thermodynamics", "type": "secondary"},
+    {"text": "Palffy-Muhoray et al., \"Origin of the Zeroth Law of Thermodynamics and its Role in Statistical Mechanics,\" arXiv:2502.05281. — the subtleties of deriving the existence of temperature from transitivity and the Fowler-Guggenheim framing.", "url": "https://arxiv.org/abs/2502.05281", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Zeroth_law_of_thermodynamics",
+  "related": [
+    {"slug": "the-second-law-of-thermodynamics", "kind": "kindred"},
+    {"slug": "the-third-law-of-thermodynamics", "kind": "kindred"}
+  ]
+}

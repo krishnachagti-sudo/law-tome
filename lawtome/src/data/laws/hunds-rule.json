@@ -1,0 +1,58 @@
+{
+  "no": "276",
+  "slug": "hunds-rule",
+  "name": "Hund's Rule",
+  "aliases": ["Hund's rule of maximum multiplicity"],
+  "statement": "Fill each empty orbital of a shell singly, with parallel spins, before pairing any up.",
+  "statementAccent": "before pairing any up",
+  "meaning": "Within a set of orbitals of equal energy, electrons spread out — one to each orbital, all spinning the same way — before any orbital takes a second electron. Put formally, of the arrangements available to a configuration, the one with the greatest number of unpaired parallel spins, the highest total spin, sits lowest in energy. It is the rule that tells you how electrons distribute themselves across a degenerate subshell, and so fixes an atom's ground state.",
+  "mechanism": "The familiar single rule of maximum multiplicity is really the first of three that together fix an atom's ground-state term under the standard coupling scheme: first maximise the total spin, then, among those, maximise the total orbital angular momentum, and finally settle the fine-structure level — lowest for a subshell half-filled or less, highest for one more than half-filled. The stabilisation of parallel spins traces to the Pauli principle, which keeps same-spin electrons apart. The textbook story that they therefore repel one another less is, taken literally, wrong: careful calculation shows the deeper cause is reduced screening of the nucleus, which pulls the electrons inward and increases their attraction to it.",
+  "examples": [
+    {
+      "tag": "Filling the p orbitals",
+      "text": "Carbon's two 2p electrons go into separate orbitals with parallel spins rather than pairing in one, giving a spin-one ground state — the plainest illustration of the rule."
+    },
+    {
+      "tag": "The half-filled shell",
+      "text": "Nitrogen's three 2p electrons each take their own orbital, all spins aligned, giving three unpaired electrons and an unusually stable half-filled subshell."
+    },
+    {
+      "tag": "Oxygen's stubborn magnetism",
+      "text": "The rule leaves molecular oxygen with two unpaired electrons in a triplet ground state, which is why liquid oxygen is drawn to a magnet — a direct, visible consequence."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The three rules in full",
+      "text": "The complete prescription: maximum total spin, then maximum orbital angular momentum, then the fine-structure level set by whether the subshell is at most or more than half filled — the second and third rules resolving what the first leaves open."
+    },
+    {
+      "name": "Exchange stabilisation",
+      "text": "The quantum bookkeeping behind the rule — the energy lowering that comes from the antisymmetry the Pauli principle demands of same-spin electrons, the exchange or Fermi hole."
+    }
+  ],
+  "whyItMatters": "It is one of the working rules by which chemists and physicists read off the ground state of an atom or ion, and it underlies the magnetic character of matter: whether a substance has unpaired electrons, and so whether it is paramagnetic, follows directly from how its degenerate orbitals fill. From the colours of transition-metal complexes to the reactivity of molecular oxygen, the pattern the rule describes runs through chemistry.",
+  "working": [
+    {"lead": "Spread before you pair", "text": "when filling orbitals of equal energy, place one electron in each with the same spin before doubling any up."},
+    {"lead": "Count the unpaired spins", "text": "to judge whether an atom or ion is paramagnetic, use the rule to find how many unpaired electrons its ground state carries."},
+    {"lead": "Keep to the ground state", "text": "apply the rule to find the lowest state of a configuration, not to rank the excited ones above it, where it is unreliable."}
+  ],
+  "limits": "The rules are empirical, drawn from atomic spectra, and reliable chiefly for the ground state of light and medium atoms; they should not be trusted to order the excited states of a configuration. They assume the coupling scheme in which electron repulsion dominates spin-orbit interaction, which holds for lighter elements but breaks down in heavy atoms, where strong spin-orbit coupling makes a different scheme appropriate and the third rule in particular can fail. Genuine exceptions exist even among molecules. And the tidy textbook rationale — that parallel spins keep electrons apart and lower their mutual repulsion — misstates the mechanism, which is dominated instead by increased attraction to the nucleus.",
+  "misreadings": "It is not a single rule but three, of which chemistry courses usually teach only the first. And the reason maximum spin wins is not, as commonly taught, that spread-out electrons repel one another less — accurate calculations show the repulsion can even be greater, and the real driver is stronger electron-nucleus attraction from reduced screening.",
+  "origin": "Formulated by the German physicist Friedrich Hund from spectroscopic data in 1925 and set out in his 1927 monograph on line spectra and the periodic system; the three rules for the ground-state term follow from the Russell-Saunders coupling scheme.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1925,
+  "namedAfter": "Friedrich Hund",
+  "sources": [
+    {"text": "Hund's rules, Wikipedia. — the three-rule hierarchy of maximum spin then orbital angular momentum then J, the coupling scheme, and the ground-state-only limitation.", "url": "https://en.wikipedia.org/wiki/Hund's_rules", "type": "secondary"},
+    {"text": "Hund's rule of maximum multiplicity, Wikipedia. — the singly-fill-with-parallel-spins statement, multiplicity as 2S+1, and the corrected mechanism.", "url": "https://en.wikipedia.org/wiki/Hund's_rule_of_maximum_multiplicity", "type": "secondary"},
+    {"text": "Hongo, Maezono, Kawazoe, Yasuhara, Towler & Needs, \"Interpretation of Hund's multiplicity rule for the carbon atom,\" arXiv cond-mat/0408147. — the energy gain traced to greater electron-nucleus attraction in the higher-spin state.", "url": "https://arxiv.org/abs/cond-mat/0408147", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hund's_rules",
+  "related": [
+    {"slug": "the-aufbau-principle", "kind": "kindred"},
+    {"slug": "the-pauli-exclusion-principle", "kind": "cause"}
+  ]
+}

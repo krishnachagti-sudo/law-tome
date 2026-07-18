@@ -1,0 +1,57 @@
+{
+  "no": "281",
+  "slug": "the-third-law-of-thermodynamics",
+  "name": "The Third Law of Thermodynamics",
+  "statement": "As temperature approaches absolute zero, a perfect crystal's entropy approaches zero.",
+  "statementAccent": "a perfect crystal's entropy approaches zero",
+  "meaning": "As a system is cooled toward absolute zero, the entropy of a pure, perfectly crystalline substance falls toward zero. This fixes an absolute reference point for entropy: not merely how entropy changes, but its value. A companion statement, the unattainability principle, holds that absolute zero itself can never be reached in any finite number of steps.",
+  "mechanism": "The statistical basis is Boltzmann's relation, that entropy is proportional to the logarithm of the number of accessible microstates. A perfect crystal in its unique, non-degenerate ground state has exactly one accessible arrangement, and the logarithm of one is zero, so its entropy vanishes at absolute zero. This is why the entropy of every pure crystalline substance tends to the same value there. If instead the ground state is degenerate, several arrangements of the same lowest energy, the entropy tends not to zero but to the logarithm of that degeneracy — the origin of residual entropy.",
+  "examples": [
+    {
+      "tag": "Residual entropy in ice",
+      "text": "Water ice keeps a nonzero entropy even near absolute zero, because its hydrogen atoms can be arranged many ways within the ice rules; Pauling estimated the residual entropy at about the gas constant times the logarithm of three-halves, close to what is measured."
+    },
+    {
+      "tag": "Vanishing heat capacities",
+      "text": "The law forces the heat capacity of a substance to fall to zero as absolute zero is approached — a quantum result that classical models, which predict a constant heat capacity, cannot reproduce."
+    },
+    {
+      "tag": "The retreating goal",
+      "text": "Each stage of cooling extracts less entropy than the last as the entropy curves converge, so reaching absolute zero would take infinitely many steps — the unattainability of absolute zero."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Nernst heat theorem",
+      "text": "Nernst's original 1906 statement, that the entropy change of a reaction between pure crystalline solids approaches zero as temperature approaches zero — a claim about entropy differences, weaker than Planck's."
+    },
+    {
+      "name": "Planck's formulation",
+      "text": "Planck's stronger version, that the absolute entropy of every pure perfect crystal itself approaches zero, which fixes the additive constant and places entropy on an absolute scale."
+    }
+  ],
+  "whyItMatters": "It completes the thermodynamic account of entropy by giving it an absolute zero point, so that absolute entropies of substances can be tabulated and used. It explains why heat capacities die away in the deep cold, why absolute zero is a limit that can be approached but never touched, and why real materials frozen into disorder keep a residual entropy that betrays their many ground-state arrangements.",
+  "working": [
+    {"lead": "Anchor entropy at zero", "text": "take the entropy of a pure perfect crystal at absolute zero as zero, the reference from which absolute entropies are measured."},
+    {"lead": "Expect residual entropy", "text": "where a solid freezes into disorder or a degenerate ground state, look for a leftover entropy equal to the logarithm of the number of arrangements."},
+    {"lead": "Treat absolute zero as a limit", "text": "approach absolute zero as closely as you like, but recognise it as unreachable in any finite number of cooling steps."}
+  ],
+  "limits": "The law applies to perfect crystals in internal equilibrium. Glasses, imperfectly ordered crystals like carbon monoxide, and systems with frozen-in disorder retain a nonzero entropy at absolute zero — not violations but cases outside its stated conditions. Systems with a genuinely degenerate ground state approach a positive constant rather than zero, so the careful statement is that entropy tends to a value independent of the other variables. The law is not derivable from the first and second laws but stands as an independent postulate, or follows only from deeper quantum-statistical principles. Its several formulations are not trivially equivalent: recent work argues the entropy statement and the unattainability principle are logically independent, an active rather than settled question.",
+  "misreadings": "It is not that the entropy of everything is zero at absolute zero — only a perfect crystal with a unique ground state reaches zero; real materials with disorder or degeneracy keep a residual entropy, and they do not violate the law. And the unattainability of absolute zero is a matter of principle, requiring infinitely many steps, not merely a limit of present cooling technology.",
+  "origin": "Formulated by Walther Nernst in 1906 as his heat theorem, from studies of chemical equilibria at low temperature, and strengthened around 1911 by Max Planck into a statement about absolute entropies; Lewis and Randall later refined the convention. A general quantum derivation of the unattainability principle was given by Masanes and Oppenheim in 2017.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1906,
+  "namedAfter": "Walther Nernst",
+  "sources": [
+    {"text": "Third law of thermodynamics, Wikipedia. — the perfect-crystal entropy statement, the Nernst and Planck formulations, the unattainability principle, and the statistical basis.", "url": "https://en.wikipedia.org/wiki/Third_law_of_thermodynamics", "type": "secondary"},
+    {"text": "Pauling, \"The Structure and Entropy of Ice and of Other Crystals with Some Randomness of Atomic Arrangement,\" J. Am. Chem. Soc. 57:2680-2684 (1935). — the residual entropy of ice.", "url": "https://pubs.acs.org/doi/10.1021/ja01315a102", "type": "primary"},
+    {"text": "Masanes & Oppenheim, \"A general derivation and quantification of the third law of thermodynamics,\" Nature Communications 8:14538 (2017). — the quantum derivation of unattainability and its logical independence from the heat theorem.", "url": "https://www.nature.com/articles/ncomms14538", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Third_law_of_thermodynamics",
+  "related": [
+    {"slug": "the-second-law-of-thermodynamics", "kind": "kindred"},
+    {"slug": "the-zeroth-law-of-thermodynamics", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "no": "275",
+  "slug": "the-ideal-gas-law",
+  "name": "The Ideal Gas Law",
+  "aliases": ["The general gas equation", "The Clapeyron equation"],
+  "statement": "Pressure times volume equals amount times temperature, tied by one constant.",
+  "statementAccent": "tied by one constant",
+  "meaning": "For an idealised gas, the four measurable properties of a sample are locked together in a single equation of state, PV = nRT: pressure times volume equals the amount of gas in moles times a universal constant times the absolute temperature. Know any three and the fourth follows. It rolls the separate empirical gas laws — Boyle's, Charles's, Gay-Lussac's, and Avogadro's — into one relation.",
+  "mechanism": "The law falls out of the kinetic theory of gases, which pictures a gas as a swarm of tiny particles in constant random motion. Pressure is the drumbeat of their collisions against the walls; absolute temperature is proportional to their average kinetic energy. It holds exactly only for a gas that is ideal in a precise sense: the particles are treated as points of negligible volume, they exert no forces on one another except in collisions, and those collisions are perfectly elastic. Under those assumptions the four quantities must move together as PV = nRT, with R the constant that makes the units balance.",
+  "examples": [
+    {
+      "tag": "The heated balloon",
+      "text": "Warm the gas in a balloon and, at roughly constant pressure, its volume grows — the temperature-volume link that lifts a hot-air balloon; cool it and it shrinks again."
+    },
+    {
+      "tag": "Solving for the missing quantity",
+      "text": "Given any three of pressure, volume, amount, and temperature, the law returns the fourth — used to find how many moles of gas a reaction produces or what volume a known quantity will fill, accurate to within a few per cent under ordinary conditions."
+    },
+    {
+      "tag": "The molar volume",
+      "text": "At standard temperature and pressure an ideal gas occupies a fixed volume per mole — about 22.7 litres under the modern IUPAC standard of 273.15 kelvin and 100 kilopascals, or the 22.4 litres of older textbooks that used one atmosphere."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The van der Waals equation",
+      "text": "Van der Waals's 1873 correction restores what the ideal law throws away: a term for the finite volume of the molecules and a term for their mutual attraction, giving a far better fit for real gases near condensation."
+    },
+    {
+      "name": "The component gas laws",
+      "text": "Boyle's law (pressure against volume), Charles's law (volume against temperature), Gay-Lussac's or Amontons' law (pressure against temperature), and Avogadro's law (volume against amount) are each a special case, holding one or two quantities fixed."
+    }
+  ],
+  "whyItMatters": "It is the first equation of state a chemist meets and the workhorse of gas calculations across chemistry, physics, and engineering. More than a formula to plug into, it is the bridge between the macroscopic behaviour of a gas and the microscopic picture of moving molecules, since the same relation drops out of kinetic theory. Its constant R, now fixed exactly in the SI, ties the everyday scale of moles to the atomic scale of individual particles.",
+  "working": [
+    {"lead": "Work in absolute temperature", "text": "always use kelvin, not degrees Celsius, since the law is built on absolute temperature; a zero in the wrong scale wrecks the answer."},
+    {"lead": "Solve for the unknown", "text": "rearrange PV = nRT to isolate whichever of the four quantities you lack, keeping the units of R consistent with your pressure and volume."},
+    {"lead": "Know when it will drift", "text": "trust it at low pressure and high temperature, and expect real gases to deviate as you compress or cool them toward condensation."}
+  ],
+  "limits": "The law describes an idealisation, not any real substance. It ignores the finite size of molecules and the forces between them, so it works best where those matter least — low pressure, high temperature, low density, and simplest of all for monatomic gases. It fails as a gas is squeezed, when molecular volume becomes a real fraction of the container, and as it is cooled, when attractions pull the pressure below the ideal prediction and the gas eventually condenses to a liquid the law cannot describe at all. Real gases typically track it to within about five per cent at ordinary conditions; the van der Waals equation and other equations of state take over when precision is needed.",
+  "misreadings": "It is not an exact law of nature but an excellent approximation with a clear domain; a truly ideal gas does not exist. And the temperature in it is absolute temperature — plugging in Celsius, or forgetting that n counts moles rather than mass, are the two most common ways to get a wrong number from a right equation.",
+  "origin": "First combined into a single equation of state by Benoit Paul Emile Clapeyron in 1834, drawing together Boyle's, Charles's, Gay-Lussac's, and Avogadro's laws; sometimes called the Clapeyron equation, and stated independently by Dmitri Mendeleev. The modern molar form using the universal constant R came somewhat later. Since the 2019 redefinition of the SI, R is exact at 8.314462618 joules per mole per kelvin, equal to the Avogadro number times the Boltzmann constant.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1834,
+  "namedAfter": "Benoit Paul Emile Clapeyron",
+  "sources": [
+    {"text": "Ideal gas law, Wikipedia. — the PV = nRT equation of state, Clapeyron's 1834 synthesis of the component laws, the value of R, and the real-gas limits.", "url": "https://en.wikipedia.org/wiki/Ideal_gas_law", "type": "secondary"},
+    {"text": "Gas constant, Wikipedia. — R = 8.314462618 J/mol/K, exact since the 2019 SI redefinition, and R = N_A k.", "url": "https://en.wikipedia.org/wiki/Gas_constant", "type": "secondary"},
+    {"text": "Deviations from the Ideal Gas Law, Purdue University General Chemistry. — the roughly five per cent agreement under ordinary conditions, failure at high pressure and low temperature, and the van der Waals correction.", "url": "https://chemed.chem.purdue.edu/genchem/topicreview/bp/ch4/deviation.php", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Ideal_gas_law",
+  "related": [
+    {"slug": "the-second-law-of-thermodynamics", "kind": "kindred"},
+    {"slug": "the-conservation-of-energy", "kind": "kindred"}
+  ]
+}

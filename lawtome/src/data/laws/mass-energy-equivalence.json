@@ -1,0 +1,58 @@
+{
+  "no": "283",
+  "slug": "mass-energy-equivalence",
+  "name": "Mass-Energy Equivalence",
+  "aliases": ["E equals m c squared"],
+  "statement": "Mass is a form of energy; a body's rest energy is its mass times the speed of light squared.",
+  "statementAccent": "Mass is a form of energy",
+  "meaning": "Mass and energy are two measures of the same thing. A body at rest carries an intrinsic rest energy equal to its mass times the square of the speed of light — the famous E equals m c squared. Because the speed of light squared is enormous, a tiny amount of mass corresponds to a vast amount of energy. Adding energy to a system raises its mass; releasing energy lowers it.",
+  "mechanism": "The equation E equals m c squared gives the rest energy of a body — its energy in the frame where it is not moving. For a body that is moving, the fuller relation is that energy squared equals the rest energy squared plus the momentum-times-c squared, which reduces to E equals m c squared at rest and to E equals p c for a massless particle like a photon. The mass here is the invariant rest mass, a property that does not change with speed. Any energy bound into a system contributes to its mass, so mass is best understood as a concentrated reservoir of rest energy.",
+  "examples": [
+    {
+      "tag": "The nuclear mass defect",
+      "text": "A nucleus weighs less than its separated protons and neutrons; the missing mass is the binding energy released, and in fission about a tenth of a per cent of the mass emerges as energy, in solar fusion about seven-tenths of a per cent."
+    },
+    {
+      "tag": "Annihilation",
+      "text": "When a particle meets its antiparticle their entire rest mass converts to energy as photons — the most complete conversion of mass into energy there is, and its reverse creates mass from energy."
+    },
+    {
+      "tag": "The proton's hidden mass",
+      "text": "Only about one per cent of a proton's mass comes from the rest masses of its quarks; the other ninety-nine per cent is the energy of the gluon field and quark motion bound inside it, mass that is really energy."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The full energy-momentum relation",
+      "text": "The complete expression, energy squared equals rest-energy squared plus momentum-times-c squared, of which E equals m c squared is only the rest-frame case; for light, with no rest mass, it gives energy equal to momentum times c."
+    },
+    {
+      "name": "Rest mass versus relativistic mass",
+      "text": "Modern physics treats the mass in the equation as the invariant rest mass, fixed regardless of speed; the older notion of a mass that grows with velocity is deprecated, energy and momentum being what actually increase."
+    }
+  ],
+  "whyItMatters": "It is among the most consequential equations in physics, dissolving the old separation between mass and energy into a single conserved quantity and underpinning the understanding of nuclear reactions, the energy of stars, and particle physics. It explains where the Sun's power comes from and why most of the mass of ordinary matter is, at bottom, bound energy.",
+  "working": [
+    {"lead": "Read it as rest energy", "text": "take E equals m c squared as the energy locked in a body's mass, and use the full energy-momentum relation when the body is moving."},
+    {"lead": "Track mass through energy release", "text": "expect a system to lose mass when it releases energy and gain mass when it absorbs it, by the energy divided by the speed of light squared."},
+    {"lead": "Use invariant mass", "text": "treat the mass as the invariant rest mass that does not change with speed, rather than the deprecated velocity-dependent mass."}
+  ],
+  "limits": "The equation E equals m c squared alone gives only the rest energy, the case of zero momentum; a moving body requires the full energy-momentum relation. Both are results of special relativity, valid in flat spacetime without gravity; in the curved spacetime of general relativity, defining a single global energy or mass is subtler and the simple formula must be applied locally and with care. The mass is the invariant rest mass, and the popular phrase that mass increases with speed misdescribes the physics — a matter of convention that most physicists now avoid.",
+  "misreadings": "It is not specifically about atomic bombs or nuclear physics. The equivalence holds for every form of energy: a compressed spring, a heated object, and a chemical reaction all change mass by energy over the speed of light squared, only far too little to weigh. Nuclear reactions are simply where the fractional mass change grows large enough to notice. And Einstein's own paper did not write the formula E equals m c squared, but stated in words that a body radiating energy loses mass in proportion.",
+  "origin": "Derived by Albert Einstein in a short 1905 paper, 'Does the Inertia of a Body Depend Upon Its Energy Content?', a follow-up to his special relativity paper of the same year; he was the first to state the mass-energy relation as a general principle applying to all energy, where precursors like Poincare and Hasenohrl had treated only electromagnetic cases.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1905,
+  "namedAfter": "Albert Einstein",
+  "sources": [
+    {"text": "Mass-energy equivalence, Wikipedia. — the rest-energy statement, the full energy-momentum relation, the 1905 origin, and the rest-mass interpretation.", "url": "https://en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence", "type": "secondary"},
+    {"text": "Einstein, \"Does the Inertia of a Body Depend Upon Its Energy Content?\" (1905), English translation. — the original derivation, stated in words as loss of mass on radiating energy.", "url": "https://www.fourmilab.ch/etexts/einstein/E_mc2/www/", "type": "primary"},
+    {"text": "Mass in special relativity, Wikipedia. — the invariant-mass interpretation and the deprecation of relativistic mass.", "url": "https://en.wikipedia.org/wiki/Mass_in_special_relativity", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence",
+  "related": [
+    {"slug": "the-conservation-of-energy", "kind": "kindred"},
+    {"slug": "the-equivalence-principle", "kind": "kindred"}
+  ]
+}
