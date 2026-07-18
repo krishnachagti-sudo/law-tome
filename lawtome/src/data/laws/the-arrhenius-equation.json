@@ -1,0 +1,57 @@
+{
+  "no": "302",
+  "slug": "the-arrhenius-equation",
+  "name": "The Arrhenius Equation",
+  "statement": "A reaction speeds up exponentially with temperature, gated by an energy barrier.",
+  "statementAccent": "gated by an energy barrier",
+  "meaning": "The Arrhenius equation gives how fast a chemical reaction goes as a function of temperature: the rate constant equals a pre-exponential factor times the exponential of minus the activation energy over the gas constant times absolute temperature. The exponential term is the fraction of molecules with enough energy to clear the barrier, and it climbs steeply as the temperature rises.",
+  "mechanism": "Reactants must acquire a minimum energy, the activation energy, before they can convert to products. The exponential Boltzmann factor gives the fraction of molecules that reach that threshold, a fraction that grows as heating broadens the spread of molecular energies. The pre-exponential factor bundles the frequency of collisions with the requirement that they be correctly oriented. Taking logarithms turns the equation into a straight line: plot the logarithm of the rate constant against the reciprocal of temperature and the slope gives minus the activation energy over the gas constant — the standard way to measure the barrier.",
+  "examples": [
+    {
+      "tag": "The Arrhenius plot",
+      "text": "Plotting the logarithm of the rate constant against one over temperature yields a straight line whose slope gives the activation energy — the workhorse method for extracting the barrier from rate data."
+    },
+    {
+      "tag": "The rough doubling rule",
+      "text": "A rule of thumb holds that reaction rates roughly double for every ten-degree rise in temperature, a loose approximation that follows from the equation for certain barriers and ranges but is not universal."
+    },
+    {
+      "tag": "Refrigeration",
+      "text": "Cooling food slows the reactions of spoilage and the enzymes and microbes behind it, a direct everyday consequence of the exponential temperature dependence of rates."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The modified Arrhenius equation",
+      "text": "The Kooij form, which makes the pre-exponential factor's own temperature dependence explicit by inserting a power of temperature, the original being the zero-power case."
+    },
+    {
+      "name": "The Eyring equation",
+      "text": "The more rigorous cousin from transition-state theory, which derives the rate from the thermodynamic properties of the activated complex rather than fitting an empirical barrier."
+    }
+  ],
+  "whyItMatters": "It is the central relation of chemical kinetics, the quantitative link between temperature and reaction rate, and the source of the activation-energy concept that pervades chemistry and biology. From industrial process design to the shelf life of food and drugs to the temperature sensitivity of living systems, it is the equation that says how much faster things go when you heat them.",
+  "working": [
+    {"lead": "Extract the barrier from a plot", "text": "measure the rate constant at several temperatures and read the activation energy from the slope of the logarithm against one over temperature."},
+    {"lead": "Expect steep temperature sensitivity", "text": "anticipate that rates rise sharply with temperature through the exponential factor, more steeply the higher the activation energy."},
+    {"lead": "Treat the doubling rule as loose", "text": "use the rate-doubles-per-ten-degrees heuristic only as a rough guide, since it depends on the barrier and the temperature range."}
+  ],
+  "limits": "The pre-exponential factor and activation energy are only approximately independent of temperature; over narrow ranges this is fine, but over wide ranges Arrhenius plots show curvature, and the effective activation energy generally falls toward lower temperatures. The equation is fundamentally empirical, its parameters macroscopic rather than simple molecular quantities. It does not cleanly apply to barrierless reactions, and at low temperatures quantum tunnelling lets rates fall off less steeply than predicted, in the extreme becoming temperature-independent. For multistep mechanisms the apparent activation energy is a composite and can even be negative. The doubling-per-ten-degrees rule is itself only a loose approximation.",
+  "misreadings": "Arrhenius did not win his Nobel Prize for this equation — the 1903 chemistry prize was for his electrolytic theory of dissociation, a separate line of work. Nor did he derive it alone: van't Hoff supplied the mathematical form via the analogy with equilibrium constants, and Arrhenius added the activation-energy interpretation. And rates do not always double for every ten degrees; that is a rough rule, not a law.",
+  "origin": "Built on van't Hoff's 1884 equation for the temperature dependence of equilibrium constants and given its rate-constant form and activation-energy interpretation by Svante Arrhenius in 1889; the more rigorous Eyring equation from transition-state theory came later.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1889,
+  "namedAfter": "Svante Arrhenius",
+  "sources": [
+    {"text": "Arrhenius equation, Wikipedia. — the rate-constant formula, the Boltzmann-factor interpretation, the Arrhenius plot, and the empirical-law caveats.", "url": "https://en.wikipedia.org/wiki/Arrhenius_equation", "type": "secondary"},
+    {"text": "The Nobel Prize in Chemistry 1903, NobelPrize.org. — Arrhenius's award for the electrolytic theory of dissociation, not the rate equation.", "url": "https://www.nobelprize.org/prizes/chemistry/1903/summary/", "type": "secondary"},
+    {"text": "The Arrhenius Law, Chemistry LibreTexts. — the activation-energy barrier, the pre-exponential factor, and the plotting method.", "url": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/06%3A_Modeling_Reaction_Kinetics/6.02%3A_Temperature_Dependence_of_Reaction_Rates/6.2.03%3A_The_Arrhenius_Law/6.2.03%3A_Arrhenius_Equation", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Arrhenius_equation",
+  "related": [
+    {"slug": "the-law-of-mass-action", "kind": "kindred"},
+    {"slug": "the-second-law-of-thermodynamics", "kind": "kindred"}
+  ]
+}

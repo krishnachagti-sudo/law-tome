@@ -1,0 +1,56 @@
+{
+  "no": "304",
+  "slug": "daltons-law-of-partial-pressures",
+  "name": "Dalton's Law of Partial Pressures",
+  "statement": "A gas mixture's total pressure is the sum of what each gas would exert alone.",
+  "statementAccent": "the sum of what each gas would exert alone",
+  "meaning": "The total pressure of a mixture of non-reacting gases equals the sum of the partial pressures of its components. Each component's partial pressure is the pressure that gas would exert if it alone occupied the whole volume at the same temperature. Add those up and you have the total. Equivalently, each gas's partial pressure is its mole fraction times the total pressure.",
+  "mechanism": "In an ideal gas the molecules are treated as points that do not interact except in elastic collisions. Because each species contributes momentum to the container walls independently of the others, each exerts its pressure independently, and the pressures simply add. The partial pressure of a gas therefore depends only on how much of it is present, the volume, and the temperature — not on which other gases share the space with it.",
+  "examples": [
+    {
+      "tag": "Breathing",
+      "text": "Air at sea level has a total pressure near 760 millimetres of mercury, of which oxygen's partial pressure is about 159; gases then diffuse down their partial-pressure gradients, driving oxygen into the blood and carbon dioxide out."
+    },
+    {
+      "tag": "Diving hazards",
+      "text": "As a diver descends and ambient pressure rises, each breathed gas's partial pressure rises with it, so nitrogen can become narcotic and oxygen toxic — dangers set by partial pressure, not by the unchanged percentages."
+    },
+    {
+      "tag": "Collecting gas over water",
+      "text": "A gas gathered over water is mixed with water vapour, so the total pressure is the gas plus the vapour; subtracting the water's vapour pressure recovers the dry gas pressure."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The mole-fraction form",
+      "text": "The partial pressure of a component equals its mole fraction times the total pressure, tying each gas's share of the pressure to its share of the molecules."
+    },
+    {
+      "name": "Real-gas deviations",
+      "text": "At high pressure and density the simple additivity fails, as intermolecular forces and the finite volume of molecules make the components no longer independent."
+    }
+  ],
+  "whyItMatters": "It is the basic rule for reasoning about gas mixtures, indispensable in respiratory physiology, diving and aviation medicine, atmospheric science, and any chemistry done over a collected gas. By letting each gas be treated as if it were alone, it turns a mixture into a simple sum and underpins the whole idea of a partial pressure that drives diffusion.",
+  "working": [
+    {"lead": "Add the partial pressures", "text": "find a mixture's total pressure by summing the pressure each component would exert alone in the same volume."},
+    {"lead": "Use mole fractions", "text": "get a component's partial pressure by multiplying its mole fraction by the total pressure."},
+    {"lead": "Correct for water vapour", "text": "when collecting a gas over water, subtract the water's vapour pressure to isolate the dry gas."}
+  ],
+  "limits": "The law is strictly true only for ideal gases, and holds well for real gases at low pressure and high temperature. At high pressure the deviations grow, because the volume the molecules occupy becomes significant and intermolecular forces begin to matter, so the components no longer act independently. It also assumes the gases do not react; where they interact chemically, or at high density and low temperature, it fails.",
+  "misreadings": "A component's partial pressure does not depend on the other gases present — in the ideal limit it is simply what that gas would exert alone, set by its own amount, the volume, and the temperature. And partial pressure tracks mole fraction, not mass fraction; the danger of oxygen or nitrogen at depth comes from partial pressure, not from a changed percentage.",
+  "origin": "Stated by the English chemist John Dalton around 1801 and published in 1802 in the Memoirs of the Literary and Philosophical Society of Manchester; it was an important step toward his atomic theory, the independence of gases in a mixture supporting the picture of matter as discrete particles.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1801,
+  "namedAfter": "John Dalton",
+  "sources": [
+    {"text": "Dalton's law, Wikipedia. — the additivity of partial pressures, the mole-fraction relation, and the real-gas deviations.", "url": "https://en.wikipedia.org/wiki/Dalton's_law", "type": "secondary"},
+    {"text": "Dalton's law, Encyclopaedia Britannica. — the statement, the ideal-gas and kinetic-theory basis, and the low-pressure validity.", "url": "https://www.britannica.com/science/Daltons-law", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Dalton's_law",
+  "related": [
+    {"slug": "the-ideal-gas-law", "kind": "kindred"},
+    {"slug": "avogadros-law", "kind": "kindred"}
+  ]
+}

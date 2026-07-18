@@ -1,0 +1,56 @@
+{
+  "no": "308",
+  "slug": "huygens-principle",
+  "name": "Huygens' Principle",
+  "statement": "Every point on a wavefront is itself the source of a new wavelet.",
+  "statementAccent": "the source of a new wavelet",
+  "meaning": "Every point reached by a wavefront can be regarded as a source of secondary spherical wavelets, all spreading at the same speed as the original wave. The wavefront a moment later is the envelope — the common tangent surface — of all these wavelets. It is a geometric recipe for advancing a wave step by step, and from it the behaviour of light at surfaces and edges can be constructed.",
+  "mechanism": "Treat each point of the current wavefront as a tiny emitter of an expanding spherical wavelet. After a short time each wavelet has grown by the same amount, and their common envelope traces where the wave has advanced to. Fresnel later enriched the picture by letting the wavelets interfere, adding up their amplitudes and phases rather than only taking a geometric envelope; this Huygens-Fresnel version explains not just propagation but diffraction and interference. Kirchhoff still later derived the construction, with its correcting factors, from the wave equation.",
+  "examples": [
+    {
+      "tag": "Reflection and refraction",
+      "text": "Constructing the envelope of wavelets at a boundary yields both the law of reflection and Snell's law of refraction, the change of wavelet speed across the interface bending the wavefront."
+    },
+    {
+      "tag": "Diffraction at a slit",
+      "text": "Treating each point in an aperture as a wavelet source and letting the wavelets interfere reproduces the single-slit and Fresnel diffraction patterns, light spreading into the geometric shadow."
+    },
+    {
+      "tag": "Advancing a wavefront",
+      "text": "Given a wavefront now, the envelope of its wavelets predicts its shape and position a moment later, whether it is plane or spherical."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Huygens-Fresnel principle",
+      "text": "Fresnel's enrichment adding interference among the wavelets, which lets the construction explain diffraction and interference patterns, not merely the advance of wavefronts."
+    },
+    {
+      "name": "The Fresnel-Kirchhoff theory",
+      "text": "Kirchhoff's rigorous derivation from the wave equation, which supplies the obliquity factor, the quarter-cycle phase shift, and the amplitude scaling the naive construction leaves unexplained."
+    }
+  ],
+  "whyItMatters": "It was the founding idea of the wave theory of light, a simple geometric construction from which reflection, refraction, and diffraction all follow. Elaborated by Fresnel into a full account of interference and grounded by Kirchhoff in the wave equation, it remains the intuitive picture behind how waves propagate and bend, taught wherever wave optics begins.",
+  "working": [
+    {"lead": "Build the next wavefront", "text": "advance a wave by drawing secondary wavelets from points on the current front and taking their envelope."},
+    {"lead": "Add interference for diffraction", "text": "to explain diffraction and interference, use the Fresnel version and sum the wavelets' amplitudes and phases, not just their envelope."},
+    {"lead": "Reach for Kirchhoff when rigor matters", "text": "when the geometric heuristic is not enough, use the Fresnel-Kirchhoff theory, which justifies the obliquity and phase corrections."}
+  ],
+  "limits": "The bare construction is a useful heuristic, not fully rigorous. Naive spherical wavelets would radiate backward as well as forward, producing a back-travelling wave that is never observed, and the simple envelope ignores the amplitude and phase of the wavelets. Fresnel patched this with an obliquity factor he could not derive; Kirchhoff's later diffraction theory produced that factor naturally, along with the missing quarter-cycle phase shift and amplitude scaling. Even Kirchhoff's version is an approximation, strictly valid where the wavelength is much smaller than the apertures and components involved.",
+  "misreadings": "The wavelets are a mathematical construction, not physically real little waves; only the resultant field is physical. The bare Huygens envelope does not by itself explain interference — that required Fresnel's addition of superposition, and conflating Huygens with Huygens-Fresnel is a common error. And the naive theory is simply silent on why there is no backward wave; the resolution is a later Fresnel and Kirchhoff addition, not part of the original.",
+  "origin": "Devised by Christiaan Huygens around 1678 and published in his Treatise on Light in 1690; enriched with interference by Augustin-Jean Fresnel in the 1810s and given a rigorous mathematical basis by Gustav Kirchhoff in 1882.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1690,
+  "namedAfter": "Christiaan Huygens",
+  "sources": [
+    {"text": "Huygens-Fresnel principle, Wikipedia. — the secondary-wavelet construction, the Fresnel interference enrichment, the back-wave problem, and Kirchhoff's obliquity factor.", "url": "https://en.wikipedia.org/wiki/Huygens%E2%80%93Fresnel_principle", "type": "secondary"},
+    {"text": "Christiaan Huygens, Wikipedia. — the 1690 Traite de la Lumiere in which the principle was published.", "url": "https://en.wikipedia.org/wiki/Christiaan_Huygens", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Huygens%E2%80%93Fresnel_principle",
+  "related": [
+    {"slug": "snells-law", "kind": "consequence"},
+    {"slug": "the-law-of-reflection", "kind": "consequence"}
+  ]
+}

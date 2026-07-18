@@ -1,0 +1,57 @@
+{
+  "no": "303",
+  "slug": "the-law-of-mass-action",
+  "name": "The Law of Mass Action",
+  "statement": "At equilibrium, the ratio of products to reactants, each raised to its coefficient, is fixed.",
+  "statementAccent": "is fixed",
+  "meaning": "For a chemical reaction at equilibrium, the ratio formed by multiplying the activities of the products, each raised to its stoichiometric coefficient, and dividing by the same product for the reactants, equals a constant at a given temperature — the equilibrium constant. In its older kinetic reading, the rate of a reaction is proportional to the product of the concentrations, the active masses, of the reactants.",
+  "mechanism": "Equilibrium is dynamic: the forward and reverse reactions continue, but at equal rates, so the overall composition stops changing. Setting the forward rate equal to the reverse rate for a simple step gives the equilibrium constant as the ratio of the two rate constants. The modern, secure footing for the equilibrium law is thermodynamic, derived from the equality of the chemical potentials of the species. The historical kinetic derivation happens to give the right equilibrium expression, but the rate reading it rests on is valid only for elementary reactions.",
+  "examples": [
+    {
+      "tag": "Acid dissociation",
+      "text": "The strength of a weak acid is captured by its dissociation constant, the equilibrium ratio of the dissociated ions to the undissociated acid — a direct application of the law to acid-base chemistry."
+    },
+    {
+      "tag": "The solubility product",
+      "text": "For a sparingly soluble salt, the product of its dissolved ion concentrations, each raised to its coefficient, is a constant, with the pure solid omitted — the solubility product that governs precipitation."
+    },
+    {
+      "tag": "Ammonia synthesis",
+      "text": "The nitrogen, hydrogen, and ammonia of the Haber process reach an equilibrium described by a constant in partial pressures, which Le Chatelier's principle then tells you how to shift."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The equilibrium constant forms",
+      "text": "Written in concentrations, in partial pressures for gases, or most rigorously in activities, which reduce to the simpler forms in the ideal-dilute or ideal-gas limit, with pure solids and liquids omitted."
+    },
+    {
+      "name": "Le Chatelier's principle",
+      "text": "The qualitative corollary that, because the constant is fixed at a given temperature, disturbing a system shifts its equilibrium in the direction that restores the mass-action ratio."
+    }
+  ],
+  "whyItMatters": "It is the quantitative foundation of chemical equilibrium, the relation that lets chemists predict the composition a reaction settles into and how far it will proceed. From acid-base and solubility calculations to industrial synthesis to the equilibria of biochemistry, it is among the most used laws in all of chemistry, and its equilibrium form remains correct even from the modern thermodynamic viewpoint.",
+  "working": [
+    {"lead": "Write the constant expression", "text": "form the ratio of product to reactant activities, each raised to its stoichiometric coefficient, to capture the equilibrium."},
+    {"lead": "Predict the shift", "text": "use the fixed constant, with Le Chatelier's principle, to see which way a disturbance moves the equilibrium."},
+    {"lead": "Measure rate orders, don't assume them", "text": "for the kinetic reading, determine reaction orders experimentally rather than reading them off the balanced equation, except for elementary steps."}
+  ],
+  "limits": "The kinetic form — rate proportional to concentrations raised to the stoichiometric coefficients — holds rigorously only for elementary reactions with a single step. For overall multistep reactions the rate law must be determined experimentally, and the orders need not match the coefficients. So the two readings stand on different footings: the equilibrium law is thermodynamically grounded and general, while the kinetic law is valid only for elementary steps, and the original historical kinetic derivation is now seen as not generally valid. Real, non-ideal systems require activities rather than concentrations, and in crowded biochemical environments the simple mass-action picture can fail.",
+  "misreadings": "The rule that reaction order equals the stoichiometric coefficient holds only for elementary reactions; for overall reactions, orders are empirical and can be fractional, zero, or negative, and conflating the rate law with the equilibrium-constant expression is a common confusion. And equilibrium does not mean the reaction has stopped — it is dynamic, with forward and reverse rates equal and nonzero.",
+  "origin": "Formulated by the Norwegian chemists Cato Guldberg and Peter Waage, first in an 1864 Norwegian publication and more fully in French in 1867 and German in 1879; it built on Berthollet's ideas of reversible reactions and was later grounded thermodynamically through the chemical potential.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1864,
+  "namedAfter": "Cato Guldberg and Peter Waage",
+  "sources": [
+    {"text": "Law of mass action, Wikipedia. — the equilibrium and kinetic readings, the Guldberg-Waage history, and the elementary-reaction limit.", "url": "https://en.wikipedia.org/wiki/Law_of_mass_action", "type": "secondary"},
+    {"text": "Law of mass action, Encyclopaedia Britannica. — the statement, the 1864-79 formulation, and the historical status of the rate reading.", "url": "https://www.britannica.com/science/law-of-mass-action", "type": "secondary"},
+    {"text": "Ferner & Aronson, \"Cato Guldberg and Peter Waage, the history of the Law of Mass Action...\" Br J Clin Pharmacol (2016), PMC4693570. — the two-part origin and its development.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4693570/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Law_of_mass_action",
+  "related": [
+    {"slug": "le-chateliers-principle", "kind": "consequence"},
+    {"slug": "the-arrhenius-equation", "kind": "kindred"}
+  ]
+}

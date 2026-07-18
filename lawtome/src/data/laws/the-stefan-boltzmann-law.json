@@ -1,0 +1,57 @@
+{
+  "no": "301",
+  "slug": "the-stefan-boltzmann-law",
+  "name": "The Stefan-Boltzmann Law",
+  "statement": "A hot body's radiated power climbs with the fourth power of its temperature.",
+  "statementAccent": "the fourth power of its temperature",
+  "meaning": "The total energy a black body radiates from each unit of its surface each second, summed over all wavelengths, is proportional to the fourth power of its absolute temperature. Double the temperature and the radiated power rises sixteenfold. For a real, imperfect radiator the same law holds scaled down by the body's emissivity, a number between zero and one.",
+  "mechanism": "The fourth-power law can be reached two ways. Boltzmann derived it thermodynamically, treating electromagnetic radiation as the working substance of a Carnot engine and using its radiation pressure, which forces the energy density to go as the fourth power of temperature — fixing the scaling but not the constant. Integrating Planck's law over all wavelengths gives the same result and pins down the constant as well, expressed through Planck's constant, the speed of light, and the Boltzmann constant. The steepness of the fourth power means small temperature changes produce large swings in radiated power.",
+  "examples": [
+    {
+      "tag": "The Sun's temperature",
+      "text": "Setting the Sun's measured surface output equal to the law gives an effective temperature near 5772 kelvin — the first reasonable estimate of the solar surface, made by Stefan himself."
+    },
+    {
+      "tag": "The planetary baseline",
+      "text": "Balancing the sunlight a planet absorbs against the fourth-power radiation it emits gives its radiative-equilibrium temperature; for Earth this baseline is about 255 kelvin, well below the actual surface, the gap being the greenhouse effect."
+    },
+    {
+      "tag": "The infrared thermometer",
+      "text": "Because radiated power climbs so steeply with temperature, non-contact pyrometers and infrared thermometers can read a surface's temperature from the radiation it emits."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The grey-body form",
+      "text": "For a real surface the radiated power is the black-body value multiplied by the emissivity, a factor between zero and one that can itself vary with wavelength and temperature."
+    },
+    {
+      "name": "Net radiative exchange",
+      "text": "A body both emits and absorbs, so the net power exchanged with surroundings goes as the difference of the fourth powers of the two temperatures, not the emission alone."
+    }
+  ],
+  "whyItMatters": "It is the master relation for thermal radiation, tying a body's temperature to the power it pours out as light and heat. It underpins estimates of stellar temperatures and luminosities, the energy balance of planets and the baseline of the greenhouse effect, and the design of everything from incandescent lamps to infrared thermometry — and it was an early triumph of thermodynamics, later folded into quantum theory through Planck's law.",
+  "working": [
+    {"lead": "Scale power by the fourth power", "text": "expect radiated power to rise as the fourth power of absolute temperature, so a modest heating greatly increases emission."},
+    {"lead": "Apply emissivity for real bodies", "text": "multiply the black-body result by the surface's emissivity when the radiator is not ideal."},
+    {"lead": "Use the difference of fourth powers", "text": "for a body exchanging heat with its surroundings, work with the difference of the two fourth-power terms, not emission alone."}
+  ],
+  "limits": "The bare fourth-power form is exact only for an ideal black body; real surfaces require the emissivity factor, which can depend on wavelength and temperature. It gives the total radiation integrated over all wavelengths, not the emission in any single band, for which Planck's law is needed. It describes thermal, equilibrium radiation with a well-defined temperature, not non-thermal sources like lasers. And it is gross emission: a body also absorbs from its environment, so only the difference of fourth powers gives the net exchange.",
+  "misreadings": "The law gives the total power over all wavelengths, not the brightness at any one colour — that is the province of Planck's law, of which this is the integral. And the single fourth-power term is a body's emission, not its net loss; a warm object in warm surroundings radiates strongly yet may lose little, since it absorbs nearly as much as it emits.",
+  "origin": "Inferred empirically by Josef Stefan in 1879 from radiation measurements, and derived thermodynamically by Ludwig Boltzmann in 1884 using radiation pressure and a Carnot cycle; the constant follows from integrating Planck's 1900 law, and since the 2019 redefinition of the SI it is exact.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1879,
+  "namedAfter": "Josef Stefan and Ludwig Boltzmann",
+  "sources": [
+    {"text": "Stefan-Boltzmann law, Wikipedia. — the fourth-power statement, the constant, Stefan's 1879 empirical result, Boltzmann's 1884 derivation, and the grey-body and net-exchange forms.", "url": "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law", "type": "secondary"},
+    {"text": "Stefan-Boltzmann law, Encyclopaedia Britannica. — the statement, the constant, and the historical attribution.", "url": "https://www.britannica.com/science/Stefan-Boltzmann-law", "type": "secondary"},
+    {"text": "Josef Stefan, MacTutor History of Mathematics. — Stefan's 1879 inference and his estimate of the Sun's temperature.", "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Stefan_Josef/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law",
+  "related": [
+    {"slug": "plancks-law", "kind": "cause"},
+    {"slug": "wiens-displacement-law", "kind": "kindred"}
+  ]
+}
