@@ -1,0 +1,57 @@
+{
+  "no": "852",
+  "slug": "the-stern-gerlach-experiment",
+  "name": "The Stern-Gerlach Experiment",
+  "aliases": ["Stern-Gerlach experiment"],
+  "statement": "A beam of atoms passing through an uneven magnetic field split into two discrete spots, revealing quantized angular momentum.",
+  "statementAccent": "split into two discrete spots",
+  "meaning": "The Stern-Gerlach experiment was a physics experiment performed by Otto Stern and Walther Gerlach in 1922 in Frankfurt, Germany, which demonstrated that angular momentum in atoms is quantized, taking only discrete values rather than a continuous range. A beam of silver atoms was sent through a strong, spatially non-uniform magnetic field and then onto a detector plate. Because each atom behaves like a tiny magnet, a uniform field would only twist it, but a non-uniform field also pushes it, deflecting the atom by an amount that depends on the orientation of its magnetic moment. Classical physics predicted that the atoms' magnetic moments would point in all directions, so the beam should spread into a continuous smear on the plate. Instead, the beam split into two distinct spots, showing that the atoms' magnetic moment, and hence their angular momentum, could take only certain discrete orientations, a phenomenon called space quantization. At the time this was interpreted through the older quantum theory of Bohr and Sommerfeld, since electron spin was not yet known. Only later was the two-way split understood as a demonstration of electron spin, the intrinsic spin-one-half angular momentum of the electron with its two possible values. The experiment is a foundational demonstration of quantization and of quantum measurement.",
+  "mechanism": "The experiment reveals quantization by turning the orientation of an atom's magnetic moment into a spatial deflection. Silver atoms were vaporized in a furnace and formed into a narrow beam, silver being chosen because its single outer electron makes the whole atom behave magnetically much like a lone electron. The beam passed between the specially shaped poles of a magnet that produced a strongly non-uniform, or inhomogeneous, magnetic field. In such a field, an atomic magnet feels a net force whose size and direction depend on how its magnetic moment is oriented along the field, so atoms with different orientations are deflected by different amounts. Classically, the moments should be randomly oriented, spreading the beam into a continuous band. Instead the beam divided into just two spots, separated by a small distance, meaning the component of the atoms' angular momentum along the field could take only two discrete values, pointing effectively with or against the field. This space quantization confirmed that angular momentum is quantized. The result is now understood as due to electron spin, which has exactly two possible orientations, spin up and spin down, though in 1922 it was read through Bohr-Sommerfeld orbital quantization, since spin had not yet been proposed.",
+  "examples": [
+    {
+      "tag": "Two spots, not a smear",
+      "text": "The silver beam split into two discrete spots rather than the continuous band classical physics predicted, showing quantization."
+    },
+    {
+      "tag": "Silver atoms",
+      "text": "Silver was used because its single outer electron makes the atom behave magnetically like a lone electron in the field."
+    },
+    {
+      "tag": "Later read as spin",
+      "text": "The two-way split is now understood as a demonstration of the electron's spin, which has just two orientations, up and down."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Space quantization",
+      "text": "The 1922 interpretation that the atoms' angular momentum can point only in discrete directions relative to the field."
+    },
+    {
+      "name": "The spin interpretation",
+      "text": "The later understanding that the two spots reflect the electron's spin-one-half, with its two possible values."
+    }
+  ],
+  "whyItMatters": "The Stern-Gerlach experiment is a foundational demonstration in quantum physics, providing direct visual evidence that angular momentum at the atomic scale is quantized, taking only discrete values rather than the continuous range classical physics allows. By showing a beam of atoms split into distinct spots rather than a continuous smear, it made the abstract idea of quantization tangible and helped convince physicists of the reality of quantum theory. In retrospect it became the classic demonstration of electron spin, the intrinsic angular momentum of the electron with its two orientations, which is central to atomic structure, the periodic table, magnetism, and technologies from magnetic resonance imaging to quantum computing. The experiment is also a standard illustration of quantum measurement, since it shows a measurement yielding one of a discrete set of outcomes, and sequential Stern-Gerlach setups are a favourite teaching tool for the strangeness of measuring quantum spin. Otto Stern's pioneering molecular-beam methods earned him the 1943 Nobel Prize in Physics. As the experiment that made quantization visible and revealed spin, Stern-Gerlach is a cornerstone of quantum mechanics.",
+  "working": [
+    {"lead": "Send atoms through a field", "text": "form a beam of silver atoms and pass it through a strongly non-uniform magnetic field."},
+    {"lead": "Deflect by orientation", "text": "let the field push each atomic magnet by an amount set by the orientation of its magnetic moment."},
+    {"lead": "See discrete spots", "text": "observe the beam split into two distinct spots, showing the angular momentum takes only discrete values."}
+  ],
+  "limits": "The Stern-Gerlach experiment must be described with care about its history and interpretation. In 1922 Stern and Gerlach interpreted the two-spot split as confirming Bohr-Sommerfeld space quantization of orbital angular momentum, and they did not and could not know about electron spin, which was proposed only in 1925 by Uhlenbeck and Goudsmit; the link between their result and spin was drawn later still, around 1926 to 1927. So it is anachronistic to say the 1922 experimenters demonstrated spin knowingly, even though the result is now understood that way, and indeed silver's ground state has zero orbital angular momentum, so the split is really due to the electron's spin magnetic moment. The historic split experiment was in Frankfurt in 1922, though Stern's broader molecular-beam program continued at Hamburg, and his 1943 Nobel Prize was for the molecular-ray method and the proton's magnetic moment, not specifically for this experiment; Gerlach received no Nobel. So the experiment robustly demonstrated the quantization of angular momentum, understood as a result correctly seen only later as revealing electron spin.",
+  "misreadings": "The Stern-Gerlach experiment did not knowingly demonstrate electron spin in 1922; spin was proposed only in 1925, and the experimenters read their result through the older space-quantization theory. The two spots are not due to orbital angular momentum, since silver's ground state has none, but to the electron's spin, understood only later. And the effect is not a classical spreading, since a continuous smear was expected but discrete spots appeared, so treating the experiment as a deliberate spin demonstration, as showing orbital quantization, or as classical deflection, misreads a landmark result whose meaning as electron spin emerged only afterward.",
+  "origin": "An experiment by Otto Stern and Walther Gerlach in 1922 in Frankfurt, Germany, in which a beam of silver atoms split into two spots in a non-uniform magnetic field, demonstrating quantized angular momentum, later understood as electron spin.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1922,
+  "namedAfter": "Otto Stern and Walther Gerlach",
+  "sources": [
+    {"text": "Stern-Gerlach experiment, Wikipedia. — the 1922 Frankfurt experiment by Stern and Gerlach, the silver beam splitting into two spots in an inhomogeneous magnetic field, space quantization, the later understanding as electron spin with spin proposed only in 1925, and Stern's 1943 Nobel Prize for the molecular-ray method.", "url": "https://en.wikipedia.org/wiki/Stern%E2%80%93Gerlach_experiment", "type": "secondary"},
+    {"text": "How the Stern-Gerlach experiment made physicists believe in quantum mechanics, Physics World. — the setup and two-spot result, the demonstration of quantized angular momentum, and the historical interpretation.", "url": "https://physicsworld.com/a/how-the-stern-gerlach-experiment-made-physicists-believe-in-quantum-mechanics/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Stern%E2%80%93Gerlach_experiment",
+  "related": [
+    {"slug": "the-franck-hertz-experiment", "kind": "kindred"},
+    {"slug": "the-double-slit-experiment", "kind": "kindred"}
+  ]
+}

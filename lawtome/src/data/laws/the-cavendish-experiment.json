@@ -1,0 +1,57 @@
+{
+  "no": "850",
+  "slug": "the-cavendish-experiment",
+  "name": "The Cavendish Experiment",
+  "aliases": ["Cavendish torsion balance experiment", "Weighing the Earth"],
+  "statement": "Using a delicate torsion balance, Cavendish measured the faint gravitational pull between lead spheres and so weighed the Earth.",
+  "statementAccent": "measured the faint gravitational pull between lead spheres",
+  "meaning": "The Cavendish experiment was a physics experiment performed by the English scientist Henry Cavendish in 1797 and 1798, which measured the tiny gravitational attraction between masses in the laboratory and, from it, determined the density and hence the mass of the Earth. Cavendish used a torsion balance, an apparatus originally devised by John Michell, consisting of a light horizontal rod hung from a thin fibre with a small lead sphere at each end. When large lead spheres were brought near the small ones, their faint gravitational attraction twisted the rod slightly, and the angle of twist against the known springiness of the fibre gave the strength of the force. Because the gravitational pull between such masses is extraordinarily weak, detecting it at all was a triumph of delicate measurement. Cavendish's stated goal was to find the mean density of the Earth, which he reported as about five and a half times that of water, remarkably close to the modern value. His result is the foundation from which the gravitational constant and the Earth's mass are derived, so the experiment is often described, a little loosely, as the one that weighed the world.",
+  "mechanism": "The experiment measured gravity by turning an almost imperceptible force into a visible twist. A torsion balance was built with two small lead spheres fixed to the ends of a horizontal rod, which hung from a fine wire or fibre so that the slightest sideways force would rotate it. Two much larger lead spheres, each weighing well over a hundred kilograms, were positioned close to the small ones, and their gravitational attraction drew the small spheres toward them, twisting the fibre. The fibre resisted with a restoring torque proportional to the angle of twist, and since that stiffness could be found from the rod's period of oscillation, measuring the equilibrium twist gave the exact gravitational force between the large and small spheres. Knowing the masses and their separation, Cavendish could compare this laboratory gravitational force with the Earth's gravitational pull on the same small spheres, their weight, and so deduce the mean density of the Earth. The whole apparatus was enclosed and observed from a distance with telescopes to avoid disturbing it with air currents or the experimenter's body heat. From the measured density, the Earth's mass and, in later formulations, the gravitational constant follow.",
+  "examples": [
+    {
+      "tag": "The twisting fibre",
+      "text": "The gravitational pull of large lead spheres twisted the suspended rod by a tiny angle, from which the force was calculated."
+    },
+    {
+      "tag": "The density of the Earth",
+      "text": "Cavendish reported the Earth's mean density as about five and a half times that of water, close to the modern value."
+    },
+    {
+      "tag": "Observed from afar",
+      "text": "The apparatus was enclosed and watched through telescopes to keep the experimenter's warmth and air currents from disturbing it."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Michell's torsion balance",
+      "text": "The apparatus originally devised by John Michell, who died before completing the work, and passed to Cavendish, who refined it."
+    },
+    {
+      "name": "Weighing the world",
+      "text": "The popular description of the experiment, since from the Earth's density its mass can be found."
+    }
+  ],
+  "whyItMatters": "The Cavendish experiment is a landmark of experimental physics because it was the first to measure the gravitational attraction between ordinary masses in the laboratory, detecting a force so faint that its measurement was an extraordinary feat of precision. From this Cavendish determined the mean density of the Earth, and hence its mass, giving humanity its first accurate knowledge of how much the planet weighs, an achievement popularly summed up as weighing the world. His result is the basis from which the gravitational constant, the fundamental constant setting the strength of gravity in Newton's law, is derived, though that constant was formulated only later. The torsion-balance method he used became a template for measuring tiny forces and is still refined today in ongoing efforts to pin down the gravitational constant, which remains among the least precisely known of the fundamental constants. The experiment also exemplifies how careful control of disturbances, from air currents to body heat, makes the near-impossible measurable. As the experiment that first weighed the Earth and opened the door to measuring gravity itself, Cavendish's work is a cornerstone of physics.",
+  "working": [
+    {"lead": "Hang a torsion balance", "text": "suspend a rod with small lead spheres from a fine fibre that twists under the slightest sideways force."},
+    {"lead": "Bring up large masses", "text": "position heavy lead spheres nearby so their gravitational pull twists the fibre by a measurable angle."},
+    {"lead": "Deduce the Earth's density", "text": "from the twist find the gravitational force, and compare it with the spheres' weight to get the Earth's density and mass."}
+  ],
+  "limits": "The Cavendish experiment is often described as measuring the gravitational constant, but this is anachronistic and should be flagged: Cavendish's stated aim was the mean density of the Earth, and Newton's law was not written with an explicit gravitational constant until the later nineteenth century, so the constant was extracted from his data only afterward. His published density figure contained a small arithmetic error, printing about 5.48 where his own data gave 5.448 times the density of water, a slip caught by Francis Baily in 1821; either way the result was accurate to within about one percent of the modern value. The apparatus he used was originally John Michell's, so the design was not solely Cavendish's. So the Cavendish experiment robustly gave the first laboratory measurement of gravitational attraction and the Earth's density, understood as the basis for, rather than a direct measurement of, the gravitational constant, built on Michell's design.",
+  "misreadings": "The Cavendish experiment did not directly measure the gravitational constant in the modern sense; Cavendish set out to find the Earth's density, and the constant was derived from his data only later. He did not invent the apparatus alone, since the torsion balance was John Michell's design. And the popular phrase weighing the world is a shorthand, since he measured density and force, not the Earth's weight directly, so treating it as a measurement of the gravitational constant, as Cavendish's sole invention, or as literally putting the Earth on a scale, misreads a landmark experiment that first measured laboratory gravity and the Earth's density.",
+  "origin": "An experiment by the English scientist Henry Cavendish in 1797 and 1798, using a torsion balance devised by John Michell to measure gravitational attraction and determine the Earth's density; the basis for later values of the gravitational constant.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1798,
+  "namedAfter": "Henry Cavendish",
+  "sources": [
+    {"text": "Cavendish experiment, Wikipedia. — Henry Cavendish's 1797 to 1798 torsion-balance experiment using Michell's apparatus, the measurement of gravitational attraction between lead spheres, the mean density of the Earth of about 5.448 times water, the 5.48 published slip caught by Baily, and that the gravitational constant was a later formulation derived from his data.", "url": "https://en.wikipedia.org/wiki/Cavendish_experiment", "type": "secondary"},
+    {"text": "Cavendish experiment, Encyclopaedia Britannica. — Cavendish's determination of the Earth's density with a torsion balance and its role in measuring gravity.", "url": "https://www.britannica.com/science/Cavendish-experiment", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Cavendish_experiment",
+  "related": [
+    {"slug": "the-foucault-pendulum", "kind": "kindred"},
+    {"slug": "eratosthenes-measurement-of-the-earth", "kind": "kindred"}
+  ]
+}
