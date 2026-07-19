@@ -1,0 +1,57 @@
+{
+  "no": "781",
+  "slug": "the-coanda-effect",
+  "name": "The Coandă Effect",
+  "aliases": ["Coanda effect", "Jet attachment"],
+  "statement": "A jet of fluid tends to cling to a nearby surface and follow it instead of flying straight.",
+  "statementAccent": "cling to a nearby surface and follow it instead of flying straight",
+  "meaning": "The Coandă effect is the tendency of a jet of fluid, whether liquid or gas, emerging from a nozzle to stay attached to and follow a nearby surface, flat or curved, rather than continuing in a straight line. The jet bends toward the surface and, if the surface curves away gently enough, hugs it around the bend. Named after the Romanian inventor and aerodynamicist Henri Coandă, who recognized its practical importance in aircraft design in the early twentieth century and documented it in patents in the 1930s, the effect is a basic phenomenon of fluid dynamics. It is exploited in aeronautics, ventilation, fluidics, and medical devices, and it appears wherever a jet runs along a wall. It is worth distinguishing the genuine effect, driven by the jet entraining surrounding fluid, from superficially similar demonstrations, such as water running down the back of a spoon, that are actually dominated by other forces like surface tension.",
+  "mechanism": "The true Coandă effect is driven by entrainment. A free jet drags along, or entrains, the surrounding fluid at its edges, setting up a region of slightly reduced pressure around itself. When the jet runs close to a surface, the fluid trapped between the jet and the surface is entrained away and cannot be freely replenished, so the pressure there falls below the pressure on the jet's open side. The higher pressure on the outer side then pushes the jet toward the surface, bending it over and holding it attached, and the jet will follow a curved surface until the curvature becomes too sharp and the flow separates. This is why the mechanism requires genuine entrainment of the ambient fluid, and why demonstrations with little entrainment, like a thin water stream following a spoon, are actually explained mainly by surface tension rather than the Coandă effect proper. In engineered systems the attachment is used deliberately, directing a jet along a surface to change the flow around a body.",
+  "examples": [
+    {
+      "tag": "Ball in an angled jet",
+      "text": "A ping-pong ball held in an air stream tilted off vertical clings to the lower side of the jet rather than falling, held by the Coandă effect."
+    },
+    {
+      "tag": "Blown flaps",
+      "text": "Aircraft high-lift systems blow a jet over a wing flap so it stays attached and turns the flow, increasing lift at low speed."
+    },
+    {
+      "tag": "Ceiling air diffusers",
+      "text": "Ventilation diffusers use the effect so supply air spreads along the ceiling, giving greater throw before it drops into the room."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Entrainment attachment",
+      "text": "The genuine mechanism in which the jet entrains ambient fluid, lowering pressure near a surface so the jet is pushed against and follows it."
+    },
+    {
+      "name": "The spoon demonstration",
+      "text": "The popular water-down-a-spoon illustration, which is actually dominated by surface tension rather than true Coandă entrainment."
+    }
+  ],
+  "whyItMatters": "The Coandă effect is a foundational phenomenon in fluid dynamics with wide practical use. In aeronautics it underlies blown flaps and other circulation-control and high-lift devices, and anti-torque systems such as the NOTAR helicopter tail, where directing a jet along a surface reshapes the flow to produce lift or control forces. In fluidics it enables devices like bistable switches, oscillators, and flowmeters that manipulate jets without moving parts, and in ventilation it lets ceiling diffusers spread air efficiently along surfaces. It also appears in medical ventilators and in many everyday devices. The effect illustrates the powerful role of entrainment and pressure in shaping how jets behave near surfaces, a principle engineers harness to steer flows. Understanding it also guards against a common confusion, since the Coandă effect is frequently invoked, often incorrectly, to explain ordinary wing lift, so knowing what it genuinely does clarifies both good engineering and a persistent aerodynamic misconception.",
+  "working": [
+    {"lead": "Emit a jet near a surface", "text": "direct a jet of fluid from a nozzle so it passes close to a flat or curved surface."},
+    {"lead": "Entrain and lower pressure", "text": "let the jet entrain the fluid between it and the surface, reducing the pressure there below the open side."},
+    {"lead": "Bend and follow", "text": "watch the higher outer pressure push the jet against the surface so it attaches and follows the contour until curvature is too sharp."}
+  ],
+  "limits": "The genuine Coandă effect requires real entrainment of the surrounding fluid, so demonstrations with little entrainment, such as a thin stream of water following the back of a spoon, are actually dominated by surface tension and are not true examples, a common point of confusion. The jet stays attached only while the surface curvature is gentle enough; beyond a critical curvature the flow separates. The effect's role is also frequently overstated: while it genuinely underlies engineered high-lift systems like blown flaps, the popular claim that the Coandă effect explains ordinary lift over a normal wing is criticized as a misconception and should be avoided. The exact dates of Coandă's work vary between sources, with practical recognition around 1910 and patents in 1936. So the Coandă effect is a real and useful phenomenon of jet attachment, best understood as entrainment-driven and distinct both from surface-tension mimics and from a general explanation of wing lift.",
+  "misreadings": "The Coandă effect is not the reason water clings to the back of a spoon; that familiar demonstration is dominated by surface tension, not the entrainment that drives the true effect. Nor does it explain ordinary lift over a normal wing, a popular but criticized overstatement, even though it genuinely powers engineered high-lift devices. And the jet does not follow a surface of any curvature, since too sharp a bend causes separation, so treating the spoon as a true example, or the effect as the cause of general lift, misreads a phenomenon that is specifically about jets entraining fluid and attaching to nearby surfaces.",
+  "origin": "Named after the Romanian inventor and aerodynamicist Henri Coandă, who recognized its application to aircraft around 1910 and documented it in patents in 1936; a phenomenon of jet attachment in fluid dynamics.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": "Henri Coandă",
+  "sources": [
+    {"text": "Coandă effect, Wikipedia. — the tendency of a fluid jet to stay attached to a nearby surface, the entrainment and lower-pressure mechanism, the note that the spoon demonstration is dominated by surface tension, the Henri Coandă attribution, and applications in aircraft, fluidics, and ventilation.", "url": "https://en.wikipedia.org/wiki/Coand%C4%83_effect", "type": "secondary"},
+    {"text": "Coandă effect, Encyclopaedia Britannica. — the tendency of a fluid jet to follow a nearby curved surface via entrainment and a lower-pressure region.", "url": "https://www.britannica.com/science/Coanda-effect", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Coand%C4%83_effect",
+  "related": [
+    {"slug": "bernoullis-principle", "kind": "kindred"},
+    {"slug": "the-venturi-effect", "kind": "kindred"}
+  ]
+}

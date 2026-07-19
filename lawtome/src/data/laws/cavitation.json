@@ -1,0 +1,57 @@
+{
+  "no": "786",
+  "slug": "cavitation",
+  "name": "Cavitation",
+  "aliases": ["Hydrodynamic cavitation", "Vapor cavitation"],
+  "statement": "Drop a liquid's pressure enough and it boils cold into bubbles that implode with violent force.",
+  "statementAccent": "bubbles that implode with violent force",
+  "meaning": "Cavitation is the formation of vapor-filled cavities, bubbles or voids, in a liquid when the local pressure falls below the liquid's vapor pressure, followed by the violent collapse of those bubbles when they move into regions of higher pressure. Unlike boiling, which is caused by raising temperature at constant pressure, cavitation is caused by lowering pressure at roughly constant temperature, so the liquid vaporizes cold. The bubbles grow as pressure drops and then implode suddenly as they are swept into higher-pressure regions, releasing intense, highly localized bursts of energy. Cavitation occurs wherever a flowing liquid accelerates and its pressure drops, as on the blades of ship propellers, the impellers of pumps, and the surfaces of turbines and valves. Its collapsing bubbles produce shock waves, noise, and damage that erodes even hard metal, making cavitation a serious engineering concern, though the same violent collapse is also harnessed in cleaning, medicine, and even by animals.",
+  "mechanism": "Cavitation is governed by the relationship between local pressure and the liquid's vapor pressure. Where a liquid speeds up, by Bernoulli's principle its pressure falls, and if the pressure drops to or below the vapor pressure at the prevailing temperature, the liquid can no longer stay liquid and small vapor-filled cavities nucleate and grow. Carried downstream into a region of higher pressure, these bubbles become unstable and collapse extremely rapidly. The implosion concentrates energy into a tiny volume, producing intense shock waves, transiently very high local pressures and temperatures, and, near a surface, high-speed microjets of liquid that strike the surface. Repeated collapses hammer the material through cyclic stress and surface fatigue, pitting and eroding it. Cavitation comes in forms distinguished by cause and character: hydrodynamic cavitation from pressure drops in flowing liquids, acoustic cavitation driven by sound waves, and inertial or transient cavitation, in which bubbles collapse violently, versus non-inertial cavitation, in which they merely oscillate. The distinction from boiling, pressure-driven rather than temperature-driven, is central to understanding it.",
+  "examples": [
+    {
+      "tag": "Propellers and pumps",
+      "text": "Fast-moving water on ship propellers and pump impellers drops below its vapor pressure, forming bubbles that collapse and pit the metal."
+    },
+    {
+      "tag": "Erosion and noise",
+      "text": "The implosions produce shock waves and microjets that erode surfaces, along with knocking noise, vibration, and lost efficiency."
+    },
+    {
+      "tag": "The pistol shrimp",
+      "text": "The snapping shrimp closes its claw so fast it creates a cavitation bubble whose collapse stuns prey, even emitting a flash of light."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Inertial versus non-inertial",
+      "text": "Inertial cavitation, in which bubbles collapse violently producing shock waves, versus non-inertial, in which bubbles merely oscillate in a sound field."
+    },
+    {
+      "name": "Hydrodynamic versus acoustic",
+      "text": "Cavitation from pressure drops in flowing liquids versus cavitation driven by the pressure oscillations of sound or ultrasound."
+    }
+  ],
+  "whyItMatters": "Cavitation is a phenomenon of major practical importance, mostly as a problem to be avoided but sometimes as a tool. In engineering it limits and damages hydraulic machinery: cavitation erosion pits and destroys propellers, pump impellers, turbine blades, valves, and pipes, while the associated noise, vibration, and loss of efficiency degrade performance, so preventing cavitation is a central concern in the design of ships, pumps, and hydro turbines. Understanding that cavitation is driven by pressure drops, not heating, guides designers to keep local pressures above the vapor pressure. The same violent bubble collapse is also put to use: ultrasonic cavitation cleans surfaces and is used in medicine to break kidney stones, and cavitation underlies the striking hunting mechanism of the pistol shrimp and the light-emitting phenomenon of sonoluminescence. Cavitation thus sits at the intersection of fluid dynamics, materials science, acoustics, and biology, a dramatic consequence of the simple fact that liquids can vaporize when their pressure falls.",
+  "working": [
+    {"lead": "Drop the pressure", "text": "let a flowing liquid accelerate so its local pressure falls to or below the vapor pressure at that temperature."},
+    {"lead": "Form vapor cavities", "text": "watch vapor-filled bubbles nucleate and grow in the low-pressure region."},
+    {"lead": "Collapse violently", "text": "as the bubbles reach higher pressure, they implode, producing shock waves and microjets that erode surfaces and make noise."}
+  ],
+  "limits": "Cavitation depends on local pressure relative to the liquid's vapor pressure, which varies with temperature and with the liquid, so whether and where it occurs is condition-specific. It is genuinely distinct from boiling, and conflating the two, treating cavitation as heat-driven, misunderstands its cause. The severity of erosion depends on the intensity and proximity of bubble collapse, the material, and the flow, so not all cavitation is equally damaging, and some regimes, like gentle non-inertial oscillation, do little harm. Predicting the onset and effects of cavitation in real machinery is complex and often requires experiment and specialized modeling. So cavitation is a well-understood phenomenon in principle, pressure-driven vaporization and violent bubble collapse, but its detailed occurrence and damage depend strongly on the specific liquid, flow, and surface conditions.",
+  "misreadings": "Cavitation is not boiling; it is caused by a drop in pressure at roughly constant temperature, not by adding heat, so the liquid vaporizes cold. The damage comes not from the bubbles existing but from their violent collapse, which fires shock waves and microjets at surfaces. And it is not always destructive, since its energy is deliberately harnessed in cleaning, medicine, and by the pistol shrimp, so treating cavitation as a kind of boiling, or as merely harmless bubbles, misreads a pressure-driven phenomenon whose imploding cavities can erode metal or be put to use.",
+  "origin": "A phenomenon of fluid dynamics and engineering: the pressure-driven formation and violent collapse of vapor cavities in a liquid, long studied because of the damage it causes to propellers and pumps.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Cavitation, Wikipedia. — the formation of vapor cavities when local pressure drops below the vapor pressure and their violent collapse, the distinction from boiling, occurrence on propellers and pumps, erosion by shock waves and microjets, the inertial and acoustic types, and examples from the pistol shrimp to sonoluminescence.", "url": "https://en.wikipedia.org/wiki/Cavitation", "type": "secondary"},
+    {"text": "Cavitation, Encyclopaedia Britannica. — cavities forming when pressure falls to the vapor pressure and collapsing at higher pressure, with erosion, pitting, noise, and reduced efficiency in pumps, turbines, and propellers.", "url": "https://www.britannica.com/science/cavitation", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Cavitation",
+  "related": [
+    {"slug": "the-venturi-effect", "kind": "cause"},
+    {"slug": "bernoullis-principle", "kind": "cause"}
+  ]
+}

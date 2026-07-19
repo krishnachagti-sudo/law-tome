@@ -1,0 +1,57 @@
+{
+  "no": "789",
+  "slug": "the-tyndall-effect",
+  "name": "The Tyndall Effect",
+  "aliases": ["Tyndall scattering", "The Tyndall phenomenon"],
+  "statement": "Fine suspended particles scatter a light beam sideways, making its path glow visibly through the haze.",
+  "statementAccent": "making its path glow visibly through the haze",
+  "meaning": "The Tyndall effect is the scattering of light by particles suspended in a colloid or a very fine suspension, which makes an otherwise invisible beam of light visible as it passes through the medium. When light enters such a medium, the suspended particles scatter it sideways, so the path of the beam glows and can be seen from the side. The effect is named after the nineteenth-century Irish-born British physicist John Tyndall, who studied the scattering of light passing through gases and liquids containing fine particles. A key use of the Tyndall effect is to distinguish a colloid from a true solution: a light beam is visible passing through a colloid, whose particles are large enough to scatter light, but not through a true solution, whose particles are too small. Everyday examples include sunbeams made visible by dust, a flashlight beam picked out in fog, and the bluish cast of smoke or diluted milk, making the Tyndall effect a familiar demonstration of light scattering.",
+  "mechanism": "The Tyndall effect arises because the particles in a colloid are larger than individual molecules but still small, comparable in size to the wavelengths of visible light or somewhat larger, and dispersed enough to scatter light without settling. As a beam passes through, these particles redirect some of the light out to the sides, so an observer off to the side sees the illuminated path. The amount of scattering depends on wavelength: shorter, bluer wavelengths are scattered more strongly than longer, redder ones, so the scattered light can take on a bluish tinge while the transmitted light shifts toward red. This wavelength dependence is akin in spirit to Rayleigh scattering, which is responsible for the blue sky, but the two differ by particle size, Rayleigh scattering applying to particles much smaller than the wavelength and the Tyndall effect to the larger colloidal particles. Because a true solution's dissolved particles are too small to scatter visible light appreciably, its beam remains invisible, which is why the Tyndall effect serves as a simple test for the colloidal state.",
+  "examples": [
+    {
+      "tag": "Beam in fog or dust",
+      "text": "A flashlight or car headlight beam becomes visible in fog, and sunbeams appear where dust hangs in the air, their paths lit by scattering."
+    },
+    {
+      "tag": "Colloid versus solution",
+      "text": "Shining light through a glass shows a visible beam in a colloid like diluted milk but none in a true solution like salt water."
+    },
+    {
+      "tag": "Bluish smoke",
+      "text": "Fine smoke and diluted milk can look bluish because the suspended particles scatter shorter, bluer wavelengths more strongly."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The colloid test",
+      "text": "Using the visibility of a light beam through a medium to distinguish a colloid, which scatters light, from a true solution, which does not."
+    },
+    {
+      "name": "Wavelength dependence",
+      "text": "The stronger scattering of shorter, bluer wavelengths, which gives scattered light a bluish cast and relates the effect to Rayleigh scattering."
+    }
+  ],
+  "whyItMatters": "The Tyndall effect is a simple, visible demonstration of light scattering with both practical and explanatory importance. In chemistry it provides an easy test to tell a colloid from a true solution, since only the colloid makes a light beam visible, a distinction useful in identifying and characterizing mixtures. It explains a range of everyday sights, from sunbeams and searchlights picked out by dust and fog to the bluish appearance of smoke, some diluted liquids, and even the structural blue of some eyes and animal coloration produced by scattering rather than pigment. The effect connects to the broader physics of scattering, standing alongside Rayleigh scattering, which colours the sky, and illustrating how particle size shapes how light interacts with matter. Because it is so easily observed, the Tyndall effect is a staple teaching example in physics and chemistry, and it remains relevant wherever fine particles suspended in air or liquid scatter light, from atmospheric haze to the appearance of colloidal products.",
+  "working": [
+    {"lead": "Suspend fine particles", "text": "have a colloid or fine suspension whose particles are large enough to scatter visible light but small enough to stay suspended."},
+    {"lead": "Shine a beam through", "text": "pass light into the medium, where the particles scatter some of it out to the sides."},
+    {"lead": "See the lit path", "text": "observe the glowing beam from the side, more bluish because shorter wavelengths scatter more, a beam absent in a true solution."}
+  ],
+  "limits": "The Tyndall effect requires particles in the colloidal size range, large enough to scatter visible light but small enough to remain suspended; true solutions with molecular-scale particles do not show it, which is exactly what makes it a colloid test, but very large particles that settle out are a different case. Its relationship to Rayleigh scattering is one of similarity, not identity, since the two apply to different particle-size regimes, so equating them oversimplifies. Some attributions, such as the blue colour of eyes, are explained at an encyclopedic level as Tyndall or structural scattering but described more precisely in specialized literature, so care is warranted. The strength and colour of the scattering depend on particle size, concentration, and wavelength. So the Tyndall effect reliably reveals colloidal particles by scattering light, understood as distinct from but related to Rayleigh scattering and dependent on particle size.",
+  "misreadings": "The Tyndall effect is not shown by true solutions; their particles are too small to scatter visible light, which is why a visible beam signals a colloid. It is not identical to Rayleigh scattering, since the two apply to different particle sizes even though both scatter blue more strongly. And the visible beam is scattered light, not the light source itself being brighter, so treating a solution as Tyndall-positive, or the effect as the same as Rayleigh scattering, misreads a phenomenon of scattering by colloidal-sized particles that distinguishes colloids from solutions.",
+  "origin": "Named after the nineteenth-century Irish-born British physicist John Tyndall, who studied the scattering of light by fine particles in gases and liquids; the scattering that makes a beam visible in a colloid.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": "John Tyndall",
+  "sources": [
+    {"text": "Tyndall effect, Wikipedia. — the scattering of light by colloidal particles making a beam visible, the colloid-versus-true-solution test, the stronger scattering of blue wavelengths and relation to Rayleigh scattering by particle size, the John Tyndall attribution, and examples from beams in fog to bluish smoke.", "url": "https://en.wikipedia.org/wiki/Tyndall_effect", "type": "secondary"},
+    {"text": "Tyndall effect, Encyclopaedia Britannica. — the scattering of a light beam by a medium with small suspended particles such as smoke or dust, named after John Tyndall.", "url": "https://www.britannica.com/science/Tyndall-effect", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Tyndall_effect",
+  "related": [
+    {"slug": "surface-tension", "kind": "kindred"},
+    {"slug": "the-marangoni-effect", "kind": "kindred"}
+  ]
+}

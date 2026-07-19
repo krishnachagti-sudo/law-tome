@@ -1,0 +1,57 @@
+{
+  "no": "783",
+  "slug": "the-karman-vortex-street",
+  "name": "The Kármán Vortex Street",
+  "aliases": ["Von Kármán vortex street", "Vortex street"],
+  "statement": "Flow past a blunt body sheds spinning eddies from alternating sides in a staggered trailing wake.",
+  "statementAccent": "spinning eddies from alternating sides in a staggered trailing wake",
+  "meaning": "A Kármán vortex street is a repeating pattern of swirling vortices produced by a process called vortex shedding, which occurs when a fluid flows past a bluff, or blunt, body such as a cylinder. Instead of the wake being steady, vortices form and detach alternately from the two sides of the body, creating a staggered double row of counter-rotating eddies that trails downstream. The phenomenon is named after the Hungarian-American engineer and fluid dynamicist Theodore von Kármán, who analyzed its structure and stability, building on earlier observations. It occurs within a range of flow speeds, characterized by the Reynolds number, and the rhythm of the shedding is described by a dimensionless quantity called the Strouhal number. Vortex streets are responsible for a range of familiar and important effects, from the humming of wires in the wind to the potentially destructive oscillation of chimneys and other structures, and they appear on scales from laboratory cylinders to cloud patterns downwind of islands.",
+  "mechanism": "When a fluid flows past a bluff body above a certain Reynolds number, the boundary layer separates from the surface and the wake becomes unstable. Vortices roll up and detach first from one side of the body and then the other, in a regular alternating rhythm, so the shed eddies spin in opposite senses and arrange themselves into two offset rows, the vortex street. This alternating shedding also exerts an oscillating sideways force on the body, pushing it first one way and then the other at the shedding frequency. That frequency is captured by the Strouhal number, which relates the shedding frequency, the size of the body, and the flow speed, and which stays remarkably constant over a wide range of Reynolds numbers. Vortex streets form in an intermediate speed regime, roughly above a Reynolds number of about ninety and becoming irregular and turbulent at very high values. If the shedding frequency happens to match a natural mechanical frequency of the body, the oscillating force can drive resonance and large, damaging vibrations.",
+  "examples": [
+    {
+      "tag": "Singing wires",
+      "text": "Wind blowing past telephone and power lines sheds vortices that vibrate the wires, producing the humming Aeolian tones heard in a breeze."
+    },
+    {
+      "tag": "Oscillating structures",
+      "text": "Vortex shedding can set chimneys, masts, and antennas oscillating, which is why some are fitted with helical strakes or dampers to disrupt it."
+    },
+    {
+      "tag": "Cloud streets past islands",
+      "text": "Air flowing past an island can shed a vortex street visible in the clouds, a swirling wake extending for hundreds of kilometres downwind."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Strouhal number",
+      "text": "The dimensionless number relating shedding frequency, body size, and flow speed, nearly constant across a wide range of Reynolds numbers."
+    },
+    {
+      "name": "Vortex-induced vibration",
+      "text": "The oscillation of a body driven by the alternating side force of shedding, dangerous when it resonates with the body's natural frequency."
+    }
+  ],
+  "whyItMatters": "The Kármán vortex street is a classic and consequential phenomenon in fluid dynamics, important both scientifically and in engineering. Scientifically, it is a canonical example of how steady flow past a simple body gives rise to organized, oscillating structure, and the constancy of the Strouhal number makes vortex shedding a reliable tool, exploited in vortex flowmeters that count shed eddies to measure flow rate. In engineering it is a critical design concern: the alternating force of vortex shedding can drive vortex-induced vibration in chimneys, towers, bridges, offshore risers, heat-exchanger tubes, and cables, and if the shedding frequency resonates with a structure's natural frequency the result can be severe or destructive oscillation. Engineers counter it with helical strakes, fairings, and tuned dampers that break up the coherent shedding. The vortex street also appears at geophysical scales in cloud patterns, linking a laboratory phenomenon to atmospheric flows. As a vivid demonstration of instability and periodicity in wakes, it remains central to fluid mechanics.",
+  "working": [
+    {"lead": "Flow past a bluff body", "text": "send fluid past a blunt object like a cylinder at a Reynolds number in the shedding range."},
+    {"lead": "Shed alternating vortices", "text": "let the boundary layer separate and vortices detach alternately from each side, forming a staggered double row."},
+    {"lead": "Drive oscillation", "text": "note the alternating side force at the shedding frequency, which can resonate with and vibrate the body."}
+  ],
+  "limits": "Vortex streets form only within a range of Reynolds numbers, roughly above about ninety and becoming three-dimensional and then irregular and turbulent at high values, so the clean staggered pattern is a feature of an intermediate regime. The Strouhal number is nearly constant over a wide range but not exactly fixed, varying somewhat with Reynolds number and body shape. A common oversimplification attributes the 1940 Tacoma Narrows Bridge collapse purely to Kármán vortex shedding; the failure is more accurately explained by aeroelastic flutter, a distinct self-excited mechanism, so that famous case should not be presented as simple vortex-street resonance. The phenomenon depends on the body being bluff rather than streamlined. So the Kármán vortex street robustly describes alternating vortex shedding from bluff bodies in its speed range, while its most famous alleged example is better understood through a different instability.",
+  "misreadings": "The vortices are not shed from both sides at once but alternately, first one side then the other, which is what makes the wake oscillate and exert a side force. The pattern is not present at all flow speeds, since it requires an intermediate range of Reynolds numbers. And the collapse of the Tacoma Narrows Bridge is not a straightforward case of vortex-street resonance but is better attributed to aeroelastic flutter, so treating shedding as simultaneous, or that bridge as simple vortex-induced failure, misreads a phenomenon of alternating shedding whose famous example involves a different instability.",
+  "origin": "Named after the Hungarian-American engineer and fluid dynamicist Theodore von Kármán, who analyzed the alternating vortex shedding from bluff bodies, building on earlier observations by Mallock and Bénard.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": "Theodore von Kármán",
+  "sources": [
+    {"text": "Kármán vortex street, Wikipedia. — the repeating pattern of alternating vortices shed from a bluff body, the Reynolds-number range, the Strouhal number, the von Kármán attribution, and examples including singing wires, oscillating structures, and cloud streets, with the Tacoma Narrows flutter clarification.", "url": "https://en.wikipedia.org/wiki/K%C3%A1rm%C3%A1n_vortex_street", "type": "secondary"},
+    {"text": "Vortex shedding, Wikipedia. — the process of alternating vortex shedding from a bluff body, its Reynolds-number dependence, and vortex-induced vibration of structures.", "url": "https://en.wikipedia.org/wiki/Vortex_shedding", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/K%C3%A1rm%C3%A1n_vortex_street",
+  "related": [
+    {"slug": "reynolds-number", "kind": "cause"},
+    {"slug": "the-kelvin-helmholtz-instability", "kind": "kindred"}
+  ]
+}
