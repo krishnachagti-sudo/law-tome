@@ -1,0 +1,57 @@
+{
+  "no": "673",
+  "slug": "the-gettier-problem",
+  "name": "The Gettier Problem",
+  "aliases": ["Gettier cases", "Gettier counterexamples"],
+  "statement": "You can have a justified true belief and still not know, if it is true only by luck.",
+  "statementAccent": "still not know, if it is true only by luck",
+  "meaning": "The Gettier problem is a challenge in epistemology, the theory of knowledge, raised by the philosopher Edmund Gettier in his short 1963 paper Is Justified True Belief Knowledge, published in the journal Analysis. For centuries knowledge was widely analysed as justified true belief: you know something if you believe it, it is true, and you have good justification for believing it. Gettier presented brief counterexamples in which all three conditions are met yet we would not say the person knows. In these cases a belief is justified and happens to be true, but its truth is a matter of luck, disconnected from the reasons that justify it. This showed that justified true belief is not sufficient for knowledge, launching a large project of trying to add a fourth condition or otherwise repair the analysis, a project on which no single solution has won consensus.",
+  "mechanism": "A Gettier case is constructed so that a person forms a belief on good evidence, the belief is justified, but the evidence is in some way misleading; the belief turns out true for a reason unrelated to that evidence, so its truth is accidental. Because the justification does not connect to what makes the belief true, we withhold the word knowledge even though belief, truth, and justification are all present. A classic pattern, close to Gettier's own, involves inferring a true conclusion from a justified but false premise. Another familiar illustration is the stopped clock: you look at a clock that has stopped, it happens to read the correct time, and you form a justified true belief about the time, yet you do not know it, since you were lucky the stopped clock matched reality. The lesson is that knowledge requires more than justified true belief; the truth must not be merely a matter of luck, and epistemologists have proposed extra conditions, such as ruling out reliance on falsehoods or requiring reliable connection to the fact, to capture this.",
+  "examples": [
+    {
+      "tag": "The stopped clock",
+      "text": "You glance at a stopped clock that happens to show the right time and form a justified true belief about the hour, yet you do not know it, because you were merely lucky."
+    },
+    {
+      "tag": "Inference from a false premise",
+      "text": "Gettier's cases have someone reason validly to a true conclusion from a justified but false belief, so the conclusion is justified and true but not, intuitively, knowledge."
+    },
+    {
+      "tag": "The fourth-condition project",
+      "text": "Philosophers responded by seeking a fourth requirement, such as not inferring from any falsehood, though no single fix has gained general agreement."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The no-false-lemmas response",
+      "text": "The proposal to add a condition that knowledge must not rest on any false belief, blocking cases where a justified true belief is inferred from a falsehood."
+    },
+    {
+      "name": "Anti-luck and reliabilist accounts",
+      "text": "The family of responses holding that knowledge requires the belief's truth not to be a matter of luck, or to be produced by a reliable, truth-tracking process."
+    }
+  ],
+  "whyItMatters": "The Gettier problem is one of the most influential contributions to twentieth-century epistemology, overturning a definition of knowledge that had stood in some form since antiquity. In three pages it showed that the long-accepted justified-true-belief analysis is inadequate, and it set the agenda for decades of work on what knowledge is, spawning reliabilist, anti-luck, causal, and other theories. It also brought to the fore the role of epistemic luck, the insight that a belief's being true by accident, however well justified, falls short of knowledge. Because no proposed repair has achieved consensus, the problem endures as a central open question, and its brief, elegant counterexamples remain a model of how a well-chosen case can unseat an entrenched philosophical assumption.",
+  "working": [
+    {"lead": "Start from justified true belief", "text": "take the traditional analysis that knowledge is belief that is true and well justified, and test it against cases."},
+    {"lead": "Insert lucky truth", "text": "construct a case where the justification rests on something misleading yet the belief is true by coincidence, so the truth is disconnected from the reasons."},
+    {"lead": "Withhold knowledge", "text": "notice that we deny the person knows, showing justified true belief is not enough and motivating a further, anti-luck condition."}
+  ],
+  "limits": "The Gettier problem shows that justified true belief is not sufficient for knowledge, but it does not by itself say what should be added, and no proposed fourth condition or alternative analysis has won general acceptance, so the correct account of knowledge remains open. Some philosophers respond by rejecting the project of analysing knowledge into conditions at all, or by treating knowledge as unanalysable. A minority question whether the intuitions driving Gettier cases are universal, and experimental work has probed how widely they are shared. So the problem is best understood as a durable challenge that reshaped epistemology rather than a puzzle with a settled solution, and debate over how to answer it continues.",
+  "misreadings": "Gettier did not show that knowledge is impossible or that justification is worthless; he showed only that belief, truth, and justification together are not sufficient, since their truth can be a matter of luck. The problem is not solved by any one agreed patch, so presenting a particular fourth condition as the accepted answer misstates the state of the debate. And the cases are not about carelessness but about luck: the believer reasons well and is justified, yet the disconnect between the justification and the truth is what withholds knowledge.",
+  "origin": "Raised by the philosopher Edmund Gettier in his 1963 paper Is Justified True Belief Knowledge, in the journal Analysis, whose brief counterexamples refuted the traditional justified-true-belief analysis of knowledge; no successor analysis has since achieved consensus.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1963,
+  "namedAfter": "Edmund Gettier",
+  "sources": [
+    {"text": "Gettier problem, Wikipedia. — Gettier's 1963 paper, the refutation of justified true belief as knowledge, the role of luck, the stopped-clock and false-premise cases, and the search for a fourth condition.", "url": "https://en.wikipedia.org/wiki/Gettier_problem", "type": "secondary"},
+    {"text": "The Analysis of Knowledge, Stanford Encyclopedia of Philosophy. — the justified-true-belief analysis, Gettier's counterexamples, and the main responses including no-false-lemmas and anti-luck conditions.", "url": "https://plato.stanford.edu/entries/knowledge-analysis/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Gettier_problem",
+  "related": [
+    {"slug": "the-brain-in-a-vat", "kind": "kindred"},
+    {"slug": "the-philosophical-zombie", "kind": "tension"}
+  ]
+}

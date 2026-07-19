@@ -1,0 +1,57 @@
+{
+  "no": "674",
+  "slug": "laplaces-demon",
+  "name": "Laplace's Demon",
+  "aliases": ["Laplace's superman", "The demon of determinism"],
+  "statement": "An intellect knowing the position and motion of every particle could calculate the entire future and past of the universe.",
+  "statementAccent": "could calculate the entire future and past of the universe",
+  "meaning": "Laplace's demon is a thought experiment articulated by the mathematician and astronomer Pierre-Simon Laplace in 1814, in his Philosophical Essay on Probabilities, to express the idea of scientific determinism. Laplace imagined a vast intellect that, at a given moment, knew the precise positions and velocities of every particle in the universe and had unlimited power to analyse this data using the laws of physics. For such an intellect, he wrote, nothing would be uncertain: the entire future and the entire past would be laid open to it, computable from the present state. The being, later dubbed Laplace's demon, embodies the classical, Newtonian conviction that the universe is a deterministic mechanism in which the present completely fixes the future. The experiment crystallises causal determinism and frames enduring debates about prediction, free will, and whether later physics, especially quantum mechanics and chaos theory, undermines the picture.",
+  "mechanism": "The reasoning follows from classical mechanics. If the laws governing matter are deterministic, so that the state of a system at one time, given by the positions and momenta of its parts, uniquely determines its state at every other time, then a complete specification of the present entails the whole of the future and past. Laplace's demon is the idealised knower for whom this entailment becomes actual knowledge: possessing perfect information about every particle and infinite computational power, it simply integrates the equations of motion forward and backward. The demon thus dramatizes that under classical determinism the universe contains no genuine chance; apparent uncertainty reflects only our ignorance, not any indeterminacy in nature. Later developments challenge the picture: quantum mechanics introduces fundamental probabilities that seem to deny exact determinism, and chaos theory shows that even in deterministic systems the tiniest imprecision in the initial data grows exponentially, making long-range prediction practically impossible even if determinism holds.",
+  "examples": [
+    {
+      "tag": "The all-knowing intellect",
+      "text": "Laplace's demon knows every particle's position and velocity and, applying the laws of motion, reads off the complete future and past with perfect certainty."
+    },
+    {
+      "tag": "The quantum challenge",
+      "text": "Quantum mechanics posits irreducible probabilities in nature, so on standard interpretations the demon could not obtain the exact deterministic knowledge Laplace assumed."
+    },
+    {
+      "tag": "The chaos challenge",
+      "text": "Chaos theory shows sensitive dependence on initial conditions, so any imprecision in the demon's data would blow up, defeating long-range prediction in practice."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Causal determinism",
+      "text": "The general doctrine the demon expresses, that every event is completely determined by prior states and the laws of nature, leaving no room for chance."
+    },
+    {
+      "name": "The predictability question",
+      "text": "The distinct issue of whether, even granting determinism, the future could actually be computed, which chaos and the cost of information call into doubt."
+    }
+  ],
+  "whyItMatters": "Laplace's demon is the classic statement of scientific determinism, a touchstone for debates in the philosophy of science and the free-will controversy. By imagining perfect knowledge yielding perfect prediction, it lays bare what a fully deterministic universe would imply, that the future is fixed by the present and chance is only a name for ignorance, and thereby frames questions about human freedom and responsibility. It also separates two ideas often confused, determinism and predictability, since later physics suggests the world may be deterministic yet unpredictable, or predictable only probabilistically. As a vivid emblem of the Newtonian worldview at its most confident, the demon remains a reference point for assessing how quantum mechanics, chaos theory, and thermodynamics have reshaped our understanding of order, chance, and the limits of knowledge.",
+  "working": [
+    {"lead": "Assume deterministic laws", "text": "take the classical view that the present state of every particle, with the laws of motion, uniquely fixes all past and future states."},
+    {"lead": "Grant total knowledge and power", "text": "endow an intellect with exact data on every particle and unlimited ability to compute, turning the entailment into actual foreknowledge."},
+    {"lead": "Test against later physics", "text": "ask whether quantum indeterminacy and chaotic sensitivity to initial conditions leave room for such a demon even in principle."}
+  ],
+  "limits": "Laplace's demon is an idealisation used to express determinism, not a being that could exist; even granting classical determinism, no physical system could store and process complete information about the universe from within it. Standard quantum mechanics introduces fundamental probabilities that appear to refute exact determinism, though some interpretations remain deterministic, so whether nature is deterministic at all is unsettled. Chaos theory shows that deterministic systems can be practically unpredictable, since infinitesimal errors in initial data grow without bound, separating determinism from predictability. The demon therefore illuminates a philosophical position and its assumptions rather than describing an achievable capacity, and its bearing on the actual world depends on open questions in physics and metaphysics.",
+  "misreadings": "The demon is a device for expressing determinism, not a claim that anyone or anything can actually predict the future; Laplace used it to articulate a principle, not to promise omniscience. Determinism is not the same as predictability: chaos shows a deterministic world can be unpredictable in practice, so the demon's failure as a predictor does not by itself refute determinism. And whether the universe is deterministic remains open, since quantum mechanics on standard readings introduces genuine chance, so the demon marks a worldview to be examined rather than an established fact about nature.",
+  "origin": "Formulated by the mathematician Pierre-Simon Laplace in 1814 in his Philosophical Essay on Probabilities to express classical causal determinism, imagining an intellect that from complete knowledge of the present could compute the entire future and past.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1814,
+  "namedAfter": "Pierre-Simon Laplace",
+  "sources": [
+    {"text": "Laplace's demon, Wikipedia. — Laplace's 1814 formulation, the intellect knowing every particle's state, the expression of causal determinism, and the quantum and chaos-theory challenges.", "url": "https://en.wikipedia.org/wiki/Laplace%27s_demon", "type": "secondary"},
+    {"text": "Causal Determinism, Stanford Encyclopedia of Philosophy. — the doctrine of determinism that Laplace's demon expresses and its relation to prediction and the laws of physics.", "url": "https://plato.stanford.edu/entries/determinism-causal/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Laplace%27s_demon",
+  "related": [
+    {"slug": "maxwells-demon", "kind": "kindred"},
+    {"slug": "schrodingers-cat", "kind": "tension"}
+  ]
+}

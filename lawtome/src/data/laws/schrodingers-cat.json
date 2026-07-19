@@ -1,0 +1,57 @@
+{
+  "no": "664",
+  "slug": "schrodingers-cat",
+  "name": "Schrödinger's Cat",
+  "aliases": ["The cat paradox", "Schrodinger's cat"],
+  "statement": "A cat in a sealed box, its fate tied to a quantum event, is somehow both alive and dead until observed.",
+  "statementAccent": "both alive and dead until observed",
+  "meaning": "Schrödinger's cat is a thought experiment devised by the physicist Erwin Schrödinger in 1935 to expose a paradox in applying the Copenhagen interpretation of quantum mechanics to everyday objects. A cat is sealed in a box with a radioactive atom, a Geiger counter, a hammer, and a flask of poison; if the atom decays, the counter trips the hammer, shattering the flask and killing the cat. Because radioactive decay is a quantum event that remains in a superposition of decayed and not-decayed until measured, a naive reading of the formalism puts the cat in a superposition of alive and dead until the box is opened. Schrödinger intended this as a critique, a reductio ad absurdum, to dramatize the absurdity of extending quantum superposition to a macroscopic cat and to highlight the measurement problem.",
+  "mechanism": "In quantum mechanics an unobserved system can occupy a superposition of states, described by a wavefunction, and measurement is said to collapse it to one definite outcome. Schrödinger's device ties the cat's life to such a superposed quantum event, so if the atom is genuinely both decayed and not-decayed, the formalism implies the cat is both alive and dead until observation collapses the state. Schrödinger found this conclusion absurd for a macroscopic object, and the puzzle sharpens the measurement problem: when and how does the wavefunction collapse, and what counts as an observer. Different interpretations resolve it differently. The Copenhagen view holds that measurement yields a single outcome; the many-worlds interpretation holds the cat is alive in one branch and dead in another; and decoherence holds that interaction with the environment rapidly destroys the superposition.",
+  "examples": [
+    {
+      "tag": "Schrödinger's critique",
+      "text": "Schrödinger proposed the cat in 1935 not to claim cats are both alive and dead, but to show the absurdity of extending quantum superposition to macroscopic objects."
+    },
+    {
+      "tag": "Many-worlds",
+      "text": "In Everett's many-worlds interpretation the cat is alive in one branch of reality and dead in another, the two branches decoherent from each other."
+    },
+    {
+      "tag": "Decoherence",
+      "text": "Decoherence explains that interaction with the environment destroys the delicate superposition almost instantly, so a macroscopic cat is never in a meaningful superposition."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The many-worlds resolution",
+      "text": "Everett's interpretation, in which every outcome occurs in a separate, non-interacting branch of the universe, so both a live and a dead cat exist."
+    },
+    {
+      "name": "The decoherence resolution",
+      "text": "The account that environmental interaction rapidly turns quantum superpositions into effectively classical mixtures, dissolving the paradox for large objects."
+    }
+  ],
+  "whyItMatters": "Schrödinger's cat is the most famous illustration of quantum superposition and the measurement problem, a touchstone for both physics pedagogy and popular culture. It crystallises the deep puzzle of how the strange rules of the quantum world, where systems can be in multiple states at once, connect to the definite reality we experience, and it frames the long debate among interpretations of quantum mechanics, from Copenhagen to many-worlds to decoherence. As a vivid reductio meant to unsettle rather than assert, it also exemplifies how a well-chosen thought experiment can concentrate a whole conceptual problem into a single image that has provoked physicists and philosophers for generations.",
+  "working": [
+    {"lead": "Tie macro to micro", "text": "link a cat's fate to a superposed quantum event to see the strangeness of superposition forced onto an everyday object."},
+    {"lead": "Confront the measurement problem", "text": "ask when and how the wavefunction collapses and what counts as an observer, the puzzle the cat is designed to expose."},
+    {"lead": "Weigh the interpretations", "text": "compare how Copenhagen, many-worlds, and decoherence each resolve the apparent alive-and-dead superposition differently."}
+  ],
+  "limits": "Schrödinger's cat is a thought experiment and a critique, not a literal claim that macroscopic cats exist in superposition; Schrödinger's own intent was to show that conclusion absurd. The observer need not be conscious, since decoherence occurs through any environmental interaction, so popular readings that require a mind to collapse the state misstate the physics. The puzzle it dramatizes, the measurement problem, remains genuinely open, with competing interpretations rather than a settled answer, so the cat poses a question more than it delivers a result. And its force depends on the interpretation of quantum mechanics one adopts, which is itself unresolved.",
+  "misreadings": "The cat is a thought experiment and a reductio, not a serious claim that a real macroscopic cat is both alive and dead; Schrödinger meant to expose an absurdity, not endorse it. The collapse does not require a conscious observer; any interaction with the environment, through decoherence, destroys the superposition, so the mystical observer reading is a popular distortion. And the paradox is not solved simply by opening the box; it dramatizes the still-open measurement problem, which the various interpretations address in incompatible ways.",
+  "origin": "Devised by the physicist Erwin Schrödinger in 1935 as an objection to the Copenhagen interpretation, to illustrate the absurdity of extending quantum superposition to macroscopic objects and to highlight the measurement problem.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1935,
+  "namedAfter": "Erwin Schrödinger",
+  "sources": [
+    {"text": "Schrödinger's cat, Wikipedia. — the 1935 origin, the box setup, the superposition of alive and dead, the reductio targeting the measurement problem, and the many-worlds and decoherence resolutions.", "url": "https://en.wikipedia.org/wiki/Schr%C3%B6dinger%27s_cat", "type": "secondary"},
+    {"text": "Schrödinger's cat, Encyclopaedia Britannica. — the thought experiment, the superposition, and its objection to the Copenhagen interpretation.", "url": "https://www.britannica.com/science/Schrodingers-cat", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Schr%C3%B6dinger%27s_cat",
+  "related": [
+    {"slug": "heisenbergs-uncertainty-principle", "kind": "kindred"},
+    {"slug": "maxwells-demon", "kind": "kindred"}
+  ]
+}
