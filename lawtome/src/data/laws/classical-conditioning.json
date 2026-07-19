@@ -1,0 +1,57 @@
+{
+  "no": "836",
+  "slug": "classical-conditioning",
+  "name": "Classical Conditioning",
+  "aliases": ["Pavlovian conditioning", "Respondent conditioning"],
+  "statement": "Pair a bell with food often enough and the bell alone will make the dog salivate.",
+  "statementAccent": "the bell alone will make the dog salivate",
+  "meaning": "Classical conditioning is a form of learning in which a biologically significant stimulus, such as food, is repeatedly paired with a previously neutral stimulus, such as a bell or tone, until the neutral stimulus comes to elicit a response similar to the one the significant stimulus produces. It was discovered by the Russian physiologist Ivan Pavlov during his research on digestion, when he noticed that his dogs began to salivate not only at food but at signals, like a bell, that had reliably preceded it. The vocabulary is standard: the food is the unconditioned stimulus and the salivation it naturally produces the unconditioned response; after pairing, the bell becomes the conditioned stimulus and the salivation it now elicits the conditioned response. Classical conditioning explains many learned associations and reflexive emotional responses, and it differs from operant conditioning, which concerns behavior shaped by its consequences rather than the association of two stimuli. It became a foundation of behaviorism and remains central to the understanding of learning.",
+  "mechanism": "Classical conditioning works by building an association between two stimuli that occur together in time. Initially, an unconditioned stimulus, such as food, automatically produces an unconditioned response, such as salivation, without any learning. A neutral stimulus, such as a bell, produces no such response. When the neutral stimulus is repeatedly presented just before the unconditioned stimulus, the animal learns to associate the two, and the neutral stimulus becomes a conditioned stimulus that elicits a conditioned response resembling the original, so the bell alone comes to make the dog salivate. The process of building this association is acquisition. Several further phenomena follow: extinction, in which the conditioned response fades if the conditioned stimulus is repeatedly presented without the unconditioned stimulus; spontaneous recovery, in which the response reappears after a rest; generalization, in which similar stimuli also elicit the response; and discrimination, in which the animal learns to respond only to the specific conditioned stimulus. The response is typically involuntary and reflexive, which distinguishes classical conditioning from operant conditioning's shaping of voluntary behavior by reward and punishment.",
+  "examples": [
+    {
+      "tag": "Pavlov's dogs",
+      "text": "Pavlov's dogs, after a bell was repeatedly paired with food, salivated at the bell alone, the founding demonstration of classical conditioning."
+    },
+    {
+      "tag": "The four terms",
+      "text": "Food is the unconditioned stimulus and salivation its unconditioned response, while the bell becomes the conditioned stimulus eliciting a conditioned response."
+    },
+    {
+      "tag": "Learned fears",
+      "text": "Pairing a neutral object with a frightening event can condition a fear response, as in the conditioning of a phobia."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Extinction",
+      "text": "The fading of the conditioned response when the conditioned stimulus is repeatedly presented without the unconditioned stimulus."
+    },
+    {
+      "name": "Generalization",
+      "text": "The tendency for stimuli similar to the conditioned stimulus to also elicit the conditioned response."
+    }
+  ],
+  "whyItMatters": "Classical conditioning is one of the most fundamental concepts in the psychology of learning, revealing how organisms come to associate stimuli and to respond to signals that predict significant events. Pavlov's discovery became a cornerstone of behaviorism, the school of psychology that sought to explain behavior through observable learning rather than introspection, and it remains basic to how learning is taught and understood. The principle explains a wide range of phenomena: learned emotional responses and phobias, as when a neutral object becomes frightening through pairing with a scare; conditioned taste aversions that keep animals away from foods that once made them sick; and the way advertising links products to positive feelings. Its concepts, the conditioned and unconditioned stimuli and responses, extinction, and generalization, provide a precise language for describing associative learning, and they underlie behavioral therapies for anxiety and phobias. As the mechanism by which a signal comes to stand in for what it predicts, classical conditioning is essential to understanding how experience shapes behavior.",
+  "working": [
+    {"lead": "Start with a natural reflex", "text": "note that an unconditioned stimulus like food automatically produces an unconditioned response like salivation."},
+    {"lead": "Pair with a neutral stimulus", "text": "present a neutral stimulus like a bell just before the food, repeatedly, so the two become associated."},
+    {"lead": "Elicit the conditioned response", "text": "have the bell, now a conditioned stimulus, elicit salivation on its own as the conditioned response."}
+  ],
+  "limits": "Classical conditioning concerns the association of stimuli and largely involuntary, reflexive responses, so it is distinct from operant conditioning, which shapes voluntary behavior by its consequences; the two are different kinds of learning and should not be conflated. Conditioned responses are not permanent, since extinction can weaken them, and the strength and speed of conditioning depend on the timing, order, and salience of the stimuli. Not all pairings condition equally well, as some associations, like taste and illness, are learned far more readily than others, showing biological preparedness. Pavlov's signal is often called a bell, though he used various stimuli such as a metronome. So classical conditioning robustly explains associative, reflexive learning, understood as distinct from operant conditioning and shaped by timing, salience, and biological readiness.",
+  "misreadings": "Classical conditioning is not the same as operant conditioning; it associates two stimuli and produces involuntary responses, while operant conditioning shapes voluntary behavior by reward and punishment. The conditioned response is not permanent, since it can be extinguished by presenting the signal without the significant stimulus. And it is not that the animal reasons about the bell, but that an association forms, so treating classical conditioning as reward-based learning, as unbreakable, or as deliberate reasoning misreads a form of associative, reflexive learning.",
+  "origin": "Discovered by the Russian physiologist Ivan Pavlov during his digestion research around the turn of the twentieth century; a foundational form of associative learning and a cornerstone of behaviorism.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Classical conditioning, Wikipedia. — the pairing of a neutral stimulus with a biologically potent one so it elicits a similar response, Pavlov's dogs, the unconditioned and conditioned stimuli and responses, extinction and generalization, and the contrast with operant conditioning.", "url": "https://en.wikipedia.org/wiki/Classical_conditioning", "type": "secondary"},
+    {"text": "Conditioning, Encyclopaedia Britannica. — classical or Pavlovian conditioning as the association of stimuli, Pavlov's salivating dogs, and the conditioned response.", "url": "https://www.britannica.com/science/conditioning", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Classical_conditioning",
+  "related": [
+    {"slug": "operant-conditioning", "kind": "tension"},
+    {"slug": "the-little-albert-experiment", "kind": "consequence"}
+  ]
+}

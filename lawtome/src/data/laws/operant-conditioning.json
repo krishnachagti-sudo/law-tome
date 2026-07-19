@@ -1,0 +1,57 @@
+{
+  "no": "837",
+  "slug": "operant-conditioning",
+  "name": "Operant Conditioning",
+  "aliases": ["Instrumental conditioning", "Skinnerian conditioning"],
+  "statement": "Behavior followed by reward tends to recur, and behavior followed by punishment tends to fade.",
+  "statementAccent": "behavior followed by punishment tends to fade",
+  "meaning": "Operant conditioning is a form of learning in which the frequency of a voluntary behavior is changed by its consequences, so that behavior followed by favorable outcomes becomes more likely and behavior followed by unfavorable outcomes becomes less likely. It was named and systematically studied by the American psychologist B. F. Skinner, building on Edward Thorndike's earlier law of effect, the principle that responses producing satisfaction are strengthened and those producing discomfort are weakened. Skinner distinguished reinforcement, which increases a behavior, from punishment, which decreases it, and further divided each into positive, adding a stimulus, and negative, removing one. Positive reinforcement adds something pleasant, negative reinforcement removes something unpleasant, and both make a behavior more likely; positive punishment adds something unpleasant and negative punishment removes something pleasant, and both make a behavior less likely. He studied these effects using the operant chamber, or Skinner box, in which an animal such as a rat or pigeon learns to press a lever or peck a key for food. Operant conditioning, which shapes voluntary behavior through consequences, is distinguished from classical conditioning, which associates two stimuli to produce involuntary responses.",
+  "mechanism": "Operant conditioning works by making the consequences of a behavior contingent on that behavior, so that the behavior's future frequency changes. The two basic outcomes are reinforcement, which strengthens a behavior, and punishment, which weakens it, and each comes in a positive form, adding a stimulus, and a negative form, removing one: positive reinforcement adds a reward, negative reinforcement removes an aversive stimulus, positive punishment adds an aversive stimulus, and negative punishment removes a rewarding one. Note that negative reinforcement still increases behavior, since it removes something unpleasant, and is not punishment. Complex behaviors are built through shaping, reinforcing successive approximations to the desired action, and behaviors can be brought under the control of cues through discrimination. A crucial factor is the schedule of reinforcement, the rule governing when a behavior is reinforced: continuous reinforcement rewards every response, while partial schedules reward only some. These partial schedules, fixed-ratio, variable-ratio, fixed-interval, and variable-interval, produce characteristic patterns of responding, with variable-ratio schedules, which reward after an unpredictable number of responses, producing very high and persistent rates that resist extinction. When reinforcement stops entirely, the behavior undergoes extinction and gradually declines.",
+  "examples": [
+    {
+      "tag": "Lever for food",
+      "text": "In a Skinner box a rat presses a lever and receives food, so lever-pressing is positively reinforced and becomes more frequent."
+    },
+    {
+      "tag": "The four consequences",
+      "text": "Adding a reward or removing a nuisance reinforces a behavior, while adding a nuisance or removing a reward punishes it."
+    },
+    {
+      "tag": "Variable-ratio persistence",
+      "text": "Rewarding a behavior after an unpredictable number of responses, as a slot machine does, produces high, persistent responding that resists extinction."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Reinforcement versus punishment",
+      "text": "Reinforcement, positive or negative, increases a behavior, while punishment, positive or negative, decreases it."
+    },
+    {
+      "name": "Schedules of reinforcement",
+      "text": "The rules, fixed or variable, by ratio or interval, governing when a behavior is reinforced and shaping the pattern of responding."
+    }
+  ],
+  "whyItMatters": "Operant conditioning is one of the central principles of the psychology of learning, explaining how voluntary behavior is shaped by its consequences and providing a precise vocabulary of reinforcement, punishment, shaping, extinction, and schedules for describing that process. B. F. Skinner's work made it a foundation of behaviorism and a practical technology of behavior change, applied in education, animal training, behavior therapy, and organizational and clinical settings, where reinforcement is used to build desired behaviors and shaping to teach complex skills. Its concept of schedules of reinforcement explains phenomena from the persistence of gambling, sustained by unpredictable variable-ratio rewards, to the design of habit-forming products. The distinction between reinforcement and punishment, and the counterintuitive point that negative reinforcement increases rather than decreases behavior, sharpens thinking about incentives and discipline. Together with classical conditioning, from which it is carefully distinguished, operant conditioning frames the modern understanding of associative learning. As the account of how rewards and consequences mold what organisms do, operant conditioning remains fundamental to psychology and to any practical effort to change behavior.",
+  "working": [
+    {"lead": "Emit a voluntary behavior", "text": "have an organism perform some action, such as a rat pressing a lever."},
+    {"lead": "Apply a consequence", "text": "follow the action with reinforcement to strengthen it or punishment to weaken it, adding or removing a stimulus."},
+    {"lead": "Schedule the reinforcement", "text": "reward the behavior on a continuous or partial schedule, which shapes how often and how persistently it recurs."}
+  ],
+  "limits": "Operant conditioning concerns voluntary behavior shaped by consequences, so it is distinct from classical conditioning, which associates stimuli to produce involuntary responses, and the two should not be conflated. Its terms are easy to misuse: negative reinforcement is not punishment, since it strengthens behavior by removing something aversive, and positive and negative refer to adding or removing a stimulus, not to good or bad. Punishment is often less effective and more problematic than reinforcement for producing lasting behavior change, and can have side effects. The behaviorist framework has been criticized for downplaying cognition, biological constraints on learning, and internal states, so operant conditioning is one important mechanism of learning rather than a complete theory of behavior. Its schedules and effects are best established in controlled settings and generalize imperfectly to complex human behavior. So operant conditioning robustly describes how consequences shape voluntary behavior, understood as distinct from classical conditioning, easily mislabeled, and one part of a fuller account of learning.",
+  "misreadings": "Operant conditioning is not the same as classical conditioning; it shapes voluntary behavior by consequences, while classical conditioning associates two stimuli to produce involuntary responses. Negative reinforcement is not punishment, since removing something unpleasant increases a behavior, and positive and negative mean adding or removing a stimulus, not good or bad. And it is not a complete theory of all behavior, since it downplays cognition and biology, so treating it as identical to classical conditioning, as making negative reinforcement a punishment, or as a total account of the mind, misreads one important mechanism of learning by consequences.",
+  "origin": "Named and systematically studied by the American psychologist B. F. Skinner, extending Edward Thorndike's law of effect; a foundational principle of behaviorism describing how consequences shape voluntary behavior.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Operant conditioning, Wikipedia. — the shaping of voluntary behavior by consequences, Skinner and Thorndike's law of effect, positive and negative reinforcement and punishment, shaping and extinction, the Skinner box, the schedules of reinforcement, and the contrast with classical conditioning.", "url": "https://en.wikipedia.org/wiki/Operant_conditioning", "type": "secondary"},
+    {"text": "Operant conditioning, Simply Psychology. — Skinner's reinforcement and punishment, the four contingencies, schedules of reinforcement, and the distinction from classical conditioning.", "url": "https://www.simplypsychology.org/operant-conditioning.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Operant_conditioning",
+  "related": [
+    {"slug": "classical-conditioning", "kind": "tension"},
+    {"slug": "the-skinner-box", "kind": "consequence"}
+  ]
+}
