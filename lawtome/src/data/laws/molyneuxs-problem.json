@@ -1,0 +1,57 @@
+{
+  "no": "683",
+  "slug": "molyneuxs-problem",
+  "name": "Molyneux's Problem",
+  "aliases": ["Molyneux's question", "The blind geometer problem"],
+  "statement": "A person born blind who knows a cube and a sphere by touch, if suddenly given sight, could not at first tell which is which by looking.",
+  "statementAccent": "could not at first tell which is which by looking",
+  "meaning": "Molyneux's problem is a thought experiment in the philosophy of perception, posed by the Irish scientist and politician William Molyneux to the philosopher John Locke, who included and discussed it in the second edition of his Essay Concerning Human Understanding in 1694. Molyneux first raised it in a letter in 1688 and again in 1693. Suppose a person born blind has learned to distinguish and name a cube and a sphere by touch. Now suppose their sight is restored. The question is whether, by sight alone and before touching them, they could tell which is the cube and which is the sphere. Both Molyneux and Locke answered no: the newly sighted person could not immediately connect what they see with what they had known by touch, because the association between the senses must be learned through experience. The problem became a touchstone for debates between empiricism and nativism about the mind.",
+  "mechanism": "The reasoning is empiricist. Ideas gained through touch and ideas gained through sight are, on Locke's view, distinct and not automatically linked; nothing in the visual appearance of a cube announces that it is the same shape one has felt. The newly sighted person has learned by touch how a cube and a sphere feel, but has never learned how those tactile ideas correspond to visual ones, so on first opening their eyes they would have no basis to match seen shapes to felt shapes and could not say with certainty which is which. A nativist, by contrast, would expect a common innate spatial framework shared by sight and touch, predicting yes. The problem thus tests whether cross-modal perception is built in or acquired. Modern surgery has allowed partial empirical tests: work through Project Prakash, led by Pawan Sinha, restoring sight to congenitally blind children, found that newly sighted individuals could not at first visually match objects they had known only by touch, performing near chance, but learned to do so within days, broadly supporting the no answer while showing the link is acquired rapidly.",
+  "examples": [
+    {
+      "tag": "Cube versus sphere",
+      "text": "Having learned a cube and a sphere by touch, the newly sighted person is shown them and asked to tell which is which by sight alone, before any touching."
+    },
+    {
+      "tag": "The empiricist no",
+      "text": "Molyneux and Locke answered no, since the person has not yet learned that what affects the touch so must affect the sight so; the cross-sensory link is learned."
+    },
+    {
+      "tag": "Project Prakash",
+      "text": "Studies restoring sight to congenitally blind children found they could not immediately match seen to felt shapes but learned the mapping within days."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The nativist yes",
+      "text": "The opposing answer that a common innate spatial framework shared by sight and touch would let the newly sighted person immediately identify the shapes by vision."
+    },
+    {
+      "name": "The empirical test",
+      "text": "The modern approach of testing the question directly on people whose sight is surgically restored, finding initial failure of transfer followed by rapid learning."
+    }
+  ],
+  "whyItMatters": "Molyneux's problem is one of the most famous and enduring thought experiments about perception, a focal point for the long debate between empiricism and nativism over whether the mind's spatial knowledge is innate or learned. By asking whether the connection between sight and touch is built in or acquired, it engages fundamental questions about how the senses are integrated and how the mind organises experience. The problem drew responses from Berkeley, Leibniz, Voltaire, Diderot, and many others across the Enlightenment, and it retains its grip because it is both conceptually deep and, unusually for such a puzzle, partly testable. Modern surgery restoring sight to the congenitally blind has begun to supply empirical answers, making Molyneux's problem a rare case where a centuries-old philosophical thought experiment meets experimental data.",
+  "working": [
+    {"lead": "Give touch without sight", "text": "let a person born blind learn to tell a cube from a sphere by feeling them, so the shapes are known through one sense only."},
+    {"lead": "Restore sight and ask", "text": "grant them vision and ask whether, before touching, they can now tell by sight alone which seen object is the cube and which the sphere."},
+    {"lead": "Read the answer as empiricist or nativist", "text": "treat a no as evidence the cross-sensory link is learned, and a yes as evidence of an innate common spatial framework, then check against experiment."}
+  ],
+  "limits": "For most of its history Molyneux's problem was a thought experiment answered only by argument, and the answer turned on contested assumptions about whether spatial ideas are shared across the senses innately or learned. Modern empirical tests, notably through Project Prakash, broadly support the empiricist no by finding that newly sighted people cannot at first transfer tactile knowledge to vision, but they complicate it by showing the mapping is learned very quickly, so neither a simple yes nor a simple no fully fits. The studies involve small numbers of subjects and specific surgical circumstances, so their generality is limited. The problem therefore sits between philosophy and cognitive science, with the experimental verdict enriching rather than cleanly settling the original question.",
+  "misreadings": "The question is not whether the newly sighted person could eventually learn to tell the shapes apart by sight, which of course they could, but whether they could do so immediately, before any touching or learning. The no answer does not claim vision is useless without touch; it claims the specific cross-sensory match must be learned. And the modern findings do not simply confirm the classical no: they show initial failure followed by rapid learning, so citing Project Prakash as a clean vindication of either side overstates what the experiments show.",
+  "origin": "Posed by the Irish scientist William Molyneux to John Locke in letters of 1688 and 1693, and discussed by Locke in the 1694 second edition of his Essay Concerning Human Understanding; both answered that the newly sighted could not immediately identify the shapes by sight.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1688,
+  "namedAfter": "William Molyneux",
+  "sources": [
+    {"text": "Molyneux's problem, Wikipedia. — Molyneux's question to Locke, the cube-and-sphere setup, the empiricist no answer, the empiricism-versus-nativism stakes, and the modern Project Prakash tests.", "url": "https://en.wikipedia.org/wiki/Molyneux%27s_problem", "type": "secondary"},
+    {"text": "Molyneux's Problem, Stanford Encyclopedia of Philosophy. — the problem's formulation in Locke's Essay, Locke's and Molyneux's reasoning, and its philosophical stakes.", "url": "https://plato.stanford.edu/entries/molyneux-problem/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Molyneux%27s_problem",
+  "related": [
+    {"slug": "the-inverted-spectrum", "kind": "kindred"},
+    {"slug": "marys-room", "kind": "kindred"}
+  ]
+}

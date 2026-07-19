@@ -1,0 +1,57 @@
+{
+  "no": "688",
+  "slug": "pascals-mugging",
+  "name": "Pascal's Mugging",
+  "aliases": ["The mugging problem", "Fanaticism in expected utility"],
+  "statement": "A con artist promising an astronomically large reward can, on pure expected value, talk you out of your wallet however unlikely the promise.",
+  "statementAccent": "can, on pure expected value, talk you out of your wallet however unlikely the promise",
+  "meaning": "Pascal's mugging is a thought experiment in decision theory that exposes a problem for naive expected-utility maximization. The scenario was originally proposed by Eliezer Yudkowsky and given its canonical form by the philosopher Nick Bostrom in a short dialogue, Pascal's Mugging, published in the journal Analysis in 2009. A mugger with no weapon approaches Pascal and makes a proposition: hand over your wallet, and tomorrow the mugger, claiming magical powers, will return an astronomically large reward, such as an enormous number of happy days of life. Even after Pascal lowers the probability that the mugger is telling the truth to something vanishingly small, the promised payoff can be made so large that the expected value of paying comes out positive, so a strict expected-value maximizer should hand over the wallet. The name alludes to Pascal's Wager, but here the rewards and probabilities are finite, deliberately avoiding the paradoxes of infinity while still breaking expected-value reasoning.",
+  "mechanism": "The trouble is structural. Expected value is probability times payoff, so a decision-maker who maximizes it can be swayed whenever the payoff grows faster than the probability shrinks. The mugger exploits this: for any tiny probability Pascal assigns to the claim being true, the mugger simply names a reward large enough that the product, the expected utility, is positive and even huge. Because there is no principled ceiling on how large the claimed reward can be, and because Pascal's credence, however small, is not zero, the expected value calculation keeps favouring payment. An agent with an unbounded utility function who refuses risk aversion and temporal discounting, as Bostrom's Pascal is stipulated to be, therefore finds no flaw in the mugger's mathematics and pays. This is the phenomenon of fanaticism: tiny-probability, vast-payoff prospects dominate the decision, leaving the maximizer exploitable by, or paralysed before, any sufficiently grandiose promise. The puzzle shows that naive expected-utility maximization needs some further constraint to behave sensibly.",
+  "examples": [
+    {
+      "tag": "The escalating promise",
+      "text": "The mugger offers ever larger rewards until, even at a probability of one in many quadrillions, the expected value of paying exceeds the wallet's small value."
+    },
+    {
+      "tag": "No flaw in the mathematics",
+      "text": "Bostrom's Pascal admits he sees no error in the mugger's expected-value calculation, yet handing over the wallet on such a promise seems clearly irrational."
+    },
+    {
+      "tag": "AI decision-making",
+      "text": "The problem warns that an artificial agent maximizing expected utility could be manipulated or paralysed by tiny-probability, enormous-payoff scenarios."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Fanaticism",
+      "text": "The general failure in which tiny-probability, arbitrarily-large-payoff prospects dominate an expected-value maximizer's choices, overriding ordinary considerations."
+    },
+    {
+      "name": "Proposed remedies",
+      "text": "Responses in the literature such as bounding the utility function, discounting or ignoring sufficiently tiny probabilities, or applying leverage and prior penalties."
+    }
+  ],
+  "whyItMatters": "Pascal's mugging is an influential puzzle in decision theory that reveals how naive expected-utility maximization can break down when confronted with tiny probabilities of enormous payoffs. By showing that a strict maximizer could be talked out of its wallet by an implausible promise, it demonstrates the need for some principled way to handle extreme, low-probability prospects, a problem known as fanaticism. The scenario has become especially important in discussions of artificial intelligence and its safety, where an agent given a flawed decision theory might be manipulated or led to disastrous choices, and in effective altruism and existential-risk reasoning, where weighing low-probability, high-impact outcomes is a central and delicate task. Proposed responses, from bounded utilities to discounting minuscule probabilities, are all attempts to keep rational choice from being hijacked by grandiose but improbable stakes.",
+  "working": [
+    {"lead": "Offer a vast reward", "text": "have the mugger promise an astronomically large payoff in exchange for a small sum handed over now."},
+    {"lead": "Multiply through", "text": "note that however tiny the probability the promise is genuine, a large enough reward makes the expected value of paying positive."},
+    {"lead": "See the maximizer trapped", "text": "recognise that a strict expected-value maximizer must then pay, exposing fanaticism and the need for a constraint on tiny-probability, huge-payoff prospects."}
+  ],
+  "limits": "Pascal's mugging dramatizes a problem for a particular decision rule, naive expected-utility maximization with an unbounded utility function and no discounting; it does not show that all decision theory fails, and several responses aim to defuse it. Bounding utilities, discounting or setting to zero sufficiently tiny probabilities, and imposing leverage or prior penalties on extraordinary claims can each block the mugging, though each carries its own theoretical costs and none is universally accepted. The scenario is a deliberately artificial intuition pump, and how best to handle low-probability, high-stakes prospects in real decisions remains open. So it functions as a challenge that any adequate theory of rational choice under uncertainty must address rather than as a refutation of expected-value reasoning as such.",
+  "misreadings": "The puzzle is not that Pascal is foolish to doubt the mugger; his probability is appropriately tiny. The trouble is that expected-value maximization still tells him to pay, which is the point. It differs from Pascal's Wager in using only finite rewards and probabilities, so it does not depend on the paradoxes of infinity. And it does not show expected utility is worthless, only that the naive, unbounded version is exploitable, so treating the mugging as a reason to abandon expected-value reasoning entirely, rather than to constrain it, misreads a problem meant to refine the theory.",
+  "origin": "Originally proposed by Eliezer Yudkowsky and given its canonical form by the philosopher Nick Bostrom in his 2009 dialogue Pascal's Mugging in the journal Analysis, showing that naive expected-utility maximization can be exploited by tiny-probability, enormous-payoff prospects.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 2009,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Pascal's mugging, Wikipedia. — the Yudkowsky origin and Bostrom's 2009 Analysis dialogue, the mugger and tiny-probability-times-vast-reward structure, the Pascal's Wager analogy with finite stakes, and the expected-utility breakdown or fanaticism.", "url": "https://en.wikipedia.org/wiki/Pascal%27s_mugging", "type": "secondary"},
+    {"text": "Nick Bostrom, Pascal's Mugging, Analysis 69(3), 2009. — the original dialogue in which Pascal admits he sees no flaw in the mugger's expected-value mathematics.", "url": "https://nickbostrom.com/papers/pascal.pdf", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Pascal%27s_mugging",
+  "related": [
+    {"slug": "pascals-wager", "kind": "kindred"},
+    {"slug": "the-doomsday-argument", "kind": "kindred"}
+  ]
+}

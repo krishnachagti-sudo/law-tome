@@ -1,0 +1,57 @@
+{
+  "no": "680",
+  "slug": "pascals-wager",
+  "name": "Pascal's Wager",
+  "aliases": ["The wager argument", "Pascal's gambit"],
+  "statement": "Since believing in God risks little but may win infinite reward, a rational gambler should bet on God.",
+  "statementAccent": "a rational gambler should bet on God",
+  "meaning": "Pascal's Wager is an argument in the philosophy of religion by the French philosopher and mathematician Blaise Pascal, who lived from 1623 to 1662, appearing in his Pensées, a collection of notes for an unfinished defence of Christianity first published in 1670, after his death. Pascal argues that, since reason cannot settle whether God exists, one should treat the question as a bet and reason from the stakes. If you believe and God exists, you gain infinitely, eternal happiness; if you believe and God does not exist, you lose only a little. If you disbelieve and God exists, you risk infinite loss; if you disbelieve and God does not, you gain only a little. Because a finite stake is set against a possible infinite reward, the prudent bet is to live as though God exists and seek to believe. The wager is celebrated less for converting anyone than for being one of the first arguments framed in the terms of decision theory and expected value.",
+  "mechanism": "The wager treats belief as a decision under uncertainty and applies what amounts to expected-value reasoning. Lay out the options in a matrix: believe or not, God exists or not. The payoffs for believing are an infinite gain if God exists and only a finite cost, some forgone worldly pleasures, if not; the payoffs for disbelieving are an infinite loss if God exists and only a finite gain if not. Whatever small probability one assigns to God's existence, multiplying it by an infinite reward yields an infinite expected value for believing, which dominates any finite outcome of disbelief. So betting on God is rational. Pascal anticipates the objection that belief cannot simply be willed, and answers that one can cultivate it by acting as a believer, attending Mass, following the rituals, until habit produces genuine faith. His use of a decision matrix, probability, and infinite utility makes the argument a landmark, and Pascal, a founder of probability theory, is often credited with an early contribution to decision theory.",
+  "examples": [
+    {
+      "tag": "The payoff matrix",
+      "text": "Believing risks only a finite cost but may win infinite reward, while disbelieving risks infinite loss for a finite gain, so the expected value favours belief."
+    },
+    {
+      "tag": "Act as if to believe",
+      "text": "Granting that faith cannot be willed directly, Pascal advises acting as a believer, attending Mass and following the rites, so that habit gradually produces belief."
+    },
+    {
+      "tag": "The many-gods objection",
+      "text": "Critics note the wager does not say which god to bet on; a rival deity offers the same infinite stakes, and backing the wrong one could be as bad as unbelief."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The pragmatic wager",
+      "text": "The reading of the argument as prudential rather than evidential: a reason to act so as to believe, given the stakes, not evidence that God exists."
+    },
+    {
+      "name": "The many-gods problem",
+      "text": "The objection that multiple incompatible religions each promise infinite reward, so the wager alone cannot single out which god to worship."
+    }
+  ],
+  "whyItMatters": "Pascal's Wager is one of the most famous arguments in the philosophy of religion and a milestone in the history of ideas, widely regarded as among the first uses of decision theory, probability, and the concept of infinity in a philosophical argument. Rather than trying to prove God exists, it reframes belief as a rational bet under uncertainty, a move that anticipates expected-utility reasoning by centuries and that Pascal, a pioneer of probability, was uniquely placed to make. The argument has provoked enduring debate about whether prudential reasons can justify belief, whether faith can be cultivated by acting as if, and how to handle decisions involving tiny probabilities and enormous payoffs. Its objections, especially the many-gods problem and the worry that a genuine God would not reward self-interested belief, remain live, making the wager a durable case study in both religious epistemology and the theory of rational choice.",
+  "working": [
+    {"lead": "Treat belief as a bet", "text": "grant that reason cannot decide whether God exists, and reason instead from the stakes of believing or not."},
+    {"lead": "Weigh finite against infinite", "text": "note that belief risks only a finite cost against a possible infinite reward, so its expected value dominates any finite outcome of disbelief."},
+    {"lead": "Cultivate the belief", "text": "since faith cannot be willed outright, act as a believer so that habit and practice may bring genuine belief in time."}
+  ],
+  "limits": "The wager is a prudential argument for acting so as to believe, not evidence that God exists, so it does not touch the truth of theism, only the rationality of betting on it. It faces the many-gods objection, that rival religions offer the same infinite stakes and the wager cannot say which to choose, and the objection that a genuine God might not reward feigned or self-interested belief, so cultivated faith may be worthless or even dishonest. It also assumes the cost of belief is small and that infinite utilities can be handled coherently, both disputed. And the Pensées present several arguments in the relevant section, only one of which is the wager proper, so the neat matrix is a reconstruction. These difficulties leave the wager influential but far from decisive.",
+  "misreadings": "The wager does not claim to prove God exists; it argues only that, given the stakes, it is prudent to bet on belief, a pragmatic rather than evidential case. It is not refuted merely by saying belief cannot be chosen, since Pascal grants this and recommends cultivating faith through practice. But it is seriously pressed by the many-gods objection and by the worry that self-interested belief is not the faith a real God would reward, so treating the wager as a knockdown argument for religion, or dismissing it as an obvious blunder, both misjudge a subtle and much-debated piece of reasoning.",
+  "origin": "Set out by the French philosopher and mathematician Blaise Pascal in his Pensées, published posthumously in 1670, as a decision-theoretic argument that, under uncertainty about God's existence, the finite cost of belief against a possible infinite reward makes betting on God rational.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1670,
+  "namedAfter": "Blaise Pascal",
+  "sources": [
+    {"text": "Pascal's wager, Wikipedia. — Pascal, the Pensées published 1670, the finite-cost-versus-infinite-reward decision matrix, the act-as-if-to-believe remedy, and the many-gods and inauthentic-belief objections.", "url": "https://en.wikipedia.org/wiki/Pascal%27s_wager", "type": "secondary"},
+    {"text": "Pascal's Wager, Stanford Encyclopedia of Philosophy. — the wager's decision-theoretic structure, its status as an early contribution to decision theory, and the main objections.", "url": "https://plato.stanford.edu/entries/pascal-wager/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Pascal%27s_wager",
+  "related": [
+    {"slug": "pascals-mugging", "kind": "kindred"},
+    {"slug": "buridans-ass", "kind": "kindred"}
+  ]
+}
