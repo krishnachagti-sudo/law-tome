@@ -1,0 +1,57 @@
+{
+  "no": "1018",
+  "slug": "dynamic-programming",
+  "name": "Dynamic Programming",
+  "aliases": ["DP", "Bellman's principle of optimality"],
+  "statement": "Solve a hard problem by breaking it into overlapping subproblems and storing each answer once.",
+  "statementAccent": "breaking it into overlapping subproblems and storing each answer once",
+  "meaning": "Dynamic programming is both a mathematical optimization method and an algorithmic technique for solving complex problems by breaking them down into simpler subproblems, solving each subproblem just once, and storing its solution, so that it need never be recomputed. It applies to problems with two key properties. The first is optimal substructure, meaning an optimal solution to the whole problem can be constructed from optimal solutions to its subproblems. The second is overlapping subproblems, meaning the same subproblems recur many times during a naive recursive solution, so that caching their answers saves enormous work. This distinguishes dynamic programming from plain divide and conquer, which breaks a problem into independent, non-overlapping subproblems. The method and the name were developed by the American mathematician Richard Bellman in the 1950s at the RAND Corporation. By his own account in his autobiography, Bellman chose the term dynamic programming partly to sound impressive and to avoid drawing the displeasure of a research-averse Secretary of Defense, a well-known anecdote that scholars note cannot be strictly literal, since his first paper using the term predates that official's tenure. At the heart of the method is Bellman's principle of optimality and the recursive Bellman equation. Dynamic programming can be implemented top-down, with memoized recursion, or bottom-up, by filling a table from the smallest subproblems upward, and it is fundamental across control theory, economics, operations research, bioinformatics, and computer science.",
+  "mechanism": "Dynamic programming works by recognizing that a large optimization or counting problem can be decomposed into a set of overlapping subproblems, and that solving each subproblem once and remembering the answer avoids the explosive redundancy of naive recursion. Its applicability rests on two conditions. Optimal substructure means the optimal solution of the whole contains within it optimal solutions of its parts, so the problem can be expressed recursively; the recursion is captured by the Bellman equation, which relates the value of a problem to the values of its subproblems, grounded in Bellman's principle of optimality: an optimal policy has the property that whatever the initial state and initial decision, the remaining decisions must constitute an optimal policy with regard to the state resulting from the first decision. Overlapping subproblems means the same smaller problems arise repeatedly, so caching pays off. There are two implementation styles. Top-down, or memoization, writes the natural recursion but stores each computed result in a lookup table and returns the stored value on repeat calls. Bottom-up, or tabulation, orders the subproblems from smallest to largest and fills a table iteratively, using already-computed entries. Both turn exponential recursive work into polynomial time by ensuring each subproblem is solved once. Classic illustrations include computing Fibonacci numbers with memoization, the knapsack problem, shortest paths via Bellman-Ford and Floyd-Warshall, longest common subsequence, edit distance, matrix chain multiplication, and sequence alignment such as Needleman-Wunsch in bioinformatics. The same idea, applied to sequential decision-making over time, underlies optimal control through the Hamilton-Jacobi-Bellman equation and much of modern economics and reinforcement learning.",
+  "examples": [
+    {
+      "tag": "Memoized Fibonacci",
+      "text": "Storing each Fibonacci value once turns an exponential recursion into linear-time computation."
+    },
+    {
+      "tag": "The two properties",
+      "text": "Dynamic programming needs optimal substructure and overlapping subproblems, unlike non-overlapping divide and conquer."
+    },
+    {
+      "tag": "Classic problems",
+      "text": "Knapsack, shortest paths, edit distance, and sequence alignment are all solved by dynamic programming."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Top-down versus bottom-up",
+      "text": "Memoized recursion caches results as it recurses; tabulation fills a table from the smallest subproblems up."
+    },
+    {
+      "name": "The Bellman equation",
+      "text": "The recursive relation, resting on the principle of optimality, that expresses a problem's value in terms of its subproblems."
+    }
+  ],
+  "whyItMatters": "Dynamic programming is one of the most powerful and widely applicable problem-solving techniques in mathematics and computer science, a general strategy that turns many otherwise intractable problems into efficient computations. Wherever a problem has optimal substructure and overlapping subproblems, dynamic programming can collapse an exponential search into polynomial time simply by solving each subproblem once and reusing the answer, and this pattern recurs across an astonishing range of fields. In computer science it solves shortest paths, sequence alignment, edit distance, text comparison, and countless optimization problems. In control theory and economics, Bellman's equation and the principle of optimality provide the foundation for optimal control and dynamic decision-making over time, and the same framework underlies reinforcement learning in modern artificial intelligence. In bioinformatics, dynamic programming aligns DNA and protein sequences, a task fundamental to molecular biology. Beyond specific applications, dynamic programming is a way of thinking, a disciplined method for recognizing when a hard problem decomposes into reusable pieces, and it is a staple of algorithm education for exactly that reason. Developed by Richard Bellman in the 1950s, complete with its memorable naming story, it remains a cornerstone technique. As the method of breaking a problem into overlapping subproblems and storing each answer once, dynamic programming is a foundational idea.",
+  "working": [
+    {"lead": "Check the structure", "text": "confirm the problem has optimal substructure and overlapping subproblems."},
+    {"lead": "Write the recurrence", "text": "express the solution in terms of subproblems via a Bellman-style recursive relation."},
+    {"lead": "Store and reuse", "text": "solve each subproblem once, caching by memoization or filling a table bottom-up."}
+  ],
+  "limits": "Dynamic programming is powerful but not universal, and several points reward care. It applies only to problems with both optimal substructure and overlapping subproblems; without overlap, plain divide and conquer suffices, and without optimal substructure the recursive decomposition fails. It can also be expensive in memory, since tabulating or memoizing subproblems may require large tables, and for some problems the number of distinct subproblems is itself exponential, so dynamic programming helps only when that number is manageable. Choosing the right state and recurrence is an art, and a poorly chosen formulation can be inefficient or incorrect. The naming anecdote rewards care: Bellman's story that he chose dynamic programming to avoid a research-averse official is genuine and from his autobiography, but as Russell and Norvig note, it cannot be strictly true, because his first paper using the term appeared in 1952, before that official took office in 1953, so the story should be presented with that caveat. The principle of optimality should be quoted accurately. So dynamic programming robustly solves problems with reusable optimal subproblems, understood as a technique whose applicability, cost, and formulation all require judgment.",
+  "misreadings": "Dynamic programming is not a universal speedup; it needs optimal substructure and overlapping subproblems, and without overlap it is just divide and conquer. It is not free, since caching every subproblem can demand large memory. And the naming story, while genuine, is not literally accurate, given the 1952-versus-1953 timing, so treating dynamic programming as always applicable, as costless, or as named exactly for the reasons the anecdote gives, misreads it.",
+  "origin": "The optimization method and algorithmic technique developed by Richard Bellman in the 1950s at RAND, which solves problems with optimal substructure and overlapping subproblems by storing each subproblem's answer once.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1953,
+  "namedAfter": "Richard Bellman",
+  "sources": [
+    {"text": "Dynamic programming, Wikipedia. — dynamic programming as an optimization method and algorithmic technique using optimal substructure and overlapping subproblems, Bellman's development in the 1950s and the naming anecdote from his autobiography, top-down memoization versus bottom-up tabulation, the classic examples, and applications across control theory, economics, and bioinformatics.", "url": "https://en.wikipedia.org/wiki/Dynamic_programming", "type": "secondary"},
+    {"text": "Bellman equation, Wikipedia. — the principle of optimality and the recursive Bellman equation at the heart of dynamic programming, formulated by Richard Bellman.", "url": "https://en.wikipedia.org/wiki/Bellman_equation", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Dynamic_programming",
+  "related": [
+    {"slug": "dijkstras-algorithm", "kind": "kindred"},
+    {"slug": "the-a-star-algorithm", "kind": "kindred"}
+  ]
+}

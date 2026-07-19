@@ -1,0 +1,57 @@
+{
+  "no": "1025",
+  "slug": "pagerank",
+  "name": "PageRank",
+  "aliases": ["PageRank algorithm", "Google PageRank"],
+  "statement": "Rank a page by the importance of the pages linking to it, as if a random surfer wandered the web.",
+  "statementAccent": "the importance of the pages linking to it",
+  "meaning": "PageRank is an algorithm that ranks web pages, the nodes of a graph, by their importance, based on the link structure connecting them. It assigns each page a numerical weight, its PageRank, measuring the page's relative importance within the network. It was the original algorithm used by Google Search to order its results, and the best known of the methods behind the company's early success. The core idea is recursive: a page is important if it is linked to by other important pages. A link from page A to page B is treated as a vote by A for B, but votes from more important pages count for more, and a page's total voting power is divided among the pages it links to, so a link from a highly ranked page that links to few others carries great weight. Mathematically, PageRank corresponds to the stationary distribution of a random-surfer model: imagine a web surfer who starts on some page and repeatedly clicks links at random; the PageRank of a page is the long-run probability that this surfer is on that page. A damping factor, typically around 0.85, models the probability that the surfer keeps clicking links rather than jumping to a random page, which also guarantees that the computation converges. PageRank can be computed iteratively by power iteration, or as the principal eigenvector of a modified link matrix. It was developed by Larry Page and Sergey Brin at Stanford University beginning in 1996, and is named after Larry Page.",
+  "mechanism": "PageRank measures the importance of each page in a linked network by treating importance as something that flows through links and reaches a stable, self-consistent equilibrium. The definition is recursive: a page's rank depends on the ranks of the pages linking to it. Each link from one page to another is a vote, but not all votes are equal; a vote from a page that is itself important counts more, and each page's voting power is divided evenly among its outgoing links, so a page that links to many others confers less on each. This circular definition is made precise by the random-surfer model. Picture a surfer who begins on an arbitrary page and, at each step, with high probability follows one of the current page's outbound links chosen at random, and with the remaining probability teleports to a page chosen uniformly at random anywhere in the network. This process is a Markov chain, and the PageRank of a page is its probability in the chain's stationary distribution, the long-run fraction of time the surfer spends there. The probability of following a link rather than teleporting is the damping factor, commonly set to about 0.85; the teleportation term is not merely realistic but mathematically essential, because it ensures the chain is well-behaved and has a unique stationary distribution to which the computation converges, avoiding traps at pages with no outgoing links or within isolated clusters. In practice PageRank is computed by power iteration: one starts with an even distribution of rank and repeatedly redistributes it along links, with the damping and teleportation applied, until the values settle. Equivalently, the PageRank vector is the dominant eigenvector of the modified link, or transition, matrix. The method drew on earlier ideas from citation analysis and eigenvector centrality.",
+  "examples": [
+    {
+      "tag": "Links as weighted votes",
+      "text": "A link is a vote, but votes from important pages count more, and a page splits its vote among its outbound links."
+    },
+    {
+      "tag": "The random surfer",
+      "text": "A page's PageRank is the long-run probability a surfer clicking links at random ends up on it."
+    },
+    {
+      "tag": "The damping factor",
+      "text": "Around 0.85, it sets how often the surfer follows a link versus teleporting, and ensures the computation converges."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Power iteration versus eigenvector",
+      "text": "PageRank is computed by repeatedly redistributing rank along links, equivalently the dominant eigenvector of the link matrix."
+    },
+    {
+      "name": "Citation-analysis roots",
+      "text": "PageRank built on earlier ideas from bibliometric citation analysis and eigenvector centrality, related to Kleinberg's HITS."
+    }
+  ],
+  "whyItMatters": "PageRank is one of the most influential algorithms of the internet age, the idea that helped Google become the dominant search engine and reshaped how the world finds information. When Larry Page and Sergey Brin devised it at Stanford in the late 1990s, web search was dominated by methods that ranked pages largely by their text, easily manipulated and poor at surfacing quality; PageRank offered a fundamentally better signal by using the web's own link structure, treating a link as a considered endorsement and letting importance flow recursively through the network. This produced search results that felt dramatically more relevant, and it became the technical heart of early Google, a company that went on to transform the economy and daily life. Beyond search, PageRank's core insight, that the importance of a node can be defined by the importance of the nodes pointing to it, and computed as the stationary distribution of a random walk, has proven remarkably general, and variants of it are used in fields from bibliometrics and social-network analysis to biology and recommendation systems. It connects to a deep lineage of ideas in citation analysis and eigenvector centrality, and it is a beautiful, teachable example of linear algebra and Markov chains solving a real problem. Named after Larry Page in a fitting pun on web pages, PageRank stands as a defining algorithm of the modern web.",
+  "working": [
+    {"lead": "Model the links", "text": "treat each link as a weighted vote, with a page's vote split among its outbound links."},
+    {"lead": "Run the random surfer", "text": "define rank as the stationary distribution of a surfer who follows links or teleports with the damping factor."},
+    {"lead": "Iterate to convergence", "text": "redistribute rank along links repeatedly, by power iteration, until the values settle into the PageRank vector."}
+  ],
+  "limits": "PageRank is powerful but has limits that reward care. It measures importance purely from link structure, so it is only a proxy for genuine quality or relevance, and it can be gamed: link farms, reciprocal linking, and paid links were used to inflate rankings, prompting continual countermeasures. It is not, and was never, the whole of Google's ranking; it was the original and best-known signal, but modern search combines it with hundreds of other factors, so equating PageRank with how Google ranks today is mistaken. The damping factor, commonly about 0.85, is a modelling choice that affects the results and is essential mostly for mathematical convergence and handling pages with no outbound links, rather than being a precisely measured constant. The algorithm assumes a static snapshot of the link graph, whereas the real web changes constantly. Some historical details reward care: PageRank was developed by Page and Brin at Stanford from 1996, is named after Larry Page, the patent was assigned to Stanford with Google holding an exclusive license, and the idea draws on earlier citation analysis and eigenvector centrality. So PageRank robustly ranks pages by link-based importance, understood as one influential signal, gameable and static, that is a proxy for quality rather than a complete or current ranking system.",
+  "misreadings": "PageRank is not the whole of Google's ranking; it was the original signal, now combined with many others. It measures link structure, a proxy for quality that can be manipulated, not quality itself. And the damping factor is a modelling choice for convergence, not a measured law of the web, so treating PageRank as all of modern search, as an unmanipulable truth, or as physically exact, misreads it.",
+  "origin": "The link-analysis ranking algorithm developed by Larry Page and Sergey Brin at Stanford from 1996, which scores a page by the importance of pages linking to it, modelled as a random surfer's stationary distribution.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1996,
+  "namedAfter": "Larry Page",
+  "sources": [
+    {"text": "PageRank, Wikipedia. — PageRank as the algorithm used by Google Search to rank pages by the number and quality of links, the recursive importance idea, the random-surfer Markov-chain interpretation and stationary distribution, the damping factor around 0.85, computation by power iteration and as the dominant eigenvector, the development by Page and Brin at Stanford from 1996, the naming pun, and roots in citation analysis and eigenvector centrality.", "url": "https://en.wikipedia.org/wiki/PageRank", "type": "secondary"},
+    {"text": "Sergey Brin and Lawrence Page, The Anatomy of a Large-Scale Hypertextual Web Search Engine, Computer Networks and ISDN Systems, vol. 30, pp. 107-117, 1998. — the paper describing the Google prototype and the PageRank algorithm.", "url": "http://infolab.stanford.edu/~backrub/google.html", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/PageRank",
+  "related": [
+    {"slug": "dijkstras-algorithm", "kind": "kindred"},
+    {"slug": "metcalfes-law", "kind": "kindred"}
+  ]
+}

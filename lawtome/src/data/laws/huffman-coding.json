@@ -1,0 +1,57 @@
+{
+  "no": "1026",
+  "slug": "huffman-coding",
+  "name": "Huffman Coding",
+  "aliases": ["Huffman code", "Minimum-redundancy coding"],
+  "statement": "Compress data by giving frequent symbols short codes and rare symbols long ones, optimally.",
+  "statementAccent": "giving frequent symbols short codes and rare symbols long ones",
+  "meaning": "Huffman coding is an algorithm for lossless data compression that produces an optimal prefix code. It assigns a variable-length codeword to each symbol, with more frequent symbols given shorter codewords and less frequent symbols longer ones, so that the total length of the encoded data is minimized. The result is a prefix code, also called a prefix-free code, meaning that no codeword is a prefix of any other; this property lets the encoded stream be decoded unambiguously, reading it left to right without needing separators, since as soon as a valid codeword is recognized it can only be that symbol. Huffman coding is optimal in a precise sense: among all prefix codes for a given set of symbol frequencies, it minimizes the expected codeword length. This optimality holds for methods that encode each symbol separately with an integer number of bits; arithmetic coding, which is not restricted to whole-bit codewords, can compress further. The algorithm was developed by David Huffman in 1951, while he was a doctoral student at MIT in a course taught by Robert Fano, and published in 1952 in the paper A Method for the Construction of Minimum-Redundancy Codes. By a celebrated anecdote, Fano offered his class a choice between a term paper and a final exam, and Huffman, working on the term-paper problem of finding the most efficient code, discovered the optimal bottom-up method just as he was about to give up, surpassing the top-down Shannon-Fano coding of his professor and Claude Shannon. Huffman coding is widely used as an entropy-coding stage in compression formats such as DEFLATE, JPEG, and MP3.",
+  "mechanism": "Huffman coding builds an optimal prefix code by a greedy, bottom-up construction of a binary tree from the symbols' frequencies. One begins by creating a leaf node for each symbol, weighted by that symbol's frequency or probability. Then, repeatedly, the two nodes with the lowest weights are selected and merged into a new internal node whose weight is the sum of theirs, and this new node is placed back among the candidates; the two chosen nodes become its children. This merging continues until only a single node remains, which is the root of the completed tree. The codeword for each symbol is then read off as the path from the root to that symbol's leaf, assigning, say, zero for a left branch and one for a right branch. Because every symbol sits at a leaf, no symbol's path is a prefix of another's, so the code is automatically prefix-free and uniquely decodable. The greedy rule of always combining the two least frequent nodes is what makes the code optimal: it ensures that the rarest symbols end up deepest in the tree, with the longest codewords, while the most frequent symbols stay near the root with the shortest, minimizing the expected number of bits per symbol. Decoding reverses the process, walking down the tree from the root as each bit is read and emitting a symbol whenever a leaf is reached, then returning to the root. In practice, Huffman coding usually serves as a back-end entropy-coding step applied after other modelling or transformation stages, which is how it appears inside the DEFLATE algorithm used by ZIP, gzip, and PNG, and inside JPEG and MP3.",
+  "examples": [
+    {
+      "tag": "Building the tree",
+      "text": "Repeatedly merge the two lowest-frequency nodes into a parent until one tree remains, then read codes as root-to-leaf paths."
+    },
+    {
+      "tag": "Prefix-free decoding",
+      "text": "No codeword is a prefix of another, so the encoded stream is decoded unambiguously without separators."
+    },
+    {
+      "tag": "Inside real formats",
+      "text": "Huffman coding is the entropy stage in DEFLATE for ZIP and PNG, and in JPEG and MP3."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Fano anecdote",
+      "text": "Huffman found the optimal method as a student on a term-paper problem, beating his teacher Fano's Shannon-Fano coding."
+    },
+    {
+      "name": "Arithmetic coding",
+      "text": "By not restricting codewords to whole bits, arithmetic coding can compress beyond Huffman's per-symbol optimum."
+    }
+  ],
+  "whyItMatters": "Huffman coding is a foundational algorithm of data compression and information theory, an elegant and provably optimal solution to a basic problem: how to encode a set of symbols in as few bits as possible. Its impact is enormous and largely invisible, because it operates inside the compression formats that underpin digital life. Huffman coding, or a close relative, is the entropy-coding stage in DEFLATE, the algorithm behind ZIP archives, gzip, and PNG images; it appears in JPEG image compression and MP3 audio; and it has shaped the design of countless codecs. Wherever data must be stored or transmitted compactly, the idea of giving common symbols short codes and rare ones long codes, arranged so the code is uniquely decodable, does quiet, essential work. Beyond its ubiquity, Huffman coding is a landmark of algorithmic elegance and a favourite teaching example, a clean illustration of the greedy method and of how a simple local rule, always merging the two least frequent items, yields a globally optimal result. Its origin story, in which a graduate student solved a problem that had eluded his professor Robert Fano and Claude Shannon, is one of the most beloved anecdotes in computer science. Developed by David Huffman in 1951 and published in 1952, it remains after seven decades a cornerstone of how information is compressed. As the method of optimal variable-length codes, Huffman coding is essential to the digital world.",
+  "working": [
+    {"lead": "Start with leaves", "text": "make a leaf node for each symbol weighted by its frequency."},
+    {"lead": "Merge the rarest", "text": "repeatedly combine the two lowest-weight nodes into a parent until a single tree remains."},
+    {"lead": "Read the codes", "text": "assign each symbol the root-to-leaf path as its codeword, giving a prefix-free, optimal code."}
+  ],
+  "limits": "Huffman coding is optimal within its assumptions, but those assumptions reward care. It is optimal only among prefix codes that assign each symbol a whole number of bits; because real symbol probabilities rarely match powers of one-half, this integer-bit restriction leaves some redundancy, and arithmetic coding, which effectively allows fractional bits, can compress further, so Huffman coding is not the best compression method in general. Its optimality also assumes the symbol frequencies are known and fixed; if the true distribution differs from the one used to build the tree, or changes over time, the code is no longer optimal, which is why adaptive Huffman variants and other modelling exist. Huffman coding compresses symbol by symbol and does not by itself capture correlations between symbols, so it is usually paired with modelling or transformation stages, as in DEFLATE, JPEG, and MP3. Some historical details reward care: Huffman developed the method in 1951 as a doctoral student and published it in 1952; the paper's title is A Method for the Construction of Minimum-Redundancy Codes; and the famous term-paper anecdote, in which he surpassed the Shannon-Fano method, is genuine. So Huffman coding robustly produces optimal prefix codes, understood as optimal only per-symbol with integer bit lengths and for a known distribution, not as the best possible compression.",
+  "misreadings": "Huffman coding is not the best compression method in general; it is optimal only among integer-bit prefix codes, and arithmetic coding can do better. It is not optimal for an unknown or changing distribution, and it does not exploit correlations between symbols on its own. So treating Huffman coding as universally optimal, as adaptive by default, or as a complete compressor rather than an entropy-coding stage, misreads it.",
+  "origin": "The optimal prefix-code compression algorithm devised by David Huffman in 1951 as an MIT student in Robert Fano's course and published in 1952, giving frequent symbols short codewords and rare ones long codewords.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1952,
+  "namedAfter": "David A. Huffman",
+  "sources": [
+    {"text": "Huffman coding, Wikipedia. — Huffman coding as an optimal prefix code for lossless compression, the greedy bottom-up tree construction merging the two lowest-probability nodes, prefix-free unambiguous decoding, optimality among integer-bit symbol codes with arithmetic coding doing better, David Huffman's 1951 development in Fano's MIT course and 1952 paper, and use in DEFLATE, JPEG, and MP3.", "url": "https://en.wikipedia.org/wiki/Huffman_coding", "type": "secondary"},
+    {"text": "Discovery of Huffman Codes, Mathematical Association of America. — an account of David Huffman's 1951 discovery of the optimal minimum-redundancy code in Robert Fano's MIT course, surpassing the Shannon-Fano method.", "url": "https://old.maa.org/press/periodicals/convergence/discovery-of-huffman-codes", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Huffman_coding",
+  "related": [
+    {"slug": "quicksort", "kind": "kindred"},
+    {"slug": "the-fast-fourier-transform", "kind": "kindred"}
+  ]
+}

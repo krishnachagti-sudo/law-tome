@@ -1,0 +1,57 @@
+{
+  "no": "1019",
+  "slug": "the-simplex-algorithm",
+  "name": "The Simplex Algorithm",
+  "aliases": ["Simplex method", "Dantzig's simplex algorithm"],
+  "statement": "Optimize a linear objective by walking along the edges of the feasible region from corner to corner.",
+  "statementAccent": "walking along the edges of the feasible region from corner to corner",
+  "meaning": "The simplex algorithm, also called the simplex method, is an algorithm for solving linear programming problems, that is, for optimizing a linear objective function subject to linear equality and inequality constraints. Such a problem asks to maximize or minimize a linear quantity, like profit or cost, over the set of points satisfying a system of linear constraints. Geometrically, the constraints carve out a convex polytope, a many-sided region, and a fundamental fact of linear programming is that if an optimum exists, it is attained at a vertex, or corner, of this polytope. The simplex algorithm exploits this: it begins at one vertex and repeatedly moves along an edge of the polytope to an adjacent vertex that improves the objective value, using pivot operations on a tableau, continuing until it reaches a vertex from which no neighbouring vertex is better, which must be optimal. The method was developed by the American mathematician George Dantzig in 1947, while he was working on planning problems for the United States Army Air Force, and made publicly available in 1951; Dantzig is widely called the father of linear programming. In the worst case the simplex method can take exponential time, as shown by the Klee-Minty cube in 1972, but in practice it is remarkably fast and efficient on real problems, a behaviour explained by the smoothed analysis of Spielman and Teng. It was named one of the top ten algorithms of the twentieth century and is foundational to operations research.",
+  "mechanism": "The simplex algorithm solves a linear program by exploiting the geometry of linear constraints. The feasible region, the set of points satisfying all the linear inequalities, is a convex polytope, and because the objective is linear, its optimum over that region, if one exists, is achieved at a vertex of the polytope. The algorithm therefore searches among vertices rather than the whole region. Starting from an initial feasible vertex, it examines the edges leaving that vertex and identifies one along which the objective improves; it then moves to the adjacent vertex at the other end of that edge. This step is carried out algebraically as a pivot operation on the simplex tableau, a table representing the constraints and objective, which swaps a variable into the basis and another out, corresponding to moving from one corner to a neighbouring one. Each pivot improves, or at least does not worsen, the objective, and the process repeats, walking from vertex to adjacent vertex along the edges of the polytope, until it reaches a vertex where no adjacent vertex gives a better objective value; by the convexity of the problem, such a vertex is a global optimum. The number of vertices can be astronomically large, and in the worst case the path can be exponentially long, as Klee and Minty showed in 1972 with a distorted cube on which the method visits all its vertices, but on typical problems the simplex method reaches the optimum after remarkably few steps. Linear programs can also be solved in guaranteed polynomial time by other methods, Khachiyan's ellipsoid algorithm of 1979 and Karmarkar's interior-point algorithm of 1984, but the simplex method remains widely used for its practical speed.",
+  "examples": [
+    {
+      "tag": "Corners of a polytope",
+      "text": "The feasible region is a convex polytope, and the optimum, if any, sits at one of its vertices."
+    },
+    {
+      "tag": "Pivoting",
+      "text": "Each step is a pivot on the tableau, moving from one vertex to an adjacent, better one."
+    },
+    {
+      "tag": "Fast in practice",
+      "text": "Despite an exponential worst case, the simplex method is remarkably efficient on real-world problems."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Klee-Minty cube",
+      "text": "A 1972 example on which the simplex method visits all vertices, proving its exponential worst case."
+    },
+    {
+      "name": "Polynomial alternatives",
+      "text": "Khachiyan's ellipsoid method (1979) and Karmarkar's interior-point method (1984) solve linear programs in polynomial time."
+    }
+  ],
+  "whyItMatters": "The simplex algorithm is one of the most important and influential algorithms of the twentieth century, the method that made large-scale optimization a practical, everyday tool and helped create the entire field of operations research. Linear programming, optimizing a linear objective under linear constraints, models an enormous range of real problems: allocating resources, scheduling production, planning transportation and logistics, blending materials, and countless decisions in economics, industry, and the military. Before Dantzig, such problems had no general, efficient solution method; the simplex algorithm supplied one, and its remarkable speed on real instances meant that optimization problems once thought hopeless could be solved routinely, transforming management science, economics, and engineering. Its geometric insight, that the optimum of a linear program lies at a corner of a convex polytope, and its strategy of walking along edges to ever-better corners, is a landmark of algorithmic thinking, and the gap between its exponential worst case and its excellent practical performance drove deep advances in the analysis of algorithms, culminating in the smoothed analysis of Spielman and Teng. Named one of the top ten algorithms of the century and created by George Dantzig, the father of linear programming, in 1947, it remains in constant use. As the method that optimizes by walking from corner to corner of the feasible region, the simplex algorithm is foundational.",
+  "working": [
+    {"lead": "Set up the polytope", "text": "the linear constraints define a convex polytope whose vertices are candidate optima."},
+    {"lead": "Start at a vertex", "text": "begin from an initial feasible corner of the polytope."},
+    {"lead": "Pivot to better corners", "text": "move along improving edges to adjacent vertices until none is better, reaching the optimum."}
+  ],
+  "limits": "The simplex algorithm is fast and widely used, but several points reward care. Its worst-case running time is exponential, not polynomial: Klee and Minty showed in 1972 that on a specially constructed cube the method can visit all its vertices, so its excellent typical performance is an empirical and average-case fact, formalized by smoothed analysis, not a worst-case guarantee. This matters because linear programming itself is solvable in polynomial time by other methods, Khachiyan's ellipsoid algorithm and Karmarkar's interior-point algorithm, which the simplex method is not; the algorithm and the problem's complexity should not be conflated. The method requires an initial feasible vertex, and degenerate cases can in principle cause cycling, handled by anti-cycling rules. Some details reward care: Dantzig developed the simplex method in 1947 and it was published in 1951; the homework anecdote often told about him concerns two unsolved statistics problems set by Jerzy Neyman and is a separate event, not the invention of the simplex method. So the simplex method robustly solves linear programs by traversing vertices, understood as a practically fast algorithm with an exponential worst case, distinct from the polynomial complexity of the problem it solves.",
+  "misreadings": "The simplex method is not a polynomial-time algorithm; its worst case is exponential, even though linear programming itself is solvable in polynomial time by other methods. Its practical speed is an average-case fact, not a guarantee. And Dantzig's famous homework anecdote is about statistics problems, not the simplex method, so treating the algorithm as worst-case efficient, as equivalent to the complexity of linear programming, or as the subject of the homework story, misreads it.",
+  "origin": "The algorithm for linear programming developed by George Dantzig in 1947, which optimizes a linear objective by moving along the edges of the feasible polytope from vertex to improving vertex.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1947,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Simplex algorithm, Wikipedia. — the simplex method as an algorithm for linear programming, the feasible region as a polytope with the optimum at a vertex, movement along edges via pivot operations, Dantzig's development in 1947, the Klee-Minty cube and exponential worst case, practical efficiency and smoothed analysis, and the ellipsoid and interior-point alternatives.", "url": "https://en.wikipedia.org/wiki/Simplex_algorithm", "type": "secondary"},
+    {"text": "George Dantzig, Wikipedia. — George Dantzig as the developer of the simplex method in 1947 and father of linear programming, and the separate anecdote of the statistics problems set by Jerzy Neyman.", "url": "https://en.wikipedia.org/wiki/George_Dantzig", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Simplex_algorithm",
+  "related": [
+    {"slug": "dynamic-programming", "kind": "kindred"},
+    {"slug": "gradient-descent", "kind": "kindred"}
+  ]
+}
