@@ -1,0 +1,83 @@
+{
+  "no": "963",
+  "slug": "sense-and-reference",
+  "name": "Sense and Reference",
+  "aliases": [
+    "Sinn und Bedeutung",
+    "Frege's distinction"
+  ],
+  "statement": "A term has both a referent it stands for and a sense, the way that referent is presented.",
+  "statementAccent": "the way that referent is presented",
+  "meaning": "Sense and reference is Gottlob Frege's distinction, drawn in his 1892 paper Uber Sinn und Bedeutung, On Sense and Reference, between two aspects of the meaning of a linguistic expression. The reference, in German Bedeutung, variously translated as reference, meaning, or denotation, is the object in the world that the expression stands for or picks out. The sense, in German Sinn, is the mode of presentation of that reference, the particular way in which the referent is presented, thought about, or given. Frege's key insight is that two expressions can have the very same reference yet differ in sense. His famous example is the morning star and the evening star, two names that both refer to the planet Venus but present it in different ways, as the last star seen at dawn and as the first seen at dusk. Frege held that the sense of an expression is objective, part of a shared, public meaning that competent speakers grasp, and must be distinguished from a private, subjective idea or mental image in an individual's mind. Sense determines reference, not the reverse. Applied to whole sentences, Frege took the sense to be the thought, in German Gedanke, a proposition, and the reference to be the sentence's truth value, the True or the False. The distinction is a cornerstone of analytic philosophy of language.",
+  "mechanism": "Frege introduced the sense-reference distinction to solve a puzzle about identity statements and the informativeness of the form a equals b. Consider the morning star is the evening star. If the meaning of a name were simply its reference, then, since both names refer to Venus, this statement would say only that Venus is Venus, and would be as trivial and uninformative as the morning star is the morning star, an instance of a equals a knowable a priori. Yet the identity of the morning and evening stars was a genuine astronomical discovery, informative and known only a posteriori. Frege explains the difference by distinguishing sense from reference: the two names share a reference, Venus, but express different senses, different modes of presentation, and the informativeness of the identity lies in the recognition that these two distinct senses in fact present one and the same object. The machinery generalizes. Because sense is the way a referent is presented, an expression can have a sense even when it has no reference at all, as with a name from fiction like Odysseus, or a well-formed but non-denoting description; such expressions are meaningful, expressing a thought, yet stand for nothing, which is a further motivation for keeping sense and reference apart. Extended to sentences, the sense is the thought expressed, a proposition graspable by anyone who understands the sentence, and the reference, for Frege, is the truth value, so that substituting one name for another with the same reference preserves the truth value while possibly changing the thought expressed.",
+  "examples": [
+    {
+      "tag": "Morning and evening star",
+      "text": "The morning star and the evening star refer to the same planet Venus but present it through different senses."
+    },
+    {
+      "tag": "The informative identity",
+      "text": "That the morning star is the evening star is informative because two different senses turn out to present one object."
+    },
+    {
+      "tag": "Sense without reference",
+      "text": "A fictional name like Odysseus has a sense, a mode of presentation, yet refers to nothing at all."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Sense of a sentence",
+      "text": "Frege took a sentence's sense to be the thought it expresses and its reference to be its truth value."
+    },
+    {
+      "name": "Objective sense versus private idea",
+      "text": "Frege distinguished the shared, objective sense of an expression from a speaker's private mental image or idea."
+    }
+  ],
+  "whyItMatters": "The distinction between sense and reference is one of the founding moves of analytic philosophy of language and remains central to how we think about meaning, names, and thought. By separating what an expression stands for from the way it presents its referent, Frege gave a precise and elegant solution to a deep puzzle, why identity statements can be informative, and provided the tools to explain a cluster of phenomena that a purely referential theory of meaning cannot handle: informative identities, meaningful but non-referring expressions, and the failure of substitution in belief contexts. His notion of an objective, graspable sense, distinct from private psychological ideas, shaped the whole subsequent tradition and its conception of thoughts as shareable, public contents. The distinction set the agenda for later theories of names and reference, including the descriptivist tradition it inspired and the causal and direct-reference theories of Kripke and others that later challenged the Fregean picture, arguing that names are not disguised descriptions. Debates over sense and reference run through the philosophy of language, logic, and mind to this day. As Frege's analysis of the two dimensions of meaning, the sense-reference distinction is a foundational contribution to modern philosophy.",
+  "working": [
+    {
+      "lead": "Separate the two",
+      "text": "distinguish the object an expression stands for, its reference, from the way it presents that object, its sense."
+    },
+    {
+      "lead": "Explain informative identity",
+      "text": "account for why a equals b can be informative by noting the two terms share a reference but differ in sense."
+    },
+    {
+      "lead": "Extend to sentences",
+      "text": "take a sentence's sense to be the thought it expresses and its reference, for Frege, to be its truth value."
+    }
+  ],
+  "limits": "Frege's distinction is foundational but not beyond dispute, and later philosophers challenged parts of it. The most influential challenge came from the causal and direct-reference theorists, above all Saul Kripke, who argued against the descriptivist reading, on which a name's sense is given by an associated description, contending that names are rigid designators that refer to the same object across possible worlds and are not synonymous with any description, so that the Fregean sense of a name, if construed descriptively, gets its modal and epistemic behavior wrong. There is also ongoing debate about what exactly a Fregean sense is, whether names really have senses at all, and how to treat sense in belief and other opaque contexts. Some fine points of translation and terminology reward care: the German Bedeutung is rendered variously as reference, meaning, or denotation, which can cause confusion, and the exact German phrase for mode of presentation is best attributed to Frege's own text rather than to summaries. So sense and reference robustly distinguishes what an expression stands for from how it presents it, understood as a foundational distinction whose descriptivist development was later challenged by the causal theory of reference.",
+  "misreadings": "Frege's sense is not a private mental image or subjective idea; it is an objective, shareable mode of presentation that competent speakers grasp. Reference and sense are not the same, since expressions with the same reference can differ in sense, and an expression can have a sense while lacking any reference. And the distinction does not by itself settle that names are disguised descriptions, a descriptivist development that Kripke's causal theory contests, so treating sense as a private idea, as identical to reference, or as committing one to descriptivism, misreads Frege's distinction.",
+  "origin": "Gottlob Frege's distinction, drawn in his 1892 paper On Sense and Reference, between the reference of an expression, the object it stands for, and its sense, the mode of presentation of that object.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1892,
+  "namedAfter": "Gottlob Frege",
+  "sources": [
+    {
+      "text": "Gottlob Frege, Stanford Encyclopedia of Philosophy. — Frege's distinction between sense and reference from On Sense and Reference (1892), the informativeness puzzle of identity statements, the objective sense versus private idea, the sense of a sentence as a thought and its reference as a truth value, and the later Kripkean challenge to descriptivism.",
+      "url": "https://plato.stanford.edu/entries/frege/",
+      "type": "secondary"
+    },
+    {
+      "text": "Frege, Gottlob, Internet Encyclopedia of Philosophy. — the sense/reference distinction, the morning-star and evening-star example and the informativeness of identity, the objective third-realm status of senses, and the reference of a sentence as its truth value and its sense as a thought.",
+      "url": "https://iep.utm.edu/frege/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Sense_and_reference",
+  "related": [
+    {
+      "slug": "the-theory-of-descriptions",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-causal-theory-of-reference",
+      "kind": "tension"
+    }
+  ]
+}

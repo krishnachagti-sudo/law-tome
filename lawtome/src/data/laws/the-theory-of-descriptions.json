@@ -1,0 +1,83 @@
+{
+  "no": "964",
+  "slug": "the-theory-of-descriptions",
+  "name": "The Theory of Descriptions",
+  "aliases": [
+    "Russell's theory of descriptions",
+    "On Denoting"
+  ],
+  "statement": "The phrase the so-and-so is not a name but a disguised claim that exactly one thing fits.",
+  "statementAccent": "a disguised claim that exactly one thing fits",
+  "meaning": "The theory of descriptions is Bertrand Russell's analysis of definite descriptions, phrases of the form the F, such as the present King of France or the author of Waverley, set out in his 1905 paper On Denoting. Russell argued that, despite appearances, definite descriptions are not genuine referring expressions or names of objects. They are what he called incomplete symbols, which have no meaning on their own but disappear on logical analysis: a sentence containing the F is analyzed into a quantified statement in which no single term stands for the F. On Russell's analysis, a sentence of the form the F is G asserts the conjunction of three claims: that there is at least one F, the existence claim; that there is at most one F, the uniqueness claim; and that whatever is F is G, the predication. Formally, there exists an x such that x is F, and for any y, if y is F then y is identical to x, and x is G. The theory was a landmark of analytic philosophy, a model of logical analysis showing that the grammatical form of a sentence can mislead as to its true logical form, and Frank Ramsey called it a paradigm of philosophy. It solves several puzzles that had troubled Frege and Meinong, and it was later criticized by P. F. Strawson.",
+  "mechanism": "Russell's theory works by paraphrasing away the apparent referring phrase. Where ordinary grammar suggests that the F names an object, Russell rewrites the whole sentence so that the description is replaced by quantifiers and a uniqueness clause, leaving no term that purports to denote the F. This paraphrase does three jobs at once, and its power shows in the puzzles it dissolves. First, it handles empty descriptions without positing strange objects. The present King of France is bald seems to be about someone, yet there is no King of France; on Russell's analysis the sentence simply asserts, among other things, that there exists a unique King of France, which is false, so the whole sentence comes out plainly false rather than meaningless or truth-valueless, and one need not follow Meinong in admitting nonexistent objects to serve as its subject. Second, it resolves an apparent violation of the law of excluded middle. The present King of France is not bald looks as though it should be true if the affirmative is false, but Russell shows the negation is ambiguous in scope: on the wide-scope reading, saying it is not the case that there is a unique bald King of France, it is true, while on the narrow-scope reading, saying there is a unique King of France who is non-bald, it is false, so no genuine contradiction arises. Third, scope distinctions handle failures of substitution in belief and desire, as when George IV wished to know whether Scott was the author of Waverley without thereby wishing to know whether Scott was Scott. Because the description has meaning only in the context of the whole sentence, it is an incomplete symbol given a contextual definition.",
+  "examples": [
+    {
+      "tag": "The three components",
+      "text": "The F is G asserts that there is at least one F, at most one F, and that it is G, with no term naming the F."
+    },
+    {
+      "tag": "The King of France",
+      "text": "The present King of France is bald comes out false, not meaningless, because the uniqueness-and-existence claim fails."
+    },
+    {
+      "tag": "Scope and belief",
+      "text": "George IV wished to know whether Scott was the author of Waverley, but not whether Scott was Scott, handled by scope."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Incomplete symbols",
+      "text": "Russell's view that descriptions have no meaning in isolation, only in the context of a whole sentence, a contextual definition."
+    },
+    {
+      "name": "Scope ambiguity",
+      "text": "The distinction between wide-scope and narrow-scope readings of a description under negation or an attitude verb."
+    }
+  ],
+  "whyItMatters": "Russell's theory of descriptions is one of the great achievements of analytic philosophy and a model of the method of logical analysis. By showing that a phrase which grammar presents as a name can, on analysis, dissolve into quantifiers and a uniqueness condition, Russell drove home the lesson that grammatical form is a poor guide to logical form, a lesson that shaped the whole analytic tradition and its confidence that philosophical puzzles can be resolved by exhibiting the real logical structure beneath ordinary language. The theory solved a knot of long-standing problems at a stroke: it explained how sentences with empty descriptions can be meaningful and simply false, without Meinong's troubling realm of nonexistent objects; it dispelled an apparent violation of the law of excluded middle through scope distinctions; and it handled substitution failures in belief contexts. On Denoting became a touchstone text, praised by Frank Ramsey as a paradigm of philosophy, and it framed decades of debate, including Strawson's influential objection that Russell had confused asserting existence with presupposing it. As Russell's analysis of the little words the, a, and their kin, the theory of descriptions remains a cornerstone of the philosophy of language and logic.",
+  "working": [
+    {
+      "lead": "Spot the description",
+      "text": "identify a phrase of the form the F that grammar presents as a referring expression."
+    },
+    {
+      "lead": "Paraphrase it away",
+      "text": "rewrite the F is G as the claim that exactly one thing is F and that it is G, using quantifiers."
+    },
+    {
+      "lead": "Use scope to resolve puzzles",
+      "text": "handle negation, empty descriptions, and belief contexts by the wide or narrow scope of the description."
+    }
+  ],
+  "limits": "Russell's theory, for all its elegance, faces a famous objection from P. F. Strawson, in his 1950 paper On Referring. Strawson argued that Russell confused what a sentence asserts with what its use presupposes: an ordinary use of the present King of France is bald does not assert that there is a King of France but presupposes it, and when the presupposition fails, the statement is not simply false, as Russell held, but suffers a truth-value gap, being neither true nor false, because the question of its truth does not arise. On this view Russell mistook the conditions for referring for the conditions for asserting existence. There is also debate about whether all definite descriptions function as Russell claimed, since some uses seem genuinely referential, a point later pressed in Keith Donnellan's distinction between referential and attributive uses. Certain historical details, such as the 1905 publication in Mind, Ramsey's paradigm-of-philosophy remark, and Strawson's 1950 critique, rest partly on secondary sources and reward checking. And Frege had treated descriptions differently, as referring terms with a sense and a reference. So the theory of descriptions robustly analyzes the F into existence, uniqueness, and predication, understood as a landmark analysis challenged by Strawson's presupposition objection and by referential uses of descriptions.",
+  "misreadings": "The theory of descriptions does not treat the F as a name of an object; it analyzes it away as an incomplete symbol with no meaning in isolation. It does not make the present King of France is bald meaningless or neither true nor false; on Russell's analysis it is simply false, though Strawson argued it suffers a truth-value gap. And the theory is not refuted merely by noting that some descriptions seem referential, since Russell's target was their logical role, so treating descriptions as names, the King-of-France sentence as meaningless, or the theory as obviously wrong, misreads Russell's analysis.",
+  "origin": "Bertrand Russell's analysis of definite descriptions, set out in On Denoting (1905), treating the F as an incomplete symbol analyzed into claims of existence, uniqueness, and predication rather than as a referring term.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1905,
+  "namedAfter": "Bertrand Russell",
+  "sources": [
+    {
+      "text": "Descriptions, Stanford Encyclopedia of Philosophy. — Russell's theory of descriptions, the analysis of the F is G into existence, uniqueness, and predication with its formal logical form, definite descriptions as incomplete symbols, the King-of-France and excluded-middle puzzles, the avoidance of Meinong's objects, and Strawson's presupposition critique.",
+      "url": "https://plato.stanford.edu/entries/descriptions/",
+      "type": "secondary"
+    },
+    {
+      "text": "Bertrand Russell, Stanford Encyclopedia of Philosophy. — Russell's theory of definite descriptions from On Denoting (1905), incomplete symbols, the George IV and Scott example of substitution and scope, and the contrast of grammatical with logical form.",
+      "url": "https://plato.stanford.edu/entries/russell/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Theory_of_descriptions",
+  "related": [
+    {
+      "slug": "sense-and-reference",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-causal-theory-of-reference",
+      "kind": "kindred"
+    }
+  ]
+}

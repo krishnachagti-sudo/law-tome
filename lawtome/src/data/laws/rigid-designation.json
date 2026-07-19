@@ -1,0 +1,83 @@
+{
+  "no": "969",
+  "slug": "rigid-designation",
+  "name": "Rigid Designation",
+  "aliases": [
+    "Rigid designators",
+    "Kripke on rigidity"
+  ],
+  "statement": "A name picks out the same thing in every possible world; a description need not.",
+  "statementAccent": "the same thing in every possible world",
+  "meaning": "Rigid designation is Saul Kripke's notion, introduced in Naming and Necessity, delivered as lectures in 1970 and published in 1972 and as a book in 1980, of a term that designates the same object in every possible world in which that object exists, and never designates anything else. A rigid designator, paradigmatically a proper name, refers to one and the same thing however the world might have been. This is contrasted with a non-rigid, or accidental, designator, typically a definite description, which can pick out different objects in different possible worlds. The stock example is the name Aristotle, which rigidly designates the man Aristotle in all possible worlds, against the description the teacher of Alexander the Great, which is non-rigid, since in some possible world someone else, or no one, taught Alexander, so the description could have designated a different person; yet the name Aristotle still names Aristotle even in worlds where he never taught Alexander. Similarly Nixon rigidly designates Nixon while the winner of the 1968 United States presidential election is non-rigid, since someone else could have won. Kripke used rigidity to argue against descriptivism about names and to establish surprising results, including the necessary a posteriori, and he and Putnam treated natural kind terms such as water and gold as rigid as well. Rigid designation is central to modern modal metaphysics and philosophy of language.",
+  "mechanism": "The idea of rigid designation depends on evaluating terms across possible worlds, ways the world might have been. A designator is rigid if, when we consider any counterfactual situation, it still refers to the very same object it actually refers to, so long as that object exists there. Proper names behave this way: in asking what would have happened if Aristotle had gone into politics, the name Aristotle keeps referring to that same man across all the situations we imagine. Definite descriptions typically do not: the teacher of Alexander the Great refers, in each possible world, to whoever taught Alexander there, which could be a different person or nobody, so it is non-rigid. Kripke put this contrast to work in several ways. The modal argument against descriptivism runs that if a name were synonymous with a description, it would inherit the description's non-rigidity, but names are rigid and descriptions generally are not, so a name is not synonymous with any description. Rigidity also yields the necessary a posteriori: an identity statement flanked by two rigid designators, if true, is necessarily true, true in all possible worlds, even when it can be known only empirically. Thus Hesperus is Phosphorus, with both names rigidly designating Venus, is necessarily true though it was an empirical discovery, and water is H2O and gold has atomic number 79 are treated likewise, since natural kind terms are taken to be rigid. Kripke also held that possible worlds are stipulated rather than discovered, specified descriptively, so that identifying the same object across worlds needs no qualitative criterion.",
+  "examples": [
+    {
+      "tag": "Aristotle versus a description",
+      "text": "Aristotle rigidly designates the man in all worlds, while the teacher of Alexander could have designated someone else."
+    },
+    {
+      "tag": "The necessary a posteriori",
+      "text": "Hesperus is Phosphorus, both rigidly designating Venus, is necessarily true though known only by empirical discovery."
+    },
+    {
+      "tag": "Rigid natural kinds",
+      "text": "Water and gold are treated as rigid designators, so water is H2O comes out necessary though discovered a posteriori."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Rigid versus non-rigid",
+      "text": "Names that designate the same object across worlds, against descriptions that can pick out different objects in different worlds."
+    },
+    {
+      "name": "Rigid natural kind terms",
+      "text": "The Kripke-Putnam treatment of terms like water and gold as rigidly designating a kind across possible worlds."
+    }
+  ],
+  "whyItMatters": "Rigid designation is one of the most consequential ideas in modern analytic philosophy, reshaping both the philosophy of language and metaphysics. By distinguishing terms that hold their reference fixed across possible worlds from those that do not, Kripke gave a precise tool for arguing that proper names are not disguised descriptions, overturning the Frege-Russell descriptivist orthodoxy and supporting the causal theory of reference. Rigidity also generated genuinely surprising philosophical results that reset entire debates. It underwrites the category of the necessary a posteriori, truths like Hesperus is Phosphorus and water is H2O that are necessary yet knowable only by empirical investigation, and, in tandem, the contingent a priori, decoupling the epistemic distinction between a priori and a posteriori from the metaphysical distinction between necessary and contingent that philosophers had long run together. Through its application to natural kind terms, rigid designation helped revive essentialism, the view that things have properties they could not have lacked. The framework of possible worlds and rigid reference has become standard equipment in metaphysics, logic, and the theory of meaning. As Kripke's account of terms that keep their reference across all ways the world might be, rigid designation is a landmark contribution.",
+  "working": [
+    {
+      "lead": "Consider possible worlds",
+      "text": "evaluate a term across counterfactual situations, asking what it refers to in each."
+    },
+    {
+      "lead": "Test for rigidity",
+      "text": "call it rigid if it designates the same object in every world where that object exists, non-rigid otherwise."
+    },
+    {
+      "lead": "Apply the results",
+      "text": "use rigidity to argue against descriptivism and to derive the necessary a posteriori from true identities of rigid terms."
+    }
+  ],
+  "limits": "Rigid designation, though widely adopted, raises questions and depends on contested assumptions. There is debate about how exactly to define rigidity, especially for terms whose referents might not exist in every world, and about whether and in what sense natural kind terms and general terms count as rigid, since applying the notion beyond singular terms is not straightforward. The framework presupposes talk of possible worlds and trans-world identity, and although Kripke argued that worlds are stipulated rather than discovered, so that no qualitative criterion of identity across worlds is needed, this treatment is itself philosophically substantive and disputed. The strong conclusions Kripke drew, the necessary a posteriori and the revival of essentialism, remain live controversies rather than settled results. Some details reward care: the informal term flaccid for non-rigid designators is not Kripke's technical vocabulary, the standard example the SEP entry on names uses for the modal argument is Socrates rather than Aristotle, and certain examples and datings rest partly on secondary sources. So rigid designation robustly distinguishes terms that fix their reference across worlds, understood as an influential notion resting on contested assumptions about possible worlds, essentialism, and the scope of rigidity.",
+  "misreadings": "Rigid designation does not mean a term refers to a necessarily existing thing; a rigid designator refers to the same object across the worlds in which that object exists, and need not exist in all of them. It does not make every truth about the object necessary, only that the designator does not switch referents, so contingent facts about the referent remain contingent. And it is not the claim that names lack any connection to descriptions, only that they are not synonymous with them, so treating rigidity as implying necessary existence, as making all the object's properties necessary, or as severing names from descriptions entirely, misreads the notion.",
+  "origin": "Saul Kripke's notion, from Naming and Necessity (1970, 1980), of a designator that refers to the same object in every possible world in which it exists, contrasted with non-rigid descriptions and used to argue for the necessary a posteriori.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": "Saul Kripke",
+  "sources": [
+    {
+      "text": "Rigid Designators, Stanford Encyclopedia of Philosophy. — the definition of a rigid designator as designating the same object in all possible worlds in which it exists, the contrast with non-rigid descriptions, the modal argument against descriptivism, the necessary a posteriori, and the treatment of natural kind terms as rigid.",
+      "url": "https://plato.stanford.edu/entries/rigid-designators/",
+      "type": "secondary"
+    },
+    {
+      "text": "Names, Stanford Encyclopedia of Philosophy. — Kripke's argument that names are rigid designators while descriptions are not, the modal argument against descriptivism, and the connection to the causal theory of reference.",
+      "url": "https://plato.stanford.edu/entries/names/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Rigid_designator",
+  "related": [
+    {
+      "slug": "the-causal-theory-of-reference",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-a-priori",
+      "kind": "tension"
+    }
+  ]
+}
