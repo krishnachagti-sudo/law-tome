@@ -1,0 +1,57 @@
+{
+  "no": "725",
+  "slug": "the-money-illusion",
+  "name": "The Money Illusion",
+  "aliases": ["Money illusion", "Nominal illusion"],
+  "statement": "People judge money by its face value and forget that inflation quietly shrinks what it buys.",
+  "statementAccent": "forget that inflation quietly shrinks what it buys",
+  "meaning": "The money illusion is a cognitive and economic bias in which people think about money in nominal terms, its face value, rather than in real terms, its purchasing power adjusted for inflation. Because they focus on the numerical value of money and fail to fully account for inflation, people misjudge real wages, prices, and wealth. The term is attributed to Irving Fisher, who titled a 1928 book The Money Illusion, and the concept was popularised by John Maynard Keynes. A classic illustration is that workers resist a nominal pay cut but accept an equivalent real cut delivered through inflation, and feel richer when their nominal income rises even if prices rise just as much. Experimental evidence for the illusion was provided by Eldar Shafir, Peter Diamond, and Amos Tversky in a 1997 study. The money illusion matters because it underlies nominal wage and price rigidity, a foundation of much Keynesian macroeconomics.",
+  "mechanism": "Money illusion arises because the nominal, numerical value of money is salient and easy to grasp, while its real value requires mentally adjusting for inflation, a correction people often make incompletely. As a result, they treat a dollar as a fixed unit of value even though inflation continuously erodes what it buys. The effect shows up sharply in wages. A two percent nominal pay cut when prices are stable feels unfair and is resisted, but a two percent nominal raise when inflation is four percent, which is actually a real pay cut, feels like a gain and is accepted. This asymmetry helps explain nominal wage rigidity: because workers resist outright nominal cuts, firms find it hard to lower real wages when needed except through inflation. Consequently moderate inflation can grease the wheels of the labour market, allowing real wages to adjust downward without the nominal cuts workers reject. Money illusion also contributes to nominal price stickiness and can distort saving, borrowing, and contracting decisions whenever people confuse nominal and real magnitudes.",
+  "examples": [
+    {
+      "tag": "The disguised pay cut",
+      "text": "A two percent raise amid four percent inflation is a real pay cut, yet it feels like a gain, while an outright nominal cut of the same real size is resented."
+    },
+    {
+      "tag": "Feeling richer",
+      "text": "People feel wealthier when their nominal income rises even if prices rise equally, mistaking a bigger number for greater purchasing power."
+    },
+    {
+      "tag": "Greasing the wheels",
+      "text": "Because workers resist nominal cuts, moderate inflation lets real wages fall without them, helping labour markets adjust."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Nominal wage rigidity",
+      "text": "The macroeconomic consequence that workers resist nominal wage cuts, making real wages hard to lower except through inflation."
+    },
+    {
+      "name": "The rational-versus-behavioural debate",
+      "text": "The dispute between classical economists, who hold rational agents should not suffer money illusion, and behavioural economists, who document that people do."
+    }
+  ],
+  "whyItMatters": "The money illusion is an important concept in behavioural economics and macroeconomics, linking a cognitive bias to consequential features of the economy. Because people confuse nominal and real values, they misjudge wages, prices, savings, and debts, and this systematic error has aggregate effects: it underlies nominal wage and price rigidity, which help explain why economies do not adjust instantly and why monetary policy and inflation have real consequences. The insight that workers resist nominal cuts but accept inflation-driven real cuts supports the argument that a low, positive rate of inflation can help labour markets function by allowing real wages to adjust. The money illusion thus sits at the intersection of psychology and economics, showing how a common failure to think in real terms shapes individual decisions and, through them, the behaviour of the whole economy, including debates over the ideal rate of inflation.",
+  "working": [
+    {"lead": "Focus on the number", "text": "note that people fixate on money's nominal, face value because it is salient and easy to grasp."},
+    {"lead": "Under-adjust for inflation", "text": "recognise that they correct incompletely for rising prices, so they misjudge real wages, prices, and wealth."},
+    {"lead": "Trace the consequences", "text": "see how this produces nominal wage and price rigidity, letting inflation grease the wheels of adjustment."}
+  ],
+  "limits": "The existence and importance of money illusion are debated. Classical and neoclassical economists, invoking rational expectations, argue that rational agents should reason in real terms and not suffer the illusion, so persistent money illusion would be a puzzle. Behavioural economists respond that experiments and real-world behaviour, such as the Shafir, Diamond, and Tversky study, show people do exhibit it, at least partially and in some contexts. The strength of the illusion likely varies with the salience of inflation, education, and the stakes involved, and it may diminish when inflation is high and unavoidable to notice. So money illusion is well documented as a real tendency but is not universal or complete, and how much weight it should carry in macroeconomic models remains a live question between rational and behavioural approaches.",
+  "misreadings": "Money illusion is not a claim that people are wholly irrational about money; it is a partial, systematic tendency to under-adjust for inflation, and its degree varies. It does not mean inflation is harmless or beneficial in general, only that a specific bias makes nominal wage cuts harder than inflation-driven real cuts. And it is contested rather than universally accepted: rational-expectations economists dispute its importance, so treating money illusion as either a proven constant or a mere myth misrepresents a real but debated phenomenon whose magnitude depends on context.",
+  "origin": "Attributed to Irving Fisher, who titled a 1928 book The Money Illusion, and popularised by John Maynard Keynes; experimental evidence was provided by Shafir, Diamond, and Tversky in 1997.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1928,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Money illusion, Wikipedia. — the confusion of nominal for real value, the Fisher and Keynes attribution, the wage-and-inflation example, the Shafir, Diamond, and Tversky 1997 evidence, the nominal-rigidity implication, and the rational-versus-behavioural debate.", "url": "https://en.wikipedia.org/wiki/Money_illusion", "type": "secondary"},
+    {"text": "Shafir, Diamond, and Tversky, Money Illusion, Quarterly Journal of Economics (1997). — experimental evidence that people exhibit money illusion.", "url": "https://academic.oup.com/qje/article/112/2/341/1870915", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Money_illusion",
+  "related": [
+    {"slug": "the-fisher-effect", "kind": "kindred"},
+    {"slug": "the-cantillon-effect", "kind": "kindred"}
+  ]
+}

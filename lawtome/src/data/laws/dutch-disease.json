@@ -1,0 +1,57 @@
+{
+  "no": "721",
+  "slug": "dutch-disease",
+  "name": "Dutch Disease",
+  "aliases": ["The resource-boom curse", "Deindustrialization by boom"],
+  "statement": "A resource boom can hollow out a country's factories and farms by driving up its currency.",
+  "statementAccent": "hollow out a country's factories and farms by driving up its currency",
+  "meaning": "Dutch disease is an economic phenomenon in which the rapid development of one sector, typically natural-resource extraction such as oil, gas, or minerals, causes a decline in other sectors, especially manufacturing and agriculture. The name was coined by The Economist in 1977 to describe the decline of Dutch manufacturing after the discovery of the large Groningen natural gas field in 1959. The core mechanism is that a resource boom brings a flood of foreign currency that strengthens, or appreciates, the country's real exchange rate, making its other exports less competitive abroad and imports cheaper, which squeezes the tradable sectors outside the resource industry. The classic model was developed by Max Corden and Peter Neary in 1982. Dutch disease is one of the main channels through which the broader resource curse operates, and it warns that a windfall of natural wealth can paradoxically weaken the rest of an economy.",
+  "mechanism": "A resource boom affects the economy through two linked channels. First, the spending effect: the surge of revenue raises demand for goods and services, including non-tradable ones like construction and services, drawing labour and capital toward them and bidding up domestic costs. Second, the resource movement effect: labour and capital shift directly into the booming resource sector. Both raise domestic prices and wages relative to abroad, which appreciates the real exchange rate. The stronger currency makes the country's manufactured and agricultural exports more expensive and less competitive internationally, while making imports cheaper, so these tradable sectors shrink, a process of deindustrialization. When the boom ends or commodity prices fall, the country is left with a weakened non-resource economy that may struggle to recover, partly because productivity growth tends to be lower in the resource sector than in the manufacturing it displaced. The Corden and Neary model formalises this by dividing the economy into a booming tradable sector, a lagging tradable sector, and a non-tradable sector.",
+  "examples": [
+    {
+      "tag": "Groningen gas",
+      "text": "The term was coined for the Netherlands, whose manufacturing declined after the 1959 discovery of the Groningen gas field brought a resource boom."
+    },
+    {
+      "tag": "Currency appreciation",
+      "text": "A flood of resource revenue strengthens the currency, making other exports uncompetitive and imports cheaper, squeezing manufacturing and agriculture."
+    },
+    {
+      "tag": "Norway's sovereign fund",
+      "text": "Norway channels oil revenue into a sovereign wealth fund invested abroad, sterilising the inflows to blunt currency appreciation and Dutch disease."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The spending and resource-movement effects",
+      "text": "The two channels of the Corden and Neary model, higher demand for non-tradables and the shift of factors into the resource sector, that together appreciate the currency."
+    },
+    {
+      "name": "The resource-curse connection",
+      "text": "Dutch disease as one mechanism of the broader resource curse, by which resource-rich countries often underperform economically and politically."
+    }
+  ],
+  "whyItMatters": "Dutch disease is a core concept in development, resource, and macroeconomics, explaining why a windfall of natural wealth can undermine rather than strengthen an economy. It illuminates the danger that a booming resource sector, by appreciating the currency, hollows out manufacturing and agriculture, leaving a country dangerously dependent on volatile commodity prices and vulnerable when the boom fades. The phenomenon is central to understanding the resource curse and the mixed fortunes of resource-exporting nations, and it informs policy: countries such as Norway use sovereign wealth funds to save and invest resource revenue abroad, sterilising the inflows and blunting the currency effect, while others pursue diversification or a gradual absorption of revenue. By naming a counterintuitive hazard of natural riches, Dutch disease shapes how governments and economists think about managing resource booms so that temporary wealth does not permanently damage the broader economy.",
+  "working": [
+    {"lead": "Strike a resource boom", "text": "let a sector like oil or gas surge, bringing a large inflow of foreign currency and revenue."},
+    {"lead": "Watch the currency rise", "text": "note that higher spending and factor shifts appreciate the real exchange rate, raising domestic costs relative to abroad."},
+    {"lead": "See tradables shrink", "text": "observe manufacturing and agriculture lose competitiveness and decline, leaving a weakened non-resource economy when the boom ends."}
+  ],
+  "limits": "Dutch disease is a tendency, not an inevitability; countries can mitigate it through sovereign wealth funds that save revenue abroad, gradual absorption of inflows, and economic diversification, as Norway's experience shows. The severity depends on the size and durability of the boom, the flexibility of the economy, and policy choices, so not every resource-rich country suffers pronounced deindustrialization. The concept is a model of one important channel, currency appreciation and factor reallocation, and does not capture every effect of resource wealth, which the broader resource-curse literature addresses through institutions, volatility, and governance. So Dutch disease reliably names a real risk of resource booms while leaving room for the outcome to be managed or avoided through sound policy.",
+  "misreadings": "Dutch disease is not a claim that discovering resources always impoverishes a country; it identifies a specific channel, currency appreciation, that can harm other tradable sectors but can be managed with the right policies. It is not the same as the whole resource curse, but one mechanism within it, so treating the two as identical conflates a specific model with a broader set of problems. And the harm is not that resources are bad, but that the surge of revenue and the stronger currency squeeze manufacturing and agriculture, which is why remedies focus on managing the inflows rather than avoiding the resources.",
+  "origin": "Named by The Economist in 1977 for the decline of Dutch manufacturing after the 1959 Groningen gas discovery, and formalised in the 1982 model of Max Corden and Peter Neary; a principal channel of the resource curse.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1977,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Dutch disease, Wikipedia. — the booming-resource-sector-harms-tradables definition, The Economist 1977 coinage and the Groningen origin, the currency-appreciation and resource-movement mechanism, the Corden and Neary 1982 model, the deindustrialization consequences, and the resource-curse connection.", "url": "https://en.wikipedia.org/wiki/Dutch_disease", "type": "secondary"},
+    {"text": "40 Years of Dutch Disease Literature: Lessons for Developing Countries, PMC (National Library of Medicine). — an academic review of the Dutch disease mechanism and remedies.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8609513/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Dutch_disease",
+  "related": [
+    {"slug": "the-resource-curse", "kind": "cause"},
+    {"slug": "the-cantillon-effect", "kind": "kindred"}
+  ]
+}
