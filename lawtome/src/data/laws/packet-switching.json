@@ -1,0 +1,57 @@
+{
+  "no": "1041",
+  "slug": "packet-switching",
+  "name": "Packet Switching",
+  "aliases": ["Packet-switched networking", "Store-and-forward switching"],
+  "statement": "Break data into small packets routed independently across a shared network, then reassemble them.",
+  "statementAccent": "small packets routed independently across a shared network",
+  "meaning": "Packet switching is a method of grouping data into short messages called packets that are transmitted over a digital network. Each packet consists of a header, carrying addressing and control information such as the source and destination, and a payload, the actual data being sent. Packets are routed through the network individually, and each may take a different path to the destination, where the original message is reassembled, often using sequence numbers, in the correct order. Packet switching contrasts with circuit switching, the method of the traditional telephone network, in which a dedicated end-to-end circuit is set up for the whole duration of a communication and held even while idle. Packet switching instead shares the network's links among many communications at once, allocating capacity as needed through statistical multiplexing, which uses bandwidth far more efficiently and makes the network more robust, since packets can be routed around failures. The switches, or routers, use store-and-forward operation: each node receives a whole packet, stores it, then forwards it toward its destination. The concept was invented independently in the early to mid 1960s by Paul Baran at the RAND Corporation, motivated by the goal of survivable, distributed military communications, and by Donald Davies at the United Kingdom's National Physical Laboratory, who coined the term packet switching around 1965. It underlay the ARPANET of 1969, the precursor to the Internet, and it is the foundational technology of the modern Internet and essentially all data networks, since the Internet Protocol is packet-switched.",
+  "mechanism": "Packet switching moves data by chopping each message into small, self-contained units and letting the network deliver them piece by piece, sharing its links among all users rather than dedicating a path to any one conversation. A message to be sent is divided into packets, each wrapped with a header that records where it came from, where it is going, and how it fits into the sequence, followed by a chunk of the message as payload. Each packet is then launched into the network and handled independently by the switching nodes. A node operates store-and-forward: it receives an entire packet, checks it, consults its routing information to decide the best next hop toward the destination, and forwards it on, holding it briefly if the outgoing link is busy. Because each packet is routed on its own, successive packets of the same message can travel by different routes depending on current conditions, and they may arrive out of order or, occasionally, be lost; the destination uses the packets' sequence information to reassemble the message correctly and can request retransmission of anything missing. This design is what gives packet switching its two great advantages over circuit switching. First, efficiency: since no capacity is reserved and idle, many communications share the same links through statistical multiplexing, filling the network's capacity with whoever has data to send at each instant. Second, robustness: with no fixed circuit to break, packets simply route around failed links or nodes, a property that motivated Paul Baran's distributed-network designs for surviving attack. Donald Davies independently developed the same idea and gave it its name. The ARPANET demonstrated it at scale, and the Internet Protocol carried it to the whole world.",
+  "examples": [
+    {
+      "tag": "Header and payload",
+      "text": "Each packet carries a header with source and destination plus a payload of the actual data."
+    },
+    {
+      "tag": "Different paths",
+      "text": "Packets of one message may take different routes and are reassembled in order at the destination."
+    },
+    {
+      "tag": "Store and forward",
+      "text": "Each node receives a whole packet, stores it, and forwards it toward its destination."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Versus circuit switching",
+      "text": "Circuit switching dedicates an end-to-end path for a whole call; packet switching shares links via statistical multiplexing."
+    },
+    {
+      "name": "Independent invention",
+      "text": "Paul Baran at RAND and Donald Davies at the NPL developed packet switching independently in the 1960s."
+    }
+  ],
+  "whyItMatters": "Packet switching is the foundational technology of the modern Internet and of essentially every data network in the world, the fundamental decision about how digital information should move that made global networking practical and resilient. Before it, communication meant circuit switching, dedicating a whole path to a single conversation for its entire duration, which wastes capacity whenever the line is idle and collapses if any part of the path fails. Packet switching replaced this with a radically more efficient and robust idea: break everything into small packets, address each one, and let them share the network's links, routed independently and reassembled at the end. This lets a single network carry the traffic of countless simultaneous users by filling its capacity with whoever has data to send, and it lets packets flow around damage, the very property that motivated Paul Baran's survivable-network designs at the height of the Cold War. The Internet Protocol is a packet-switched protocol, so every web page, email, video stream, and message travels as packets, making packet switching the invisible substrate of digital life. Its independent invention by Baran and by Donald Davies, who named it, and its first great demonstration in the ARPANET of 1969, mark it as one of the pivotal ideas in the history of communication. As the method of sending data in independently routed packets across a shared network, packet switching underlies the connected world.",
+  "working": [
+    {"lead": "Divide into packets", "text": "split each message into small packets, each with a header addressing it and a payload of data."},
+    {"lead": "Route independently", "text": "let each node store and forward packets toward the destination, possibly by different paths."},
+    {"lead": "Reassemble", "text": "at the destination, use the packets' sequence information to reassemble the original message in order."}
+  ],
+  "limits": "Packet switching is foundational but its nature carries trade-offs that reward care. Because it shares links statistically rather than reserving a dedicated circuit, it offers no inherent guarantee of timely or in-order delivery: packets can be delayed, arrive out of order, or be lost when the network is congested, so applications needing reliability or strict timing must add mechanisms on top, reliability through protocols like TCP and timeliness through quality-of-service techniques. This variable delay, or jitter, once made packet networks less suited to real-time voice than circuit switching, a gap closed only with modern engineering. Store-and-forward operation also adds latency, since each node must receive a whole packet before forwarding it, and header overhead means some capacity carries addressing rather than data. Some historical details reward care: packet switching was invented independently by Paul Baran at RAND in the early 1960s and Donald Davies at the National Physical Laboratory around 1965, who coined the term; the survivability motivation is Baran's, and crediting either alone misstates the history. So packet switching robustly and efficiently shares a network among many users, understood as a best-effort method whose reliability and timing must be supplied by higher layers, in contrast to the reserved but wasteful circuits it replaced.",
+  "misreadings": "Packet switching does not guarantee delivery, order, or timing on its own; those come from higher-layer protocols. It is not the same as a dedicated circuit, sharing links instead of reserving them. And it was not the work of a single inventor, so treating packet switching as inherently reliable, as circuit-like, or as one person's creation, misreads it.",
+  "origin": "The networking method, invented independently by Paul Baran at RAND and Donald Davies at the NPL in the 1960s, of sending data in independently routed packets across a shared network, foundational to the Internet.",
+  "category": "technology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1965,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Packet switching, Wikipedia. — packet switching as grouping data into packets of header and payload routed individually, sometimes by different paths and reassembled, the contrast with circuit switching and use of statistical multiplexing, store-and-forward operation, the independent invention by Baran at RAND and Davies at the NPL who coined the term, and its role in ARPANET and the Internet.", "url": "https://en.wikipedia.org/wiki/Packet_switching", "type": "secondary"},
+    {"text": "Donald Davies, Encyclopaedia Britannica. — Donald Davies's development of packet switching at the National Physical Laboratory and his coining of the term.", "url": "https://www.britannica.com/biography/Donald-Davies", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Packet_switching",
+  "related": [
+    {"slug": "the-internet-protocol", "kind": "consequence"},
+    {"slug": "the-tcp-ip-model", "kind": "kindred"}
+  ]
+}

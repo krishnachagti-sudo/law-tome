@@ -1,0 +1,83 @@
+{
+  "no": "1044",
+  "slug": "the-domain-name-system",
+  "name": "The Domain Name System",
+  "aliases": [
+    "DNS",
+    "The phonebook of the Internet"
+  ],
+  "statement": "Translate human-readable domain names into the numeric IP addresses computers use to find each other.",
+  "statementAccent": "the numeric IP addresses computers use to find each other",
+  "meaning": "The Domain Name System, or DNS, is a hierarchical and distributed naming system for computers and other resources connected to the Internet or a private network. Its most prominent function is translating human-readable domain names, such as www.example.com, into the numerical IP addresses, such as 93.184.216.34, that computers need to locate and identify services, which is why it is often called the phonebook of the Internet. The domain namespace is organized as a tree. At the top are the root servers, managing the root zone, denoted by a single dot; below them are the top-level domains, such as .com, .org, and country codes like .uk; then second-level domains, and so on. Authority is delegated down this hierarchy, so different organizations manage different zones, giving DNS distributed administration rather than any single central directory. Resolving a name is a process carried out by a DNS resolver, usually a recursive resolver, which queries a series of name servers: it asks a root server, which points to the relevant top-level-domain server, then that server, which points to the authoritative name server for the domain, then the authoritative server, which returns the answer. Results are cached, with a time to live, to improve performance. DNS stores various resource records, including A records for IPv4 addresses, AAAA for IPv6, MX for mail servers, CNAME for aliases, and NS for name servers, and it mostly uses UDP on port 53. DNS was designed by Paul Mockapetris in 1983, replacing the earlier centralized HOSTS.TXT file, and it is foundational Internet infrastructure.",
+  "mechanism": "DNS solves the problem of naming on a global network by distributing a single logical directory across a delegated hierarchy of servers, so that no one machine must hold the whole map yet any name can be resolved to an address. The namespace is a tree read from right to left: the root at the top, then top-level domains like .com beneath it, then the domains organizations register, and finer subdomains below those. Crucially, authority is delegated: the operators of the root delegate each top-level domain to registries, which delegate individual domains to their owners, who run authoritative name servers holding the actual records for their zone. This delegation is what makes DNS scalable and decentralized, since each organization manages only its own part. To turn a name into an address, a resolver, typically the recursive resolver run by an Internet provider or a public service, walks the hierarchy. It first asks a root server, which does not know the answer but refers it to the name servers for the relevant top-level domain; it then asks a top-level-domain server, which refers it to the authoritative name servers for the specific domain; finally it asks an authoritative server, which returns the requested record, such as the A record giving the IPv4 address. To avoid repeating this walk for every query, resolvers cache answers for a duration set by each record's time to live, so popular names resolve instantly from cache. DNS stores many record types beyond addresses, MX records directing email, CNAME records aliasing one name to another, NS records naming a zone's servers, and it typically travels over UDP on port 53 for speed. Designed by Paul Mockapetris in 1983, DNS replaced the unscalable practice of distributing a single HOSTS.TXT file listing every host.",
+  "examples": [
+    {
+      "tag": "The hierarchy",
+      "text": "Root servers point to top-level-domain servers, which point to a domain's authoritative name servers."
+    },
+    {
+      "tag": "Recursive resolution",
+      "text": "A resolver walks from root to TLD to authoritative server to obtain a name's record."
+    },
+    {
+      "tag": "Caching with TTL",
+      "text": "Resolvers cache answers for each record's time to live so popular names resolve instantly."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Resource records",
+      "text": "DNS stores A records for IPv4, AAAA for IPv6, MX for mail, CNAME for aliases, and NS for name servers."
+    },
+    {
+      "name": "Replacing HOSTS.TXT",
+      "text": "Paul Mockapetris designed DNS in 1983 to replace the unscalable centralized HOSTS.TXT host file."
+    }
+  ],
+  "whyItMatters": "The Domain Name System is one of the indispensable pieces of Internet infrastructure, the service that lets people use memorable names instead of numeric addresses and that almost every online activity silently depends on. When someone visits a website, sends an email, or opens an app, the very first step is usually a DNS lookup translating a human-friendly name into the IP address the network actually routes to, so if DNS fails, the Internet becomes largely unusable even though the underlying connectivity is intact. Its design is a landmark of distributed-systems engineering: by organizing names into a hierarchy and delegating authority for each part to the organizations that own it, DNS turned what could have been an impossible central directory into a scalable, decentralized system that has grown to encompass billions of names without a single point of administration, while caching with time-to-live values keeps it fast under enormous load. DNS also underpins much more than address lookup, directing email through MX records, enabling load balancing and content delivery, and increasingly carrying security and configuration information. Designed by Paul Mockapetris in 1983 to replace the unscalable practice of sharing one giant host file, it has proven remarkably durable and extensible. As the hierarchical, distributed system that translates domain names into IP addresses, the phonebook of the Internet, DNS is foundational to the connected world.",
+  "working": [
+    {
+      "lead": "Organize names in a tree",
+      "text": "structure the namespace as a hierarchy from the root through top-level and second-level domains."
+    },
+    {
+      "lead": "Delegate authority",
+      "text": "let each organization run authoritative name servers for its own zone, giving distributed administration."
+    },
+    {
+      "lead": "Resolve and cache",
+      "text": "have a resolver walk root, TLD, and authoritative servers for the record, caching answers for their time to live."
+    }
+  ],
+  "limits": "DNS is foundational but has limits and vulnerabilities that reward care. The original protocol was designed without security: DNS responses were unauthenticated and unencrypted, making the system susceptible to spoofing and cache poisoning, in which forged answers redirect users to malicious servers, and to surveillance of the names people look up; addressing this required later additions such as DNSSEC for authentication and encrypted transports like DNS over HTTPS, which are not universal. Caching, essential for performance, means changes propagate only as old records expire according to their time to live, so updates are not instantaneous and stale answers can persist. DNS is also critical infrastructure whose disruption, whether by outage, misconfiguration, or attack, can take large swaths of the Internet offline even when connectivity is fine, and it has been a target of denial-of-service attacks. Some historical and technical details reward care: DNS is hierarchical and distributed, delegating authority rather than being centralized; it was designed by Paul Mockapetris in 1983, originally in RFCs 882 and 883 and later 1034 and 1035, replacing the HOSTS.TXT file; and it primarily uses UDP on port 53 though it falls back to TCP. So DNS robustly translates names to addresses, understood as a cached, historically insecure, critical system whose security and freshness depend on additional mechanisms.",
+  "misreadings": "DNS is not centralized; authority is delegated across a hierarchy of independent operators. It was not designed to be secure, so authentication and encryption are later additions. And caching means it is not instantaneous, so treating DNS as a single central directory, as inherently secure, or as updating immediately, misreads it.",
+  "origin": "The hierarchical, distributed naming system designed by Paul Mockapetris in 1983 to replace the HOSTS.TXT file, which translates human-readable domain names into the IP addresses computers use.",
+  "category": "technology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1983,
+  "namedAfter": null,
+  "sources": [
+    {
+      "text": "Domain Name System, Wikipedia. — DNS as a hierarchical and distributed naming system translating domain names to IP addresses, the phonebook analogy, the root, top-level, and authoritative hierarchy with delegated authority, recursive resolution and caching with time to live, resource records including A, AAAA, MX, CNAME, and NS, UDP port 53, and Paul Mockapetris's 1983 design replacing HOSTS.TXT.",
+      "url": "https://en.wikipedia.org/wiki/Domain_Name_System",
+      "type": "secondary"
+    },
+    {
+      "text": "Paul Mockapetris, Wikipedia. — Paul Mockapetris as the designer of the Domain Name System in 1983, originally specified in RFCs 882 and 883 and later 1034 and 1035.",
+      "url": "https://en.wikipedia.org/wiki/Paul_Mockapetris",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Domain_Name_System",
+  "related": [
+    {
+      "slug": "the-internet-protocol",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-uniform-resource-locator",
+      "kind": "kindred"
+    }
+  ]
+}

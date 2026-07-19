@@ -1,0 +1,57 @@
+{
+  "no": "1042",
+  "slug": "the-internet-protocol",
+  "name": "The Internet Protocol",
+  "aliases": ["IP", "Internet Protocol (IP)"],
+  "statement": "Address and route packets across networks with best-effort delivery, the layer that makes the Internet.",
+  "statementAccent": "best-effort delivery, the layer that makes the Internet",
+  "meaning": "The Internet Protocol, or IP, is the principal communications protocol in the Internet protocol suite for relaying datagrams, that is, packets, across network boundaries. Its routing function enables internetworking and essentially establishes the Internet. IP is responsible for addressing hosts, through IP addresses, and for routing packets from a source host to a destination host across one or more networks. It is a connectionless protocol and provides a best-effort delivery service: it does not guarantee that packets arrive, that they arrive in order, or that they are not duplicated, and it makes no promises about reliability at all; if reliability is needed, it is supplied by higher-layer protocols such as TCP. IP operates at the internet, or network, layer. IP defines addressing: version four, IPv4, uses thirty-two-bit addresses, giving about 4.3 billion of them, written in dotted-decimal notation such as 192.0.2.1, and the exhaustion of this space led to version six, IPv6, which uses one-hundred-twenty-eight-bit addresses, a vastly larger space written in hexadecimal. Each IP packet consists of a header, carrying the source and destination addresses and other control fields, and a payload. The protocol grew from the work of Vint Cerf and Bob Kahn in the 1970s, whose 1974 design was later split so that IP became a separate protocol from TCP, with IPv4 specified in RFC 791 in 1981. IP is the foundational protocol that defines the Internet, the narrow waist over which everything else runs.",
+  "mechanism": "The Internet Protocol gives every participating machine an address and defines how packets are moved from one machine to another across interconnected networks, and it does so with deliberate minimalism, promising only to try. Each host and interface is assigned an IP address, and every packet carries, in its header, the addresses of its source and destination along with control fields; the body of the packet is the payload. When a packet is sent, IP's job is routing: at each router along the way, the device examines the destination address and forwards the packet toward a network closer to that destination, hop by hop, until it reaches the destination host, and because the networks in between may use different underlying technologies, IP is what lets them interconnect, the internetworking function that creates a single logical network from many physical ones. Crucially, IP is connectionless and best-effort: it sets up no circuit, keeps no per-connection state, and offers no guarantee that any given packet will arrive, arrive intact, arrive in order, or arrive only once. Packets may be lost to congestion, corrupted, duplicated, or reordered, and IP simply does its best to deliver each one independently. This spareness is a design choice, not a defect: by keeping IP simple and undemanding, the protocol can run over almost any link technology and let higher layers add whatever guarantees an application needs, so TCP builds reliability and ordering on top, while UDP leaves IP's best-effort nature largely exposed. Addressing evolved as the Internet grew: IPv4's thirty-two-bit addresses proved too few, prompting IPv6's one-hundred-twenty-eight-bit space. This layered minimalism, IP as the thin, universal waist over which diverse applications and link technologies meet, is what let the Internet scale to the world.",
+  "examples": [
+    {
+      "tag": "Addressing and routing",
+      "text": "IP gives hosts addresses and routes each packet hop by hop toward its destination across interconnected networks."
+    },
+    {
+      "tag": "Best-effort",
+      "text": "IP does not guarantee delivery, order, or non-duplication; reliability is left to higher layers like TCP."
+    },
+    {
+      "tag": "IPv4 versus IPv6",
+      "text": "IPv4 uses thirty-two-bit addresses; their exhaustion led to IPv6's one-hundred-twenty-eight-bit addresses."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The narrow waist",
+      "text": "IP is the thin universal layer over which all applications and link technologies meet, the waist of the hourglass."
+    },
+    {
+      "name": "Cerf and Kahn",
+      "text": "IP grew from Cerf and Kahn's 1970s work, later split from TCP, with IPv4 specified in RFC 791 in 1981."
+    }
+  ],
+  "whyItMatters": "The Internet Protocol is, quite literally, what makes the Internet the Internet: it is the common language that lets a vast collection of separate, dissimilar networks act as one, so that any connected machine can address and reach any other. Its routing function enables internetworking, the interconnection of networks, and in doing so it establishes the global network on which modern life depends. IP's genius is its restraint. By providing only addressing and best-effort routing, and refusing to promise reliability or ordering, it stays simple enough to run over essentially any underlying link technology, from Ethernet to fibre to wireless, while leaving richer guarantees to the layers above; this is the famous narrow waist of the Internet's hourglass, a single thin protocol in the middle over which countless applications above and link technologies below all converge. That architecture is why the Internet could scale to billions of devices and absorb technologies unimagined at its birth. Every web page, message, video, and call travels as IP packets, and the whole edifice of TCP, HTTP, and the rest is built atop IP's minimal service. Growing from Cerf and Kahn's work in the 1970s and standardized as IPv4 in 1981, and now transitioning to IPv6's enormous address space, IP has been the constant foundation. As the protocol that addresses and routes packets with best-effort delivery, the Internet Protocol is the bedrock of the connected world.",
+  "working": [
+    {"lead": "Address the packet", "text": "give the packet a header with source and destination IP addresses."},
+    {"lead": "Route hop by hop", "text": "let each router forward the packet toward its destination across interconnected networks."},
+    {"lead": "Deliver best-effort", "text": "attempt delivery without guaranteeing arrival, order, or non-duplication, leaving reliability to higher layers."}
+  ],
+  "limits": "The Internet Protocol is foundational precisely because it promises so little, and its limits are the flip side of its virtues. Being connectionless and best-effort, IP guarantees nothing about delivery: packets can be lost, duplicated, reordered, or corrupted, so any application needing reliability, ordering, or flow control must obtain it from a higher-layer protocol like TCP; treating IP itself as reliable is a basic error. IP provides addressing and routing but not security: the original protocol offers no encryption or authentication, so confidentiality and integrity are added separately, and source addresses can be spoofed. Its addressing has been a practical constraint: IPv4's thirty-two-bit space, about 4.3 billion addresses, has been exhausted, forcing workarounds like network address translation and the long transition to IPv6's one-hundred-twenty-eight-bit addresses. Some historical and technical details reward care: IP operates at the internet, or network, layer; it grew from Cerf and Kahn's 1974 design, from which IP was later split off from TCP, with IPv4 specified in RFC 791 in 1981; and the narrow-waist metaphor, though apt and widely used, is descriptive framing rather than part of the protocol's specification. So the Internet Protocol robustly addresses and routes packets across networks, understood as a minimal, best-effort, insecure-by-itself service whose guarantees and protections come from other layers.",
+  "misreadings": "IP does not guarantee delivery; it is best-effort, and reliability comes from higher layers like TCP. It provides no built-in security, so encryption and authentication are added separately. And its address space is finite, IPv4 being exhausted, so treating IP as reliable, as secure, or as endlessly abundant in addresses, misreads it.",
+  "origin": "The internet-layer protocol grown from Cerf and Kahn's 1970s work and standardized as IPv4 in RFC 791 in 1981, which addresses and routes packets across networks with best-effort delivery, establishing the Internet.",
+  "category": "technology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1981,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Internet Protocol, Wikipedia. — IP as the principal internet-layer protocol relaying datagrams across networks, its routing function establishing the Internet, connectionless best-effort delivery with reliability left to higher layers, IPv4 thirty-two-bit and IPv6 one-hundred-twenty-eight-bit addressing, the header-and-payload datagram, and the Cerf-Kahn origin with IPv4 in RFC 791.", "url": "https://en.wikipedia.org/wiki/Internet_Protocol", "type": "secondary"},
+    {"text": "RFC 791, Internet Protocol, DARPA Internet Program Protocol Specification, September 1981. — the specification of IPv4, describing its addressing and the absence of reliable delivery guarantees.", "url": "https://datatracker.ietf.org/doc/html/rfc791", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Internet_Protocol",
+  "related": [
+    {"slug": "the-transmission-control-protocol", "kind": "consequence"},
+    {"slug": "packet-switching", "kind": "cause"}
+  ]
+}

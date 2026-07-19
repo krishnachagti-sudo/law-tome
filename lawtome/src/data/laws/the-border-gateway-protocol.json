@@ -1,0 +1,57 @@
+{
+  "no": "1051",
+  "slug": "the-border-gateway-protocol",
+  "name": "The Border Gateway Protocol",
+  "aliases": ["BGP", "The routing protocol of the Internet"],
+  "statement": "Route traffic between the world's networks by exchanging reachable paths among autonomous systems.",
+  "statementAccent": "exchanging reachable paths among autonomous systems",
+  "meaning": "The Border Gateway Protocol, or BGP, is a standardized exterior gateway protocol designed to exchange routing and reachability information among autonomous systems on the Internet. It is often described as the routing protocol of the Internet, the protocol that holds the global network together by making routing work between different networks and providers. The Internet is divided into autonomous systems, each a collection of IP networks under the control of a single organization, such as an Internet service provider or a large company, and each identified by an autonomous system number. BGP routes between these autonomous systems, a role called external BGP, while a variant called internal BGP carries the information within an autonomous system. BGP is a path-vector protocol: it makes routing decisions based on paths, specifically the sequence of autonomous systems a route traverses, called the AS path, together with network policies and rule-sets configured by administrators, rather than purely on technical metrics like hop count. It advertises to its neighbours, called peers, which networks, or IP prefixes, it can reach and by what AS path, and business relationships and policy heavily influence the routes chosen. BGP peers establish sessions over TCP, on port 179, and exchange routing updates, selecting a best path per prefix from attributes such as AS-path length and local preference. BGP is based on trust and historically lacked built-in security, making it vulnerable to misconfiguration and to BGP hijacking, in which a network wrongly announces prefixes it does not own, causing outages and rerouting. BGP dates to 1989, with the current version, BGP-4, specified in RFC 4271 in 2006.",
+  "mechanism": "BGP is the protocol by which the many independently operated networks that make up the Internet tell each other how to reach the world's IP address blocks, stitching them into a single global routing system. The Internet is partitioned into autonomous systems, each a set of networks under one organization's control and identified by a unique autonomous system number. Within an autonomous system, interior routing protocols handle the details; between autonomous systems, BGP does the work, in its external form, exchanging reachability information across organizational boundaries, while internal BGP distributes that information inside a large autonomous system. Two BGP routers that agree to exchange routes become peers and open a session over TCP on port 179, then advertise to each other the IP prefixes, blocks of addresses, they can reach, each advertisement carrying the AS path, the ordered list of autonomous systems a packet would traverse to get there. This makes BGP a path-vector protocol: rather than choosing routes purely by a technical metric like shortest hop count, it reasons about whole paths and, crucially, about policy. Network operators configure rules and preferences reflecting business relationships, cost, and agreements, so that the route the Internet actually uses to reach a destination is shaped as much by commercial policy as by topology; among the routes it knows for a prefix, a BGP router selects a best path using attributes such as local preference and AS-path length. The consequence is a decentralized system built on trust: each network believes the reachability its peers advertise. That trust is also BGP's great weakness, because a network that announces prefixes it does not legitimately hold, whether by mistake or malice, can attract and misroute traffic, the phenomenon of BGP hijacking, which has caused notable outages and rerouting incidents.",
+  "examples": [
+    {
+      "tag": "Autonomous systems",
+      "text": "The Internet is divided into autonomous systems, each identified by a number, and BGP routes between them."
+    },
+    {
+      "tag": "The AS path",
+      "text": "BGP advertises which prefixes it can reach and by what sequence of autonomous systems, choosing paths by policy."
+    },
+    {
+      "tag": "BGP hijacking",
+      "text": "A network wrongly announcing prefixes it does not own can misroute traffic, causing outages."
+    }
+  ],
+  "variants": [
+    {
+      "name": "External and internal BGP",
+      "text": "External BGP exchanges routes between autonomous systems; internal BGP distributes them within one."
+    },
+    {
+      "name": "Policy-based routing",
+      "text": "BGP chooses routes by administrator-configured policy and business relationships, not purely by technical metrics."
+    }
+  ],
+  "whyItMatters": "The Border Gateway Protocol is the glue that holds the Internet together, the protocol that lets tens of thousands of independently run networks agree on how to reach one another so that a packet can travel from any point on the global Internet to any other. Without BGP there would be no single Internet, only a collection of disconnected networks; it is BGP that continuously exchanges reachability information among autonomous systems and computes the routes over which the world's traffic flows. This makes it one of the most critical and consequential protocols in existence, and also one of the most consequential when it fails. Because BGP is built on trust, with each network believing the routes its peers advertise, and because it historically lacked built-in security, a single misconfiguration or malicious announcement can ripple across the Internet: BGP hijacks and route leaks have taken major services offline, misdirected traffic through unintended countries, and caused large regional outages, dramatizing how much of modern life rests on this decades-old protocol. BGP also embodies a deep feature of the Internet's structure, that global routing is governed not just by technical topology but by the policies and business relationships among networks, so the paths traffic takes reflect commerce as well as geography. Dating to 1989 and now in its fourth version, BGP has scaled to run the whole Internet. As the protocol that routes traffic between the world's networks by exchanging reachable paths, BGP is foundational to the global Internet.",
+  "working": [
+    {"lead": "Peer over TCP", "text": "two BGP routers in different autonomous systems open a session over TCP on port 179."},
+    {"lead": "Advertise prefixes and paths", "text": "each peer announces which IP prefixes it can reach and by what AS path."},
+    {"lead": "Select by policy", "text": "each router picks a best path per prefix using attributes and administrator-configured policy."}
+  ],
+  "limits": "BGP runs the global Internet but carries serious fragilities that reward care. Its foundational weakness is trust: BGP was designed without built-in security, so routers by default accept the routes their peers advertise, leaving the Internet vulnerable to misconfiguration and to BGP hijacking, in which a network announces prefixes it does not own and attracts traffic it should not receive; such incidents, whether accidental route leaks or deliberate attacks, have caused real outages and misrouting, and defensive measures like route filtering and RPKI are partial and incompletely deployed. BGP is also slow to converge and can be complex to configure correctly, and because routing is driven by policy and business relationships rather than pure efficiency, the paths traffic takes are not always the shortest or most direct. BGP concerns routing between autonomous systems; it does not manage routing within a network, which uses interior protocols, so conflating exterior and interior routing is a mistake. Some historical details reward care: BGP dates to 1989 with RFC 1105, its early design famously sketched on two napkins, so the common three-napkin phrasing is wrong; the current version is BGP-4, specified in RFC 4271 in 2006; and it runs over TCP on port 179. So BGP robustly routes traffic between the world's networks, understood as a trust-based, policy-driven protocol whose lack of built-in security makes it vulnerable to hijacking and misconfiguration.",
+  "misreadings": "BGP is not inherently secure; it trusts advertised routes, so hijacks and leaks can misroute traffic. It does not route within a network, only between autonomous systems. And it chooses paths by policy, not pure efficiency, so treating BGP as secure by design, as handling interior routing, or as always finding the shortest path, misreads it.",
+  "origin": "The exterior gateway protocol dating to 1989, current version BGP-4 in RFC 4271 (2006), that routes traffic between the Internet's autonomous systems by exchanging reachable AS paths under administrator policy.",
+  "category": "technology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1989,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Border Gateway Protocol, Wikipedia. — BGP as a standardized exterior gateway protocol exchanging routing and reachability among autonomous systems, autonomous system numbers and external versus internal BGP, the path-vector design using AS paths and administrator policy, peering over TCP port 179, the trust-based vulnerability to misconfiguration and hijacking, and the 1989 origin with current version BGP-4.", "url": "https://en.wikipedia.org/wiki/Border_Gateway_Protocol", "type": "secondary"},
+    {"text": "RFC 4271, A Border Gateway Protocol 4 (BGP-4), IETF, January 2006. — the specification of BGP-4, the inter-autonomous-system routing protocol, including its operation over TCP port 179.", "url": "https://datatracker.ietf.org/doc/html/rfc4271", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Border_Gateway_Protocol",
+  "related": [
+    {"slug": "the-internet-protocol", "kind": "kindred"},
+    {"slug": "dijkstras-algorithm", "kind": "kindred"}
+  ]
+}

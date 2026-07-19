@@ -1,0 +1,57 @@
+{
+  "no": "1052",
+  "slug": "the-three-way-handshake",
+  "name": "The Three-Way Handshake",
+  "aliases": ["TCP handshake", "SYN-SYN-ACK"],
+  "statement": "Open a TCP connection in three messages that synchronize both sides before any data flows.",
+  "statementAccent": "three messages that synchronize both sides",
+  "meaning": "The three-way handshake, also called the TCP handshake or SYN-SYN-ACK, is the process TCP uses to establish a connection between a client and a server before any application data is transferred. It ensures that both sides are ready to communicate and synchronizes their sequence numbers, the counters TCP uses to order and track the bytes of a connection. It is called three-way because it involves three messages, or steps. In the first step, SYN, the client, the active opener, sends a segment with the SYN, or synchronize, flag set, containing its initial sequence number, call it x. In the second step, SYN-ACK, the server, the passive opener, responds with a segment that has both the SYN and ACK flags set: it acknowledges the client's SYN, with an acknowledgment of x plus one, and sends its own initial sequence number, call it y. In the third step, ACK, the client sends an ACK segment acknowledging the server's SYN, with an acknowledgment of y plus one. After this exchange, the connection is established and data transfer can begin in both directions. The handshake reliably establishes connection parameters and synchronizes the sequence numbers in both directions, since TCP is full-duplex, so both sides agree on their starting sequence numbers for reliable, ordered delivery; the initial sequence numbers are often randomized for security. Closing a TCP connection, by contrast, typically uses a four-way exchange of FIN and ACK segments. The handshake is the target of the SYN flood denial-of-service attack, in which an attacker sends many SYNs without completing the handshake, exhausting the server's resources with half-open connections. It is fundamental to how every TCP connection begins.",
+  "mechanism": "The three-way handshake solves a subtle problem: two machines that share no clock and communicate over an unreliable network must nonetheless agree, before exchanging data, on the starting point of their byte-numbering in both directions, so that each can reliably detect loss, order, and duplication. TCP numbers every byte with a sequence number, and for that numbering to work each side must know the other's initial sequence number. The handshake accomplishes this in three steps. First, the client that wants to connect, the active opener, sends a segment with the SYN flag set and carrying its chosen initial sequence number, x; this both requests a connection and announces the client's starting count. Second, the server, the passive opener that was listening, replies with a single segment that does double duty: it sets the ACK flag with an acknowledgment number of x plus one, confirming it received the client's SYN and is ready for the client's data, and it sets the SYN flag with its own initial sequence number, y, announcing the server's starting count for the reverse direction. Third, the client sends an ACK with acknowledgment number y plus one, confirming it received the server's SYN. Now both sides know and have acknowledged each other's initial sequence numbers, the connection is established, and full-duplex data transfer can begin. Three exchanges are the minimum needed for both sides to send and confirm their sequence numbers, and initial sequence numbers are typically chosen randomly to make them hard for attackers to guess. This same mechanism is what a SYN flood attack abuses: by sending a torrent of SYN segments, often with forged source addresses, and never sending the final ACK, an attacker leaves the server holding many half-open connections, consuming its resources. Connection teardown mirrors the setup with a four-way FIN and ACK exchange, each direction closing independently.",
+  "examples": [
+    {
+      "tag": "SYN, SYN-ACK, ACK",
+      "text": "The client sends SYN with x, the server replies SYN-ACK with y and acknowledges x plus one, the client acknowledges y plus one."
+    },
+    {
+      "tag": "Synchronizing sequence numbers",
+      "text": "Both sides learn and confirm each other's initial sequence numbers so bytes can be ordered reliably."
+    },
+    {
+      "tag": "SYN flood",
+      "text": "Sending many SYNs without completing the handshake floods a server with resource-consuming half-open connections."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Four-way close",
+      "text": "Closing a TCP connection uses a separate four-way exchange of FIN and ACK segments, each side closing independently."
+    },
+    {
+      "name": "Randomized sequence numbers",
+      "text": "Initial sequence numbers are typically chosen randomly to make them hard for attackers to predict."
+    }
+  ],
+  "whyItMatters": "The three-way handshake is the small but essential ritual that begins every TCP connection, and since most of the Internet's important traffic runs over TCP, it is the opening move of an astronomical number of interactions every second: every web page load, email, file transfer, and secure login starts with a client and server exchanging SYN, SYN-ACK, and ACK. Its importance lies in solving a genuinely tricky problem elegantly. For TCP to deliver data reliably and in order, both ends must agree on where their byte-numbering starts, in both directions, before any data flows, and the three-way handshake is the minimal exchange that lets two machines with no shared clock, communicating over a lossy network, synchronize their sequence numbers and confirm mutual readiness. This synchronization is what makes all of TCP's reliability machinery possible. The handshake is also a landmark in network security education, because it is the target of the classic SYN flood denial-of-service attack, which exploits the server's willingness to hold half-open connections and motivated defenses like SYN cookies; understanding the handshake is understanding both how connections form and how they can be attacked. As the three-message exchange that synchronizes both sides and opens a reliable connection before any data flows, the three-way handshake is a fundamental building block of the working Internet.",
+  "working": [
+    {"lead": "Client sends SYN", "text": "the client sends a SYN segment with its initial sequence number to request a connection."},
+    {"lead": "Server sends SYN-ACK", "text": "the server replies acknowledging the client's SYN and sending its own initial sequence number."},
+    {"lead": "Client sends ACK", "text": "the client acknowledges the server's SYN, and the connection is established for data transfer."}
+  ],
+  "limits": "The three-way handshake is elegant but its role and costs reward care. It establishes a connection and synchronizes sequence numbers; it does not by itself provide any security, since it neither encrypts nor authenticates, so confidentiality and identity verification come from higher layers like TLS, not from the handshake. The handshake also imposes a latency cost: a full round trip must complete before any application data can be sent, which matters for short connections and motivated optimizations such as TCP Fast Open and, in newer protocols, combining connection setup with encryption. Its very design is exploitable: the SYN flood attack abuses the server's commitment to hold state for half-open connections, a vulnerability requiring specific defenses like SYN cookies, so the handshake is a security-relevant surface, not a neutral formality. The three-way handshake is specific to TCP; connectionless protocols like UDP have no handshake, and newer transports may differ. Some technical details reward care: the sequence-number arithmetic is x, x plus one, y, y plus one; initial sequence numbers are randomized for security; and connection teardown uses a separate four-way FIN and ACK exchange, not the three-way handshake. So the three-way handshake robustly opens a synchronized TCP connection, understood as adding a round-trip of latency, providing no security itself, and being distinct from connection teardown.",
+  "misreadings": "The three-way handshake does not secure the connection; encryption and authentication come from TLS above it. It is not free, costing a round-trip before data flows. And it opens a connection but does not close one, which uses a four-way exchange, so treating the handshake as providing security, as instantaneous, or as also handling teardown, misreads it.",
+  "origin": "The three-message SYN, SYN-ACK, ACK exchange TCP uses to establish a connection and synchronize both sides' sequence numbers before any data is transferred.",
+  "category": "technology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Transmission Control Protocol, Wikipedia. — the three-way handshake as TCP's connection-establishment process with SYN, SYN-ACK, and ACK, the synchronization of initial sequence numbers x, x plus one, y, and y plus one, establishing before data transfer, the four-way FIN and ACK close, and the SYN flood denial-of-service attack.", "url": "https://en.wikipedia.org/wiki/Transmission_Control_Protocol", "type": "secondary"},
+    {"text": "RFC 793, Transmission Control Protocol, IETF, 1981. — the specification of TCP connection establishment and the synchronization of sequence numbers requiring the three-way exchange.", "url": "https://datatracker.ietf.org/doc/html/rfc793", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Transmission_Control_Protocol",
+  "related": [
+    {"slug": "the-transmission-control-protocol", "kind": "cause"},
+    {"slug": "the-internet-protocol", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "no": "1048",
+  "slug": "the-tcp-ip-model",
+  "name": "The TCP/IP Model",
+  "aliases": [
+    "Internet protocol suite",
+    "TCP/IP"
+  ],
+  "statement": "The four-layer architecture the real Internet runs on, named for its two core protocols.",
+  "statementAccent": "the real Internet runs on",
+  "meaning": "The Internet protocol suite, commonly known as TCP/IP, is the set of communications protocols used in the Internet and similar computer networks. It is named after its two foundational protocols, the Transmission Control Protocol and the Internet Protocol, and the TCP/IP model is the practical framework on which the actual Internet is built, as opposed to the more theoretical seven-layer OSI model. The TCP/IP model organizes protocols into layers, commonly four: the link, or network interface, layer, dealing with the local network technology such as Ethernet and Wi-Fi; the internet layer, where IP handles addressing and the routing of packets across networks; the transport layer, where TCP and UDP provide host-to-host, end-to-end communication; and the application layer, holding application protocols such as HTTP, DNS, SMTP, and FTP. Some descriptions use five layers by splitting the link layer into a physical and a data-link layer. The model maps roughly onto the OSI model: the link layer corresponds to OSI layers one and two, the internet layer to OSI layer three, the transport layer to OSI layer four, and the application layer to OSI layers five through seven. IP forms the narrow waist of the hourglass, with many application and link technologies but everything running over IP in the middle. TCP/IP grew out of ARPANET research, developed by Vint Cerf and Bob Kahn in the 1970s, and the Internet migrated to it on January 1, 1983, a flag day; the suite is specified in RFCs such as RFC 1122. It is the foundational architecture of the Internet.",
+  "mechanism": "The TCP/IP model describes how the protocols that actually run the Internet are layered, each layer handling one part of the job of getting data from an application on one machine to an application on another across a patchwork of networks. At the bottom, the link layer covers the specific technology of the local network, Ethernet, Wi-Fi, and the like, moving frames between directly connected devices; the model is deliberately agnostic here, working over whatever link technology is present. Above it, the internet layer is the domain of IP, which gives every host an address and routes packets across network boundaries, tying separate networks into one internetwork, its defining function. Above that, the transport layer, home to TCP and UDP, provides end-to-end communication between processes on the two hosts, TCP adding reliability and ordering, UDP offering a lean, connectionless service. At the top, the application layer holds the protocols applications speak directly, HTTP for the Web, DNS for names, SMTP for mail, FTP for files, and many more. The layering means each layer uses the service of the one below and offers a service to the one above, and the model maps loosely onto the OSI reference model, though TCP/IP collapses OSI's upper three layers into a single application layer. The architecture's most celebrated feature is the hourglass, or narrow waist: there are many technologies at the link layer below and many protocols at the application layer above, but they all converge on a single internet layer, IP, in the middle. This narrow waist is why the Internet can grow and diversify at top and bottom while staying unified. TCP/IP grew from ARPANET research led by Cerf and Kahn, and the Internet formally adopted it on the 1983 flag day.",
+  "examples": [
+    {
+      "tag": "Four layers",
+      "text": "The link, internet, transport, and application layers, with IP at the internet layer and TCP and UDP at the transport layer."
+    },
+    {
+      "tag": "The narrow waist",
+      "text": "Many link and application technologies converge on a single internet layer, IP, in the middle of the hourglass."
+    },
+    {
+      "tag": "The 1983 flag day",
+      "text": "The Internet migrated from its earlier protocol to TCP/IP on January 1, 1983."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Four versus five layers",
+      "text": "Some descriptions split the link layer into physical and data-link, giving a five-layer version of the model."
+    },
+    {
+      "name": "Mapping to OSI",
+      "text": "TCP/IP's layers map loosely onto OSI, collapsing OSI's session, presentation, and application into one application layer."
+    }
+  ],
+  "whyItMatters": "The TCP/IP model is the actual architecture of the Internet, the practical framework of protocols on which the global network is built and by which billions of devices communicate. Unlike the OSI model, which is a comprehensive but theoretical reference, TCP/IP is what runs in the real world, and understanding its four layers, link, internet, transport, and application, is understanding how the Internet actually works, from a Wi-Fi frame to an IP packet to a TCP connection to an HTTP request. Its defining architectural idea, the narrow waist of the hourglass with IP in the middle, is one of the great design decisions in the history of computing: by insisting that everything run over a single, simple internet protocol while leaving the technologies above and below free to vary, TCP/IP allowed the Internet to absorb new applications and new link technologies for decades without changing its core, a flexibility that let it scale from a research network to the fabric of modern civilization. Named for its two foundational protocols, TCP and IP, and developed by Vint Cerf and Bob Kahn out of ARPANET research, the suite became the Internet's standard on the flag day of January 1, 1983, a moment often taken as the birth of the Internet as we know it. As the layered architecture the real Internet runs on, named for TCP and IP, the TCP/IP model is the foundation of global networking.",
+  "working": [
+    {
+      "lead": "Layer the protocols",
+      "text": "organize into link, internet, transport, and application layers, each serving the one above."
+    },
+    {
+      "lead": "Converge on IP",
+      "text": "route everything through the single internet layer, IP, the narrow waist of the hourglass."
+    },
+    {
+      "lead": "Run real protocols",
+      "text": "carry TCP and UDP at the transport layer and HTTP, DNS, and others at the application layer."
+    }
+  ],
+  "limits": "The TCP/IP model is the working architecture of the Internet, but describing it precisely rewards care. The number of layers is not fixed by universal agreement: the classic RFC 1122 description uses four layers, while many textbooks use five by splitting the link layer into physical and data-link, so stating a single canonical count can mislead. The mapping onto the OSI model is only approximate; TCP/IP collapses OSI's session, presentation, and application layers into one, and authors disagree about exactly how the link layer aligns with OSI's physical and data-link layers, so the correspondence should be described as loose. The model is descriptive of how the Internet's protocols are organized rather than a rigid specification, and real systems do not always respect its boundaries. The narrow-waist, or hourglass, characterization, though widely used and apt, is a metaphor and analysis rather than part of the formal protocol standards. Some historical details reward care: TCP/IP is named for TCP and IP but also encompasses UDP and many other protocols; it grew from ARPANET research by Cerf and Kahn in the 1970s; and the Internet's migration to it occurred on the flag day of January 1, 1983. So the TCP/IP model robustly frames the Internet's real architecture, understood as a loosely layered, variably counted framework that maps only approximately onto OSI.",
+  "misreadings": "The TCP/IP model does not have one fixed layer count; it is four in RFC 1122 and five in some texts. It does not map exactly onto the OSI model, collapsing OSI's upper layers. And it is descriptive, not a rigid rulebook real protocols always obey, so treating TCP/IP as having a single canonical layering, as matching OSI one-to-one, or as strictly enforced, misreads it.",
+  "origin": "The Internet's protocol architecture, named for TCP and IP and grown from ARPANET research by Cerf and Kahn, adopted on the 1983 flag day, organizing networking into link, internet, transport, and application layers.",
+  "category": "technology",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1983,
+  "namedAfter": null,
+  "sources": [
+    {
+      "text": "Internet protocol suite, Wikipedia. — the TCP/IP suite named for TCP and IP as the Internet's protocol framework, the four layers link, internet, transport, and application with their protocols, the five-layer variant, the loose mapping to the OSI model, the Cerf-Kahn ARPANET origin, and the 1983 migration flag day.",
+      "url": "https://en.wikipedia.org/wiki/Internet_protocol_suite",
+      "type": "secondary"
+    },
+    {
+      "text": "Hourglass model, Wikipedia. — the hourglass or narrow-waist model with IP as the single spanning layer over which diverse application and link technologies converge.",
+      "url": "https://en.wikipedia.org/wiki/Hourglass_model",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Internet_protocol_suite",
+  "related": [
+    {
+      "slug": "the-osi-model",
+      "kind": "tension"
+    },
+    {
+      "slug": "the-internet-protocol",
+      "kind": "cause"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "no": "1047",
+  "slug": "the-osi-model",
+  "name": "The OSI Model",
+  "aliases": [
+    "Open Systems Interconnection model",
+    "The seven-layer model"
+  ],
+  "statement": "Split networking into seven layers, from physical wires up to applications, as a common reference.",
+  "statementAccent": "from physical wires up to applications",
+  "meaning": "The OSI model, or Open Systems Interconnection model, is a conceptual reference model that partitions the communication functions of a telecommunication or computing system into seven abstraction layers. It was developed by the International Organization for Standardization, or ISO. Each layer serves the layer above it and is served by the layer below, providing a standard framework for describing and standardizing how different systems communicate. The seven layers, from layer one at the bottom to layer seven at the top, are: the physical layer, dealing with raw bits, cables, signals, and hardware; the data link layer, handling frames and MAC addresses, as in Ethernet and switches; the network layer, handling packets, routing, and IP addresses, as in routers; the transport layer, providing end-to-end delivery of segments, as in TCP and UDP; the session layer, managing sessions and dialogue control; the presentation layer, handling data translation, encryption, and formatting; and the application layer, carrying application-level protocols such as HTTP and closest to the user. As data moves down the layers at the sender, each layer adds its own header, a process called encapsulation, and at the receiver it moves up and each layer strips its header, called decapsulation. The OSI model is largely a theoretical, reference, and teaching model of seven layers, whereas the Internet as actually implemented uses the TCP/IP model of four or five layers; the OSI model was more comprehensive, but the TCP/IP suite won in practice. Published around 1984 as ISO 7498, it remains the standard vocabulary for discussing networking, so people speak of layer three or layer seven.",
+  "mechanism": "The OSI model organizes the enormous complexity of network communication into seven stacked layers, each responsible for one well-defined aspect of moving data, so that designers and engineers can reason about, build, and interoperate one layer at a time. The governing principle is layering: each layer provides a service to the layer above and relies on the service of the layer below, and it communicates conceptually with the same layer on the other machine, without needing to know how the layers beneath it accomplish their work. From the bottom, the physical layer transmits raw bits as electrical, optical, or radio signals over a medium; the data link layer groups bits into frames and moves them between directly connected nodes using hardware MAC addresses, as Ethernet does; the network layer routes packets across multiple networks using logical addresses, the role of IP; the transport layer provides end-to-end delivery between processes, adding reliability or not, as TCP and UDP do; the session layer manages the establishment and control of dialogues; the presentation layer translates, formats, encrypts, and compresses data into a form applications can use; and the application layer holds the protocols users interact with, like HTTP. Data flows through this stack by encapsulation: at the sender, a message starts at the top and descends, and each layer wraps what it receives with its own header, and sometimes trailer, of control information, so that by the physical layer the original data is nested inside successive envelopes. At the receiver, the process reverses through decapsulation, each layer stripping and interpreting its own header before passing the contents up. The model, published by ISO around 1984, is chiefly a reference and teaching framework; the actually deployed Internet follows the leaner TCP/IP model, but the OSI layers remain the shared vocabulary of networking.",
+  "examples": [
+    {
+      "tag": "The seven layers",
+      "text": "Physical, data link, network, transport, session, presentation, and application, from layer one to layer seven."
+    },
+    {
+      "tag": "Encapsulation",
+      "text": "Descending the stack, each layer adds its own header; ascending, each layer strips its header."
+    },
+    {
+      "tag": "Layer shorthand",
+      "text": "Engineers say layer three for the network layer or layer seven for the application layer."
+    }
+  ],
+  "variants": [
+    {
+      "name": "OSI versus TCP/IP",
+      "text": "OSI is the theoretical seven-layer reference; the implemented Internet uses the leaner four- or five-layer TCP/IP model."
+    },
+    {
+      "name": "ISO 7498",
+      "text": "The OSI model was published by the ISO around 1984 as the standard ISO 7498."
+    }
+  ],
+  "whyItMatters": "The OSI model is the standard mental map and shared vocabulary of computer networking, the framework that lets everyone in the field describe, design, and reason about how communication works in a common language. By dividing the vast complexity of networking into seven clearly defined layers, from raw bits on a wire up to the applications users see, it makes the whole system tractable: engineers can focus on one layer without needing to understand the internals of the others, protocols can be developed and swapped independently at each level, and problems can be located precisely, since a fault is a physical-layer issue, a routing issue at layer three, or an application issue at layer seven. That shared reference is why networking professionals routinely speak of layer-three devices, layer-seven firewalls, or layer-two switches, a shorthand that only works because the OSI model gave the industry a common numbering. Although the Internet as actually built follows the leaner TCP/IP model rather than OSI's full seven layers, the OSI model remains the dominant teaching and conceptual tool, more comprehensive in its distinctions and invaluable for understanding where each protocol and technology fits. Developed by the ISO and published around 1984, it has outlived the competing protocol stack it was meant to standardize, surviving as pure conceptual scaffolding. As the seven-layer reference spanning physical wires to applications, the OSI model is the foundational framework for thinking about networks.",
+  "working": [
+    {
+      "lead": "Divide into seven layers",
+      "text": "partition networking into physical, data link, network, transport, session, presentation, and application layers."
+    },
+    {
+      "lead": "Serve up and down",
+      "text": "have each layer provide a service to the layer above and use the service of the layer below."
+    },
+    {
+      "lead": "Encapsulate and decapsulate",
+      "text": "add a header at each layer descending the sender's stack, and strip it ascending the receiver's."
+    }
+  ],
+  "limits": "The OSI model is invaluable as a reference but several points reward care. It is a conceptual and teaching model, not the architecture the Internet actually uses; the deployed Internet follows the TCP/IP model, whose four or five layers do not map cleanly onto OSI's seven, so treating OSI as a literal description of how the Internet is built is a mistake. Real protocols often blur or span the model's neat boundaries: the session and presentation layers in particular have no clear counterpart in TCP/IP, and many functions the OSI model separates are combined in practice. The count of TCP/IP layers itself varies by source, four in the classic RFC 1122 description and five in some textbooks that split the link layer, so the numbers should be stated with care. The model was the product of a standards effort whose own protocol suite lost out to TCP/IP, a reminder that OSI's value today is as a framework rather than as an implemented system. Some details reward care: the OSI model was developed by the ISO and published around 1984 as ISO 7498, its seven layers run physical, data link, network, transport, session, presentation, application, and the popular layer mnemonic is folklore, not part of the standard. So the OSI model robustly frames networking in seven layers, understood as a reference and teaching tool distinct from the TCP/IP architecture the Internet actually runs on.",
+  "misreadings": "The OSI model is not how the Internet is built; the deployed Internet uses the TCP/IP model, which does not map cleanly onto OSI's seven layers. Real protocols blur its boundaries, and its session and presentation layers lack clear TCP/IP counterparts. So treating OSI as the actual Internet architecture, as matched one-to-one with TCP/IP, or as strictly obeyed by real protocols, misreads it.",
+  "origin": "The seven-layer reference model developed by the ISO and published around 1984 as ISO 7498, partitioning network communication from the physical layer up to the application layer.",
+  "category": "technology",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1984,
+  "namedAfter": null,
+  "sources": [
+    {
+      "text": "OSI model, Wikipedia. — the OSI model as a seven-layer reference model developed by the ISO, the physical, data link, network, transport, session, presentation, and application layers with each serving the one above, encapsulation and decapsulation via headers, the contrast with the implemented TCP/IP model, and publication around 1984 as ISO 7498.",
+      "url": "https://en.wikipedia.org/wiki/OSI_model",
+      "type": "secondary"
+    },
+    {
+      "text": "What is the OSI Model? 7 OSI Layers Explained, Amazon Web Services. — the seven OSI layers, their functions, and the model's role as a conceptual framework for networking.",
+      "url": "https://aws.amazon.com/what-is/osi-model/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/OSI_model",
+  "related": [
+    {
+      "slug": "the-tcp-ip-model",
+      "kind": "tension"
+    },
+    {
+      "slug": "ethernet",
+      "kind": "kindred"
+    }
+  ]
+}
