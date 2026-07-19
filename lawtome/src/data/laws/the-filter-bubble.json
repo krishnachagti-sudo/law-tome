@@ -1,0 +1,57 @@
+{
+  "no": "741",
+  "slug": "the-filter-bubble",
+  "name": "The Filter Bubble",
+  "aliases": ["Filter bubbles", "Algorithmic isolation"],
+  "statement": "Algorithms feed you what you already agree with, quietly walling you off from views you would dislike.",
+  "statementAccent": "quietly walling you off from views you would dislike",
+  "meaning": "A filter bubble is a state of intellectual isolation that can result when websites and online platforms use algorithms to selectively predict and present the information a user is likely to agree with or find agreeable, based on data about them such as past behaviour, location, search history, and clicks, while filtering out dissenting or challenging content. The user becomes separated from information that conflicts with their viewpoints, effectively enclosed in their own ideological bubble. The term was coined by the internet activist Eli Pariser and popularised in his 2011 book The Filter Bubble, along with a related talk. Pariser illustrated it with the observation that two people searching the same term could receive very different results tailored to each. The concept has become central to debates about the internet, algorithms, and democracy, though the empirical evidence for strong filter-bubble effects is mixed and contested.",
+  "mechanism": "Personalisation algorithms behind search engines, social feeds, and recommendation systems tailor content to each user by drawing on data about their behaviour and preferences, aiming to show what will engage them. Because the systems favour content the user is likely to agree with or click, they can progressively narrow the information a person encounters, filtering out challenging or dissenting material. The user's own choices combine with the algorithm's curation in a self-reinforcing loop: each click teaches the system what to serve next, which shapes future clicks, tightening the bubble over time. A key illustration is Pariser's example of two users searching the identical term and receiving very different results, one financial, one about a disaster, because the algorithm inferred different interests. The filter bubble is distinguished from an echo chamber by its emphasis on implicit, algorithmic, often invisible filtering in which the user plays a largely passive role, whereas an echo chamber typically involves explicit, self-selected, social choices to surround oneself with like-minded views. The two are related and often conflated.",
+  "examples": [
+    {
+      "tag": "Different results, same search",
+      "text": "Pariser noted that two users searching the same term could get very different results, one about a company's finances, another about an oil spill, tailored by the algorithm."
+    },
+    {
+      "tag": "The self-reinforcing loop",
+      "text": "Each click teaches the system what to serve, which shapes future clicks, progressively narrowing the information a user encounters."
+    },
+    {
+      "tag": "Filter bubble versus echo chamber",
+      "text": "A filter bubble emphasises invisible algorithmic filtering with a passive user, while an echo chamber involves self-selected, social choices to seek like-minded views."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The echo chamber",
+      "text": "The related concept of being surrounded by like-minded views through self-selected, social choices, contrasted with the algorithmic filter bubble."
+    },
+    {
+      "name": "The contested-evidence view",
+      "text": "The position, associated with critics like Axel Bruns, that filter-bubble effects are weaker and more overstated than the popular concept implies."
+    }
+  ],
+  "whyItMatters": "The filter bubble is a highly influential concept in debates about the internet, algorithms, social media, democracy, and polarisation. It gave a memorable name to the worry that personalised, algorithmically curated information environments can narrow what people see, reinforce existing beliefs, deepen political polarisation, spread misinformation, and undermine the shared factual common ground that democratic discourse depends on. The idea has shaped public discussion, platform design debates, and calls for transparency and diversity in algorithmic curation. At the same time, it has spurred important empirical scrutiny: research testing whether filter bubbles are as strong and widespread as claimed has produced mixed results, with some scholars arguing the concept is overstated and that human choices, not algorithms alone, drive polarisation. As both a widely invoked warning and a contested empirical claim, the filter bubble frames much of the modern conversation about how algorithms shape what we know.",
+  "working": [
+    {"lead": "Personalise the feed", "text": "let algorithms tailor search results, feeds, and recommendations to each user based on their behaviour and preferences."},
+    {"lead": "Filter out the disagreeable", "text": "note that favouring agreeable, engaging content can narrow what the user sees, screening out challenging material."},
+    {"lead": "Reinforce the loop", "text": "recognise that user choices and algorithmic curation feed each other, potentially tightening the bubble, though the strength of the effect is debated."}
+  ],
+  "limits": "The empirical evidence for strong filter-bubble effects is mixed and contested. Several studies attempting to replicate large, systematic differences in personalised results have found only modest effects, and some research indicates people online may encounter more diverse news than offline. Critics such as Axel Bruns argue that filter bubbles and echo chambers amount largely to a moral panic that blames technology for polarisation that is fundamentally human and social in origin. The filter bubble is also often conflated with the echo chamber, though they differ in whether the filtering is algorithmic or self-selected. So while the concept usefully names a real concern about algorithmic curation, the extent to which filter bubbles actually isolate people, and how much algorithms rather than human choices are responsible, remain open and actively debated questions.",
+  "misreadings": "The filter bubble is not an established, uncontested fact; the strength of its effects is debated, with some research finding them modest and some scholars calling the concept overstated. It is not the same as an echo chamber, which involves self-selected, social choices rather than invisible algorithmic filtering, though the two are often conflated. And it does not imply algorithms alone drive polarisation, since human choices play a large role, so treating the filter bubble as a proven, dominant cause of division, or as identical to the echo chamber, misreads an influential but contested idea.",
+  "origin": "Coined by the internet activist Eli Pariser and popularised in his 2011 book The Filter Bubble, describing algorithmic personalisation that isolates users from information they would disagree with; its empirical strength is debated.",
+  "category": "media",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 2011,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Filter bubble, Wikipedia. — the algorithmic personalisation that isolates users from disagreeable information, Pariser's 2011 coinage, the mechanism and the different-results example, the echo-chamber distinction, the polarisation and misinformation concerns, and the mixed and contested evidence.", "url": "https://en.wikipedia.org/wiki/Filter_bubble", "type": "secondary"},
+    {"text": "Axel Bruns, Filter Bubbles and Echo Chambers: Debunking the Myths. — the argument that filter-bubble and echo-chamber effects are overstated.", "url": "https://medium.com/dmrc-at-large/are-filter-bubbles-real-3be22bd9230e", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Filter_bubble",
+  "related": [
+    {"slug": "confirmation-bias", "kind": "kindred"},
+    {"slug": "the-spiral-of-silence", "kind": "kindred"}
+  ]
+}
