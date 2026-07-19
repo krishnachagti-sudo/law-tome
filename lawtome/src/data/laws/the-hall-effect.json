@@ -1,0 +1,57 @@
+{
+  "no": "602",
+  "slug": "the-hall-effect",
+  "name": "The Hall Effect",
+  "aliases": ["Hall effect", "The Hall voltage"],
+  "statement": "Push current through a conductor in a magnetic field and a sideways voltage appears across it.",
+  "statementAccent": "a sideways voltage appears across it",
+  "meaning": "The Hall effect is the appearance of a transverse voltage across a current-carrying conductor when it sits in a magnetic field perpendicular to the current. As charge carriers drift along the conductor, the magnetic force deflects them to one side, piling up charge there until the resulting electric field balances the deflection; this sideways electric field is the Hall voltage, measured across the conductor at right angles to both the current and the magnetic field. Discovered by Edwin Hall in 1879, before the electron was even known, the effect reveals the sign and density of the charge carriers in a material and underlies a huge family of magnetic sensors, while its low-temperature quantum versions are landmarks of modern condensed-matter physics.",
+  "mechanism": "The driving force is the magnetic part of the Lorentz force, which acts on moving charges. When current flows and a perpendicular magnetic field is applied, each drifting carrier feels a sideways push; carriers accumulate on one face, leaving opposite charge on the other, and this separation creates a transverse electric field. Charge builds up until that field's force exactly cancels the magnetic deflection, at which point a steady Hall voltage stands across the conductor. The polarity of that voltage depends on whether the carriers are negative or positive, so the effect directly reveals the carrier sign, historically important evidence and, in semiconductors, evidence that current can be carried by positive holes. The magnitude of the voltage, through the Hall coefficient, gives the density of carriers.",
+  "examples": [
+    {
+      "tag": "Hall-effect sensors",
+      "text": "Devices exploiting the effect measure magnetic fields, position, and current in cars, phones, and brushless motors, a ubiquitous and rugged sensing technology."
+    },
+    {
+      "tag": "Reading the carrier sign",
+      "text": "Because the Hall voltage reverses with the sign of the charge carriers, it shows whether a material conducts by electrons or by positive holes, and how many there are."
+    },
+    {
+      "tag": "The quantum Hall effect",
+      "text": "At very low temperatures and strong fields the Hall resistance is quantised in exact steps; von Klitzing won the 1985 Nobel Prize, and the fractional version the 1998 Nobel Prize."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The integer quantum Hall effect",
+      "text": "The precise quantisation of the Hall conductance in integer steps, discovered by von Klitzing in 1980, so exact it provides a resistance standard for metrology."
+    },
+    {
+      "name": "The fractional quantum Hall effect",
+      "text": "The appearance of quantised plateaus at fractional values, revealing a quantum fluid of fractionally charged excitations, recognised by the 1998 Nobel Prize."
+    }
+  ],
+  "whyItMatters": "The Hall effect is both a fundamental probe of solid-state physics and a workhorse of sensor technology. By revealing the sign and density of charge carriers it became essential to understanding metals and semiconductors, and it clinched the idea that current in some materials is carried by positive holes. Hall-effect sensors measure fields, position, and current throughout modern electronics and vehicles. Its quantum descendants, the integer and fractional quantum Hall effects, are among the deepest discoveries of condensed-matter physics, providing an extraordinarily precise resistance standard and revealing exotic states of matter, each honoured with a Nobel Prize.",
+  "working": [
+    {"lead": "Look for the transverse voltage", "text": "run current through a conductor in a perpendicular magnetic field and measure the voltage that appears sideways, across the current."},
+    {"lead": "Read carrier sign and density", "text": "use the Hall voltage's polarity to find whether carriers are negative or positive and its magnitude to find how many there are."},
+    {"lead": "Separate classical from quantum", "text": "treat the everyday Hall effect and the low-temperature, strong-field quantum Hall effects as distinct regimes with different physics."}
+  ],
+  "limits": "The Hall voltage is transverse, perpendicular to the current, not along it, and confusing the two misplaces the effect. The classical Hall effect and the quantum Hall effects occur in different regimes; the quantised versions require very low temperatures and strong magnetic fields, so they are not simply the ordinary effect made larger. The simple analysis assumes a single type of carrier and a thin, uniform conductor; materials with mixed carriers or complicated band structures give more involved Hall responses. And the effect measures carrier properties under the applied field, not the full electronic structure, so it is one informative probe among many.",
+  "misreadings": "The Hall voltage develops across the conductor, transverse to the current, not in the direction of current flow, so it is a sideways effect. The quantum Hall effect is not merely a stronger classical Hall effect; it is a distinct low-temperature, high-field phenomenon with quantised, exact plateaus. And a positive Hall voltage does not mean literal positive particles flow; in semiconductors it reflects conduction by holes, the absence of electrons behaving as positive carriers, which is a genuine but subtler notion than free positive charges.",
+  "origin": "Discovered by Edwin Hall in 1879 while a graduate student at Johns Hopkins University, before the electron was identified; the integer quantum Hall effect was found by Klaus von Klitzing in 1980 and the fractional version by Tsui, Stormer, and Laughlin, honoured with Nobel Prizes in 1985 and 1998.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1879,
+  "namedAfter": "Edwin Hall",
+  "sources": [
+    {"text": "Hall effect, Wikipedia. — the transverse Hall voltage, the Lorentz-force mechanism, carrier sign and density, Hall 1879, and the sensor applications.", "url": "https://en.wikipedia.org/wiki/Hall_effect", "type": "secondary"},
+    {"text": "Quantum Hall effect, Wikipedia. — the integer quantisation by von Klitzing in 1980 and the Nobel Prizes of 1985 and 1998.", "url": "https://en.wikipedia.org/wiki/Quantum_Hall_effect", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hall_effect",
+  "related": [
+    {"slug": "the-seebeck-effect", "kind": "kindred"},
+    {"slug": "the-photoelectric-effect", "kind": "kindred"}
+  ]
+}

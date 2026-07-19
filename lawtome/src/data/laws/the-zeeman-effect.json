@@ -1,0 +1,57 @@
+{
+  "no": "605",
+  "slug": "the-zeeman-effect",
+  "name": "The Zeeman Effect",
+  "aliases": ["Zeeman splitting", "The magnetic splitting of spectral lines"],
+  "statement": "Put an atom in a magnetic field and its single spectral line splits into several.",
+  "statementAccent": "its single spectral line splits into several",
+  "meaning": "The Zeeman effect is the splitting of a spectral line into several components when the emitting or absorbing atoms are placed in a static magnetic field. The sharp energy levels of an atom shift by amounts that depend on the field, so a transition that would produce a single line instead produces a cluster of closely spaced lines. Discovered by Pieter Zeeman in 1896, the effect provided crucial evidence for the quantum theory of atomic structure and, in its more complex form, for the existence of electron spin. Its electric-field analogue is the Stark effect. Beyond the laboratory, the Zeeman effect is a vital tool of astrophysics, letting astronomers measure magnetic fields on the Sun and distant stars from the splitting of their spectral lines.",
+  "mechanism": "An atom's electrons carry magnetic moments associated with their orbital motion and their spin, and a magnetic field interacts with these moments, shifting each energy level by an amount that depends on its magnetic quantum number. Levels that were degenerate, sharing the same energy, split apart, so the light emitted or absorbed in a transition spreads into several frequencies. The simplest, normal Zeeman effect splits a line into three and can be understood without spin, but the more common anomalous effect produces richer patterns that could only be explained once electron spin and quantum mechanics were understood, making the anomalous effect a historical clue that led toward the discovery of spin. The size of the splitting measures the strength of the magnetic field.",
+  "examples": [
+    {
+      "tag": "Zeeman's discovery",
+      "text": "Pieter Zeeman found the effect in 1896 studying sodium light between strong magnetic poles, and shared the 1902 Nobel Prize with Hendrik Lorentz."
+    },
+    {
+      "tag": "Measuring sunspot fields",
+      "text": "George Ellery Hale used the Zeeman effect in 1908 to measure the strong magnetic fields in sunspots, founding solar magnetism as an observational science."
+    },
+    {
+      "tag": "The anomalous effect and spin",
+      "text": "The complex splitting patterns that defied classical explanation were resolved only by electron spin, so the anomalous Zeeman effect helped reveal spin itself."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Normal and anomalous",
+      "text": "The three-line normal effect, explicable without spin, versus the richer anomalous splitting that requires electron spin and full quantum mechanics."
+    },
+    {
+      "name": "The Stark effect",
+      "text": "The electric-field analogue, in which an applied electric field rather than a magnetic one shifts and splits atomic energy levels and spectral lines."
+    }
+  ],
+  "whyItMatters": "The Zeeman effect was pivotal evidence for the quantum theory of the atom and, through its anomalous form, for electron spin, shaping the development of modern physics. Practically, it is one of the few ways to measure magnetic fields at a distance: by reading the splitting of spectral lines, astronomers gauge the magnetic fields of sunspots, stars, and interstellar clouds, and physicists probe atomic structure and run precision magnetometry in the laboratory. As a direct, quantitative link between magnetism and the light atoms emit, it remains an indispensable diagnostic across atomic physics and astrophysics.",
+  "working": [
+    {"lead": "Split levels with a field", "text": "apply a magnetic field so an atom's energy levels shift by amounts set by their magnetic quantum numbers, splitting a spectral line into components."},
+    {"lead": "Read field strength off the splitting", "text": "use the size of the line splitting to measure the magnetic field, whether in a lab sample or a distant star's atmosphere."},
+    {"lead": "Distinguish the electric analogue", "text": "keep the Zeeman effect, driven by a magnetic field, separate from the Stark effect, driven by an electric field."}
+  ],
+  "limits": "The effect requires a magnetic field and reveals field strength through line splitting, but the splitting is small and needs high-resolution spectroscopy to resolve, especially for weak fields. The simple normal effect describes only special cases; most atoms show the anomalous effect, whose patterns demand full quantum mechanics with spin to interpret. It is distinct from the Stark effect, its electric-field counterpart, and applies to the splitting of energy levels and spectral lines, not to other magnetic phenomena. Extracting a field from an astrophysical spectrum also requires disentangling the Zeeman signal from broadening and blending of lines.",
+  "misreadings": "The Zeeman effect splits spectral lines because it splits atomic energy levels; it is not a change in the light's intensity or a Doppler shift. It is caused by a magnetic field, and must not be confused with the Stark effect, which is the analogous splitting caused by an electric field. And the anomalous Zeeman effect is not truly anomalous or lawless; it was simply unexplained until electron spin and quantum mechanics accounted for it, so the name records a historical puzzle rather than any irregularity in nature.",
+  "origin": "Discovered by Pieter Zeeman in 1896, with a theoretical account by Hendrik Lorentz; the two shared the 1902 Nobel Prize in Physics, and George Ellery Hale applied the effect to measure sunspot magnetic fields in 1908.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1896,
+  "namedAfter": "Pieter Zeeman",
+  "sources": [
+    {"text": "Zeeman effect, Wikipedia. — the magnetic splitting of spectral lines, the magnetic-moment mechanism, the normal and anomalous forms and spin link, Zeeman 1896 and the 1902 Nobel, and the astrophysical application.", "url": "https://en.wikipedia.org/wiki/Zeeman_effect", "type": "secondary"},
+    {"text": "Zeeman effect, Encyclopaedia Britannica. — the splitting of spectral lines in a magnetic field and Zeeman's discovery.", "url": "https://www.britannica.com/science/Zeeman-effect", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Zeeman_effect",
+  "related": [
+    {"slug": "the-photoelectric-effect", "kind": "kindred"},
+    {"slug": "plancks-law", "kind": "kindred"}
+  ]
+}

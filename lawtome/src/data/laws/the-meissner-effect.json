@@ -1,0 +1,56 @@
+{
+  "no": "606",
+  "slug": "the-meissner-effect",
+  "name": "The Meissner Effect",
+  "aliases": ["Meissner-Ochsenfeld effect", "Superconducting flux expulsion"],
+  "statement": "When a material turns superconducting, it actively pushes the magnetic field out of its interior.",
+  "statementAccent": "it actively pushes the magnetic field out of its interior",
+  "meaning": "The Meissner effect is the expulsion of magnetic field from the interior of a material as it becomes superconducting on cooling below its critical temperature. A superconductor does not merely resist changes in the magnetic field inside it; it actively drives the field out, becoming a perfect diamagnet with essentially zero field within. Discovered by Walther Meissner and Robert Ochsenfeld in 1933, the effect is the defining signature of the superconducting state and the clearest proof that superconductivity is a genuine new phase of matter, not simply the disappearance of electrical resistance. It is the reason a magnet can be made to levitate above a superconductor, and it distinguishes a real superconductor from a merely perfect conductor.",
+  "mechanism": "When the material enters the superconducting state, tiny persistent screening currents spring up on its surface and generate a magnetic field that exactly cancels the applied field inside the bulk, expelling the flux. The expulsion is not perfectly sharp: the field penetrates a very thin surface layer, the London penetration depth, and decays exponentially inward. What makes this remarkable is that a mere perfect conductor would only oppose changes in the field, trapping whatever field was present when it was cooled; a superconductor instead expels a field even if that field was already there before cooling, regardless of history. This active, history-independent expulsion cannot be explained by infinite conductivity alone and shows superconductivity to be a true thermodynamic phase transition.",
+  "examples": [
+    {
+      "tag": "Levitating magnet",
+      "text": "A magnet hovers above a superconductor cooled with liquid nitrogen, held up by the expelled field and, in type-II materials, locked in place by flux pinning."
+    },
+    {
+      "tag": "More than perfect conductivity",
+      "text": "A perfect conductor would trap a field applied before cooling, but a superconductor expels it regardless, proving superconductivity is not just zero resistance."
+    },
+    {
+      "tag": "Type-II flux vortices",
+      "text": "Type-II superconductors admit the field in quantised vortices in a mixed state while staying superconducting, and pinning those vortices enables stable levitation."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Type-I superconductors",
+      "text": "Materials that expel the field completely below a single critical field and abruptly lose superconductivity above it, showing the pure Meissner state."
+    },
+    {
+      "name": "Type-II superconductors",
+      "text": "Materials that between two critical fields admit the field through quantised flux vortices in a mixed state, enabling high-field, high-current applications."
+    }
+  ],
+  "whyItMatters": "The Meissner effect is the defining hallmark of superconductivity and the decisive evidence that it is a distinct thermodynamic phase rather than mere infinite conductivity, a distinction that shaped the theory of superconductors from the London equations through Ginzburg-Landau theory to the microscopic BCS theory. Practically, flux expulsion and, in type-II materials, flux pinning underlie magnetic levitation for maglev transport and the stable, dissipationless high-field magnets used in MRI scanners and particle accelerators. As a vivid, demonstrable quantum effect visible in a floating magnet, it is also one of the most compelling classroom illustrations that quantum mechanics governs bulk matter.",
+  "working": [
+    {"lead": "Expel the field on cooling", "text": "cool a superconductor below its critical temperature and watch it drive the magnetic field out of its interior, becoming a perfect diamagnet."},
+    {"lead": "Distinguish from perfect conductivity", "text": "note that a superconductor expels even a pre-existing field, unlike a perfect conductor that would merely trap it, marking a true phase change."},
+    {"lead": "Exploit flux pinning", "text": "in type-II materials, pin the quantised flux vortices to lock a magnet stably in place, the basis of superconducting levitation."}
+  ],
+  "limits": "The effect requires cooling below the material's critical temperature, and the field is expelled only up to a critical field strength, above which superconductivity is destroyed or, in type-II materials, the field penetrates as vortices. Expulsion is not perfectly complete; the field survives in a thin surface layer set by the London penetration depth. The effect is a defining property of the superconducting phase but does not by itself explain why superconductivity occurs, which required the London, Ginzburg-Landau, and BCS theories. And practical use is bounded by the low temperatures and, for many materials, strong cooling that superconductivity still demands.",
+  "misreadings": "The Meissner effect is active field expulsion, not just the field failing to enter; screening currents drive the field out of the interior. It is precisely what separates a superconductor from a hypothetical perfect conductor, which would trap a field present at cooling rather than eject it, so zero resistance alone does not produce it. And zero field inside does not mean the superconductor ignores magnetism; strong enough fields destroy the state, and type-II materials let the field in as quantised vortices while remaining superconducting.",
+  "origin": "Discovered by Walther Meissner and Robert Ochsenfeld in 1933, measuring the field around superconducting tin and lead; later explained by the London equations, Ginzburg-Landau theory, and the microscopic BCS theory of 1957.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1933,
+  "namedAfter": "Walther Meissner",
+  "sources": [
+    {"text": "Meissner effect, Wikipedia. — the field-expulsion and perfect-diamagnetism statement, the more-than-perfect-conductivity distinction, Meissner and Ochsenfeld 1933, and the type-I and type-II behaviour.", "url": "https://en.wikipedia.org/wiki/Meissner_effect", "type": "secondary"},
+    {"text": "Meissner effect, Encyclopaedia Britannica. — the expulsion of magnetic field on becoming superconducting and the levitation demonstration.", "url": "https://www.britannica.com/science/Meissner-effect", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Meissner_effect",
+  "related": [
+    {"slug": "lenzs-law", "kind": "tension"}
+  ]
+}

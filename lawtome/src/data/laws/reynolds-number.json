@@ -1,0 +1,56 @@
+{
+  "no": "600",
+  "slug": "reynolds-number",
+  "name": "The Reynolds Number",
+  "aliases": ["Reynolds number", "Re"],
+  "statement": "One dimensionless ratio of inertia to viscosity tells whether a flow will be smooth or turbulent.",
+  "statementAccent": "whether a flow will be smooth or turbulent",
+  "meaning": "The Reynolds number is a dimensionless quantity in fluid mechanics that measures the ratio of inertial forces to viscous forces within a flowing fluid. It is computed from the fluid's density, a characteristic flow speed, a characteristic length such as a pipe diameter, and the fluid's viscosity. Its value predicts the flow regime: a low Reynolds number means viscous forces dominate and the flow is smooth and orderly, called laminar, while a high Reynolds number means inertial forces dominate and the flow becomes chaotic, called turbulent. Because it distils the competition between inertia and viscosity into a single pure number, the Reynolds number is one of the most important quantities in fluid dynamics and engineering, governing everything from pipe flow to flight to the swimming of microbes.",
+  "mechanism": "The number arises from comparing the two forces acting on a fluid element: inertia, which tends to keep it moving and to amplify disturbances, and viscosity, which tends to damp them out. When viscosity wins, at low Reynolds number, small perturbations die away and the fluid moves in smooth parallel layers; when inertia wins, at high Reynolds number, perturbations grow and cascade into the swirls and eddies of turbulence. For flow in a pipe the transition occurs around a Reynolds number of a couple of thousand, with laminar flow below roughly two thousand three hundred and turbulence above. Crucially, two geometrically similar flows with the same Reynolds number are dynamically similar, which lets engineers test scale models in wind tunnels and water tanks and apply the results to full-size craft.",
+  "examples": [
+    {
+      "tag": "Pipe flow transition",
+      "text": "Water in a pipe flows in smooth layers below a Reynolds number of about two thousand three hundred and becomes turbulent above it, the regime Reynolds revealed with dye in his 1883 experiment."
+    },
+    {
+      "tag": "Scale-model testing",
+      "text": "Because equal Reynolds numbers make flows dynamically similar, a small model in a wind tunnel can faithfully predict the airflow over a full-scale aircraft or car."
+    },
+    {
+      "tag": "Life at low Reynolds number",
+      "text": "Microorganisms swim in a regime where viscosity utterly dominates inertia, so they experience water like thick syrup, as Purcell described in his classic lecture."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The critical Reynolds number",
+      "text": "The approximate value at which flow transitions from laminar to turbulent, around two thousand three hundred for pipes but geometry-dependent, not a universal constant."
+    },
+    {
+      "name": "Low and high Reynolds regimes",
+      "text": "The creeping, viscosity-dominated flow of tiny particles and thick fluids versus the inertia-dominated, turbulent flow of fast, large-scale motion."
+    }
+  ],
+  "whyItMatters": "The Reynolds number is a cornerstone of fluid dynamics and engineering, the single quantity that predicts whether a flow will be laminar or turbulent and that makes scale-model testing possible through dynamic similarity. It governs the design of pipes, pumps, aircraft, ships, and heat exchangers, sets the regime for the swimming of microorganisms and the dispersal of pollutants, and organises the whole study of flow into comparable cases regardless of size or fluid. By reducing a complex physical competition to one dimensionless ratio, it exemplifies how a well-chosen number can unify and simplify an entire field.",
+  "working": [
+    {"lead": "Compute the ratio", "text": "combine density, speed, a characteristic length, and viscosity into the Reynolds number to gauge whether inertia or viscosity dominates the flow."},
+    {"lead": "Predict the regime", "text": "read low values as smooth laminar flow and high values as chaotic turbulence, with a transition band around a couple of thousand for pipes."},
+    {"lead": "Match numbers to scale", "text": "test a model at the same Reynolds number as the full-size object so the two flows are dynamically similar and the results transfer."}
+  ],
+  "limits": "The Reynolds number is dimensionless and meaningless without specifying the characteristic length, which depends on geometry, a pipe diameter or an airfoil chord, so the same flow can have different values under different conventions. The transition value between laminar and turbulent flow is approximate and geometry-dependent, not a universal constant, and careful experiments can keep flow laminar well beyond the usual threshold. It captures the inertia-versus-viscosity balance but ignores other effects, such as compressibility or heat, which are governed by their own dimensionless numbers, so it characterises a flow's regime without fully determining its behaviour.",
+  "misreadings": "The number is dimensionless and carries no units, so quoting it without stating the characteristic length used is ambiguous. The laminar-to-turbulent transition value is not a fixed universal constant; it is roughly two thousand three hundred for pipe flow but varies with geometry and conditions. And a high Reynolds number does not mean the fluid is inviscid; viscosity is still present, it is merely overwhelmed by inertia, which is exactly why turbulence, a viscous as well as inertial phenomenon, arises.",
+  "origin": "Introduced conceptually by George Stokes in 1851 and popularised by Osborne Reynolds through his 1883 dye-in-pipe experiment demonstrating the laminar-to-turbulent transition; named after Reynolds by Arnold Sommerfeld in 1908.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "namedAfter": "Osborne Reynolds",
+  "sources": [
+    {"text": "Reynolds number, Wikipedia. — the inertial-to-viscous ratio definition and formula, the laminar and turbulent regimes, the pipe transition near two thousand three hundred, dynamic similarity, and Reynolds 1883.", "url": "https://en.wikipedia.org/wiki/Reynolds_number", "type": "secondary"},
+    {"text": "Reynolds number, Encyclopaedia Britannica. — the dimensionless ratio, its role in predicting flow type, and Reynolds's experiment.", "url": "https://www.britannica.com/science/Reynolds-number", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Reynolds_number",
+  "related": [
+    {"slug": "the-navier-stokes-equations", "kind": "kindred"},
+    {"slug": "stokes-law", "kind": "kindred"}
+  ]
+}

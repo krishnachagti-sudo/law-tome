@@ -1,0 +1,55 @@
+{
+  "no": "601",
+  "slug": "the-navier-stokes-equations",
+  "name": "The Navier-Stokes Equations",
+  "aliases": ["Navier-Stokes", "The equations of fluid motion"],
+  "statement": "A set of equations describes how every viscous fluid flows, yet proving they always behave remains unsolved.",
+  "statementAccent": "how every viscous fluid flows",
+  "meaning": "The Navier-Stokes equations are a set of nonlinear partial differential equations that describe the motion of viscous fluids, both liquids and gases. They are Newton's second law written for a fluid, relating the acceleration of each fluid element to the forces acting on it: pressure differences, internal friction from viscosity, and external forces like gravity, together with a condition expressing conservation of mass. From weather and ocean currents to airflow over a wing and blood in an artery, essentially all everyday fluid flow obeys them, and they are the backbone of computational fluid dynamics. Yet despite being used constantly, they hide a deep mystery: whether smooth solutions always exist in three dimensions is unsolved, one of the seven Clay Millennium Prize Problems.",
+  "mechanism": "The equations express momentum balance for a fluid: the rate of change of a parcel's velocity equals the pressure gradient pushing it, plus viscous forces resisting shear, plus body forces, all per unit mass. For an incompressible fluid a continuity equation enforces that the flow neither creates nor destroys volume. The trouble lies in a single term, the convective or inertial term, in which the velocity multiplies its own gradient; this nonlinearity couples motions at every scale and is the mathematical seat of turbulence. Because of it, the equations can be solved exactly only in special cases, and in general one turns to numerical simulation. The same nonlinearity is why it is not known whether solutions can remain smooth forever or might blow up into a singularity in finite time.",
+  "examples": [
+    {
+      "tag": "Modelling the weather",
+      "text": "Numerical weather prediction integrates the Navier-Stokes equations for the atmosphere, and their sensitivity to initial conditions is a source of the limits on forecasting."
+    },
+    {
+      "tag": "The Millennium Prize",
+      "text": "Whether smooth three-dimensional solutions always exist is one of the seven Clay Millennium Prize Problems, carrying a one-million-dollar reward and still unsolved."
+    },
+    {
+      "tag": "Turbulence",
+      "text": "The nonlinear inertial term generates the swirling, multi-scale chaos of turbulence, a phenomenon the equations model but that remains poorly understood in full."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The incompressible form",
+      "text": "The version for fluids of constant density, paired with a continuity condition that the velocity field has zero divergence, used for most liquid and low-speed flows."
+    },
+    {
+      "name": "The Euler equations",
+      "text": "The simplified inviscid limit that drops the viscous term, describing an idealised frictionless fluid and predating the full Navier-Stokes system."
+    }
+  ],
+  "whyItMatters": "The Navier-Stokes equations are among the most important equations in physics and engineering, describing nearly all the fluid motion around us and underpinning the simulation of weather, climate, aircraft, ships, engines, and blood flow. They are simultaneously a triumph and a humbling frontier: universally applied yet mathematically unconquered, since the basic question of whether their solutions always stay smooth in three dimensions has resisted proof and become a Millennium Prize Problem. Understanding them better would illuminate turbulence, one of the last great unsolved problems of classical physics, making the equations a rare place where everyday engineering and the deepest open questions of mathematics meet.",
+  "working": [
+    {"lead": "Balance momentum for the fluid", "text": "read the equations as Newton's second law per fluid element, with pressure, viscous friction, and body forces driving the acceleration."},
+    {"lead": "Respect the nonlinearity", "text": "recognise that the inertial term, velocity times its own gradient, couples all scales and is the origin of turbulence and of the equations' difficulty."},
+    {"lead": "Simulate when you cannot solve", "text": "since exact solutions exist only in special cases, use computational fluid dynamics to approximate real flows numerically."}
+  ],
+  "limits": "The equations themselves are well established and reliable for modelling fluids; what is unsolved is the pure-mathematics question of whether smooth global solutions always exist in three dimensions, so the open problem is about proof, not about whether the equations describe reality. They assume a continuum fluid, breaking down at scales approaching the mean free path of molecules, and standard forms assume a Newtonian fluid whose viscosity is constant, needing modification for exotic fluids. Turbulence, which they contain, is not fully understood, and simulating high-Reynolds-number flows exactly is computationally forbidding, forcing approximations and turbulence models.",
+  "misreadings": "The unsolved Millennium problem is not that the equations fail to describe fluids; they work superbly. What is open is the mathematical question of guaranteed smooth solutions in three dimensions, a matter of proof rather than physical validity. Turbulence being poorly understood is a distinct point from that existence-and-smoothness question, though both spring from the same nonlinearity. And the equations are Navier's and Stokes's refinement of fluid dynamics, not a finished closed-form recipe; in general they must be solved numerically rather than by a tidy formula.",
+  "origin": "Derived by Claude-Louis Navier from 1822 and put on firmer footing by George Gabriel Stokes in the 1840s, with the three-dimensional existence and smoothness of their solutions named a Clay Millennium Prize Problem in 2000 and still unsolved.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Navier-Stokes equations, Wikipedia. — the Newton's-second-law-for-fluids description, the Navier 1822 and Stokes 1840s history, the nonlinearity and turbulence, and the Clay Millennium problem.", "url": "https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations", "type": "secondary"},
+    {"text": "Navier-Stokes Equation, Clay Mathematics Institute. — the unsolved existence-and-smoothness Millennium Prize Problem and its million-dollar prize.", "url": "https://www.claymath.org/millennium/navier-stokes-equation/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations",
+  "related": [
+    {"slug": "reynolds-number", "kind": "kindred"},
+    {"slug": "bernoullis-principle", "kind": "kindred"}
+  ]
+}
