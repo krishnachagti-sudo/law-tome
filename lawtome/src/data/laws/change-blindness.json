@@ -1,0 +1,56 @@
+{
+  "no": "646",
+  "slug": "change-blindness",
+  "name": "Change Blindness",
+  "aliases": ["The change-detection failure", "Change detection blindness"],
+  "statement": "A large change to a scene can go unnoticed if it happens during a blink, cut, or flicker.",
+  "statementAccent": "if it happens during a blink, cut, or flicker",
+  "meaning": "Change blindness is a perceptual phenomenon in which a person fails to notice a significant change to a visual scene, especially when the change coincides with a visual disruption such as an eye movement, a flicker or blank frame, a cut in a film, or a brief occlusion. Even large, otherwise obvious changes can slip by unnoticed. The failure occurs because detecting a change normally relies on a motion or transient signal that draws the eye, and a disruption wipes out that signal, so without deliberate attention and comparison the change is missed. A striking finding in cognitive psychology, change blindness reveals that we do not hold a detailed, complete internal picture of a scene, and it is closely related to, but distinct from, inattentional blindness.",
+  "mechanism": "Ordinarily, a change in the visual field produces a local motion transient that automatically attracts attention to its location. Change blindness exploits the removal of that signal: if the change is hidden by a disruption, a blink, a blank screen, a film cut, or a splash across the image, there is no transient to guide the eye, and the observer must instead actively attend to and compare the before and after. Because people store only the gist of a scene rather than a detailed representation, that comparison usually fails, and even large changes go undetected. In the flicker paradigm, two images alternate with a brief blank between them, and observers can take a surprisingly long time to spot a major difference, because the blank masks the change each cycle.",
+  "examples": [
+    {
+      "tag": "The flicker paradigm",
+      "text": "When two images alternate with a brief blank between them, observers can take a long time to spot even a large difference, because the blank hides the change."
+    },
+    {
+      "tag": "The door study",
+      "text": "In Simons and Levin's 1998 study, an experimenter asking directions was swapped for a different person during a brief interruption, and about half of people failed to notice."
+    },
+    {
+      "tag": "Film continuity errors",
+      "text": "Props and details that change across a cut often go unnoticed, an effect early film editors exploited and a source of continuity errors viewers miss."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The flicker paradigm",
+      "text": "The classic method in which an original and altered image alternate with a brief blank, masking the change and revealing how hard it is to detect."
+    },
+    {
+      "name": "The person-swap demonstration",
+      "text": "Simons and Levin's door study, in which a conversation partner is switched during a brief occlusion, showing change blindness for a whole person."
+    }
+  ],
+  "whyItMatters": "Change blindness reveals the real limits of visual attention and memory, showing that we do not carry a detailed, stable internal model of the world but reconstruct it as needed, attending to only a fraction at a time. It carries practical consequences: eyewitnesses can miss identity changes, drivers can fail to notice altered conditions at an intersection, and interface designers learn that changes on a screen go unnoticed unless accompanied by a salient signal. It also explains film continuity errors and underlies magic and misdirection. Together with inattentional blindness, it reshapes our understanding of perception, demonstrating how much of the visual world we routinely fail to register.",
+  "working": [
+    {"lead": "Expect missed changes", "text": "recognise that a change hidden by a disruption, a blink, cut, or flicker, can go unnoticed, since the eye loses the transient that would flag it."},
+    {"lead": "Signal important changes", "text": "in interface design, accompany changes with a salient cue or motion, since users fail to notice changes lacking an attention-grabbing transient."},
+    {"lead": "Distinguish from inattentional blindness", "text": "keep change blindness, failing to notice a change and needing comparison over time, separate from missing an unexpected object that was there all along."}
+  ],
+  "limits": "Change blindness generally requires the change to be masked by a disruption; a change that produces a visible motion transient, with no masking, is usually noticed at once, so the effect is not that people cannot see changes but that the masking defeats detection. It is not poor eyesight but a limit of attention and visual memory. It is distinct from inattentional blindness, which involves missing an unexpected object rather than failing to detect a change. The likelihood of missing a change varies with its salience, the observer's attention, and the nature of the disruption, so it is a robust tendency rather than a fixed outcome, and directed attention can defeat it.",
+  "misreadings": "Change blindness is not a failure of eyesight but of attention and visual memory, so it does not mean the observer sees poorly. It generally requires the change to be masked by a disruption; an unmasked change with a visible motion signal is usually caught immediately, so people are not blind to all changes. And it is distinct from inattentional blindness: change blindness is failing to notice a change, which requires comparing two moments, whereas inattentional blindness is failing to notice an unexpected object that was present throughout.",
+  "origin": "Demonstrated through the flicker paradigm by Ronald Rensink, Kevin O'Regan, and James Clark in 1997 and the person-swap door study by Daniel Simons and Daniel Levin in 1998, revealing the limits of visual attention and memory.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1997,
+  "sources": [
+    {"text": "Change blindness, Wikipedia. — the definition and the role of a disruption masking the change, the flicker paradigm, the Simons and Levin door study, and the no-detailed-representation mechanism.", "url": "https://en.wikipedia.org/wiki/Change_blindness", "type": "secondary"},
+    {"text": "Right before our eyes, APA Monitor (October 2006). — change blindness demonstrations and their implications for attention and eyewitness memory.", "url": "https://www.apa.org/monitor/oct06/eyes", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Change_blindness",
+  "related": [
+    {"slug": "inattentional-blindness", "kind": "kindred"},
+    {"slug": "the-cocktail-party-effect", "kind": "kindred"}
+  ]
+}

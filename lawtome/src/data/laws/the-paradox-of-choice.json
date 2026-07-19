@@ -1,0 +1,56 @@
+{
+  "no": "642",
+  "slug": "the-paradox-of-choice",
+  "name": "The Paradox of Choice",
+  "aliases": ["Choice overload", "Overchoice"],
+  "statement": "Some choice is good, but too many options can paralyze and dissatisfy rather than liberate.",
+  "statementAccent": "too many options can paralyze and dissatisfy",
+  "meaning": "The paradox of choice, also called choice overload, is the idea that while some choice is beneficial, too many options can produce negative outcomes: decision paralysis, anxiety, dissatisfaction with the choice made, and a reduced likelihood of choosing at all. Beyond a certain point, more options do not improve well-being and may reduce it. Popularised by the psychologist Barry Schwartz in his 2004 book The Paradox of Choice: Why More Is Less, and associated with a famous jam-tasting study, the concept has been influential in psychology, marketing, and design. Importantly, however, the effect is contested: later meta-analyses found the overall effect near zero and highly dependent on conditions, so the strong claim that more choice always harms is not well supported.",
+  "mechanism": "The proposed dynamic is that each added option raises the cost of choosing, the effort of comparison, the fear of missing a better alternative, and the potential for regret, until at some point these costs outweigh the benefit of having more to choose from. Schwartz distinguished maximisers, who seek the single best option and suffer most from overload and regret, from satisficers, who accept good enough and stop once their criteria are met. The classic supporting study, by Sheena Iyengar and Mark Lepper in 2000, found that a supermarket display of twenty-four jams drew more samplers but far fewer buyers than a display of six. Yet the mechanism's reach is uncertain, since the effect appears only under particular conditions and has resisted reliable replication.",
+  "examples": [
+    {
+      "tag": "The jam study",
+      "text": "Iyengar and Lepper found in 2000 that a display of twenty-four jams attracted more shoppers but produced far fewer purchases than a display of six, more choice reducing buying."
+    },
+    {
+      "tag": "Maximisers and satisficers",
+      "text": "Schwartz distinguished maximisers, who chase the best option and suffer more overload and regret, from satisficers, who accept good enough and feel more content."
+    },
+    {
+      "tag": "The replication problem",
+      "text": "A 2010 meta-analysis of fifty experiments found the overall choice-overload effect near zero, and the jam study has proven hard to replicate, so the effect is contested."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Maximisers versus satisficers",
+      "text": "Schwartz's distinction between those who seek the optimal choice, and suffer from overload, and those who accept a satisfactory one and are more content."
+    },
+    {
+      "name": "The design response",
+      "text": "The application in product and interface design of limiting options, using progressive disclosure, and curating sensible defaults to ease decisions."
+    }
+  ],
+  "whyItMatters": "The paradox of choice is one of the most discussed ideas in the psychology of decision-making, shaping how designers, marketers, and policymakers think about the number of options they present. It suggests, as a heuristic, that curating and limiting choices, offering sensible defaults, and revealing options progressively can ease decisions and improve satisfaction. But it is equally important as a cautionary tale in science, because the vivid jam study and the catchy more-is-less slogan outran the evidence: rigorous meta-analyses found the effect weak and context-dependent. It thus teaches both a practical design lesson about not overwhelming people and a lesson in scepticism about seductive but fragile findings.",
+  "working": [
+    {"lead": "Curate, do not overwhelm", "text": "as a heuristic, limit and organise options, use progressive disclosure, and offer defaults, since too many choices can hinder rather than help."},
+    {"lead": "Know your users", "text": "recognise that maximisers suffer more from many options than satisficers, and that context, expertise, and preferences shape whether choice overwhelms."},
+    {"lead": "Hold the claim loosely", "text": "treat the strong more-is-less claim as contested, applying it as a context-dependent guideline rather than a proven law."}
+  ],
+  "limits": "The choice-overload effect is genuinely contested: a 2010 meta-analysis of fifty experiments found a mean effect near zero, and the famous jam study has been hard to replicate, so the strong claim that more choice always harms is not well supported. Its appearance depends heavily on moderating conditions, choice-set complexity, task difficulty, preference uncertainty, and how options are presented, so it is at best context-dependent. A moderate amount of choice is generally beneficial and valued, so the effect is not that choice is bad. Designers should treat the limit-choices guidance as a heuristic sensitive to context, not a robust law, and be honest about the fragile evidence.",
+  "misreadings": "The paradox of choice does not mean choice is always bad; a moderate amount of choice is beneficial, and the claim is only that excessive, poorly structured choice can backfire. The strong more-is-less generalisation is not well supported, since meta-analyses find the effect near zero on average and highly context-dependent, so it must not be stated as an established law. And the vivid jam study is a single, hard-to-replicate demonstration, not decisive proof, so it should be cited with its contested status rather than as settled science.",
+  "origin": "Popularised by the psychologist Barry Schwartz in his 2004 book The Paradox of Choice: Why More Is Less, drawing on the Iyengar and Lepper 2000 jam study, with the effect later found weak and contested by meta-analyses such as Scheibehenne, Greifeneder, and Todd in 2010.",
+  "category": "psychology",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 2004,
+  "sources": [
+    {"text": "The Paradox of Choice, Wikipedia. — the choice-overload definition, Schwartz's 2004 book, the Iyengar and Lepper 2000 jam study, and the maximiser-satisficer distinction.", "url": "https://en.wikipedia.org/wiki/The_Paradox_of_Choice", "type": "secondary"},
+    {"text": "Scheibehenne, Greifeneder & Todd, Can There Ever Be Too Many Options? A Meta-Analytic Review of Choice Overload, Journal of Consumer Research (2010). — the near-zero aggregate effect and context dependence.", "url": "https://academic.oup.com/jcr/article-abstract/37/3/409/1827647", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/The_Paradox_of_Choice",
+  "related": [
+    {"slug": "hicks-law", "kind": "kindred"},
+    {"slug": "decision-fatigue", "kind": "kindred"}
+  ]
+}

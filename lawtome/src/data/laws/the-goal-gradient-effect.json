@@ -1,0 +1,83 @@
+{
+  "no": "641",
+  "slug": "the-goal-gradient-effect",
+  "name": "The Goal-Gradient Effect",
+  "aliases": [
+    "The goal-gradient hypothesis",
+    "The nearer-the-goal effect"
+  ],
+  "statement": "The closer you get to a goal, the harder you push to reach it.",
+  "statementAccent": "the harder you push to reach it",
+  "meaning": "The goal-gradient effect, or goal-gradient hypothesis, is the tendency to approach a goal with increasing effort and motivation as one gets closer to it. The nearer the reward, the harder people, and animals, work to reach it; motivation accelerates as the perceived distance to the goal shrinks. First proposed by the behaviourist Clark Hull in the 1930s, who observed rats running a maze faster as they neared the food, it was later demonstrated in humans by Ran Kivetz and colleagues in a 2006 study of coffee-shop loyalty cards. The effect explains why the final stretch of a task feels most motivating, and it underlies the design of progress bars, loyalty programmes, and gamified experiences that show people how close they are to a reward.",
+  "mechanism": "Motivation is not constant across a task; it rises with proximity to the goal. Hull captured this in animals, finding rats accelerated as they approached the reward at the end of a maze. In humans, Kivetz, Urminsky, and Zheng showed the same acceleration: customers in a café reward programme bought coffee more frequently the closer they were to earning a free one. Strikingly, they also demonstrated the endowed progress effect, that giving people an artificial head start increases completion. Customers handed a twelve-stamp card with two stamps already filled, needing ten more purchases, completed it faster than customers with a plain ten-stamp card requiring the same ten, because the illusion of progress already made engaged their goal-seeking motivation.",
+  "examples": [
+    {
+      "tag": "Hull's rats",
+      "text": "Clark Hull observed rats running a maze progressively faster as they neared the food reward, the original demonstration of the goal-gradient effect."
+    },
+    {
+      "tag": "The loyalty card",
+      "text": "Kivetz and colleagues found in 2006 that café customers bought coffee more often the closer they were to a free reward, showing purchase acceleration."
+    },
+    {
+      "tag": "Endowed progress",
+      "text": "A twelve-stamp card with two stamps pre-filled was completed faster than a plain ten-stamp card needing the same ten purchases, because artificial progress motivates."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The endowed progress effect",
+      "text": "The finding that giving people a head start toward a goal, even an artificial one, increases their motivation to complete it, though the remaining effort is unchanged."
+    },
+    {
+      "name": "Progress indicators",
+      "text": "The design application of showing users how close they are to a goal, through progress bars and completion meters, to accelerate engagement and completion."
+    }
+  ],
+  "whyItMatters": "The goal-gradient effect is an important principle across psychology, behavioural economics, marketing, and user-experience design, explaining a reliable driver of motivation and task completion. It is why progress bars, onboarding checklists, loyalty programmes, and gamified rewards work: by making progress toward a goal visible, and by granting a head start, designers can accelerate engagement and boost completion rates. It illuminates the everyday experience that the last stretch feels most compelling, from the final stamps on a card to the last percent of a download. As one of the Laws of UX, it turns a robust psychological tendency into a practical tool for keeping people motivated to finish what they start.",
+  "working": [
+    {
+      "lead": "Make progress visible",
+      "text": "show users how close they are to a goal with progress bars or completion meters, since motivation rises as the goal nears."
+    },
+    {
+      "lead": "Grant a head start",
+      "text": "give people some initial progress toward a goal, even artificially, to trigger the goal-gradient motivation and increase completion."
+    },
+    {
+      "lead": "Expect a final surge",
+      "text": "anticipate that effort accelerates near the finish, so the last stretch of a task or reward is where engagement peaks."
+    }
+  ],
+  "limits": "The effect describes motivation rising with proximity to a goal, so it depends on the goal being visible and the progress toward it being perceptible; without a sense of nearness, the acceleration does not occur. Its strength varies with how meaningful the reward is and how the progress is framed, and it can be exploited manipulatively, as in dark patterns that manufacture false urgency. The endowed progress effect works only when the head start feels genuine, and overusing progress mechanics can feel gimmicky. It is a robust tendency in motivation, but one tool among many, and it does not by itself sustain engagement for goals people do not value.",
+  "misreadings": "Motivation increases with proximity to the goal, not with distance from it, so it is nearness, not effort already spent, that drives the surge. The endowed progress effect shows that even illusory or artificial progress works, so a head start motivates completion despite leaving the actual remaining effort unchanged. And the effect explains why the final stretch feels most compelling; it is not that the whole task is equally motivating, but that engagement concentrates near the goal.",
+  "origin": "First proposed by the behaviourist Clark Hull in the 1930s from his rat-maze experiments and demonstrated in humans by Ran Kivetz, Oleg Urminsky, and Yuhuang Zheng in a 2006 Journal of Marketing Research study, now one of the Laws of UX.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1932,
+  "namedAfter": "Clark Hull",
+  "sources": [
+    {
+      "text": "Kivetz, Urminsky & Zheng, The Goal-Gradient Hypothesis Resurrected, Journal of Marketing Research (2006). — the loyalty-card purchase acceleration and the endowed progress effect.",
+      "url": "https://journals.sagepub.com/doi/abs/10.1509/jmkr.43.1.39",
+      "type": "primary"
+    },
+    {
+      "text": "Goal-Gradient Effect, Laws of UX (Jon Yablonski). — the definition, Clark Hull's rat studies, and the progress-bar and loyalty-program applications.",
+      "url": "https://lawsofux.com/goal-gradient-effect/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://lawsofux.com/goal-gradient-effect/",
+  "related": [
+    {
+      "slug": "zeigarnik-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-peak-end-rule",
+      "kind": "kindred"
+    }
+  ]
+}

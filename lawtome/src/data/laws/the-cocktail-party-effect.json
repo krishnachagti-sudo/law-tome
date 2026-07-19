@@ -1,0 +1,56 @@
+{
+  "no": "644",
+  "slug": "the-cocktail-party-effect",
+  "name": "The Cocktail Party Effect",
+  "aliases": ["The cocktail party problem", "Selective auditory attention"],
+  "statement": "In a noisy room you can lock onto one conversation, yet your own name in another still snaps your attention.",
+  "statementAccent": "you can lock onto one conversation",
+  "meaning": "The cocktail party effect is the brain's ability to focus auditory attention on a single conversation or sound while filtering out competing conversations and noise in a busy environment, like a crowded party. Selective attention lets a listener follow one voice amid many. Yet the filter is not absolute: a salient stimulus in an unattended conversation, especially one's own name, can break through and capture attention. Named and first studied by the cognitive scientist Colin Cherry in 1953 using dichotic listening experiments, it is a foundational phenomenon in the psychology of attention. It reveals both the remarkable power of selective attention to isolate a target sound and the limits of that filtering, since some unattended information is still processed.",
+  "mechanism": "The auditory system first segregates the mixture of sounds into separate streams using cues such as spatial location, pitch, and timbre, a process called auditory scene analysis, and then attention selects one stream to amplify while suppressing the rest. Cherry studied this with dichotic listening, presenting different messages to each ear and asking listeners to shadow, or repeat, one; they could report the physical qualities of the unattended message, its pitch or whether it was speech, but not its meaning. Broadbent's filter model of 1958 proposed that unattended input is blocked early, before deep processing. But Moray found that people often notice their own name in the unattended ear, which Treisman's attenuation model explained by proposing the filter only weakens rather than blocks, letting important words break through.",
+  "examples": [
+    {
+      "tag": "Cherry's shadowing",
+      "text": "Colin Cherry in 1953 played different messages to each ear and had listeners repeat one; they caught the other's pitch but not its meaning, revealing selective attention."
+    },
+    {
+      "tag": "Your own name",
+      "text": "Even while attending to one conversation, hearing your own name in another can capture your attention, evidence that the filter is not total."
+    },
+    {
+      "tag": "The engineering problem",
+      "text": "Separating one voice from many, the cocktail party problem, is a hard challenge for hearing aids and speech-recognition systems that must isolate a target speaker."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Broadbent's filter model",
+      "text": "The early-selection theory that unattended information is blocked by a filter before deep processing, an account challenged by the own-name breakthrough."
+    },
+    {
+      "name": "Treisman's attenuation model",
+      "text": "The revised theory that the filter attenuates rather than blocks unattended input, so salient words like one's own name, with low activation thresholds, can still get through."
+    }
+  ],
+  "whyItMatters": "The cocktail party effect is foundational to the cognitive psychology of attention, having launched the scientific study of how we select one stream of information from many. It anchors the long-running debate over whether attention filters early or late, and the own-name phenomenon that some unattended input reaches meaning shaped theories of selective attention that remain central today. Beyond the laboratory, the cocktail party problem, isolating a target voice from background noise, is a core challenge in engineering, driving the design of hearing aids, speech-recognition systems, and audio source separation. Understanding it illuminates both the power and the limits of human attention in a noisy world.",
+  "working": [
+    {"lead": "Select one stream", "text": "focus auditory attention on a target voice by exploiting cues like location, pitch, and timbre to segregate it from the noise."},
+    {"lead": "Expect leakage", "text": "recognise that filtering is not total, so salient unattended input, above all your own name, can still break through and grab attention."},
+    {"lead": "Frame the engineering challenge", "text": "treat isolating a voice from many as the cocktail party problem that hearing aids and speech-recognition systems must solve."}
+  ],
+  "limits": "The cocktail party effect is about selective attention and filtering, not enhanced hearing acuity, so it does not mean a person hears better, only that they attend better. The filter is imperfect; unattended information is not fully blocked, since salient content like one's own name is still processed, which is why simple early-selection models were revised. The ability varies with the listener, the number and similarity of competing voices, and hearing ability, and it degrades in people with hearing loss or auditory processing difficulties. As a phenomenon of attention, it describes selection among already-heard sounds rather than any increase in raw auditory sensitivity.",
+  "misreadings": "The cocktail party effect is not superhuman hearing; it is selective attention, the ability to focus on one sound and filter others, not an increase in how well the ears detect sound. Unattended information is not completely blocked, as the own-name breakthrough shows, so the older idea that the filter fully excludes everything unattended is wrong. And the effect is about isolating a target amid competing sounds, not about hearing everything at once, so it describes prioritising one stream rather than processing all of them equally.",
+  "origin": "Named and first studied by the cognitive scientist Colin Cherry in 1953 through dichotic listening and shadowing experiments, and developed by Donald Broadbent's filter model and Anne Treisman's attenuation model of attention.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1953,
+  "sources": [
+    {"text": "Cocktail party effect, Wikipedia. — the selective-attention definition, the own-name phenomenon, Cherry 1953 and dichotic listening, and the stream-segregation mechanism.", "url": "https://en.wikipedia.org/wiki/Cocktail_party_effect", "type": "secondary"},
+    {"text": "Selective Attention Theory: Broadbent & Treisman's Attenuation Model, SimplyPsychology. — Broadbent's filter model and Treisman's attenuation model and the own-name breakthrough.", "url": "https://www.simplypsychology.org/attention-models.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Cocktail_party_effect",
+  "related": [
+    {"slug": "inattentional-blindness", "kind": "kindred"},
+    {"slug": "change-blindness", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "no": "639",
+  "slug": "the-aesthetic-usability-effect",
+  "name": "The Aesthetic-Usability Effect",
+  "aliases": ["Attractive things work better", "The beauty-usability bias"],
+  "statement": "People perceive more beautiful designs as easier to use, and forgive their flaws.",
+  "statementAccent": "as easier to use, and forgive their flaws",
+  "meaning": "The aesthetic-usability effect is the tendency for users to perceive more aesthetically pleasing designs as more usable, whether or not they actually are. Attractive things are believed to work better, and users become more tolerant of minor usability problems in beautiful designs. Identified in a 1995 study by Masaaki Kurosu and Kaoru Kashimura at Hitachi, who tested many ATM interface layouts and found perceived attractiveness correlated more strongly with perceived ease of use than with actual ease of use, the effect was later popularised by Don Norman in his book Emotional Design, whose thesis is captured in the phrase attractive things work better. One of the widely cited Laws of UX, it shows that visual design is not mere decoration but shapes how usable a product feels.",
+  "mechanism": "Beauty produces a positive emotional response, and that good feeling colours judgement. When a design is attractive, users approach it in a more forgiving frame of mind, more likely to perceive it as usable and more willing to overlook small frictions and errors. In the original ATM study, the strong link between rated aesthetics and rated ease of use, stronger than the link to measured ease of use, revealed that perception was being driven by appearance. Don Norman explained this through emotional design: positive affect broadens thinking and tolerance, so pleasing products feel easier. The same mechanism has a downside for research, since attractive prototypes can mask genuine usability problems during testing, leading evaluators to observe what users do, not just what they say.",
+  "examples": [
+    {
+      "tag": "The ATM study",
+      "text": "Kurosu and Kashimura found in 1995 that people rated more attractive ATM layouts as easier to use, even when actual ease of use did not match, naming the effect."
+    },
+    {
+      "tag": "Attractive things work better",
+      "text": "Don Norman popularised the idea in Emotional Design, arguing that positive emotion from beauty makes products feel more usable and users more forgiving."
+    },
+    {
+      "tag": "Masking problems in testing",
+      "text": "Because beauty makes users more tolerant, an attractive prototype can hide real usability issues, so researchers watch behaviour rather than trusting stated impressions."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Emotional design",
+      "text": "Don Norman's framework explaining how the positive affect evoked by attractive design broadens tolerance and makes products feel more usable."
+    },
+    {
+      "name": "Apparent versus inherent usability",
+      "text": "The distinction from the original study between perceived, apparent usability, which aesthetics inflate, and the actual, inherent usability of a design."
+    }
+  ],
+  "whyItMatters": "The aesthetic-usability effect shows that in interface design, visual appeal is not merely cosmetic but affects perceived and, to a degree, actual usability and user satisfaction. Attractive products earn goodwill, tolerance for minor flaws, and a sense of ease that shapes how users feel and behave, which is why investment in visual design pays real dividends in adoption and loyalty. The effect also carries a caution for usability testing: beauty can conceal genuine problems, so researchers must attend to what users actually do rather than to their flattering first impressions. As one of the Laws of UX, it is a foundational reminder that emotion and aesthetics are integral to good design.",
+  "working": [
+    {"lead": "Invest in appeal", "text": "treat visual design as functional, since attractive interfaces are perceived as easier to use and buy tolerance for minor problems."},
+    {"lead": "Expect forgiveness, within limits", "text": "count on users overlooking small frictions in beautiful designs, but remember the tolerance runs out at real, serious problems."},
+    {"lead": "Watch behaviour in testing", "text": "guard against beauty masking usability issues by observing what users do, not just the favourable impressions they report."}
+  ],
+  "limits": "The effect concerns perception and tolerance, not a substitute for real usability; aesthetics make users more forgiving of minor problems, but a beautiful-but-broken design still frustrates them past a threshold. It can actively hide genuine usability issues during testing, biasing research if evaluators rely on stated preference rather than observed behaviour. The tolerance it buys is for small frictions, not major failures, so it cannot rescue a fundamentally unusable product. And while the original study showed a strong link between aesthetics and perceived ease of use, the link to actual ease of use was weaker, so beauty improves the feel of usability more reliably than its substance.",
+  "misreadings": "The aesthetic-usability effect does not mean aesthetics can replace real usability; it means beauty shapes perception and tolerance, so a pretty but broken design still frustrates users once problems grow serious. It is specifically about memory of ease and forgiveness of minor flaws, not a licence to neglect function. And it is a double-edged tool in research, since attractive prototypes can conceal usability problems, so relying on users' favourable impressions rather than their actual behaviour can hide real defects during testing.",
+  "origin": "Identified in a 1995 ATM-interface study by Masaaki Kurosu and Kaoru Kashimura at Hitachi and popularised by Don Norman in his 2004 book Emotional Design, becoming one of the Laws of UX.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1995,
+  "sources": [
+    {"text": "The Aesthetic-Usability Effect, Nielsen Norman Group (Kate Moran). — the definition, the Kurosu and Kashimura 1995 ATM study, the Don Norman connection, and that aesthetics can mask usability problems in testing.", "url": "https://www.nngroup.com/articles/aesthetic-usability-effect/", "type": "secondary"},
+    {"text": "Aesthetic-Usability Effect, Laws of UX (Jon Yablonski). — that users perceive attractive design as more usable and tolerate minor problems.", "url": "https://lawsofux.com/aesthetic-usability-effect/", "type": "secondary"}
+  ],
+  "sameAs": "https://lawsofux.com/aesthetic-usability-effect/",
+  "related": [
+    {"slug": "jakobs-law", "kind": "kindred"},
+    {"slug": "halo-effect", "kind": "kindred"}
+  ]
+}
