@@ -1,0 +1,57 @@
+{
+  "no": "1037",
+  "slug": "byzantine-fault-tolerance",
+  "name": "Byzantine Fault Tolerance",
+  "aliases": ["The Byzantine Generals Problem", "BFT"],
+  "statement": "Reach agreement in a system even when some components lie and send conflicting information.",
+  "statementAccent": "even when some components lie and send conflicting information",
+  "meaning": "A Byzantine fault is a condition in a distributed computer system in which components may fail while there is imperfect information about whether they have failed, and in particular a faulty component may behave arbitrarily, including sending conflicting or inconsistent information to different parts of the system, rather than simply stopping. Byzantine fault tolerance is the ability of a system to continue operating correctly, and to reach agreement, despite some of its components failing in these arbitrary, possibly malicious, ways. The problem is captured by the Byzantine Generals Problem, an allegory in which several divisions of the Byzantine army, each led by a general, surround an enemy city and must agree on a common plan, attack or retreat, communicating only by messengers, while some of the generals may be traitors trying to prevent the loyal ones from reaching agreement; a traitor might tell some generals to attack and others to retreat. The task is an algorithm by which all loyal generals agree despite the traitors. The classic result, from the 1982 paper The Byzantine Generals Problem by Leslie Lamport, Robert Shostak, and Marshall Pease, is that to tolerate a given number of Byzantine faulty nodes one needs more than three times that many total nodes, at least three times the faulty count plus one, so that more than two-thirds of the participants are honest; this holds for unsigned, oral messages, while cryptographically signed messages allow tolerating more faults. Byzantine fault tolerance is foundational to fault-tolerant systems, including aircraft and spacecraft controls, and especially to blockchains and cryptocurrencies.",
+  "mechanism": "Byzantine fault tolerance concerns the hardest kind of failure in a distributed system, not a component that cleanly crashes but one that behaves arbitrarily, giving different, contradictory information to different observers, whether from a subtle bug, corruption, or malice. Because such a faulty component can actively try to deceive, it is far harder to tolerate than a simple stop-failure, and the central question is how many correct components are needed to overcome a given number of treacherous ones. The Byzantine Generals Problem frames this: loyal generals, coordinating only through messengers that traitors may exploit, must all decide on the same plan, and must do so even though traitors send inconsistent messages designed to split them. Lamport, Shostak, and Pease analyzed this in 1982 and proved the fundamental bound. With plain oral messages, unsigned and forgeable, agreement among the loyal generals is possible if and only if more than two-thirds of the generals are loyal; equivalently, to tolerate a certain number of Byzantine faults, the system needs at least three times that number plus one total participants, so a faulty minority below one-third can be outvoted and cannot force disagreement. The requirement is stringent because a traitor can say different things to different generals, and the algorithm must ensure the loyal ones still converge. Signed messages change the calculus: if messages carry unforgeable digital signatures, a traitor cannot alter a relayed message without detection, and this cryptographic accountability lets the system tolerate a larger fraction of faults. Later work made Byzantine agreement practical: Practical Byzantine Fault Tolerance, by Castro and Liskov in 1999, gave an efficient algorithm usable in real systems, and open, permissionless settings like Bitcoin achieve Byzantine agreement through proof of work rather than a fixed vote.",
+  "examples": [
+    {
+      "tag": "The generals allegory",
+      "text": "Generals surrounding a city must agree to attack or retreat while traitors send some attack and others retreat."
+    },
+    {
+      "tag": "The two-thirds bound",
+      "text": "With oral messages, loyal generals can agree only if more than two-thirds are loyal, needing three faulty plus one nodes."
+    },
+    {
+      "tag": "Signed messages help",
+      "text": "Unforgeable digital signatures on messages let a system tolerate more Byzantine faults than oral messages allow."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Practical Byzantine Fault Tolerance",
+      "text": "Castro and Liskov's 1999 algorithm made Byzantine agreement efficient enough for real systems."
+    },
+    {
+      "name": "Blockchain consensus",
+      "text": "Bitcoin's proof of work achieves Byzantine agreement in an open network without a fixed set of voters."
+    }
+  ],
+  "whyItMatters": "Byzantine fault tolerance addresses the most demanding problem in distributed computing, how to make a system reliable even when some of its parts are not merely broken but actively behaving arbitrarily or maliciously, and it has become newly central to the digital economy. The Byzantine Generals Problem and its solution established a precise, sobering result about the limits of agreement: no more than one-third of participants can be faulty if the honest ones are to reach consensus with unsigned messages, a bound that shapes the design of every system that must survive corruption or attack. This matters wherever failures cannot be assumed benign. Safety-critical control systems in aircraft and spacecraft use Byzantine fault tolerant designs so that a single malfunctioning component giving inconsistent readings cannot mislead the whole. Above all, Byzantine fault tolerance underpins blockchains and cryptocurrencies, which must reach agreement among mutually distrusting, anonymous participants in an open network where some are adversarial: Bitcoin's proof-of-work consensus is precisely a solution to Byzantine agreement in such a setting, and Practical Byzantine Fault Tolerance and its descendants power many other distributed ledgers. The formulation by Lamport, Shostak, and Pease in 1982 gave the field its language and its foundational theorem. As the study of reaching agreement despite components that lie and send conflicting information, Byzantine fault tolerance is essential to trustworthy distributed systems.",
+  "working": [
+    {"lead": "Assume arbitrary failures", "text": "treat faulty components as possibly sending different, contradictory messages to different parts of the system."},
+    {"lead": "Bound the traitors", "text": "require more than two-thirds honest, at least three times the faulty count plus one total nodes, for oral messages."},
+    {"lead": "Add accountability", "text": "use unforgeable signatures, or mechanisms like proof of work, to tolerate more faults or open participation."}
+  ],
+  "limits": "Byzantine fault tolerance is powerful but bounded, and several points reward care. The central impossibility is strict: with unsigned, oral messages, no algorithm can reach agreement if a third or more of the participants are Byzantine, so systems must ensure the faulty fraction stays below one-third, a real constraint that cannot be engineered away. The three-times-plus-one bound applies to the oral-message model; signed messages relax it, so the exact tolerable fraction depends on the assumptions, and stating the bound without its model can mislead. Byzantine agreement is also expensive, historically requiring many messages and rounds, which is why efficient schemes like Practical Byzantine Fault Tolerance were a notable advance and why open-network solutions like proof of work trade agreement for large energy or resource costs. Byzantine fault tolerance addresses arbitrary faults specifically; systems that only need to survive crashes can use cheaper crash-fault-tolerant protocols like Paxos or Raft, so applying the Byzantine model where it is not needed wastes resources. Some details reward care: the foundational analysis is the 1982 paper by Lamport, Shostak, and Pease, and Practical Byzantine Fault Tolerance is due to Castro and Liskov in 1999. So Byzantine fault tolerance robustly enables agreement despite arbitrary faults, understood as bounded by the one-third limit, dependent on the message model, and costlier than crash-tolerant alternatives.",
+  "misreadings": "Byzantine fault tolerance cannot survive any level of treachery; with oral messages, a third or more faulty participants makes agreement impossible. Its three-times-plus-one bound is for unsigned messages, and signatures change it. And it is needed only for arbitrary, not merely crash, failures, so treating Byzantine agreement as unconditional, as one fixed bound regardless of model, or as necessary for every distributed system, misreads it.",
+  "origin": "The problem, formalized by Lamport, Shostak, and Pease in 1982 as the Byzantine Generals Problem, of reaching agreement in a distributed system when some components behave arbitrarily and send conflicting information.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1982,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Byzantine fault, Wikipedia. — the Byzantine fault as a component presenting different symptoms to different observers, the Byzantine Generals Problem allegory, Byzantine fault tolerance, the Lamport-Shostak-Pease 1982 result with the three-times-plus-one bound and the effect of signed messages, Practical Byzantine Fault Tolerance by Castro and Liskov, and blockchain relevance including Bitcoin.", "url": "https://en.wikipedia.org/wiki/Byzantine_fault", "type": "secondary"},
+    {"text": "Leslie Lamport, Robert Shostak, and Marshall Pease, The Byzantine Generals Problem, ACM Transactions on Programming Languages and Systems, 1982. — the foundational paper introducing the problem and the bound on tolerable Byzantine faults.", "url": "https://lamport.azurewebsites.net/pubs/byz.pdf", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Byzantine_fault",
+  "related": [
+    {"slug": "the-paxos-algorithm", "kind": "tension"},
+    {"slug": "the-two-phase-commit", "kind": "kindred"}
+  ]
+}

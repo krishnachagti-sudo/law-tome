@@ -1,0 +1,57 @@
+{
+  "no": "1040",
+  "slug": "the-two-phase-commit",
+  "name": "The Two-Phase Commit Protocol",
+  "aliases": ["Two-phase commit", "2PC"],
+  "statement": "Make a distributed transaction all-or-nothing by first asking everyone to prepare, then telling all to commit.",
+  "statementAccent": "first asking everyone to prepare, then telling all to commit",
+  "meaning": "The two-phase commit protocol, or 2PC, is a type of atomic commitment protocol used in distributed systems and databases to coordinate all the processes participating in a distributed transaction on whether to commit or abort, that is, roll back, the transaction. Its purpose is to ensure atomicity across multiple nodes: either all participants commit the transaction or all of them abort it, so the transaction is all-or-nothing even though it spans several databases or machines. The protocol involves a coordinator, sometimes called the transaction manager, and multiple participants, also called cohorts or resource managers. It runs in two phases. The first phase is the voting, or prepare, phase: the coordinator sends a prepare request, in effect asking can you commit, to all participants; each participant does the necessary work and replies with a vote, either yes, meaning it is ready and able to commit, in which case it enters a prepared state and durably promises it can commit, or no, meaning it must abort. The second phase is the commit, or completion, phase: if all participants voted yes, the coordinator sends a commit message and all participants commit; if any participant voted no, or failed to respond, the coordinator sends an abort, or rollback, message and all participants roll back. Participants then acknowledge. The great weakness of 2PC is that it is a blocking protocol: if the coordinator fails at certain points, participants that have voted yes can be left blocked, holding locks and unable to proceed until the coordinator recovers. This motivated the three-phase commit protocol. The protocol is associated with Jim Gray and is used in distributed databases and transaction processing.",
+  "mechanism": "The two-phase commit protocol achieves atomic agreement across the many participants of a distributed transaction by separating the decision to commit into a preparation stage and an execution stage, so that no participant commits until every participant has promised it can. A distinguished coordinator drives the protocol; the participants are the nodes, or resource managers, each responsible for its own part of the transaction, such as its own database and locks. In the first phase, the voting or prepare phase, the coordinator asks every participant whether it is able to commit. Each participant performs all the work required and writes enough to durable storage that it could commit even after a crash, and then votes: yes, entering a prepared state in which it is bound to be able to commit and must await the coordinator's decision, or no, meaning it cannot and the transaction must abort. The coordinator collects all the votes. In the second phase, the commit or completion phase, the coordinator makes the global decision: if and only if every participant voted yes does it decide to commit and send commit messages to all, upon which each participant makes its changes permanent; if any participant voted no, or timed out, the coordinator decides to abort and sends rollback messages, upon which all participants undo their work. Participants acknowledge, and the transaction concludes uniformly everywhere. This guarantees atomicity because a participant that has voted yes never commits unilaterally; it waits for the coordinator's verdict, and the coordinator commits only on unanimous agreement. The cost of this guarantee is the protocol's blocking nature: a participant in the prepared state, having voted yes but not yet heard the decision, holds its locks and cannot safely proceed on its own if the coordinator crashes, so it may block until the coordinator recovers, a single point of failure that the three-phase commit protocol was designed to mitigate by adding an extra phase.",
+  "examples": [
+    {
+      "tag": "Prepare then commit",
+      "text": "The coordinator asks all participants to prepare, and only if all vote yes does it tell them all to commit."
+    },
+    {
+      "tag": "All or nothing",
+      "text": "Either every participant commits or every one aborts, keeping the distributed transaction atomic."
+    },
+    {
+      "tag": "Blocking on coordinator failure",
+      "text": "A participant that voted yes holds its locks and blocks if the coordinator crashes before sending the decision."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The prepared state",
+      "text": "After voting yes, a participant durably promises it can commit and waits for the coordinator's decision."
+    },
+    {
+      "name": "Three-phase commit",
+      "text": "A protocol that adds a phase to reduce 2PC's blocking, at the cost of more messages."
+    }
+  ],
+  "whyItMatters": "The two-phase commit protocol is a classic and foundational technique of distributed transaction processing, the standard way to make a single logical transaction that touches several databases or machines behave atomically, all-or-nothing, despite being spread across them. Atomicity is one of the core guarantees that make transactions trustworthy: money moved between accounts held in different databases, an order recorded across inventory and billing systems, or any update that must either take effect everywhere or nowhere depends on the participants agreeing to commit together. Two-phase commit provides exactly this by decoupling the promise to commit from the act of committing, so that no participant finalizes its part until all have signalled they can, which prevents the disastrous state of some nodes committing while others abort. This has made 2PC a workhorse of distributed databases and transaction-processing systems, embodied in standards for distributed transactions and used wherever cross-system atomicity is required. The protocol is also instructive for its famous flaw: because a participant that has voted to commit must then block, holding locks, until the coordinator tells it the outcome, a coordinator failure can freeze participants, exposing the fundamental tension between consistency and availability in distributed systems and motivating refinements like three-phase commit and, more broadly, consensus-based approaches. Associated with Jim Gray's foundational work on transactions, it remains a canonical protocol. As the method that makes a distributed transaction all-or-nothing by preparing everyone before committing, two-phase commit is central to distributed data.",
+  "working": [
+    {"lead": "Ask to prepare", "text": "the coordinator sends a prepare request, and each participant does its work and votes yes or no."},
+    {"lead": "Decide globally", "text": "the coordinator commits only if all voted yes, otherwise it decides to abort."},
+    {"lead": "Commit or roll back", "text": "the coordinator tells all participants to commit or roll back, and they acknowledge, keeping the transaction atomic."}
+  ],
+  "limits": "Two-phase commit guarantees atomicity but at a real cost, and several points reward care. Its central weakness is that it is a blocking protocol: a participant that has voted yes enters a prepared state in which it holds locks and cannot decide on its own, so if the coordinator crashes after collecting votes but before broadcasting the decision, that participant can be blocked indefinitely, unable to commit or abort until the coordinator recovers, a single point of failure that harms availability. This blocking behaviour motivated the three-phase commit protocol, which adds a phase to reduce blocking; that variant is commonly said to be less resilient under network partitions, a caveat worth noting though beyond the core protocol. Two-phase commit also assumes participants are cooperative and non-malicious, honouring a yes vote by being able to commit; it is not designed for Byzantine faults, where participants might lie. It further requires durable logging and adds latency and message overhead, since every commit waits for two rounds across all participants. Some historical details reward care: 2PC is an atomic commitment protocol associated with Jim Gray's foundational transaction work in the 1970s, and it is distinct from consensus protocols like Paxos, though related, so conflating the two is a mistake. So two-phase commit robustly makes distributed transactions atomic, understood as a blocking, non-Byzantine protocol whose coordinator is a single point of failure.",
+  "misreadings": "Two-phase commit is not non-blocking; a coordinator failure can leave prepared participants stuck holding locks. It does not tolerate lying participants, being non-Byzantine. And it is an atomic-commit protocol, not a general consensus algorithm like Paxos, so treating 2PC as failure-proof, as robust against malicious nodes, or as the same as consensus, misreads it.",
+  "origin": "The atomic commitment protocol, associated with Jim Gray's foundational transaction work, that makes a distributed transaction all-or-nothing by having a coordinator collect prepare votes before telling all participants to commit or abort.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Two-phase commit protocol, Wikipedia. — 2PC as an atomic commitment protocol coordinating participants on whether to commit or abort a distributed transaction, the coordinator and participants, the voting or prepare phase and the commit or completion phase, all-or-nothing atomicity, the blocking weakness on coordinator failure, and three-phase commit as a response.", "url": "https://en.wikipedia.org/wiki/Two-phase_commit_protocol", "type": "secondary"},
+    {"text": "Jim Gray and Leslie Lamport, Consensus on Transaction Commit, ACM Transactions on Database Systems, 2006. — a treatment of the transaction-commit problem and its relation to two-phase commit and consensus.", "url": "https://dl.acm.org/doi/10.1145/1132863.1132867", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Two-phase_commit_protocol",
+  "related": [
+    {"slug": "the-paxos-algorithm", "kind": "kindred"},
+    {"slug": "byzantine-fault-tolerance", "kind": "tension"}
+  ]
+}

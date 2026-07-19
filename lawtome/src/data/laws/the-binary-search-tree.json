@@ -1,0 +1,57 @@
+{
+  "no": "1029",
+  "slug": "the-binary-search-tree",
+  "name": "The Binary Search Tree",
+  "aliases": ["BST", "Ordered binary tree"],
+  "statement": "Keep keys in a tree so that smaller ones go left and larger ones go right, for fast ordered search.",
+  "statementAccent": "smaller ones go left and larger ones go right",
+  "meaning": "A binary search tree, or BST, is a rooted binary tree data structure in which each node has at most two children, a left and a right, and the nodes are arranged to satisfy the binary search property: for every node, all keys in its left subtree are less than the node's key, and all keys in its right subtree are greater than it, assuming no duplicates. This ordering allows fast lookup, insertion, and deletion by a kind of binary search: to find a key, one compares it with the root and moves into the left or right subtree accordingly, discarding half the remaining tree at each step when the tree is balanced. The performance of a binary search tree is proportional to its height: on average, and when the tree is balanced, operations take order log n time, but in the worst case, when the tree becomes unbalanced or degenerate, for instance by inserting already-sorted data, it can stretch into a chain resembling a linked list, and operations degrade to order n. A useful property is that an in-order traversal of a binary search tree visits the keys in sorted order. To guarantee order log n behaviour in the worst case, self-balancing variants keep the height logarithmic; the AVL tree, introduced by Adelson-Velsky and Landis in 1962, was the first self-balancing binary search tree, and the red-black tree is another classic example. The binary search tree is a foundational structure for implementing ordered sets and maps, searching, and sorting.",
+  "mechanism": "A binary search tree organizes keys by an ordering invariant that turns search into a sequence of comparisons, each halving the space to explore when the tree is balanced. Every node holds a key and up to two children, and the binary search property requires that all keys in a node's left subtree be smaller than the node's key and all keys in its right subtree be larger. To search for a target, one starts at the root and compares: if the target equals the node's key, it is found; if smaller, one descends into the left child; if larger, into the right; and so on until the key is found or a missing child shows it is absent. Insertion follows the same descent to find the correct empty spot and attaches the new node there, preserving the invariant; deletion is a little more intricate, especially for a node with two children, which is replaced by its in-order successor or predecessor. Because each step moves down one level, the cost of these operations is proportional to the tree's height. When the tree is balanced, the height is about log n and operations are fast, order log n; but the plain binary search tree does not enforce balance, so an unfortunate insertion order, such as inserting keys already in sorted sequence, produces a lopsided, degenerate tree that behaves like a linked list, with height n and order n operations. The in-order traversal, visiting left subtree, then node, then right subtree, emits the keys in ascending order, which is why BSTs support ordered iteration and range queries. To avoid the degenerate case, self-balancing BSTs such as AVL trees and red-black trees perform rotations during insertion and deletion to keep the height logarithmic and guarantee order log n worst-case performance.",
+  "examples": [
+    {
+      "tag": "Descending by comparison",
+      "text": "Searching compares the target with each node and goes left if smaller, right if larger, halving a balanced tree each step."
+    },
+    {
+      "tag": "In-order gives sorted",
+      "text": "An in-order traversal, left then node then right, visits the keys in ascending order."
+    },
+    {
+      "tag": "The degenerate case",
+      "text": "Inserting already-sorted keys builds a lopsided chain, and operations degrade from order log n to order n."
+    }
+  ],
+  "variants": [
+    {
+      "name": "AVL trees",
+      "text": "The first self-balancing BST, introduced by Adelson-Velsky and Landis in 1962, keeping height logarithmic by rotations."
+    },
+    {
+      "name": "Red-black trees",
+      "text": "A self-balancing BST using node colours to guarantee order log n operations with fewer rotations."
+    }
+  ],
+  "whyItMatters": "The binary search tree is one of the foundational data structures of computer science, the natural way to keep a dynamic collection of keys in sorted order while still allowing fast search, insertion, and deletion. Its simple, recursive ordering invariant, smaller keys to the left and larger to the right, captures the essence of binary search in a structure that can grow and shrink, and unlike a sorted array it supports efficient insertion and deletion without shifting elements. This makes binary search trees, in their balanced forms, the basis for implementing ordered sets and maps, priority structures, and range queries, tasks central to databases, language runtimes, and countless algorithms, and their in-order traversal yields the keys already sorted. Beyond their practical use, binary search trees are a cornerstone of algorithm education: they introduce tree structure, recursion, the crucial distinction between average and worst-case performance, and the idea of self-balancing that leads to AVL and red-black trees, whose invention by Adelson-Velsky and Landis in 1962 launched a whole line of research into keeping trees efficient. Nearly every ordered container in a standard library is a balanced binary search tree underneath. As the structure that stores keys so smaller ones go left and larger ones go right, enabling fast ordered search, the binary search tree is essential to computing.",
+  "working": [
+    {"lead": "Compare at the root", "text": "compare the target key with the current node's key to decide the direction of search."},
+    {"lead": "Descend accordingly", "text": "move into the left subtree if the target is smaller, the right if larger, repeating down the tree."},
+    {"lead": "Balance for guarantees", "text": "use self-balancing variants like AVL or red-black trees to keep the height logarithmic and operations order log n."}
+  ],
+  "limits": "The binary search tree is powerful but its plain form has a serious limitation that rewards care. Its efficient order log n performance holds only when the tree is balanced; the basic BST does nothing to enforce balance, so an adversarial or merely unlucky insertion order, notably inserting keys in sorted sequence, produces a degenerate tree of height n that performs no better than a linked list, at order n per operation. This is why practical use relies on self-balancing variants, AVL and red-black trees, which pay a modest cost in rotations to guarantee logarithmic height. Even balanced, binary search trees are generally slower in practice than hash tables for pure key lookup, and their advantage is order, supporting sorted traversal, range queries, and finding nearest keys, which hash tables cannot do efficiently; the two structures are complementary, not interchangeable. Binary search trees also assume the keys are comparable under a total order. Some historical details reward care: the AVL tree, introduced by Adelson-Velsky and Landis in 1962, was the first self-balancing binary search tree, and the in-order traversal, not any traversal, is what yields sorted order. So the binary search tree robustly supports ordered search, understood as fast only when balanced and valuable chiefly for the ordering that distinguishes it from a hash table.",
+  "misreadings": "The plain binary search tree is not guaranteed fast; without balancing, sorted insertions make it degenerate to a linked list at order n. It is not simply a faster hash table; its value is order, supporting range queries a hash table cannot. And only the in-order traversal yields sorted keys, so treating any BST as automatically balanced, as a substitute for a hash table, or as sorted under any traversal, misreads it.",
+  "origin": "The ordered binary-tree data structure keeping smaller keys left and larger keys right for binary-search-style lookup, with self-balancing forms beginning with the 1962 AVL tree of Adelson-Velsky and Landis.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Binary search tree, Wikipedia. — the BST as a rooted binary tree with the binary search property, fast lookup by comparison, time proportional to height with order log n balanced and order n for a degenerate tree resembling a linked list, in-order traversal yielding sorted order, and AVL trees of 1962 as the first self-balancing BST alongside red-black trees.", "url": "https://en.wikipedia.org/wiki/Binary_search_tree", "type": "secondary"},
+    {"text": "AVL tree, Wikipedia. — the AVL tree, invented by Georgy Adelson-Velsky and Evgenii Landis and published in 1962, as the first self-balancing binary search tree.", "url": "https://en.wikipedia.org/wiki/AVL_tree", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Binary_search_tree",
+  "related": [
+    {"slug": "the-red-black-tree", "kind": "consequence"},
+    {"slug": "the-hash-table", "kind": "tension"}
+  ]
+}

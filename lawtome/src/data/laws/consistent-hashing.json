@@ -1,0 +1,57 @@
+{
+  "no": "1036",
+  "slug": "consistent-hashing",
+  "name": "Consistent Hashing",
+  "aliases": ["Hash ring", "Consistent hash"],
+  "statement": "Spread keys across servers on a ring so adding or removing one moves only a small fraction of keys.",
+  "statementAccent": "adding or removing one moves only a small fraction of keys",
+  "meaning": "Consistent hashing is a special kind of hashing technique used in distributed systems to distribute keys, or data, across a set of nodes, or servers, such that when the number of nodes changes, a node is added or removed, only a small fraction of the keys need to be remapped or moved, on average about the number of keys divided by the number of nodes, rather than nearly all of them. This solves a serious problem with naive hashing. If one assigns keys to servers by taking the key's hash modulo the number of servers, then changing the number of servers changes the modulus and forces almost every key to be reassigned, which is catastrophic for a distributed cache or database, since it invalidates or moves nearly all the data at once. Consistent hashing minimizes this disruption. It works by hashing both the keys and the nodes onto the same abstract circular space, the hash ring; each key is then assigned to the node found by moving around the ring in a fixed direction, clockwise, from the key's position, that is, to the next node on the ring. When a node is added or removed, only the keys lying between it and the adjacent node are affected, leaving the rest untouched. Virtual nodes, multiple ring positions per physical server, are often used to spread the load more evenly. Consistent hashing was introduced by David Karger and colleagues in a 1997 MIT paper, developed in the context of distributed web caching and connected to the company Akamai, and it is now widely used in distributed caches and databases such as Amazon's Dynamo, Apache Cassandra, and content delivery networks.",
+  "mechanism": "Consistent hashing arranges keys and servers on a shared circular address space so that reassignments stay local when the set of servers changes. The core construction is the hash ring: one imagines the output range of a hash function bent into a circle, and both the data keys and the nodes are hashed to points on this circle. To decide which node stores a given key, one starts at the key's point and moves in a fixed direction, conventionally clockwise, until reaching the first node's point; that node owns the key. Equivalently, each node is responsible for the arc of the ring lying between it and the previous node. The decisive property follows from this locality. When a node is removed, only the keys in its arc need to move, and they move to the next node clockwise; when a node is added, it takes over only the keys in the portion of an existing arc that now falls to it. In both cases only about one node's worth of keys, on the order of the total keys divided by the number of nodes, is remapped, in stark contrast to modulo-based hashing, where changing the divisor reshuffles nearly everything. A practical wrinkle is load balance: with only one point per node, the arcs can be very uneven, so some nodes get far more keys than others. The standard remedy is virtual nodes, giving each physical server many points scattered around the ring, which smooths the distribution and lets servers of different capacities carry proportionally more or fewer points. Consistent hashing was introduced by Karger, Lehman, Leighton, Panigrahy, Levine, and Lewin in 1997 to relieve hot spots in distributed web caching, work tied to the founding of Akamai.",
+  "examples": [
+    {
+      "tag": "The hash ring",
+      "text": "Keys and nodes are hashed onto a circle, and each key goes to the next node clockwise from its position."
+    },
+    {
+      "tag": "Local remapping",
+      "text": "Adding or removing a node moves only the keys in its arc, about the total keys over the number of nodes."
+    },
+    {
+      "tag": "Virtual nodes",
+      "text": "Giving each server many points on the ring spreads load evenly and handles differing capacities."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Naive modulo hashing",
+      "text": "Assigning keys by hash modulo server count forces nearly all keys to move when the count changes, the problem consistent hashing solves."
+    },
+    {
+      "name": "The 1997 MIT paper",
+      "text": "Introduced by Karger and colleagues for distributed web caching, work connected to the founding of Akamai."
+    }
+  ],
+  "whyItMatters": "Consistent hashing is a foundational technique of distributed systems, the standard way to spread data across a changing set of servers without massive disruption, and it underlies much of the infrastructure that keeps large-scale services fast and available. Its importance comes from solving a problem that naive hashing makes disastrous: distributed caches and databases constantly gain and lose nodes, through scaling, failures, and maintenance, and if every such change reshuffled nearly all the data, the system would be swamped with movement and cache misses. Consistent hashing ensures that adding or removing a server touches only a small, proportional slice of the keys, so the system adapts smoothly, keeping load balanced and data mostly in place. This property made it a building block of influential systems: Amazon's Dynamo and DynamoDB, Apache Cassandra, memcached client libraries, distributed hash tables like Chord, and content delivery networks all rely on it. Its origin is itself notable, introduced by David Karger and colleagues at MIT in 1997 to relieve hot spots in web caching, work bound up with the founding of Akamai, one of the first great content delivery networks. The idea, hashing servers and keys onto a common ring so that responsibility shifts only locally, is both simple and profound, and it recurs throughout modern scalable architecture. As the technique that lets nodes come and go while moving only a small fraction of keys, consistent hashing is essential to distributed systems.",
+  "working": [
+    {"lead": "Hash onto a ring", "text": "map both keys and nodes to points on a shared circular hash space."},
+    {"lead": "Assign clockwise", "text": "give each key to the next node clockwise from its position on the ring."},
+    {"lead": "Change locally", "text": "when a node joins or leaves, remap only the keys in its arc, and use virtual nodes to balance load."}
+  ],
+  "limits": "Consistent hashing is powerful but has practical limits that reward care. With only one point per node, the ring's arcs can be very uneven, so load is not automatically balanced; achieving even distribution, and handling servers of different capacities, requires virtual nodes, many points per server, which add bookkeeping. The remapping guarantee is about the fraction of keys moved, on average the total keys divided by the number of nodes, and is an average property of good hashing, not an exact promise for every configuration. Consistent hashing distributes and locates data but does not by itself provide replication, consistency, or fault tolerance; real systems layer those concerns on top, for instance by placing replicas on the next several nodes around the ring. Notation and details vary across sources: the remapping fraction is written as keys over nodes or n over m depending on convention, and the ring is described as a unit circle or as a range up to two to the thirty-two in different treatments, which are the same idea. Some history rewards care: consistent hashing was introduced by Karger and colleagues in 1997 for distributed web caching, connected to Akamai. So consistent hashing robustly distributes keys with minimal remapping, understood as a technique that needs virtual nodes for balance and additional mechanisms for replication and consistency.",
+  "misreadings": "Consistent hashing does not by itself balance load evenly; without virtual nodes the arcs can be lopsided. It does not provide replication or consistency, only placement and lookup. And its remapping guarantee is an average fraction, not an exact per-case promise, so treating consistent hashing as automatically balanced, as a complete storage system, or as moving an exact key count every time, misreads it.",
+  "origin": "The distributed-hashing technique introduced by Karger and colleagues at MIT in 1997, placing keys and nodes on a shared ring so that adding or removing a node remaps only a small fraction of keys.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1997,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Consistent hashing, Wikipedia. — consistent hashing as a technique where changing the number of nodes remaps only a small fraction of keys on average, the failure of modulo hashing, the hash ring with clockwise assignment, virtual nodes for load balancing, the 1997 Karger et al. MIT paper connected to Akamai, and use in Dynamo, Cassandra, and content delivery networks.", "url": "https://en.wikipedia.org/wiki/Consistent_hashing", "type": "secondary"},
+    {"text": "David Karger et al., Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web, ACM Symposium on Theory of Computing, pp. 654-663, 1997. — the original paper introducing consistent hashing for distributed web caching.", "url": "https://dl.acm.org/doi/10.1145/258533.258660", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Consistent_hashing",
+  "related": [
+    {"slug": "the-hash-table", "kind": "kindred"},
+    {"slug": "the-cap-theorem", "kind": "kindred"}
+  ]
+}

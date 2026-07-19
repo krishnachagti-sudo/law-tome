@@ -1,0 +1,57 @@
+{
+  "no": "1030",
+  "slug": "the-b-tree",
+  "name": "The B-Tree",
+  "aliases": ["B-tree", "Balanced multiway tree"],
+  "statement": "Keep sorted data in a shallow, wide tree whose nodes hold many keys, ideal for disk-based storage.",
+  "statementAccent": "a shallow, wide tree whose nodes hold many keys",
+  "meaning": "A B-tree is a self-balancing tree data structure that maintains sorted data and allows searches, sequential access, insertions, and deletions in logarithmic time. It generalizes the binary search tree by letting a node have more than two children, so a single node can hold many keys and point to many child subtrees. A defining property is that the tree stays balanced: all leaf nodes lie at the same depth, so every search from the root to a leaf traverses the same number of levels, and each internal node keeps its number of children between a minimum and a maximum set by the tree's order, or minimum degree. The reason B-trees favour wide nodes with many keys is their suitability for storage systems that read and write large blocks of data, such as disks and databases. A node is sized to match a disk block or page, so each comparatively slow disk read brings in many keys at once, and the shallow, wide shape minimizes the number of disk accesses needed to reach any key, which is decisive when the data is too large to fit in main memory. The B-tree was invented by Rudolf Bayer and Edward McCreight while at Boeing Research Labs, in work first circulated in 1970 and published in 1972. A widely used variant, the B-plus tree, stores all values in the leaves and links the leaves together for fast sequential and range scans. B-trees and B-plus trees are the workhorse index structures of databases and filesystems.",
+  "mechanism": "A B-tree keeps sorted data efficient to search and modify by being broad and shallow rather than tall, so that few levels separate the root from any key. Each node contains an ordered list of keys and, between and around them, pointers to child subtrees, so that a node with k keys has up to k plus one children; the keys in each child fall within the range delimited by the surrounding keys, generalizing the binary search property to many-way branching. Searching descends from the root, at each node scanning its keys to find the child whose range contains the target and following that pointer, until the key is found or a leaf shows it absent. Balance is maintained by strict rules: every node except the root must be at least half full, holding at least a minimum number of keys, and no node may exceed the maximum set by the order. Insertion adds a key to the appropriate leaf; if that overfills the node, the node splits into two and the middle key moves up to the parent, a split that may cascade upward and, at the root, increases the tree's height, which is the only way a B-tree grows taller. Deletion removes a key and, if a node falls below the minimum, borrows a key from a sibling or merges nodes, again possibly cascading upward. Because splits and merges happen at the top, all leaves always remain at the same depth, keeping the tree perfectly height-balanced with height proportional to the logarithm, base the branching factor, of the number of keys. This structure is tuned for block storage: by making each node the size of a disk page, so one disk read loads a node full of keys, the B-tree minimizes the number of slow disk accesses, which dominate performance for data larger than memory.",
+  "examples": [
+    {
+      "tag": "Many keys per node",
+      "text": "A B-tree node holds many keys and points to many children, so the tree is broad and shallow."
+    },
+    {
+      "tag": "Leaves at one depth",
+      "text": "Splits and merges propagate upward, keeping all leaves at the same level and the tree balanced."
+    },
+    {
+      "tag": "Sized to a disk page",
+      "text": "Each node matches a disk block, so one read loads many keys and few reads reach any key."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The B-plus tree",
+      "text": "A variant storing all values in the leaves and linking leaves in a list for fast sequential and range scans."
+    },
+    {
+      "name": "Order and minimum degree",
+      "text": "Parameters fixing the minimum and maximum number of children a node may have, tuning the tree to the storage block size."
+    }
+  ],
+  "whyItMatters": "The B-tree is one of the most important data structures in practical computing, the structure that makes it possible to index and search enormous datasets stored on disk quickly, and it is the quiet foundation of databases and filesystems. Its key insight is to match the structure to the hardware: because reading from a disk is vastly slower than reading from memory and happens in large blocks, a B-tree makes each node the size of a block and packs it with many keys, producing a broad, shallow tree in which any key can be reached in just a few disk accesses even when the data far exceeds memory. This is exactly the regime of real databases and files, and as a result B-trees, and especially their B-plus tree variant, are the standard index implementation in almost all relational databases and are used throughout modern filesystems such as NTFS, HFS+, and the extent trees of ext4. Every time a database looks up a row by an indexed column, or a filesystem locates a file, a B-tree is very likely doing the work. The structure is also a landmark of algorithm design, elegantly extending the balanced-tree idea to many-way branching and to the realities of storage hierarchies. Invented by Bayer and McCreight in 1970, it has remained the dominant on-disk index for half a century. As the shallow, wide, balanced tree built for disk-based storage, the B-tree is fundamental to how data is stored and retrieved at scale.",
+  "working": [
+    {"lead": "Pack keys into wide nodes", "text": "store many keys per node, each node sized to a disk block, giving many children per node."},
+    {"lead": "Search by branching", "text": "at each node scan the keys and follow the child whose range holds the target, descending few levels."},
+    {"lead": "Split and merge to balance", "text": "on overflow split a node and push a key up, on underflow merge or borrow, keeping all leaves at one depth."}
+  ],
+  "limits": "The B-tree is superbly suited to its purpose but that purpose defines its limits, and several points reward care. Its whole advantage, packing many keys into block-sized nodes, is aimed at storage where reads happen in large, slow blocks; for purely in-memory data with cheap random access, simpler balanced binary search trees or hash tables may be preferable, so the B-tree is not automatically the best tree everywhere. Its balancing rules, node splits and merges to keep all leaves at the same depth, add bookkeeping complexity, and choosing the order to match the block size matters for performance. The plain B-tree and its variants should not be conflated: the B-plus tree, which stores data only in linked leaves, is what most databases actually use for its efficient range scans, and speaking loosely of B-trees can blur that distinction. Some historical and technical details reward care: B-trees were invented by Bayer and McCreight at Boeing, circulated in 1970 and published in 1972, the paper's title has appeared with both indexes and indices, and while B-trees are standard across relational databases and filesystems, specific engines use specific variants. So the B-tree robustly indexes sorted data for block storage, understood as a structure optimized for disk whose B-plus variant dominates real database and filesystem use.",
+  "misreadings": "The B-tree is not just a binary search tree; its nodes hold many keys and children, tuned to disk blocks. It is not the best structure for in-memory data, where simpler trees or hash tables may win. And the plain B-tree is not the same as the B-plus tree that databases actually use, so treating a B-tree as binary, as ideal in memory, or as identical to its B-plus variant, misreads it.",
+  "origin": "The balanced multiway tree invented by Bayer and McCreight at Boeing, circulated in 1970 and published in 1972, which keeps sorted data in wide block-sized nodes for efficient disk-based search.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1972,
+  "namedAfter": null,
+  "sources": [
+    {"text": "B-tree, Wikipedia. — the B-tree as a self-balancing tree generalizing the binary search tree with more than two children per node, all leaves at the same depth, the disk-block motivation for use in databases and filesystems, the invention by Bayer and McCreight at Boeing circulated in 1970 and published in 1972, and the B-plus tree variant.", "url": "https://en.wikipedia.org/wiki/B-tree", "type": "secondary"},
+    {"text": "B+ tree, Wikipedia. — the B-plus tree variant storing all record pointers in linked leaves for efficient range queries, and its use in databases and filesystems.", "url": "https://en.wikipedia.org/wiki/B%2B_tree", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/B-tree",
+  "related": [
+    {"slug": "the-binary-search-tree", "kind": "kindred"},
+    {"slug": "the-red-black-tree", "kind": "kindred"}
+  ]
+}
