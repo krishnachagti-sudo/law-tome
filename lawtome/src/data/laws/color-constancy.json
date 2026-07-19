@@ -1,0 +1,57 @@
+{
+  "no": "823",
+  "slug": "color-constancy",
+  "name": "Color Constancy",
+  "aliases": ["Colour constancy", "Colour perception constancy"],
+  "statement": "A red apple looks red in sunlight, shade, or lamplight, though the light it reflects differs wildly.",
+  "statementAccent": "looks red in sunlight, shade, or lamplight",
+  "meaning": "Color constancy is the feature of the human colour perception system that keeps the perceived colour of an object relatively stable even as the illumination changes. A red apple looks red in bright daylight, under a cloudy sky, or under warm incandescent light, even though the actual wavelengths of light reaching the eye from it differ greatly in each case. This is a remarkable achievement, because the light an object sends to the eye depends on both the object's own reflectance, its intrinsic colour, and the colour of the light illuminating it, which vary independently. Color constancy is the visual system's ability to discount, or estimate and factor out, the illumination in order to infer the object's stable, true colour. It relies on processes such as chromatic adaptation, the eye's adjustment to the overall colour of the light, and on comparing surfaces across a scene. Color constancy is not perfect and can break down under unusual lighting, and it lies behind famous perceptual puzzles such as the viral photograph of the dress.",
+  "mechanism": "The light reaching the eye from a surface is the product of two things: how the surface reflects light, its reflectance, and the spectrum of the light illuminating it. Because these combine, the same object can send very different light to the eye under different illuminations, yet color constancy lets us perceive its colour as roughly unchanged. The visual system achieves this by, in effect, estimating the illumination and discounting it to recover the object's reflectance. Several processes contribute. Chromatic adaptation adjusts the sensitivities of the cone cells to the overall colour of the ambient light, so the visual system partly compensates for a reddish or bluish cast. Context matters too: the brain compares a surface with the colours of surrounding surfaces across the scene, using these spatial comparisons to gauge the illuminant, an idea developed in Edwin Land's retinex theory. Higher-level processes also estimate the light source. The result is a perception weighted toward the object's stable colour rather than the raw light, though the compensation is incomplete, which is why constancy can fail and why observers can disagree, as with the dress.",
+  "examples": [
+    {
+      "tag": "The apple in any light",
+      "text": "A red apple is seen as red in daylight, shade, or lamplight, though the wavelengths it reflects to the eye differ greatly in each."
+    },
+    {
+      "tag": "The dress",
+      "text": "The viral photo some saw as blue and black and others as white and gold reflects differing assumptions about the illumination, a color-constancy puzzle."
+    },
+    {
+      "tag": "Sodium lamps break it",
+      "text": "Under near-monochromatic sodium street lamps, colour constancy fails and it becomes hard to distinguish colours."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Chromatic adaptation",
+      "text": "The adjustment of the cone cells' sensitivities to the overall colour of the light, one contributor to color constancy."
+    },
+    {
+      "name": "Retinex theory",
+      "text": "Edwin Land's account explaining color constancy by comparing reflectances across a scene rather than reading the light at a single point."
+    }
+  ],
+  "whyItMatters": "Color constancy is a fundamental achievement of the visual system and a central topic in vision science, revealing that colour perception is not a simple readout of the light entering the eye but a construction that discounts the illumination to recover an object's stable colour. Without it, objects would appear to change colour every time the lighting changed, from sunrise to noon to lamplight, which would make colour useless as a cue to what things are. Understanding color constancy illuminates how the brain solves the difficult problem of separating an object's reflectance from the illumination, a problem that inspired influential theories such as Land's retinex and that remains a challenge for computer vision and digital cameras, which must perform white balancing to mimic it. The phenomenon also explains striking perceptual puzzles, most famously the dress, where differing assumptions about the light led people to see wholly different colours. As the mechanism that keeps colours stable across changing light, color constancy is key to how we see and use colour.",
+  "working": [
+    {"lead": "Receive mixed light", "text": "take in light that combines the object's reflectance with the colour of the illumination."},
+    {"lead": "Estimate the illuminant", "text": "use chromatic adaptation and comparison with surrounding surfaces to gauge and discount the light source's colour."},
+    {"lead": "Recover the stable colour", "text": "perceive the object's colour weighted toward its true reflectance rather than the raw light, though imperfectly."}
+  ],
+  "limits": "Color constancy is not perfect; the compensation for changing illumination is incomplete, so colours do shift somewhat with the light, and it can break down under unusual conditions. Under near-monochromatic lighting, such as low-pressure sodium street lamps, there is too little spectral information to discount the illuminant, and colours become hard to distinguish. Because the process involves assumptions about the light, observers can disagree, as the dress famously showed, when the illumination is ambiguous. The exact mechanisms, how much is chromatic adaptation, spatial comparison, or higher-level inference, are still studied, and models like retinex capture part but not all of it. So color constancy robustly keeps colours relatively stable across normal changes in illumination, understood as an imperfect, assumption-laden process that can fail under unusual light or ambiguity.",
+  "misreadings": "Color constancy does not mean the eye receives the same light from an object under different illumination; the light differs greatly, and the brain compensates to keep the perceived colour stable. It is not perfect, since colours do shift somewhat and constancy can fail under unusual lighting like sodium lamps. And the disagreement over the dress is not a defect of some people's eyes but a consequence of ambiguous illumination and differing assumptions, so treating the incoming light as constant, constancy as flawless, or perceptual disagreements as errors, misreads a system that discounts the illuminant to stabilise perceived colour.",
+  "origin": "A feature of human colour perception studied in vision science: the relative stability of perceived object colour under changing illumination, explained by chromatic adaptation, spatial comparison, and theories such as Edwin Land's retinex.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Color constancy, Wikipedia. — the relative constancy of perceived object colour under varying illumination, the reflectance-versus-illumination problem and discounting the illuminant, chromatic adaptation and context, Edwin Land's retinex theory, and the imperfection under monochromatic light.", "url": "https://en.wikipedia.org/wiki/Color_constancy", "type": "secondary"},
+    {"text": "The dress, Wikipedia. — the viral photograph seen as blue-and-black or white-and-gold, explained via color constancy and differing assumptions about the illumination.", "url": "https://en.wikipedia.org/wiki/The_dress", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Color_constancy",
+  "related": [
+    {"slug": "trichromacy", "kind": "kindred"},
+    {"slug": "metamerism", "kind": "kindred"}
+  ]
+}

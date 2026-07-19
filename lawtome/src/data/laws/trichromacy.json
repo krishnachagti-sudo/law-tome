@@ -1,0 +1,57 @@
+{
+  "no": "827",
+  "slug": "trichromacy",
+  "name": "Trichromacy",
+  "aliases": ["Trichromatic color vision", "The Young-Helmholtz theory"],
+  "statement": "Human colour vision runs on just three kinds of cone, so three primaries can recreate any hue.",
+  "statementAccent": "three primaries can recreate any hue",
+  "meaning": "Trichromacy is the possession of three independent channels for conveying colour information, derived from the three types of cone cells in the human eye. Human colour vision is trichromatic: it is based on three cone photoreceptor types, each most sensitive to a different but overlapping range of wavelengths, commonly labelled S, M, and L for short, medium, and long, corresponding roughly to blue, green, and red. The brain interprets the relative responses of the three cone types to perceive colour. This three-channel structure is the basis of the Young-Helmholtz theory of colour vision, proposed by Thomas Young in the early nineteenth century and developed by Hermann von Helmholtz, later confirmed by the discovery of the three cone types. A profound consequence of trichromacy is that mixing just three primary colours of light can stimulate the three cones in the right proportions to reproduce most colours, which is the foundation of RGB displays and colour reproduction. Trichromacy is the normal human condition; missing or altered cones produce colour blindness, and some animals have different numbers of channels.",
+  "mechanism": "Colour vision begins with the cone photoreceptors in the retina. Humans have three cone types, each containing a different photopigment with a distinct spectral sensitivity: the S cones peak in the short, bluish wavelengths, the M cones in the medium, greenish wavelengths, and the L cones in the long, reddish wavelengths, with their sensitivity curves broad and overlapping. Any light entering the eye produces a particular pattern of response across these three cone types, and the brain reads colour from the relative sizes of the three signals rather than from the wavelengths directly. Because the eye reduces an entire spectrum to just three numbers, colour vision is trichromatic: three channels suffice to describe what we see. This is why three primary lights can reproduce most colours, since adjusting the intensities of three primaries can match the three cone responses of a target colour, the principle behind RGB screens. It also produces metamerism, in which different physical spectra that happen to yield the same three cone responses look identical. Young proposed the three-receptor idea, Helmholtz developed it, and the later discovery of three cones confirmed it.",
+  "examples": [
+    {
+      "tag": "Three cone types",
+      "text": "The S, M, and L cones, sensitive to short, medium, and long wavelengths, give human vision its three colour channels."
+    },
+    {
+      "tag": "Three primaries reproduce colour",
+      "text": "Because vision is trichromatic, mixing three primary lights can match the cone responses of most colours, the basis of RGB displays."
+    },
+    {
+      "tag": "Metamers",
+      "text": "Different spectra that produce the same three cone responses look identical, a consequence of reducing colour to three channels."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Young-Helmholtz theory",
+      "text": "The trichromatic theory proposed by Thomas Young and developed by Hermann von Helmholtz, later confirmed by the three cone types."
+    },
+    {
+      "name": "Variations in channels",
+      "text": "Colour blindness from missing or altered cones, and tetrachromacy in some animals such as many birds, which have four channels."
+    }
+  ],
+  "whyItMatters": "Trichromacy is a foundational fact of human colour vision, explaining both how we see colour and how colour technology works. Because vision reduces the spectrum to three cone signals, colour can be described and reproduced with just three numbers or three primaries, which is why RGB displays, colour cameras, and colour reproduction across screens and print all rest on the trichromatic structure of the eye. Trichromacy also underlies the whole framework of colour science and colorimetry, including the concept of metamerism, whereby different spectra can look identical because they match in the three channels. It explains the varieties of colour blindness as the loss or alteration of one of the three cone types, and it places human vision among the range of animal colour systems, from dichromats to the tetrachromats found in some birds. The Young-Helmholtz theory, confirmed by the discovery of the cones and complemented by the opponent-process account of later processing, is a cornerstone of vision science. As the three-channel basis of colour, trichromacy links physiology, technology, and the perception of colour.",
+  "working": [
+    {"lead": "Absorb light in three cones", "text": "let the S, M, and L cones each respond to light according to their overlapping spectral sensitivities."},
+    {"lead": "Reduce to three signals", "text": "collapse the entire spectrum into the relative responses of the three cone types."},
+    {"lead": "Read colour from the ratios", "text": "have the brain interpret colour from the three signals, so three primaries can reproduce and metamers can match most colours."}
+  ],
+  "limits": "Trichromacy describes the receptor level of colour vision, the three cone types, but colour perception also depends on later processing that combines the cone signals into opponent channels, so trichromacy is one stage of a fuller account, not the whole story. The exact peak wavelengths of the three cones vary between individuals and are cited slightly differently across sources, so specific numbers are approximate. Because the eye reduces spectra to three signals, trichromacy inherently produces metamerism and cannot distinguish spectra that match in the three channels, a limitation of the system. Trichromacy is the normal human condition, but colour blindness and, in some people and animals, different numbers of channels show it is not universal. So trichromacy robustly explains the three-channel basis of human colour vision and colour reproduction, understood as the receptor stage that later opponent processing builds upon.",
+  "misreadings": "Trichromacy does not mean the eye detects three fixed colours; the three cone types have broad, overlapping sensitivities, and colour comes from the pattern of their responses. It is not the complete theory of colour vision, since the opponent-process stage combines the cone signals afterward, so trichromacy and opponent processing are complementary stages, not rivals. And three primaries do not reproduce literally every colour, only a wide range, so treating the cones as narrow detectors, trichromacy as the whole account, or three primaries as covering all colours, misreads the three-channel receptor basis of colour vision.",
+  "origin": "The trichromatic basis of human colour vision, proposed by Thomas Young in 1802 and developed by Hermann von Helmholtz, later confirmed by the discovery of the three cone types.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Trichromacy, Wikipedia. — the three independent colour channels from the three cone types, the S, M, and L cones and approximate peaks, the Young-Helmholtz theory, the basis for three-primary colour reproduction, metamerism as a consequence, and variations including colour blindness and tetrachromacy.", "url": "https://en.wikipedia.org/wiki/Trichromacy", "type": "secondary"},
+    {"text": "Young-Helmholtz theory, Wikipedia. — Thomas Young's 1802 proposal of three receptor types and Helmholtz's development of the trichromatic theory of colour vision.", "url": "https://en.wikipedia.org/wiki/Young%E2%80%93Helmholtz_theory", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Trichromacy",
+  "related": [
+    {"slug": "the-opponent-process-theory", "kind": "kindred"},
+    {"slug": "color-blindness", "kind": "consequence"}
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "no": "829",
+  "slug": "metamerism",
+  "name": "Metamerism",
+  "aliases": ["Color metamerism", "Metameric matching"],
+  "statement": "Two colours built from different spectra can look identical, then diverge under different light.",
+  "statementAccent": "look identical, then diverge under different light",
+  "meaning": "In colour science, metamerism is the phenomenon in which two colour samples with different physical spectral compositions appear to match, looking the same colour, under a given light source and to a given observer. Two such matching colours are called metamers. Metamerism happens because human colour vision is trichromatic: the eye reduces an entire spectrum of light to just three signals, the responses of the short, medium, and long cone types, so many different spectra can produce the same three cone responses and thus look identical. A crucial practical consequence is illuminant metameric failure: two samples that match under one light source may fail to match under a different one, because their differing spectra respond differently to the changed illumination, which is why clothes that match in a store's lighting can clash in daylight, or a paint touch-up matches indoors but not outside. Metamerism is fundamental to colour reproduction, since displays and printing use a few primaries to match colours metamerically, and it is a persistent challenge in colour matching across manufacturing, textiles, and paint.",
+  "mechanism": "Metamerism follows directly from the trichromatic structure of human vision. The eye does not measure the full spectrum of incoming light; instead, its three cone types each sum the light across a broad band of wavelengths, so an entire spectral power distribution is collapsed into just three numbers, the tristimulus values. Because this is a drastic reduction, many physically different spectra can yield the same three cone responses, and any two that do will look identical, a metameric match. But the match depends on the light source and the observer. Under a different illuminant, the two samples' different reflectance spectra interact differently with the changed light, producing different cone responses, so the match breaks, which is illuminant metameric failure. Observer metamerism is a related effect: two lights or surfaces may match for one person but not another, because individuals differ slightly in their cone sensitivities. Colour reproduction turns metamerism to advantage: a screen's red, green, and blue primaries do not reproduce a scene's actual spectra but produce cone responses that match, so the reproduced image looks right even though its physics differs entirely.",
+  "examples": [
+    {
+      "tag": "Clothes under store light",
+      "text": "Two garments that match under a store's lighting can look mismatched in daylight, an illuminant metameric failure from their differing spectra."
+    },
+    {
+      "tag": "Screens and printing",
+      "text": "Displays and printing reproduce colours metamerically, using a few primaries to match cone responses rather than a scene's actual spectra."
+    },
+    {
+      "tag": "Different spectra, same colour",
+      "text": "Two samples with different reflectance spectra can produce identical cone responses and look the same colour, making them metamers."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Illuminant metameric failure",
+      "text": "The breaking of a metameric match when the light source changes, as with fabrics that match indoors but clash in daylight."
+    },
+    {
+      "name": "Observer metamerism",
+      "text": "A match that holds for one observer but fails for another, because of individual differences in cone sensitivities."
+    }
+  ],
+  "whyItMatters": "Metamerism is a foundational concept in colour science with far-reaching practical consequences. It is the very basis of colour reproduction: because the eye reduces spectra to three signals, screens, printers, cameras, photography, and television can reproduce the appearance of colours using just three or four primaries, matching cone responses rather than physical spectra, which is what makes colour imaging possible at all. At the same time, metamerism is a persistent headache in industries that must match colours across materials and conditions, textiles, paint, plastics, cosmetics, and manufacturing, because a match achieved under one light can fail under another, so producers must control for illuminant metameric failure. It explains everyday frustrations like mismatched fabric or paint that looked right in the shop, and it underlies the design of standard illuminants and colour-matching procedures. Metamerism also illuminates the nature of colour perception itself, showing that colour is not a direct readout of the spectrum but a three-channel construction. As both the enabler of colour reproduction and the source of colour-matching problems, metamerism is central to how colour is used.",
+  "working": [
+    {"lead": "Reduce spectra to three signals", "text": "let the three cone types collapse each spectrum into three responses, discarding the detailed wavelength information."},
+    {"lead": "Match by cone response", "text": "recognise that different spectra yielding the same three responses look identical, forming metamers."},
+    {"lead": "Watch matches break", "text": "note that changing the light source or observer can make the differing spectra diverge, an illuminant or observer metameric failure."}
+  ],
+  "limits": "Metamerism arises from the trichromatic reduction of the spectrum, so it is a feature of how human vision works and does not mean the samples are physically the same; their spectra differ, and the match is contingent on the light and the observer. A metameric match under one illuminant is not guaranteed under another, which is the whole difficulty of illuminant metameric failure, so producers cannot assume a match holds across conditions. Observer metamerism means a match is not even universal across people. Colour reproduction exploits metamerism but is therefore bounded by it, since reproduced colours match appearance, not spectra, and can fail under unusual light. So metamerism robustly explains how different spectra can look identical and why matches can break, understood as a consequence of trichromatic vision that is contingent on illuminant and observer.",
+  "misreadings": "Metamerism does not mean two matching colours are physically the same; their spectra differ, and only their cone responses coincide, which is why the match can break. A metameric match is not permanent, since changing the light source or the observer can make the colours diverge. And colour reproduction on screens does not recreate a scene's actual spectra but matches cone responses metamerically, so treating metamers as spectrally identical, matches as unconditional, or displays as reproducing true spectra, misreads a phenomenon that stems from reducing the spectrum to three signals.",
+  "origin": "A foundational concept in colorimetry: the matching of colours with different spectra due to trichromatic vision, and the failure of such matches under different illuminants or observers, central to colour reproduction and matching.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Metamerism (color), Wikipedia. — the matching of colours with different spectral power distributions, the trichromatic reduction to three tristimulus values, illuminant metameric failure with the clothing and paint examples, observer metamerism, and the basis for colour reproduction.", "url": "https://en.wikipedia.org/wiki/Metamerism_(color)", "type": "secondary"},
+    {"text": "Metamerism: when colours seem to change in different light sources, RMIT Colour Theory. — metamerism as different spectra appearing to match, its trichromatic basis, and its practical challenges in colour matching.", "url": "https://rmit.pressbooks.pub/colourtheory1/chapter/metamerism-when-colours-seem-to-change-in-different-light-sources/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Metamerism_(color)",
+  "related": [
+    {"slug": "trichromacy", "kind": "cause"},
+    {"slug": "color-temperature", "kind": "kindred"}
+  ]
+}

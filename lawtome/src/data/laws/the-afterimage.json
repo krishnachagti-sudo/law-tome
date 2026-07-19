@@ -1,0 +1,57 @@
+{
+  "no": "824",
+  "slug": "the-afterimage",
+  "name": "The Afterimage",
+  "aliases": ["Visual afterimage", "Negative afterimage"],
+  "statement": "Stare at a colour, look away, and a ghost of it lingers in the opposite hue.",
+  "statementAccent": "a ghost of it lingers in the opposite hue",
+  "meaning": "An afterimage is a visual impression that continues to appear after the original stimulus has been removed, when one looks away. The most common kind is the negative afterimage: after staring at a coloured or bright image for a time and then looking at a blank, neutral surface, one sees a lingering image in the complementary colours and with reversed brightness, so a red shape produces a cyan or green afterimage and a black-and-white image reverses to its negative. There is also a briefer positive afterimage, which retains the original colours and brightness, such as the bright spot seen for a moment after a camera flash. Negative afterimages are primarily attributed to adaptation, the fatiguing of the retinal photoreceptors and neural pathways, and they are closely tied to the opponent-process theory of colour vision. A classic demonstration stares at a flag rendered in complementary colours, then a white surface, to see the flag appear in its true colours. Afterimages are a vivid window into how the eye and brain process colour and light.",
+  "mechanism": "Negative afterimages arise mainly from adaptation in the visual system. Staring at a colour or brightness for a sustained period overstimulates and desensitizes the photoreceptors, the cones, that respond to it, and adapts the neural pathways that carry the signal, including the retinal ganglion cells that code colour in opponent channels. When the gaze then shifts to a neutral surface, the fatigued pathway responds less than the others, so the balance tips toward the opposite side of the opponent channel, and one sees the complementary colour with reversed light and dark. This is why the afterimage of red is green or cyan and why a light-and-dark image reverses: the opponent-process organization of colour vision, in which red opposes green and blue opposes yellow, produces the complement. Positive afterimages, by contrast, are brief and retain the original appearance, arising from the continued activity of the visual system immediately after a strong stimulus, as with the persistent bright spot after a flash. The flag demonstration exploits the negative afterimage: after adapting to a flag in complementary colours, the afterimage on a white surface shows the flag in its familiar colours.",
+  "examples": [
+    {
+      "tag": "Red to green",
+      "text": "Staring at a red shape and then a white wall produces a lingering afterimage in the complementary green or cyan."
+    },
+    {
+      "tag": "The flag demonstration",
+      "text": "Gazing at a flag drawn in complementary colours, then a white surface, makes the flag appear in its correct colours as an afterimage."
+    },
+    {
+      "tag": "The flash spot",
+      "text": "The bright spot seen briefly after a camera flash is a positive afterimage, retaining the original brightness rather than reversing."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Negative afterimage",
+      "text": "The common lingering image in complementary colours with reversed brightness, produced by adaptation and opponent processing."
+    },
+    {
+      "name": "Positive afterimage",
+      "text": "A brief afterimage retaining the original colours and brightness, as with the spot seen after a bright flash."
+    }
+  ],
+  "whyItMatters": "Afterimages are a vivid and easily demonstrated window into the workings of colour and brightness perception, showing that what we see depends on the recent history of the visual system, not just the light present now. The negative afterimage in complementary colours is strong evidence for the opponent-process theory of colour vision, since it reveals the antagonistic red-green and blue-yellow channels at work: adapting one pole of a channel lets the opposite pole dominate. Afterimages thus helped shape the modern understanding that colour is coded in opponent channels layered on top of the three cone types. They also illuminate adaptation, the visual system's constant adjustment to prevailing stimulation, which underlies much of perception. Beyond the laboratory, afterimages are a familiar curiosity and a staple of demonstrations and art, and they connect to related phenomena like simultaneous contrast and the complementary relationships of colours. As a simple effect with deep theoretical significance, the afterimage remains a key tool for understanding how the eye and brain construct colour.",
+  "working": [
+    {"lead": "Adapt to a stimulus", "text": "stare steadily at a coloured or bright image for a sustained period, fatiguing the responsive photoreceptors and pathways."},
+    {"lead": "Shift to a neutral surface", "text": "look at a blank, neutral surface, where the adapted pathway now responds less than the others."},
+    {"lead": "See the complement", "text": "perceive a lingering afterimage in the complementary colour with reversed brightness, revealing opponent-process coding."}
+  ],
+  "limits": "Afterimages depend on sustained adaptation, so a brief glance produces little, and they fade over seconds as the visual system recovers. The negative afterimage's colour follows opponent-process complements, but its exact appearance depends on the stimulus, the adaptation time, and the background viewed afterward. The mechanism is primarily attributed to photoreceptor and neural adaptation rather than photoreceptor fatigue alone, and the precise balance of retinal and later neural contributions is a matter of ongoing understanding rather than a single settled cause. Positive and negative afterimages arise from different aspects of the visual response. So afterimages robustly reveal adaptation and opponent-process colour coding, understood as temporary effects whose appearance depends on the stimulus and viewing conditions and whose mechanism combines retinal and neural adaptation.",
+  "misreadings": "A negative afterimage is not a mark left on the eye or the surface; it is a perceptual effect of the visual system's adaptation, seen in the complementary colour. It is not permanent, since it fades as the system recovers. And it is not caused by photoreceptor fatigue alone, but by a combination of retinal and neural adaptation, so treating the afterimage as a physical trace, as lasting, or as simple eye tiredness, misreads a temporary perceptual effect that reveals opponent-process colour coding.",
+  "origin": "A visual phenomenon long observed and studied in vision science: the lingering image after a stimulus, whose negative form in complementary colours provides evidence for the opponent-process theory of colour vision.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Afterimage, Wikipedia. — the lingering image after exposure, the negative afterimage in complementary colours with reversed brightness, the adaptation and opponent-process mechanism, the positive afterimage, and the flag demonstration.", "url": "https://en.wikipedia.org/wiki/Afterimage", "type": "secondary"},
+    {"text": "Afterimage, Encyclopaedia Britannica. — the visual illusion in which retinal impressions persist after a stimulus is removed, and the positive and negative (complementary) forms.", "url": "https://www.britannica.com/science/afterimage", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Afterimage",
+  "related": [
+    {"slug": "the-opponent-process-theory", "kind": "cause"},
+    {"slug": "complementary-colors", "kind": "kindred"}
+  ]
+}
