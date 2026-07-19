@@ -1,0 +1,57 @@
+{
+  "no": "659",
+  "slug": "the-no-true-scotsman",
+  "name": "The No True Scotsman",
+  "aliases": ["Appeal to purity", "The no-true-Scotsman move"],
+  "statement": "When a counterexample refutes your generalization, redefine the category so it no longer counts.",
+  "statementAccent": "redefine the category so it no longer counts",
+  "meaning": "The no true Scotsman, also called the appeal to purity, is an informal fallacy in which a universal generalization, refuted by a counterexample, is protected by an ad hoc redefinition: the arguer attaches a non-substantive qualifier such as true, real, genuine, pure, or authentic to the subject so that the troublesome counterexample no longer counts. The canonical illustration runs, no Scotsman puts sugar on his porridge; but my uncle Angus, a Scotsman, does; well, no true Scotsman puts sugar on his porridge. Rather than concede the claim, the arguer converts an empirical, refutable statement into an unfalsifiable tautology. Coined by the philosopher Antony Flew, it is especially common in disputes over identity, group membership, and purity, where inconvenient members are simply defined out.",
+  "mechanism": "A generalization like no member of this group does such a thing is an empirical claim that a single counterexample can refute. The no true Scotsman move rescues it not by weakening the claim, as honesty would require, but by silently redefining membership: the offending example is declared not a real or true member, so it no longer counts against the rule. This shift buys immunity from refutation at the cost of informativeness, turning a substantive claim into an empty one, since no true X does Y becomes as vacuous as no Y-doing X does Y. It is a form of ad hoc rescue, or moving the goalposts, in which the definition is quietly changed after the fact solely to dodge the counterexample.",
+  "examples": [
+    {
+      "tag": "The porridge dialogue",
+      "text": "No Scotsman puts sugar on his porridge; but my uncle Angus does; well, no true Scotsman puts sugar on his porridge, the canonical illustration of the fallacy."
+    },
+    {
+      "tag": "Purity tests",
+      "text": "Declaring that anyone in a group who behaves badly was never a real member protects the group's image by defining inconvenient members out, an appeal to purity."
+    },
+    {
+      "tag": "The honest alternative",
+      "text": "The proper response to a counterexample is to weaken the claim to most or some, not to redefine the category so the counterexample vanishes."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The appeal to purity",
+      "text": "The alternative name emphasising that the redefinition invokes a notion of true or pure membership to exclude the counterexample."
+    },
+    {
+      "name": "Ad hoc rescue",
+      "text": "The broader pattern of saving a refuted claim by an unjustified after-the-fact modification, of which the no true Scotsman is a specific case."
+    }
+  ],
+  "whyItMatters": "The no true Scotsman is a well-known informal fallacy especially relevant to disputes over identity, group membership, and unfalsifiable claims, where the true or real qualifier is deployed to shield a generalization from any counterexample. Recognising it guards against a common rhetorical trick in debates about religion, nationality, ideology, and belonging, where inconvenient members are simply defined out rather than acknowledged. It also teaches a positive lesson about intellectual honesty: when a generalization meets a counterexample, the proper response is to qualify or retract it, not to redefine the category. As a vivid, memorable fallacy, it has become a standard tool for spotting when a claim has been rendered immune to evidence.",
+  "working": [
+    {"lead": "Spot the ad hoc redefinition", "text": "watch for a true, real, or pure qualifier added to a category only after a counterexample appears, solely to exclude it."},
+    {"lead": "Check for lost content", "text": "notice when a claim becomes unfalsifiable, since redefining to dodge every counterexample turns a substantive statement into an empty tautology."},
+    {"lead": "Weaken, do not redefine", "text": "respond to a counterexample by qualifying the generalization to most or some, the honest alternative to defining the exception away."}
+  ],
+  "limits": "The fallacy applies specifically when the redefinition is ad hoc, made only to dodge the counterexample and without independent justification; legitimately clarifying a genuinely relevant criterion is not the fallacy. If there is a principled, pre-existing reason that the counterexample does not belong to the category, invoking it is fair rather than fallacious. The proper honest move when refuted is to withdraw or weaken the claim, so the fault lies in protecting the generalization by definitional maneuver rather than in using words like true or real. As an informal fallacy, diagnosing it requires judging whether the qualifier is a genuine criterion or a convenient escape.",
+  "misreadings": "The no true Scotsman is not merely using words like true or real; it is redefining a category ad hoc, with no independent justification, purely to exclude a counterexample. Clarifying a genuinely relevant criterion is legitimate, so a principled reason the example does not belong is not the fallacy. And it is about protecting a claim from refutation, not simply disagreeing; the tell is that the redefinition renders the claim unfalsifiable, buying immunity at the cost of saying anything substantive.",
+  "origin": "Coined and illustrated by the British philosopher Antony Flew, with an early version in his 1966 book God and Philosophy and the developed illustration in his 1975 book Thinking About Thinking.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1975,
+  "namedAfter": "Antony Flew",
+  "sources": [
+    {"text": "No true Scotsman, Wikipedia. — the definition as ad hoc redefinition and appeal to purity, the porridge example, Antony Flew's origin, and the ad-hoc-rescue mechanism.", "url": "https://en.wikipedia.org/wiki/No_true_Scotsman", "type": "secondary"},
+    {"text": "Logical Fallacy: The No-True-Scotsman Fallacy, The Fallacy Files. — the conversion of a refutable generalization into an unfalsifiable tautology.", "url": "https://www.fallacyfiles.org/scotsman.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/No_true_Scotsman",
+  "related": [
+    {"slug": "the-motte-and-bailey", "kind": "kindred"},
+    {"slug": "the-false-dilemma", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "no": "656",
+  "slug": "the-appeal-to-authority",
+  "name": "The Appeal to Authority",
+  "aliases": ["Argument from authority", "Argumentum ad verecundiam"],
+  "statement": "Cite an authority's say-so as proof, even when they are no expert or the point is theirs to assert.",
+  "statementAccent": "even when they are no expert or the point is theirs to assert",
+  "meaning": "The appeal to authority, in Latin argumentum ad verecundiam, is a form of argument in which the opinion of an authority is used as evidence for a conclusion. It becomes a fallacy when the cited authority is not a legitimate expert on the subject, speaks outside their field, is biased or fringe, or when their mere say-so is treated as conclusive proof rather than defeasible supporting evidence. Named by John Locke in 1690, it is a fallacy of misused authority, not of consulting experts at all. Indeed, deferring to a genuine, relevant expert consensus is a reasonable, if defeasible, form of inductive reasoning, not a fallacy. The error lies in the illegitimate appeal: to the wrong expert, or to authority as if it were infallible proof.",
+  "mechanism": "The argument treats the fact that someone asserts a claim as a reason to accept it. This is rational when the authority is a genuine, relevant expert and the claim falls within their competence, since expertise is real evidence, though never absolute proof. It turns fallacious when the appeal is illegitimate: citing an authority outside their field, such as a celebrity or a scientist speaking beyond their expertise; leaning on a biased or fringe figure; treating any authority as infallible; or invoking authority where the matter should be settled by evidence and reasoning instead. History records how even expert consensus can err, as when scientists long propagated an incorrect human chromosome count on the strength of authority rather than fresh observation, illustrating why authority is defeasible.",
+  "examples": [
+    {
+      "tag": "Outside the field",
+      "text": "Citing an eminent physicist's opinion on international relations, or a celebrity's on medicine, appeals to authority outside its area of expertise, a fallacious form."
+    },
+    {
+      "tag": "Legitimate expert deference",
+      "text": "Accepting a well-established scientific consensus from relevant experts is reasonable, defeasible evidence, not a fallacy, since genuine expertise bears on the question."
+    },
+    {
+      "tag": "Authority is not proof",
+      "text": "Scientists long repeated an incorrect human chromosome count on authority rather than rechecking, showing why an authority's word is evidence, not infallible proof."
+    }
+  ],
+  "variants": [
+    {
+      "name": "False or irrelevant authority",
+      "text": "Citing someone without genuine relevant credentials, or an expert speaking outside their field, as if their word settled the question."
+    },
+    {
+      "name": "Authority treated as infallible",
+      "text": "Taking an authority's assertion as conclusive proof rather than as defeasible evidence that could be overturned by better reasoning or data."
+    }
+  ],
+  "whyItMatters": "The appeal to authority is central to debates about expertise, testimony, science communication, and misinformation, where the line between rational deference and fallacious manipulation is constantly contested. Because no one can independently verify every claim, trusting relevant experts is both necessary and reasonable, yet the same form is easily abused by citing fake, fringe, or off-topic authorities, or by treating any expert's word as beyond question. Recognising the difference, that legitimate expert consensus is strong but defeasible evidence while illegitimate appeals are fallacious, is essential to navigating a world of specialised knowledge. The fallacy thus teaches not blanket distrust of experts but discernment about which authorities are relevant and how much weight their word deserves.",
+  "working": [
+    {"lead": "Check the authority's fit", "text": "ask whether the cited authority is a genuine, relevant expert on this question, or is speaking outside their field or without real credentials."},
+    {"lead": "Treat expertise as evidence, not proof", "text": "weigh a legitimate expert's view as defeasible support that could be overturned, not as conclusive proof beyond question."},
+    {"lead": "Prefer reasons where available", "text": "where a matter can be settled by evidence and argument, look to those rather than resting the case on authority alone."}
+  ],
+  "limits": "It is not a fallacy to trust legitimate, relevant experts; deferring to genuine expert consensus is a reasonable, if defeasible, inductive argument, so the fallacy is specifically the illegitimate or misused appeal. Expert consensus is strong evidence but never deductive proof, so even well-founded appeals can be overturned by better data. John Locke, who named the argument, classed it as an inferior kind of argument rather than a fallacy, and the modern fallacy framing developed later, so the term covers a spectrum from reasonable deference to outright misuse. Judging where a particular appeal falls on that spectrum requires assessing the authority's relevance, competence, and the availability of direct evidence.",
+  "misreadings": "Trusting a legitimate, relevant expert is not a fallacy; the fallacy is appealing to an irrelevant, non-expert, biased, or supposedly infallible authority, or treating authority as proof. Expert consensus is defeasible evidence, not conclusive demonstration, so citing it appropriately is rational while overstating it as certainty is not. And the fault is not merely mentioning an authority but misusing one, so a well-placed appeal to genuine expertise, offered as evidence rather than proof, is sound reasoning, not the fallacy.",
+  "origin": "Named argumentum ad verecundiam by John Locke in his 1690 Essay Concerning Human Understanding, where he classed it as an inferior kind of argument; the modern fallacy sense, distinguishing legitimate from illegitimate appeals, developed afterward.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1690,
+  "sources": [
+    {"text": "Argument from authority, Wikipedia. — the definition and Latin term, when it is fallacious versus a legitimate inductive appeal, fallacious forms, and the Locke origin.", "url": "https://en.wikipedia.org/wiki/Argument_from_authority", "type": "secondary"},
+    {"text": "Ad Verecundiam (Argument from Authority), Lander University Introduction to Logic. — the requirement that the authority's expertise be relevant to the question and the fallacious appeal outside the field.", "url": "https://philosophy.lander.edu/logic/authority.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Argument_from_authority",
+  "related": [
+    {"slug": "the-genetic-fallacy", "kind": "kindred"},
+    {"slug": "the-ad-hominem", "kind": "tension"}
+  ]
+}
