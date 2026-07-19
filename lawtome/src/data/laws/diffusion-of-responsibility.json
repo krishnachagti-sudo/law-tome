@@ -1,0 +1,56 @@
+{
+  "no": "712",
+  "slug": "diffusion-of-responsibility",
+  "name": "Diffusion of Responsibility",
+  "aliases": ["Responsibility diffusion", "The someone-else-will-do-it effect"],
+  "statement": "The more people who are present, the less any single person feels responsible for acting.",
+  "statementAccent": "the less any single person feels responsible for acting",
+  "meaning": "Diffusion of responsibility is a social-psychological phenomenon in which a person feels less personal responsibility for taking action, or for inaction, when others are present. Responsibility that would fall squarely on a lone individual is instead divided among the group, so each person feels only a fraction of it and assumes someone else will act, or already has. This diffusion is a primary mechanism behind the bystander effect, the finding that the more bystanders are present at an emergency, the less likely any one of them is to help. Studied by John Darley and Bibb Latané after the widely reported 1964 murder of Kitty Genovese, the phenomenon shows how the mere presence of others can quietly erode individual accountability. It manifests not only in emergencies but in group work, committees, and any situation where a shared task lets everyone assume the burden rests with somebody else.",
+  "mechanism": "When a person is alone and confronts a situation requiring action, all the responsibility, and any blame for failing to act, falls on them. Add other people, and that responsibility is spread across the group: each individual reasons, often without articulating it, that others could act or that someone else will, so the personal obligation and the cost of inaction feel smaller. In Darley and Latané's 1968 seizure experiment, participants who believed more others were present during an intercom discussion were slower and less likely to help someone apparently having a seizure, with helping declining as the perceived group size grew. Related processes reinforce the effect: pluralistic ignorance, in which people read others' inaction as a sign that no help is needed, and evaluation apprehension, the fear of embarrassing oneself by intervening wrongly. The same logic drives social loafing, where people exert less effort on a collective task than they would alone, because individual contributions feel less identifiable and less essential.",
+  "examples": [
+    {
+      "tag": "The seizure study",
+      "text": "In Darley and Latané's 1968 experiment, participants who believed more others were present were slower and less likely to help someone apparently having a seizure."
+    },
+    {
+      "tag": "Social loafing",
+      "text": "People exert less effort on a group task than when working alone, since each contribution feels less identifiable and the responsibility is shared."
+    },
+    {
+      "tag": "The unattended committee task",
+      "text": "In large committees or group projects, a task assigned to everyone can be done by no one, as each member assumes another will handle it."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The bystander effect",
+      "text": "The phenomenon, driven largely by diffusion of responsibility, that the presence of more bystanders reduces the chance any one of them helps a victim."
+    },
+    {
+      "name": "Social loafing",
+      "text": "The related tendency to put in less effort on a collective task than on an individual one, because responsibility and credit are diffused across the group."
+    }
+  ],
+  "whyItMatters": "Diffusion of responsibility is a central concept in social psychology, illuminating why the presence of others can paradoxically reduce helping, effort, and accountability. It explains the bystander effect and its tragic real-world instances, informs strategies for encouraging intervention, such as singling out a specific person to act rather than appealing to a crowd, and clarifies why group tasks can suffer from social loafing. Beyond emergencies, it bears on ethics and accountability in organisations, where shared responsibility can become no one's responsibility and diffuse blame can enable inaction or wrongdoing. Understanding the phenomenon helps counter it: assigning clear individual responsibility, reducing anonymity, and making contributions identifiable all restore the sense of personal obligation that the presence of others tends to dilute. It is a foundational lesson in how group contexts reshape individual behaviour.",
+  "working": [
+    {"lead": "Place a person in a group", "text": "note that when others are present, responsibility for acting is shared rather than resting on one individual."},
+    {"lead": "Let each shrink their share", "text": "observe that each person assumes others will act or already have, so personal obligation and the cost of inaction feel smaller."},
+    {"lead": "See reduced action", "text": "expect less helping, effort, or accountability than if a single person bore the full responsibility alone."}
+  ],
+  "limits": "Diffusion of responsibility is a robust phenomenon but not an ironclad law; people do help in groups, and factors like clear personal responsibility, competence, relationship to the victim, and the unambiguous nature of an emergency can override it. It works alongside, and is sometimes confused with, related processes such as pluralistic ignorance and evaluation apprehension, which contribute to the bystander effect through different routes. The famous Kitty Genovese story that spurred the research, in which many witnesses supposedly did nothing, was later shown to be substantially exaggerated, though the underlying effect is real and replicated. Reported helping percentages from the classic studies are often cited approximately. So the phenomenon reliably shapes behaviour in group settings while remaining one influence among several, and readily counteracted when responsibility is made personal.",
+  "misreadings": "Diffusion of responsibility is not simple apathy or callousness; well-meaning people help less in groups precisely because responsibility is shared, not because they do not care. It is related to but distinct from pluralistic ignorance, which is about reading others' inaction as a cue that nothing is wrong. And the Kitty Genovese narrative that popularised it was later found to be exaggerated, so citing the dramatic thirty-eight-witnesses story as established fact misrepresents the case, even though the underlying effect is genuine and has been reliably demonstrated in controlled experiments.",
+  "origin": "Studied by John Darley and Bibb Latané following the 1964 Kitty Genovese case, as the primary mechanism behind the bystander effect, in which shared responsibility among those present reduces individual helping.",
+  "category": "sociology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "namedAfter": null,
+  "sources": [
+    {"text": "Diffusion of responsibility, Wikipedia. — the division of responsibility among those present, the connection to the bystander effect, the Darley and Latané seizure research, the Genovese case with its later-documented exaggeration, and social loafing.", "url": "https://en.wikipedia.org/wiki/Diffusion_of_responsibility", "type": "secondary"},
+    {"text": "Bystander effect: Diffusion of Responsibility, Encyclopaedia Britannica. — diffusion of responsibility as the process underlying the bystander effect.", "url": "https://www.britannica.com/topic/bystander-effect/Diffusion-of-responsibility", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Diffusion_of_responsibility",
+  "related": [
+    {"slug": "the-bystander-effect", "kind": "cause"},
+    {"slug": "deindividuation", "kind": "kindred"}
+  ]
+}
