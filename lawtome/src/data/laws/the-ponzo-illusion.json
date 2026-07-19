@@ -1,0 +1,57 @@
+{
+  "no": "750",
+  "slug": "the-ponzo-illusion",
+  "name": "The Ponzo Illusion",
+  "aliases": ["Ponzo's illusion", "The railway-lines illusion"],
+  "statement": "Two identical bars laid across converging railway tracks look unequal, the upper one seeming larger.",
+  "statementAccent": "the upper one seeming larger",
+  "meaning": "The Ponzo illusion is a geometrical-optical illusion in which two identical objects, usually two horizontal bars of the same length, placed across a pair of converging lines like railway tracks receding into the distance, appear to be different sizes. The bar positioned higher, nearer the point where the lines converge and so appearing farther away, looks larger than the bar positioned lower, which appears closer, even though the two are exactly the same length. It is named after the Italian psychologist Mario Ponzo and is conventionally dated to around 1911, though Ponzo did not claim to have discovered it and it appears in earlier work. The classic explanation is that the converging lines act as perspective cues to depth, and the visual system misapplies size constancy, judging the seemingly more distant bar to be larger. It is a foundational demonstration that size perception depends on perceived depth and context.",
+  "mechanism": "The leading account is misapplied size constancy driven by depth cues. The two converging lines are interpreted by the visual system as parallel lines receding into the distance, as railway tracks or a road would, so the space near their convergence is read as farther away. Size constancy is the perceptual mechanism that keeps an object's apparent size stable as its distance changes: because a distant object casts a smaller retinal image, the brain scales up objects judged to be farther away. Applied here, the upper bar, seen as more distant yet casting the same retinal image as the lower one, is scaled up and looks larger. Ponzo himself suggested the same reasoning could help explain the moon illusion, the moon looking bigger near the horizon. This perspective and size-constancy account is the classic explanation, but the mechanism is genuinely debated: alternative theories emphasise framing effects, in which the spacing between each bar and the converging lines biases the size judgment, or other relative-size and conflicting-cue accounts.",
+  "examples": [
+    {
+      "tag": "Railway tracks",
+      "text": "Two equal bars drawn across converging lines like railway tracks look unequal, the upper bar near the vanishing point appearing larger."
+    },
+    {
+      "tag": "Size constancy misapplied",
+      "text": "The brain reads the upper bar as farther away and, applying size constancy, scales it up, so it looks bigger despite an identical retinal image."
+    },
+    {
+      "tag": "The moon illusion",
+      "text": "Ponzo suggested the same apparent-distance reasoning could help explain why the moon looks larger near the horizon than high in the sky."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The perspective hypothesis",
+      "text": "The classic explanation that the converging lines cue depth and the visual system misapplies size constancy, enlarging the apparently more distant bar."
+    },
+    {
+      "name": "The framing hypothesis",
+      "text": "The alternative account that the spacing between each bar and the converging lines biases the size judgment, rather than depth-based scaling."
+    }
+  ],
+  "whyItMatters": "The Ponzo illusion is a classic demonstration in vision science that size perception is not a direct readout of the retinal image but depends on perceived depth and context. By showing that identical bars look different sizes when placed against perspective cues, it reveals how the visual system uses depth information and size constancy to interpret the world, and how those normally helpful processes can be fooled by two-dimensional figures that mimic depth. The illusion connects to broader phenomena such as the moon illusion and sits at the heart of debates about how the brain integrates depth cues into size judgments. It has also been used to probe deeper questions, including the dissociation between vision for perception and vision for action, since grasping movements can be scaled to the true size rather than the illusory one, and cross-cultural differences in susceptibility, making it a rich tool for studying perception.",
+  "working": [
+    {"lead": "Add perspective cues", "text": "place two identical bars across converging lines that the visual system reads as parallel lines receding into the distance."},
+    {"lead": "Read depth into the figure", "text": "have the brain treat the region near the convergence as farther away, applying depth-based interpretation to the flat figure."},
+    {"lead": "Scale by size constancy", "text": "watch the apparently more distant upper bar be scaled up and look larger, though both bars are the same length."}
+  ],
+  "limits": "The classic perspective and size-constancy explanation is influential but not the only account; framing, relative-size, and conflicting-cue theories also explain aspects of the illusion, and the exact mechanism is debated. Some evidence, such as findings that convex and concave corners contribute little, has challenged the strongest depth-cue accounts. Susceptibility varies across individuals and cultures, and the illusion's strength depends on the figure's geometry and context. Its precise historical origin is also qualified, since Ponzo did not claim to have discovered it. So the Ponzo illusion robustly demonstrates that context and apparent depth influence size perception, while the full explanation of why, and the relative roles of perspective, framing, and other factors, remains an open question in vision science.",
+  "misreadings": "The two bars really are the same length; the illusion is that context makes them look different, so measuring shows no actual size difference. The perspective and size-constancy account is the classic explanation but not uncontested, since framing and other theories compete, so the cause is not fully settled. And the illusion does not require literal three-dimensional depth, only cues that the visual system reads as depth, so treating the perspective explanation as proven, or the size difference as real, misreads a debated demonstration of how context shapes size perception.",
+  "origin": "Named after the Italian psychologist Mario Ponzo and conventionally dated to around 1911, illustrating that converging perspective cues make identical objects appear different sizes through misapplied size constancy.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1911,
+  "namedAfter": "Mario Ponzo",
+  "sources": [
+    {"text": "Ponzo illusion, Wikipedia. — identical bars across converging lines appearing different sizes, the Mario Ponzo attribution around 1911, the perspective and size-constancy explanation, the framing alternative, and the moon-illusion connection.", "url": "https://en.wikipedia.org/wiki/Ponzo_illusion", "type": "secondary"},
+    {"text": "Ponzo illusion, Encyclopaedia Britannica. — the illusion and its explanation via linear perspective and size constancy.", "url": "https://www.britannica.com/science/Ponzo-illusion", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Ponzo_illusion",
+  "related": [
+    {"slug": "the-mueller-lyer-illusion", "kind": "kindred"},
+    {"slug": "the-cafe-wall-illusion", "kind": "kindred"}
+  ]
+}

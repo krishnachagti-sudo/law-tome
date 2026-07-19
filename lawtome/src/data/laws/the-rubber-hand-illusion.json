@@ -1,0 +1,57 @@
+{
+  "no": "744",
+  "slug": "the-rubber-hand-illusion",
+  "name": "The Rubber Hand Illusion",
+  "aliases": ["Body ownership illusion", "Botvinick-Cohen illusion"],
+  "statement": "Watch a fake hand stroked in time with your hidden one, and your brain starts to feel the rubber hand is yours.",
+  "statementAccent": "your brain starts to feel the rubber hand is yours",
+  "meaning": "The rubber hand illusion is a multisensory body-perception illusion in which a person comes to feel that a fake rubber hand is their own and experiences touch as occurring in it. In the classic procedure, the participant's real hand is hidden from view while a lifelike rubber hand is placed in front of them in a plausible anatomical position, and the experimenter strokes both the hidden real hand and the visible rubber hand at the same time with brushes. After a short while, many participants begin to feel the touch as coming from the rubber hand and a sense of ownership over it, as if it were part of their body. The illusion was first reported by Matthew Botvinick and Jonathan Cohen in a 1998 paper in Nature. It demonstrates that the sense of body ownership is not fixed but is constructed by the brain from the integration of vision, touch, and proprioception, and it has become a landmark tool in the study of the bodily self.",
+  "mechanism": "The illusion arises from multisensory integration. The brain continually combines vision, touch, and proprioception, the sense of where one's body is, to build a unified representation of the body. When the participant sees a rubber hand being stroked in exact synchrony with felt strokes on their hidden real hand, the temporal and spatial congruence of the seen and felt touch leads the brain to bind them and to attribute the touch, and ownership, to the visible rubber hand. Synchrony is crucial: synchronous stroking induces the illusion, while asynchronous stroking, out of time, does not, showing that the brain relies on temporal congruence to decide what belongs to the body. Two further signatures confirm the effect. In proprioceptive drift, participants misjudge the location of their real hand as shifted toward the rubber hand. And when the rubber hand is threatened, for instance by a needle moved toward it, participants show a stress response and may flinch, as if their own hand were in danger. These effects reveal that body ownership is updatable rather than fixed.",
+  "examples": [
+    {
+      "tag": "Synchronous stroking",
+      "text": "Brushing the hidden real hand and the visible rubber hand in exact synchrony induces ownership of the rubber hand; out-of-sync stroking does not."
+    },
+    {
+      "tag": "Proprioceptive drift",
+      "text": "After the illusion, participants asked to locate their real hand misjudge its position as shifted toward the rubber hand."
+    },
+    {
+      "tag": "The threat response",
+      "text": "When the rubber hand is threatened, such as by a needle moved toward it, participants show a stress reaction and may flinch as if their own hand were at risk."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Proprioceptive drift",
+      "text": "The measurable shift in a participant's felt hand position toward the rubber hand, used as an objective index of the illusion."
+    },
+    {
+      "name": "The threat response",
+      "text": "The stress and defensive reaction elicited when the now-owned rubber hand is threatened, showing the reality of the sense of ownership."
+    }
+  ],
+  "whyItMatters": "The rubber hand illusion is a landmark demonstration in neuroscience and cognitive science that the sense of body ownership, the feeling that a body part is one's own, is not innate and fixed but constructed by the brain from multisensory integration and can be updated in minutes. It reveals how vision, touch, and proprioception are combined to define the bodily self, and it has become a widely used paradigm for studying body representation, self-awareness, and the boundaries of the self. Its influence reaches into practical domains: understanding the illusion informs the design of prosthetic limbs and the sense of embodiment in virtual and augmented reality, and it sheds light on disorders of body ownership seen in some neurological and psychiatric conditions. By showing so vividly that the brain can be induced to claim a rubber hand, the illusion has reshaped how scientists think about the malleable, constructed nature of our sense of our own bodies.",
+  "working": [
+    {"lead": "Hide the real hand", "text": "conceal the participant's real hand and place a lifelike rubber hand in a plausible position in view."},
+    {"lead": "Stroke both in synchrony", "text": "brush the hidden real hand and the visible rubber hand at the same time, so seen and felt touch coincide."},
+    {"lead": "Elicit ownership", "text": "watch the brain bind the congruent signals and attribute the touch and ownership to the rubber hand, with drift and threat responses confirming it."}
+  ],
+  "limits": "The rubber hand illusion is robust but not universal; its strength varies across individuals, and some people experience it weakly or not at all. It depends on conditions such as synchronous stroking, a plausible position and appearance of the rubber hand, and congruent posture, and it is disrupted when these are violated. Debate continues over exactly how to measure the illusion, since subjective reports and proprioceptive drift do not always agree, and over the precise neural and computational mechanisms of body ownership. The illusion demonstrates the malleability of body representation under specific laboratory conditions rather than fully characterising how ownership works in everyday life. So it is a powerful and reliable demonstration whose boundary conditions and mechanisms remain active areas of research.",
+  "misreadings": "The illusion does not show that people literally cannot tell a rubber hand from a real one; participants know it is fake, yet still feel ownership and touch in it, which is what makes it striking. It requires synchronous, congruent stroking, so it is not induced by merely seeing a fake hand. And it reveals that body ownership is constructed and updatable, not that the sense of the body is arbitrary or absent, so treating the illusion as proof that the self is illusory, or as working on everyone identically, overstates a finding bounded by specific conditions and individual variation.",
+  "origin": "First reported by Matthew Botvinick and Jonathan Cohen in their 1998 paper Rubber hands feel touch that eyes see, in Nature, demonstrating that body ownership arises from multisensory integration.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1998,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Rubber hand illusion, Wikipedia. — the feeling that a fake hand is one's own, the hidden-hand and synchronous-stroking procedure, the synchronous-versus-asynchronous finding, proprioceptive drift, the threat response, the Botvinick and Cohen 1998 origin, and the multisensory-integration significance.", "url": "https://en.wikipedia.org/wiki/Rubber_hand_illusion", "type": "secondary"},
+    {"text": "Botvinick and Cohen, Rubber hands feel touch that eyes see, Nature (1998). — the original report of the illusion.", "url": "https://www.nature.com/articles/35784", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Rubber_hand_illusion",
+  "related": [
+    {"slug": "the-ventriloquist-effect", "kind": "kindred"},
+    {"slug": "the-mcgurk-effect", "kind": "kindred"}
+  ]
+}

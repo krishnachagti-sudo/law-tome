@@ -1,0 +1,57 @@
+{
+  "no": "748",
+  "slug": "troxler-fading",
+  "name": "Troxler's Fading",
+  "aliases": ["The Troxler effect", "Peripheral fading"],
+  "statement": "Fix your gaze and hold it still, and unchanging things in the corner of your eye quietly fade from view.",
+  "statementAccent": "unchanging things in the corner of your eye quietly fade from view",
+  "meaning": "Troxler's fading, or the Troxler effect, is a perceptual phenomenon in which steadily fixating on a central point causes an unchanging stimulus in the peripheral visual field to fade and disappear from awareness after a short time. The effect is stronger and faster when the peripheral stimulus is small, low in contrast, blurred, uniform in luminance relative to its surround, and farther from the point of fixation. It was identified by the Swiss physician and philosopher Ignaz Paul Vital Troxler in 1804. The fading demonstrates that continued perception requires change: when the eyes hold perfectly still and a stimulus stays constant, the visual system stops registering it, and the brain fills in the faded region with the surrounding background. Troxler's fading is a classic illustration in vision science of neural adaptation and of why the small, constant movements of the eyes are essential to seeing.",
+  "mechanism": "The core mechanism is neural adaptation: sensory neurons reduce their firing when exposed to a constant, unchanging stimulus, becoming desensitised, and this occurs at both retinal and cortical levels. Normally this does not cause the world to fade, because tiny involuntary eye movements, microsaccades, drifts, and tremor, constantly shift the retinal image across many receptors, refreshing it and preventing adaptation. In the periphery, however, receptive fields are large, larger than these fixational eye movements, so when fixation is steady the movements fail to refresh a peripheral, low-contrast stimulus, and adaptation causes it to fade. Studies confirm the causal role of the eye movements: the probability of a microsaccade drops just before a target fades and rises just before it becomes visible again. Once a stimulus fades, the brain fills in the empty region with the surrounding colour and texture, much as it fills in the natural blind spot. The effect is closely related to retinal-stabilisation experiments, in which artificially holding an image fixed on the retina makes it disappear entirely.",
+  "examples": [
+    {
+      "tag": "The vanishing blob",
+      "text": "A blurry, low-contrast coloured blob placed in the periphery disappears from view when you steadily fixate a central cross, filled in by the background."
+    },
+    {
+      "tag": "Microsaccades refresh vision",
+      "text": "Tiny involuntary eye movements normally shift the image to prevent adaptation; a peripheral stimulus fades because these movements are too small to refresh it."
+    },
+    {
+      "tag": "The lilac chaser",
+      "text": "In the lilac chaser illusion, fixating the centre causes the ring of lilac discs to fade from awareness, a demonstration of Troxler's fading."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Retinal stabilisation",
+      "text": "The related finding that an image artificially held fixed on the retina fades and vanishes, attributed to the same neural adaptation."
+    },
+    {
+      "name": "Filling-in",
+      "text": "The process by which the brain replaces a faded region with the surrounding colour and texture, as it does for the natural blind spot."
+    }
+  ],
+  "whyItMatters": "Troxler's fading is a classic demonstration in vision science that continued perception depends on change, and that the constant small movements of the eyes are not noise but a necessity for stable seeing. By showing that a steadily fixated, unchanging peripheral stimulus fades away through neural adaptation, it reveals that the visual system responds to change rather than to constant input, and that microsaccades and drifts continually refresh the retinal image to keep the world visible. The effect connects to retinal-stabilisation experiments and to the phenomenon of filling-in, illuminating how the brain constructs a complete percept even where information is missing. It also underlies engaging demonstrations like the lilac chaser. As a simple, striking phenomenon anyone can experience, Troxler's fading has been a durable tool for studying adaptation, eye movements, and the active, constructive nature of perception.",
+  "working": [
+    {"lead": "Fixate steadily", "text": "hold your gaze fixed on a central point so that the eyes stop making the usual refreshing movements over a peripheral stimulus."},
+    {"lead": "Let adaptation act", "text": "with the peripheral, low-contrast stimulus unchanging on the retina, neural adaptation reduces the response until it fades."},
+    {"lead": "Watch the brain fill in", "text": "observe the faded region replaced by the surrounding background, as the brain fills in the missing area."}
+  ],
+  "limits": "Troxler's fading occurs most readily for peripheral stimuli that are small, low in contrast, blurred, and far from fixation, and it is weak or absent for salient, high-contrast, or foveal stimuli, which the eyes and attention keep refreshed. It requires steady fixation, so ordinary viewing, with its constant eye movements and shifts of attention, rarely produces noticeable fading. Adaptation underlying the effect occurs at both retinal and cortical levels, so it is not purely a peripheral-neuron phenomenon, and the relative contributions are still studied. The effect demonstrates the necessity of change for perception under specific conditions rather than implying that vision constantly fails. So Troxler's fading reliably reveals neural adaptation and the role of eye movements, within the particular conditions that make constant peripheral stimuli vanish.",
+  "misreadings": "Troxler's fading is not a defect of the eyes but a normal consequence of neural adaptation to constant stimulation; in everyday vision, eye movements prevent it. It is not limited to the retina, since adaptation also occurs in the brain, so it is not simply the photoreceptors tiring. And it requires steady fixation and a suitable peripheral stimulus, so treating it as evidence that vision generally fades, or as a purely retinal effect, misreads a phenomenon bounded by specific conditions that reveals why change and eye movements are essential to seeing.",
+  "origin": "Identified by the Swiss physician and philosopher Ignaz Paul Vital Troxler in 1804, showing that steady fixation causes unchanging peripheral stimuli to fade through neural adaptation.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1804,
+  "namedAfter": "Ignaz Troxler",
+  "sources": [
+    {"text": "Troxler's fading, Wikipedia. — the fading of unchanging peripheral stimuli under steady fixation, Troxler's 1804 identification, the neural-adaptation and fixational-eye-movement mechanism, the filling-in, the retinal-stabilisation connection, and the lilac chaser demonstration.", "url": "https://en.wikipedia.org/wiki/Troxler%27s_fading", "type": "secondary"},
+    {"text": "Troxler Effect, The Illusions Index (University of Glasgow). — the phenomenon, its conditions, and the role of adaptation and eye movements.", "url": "https://www.illusionsindex.org/i/troxler-effect", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Troxler%27s_fading",
+  "related": [
+    {"slug": "the-motion-aftereffect", "kind": "kindred"},
+    {"slug": "the-mccollough-effect", "kind": "kindred"}
+  ]
+}
