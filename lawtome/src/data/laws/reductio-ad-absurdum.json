@@ -1,0 +1,57 @@
+{
+  "no": "760",
+  "slug": "reductio-ad-absurdum",
+  "name": "Reductio ad Absurdum",
+  "aliases": ["Reduction to absurdity", "Proof by contradiction", "Apagogical argument"],
+  "statement": "To refute a claim, assume it true and show it leads to something absurd or contradictory.",
+  "statementAccent": "assume it true and show it leads to something absurd or contradictory",
+  "meaning": "Reductio ad absurdum, Latin for reduction to absurdity, is a form of argument that establishes a claim by showing that its opposite leads to an absurd, untenable, or self-contradictory conclusion. One provisionally assumes a proposition, derives from it a result that is plainly false or contradictory, and concludes that the original assumption must be rejected. In its strict logical form it is proof by contradiction: to prove a statement, assume its negation, deduce a contradiction, and thereby establish the statement. More broadly, in everyday and philosophical argument, it means taking a position to its logical consequences to reveal that those consequences are unacceptable, so the position itself cannot stand. The technique reaches back to ancient Greek mathematics and philosophy and was formalised within Aristotle's logic. It is one of the most powerful and widely used argumentative moves, at home both in rigorous mathematical proof and in the informal work of showing that an opponent's claim, followed through, ends in absurdity.",
+  "mechanism": "The core of a reductio is that a true premise cannot validly yield a false conclusion, so if an assumption leads by sound reasoning to a contradiction or an evident falsehood, the assumption must be false. In formal proof by contradiction, one assumes the negation of what is to be proved and derives a contradiction, which, given the principle that a contradiction cannot hold, forces the negation to be rejected and the original claim to be accepted. The classic mathematical examples show the pattern: to prove the square root of two is irrational, one assumes it is a ratio of integers in lowest terms and derives that both integers must be even, contradicting the assumption that the fraction was in lowest terms; Euclid's proof that the primes are infinite assumes a finite list and constructs a number that yields a new prime, contradicting the assumption. In informal argument the same shape appears without strict formalism: one grants a claim for the sake of argument, traces its implications, and exhibits a consequence so unacceptable that the claim is discredited.",
+  "examples": [
+    {
+      "tag": "The square root of two",
+      "text": "Assume it is a fraction in lowest terms; the algebra forces both numerator and denominator to be even, contradicting lowest terms, so it is irrational."
+    },
+    {
+      "tag": "Infinitely many primes",
+      "text": "Assume finitely many primes; multiplying them and adding one yields a number with a prime factor not on the list, contradicting the assumption."
+    },
+    {
+      "tag": "Informal refutation",
+      "text": "If a proposed rule, applied consistently, would forbid something everyone accepts, the rule is reduced to absurdity and rejected."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Proof by contradiction",
+      "text": "The strict logical form: assume the negation of a claim, derive a contradiction, and conclude the claim is true."
+    },
+    {
+      "name": "Informal reductio",
+      "text": "The everyday use: follow a position to a consequence so absurd or unacceptable that the position is discredited."
+    }
+  ],
+  "whyItMatters": "Reductio ad absurdum is among the most fundamental and versatile tools of reasoning, indispensable in both mathematics and philosophy. In mathematics, proof by contradiction establishes theorems that are hard to prove directly, and famous results, from the irrationality of the square root of two to the infinitude of the primes, rely on it; it is one of the standard methods of rigorous proof. In philosophy and argument, the reductio is the workhorse of refutation: to defeat a thesis, one shows that accepting it commits its holder to something absurd, and this move underlies countless arguments from the ancient Greeks onward. As a critical-thinking skill, following a claim to its logical consequences and testing whether those consequences can be accepted is a powerful way to evaluate positions. The form's enduring value lies in its economy: rather than marshalling positive evidence, it lets the untenability of a claim's own implications do the refuting.",
+  "working": [
+    {"lead": "Assume the claim", "text": "provisionally suppose the proposition to be refuted, or the negation of what is to be proved, is true."},
+    {"lead": "Derive a contradiction", "text": "reason validly from the assumption until it yields an absurd, false, or self-contradictory result."},
+    {"lead": "Reject the assumption", "text": "conclude that since the consequence is untenable, the original assumption must be false."}
+  ],
+  "limits": "A reductio is only as good as the reasoning connecting the assumption to the absurd conclusion; if that derivation is flawed, or if an unstated extra premise smuggles in the contradiction, the refutation fails and the original claim is not touched. What counts as absurd in informal use can be contested, so an argument that seems to reduce a view to absurdity may only reveal a consequence its holder is willing to accept. In formal logic, some constructivist and intuitionist traditions restrict certain uses of proof by contradiction, particularly proving an existence claim purely by refuting its negation, since they do not accept every instance of the excluded middle. The Greek transliteration of the associated terms is sometimes given imprecisely. So the reductio is a rigorous and enduring method, but its force depends entirely on the validity of the steps and, informally, on genuine agreement that the derived consequence really is absurd.",
+  "misreadings": "A reductio does not consist in merely calling a conclusion absurd; it requires actually deriving the absurdity by valid reasoning from the assumption, and a bad derivation refutes nothing. It is not the same as a slippery-slope insinuation, since it turns on logical consequence rather than on speculation about what might follow. And what one person finds absurd another may accept, so in informal use the move persuades only when the consequence is genuinely untenable, meaning that labelling a view absurd without a sound derivation, or treating any unwelcome implication as a refutation, misreads a method that rests on validly reaching a real contradiction.",
+  "origin": "An ancient form of argument used in Greek mathematics and philosophy and formalised within Aristotle's logic; its strict version is proof by contradiction, foundational to mathematical reasoning.",
+  "category": "philosophy",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Reductio ad absurdum, Wikipedia. — the argument form that refutes a claim by showing it leads to an absurd or contradictory conclusion, its use as proof by contradiction, the square-root-of-two and infinitude-of-primes examples, and its Greek and Aristotelian roots.", "url": "https://en.wikipedia.org/wiki/Reductio_ad_absurdum", "type": "secondary"},
+    {"text": "Reductio ad absurdum, Encyclopaedia Britannica. — the method of disproving a proposition by deriving an absurd or contradictory consequence from it.", "url": "https://www.britannica.com/topic/reductio-ad-absurdum", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Reductio_ad_absurdum",
+  "related": [
+    {"slug": "the-principle-of-explosion", "kind": "kindred"},
+    {"slug": "the-law-of-noncontradiction", "kind": "kindred"}
+  ]
+}

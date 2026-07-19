@@ -1,0 +1,57 @@
+{
+  "no": "765",
+  "slug": "the-principle-of-explosion",
+  "name": "The Principle of Explosion",
+  "aliases": ["Ex falso quodlibet", "Ex contradictione quodlibet", "Ex contradictione sequitur quodlibet"],
+  "statement": "From a single contradiction, absolutely anything can be proved: one falsehood makes everything derivable.",
+  "statementAccent": "one falsehood makes everything derivable",
+  "meaning": "The principle of explosion is the law of classical logic that from a contradiction, anything follows: if a system contains both a proposition and its negation, then any statement whatsoever can be validly derived within it. Its Latin names capture this vividly: ex falso quodlibet, from falsehood anything follows, and ex contradictione quodlibet, from a contradiction anything follows. The principle holds in classical and intuitionistic logic. Its dramatic consequence is that a single contradiction is catastrophic for a logical system: because every statement, true or false, becomes provable, the system is rendered trivial, and the very distinction between truth and falsity within it collapses. This is the deep reason consistency matters so much in logic and mathematics. The principle is also known, misleadingly, as the principle of Pseudo-Scotus, and a proof of it is traditionally attributed to the twelfth-century philosopher William of Soissons. Its rejection is the defining feature of paraconsistent logics.",
+  "mechanism": "The standard informal derivation shows how a contradiction detonates. Suppose both a proposition P and its negation not-P are true. From P alone, by the rule of disjunction introduction, one may infer the disjunction P or Q, where Q is any arbitrary statement whatever, since a disjunction is true whenever one of its parts is. But we also have not-P; and from not-P together with P or Q, the rule of disjunctive syllogism lets us eliminate P and conclude Q. Because Q was arbitrary, any statement at all can be derived. Wikipedia illustrates this with lemons and unicorns: from all lemons are yellow, infer all lemons are yellow or unicorns exist; combined with not all lemons are yellow, disjunctive syllogism yields the conclusion that unicorns exist. The two innocuous-looking rules, disjunction introduction and disjunctive syllogism, together with a contradiction, thus prove anything. Paraconsistent logics block the explosion by rejecting one of these steps, characteristically disjunctive syllogism, so that a contradiction no longer entails every conclusion.",
+  "examples": [
+    {
+      "tag": "Lemons and unicorns",
+      "text": "From all lemons are yellow and not all lemons are yellow, disjunction introduction and disjunctive syllogism together derive that unicorns exist."
+    },
+    {
+      "tag": "Trivialisation",
+      "text": "Once any contradiction is present, every statement becomes a theorem, so the system proves everything and distinguishes nothing."
+    },
+    {
+      "tag": "Why consistency matters",
+      "text": "Because one contradiction would let anything be proved, keeping a formal system consistent is essential to its usefulness."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The disjunctive-syllogism derivation",
+      "text": "The standard proof: from P infer P or Q by disjunction introduction, then from not-P and P or Q infer any Q by disjunctive syllogism."
+    },
+    {
+      "name": "Paraconsistent rejection",
+      "text": "Non-classical logics that deny explosion, typically by rejecting disjunctive syllogism, so contradictions do not entail everything."
+    }
+  ],
+  "whyItMatters": "The principle of explosion articulates why consistency is the non-negotiable virtue of a classical logical or mathematical system: a single contradiction does not stay local but propagates to make every statement provable, destroying the system's ability to distinguish truth from falsehood. This is why mathematicians and logicians treat the discovery of a contradiction in a formal theory as a crisis, and why proofs of consistency matter so deeply to the foundations of mathematics. The principle also frames one of the most important developments in modern logic. Because explosion makes classical logic unable to cope with even localised inconsistency, logicians developed paraconsistent logics, defined precisely as those in which the principle of explosion fails, allowing sensible reasoning in the presence of some contradictions. This connects to dialetheism, the view that some contradictions are true, which needs a non-explosive logic to be tenable. The principle thus sits at the crossroads of consistency, the foundations of mathematics, and the frontier of non-classical logic.",
+  "working": [
+    {"lead": "Start from a contradiction", "text": "assume a system contains both a proposition P and its negation not-P."},
+    {"lead": "Introduce an arbitrary disjunct", "text": "from P infer P or Q for any statement Q, since a true disjunct makes the disjunction true."},
+    {"lead": "Eliminate to reach anything", "text": "from not-P and P or Q, conclude Q by disjunctive syllogism, so any statement whatever is derivable."}
+  ],
+  "limits": "The principle of explosion is a feature of classical and intuitionistic logic, not an inescapable truth of all logic; paraconsistent logics are explicitly constructed so that it fails, showing that reasoning in the presence of contradiction without trivialisation is formally possible. Whether explosion should be accepted therefore depends on one's logic and one's view of contradictions, a matter connected to the debate over dialetheism. The derivation relies on specific inference rules, notably disjunctive syllogism, and rejecting them, as some paraconsistent systems do, blocks the result. The principle's historical attributions are also qualified: the name Pseudo-Scotus signals that the traditional ascription to Duns Scotus is false, and while a proof is attributed to William of Soissons, the underlying idea is not pinned to a single uncontested originator. So the principle is central to classical logic and the value of consistency, while being one of the very rules that non-classical logics deliberately abandon.",
+  "misreadings": "Explosion does not mean a contradiction makes a system's other claims false; it means it makes all of them provable, true and false alike, which is why the system becomes trivial and useless. It is not a universal law of every logic, since paraconsistent logics reject it on purpose. And its traditional names mislead: Pseudo-Scotus flags that the attribution to Duns Scotus is spurious, so treating explosion as an unavoidable truth, or as merely spreading falsehood rather than trivialising, misreads a classical principle whose whole point is why one contradiction ruins a system and why some logicians build systems without it.",
+  "origin": "A principle of classical and intuitionistic logic (ex falso quodlibet), with a proof traditionally attributed to the twelfth-century philosopher William of Soissons; its rejection defines paraconsistent logic.",
+  "category": "philosophy",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Principle of explosion, Wikipedia. — the law that any statement can be proved from a contradiction, the Latin terms ex falso quodlibet and ex contradictione quodlibet, the trivialisation consequence, the disjunction-introduction and disjunctive-syllogism derivation, the paraconsistent response, and the William of Soissons attribution.", "url": "https://en.wikipedia.org/wiki/Principle_of_explosion", "type": "secondary"},
+    {"text": "Paraconsistent Logic, Stanford Encyclopedia of Philosophy. — the definition of a paraconsistent consequence relation as one that is not explosive, and its connection to dialetheism.", "url": "https://plato.stanford.edu/entries/logic-paraconsistent/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Principle_of_explosion",
+  "related": [
+    {"slug": "the-law-of-noncontradiction", "kind": "kindred"},
+    {"slug": "reductio-ad-absurdum", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "no": "764",
+  "slug": "the-law-of-noncontradiction",
+  "name": "The Law of Noncontradiction",
+  "aliases": ["Principle of non-contradiction", "LNC", "The law of contradiction"],
+  "statement": "A proposition and its negation cannot both be true at the same time and in the same respect.",
+  "statementAccent": "cannot both be true at the same time and in the same respect",
+  "meaning": "The law of noncontradiction is one of the fundamental laws of classical logic. It states that contradictory propositions cannot both be true at the same time and in the same respect: for any proposition, that proposition and its negation cannot both hold simultaneously. In symbols it is written not both P and not-P. The qualification at the same time and in the same respect is essential, since a thing may have a property in one respect and lack it in another, or at one time and not another, without contradiction; the law forbids only that something both be and not be so in the very same way and moment. The classic formulation comes from Aristotle, who in the Metaphysics called it the most certain of all principles, a principle that cannot itself be demonstrated because any proof would already presuppose it. It is one of the three traditional laws of thought, alongside the law of identity and the law of excluded middle, and it underlies nearly all logic and rational discourse.",
+  "mechanism": "Aristotle presented the law in several forms in Metaphysics Book IV. The ontological version states that it is impossible that the same thing belong and not belong to the same thing at the same time and in the same respect; the psychological version, that no one can genuinely believe the same thing to be and not be; and the logical version, that contradictory propositions are not true simultaneously. He held it to be the firmest of all principles and argued that it cannot be proved without circularity, since any demonstration presupposes it, but can be defended by showing that its outright denier cannot meaningfully assert anything at all: to say something determinate is already to exclude its contradictory. The law thus functions less as a premise than as a precondition of coherent thought and speech. It is distinct from the closely related law of excluded middle: noncontradiction says that P and not-P cannot both be true, while excluded middle says that at least one of them must be true. The two are separate principles, and rejecting one does not entail rejecting the other.",
+  "examples": [
+    {
+      "tag": "Same time, same respect",
+      "text": "A door cannot be both fully open and fully shut at the same instant in the same respect, though it can be open now and shut later."
+    },
+    {
+      "tag": "The firmest principle",
+      "text": "Aristotle held the law so basic that any attempt to prove it must already assume it, making it the most certain of all principles."
+    },
+    {
+      "tag": "The denier cannot speak",
+      "text": "Aristotle argued that one who genuinely rejects the law can assert nothing determinate, since every assertion excludes its own negation."
+    }
+  ],
+  "variants": [
+    {
+      "name": "One of the three laws of thought",
+      "text": "Noncontradiction stands with the law of identity (A is A) and the law of excluded middle (P or not-P) as the traditional laws of thought."
+    },
+    {
+      "name": "The dialetheist challenge",
+      "text": "Dialetheism, associated with Graham Priest, holds that some contradictions are true, rejecting the universal law and motivating paraconsistent logic."
+    }
+  ],
+  "whyItMatters": "The law of noncontradiction is a cornerstone of classical logic and Western metaphysics, so basic that it is presupposed whenever we reason, argue, or assert anything determinate. Since Aristotle's defence of it, it has been orthodoxy: to make a claim is to rule out its contradictory, so a discourse that tolerated outright contradiction could assert nothing meaningful. The law underwrites the very possibility of consistent reasoning, of proof, and of holding people to their commitments in argument, and it connects to the principle of explosion, the classical result that a single contradiction would let anything whatever be proved. Yet its status as a fundamental principle also makes it a fertile site of philosophical challenge. The modern view of dialetheism argues that some contradictions, such as those arising from the liar paradox, may be genuinely true, and paraconsistent logics have been built to reason in the presence of contradiction without collapse, keeping debate over this ancient law very much alive.",
+  "working": [
+    {"lead": "Fix time and respect", "text": "hold the same subject, the same property, the same time, and the same respect, since the law forbids contradiction only under these conditions."},
+    {"lead": "Exclude the negation", "text": "recognise that asserting a proposition rules out its negation being true simultaneously in the same way."},
+    {"lead": "Treat as bedrock", "text": "use the law as a precondition of coherent thought rather than a theorem, since any proof would presuppose it."}
+  ],
+  "limits": "Although Aristotle called it the most certain of principles, the law of noncontradiction is not beyond challenge. Its indispensability is precisely why it cannot be non-circularly proved; Aristotle could only defend it by showing its denier lands in incoherence. The modern position of dialetheism, developed by Graham Priest and others, holds that there are true contradictions, dialetheias, particularly in connection with self-referential paradoxes like the liar, and rejects the law's universality. Paraconsistent logics are formal systems designed to tolerate some contradictions without trivialising, showing that the classical law is not the only possible logic. The law must also be stated carefully, with the same-time and same-respect qualifications, or apparent counterexamples arise that are not genuine contradictions. So the law of noncontradiction is a foundational and near-universally accepted principle, while its absolute universality is a live philosophical question.",
+  "misreadings": "The law does not forbid a thing having opposite features at different times or in different respects; a person can be kind in one situation and unkind in another without contradiction, since the law binds only the same time and the same respect. It is distinct from the law of excluded middle: noncontradiction says not both P and not-P, while excluded middle says at least one of P or not-P, so they are separate principles. And its near-universal acceptance is not quite unanimous, since dialetheists dispute it, so reading the law as banning all change or ambiguity, or conflating it with excluded middle, misreads a precisely qualified principle of classical logic.",
+  "origin": "Given its classic formulation by Aristotle in Metaphysics Book IV, where he called it the most certain of all principles; one of the three traditional laws of thought, now challenged by dialetheism and paraconsistent logic.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Law of noncontradiction, Wikipedia. — the principle that a proposition and its negation cannot both be true at the same time and in the same respect, its symbolic form, Aristotle's Metaphysics formulations and firmest-principle status, the three laws of thought, and the distinction from excluded middle.", "url": "https://en.wikipedia.org/wiki/Law_of_noncontradiction", "type": "secondary"},
+    {"text": "Dialetheism, Stanford Encyclopedia of Philosophy. — the view that there are true contradictions, its coinage by Priest and Routley, and its rejection of the universal law of noncontradiction alongside paraconsistent logic.", "url": "https://plato.stanford.edu/entries/dialetheism/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Law_of_noncontradiction",
+  "related": [
+    {"slug": "the-principle-of-explosion", "kind": "kindred"},
+    {"slug": "reductio-ad-absurdum", "kind": "kindred"}
+  ]
+}
