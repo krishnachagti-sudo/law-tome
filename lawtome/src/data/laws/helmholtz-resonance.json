@@ -1,0 +1,57 @@
+{
+  "no": "775",
+  "slug": "helmholtz-resonance",
+  "name": "Helmholtz Resonance",
+  "aliases": ["The Helmholtz resonator", "Cavity resonance"],
+  "statement": "Blow across a bottle and the air in its neck bounces on the air within like a spring.",
+  "statementAccent": "the air in its neck bounces on the air within like a spring",
+  "meaning": "Helmholtz resonance is the acoustic resonance of air in a cavity that connects to the outside through an open neck or port. The slug of air in the neck behaves like a vibrating mass, while the larger body of air in the cavity behaves like a spring, and together they form a mass-on-a-spring system that oscillates at a single, well-defined resonant frequency. The everyday example is blowing across the mouth of a bottle to produce a tone whose pitch depends on the bottle's volume and the size of its opening: a larger cavity gives a lower note. The effect is named after the German physicist Hermann von Helmholtz, who in the nineteenth century built resonators of this kind to pick out and identify the individual frequency components of complex sounds, an early form of acoustic analysis. Helmholtz resonance is a fundamental idea in acoustics, appearing wherever a cavity with an opening shapes sound, from musical instruments to loudspeakers to noise control.",
+  "mechanism": "The resonance arises from the interplay of two lumped properties of the air. The air in the neck has mass and therefore inertia; the air trapped in the cavity is compressible and therefore acts as a spring, resisting compression and pushing back. Displace the neck air inward and it compresses the cavity air, which springs it back, and the system oscillates just like a mass bouncing on a spring, at a frequency set by the balance of the two. Quantitatively the resonant frequency is proportional to the speed of sound times the square root of the neck's cross-sectional area divided by the product of the cavity volume and the effective neck length: f equals c over two pi times the square root of A over V times L. So the pitch rises with a wider neck and falls with a larger cavity volume or a longer neck, which is why big cavities sound low and small ones sound high. The effective neck length includes a small end correction, slightly longer than the physical neck, because air just outside the opening participates in the motion.",
+  "examples": [
+    {
+      "tag": "Blowing across a bottle",
+      "text": "Blowing over a bottle's mouth excites the neck-and-cavity resonance, sounding a tone that drops in pitch as the bottle fills less, that is as its air volume grows."
+    },
+    {
+      "tag": "Bass-reflex speakers",
+      "text": "A loudspeaker's ported enclosure is a Helmholtz resonator, the port air a mass and the box air a spring, tuned to reinforce low frequencies."
+    },
+    {
+      "tag": "Instrument bodies",
+      "text": "The hollow body and soundhole of a guitar or violin form a Helmholtz resonator that reinforces the instrument's lower notes."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The mass-spring model",
+      "text": "The description of the resonator as the neck air (a mass) bouncing on the cavity air (a spring), yielding one resonant frequency."
+    },
+    {
+      "name": "Helmholtz resonator arrays",
+      "text": "Sets of tuned cavities used as acoustic absorbers to damp specific low frequencies in rooms, ducts, and mufflers."
+    }
+  ],
+  "whyItMatters": "Helmholtz resonance is a workhorse concept of acoustics, explaining and enabling a remarkable range of everyday and engineered phenomena. It accounts for the tone of a blown bottle and an ocarina, the low-frequency reinforcement of a guitar or violin body, and the tuning of bass-reflex loudspeaker ports and subwoofers, where the port and enclosure form a resonator that extends the bass. It is exploited in noise control, where arrays of tuned cavities absorb unwanted low frequencies in rooms, ducts, and automobile intake and exhaust systems, and it appears in modern acoustic metamaterials. Historically, Helmholtz's resonators let him decompose complex sounds into their frequency components before electronic analysers existed, a foundational contribution to the science of sound and hearing. Because it reduces a cavity's acoustic behaviour to a simple, predictable mass-spring resonance, the concept gives engineers and instrument makers a direct handle on shaping sound, making it one of the most practically important ideas in applied acoustics.",
+  "working": [
+    {"lead": "Form a cavity with a neck", "text": "enclose a volume of air connected to the outside through an open neck or port."},
+    {"lead": "Set the air oscillating", "text": "let the neck air act as a mass and the cavity air as a spring, bouncing at one resonant frequency."},
+    {"lead": "Tune by geometry", "text": "raise the pitch with a wider neck and lower it with a larger volume or longer neck, following the resonance formula."}
+  ],
+  "limits": "The Helmholtz model treats the air as a simple lumped mass and spring, which is accurate mainly at low frequencies where the cavity is small compared with the wavelength; at higher frequencies a cavity also has standing-wave modes that the simple model does not capture. The formula uses an effective neck length with an end correction, so predictions require care, and real resonators lose energy to radiation and friction, giving the resonance a finite width rather than a single perfectly sharp frequency. The idealisation also assumes a well-defined neck and cavity, which some real geometries only approximate. So Helmholtz resonance is an accurate and extremely useful description of cavity-and-neck systems in its low-frequency regime, understood as a lumped mass-spring approximation rather than a complete account of a cavity's full acoustic behaviour.",
+  "misreadings": "The tone of a blown bottle is not produced by the glass vibrating; it is the air in the neck and cavity resonating as a mass on a spring. A larger cavity does not raise the pitch but lowers it, since more volume means a softer spring. And the model is a low-frequency approximation, not the whole acoustic behaviour of a cavity, which also has higher standing-wave modes, so treating the resonance as coming from the container's material, or as the only resonance a cavity has, misreads a mass-spring effect of the enclosed air valid mainly at low frequencies.",
+  "origin": "Named after the German physicist Hermann von Helmholtz, who in the nineteenth century used such resonators to analyse the frequency components of complex sounds; a fundamental resonance of air in a cavity with an open neck.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": "Hermann von Helmholtz",
+  "sources": [
+    {"text": "Helmholtz resonance, Wikipedia. — the resonance of air in a cavity with an open neck modelled as the neck air (a mass) on the cavity air (a spring), the blown-bottle example, the frequency formula and its dependence on neck area, volume, and length, the Helmholtz attribution, and applications from bass-reflex speakers to instrument bodies.", "url": "https://en.wikipedia.org/wiki/Helmholtz_resonance", "type": "secondary"},
+    {"text": "Helmholtz resonator, Encyclopaedia Britannica. — the Helmholtz resonator, its resonant frequency, and Helmholtz's use of resonators to analyse the components of complex sounds.", "url": "https://www.britannica.com/science/Helmholtz-resonator", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Helmholtz_resonance",
+  "related": [
+    {"slug": "the-harmonic-series", "kind": "kindred"},
+    {"slug": "beats", "kind": "kindred"}
+  ]
+}

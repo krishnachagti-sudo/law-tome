@@ -1,0 +1,57 @@
+{
+  "no": "773",
+  "slug": "the-pythagorean-comma",
+  "name": "The Pythagorean Comma",
+  "aliases": ["Ditonic comma", "The comma of Pythagoras"],
+  "statement": "Twelve pure fifths overshoot seven octaves by a tiny gap that no keyboard can hide.",
+  "statementAccent": "a tiny gap that no keyboard can hide",
+  "meaning": "The Pythagorean comma is the small interval that arises because twelve justly tuned perfect fifths do not exactly equal seven octaves. Stacking twelve pure fifths, each with the ratio three to two, overshoots seven pure octaves, each two to one, by this slight amount. Its frequency ratio is 531441 to 524288, that is three to the twelfth power over two to the nineteenth power, approximately twenty-three and a half cents, about a quarter of a semitone. The comma is the mathematical obstacle at the heart of tuning: because pure fifths and pure octaves are incommensurable, no fixed tuning can have both perfectly, and the leftover discrepancy must be dealt with somehow. In Pythagorean or just tuning, the comma shows up as the gap between notes that ought to be enharmonically the same, such as a sharp and its neighbouring flat, and it is the reason the circle of fifths does not naturally close. Resolving it is what temperament, and ultimately equal temperament, exists to do.",
+  "mechanism": "The comma follows from simple arithmetic that will not reconcile. Twelve perfect fifths multiply to three-halves raised to the twelfth power, while seven octaves multiply to two to the seventh; the first slightly exceeds the second, and the ratio between them, 531441 to 524288, is the Pythagorean comma of about twenty-three and a half cents. Because of it, if one tunes a keyboard upward in pure fifths all the way around the twelve pitch classes, the note one arrives back at is a comma higher than the octave-equivalent one started from, so flats and their enharmonic sharps do not coincide and the circle of fifths fails to close. Any fixed twelve-note tuning must absorb this comma somewhere. Historical temperaments dumped it into one unusable interval, the howling wolf fifth, or spread part of it around; equal temperament distributes it evenly, narrowing each of the twelve fifths by one twelfth of a comma, about two cents, so that twelve tempered fifths equal seven octaves exactly and the circle closes at the small price of slightly impure fifths everywhere.",
+  "examples": [
+    {
+      "tag": "Twelve fifths versus seven octaves",
+      "text": "Stacking twelve pure fifths lands about a quarter-semitone above seven pure octaves, and that leftover is the Pythagorean comma."
+    },
+    {
+      "tag": "The circle will not close",
+      "text": "Tuning around in pure fifths, a sharp ends up a comma higher than its enharmonic flat, so the circle of fifths does not naturally meet."
+    },
+    {
+      "tag": "Tempering it out",
+      "text": "Equal temperament narrows each fifth by a twelfth of a comma so twelve fifths equal seven octaves exactly."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The wolf fifth",
+      "text": "In tunings that pile the whole comma into one interval, the resulting badly out-of-tune fifth that howls and is avoided."
+    },
+    {
+      "name": "The syntonic comma",
+      "text": "A distinct, slightly smaller comma, eighty-one to eighty, between a Pythagorean and a just major third, not to be confused with the Pythagorean comma."
+    }
+  ],
+  "whyItMatters": "The Pythagorean comma is the small discrepancy that shapes the entire history of Western tuning. Because pure fifths and pure octaves cannot both be exact in a fixed system, this comma is the unavoidable error that every tuning must confront, and the different ways of confronting it define the tuning systems, from Pythagorean and meantone to well and equal temperament. It is the reason the circle of fifths closes only under temperament, the reason old keyboards had wolf intervals, and the reason the equal-tempered fifth is very slightly narrow. Conceptually it is a striking case where simple whole-number ratios refuse to align, an incommensurability with deep consequences for music and even a small window onto number theory. Understanding the Pythagorean comma explains why perfectly pure tuning across all keys is impossible, why compromise is built into the piano, and why the practical sound of Western harmony rests on a deliberate, evenly spread imperfection.",
+  "working": [
+    {"lead": "Stack pure fifths", "text": "tune twelve perfect fifths, each three to two, and compare the result with seven pure octaves."},
+    {"lead": "Find the overshoot", "text": "note that the twelve fifths exceed the seven octaves by the ratio 531441 to 524288, about twenty-three and a half cents."},
+    {"lead": "Absorb the comma", "text": "distribute or dump this leftover through temperament so a fixed keyboard can play, at the cost of some purity."}
+  ],
+  "limits": "The Pythagorean comma is a precise mathematical fact about pure fifths and octaves, but how it is handled is a matter of choice among tuning systems, each with different trade-offs, so the comma names the problem rather than a single solution. It should not be confused with the syntonic comma, a distinct and slightly smaller interval of eighty-one to eighty that concerns thirds, though both are small discrepancies of the same family. The comma is named for the Pythagorean tuning tradition rather than for a documented naming by Pythagoras himself, so the personal attribution is loose. Its practical audibility depends on the tuning and context; in equal temperament it is spread so thin as to be imperceptible in the fifths. So the Pythagorean comma is a genuine and consequential feature of the arithmetic of tuning, best understood as the unavoidable error that temperament exists to manage, distinct from the related syntonic comma.",
+  "misreadings": "The Pythagorean comma is not a tuning error someone could fix with more care; it is a mathematical inevitability, since pure fifths and pure octaves simply do not align. It is not the same as the syntonic comma, which is a different, smaller interval concerning thirds. And the equal-tempered solution does not eliminate it but spreads it evenly, slightly narrowing every fifth, so treating the comma as a fixable mistake, or confusing it with the syntonic comma, misreads the small but unavoidable gap that forces every fixed tuning to compromise.",
+  "origin": "A discrepancy known since antiquity within Pythagorean tuning, named for the Pythagorean tradition; the small interval by which twelve pure fifths exceed seven octaves, central to the history of temperament.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Pythagorean comma, Wikipedia. — the interval by which twelve pure fifths exceed seven octaves, the ratio 531441:524288 (3^12:2^19) of about 23.46 cents, the failure of the circle of fifths to close, and the distribution of the comma in equal temperament by narrowing each fifth.", "url": "https://en.wikipedia.org/wiki/Pythagorean_comma", "type": "secondary"},
+    {"text": "Syntonic comma, Wikipedia. — the distinct comma of 81:80 between a Pythagorean and a just major third, distinguished from the Pythagorean comma.", "url": "https://en.wikipedia.org/wiki/Syntonic_comma", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Pythagorean_comma",
+  "related": [
+    {"slug": "equal-temperament", "kind": "consequence"},
+    {"slug": "the-circle-of-fifths", "kind": "tension"}
+  ]
+}

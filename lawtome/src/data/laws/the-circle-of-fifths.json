@@ -1,0 +1,83 @@
+{
+  "no": "768",
+  "slug": "the-circle-of-fifths",
+  "name": "The Circle of Fifths",
+  "aliases": [
+    "Circle of fourths",
+    "The cycle of fifths"
+  ],
+  "statement": "Arrange the twelve tones by perfect fifths and they close into a circle mapping every key.",
+  "statementAccent": "close into a circle mapping every key",
+  "meaning": "The circle of fifths is a visual and organizational diagram of the twelve pitch classes of the chromatic scale, arranged around a circle so that each is a perfect fifth apart from its neighbours. Moving clockwise ascends by perfect fifths, C to G to D to A to E to B and onward, while moving counterclockwise ascends by perfect fourths, the mirror direction. In twelve-tone equal temperament, taking twelve steps of a perfect fifth returns exactly to the starting pitch class, so the sequence closes into a complete circle. The diagram is one of the most useful tools in Western music theory because it lays out at a glance the relationships between keys, chords, and scales. C major sits at the top with no sharps or flats; each step clockwise adds one sharp to the key signature and each step counterclockwise adds one flat, and the outer ring of major keys is paired with an inner ring of their relative minors.",
+  "mechanism": "The circle works because the perfect fifth, the interval with frequency ratio close to three to two, is the most powerful organizing interval in tonal music, and stacking fifths cycles through all twelve pitch classes before returning home. Placing the notes in this order makes key relationships spatial: keys adjacent on the circle differ by only one sharp or flat and share nearly all their notes, so they are the most closely related and the easiest to modulate between, while keys on opposite sides are the most distant. Starting from C with no accidentals, each clockwise fifth adds a sharp, generating the sharp keys G, D, A and so on, and each counterclockwise step adds a flat, generating F, B-flat, E-flat and so on. At the bottom of the circle the sharp and flat spellings meet in enharmonic equivalence, where for example F-sharp and G-flat name the same pitch in equal temperament. The relative minor of each major key sits inside it, and common chord progressions such as the movement from the fifth to the tonic trace steps around the circle.",
+  "examples": [
+    {
+      "tag": "Adding sharps and flats",
+      "text": "C major has no accidentals; one step clockwise to G major adds one sharp, and one step counterclockwise to F major adds one flat."
+    },
+    {
+      "tag": "Closely related keys",
+      "text": "Keys next to each other on the circle share almost all their notes, so modulating between them is smooth and common in Western music."
+    },
+    {
+      "tag": "Enharmonic meeting point",
+      "text": "At the bottom of the circle the sharp and flat sides meet, where F-sharp and G-flat are the same pitch in equal temperament."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The circle of fourths",
+      "text": "The same diagram read counterclockwise, where each step ascends by a perfect fourth and adds a flat rather than a sharp."
+    },
+    {
+      "name": "Major and relative minor rings",
+      "text": "The pairing of an outer ring of major keys with an inner ring of their relative minors, which share the same key signature."
+    }
+  ],
+  "whyItMatters": "The circle of fifths is a foundational tool of Western music theory and pedagogy, condensing the relationships among all twelve keys into a single, memorable picture. It makes key signatures easy to learn, since position on the circle directly gives the number of sharps or flats, and it reveals which keys are closely related and therefore natural to modulate between, guiding composers and improvisers in building chord progressions and moving from one tonal area to another. Songwriters use it to find chords that belong together, jazz musicians use it to navigate progressions that cycle through fifths, and students use it to grasp how scales, keys, and harmony fit together. The circle also connects music to mathematics and acoustics: its closure depends on equal temperament, and its very existence reflects the special role of the perfect fifth. As a compact map of tonal space, it remains indispensable across composition, performance, and analysis.",
+  "working": [
+    {
+      "lead": "Stack perfect fifths",
+      "text": "arrange the twelve pitch classes so each neighbour is a perfect fifth away, ascending clockwise and descending counterclockwise."
+    },
+    {
+      "lead": "Read the key signatures",
+      "text": "start from C with no accidentals and add a sharp for each clockwise step, a flat for each counterclockwise step."
+    },
+    {
+      "lead": "Navigate relationships",
+      "text": "use adjacency to find closely related keys, relative minors, and smooth modulations and chord progressions."
+    }
+  ],
+  "limits": "The circle of fifths closes cleanly only in equal temperament; in Pythagorean or just tuning, twelve pure fifths overshoot seven octaves by the small Pythagorean comma, so the circle does not exactly return to its start and must be tempered to close. The diagram is an organizational aid rather than a rule of composition, and music constantly departs from the smooth, stepwise modulations it suggests. Its historical origin is layered: an early circle-of-fifths diagram appears in Nikolai Diletsky's late-seventeenth-century treatise, and Johann David Heinichen presented a musical circle devised around 1711 and published in 1728, so the concept has multiple contributors rather than a single inventor. The circle also reflects the conventions of Western tonal music specifically and does not capture every tuning system or musical tradition. So it is an invaluable map of tonal relationships, valid within equal temperament and the tonal system it was built to describe.",
+  "misreadings": "The circle is not a law dictating how music must move; it is a map of relationships that composers freely depart from. Its perfect closure is not a fact of pure acoustics but a feature of equal temperament, since twelve pure fifths actually overshoot seven octaves by the Pythagorean comma. And the enharmonic equivalence at the bottom, where F-sharp equals G-flat, holds in equal temperament but not in tunings that distinguish them, so treating the circle as tuning-independent, or as prescribing progressions rather than mapping them, misreads a diagram whose neat closure and equivalences depend on the equal-tempered system.",
+  "origin": "A diagram of tonal relationships developed in Western music theory; an early circle-of-fifths appears in Nikolai Diletsky's late-seventeenth-century Grammatika, and Johann David Heinichen presented a musical circle around 1711, published 1728.",
+  "category": "media",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {
+      "text": "Circle of fifths, Wikipedia. — the arrangement of the twelve pitch classes by ascending perfect fifths clockwise and fourths counterclockwise, the twelve-fifth closure in equal temperament, the sharps-clockwise and flats-counterclockwise key signatures, relative minors, enharmonic equivalence, and the Diletsky and Heinichen history.",
+      "url": "https://en.wikipedia.org/wiki/Circle_of_fifths",
+      "type": "secondary"
+    },
+    {
+      "text": "Circle of fifths, Encyclopaedia Britannica. — the circle of fifths, its arrangement of keys, and the outer major and inner relative-minor rings.",
+      "url": "https://www.britannica.com/art/circle-of-fifths",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Circle_of_fifths",
+  "related": [
+    {
+      "slug": "equal-temperament",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-pythagorean-comma",
+      "kind": "tension"
+    }
+  ]
+}
