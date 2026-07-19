@@ -1,0 +1,57 @@
+{
+  "no": "960",
+  "slug": "inference-to-the-best-explanation",
+  "name": "Inference to the Best Explanation",
+  "aliases": ["IBE", "Abduction (in the modern sense)"],
+  "statement": "Accept the hypothesis that, if true, would best explain the evidence before you.",
+  "statementAccent": "would best explain the evidence",
+  "meaning": "Inference to the best explanation, often abbreviated IBE, is a form of non-deductive, ampliative inference in which, from a body of evidence, one infers the hypothesis that, if true, would best explain that evidence. Explanatory power is treated as a guide to truth: among rival hypotheses that could account for the data, we are entitled to accept the one that provides the best explanation. The name was introduced and popularized by Gilbert Harman in a 1965 paper titled The Inference to the Best Explanation, and the fullest book-length treatment is Peter Lipton's Inference to the Best Explanation of 1991, with a second edition in 2004. IBE is often identified with, or seen as a development of, what Charles Sanders Peirce called abduction, though scholars note the two are not the same: Peirce's abduction is chiefly about generating or suggesting hypotheses worth considering, whereas modern IBE is about justifying the acceptance of a hypothesis, and, as commentators observe, there is no reference to the notion of best explanation in Peirce's own writings on abduction. IBE is distinguished from deduction, which is truth-preserving, and from enumerative induction, which merely generalizes from instances. It is pervasive in science and in everyday reasoning, and it underlies the no-miracles argument for scientific realism, which is standardly construed as an inference to the best explanation applied to the success of science.",
+  "mechanism": "Inference to the best explanation reasons backward from what we observe to what would explain it. Given some phenomena in need of explanation, one canvasses the candidate hypotheses that would, if true, account for them, and then selects the candidate that provides the best explanation, taking its explanatory superiority as a reason to believe it true, or at least to accept it. The engine of the inference is a comparative judgment of explanatory quality, and this is where the explanatory virtues do their work: a better explanation is typically one that is simpler, wider in scope, more unifying, more coherent with background knowledge, more precise, and less ad hoc than its rivals. Peter Lipton drew a useful distinction between the loveliest explanation, the one that would, if correct, provide the most understanding, and the likeliest, the one most probable on the evidence, arguing that IBE uses judgments of loveliness as a guide to likeliness. The inference is ampliative, since its conclusion goes beyond what the premises deductively guarantee, so it can fail, but its defenders hold that explanatory success is a genuine, if fallible, mark of truth. IBE is the mode of inference by which science reaches unobservable causes, positing atoms, genes, or viruses because they best explain observable effects, and by which Darwin argued for common descent as the best explanation of a mass of biological facts. At the meta-level, realists argue that the approximate truth of our theories is the best explanation of the success of science, so the no-miracles argument is itself an application of IBE.",
+  "examples": [
+    {
+      "tag": "Inferring unobservable causes",
+      "text": "Science posits atoms, genes, or viruses because their existence would best explain the observable phenomena."
+    },
+    {
+      "tag": "Loveliness and likeliness",
+      "text": "Lipton distinguished the explanation that gives the most understanding from the one most probable on the evidence."
+    },
+    {
+      "tag": "The no-miracles argument",
+      "text": "Realists argue that approximate truth best explains the success of science, an inference to the best explanation."
+    }
+  ],
+  "variants": [
+    {
+      "name": "IBE and abduction",
+      "text": "The modern justificatory IBE, often identified with but not identical to Peirce's hypothesis-generating abduction."
+    },
+    {
+      "name": "The explanatory virtues",
+      "text": "Simplicity, scope, unification, coherence, and being least ad hoc, the marks by which the best explanation is judged."
+    }
+  ],
+  "whyItMatters": "Inference to the best explanation is one of the most important patterns of reasoning in both science and everyday life, and understanding it is central to the theory of knowledge and the philosophy of science. So much of what we believe rests on IBE: the physician infers the disease that best explains the symptoms, the detective the suspect that best explains the clues, and the scientist the unobservable entity, atom, gene, or field, that best explains the data. IBE is the engine behind the inference to unobservable causes that gives science much of its reach, and it lies at the heart of the scientific realism debate, since the no-miracles argument for realism is itself an inference to the best explanation. By making explanatory power a guide to truth, IBE also raises deep questions about which features make one explanation better than another and whether those features track reality, questions that connect the theory of explanation to confirmation and to the aims of inquiry. The debate over IBE, including van Fraassen's sharp objections, has clarified the relationship between explanation, probability, and rational belief. As the inference from evidence to the hypothesis that best explains it, IBE is a fundamental and pervasive form of ampliative reasoning.",
+  "working": [
+    {"lead": "Gather the candidates", "text": "identify the rival hypotheses that could, if true, explain the evidence at hand."},
+    {"lead": "Judge explanatory quality", "text": "compare them by explanatory virtues such as simplicity, scope, unification, and coherence with background knowledge."},
+    {"lead": "Accept the best", "text": "infer the hypothesis that provides the best explanation, treating explanatory success as a fallible mark of truth."}
+  ],
+  "limits": "Inference to the best explanation faces serious objections, several pressed by Bas van Fraassen. The bad-lot argument holds that IBE can only select the best among the hypotheses we have actually thought of, but this best candidate may itself be false, the best of a bad lot, unless we have some independent reason to think the true hypothesis is among those considered, which IBE does not supply. Van Fraassen also argued that IBE conflicts with Bayesian probabilistic coherence: a rule that awards an extra bonus to explanatory hypotheses, over and above what the evidence confers, must either merely duplicate Bayes's rule, in which case the explanatory bonus is idle, or depart from it, in which case it renders one's degrees of belief probabilistically incoherent and vulnerable to a sure loss. There is the further worry that judgments of the best explanation may track our subjective preferences for tidy or familiar stories rather than the truth, and that any attempt to defend IBE by appeal to its own explanatory success is circular. Attributions and datings, such as Harman's 1965 paper and Lipton's book, reward care, and there is no standalone encyclopedia entry under the exact name, so the topic is treated under abduction. So IBE robustly makes explanatory power a guide to belief, understood as a pervasive but contested inference challenged by the bad-lot argument and by worries about its probabilistic coherence.",
+  "misreadings": "Inference to the best explanation is not deductively valid; it is ampliative and fallible, so a best explanation can still be false. It is not exactly Peirce's abduction, since Peirce's abduction is about generating hypotheses while IBE is about justifying their acceptance, and Peirce did not frame it in terms of best explanation. And the best explanation is not merely the most familiar or satisfying story, but the one that best scores on genuine explanatory virtues, which its critics doubt tracks truth, so treating IBE as conclusive, as identical to Peirce's abduction, or as mere preference for tidy stories, misreads the inference.",
+  "origin": "A form of ampliative inference, named by Gilbert Harman in 1965 and developed by Peter Lipton, in which one infers the hypothesis that would best explain the evidence, often identified with the modern sense of abduction.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1965,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Abduction, Stanford Encyclopedia of Philosophy. — inference to the best explanation as ampliative reasoning in which explanatory considerations justify a hypothesis, its relation to and difference from Peirce's abduction, the explanatory virtues, and van Fraassen's bad-lot argument and the objection from probabilistic coherence.", "url": "https://plato.stanford.edu/entries/abduction/", "type": "secondary"},
+    {"text": "Scientific Realism, Stanford Encyclopedia of Philosophy. — inference to the best explanation applied at the meta-level in the no-miracles argument for realism, and the bad-lot objection to inferring truth from best explanation.", "url": "https://plato.stanford.edu/entries/scientific-realism/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Abductive_reasoning",
+  "related": [
+    {"slug": "the-no-miracles-argument", "kind": "consequence"},
+    {"slug": "occams-razor", "kind": "kindred"}
+  ]
+}
