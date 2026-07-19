@@ -1,0 +1,56 @@
+{
+  "no": "573",
+  "slug": "euclids-theorem",
+  "name": "Euclid's Theorem",
+  "aliases": ["The infinitude of primes", "Infinitely many primes"],
+  "statement": "There are infinitely many prime numbers, however far up the number line you look.",
+  "statementAccent": "infinitely many prime numbers",
+  "meaning": "Euclid's theorem states that there are infinitely many prime numbers, the whole numbers greater than one divisible only by one and themselves. Proved by Euclid around 300 BC in the Elements, it is one of the oldest and most celebrated results in all of mathematics. In Euclid's own idiom, lacking the modern notion of infinity, prime numbers are more than any assigned multitude of prime numbers: given any finite list of primes, there is always another. The theorem is a foundation stone of number theory and the archetype of elegant mathematical proof, with the primes forming an endless, irregular sequence that underlies the structure of the integers.",
+  "mechanism": "Euclid's argument is beautifully simple. Take any finite list of primes and multiply them all together, then add one, forming a new number. Dividing this number by any prime on the list leaves a remainder of one, so none of the listed primes divides it. Yet every number greater than one has at least one prime factor, either itself if it is prime or some smaller prime otherwise, and that prime factor cannot be on the list. So there is always a prime beyond any finite collection, and the primes cannot be exhausted. Later mathematicians found many other proofs, including Euler's analytic one, which shows the sum of the reciprocals of the primes diverges.",
+  "examples": [
+    {
+      "tag": "The Elements",
+      "text": "Euclid proved the theorem around 300 BC in Book IX, Proposition 20 of the Elements, one of the earliest rigorous results in mathematics."
+    },
+    {
+      "tag": "Euler's stronger proof",
+      "text": "Leonhard Euler showed that the sum of the reciprocals of the primes diverges, a strictly stronger statement that also implies there are infinitely many primes."
+    },
+    {
+      "tag": "The composite Euclid number",
+      "text": "The number built by Euclid's construction is not always prime; two times three times five times seven times eleven times thirteen, plus one, equals 30031, which factors as 59 times 509."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Euler's analytic proof",
+      "text": "The proof via the divergence of the sum of the reciprocals of the primes, connected to the Euler product for the zeta function, which measures how the primes thin out."
+    },
+    {
+      "name": "Furstenberg's topological proof",
+      "text": "Hillel Furstenberg's 1955 proof recasting the theorem in the language of point-set topology, one of hundreds of distinct proofs collected over the centuries."
+    }
+  ],
+  "whyItMatters": "Euclid's theorem is a cornerstone of number theory and a model of mathematical elegance, showing with a few lines of reasoning that the primes, the multiplicative building blocks of the integers, never run out. It is one of the oldest theorems still taught today and a canonical example of proof by construction and by contradiction. The endlessness of the primes underlies modern number theory and cryptography, and the deeper question of how the primes are distributed, only hinted at by Euclid, leads directly to the prime number theorem and the Riemann hypothesis.",
+  "working": [
+    {"lead": "Build a new prime factor", "text": "multiply any finite set of primes and add one to get a number with a prime factor outside the set, proving no list is complete."},
+    {"lead": "Read it constructively", "text": "treat the argument as producing a new prime beyond any collection, not merely assuming a largest prime and refuting it."},
+    {"lead": "Reach for stronger forms", "text": "note that Euler's divergence of the reciprocals of the primes says more than infinitude, describing how densely primes occur."}
+  ],
+  "limits": "The theorem asserts only that primes are infinite, not how they are distributed; that finer question is answered by the prime number theorem and refined by the Riemann hypothesis. Euclid's construction is often misread as producing a prime directly, but the number it builds need not be prime, only guaranteed to have a prime factor not on the list. The result is elementary and exceptionless, so its limits lie less in its truth than in how much it leaves unsaid about the pattern of the primes it guarantees.",
+  "misreadings": "The number formed by multiplying primes and adding one is not always itself prime; the argument only guarantees it has a prime factor outside the original list, and the smallest composite example is 30031. Euclid's original argument was constructive and direct, not strictly a proof by contradiction, so the common suppose-these-are-all-the-primes framing is a later, superfluous reformulation. And the theorem says nothing about how the primes are spaced, only that they never end.",
+  "origin": "Proved by Euclid around 300 BC in Book IX, Proposition 20 of the Elements, with many later proofs, including Euler's analytic proof and Furstenberg's 1955 topological proof.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "namedAfter": "Euclid",
+  "sources": [
+    {"text": "Euclid's theorem, Wikipedia. — the infinitude of primes, Euclid's construction, and the constructive-not-contradiction point.", "url": "https://en.wikipedia.org/wiki/Euclid%27s_theorem", "type": "secondary"},
+    {"text": "Meštrović, 'Euclid's theorem on the infinitude of primes: a historical survey of its proofs,' arXiv:1202.3670. — the Book IX Proposition 20 attribution and the many proofs.", "url": "https://arxiv.org/pdf/1202.3670", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Euclid%27s_theorem",
+  "related": [
+    {"slug": "the-prime-number-theorem", "kind": "kindred"},
+    {"slug": "fermats-little-theorem", "kind": "kindred"}
+  ]
+}

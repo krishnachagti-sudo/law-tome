@@ -1,0 +1,55 @@
+{
+  "no": "580",
+  "slug": "the-hairy-ball-theorem",
+  "name": "The Hairy Ball Theorem",
+  "aliases": ["The hedgehog theorem", "You can't comb a hairy ball flat"],
+  "statement": "You cannot comb the hair on a ball flat without leaving at least one cowlick.",
+  "statementAccent": "without leaving at least one cowlick",
+  "meaning": "The hairy ball theorem states that there is no continuous field of nonzero tangent vectors on an even-dimensional sphere; on an ordinary sphere, any continuous assignment of a tangent arrow to each point must be zero somewhere. Picture a ball covered in hair: you cannot comb it so that every hair lies flat against the surface without creating at least one point where the hair stands up or swirls, a cowlick. The same is not true of a doughnut, whose hair can be combed flat all the way around. It is a theorem of topology, a vivid illustration that the shape of a surface forces the behaviour of any smooth flow across it, with the sphere's curvature leaving no way to avoid a singular point.",
+  "mechanism": "The obstruction is measured by a topological invariant called the Euler characteristic, and the Poincare-Hopf theorem ties it to vector fields: the sum of the indices of the zeros of any tangent vector field on a closed surface equals the surface's Euler characteristic. For the ordinary sphere that characteristic is two, which is not zero, so a nowhere-zero field is impossible; the field must have zeros whose indices sum to two, at least one cowlick. A torus, by contrast, has Euler characteristic zero, so its hair can be combed flat without any singular point. The theorem generalises to spheres of every even dimension, whose Euler characteristic is two, while odd-dimensional spheres admit nowhere-zero tangent fields.",
+  "examples": [
+    {
+      "tag": "Wind on Earth",
+      "text": "Treating wind as a tangent vector field on the globe, the theorem guarantees that at any moment there is at least one point on Earth where the horizontal wind speed is zero, a cyclone's eye or a calm."
+    },
+    {
+      "tag": "The torus escapes",
+      "text": "A doughnut can be combed flat everywhere because its Euler characteristic is zero, so unlike the sphere it admits a continuous nonzero tangent field with no cowlick."
+    },
+    {
+      "tag": "Antenna and radiation patterns",
+      "text": "The theorem constrains fields that must be tangent to a sphere, implying, for instance, that a perfectly isotropic transverse field over a sphere cannot exist."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Poincare-Hopf theorem",
+      "text": "The general result that the zeros of a vector field on a closed surface have indices summing to the Euler characteristic, of which the hairy ball theorem is the sphere case."
+    },
+    {
+      "name": "Higher even-dimensional spheres",
+      "text": "The extension to all even-dimensional spheres, which likewise admit no nowhere-zero tangent field, while every odd-dimensional sphere does admit one."
+    }
+  ],
+  "whyItMatters": "The hairy ball theorem is a memorable gateway to algebraic topology and the idea that global shape constrains local structure, linking the Euler characteristic to the unavoidable singularities of any continuous flow. It has concrete consequences, from the guaranteed existence of a windless point on Earth to constraints in physics on fields defined over spheres, and it is a favourite illustration of how topology delivers surprising certainties. Together with the Brouwer fixed-point theorem and the Poincare-Hopf theorem, it exemplifies how counting invariants force the existence of special points, a theme that runs through modern geometry and dynamical systems.",
+  "working": [
+    {"lead": "Expect a cowlick", "text": "on a sphere, accept that any continuous tangent field must vanish somewhere; a nowhere-zero combing is impossible."},
+    {"lead": "Count with Euler", "text": "use the Poincare-Hopf theorem: the indices of a field's zeros sum to the Euler characteristic, two for the sphere, zero for the torus."},
+    {"lead": "Mind the dimension and shape", "text": "remember the obstruction is specific to even-dimensional spheres; tori and odd-dimensional spheres can be combed flat."}
+  ],
+  "limits": "The theorem is specific to even-dimensional spheres and, more precisely, to surfaces whose Euler characteristic is nonzero; a torus, with characteristic zero, can be combed flat, so the result is not about roundness alone but about topology. Odd-dimensional spheres, like the circle or the three-sphere, admit nowhere-zero tangent fields and so escape the theorem. It requires the field to be tangent and continuous; a field allowed to point outward, or one with discontinuities, faces no such obstruction. And it guarantees a zero exists without saying how many there are beyond the index-sum constraint or where they lie.",
+  "misreadings": "The theorem is not about all shapes: a doughnut can be combed flat, so the impossibility is peculiar to the sphere and other even-dimensional spheres, driven by a nonzero Euler characteristic. It concerns tangent vector fields, so a field allowed to stick straight out of the surface is not what the theorem forbids. And the vanishing point need not be a single tidy bald spot; the theorem constrains the sum of the indices of the zeros to equal two, which could be realised by one swirl or several, not necessarily a lone point.",
+  "origin": "Proved by L.E.J. Brouwer in 1912 for the ordinary sphere, following Henri Poincare's earlier work on singularities of vector fields, and subsumed by the Poincare-Hopf index theorem relating zeros to the Euler characteristic.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1912,
+  "sources": [
+    {"text": "Hairy ball theorem, Wikipedia. — the no-nonzero-tangent-field statement, the Euler-characteristic obstruction, the windless-point consequence, and the Brouwer 1912 attribution.", "url": "https://en.wikipedia.org/wiki/Hairy_ball_theorem", "type": "secondary"},
+    {"text": "Hairy Ball Theorem, Wolfram MathWorld. — the even-dimensional sphere statement and the impossibility of combing the hair flat.", "url": "https://mathworld.wolfram.com/HairyBallTheorem.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hairy_ball_theorem",
+  "related": [
+    {"slug": "the-brouwer-fixed-point-theorem", "kind": "kindred"}
+  ]
+}

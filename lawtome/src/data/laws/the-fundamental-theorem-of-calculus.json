@@ -1,0 +1,81 @@
+{
+  "no": "577",
+  "slug": "the-fundamental-theorem-of-calculus",
+  "name": "The Fundamental Theorem of Calculus",
+  "aliases": [
+    "FTC",
+    "Newton-Leibniz theorem"
+  ],
+  "statement": "Differentiation and integration are inverse operations; each undoes the other.",
+  "statementAccent": "each undoes the other",
+  "meaning": "The fundamental theorem of calculus establishes that the two central operations of calculus, differentiation and integration, are inverse to each other. In its first part, the function defined by integrating a continuous function up to a variable upper limit is an antiderivative of that function: differentiating the accumulated area recovers the original function. In its second part, a definite integral can be evaluated by finding any antiderivative and taking the difference of its values at the endpoints, so the total change equals the integral of the rate of change. Together these turn the hard problem of summing infinitely many infinitesimal pieces into the far easier problem of finding an antiderivative, the insight that made calculus a practical tool.",
+  "mechanism": "The theorem links the accumulation of a quantity to its rate of change. In the first part, consider the area under a curve from a fixed start to a moving endpoint; nudging the endpoint adds a thin sliver whose area, divided by its width, approaches the height of the curve, so the derivative of the accumulated area is the curve itself. The second part follows: since the antiderivative and the area function differ only by a constant, evaluating any antiderivative at the two endpoints and subtracting gives the definite integral. The result rests on the continuity of the integrand and generalises far beyond one dimension, culminating in the Stokes theorem, which relates the integral of a quantity over a region to an integral over its boundary.",
+  "examples": [
+    {
+      "tag": "Distance from speed",
+      "text": "Integrating a car's speed over a time interval gives the distance travelled, because distance is the antiderivative of speed and the theorem's second part sums the changes."
+    },
+    {
+      "tag": "Evaluating an integral",
+      "text": "To integrate x squared from zero to one, take the antiderivative x cubed over three and subtract its endpoint values, giving one third without summing infinitely many strips."
+    },
+    {
+      "tag": "The Stokes generalisation",
+      "text": "In higher dimensions the theorem becomes the generalised Stokes theorem, relating an integral over a region to one over its boundary, unifying the divergence and curl theorems."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The two parts",
+      "text": "The first part says the integral with a variable upper limit is an antiderivative; the second says a definite integral is the difference of an antiderivative's endpoint values."
+    },
+    {
+      "name": "The Lebesgue version",
+      "text": "A more general form for the Lebesgue integral, holding for absolutely continuous functions rather than merely continuous ones, extending the theorem beyond elementary calculus."
+    }
+  ],
+  "whyItMatters": "The fundamental theorem of calculus is the linchpin of calculus, uniting its two operations and making integration tractable by reducing it to antidifferentiation. It is what lets physics and engineering move between rates and totals, position and velocity, force and work, charge and current. Its generalisation, the Stokes theorem, is a organising principle of modern geometry and physics, expressing conservation laws and the structure of electromagnetism. Historically it crystallised the calculus of Newton and Leibniz into a coherent method, and it remains the first deep theorem every student of calculus meets, the bridge from computing slopes to computing areas.",
+  "working": [
+    {
+      "lead": "Integrate by antidifferentiating",
+      "text": "to evaluate a definite integral, find any antiderivative and subtract its values at the endpoints, avoiding summation of infinitesimal pieces."
+    },
+    {
+      "lead": "Read accumulation as area",
+      "text": "treat the integral up to a variable limit as an area function whose derivative is the original integrand, the first part of the theorem."
+    },
+    {
+      "lead": "Move between rate and total",
+      "text": "use that the total change of a quantity equals the integral of its rate of change, connecting derivatives and integrals in applications."
+    }
+  ],
+  "limits": "The classical theorem assumes the integrand is continuous on the interval; for wilder functions one needs stronger versions, and the Lebesgue form requires absolute continuity rather than mere continuity. Not every antiderivative can be written in closed form using elementary functions, so the theorem guarantees an antiderivative exists without always giving a usable formula, as with the Gaussian bell curve. And it presupposes the machinery of limits and the completeness of the real numbers that make the integral well defined, so it is a capstone resting on the foundations of analysis rather than a self-contained trick.",
+  "misreadings": "The theorem does not provide a formula for every integral; it reduces integration to antidifferentiation, but many antiderivatives cannot be expressed in elementary terms. It is two statements, not one, and the two parts are distinct, one about differentiating an integral and one about evaluating an integral via an antiderivative. And the guarantee that a continuous function has an antiderivative does not mean that antiderivative is elementary or easy to compute, only that it exists, so existence and computability are not the same thing.",
+  "origin": "Foreshadowed by Isaac Barrow's geometric work and developed independently by Isaac Newton and Gottfried Wilhelm Leibniz in the late seventeenth century as the core of the calculus, with rigorous foundations supplied later by Cauchy and Riemann and a sweeping generalisation in the Stokes theorem.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {
+      "text": "Fundamental theorem of calculus, Wikipedia. — the two parts, the inverse relationship of differentiation and integration, and the Newton-Leibniz and Stokes context.",
+      "url": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus",
+      "type": "secondary"
+    },
+    {
+      "text": "Fundamental Theorems of Calculus, Wolfram MathWorld. — the first and second fundamental theorems and antiderivative evaluation.",
+      "url": "https://mathworld.wolfram.com/FundamentalTheoremsofCalculus.html",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus",
+  "related": [
+    {
+      "slug": "the-intermediate-value-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-fundamental-theorem-of-algebra",
+      "kind": "kindred"
+    }
+  ]
+}

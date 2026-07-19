@@ -1,0 +1,55 @@
+{
+  "no": "575",
+  "slug": "the-chinese-remainder-theorem",
+  "name": "The Chinese Remainder Theorem",
+  "aliases": ["CRT", "Sunzi's theorem"],
+  "statement": "If you know a number's remainders on division by several coprime moduli, those remainders pin it down uniquely.",
+  "statementAccent": "those remainders pin it down uniquely",
+  "meaning": "The Chinese remainder theorem says that if you are told the remainders of an unknown whole number when divided by several moduli that are pairwise coprime, sharing no common factor, then there is exactly one solution modulo the product of those moduli. In other words, a system of simultaneous congruences with coprime moduli always has a solution, and that solution is unique up to adding multiples of the product. Named for its appearance in the third-to-fifth-century Chinese text Sunzi Suanjing, it is a foundational result of number theory and modular arithmetic, letting one reconstruct a number from its residues and reassemble modular calculations done separately for each modulus.",
+  "mechanism": "The heart of the theorem is that reducing a number modulo a product of pairwise-coprime moduli carries the same information as reducing it modulo each factor separately, and these residues can be recombined. Constructively, for each modulus one builds a number that is one modulo that factor and zero modulo the others, using the fact that coprime moduli admit combinations via Bezout's identity, then sums the pieces weighted by the required remainders. In the language of abstract algebra, the ring of integers modulo the product is isomorphic to the direct product of the rings modulo each factor, so the theorem is an isomorphism that decomposes a complicated modulus into simple independent pieces.",
+  "examples": [
+    {
+      "tag": "Sunzi's puzzle",
+      "text": "The classic problem asks for a number leaving remainder two modulo three, three modulo five, and two modulo seven; the unique answer modulo one hundred and five is twenty-three."
+    },
+    {
+      "tag": "Fast big-number arithmetic",
+      "text": "Computers split a huge modular computation into independent pieces modulo small coprime factors and recombine, the residue number system used to speed up cryptography like RSA."
+    },
+    {
+      "tag": "Qin Jiushao's general method",
+      "text": "The thirteenth-century mathematician Qin Jiushao gave a complete general algorithm in his 1247 Mathematical Treatise in Nine Sections, the Dayan aggregation method."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The ring-isomorphism form",
+      "text": "The abstract statement that the integers modulo a product of coprime numbers factor as the direct product of the integers modulo each, generalising to any commutative ring with coprime ideals."
+    },
+    {
+      "name": "Non-coprime systems",
+      "text": "When moduli share factors, a solution exists only if the given remainders agree on the common parts, and then it is unique modulo the least common multiple."
+    }
+  ],
+  "whyItMatters": "The Chinese remainder theorem is a cornerstone of number theory and a workhorse of computation, letting a problem modulo a large number be broken into independent problems modulo its coprime factors and reassembled. It speeds up arithmetic in cryptography and error-correcting codes, underlies secret-sharing schemes, and appears throughout algebra as a structural decomposition of rings. Historically it records a remarkably early insight, from calendar and astronomy calculations in ancient China, and it remains a standard tool whenever numbers are handled through their remainders, from fast RSA decryption to the design of hash functions.",
+  "working": [
+    {"lead": "Split by coprime moduli", "text": "reduce a hard calculation modulo a big number into separate calculations modulo its pairwise-coprime factors, solved independently."},
+    {"lead": "Reassemble the residues", "text": "combine the per-factor answers into the unique solution modulo the product, using coprimality to weight each piece correctly."},
+    {"lead": "Check compatibility if not coprime", "text": "when moduli share factors, first confirm the remainders agree on the overlap; only then is there a solution, unique modulo the least common multiple."}
+  ],
+  "limits": "The clean existence-and-uniqueness guarantee requires the moduli to be pairwise coprime; without that, a system may have no solution at all, and when it does the solution is unique only modulo the least common multiple rather than the product. The theorem tells you a unique residue exists but, in its pure form, is a statement about remainders, not about the size of the smallest positive solution. Its computational payoff also depends on the moduli genuinely being coprime and on the cost of the recombination step, which uses modular inverses that must themselves be computed.",
+  "misreadings": "The theorem does not require the moduli to be prime, only pairwise coprime, so composite moduli are fine as long as they share no common factor. It is not a Chinese-only result despite the name; the name reflects the early appearance in Sunzi's manual, while the general method is due to Qin Jiushao and, in Europe, Gauss. And uniqueness is modular, not absolute: there are infinitely many integer solutions, all congruent modulo the product of the moduli, with the theorem singling out one residue class rather than one number.",
+  "origin": "First recorded as a specific puzzle in Sunzi Suanjing between the third and fifth centuries, given a complete general algorithm by Qin Jiushao in his 1247 Mathematical Treatise in Nine Sections, and set on modern foundations by Gauss in his Disquisitiones Arithmeticae of 1801.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Chinese remainder theorem, Wikipedia. — the statement for coprime moduli, the Sunzi puzzle answer 23, and Qin Jiushao's general algorithm.", "url": "https://en.wikipedia.org/wiki/Chinese_remainder_theorem", "type": "secondary"},
+    {"text": "Chinese Remainder Theorem, Wolfram MathWorld. — the simultaneous-congruence statement and the ring-isomorphism form.", "url": "https://mathworld.wolfram.com/ChineseRemainderTheorem.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Chinese_remainder_theorem",
+  "related": [
+    {"slug": "fermats-little-theorem", "kind": "kindred"},
+    {"slug": "the-fundamental-theorem-of-arithmetic", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "no": "583",
+  "slug": "the-collatz-conjecture",
+  "name": "The Collatz Conjecture",
+  "aliases": ["The 3n+1 problem", "The hailstone conjecture"],
+  "statement": "Halve it if even, triple it and add one if odd, and every number falls back to one.",
+  "statementAccent": "every number falls back to one",
+  "meaning": "The Collatz conjecture concerns a deceptively simple rule applied to positive whole numbers: if a number is even, halve it; if it is odd, triple it and add one. The conjecture claims that no matter which number you start with, repeating this process always eventually reaches one, after which it cycles one, four, two, one forever. The numbers produced along the way rise and fall erratically, like hailstones tossed in a cloud, before finally crashing down to one. Stated by Lothar Collatz in the 1930s, it is famous for being trivially easy to describe yet completely resistant to proof; despite immense effort and computation, no one has shown that every starting number reaches one, nor found one that does not.",
+  "mechanism": "The difficulty is that the two operations pull in opposite directions and interleave unpredictably. Halving shrinks a number, while tripling and adding one grows it, and which happens depends on parity at each step, so the sequence wanders with no visible pattern; the tripling step also always produces an even number, immediately halved, giving a rough three-halves growth on odd steps against repeated halving. No method is known to control this long-run behaviour for all starting values at once, which is why the problem has resisted the tools of number theory and dynamics. Terence Tao proved in 2019 that almost all starting numbers eventually reach a value close to their starting point's logarithm, the strongest partial result, but almost all is not all.",
+  "examples": [
+    {
+      "tag": "A hailstone flight",
+      "text": "Starting from six gives six, three, ten, five, sixteen, eight, four, two, one; starting from twenty-seven climbs above nine thousand before eventually falling to one after one hundred and eleven steps."
+    },
+    {
+      "tag": "Erdos's verdict",
+      "text": "Paul Erdos said of the conjecture that mathematics may not be ready for such problems, and offered five hundred dollars for a solution, a measure of its stubbornness."
+    },
+    {
+      "tag": "Tao's near-miss",
+      "text": "In 2019 Terence Tao proved that almost all Collatz sequences reach almost bounded values, widely seen as the closest anyone has come to the full conjecture."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Generalised Collatz maps",
+      "text": "Wider families of similar rules, some of which John Conway showed can encode undecidable problems, hinting at why the original resists a general method."
+    },
+    {
+      "name": "The reverse tree",
+      "text": "Running the map backwards from one to build the tree of all numbers that reach it, an approach used in attempts to prove every number is included."
+    }
+  ],
+  "whyItMatters": "The Collatz conjecture is the emblem of how an elementary-sounding question can hide unfathomable difficulty, a favourite illustration that simplicity of statement is no guide to ease of proof. It has driven work in number theory, dynamical systems, and the theory of computation, and Conway's result that closely related generalised maps are undecidable suggests the problem may brush against the limits of what is provable. As a cultural touchstone it draws amateurs and professionals alike, and it stands as a humbling reminder that vast computational verification, now past two to the sixty-eighth power, can accumulate evidence without ever amounting to a proof.",
+  "working": [
+    {"lead": "Apply the parity rule", "text": "halve even numbers and triple-plus-one odd ones, iterating; the conjecture predicts every start eventually reaches the one-four-two cycle."},
+    {"lead": "Distrust the growth", "text": "note the tripling step and repeated halving nearly balance, giving erratic hailstone flights that resist any simple bound on how high they climb."},
+    {"lead": "Respect the gap", "text": "treat computational checks and Tao's almost-all result as strong evidence, not proof; the full claim over every positive integer is still open."}
+  ],
+  "limits": "The conjecture is unproven for all positive integers, and no partial result closes the gap: verification by computer, now confirmed for every starting value up to about two to the sixty-eighth power, checks only finitely many numbers, while infinitely many remain. Tao's 2019 theorem covers almost all numbers in a precise density sense but not literally all, leaving open the possibility of a rare divergent sequence or a second cycle. Conway's work on generalised Collatz maps shows that slight variations of the rule are undecidable, a warning that the original may be genuinely intractable, so the problem's limits are those of current mathematics itself.",
+  "misreadings": "Testing enormous ranges of numbers does not prove the conjecture, since it asserts something about all infinitely many positive integers, and a single exception, a sequence that diverges or enters a new cycle, would refute it. Tao's result is not a proof of the full statement; almost all is a density claim that permits a thin set of exceptions. And the rule is specific: it is the triple-and-add-one map on positive integers, not an arbitrary similar process, since closely related generalised maps are known to be undecidable rather than convergent.",
+  "origin": "Introduced by Lothar Collatz around 1937 and circulated widely from the 1950s, studied under many names, with a landmark partial result by Terence Tao in 2019 and computational verification extended past two to the sixty-eighth power.",
+  "category": "science",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1937,
+  "namedAfter": "Lothar Collatz",
+  "sources": [
+    {"text": "Collatz conjecture, Wikipedia. — the 3n+1 rule, the every-number-reaches-one claim, Erdos's remark, Tao's 2019 result, and the computational verification bound.", "url": "https://en.wikipedia.org/wiki/Collatz_conjecture", "type": "secondary"},
+    {"text": "Collatz Problem, Wolfram MathWorld. — the hailstone map, the conjecture's statement, and its status as an unsolved problem.", "url": "https://mathworld.wolfram.com/CollatzProblem.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Collatz_conjecture",
+  "related": [
+    {"slug": "the-riemann-hypothesis", "kind": "kindred"}
+  ]
+}

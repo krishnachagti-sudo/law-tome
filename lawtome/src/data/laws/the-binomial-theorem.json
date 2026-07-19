@@ -1,0 +1,54 @@
+{
+  "no": "585",
+  "slug": "the-binomial-theorem",
+  "name": "The Binomial Theorem",
+  "aliases": ["Binomial expansion", "Newton's binomial theorem"],
+  "statement": "A power of a sum expands into a tidy series whose coefficients are the rows of Pascal's triangle.",
+  "statementAccent": "whose coefficients are the rows of Pascal's triangle",
+  "meaning": "The binomial theorem gives a formula for expanding a power of a two-term sum, a binomial, raised to a whole number. It states that a plus b, all raised to the power n, equals the sum over k from zero to n of the binomial coefficient n choose k, times a to the power n minus k, times b to the power k. The coefficients, the binomial coefficients, count the number of ways to choose k items from n and are exactly the entries of Pascal's triangle. One of the most fundamental identities in algebra, the theorem turns a tedious repeated multiplication into a single systematic expansion, and it connects algebra to combinatorics, since each coefficient answers a counting question.",
+  "mechanism": "When you multiply the binomial by itself n times, each term of the expanded product is built by choosing either a or b from each of the n factors; the term with b chosen k times and a chosen the rest is a to the n minus k times b to the k. The number of ways to make that choice is n choose k, the count of k-element subsets of an n-element set, which is n factorial divided by k factorial times n minus k factorial. Summing over all k gives the theorem. The coefficients obey Pascal's rule, each being the sum of the two above it in the triangle, because a subset of size k either contains a given element or does not. Newton later saw that for a non-integer power the same pattern gives an infinite series.",
+  "examples": [
+    {
+      "tag": "The square and cube",
+      "text": "The theorem gives a plus b squared equals a squared plus two a b plus b squared, and a plus b cubed equals a cubed plus three a squared b plus three a b squared plus b cubed."
+    },
+    {
+      "tag": "A quick approximation",
+      "text": "For small x, one plus x to the power n is close to one plus n x, the first two terms of the expansion, a workhorse approximation in physics and finance."
+    },
+    {
+      "tag": "The binomial distribution",
+      "text": "The chance of k successes in n independent trials uses the coefficient n choose k, so the theorem underlies the binomial distribution of probability and statistics."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Newton's generalised binomial series",
+      "text": "Isaac Newton's extension around 1665 to negative and fractional exponents, giving an infinite series that converges for suitable values, a milestone in the birth of calculus."
+    },
+    {
+      "name": "The multinomial theorem",
+      "text": "The generalisation to sums of more than two terms, whose coefficients count arrangements and reduce to the binomial coefficients in the two-term case."
+    }
+  ],
+  "whyItMatters": "The binomial theorem is one of the most widely used identities in all of mathematics, bridging algebra, combinatorics, probability, and analysis. Its coefficients are the combinations at the heart of counting and the binomial distribution, its small-argument approximation is a staple of applied science, and Newton's generalisation to arbitrary exponents opened the door to infinite series and the calculus. Historically it records a striking convergence of cultures, with Pascal's triangle discovered independently in India, Persia, and China centuries before Pascal, and it remains a first place where students see algebraic structure, combinatorial meaning, and analytic generalisation meet in a single formula.",
+  "working": [
+    {"lead": "Expand with the coefficients", "text": "read a power of a binomial as the sum of terms n choose k times a to the n minus k times b to the k, the coefficients being Pascal's-triangle entries."},
+    {"lead": "Count to get the coefficient", "text": "interpret n choose k as the number of ways to pick k of the n factors to contribute b, linking the algebra to combinatorics."},
+    {"lead": "Approximate and generalise", "text": "for small quantities keep the first terms, as in one plus x to the n near one plus n x, and for non-integer powers use Newton's infinite binomial series."}
+  ],
+  "limits": "The finite, terminating form requires the exponent to be a non-negative integer; for other exponents the expansion does not stop but becomes Newton's infinite binomial series, which only converges when the ratio of the terms is small enough, typically when the smaller term's magnitude is below the larger's. The theorem as usually stated assumes the two terms commute, so it needs adjustment for non-commuting quantities like matrices. And while it gives every coefficient exactly, computing large binomial coefficients directly can overflow, so practical use often relies on Pascal's recurrence or logarithms rather than the raw factorial formula.",
+  "misreadings": "The clean finite expansion holds only for a non-negative integer exponent; for negative or fractional powers the result is an infinite series, Newton's generalisation, not a finite sum. Pascal did not discover the triangle first: it was known centuries earlier to Pingala in India, al-Karaji and Omar Khayyam in Persia, and Jia Xian and Yang Hui in China, and Pascal's name attaches only through his 1653 European treatise. And the coefficients are combinations, ways of choosing, not permutations, so their combinatorial meaning is selection without regard to order.",
+  "origin": "Special cases were known to ancient and medieval mathematicians, with the triangle of coefficients described by Pingala in India, al-Karaji and Omar Khayyam in the Islamic world, and Jia Xian and Yang Hui in China; Blaise Pascal systematised it in Europe in his 1653 treatise, and Isaac Newton generalised it to arbitrary exponents around 1665.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Binomial theorem, Wikipedia. — the expansion formula, the binomial coefficients and Pascal's triangle, the pre-Pascal history, and Newton's generalisation.", "url": "https://en.wikipedia.org/wiki/Binomial_theorem", "type": "secondary"},
+    {"text": "Binomial theorem, Encyclopaedia Britannica. — the statement, the (a+b) squared and cubed expansions, and Newton's extension to negative and fractional exponents.", "url": "https://www.britannica.com/science/binomial-theorem", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Binomial_theorem",
+  "related": [
+    {"slug": "fermats-little-theorem", "kind": "kindred"}
+  ]
+}
