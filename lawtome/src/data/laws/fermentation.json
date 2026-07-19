@@ -1,0 +1,57 @@
+{
+  "no": "812",
+  "slug": "fermentation",
+  "name": "Fermentation",
+  "aliases": ["Food fermentation", "Anaerobic fermentation"],
+  "statement": "Microbes eat sugars without air and leave behind alcohol, acids, and gas that preserve and flavour food.",
+  "statementAccent": "leave behind alcohol, acids, and gas",
+  "meaning": "Fermentation is a metabolic process in which microorganisms, such as yeasts and bacteria, or their enzymes, chemically break down organic substances, typically sugars, into simpler compounds such as alcohol, acids, and gases, usually in the absence of oxygen. In food, fermentation is an ancient and widespread technique used to make and transform an enormous range of products: yeast ferments sugars into alcohol and carbon dioxide to make beer, wine, and leavened bread, while bacteria ferment sugars into lactic acid to make yogurt, cheese, sauerkraut, kimchi, and pickles, and other microbes produce vinegar, soy sauce, miso, and kombucha. Fermentation both preserves food, since the acids and alcohol it produces inhibit spoilage organisms, and develops complex flavours, aromas, and textures. Biochemically, it is anaerobic metabolism, and in the nineteenth century Louis Pasteur showed that fermentation is caused by living microorganisms rather than occurring spontaneously, a landmark discovery. Fermentation remains one of the most important processes in food production worldwide.",
+  "mechanism": "In the strict biochemical sense, fermentation is a form of anaerobic metabolism by which cells extract energy from sugars without oxygen. Breaking down glucose in glycolysis yields energy but leaves a cofactor, NAD, in a form that must be regenerated for the process to continue; fermentation accomplishes this by converting the products of glycolysis into simpler molecules, regenerating the cofactor. The two most important food routes are alcoholic and lactic-acid fermentation. In alcoholic, or ethanol, fermentation, yeasts convert each glucose molecule into two molecules of ethanol and two of carbon dioxide, producing the alcohol in beer and wine and the gas that leavens bread. In lactic-acid fermentation, bacteria convert sugars into lactic acid, souring and preserving foods like yogurt, cheese, sauerkraut, and kimchi. The acids and alcohol produced lower the pH or create an environment hostile to spoilage and pathogenic organisms, which is how fermentation preserves food, while the many by-products create the characteristic flavours and aromas of fermented foods.",
+  "examples": [
+    {
+      "tag": "Beer, wine, and bread",
+      "text": "Yeast ferments sugars into ethanol and carbon dioxide, producing the alcohol of beer and wine and the gas that leavens bread."
+    },
+    {
+      "tag": "Yogurt and sauerkraut",
+      "text": "Lactic-acid bacteria ferment sugars into lactic acid, souring and preserving yogurt, cheese, sauerkraut, kimchi, and pickles."
+    },
+    {
+      "tag": "Preservation",
+      "text": "The acids and alcohol of fermentation inhibit spoilage organisms, letting fermented foods keep far longer than their raw ingredients."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Alcoholic fermentation",
+      "text": "Yeasts converting sugars into ethanol and carbon dioxide, the basis of beer, wine, and leavened bread."
+    },
+    {
+      "name": "Lactic-acid fermentation",
+      "text": "Bacteria converting sugars into lactic acid, souring and preserving yogurt, cheese, and fermented vegetables."
+    }
+  ],
+  "whyItMatters": "Fermentation is one of the oldest and most important technologies in food, responsible for a vast array of foods and drinks and for preserving harvests long before refrigeration. It gives us beer, wine, and spirits, leavened bread, cheese and yogurt, sauerkraut, kimchi, pickles, soy sauce, miso, vinegar, and countless regional specialties, making it central to cuisines around the world. Its dual power, to preserve food by producing acids and alcohol that suppress spoilage, and to develop rich flavours, aromas, and textures, has made it indispensable across cultures and history. Fermentation also holds a landmark place in the history of science: Louis Pasteur's demonstration that it is caused by living microorganisms overturned the idea of spontaneous generation and helped found microbiology. Today fermentation is prized for flavour, for its role in gut health and nutrition, and increasingly in biotechnology and sustainable food production. As the microbial transformation of sugars into preservation and flavour, it remains a cornerstone of food and biology.",
+  "working": [
+    {"lead": "Provide sugars and microbes", "text": "give microorganisms like yeast or bacteria a sugary substrate, usually in the absence of oxygen."},
+    {"lead": "Break down anaerobically", "text": "let them convert the sugars into alcohol, acids, or gases, regenerating the cofactors that keep their metabolism running."},
+    {"lead": "Preserve and flavour", "text": "use the resulting acids and alcohol to suppress spoilage and the by-products to develop flavour, aroma, and texture."}
+  ],
+  "limits": "Fermentation must be controlled, since the same microbial activity that preserves and flavours food can, with the wrong organisms or conditions, spoil it or produce hazards, so hygiene, the right cultures, and proper conditions matter. The strict biochemical definition is anaerobic metabolism, but the word is used more loosely in food and industry to cover processes that may involve some oxygen, so usage varies. The specific products and flavours depend heavily on the microorganisms, the substrate, temperature, salt, and time, so outcomes are variable and require skill to reproduce. Fermentation preserves food but does not make everything safe indefinitely. So fermentation robustly explains the microbial transformation of sugars into alcohol, acids, and gases for preservation and flavour, understood as a process that must be managed and whose results depend on the organisms and conditions.",
+  "misreadings": "Fermentation is not spontaneous decay; Louis Pasteur showed it is caused by living microorganisms, not by the food breaking down on its own. It is not always harmful spoilage, since controlled fermentation preserves food and creates desirable flavours, though uncontrolled microbial growth can spoil it. And it does not require adding alcohol, since the alcohol or acid is produced by the microbes from sugars, so treating fermentation as mere rotting, as inherently bad, or as needing added alcohol, misreads a microbial process that converts sugars into preservation and flavour.",
+  "origin": "An ancient food technology and a form of anaerobic metabolism; shown by Louis Pasteur in the nineteenth century to be caused by living microorganisms, foundational to food production and microbiology.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Fermentation, Wikipedia. — the anaerobic metabolic breakdown of sugars by microorganisms into products like ethanol, lactate, and carbon dioxide, ethanol and lactic-acid fermentation, and the food and preservation applications.", "url": "https://en.wikipedia.org/wiki/Fermentation", "type": "secondary"},
+    {"text": "Fermentation in food processing, Wikipedia. — the use of fermentation to make beer, wine, bread, yogurt, cheese, sauerkraut, and other foods, its preservation and flavour roles, and Pasteur's link of yeast to fermentation.", "url": "https://en.wikipedia.org/wiki/Fermentation_in_food_processing", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fermentation",
+  "related": [
+    {"slug": "curing", "kind": "kindred"},
+    {"slug": "pasteurization", "kind": "tension"}
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "no": "816",
+  "slug": "pasteurization",
+  "name": "Pasteurization",
+  "aliases": ["Pasteurisation", "Heat pasteurization"],
+  "statement": "Gently heating milk kills its dangerous germs without boiling it or making it sterile.",
+  "statementAccent": "kills its dangerous germs without boiling it",
+  "meaning": "Pasteurization is a process of mild heat treatment in which a food or beverage is heated to a specific temperature for a set time and then cooled, in order to kill or inactivate pathogenic microorganisms and reduce spoilage organisms, making the product safer and extending its shelf life. It uses temperatures well below those of full sterilization, usually below the boiling point, so it does not kill all microbes, particularly heat-resistant bacterial spores, and it does not greatly change the food's character. Named after the French microbiologist Louis Pasteur, who developed the process in the 1860s originally to keep wine and beer from spoiling, pasteurization is most famously applied to milk, where it dramatically reduced milk-borne diseases such as tuberculosis and brucellosis. It is also used for fruit juices, beer, wine, eggs, and many other products. Because it is not sterilization, pasteurized milk still spoils over time and needs refrigeration, except for ultra-high-temperature milk, which is processed hotter to become shelf-stable.",
+  "mechanism": "Pasteurization works by applying just enough heat, for just long enough, to destroy the pathogens and reduce the spoilage organisms in a food while minimizing changes to its flavour and nutrition. Different combinations of temperature and time achieve this. Low-temperature long-time, or batch, pasteurization holds milk at about sixty-three degrees Celsius for thirty minutes. High-temperature short-time, or flash, pasteurization heats it to about seventy-two degrees for around fifteen seconds, the common industrial method. Ultra-high-temperature processing heats milk to roughly one hundred thirty-five degrees or more for a few seconds, which kills far more organisms and, with sterile packaging, produces long-life milk that keeps without refrigeration. Crucially, none of these fully sterilizes the product: heat-resistant spores and some microbes survive, so ordinary pasteurized milk still eventually spoils and must be kept cold. The goal is a balance, enough heat to make the product safe and extend its life, but not so much as to degrade its quality the way harsher sterilization would.",
+  "examples": [
+    {
+      "tag": "Milk pasteurization",
+      "text": "Milk is heated, commonly to about seventy-two degrees Celsius for fifteen seconds, to kill pathogens while keeping much of its flavour."
+    },
+    {
+      "tag": "Not sterilization",
+      "text": "Pasteurized milk is not sterile, since heat-resistant spores survive, so it still spoils over time and must be refrigerated."
+    },
+    {
+      "tag": "Public health",
+      "text": "Pasteurizing milk dramatically reduced milk-borne diseases such as tuberculosis and brucellosis, a major public-health advance."
+    }
+  ],
+  "variants": [
+    {
+      "name": "HTST flash pasteurization",
+      "text": "High-temperature short-time processing, heating to about seventy-two degrees for around fifteen seconds, the common industrial method."
+    },
+    {
+      "name": "UHT processing",
+      "text": "Ultra-high-temperature heating to roughly one hundred thirty-five degrees or more for seconds, producing shelf-stable long-life milk."
+    }
+  ],
+  "whyItMatters": "Pasteurization is one of the most important food-safety technologies in history, credited with dramatically reducing illness and death from contaminated food and drink. Its application to milk was transformative, sharply cutting milk-borne diseases such as tuberculosis, brucellosis, and infections that once killed many, especially children, and making milk safe for mass consumption. Beyond milk, pasteurization protects fruit juices, beer, wine, eggs, and other products from pathogens and spoilage, extending shelf life and enabling safe distribution. Its genius lies in balance: by using mild heat rather than full sterilization, it kills the dangerous organisms while largely preserving flavour and nutrition, a compromise that makes safe food palatable. Named for Louis Pasteur, whose work also helped establish germ theory, pasteurization stands as a landmark of applied microbiology and public health. It remains a foundational process in the modern food supply, quietly preventing disease in countless everyday products around the world.",
+  "working": [
+    {"lead": "Heat to a set temperature", "text": "raise the food to a chosen temperature below boiling, such as seventy-two degrees Celsius for milk."},
+    {"lead": "Hold and cool", "text": "keep it there for the required time, seconds to minutes, then cool it promptly."},
+    {"lead": "Reduce microbes without sterilizing", "text": "destroy pathogens and cut spoilage organisms while leaving some microbes, so quality is preserved but the product still needs care."}
+  ],
+  "limits": "Pasteurization is not sterilization; it does not kill all microorganisms, especially heat-resistant bacterial spores, so pasteurized products still spoil over time and, except for ultra-high-temperature goods, require refrigeration. It reduces but does not eliminate all risk, and it cannot undo contamination that occurs after processing or remove toxins already present. The exact temperatures and times vary by product and method, and figures like seventy-two degrees for fifteen seconds are standard approximations that differ slightly between sources. Pasteurization can cause minor changes to flavour and some nutrients, and harsher treatments like ultra-high-temperature processing change the product more. So pasteurization robustly improves safety and shelf life by mild heat, understood as a deliberate compromise short of sterilization that leaves some microbes and requires proper handling.",
+  "misreadings": "Pasteurization does not sterilize food; it kills pathogens and reduces spoilage organisms but leaves heat-resistant spores and some microbes, so pasteurized milk still spoils and needs refrigeration. It is not boiling, since it uses gentler heat to preserve flavour and nutrition. And it does not make food safe forever or fix later contamination, so treating pasteurization as sterilization, as boiling, or as a permanent guarantee of safety, misreads a mild heat treatment that reduces harmful microbes while deliberately stopping short of killing everything.",
+  "origin": "Named after the French microbiologist Louis Pasteur, who developed it in the 1860s to prevent wine and beer from spoiling; a mild heat treatment that kills pathogens and extends shelf life without full sterilization.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": "Louis Pasteur",
+  "sources": [
+    {"text": "Pasteurization, Wikipedia. — the mild heat treatment that destroys pathogens and reduces spoilage organisms without full sterilization, the Louis Pasteur 1860s origin, the LTLT, HTST, and UHT methods and temperatures, the survival of spores, and the public-health impact on milk-borne disease.", "url": "https://en.wikipedia.org/wiki/Pasteurization", "type": "secondary"},
+    {"text": "Pasteurization, Encyclopaedia Britannica. — pasteurization as heat treatment destroying pathogenic microorganisms using lower temperatures than sterilization, its origin with Pasteur and wine, and its methods.", "url": "https://www.britannica.com/technology/pasteurization", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Pasteurization",
+  "related": [
+    {"slug": "fermentation", "kind": "tension"},
+    {"slug": "curing", "kind": "kindred"}
+  ]
+}
