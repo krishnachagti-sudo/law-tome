@@ -1,0 +1,83 @@
+{
+  "no": "698",
+  "slug": "the-berry-paradox",
+  "name": "The Berry Paradox",
+  "aliases": [
+    "Berry's paradox",
+    "The smallest undefinable integer"
+  ],
+  "statement": "The smallest number not describable in under sixty letters is just described, in under sixty letters.",
+  "statementAccent": "is just described, in under sixty letters",
+  "meaning": "The Berry paradox is a self-referential paradox in logic and mathematics arising from an expression such as the smallest positive integer not definable in under sixty letters. It is named after G. G. Berry, a junior librarian at Oxford's Bodleian Library, who suggested it to Bertrand Russell, and Russell first published it in 1908 in his paper Mathematical Logic as Based on the Theory of Types, attributing it to Berry. Russell's own version spoke of the least integer not nameable in fewer than nineteen syllables. The paradox is a semantic one, akin to the liar paradox: it exploits the vague, self-referential notion of definability. There are only finitely many short phrases, so they can define only finitely many integers, which guarantees that some integer is not definable in under sixty letters; yet the very phrase naming the smallest such integer is itself short, producing a contradiction that reveals a deep problem with treating definability as a precise notion.",
+  "mechanism": "The argument runs as follows. The alphabet is finite, so there are only finitely many phrases of fewer than sixty letters, and hence they can define at most finitely many positive integers. Since there are infinitely many positive integers, some are not definable in under sixty letters, and by the well-ordering of the integers there must be a smallest such integer. But the phrase the smallest positive integer not definable in under sixty letters has fewer than sixty letters and appears to define exactly that integer, so this integer both is and is not definable in under sixty letters, a contradiction. The syllable version works the same way, the naming phrase itself being short. The resolution is that the informal notion of definability, or nameability, is not a well-defined arithmetical concept; it cannot be consistently used within the very language that is supposed to contain it. This diagnosis links the paradox to Tarski's theorem on the undefinability of truth, which shows a sufficiently rich language cannot contain its own truth predicate, and to Richard's paradox. Gregory Chaitin used a formalised version to prove that Kolmogorov complexity is uncomputable, yielding an incompleteness result.",
+  "examples": [
+    {
+      "tag": "The self-defeating phrase",
+      "text": "The phrase the smallest positive integer not definable in under sixty letters is itself under sixty letters and seems to define that very integer, a contradiction."
+    },
+    {
+      "tag": "Russell's syllable version",
+      "text": "Russell's 1908 form spoke of the least integer not nameable in fewer than nineteen syllables, a phrase that is itself eighteen syllables long."
+    },
+    {
+      "tag": "Chaitin's incompleteness",
+      "text": "Gregory Chaitin formalised the Berry paradox to show that Kolmogorov complexity is uncomputable, turning the puzzle into a proof of an incompleteness result."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The definability diagnosis",
+      "text": "The resolution that definability is not a well-defined arithmetical notion and cannot be consistently used within the language that supposedly contains it."
+    },
+    {
+      "name": "The Chaitin formalisation",
+      "text": "Chaitin's rigorous version connecting the paradox to Kolmogorov complexity and to incompleteness, showing complexity is not computable."
+    }
+  ],
+  "whyItMatters": "The Berry paradox is an important paradox in mathematical logic, illuminating the perils of self-reference and the informal notion of definability. By deriving a contradiction from the innocent-looking idea of the smallest integer not describable in few words, it shows that definability and nameability cannot be treated as precise arithmetical concepts within their own language, a lesson closely tied to Tarski's undefinability of truth and to the family of semantic paradoxes including the liar and Richard's paradox. Its greatest significance is that Gregory Chaitin transformed it into rigorous mathematics, using a formalised version to prove that Kolmogorov complexity is uncomputable and to obtain incompleteness results in the spirit of Gödel. The paradox thus links a piece of wordplay about naming numbers to the deepest limits of formal systems and computation, making it a touchstone in the foundations of mathematics.",
+  "working": [
+    {
+      "lead": "Count the short phrases",
+      "text": "note that only finitely many phrases have under sixty letters, so they define only finitely many integers, leaving some integer undefinable in that many letters."
+    },
+    {
+      "lead": "Name the smallest one",
+      "text": "form the phrase the smallest positive integer not definable in under sixty letters, which is itself short and seems to define that integer."
+    },
+    {
+      "lead": "Reject definability as precise",
+      "text": "resolve the contradiction by recognising that definability is not a well-defined arithmetical notion within the language, linking to Tarski and Chaitin."
+    }
+  ],
+  "limits": "The Berry paradox is a semantic paradox that depends on the informal, imprecise notion of definability; once definability is handled carefully, the contradiction is blocked rather than sustained, so it does not threaten properly formalised mathematics. Its resolution, that a sufficiently rich language cannot contain its own definability or truth predicate, connects it to Tarski's theorem and marks it as a limitation on self-reference rather than a genuine inconsistency in arithmetic. The paradox becomes mathematically fruitful only when formalised, as in Chaitin's work, where the vague notion is replaced by the precise concept of Kolmogorov complexity. So it is best understood as a vivid pointer to real theorems about undefinability and incompleteness, not as a standalone contradiction within mathematics itself.",
+  "misreadings": "The paradox does not show that arithmetic is inconsistent; it shows that the informal notion of definability cannot be used precisely within its own language, which is a limitation on self-reference, not a flaw in number theory. It is not merely a play on words either, since Chaitin's formalisation turns it into a genuine incompleteness result about Kolmogorov complexity. And the resolution is not that the smallest such integer fails to exist, but that the phrase purporting to define it relies on a notion, definability, that is not well defined, which is exactly where the argument breaks down.",
+  "origin": "Named after G. G. Berry, a Bodleian Library assistant who suggested it to Bertrand Russell; Russell first published it in 1908 in Mathematical Logic as Based on the Theory of Types, and it was later formalised by Gregory Chaitin to prove incompleteness results.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1908,
+  "namedAfter": "G. G. Berry",
+  "sources": [
+    {
+      "text": "Berry paradox, Wikipedia. — the smallest-integer-not-definable formulation, the Berry and Russell attribution and 1908 publication, the finite-phrases contradiction, the ill-defined-definability resolution, and the links to Richard's paradox, Tarski, and Chaitin.",
+      "url": "https://en.wikipedia.org/wiki/Berry_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Berry Paradox, Wolfram MathWorld. — Russell's syllable formulation and the paradox's basis in the vague notion of definability.",
+      "url": "https://mathworld.wolfram.com/BerryParadox.html",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Berry_paradox",
+  "related": [
+    {
+      "slug": "the-liar-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "russells-paradox",
+      "kind": "kindred"
+    }
+  ]
+}

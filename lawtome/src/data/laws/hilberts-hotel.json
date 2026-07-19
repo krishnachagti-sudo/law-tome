@@ -1,0 +1,82 @@
+{
+  "no": "700",
+  "slug": "hilberts-hotel",
+  "name": "Hilbert's Hotel",
+  "aliases": [
+    "Hilbert's paradox of the Grand Hotel",
+    "The infinite hotel"
+  ],
+  "statement": "A hotel with infinitely many rooms, every one occupied, can still make room for a new guest.",
+  "statementAccent": "can still make room for a new guest",
+  "meaning": "Hilbert's Hotel, or Hilbert's paradox of the Grand Hotel, is a thought experiment illustrating the counterintuitive properties of infinite sets, devised by the German mathematician David Hilbert in a lecture in the 1920s and popularised by the physicist George Gamow in his 1947 book One Two Three... Infinity. Imagine a hotel with a countably infinite number of rooms, numbered one, two, three, and so on with no last room, and suppose every room is occupied. In an ordinary finite hotel, full means no more guests can be accommodated. But the infinite hotel can still take in new guests: by shifting the existing occupants, room can always be made, even for infinitely many newcomers. The paradox is not a contradiction but a vivid demonstration that infinity does not behave like ordinary finite numbers, and that for infinite sets a proper part can be just as large as the whole.",
+  "mechanism": "The tricks all rely on rearranging occupants among the endless rooms. To admit one new guest into a full hotel, move the occupant of room n to room n plus one, for every n at once; this vacates room one for the newcomer while everyone still has a room, since every room n plus one exists. To admit a countably infinite coachload of new guests, move the occupant of room n to room two n, sending everyone into the even-numbered rooms and freeing all the infinitely many odd-numbered rooms for the arrivals. Even infinitely many coaches, each carrying infinitely many guests, can be accommodated by a more elaborate assignment, for instance using prime powers or a pairing of the coach and seat numbers. What makes this possible is that the set of rooms is countably infinite, with cardinality aleph-null, and a countably infinite set has proper subsets, like the even numbers, of the very same cardinality as the whole. Adding one element, or even multiplying the set, does not change that cardinality, which is why fully occupied does not mean full.",
+  "examples": [
+    {
+      "tag": "One more guest",
+      "text": "Move every occupant from room n to room n plus one, freeing room one for a new guest even though every room was occupied."
+    },
+    {
+      "tag": "Infinitely many more",
+      "text": "Move the occupant of room n to room two n, filling the even rooms and freeing all the odd rooms for a countably infinite coachload of newcomers."
+    },
+    {
+      "tag": "A proper part as large as the whole",
+      "text": "The odd-numbered rooms alone have the same cardinality, aleph-null, as all the rooms together, the defining strangeness of infinite sets."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Infinitely many coaches",
+      "text": "The extension accommodating infinitely many coaches each with infinitely many guests, handled by assignments such as prime powers or a pairing of indices."
+    },
+    {
+      "name": "The cardinality lesson",
+      "text": "The underlying mathematics, that a countably infinite set has proper subsets of the same cardinality aleph-null, so adding or multiplying elements does not enlarge it."
+    }
+  ],
+  "whyItMatters": "Hilbert's Hotel is one of the most famous and accessible illustrations of the mathematics of infinity, making vivid the counterintuitive results of Cantor's theory of cardinality. By showing that a full infinite hotel can still accommodate new guests, it conveys that fully occupied does not mean full, that a proper subset of an infinite set can be as large as the whole, and that adding or even multiplying elements leaves a countably infinite set the same size. These ideas are central to set theory and the modern understanding of the infinite, and the hotel has become a standard teaching device for introducing countable infinity and cardinal arithmetic. Its striking imagery has also carried it into philosophical and theological debates about whether an actual infinity could exist in the physical world, making it a bridge between rigorous mathematics and wider reflection on infinity.",
+  "working": [
+    {
+      "lead": "Fill the infinite hotel",
+      "text": "picture countably infinite rooms, numbered without end, all occupied, so that finite intuition says no more guests fit."
+    },
+    {
+      "lead": "Shift the occupants",
+      "text": "move everyone from room n to room n plus one for a single guest, or to room two n to free infinitely many odd rooms."
+    },
+    {
+      "lead": "Read off the cardinality",
+      "text": "recognise that a countably infinite set has proper subsets of the same size, so adding or multiplying guests never exceeds aleph-null."
+    }
+  ],
+  "limits": "Hilbert's Hotel is a thought experiment about the mathematics of countable infinity, not a claim about any real hotel; no physical hotel has infinitely many rooms, and the manoeuvres assume idealised, instantaneous rearrangements. Its results are specific to countable infinity, cardinality aleph-null; larger infinities, such as the uncountable infinity of the real numbers, behave differently and cannot be enumerated room by room, so the hotel does not illustrate every kind of infinite set. Philosophical uses of the hotel to argue for or against the possibility of an actual physical infinity are contested and go beyond the mathematics itself. So the example faithfully conveys the strangeness of countable infinity while being an idealisation whose lessons must be applied with care to other infinities and to the physical world.",
+  "misreadings": "The hotel is not a paradox in the sense of a contradiction; the rearrangements are perfectly consistent, and the strangeness only reflects that infinite sets do not obey finite intuitions. Full does not entail no vacancies here because a countably infinite set can be put into one-to-one correspondence with a proper subset of itself. And the example concerns countable infinity specifically, so treating it as showing that any infinity can always absorb more, including uncountable infinities, misapplies a result that holds for aleph-null but not for larger cardinalities.",
+  "origin": "Devised by the German mathematician David Hilbert in a lecture in the 1920s and popularised by George Gamow in his 1947 book One Two Three... Infinity, to illustrate the counterintuitive properties of countable infinity in Cantor's theory of cardinality.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "namedAfter": "David Hilbert",
+  "sources": [
+    {
+      "text": "Hilbert's paradox of the Grand Hotel, Wikipedia. — Hilbert's 1920s lecture and Gamow's 1947 popularisation, the shift n to n plus one for one guest and n to two n for infinitely many, the infinite-coaches extension, and the cardinality lesson about aleph-null.",
+      "url": "https://en.wikipedia.org/wiki/Hilbert%27s_paradox_of_the_Grand_Hotel",
+      "type": "secondary"
+    },
+    {
+      "text": "Helge Kragh, The True (?) Story of Hilbert's Infinite Hotel (arXiv). — the historical origin of the thought experiment in Hilbert's lectures.",
+      "url": "https://arxiv.org/pdf/1403.0059",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hilbert%27s_paradox_of_the_Grand_Hotel",
+  "related": [
+    {
+      "slug": "cantors-diagonal-argument",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-berry-paradox",
+      "kind": "kindred"
+    }
+  ]
+}

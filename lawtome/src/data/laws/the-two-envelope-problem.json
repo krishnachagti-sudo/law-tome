@@ -1,0 +1,56 @@
+{
+  "no": "690",
+  "slug": "the-two-envelope-problem",
+  "name": "The Two Envelopes Problem",
+  "aliases": ["The exchange paradox", "The envelope paradox"],
+  "statement": "A flawed calculation says the other envelope is always worth more, so you should switch forever.",
+  "statementAccent": "the other envelope is always worth more, so you should switch forever",
+  "meaning": "The two envelopes problem, also called the exchange paradox, is a puzzle in probability and decision theory. You are given two indistinguishable envelopes, each containing money, and told that one contains exactly twice as much as the other. You pick one envelope and, before opening it, are offered the chance to switch to the other. A tempting line of reasoning seems to show that switching is always better: whatever amount is in your envelope, the other holds either double or half, so the expected value of switching exceeds what you hold, and you should switch. But the same reasoning would apply after switching, so you should switch back, and again, forever, which is absurd since the two envelopes are symmetric and there is no reason to prefer either. The paradox lies in a seductive but fallacious expected-value calculation, and resolving it exposes a subtle error in how the problem is set up.",
+  "mechanism": "Let the amount in your chosen envelope be A. The switching argument says the other envelope contains 2A with probability one half and A over two with probability one half, giving an expected value of one half times 2A plus one half times A over two, which equals 1.25A, more than A, so you should switch. The flaw is an equivocation: the single symbol A is used for two different quantities. In the case where the other envelope holds 2A, your envelope is the smaller amount; in the case where it holds A over two, your envelope is the larger amount, so A does not name a fixed sum across the two cases. What is actually fixed are the two real amounts, the smaller x and the larger 2x. Setting up the sample space correctly over x and 2x, both envelopes have the same expected value, 1.5x, so the expected gain from switching is zero and there is no advantage. The naive calculation mixes the two states and double-counts, manufacturing an illusory gain.",
+  "examples": [
+    {
+      "tag": "The 1.25A trap",
+      "text": "Reasoning that the other envelope averages one half of 2A plus one half of A over two, equal to 1.25A, seems to prove switching always wins, which cannot be right."
+    },
+    {
+      "tag": "Infinite switching",
+      "text": "If the argument were sound it would also justify switching back after switching, and again endlessly, an absurdity that signals the reasoning is broken."
+    },
+    {
+      "tag": "The correct sample space",
+      "text": "Fixing the two real amounts as x and 2x, each envelope has expected value 1.5x, so switching gains nothing and the paradox dissolves."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The equivocation diagnosis",
+      "text": "The standard resolution that the paradox misuses one symbol for two different amounts, and that a properly specified sample space shows no advantage to switching."
+    },
+    {
+      "name": "The unbounded-prior version",
+      "text": "A subtler variant with a probability distribution of infinite expected value, where the switching argument is harder to dismiss and needs more careful decision-theoretic analysis."
+    }
+  ],
+  "whyItMatters": "The two envelopes problem is a famous and much-discussed puzzle that dramatizes how easily expected-value reasoning can go wrong when the sample space and random variables are not specified with care. Its seductive calculation looks impeccable yet leads to the plainly absurd conclusion that one should switch forever, making it a memorable lesson in the importance of defining probability problems precisely. The paradox is a staple in teaching probability and decision theory, illustrating the danger of letting a single symbol stand for shifting quantities, and its harder unbounded-prior variants connect to deep issues about infinite expectations and the limits of expected-value maximization. As a compact case where careful bookkeeping defeats a compelling illusion, it remains a standard exercise in probabilistic reasoning.",
+  "working": [
+    {"lead": "Follow the tempting argument", "text": "note the claim that the other envelope averages 1.25 times your amount, seeming to make switching always worthwhile."},
+    {"lead": "Spot the absurdity", "text": "observe that the same reasoning justifies switching back forever, which shows the argument must contain an error."},
+    {"lead": "Fix the sample space", "text": "define the two real amounts as x and 2x, compute that each envelope has expected value 1.5x, and see that switching gains nothing."}
+  ],
+  "limits": "The equivocation resolution settles the classic version, where the two amounts are fixed and the switching argument simply misdescribes the sample space. It does not fully dispose of every variant: if one posits a probability distribution over the amounts with infinite expected value, the switching argument becomes genuinely harder to rebut, and careful decision theory is needed to show either that a premise fails or that the argument is invalid in the infinite case. So the paradox is really a family of problems, cleanly resolved in its standard finite form but pointing, in its unbounded versions, to real difficulties about infinite expectations. Its lesson is less a single fix than a warning to specify the probabilistic setup exactly before trusting an expected-value comparison.",
+  "misreadings": "The paradox is not evidence that switching really is advantageous; the switching argument is fallacious, and correctly analysed there is no gain. The error is not a deep fact about envelopes but a bookkeeping mistake, using one symbol A for two different amounts. And the clean resolution applies to the ordinary finite version; treating that resolution as covering the subtler infinite-expectation variants overstates it, since those require separate and more careful treatment. The moral is about specifying the sample space, not about any genuine reason to keep swapping.",
+  "origin": "A puzzle in probability and decision theory, known as the exchange paradox, in which a fallacious expected-value argument appears to show that one should always switch between two envelopes, resolved by correctly specifying the sample space.",
+  "category": "statistics",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "namedAfter": null,
+  "sources": [
+    {"text": "Two envelopes problem, Wikipedia. — the two-envelopes and twice-the-amount setup, the 1.25A switching argument, the infinite-switching absurdity, the equivocation resolution, and the subtler unbounded-prior variant.", "url": "https://en.wikipedia.org/wiki/Two_envelopes_problem", "type": "secondary"},
+    {"text": "Infinity, Stanford Encyclopedia of Philosophy. — the two envelopes as a tacitly infinite decision problem and the treatment of the infinite-expectation case.", "url": "https://plato.stanford.edu/entries/infinity/decision-problems.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Two_envelopes_problem",
+  "related": [
+    {"slug": "the-st-petersburg-paradox", "kind": "kindred"},
+    {"slug": "the-allais-paradox", "kind": "kindred"}
+  ]
+}

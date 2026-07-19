@@ -1,0 +1,82 @@
+{
+  "no": "701",
+  "slug": "the-potato-paradox",
+  "name": "The Potato Paradox",
+  "aliases": [
+    "The dehydrating potatoes",
+    "The 99 percent water puzzle"
+  ],
+  "statement": "Potatoes that are 99 percent water, dried to 98 percent water, lose half their weight, not one percent.",
+  "statementAccent": "lose half their weight, not one percent",
+  "meaning": "The potato paradox is a mathematical puzzle about percentages and proportions whose correct answer is startlingly counterintuitive. You start with one hundred kilograms of potatoes that are ninety-nine percent water by weight. You leave them to dry until they are ninety-eight percent water. The surprising result is that the potatoes now weigh only fifty kilograms, not the roughly ninety-nine kilograms that intuition suggests. In the terminology used to classify paradoxes, it is a veridical paradox: the outcome seems absurd but is genuinely, provably true. The puzzle is a favourite illustration of how ratios and percentages can defy intuition, because a change that sounds tiny, dropping the water content by a single percentage point, corresponds to a change that is anything but tiny, halving the total mass. The key to seeing why is to track not the water but the unchanging dry matter.",
+  "mechanism": "The trick is to follow the solid, non-water part of the potatoes, which does not change as water evaporates. At the start, one hundred kilograms at ninety-nine percent water contains one percent solids, that is, one kilogram of dry matter, and ninety-nine kilograms of water. After drying to ninety-eight percent water, the solids are two percent of the new total, since one hundred percent minus ninety-eight percent is two percent. But the amount of dry matter is still one kilogram, because only water left. If one kilogram is two percent of the new total, the new total is one divided by zero point zero two, which is fifty kilograms. The water has fallen from ninety-nine kilograms to forty-nine kilograms while the solids held at one kilogram. The counterintuitive jump happens because halving the total is what it takes to double the solids' share from one percent to two percent; a small change in the water percentage forces a large change in the total, since the fixed dry mass must now make up twice as large a fraction.",
+  "examples": [
+    {
+      "tag": "The constant kilogram",
+      "text": "The one kilogram of dry matter never changes as water evaporates; only the water mass falls, from ninety-nine kilograms to forty-nine."
+    },
+    {
+      "tag": "One percent to two percent",
+      "text": "Going from ninety-nine to ninety-eight percent water doubles the solids' share from one to two percent, which requires the total to halve to fifty kilograms."
+    },
+    {
+      "tag": "The intuition trap",
+      "text": "People expect a drop from ninety-nine to ninety-eight percent water to barely change the weight, but it removes half the mass."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The dry-mass method",
+      "text": "The correct approach of tracking the unchanging solid mass, which goes from one to two percent of the total, forcing the total to halve."
+    },
+    {
+      "name": "The percentage-point illusion",
+      "text": "The misleading intuition that a one-percentage-point change in water content implies a one-percent change in total weight."
+    }
+  ],
+  "whyItMatters": "The potato paradox is a popular and memorable illustration of how percentages and ratios can be deeply counterintuitive, widely used to teach proportional reasoning. Its lesson is that a small change in a percentage can correspond to a large change in an absolute quantity, because the base to which the percentage refers is itself changing. By directing attention to the fixed dry mass rather than the salient but misleading water percentage, it teaches a general problem-solving strategy: identify the quantity that stays constant and reason from it. The puzzle exposes a common cognitive trap, treating a percentage-point change as if it were a proportional change, that surfaces in real contexts from concentration and dilution to statistics and finance. As a clean, concrete example of a true result that feels false, it is a staple of recreational mathematics and numeracy education.",
+  "working": [
+    {
+      "lead": "Find the constant quantity",
+      "text": "note that drying removes only water, so the dry matter, one kilogram, stays fixed throughout."
+    },
+    {
+      "lead": "Track its share",
+      "text": "see that the solids go from one percent of the total to two percent as the water falls from ninety-nine to ninety-eight percent."
+    },
+    {
+      "lead": "Solve for the new total",
+      "text": "since one kilogram is now two percent, the total is fifty kilograms, so the potatoes lost half their weight."
+    }
+  ],
+  "limits": "The potato paradox is an exact arithmetic result under its idealising assumptions: that only water leaves during drying, that the solid mass is truly constant, and that the percentages are precise. Real potatoes lose some solids and gain or lose trace amounts in other ways, so the clean halving is a mathematical idealisation rather than a laboratory measurement. The puzzle also depends on the specific numbers chosen; the dramatic halving arises because ninety-nine and ninety-eight percent are close to one hundred, where small percentage changes have large proportional effects, and other starting figures give less striking results. So it is best understood as a lesson in proportional reasoning and the behaviour of percentages near their extremes, not as a precise empirical claim about drying vegetables.",
+  "misreadings": "The paradox is not a trick or an error; the fifty-kilogram answer is exactly correct given the stated percentages. The mistake it exposes is treating a one-percentage-point drop in water as a one-percent drop in weight, when in fact it doubles the solids' share and halves the total. And the striking result depends on the numbers being near one hundred percent water; it is not a general rule that shaving one percentage point off any concentration halves the mass, so reading it as such misapplies a lesson about proportions near their extremes.",
+  "origin": "A veridical mathematical paradox about percentages, in which one hundred kilograms of potatoes at ninety-nine percent water, dried to ninety-eight percent water, weigh fifty kilograms; popularised through recreational-mathematics collections and puzzles.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "namedAfter": null,
+  "sources": [
+    {
+      "text": "Potato paradox, Wikipedia. — the hundred-kilogram, ninety-nine-to-ninety-eight-percent-water setup, the fifty-kilogram answer, the constant one-kilogram dry-mass reasoning going from one to two percent, and its status as a veridical paradox.",
+      "url": "https://en.wikipedia.org/wiki/Potato_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Potato Paradox, Wolfram MathWorld. — the puzzle and the dry-mass calculation yielding the halved weight.",
+      "url": "https://mathworld.wolfram.com/PotatoParadox.html",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Potato_paradox",
+  "related": [
+    {
+      "slug": "simpsons-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-boy-or-girl-paradox",
+      "kind": "kindred"
+    }
+  ]
+}
