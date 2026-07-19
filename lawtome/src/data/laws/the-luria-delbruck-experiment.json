@@ -1,0 +1,57 @@
+{
+  "no": "870",
+  "slug": "the-luria-delbruck-experiment",
+  "name": "The Luria-Delbrück Experiment",
+  "aliases": ["Luria-Delbrück experiment", "The fluctuation test"],
+  "statement": "Wild swings in how many resistant bacteria appeared proved that mutations arise at random, before any selection.",
+  "statementAccent": "mutations arise at random, before any selection",
+  "meaning": "The Luria-Delbrück experiment, also called the fluctuation test, was a foundational experiment in genetics carried out by Salvador Luria and Max Delbrück and published in 1943, which showed that mutations in bacteria arise spontaneously and at random, before and independently of any selective pressure, rather than being induced by that pressure. The question was how bacteria come to resist a bacteriophage, a virus that kills them: did the phage somehow induce or teach resistance in the bacteria it attacked, a directed or Lamarckian-style adaptation, or did resistant mutants arise randomly during ordinary growth, before the phage was ever encountered, with the phage merely selecting those already resistant, a Darwinian process. Luria and Delbrück devised a clever statistical test. They grew many separate parallel cultures of bacteria and then exposed each to the phage and counted how many resistant colonies survived. If resistance were induced by the phage, the numbers of survivors should be similar across cultures; if resistance arose from random mutations during growth, the numbers should vary enormously, because a mutation that happened early in one culture would leave a huge lineage of resistant descendants while a late one would leave few. They found huge fluctuations between cultures, the signature of random, pre-existing mutation, confirming the Darwinian view and helping found bacterial genetics.",
+  "mechanism": "The experiment distinguished two hypotheses by their different statistical predictions for the number of resistant bacteria across many parallel cultures. Under the induced-resistance hypothesis, the phage itself would cause a small, roughly constant fraction of the bacteria it met to become resistant at the moment of exposure, so that many separate cultures, each challenged with phage, would yield similar numbers of resistant survivors, following a narrow distribution with a variance close to its mean. Under the spontaneous-mutation hypothesis, resistance would arise by chance mutations occurring randomly during the many divisions of ordinary growth, before any phage was present. In that case the timing of a mutation matters enormously: if a resistance mutation happened early in a culture's growth, all the descendants of that mutant cell would also be resistant, producing a jackpot culture with a very large number of resistant bacteria, whereas a mutation occurring late would leave only a few. Across many cultures, this would produce wildly varying numbers of survivors, a distribution whose variance far exceeds its mean. Luria and Delbrück grew many small parallel cultures, plated each with phage, and counted the resistant colonies. The counts fluctuated dramatically, with occasional jackpots, matching the spontaneous-mutation prediction and ruling out induced resistance. Delbrück worked out the mathematics of this distribution, now called the Luria-Delbrück distribution.",
+  "examples": [
+    {
+      "tag": "Jackpot cultures",
+      "text": "Some cultures had huge numbers of resistant bacteria, jackpots from an early mutation whose resistant descendants all survived the phage."
+    },
+    {
+      "tag": "Fluctuation, not uniformity",
+      "text": "The resistant counts varied wildly between parallel cultures, the signature of random mutation rather than phage-induced resistance."
+    },
+    {
+      "tag": "Mutation before selection",
+      "text": "The result showed resistance mutations arose spontaneously during growth, before the phage was ever encountered."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Induced versus spontaneous",
+      "text": "The two hypotheses tested: resistance directed by the phage, or random mutations pre-existing selection, with the phage only selecting."
+    },
+    {
+      "name": "The Luria-Delbrück distribution",
+      "text": "The statistical distribution Delbrück derived for the number of mutants, whose large variance is the mark of random mutation."
+    }
+  ],
+  "whyItMatters": "The Luria-Delbrück experiment is a landmark of twentieth-century biology because it demonstrated that mutations arise spontaneously and at random, independently of the selective pressures that later act on them, a result central to the Darwinian understanding of evolution. By showing that bacterial resistance to a virus is not induced by the virus but arises from chance mutations occurring before any exposure, the experiment refuted the idea of directed, adaptive mutation and confirmed that natural selection acts on pre-existing random variation. This established a cornerstone of modern evolutionary genetics and helped found the field of bacterial genetics, opening bacteria and their viruses as powerful, quantitative systems for studying heredity that drove the rise of molecular biology. The experiment is also celebrated for introducing rigorous statistical and mathematical reasoning into biology, using the analysis of fluctuations, the Luria-Delbrück distribution, to distinguish hypotheses that could not be told apart by simple observation. Luria and Delbrück, with Alfred Hershey, shared the 1969 Nobel Prize in Physiology or Medicine for their work on the genetics of viruses. As the experiment that showed mutations are random and pre-exist selection, the fluctuation test is fundamental to genetics and evolution.",
+  "working": [
+    {"lead": "Grow parallel cultures", "text": "grow many separate small cultures of bacteria under identical conditions."},
+    {"lead": "Challenge with phage", "text": "expose each culture to a lethal virus and count how many resistant bacteria survive."},
+    {"lead": "Read the fluctuations", "text": "find wildly varying survivor counts with occasional jackpots, showing resistance mutations arose randomly before exposure."}
+  ],
+  "limits": "The Luria-Delbrück experiment settled the question of induced versus spontaneous mutation for the specific case it examined, bacterial resistance to a phage, and its conclusion that mutations arise randomly before selection is a robust and general principle of genetics. Its inference is statistical, resting on the difference in the variance of survivor counts between the two hypotheses rather than on directly watching mutations occur, so it depends on the soundness of the mathematical model Delbrück derived. Later work using other methods, such as replica plating by the Lederbergs, confirmed the same conclusion more directly. The experiment concerns the randomness of when and whether a mutation occurs; it does not deny that mutation rates can be influenced by conditions, nor does it bear on later, subtler debates about stress-induced mutagenesis, which are distinct phenomena. So the Luria-Delbrück experiment robustly showed that mutations arise spontaneously and independently of selection, understood as a statistical demonstration in a specific system whose general conclusion was confirmed by later work.",
+  "misreadings": "The Luria-Delbrück experiment did not show that the phage teaches or induces resistance; it showed the opposite, that resistance mutations arise randomly during growth before the phage is met, with the phage only selecting them. Its conclusion is statistical, inferred from the large fluctuations between cultures, not from watching individual mutations. And showing that mutations are random in timing does not mean mutation rates can never be affected by conditions, a separate matter, so treating the phage as inducing resistance, the result as direct observation, or randomness as forbidding any influence on mutation rates, misreads the experiment that proved mutations pre-exist selection.",
+  "origin": "An experiment by Salvador Luria and Max Delbrück published in 1943, using the fluctuation of resistant-bacteria counts across parallel cultures to show that mutations arise spontaneously and at random before any selection; a foundation of bacterial genetics.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1943,
+  "namedAfter": "Salvador Luria and Max Delbrück",
+  "sources": [
+    {"text": "Luria-Delbrück experiment, Wikipedia. — the 1943 fluctuation test by Luria and Delbrück, the induced-versus-spontaneous question for phage resistance, the parallel cultures and jackpot fluctuations showing random pre-existing mutation, the Luria-Delbrück distribution, and its foundational role in bacterial genetics.", "url": "https://en.wikipedia.org/wiki/Luria%E2%80%93Delbr%C3%BCck_experiment", "type": "secondary"},
+    {"text": "The Nobel Prize in Physiology or Medicine 1969, NobelPrize.org. — the award to Delbrück, Hershey, and Luria for their discoveries concerning the replication mechanism and the genetic structure of viruses.", "url": "https://www.nobelprize.org/prizes/medicine/1969/summary/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Luria%E2%80%93Delbr%C3%BCck_experiment",
+  "related": [
+    {"slug": "the-hershey-chase-experiment", "kind": "kindred"},
+    {"slug": "genetic-drift", "kind": "kindred"}
+  ]
+}

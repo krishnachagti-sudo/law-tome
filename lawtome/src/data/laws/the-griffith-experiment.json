@@ -1,0 +1,57 @@
+{
+  "no": "863",
+  "slug": "the-griffith-experiment",
+  "name": "Griffith's Experiment",
+  "aliases": ["Griffith's transformation experiment", "The transforming principle experiment"],
+  "statement": "Dead virulent bacteria could turn live harmless ones deadly, revealing that heredity can pass between organisms.",
+  "statementAccent": "revealing that heredity can pass between organisms",
+  "meaning": "Griffith's experiment was a bacteriology experiment performed by the British bacteriologist Frederick Griffith in 1928, which discovered the phenomenon of bacterial transformation and pointed toward the existence of a transferable hereditary substance. Griffith worked with Streptococcus pneumoniae, the bacterium that causes pneumonia, which comes in two forms: a smooth, virulent strain with a protective polysaccharide capsule that kills mice, and a rough, harmless strain without a capsule that does not. He found that injecting mice with the live smooth strain killed them, while the live rough strain or the heat-killed smooth strain left them unharmed. The striking result came when he injected mice with a mixture of the harmless live rough strain and the dead, heat-killed smooth strain: the mice died, and living smooth, virulent bacteria could be recovered from them. Since neither ingredient was lethal alone, something from the dead virulent bacteria had transformed the live harmless ones into the virulent form, and this change was heritable, passed on to their descendants. Griffith called this a transforming principle but could not identify what it was. His experiment revealed that hereditary traits can be transferred between bacteria, and set the stage for the later discovery that the transforming principle is DNA.",
+  "mechanism": "The experiment worked through a set of controlled injections into mice that isolated the surprising transforming effect. Griffith used two strains of pneumococcus: the smooth strain, whose polysaccharide capsule protects it from the host's immune system and makes it virulent, and the rough strain, which lacks the capsule and is easily destroyed by the host, so it is harmless. He injected four groups of mice. Mice given the live smooth strain died of pneumonia, as expected, and living smooth bacteria could be recovered from them. Mice given the live rough strain survived, since that strain cannot cause disease. Mice given the heat-killed smooth strain also survived, because the bacteria were dead. But mice given a mixture of the live harmless rough strain and the heat-killed virulent smooth strain died, and, crucially, living smooth, virulent bacteria were recovered from their bodies. Because the heat-killed smooth bacteria were dead and the live rough bacteria were harmless, the only explanation was that some substance from the dead smooth bacteria had entered the live rough bacteria and permanently transformed them into the virulent smooth form, a change inherited by their offspring. Griffith named this the transforming principle without identifying it chemically.",
+  "examples": [
+    {
+      "tag": "The four injections",
+      "text": "Live smooth killed mice, live rough did not, heat-killed smooth did not, but heat-killed smooth mixed with live rough did kill them."
+    },
+    {
+      "tag": "Living virulent bacteria recovered",
+      "text": "From mice given the dead smooth and live rough mixture, living smooth virulent bacteria were recovered, showing a heritable change."
+    },
+    {
+      "tag": "The transforming principle",
+      "text": "Griffith concluded some substance from the dead virulent bacteria transformed the harmless ones, but could not identify it."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Smooth and rough strains",
+      "text": "The virulent capsuled smooth strain and the harmless uncapsuled rough strain whose transformation Griffith observed."
+    },
+    {
+      "name": "Later identification as DNA",
+      "text": "The 1944 finding by Avery, MacLeod, and McCarty that Griffith's transforming principle is DNA."
+    }
+  ],
+  "whyItMatters": "Griffith's experiment is a landmark in the history of genetics because it discovered bacterial transformation, the transfer of a heritable trait from one organism to another, and thereby opened the path to identifying the molecule of heredity. By showing that dead virulent bacteria could permanently and heritably convert living harmless bacteria into the virulent form, Griffith demonstrated that some physical substance carries hereditary information and can pass between cells, a startling and fundamental insight. Although he could not identify the transforming principle, his work posed the precise question that Oswald Avery, Colin MacLeod, and Maclyn McCarty answered in 1944 when they showed the transforming principle is DNA, a decisive step toward establishing DNA as the genetic material. Transformation itself became a basic tool of molecular biology and genetic engineering, the means by which genes are introduced into bacteria. Griffith's careful use of controls, isolating the transforming effect by comparing several conditions, also makes the experiment a model of experimental design. As the experiment that discovered transformation and set the stage for the identification of DNA as the hereditary molecule, Griffith's work is a cornerstone of genetics.",
+  "working": [
+    {"lead": "Compare the strains", "text": "confirm that the live smooth strain kills mice while the live rough strain and heat-killed smooth strain do not."},
+    {"lead": "Mix dead and live", "text": "inject mice with harmless live rough bacteria mixed with dead virulent smooth bacteria, and find that the mice die."},
+    {"lead": "Recover transformed bacteria", "text": "recover living virulent bacteria from the mice, showing a transforming principle passed a heritable trait between cells."}
+  ],
+  "limits": "Griffith's experiment discovered transformation and pointed to a transferable hereditary substance, but it did not identify what that substance was, so on its own it did not establish DNA as the genetic material; that identification came only with the 1944 Avery-MacLeod-McCarty experiment, and the confirmation that DNA is the genetic material more broadly with Hershey-Chase in 1952. The experiment showed that heredity can be transferred between bacteria, but the mechanism of how the capsule genes were taken up and expressed was understood only later. It relied on a particular bacterium and on injections into mice, an indirect readout through disease and death. So Griffith's experiment robustly discovered bacterial transformation and the existence of a transforming principle, understood as a discovery that raised, rather than answered, the question of the chemical identity of the hereditary material.",
+  "misreadings": "Griffith's experiment did not identify DNA as the genetic material; it discovered transformation and a transforming principle whose chemical nature Griffith could not determine, leaving that to later work. The transformation was not a temporary infection but a heritable change, passed to the bacteria's descendants. And the harmless rough bacteria were not simply killed by the dead smooth ones, but genuinely transformed into the virulent form, so treating the experiment as showing DNA is genetic, as a mere infection, or as the dead bacteria doing the killing, misreads the discovery of bacterial transformation.",
+  "origin": "An experiment by the British bacteriologist Frederick Griffith in 1928, showing that dead virulent pneumococcus could heritably transform live harmless pneumococcus into the virulent form; the discovery of bacterial transformation and a transforming principle later identified as DNA.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1928,
+  "namedAfter": "Frederick Griffith",
+  "sources": [
+    {"text": "Griffith's experiment, Wikipedia. — Frederick Griffith's 1928 experiment with virulent smooth and harmless rough Streptococcus pneumoniae, the four mouse conditions, the recovery of living virulent bacteria from the dead-smooth-plus-live-rough mixture, the discovery of transformation and the transforming principle, and its later identification as DNA.", "url": "https://en.wikipedia.org/wiki/Griffith%27s_experiment", "type": "secondary"},
+    {"text": "Frederick Griffith, Encyclopaedia Britannica. — Griffith's transformation experiment and its significance for the study of heredity.", "url": "https://www.britannica.com/biography/Frederick-Griffith", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Griffith%27s_experiment",
+  "related": [
+    {"slug": "the-avery-macleod-mccarty-experiment", "kind": "consequence"},
+    {"slug": "the-hershey-chase-experiment", "kind": "kindred"}
+  ]
+}
