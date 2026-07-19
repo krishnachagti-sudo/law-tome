@@ -1,0 +1,57 @@
+{
+  "no": "586",
+  "slug": "eulers-polyhedron-formula",
+  "name": "Euler's Polyhedron Formula",
+  "aliases": ["Euler's formula for polyhedra", "The Descartes-Euler formula"],
+  "statement": "For any solid without holes, the vertices minus the edges plus the faces always equals two.",
+  "statementAccent": "the vertices minus the edges plus the faces always equals two",
+  "meaning": "Euler's polyhedron formula states that for any convex polyhedron, and more generally any polyhedron whose surface can be deformed into a sphere, the number of vertices minus the number of edges plus the number of faces equals two. A cube has eight vertices, twelve edges, and six faces, and eight minus twelve plus six is two; a tetrahedron gives four minus six plus four, also two. The quantity vertices minus edges plus faces is the same for every sphere-like solid, a fact so robust that it launched the field of topology. It reveals that this alternating count is not an accident of a particular shape but a property of the underlying surface, and it fails precisely when the surface has holes.",
+  "mechanism": "The invariance comes from the fact that the alternating count depends only on the topology of the surface, not on how it is carved into faces. This quantity is the Euler characteristic, and for any surface that can be continuously deformed into a sphere it is two. You can add a vertex on an edge, splitting one edge into two, which changes the counts but leaves the alternating sum fixed; likewise cutting a face in two by a new edge adds one edge and one face, again preserving the total. Because any two triangulations of the sphere can be transformed into each other by such moves, the sum is forced to equal two. A doughnut-shaped surface, having a hole, has Euler characteristic zero instead, so a toroidal polyhedron gives vertices minus edges plus faces equal to zero.",
+  "examples": [
+    {
+      "tag": "The cube",
+      "text": "A cube has eight vertices, twelve edges, and six faces, and eight minus twelve plus six equals two, as the formula requires."
+    },
+    {
+      "tag": "The five Platonic solids",
+      "text": "Combining the formula with the rule that regular faces meet uniformly at each vertex proves there can be exactly five regular convex polyhedra, no more."
+    },
+    {
+      "tag": "The doughnut exception",
+      "text": "A polyhedron shaped like a picture frame, with a hole through it, has Euler characteristic zero, so its vertices minus edges plus faces equal zero, not two."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Euler characteristic",
+      "text": "The generalisation of the alternating count to any surface, a topological invariant equal to two for the sphere, zero for the torus, and decreasing by two for each added handle."
+    },
+    {
+      "name": "The planar-graph form",
+      "text": "The equivalent statement that any connected graph drawn in the plane without crossings satisfies vertices minus edges plus faces equals two, counting the outer region as a face."
+    }
+  ],
+  "whyItMatters": "Euler's polyhedron formula is a founding result of topology and graph theory, the first clear example of a property that survives continuous deformation and so belongs to a surface rather than a shape. It proves that exactly five Platonic solids exist, constrains the structure of planar graphs and maps, and generalises to the Euler characteristic that classifies surfaces by their number of holes. Its tangled history, with Euler's early argument later found incomplete and Cauchy supplying a rigorous proof, became the centrepiece of Imre Lakatos's study of how mathematical definitions and proofs evolve, making the humble formula a case study in the nature of mathematical discovery.",
+  "working": [
+    {"lead": "Count and check", "text": "for any sphere-like solid, add vertices and faces, subtract edges, and expect exactly two; a different answer signals a hole or a counting error."},
+    {"lead": "Read it as topology", "text": "treat the alternating sum as a property of the surface, the Euler characteristic, unchanged by how the surface is divided into faces."},
+    {"lead": "Watch for holes", "text": "remember the value drops to zero for a one-holed torus and by two for each extra handle, so the formula's two is specific to sphere-like shapes."}
+  ],
+  "limits": "The value two holds only for polyhedra whose surface is topologically a sphere, meaning simply connected with no holes; a toroidal polyhedron gives zero, and each additional handle lowers the characteristic by two. Non-convex polyhedra still obey the formula as long as they are sphere-like, so convexity is sufficient but not necessary. Certain self-intersecting star polyhedra, like the great dodecahedron, are not genuine sphere-like surfaces and give other values entirely. The formula counts a topological invariant, so it says nothing about the metric geometry of a polyhedron, only about how its vertices, edges, and faces fit together.",
+  "misreadings": "The formula is not a universal law of all polyhedra; it requires the surface be deformable into a sphere, and a shape with a hole gives zero rather than two. Convexity guarantees the formula but is not required, so many non-convex solids still satisfy it. And the two is not a coincidence of small examples but the Euler characteristic of the sphere, so the same alternating count applies to any sphere-like solid however finely it is subdivided, which is exactly why the quantity, not the individual counts, is the meaningful thing.",
+  "origin": "Announced by Leonhard Euler in a 1750 letter to Christian Goldbach and published in 1758, with a related earlier result on angular defect due to Rene Descartes; Euler's own argument was incomplete, and a rigorous proof was given by Augustin-Louis Cauchy in 1811.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1750,
+  "namedAfter": "Leonhard Euler",
+  "sources": [
+    {"text": "Euler characteristic, Wikipedia. — the vertices-minus-edges-plus-faces formula, the cube and tetrahedron counts, the sphere value two and torus value zero.", "url": "https://en.wikipedia.org/wiki/Euler_characteristic", "type": "secondary"},
+    {"text": "Polyhedral Formula, Wolfram MathWorld. — the V plus F minus E equals two statement for simply connected polyhedra and the Descartes-Euler naming.", "url": "https://mathworld.wolfram.com/PolyhedralFormula.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Euler_characteristic",
+  "related": [
+    {"slug": "eulers-identity", "kind": "kindred"},
+    {"slug": "the-four-color-theorem", "kind": "kindred"}
+  ]
+}

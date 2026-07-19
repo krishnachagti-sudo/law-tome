@@ -1,0 +1,57 @@
+{
+  "no": "594",
+  "slug": "lhopitals-rule",
+  "name": "L'Hopital's Rule",
+  "aliases": ["L'Hospital's rule", "The Bernoulli-l'Hopital rule"],
+  "statement": "When a limit collapses to nothing over nothing, differentiate top and bottom and try again.",
+  "statementAccent": "differentiate top and bottom and try again",
+  "meaning": "L'Hopital's rule is a method for evaluating limits that reach an indeterminate form, either zero over zero or infinity over infinity, where the naive value is undefined. It says that under suitable conditions the limit of a ratio of two functions equals the limit of the ratio of their derivatives. So when substitution yields a meaningless zero over zero, one differentiates the numerator and the denominator separately, not as a quotient, and takes the limit of the new ratio, repeating if it is still indeterminate. Named after Guillaume de l'Hopital, who published it in the first calculus textbook in 1696, the rule is a staple tool of calculus, converting a stubborn indeterminate limit into a tractable one through differentiation.",
+  "mechanism": "The rule rests on the Cauchy mean value theorem, which relates the ratio of two functions' changes over an interval to the ratio of their derivatives at some interior point. When both functions vanish at the target, their ratio near it is governed by how fast each is changing, that is by their derivatives, so the limit of the ratio matches the limit of the ratio of derivatives whenever the latter exists. The same reasoning covers the infinity over infinity case. Other indeterminate forms, such as zero times infinity, infinity minus infinity, or the exponential forms like one to the infinity, are first rearranged algebraically or through logarithms into a zero over zero or infinity over infinity quotient, and then the rule applies.",
+  "examples": [
+    {
+      "tag": "Sine over x",
+      "text": "The limit of sine x over x as x approaches zero is the indeterminate zero over zero; differentiating gives cosine x over one, whose limit is one."
+    },
+    {
+      "tag": "Other forms recast",
+      "text": "Indeterminates like zero times infinity or one to the infinity are converted by algebra or logarithms into zero over zero or infinity over infinity before the rule is applied."
+    },
+    {
+      "tag": "The Bernoulli arrangement",
+      "text": "The rule was discovered by Johann Bernoulli, who under a paid arrangement let l'Hopital publish it in 1696, so it is sometimes called the Bernoulli-l'Hopital rule."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Repeated application",
+      "text": "When the ratio of derivatives is itself indeterminate, the rule can be applied again, differentiating once more, until a determinate limit emerges."
+    },
+    {
+      "name": "The infinity over infinity case",
+      "text": "The parallel form for limits that give infinity over infinity, handled by the same differentiation of numerator and denominator."
+    }
+  ],
+  "whyItMatters": "L'Hopital's rule is one of the most widely taught and used techniques of calculus, the standard way to resolve indeterminate limits that block direct evaluation. It turns questions about the competing rates at which a numerator and denominator vanish or blow up into a simple differentiation, and it connects cleanly to the deeper Cauchy mean value theorem that justifies it. Beyond the classroom it appears throughout analysis, asymptotics, and applied mathematics wherever ratios approach indeterminate forms, and its history, a discovery by Johann Bernoulli published under l'Hopital's name, is a famous cautionary tale about credit in mathematics.",
+  "working": [
+    {"lead": "Confirm the indeterminate form", "text": "check that direct substitution gives zero over zero or infinity over infinity; only then does the rule legitimately apply."},
+    {"lead": "Differentiate separately", "text": "take the derivative of the numerator and of the denominator on their own, not with the quotient rule, and re-evaluate the limit."},
+    {"lead": "Recast other forms first", "text": "rewrite zero times infinity, infinity minus infinity, or exponential indeterminates into a quotient before applying the rule."}
+  ],
+  "limits": "The rule applies only to genuine indeterminate forms, zero over zero or infinity over infinity; using it on a limit that is not indeterminate gives wrong answers, so checking the form first is essential. One differentiates numerator and denominator separately, and confusing this with the quotient rule is a common mistake. The existence of the limit of the ratio of derivatives is sufficient but not necessary: if that limit fails to exist, the rule is simply inconclusive rather than showing the original limit does not exist. It also requires the functions to be differentiable near the point with a non-vanishing denominator derivative there.",
+  "misreadings": "The rule is not a universal limit-evaluator; it works only for the indeterminate forms zero over zero and infinity over infinity, and applying it elsewhere produces errors. Differentiating the top and bottom is not the quotient rule; the two functions are differentiated independently. And if the ratio of derivatives has no limit, that does not mean the original limit has none; the rule is merely silent, so one must fall back on other methods rather than conclude the limit fails to exist.",
+  "origin": "Published by Guillaume de l'Hopital in 1696 in Analyse des Infiniment Petits, the first textbook of differential calculus, though the result was actually discovered by Johann Bernoulli, who conveyed it to l'Hopital under a paid arrangement.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1696,
+  "namedAfter": "Guillaume de l'Hopital",
+  "sources": [
+    {"text": "L'Hopital's rule, Wikipedia. — the statement for zero-over-zero and infinity-over-infinity, the sine-over-x example, the l'Hopital 1696 and Johann Bernoulli history, and the indeterminate-form caveat.", "url": "https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule", "type": "secondary"},
+    {"text": "L'Hopital's rule, Encyclopaedia Britannica. — the rule for indeterminate forms and its origin with l'Hopital and Bernoulli.", "url": "https://www.britannica.com/science/LHopitals-rule", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule",
+  "related": [
+    {"slug": "the-mean-value-theorem", "kind": "cause"},
+    {"slug": "taylors-theorem", "kind": "kindred"}
+  ]
+}

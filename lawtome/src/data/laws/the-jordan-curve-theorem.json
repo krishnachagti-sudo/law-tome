@@ -1,0 +1,57 @@
+{
+  "no": "597",
+  "slug": "the-jordan-curve-theorem",
+  "name": "The Jordan Curve Theorem",
+  "aliases": ["Jordan's theorem", "The simple closed curve theorem"],
+  "statement": "Every simple loop drawn in the plane splits it cleanly into an inside and an outside.",
+  "statementAccent": "splits it cleanly into an inside and an outside",
+  "meaning": "The Jordan curve theorem states that any simple closed curve in the plane, a continuous loop that does not cross itself, divides the plane into exactly two regions: a bounded inside and an unbounded outside, with the curve forming the common boundary of both. Any continuous path from a point inside to a point outside must cross the curve somewhere. The statement seems utterly obvious for a circle or a polygon, yet proving it rigorously for every simple closed curve is surprisingly hard, because such curves can be wildly complicated, even nowhere smooth or fractal. Named after Camille Jordan, it is a foundational result of topology and a famous illustration that intuitively evident facts can demand deep proof.",
+  "mechanism": "The theorem is a statement about connectivity: removing the curve from the plane leaves precisely two connected pieces. For a simple polygon this can be shown by a crossing-count argument, in which a ray from any point crosses the boundary an odd number of times if the point is inside and an even number if outside, giving the inside-outside distinction directly. The subtlety is extending this to arbitrary continuous simple closed curves, which need not be smooth or polygonal and can be pathological enough to defeat naive reasoning. Rigorous proofs use tools of topology, and the higher-dimensional generalisation, the Jordan-Brouwer separation theorem, shows that a topological sphere embedded in space likewise separates it into two regions.",
+  "examples": [
+    {
+      "tag": "The point-in-polygon test",
+      "text": "Computer graphics decides whether a point lies inside a polygon by counting how often a ray from it crosses the boundary, odd meaning inside, a direct use of the theorem."
+    },
+    {
+      "tag": "Contour integration",
+      "text": "Complex analysis relies on a curve having a well-defined inside and outside, so that integrals around a loop and the argument principle make sense."
+    },
+    {
+      "tag": "The torus exception",
+      "text": "On a doughnut-shaped surface the theorem fails: a loop going around the hole does not separate the surface, showing the result is special to the plane and sphere."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Jordan-Brouwer separation theorem",
+      "text": "The higher-dimensional generalisation, that a topological sphere embedded in n-dimensional space divides it into a bounded inside and an unbounded outside."
+    },
+    {
+      "name": "The Jordan-Schoenflies theorem",
+      "text": "A stronger plane result saying the inside and outside are as simple as those of a round circle, a strengthening that fails in higher dimensions."
+    }
+  ],
+  "whyItMatters": "The Jordan curve theorem is a foundational result of topology and the canonical example that an obvious-seeming statement can require rigorous, non-trivial proof, because simple closed curves can be far wilder than circles. It underpins complex analysis, where contour integration and the argument principle depend on a loop having a definite inside and outside, and it powers computational geometry through point-in-polygon tests. Its history, with Jordan's original proof long thought flawed and later partly vindicated, is a lesson in mathematical rigour, and its higher-dimensional generalisations shape modern topology, so a fact a child would grant becomes a gateway to deep mathematics.",
+  "working": [
+    {"lead": "Trust the inside-outside split", "text": "treat any non-self-crossing loop in the plane as cleanly dividing it into a bounded interior and an unbounded exterior separated by the curve."},
+    {"lead": "Count crossings", "text": "decide whether a point is inside by counting how often a ray from it meets the curve, odd for inside and even for outside."},
+    {"lead": "Mind the surface", "text": "remember the clean split holds in the plane and on the sphere but can fail on surfaces with holes, like the torus, where some loops do not separate."}
+  ],
+  "limits": "The theorem holds for the plane and the sphere but not on more complicated surfaces; on a torus a loop around the hole leaves the surface connected, so separation depends on the topology of the ambient space. It requires a genuine continuous simple closed curve, and its conclusion is purely topological, about the number of regions and their common boundary, not about smoothness or shape. The stronger Jordan-Schoenflies form, that the two regions are as simple as a disc's, holds in the plane but fails in higher dimensions, where the Alexander horned sphere shows the outside can be tangled despite the basic separation still holding.",
+  "misreadings": "Its obviousness is deceptive: proving it for every simple closed curve, including nowhere-smooth and fractal ones, is genuinely hard, so it is not the triviality the circle case suggests. It is specific to the plane and sphere; on a torus a simple loop need not separate the surface, so one cannot assume any loop on any surface has an inside and outside. And the basic theorem only guarantees two regions with the curve as boundary; the far stronger claim that those regions are as tame as a disc's is separate and fails in higher dimensions.",
+  "origin": "Stated and given a proof by Camille Jordan in his Cours d'analyse of 1887, with the first widely accepted rigorous proof usually credited to Oswald Veblen in 1905, though modern scholarship argues Jordan's original proof was essentially correct.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1887,
+  "namedAfter": "Camille Jordan",
+  "sources": [
+    {"text": "Jordan curve theorem, Wikipedia. — the two-regions statement, the difficulty of proof, the Jordan 1887 and Veblen 1905 history and validity debate, the Jordan-Brouwer generalisation, and the torus non-separation.", "url": "https://en.wikipedia.org/wiki/Jordan_curve_theorem", "type": "secondary"},
+    {"text": "Jordan Curve Theorem, Wolfram MathWorld. — the simple-closed-curve separation into an inside and outside with the curve as boundary.", "url": "https://mathworld.wolfram.com/JordanCurveTheorem.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Jordan_curve_theorem",
+  "related": [
+    {"slug": "the-brouwer-fixed-point-theorem", "kind": "kindred"},
+    {"slug": "eulers-polyhedron-formula", "kind": "kindred"}
+  ]
+}

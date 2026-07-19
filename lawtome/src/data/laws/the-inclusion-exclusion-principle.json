@@ -1,0 +1,54 @@
+{
+  "no": "598",
+  "slug": "the-inclusion-exclusion-principle",
+  "name": "The Inclusion-Exclusion Principle",
+  "aliases": ["Inclusion-exclusion", "The sieve formula"],
+  "statement": "To count a union, add the parts, subtract the overlaps, add back the triple overlaps, and so on.",
+  "statementAccent": "add the parts, subtract the overlaps",
+  "meaning": "The inclusion-exclusion principle is a counting formula for the size of a union of sets. For two sets it says the size of their union is the sum of their sizes minus the size of their overlap; for three, one adds the three individual sizes, subtracts the three pairwise overlaps, and adds back the triple overlap. In general one adds the sizes of the single sets, subtracts all pairwise intersections, adds all triple intersections, and continues with strictly alternating signs to the full intersection. The rule corrects the double-counting that arises from naively summing sizes, and it is a fundamental tool of enumerative combinatorics and probability, turning a tangled overlapping count into an exact alternating sum.",
+  "mechanism": "The alternation is bookkeeping for over- and under-counting. Adding the sizes of the sets counts each element once for every set it belongs to, so elements in overlaps are counted too many times. Subtracting the pairwise intersections removes that excess, but it over-corrects for elements lying in three sets, which must then be added back; the correction for four-way elements over-shoots again, and so on, each layer of intersections flipping the sign. The upshot is that every element, whatever overlaps it lies in, is counted exactly once overall, which is why the signs must strictly alternate through the full intersection. The same principle holds for probabilities of unions of events, giving an exact expansion whose truncations yield the Bonferroni bounds.",
+  "examples": [
+    {
+      "tag": "Derangements",
+      "text": "Counting permutations with no element in its original place uses inclusion-exclusion; the probability a random shuffle fixes nothing approaches one over e, about zero point three seven, the hat-check problem."
+    },
+    {
+      "tag": "Euler's totient",
+      "text": "The count of numbers below n sharing no factor with it is found by inclusion-exclusion over n's distinct prime divisors, giving Euler's totient function."
+    },
+    {
+      "tag": "Sieve methods",
+      "text": "The sieve of Eratosthenes and its refinements, like Legendre's and Brun's sieves in number theory, are inclusion-exclusion applied to counting numbers free of certain prime factors."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The probabilistic form",
+      "text": "The version for the probability of a union of events, an alternating sum of probabilities of intersections, also called Poincare's formula."
+    },
+    {
+      "name": "The Bonferroni inequalities",
+      "text": "The bounds obtained by truncating the alternating sum after some terms, giving alternating over- and under-estimates that refine the simple union bound."
+    }
+  ],
+  "whyItMatters": "The inclusion-exclusion principle is a fundamental tool of combinatorics and probability, the standard way to count or measure a union when the parts overlap. It counts derangements and surjections, computes Euler's totient function, underlies the sieve methods of number theory from Eratosthenes to Brun, and in probability gives exact expansions whose truncations, the Bonferroni inequalities, provide practical bounds. Its idea, correcting a sum by alternately removing and restoring overlaps, is so general that it recurs across mathematics wherever overlapping cases must be counted without double-counting, making it one of the most broadly useful identities in enumeration.",
+  "working": [
+    {"lead": "Add, subtract, add", "text": "sum the individual set sizes, subtract every pairwise overlap, add every triple overlap, and continue with alternating signs to the full intersection."},
+    {"lead": "Aim for exactly once", "text": "trust that the alternation makes every element counted exactly one time overall, whatever combination of sets it lies in."},
+    {"lead": "Truncate for bounds", "text": "stop the alternating sum early to get the Bonferroni inequalities, alternating upper and lower estimates when the full computation is too costly."}
+  ],
+  "limits": "The formula is exact, not an approximation, but its full form has a term for every subset of the sets, so for many sets the number of intersection terms grows explosively and the computation becomes impractical, which is why the truncated Bonferroni bounds are often used instead. It requires knowing the sizes of all the intersections, which may themselves be hard to determine. The signs must strictly alternate, and dropping a term or misplacing a sign is the usual error. It applies to finite sets and to probabilities of events, and its usefulness depends on the intersections being simpler to count than the union directly.",
+  "misreadings": "The principle is an exact equality, not an estimate; truncating it gives the Bonferroni inequalities, but the full formula is precise. The signs strictly alternate all the way to the full intersection, so it is not merely add-the-parts-subtract-the-overlaps and stop, which would be wrong for three or more sets. And no single person originated it: early uses trace to de Moivre, with independent nineteenth-century formulations by da Silva, Sylvester, and Poincare, so it is a shared discovery rather than one author's theorem.",
+  "origin": "Used early by Abraham de Moivre in 1718 and given explicit general formulations independently in the nineteenth century by Daniel da Silva in 1854, J.J. Sylvester in 1883, and, in probabilistic form, Henri Poincare in 1896.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Inclusion-exclusion principle, Wikipedia. — the two-set and three-set formulas, the alternating general form, the derangement and totient applications, and the Bonferroni inequalities.", "url": "https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle", "type": "secondary"},
+    {"text": "Inclusion-Exclusion Principle, Wolfram MathWorld. — the union-counting formula, the alternating signs, and the da Silva and Sylvester history.", "url": "https://mathworld.wolfram.com/Inclusion-ExclusionPrinciple.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle",
+  "related": [
+    {"slug": "the-pigeonhole-principle", "kind": "kindred"}
+  ]
+}

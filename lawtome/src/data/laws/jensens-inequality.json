@@ -1,0 +1,56 @@
+{
+  "no": "590",
+  "slug": "jensens-inequality",
+  "name": "Jensen's Inequality",
+  "aliases": ["Jensen inequality", "The convexity inequality"],
+  "statement": "For a convex function, the function of the average is at most the average of the function.",
+  "statementAccent": "the function of the average is at most the average of the function",
+  "meaning": "Jensen's inequality relates the value of a convex function at an average to the average of its values. For a convex function, one that bends upward like a parabola, the function evaluated at the mean of some inputs is at most the mean of the function evaluated at each input; in probability, the function of an expectation is at most the expectation of the function. For a concave function, one bending downward like the logarithm, the inequality reverses. Equality holds only when the inputs are all equal or the function is a straight line over the relevant range. Proved by Johan Jensen in 1906, it is a cornerstone inequality of convex analysis, probability, statistics, and information theory, capturing in one line the essential meaning of convexity.",
+  "mechanism": "The inequality is convexity made quantitative. A convex function lies below any chord connecting two points on its graph, and averaging inputs is a way of moving to a point between them, so the function at the averaged input sits below the correspondingly averaged outputs. Extended from two points to many, or to a whole probability distribution, this says the function of the mean is at most the mean of the function. Formally one uses a supporting line, a tangent that lies below a convex curve everywhere; evaluating the average against this line and comparing gives the result. The size of the gap between the two sides, sometimes called the Jensen gap, measures how strongly the function curves and how spread out the inputs are.",
+  "examples": [
+    {
+      "tag": "The AM-GM inequality",
+      "text": "Applying Jensen's inequality to the concave logarithm yields the arithmetic-mean-geometric-mean inequality, that the average of positive numbers is at least their geometric mean."
+    },
+    {
+      "tag": "Information theory",
+      "text": "Jensen's inequality proves that the Kullback-Leibler divergence between probability distributions is never negative, the Gibbs inequality underlying entropy and coding."
+    },
+    {
+      "tag": "Risk aversion",
+      "text": "For a concave utility function, the utility of an expected payoff exceeds the expected utility of the gamble, the mathematical face of risk aversion in economics."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The discrete form",
+      "text": "The finite version, that a convex function of a weighted average of points is at most the weighted average of the function's values, with non-negative weights summing to one."
+    },
+    {
+      "name": "The concave reversal",
+      "text": "For concave functions the inequality flips, so the function of the average is at least the average of the function, the form used for logarithms and entropies."
+    }
+  ],
+  "whyItMatters": "Jensen's inequality is one of the most useful inequalities in mathematics, the bridge between convexity and averaging that appears throughout probability, statistics, information theory, and economics. It proves the arithmetic-mean-geometric-mean inequality, establishes the non-negativity of relative entropy that grounds information theory, expresses risk aversion through concave utility, and supplies bounds in countless proofs where an expectation of a nonlinear function must be controlled. Because convex and concave functions are everywhere, so is Jensen's inequality, and mastering its direction, convex bends the inequality one way and concave the other, is a basic skill of quantitative reasoning.",
+  "working": [
+    {"lead": "Check convex or concave", "text": "identify whether the function bends upward or downward, since that fixes the direction of the inequality between function-of-average and average-of-function."},
+    {"lead": "Compare the two averages", "text": "for a convex function, expect the function of the mean to be at most the mean of the function; for concave, the reverse."},
+    {"lead": "Read the gap as spread", "text": "treat the difference between the two sides as a measure of how much the function curves and how dispersed the inputs are, zero only when they coincide."}
+  ],
+  "limits": "The direction of the inequality depends entirely on whether the function is convex or concave, so applying the wrong direction is the usual error and there is no single universal sign. The function must be convex or concave on an interval containing all the inputs, or the support of the random variable, and the relevant averages or expectations must exist and be finite. Equality is not exceptional to worry about but informative: it holds only when the inputs are all equal or the function is affine, so a strict inequality signals genuine curvature and spread. Outside these conditions the inequality simply does not apply.",
+  "misreadings": "The inequality is not one-directional in the abstract; convex functions give function-of-average at most average-of-function, while concave functions reverse it, so the direction must track the curvature. It is about comparing the function of a mean with the mean of a function, not about bounding a function by a constant. And equality does not require the function to be linear everywhere, only affine over the range of the inputs, or the inputs to be identical, so near-equality reflects little curvature or little spread rather than a failure of the inequality.",
+  "origin": "Proved by the Danish mathematician Johan Jensen in his 1906 paper on convex functions and inequalities between mean values, building on earlier related work by Otto Holder, and now central to convex analysis, probability, and information theory.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1906,
+  "namedAfter": "Johan Jensen",
+  "sources": [
+    {"text": "Jensen's inequality, Wikipedia. — the convex and concave forms, the probabilistic statement, Jensen 1906, and the AM-GM and Kullback-Leibler applications.", "url": "https://en.wikipedia.org/wiki/Jensen%27s_inequality", "type": "secondary"},
+    {"text": "Jensen's Inequality, Wolfram MathWorld. — the weighted-average statement and the convex-concave direction with the 1906 citation.", "url": "https://mathworld.wolfram.com/JensensInequality.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Jensen%27s_inequality",
+  "related": [
+    {"slug": "the-cauchy-schwarz-inequality", "kind": "kindred"}
+  ]
+}

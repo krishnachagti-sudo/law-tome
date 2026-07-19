@@ -1,0 +1,56 @@
+{
+  "no": "592",
+  "slug": "ramseys-theorem",
+  "name": "Ramsey's Theorem",
+  "aliases": ["Ramsey theory", "The party theorem"],
+  "statement": "In any large enough structure, complete disorder is impossible; some orderly pattern must appear.",
+  "statementAccent": "complete disorder is impossible",
+  "meaning": "Ramsey's theorem is the founding result of Ramsey theory, and its slogan is that complete disorder is impossible: any sufficiently large structure must contain a highly ordered substructure. In its graph form, for any target sizes r and s there is a threshold number such that colouring the connections among that many objects with two colours, say red and blue, forces either r objects all mutually connected in red or s objects all mutually connected in blue. The smallest threshold that works is the Ramsey number for r and s. The theorem guarantees that order emerges from size alone, no matter how one tries to arrange things to avoid it, and it launched a whole branch of combinatorics studying the unavoidable regularities hidden in large systems.",
+  "mechanism": "The guarantee comes from a pigeonhole-style cascade: in a large enough complete network, pick any object and look at its many connections, which split by colour, so one colour must claim a large share; recursing into that large monochromatic neighbourhood eventually forces a fully monochromatic group of the required size. This proves the Ramsey numbers exist and are finite, but the argument gives only crude bounds, and pinning down exact values is extraordinarily hard because the number of colourings to rule out explodes. The lower bounds come from the probabilistic method, where a random colouring is shown likely to avoid small monochromatic groups, a technique Erdos pioneered precisely on this problem. So existence is easy, but computation is brutal.",
+  "examples": [
+    {
+      "tag": "Friends and strangers",
+      "text": "Among any six people, there must be three who all know each other or three who are all mutual strangers, and six is the least number that forces this, so the Ramsey number for three and three is six."
+    },
+    {
+      "tag": "The next number is unknown",
+      "text": "The Ramsey number for four and four is eighteen, but the number for five and five is still unknown, pinned only between forty-three and forty-six despite vast computation."
+    },
+    {
+      "tag": "Erdos and the aliens",
+      "text": "Erdos joked that if aliens demanded the Ramsey number for five and five we should marshal every mathematician and computer, but if they demanded it for six and six we should attack the aliens instead."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The infinite Ramsey theorem",
+      "text": "The version for infinite sets, guaranteeing an infinite monochromatic subset for any finite colouring of the pairs, or larger groupings, of an infinite collection."
+    },
+    {
+      "name": "The wider theory",
+      "text": "Related results in Ramsey theory, including van der Waerden's theorem on monochromatic arithmetic progressions, the Hales-Jewett theorem, and the Erdos-Szekeres happy-ending problem."
+    }
+  ],
+  "whyItMatters": "Ramsey's theorem founded Ramsey theory, the study of order that must arise in large structures, a field spanning combinatorics, number theory, logic, and the probabilistic method. Its message, that sufficient size guarantees pattern, resonates far beyond graphs, and its notorious difficulty, with only a handful of exact Ramsey numbers known, makes it a benchmark of computational hardness and a proving ground for new techniques. Erdos's probabilistic lower bounds on Ramsey numbers helped birth the probabilistic method, now a central tool across mathematics and computer science. The theorem is at once philosophically striking and practically forbidding, guaranteeing order while hiding exactly how much size it takes to force it.",
+  "working": [
+    {"lead": "Expect forced order", "text": "in any large enough two-coloured network, count on an unavoidable monochromatic group of the size you seek, however cleverly the colours are arranged."},
+    {"lead": "Separate existence from value", "text": "trust that the Ramsey number exists and is finite, while accepting that computing it exactly is astronomically hard beyond tiny cases."},
+    {"lead": "Bound with randomness", "text": "use random colourings to prove lower bounds, showing that below a threshold one can likely avoid the monochromatic group, the probabilistic method."}
+  ],
+  "limits": "The theorem guarantees the ordered substructure exists once the structure is large enough, but sufficiently large can be astronomically large, and the exact Ramsey numbers are known only for a few small cases; even the number for five and five is undetermined. The proof gives existence and rough bounds, not efficient computation, and the gap between the best lower and upper bounds for diagonal Ramsey numbers remains wide. It is a purely combinatorial existence result, so it tells you order is unavoidable without telling you where to find it or, in general, precisely how much size is required to force it.",
+  "misreadings": "The theorem does not make Ramsey numbers easy to compute; it proves they exist and are finite, while the actual values are among the hardest quantities in combinatorics to determine. Sufficiently large is not a modest threshold; it can be enormous, so the guaranteed order may require vast structures. And the result is about unavoidable monochromatic groups in colourings, not a statement that all large systems look orderly overall; it only promises that some ordered piece must appear somewhere, however disordered the whole may seem.",
+  "origin": "Proved by Frank Plumpton Ramsey in his paper On a Problem of Formal Logic, read in 1928 and published in 1930, where the result was a lemma; it founded the field of Ramsey theory, later enriched by Erdos and Szekeres and the probabilistic method.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1930,
+  "namedAfter": "Frank Plumpton Ramsey",
+  "sources": [
+    {"text": "Ramsey's theorem, Wikipedia. — the graph statement, the friends-and-strangers example with Ramsey number six, the value eighteen for four-four, the unknown five-five, and Ramsey 1930.", "url": "https://en.wikipedia.org/wiki/Ramsey%27s_theorem", "type": "secondary"},
+    {"text": "Ramsey Number, Wolfram MathWorld. — the Ramsey numbers, the Greenwood-Gleason values, and the difficulty of computing them.", "url": "https://mathworld.wolfram.com/RamseyNumber.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Ramsey%27s_theorem",
+  "related": [
+    {"slug": "the-pigeonhole-principle", "kind": "kindred"}
+  ]
+}
