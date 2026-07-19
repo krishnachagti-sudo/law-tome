@@ -1,0 +1,83 @@
+{
+  "no": "983",
+  "slug": "possible-worlds",
+  "name": "Possible Worlds",
+  "aliases": [
+    "The plurality of worlds",
+    "Modal realism and ersatzism"
+  ],
+  "statement": "A complete way things could have been; necessity is truth in all of them, possibility in some.",
+  "statementAccent": "necessity is truth in all of them",
+  "meaning": "A possible world is a complete, maximally specific way things could have been, a total alternative to the actual world that settles every matter of fact. Possible worlds are used to analyze the modal notions of necessity and possibility: a proposition is necessarily true if it is true in all possible worlds, possibly true if it is true in at least one, contingent if true in some but not all, and impossible if true in none. The actual world is itself one of the possible worlds, the one we inhabit. The idea traces to Gottfried Wilhelm Leibniz, who spoke of the actual world as the best of all possible worlds chosen by God from infinitely many, and possible-worlds semantics for modal logic was developed by Saul Kripke and others around 1959 to 1963, using a set of worlds and an accessibility relation between them, where different constraints on that relation correspond to different modal systems. The central metaphysical question is what possible worlds are. Modal realism, David Lewis's view in his 1986 book On the Plurality of Worlds, holds that possible worlds are concrete entities, as real as the actual world, spatiotemporally and causally isolated from ours, with actual being merely an indexical term, like here or now, that refers to whichever world one is located in. Ersatzism, or actualism, holds instead that possible worlds are abstract entities, such as maximal consistent sets of propositions or states of affairs, existing within the actual world, defended by Adams, Plantinga, and Stalnaker.",
+  "mechanism": "Possible worlds function as a tool for making modal talk precise by trading claims about what could or must be for claims about what is the case at other worlds. To evaluate whether a proposition is necessary, one asks whether it holds in every possible world; to evaluate possibility, whether it holds in at least one. This apparatus, made rigorous in Kripke semantics, models a modal language with a set of worlds and an accessibility relation specifying, for each world, which worlds are possible relative to it; imposing conditions on that relation, such as reflexivity, transitivity, or symmetry, yields the different systems of modal logic. Possible worlds also analyze much more: a counterfactual conditional is true, on the accounts of Lewis and Stalnaker, if in the closest or most similar possible world where the antecedent holds, the consequent also holds; an object has a property essentially if it has it in every world in which it exists, and accidentally otherwise; and a rigid designator refers to the same object across all possible worlds. The metaphysical disagreement concerns the ontological cost of this useful device. Lewis's modal realism takes the worlds at face value as a plurality of concrete universes, each as real as ours, causally and spatiotemporally cut off from one another, and treats actuality as indexical, so no world is metaphysically privileged; because individuals do not exist in more than one world, Lewis analyzes what could have happened to a thing through its counterparts in other worlds. Ersatzists resist this extravagance, reconstructing worlds as abstract representations, maximal consistent sets of propositions or states of affairs, that are parts of the one actual concrete world.",
+  "examples": [
+    {
+      "tag": "Analyzing modality",
+      "text": "A proposition is necessary if true in all possible worlds, possible if true in at least one, impossible if true in none."
+    },
+    {
+      "tag": "Modal realism",
+      "text": "Lewis held possible worlds are concrete and as real as ours, with actual an indexical term like here or now."
+    },
+    {
+      "tag": "Ersatz worlds",
+      "text": "Ersatzists take possible worlds to be abstract entities, such as maximal consistent sets of propositions, within the actual world."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Modal realism",
+      "text": "Lewis's view that possible worlds are concrete, equally real, causally isolated universes, with counterpart theory for individuals."
+    },
+    {
+      "name": "Ersatzism",
+      "text": "The actualist view that possible worlds are abstract entities, maximal consistent sets or states of affairs, within the actual world."
+    }
+  ],
+  "whyItMatters": "Possible worlds are one of the most powerful and fertile tools in modern philosophy, transforming the study of modality from a tangle of obscure notions into a rigorous and productive framework. By analyzing necessity as truth in all worlds and possibility as truth in some, possible-worlds semantics gave modal logic a clear interpretation and unified a whole family of concepts, illuminating not only necessity and possibility but also counterfactual conditionals, essential and accidental properties, supervenience, propositions, and the rigid designation at the heart of Kripke's philosophy of language. The framework reshaped metaphysics, logic, the philosophy of language, and even parts of the philosophy of science and computer science. It also forced a deep question about the ground of modal truth: David Lewis's audacious modal realism, on which countless concrete worlds are every bit as real as ours, and the ersatzist alternatives that reconstruct worlds as abstract objects, stake out the main options and expose the trade-off between taking modal talk at face value and keeping ontology sober, prompting Lewis's famous acknowledgment of the incredulous stare his view provokes. As the device that renders the necessary and the possible tractable, possible worlds are a landmark contribution to metaphysics.",
+  "working": [
+    {
+      "lead": "Take a complete alternative",
+      "text": "consider a possible world as a total, maximally specific way things could have been."
+    },
+    {
+      "lead": "Analyze modality",
+      "text": "read necessity as truth in all worlds, possibility as truth in some, impossibility as truth in none."
+    },
+    {
+      "lead": "Ask what worlds are",
+      "text": "decide whether worlds are concrete, as modal realism holds, or abstract, as ersatzism holds."
+    }
+  ],
+  "limits": "The metaphysics of possible worlds is contested, and each account has real costs. David Lewis's modal realism, though theoretically elegant, offends common sense so sharply that Lewis himself met it with what he called the incredulous stare: the claim that there exist infinitely many concrete universes, each as real as ours, containing talking donkeys and every other possibility, strikes most people as incredible, and critics question how such causally isolated worlds could ground our modal knowledge or serve the purposes we want possible worlds for. Lewis's associated counterpart theory, on which no individual exists in more than one world so that what could have happened to me is analyzed through my otherworldly counterparts, is itself disputed as a treatment of what is true of me. Ersatzism avoids the extravagant ontology but faces its own problems, including how abstract maximal sets or states of affairs represent genuine possibilities without covertly presupposing modal notions, and worries about impossible or incomplete worlds. Some details reward care: Lewis's book is dated 1986, the Kripke-semantics development spans roughly 1959 to 1963, and the Leibnizian best-of-all-possible-worlds phrase is standard but drawn from broader scholarship. So possible worlds robustly analyze modality, understood as an indispensable device whose underlying metaphysics, concrete or abstract, remains deeply disputed.",
+  "misreadings": "Possible worlds are not distant planets or regions of our universe; they are complete alternative ways things could have been, and on Lewis's view they are causally and spatiotemporally isolated from ours. Using possible-worlds talk does not commit one to Lewis's modal realism, since ersatzists take worlds to be abstract objects. And the actual world is not the only real one on modal realism, where actual is indexical, though it is the only concrete one on ersatzism, so treating worlds as far-off places, possible-worlds talk as requiring modal realism, or actuality as trivially privileged, misreads the framework.",
+  "origin": "The notion, traced to Leibniz and made rigorous in Kripke's modal semantics around 1959 to 1963, of a complete way things could have been, used to analyze necessity and possibility, with rival concrete and abstract accounts by Lewis and the ersatzists.",
+  "category": "philosophy",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {
+      "text": "Possible Worlds, Stanford Encyclopedia of Philosophy. — possible worlds as maximal ways things could be, the analysis of necessity, possibility, and contingency, the actual world as one among many, Lewis's concrete modal realism with actuality as indexical and counterpart theory, and ersatzist abstract accounts.",
+      "url": "https://plato.stanford.edu/entries/possible-worlds/",
+      "type": "secondary"
+    },
+    {
+      "text": "David Lewis's Metaphysics, Stanford Encyclopedia of Philosophy. — Lewis's modal realism from On the Plurality of Worlds (1986), the plurality of concrete isolated worlds, the incredulous stare, and counterpart theory.",
+      "url": "https://plato.stanford.edu/entries/lewis-metaphysics/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Possible_world",
+  "related": [
+    {
+      "slug": "rigid-designation",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-principle-of-sufficient-reason",
+      "kind": "kindred"
+    }
+  ]
+}

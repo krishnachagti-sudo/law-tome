@@ -1,0 +1,57 @@
+{
+  "no": "987",
+  "slug": "mereology",
+  "name": "Mereology",
+  "aliases": ["The theory of parts and wholes", "Calculus of individuals"],
+  "statement": "The formal theory of parts and wholes, and of when some things compose a further thing.",
+  "statementAccent": "parts and wholes",
+  "meaning": "Mereology, from the Greek meros meaning part, is the theory or formal study of parthood relations: the relations of part to whole and of part to part within a whole. Its primitive notion is the relation x is a part of y. Mereology was developed as a formal theory by the Polish logician Stanislaw Lesniewski in the 1910s and 1920s, in part as a nominalist alternative to set theory, and independently and influentially by Henry S. Leonard and Nelson Goodman as the Calculus of Individuals in their 1940 paper The Calculus of Individuals and Its Uses. In standard systems, parthood is taken to be a partial order: reflexive, since everything is part of itself; antisymmetric, since if each of two things is part of the other they are identical; and transitive, since a part of a part is a part of the whole. From parthood one defines further notions, including proper part, being a part but not identical, overlap, sharing a common part, disjointness, and the mereological sum or fusion, the whole composed of some things. Classical extensional mereology adds principles of supplementation and unrestricted fusion, and it endorses extensionality, that objects with the same proper parts are identical, a controversial principle given cases like a statue and the clay it is made of. A central question, Peter van Inwagen's special composition question from his 1990 book Material Beings, asks under what conditions some things compose a further thing, with answers ranging from nihilism to universalism.",
+  "mechanism": "Mereology begins from the single relation of parthood and builds an entire theory of composition on it. Taking x is a part of y as primitive, one lays down axioms fixing its logical behavior, most standardly that it is a partial order, reflexive, antisymmetric, and transitive, and then defines the rest of the vocabulary: a proper part is a part distinct from the whole, two things overlap if they share a part and are disjoint if they do not, and the sum or fusion of some things is the whole that has all of them as parts and is composed of nothing but them. Stronger systems add axioms. Supplementation principles ensure that a whole with a proper part has enough other parts to make up the difference, and an unrestricted fusion principle guarantees that any things whatever have a sum. Classical extensional mereology combines these and yields extensionality, the principle that no two distinct wholes have exactly the same proper parts, which is powerful but clashes with intuitions about coincident objects such as a statue and its clay, which seem to differ while sharing all their parts. The deepest question mereology raises is the special composition question, made vivid by van Inwagen: given some objects, when do they compose a further, single object, rather than remaining a mere plurality? Answers span a wide range. Mereological nihilism holds that composition never occurs, so that strictly there are no tables, only simples arranged tablewise. Universalism, or unrestricted composition, holds that any objects whatever compose a further object, however scattered or gerrymandered, including such oddities as a thing made of the front of a trout and the back of a turkey. Moderate views hold that composition occurs only sometimes, as with van Inwagen's own view that it occurs only when the activity of the parts constitutes a life.",
+  "examples": [
+    {
+      "tag": "Parthood as a partial order",
+      "text": "Parthood is standardly reflexive, antisymmetric, and transitive, so a part of a part is part of the whole."
+    },
+    {
+      "tag": "The special composition question",
+      "text": "Van Inwagen asked under what conditions some things compose a further thing, from never to always to sometimes."
+    },
+    {
+      "tag": "Nihilism versus universalism",
+      "text": "Nihilism says only simples exist, arranged tablewise; universalism says any things compose an object, even a trout-turkey."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Classical extensional mereology",
+      "text": "The system adding supplementation and unrestricted fusion and endorsing the extensionality of parts."
+    },
+    {
+      "name": "Answers to composition",
+      "text": "Mereological nihilism, universalism, and moderate views like van Inwagen's that composition occurs only in a life."
+    }
+  ],
+  "whyItMatters": "Mereology is a foundational theory in metaphysics and formal ontology, giving a rigorous, general account of the ubiquitous relation of part to whole that underlies our thought about objects. Almost everything we talk about has parts, and mereology provides the formal tools for reasoning about parthood, overlap, and composition with the same precision that logic and set theory bring to other domains, which is why it was developed both as a nominalist rival to set theory and as a general calculus of individuals. Its central question, the special composition question, cuts to the heart of ontology: it asks which collections of things add up to further things, and the answers, from the austere nihilism on which only simples exist to the permissive universalism on which every arbitrary collection has a sum, carry dramatic consequences for what objects there are, bearing directly on debates about ordinary objects, material constitution, and vagueness. Mereology also generates and clarifies classic puzzles, the statue and the clay, the problem of the many, and questions of parthood and identity over time, and it finds application well beyond metaphysics, in logic, in the semantics of mass nouns and plurals, and in computer science and formal ontology engineering. As the theory of parts and wholes, mereology is a core part of the metaphysician's toolkit.",
+  "working": [
+    {"lead": "Take parthood as basic", "text": "start from the primitive relation x is a part of y and fix its logic as a partial order."},
+    {"lead": "Define the vocabulary", "text": "introduce proper part, overlap, disjointness, and the sum or fusion of some things."},
+    {"lead": "Ask when composition occurs", "text": "confront the special composition question, choosing among nihilism, universalism, and moderate answers."}
+  ],
+  "limits": "Mereology is formally precise but philosophically contested at several points. The principle of extensionality, that objects with the same proper parts are identical, is disputed because of apparent counterexamples in material constitution: a statue and the lump of clay constituting it seem to be distinct objects, differing in properties such as when they came into existence and what changes they could survive, yet at a time they appear to share exactly the same parts, which extensionality forbids. The special composition question admits no consensus answer, and each option has steep costs: nihilism must reconstrue all talk of ordinary objects like tables and organisms as talk of simples arranged suitably, universalism must accept a vast profusion of scattered, gerrymandered objects, and moderate views must justify a principled line that neither extreme respects, facing worries about the vagueness of composition. Puzzles such as the problem of the many and the persistence of wholes through change of parts remain live. Some historical and terminological details reward care: the label classical extensional mereology is standard in the literature though not every source uses it, the trout-turkey example is drawn from discussions of composition, and the Tibbles example belongs to the wider literature rather than to any single source. So mereology robustly formalizes parthood and composition, understood as a foundational theory whose extensionality and answers to the special composition question remain deeply disputed.",
+  "misreadings": "Mereology is not simply a synonym for set theory; parts are not members, and a mereological sum is not a set of its parts, which is part of why it was offered as a nominalist alternative. The special composition question is not a trivial matter of common sense, since serious philosophers defend that composition never occurs or always occurs. And extensionality of parts is not an obvious truth, given the statue-and-clay puzzle, so treating mereology as set theory, the composition question as obvious, or extensionality as unproblematic, misreads the theory.",
+  "origin": "The formal theory of parthood, developed by Lesniewski and by Leonard and Goodman's 1940 Calculus of Individuals, studying parts, wholes, and composition, and centered on van Inwagen's special composition question.",
+  "category": "philosophy",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Mereology, Stanford Encyclopedia of Philosophy. — mereology as the theory of parthood relations, the primitive part relation and its partial-order axioms, the definitions of proper part, overlap, and fusion, extensional mereology and extensionality, and the puzzles of material constitution.", "url": "https://plato.stanford.edu/entries/mereology/", "type": "secondary"},
+    {"text": "Material Composition, Internet Encyclopedia of Philosophy. — van Inwagen's special composition question, mereological nihilism and simples arranged objectwise, universalism and scattered objects like the trout-turkey, and moderate answers such as composition constituting a life.", "url": "https://iep.utm.edu/mat-comp/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Mereology",
+  "related": [
+    {"slug": "the-ship-of-theseus", "kind": "kindred"},
+    {"slug": "nominalism", "kind": "kindred"}
+  ]
+}
