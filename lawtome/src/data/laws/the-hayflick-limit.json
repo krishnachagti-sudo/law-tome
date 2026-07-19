@@ -1,0 +1,57 @@
+{
+  "no": "615",
+  "slug": "the-hayflick-limit",
+  "name": "The Hayflick Limit",
+  "aliases": ["Replicative senescence", "The Hayflick phenomenon"],
+  "statement": "Normal human cells can divide only about fifty times before they stop for good.",
+  "statementAccent": "only about fifty times before they stop",
+  "meaning": "The Hayflick limit is the number of times a normal human cell population can divide before division halts, roughly forty to sixty divisions for normal human fetal cells grown in culture, after which the cells enter a state called senescence and stop dividing while remaining alive. Discovered by Leonard Hayflick and Paul Moorhead in 1961, it overturned the long-held belief, associated with Alexis Carrel, that cultured cells could divide indefinitely and were essentially immortal. The limit is closely linked to the progressive shortening of telomeres, the protective caps on the ends of chromosomes, which erode with each division. It is foundational to the biology of cellular aging and cancer, connecting the finite replicative capacity of cells to how organisms age and how cancer cells escape those bounds.",
+  "mechanism": "Each time a cell divides, the machinery that copies its DNA cannot fully replicate the very ends of the chromosomes, so a small piece of each telomere is lost. Telomeres are buffer caps that carry no genes, but once they erode to a critical shortness, the cell detects the damage and stops dividing, entering senescence. This telomere-shortening clock explains why normal cells have a finite replicative lifespan. Cells that need to divide indefinitely, such as germ cells, stem cells, and most cancer cells, express the enzyme telomerase, which rebuilds telomeres and lets them bypass the limit, achieving effectively unlimited division. The discovery of telomeres and telomerase earned Elizabeth Blackburn, Carol Greider, and Jack Szostak the 2009 Nobel Prize in Physiology or Medicine.",
+  "examples": [
+    {
+      "tag": "Overturning immortal cells",
+      "text": "Hayflick and Moorhead showed in 1961 that normal cells divide only a few dozen times, refuting Carrel's claim that cultured cells could divide forever."
+    },
+    {
+      "tag": "The telomere clock",
+      "text": "Telomeres shorten with each division, and when they become critically short the cell stops dividing, the molecular basis of the limit."
+    },
+    {
+      "tag": "Cancer's escape",
+      "text": "Most cancer cells switch on telomerase to rebuild their telomeres, bypassing the Hayflick limit and gaining the unlimited division that makes them effectively immortal."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Telomerase bypass",
+      "text": "The rebuilding of telomeres by the enzyme telomerase in germ, stem, and cancer cells, which lets them evade the limit and divide indefinitely."
+    },
+    {
+      "name": "Replicative senescence",
+      "text": "The non-dividing but metabolically active state cells enter on reaching the limit, distinct from cell death, and implicated in tissue aging."
+    }
+  ],
+  "whyItMatters": "The Hayflick limit reshaped the biology of aging by showing that normal cells have a built-in ceiling on how many times they can divide, linking cellular senescence to how tissues and organisms age. It also illuminates cancer, since the hallmark trick of cancer cells is to escape the limit by switching on telomerase and dividing without end. The telomere mechanism it revealed became a major field, honoured with a Nobel Prize, and it informs research on aging, regenerative medicine, and cancer therapy. By replacing the myth of immortal cultured cells with a measurable division limit, it grounded the study of cellular mortality in hard experiment.",
+  "working": [
+    {"lead": "Expect a division ceiling", "text": "treat normal human cells as able to divide only a few dozen times before entering senescence and ceasing to divide."},
+    {"lead": "Track the telomere clock", "text": "attribute the limit to telomeres shortening with each division until they grow critically short and trigger the halt."},
+    {"lead": "Note the telomerase escape", "text": "recognise that germ, stem, and cancer cells rebuild telomeres with telomerase to bypass the limit and divide indefinitely."}
+  ],
+  "limits": "The limit applies to normal somatic cells dividing in culture and is a count of divisions, not a wall-clock lifespan timer, so it is one contributor to aging rather than a simple clock for how long an organism lives. Cancer cells escape it entirely through telomerase or alternative telomere-lengthening, so it does not bound them. Telomere shortening is the leading mechanism, but aging is multifactorial, involving oxidative damage and other pathways, so the Hayflick limit explains part of cellular aging, not all of it. Different cell types have different limits, and the figures come from cultured fetal cells under specific conditions.",
+  "misreadings": "The Hayflick limit is a limit on the number of cell divisions, not a direct clock for organismal lifespan; it is one factor among many in aging. It applies to normal somatic cells; cancer cells are effectively immortal precisely because they escape it, so it is not a universal cap on all cells. And while telomere shortening is the leading explanation, it is not the whole story of aging, which is multifactorial, so equating the Hayflick limit with the cause of aging overstates it.",
+  "origin": "Discovered by Leonard Hayflick and Paul Moorhead in 1961 at the Wistar Institute, overturning Alexis Carrel's claim of immortal cultured cells; the underlying telomere and telomerase biology earned Blackburn, Greider, and Szostak the 2009 Nobel Prize in Physiology or Medicine.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1961,
+  "namedAfter": "Leonard Hayflick",
+  "sources": [
+    {"text": "Hayflick limit, Wikipedia. — the forty-to-sixty divisions and senescence, Hayflick and Moorhead 1961 overturning Carrel, the telomere mechanism, and the telomerase bypass in cancer cells.", "url": "https://en.wikipedia.org/wiki/Hayflick_limit", "type": "secondary"},
+    {"text": "The 2009 Nobel Prize in Physiology or Medicine, press release, NobelPrize.org. — the discovery of telomeres and telomerase by Blackburn, Greider, and Szostak.", "url": "https://www.nobelprize.org/prizes/medicine/2009/press-release/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hayflick_limit",
+  "related": [
+    {"slug": "petos-paradox", "kind": "kindred"},
+    {"slug": "the-central-dogma-of-molecular-biology", "kind": "kindred"}
+  ]
+}

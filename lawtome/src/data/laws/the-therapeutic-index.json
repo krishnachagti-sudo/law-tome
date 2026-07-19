@@ -1,0 +1,54 @@
+{
+  "no": "616",
+  "slug": "the-therapeutic-index",
+  "name": "The Therapeutic Index",
+  "aliases": ["Therapeutic window", "Margin of safety"],
+  "statement": "A drug's safety is the gap between the dose that helps and the dose that harms.",
+  "statementAccent": "the gap between the dose that helps and the dose that harms",
+  "meaning": "The therapeutic index is a measure of a drug's safety, the ratio of the dose that produces toxicity to the dose that produces the desired therapeutic effect. Classically it is the toxic dose in half of subjects divided by the effective dose in half of subjects, or in animal studies the lethal dose in half divided by the effective dose in half. A higher therapeutic index means a safer drug, because there is a wider margin between the amount that helps and the amount that harms. The related idea of the therapeutic window is the range of doses that are effective without unacceptable toxicity. A fundamental concept of pharmacology and drug development, the therapeutic index guides dosing and flags drugs that demand careful monitoring.",
+  "mechanism": "Every drug has a dose-response curve for its benefit and another for its toxicity, and the therapeutic index compares them by dividing a measure of the toxic dose by a measure of the effective dose. When the two curves are far apart, the index is large and a physician can dose comfortably in the gap between them; when they nearly overlap, the index is small and even modest overdosing risks harm. Drugs with a narrow therapeutic index, such as warfarin, digoxin, and lithium, have so little separation between effective and toxic levels that they require therapeutic drug monitoring, measuring blood concentrations to keep them within the safe window. Drugs with a wide index, like penicillin for most people, are safe across a broad dose range.",
+  "examples": [
+    {
+      "tag": "Narrow-index drugs",
+      "text": "Warfarin, digoxin, and lithium have such a small gap between effective and toxic doses that patients need regular blood-level monitoring to stay safe."
+    },
+    {
+      "tag": "Wide-index drugs",
+      "text": "Penicillin has a wide therapeutic index for most people, remaining safe over a broad range of doses, though it can still cause allergic reactions."
+    },
+    {
+      "tag": "Higher is safer",
+      "text": "A drug with a therapeutic index of ten is far safer than one with an index of three, since the larger ratio means a wider margin before toxicity."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The therapeutic window",
+      "text": "The range of doses or blood concentrations between the minimum effective level and the minimum toxic level, within which a drug is both effective and safe."
+    },
+    {
+      "name": "Therapeutic drug monitoring",
+      "text": "The practice of measuring blood concentrations of narrow-index drugs to keep them within the safe window and avoid toxicity or loss of effect."
+    }
+  ],
+  "whyItMatters": "The therapeutic index is a cornerstone of pharmacology and clinical medicine, quantifying how much room for error a drug allows between helping and harming. It guides drug development, dosing decisions, and the identification of which drugs need close monitoring, since narrow-index medications like warfarin and lithium require regular blood tests to stay safe. By making the margin of safety explicit, it helps clinicians balance efficacy against toxicity and informs regulators and prescribers about a drug's risk profile, making it central to the safe use of medicines.",
+  "working": [
+    {"lead": "Compare toxic to effective dose", "text": "read the therapeutic index as the ratio of the toxic dose to the effective dose; a higher ratio means a wider safety margin."},
+    {"lead": "Watch narrow-index drugs", "text": "monitor blood levels of drugs like warfarin, digoxin, and lithium, whose small margin makes overdosing easy and dangerous."},
+    {"lead": "Dose within the window", "text": "keep doses between the minimum effective and minimum toxic concentrations, the therapeutic window where benefit comes without unacceptable harm."}
+  ],
+  "limits": "The therapeutic index is a relative measure and a population average, not an absolute guarantee of safety; individual patients vary in how they absorb and metabolise a drug, so a population-level index does not ensure safety for a given person. It captures the gap between typical effective and toxic doses but does not account for idiosyncratic or allergic reactions, so a drug with a wide index, like penicillin, can still cause severe reactions in susceptible people. It is a ratio of doses, so it says nothing about the severity of the toxicity or the seriousness of the disease being treated, which also bear on real-world risk.",
+  "misreadings": "A higher therapeutic index means a safer drug, not a more dangerous one; the ratio measures the margin before toxicity, so bigger is better. It is a relative, population-level measure, not an absolute promise of safety, so an individual can still be harmed within a nominally safe range. And a wide index does not rule out idiosyncratic reactions: penicillin has a wide therapeutic index yet can cause life-threatening anaphylaxis, since such reactions are not captured by the dose ratio.",
+  "origin": "Rooted in early twentieth-century pharmacology, with the concept of a ratio of tolerated to toxic dose associated with Paul Ehrlich's chemotherapeutic index, and now standard in pharmacology as the ratio of toxic to effective dose.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Therapeutic index, Wikipedia. — the ratio of toxic to effective dose, higher meaning safer, the therapeutic window, and narrow-index drugs like warfarin and lithium.", "url": "https://en.wikipedia.org/wiki/Therapeutic_index", "type": "secondary"},
+    {"text": "ED50, StatPearls, NCBI Bookshelf (NIH). — the TD50 over ED50 formula, that higher is safer, penicillin as a wide-index drug, and warfarin and lithium as narrow-index drugs.", "url": "https://www.ncbi.nlm.nih.gov/books/NBK538269/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Therapeutic_index",
+  "related": [
+    {"slug": "number-needed-to-treat", "kind": "kindred"}
+  ]
+}

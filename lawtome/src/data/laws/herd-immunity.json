@@ -1,0 +1,55 @@
+{
+  "no": "613",
+  "slug": "herd-immunity",
+  "name": "Herd Immunity",
+  "aliases": ["Community immunity", "The herd effect"],
+  "statement": "When enough of a population is immune, a contagious disease cannot spread, sheltering even the non-immune.",
+  "statementAccent": "a contagious disease cannot spread",
+  "meaning": "Herd immunity is a form of indirect protection that arises when a sufficiently high fraction of a population is immune to a contagious disease, whether through vaccination or previous infection, so that the pathogen can no longer sustain a chain of transmission. Once immunity is widespread, an infected person is unlikely to encounter enough susceptible people to keep the disease spreading, and it fades out. This shelters even those who are not immune, including newborns too young to be vaccinated and people who cannot mount immunity, such as the immunocompromised. Applying only to contagious diseases, herd immunity is the scientific rationale for mass vaccination programmes and the mechanism behind the eradication of smallpox and the near-elimination of polio.",
+  "mechanism": "Every immune person is a dead end for the pathogen, breaking chains of transmission and lowering the effective reproduction number, the average number of new cases each infection produces. When the immune fraction is high enough that this number falls below one, the disease cannot sustain itself and outbreaks die out. The fraction required, the herd immunity threshold, is one minus one over the basic reproduction number, so the more contagious a disease, the higher the threshold. Measles, with a basic reproduction number around twelve to eighteen, needs roughly ninety-two to ninety-five percent of the population immune, while a less contagious disease needs less. The safe route to reach the threshold is vaccination, since acquiring immunity by mass natural infection incurs the disease's full toll of illness and death.",
+  "examples": [
+    {
+      "tag": "Eradicating smallpox",
+      "text": "Mass vaccination raised immunity above the threshold worldwide, breaking transmission and eradicating smallpox, the clearest triumph of herd immunity."
+    },
+    {
+      "tag": "The measles threshold",
+      "text": "Because measles is so contagious, roughly ninety-five percent of a population must be immune to stop sustained spread, which is why measles returns when vaccination coverage dips."
+    },
+    {
+      "tag": "Protecting the vulnerable",
+      "text": "Newborns and immunocompromised people who cannot be vaccinated are shielded indirectly when enough of those around them are immune."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The herd immunity threshold",
+      "text": "The critical immune fraction, one minus one over the basic reproduction number, above which a pathogen cannot maintain sustained transmission."
+    },
+    {
+      "name": "Vaccine versus natural immunity",
+      "text": "Reaching the threshold safely through vaccination rather than mass natural infection, which would inflict the disease's full burden of illness and death."
+    }
+  ],
+  "whyItMatters": "Herd immunity is the scientific foundation of vaccination policy and one of the great achievements of public health, the mechanism by which immunising enough people protects everyone, including those who cannot be immunised themselves. It explains why high vaccination coverage can eliminate diseases, as with smallpox and, nearly, polio, and why coverage must stay high to prevent resurgence, as measles outbreaks after dips in uptake demonstrate. Understanding the threshold, and that the safe path to it is vaccination rather than mass infection, is central to controlling epidemics and to the ethics and strategy of protecting a whole community.",
+  "working": [
+    {"lead": "Break the chains", "text": "raise the immune fraction so infected people meet too few susceptibles to sustain transmission, pushing the effective reproduction number below one."},
+    {"lead": "Compute the threshold", "text": "find the needed immune fraction as one minus one over the basic reproduction number, higher for more contagious diseases."},
+    {"lead": "Reach it by vaccination", "text": "attain the threshold through vaccination, the safe route, rather than mass natural infection, which carries the disease's full toll."}
+  ],
+  "limits": "Herd immunity requires reaching a threshold, not universal immunity, but the threshold assumes a homogeneously mixing population; real populations cluster, so pockets of low immunity can still sustain local outbreaks even when the overall fraction is high. It applies only to contagious diseases, not to non-communicable conditions. Immunity can wane over time or be evaded by new variants, so the threshold is not reached once and for all but must be maintained. And reaching it through mass natural infection, rather than vaccination, means paying the disease's full cost in illness and death, so it is not a safe strategy for dangerous diseases.",
+  "misreadings": "Herd immunity does not require everyone to be immune, only enough to cross the threshold, and it protects the non-immune indirectly rather than making them immune. It is not a licence for deliberate mass infection: natural herd immunity carries the disease's full morbidity and mortality, so vaccination is the safe route. And it is not permanent; waning immunity and new variants can lower the effective immune fraction below the threshold, allowing a disease to return, which is why sustained high vaccination coverage matters.",
+  "origin": "The term herd immunity dates to the 1920s among British scientists studying diseases like diphtheria and scarlet fever, with the threshold theory developed through the mid-twentieth century and applied to eradicate smallpox and control many childhood diseases.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Herd immunity, Wikipedia. — the indirect-protection definition, the one minus one over R-nought threshold, the measles figure, vaccination and smallpox eradication, and the 1920s origin of the term.", "url": "https://en.wikipedia.org/wiki/Herd_immunity", "type": "secondary"},
+    {"text": "How Herd Immunity Works, History of Vaccines (College of Physicians of Philadelphia). — the threshold, the protection of the vulnerable, and vaccination as the route.", "url": "https://historyofvaccines.org/vaccines-101/what-do-vaccines-do/how-herd-immunity-works/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Herd_immunity",
+  "related": [
+    {"slug": "the-basic-reproduction-number", "kind": "cause"},
+    {"slug": "kochs-postulates", "kind": "kindred"}
+  ]
+}

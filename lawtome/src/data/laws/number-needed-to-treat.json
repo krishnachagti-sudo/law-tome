@@ -1,0 +1,56 @@
+{
+  "no": "617",
+  "slug": "number-needed-to-treat",
+  "name": "Number Needed to Treat",
+  "aliases": ["NNT", "Number needed to treat to benefit"],
+  "statement": "How many patients must be treated for one of them to benefit measures a therapy's real worth.",
+  "statementAccent": "for one of them to benefit",
+  "meaning": "The number needed to treat is a measure in evidence-based medicine of how effective a treatment is, defined as the average number of patients who must receive it for one additional patient to benefit, compared with a control. It is calculated as one divided by the absolute risk reduction, the difference in the rate of the bad outcome between the treated and control groups. A lower number needed to treat means a more effective treatment, since fewer people must be treated for one to benefit, with a value of one being the unreachable ideal where everyone treated benefits. Introduced by Laupacis, Sackett, and Roberts in 1988, it expresses a treatment's benefit in an intuitive, absolute way that relative measures can obscure.",
+  "mechanism": "Suppose a treatment cuts the risk of an outcome from ten percent to five percent. The absolute risk reduction is five percentage points, or zero point zero five, and the number needed to treat is its reciprocal, one divided by zero point zero five, which is twenty: twenty patients must be treated to prevent one event. The strength of the measure is that it uses the absolute difference in risk, not the relative one. A treatment that halves risk sounds impressive as a relative reduction, but if the baseline risk is tiny the absolute benefit and hence the number needed to treat can be poor. The mirror-image measure for harms is the number needed to harm, one divided by the absolute risk increase, the number treated for one extra patient to be harmed.",
+  "examples": [
+    {
+      "tag": "The worked example",
+      "text": "If a drug lowers an outcome's risk from ten percent to five percent, the absolute risk reduction is five percent and the number needed to treat is twenty."
+    },
+    {
+      "tag": "Beating relative risk",
+      "text": "A large relative risk reduction can mask a small absolute benefit; a thirty-six percent relative reduction with only a one percent absolute one gives a number needed to treat near one hundred."
+    },
+    {
+      "tag": "The harm counterpart",
+      "text": "The number needed to harm, one over the absolute risk increase, gives the number of patients treated for one additional patient to suffer a harm."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Number needed to harm",
+      "text": "The reciprocal of the absolute risk increase, giving the number of patients treated for one additional patient to experience an adverse outcome."
+    },
+    {
+      "name": "The absolute-risk basis",
+      "text": "The reliance on absolute risk reduction rather than relative risk, which keeps the measure honest about how much benefit a treatment really delivers."
+    }
+  ],
+  "whyItMatters": "The number needed to treat translates trial results into an intuitive figure that clinicians and patients can grasp: how many people must take a treatment for one to benefit. It counters the way relative risk reductions can exaggerate a therapy's value, especially when baseline risk is low, and it supports shared decision-making and the comparison of treatments. Paired with the number needed to harm and the seriousness of the outcomes involved, it lets doctors weigh benefit against risk in absolute terms. As a staple of evidence-based medicine, it keeps the evaluation of treatments grounded in real, absolute effects rather than impressive-sounding ratios.",
+  "working": [
+    {"lead": "Invert the absolute risk reduction", "text": "compute the number needed to treat as one divided by the difference in event rates between treatment and control groups."},
+    {"lead": "Prefer lower numbers", "text": "read a smaller number needed to treat as a more effective treatment, since fewer patients must be treated for one to benefit."},
+    {"lead": "Pair with harm and severity", "text": "weigh the number needed to treat against the number needed to harm and the seriousness of the outcomes to judge overall value."}
+  ],
+  "limits": "The number needed to treat depends on the baseline risk, the specific outcome, the time horizon, and the comparator, so it is context-specific and not a fixed property of a drug; the same treatment can have very different numbers in different populations. It must be interpreted alongside the number needed to harm and the seriousness of the outcomes, since a low number for a trivial benefit or a low number needed to harm for a grave harm changes the picture. It is usually rounded up to a whole number and comes with statistical uncertainty, so a single reported value can mislead without its confidence interval and context.",
+  "misreadings": "The number needed to treat is not a fixed attribute of a treatment; it varies with baseline risk, outcome, follow-up time, and comparator, so it must always be read in context. A lower number is better, not worse, since it means fewer people need treating for one to benefit. And it cannot be judged alone: it must be weighed against the number needed to harm and the severity of the outcomes, because preventing a minor event or causing a serious harm changes what a given number really means.",
+  "origin": "Introduced by Andreas Laupacis, David Sackett, and Robin Roberts in 1988 in the New England Journal of Medicine as the reciprocal of the absolute risk reduction, now a standard measure in evidence-based medicine.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1988,
+  "sources": [
+    {"text": "Number needed to treat, Wikipedia. — the definition, NNT equals one over the absolute risk reduction, lower being better, the number needed to harm, and the Laupacis, Sackett, and Roberts 1988 origin.", "url": "https://en.wikipedia.org/wiki/Number_needed_to_treat", "type": "secondary"},
+    {"text": "Mendes, Alves & Batel-Marques, Number needed to treat (NNT) in clinical literature: an appraisal, BMC Medicine (2017), NIH PMC. — the formula, the contrast with relative risk reduction, and context dependence.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5455127/", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Number_needed_to_treat",
+  "related": [
+    {"slug": "the-therapeutic-index", "kind": "kindred"},
+    {"slug": "the-bradford-hill-criteria", "kind": "kindred"}
+  ]
+}
