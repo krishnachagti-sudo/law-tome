@@ -1,0 +1,57 @@
+{
+  "no": "795",
+  "slug": "the-hohmann-transfer-orbit",
+  "name": "The Hohmann Transfer Orbit",
+  "aliases": ["Hohmann transfer", "Two-burn transfer"],
+  "statement": "The cheapest way between two circular orbits is a single ellipse kissing them both, with two burns.",
+  "statementAccent": "a single ellipse kissing them both, with two burns",
+  "meaning": "The Hohmann transfer orbit is an orbital maneuver that moves a spacecraft between two circular, coplanar orbits of different radii using an elliptical path tangent to both, and in the ideal two-body case it is the most fuel-efficient two-impulse way to do so. The transfer ellipse touches the lower orbit at one end and the higher orbit at the other, so the spacecraft coasts along half an ellipse from one orbit to the other. Two engine burns accomplish the transfer: the first raises the spacecraft from its starting circular orbit onto the transfer ellipse, and the second, at the far end, circularizes it into the target orbit. Because both burns are tangential, changing only the speed and not the direction of motion, the maneuver minimizes the required change in velocity, or delta-v, and hence the propellant. Named after the German engineer Walter Hohmann, who described it in 1925, the Hohmann transfer is the workhorse maneuver for raising satellites to higher orbits and for many interplanetary journeys.",
+  "mechanism": "The transfer exploits the geometry of ellipses and the physics of orbital energy. A spacecraft in a low circular orbit fires its engine prograde, adding speed, which raises the far side of its orbit into an ellipse whose low point, perigee, touches the original orbit and whose high point, apogee, reaches out to the target orbit's radius. The spacecraft then coasts, engine off, along this half-ellipse, slowing as it climbs, until it arrives at apogee moving too slowly for the higher circular orbit. A second prograde burn there adds the extra speed needed to circularize, settling it into the target orbit. To descend instead, the burns are retrograde and the sequence reversed. Because each burn changes only the magnitude of the velocity, aligned with the motion, no energy is wasted turning the velocity vector, which is why the Hohmann transfer requires the least delta-v of any two-impulse transfer for moderate ratios of orbit sizes. For very large ratios, a three-burn bi-elliptic transfer can require even less delta-v, at the cost of much longer travel time.",
+  "examples": [
+    {
+      "tag": "Reaching geostationary orbit",
+      "text": "Satellites are raised from low Earth orbit to geostationary orbit via a geostationary transfer orbit, a Hohmann transfer ellipse between the two."
+    },
+    {
+      "tag": "Earth to Mars",
+      "text": "Interplanetary missions use Hohmann-like transfers timed to launch windows, coasting along an ellipse from Earth's orbit to the target planet's."
+    },
+    {
+      "tag": "Two tangential burns",
+      "text": "One burn lifts the craft onto the transfer ellipse and a second at the far end circularizes it, each changing only speed, not direction."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The bi-elliptic transfer",
+      "text": "A three-burn alternative that can beat the Hohmann transfer in delta-v for very large orbit-size ratios, at the cost of much longer travel time."
+    },
+    {
+      "name": "Geostationary transfer orbit",
+      "text": "The Hohmann transfer ellipse used to raise satellites from low Earth orbit to geostationary orbit, a routine commercial maneuver."
+    }
+  ],
+  "whyItMatters": "The Hohmann transfer orbit is a foundational maneuver of spaceflight, the standard efficient way to change a spacecraft's orbit and a benchmark against which other transfers are measured. Because propellant is the scarcest resource on most missions, minimizing delta-v is paramount, and the Hohmann transfer's two tangential burns achieve the transfer between circular orbits with the least fuel for moderate size ratios. It is the routine method for lifting communications and other satellites from low parking orbits to geostationary orbit, and its principle underlies interplanetary trajectory design, where launch windows are chosen so that a Hohmann-like ellipse reaches the target planet, as in Earth-to-Mars transfers. Understanding the Hohmann transfer clarifies the fundamental trade-off in astronautics between fuel and time, since the fuel-cheapest path is also relatively slow. As Walter Hohmann's enduring contribution from 1925, it remains a cornerstone of orbital mechanics and mission planning, taught to every student of spaceflight and used in real missions to this day.",
+  "working": [
+    {"lead": "Burn onto the ellipse", "text": "fire prograde from the starting circular orbit to raise the far side into a transfer ellipse tangent to the target orbit."},
+    {"lead": "Coast the half-ellipse", "text": "drift with the engine off along half the ellipse, slowing while climbing to the target radius."},
+    {"lead": "Circularize", "text": "burn prograde again at the far end to add the speed needed to settle into the target circular orbit."}
+  ],
+  "limits": "The Hohmann transfer is the most efficient two-impulse maneuver only between circular, coplanar orbits in the idealized two-body problem; real transfers must account for the gravity of multiple bodies, orbital inclination changes, and finite burn times, and plane changes in particular are expensive. It is not always the absolute minimum: for very large ratios between the two orbit radii, a three-burn bi-elliptic transfer can use less total delta-v, though it takes much longer. The transfer also assumes impulsive burns, sudden changes in velocity, whereas real engines fire over finite intervals, requiring corrections. And it is fuel-efficient but relatively slow, so missions that value time may choose faster, costlier trajectories. So the Hohmann transfer is the canonical efficient orbit-change maneuver, optimal within its idealized assumptions and for moderate orbit-size ratios, and one option among several in real mission design.",
+  "misreadings": "The Hohmann transfer is not always the least-fuel option; for very large jumps in orbit size a bi-elliptic transfer can use even less delta-v, though it is slower. It applies to circular coplanar orbits in the two-body idealization, not straightforwardly to plane changes or multi-body trajectories, which cost more. And it is efficient in fuel but not in time, since the coasting ellipse is relatively slow, so treating the Hohmann transfer as universally optimal, or as fast, misreads a maneuver that minimizes propellant for moderate orbit changes under idealized conditions.",
+  "origin": "Described by the German engineer Walter Hohmann in his 1925 book The Attainability of Celestial Bodies; the most fuel-efficient two-impulse transfer between two circular coplanar orbits in the ideal two-body case.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1925,
+  "namedAfter": "Walter Hohmann",
+  "sources": [
+    {"text": "Hohmann transfer orbit, Wikipedia. — the most fuel-efficient two-impulse transfer between two circular coplanar orbits via a tangent ellipse, the two-burn raise-then-circularize structure, the Walter Hohmann 1925 attribution, the bi-elliptic alternative for large ratios, and uses for geostationary and interplanetary transfers.", "url": "https://en.wikipedia.org/wiki/Hohmann_transfer_orbit", "type": "secondary"},
+    {"text": "Hohmann Transfer, Orbital Mechanics & Astrodynamics. — the tangent-ellipse definition, the two tangential burns, and the delta-v analysis of the Hohmann transfer.", "url": "https://orbital-mechanics.space/orbital-maneuvers/hohmann-transfer.html", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hohmann_transfer_orbit",
+  "related": [
+    {"slug": "the-oberth-effect", "kind": "kindred"},
+    {"slug": "gravity-assist", "kind": "kindred"}
+  ]
+}

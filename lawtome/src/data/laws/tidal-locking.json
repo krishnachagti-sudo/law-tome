@@ -1,0 +1,57 @@
+{
+  "no": "796",
+  "slug": "tidal-locking",
+  "name": "Tidal Locking",
+  "aliases": ["Synchronous rotation", "Gravitational locking", "Captured rotation"],
+  "statement": "Over time an orbiting body's spin matches its orbit, so it forever shows one face to its partner.",
+  "statementAccent": "it forever shows one face to its partner",
+  "meaning": "Tidal locking, also called synchronous rotation, is the state in which an orbiting body's rotation period becomes equal to its orbital period, so that it always keeps the same face toward the body it orbits. The most familiar example is the Moon, which is tidally locked to Earth: it turns once on its axis in exactly the time it takes to circle the Earth, so we on Earth always see the same near side and never see the far side directly. Tidal locking is the natural end state of the tidal interaction between two bodies over long periods of time, reached faster for bodies that are close together or where the smaller body is large. It is extremely common in the solar system, where all the large round moons are locked to their planets, and Pluto and its moon Charon are even mutually locked, each showing only one face to the other. Despite the phrase dark side of the Moon, the far side is not permanently unlit; it receives just as much sunlight as the near side.",
+  "mechanism": "Tidal locking results from the torque that tides exert on a rotating body. The gravity of the larger body pulls harder on the near side of the smaller body than on the far side, raising a bulge along the line between them. If the smaller body spins faster than it orbits, its rotation carries this bulge slightly ahead of the line joining the two bodies. The larger body's gravity then tugs back on the leading bulge, producing a torque that opposes the rotation and gradually slows the spin. Friction and energy dissipation within the body, strongest when it was young and partly molten, remove rotational energy until the spin rate matches the orbital rate, at which point the bulge stays aligned with the line between the bodies and the net torque vanishes, locking the rotation. The time this takes depends strongly on the distance between the bodies, along with their sizes and masses, so close or large bodies lock quickly while distant ones may take far longer than the age of the solar system.",
+  "examples": [
+    {
+      "tag": "The Moon",
+      "text": "The Moon is tidally locked to Earth, keeping the same near side toward us, so the far side was unseen until spacecraft photographed it in 1959."
+    },
+    {
+      "tag": "Pluto and Charon",
+      "text": "Pluto and its large moon Charon are mutually tidally locked, each permanently showing only one hemisphere to the other."
+    },
+    {
+      "tag": "Mercury's 3:2 resonance",
+      "text": "Mercury is not simply locked but in a 3:2 spin-orbit resonance, rotating three times for every two orbits of the Sun, a special case."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Mutual tidal locking",
+      "text": "The case, as with Pluto and Charon, where both bodies become locked and each shows only one face to the other."
+    },
+    {
+      "name": "Spin-orbit resonance",
+      "text": "A related state, like Mercury's 3:2, where rotation and orbit lock into a small-integer ratio other than one to one."
+    }
+  ],
+  "whyItMatters": "Tidal locking is a fundamental outcome of gravitational interaction that shapes the rotation of moons and planets throughout the universe. It explains why we always see the same face of the Moon, a fact known since antiquity, and why the same is true of nearly every large moon in the solar system, revealing how tides govern the long-term evolution of spins. It bears on habitability and climate: many planets orbiting close to small, cool red-dwarf stars are expected to be tidally locked, with one hemisphere in perpetual day and the other in perpetual night, which strongly affects whether and how such worlds could support life, an important consideration in the study of exoplanets. Tidal locking also connects to the broader physics of tides, the slowing of Earth's rotation, and the gradual recession of the Moon. Understanding it corrects the common misconception of a permanently dark lunar side and illuminates how gravity, given time, synchronizes rotation with orbit across the cosmos.",
+  "working": [
+    {"lead": "Raise a tidal bulge", "text": "let the larger body's gravity distort the smaller one, raising a bulge along the line between them."},
+    {"lead": "Torque the misaligned bulge", "text": "if the body spins faster than it orbits, its rotation drags the bulge ahead, and the resulting gravitational torque slows the spin."},
+    {"lead": "Reach synchronization", "text": "continue until the rotation period equals the orbital period, so the bulge stays aligned and the same face points inward."}
+  ],
+  "limits": "Tidal locking is the end state of a slow process whose timescale depends steeply on orbital distance, size, and mass, so distant bodies may never lock within the age of the system, and being unlocked is not unusual for far-out or small bodies. Locking need not be exactly one-to-one: Mercury settled into a 3:2 spin-orbit resonance rather than full synchronous rotation, a distinct outcome that the simple picture does not capture. A locked body is not perfectly still-faced either, since orbital eccentricity produces libration, a slight apparent rocking that lets us glimpse a bit more than half the Moon over time. And tidal locking concerns rotation, not illumination, so the far side is not permanently dark. So tidal locking robustly describes synchronous rotation as the natural tidal end state, with resonances, libration, and long timescales as important qualifications.",
+  "misreadings": "The far side of a tidally locked body is not perpetually dark; the Moon's far side receives as much sunlight as the near side, and dark side means unseen, not unlit. Tidal locking does not always mean a one-to-one match, since Mercury is in a 3:2 spin-orbit resonance instead. And a locked body is not perfectly fixed in view, because libration lets us see slightly more than half the Moon, so treating the far side as sunless, or locking as always synchronous and perfectly steady, misreads a process that synchronizes rotation with orbit but allows resonances and libration.",
+  "origin": "A natural end state of tidal interaction between orbiting bodies, long evident in the Moon's synchronous rotation; explained by the gravitational torque on tidal bulges gradually matching spin to orbit.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Tidal locking, Wikipedia. — the state where rotation period equals orbital period so one face stays toward the partner, the Moon example, the tidal-bulge torque mechanism, the dark-side misconception, Pluto-Charon mutual locking, Mercury's 3:2 resonance, and the distance dependence of the timescale.", "url": "https://en.wikipedia.org/wiki/Tidal_locking", "type": "secondary"},
+    {"text": "Tidal Locking, NASA. — the Moon's synchronous rotation keeping one face toward Earth and the tidal process that slowed its spin to match its orbit.", "url": "https://science.nasa.gov/moon/tidal-locking/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Tidal_locking",
+  "related": [
+    {"slug": "orbital-resonance", "kind": "kindred"},
+    {"slug": "the-goldilocks-zone", "kind": "kindred"}
+  ]
+}

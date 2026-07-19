@@ -1,0 +1,83 @@
+{
+  "no": "805",
+  "slug": "the-goldilocks-zone",
+  "name": "The Goldilocks Zone",
+  "aliases": [
+    "Circumstellar habitable zone",
+    "The habitable zone"
+  ],
+  "statement": "Around each star lies a band not too hot, not too cold, where water could stay liquid.",
+  "statementAccent": "not too hot, not too cold, where water could stay liquid",
+  "meaning": "The Goldilocks zone, more formally the circumstellar habitable zone, is the range of distances from a star within which a planet could have the right surface temperature for liquid water to exist, given a suitable atmosphere. The nickname comes from the fairy tale in which Goldilocks seeks what is not too hot and not too cold but just right, capturing the idea that a planet in this zone is neither so close to its star that its water boils away nor so far that it freezes. Liquid water on the surface is the defining criterion, since it is considered essential for life as we know it. The zone's location depends on the star: hotter, more luminous stars have habitable zones farther out, while cooler, dimmer stars like red dwarfs have zones close in. Earth sits comfortably within the Sun's habitable zone, with Mars near its outer edge and Venus near or inside the inner edge. The concept is a key tool in the search for potentially habitable worlds beyond the solar system.",
+  "mechanism": "The habitable zone is defined by the balance between the warmth a planet receives from its star and the temperature range in which water stays liquid on a surface. Too close to the star, the intense starlight drives temperatures so high that any surface water evaporates, and a runaway greenhouse effect can boil the oceans away, as is thought to have happened to Venus. Too far, the feeble starlight leaves the surface so cold that water freezes solid. Between these bounds lies a band of orbits where, with an atmosphere providing sufficient pressure and some greenhouse warming, liquid water can persist on the surface. Because the amount of light a planet receives falls off with distance and rises with the star's luminosity, the zone's inner and outer edges scale with the star: a luminous star pushes the habitable band outward, while a dim red dwarf's zone huddles close in, where planets may be tidally locked. The criterion is surface liquid water specifically, so the zone concerns temperature and stellar output rather than guaranteeing any of the other conditions life may require.",
+  "examples": [
+    {
+      "tag": "Earth in the zone",
+      "text": "Earth orbits comfortably within the Sun's habitable zone, warm enough for liquid oceans but not so hot that they boil away."
+    },
+    {
+      "tag": "Venus and Mars at the edges",
+      "text": "Venus lies near or inside the inner edge, having lost its water to a runaway greenhouse, while Mars sits near the cold outer edge."
+    },
+    {
+      "tag": "Red dwarf zones",
+      "text": "Cool, dim red dwarf stars have close-in habitable zones, where a planet must orbit near the star to be warm enough for liquid water."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Dependence on the star",
+      "text": "The way the zone moves outward for hotter, more luminous stars and inward for cooler, dimmer ones like red dwarfs."
+    },
+    {
+      "name": "Subsurface habitability",
+      "text": "The possibility of liquid water beneath the surface, as on Europa or Enceladus, kept liquid by tidal heating outside the classical zone."
+    }
+  ],
+  "whyItMatters": "The Goldilocks zone is a central organizing idea in astrobiology and the search for life beyond Earth, giving astronomers a first, tractable criterion for identifying planets that might host liquid water and therefore, possibly, life. As thousands of exoplanets are discovered, the habitable zone offers a way to prioritize which worlds are worth closer study, focusing attention on planets orbiting at the right distance from their stars. The concept frames the design of missions and telescopes hunting for potentially habitable planets and biosignatures, and it shapes how the public and scientists alike think about where life could arise. It also encodes real physics, the balance of stellar warmth and the temperature range of liquid water, and its dependence on stellar type illuminates why the search strategy differs for Sun-like stars and red dwarfs. While being in the zone is only a starting point and not a guarantee of habitability, the Goldilocks zone remains one of the most influential and widely used concepts in the study of exoplanets and the prospects for life.",
+  "working": [
+    {
+      "lead": "Balance starlight and temperature",
+      "text": "find the range of orbits where a planet receives enough warmth for surface water to stay liquid, neither boiling nor freezing."
+    },
+    {
+      "lead": "Scale to the star",
+      "text": "push the zone outward for luminous stars and inward for dim ones, since received light depends on distance and stellar output."
+    },
+    {
+      "lead": "Prioritize candidates",
+      "text": "use the zone to flag planets at the right distance as promising targets in the search for potentially habitable worlds."
+    }
+  ],
+  "limits": "Being in the habitable zone does not guarantee habitability or life; the zone concerns only the potential for surface liquid water and depends heavily on a planet's atmosphere, greenhouse effect, magnetic field, and history, so a planet in the zone can still be barren, as a bare rock or a runaway greenhouse. The zone's exact inner and outer edges are model-dependent, varying with assumptions about atmospheres and clouds, so the placement of borderline cases like Mars and Venus is not precise. Liquid water can also exist outside the classical zone: moons such as Europa and Enceladus may harbour subsurface oceans kept liquid by tidal heating far from any stellar habitable band. Red-dwarf zones bring their own hazards, such as intense flares. So the Goldilocks zone is a valuable but limited first criterion for habitability, best understood as necessary-ish rather than sufficient, and as one factor among many.",
+  "misreadings": "Being in the Goldilocks zone does not mean a planet is habitable or inhabited; the zone only marks where surface liquid water is possible, and atmosphere and other factors decide the rest, so a zone planet can be lifeless. The zone is not a fixed band for all stars, since it moves with stellar luminosity. And liquid water is not confined to the zone, since tidally heated moons can hold subsurface oceans far outside it, so treating a habitable-zone planet as guaranteed to bear life, or the zone as the only place water can be liquid, misreads a first-pass criterion about surface water, not a certificate of habitability.",
+  "origin": "The circumstellar habitable zone, nicknamed the Goldilocks zone, a concept in astrobiology for the orbital range around a star where surface liquid water is possible; central to the search for habitable exoplanets.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {
+      "text": "Circumstellar habitable zone, Wikipedia. — the orbital range where surface liquid water is possible given a suitable atmosphere, the Goldilocks nickname, the too-hot and too-cold bounds, the dependence on stellar luminosity, Earth's position, and the caveats that the zone is not a guarantee and that subsurface oceans can exist outside it.",
+      "url": "https://en.wikipedia.org/wiki/Circumstellar_habitable_zone",
+      "type": "secondary"
+    },
+    {
+      "text": "Habitable Zone, NASA. — the region around a star where liquid surface water could exist, essential for life as we know it, and its use in the search for habitable exoplanets.",
+      "url": "https://science.nasa.gov/exoplanets/habitable-zone/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Circumstellar_habitable_zone",
+  "related": [
+    {
+      "slug": "tidal-locking",
+      "kind": "kindred"
+    },
+    {
+      "slug": "drake-equation",
+      "kind": "kindred"
+    }
+  ]
+}

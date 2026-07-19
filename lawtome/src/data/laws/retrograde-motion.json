@@ -1,0 +1,57 @@
+{
+  "no": "806",
+  "slug": "retrograde-motion",
+  "name": "Retrograde Motion",
+  "aliases": ["Apparent retrograde motion", "Planetary retrogression"],
+  "statement": "A planet seems to pause and drift backward against the stars as Earth overtakes it.",
+  "statementAccent": "drift backward against the stars as Earth overtakes it",
+  "meaning": "Apparent retrograde motion is the temporary appearance of a planet moving backward, from east to west, against the background of the fixed stars, as seen from Earth. Normally, night after night, the planets drift slowly eastward, or prograde, among the stars. But periodically a planet appears to slow, stop, and reverse, moving westward for a time before halting again and resuming its usual eastward march, often tracing a loop or zigzag in the sky. This backward motion is not real; the planet does not actually reverse its orbit. It is an illusion created by the relative motion of Earth and the other planet as both orbit the Sun. Explaining retrograde motion was one of the great problems of early astronomy, and the contrast between the awkward geocentric account and the natural heliocentric one was pivotal in the acceptance of the Sun-centred model of the solar system. Apparent retrograde motion should not be confused with true retrograde orbital or rotational motion, which are genuinely reversed motions.",
+  "mechanism": "Apparent retrograde motion arises because Earth and the other planets orbit the Sun at different speeds and distances. For an outer planet such as Mars, Earth travels on a faster, inner orbit and periodically catches up to and overtakes the slower planet. As Earth passes, the line of sight to the outer planet swings backward against the distant stars, so the planet appears to reverse direction, much as a slower car seems to move backward when you overtake it on a highway. Before and after the overtaking, the planet appears to move prograde; during the pass it appears retrograde, tracing a loop. In the old Earth-centred, Ptolemaic model, this had to be reproduced by adding epicycles, small circles on which each planet moved while its centre carried it around Earth, an elaborate device to fit the observations. The Sun-centred, Copernican model explained the same motion naturally as a simple consequence of Earth's own orbital motion overtaking the outer planets, needing no epicycles and offering a decisive conceptual advantage.",
+  "examples": [
+    {
+      "tag": "Mars looping in the sky",
+      "text": "Mars periodically appears to slow, reverse westward, and loop against the stars as Earth overtakes it on the inner, faster orbit."
+    },
+    {
+      "tag": "The highway analogy",
+      "text": "As Earth passes an outer planet, the planet seems to drift backward against distant stars, like a slower car appearing to move back as you pass it."
+    },
+    {
+      "tag": "Epicycles versus heliocentrism",
+      "text": "The Ptolemaic model used epicycles to reproduce retrograde loops, while the Copernican model explained them simply through Earth's orbital motion."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Ptolemaic explanation",
+      "text": "The geocentric account that reproduced retrograde loops with epicycles, small circles carried around Earth."
+    },
+    {
+      "name": "True retrograde motion",
+      "text": "Genuinely reversed motion, distinct from the apparent effect, as in Venus's retrograde rotation or a moon in a retrograde orbit."
+    }
+  ],
+  "whyItMatters": "Apparent retrograde motion holds a central place in the history of astronomy, because explaining it was a decisive test of competing models of the cosmos. The wandering, looping paths of the planets were among the most puzzling features of the sky, and the geocentric model could account for them only by the intricate machinery of epicycles, whereas the heliocentric model explained them naturally as a byproduct of Earth's own motion around the Sun. This elegance was a powerful argument in the Copernican revolution and the eventual acceptance of a Sun-centred solar system, illustrating how a simpler explanation of the same observations can overturn an entrenched worldview. Beyond its historical importance, retrograde motion vividly demonstrates that what we see in the sky depends on our moving vantage point, a lesson in relative motion and perspective. It remains a staple of astronomy education, both for understanding planetary motion and for appreciating how the shift to heliocentrism transformed humanity's picture of the universe.",
+  "working": [
+    {"lead": "Watch a planet drift prograde", "text": "observe a planet moving slowly eastward against the fixed stars night after night."},
+    {"lead": "Overtake it", "text": "as faster-orbiting Earth catches up and passes an outer planet, the line of sight swings backward against the stars."},
+    {"lead": "See the apparent reversal", "text": "watch the planet appear to slow, move westward in a loop, then resume prograde motion once Earth has passed."}
+  ],
+  "limits": "Apparent retrograde motion is an observational illusion, not a real reversal, so it says nothing about a planet actually changing its orbital direction; it arises purely from the changing line of sight as Earth and the planet move. It must be distinguished from true retrograde motion, in which a body genuinely orbits or rotates opposite to the prevailing direction, as with Venus's retrograde rotation or certain moons and comets on retrograde orbits, which are real physical motions rather than illusions. The details of the apparent path, the size and shape of the loop, depend on the geometry of the two orbits. The historical epicycle account, while able to reproduce the appearances, was superseded because heliocentrism explained them far more simply. So retrograde motion reliably illustrates relative planetary motion and the case for heliocentrism, understood as an apparent effect that is distinct from genuine reversed motion.",
+  "misreadings": "Apparent retrograde motion does not mean a planet actually reverses its orbit; it is an illusion from Earth overtaking the planet as both circle the Sun. It is different from true retrograde motion, such as Venus's genuinely backward rotation, which is a real reversal, not an appearance. And the Ptolemaic epicycles that reproduced the loops were not correct physics but a fitting device, later replaced by the simpler heliocentric explanation, so treating the backward drift as a real orbital reversal, or confusing it with true retrograde rotation, misreads an illusion of relative motion that helped establish the Sun-centred model.",
+  "origin": "A long-observed feature of planetary motion whose explanation was central to astronomy: reproduced by epicycles in the Ptolemaic model and explained naturally by Earth's orbital motion in the Copernican heliocentric model.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Apparent retrograde motion, Wikipedia. — the apparent westward motion of a planet against the stars, the prograde-versus-retrograde distinction, the relative-motion and overtaking cause with the highway analogy, the Ptolemaic epicycle versus Copernican heliocentric explanations, and the distinction from true retrograde motion.", "url": "https://en.wikipedia.org/wiki/Apparent_retrograde_motion", "type": "secondary"},
+    {"text": "Retrograde motion, Encyclopaedia Britannica. — the apparent motion depending on the difference in orbital speeds of the planets, and the distinction of true retrograde rotation such as that of Venus and Uranus.", "url": "https://www.britannica.com/science/retrograde-motion", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Apparent_retrograde_motion",
+  "related": [
+    {"slug": "orbital-resonance", "kind": "kindred"},
+    {"slug": "tidal-locking", "kind": "kindred"}
+  ]
+}
