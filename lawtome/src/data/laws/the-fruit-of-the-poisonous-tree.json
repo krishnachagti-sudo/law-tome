@@ -1,0 +1,55 @@
+{
+  "no": "635",
+  "slug": "the-fruit-of-the-poisonous-tree",
+  "name": "The Fruit of the Poisonous Tree",
+  "aliases": ["Tainted derivative evidence", "The poisonous tree doctrine"],
+  "statement": "Evidence discovered because of an illegal act is itself tainted and inadmissible.",
+  "statementAccent": "is itself tainted and inadmissible",
+  "meaning": "The fruit of the poisonous tree is a legal metaphor and doctrine in United States law under which evidence derived from an illegal search, seizure, interrogation, or other constitutional violation is itself inadmissible. The idea is vivid: if the source, the tree, is poisoned by illegality, then whatever grows from it, the fruit, is tainted too. The doctrine extends the exclusionary rule beyond the directly obtained illegal evidence to secondary, derivative evidence, such as a weapon found because of an unlawful confession or a witness discovered through an illegal search. Coined by Justice Felix Frankfurter in 1939 and rooted in a 1920 decision, it protects Fourth, Fifth, and Sixth Amendment rights by preventing the government from benefiting indirectly from its own illegality.",
+  "mechanism": "Where the exclusionary rule bars the direct product of a constitutional violation, the fruit of the poisonous tree doctrine bars the further evidence obtained as a result of that violation, following the taint down the causal chain. If an illegal interrogation reveals the location of a weapon, or an unlawful search leads investigators to a witness, that derivative evidence can be suppressed along with the original. But the taint can be purified. Three main exceptions admit derivative evidence: the independent-source doctrine, where the evidence was also obtained through a lawful, unconnected route; inevitable discovery, where it would have been found anyway; and attenuation, where the connection between the illegality and the evidence has become sufficiently remote. These, together with the good-faith exception, keep the doctrine from being absolute.",
+  "examples": [
+    {
+      "tag": "Frankfurter's phrase",
+      "text": "Justice Felix Frankfurter coined the phrase fruit of the poisonous tree in Nardone v. United States in 1939, with the underlying doctrine rooted in Silverthorne Lumber in 1920."
+    },
+    {
+      "tag": "Derivative evidence",
+      "text": "A weapon found because of an illegally obtained confession, or a witness located through an unlawful search, is tainted fruit and may be suppressed."
+    },
+    {
+      "tag": "Purifying the taint",
+      "text": "Evidence survives if it comes from an independent lawful source, would inevitably have been discovered, or is sufficiently attenuated from the original illegality."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The independent-source doctrine",
+      "text": "The exception admitting derivative evidence that was also obtained through a lawful source unconnected to the illegality, so its taint is dispelled."
+    },
+    {
+      "name": "Attenuation",
+      "text": "The exception admitting evidence whose connection to the original illegal act has become so remote that the taint is considered dissipated."
+    }
+  ],
+  "whyItMatters": "The fruit of the poisonous tree is a key doctrine of United States criminal procedure, giving the exclusionary rule real teeth by ensuring the government cannot launder the products of its own illegality through indirect discovery. Without it, police could violate constitutional rights to obtain leads and then use the downstream evidence, defeating the deterrent purpose of excluding the original. By extending suppression to derivative evidence, it protects Fourth, Fifth, and Sixth Amendment rights more completely. Its exceptions, independent source, inevitable discovery, and attenuation, mark the boundaries where the connection to the illegality is too weak to justify exclusion, reflecting the ongoing balance between deterrence and the cost of losing reliable evidence.",
+  "working": [
+    {"lead": "Follow the taint", "text": "suppress not only the direct product of a constitutional violation but the further evidence discovered because of it, the poisoned fruit."},
+    {"lead": "Look for purification", "text": "check whether an independent source, inevitable discovery, or attenuation has cleansed the taint, allowing the derivative evidence in."},
+    {"lead": "Guard the exclusionary rule", "text": "treat the doctrine as the extension that keeps the exclusionary rule effective by denying the state the indirect fruits of its illegality."}
+  ],
+  "limits": "The doctrine is not absolute; the independent-source, inevitable-discovery, and attenuation exceptions, along with the good-faith exception, can save derivative evidence whose link to the illegality is weak enough. It is largely a United States doctrine, tied to the exclusionary rule, so it does not automatically apply in legal systems that admit illegally obtained evidence. It concerns the admissibility of derivative evidence, not the defendant's guilt, so suppression does not equal acquittal. And determining how far the taint reaches, and whether it has been purified, involves case-by-case judgement about causation and remoteness that can be contested.",
+  "misreadings": "The doctrine is not an absolute bar on all derivative evidence; the independent-source, inevitable-discovery, and attenuation exceptions can admit it when the connection to the illegality is sufficiently weak. It is largely a United States doctrine, so its reasoning does not carry over to systems that do not exclude illegally obtained evidence. And it governs admissibility of evidence, not guilt, so excluding the fruit does not by itself acquit the defendant, who may still be convicted on untainted proof.",
+  "origin": "Coined by Justice Felix Frankfurter in Nardone v. United States in 1939, extending the exclusionary rule to derivative evidence, with the underlying doctrine rooted in Silverthorne Lumber Co. v. United States in 1920.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1939,
+  "sources": [
+    {"text": "Fruit of the poisonous tree, Wikipedia. — the metaphor and definition, Frankfurter's 1939 coinage and the Silverthorne 1920 root, the extension to derivative evidence, and the exceptions.", "url": "https://en.wikipedia.org/wiki/Fruit_of_the_poisonous_tree", "type": "secondary"},
+    {"text": "Fruit of the poisonous tree, Legal Information Institute, Cornell Law School. — that derivative evidence from illegally obtained evidence is inadmissible and the independent-source, inevitable-discovery, and attenuation exceptions.", "url": "https://www.law.cornell.edu/wex/fruit_of_the_poisonous_tree", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fruit_of_the_poisonous_tree",
+  "related": [
+    {"slug": "the-exclusionary-rule", "kind": "cause"}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "no": "627",
+  "slug": "res-ipsa-loquitur",
+  "name": "Res Ipsa Loquitur",
+  "aliases": ["The thing speaks for itself", "Inferred negligence"],
+  "statement": "Some accidents are so telling that negligence can be inferred from the mishap itself.",
+  "statementAccent": "negligence can be inferred from the mishap itself",
+  "meaning": "Res ipsa loquitur, Latin for the thing speaks for itself, is a doctrine in the law of negligence that lets a court infer negligence from the very nature of an accident, without direct evidence of how the defendant behaved. It applies when the accident is of a kind that ordinarily does not happen unless someone was negligent. In its traditional form it requires that the event does not normally occur without negligence, that it was caused by something within the defendant's exclusive control, and that the plaintiff did not contribute to it. The doctrine lets a plaintiff establish a prima facie case of negligence where direct proof of the specific careless act is unavailable, entered modern tort law through the 1863 English case of a falling barrel of flour.",
+  "mechanism": "Ordinarily a plaintiff must prove exactly how the defendant was careless, but some accidents are so characteristic of negligence that the circumstances themselves supply the inference. Res ipsa loquitur permits this when three conditions hold: the event is of a type that does not usually occur without negligence, the instrumentality causing it was under the defendant's exclusive control, and the plaintiff did nothing to bring it about. When these are met, the law allows the fact-finder to infer that the defendant was negligent, creating a rebuttable presumption or permissible inference that shifts the practical burden to the defendant to explain. The classic origin is Byrne v Boadle in 1863, where a barrel of flour fell from a warehouse window onto a passerby; Baron Pollock observed that some cases speak for themselves, and this was one.",
+  "examples": [
+    {
+      "tag": "The falling barrel",
+      "text": "In Byrne v Boadle in 1863 a barrel of flour fell from a warehouse window onto a passerby, and the court held the accident itself implied negligence."
+    },
+    {
+      "tag": "A retained surgical object",
+      "text": "A surgical instrument left inside a patient after an operation is a classic case, since it does not ordinarily happen without someone's carelessness."
+    },
+    {
+      "tag": "The three elements",
+      "text": "The traditional test asks whether the event usually happens only through negligence, whether the defendant had exclusive control, and whether the plaintiff was blameless."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Rebuttable presumption",
+      "text": "The form in which the doctrine creates a presumption of negligence the defendant must rebut, rather than merely a permissible inference the jury may draw."
+    },
+    {
+      "name": "The exclusive-control element",
+      "text": "The requirement that the harmful instrumentality was within the defendant's exclusive control, which modern courts sometimes relax in complex cases."
+    }
+  ],
+  "whyItMatters": "Res ipsa loquitur is an important tool of negligence law for situations where an injured plaintiff cannot show the precise careless act but the circumstances plainly imply carelessness. Without it, victims of accidents like falling objects or retained surgical instruments might be unable to recover simply because the evidence of exactly what went wrong lies with the defendant or is lost. By letting negligence be inferred from the nature of the accident, the doctrine fairly allocates the practical burden of explanation to the party in control, and it remains a staple of tort litigation, especially in medical malpractice and premises cases where direct proof is elusive.",
+  "working": [
+    {"lead": "Let the accident speak", "text": "where an injury is of a kind that does not ordinarily happen without negligence, infer carelessness from the accident itself rather than proving the specific act."},
+    {"lead": "Check the three elements", "text": "confirm the event usually requires negligence, the defendant had exclusive control, and the plaintiff did not contribute, before invoking the doctrine."},
+    {"lead": "Shift the burden of explanation", "text": "use the inference to put the practical onus on the defendant to explain the accident, since the facts point to their carelessness."}
+  ],
+  "limits": "Res ipsa loquitur does not automatically prove negligence; it permits an inference, in most jurisdictions a rebuttable presumption or permissible inference, which the defendant can overcome with a non-negligent explanation. It applies only when the specific conditions are met, above all that the accident is of a kind that does not ordinarily happen without negligence and that the defendant had exclusive control, so it does not reach accidents with many possible innocent causes. The exclusive-control requirement can be hard to satisfy where several parties are involved, and the doctrine establishes negligence, not causation or damages, which must still be shown.",
+  "misreadings": "The doctrine does not conclusively prove negligence; it permits an inference that the defendant may rebut, so it is a way of getting a case to the jury, not an automatic verdict. It applies only when its conditions are met, particularly that the accident usually implies negligence and that the defendant had exclusive control, so it is not a general shortcut for any injury. And the Latin phrase itself predates the doctrine, appearing in Cicero; Byrne v Boadle is where it entered tort law, not where the words originated.",
+  "origin": "Entered modern tort law through the 1863 English case Byrne v Boadle, in which a barrel of flour fell from a warehouse window onto a passerby, with the phrase attributed to Baron Pollock, though the Latin words themselves long predate the case.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1863,
+  "sources": [
+    {"text": "Res ipsa loquitur, Wikipedia. — the Latin meaning and definition, the traditional elements, Byrne v Boadle in 1863 and the falling barrel, and that it permits an inference of negligence.", "url": "https://en.wikipedia.org/wiki/Res_ipsa_loquitur", "type": "secondary"},
+    {"text": "Res ipsa loquitur, Legal Information Institute, Cornell Law School. — the three elements and the rebuttable presumption of negligence.", "url": "https://www.law.cornell.edu/wex/res_ipsa_loquitur", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Res_ipsa_loquitur",
+  "related": [
+    {"slug": "proximate-cause", "kind": "kindred"},
+    {"slug": "the-reasonable-person-standard", "kind": "kindred"}
+  ]
+}

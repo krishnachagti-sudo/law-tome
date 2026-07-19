@@ -1,0 +1,56 @@
+{
+  "no": "631",
+  "slug": "proximate-cause",
+  "name": "Proximate Cause",
+  "aliases": ["Legal causation", "Proximate causation"],
+  "statement": "The law holds you liable only for harms closely enough connected to your act, not every distant ripple.",
+  "statementAccent": "closely enough connected to your act",
+  "meaning": "Proximate cause is the legal concept, central to negligence law, of a cause that is not merely a factual cause of an injury but is legally sufficient to support liability. It is distinguished from cause-in-fact, or but-for causation, which asks only whether the harm would have occurred but for the defendant's act. Because almost anything can be a but-for cause, the law adds proximate cause as a limit, holding a defendant responsible only for consequences sufficiently foreseeable and closely connected to their conduct, cutting off liability for remote or freakish results. The dominant test is foreseeability: a defendant is liable for harms a reasonable person could have foreseen. Proximate cause is one of the four elements of negligence and the policy-driven boundary on how far liability extends.",
+  "mechanism": "Causation in law has two parts. First, cause-in-fact asks the but-for question: would the injury have happened without the defendant's act. This is usually easy to satisfy and reaches far back through any chain of events. So the law adds proximate cause to keep liability within sensible bounds, asking whether the harm was a reasonably foreseeable result of the conduct; unforeseeable, remote consequences are not proximately caused. An intervening event can break the chain of causation, and an unforeseeable intervening event, a superseding cause, relieves the defendant of liability. The doctrine is thus partly a policy judgement about where responsibility should stop, famously explored in Palsgraf v. Long Island Railroad in 1928, where Judge Cardozo tied liability to the foreseeable risk.",
+  "examples": [
+    {
+      "tag": "But-for versus proximate",
+      "text": "But-for causation asks whether the harm would have occurred without the act; proximate cause adds that the harm must be foreseeable and closely connected, not merely factually caused."
+    },
+    {
+      "tag": "The Palsgraf case",
+      "text": "In Palsgraf v. Long Island Railroad in 1928, Cardozo's opinion tied liability to the foreseeable zone of risk, the canonical American case on proximate cause."
+    },
+    {
+      "tag": "A superseding cause",
+      "text": "An unforeseeable intervening event that breaks the chain of causation is a superseding cause, cutting off the defendant's liability for the ultimate harm."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The foreseeability test",
+      "text": "The dominant approach, asking whether the harm was a reasonably foreseeable result of the defendant's conduct, with unforeseeable consequences falling outside liability."
+    },
+    {
+      "name": "The substantial-factor test",
+      "text": "An alternative approach treating a cause as proximate if it was a substantial factor in bringing about the harm, used where multiple causes combine."
+    }
+  ],
+  "whyItMatters": "Proximate cause is a core element of negligence, alongside duty, breach, and damages, and it performs the essential work of limiting liability so that a careless act does not make its author answerable for every remote consequence, however bizarre. Without it, but-for causation alone would extend responsibility endlessly down the chain of events. By tying liability to foreseeability and close connection, proximate cause embodies a policy judgement about the fair reach of legal responsibility, and it structures how courts decide who must pay for an injury. The doctrine, and cases like Palsgraf, remain central to tort law and to the theory of legal causation.",
+  "working": [
+    {"lead": "Add a legal limit to factual cause", "text": "beyond asking whether the harm would have happened but for the act, ask whether it was foreseeable and closely enough connected to warrant liability."},
+    {"lead": "Apply foreseeability", "text": "hold the defendant liable for reasonably foreseeable consequences and cut off liability for remote or freakish ones."},
+    {"lead": "Watch for superseding causes", "text": "check whether an unforeseeable intervening event broke the chain of causation, relieving the defendant of responsibility for the result."}
+  ],
+  "limits": "Proximate cause is partly a policy question about where liability should stop, so its application involves judgement and can vary between courts and tests, whether foreseeability or the substantial-factor approach. It presupposes cause-in-fact; but-for causation alone is not enough for liability, and proximate cause is an additional, not alternative, requirement. Deciding what was foreseeable is often contestable, and the line between a foreseeable consequence and a superseding cause can be blurry. As one element of negligence, it does not by itself establish liability, which also requires duty, breach, and damages, so proximate cause bounds responsibility rather than creating it.",
+  "misreadings": "Proximate does not mean nearest in time or space; it means legally responsible, sufficiently connected to the harm to warrant liability, so a cause distant in the chain can still be proximate and a nearby one may not. But-for causation alone does not establish liability; proximate cause is a further, required limit, so showing the harm would not have occurred without the act is not enough. And proximate cause is in part a policy judgement about the reach of responsibility, not a purely mechanical finding of fact, which is why reasonable courts can differ.",
+  "origin": "A core element of the negligence tort in common-law systems, refined through cases such as Palsgraf v. Long Island Railroad in 1928, in which Judge Cardozo framed liability in terms of the foreseeable zone of risk.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1928,
+  "sources": [
+    {"text": "Proximate cause, Wikipedia. — the definition, the cause-in-fact versus proximate distinction, the foreseeability test, superseding causes, and Palsgraf as the landmark case.", "url": "https://en.wikipedia.org/wiki/Proximate_cause", "type": "secondary"},
+    {"text": "Proximate cause, Legal Information Institute, Cornell Law School. — proximate cause as an actual cause legally sufficient for liability and the limit it places on the causal chain.", "url": "https://www.law.cornell.edu/wex/proximate_cause", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Proximate_cause",
+  "related": [
+    {"slug": "the-eggshell-skull-rule", "kind": "kindred"},
+    {"slug": "res-ipsa-loquitur", "kind": "kindred"}
+  ]
+}

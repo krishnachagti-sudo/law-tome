@@ -1,0 +1,55 @@
+{
+  "no": "625",
+  "slug": "stare-decisis",
+  "name": "Stare Decisis",
+  "aliases": ["The doctrine of precedent", "Binding precedent"],
+  "statement": "Courts should decide today's case the way they decided yesterday's like case, standing by what was settled.",
+  "statementAccent": "standing by what was settled",
+  "meaning": "Stare decisis is the legal doctrine that courts should follow precedent, deciding cases according to the rules and principles established in prior judicial decisions on the same or closely related questions. The full Latin maxim, stare decisis et non quieta movere, means to stand by things decided and not disturb the settled. It is a foundational principle of common-law systems, giving the law predictability, stability, consistency, and equal treatment of like cases. The doctrine has two dimensions: vertical stare decisis binds lower courts to the decisions of higher courts in the same jurisdiction, and horizontal stare decisis leads a court to follow its own prior decisions. Only the essential reasoning of a precedent, its ratio decidendi, is binding; remarks made in passing are merely persuasive.",
+  "mechanism": "A judicial decision does two things: it resolves the case and it announces a rule. Under stare decisis, that rule binds future courts faced with materially similar facts, so law accumulates case by case rather than being reinvented each time. The binding core is the ratio decidendi, the reasoning necessary to the outcome; other observations, obiter dicta, said in passing, carry only persuasive weight. Vertical precedent flows down the hierarchy, so a trial court must follow the appellate courts above it, while horizontal precedent leads a court to respect its own past rulings. A court can distinguish a precedent by identifying material factual differences, or, especially a supreme court, overrule it when the prior reasoning is wrong, unworkable, or outdated, since stare decisis is a strong presumption rather than an inexorable command.",
+  "examples": [
+    {
+      "tag": "Vertical and horizontal",
+      "text": "A district court must follow the appellate courts above it, vertical stare decisis, while a court also generally follows its own earlier decisions, horizontal stare decisis."
+    },
+    {
+      "tag": "Overruling a precedent",
+      "text": "Brown v. Board of Education in 1954 overruled Plessy v. Ferguson of 1896, showing that even entrenched precedent can be overturned when judged wrong."
+    },
+    {
+      "tag": "Ratio versus dicta",
+      "text": "Only the reasoning essential to a decision, the ratio decidendi, binds later courts; remarks made in passing, obiter dicta, are persuasive at most."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Distinguishing a precedent",
+      "text": "The technique of declining to follow a prior decision by identifying material differences in the facts, narrowing its reach without overruling it."
+    },
+    {
+      "name": "Overruling",
+      "text": "The overturning of a precedent, usually by a higher or supreme court, when its reasoning is erroneous, unworkable, or overtaken by changed conditions."
+    }
+  ],
+  "whyItMatters": "Stare decisis is a cornerstone of common-law legal systems, the mechanism that makes judge-made law predictable, consistent, and fair by treating like cases alike. It lets people and institutions order their affairs in reliance on settled rules, constrains judicial arbitrariness, and lets the law develop incrementally rather than lurching with each new bench. At the same time its flexibility, the power to distinguish or overrule, allows the law to correct error and adapt, as when discredited precedents are overturned. Balancing stability against the need for change, stare decisis is central to how common-law courts reason and to the rule of law itself.",
+  "working": [
+    {"lead": "Follow the settled rule", "text": "decide a case in line with prior decisions on the same question, so like cases are treated alike and the law stays predictable."},
+    {"lead": "Find the ratio", "text": "identify the reasoning essential to a precedent, its ratio decidendi, since that is what binds, not everything the earlier court said."},
+    {"lead": "Distinguish or overrule when needed", "text": "set a precedent aside by distinguishing its facts, or, at a high enough court, overrule it when its reasoning is wrong or outdated."}
+  ],
+  "limits": "Stare decisis is a strong presumption, not an absolute rule, so precedent can be distinguished on the facts or overruled when it is erroneous, unworkable, or overtaken by events. Only the ratio decidendi binds; obiter dicta do not, so care is needed to identify what a precedent actually decided. It operates most formally in common-law systems, whereas civil-law systems, built on comprehensive codes, do not treat prior decisions as binding authority in the same way. Its stability can also entrench mistaken rules until a court is willing to overturn them, so the doctrine trades some capacity for correction in exchange for predictability.",
+  "misreadings": "Stare decisis does not make precedent permanent; it is a presumption that can be overcome by overruling or sidestepped by distinguishing, so settled law can still change. Not everything in a prior opinion binds, only the ratio decidendi essential to the decision; passing remarks are persuasive at most. And it is characteristic of common-law systems; civil-law systems rely on codes and do not give prior decisions the same binding force, so the doctrine is not a universal feature of all legal traditions.",
+  "origin": "A foundational doctrine of common-law systems expressed in the Latin maxim stare decisis et non quieta movere, developed over centuries of English and American judicial practice as the principle of adhering to precedent.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "sources": [
+    {"text": "Precedent, Wikipedia. — the doctrine of following precedent, the Latin maxim, vertical and horizontal stare decisis, and ratio decidendi versus obiter dicta.", "url": "https://en.wikipedia.org/wiki/Precedent", "type": "secondary"},
+    {"text": "Stare Decisis, Legal Information Institute, Cornell Law School. — the definition, its centrality to common law, and that it is not an inexorable command, with Brown overruling Plessy.", "url": "https://www.law.cornell.edu/wex/stare_decisis", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Precedent",
+  "related": [
+    {"slug": "the-presumption-of-innocence", "kind": "kindred"},
+    {"slug": "habeas-corpus", "kind": "kindred"}
+  ]
+}
