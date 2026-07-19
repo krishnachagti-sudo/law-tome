@@ -1,0 +1,57 @@
+{
+  "no": "1013",
+  "slug": "the-yang-mills-mass-gap",
+  "name": "The Yang-Mills Mass Gap",
+  "aliases": ["Yang-Mills existence and mass gap", "The mass gap problem"],
+  "statement": "Prove the quantum theory behind the strong force exists and that its lightest particle is massive.",
+  "statementAccent": "its lightest particle is massive",
+  "meaning": "The Yang-Mills existence and mass gap problem is one of the seven Clay Mathematics Institute Millennium Prize Problems, announced in 2000, each carrying a one-million-dollar prize, and it is unsolved. It has two parts. The first is to prove that a quantum Yang-Mills theory exists, that is, can be constructed rigorously as a well-defined quantum field theory, for any compact simple gauge group on four-dimensional space, meeting axiomatic standards of mathematical rigor. The second is to prove that this theory has a mass gap, meaning that the lightest particle it predicts has a strictly positive mass, so that there is a gap between the vacuum energy, taken as zero, and the next lowest energy state. Yang-Mills theory, a non-abelian gauge theory introduced by Chen Ning Yang and Robert Mills in 1954, is the mathematical framework underlying the Standard Model of particle physics; quantum chromodynamics, the theory of the strong nuclear force, is a Yang-Mills theory with gauge group SU(3). The existence of a mass gap is physically bound up with why the strong force is short-ranged and with quark confinement, and it is strongly supported by experiment and by lattice computer simulations, yet it has never been proved mathematically. The problem, formulated for the Clay Institute by Arthur Jaffe and Edward Witten, sits at the meeting point of rigorous mathematics and theoretical physics.",
+  "mechanism": "The Yang-Mills problem asks mathematicians to put on rigorous footing a theory that physics already uses with great success but that has never been constructed to mathematical standards. Yang-Mills theories are non-abelian gauge theories, generalizing electromagnetism to more intricate symmetry groups, and they form the backbone of the Standard Model, with the strong force described by quantum chromodynamics, a Yang-Mills theory whose gauge group is SU(3). The first part of the problem is a problem of constructive quantum field theory: to show that, for a compact simple gauge group in four spacetime dimensions, there really exists a quantum field theory satisfying rigorous axioms, such as the Wightman axioms, rather than merely a formal or perturbative recipe. This is extraordinarily hard, because no interacting quantum field theory in four dimensions has ever been constructed with full mathematical rigor. The second part concerns the mass gap: one must prove that the spectrum of the theory has a gap, that the lightest excitation above the vacuum has a strictly positive mass, rather than there being arbitrarily low-energy states. Physically, this is why the strong force does not reach across large distances and is connected to confinement, the fact that quarks and gluons are never seen in isolation. Overwhelming physical evidence, from particle experiments and from numerical lattice simulations of QCD, indicates that the mass gap is real, but this is not a proof, and supplying a rigorous mathematical demonstration of both existence and the gap is the content of the problem.",
+  "examples": [
+    {
+      "tag": "Two parts",
+      "text": "The problem asks to construct a rigorous quantum Yang-Mills theory in four dimensions and to prove it has a positive mass gap."
+    },
+    {
+      "tag": "The Standard Model",
+      "text": "Yang-Mills theory underlies the Standard Model; quantum chromodynamics is a Yang-Mills theory with gauge group SU(3)."
+    },
+    {
+      "tag": "Evidence without proof",
+      "text": "Experiments and lattice simulations strongly support a mass gap, but no mathematical proof exists."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The existence part",
+      "text": "Constructing a rigorous four-dimensional quantum Yang-Mills theory, a problem of constructive quantum field theory."
+    },
+    {
+      "name": "The mass gap part",
+      "text": "Proving that the lightest particle has strictly positive mass, so there is a gap above the vacuum."
+    }
+  ],
+  "whyItMatters": "The Yang-Mills existence and mass gap problem is a striking example of a question where physics has run far ahead of mathematics, and closing the gap would be profound for both. Yang-Mills theory is the mathematical language of three of the four fundamental forces and the foundation of the Standard Model, the most successful theory in the history of physics, yet the theory has never been given a rigorous mathematical construction in four dimensions, so in a precise sense we do not yet know that the equations physicists use every day even define a consistent mathematical object. Proving existence would vindicate the mathematical foundations of quantum field theory and likely require deep new methods in analysis and geometry. Proving the mass gap would explain, from first principles, why the strong force is short-ranged and why quarks are confined, phenomena that are central to our understanding of matter and are supported by experiment and lattice simulations but not by rigorous proof. As one of the seven Millennium Prize Problems, formulated by Arthur Jaffe and Edward Witten, the problem stands at the frontier between mathematics and physics. As the challenge to prove that the theory behind the strong force exists and has a massive lightest particle, it is a landmark open problem.",
+  "working": [
+    {"lead": "Fix the setting", "text": "take a compact simple gauge group and four-dimensional spacetime, as in Yang-Mills theory."},
+    {"lead": "Construct the theory", "text": "prove that a rigorous quantum Yang-Mills field theory exists, satisfying the standard axioms."},
+    {"lead": "Prove the gap", "text": "show that the lightest particle has strictly positive mass, a gap between the vacuum and the next state."}
+  ],
+  "limits": "The Yang-Mills problem is unsolved and is widely regarded as extraordinarily difficult, in part because it demands mathematical rigor in a domain where physics relies on formal and computational methods. The core obstacle is that no interacting quantum field theory in four spacetime dimensions has ever been constructed with full mathematical rigor, so the existence part of the problem asks for something that has never been achieved in any comparable case, not merely for Yang-Mills theory. The mass gap, though supported overwhelmingly by particle-physics experiments and by lattice simulations of quantum chromodynamics, has no rigorous proof, and physical or numerical evidence, however strong, does not settle a mathematical theorem. The precise formulation matters: the official problem, stated for the Clay Institute by Jaffe and Witten, specifies the axioms and conditions, and the exact standards of rigor, such as the Wightman or Osterwalder-Schrader axioms, are part of what must be met. Some details reward care: Yang-Mills theory was introduced by Yang and Mills in 1954, quantum chromodynamics has gauge group SU(3), and the one-million-dollar prize applies as to all Millennium Problems. So the Yang-Mills problem robustly asks for a rigorous theory with a positive mass gap, understood as an open problem whose existence part has no precedent and whose gap is supported by evidence but unproved.",
+  "misreadings": "The Yang-Mills problem is not about whether the physics works, since experiments and simulations confirm it, but about whether the theory can be given a rigorous mathematical construction and its mass gap proved. It is not asking to discover the mass gap, which physicists already believe in, but to prove it from a rigorous definition of the theory. And the problem is specific to four dimensions and to a rigorous quantum field theory, so treating it as questioning the physics, as a request for discovery, or as an easier lower-dimensional question, misreads it.",
+  "origin": "The Clay Millennium Prize Problem, formulated by Arthur Jaffe and Edward Witten, of rigorously constructing a four-dimensional quantum Yang-Mills theory and proving it has a strictly positive mass gap, the framework underlying the Standard Model.",
+  "category": "science",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Yang-Mills and the Mass Gap, Clay Mathematics Institute. — the problem of proving the existence of a quantum Yang-Mills theory with a mass gap, its relation to the Standard Model and the short range of the strong force, and its status as an unsolved Millennium Prize Problem.", "url": "https://www.claymath.org/millennium/yang-mills-the-maths-gap/", "type": "secondary"},
+    {"text": "Yang-Mills existence and mass gap, Wikipedia. — the two-part problem of constructing a rigorous quantum Yang-Mills theory for a compact simple gauge group on four-dimensional space and proving a positive mass gap, Yang and Mills 1954, quantum chromodynamics with gauge group SU(3), and the Jaffe-Witten formulation.", "url": "https://en.wikipedia.org/wiki/Yang%E2%80%93Mills_existence_and_mass_gap", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Yang%E2%80%93Mills_existence_and_mass_gap",
+  "related": [
+    {"slug": "the-millennium-prize-problems", "kind": "kindred"},
+    {"slug": "the-navier-stokes-existence-and-smoothness", "kind": "kindred"}
+  ]
+}

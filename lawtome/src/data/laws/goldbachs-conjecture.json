@@ -1,0 +1,57 @@
+{
+  "no": "1003",
+  "slug": "goldbachs-conjecture",
+  "name": "Goldbach's Conjecture",
+  "aliases": ["The strong Goldbach conjecture", "The binary Goldbach conjecture"],
+  "statement": "Every even number greater than 2 is the sum of two primes.",
+  "statementAccent": "the sum of two primes",
+  "meaning": "Goldbach's conjecture, in its strong or binary form, states that every even integer greater than 2 can be expressed as the sum of two prime numbers. Thus 4 equals 2 plus 2, 6 equals 3 plus 3, 8 equals 3 plus 5, 10 equals 3 plus 7 or 5 plus 5, and so on, with larger even numbers typically having many such representations. It is one of the oldest and best-known unsolved problems in number theory and in all of mathematics, and it remains unproven. The conjecture originated in correspondence between the mathematician Christian Goldbach and Leonhard Euler, in a letter from Goldbach to Euler dated 7 June 1742. Goldbach's original formulation was slightly different, framed in terms of sums of three primes and using the older convention that 1 counts as a prime, and Euler restated it in the modern strong form, that every even number greater than or equal to 4 is a sum of two primes, saying he was certain it was true though he could not prove it. There is also a weak, or ternary, Goldbach conjecture, that every odd integer greater than 5 is a sum of three primes; this weak version, which follows from the strong one, was proved by Harald Helfgott in 2013, building on earlier work of Vinogradov. The strong conjecture has been verified by computer for all even numbers up to enormous bounds but resists proof.",
+  "mechanism": "Goldbach's conjecture asserts a simple additive property of the primes: that they are dense and well-distributed enough that every even number can be reached by adding two of them. To test it for a given even number, one looks for a prime p such that the difference between the number and p is also prime, and in practice such pairs are found readily and in growing abundance as the numbers get larger. Progress toward a proof has come by relaxing the requirement in controlled ways. The weak, ternary conjecture, that every odd number greater than 5 is a sum of three primes, is more tractable because it allows an extra prime, and it was established in two stages: Ivan Vinogradov proved in 1937, using the circle method and estimates for exponential sums, that every sufficiently large odd number is a sum of three primes, and Harald Helfgott completed the proof for all odd numbers greater than 5 in 2013 by handling the remaining small cases, in part computationally. Toward the strong conjecture, Chen Jingrun proved in 1973, in Chen's theorem, that every sufficiently large even number is the sum of a prime and a number that is either prime or a product of two primes, a near miss, and it is known that almost all even numbers are sums of two primes. Computationally, the conjecture has been checked for every even number up to bounds beyond four times ten to the eighteenth, notably in work by Tomas Oliveira e Silva. None of this yields a general proof, since verifying finitely many cases and proving asymptotic or approximate results leaves the full claim open.",
+  "examples": [
+    {
+      "tag": "Small cases",
+      "text": "4 equals 2 plus 2, 8 equals 3 plus 5, and 10 equals 3 plus 7 or 5 plus 5, each an even number as a sum of two primes."
+    },
+    {
+      "tag": "The weak conjecture proved",
+      "text": "Helfgott proved in 2013 that every odd number greater than 5 is a sum of three primes, building on Vinogradov's 1937 result."
+    },
+    {
+      "tag": "Chen's near miss",
+      "text": "Chen proved in 1973 that every large even number is a prime plus a prime or a product of two primes."
+    }
+  ],
+  "variants": [
+    {
+      "name": "Strong versus weak",
+      "text": "The strong conjecture that even numbers are sums of two primes, and the weak that odd numbers are sums of three primes."
+    },
+    {
+      "name": "Chen's theorem",
+      "text": "The 1973 result that every sufficiently large even number is a prime plus a prime or a semiprime, a partial result."
+    }
+  ],
+  "whyItMatters": "Goldbach's conjecture is one of the most famous unsolved problems in mathematics, prized both for the deceptive simplicity of its statement and for its long resistance to proof. A schoolchild can understand it, and it appears to be true, having been verified for every even number ever checked, yet nearly three centuries after Goldbach and Euler first discussed it, no one has been able to prove it, which makes it a striking illustration of how a question can be elementary to state and yet profoundly hard to settle. The conjecture has driven the development of analytic number theory, and the tools brought to bear on it and its weak variant, the circle method, sieve methods, and estimates for exponential sums, are central techniques of the field, with Vinogradov's theorem, Chen's theorem, and Helfgott's proof of the ternary case standing as major achievements in their own right. Goldbach's conjecture also serves as a benchmark for the limits of current methods and a spur to new ones, and it has become a cultural icon of mathematical mystery. As the assertion that every even number is a sum of two primes, still unproven after centuries, it is a landmark open problem in number theory.",
+  "working": [
+    {"lead": "Take an even number", "text": "start with any even integer greater than 2, such as 100."},
+    {"lead": "Search for a prime pair", "text": "find a prime p such that the number minus p is also prime, as 100 equals 3 plus 97 or 11 plus 89."},
+    {"lead": "Note the gap to proof", "text": "observe that such pairs are always found in practice, yet no general proof that they always exist is known."}
+  ],
+  "limits": "Goldbach's conjecture remains unproven despite centuries of effort and overwhelming numerical evidence, and this gap between evidence and proof is precisely its point. Computer verification, however far it reaches, can never establish the conjecture, since there are infinitely many even numbers, and the strongest partial results fall short of the full claim: Vinogradov's theorem and Helfgott's proof settle only the weak, ternary conjecture, which allows three primes rather than two, and Chen's theorem replaces one of the two primes with a prime or a semiprime, a near miss that has not been improved to the exact statement. Results that almost all even numbers are sums of two primes leave open the possibility of rare exceptions. The methods of analytic number theory that have driven progress appear, so far, to be insufficient to close the final gap, and a proof may require genuinely new ideas. Some historical and numerical details reward care: the Goldbach-Euler letter is dated 7 June 1742, Goldbach's original formulation differed from the modern one and used the old convention that 1 is prime, and the computational bound of beyond four times ten to the eighteenth is due to Oliveira e Silva. So Goldbach's conjecture robustly asserts that every even number is a sum of two primes, understood as a simply stated but unproven problem where partial results and vast computation still leave the general claim open.",
+  "misreadings": "Goldbach's conjecture is not proven by the fact that it has been checked up to huge bounds, since finitely many verified cases cannot establish a claim about infinitely many numbers. The strong conjecture is not the same as the weak one, which concerns odd numbers and three primes and has been proved, whereas the strong two-prime statement for even numbers is still open. And Chen's theorem is not a proof of the conjecture but a near miss allowing a semiprime, so treating computer checks as proof, the weak proof as settling the strong claim, or Chen's theorem as the full result, misreads the problem.",
+  "origin": "The conjecture, from a 1742 letter between Christian Goldbach and Leonhard Euler, that every even integer greater than 2 is the sum of two primes, one of the oldest unsolved problems in number theory.",
+  "category": "science",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1742,
+  "namedAfter": "Christian Goldbach",
+  "sources": [
+    {"text": "Goldbach's conjecture, Wikipedia. — the strong conjecture that every even integer greater than 2 is a sum of two primes, the 1742 Goldbach-Euler correspondence, the weak ternary conjecture and Helfgott's 2013 proof, Vinogradov's 1937 theorem, Chen's 1973 theorem, and computational verification beyond four times ten to the eighteenth.", "url": "https://en.wikipedia.org/wiki/Goldbach%27s_conjecture", "type": "secondary"},
+    {"text": "Christian Goldbach, MacTutor History of Mathematics. — Goldbach's correspondence with Euler and the origin of the conjecture that every even number is a sum of two primes.", "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Goldbach/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Goldbach%27s_conjecture",
+  "related": [
+    {"slug": "the-twin-prime-conjecture", "kind": "kindred"},
+    {"slug": "the-riemann-hypothesis", "kind": "kindred"}
+  ]
+}

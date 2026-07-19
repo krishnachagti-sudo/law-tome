@@ -1,0 +1,57 @@
+{
+  "no": "1010",
+  "slug": "the-abc-conjecture",
+  "name": "The abc Conjecture",
+  "aliases": ["Oesterlé-Masser conjecture", "The abc conjecture"],
+  "statement": "If a + b = c with a, b, c coprime, then c is rarely much bigger than the primes dividing abc.",
+  "statementAccent": "c is rarely much bigger than the primes",
+  "meaning": "The abc conjecture is a conjecture in number theory concerning triples of coprime positive integers a, b, and c satisfying a plus b equals c. It relates the size of c to the radical of the product abc, where the radical of a number is the product of its distinct prime factors, its squarefree kernel. Informally, the conjecture says that if a plus b equals c with a, b, and c sharing no common factor, then c is usually not much larger than the radical of abc; that is, it is rare for c to be large while abc is built from small primes repeated to high powers. More precisely, for every positive real number epsilon, there are only finitely many coprime triples with a plus b equals c for which c exceeds the radical of abc raised to the power one plus epsilon. The conjecture was formulated by Joseph Oesterle and David Masser around 1985 and is considered one of the most important unsolved problems in Diophantine analysis, because a great many other results and conjectures would follow from it, including forms of Fermat's Last Theorem, the Mordell conjecture proved by Faltings, Roth's theorem, and the Fermat-Catalan conjecture; Dorian Goldfeld called it the most important unsolved problem in Diophantine analysis. In 2012 Shinichi Mochizuki announced a claimed proof using his inter-universal Teichmuller theory, but the mathematical community has not reached consensus that it is correct, and the conjecture is generally still regarded as open.",
+  "mechanism": "The abc conjecture captures a subtle constraint on how addition and multiplication interact among the integers. Given coprime positive integers with a plus b equals c, one measures the multiplicative complexity of the triple by the radical of abc, the product of the distinct primes dividing a, b, or c, which ignores how many times each prime appears. The conjecture says that this radical cannot be much smaller than c, except in finitely many cases for any fixed tolerance: for every epsilon greater than zero, only finitely many coprime triples have c larger than the radical of abc to the power one plus epsilon. In other words, a sum c that is highly divisible by small primes to high powers, making the radical small relative to c, is exceptional and rare. The power of the conjecture lies in how much it would imply. Because many deep statements in number theory can be reduced to bounding solutions of equations of the form a plus b equals c, a proof of the abc conjecture would yield, often quickly, results that are otherwise very hard: asymptotic or large-exponent versions of Fermat's Last Theorem, Faltings's theorem on rational points on curves, Roth's theorem in Diophantine approximation, and the Fermat-Catalan conjecture, among others. This explosive strength is why the conjecture is prized. Its status, however, is clouded by controversy: Shinichi Mochizuki posted a very long and difficult claimed proof in 2012, using an elaborate new framework, but in 2018 Peter Scholze and Jakob Stix argued there is a serious, unfixable gap near a key step, Mochizuki disputes this, and although the work was published in 2021 in a journal Mochizuki edits, the broader community has not accepted it, so the conjecture remains generally regarded as unresolved.",
+  "examples": [
+    {
+      "tag": "The radical",
+      "text": "The radical of abc is the product of the distinct primes dividing abc, ignoring how many times each prime appears."
+    },
+    {
+      "tag": "The bound",
+      "text": "For every epsilon, only finitely many coprime triples have c greater than the radical of abc to the power one plus epsilon."
+    },
+    {
+      "tag": "Powerful consequences",
+      "text": "A proof would imply forms of Fermat's Last Theorem, Faltings's theorem, Roth's theorem, and more."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The consequences",
+      "text": "The many results that would follow from the abc conjecture, making it a keystone of Diophantine analysis."
+    },
+    {
+      "name": "The Mochizuki controversy",
+      "text": "The claimed 2012 proof via inter-universal Teichmuller theory, disputed by Scholze and Stix and not widely accepted."
+    }
+  ],
+  "whyItMatters": "The abc conjecture is one of the most important and far-reaching unsolved problems in number theory, celebrated for the astonishing amount of mathematics it would unlock. Its statement is elementary, a constraint on coprime triples with a plus b equals c, yet its consequences are vast: because so many deep Diophantine problems can be recast in terms of such sums, a proof would immediately or nearly immediately imply a whole roster of major results, including versions of Fermat's Last Theorem, Faltings's theorem, and Roth's theorem, which is why Dorian Goldfeld called it the most important unsolved problem in Diophantine analysis. This concentrating power makes the conjecture a keystone: proving it would be like proving many things at once. The conjecture has also become famous for the extraordinary saga surrounding Shinichi Mochizuki's claimed proof, a story that raised profound questions about how the mathematical community verifies, communicates, and accepts proofs, especially when they rest on vast, idiosyncratic new theories that few can read, and about the sociology of mathematical consensus. As the deceptively simple conjecture whose truth would reshape number theory, and whose proposed proof remains contested, the abc conjecture is a landmark and dramatic open problem.",
+  "working": [
+    {"lead": "Take a coprime sum", "text": "consider coprime positive integers with a plus b equals c."},
+    {"lead": "Compute the radical", "text": "form the radical of abc, the product of the distinct primes dividing the numbers."},
+    {"lead": "Bound c by the radical", "text": "conjecture that, for any tolerance, c exceeds the radical to the power one plus epsilon only finitely often."}
+  ],
+  "limits": "The abc conjecture is unproven in the eyes of the broader mathematical community, and its status is unusually fraught. Shinichi Mochizuki's claimed proof, posted in 2012 and running to hundreds of pages built on an elaborate and unfamiliar theory, has not been accepted: in 2018 Peter Scholze and Jakob Stix reported a serious gap, which they judged unfixable, near a key corollary, Mochizuki disputes their criticism and attributes it to misunderstandings, and although the work was published in 2021 in the journal PRIMS, which Mochizuki edits, this did not produce consensus, and most number theorists regard the conjecture as still open. The conjecture is also known only in the sense of being widely believed and supported by heuristics and consequences, not by any accepted proof, and effective versions with explicit constants are especially hard. Some historical and technical details reward care: the conjecture is due to Oesterle and Masser around 1985, the exact statement involves the radical and a tolerance epsilon, the Goldfeld quotation and its wording should be attributed carefully, and the Mochizuki, Scholze-Stix, and PRIMS dates are 2012, 2018, and 2021. So the abc conjecture robustly constrains coprime sums by the radical of their product, understood as a powerful conjecture whose only claimed proof is disputed and not generally accepted.",
+  "misreadings": "The abc conjecture is not established, since its only claimed proof, Mochizuki's, is disputed by leading experts and not accepted by the broader community. It does not say c can never exceed the radical of abc, but that it does so beyond the given power only finitely often for each tolerance. And publication in a journal is not the same as community acceptance, since the PRIMS publication did not settle the matter, so treating the conjecture as proved, as a strict inequality with no exceptions, or as accepted because published, misreads its status.",
+  "origin": "The conjecture of Oesterle and Masser, around 1985, that for coprime positive integers with a plus b equals c, c exceeds the radical of abc to any fixed power beyond one only finitely often, a keystone of Diophantine analysis whose claimed proof is disputed.",
+  "category": "science",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "abc conjecture, Wikipedia. — the conjecture on coprime triples with a plus b equals c, the radical of abc, the epsilon-bounded finiteness statement, the Oesterle-Masser origin around 1985, the many consequences including Fermat's Last Theorem and Faltings's theorem, Goldfeld's assessment, and the Mochizuki proof claim with the Scholze-Stix objection.", "url": "https://en.wikipedia.org/wiki/Abc_conjecture", "type": "secondary"},
+    {"text": "Titans of Mathematics Clash Over Epic Proof of ABC Conjecture, Quanta Magazine. — Mochizuki's claimed proof via inter-universal Teichmuller theory, the 2018 Scholze-Stix report of a serious gap near Corollary 3.12, Mochizuki's dispute, and the lack of community consensus.", "url": "https://www.quantamagazine.org/titans-of-mathematics-clash-over-epic-proof-of-abc-conjecture-20180920/", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Abc_conjecture",
+  "related": [
+    {"slug": "fermats-last-theorem", "kind": "consequence"},
+    {"slug": "goldbachs-conjecture", "kind": "kindred"}
+  ]
+}

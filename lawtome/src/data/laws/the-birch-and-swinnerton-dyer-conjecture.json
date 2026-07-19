@@ -1,0 +1,57 @@
+{
+  "no": "1008",
+  "slug": "the-birch-and-swinnerton-dyer-conjecture",
+  "name": "The Birch and Swinnerton-Dyer Conjecture",
+  "aliases": ["BSD conjecture", "The BSD conjecture"],
+  "statement": "The number of rational points on an elliptic curve is encoded in its L-function at s = 1.",
+  "statementAccent": "encoded in its L-function",
+  "meaning": "The Birch and Swinnerton-Dyer conjecture is one of the seven Clay Mathematics Institute Millennium Prize Problems, announced in 2000, each carrying a one-million-dollar prize, and it is unsolved. It concerns elliptic curves, cubic curves that can be written in the form y squared equals x cubed plus ax plus b, and specifically the set of rational points on them, the solutions whose coordinates are rational numbers. By Mordell's theorem, part of the Mordell-Weil theorem, these rational points form a finitely generated abelian group, and the rank of this group, the number of independent points of infinite order, measures how many rational points there are, in particular whether there are finitely or infinitely many. The conjecture relates this arithmetic quantity, the rank, to the analytic behavior of the curve's L-function, the Hasse-Weil L-function, at the point s equals 1. Specifically, it asserts that the rank of the group of rational points equals the order of vanishing of the L-function at s equals 1. A weaker form says the L-function vanishes at s equals 1 if and only if the curve has infinitely many rational points, and a refined form gives the leading coefficient of the L-function in terms of arithmetic quantities. Formulated by Bryan Birch and Peter Swinnerton-Dyer in the early 1960s on the basis of computer calculations, it remains a central open problem in number theory.",
+  "mechanism": "The conjecture builds a bridge between two very different faces of an elliptic curve, its arithmetic and its analysis. On the arithmetic side, one studies the rational points on the curve, the solutions with rational coordinates. These points can be added by a geometric rule that makes them into a group, and Mordell's theorem shows this group is finitely generated, so it is built from a finite part and a number of copies of the infinite cyclic group; that number, the rank, counts the independent directions in which infinitely many rational points can be generated, and it is a subtle quantity that can be hard to determine directly. On the analytic side, one attaches to the curve an L-function, an analytic object built from counting, for each prime, how many points the curve has modulo that prime, packaged into a function of a complex variable s. The Birch and Swinnerton-Dyer conjecture asserts a precise link: the rank of the group of rational points equals the order of vanishing of the L-function at the special point s equals 1, the order of the zero there. In the weaker form, the L-function is zero at s equals 1 exactly when the curve has infinitely many rational points. Birch and Swinnerton-Dyer arrived at this striking prediction empirically, by computing, on the EDSAC computer at Cambridge in the early 1960s, the behavior of many curves and noticing the pattern. Partial proofs exist: Coates and Wiles handled certain cases in 1977, and the work of Gross and Zagier in 1986 and Kolyvagin around 1989 established the conjecture when the order of vanishing is 0 or 1, but the general case is open.",
+  "examples": [
+    {
+      "tag": "Rank and rational points",
+      "text": "The rank of an elliptic curve's group of rational points measures whether it has finitely or infinitely many such points."
+    },
+    {
+      "tag": "The central assertion",
+      "text": "The conjecture says the rank equals the order of vanishing of the curve's L-function at s equals 1."
+    },
+    {
+      "tag": "Discovered by computer",
+      "text": "Birch and Swinnerton-Dyer formulated the conjecture from computations on the EDSAC computer at Cambridge in the early 1960s."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The weak form",
+      "text": "The L-function vanishes at s equals 1 if and only if the curve has infinitely many rational points."
+    },
+    {
+      "name": "Proven cases",
+      "text": "The conjecture is proved when the analytic rank is 0 or 1, by Coates-Wiles, Gross-Zagier, and Kolyvagin."
+    }
+  ],
+  "whyItMatters": "The Birch and Swinnerton-Dyer conjecture is one of the deepest and most important open problems in number theory and a centerpiece of the modern arithmetic of elliptic curves. Elliptic curves are among the richest objects in mathematics, central to number theory, cryptography, and the proof of Fermat's Last Theorem, and the fundamental question of how many rational points a given curve has is both natural and notoriously hard to answer directly. The conjecture's profound claim is that this arithmetic information is encoded in the analytic behavior of an L-function, forging a link between the discrete world of rational solutions and the continuous world of complex analysis, a link that exemplifies the deep unity between arithmetic and analysis that runs through modern number theory and connects to the Langlands program. It is also a striking example of mathematics guided by computation, having been discovered through numerical experiments on an early computer. As one of the seven Millennium Prize Problems, with partial results by Coates and Wiles, Gross and Zagier, and Kolyvagin marking important progress, and the general conjecture still open, it stands among the great challenges of contemporary mathematics. As the conjecture linking the rank of an elliptic curve to its L-function, it is a landmark of number theory.",
+  "working": [
+    {"lead": "Study the rational points", "text": "form the finitely generated group of rational points on an elliptic curve and consider its rank."},
+    {"lead": "Build the L-function", "text": "attach the Hasse-Weil L-function to the curve from its point-counts modulo primes."},
+    {"lead": "Match rank to vanishing", "text": "conjecture that the rank equals the order of vanishing of the L-function at s equals 1."}
+  ],
+  "limits": "The Birch and Swinnerton-Dyer conjecture is unproven in general, and the known results reach only part of the way. It is established when the order of vanishing of the L-function at s equals 1, the analytic rank, is 0 or 1, through the work of Coates and Wiles in 1977 for certain curves with complex multiplication, and Gross and Zagier in 1986 together with Kolyvagin around 1989, but no proof is known when the rank is 2 or greater, which is where the deepest difficulties lie. Even the weaker equivalence, and the refined form predicting the leading coefficient of the L-function in terms of arithmetic invariants such as the Tate-Shafarevich group, remain open in general, and the Tate-Shafarevich group is not even known to be finite in all cases. The conjecture depends on substantial machinery, the theory of elliptic curves, L-functions, and Mordell's theorem, and is far from elementary to state precisely. Some historical and technical details reward care: the conjecture was formulated in the early 1960s from EDSAC computations, the precise statement can be phrased via the L-function or the zeta function, and Kolyvagin's contribution is dated around 1989. So the conjecture robustly links an elliptic curve's rank to its L-function, understood as an open problem proved only for analytic rank 0 or 1 and resting on deep arithmetic machinery.",
+  "misreadings": "The Birch and Swinnerton-Dyer conjecture is not proved in general; only the cases of analytic rank 0 or 1 are established, and higher ranks are open. It does not directly count rational points but relates the rank, the number of independent infinite-order points, to the L-function's behavior. And it is a conjecture supported by computation and partial proofs, not an established theorem, so treating it as proved, as a direct count of points, or as fully settled, misreads it.",
+  "origin": "The Clay Millennium Prize Problem, formulated by Bryan Birch and Peter Swinnerton-Dyer in the early 1960s from computer calculations, that the rank of an elliptic curve's group of rational points equals the order of vanishing of its L-function at s equals 1.",
+  "category": "science",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": "Bryan Birch and Peter Swinnerton-Dyer",
+  "sources": [
+    {"text": "Birch and Swinnerton-Dyer Conjecture, Clay Mathematics Institute. — the conjecture relating the number of rational points on an elliptic curve to the behavior of its zeta function at s equals 1, its status as a Millennium Prize Problem, and the weak form linking vanishing to infinitely many rational points.", "url": "https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/", "type": "secondary"},
+    {"text": "Birch and Swinnerton-Dyer conjecture, Wikipedia. — the conjecture that the rank of the group of rational points equals the order of the zero of the Hasse-Weil L-function at s equals 1, the Mordell-Weil group and rank, the origin in EDSAC computations, and the proofs of Coates-Wiles, Gross-Zagier, and Kolyvagin for analytic rank at most 1.", "url": "https://en.wikipedia.org/wiki/Birch_and_Swinnerton-Dyer_conjecture", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Birch_and_Swinnerton-Dyer_conjecture",
+  "related": [
+    {"slug": "the-millennium-prize-problems", "kind": "kindred"},
+    {"slug": "the-langlands-program", "kind": "kindred"}
+  ]
+}

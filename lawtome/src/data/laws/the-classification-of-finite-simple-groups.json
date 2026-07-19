@@ -1,0 +1,57 @@
+{
+  "no": "1011",
+  "slug": "the-classification-of-finite-simple-groups",
+  "name": "The Classification of Finite Simple Groups",
+  "aliases": ["CFSG", "The enormous theorem"],
+  "statement": "A complete list of the building blocks of all finite groups, proved across tens of thousands of pages.",
+  "statementAccent": "the building blocks of all finite groups",
+  "meaning": "The classification of finite simple groups is a theorem, one of the monumental achievements of twentieth-century mathematics, that gives a complete list of all finite simple groups. A simple group is a nontrivial group whose only normal subgroups are the trivial group and the group itself, so that it has no proper nontrivial normal subgroups, and finite simple groups are the building blocks of all finite groups, in the way that prime numbers are the building blocks of the integers: by the Jordan-Holder theorem, every finite group is built up from simple groups as its composition factors. The theorem states that every finite simple group is isomorphic to one of a few kinds: a cyclic group of prime order; an alternating group of degree at least 5; a group of Lie type, coming in sixteen infinite families of groups built from matrices over finite fields; or one of the 26 sporadic groups, exceptional simple groups that fit none of the infinite families. The largest sporadic group is the Monster, of order roughly eight times ten to the fifty-third. The proof is one of the longest in mathematics, spanning tens of thousands of pages across several hundred journal articles by about a hundred authors, published mostly between the 1950s and 2004. Its completion, announced around 1983, had a gap in the quasithin case that was filled only in 2004 by Michael Aschbacher and Stephen Smith.",
+  "mechanism": "The classification identifies, up to isomorphism, every finite simple group, and its content is the resulting list. Simple groups matter because they are the irreducible pieces from which all finite groups are assembled: given any finite group, one can break it apart through a composition series into a sequence of simple composition factors, uniquely determined by the Jordan-Holder theorem, so knowing all finite simple groups is a prerequisite for understanding finite groups in general, just as knowing the primes is basic to understanding the integers. The theorem sorts every finite simple group into four types. First, the cyclic groups of prime order, the abelian simple groups. Second, the alternating groups of even permutations on at least five symbols, which are simple. Third, the groups of Lie type, sixteen infinite families obtained as symmetry groups of algebraic structures over finite fields, the Chevalley groups and their twisted variants, including the classical and exceptional groups. Fourth, and most striking, the 26 sporadic groups, exceptional simple groups belonging to none of the families; twenty of them appear inside the largest, the Monster, forming the so-called happy family, while the other six are the pariahs. The proof proceeds by a vast case analysis, dividing finite simple groups according to structural features and treating each configuration, and it is spread across hundreds of papers by roughly a hundred mathematicians. Because of its length, errors and gaps were possible, and one, the quasithin case, was found after the original announcement and closed by Aschbacher and Smith in 2004; a second-generation project by Gorenstein, Lyons, and Solomon aims to produce a shorter, unified proof.",
+  "examples": [
+    {
+      "tag": "The four types",
+      "text": "Every finite simple group is cyclic of prime order, alternating, of Lie type, or one of the 26 sporadic groups."
+    },
+    {
+      "tag": "The Monster",
+      "text": "The largest sporadic group, the Monster, has order about eight times ten to the fifty-third."
+    },
+    {
+      "tag": "The enormous proof",
+      "text": "The proof spans tens of thousands of pages across hundreds of papers by about a hundred authors."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The sporadic groups",
+      "text": "The 26 exceptional simple groups outside the infinite families, with twenty in the Monster's happy family and six pariahs."
+    },
+    {
+      "name": "The quasithin gap",
+      "text": "The case left incomplete at the 1983 announcement and filled by Aschbacher and Smith in 2004."
+    }
+  ],
+  "whyItMatters": "The classification of finite simple groups is one of the greatest achievements in the history of mathematics, both for its content and for the extraordinary scale of its proof. By completely determining the building blocks of all finite groups, it provides a foundation for the entire theory of finite groups, with applications throughout algebra, number theory, geometry, and combinatorics, and it is invoked constantly as a tool, since many results about finite groups are proved by reducing to the simple case and consulting the list. The theorem is also a landmark for what it reveals about the architecture of symmetry: alongside the orderly infinite families, cyclic, alternating, and Lie type, it uncovers the 26 sporadic groups, strange exceptional objects that fit no pattern, culminating in the Monster, whose unexpected connections to modular forms and mathematical physics, the phenomenon of monstrous moonshine, are among the deepest surprises in mathematics. The proof itself, tens of thousands of pages assembled over decades by a hundred mathematicians and requiring later repair, raised profound questions about the nature and verifiability of mathematical proof at extreme scale. As the complete catalog of the atoms of symmetry, the classification is a monument of modern mathematics.",
+  "working": [
+    {"lead": "Define simple", "text": "take a finite simple group, one with no proper nontrivial normal subgroups, the building block of finite groups."},
+    {"lead": "Sort into types", "text": "classify it as cyclic of prime order, alternating, of Lie type, or one of the 26 sporadic groups."},
+    {"lead": "Assemble the list", "text": "recognize that these exhaust all finite simple groups, completing the classification."}
+  ],
+  "limits": "The classification is a proved theorem, but several points about it reward care. Its proof is so long, tens of thousands of pages across hundreds of articles by about a hundred authors, that no single person has read the whole of it, and this scale raised genuine concern about the possibility of undetected errors; indeed a real gap, the quasithin case, went unnoticed at the 1983 announcement and was filled only in 2004 by Aschbacher and Smith, and the second-generation project of Gorenstein, Lyons, and Solomon to produce a shorter, verified proof is still ongoing. The theorem's reliability now rests on the sustained scrutiny of the expert community rather than on a single surveyable argument. Details of the count reward care: there are sixteen infinite families of groups of Lie type, and eighteen infinite families in the full statement counting the cyclic and alternating families, so the numbers should not be conflated; there are 26 sporadic groups, or 27 if the Tits group is counted separately, and the Monster's order is about eight times ten to the fifty-third. So the classification robustly lists all finite simple groups, understood as a theorem of unprecedented length whose verification depends on the collective effort of the field.",
+  "misreadings": "The classification is a theorem, not a conjecture; the finite simple groups are completely determined, with the last gap closed in 2004. Simple does not mean structurally simple or easy, but having no proper nontrivial normal subgroups, and the sporadic groups are enormously complicated. And the sixteen Lie-type families are not the same count as the eighteen total infinite families, so treating the classification as unproven, simple groups as uncomplicated, or the family counts as interchangeable, misreads it.",
+  "origin": "The theorem, assembled over decades and completed in 2004, classifying every finite simple group as cyclic of prime order, alternating, of Lie type, or one of the 26 sporadic groups, giving the building blocks of all finite groups.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": null,
+  "sources": [
+    {"text": "Classification of finite simple groups, Wikipedia. — the theorem listing every finite simple group as cyclic of prime order, alternating, of Lie type in sixteen families, or one of the 26 sporadic groups, the Monster and its order, simple groups as building blocks via Jordan-Holder, the tens of thousands of pages and roughly hundred authors, and the quasithin gap filled by Aschbacher and Smith in 2004.", "url": "https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups", "type": "secondary"},
+    {"text": "Michael Aschbacher, The Status of the Classification of the Finite Simple Groups, Notices of the American Mathematical Society, August 2004. — an authoritative account of the classification, its structure, the sporadic groups, and the completion of the proof including the quasithin case.", "url": "https://www.ams.org/notices/200407/fea-aschbacher.pdf", "type": "primary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups",
+  "related": [
+    {"slug": "the-poincare-conjecture", "kind": "kindred"},
+    {"slug": "the-four-color-theorem", "kind": "kindred"}
+  ]
+}

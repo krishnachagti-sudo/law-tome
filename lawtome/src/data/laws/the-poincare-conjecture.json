@@ -1,0 +1,57 @@
+{
+  "no": "1005",
+  "slug": "the-poincare-conjecture",
+  "name": "The Poincaré Conjecture",
+  "aliases": ["Poincaré conjecture", "The only solved Millennium Problem"],
+  "statement": "Any closed 3D space with no holes is topologically a sphere; proved by Perelman.",
+  "statementAccent": "topologically a sphere",
+  "meaning": "The Poincaré conjecture is a statement in topology characterizing the three-dimensional sphere among three-dimensional spaces. It states that every simply connected, closed three-manifold is homeomorphic to the three-sphere. In plainer terms, any closed, bounded three-dimensional space in which every loop can be continuously shrunk to a point, the property of being simply connected, is topologically the same as a three-sphere, so the three-sphere is characterized by having no holes in this sense. Posed by Henri Poincaré in 1904, it became one of the most important open problems in topology for nearly a century. Higher-dimensional analogues were settled first: the generalized Poincaré conjecture in dimensions five and above was proved by Stephen Smale in 1961, and dimension four by Michael Freedman in 1982, both earning Fields Medals, leaving the original three-dimensional case as the last and hardest. The proof came from Grigori Perelman, who in a series of preprints posted in 2002 and 2003 proved the Poincaré conjecture and the more general Thurston geometrization conjecture, using Richard Hamilton's program of Ricci flow, specifically Ricci flow with surgery. The Poincaré conjecture was one of the seven Clay Millennium Prize Problems and is the only one that has been solved; Perelman was awarded the Fields Medal in 2006 and the Clay prize in 2010, and declined both.",
+  "mechanism": "The conjecture is about recognizing the three-sphere from a single simple property. In two dimensions the analogous fact is classical and intuitive: a closed surface with no holes, on which every loop can be shrunk to a point, must be an ordinary two-sphere, as opposed to a torus or a surface of higher genus, which have loops that cannot be contracted. Poincaré asked whether the same characterization holds one dimension up, for three-manifolds: is a closed three-manifold in which every loop contracts necessarily a three-sphere? The difficulty is that three-dimensional topology is far richer and less visualizable than two-dimensional, and direct approaches failed for decades. The successful strategy, due to Richard Hamilton and completed by Grigori Perelman, was geometric and dynamic rather than purely topological. Hamilton introduced Ricci flow, a process that evolves the geometry of a manifold over time by smoothing out its curvature, in analogy with the way heat flow evens out temperature, with the hope that the flow would deform any simply connected three-manifold into a round three-sphere. The obstacle is that the flow can develop singularities, regions where the curvature blows up, and Perelman's decisive contribution was a deep analysis of these singularities and a technique of Ricci flow with surgery, cutting out and repairing the singular regions in a controlled way so that the flow can be continued and the manifold's structure understood. This established not only the Poincaré conjecture but Thurston's geometrization conjecture, which classifies all closed three-manifolds, and the proof was carefully verified by the community over the following years.",
+  "examples": [
+    {
+      "tag": "The two-dimensional analogue",
+      "text": "A closed surface with no holes, on which every loop shrinks to a point, must be an ordinary two-sphere, unlike a torus."
+    },
+    {
+      "tag": "Ricci flow with surgery",
+      "text": "Perelman evolved the geometry by Ricci flow and repaired its singularities by surgery to prove the conjecture."
+    },
+    {
+      "tag": "The only solved Millennium Problem",
+      "text": "The Poincaré conjecture is the sole Clay Millennium Prize Problem that has been solved, by Perelman in 2002 and 2003."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The generalized conjecture",
+      "text": "The higher-dimensional cases proved by Smale in dimensions five and above and Freedman in dimension four."
+    },
+    {
+      "name": "Geometrization",
+      "text": "Thurston's broader conjecture classifying all closed three-manifolds, which Perelman's proof also established."
+    }
+  ],
+  "whyItMatters": "The Poincaré conjecture is one of the landmark achievements of modern mathematics and a defining problem of twentieth- and twenty-first-century topology. For nearly a hundred years it stood as a central open question, resisting the efforts of many of the greatest mathematicians, and its resolution by Grigori Perelman in the early 2000s was a mathematical event of the first magnitude, celebrated as the first, and so far only, solution of a Clay Millennium Prize Problem. The proof did far more than settle a single conjecture: by establishing Thurston's geometrization conjecture, it completed the classification of all closed three-dimensional manifolds, a foundational result for the whole field of low-dimensional topology, and it demonstrated the extraordinary power of geometric analysis and Ricci flow, techniques that have since become central tools. The human story added to its fame: Perelman posted his epoch-making work quietly on the internet rather than in journals, and then declined both the Fields Medal in 2006 and the one-million-dollar Clay prize in 2010, a rare and widely discussed refusal. As the theorem that a closed simply connected three-manifold is a three-sphere, proved after a century, the Poincaré conjecture is a monument of mathematical thought.",
+  "working": [
+    {"lead": "Take a closed three-manifold", "text": "consider a closed, bounded three-dimensional space with no boundary."},
+    {"lead": "Check simple connectivity", "text": "verify that every loop in it can be continuously shrunk to a point."},
+    {"lead": "Conclude it is a sphere", "text": "conclude, by Perelman's theorem, that it is homeomorphic to the three-sphere."}
+  ],
+  "limits": "The Poincaré conjecture is now a theorem rather than an open problem, but several points about it reward care. Perelman's proof, though correct, was terse and posted as preprints, and its full verification required substantial effort by the mathematical community over several years, with expository accounts filling in details; this process, and disputes over credit, generated controversy. The result is specific to the topological, homeomorphism, classification of three-manifolds, and the closely related smooth Poincaré conjecture in four dimensions, whether a four-sphere has an exotic smooth structure, remains open, so the Poincaré story is not entirely closed in every sense. The proof depends on deep machinery, Ricci flow and geometric analysis, that is far from elementary, and the geometrization theorem it establishes is a broad and technical classification. Some historical and biographical details reward care: Poincaré posed the conjecture in 1904, Smale and Freedman settled higher dimensions in 1961 and 1982, Perelman posted his work in 2002 and 2003, and he declined the Fields Medal in 2006 and the Clay prize in 2010. So the Poincaré conjecture robustly characterizes the three-sphere and is proved, understood as a solved Millennium Problem whose proof is deep and whose smooth four-dimensional cousin is still open.",
+  "misreadings": "The Poincaré conjecture is not still open; it was proved by Perelman using Ricci flow, and it is the one solved Clay Millennium Problem. Simply connected does not mean simply shaped, but that every loop can be contracted to a point, a precise topological condition. And the theorem concerns three-manifolds specifically, so treating the conjecture as unsolved, as a claim about simple shapes, or as settling every dimension including the smooth four-dimensional case, misreads it.",
+  "origin": "Henri Poincaré's 1904 conjecture that every closed simply connected three-manifold is homeomorphic to the three-sphere, proved by Grigori Perelman in 2002 to 2003 via Ricci flow, the only solved Clay Millennium Prize Problem.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1904,
+  "namedAfter": "Henri Poincaré",
+  "sources": [
+    {"text": "Poincaré Conjecture, Clay Mathematics Institute. — the conjecture characterizing the three-sphere as the unique simply connected closed three-manifold, its status as a Millennium Prize Problem, and its solution by Grigori Perelman.", "url": "https://www.claymath.org/millennium/poincare-conjecture/", "type": "secondary"},
+    {"text": "Poincaré conjecture, Wikipedia. — the statement that every simply connected closed three-manifold is homeomorphic to the three-sphere, Poincaré's 1904 formulation, Smale's and Freedman's higher-dimensional proofs, Perelman's 2002-2003 proof via Hamilton's Ricci flow with surgery and geometrization, and his declining the Fields Medal and Clay prize.", "url": "https://en.wikipedia.org/wiki/Poincar%C3%A9_conjecture", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Poincar%C3%A9_conjecture",
+  "related": [
+    {"slug": "the-millennium-prize-problems", "kind": "kindred"},
+    {"slug": "the-classification-of-finite-simple-groups", "kind": "kindred"}
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "no": "1009",
+  "slug": "the-hodge-conjecture",
+  "name": "The Hodge Conjecture",
+  "aliases": ["Hodge conjecture", "Hodge classes are algebraic"],
+  "statement": "On nice complex geometric spaces, certain topological classes all come from algebraic subvarieties.",
+  "statementAccent": "come from algebraic subvarieties",
+  "meaning": "The Hodge conjecture is one of the seven Clay Mathematics Institute Millennium Prize Problems, announced in 2000, each carrying a one-million-dollar prize, and it is unsolved. It is a major open problem in algebraic geometry and complex geometry, asserting a deep connection between the topology of certain well-behaved geometric spaces and their algebraic structure. More precisely, for a non-singular complex projective algebraic variety, the conjecture states that certain cohomology classes, the rational Hodge classes, are algebraic. Hodge classes are cohomology classes of a special type, those of type p, p in the Hodge decomposition of the cohomology that are also rational classes, and to say they are algebraic means that each is a rational linear combination of the cohomology classes of algebraic subvarieties, that is, of algebraic cycles sitting inside the space. In short, the conjecture claims that every Hodge class on a projective complex manifold comes from algebra and geometry, from subvarieties, rather than being a purely topological or analytic accident. It relies on Hodge theory, developed by William Hodge, who introduced the decomposition of cohomology into types, and the conjecture was stated by Hodge around 1950, at the International Congress of Mathematicians in Cambridge, Massachusetts. It is proved in special cases but open in general, and it is considered one of the most difficult and least concrete of the Millennium Problems.",
+  "mechanism": "The Hodge conjecture concerns which topological features of a complex geometric space actually arise from its algebraic geometry. To a non-singular complex projective variety one can attach cohomology, an algebraic-topological invariant that records, in a refined way, the space's holes and higher-dimensional structure. Hodge theory refines this cohomology further by decomposing it into pieces indexed by a pair of numbers, the Hodge types p, q, reflecting the complex structure of the space. Among these, the classes of type p, p that are also rational, meaning they come from cohomology with rational coefficients, are the Hodge classes. On the other hand, every algebraic subvariety inside the space, a lower-dimensional geometric piece cut out by polynomial equations, determines a cohomology class, and such classes are automatically Hodge classes of the right type. The Hodge conjecture asserts the converse: that every rational Hodge class is a rational linear combination of the classes coming from algebraic subvarieties, so that the Hodge classes are exactly the algebraic ones. It thus predicts that a purely cohomological and analytic condition, being a rational class of type p, p, always has an underlying geometric source in algebraic cycles. The conjecture is confirmed in some cases: the Lefschetz theorem on classes of type 1, 1 establishes it for divisors, the codimension-one case, and it is known for abelian varieties in certain situations, but the general statement, across all projective varieties and all codimensions, remains open, and it is hard even to state precisely without technical background.",
+  "examples": [
+    {
+      "tag": "Hodge classes",
+      "text": "Hodge classes are rational cohomology classes of type p, p in the Hodge decomposition of a projective complex variety."
+    },
+    {
+      "tag": "Algebraic cycles",
+      "text": "Every algebraic subvariety gives a cohomology class, and the conjecture says all Hodge classes arise this way."
+    },
+    {
+      "tag": "The Lefschetz case",
+      "text": "The Lefschetz theorem on 1, 1 classes proves the conjecture for divisors, the codimension-one case."
+    }
+  ],
+  "variants": [
+    {
+      "name": "The Lefschetz (1,1)-theorem",
+      "text": "The proved case of the conjecture for divisors, cohomology classes of type 1, 1 coming from codimension-one subvarieties."
+    },
+    {
+      "name": "Special cases",
+      "text": "Situations, such as certain abelian varieties, where the conjecture is known, though the general case is open."
+    }
+  ],
+  "whyItMatters": "The Hodge conjecture is a central open problem in algebraic geometry, one of the deepest branches of modern mathematics, and it addresses a foundational question about the relationship between the topological, analytic, and algebraic aspects of geometric spaces. By asking whether the Hodge classes, defined through topology and complex analysis, are always algebraic, arising from actual subvarieties, the conjecture probes how much of the fine structure of a complex projective variety is captured by its algebraic geometry, a question at the heart of how these three great domains fit together. Its resolution would illuminate the theory of algebraic cycles, one of the most subtle areas of the subject, and it connects to broad programs in arithmetic geometry and motives. The conjecture is also notable, among the Millennium Prize Problems, for its abstraction: it is hard even to state precisely, requiring the machinery of Hodge theory and cohomology, which makes it the most technical and least accessible of the seven to non-specialists. That the case of divisors is settled by the Lefschetz theorem while the general case remains open, despite decades of effort, testifies to its difficulty. As the conjecture that Hodge classes are algebraic, it is a landmark problem linking topology, analysis, and algebraic geometry.",
+  "working": [
+    {"lead": "Take a projective variety", "text": "consider a non-singular complex projective algebraic variety and its cohomology."},
+    {"lead": "Identify the Hodge classes", "text": "single out the rational cohomology classes of type p, p in the Hodge decomposition."},
+    {"lead": "Ask if they are algebraic", "text": "conjecture that each is a rational combination of classes of algebraic subvarieties."}
+  ],
+  "limits": "The Hodge conjecture is unproven in general and is among the hardest and most technical of the open problems. It is established only in special cases: the Lefschetz theorem proves it for divisors, the classes of type 1, 1 in codimension one, and it is known for certain abelian varieties and other particular situations, but the general statement, for all projective varieties and all codimensions, remains open, with the higher-codimension cases especially resistant. The conjecture is also notoriously difficult to state precisely without substantial background in Hodge theory, complex geometry, and cohomology, which sets it apart from more elementary Millennium Problems and makes progress hard to communicate. There are even variant formulations and related statements, such as the integral Hodge conjecture, which is known to be false in general, so the precise rational statement matters. Some historical and attributional details reward care: the conjecture is due to William Hodge, stated around 1950 at the Cambridge, Massachusetts, ICM, and the Clay page frames it in terms of Hodge cycles and algebraic cycles on projective varieties. So the Hodge conjecture robustly asserts that Hodge classes are algebraic, understood as a deep and technical open problem proved only in special cases such as divisors.",
+  "misreadings": "The Hodge conjecture is not proved in general; only special cases, such as divisors via the Lefschetz theorem, are known. It concerns the rational Hodge classes, and the analogous integral version is actually false, so the precise formulation matters. And it applies to non-singular complex projective varieties, not to arbitrary spaces, so treating the conjecture as proved, as holding for integral classes, or as applying to all spaces, misreads it.",
+  "origin": "The Clay Millennium Prize Problem, stated by William Hodge around 1950, that on a non-singular complex projective variety every rational Hodge class is a rational combination of the classes of algebraic subvarieties.",
+  "category": "science",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": null,
+  "namedAfter": "William Hodge",
+  "sources": [
+    {"text": "Hodge Conjecture, Clay Mathematics Institute. — the conjecture that on projective algebraic varieties the Hodge cycles are rational combinations of algebraic cycles, its status as an unsolved Millennium Prize Problem, and its place in algebraic geometry.", "url": "https://www.claymath.org/millennium/hodge-conjecture/", "type": "secondary"},
+    {"text": "Hodge conjecture, Wikipedia. — the conjecture that on a non-singular complex projective variety every Hodge class, a rational class of type p, p, is a rational combination of classes of algebraic cycles, Hodge theory and the 1950 ICM address, and the Lefschetz theorem on 1, 1 classes as a proved case.", "url": "https://en.wikipedia.org/wiki/Hodge_conjecture", "type": "secondary"}
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hodge_conjecture",
+  "related": [
+    {"slug": "the-millennium-prize-problems", "kind": "kindred"},
+    {"slug": "the-birch-and-swinnerton-dyer-conjecture", "kind": "kindred"}
+  ]
+}
