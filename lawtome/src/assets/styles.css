@@ -460,3 +460,14 @@ html[data-theme="dark"] .coin-form .cta{color:#17130b}
 @font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/SpaceMono-Regular-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/SpaceMono-Bold-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/SpaceMono-Bold-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* FAQ accordion (visible Q&A that mirrors the FAQPage JSON-LD). Native
+   <details>/<summary> so it works with no JS; the marker is a +/– glyph. */
+.faq{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{font-family:var(--serif);font-weight:600;font-size:17px;line-height:1.4;color:var(--ink);padding:16px 34px 16px 0;cursor:pointer;list-style:none;position:relative}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{content:"+";position:absolute;right:4px;top:13px;font-family:var(--mono);font-size:20px;line-height:1;color:var(--accent)}
+.faq-item[open] .faq-q::after{content:"\2013"}
+.faq-a{padding:0 0 18px}
+.faq-a p{margin:0;color:var(--muted);line-height:1.62}

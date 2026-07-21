@@ -297,6 +297,38 @@ ${h2}${inner}
     ? `<div class="wrap-wide"><div class="dash" data-reveal>\n${dashTiles}\n</div></div>\n`
     : '';
 
+  // FAQ — rendered as a VISIBLE accordion (pushed into <main> as the last block)
+  // AND emitted as FAQPage JSON-LD from the SAME array, so the structured data
+  // always matches on-page content (no invisible-markup / spammy-structured-data
+  // risk). Each answer is a whole, self-contained corpus field — no fabrication,
+  // no stitched sentences — and a question appears only when its field exists.
+  const qa = (name, text) => (text ? { '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } } : null);
+  const faqEntities = [
+    qa(`What is ${L}?`, answer),
+    law.meaning && law.meaning !== answer ? qa(`What does ${L} mean?`, law.meaning) : null,
+    // "What is an example of X?" is one of the most common People-Also-Ask / voice
+    // queries for a named law — answer it with a real corpus example.
+    qa(`What is an example of ${L}?`, firstExample),
+    qa(`Why does ${L} matter?`, law.whyItMatters),
+    qa(`How does ${L} work?`, law.mechanism),
+    (law.namedAfter || law.origin)
+      ? qa(`Who coined ${L}?`, law.origin
+          || `${L} is named after ${law.namedAfter}${law.coinedYear != null ? `, dated to ${law.coinedYear}` : ''}.`)
+      : null,
+    qa(`What is commonly misunderstood about ${L}?`, law.misreadings),
+    qa(`What are the limits of ${L}?`, law.limits),
+  ].filter(Boolean);
+  const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqEntities };
+  if (faqEntities.length) {
+    const faqInner = `        <div class="faq">\n` +
+      faqEntities.map((q, i) =>
+        `          <details class="faq-item"${i === 0 ? ' open' : ''}><summary class="faq-q">${escapeHtml(q.name)}</summary><div class="faq-a"><p>${escapeHtml(q.acceptedAnswer.text)}</p></div></details>`,
+      ).join('\n') +
+      `\n        </div>`;
+    // Last block in the reading flow; block() also registers a TOC entry + <h2>.
+    blocks.push(block('FAQ', faqInner, true, `Frequently asked questions about ${L}`));
+  }
+
   // ---- left rail: table of contents (scroll-spy) ------------------------
   const tocNav = toc.length
     ? `    <nav class="toc" aria-label="On this page">
@@ -440,27 +472,8 @@ ${prevnext}</div>
     ],
   };
 
-  // FAQPage — the AEO/GEO surface. Each Q pulls a whole, self-contained corpus
-  // field as its answer (no fabrication, no stitched sentences), so answer engines
-  // can quote a grounded paragraph and cite the entry. Questions are added only
-  // when the field backing them exists.
-  const qa = (name, text) => (text ? { '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } } : null);
-  const faqEntities = [
-    qa(`What is ${law.name}?`, answer),
-    law.meaning && law.meaning !== answer ? qa(`What does ${law.name} mean?`, law.meaning) : null,
-    // "What is an example of X?" is one of the most common People-Also-Ask / voice
-    // queries for a named law — answer it with a real corpus example.
-    qa(`What is an example of ${law.name}?`, firstExample),
-    qa(`Why does ${law.name} matter?`, law.whyItMatters),
-    qa(`How does ${law.name} work?`, law.mechanism),
-    (law.namedAfter || law.origin)
-      ? qa(`Who coined ${law.name}?`, law.origin
-          || `${law.name} is named after ${law.namedAfter}${law.coinedYear != null ? `, dated to ${law.coinedYear}` : ''}.`)
-      : null,
-    qa(`What is commonly misunderstood about ${law.name}?`, law.misreadings),
-    qa(`What are the limits of ${law.name}?`, law.limits),
-  ].filter(Boolean);
-  const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqEntities };
+  // (FAQ + FAQPage JSON-LD are built earlier, near the dash block, so the visible
+  // accordion and the structured data come from one array.)
 
   // ---- page scripts: copy-citation + reading-progress + scroll-reveal ----
   // Reveal is a pure enhancement: it only runs when <html> already carries `.anim`

@@ -49,5 +49,13 @@ test('build emits 404.html, copies the logo, and stamps publisher.logo into JSON
   const homeHtml = await readFile(join(out, 'index.html'), 'utf8');
   assert.match(homeHtml, /"@type":"ImageObject","url":"https:\/\/conyso\.com\/lawtome\/assets\/logo\.svg"/);
 
+  // FAQ is now VISIBLE (a <details> accordion), not JSON-LD-only — so the
+  // FAQPage structured data matches on-page content (no spammy-markup risk).
+  assert.match(lawHtml, /<details class="faq-item"/);
+  assert.match(lawHtml, /<summary class="faq-q">What is Goodhart's Law\?<\/summary>/);
+  assert.match(lawHtml, /"@type":"FAQPage"/);
+  // The question string appears at least twice: once visibly, once in JSON-LD.
+  assert.ok((lawHtml.match(/What is Goodhart's Law\?/g) || []).length >= 2, 'FAQ question should be visible AND in JSON-LD');
+
   await rm(out, { recursive: true, force: true });
 });
