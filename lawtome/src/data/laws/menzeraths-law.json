@@ -2,7 +2,10 @@
   "no": "435",
   "slug": "menzeraths-law",
   "name": "Menzerath's Law",
-  "aliases": ["The Menzerath-Altmann law", "The greater the whole, the smaller its parts"],
+  "aliases": [
+    "The Menzerath-Altmann law",
+    "The greater the whole, the smaller its parts"
+  ],
   "statement": "The larger a language construct, the shorter, on average, its parts.",
   "statementAccent": "the shorter, on average, its parts",
   "meaning": "Menzerath's law is a linguistic regularity holding that the larger a language construct, the smaller its constituent parts tend to be on average, often compressed to the slogan 'the greater the whole, the smaller its parts'. The more syllables a word has, the shorter on average each syllable; the more clauses a sentence has, the shorter on average each clause. The relationship is between the size of a whole and the mean size of its immediate constituents, and it is a statistical tendency across many items, not a rule about any single one.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It is one of a small handful of quantitative laws of language, alongside Zipf's law, and evidence that language has statistical regularities amenable to mathematical modelling, a cornerstone of quantitative linguistics. It expresses a compression or economy principle consistent with pressures toward efficient coding, and its apparent reach beyond language, into genomes and animal calls, made it a candidate cross-domain principle of how hierarchical systems organise their parts. It is thus both a tool for measuring linguistic structure and a testbed for theories of self-organisation.",
   "working": [
-    {"lead": "Compare whole to mean part", "text": "measure the size of a construct against the average size of its immediate constituents, since that is the relationship the law describes."},
-    {"lead": "Require a hierarchy", "text": "apply it only where there is a genuine part-whole hierarchy, the precondition for the effect to appear."},
-    {"lead": "Separate correlation from formula", "text": "distinguish the mere bigger-whole-smaller-parts correlation, which can be trivial, from the full formula's shape, which is more informative."}
+    {
+      "lead": "Compare whole to mean part",
+      "text": "measure the size of a construct against the average size of its immediate constituents, since that is the relationship the law describes."
+    },
+    {
+      "lead": "Require a hierarchy",
+      "text": "apply it only where there is a genuine part-whole hierarchy, the precondition for the effect to appear."
+    },
+    {
+      "lead": "Separate correlation from formula",
+      "text": "distinguish the mere bigger-whole-smaller-parts correlation, which can be trivial, from the full formula's shape, which is more informative."
+    }
   ],
   "limits": "It is an empirical regularity, not a proven universal, and it is genuinely contested. In one test of many languages only about half showed a statistically significant Menzerath correlation. A key critique is that the pattern can arise trivially: when parts sum to a whole, the correlation can be a near-necessary consequence of how the variables are constructed, and even a simple memoryless random source reproduces the basic correlation, so its presence alone is weak evidence of communicative complexity. Some observed effects may reflect regression toward the mean, and its application to animals and genomes has been found to be the exception rather than the rule in several cases.",
   "misreadings": "It is not a deterministic rule but a statistical tendency about averages, so individual long words can still have long parts. Menzerath's law and the Menzerath-Altmann law are worth distinguishing: the former often means the qualitative correlation, the latter Altmann's specific formula, and the difference matters because the correlation can be trivial while the formula's shape is more telling. Its presence does not prove that language, genomes, or animal calls are complex or optimised, since random models reproduce the basic correlation. And it is not the same as Zipf's law, which concerns frequency and rank rather than part-whole size.",
@@ -46,12 +58,26 @@
   "coinedYear": 1954,
   "namedAfter": "Paul Menzerath and Gabriel Altmann",
   "sources": [
-    {"text": "Menzerath's law, Wikipedia. — the whole-and-parts statement, Altmann's formula, and the cross-domain applications.", "url": "https://en.wikipedia.org/wiki/Menzerath%27s_law", "type": "secondary"},
-    {"text": "Torre, Debowski, and Hernandez-Fernandez, 'Can Menzerath's law be a criterion of complexity in communication?' (2021). — the triviality critique and the memoryless-source caveat.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8378695/", "type": "primary"}
+    {
+      "text": "Menzerath's law, Wikipedia. — the whole-and-parts statement, Altmann's formula, and the cross-domain applications.",
+      "url": "https://en.wikipedia.org/wiki/Menzerath%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Torre, Debowski, and Hernandez-Fernandez, 'Can Menzerath's law be a criterion of complexity in communication?' (2021). — the triviality critique and the memoryless-source caveat.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8378695/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Menzerath%27s_law",
   "related": [
-    {"slug": "zipfs-law-of-abbreviation", "kind": "kindred"},
-    {"slug": "zipfs-law", "kind": "kindred"}
+    {
+      "slug": "brevity-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "zipfs-law",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "559",
   "slug": "brevity-law",
   "name": "The Brevity Law",
-  "aliases": ["Zipf's law of abbreviation", "The law of abbreviation"],
+  "aliases": [
+    "Zipf's law of abbreviation",
+    "The law of abbreviation"
+  ],
   "statement": "The more often a word is used, the shorter it tends to be.",
   "statementAccent": "the shorter it tends to be",
   "meaning": "The brevity law is the cross-linguistic tendency that the more frequently a word is used, the shorter it tends to be, and the rarer a word, the longer. It appears as a negative correlation between how often a word is used and its length, whether length is measured in phonemes, syllables, characters, or spoken duration. Described by George Kingsley Zipf, it is also called Zipf's law of abbreviation, and it is distinct from his more famous rank-frequency law. It is one of the most robustly attested regularities in language, verified across nearly a thousand languages, and it is often explained as a pressure toward efficient, low-effort communication.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The brevity law is one of the most solidly established quantitative patterns in linguistics, holding across a huge and diverse sample of the world's languages, and it is a prime example of language as a system shaped by pressures toward efficiency. It connects word length to frequency, the principle of least effort, and the mathematics of optimal coding, linking linguistics to information theory. As a candidate linguistic universal it bears on deep questions about whether human languages, and perhaps other communication systems, are optimised for compressing information under the competing demands of effort and clarity.",
   "working": [
-    {"lead": "Expect short frequent words", "text": "anticipate a negative correlation between how often a word is used and its length, with the commonest words the shortest."},
-    {"lead": "Read it as efficiency", "text": "treat the pattern as a pressure toward least effort and efficient coding, compressing the items used most often."},
-    {"lead": "Keep it distinct from Zipf's rank law", "text": "separate the brevity law, about frequency and length, from Zipf's rank-frequency law, about frequency and rank."}
+    {
+      "lead": "Expect short frequent words",
+      "text": "anticipate a negative correlation between how often a word is used and its length, with the commonest words the shortest."
+    },
+    {
+      "lead": "Read it as efficiency",
+      "text": "treat the pattern as a pressure toward least effort and efficient coding, compressing the items used most often."
+    },
+    {
+      "lead": "Keep it distinct from Zipf's rank law",
+      "text": "separate the brevity law, about frequency and length, from Zipf's rank-frequency law, about frequency and rank."
+    }
   ],
   "limits": "The law is a statistical tendency, not a deterministic rule, so many individual words violate it while the aggregate correlation holds. Its strength varies across languages, and some analyses argue that a word's average informativity, or predictability in context, tracks length even better than raw frequency. The extension to animal communication is genuinely contested: some primates, chimpanzees, and lemurs have been reported to conform, but common marmosets and some other species do not, and one study found compression evident only for certain units of analysis, so the claim of a universal beyond human language is not established.",
   "misreadings": "The brevity law is distinct from Zipf's rank-frequency law: this one relates frequency to word length, while the rank-frequency law relates frequency to rank, and both being Zipf's does not make them the same. It is a statistical tendency, not an exceptionless rule, so individual words can be long and frequent or short and rare. And it does not claim that shortness causes frequency or the reverse in any simple direction; it describes a correlation that the least-effort and efficiency accounts try to explain.",
@@ -46,12 +58,29 @@
   "coinedYear": 1935,
   "namedAfter": "George Kingsley Zipf",
   "sources": [
-    {"text": "Brevity law, Wikipedia. — the frequency-length relation, the Zipf origin, the least-effort framing, and the animal-communication extensions.", "url": "https://en.wikipedia.org/wiki/Brevity_law", "type": "secondary"},
-    {"text": "Bentz & Ferrer-i-Cancho, 'Zipf's law of abbreviation as a language universal.' — the negative frequency-length correlation across 986 languages.", "url": "https://publikationen.uni-tuebingen.de/xmlui/bitstream/handle/10900/68639/Bentz_Ferrer.pdf", "type": "primary"}
+    {
+      "text": "Brevity law, Wikipedia. — the frequency-length relation, the Zipf origin, the least-effort framing, and the animal-communication extensions.",
+      "url": "https://en.wikipedia.org/wiki/Brevity_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Bentz & Ferrer-i-Cancho, 'Zipf's law of abbreviation as a language universal.' — the negative frequency-length correlation across 986 languages.",
+      "url": "https://publikationen.uni-tuebingen.de/xmlui/bitstream/handle/10900/68639/Bentz_Ferrer.pdf",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Brevity_law",
   "related": [
-    {"slug": "zipfs-law", "kind": "kindred"},
-    {"slug": "the-cooperative-principle", "kind": "kindred"}
+    {
+      "slug": "zipfs-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-cooperative-principle",
+      "kind": "kindred"
+    }
+  ],
+  "redirectFrom": [
+    "laws/zipfs-law-of-abbreviation/"
   ]
 }
