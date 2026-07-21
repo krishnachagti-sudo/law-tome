@@ -18,6 +18,8 @@ import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng } from './quotecard.mjs';
 import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull } from './llms.mjs';
+import { readFile } from 'node:fs/promises';
+import { buildFeed } from './feed.mjs';
 
 async function writePage(path, html) {
   await mkdir(dirname(path), { recursive: true });
@@ -137,6 +139,27 @@ export async function buildSite(opts) {
   const llmsOpts = { baseUrl: `${origin}${base}` };
   writes.push(writePage(join(out, 'llms.txt'), buildLlmsIndex(laws, categories, llmsOpts)));
   writes.push(writePage(join(out, 'llms-full.txt'), buildLlmsFull(laws, categories, llmsOpts)));
+
+  // Atom feed of the newest entries + site identity (favicon PNG derived from the
+  // brand logo, and a web-app manifest). All crawler/OS-facing, not "pages".
+  writes.push(writePage(join(out, 'feed.xml'), buildFeed(laws, { baseUrl: `${origin}${base}`, updated: `${buildDate}T00:00:00Z`, siteName: 'The Law Tome' })));
+  const logoSvg = await readFile(join(assetsDir, 'logo.svg'), 'utf8');
+  writes.push(writePage(join(out, 'icon-512.png'), renderPng(logoSvg)));
+  const manifest = {
+    name: 'The Law Tome',
+    short_name: 'Law Tome',
+    description: 'The largest unified, defined, and sourced directory of named laws, principles, effects, razors, and paradoxes.',
+    start_url: base,
+    scope: base,
+    display: 'standalone',
+    background_color: '#e7e1d1',
+    theme_color: '#e7e1d1',
+    icons: [
+      { src: `${base}assets/logo.svg`, type: 'image/svg+xml', sizes: 'any' },
+      { src: `${base}icon-512.png`, type: 'image/png', sizes: '512x512', purpose: 'any' },
+    ],
+  };
+  writes.push(writePage(join(out, 'site.webmanifest'), JSON.stringify(manifest, null, 2)));
 
   // _redirects: one `from  to  301` line per law.redirectFrom entry (each an old
   // base-relative path that should 301 to the law's current permalink). Seed data

@@ -131,6 +131,12 @@ export function head({ title, description, base = '/', origin = '', path, canoni
   // Theme-color: match the masthead paper/ink so the browser chrome blends in.
   out.push('<meta name="theme-color" content="#e7e1d1" media="(prefers-color-scheme: light)">');
   out.push('<meta name="theme-color" content="#0c0b09" media="(prefers-color-scheme: dark)">');
+  // Site identity: SVG favicon (modern browsers), a rasterised apple-touch-icon,
+  // a web-app manifest, and RSS/Atom autodiscovery for the latest-entries feed.
+  out.push(`<link rel="icon" href="${base}assets/logo.svg" type="image/svg+xml">`);
+  out.push(`<link rel="apple-touch-icon" href="${base}icon-512.png">`);
+  out.push(`<link rel="manifest" href="${base}site.webmanifest">`);
+  out.push(`<link rel="alternate" type="application/atom+xml" title="${escapeHtml(siteName)} — latest entries" href="${base}feed.xml">`);
   // Self-hosted stylesheets — replaces the prototype's Google-Fonts + jsDelivr
   // <link>s. Fonts are pulled in by the @font-face rules inside styles.css.
   out.push(`<link rel="stylesheet" href="${base}assets/styles.css">`);

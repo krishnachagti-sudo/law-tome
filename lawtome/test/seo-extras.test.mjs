@@ -57,5 +57,20 @@ test('build emits 404.html, copies the logo, and stamps publisher.logo into JSON
   // The question string appears at least twice: once visibly, once in JSON-LD.
   assert.ok((lawHtml.match(/What is Goodhart's Law\?/g) || []).length >= 2, 'FAQ question should be visible AND in JSON-LD');
 
+  // Site identity + feed: favicon/apple-touch/manifest/feed head links, and the
+  // files they point at, all emitted.
+  assert.match(lawHtml, /<link rel="icon" href="\/lawtome\/assets\/logo\.svg" type="image\/svg\+xml">/);
+  assert.match(lawHtml, /<link rel="apple-touch-icon" href="\/lawtome\/icon-512\.png">/);
+  assert.match(lawHtml, /<link rel="manifest" href="\/lawtome\/site\.webmanifest">/);
+  assert.match(lawHtml, /<link rel="alternate" type="application\/atom\+xml"[^>]*href="\/lawtome\/feed\.xml">/);
+  assert.ok(existsSync(join(out, 'icon-512.png')), 'icon-512.png not emitted');
+  assert.ok(existsSync(join(out, 'site.webmanifest')), 'site.webmanifest not emitted');
+  const manifest = JSON.parse(await readFile(join(out, 'site.webmanifest'), 'utf8'));
+  assert.equal(manifest.name, 'The Law Tome');
+  assert.ok(manifest.icons.some((i) => i.sizes === '512x512'), 'manifest missing 512 icon');
+  const feed = await readFile(join(out, 'feed.xml'), 'utf8');
+  assert.match(feed, /<feed xmlns="http:\/\/www\.w3\.org\/2005\/Atom">/);
+  assert.match(feed, /<link rel="self" href="https:\/\/conyso\.com\/lawtome\/feed\.xml"\/>/);
+
   await rm(out, { recursive: true, force: true });
 });
