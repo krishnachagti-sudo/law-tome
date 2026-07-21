@@ -36,9 +36,18 @@
   ],
   "whyItMatters": "It is the quantitative backbone of interface design — the reason toolbars, menus, and touch targets are sized and placed the way they are. It turns 'make the button easier to click' into a formula, and it explains why edges and corners are prime real estate.",
   "working": [
-    {"lead": "Make frequent targets big and close", "text": "size and position controls by how often they are used; the common action should be the large, near one."},
-    {"lead": "Exploit edges and corners", "text": "park high-value targets against a screen edge or in a corner, where the cursor cannot overshoot — free acquisition speed."},
-    {"lead": "Bring the action to the cursor", "text": "context menus and radial menus appear where the pointer already is, cutting distance to near zero."}
+    {
+      "lead": "Make frequent targets big and close",
+      "text": "size and position controls by how often they are used; the common action should be the large, near one."
+    },
+    {
+      "lead": "Exploit edges and corners",
+      "text": "park high-value targets against a screen edge or in a corner, where the cursor cannot overshoot — free acquisition speed."
+    },
+    {
+      "lead": "Bring the action to the cursor",
+      "text": "context menus and radial menus appear where the pointer already is, cutting distance to near zero."
+    }
   ],
   "limits": "Fitts originally modelled one-dimensional movement; real pointing is two-dimensional, which needed later 'effective width' models. Its predictive power degrades when distance and size are varied over very wide ranges, where it implies implausibly that they can be rescaled without changing movement time. It does not cover every kind of movement — continuous tracking, purely ballistic actions — and the fitted constants differ by input device, so touch and mouse must be modelled separately.",
   "misreadings": "It is not just 'bigger is better' — it is a precise trade-off between distance and size measured in bits, and the logarithm means the returns to enlarging a target diminish. Nor does it apply unchanged across devices; its constants have to be re-fit for touch, stylus, or mouse.",
@@ -49,11 +58,25 @@
   "coinedYear": 1954,
   "namedAfter": "Paul Fitts",
   "sources": [
-    {"text": "Fitts, P.M. (1954). \"The information capacity of the human motor system in controlling the amplitude of movement.\" Journal of Experimental Psychology, 47, 381–391.", "url": "http://www2.psychology.uiowa.edu/faculty/mordkoff/InfoProc/pdfs/Fitts%201954.pdf", "type": "primary"},
-    {"text": "Fitts's law, Wikipedia. — the formula, the edge/corner design consequences, and the Shannon and steering-law variants.", "url": "https://en.wikipedia.org/wiki/Fitts%27s_law", "type": "secondary"}
+    {
+      "text": "Fitts, P.M. (1954). \"The information capacity of the human motor system in controlling the amplitude of movement.\" Journal of Experimental Psychology, 47, 381–391.",
+      "url": "http://www2.psychology.uiowa.edu/faculty/mordkoff/InfoProc/pdfs/Fitts%201954.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Fitts's law, Wikipedia. — the formula, the edge/corner design consequences, and the Shannon and steering-law variants.",
+      "url": "https://en.wikipedia.org/wiki/Fitts%27s_law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Fitts%27s_law",
   "related": [
-    {"slug": "hicks-law", "kind": "kindred"}
+    {
+      "slug": "hicks-law",
+      "kind": "kindred"
+    }
+  ],
+  "redirectFrom": [
+    "laws/fittss-law/"
   ]
 }

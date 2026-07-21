@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is ecology's closest thing to a law, a pattern so general it underlies estimates of biodiversity, forecasts of extinction from habitat loss, the design of nature reserves, and the theory of island biogeography. Its very ubiquity makes getting its form and its exponent right consequential for how we count species and predict their loss.",
   "working": [
-    {"lead": "Fit species to area", "text": "estimate how many species an area holds by fitting the power law, reading the exponent from the log-log slope."},
-    {"lead": "Keep the curve types apart", "text": "distinguish island, nested, and accumulation curves, which have different slopes and should not be conflated."},
-    {"lead": "Distrust naive extinction forecasts", "text": "use the backward relationship to predict species loss only with care, since it can badly misestimate extinction."}
+    {
+      "lead": "Fit species to area",
+      "text": "estimate how many species an area holds by fitting the power law, reading the exponent from the log-log slope."
+    },
+    {
+      "lead": "Keep the curve types apart",
+      "text": "distinguish island, nested, and accumulation curves, which have different slopes and should not be conflated."
+    },
+    {
+      "lead": "Distrust naive extinction forecasts",
+      "text": "use the backward relationship to predict species loss only with care, since it can badly misestimate extinction."
+    }
   ],
   "limits": "The exponent varies widely with taxon, spatial scale, and whether the data are islands or mainland; it is no universal constant. The functional form is unsettled, power law competing with semi-log and hybrid models, and real points often lie between them. The relationship is scale-dependent, the nested curve steep at small scales, flatter at intermediate ones, and steep again at continental scales. And using it to predict extinctions is genuinely contested: He and Hubbell argued the backward relationship always overestimates species loss, since the area needed to remove a species' last individual far exceeds that needed to encounter its first — though others argue it can underestimate instead.",
   "misreadings": "The species-area relationship is not a single law or curve; island, nested, and accumulation curves are distinct constructions with different slopes, and conflating them is a documented error. The exponent is not a fixed constant near a quarter; that is a theoretical value, while empirical exponents range widely and depend on scale and system. And you cannot simply reverse the curve to predict extinctions, a step that biases the estimate in ways still debated.",
@@ -44,13 +53,31 @@
   "provenance": "canon",
   "coinedYear": 1921,
   "sources": [
-    {"text": "He & Hubbell, \"Species-area relationships always overestimate extinction rates from habitat loss,\" Nature 473:368-371 (2011). — the argument against reversing the curve to predict extinction.", "url": "https://www.nature.com/articles/nature09985", "type": "primary"},
-    {"text": "Matthews et al., \"Island species-area relationships and species accumulation curves are not equivalent,\" Global Ecology and Biogeography 25 (2016). — the distinction between the curve types.", "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/geb.12439", "type": "primary"},
-    {"text": "Tjorve, \"The species-area relationship, self-similarity, and the true meaning of the z-value,\" Ecology (2008). — the exponent's variation and interpretation.", "url": "https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1890/07-1685.1", "type": "primary"}
+    {
+      "text": "He & Hubbell, \"Species-area relationships always overestimate extinction rates from habitat loss,\" Nature 473:368-371 (2011). — the argument against reversing the curve to predict extinction.",
+      "url": "https://www.nature.com/articles/nature09985",
+      "type": "primary"
+    },
+    {
+      "text": "Matthews et al., \"Island species-area relationships and species accumulation curves are not equivalent,\" Global Ecology and Biogeography 25 (2016). — the distinction between the curve types.",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/geb.12439",
+      "type": "primary"
+    },
+    {
+      "text": "Tjorve, \"The species-area relationship, self-similarity, and the true meaning of the z-value,\" Ecology (2008). — the exponent's variation and interpretation.",
+      "url": "https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1890/07-1685.1",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Species%E2%80%93area_relationship",
   "related": [
-    {"slug": "the-theory-of-island-biogeography", "kind": "consequence"},
-    {"slug": "rapoports-rule", "kind": "kindred"}
+    {
+      "slug": "island-biogeography",
+      "kind": "consequence"
+    },
+    {
+      "slug": "rapoports-rule",
+      "kind": "kindred"
+    }
   ]
 }

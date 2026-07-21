@@ -2,7 +2,10 @@
   "no": "599",
   "slug": "gauss-law",
   "name": "Gauss's Law",
-  "aliases": ["Gauss's flux theorem", "Gauss's law for electricity"],
+  "aliases": [
+    "Gauss's flux theorem",
+    "Gauss's law for electricity"
+  ],
   "statement": "The electric flux out of any closed surface equals the charge trapped inside it, divided by a constant.",
   "statementAccent": "equals the charge trapped inside it",
   "meaning": "Gauss's law states that the total electric flux passing outward through any closed surface is proportional to the total electric charge enclosed within it, equal to that charge divided by the permittivity of free space. In differential form, the divergence of the electric field at a point equals the charge density there divided by the same constant. It is one of Maxwell's four equations, the foundations of electromagnetism, and it captures the fact that electric field lines begin and end on charges. Only the charge inside the surface contributes to the net flux; external charges push field lines in one side and out the other, contributing nothing net. Gauss's law is both a deep statement about how charge sources the electric field and a powerful shortcut for computing fields in symmetric situations.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "Gauss's law is one of the four Maxwell equations that unify electricity, magnetism, and light, and it encodes the fundamental fact that electric charge is the source of the electric field. As a calculational tool it turns otherwise hard field computations into one-line answers whenever the geometry is symmetric, and it explains electrostatic shielding, the behaviour of conductors, and the impossibility of a field inside a charge-free cavity. Its magnetic counterpart records the absence of magnetic monopoles. Together these make Gauss's law both a conceptual pillar of electromagnetism and a workhorse of physics and electrical engineering.",
   "working": [
-    {"lead": "Count only enclosed charge", "text": "compute net flux through a closed surface from the charge inside alone, since external charges contribute equal inward and outward flux that cancels."},
-    {"lead": "Exploit symmetry", "text": "choose a Gaussian surface matching the charge's symmetry so the field is constant on it, letting you solve for the field directly."},
-    {"lead": "Read shielding off it", "text": "use that a conductor's interior field is zero to place excess charge on its surface, explaining the Faraday cage and field-free cavities."}
+    {
+      "lead": "Count only enclosed charge",
+      "text": "compute net flux through a closed surface from the charge inside alone, since external charges contribute equal inward and outward flux that cancels."
+    },
+    {
+      "lead": "Exploit symmetry",
+      "text": "choose a Gaussian surface matching the charge's symmetry so the field is constant on it, letting you solve for the field directly."
+    },
+    {
+      "lead": "Read shielding off it",
+      "text": "use that a conductor's interior field is zero to place excess charge on its surface, explaining the Faraday cage and field-free cavities."
+    }
   ],
   "limits": "The law relates net flux to enclosed charge, but it yields the field easily only when the geometry is symmetric enough for the field to be constant over a well-chosen surface; without such symmetry it remains true but is not a practical shortcut. The field appearing in the flux integral is the total field from all charges, inside and out, even though only enclosed charge sets the net flux, a distinction easy to blur. It is a statement of classical electromagnetism, superseded in detail by quantum electrodynamics at the smallest scales, and its magnetic counterpart's zero would change only if magnetic monopoles, so far unobserved, were found.",
   "misreadings": "Only enclosed charge determines the net flux, but external charges still affect the field at points on the surface; they simply contribute zero net flux, not zero field. The law is not merely Coulomb's law in disguise; it is equivalent in electrostatics but more general, holding for moving charges, which is why it is a Maxwell equation. And zero net flux in the magnetic case does not mean no magnetic field, only that field lines have no sources, forming closed loops because isolated magnetic charges have never been found.",
@@ -46,12 +58,29 @@
   "coinedYear": 1835,
   "namedAfter": "Carl Friedrich Gauss",
   "sources": [
-    {"text": "Gauss's law, Wikipedia. — the flux-equals-enclosed-charge statement, the integral and differential forms, the Maxwell-equation status, the Coulomb equivalence, and the Faraday-cage consequence.", "url": "https://en.wikipedia.org/wiki/Gauss%27s_law", "type": "secondary"},
-    {"text": "Gauss's law, Encyclopaedia Britannica. — the flux law, its role among Maxwell's equations, and the 1835 formulation.", "url": "https://www.britannica.com/science/Gausss-law", "type": "secondary"}
+    {
+      "text": "Gauss's law, Wikipedia. — the flux-equals-enclosed-charge statement, the integral and differential forms, the Maxwell-equation status, the Coulomb equivalence, and the Faraday-cage consequence.",
+      "url": "https://en.wikipedia.org/wiki/Gauss%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Gauss's law, Encyclopaedia Britannica. — the flux law, its role among Maxwell's equations, and the 1835 formulation.",
+      "url": "https://www.britannica.com/science/Gausss-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Gauss%27s_law",
   "related": [
-    {"slug": "coulombs-law", "kind": "kindred"},
-    {"slug": "amperes-law", "kind": "kindred"}
+    {
+      "slug": "coulombs-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "amperes-law",
+      "kind": "kindred"
+    }
+  ],
+  "redirectFrom": [
+    "laws/gausss-law/"
   ]
 }

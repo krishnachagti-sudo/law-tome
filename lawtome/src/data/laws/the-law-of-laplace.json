@@ -2,7 +2,9 @@
   "no": "255",
   "slug": "the-law-of-laplace",
   "name": "The Law of Laplace",
-  "aliases": ["The Young-Laplace law"],
+  "aliases": [
+    "The Young-Laplace law"
+  ],
   "statement": "In a pressurised sphere or tube, wall tension rises with the radius.",
   "statementAccent": "wall tension rises with the radius",
   "meaning": "The tension in the wall of a hollow sphere or cylinder is proportional to the pressure inside times the radius. For a given internal pressure, a larger radius means the wall must bear more force per unit length; equivalently, at a fixed wall tension, a smaller radius can hold a higher pressure. Curvature and size, not pressure alone, govern how hard a wall is loaded.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It is a physics law with far-reaching applications in physiology and medicine, explaining aneurysm rupture risk, the burden on a dilated failing heart, the scaling of vessel walls, and the role of pulmonary surfactant. It ties the mechanical fate of hollow structures to their size, a first-order tool across cardiovascular and respiratory science.",
   "working": [
-    {"lead": "Scale wall load by radius", "text": "expect wall tension to grow with the radius, so larger hollow structures are more heavily loaded at the same pressure."},
-    {"lead": "Separate tension from stress", "text": "distinguish wall tension, which ignores thickness, from wall stress, which the wall's thickness reduces."},
-    {"lead": "Treat tissue cases as approximations", "text": "apply the idealised sphere or cylinder result to real, thick, layered tissues only as a first-order guide."}
+    {
+      "lead": "Scale wall load by radius",
+      "text": "expect wall tension to grow with the radius, so larger hollow structures are more heavily loaded at the same pressure."
+    },
+    {
+      "lead": "Separate tension from stress",
+      "text": "distinguish wall tension, which ignores thickness, from wall stress, which the wall's thickness reduces."
+    },
+    {
+      "lead": "Treat tissue cases as approximations",
+      "text": "apply the idealised sphere or cylinder result to real, thick, layered tissues only as a first-order guide."
+    }
   ],
   "limits": "It assumes thin walls of ideal spherical or cylindrical shape, uniform and static — real tissues like the heart wall and arteries are thick, layered, anisotropic, and viscoelastic, so the simple formula is an approximation. The clean tension form carries no thickness term, which appears only in the wall-stress version, and physiology sources often blur the two. The classic alveolar-stability story is explicitly critiqued in the literature: alveoli are polygonal and interdependent, sharing walls rather than being free spheres, so the small-into-large picture is a simplification.",
   "misreadings": "The clean 'tension equals pressure times radius' form is wall tension, force per unit length, and does not include wall thickness — thickness enters only in the wall-stress version. And the textbook alveolar account is a contested simplification, since alveoli are not free spheres but shared-walled, interdependent chambers.",
@@ -46,11 +57,22 @@
   "coinedYear": 1806,
   "namedAfter": "Pierre-Simon Laplace",
   "sources": [
-    {"text": "Young-Laplace equation, Wikipedia. — the pressure-curvature-tension relation, the Young and Laplace origins, and the sphere and cylinder forms.", "url": "https://en.wikipedia.org/wiki/Young%E2%80%93Laplace_equation", "type": "secondary"},
-    {"text": "Prange, \"Laplace's law and the alveolus: a misconception of anatomy and a misapplication of physics,\" Advances in Physiology Education (2003), PubMed. — the critique of the alveolar-stability account.", "url": "https://pubmed.ncbi.nlm.nih.gov/12594072/", "type": "primary"}
+    {
+      "text": "Young-Laplace equation, Wikipedia. — the pressure-curvature-tension relation, the Young and Laplace origins, and the sphere and cylinder forms.",
+      "url": "https://en.wikipedia.org/wiki/Young%E2%80%93Laplace_equation",
+      "type": "secondary"
+    },
+    {
+      "text": "Prange, \"Laplace's law and the alveolus: a misconception of anatomy and a misapplication of physics,\" Advances in Physiology Education (2003), PubMed. — the critique of the alveolar-stability account.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12594072/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Young%E2%80%93Laplace_equation",
   "related": [
-    {"slug": "the-frank-starling-law-of-the-heart", "kind": "kindred"}
+    {
+      "slug": "the-frank-starling-law",
+      "kind": "kindred"
+    }
   ]
 }

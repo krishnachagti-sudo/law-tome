@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is the founding law of diffusion, governing everything from respiration and drug release to metallurgy and semiconductor manufacture, and one of a family of gradient-driven transport laws — alongside Fourier's, Ohm's, and Darcy's — that share the same mathematical form. Einstein's later microscopic derivation tied it to the reality of atoms.",
   "working": [
-    {"lead": "Drive flux with the gradient", "text": "increase diffusive transport by steepening the concentration gradient or choosing a medium with a higher diffusion coefficient."},
-    {"lead": "Use the second law for time evolution", "text": "when you need how a concentration profile changes over time, solve the diffusion equation rather than the instantaneous flux."},
-    {"lead": "Check dilute, constant-coefficient assumptions", "text": "apply the simple law to dilute solutions with a constant diffusion coefficient, and use richer models for concentrated or coupled systems."}
+    {
+      "lead": "Drive flux with the gradient",
+      "text": "increase diffusive transport by steepening the concentration gradient or choosing a medium with a higher diffusion coefficient."
+    },
+    {
+      "lead": "Use the second law for time evolution",
+      "text": "when you need how a concentration profile changes over time, solve the diffusion equation rather than the instantaneous flux."
+    },
+    {
+      "lead": "Check dilute, constant-coefficient assumptions",
+      "text": "apply the simple law to dilute solutions with a constant diffusion coefficient, and use richer models for concentrated or coupled systems."
+    }
   ],
   "limits": "Fick's laws are phenomenological continuum relations with an experimentally measured coefficient, not first-principles results. They assume dilute solutions, where each species interacts only with the bulk, and a constant diffusion coefficient — both failing in concentrated or multicomponent systems where cross-effects matter. They also break down for anomalous, non-Fickian diffusion in porous or swelling media, and, being parabolic like the heat equation, the second law implies an unphysical infinite propagation speed, corrected by finite-speed telegraph-equation models.",
   "misreadings": "They do not describe a force pulling matter toward low concentration — nothing pulls; the down-gradient flow is a statistical result of unbiased random motion. And they are not exact universal laws but dilute, constant-coefficient approximations that fail for concentrated solutions and anomalous diffusion.",
@@ -45,11 +54,22 @@
   "coinedYear": 1855,
   "namedAfter": "Adolf Fick",
   "sources": [
-    {"text": "Fick's laws of diffusion, Wikipedia. — the two laws, the Fourier analogy, and the dilute/constant-coefficient assumptions.", "url": "https://en.wikipedia.org/wiki/Fick%27s_laws_of_diffusion", "type": "secondary"},
-    {"text": "\"On the sesquicentennial of Fick's laws of diffusion,\" Nature Structural & Molecular Biology (2005). — the 1855 origin.", "url": "https://www.nature.com/articles/nsmb0405-280", "type": "secondary"}
+    {
+      "text": "Fick's laws of diffusion, Wikipedia. — the two laws, the Fourier analogy, and the dilute/constant-coefficient assumptions.",
+      "url": "https://en.wikipedia.org/wiki/Fick%27s_laws_of_diffusion",
+      "type": "secondary"
+    },
+    {
+      "text": "\"On the sesquicentennial of Fick's laws of diffusion,\" Nature Structural & Molecular Biology (2005). — the 1855 origin.",
+      "url": "https://www.nature.com/articles/nsmb0405-280",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Fick%27s_laws_of_diffusion",
   "related": [
-    {"slug": "fouriers-law", "kind": "kindred"}
+    {
+      "slug": "fouriers-law-of-heat-conduction",
+      "kind": "kindred"
+    }
   ]
 }
