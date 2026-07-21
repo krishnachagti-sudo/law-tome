@@ -2,10 +2,13 @@
   "no": "652",
   "slug": "the-ad-hominem",
   "name": "The Ad Hominem",
-  "aliases": ["Argument against the person", "Attacking the arguer"],
+  "aliases": [
+    "Argument against the person",
+    "Attacking the arguer"
+  ],
   "statement": "Attack the person making an argument instead of answering the argument itself.",
   "statementAccent": "instead of answering the argument itself",
-  "meaning": "The ad hominem, Latin for to the person, is an informal fallacy in which an argument is rebutted by attacking the character, motive, circumstances, or other attribute of the person making it, rather than addressing the substance of the argument itself. Because the truth of a claim does not depend on who advances it, dismissing an argument by disparaging its author is, in general, a failure of relevant reasoning. It comes in several forms, from direct abuse to alleging bias to charging hypocrisy. Crucially, though, attacking a person is not always fallacious: when their character, credibility, or expertise is genuinely the issue, as with a witness's reliability, it can be relevant. The ad hominem is fallacious specifically when the personal attack is irrelevant to the truth of the claim.",
+  "meaning": "The ad hominem, Latin for to the person, is an informal fallacy in which an argument is rebutted by attacking the character, motive, circumstances, or other attribute of the person making it, rather than addressing the substance of the argument itself. Because the truth of a claim does not depend on who advances it, dismissing an argument by disparaging its author is, in general, a failure of relevant reasoning. It comes in several forms, from direct abuse to alleging bias to charging hypocrisy. Though, attacking a person is not always fallacious: when their character, credibility, or expertise is genuinely the issue, as with a witness's reliability, it can be relevant. The ad hominem is fallacious specifically when the personal attack is irrelevant to the truth of the claim.",
   "mechanism": "The move substitutes a judgement about the speaker for an evaluation of what they said. In its abusive form, it simply insults the person's character; in the circumstantial form, it alleges that their situation or interests bias them toward their conclusion; in the tu quoque, or you-too, form, it charges them with hypocrisy; and in poisoning the well, it discredits them in advance so that nothing they say will be believed. Each treats the speaker's flaws as if they refuted the argument, which they generally do not. But relevance is the hinge: pointing out that a paid spokesperson has a financial interest, or that a witness has lied before, can legitimately bear on credibility. The fallacy is committed when the attack is offered as a rebuttal yet has no bearing on the claim's truth.",
   "examples": [
     {
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The ad hominem is one of the most common and recognisable fallacies, especially prominent in political and online discourse, and identifying it is a basic tool of critical thinking. Because it diverts attention from arguments to arguers, it corrodes debate, substitutes tribal loyalty for reasoning, and lets bad arguments survive by discrediting their messengers rather than answering them. Yet its careful analysis also teaches an important nuance, that attacking a person is legitimate when their credibility is genuinely relevant, so the skill lies in distinguishing relevant challenges to testimony from irrelevant abuse. Understanding the ad hominem thus sharpens both the detection of dishonest rhetoric and the fair evaluation of who to believe.",
   "working": [
-    {"lead": "Separate person from argument", "text": "check whether a response addresses the substance of the claim or merely attacks the character, motives, or circumstances of the person making it."},
-    {"lead": "Test for relevance", "text": "ask whether the personal point actually bears on the truth of the claim; if not, an attack offered as rebuttal is fallacious."},
-    {"lead": "Allow legitimate credibility challenges", "text": "recognise that questioning a witness's or source's reliability is fair when their credibility is genuinely the issue at hand."}
+    {
+      "lead": "Separate person from argument",
+      "text": "check whether a response addresses the substance of the claim or merely attacks the character, motives, or circumstances of the person making it."
+    },
+    {
+      "lead": "Test for relevance",
+      "text": "ask whether the personal point actually bears on the truth of the claim; if not, an attack offered as rebuttal is fallacious."
+    },
+    {
+      "lead": "Allow legitimate credibility challenges",
+      "text": "recognise that questioning a witness's or source's reliability is fair when their credibility is genuinely the issue at hand."
+    }
   ],
   "limits": "Not every insult is an ad hominem fallacy; the fallacy is committed only when a personal attack is offered as a rebuttal of an argument, so name-calling that is not doing argumentative work is rudeness rather than this fallacy. Attacking a person's relevant credibility can be legitimate, as philosophers like Douglas Walton have stressed, so ad hominem reasoning is not always fallacious. The Latin term also has a long and shifting history: in John Locke's usage it meant pressing someone with consequences of their own commitments, a different sense from the modern attack-the-person meaning, so the label covers several related but distinct moves.",
   "misreadings": "An ad hominem is not any insult; it is fallacious only when a personal attack is offered as a rebuttal of the argument, so mere name-calling that is not standing in for a refutation is not this fallacy. Attacking relevant credibility, such as a witness's history of lying, can be legitimate rather than fallacious, since there the person is the issue. And it is distinct from a straw man, which distorts the argument rather than attacking the arguer, so the two fallacies should not be conflated.",
@@ -44,12 +56,26 @@
   "reliability": "Heuristic",
   "provenance": "canon",
   "sources": [
-    {"text": "Ad hominem, Wikipedia. — the Latin meaning and attack-the-person definition, the abusive, circumstantial, tu quoque, and poisoning-the-well forms, the relevance nuance, and the history of the term.", "url": "https://en.wikipedia.org/wiki/Ad_hominem", "type": "secondary"},
-    {"text": "Fallacies, Stanford Encyclopedia of Philosophy. — the ad hominem among the informal fallacies and the conditions under which attacking a person is or is not relevant.", "url": "https://plato.stanford.edu/entries/fallacies/", "type": "secondary"}
+    {
+      "text": "Ad hominem, Wikipedia. — the Latin meaning and attack-the-person definition, the abusive, circumstantial, tu quoque, and poisoning-the-well forms, the relevance nuance, and the history of the term.",
+      "url": "https://en.wikipedia.org/wiki/Ad_hominem",
+      "type": "secondary"
+    },
+    {
+      "text": "Fallacies, Stanford Encyclopedia of Philosophy. — the ad hominem among the informal fallacies and the conditions under which attacking a person is or is not relevant.",
+      "url": "https://plato.stanford.edu/entries/fallacies/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Ad_hominem",
   "related": [
-    {"slug": "the-straw-man", "kind": "kindred"},
-    {"slug": "the-genetic-fallacy", "kind": "kindred"}
+    {
+      "slug": "the-straw-man",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-genetic-fallacy",
+      "kind": "kindred"
+    }
   ]
 }

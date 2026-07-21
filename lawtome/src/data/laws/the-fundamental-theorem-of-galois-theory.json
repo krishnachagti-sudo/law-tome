@@ -2,11 +2,14 @@
   "no": "584",
   "slug": "the-fundamental-theorem-of-galois-theory",
   "name": "The Fundamental Theorem of Galois Theory",
-  "aliases": ["The Galois correspondence", "The main theorem of Galois theory"],
+  "aliases": [
+    "The Galois correspondence",
+    "The main theorem of Galois theory"
+  ],
   "statement": "The symmetries of a field's roots mirror its subfields exactly, larger symmetry groups matching smaller fields.",
   "statementAccent": "larger symmetry groups matching smaller fields",
   "meaning": "The fundamental theorem of Galois theory establishes a precise dictionary between two seemingly different worlds: the subfields lying between a base field and a larger field, and the subgroups of the field's group of symmetries. For a suitable extension, called a Galois extension, there is a one-to-one, inclusion-reversing correspondence between the intermediate fields and the subgroups of the Galois group, the group of automorphisms of the larger field that fix the base field. Bigger subgroups correspond to smaller intermediate fields and the reverse, and normal subgroups correspond to sub-extensions that are themselves Galois. This correspondence translates hard questions about polynomial equations into questions about finite groups, unifying field theory and group theory into one of the most beautiful theorems in mathematics.",
-  "mechanism": "The Galois group of an extension is the group of field automorphisms of the larger field that leave every element of the base field fixed, permuting the roots of a polynomial among themselves. The theorem sets up two mutually inverse maps: to each intermediate field it assigns the subgroup of automorphisms fixing it, and to each subgroup it assigns its fixed field, the elements left unmoved. These maps reverse inclusions, so the whole group corresponds to the base field and the trivial subgroup to the whole field, and the degree of an intermediate field over the base equals the index of the matching subgroup. Crucially, a sub-extension is normal, itself Galois, exactly when the corresponding subgroup is normal, in which case the quotient group is the Galois group of that sub-extension.",
+  "mechanism": "The Galois group of an extension is the group of field automorphisms of the larger field that leave every element of the base field fixed, permuting the roots of a polynomial among themselves. The theorem sets up two mutually inverse maps: to each intermediate field it assigns the subgroup of automorphisms fixing it, and to each subgroup it assigns its fixed field, the elements left unmoved. These maps reverse inclusions, so the whole group corresponds to the base field and the trivial subgroup to the whole field, and the degree of an intermediate field over the base equals the index of the matching subgroup. A sub-extension is normal, itself Galois, exactly when the corresponding subgroup is normal, in which case the quotient group is the Galois group of that sub-extension.",
   "examples": [
     {
       "tag": "Insolvability of the quintic",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The fundamental theorem of Galois theory is a foundation of modern algebra and algebraic number theory, prized for translating intractable questions about equations into the tractable language of finite groups. Its most celebrated payoff is explaining why the quadratic, cubic, and quartic have general formulas in radicals while the quintic and higher do not, characterising solvability by whether the Galois group is a solvable group, the very source of that term. It resolves the classical impossibilities of Greek geometry and classifies constructible regular polygons, and it seeds the deeper structures, from class field theory to the Langlands programme, that dominate contemporary number theory.",
   "working": [
-    {"lead": "Translate fields into groups", "text": "match intermediate fields with subgroups of the Galois group, reversing inclusions, to turn a field problem into a finite-group problem."},
-    {"lead": "Read solvability off the group", "text": "an equation is solvable by radicals exactly when its Galois group is solvable, so the unsolvable S five of the quintic explains the missing formula."},
-    {"lead": "Spot normal sub-extensions", "text": "identify which intermediate fields are themselves Galois by finding the normal subgroups, whose quotients give those sub-extensions' groups."}
+    {
+      "lead": "Translate fields into groups",
+      "text": "match intermediate fields with subgroups of the Galois group, reversing inclusions, to turn a field problem into a finite-group problem."
+    },
+    {
+      "lead": "Read solvability off the group",
+      "text": "an equation is solvable by radicals exactly when its Galois group is solvable, so the unsolvable S five of the quintic explains the missing formula."
+    },
+    {
+      "lead": "Spot normal sub-extensions",
+      "text": "identify which intermediate fields are themselves Galois by finding the normal subgroups, whose quotients give those sub-extensions' groups."
+    }
   ],
   "limits": "The correspondence in its clean form requires the extension to be Galois, meaning both normal and separable; without those conditions the bijection breaks down. The finite case is the cleanest, and the infinite case needs the Galois group given the Krull topology, with the correspondence then holding only for closed subgroups. The theorem characterises solvability by radicals but does not by itself construct solutions, and the impossibility results it yields are statements about what cannot be done, not recipes. It is a structural bridge, powerful precisely because it reduces field questions to group theory, but it inherits whatever difficulty the resulting group problems carry.",
   "misreadings": "The theorem does not itself prove the quintic unsolvable; that existence result is the Abel-Ruffini theorem, which Galois theory explains and characterises through the solvable-group criterion. The correspondence reverses inclusions, so the whole Galois group matches the base field and the trivial subgroup matches the whole field, not the other way around. And it applies to Galois extensions specifically; for a non-normal or inseparable extension the tidy bijection between subfields and subgroups fails, so it is not a universal fact about all field extensions.",
@@ -45,11 +57,22 @@
   "provenance": "canon",
   "namedAfter": "Evariste Galois",
   "sources": [
-    {"text": "Fundamental theorem of Galois theory, Wikipedia. — the inclusion-reversing bijection, the Galois-group definition, normal-subgroup to normal-extension, and the Krull topology for the infinite case.", "url": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_Galois_theory", "type": "secondary"},
-    {"text": "Evariste Galois (1811-1832) - Biography, MacTutor History of Mathematics. — the 1832 duel, death at age twenty, and Liouville's 1846 publication.", "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Galois/", "type": "secondary"}
+    {
+      "text": "Fundamental theorem of Galois theory, Wikipedia. — the inclusion-reversing bijection, the Galois-group definition, normal-subgroup to normal-extension, and the Krull topology for the infinite case.",
+      "url": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_Galois_theory",
+      "type": "secondary"
+    },
+    {
+      "text": "Evariste Galois (1811-1832) - Biography, MacTutor History of Mathematics. — the 1832 duel, death at age twenty, and Liouville's 1846 publication.",
+      "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Galois/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_Galois_theory",
   "related": [
-    {"slug": "the-fundamental-theorem-of-algebra", "kind": "kindred"}
+    {
+      "slug": "the-fundamental-theorem-of-algebra",
+      "kind": "kindred"
+    }
   ]
 }

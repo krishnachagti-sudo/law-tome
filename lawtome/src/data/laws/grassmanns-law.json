@@ -2,11 +2,14 @@
   "no": "554",
   "slug": "grassmanns-law",
   "name": "Grassmann's Law",
-  "aliases": ["The law of aspirate dissimilation", "Grassmann's aspirate law"],
+  "aliases": [
+    "The law of aspirate dissimilation",
+    "Grassmann's aspirate law"
+  ],
   "statement": "When two aspirated consonants fall in successive syllables, the first one loses its aspiration.",
   "statementAccent": "the first one loses its aspiration",
   "meaning": "Grassmann's law is a dissimilation rule in the phonology of Ancient Greek and Sanskrit stating that when a word originally contained two aspirated consonants in successive syllables, the first one loses its aspiration, so that an aspirate followed by another aspirate becomes an unaspirated consonant followed by the aspirate. Named for Hermann Grassmann, who was also the mathematician of exterior algebra, it is a classic case of long-distance dissimilation. Its importance goes beyond the individual sound change: by showing that apparent exceptions to Grimm's law were themselves regular, it helped establish the Neogrammarian principle that sound change is exceptionless.",
-  "mechanism": "When two aspirates would otherwise stand in neighbouring syllables, the language dissimilates them by deaspirating the first, leaving only the second aspirated. The effect surfaces as alternations: in Greek the word for hair appears as thrix in the nominative but trikhos in the genitive, because the suffix supplies an aspirate in the following syllable that triggers deaspiration of the initial one, which reappears when the second aspirate is lost. The same shows in reduplication, where an aspirated root takes an unaspirated reduplicating consonant. Crucially, the rule explains cases where Germanic, Greek, or Sanskrit reflexes seemed to violate Grimm's law, revealing the irregularity as a regular dissimilation.",
+  "mechanism": "When two aspirates would otherwise stand in neighbouring syllables, the language dissimilates them by deaspirating the first, leaving only the second aspirated. The effect surfaces as alternations: in Greek the word for hair appears as thrix in the nominative but trikhos in the genitive, because the suffix supplies an aspirate in the following syllable that triggers deaspiration of the initial one, which reappears when the second aspirate is lost. The same shows in reduplication, where an aspirated root takes an unaspirated reduplicating consonant. The rule explains cases where Germanic, Greek, or Sanskrit reflexes seemed to violate Grimm's law, revealing the irregularity as a regular dissimilation.",
   "examples": [
     {
       "tag": "Greek hair",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "Grassmann's law is a keystone in the history of nineteenth-century linguistics, because by explaining apparent exceptions to Grimm's law it showed that even irregular-looking data obey regular sound laws, strengthening the case for the regularity of sound change. It remains a standard example of long-distance dissimilation and of how careful comparative work can turn a counterexample into confirmation. That the same Hermann Grassmann who founded exterior algebra also discovered a fundamental sound law is a striking illustration of the reach of a single, systematic mind.",
   "working": [
-    {"lead": "Deaspirate the first", "text": "when two aspirates would stand in successive syllables, expect the first to lose its aspiration, leaving only the second aspirated."},
-    {"lead": "Read the alternations", "text": "treat alternations like thrix versus trikhos as the rule surfacing and hiding as the triggering second aspirate appears or is lost."},
-    {"lead": "Resolve Grimm's exceptions", "text": "use the law to explain forms that seem to violate Grimm's law, revealing the irregularity as a regular dissimilation."}
+    {
+      "lead": "Deaspirate the first",
+      "text": "when two aspirates would stand in successive syllables, expect the first to lose its aspiration, leaving only the second aspirated."
+    },
+    {
+      "lead": "Read the alternations",
+      "text": "treat alternations like thrix versus trikhos as the rule surfacing and hiding as the triggering second aspirate appears or is lost."
+    },
+    {
+      "lead": "Resolve Grimm's exceptions",
+      "text": "use the law to explain forms that seem to violate Grimm's law, revealing the irregularity as a regular dissimilation."
+    }
   ],
   "limits": "The scholarly consensus is that Greek and Sanskrit Grassmann's law are most likely independent, parallel developments rather than a single shared Proto-Indo-European innovation, since Greek deaspiration operated after Greek had turned the inherited voiced aspirates into voiceless ones, and the rule is absent from all other Indo-European branches. It is triggered specifically by a following aspirate in the next syllable, so when that aspirate is lost the initial one reappears, and the alternation is the proof of the rule rather than a contradiction. It should not be confused with Bartholomae's law, a different Indo-Iranian rule about aspirates in clusters.",
   "misreadings": "It is the first of two aspirates that deaspirates, not the second. It is not a general ban on aspirates surfacing everywhere, but a dissimilation triggered by a following aspirate, so the initial aspirate returns when that trigger is lost. Despite Greek and Sanskrit agreeing, the consensus is parallel independent innovation, not one inherited Proto-Indo-European change. And it is unrelated to Grassmann's laws in mathematics or colour science, which share only his name.",
@@ -46,12 +58,26 @@
   "coinedYear": 1863,
   "namedAfter": "Hermann Grassmann",
   "sources": [
-    {"text": "Grassmann's law, Wikipedia. — the deaspiration rule, the Greek examples, the Grimm's-law-exceptions connection, and the independence debate.", "url": "https://en.wikipedia.org/wiki/Grassmann%27s_law", "type": "secondary"},
-    {"text": "Hermann Grassmann, Wikipedia. — that the mathematician of exterior algebra turned to Sanskrit and formulated the sound law.", "url": "https://en.wikipedia.org/wiki/Hermann_Grassmann", "type": "secondary"}
+    {
+      "text": "Grassmann's law, Wikipedia. — the deaspiration rule, the Greek examples, the Grimm's-law-exceptions connection, and the independence debate.",
+      "url": "https://en.wikipedia.org/wiki/Grassmann%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Hermann Grassmann, Wikipedia. — that the mathematician of exterior algebra turned to Sanskrit and formulated the sound law.",
+      "url": "https://en.wikipedia.org/wiki/Hermann_Grassmann",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Grassmann%27s_law",
   "related": [
-    {"slug": "grimms-law", "kind": "kindred"},
-    {"slug": "verners-law", "kind": "kindred"}
+    {
+      "slug": "grimms-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "verners-law",
+      "kind": "kindred"
+    }
   ]
 }

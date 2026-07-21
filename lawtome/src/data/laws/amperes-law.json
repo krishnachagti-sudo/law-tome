@@ -2,7 +2,10 @@
   "no": "146",
   "slug": "amperes-law",
   "name": "Ampère's Law",
-  "aliases": ["Ampère's circuital law", "The Ampère–Maxwell law"],
+  "aliases": [
+    "Ampère's circuital law",
+    "The Ampère–Maxwell law"
+  ],
   "statement": "An electric current is wrapped by a magnetic field proportional to the current enclosed.",
   "statementAccent": "wrapped by a magnetic field",
   "meaning": "An electric current creates a magnetic field that circulates around it. Trace any closed loop and add up the magnetic field along the path, and the total is set by how much current threads through the loop. More enclosed current means a stronger circulating field.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "It quantifies how currents make magnetic fields, the basis of electromagnets, solenoids, and motors. Its famous incompleteness — and Maxwell's fix — is a landmark in physics: adding one missing term unified electricity, magnetism, and light and predicted electromagnetic waves.",
   "working": [
-    {"lead": "Exploit symmetry", "text": "use the circuital law where the geometry is symmetric — wires, solenoids, toroids — so the field can be pulled out of the loop integral."},
-    {"lead": "Add the displacement term for changing fields", "text": "for time-varying situations like a charging capacitor, use the Ampère–Maxwell form, not the original, or you will get a contradiction."},
-    {"lead": "Reach for Biot–Savart otherwise", "text": "when there is no convenient symmetry, compute the field from current elements with the Biot–Savart law instead."}
+    {
+      "lead": "Exploit symmetry",
+      "text": "use the circuital law where the geometry is symmetric — wires, solenoids, toroids — so the field can be pulled out of the loop integral."
+    },
+    {
+      "lead": "Add the displacement term for changing fields",
+      "text": "for time-varying situations like a charging capacitor, use the Ampère–Maxwell form, not the original, or you will get a contradiction."
+    },
+    {
+      "lead": "Reach for Biot–Savart otherwise",
+      "text": "when there is no convenient symmetry, compute the field from current elements with the Biot–Savart law instead."
+    }
   ],
   "limits": "The original form is incomplete for time-varying fields. The canonical failure is a charging capacitor: current flows in the wires but no charge crosses the gap, yet a magnetic field exists there, and the law gives contradictory answers depending on which surface you choose. Maxwell's displacement-current term resolves this, restoring consistency with charge conservation and enabling electromagnetic waves. The uncorrected law is valid only for steady currents and magnetostatics.",
   "misreadings": "It is not complete on its own — for changing electric fields the original law is self-contradictory, and only Maxwell's displacement-current correction makes it universal. The name is also honorific: the modern integral form was cast by others, building on Ampère's experimental work, rather than written down by Ampère himself.",
-  "origin": "Rooted in Ørsted's 1820 discovery that a current deflects a compass and in André-Marie Ampère's 1820s experiments on the forces between current-carrying wires. The circuital law was later given its integral form and, crucially, completed by James Clerk Maxwell's displacement-current term in 1861–1862.",
+  "origin": "Rooted in Ørsted's 1820 discovery that a current deflects a compass and in André-Marie Ampère's 1820s experiments on the forces between current-carrying wires. The circuital law was later given its integral form and completed by James Clerk Maxwell's displacement-current term in 1861–1862.",
   "category": "science",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1826,
   "namedAfter": "André-Marie Ampère",
   "sources": [
-    {"text": "Ampère's circuital law, Wikipedia. — the statement, Ørsted and Ampère's work, and the incompleteness for time-varying fields.", "url": "https://en.wikipedia.org/wiki/Amp%C3%A8re%27s_circuital_law", "type": "secondary"},
-    {"text": "Displacement current, Wikipedia. — Maxwell's 1861–1862 correction and the charging-capacitor case.", "url": "https://en.wikipedia.org/wiki/Displacement_current", "type": "secondary"}
+    {
+      "text": "Ampère's circuital law, Wikipedia. — the statement, Ørsted and Ampère's work, and the incompleteness for time-varying fields.",
+      "url": "https://en.wikipedia.org/wiki/Amp%C3%A8re%27s_circuital_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Displacement current, Wikipedia. — Maxwell's 1861–1862 correction and the charging-capacitor case.",
+      "url": "https://en.wikipedia.org/wiki/Displacement_current",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Amp%C3%A8re%27s_circuital_law",
   "related": [
-    {"slug": "faradays-law-of-induction", "kind": "kindred"},
-    {"slug": "coulombs-law", "kind": "kindred"}
+    {
+      "slug": "faradays-law-of-induction",
+      "kind": "kindred"
+    },
+    {
+      "slug": "coulombs-law",
+      "kind": "kindred"
+    }
   ]
 }

@@ -5,7 +5,7 @@
   "statement": "The more precisely you fix a particle's position, the less its momentum can be defined.",
   "statementAccent": "the less its momentum can be defined",
   "meaning": "There is a fundamental limit to how precisely certain complementary pairs of properties — most famously a particle's position and momentum — can both be defined at once. The product of their uncertainties cannot fall below a fixed minimum, roughly half the reduced Planck constant. A particle prepared with a sharp position has a genuinely undefined momentum, and the reverse.",
-  "mechanism": "It is rooted in the wave nature of matter. Position and momentum are conjugate variables related by a Fourier transform: a wavefunction sharply localised in position is necessarily spread out in momentum, and vice versa. Formally, the bound follows from the way the two observables fail to commute. Crucially, the rigorous principle concerns the preparation of quantum states, not clumsy measurement — the limit holds even for a particle that has never been touched by any instrument.",
+  "mechanism": "It is rooted in the wave nature of matter. Position and momentum are conjugate variables related by a Fourier transform: a wavefunction sharply localised in position is necessarily spread out in momentum, and vice versa. Formally, the bound follows from the way the two observables fail to commute. The rigorous principle concerns the preparation of quantum states, not clumsy measurement — the limit holds even for a particle that has never been touched by any instrument.",
   "examples": [
     {
       "tag": "Position and momentum",
@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is a defining feature of quantum mechanics, marking a fundamental break from classical physics: nature itself, not our instruments, sets a limit on how sharply complementary quantities can be defined. It explains the stability and size of atoms, the energy of the quantum vacuum, and the widths of spectral lines.",
   "working": [
-    {"lead": "Trade one precision for the other", "text": "when position is pinned down, expect momentum to become correspondingly ill-defined, and the reverse."},
-    {"lead": "Read it as a property of nature", "text": "treat the limit as intrinsic to the quantum state, not as a shortcoming of measuring equipment that better tools could beat."},
-    {"lead": "Distinguish undefined from unknown", "text": "understand the conjugate quantity as genuinely undefined, not merely hidden, unlike ordinary classical ignorance."}
+    {
+      "lead": "Trade one precision for the other",
+      "text": "when position is pinned down, expect momentum to become correspondingly ill-defined, and the reverse."
+    },
+    {
+      "lead": "Read it as a property of nature",
+      "text": "treat the limit as intrinsic to the quantum state, not as a shortcoming of measuring equipment that better tools could beat."
+    },
+    {
+      "lead": "Distinguish undefined from unknown",
+      "text": "understand the conjugate quantity as genuinely undefined, not merely hidden, unlike ordinary classical ignorance."
+    }
   ],
   "limits": "The single most important caveat is that the rigorous principle is about intrinsic statistical spread, not measurement disturbance. Heisenberg's original 1927 picture of a microscope knocking the electron — the 'observer effect' — is a distinct idea, and modern work shows measurement error-disturbance relations are separate from the fundamental preparation bound. The energy-time relation has a different status, since time is not an observable in standard quantum mechanics. And the principle is not about experimental clumsiness: no improvement in instruments can beat the limit.",
   "misreadings": "It is not the observer effect — it does not merely say that measuring a particle disturbs it; the limit holds for particles never measured, arising from the quantum state itself. And it is fundamental, not instrumental: better technology cannot evade it, and the conjugate quantity is undefined, not just unknown.",
@@ -45,11 +54,22 @@
   "coinedYear": 1927,
   "namedAfter": "Werner Heisenberg",
   "sources": [
-    {"text": "The Uncertainty Principle, Stanford Encyclopedia of Philosophy. — the history, the Heisenberg/Kennard/Robertson development, and the preparation-versus-disturbance distinction.", "url": "https://plato.stanford.edu/entries/qt-uncertainty/", "type": "secondary"},
-    {"text": "Uncertainty principle, Wikipedia. — the inequality forms and the Robertson-Schrodinger generalisation.", "url": "https://en.wikipedia.org/wiki/Uncertainty_principle", "type": "secondary"}
+    {
+      "text": "The Uncertainty Principle, Stanford Encyclopedia of Philosophy. — the history, the Heisenberg/Kennard/Robertson development, and the preparation-versus-disturbance distinction.",
+      "url": "https://plato.stanford.edu/entries/qt-uncertainty/",
+      "type": "secondary"
+    },
+    {
+      "text": "Uncertainty principle, Wikipedia. — the inequality forms and the Robertson-Schrodinger generalisation.",
+      "url": "https://en.wikipedia.org/wiki/Uncertainty_principle",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Uncertainty_principle",
   "related": [
-    {"slug": "the-pauli-exclusion-principle", "kind": "kindred"}
+    {
+      "slug": "the-pauli-exclusion-principle",
+      "kind": "kindred"
+    }
   ]
 }
