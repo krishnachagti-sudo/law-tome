@@ -388,7 +388,12 @@ ${prevnext}</div>
 `;
 
   // ---- JSON-LD stack ----------------------------------------------------
-  const publisher = { '@type': 'Organization', name: 'The Law Tome', url: `${origin}${base}` };
+  const publisher = {
+    '@type': 'Organization',
+    name: 'The Law Tome',
+    url: `${origin}${base}`,
+    logo: { '@type': 'ImageObject', url: `${origin}${base}assets/logo.svg`, width: 512, height: 512 },
+  };
   // Search keywords: the name, its real aliases, the field, and the generic terms
   // people pair with a named law. All honest synonyms — nothing invented.
   const keywords = [law.name, ...(Array.isArray(law.aliases) ? law.aliases : []), catLabel, 'law', 'principle', 'effect', 'meaning', 'definition', 'examples']

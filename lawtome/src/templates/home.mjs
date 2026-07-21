@@ -198,6 +198,7 @@ const LAWS=${featuredJson};
     name: 'The Law Tome',
     url: homeUrl,
     description: 'A living, sourced index of named laws, principles, and effects.',
+    logo: { '@type': 'ImageObject', url: `${homeUrl}assets/logo.svg`, width: 512, height: 512 },
   };
   const definedTermSet = {
     '@context': 'https://schema.org',

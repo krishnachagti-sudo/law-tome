@@ -208,3 +208,37 @@ export function privacyPage({ base = '/', origin = '', count } = {}) {
     footer({ base })
   );
 }
+
+/**
+ * 404 Not Found page. Written to dist/404.html so the host (Netlify-style) serves
+ * it for unmatched paths. robots: noindex (an error page must never be indexed),
+ * follow so crawlers still traverse its recovery links. No canonical/og:url — a
+ * 404 addresses no single resource — so `path` is omitted.
+ * @param {object} o
+ * @param {string} [o.base='/'] site base path — MUST end with '/'
+ */
+export function notFoundPage({ base = '/', origin = '', count } = {}) {
+  const description = 'That page could not be found. Browse the index of named laws, principles, and effects, or search The Law Tome.';
+  const section = `<section class="sec" id="notfound">
+  <div class="wrap narrow">
+    <div class="sec-head"><h1>Lost the plot</h1></div>
+    <p class="lede">There's no law at this address. It may have moved, or never existed — much like the Dartmouth paper Campbell's Law was misattributed to.</p>
+    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
+    <p>Try one of these instead:</p>
+    <ul class="method">
+      <li><a href="${base}">The front page</a> — start over.</li>
+      <li><a href="${base}browse/">Browse every entry</a> — the full index by category.</li>
+      <li><a href="${base}graph/">The relationship graph</a> — laws and their kin.</li>
+      <li><a href="${base}coin/">Coin a law</a> — if the one you wanted isn't here yet.</li>
+    </ul>
+  </div>
+</section>
+`;
+  return (
+    head({ title: 'Not found — The Law Tome', description, base, origin, robots: 'noindex, follow' }) +
+    sprite() +
+    header({ base, active: '', count }) +
+    section +
+    footer({ base })
+  );
+}

@@ -12,7 +12,7 @@ import { lawPage } from '../src/templates/law.mjs';
 import { homePage } from '../src/templates/home.mjs';
 import { listingPage } from '../src/templates/listing.mjs';
 import { graphPage } from '../src/templates/graph.mjs';
-import { coinPage, aboutPage, coinedIndex, privacyPage } from '../src/templates/static-pages.mjs';
+import { coinPage, aboutPage, coinedIndex, privacyPage, notFoundPage } from '../src/templates/static-pages.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng } from './quotecard.mjs';
@@ -107,6 +107,9 @@ export async function buildSite(opts) {
   writes.push(writePage(join(out, 'about', 'index.html'), aboutPage({ base, origin, count: publishedCount })));
   writes.push(writePage(join(out, 'coined', 'index.html'), coinedIndex(coinedLaws, { base, origin, count: publishedCount })));
   writes.push(writePage(join(out, 'privacy', 'index.html'), privacyPage({ base, origin, count: publishedCount })));
+  // 404.html at the output root: the host serves it for unmatched paths. A
+  // crawler-facing error page (noindex), not a "page", so it doesn't touch counts.
+  writes.push(writePage(join(out, '404.html'), notFoundPage({ base, origin, count: publishedCount })));
 
   // Site files (crawler-facing, NOT "pages"): a sitemap of every crawlable HTML
   // URL, a permissive robots.txt pointing at it, and a Netlify-style redirect map
