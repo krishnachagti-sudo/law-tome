@@ -72,5 +72,9 @@ test('build emits 404.html, copies the logo, and stamps publisher.logo into JSON
   assert.match(feed, /<feed xmlns="http:\/\/www\.w3\.org\/2005\/Atom">/);
   assert.match(feed, /<link rel="self" href="https:\/\/conyso\.com\/lawtome\/feed\.xml"\/>/);
 
+  // a11y: home and a law page each expose exactly one <h1>.
+  assert.equal((homeHtml.match(/<h1[\s>]/g) || []).length, 1, 'home should have exactly one h1');
+  assert.equal((lawHtml.match(/<h1[\s>]/g) || []).length, 1, 'law page should have exactly one h1');
+
   await rm(out, { recursive: true, force: true });
 });

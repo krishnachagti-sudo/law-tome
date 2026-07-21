@@ -77,7 +77,7 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
   <svg class="hero-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
   <div class="wrap">
     <div class="eyebrow">The largest unified, defined &amp; sourced index of named laws</div>
-    <p class="lede">Every named law, principle, and effect — <b>explained, sourced, and cross-linked.</b> One place instead of forty half-finished lists.</p>
+    <h1 class="lede">Every named law, principle, and effect — <b>explained, sourced, and cross-linked.</b> One place instead of forty half-finished lists.</h1>
     <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
     <div class="stmt-wrap">
       <div class="stmt-meta"><span id="m-no">${heroNo}</span><span class="dot"></span><span class="cat" id="m-cat">${heroCat}</span></div>
