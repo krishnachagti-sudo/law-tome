@@ -17,6 +17,7 @@ import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng } from './quotecard.mjs';
 import { buildSitemap } from './sitemap.mjs';
+import { buildLlmsIndex, buildLlmsFull } from './llms.mjs';
 
 async function writePage(path, html) {
   await mkdir(dirname(path), { recursive: true });
@@ -124,7 +125,15 @@ export async function buildSite(opts) {
     'privacy/',
   ];
   writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate)));
-  writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n`));
+  writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n# llms.txt: ${origin}${base}llms.txt\n`));
+
+  // llms.txt + llms-full.txt (GEO): the llmstxt.org content map for generative
+  // crawlers. Compact index (one bullet per entry, grouped by category) plus a
+  // full dump inlining each entry's definition and sources. Crawler-facing site
+  // files, so — like the sitemap — they don't count toward `pages`/`listings`.
+  const llmsOpts = { baseUrl: `${origin}${base}` };
+  writes.push(writePage(join(out, 'llms.txt'), buildLlmsIndex(laws, categories, llmsOpts)));
+  writes.push(writePage(join(out, 'llms-full.txt'), buildLlmsFull(laws, categories, llmsOpts)));
 
   // _redirects: one `from  to  301` line per law.redirectFrom entry (each an old
   // base-relative path that should 301 to the law's current permalink). Seed data
