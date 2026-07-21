@@ -2,7 +2,10 @@
   "no": "555",
   "slug": "the-sonority-hierarchy",
   "name": "The Sonority Hierarchy",
-  "aliases": ["The sonority scale", "The sonority sequencing principle"],
+  "aliases": [
+    "The sonority scale",
+    "The sonority sequencing principle"
+  ],
   "statement": "Sounds rank by how open and resonant they are, and a syllable rises to a sonority peak at its vowel and falls away.",
   "statementAccent": "rises to a sonority peak at its vowel",
   "meaning": "The sonority hierarchy is a ranking of speech sounds by their relative sonority, roughly their acoustic prominence, resonance, or openness of the vocal tract, running from the most sonorous vowels down through glides, liquids, and nasals to the least sonorous fricatives, affricates, and stops. Its companion, the sonority sequencing principle, governs syllable shape: within a syllable, sonority rises from the margins toward the nucleus, usually a vowel, which is the sonority peak, and then falls toward the end. Together they explain which sequences of sounds can form a syllable, and why certain consonant clusters are permitted while others are not.",
@@ -31,11 +34,20 @@
       "text": "Cases where the sonority peak, the nucleus, is not a vowel but a syllabic consonant, as in the l of bottle or the n of button."
     }
   ],
-  "whyItMatters": "The sonority hierarchy and its sequencing principle are central tools of phonology, giving a principled account of syllable structure and phonotactics, why languages permit some consonant clusters and forbid others, and where syllable boundaries fall. They connect the physical properties of sounds to the abstract organisation of syllables, inform theories of well-formedness such as Optimality Theory, and help explain patterns in language acquisition and change. As a framework they turn the intuitive sense that some sound sequences are easier or more natural than others into a testable, cross-linguistic generalisation.",
+  "whyItMatters": "The sonority hierarchy and its sequencing principle are central tools of phonology, giving a principled account of syllable structure and phonotactics, why languages permit some consonant clusters and forbid others, and where syllable boundaries fall. They connect the physical properties of sounds to the abstract organisation of syllables, inform theories of well-formedness such as Optimality Theory, and help explain patterns in language acquisition and change.",
   "working": [
-    {"lead": "Rank by sonority", "text": "order sounds from vowels down to stops, and read the syllable's most sonorous element as its nucleus, the sonority peak."},
-    {"lead": "Rise then fall", "text": "expect a well-formed syllable to rise in sonority toward the nucleus and fall away from it, which constrains permitted clusters."},
-    {"lead": "Watch the exceptions", "text": "treat s-plus-stop onsets and similar reversals as marked cases, often analysed as an extrasyllabic segment outside the syllable proper."}
+    {
+      "lead": "Rank by sonority",
+      "text": "order sounds from vowels down to stops, and read the syllable's most sonorous element as its nucleus, the sonority peak."
+    },
+    {
+      "lead": "Rise then fall",
+      "text": "expect a well-formed syllable to rise in sonority toward the nucleus and fall away from it, which constrains permitted clusters."
+    },
+    {
+      "lead": "Watch the exceptions",
+      "text": "treat s-plus-stop onsets and similar reversals as marked cases, often analysed as an extrasyllabic segment outside the syllable proper."
+    }
   ],
   "limits": "Sonority has no single agreed phonetic correlate, and grounding it in loudness or amplitude is not universally accepted, with resonance, duration, and perceptibility all proposed instead, so its phonetic basis is contested. The sonority sequencing principle is a strong tendency, not an inviolable law: s-plus-stop clusters in English, where the sibilant is more sonorous than the following stop, are the canonical reversal, usually rescued by treating the s as an extrasyllabic appendix. The fine sub-rankings, such as where affricates and voicing distinctions fall, vary by author and language; only the broad vowels-to-stops shape is robust.",
   "misreadings": "Sonority is not a single measured acoustic quantity like decibels; it is a phonological abstraction with several candidate phonetic correlates. The sonority sequencing principle is a tendency, not an exceptionless law, as the s-cluster reversals show. The originators of the sonority scale, Sievers and Jespersen, are not the same as those who formalised the modern sequencing principle, such as Selkirk and Clements. And the nucleus is the sonority peak, not necessarily a vowel, since syllabic sonorants like the l of bottle can serve.",
@@ -44,11 +56,22 @@
   "reliability": "Empirical",
   "provenance": "canon",
   "sources": [
-    {"text": "Sonority sequencing principle, Wikipedia. — the nucleus as sonority peak, the rise-and-fall requirement, and the plant-versus-lpant contrast.", "url": "https://en.wikipedia.org/wiki/Sonority_sequencing_principle", "type": "secondary"},
-    {"text": "Sonority hierarchy, Wikipedia. — the ranking of sound classes, the s-cluster exceptions, and the phonetic-correlate debate.", "url": "https://en.wikipedia.org/wiki/Sonority_hierarchy", "type": "secondary"}
+    {
+      "text": "Sonority sequencing principle, Wikipedia. — the nucleus as sonority peak, the rise-and-fall requirement, and the plant-versus-lpant contrast.",
+      "url": "https://en.wikipedia.org/wiki/Sonority_sequencing_principle",
+      "type": "secondary"
+    },
+    {
+      "text": "Sonority hierarchy, Wikipedia. — the ranking of sound classes, the s-cluster exceptions, and the phonetic-correlate debate.",
+      "url": "https://en.wikipedia.org/wiki/Sonority_hierarchy",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Sonority_hierarchy",
   "related": [
-    {"slug": "markedness", "kind": "kindred"}
+    {
+      "slug": "markedness",
+      "kind": "kindred"
+    }
   ]
 }

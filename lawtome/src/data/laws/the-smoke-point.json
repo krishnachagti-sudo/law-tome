@@ -2,7 +2,10 @@
   "no": "818",
   "slug": "the-smoke-point",
   "name": "The Smoke Point",
-  "aliases": ["Burning point", "Oil smoke point"],
+  "aliases": [
+    "Burning point",
+    "Oil smoke point"
+  ],
   "statement": "Every cooking oil has a temperature where it starts to break down and smoke bitterly.",
   "statementAccent": "starts to break down and smoke bitterly",
   "meaning": "The smoke point is the temperature at which a cooking fat or oil, heated under specified conditions, begins to break down and give off a continuous, visible bluish smoke. At this temperature the oil starts to decompose, releasing volatile compounds, including acrolein, which produces the acrid smell and bitter taste of overheated oil, and its flavour and nutritional quality degrade. The smoke point is a practical guide for choosing which oil to use for which kind of cooking: oils with high smoke points, such as refined avocado, safflower, or peanut oil, suit high-heat methods like frying and searing, while oils with low smoke points, such as butter, extra virgin olive oil, or flaxseed oil, are better for low-heat uses or finishing. The smoke point is not a fixed constant; it depends on the oil's composition and purity, is raised by refining, is lowered by free fatty acids and impurities, and falls as an oil is used and degrades. It is distinct from, and lower than, the flash and fire points at which oil vapour ignites.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "The smoke point is a practically important concept for cooking, guiding the choice of oil for different methods and helping cooks avoid degrading their oil and food. Heating an oil past its smoke point not only produces unpleasant, acrid off-flavours from acrolein and other breakdown products but also degrades the oil's quality, which is why high-heat cooking calls for high-smoke-point oils and delicate finishing oils are reserved for low heat. Understanding the smoke point clarifies why butter browns and burns quickly, why refined oils tolerate frying, and why reused frying oil deteriorates and should be discarded. It also connects everyday cooking to fat chemistry, illustrating how composition and purity govern how oils behave under heat. For food safety and quality, and for the health interest in avoiding compounds formed in overheated oil, the smoke point is a useful marker, though for typical home cooking the main concern is flavour rather than the smoke-related hazards that chiefly affect professional cooks exposed to large amounts of fumes.",
   "working": [
-    {"lead": "Heat the oil", "text": "raise the fat or oil toward higher temperatures during cooking."},
-    {"lead": "Reach the breakdown point", "text": "at the smoke point, the oil decomposes fast enough to release acrolein and give off continuous visible smoke."},
-    {"lead": "Match oil to method", "text": "choose high-smoke-point oils for frying and searing and low-smoke-point fats for gentle or finishing uses, and discard degraded oil."}
+    {
+      "lead": "Heat the oil",
+      "text": "raise the fat or oil toward higher temperatures during cooking."
+    },
+    {
+      "lead": "Reach the breakdown point",
+      "text": "at the smoke point, the oil decomposes fast enough to release acrolein and give off continuous visible smoke."
+    },
+    {
+      "lead": "Match oil to method",
+      "text": "choose high-smoke-point oils for frying and searing and low-smoke-point fats for gentle or finishing uses, and discard degraded oil."
+    }
   ],
-  "limits": "The smoke point is not a fixed constant but depends on the oil's composition, purity, and history, so published values vary widely between sources and even between batches, and any single number should be treated as approximate. It is raised by refining and lowered by free fatty acids and impurities, and it falls as an oil is reused and degrades, so the smoke point of an oil in the pan is not necessarily its listed value. The smoke point indicates the onset of breakdown, not a sharp safety threshold, and for most home cooking the practical concern is flavour rather than the fume hazards that mainly affect professionals. It is distinct from the flash and fire points, which are higher. So the smoke point robustly marks where an oil begins to break down and smoke, understood as a variable, composition-dependent guide rather than a fixed property.",
+  "limits": "The smoke point is not a fixed constant but depends on the oil's composition, purity, and history, so published values vary widely between sources and even between batches, and any single number should be treated as approximate. It is raised by refining and lowered by free fatty acids and impurities, and it falls as an oil is reused and degrades, so the smoke point of an oil in the pan is not necessarily its listed value. The smoke point indicates the onset of breakdown, not a sharp safety threshold, and for most home cooking the practical concern is flavour rather than the fume hazards that mainly affect professionals. It is distinct from the flash and fire points, which are higher.",
   "misreadings": "The smoke point is not a fixed number for a given oil; it varies with refining, purity, and reuse, so listed values are approximate and drop as oil degrades. It is not the temperature at which oil catches fire, which is the higher flash or fire point. And smoking oil is not merely a nuisance but a sign of breakdown that produces acrid acrolein and off-flavours, so treating the smoke point as a fixed constant, as the ignition temperature, or as harmless, misreads the temperature at which an oil starts to decompose and smoke.",
   "origin": "A concept in cooking and fat chemistry: the temperature at which a heated oil begins to break down and smoke, releasing acrolein, used to match oils to cooking methods.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Smoke point, Wikipedia. — the temperature at which a heated oil begins to produce continuous bluish smoke and break down, releasing acrolein, the effect of free fatty acids and refining, the fact that it is not fixed and decreases with use, and the distinction from the flash and fire points.", "url": "https://en.wikipedia.org/wiki/Smoke_point", "type": "secondary"},
-    {"text": "Smoke point, what is it exactly?, Food Meets Science. — the smoke point as the onset of oil breakdown and smoking, acrolein, and the effects of composition and refining.", "url": "https://foodmeetsscience.com/2023/03/27/smoke-point-what-is-it-exactly/", "type": "secondary"}
+    {
+      "text": "Smoke point, Wikipedia. — the temperature at which a heated oil begins to produce continuous bluish smoke and break down, releasing acrolein, the effect of free fatty acids and refining, the fact that it is not fixed and decreases with use, and the distinction from the flash and fire points.",
+      "url": "https://en.wikipedia.org/wiki/Smoke_point",
+      "type": "secondary"
+    },
+    {
+      "text": "Smoke point, what is it exactly?, Food Meets Science. — the smoke point as the onset of oil breakdown and smoking, acrolein, and the effects of composition and refining.",
+      "url": "https://foodmeetsscience.com/2023/03/27/smoke-point-what-is-it-exactly/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Smoke_point",
   "related": [
-    {"slug": "caramelization", "kind": "kindred"},
-    {"slug": "the-maillard-reaction", "kind": "kindred"}
+    {
+      "slug": "caramelization",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-maillard-reaction",
+      "kind": "kindred"
+    }
   ]
 }

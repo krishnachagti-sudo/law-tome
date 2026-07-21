@@ -2,7 +2,9 @@
   "no": "851",
   "slug": "the-foucault-pendulum",
   "name": "The Foucault Pendulum",
-  "aliases": ["Foucault's pendulum"],
+  "aliases": [
+    "Foucault's pendulum"
+  ],
   "statement": "A freely swinging pendulum slowly turns its plane of swing, visibly proving the Earth rotates beneath it.",
   "statementAccent": "visibly proving the Earth rotates beneath it",
   "meaning": "The Foucault pendulum is a tall, freely swinging pendulum devised by the French physicist Léon Foucault and first demonstrated in 1851 in Paris, which provides a simple, direct demonstration that the Earth rotates. Foucault first showed it in the Meridian Room of the Paris Observatory in February 1851 and soon after mounted a famous large version under the dome of the Panthéon. The key observation is that, as the pendulum swings back and forth, the plane of its swing appears to rotate slowly relative to the floor beneath it over the course of hours. The pendulum itself tends to keep swinging in a fixed direction relative to space, while the Earth turns underneath it, so the apparent rotation of the swing plane is really the rotation of the ground, and hence of the Earth. The rate of this apparent rotation depends on latitude: at the poles the plane would make a full turn in one day, at the equator it would not rotate at all, and in between the rate is proportional to the sine of the latitude. The Foucault pendulum was the first straightforward laboratory demonstration of the Earth's rotation that did not depend on astronomical observation, and it remains a popular exhibit in science museums.",
@@ -31,13 +33,22 @@
       "text": "The equivalent description in the Earth's rotating frame, in which the Coriolis force slowly turns the plane of swing."
     }
   ],
-  "whyItMatters": "The Foucault pendulum is historically important as the first simple, direct, and public demonstration that the Earth rotates, requiring no telescope or astronomical measurement but only a long pendulum that anyone could watch. Before it, the Earth's rotation was inferred from the motions of the heavens; Foucault's pendulum made the rotation visible in a laboratory or a public hall, turning an abstract astronomical fact into something one could see with the eye over an afternoon. It vividly illustrates the physics of rotating reference frames and the Coriolis force, the same force that shapes weather systems and ocean currents, and it connects the everyday experience of a swinging weight to the grand fact of a spinning planet. Its dependence on latitude, with the swing plane turning fastest at the poles and not at all at the equator, is a beautiful and testable consequence of the geometry of rotation. Foucault pendulums remain among the most popular and instructive exhibits in science museums around the world. As the experiment that let people watch the Earth turn, the Foucault pendulum is a classic of physics.",
+  "whyItMatters": "The Foucault pendulum is historically important as the first simple, direct, and public demonstration that the Earth rotates, requiring no telescope or astronomical measurement but only a long pendulum that anyone could watch. Before it, the Earth's rotation was inferred from the motions of the heavens; Foucault's pendulum made the rotation visible in a laboratory or a public hall, turning an abstract astronomical fact into something one could see with the eye over an afternoon. It vividly illustrates the physics of rotating reference frames and the Coriolis force, the same force that shapes weather systems and ocean currents, and it connects the everyday experience of a swinging weight to the grand fact of a spinning planet. Its dependence on latitude, with the swing plane turning fastest at the poles and not at all at the equator, is a beautiful and testable consequence of the geometry of rotation. Foucault pendulums remain among the most popular and instructive exhibits in science museums around the world.",
   "working": [
-    {"lead": "Swing a long pendulum freely", "text": "hang a heavy bob on a long wire with a suspension that lets it swing in any direction for hours."},
-    {"lead": "Keep the plane fixed in space", "text": "let the pendulum keep swinging in a plane fixed relative to the stars while the Earth turns beneath it."},
-    {"lead": "Watch the plane rotate", "text": "observe the swing plane slowly turn relative to the floor at a rate set by the sine of the latitude, revealing Earth's rotation."}
+    {
+      "lead": "Swing a long pendulum freely",
+      "text": "hang a heavy bob on a long wire with a suspension that lets it swing in any direction for hours."
+    },
+    {
+      "lead": "Keep the plane fixed in space",
+      "text": "let the pendulum keep swinging in a plane fixed relative to the stars while the Earth turns beneath it."
+    },
+    {
+      "lead": "Watch the plane rotate",
+      "text": "observe the swing plane slowly turn relative to the floor at a rate set by the sine of the latitude, revealing Earth's rotation."
+    }
   ],
-  "limits": "The Foucault pendulum demonstrates the Earth's rotation robustly, but its behavior depends on careful conditions. The apparent rotation rate varies with latitude as the sine of the latitude, so the plane turns fastest at the poles and not at all at the equator, and the roughly thirty-two-hour period is specific to the latitude of Paris rather than universal. A real pendulum must be long, heavy, and swing with very low friction and no sideways push at release, since imperfections in the suspension or an elliptical swing can introduce a spurious precession that masks or mimics the true effect, which is why demonstration pendulums are engineered carefully. The precise date of the Panthéon debut is given variously in sources, so it is best placed simply in 1851. The effect is equally well described as a fixed swing plane with a rotating Earth or as a Coriolis deflection in the rotating frame. So the Foucault pendulum robustly reveals the Earth's rotation, understood as a latitude-dependent effect requiring a carefully built pendulum.",
+  "limits": "The Foucault pendulum demonstrates the Earth's rotation robustly, but its behavior depends on careful conditions. The apparent rotation rate varies with latitude as the sine of the latitude, so the plane turns fastest at the poles and not at all at the equator, and the roughly thirty-two-hour period is specific to the latitude of Paris rather than universal. A real pendulum must be long, heavy, and swing with very low friction and no sideways push at release, since imperfections in the suspension or an elliptical swing can introduce a spurious precession that masks or mimics the true effect, which is why demonstration pendulums are engineered carefully. The precise date of the Panthéon debut is given variously in sources, so it is best placed simply in 1851. The effect is equally well described as a fixed swing plane with a rotating Earth or as a Coriolis deflection in the rotating frame.",
   "misreadings": "The Foucault pendulum does not turn at the same rate everywhere; its apparent rotation depends on latitude, being fastest at the poles and absent at the equator. The roughly thirty-two-hour period is particular to Paris, not a universal figure. And the pendulum is not literally pushed around by the Earth touching it, but swings in a plane fixed relative to space while the Earth rotates beneath, equivalently a Coriolis effect, so treating the rotation as uniform everywhere, the Paris period as universal, or the effect as the Earth dragging the pendulum, misreads a latitude-dependent demonstration of the Earth's rotation.",
   "origin": "A pendulum devised by the French physicist Léon Foucault and first demonstrated in 1851 in Paris, the first simple laboratory demonstration of the Earth's rotation, its swing plane turning at a rate set by latitude.",
   "category": "science",
@@ -46,12 +57,26 @@
   "coinedYear": 1851,
   "namedAfter": "Léon Foucault",
   "sources": [
-    {"text": "Foucault pendulum, Wikipedia. — Léon Foucault's 1851 demonstration at the Paris Observatory and the Panthéon, the swing plane rotating relative to the ground as the Earth turns beneath it, the sine-of-latitude rate, the roughly 32-hour Paris period, and the Coriolis-force description.", "url": "https://en.wikipedia.org/wiki/Foucault_pendulum", "type": "secondary"},
-    {"text": "Foucault pendulum, Encyclopaedia Britannica. — the pendulum as a demonstration of the Earth's rotation, the latitude dependence, and Foucault's 1851 experiment.", "url": "https://www.britannica.com/science/Foucault-pendulum", "type": "secondary"}
+    {
+      "text": "Foucault pendulum, Wikipedia. — Léon Foucault's 1851 demonstration at the Paris Observatory and the Panthéon, the swing plane rotating relative to the ground as the Earth turns beneath it, the sine-of-latitude rate, the roughly 32-hour Paris period, and the Coriolis-force description.",
+      "url": "https://en.wikipedia.org/wiki/Foucault_pendulum",
+      "type": "secondary"
+    },
+    {
+      "text": "Foucault pendulum, Encyclopaedia Britannica. — the pendulum as a demonstration of the Earth's rotation, the latitude dependence, and Foucault's 1851 experiment.",
+      "url": "https://www.britannica.com/science/Foucault-pendulum",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Foucault_pendulum",
   "related": [
-    {"slug": "coriolis-effect", "kind": "cause"},
-    {"slug": "the-cavendish-experiment", "kind": "kindred"}
+    {
+      "slug": "coriolis-effect",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-cavendish-experiment",
+      "kind": "kindred"
+    }
   ]
 }

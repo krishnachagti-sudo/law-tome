@@ -2,7 +2,11 @@
   "no": "769",
   "slug": "equal-temperament",
   "name": "Equal Temperament",
-  "aliases": ["12-tone equal temperament", "12-TET", "Equal-tempered tuning"],
+  "aliases": [
+    "12-tone equal temperament",
+    "12-TET",
+    "Equal-tempered tuning"
+  ],
   "statement": "Split the octave into twelve identical steps and every key sounds equally, imperfectly, in tune.",
   "statementAccent": "every key sounds equally, imperfectly, in tune",
   "meaning": "Equal temperament, in its standard twelve-tone form, is a tuning system that divides the octave into twelve identical steps, or semitones, each with the same frequency ratio, the twelfth root of two, approximately 1.05946. Because the steps are equal, twelve of them multiply back to exactly a factor of two, a pure octave, but every other interval departs slightly from the pure whole-number ratios of just intonation. A semitone spans 100 cents and the octave 1200 cents, the cent being the standard fine unit of pitch. The great virtue of equal temperament is that it makes every key sound the same and equally usable, so a keyboard can play and modulate freely in all twelve keys with the same modest compromise everywhere. This universality is why it became the dominant tuning of Western music, adopted widely for keyboard instruments by the late eighteenth century, at the cost that only the octave is perfectly pure and all other intervals are gently tempered.",
@@ -31,11 +35,20 @@
       "text": "An earlier family of unequal keyboard tunings that let all keys be played but gave each a distinct character, distinct from equal temperament."
     }
   ],
-  "whyItMatters": "Equal temperament is the tuning that made modern Western keyboard and orchestral music possible, and it underlies nearly all Western music heard today. By making every key equivalent, it freed composers to modulate anywhere and to write in remote keys without retuning, enabling the harmonic adventurousness of the eighteenth and nineteenth centuries and the fixed tuning of pianos, fretted instruments, and electronic keyboards. It embodies a profound compromise at the heart of music: perfect purity in every interval is impossible in a single fixed tuning, so a small, even impurity is accepted everywhere in exchange for total freedom of key. Understanding equal temperament illuminates why the circle of fifths closes, why the piano's thirds beat slightly, and why historical and non-Western musics can sound differently tuned. As the practical resolution of the ancient tension between pure ratios and free modulation, it shaped the sound of Western harmony.",
+  "whyItMatters": "Equal temperament is the tuning that made modern Western keyboard and orchestral music possible, and it underlies nearly all Western music heard today. By making every key equivalent, it freed composers to modulate anywhere and to write in remote keys without retuning, enabling the harmonic adventurousness of the eighteenth and nineteenth centuries and the fixed tuning of pianos, fretted instruments, and electronic keyboards. It embodies a profound compromise at the heart of music: perfect purity in every interval is impossible in a single fixed tuning, so a small, even impurity is accepted everywhere in exchange for total freedom of key. Understanding equal temperament illuminates why the circle of fifths closes, why the piano's thirds beat slightly, and why historical and non-Western musics can sound differently tuned.",
   "working": [
-    {"lead": "Divide the octave equally", "text": "set every semitone to the same ratio, the twelfth root of two, so twelve steps make a pure octave."},
-    {"lead": "Make all keys equivalent", "text": "define intervals by step count alone, so transposition preserves them and every key sounds the same."},
-    {"lead": "Spread the error", "text": "narrow each fifth slightly to distribute the Pythagorean comma, keeping octaves pure while tempering all else."}
+    {
+      "lead": "Divide the octave equally",
+      "text": "set every semitone to the same ratio, the twelfth root of two, so twelve steps make a pure octave."
+    },
+    {
+      "lead": "Make all keys equivalent",
+      "text": "define intervals by step count alone, so transposition preserves them and every key sounds the same."
+    },
+    {
+      "lead": "Spread the error",
+      "text": "narrow each fifth slightly to distribute the Pythagorean comma, keeping octaves pure while tempering all else."
+    }
   ],
   "limits": "Equal temperament is a compromise, not a perfect solution: only the octave is acoustically pure, and every other interval is slightly tempered, most noticeably the major third, so purists and performers on flexible-pitch instruments often prefer just or other tunings for certain repertoire. It is specific to Western twelve-tone practice and does not describe the many other tuning systems of world music or historical European music, which used meantone, well, and just temperaments with different trade-offs. A common oversimplification links Bach's Well-Tempered Clavier to equal temperament, but well temperament is a distinct family of unequal tunings that let all keys be used while giving each a different character, and the exact tuning Bach intended remains debated. Historical figures such as Zhu Zaiyu and Simon Stevin worked out the mathematics in the late sixteenth century. So equal temperament is the practical standard of Western music, understood as a deliberate, even imperfection rather than a natural or unique tuning.",
   "misreadings": "Equal temperament does not make intervals perfectly in tune; only the octave is pure, and the rest, especially the third, are gently tempered, so it is a compromise, not perfection. It is not the same as the well temperament of Bach's famous title, which is a family of unequal tunings giving each key its own colour. And it is not the only or the natural tuning, since just intonation and many other systems use pure or different ratios, so treating equal temperament as acoustically pure, or as identical to well temperament, misreads a system whose whole point is to spread a small, unavoidable impurity evenly across all keys.",
@@ -46,12 +59,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "12 equal temperament, Wikipedia. — the division of the octave into twelve equal semitones at the ratio of the twelfth root of two, the cent, the only-octave-pure trade-off enabling all keys, the 700-cent fifth and 400-cent third deviations, and the distribution of the Pythagorean comma.", "url": "https://en.wikipedia.org/wiki/12_equal_temperament", "type": "secondary"},
-    {"text": "Equal temperament, Encyclopaedia Britannica. — equal temperament as dividing the octave into twelve equal semitones, with only the octave acoustically pure, enabling keyboard playing in all keys.", "url": "https://www.britannica.com/art/equal-temperament", "type": "secondary"}
+    {
+      "text": "12 equal temperament, Wikipedia. — the division of the octave into twelve equal semitones at the ratio of the twelfth root of two, the cent, the only-octave-pure trade-off enabling all keys, the 700-cent fifth and 400-cent third deviations, and the distribution of the Pythagorean comma.",
+      "url": "https://en.wikipedia.org/wiki/12_equal_temperament",
+      "type": "secondary"
+    },
+    {
+      "text": "Equal temperament, Encyclopaedia Britannica. — equal temperament as dividing the octave into twelve equal semitones, with only the octave acoustically pure, enabling keyboard playing in all keys.",
+      "url": "https://www.britannica.com/art/equal-temperament",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/12_equal_temperament",
   "related": [
-    {"slug": "just-intonation", "kind": "tension"},
-    {"slug": "the-pythagorean-comma", "kind": "cause"}
+    {
+      "slug": "just-intonation",
+      "kind": "tension"
+    },
+    {
+      "slug": "the-pythagorean-comma",
+      "kind": "cause"
+    }
   ]
 }

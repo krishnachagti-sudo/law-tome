@@ -2,7 +2,10 @@
   "no": "785",
   "slug": "the-kelvin-helmholtz-instability",
   "name": "The Kelvin-Helmholtz Instability",
-  "aliases": ["KH instability", "Kelvin-Helmholtz instability"],
+  "aliases": [
+    "KH instability",
+    "Kelvin-Helmholtz instability"
+  ],
   "statement": "Where two fluids slide past each other at different speeds, the boundary curls into breaking waves.",
   "statementAccent": "the boundary curls into breaking waves",
   "meaning": "The Kelvin-Helmholtz instability is a fluid instability that arises when there is velocity shear within a continuous fluid or across the interface between two fluids, that is, when one layer moves past another at a different speed. The shear amplifies small disturbances at the interface, which roll up into a regular train of vortices, producing the characteristic pattern of curling, breaking-wave shapes known as billows. Named after Lord Kelvin and Hermann von Helmholtz, who studied it in the nineteenth century, the instability was first introduced to describe how wind generates waves on water, and it is a fundamental mechanism by which shear flows become turbulent and mix. Its signature appears across nature, from the rows of breaking-wave clouds sometimes seen in the sky to structures in the atmospheres of Jupiter and Saturn, the Sun's corona, and layers in the ocean. It is distinct from the density-driven Rayleigh-Taylor instability, since the Kelvin-Helmholtz instability is driven by shear rather than by an unstable stacking of densities.",
@@ -31,11 +34,20 @@
       "text": "The joint instability when both velocity shear and an unstable density difference act on the same interface."
     }
   ],
-  "whyItMatters": "The Kelvin-Helmholtz instability is a foundational mechanism of mixing and turbulence in fluids, important across geophysics, astrophysics, and engineering. It explains how wind raises waves on water, a question that motivated its original study, and how shear turns smooth flows turbulent, a central process in the atmosphere and ocean where it drives mixing between layers of different speed. In the sky it produces the striking billow clouds that give a visible signature of atmospheric shear, useful to meteorologists and a hazard as a marker of turbulence for aviation. In astrophysics it shapes the boundaries of jets, the interaction of stellar winds and the interstellar medium, features in planetary atmospheres, and structures in the solar corona. Alongside the Rayleigh-Taylor instability, it is one of the two archetypal interfacial instabilities, and understanding it is essential wherever fluids of different velocity meet. As the mechanism that turns shear into rolling vortices, it connects a simple cause to a vast range of natural patterns.",
+  "whyItMatters": "The Kelvin-Helmholtz instability is a foundational mechanism of mixing and turbulence in fluids, important across geophysics, astrophysics, and engineering. It explains how wind raises waves on water, a question that motivated its original study, and how shear turns smooth flows turbulent, a central process in the atmosphere and ocean where it drives mixing between layers of different speed. In the sky it produces the striking billow clouds that give a visible signature of atmospheric shear, useful to meteorologists and a hazard as a marker of turbulence for aviation. In astrophysics it shapes the boundaries of jets, the interaction of stellar winds and the interstellar medium, features in planetary atmospheres, and structures in the solar corona. Alongside the Rayleigh-Taylor instability, it is one of the two archetypal interfacial instabilities, and understanding it is essential wherever fluids of different velocity meet.",
   "working": [
-    {"lead": "Establish shear", "text": "have two fluid layers move past each other at different speeds, creating velocity shear across their interface."},
-    {"lead": "Amplify the ripple", "text": "let the shear grow small undulations as pressure differences over crests and troughs reinforce them."},
-    {"lead": "Roll into billows", "text": "watch the interface wind up into spiral vortices that break down into turbulence and mix the layers."}
+    {
+      "lead": "Establish shear",
+      "text": "have two fluid layers move past each other at different speeds, creating velocity shear across their interface."
+    },
+    {
+      "lead": "Amplify the ripple",
+      "text": "let the shear grow small undulations as pressure differences over crests and troughs reinforce them."
+    },
+    {
+      "lead": "Roll into billows",
+      "text": "watch the interface wind up into spiral vortices that break down into turbulence and mix the layers."
+    }
   ],
   "limits": "The Kelvin-Helmholtz instability requires sufficient velocity shear to overcome stabilizing influences; a strong stable density stratification, quantified by conditions such as the Richardson number, can suppress it, so shear alone does not always produce billows. It is distinct from the Rayleigh-Taylor instability, which is driven by density and acceleration rather than shear, though the two can act together. The idealized analysis assumes particular interface and flow conditions, and real growth is modified by viscosity, stratification, and three-dimensional effects, with the ordered billows eventually breaking down into complex turbulence that is harder to predict. So the Kelvin-Helmholtz instability reliably describes how sheared interfaces roll into vortices when shear dominates, with the onset and evolution shaped by stratification, viscosity, and the transition to turbulence.",
   "misreadings": "The instability is driven by velocity shear, not by a top-heavy density arrangement; that density-driven case is the distinct Rayleigh-Taylor instability. Shear does not always produce billows, since a strong stable stratification can suppress it, so the outcome depends on the balance between shear and stratification. And the neat rolling vortices are a stage that breaks down into turbulence, so treating the instability as density-driven, or as always occurring under any shear, misreads a shear-driven mechanism whose onset depends on overcoming stabilizing stratification.",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": "Lord Kelvin and Hermann von Helmholtz",
   "sources": [
-    {"text": "Kelvin-Helmholtz instability, Wikipedia. — the instability from velocity shear across an interface, the roll-up into spiral vortices and billows, the Kelvin and Helmholtz attributions, the wind-over-water origin, the fluctus clouds and planetary and solar examples, and the distinction from the density-driven Rayleigh-Taylor instability.", "url": "https://en.wikipedia.org/wiki/Kelvin%E2%80%93Helmholtz_instability", "type": "secondary"},
-    {"text": "Fluctus (Kelvin-Helmholtz cloud feature), WhatsThisCloud. — the billow clouds formed when wind shear between cloud layers curls the interface into a succession of vortices.", "url": "https://www.whatsthiscloud.com/cloud-features/fluctus", "type": "secondary"}
+    {
+      "text": "Kelvin-Helmholtz instability, Wikipedia. — the instability from velocity shear across an interface, the roll-up into spiral vortices and billows, the Kelvin and Helmholtz attributions, the wind-over-water origin, the fluctus clouds and planetary and solar examples, and the distinction from the density-driven Rayleigh-Taylor instability.",
+      "url": "https://en.wikipedia.org/wiki/Kelvin%E2%80%93Helmholtz_instability",
+      "type": "secondary"
+    },
+    {
+      "text": "Fluctus (Kelvin-Helmholtz cloud feature), WhatsThisCloud. — the billow clouds formed when wind shear between cloud layers curls the interface into a succession of vortices.",
+      "url": "https://www.whatsthiscloud.com/cloud-features/fluctus",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Kelvin%E2%80%93Helmholtz_instability",
   "related": [
-    {"slug": "the-rayleigh-taylor-instability", "kind": "kindred"},
-    {"slug": "the-karman-vortex-street", "kind": "kindred"}
+    {
+      "slug": "the-rayleigh-taylor-instability",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-karman-vortex-street",
+      "kind": "kindred"
+    }
   ]
 }

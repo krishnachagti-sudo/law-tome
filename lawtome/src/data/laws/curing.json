@@ -2,7 +2,11 @@
   "no": "819",
   "slug": "curing",
   "name": "Curing",
-  "aliases": ["Salt curing", "Meat curing", "Food curing"],
+  "aliases": [
+    "Salt curing",
+    "Meat curing",
+    "Food curing"
+  ],
   "statement": "Salt and nitrites draw the water from meat and starve its microbes, preserving it for months.",
   "statementAccent": "draw the water from meat and starve its microbes",
   "meaning": "Curing is a group of food preservation and flavouring processes, applied especially to meat and fish, that use salt, and often nitrates or nitrites, sugar, and sometimes smoke, to preserve the food, draw out moisture, inhibit microbial growth, and develop characteristic flavour and colour. By removing water and creating a salty, sometimes nitrite-rich environment hostile to spoilage and pathogenic organisms, curing allows meat and fish to keep for long periods, a vital technology before refrigeration and still central to producing many prized foods. Salt does the fundamental work of drawing water out of the food and out of microbes by osmosis, lowering the water available for microbial growth. Nitrites, added in small amounts, guard against the deadly bacterium that causes botulism, fix the pink or red colour of cured meats, and contribute to flavour. Curing produces an enormous range of foods, from ham, bacon, and salami to prosciutto, corned beef, salt cod, and smoked salmon, using dry curing with salt rubs or wet curing in brine, often combined with smoking.",
@@ -31,13 +35,22 @@
       "text": "The use of nitrite to inhibit botulism, fix the pink colour of cured meats, and contribute flavour."
     }
   ],
-  "whyItMatters": "Curing is one of the oldest and most important food preservation technologies, allowing meat and fish to be kept safely for months before refrigeration existed and remaining essential to producing many treasured foods today. By drawing out water with salt and, with nitrites, suppressing dangerous microbes, curing prevented spoilage and famine and made long journeys, trade, and winter provisioning possible throughout history. It gives us ham, bacon, salami and other cured sausages, prosciutto, corned beef, pastrami, salt cod, and smoked salmon, foods valued as much for their distinctive flavours and textures as for their keeping quality. Nitrite curing in particular is a crucial safeguard against botulism, one of the most dangerous foodborne illnesses. At the same time, curing raises real health considerations, since nitrites can form nitrosamines and processed meats are associated with cancer risk, making the balance of benefits and risks an active topic. As the ancient art of preserving with salt, curing connects food history, microbiology, and cuisine.",
+  "whyItMatters": "Curing is one of the oldest and most important food preservation technologies, allowing meat and fish to be kept safely for months before refrigeration existed and remaining essential to producing many treasured foods today. By drawing out water with salt and, with nitrites, suppressing dangerous microbes, curing prevented spoilage and famine and made long journeys, trade, and winter provisioning possible throughout history. It gives us ham, bacon, salami and other cured sausages, prosciutto, corned beef, pastrami, salt cod, and smoked salmon, foods valued as much for their distinctive flavours and textures as for their keeping quality. Nitrite curing in particular is a crucial safeguard against botulism, one of the most dangerous foodborne illnesses. At the same time, curing raises real health considerations, since nitrites can form nitrosamines and processed meats are associated with cancer risk, making the balance of benefits and risks an active topic.",
   "working": [
-    {"lead": "Apply salt", "text": "rub the meat or fish with salt or soak it in brine to draw out water by osmosis and lower water activity."},
-    {"lead": "Add nitrite and sometimes smoke", "text": "include nitrite to guard against botulism and fix colour, and optionally smoke the food to dry and flavour it."},
-    {"lead": "Preserve and flavour", "text": "let the salty, dehydrated, nitrite-rich environment inhibit microbes while the food develops its cured flavour and colour."}
+    {
+      "lead": "Apply salt",
+      "text": "rub the meat or fish with salt or soak it in brine to draw out water by osmosis and lower water activity."
+    },
+    {
+      "lead": "Add nitrite and sometimes smoke",
+      "text": "include nitrite to guard against botulism and fix colour, and optionally smoke the food to dry and flavour it."
+    },
+    {
+      "lead": "Preserve and flavour",
+      "text": "let the salty, dehydrated, nitrite-rich environment inhibit microbes while the food develops its cured flavour and colour."
+    }
   ],
-  "limits": "Curing preserves food by lowering water activity and inhibiting microbes, but it is not a guarantee of safety on its own; improper curing can leave food unsafe, and curing does not sterilize. Nitrites, while crucial against botulism and for colour, carry health concerns: under certain conditions, especially high-heat cooking, they can form nitrosamines, some of which are carcinogenic, and processed and cured meats have been classified by health authorities as associated with an increased risk of colorectal cancer, a population-level classification rather than a claim about any single serving. The exact salt and nitrite levels, times, and conditions matter and must be controlled. So curing robustly preserves and flavours meat and fish through salt, nitrite, and sometimes smoke, understood as a powerful traditional technology that requires care and carries recognized health trade-offs.",
+  "limits": "Curing preserves food by lowering water activity and inhibiting microbes, but it is not a guarantee of safety on its own; improper curing can leave food unsafe, and curing does not sterilize. Nitrites, while crucial against botulism and for colour, carry health concerns: under certain conditions, especially high-heat cooking, they can form nitrosamines, some of which are carcinogenic, and processed and cured meats have been classified by health authorities as associated with an increased risk of colorectal cancer, a population-level classification rather than a claim about any single serving. The exact salt and nitrite levels, times, and conditions matter and must be controlled.",
   "misreadings": "Curing does not sterilize food or guarantee safety by itself; it lowers water activity and inhibits microbes, but improper curing can still be unsafe. Nitrite is not merely a colouring, since its key role is guarding against deadly botulism, though it also fixes the pink colour. And the pink colour of cured meat is not a sign of undercooking but of the nitrite reacting with myoglobin, so treating curing as sterilization, nitrite as just a dye, or cured pinkness as rawness, misreads a preservation process built on salt and nitrite that carries both real benefits and recognized health trade-offs.",
   "origin": "An ancient food preservation technology for meat and fish using salt and often nitrites, sugar, and smoke to draw out moisture, inhibit microbes, and develop flavour and colour.",
   "category": "science",
@@ -46,12 +59,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Curing (food preservation), Wikipedia. — the preservation of meat and fish with salt, nitrates/nitrites, sugar, and smoke, the salt-osmosis lowering of water activity, nitrite's role against Clostridium botulinum and in the cured pink colour, dry and wet curing, and the nitrosamine and processed-meat health concerns.", "url": "https://en.wikipedia.org/wiki/Curing_(food_preservation)", "type": "secondary"},
-    {"text": "Meat processing: Curing and smoking, Encyclopaedia Britannica. — curing by adding salt to reduce moisture and nitrite to prevent microbial growth and rancidity, enhancing safety, shelf life, colour, and flavour.", "url": "https://www.britannica.com/topic/meat-processing/Curing-and-smoking", "type": "secondary"}
+    {
+      "text": "Curing (food preservation), Wikipedia. — the preservation of meat and fish with salt, nitrates/nitrites, sugar, and smoke, the salt-osmosis lowering of water activity, nitrite's role against Clostridium botulinum and in the cured pink colour, dry and wet curing, and the nitrosamine and processed-meat health concerns.",
+      "url": "https://en.wikipedia.org/wiki/Curing_(food_preservation)",
+      "type": "secondary"
+    },
+    {
+      "text": "Meat processing: Curing and smoking, Encyclopaedia Britannica. — curing by adding salt to reduce moisture and nitrite to prevent microbial growth and rancidity, enhancing safety, shelf life, colour, and flavour.",
+      "url": "https://www.britannica.com/topic/meat-processing/Curing-and-smoking",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Curing_(food_preservation)",
   "related": [
-    {"slug": "fermentation", "kind": "kindred"},
-    {"slug": "pasteurization", "kind": "kindred"}
+    {
+      "slug": "fermentation",
+      "kind": "kindred"
+    },
+    {
+      "slug": "pasteurization",
+      "kind": "kindred"
+    }
   ]
 }

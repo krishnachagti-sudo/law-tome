@@ -2,7 +2,10 @@
   "no": "865",
   "slug": "redis-experiment",
   "name": "Redi's Experiment",
-  "aliases": ["Francesco Redi's experiment", "Redi's meat and flies experiment"],
+  "aliases": [
+    "Francesco Redi's experiment",
+    "Redi's meat and flies experiment"
+  ],
   "statement": "By covering some meat and leaving other meat open, Redi showed maggots come from flies, not from rot itself.",
   "statementAccent": "maggots come from flies, not from rot itself",
   "meaning": "Redi's experiment was a controlled biological experiment conducted by the Italian physician Francesco Redi around 1668 and described in his work Experiments on the Generation of Insects, which challenged the ancient theory of spontaneous generation, the belief that living things could arise directly from non-living matter. A common example of that belief was that maggots arose spontaneously from rotting meat. To test this, Redi placed meat in a series of jars kept under different conditions: some jars were left open, some were sealed shut, and some were covered with gauze or fine netting that let air pass through but kept flies away from the meat. He observed that maggots appeared only on the meat that flies could reach, in the open jars, or on the gauze itself where flies had landed, but not on the meat in the sealed jars or beneath the gauze. From this he concluded that the maggots came from eggs laid by flies on the meat, not from the meat generating them spontaneously. Redi's experiment is celebrated as one of the earliest well-designed controlled experiments and an important early blow against the theory of spontaneous generation, though the belief persisted for microorganisms until Pasteur's work two centuries later.",
@@ -31,13 +34,22 @@
       "text": "The result as an early experimental challenge to the belief that maggots arise spontaneously from rotting meat."
     }
   ],
-  "whyItMatters": "Redi's experiment is historically important both for its specific finding and for its method. By demonstrating that maggots come from eggs laid by flies rather than arising spontaneously from rotting meat, it struck an early and influential blow against the theory of spontaneous generation, the long-held belief that living organisms could form directly from non-living matter, which had been accepted since antiquity. Just as significant is how Redi reached his conclusion: his use of parallel jars under carefully varied conditions, including the clever gauze cover that admitted air but excluded flies, makes the experiment a celebrated early example of the controlled experiment, in which a single variable is isolated and the results compared against a control. This methodological clarity helped establish experimental biology and the practice of testing beliefs against controlled observation. Although Redi's work concerned visible organisms and the debate over spontaneous generation for microorganisms continued until Louis Pasteur settled it in the nineteenth century, his experiment remains a foundational milestone in the history of biology and of the scientific method. As an early, elegant test that overturned an ancient assumption, Redi's experiment endures as a model of good experimental design.",
+  "whyItMatters": "Redi's experiment is historically important both for its specific finding and for its method. By demonstrating that maggots come from eggs laid by flies rather than arising spontaneously from rotting meat, it struck an early and influential blow against the theory of spontaneous generation, the long-held belief that living organisms could form directly from non-living matter, which had been accepted since antiquity. Just as significant is how Redi reached his conclusion: his use of parallel jars under carefully varied conditions, including the clever gauze cover that admitted air but excluded flies, makes the experiment a celebrated early example of the controlled experiment, in which a single variable is isolated and the results compared against a control. This methodological clarity helped establish experimental biology and the practice of testing beliefs against controlled observation. Although Redi's work concerned visible organisms and the debate over spontaneous generation for microorganisms continued until Louis Pasteur settled it in the nineteenth century, his experiment remains a foundational milestone in the history of biology and of the scientific method.",
   "working": [
-    {"lead": "Vary fly access", "text": "place meat in open jars, sealed jars, and gauze-covered jars that admit air but not flies."},
-    {"lead": "Compare the outcomes", "text": "observe maggots only on meat flies can reach, and on the gauze where flies land, not on protected meat."},
-    {"lead": "Conclude eggs, not rot", "text": "infer that maggots come from eggs laid by flies rather than being generated spontaneously by the meat."}
+    {
+      "lead": "Vary fly access",
+      "text": "place meat in open jars, sealed jars, and gauze-covered jars that admit air but not flies."
+    },
+    {
+      "lead": "Compare the outcomes",
+      "text": "observe maggots only on meat flies can reach, and on the gauze where flies land, not on protected meat."
+    },
+    {
+      "lead": "Conclude eggs, not rot",
+      "text": "infer that maggots come from eggs laid by flies rather than being generated spontaneously by the meat."
+    }
   ],
-  "limits": "Redi's experiment was a decisive test for the case it examined, but its scope is limited. It disproved spontaneous generation for visible organisms like maggots and flies, but it did not settle the question for microorganisms, whose apparent spontaneous appearance in broths and infusions continued to be debated for another two centuries until Louis Pasteur's swan-neck flask experiments around 1859 to 1861 disproved it for microbes as well. Redi himself, in fact, did not reject spontaneous generation entirely and believed it might occur in some cases, so his conclusion was narrower than a wholesale rejection. His account describes several variations, and the standard three-way summary of open, sealed, and gauze-covered jars is a tidy rendering of a somewhat richer set of trials. So Redi's experiment robustly showed that maggots come from flies rather than from rotting meat, understood as an early controlled test whose refutation of spontaneous generation was limited to visible organisms.",
+  "limits": "Redi's experiment was a decisive test for the case it examined, but its scope is limited. It disproved spontaneous generation for visible organisms like maggots and flies, but it did not settle the question for microorganisms, whose apparent spontaneous appearance in broths and infusions continued to be debated for another two centuries until Louis Pasteur's swan-neck flask experiments around 1859 to 1861 disproved it for microbes as well. Redi himself, in fact, did not reject spontaneous generation entirely and believed it might occur in some cases, so his conclusion was narrower than a wholesale rejection. His account describes several variations, and the standard three-way summary of open, sealed, and gauze-covered jars is a tidy rendering of a somewhat richer set of trials.",
   "misreadings": "Redi's experiment did not disprove spontaneous generation entirely; it showed maggots come from flies, but the question remained open for microorganisms until Pasteur, and Redi himself still thought spontaneous generation might occur in some cases. The sealed jars did not simply starve the meat of air, since the gauze condition admitted air yet still kept maggots off the meat. And it concerned visible insects, not microbes, so treating the experiment as ending all spontaneous generation, as merely cutting off air, or as settling the microbial question, misreads an early controlled test limited to visible organisms.",
   "origin": "A controlled experiment by the Italian physician Francesco Redi around 1668, described in Experiments on the Generation of Insects, showing that maggots come from flies' eggs rather than arising spontaneously from rotting meat.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": 1668,
   "namedAfter": "Francesco Redi",
   "sources": [
-    {"text": "Francesco Redi, Wikipedia. — Redi's 1668 Experiments on the Generation of Insects, the jars of meat left open, sealed, and covered with gauze, the appearance of maggots only where flies could reach, the conclusion that maggots come from flies' eggs, and its status as an early controlled experiment challenging spontaneous generation.", "url": "https://en.wikipedia.org/wiki/Francesco_Redi", "type": "secondary"},
-    {"text": "Francesco Redi, Encyclopaedia Britannica. — Redi as an experimenter and parasitologist, his meat-and-flies experiment, and its challenge to spontaneous generation.", "url": "https://www.britannica.com/biography/Francesco-Redi", "type": "secondary"}
+    {
+      "text": "Francesco Redi, Wikipedia. — Redi's 1668 Experiments on the Generation of Insects, the jars of meat left open, sealed, and covered with gauze, the appearance of maggots only where flies could reach, the conclusion that maggots come from flies' eggs, and its status as an early controlled experiment challenging spontaneous generation.",
+      "url": "https://en.wikipedia.org/wiki/Francesco_Redi",
+      "type": "secondary"
+    },
+    {
+      "text": "Francesco Redi, Encyclopaedia Britannica. — Redi as an experimenter and parasitologist, his meat-and-flies experiment, and its challenge to spontaneous generation.",
+      "url": "https://www.britannica.com/biography/Francesco-Redi",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Francesco_Redi",
   "related": [
-    {"slug": "pasteurs-swan-neck-flask-experiment", "kind": "consequence"},
-    {"slug": "germ-theory-of-disease", "kind": "kindred"}
+    {
+      "slug": "pasteurs-swan-neck-flask-experiment",
+      "kind": "consequence"
+    },
+    {
+      "slug": "germ-theory-of-disease",
+      "kind": "kindred"
+    }
   ]
 }

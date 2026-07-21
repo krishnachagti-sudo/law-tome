@@ -2,7 +2,10 @@
   "no": "820",
   "slug": "additive-color",
   "name": "Additive Color",
-  "aliases": ["Additive color mixing", "RGB color"],
+  "aliases": [
+    "Additive color mixing",
+    "RGB color"
+  ],
   "statement": "Mix red, green, and blue light and you build up every colour, ending in white.",
   "statementAccent": "you build up every colour, ending in white",
   "meaning": "Additive color is the mixing of coloured light, in which colours are created by adding light of different wavelengths together. Starting from darkness, black, adding light produces colour, and adding more light makes the result brighter, until combining all the primaries yields white. The additive primary colours are red, green, and blue, from which the initials RGB come. Combining them in pairs gives the secondary colours: red and green make yellow, green and blue make cyan, and blue and red make magenta, while all three together make white. Additive color is the way light sources and electronic displays produce colour: televisions, computer and phone screens, and other displays give each pixel red, green, and blue elements whose emitted light adds together to make the perceived colour. It is the opposite of subtractive color, the mixing of pigments and inks. Additive color works because human vision is trichromatic, so mixing three primaries of light can reproduce a wide range of colours.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "Additive color is fundamental to how light and modern technology produce colour, underlying every screen and display we use. Because televisions, monitors, phones, cameras, and projectors all create colour by mixing red, green, and blue light, understanding additive mixing is essential to imaging, display engineering, digital photography, and design, where colours are specified in RGB values. The principle also illuminates the nature of colour itself: that a vast range of hues can be produced from just three primaries because human vision reduces light to three channels. Additive color contrasts sharply with subtractive color, the mixing of pigments and inks that starts from white and darkens, and knowing which regime applies, light or pigment, is crucial for anyone working with colour across media, since the same colour behaves differently on screen and in print. Grounded in the trichromatic structure of the eye, additive color connects the physics of light, the physiology of vision, and the technology of displays, making it a cornerstone concept in colour science and digital media.",
   "working": [
-    {"lead": "Start from darkness", "text": "begin with no light, black, so that adding coloured light builds colour and brightness."},
-    {"lead": "Mix the primaries", "text": "combine red, green, and blue light in varying intensities to stimulate the eye's three cone types."},
-    {"lead": "Add toward white", "text": "let more combined light brighten the result, reaching white when all three primaries combine at full intensity."}
+    {
+      "lead": "Start from darkness",
+      "text": "begin with no light, black, so that adding coloured light builds colour and brightness."
+    },
+    {
+      "lead": "Mix the primaries",
+      "text": "combine red, green, and blue light in varying intensities to stimulate the eye's three cone types."
+    },
+    {
+      "lead": "Add toward white",
+      "text": "let more combined light brighten the result, reaching white when all three primaries combine at full intensity."
+    }
   ],
-  "limits": "Additive color describes the mixing of light, not pigments, so it does not model how inks and paints behave, which follow subtractive color and darken as colorants are added; applying the wrong model leads to error when moving between screen and print. The specific primaries and the range of reproducible colours, the gamut, depend on the exact red, green, and blue used, so no set of three primaries can reproduce every colour the eye can see. Additive color rests on the trichromatic simplification of vision, so it works because the eye reduces spectra to three signals, but this also means displays reproduce colours metamerically, matching appearance rather than physical spectra. So additive color robustly explains how light and displays make colour, understood as the light regime distinct from pigment mixing and bounded by the primaries chosen and the three-channel nature of vision.",
+  "limits": "Additive color describes the mixing of light, not pigments, so it does not model how inks and paints behave, which follow subtractive color and darken as colorants are added; applying the wrong model leads to error when moving between screen and print. The specific primaries and the range of reproducible colours, the gamut, depend on the exact red, green, and blue used, so no set of three primaries can reproduce every colour the eye can see. Additive color rests on the trichromatic simplification of vision, so it works because the eye reduces spectra to three signals, but this also means displays reproduce colours metamerically, matching appearance rather than physical spectra.",
   "misreadings": "Additive color does not describe mixing paints; mixing coloured light adds toward white, while mixing pigments subtracts toward dark, so the two regimes are opposite. Combining all the additive primaries does not make black but white, since each adds light. And three primaries do not reproduce literally every possible colour, only a wide gamut, so treating light mixing like paint mixing, expecting all colours to darken toward black, or assuming three primaries cover the entire spectrum, misreads a system in which coloured lights add and brighten toward white.",
   "origin": "A foundational concept in colour science: the mixing of coloured light, with red, green, and blue primaries adding toward white, grounded in the trichromatic Young-Helmholtz theory of vision and used in all electronic displays.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Additive color, Wikipedia. — the mixing of coloured light with red, green, and blue primaries adding toward white, the secondary combinations, the contrast with subtractive color, the use in RGB displays, and the trichromatic basis via the Young-Helmholtz theory.", "url": "https://en.wikipedia.org/wiki/Additive_color", "type": "secondary"},
-    {"text": "Additive and subtractive colour mixing, Encyclopaedia Britannica. — additive mixing of red, green, and blue light beginning from darkness and combining to white, and the three cone types.", "url": "https://www.britannica.com/science/color/Additive-and-subtractive-colour-mixing", "type": "secondary"}
+    {
+      "text": "Additive color, Wikipedia. — the mixing of coloured light with red, green, and blue primaries adding toward white, the secondary combinations, the contrast with subtractive color, the use in RGB displays, and the trichromatic basis via the Young-Helmholtz theory.",
+      "url": "https://en.wikipedia.org/wiki/Additive_color",
+      "type": "secondary"
+    },
+    {
+      "text": "Additive and subtractive colour mixing, Encyclopaedia Britannica. — additive mixing of red, green, and blue light beginning from darkness and combining to white, and the three cone types.",
+      "url": "https://www.britannica.com/science/color/Additive-and-subtractive-colour-mixing",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Additive_color",
   "related": [
-    {"slug": "subtractive-color", "kind": "tension"},
-    {"slug": "trichromacy", "kind": "cause"}
+    {
+      "slug": "subtractive-color",
+      "kind": "tension"
+    },
+    {
+      "slug": "trichromacy",
+      "kind": "cause"
+    }
   ]
 }

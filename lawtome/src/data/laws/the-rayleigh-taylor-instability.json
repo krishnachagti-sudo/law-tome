@@ -2,7 +2,10 @@
   "no": "784",
   "slug": "the-rayleigh-taylor-instability",
   "name": "The Rayleigh-Taylor Instability",
-  "aliases": ["RT instability", "Rayleigh-Taylor instability"],
+  "aliases": [
+    "RT instability",
+    "Rayleigh-Taylor instability"
+  ],
   "statement": "Rest a heavy fluid on a light one and the boundary breaks into fingers and mushrooming plumes.",
   "statementAccent": "the boundary breaks into fingers and mushrooming plumes",
   "meaning": "The Rayleigh-Taylor instability is an instability of the interface between two fluids of different densities that arises when the lighter fluid pushes against, or supports, the heavier fluid. In the classic static case, a denser fluid rests on top of a lighter one in a gravitational field, an arrangement that is unstable: any small ripple at the interface grows, and the two fluids interpenetrate as the heavy fluid sinks and the light fluid rises, lowering the system's potential energy. As the instability develops it produces characteristic structures, mushroom-shaped spikes of heavy fluid plunging into the light fluid and bubbles of light fluid rising into the heavy, which then break up into turbulent mixing. Named for Lord Rayleigh, who analyzed the static case, and G. I. Taylor, who extended it to accelerating fluids, the instability appears across an enormous range of scales, from a poured liquid to inertial fusion targets to exploding stars, making it one of the most important instabilities in fluid dynamics and astrophysics.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "The Rayleigh-Taylor instability is one of the most fundamental and far-reaching instabilities in physics, governing how fluids of different densities mix whenever the arrangement is top-heavy or one fluid is driven into another. It is central to astrophysics, shaping supernova explosions and their remnants, the structure of nebulae, and the dynamics of accreting and convecting stars. It is a critical challenge in inertial confinement fusion, where the instability at the imploding fuel capsule's surface can spoil compression and must be controlled for fusion to succeed. It drives mixing in the oceans and atmosphere, in industrial processes, and in combustion, and it explains everyday observations from mushroom clouds to overturning fluids. Together with its shear-driven cousin the Kelvin-Helmholtz instability and its shock-driven relative the Richtmyer-Meshkov instability, it forms the core of the theory of interfacial instability and turbulent mixing. Its ubiquity across twenty orders of magnitude in scale makes it a unifying idea in fluid dynamics.",
   "working": [
-    {"lead": "Set up an unstable stratification", "text": "place a denser fluid above a lighter one, or accelerate a light fluid into a heavy one, so acceleration opposes the density gradient."},
-    {"lead": "Grow the perturbations", "text": "let small ripples at the interface amplify as heavy fluid sinks and light fluid rises, releasing potential energy."},
-    {"lead": "Form spikes and mix", "text": "watch mushrooming spikes and bubbles develop and break up into turbulent mixing of the two fluids."}
+    {
+      "lead": "Set up an unstable stratification",
+      "text": "place a denser fluid above a lighter one, or accelerate a light fluid into a heavy one, so acceleration opposes the density gradient."
+    },
+    {
+      "lead": "Grow the perturbations",
+      "text": "let small ripples at the interface amplify as heavy fluid sinks and light fluid rises, releasing potential energy."
+    },
+    {
+      "lead": "Form spikes and mix",
+      "text": "watch mushrooming spikes and bubbles develop and break up into turbulent mixing of the two fluids."
+    }
   ],
-  "limits": "The idealized analysis assumes specific conditions, and real growth is modified by viscosity, surface tension, and the finite thickness of the interface, which stabilize the shortest wavelengths and set a fastest-growing scale. The clean spike-and-bubble picture describes the early to intermediate development; the late, fully turbulent mixing stage is complex and an active research area, especially quantifying the growth of the mixing layer. The instability requires the destabilizing configuration, acceleration from heavy toward light, and a stable stratification instead suppresses it. It is distinct from the shear-driven Kelvin-Helmholtz instability and the shock-driven Richtmyer-Meshkov instability, though these often occur together. So the Rayleigh-Taylor instability robustly describes the breakup of unstably stratified interfaces, with real behavior shaped by viscosity, surface tension, and the difficulty of predicting the turbulent mixing it ultimately produces.",
+  "limits": "The idealized analysis assumes specific conditions, and real growth is modified by viscosity, surface tension, and the finite thickness of the interface, which stabilize the shortest wavelengths and set a fastest-growing scale. The clean spike-and-bubble picture describes the early to intermediate development; the late, fully turbulent mixing stage is complex and an active research area, especially quantifying the growth of the mixing layer. The instability requires the destabilizing configuration, acceleration from heavy toward light, and a stable stratification instead suppresses it. It is distinct from the shear-driven Kelvin-Helmholtz instability and the shock-driven Richtmyer-Meshkov instability, though these often occur together.",
   "misreadings": "The instability is not caused by the fluids being different alone; it requires the heavy fluid to be pushed toward the light one, so a stable arrangement with light fluid on top does not overturn. It is not limited to gravity, since Taylor showed any acceleration of a light fluid into a heavy one produces it. And the tidy fingers are only an early stage, giving way to turbulent mixing, so treating any density difference as unstable, or the fingering as the final state, misreads an instability that needs a top-heavy or driven configuration and ends in turbulent mixing.",
   "origin": "Named for Lord Rayleigh, who analyzed the static heavy-over-light case in the nineteenth century, and G. I. Taylor, who extended it to accelerating fluids in 1950; a fundamental interfacial instability.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": "Lord Rayleigh and G. I. Taylor",
   "sources": [
-    {"text": "Rayleigh-Taylor instability, Wikipedia. — the instability of an interface when a lighter fluid pushes a heavier one, the heavy-over-light and accelerating conditions, the mushroom spikes and bubbles, the Rayleigh and Taylor attributions, and examples from oil and water to mushroom clouds and the Crab Nebula.", "url": "https://en.wikipedia.org/wiki/Rayleigh%E2%80%93Taylor_instability", "type": "secondary"},
-    {"text": "Rayleigh-Taylor instability and mixing, Scholarpedia. — the instability arising when the density gradient opposes the pressure gradient, Rayleigh's 1883 static analysis and Taylor's 1950 accelerating case, and the turbulent mixing it drives.", "url": "http://www.scholarpedia.org/article/Rayleigh-Taylor_instability_and_mixing", "type": "secondary"}
+    {
+      "text": "Rayleigh-Taylor instability, Wikipedia. — the instability of an interface when a lighter fluid pushes a heavier one, the heavy-over-light and accelerating conditions, the mushroom spikes and bubbles, the Rayleigh and Taylor attributions, and examples from oil and water to mushroom clouds and the Crab Nebula.",
+      "url": "https://en.wikipedia.org/wiki/Rayleigh%E2%80%93Taylor_instability",
+      "type": "secondary"
+    },
+    {
+      "text": "Rayleigh-Taylor instability and mixing, Scholarpedia. — the instability arising when the density gradient opposes the pressure gradient, Rayleigh's 1883 static analysis and Taylor's 1950 accelerating case, and the turbulent mixing it drives.",
+      "url": "http://www.scholarpedia.org/article/Rayleigh-Taylor_instability_and_mixing",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Rayleigh%E2%80%93Taylor_instability",
   "related": [
-    {"slug": "the-kelvin-helmholtz-instability", "kind": "kindred"},
-    {"slug": "surface-tension", "kind": "kindred"}
+    {
+      "slug": "the-kelvin-helmholtz-instability",
+      "kind": "kindred"
+    },
+    {
+      "slug": "surface-tension",
+      "kind": "kindred"
+    }
   ]
 }

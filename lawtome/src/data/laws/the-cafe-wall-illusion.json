@@ -2,7 +2,10 @@
   "no": "747",
   "slug": "the-cafe-wall-illusion",
   "name": "The Café Wall Illusion",
-  "aliases": ["Cafe wall illusion", "The Munsterberg illusion"],
+  "aliases": [
+    "Cafe wall illusion",
+    "The Munsterberg illusion"
+  ],
   "statement": "Rows of offset dark and light tiles make the perfectly straight lines between them look sloped.",
   "statementAccent": "make the perfectly straight lines between them look sloped",
   "meaning": "The café wall illusion is a geometrical-optical illusion in which the parallel straight horizontal lines dividing rows of tiles appear to be sloped, converging and diverging in wedge shapes, when they are in fact perfectly parallel. The figure consists of staggered rows of alternating dark and light rectangular tiles, each row shifted horizontally relative to those above and below, with the rows separated by thin lines of grey mortar whose brightness is intermediate between the dark and light tiles. The offset tiles and the grey mortar together create the compelling impression that the horizontal mortar lines tilt. The illusion was described and named by Richard Gregory and Priscilla Heard, who published on it in 1979 after a member of Gregory's laboratory noticed it on the tiled wall of a café in Bristol, England. It is a variant of earlier illusions, including the Münsterberg illusion, and a classic in vision science.",
@@ -31,11 +34,20 @@
       "text": "The earlier shifted-chessboard illusion described by Hugo Munsterberg, of which the café wall is a variant."
     }
   ],
-  "whyItMatters": "The café wall illusion is a classic and much-studied illusion in vision science, valued for what it reveals about how the visual system processes edges, luminance contrast, and orientation. By making perfectly parallel lines appear sloped, it demonstrates that the perception of geometry is not a direct readout of the physical image but is constructed by neural processes that can be systematically fooled by contrast at borders. Its dependence on the intermediate-brightness mortar makes it a clean test case for theories of edge detection and brightness processing, and its resistance to full explanation has kept it a productive puzzle for researchers studying cortical orientation processing. As a vivid, memorable illusion that anyone can see and that arose from a real tiled wall, it is both a staple teaching example and a continuing subject of research into how the brain builds our perception of lines, edges, and shape.",
+  "whyItMatters": "The café wall illusion is a classic and much-studied illusion in vision science, valued for what it reveals about how the visual system processes edges, luminance contrast, and orientation. By making perfectly parallel lines appear sloped, it demonstrates that the perception of geometry is not a direct readout of the physical image but is constructed by neural processes that can be systematically fooled by contrast at borders. Its dependence on the intermediate-brightness mortar makes it a clean test case for theories of edge detection and brightness processing, and its resistance to full explanation has kept it a productive puzzle for researchers studying cortical orientation processing.",
   "working": [
-    {"lead": "Offset the tile rows", "text": "stagger rows of alternating dark and light tiles so each row is shifted relative to its neighbours."},
-    {"lead": "Add intermediate mortar", "text": "separate the rows with thin grey mortar lines of brightness midway between the dark and light tiles."},
-    {"lead": "See the false slope", "text": "observe the parallel mortar lines appear to tilt into wedges, produced by contrast interactions at the tile borders."}
+    {
+      "lead": "Offset the tile rows",
+      "text": "stagger rows of alternating dark and light tiles so each row is shifted relative to its neighbours."
+    },
+    {
+      "lead": "Add intermediate mortar",
+      "text": "separate the rows with thin grey mortar lines of brightness midway between the dark and light tiles."
+    },
+    {
+      "lead": "See the false slope",
+      "text": "observe the parallel mortar lines appear to tilt into wedges, produced by contrast interactions at the tile borders."
+    }
   ],
   "limits": "The café wall illusion depends on specific conditions: the tiles must be offset, and the mortar must be a thin line of intermediate brightness between the dark and light tiles, without which the illusion weakens or disappears. Its strength varies with tile size, contrast, mortar width, and viewing distance. The exact mechanism remains debated; while border-locking and brightness effects at the tile edges are widely invoked, the illusion is thought to involve cortical orientation processing that is not fully understood, and a residual component persists even when simple optical factors are controlled. Sources also differ slightly on the precise date the illusion was named. So the café wall illusion reliably demonstrates that contrast at borders can distort perceived orientation, while the complete account of why remains an open question in vision science.",
   "misreadings": "The lines really are parallel; the illusion is that they look sloped, so anyone measuring them finds no actual tilt. The effect is not merely about the tiles being offset; the intermediate-brightness grey mortar is essential, and removing it or using equal-brightness tiles destroys the illusion. And its cause is not fully settled: border-locking and contrast effects are leading accounts, but the mechanism involves debated cortical processing, so treating the illusion as a simple optical trick with a known cause overstates how well it is understood.",
@@ -46,12 +58,26 @@
   "coinedYear": 1979,
   "namedAfter": null,
   "sources": [
-    {"text": "Cafe wall illusion, Wikipedia. — the parallel lines appearing sloped, the offset-tiles and intermediate-grey-mortar setup, the Gregory and Heard 1979 naming and the Bristol café, the Munsterberg antecedent, and the border-contrast mechanism with the essential mortar.", "url": "https://en.wikipedia.org/wiki/Caf%C3%A9_wall_illusion", "type": "secondary"},
-    {"text": "Gregory and Heard, Border locking and the Café Wall illusion, Perception (1979). — the original description and the border-locking account.", "url": "https://journals.sagepub.com/doi/10.1068/p080365", "type": "primary"}
+    {
+      "text": "Cafe wall illusion, Wikipedia. — the parallel lines appearing sloped, the offset-tiles and intermediate-grey-mortar setup, the Gregory and Heard 1979 naming and the Bristol café, the Munsterberg antecedent, and the border-contrast mechanism with the essential mortar.",
+      "url": "https://en.wikipedia.org/wiki/Caf%C3%A9_wall_illusion",
+      "type": "secondary"
+    },
+    {
+      "text": "Gregory and Heard, Border locking and the Café Wall illusion, Perception (1979). — the original description and the border-locking account.",
+      "url": "https://journals.sagepub.com/doi/10.1068/p080365",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Caf%C3%A9_wall_illusion",
   "related": [
-    {"slug": "the-mueller-lyer-illusion", "kind": "kindred"},
-    {"slug": "the-ponzo-illusion", "kind": "kindred"}
+    {
+      "slug": "the-mueller-lyer-illusion",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-ponzo-illusion",
+      "kind": "kindred"
+    }
   ]
 }

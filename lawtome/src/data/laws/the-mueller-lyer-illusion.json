@@ -2,7 +2,10 @@
   "no": "754",
   "slug": "the-mueller-lyer-illusion",
   "name": "The Müller-Lyer Illusion",
-  "aliases": ["Muller-Lyer illusion", "The arrow illusion"],
+  "aliases": [
+    "Muller-Lyer illusion",
+    "The arrow illusion"
+  ],
   "statement": "Two equal lines look unequal when tipped with arrow fins: the one with outward fins seems longer.",
   "statementAccent": "the one with outward fins seems longer",
   "meaning": "The Müller-Lyer illusion is a classic geometrical-optical illusion consisting of two lines, or shafts, of equal length, each ending in a pair of fins or arrowheads. On one line the fins point outward, spreading away from the shaft like the tail of an arrow, and on the other they point inward, like the head of an arrow. Although the two shafts are exactly the same length, the line with the outward-pointing fins appears longer than the line with the inward-pointing fins. It was devised by the German psychiatrist Franz Carl Müller-Lyer in 1889. The illusion is one of the most famous and heavily studied in perception, and it sits at the centre of debates about whether perception is universal or shaped by one's environment, and about how depth and context influence the perceived size of even a simple line.",
@@ -31,11 +34,20 @@
       "text": "The alternative that the size judgment is biased by the overall extent of each figure, including the fins, rather than by depth."
     }
   ],
-  "whyItMatters": "The Müller-Lyer illusion is one of the most famous and studied optical illusions, central to fundamental debates in perception. It has served as a key case in the question of whether perception is universal, wired into the visual system, or shaped by the environment and culture in which one grows up. The cross-cultural finding that susceptibility varies, weaker among some people from non-carpentered environments, made the illusion a touchstone for the carpentered-world hypothesis and for arguments about the role of experience in perception, a debate that continues with recent work questioning the cultural interpretation. The illusion also bears on how top-down knowledge and depth cues influence even simple size judgments, and it has been used to probe the separation between vision for perception and vision for action. As a simple figure that reliably fools the eye, it remains a staple example in vision science and a focal point for theories of how we see.",
+  "whyItMatters": "The Müller-Lyer illusion is one of the most famous and studied optical illusions, central to fundamental debates in perception. It has served as a key case in the question of whether perception is universal, wired into the visual system, or shaped by the environment and culture in which one grows up. The cross-cultural finding that susceptibility varies, weaker among some people from non-carpentered environments, made the illusion a touchstone for the carpentered-world hypothesis and for arguments about the role of experience in perception, a debate that continues with recent work questioning the cultural interpretation. The illusion also bears on how top-down knowledge and depth cues influence even simple size judgments, and it has been used to probe the separation between vision for perception and vision for action.",
   "working": [
-    {"lead": "Add arrow fins to equal lines", "text": "give two equal shafts fins pointing outward on one and inward on the other, creating arrow-like figures."},
-    {"lead": "Cue depth or extent", "text": "have the fins act as depth cues, like inside and outside corners, or bias the perceived overall extent of each figure."},
-    {"lead": "Perceive unequal length", "text": "see the outward-finned line as longer, whether through misapplied size constancy or a bias from the figures' extent."}
+    {
+      "lead": "Add arrow fins to equal lines",
+      "text": "give two equal shafts fins pointing outward on one and inward on the other, creating arrow-like figures."
+    },
+    {
+      "lead": "Cue depth or extent",
+      "text": "have the fins act as depth cues, like inside and outside corners, or bias the perceived overall extent of each figure."
+    },
+    {
+      "lead": "Perceive unequal length",
+      "text": "see the outward-finned line as longer, whether through misapplied size constancy or a bias from the figures' extent."
+    }
   ],
   "limits": "The mechanism of the Müller-Lyer illusion is genuinely debated. The perspective and size-constancy account of Gregory is influential but contested, with critics arguing that inside and outside corners contribute little and favouring centroid, conflicting-cues, or statistical explanations. The cross-cultural evidence for the carpentered-world hypothesis has been influential but is disputed, and recent research questions whether susceptibility really varies with culture or is more constant across humans. The illusion's strength depends on the geometry of the fins and the figure, and on the observer. So while the illusion reliably shows that context, the fins, distorts perceived line length, the explanation of why, and whether it reflects learned experience or universal visual processing, remains an open and actively debated question in perception research.",
   "misreadings": "The two shafts really are the same length; the illusion is that the fins make them look different, so measuring shows no actual difference. The direction is specific: the outward-finned line looks longer, not the reverse. And the cause is not settled, since the perspective explanation competes with extent-based and other accounts, and the cultural interpretation of cross-cultural differences is disputed, so treating the depth-cue explanation as proven, or the cultural finding as established, misreads a famous illusion whose mechanism is still debated.",
@@ -46,12 +58,26 @@
   "coinedYear": 1889,
   "namedAfter": "Franz Carl Müller-Lyer",
   "sources": [
-    {"text": "Muller-Lyer illusion, Wikipedia. — the equal lines appearing unequal with the outward-finned line looking longer, Müller-Lyer's 1889 origin, Gregory's perspective and size-constancy explanation and the alternatives, and the Segall cross-cultural carpentered-world finding and its debate.", "url": "https://en.wikipedia.org/wiki/M%C3%BCller-Lyer_illusion", "type": "secondary"},
-    {"text": "Muller-Lyer Illusion, The Illusions Index (University of Glasgow). — the illusion, the competing explanations, and its role in debates about perception.", "url": "https://www.illusionsindex.org/i/mueller-lyer", "type": "secondary"}
+    {
+      "text": "Muller-Lyer illusion, Wikipedia. — the equal lines appearing unequal with the outward-finned line looking longer, Müller-Lyer's 1889 origin, Gregory's perspective and size-constancy explanation and the alternatives, and the Segall cross-cultural carpentered-world finding and its debate.",
+      "url": "https://en.wikipedia.org/wiki/M%C3%BCller-Lyer_illusion",
+      "type": "secondary"
+    },
+    {
+      "text": "Muller-Lyer Illusion, The Illusions Index (University of Glasgow). — the illusion, the competing explanations, and its role in debates about perception.",
+      "url": "https://www.illusionsindex.org/i/mueller-lyer",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/M%C3%BCller-Lyer_illusion",
   "related": [
-    {"slug": "the-ponzo-illusion", "kind": "kindred"},
-    {"slug": "the-cafe-wall-illusion", "kind": "kindred"}
+    {
+      "slug": "the-ponzo-illusion",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-cafe-wall-illusion",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,11 @@
   "no": "777",
   "slug": "beats",
   "name": "Beats",
-  "aliases": ["Acoustic beats", "Beat frequency", "The beat phenomenon"],
+  "aliases": [
+    "Acoustic beats",
+    "Beat frequency",
+    "The beat phenomenon"
+  ],
   "statement": "Two tones a little apart in pitch throb together, waxing and waning at their frequency difference.",
   "statementAccent": "waxing and waning at their frequency difference",
   "meaning": "Beats are the periodic pulsations in loudness heard when two tones of slightly different frequencies sound at the same time. Instead of two separate pitches, the listener hears a single tone whose volume swells and fades at a steady rate. These regular variations in amplitude are the beats, and the rate at which they occur, the beat frequency, equals the absolute difference between the two frequencies: two tones at four hundred forty and four hundred forty-two hertz produce two beats per second. Beats are a direct, audible manifestation of wave interference, the alternating reinforcement and cancellation of two waves that drift in and out of step. They are most useful in tuning: as two notes approach the same pitch the beating slows, and when the beats vanish entirely the notes are in tune. Simple to hear and to explain, beats connect the mathematics of superposition to a practical skill musicians use every day.",
@@ -31,11 +35,20 @@
       "text": "The practice of adjusting pitch until the beats vanish, indicating the two tones share the same frequency."
     }
   ],
-  "whyItMatters": "Beats are a clear, everyday demonstration of wave interference and a practical tool that musicians and technicians rely on. Because the beat rate directly reveals how far apart two frequencies are, tuning by eliminating beats is a precise, ear-based method used by piano and organ tuners, string players, and instrument makers to bring notes into unison and to set intervals. Beyond tuning, beats illustrate the superposition principle vividly, making them a staple of physics teaching about waves. They also open onto deeper psychoacoustics: as the frequency gap widens, beating shades into roughness and then into two separate tones, a progression that underlies the sensory theory of consonance and dissonance and the concept of the critical band. Beats appear across acoustics and engineering wherever two close frequencies mix, from the wah of slightly detuned oscillators to interference in radio and vibration analysis. As the audible signature of two waves drifting in and out of phase, beats bridge simple physics and real musical practice.",
+  "whyItMatters": "Beats are a clear, everyday demonstration of wave interference and a practical tool that musicians and technicians rely on. Because the beat rate directly reveals how far apart two frequencies are, tuning by eliminating beats is a precise, ear-based method used by piano and organ tuners, string players, and instrument makers to bring notes into unison and to set intervals. Beyond tuning, beats illustrate the superposition principle vividly, making them a staple of physics teaching about waves. They also open onto deeper psychoacoustics: as the frequency gap widens, beating shades into roughness and then into two separate tones, a progression that underlies the sensory theory of consonance and dissonance and the concept of the critical band. Beats appear across acoustics and engineering wherever two close frequencies mix, from the wah of slightly detuned oscillators to interference in radio and vibration analysis.",
   "working": [
-    {"lead": "Sound two close tones", "text": "play two frequencies that differ only slightly, so their waves superpose."},
-    {"lead": "Hear the amplitude pulse", "text": "let constructive and destructive interference make the combined loudness swell and fade at the frequency difference."},
-    {"lead": "Tune by slowing the beats", "text": "bring the frequencies together until the beating slows to nothing, signalling that the tones match."}
+    {
+      "lead": "Sound two close tones",
+      "text": "play two frequencies that differ only slightly, so their waves superpose."
+    },
+    {
+      "lead": "Hear the amplitude pulse",
+      "text": "let constructive and destructive interference make the combined loudness swell and fade at the frequency difference."
+    },
+    {
+      "lead": "Tune by slowing the beats",
+      "text": "bring the frequencies together until the beating slows to nothing, signalling that the tones match."
+    }
   ],
   "limits": "The clean beating description applies best to two pure tones close in frequency; with complex tones rich in harmonics, beating can occur between many pairs of partials at once, making the pattern more intricate. The simple slow throb is heard only while the frequency difference is small, roughly within the range the ear cannot resolve; as the gap widens the perception passes through roughness to two separate tones, so beats proper occupy a limited range. The beat frequency equals the difference of the two frequencies exactly for pure tones, but real instruments and inharmonic sources complicate the picture. So beats are a robust and useful phenomenon of wave interference, cleanest for pairs of pure tones near the same pitch, and shading into the broader psychoacoustics of roughness and the critical band as the frequency separation grows.",
   "misreadings": "Beats are not a third tone added to the mix; they are the periodic loudness variation of the combined sound as two waves interfere. The beat rate is the full difference between the frequencies, not half of it, even though the amplitude envelope oscillates at half the difference. And beats are heard only for small frequency separations, since a large gap yields roughness and then two distinct tones, so treating the beating as an extra tone, or expecting slow beats at any interval, misreads an interference effect confined to closely spaced frequencies.",
@@ -46,12 +59,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Beat (acoustics), Wikipedia. — the periodic loudness variation from two nearby frequencies, the beat frequency equal to their difference, the superposition explanation with a carrier at the average frequency and an envelope at half the difference, tuning by eliminating beats, and the transition to roughness and separate tones.", "url": "https://en.wikipedia.org/wiki/Beat_(acoustics)", "type": "secondary"},
-    {"text": "Beats, OpenStax University Physics Volume 1 (17.6). — beats as interference producing a tone at the average frequency that pulsates at the difference frequency, and their use in tuning.", "url": "https://openstax.org/books/university-physics-volume-1/pages/17-6-beats", "type": "secondary"}
+    {
+      "text": "Beat (acoustics), Wikipedia. — the periodic loudness variation from two nearby frequencies, the beat frequency equal to their difference, the superposition explanation with a carrier at the average frequency and an envelope at half the difference, tuning by eliminating beats, and the transition to roughness and separate tones.",
+      "url": "https://en.wikipedia.org/wiki/Beat_(acoustics)",
+      "type": "secondary"
+    },
+    {
+      "text": "Beats, OpenStax University Physics Volume 1 (17.6). — beats as interference producing a tone at the average frequency that pulsates at the difference frequency, and their use in tuning.",
+      "url": "https://openstax.org/books/university-physics-volume-1/pages/17-6-beats",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Beat_(acoustics)",
   "related": [
-    {"slug": "the-critical-band", "kind": "consequence"},
-    {"slug": "consonance-and-dissonance", "kind": "kindred"}
+    {
+      "slug": "the-critical-band",
+      "kind": "consequence"
+    },
+    {
+      "slug": "consonance-and-dissonance",
+      "kind": "kindred"
+    }
   ]
 }

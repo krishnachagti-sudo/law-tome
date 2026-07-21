@@ -2,7 +2,10 @@
   "no": "743",
   "slug": "the-tritone-paradox",
   "name": "The Tritone Paradox",
-  "aliases": ["Deutsch's tritone paradox", "The half-octave illusion"],
+  "aliases": [
+    "Deutsch's tritone paradox",
+    "The half-octave illusion"
+  ],
   "statement": "The same pair of ambiguous tones rises for some listeners and falls for others, depending on where they grew up.",
   "statementAccent": "rises for some listeners and falls for others",
   "meaning": "The tritone paradox is an auditory illusion in which a pair of tones separated by a tritone, a half-octave or six semitones, is heard as ascending by some listeners and as descending by others, even though the physical stimulus is identical and objectively ambiguous in pitch direction. It was discovered and named by the psychologist Diana Deutsch in 1986. The tones used are octave-related complexes, Shepard-type tones, whose pitch class is clear but whose octave, and thus overall height, is ambiguous, so there is no objectively correct direction. The striking finding is that a given listener hears the direction consistently, but different listeners hear it oppositely, and the direction correlates with their linguistic and geographical background, such as where they grew up and the pitch range of their native speech. The paradox demonstrates that pitch perception is shaped by learned experience, not just the physical sound.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "The tritone paradox is an important demonstration in psychoacoustics and music cognition that pitch perception is not purely bottom-up, determined by the sound alone, but is shaped by learned templates and early linguistic exposure. By showing that the same ambiguous tones are heard in opposite directions by different listeners, and that the difference tracks their linguistic and geographical background, it challenges the assumption that pitch perception is universal and reveals a deep link between speech experience and musical perception. It also points to a latent, widespread ability to relate pitch classes to absolute height. The paradox has become a classic example of how the brain resolves perceptual ambiguity using internalised knowledge, and of how the language one grows up hearing can quietly shape something as seemingly basic as whether a musical interval sounds like it goes up or down.",
   "working": [
-    {"lead": "Play an ambiguous tritone", "text": "present two Shepard-type tones a half-octave apart, so the direction of pitch change is physically ambiguous."},
-    {"lead": "Let the template decide", "text": "have each listener resolve the ambiguity with their internal pitch-class-to-height template, hearing a consistent direction."},
-    {"lead": "Compare across listeners", "text": "find that different people hear the same pair oppositely, with the direction tracking their linguistic and geographical background."}
+    {
+      "lead": "Play an ambiguous tritone",
+      "text": "present two Shepard-type tones a half-octave apart, so the direction of pitch change is physically ambiguous."
+    },
+    {
+      "lead": "Let the template decide",
+      "text": "have each listener resolve the ambiguity with their internal pitch-class-to-height template, hearing a consistent direction."
+    },
+    {
+      "lead": "Compare across listeners",
+      "text": "find that different people hear the same pair oppositely, with the direction tracking their linguistic and geographical background."
+    }
   ],
-  "limits": "The tritone paradox depends on carefully constructed Shepard-type tones whose octave is ambiguous; it does not arise for ordinary tones with clear pitch height. The correlation between perceived direction and linguistic or geographical background is statistical, a tendency across groups rather than a rule that fixes any individual's percept from their origin alone, and individual variation is considerable. The precise nature of the internal template and how early speech experience shapes it are still studied. So the paradox robustly demonstrates that learned experience influences pitch perception for these special stimuli, but the strength and universality of the linguistic correlation, and the exact mechanism, remain topics of ongoing research rather than fully settled facts.",
+  "limits": "The tritone paradox depends on carefully constructed Shepard-type tones whose octave is ambiguous; it does not arise for ordinary tones with clear pitch height. The correlation between perceived direction and linguistic or geographical background is statistical, a tendency across groups rather than a rule that fixes any individual's percept from their origin alone, and individual variation is considerable. The precise nature of the internal template and how early speech experience shapes it are still studied.",
   "misreadings": "The tritone paradox is not that one direction is correct and some listeners err; the stimulus is genuinely ambiguous, so both hearings are valid. It does not mean a person's birthplace strictly determines what they hear, since the correlation is statistical with much individual variation. And it applies to specially built octave-ambiguous tones, not to ordinary music, so treating it as showing that pitch direction is always subjective, or that geography dictates each listener's perception, overstates a finding about how learned templates resolve a deliberately engineered ambiguity.",
   "origin": "Discovered and named by the psychologist Diana Deutsch in 1986, using octave-ambiguous Shepard-type tones a tritone apart to show that perceived pitch direction varies across listeners and correlates with their linguistic background.",
   "category": "psychology",
@@ -46,12 +58,26 @@
   "coinedYear": 1986,
   "namedAfter": "Diana Deutsch",
   "sources": [
-    {"text": "Tritone paradox, Wikipedia. — the ambiguous tritone pair heard as ascending or descending by different listeners, the use of Shepard-type octave-ambiguous tones, Deutsch's 1986 discovery, and the correlation with linguistic and geographical background.", "url": "https://en.wikipedia.org/wiki/Tritone_paradox", "type": "secondary"},
-    {"text": "Diana Deutsch, The Tritone Paradox (philomel.com). — the illusion, the octave-ambiguous tones, and the finding that perceived direction correlates with linguistic background.", "url": "http://philomel.com/musical_illusions/tritone.php", "type": "primary"}
+    {
+      "text": "Tritone paradox, Wikipedia. — the ambiguous tritone pair heard as ascending or descending by different listeners, the use of Shepard-type octave-ambiguous tones, Deutsch's 1986 discovery, and the correlation with linguistic and geographical background.",
+      "url": "https://en.wikipedia.org/wiki/Tritone_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Diana Deutsch, The Tritone Paradox (philomel.com). — the illusion, the octave-ambiguous tones, and the finding that perceived direction correlates with linguistic background.",
+      "url": "http://philomel.com/musical_illusions/tritone.php",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Tritone_paradox",
   "related": [
-    {"slug": "the-shepard-tone", "kind": "kindred"},
-    {"slug": "the-mcgurk-effect", "kind": "kindred"}
+    {
+      "slug": "the-shepard-tone",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-mcgurk-effect",
+      "kind": "kindred"
+    }
   ]
 }

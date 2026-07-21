@@ -2,7 +2,11 @@
   "no": "774",
   "slug": "the-missing-fundamental",
   "name": "The Missing Fundamental",
-  "aliases": ["Virtual pitch", "Residue pitch", "Periodicity pitch"],
+  "aliases": [
+    "Virtual pitch",
+    "Residue pitch",
+    "Periodicity pitch"
+  ],
   "statement": "Remove the bass note itself and the ear still hears its pitch, inferred from the overtones.",
   "statementAccent": "the ear still hears its pitch, inferred from the overtones",
   "meaning": "The missing fundamental is an auditory phenomenon in which a listener perceives the pitch of a fundamental frequency even when that frequency is physically absent from the sound and only its higher harmonics are present. If a tone contains components at, say, two hundred, three hundred, four hundred, and five hundred hertz, the harmonics of a hundred-hertz fundamental, but not the hundred-hertz component itself, the perceived pitch is still that of the missing hundred-hertz note. The brain infers the fundamental from the regular spacing of the harmonics rather than reading it off directly from energy at that frequency. Also called virtual pitch, residue pitch, or periodicity pitch, the phenomenon demonstrates that pitch is a perceptual construction, not simply the lowest frequency present in a sound. It has profound practical consequences, most familiarly in explaining how small loudspeakers, earbuds, and telephones convey the pitch of bass notes they cannot physically reproduce, because the ear reconstructs the fundamental from the overtones they do transmit.",
@@ -31,11 +35,20 @@
       "text": "The account that pitch is read from the repetition period of the waveform, encoded in the timing of auditory-nerve firing."
     }
   ],
-  "whyItMatters": "The missing fundamental is a cornerstone demonstration in psychoacoustics that pitch is constructed by the brain rather than simply detected. By showing that the ear reports a pitch with no physical energy at that frequency, it overturned the naive idea that pitch equals the lowest frequency present and forced theories of hearing to account for periodicity and pattern, shaping the modern understanding of how the auditory system extracts pitch. Its practical reach is enormous: it explains how telephones, small radios, laptop speakers, and earbuds convey the pitch of bass notes and low voices they cannot physically reproduce, a fact exploited deliberately by audio engineers who synthesize upper harmonics to give small devices apparent bass. The phenomenon also illuminates music perception, since the perceived pitch of complex instrumental tones follows their harmonic structure. As a vivid, easily demonstrated illusion with deep theoretical and engineering importance, the missing fundamental remains central to the science of hearing and to audio technology.",
+  "whyItMatters": "The missing fundamental is a cornerstone demonstration in psychoacoustics that pitch is constructed by the brain rather than simply detected. By showing that the ear reports a pitch with no physical energy at that frequency, it overturned the naive idea that pitch equals the lowest frequency present and forced theories of hearing to account for periodicity and pattern, shaping the modern understanding of how the auditory system extracts pitch. Its practical reach is enormous: it explains how telephones, small radios, laptop speakers, and earbuds convey the pitch of bass notes and low voices they cannot physically reproduce, a fact exploited deliberately by audio engineers who synthesize upper harmonics to give small devices apparent bass. The phenomenon also illuminates music perception, since the perceived pitch of complex instrumental tones follows their harmonic structure.",
   "working": [
-    {"lead": "Remove the fundamental", "text": "present a complex tone containing the higher harmonics of a fundamental but not the fundamental frequency itself."},
-    {"lead": "Detect the periodicity", "text": "let the auditory system read the common spacing of the harmonics, the periodicity that corresponds to the fundamental."},
-    {"lead": "Hear the absent pitch", "text": "perceive the pitch of the missing fundamental, reconstructed from the pattern of overtones."}
+    {
+      "lead": "Remove the fundamental",
+      "text": "present a complex tone containing the higher harmonics of a fundamental but not the fundamental frequency itself."
+    },
+    {
+      "lead": "Detect the periodicity",
+      "text": "let the auditory system read the common spacing of the harmonics, the periodicity that corresponds to the fundamental."
+    },
+    {
+      "lead": "Hear the absent pitch",
+      "text": "perceive the pitch of the missing fundamental, reconstructed from the pattern of overtones."
+    }
   ],
   "limits": "The missing fundamental is a robust perceptual phenomenon, but the precise mechanism, whether pattern recognition, temporal periodicity, or a combination, remains a matter of theory and research, so the effect is better established than its full explanation. The clarity and strength of the perceived pitch depend on which harmonics are present, their number, and their loudness, and the effect can weaken when only very high harmonics remain. Historically it was long confused with nonlinear distortion products, difference tones generated in the ear, until Schouten's work showed the pitch survives even when such products are masked. The naming of the pitch it produces, virtual, residue, or periodicity pitch, varies across the literature. So the missing fundamental reliably shows that pitch is inferred from harmonic structure rather than read from the fundamental, while the detailed account of how the brain does so is still refined.",
   "misreadings": "The perceived pitch is not evidence that the fundamental is secretly present; it is genuinely absent, and the ear infers its pitch from the spacing of the harmonics. The effect is not merely a distortion tone produced in the ear, since it persists when such products are masked. And it shows that pitch is not simply the lowest frequency in a sound, so treating the heard bass note as physically present, or the phenomenon as ear distortion, misreads an illusion that reveals pitch to be a construction from the pattern of overtones.",
@@ -46,12 +59,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Missing fundamental, Wikipedia. — the perception of the fundamental's pitch when only its higher harmonics are present, the greatest-common-divisor periodicity mechanism and temporal autocorrelation account, and the telephone and small-loudspeaker applications.", "url": "https://en.wikipedia.org/wiki/Missing_fundamental", "type": "secondary"},
-    {"text": "The Ohm-Seebeck Dispute, Hermann von Helmholtz, and the Origins of Physiological Acoustics, British Journal for the History of Science. — the nineteenth-century debate over pitch and the missing fundamental among Seebeck, Ohm, and Helmholtz.", "url": "https://www.cambridge.org/core/journals/british-journal-for-the-history-of-science/article/abs/ohmseebeck-dispute-hermann-von-helmholtz-and-the-origins-of-physiological-acoustics/86FAEB166982C6C86C9C98DB5BE701BE", "type": "secondary"}
+    {
+      "text": "Missing fundamental, Wikipedia. — the perception of the fundamental's pitch when only its higher harmonics are present, the greatest-common-divisor periodicity mechanism and temporal autocorrelation account, and the telephone and small-loudspeaker applications.",
+      "url": "https://en.wikipedia.org/wiki/Missing_fundamental",
+      "type": "secondary"
+    },
+    {
+      "text": "The Ohm-Seebeck Dispute, Hermann von Helmholtz, and the Origins of Physiological Acoustics, British Journal for the History of Science. — the nineteenth-century debate over pitch and the missing fundamental among Seebeck, Ohm, and Helmholtz.",
+      "url": "https://www.cambridge.org/core/journals/british-journal-for-the-history-of-science/article/abs/ohmseebeck-dispute-hermann-von-helmholtz-and-the-origins-of-physiological-acoustics/86FAEB166982C6C86C9C98DB5BE701BE",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Missing_fundamental",
   "related": [
-    {"slug": "the-harmonic-series", "kind": "cause"},
-    {"slug": "the-shepard-tone", "kind": "kindred"}
+    {
+      "slug": "the-harmonic-series",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-shepard-tone",
+      "kind": "kindred"
+    }
   ]
 }

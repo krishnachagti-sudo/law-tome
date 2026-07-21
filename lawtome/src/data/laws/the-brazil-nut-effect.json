@@ -2,7 +2,11 @@
   "no": "793",
   "slug": "the-brazil-nut-effect",
   "name": "The Brazil Nut Effect",
-  "aliases": ["Granular convection", "Granular size segregation", "The muesli effect"],
+  "aliases": [
+    "Granular convection",
+    "Granular size segregation",
+    "The muesli effect"
+  ],
   "statement": "Shake a mix of grains and the biggest pieces climb to the top, like Brazil nuts in the tin.",
   "statementAccent": "the biggest pieces climb to the top",
   "meaning": "The Brazil nut effect is a phenomenon of granular materials in which, when a mixture of particles of different sizes is shaken or vibrated, the larger particles tend to rise to the top. It takes its name from the everyday observation that in a can or bowl of mixed nuts, the largest ones, the Brazil nuts, end up on the surface after handling, and the same is seen in cereal boxes where large flakes or dried fruit gather at the top. Also called granular convection or size segregation, the effect is a striking example of how collections of grains behave in ways that differ from both solids and liquids. Despite its familiarity, its explanation is genuinely complex and not fully settled, with several mechanisms proposed. There is even a reverse Brazil nut effect, in which under certain conditions the larger particles sink instead. The effect matters wherever powders and granular mixtures are handled, since unwanted segregation is a persistent problem in industry.",
@@ -31,11 +35,20 @@
       "text": "The mechanism in which vibration-driven currents carry particles up the middle and down the walls, stranding large particles on top."
     }
   ],
-  "whyItMatters": "The Brazil nut effect is a vivid example of the surprising and still incompletely understood physics of granular materials, which behave unlike ordinary solids, liquids, or gases and remain an active area of research. Understanding it matters well beyond the mixed-nut can. In industry, size segregation of vibrated powders and granules is a serious and costly problem: pharmaceutical mixtures, food products, chemicals, and construction materials can separate during transport, storage, and processing, spoiling the uniformity that manufacturing requires, so knowing how and why grains segregate is essential to designing mixing and handling equipment that keeps blends homogeneous. The effect also connects to geology and everyday phenomena involving how particles of different sizes sort under agitation. As a simple demonstration that raises deep, unresolved questions about how many particles move collectively, the Brazil nut effect is both a memorable curiosity and a window into the challenging physics of granular flow that engineers and scientists continue to study.",
+  "whyItMatters": "The Brazil nut effect is a vivid example of the surprising and still incompletely understood physics of granular materials, which behave unlike ordinary solids, liquids, or gases and remain an active area of research. Understanding it matters well beyond the mixed-nut can. In industry, size segregation of vibrated powders and granules is a serious and costly problem: pharmaceutical mixtures, food products, chemicals, and construction materials can separate during transport, storage, and processing, spoiling the uniformity that manufacturing requires, so knowing how and why grains segregate is essential to designing mixing and handling equipment that keeps blends homogeneous. The effect also connects to geology and everyday phenomena involving how particles of different sizes sort under agitation.",
   "working": [
-    {"lead": "Shake a size-mixed granular material", "text": "vibrate or jostle a mixture containing particles of different sizes."},
-    {"lead": "Ratchet or circulate", "text": "let small particles fill voids beneath large ones, or let convection currents carry particles up the middle and down the walls."},
-    {"lead": "Strand the large on top", "text": "watch the larger particles rise and become stranded at the surface, unable to return down the narrow channels."}
+    {
+      "lead": "Shake a size-mixed granular material",
+      "text": "vibrate or jostle a mixture containing particles of different sizes."
+    },
+    {
+      "lead": "Ratchet or circulate",
+      "text": "let small particles fill voids beneath large ones, or let convection currents carry particles up the middle and down the walls."
+    },
+    {
+      "lead": "Strand the large on top",
+      "text": "watch the larger particles rise and become stranded at the surface, unable to return down the narrow channels."
+    }
   ],
   "limits": "The Brazil nut effect is genuinely complex, and its mechanism is not fully settled; percolation and convection each explain part of the behaviour, and which dominates depends on conditions. The direction of segregation is not even fixed, since under certain combinations of particle density, container geometry, interstitial air, and shaking, larger particles sink instead, the reverse Brazil nut effect. The outcome depends sensitively on many factors, so simple rules can mislead. The effect concerns dry or nearly dry granular materials under agitation and does not straightforwardly extend to all mixtures. Some commonly cited applications, such as larger rocks rising in soil, are plausible and related but not established by the core granular-physics sources. So the Brazil nut effect reliably shows that shaken size-mixed grains segregate, but the mechanism, and even the direction, depend on conditions and remain subjects of active research.",
   "misreadings": "The Brazil nut effect is not a settled, simple rule that big things always rise; its mechanism is debated, and under some conditions larger particles actually sink, the reverse effect. It is not driven by density in the naive sense that heavier sinks, since large Brazil nuts rise despite being heavy, and outcomes depend on size ratio, container shape, air, and shaking. And it is not fully explained by any single process, so treating the effect as a guaranteed rise of large particles, or as simple density sorting, misreads a complex granular phenomenon whose direction and cause depend sensitively on conditions.",
@@ -46,12 +59,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Granular convection, Wikipedia. — the Brazil nut effect in which shaking makes larger particles rise, the naming from mixed nuts, the percolation and convection mechanisms, its status as an unsolved problem, the reverse Brazil nut effect, and relevance to industrial mixing.", "url": "https://en.wikipedia.org/wiki/Granular_convection", "type": "secondary"},
-    {"text": "Reversing the Brazil-nut effect: competition between percolation and condensation, Physical Review Letters. — the existence of the reverse Brazil nut effect and its dependence on particle density and conditions.", "url": "https://pubmed.ncbi.nlm.nih.gov/12570618/", "type": "primary"}
+    {
+      "text": "Granular convection, Wikipedia. — the Brazil nut effect in which shaking makes larger particles rise, the naming from mixed nuts, the percolation and convection mechanisms, its status as an unsolved problem, the reverse Brazil nut effect, and relevance to industrial mixing.",
+      "url": "https://en.wikipedia.org/wiki/Granular_convection",
+      "type": "secondary"
+    },
+    {
+      "text": "Reversing the Brazil-nut effect: competition between percolation and condensation, Physical Review Letters. — the existence of the reverse Brazil nut effect and its dependence on particle density and conditions.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12570618/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Granular_convection",
   "related": [
-    {"slug": "terminal-velocity", "kind": "kindred"},
-    {"slug": "cavitation", "kind": "kindred"}
+    {
+      "slug": "terminal-velocity",
+      "kind": "kindred"
+    },
+    {
+      "slug": "cavitation",
+      "kind": "kindred"
+    }
   ]
 }

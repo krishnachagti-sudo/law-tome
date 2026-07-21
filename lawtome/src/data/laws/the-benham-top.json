@@ -2,7 +2,10 @@
   "no": "832",
   "slug": "the-benham-top",
   "name": "Benham's Top",
-  "aliases": ["Benham's disc", "Fechner colors"],
+  "aliases": [
+    "Benham's disc",
+    "Fechner colors"
+  ],
   "statement": "Spin a black-and-white patterned disc and most people see phantom colours that are not there.",
   "statementAccent": "most people see phantom colours that are not there",
   "meaning": "Benham's top is a spinning disc, half black and half white, with a pattern of concentric black arcs on the white half, that produces the illusion of colour when it rotates: most people with normal vision see faint reds, greens, blues, and yellows arranged in arcs, even though the disc carries only black and white. These illusory colours seen from a flickering or moving black-and-white pattern are called Fechner colours, after the German scientist Gustav Fechner, who first described the effect in 1838, while the particular top is named after Charles Benham, an English journalist and toymaker who popularized it as a toy, the Artificial Spectrum Top, around 1894. The precise mechanism is not fully understood and remains debated, but it is thought to involve the differing response times of the colour-sensitive channels of the eye as the spinning arcs stimulate the retina for different durations. Benham's top is a striking demonstration that colour perception is not a simple readout of wavelength, since the brain can generate colour sensations from purely black-and-white stimulation.",
@@ -31,13 +34,22 @@
       "text": "Another term for the same phenomenon, emphasizing that a flickering pattern induces the perception of colour."
     }
   ],
-  "whyItMatters": "Benham's top is a compelling demonstration that colour perception is not a simple readout of the wavelengths entering the eye, since a purely black-and-white spinning pattern can make the brain generate vivid colour sensations. This reveals that colour is constructed by the visual system from the pattern of activity across its channels, including the timing of their responses, rather than being a direct measurement of light, a deep point about how vision works. The effect has been a subject of vision research for well over a century, probing how flicker and the differing temporal responses of the colour channels give rise to perceived colour, and it connects to opponent-process coding and retinal processing. It also has practical promise: because the illusory colours depend on the healthy functioning of the visual pathway, the top has been explored as a diagnostic tool for detecting disorders such as optic neuritis. As a simple toy that produces a profound and still incompletely explained illusion, Benham's top remains a valuable window into the construction of colour by the brain.",
+  "whyItMatters": "Benham's top is a compelling demonstration that colour perception is not a simple readout of the wavelengths entering the eye, since a purely black-and-white spinning pattern can make the brain generate vivid colour sensations. This reveals that colour is constructed by the visual system from the pattern of activity across its channels, including the timing of their responses, rather than being a direct measurement of light, a deep point about how vision works. The effect has been a subject of vision research for well over a century, probing how flicker and the differing temporal responses of the colour channels give rise to perceived colour, and it connects to opponent-process coding and retinal processing. It also has practical promise: because the illusory colours depend on the healthy functioning of the visual pathway, the top has been explored as a diagnostic tool for detecting disorders such as optic neuritis.",
   "working": [
-    {"lead": "Spin the patterned disc", "text": "rotate the half-black, half-white disc with its arcs at a moderate speed."},
-    {"lead": "Flicker the retina", "text": "let the arcs stimulate each point of the retina with a rapidly changing black-and-white pattern whose timing varies with position."},
-    {"lead": "Perceive phantom colour", "text": "have the differing temporal responses of the colour channels be interpreted as colour, producing pale hues in arcs."}
+    {
+      "lead": "Spin the patterned disc",
+      "text": "rotate the half-black, half-white disc with its arcs at a moderate speed."
+    },
+    {
+      "lead": "Flicker the retina",
+      "text": "let the arcs stimulate each point of the retina with a rapidly changing black-and-white pattern whose timing varies with position."
+    },
+    {
+      "lead": "Perceive phantom colour",
+      "text": "have the differing temporal responses of the colour channels be interpreted as colour, producing pale hues in arcs."
+    }
   ],
-  "limits": "The mechanism behind Benham's top is genuinely not fully understood and remains debated, so accounts invoking the differing temporal responses of the colour channels, lateral inhibition, and opponent processing are the leading explanation rather than a settled one. The illusion depends on the spin speed, the lighting, and the observer, and not everyone sees the colours equally vividly or in the same arrangement. The perceived colours are faint and are thought to lie mainly along the blue-yellow dimension rather than spanning the full spectrum. The dates are slightly uncertain in the sources, with Fechner's description in 1838 and Benham's marketing around 1894 or 1895. So Benham's top robustly demonstrates that flicker can generate colour perception from black and white, understood as a real but incompletely explained illusion whose appearance depends on conditions and observer.",
+  "limits": "The mechanism behind Benham's top is genuinely not fully understood and remains debated, so accounts invoking the differing temporal responses of the colour channels, lateral inhibition, and opponent processing are the leading explanation rather than a settled one. The illusion depends on the spin speed, the lighting, and the observer, and not everyone sees the colours equally vividly or in the same arrangement. The perceived colours are faint and are thought to lie mainly along the blue-yellow dimension rather than spanning the full spectrum. The dates are slightly uncertain in the sources, with Fechner's description in 1838 and Benham's marketing around 1894 or 1895.",
   "misreadings": "The colours of Benham's top are not really on the disc; it is black and white, and the colours are generated by the visual system, so they are a genuine illusion. The effect is not fully explained, so accounts of differing colour-channel response times are the leading hypothesis, not settled fact. And not everyone sees the same colours, since the illusion depends on speed, lighting, and observer, so treating the colours as physically present, the mechanism as fully understood, or the perception as identical for all, misreads a demonstration that the brain can construct colour from black-and-white flicker.",
   "origin": "Named after Charles Benham, who marketed the spinning disc as a toy around 1894; the illusory colours it produces are Fechner colours, first described by Gustav Fechner in 1838, with a mechanism still debated.",
   "category": "psychology",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": "Charles Benham",
   "sources": [
-    {"text": "Fechner color effect, Wikipedia. — the illusory colours seen from a spinning black-and-white pattern, Benham's top and Charles Benham's marketing, Gustav Fechner's 1838 description, the incompletely understood temporal-response mechanism, and use in vision research and diagnostics.", "url": "https://en.wikipedia.org/wiki/Fechner_color_effect", "type": "secondary"},
-    {"text": "Benham's Top, Michael Bach (optical illusions). — the black-and-white disc producing colour, the differing temporal responses of the colour channels, and the note that the mechanism is not fully understood.", "url": "https://michaelbach.de/ot/col-Benham/", "type": "secondary"}
+    {
+      "text": "Fechner color effect, Wikipedia. — the illusory colours seen from a spinning black-and-white pattern, Benham's top and Charles Benham's marketing, Gustav Fechner's 1838 description, the incompletely understood temporal-response mechanism, and use in vision research and diagnostics.",
+      "url": "https://en.wikipedia.org/wiki/Fechner_color_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Benham's Top, Michael Bach (optical illusions). — the black-and-white disc producing colour, the differing temporal responses of the colour channels, and the note that the mechanism is not fully understood.",
+      "url": "https://michaelbach.de/ot/col-Benham/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Fechner_color_effect",
   "related": [
-    {"slug": "the-opponent-process-theory", "kind": "kindred"},
-    {"slug": "the-afterimage", "kind": "kindred"}
+    {
+      "slug": "the-opponent-process-theory",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-afterimage",
+      "kind": "kindred"
+    }
   ]
 }

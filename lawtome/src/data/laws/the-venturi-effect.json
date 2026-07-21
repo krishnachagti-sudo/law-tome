@@ -2,7 +2,10 @@
   "no": "782",
   "slug": "the-venturi-effect",
   "name": "The Venturi Effect",
-  "aliases": ["Venturi effect", "The Venturi phenomenon"],
+  "aliases": [
+    "Venturi effect",
+    "The Venturi phenomenon"
+  ],
   "statement": "Squeeze a flow through a narrow throat and it speeds up while its pressure drops.",
   "statementAccent": "speeds up while its pressure drops",
   "meaning": "The Venturi effect is the reduction in a fluid's pressure that occurs when the fluid flows through a constricted, or narrowed, section of a pipe. As the passage narrows, the fluid must speed up to get through, and as it speeds up its static pressure falls. So the fastest, narrowest part of the flow is also the lowest in pressure. Named after the Italian physicist Giovanni Battista Venturi, who published on it in 1797, the effect is a direct consequence of two basic principles of fluid dynamics, the conservation of mass and Bernoulli's principle. It is the operating principle of the Venturi tube, a device with a constricted throat used to measure flow rates or to create suction, and it is exploited in carburetors, atomizers, aspirators, and many other devices. The Venturi effect is a cornerstone of practical fluid mechanics, turning the abstract relationship between speed and pressure into a tool for measurement and control.",
@@ -31,11 +34,20 @@
       "text": "The two principles behind the effect: mass conservation forcing faster flow in the constriction, and Bernoulli's principle lowering its pressure."
     }
   ],
-  "whyItMatters": "The Venturi effect is one of the most useful and widely applied results in fluid mechanics, translating the link between flow speed and pressure into practical devices. It underlies flow measurement through Venturi meters and nozzles, which gauge how fast a fluid moves by reading the pressure drop at a constriction, a technique central to engineering and industry. It powers the carburetor, which for over a century mixed fuel and air in engines, and it drives atomizers, spray nozzles, aspirators, and suction pumps that use a fast, low-pressure throat to entrain another fluid. The effect also illuminates a counterintuitive truth, that a faster-moving fluid exerts less pressure, which recurs throughout aerodynamics and hydraulics. As a clear, controllable demonstration of continuity and Bernoulli's principle working together, the Venturi effect connects fundamental physics to everyday technology, from ventilators and gas burners to the flow instruments that keep pipelines and processes running.",
+  "whyItMatters": "The Venturi effect is one of the most useful and widely applied results in fluid mechanics, translating the link between flow speed and pressure into practical devices. It underlies flow measurement through Venturi meters and nozzles, which gauge how fast a fluid moves by reading the pressure drop at a constriction, a technique central to engineering and industry. It powers the carburetor, which for over a century mixed fuel and air in engines, and it drives atomizers, spray nozzles, aspirators, and suction pumps that use a fast, low-pressure throat to entrain another fluid. The effect also illuminates a counterintuitive truth, that a faster-moving fluid exerts less pressure, which recurs throughout aerodynamics and hydraulics.",
   "working": [
-    {"lead": "Narrow the passage", "text": "send the fluid through a constricted section of pipe so the same flow must pass a smaller area."},
-    {"lead": "Speed it up", "text": "let continuity force the fluid to accelerate through the throat to conserve mass."},
-    {"lead": "Drop the pressure", "text": "by Bernoulli's principle, the faster flow at the throat has lower static pressure, usable to measure flow or draw in fluid."}
+    {
+      "lead": "Narrow the passage",
+      "text": "send the fluid through a constricted section of pipe so the same flow must pass a smaller area."
+    },
+    {
+      "lead": "Speed it up",
+      "text": "let continuity force the fluid to accelerate through the throat to conserve mass."
+    },
+    {
+      "lead": "Drop the pressure",
+      "text": "by Bernoulli's principle, the faster flow at the throat has lower static pressure, usable to measure flow or draw in fluid."
+    }
   ],
   "limits": "The simple Venturi relation assumes steady, incompressible, and effectively inviscid flow at speeds well below the speed of sound; as a gas flow approaches sonic speed the incompressible treatment breaks down and choking occurs, and viscosity and turbulence introduce real losses the ideal analysis ignores. The effect describes static pressure along the flow, and applying it carelessly, for instance to explain forces in situations where the assumptions fail, leads to error. The pressure drop depends on the geometry of the constriction and the flow conditions, so accurate flow measurement requires calibration. So the Venturi effect is a robust and practical consequence of continuity and Bernoulli's principle, valid for low-speed incompressible flows and requiring care when compressibility, viscosity, or turbulence become important.",
   "misreadings": "The Venturi effect is not that the fluid loses pressure by rubbing against the narrow walls; the pressure drop comes from the fluid speeding up, as continuity and Bernoulli's principle require. It does not mean the throat carries less fluid, since the same mass flows through every section; it simply flows faster there. And the simple relation holds for low-speed incompressible flow, not for high-speed compressible gas, so treating the drop as friction, or the throat as passing less flow, misreads an effect that trades speed for pressure in a constriction.",
@@ -46,12 +58,26 @@
   "coinedYear": 1797,
   "namedAfter": "Giovanni Battista Venturi",
   "sources": [
-    {"text": "Venturi effect, Wikipedia. — the pressure reduction when fluid speeds up through a constriction, the continuity-and-Bernoulli basis, the Giovanni Battista Venturi attribution and 1797 publication, the Venturi meter and flow measurement, and applications in carburetors, atomizers, and aspirators.", "url": "https://en.wikipedia.org/wiki/Venturi_effect", "type": "secondary"},
-    {"text": "Venturi tube, Encyclopaedia Britannica. — the Venturi tube in which fluid speeds up and pressure drops in the throat, its use in flow measurement and as a pump, and the Bernoulli basis.", "url": "https://www.britannica.com/science/Venturi-tube", "type": "secondary"}
+    {
+      "text": "Venturi effect, Wikipedia. — the pressure reduction when fluid speeds up through a constriction, the continuity-and-Bernoulli basis, the Giovanni Battista Venturi attribution and 1797 publication, the Venturi meter and flow measurement, and applications in carburetors, atomizers, and aspirators.",
+      "url": "https://en.wikipedia.org/wiki/Venturi_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Venturi tube, Encyclopaedia Britannica. — the Venturi tube in which fluid speeds up and pressure drops in the throat, its use in flow measurement and as a pump, and the Bernoulli basis.",
+      "url": "https://www.britannica.com/science/Venturi-tube",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Venturi_effect",
   "related": [
-    {"slug": "bernoullis-principle", "kind": "cause"},
-    {"slug": "cavitation", "kind": "consequence"}
+    {
+      "slug": "bernoullis-principle",
+      "kind": "cause"
+    },
+    {
+      "slug": "cavitation",
+      "kind": "consequence"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "742",
   "slug": "the-shepard-tone",
   "name": "The Shepard Tone",
-  "aliases": ["Shepard scale", "The auditory barber pole"],
+  "aliases": [
+    "Shepard scale",
+    "The auditory barber pole"
+  ],
   "statement": "A tone that seems to rise forever yet never actually gets any higher.",
   "statementAccent": "seems to rise forever yet never actually gets any higher",
   "meaning": "The Shepard tone is an auditory illusion of a tone that seems to continually ascend or descend in pitch, yet ultimately gets no higher or lower. Often called an auditory barber pole, it is the sonic equivalent of an ever-rising staircase like those in Escher's drawings. It is named after the cognitive scientist Roger Shepard, who introduced it in a 1964 paper on the circularity of relative-pitch judgments, and its continuously gliding version, the Shepard-Risset glissando, was developed by the composer Jean-Claude Risset. The illusion is built from tones spaced an octave apart whose loudness is shaped so that the extremes fade away while the middle sounds loudest, making the pitch appear to move endlessly in one direction. It is a classic demonstration in psychoacoustics that pitch perception has more than one dimension, and it has been used in music and film scores to create a sense of unending rise.",
@@ -31,11 +34,20 @@
       "text": "The two-dimensional structure of pitch the illusion exploits: overall height, kept ambiguous, and cyclic chroma, kept clearly moving."
     }
   ],
-  "whyItMatters": "The Shepard tone is a classic and vivid demonstration in psychoacoustics that pitch perception is not a single dimension but at least two: pitch height and the cyclic pitch class, or chroma. By keeping chroma moving while leaving height ambiguous, it produces the compelling illusion of endless ascent or descent, revealing how the auditory system can be systematically fooled and how it constructs pitch from spectral cues. Beyond the laboratory, the illusion has become a widely used tool in music and film, where composers and sound designers deploy Shepard tones and the Shepard-Risset glissando to evoke unending rise, mounting tension, or ceaseless acceleration, from Nolan's film scores to video-game music. As a phenomenon that is at once a scientific insight and an artistic device, the Shepard tone illustrates the deep structure of pitch and the creative uses of perceptual illusion.",
+  "whyItMatters": "The Shepard tone is a classic and vivid demonstration in psychoacoustics that pitch perception is not a single dimension but at least two: pitch height and the cyclic pitch class, or chroma. By keeping chroma moving while leaving height ambiguous, it produces the compelling illusion of endless ascent or descent, revealing how the auditory system can be systematically fooled and how it constructs pitch from spectral cues. Beyond the laboratory, the illusion has become a widely used tool in music and film, where composers and sound designers deploy Shepard tones and the Shepard-Risset glissando to evoke unending rise, mounting tension, or ceaseless acceleration, from Nolan's film scores to video-game music.",
   "working": [
-    {"lead": "Stack octave-spaced tones", "text": "build a sound from sine waves an octave apart, so the components share the same pitch class across the range."},
-    {"lead": "Shape the loudness", "text": "apply a bell-shaped amplitude envelope so the extremes are silent and the middle is loudest, hiding where tones enter and leave."},
-    {"lead": "Glide the set", "text": "move the whole set in pitch, so the chroma seems to rise or fall endlessly while the overall height stays ambiguous."}
+    {
+      "lead": "Stack octave-spaced tones",
+      "text": "build a sound from sine waves an octave apart, so the components share the same pitch class across the range."
+    },
+    {
+      "lead": "Shape the loudness",
+      "text": "apply a bell-shaped amplitude envelope so the extremes are silent and the middle is loudest, hiding where tones enter and leave."
+    },
+    {
+      "lead": "Glide the set",
+      "text": "move the whole set in pitch, so the chroma seems to rise or fall endlessly while the overall height stays ambiguous."
+    }
   ],
   "limits": "The Shepard tone is a constructed auditory illusion, not a natural sound, and it depends on the precise spacing of octaves and the shape of the amplitude envelope; imperfect construction weakens or breaks the effect. The illusion of endless motion holds because the spectrum is cyclic, but the perceived strength varies with the listener and the playback conditions. It demonstrates the two-dimensional structure of pitch for these special stimuli rather than proving that ordinary pitch perception is always so cleanly separable into height and chroma. And while the illusion is compelling, attentive listeners can sometimes notice the cyclic reset. So the Shepard tone is a carefully engineered demonstration of pitch circularity and the multidimensionality of pitch, powerful within its design but not a claim that all auditory perception behaves this way.",
   "misreadings": "The Shepard tone does not actually rise or fall without limit; its pitch is cyclic, so it only seems to move endlessly while its overall height stays the same. It is not a single pure tone but a stack of octave-spaced tones with a fixed loudness envelope, which is what creates the illusion. And it demonstrates the circularity of pitch class for specially built sounds, so treating it as evidence that pitch has no fixed height in general, or that the tone truly ascends forever, mistakes a clever construction for a property of all sound.",
@@ -46,12 +58,26 @@
   "coinedYear": 1964,
   "namedAfter": "Roger Shepard",
   "sources": [
-    {"text": "Shepard tone, Wikipedia. — the illusion of an endlessly rising or falling tone, Shepard's 1964 origin and the Risset glissando, the octave-spaced sine waves and bell-shaped envelope, the pitch-class circularity, and the film and game uses.", "url": "https://en.wikipedia.org/wiki/Shepard_tone", "type": "secondary"},
-    {"text": "Listening to the Shepard-Risset Glissando, Frontiers in Psychology (PMC). — the Shepard-Risset glissando and its perceptual and emotional effects.", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4777920/", "type": "secondary"}
+    {
+      "text": "Shepard tone, Wikipedia. — the illusion of an endlessly rising or falling tone, Shepard's 1964 origin and the Risset glissando, the octave-spaced sine waves and bell-shaped envelope, the pitch-class circularity, and the film and game uses.",
+      "url": "https://en.wikipedia.org/wiki/Shepard_tone",
+      "type": "secondary"
+    },
+    {
+      "text": "Listening to the Shepard-Risset Glissando, Frontiers in Psychology (PMC). — the Shepard-Risset glissando and its perceptual and emotional effects.",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4777920/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Shepard_tone",
   "related": [
-    {"slug": "the-tritone-paradox", "kind": "kindred"},
-    {"slug": "the-motion-aftereffect", "kind": "kindred"}
+    {
+      "slug": "the-tritone-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-motion-aftereffect",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "826",
   "slug": "the-purkinje-effect",
   "name": "The Purkinje Effect",
-  "aliases": ["Purkinje shift", "The Purkinje phenomenon"],
+  "aliases": [
+    "Purkinje shift",
+    "The Purkinje phenomenon"
+  ],
   "statement": "As light fades to dusk, reds darken and blues brighten as the eye shifts to its rods.",
   "statementAccent": "reds darken and blues brighten",
   "meaning": "The Purkinje effect, or Purkinje shift, is the tendency of the eye's peak sensitivity to brightness to move toward the blue end of the spectrum as light levels fall. In bright light, the eye is most sensitive to yellow-green wavelengths and reds appear relatively bright and vivid; but as light dims toward twilight, red objects appear to darken faster while blue and green objects appear relatively brighter, so a red flower and a blue flower that look equally bright in daylight will have the blue one look brighter at dusk. This shift accompanies the transition from cone-based daytime vision to rod-based night vision. It is named after the Czech anatomist and physiologist Jan Evangelista Purkyně, who described it around 1819 after noticing that flowers bright red in afternoon sun looked very dark at dawn. The Purkinje effect explains a range of everyday observations about colour at twilight and underlies the use of red light to preserve night vision.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "The Purkinje effect is a classic and instructive phenomenon in vision science, revealing the two-system structure of human vision and how it changes with light level. By showing that the eye's peak brightness sensitivity shifts toward blue as light dims, it demonstrates the handover from cone-based colour vision in bright light to rod-based vision at night, and it explains a range of everyday experiences of how colours look at twilight, when reds go dark and blues seem to glow. The effect has a well-known practical application: because the rods that provide night vision are insensitive to red light, red illumination is used where dark adaptation must be preserved, in astronomical observatories, submarines, aircraft cockpits, and darkrooms, letting people see by red light without spoiling their night vision. Understanding the Purkinje effect thus connects the physiology of rods and cones to the design of lighting and to the perception of colour under changing conditions. As Jan Purkyně's early-nineteenth-century observation, it remains a foundational demonstration of how vision adapts to light.",
   "working": [
-    {"lead": "Note bright-light sensitivity", "text": "in bright light, cone vision peaks in the yellow-green and reds look vivid."},
-    {"lead": "Dim the light", "text": "as illumination falls, vision shifts from cones toward rods, which peak in the blue-green and are blind to red."},
-    {"lead": "See the shift", "text": "watch reds darken and blues brighten as the eye's peak brightness sensitivity moves toward the blue end of the spectrum."}
+    {
+      "lead": "Note bright-light sensitivity",
+      "text": "in bright light, cone vision peaks in the yellow-green and reds look vivid."
+    },
+    {
+      "lead": "Dim the light",
+      "text": "as illumination falls, vision shifts from cones toward rods, which peak in the blue-green and are blind to red."
+    },
+    {
+      "lead": "See the shift",
+      "text": "watch reds darken and blues brighten as the eye's peak brightness sensitivity moves toward the blue end of the spectrum."
+    }
   ],
-  "limits": "The Purkinje effect describes the shift of brightness sensitivity across the transition from cone to rod vision, so it appears specifically at low, twilight light levels where both systems contribute or vision is becoming rod-dominated, not in full daylight or full darkness. The exact peak sensitivities of rods and cones are approximate and vary somewhat, and the shift depends on the wavelengths and the state of dark adaptation. Because rods do not signal colour, deep scotopic vision is essentially colourless, so the effect concerns relative brightness rather than a change in hue perception at the lowest light. The practical red-light application works because rods are insensitive to red, but red light still allows cone-based reading. So the Purkinje effect robustly explains the blueward shift of brightness sensitivity in dim light, understood as a feature of the cone-to-rod transition with approximate sensitivity values.",
+  "limits": "The Purkinje effect describes the shift of brightness sensitivity across the transition from cone to rod vision, so it appears specifically at low, twilight light levels where both systems contribute or vision is becoming rod-dominated, not in full daylight or full darkness. The exact peak sensitivities of rods and cones are approximate and vary somewhat, and the shift depends on the wavelengths and the state of dark adaptation. Because rods do not signal colour, deep scotopic vision is essentially colourless, so the effect concerns relative brightness rather than a change in hue perception at the lowest light. The practical red-light application works because rods are insensitive to red, but red light still allows cone-based reading.",
   "misreadings": "The Purkinje effect is not that objects change colour at dusk; rods do not signal colour, so it is a shift in relative brightness, with reds darkening and blues brightening. It does not occur in full daylight or total darkness, but during the twilight transition from cone to rod vision. And red light preserves night vision not because it is dim but because the rods are insensitive to red, so treating the effect as a hue change, as happening at all light levels, or red light as merely dim, misreads a blueward shift of brightness sensitivity tied to the cone-to-rod handover.",
   "origin": "Named after the Czech anatomist and physiologist Jan Evangelista Purkyně, who described it around 1819; the shift of peak brightness sensitivity toward blue in dim light as vision moves from cones to rods.",
   "category": "psychology",
@@ -46,12 +58,26 @@
   "coinedYear": 1819,
   "namedAfter": "Jan Evangelista Purkyně",
   "sources": [
-    {"text": "Purkinje effect, Wikipedia. — the shift of peak luminance sensitivity toward blue at low light, the reds-darken observation, the cone (~555 nm) and rod (~507 nm) peaks and rod insensitivity to red, the Purkyně 1819 attribution, and the red-light night-vision application.", "url": "https://en.wikipedia.org/wiki/Purkinje_effect", "type": "secondary"},
-    {"text": "How Does the Human Eye Perceive Light? Photopic and Scotopic Vision, AZoM. — the cone and rod systems, their peak sensitivities, and the transition between photopic and scotopic vision underlying the Purkinje shift.", "url": "https://www.azom.com/article.aspx?ArticleID=14971", "type": "secondary"}
+    {
+      "text": "Purkinje effect, Wikipedia. — the shift of peak luminance sensitivity toward blue at low light, the reds-darken observation, the cone (~555 nm) and rod (~507 nm) peaks and rod insensitivity to red, the Purkyně 1819 attribution, and the red-light night-vision application.",
+      "url": "https://en.wikipedia.org/wiki/Purkinje_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "How Does the Human Eye Perceive Light? Photopic and Scotopic Vision, AZoM. — the cone and rod systems, their peak sensitivities, and the transition between photopic and scotopic vision underlying the Purkinje shift.",
+      "url": "https://www.azom.com/article.aspx?ArticleID=14971",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Purkinje_effect",
   "related": [
-    {"slug": "trichromacy", "kind": "kindred"},
-    {"slug": "color-constancy", "kind": "kindred"}
+    {
+      "slug": "trichromacy",
+      "kind": "kindred"
+    },
+    {
+      "slug": "color-constancy",
+      "kind": "kindred"
+    }
   ]
 }

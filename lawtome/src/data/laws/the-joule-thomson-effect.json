@@ -2,7 +2,10 @@
   "no": "608",
   "slug": "the-joule-thomson-effect",
   "name": "The Joule-Thomson Effect",
-  "aliases": ["Joule-Kelvin effect", "Throttling cooling"],
+  "aliases": [
+    "Joule-Kelvin effect",
+    "Throttling cooling"
+  ],
   "statement": "Let a real gas expand through a valve without adding heat, and most gases cool.",
   "statementAccent": "most gases cool",
   "meaning": "The Joule-Thomson effect is the temperature change a real gas or liquid undergoes when it is forced through a valve or porous plug while thermally insulated, so no heat is exchanged with the surroundings. This throttling happens at constant enthalpy, and for most gases at ordinary temperatures it produces cooling, though a few, notably hydrogen and helium, warm instead. The effect is the basis of gas liquefaction and much of refrigeration, and it is intrinsically a real-gas phenomenon: an ideal gas, with no forces between its molecules, shows no Joule-Thomson temperature change at all. Studied by James Joule and William Thomson in the 1850s, it is a cornerstone of low-temperature physics and cryogenic engineering.",
@@ -31,11 +34,20 @@
       "text": "The industrial process that uses repeated Joule-Thomson expansion, with pre-cooling, to liquefy air and other gases including nitrogen and oxygen."
     }
   ],
-  "whyItMatters": "The Joule-Thomson effect is a cornerstone of cryogenics and industrial gas processing, the physical basis for liquefying air and other gases and for much of refrigeration. The Linde process, built on repeated throttling and cooling, produces the liquid nitrogen, oxygen, and argon on which industry, medicine, and science depend, and pre-cooled versions reach the extreme cold needed to liquefy hydrogen and helium for superconductors and space technology. As a clear manifestation of intermolecular forces and real-gas thermodynamics, the effect also sharpens the distinction between ideal and real gases, making it both practically vital and conceptually instructive.",
+  "whyItMatters": "The Joule-Thomson effect is a cornerstone of cryogenics and industrial gas processing, the physical basis for liquefying air and other gases and for much of refrigeration. The Linde process, built on repeated throttling and cooling, produces the liquid nitrogen, oxygen, and argon on which industry, medicine, and science depend, and pre-cooled versions reach the extreme cold needed to liquefy hydrogen and helium for superconductors and space technology.",
   "working": [
-    {"lead": "Throttle at constant enthalpy", "text": "force a real gas through a valve or plug while insulated so no heat enters, changing its temperature at constant enthalpy."},
-    {"lead": "Check against the inversion temperature", "text": "expect cooling below the gas's inversion temperature and warming above it, which is why hydrogen and helium warm at room temperature."},
-    {"lead": "Chain it to liquefy", "text": "repeat expansion and cooling, as in the Linde cycle, to drive a gas down to liquefaction, pre-cooling those with low inversion temperatures."}
+    {
+      "lead": "Throttle at constant enthalpy",
+      "text": "force a real gas through a valve or plug while insulated so no heat enters, changing its temperature at constant enthalpy."
+    },
+    {
+      "lead": "Check against the inversion temperature",
+      "text": "expect cooling below the gas's inversion temperature and warming above it, which is why hydrogen and helium warm at room temperature."
+    },
+    {
+      "lead": "Chain it to liquefy",
+      "text": "repeat expansion and cooling, as in the Linde cycle, to drive a gas down to liquefaction, pre-cooling those with low inversion temperatures."
+    }
   ],
   "limits": "The effect is a real-gas phenomenon; an ideal gas shows none, so it depends on intermolecular forces and vanishes in their absence. Not all gases cool on throttling: whether a gas cools or warms depends on being below or above its inversion temperature, so hydrogen and helium warm at room temperature. The process is isenthalpic, at constant enthalpy, not constant temperature, and is irreversible. The cooling per expansion is modest, so liquefaction requires repeated cycling and often pre-cooling, and the effect operates within the limits set by each gas's inversion temperature and thermodynamic properties.",
   "misreadings": "The Joule-Thomson effect is not universal cooling; hydrogen and helium warm when throttled at room temperature because their inversion temperatures lie below it. It is a real-gas effect and disappears entirely for an ideal gas, so it cannot be derived from ideal-gas assumptions. And it occurs at constant enthalpy, not constant temperature or in a vacuum-free expansion; it is throttling through a resistance, distinct from the free expansion of a gas into a vacuum, which for an ideal gas also produces no temperature change but by a different argument.",
@@ -45,11 +57,22 @@
   "provenance": "canon",
   "coinedYear": 1852,
   "sources": [
-    {"text": "Joule-Thomson effect, Wikipedia. — the throttling at constant enthalpy, that most gases cool while hydrogen and helium warm, the inversion temperature, the ideal-gas-no-effect point, and the Linde liquefaction application.", "url": "https://en.wikipedia.org/wiki/Joule%E2%80%93Thomson_effect", "type": "secondary"},
-    {"text": "Joule-Thomson effect, Encyclopaedia Britannica. — the cooling on expansion of real gases, its use in liquefying gases, and the Joule and Thomson investigation of 1852.", "url": "https://www.britannica.com/science/Joule-Thomson-effect", "type": "secondary"}
+    {
+      "text": "Joule-Thomson effect, Wikipedia. — the throttling at constant enthalpy, that most gases cool while hydrogen and helium warm, the inversion temperature, the ideal-gas-no-effect point, and the Linde liquefaction application.",
+      "url": "https://en.wikipedia.org/wiki/Joule%E2%80%93Thomson_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Joule-Thomson effect, Encyclopaedia Britannica. — the cooling on expansion of real gases, its use in liquefying gases, and the Joule and Thomson investigation of 1852.",
+      "url": "https://www.britannica.com/science/Joule-Thomson-effect",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Joule%E2%80%93Thomson_effect",
   "related": [
-    {"slug": "the-ideal-gas-law", "kind": "tension"}
+    {
+      "slug": "the-ideal-gas-law",
+      "kind": "tension"
+    }
   ]
 }

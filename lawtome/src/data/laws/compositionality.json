@@ -2,7 +2,10 @@
   "no": "975",
   "slug": "compositionality",
   "name": "Compositionality",
-  "aliases": ["The principle of compositionality", "Frege's Principle"],
+  "aliases": [
+    "The principle of compositionality",
+    "Frege's Principle"
+  ],
   "statement": "The meaning of a whole is built from the meanings of its parts and how they are combined.",
   "statementAccent": "built from the meanings of its parts",
   "meaning": "The principle of compositionality is the principle that the meaning of a complex expression is determined by, is a function of, the meanings of its constituent parts and the syntactic rules by which they are combined. Once the meanings of the words and the mode of their combination are fixed, the meaning of the whole is fixed. A standard statement is that the meaning of a complex expression is determined by its structure and the meanings of its constituents. The principle is often called Frege's Principle, after Gottlob Frege, and he is commonly regarded as its source or inspiration, though it is a matter of serious scholarly debate whether Frege actually held it, and the attribution is genuinely contested; it appears more clearly in later formal semantics, notably the work of Richard Montague. Two considerations are standardly offered in its favor. Productivity, or creativity, is the fact that competent speakers can understand and produce an unbounded number of novel sentences they have never heard before, which is explicable if they know the finite meanings of the words and a finite set of combinatorial rules and compute the meaning of the whole. Systematicity is the fact that the ability to understand certain sentences is intrinsically connected to the ability to understand others built from the same parts, so that anyone who understands one recombination understands the others. Compositionality is a cornerstone of formal, truth-conditional semantics and a central, though not universally accepted, constraint on theories of meaning.",
@@ -31,13 +34,22 @@
       "text": "The formal rendering of compositionality as a homomorphism from syntactic structures to meanings."
     }
   ],
-  "whyItMatters": "Compositionality is a central and widely accepted constraint on theories of meaning and the organizing principle of formal, truth-conditional semantics. Its importance lies in explaining a striking pair of facts about human linguistic competence: that finite creatures, with a finite vocabulary and a finite grammar, can understand and produce an unbounded range of novel sentences, and that their linguistic abilities are systematically connected rather than piecemeal. Compositionality accounts for both by holding that we understand a complex expression by computing its meaning from the meanings of its parts and the way they are combined, and it thereby connects the theory of meaning to the learnability of language and, through the work of Fodor and Pylyshyn, to debates about the structure of thought itself. Formally, the principle underlies Montague grammar and the whole enterprise of assigning meanings to expressions by rules that mirror their syntax, making it foundational to modern semantics and computational approaches to language. The principle also frames important challenges, from idioms and context-sensitivity to opaque belief contexts, whose resolution has driven much work in semantics and pragmatics. As the principle that the meaning of the whole is built from its parts and their combination, compositionality is a keystone of the study of meaning.",
+  "whyItMatters": "Compositionality is a central and widely accepted constraint on theories of meaning and the organizing principle of formal, truth-conditional semantics. Its importance lies in explaining a striking pair of facts about human linguistic competence: that finite creatures, with a finite vocabulary and a finite grammar, can understand and produce an unbounded range of novel sentences, and that their linguistic abilities are systematically connected rather than piecemeal. Compositionality accounts for both by holding that we understand a complex expression by computing its meaning from the meanings of its parts and the way they are combined, and it thereby connects the theory of meaning to the learnability of language and, through the work of Fodor and Pylyshyn, to debates about the structure of thought itself. Formally, the principle underlies Montague grammar and the whole enterprise of assigning meanings to expressions by rules that mirror their syntax, making it foundational to modern semantics and computational approaches to language. The principle also frames important challenges, from idioms and context-sensitivity to opaque belief contexts, whose resolution has driven much work in semantics and pragmatics.",
   "working": [
-    {"lead": "Fix the parts", "text": "assign meanings to the constituent expressions of a complex expression."},
-    {"lead": "Apply the rule", "text": "combine those meanings according to the syntactic rule used to build the whole."},
-    {"lead": "Read off the whole", "text": "take the resulting value as the meaning of the complex expression, determined by parts and structure."}
+    {
+      "lead": "Fix the parts",
+      "text": "assign meanings to the constituent expressions of a complex expression."
+    },
+    {
+      "lead": "Apply the rule",
+      "text": "combine those meanings according to the syntactic rule used to build the whole."
+    },
+    {
+      "lead": "Read off the whole",
+      "text": "take the resulting value as the meaning of the complex expression, determined by parts and structure."
+    }
   ],
-  "limits": "Compositionality is widely held but not universally accepted, and it faces a family of apparent counterexamples that drive much debate. Idioms are the classic case: the meaning of kick the bucket, namely to die, cannot be computed from the meanings of kick and the bucket, so the phrase seems non-compositional; compositionalists typically respond that idioms are stored and learned as single lexical units, with their own meanings, rather than built from parts. Context-sensitivity and indexicals raise the worry that the meaning of a whole depends on features of the context beyond the meanings of its parts. Propositional-attitude and other opaque contexts produce substitution failures, as when someone believes Superman can fly without believing Clark Kent can fly, even though the names co-refer, which seems to violate the substitution of parts with the same meaning. Quotation, conditionals, and metaphor pose further challenges. There is also the historical caveat that the attribution to Frege is genuinely contested, so Frege's Principle should be used with care, and the connection to Fodor and Pylyshyn belongs to the broader cognitive-science literature. So compositionality robustly explains productivity and systematicity, understood as a central but contested principle that must accommodate idioms, context-sensitivity, and opaque contexts.",
+  "limits": "Compositionality is widely held but not universally accepted, and it faces a family of apparent counterexamples that drive much debate. Idioms are the classic case: the meaning of kick the bucket, namely to die, cannot be computed from the meanings of kick and the bucket, so the phrase seems non-compositional; compositionalists typically respond that idioms are stored and learned as single lexical units, with their own meanings, rather than built from parts. Context-sensitivity and indexicals raise the worry that the meaning of a whole depends on features of the context beyond the meanings of its parts. Propositional-attitude and other opaque contexts produce substitution failures, as when someone believes Superman can fly without believing Clark Kent can fly, even though the names co-refer, which seems to violate the substitution of parts with the same meaning. Quotation, conditionals, and metaphor pose further challenges. There is also the historical caveat that the attribution to Frege is genuinely contested, so Frege's Principle should be used with care, and the connection to Fodor and Pylyshyn belongs to the broader cognitive-science literature.",
   "misreadings": "Compositionality does not claim that meaning depends only on the words, ignoring how they are combined; structure, the syntactic mode of combination, is an equal determinant. It is not straightforwardly refuted by idioms, since these can be treated as single stored lexical units rather than as compositional phrases. And Frege's Principle is a conventional label whose attribution to Frege is debated, not an established historical fact, so treating compositionality as depending on words alone, as obviously refuted by idioms, or as securely Frege's own doctrine, misreads the principle.",
   "origin": "The principle, commonly called Frege's Principle though its attribution to Frege is contested and its formal development owed to Montague, that the meaning of a complex expression is determined by the meanings of its parts and the way they are combined.",
   "category": "philosophy",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Compositionality, Stanford Encyclopedia of Philosophy. — the principle that the meaning of a complex expression is determined by its structure and the meanings of its constituents, the contested attribution to Frege, the arguments from productivity and systematicity, Montague's homomorphism, and challenges from idioms, context-sensitivity, and opaque contexts.", "url": "https://plato.stanford.edu/entries/compositionality/", "type": "secondary"},
-    {"text": "Compositionality in Language, Internet Encyclopedia of Philosophy. — the principle of compositionality, its label as Frege's Principle and the debate over the attribution, the link to learnability, and counterexamples such as idioms and belief contexts.", "url": "https://iep.utm.edu/compositionality-in-language/", "type": "secondary"}
+    {
+      "text": "Compositionality, Stanford Encyclopedia of Philosophy. — the principle that the meaning of a complex expression is determined by its structure and the meanings of its constituents, the contested attribution to Frege, the arguments from productivity and systematicity, Montague's homomorphism, and challenges from idioms, context-sensitivity, and opaque contexts.",
+      "url": "https://plato.stanford.edu/entries/compositionality/",
+      "type": "secondary"
+    },
+    {
+      "text": "Compositionality in Language, Internet Encyclopedia of Philosophy. — the principle of compositionality, its label as Frege's Principle and the debate over the attribution, the link to learnability, and counterexamples such as idioms and belief contexts.",
+      "url": "https://iep.utm.edu/compositionality-in-language/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Principle_of_compositionality",
   "related": [
-    {"slug": "sense-and-reference", "kind": "kindred"},
-    {"slug": "the-theory-of-descriptions", "kind": "kindred"}
+    {
+      "slug": "sense-and-reference",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-theory-of-descriptions",
+      "kind": "kindred"
+    }
   ]
 }

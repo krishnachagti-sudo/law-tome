@@ -2,7 +2,11 @@
   "no": "799",
   "slug": "gravity-assist",
   "name": "Gravity Assist",
-  "aliases": ["Gravitational slingshot", "Swing-by", "Planetary flyby"],
+  "aliases": [
+    "Gravitational slingshot",
+    "Swing-by",
+    "Planetary flyby"
+  ],
   "statement": "A spacecraft steals a sliver of a moving planet's motion to change its own speed for free.",
   "statementAccent": "steals a sliver of a moving planet's motion",
   "meaning": "A gravity assist, also called a gravitational slingshot or swing-by, is a spaceflight maneuver that uses the gravity and orbital motion of a planet or other body to change a spacecraft's speed and direction, saving propellant and time. As the spacecraft flies close past a moving planet, it can gain or lose speed relative to the Sun by, in effect, borrowing a tiny amount of the planet's own orbital motion. In the planet's own frame the spacecraft leaves as fast as it arrived, its path merely bent, but because the planet is itself moving around the Sun, the encounter adds to or subtracts from the spacecraft's speed in the Sun's frame. The planet loses an utterly negligible amount of orbital energy in exchange. This nearly free change in velocity has made gravity assists indispensable to deep-space exploration, enabling missions like the Voyagers, Cassini, and MESSENGER to reach destinations that would otherwise demand impossibly large amounts of fuel.",
@@ -31,11 +35,20 @@
       "text": "Passing in front of a planet's motion to lose speed relative to the Sun, used to reach inner destinations such as Mercury."
     }
   ],
-  "whyItMatters": "Gravity assists transformed deep-space exploration by making the outer solar system and difficult destinations reachable without prohibitive amounts of fuel. Because a spacecraft can gain large changes in velocity essentially for free by borrowing a planet's orbital motion, missions can travel far beyond what their onboard propellant alone would allow, and can shed speed to reach the inner planets, which is otherwise very costly. The technique enabled the Voyager probes' grand tour of Jupiter, Saturn, Uranus, and Neptune, Cassini's journey to Saturn via Venus, Earth, and Jupiter, MESSENGER's spiral inward to Mercury, and countless other missions. Chaining multiple flybys lets mission designers craft elaborate trajectories tuned to the positions of the planets, and combining a flyby with an engine burn adds the Oberth effect for still greater efficiency. Gravity assists also illustrate a deep point about reference frames and the conservation of momentum. As the maneuver that opened the solar system to exploration, the gravity assist is one of the most important techniques in astronautics.",
+  "whyItMatters": "Gravity assists transformed deep-space exploration by making the outer solar system and difficult destinations reachable without prohibitive amounts of fuel. Because a spacecraft can gain large changes in velocity essentially for free by borrowing a planet's orbital motion, missions can travel far beyond what their onboard propellant alone would allow, and can shed speed to reach the inner planets, which is otherwise very costly. The technique enabled the Voyager probes' grand tour of Jupiter, Saturn, Uranus, and Neptune, Cassini's journey to Saturn via Venus, Earth, and Jupiter, MESSENGER's spiral inward to Mercury, and countless other missions. Chaining multiple flybys lets mission designers craft elaborate trajectories tuned to the positions of the planets, and combining a flyby with an engine burn adds the Oberth effect for still greater efficiency. Gravity assists also illustrate a deep point about reference frames and the conservation of momentum.",
   "working": [
-    {"lead": "Fly close past a moving planet", "text": "send the spacecraft on a trajectory that passes near a planet as it orbits the Sun."},
-    {"lead": "Bend the path", "text": "let the planet's gravity redirect the craft, which in the planet's frame leaves as fast as it arrived."},
-    {"lead": "Gain or lose in the Sun's frame", "text": "arrange the pass so the redirected velocity adds to or opposes the planet's motion, changing the craft's speed relative to the Sun."}
+    {
+      "lead": "Fly close past a moving planet",
+      "text": "send the spacecraft on a trajectory that passes near a planet as it orbits the Sun."
+    },
+    {
+      "lead": "Bend the path",
+      "text": "let the planet's gravity redirect the craft, which in the planet's frame leaves as fast as it arrived."
+    },
+    {
+      "lead": "Gain or lose in the Sun's frame",
+      "text": "arrange the pass so the redirected velocity adds to or opposes the planet's motion, changing the craft's speed relative to the Sun."
+    }
   ],
   "limits": "A gravity assist changes a spacecraft's velocity relative to the Sun but not relative to the assisting planet, so its benefit comes entirely from the planet's motion and the geometry of the encounter; it cannot add speed in the planet's own frame. Useful assists require a suitable body in the right place at the right time, so mission trajectories must be planned around planetary alignments and launch windows, sometimes waiting years for favourable geometry. The velocity change is bounded by the planet's mass, speed, and how close the flyby can safely pass. The planet does lose orbital energy, but the amount is so tiny as to be undetectable. So gravity assists are a powerful and nearly free way to change a spacecraft's speed and direction, constrained by planetary geometry, timing, and the limits of what a given flyby can provide.",
   "misreadings": "A gravity assist does not speed the spacecraft up in the planet's own frame, where it leaves as fast as it arrived; the gain is only relative to the Sun, borrowed from the planet's orbital motion. It is not free energy that violates conservation, since the planet loses a matching, though imperceptible, amount. And it does not always speed a craft up, since passing in front slows it down to reach inner planets, so treating the assist as gaining speed in every frame, or as energy from nothing, misreads a maneuver that trades a sliver of a planet's motion for a change in the spacecraft's velocity relative to the Sun.",
@@ -46,12 +59,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Gravity assist, Wikipedia. — the use of a planet's gravity and motion to change a spacecraft's speed and direction, the frame-dependent velocity change with conserved momentum, the behind-speeds-up and in-front-slows-down geometry, and mission examples including Voyager, Cassini, and MESSENGER, plus the powered Oberth combination.", "url": "https://en.wikipedia.org/wiki/Gravity_assist", "type": "secondary"},
-    {"text": "Basics of Spaceflight: A Gravity Assist Primer, NASA. — how a gravity assist transfers orbital momentum from a planet to a spacecraft to increase or decrease its speed relative to the Sun.", "url": "https://science.nasa.gov/learn/basics-of-space-flight/primer/", "type": "secondary"}
+    {
+      "text": "Gravity assist, Wikipedia. — the use of a planet's gravity and motion to change a spacecraft's speed and direction, the frame-dependent velocity change with conserved momentum, the behind-speeds-up and in-front-slows-down geometry, and mission examples including Voyager, Cassini, and MESSENGER, plus the powered Oberth combination.",
+      "url": "https://en.wikipedia.org/wiki/Gravity_assist",
+      "type": "secondary"
+    },
+    {
+      "text": "Basics of Spaceflight: A Gravity Assist Primer, NASA. — how a gravity assist transfers orbital momentum from a planet to a spacecraft to increase or decrease its speed relative to the Sun.",
+      "url": "https://science.nasa.gov/learn/basics-of-space-flight/primer/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Gravity_assist",
   "related": [
-    {"slug": "the-oberth-effect", "kind": "kindred"},
-    {"slug": "the-hohmann-transfer-orbit", "kind": "kindred"}
+    {
+      "slug": "the-oberth-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-hohmann-transfer-orbit",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "628",
   "slug": "the-presumption-of-innocence",
   "name": "The Presumption of Innocence",
-  "aliases": ["Innocent until proven guilty", "The presumption of innocence"],
+  "aliases": [
+    "Innocent until proven guilty",
+    "The presumption of innocence"
+  ],
   "statement": "The accused is treated as innocent until the state proves guilt, not the other way around.",
   "statementAccent": "until the state proves guilt",
   "meaning": "The presumption of innocence is the legal principle that a person accused of a crime is considered innocent until proven guilty. The burden of proof rests on the prosecution, which must establish guilt, in criminal cases to the demanding standard of beyond a reasonable doubt, and the accused need not prove their innocence. Often expressed as innocent until proven guilty, and captured by the maxim that the burden of proof lies on the one who asserts, not the one who denies, it is a cornerstone of the fair trial and the rule of law. Enshrined in the Universal Declaration of Human Rights and other instruments, and rooted in Roman and English common law, it protects against wrongful conviction and the abuse of state power.",
@@ -31,11 +34,20 @@
       "text": "The English formulation from Woolmington v DPP in 1935 describing the prosecution's duty to prove guilt as a golden thread running through the criminal law."
     }
   ],
-  "whyItMatters": "The presumption of innocence is a foundational safeguard of criminal justice and the rule of law, protecting individuals against wrongful conviction and against the state's power to accuse. By placing the burden of proof on the prosecution and setting a high standard, it ensures that people are not punished on suspicion or forced to prove their own innocence. It is enshrined in major human-rights instruments, including the Universal Declaration of Human Rights and the European Convention on Human Rights, and it underlies the fairness of trials in democratic legal systems. As a bulwark against arbitrary punishment, it expresses a deep moral judgement that convicting the innocent is worse than acquitting the guilty.",
+  "whyItMatters": "The presumption of innocence is a foundational safeguard of criminal justice and the rule of law, protecting individuals against wrongful conviction and against the state's power to accuse. By placing the burden of proof on the prosecution and setting a high standard, it ensures that people are not punished on suspicion or forced to prove their own innocence. It is enshrined in major human-rights instruments, including the Universal Declaration of Human Rights and the European Convention on Human Rights, and it underlies the fairness of trials in democratic legal systems.",
   "working": [
-    {"lead": "Put the burden on the state", "text": "require the prosecution to prove guilt, to the standard of beyond a reasonable doubt in criminal cases, rather than making the accused prove innocence."},
-    {"lead": "Treat it as procedural", "text": "understand the presumption as a rule about the burden and standard of proof, not a factual assertion that the accused did nothing."},
-    {"lead": "Acquit on doubt", "text": "release the accused whenever the prosecution fails to meet its burden, since unproven guilt must be treated as innocence."}
+    {
+      "lead": "Put the burden on the state",
+      "text": "require the prosecution to prove guilt, to the standard of beyond a reasonable doubt in criminal cases, rather than making the accused prove innocence."
+    },
+    {
+      "lead": "Treat it as procedural",
+      "text": "understand the presumption as a rule about the burden and standard of proof, not a factual assertion that the accused did nothing."
+    },
+    {
+      "lead": "Acquit on doubt",
+      "text": "release the accused whenever the prosecution fails to meet its burden, since unproven guilt must be treated as innocence."
+    }
   ],
   "limits": "The presumption of innocence is a legal and procedural rule about the burden and standard of proof, not a factual claim that the accused actually did nothing, so a presumed-innocent person may in fact be guilty. It does not prevent pre-trial detention, which can be ordered on other grounds like flight risk. It governs criminal proceedings and the state's burden, and does not carry over to civil suits, which use a lower standard, so a person acquitted in a criminal trial can still be found liable in a civil one. Its practical force also depends on courts and officials honouring it, which is not guaranteed everywhere.",
   "misreadings": "The presumption is procedural, about who must prove what, not a statement that the accused is factually innocent, so treating an acquittal as proof of innocence overreads it. It does not bar pre-trial detention, which rests on separate considerations. And it operates in criminal law with its high standard of proof; a criminal acquittal does not preclude civil liability for the same conduct, since civil cases require only a preponderance of the evidence, as the contrast between criminal and civil outcomes in some famous cases shows.",
@@ -44,12 +56,26 @@
   "reliability": "Heuristic",
   "provenance": "canon",
   "sources": [
-    {"text": "Presumption of innocence, Wikipedia. — the definition and burden on the prosecution, the beyond-reasonable-doubt standard, Article 11 of the UDHR, the innocent-until-proven-guilty maxim, and the Roman-law and Blackstone roots.", "url": "https://en.wikipedia.org/wiki/Presumption_of_innocence", "type": "secondary"},
-    {"text": "Presumption of innocence, Legal Information Institute, Cornell Law School. — that the defendant is presumed innocent and the prosecution must prove guilt beyond a reasonable doubt.", "url": "https://www.law.cornell.edu/wex/presumption_of_innocence", "type": "secondary"}
+    {
+      "text": "Presumption of innocence, Wikipedia. — the definition and burden on the prosecution, the beyond-reasonable-doubt standard, Article 11 of the UDHR, the innocent-until-proven-guilty maxim, and the Roman-law and Blackstone roots.",
+      "url": "https://en.wikipedia.org/wiki/Presumption_of_innocence",
+      "type": "secondary"
+    },
+    {
+      "text": "Presumption of innocence, Legal Information Institute, Cornell Law School. — that the defendant is presumed innocent and the prosecution must prove guilt beyond a reasonable doubt.",
+      "url": "https://www.law.cornell.edu/wex/presumption_of_innocence",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Presumption_of_innocence",
   "related": [
-    {"slug": "mens-rea", "kind": "kindred"},
-    {"slug": "double-jeopardy", "kind": "kindred"}
+    {
+      "slug": "mens-rea",
+      "kind": "kindred"
+    },
+    {
+      "slug": "double-jeopardy",
+      "kind": "kindred"
+    }
   ]
 }

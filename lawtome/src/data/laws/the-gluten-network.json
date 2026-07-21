@@ -2,7 +2,10 @@
   "no": "813",
   "slug": "the-gluten-network",
   "name": "The Gluten Network",
-  "aliases": ["Gluten", "Gluten development"],
+  "aliases": [
+    "Gluten",
+    "Gluten development"
+  ],
   "statement": "Wet wheat flour and knead it, and its proteins link into an elastic web that traps gas.",
   "statementAccent": "its proteins link into an elastic web that traps gas",
   "meaning": "Gluten is a group of proteins, mainly glutenin and gliadin, found in wheat and related grains such as barley and rye. When wheat flour is mixed with water and worked, these proteins hydrate and link together into an elastic, cohesive network, the gluten network, that gives dough its stretchiness, strength, and ability to trap gas. This network is what makes bread dough springy and extensible, allowing it to rise and hold its shape and giving bread its chewy, airy crumb. The two proteins play complementary roles: glutenin provides elasticity and strength, springing back when stretched, while gliadin provides extensibility and flow, letting the dough stretch. Together they give dough its distinctive viscoelastic character. Developing the network by kneading, and choosing flour of the right protein content, lets bakers control the texture of the final product, from chewy breads to tender cakes. Gluten is central to baking, though it also triggers celiac disease in susceptible people.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "The gluten network is central to baking and to the texture of a vast range of foods made from wheat. It is what makes bread possible, giving dough the elasticity to be shaped and the ability to trap the gas that makes it rise, and it governs the difference between chewy breads and bagels, flaky pastries, and tender cakes. Understanding gluten lets bakers control texture by choosing flour of the right protein content, adjusting how much they knead, and using fats and other ingredients to strengthen or shorten the network, making it one of the most important practical concepts in baking. Gluten also matters for health: in people with celiac disease, gluten triggers an immune reaction that damages the small intestine, so gluten-free baking must replace the network's functions by other means, a significant challenge in food science. By linking the proteins of wheat to the structure of bread and pastry, the gluten network connects the chemistry of grain to the craft of baking and to important questions of nutrition and health.",
   "working": [
-    {"lead": "Hydrate the flour", "text": "mix wheat flour with water so the glutenin and gliadin proteins absorb water and begin to interact."},
-    {"lead": "Knead to develop", "text": "work the dough to align the proteins and form cross-links, including disulfide bonds, building the elastic network."},
-    {"lead": "Trap the gas", "text": "let the network hold the carbon dioxide from leavening so the dough rises and bread gains its chewy, airy structure."}
+    {
+      "lead": "Hydrate the flour",
+      "text": "mix wheat flour with water so the glutenin and gliadin proteins absorb water and begin to interact."
+    },
+    {
+      "lead": "Knead to develop",
+      "text": "work the dough to align the proteins and form cross-links, including disulfide bonds, building the elastic network."
+    },
+    {
+      "lead": "Trap the gas",
+      "text": "let the network hold the carbon dioxide from leavening so the dough rises and bread gains its chewy, airy structure."
+    }
   ],
-  "limits": "The gluten network forms from wheat and related grains, so it does not develop from grains and flours lacking these proteins, which is why gluten-free baking must find other ways to provide structure. The amount and strength of the network depend on flour protein content, hydration, kneading, and ingredients like fat and sugar that interfere with development, so results vary and require skill to control. Over-developing gluten can make baked goods tough, while under-developing leaves them weak, so more kneading is not always better. Gluten is beneficial in baking but harmful to people with celiac disease and related conditions, for whom it must be avoided entirely. So the gluten network robustly explains dough's elasticity and bread's structure, understood as specific to wheat proteins, dependent on flour and technique, and a health concern for susceptible people.",
+  "limits": "The gluten network forms from wheat and related grains, so it does not develop from grains and flours lacking these proteins, which is why gluten-free baking must find other ways to provide structure. The amount and strength of the network depend on flour protein content, hydration, kneading, and ingredients like fat and sugar that interfere with development, so results vary and require skill to control. Over-developing gluten can make baked goods tough, while under-developing leaves them weak, so more kneading is not always better. Gluten is beneficial in baking but harmful to people with celiac disease and related conditions, for whom it must be avoided entirely.",
   "misreadings": "Gluten is not a single substance but a network formed from the proteins glutenin and gliadin when flour is hydrated and worked, so flour alone or dry flour has no developed gluten. More kneading does not always make better bread, since over-developed gluten turns baked goods tough. And gluten is not harmful to everyone, though it genuinely harms people with celiac disease, so treating gluten as one ingredient, as always improved by more kneading, or as dangerous to all, misreads an elastic protein network that gives wheat dough its structure and matters specifically for the gluten-intolerant.",
   "origin": "A concept in baking and food science: the elastic network formed by wheat's glutenin and gliadin proteins when flour is hydrated and kneaded, giving dough structure and the ability to trap gas.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Gluten, Wikipedia. — gluten as the elastic network of wheat's gliadin and glutenin proteins, the cross-linking by disulfide bonds on hydration and kneading, the trapping of carbon dioxide that makes dough rise, the protein-content effect on chewiness, and the celiac-disease immune response.", "url": "https://en.wikipedia.org/wiki/Gluten", "type": "secondary"},
-    {"text": "Gluten: The Protein Network That Makes Bread Possible, 123 Food Science. — the complementary roles of glutenin (elasticity) and gliadin (extensibility), gluten development by kneading, and the effects of protein content and fat.", "url": "https://123foodscience.com/cooking-science/gluten-development/", "type": "secondary"}
+    {
+      "text": "Gluten, Wikipedia. — gluten as the elastic network of wheat's gliadin and glutenin proteins, the cross-linking by disulfide bonds on hydration and kneading, the trapping of carbon dioxide that makes dough rise, the protein-content effect on chewiness, and the celiac-disease immune response.",
+      "url": "https://en.wikipedia.org/wiki/Gluten",
+      "type": "secondary"
+    },
+    {
+      "text": "Gluten: The Protein Network That Makes Bread Possible, 123 Food Science. — the complementary roles of glutenin (elasticity) and gliadin (extensibility), gluten development by kneading, and the effects of protein content and fat.",
+      "url": "https://123foodscience.com/cooking-science/gluten-development/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Gluten",
   "related": [
-    {"slug": "gelatinization", "kind": "kindred"},
-    {"slug": "fermentation", "kind": "cause"}
+    {
+      "slug": "gelatinization",
+      "kind": "kindred"
+    },
+    {
+      "slug": "fermentation",
+      "kind": "cause"
+    }
   ]
 }

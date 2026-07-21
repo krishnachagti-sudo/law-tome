@@ -2,7 +2,11 @@
   "no": "770",
   "slug": "the-harmonic-series",
   "name": "The Harmonic Series",
-  "aliases": ["The overtone series", "Harmonics", "Partials"],
+  "aliases": [
+    "The overtone series",
+    "Harmonics",
+    "Partials"
+  ],
   "statement": "A vibrating string sounds not one note but a whole ladder of integer-multiple frequencies at once.",
   "statementAccent": "a whole ladder of integer-multiple frequencies at once",
   "meaning": "The harmonic series is the sequence of frequencies that are positive integer multiples of a fundamental frequency: f, 2f, 3f, 4f, 5f, and so on. When a string, a column of air, or another acoustic resonator vibrates, it does not oscillate at a single frequency but at many modes simultaneously, producing the fundamental together with a ladder of higher harmonics, or overtones. The lowest, the fundamental, is counted as the first harmonic and usually determines the perceived pitch; the components above it are the overtones or upper partials. This layered structure is why a single plucked or bowed note is acoustically rich rather than pure. The harmonic series is one of the most important ideas in acoustics and music theory, because the relative strengths of the harmonics give each instrument its characteristic tone, and because the simple whole-number ratios between low harmonics are the natural source of musical intervals and of the consonance on which harmony is built.",
@@ -31,11 +35,20 @@
       "text": "The standing-wave patterns, with their nodes and antinodes, whose frequencies form the integer-multiple harmonics of the fundamental."
     }
   ],
-  "whyItMatters": "The harmonic series is a cornerstone of acoustics and music theory, connecting the physics of vibration to the perception of pitch, timbre, and harmony. It explains why musical tones are rich rather than pure, why different instruments have distinct voices even on the same note, and how the ear reconstructs pitch from a sound's overtone structure. Most profoundly, it grounds the intervals of Western and much other music in nature: the octave, fifth, fourth, and third arise as ratios between low harmonics, and the preference for these consonances, and the tuning of just intonation, follow from the simple whole-number relationships the series provides. The series informs instrument design, from the placement of a bugle's playable notes to the voicing of organ pipes, and it underlies synthesis and audio analysis. As the bridge between how objects vibrate and how music is organized, the harmonic series is one of the deepest and most unifying concepts in the study of sound.",
+  "whyItMatters": "The harmonic series is a cornerstone of acoustics and music theory, connecting the physics of vibration to the perception of pitch, timbre, and harmony. It explains why musical tones are rich rather than pure, why different instruments have distinct voices even on the same note, and how the ear reconstructs pitch from a sound's overtone structure. Most profoundly, it grounds the intervals of Western and much other music in nature: the octave, fifth, fourth, and third arise as ratios between low harmonics, and the preference for these consonances, and the tuning of just intonation, follow from the simple whole-number relationships the series provides. The series informs instrument design, from the placement of a bugle's playable notes to the voicing of organ pipes, and it underlies synthesis and audio analysis.",
   "working": [
-    {"lead": "Vibrate a resonator", "text": "set a string or air column oscillating, whereupon it vibrates in many standing-wave modes at once."},
-    {"lead": "Generate integer multiples", "text": "let those modes produce the fundamental plus overtones at two, three, four times its frequency, the harmonic series."},
-    {"lead": "Shape pitch and timbre", "text": "take pitch from the fundamental and tone colour from the relative strengths of the harmonics, with their ratios yielding musical intervals."}
+    {
+      "lead": "Vibrate a resonator",
+      "text": "set a string or air column oscillating, whereupon it vibrates in many standing-wave modes at once."
+    },
+    {
+      "lead": "Generate integer multiples",
+      "text": "let those modes produce the fundamental plus overtones at two, three, four times its frequency, the harmonic series."
+    },
+    {
+      "lead": "Shape pitch and timbre",
+      "text": "take pitch from the fundamental and tone colour from the relative strengths of the harmonics, with their ratios yielding musical intervals."
+    }
   ],
   "limits": "The harmonic series describes ideal harmonic resonators such as strings and air columns; real instruments deviate, and some sound sources are inharmonic, with partials that are not exact integer multiples, like bells, drums, and stiff piano strings whose upper partials stretch slightly sharp. The perceived pitch usually corresponds to the fundamental, but this is a perceptual inference from the pattern of harmonics rather than a simple readout, as the missing-fundamental phenomenon shows. The mapping of low harmonics onto musical intervals gives the pure ratios of just intonation, which do not exactly match the equal temperament of modern keyboards. And the naming conventions for harmonics, overtones, and partials differ, so care is needed. So the harmonic series is a fundamental and powerful account of pitched sound, applying most cleanly to ideal harmonic resonators and to the natural basis of consonance.",
   "misreadings": "A musical note is not a single pure frequency; it is the fundamental plus a series of overtones sounding together, which is exactly why instruments have distinct timbres. Harmonics and overtones are not interchangeable terms, since harmonics count the fundamental as the first while overtones start above it, so the second harmonic is the first overtone. And not all sounds are perfectly harmonic, since bells and drums have inharmonic partials, so treating a note as one pure tone, or conflating harmonics with overtones, misreads a series whose whole-number structure gives sound its richness and grounds musical intervals.",
@@ -46,12 +59,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Harmonic series (music), Wikipedia. — the sequence of integer-multiple frequencies produced by a vibrating string or air column, the fundamental and overtones, the mapping of low harmonics onto octave, fifth, fourth, and third, the timbre link, and the basis of consonance and just intonation.", "url": "https://en.wikipedia.org/wiki/Harmonic_series_(music)", "type": "secondary"},
-    {"text": "Harmonic, Wikipedia. — the definition of a harmonic as an integer multiple of the fundamental, the harmonic-versus-overtone distinction, and modes of vibration with nodes and antinodes.", "url": "https://en.wikipedia.org/wiki/Harmonic", "type": "secondary"}
+    {
+      "text": "Harmonic series (music), Wikipedia. — the sequence of integer-multiple frequencies produced by a vibrating string or air column, the fundamental and overtones, the mapping of low harmonics onto octave, fifth, fourth, and third, the timbre link, and the basis of consonance and just intonation.",
+      "url": "https://en.wikipedia.org/wiki/Harmonic_series_(music)",
+      "type": "secondary"
+    },
+    {
+      "text": "Harmonic, Wikipedia. — the definition of a harmonic as an integer multiple of the fundamental, the harmonic-versus-overtone distinction, and modes of vibration with nodes and antinodes.",
+      "url": "https://en.wikipedia.org/wiki/Harmonic",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Harmonic_series_(music)",
   "related": [
-    {"slug": "consonance-and-dissonance", "kind": "cause"},
-    {"slug": "just-intonation", "kind": "kindred"}
+    {
+      "slug": "consonance-and-dissonance",
+      "kind": "cause"
+    },
+    {
+      "slug": "just-intonation",
+      "kind": "kindred"
+    }
   ]
 }

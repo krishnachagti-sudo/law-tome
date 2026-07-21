@@ -2,7 +2,10 @@
   "no": "800",
   "slug": "the-roche-lobe",
   "name": "The Roche Lobe",
-  "aliases": ["Roche lobe overflow", "Critical equipotential lobe"],
+  "aliases": [
+    "Roche lobe overflow",
+    "Critical equipotential lobe"
+  ],
   "statement": "Around each star in a pair is a teardrop of space it can hold; overflow it and matter spills to the other.",
   "statementAccent": "overflow it and matter spills to the other",
   "meaning": "The Roche lobe is the region around a star in a binary system within which orbiting material remains gravitationally bound to that star. In a pair of stars, each star has its own teardrop-shaped Roche lobe, and the two lobes meet at a single point between them, the inner Lagrange point L1, forming a figure-eight. Material inside a star's Roche lobe stays with that star, but if the star swells to fill and overflow its lobe, matter can spill through the L1 point onto the companion. This process, called Roche-lobe overflow, is the engine of mass transfer in interacting binary stars and drives some of the most dramatic phenomena in astrophysics, from accretion disks and novae to certain models of Type Ia supernovae. The Roche lobe is named after the French astronomer Édouard Roche, who lent his name to several related concepts. It is a distinct idea from the Roche limit, which concerns tidal breakup, and the Roche sphere, which concerns gravitational influence.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "The Roche lobe is a central concept in the astrophysics of binary stars, because it determines when and how mass flows between two stars, a process that shapes their evolution and powers many of the most energetic phenomena in the sky. Roche-lobe overflow drives the mass transfer behind interacting binaries of all kinds: cataclysmic variables and novae, in which a white dwarf accretes from a companion; X-ray binaries and millisecond pulsars, where matter falls onto a neutron star or black hole; and, in one leading model, the Type Ia supernovae used as cosmic distance markers, where a white dwarf accretes toward the Chandrasekhar limit. The accretion disks that form from transferred matter are laboratories for high-energy astrophysics. By defining the boundary of gravitational binding for each star and the gateway between them at L1, the Roche lobe provides the geometric framework for understanding how binary stars exchange matter, evolve, and sometimes explode, making it indispensable to stellar astrophysics.",
   "working": [
-    {"lead": "Map the equipotentials", "text": "in the rotating frame of the binary, find the surfaces of constant effective potential shaped by both stars' gravity and rotation."},
-    {"lead": "Identify the critical lobe", "text": "locate the figure-eight equipotential that pinches at the inner Lagrange point L1, bounding each star's Roche lobe."},
-    {"lead": "Transfer on overflow", "text": "when a star fills its lobe, let matter spill through L1 to the companion, forming an accretion disk and powering activity."}
+    {
+      "lead": "Map the equipotentials",
+      "text": "in the rotating frame of the binary, find the surfaces of constant effective potential shaped by both stars' gravity and rotation."
+    },
+    {
+      "lead": "Identify the critical lobe",
+      "text": "locate the figure-eight equipotential that pinches at the inner Lagrange point L1, bounding each star's Roche lobe."
+    },
+    {
+      "lead": "Transfer on overflow",
+      "text": "when a star fills its lobe, let matter spill through L1 to the companion, forming an accretion disk and powering activity."
+    }
   ],
-  "limits": "The Roche lobe is defined within an idealized model, typically assuming two point-mass stars on a circular orbit and co-rotation, so real systems with eccentric orbits, non-synchronous rotation, or extended stars require refinements. The onset and rate of Roche-lobe overflow depend on the detailed structure and evolution of the donor star, which are complex. The Type Ia supernova connection is one progenitor channel, the single-degenerate model, and is thought to account for only a minority of such explosions, with white-dwarf mergers and other routes proposed for the rest, so it should not be presented as the sole mechanism. The Roche lobe must also be kept distinct from the Roche limit and Roche sphere, related but different concepts. So the Roche lobe robustly frames mass transfer in binaries, understood within its idealizations and as one factor in complex, sometimes multi-channel, astrophysical outcomes.",
+  "limits": "The Roche lobe is defined within an idealized model, typically assuming two point-mass stars on a circular orbit and co-rotation, so real systems with eccentric orbits, non-synchronous rotation, or extended stars require refinements. The onset and rate of Roche-lobe overflow depend on the detailed structure and evolution of the donor star, which are complex. The Type Ia supernova connection is one progenitor channel, the single-degenerate model, and is thought to account for only a minority of such explosions, with white-dwarf mergers and other routes proposed for the rest, so it should not be presented as the sole mechanism. The Roche lobe must also be kept distinct from the Roche limit and Roche sphere, related but different concepts.",
   "misreadings": "The Roche lobe is not the same as the Roche limit; the lobe bounds gravitational binding in a binary, while the limit concerns tidal breakup of a body, two distinct Roche concepts. Overflow is not a gentle leak but the driver of dramatic mass transfer through L1 that can power novae and supernovae. And the Type Ia supernova route via Roche-lobe overflow is one model, not the only one, so treating the lobe as the Roche limit, or the single-degenerate channel as the sole cause of Type Ia supernovae, misreads a concept that defines the region of binding around each star in a binary.",
   "origin": "Named after the French astronomer Édouard Roche, who lent his name to several concepts; the region bound to each star in a binary, meeting at the inner Lagrange point, central to mass transfer.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": "Édouard Roche",
   "sources": [
-    {"text": "Roche lobe, Wikipedia. — the teardrop region bound to each star in a binary meeting at the inner Lagrange point L1, the critical equipotential in the co-rotating frame, Roche-lobe overflow driving mass transfer, the accretion and interacting-binary consequences, and the Édouard Roche attribution.", "url": "https://en.wikipedia.org/wiki/Roche_lobe", "type": "secondary"},
-    {"text": "Cataclysmic variable star, Wikipedia. — the accretion of matter from a Roche-lobe-filling companion onto a white dwarf, the accretion disk, and the resulting nova and related phenomena.", "url": "https://en.wikipedia.org/wiki/Cataclysmic_variable_star", "type": "secondary"}
+    {
+      "text": "Roche lobe, Wikipedia. — the teardrop region bound to each star in a binary meeting at the inner Lagrange point L1, the critical equipotential in the co-rotating frame, Roche-lobe overflow driving mass transfer, the accretion and interacting-binary consequences, and the Édouard Roche attribution.",
+      "url": "https://en.wikipedia.org/wiki/Roche_lobe",
+      "type": "secondary"
+    },
+    {
+      "text": "Cataclysmic variable star, Wikipedia. — the accretion of matter from a Roche-lobe-filling companion onto a white dwarf, the accretion disk, and the resulting nova and related phenomena.",
+      "url": "https://en.wikipedia.org/wiki/Cataclysmic_variable_star",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Roche_lobe",
   "related": [
-    {"slug": "lagrange-points", "kind": "cause"},
-    {"slug": "the-chandrasekhar-limit", "kind": "consequence"}
+    {
+      "slug": "lagrange-points",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-chandrasekhar-limit",
+      "kind": "consequence"
+    }
   ]
 }

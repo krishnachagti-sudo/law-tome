@@ -2,7 +2,10 @@
   "no": "609",
   "slug": "betzs-law",
   "name": "Betz's Law",
-  "aliases": ["Betz limit", "The Betz coefficient"],
+  "aliases": [
+    "Betz limit",
+    "The Betz coefficient"
+  ],
   "statement": "No wind turbine can extract more than about three-fifths of the energy in the wind passing through it.",
   "statementAccent": "more than about three-fifths of the energy",
   "meaning": "Betz's law states that no open, free-stream wind turbine can capture more than about fifty-nine percent of the kinetic energy in the wind passing through its rotor. The precise maximum, the Betz limit, is sixteen twenty-sevenths of the incoming wind power, roughly zero point five nine three. The reason is intuitive: if a turbine could extract all the wind's energy, the air behind it would stop completely and block the flow, so to keep air moving through, the wind must retain some speed downstream, and only a fraction of its energy can be harvested. Derived by Albert Betz in 1919 from basic fluid mechanics, the law sets the theoretical ceiling on the aerodynamic efficiency of wind turbines and is a foundational result of wind-energy engineering.",
@@ -31,11 +34,20 @@
       "text": "Shrouded or diffuser-augmented turbines that channel extra flow through the rotor and so can exceed the limit relative to the bare rotor area, though not the total device area."
     }
   ],
-  "whyItMatters": "Betz's law sets the fundamental efficiency ceiling for wind power, telling engineers that even a perfect turbine can harvest at most about fifty-nine percent of the wind's kinetic energy. It frames the whole enterprise of turbine design, which aims to approach but can never surpass the limit, and it explains why real turbines, achieving three-quarters or so of it, are already close to the physical best. As a clean consequence of conservation laws applied to an ideal fluid, it also exemplifies how simple physics can impose hard limits on technology, guiding realistic expectations for wind energy in the transition to renewable power.",
+  "whyItMatters": "Betz's law sets the fundamental efficiency ceiling for wind power, telling engineers that even a perfect turbine can harvest at most about fifty-nine percent of the wind's kinetic energy. It frames the whole enterprise of turbine design, which aims to approach but can never surpass the limit, and it explains why real turbines, achieving three-quarters or so of it, are already close to the physical best.",
   "working": [
-    {"lead": "Cap efficiency at the limit", "text": "expect no open-flow turbine to capture more than sixteen twenty-sevenths, about fifty-nine percent, of the wind's kinetic energy."},
-    {"lead": "Aim for the optimal slowing", "text": "design toward slowing the wind to about one-third of its upstream speed, the condition that maximises extracted power."},
-    {"lead": "Judge real turbines against it", "text": "compare a turbine's power coefficient to the Betz limit; reaching three-quarters of it is already excellent, and exceeding it is impossible for a bare rotor."}
+    {
+      "lead": "Cap efficiency at the limit",
+      "text": "expect no open-flow turbine to capture more than sixteen twenty-sevenths, about fifty-nine percent, of the wind's kinetic energy."
+    },
+    {
+      "lead": "Aim for the optimal slowing",
+      "text": "design toward slowing the wind to about one-third of its upstream speed, the condition that maximises extracted power."
+    },
+    {
+      "lead": "Judge real turbines against it",
+      "text": "compare a turbine's power coefficient to the Betz limit; reaching three-quarters of it is already excellent, and exceeding it is impossible for a bare rotor."
+    }
   ],
   "limits": "The limit applies to open, free-stream turbines modelled as an ideal actuator disk; ducted or shrouded turbines that channel extra air can exceed it relative to the bare rotor area, though not relative to the whole device's cross-section. The derivation assumes an ideal, incompressible, inviscid fluid and ignores real losses from blade drag, tip vortices, finite blade count, and wake rotation, so actual turbines fall well below the limit, reaching perhaps three-quarters of it. The law bounds aerodynamic capture of kinetic energy at the rotor, not the overall system efficiency, which further losses in gearboxes and generators reduce.",
   "misreadings": "The fifty-nine percent is of the kinetic energy in the wind passing through the rotor, not of some other total or of all the wind in the sky. The limit is not violated by real turbines, which operate below it; claims of exceeding it usually involve ducted designs measured against the bare rotor area rather than the full device. And Betz's law caps aerodynamic capture at the rotor, not the whole turbine's output, which additional mechanical and electrical losses reduce further, so the limit is a ceiling on one stage, not a promise of near-sixty-percent electricity.",
@@ -46,11 +58,22 @@
   "coinedYear": 1919,
   "namedAfter": "Albert Betz",
   "sources": [
-    {"text": "Betz's law, Wikipedia. — the sixteen-twenty-sevenths maximum, the air-cannot-fully-stop reasoning, the one-third optimal speed, the actuator-disk basis, Betz 1919, and that real turbines fall below the limit.", "url": "https://en.wikipedia.org/wiki/Betz%27s_law", "type": "secondary"},
-    {"text": "Betz Limit and the Power Coefficient of Wind Turbines, Alternative Energy Tutorials. — the Betz limit, the power coefficient, and real-turbine performance below it.", "url": "https://www.alternative-energy-tutorials.com/wind-energy/betz-limit.html", "type": "secondary"}
+    {
+      "text": "Betz's law, Wikipedia. — the sixteen-twenty-sevenths maximum, the air-cannot-fully-stop reasoning, the one-third optimal speed, the actuator-disk basis, Betz 1919, and that real turbines fall below the limit.",
+      "url": "https://en.wikipedia.org/wiki/Betz%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Betz Limit and the Power Coefficient of Wind Turbines, Alternative Energy Tutorials. — the Betz limit, the power coefficient, and real-turbine performance below it.",
+      "url": "https://www.alternative-energy-tutorials.com/wind-energy/betz-limit.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Betz%27s_law",
   "related": [
-    {"slug": "bernoullis-principle", "kind": "kindred"}
+    {
+      "slug": "bernoullis-principle",
+      "kind": "kindred"
+    }
   ]
 }

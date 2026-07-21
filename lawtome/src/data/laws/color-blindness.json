@@ -2,7 +2,10 @@
   "no": "831",
   "slug": "color-blindness",
   "name": "Color Blindness",
-  "aliases": ["Colour blindness", "Color vision deficiency"],
+  "aliases": [
+    "Colour blindness",
+    "Color vision deficiency"
+  ],
   "statement": "When a cone type is missing or altered, some colours become hard to tell apart, most often red and green.",
   "statementAccent": "some colours become hard to tell apart, most often red and green",
   "meaning": "Color blindness, or colour vision deficiency, is a decreased ability to see colour or to distinguish differences between colours, caused by problems with the cone photoreceptor cells in the retina, which may be missing, non-functional, or altered. It is usually an inherited, genetic condition. The most common form by far is red-green colour blindness, which makes reds and greens hard to distinguish. Colour blindness comes in several types according to which cone is affected: red-green deficiencies, from problems with the long-wavelength or medium-wavelength cones, are the most common; blue-yellow deficiencies, from problems with the short-wavelength cones, are much rarer; and total colour blindness, or monochromacy, in which the world is seen only in shades of grey, is very rare. Most affected people have a weakened rather than absent colour sense. Red-green colour blindness is inherited on the X chromosome, so it is much more common in men, affecting roughly eight percent of men of European ancestry and about half a percent of women. It is diagnosed with tests like the Ishihara colour plates, and while there is no cure, some aids can help.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "Color blindness is a common condition, affecting a significant fraction of the population, especially men, and it has real practical consequences, so understanding it matters for design, safety, and inclusion. Because millions of people cannot reliably distinguish certain colours, especially reds and greens, information conveyed by colour alone, in maps, charts, signals, interfaces, and warnings, can be inaccessible to them, which is why accessible design uses redundant cues like labels, patterns, and shapes as well as colour. Colour blindness also illuminates the science of colour vision, since its varieties directly reflect the loss or alteration of specific cone types, confirming the trichromatic basis of human vision and the genetics of the cone pigments. Its X-linked inheritance explains the marked difference in prevalence between men and women and serves as a classic teaching example of sex-linked genetics. Diagnosed with simple tests like the Ishihara plates and, though not curable, sometimes aided by filters, colour blindness connects genetics, physiology, and everyday accessibility, making it an important topic in both vision science and inclusive design.",
   "working": [
-    {"lead": "Alter or remove a cone", "text": "have one or more of the three cone types missing, non-functional, or shifted in sensitivity."},
-    {"lead": "Impoverish colour information", "text": "let the reduced or altered cone signals leave the brain unable to distinguish certain colours, most often red and green."},
-    {"lead": "Inherit the pattern", "text": "for red-green deficiency, pass it on X-linked, making it far more common in men, and diagnose it with tests like the Ishihara plates."}
+    {
+      "lead": "Alter or remove a cone",
+      "text": "have one or more of the three cone types missing, non-functional, or shifted in sensitivity."
+    },
+    {
+      "lead": "Impoverish colour information",
+      "text": "let the reduced or altered cone signals leave the brain unable to distinguish certain colours, most often red and green."
+    },
+    {
+      "lead": "Inherit the pattern",
+      "text": "for red-green deficiency, pass it on X-linked, making it far more common in men, and diagnose it with tests like the Ishihara plates."
+    }
   ],
-  "limits": "Color blindness varies in type and severity, so the common phrase understates its diversity: most affected people have a weakened colour sense, anomalous trichromacy, rather than a complete absence, and only rare monochromacy is true total colour blindness. The prevalence figures, about eight percent of men and half a percent of women, are specific to European or Northern European ancestry populations and differ elsewhere, so they are not universal. Colour blindness is usually inherited but can occasionally be acquired through disease, injury, or ageing. There is no cure, and aids such as special filters or apps may help some people distinguish colours in some situations but do not restore normal colour vision. So colour blindness robustly denotes reduced colour discrimination from cone problems, understood as a varied, mostly inherited, population-dependent condition without a cure.",
+  "limits": "Color blindness varies in type and severity, so the common phrase understates its diversity: most affected people have a weakened colour sense, anomalous trichromacy, rather than a complete absence, and only rare monochromacy is true total colour blindness. The prevalence figures, about eight percent of men and half a percent of women, are specific to European or Northern European ancestry populations and differ elsewhere, so they are not universal. Colour blindness is usually inherited but can occasionally be acquired through disease, injury, or ageing. There is no cure, and aids such as special filters or apps may help some people distinguish colours in some situations but do not restore normal colour vision.",
   "misreadings": "Color blindness rarely means seeing no colour at all; that is the very rare monochromacy, while most affected people simply have difficulty distinguishing certain colours, chiefly red and green. The prevalence figures apply to European-ancestry populations, not everyone, so they are not universal. And filters or glasses do not cure it or restore normal colour vision, though they may help some distinguish colours, so treating colour blindness as total absence of colour, the figures as universal, or aids as a cure, misreads a varied deficiency of colour discrimination caused by cone problems.",
   "origin": "A usually inherited condition of reduced colour discrimination caused by missing or altered cone photoreceptors, with the common red-green form inherited on the X chromosome; a classic case in vision science and genetics.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Color blindness, Wikipedia. — reduced colour discrimination from cone problems, red-green as the most common form, the protan, deutan, tritan, and monochromacy types and the dichromacy-versus-anomalous distinction, the X-linked genetics with ~8% of men and ~0.5% of women affected, the Ishihara test, and no cure.", "url": "https://en.wikipedia.org/wiki/Color_blindness", "type": "secondary"},
-    {"text": "Color blindness, Encyclopaedia Britannica. — colour vision deficiency from cone dysfunction, usually a weakened rather than absent colour sense, and its inheritance and types.", "url": "https://www.britannica.com/science/color-blindness", "type": "secondary"}
+    {
+      "text": "Color blindness, Wikipedia. — reduced colour discrimination from cone problems, red-green as the most common form, the protan, deutan, tritan, and monochromacy types and the dichromacy-versus-anomalous distinction, the X-linked genetics with ~8% of men and ~0.5% of women affected, the Ishihara test, and no cure.",
+      "url": "https://en.wikipedia.org/wiki/Color_blindness",
+      "type": "secondary"
+    },
+    {
+      "text": "Color blindness, Encyclopaedia Britannica. — colour vision deficiency from cone dysfunction, usually a weakened rather than absent colour sense, and its inheritance and types.",
+      "url": "https://www.britannica.com/science/color-blindness",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Color_blindness",
   "related": [
-    {"slug": "trichromacy", "kind": "cause"},
-    {"slug": "the-opponent-process-theory", "kind": "kindred"}
+    {
+      "slug": "trichromacy",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-opponent-process-theory",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "583",
   "slug": "the-collatz-conjecture",
   "name": "The Collatz Conjecture",
-  "aliases": ["The 3n+1 problem", "The hailstone conjecture"],
+  "aliases": [
+    "The 3n+1 problem",
+    "The hailstone conjecture"
+  ],
   "statement": "Halve it if even, triple it and add one if odd, and every number falls back to one.",
   "statementAccent": "every number falls back to one",
   "meaning": "The Collatz conjecture concerns a deceptively simple rule applied to positive whole numbers: if a number is even, halve it; if it is odd, triple it and add one. The conjecture claims that no matter which number you start with, repeating this process always eventually reaches one, after which it cycles one, four, two, one forever. The numbers produced along the way rise and fall erratically, like hailstones tossed in a cloud, before finally crashing down to one. Stated by Lothar Collatz in the 1930s, it is famous for being trivially easy to describe yet completely resistant to proof; despite immense effort and computation, no one has shown that every starting number reaches one, nor found one that does not.",
@@ -31,11 +34,20 @@
       "text": "Running the map backwards from one to build the tree of all numbers that reach it, an approach used in attempts to prove every number is included."
     }
   ],
-  "whyItMatters": "The Collatz conjecture is the emblem of how an elementary-sounding question can hide unfathomable difficulty, a favourite illustration that simplicity of statement is no guide to ease of proof. It has driven work in number theory, dynamical systems, and the theory of computation, and Conway's result that closely related generalised maps are undecidable suggests the problem may brush against the limits of what is provable. As a cultural touchstone it draws amateurs and professionals alike, and it stands as a humbling reminder that vast computational verification, now past two to the sixty-eighth power, can accumulate evidence without ever amounting to a proof.",
+  "whyItMatters": "The Collatz conjecture is the emblem of how an elementary-sounding question can hide unfathomable difficulty, a favourite illustration that simplicity of statement is no guide to ease of proof. It has driven work in number theory, dynamical systems, and the theory of computation, and Conway's result that closely related generalised maps are undecidable suggests the problem may brush against the limits of what is provable.",
   "working": [
-    {"lead": "Apply the parity rule", "text": "halve even numbers and triple-plus-one odd ones, iterating; the conjecture predicts every start eventually reaches the one-four-two cycle."},
-    {"lead": "Distrust the growth", "text": "note the tripling step and repeated halving nearly balance, giving erratic hailstone flights that resist any simple bound on how high they climb."},
-    {"lead": "Respect the gap", "text": "treat computational checks and Tao's almost-all result as strong evidence, not proof; the full claim over every positive integer is still open."}
+    {
+      "lead": "Apply the parity rule",
+      "text": "halve even numbers and triple-plus-one odd ones, iterating; the conjecture predicts every start eventually reaches the one-four-two cycle."
+    },
+    {
+      "lead": "Distrust the growth",
+      "text": "note the tripling step and repeated halving nearly balance, giving erratic hailstone flights that resist any simple bound on how high they climb."
+    },
+    {
+      "lead": "Respect the gap",
+      "text": "treat computational checks and Tao's almost-all result as strong evidence, not proof; the full claim over every positive integer is still open."
+    }
   ],
   "limits": "The conjecture is unproven for all positive integers, and no partial result closes the gap: verification by computer, now confirmed for every starting value up to about two to the sixty-eighth power, checks only finitely many numbers, while infinitely many remain. Tao's 2019 theorem covers almost all numbers in a precise density sense but not literally all, leaving open the possibility of a rare divergent sequence or a second cycle. Conway's work on generalised Collatz maps shows that slight variations of the rule are undecidable, a warning that the original may be genuinely intractable, so the problem's limits are those of current mathematics itself.",
   "misreadings": "Testing enormous ranges of numbers does not prove the conjecture, since it asserts something about all infinitely many positive integers, and a single exception, a sequence that diverges or enters a new cycle, would refute it. Tao's result is not a proof of the full statement; almost all is a density claim that permits a thin set of exceptions. And the rule is specific: it is the triple-and-add-one map on positive integers, not an arbitrary similar process, since closely related generalised maps are known to be undecidable rather than convergent.",
@@ -46,11 +58,22 @@
   "coinedYear": 1937,
   "namedAfter": "Lothar Collatz",
   "sources": [
-    {"text": "Collatz conjecture, Wikipedia. — the 3n+1 rule, the every-number-reaches-one claim, Erdos's remark, Tao's 2019 result, and the computational verification bound.", "url": "https://en.wikipedia.org/wiki/Collatz_conjecture", "type": "secondary"},
-    {"text": "Collatz Problem, Wolfram MathWorld. — the hailstone map, the conjecture's statement, and its status as an unsolved problem.", "url": "https://mathworld.wolfram.com/CollatzProblem.html", "type": "secondary"}
+    {
+      "text": "Collatz conjecture, Wikipedia. — the 3n+1 rule, the every-number-reaches-one claim, Erdos's remark, Tao's 2019 result, and the computational verification bound.",
+      "url": "https://en.wikipedia.org/wiki/Collatz_conjecture",
+      "type": "secondary"
+    },
+    {
+      "text": "Collatz Problem, Wolfram MathWorld. — the hailstone map, the conjecture's statement, and its status as an unsolved problem.",
+      "url": "https://mathworld.wolfram.com/CollatzProblem.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Collatz_conjecture",
   "related": [
-    {"slug": "the-riemann-hypothesis", "kind": "kindred"}
+    {
+      "slug": "the-riemann-hypothesis",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "694",
   "slug": "the-bertrand-paradox",
   "name": "The Bertrand Paradox",
-  "aliases": ["Bertrand's chord paradox", "The random chord paradox"],
+  "aliases": [
+    "Bertrand's chord paradox",
+    "The random chord paradox"
+  ],
   "statement": "Asked the chance a random chord is longer than a triangle's side, three natural methods give three different answers.",
   "statementAccent": "three natural methods give three different answers",
   "meaning": "The Bertrand paradox is a problem in the mathematical theory of probability, introduced by the French mathematician Joseph Bertrand in his 1889 work Calcul des probabilités, to show that the notion of a random chord is not well defined. Inscribe an equilateral triangle in a circle and choose a chord of the circle at random; what is the probability that the chord is longer than a side of the triangle? Bertrand gave three different but equally natural-seeming methods of choosing a random chord, and they yield three different answers: one third, one half, and one quarter. The paradox is not a contradiction in mathematics but a demonstration that the phrase at random has no single meaning until the method of selection is specified. It is a classic caution that a probability problem is ill posed until its sample space and the mechanism generating outcomes are made explicit.",
@@ -31,11 +34,20 @@
       "text": "Edwin Jaynes's argument that scale and translation invariance single out the radial method and the answer one half as uniquely correct, one proposed but debated resolution."
     }
   ],
-  "whyItMatters": "The Bertrand paradox is a foundational illustration in the theory of probability that a well-defined probability requires a well-defined sample space and generating mechanism. By showing that a single innocuous-sounding question admits three different answers depending on how randomness is construed, it exposes the danger of the principle of indifference when applied to infinite possibility spaces, and it forces careful thinking about what at random actually means. The paradox has shaped debates in the foundations and interpretation of probability, including Jaynes's influential attempt to resolve it through invariance principles, and it remains a standard teaching example for the importance of specifying a model before computing a probability. As a vivid case where intuition alone cannot fix the answer, it underlies the modern insistence on explicit probability spaces.",
+  "whyItMatters": "The Bertrand paradox is a foundational illustration in the theory of probability that a well-defined probability requires a well-defined sample space and generating mechanism. By showing that a single innocuous-sounding question admits three different answers depending on how randomness is construed, it exposes the danger of the principle of indifference when applied to infinite possibility spaces, and it forces careful thinking about what at random actually means. The paradox has shaped debates in the foundations and interpretation of probability, including Jaynes's influential attempt to resolve it through invariance principles, and it remains a standard teaching example for the importance of specifying a model before computing a probability.",
   "working": [
-    {"lead": "Pose the chord question", "text": "inscribe an equilateral triangle in a circle and ask the probability a random chord exceeds the triangle's side."},
-    {"lead": "Choose a randomisation", "text": "pick endpoints on the circle, a point along a radius, or a midpoint in the disc, each a natural but different way to be random."},
-    {"lead": "Compare the answers", "text": "obtain one third, one half, or one quarter respectively, and conclude that at random must be specified before the question has an answer."}
+    {
+      "lead": "Pose the chord question",
+      "text": "inscribe an equilateral triangle in a circle and ask the probability a random chord exceeds the triangle's side."
+    },
+    {
+      "lead": "Choose a randomisation",
+      "text": "pick endpoints on the circle, a point along a radius, or a midpoint in the disc, each a natural but different way to be random."
+    },
+    {
+      "lead": "Compare the answers",
+      "text": "obtain one third, one half, or one quarter respectively, and conclude that at random must be specified before the question has an answer."
+    }
   ],
   "limits": "The Bertrand paradox is not a flaw in probability theory but a lesson about specification; once the method of choosing the chord is fixed, the probability is perfectly well defined. Its force is confined to problems where a distribution is left implicit, especially over infinite or continuous spaces, and it does not arise when the sampling mechanism is stated. Jaynes's invariance argument offers a principled way to prefer the radial method and the answer one half, but it is one proposed resolution rather than a universally accepted one, and whether invariance uniquely settles the physical problem is debated. So the paradox teaches that the question was underspecified, not that probability is ambiguous in general, and different real situations may legitimately correspond to different ones of the three methods.",
   "misreadings": "The paradox does not show that probability is inconsistent or that mathematics gives contradictory answers; it shows that the question was incompletely posed, since at random can mean several different things. None of the three answers is wrong for its own method; each is correct given its sampling procedure. And Jaynes's resolution does not prove one half is the answer in all senses; it argues that invariance considerations single out one method for a particular physical framing, which is a reasoned preference rather than a demonstration that the other constructions are illegitimate.",
@@ -46,12 +58,26 @@
   "coinedYear": 1889,
   "namedAfter": "Joseph Bertrand",
   "sources": [
-    {"text": "Bertrand paradox (probability), Wikipedia. — Bertrand's 1889 formulation, the random-chord-versus-triangle-side question, the three methods giving one third, one half, and one quarter, the principle-of-indifference lesson, and Jaynes's invariance resolution.", "url": "https://en.wikipedia.org/wiki/Bertrand_paradox_(probability)", "type": "secondary"},
-    {"text": "Bertrand's Paradox, Random Services (K. Siegrist, University of Alabama in Huntsville). — the three constructions of a random chord and their differing probabilities.", "url": "https://www.randomservices.org/random/buffon/Bertrand.html", "type": "secondary"}
+    {
+      "text": "Bertrand paradox (probability), Wikipedia. — Bertrand's 1889 formulation, the random-chord-versus-triangle-side question, the three methods giving one third, one half, and one quarter, the principle-of-indifference lesson, and Jaynes's invariance resolution.",
+      "url": "https://en.wikipedia.org/wiki/Bertrand_paradox_(probability)",
+      "type": "secondary"
+    },
+    {
+      "text": "Bertrand's Paradox, Random Services (K. Siegrist, University of Alabama in Huntsville). — the three constructions of a random chord and their differing probabilities.",
+      "url": "https://www.randomservices.org/random/buffon/Bertrand.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Bertrand_paradox_(probability)",
   "related": [
-    {"slug": "the-two-envelope-problem", "kind": "kindred"},
-    {"slug": "the-coastline-paradox", "kind": "kindred"}
+    {
+      "slug": "the-two-envelope-problem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-coastline-paradox",
+      "kind": "kindred"
+    }
   ]
 }

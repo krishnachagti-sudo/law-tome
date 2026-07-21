@@ -2,7 +2,10 @@
   "no": "862",
   "slug": "the-meselson-stahl-experiment",
   "name": "The Meselson-Stahl Experiment",
-  "aliases": ["Meselson-Stahl experiment", "The most beautiful experiment in biology"],
+  "aliases": [
+    "Meselson-Stahl experiment",
+    "The most beautiful experiment in biology"
+  ],
   "statement": "By weighing DNA made with heavy then light nitrogen, the experiment showed each new helix keeps one old strand.",
   "statementAccent": "each new helix keeps one old strand",
   "meaning": "The Meselson-Stahl experiment was a molecular-biology experiment carried out by Matthew Meselson and Franklin Stahl at Caltech in 1957 and 1958, which determined how DNA copies itself, confirming that DNA replication is semiconservative. After Watson and Crick proposed the double-helix structure of DNA in 1953, three ways it might replicate were considered: semiconservative, in which each new double helix keeps one of the two original strands and pairs it with a newly made strand; conservative, in which the original helix stays fully intact and an entirely new helix is built alongside it; and dispersive, in which the strands are broken up and old and new pieces are interspersed. To distinguish these, Meselson and Stahl grew bacteria for many generations in a medium containing a heavy isotope of nitrogen so that all their DNA was heavy, then switched them to normal light nitrogen and sampled the DNA after successive generations, separating the molecules by their density. After one generation all the DNA was of intermediate weight, and after two generations half was intermediate and half was light, exactly the pattern predicted by semiconservative replication. The result confirmed the semiconservative model and is often called the most beautiful experiment in biology.",
@@ -31,13 +34,22 @@
       "text": "The technique of separating DNA molecules by their density in a cesium chloride gradient, which made the weights visible as bands."
     }
   ],
-  "whyItMatters": "The Meselson-Stahl experiment is one of the most elegant and important experiments in the history of biology, because it revealed the fundamental mechanism by which genetic information is copied and passed on. When Watson and Crick proposed the double helix in 1953, they suggested that the two strands might separate and each serve as a template for a new partner, but this was only a hypothesis; Meselson and Stahl proved it, showing conclusively that DNA replicates semiconservatively, with each daughter molecule keeping one original strand. This confirmed the deep logic of the double helix, explaining how DNA can be faithfully duplicated so that genetic information is preserved from one generation of cells to the next, and it became a foundation of molecular genetics. The experiment is also celebrated as a model of experimental design, so clean and decisive that it was famously dubbed the most beautiful experiment in biology, a phrase associated with the biologist John Cairns. Its density-gradient method became a widely used tool. As the experiment that showed how DNA copies itself, Meselson-Stahl is a cornerstone of the molecular understanding of heredity.",
+  "whyItMatters": "The Meselson-Stahl experiment is one of the most elegant and important experiments in the history of biology, because it revealed the fundamental mechanism by which genetic information is copied and passed on. When Watson and Crick proposed the double helix in 1953, they suggested that the two strands might separate and each serve as a template for a new partner, but this was only a hypothesis; Meselson and Stahl proved it, showing conclusively that DNA replicates semiconservatively, with each daughter molecule keeping one original strand. This confirmed the deep logic of the double helix, explaining how DNA can be faithfully duplicated so that genetic information is preserved from one generation of cells to the next, and it became a foundation of molecular genetics. The experiment is also celebrated as a model of experimental design, so clean and decisive that it was famously dubbed the most beautiful experiment in biology, a phrase associated with the biologist John Cairns. Its density-gradient method became a widely used tool.",
   "working": [
-    {"lead": "Make DNA heavy", "text": "grow bacteria for many generations in heavy nitrogen so all their DNA is dense."},
-    {"lead": "Switch to light nitrogen", "text": "transfer the bacteria to light nitrogen and sample the DNA after successive rounds of replication."},
-    {"lead": "Read the density bands", "text": "separate the DNA by density and find one intermediate band after one generation, confirming each helix keeps an old strand."}
+    {
+      "lead": "Make DNA heavy",
+      "text": "grow bacteria for many generations in heavy nitrogen so all their DNA is dense."
+    },
+    {
+      "lead": "Switch to light nitrogen",
+      "text": "transfer the bacteria to light nitrogen and sample the DNA after successive rounds of replication."
+    },
+    {
+      "lead": "Read the density bands",
+      "text": "separate the DNA by density and find one intermediate band after one generation, confirming each helix keeps an old strand."
+    }
   ],
-  "limits": "The Meselson-Stahl experiment is remarkably clean, but a few points deserve care. The bench work ran from 1957 into 1958 and was published in 1958, so it is best dated to 1957 to 1958 rather than a single year. It demonstrated the semiconservative mechanism in the bacterium E. coli, and although semiconservative replication is now known to be universal, that generality rested on further work extending the result to other organisms. The experiment showed the overall pattern of strand inheritance but not the detailed molecular machinery of replication, the enzymes and steps of copying, which were worked out separately. The famous description of it as the most beautiful experiment in biology is an evaluative phrase associated with John Cairns and popularized later, not a claim by Meselson or Stahl. So the Meselson-Stahl experiment robustly confirmed semiconservative DNA replication, understood as a decisive demonstration of the pattern of copying whose universality and molecular detail came from further work.",
+  "limits": "The Meselson-Stahl experiment is remarkably clean, but a few points deserve care. The bench work ran from 1957 into 1958 and was published in 1958, so it is best dated to 1957 to 1958 rather than a single year. It demonstrated the semiconservative mechanism in the bacterium E. coli, and although semiconservative replication is now known to be universal, that generality rested on further work extending the result to other organisms. The experiment showed the overall pattern of strand inheritance but not the detailed molecular machinery of replication, the enzymes and steps of copying, which were worked out separately. The famous description of it as the most beautiful experiment in biology is an evaluative phrase associated with John Cairns and popularized later, not a claim by Meselson or Stahl.",
   "misreadings": "The Meselson-Stahl experiment did not reveal the full machinery of DNA replication; it showed the pattern, that each new helix keeps one old strand, not the enzymes and steps that carry copying out. It demonstrated this in bacteria, so its universality rested on further work, though semiconservative replication is now known to be general. And the label most beautiful experiment in biology is a later evaluation, not the experimenters' own claim, so treating the experiment as explaining the whole replication process, as immediately universal, or as self-proclaimed beautiful, misreads a decisive demonstration of semiconservative replication.",
   "origin": "A molecular-biology experiment by Matthew Meselson and Franklin Stahl at Caltech in 1957 to 1958, using heavy and light nitrogen and density-gradient centrifugation to confirm that DNA replicates semiconservatively.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": 1958,
   "namedAfter": "Matthew Meselson and Franklin Stahl",
   "sources": [
-    {"text": "Meselson-Stahl experiment, Wikipedia. — the 1957 to 1958 Caltech experiment testing the semiconservative, conservative, and dispersive models, the heavy nitrogen-15 to light nitrogen-14 switch, cesium chloride density-gradient centrifugation, the intermediate band after one generation confirming semiconservative replication, and the 'most beautiful experiment in biology' description.", "url": "https://en.wikipedia.org/wiki/Meselson%E2%80%93Stahl_experiment", "type": "secondary"},
-    {"text": "The Meselson-Stahl Experiment (1957-1958), Embryo Project Encyclopedia. — the design and results of the experiment and its confirmation of semiconservative DNA replication.", "url": "https://embryo.asu.edu/pages/meselson-stahl-experiment-1957-1958-matthew-meselson-and-stahl", "type": "secondary"}
+    {
+      "text": "Meselson-Stahl experiment, Wikipedia. — the 1957 to 1958 Caltech experiment testing the semiconservative, conservative, and dispersive models, the heavy nitrogen-15 to light nitrogen-14 switch, cesium chloride density-gradient centrifugation, the intermediate band after one generation confirming semiconservative replication, and the 'most beautiful experiment in biology' description.",
+      "url": "https://en.wikipedia.org/wiki/Meselson%E2%80%93Stahl_experiment",
+      "type": "secondary"
+    },
+    {
+      "text": "The Meselson-Stahl Experiment (1957-1958), Embryo Project Encyclopedia. — the design and results of the experiment and its confirmation of semiconservative DNA replication.",
+      "url": "https://embryo.asu.edu/pages/meselson-stahl-experiment-1957-1958-matthew-meselson-and-stahl",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Meselson%E2%80%93Stahl_experiment",
   "related": [
-    {"slug": "the-hershey-chase-experiment", "kind": "kindred"},
-    {"slug": "photo-51", "kind": "kindred"}
+    {
+      "slug": "the-hershey-chase-experiment",
+      "kind": "kindred"
+    },
+    {
+      "slug": "photo-51",
+      "kind": "kindred"
+    }
   ]
 }

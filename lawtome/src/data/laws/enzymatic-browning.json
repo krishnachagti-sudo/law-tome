@@ -2,7 +2,10 @@
   "no": "817",
   "slug": "enzymatic-browning",
   "name": "Enzymatic Browning",
-  "aliases": ["Enzymic browning", "Polyphenol oxidase browning"],
+  "aliases": [
+    "Enzymic browning",
+    "Polyphenol oxidase browning"
+  ],
   "statement": "A cut apple browns not from heat but from an enzyme reacting with air on the exposed flesh.",
   "statementAccent": "an enzyme reacting with air on the exposed flesh",
   "meaning": "Enzymatic browning is the browning of foods, especially cut, sliced, or bruised fruits and vegetables, caused by enzymes rather than by heat. Unlike the Maillard reaction and caramelization, which are non-enzymatic and require high temperatures, enzymatic browning occurs at room temperature and needs no cooking; it happens when the tissue of a fruit or vegetable is damaged and its enzymes meet oxygen from the air. The familiar browning of a cut apple, pear, banana, avocado, or potato is enzymatic browning in action. It is driven by the enzyme polyphenol oxidase, which catalyzes the oxidation of phenolic compounds in the food, ultimately producing brown pigments. While often unwanted, since it spoils the appearance of fresh produce, enzymatic browning is not always bad: the same kind of enzymatic oxidation develops the colour and flavour of black tea, coffee, cocoa, and dried fruits like raisins and prunes. Enzymatic browning can be slowed by acids, by excluding oxygen, or by heat that inactivates the enzyme.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "Enzymatic browning is a phenomenon of major importance in food, both as a problem to prevent and, sometimes, a process to encourage. The unwanted browning of cut and bruised fruits and vegetables is a significant cause of quality loss and waste in the produce industry and the home, so understanding its cause, and how to slow it with acid, oxygen exclusion, heat, or refrigeration, is practically valuable for keeping food looking fresh. At the same time, the same enzymatic oxidation is essential to the making of black tea, coffee, cocoa, and dried fruits, where controlled browning develops prized colours and flavours, so the process is deliberately harnessed as well as fought. Enzymatic browning also cleanly illustrates the distinction between enzyme-driven and heat-driven browning, sharpening the understanding of food chemistry alongside the Maillard reaction and caramelization. By explaining why a cut apple browns and how to stop it, and why tea and coffee gain their colour, enzymatic browning connects everyday kitchen experience to enzyme chemistry.",
   "working": [
-    {"lead": "Damage the tissue", "text": "cut or bruise a fruit or vegetable so its cells break and the enzyme meets its phenolic substrates."},
-    {"lead": "Oxidize the phenols", "text": "let polyphenol oxidase, with oxygen from the air, oxidize the phenols into reactive quinones."},
-    {"lead": "Form brown pigments", "text": "watch the quinones polymerize into brown melanin pigments, or prevent this by removing acid, oxygen, or the active enzyme."}
+    {
+      "lead": "Damage the tissue",
+      "text": "cut or bruise a fruit or vegetable so its cells break and the enzyme meets its phenolic substrates."
+    },
+    {
+      "lead": "Oxidize the phenols",
+      "text": "let polyphenol oxidase, with oxygen from the air, oxidize the phenols into reactive quinones."
+    },
+    {
+      "lead": "Form brown pigments",
+      "text": "watch the quinones polymerize into brown melanin pigments, or prevent this by removing acid, oxygen, or the active enzyme."
+    }
   ],
-  "limits": "Enzymatic browning requires the enzyme, phenolic substrates, and oxygen together, so removing any one, by heat that denatures the enzyme, by acid that lowers pH, by excluding oxygen, or by cold that slows activity, prevents or delays it; this means the browning is controllable but also that the specific foods and conditions determine how fast it occurs. It is distinct from the non-enzymatic Maillard reaction and caramelization, which are heat-driven, so confusing the browning mechanisms misattributes the cause. The rate and extent depend on the produce, its phenol content, the enzyme's activity, temperature, and exposure to air. Whether browning is undesirable or desirable depends entirely on the food. So enzymatic browning robustly explains the room-temperature browning of cut produce and the development of tea and coffee, understood as an enzyme-and-oxygen process distinct from heat browning and controllable by removing its requirements.",
+  "limits": "Enzymatic browning requires the enzyme, phenolic substrates, and oxygen together, so removing any one, by heat that denatures the enzyme, by acid that lowers pH, by excluding oxygen, or by cold that slows activity, prevents or delays it; this means the browning is controllable but also that the specific foods and conditions determine how fast it occurs. It is distinct from the non-enzymatic Maillard reaction and caramelization, which are heat-driven, so confusing the browning mechanisms misattributes the cause. The rate and extent depend on the produce, its phenol content, the enzyme's activity, temperature, and exposure to air. Whether browning is undesirable or desirable depends entirely on the food.",
   "misreadings": "Enzymatic browning is not caused by heat; it is driven by an enzyme meeting oxygen in damaged tissue at room temperature, unlike the heat-driven Maillard reaction and caramelization. It is not always undesirable, since the same process develops the colour and flavour of tea, coffee, cocoa, and dried fruit. And it is not unavoidable, since acid, oxygen exclusion, heat, or cold can stop it, so treating a browning cut apple as heat browning, as always spoilage, or as impossible to prevent, misreads an enzyme-catalyzed oxidation that needs the enzyme, phenols, and oxygen together.",
   "origin": "A phenomenon of food science: the enzyme-catalyzed browning of cut or bruised fruits and vegetables by polyphenol oxidase in the presence of oxygen, distinct from heat-driven browning.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Enzymatic browning, Wikipedia. — the enzyme-driven browning of cut fruits and vegetables at room temperature, distinct from the Maillard reaction and caramelization, the polyphenol oxidase oxidation of phenols to quinones and melanins, and prevention by acid, oxygen exclusion, and heat.", "url": "https://en.wikipedia.org/wiki/Enzymatic_browning", "type": "secondary"},
-    {"text": "Polyphenol oxidase, Wikipedia. — the copper-containing enzyme that catalyzes the oxidation of phenols in enzymatic browning, and its role in the browning of produce and in tea, coffee, and cocoa.", "url": "https://en.wikipedia.org/wiki/Polyphenol_oxidase", "type": "secondary"}
+    {
+      "text": "Enzymatic browning, Wikipedia. — the enzyme-driven browning of cut fruits and vegetables at room temperature, distinct from the Maillard reaction and caramelization, the polyphenol oxidase oxidation of phenols to quinones and melanins, and prevention by acid, oxygen exclusion, and heat.",
+      "url": "https://en.wikipedia.org/wiki/Enzymatic_browning",
+      "type": "secondary"
+    },
+    {
+      "text": "Polyphenol oxidase, Wikipedia. — the copper-containing enzyme that catalyzes the oxidation of phenols in enzymatic browning, and its role in the browning of produce and in tea, coffee, and cocoa.",
+      "url": "https://en.wikipedia.org/wiki/Polyphenol_oxidase",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Enzymatic_browning",
   "related": [
-    {"slug": "the-maillard-reaction", "kind": "tension"},
-    {"slug": "caramelization", "kind": "tension"}
+    {
+      "slug": "the-maillard-reaction",
+      "kind": "tension"
+    },
+    {
+      "slug": "caramelization",
+      "kind": "tension"
+    }
   ]
 }

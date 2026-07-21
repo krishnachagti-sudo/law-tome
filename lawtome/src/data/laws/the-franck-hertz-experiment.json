@@ -2,7 +2,9 @@
   "no": "854",
   "slug": "the-franck-hertz-experiment",
   "name": "The Franck-Hertz Experiment",
-  "aliases": ["Franck-Hertz experiment"],
+  "aliases": [
+    "Franck-Hertz experiment"
+  ],
   "statement": "Electrons driven through mercury vapour lost energy only in fixed jumps, proving atoms absorb energy in discrete quanta.",
   "statementAccent": "proving atoms absorb energy in discrete quanta",
   "meaning": "The Franck-Hertz experiment was a physics experiment conducted by James Franck and Gustav Hertz in 1914 in Germany, which gave direct experimental proof that the energy levels of atoms are quantized. Electrons were accelerated through a tube filled with mercury vapour, and the electric current reaching a collector was measured as the accelerating voltage was increased. Instead of rising smoothly, the current rose and then dropped sharply at regular intervals of about four point nine volts, then rose and dropped again at each further interval. The explanation is that an electron gains kinetic energy as it is accelerated, and as long as its energy is below a certain threshold it bounces off mercury atoms without losing energy, in elastic collisions. But once its energy reaches about four point nine electronvolts, it can give up exactly that amount in an inelastic collision, exciting a mercury atom to a higher energy state, and the current drops. The excited mercury atoms then release the absorbed energy as ultraviolet light at a wavelength of about two hundred fifty-four nanometres. Because the electrons could lose energy only in fixed amounts, the experiment showed that atoms accept energy only in discrete quanta, a direct confirmation of the quantized energy levels of the Bohr model.",
@@ -31,13 +33,22 @@
       "text": "The result as independent, collision-based evidence for the quantized atomic energy levels the Bohr model proposed."
     }
   ],
-  "whyItMatters": "The Franck-Hertz experiment is a landmark of early quantum physics because it gave the first clear, direct experimental confirmation that the energy levels of atoms are quantized, using electron collisions rather than the analysis of light. Where spectroscopy showed that atoms emit and absorb light at discrete wavelengths, the Franck-Hertz experiment demonstrated the underlying quantization mechanically, by revealing that electrons could transfer energy to atoms only in fixed amounts, exciting them by a definite quantum. This provided powerful independent support for Niels Bohr's model of the atom, published just the year before, in which electrons occupy discrete energy levels, and it helped establish the quantum picture of matter. The characteristic staircase of current versus voltage became a classic demonstration of energy quantization, still performed in teaching laboratories today. Franck and Hertz received the 1925 Nobel Prize in Physics for discovering the laws governing the impact of an electron upon an atom. As the experiment that showed atoms absorb energy only in discrete quanta, confirming quantized energy levels by direct measurement, Franck-Hertz is fundamental to the foundations of quantum mechanics.",
+  "whyItMatters": "The Franck-Hertz experiment is a landmark of early quantum physics because it gave the first clear, direct experimental confirmation that the energy levels of atoms are quantized, using electron collisions rather than the analysis of light. Where spectroscopy showed that atoms emit and absorb light at discrete wavelengths, the Franck-Hertz experiment demonstrated the underlying quantization mechanically, by revealing that electrons could transfer energy to atoms only in fixed amounts, exciting them by a definite quantum. This provided powerful independent support for Niels Bohr's model of the atom, published just the year before, in which electrons occupy discrete energy levels, and it helped establish the quantum picture of matter. The characteristic staircase of current versus voltage became a classic demonstration of energy quantization, still performed in teaching laboratories today. Franck and Hertz received the 1925 Nobel Prize in Physics for discovering the laws governing the impact of an electron upon an atom.",
   "working": [
-    {"lead": "Accelerate electrons through vapour", "text": "drive electrons through mercury vapour with an adjustable voltage toward a collector."},
-    {"lead": "Watch the current staircase", "text": "measure the current, which rises then drops sharply each time electrons reach the four point nine volt threshold."},
-    {"lead": "Read off quantization", "text": "conclude that electrons lose energy only in fixed quanta exciting the atoms, showing atomic energy levels are quantized."}
+    {
+      "lead": "Accelerate electrons through vapour",
+      "text": "drive electrons through mercury vapour with an adjustable voltage toward a collector."
+    },
+    {
+      "lead": "Watch the current staircase",
+      "text": "measure the current, which rises then drops sharply each time electrons reach the four point nine volt threshold."
+    },
+    {
+      "lead": "Read off quantization",
+      "text": "conclude that electrons lose energy only in fixed quanta exciting the atoms, showing atomic energy levels are quantized."
+    }
   ],
-  "limits": "The Franck-Hertz experiment cleanly demonstrates energy quantization, but a few points deserve care. The four point nine volt spacing is specific to mercury, corresponding to its first excitation energy; other gases give different characteristic voltages, so the figure is not universal. The observed threshold corresponds to a particular excited state of mercury, and the detailed structure of the current curve can depend on the tube geometry, the vapour pressure, and the retarding voltage, so real curves are not perfectly sharp. The experiment shows that atoms accept energy only in discrete amounts but does not by itself map out the full set of an atom's energy levels, which spectroscopy provides in more detail. Franck and Hertz's Nobel Prize was for the year 1925 though the ceremony took place in 1926. So the Franck-Hertz experiment robustly confirms the quantization of atomic energy levels, understood as a demonstration whose specific voltage depends on the gas and whose curve depends on the apparatus.",
+  "limits": "The Franck-Hertz experiment cleanly demonstrates energy quantization, but a few points deserve care. The four point nine volt spacing is specific to mercury, corresponding to its first excitation energy; other gases give different characteristic voltages, so the figure is not universal. The observed threshold corresponds to a particular excited state of mercury, and the detailed structure of the current curve can depend on the tube geometry, the vapour pressure, and the retarding voltage, so real curves are not perfectly sharp. The experiment shows that atoms accept energy only in discrete amounts but does not by itself map out the full set of an atom's energy levels, which spectroscopy provides in more detail. Franck and Hertz's Nobel Prize was for the year 1925 though the ceremony took place in 1926.",
   "misreadings": "The Franck-Hertz experiment does not give a universal voltage for all atoms; the four point nine volt spacing is specific to mercury's first excitation, and other gases differ. It does not map an atom's complete set of energy levels, but shows that energy is exchanged only in discrete quanta. And the current curve is not perfectly sharp, since it depends on the tube and conditions, so treating the four point nine volts as universal, the experiment as revealing every energy level, or the staircase as ideal, misreads a foundational demonstration that atomic energy is quantized.",
   "origin": "An experiment by James Franck and Gustav Hertz in 1914 in Germany, showing electrons lose energy to mercury atoms only in fixed quanta of about 4.9 electronvolts; the first direct confirmation of quantized atomic energy levels, awarded the 1925 Nobel Prize.",
   "category": "science",
@@ -46,12 +57,26 @@
   "coinedYear": 1914,
   "namedAfter": "James Franck and Gustav Hertz",
   "sources": [
-    {"text": "Franck-Hertz experiment, Wikipedia. — the 1914 experiment by Franck and Hertz accelerating electrons through mercury vapour, the current drops at regular ~4.9 volt intervals, the inelastic collisions exciting mercury and the ~254 nm ultraviolet emission, the confirmation of quantized atomic energy levels and the Bohr model, and the 1925 Nobel Prize.", "url": "https://en.wikipedia.org/wiki/Franck%E2%80%93Hertz_experiment", "type": "secondary"},
-    {"text": "The Nobel Prize in Physics 1925, NobelPrize.org. — the award to James Franck and Gustav Hertz for their discovery of the laws governing the impact of an electron upon an atom.", "url": "https://www.nobelprize.org/prizes/physics/1925/summary/", "type": "secondary"}
+    {
+      "text": "Franck-Hertz experiment, Wikipedia. — the 1914 experiment by Franck and Hertz accelerating electrons through mercury vapour, the current drops at regular ~4.9 volt intervals, the inelastic collisions exciting mercury and the ~254 nm ultraviolet emission, the confirmation of quantized atomic energy levels and the Bohr model, and the 1925 Nobel Prize.",
+      "url": "https://en.wikipedia.org/wiki/Franck%E2%80%93Hertz_experiment",
+      "type": "secondary"
+    },
+    {
+      "text": "The Nobel Prize in Physics 1925, NobelPrize.org. — the award to James Franck and Gustav Hertz for their discovery of the laws governing the impact of an electron upon an atom.",
+      "url": "https://www.nobelprize.org/prizes/physics/1925/summary/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Franck%E2%80%93Hertz_experiment",
   "related": [
-    {"slug": "the-stern-gerlach-experiment", "kind": "kindred"},
-    {"slug": "the-photoelectric-effect", "kind": "kindred"}
+    {
+      "slug": "the-stern-gerlach-experiment",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-photoelectric-effect",
+      "kind": "kindred"
+    }
   ]
 }

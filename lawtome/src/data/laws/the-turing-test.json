@@ -2,7 +2,10 @@
   "no": "921",
   "slug": "the-turing-test",
   "name": "The Turing Test",
-  "aliases": ["The imitation game", "Turing's test"],
+  "aliases": [
+    "The imitation game",
+    "Turing's test"
+  ],
   "statement": "If a machine's typed conversation is indistinguishable from a human's, Turing proposed, it counts as thinking.",
   "statementAccent": "indistinguishable from a human's",
   "meaning": "The Turing test is a proposed criterion for machine intelligence, put forward by the British mathematician and computer scientist Alan Turing in his 1950 paper Computing Machinery and Intelligence, published in the journal Mind. Turing called it the imitation game. In its standard form, a human interrogator communicates through a text-only channel with two unseen parties, one a human and one a machine, and tries to determine which is which. If the interrogator cannot reliably distinguish the machine from the human, because the machine successfully imitates human conversational responses, the machine is said to pass the test. Turing proposed this operational, behavioral criterion to replace the question can machines think, which he considered too ill-defined to answer, with a concrete test based on observable performance. He predicted that in about fifty years, by around the year 2000, machines would be able to play the imitation game so well that an average interrogator would have no more than a seventy percent chance of correct identification after five minutes of questioning, meaning the machine would fool the interrogator about thirty percent of the time. The Turing test became foundational to the philosophy of artificial intelligence as a behaviorist criterion for machine intelligence, and it remains influential and much debated.",
@@ -31,13 +34,22 @@
       "text": "Searle's argument that a system could pass the test by manipulating symbols without genuine understanding."
     }
   ],
-  "whyItMatters": "The Turing test is one of the most influential ideas in the philosophy of artificial intelligence and the study of machine intelligence, because it reframed the question of whether machines can think into a concrete, testable form. By proposing that a machine should be credited with intelligence if it can converse indistinguishably from a human, Alan Turing offered an operational, behaviorist criterion that sidestepped seemingly intractable questions about the nature of thought and gave researchers and philosophers a clear benchmark to argue about. The test has shaped decades of debate about the mind, machine intelligence, and the limits of behavioral criteria, and it remains a cultural touchstone for the idea of a machine passing as human. It also provoked some of the most important arguments in philosophy of mind, above all John Searle's Chinese Room, which challenges the assumption that the right conversational behavior suffices for genuine understanding. As modern large language models produce increasingly human-like text, the Turing test has regained prominence, along with renewed debate about what passing it would really show. As the proposal that indistinguishable performance is the mark of machine intelligence, the Turing test is foundational to thinking about minds and machines.",
+  "whyItMatters": "The Turing test is one of the most influential ideas in the philosophy of artificial intelligence and the study of machine intelligence, because it reframed the question of whether machines can think into a concrete, testable form. By proposing that a machine should be credited with intelligence if it can converse indistinguishably from a human, Alan Turing offered an operational, behaviorist criterion that sidestepped seemingly intractable questions about the nature of thought and gave researchers and philosophers a clear benchmark to argue about. The test has shaped decades of debate about the mind, machine intelligence, and the limits of behavioral criteria, and it remains a cultural touchstone for the idea of a machine passing as human. It also provoked some of the most important arguments in philosophy of mind, above all John Searle's Chinese Room, which challenges the assumption that the right conversational behavior suffices for genuine understanding. As modern large language models produce increasingly human-like text, the Turing test has regained prominence, along with renewed debate about what passing it would really show.",
   "working": [
-    {"lead": "Replace the question", "text": "swap the ill-defined question can machines think for a concrete test of imitation."},
-    {"lead": "Run the imitation game", "text": "have an interrogator text with a hidden human and machine and try to tell them apart."},
-    {"lead": "Judge by indistinguishability", "text": "credit the machine as intelligent if it cannot be reliably distinguished from the human."}
+    {
+      "lead": "Replace the question",
+      "text": "swap the ill-defined question can machines think for a concrete test of imitation."
+    },
+    {
+      "lead": "Run the imitation game",
+      "text": "have an interrogator text with a hidden human and machine and try to tell them apart."
+    },
+    {
+      "lead": "Judge by indistinguishability",
+      "text": "credit the machine as intelligent if it cannot be reliably distinguished from the human."
+    }
   ],
-  "limits": "The Turing test is influential but its adequacy is much criticized. John Searle's Chinese Room argument contends that a system could pass the test by manipulating symbols according to rules, producing the right responses, without any genuine understanding or consciousness, so that indistinguishable behavior is not sufficient for real thinking. Critics also note that the test measures human-like conversation and the ability to deceive rather than intelligence as such, and that it is anthropocentric, recognizing intelligence only in systems that can converse like us. The ELIZA effect shows that people are easily fooled, since even simple programs can seem intelligent to casual observers, which raises doubts about what passing really demonstrates. Claims that particular systems, such as the 2014 chatbot Eugene Goostman, have passed the test are disputed rather than accepted, and with modern large language models the meaning of passing is freshly debated. So the Turing test robustly offers a behavioral benchmark for machine intelligence, understood as a criterion widely challenged for measuring imitation rather than genuine understanding.",
+  "limits": "The Turing test is influential but its adequacy is much criticized. John Searle's Chinese Room argument contends that a system could pass the test by manipulating symbols according to rules, producing the right responses, without any genuine understanding or consciousness, so that indistinguishable behavior is not sufficient for real thinking. Critics also note that the test measures human-like conversation and the ability to deceive rather than intelligence as such, and that it is anthropocentric, recognizing intelligence only in systems that can converse like us. The ELIZA effect shows that people are easily fooled, since even simple programs can seem intelligent to casual observers, which raises doubts about what passing really demonstrates. Claims that particular systems, such as the 2014 chatbot Eugene Goostman, have passed the test are disputed rather than accepted, and with modern large language models the meaning of passing is freshly debated.",
   "misreadings": "Passing the Turing test does not prove a machine genuinely understands or is conscious; Searle's Chinese Room argues that the right behavior can be produced by mere symbol manipulation without understanding. The test measures human-like conversation and deception rather than intelligence in general, and people are easily fooled, so passing may show less than it seems. And reported passes, like Eugene Goostman, are disputed, not settled, so treating a pass as proving real understanding, as measuring intelligence directly, or as an uncontested achievement, misreads Turing's behavioral criterion.",
   "origin": "A criterion for machine intelligence proposed by Alan Turing in his 1950 paper Computing Machinery and Intelligence as the imitation game, judging a machine by whether its conversation is indistinguishable from a human's.",
   "category": "philosophy",
@@ -46,12 +58,26 @@
   "coinedYear": 1950,
   "namedAfter": "Alan Turing",
   "sources": [
-    {"text": "The Turing Test, Stanford Encyclopedia of Philosophy. — Turing's 1950 imitation game, the text-only interrogation of a hidden human and machine, the behavioral criterion replacing can machines think, and the criticisms including the Chinese Room, anthropocentrism, and the ELIZA effect.", "url": "https://plato.stanford.edu/entries/turing-test/", "type": "secondary"},
-    {"text": "Computing Machinery and Intelligence, Wikipedia. — Turing's 1950 paper, the imitation game, the ~30 percent by 2000 prediction, and the significance and objections to the test.", "url": "https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence", "type": "secondary"}
+    {
+      "text": "The Turing Test, Stanford Encyclopedia of Philosophy. — Turing's 1950 imitation game, the text-only interrogation of a hidden human and machine, the behavioral criterion replacing can machines think, and the criticisms including the Chinese Room, anthropocentrism, and the ELIZA effect.",
+      "url": "https://plato.stanford.edu/entries/turing-test/",
+      "type": "secondary"
+    },
+    {
+      "text": "Computing Machinery and Intelligence, Wikipedia. — Turing's 1950 paper, the imitation game, the ~30 percent by 2000 prediction, and the significance and objections to the test.",
+      "url": "https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Turing_test",
   "related": [
-    {"slug": "functionalism", "kind": "kindred"},
-    {"slug": "the-chinese-room", "kind": "tension"}
+    {
+      "slug": "functionalism",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-chinese-room",
+      "kind": "tension"
+    }
   ]
 }

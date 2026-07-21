@@ -2,7 +2,11 @@
   "no": "787",
   "slug": "the-marangoni-effect",
   "name": "The Marangoni Effect",
-  "aliases": ["Gibbs-Marangoni effect", "Marangoni convection", "Tears of wine"],
+  "aliases": [
+    "Gibbs-Marangoni effect",
+    "Marangoni convection",
+    "Tears of wine"
+  ],
   "statement": "A difference in surface tension drives liquid to flow from the slack surface toward the taut one.",
   "statementAccent": "flow from the slack surface toward the taut one",
   "meaning": "The Marangoni effect is the flow of liquid along the interface between two fluids that is driven by a gradient in surface tension. Because surface tension acts like a tension in the surface, a region of higher surface tension pulls harder on the surface than a region of lower surface tension, so liquid is drawn from areas of low surface tension toward areas of high surface tension. The surface-tension gradient can be produced by a difference in temperature, since surface tension varies with temperature, or by a difference in the concentration of a solute or surfactant. Named after the Italian physicist Carlo Marangoni, who studied it for his doctoral work published in 1865, and also called the Gibbs-Marangoni effect after Josiah Willard Gibbs's theoretical treatment, the effect has a famous everyday manifestation in the tears of wine that climb and fall on the inside of a wine glass. It is important in thin films, drying, welding, crystal growth, and many other processes where surface-tension differences set liquids in motion.",
@@ -31,11 +35,20 @@
       "text": "Flow driven by a concentration gradient of a surfactant or solute, as in the tears of wine and many surfactant phenomena."
     }
   ],
-  "whyItMatters": "The Marangoni effect is a fundamental phenomenon of interfaces with wide scientific and industrial importance. It governs the behaviour of thin liquid films and foams, helping stabilize soap films and bubbles by pulling liquid back into thinned spots, and it shapes the drying of coatings, paints, and inks, where surface-tension gradients drive flows that affect uniformity. In materials processing it drives Marangoni convection in welding pools, crystal growth, and the melting of metals, influencing the quality of the result, and it is used in techniques such as the Marangoni drying of silicon wafers. It also underlies the self-assembly of particles during evaporation and appears throughout microfluidics and surface science. Beyond the laboratory, it explains the charming tears of wine and countless other surface flows. As the link between a surface-tension gradient and fluid motion, the Marangoni effect is essential wherever interfaces, temperature differences, and surfactants interact, making it a cornerstone of the physics of surfaces and thin films.",
+  "whyItMatters": "The Marangoni effect is a fundamental phenomenon of interfaces with wide scientific and industrial importance. It governs the behaviour of thin liquid films and foams, helping stabilize soap films and bubbles by pulling liquid back into thinned spots, and it shapes the drying of coatings, paints, and inks, where surface-tension gradients drive flows that affect uniformity. In materials processing it drives Marangoni convection in welding pools, crystal growth, and the melting of metals, influencing the quality of the result, and it is used in techniques such as the Marangoni drying of silicon wafers. It also underlies the self-assembly of particles during evaporation and appears throughout microfluidics and surface science. Beyond the laboratory, it explains the charming tears of wine and countless other surface flows.",
   "working": [
-    {"lead": "Create a surface-tension gradient", "text": "establish a difference in surface tension along an interface, via a temperature or concentration difference."},
-    {"lead": "Pull toward high tension", "text": "let the more tightly stretched, higher-tension region draw surface liquid toward itself, dragging the underlying fluid."},
-    {"lead": "Drive the flow", "text": "watch liquid move from low to high surface tension, as in the climbing film that forms tears of wine."}
+    {
+      "lead": "Create a surface-tension gradient",
+      "text": "establish a difference in surface tension along an interface, via a temperature or concentration difference."
+    },
+    {
+      "lead": "Pull toward high tension",
+      "text": "let the more tightly stretched, higher-tension region draw surface liquid toward itself, dragging the underlying fluid."
+    },
+    {
+      "lead": "Drive the flow",
+      "text": "watch liquid move from low to high surface tension, as in the climbing film that forms tears of wine."
+    }
   ],
   "limits": "The Marangoni effect requires a genuine surface-tension gradient, so it acts only where temperature or composition varies along an interface; a uniform surface produces no Marangoni flow. Its strength competes with other forces, gravity, viscosity, and capillary pressure, so whether it dominates depends on scale and conditions, and it is often most important at small scales or low gravity. The tears-of-wine phenomenon, while a classic illustration, is now understood to involve additional effects such as evaporative cooling and film dynamics beyond the basic surface-tension-gradient picture. Predicting Marangoni flows in real systems can be complex because the gradients evolve as heat and mass transfer proceed. So the Marangoni effect is a robust and important consequence of surface-tension gradients, best understood as one of several competing interfacial forces whose dominance depends on the specific scale and conditions.",
   "misreadings": "The Marangoni flow runs from low surface tension to high, toward the more tightly stretched region, not the other way, so the taut surface pulls liquid to itself. It is not caused by surface tension alone but by a gradient in it, so a uniform surface drives no flow. And the tears of wine are not simply gravity or evaporation acting alone but a surface-tension gradient from faster alcohol evaporation, so treating the flow as running toward low tension, or the tears as mere dripping, misreads a phenomenon driven by differences in surface tension along an interface.",
@@ -46,12 +59,26 @@
   "coinedYear": 1865,
   "namedAfter": "Carlo Marangoni",
   "sources": [
-    {"text": "Marangoni effect, Wikipedia. — the flow along an interface from lower to higher surface tension, the temperature and concentration causes, the Carlo Marangoni and Gibbs attributions, and applications in thin films, welding, crystal growth, and wafer drying.", "url": "https://en.wikipedia.org/wiki/Marangoni_effect", "type": "secondary"},
-    {"text": "Tears of wine, Wikipedia. — the tears-of-wine mechanism in which faster alcohol evaporation raises the surface tension of a climbing film, drawing up liquid that collects and falls, with James Thomson's earlier explanation.", "url": "https://en.wikipedia.org/wiki/Tears_of_wine", "type": "secondary"}
+    {
+      "text": "Marangoni effect, Wikipedia. — the flow along an interface from lower to higher surface tension, the temperature and concentration causes, the Carlo Marangoni and Gibbs attributions, and applications in thin films, welding, crystal growth, and wafer drying.",
+      "url": "https://en.wikipedia.org/wiki/Marangoni_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Tears of wine, Wikipedia. — the tears-of-wine mechanism in which faster alcohol evaporation raises the surface tension of a climbing film, drawing up liquid that collects and falls, with James Thomson's earlier explanation.",
+      "url": "https://en.wikipedia.org/wiki/Tears_of_wine",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Marangoni_effect",
   "related": [
-    {"slug": "surface-tension", "kind": "cause"},
-    {"slug": "capillary-action", "kind": "kindred"}
+    {
+      "slug": "surface-tension",
+      "kind": "cause"
+    },
+    {
+      "slug": "capillary-action",
+      "kind": "kindred"
+    }
   ]
 }

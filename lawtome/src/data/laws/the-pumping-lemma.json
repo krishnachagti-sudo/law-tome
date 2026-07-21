@@ -2,7 +2,10 @@
   "no": "565",
   "slug": "the-pumping-lemma",
   "name": "The Pumping Lemma",
-  "aliases": ["The pumping lemma for regular languages", "The Bar-Hillel lemma"],
+  "aliases": [
+    "The pumping lemma for regular languages",
+    "The Bar-Hillel lemma"
+  ],
   "statement": "Every long enough string in a regular language has a middle part you can repeat and still stay in the language.",
   "statementAccent": "a middle part you can repeat",
   "meaning": "The pumping lemma is a property that every regular language must satisfy, used chiefly to prove that a given language is not regular. It says that if a language is regular, there is a pumping length such that any string in the language at least that long can be split into three parts, x, y, and z, where the middle part y is non-empty, x and y together fit within the pumping length, and the string with y repeated any number of times, or removed, is still in the language. The middle can be pumped up or down without leaving the language. Because non-regular languages violate this, the lemma is a workhorse for proving non-regularity.",
@@ -31,11 +34,20 @@
       "text": "The Myhill-Nerode theorem, which unlike the pumping lemma gives a necessary and sufficient characterisation of regular languages, so it can prove regularity as well as its absence."
     }
   ],
-  "whyItMatters": "The pumping lemma is a fundamental tool in the theory of formal languages and automata, giving a clean, mechanical way to prove that languages such as balanced brackets or equal-count strings lie beyond the reach of regular expressions and finite automata. It sharpens the boundary between the regular languages and the richer classes above them, and its context-free analogue does the same one level up. As a staple of every course on computation, it teaches the discipline of adversarial proof, choosing a witness string and defeating every possible way an opponent might split it.",
+  "whyItMatters": "The pumping lemma is a fundamental tool in the theory of formal languages and automata, giving a clean, mechanical way to prove that languages such as balanced brackets or equal-count strings lie beyond the reach of regular expressions and finite automata. It sharpens the boundary between the regular languages and the richer classes above them, and its context-free analogue does the same one level up.",
   "working": [
-    {"lead": "Assume and pump", "text": "to prove a language non-regular, assume it is regular, take the pumping length, pick a long string in it, and pump to reach a contradiction."},
-    {"lead": "Choose the string well", "text": "select a witness whose structure forces the pumpable part into a region where repeating it breaks membership."},
-    {"lead": "Handle every split", "text": "since the adversary chooses the decomposition, ensure the contradiction holds for every valid way of splitting the string."}
+    {
+      "lead": "Assume and pump",
+      "text": "to prove a language non-regular, assume it is regular, take the pumping length, pick a long string in it, and pump to reach a contradiction."
+    },
+    {
+      "lead": "Choose the string well",
+      "text": "select a witness whose structure forces the pumpable part into a region where repeating it breaks membership."
+    },
+    {
+      "lead": "Handle every split",
+      "text": "since the adversary chooses the decomposition, ensure the contradiction holds for every valid way of splitting the string."
+    }
   ],
   "limits": "The pumping lemma is a necessary but not sufficient condition for regularity: some non-regular languages also satisfy the pumping property, so passing the lemma does not prove a language is regular, only failing it proves non-regularity. A definitive characterisation, both necessary and sufficient, is given instead by the Myhill-Nerode theorem. In applying the lemma, the prover chooses the witness string but the decomposition into x, y, and z is adversarial, so the argument must succeed against every valid split, which is where careless proofs go wrong.",
   "misreadings": "The pumping lemma proves that a language is not regular; it never proves that a language is regular, since satisfying it is not enough. The condition is necessary but not sufficient, so a non-regular language can pass the test, and the Myhill-Nerode theorem is needed for a full characterisation. The prover selects the string, but the split into three parts is chosen adversarially, so the proof must handle every valid decomposition, not just a convenient one.",
@@ -45,11 +57,22 @@
   "provenance": "canon",
   "coinedYear": 1959,
   "sources": [
-    {"text": "Pumping lemma for regular languages, Wikipedia. — the three conditions, the non-regularity proof method, and the necessary-not-sufficient point.", "url": "https://en.wikipedia.org/wiki/Pumping_lemma_for_regular_languages", "type": "secondary"},
-    {"text": "Pumping lemma for context-free languages, Wikipedia. — the five-part decomposition and the two-part pumping for context-free languages.", "url": "https://en.wikipedia.org/wiki/Pumping_lemma_for_context-free_languages", "type": "secondary"}
+    {
+      "text": "Pumping lemma for regular languages, Wikipedia. — the three conditions, the non-regularity proof method, and the necessary-not-sufficient point.",
+      "url": "https://en.wikipedia.org/wiki/Pumping_lemma_for_regular_languages",
+      "type": "secondary"
+    },
+    {
+      "text": "Pumping lemma for context-free languages, Wikipedia. — the five-part decomposition and the two-part pumping for context-free languages.",
+      "url": "https://en.wikipedia.org/wiki/Pumping_lemma_for_context-free_languages",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Pumping_lemma_for_regular_languages",
   "related": [
-    {"slug": "the-turing-machine", "kind": "kindred"}
+    {
+      "slug": "the-turing-machine",
+      "kind": "kindred"
+    }
   ]
 }

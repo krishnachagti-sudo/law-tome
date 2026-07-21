@@ -2,7 +2,10 @@
   "no": "578",
   "slug": "the-intermediate-value-theorem",
   "name": "The Intermediate Value Theorem",
-  "aliases": ["IVT", "Bolzano's theorem"],
+  "aliases": [
+    "IVT",
+    "Bolzano's theorem"
+  ],
   "statement": "A continuous function that takes two values also takes every value in between.",
   "statementAccent": "also takes every value in between",
   "meaning": "The intermediate value theorem states that if a continuous function on a closed interval takes one value at the left endpoint and another at the right, then it takes every value between those two somewhere inside the interval. A continuous curve cannot jump from below a level to above it without crossing that level. The most-used special case, Bolzano's theorem, says that a continuous function which is negative at one end and positive at the other must be zero somewhere in between, guaranteeing a root. It is one of the first deep consequences of continuity, capturing the intuitive idea that an unbroken curve cannot skip values, and it depends on the completeness of the real number line.",
@@ -31,11 +34,20 @@
       "text": "The generalisation that a continuous function maps connected sets to connected sets, of which the interval version is the one-dimensional instance."
     }
   ],
-  "whyItMatters": "The intermediate value theorem is a foundational result of real analysis and a first payoff of making continuity precise, and it does practical work by guaranteeing solutions to equations without solving them. It justifies numerical root-finding methods like bisection, supplies existence proofs across mathematics, from fixed-point theorems to the fundamental theorem of algebra, and models countless real situations where a quantity passing between two values must pass through everything in between. As a teaching example it shows how an intuitive claim about unbroken curves becomes a rigorous theorem resting on the completeness of the real numbers.",
+  "whyItMatters": "The intermediate value theorem is a foundational result of real analysis and a first payoff of making continuity precise, and it does practical work by guaranteeing solutions to equations without solving them. It justifies numerical root-finding methods like bisection, supplies existence proofs across mathematics, from fixed-point theorems to the fundamental theorem of algebra, and models countless real situations where a quantity passing between two values must pass through everything in between.",
   "working": [
-    {"lead": "Prove a root exists", "text": "find points where a continuous function has opposite signs; the theorem then guarantees a zero between them, even with no formula for it."},
-    {"lead": "Bracket and bisect", "text": "use the sign-change guarantee to trap a root in an interval and repeatedly halve it, the bisection method built on the theorem."},
-    {"lead": "Lean on continuity and completeness", "text": "remember the result needs both an unbroken function and a gapless real line, so it fails for discontinuous functions or over the rationals."}
+    {
+      "lead": "Prove a root exists",
+      "text": "find points where a continuous function has opposite signs; the theorem then guarantees a zero between them, even with no formula for it."
+    },
+    {
+      "lead": "Bracket and bisect",
+      "text": "use the sign-change guarantee to trap a root in an interval and repeatedly halve it, the bisection method built on the theorem."
+    },
+    {
+      "lead": "Lean on continuity and completeness",
+      "text": "remember the result needs both an unbroken function and a gapless real line, so it fails for discontinuous functions or over the rationals."
+    }
   ],
   "limits": "The theorem requires the function to be continuous on the whole interval; a single jump discontinuity can let it skip values, so continuity is essential. It also depends on the completeness of the real numbers and fails over the rationals, where a continuous function can change sign without ever hitting zero, since the crossing point may be irrational. And it is purely an existence statement: it guarantees that some point achieves the intermediate value but says nothing about where it is, how many such points there are, or how to compute one, only that at least one exists.",
   "misreadings": "The theorem guarantees a value is attained but does not locate it or count how often, so it is existence without construction. It needs genuine continuity: for a function with a jump, the conclusion can fail, so it is not enough for the function merely to be defined at every point. And it is specific to the real numbers' completeness; over the rationals a continuous function can pass from negative to positive without ever equalling zero, because the root it would need is irrational and simply missing from the rationals.",
@@ -45,12 +57,26 @@
   "provenance": "canon",
   "coinedYear": 1817,
   "sources": [
-    {"text": "Intermediate value theorem, Wikipedia. — the statement, Bolzano's 1817 sign-change form, the completeness dependence, and the connectedness generalisation.", "url": "https://en.wikipedia.org/wiki/Intermediate_value_theorem", "type": "secondary"},
-    {"text": "Intermediate Value Theorem, Wolfram MathWorld. — the continuous-function statement and its role in guaranteeing roots.", "url": "https://mathworld.wolfram.com/IntermediateValueTheorem.html", "type": "secondary"}
+    {
+      "text": "Intermediate value theorem, Wikipedia. — the statement, Bolzano's 1817 sign-change form, the completeness dependence, and the connectedness generalisation.",
+      "url": "https://en.wikipedia.org/wiki/Intermediate_value_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Intermediate Value Theorem, Wolfram MathWorld. — the continuous-function statement and its role in guaranteeing roots.",
+      "url": "https://mathworld.wolfram.com/IntermediateValueTheorem.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Intermediate_value_theorem",
   "related": [
-    {"slug": "the-brouwer-fixed-point-theorem", "kind": "consequence"},
-    {"slug": "the-fundamental-theorem-of-calculus", "kind": "kindred"}
+    {
+      "slug": "the-brouwer-fixed-point-theorem",
+      "kind": "consequence"
+    },
+    {
+      "slug": "the-fundamental-theorem-of-calculus",
+      "kind": "kindred"
+    }
   ]
 }

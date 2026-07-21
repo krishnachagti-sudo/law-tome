@@ -30,11 +30,20 @@
       "text": "The theory's enduring modern role: the baseline expectation against which tests such as the ratio of nonsynonymous to synonymous substitutions detect the footprint of selection."
     }
   ],
-  "whyItMatters": "It transformed molecular evolution by making drift, not selection, the default explanation for most change at the level of DNA and proteins, and it supplied the molecular clock that dates divergences across the tree of life. As the null hypothesis of the field, it is the indispensable baseline for detecting selection, and it reframed a long debate about how much of evolution is adaptive.",
+  "whyItMatters": "It transformed molecular evolution by making drift, not selection, the default explanation for most change at the level of DNA and proteins, and it supplied the molecular clock that dates divergences across the tree of life.",
   "working": [
-    {"lead": "Take neutrality as the null", "text": "expect most molecular variation to be neutral and drifting, and treat that as the baseline against which to look for selection."},
-    {"lead": "Read constraint from conservation", "text": "infer functional importance from how conserved a sequence is, since constraint slows neutral change."},
-    {"lead": "Use the clock with care", "text": "date divergences from steady neutral substitution, allowing for the deviations the nearly neutral theory predicts with population size."}
+    {
+      "lead": "Take neutrality as the null",
+      "text": "expect most molecular variation to be neutral and drifting, and treat that as the baseline against which to look for selection."
+    },
+    {
+      "lead": "Read constraint from conservation",
+      "text": "infer functional importance from how conserved a sequence is, since constraint slows neutral change."
+    },
+    {
+      "lead": "Use the clock with care",
+      "text": "date divergences from steady neutral substitution, allowing for the deviations the nearly neutral theory predicts with population size."
+    }
   ],
   "limits": "The theory's role as a null model is secure, but how much of the genome and variation is truly neutral versus shaped by weak or linked selection is still debated. Selection at nearby sites distorts neutral diversity through genetic hitchhiking and background selection, complicating the picture. A fiftieth-anniversary exchange sharpened the tension: Kern and Hahn argued genome-scale data let us reject the theory's universality, emphasising pervasive linked selection, while Jensen and colleagues held that Kimura and Ohta's foundational ideas remain correct and central. The live disagreement is quantitative — the fraction of change owed to drift rather than to direct and linked selection.",
   "misreadings": "The theory does not deny natural selection or adaptation; it fully accepts purifying selection, its dominant form of selection, and accepts that adaptive evolution occurs, claiming only that positive selection is a minor share of molecular substitutions. Neutral does not mean no selection operates anywhere — it means a particular variant's fitness effect is small enough that drift governs its fate. And neutral is a statement about fitness effect, not about biological importance or lack of function.",
@@ -45,12 +54,27 @@
   "coinedYear": 1968,
   "namedAfter": "Motoo Kimura",
   "sources": [
-    {"text": "Neutral theory of molecular evolution, Wikipedia. — the drift-of-neutral-mutations statement, the molecular clock, and the neutralist-selectionist debate.", "url": "https://en.wikipedia.org/wiki/Neutral_theory_of_molecular_evolution", "type": "secondary"},
-    {"text": "Kern & Hahn, \"The Neutral Theory in Light of Natural Selection,\" Molecular Biology and Evolution 35(6):1366-1371 (2018). — the argument that genome-scale data reject the theory's universality.", "url": "https://academic.oup.com/mbe/article/35/6/1366/4990884", "type": "primary"},
-    {"text": "Jensen et al., \"The importance of the Neutral Theory in 1968 and 50 years on: a response to Kern and Hahn 2018,\" Evolution 73(1):111-114 (2019). — the defence of the theory's foundational ideas.", "url": "https://onlinelibrary.wiley.com/doi/10.1111/evo.13650", "type": "primary"}
+    {
+      "text": "Neutral theory of molecular evolution, Wikipedia. — the drift-of-neutral-mutations statement, the molecular clock, and the neutralist-selectionist debate.",
+      "url": "https://en.wikipedia.org/wiki/Neutral_theory_of_molecular_evolution",
+      "type": "secondary"
+    },
+    {
+      "text": "Kern & Hahn, \"The Neutral Theory in Light of Natural Selection,\" Molecular Biology and Evolution 35(6):1366-1371 (2018). — the argument that genome-scale data reject the theory's universality.",
+      "url": "https://academic.oup.com/mbe/article/35/6/1366/4990884",
+      "type": "primary"
+    },
+    {
+      "text": "Jensen et al., \"The importance of the Neutral Theory in 1968 and 50 years on: a response to Kern and Hahn 2018,\" Evolution 73(1):111-114 (2019). — the defence of the theory's foundational ideas.",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/evo.13650",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Neutral_theory_of_molecular_evolution",
   "related": [
-    {"slug": "genetic-drift", "kind": "cause"}
+    {
+      "slug": "genetic-drift",
+      "kind": "cause"
+    }
   ]
 }

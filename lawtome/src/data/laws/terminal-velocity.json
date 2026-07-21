@@ -2,7 +2,10 @@
   "no": "791",
   "slug": "terminal-velocity",
   "name": "Terminal Velocity",
-  "aliases": ["Terminal speed", "Free-fall terminal velocity"],
+  "aliases": [
+    "Terminal speed",
+    "Free-fall terminal velocity"
+  ],
   "statement": "A falling body speeds up only until drag matches gravity, then falls at a steady maximum speed.",
   "statementAccent": "until drag matches gravity, then falls at a steady maximum speed",
   "meaning": "Terminal velocity is the maximum, constant speed that an object reaches as it falls through a fluid, usually air, when the downward force of gravity is exactly balanced by the upward resistive force of drag. As an object begins to fall it accelerates, but the drag it experiences grows as it speeds up, and eventually the drag equals the object's weight. At that point the net force on the object is zero, so it stops accelerating and continues to fall at a steady speed, its terminal velocity. The value depends on the object's weight, its size and shape, and the density of the fluid: a compact, heavy, or streamlined object has a high terminal velocity, while a light object with a large area, like a parachute or a feather, has a low one. Terminal velocity is a basic concept in the physics of falling bodies, explaining why a skydiver, a raindrop, and a dust mote each settle to their own steady descent speed rather than accelerating without limit.",
@@ -31,13 +34,22 @@
       "text": "The way terminal velocity falls with larger cross-sectional area and drag coefficient, as a parachute demonstrates, and rises with mass."
     }
   ],
-  "whyItMatters": "Terminal velocity is a fundamental idea in the physics of motion through a fluid, explaining why falling objects do not accelerate without limit but settle to a steady speed set by the balance of gravity and drag. It is essential to understanding skydiving and parachuting, where controlling body position and deploying a canopy change the terminal velocity between a fast free fall and a safe landing speed, and it is central to the design of parachutes, drag chutes, and safety equipment. In nature it governs how fast rain, hail, snow, seeds, spores, and dust fall, shaping weather, erosion, and the dispersal of life, and it explains why small creatures can survive falls that would injure larger ones. In engineering and science it informs sedimentation, aerosol behaviour, and the fall of particles through fluids. As the clear resolution of the competition between gravity and air resistance, terminal velocity connects Newton's laws to a wide range of everyday and technical phenomena of falling.",
+  "whyItMatters": "Terminal velocity is a fundamental idea in the physics of motion through a fluid, explaining why falling objects do not accelerate without limit but settle to a steady speed set by the balance of gravity and drag. It is essential to understanding skydiving and parachuting, where controlling body position and deploying a canopy change the terminal velocity between a fast free fall and a safe landing speed, and it is central to the design of parachutes, drag chutes, and safety equipment. In nature it governs how fast rain, hail, snow, seeds, spores, and dust fall, shaping weather, erosion, and the dispersal of life, and it explains why small creatures can survive falls that would injure larger ones. In engineering and science it informs sedimentation, aerosol behaviour, and the fall of particles through fluids.",
   "working": [
-    {"lead": "Begin to fall", "text": "let gravity accelerate the object downward, with drag initially small at low speed."},
-    {"lead": "Grow the drag", "text": "as speed rises, let drag increase, roughly with the square of velocity, until it approaches the object's weight."},
-    {"lead": "Reach the balance", "text": "when drag equals weight the net force is zero, so acceleration stops and the object falls at constant terminal velocity."}
+    {
+      "lead": "Begin to fall",
+      "text": "let gravity accelerate the object downward, with drag initially small at low speed."
+    },
+    {
+      "lead": "Grow the drag",
+      "text": "as speed rises, let drag increase, roughly with the square of velocity, until it approaches the object's weight."
+    },
+    {
+      "lead": "Reach the balance",
+      "text": "when drag equals weight the net force is zero, so acceleration stops and the object falls at constant terminal velocity."
+    }
   ],
-  "limits": "Terminal velocity depends on the object's weight, size, shape, and the fluid's density, so it is not a single universal number; the skydiver's roughly two hundred kilometres per hour applies to a spread posture at ordinary altitude and varies with body position, and record free-fall speeds far higher are achieved in the thin air of very high altitude. The simple square-law drag treatment applies to the high-speed turbulent regime; very small or slow objects fall in a different regime where drag is proportional to speed. Terminal velocity assumes the object has fallen far enough to reach the balance, and it changes if conditions change, such as air density with altitude or a parachute opening. So terminal velocity robustly describes the steady fall speed set by drag balancing weight, with its value depending on the specific object, posture, and fluid conditions.",
+  "limits": "Terminal velocity depends on the object's weight, size, shape, and the fluid's density, so it is not a single universal number; the skydiver's roughly two hundred kilometres per hour applies to a spread posture at ordinary altitude and varies with body position, and record free-fall speeds far higher are achieved in the thin air of very high altitude. The simple square-law drag treatment applies to the high-speed turbulent regime; very small or slow objects fall in a different regime where drag is proportional to speed. Terminal velocity assumes the object has fallen far enough to reach the balance, and it changes if conditions change, such as air density with altitude or a parachute opening.",
   "misreadings": "Terminal velocity is not the speed at which an object stops falling; it is the constant speed at which it keeps falling once drag balances gravity. It is not the same for all objects, since it depends on weight, area, shape, and fluid density, which is why a parachute falls slowly and a stone fast. And it is not a fixed number for a skydiver, varying with body position and air density, so treating terminal velocity as a halt, or as one universal value, misreads a steady descent speed set by the balance between an object's weight and the drag it meets.",
   "origin": "A basic concept in the physics of falling bodies through a fluid: the steady maximum speed reached when drag balances gravity, dependent on weight, shape, area, and fluid density.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Terminal velocity, Wikipedia. — the maximum speed when drag and buoyancy balance gravity giving zero net force, the drag-increases-with-speed mechanism, the dependence on mass, area, drag coefficient, and fluid density, the square-law drag and terminal-velocity formula, and skydiver figures.", "url": "https://en.wikipedia.org/wiki/Terminal_velocity", "type": "secondary"},
-    {"text": "Terminal velocity, Encyclopaedia Britannica. — the steady speed of a body falling through a fluid when air resistance equals its weight and acceleration is zero, with the parachutist and raindrop examples.", "url": "https://www.britannica.com/science/terminal-velocity", "type": "secondary"}
+    {
+      "text": "Terminal velocity, Wikipedia. — the maximum speed when drag and buoyancy balance gravity giving zero net force, the drag-increases-with-speed mechanism, the dependence on mass, area, drag coefficient, and fluid density, the square-law drag and terminal-velocity formula, and skydiver figures.",
+      "url": "https://en.wikipedia.org/wiki/Terminal_velocity",
+      "type": "secondary"
+    },
+    {
+      "text": "Terminal velocity, Encyclopaedia Britannica. — the steady speed of a body falling through a fluid when air resistance equals its weight and acceleration is zero, with the parachutist and raindrop examples.",
+      "url": "https://www.britannica.com/science/terminal-velocity",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Terminal_velocity",
   "related": [
-    {"slug": "magnus-effect", "kind": "kindred"},
-    {"slug": "surface-tension", "kind": "kindred"}
+    {
+      "slug": "magnus-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "surface-tension",
+      "kind": "kindred"
+    }
   ]
 }

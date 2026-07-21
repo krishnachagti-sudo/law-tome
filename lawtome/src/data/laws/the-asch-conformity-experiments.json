@@ -2,7 +2,10 @@
   "no": "840",
   "slug": "the-asch-conformity-experiments",
   "name": "The Asch Conformity Experiments",
-  "aliases": ["Asch conformity experiment", "Asch line experiments"],
+  "aliases": [
+    "Asch conformity experiment",
+    "Asch line experiments"
+  ],
   "statement": "Faced with a group unanimously giving an obviously wrong answer, many people go along with it.",
   "statementAccent": "many people go along with it",
   "meaning": "The Asch conformity experiments were a series of studies conducted by the psychologist Solomon Asch, principally around 1951 at Swarthmore College, that investigated how far social pressure from a group could lead people to conform, even against the plain evidence of their senses. In the basic task, a participant sat with several other people, who were secretly confederates of the experimenter, and the group was shown a line and asked which of three comparison lines matched it in length. The correct answer was obvious. On certain critical trials the confederates all gave the same wrong answer aloud before the real participant, who then had to answer publicly. Asch found that a substantial proportion of participants conformed to the group's incorrect answer at least some of the time: about three-quarters of participants went along with the majority on at least one critical trial, and across all critical trials participants gave the wrong, conforming answer about a third of the time, whereas people tested alone erred less than one percent of the time. The experiments became a foundational demonstration of the power of group pressure to produce conformity.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "The Asch conformity experiments are a foundational demonstration in social psychology of how powerfully group pressure can shape behavior, showing that many ordinary people will publicly agree with a clearly false judgement simply because a unanimous group does, even when their own eyes tell them otherwise. This vividly illustrated the pull of conformity and gave social science its key distinction between normative influence, going along to be accepted, and informational influence, assuming the group knows better. The findings illuminate how consensus, peer pressure, and the fear of standing out can override individual judgement, with implications for group decision-making, jury behavior, organizational conformity, and the spread of opinions and misinformation. Asch's variations carry a hopeful lesson too: because a single dissenting ally sharply reduced conformity, the studies underscore the disproportionate value of even one person willing to break a false consensus. Together with Milgram's obedience studies, to which they are closely linked, the Asch experiments frame the enduring understanding of how social situations bend individual behavior, making them a landmark of twentieth-century psychology.",
   "working": [
-    {"lead": "Set an easy judgement", "text": "ask a group which comparison line matches a reference line, a task people answer almost perfectly alone."},
-    {"lead": "Stage a wrong majority", "text": "have confederates unanimously give the same wrong answer aloud before the real participant responds."},
-    {"lead": "Measure conformity", "text": "record how often the participant abandons their correct judgement to match the group, finding many conform at least once."}
+    {
+      "lead": "Set an easy judgement",
+      "text": "ask a group which comparison line matches a reference line, a task people answer almost perfectly alone."
+    },
+    {
+      "lead": "Stage a wrong majority",
+      "text": "have confederates unanimously give the same wrong answer aloud before the real participant responds."
+    },
+    {
+      "lead": "Measure conformity",
+      "text": "record how often the participant abandons their correct judgement to match the group, finding many conform at least once."
+    }
   ],
-  "limits": "The Asch conformity experiments have limits of scope and generalizability. The samples were male American college students of a particular era, and conformity rates vary with culture, period, gender composition, and the ambiguity of the task, so the specific figures should not be treated as universal constants; note that participants conformed on about a third of critical trials, not a majority, and remained independent most of the time. The perceptual task was trivially easy and unlike the ambiguous or consequential judgements of real life, so the setting is artificial. Later analyses have questioned whether some historical replications overstated conformity, and effects depend heavily on unanimity and group size. There are mild ethical concerns about the deception involved. So the Asch experiments robustly demonstrate that group pressure can produce conformity even against clear evidence, understood as an effect that is real but partial, context-dependent, and not a fixed universal rate.",
+  "limits": "The Asch conformity experiments have limits of scope and generalizability. The samples were male American college students of a particular era, and conformity rates vary with culture, period, gender composition, and the ambiguity of the task, so the specific figures should not be treated as universal constants; note that participants conformed on about a third of critical trials, not a majority, and remained independent most of the time. The perceptual task was trivially easy and unlike the ambiguous or consequential judgements of real life, so the setting is artificial. Later analyses have questioned whether some historical replications overstated conformity, and effects depend heavily on unanimity and group size. There are mild ethical concerns about the deception involved.",
   "misreadings": "The Asch experiments do not show that people always cave to the group; participants stayed independent on about two-thirds of critical trials and many never conformed at all. The conformity rate is not a fixed universal figure, since it varies with culture, task, and group, and depends crucially on the majority being unanimous. And conforming aloud does not always mean the person truly changed their mind, since some yielded only in public, so treating the studies as proof of total conformity, as a constant rate, or as genuine belief change, misreads a partial, context-dependent demonstration of social pressure.",
   "origin": "A series of studies by the psychologist Solomon Asch, principally around 1951 at Swarthmore College, using a line-judgement task to show that group pressure can produce conformity even against clear evidence.",
   "category": "psychology",
@@ -46,12 +58,26 @@
   "coinedYear": 1951,
   "namedAfter": "Solomon Asch",
   "sources": [
-    {"text": "Asch conformity experiments, Wikipedia. — Solomon Asch's line-judgement studies around 1951, the confederates' unanimous wrong answers, the ~75% who conformed at least once and ~one-third of critical trials conforming versus under 1% control error, normative and informational influence, and the effects of a dissenting ally and group size.", "url": "https://en.wikipedia.org/wiki/Asch_conformity_experiments", "type": "secondary"},
-    {"text": "Asch conformity experiments, Simply Psychology. — Asch's line studies, the procedure and conformity rates, the roles of unanimity and group size, and normative versus informational influence.", "url": "https://www.simplypsychology.org/asch-conformity.html", "type": "secondary"}
+    {
+      "text": "Asch conformity experiments, Wikipedia. — Solomon Asch's line-judgement studies around 1951, the confederates' unanimous wrong answers, the ~75% who conformed at least once and ~one-third of critical trials conforming versus under 1% control error, normative and informational influence, and the effects of a dissenting ally and group size.",
+      "url": "https://en.wikipedia.org/wiki/Asch_conformity_experiments",
+      "type": "secondary"
+    },
+    {
+      "text": "Asch conformity experiments, Simply Psychology. — Asch's line studies, the procedure and conformity rates, the roles of unanimity and group size, and normative versus informational influence.",
+      "url": "https://www.simplypsychology.org/asch-conformity.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Asch_conformity_experiments",
   "related": [
-    {"slug": "the-milgram-experiment", "kind": "kindred"},
-    {"slug": "groupthink", "kind": "consequence"}
+    {
+      "slug": "the-milgram-experiment",
+      "kind": "kindred"
+    },
+    {
+      "slug": "groupthink",
+      "kind": "consequence"
+    }
   ]
 }

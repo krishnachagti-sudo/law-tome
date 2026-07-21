@@ -2,7 +2,10 @@
   "no": "778",
   "slug": "the-critical-band",
   "name": "The Critical Band",
-  "aliases": ["Auditory filter", "Critical bandwidth"],
+  "aliases": [
+    "Auditory filter",
+    "Critical bandwidth"
+  ],
   "statement": "The ear hears in overlapping frequency bands; tones sharing a band interfere, tones in different bands do not.",
   "statementAccent": "tones sharing a band interfere, tones in different bands do not",
   "meaning": "The critical band is the frequency bandwidth of the auditory filter formed by the cochlea, the range within which one tone will interfere with, mask, or roughen the perception of another. The inner ear behaves like a bank of overlapping bandpass filters, each responding to a limited span of frequencies, and each such span is a critical band. Two tones falling within the same critical band interact strongly, producing beating, roughness, and mutual masking, because the auditory system cannot fully resolve them; two tones in different critical bands are processed more independently and interact little. The width of the critical band is not constant but grows with center frequency, narrow at low frequencies and wider at high ones. Introduced by Harvey Fletcher in the 1930s and 1940s, the concept is a cornerstone of psychoacoustics, underlying theories of loudness, masking, pitch, the sensory basis of consonance and dissonance, and modern audio compression.",
@@ -31,11 +34,20 @@
       "text": "A modern measure of auditory-filter width, refining the critical-band concept with a frequency-dependent bandwidth formula."
     }
   ],
-  "whyItMatters": "The critical band is a foundational concept in the science of hearing, giving a unified account of masking, loudness, pitch, and the perception of tone combinations. Because the ear analyses sound through overlapping filters, whether two frequencies interact depends on their spacing relative to critical bandwidth, and this single idea explains why one sound masks another, how loudness sums across frequency, and why some intervals sound rough and others smooth. It grounds the sensory theory of consonance and dissonance, tying the pleasantness of intervals to whether their partials fall within the same critical band, and it links the psychoacoustics of hearing to music theory and the harmonic series. The concept is also of great practical importance in audio engineering: perceptual coders such as MP3 and AAC exploit critical-band masking to compress audio transparently, and hearing aids, loudness meters, and speech technology rely on critical-band models. As the description of the ear's frequency resolution, the critical band underpins how we hear complex sound.",
+  "whyItMatters": "The critical band is a foundational concept in the science of hearing, giving a unified account of masking, loudness, pitch, and the perception of tone combinations. Because the ear analyses sound through overlapping filters, whether two frequencies interact depends on their spacing relative to critical bandwidth, and this single idea explains why one sound masks another, how loudness sums across frequency, and why some intervals sound rough and others smooth. It grounds the sensory theory of consonance and dissonance, tying the pleasantness of intervals to whether their partials fall within the same critical band, and it links the psychoacoustics of hearing to music theory and the harmonic series. The concept is also of great practical importance in audio engineering: perceptual coders such as MP3 and AAC exploit critical-band masking to compress audio transparently, and hearing aids, loudness meters, and speech technology rely on critical-band models.",
   "working": [
-    {"lead": "Filter by place", "text": "let the basilar membrane analyse sound through overlapping bands, each responding to a range of frequencies."},
-    {"lead": "Judge the spacing", "text": "determine whether two components fall within one critical band, where they interfere, or in different bands, where they do not."},
-    {"lead": "Predict the perception", "text": "derive masking, roughness, and consonance from whether partials share a critical band, with roughness peaking near a quarter band apart."}
+    {
+      "lead": "Filter by place",
+      "text": "let the basilar membrane analyse sound through overlapping bands, each responding to a range of frequencies."
+    },
+    {
+      "lead": "Judge the spacing",
+      "text": "determine whether two components fall within one critical band, where they interfere, or in different bands, where they do not."
+    },
+    {
+      "lead": "Predict the perception",
+      "text": "derive masking, roughness, and consonance from whether partials share a critical band, with roughness peaking near a quarter band apart."
+    }
   ],
   "limits": "The critical band is a model of the ear's frequency resolution, and its exact width is defined differently by different measures, the classical critical bandwidth, the Bark scale, and the equivalent rectangular bandwidth, which give somewhat different numbers, so a single precise figure depends on the method. Critical bandwidth varies with frequency and also somewhat with level and between individuals, so it is not a fixed constant. The sensory account of consonance it supports explains roughness but not the whole of musical consonance, which also depends on culture and context. The concept idealises the cochlea as a bank of filters, a useful approximation rather than a complete physiological description. So the critical band is a powerful and central model in psychoacoustics, best understood as a frequency-dependent approximation to the ear's filtering rather than an exact, universal bandwidth.",
   "misreadings": "The critical band is not a fixed bandwidth the same at all frequencies; it grows with center frequency and is defined differently by different scales. It does not mean tones in different bands never interact at all, only that interaction is far weaker across bands than within one. And the roughness it explains is the sensory component of dissonance, not the whole of musical consonance, which also depends on convention, so treating critical bandwidth as constant, or as a complete theory of consonance, misreads a frequency-dependent model of how finely the ear resolves nearby sounds.",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Critical band, Wikipedia. — the auditory-filter bandwidth within which a second tone masks or roughens a first, the basilar-membrane basis, within-band interaction, the growth of bandwidth with frequency, and Fletcher's introduction of the concept.", "url": "https://en.wikipedia.org/wiki/Critical_band", "type": "secondary"},
-    {"text": "Bark scale, Wikipedia. — Zwicker's Bark scale of twenty-four critical bands and its role in loudness and masking models.", "url": "https://en.wikipedia.org/wiki/Bark_scale", "type": "secondary"}
+    {
+      "text": "Critical band, Wikipedia. — the auditory-filter bandwidth within which a second tone masks or roughens a first, the basilar-membrane basis, within-band interaction, the growth of bandwidth with frequency, and Fletcher's introduction of the concept.",
+      "url": "https://en.wikipedia.org/wiki/Critical_band",
+      "type": "secondary"
+    },
+    {
+      "text": "Bark scale, Wikipedia. — Zwicker's Bark scale of twenty-four critical bands and its role in loudness and masking models.",
+      "url": "https://en.wikipedia.org/wiki/Bark_scale",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Critical_band",
   "related": [
-    {"slug": "consonance-and-dissonance", "kind": "cause"},
-    {"slug": "beats", "kind": "kindred"}
+    {
+      "slug": "consonance-and-dissonance",
+      "kind": "cause"
+    },
+    {
+      "slug": "beats",
+      "kind": "kindred"
+    }
   ]
 }

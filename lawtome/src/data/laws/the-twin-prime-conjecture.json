@@ -2,7 +2,10 @@
   "no": "1004",
   "slug": "the-twin-prime-conjecture",
   "name": "The Twin Prime Conjecture",
-  "aliases": ["Twin primes", "Polignac's conjecture (k=2)"],
+  "aliases": [
+    "Twin primes",
+    "Polignac's conjecture (k=2)"
+  ],
   "statement": "There are infinitely many pairs of primes that differ by 2.",
   "statementAccent": "infinitely many pairs of primes that differ by 2",
   "meaning": "The twin prime conjecture states that there are infinitely many twin primes, that is, infinitely many primes p such that p plus 2 is also prime. Twin primes are pairs of primes differing by 2, such as 3 and 5, 5 and 7, 11 and 13, 17 and 19, and 29 and 31, and while it is known that there are infinitely many primes, whether infinitely many of them come in such closely spaced pairs is a famous unsolved problem in number theory, still unproven. The modern statement is closely tied to a conjecture of Alphonse de Polignac from 1849, which holds that for every even number there are infinitely many pairs of consecutive primes differing by that amount; the twin prime conjecture is the case of difference 2. A key early result is Brun's theorem, proved by Viggo Brun in 1919, that the sum of the reciprocals of the twin primes converges, to a value known as Brun's constant, in contrast to the sum of the reciprocals of all primes, which diverges; this shows twin primes are relatively sparse but leaves open whether there are finitely or infinitely many. The first Hardy-Littlewood conjecture gives a conjectural asymptotic formula for their density. Dramatic recent progress on bounded gaps between primes, beginning with Yitang Zhang in 2013, has brought the problem tantalizingly close without settling it.",
@@ -31,13 +34,22 @@
       "text": "The results of Zhang, Maynard, and Polymath8 that infinitely many prime pairs differ by a fixed finite amount, now at most 246."
     }
   ],
-  "whyItMatters": "The twin prime conjecture is one of the most famous and enduring open problems in number theory, celebrated for its elementary statement and its deep difficulty, and its recent history is one of the great stories of modern mathematics. Like Goldbach's conjecture, it can be explained to anyone yet has defeated the best mathematicians for well over a century, making it an emblem of the mystery in the distribution of the primes. The conjecture and its relatives have driven the development of sieve methods and analytic number theory, and Brun's theorem, with its convergent sum and Brun's constant, was a landmark early result. The dramatic breakthroughs of the 2010s transformed the field: Yitang Zhang, working in relative obscurity, proved the first finite bound on infinitely recurring prime gaps in 2013, a result quickly and dramatically improved by James Maynard and the collaborative Polymath8 project to a gap of at most 246, bringing a problem long thought hopeless within striking distance. These advances showcase both the power of new ideas and the collaborative, open style of modern mathematical research. As the assertion that primes keep coming in pairs differing by 2, the twin prime conjecture is a central and vividly active open problem.",
+  "whyItMatters": "The twin prime conjecture is one of the most famous and enduring open problems in number theory, celebrated for its elementary statement and its deep difficulty, and its recent history is one of the great stories of modern mathematics. Like Goldbach's conjecture, it can be explained to anyone yet has defeated the best mathematicians for well over a century, making it an emblem of the mystery in the distribution of the primes. The conjecture and its relatives have driven the development of sieve methods and analytic number theory, and Brun's theorem, with its convergent sum and Brun's constant, was a landmark early result. The dramatic breakthroughs of the 2010s transformed the field: Yitang Zhang, working in relative obscurity, proved the first finite bound on infinitely recurring prime gaps in 2013, a result quickly and dramatically improved by James Maynard and the collaborative Polymath8 project to a gap of at most 246, bringing a problem long thought hopeless within striking distance. These advances showcase both the power of new ideas and the collaborative, open style of modern mathematical research.",
   "working": [
-    {"lead": "Look for close pairs", "text": "search for primes p such that p plus 2 is also prime, the twin primes."},
-    {"lead": "Ask about infinitude", "text": "ask whether such pairs occur infinitely often, which the conjecture affirms and no one has proved."},
-    {"lead": "Approach via gaps", "text": "note the bounded-gaps results proving infinitely many prime pairs differ by at most 246, close to but not 2."}
+    {
+      "lead": "Look for close pairs",
+      "text": "search for primes p such that p plus 2 is also prime, the twin primes."
+    },
+    {
+      "lead": "Ask about infinitude",
+      "text": "ask whether such pairs occur infinitely often, which the conjecture affirms and no one has proved."
+    },
+    {
+      "lead": "Approach via gaps",
+      "text": "note the bounded-gaps results proving infinitely many prime pairs differ by at most 246, close to but not 2."
+    }
   ],
-  "limits": "The twin prime conjecture is unproven, and even the spectacular recent progress falls short of it. The bounded-gaps results, from Zhang, Maynard, and Polymath8, prove only that infinitely many prime pairs differ by at most some fixed number, currently 246 unconditionally, whereas the conjecture requires the gap to be exactly 2, and the sieve methods behind these results are believed, without new ideas, to be incapable of reaching a gap of 2, so the last step remains formidable. Brun's theorem shows twin primes are sparse but does not decide their infinitude, and the Hardy-Littlewood density formula, though well supported, is itself a conjecture. Numerical evidence, however extensive, cannot settle a claim about infinitely many pairs. Some historical and numerical details reward care: Polignac's generalization is dated 1849, Brun's theorem 1919, with Brun's constant approximately 1.902 and its exact value unknown, Zhang's bound of seventy million dating to 2013, and the current best gap of 246 resulting from the Polymath8 and Maynard work; the exact year of the Hardy-Littlewood conjecture and the precise attributions reward checking. So the twin prime conjecture robustly asserts infinitely many prime pairs differing by 2, understood as an unproven problem that recent bounded-gaps breakthroughs have approached but not resolved.",
+  "limits": "The twin prime conjecture is unproven, and even the spectacular recent progress falls short of it. The bounded-gaps results, from Zhang, Maynard, and Polymath8, prove only that infinitely many prime pairs differ by at most some fixed number, currently 246 unconditionally, whereas the conjecture requires the gap to be exactly 2, and the sieve methods behind these results are believed, without new ideas, to be incapable of reaching a gap of 2, so the last step remains formidable. Brun's theorem shows twin primes are sparse but does not decide their infinitude, and the Hardy-Littlewood density formula, though well supported, is itself a conjecture. Numerical evidence, however extensive, cannot settle a claim about infinitely many pairs. Some historical and numerical details reward care: Polignac's generalization is dated 1849, Brun's theorem 1919, with Brun's constant approximately 1.902 and its exact value unknown, Zhang's bound of seventy million dating to 2013, and the current best gap of 246 resulting from the Polymath8 and Maynard work; the exact year of the Hardy-Littlewood conjecture and the precise attributions reward checking.",
   "misreadings": "The twin prime conjecture is not settled by the bounded-gaps theorems; those prove infinitely many primes differ by at most 246, not by exactly 2. Brun's theorem does not show there are finitely many twin primes, only that their reciprocals sum to a finite value, which is compatible with infinitely many. And no amount of computed twin primes proves the conjecture, since it concerns infinitely many pairs, so treating the gap of 246 as the twin case, Brun's theorem as implying finiteness, or computation as proof, misreads the problem.",
   "origin": "The conjecture, related to Polignac's 1849 conjecture, that there are infinitely many pairs of primes differing by 2, a famous unsolved problem in number theory approached by the bounded-gaps breakthroughs of Zhang, Maynard, and others.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Twin prime, Wikipedia. — the twin prime conjecture that there are infinitely many primes p with p plus 2 prime, its relation to Polignac's 1849 conjecture, Brun's 1919 theorem and Brun's constant, the first Hardy-Littlewood conjecture, and the bounded-gaps breakthroughs of Zhang, Maynard, and Polymath8 down to a gap of 246.", "url": "https://en.wikipedia.org/wiki/Twin_prime", "type": "secondary"},
-    {"text": "Unheralded Mathematician Bridges the Prime Gap, Quanta Magazine. — Yitang Zhang's 2013 proof that infinitely many prime pairs differ by at most seventy million, the first finite bound, and the subsequent improvements toward the twin prime conjecture.", "url": "https://www.quantamagazine.org/yitang-zhang-proves-landmark-theorem-in-distribution-of-prime-numbers-20130519/", "type": "secondary"}
+    {
+      "text": "Twin prime, Wikipedia. — the twin prime conjecture that there are infinitely many primes p with p plus 2 prime, its relation to Polignac's 1849 conjecture, Brun's 1919 theorem and Brun's constant, the first Hardy-Littlewood conjecture, and the bounded-gaps breakthroughs of Zhang, Maynard, and Polymath8 down to a gap of 246.",
+      "url": "https://en.wikipedia.org/wiki/Twin_prime",
+      "type": "secondary"
+    },
+    {
+      "text": "Unheralded Mathematician Bridges the Prime Gap, Quanta Magazine. — Yitang Zhang's 2013 proof that infinitely many prime pairs differ by at most seventy million, the first finite bound, and the subsequent improvements toward the twin prime conjecture.",
+      "url": "https://www.quantamagazine.org/yitang-zhang-proves-landmark-theorem-in-distribution-of-prime-numbers-20130519/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Twin_prime",
   "related": [
-    {"slug": "goldbachs-conjecture", "kind": "kindred"},
-    {"slug": "the-riemann-hypothesis", "kind": "kindred"}
+    {
+      "slug": "goldbachs-conjecture",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-riemann-hypothesis",
+      "kind": "kindred"
+    }
   ]
 }

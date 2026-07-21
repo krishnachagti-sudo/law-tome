@@ -2,7 +2,10 @@
   "no": "821",
   "slug": "subtractive-color",
   "name": "Subtractive Color",
-  "aliases": ["Subtractive color mixing", "CMYK color"],
+  "aliases": [
+    "Subtractive color mixing",
+    "CMYK color"
+  ],
   "statement": "Pigments make colour by absorbing light, so mixing them all darkens toward black.",
   "statementAccent": "mixing them all darkens toward black",
   "meaning": "Subtractive color is the way pigments, dyes, inks, and filters produce colour, by absorbing, or subtracting, some wavelengths of light from white light and reflecting or transmitting the rest. Starting from white, such as white paper or white light, each colorant added absorbs more of the spectrum, so the result grows darker, and combining all the primaries tends toward black. The subtractive primary colours are cyan, magenta, and yellow, which absorb red, green, and blue light respectively. Mixing them in pairs gives the secondaries: cyan and yellow make green, yellow and magenta make red, and magenta and cyan make blue, while all three together make a dark, near-black colour. Subtractive color is the opposite of additive color, the mixing of light. It is the basis of painting and printing, and colour printing uses cyan, magenta, yellow, and a separate black ink, the CMYK system, because mixing the three coloured inks alone does not produce a good pure black.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "Subtractive color is fundamental to painting, printing, dyeing, and every medium that produces colour with pigments and inks rather than light. Understanding it is essential to graphic design, publishing, photography, and the visual arts, where colours are created and reproduced by absorbing wavelengths, and where the CMYK printing system governs how images move from screen to page. Because subtractive color starts from white and darkens as colorants are added, it behaves oppositely to the additive color of light and screens, and knowing which regime applies is crucial: a colour that looks vivid on a display may print differently, since screens add light while inks subtract it. The distinction between the accurate cyan-magenta-yellow primaries and the traditional red-yellow-blue also matters for colour mixing in art. By explaining how pigments and inks make colour, and why mixing them darkens toward black, subtractive color connects the physics of light and absorption to the practical crafts of painting and printing.",
   "working": [
-    {"lead": "Start from white", "text": "begin with white light or paper, containing all wavelengths."},
-    {"lead": "Absorb with colorants", "text": "add pigments or inks, each of which absorbs some wavelengths and reflects the rest, darkening the result."},
-    {"lead": "Combine toward black", "text": "layer cyan, magenta, and yellow to subtract more of the spectrum, tending toward black, with a separate black ink for true black in printing."}
+    {
+      "lead": "Start from white",
+      "text": "begin with white light or paper, containing all wavelengths."
+    },
+    {
+      "lead": "Absorb with colorants",
+      "text": "add pigments or inks, each of which absorbs some wavelengths and reflects the rest, darkening the result."
+    },
+    {
+      "lead": "Combine toward black",
+      "text": "layer cyan, magenta, and yellow to subtract more of the spectrum, tending toward black, with a separate black ink for true black in printing."
+    }
   ],
-  "limits": "Subtractive color describes pigments and inks, not light, so it does not model how screens and light sources make colour, which follow additive color and brighten toward white; confusing the two causes errors moving between print and display. Real colorants are imperfect, so mixing the three subtractive primaries yields a muddy dark rather than a true black, which is why printing adds a separate black ink. The reproducible range of colours depends on the specific inks and substrate, so no set of primaries covers every colour. The traditional red-yellow-blue artists' primaries are a historical approximation less accurate than cyan, magenta, and yellow. So subtractive color robustly explains how pigments and inks make colour, understood as the absorption regime distinct from light mixing and limited by the imperfection of real colorants.",
+  "limits": "Subtractive color describes pigments and inks, not light, so it does not model how screens and light sources make colour, which follow additive color and brighten toward white; confusing the two causes errors moving between print and display. Real colorants are imperfect, so mixing the three subtractive primaries yields a muddy dark rather than a true black, which is why printing adds a separate black ink. The reproducible range of colours depends on the specific inks and substrate, so no set of primaries covers every colour. The traditional red-yellow-blue artists' primaries are a historical approximation less accurate than cyan, magenta, and yellow.",
   "misreadings": "Subtractive color is not the same as mixing light; mixing pigments absorbs light and darkens toward black, while mixing light adds and brightens toward white. Combining all the subtractive primaries does not make white but a dark near-black. And the accurate subtractive primaries are cyan, magenta, and yellow, not the traditional red, yellow, and blue taught in art class, so treating paint mixing like light mixing, expecting colours to lighten toward white, or assuming red-yellow-blue are the true primaries, misreads a system in which colorants subtract wavelengths and darken toward black.",
   "origin": "A foundational concept in colour science: the mixing of pigments and inks by absorbing wavelengths, with cyan, magenta, and yellow primaries darkening toward black, and the CMYK system used in colour printing.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Subtractive color, Wikipedia. — the mixing of colorants that absorb wavelengths from white light, the cyan, magenta, and yellow primaries and their combinations toward black, the RYB-versus-CMY distinction, CMYK printing and the reason for the black key ink, and the contrast with additive color.", "url": "https://en.wikipedia.org/wiki/Subtractive_color", "type": "secondary"},
-    {"text": "Primary color, Encyclopaedia Britannica. — the subtractive primaries cyan, magenta, and yellow, their wider colour range than red, yellow, blue, and mixing by absorption.", "url": "https://www.britannica.com/science/primary-color", "type": "secondary"}
+    {
+      "text": "Subtractive color, Wikipedia. — the mixing of colorants that absorb wavelengths from white light, the cyan, magenta, and yellow primaries and their combinations toward black, the RYB-versus-CMY distinction, CMYK printing and the reason for the black key ink, and the contrast with additive color.",
+      "url": "https://en.wikipedia.org/wiki/Subtractive_color",
+      "type": "secondary"
+    },
+    {
+      "text": "Primary color, Encyclopaedia Britannica. — the subtractive primaries cyan, magenta, and yellow, their wider colour range than red, yellow, blue, and mixing by absorption.",
+      "url": "https://www.britannica.com/science/primary-color",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Subtractive_color",
   "related": [
-    {"slug": "additive-color", "kind": "tension"},
-    {"slug": "complementary-colors", "kind": "kindred"}
+    {
+      "slug": "additive-color",
+      "kind": "tension"
+    },
+    {
+      "slug": "complementary-colors",
+      "kind": "kindred"
+    }
   ]
 }

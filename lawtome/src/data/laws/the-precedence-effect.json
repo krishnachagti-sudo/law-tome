@@ -2,7 +2,10 @@
   "no": "776",
   "slug": "the-precedence-effect",
   "name": "The Precedence Effect",
-  "aliases": ["The Haas effect", "The law of the first wavefront"],
+  "aliases": [
+    "The Haas effect",
+    "The law of the first wavefront"
+  ],
   "statement": "When a sound and its echoes arrive close together, we locate it by the first to reach us.",
   "statementAccent": "we locate it by the first to reach us",
   "meaning": "The precedence effect is a binaural phenomenon of hearing in which, when a sound is quickly followed by one or more copies of itself, such as reflections or echoes arriving from other directions within a short time window, the listener fuses them into a single perceived sound and localizes it in the direction of the first-arriving wavefront. The later arrivals are largely suppressed for the purpose of locating the source, so reflections do not confuse us about where a sound came from. Also known as the law of the first wavefront, and closely associated with the Haas effect, the phenomenon is why we can pinpoint a talker or instrument in a reverberant room full of reflections. If the delay between the direct sound and its copy grows long enough, past the echo threshold, the copy is instead heard as a distinct echo. The precedence effect is fundamental to spatial hearing and is exploited throughout sound reinforcement and stereo reproduction.",
@@ -31,13 +34,22 @@
       "text": "The delay beyond which the lagging sound is no longer fused but heard as a distinct echo and localized independently."
     }
   ],
-  "whyItMatters": "The precedence effect is central to how humans hear in the real, reverberant world, where nearly every sound reaches the ears both directly and as a cascade of reflections. By locking localization to the first-arriving wavefront and suppressing the reflections, it lets us pinpoint sources accurately indoors and in cluttered acoustic environments, a crucial ability for understanding speech and orienting to danger. It is also a foundational tool in audio engineering. Sound-reinforcement designers exploit it by delaying distributed loudspeakers so that a listener still perceives the sound as coming from the stage rather than the nearest speaker, and stereo and spatial-audio techniques rely on precedence and the Haas effect to place and widen images. The phenomenon shaped the modern understanding of binaural hearing and the tolerance of the auditory system for early reflections, informing concert-hall acoustics, public address, and immersive sound. As the principle that the first arrival wins, it underlies both natural spatial hearing and its technological imitation.",
+  "whyItMatters": "The precedence effect is central to how humans hear in the real, reverberant world, where nearly every sound reaches the ears both directly and as a cascade of reflections. By locking localization to the first-arriving wavefront and suppressing the reflections, it lets us pinpoint sources accurately indoors and in cluttered acoustic environments, a crucial ability for understanding speech and orienting to danger. It is also a foundational tool in audio engineering. Sound-reinforcement designers exploit it by delaying distributed loudspeakers so that a listener still perceives the sound as coming from the stage rather than the nearest speaker, and stereo and spatial-audio techniques rely on precedence and the Haas effect to place and widen images. The phenomenon shaped the modern understanding of binaural hearing and the tolerance of the auditory system for early reflections, informing concert-hall acoustics, public address, and immersive sound.",
   "working": [
-    {"lead": "Receive direct sound and copies", "text": "take in a sound followed by reflections or copies arriving from other directions within a short delay."},
-    {"lead": "Fuse and prioritize the first", "text": "merge them into one perceived sound located in the direction of the first-arriving wavefront, suppressing the later ones as location cues."},
-    {"lead": "Split only past the threshold", "text": "hear the copy as a separate echo only if its delay exceeds the echo threshold."}
+    {
+      "lead": "Receive direct sound and copies",
+      "text": "take in a sound followed by reflections or copies arriving from other directions within a short delay."
+    },
+    {
+      "lead": "Fuse and prioritize the first",
+      "text": "merge them into one perceived sound located in the direction of the first-arriving wavefront, suppressing the later ones as location cues."
+    },
+    {
+      "lead": "Split only past the threshold",
+      "text": "hear the copy as a separate echo only if its delay exceeds the echo threshold."
+    }
   ],
-  "limits": "The precedence effect operates within a delay window that is not a single fixed number but depends on the signal: on the order of a few milliseconds up to several tens of milliseconds for typical sounds, with fusion persisting longer for music than for clicks or speech, so exact figures should be treated as approximate ranges. Very short delays produce summing localization instead, and delays beyond the echo threshold produce audible echoes, so precedence governs only an intermediate regime. The effect concerns the localization of fused sounds and does not mean the later arrivals are inaudible, since they still affect loudness, timbre, and spaciousness. The dating of the founding work is sometimes given as 1949 or 1951, and the term precedence effect was coined by Wallach, Newman, and Rosenzweig. So the precedence effect robustly describes first-wavefront localization within its time window, understood with approximate, signal-dependent limits rather than exact universal thresholds.",
+  "limits": "The precedence effect operates within a delay window that is not a single fixed number but depends on the signal: on the order of a few milliseconds up to several tens of milliseconds for typical sounds, with fusion persisting longer for music than for clicks or speech, so exact figures should be treated as approximate ranges. Very short delays produce summing localization instead, and delays beyond the echo threshold produce audible echoes, so precedence governs only an intermediate regime. The effect concerns the localization of fused sounds and does not mean the later arrivals are inaudible, since they still affect loudness, timbre, and spaciousness. The dating of the founding work is sometimes given as 1949 or 1951, and the term precedence effect was coined by Wallach, Newman, and Rosenzweig.",
   "misreadings": "The precedence effect does not make later reflections inaudible; it suppresses them as cues to location while they still shape loudness and timbre. It does not operate at all delays, since very short gaps give summing localization and long gaps give distinct echoes, so it governs an intermediate window. And the time limits are approximate and depend on the signal, not a single fixed number, so treating reflections as silent, or the window as one exact threshold, misreads a phenomenon that prioritizes the first wavefront for localization within a signal-dependent range.",
   "origin": "A binaural localization phenomenon named the precedence effect by Wallach, Newman, and Rosenzweig (1949) and associated with Helmut Haas's related findings (1949/1951), also called the law of the first wavefront.",
   "category": "psychology",
@@ -46,12 +58,26 @@
   "coinedYear": 1949,
   "namedAfter": null,
   "sources": [
-    {"text": "Precedence effect, Wikipedia. — the localization of fused sounds to the first-arriving wavefront with suppression of later reflections, the signal-dependent time window, the Haas effect and its level tolerance, the echo threshold, the Wallach-Newman-Rosenzweig coinage, and applications in rooms and sound reinforcement.", "url": "https://en.wikipedia.org/wiki/Precedence_effect", "type": "secondary"},
-    {"text": "Haas Effect, Sound On Sound glossary. — the Haas effect, the delayed copy that is not heard as a separate echo, and its use in stereo and sound reinforcement.", "url": "https://www.soundonsound.com/glossary/haas-effect", "type": "secondary"}
+    {
+      "text": "Precedence effect, Wikipedia. — the localization of fused sounds to the first-arriving wavefront with suppression of later reflections, the signal-dependent time window, the Haas effect and its level tolerance, the echo threshold, the Wallach-Newman-Rosenzweig coinage, and applications in rooms and sound reinforcement.",
+      "url": "https://en.wikipedia.org/wiki/Precedence_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Haas Effect, Sound On Sound glossary. — the Haas effect, the delayed copy that is not heard as a separate echo, and its use in stereo and sound reinforcement.",
+      "url": "https://www.soundonsound.com/glossary/haas-effect",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Precedence_effect",
   "related": [
-    {"slug": "beats", "kind": "kindred"},
-    {"slug": "the-cocktail-party-effect", "kind": "kindred"}
+    {
+      "slug": "beats",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-cocktail-party-effect",
+      "kind": "kindred"
+    }
   ]
 }

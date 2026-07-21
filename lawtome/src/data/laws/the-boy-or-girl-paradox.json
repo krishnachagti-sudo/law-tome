@@ -2,7 +2,10 @@
   "no": "691",
   "slug": "the-boy-or-girl-paradox",
   "name": "The Boy or Girl Paradox",
-  "aliases": ["The two-child problem", "Mr. Smith's children"],
+  "aliases": [
+    "The two-child problem",
+    "Mr. Smith's children"
+  ],
   "statement": "Told a family of two has at least one boy, the chance both are boys is one in three, not one in two.",
   "statementAccent": "the chance both are boys is one in three, not one in two",
   "meaning": "The boy or girl paradox, also called the two-child problem, is a classic puzzle in probability that shows how the answer to a conditional-probability question depends sensitively on exactly how the information is obtained and phrased. It was popularised by Martin Gardner in his Mathematical Games column in Scientific American in May 1959. Assuming boys and girls are equally likely and births independent, compare two questions. First, Mr. Jones has two children and the older is a girl; the probability both are girls is one half. Second, Mr. Smith has two children and at least one is a boy; the probability both are boys is, under the standard reading, one third. The second answer is famously counterintuitive, since people expect one half, and it depends on how you came to learn that at least one child is a boy. The puzzle is a lesson in the subtlety of conditional probability and the ambiguity of ordinary language.",
@@ -31,11 +34,20 @@
       "text": "The extension in which the seemingly irrelevant fact that a boy was born on a Tuesday changes the conditional probability, under a specific interpretation, to about thirteen twenty-sevenths."
     }
   ],
-  "whyItMatters": "The boy or girl paradox is a staple example in the teaching of conditional probability and Bayesian reasoning, prized for revealing how strongly answers depend on the exact wording and on how information is gathered. Its counterintuitive one-third answer trains students to enumerate the sample space carefully and to distinguish superficially similar questions, while its notorious ambiguity, acknowledged by Gardner himself, teaches that a probability problem is not well posed until the randomising procedure is specified. The boy-born-on-Tuesday extension drives the lesson home by showing that apparently irrelevant details can shift a conditional probability. As a puzzle that repeatedly trips up even careful reasoners, it endures as a demonstration that intuition about probability must be checked against an explicit model of how the evidence was obtained.",
+  "whyItMatters": "The boy or girl paradox is a staple example in the teaching of conditional probability and Bayesian reasoning, prized for revealing how strongly answers depend on the exact wording and on how information is gathered. Its counterintuitive one-third answer trains students to enumerate the sample space carefully and to distinguish superficially similar questions, while its notorious ambiguity, acknowledged by Gardner himself, teaches that a probability problem is not well posed until the randomising procedure is specified. The boy-born-on-Tuesday extension drives the lesson home by showing that apparently irrelevant details can shift a conditional probability.",
   "working": [
-    {"lead": "Enumerate the cases", "text": "list boy-boy, boy-girl, girl-boy, and girl-girl as equally likely, then see which the given information rules out."},
-    {"lead": "Condition carefully", "text": "note that specifying the older child leaves one half, while merely knowing at least one boy leaves one third, because different cases survive."},
-    {"lead": "Pin down the procedure", "text": "recognise that the at-least-one-boy answer depends on how you learned it, so specify the randomising process before trusting a number."}
+    {
+      "lead": "Enumerate the cases",
+      "text": "list boy-boy, boy-girl, girl-boy, and girl-girl as equally likely, then see which the given information rules out."
+    },
+    {
+      "lead": "Condition carefully",
+      "text": "note that specifying the older child leaves one half, while merely knowing at least one boy leaves one third, because different cases survive."
+    },
+    {
+      "lead": "Pin down the procedure",
+      "text": "recognise that the at-least-one-boy answer depends on how you learned it, so specify the randomising process before trusting a number."
+    }
   ],
   "limits": "The puzzle's answers rest on idealising assumptions, that boys and girls are equally likely and births independent, which are only approximately true. More importantly, the second question is genuinely ambiguous: the one-third answer holds only if the information at least one is a boy was obtained by a procedure that would report a boy whenever one exists, whereas encountering one child who happens to be a boy yields one half. Gardner himself conceded this ambiguity, and the boy-born-on-Tuesday variant is likewise interpretation-dependent. So the paradox is less a fixed numerical fact than a demonstration that conditional probabilities are undefined until the sampling mechanism is specified, and quoting one third as simply the answer without stating the procedure is itself part of the confusion.",
   "misreadings": "The one-third answer is not universally correct; it holds only under the specific assumption about how one learned that at least one child is a boy, and a different procedure gives one half. The difference between the two questions is not a trick but a real consequence of which cases the information eliminates, so the puzzle is not paradoxical in the sense of contradiction but only counterintuitive. And the Tuesday-boy result is not a fixed fact either; it depends on interpretation, illustrating the deeper lesson that these problems are ill-posed until the randomising procedure is made explicit.",
@@ -46,12 +58,26 @@
   "coinedYear": 1959,
   "namedAfter": null,
   "sources": [
-    {"text": "Boy or girl paradox, Wikipedia. — Gardner's 1959 popularisation, the boy-boy/boy-girl/girl-boy/girl-girl sample space, the one-half and one-third answers, the procedure-dependence and Gardner's admission of ambiguity, and the boy-born-on-Tuesday variant.", "url": "https://en.wikipedia.org/wiki/Boy_or_girl_paradox", "type": "secondary"},
-    {"text": "The Two-Child Paradox: Dichotomy and Ambiguity, Peter Lynch (University College Dublin). — an academic treatment of the paradox and its dependence on how the information is obtained.", "url": "https://maths.ucd.ie/~plynch/Publications/BIMS-TwoChildParadox.pdf", "type": "secondary"}
+    {
+      "text": "Boy or girl paradox, Wikipedia. — Gardner's 1959 popularisation, the boy-boy/boy-girl/girl-boy/girl-girl sample space, the one-half and one-third answers, the procedure-dependence and Gardner's admission of ambiguity, and the boy-born-on-Tuesday variant.",
+      "url": "https://en.wikipedia.org/wiki/Boy_or_girl_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "The Two-Child Paradox: Dichotomy and Ambiguity, Peter Lynch (University College Dublin). — an academic treatment of the paradox and its dependence on how the information is obtained.",
+      "url": "https://maths.ucd.ie/~plynch/Publications/BIMS-TwoChildParadox.pdf",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Boy_or_girl_paradox",
   "related": [
-    {"slug": "the-monty-hall-problem", "kind": "kindred"},
-    {"slug": "the-base-rate-fallacy", "kind": "kindred"}
+    {
+      "slug": "the-monty-hall-problem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-base-rate-fallacy",
+      "kind": "kindred"
+    }
   ]
 }

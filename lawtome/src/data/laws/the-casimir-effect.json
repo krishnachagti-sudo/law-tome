@@ -2,7 +2,10 @@
   "no": "604",
   "slug": "the-casimir-effect",
   "name": "The Casimir Effect",
-  "aliases": ["Casimir force", "The Casimir-Polder force"],
+  "aliases": [
+    "Casimir force",
+    "The Casimir-Polder force"
+  ],
   "statement": "Two neutral plates held a whisker apart in a vacuum feel a faint force pushing them together.",
   "statementAccent": "feel a faint force pushing them together",
   "meaning": "The Casimir effect is a small attractive force that arises between two very close, parallel, uncharged conducting plates in a vacuum, produced by the quantum fluctuations of the electromagnetic field. Even empty space is filled with the restless zero-point fluctuations of quantum fields, and the plates restrict which of these vacuum modes can exist in the gap between them. Because fewer modes fit inside than outside, the vacuum pressure pushing inward exceeds that pushing outward, and the plates are drawn together. Predicted by Hendrik Casimir in 1948 and measured precisely by the late 1990s, it is one of the most striking demonstrations that the quantum vacuum is not truly empty but has real, measurable physical consequences.",
@@ -31,11 +34,20 @@
       "text": "The force is normally attractive for parallel plates, but its sign and strength can in principle be modified by different geometries and materials."
     }
   ],
-  "whyItMatters": "The Casimir effect is one of the clearest windows onto the reality of the quantum vacuum, showing that zero-point fluctuations of quantum fields exert a measurable force on ordinary matter. It bears on foundational questions about vacuum energy and its puzzling relationship to the cosmological constant, and it has become a practical concern in nanotechnology, where at the smallest scales it can cause the delicate parts of microelectromechanical systems to stick together. As a confirmed prediction of quantum electrodynamics that turns the seeming emptiness of space into a tangible push, it is both a conceptual landmark and an engineering consideration.",
+  "whyItMatters": "The Casimir effect is one of the clearest windows onto the reality of the quantum vacuum, showing that zero-point fluctuations of quantum fields exert a measurable force on ordinary matter. It bears on foundational questions about vacuum energy and its puzzling relationship to the cosmological constant, and it has become a practical concern in nanotechnology, where at the smallest scales it can cause the delicate parts of microelectromechanical systems to stick together.",
   "working": [
-    {"lead": "Restrict the vacuum modes", "text": "place two conducting surfaces close together so fewer field fluctuations fit between them than outside, unbalancing the vacuum pressure."},
-    {"lead": "Expect a steep, tiny force", "text": "treat the attraction as scaling with the inverse fourth power of separation, negligible except at nanometre-to-submicron gaps."},
-    {"lead": "Watch it in small machines", "text": "account for the Casimir force in nanotechnology, where it can cause stiction between closely spaced moving components."}
+    {
+      "lead": "Restrict the vacuum modes",
+      "text": "place two conducting surfaces close together so fewer field fluctuations fit between them than outside, unbalancing the vacuum pressure."
+    },
+    {
+      "lead": "Expect a steep, tiny force",
+      "text": "treat the attraction as scaling with the inverse fourth power of separation, negligible except at nanometre-to-submicron gaps."
+    },
+    {
+      "lead": "Watch it in small machines",
+      "text": "account for the Casimir force in nanotechnology, where it can cause stiction between closely spaced moving components."
+    }
   ],
   "limits": "The force is real and measured, not merely theoretical, but it is exceedingly small and appreciable only at sub-micron separations, falling as the inverse fourth power of distance, so it is irrelevant at everyday scales. It is normally attractive for parallel plates, though geometry and materials can in principle alter its sign and magnitude. It is related to, but distinct from, the ordinary van der Waals force, being its retarded long-range limit. There is even an interpretive debate, with some physicists arguing the force can be derived without invoking zero-point energy at all, so its existence is certain while its deepest interpretation is still discussed.",
   "misreadings": "The Casimir effect is a genuine, experimentally confirmed force, not a mere thought experiment, though it is far too weak to notice except at the tiniest separations. It is not the same as the classical van der Waals force between molecules, but its retarded long-range cousin. And while it is usually described in terms of vacuum zero-point energy, this is not the only valid framing; some derivations recast it as a relativistic force between the charges in the plates, so the effect is settled even where its interpretation remains open.",
@@ -46,12 +58,26 @@
   "coinedYear": 1948,
   "namedAfter": "Hendrik Casimir",
   "sources": [
-    {"text": "Casimir effect, Wikipedia. — the attractive force between neutral plates from vacuum fluctuations, the inverse-fourth-power scaling, Casimir 1948, and the Lamoreaux 1997 confirmation.", "url": "https://en.wikipedia.org/wiki/Casimir_effect", "type": "secondary"},
-    {"text": "The Casimir effect: a force from nothing, Physics World. — the vacuum-energy origin, the tiny force, and its measurement.", "url": "https://physicsworld.com/a/the-casimir-effect-a-force-from-nothing/", "type": "secondary"}
+    {
+      "text": "Casimir effect, Wikipedia. — the attractive force between neutral plates from vacuum fluctuations, the inverse-fourth-power scaling, Casimir 1948, and the Lamoreaux 1997 confirmation.",
+      "url": "https://en.wikipedia.org/wiki/Casimir_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "The Casimir effect: a force from nothing, Physics World. — the vacuum-energy origin, the tiny force, and its measurement.",
+      "url": "https://physicsworld.com/a/the-casimir-effect-a-force-from-nothing/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Casimir_effect",
   "related": [
-    {"slug": "heisenbergs-uncertainty-principle", "kind": "kindred"},
-    {"slug": "plancks-law", "kind": "kindred"}
+    {
+      "slug": "heisenbergs-uncertainty-principle",
+      "kind": "kindred"
+    },
+    {
+      "slug": "plancks-law",
+      "kind": "kindred"
+    }
   ]
 }

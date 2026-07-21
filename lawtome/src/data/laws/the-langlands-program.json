@@ -2,7 +2,10 @@
   "no": "1014",
   "slug": "the-langlands-program",
   "name": "The Langlands Program",
-  "aliases": ["Langlands program", "A grand unified theory of mathematics"],
+  "aliases": [
+    "Langlands program",
+    "A grand unified theory of mathematics"
+  ],
   "statement": "A vast web of conjectures linking number theory, geometry, and representation theory.",
   "statementAccent": "linking number theory, geometry, and representation theory",
   "meaning": "The Langlands program is a vast and influential web of far-reaching, interconnected conjectures and theorems that relate number theory, algebraic geometry, and representation theory and harmonic analysis. Often described as a grand unified theory of mathematics or a bridge connecting disparate areas, it proposes deep correspondences between objects from arithmetic and objects from analysis: on one side, Galois representations, which arise from number theory and encode symmetries of number systems, and on the other, automorphic forms and automorphic representations, which arise from harmonic analysis on groups. The program was proposed by Robert Langlands in 1967, most famously in a seventeen-page handwritten letter to Andre Weil, which sketched the conjectures, and it was developed further in his subsequent work. At its heart lies a vast generalization of classical reciprocity laws, such as quadratic reciprocity and the abelian case captured by class field theory, to a non-abelian setting, together with the conjectures of functoriality and reciprocity and a network of relationships among L-functions. Major results have confirmed parts of it: Andrew Wiles's proof of Fermat's Last Theorem established the modularity theorem, an instance of Langlands-type correspondence; Ngo Bao Chau proved the fundamental lemma, earning the Fields Medal in 2010; Laurent Lafforgue earned the Fields Medal in 2002 for the function-field case; and Langlands received the Abel Prize in 2018.",
@@ -31,13 +34,22 @@
       "text": "The geometric version, connected to gauge theory and physics, whose conjecture a 2024 team claimed to prove."
     }
   ],
-  "whyItMatters": "The Langlands program is one of the largest and most influential projects in modern mathematics, a sweeping vision that has reorganized how mathematicians understand the connections among their subject's great domains. By proposing that number theory, algebraic geometry, and representation theory are bound together by deep correspondences, it has revealed hidden unity where there seemed to be only separate fields, and it has guided decades of research, supplying conjectures whose pursuit has produced some of the most celebrated results of the past half-century. The proof of Fermat's Last Theorem, one of the most famous achievements in mathematics, came through establishing modularity, a Langlands-type correspondence, and Fields Medals have been awarded for major advances within the program, to Laurent Lafforgue in 2002 and Ngo Bao Chau in 2010, while Robert Langlands himself received the Abel Prize in 2018. The program also reaches into mathematical physics through its geometric version, connecting to gauge theory, and its scope continues to grow, as with the 2024 announcement of a proof of the geometric Langlands conjecture. As a grand unifying framework that binds arithmetic to analysis and geometry, the Langlands program is a defining feature of contemporary mathematics.",
+  "whyItMatters": "The Langlands program is one of the largest and most influential projects in modern mathematics, a sweeping vision that has reorganized how mathematicians understand the connections among their subject's great domains. By proposing that number theory, algebraic geometry, and representation theory are bound together by deep correspondences, it has revealed hidden unity where there seemed to be only separate fields, and it has guided decades of research, supplying conjectures whose pursuit has produced some of the most celebrated results of the past half-century. The proof of Fermat's Last Theorem, one of the most famous achievements in mathematics, came through establishing modularity, a Langlands-type correspondence, and Fields Medals have been awarded for major advances within the program, to Laurent Lafforgue in 2002 and Ngo Bao Chau in 2010, while Robert Langlands himself received the Abel Prize in 2018. The program also reaches into mathematical physics through its geometric version, connecting to gauge theory, and its scope continues to grow, as with the 2024 announcement of a proof of the geometric Langlands conjecture.",
   "working": [
-    {"lead": "Set up the two sides", "text": "on one side Galois representations from number theory, on the other automorphic forms from harmonic analysis."},
-    {"lead": "Propose the correspondence", "text": "conjecture a dictionary matching them and preserving their L-functions."},
-    {"lead": "Generalize reciprocity", "text": "extend classical reciprocity and class field theory to the non-abelian setting via functoriality and reciprocity."}
+    {
+      "lead": "Set up the two sides",
+      "text": "on one side Galois representations from number theory, on the other automorphic forms from harmonic analysis."
+    },
+    {
+      "lead": "Propose the correspondence",
+      "text": "conjecture a dictionary matching them and preserving their L-functions."
+    },
+    {
+      "lead": "Generalize reciprocity",
+      "text": "extend classical reciprocity and class field theory to the non-abelian setting via functoriality and reciprocity."
+    }
   ],
-  "limits": "The Langlands program is a program, a vast and largely conjectural framework, not a single completed theorem, and much of it remains open. Its central conjectures, especially functoriality in full generality, are far from proved, and progress, however spectacular, has confirmed only pieces: the modularity theorem, the fundamental lemma, the function-field case for various groups, and, most recently, a claimed proof of the geometric Langlands conjecture. Because the program is enormous and technically demanding, spanning several distinct settings, number fields, function fields, and the geometric version, and requiring deep machinery from many areas, even stating its conjectures precisely requires substantial background, and results in one setting do not automatically transfer to another. The relationship between the arithmetic and geometric versions is itself a subject of active research. Some historical and attributional details reward care: Langlands's letter to Weil is dated 1967, Laurent Lafforgue's Fields Medal is 2002 and Ngo's 2010, Langlands's Abel Prize is 2018, and the 2024 geometric Langlands proof, led by Gaitsgory and Raskin with collaborators, is recent and its verification ongoing; the two Lafforgue brothers should not be conflated. So the Langlands program robustly links arithmetic, geometry, and analysis, understood as a largely conjectural grand framework whose full realization remains a guiding vision.",
+  "limits": "The Langlands program is a program, a vast and largely conjectural framework, not a single completed theorem, and much of it remains open. Its central conjectures, especially functoriality in full generality, are far from proved, and progress, however spectacular, has confirmed only pieces: the modularity theorem, the fundamental lemma, the function-field case for various groups, and, most recently, a claimed proof of the geometric Langlands conjecture. Because the program is enormous and technically demanding, spanning several distinct settings, number fields, function fields, and the geometric version, and requiring deep machinery from many areas, even stating its conjectures precisely requires substantial background, and results in one setting do not automatically transfer to another. The relationship between the arithmetic and geometric versions is itself a subject of active research. Some historical and attributional details reward care: Langlands's letter to Weil is dated 1967, Laurent Lafforgue's Fields Medal is 2002 and Ngo's 2010, Langlands's Abel Prize is 2018, and the 2024 geometric Langlands proof, led by Gaitsgory and Raskin with collaborators, is recent and its verification ongoing; the two Lafforgue brothers should not be conflated.",
   "misreadings": "The Langlands program is not a single theorem but a web of conjectures and partial results, much of it still open. It is not proved by the confirmation of individual pieces, since the general conjectures, such as full functoriality, remain unproved. And its several settings, number fields, function fields, and geometric, are distinct, so a result in one does not settle the others, and the geometric proof does not close the arithmetic program, so treating the program as a finished theorem, as proved by its pieces, or as a single undivided problem, misreads it.",
   "origin": "The web of conjectures proposed by Robert Langlands in a 1967 letter to Andre Weil, relating Galois representations in number theory to automorphic forms in harmonic analysis, a grand unifying framework of modern mathematics.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": 1967,
   "namedAfter": "Robert Langlands",
   "sources": [
-    {"text": "Langlands program, Wikipedia. — the Langlands program as a web of conjectures connecting number theory, algebraic geometry, and representation theory, the correspondence between Galois representations and automorphic forms, the generalization of reciprocity and class field theory, functoriality, and the modularity theorem, the fundamental lemma, and the Fields Medals and Abel Prize connected to it.", "url": "https://en.wikipedia.org/wiki/Langlands_program", "type": "secondary"},
-    {"text": "Monumental Proof Settles Geometric Langlands Conjecture, Quanta Magazine. — the Langlands program as a grand unified theory of mathematics and the 2024 claimed proof of the geometric Langlands conjecture by a team led by Dennis Gaitsgory and Sam Raskin.", "url": "https://www.quantamagazine.org/monumental-proof-settles-geometric-langlands-conjecture-20240719/", "type": "secondary"}
+    {
+      "text": "Langlands program, Wikipedia. — the Langlands program as a web of conjectures connecting number theory, algebraic geometry, and representation theory, the correspondence between Galois representations and automorphic forms, the generalization of reciprocity and class field theory, functoriality, and the modularity theorem, the fundamental lemma, and the Fields Medals and Abel Prize connected to it.",
+      "url": "https://en.wikipedia.org/wiki/Langlands_program",
+      "type": "secondary"
+    },
+    {
+      "text": "Monumental Proof Settles Geometric Langlands Conjecture, Quanta Magazine. — the Langlands program as a grand unified theory of mathematics and the 2024 claimed proof of the geometric Langlands conjecture by a team led by Dennis Gaitsgory and Sam Raskin.",
+      "url": "https://www.quantamagazine.org/monumental-proof-settles-geometric-langlands-conjecture-20240719/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Langlands_program",
   "related": [
-    {"slug": "fermats-last-theorem", "kind": "consequence"},
-    {"slug": "the-birch-and-swinnerton-dyer-conjecture", "kind": "kindred"}
+    {
+      "slug": "fermats-last-theorem",
+      "kind": "consequence"
+    },
+    {
+      "slug": "the-birch-and-swinnerton-dyer-conjecture",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "846",
   "slug": "the-double-slit-experiment",
   "name": "The Double-Slit Experiment",
-  "aliases": ["Young's double-slit experiment", "Two-slit experiment"],
+  "aliases": [
+    "Young's double-slit experiment",
+    "Two-slit experiment"
+  ],
   "statement": "Send particles one at a time through two slits and they still build an interference pattern, as if each passed through both.",
   "statementAccent": "as if each passed through both",
   "meaning": "The double-slit experiment is a demonstration in physics in which particles or waves are sent through a barrier with two narrow slits and form a pattern of alternating bright and dark bands, an interference pattern, on a screen behind. It began as an optics experiment associated with Thomas Young, who in his Bakerian Lectures around 1801 and 1803 argued for the wave nature of light by showing that light passing two closely spaced openings produces interference fringes, the hallmark of waves overlapping and reinforcing or cancelling. Its deeper fame comes from the quantum version, in which single particles, such as electrons or photons, are fired one at a time. Each particle strikes the screen as a single localized dot, seemingly like a particle, yet over many particles the accumulated dots build up the same interference pattern, as though each particle somehow passed through both slits and interfered with itself. Crucially, if a detector is placed to determine which slit each particle went through, the interference pattern disappears and the particles behave like ordinary particles. The double-slit experiment thus dramatizes wave-particle duality and the role of measurement, and Richard Feynman called it a phenomenon containing the only mystery at the heart of quantum mechanics.",
@@ -31,13 +34,22 @@
       "text": "The quantum version in which particles fired one at a time still build the interference pattern, revealing wave-particle duality."
     }
   ],
-  "whyItMatters": "The double-slit experiment is one of the most important and revealing demonstrations in all of physics, capturing the strangeness of quantum mechanics in a single striking image. In its original form it settled a long debate by showing that light behaves as a wave, but its quantum form goes far deeper: by revealing that individual particles build up an interference pattern as though each passed through both slits, yet register as single dots and lose their wave behavior when observed, it dramatizes wave-particle duality, the probabilistic wavefunction, and the central role of measurement in quantum theory. Richard Feynman held that the experiment contains the only mystery of quantum mechanics, and it remains the standard illustration of complementarity and the measurement problem, framing debates over how to interpret the theory. Readers of Physics World voted the single-electron version the most beautiful experiment in physics. As the clearest window into how nature behaves at the smallest scales, defying classical intuition, the double-slit experiment is fundamental to understanding quantum physics and endures as its defining puzzle.",
+  "whyItMatters": "The double-slit experiment is one of the most important and revealing demonstrations in all of physics, capturing the strangeness of quantum mechanics in a single striking image. In its original form it settled a long debate by showing that light behaves as a wave, but its quantum form goes far deeper: by revealing that individual particles build up an interference pattern as though each passed through both slits, yet register as single dots and lose their wave behavior when observed, it dramatizes wave-particle duality, the probabilistic wavefunction, and the central role of measurement in quantum theory. Richard Feynman held that the experiment contains the only mystery of quantum mechanics, and it remains the standard illustration of complementarity and the measurement problem, framing debates over how to interpret the theory. Readers of Physics World voted the single-electron version the most beautiful experiment in physics.",
   "working": [
-    {"lead": "Send through two slits", "text": "direct particles or waves at a barrier with two narrow, closely spaced openings."},
-    {"lead": "Build up the pattern", "text": "let each particle land as a single dot, and over many particles watch an interference pattern emerge."},
-    {"lead": "Observe the which-path effect", "text": "add a detector that reveals which slit each particle took, and see the interference pattern vanish."}
+    {
+      "lead": "Send through two slits",
+      "text": "direct particles or waves at a barrier with two narrow, closely spaced openings."
+    },
+    {
+      "lead": "Build up the pattern",
+      "text": "let each particle land as a single dot, and over many particles watch an interference pattern emerge."
+    },
+    {
+      "lead": "Observe the which-path effect",
+      "text": "add a detector that reveals which slit each particle took, and see the interference pattern vanish."
+    }
   ],
-  "limits": "The double-slit experiment is a demonstration whose interpretation, not its results, is what remains debated, since the mathematics of quantum mechanics predicts the outcomes precisely while different interpretations disagree about what they mean. The historical detail deserves care: it is disputed whether Thomas Young performed a literal two-slit experiment as popularly pictured, since his actual demonstrations used sunlight, pinholes, and narrow cards, so the tidy apparatus is partly a later idealization, and his interference work is best dated to his Bakerian Lectures around 1801 and 1803. A crucial misconception must be avoided: the loss of interference on measurement is a physical effect of the apparatus interacting with the particle and making which-path information available, not a result of a conscious mind observing. So the double-slit experiment robustly reveals wave-particle duality and the role of measurement, understood as an empirically settled but interpretively contested phenomenon whose popular tellings can overstate both Young's apparatus and the role of consciousness.",
+  "limits": "The double-slit experiment is a demonstration whose interpretation, not its results, is what remains debated, since the mathematics of quantum mechanics predicts the outcomes precisely while different interpretations disagree about what they mean. The historical detail deserves care: it is disputed whether Thomas Young performed a literal two-slit experiment as popularly pictured, since his actual demonstrations used sunlight, pinholes, and narrow cards, so the tidy apparatus is partly a later idealization, and his interference work is best dated to his Bakerian Lectures around 1801 and 1803. A crucial misconception must be avoided: the loss of interference on measurement is a physical effect of the apparatus interacting with the particle and making which-path information available, not a result of a conscious mind observing.",
   "misreadings": "The double-slit experiment does not show that consciousness collapses the wavefunction; the interference is lost because a physical detector interacts with the particle and records which-path information, whether or not anyone reads it. It does not mean the particle literally splits in two, but that its wavefunction, a probability amplitude, passes through both slits and interferes with itself. And Young's original was not necessarily the neat two-slit apparatus of textbooks, since his demonstrations used pinholes and cards, so treating measurement as requiring a mind, the particle as physically divided, or the popular history as exact, misreads a precisely predicted but interpretively deep experiment.",
   "origin": "An optics experiment associated with Thomas Young around 1801 to 1803, showing light interferes as a wave, later transformed into the defining demonstration of quantum wave-particle duality with single particles.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Double-slit experiment, Wikipedia. — Young's interference work around 1801 to 1803, the single-particle quantum version building an interference pattern, wave-particle duality and the wavefunction, the which-path measurement destroying interference, complementarity, Feynman's 'only mystery', and that the effect is independent of any conscious observer.", "url": "https://en.wikipedia.org/wiki/Double-slit_experiment", "type": "secondary"},
-    {"text": "The double-slit experiment, Physics World. — the history from Young through Jönsson 1961, Merli, Missiroli and Pozzi 1974, and Tonomura's 1989 single-electron build-up, and the 2002 vote for the most beautiful experiment in physics.", "url": "https://physicsworld.com/a/the-double-slit-experiment/", "type": "secondary"}
+    {
+      "text": "Double-slit experiment, Wikipedia. — Young's interference work around 1801 to 1803, the single-particle quantum version building an interference pattern, wave-particle duality and the wavefunction, the which-path measurement destroying interference, complementarity, Feynman's 'only mystery', and that the effect is independent of any conscious observer.",
+      "url": "https://en.wikipedia.org/wiki/Double-slit_experiment",
+      "type": "secondary"
+    },
+    {
+      "text": "The double-slit experiment, Physics World. — the history from Young through Jönsson 1961, Merli, Missiroli and Pozzi 1974, and Tonomura's 1989 single-electron build-up, and the 2002 vote for the most beautiful experiment in physics.",
+      "url": "https://physicsworld.com/a/the-double-slit-experiment/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Double-slit_experiment",
   "related": [
-    {"slug": "the-photoelectric-effect", "kind": "kindred"},
-    {"slug": "the-davisson-germer-experiment", "kind": "kindred"}
+    {
+      "slug": "the-photoelectric-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-davisson-germer-experiment",
+      "kind": "kindred"
+    }
   ]
 }

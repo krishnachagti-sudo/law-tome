@@ -2,7 +2,10 @@
   "no": "745",
   "slug": "the-ventriloquist-effect",
   "name": "The Ventriloquist Effect",
-  "aliases": ["Spatial ventriloquism", "Visual capture of sound"],
+  "aliases": [
+    "Spatial ventriloquism",
+    "Visual capture of sound"
+  ],
   "statement": "We hear a sound as coming from wherever we see its likely source, so the voice seems to come from the moving puppet.",
   "statementAccent": "the voice seems to come from the moving puppet",
   "meaning": "The ventriloquist effect is a multisensory perceptual illusion in which the perceived location of a sound is shifted toward a simultaneous visual stimulus, so that vision captures or dominates the localisation of sound. It is named after the stage act of ventriloquism, where a performer keeps their own lips still while moving the puppet's mouth, and the voice seems to come from the puppet rather than from the performer. The same effect operates everywhere: in a cinema or watching television, the dialogue seems to come from the actors' mouths on screen even though the sound actually issues from speakers to the side. The effect arises because the brain integrates the seen and heard signals, and because vision usually has better spatial resolution than hearing, the visual location generally wins. It is a classic demonstration of multisensory integration and cross-modal perception in cognitive science.",
@@ -31,11 +34,20 @@
       "text": "The lasting recalibration of sound localisation produced by repeated exposure to a spatial audio-visual mismatch, persisting after the visual cue is gone."
     }
   ],
-  "whyItMatters": "The ventriloquist effect is a classic demonstration of multisensory integration, showing how the brain fuses information from different senses into a single, coherent perception of the world. It reveals that perception is not a matter of each sense working alone but of combining them, weighted by their reliability, so that the more precise sense shapes the outcome, a principle that extends far beyond sound localisation to how the brain resolves conflicting sensory information generally. The effect explains everyday experiences, from the seamless illusion of speech coming from a talker's mouth to dialogue appearing to come from on-screen actors, and it underlies technologies from film sound to virtual and augmented reality, where aligning seen and heard sources is essential for immersion. As a vivid, easily demonstrated instance of vision capturing sound, it has become a cornerstone example in perceptual psychology and cognitive science.",
+  "whyItMatters": "The ventriloquist effect is a classic demonstration of multisensory integration, showing how the brain fuses information from different senses into a single, coherent perception of the world. It reveals that perception is not a matter of each sense working alone but of combining them, weighted by their reliability, so that the more precise sense shapes the outcome, a principle that extends far beyond sound localisation to how the brain resolves conflicting sensory information generally. The effect explains everyday experiences, from the seamless illusion of speech coming from a talker's mouth to dialogue appearing to come from on-screen actors, and it underlies technologies from film sound to virtual and augmented reality, where aligning seen and heard sources is essential for immersion.",
   "working": [
-    {"lead": "Pair a sound with a seen source", "text": "present a sound and a visual stimulus close together in time and space, as with a talker's moving mouth."},
-    {"lead": "Bind and weight the senses", "text": "have the brain treat them as one event and combine their locations, weighting each by its reliability."},
-    {"lead": "Localise toward the sight", "text": "because vision usually localises more precisely, perceive the sound as coming from the seen source, capturing its location."}
+    {
+      "lead": "Pair a sound with a seen source",
+      "text": "present a sound and a visual stimulus close together in time and space, as with a talker's moving mouth."
+    },
+    {
+      "lead": "Bind and weight the senses",
+      "text": "have the brain treat them as one event and combine their locations, weighting each by its reliability."
+    },
+    {
+      "lead": "Localise toward the sight",
+      "text": "because vision usually localises more precisely, perceive the sound as coming from the seen source, capturing its location."
+    }
   ],
   "limits": "The ventriloquist effect reflects reliability-weighted integration rather than absolute visual dominance, so it is not that vision always wins; when the visual signal is unreliable, for example severely blurred, its weight falls and sound can capture vision instead. The effect operates when the seen and heard signals are close enough in time and space to be plausibly bound to one event; large mismatches break the binding and the illusion fails. Its strength varies with the stimuli, the observer, and attention. And while vision tends to dominate spatial judgments, hearing can dominate temporal ones in related illusions, so no single sense is uniformly in charge. The ventriloquist effect thus illustrates a general principle of reliability-weighted multisensory combination rather than a fixed rule that sight overrides sound.",
   "misreadings": "The effect is not that we cannot hear where sounds come from; it is that when a plausible visual source is present, the brain shifts the perceived sound location toward it through integration. It is not blind visual dominance either, since an unreliable visual cue loses weight and sound can prevail. And it requires the seen and heard signals to be close enough to be bound as one event, so treating it as vision always overriding hearing, or as working regardless of how mismatched the cues are, misreads a reliability-weighted process with clear conditions.",
@@ -45,12 +57,26 @@
   "provenance": "canon",
   "namedAfter": null,
   "sources": [
-    {"text": "Visual capture, Wikipedia. — the ventriloquist effect as the shifting of perceived sound location toward a visual source, the ventriloquism-act and cinema examples, and the visual-capture framing.", "url": "https://en.wikipedia.org/wiki/Visual_capture", "type": "secondary"},
-    {"text": "Bruns, The Ventriloquist Illusion as a Tool to Study Multisensory Processing, Frontiers in Integrative Neuroscience (2019). — the definition, the reliability-weighted integration mechanism, and the ventriloquism aftereffect.", "url": "https://www.frontiersin.org/journals/integrative-neuroscience/articles/10.3389/fnint.2019.00051/full", "type": "secondary"}
+    {
+      "text": "Visual capture, Wikipedia. — the ventriloquist effect as the shifting of perceived sound location toward a visual source, the ventriloquism-act and cinema examples, and the visual-capture framing.",
+      "url": "https://en.wikipedia.org/wiki/Visual_capture",
+      "type": "secondary"
+    },
+    {
+      "text": "Bruns, The Ventriloquist Illusion as a Tool to Study Multisensory Processing, Frontiers in Integrative Neuroscience (2019). — the definition, the reliability-weighted integration mechanism, and the ventriloquism aftereffect.",
+      "url": "https://www.frontiersin.org/journals/integrative-neuroscience/articles/10.3389/fnint.2019.00051/full",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Visual_capture",
   "related": [
-    {"slug": "the-mcgurk-effect", "kind": "kindred"},
-    {"slug": "the-rubber-hand-illusion", "kind": "kindred"}
+    {
+      "slug": "the-mcgurk-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-rubber-hand-illusion",
+      "kind": "kindred"
+    }
   ]
 }

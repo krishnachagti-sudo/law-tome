@@ -2,7 +2,10 @@
   "no": "643",
   "slug": "the-uncanny-valley",
   "name": "The Uncanny Valley",
-  "aliases": ["Bukimi no tani", "The valley of eeriness"],
+  "aliases": [
+    "Bukimi no tani",
+    "The valley of eeriness"
+  ],
   "statement": "A figure that looks almost but not quite human tips from endearing into deeply unsettling.",
   "statementAccent": "from endearing into deeply unsettling",
   "meaning": "The uncanny valley is a hypothesized relationship between how closely a figure, a robot, animation, or doll, resembles a real human and the emotional response it evokes. As human-likeness increases, affinity generally rises, until a point near but not at full realism where affinity sharply drops into a valley of eeriness, unease, or revulsion, before rising again as the replica becomes nearly indistinguishable from a real person. Introduced by the Japanese roboticist Masahiro Mori in 1970, who called it bukimi no tani, the valley of eeriness, the idea is that almost-human figures, not clearly human and not clearly artificial, are the most disturbing. Highly influential in robotics, animation, and games, it remains a hypothesis whose cause and universality are still debated.",
@@ -31,11 +34,20 @@
       "text": "The competing hypotheses, pathogen and mate avoidance, mortality salience, and perceptual mismatch, offered for why the valley occurs, none yet established."
     }
   ],
-  "whyItMatters": "The uncanny valley is a highly influential idea in robotics, animation, video games, computer-generated imagery, and prosthetics design, guiding creators away from the eerie near-human zone. Rather than chase imperfect realism, designers often stylise their robots and characters to keep them clearly non-human, or push all the way to near-perfect realism, precisely to avoid the valley. The concept shapes how believable digital humans and social robots are built and received, and it raises deep questions about perception, empathy, and what it is about the almost-human that disturbs us. As a memorable, testable hypothesis, it has driven decades of research even as its exact cause remains open.",
+  "whyItMatters": "The uncanny valley is a highly influential idea in robotics, animation, video games, computer-generated imagery, and prosthetics design, guiding creators away from the eerie near-human zone. Rather than chase imperfect realism, designers often stylise their robots and characters to keep them clearly non-human, or push all the way to near-perfect realism, precisely to avoid the valley. The concept shapes how believable digital humans and social robots are built and received, and it raises deep questions about perception, empathy, and what it is about the almost-human that disturbs us.",
   "working": [
-    {"lead": "Watch for the dip", "text": "expect affinity to rise with human-likeness but plunge into eeriness just short of full realism, the uncanny valley."},
-    {"lead": "Stylise or perfect", "text": "avoid the valley by making figures clearly non-human and stylised, or by pushing to near-perfect realism, rather than settling in the eerie middle."},
-    {"lead": "Mind the motion", "text": "remember movement amplifies the effect, so a lifelike-looking figure with non-human motion is especially unsettling."}
+    {
+      "lead": "Watch for the dip",
+      "text": "expect affinity to rise with human-likeness but plunge into eeriness just short of full realism, the uncanny valley."
+    },
+    {
+      "lead": "Stylise or perfect",
+      "text": "avoid the valley by making figures clearly non-human and stylised, or by pushing to near-perfect realism, rather than settling in the eerie middle."
+    },
+    {
+      "lead": "Mind the motion",
+      "text": "remember movement amplifies the effect, so a lifelike-looking figure with non-human motion is especially unsettling."
+    }
   ],
   "limits": "The uncanny valley is a hypothesis, not an established law; it has empirical support in some studies but remains debated, and critics argue the effect may be heterogeneous rather than a single unified phenomenon, or may vary across individuals and cultures. The exact cause is unknown, with several competing and unproven explanations, and even the universality of the effect is uncertain. The classic affinity curve is a schematic proposal rather than a precisely measured function, and how strongly the valley bites depends on the stimulus and the observer. It is therefore a powerful and productive idea, but one whose mechanism and scope are still open questions.",
   "misreadings": "The eeriness peaks at almost-human, not at fully human or clearly non-human, so a cartoon robot and a real person are both comfortable while the lifelike-but-off figure is disturbing. It is a hypothesis, not a proven law, so its cause and even its universality remain uncertain and should not be overstated. And movement intensifies the effect rather than being incidental, so a still almost-human image may unsettle less than the same figure in motion, which is why animated near-humans so often provoke the strongest reactions.",
@@ -46,11 +58,22 @@
   "coinedYear": 1970,
   "namedAfter": "Masahiro Mori",
   "sources": [
-    {"text": "Uncanny valley, Wikipedia. — the definition and valley shape, Mori's 1970 essay and the Japanese term, the movement-amplifies-it point, and its debated hypothesis status.", "url": "https://en.wikipedia.org/wiki/Uncanny_valley", "type": "secondary"},
-    {"text": "The Uncanny Valley: The Original Essay by Masahiro Mori, IEEE Spectrum. — the authorised English translation of Mori's 1970 essay.", "url": "https://spectrum.ieee.org/the-uncanny-valley", "type": "primary"}
+    {
+      "text": "Uncanny valley, Wikipedia. — the definition and valley shape, Mori's 1970 essay and the Japanese term, the movement-amplifies-it point, and its debated hypothesis status.",
+      "url": "https://en.wikipedia.org/wiki/Uncanny_valley",
+      "type": "secondary"
+    },
+    {
+      "text": "The Uncanny Valley: The Original Essay by Masahiro Mori, IEEE Spectrum. — the authorised English translation of Mori's 1970 essay.",
+      "url": "https://spectrum.ieee.org/the-uncanny-valley",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Uncanny_valley",
   "related": [
-    {"slug": "the-mere-exposure-effect", "kind": "kindred"}
+    {
+      "slug": "the-mere-exposure-effect",
+      "kind": "kindred"
+    }
   ]
 }

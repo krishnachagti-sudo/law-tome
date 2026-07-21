@@ -2,7 +2,10 @@
   "no": "1007",
   "slug": "the-navier-stokes-existence-and-smoothness",
   "name": "Navier-Stokes Existence and Smoothness",
-  "aliases": ["The Navier-Stokes problem", "Do fluid equations blow up"],
+  "aliases": [
+    "The Navier-Stokes problem",
+    "Do fluid equations blow up"
+  ],
   "statement": "Do the equations of fluid flow always have smooth solutions, or can they blow up?",
   "statementAccent": "always have smooth solutions, or can they blow up",
   "meaning": "The Navier-Stokes existence and smoothness problem is one of the seven Clay Mathematics Institute Millennium Prize Problems, announced in 2000, each carrying a one-million-dollar prize, and it is unsolved. It concerns the Navier-Stokes equations, the fundamental partial differential equations that describe the motion of viscous fluids, both liquids and gases, derived in the nineteenth century by Claude-Louis Navier and George Gabriel Stokes. Although these equations are used ubiquitously across science and engineering, to model weather, ocean currents, aerodynamics, and blood flow, a basic mathematical question about them remains open in three spatial dimensions: whether smooth, physically reasonable solutions always exist for all time. The Clay problem asks one to either prove that, for the three-dimensional incompressible Navier-Stokes equations with smooth initial data, smooth solutions always exist globally in time, or to provide a counterexample, a solution that develops a singularity and blows up, its velocity or other quantities becoming infinite, in finite time. In two dimensions, global existence and smoothness are known and proved. In three dimensions, only local-in-time existence of smooth solutions and the global existence of weak solutions, which may not be smooth or unique and were introduced by Jean Leray in 1934, are known, while global regularity is open.",
@@ -31,13 +34,22 @@
       "text": "Whether a smooth solution can form a finite-time singularity, the possibility the problem must rule out or exhibit."
     }
   ],
-  "whyItMatters": "The Navier-Stokes existence and smoothness problem is a rare case where a question at the frontier of pure mathematics concerns equations of immense practical importance. The Navier-Stokes equations underlie fluid dynamics and are solved numerically millions of times a day in weather forecasting, aircraft and automobile design, climate modeling, and countless engineering applications, yet we do not know whether, in three dimensions, they always have well-behaved solutions, a gap that is both intellectually striking and foundational for the theory of nonlinear partial differential equations. A resolution would advance the mathematics of PDEs profoundly, since the techniques required would likely illuminate a whole class of nonlinear problems, and it is closely tied to the deep and still poorly understood phenomenon of turbulence. As one of the seven Clay Millennium Prize Problems, backed by a one-million-dollar prize, the problem has focused enormous effort, and results like the known two-dimensional theory, Leray's weak solutions, and Tao's blow-up for an averaged equation mark the boundaries of what is currently possible. As the question of whether the equations of fluid flow always have smooth solutions, it stands at the meeting point of mathematics, physics, and engineering.",
+  "whyItMatters": "The Navier-Stokes existence and smoothness problem is a rare case where a question at the frontier of pure mathematics concerns equations of immense practical importance. The Navier-Stokes equations underlie fluid dynamics and are solved numerically millions of times a day in weather forecasting, aircraft and automobile design, climate modeling, and countless engineering applications, yet we do not know whether, in three dimensions, they always have well-behaved solutions, a gap that is both intellectually striking and foundational for the theory of nonlinear partial differential equations. A resolution would advance the mathematics of PDEs profoundly, since the techniques required would likely illuminate a whole class of nonlinear problems, and it is closely tied to the deep and still poorly understood phenomenon of turbulence. As one of the seven Clay Millennium Prize Problems, backed by a one-million-dollar prize, the problem has focused enormous effort, and results like the known two-dimensional theory, Leray's weak solutions, and Tao's blow-up for an averaged equation mark the boundaries of what is currently possible.",
   "working": [
-    {"lead": "Start from smooth data", "text": "take the three-dimensional incompressible Navier-Stokes equations with smooth initial velocity."},
-    {"lead": "Ask about global smoothness", "text": "ask whether the solution stays smooth and finite for all time, or blows up in finite time."},
-    {"lead": "Prove or find a counterexample", "text": "either prove global smooth existence or exhibit a solution that develops a finite-time singularity."}
+    {
+      "lead": "Start from smooth data",
+      "text": "take the three-dimensional incompressible Navier-Stokes equations with smooth initial velocity."
+    },
+    {
+      "lead": "Ask about global smoothness",
+      "text": "ask whether the solution stays smooth and finite for all time, or blows up in finite time."
+    },
+    {
+      "lead": "Prove or find a counterexample",
+      "text": "either prove global smooth existence or exhibit a solution that develops a finite-time singularity."
+    }
   ],
-  "limits": "The Navier-Stokes problem is unresolved, and the state of knowledge marks clear limits. Global smoothness is proved only in two dimensions; in three dimensions, only local-in-time smooth existence and global weak solutions are known, and the weak solutions of Leray from 1934 may fail to be smooth or unique, so they do not settle the regularity question. No one has produced either a proof of global smoothness or a genuine finite-time blow-up for the actual three-dimensional equations. Results such as Tao's 2014 finite-time blow-up for an averaged version of the equations show that broad energy-based methods cannot suffice and that any solution must exploit the precise structure of the true equations, which suggests the problem is very hard. The Clay problem is stated for the incompressible case with smooth data, and the official technical formulation, due to Charles Fefferman, specifies the exact conditions. Some details reward care: the equations are named for Navier and Stokes and were derived in the nineteenth century, Leray's weak solutions date to 1934, and the one-million-dollar prize applies as to all Millennium Problems though the exact figure is not always printed on every page. So the Navier-Stokes problem robustly asks whether fluid-flow solutions stay smooth, understood as an open problem where two-dimensional theory and weak solutions fall short of the three-dimensional regularity question.",
+  "limits": "The Navier-Stokes problem is unresolved, and the state of knowledge marks clear limits. Global smoothness is proved only in two dimensions; in three dimensions, only local-in-time smooth existence and global weak solutions are known, and the weak solutions of Leray from 1934 may fail to be smooth or unique, so they do not settle the regularity question. No one has produced either a proof of global smoothness or a genuine finite-time blow-up for the actual three-dimensional equations. Results such as Tao's 2014 finite-time blow-up for an averaged version of the equations show that broad energy-based methods cannot suffice and that any solution must exploit the precise structure of the true equations, which suggests the problem is very hard. The Clay problem is stated for the incompressible case with smooth data, and the official technical formulation, due to Charles Fefferman, specifies the exact conditions. Some details reward care: the equations are named for Navier and Stokes and were derived in the nineteenth century, Leray's weak solutions date to 1934, and the one-million-dollar prize applies as to all Millennium Problems though the exact figure is not always printed on every page.",
   "misreadings": "The Navier-Stokes problem is not about whether the equations are useful, which they plainly are, but about whether their three-dimensional solutions provably stay smooth for all time. Weak solutions are not a solution to the problem, since they may not be smooth or unique. And the two-dimensional case being solved does not settle the three-dimensional one, which is genuinely harder, so treating the problem as questioning the equations' usefulness, as answered by weak solutions, or as settled by the two-dimensional result, misreads it.",
   "origin": "The Clay Millennium Prize Problem, unsolved, of whether the three-dimensional incompressible Navier-Stokes equations of fluid flow always have globally smooth solutions or can develop finite-time singularities.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Navier-Stokes Equation, Clay Mathematics Institute. — the Navier-Stokes equations governing fluid flow, the unsolved Millennium Prize Problem of proving existence and smoothness of solutions in three dimensions, and its connection to turbulence.", "url": "https://www.claymath.org/millennium/navier-stokes-equation/", "type": "secondary"},
-    {"text": "Navier-Stokes existence and smoothness, Wikipedia. — the problem of global existence and smoothness of solutions to the three-dimensional incompressible Navier-Stokes equations, the two-dimensional result, Leray's 1934 weak solutions, the blow-up alternative, and Tao's averaged-equation result.", "url": "https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_existence_and_smoothness", "type": "secondary"}
+    {
+      "text": "Navier-Stokes Equation, Clay Mathematics Institute. — the Navier-Stokes equations governing fluid flow, the unsolved Millennium Prize Problem of proving existence and smoothness of solutions in three dimensions, and its connection to turbulence.",
+      "url": "https://www.claymath.org/millennium/navier-stokes-equation/",
+      "type": "secondary"
+    },
+    {
+      "text": "Navier-Stokes existence and smoothness, Wikipedia. — the problem of global existence and smoothness of solutions to the three-dimensional incompressible Navier-Stokes equations, the two-dimensional result, Leray's 1934 weak solutions, the blow-up alternative, and Tao's averaged-equation result.",
+      "url": "https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_existence_and_smoothness",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_existence_and_smoothness",
   "related": [
-    {"slug": "the-millennium-prize-problems", "kind": "kindred"},
-    {"slug": "the-yang-mills-mass-gap", "kind": "kindred"}
+    {
+      "slug": "the-millennium-prize-problems",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-yang-mills-mass-gap",
+      "kind": "kindred"
+    }
   ]
 }

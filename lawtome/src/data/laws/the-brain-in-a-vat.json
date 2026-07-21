@@ -2,7 +2,10 @@
   "no": "665",
   "slug": "the-brain-in-a-vat",
   "name": "The Brain in a Vat",
-  "aliases": ["Brain in a jar", "The BIV scenario"],
+  "aliases": [
+    "Brain in a jar",
+    "The BIV scenario"
+  ],
   "statement": "If a disembodied brain in a vat were fed the same signals as yours, it could not tell that its whole world was a fake.",
   "statementAccent": "could not tell that its whole world was a fake",
   "meaning": "The brain in a vat is a thought experiment in epistemology and the philosophy of mind, a modern descendant of Descartes's evil demon. It asks you to imagine a brain removed from a body and kept alive in a vat of nutrients, wired to a computer that feeds it electrical signals identical to those a real body would send. The envatted brain would have experiences indistinguishable from an ordinary person's, so it could not tell from the inside whether its perceptions came from a real world or from the machine. The scenario dramatizes radical skepticism: if you cannot rule out that you are such a brain, how can you claim to know anything about an external world at all. It is the philosophical ancestor of the simulation posed by films like The Matrix.",
@@ -31,11 +34,20 @@
       "text": "The argument from semantic externalism that a brain in a vat could not even coherently think it is one, since its terms would refer to the simulation, not reality."
     }
   ],
-  "whyItMatters": "The brain in a vat is the classic modern statement of radical skepticism about the external world, a central problem in epistemology and a staple of introductory philosophy. It sharpens the question of what knowledge requires: if a perfectly deceived brain would have all the same evidence you have, then experience alone seems unable to guarantee that the world is as it appears. The scenario also frames influential replies, above all Putnam's use of the theory of reference to argue the hypothesis is self-undermining, and it anchors contemporary debates about simulation and virtual reality. As a vivid image of a mind cut off from the world it thinks it perceives, it forces a confrontation with the gap between appearance and reality.",
+  "whyItMatters": "The brain in a vat is the classic modern statement of radical skepticism about the external world, a central problem in epistemology and a staple of introductory philosophy. It sharpens the question of what knowledge requires: if a perfectly deceived brain would have all the same evidence you have, then experience alone seems unable to guarantee that the world is as it appears. The scenario also frames influential replies, above all Putnam's use of the theory of reference to argue the hypothesis is self-undermining, and it anchors contemporary debates about simulation and virtual reality.",
   "working": [
-    {"lead": "Grant the indistinguishability", "text": "accept that an envatted brain's experiences would be subjectively identical to yours, so no sensation could reveal which situation you are in."},
-    {"lead": "Feel the skeptical bite", "text": "ask how, if you cannot rule out the vat, you can claim to know the ordinary facts about the external world that you take for granted."},
-    {"lead": "Weigh the replies", "text": "consider answers like Putnam's, that the very meaning of the brain's words would make the hypothesis self-refuting, rather than assuming skepticism wins."}
+    {
+      "lead": "Grant the indistinguishability",
+      "text": "accept that an envatted brain's experiences would be subjectively identical to yours, so no sensation could reveal which situation you are in."
+    },
+    {
+      "lead": "Feel the skeptical bite",
+      "text": "ask how, if you cannot rule out the vat, you can claim to know the ordinary facts about the external world that you take for granted."
+    },
+    {
+      "lead": "Weigh the replies",
+      "text": "consider answers like Putnam's, that the very meaning of the brain's words would make the hypothesis self-refuting, rather than assuming skepticism wins."
+    }
   ],
   "limits": "The brain in a vat is a device for posing the problem of skepticism, not a claim that you actually are such a brain; its force is to challenge how knowledge of the external world is possible, not to assert the world is fake. Influential responses argue the scenario is less threatening than it looks: Putnam's semantic externalism contends a brain in a vat could not even coherently formulate the thought that it is one, and other philosophers reject the underlying assumption that experience is all one has to go on. Whether any reply fully defeats the skeptic remains debated, so the scenario poses an open problem rather than delivering a verdict, and its lesson depends on contested theories of meaning and knowledge.",
   "misreadings": "The scenario is a tool for exploring skepticism, not a serious assertion that you are probably a brain in a vat; its point is the difficulty of ruling the possibility out, not its likelihood. Putnam's famous reply does not prove there is no external world but argues, from the theory of reference, that the specific self-referential thought I am a brain in a vat cannot be true as the envatted brain means it. And the puzzle is not dissolved merely by noting that being a vat-brain seems unlikely; the skeptic's challenge is that you cannot know it is false from your evidence, which is what the argument targets.",
@@ -45,12 +57,26 @@
   "provenance": "canon",
   "namedAfter": null,
   "sources": [
-    {"text": "Brain in a vat, Wikipedia. — the setup of a brain fed simulated signals, its descent from Descartes's evil demon, the skeptical argument, the Matrix comparison, and Putnam's self-refutation reply.", "url": "https://en.wikipedia.org/wiki/Brain_in_a_vat", "type": "secondary"},
-    {"text": "The Brain in a Vat Argument, Internet Encyclopedia of Philosophy. — the skeptical scenario, its relation to Cartesian doubt, and Putnam's semantic-externalism response.", "url": "https://iep.utm.edu/brain-in-a-vat-argument/", "type": "secondary"}
+    {
+      "text": "Brain in a vat, Wikipedia. — the setup of a brain fed simulated signals, its descent from Descartes's evil demon, the skeptical argument, the Matrix comparison, and Putnam's self-refutation reply.",
+      "url": "https://en.wikipedia.org/wiki/Brain_in_a_vat",
+      "type": "secondary"
+    },
+    {
+      "text": "The Brain in a Vat Argument, Internet Encyclopedia of Philosophy. — the skeptical scenario, its relation to Cartesian doubt, and Putnam's semantic-externalism response.",
+      "url": "https://iep.utm.edu/brain-in-a-vat-argument/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Brain_in_a_vat",
   "related": [
-    {"slug": "schrodingers-cat", "kind": "kindred"},
-    {"slug": "the-teletransportation-paradox", "kind": "kindred"}
+    {
+      "slug": "schrodingers-cat",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-teletransportation-paradox",
+      "kind": "kindred"
+    }
   ]
 }

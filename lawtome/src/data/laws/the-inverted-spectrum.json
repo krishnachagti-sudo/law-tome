@@ -2,7 +2,10 @@
   "no": "682",
   "slug": "the-inverted-spectrum",
   "name": "The Inverted Spectrum",
-  "aliases": ["Inverted qualia", "Spectrum inversion"],
+  "aliases": [
+    "Inverted qualia",
+    "Spectrum inversion"
+  ],
   "statement": "Two people might see colours swapped, your red being their green, and neither could ever tell from behaviour or words.",
   "statementAccent": "neither could ever tell from behaviour or words",
   "meaning": "The inverted spectrum is a thought experiment in the philosophy of mind about qualia, the subjective qualities of experience. It imagines two people whose colour experiences are systematically inverted relative to each other: when one looks at what we call red, they have the experience the other has when looking at green, and the reverse, across the whole spectrum. Because the inversion is systematic and both learned the same colour words, they use colour language identically, both calling ripe tomatoes red, make the same discriminations, and behave in exactly the same way. No behavioural or verbal test could ever detect the difference. The idea traces back to John Locke, who in his Essay Concerning Human Understanding raised the possibility that the same object might produce different ideas in different minds without anyone knowing. The scenario is used to argue that the felt character of experience is not captured by functional or behavioural role, challenging functionalism and physicalism about the mind.",
@@ -31,11 +34,20 @@
       "text": "The objection that the space of colours is asymmetric in saturation and lightness, so a genuine spectrum inversion would in fact be detectable, undercutting the scenario."
     }
   ],
-  "whyItMatters": "The inverted spectrum is a central thought experiment in debates about qualia, functionalism, and consciousness, giving vivid form to the worry that the subjective feel of experience might not be captured by any account of its function or behaviour. If two functionally identical people could have swapped colour experiences, then the qualitative character of the mind seems to slip through the net of functionalism and physicalism, connecting the puzzle to the philosophical zombie, Mary's room, and the hard problem of consciousness. The scenario has driven decades of argument over whether such an inversion is genuinely possible and what its possibility would show, prompting functionalist replies and objections from the asymmetry of colour space. As an intuitively gripping image, it keeps pressure on any theory that hopes to explain consciousness wholly in terms of causal or physical role.",
+  "whyItMatters": "The inverted spectrum is a central thought experiment in debates about qualia, functionalism, and consciousness, giving vivid form to the worry that the subjective feel of experience might not be captured by any account of its function or behaviour. If two functionally identical people could have swapped colour experiences, then the qualitative character of the mind seems to slip through the net of functionalism and physicalism, connecting the puzzle to the philosophical zombie, Mary's room, and the hard problem of consciousness. The scenario has driven decades of argument over whether such an inversion is genuinely possible and what its possibility would show, prompting functionalist replies and objections from the asymmetry of colour space.",
   "working": [
-    {"lead": "Invert the experiences", "text": "imagine two people whose colour qualia are systematically swapped across the spectrum while everything else about them stays the same."},
-    {"lead": "Preserve all behaviour", "text": "stipulate that they name, sort, and respond to colours identically, so no behavioural or verbal test could detect the difference."},
-    {"lead": "Draw the anti-functionalist moral", "text": "conclude that if qualia can differ while function is identical, the felt quality of experience is not fixed by functional role, challenging functionalism."}
+    {
+      "lead": "Invert the experiences",
+      "text": "imagine two people whose colour qualia are systematically swapped across the spectrum while everything else about them stays the same."
+    },
+    {
+      "lead": "Preserve all behaviour",
+      "text": "stipulate that they name, sort, and respond to colours identically, so no behavioural or verbal test could detect the difference."
+    },
+    {
+      "lead": "Draw the anti-functionalist moral",
+      "text": "conclude that if qualia can differ while function is identical, the felt quality of experience is not fixed by functional role, challenging functionalism."
+    }
   ],
   "limits": "The inverted spectrum's force depends on whether a genuine, behaviour-preserving inversion is really possible, which is disputed. C. L. Hardin and others argue that colour space is asymmetric, with more distinguishable shades in some regions and shifts like dark yellow becoming brown, so a true spectrum inversion would actually be detectable, undermining the scenario. Functionalists also dispute the case, noting that without a fully specified functional theory it is unclear the two subjects are genuinely functionally identical. Even if coherent, the experiment shows at most that qualia are not captured by function, not what positive account of consciousness is correct. So it frames a challenge to functionalism and physicalism rather than refuting them outright, and its cogency remains contested.",
   "misreadings": "The scenario is not about people who merely describe colours differently; it stipulates identical behaviour and language, with the difference lying purely in the inner feel. It does not prove qualia are non-physical as an established result; it advances a contested case, and the color-space asymmetry objection questions whether a genuine undetectable inversion is even possible. And it targets the claim that function or behaviour fixes experience, not the existence of colour experience itself, so reading it as denying that we see colours, or as settling the metaphysics of mind, both miss what the experiment is designed to probe.",
@@ -45,12 +57,26 @@
   "provenance": "canon",
   "namedAfter": null,
   "sources": [
-    {"text": "Inverted spectrum, Wikipedia. — the Locke antecedent, the systematic and behaviourally undetectable inversion, the anti-functionalism argument about qualia, and the color-space asymmetry objection.", "url": "https://en.wikipedia.org/wiki/Inverted_spectrum", "type": "secondary"},
-    {"text": "Inverted Qualia, Stanford Encyclopedia of Philosophy. — the inversion scenario, its use against functionalism, and objections including the asymmetry of colour space.", "url": "https://plato.stanford.edu/entries/qualia-inverted/", "type": "secondary"}
+    {
+      "text": "Inverted spectrum, Wikipedia. — the Locke antecedent, the systematic and behaviourally undetectable inversion, the anti-functionalism argument about qualia, and the color-space asymmetry objection.",
+      "url": "https://en.wikipedia.org/wiki/Inverted_spectrum",
+      "type": "secondary"
+    },
+    {
+      "text": "Inverted Qualia, Stanford Encyclopedia of Philosophy. — the inversion scenario, its use against functionalism, and objections including the asymmetry of colour space.",
+      "url": "https://plato.stanford.edu/entries/qualia-inverted/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Inverted_spectrum",
   "related": [
-    {"slug": "marys-room", "kind": "kindred"},
-    {"slug": "the-philosophical-zombie", "kind": "kindred"}
+    {
+      "slug": "marys-room",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-philosophical-zombie",
+      "kind": "kindred"
+    }
   ]
 }

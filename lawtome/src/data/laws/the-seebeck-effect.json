@@ -2,7 +2,10 @@
   "no": "603",
   "slug": "the-seebeck-effect",
   "name": "The Seebeck Effect",
-  "aliases": ["Thermoelectric effect", "The Seebeck coefficient"],
+  "aliases": [
+    "Thermoelectric effect",
+    "The Seebeck coefficient"
+  ],
   "statement": "A temperature difference across a material generates a voltage, turning heat straight into electricity.",
   "statementAccent": "turning heat straight into electricity",
   "meaning": "The Seebeck effect is the appearance of a voltage across an electrical conductor, or between two dissimilar conductors, when a temperature difference is imposed along it. A hot end and a cold end give rise to an electromotive force, a direct conversion of a temperature gradient into a thermoelectric voltage. The ratio of the induced voltage to the temperature difference is the material's Seebeck coefficient, or thermopower. Discovered by Thomas Johann Seebeck in 1821, the effect is the basis of the thermocouple, the most common electronic temperature sensor, and of thermoelectric generators that turn heat directly into electricity. Together with its reverse, the Peltier effect, and the Thomson effect, it makes up the thermoelectric effects that link heat flow and electric current in materials.",
@@ -31,11 +34,20 @@
       "text": "The heating or cooling of a single current-carrying conductor that also has a temperature gradient along it, predicted by William Thomson in 1851."
     }
   ],
-  "whyItMatters": "The Seebeck effect is the foundation of temperature measurement by thermocouples, which are among the most widely used sensors in science and engineering, and of solid-state conversion of heat into electricity. Thermoelectric generators built on it power spacecraft far from the Sun, harvest waste heat, and supply remote sensors with no moving parts. Together with the Peltier effect it enables compact refrigeration and precise thermal control. As a direct, reversible link between heat and electricity, the thermoelectric effects are central to energy technology and to the ongoing search for materials that convert heat to power efficiently.",
+  "whyItMatters": "The Seebeck effect is the foundation of temperature measurement by thermocouples, which are among the most widely used sensors in science and engineering, and of solid-state conversion of heat into electricity. Thermoelectric generators built on it power spacecraft far from the Sun, harvest waste heat, and supply remote sensors with no moving parts. Together with the Peltier effect it enables compact refrigeration and precise thermal control.",
   "working": [
-    {"lead": "Turn a gradient into voltage", "text": "impose a temperature difference across a conductor and read the thermoelectric voltage it produces, proportional to the difference through the Seebeck coefficient."},
-    {"lead": "Pair materials for a thermocouple", "text": "join two dissimilar conductors with junctions at different temperatures so their differing coefficients give a net voltage that measures temperature."},
-    {"lead": "Reverse it to pump heat", "text": "drive a current through a junction to move heat by the Peltier effect, the basis of solid-state coolers, the inverse of the Seebeck effect."}
+    {
+      "lead": "Turn a gradient into voltage",
+      "text": "impose a temperature difference across a conductor and read the thermoelectric voltage it produces, proportional to the difference through the Seebeck coefficient."
+    },
+    {
+      "lead": "Pair materials for a thermocouple",
+      "text": "join two dissimilar conductors with junctions at different temperatures so their differing coefficients give a net voltage that measures temperature."
+    },
+    {
+      "lead": "Reverse it to pump heat",
+      "text": "drive a current through a junction to move heat by the Peltier effect, the basis of solid-state coolers, the inverse of the Seebeck effect."
+    }
   ],
   "limits": "The Seebeck effect depends on the temperature difference and the material pair, not on absolute temperature, so a uniform-temperature conductor produces no voltage. It and the Peltier effect are reverse phenomena, distinct though related, and conflating them muddles which converts heat to voltage and which uses current to move heat. The voltages produced are typically small, microvolts per degree, so thermocouples need careful calibration and reference junctions, and thermoelectric generators convert heat to electricity at modest efficiency, limited by the properties of available materials, which is why the search for better thermoelectrics continues.",
   "misreadings": "The effect responds to a temperature difference across the material and the material pairing, not to how hot it is in absolute terms, so equal temperatures give no voltage however high. The Seebeck effect, temperature difference to voltage, and the Peltier effect, current to temperature difference, are opposites, not the same phenomenon. And while Seebeck first observed it in 1821 as a deflected compass needle, calling it thermomagnetism, the effect is electrical, the magnetism merely a symptom of the current his thermoelectric voltage drove.",
@@ -46,11 +58,22 @@
   "coinedYear": 1821,
   "namedAfter": "Thomas Johann Seebeck",
   "sources": [
-    {"text": "Thermoelectric effect, Wikipedia. — the temperature-difference-to-voltage statement, the Seebeck coefficient, the carrier-diffusion mechanism, the thermocouple, and the Peltier and Thomson effects.", "url": "https://en.wikipedia.org/wiki/Thermoelectric_effect", "type": "secondary"},
-    {"text": "Seebeck coefficient, Wikipedia. — the definition of the Seebeck coefficient as the ratio of voltage to temperature difference and its material dependence.", "url": "https://en.wikipedia.org/wiki/Seebeck_coefficient", "type": "secondary"}
+    {
+      "text": "Thermoelectric effect, Wikipedia. — the temperature-difference-to-voltage statement, the Seebeck coefficient, the carrier-diffusion mechanism, the thermocouple, and the Peltier and Thomson effects.",
+      "url": "https://en.wikipedia.org/wiki/Thermoelectric_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Seebeck coefficient, Wikipedia. — the definition of the Seebeck coefficient as the ratio of voltage to temperature difference and its material dependence.",
+      "url": "https://en.wikipedia.org/wiki/Seebeck_coefficient",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Thermoelectric_effect",
   "related": [
-    {"slug": "the-hall-effect", "kind": "kindred"}
+    {
+      "slug": "the-hall-effect",
+      "kind": "kindred"
+    }
   ]
 }

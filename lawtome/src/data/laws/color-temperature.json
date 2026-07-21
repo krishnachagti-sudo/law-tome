@@ -2,7 +2,10 @@
   "no": "830",
   "slug": "color-temperature",
   "name": "Color Temperature",
-  "aliases": ["Colour temperature", "White point"],
+  "aliases": [
+    "Colour temperature",
+    "White point"
+  ],
   "statement": "Light's colour is rated in kelvins, where, oddly, low numbers are warm and high numbers cool.",
   "statementAccent": "low numbers are warm and high numbers cool",
   "meaning": "Color temperature is a way of describing the colour, or appearance, of light from a source, expressed in kelvins and defined by comparison with the light emitted by an idealized black-body radiator heated to that temperature. As a black body is heated, it glows first red, then orange, yellow, white, and bluish-white at higher temperatures, so the colour of a light source can be matched to the temperature of a black body producing the same colour. The scale is famously counterintuitive: lower colour temperatures, around 2700 to 3000 kelvins, are called warm and look reddish or yellowish, like candlelight and incandescent bulbs, while higher colour temperatures, around 5000 to 6500 kelvins and above, are called cool and look bluish or white, like daylight and overcast sky, which is the reverse of the everyday sense of warm and cool. Candle flame is around 1900 kelvins, incandescent bulbs around 2700 to 3200, daylight around 5500, and clear blue sky much higher still. Color temperature is central to photography, lighting design, and choosing bulbs and displays.",
@@ -31,13 +34,22 @@
       "text": "The convention that low colour temperatures are called warm and high ones cool, opposite to the black-body physics in which hotter is bluer."
     }
   ],
-  "whyItMatters": "Color temperature is a practically important and widely used concept across photography, film, lighting, and display technology. In photography and cinematography it governs white balance, the adjustment that makes whites look neutral rather than tinted orange under lamplight or blue in shade, and it must be matched to the light source or corrected for a natural result. In lighting design and everyday bulb choice, colour temperature distinguishes warm, cosy light from cool, energizing light, guiding the selection of bulbs for homes, offices, and public spaces, with warm white and cool white or daylight labels reflecting the kelvin value. Displays and monitors are set to a standard white point, commonly around 6500 kelvins, for consistent colour. Understanding colour temperature also illuminates the physics of thermal radiation and why the warm-cool labels run opposite to temperature. As the standard measure of the colour of light, colour temperature connects the physics of black-body radiation to the practical work of imaging, lighting, and colour reproduction.",
+  "whyItMatters": "Color temperature is a practically important and widely used concept across photography, film, lighting, and display technology. In photography and cinematography it governs white balance, the adjustment that makes whites look neutral rather than tinted orange under lamplight or blue in shade, and it must be matched to the light source or corrected for a natural result. In lighting design and everyday bulb choice, colour temperature distinguishes warm, cosy light from cool, energizing light, guiding the selection of bulbs for homes, offices, and public spaces, with warm white and cool white or daylight labels reflecting the kelvin value. Displays and monitors are set to a standard white point, commonly around 6500 kelvins, for consistent colour. Understanding colour temperature also illuminates the physics of thermal radiation and why the warm-cool labels run opposite to temperature.",
   "working": [
-    {"lead": "Match to a black body", "text": "compare a light source's colour to the light a black body would emit at some temperature."},
-    {"lead": "Read the kelvin value", "text": "assign the colour temperature in kelvins, low for warm reddish light and high for cool bluish light."},
-    {"lead": "Apply it", "text": "use the value to set white balance, choose bulbs, or calibrate displays, correcting for the light's colour."}
+    {
+      "lead": "Match to a black body",
+      "text": "compare a light source's colour to the light a black body would emit at some temperature."
+    },
+    {
+      "lead": "Read the kelvin value",
+      "text": "assign the colour temperature in kelvins, low for warm reddish light and high for cool bluish light."
+    },
+    {
+      "lead": "Apply it",
+      "text": "use the value to set white balance, choose bulbs, or calibrate displays, correcting for the light's colour."
+    }
   ],
-  "limits": "Color temperature strictly describes light whose colour lies on the black-body curve; for real sources like fluorescent lamps and LEDs that fall off the curve, only the correlated colour temperature applies, giving the nearest black-body colour, and two sources with the same correlated colour temperature can still render colours differently. The reference values are approximate and vary between and within sources, so figures like 2700 kelvins for a bulb or 6500 for daylight are representative rather than exact. The warm and cool labels are aesthetic conventions opposite to the physics, which can confuse. Colour temperature captures the overall colour of light but not its full spectrum, so it does not by itself describe how accurately a light renders colours, a separate property. So colour temperature robustly describes the colour of light, understood as an approximate, black-body-based measure with the correlated version for off-curve sources.",
+  "limits": "Color temperature strictly describes light whose colour lies on the black-body curve; for real sources like fluorescent lamps and LEDs that fall off the curve, only the correlated colour temperature applies, giving the nearest black-body colour, and two sources with the same correlated colour temperature can still render colours differently. The reference values are approximate and vary between and within sources, so figures like 2700 kelvins for a bulb or 6500 for daylight are representative rather than exact. The warm and cool labels are aesthetic conventions opposite to the physics, which can confuse. Colour temperature captures the overall colour of light but not its full spectrum, so it does not by itself describe how accurately a light renders colours, a separate property.",
   "misreadings": "Color temperature is counterintuitive: low kelvin values are warm and reddish while high values are cool and bluish, the reverse of the everyday sense, so hotter black bodies actually emit cooler-looking blue light. It is not an exact fixed figure for a given source, since reference values are approximate. And it describes the colour of light, not how faithfully the light renders other colours, which is a separate property, so treating high kelvins as warm, the values as precise constants, or colour temperature as a measure of colour accuracy, misreads a black-body-based description of the colour of light.",
   "origin": "A concept from the physics of black-body radiation used across photography and lighting: the colour of a light source described by the temperature in kelvins of a black body glowing the same colour.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Color temperature, Wikipedia. — the colour of a light source described by comparison to a black-body radiator in kelvins, the counterintuitive warm-low and cool-high convention, the black-body colour progression, reference values, the white-balance and lighting applications, and correlated colour temperature.", "url": "https://en.wikipedia.org/wiki/Color_temperature", "type": "secondary"},
-    {"text": "Colour temperature, Encyclopaedia Britannica. — colour temperature as the colour of light emitted by a black body at a given temperature in kelvins, with higher temperatures richer in blue and poorer in red.", "url": "https://www.britannica.com/science/colour-temperature", "type": "secondary"}
+    {
+      "text": "Color temperature, Wikipedia. — the colour of a light source described by comparison to a black-body radiator in kelvins, the counterintuitive warm-low and cool-high convention, the black-body colour progression, reference values, the white-balance and lighting applications, and correlated colour temperature.",
+      "url": "https://en.wikipedia.org/wiki/Color_temperature",
+      "type": "secondary"
+    },
+    {
+      "text": "Colour temperature, Encyclopaedia Britannica. — colour temperature as the colour of light emitted by a black body at a given temperature in kelvins, with higher temperatures richer in blue and poorer in red.",
+      "url": "https://www.britannica.com/science/colour-temperature",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Color_temperature",
   "related": [
-    {"slug": "color-constancy", "kind": "kindred"},
-    {"slug": "metamerism", "kind": "kindred"}
+    {
+      "slug": "color-constancy",
+      "kind": "kindred"
+    },
+    {
+      "slug": "metamerism",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "662",
   "slug": "the-texas-sharpshooter-fallacy",
   "name": "The Texas Sharpshooter Fallacy",
-  "aliases": ["The clustering fallacy", "Painting the target"],
+  "aliases": [
+    "The clustering fallacy",
+    "Painting the target"
+  ],
   "statement": "Fire wildly, then draw the bullseye around the tightest cluster and call yourself a marksman.",
   "statementAccent": "draw the bullseye around the tightest cluster",
   "meaning": "The Texas sharpshooter fallacy is a fallacy of inferring meaning from what is essentially a random distribution of data. It is committed when someone finds a pattern or cluster in noisy data after the fact and presents it as if it were meaningful or predicted in advance, cherry-picking the frame afterward while ignoring the data that does not fit. The name comes from a joke about a Texan who fires many shots at the side of a barn, then paints a target centered on the tightest cluster of bullet holes, making himself look like a crack marksman. Related to the clustering illusion, apophenia, and the multiple-comparisons problem in statistics, it exploits the fact that in enough random data some coincidental cluster is bound to appear, then treats that coincidence as significant.",
@@ -31,11 +34,20 @@
       "text": "The statistical counterpart, in which testing many hypotheses makes some appear significant by luck, the basis of data dredging and p-hacking."
     }
   ],
-  "whyItMatters": "The Texas sharpshooter fallacy is important in statistics, epidemiology, and critical thinking about spurious correlations and data dredging, naming a pervasive way that random noise is mistaken for meaningful signal. It underlies flawed claims of disease clusters, dubious subgroup findings in trials, and after-the-fact pattern matching from conspiracy theories to cherry-picked data ranges. Recognising it is central to sound science, motivating practices like pre-registering hypotheses and correcting for multiple comparisons so that a pattern must be specified before, not after, seeing where the data fell. As a memorable image of drawing the target around the shots, it teaches the crucial difference between predicting a pattern and merely finding one in hindsight.",
+  "whyItMatters": "The Texas sharpshooter fallacy is important in statistics, epidemiology, and critical thinking about spurious correlations and data dredging, naming a pervasive way that random noise is mistaken for meaningful signal. It underlies flawed claims of disease clusters, dubious subgroup findings in trials, and after-the-fact pattern matching from conspiracy theories to cherry-picked data ranges. Recognising it is central to sound science, motivating practices like pre-registering hypotheses and correcting for multiple comparisons so that a pattern must be specified before, not after, seeing where the data fell.",
   "working": [
-    {"lead": "Fix the target first", "text": "specify the hypothesis before looking at where the data landed, since drawing the target around a cluster after the fact proves nothing."},
-    {"lead": "Count the comparisons", "text": "remember that testing many possibilities makes some cluster appear significant by chance, so correct for multiple comparisons before claiming a real pattern."},
-    {"lead": "Suspect hindsight patterns", "text": "treat patterns found by cherry-picking the frame after seeing the data as likely coincidence rather than meaningful signal."}
+    {
+      "lead": "Fix the target first",
+      "text": "specify the hypothesis before looking at where the data landed, since drawing the target around a cluster after the fact proves nothing."
+    },
+    {
+      "lead": "Count the comparisons",
+      "text": "remember that testing many possibilities makes some cluster appear significant by chance, so correct for multiple comparisons before claiming a real pattern."
+    },
+    {
+      "lead": "Suspect hindsight patterns",
+      "text": "treat patterns found by cherry-picking the frame after seeing the data as likely coincidence rather than meaningful signal."
+    }
   ],
   "limits": "The fallacy is specifically choosing the target or hypothesis after seeing where the data landed, post hoc, while ignoring the data that does not fit; a genuine, pre-specified hypothesis tested against data is not this fallacy, even if it happens to match a cluster, because the frame was fixed in advance. Distinguishing a coincidental cluster from a real effect can require statistical judgement, so labelling a pattern a Texas sharpshooter case is not always clear-cut. Its precise coinage is uncertain, with the Texas phrasing surfacing in statistical literature around the twentieth century and older shooting analogies from Venn and earlier, so it is a recognised pattern rather than a single-author coinage.",
   "misreadings": "The fallacy is choosing the target after seeing the data, cherry-picking a frame in hindsight and ignoring the non-fitting data, not merely finding any pattern. A pre-registered hypothesis tested against data is not this fallacy, even if it matches a cluster, because the prediction came first. And it is not that clusters can never be meaningful; it is that a cluster found by drawing the target around it, in data where clusters arise by chance, is not evidence of a real effect without a frame fixed beforehand.",
@@ -44,12 +56,26 @@
   "reliability": "Heuristic",
   "provenance": "canon",
   "sources": [
-    {"text": "Texas sharpshooter fallacy, Wikipedia. — the definition, the barn and painted-target metaphor, the clustering-illusion and multiple-comparisons connections, and the disease-cluster example.", "url": "https://en.wikipedia.org/wiki/Texas_sharpshooter_fallacy", "type": "secondary"},
-    {"text": "Texas Sharpshooter Fallacy, Logically Fallacious. — inferring a pattern from random data by drawing the target after the shots.", "url": "https://www.logicallyfallacious.com/logicalfallacies/Texas-Sharpshooter-Fallacy", "type": "secondary"}
+    {
+      "text": "Texas sharpshooter fallacy, Wikipedia. — the definition, the barn and painted-target metaphor, the clustering-illusion and multiple-comparisons connections, and the disease-cluster example.",
+      "url": "https://en.wikipedia.org/wiki/Texas_sharpshooter_fallacy",
+      "type": "secondary"
+    },
+    {
+      "text": "Texas Sharpshooter Fallacy, Logically Fallacious. — inferring a pattern from random data by drawing the target after the shots.",
+      "url": "https://www.logicallyfallacious.com/logicalfallacies/Texas-Sharpshooter-Fallacy",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Texas_sharpshooter_fallacy",
   "related": [
-    {"slug": "simpsons-paradox", "kind": "kindred"},
-    {"slug": "survivorship-bias", "kind": "kindred"}
+    {
+      "slug": "simpsons-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "survivorship-bias",
+      "kind": "kindred"
+    }
   ]
 }

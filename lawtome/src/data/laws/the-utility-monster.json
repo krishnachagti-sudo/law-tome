@@ -2,7 +2,10 @@
   "no": "671",
   "slug": "the-utility-monster",
   "name": "The Utility Monster",
-  "aliases": ["Nozick's utility monster", "The pleasure monster"],
+  "aliases": [
+    "Nozick's utility monster",
+    "The pleasure monster"
+  ],
   "statement": "If one being gained far more happiness from each resource than anyone else, strict utilitarianism would tell everyone to feed it everything.",
   "statementAccent": "would tell everyone to feed it everything",
   "meaning": "The utility monster is a thought experiment introduced by the philosopher Robert Nozick in his 1974 book Anarchy, State, and Utopia as an objection to utilitarianism, the view that the right action is the one that maximises total utility or well-being. Nozick imagines a being, the utility monster, who is far more efficient than anyone else at converting resources into happiness or utility, gaining enormously more satisfaction from each unit of resource than an ordinary person loses by giving it up. A utilitarianism that seeks to maximise total utility would then be committed to funnelling nearly all resources to the monster, since doing so yields the greatest total sum, even if this leaves everyone else destitute. Nozick argues that this conclusion is monstrous and counterintuitive, revealing a flaw in the idea that maximising aggregate utility is all that matters, and showing that simple utilitarian aggregation can sacrifice the many for the one.",
@@ -31,11 +34,20 @@
       "text": "The deeper principle the monster illustrates, that individuals are distinct and one person's gains cannot simply compensate another's losses."
     }
   ],
-  "whyItMatters": "The utility monster is a classic objection in moral philosophy, a vivid challenge to utilitarianism and to any purely aggregative theory of the good. It shows that maximising the total sum of welfare can license grotesque results, sacrificing the many to satisfy one, and thereby presses the case that distribution and the separateness of persons matter morally, not just the total. The argument has shaped debates over how to weigh utilities across people, motivating alternatives such as prioritarian and egalitarian views that give extra weight to the worse off, and it recurs in contemporary discussions of population ethics and of hypothetical minds with vast capacities for welfare. As a compact reductio, it remains a standard test any theory of aggregation must answer.",
+  "whyItMatters": "The utility monster is a classic objection in moral philosophy, a vivid challenge to utilitarianism and to any purely aggregative theory of the good. It shows that maximising the total sum of welfare can license grotesque results, sacrificing the many to satisfy one, and thereby presses the case that distribution and the separateness of persons matter morally, not just the total. The argument has shaped debates over how to weigh utilities across people, motivating alternatives such as prioritarian and egalitarian views that give extra weight to the worse off, and it recurs in contemporary discussions of population ethics and of hypothetical minds with vast capacities for welfare.",
   "working": [
-    {"lead": "Posit a super-efficient being", "text": "imagine a monster that turns each resource into far more utility than anyone else would gain or lose, so giving it resources always raises the total."},
-    {"lead": "Apply strict maximisation", "text": "let a utilitarianism that maximises the sum follow its logic, which directs nearly all resources to the monster whatever the cost to others."},
-    {"lead": "Register the reductio", "text": "treat the monstrous result, mass sacrifice to feed one being, as evidence that maximising aggregate utility cannot be the whole of morality."}
+    {
+      "lead": "Posit a super-efficient being",
+      "text": "imagine a monster that turns each resource into far more utility than anyone else would gain or lose, so giving it resources always raises the total."
+    },
+    {
+      "lead": "Apply strict maximisation",
+      "text": "let a utilitarianism that maximises the sum follow its logic, which directs nearly all resources to the monster whatever the cost to others."
+    },
+    {
+      "lead": "Register the reductio",
+      "text": "treat the monstrous result, mass sacrifice to feed one being, as evidence that maximising aggregate utility cannot be the whole of morality."
+    }
   ],
   "limits": "The utility monster is a counterexample aimed at simple aggregative utilitarianism; how decisive it is depends on the version targeted, and utilitarians have offered replies, questioning whether such unbounded utility is coherent or possible, or adopting views that discount the very rich in utility. Variants of consequentialism that build in equality, priority to the worse off, or diminishing marginal weight can blunt the objection. The scenario is also an idealisation, positing a being whose capacity for welfare has no natural ceiling, which some argue is not a genuine possibility. So the experiment functions as a serious challenge to one family of theories rather than a refutation of consequentialism in general, and responses to it are part of an ongoing debate.",
   "misreadings": "The monster is an objection to maximising total utility, not a claim that helping the happiest person is always wrong; it targets indifference to distribution, not benevolence as such. It does not refute all consequentialism, since theories that weight equality or priority to the worse off can resist it, so citing it as sinking utilitarianism wholesale overstates the case. And the point is not that the monster is realistic but that the principle of pure aggregation licenses its demands even in principle, which is what reveals the flaw the experiment is designed to expose.",
@@ -46,12 +58,26 @@
   "coinedYear": 1974,
   "namedAfter": "Robert Nozick",
   "sources": [
-    {"text": "Utility monster, Wikipedia. — Nozick's 1974 thought experiment, the being that converts resources into utility more efficiently than others, and the objection to utilitarian aggregation and distribution.", "url": "https://en.wikipedia.org/wiki/Utility_monster", "type": "secondary"},
-    {"text": "Robert Nozick, Stanford Encyclopedia of Philosophy. — Nozick's critique of utilitarianism and the separateness of persons underlying the utility-monster objection.", "url": "https://plato.stanford.edu/entries/nozick/", "type": "secondary"}
+    {
+      "text": "Utility monster, Wikipedia. — Nozick's 1974 thought experiment, the being that converts resources into utility more efficiently than others, and the objection to utilitarian aggregation and distribution.",
+      "url": "https://en.wikipedia.org/wiki/Utility_monster",
+      "type": "secondary"
+    },
+    {
+      "text": "Robert Nozick, Stanford Encyclopedia of Philosophy. — Nozick's critique of utilitarianism and the separateness of persons underlying the utility-monster objection.",
+      "url": "https://plato.stanford.edu/entries/nozick/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Utility_monster",
   "related": [
-    {"slug": "the-experience-machine", "kind": "kindred"},
-    {"slug": "the-violinist-argument", "kind": "tension"}
+    {
+      "slug": "the-experience-machine",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-violinist-argument",
+      "kind": "tension"
+    }
   ]
 }

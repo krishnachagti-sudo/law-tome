@@ -2,7 +2,10 @@
   "no": "804",
   "slug": "escape-velocity",
   "name": "Escape Velocity",
-  "aliases": ["Escape speed", "Second cosmic velocity"],
+  "aliases": [
+    "Escape speed",
+    "Second cosmic velocity"
+  ],
   "statement": "Fling something upward fast enough and gravity never wins it back; for Earth that is 11 km/s.",
   "statementAccent": "gravity never wins it back",
   "meaning": "Escape velocity is the minimum speed an object needs, without any further propulsion, to break free of a massive body's gravity and travel away indefinitely rather than falling back. It is the speed at which the object's kinetic energy just balances the gravitational energy binding it to the body, so that if launched at that speed it coasts to infinity, arriving with no leftover speed, ignoring air resistance and other forces. For Earth, escape velocity from the surface is about 11.2 kilometres per second, roughly 40,000 kilometres per hour; for the Moon it is about 2.4 kilometres per second, and from the Sun's surface about 618 kilometres per second. Escape velocity depends only on the mass of the body and the distance from its centre, not on the mass of the escaping object, and it decreases with altitude, since the farther away one starts, the weaker gravity's hold. It is a fundamental quantity in astronomy and spaceflight, and its extreme form defines black holes.",
@@ -31,11 +34,20 @@
       "text": "The nuance that a continuously thrusting vehicle can leave at any speed, since escape velocity is the requirement only for an unpowered burst."
     }
   ],
-  "whyItMatters": "Escape velocity is a fundamental concept in physics, astronomy, and spaceflight, quantifying how tightly a body's gravity holds objects and what it takes to leave. It sets the energy budget for launching spacecraft away from Earth and other bodies, shaping rocket design and mission planning, and it determines whether a planet or moon can retain an atmosphere, since gas molecules moving faster than escape velocity drift away over time, explaining why small, low-gravity bodies lack thick air. Escape velocity varies enormously across the cosmos, from a few kilometres per second for small moons to hundreds for the Sun, and its most dramatic role defines black holes, regions where the escape velocity exceeds the speed of light so that nothing, not even light, can get out, with the boundary at the Schwarzschild radius. As a single quantity linking mass, distance, and the possibility of escape, escape velocity connects everyday rocketry to the retention of atmospheres and to the most extreme objects in the universe.",
+  "whyItMatters": "Escape velocity is a fundamental concept in physics, astronomy, and spaceflight, quantifying how tightly a body's gravity holds objects and what it takes to leave. It sets the energy budget for launching spacecraft away from Earth and other bodies, shaping rocket design and mission planning, and it determines whether a planet or moon can retain an atmosphere, since gas molecules moving faster than escape velocity drift away over time, explaining why small, low-gravity bodies lack thick air. Escape velocity varies enormously across the cosmos, from a few kilometres per second for small moons to hundreds for the Sun, and its most dramatic role defines black holes, regions where the escape velocity exceeds the speed of light so that nothing, not even light, can get out, with the boundary at the Schwarzschild radius.",
   "working": [
-    {"lead": "Weigh energy against the well", "text": "require the object's kinetic energy to equal the depth of the gravitational potential well it must climb out of."},
-    {"lead": "Solve for the speed", "text": "find the escape speed as the square root of twice the gravitational constant times the body's mass over the distance from its centre."},
-    {"lead": "Note the independence and decrease", "text": "observe that the speed is independent of the escaping object's mass and decreases with altitude."}
+    {
+      "lead": "Weigh energy against the well",
+      "text": "require the object's kinetic energy to equal the depth of the gravitational potential well it must climb out of."
+    },
+    {
+      "lead": "Solve for the speed",
+      "text": "find the escape speed as the square root of twice the gravitational constant times the body's mass over the distance from its centre."
+    },
+    {
+      "lead": "Note the independence and decrease",
+      "text": "observe that the speed is independent of the escaping object's mass and decreases with altitude."
+    }
   ],
   "limits": "Escape velocity as usually stated ignores atmospheric drag and other forces, so a real object launched at exactly the escape speed at a planet's surface would be slowed by the air; it also assumes an unpowered, ballistic trajectory. It is the requirement for a single burst of speed, not an absolute barrier: a continuously powered vehicle can leave at any speed by thrusting steadily, though it must still supply the same total energy. The simple formula treats the body as a point mass or sphere and does not include the gravity of other bodies, which matters for precise trajectories. Escape velocity is a speed, not a direction, for the simple radial case, but real launches must account for the body's rotation and geometry. So escape velocity precisely captures the unpowered speed needed to break free of a body's gravity, understood with the caveats of drag, powered flight, and additional gravitational influences.",
   "misreadings": "Escape velocity does not depend on how heavy the escaping object is; the mass cancels, so a small and a large object need the same speed from a given body. It is not an absolute speed limit for leaving, since a continuously thrusting rocket can escape at any speed, escape velocity being the requirement only for a single unpowered burst. And it decreases with altitude rather than being fixed, so treating it as depending on the object's mass, as an unbreakable barrier, or as constant with height, misreads a speed set by the body's mass and the distance from its centre.",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Escape velocity, Wikipedia. — the minimum unpowered speed to escape a body's gravity, the formula root of 2GM/r and the root-2 relation to orbital velocity, Earth's ~11.2 km/s and the Moon and Sun figures, the independence from the escaping object's mass, the decrease with altitude, and the black-hole connection.", "url": "https://en.wikipedia.org/wiki/Escape_velocity", "type": "secondary"},
-    {"text": "Escape velocity, Encyclopaedia Britannica. — the velocity needed to escape a gravitational centre without further acceleration, Earth's ~11.2 km/s, and the black-hole event-horizon case.", "url": "https://www.britannica.com/science/escape-velocity", "type": "secondary"}
+    {
+      "text": "Escape velocity, Wikipedia. — the minimum unpowered speed to escape a body's gravity, the formula root of 2GM/r and the root-2 relation to orbital velocity, Earth's ~11.2 km/s and the Moon and Sun figures, the independence from the escaping object's mass, the decrease with altitude, and the black-hole connection.",
+      "url": "https://en.wikipedia.org/wiki/Escape_velocity",
+      "type": "secondary"
+    },
+    {
+      "text": "Escape velocity, Encyclopaedia Britannica. — the velocity needed to escape a gravitational centre without further acceleration, Earth's ~11.2 km/s, and the black-hole event-horizon case.",
+      "url": "https://www.britannica.com/science/escape-velocity",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Escape_velocity",
   "related": [
-    {"slug": "the-schwarzschild-radius", "kind": "consequence"},
-    {"slug": "the-oberth-effect", "kind": "kindred"}
+    {
+      "slug": "the-schwarzschild-radius",
+      "kind": "consequence"
+    },
+    {
+      "slug": "the-oberth-effect",
+      "kind": "kindred"
+    }
   ]
 }

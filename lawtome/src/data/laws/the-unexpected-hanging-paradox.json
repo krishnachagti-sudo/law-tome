@@ -2,7 +2,10 @@
   "no": "695",
   "slug": "the-unexpected-hanging-paradox",
   "name": "The Unexpected Hanging Paradox",
-  "aliases": ["The surprise examination paradox", "The prediction paradox"],
+  "aliases": [
+    "The surprise examination paradox",
+    "The prediction paradox"
+  ],
   "statement": "A prisoner proves a surprise hanging is impossible, then is surprised anyway, exactly as promised.",
   "statementAccent": "then is surprised anyway, exactly as promised",
   "meaning": "The unexpected hanging paradox, also known as the surprise examination paradox, is a logical and epistemic puzzle about self-reference and prediction. A judge tells a condemned prisoner that he will be hanged at noon on one weekday of the coming week, Monday through Friday, but that the day will be a surprise: the prisoner will not know which day until the executioner arrives at noon. The prisoner reasons his way to the conclusion that no such surprise hanging is possible, and is reassured. Yet he is then hanged on a day in the middle of the week and is genuinely, completely surprised, just as the judge said. The judge's seemingly self-contradictory announcement turns out true and the prisoner's apparently airtight logic turns out wrong. The paradox appears in equivalent forms, including a teacher announcing a surprise examination, and it has been discussed by logicians including W. V. O. Quine and popularised by Martin Gardner.",
@@ -31,11 +34,20 @@
       "text": "Quine's proposed analysis that the prisoner's opening elimination is unjustified, since he cannot legitimately rule out any day, including the last."
     }
   ],
-  "whyItMatters": "The unexpected hanging paradox is a famous puzzle studied across logic, epistemology, and game theory, prized for how a seemingly flawless chain of reasoning collides with an obviously possible outcome. It sharpens questions about self-reference, about what it means to know or predict a future event, and about the limits of backward induction, and it connects to other epistemic paradoxes such as the preface paradox and Moore's paradox, as well as to the principle that knowing entails knowing that one knows. Its resistance to any agreed solution has generated a large scholarly literature and made it a recurring test case for theories of knowledge and rational belief. As a compact story in which the prisoner's logic and the judge's promise both seem correct yet cannot both be right, it continues to provoke analysis.",
+  "whyItMatters": "The unexpected hanging paradox is a famous puzzle studied across logic, epistemology, and game theory, prized for how a seemingly flawless chain of reasoning collides with an obviously possible outcome. It sharpens questions about self-reference, about what it means to know or predict a future event, and about the limits of backward induction, and it connects to other epistemic paradoxes such as the preface paradox and Moore's paradox, as well as to the principle that knowing entails knowing that one knows. Its resistance to any agreed solution has generated a large scholarly literature and made it a recurring test case for theories of knowledge and rational belief.",
   "working": [
-    {"lead": "State the surprise condition", "text": "have the judge promise a hanging on an unknown weekday that the prisoner will not foresee until it happens."},
-    {"lead": "Run the backward induction", "text": "eliminate Friday, then Thursday, and so on, concluding no day can deliver a genuine surprise."},
-    {"lead": "Confront the outcome", "text": "watch the prisoner be surprised anyway, and ask where the seemingly valid elimination argument actually breaks down."}
+    {
+      "lead": "State the surprise condition",
+      "text": "have the judge promise a hanging on an unknown weekday that the prisoner will not foresee until it happens."
+    },
+    {
+      "lead": "Run the backward induction",
+      "text": "eliminate Friday, then Thursday, and so on, concluding no day can deliver a genuine surprise."
+    },
+    {
+      "lead": "Confront the outcome",
+      "text": "watch the prisoner be surprised anyway, and ask where the seemingly valid elimination argument actually breaks down."
+    }
   ],
   "limits": "The unexpected hanging paradox has no canonical resolution; proposed diagnoses locate the flaw in different places, and none commands consensus. Quine's line rejects the prisoner's opening elimination, treating the announcement as self-referential in a way that blocks the inference, while other analyses fault the notion of surprise, the assumption that the prisoner can carry out the induction, or the interaction of knowledge and self-knowledge. The two standard forms, the hanging and the surprise examination, are equivalent, so a solution should cover both. Because the puzzle turns on delicate features of prediction, knowledge, and self-reference, it functions as an open problem that continues to test theories of epistemic logic rather than as a settled result, and its exact historical origin is likewise uncertain.",
   "misreadings": "The paradox is not resolved by simply saying the prisoner reasoned badly; the difficulty is precisely to say where his seemingly valid argument fails, and there is no agreed answer. It is not merely a trick of wording, since the equivalent surprise-examination version raises the same problem. And the judge's announcement is not straightforwardly self-contradictory: the ironic outcome shows it can come true, which is what makes the prisoner's confident elimination so puzzling rather than obviously mistaken.",
@@ -45,12 +57,26 @@
   "provenance": "canon",
   "namedAfter": null,
   "sources": [
-    {"text": "Unexpected hanging paradox, Wikipedia. — the surprise-hanging setup, the backward-induction elimination from Friday to Monday, the ironic surprise outcome, the Gardner and Quine discussions, and the absence of a canonical resolution.", "url": "https://en.wikipedia.org/wiki/Unexpected_hanging_paradox", "type": "secondary"},
-    {"text": "Epistemic Paradoxes, Stanford Encyclopedia of Philosophy. — the surprise-examination paradox and its relation to the preface and knower paradoxes and to problems of foreknowledge.", "url": "https://plato.stanford.edu/entries/epistemic-paradoxes/", "type": "secondary"}
+    {
+      "text": "Unexpected hanging paradox, Wikipedia. — the surprise-hanging setup, the backward-induction elimination from Friday to Monday, the ironic surprise outcome, the Gardner and Quine discussions, and the absence of a canonical resolution.",
+      "url": "https://en.wikipedia.org/wiki/Unexpected_hanging_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Epistemic Paradoxes, Stanford Encyclopedia of Philosophy. — the surprise-examination paradox and its relation to the preface and knower paradoxes and to problems of foreknowledge.",
+      "url": "https://plato.stanford.edu/entries/epistemic-paradoxes/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Unexpected_hanging_paradox",
   "related": [
-    {"slug": "the-liar-paradox", "kind": "kindred"},
-    {"slug": "the-lottery-paradox", "kind": "kindred"}
+    {
+      "slug": "the-liar-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-lottery-paradox",
+      "kind": "kindred"
+    }
   ]
 }

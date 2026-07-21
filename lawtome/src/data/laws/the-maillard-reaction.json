@@ -2,7 +2,10 @@
   "no": "807",
   "slug": "the-maillard-reaction",
   "name": "The Maillard Reaction",
-  "aliases": ["Maillard browning", "Non-enzymatic browning"],
+  "aliases": [
+    "Maillard browning",
+    "Non-enzymatic browning"
+  ],
   "statement": "Heat amino acids and sugars together and they brown into the flavors of searing and toasting.",
   "statementAccent": "brown into the flavors of searing and toasting",
   "meaning": "The Maillard reaction is a chemical reaction between amino acids, from proteins, and reducing sugars that gives browned foods their distinctive brown colour and rich, savoury flavour. It is a form of non-enzymatic browning, driven by heat rather than by enzymes, and it is responsible for much of the appeal of cooked food, from the seared crust of a steak to toasted bread, roasted coffee, and chocolate. When food is heated and its surface dries, the reactive parts of sugars and amino acids combine and rearrange into a complex mixture of new molecules, including brown pigments called melanoidins and a huge variety of aroma and flavour compounds. Named after the French chemist Louis-Camille Maillard, who first described it in 1912, the reaction is distinct from caramelization, the browning of sugar alone, because it requires amino acids as well as sugars. The Maillard reaction is one of the most important processes in cooking, underlying the flavour of an enormous range of foods.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "The Maillard reaction is one of the most important chemical processes in cooking, responsible for the colour and much of the flavour of an enormous range of foods. It creates the appetizing browned crust and complex aromas of seared meats, roasted vegetables, baked bread, roasted coffee, chocolate, and malted grains, making it central to the sensory appeal of cooked food and to techniques like searing, roasting, grilling, and baking. Understanding it guides cooks in achieving good browning, by using high heat, drying surfaces, and controlling pH, and in avoiding it where a pale result is wanted. The reaction also matters for food science and nutrition, since it changes flavour, colour, and the chemistry of food, and in some cases produces compounds of health interest. Named for Louis-Camille Maillard's 1912 discovery, the reaction connects everyday cooking to fundamental chemistry, explaining why browned food tastes so good and why the same amino-acid-and-sugar chemistry recurs across the world's cuisines.",
   "working": [
-    {"lead": "Combine amino acids and sugars", "text": "bring proteins' amino acids together with reducing sugars in the food."},
-    {"lead": "Apply heat to a dry surface", "text": "heat above roughly 140 degrees Celsius with low surface moisture to drive the reaction."},
-    {"lead": "Produce colour and flavour", "text": "generate brown melanoidins and a complex mix of roasted, savoury aroma compounds."}
+    {
+      "lead": "Combine amino acids and sugars",
+      "text": "bring proteins' amino acids together with reducing sugars in the food."
+    },
+    {
+      "lead": "Apply heat to a dry surface",
+      "text": "heat above roughly 140 degrees Celsius with low surface moisture to drive the reaction."
+    },
+    {
+      "lead": "Produce colour and flavour",
+      "text": "generate brown melanoidins and a complex mix of roasted, savoury aroma compounds."
+    }
   ],
-  "limits": "The Maillard reaction produces a vast, only partly characterized mixture of compounds, so its full chemistry is complex and not completely mapped, and the exact flavour outcome depends on the specific amino acids, sugars, temperature, time, and pH. It requires both amino acids and reducing sugars, so it differs from caramelization, and confusing the two misattributes browning. It proceeds fastest at high temperatures and low moisture, so foods cooked in water or at low heat brown little. Some Maillard products are of nutritional or health interest, including compounds formed at very high temperatures, so more browning is not always better. The commonly cited 1912 date for Maillard's description is well established, though at least one reference gives a different year. So the Maillard reaction robustly explains flavourful browning, understood as a complex, condition-dependent chemistry distinct from caramelization.",
+  "limits": "The Maillard reaction produces a vast, only partly characterized mixture of compounds, so its full chemistry is complex and not completely mapped, and the exact flavour outcome depends on the specific amino acids, sugars, temperature, time, and pH. It requires both amino acids and reducing sugars, so it differs from caramelization, and confusing the two misattributes browning. It proceeds fastest at high temperatures and low moisture, so foods cooked in water or at low heat brown little. Some Maillard products are of nutritional or health interest, including compounds formed at very high temperatures, so more browning is not always better. The commonly cited 1912 date for Maillard's description is well established, though at least one reference gives a different year.",
   "misreadings": "The Maillard reaction is not the same as caramelization; caramelization browns sugar alone, while the Maillard reaction needs amino acids as well as sugars. It is not simply burning, but a controlled chemistry that develops desirable flavour and colour below charring temperatures. And it is hindered by water, so boiling or steaming does not brown food, which is why searing needs a dry, hot surface, so treating browning as mere caramelizing, as burning, or as achievable in water, misreads a reaction between amino acids and reducing sugars driven by dry heat.",
   "origin": "Named after the French chemist Louis-Camille Maillard, who first described it in 1912; the non-enzymatic browning reaction between amino acids and reducing sugars central to the flavour of cooked food.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": 1912,
   "namedAfter": "Louis-Camille Maillard",
   "sources": [
-    {"text": "Maillard reaction, Wikipedia. — the non-enzymatic browning reaction between amino acids and reducing sugars producing melanoidins and flavour compounds, the carbonyl-amino mechanism, the ~140 to 165 degree Celsius range, the distinction from caramelization, the Louis-Camille Maillard 1912 attribution, and examples like seared steak and roasted coffee.", "url": "https://en.wikipedia.org/wiki/Maillard_reaction", "type": "secondary"},
-    {"text": "Maillard reaction, Encyclopaedia Britannica. — the nonenzymatic browning when sugars and proteins are heated together, with reducing sugars reacting with the amino groups of proteins or amino acids.", "url": "https://www.britannica.com/science/Maillard-reaction", "type": "secondary"}
+    {
+      "text": "Maillard reaction, Wikipedia. — the non-enzymatic browning reaction between amino acids and reducing sugars producing melanoidins and flavour compounds, the carbonyl-amino mechanism, the ~140 to 165 degree Celsius range, the distinction from caramelization, the Louis-Camille Maillard 1912 attribution, and examples like seared steak and roasted coffee.",
+      "url": "https://en.wikipedia.org/wiki/Maillard_reaction",
+      "type": "secondary"
+    },
+    {
+      "text": "Maillard reaction, Encyclopaedia Britannica. — the nonenzymatic browning when sugars and proteins are heated together, with reducing sugars reacting with the amino groups of proteins or amino acids.",
+      "url": "https://www.britannica.com/science/Maillard-reaction",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Maillard_reaction",
   "related": [
-    {"slug": "caramelization", "kind": "kindred"},
-    {"slug": "enzymatic-browning", "kind": "tension"}
+    {
+      "slug": "caramelization",
+      "kind": "kindred"
+    },
+    {
+      "slug": "enzymatic-browning",
+      "kind": "tension"
+    }
   ]
 }

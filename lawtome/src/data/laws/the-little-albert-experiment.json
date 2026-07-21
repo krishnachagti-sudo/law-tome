@@ -2,7 +2,10 @@
   "no": "835",
   "slug": "the-little-albert-experiment",
   "name": "The Little Albert Experiment",
-  "aliases": ["Little Albert study", "Watson and Rayner's conditioning of fear"],
+  "aliases": [
+    "Little Albert study",
+    "Watson and Rayner's conditioning of fear"
+  ],
   "statement": "By pairing a white rat with a frightening noise, researchers taught an infant to fear the rat and other furry things.",
   "statementAccent": "taught an infant to fear the rat and other furry things",
   "meaning": "The Little Albert experiment was a study conducted in 1920 by the behaviorist John B. Watson and his graduate student Rosalie Rayner at Johns Hopkins University, which sought to show that an emotional response, specifically fear, could be conditioned in a human being. The subject was an infant known as Little Albert, around nine to eleven months old, who initially showed no fear of a white laboratory rat. The experimenters then repeatedly presented the rat together with a loud, frightening noise made by striking a steel bar with a hammer behind the child's head. After several pairings, Albert came to fear the rat itself, crying and trying to crawl away when it appeared without the noise, showing that his fear had been classically conditioned. Albert's fear also appeared to generalize to other furry white objects, such as a rabbit, a dog, a fur coat, cotton wool, and a Santa Claus mask with a beard, though the generalization was not perfect or universal. The study is a landmark demonstration that phobias and emotional reactions can be learned, but it is also notorious for its serious ethical problems and methodological weaknesses.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "The Little Albert experiment is one of the most famous studies in the history of psychology, offered as an early demonstration that human emotions, and specifically fears and phobias, can be learned through classical conditioning rather than being wholly innate. It extended Pavlov's work on conditioned reflexes to the emotional life of a person and became a foundational example for behaviorism, John B. Watson's program of explaining behavior through observable learning. The study shaped later thinking about how phobias and anxiety might be acquired by association, an idea that underlies behavioral therapies such as systematic desensitization that seek to unlearn conditioned fears. At the same time, the experiment is a central case study in research ethics, because deliberately instilling fear in an infant and never removing it would be indefensible today, and it helped motivate the ethical standards that now govern research with human subjects. Its methodological weaknesses, a single subject and subjective, uncontrolled observations, are equally instructive about the limits of dramatic early studies. The Little Albert experiment thus matters both as a landmark in the psychology of learning and as a cautionary lesson.",
   "working": [
-    {"lead": "Start with a neutral object", "text": "confirm that the infant shows no fear of a white rat, a neutral stimulus."},
-    {"lead": "Pair it with a scare", "text": "present the rat together with a loud, frightening noise, repeatedly, so the two become associated."},
-    {"lead": "Elicit conditioned fear", "text": "have the rat alone now produce fear, and observe that fear spread to other furry objects."}
+    {
+      "lead": "Start with a neutral object",
+      "text": "confirm that the infant shows no fear of a white rat, a neutral stimulus."
+    },
+    {
+      "lead": "Pair it with a scare",
+      "text": "present the rat together with a loud, frightening noise, repeatedly, so the two become associated."
+    },
+    {
+      "lead": "Elicit conditioned fear",
+      "text": "have the rat alone now produce fear, and observe that fear spread to other furry objects."
+    }
   ],
-  "limits": "The Little Albert experiment has severe limitations that make its conclusions far from secure. It studied a single infant, so the finding cannot be generalized with confidence, and it lacked controls and relied on the experimenters' subjective judgements of the child's reactions, which later reviewers have found were reported with more consistency than the records support; the generalization to other objects in particular was uneven and sometimes weak. The conditioning was never extinguished, so Albert left the study still fearful, an outcome that is ethically indefensible and could not be repeated today. The identity and fate of Little Albert are genuinely disputed, with rival candidates proposed, Douglas Merritte and William Barger, and no settled answer, so claims about who he was or what became of him should be treated as uncertain. So the Little Albert experiment robustly illustrates the idea that fear can be conditioned, understood as a single-subject, ethically fraught, and methodologically weak demonstration rather than solid proof.",
+  "limits": "The Little Albert experiment has severe limitations that make its conclusions far from secure. It studied a single infant, so the finding cannot be generalized with confidence, and it lacked controls and relied on the experimenters' subjective judgements of the child's reactions, which later reviewers have found were reported with more consistency than the records support; the generalization to other objects in particular was uneven and sometimes weak. The conditioning was never extinguished, so Albert left the study still fearful, an outcome that is ethically indefensible and could not be repeated today. The identity and fate of Little Albert are genuinely disputed, with rival candidates proposed, Douglas Merritte and William Barger, and no settled answer, so claims about who he was or what became of him should be treated as uncertain.",
   "misreadings": "The Little Albert experiment is not rigorous proof that all fears are conditioned; it was a single-subject study with no controls and subjective observations, so it illustrates rather than establishes the idea. Albert's fear did not generalize cleanly and universally to every furry object, since his reactions were uneven. And the popular claims about who Albert really was and what became of him are disputed, not settled, so treating the study as strong evidence, as a clean demonstration of generalization, or as having a known subject with a known fate, misreads a famous but flawed and ethically troubling experiment.",
   "origin": "A 1920 study by the behaviorist John B. Watson and Rosalie Rayner at Johns Hopkins University, conditioning fear of a white rat in an infant; a landmark of behaviorism now equally noted for its ethical and methodological problems.",
   "category": "psychology",
@@ -46,12 +58,26 @@
   "coinedYear": 1920,
   "namedAfter": null,
   "sources": [
-    {"text": "Little Albert experiment, Wikipedia. — the 1920 Watson and Rayner study at Johns Hopkins, the conditioning of fear of a white rat by pairing it with a loud steel-bar noise, the generalization to other furry objects, the ethical problems and unremoved fear, the single-subject and methodological criticisms, and the disputed identity of Albert.", "url": "https://en.wikipedia.org/wiki/Little_Albert_experiment", "type": "secondary"},
-    {"text": "Little Albert experiment, Simply Psychology. — Watson and Rayner's conditioning of a fear response in an infant, the procedure and generalization, and the ethical concerns.", "url": "https://www.simplypsychology.org/little-albert.html", "type": "secondary"}
+    {
+      "text": "Little Albert experiment, Wikipedia. — the 1920 Watson and Rayner study at Johns Hopkins, the conditioning of fear of a white rat by pairing it with a loud steel-bar noise, the generalization to other furry objects, the ethical problems and unremoved fear, the single-subject and methodological criticisms, and the disputed identity of Albert.",
+      "url": "https://en.wikipedia.org/wiki/Little_Albert_experiment",
+      "type": "secondary"
+    },
+    {
+      "text": "Little Albert experiment, Simply Psychology. — Watson and Rayner's conditioning of a fear response in an infant, the procedure and generalization, and the ethical concerns.",
+      "url": "https://www.simplypsychology.org/little-albert.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Little_Albert_experiment",
   "related": [
-    {"slug": "classical-conditioning", "kind": "cause"},
-    {"slug": "the-milgram-experiment", "kind": "kindred"}
+    {
+      "slug": "classical-conditioning",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-milgram-experiment",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "699",
   "slug": "the-allais-paradox",
   "name": "The Allais Paradox",
-  "aliases": ["Allais's paradox", "The certainty effect"],
+  "aliases": [
+    "Allais's paradox",
+    "The certainty effect"
+  ],
   "statement": "People who take a sure million over a gamble will still gamble when both options become uncertain, defying expected utility.",
   "statementAccent": "still gamble when both options become uncertain, defying expected utility",
   "meaning": "The Allais paradox is a choice problem in decision theory, devised by the French economist Maurice Allais in 1953, that demonstrates people's actual choices are inconsistent with expected utility theory. Subjects are presented with two separate pairs of gambles. In the first pair, most people prefer a certain one million to a gamble offering a large chance of one million, a small chance of five million, and a tiny chance of nothing. In the second pair, the same people tend to prefer a gamble with a slightly smaller chance of five million over one with a slightly larger chance of one million, when both also carry a large chance of nothing. This combination of preferences cannot be reconciled with any expected-utility valuation, because it violates the independence axiom, also called the sure-thing principle. Allais's demonstration is one of the earliest and most famous pieces of evidence that expected utility theory fails as a description of real human decision-making.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "The Allais paradox is a foundational result in behavioural economics and decision theory, among the earliest and most influential demonstrations that expected utility theory does not describe how people actually choose under risk. By constructing two pairs of gambles that share a cancellable common component, it shows in a clean, reproducible way that ordinary preferences violate the independence axiom, undermining a central pillar of the standard theory of rational choice. The certainty effect it revealed, that people place special weight on guaranteed outcomes, directly inspired Kahneman and Tversky's prospect theory, which its authors introduced partly to accommodate the Allais pattern and which called the paradox the best known counterexample to expected utility theory. The paradox remains a standard example in the study of risk, illustrating the gap between normative models of rationality and observed human behaviour.",
   "working": [
-    {"lead": "Offer the two pairs", "text": "present a certain prize against a gamble in one pair, and two comparable gambles in a second pair sharing a common outcome."},
-    {"lead": "Observe the common pattern", "text": "note that most people take the sure option in the first pair but the riskier prize in the second, a combination expected utility forbids."},
-    {"lead": "Read off the certainty effect", "text": "explain the reversal by the overweighting of certainty, which prospect theory later formalised."}
+    {
+      "lead": "Offer the two pairs",
+      "text": "present a certain prize against a gamble in one pair, and two comparable gambles in a second pair sharing a common outcome."
+    },
+    {
+      "lead": "Observe the common pattern",
+      "text": "note that most people take the sure option in the first pair but the riskier prize in the second, a combination expected utility forbids."
+    },
+    {
+      "lead": "Read off the certainty effect",
+      "text": "explain the reversal by the overweighting of certainty, which prospect theory later formalised."
+    }
   ],
-  "limits": "The Allais paradox is a descriptive result about how people choose, not a claim that expected utility theory is wrong as a normative ideal; some argue the observed preferences are mistakes that reflection would correct, while others take them as legitimate and fault the theory. The specific payoffs vary by source, since Allais's original used different figures, and the strength of the effect can depend on framing, stakes, and whether choices are hypothetical or real. Prospect theory and other non-expected-utility models accommodate the pattern but introduce their own assumptions and parameters. So the paradox robustly shows that expected utility theory fails as a description of behaviour, while what it implies for the theory of rational choice, and which alternative model is correct, remains a matter of ongoing debate.",
+  "limits": "The Allais paradox is a descriptive result about how people choose, not a claim that expected utility theory is wrong as a normative ideal; some argue the observed preferences are mistakes that reflection would correct, while others take them as legitimate and fault the theory. The specific payoffs vary by source, since Allais's original used different figures, and the strength of the effect can depend on framing, stakes, and whether choices are hypothetical or real. Prospect theory and other non-expected-utility models accommodate the pattern but introduce their own assumptions and parameters.",
   "misreadings": "The paradox is not that people are simply irrational in an obvious way; the choices feel natural, which is exactly what makes their inconsistency with expected utility theory striking. It does not show the theory is mathematically flawed, only that it fails to predict actual behaviour, leaving open whether the preferences are errors or the theory is inadequate as a description. And the specific numbers are illustrative rather than fixed; Allais's original figures differed, so citing one particular set as the definitive Allais paradox overstates the role of the exact payoffs.",
   "origin": "Devised by the French economist Maurice Allais in 1953 as a pair of gamble choices that most people make in a way that violates the independence axiom of expected utility theory, revealing the certainty effect and inspiring prospect theory.",
   "category": "economics",
@@ -46,12 +58,26 @@
   "coinedYear": 1953,
   "namedAfter": "Maurice Allais",
   "sources": [
-    {"text": "Allais paradox, Wikipedia. — Allais's 1953 problem, the two pairs of gambles with the standard payoffs, the common pattern of choosing 1A and 2B, the violation of the independence axiom, the certainty effect, and the prospect-theory connection.", "url": "https://en.wikipedia.org/wiki/Allais_paradox", "type": "secondary"},
-    {"text": "The Allais paradox: what it became, what it really was, what it now suggests to us, Philippe Mongin (HEC Paris), Economics and Philosophy. — the 1953 origin and the paradox's relation to expected utility theory.", "url": "https://people.hec.edu/mongin/wp-content/uploads/sites/36/2019/02/A71-Mongin-Allais-Paradox-EconPhil.pdf", "type": "secondary"}
+    {
+      "text": "Allais paradox, Wikipedia. — Allais's 1953 problem, the two pairs of gambles with the standard payoffs, the common pattern of choosing 1A and 2B, the violation of the independence axiom, the certainty effect, and the prospect-theory connection.",
+      "url": "https://en.wikipedia.org/wiki/Allais_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "The Allais paradox: what it became, what it really was, what it now suggests to us, Philippe Mongin (HEC Paris), Economics and Philosophy. — the 1953 origin and the paradox's relation to expected utility theory.",
+      "url": "https://people.hec.edu/mongin/wp-content/uploads/sites/36/2019/02/A71-Mongin-Allais-Paradox-EconPhil.pdf",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Allais_paradox",
   "related": [
-    {"slug": "the-ellsberg-paradox", "kind": "kindred"},
-    {"slug": "the-st-petersburg-paradox", "kind": "kindred"}
+    {
+      "slug": "the-ellsberg-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-st-petersburg-paradox",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "811",
   "slug": "protein-denaturation",
   "name": "Protein Denaturation",
-  "aliases": ["Denaturation", "Protein unfolding"],
+  "aliases": [
+    "Denaturation",
+    "Protein unfolding"
+  ],
   "statement": "Heat, acid, or whisking unravels a protein's folded shape while leaving its chain intact.",
   "statementAccent": "unravels a protein's folded shape while leaving its chain intact",
   "meaning": "Protein denaturation is the process by which a protein loses its native, folded three-dimensional structure due to an external stress such as heat, acid, salt, or mechanical agitation, while its primary structure, the sequence of amino acids linked by peptide bonds, remains intact. Proteins normally fold into specific shapes held together by relatively weak interactions; denaturation disrupts these, unravelling the protein's secondary, tertiary, and quaternary structure without breaking the underlying chain. In cooking, denaturation is everywhere and transformative: it turns clear, liquid egg white into an opaque solid, firms meat as it cooks, curdles milk when acid is added, and lets whisked egg whites form the stable foam of a meringue. It even lets citrus acid firm and whiten raw fish in ceviche, effectively cooking it without heat. Denaturation is often, though not always, irreversible, which is why a cooked egg cannot be uncooked. It is one of the most important chemical processes in food and a fundamental concept in biochemistry.",
@@ -33,11 +36,20 @@
   ],
   "whyItMatters": "Protein denaturation is one of the most important processes in cooking and a central concept in biochemistry, underlying an enormous range of everyday transformations. It explains why eggs set, meat firms, milk curdles, and fish can be cured in acid, and it is the basis of techniques from making meringues and custards to marinating and cheese-making, giving cooks control over texture and structure. Understanding it clarifies how heat, acid, salt, and agitation each reshape food, and why cooked proteins do not revert. In biology and medicine, denaturation matters for protein function, since a denatured protein usually loses its biological activity, and it is relevant to how proteins behave under stress, to sterilization, and to disease. The concept also sharpens an important distinction: denaturation changes a protein's shape without breaking its chain, unlike digestion, which cleaves the peptide bonds. By linking the folding of proteins to the textures of food and the function of life's molecules, denaturation connects the kitchen to fundamental science.",
   "working": [
-    {"lead": "Apply a stress", "text": "expose proteins to heat, acid, salt, or mechanical agitation that disrupts their stabilizing interactions."},
-    {"lead": "Unfold the structure", "text": "let the protein lose its folded secondary, tertiary, and quaternary shape while the amino-acid chain stays intact."},
-    {"lead": "Coagulate or set", "text": "watch the unfolded proteins bond and aggregate into a new structure, setting egg white, firming meat, or stabilizing a foam."}
+    {
+      "lead": "Apply a stress",
+      "text": "expose proteins to heat, acid, salt, or mechanical agitation that disrupts their stabilizing interactions."
+    },
+    {
+      "lead": "Unfold the structure",
+      "text": "let the protein lose its folded secondary, tertiary, and quaternary shape while the amino-acid chain stays intact."
+    },
+    {
+      "lead": "Coagulate or set",
+      "text": "watch the unfolded proteins bond and aggregate into a new structure, setting egg white, firming meat, or stabilizing a foam."
+    }
   ],
-  "limits": "Denaturation changes a protein's higher-order structure but leaves its primary sequence intact, so it is distinct from hydrolysis or digestion, which break the peptide bonds; confusing the two misdescribes the process. It is often irreversible in cooking, but not always, since some proteins can refold under the right conditions. The precise temperatures and conditions at which particular proteins denature vary, so specific figures, such as the temperatures at which different meat proteins firm, are approximate. Denaturation also does not by itself kill microorganisms, so acid-denatured fish in ceviche is chemically changed but not necessarily made microbiologically safe the way heat cooking would. So protein denaturation robustly explains the reshaping of proteins in food and biology, understood as loss of folded structure, distinct from breaking the chain, and dependent on the specific protein and conditions.",
+  "limits": "Denaturation changes a protein's higher-order structure but leaves its primary sequence intact, so it is distinct from hydrolysis or digestion, which break the peptide bonds; confusing the two misdescribes the process. It is often irreversible in cooking, but not always, since some proteins can refold under the right conditions. The precise temperatures and conditions at which particular proteins denature vary, so specific figures, such as the temperatures at which different meat proteins firm, are approximate. Denaturation also does not by itself kill microorganisms, so acid-denatured fish in ceviche is chemically changed but not necessarily made microbiologically safe the way heat cooking would.",
   "misreadings": "Denaturation does not break a protein's chain; it unfolds the shape while the amino-acid sequence and its peptide bonds stay intact, unlike digestion. It is not always reversible, but neither is it always irreversible, since some proteins can refold. And chemically denaturing fish with acid, as in ceviche, is not the same as cooking it safe, since it does not reliably kill microbes, so treating denaturation as breaking the chain, as always irreversible, or as equivalent to making food microbiologically safe, misreads a change in a protein's folded structure driven by heat, acid, salt, or agitation.",
   "origin": "A fundamental concept in biochemistry and food science: the loss of a protein's folded three-dimensional structure under stress, with the amino-acid sequence intact, central to cooking and to protein function.",
   "category": "science",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Denaturation (biochemistry), Wikipedia. — the loss of a protein's folded structure under stresses like acid, base, salt, solvent, agitation, or heat, with the primary sequence and peptide bonds intact, the coagulation of egg white and curdling of milk, and often irreversible denaturation.", "url": "https://en.wikipedia.org/wiki/Denaturation_(biochemistry)", "type": "secondary"},
-    {"text": "Ceviche, Wikipedia. — the citric-acid denaturation of raw fish that alters the protein structure and turns the flesh opaque and firm.", "url": "https://en.wikipedia.org/wiki/Ceviche", "type": "secondary"}
+    {
+      "text": "Denaturation (biochemistry), Wikipedia. — the loss of a protein's folded structure under stresses like acid, base, salt, solvent, agitation, or heat, with the primary sequence and peptide bonds intact, the coagulation of egg white and curdling of milk, and often irreversible denaturation.",
+      "url": "https://en.wikipedia.org/wiki/Denaturation_(biochemistry)",
+      "type": "secondary"
+    },
+    {
+      "text": "Ceviche, Wikipedia. — the citric-acid denaturation of raw fish that alters the protein structure and turns the flesh opaque and firm.",
+      "url": "https://en.wikipedia.org/wiki/Ceviche",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Denaturation_(biochemistry)",
   "related": [
-    {"slug": "gelatinization", "kind": "kindred"},
-    {"slug": "emulsion", "kind": "kindred"}
+    {
+      "slug": "gelatinization",
+      "kind": "kindred"
+    },
+    {
+      "slug": "emulsion",
+      "kind": "kindred"
+    }
   ]
 }

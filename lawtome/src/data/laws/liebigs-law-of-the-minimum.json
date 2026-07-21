@@ -2,7 +2,9 @@
   "no": "124",
   "slug": "liebigs-law-of-the-minimum",
   "name": "Liebig's Law of the Minimum",
-  "aliases": ["The Sprengel–Liebig law"],
+  "aliases": [
+    "The Sprengel–Liebig law"
+  ],
   "statement": "Growth is capped by the scarcest resource, not the total supply.",
   "statementAccent": "the scarcest resource, not the total supply",
   "meaning": "A system's output is limited by whatever essential input is in shortest supply relative to need — the limiting factor. Piling on more of what is already abundant does nothing; only increasing the deficient one raises the ceiling. The everyday version is that a chain is only as strong as its weakest link.",
@@ -31,11 +33,20 @@
       "text": "The general systems form: throughput is governed by the single tightest constraint, whether in agriculture, logistics, or a production line — the same weakest-link logic applied beyond nutrients."
     }
   ],
-  "whyItMatters": "It is a cornerstone of agronomy and ecology, reorienting attention from total resources to the single binding constraint — the reason fertiliser is matched to the deficient nutrient rather than simply increased. As a way of thinking, the limiting-factor idea travels far beyond soil, into any system governed by its scarcest input.",
+  "whyItMatters": "It is a cornerstone of agronomy and ecology, reorienting attention from total resources to the single binding constraint — the reason fertiliser is matched to the deficient nutrient rather than simply increased.",
   "working": [
-    {"lead": "Find and fix the binding constraint", "text": "identify the single most-deficient input and address that; adding more of what is already plentiful will not raise output."},
-    {"lead": "Expect the limiter to move", "text": "once you relieve one shortfall, another factor becomes limiting, so re-diagnose rather than assuming the same input still binds."},
-    {"lead": "Watch for excess, not just deficiency", "text": "per Shelford, too much of a factor can limit as surely as too little, so keep inputs within a tolerable range."}
+    {
+      "lead": "Find and fix the binding constraint",
+      "text": "identify the single most-deficient input and address that; adding more of what is already plentiful will not raise output."
+    },
+    {
+      "lead": "Expect the limiter to move",
+      "text": "once you relieve one shortfall, another factor becomes limiting, so re-diagnose rather than assuming the same input still binds."
+    },
+    {
+      "lead": "Watch for excess, not just deficiency",
+      "text": "per Shelford, too much of a factor can limit as surely as too little, so keep inputs within a tolerable range."
+    }
   ],
   "limits": "Real growth often responds to several factors interacting at once, not one strictly at a time, so the single-limiting-factor picture is an idealisation, holding cleanly only under steady-state conditions with controlled interactions. Factors can be substitutable or synergistic, blurring which is 'the' limiter, and the limiting factor shifts over time and place. Shelford's law of tolerance corrects it by adding that excess, not just deficiency, can limit. It is a strong first-order model, not an exact universal law.",
   "misreadings": "It does not mean only one thing ever matters — it means one factor binds at a time, and that factor changes as shortfalls are relieved and as conditions vary. Nor is it solely Liebig's: the principle was first stated by Carl Sprengel, whom Liebig popularised, so 'Sprengel–Liebig law' is the more accurate name.",
@@ -46,12 +57,27 @@
   "coinedYear": 1840,
   "namedAfter": "Justus von Liebig",
   "sources": [
-    {"text": "Liebig's law of the minimum, Wikipedia. — the statement, the barrel, the examples, and the criticism.", "url": "https://en.wikipedia.org/wiki/Liebig%27s_law_of_the_minimum", "type": "secondary"},
-    {"text": "\"The Law of the Minimum,\" University of Wisconsin Soil Science. — Sprengel's precedence and Liebig as 'propagandist and promulgator'.", "url": "https://soilsfacstaff.cals.wisc.edu/facstaff/barak/soilscience326/lawofmin.htm", "type": "secondary"},
-    {"text": "Shelford's law of tolerance, Wikipedia. — the extension covering excess as well as deficiency.", "url": "https://en.wikipedia.org/wiki/Shelford%27s_law_of_tolerance", "type": "secondary"}
+    {
+      "text": "Liebig's law of the minimum, Wikipedia. — the statement, the barrel, the examples, and the criticism.",
+      "url": "https://en.wikipedia.org/wiki/Liebig%27s_law_of_the_minimum",
+      "type": "secondary"
+    },
+    {
+      "text": "\"The Law of the Minimum,\" University of Wisconsin Soil Science. — Sprengel's precedence and Liebig as 'propagandist and promulgator'.",
+      "url": "https://soilsfacstaff.cals.wisc.edu/facstaff/barak/soilscience326/lawofmin.htm",
+      "type": "secondary"
+    },
+    {
+      "text": "Shelford's law of tolerance, Wikipedia. — the extension covering excess as well as deficiency.",
+      "url": "https://en.wikipedia.org/wiki/Shelford%27s_law_of_tolerance",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Liebig%27s_law_of_the_minimum",
   "related": [
-    {"slug": "gauses-law", "kind": "kindred"}
+    {
+      "slug": "gauses-law",
+      "kind": "kindred"
+    }
   ]
 }
