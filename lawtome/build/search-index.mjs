@@ -26,8 +26,9 @@ function bagWords(s) {
 // texts, capped so the client-fetched index stays lean (~2x the base gzip).
 const CONCEPT_CAP = 35;
 
-export function buildSearchIndex(laws = []) {
+export function buildSearchIndex(laws = [], situationsBySlug = {}) {
   const rows = Array.isArray(laws) ? laws : [];
+  const sitMap = situationsBySlug && typeof situationsBySlug === 'object' ? situationsBySlug : {};
   return rows.map((l) => {
     const aliases = Array.isArray(l.aliases) ? l.aliases : [];
     const name = l.name ?? '';
@@ -46,9 +47,13 @@ export function buildSearchIndex(laws = []) {
     const exText = Array.isArray(l.examples)
       ? l.examples.map((e) => (typeof e === 'string' ? e : [e && e.tag, e && e.text].filter(Boolean).join(' '))).join(' ')
       : '';
+    // Curated situation phrases for this law go FIRST, so their words win the cap
+    // over generic meaning/example vocabulary — a typed problem description lands
+    // on the law an editor mapped it to.
+    const sitText = (sitMap[l.slug] || []).join(' ');
     const concept = [];
     const seen = new Set();
-    for (const w of bagWords(`${l.meaning ?? ''} ${exText}`)) {
+    for (const w of bagWords(`${sitText} ${l.meaning ?? ''} ${exText}`)) {
       if (STOPWORDS.has(w) || baseWords.has(w) || seen.has(w)) continue;
       seen.add(w);
       concept.push(w);

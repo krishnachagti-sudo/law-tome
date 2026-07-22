@@ -20,6 +20,8 @@ import { RELIABILITY_TIERS, reliabilitySlug } from '../src/templates/partials.mj
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
 import { resolveCollections } from './collections.mjs';
 import { quizPage } from '../src/templates/quiz.mjs';
+import { situationsPage } from '../src/templates/situations.mjs';
+import { resolveSituations, situationsBySlug } from './situations.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng } from './quotecard.mjs';
@@ -54,14 +56,27 @@ export async function buildSite(opts) {
   // pin it. ISO 8601 (date only keeps it stable across a day's rebuilds).
   const buildDate = opts.buildDate ?? new Date().toISOString().slice(0, 10);
 
+  // Curated situation → law map. Optional file; loaded early because its phrases
+  // are folded into the search index (so a typed problem description lands on the
+  // law an editor mapped it to). Any situation whose law slug is unknown is
+  // dropped by resolveSituations, so nothing dangles.
+  const situationsFile = opts.situationsFile ?? join(dirname(catFile), 'situations.json');
+  let rawSituations = [];
+  try { rawSituations = JSON.parse(await readFile(situationsFile, 'utf8')); }
+  catch { rawSituations = []; }
+  const { situations, dropped: droppedSit } = resolveSituations(rawSituations, byslug);
+  if (droppedSit.length) console.warn(`situations: dropped ${droppedSit.length} unknown slug(s): ${droppedSit.join(', ')}`);
+  const sitMap = situationsBySlug(rawSituations);
+
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
     // Home: first 12 laws as the featured rotation.
     writePage(join(out, 'index.html'), homePage(laws.slice(0, 12), { publishedCount, base, origin })),
     // Prebuilt client-search index (a DATA file, not a "page"): fetched by
-    // src/assets/search.js. In the concurrent writes[] so it's covered by the
-    // pre-clean rm + Promise.all.
-    writePage(join(out, 'search-index.json'), JSON.stringify(buildSearchIndex(laws))),
+    // src/assets/search.js. Curated situation phrasing is folded in so a typed
+    // problem description surfaces the mapped law. In the concurrent writes[] so
+    // it's covered by the pre-clean rm + Promise.all.
+    writePage(join(out, 'search-index.json'), JSON.stringify(buildSearchIndex(laws, sitMap))),
     // Prebuilt relationship graph (a DATA file, not a "page"): fetched by
     // src/assets/graph.js, which renders a local neighbourhood from it. In the
     // concurrent writes[] so it's covered by the pre-clean rm + Promise.all.
@@ -163,6 +178,11 @@ export async function buildSite(opts) {
   // Law of the day + name-that-law quiz: a static shell filled by assets/quiz.js
   // (which fetches the search index). A learning/return loop, not a "law page".
   writes.push(writePage(join(out, 'quiz', 'index.html'), quizPage({ base, origin, count: publishedCount })));
+
+  // Situations: a visible reverse-lookup ("what's the law for…?") built from the
+  // same curated map folded into the search index. Emitted unconditionally (empty
+  // state when a corpus has none), so the footer link never dangles.
+  writes.push(writePage(join(out, 'situations', 'index.html'), situationsPage(situations, { base, origin, count: publishedCount })));
   // 404.html at the output root: the host serves it for unmatched paths. A
   // crawler-facing error page (noindex), not a "page", so it doesn't touch counts.
   writes.push(writePage(join(out, '404.html'), notFoundPage({ base, origin, count: publishedCount })));
@@ -188,6 +208,7 @@ export async function buildSite(opts) {
     'collections/',                           // curated-collections hub
     ...collections.map((c) => `collections/${c.slug}/`),
     'quiz/',                                  // law of the day + quiz
+    'situations/',                            // reverse lookup: problem -> law
   ];
   writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate)));
   writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n# llms.txt: ${origin}${base}llms.txt\n`));
@@ -247,8 +268,8 @@ export async function buildSite(opts) {
   // `listings`: browse + present categories + the 4 Task 14 static pages (coin,
   // about, coined, privacy) + the tension index + the reliability hub + one page
   // per present reliability tier + the collections hub + one page per collection
-  // + the quiz page. `pages` stays home + one page per law, unchanged.
-  return { pages: laws.length + 1, listings: 1 + present.length + 5 + 1 + presentTiers.length + 1 + collections.length + 1, graph: 1, og: laws.length };
+  // + the quiz page + the situations page. `pages` stays home + one page per law.
+  return { pages: laws.length + 1, listings: 1 + present.length + 5 + 1 + presentTiers.length + 1 + collections.length + 1 + 1, graph: 1, og: laws.length };
 }
 
 // CLI: only runs when invoked directly (so `npm run build` works, imports don't).

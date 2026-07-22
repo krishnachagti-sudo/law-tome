@@ -195,9 +195,10 @@
         for (var i = 0; i < list.length; i++) frag.appendChild(buildCard(list[i]));
         grid.appendChild(frag);
       } else {
-        // Only HTML-string path — echoed query is escaped first.
+        // Only HTML-string path — echoed query is escaped first. BASE is derived
+        // from this script's own src (safe), not user input.
         grid.innerHTML = '<div class="empty">No law matches "' + escapeHtml(query) +
-          '". Maybe you should <b>coin</b> it.</div>';
+          '". Try <a href="' + BASE + 'situations/">common situations</a>, or maybe you should <b>coin</b> it.</div>';
       }
       if (showing) showing.textContent = 'showing ' + list.length + ' of ' + rows.length;
     }
