@@ -276,7 +276,7 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
         <span class="brand-name">The Law Tome</span>
       </a>
       <p class="foot-blurb">A living, sourced index of named laws, principles, and effects — every entry traced to its origin and cited. No ads, no tracking of what you read.</p>
-      <p class="foot-conyso">An initiative by <a href="https://conyso.com">Conyso</a>.</p>
+      <p class="foot-conyso">Created by <a href="https://github.com/krishnachagti-sudo" rel="author">Krishna Chagti</a> · an initiative by <a href="https://conyso.com">Conyso</a>.</p>
       <p class="foot-motto">Sapere aude.</p>
     </div>
 ${col('Browse', [['browse/', 'All laws'], ['for/', 'Find your laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['reliability/', 'By reliability']])}

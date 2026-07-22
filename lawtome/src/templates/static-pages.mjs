@@ -152,7 +152,7 @@ ${tierRow}
     <p class="about-p">The corpus is licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a> — reuse it, remix it, build on it, just credit The Law Tome. You can <a href="${base}data/">download the dataset</a> as JSON or CSV. No ads, and no tracking of what you read.</p>
 
     <h2 class="about-h2">Who’s behind it</h2>
-    <p class="about-p">The Law Tome is an <b>initiative by <a href="${origin || 'https://conyso.com'}">Conyso</a></b> — Conyso is its publisher and stands behind it. The day-to-day work — writing the entries, chasing the sources, checking every attribution — is a standing responsibility of the Law Tome editorial team, not a single byline.</p>
+    <p class="about-p">The Law Tome is created and maintained by <b><a href="https://github.com/krishnachagti-sudo" rel="author">Krishna Chagti</a></b>, and published as an <b>initiative by <a href="${origin || 'https://conyso.com'}">Conyso</a></b>. The day-to-day work — writing the entries, chasing the sources, checking every attribution — is hands-on, and done in the open.</p>
     <p class="about-p">We keep it deliberately quiet: no ads, no sponsors, nothing that tracks what you read. The only thing we ask of you is a correction when we get something wrong. Spot an error, know a better source, or think we’ve missed a law? <a href="${base}coin/">Suggest a law or a fix.</a> It’s how the index stays honest.</p>
 
     <h2 class="about-h2">Start exploring</h2>
@@ -163,8 +163,33 @@ ${tierRow}
 </section>
 `;
 
+  // Person node for the creator — the "who" behind the project, for the entity
+  // graph / knowledge panel. Only verified facts: name + GitHub. No invented bio.
+  const person = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Krishna Chagti',
+    url: 'https://github.com/krishnachagti-sudo',
+    sameAs: ['https://github.com/krishnachagti-sudo'],
+    worksFor: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
+  };
+  const aboutLd = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About The Law Tome',
+    url: `${origin}${base}about/`,
+    description,
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'The Law Tome',
+      url: `${origin}${base}`,
+      founder: { '@type': 'Person', name: 'Krishna Chagti', url: 'https://github.com/krishnachagti-sudo' },
+      parentOrganization: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
+    },
+  };
+
   return (
-    head({ title: 'About & Method — How The Law Tome Is Built | The Law Tome', description, base, origin, path: 'about/' }) +
+    head({ title: 'About & Method — How The Law Tome Is Built | The Law Tome', description, base, origin, path: 'about/', jsonld: [aboutLd, person] }) +
     sprite() +
     header({ base, active: 'about', count }) +
     section +

@@ -9,10 +9,13 @@ test('escapes </script> in inline featured JSON', () => assert.doesNotMatch(html
 test('embeds featured laws for the rotating hero', () => assert.match(html, /"slug":"a"/));
 test('wraps the directory in DefinedTermSet JSON-LD', () => assert.match(html, /"DefinedTermSet"/));
 
-// Credits Conyso as the publishing organisation — visibly and in structured data.
-test('homepage credits Conyso as the initiative/parent organisation', () => {
-  assert.match(html, /An initiative by <a href="https:\/\/conyso\.com">Conyso<\/a>/);
+// Credits the creator (Krishna Chagti) and publisher (Conyso) — visibly and in
+// structured data.
+test('homepage credits the creator and the publisher, on-page and in JSON-LD', () => {
+  assert.match(html, /By <a href="https:\/\/github\.com\/krishnachagti-sudo"[^>]*>Krishna Chagti<\/a>/);
+  assert.match(html, /an initiative by <a href="https:\/\/conyso\.com">Conyso<\/a>/);
   assert.match(html, /"parentOrganization":\{"@type":"Organization","name":"Conyso"/);
+  assert.match(html, /"founder":\{"@type":"Person","name":"Krishna Chagti"/);
 });
 
 // The landing grid is a capped, server-rendered SAMPLE (data-limit), never the

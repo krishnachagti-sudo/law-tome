@@ -91,7 +91,7 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
       </label>
       <button class="ghost" id="rand"><i class="ti ti-arrows-shuffle" aria-hidden="true"></i> Random law</button>
     </div>
-    <p class="hero-credit">An initiative by <a href="https://conyso.com">Conyso</a> · <a href="${base}about/">about us</a></p>
+    <p class="hero-credit">By <a href="https://github.com/krishnachagti-sudo" rel="author">Krishna Chagti</a> · an initiative by <a href="https://conyso.com">Conyso</a> · <a href="${base}about/">about</a></p>
   </div>
 </section>
 `;
@@ -273,6 +273,8 @@ const LAWS=${featuredJson};
     logo: { '@type': 'ImageObject', url: `${homeUrl}assets/logo.svg`, width: 512, height: 512 },
     // The Law Tome is an initiative by Conyso, its publisher.
     parentOrganization: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
+    // Creator/founder — the person behind the project.
+    founder: { '@type': 'Person', name: 'Krishna Chagti', url: 'https://github.com/krishnachagti-sudo', sameAs: ['https://github.com/krishnachagti-sudo'] },
   };
   const definedTermSet = {
     '@context': 'https://schema.org',

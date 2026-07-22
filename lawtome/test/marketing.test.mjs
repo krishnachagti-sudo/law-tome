@@ -63,11 +63,15 @@ test('coin page keeps its working form AND gains a pitch', () => {
   assert.match(h, /with your name/i);
 });
 
-test('about frames the project as an initiative by Conyso (factual, no invented backstory)', () => {
+test('about credits Krishna Chagti (creator) + Conyso (publisher), factual only', () => {
   const h = aboutPage({ base: '/lawtome/', origin: 'https://conyso.com' });
   assert.match(h, /behind it/);              // "Who's behind it" section
+  assert.match(h, /Krishna Chagti/);         // named creator, on-page…
+  assert.match(h, /"@type":"Person","name":"Krishna Chagti"/); // …and a Person node
   assert.match(h, /initiative by/i);
   assert.match(h, /href="https:\/\/conyso\.com"/);
+  // No invented "Dr. Firstname Lastname" and no fabricated bio sentence.
+  assert.doesNotMatch(h, /Dr\.\s+[A-Z][a-z]+\s+[A-Z][a-z]+/);
 });
 
 test('the shipped audiences all resolve against the corpus', () => {
