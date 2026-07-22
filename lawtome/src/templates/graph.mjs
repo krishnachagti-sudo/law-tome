@@ -34,9 +34,20 @@ export function graphPage({ base = '/', origin = '', publishedCount } = {}) {
       <h1>The graph</h1>
       <span class="sub">${count} laws, cross-linked</span>
     </div>
-    <p class="graph-intro" style="font-size:15px;color:var(--muted);max-width:660px;margin:6px 0 22px">The whole corpus as one map — every law a node, every cross-link an edge. <b>Drag</b> a node to pull the web around, <b>scroll</b> to zoom, <b>hover</b> to trace what a law touches, and <b>click</b> to open its page. Colour marks the reliability tier; the better-connected a law, the larger its node.</p>
-    <div class="graph-stage graph-band" id="graph" aria-label="Relationship graph explorer" role="img" style="position:relative;min-height:540px;padding:0;overflow:hidden">
-      <div class="graph-empty" id="graph-empty" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:#a89e84">Loading the graph…</div>
+    <p class="graph-intro">Every law is a door to a few others. Start from one and walk its web — the laws it echoes, causes, or contradicts. <b>Search</b> for a law, <b>click</b> a neighbour to travel to it, or click the one in the centre to read its page. Colour marks the reliability tier.</p>
+    <div class="graph-search">
+      <i class="ti ti-search" aria-hidden="true"></i>
+      <input id="graph-q" type="text" placeholder="Start from a law…" autocomplete="off" aria-label="Find a law to explore in the graph">
+      <div class="graph-suggest" id="graph-suggest" role="listbox" hidden></div>
+    </div>
+    <div class="graph-stage graph-band" id="graph" aria-label="Relationship graph explorer" role="img">
+      <div class="graph-empty" id="graph-empty">Loading the graph…</div>
+    </div>
+    <div class="graph-focusbar" id="graph-focusbar" hidden>
+      <button class="graph-back" id="graph-back" type="button" hidden><i class="ti ti-arrow-left" aria-hidden="true"></i> back</button>
+      <span class="graph-focus-name" id="graph-focus-name"></span>
+      <span class="graph-focus-meta" id="graph-focus-meta"></span>
+      <a class="graph-focus-link" id="graph-focus-link" href="${base}"><i class="ti ti-arrow-right" aria-hidden="true"></i> Open this law</a>
     </div>
   </div>
 </section>
