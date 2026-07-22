@@ -55,7 +55,7 @@ const LAW_COUNT = LAW_FILES.length;
 const CAT_COUNT = new Set(
   LAW_FILES.map((f) => JSON.parse(readFileSync(join('src/data/laws', f), 'utf8')).category),
 ).size;
-const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 4;
+const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));
@@ -64,7 +64,8 @@ test('build emits a well-formed sitemap.xml listing crawlable pages only', async
   assert.match(sm, /^<\?xml/);
   assert.match(sm, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
   assert.match(sm, /<\/urlset>/);
-  // home + one per law + browse + one per present category + graph + 4 static pages.
+  // home + one per law + browse + one per present category + graph + 5 static pages
+  // (coin, about, coined, privacy, tension).
   assert.equal((sm.match(/<loc>/g) || []).length, EXPECTED_LOCS);
   // Home root and a law are absolute base URLs.
   assert.match(sm, /<loc>https:\/\/conyso\.com\/lawtome\/<\/loc>/);

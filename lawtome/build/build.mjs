@@ -13,6 +13,8 @@ import { homePage } from '../src/templates/home.mjs';
 import { listingPage } from '../src/templates/listing.mjs';
 import { graphPage } from '../src/templates/graph.mjs';
 import { coinPage, aboutPage, coinedIndex, privacyPage, notFoundPage } from '../src/templates/static-pages.mjs';
+import { tensionPage } from '../src/templates/tension.mjs';
+import { tensionPairs } from './relations.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng } from './quotecard.mjs';
@@ -109,6 +111,11 @@ export async function buildSite(opts) {
   writes.push(writePage(join(out, 'about', 'index.html'), aboutPage({ base, origin, count: publishedCount })));
   writes.push(writePage(join(out, 'coined', 'index.html'), coinedIndex(coinedLaws, { base, origin, count: publishedCount })));
   writes.push(writePage(join(out, 'privacy', 'index.html'), privacyPage({ base, origin, count: publishedCount })));
+  // "Laws in tension": a whole-corpus view of the pairs the corpus marks as
+  // opposing. Derived from related[] tension edges — always emitted (empty state
+  // when a corpus has none), so the footer link never dangles.
+  const tension = tensionPairs(laws);
+  writes.push(writePage(join(out, 'tension', 'index.html'), tensionPage(tension, { base, origin, count: publishedCount })));
   // 404.html at the output root: the host serves it for unmatched paths. A
   // crawler-facing error page (noindex), not a "page", so it doesn't touch counts.
   writes.push(writePage(join(out, '404.html'), notFoundPage({ base, origin, count: publishedCount })));
@@ -128,6 +135,7 @@ export async function buildSite(opts) {
     'about/',
     'coined/',
     'privacy/',
+    'tension/',                               // cross-corpus opposing-pairs view
   ];
   writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate)));
   writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n# llms.txt: ${origin}${base}llms.txt\n`));
@@ -185,8 +193,9 @@ export async function buildSite(opts) {
   // per-category listings are reported in `listings`; the graph explorer is a
   // distinct page reported separately so no existing count assertion shifts.
   // `listings`: browse + present categories + the 4 Task 14 static pages (coin,
-  // about, coined, privacy). `pages` stays home + one page per law, unchanged.
-  return { pages: laws.length + 1, listings: 1 + present.length + 4, graph: 1, og: laws.length };
+  // about, coined, privacy) + the tension index. `pages` stays home + one page
+  // per law, unchanged.
+  return { pages: laws.length + 1, listings: 1 + present.length + 5, graph: 1, og: laws.length };
 }
 
 // CLI: only runs when invoked directly (so `npm run build` works, imports don't).

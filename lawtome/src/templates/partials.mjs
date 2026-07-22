@@ -262,7 +262,7 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
       <p class="foot-blurb">A living, sourced index of named laws, principles, and effects — every entry traced to its origin and cited. No ads, no tracking of what you read.</p>
       <p class="foot-motto">Sapere aude.</p>
     </div>
-${col('Explore', [['browse/', 'Browse all'], ['graph/', 'The graph'], ['coined/', 'The Coined wing']])}
+${col('Explore', [['browse/', 'Browse all'], ['graph/', 'The graph'], ['tension/', 'Laws in tension'], ['coined/', 'The Coined wing']])}
 ${col('The project', [['about/', 'About & method'], ['coin/', 'Coin a law'], ['privacy/', 'Privacy']])}
   </div>
   <div class="wrap foot-rule">
