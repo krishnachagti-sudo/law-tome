@@ -433,6 +433,8 @@ ${prevnext}</div>
     name: 'The Law Tome',
     url: `${origin}${base}`,
     logo: { '@type': 'ImageObject', url: `${origin}${base}assets/logo.svg`, width: 512, height: 512 },
+    // Published as an initiative by Conyso.
+    parentOrganization: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
   };
   // Search keywords: the name, its real aliases, the field, and the generic terms
   // people pair with a named law. All honest synonyms — nothing invented.

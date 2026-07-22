@@ -9,6 +9,12 @@ test('escapes </script> in inline featured JSON', () => assert.doesNotMatch(html
 test('embeds featured laws for the rotating hero', () => assert.match(html, /"slug":"a"/));
 test('wraps the directory in DefinedTermSet JSON-LD', () => assert.match(html, /"DefinedTermSet"/));
 
+// Credits Conyso as the publishing organisation — visibly and in structured data.
+test('homepage credits Conyso as the initiative/parent organisation', () => {
+  assert.match(html, /An initiative by <a href="https:\/\/conyso\.com">Conyso<\/a>/);
+  assert.match(html, /"parentOrganization":\{"@type":"Organization","name":"Conyso"/);
+});
+
 // The landing grid is a capped, server-rendered SAMPLE (data-limit), never the
 // whole corpus dumped as thousands of cards.
 test('browse grid is a capped teaser, server-rendered', () => {

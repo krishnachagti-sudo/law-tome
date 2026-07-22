@@ -91,6 +91,7 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
       </label>
       <button class="ghost" id="rand"><i class="ti ti-arrows-shuffle" aria-hidden="true"></i> Random law</button>
     </div>
+    <p class="hero-credit">An initiative by <a href="https://conyso.com">Conyso</a> · <a href="${base}about/">about us</a></p>
   </div>
 </section>
 `;
@@ -270,6 +271,8 @@ const LAWS=${featuredJson};
     url: homeUrl,
     description: 'A living, sourced index of named laws, principles, and effects.',
     logo: { '@type': 'ImageObject', url: `${homeUrl}assets/logo.svg`, width: 512, height: 512 },
+    // The Law Tome is an initiative by Conyso, its publisher.
+    parentOrganization: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
   };
   const definedTermSet = {
     '@context': 'https://schema.org',

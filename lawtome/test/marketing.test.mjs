@@ -65,7 +65,8 @@ test('coin page keeps its working form AND gains a pitch', () => {
 
 test('about frames the project as an initiative by Conyso (factual, no invented backstory)', () => {
   const h = aboutPage({ base: '/lawtome/', origin: 'https://conyso.com' });
-  assert.match(h, /An initiative by Conyso/);
+  assert.match(h, /behind it/);              // "Who's behind it" section
+  assert.match(h, /initiative by/i);
   assert.match(h, /href="https:\/\/conyso\.com"/);
 });
 

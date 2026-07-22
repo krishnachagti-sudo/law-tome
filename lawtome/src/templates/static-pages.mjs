@@ -151,8 +151,9 @@ ${tierRow}
     <h2 class="about-h2">Open by design</h2>
     <p class="about-p">The corpus is licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a> — reuse it, remix it, build on it, just credit The Law Tome. You can <a href="${base}data/">download the dataset</a> as JSON or CSV. No ads, and no tracking of what you read.</p>
 
-    <h2 class="about-h2">An initiative by Conyso</h2>
-    <p class="about-p">The Law Tome is an initiative by <b><a href="${origin || 'https://conyso.com'}">Conyso</a></b>, its publisher, and is curated and maintained by the Law Tome editorial team — a standing editorial responsibility, not a single byline. Corrections and sources are always welcome: <a href="${base}coin/">suggest a law or a fix</a>.</p>
+    <h2 class="about-h2">Who’s behind it</h2>
+    <p class="about-p">The Law Tome is an <b>initiative by <a href="${origin || 'https://conyso.com'}">Conyso</a></b> — Conyso is its publisher and stands behind it. The day-to-day work — writing the entries, chasing the sources, checking every attribution — is a standing responsibility of the Law Tome editorial team, not a single byline.</p>
+    <p class="about-p">We keep it deliberately quiet: no ads, no sponsors, nothing that tracks what you read. The only thing we ask of you is a correction when we get something wrong. Spot an error, know a better source, or think we’ve missed a law? <a href="${base}coin/">Suggest a law or a fix.</a> It’s how the index stays honest.</p>
 
     <h2 class="about-h2">Start exploring</h2>
     <div class="about-explore">
