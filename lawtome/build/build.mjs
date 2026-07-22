@@ -22,6 +22,13 @@ import { resolveCollections } from './collections.mjs';
 import { quizPage } from '../src/templates/quiz.mjs';
 import { situationsPage } from '../src/templates/situations.mjs';
 import { resolveSituations, situationsBySlug } from './situations.mjs';
+import { eponymsPage } from '../src/templates/eponyms.mjs';
+import { eponymGroups } from './eponyms.mjs';
+import { timelinePage } from '../src/templates/timeline.mjs';
+import { eraGroups } from './timeline.mjs';
+import { savedPage } from '../src/templates/saved.mjs';
+import { dataPage } from '../src/templates/data.mjs';
+import { buildDataset, datasetCsv } from './dataset.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng } from './quotecard.mjs';
@@ -183,6 +190,24 @@ export async function buildSite(opts) {
   // same curated map folded into the search index. Emitted unconditionally (empty
   // state when a corpus has none), so the footer link never dangles.
   writes.push(writePage(join(out, 'situations', 'index.html'), situationsPage(situations, { base, origin, count: publishedCount })));
+
+  // Eponym index + timeline: two more browse axes over existing fields
+  // (namedAfter, coinedYear). No new corpus data.
+  writes.push(writePage(join(out, 'named-after', 'index.html'), eponymsPage(eponymGroups(laws), { base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'timeline', 'index.html'), timelinePage(eraGroups(laws), { base, origin, count: publishedCount })));
+
+  // Saved shortlist: a client-only page (localStorage), noindex — filled by
+  // assets/saved.js, which every law page's Save button writes to.
+  writes.push(writePage(join(out, 'saved', 'index.html'), savedPage({ base, origin, count: publishedCount })));
+
+  // Dataset (/data/): a page plus the downloads themselves. METADATA ONLY — the
+  // long-form prose is deliberately withheld (build/dataset.mjs), so the corpus's
+  // written value stays on-site while the index/graph/citations are freely
+  // reusable under CC BY. The .json/.csv are data files (not crawlable pages), so
+  // they are NOT added to the sitemap.
+  writes.push(writePage(join(out, 'data', 'index.html'), dataPage({ base, origin, count: publishedCount, generated: buildDate })));
+  writes.push(writePage(join(out, 'data', 'lawtome.json'), JSON.stringify(buildDataset(laws, { baseUrl: `${origin}${base}`, generated: buildDate }), null, 2)));
+  writes.push(writePage(join(out, 'data', 'lawtome.csv'), datasetCsv(laws, { baseUrl: `${origin}${base}` })));
   // 404.html at the output root: the host serves it for unmatched paths. A
   // crawler-facing error page (noindex), not a "page", so it doesn't touch counts.
   writes.push(writePage(join(out, '404.html'), notFoundPage({ base, origin, count: publishedCount })));
@@ -209,6 +234,9 @@ export async function buildSite(opts) {
     ...collections.map((c) => `collections/${c.slug}/`),
     'quiz/',                                  // law of the day + quiz
     'situations/',                            // reverse lookup: problem -> law
+    'named-after/',                           // eponym index
+    'timeline/',                              // by-era browse
+    'data/',                                  // dataset download page (indexable)
   ];
   writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate)));
   writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n# llms.txt: ${origin}${base}llms.txt\n`));
@@ -268,8 +296,10 @@ export async function buildSite(opts) {
   // `listings`: browse + present categories + the 4 Task 14 static pages (coin,
   // about, coined, privacy) + the tension index + the reliability hub + one page
   // per present reliability tier + the collections hub + one page per collection
-  // + the quiz page + the situations page. `pages` stays home + one page per law.
-  return { pages: laws.length + 1, listings: 1 + present.length + 5 + 1 + presentTiers.length + 1 + collections.length + 1 + 1, graph: 1, og: laws.length };
+  // + the quiz page + the situations page + named-after + timeline + saved + the
+  // data page (the .json/.csv downloads are data files, not listings). `pages`
+  // stays home + one page per law.
+  return { pages: laws.length + 1, listings: 1 + present.length + 5 + 1 + presentTiers.length + 1 + collections.length + 1 + 1 + 4, graph: 1, og: laws.length };
 }
 
 // CLI: only runs when invoked directly (so `npm run build` works, imports don't).

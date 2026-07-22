@@ -390,8 +390,16 @@ ${mapLegend}
 
   const citeText = `"${escapeHtml(law.name)}." The Law Tome. ${escapeHtml(origin + base)}laws/${escapeHtml(law.slug)}/`;
 
+  // Save button — carries the law's card fields as data-* so saved.js can store
+  // and re-render it with no network. reliability is blank for coined entries.
+  const saveBtn = `      <div class="panel panel--save">
+        <button class="btn" id="save" type="button" aria-pressed="false" data-slug="${escapeHtml(law.slug)}" data-name="${escapeHtml(law.name)}" data-statement="${escapeHtml(law.statement || '')}" data-cat="${escapeHtml(law.category || '')}" data-rel="${escapeHtml(coined ? '' : (law.reliability || ''))}" data-no="${escapeHtml(law.no || '')}"><i class="ti ti-bookmark" aria-hidden="true"></i> <span id="save-t">Save</span></button>
+        <a class="save-link" href="${base}saved/">View saved</a>
+      </div>
+`;
+
   const aside = `    <aside class="aside">
-${mapPanel}      <div class="panel">
+${saveBtn}${mapPanel}      <div class="panel">
         <h4>Cite this entry</h4>
         <div class="cite-box" id="cite">${citeText}</div>
         <button class="btn" id="copy"><i class="ti ti-copy" aria-hidden="true"></i> <span id="copy-t">Copy citation</span></button>
@@ -541,6 +549,6 @@ document.getElementById('copy').onclick=function(){
     entry +
     dash +
     layout +
-    footer({ base, scripts })
+    footer({ base, scripts: `${scripts}\n<script defer src="${base}assets/saved.js"></script>` })
   );
 }

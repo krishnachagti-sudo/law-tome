@@ -277,8 +277,9 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
       <p class="foot-blurb">A living, sourced index of named laws, principles, and effects — every entry traced to its origin and cited. No ads, no tracking of what you read.</p>
       <p class="foot-motto">Sapere aude.</p>
     </div>
-${col('Explore', [['browse/', 'Browse all'], ['situations/', "What's the law for…?"], ['collections/', 'Collections'], ['graph/', 'The graph'], ['tension/', 'Laws in tension'], ['reliability/', 'By reliability'], ['coined/', 'The Coined wing']])}
-${col('The project', [['about/', 'About & method'], ['quiz/', 'Law of the day'], ['coin/', 'Coin a law'], ['privacy/', 'Privacy']])}
+${col('Browse', [['browse/', 'All laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['reliability/', 'By reliability']])}
+${col('Discover', [['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['tension/', 'Laws in tension'], ['quiz/', 'Law of the day'], ['saved/', 'Saved laws']])}
+${col('The project', [['about/', 'About & method'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['privacy/', 'Privacy']])}
   </div>
   <div class="wrap foot-rule">
     <span>Canon: attested &amp; verified. Coined: original, credited, clearly marked.</span>

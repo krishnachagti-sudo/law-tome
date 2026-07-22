@@ -61,8 +61,9 @@ const TIER_COUNT = new Set(PARSED.map((l) => l.reliability).filter(Boolean)).siz
 const SLUGS = new Set(PARSED.map((l) => l.slug));
 const RAW_COLL = JSON.parse(readFileSync('src/data/collections.json', 'utf8'));
 const COLL_COUNT = RAW_COLL.filter((c) => (c.laws || []).some((s) => SLUGS.has(s))).length;
-// + the quiz page (law of the day + name-that-law) + the situations page.
-const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1;
+// + quiz + situations + named-after + timeline + data (the /saved/ page is
+// noindex and the .json/.csv downloads are data files, so none are in the sitemap).
+const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));
