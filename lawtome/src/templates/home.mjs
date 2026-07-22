@@ -73,8 +73,8 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
   const heroCat = first ? escapeHtml(first.category) : '';
   const heroAttrib = first ? `— <span class="who">${escapeHtml(first.name)}</span>` : '';
 
-  const hero = `<section class="hero">
-  <svg class="hero-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
+  const hero = `<section class="hero" data-spotlight>
+  <svg class="hero-mark" viewBox="0 0 100 100" aria-hidden="true" data-parallax="0.16"><use href="#seal"/></svg>
   <div class="wrap">
     <div class="eyebrow">The largest unified, defined &amp; sourced index of named laws</div>
     <h1 class="lede">Every named law, principle, and effect — <b>explained, sourced, and cross-linked.</b> One place instead of forty half-finished lists.</h1>
@@ -97,10 +97,10 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
 `;
 
   // ---- differentiator strip (why this, not a listicle) ------------------
-  const trustCell = (n, l) => `      <div class="ht-cell"><span class="ht-n">${n}</span><span class="ht-l">${l}</span></div>`;
+  const trustCell = (n, l, num) => `      <div class="ht-cell"><span class="ht-n"${num ? ` data-count="${num}"` : ''}>${n}</span><span class="ht-l">${l}</span></div>`;
   const trust = `<section class="sec home-trust">
-  <div class="wrap ht-row">
-${trustCell(count, 'named laws, principles &amp; effects — one index')}
+  <div class="wrap ht-row" data-reveal-stagger>
+${trustCell(count, 'named laws, principles &amp; effects — one index', count)}
 ${trustCell('Sourced', 'every entry traced to its origin and cited')}
 ${trustCell('Cross-linked', 'a living graph of relations, not a flat list')}
 ${trustCell('Rated', 'proven, heuristic, or folklore — marked honestly')}
@@ -142,14 +142,14 @@ ${teaserCards}
     person: svg('<circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/>'),
   };
   const feat = (href, icon, title, body) =>
-    `      <a class="feat" href="${base}${href}">${icon}<span class="feat-t">${title}</span><span class="feat-b">${body}</span></a>`;
+    `      <a class="feat" href="${base}${href}" data-tilt>${icon}<span class="feat-t">${title}</span><span class="feat-b">${body}</span></a>`;
   const features = `<section class="sec home-features">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head" data-reveal>
       <h2>More than a list</h2>
       <span class="sub">the things a flat A–Z can't give you</span>
     </div>
-    <div class="feat-grid">
+    <div class="feat-grid" data-reveal-stagger>
 ${feat('situations/', IC.feeling, 'Describe the feeling', 'Don’t know the name? Say what’s happening — “we hit the target but the product got worse” — and land on the law that names it.')}
 ${feat('tension/', IC.tension, 'Laws in tension', 'The principles that disagree, side by side — where one law’s advice is another’s warning.')}
 ${feat('reliability/', IC.shield, 'Proven, or folklore?', 'Every entry is rated — from measured evidence to plain adage — so you always know what you’re quoting.')}
@@ -165,12 +165,12 @@ ${feat('named-after/', IC.person, 'By their namesake', 'Browse laws under the pe
   const step = (n, t, b) => `      <div class="mstep"><span class="mstep-n">${n}</span><div class="mstep-b"><span class="mstep-t">${t}</span><span class="mstep-p">${b}</span></div></div>`;
   const method = `<section class="sec home-method">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head" data-reveal>
       <h2>Nothing here is invented</h2>
       <span class="sub">how we keep it honest</span>
     </div>
     <p class="home-method-lede">A named law is worthless if it’s misattributed or made up. Every entry earns its place the same way — no exceptions.</p>
-    <div class="method-steps">
+    <div class="method-steps" data-reveal-stagger>
 ${step('1', 'Drawn from sources', 'Laws come from the literature, never invented. We start from what is actually attested.')}
 ${step('2', 'Cited, or it doesn’t ship', 'No claim reaches a page without a resolvable source behind it.')}
 ${step('3', 'Adversarially checked', 'Each entry is challenged — misattributions, apocrypha, and folk-embellishments get caught here.')}
@@ -184,7 +184,7 @@ ${step('4', 'Traced &amp; rated', 'We follow each law to its earliest reliable o
   // ---- graph band -------------------------------------------------------
   const graphBand = `<section class="sec" id="graph" style="padding-top:12px">
   <div class="wrap">
-    <div class="graph-band">
+    <div class="graph-band" data-reveal="scale" data-spotlight>
       <div class="gb-eyebrow">The connective tissue</div>
       <h2>Every law is a door to three others.</h2>
       <p>Follow Goodhart to Campbell to the Cobra Effect to Streisand. The relationship graph is the thing no flat list can give you.</p>
@@ -211,7 +211,7 @@ ${step('4', 'Traced &amp; rated', 'We follow each law to its earliest reliable o
   // ---- coin band --------------------------------------------------------
   const coinBand = `<section class="sec" id="coin" style="padding-top:12px">
   <div class="wrap">
-    <div class="coin">
+    <div class="coin" data-reveal="scale" data-spotlight>
       <svg class="wax" viewBox="0 0 100 100" aria-hidden="true"><use href="#wax"/></svg>
       <div class="coin-body">
         <h2>Noticed a pattern that has no name?</h2>

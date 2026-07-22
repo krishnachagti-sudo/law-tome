@@ -51,7 +51,7 @@ test('head/header/footer/sprite carry no third-party CDN URLs', () => {
 });
 
 test('header uses the provided count and never hard-codes 1,400', () => {
-  assert.match(header({ base:'/lawtome/', active:'browse', count:11 }), /class="count-n">11</);
+  assert.match(header({ base:'/lawtome/', active:'browse', count:11 }), /class="count-n"[^>]*>11</);
   assert.doesNotMatch(header({ base:'/lawtome/' }), /1,400/);
 });
 

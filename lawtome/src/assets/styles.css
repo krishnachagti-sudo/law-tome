@@ -382,7 +382,8 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 
 /* coin band */
 .coin{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;padding:38px 40px;border:1px dashed var(--line-strong);border-radius:3px;background:var(--surface)}
-.coin .wax{width:72px;height:72px;color:var(--accent);flex:none;transform:rotate(-8deg);filter:drop-shadow(0 2px 5px rgba(0,0,0,.16))}
+.coin .wax{width:72px;height:72px;color:var(--accent);flex:none;transform:rotate(-8deg);filter:drop-shadow(0 2px 5px rgba(0,0,0,.16));transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.coin:hover .wax{transform:rotate(-3deg) scale(1.07)}
 .coin-body{flex:1;min-width:230px}
 .coin h2{font-family:var(--serif);font-weight:600;font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
 .coin p{font-size:14px;color:var(--muted);max-width:460px}
@@ -597,13 +598,86 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
    ONLY when JS runs AND the visitor hasn't asked for reduced motion. So no-JS and
    reduced-motion visitors always get fully-visible content — the animation is a
    pure enhancement, never a prerequisite for reading. */
-.anim [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.22,.7,.2,1),transform .6s cubic-bezier(.22,.7,.2,1)}
-.anim [data-reveal].in{opacity:1;transform:none}
+/* scroll-reveal — default is a soft rise; a data-reveal value picks a variant.
+   [data-reveal-stagger] children inherit the same rise and are sequenced in JS. */
+.anim [data-reveal],.anim [data-reveal-stagger]>*{opacity:0;transform:translateY(24px);transition:opacity .62s cubic-bezier(.22,.7,.2,1),transform .62s cubic-bezier(.22,.7,.2,1);will-change:opacity,transform}
+.anim [data-reveal].in,.anim [data-reveal-stagger]>.in{opacity:1;transform:none;filter:none}
+.anim [data-reveal="left"]{transform:translateX(-32px)}
+.anim [data-reveal="right"]{transform:translateX(32px)}
+.anim [data-reveal="scale"]{transform:scale(.93)}
+.anim [data-reveal="blur"]{filter:blur(10px)}
+.anim [data-reveal="fade"]{transform:none}
+/* per-child stagger on the law page's fixed grids (kept from the original) */
 .anim .examples-grid .example:nth-child(2),.anim .variants .variant:nth-child(2){transition-delay:.06s}
 .anim .examples-grid .example:nth-child(3),.anim .variants .variant:nth-child(3){transition-delay:.12s}
 .anim .examples-grid .example:nth-child(4),.anim .variants .variant:nth-child(4){transition-delay:.18s}
-.progress{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--accent),var(--gold));z-index:60;transition:transform .08s linear;pointer-events:none}
-@media (prefers-reduced-motion: reduce){.progress{display:none}}
+
+/* reading-progress bar (law page injects its own; common.js adds one elsewhere) */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--accent),var(--gold));z-index:60;transition:transform .08s linear;pointer-events:none;box-shadow:0 0 10px -1px var(--accent)}
+
+/* ---- keyframes ---- */
+@keyframes ltFadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes ltFadeIn{from{opacity:0}to{opacity:1}}
+@keyframes ltRise{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+@keyframes ltFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes ltBreathe{0%,100%{opacity:.72;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+@keyframes ltSpin{to{transform:rotate(360deg)}}
+@keyframes ltTwinkle{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* ---- hero load-in: eyebrow → lede → statement → actions → credit ---- */
+.anim .hero .eyebrow{animation:ltFadeUp .7s .05s both cubic-bezier(.22,.7,.2,1)}
+.anim .hero .lede{animation:ltFadeUp .7s .13s both cubic-bezier(.22,.7,.2,1)}
+.anim .hero .orn{animation:ltFadeIn .9s .2s both}
+.anim .hero .stmt-meta,.anim .hero .stmt-wrap{animation:ltFadeUp .8s .22s both cubic-bezier(.22,.7,.2,1)}
+.anim .hero .hero-actions{animation:ltFadeUp .8s .34s both cubic-bezier(.22,.7,.2,1)}
+.anim .hero .hero-credit,.anim .hero .attrib{animation:ltFadeIn 1s .52s both}
+.anim header{animation:ltRise .6s both}
+.anim .kicker{animation:ltFadeIn 1s .1s both}
+/* law-entry hero eases in the same way */
+.anim .entry .entry-meta{animation:ltFadeUp .6s .04s both cubic-bezier(.22,.7,.2,1)}
+.anim .entry .law-title{animation:ltFadeUp .7s .12s both cubic-bezier(.22,.7,.2,1)}
+.anim .entry .aka,.anim .entry .entry-stmt{animation:ltFadeUp .75s .22s both cubic-bezier(.22,.7,.2,1)}
+
+/* ---- idle ambience: the hero glow breathes, decorative marks drift ---- */
+.anim .hero::after{animation:ltBreathe 9s ease-in-out infinite}
+.anim .entry-mark{animation:ltFloat 13s ease-in-out infinite}
+.anim .constellation .node:nth-child(7) circle{animation:ltTwinkle 4.5s ease-in-out infinite}
+.anim .constellation .node:nth-child(8) circle{animation:ltTwinkle 6s ease-in-out .8s infinite}
+
+/* ---- pointer spotlight: a soft amber halo tracking the cursor (data-spotlight) ---- */
+[data-spotlight]{position:relative}
+[data-spotlight]::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s ease;background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--accent) 16%,transparent),transparent 60%);z-index:0}
+[data-spotlight]:hover::before{opacity:1}
+
+/* ---- micro-interactions ---- */
+.brand .mark{transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.brand:hover .mark{transform:rotate(-8deg) scale(1.08)}
+.icon-btn{transition:color .2s,border-color .2s,transform .2s}
+.icon-btn:hover{transform:translateY(-1px)}
+.icon-btn.spin .th-ico{animation:ltSpin .5s cubic-bezier(.5,0,.2,1)}
+.count .count-n{transition:color .2s,transform .2s}
+.count:hover .count-n{transform:scale(1.06)}
+.feat-ic,.ftr-ic{transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.feat:hover .feat-ic,.ftr:hover .ftr-ic{transform:translateY(-3px) scale(1.1)}
+.chip{transition:color .18s,border-color .18s,background .18s,transform .18s}
+.chip:hover{transform:translateY(-1px)}
+.sit-row,.coll-card,.aud-card,.rel-tier,.dl-card,.lotd-card,.about-chip{transition:border-color .2s,transform .2s,box-shadow .2s}
+.sit-row:hover,.coll-card:hover,.aud-card:hover,.rel-tier:hover,.dl-card:hover,.lotd-card:hover{transform:translateY(-2px);box-shadow:0 12px 26px -20px rgba(0,0,0,.55)}
+.about-chip:hover{transform:translateY(-1px)}
+/* a light-sweep across solid amber buttons on hover */
+.btn.solid,.coin .cta,.coin-form .cta{position:relative;overflow:hidden}
+.btn.solid::after,.coin .cta::after,.coin-form .cta::after{content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.3),transparent);transform:skewX(-18deg);transition:left .6s ease;pointer-events:none}
+.btn.solid:hover::after,.coin .cta:hover::after,.coin-form .cta:hover::after{left:135%}
+/* smooth in-page anchor scrolling (basic) */
+html{scroll-behavior:smooth}
+
+/* ---- hard reduced-motion backstop: neutralise everything above ---- */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}
+  .progress{display:none}
+  [data-reveal],[data-reveal-stagger]>*{opacity:1!important;transform:none!important;filter:none!important}
+}
 
 /* aside */
 .aside{position:sticky;top:88px;display:flex;flex-direction:column;gap:20px}

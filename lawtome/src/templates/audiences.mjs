@@ -24,7 +24,7 @@ export function audiencesIndexPage(audiences = [], { base = '/', origin = '', co
       <span class="sub">${rows.length} starting points</span>
     </div>
     <p class="sec-lede">The index is big. These are curated ways in — the laws that matter most for what you do, with the noise stripped out. Pick the one that sounds like you.</p>
-    <div class="aud-grid">
+    <div class="aud-grid" data-reveal-stagger>
 ${cards}
     </div>
   </div>

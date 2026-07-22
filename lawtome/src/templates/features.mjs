@@ -38,7 +38,7 @@ const FEATURES = [
 ];
 
 export function featuresPage({ base = '/', origin = '', count } = {}) {
-  const blocks = FEATURES.map((f) => `      <div class="ftr">
+  const blocks = FEATURES.map((f, i) => `      <div class="ftr" data-reveal="${i % 2 ? 'right' : 'left'}">
         <div class="ftr-icwrap">${f.icon}</div>
         <div class="ftr-body">
           <h2 class="ftr-t">${f.title}</h2>

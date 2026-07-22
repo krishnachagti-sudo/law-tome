@@ -248,7 +248,7 @@ export function header({ base = '/', active, count } = {}) {
 ${nav}
     </nav>
     <div class="right">
-      <a class="count" href="${base}browse/"><span class="count-n">${c}</span><span class="count-l">entries</span></a>
+      <a class="count" href="${base}browse/"><span class="count-n"${typeof count === 'number' ? ` data-count="${count}"` : ''}>${c}</span><span class="count-l">entries</span></a>
       <button class="icon-btn" id="theme" type="button" aria-label="Toggle light and dark theme"><svg class="th-ico th-moon" viewBox="0 0 24 24" aria-hidden="true"><use href="#moon"/></svg><svg class="th-ico th-sun" viewBox="0 0 24 24" aria-hidden="true"><use href="#sun"/></svg></button>
     </div>
   </div>
