@@ -2,7 +2,9 @@
   "no": "055",
   "slug": "hyrums-law",
   "name": "Hyrum's Law",
-  "aliases": ["The Law of Implicit Interfaces"],
+  "aliases": [
+    "The Law of Implicit Interfaces"
+  ],
   "statement": "With enough users of an API, every observable behaviour of your system will be depended on by somebody — whatever the contract says.",
   "statementAccent": "depended on by somebody",
   "meaning": "Once a system has many users, its written contract stops being the real boundary. Anything users can observe about how it behaves — not just what you documented — becomes something someone relies on, so any change to observable behaviour can break them.",
@@ -27,9 +29,18 @@
   ],
   "whyItMatters": "It is the core reason large-scale refactoring is hard: at sufficient scale there is no such thing as a safe, invisible change, because your real interface is everything users can see, not what you wrote down. It reframes API design and deprecation around managing implicit dependencies rather than pretending they don't exist.",
   "working": [
-    {"lead": "Treat observable behaviour as the contract", "text": "assume anything users can detect is load-bearing; the documented spec is a floor on your obligations, not a ceiling."},
-    {"lead": "Randomise incidental behaviour", "text": "deliberately vary what you don't want depended on — shuffle unspecified iteration order, jitter timings — so no accidental contract can form."},
-    {"lead": "Change through deprecation, not surprise", "text": "measure real usage, provide migration paths, and move callers before removing behaviour, rather than assuming a spec-legal change is safe."}
+    {
+      "lead": "Treat observable behaviour as the contract",
+      "text": "assume anything users can detect is load-bearing; the documented spec is a floor on your obligations, not a ceiling."
+    },
+    {
+      "lead": "Randomise incidental behaviour",
+      "text": "deliberately vary what you don't want depended on — shuffle unspecified iteration order, jitter timings — so no accidental contract can form."
+    },
+    {
+      "lead": "Change through deprecation, not surprise",
+      "text": "measure real usage, provide migration paths, and move callers before removing behaviour, rather than assuming a spec-legal change is safe."
+    }
   ],
   "limits": "It is an asymptotic, probabilistic claim: it needs 'a sufficient number of users'. For a small or private API, few incidental dependencies form and the law barely bites. It also does not mean you can never change anything — only that change must be managed through measurement, deprecation policy, staged rollouts, and tooling that fixes callers. And 'all observable behaviours' is a deliberately absolute, rhetorical phrasing of a strong tendency, not a quantified law.",
   "misreadings": "It is not a counsel of despair that forbids all change, nor a claim that every tiny API has hidden dependents. It says that at scale your effective interface is wider than your documented one, so changes need to be driven by real usage data and safe migration, not by what the spec technically permits.",
@@ -40,13 +51,31 @@
   "popularYear": 2020,
   "namedAfter": "Hyrum Wright",
   "sources": [
-    {"text": "Wright, H. & Winters, T. \"Hyrum's Law.\" hyrumslaw.com. — the canonical statement and attribution.", "url": "https://www.hyrumslaw.com/", "type": "primary"},
-    {"text": "Winters, T., Manshreck, T. & Wright, H. (eds.) (2020). Software Engineering at Google. O'Reilly. — the source that popularised the law.", "type": "primary"},
-    {"text": "Munroe, R. \"Workflow.\" xkcd #1172. — the 'spacebar heating' archetype of a depended-upon side effect.", "url": "https://xkcd.com/1172/", "type": "secondary"}
+    {
+      "text": "Wright, H. & Winters, T. \"Hyrum's Law.\" hyrumslaw.com. — the canonical statement and attribution.",
+      "url": "https://www.hyrumslaw.com/",
+      "type": "primary"
+    },
+    {
+      "text": "Winters, T., Manshreck, T. & Wright, H. (eds.) (2020). Software Engineering at Google. O'Reilly. — the source that popularised the law.",
+      "url": "https://www.oreilly.com/library/view/software-engineering-at/9781492082781/",
+      "type": "primary"
+    },
+    {
+      "text": "Munroe, R. \"Workflow.\" xkcd #1172. — the 'spacebar heating' archetype of a depended-upon side effect.",
+      "url": "https://xkcd.com/1172/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Hyrum%27s_Law",
   "related": [
-    {"slug": "conways-law", "kind": "kindred"},
-    {"slug": "chestertons-fence", "kind": "kindred"}
+    {
+      "slug": "conways-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "chestertons-fence",
+      "kind": "kindred"
+    }
   ]
 }

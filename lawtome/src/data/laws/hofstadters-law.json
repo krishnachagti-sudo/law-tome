@@ -28,10 +28,22 @@
   ],
   "whyItMatters": "The joke has teeth: the fix is not more introspection but outside data. Estimate from how long comparable work actually took, not from how long this work feels like it should take, and treat schedule buffers as a floor rather than a ceiling.",
   "working": [
-    {"lead": "Estimate from the outside view", "text": "base the forecast on how long a class of similar past projects actually took — reference-class forecasting — not on how long this one feels like it should."},
-    {"lead": "Unpack the task", "text": "breaking work into named pieces surfaces the steps a single gut estimate silently drops, and reduces (though never removes) the underestimate."},
-    {"lead": "Treat buffers as a floor", "text": "padding applied to the work you can foresee is swallowed by the work you can't; hold the buffer as a minimum, not a ceiling you expect to keep."},
-    {"lead": "Plan for discovery", "text": "assume some of the schedule will go to problems you cannot yet name, and protect slack for them explicitly."}
+    {
+      "lead": "Estimate from the outside view",
+      "text": "base the forecast on how long a class of similar past projects actually took — reference-class forecasting — not on how long this one feels like it should."
+    },
+    {
+      "lead": "Unpack the task",
+      "text": "breaking work into named pieces surfaces the steps a single gut estimate silently drops, and reduces (though never removes) the underestimate."
+    },
+    {
+      "lead": "Treat buffers as a floor",
+      "text": "padding applied to the work you can foresee is swallowed by the work you can't; hold the buffer as a minimum, not a ceiling you expect to keep."
+    },
+    {
+      "lead": "Plan for discovery",
+      "text": "assume some of the schedule will go to problems you cannot yet name, and protect slack for them explicitly."
+    }
   ],
   "limits": "Hofstadter's Law is a self-referential adage, not a formula — it makes no numeric prediction and is deliberately un-actionable (any correction you apply is, by its own terms, underestimated too). The rigour lives in the planning fallacy beneath it, studied by Kahneman, Tversky, Buehler and others, and in the debiasing methods that genuinely reduce the error — reference-class forecasting, the outside view, unpacking tasks. So the 'even when you account for it' fatalism is rhetorical, not literal: the overrun can be shrunk. The bias is also specific to the forecaster's own upcoming work; detached observers tend to over-estimate instead.",
   "misreadings": "It is a wry observation about planning under uncertainty, not a mandate to inflate estimates without end (the self-reference makes that futile). Nor does it claim every task overruns by the same amount — it says complex, novel work resists its own forecasts. The practical reading is to plan for discovery, not to abandon planning.",
@@ -42,12 +54,27 @@
   "coinedYear": 1979,
   "namedAfter": "Douglas Hofstadter",
   "sources": [
-    {"text": "Hofstadter, D.R. (1979). Gödel, Escher, Bach: An Eternal Golden Braid. New York: Basic Books. p. 152.", "type": "primary"},
-    {"text": "Hofstadter's law, Wikipedia. — the statement, its chess-estimation origin, and the link to the planning fallacy.", "url": "https://en.wikipedia.org/wiki/Hofstadter%27s_law", "type": "secondary"},
-    {"text": "Planning fallacy, Wikipedia. — Kahneman & Tversky (1979); the megaproject overruns; reference-class forecasting as the mitigation.", "url": "https://en.wikipedia.org/wiki/Planning_fallacy", "type": "secondary"}
+    {
+      "text": "Hofstadter, D.R. (1979). Gödel, Escher, Bach: An Eternal Golden Braid. New York: Basic Books. p. 152.",
+      "url": "https://archive.org/details/godel-escher-bach-douglas-hofstadter",
+      "type": "primary"
+    },
+    {
+      "text": "Hofstadter's law, Wikipedia. — the statement, its chess-estimation origin, and the link to the planning fallacy.",
+      "url": "https://en.wikipedia.org/wiki/Hofstadter%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Planning fallacy, Wikipedia. — Kahneman & Tversky (1979); the megaproject overruns; reference-class forecasting as the mitigation.",
+      "url": "https://en.wikipedia.org/wiki/Planning_fallacy",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Hofstadter%27s_law",
   "related": [
-    {"slug": "parkinsons-law", "kind": "in tension"}
+    {
+      "slug": "parkinsons-law",
+      "kind": "in tension"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "023",
   "slug": "occams-razor",
   "name": "Occam's Razor",
-  "aliases": ["Ockham's Razor", "Law of Parsimony"],
+  "aliases": [
+    "Ockham's Razor",
+    "Law of Parsimony"
+  ],
   "statement": "Entities should not be multiplied beyond necessity.",
   "statementAccent": "multiplied beyond necessity",
   "meaning": "When two explanations both account for the facts, prefer the one that assumes less. It is a tie-breaker between rival explanations, not a general preference for whatever sounds simplest.",
@@ -41,10 +44,22 @@
   ],
   "whyItMatters": "The razor shaves assumptions, not complexity. Reality is often genuinely complicated, and a simpler theory that fails to explain the evidence is not the winner — it is disqualified. Used honestly, it tells you which hypothesis to test first, not which one is true.",
   "working": [
-    {"lead": "Use it to order tests, not to declare truth", "text": "the simpler hypothesis is the one to check first because it is cheapest to rule out — not the one to believe without checking."},
-    {"lead": "Count assumptions, not effort", "text": "'simplest' means fewest unsupported entities and mechanisms, not least work, least maths, or most intuitive."},
-    {"lead": "Prefer the story that invents no new actors", "text": "between rival explanations, the one that needs no previously-unknown cause, agent, or coincidence carries the lighter burden of proof."},
-    {"lead": "Drop it the moment it stops fitting", "text": "as soon as the simpler theory fails to explain the evidence, it is out — the razor never licenses ignoring facts to stay tidy."}
+    {
+      "lead": "Use it to order tests, not to declare truth",
+      "text": "the simpler hypothesis is the one to check first because it is cheapest to rule out — not the one to believe without checking."
+    },
+    {
+      "lead": "Count assumptions, not effort",
+      "text": "'simplest' means fewest unsupported entities and mechanisms, not least work, least maths, or most intuitive."
+    },
+    {
+      "lead": "Prefer the story that invents no new actors",
+      "text": "between rival explanations, the one that needs no previously-unknown cause, agent, or coincidence carries the lighter burden of proof."
+    },
+    {
+      "lead": "Drop it the moment it stops fitting",
+      "text": "as soon as the simpler theory fails to explain the evidence, it is out — the razor never licenses ignoring facts to stay tidy."
+    }
   ],
   "limits": "The razor is a heuristic, not a proof: it guides which hypothesis to prefer, never demonstrates that the simpler one is true. 'Simplest' is itself slippery — philosophers separate syntactic elegance (fewer, tighter principles) from ontological parsimony (fewer kinds of thing), and the two can pull apart with no agreed metric to settle them. Appeals to simplicity have been on the wrong side of history more than once — meteorites, continental drift, and ball lightning were all resisted as needless complications before the evidence vindicated them — and Francis Crick warned that in biology, which is full of contingent complexity, the razor is 'a very dangerous implement.' Any preference for simplicity ultimately rests on assumptions about prior probability; it is not assumption-free.",
   "misreadings": "It does not say the simplest answer is true, only that it is the best starting bet among equals; reality is sometimes genuinely complicated, and the razor yields the moment a simpler theory stops fitting the facts. 'Simplest' means fewest unsupported assumptions — not least effort, and not most intuitive.",
@@ -55,12 +70,27 @@
   "popularYear": 1639,
   "namedAfter": "William of Ockham",
   "sources": [
-    {"text": "Ockham, William of. Summa Logicae, part I, ch. 12. — one of Ockham's own statements of the principle.", "type": "primary"},
-    {"text": "Baker, A. \"Simplicity.\" Stanford Encyclopedia of Philosophy (rev. 2022). — the syntactic-vs-ontological simplicity distinction and the problem of justifying the razor.", "url": "https://plato.stanford.edu/entries/simplicity/", "type": "secondary"},
-    {"text": "Occam's razor, Wikipedia. — traces the 1639 Punch phrasing and Froidmont's 1649 coinage, the antecedents, Hickam's dictum, and the historical counter-examples.", "url": "https://en.wikipedia.org/wiki/Occam%27s_razor", "type": "secondary"}
+    {
+      "text": "Ockham, William of. Summa Logicae, part I, ch. 12. — one of Ockham's own statements of the principle.",
+      "url": "https://archive.org/details/summalogicae0001will",
+      "type": "primary"
+    },
+    {
+      "text": "Baker, A. \"Simplicity.\" Stanford Encyclopedia of Philosophy (rev. 2022). — the syntactic-vs-ontological simplicity distinction and the problem of justifying the razor.",
+      "url": "https://plato.stanford.edu/entries/simplicity/",
+      "type": "secondary"
+    },
+    {
+      "text": "Occam's razor, Wikipedia. — traces the 1639 Punch phrasing and Froidmont's 1649 coinage, the antecedents, Hickam's dictum, and the historical counter-examples.",
+      "url": "https://en.wikipedia.org/wiki/Occam%27s_razor",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Occam%27s_razor",
   "related": [
-    {"slug": "hanlons-razor", "kind": "kindred"}
+    {
+      "slug": "hanlons-razor",
+      "kind": "kindred"
+    }
   ]
 }

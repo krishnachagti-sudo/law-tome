@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is the workhorse link between the two headline numbers of a macroeconomy, output and unemployment, and it lets a forecast of one be turned into a rough forecast of the other. Its instability is itself instructive: watching Okun's law break tells you when something unusual — a jobless recovery, a productivity surge — is happening in the labour market.",
   "working": [
-    {"lead": "Use it for rough short-run translation", "text": "it is a serviceable back-of-envelope tool for turning a growth forecast into an unemployment forecast, and vice versa — for trends, not precision."},
-    {"lead": "Don't treat the coefficient as a constant", "text": "the ratio drifts by country and era, so pick a value for your context and hold it loosely rather than assuming a universal 2."},
-    {"lead": "Read the breakdowns as signals", "text": "when the relationship misses badly — as in 2009 — take it as evidence of an unusual labour-market episode, not just noise."}
+    {
+      "lead": "Use it for rough short-run translation",
+      "text": "it is a serviceable back-of-envelope tool for turning a growth forecast into an unemployment forecast, and vice versa — for trends, not precision."
+    },
+    {
+      "lead": "Don't treat the coefficient as a constant",
+      "text": "the ratio drifts by country and era, so pick a value for your context and hold it loosely rather than assuming a universal 2."
+    },
+    {
+      "lead": "Read the breakdowns as signals",
+      "text": "when the relationship misses badly — as in 2009 — take it as evidence of an unusual labour-market episode, not just noise."
+    }
   ],
   "limits": "Okun's law is an empirical rule of thumb, not a structural law, and its central caveat is that the coefficient is unstable across time and countries — Okun's original estimate was near 3, modern US values near 2, and controlling for hours and capacity can push it below 1. It breaks down in specific episodes: 'jobless recoveries' where output rebounds but employment does not, and the 2009 case where unemployment rose far more than predicted. The gap version also depends on measuring potential output and the natural rate, both unobservable and revised. It should never be treated as an exact constant.",
   "misreadings": "It is not a precise or permanent equation, and there is no single 'true' Okun coefficient — the roughly-2 figure is a modern convention, not a law of nature. It summarises a historical correlation well enough for rough forecasting, and it fails in exactly the episodes worth noticing.",
@@ -45,12 +54,27 @@
   "coinedYear": 1962,
   "namedAfter": "Arthur Okun",
   "sources": [
-    {"text": "Okun, A. (1962). \"Potential GNP: Its Measurement and Significance.\" Proceedings of the Business and Economic Statistics Section, American Statistical Association.", "type": "primary"},
-    {"text": "Okun's law, Wikipedia. — the difference and gap versions, the mechanism, and the coefficient's instability.", "url": "https://en.wikipedia.org/wiki/Okun%27s_law", "type": "secondary"},
-    {"text": "Federal Reserve Bank of San Francisco (2010). \"Okun's Law and the Unemployment Surprise of 2009.\"", "url": "https://www.frbsf.org/economic-research/publications/economic-letter/2010/march/okun-law-unemployment-2009/", "type": "secondary"}
+    {
+      "text": "Okun, A. (1962). \"Potential GNP: Its Measurement and Significance.\" Proceedings of the Business and Economic Statistics Section, American Statistical Association.",
+      "url": "https://cowles.yale.edu/node/142137",
+      "type": "primary"
+    },
+    {
+      "text": "Okun's law, Wikipedia. — the difference and gap versions, the mechanism, and the coefficient's instability.",
+      "url": "https://en.wikipedia.org/wiki/Okun%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Federal Reserve Bank of San Francisco (2010). \"Okun's Law and the Unemployment Surprise of 2009.\"",
+      "url": "https://www.frbsf.org/economic-research/publications/economic-letter/2010/march/okun-law-unemployment-2009/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Okun%27s_law",
   "related": [
-    {"slug": "says-law", "kind": "kindred"}
+    {
+      "slug": "says-law",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "088",
   "slug": "berksons-paradox",
   "name": "Berkson's Paradox",
-  "aliases": ["Collider bias", "Berkson's fallacy"],
+  "aliases": [
+    "Collider bias",
+    "Berkson's fallacy"
+  ],
   "statement": "Two unrelated traits can look negatively correlated within a group selected on having at least one of them.",
   "statementAccent": "within a group selected",
   "meaning": "Within a selected sample, two traits that are independent — or even positively related — in the wider population can appear to trade off against each other, so that having one seems to predict lacking the other. The correlation is an illusion created by how the sample was chosen.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It is one of the commonest ways a real dataset produces a false relationship — and it hides wherever data is gathered from a selected group: hospital patients, admitted students, funded startups, published studies. Recognising it is essential to not mistaking an artefact of selection for a fact about the world, a hazard highlighted anew in collider-bias critiques of observational Covid-19 research.",
   "working": [
-    {"lead": "Ask how the sample was selected", "text": "whenever a group was chosen on some threshold or outcome, suspect that correlations within it may be manufactured by that selection."},
-    {"lead": "Watch for surprising trade-offs", "text": "an inverse relationship between two things you would expect to be unrelated or positively linked is a classic collider-bias signature."},
-    {"lead": "Draw the causal graph", "text": "if two variables both feed into the selection criterion, conditioning on that criterion will link them — mark the collider and avoid conditioning on it."}
+    {
+      "lead": "Ask how the sample was selected",
+      "text": "whenever a group was chosen on some threshold or outcome, suspect that correlations within it may be manufactured by that selection."
+    },
+    {
+      "lead": "Watch for surprising trade-offs",
+      "text": "an inverse relationship between two things you would expect to be unrelated or positively linked is a classic collider-bias signature."
+    },
+    {
+      "lead": "Draw the causal graph",
+      "text": "if two variables both feed into the selection criterion, conditioning on that criterion will link them — mark the collider and avoid conditioning on it."
+    }
   ],
   "limits": "It is a real statistical artefact, not a logical paradox — Berkson framed it as a limitation of analysing selected (hospital) data, and it is a 'veridical' paradox whose surprise dissolves once the selection mechanism is drawn out. The induced negative correlation is entirely a property of the sampling frame and says nothing about the population-level or causal relationship. Its danger is precisely that it looks like a real finding; the fix is to recognise the selection, not to trust the within-sample correlation.",
   "misreadings": "It does not mean the two traits really are opposed, or that the population relationship is negative — usually it is not. The negative correlation exists only inside the selected group and is an artefact of who was let in.",
@@ -46,12 +58,27 @@
   "coinedYear": 1946,
   "namedAfter": "Joseph Berkson",
   "sources": [
-    {"text": "Berkson, J. (1946). \"Limitations of the Application of Fourfold Table Analysis to Hospital Data.\" Biometrics Bulletin, 2(3), 47–53.", "type": "primary"},
-    {"text": "Berkson's paradox, Wikipedia. — the mechanism, the hospital and dating-pool examples, and the link to collider bias.", "url": "https://en.wikipedia.org/wiki/Berkson%27s_paradox", "type": "secondary"},
-    {"text": "Downey, A. (2021). \"Berkson Goes to College.\" — the selective-admissions worked example.", "url": "https://www.allendowney.com/blog/2021/04/07/berkson-goes-to-college/", "type": "secondary"}
+    {
+      "text": "Berkson, J. (1946). \"Limitations of the Application of Fourfold Table Analysis to Hospital Data.\" Biometrics Bulletin, 2(3), 47–53.",
+      "url": "https://doi.org/10.2307/3002000",
+      "type": "primary"
+    },
+    {
+      "text": "Berkson's paradox, Wikipedia. — the mechanism, the hospital and dating-pool examples, and the link to collider bias.",
+      "url": "https://en.wikipedia.org/wiki/Berkson%27s_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Downey, A. (2021). \"Berkson Goes to College.\" — the selective-admissions worked example.",
+      "url": "https://www.allendowney.com/blog/2021/04/07/berkson-goes-to-college/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Berkson%27s_paradox",
   "related": [
-    {"slug": "simpsons-paradox", "kind": "kindred"}
+    {
+      "slug": "simpsons-paradox",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "091",
   "slug": "says-law",
   "name": "Say's Law",
-  "aliases": ["The law of markets", "Supply creates its own demand"],
+  "aliases": [
+    "The law of markets",
+    "Supply creates its own demand"
+  ],
   "statement": "Producing a good creates the income and means to buy other goods.",
   "statementAccent": "the income and means to buy",
   "meaning": "To buy, you must first produce something to sell, or earn income by producing. So the act of production generates the purchasing power that funds demand elsewhere — which is why the classical school held that an economy-wide glut, a general shortfall of demand for everything at once, could not persist.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It sits at the fault line of macroeconomics. Whether production automatically generates enough demand to absorb it — or whether demand can chronically fall short — is the difference between the classical and Keynesian views of recessions, and it still shapes how economists argue about slumps and stimulus.",
   "working": [
-    {"lead": "Read the slogan with care", "text": "'supply creates its own demand' is a later paraphrase, not Say's words; his actual claim was the milder one that production generates income to spend."},
-    {"lead": "Ask where the income goes", "text": "the law holds if income earned in production returns as spending; it fails to the extent that money is hoarded rather than spent or invested."},
-    {"lead": "Distinguish relative from general gluts", "text": "Say allowed that particular markets can overshoot; the contested claim is only that all markets cannot be glutted at once."}
+    {
+      "lead": "Read the slogan with care",
+      "text": "'supply creates its own demand' is a later paraphrase, not Say's words; his actual claim was the milder one that production generates income to spend."
+    },
+    {
+      "lead": "Ask where the income goes",
+      "text": "the law holds if income earned in production returns as spending; it fails to the extent that money is hoarded rather than spent or invested."
+    },
+    {
+      "lead": "Distinguish relative from general gluts",
+      "text": "Say allowed that particular markets can overshoot; the contested claim is only that all markets cannot be glutted at once."
+    }
   ],
   "limits": "It is a genuinely contested proposition, not a settled fact or theorem. Keynes's central attack in The General Theory (1936) was that demand can fall short of full-employment output because money can be hoarded rather than spent or invested, so general gluts and involuntary unemployment are possible and markets need not self-correct promptly. Its validity depends on contested assumptions about whether money is merely a medium of exchange and whether wages and prices adjust freely. Both the law and its Keynesian refutation remain live in macroeconomic debate.",
   "misreadings": "The famous 'supply creates its own demand' is a later paraphrase — popularised by Keynes, not written by Say — and it overstates a subtler claim: that producing generates the income to buy. Say himself acknowledged that particular markets can glut; the disputed part is only the impossibility of a general one.",
@@ -46,12 +58,27 @@
   "coinedYear": 1803,
   "namedAfter": "Jean-Baptiste Say",
   "sources": [
-    {"text": "Say, J.-B. (1803). A Treatise on Political Economy (Traité d'économie politique). — the law of markets.", "type": "primary"},
-    {"text": "Say's law, Wikipedia. — the doctrine, the mechanism, and Keynes's critique.", "url": "https://en.wikipedia.org/wiki/Say%27s_law", "type": "secondary"},
-    {"text": "\"Supply creates its own demand,\" Wikipedia. — that the slogan is a paraphrase popularised by Keynes, not Say's own words.", "url": "https://en.wikipedia.org/wiki/Supply_creates_its_own_demand", "type": "secondary"}
+    {
+      "text": "Say, J.-B. (1803). A Treatise on Political Economy (Traité d'économie politique). — the law of markets.",
+      "url": "https://archive.org/details/treatiseonpoliti01sayj",
+      "type": "primary"
+    },
+    {
+      "text": "Say's law, Wikipedia. — the doctrine, the mechanism, and Keynes's critique.",
+      "url": "https://en.wikipedia.org/wiki/Say%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Supply creates its own demand,\" Wikipedia. — that the slogan is a paraphrase popularised by Keynes, not Say's own words.",
+      "url": "https://en.wikipedia.org/wiki/Supply_creates_its_own_demand",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Say%27s_law",
   "related": [
-    {"slug": "okuns-law", "kind": "kindred"}
+    {
+      "slug": "okuns-law",
+      "kind": "kindred"
+    }
   ]
 }

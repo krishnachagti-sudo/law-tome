@@ -2,7 +2,10 @@
   "no": "069",
   "slug": "parkinsons-law-of-triviality",
   "name": "Parkinson's Law of Triviality",
-  "aliases": ["Bikeshedding", "The bike-shed effect"],
+  "aliases": [
+    "Bikeshedding",
+    "The bike-shed effect"
+  ],
   "statement": "The time a committee spends on an item is inversely proportional to the money involved.",
   "statementAccent": "inversely proportional to the money involved",
   "meaning": "Groups devote disproportionate time and energy to small, familiar, easy-to-grasp matters while waving through the genuinely important, costly, and complex ones. Effort is allocated in inverse proportion to actual stakes.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It explains a universal failure of meetings: the cheap, comprehensible item crowds out the expensive, consequential one, because scrutiny follows understanding rather than importance. Naming it lets a chair defend the decisions that matter from the ones everyone can weigh in on.",
   "working": [
-    {"lead": "Put a clock on the trivial", "text": "timebox cheap, easily-understood items so they cannot expand to fill the meeting; the bike shed does not deserve the reactor's hour."},
-    {"lead": "Make scrutiny follow the stakes", "text": "deliberately allocate the most time and the most expert attention to the biggest, most complex decisions — the ones that will otherwise be nodded through."},
-    {"lead": "Watch for everyone-has-an-opinion items", "text": "when a topic draws unusually broad participation, check whether it is drawing that energy because it matters or merely because it is easy to picture."}
+    {
+      "lead": "Put a clock on the trivial",
+      "text": "timebox cheap, easily-understood items so they cannot expand to fill the meeting; the bike shed does not deserve the reactor's hour."
+    },
+    {
+      "lead": "Make scrutiny follow the stakes",
+      "text": "deliberately allocate the most time and the most expert attention to the biggest, most complex decisions — the ones that will otherwise be nodded through."
+    },
+    {
+      "lead": "Watch for everyone-has-an-opinion items",
+      "text": "when a topic draws unusually broad participation, check whether it is drawing that energy because it matters or merely because it is easy to picture."
+    }
   ],
   "limits": "It began as satire, not measurement — the figures and timings are an illustrative anecdote, not data — and it is a caricature: real decision processes vary, and some apparently 'trivial' debates (a product name, a UI colour, a policy's wording) genuinely matter. It is nonetheless a widely-recognised organisational tendency with strong face validity. It is best read as a sharp observation about attention, not a quantified law.",
   "misreadings": "It is not a claim that small things never matter, nor a licence to skip discussion of details. It is the observation that groups systematically over-weight the trivial because it is comprehensible — a prompt to ration attention by stakes, not by how easy something is to have an opinion about.",
@@ -46,13 +58,31 @@
   "coinedYear": 1957,
   "namedAfter": "C. Northcote Parkinson",
   "sources": [
-    {"text": "Parkinson, C.N. (1957). Parkinson's Law, or The Pursuit of Progress, essay 'High Finance, or the Point of Vanishing Interest'. — the reactor / bike-shed / refreshments committee.", "type": "primary"},
-    {"text": "Kamp, P.-H. (2 October 1999). \"A bike shed (any colour will do)…\" FreeBSD mailing list. — the origin of 'bikeshedding'.", "url": "http://phk.freebsd.dk/sagas/bikeshed/", "type": "primary"},
-    {"text": "Law of triviality, Wikipedia. — Parkinson's 1957 origin, the agenda figures, and Kamp's 1999 popularisation.", "url": "https://en.wikipedia.org/wiki/Law_of_triviality", "type": "secondary"}
+    {
+      "text": "Parkinson, C.N. (1957). Parkinson's Law, or The Pursuit of Progress, essay 'High Finance, or the Point of Vanishing Interest'. — the reactor / bike-shed / refreshments committee.",
+      "url": "https://archive.org/details/parkinsonslaworp0000cnor",
+      "type": "primary"
+    },
+    {
+      "text": "Kamp, P.-H. (2 October 1999). \"A bike shed (any colour will do)…\" FreeBSD mailing list. — the origin of 'bikeshedding'.",
+      "url": "http://phk.freebsd.dk/sagas/bikeshed/",
+      "type": "primary"
+    },
+    {
+      "text": "Law of triviality, Wikipedia. — Parkinson's 1957 origin, the agenda figures, and Kamp's 1999 popularisation.",
+      "url": "https://en.wikipedia.org/wiki/Law_of_triviality",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Law_of_triviality",
   "related": [
-    {"slug": "parkinsons-law", "kind": "kindred"},
-    {"slug": "sayres-law", "kind": "kindred"}
+    {
+      "slug": "parkinsons-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "sayres-law",
+      "kind": "kindred"
+    }
   ]
 }

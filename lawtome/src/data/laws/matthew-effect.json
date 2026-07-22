@@ -2,7 +2,10 @@
   "no": "077",
   "slug": "matthew-effect",
   "name": "The Matthew Effect",
-  "aliases": ["Cumulative advantage", "The Matthew principle"],
+  "aliases": [
+    "Cumulative advantage",
+    "The Matthew principle"
+  ],
   "statement": "To those who have, more is given: advantage accumulates and the eminent gain more than their share.",
   "statementAccent": "advantage accumulates",
   "meaning": "Those who already hold an advantage — status, wealth, citations, attention — tend to gain still more, while those who start with little fall further behind. Initial position, not merit alone, shapes who accumulates rewards.",
@@ -37,9 +40,18 @@
   ],
   "whyItMatters": "It separates reward from underlying merit: because success feeds on success, observed eminence overstates real differences in ability, and small initial edges — a birth month, an early citation, a first-mover link — can decide long-run outcomes. It is central to how inequality, fame, and scientific credit actually accumulate.",
   "working": [
-    {"lead": "Distinguish merit from accumulated advantage", "text": "when judging success, ask how much reflects ability and how much reflects an early lead that compounded — the two look identical at the finish line."},
-    {"lead": "Intervene early, where leads are small", "text": "because advantage compounds, the cheapest time to change an outcome is before the feedback loop has run; small early help outperforms large late help."},
-    {"lead": "Watch for lock-in", "text": "in markets and networks, a first-mover edge can harden into dominance out of proportion to quality; design for contestability if that is not what you want."}
+    {
+      "lead": "Distinguish merit from accumulated advantage",
+      "text": "when judging success, ask how much reflects ability and how much reflects an early lead that compounded — the two look identical at the finish line."
+    },
+    {
+      "lead": "Intervene early, where leads are small",
+      "text": "because advantage compounds, the cheapest time to change an outcome is before the feedback loop has run; small early help outperforms large late help."
+    },
+    {
+      "lead": "Watch for lock-in",
+      "text": "in markets and networks, a first-mover edge can harden into dominance out of proportion to quality; design for contestability if that is not what you want."
+    }
   ],
   "limits": "It is a tendency, not a deterministic law — advantage can stall or reverse at ceilings, through regression, disruption, or scandal, and a 2014 review found mixed evidence including compensatory patterns for capped skills. Its whole critical use is to separate reward from merit, so it should never be read as saying the advantaged deserve their lead. The Biblical framing is an evocative metaphor, not an endorsement, and popular extensions (Gladwell's '10,000 hours') have themselves been challenged.",
   "misreadings": "It does not claim the successful are undeserving, nor that outcomes are fixed at birth. It claims that advantage compounds, so success reflects starting position and feedback as well as ability — a statement about mechanism, not merit.",
@@ -50,13 +62,31 @@
   "coinedYear": 1968,
   "namedAfter": "the Gospel of Matthew",
   "sources": [
-    {"text": "Merton, R.K. (1968). \"The Matthew Effect in Science.\" Science, 159(3810), 56–63.", "url": "https://www.science.org/doi/10.1126/science.159.3810.56", "type": "primary"},
-    {"text": "Matthew effect, Wikipedia. — the origin, Zuckerman's contribution, the relative-age and preferential-attachment cases, and the boundary conditions.", "url": "https://en.wikipedia.org/wiki/Matthew_effect", "type": "secondary"},
-    {"text": "Barabási, A.-L. & Albert, R. (1999). \"Emergence of Scaling in Random Networks.\" Science, 286, 509–512. — preferential attachment.", "type": "primary"}
+    {
+      "text": "Merton, R.K. (1968). \"The Matthew Effect in Science.\" Science, 159(3810), 56–63.",
+      "url": "https://www.science.org/doi/10.1126/science.159.3810.56",
+      "type": "primary"
+    },
+    {
+      "text": "Matthew effect, Wikipedia. — the origin, Zuckerman's contribution, the relative-age and preferential-attachment cases, and the boundary conditions.",
+      "url": "https://en.wikipedia.org/wiki/Matthew_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Barabási, A.-L. & Albert, R. (1999). \"Emergence of Scaling in Random Networks.\" Science, 286, 509–512. — preferential attachment.",
+      "url": "https://doi.org/10.1126/science.286.5439.509",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Matthew_effect",
   "related": [
-    {"slug": "stiglers-law", "kind": "kindred"},
-    {"slug": "pareto-principle", "kind": "kindred"}
+    {
+      "slug": "stiglers-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "pareto-principle",
+      "kind": "kindred"
+    }
   ]
 }

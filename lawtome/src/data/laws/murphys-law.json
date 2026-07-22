@@ -36,10 +36,22 @@
   ],
   "whyItMatters": "As discipline rather than fatalism it drives defensive design: foolproofing, redundancy, and testing for the failure you are sure won't happen. Designing as though Murphy is right is how you keep him wrong.",
   "working": [
-    {"lead": "Design as if it will fail", "text": "list the failure modes before they list themselves, and assume each one eventually happens on a long enough run."},
-    {"lead": "Make the wrong way impossible", "text": "where a step can be done incorrectly, remove the option — key the connector, guard the input, constrain the interface — rather than trusting care."},
-    {"lead": "Add redundancy and fail-safes", "text": "for the failures you cannot design out, arrange that the system degrades safely instead of catastrophically."},
-    {"lead": "Test the failure you're sure won't happen", "text": "the untested path is the one that bites; rehearse the unlikely fault deliberately."}
+    {
+      "lead": "Design as if it will fail",
+      "text": "list the failure modes before they list themselves, and assume each one eventually happens on a long enough run."
+    },
+    {
+      "lead": "Make the wrong way impossible",
+      "text": "where a step can be done incorrectly, remove the option — key the connector, guard the input, constrain the interface — rather than trusting care."
+    },
+    {
+      "lead": "Add redundancy and fail-safes",
+      "text": "for the failures you cannot design out, arrange that the system degrades safely instead of catastrophically."
+    },
+    {
+      "lead": "Test the failure you're sure won't happen",
+      "text": "the untested path is the one that bites; rehearse the unlikely fault deliberately."
+    }
   ],
   "limits": "Murphy's Law is a folk adage, not a physical law — it predicts nothing on any single run. Much of its force is an artefact of attention: across enough events some failures are statistically inevitable (the statistician David Hand's 'law of truly large numbers'), and we remember the failures while forgetting the vastly more numerous times nothing went wrong. Its defensible core is the constructive one its originators intended — a prompt to anticipate failure and design against it — not the fatalistic belief that everything is doomed to break.",
   "misreadings": "It is not a claim that the universe is malicious or that everything always fails — it is a prompt to take low-probability failures seriously, not a prediction that they are certain on any single run. Treated as gloom it is useless; treated as a design checklist it is invaluable.",
@@ -50,13 +62,31 @@
   "coinedYear": 1949,
   "namedAfter": "Edward A. Murphy Jr.",
   "sources": [
-    {"text": "Spark, N. T. (2006). A History of Murphy's Law. Periscope Film.", "type": "secondary"},
-    {"text": "\"The Real-Life Murphy and How 'Murphy's Law' Came to Be.\" Military.com. — corroborates the MX981 'Gee Whiz' sled, the Murphy team, and Stapp's press-conference popularisation.", "url": "https://www.military.com/history/real-life-murphy-and-how-murphys-law-came-be.html", "type": "secondary"},
-    {"text": "Murphy's law, Wikipedia. — origin, contested wording, the 1952 Anne Roe citation, and the Hand/Dawkins selection-bias critiques.", "url": "https://en.wikipedia.org/wiki/Murphy%27s_law", "type": "secondary"}
+    {
+      "text": "Spark, N. T. (2006). A History of Murphy's Law. Periscope Film.",
+      "url": "https://books.google.com/books/about/A_History_of_Murphy_s_Law.html?id=G0bOaC_EG44C",
+      "type": "secondary"
+    },
+    {
+      "text": "\"The Real-Life Murphy and How 'Murphy's Law' Came to Be.\" Military.com. — corroborates the MX981 'Gee Whiz' sled, the Murphy team, and Stapp's press-conference popularisation.",
+      "url": "https://www.military.com/history/real-life-murphy-and-how-murphys-law-came-be.html",
+      "type": "secondary"
+    },
+    {
+      "text": "Murphy's law, Wikipedia. — origin, contested wording, the 1952 Anne Roe citation, and the Hand/Dawkins selection-bias critiques.",
+      "url": "https://en.wikipedia.org/wiki/Murphy%27s_law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Murphy%27s_law",
   "related": [
-    {"slug": "hofstadters-law", "kind": "kindred"},
-    {"slug": "hanlons-razor", "kind": "kindred"}
+    {
+      "slug": "hofstadters-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "hanlons-razor",
+      "kind": "kindred"
+    }
   ]
 }

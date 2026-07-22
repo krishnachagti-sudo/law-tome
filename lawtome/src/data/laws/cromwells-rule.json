@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is the mathematical case for open-mindedness: certainty of 0 or 1 is not confidence but a refusal to learn, because it makes belief immune to evidence. In forecasting, science, and everyday judgement, keeping a sliver of doubt is what lets you be moved by facts.",
   "working": [
-    {"lead": "Leave a sliver of doubt", "text": "for any empirical claim, hold a prior strictly between 0 and 1 — even a tiny margin keeps you able to update."},
-    {"lead": "Distrust your own certainties", "text": "when you catch yourself calling something impossible or certain, ask whether any evidence could change your mind; if not, your prior is locked."},
-    {"lead": "Reserve 0 and 1 for logic alone", "text": "assign certainty only to what is logically or mathematically true or false — everything contingent stays in the open interval."}
+    {
+      "lead": "Leave a sliver of doubt",
+      "text": "for any empirical claim, hold a prior strictly between 0 and 1 — even a tiny margin keeps you able to update."
+    },
+    {
+      "lead": "Distrust your own certainties",
+      "text": "when you catch yourself calling something impossible or certain, ask whether any evidence could change your mind; if not, your prior is locked."
+    },
+    {
+      "lead": "Reserve 0 and 1 for logic alone",
+      "text": "assign certainty only to what is logically or mathematically true or false — everything contingent stays in the open interval."
+    }
   ],
   "limits": "It is a normative principle of Bayesian reasoning, not a law of nature or a theorem, and it explicitly exempts logical and mathematical certainties, which legitimately take probability 0 or 1. In some engineering or modelling contexts it is convenient and harmless to treat certain events as impossible or certain by definition; the rule is a caution against doing so for genuinely empirical claims, not a blanket ban. Its force is prescriptive — how you ought to set priors — rather than a claim about the world.",
   "misreadings": "It does not say you must be uncertain about everything, including logic and mathematics — those can be certain. It says do not close the door on contingent, empirical claims, because a prior of 0 or 1 makes you unteachable by evidence.",
@@ -44,11 +53,22 @@
   "provenance": "canon",
   "namedAfter": "Oliver Cromwell",
   "sources": [
-    {"text": "Lindley, D.V. Making Decisions / Understanding Uncertainty. — where Lindley names and states the rule.", "type": "primary"},
-    {"text": "Cromwell's rule, Wikipedia. — the statement, the Bayes-theorem mechanism, the green-cheese illustration, and the Cromwell quote.", "url": "https://en.wikipedia.org/wiki/Cromwell%27s_rule", "type": "secondary"}
+    {
+      "text": "Lindley, D.V. Making Decisions / Understanding Uncertainty. — where Lindley names and states the rule.",
+      "url": "https://archive.org/details/makingdecisions00dvli",
+      "type": "primary"
+    },
+    {
+      "text": "Cromwell's rule, Wikipedia. — the statement, the Bayes-theorem mechanism, the green-cheese illustration, and the Cromwell quote.",
+      "url": "https://en.wikipedia.org/wiki/Cromwell%27s_rule",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Cromwell%27s_rule",
   "related": [
-    {"slug": "sagan-standard", "kind": "kindred"}
+    {
+      "slug": "sagan-standard",
+      "kind": "kindred"
+    }
   ]
 }

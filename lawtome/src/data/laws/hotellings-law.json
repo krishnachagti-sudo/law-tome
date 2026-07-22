@@ -2,7 +2,9 @@
   "no": "093",
   "slug": "hotellings-law",
   "name": "Hotelling's Law",
-  "aliases": ["The principle of minimum differentiation"],
+  "aliases": [
+    "The principle of minimum differentiation"
+  ],
   "statement": "Competitors tend to make their products as similar as possible, clustering in the middle of the market.",
   "statementAccent": "as similar as possible",
   "meaning": "When rivals sell to customers spread across a market and each buyer picks the nearest option, each firm can grab a bigger share by edging toward its rival's position. Because both reason the same way, they end up clustered together at the centre instead of spreading out — near-identical offerings aimed at the middle.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It offers a tidy explanation for why competitors so often look alike and cluster together, from shops to political platforms to television schedules. Even after its formal foundation was shaken, the clustering intuition remains a widely used lens on competition and convergence.",
   "working": [
-    {"lead": "Expect convergence where buyers pick the nearest option", "text": "when customers choose the closest rival on some dimension, competitors are pulled toward each other's positions rather than apart."},
-    {"lead": "Treat it as a tendency, not a theorem", "text": "the clustering result is model-dependent; under different cost and competition assumptions firms may separate instead, so do not rely on it as a law."},
-    {"lead": "Watch the price-competition pressure", "text": "the force pushing firms apart is the desire to avoid head-to-head price wars; where that dominates, expect differentiation, not clustering."}
+    {
+      "lead": "Expect convergence where buyers pick the nearest option",
+      "text": "when customers choose the closest rival on some dimension, competitors are pulled toward each other's positions rather than apart."
+    },
+    {
+      "lead": "Treat it as a tendency, not a theorem",
+      "text": "the clustering result is model-dependent; under different cost and competition assumptions firms may separate instead, so do not rely on it as a law."
+    },
+    {
+      "lead": "Watch the price-competition pressure",
+      "text": "the force pushing firms apart is the desire to avoid head-to-head price wars; where that dominates, expect differentiation, not clustering."
+    }
   ],
   "limits": "Hotelling's clustering result is contested and not robust. In 1979 d'Aspremont, Gabszewicz and Thisse showed his original model is flawed — with linear transport costs no price equilibrium exists when the firms are close together, so the agglomeration-at-the-centre conclusion does not hold — and that in a repaired model with quadratic costs firms instead maximise differentiation, moving to opposite ends to soften price competition. So depending on the assumptions, competitors may cluster or separate; 'Hotelling's law' is better read as a suggestive, model-dependent tendency than a law.",
   "misreadings": "It is not an iron rule that competitors always converge — later, sounder models show they often maximise differentiation instead. It is an influential intuition about one force in competition (the pull toward shared customers), not a settled result.",
@@ -46,12 +57,27 @@
   "coinedYear": 1929,
   "namedAfter": "Harold Hotelling",
   "sources": [
-    {"text": "Hotelling, H. (1929). \"Stability in Competition.\" The Economic Journal, 39(153), 41–57.", "type": "primary"},
-    {"text": "d'Aspremont, C., Gabszewicz, J.J. & Thisse, J.-F. (1979). \"On Hotelling's 'Stability in Competition.'\" Econometrica, 47(5), 1145–1150. — the critique.", "type": "primary"},
-    {"text": "Hotelling's law, Wikipedia. — the model, the clustering examples, and the d'Aspremont critique.", "url": "https://en.wikipedia.org/wiki/Hotelling%27s_law", "type": "secondary"}
+    {
+      "text": "Hotelling, H. (1929). \"Stability in Competition.\" The Economic Journal, 39(153), 41–57.",
+      "url": "https://doi.org/10.2307/2224214",
+      "type": "primary"
+    },
+    {
+      "text": "d'Aspremont, C., Gabszewicz, J.J. & Thisse, J.-F. (1979). \"On Hotelling's 'Stability in Competition.'\" Econometrica, 47(5), 1145–1150. — the critique.",
+      "url": "https://doi.org/10.2307/1911955",
+      "type": "primary"
+    },
+    {
+      "text": "Hotelling's law, Wikipedia. — the model, the clustering examples, and the d'Aspremont critique.",
+      "url": "https://en.wikipedia.org/wiki/Hotelling%27s_law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Hotelling%27s_law",
   "related": [
-    {"slug": "overton-window", "kind": "kindred"}
+    {
+      "slug": "overton-window",
+      "kind": "kindred"
+    }
   ]
 }

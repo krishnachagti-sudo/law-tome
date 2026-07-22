@@ -2,7 +2,9 @@
   "no": "035",
   "slug": "brooks-law",
   "name": "Brooks's Law",
-  "aliases": ["The mythical man-month"],
+  "aliases": [
+    "The mythical man-month"
+  ],
   "statement": "Adding manpower to a late software project makes it later.",
   "statementAccent": "makes it later",
   "meaning": "Throwing more people at a project that is already behind usually pushes the finish line further out, not closer.",
@@ -23,10 +25,22 @@
   ],
   "whyItMatters": "It punctures the intuition that people and time are interchangeable — that a job needing twelve person-months can be done by twelve people in one. A late project is more often rescued by cutting scope or holding the team steady than by staffing up in a panic.",
   "working": [
-    {"lead": "Don't staff up a late project in a panic", "text": "the ramp-up and coordination costs land exactly when there is no slack to absorb them; adding people mid-crunch usually buys delay."},
-    {"lead": "Cut scope or hold steady instead", "text": "a late project is more often saved by shipping less, or by protecting the team it has, than by growing headcount."},
-    {"lead": "If you must add, add early and to separable work", "text": "new hands help before the crunch, and on partitionable tasks — testing, tooling, documentation — that need little coordination."},
-    {"lead": "Invest in modularity", "text": "clean interfaces are what let more people work without more communication; the coordination cost the law punishes is a function of coupling."}
+    {
+      "lead": "Don't staff up a late project in a panic",
+      "text": "the ramp-up and coordination costs land exactly when there is no slack to absorb them; adding people mid-crunch usually buys delay."
+    },
+    {
+      "lead": "Cut scope or hold steady instead",
+      "text": "a late project is more often saved by shipping less, or by protecting the team it has, than by growing headcount."
+    },
+    {
+      "lead": "If you must add, add early and to separable work",
+      "text": "new hands help before the crunch, and on partitionable tasks — testing, tooling, documentation — that need little coordination."
+    },
+    {
+      "lead": "Invest in modularity",
+      "text": "clean interfaces are what let more people work without more communication; the coordination cost the law punishes is a function of coupling."
+    }
   ],
   "limits": "Brooks himself called the law an 'outrageous oversimplification', and it is deliberately narrow. Adding people early, before a project is late, can genuinely help; a project may be labelled 'late' only because its original schedule was fantasy; and adding highly skilled developers who already know the codebase avoids most of the ramp-up penalty. The law bites hardest on tightly-coupled, non-partitionable work under communication load — for genuinely divisible tasks, more hands really do produce more output. Strong modularity and clear ownership shrink the effect the law describes.",
   "misreadings": "It does not say adding people never helps — early, before the crunch, more hands can genuinely speed things up. The claim is narrow: adding people to an already-late project, mid-flight, tends to backfire because the onboarding and coordination costs land exactly when there is no slack to absorb them.",
@@ -37,13 +51,31 @@
   "coinedYear": 1975,
   "namedAfter": "Fred Brooks",
   "sources": [
-    {"text": "Brooks, F. P. (1975; anniversary ed. 1995). The Mythical Man-Month: Essays on Software Engineering. Addison-Wesley.", "type": "primary"},
-    {"text": "Brooks's law, Wikipedia. — the two mechanisms, the n(n−1)/2 channel count, and the documented exceptions.", "url": "https://en.wikipedia.org/wiki/Brooks%27s_law", "type": "secondary"},
-    {"text": "The Mythical Man-Month, Wikipedia. — the book, the 50-people-to-1,225-channels example, and the partitionability analogy.", "url": "https://en.wikipedia.org/wiki/The_Mythical_Man-Month", "type": "secondary"}
+    {
+      "text": "Brooks, F. P. (1975; anniversary ed. 1995). The Mythical Man-Month: Essays on Software Engineering. Addison-Wesley.",
+      "url": "https://archive.org/details/mythicalmanmonth00broo",
+      "type": "primary"
+    },
+    {
+      "text": "Brooks's law, Wikipedia. — the two mechanisms, the n(n−1)/2 channel count, and the documented exceptions.",
+      "url": "https://en.wikipedia.org/wiki/Brooks%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "The Mythical Man-Month, Wikipedia. — the book, the 50-people-to-1,225-channels example, and the partitionability analogy.",
+      "url": "https://en.wikipedia.org/wiki/The_Mythical_Man-Month",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Brooks%27s_law",
   "related": [
-    {"slug": "conways-law", "kind": "kindred"},
-    {"slug": "hofstadters-law", "kind": "kindred"}
+    {
+      "slug": "conways-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "hofstadters-law",
+      "kind": "kindred"
+    }
   ]
 }

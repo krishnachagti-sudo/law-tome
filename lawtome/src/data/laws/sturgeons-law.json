@@ -2,7 +2,9 @@
   "no": "044",
   "slug": "sturgeons-law",
   "name": "Sturgeon's Law",
-  "aliases": ["Sturgeon's Revelation"],
+  "aliases": [
+    "Sturgeon's Revelation"
+  ],
   "statement": "Ninety percent of everything is crap.",
   "statementAccent": "everything is crap",
   "meaning": "In any field, the vast majority of what is produced is mediocre — and that is normal, not a sign the field is worthless.",
@@ -29,10 +31,22 @@
   ],
   "whyItMatters": "It is a defence against cherry-picking: you cannot damn a whole category by its worst examples, because ninety percent of every category is weak. It reframes evaluation around the top of the distribution rather than the mass.",
   "working": [
-    {"lead": "Judge a field by its best", "text": "the top slice is what a category is capable of; the average is just the base rate of mediocrity, which is universal."},
-    {"lead": "Don't damn a category by its worst", "text": "pointing at the dross proves nothing distinctive — every field has a 90%, so the worst examples are not evidence against the field."},
-    {"lead": "Expect volume to rise, not quality", "text": "when barriers fall, the trash grows fastest and most visibly; that is the ratio holding, not the field decaying."},
-    {"lead": "Treat the number as rhetoric", "text": "'90%' is a vivid figure, never a measurement — use it to resist unfair dismissal, not as a statistic."}
+    {
+      "lead": "Judge a field by its best",
+      "text": "the top slice is what a category is capable of; the average is just the base rate of mediocrity, which is universal."
+    },
+    {
+      "lead": "Don't damn a category by its worst",
+      "text": "pointing at the dross proves nothing distinctive — every field has a 90%, so the worst examples are not evidence against the field."
+    },
+    {
+      "lead": "Expect volume to rise, not quality",
+      "text": "when barriers fall, the trash grows fastest and most visibly; that is the ratio holding, not the field decaying."
+    },
+    {
+      "lead": "Treat the number as rhetoric",
+      "text": "'90%' is a vivid figure, never a measurement — use it to resist unfair dismissal, not as a statistic."
+    }
   ],
   "limits": "The '90%' is invented rhetoric with no study behind it, so it should never be cited as a statistic. 'Crap' (Sturgeon's own word was 'crud') is a subjective judgement that varies by taste, era, and expertise, which makes the boundary undefinable. And the aphorism cuts both ways as an excuse: it can wave away legitimate criticism of genuinely poor work ('well, 90% of everything is crap') just as easily as it defends a field from unfair attack. There is even a terminological muddle at its root — using 'Sturgeon's Law' for the 90% idea is technically a misnomer, though now standard.",
   "misreadings": "The '90%' is rhetorical, not a measurement, and 'crap' means mediocre, not evil. It is not cynicism or a claim that nothing is good — it is the opposite, a case for judging things by their finest work rather than their most abundant.",
@@ -43,12 +57,26 @@
   "coinedYear": 1958,
   "namedAfter": "Theodore Sturgeon",
   "sources": [
-    {"text": "Sturgeon, T. (March 1958). Book column, Venture Science Fiction. — the 'Sturgeon's Revelation' passage with its two corollaries.", "type": "primary"},
-    {"text": "Sturgeon's law, Wikipedia. — the Revelation-versus-Law distinction, the 1951/1953/1958 timeline, and the 'crud'/'crap' wording.", "url": "https://en.wikipedia.org/wiki/Sturgeon%27s_law", "type": "secondary"}
+    {
+      "text": "Sturgeon, T. (March 1958). Book column, Venture Science Fiction. — the 'Sturgeon's Revelation' passage with its two corollaries.",
+      "url": "https://archive.org/details/Venture_v02n02_1958-03_Gorgon776",
+      "type": "primary"
+    },
+    {
+      "text": "Sturgeon's law, Wikipedia. — the Revelation-versus-Law distinction, the 1951/1953/1958 timeline, and the 'crud'/'crap' wording.",
+      "url": "https://en.wikipedia.org/wiki/Sturgeon%27s_law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Sturgeon%27s_law",
   "related": [
-    {"slug": "pareto-principle", "kind": "kindred"},
-    {"slug": "betteridges-law", "kind": "kindred"}
+    {
+      "slug": "pareto-principle",
+      "kind": "kindred"
+    },
+    {
+      "slug": "betteridges-law",
+      "kind": "kindred"
+    }
   ]
 }

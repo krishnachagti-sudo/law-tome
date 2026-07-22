@@ -2,7 +2,9 @@
   "no": "066",
   "slug": "wirths-law",
   "name": "Wirth's Law",
-  "aliases": ["Reiser's law"],
+  "aliases": [
+    "Reiser's law"
+  ],
   "statement": "Software gets slower faster than hardware gets faster.",
   "statementAccent": "slower faster than hardware",
   "meaning": "Even as processors, memory, and storage grow faster and cheaper, software grows bloated fast enough that the performance a user actually feels stagnates or gets worse. Hardware gains are consumed by software growth rather than delivered to the user.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It is the counterweight to Moore's law: raw hardware progress does not automatically become user-visible speed, because software expands to absorb it. Understanding that keeps teams honest about performance as something to be earned deliberately rather than assumed as a gift from the hardware.",
   "working": [
-    {"lead": "Budget performance explicitly", "text": "treat speed and footprint as first-class requirements with numbers, not as something the next chip generation will fix for free."},
-    {"lead": "Separate essential from nice-to-have", "text": "Wirth's own prescription: ruthless feature discipline is what keeps software lean, because every added feature is added weight."},
-    {"lead": "Don't spend the hardware windfall in advance", "text": "assume users are not all on the newest machines, and that gains you bank on will be eaten by the abstractions you add."}
+    {
+      "lead": "Budget performance explicitly",
+      "text": "treat speed and footprint as first-class requirements with numbers, not as something the next chip generation will fix for free."
+    },
+    {
+      "lead": "Separate essential from nice-to-have",
+      "text": "Wirth's own prescription: ruthless feature discipline is what keeps software lean, because every added feature is added weight."
+    },
+    {
+      "lead": "Don't spend the hardware windfall in advance",
+      "text": "assume users are not all on the newest machines, and that gains you bank on will be eaten by the abstractions you add."
+    }
   ],
   "limits": "It is an aphorism and, in Wirth's hands, a 'plea' — a normative argument for lean software, not an empirically measured law with a rate constant like the one it mirrors. It has clear counterexamples: optimising compilers, JIT runtimes, and heavily-tuned game engines have all made software faster. It also leans on selection bias — bloat is salient and memorable while quiet efficiency wins go unnoticed — and the 'halves every 18 months' variants are deliberate jokes, not measurements.",
   "misreadings": "It does not claim all software always gets slower — plenty has been optimised — nor that hardware progress is worthless. It is a provocation about incentives: because faster hardware removes the pressure to be efficient, software tends to expand to fill it, and leanness has to be chosen.",
@@ -46,13 +57,31 @@
   "coinedYear": 1995,
   "namedAfter": "Niklaus Wirth",
   "sources": [
-    {"text": "Wirth, N. (February 1995). \"A Plea for Lean Software.\" Computer, 28(2), 64–68. IEEE Computer Society.", "type": "primary"},
-    {"text": "Wirth's law, Wikipedia. — the statement, the Reiser attribution, and the Gates's/May's/Page's law variants.", "url": "https://en.wikipedia.org/wiki/Wirth%27s_law", "type": "secondary"},
-    {"text": "Andy and Bill's law, Wikipedia. — 'what Andy giveth, Bill taketh away'.", "url": "https://en.wikipedia.org/wiki/Andy_and_Bill%27s_law", "type": "secondary"}
+    {
+      "text": "Wirth, N. (February 1995). \"A Plea for Lean Software.\" Computer, 28(2), 64–68. IEEE Computer Society.",
+      "url": "https://doi.org/10.1109/2.348001",
+      "type": "primary"
+    },
+    {
+      "text": "Wirth's law, Wikipedia. — the statement, the Reiser attribution, and the Gates's/May's/Page's law variants.",
+      "url": "https://en.wikipedia.org/wiki/Wirth%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Andy and Bill's law, Wikipedia. — 'what Andy giveth, Bill taketh away'.",
+      "url": "https://en.wikipedia.org/wiki/Andy_and_Bill%27s_law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Wirth%27s_law",
   "related": [
-    {"slug": "moores-law", "kind": "kindred"},
-    {"slug": "parkinsons-law", "kind": "kindred"}
+    {
+      "slug": "moores-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "parkinsons-law",
+      "kind": "kindred"
+    }
   ]
 }

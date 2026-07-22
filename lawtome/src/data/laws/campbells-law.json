@@ -22,10 +22,22 @@
   ],
   "whyItMatters": "This is the sharper, more institutional cousin of Goodhart's Law: it predicts not just a bad metric but real damage to the thing being measured. Wherever a single indicator carries high stakes — test scores, crime statistics, hospital waiting times — expect both the gaming and the collateral distortion, and design the stakes accordingly.",
   "working": [
-    {"lead": "Never hang everything on one number", "text": "the corruption pressure scales with the stakes on a single indicator; spread the weight across several and no one of them is worth gaming."},
-    {"lead": "Keep some measures diagnostic", "text": "watch indicators to learn what is happening without attaching consequences to them, so at least some stay honest."},
-    {"lead": "Audit and verify the data", "text": "independent verification of the numbers — the response Temple built after its scandal — is what catches the gaming a trusted metric hides."},
-    {"lead": "Distinguish real gains from gamed ones", "text": "some improvement under a target is genuine; ask whether the underlying process actually got better, not just the number."}
+    {
+      "lead": "Never hang everything on one number",
+      "text": "the corruption pressure scales with the stakes on a single indicator; spread the weight across several and no one of them is worth gaming."
+    },
+    {
+      "lead": "Keep some measures diagnostic",
+      "text": "watch indicators to learn what is happening without attaching consequences to them, so at least some stay honest."
+    },
+    {
+      "lead": "Audit and verify the data",
+      "text": "independent verification of the numbers — the response Temple built after its scandal — is what catches the gaming a trusted metric hides."
+    },
+    {
+      "lead": "Distinguish real gains from gamed ones",
+      "text": "some improvement under a target is genuine; ask whether the underlying process actually got better, not just the number."
+    }
   ],
   "limits": "Campbell's Law is a directional tendency, not a theorem — it predicts pressure and likelihood, not certainty, and the effect scales with the stakes, so low-stakes monitoring indicators are far less prone to distortion. It does not claim measurement itself is bad or argue for abandoning metrics; auditing, multiple indicators, and verification units genuinely mitigate it. And not every gain under a target is gaming — sometimes the number improves because the reality did (England's A&E waiting times really did fall under the four-hour target, even as some hospitals gamed it). Separating true improvement from distortion is itself case-specific and contested.",
   "misreadings": "Campbell's Law is often collapsed into Goodhart's, but its claim is sharper: it is specifically about social decision-making, and it warns that the distortion damages the underlying social process, not merely the number. It does not say indicators are useless — only that the more weight one carries, the less it can be trusted.",
@@ -37,15 +49,39 @@
   "popularYear": 1979,
   "namedAfter": "Donald T. Campbell",
   "sources": [
-    {"text": "Campbell, D.T. (1975). \"Assessing the Impact of Planned Social Change.\" In G.M. Lyons (ed.), Social Research and Public Policies. Hanover, NH: The Public Affairs Center, Dartmouth College. — first publication.", "type": "primary"},
-    {"text": "Campbell, D.T. (December 1976). \"Assessing the Impact of Planned Social Change.\" Occasional Paper Series #8, The Evaluation Center, Western Michigan University; reprinted with permission of the Public Affairs Center, Dartmouth College. — carries the law verbatim. (ERIC ED303512)", "url": "https://eric.ed.gov/?id=ED303512", "type": "primary"},
-    {"text": "Campbell, D.T. (1979). \"Assessing the impact of planned social change.\" Evaluation and Program Planning, 2(1), 67–90.", "url": "https://doi.org/10.1016/0149-7189(79)90048-X", "type": "primary"},
-    {"text": "Campbell's law, Wikipedia. — the Atlanta and rankings cases, and the relationship to Goodhart's Law.", "url": "https://en.wikipedia.org/wiki/Campbell%27s_law", "type": "secondary"}
+    {
+      "text": "Campbell, D.T. (1975). \"Assessing the Impact of Planned Social Change.\" In G.M. Lyons (ed.), Social Research and Public Policies. Hanover, NH: The Public Affairs Center, Dartmouth College. — first publication.",
+      "url": "https://archive.org/details/socialresearchpu0000unse",
+      "type": "primary"
+    },
+    {
+      "text": "Campbell, D.T. (December 1976). \"Assessing the Impact of Planned Social Change.\" Occasional Paper Series #8, The Evaluation Center, Western Michigan University; reprinted with permission of the Public Affairs Center, Dartmouth College. — carries the law verbatim. (ERIC ED303512)",
+      "url": "https://eric.ed.gov/?id=ED303512",
+      "type": "primary"
+    },
+    {
+      "text": "Campbell, D.T. (1979). \"Assessing the impact of planned social change.\" Evaluation and Program Planning, 2(1), 67–90.",
+      "url": "https://doi.org/10.1016/0149-7189(79)90048-X",
+      "type": "primary"
+    },
+    {
+      "text": "Campbell's law, Wikipedia. — the Atlanta and rankings cases, and the relationship to Goodhart's Law.",
+      "url": "https://en.wikipedia.org/wiki/Campbell%27s_law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Campbell%27s_law",
   "related": [
-    {"slug": "goodharts-law", "kind": "near-twin"},
-    {"slug": "cobra-effect", "kind": "consequence"}
+    {
+      "slug": "goodharts-law",
+      "kind": "near-twin"
+    },
+    {
+      "slug": "cobra-effect",
+      "kind": "consequence"
+    }
   ],
-  "confusedWith": ["goodharts-law"]
+  "confusedWith": [
+    "goodharts-law"
+  ]
 }
