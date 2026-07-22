@@ -152,7 +152,8 @@ ${tierRow}
     <p class="about-p">The corpus is licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a> — reuse it, remix it, build on it, just credit The Law Tome. You can <a href="${base}data/">download the dataset</a> as JSON or CSV. No ads, and no tracking of what you read.</p>
 
     <h2 class="about-h2">Who’s behind it</h2>
-    <p class="about-p">The Law Tome is created and maintained by <b><a href="https://github.com/krishnachagti-sudo" rel="author">Krishna Chagti</a></b>, and published as an <b>initiative by <a href="${origin || 'https://conyso.com'}">Conyso</a></b>. The day-to-day work — writing the entries, chasing the sources, checking every attribution — is hands-on, and done in the open.</p>
+    <p class="about-p">The Law Tome is created and maintained by <b><a href="https://conyso.com/founder/" rel="author">Krishna Chagti</a></b> — founder and CEO of <a href="${origin || 'https://conyso.com'}">Conyso</a>, a student at IIT Madras and IIM Sirmaur, a Lean Six Sigma Black Belt, and a published researcher. He builds in the open, on the principle that the work is the marketing. Find him on <a href="https://www.linkedin.com/in/krishna-chagti">LinkedIn</a> or <a href="https://github.com/krishnachagti-sudo">GitHub</a>.</p>
+    <p class="about-p"><a href="https://conyso.com">Conyso</a> is a holding company that builds and backs companies run with operating discipline — strategy, education, software, and ventures under one roof, on the belief that <i>“excellence is not a slogan; it is a system.”</i> The Law Tome is one of its initiatives: a reference held to that same standard.</p>
     <p class="about-p">We keep it deliberately quiet: no ads, no sponsors, nothing that tracks what you read. The only thing we ask of you is a correction when we get something wrong. Spot an error, know a better source, or think we’ve missed a law? <a href="${base}coin/">Suggest a law or a fix.</a> It’s how the index stays honest.</p>
 
     <h2 class="about-h2">Start exploring</h2>
@@ -169,8 +170,9 @@ ${tierRow}
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Krishna Chagti',
-    url: 'https://github.com/krishnachagti-sudo',
-    sameAs: ['https://github.com/krishnachagti-sudo'],
+    jobTitle: 'Founder & CEO, Conyso',
+    url: 'https://conyso.com/founder/',
+    sameAs: ['https://conyso.com/founder/', 'https://www.linkedin.com/in/krishna-chagti', 'https://github.com/krishnachagti-sudo'],
     worksFor: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
   };
   const aboutLd = {
@@ -183,8 +185,14 @@ ${tierRow}
       '@type': 'Organization',
       name: 'The Law Tome',
       url: `${origin}${base}`,
-      founder: { '@type': 'Person', name: 'Krishna Chagti', url: 'https://github.com/krishnachagti-sudo' },
-      parentOrganization: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
+      founder: { '@type': 'Person', name: 'Krishna Chagti', url: 'https://conyso.com/founder/' },
+      parentOrganization: {
+        '@type': 'Organization',
+        name: 'Conyso',
+        url: 'https://conyso.com',
+        slogan: 'Building and backing companies, run with operating discipline.',
+        description: 'A holding company that builds and backs companies run with operating discipline — strategy, education, software, and ventures under one roof.',
+      },
     },
   };
 

@@ -67,10 +67,15 @@ test('about credits Krishna Chagti (creator) + Conyso (publisher), factual only'
   const h = aboutPage({ base: '/lawtome/', origin: 'https://conyso.com' });
   assert.match(h, /behind it/);              // "Who's behind it" section
   assert.match(h, /Krishna Chagti/);         // named creator, on-page…
-  assert.match(h, /"@type":"Person","name":"Krishna Chagti"/); // …and a Person node
+  assert.match(h, /"@type":"Person","name":"Krishna Chagti","jobTitle":"Founder & CEO, Conyso"/); // …Person node w/ title
+  assert.match(h, /founder and CEO/);        // visible bio, sourced from his founder page
+  assert.match(h, /linkedin\.com\/in\/krishna-chagti/); // real sameAs link
   assert.match(h, /initiative by/i);
   assert.match(h, /href="https:\/\/conyso\.com"/);
-  // No invented "Dr. Firstname Lastname" and no fabricated bio sentence.
+  // Conyso is described factually (sourced from conyso.com), not invented.
+  assert.match(h, /holding company/);
+  assert.match(h, /operating discipline/);
+  // No invented "Dr. Firstname Lastname".
   assert.doesNotMatch(h, /Dr\.\s+[A-Z][a-z]+\s+[A-Z][a-z]+/);
 });
 
