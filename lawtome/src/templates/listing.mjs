@@ -13,7 +13,7 @@
 // every slug used in an href goes through escapeHtml — the Task 5/6/7 gates all
 // failed on missed escaping.
 
-import { head, sprite, header, footer, escapeHtml, lawCard } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, reliabilitySlug } from './partials.mjs';
 
 /**
  * A browse or per-category listing page — one full HTML document.
@@ -25,8 +25,12 @@ import { head, sprite, header, footer, escapeHtml, lawCard } from './partials.mj
  * @param {string} [o.active] nav key to mark active (defaults to 'browse')
  * @param {string} [o.origin=''] absolute-URL origin for JSON-LD (optional; degrades to base-relative)
  */
-export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '' } = {}) {
+export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '', reliabilityKey = '' } = {}) {
   const rows = Array.isArray(laws) ? laws : [];
+  // A reliability-tier page (kind='reliability') is a faceted-browse view: the
+  // server renders only that tier's laws and stamps the grid so the client keeps
+  // the facet instead of repainting with the whole corpus (the category bug).
+  const isReliability = kind === 'reliability';
 
   // Chips: "all" + the distinct categories present, in first-seen order. On a
   // category page the chip for `categoryKey` is the active one (not "all"), so the
@@ -41,23 +45,32 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
     })
     .join('');
 
-  // data-cat lets search.js honour the category context on first paint.
-  const gridAttr = categoryKey ? ` data-cat="${escapeHtml(categoryKey)}"` : '';
+  // data-cat / data-reliability let search.js honour the facet on first paint,
+  // so the client filter narrows WITHIN the server-rendered subset (it never
+  // repaints the grid with the full corpus).
+  const gridAttr = (categoryKey ? ` data-cat="${escapeHtml(categoryKey)}"` : '')
+    + (reliabilityKey ? ` data-reliability="${escapeHtml(reliabilityKey)}"` : '');
 
   const grid = rows.length
     ? rows.map((l) => lawCard(l, base)).join('\n')
     : '<div class="empty">No laws to show yet.</div>';
 
-  // On-page H1: category pages use the field label (already a keyword); the browse
-  // index gets a descriptive, keyword-bearing H1 instead of the bare nav word.
-  const h1 = kind === 'category' ? title : 'Named laws, principles & effects';
+  // On-page H1: category and reliability pages use their own title (already a
+  // keyword); the browse index gets a descriptive, keyword-bearing H1 instead of
+  // the bare nav word.
+  const h1 = (kind === 'category' || isReliability) ? title : 'Named laws, principles & effects';
+  // Reliability pages carry a one-line gloss of what the tier means (shared with
+  // the law page's reliability meter), so the facet is self-explaining.
+  const lede = isReliability && RELIABILITY_NOTE[reliabilityKey]
+    ? `    <p class="sec-lede">Every entry rated <b>${escapeHtml(reliabilityKey)}</b> — ${escapeHtml(RELIABILITY_NOTE[reliabilityKey])}. Filter by field with the chips, or see the <a href="${base}reliability/">whole reliability scale</a>.</p>\n`
+    : '';
   const section = `<section class="sec" id="index">
   <div class="wrap">
     <div class="sec-head">
       <h1>${escapeHtml(h1)}</h1>
       <span class="sub" id="showing">showing ${rows.length} of ${rows.length}</span>
     </div>
-    <div class="chips" id="chips">${chips}</div>
+${lede}    <div class="chips" id="chips">${chips}</div>
     <div class="grid" id="grid"${gridAttr}>
 ${grid}
     </div>
@@ -65,15 +78,17 @@ ${grid}
 </section>
 `;
 
-  // JSON-LD: DefinedTermSet for browse, BreadcrumbList for a category page.
-  const jsonld = kind === 'category'
+  // JSON-LD: DefinedTermSet for browse, BreadcrumbList for a category or
+  // reliability-tier page (both are sub-views under Browse).
+  const jsonld = (kind === 'category' || isReliability)
     ? [{
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}${base}` },
           { '@type': 'ListItem', position: 2, name: 'Browse', item: `${origin}${base}browse/` },
-          { '@type': 'ListItem', position: 3, name: title },
+          ...(isReliability ? [{ '@type': 'ListItem', position: 3, name: 'Reliability', item: `${origin}${base}reliability/` }] : []),
+          { '@type': 'ListItem', position: isReliability ? 4 : 3, name: title },
         ],
       }]
     : [{
@@ -83,17 +98,23 @@ ${grid}
         url: `${origin}${base}browse/`,
       }];
 
-  const description = kind === 'category'
-    ? `${title} — named laws, principles, and effects, each explained with examples, origin, and sources in The Law Tome.`
-    : 'Browse every named law, principle, and effect — each with its meaning, examples, origin, and sources. The complete index of The Law Tome.';
+  const description = isReliability
+    ? `${title} — named laws, principles, and effects rated ${reliabilityKey} (${RELIABILITY_NOTE[reliabilityKey] || 'see the reliability scale'}), each explained, cross-linked, and sourced in The Law Tome.`
+    : kind === 'category'
+      ? `${title} — named laws, principles, and effects, each explained with examples, origin, and sources in The Law Tome.`
+      : 'Browse every named law, principle, and effect — each with its meaning, examples, origin, and sources. The complete index of The Law Tome.';
 
   // SEO title: keyword-led and distinct from the on-page <h1> (which stays the
   // short section label). Category pages target "<Field> laws & principles".
-  const seoTitle = kind === 'category'
-    ? `${title} Laws & Principles — Meaning & Examples | The Law Tome`
-    : 'All Named Laws, Principles & Effects — Index | The Law Tome';
+  const seoTitle = isReliability
+    ? `${title} — Named Laws Rated ${reliabilityKey} | The Law Tome`
+    : kind === 'category'
+      ? `${title} Laws & Principles — Meaning & Examples | The Law Tome`
+      : 'All Named Laws, Principles & Effects — Index | The Law Tome';
 
-  const path = kind === 'category' ? `category/${categoryKey}/` : 'browse/';
+  const path = isReliability
+    ? `reliability/${reliabilitySlug(reliabilityKey)}/`
+    : kind === 'category' ? `category/${categoryKey}/` : 'browse/';
   return (
     head({ title: seoTitle, description, base, origin, path, jsonld }) +
     sprite() +

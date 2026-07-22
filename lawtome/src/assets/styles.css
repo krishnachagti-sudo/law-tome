@@ -146,6 +146,44 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
   .ten-vs{border-left:0;border-right:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 0}
 }
 
+/* law of the day + name-that-law quiz */
+.lotd{margin-bottom:34px}
+.lotd-eyebrow,.quiz-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.lotd-card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:24px;text-decoration:none;color:inherit;transition:border-color .2s;max-width:560px}
+.lotd-card:hover{border-color:var(--accent)}
+.lotd-top{display:flex;align-items:center;gap:12px}
+.lotd-no{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.05em}
+.lotd-name{font-family:var(--serif);font-weight:600;font-size:24px;letter-spacing:-.01em;color:var(--ink)}
+.lotd-say{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--muted);line-height:1.5}
+.lotd-fallback{font-family:var(--serif);color:var(--muted)}
+.quiz{margin-top:8px;max-width:640px}
+.quiz-stmt{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.45;color:var(--ink);border-left:3px solid var(--gold);padding-left:16px;margin:0 0 20px}
+.quiz-options{display:grid;gap:10px}
+.quiz-opt{font-family:var(--serif);font-size:16px;text-align:left;background:var(--surface);border:1px solid var(--line-strong);border-radius:3px;padding:12px 16px;cursor:pointer;transition:border-color .15s,background .15s;color:var(--ink)}
+.quiz-opt:hover:not(:disabled){border-color:var(--ink)}
+.quiz-opt:disabled{cursor:default}
+.quiz-opt.correct{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.quiz-opt.wrong{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.quiz-link{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--accent);text-decoration:none;padding:8px 2px}
+.quiz-foot{display:flex;align-items:center;justify-content:space-between;margin-top:20px;gap:16px}
+.quiz-score{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em}
+
+/* curated collections — themed groupings on the hub */
+.coll-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.coll-card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:22px;text-decoration:none;color:inherit;transition:border-color .2s}
+.coll-card:hover{border-color:var(--accent)}
+.coll-h{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:-.01em;color:var(--ink)}
+.coll-blurb{font-family:var(--serif);font-size:14.5px;color:var(--muted);line-height:1.55;flex:1}
+.coll-count{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.04em;text-transform:uppercase}
+
+/* reliability hub — one card per veracity tier */
+.rel-tiers{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.rel-tier{display:flex;flex-direction:column;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px;text-decoration:none;color:inherit;transition:border-color .2s}
+.rel-tier:hover{border-color:var(--accent)}
+.rt-top{display:flex;align-items:center;justify-content:space-between}
+.rt-count{font-family:var(--mono);font-size:22px;color:var(--ink);letter-spacing:-.01em}
+.rt-note{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--muted);line-height:1.5}
+
 /* graph band (always Codex-dark) */
 .graph-band{background:#141109;border-radius:3px;padding:44px 40px;position:relative;overflow:hidden;border:1px solid #2e2818}
 .graph-band .gb-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#d8a63f}

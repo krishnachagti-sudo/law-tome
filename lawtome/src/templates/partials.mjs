@@ -38,6 +38,21 @@ export function reliabilityClass(reliability) {
   return RELIABILITY_BADGE[reliability] || 'b-heu';
 }
 
+// The reliability scale, in strongest-to-weakest order, with a one-line gloss.
+// Shared so the law page, the browse/tier listings, and the reliability hub all
+// describe the same tiers identically (they diverged once on a badge key).
+export const RELIABILITY_TIERS = ['Empirical', 'Heuristic', 'Folk-adage', 'Contested'];
+export const RELIABILITY_NOTE = {
+  Empirical: 'grounded in studies or measurable evidence',
+  Heuristic: 'a dependable rule of thumb, not a proven theorem',
+  'Folk-adage': 'a proverb or saying, not a scientific finding',
+  Contested: 'disputed — the evidence is debated',
+};
+/** URL slug for a reliability value: 'Folk-adage' -> 'folk-adage'. */
+export function reliabilitySlug(reliability) {
+  return String(reliability || '').toLowerCase();
+}
+
 /**
  * One `.card` anchor for a law, faithful to the prototype's render() markup.
  * Shared by the browse/category listings and the Coined wing so the card shape
@@ -262,8 +277,8 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
       <p class="foot-blurb">A living, sourced index of named laws, principles, and effects — every entry traced to its origin and cited. No ads, no tracking of what you read.</p>
       <p class="foot-motto">Sapere aude.</p>
     </div>
-${col('Explore', [['browse/', 'Browse all'], ['graph/', 'The graph'], ['tension/', 'Laws in tension'], ['coined/', 'The Coined wing']])}
-${col('The project', [['about/', 'About & method'], ['coin/', 'Coin a law'], ['privacy/', 'Privacy']])}
+${col('Explore', [['browse/', 'Browse all'], ['collections/', 'Collections'], ['graph/', 'The graph'], ['tension/', 'Laws in tension'], ['reliability/', 'By reliability'], ['coined/', 'The Coined wing']])}
+${col('The project', [['about/', 'About & method'], ['quiz/', 'Law of the day'], ['coin/', 'Coin a law'], ['privacy/', 'Privacy']])}
   </div>
   <div class="wrap foot-rule">
     <span>Canon: attested &amp; verified. Coined: original, credited, clearly marked.</span>

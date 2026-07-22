@@ -15,6 +15,11 @@ import { graphPage } from '../src/templates/graph.mjs';
 import { coinPage, aboutPage, coinedIndex, privacyPage, notFoundPage } from '../src/templates/static-pages.mjs';
 import { tensionPage } from '../src/templates/tension.mjs';
 import { tensionPairs } from './relations.mjs';
+import { reliabilityHubPage } from '../src/templates/reliability.mjs';
+import { RELIABILITY_TIERS, reliabilitySlug } from '../src/templates/partials.mjs';
+import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
+import { resolveCollections } from './collections.mjs';
+import { quizPage } from '../src/templates/quiz.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng } from './quotecard.mjs';
@@ -116,6 +121,48 @@ export async function buildSite(opts) {
   // when a corpus has none), so the footer link never dangles.
   const tension = tensionPairs(laws);
   writes.push(writePage(join(out, 'tension', 'index.html'), tensionPage(tension, { base, origin, count: publishedCount })));
+
+  // Reliability (veracity) facet: a hub explaining the scale, plus one faceted
+  // listing per tier PRESENT in the corpus. Each tier page renders only its own
+  // laws and stamps data-reliability so the client keeps the subset. Canonical
+  // scale order; tiers with no members are skipped (no empty pages, no dead links).
+  const membersByTier = new Map();
+  for (const law of laws) {
+    const r = law.reliability;
+    if (!r) continue;
+    if (!membersByTier.has(r)) membersByTier.set(r, []);
+    membersByTier.get(r).push(law);
+  }
+  const presentTiers = RELIABILITY_TIERS.filter((v) => membersByTier.has(v));
+  writes.push(writePage(
+    join(out, 'reliability', 'index.html'),
+    reliabilityHubPage(presentTiers.map((v) => ({ value: v, count: membersByTier.get(v).length })), { base, origin, count: publishedCount }),
+  ));
+  for (const tier of presentTiers) {
+    writes.push(writePage(
+      join(out, 'reliability', reliabilitySlug(tier), 'index.html'),
+      listingPage(membersByTier.get(tier), { title: `${tier} laws`, base, kind: 'reliability', origin, reliabilityKey: tier }),
+    ));
+  }
+
+  // Curated collections: an editorial hub + one page per theme. The source file
+  // is optional (a corpus without it simply gets no collections); any slug that
+  // isn't in the corpus is dropped (no dead links), and empty collections are
+  // skipped. Slugs point at existing, already-validated entries only.
+  const collectionsFile = opts.collectionsFile ?? join(dirname(catFile), 'collections.json');
+  let rawCollections = [];
+  try { rawCollections = JSON.parse(await readFile(collectionsFile, 'utf8')); }
+  catch { rawCollections = []; }
+  const { collections, dropped: droppedColl } = resolveCollections(rawCollections, byslug);
+  if (droppedColl.length) console.warn(`collections: dropped ${droppedColl.length} unknown slug(s): ${droppedColl.join(', ')}`);
+  writes.push(writePage(join(out, 'collections', 'index.html'), collectionsIndexPage(collections, { base, origin, count: publishedCount })));
+  for (const c of collections) {
+    writes.push(writePage(join(out, 'collections', c.slug, 'index.html'), collectionPage(c, { base, origin, count: publishedCount })));
+  }
+
+  // Law of the day + name-that-law quiz: a static shell filled by assets/quiz.js
+  // (which fetches the search index). A learning/return loop, not a "law page".
+  writes.push(writePage(join(out, 'quiz', 'index.html'), quizPage({ base, origin, count: publishedCount })));
   // 404.html at the output root: the host serves it for unmatched paths. A
   // crawler-facing error page (noindex), not a "page", so it doesn't touch counts.
   writes.push(writePage(join(out, '404.html'), notFoundPage({ base, origin, count: publishedCount })));
@@ -136,6 +183,11 @@ export async function buildSite(opts) {
     'coined/',
     'privacy/',
     'tension/',                               // cross-corpus opposing-pairs view
+    'reliability/',                           // veracity facet hub
+    ...presentTiers.map((v) => `reliability/${reliabilitySlug(v)}/`),
+    'collections/',                           // curated-collections hub
+    ...collections.map((c) => `collections/${c.slug}/`),
+    'quiz/',                                  // law of the day + quiz
   ];
   writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate)));
   writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n# llms.txt: ${origin}${base}llms.txt\n`));
@@ -193,9 +245,10 @@ export async function buildSite(opts) {
   // per-category listings are reported in `listings`; the graph explorer is a
   // distinct page reported separately so no existing count assertion shifts.
   // `listings`: browse + present categories + the 4 Task 14 static pages (coin,
-  // about, coined, privacy) + the tension index. `pages` stays home + one page
-  // per law, unchanged.
-  return { pages: laws.length + 1, listings: 1 + present.length + 5, graph: 1, og: laws.length };
+  // about, coined, privacy) + the tension index + the reliability hub + one page
+  // per present reliability tier + the collections hub + one page per collection
+  // + the quiz page. `pages` stays home + one page per law, unchanged.
+  return { pages: laws.length + 1, listings: 1 + present.length + 5 + 1 + presentTiers.length + 1 + collections.length + 1, graph: 1, og: laws.length };
 }
 
 // CLI: only runs when invoked directly (so `npm run build` works, imports don't).

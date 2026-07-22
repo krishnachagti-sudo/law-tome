@@ -45,6 +45,14 @@
     return String(q || '').toLowerCase().trim().split(/\s+/).filter(Boolean);
   }
 
+  // Mirror of build/search-index.mjs STOPWORDS + contentTokens.
+  var STOPWORDS = {};
+  ('a an and or but so the of to in on at by for with without from as is are was were be been being it its this that these those i you we they he she them my your our their not no nor if then than too very just about into over under out up down do does did has have had will would can could should may might when where what which who whom how why get got make made keep kept feel felt your there here also more most some any each every')
+    .split(/\s+/).forEach(function (w) { STOPWORDS[w] = 1; });
+  function contentTokens(q) {
+    return tokenize(q).filter(function (t) { return t.length > 2 && !STOPWORDS[t]; });
+  }
+
   // Mirror of build/search-index.mjs rankRow: -1 miss, 1 statement-only, 2 name/alias.
   function rankRow(row, tokens) {
     if (!tokens.length) return -1;
@@ -58,17 +66,37 @@
     return inName ? 2 : 1;
   }
 
-  // Mirror of searchRows: token-AND filter, name-hits ranked first, stable order.
+  // Mirror of searchRows: token-AND, then a descriptive-sentence fallback.
   function searchRows(rows, query) {
     var tokens = tokenize(query);
     if (!tokens.length) return [];
+    // Phase 1 — token-AND (unchanged): precise path for names/short queries.
     var scored = [];
     for (var i = 0; i < rows.length; i++) {
       var score = rankRow(rows[i], tokens);
       if (score > 0) scored.push({ row: rows[i], score: score, i: i });
     }
-    scored.sort(function (a, b) { return (b.score - a.score) || (a.i - b.i); });
-    return scored.map(function (s) { return s.row; });
+    if (scored.length) {
+      scored.sort(function (a, b) { return (b.score - a.score) || (a.i - b.i); });
+      return scored.map(function (s) { return s.row; });
+    }
+    // Phase 2 — described-situation fallback: only when Phase 1 found nothing AND
+    // the query has >=4 content words. Score by how many content words appear in
+    // the blob (name/alias hits weigh double), keep rows with >=2, best first.
+    var content = contentTokens(query);
+    if (content.length < 4) return [];
+    var fuzzy = [];
+    for (var j = 0; j < rows.length; j++) {
+      var row = rows[j];
+      var nameBlob = ([row.name].concat(row.aliases || [])).join(' ').toLowerCase();
+      var hits = 0, nameHits = 0;
+      for (var k = 0; k < content.length; k++) {
+        if (row.blob.indexOf(content[k]) !== -1) { hits++; if (nameBlob.indexOf(content[k]) !== -1) nameHits++; }
+      }
+      if (hits >= 2) fuzzy.push({ row: row, score: hits * 2 + nameHits, i: j });
+    }
+    fuzzy.sort(function (a, b) { return (b.score - a.score) || (a.i - b.i); });
+    return fuzzy.map(function (s) { return s.row; });
   }
 
   // ---- card DOM builder. EVERY corpus string set via textContent (no innerHTML). --
@@ -121,6 +149,11 @@
     var activeCat = (grid && grid.getAttribute('data-cat'))
       || (onChip && onChip.getAttribute('data-c'))
       || 'all';
+    // A reliability-tier page stamps data-reliability on the grid. It is a FIXED
+    // facet (not changed by the category chips): the client keeps only that tier's
+    // rows, so category chips narrow within the tier instead of the client
+    // repainting the grid with the whole corpus.
+    var activeRel = (grid && grid.getAttribute('data-reliability')) || '';
     var query = '';
 
     // Honour a ?q= deep link — the WebSite SearchAction (sitelinks searchbox) and
@@ -148,6 +181,7 @@
 
     function filtered() {
       var base = query ? searchRows(rows, query) : rows.slice();
+      if (activeRel) base = base.filter(function (r) { return r.reliability === activeRel; });
       if (activeCat !== 'all') base = base.filter(function (r) { return r.category === activeCat; });
       return base;
     }

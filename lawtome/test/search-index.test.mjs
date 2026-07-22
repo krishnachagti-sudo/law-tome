@@ -1,6 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { buildSearchIndex, searchRows, rankRow, tokenize } from '../build/search-index.mjs';
+import { buildSearchIndex, searchRows, rankRow, tokenize, contentTokens } from '../build/search-index.mjs';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
+import { gzipSync } from 'node:zlib';
 const laws = [{slug:'goodharts-law', no:'014', name:"Goodhart's Law", aliases:['Goodhart–Strathern'], statement:'When a measure becomes a target…', category:'economics'}];
 const idx = buildSearchIndex(laws);
 test('row carries slug/no/name/category + a lowercased search blob', () => {
@@ -90,4 +93,62 @@ test('rows carry display-only reliability + related count, excluded from blob', 
   assert.equal(r.reliability, 'Folk-adage');
   assert.equal(r.rels, 2);
   assert.doesNotMatch(r.blob, /folk-adage/); // reliability is display-only, not searchable
+});
+
+// ---- situation / symptom search ---------------------------------------------
+
+test('blob gains concept keywords from meaning + examples (not whyItMatters)', () => {
+  const [r] = buildSearchIndex([{
+    slug: 'g', no: '1', name: 'G', aliases: [], statement: 'St', category: 'c',
+    meaning: 'targets stop measuring what matters', whyItMatters: 'incentives corrode metrics',
+    examples: [{ tag: 'Schools', text: 'teaching to the test' }],
+  }]);
+  // Content words from meaning + example text are present…
+  assert.match(r.blob, /\btargets\b/);
+  assert.match(r.blob, /\bmeasuring\b/);
+  assert.match(r.blob, /\bteaching\b/);
+  assert.match(r.blob, /\bschools\b/);
+  // …whyItMatters is deliberately NOT indexed (bulkiest, least discriminating)…
+  assert.doesNotMatch(r.blob, /incentives|corrode/);
+  // …and stopwords are dropped.
+  assert.doesNotMatch(r.blob, /\bwhat\b/);
+});
+
+test('contentTokens drops stopwords and short words', () => {
+  assert.deepEqual(contentTokens('we hit our sales target but it got worse'),
+    ['hit', 'sales', 'target', 'worse']);
+});
+
+const SIT = buildSearchIndex([
+  { slug: 'goodhart', no: '1', name: "Goodhart's Law", aliases: [], statement: 'a measure that becomes a target stops being good', category: 'economics',
+    // Situational vocabulary lives in meaning + examples (the indexed concept fields).
+    meaning: 'reward a sales metric and people optimise the number while product quality gets worse',
+    examples: [{ tag: 'Sales', text: 'teams chase the target and the product suffers' }] },
+  { slug: 'unrelated', no: '2', name: 'Boyle', aliases: [], statement: 'pressure times volume is constant', category: 'science',
+    meaning: 'a gas law about pressure and volume' },
+]);
+
+test('a described situation with no exact match finds the law via the fallback', () => {
+  // No single blob contains ALL these tokens, so token-AND yields nothing; the
+  // >=4-content-word fallback scores Goodhart top on "target/metric/product/worse".
+  const hits = searchRows(SIT, 'we hit our sales target but the product got worse').map((r) => r.slug);
+  assert.equal(hits[0], 'goodhart');
+  assert.ok(!hits.includes('unrelated'), 'the gas law should not match a metrics complaint');
+});
+
+test('the fallback never fires for short/keyword queries (Phase-1 behaviour preserved)', () => {
+  // 1-3 content words: if token-AND misses, we return nothing rather than fuzzy-match.
+  assert.deepEqual(searchRows(SIT, 'zzzznomatch'), []);
+  assert.deepEqual(searchRows(SIT, 'product elephant'), []); // 2 words, AND misses on 'elephant' -> []
+  // And an exact keyword still works via Phase 1.
+  assert.deepEqual(searchRows(SIT, 'goodhart').map((r) => r.slug), ['goodhart']);
+});
+
+// The client fetches search-index.json on load, so its size is a real budget.
+// The concept keywords roughly double the base; guard against silent bloat.
+test('the shipped search index stays within the client-fetch budget', () => {
+  const dir = 'src/data/laws';
+  const laws = readdirSync(dir).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(join(dir, f), 'utf8')));
+  const gz = gzipSync(JSON.stringify(buildSearchIndex(laws))).length;
+  assert.ok(gz < 260 * 1024, `search index is ${(gz / 1024).toFixed(0)}KB gzipped, over the 260KB budget`);
 });

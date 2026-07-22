@@ -48,14 +48,21 @@ import { join } from 'node:path';
 import { buildSite } from '../build/build.mjs';
 
 // Corpus-relative sitemap expectations, so adding a law (or a law in a new
-// category) never breaks the count. Locs = home + one per law + browse +
-// one per present category + graph + the 4 static pages (coin/about/coined/privacy).
+// category / reliability tier) never breaks the count. Locs = home + one per law
+// + browse + one per present category + graph + 5 static pages
+// (coin/about/coined/privacy/tension) + reliability hub + one per present tier.
 const LAW_FILES = readdirSync('src/data/laws').filter((f) => f.endsWith('.json'));
 const LAW_COUNT = LAW_FILES.length;
-const CAT_COUNT = new Set(
-  LAW_FILES.map((f) => JSON.parse(readFileSync(join('src/data/laws', f), 'utf8')).category),
-).size;
-const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5;
+const PARSED = LAW_FILES.map((f) => JSON.parse(readFileSync(join('src/data/laws', f), 'utf8')));
+const CAT_COUNT = new Set(PARSED.map((l) => l.category)).size;
+// Reliability facet: a hub page + one page per distinct reliability tier present.
+const TIER_COUNT = new Set(PARSED.map((l) => l.reliability).filter(Boolean)).size;
+// Collections: a hub page + one page per collection that resolves to >=1 real law.
+const SLUGS = new Set(PARSED.map((l) => l.slug));
+const RAW_COLL = JSON.parse(readFileSync('src/data/collections.json', 'utf8'));
+const COLL_COUNT = RAW_COLL.filter((c) => (c.laws || []).some((s) => SLUGS.has(s))).length;
+// + the quiz page (law of the day + name-that-law).
+const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + TIER_COUNT + 1 + COLL_COUNT + 1;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));
