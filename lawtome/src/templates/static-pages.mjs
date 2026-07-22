@@ -18,7 +18,7 @@
 //      links to the Privacy page, and the rights-grant + originality warranty copy
 //      (spec §13) is explicit.
 
-import { head, sprite, header, footer, escapeHtml, lawCard } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, reliabilityClass, RELIABILITY_TIERS, RELIABILITY_NOTE } from './partials.mjs';
 
 /**
  * "Coin a law" page — a form that POSTs to ${base}api/submit (no live rendering).
@@ -93,35 +93,63 @@ export function aboutPage({ base = '/', origin = '', count } = {}) {
   const description =
     'How The Law Tome is built and verified: enumerate-from-sources, a citation gate, adversarial verification, and source-resolution — curated by The Law Tome editorial team at Conyso, licensed CC BY.';
 
+  const n = count == null ? '—' : String(count);
+  const statCell = (v, l) => `      <div class="ht-cell"><span class="ht-n">${v}</span><span class="ht-l">${l}</span></div>`;
+  const step = (i, t, b) => `      <div class="mstep"><span class="mstep-n">${i}</span><div class="mstep-b"><span class="mstep-t">${t}</span><span class="mstep-p">${b}</span></div></div>`;
+  const tierRow = RELIABILITY_TIERS.map((tier) =>
+    `      <div class="tier-row"><span class="badge ${reliabilityClass(tier)}">${escapeHtml(tier)}</span><span class="tier-note">${escapeHtml(RELIABILITY_NOTE[tier])}</span></div>`,
+  ).join('\n');
+  const explore = (href, t) => `<a class="about-chip" href="${base}${href}">${t}</a>`;
+
   const section = `<section class="sec" id="about">
-  <div class="wrap narrow">
+  <div class="wrap">
     <div class="sec-head"><h1>About The Law Tome</h1></div>
-    <p class="lede">The Law Tome is a single, unified, sourced index of named laws, principles, and effects — one place instead of forty half-finished lists.</p>
-    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
+    <p class="sec-lede">The Law Tome is one unified, sourced index of named laws, principles, and effects — explained, cross-linked, and verified. One place instead of forty half-finished lists.</p>
 
-    <h2>How we keep it honest</h2>
-    <p>Every entry is built to be un-fabricated. Our method, in order:</p>
-    <ol class="method">
-      <li><b>Enumerate from sources.</b> Laws are drawn from the literature, not invented. We start from what is attested.</li>
-      <li><b>Citation gate.</b> No claim reaches a page without a resolvable source. An entry that cannot be cited does not ship.</li>
-      <li><b>Adversarial verification.</b> Each entry is checked against the sources by someone trying to break it — misattributions, apocrypha, and folk-embellishments are caught here.</li>
-      <li><b>Source-resolution.</b> We follow attributions back to the earliest reliable origin and record the reliability tier (Empirical, Heuristic, Folk-adage, or Contested) honestly, including when a law is contested.</li>
-    </ol>
+    <div class="ht-row about-stats">
+${statCell(n, 'named laws, principles &amp; effects')}
+${statCell('100%', 'sourced — every entry cited')}
+${statCell('4 tiers', 'of reliability, marked honestly')}
+${statCell('CC BY', 'free to reuse with credit')}
+    </div>
 
-    <h2>Canon and Coined</h2>
-    <p>The <b>Canon</b> is attested, verified, and sourced. The <b>Coined</b> wing holds original laws submitted by readers — credited, clearly marked, and machine-readable as <code>provenance: coined</code>. We never launder a coined law as historical, and we never dress up an unsourced claim as Canon.</p>
+    <h2 class="about-h2">Nothing here is invented</h2>
+    <p class="about-p">A named law is worthless if it is misattributed or made up. Every entry earns its place the same way, in order:</p>
+    <div class="method-steps about-method">
+${step('1', 'Drawn from sources', 'Laws come from the literature, never invented. We start from what is actually attested.')}
+${step('2', 'Cited, or it doesn’t ship', 'No claim reaches a page without a resolvable source. An entry that can’t be cited doesn’t exist.')}
+${step('3', 'Adversarially checked', 'Each entry is challenged by someone trying to break it — misattributions, apocrypha, and folk-embellishments get caught.')}
+${step('4', 'Traced &amp; rated', 'We follow each attribution to its earliest reliable origin and record its reliability tier honestly — including when it’s contested.')}
+    </div>
 
-    <h2>Licence</h2>
-    <p>The corpus is licensed <b>CC BY</b>: reuse it, remix it, build on it — just credit The Law Tome. There are no ads and no tracking of what you read.</p>
+    <h2 class="about-h2">The reliability scale</h2>
+    <p class="about-p">Not every “law” is proven, and we never pretend otherwise. Each entry wears one of four ratings, so you always know whether you’re quoting a finding or a folk saying:</p>
+    <div class="tier-scale">
+${tierRow}
+    </div>
 
-    <h2>Who curates it</h2>
-    <p>The Law Tome is curated and maintained by <b>The Law Tome editorial team</b> at <b>Conyso</b>, the publisher of this microsite. Curation is a standing editorial responsibility of the team, not a single byline. Corrections and sources are welcome — <a href="${base}coin/">suggest a law or a fix</a>.</p>
+    <h2 class="about-h2">Canon &amp; Coined</h2>
+    <div class="about-two">
+      <div class="about-card"><span class="about-card-h">Canon</span><p>Attested, verified, and sourced — the historical record of named laws. The vast majority of the index.</p></div>
+      <div class="about-card"><span class="about-card-h">Coined</span><p>Original laws submitted by readers — credited, clearly marked <code>provenance: coined</code>, never laundered as historical. <a href="${base}coin/">Coin one.</a></p></div>
+    </div>
+
+    <h2 class="about-h2">Open by design</h2>
+    <p class="about-p">The corpus is licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a> — reuse it, remix it, build on it, just credit The Law Tome. You can <a href="${base}data/">download the dataset</a> as JSON or CSV. No ads, and no tracking of what you read.</p>
+
+    <h2 class="about-h2">Who curates it</h2>
+    <p class="about-p">The Law Tome is curated and maintained by <b>The Law Tome editorial team</b> at <b>Conyso</b>, the publisher of this microsite — a standing editorial responsibility, not a single byline. Corrections and sources are welcome: <a href="${base}coin/">suggest a law or a fix</a>.</p>
+
+    <h2 class="about-h2">Start exploring</h2>
+    <div class="about-explore">
+      ${explore('browse/', 'Browse all')}${explore('situations/', 'What’s the law for…?')}${explore('graph/', 'The graph')}${explore('collections/', 'Collections')}${explore('tension/', 'Laws in tension')}${explore('reliability/', 'By reliability')}${explore('data/', 'Download the data')}
+    </div>
   </div>
 </section>
 `;
 
   return (
-    head({ title: 'About — The Law Tome', description, base, origin, path: 'about/' }) +
+    head({ title: 'About & Method — How The Law Tome Is Built | The Law Tome', description, base, origin, path: 'about/' }) +
     sprite() +
     header({ base, active: 'about', count }) +
     section +

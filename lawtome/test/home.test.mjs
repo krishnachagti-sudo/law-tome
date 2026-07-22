@@ -9,6 +9,25 @@ test('escapes </script> in inline featured JSON', () => assert.doesNotMatch(html
 test('embeds featured laws for the rotating hero', () => assert.match(html, /"slug":"a"/));
 test('wraps the directory in DefinedTermSet JSON-LD', () => assert.match(html, /"DefinedTermSet"/));
 
+// The landing grid is a capped, server-rendered SAMPLE (data-limit), never the
+// whole corpus dumped as thousands of cards.
+test('browse grid is a capped teaser, server-rendered', () => {
+  assert.match(html, /id="grid" data-limit="18"/);
+  assert.match(html, /class="card"/);               // teaser cards present with JS off
+  assert.match(html, /Browse all 212 laws/);        // CTA to the full index
+});
+
+// Marketing sections a landing page needs: a differentiator strip, a feature
+// showcase, and the anti-fabrication method — all present and linking out.
+test('homepage ships the marketing sections', () => {
+  assert.match(html, /class="sec home-trust"/);
+  assert.match(html, /class="sec home-features"/);
+  assert.match(html, /More than a list/);
+  assert.match(html, /Nothing here is invented/);
+  assert.match(html, /href="\/lawtome\/situations\/"/);
+  assert.match(html, /href="\/lawtome\/reliability\/"/);
+});
+
 // ---- added coverage (Task 5/6 lessons) ---------------------------------
 test('formats the published count with thousands separators', () => {
   const h = homePage(laws, { publishedCount: 1200, base: '/lawtome/' });

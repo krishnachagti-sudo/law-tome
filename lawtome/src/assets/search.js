@@ -154,6 +154,10 @@
     // rows, so category chips narrow within the tier instead of the client
     // repainting the grid with the whole corpus.
     var activeRel = (grid && grid.getAttribute('data-reliability')) || '';
+    // Homepage teaser: the grid carries data-limit so an idle (unfiltered) view
+    // shows only a sample, not all rows. Any active filter (query or category)
+    // reveals the full matches.
+    var LIMIT = grid ? (parseInt(grid.getAttribute('data-limit'), 10) || 0) : 0;
     var query = '';
 
     // Honour a ?q= deep link — the WebSite SearchAction (sitelinks searchbox) and
@@ -189,6 +193,9 @@
     function render() {
       if (!grid) return;
       var list = filtered();
+      // Cap to the teaser sample only when nothing is filtered (idle homepage).
+      var idle = !query && activeCat === 'all' && !activeRel;
+      if (LIMIT > 0 && idle && list.length > LIMIT) list = list.slice(0, LIMIT);
       grid.textContent = ''; // clear without innerHTML
       if (list.length) {
         var frag = document.createDocumentFragment();

@@ -22,7 +22,7 @@
 // client rotation writes via innerHTML (`hero`, `nameHtml`) are PRE-escaped in
 // the blob, so the rotation cannot inject markup either.
 
-import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard } from './partials.mjs';
 
 /**
  * Escape the statement, then wrap the accent phrase in <span class="accent">.
@@ -95,16 +95,87 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
 </section>
 `;
 
-  // ---- browse teaser (containers wired by Task 10) ----------------------
+  // ---- differentiator strip (why this, not a listicle) ------------------
+  const trustCell = (n, l) => `      <div class="ht-cell"><span class="ht-n">${n}</span><span class="ht-l">${l}</span></div>`;
+  const trust = `<section class="sec home-trust">
+  <div class="wrap ht-row">
+${trustCell(count, 'named laws, principles &amp; effects — one index')}
+${trustCell('Sourced', 'every entry traced to its origin and cited')}
+${trustCell('Cross-linked', 'a living graph of relations, not a flat list')}
+${trustCell('Rated', 'proven, heuristic, or folklore — marked honestly')}
+  </div>
+</section>
+`;
+
+  // ---- browse teaser: a SAMPLE of the index, server-rendered so it's
+  // visible with JS off and never balloons to all ${count} cards. The client
+  // (search.js) honours data-limit — it shows this sample until you search or
+  // pick a category, then reveals the full matches.
+  const teaserLaws = (Array.isArray(featuredLaws) ? featuredLaws : []).slice(0, 18);
+  const teaserCards = teaserLaws.map((l) => lawCard(l, base)).join('\n');
   const browse = `<section class="sec" id="index">
   <div class="wrap">
     <div class="sec-head">
       <h2>Browse the index of named laws</h2>
-      <span class="sub" id="showing">showing 0 of ${count}</span>
+      <span class="sub" id="showing">showing ${teaserLaws.length} of ${count}</span>
     </div>
     <div class="chips" id="chips"></div>
-    <div class="grid" id="grid"></div>
+    <div class="grid" id="grid" data-limit="18">
+${teaserCards}
+    </div>
     <div class="sec-more"><a class="ghost" href="${base}browse/"><i class="ti ti-list-details" aria-hidden="true"></i> Browse all ${count} laws</a></div>
+  </div>
+</section>
+`;
+
+  // ---- feature showcase: what a flat list can't do ----------------------
+  // Inline SVG icons (the icon FONT here is a tiny subset — see partials), all
+  // 24×24 line icons in the callout style.
+  const svg = (inner) => `<svg class="feat-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${inner}</svg>`;
+  const IC = {
+    feeling: svg('<path d="M20 14a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/><circle cx="10.5" cy="10" r="2"/><path d="M13.4 12.9l1.8 1.8"/>'),
+    tension: svg('<circle cx="6" cy="6" r="2.3"/><circle cx="6" cy="18" r="2.3"/><path d="M8.3 6H13l3.5 6-3.5 6H8.3"/><path d="M12 12h6"/>'),
+    shield: svg('<path d="M12 3l7 3v5c0 5-3.4 8.2-7 10-3.6-1.8-7-5-7-10V6z"/><path d="M9 12l2 2 4-4.5"/>'),
+    stack: svg('<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>'),
+    clock: svg('<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>'),
+    person: svg('<circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/>'),
+  };
+  const feat = (href, icon, title, body) =>
+    `      <a class="feat" href="${base}${href}">${icon}<span class="feat-t">${title}</span><span class="feat-b">${body}</span></a>`;
+  const features = `<section class="sec home-features">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>More than a list</h2>
+      <span class="sub">the things a flat A–Z can't give you</span>
+    </div>
+    <div class="feat-grid">
+${feat('situations/', IC.feeling, 'Describe the feeling', 'Don’t know the name? Say what’s happening — “we hit the target but the product got worse” — and land on the law that names it.')}
+${feat('tension/', IC.tension, 'Laws in tension', 'The principles that disagree, side by side — where one law’s advice is another’s warning.')}
+${feat('reliability/', IC.shield, 'Proven, or folklore?', 'Every entry is rated — from measured evidence to plain adage — so you always know what you’re quoting.')}
+${feat('collections/', IC.stack, 'Curated collections', 'Themed sets that cut across the index: the razors, why incentives backfire, laws every engineer learns.')}
+${feat('timeline/', IC.clock, 'A history of ideas', 'Walk the corpus by century — from ancient maxims to principles coined in living memory.')}
+${feat('named-after/', IC.person, 'By their namesake', 'Browse laws under the people behind them — the one-law figures and the thinkers with several.')}
+    </div>
+  </div>
+</section>
+`;
+
+  // ---- method / trust: the anti-fabrication promise, marketed -----------
+  const step = (n, t, b) => `      <div class="mstep"><span class="mstep-n">${n}</span><div class="mstep-b"><span class="mstep-t">${t}</span><span class="mstep-p">${b}</span></div></div>`;
+  const method = `<section class="sec home-method">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Nothing here is invented</h2>
+      <span class="sub">how we keep it honest</span>
+    </div>
+    <p class="home-method-lede">A named law is worthless if it’s misattributed or made up. Every entry earns its place the same way — no exceptions.</p>
+    <div class="method-steps">
+${step('1', 'Drawn from sources', 'Laws come from the literature, never invented. We start from what is actually attested.')}
+${step('2', 'Cited, or it doesn’t ship', 'No claim reaches a page without a resolvable source behind it.')}
+${step('3', 'Adversarially checked', 'Each entry is challenged — misattributions, apocrypha, and folk-embellishments get caught here.')}
+${step('4', 'Traced &amp; rated', 'We follow each law to its earliest reliable origin and rate its reliability honestly — including when it’s contested.')}
+    </div>
+    <div class="sec-more"><a class="ghost" href="${base}about/"><i class="ti ti-arrow-right" aria-hidden="true"></i> The full method</a></div>
   </div>
 </section>
 `;
@@ -221,8 +292,11 @@ const LAWS=${featuredJson};
     sprite() +
     header({ base, active: 'browse', count }) +
     hero +
+    trust +
     browse +
+    features +
     graphBand +
+    method +
     coinBand +
     footer({ base, scripts })
   );

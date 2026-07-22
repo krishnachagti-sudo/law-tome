@@ -78,7 +78,7 @@ export async function buildSite(opts) {
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
     // Home: first 12 laws as the featured rotation.
-    writePage(join(out, 'index.html'), homePage(laws.slice(0, 12), { publishedCount, base, origin })),
+    writePage(join(out, 'index.html'), homePage(laws.slice(0, 18), { publishedCount, base, origin })),
     // Prebuilt client-search index (a DATA file, not a "page"): fetched by
     // src/assets/search.js. Curated situation phrasing is folded in so a typed
     // problem description surfaces the mapped law. In the concurrent writes[] so
