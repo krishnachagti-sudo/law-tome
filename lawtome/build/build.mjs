@@ -22,6 +22,10 @@ import { resolveCollections } from './collections.mjs';
 import { quizPage } from '../src/templates/quiz.mjs';
 import { situationsPage } from '../src/templates/situations.mjs';
 import { resolveSituations, situationsBySlug } from './situations.mjs';
+import { audiencesIndexPage, audiencePage } from '../src/templates/audiences.mjs';
+import { resolveAudiences } from './audiences.mjs';
+import { featuresPage } from '../src/templates/features.mjs';
+import { manifestoPage } from '../src/templates/manifesto.mjs';
 import { eponymsPage } from '../src/templates/eponyms.mjs';
 import { eponymGroups } from './eponyms.mjs';
 import { timelinePage } from '../src/templates/timeline.mjs';
@@ -191,6 +195,21 @@ export async function buildSite(opts) {
   // state when a corpus has none), so the footer link never dangles.
   writes.push(writePage(join(out, 'situations', 'index.html'), situationsPage(situations, { base, origin, count: publishedCount })));
 
+  // Marketing: audience ("for …") pages, a features tour, and a manifesto.
+  // Audiences are curated persona shortlists (optional file; unknown slugs dropped).
+  const audiencesFile = opts.audiencesFile ?? join(dirname(catFile), 'audiences.json');
+  let rawAudiences = [];
+  try { rawAudiences = JSON.parse(await readFile(audiencesFile, 'utf8')); }
+  catch { rawAudiences = []; }
+  const { audiences, dropped: droppedAud } = resolveAudiences(rawAudiences, byslug);
+  if (droppedAud.length) console.warn(`audiences: dropped ${droppedAud.length} unknown slug(s): ${droppedAud.join(', ')}`);
+  writes.push(writePage(join(out, 'for', 'index.html'), audiencesIndexPage(audiences, { base, origin, count: publishedCount })));
+  for (const a of audiences) {
+    writes.push(writePage(join(out, 'for', a.slug, 'index.html'), audiencePage(a, { base, origin, count: publishedCount })));
+  }
+  writes.push(writePage(join(out, 'features', 'index.html'), featuresPage({ base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'manifesto', 'index.html'), manifestoPage({ base, origin, count: publishedCount })));
+
   // Eponym index + timeline: two more browse axes over existing fields
   // (namedAfter, coinedYear). No new corpus data.
   writes.push(writePage(join(out, 'named-after', 'index.html'), eponymsPage(eponymGroups(laws), { base, origin, count: publishedCount })));
@@ -237,6 +256,10 @@ export async function buildSite(opts) {
     'named-after/',                           // eponym index
     'timeline/',                              // by-era browse
     'data/',                                  // dataset download page (indexable)
+    'for/',                                   // audience hub
+    ...audiences.map((a) => `for/${a.slug}/`),
+    'features/',                              // product tour
+    'manifesto/',                             // positioning essay
   ];
   writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate)));
   writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n# llms.txt: ${origin}${base}llms.txt\n`));
@@ -297,9 +320,11 @@ export async function buildSite(opts) {
   // about, coined, privacy) + the tension index + the reliability hub + one page
   // per present reliability tier + the collections hub + one page per collection
   // + the quiz page + the situations page + named-after + timeline + saved + the
-  // data page (the .json/.csv downloads are data files, not listings). `pages`
-  // stays home + one page per law.
-  return { pages: laws.length + 1, listings: 1 + present.length + 5 + 1 + presentTiers.length + 1 + collections.length + 1 + 1 + 4, graph: 1, og: laws.length };
+  // data page (the .json/.csv downloads are data files, not listings) + the
+  // marketing pages: the audience hub + one page per audience + features +
+  // manifesto. `pages` stays home + one page per law.
+  const marketing = 1 + audiences.length + 1 + 1; // for hub + audiences + features + manifesto
+  return { pages: laws.length + 1, listings: 1 + present.length + 5 + 1 + presentTiers.length + 1 + collections.length + 1 + 1 + 4 + marketing, graph: 1, og: laws.length };
 }
 
 // CLI: only runs when invoked directly (so `npm run build` works, imports don't).

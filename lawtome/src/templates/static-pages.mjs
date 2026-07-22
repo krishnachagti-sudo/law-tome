@@ -29,11 +29,25 @@ export function coinPage({ base = '/', origin = '', count } = {}) {
   const description =
     'Coin an original law or suggest one for the Canon. Submissions are verified before publication and, if coined, credited to you in the Coined wing.';
 
-  const section = `<section class="sec" id="coin-form">
-  <div class="wrap narrow">
-    <div class="sec-head"><h1>Coin a law</h1></div>
-    <p class="lede">Noticed a pattern that has no name? Coin it. Submit an original law — if it holds up under source-resolution and adversarial verification, we publish it in the <a href="${base}coined/">Coined wing</a> with your name on it. Or <b>suggest</b> an existing, attested law for the Canon and point us at the sources.</p>
-    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
+  const coinStep = (i, t, b) => `      <div class="mstep"><span class="mstep-n">${i}</span><div class="mstep-b"><span class="mstep-t">${t}</span><span class="mstep-p">${b}</span></div></div>`;
+  const section = `<section class="sec" id="coin">
+  <div class="wrap">
+    <div class="sec-head"><h1>Coin a law</h1><span class="sub">nobody else lets you do this</span></div>
+    <p class="sec-lede">You’ve seen it a dozen times but it has no name — the pattern that keeps repeating, the effect everyone recognises and no one can point to. Name it. If it holds up, it goes into the <a href="${base}coined/">Coined wing</a> alongside Goodhart and Parkinson — credited, clearly marked, with your name on it. This is the one thing a static list can never offer: a way in.</p>
+
+    <div class="coin-how">
+      <h2 class="about-h2">How it works</h2>
+      <div class="method-steps coin-steps">
+${coinStep('1', 'Submit it', 'State your law in one testable sentence and tell us where it comes from, if anywhere. Two minutes, in the form below.')}
+${coinStep('2', 'We verify it', 'Every submission is reviewed by hand — checked for prior art, sourced where we can, and pressure-tested the same way the rest of the corpus is. Nothing ships unchecked.')}
+${coinStep('3', 'It’s published — with your name', 'If it clears, it becomes a real entry: explained, cross-linked into the graph, and marked as coined. Credited to you, forever, under CC BY.')}
+      </div>
+    </div>
+
+    <h2 class="about-h2">What makes a good one</h2>
+    <p class="sec-lede coin-what">A coinable law is a single, testable claim about how the world tends to work — sharp enough to be wrong, general enough to recur. Not a joke, not a definition, not a personal grievance. If you can picture three unrelated situations it explains, you’re close.</p>
+
+    <h2 class="about-h2">Submit</h2>
     <form class="coin-form" action="${base}api/submit" method="post">
       <label class="field">
         <span class="lbl">Your name (for credit)</span>
@@ -137,8 +151,8 @@ ${tierRow}
     <h2 class="about-h2">Open by design</h2>
     <p class="about-p">The corpus is licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a> — reuse it, remix it, build on it, just credit The Law Tome. You can <a href="${base}data/">download the dataset</a> as JSON or CSV. No ads, and no tracking of what you read.</p>
 
-    <h2 class="about-h2">Who curates it</h2>
-    <p class="about-p">The Law Tome is curated and maintained by <b>The Law Tome editorial team</b> at <b>Conyso</b>, the publisher of this microsite — a standing editorial responsibility, not a single byline. Corrections and sources are welcome: <a href="${base}coin/">suggest a law or a fix</a>.</p>
+    <h2 class="about-h2">An initiative by Conyso</h2>
+    <p class="about-p">The Law Tome is an initiative by <b><a href="${origin || 'https://conyso.com'}">Conyso</a></b>, its publisher, and is curated and maintained by the Law Tome editorial team — a standing editorial responsibility, not a single byline. Corrections and sources are always welcome: <a href="${base}coin/">suggest a law or a fix</a>.</p>
 
     <h2 class="about-h2">Start exploring</h2>
     <div class="about-explore">

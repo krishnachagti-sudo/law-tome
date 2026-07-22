@@ -225,6 +225,7 @@ export function sprite() {
 export function header({ base = '/', active, count } = {}) {
   const nav = [
     ['browse', 'browse/', 'Browse'],
+    ['features', 'features/', 'Features'],
     ['graph', 'graph/', 'The graph'],
     ['coin', 'coin/', 'Coin a law'],
     ['about', 'about/', 'About'],
@@ -275,11 +276,12 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
         <span class="brand-name">The Law Tome</span>
       </a>
       <p class="foot-blurb">A living, sourced index of named laws, principles, and effects — every entry traced to its origin and cited. No ads, no tracking of what you read.</p>
+      <p class="foot-conyso">An initiative by <a href="https://conyso.com">Conyso</a>.</p>
       <p class="foot-motto">Sapere aude.</p>
     </div>
-${col('Browse', [['browse/', 'All laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['reliability/', 'By reliability']])}
-${col('Discover', [['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['tension/', 'Laws in tension'], ['quiz/', 'Law of the day'], ['saved/', 'Saved laws']])}
-${col('The project', [['about/', 'About & method'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['privacy/', 'Privacy']])}
+${col('Browse', [['browse/', 'All laws'], ['for/', 'Find your laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['reliability/', 'By reliability']])}
+${col('Discover', [['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['tension/', 'Laws in tension'], ['features/', 'Features'], ['quiz/', 'Law of the day'], ['saved/', 'Saved laws']])}
+${col('The project', [['about/', 'About & method'], ['manifesto/', 'Why name a law?'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['privacy/', 'Privacy']])}
   </div>
   <div class="wrap foot-rule">
     <span>Canon: attested &amp; verified. Coined: original, credited, clearly marked.</span>
