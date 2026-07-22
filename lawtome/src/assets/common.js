@@ -3,8 +3,10 @@
   var root = document.documentElement;
   var saved = null;
   try { saved = localStorage.getItem('lt-theme'); } catch (e) {}
+  // Dark-first: the document ships data-theme="dark"; only drop to light when the
+  // visitor stored that choice or their OS explicitly prefers light.
   if (saved) root.setAttribute('data-theme', saved);
-  else if (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) root.setAttribute('data-theme', 'dark');
+  else if (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) root.setAttribute('data-theme', 'light');
 
   function wire() {
     var btn = document.getElementById('theme');

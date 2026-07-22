@@ -15,7 +15,7 @@
   var W = 900, H = 560, CX = W / 2, CY = H / 2;
   var MAX_NEIGHBOURS = 18;             // cap the fan so a hub stays readable
 
-  var TIER = { Empirical: '#8fbf6f', Heuristic: '#d8a63f', 'Folk-adage': '#b7ab86', Contested: '#e05a44' };
+  var TIER = { Empirical: '#82c07d', Heuristic: '#e0a43f', 'Folk-adage': '#b7ab86', Contested: '#df735b' };
   function tierColor(r) { return TIER[r] || '#c9bf9f'; }
   function isTension(kind) { return /oppos|contra|tension|versus|counter|rival|against/i.test(kind || ''); }
 
@@ -113,7 +113,7 @@
         var ln = svgEl('line');
         ln.setAttribute('x1', pa.x); ln.setAttribute('y1', pa.y);
         ln.setAttribute('x2', pb.x); ln.setAttribute('y2', pb.y);
-        ln.setAttribute('stroke', ctx ? '#3a3320' : (isTension(kind) ? '#e05a44' : '#7d6f43'));
+        ln.setAttribute('stroke', ctx ? '#2b303c' : (isTension(kind) ? '#df735b' : '#8a7440'));
         ln.setAttribute('stroke-width', ctx ? '1' : '1.6');
         ln.setAttribute('stroke-linecap', 'round');
         if (isTension(kind)) ln.setAttribute('stroke-dasharray', '5 5');
@@ -138,14 +138,14 @@
         var r = isFocus ? 15 : 8 + Math.min(6, deg(node) * 0.4);
         var dot = svgEl('circle');
         dot.setAttribute('r', r); dot.setAttribute('fill', tierColor(node.reliability));
-        dot.setAttribute('stroke', isFocus ? '#f1e7cf' : '#141109'); dot.setAttribute('stroke-width', isFocus ? '2.5' : '1.5');
+        dot.setAttribute('stroke', isFocus ? '#f0ece2' : '#0f1118'); dot.setAttribute('stroke-width', isFocus ? '2.5' : '1.5');
         g.appendChild(dot);
         var label = svgEl('text');
         label.setAttribute('font-family', "'Space Mono',monospace");
         label.setAttribute('font-size', isFocus ? '13' : '11');
-        label.setAttribute('fill', isFocus ? '#f6edd6' : '#e7dcbe');
+        label.setAttribute('fill', isFocus ? '#f6f1e6' : '#e4ddce');
         label.setAttribute('paint-order', 'stroke');
-        label.setAttribute('stroke', '#141109'); label.setAttribute('stroke-width', isFocus ? '4' : '3.5'); label.setAttribute('stroke-linejoin', 'round');
+        label.setAttribute('stroke', '#0f1118'); label.setAttribute('stroke-width', isFocus ? '4' : '3.5'); label.setAttribute('stroke-linejoin', 'round');
         // place label outward along the radial so neighbour labels splay apart
         if (isFocus) { label.setAttribute('text-anchor', 'middle'); label.setAttribute('y', r + 16); }
         else {

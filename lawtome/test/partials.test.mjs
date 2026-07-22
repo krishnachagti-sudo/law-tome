@@ -68,7 +68,7 @@ test('sprite also defines the wax and orn symbols', () => {
 });
 
 test('head opens the document/body and footer closes them (composable)', () => {
-  assert.match(head({ title:'X', base:'/lawtome/' }), /^<!DOCTYPE html>\n<html lang="en" data-theme="light">/);
+  assert.match(head({ title:'X', base:'/lawtome/' }), /^<!DOCTYPE html>\n<html lang="en" data-theme="dark">/);
   assert.match(head({ title:'X', base:'/lawtome/' }), /<body>\s*$/);
   assert.match(footer(), /<\/footer>[\s\S]*<\/body>\s*<\/html>\s*$/);
 });

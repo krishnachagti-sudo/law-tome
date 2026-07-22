@@ -190,16 +190,16 @@ ${step('4', 'Traced &amp; rated', 'We follow each law to its earliest reliable o
       <p>Follow Goodhart to Campbell to the Cobra Effect to Streisand. The relationship graph is the thing no flat list can give you.</p>
       <a class="ghost" href="${base}graph/"><i class="ti ti-affiliate" aria-hidden="true"></i> Explore the graph</a>
       <svg class="constellation" viewBox="0 0 440 300" aria-hidden="true">
-        <g stroke="#3c341f" stroke-width="1" fill="none">
+        <g stroke="#3b404e" stroke-width="1" fill="none">
           <path d="M120,150 L230,90"/><path d="M230,90 L330,140"/><path d="M330,140 L300,230"/>
           <path d="M300,230 L180,240"/><path d="M180,240 L120,150"/><path d="M230,90 L180,240"/>
           <path d="M330,140 L400,80"/><path d="M120,150 L60,90"/>
         </g>
-        <g class="node"><circle cx="230" cy="90" r="7" fill="#d8a63f" class="pulse"/><text x="242" y="86">Goodhart</text></g>
-        <g class="node"><circle cx="330" cy="140" r="5" fill="#e05a44"/><text x="342" y="144">Campbell</text></g>
+        <g class="node"><circle cx="230" cy="90" r="7" fill="#e0a43f" class="pulse"/><text x="242" y="86">Goodhart</text></g>
+        <g class="node"><circle cx="330" cy="140" r="5" fill="#df735b"/><text x="342" y="144">Campbell</text></g>
         <g class="node"><circle cx="300" cy="230" r="5" fill="#c9bf9f"/><text x="312" y="234">Cobra</text></g>
         <g class="node"><circle cx="180" cy="240" r="5" fill="#c9bf9f"/><text x="192" y="244">Streisand</text></g>
-        <g class="node"><circle cx="120" cy="150" r="6" fill="#d8a63f" class="pulse"/><text x="60" y="150" text-anchor="end" style="fill:#8a8168">Peter</text></g>
+        <g class="node"><circle cx="120" cy="150" r="6" fill="#e0a43f" class="pulse"/><text x="60" y="150" text-anchor="end" style="fill:#8a8168">Peter</text></g>
         <g class="node"><circle cx="400" cy="80" r="3.5" fill="#6e6650"/></g>
         <g class="node"><circle cx="60" cy="90" r="3.5" fill="#6e6650"/></g>
       </svg>

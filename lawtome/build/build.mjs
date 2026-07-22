@@ -284,8 +284,8 @@ export async function buildSite(opts) {
     start_url: base,
     scope: base,
     display: 'standalone',
-    background_color: '#e7e1d1',
-    theme_color: '#e7e1d1',
+    background_color: '#14161c',
+    theme_color: '#14161c',
     icons: [
       { src: `${base}assets/logo.svg`, type: 'image/svg+xml', sizes: 'any' },
       { src: `${base}icon-512.png`, type: 'image/png', sizes: '512x512', purpose: 'any' },

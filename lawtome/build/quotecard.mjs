@@ -10,10 +10,10 @@
 import { Resvg } from '@resvg/resvg-js';
 import { escapeHtml } from '../src/templates/partials.mjs';
 
-// Codex-dark palette (same hues as the site's dark theme).
-const BG = '#141109';   // near-black parchment
-const INK = '#f1e7cf';  // cream text
-const GOLD = '#d8a63f'; // gilt accents
+// Midnight palette (same hues as the site's dark-first theme).
+const BG = '#14161c';   // charcoal-ink field
+const INK = '#f0ece2';  // off-white text
+const GOLD = '#e0a43f'; // warm amber accent
 
 const W = 1200, H = 630;
 

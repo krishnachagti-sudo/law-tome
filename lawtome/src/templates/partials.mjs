@@ -103,7 +103,7 @@ export function head({ title, description, base = '/', origin = '', path, canoni
   const canon = canonical || (path != null ? `${origin}${base}${path}` : undefined);
   const out = [
     '<!DOCTYPE html>',
-    '<html lang="en" data-theme="light">',
+    '<html lang="en" data-theme="dark">',
     '<head>',
     '<meta charset="utf-8">',
     '<meta name="viewport" content="width=device-width, initial-scale=1">',
@@ -144,8 +144,8 @@ export function head({ title, description, base = '/', origin = '', path, canoni
   if (ogDesc) out.push(`<meta name="twitter:description" content="${escapeHtml(ogDesc)}">`);
   if (ogImage) out.push(`<meta name="twitter:image" content="${escapeHtml(ogImage)}">`);
   // Theme-color: match the masthead paper/ink so the browser chrome blends in.
-  out.push('<meta name="theme-color" content="#e7e1d1" media="(prefers-color-scheme: light)">');
-  out.push('<meta name="theme-color" content="#0c0b09" media="(prefers-color-scheme: dark)">');
+  out.push('<meta name="theme-color" content="#f4f1e8" media="(prefers-color-scheme: light)">');
+  out.push('<meta name="theme-color" content="#14161c" media="(prefers-color-scheme: dark)">');
   // Site identity: SVG favicon (modern browsers), a rasterised apple-touch-icon,
   // a web-app manifest, and RSS/Atom autodiscovery for the latest-entries feed.
   out.push(`<link rel="icon" href="${base}assets/logo.svg" type="image/svg+xml">`);
@@ -161,7 +161,7 @@ export function head({ title, description, base = '/', origin = '', path, canoni
   // Theme-init (flash-free dark mode) + reveal-arm: add `.anim` before first paint
   // so scroll-reveal never flashes, but ONLY when motion is allowed and IO exists —
   // otherwise content stays fully visible with no JS dependency.
-  out.push(`<script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('lt-theme')}catch(e){}if(t)d.setAttribute('data-theme',t);else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)d.setAttribute('data-theme','dark');try{if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)d.classList.add('anim')}catch(e){}})();</script>`);
+  out.push(`<script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('lt-theme')}catch(e){}if(t)d.setAttribute('data-theme',t);else if(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)d.setAttribute('data-theme','light');try{if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)d.classList.add('anim')}catch(e){}})();</script>`);
   out.push(`<script defer src="${base}assets/common.js"></script>`);
   if (Array.isArray(jsonld)) for (const block of jsonld) out.push(jsonLd(block));
   out.push('</head>');
