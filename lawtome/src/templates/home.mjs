@@ -73,7 +73,7 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
   const heroCat = first ? escapeHtml(first.category) : '';
   const heroAttrib = first ? `— <span class="who">${escapeHtml(first.name)}</span>` : '';
 
-  const hero = `<section class="hero" data-spotlight>
+  const hero = `<section class="hero">
   <svg class="hero-mark" viewBox="0 0 100 100" aria-hidden="true" data-parallax="0.16"><use href="#seal"/></svg>
   <div class="wrap">
     <div class="eyebrow">The largest unified, defined &amp; sourced index of named laws</div>
@@ -184,7 +184,7 @@ ${step('4', 'Traced &amp; rated', 'We follow each law to its earliest reliable o
   // ---- graph band -------------------------------------------------------
   const graphBand = `<section class="sec" id="graph" style="padding-top:12px">
   <div class="wrap">
-    <div class="graph-band" data-reveal="scale" data-spotlight>
+    <div class="graph-band" data-reveal="scale">
       <div class="gb-eyebrow">The connective tissue</div>
       <h2>Every law is a door to three others.</h2>
       <p>Follow Goodhart to Campbell to the Cobra Effect to Streisand. The relationship graph is the thing no flat list can give you.</p>
@@ -211,7 +211,7 @@ ${step('4', 'Traced &amp; rated', 'We follow each law to its earliest reliable o
   // ---- coin band --------------------------------------------------------
   const coinBand = `<section class="sec" id="coin" style="padding-top:12px">
   <div class="wrap">
-    <div class="coin" data-reveal="scale" data-spotlight>
+    <div class="coin" data-reveal="scale">
       <svg class="wax" viewBox="0 0 100 100" aria-hidden="true"><use href="#wax"/></svg>
       <div class="coin-body">
         <h2>Noticed a pattern that has no name?</h2>

@@ -644,11 +644,6 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .anim .constellation .node:nth-child(7) circle{animation:ltTwinkle 4.5s ease-in-out infinite}
 .anim .constellation .node:nth-child(8) circle{animation:ltTwinkle 6s ease-in-out .8s infinite}
 
-/* ---- pointer spotlight: a soft amber halo tracking the cursor (data-spotlight) ---- */
-[data-spotlight]{position:relative}
-[data-spotlight]::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s ease;background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--accent) 16%,transparent),transparent 60%);z-index:0}
-[data-spotlight]:hover::before{opacity:1}
-
 /* ---- micro-interactions ---- */
 .brand .mark{transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
 .brand:hover .mark{transform:rotate(-8deg) scale(1.08)}

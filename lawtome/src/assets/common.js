@@ -86,9 +86,8 @@
       }
     }
 
-    // 3) PARALLAX + POINTER SPOTLIGHT — cheap rAF-throttled transforms.
+    // 3) PARALLAX — cheap rAF-throttled scroll transform.
     var parallax = [].slice.call(document.querySelectorAll('[data-parallax]'));
-    var spots = [].slice.call(document.querySelectorAll('[data-spotlight]'));
     if (parallax.length) {
       var ticking = false;
       function onScroll() {
@@ -105,15 +104,6 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     }
-    // spotlight: a soft radial that follows the cursor inside the element, exposed
-    // to CSS as --mx/--my (percentages). Pure enhancement over the static glow.
-    spots.forEach(function (el) {
-      el.addEventListener('pointermove', function (ev) {
-        var r = el.getBoundingClientRect();
-        el.style.setProperty('--mx', ((ev.clientX - r.left) / r.width * 100) + '%');
-        el.style.setProperty('--my', ((ev.clientY - r.top) / r.height * 100) + '%');
-      });
-    });
 
     // 4) TILT — [data-tilt] leans a card toward the pointer in 3D, springing back
     // on leave. Small angles keep it tasteful rather than gimmicky.
