@@ -1,0 +1,55 @@
+{
+  "no": "1171",
+  "slug": "baldwins-rules",
+  "name": "Baldwin's Rules",
+  "statement": "Ring-closure reactions are favored or disfavored depending on ring size, the exo/endo mode, and the geometry (tet, trig, dig) of the attacked carbon.",
+  "statementAccent": "favored or disfavored depending on ring size",
+  "meaning": "Baldwin's rules are guidelines predicting which intramolecular ring-closure reactions proceed easily and which are geometrically hindered. Each cyclization is classified by three descriptors: the ring size being formed, whether the breaking bond is inside (endo) or outside (exo) the ring, and the hybridization of the atom under attack (tetrahedral tet, trigonal trig, or digonal dig). Combinations are labeled favored or disfavored.",
+  "mechanism": "The rules rest on the preferred trajectory of the attacking nucleophile toward the target atom. Attack prefers about 180 degrees (backside, Walden inversion) for tet centers, the roughly 109-degree Bürgi-Dunitz angle for trig centers, and about 120 degrees for dig centers. Ring geometry that cannot let the nucleophile reach this angle makes the closure disfavored.",
+  "examples": [
+    {
+      "tag": "tet closures",
+      "text": "5-exo-tet is favored, whereas 5-endo-tet is disfavored because the required backside trajectory cannot be met."
+    },
+    {
+      "tag": "dig closures",
+      "text": "5-endo-dig is favored, and exo-dig closures across small-to-medium rings are generally favored."
+    },
+    {
+      "tag": "trig closures",
+      "text": "3- to 7-exo-trig closures are favored, while 3- to 5-endo-trig closures are disfavored."
+    }
+  ],
+  "whyItMatters": "Baldwin's rules give synthetic chemists a fast predictive framework for designing cyclizations and anticipating which ring sizes will form cleanly. They are widely used in planning total syntheses and in rationalizing observed regiochemistry.",
+  "limits": "They are guidelines with exceptions, derived assuming a second-period atom at the reacting center, and they often fail for rings containing heavier atoms from later periods. Cationic cyclizations and certain templated or geometrically constrained systems can also violate them.",
+  "misreadings": "\"Disfavored\" means kinetically hindered, not strictly impossible; disfavored closures can still occur under forcing conditions or when alternative pathways are blocked.",
+  "origin": "Sir Jack Baldwin, British chemist (1938–2020), proposed the rules in 1976.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1976,
+  "namedAfter": "Jack Edward Baldwin",
+  "sources": [
+    {
+      "text": "Wikipedia's article on Baldwin's rules, classifying closures by ring size, exo/endo, and tet/trig/dig geometry with preferred attack angles — supports the statement, mechanism, and examples.",
+      "url": "https://en.wikipedia.org/wiki/Baldwin%27s_rules",
+      "type": "secondary"
+    },
+    {
+      "text": "Wikipedia's biography of Sir Jack Baldwin, confirming his dates and that Baldwin's rules for ring closure are his work — supports the attribution.",
+      "url": "https://en.wikipedia.org/wiki/Jack_Baldwin_(chemist)",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Baldwin%27s_rules",
+  "related": [
+    {
+      "slug": "bredts-rule",
+      "kind": "kindred"
+    },
+    {
+      "slug": "markovnikovs-rule",
+      "kind": "kindred"
+    }
+  ]
+}

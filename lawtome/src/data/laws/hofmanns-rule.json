@@ -1,0 +1,55 @@
+{
+  "no": "1169",
+  "slug": "hofmanns-rule",
+  "name": "Hofmann's Rule",
+  "statement": "With a bulky base or bulky leaving group, elimination gives mainly the less substituted, least stable alkene, the Hofmann product.",
+  "statementAccent": "the less substituted, least stable alkene",
+  "meaning": "Hofmann's rule describes the regiochemistry opposite to Zaitsev's. When an elimination is directed by steric bulk, the major alkene is the least substituted one — the Hofmann product — rather than the most stable one. It is classically associated with the Hofmann elimination of quaternary ammonium hydroxides, but also with bulky bases in ordinary E2 reactions.",
+  "mechanism": "A bulky leaving group such as a trialkylammonium group, or a bulky base, makes the more hindered internal beta-hydrogens hard to reach. The base therefore abstracts a more accessible hydrogen, typically from a terminal, less substituted position. This kinetic, sterically controlled deprotonation yields the less substituted alkene despite its lower thermodynamic stability.",
+  "examples": [
+    {
+      "tag": "Hofmann elimination sequence",
+      "text": "Exhaustive methylation of an amine to a quaternary ammonium salt, conversion to the hydroxide with silver oxide, then heating, preferentially eliminates to the less substituted alkene."
+    },
+    {
+      "tag": "Bulky base in E2",
+      "text": "Treating 2-bromobutane with a bulky base such as potassium tert-butoxide favors but-1-ene (the Hofmann product) over but-2-ene."
+    },
+    {
+      "tag": "trans-Cyclooctene synthesis",
+      "text": "A Hofmann elimination is used in the synthesis of trans-cyclooctene, with the bulky ammonium leaving group directing the elimination."
+    }
+  ],
+  "whyItMatters": "Hofmann's rule shows that regiochemistry is controllable: by switching to bulky bases or leaving groups, chemists can deliberately obtain the terminal, less substituted alkene. It also underlies structural degradation methods historically used to map amine structures.",
+  "limits": "It applies when steric effects dominate the transition state. With small bases and good leaving groups, Zaitsev selectivity returns. Substrate geometry and the specific base and solvent can shift the ratio.",
+  "misreadings": "Hofmann selectivity is not \"unstable products always win\"; it reflects steric control of which beta-hydrogen is removed, not a preference for instability per se.",
+  "origin": "Named after August Wilhelm von Hofmann (1818–1892), who described the elimination in his work on organic bases in 1851.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1851,
+  "namedAfter": "August Wilhelm von Hofmann",
+  "sources": [
+    {
+      "text": "Wikipedia's article on the Hofmann elimination, stating the least substituted alkene (the Hofmann product) is formed due to steric bulk of the leaving group — supports the statement and mechanism.",
+      "url": "https://en.wikipedia.org/wiki/Hofmann_elimination",
+      "type": "secondary"
+    },
+    {
+      "text": "Wikipedia's biography of August Wilhelm von Hofmann, confirming his dates and that the Hofmann elimination is named after him — supports the attribution.",
+      "url": "https://en.wikipedia.org/wiki/August_Wilhelm_von_Hofmann",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Hofmann_elimination",
+  "related": [
+    {
+      "slug": "zaitsevs-rule",
+      "kind": "tension"
+    },
+    {
+      "slug": "markovnikovs-rule",
+      "kind": "kindred"
+    }
+  ]
+}

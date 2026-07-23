@@ -1,0 +1,55 @@
+{
+  "no": "1179",
+  "slug": "ficks-principle",
+  "name": "Fick's Principle",
+  "statement": "Cardiac output equals oxygen consumption divided by the arteriovenous oxygen content difference.",
+  "statementAccent": "oxygen consumption divided by the arteriovenous oxygen content difference",
+  "meaning": "The blood flow through the lungs, and thus cardiac output, can be calculated by dividing whole-body oxygen consumption by the difference in oxygen content between arterial and mixed venous blood. It converts a measurable rate of oxygen uptake into a measurement of how much blood the heart pumps per minute.",
+  "mechanism": "The oxygen taken up by the body per minute must equal the blood flow multiplied by the amount of oxygen each unit of blood gains passing through the lungs, which is the arterial minus venous oxygen content. Rearranging gives flow equals oxygen consumption over the arteriovenous oxygen difference, using oxygen as a marker of conservation of mass.",
+  "examples": [
+    {
+      "tag": "Resting adult estimate",
+      "text": "With oxygen consumption of about 250 mL/min and an arteriovenous difference of about 50 mL/L, cardiac output computes to roughly 5 L/min."
+    },
+    {
+      "tag": "Cardiac catheterization",
+      "text": "In the cath lab, sampling arterial and mixed venous (pulmonary artery) blood with measured oxygen uptake yields cardiac output by the Fick method."
+    },
+    {
+      "tag": "Renal blood flow analog",
+      "text": "The same principle with para-aminohippurate as the marker substance is used to estimate renal blood flow."
+    }
+  ],
+  "whyItMatters": "It provides a reference method for measuring cardiac output against which other techniques are compared, and it is used in cardiac catheterization to assess heart function and shunts. The underlying mass-balance logic generalizes to measuring blood flow to any organ with a suitable marker.",
+  "limits": "The direct method requires cumbersome collection of expired gas and blood sampling and is rarely used routinely; assumed-Fick estimates of oxygen consumption are commonly substituted, adding error. Accuracy falls at very high outputs, with small arteriovenous differences, and with intracardiac shunts, and it assumes steady-state conditions.",
+  "misreadings": "\"Assumed Fick\" outputs rely on estimated rather than measured oxygen consumption and can be significantly inaccurate, so they should not be treated as equivalent to the direct measurement.",
+  "origin": "Adolf Eugen Fick, German physiologist (1829–1901), first described it in 1870.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1870,
+  "namedAfter": "Adolf Eugen Fick",
+  "sources": [
+    {
+      "text": "Wikipedia's article on the Fick principle, giving the equation cardiac output = oxygen consumption / (arterial − venous oxygen content) and the 1870 origin — supports the statement, equation, and origin.",
+      "url": "https://en.wikipedia.org/wiki/Fick_principle",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Calculating FICK Cardiac Output and Input,\" StatPearls (NCBI Bookshelf), stating cardiac output = tissue oxygen consumption / (arterial − venous oxygen content) and attributing it to Adolf Fick — supports the equation and clinical application.",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK606091/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fick_principle",
+  "related": [
+    {
+      "slug": "the-frank-starling-law-of-the-heart",
+      "kind": "kindred"
+    },
+    {
+      "slug": "poiseuilles-law",
+      "kind": "kindred"
+    }
+  ]
+}

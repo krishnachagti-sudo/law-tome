@@ -1,0 +1,51 @@
+{
+  "no": "1170",
+  "slug": "bredts-rule",
+  "name": "Bredt's Rule",
+  "statement": "A carbon-carbon double bond cannot form at the bridgehead of a small bridged bicyclic ring system without prohibitive strain.",
+  "statementAccent": "at the bridgehead of a small bridged bicyclic ring system",
+  "meaning": "Bredt's rule states that a bridgehead atom of a bridged ring system cannot normally be part of a carbon-carbon double bond, because such a double bond would have to be trans in at least one of the rings. In small ring systems this forces severe geometric distortion. Compounds that violate it are called anti-Bredt olefins.",
+  "mechanism": "A double bond requires its two carbons and their substituents to be roughly coplanar with aligned p-orbitals for pi overlap. At the bridgehead of a small bicyclic framework, the rigid ring geometry cannot accommodate this without large ring strain and angle strain, destabilizing or preventing the alkene. Stability improves as the rings grow larger.",
+  "examples": [
+    {
+      "tag": "1-Norbornene",
+      "text": "Bicyclo[2.2.1]hept-1-ene (1-norbornene) is a classic anti-Bredt olefin, so strained that it is highly reactive and not isolable under ordinary conditions."
+    },
+    {
+      "tag": "Origin in terpene chemistry",
+      "text": "Bredt derived the rule from failed attempts to place double bonds at bridgeheads in camphane- and pinane-type bicyclic terpene derivatives."
+    },
+    {
+      "tag": "Large-ring exceptions",
+      "text": "Anti-Bredt alkenes become isolable when the ring system is large enough, and recent work has trapped strained anti-Bredt olefins as reactive intermediates."
+    }
+  ],
+  "whyItMatters": "The rule guides synthetic chemists in judging whether a target bridgehead alkene is feasible and in avoiding structures that will not form. It sharpened understanding of how ring strain and orbital geometry govern which pi bonds are attainable.",
+  "limits": "It is a guideline tied to ring size, not an absolute prohibition: sufficiently large bridged systems tolerate bridgehead double bonds. It also does not straightforwardly apply to formal double bonds drawn on hypervalent heteroatoms.",
+  "misreadings": "\"Impossible\" overstates it; anti-Bredt alkenes exist but are strained and reactive, and the cutoff depends on ring size rather than being a hard ban.",
+  "origin": "Julius Bredt, German chemist (1855–1937), discussed the idea in 1902 and formalized the rule in 1924.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1924,
+  "namedAfter": "Julius Bredt",
+  "sources": [
+    {
+      "text": "Wikipedia's article on Bredt's rule, stating a bridgehead double bond must be trans in at least one ring and is strained in small systems — supports the statement, mechanism, and limits.",
+      "url": "https://en.wikipedia.org/wiki/Bredt%27s_rule",
+      "type": "secondary"
+    },
+    {
+      "text": "Wikipedia's biography of Julius Bredt, confirming his dates and that he proposed in 1924 that a double bond cannot sit at the bridgehead of a bridged ring — supports the attribution and date.",
+      "url": "https://en.wikipedia.org/wiki/Julius_Bredt",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Bredt%27s_rule",
+  "related": [
+    {
+      "slug": "hofmanns-rule",
+      "kind": "kindred"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "no": "1177",
+  "slug": "wallaces-rule-of-nines",
+  "name": "Wallace's Rule of Nines",
+  "statement": "In adults each arm is 9%, each leg 18%, the front and back torso 18% each, and the head 9% of total body surface area.",
+  "statementAccent": "each arm is 9%, each leg 18%",
+  "meaning": "The rule divides an adult body into regions each representing about 9%, or a multiple of 9%, of total body surface area, so a clinician can rapidly estimate the percentage burned. It is a quick emergency and pre-hospital tool for sizing a burn, not a precise measurement.",
+  "mechanism": "The body is partitioned into anatomical blocks whose surface areas are approximated as multiples of nine: head and neck 9%, each arm 9%, front torso 18%, back torso 18%, each leg 18%, and the perineum 1%. Summing the affected blocks yields an estimated total body surface area burned that guides fluid and triage decisions.",
+  "examples": [
+    {
+      "tag": "Both legs",
+      "text": "Full-thickness burns to both entire legs sum to 18% + 18% = 36% of total body surface area."
+    },
+    {
+      "tag": "Back plus one leg",
+      "text": "A burned back (18%) plus one entire leg (18%) gives an estimated 36% of total body surface area."
+    },
+    {
+      "tag": "Pediatric adjustment",
+      "text": "In young children the head is counted as roughly 18% and each leg proportionally less, reflecting a larger head."
+    }
+  ],
+  "whyItMatters": "Total body surface area burned drives fluid resuscitation formulas such as the Parkland formula and decisions about transfer to a burn center. The rule of nines provides that estimate at the bedside within seconds when precise tools are unavailable.",
+  "limits": "It is designed for adults and is inaccurate in young children, who have proportionally larger heads and smaller legs. It is less accurate in obese patients, tends to overestimate scattered burns, and depends on subjective assessment; the Lund-Browder chart is preferred when accuracy matters.",
+  "misreadings": "The eponym overstates Wallace's originality; the underlying scheme was described earlier by Pulaski and Tennison (1947), and Wallace popularized it.",
+  "origin": "Alexander Burns Wallace, British plastic surgeon, who published the rule in 1951; an earlier form is credited to Pulaski and Tennison (1947).",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1951,
+  "namedAfter": "Alexander Burns Wallace",
+  "sources": [
+    {
+      "text": "Wikipedia's article on the Wallace rule of nines, giving the regional percentages, the 1951 attribution, and the limitations — supports the statement, origin, and limits.",
+      "url": "https://en.wikipedia.org/wiki/Wallace_rule_of_nines",
+      "type": "secondary"
+    },
+    {
+      "text": "Moore RA, Waheed A, Burns B, \"Rule of Nines,\" StatPearls (NCBI Bookshelf), listing head 9%, trunk 36%, upper extremities 18%, lower extremities 36%, groin 1% — supports the regional percentages and clinical use.",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK513287/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Wallace_rule_of_nines",
+  "related": [
+    {
+      "slug": "courvoisiers-law",
+      "kind": "kindred"
+    }
+  ]
+}
