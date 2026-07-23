@@ -36,9 +36,18 @@
   ],
   "whyItMatters": "For half a century it was the metronome of the digital age: product roadmaps, software ambitions, and whole business models were built on the assumption that compute would keep getting exponentially cheaper. Understanding that it is an economic trend and not a physical guarantee matters most now, as it slows.",
   "working": [
-    {"lead": "Plan for exponential change", "text": "when the trend holds, design for the compute you'll have in a few years, not just today's — capabilities that look expensive now may be cheap by the time you ship at scale."},
-    {"lead": "Don't assume it lasts forever", "text": "the doubling is slowing as physical limits approach; roadmaps that bank on indefinite free scaling are increasingly fragile."},
-    {"lead": "Mind Wirth's law", "text": "hardware gains are easily eaten by software bloat; efficiency still has to be earned, not assumed from the trend."}
+    {
+      "lead": "Plan for exponential change",
+      "text": "when the trend holds, design for the compute you'll have in a few years, not just today's — capabilities that look expensive now may be cheap by the time you ship at scale."
+    },
+    {
+      "lead": "Don't assume it lasts forever",
+      "text": "the doubling is slowing as physical limits approach; roadmaps that bank on indefinite free scaling are increasingly fragile."
+    },
+    {
+      "lead": "Mind Wirth's law",
+      "text": "hardware gains are easily eaten by software bloat; efficiency still has to be earned, not assumed from the trend."
+    }
   ],
   "limits": "Moore's law is an observation, not a law of nature — no physical principle guarantees it, and its pace has slowed since about 2010 as scaling approaches atomic and quantum-tunnelling limits and fabrication costs soar. Its 'death' has been declared many times (an Nvidia chief called it dead in 2022; Intel's disagreed days later). It is also partly self-fulfilling: because the industry explicitly targeted the roadmap, its persistence reflects coordinated intent as much as technological inevitability. It describes transistor density; the popular reading as a law of ever-doubling 'speed' conflates it with the separate, and now-broken, Dennard scaling.",
   "misreadings": "It is not a physical law, and not a promise that computers double in speed every two years — it is about transistor count and cost, was originally stated as yearly (1965) before Moore revised it to two years (1975), and the '18 months' version is David House's performance figure, not Moore's.",
@@ -50,13 +59,35 @@
   "popularYear": 1975,
   "namedAfter": "Gordon Moore",
   "sources": [
-    {"text": "Moore, G.E. (19 April 1965). \"Cramming more components onto integrated circuits.\" Electronics, 38(8), 114 ff.", "url": "https://www.cs.utexas.edu/~fussell/courses/cs352h/papers/moore.pdf", "type": "primary"},
-    {"text": "Moore's law, Wikipedia. — the 1965 original and 1975 revision, the House '18 months' misattribution, Dennard-scaling breakdown, and the recent slowdown.", "url": "https://en.wikipedia.org/wiki/Moore%27s_law", "type": "secondary"},
-    {"text": "Computer History Museum. \"1965: 'Moore's Law' Predicts the Future of Integrated Circuits.\"", "url": "https://www.computerhistory.org/siliconengine/moores-law-predicts-the-future-of-integrated-circuits/", "type": "secondary"}
+    {
+      "text": "Moore, G.E. (19 April 1965). \"Cramming more components onto integrated circuits.\" Electronics, 38(8), 114 ff.",
+      "url": "https://www.cs.utexas.edu/~fussell/courses/cs352h/papers/moore.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Moore's law, Wikipedia. — the 1965 original and 1975 revision, the House '18 months' misattribution, Dennard-scaling breakdown, and the recent slowdown.",
+      "url": "https://en.wikipedia.org/wiki/Moore%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Computer History Museum. \"1965: 'Moore's Law' Predicts the Future of Integrated Circuits.\"",
+      "url": "https://www.computerhistory.org/siliconengine/moores-law-predicts-the-future-of-integrated-circuits/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Moore%27s_law",
   "related": [
-    {"slug": "metcalfes-law", "kind": "kindred"},
-    {"slug": "amaras-law", "kind": "kindred"}
+    {
+      "slug": "metcalfes-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "amaras-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "groschs-law",
+      "kind": "tension"
+    }
   ]
 }

@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is the mathematics of learning from evidence, underpinning modern statistics, machine learning, medical diagnosis, and rational updating of belief generally. It is also the corrective to the base-rate fallacy, showing exactly how prior prevalence should temper the reading of any test.",
   "working": [
-    {"lead": "Start from the base rate", "text": "anchor your estimate on the prior probability, then update it by the evidence, rather than reading the evidence in isolation."},
-    {"lead": "Weigh the evidence by its surprise", "text": "let evidence that is unlikely except under the hypothesis move belief most, and evidence common regardless move it least."},
-    {"lead": "Never use priors of zero or one", "text": "keep some probability open, per Cromwell's rule, so that strong future evidence can still shift your belief."}
+    {
+      "lead": "Start from the base rate",
+      "text": "anchor your estimate on the prior probability, then update it by the evidence, rather than reading the evidence in isolation."
+    },
+    {
+      "lead": "Weigh the evidence by its surprise",
+      "text": "let evidence that is unlikely except under the hypothesis move belief most, and evidence common regardless move it least."
+    },
+    {
+      "lead": "Never use priors of zero or one",
+      "text": "keep some probability open, per Cromwell's rule, so that strong future evidence can still shift your belief."
+    }
   ],
   "limits": "The theorem itself is a proven mathematical identity, a direct consequence of the definition of conditional probability, and is not contested. The controversy is over Bayesian inference — the methodology of using it to update degrees of belief. The main objections are the subjectivity of choosing a prior, so different analysts can reach different conclusions; the historical computational cost, eased by modern sampling methods; and the frequentist objection to assigning probabilities to fixed hypotheses at all. The disagreement is philosophical and practical, not about the mathematics.",
   "misreadings": "The theorem is exact and uncontested; what is debated is the inference method built on it, chiefly the choice of prior. It is also not a licence to ignore base rates — the whole point is that the prior must temper the evidence, which is exactly what the base-rate fallacy forgets.",
@@ -45,12 +54,26 @@
   "coinedYear": 1763,
   "namedAfter": "Thomas Bayes",
   "sources": [
-    {"text": "Bayes' theorem, Wikipedia. — the statement, the Bayes/Price/Laplace origin, and the medical example.", "url": "https://en.wikipedia.org/wiki/Bayes%27_theorem", "type": "secondary"},
-    {"text": "Bayesian probability, Wikipedia. — the Bayesian-versus-frequentist debate and the subjectivity of priors.", "url": "https://en.wikipedia.org/wiki/Bayesian_probability", "type": "secondary"}
+    {
+      "text": "Bayes' theorem, Wikipedia. — the statement, the Bayes/Price/Laplace origin, and the medical example.",
+      "url": "https://en.wikipedia.org/wiki/Bayes%27_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Bayesian probability, Wikipedia. — the Bayesian-versus-frequentist debate and the subjectivity of priors.",
+      "url": "https://en.wikipedia.org/wiki/Bayesian_probability",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Bayes%27_theorem",
   "related": [
-    {"slug": "the-base-rate-fallacy", "kind": "kindred"},
-    {"slug": "cromwells-rule", "kind": "kindred"}
+    {
+      "slug": "the-base-rate-fallacy",
+      "kind": "tension"
+    },
+    {
+      "slug": "cromwells-rule",
+      "kind": "kindred"
+    }
   ]
 }

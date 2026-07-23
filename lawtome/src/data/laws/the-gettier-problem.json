@@ -2,7 +2,10 @@
   "no": "673",
   "slug": "the-gettier-problem",
   "name": "The Gettier Problem",
-  "aliases": ["Gettier cases", "Gettier counterexamples"],
+  "aliases": [
+    "Gettier cases",
+    "Gettier counterexamples"
+  ],
   "statement": "You can have a justified true belief and still not know, if it is true only by luck.",
   "statementAccent": "still not know, if it is true only by luck",
   "meaning": "The Gettier problem is a challenge in epistemology, the theory of knowledge, raised by the philosopher Edmund Gettier in his short 1963 paper Is Justified True Belief Knowledge, published in the journal Analysis. For centuries knowledge was widely analysed as justified true belief: you know something if you believe it, it is true, and you have good justification for believing it. Gettier presented brief counterexamples in which all three conditions are met yet we would not say the person knows. In these cases a belief is justified and happens to be true, but its truth is a matter of luck, disconnected from the reasons that justify it. This showed that justified true belief is not sufficient for knowledge, launching a large project of trying to add a fourth condition or otherwise repair the analysis, a project on which no single solution has won consensus.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The Gettier problem is one of the most influential contributions to twentieth-century epistemology, overturning a definition of knowledge that had stood in some form since antiquity. In three pages it showed that the long-accepted justified-true-belief analysis is inadequate, and it set the agenda for decades of work on what knowledge is, spawning reliabilist, anti-luck, causal, and other theories. It also brought to the fore the role of epistemic luck, the insight that a belief's being true by accident, however well justified, falls short of knowledge. Because no proposed repair has achieved consensus, the problem endures as a central open question, and its brief, elegant counterexamples remain a model of how a well-chosen case can unseat an entrenched philosophical assumption.",
   "working": [
-    {"lead": "Start from justified true belief", "text": "take the traditional analysis that knowledge is belief that is true and well justified, and test it against cases."},
-    {"lead": "Insert lucky truth", "text": "construct a case where the justification rests on something misleading yet the belief is true by coincidence, so the truth is disconnected from the reasons."},
-    {"lead": "Withhold knowledge", "text": "notice that we deny the person knows, showing justified true belief is not enough and motivating a further, anti-luck condition."}
+    {
+      "lead": "Start from justified true belief",
+      "text": "take the traditional analysis that knowledge is belief that is true and well justified, and test it against cases."
+    },
+    {
+      "lead": "Insert lucky truth",
+      "text": "construct a case where the justification rests on something misleading yet the belief is true by coincidence, so the truth is disconnected from the reasons."
+    },
+    {
+      "lead": "Withhold knowledge",
+      "text": "notice that we deny the person knows, showing justified true belief is not enough and motivating a further, anti-luck condition."
+    }
   ],
   "limits": "The Gettier problem shows that justified true belief is not sufficient for knowledge, but it does not by itself say what should be added, and no proposed fourth condition or alternative analysis has won general acceptance, so the correct account of knowledge remains open. Some philosophers respond by rejecting the project of analysing knowledge into conditions at all, or by treating knowledge as unanalysable. A minority question whether the intuitions driving Gettier cases are universal, and experimental work has probed how widely they are shared. So the problem is best understood as a durable challenge that reshaped epistemology rather than a puzzle with a settled solution, and debate over how to answer it continues.",
   "misreadings": "Gettier did not show that knowledge is impossible or that justification is worthless; he showed only that belief, truth, and justification together are not sufficient, since their truth can be a matter of luck. The problem is not solved by any one agreed patch, so presenting a particular fourth condition as the accepted answer misstates the state of the debate. And the cases are not about carelessness but about luck: the believer reasons well and is justified, yet the disconnect between the justification and the truth is what withholds knowledge.",
@@ -46,12 +58,30 @@
   "coinedYear": 1963,
   "namedAfter": "Edmund Gettier",
   "sources": [
-    {"text": "Gettier problem, Wikipedia. — Gettier's 1963 paper, the refutation of justified true belief as knowledge, the role of luck, the stopped-clock and false-premise cases, and the search for a fourth condition.", "url": "https://en.wikipedia.org/wiki/Gettier_problem", "type": "secondary"},
-    {"text": "The Analysis of Knowledge, Stanford Encyclopedia of Philosophy. — the justified-true-belief analysis, Gettier's counterexamples, and the main responses including no-false-lemmas and anti-luck conditions.", "url": "https://plato.stanford.edu/entries/knowledge-analysis/", "type": "secondary"}
+    {
+      "text": "Gettier problem, Wikipedia. — Gettier's 1963 paper, the refutation of justified true belief as knowledge, the role of luck, the stopped-clock and false-premise cases, and the search for a fourth condition.",
+      "url": "https://en.wikipedia.org/wiki/Gettier_problem",
+      "type": "secondary"
+    },
+    {
+      "text": "The Analysis of Knowledge, Stanford Encyclopedia of Philosophy. — the justified-true-belief analysis, Gettier's counterexamples, and the main responses including no-false-lemmas and anti-luck conditions.",
+      "url": "https://plato.stanford.edu/entries/knowledge-analysis/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Gettier_problem",
   "related": [
-    {"slug": "the-brain-in-a-vat", "kind": "kindred"},
-    {"slug": "the-philosophical-zombie", "kind": "tension"}
+    {
+      "slug": "the-brain-in-a-vat",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-philosophical-zombie",
+      "kind": "tension"
+    },
+    {
+      "slug": "justified-true-belief",
+      "kind": "tension"
+    }
   ]
 }

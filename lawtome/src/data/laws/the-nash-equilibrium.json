@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is the central solution concept of non-cooperative game theory, the standard prediction for how rational players will act when their fates are intertwined. It underlies analysis across economics, political science, biology, and computer science, and it earned Nash a share of the 1994 Nobel Prize.",
   "working": [
-    {"lead": "Look for mutual best responses", "text": "to predict how a strategic situation resolves, find the strategy profile where no player can gain by deviating alone."},
-    {"lead": "Consider mixed strategies", "text": "when no stable pure-strategy outcome exists, look for an equilibrium in which players randomise, as in matching pennies."},
-    {"lead": "Do not assume it is good", "text": "remember an equilibrium can be inefficient and need not be unique, so identifying one does not mean it is the best outcome."}
+    {
+      "lead": "Look for mutual best responses",
+      "text": "to predict how a strategic situation resolves, find the strategy profile where no player can gain by deviating alone."
+    },
+    {
+      "lead": "Consider mixed strategies",
+      "text": "when no stable pure-strategy outcome exists, look for an equilibrium in which players randomise, as in matching pennies."
+    },
+    {
+      "lead": "Do not assume it is good",
+      "text": "remember an equilibrium can be inefficient and need not be unique, so identifying one does not mean it is the best outcome."
+    }
   ],
   "limits": "An equilibrium need not be unique — many games have several, raising the problem of which will actually be played — and it need not be efficient, as the prisoner's dilemma shows, where the equilibrium is worse for everyone than an available alternative. It rests on strong assumptions: that players are rational, correctly anticipate others' strategies, and typically share common knowledge of the game, conditions rarely fully met. Some equilibria rely on non-credible threats, motivating refinements. And real human behaviour in experiments often departs from Nash predictions, so its descriptive accuracy is a modelling question distinct from the settled mathematics.",
   "misreadings": "It is not necessarily the best or a unique outcome — equilibria can be inefficient, and a game may have many. And its existence theorem holds for finite games and may require mixed strategies, so it does not promise a pure-strategy solution in every case.",
@@ -45,12 +54,30 @@
   "coinedYear": 1951,
   "namedAfter": "John Forbes Nash",
   "sources": [
-    {"text": "Nash equilibrium, Wikipedia. — the best-response definition, the existence theorem, the examples, and the non-uniqueness and inefficiency caveats.", "url": "https://en.wikipedia.org/wiki/Nash_equilibrium", "type": "secondary"},
-    {"text": "Nash, \"Non-Cooperative Games,\" Annals of Mathematics 54(2):286-295 (1951). — the existence theorem.", "url": "https://gwern.net/doc/statistics/decision/1951-nash.pdf", "type": "primary"}
+    {
+      "text": "Nash equilibrium, Wikipedia. — the best-response definition, the existence theorem, the examples, and the non-uniqueness and inefficiency caveats.",
+      "url": "https://en.wikipedia.org/wiki/Nash_equilibrium",
+      "type": "secondary"
+    },
+    {
+      "text": "Nash, \"Non-Cooperative Games,\" Annals of Mathematics 54(2):286-295 (1951). — the existence theorem.",
+      "url": "https://gwern.net/doc/statistics/decision/1951-nash.pdf",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Nash_equilibrium",
   "related": [
-    {"slug": "the-prisoners-dilemma", "kind": "kindred"},
-    {"slug": "the-minimax-theorem", "kind": "kindred"}
+    {
+      "slug": "the-prisoners-dilemma",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-minimax-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-ultimatum-game",
+      "kind": "tension"
+    }
   ]
 }

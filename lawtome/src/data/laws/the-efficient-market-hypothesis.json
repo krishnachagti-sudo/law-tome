@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is the central organising idea of modern finance, the benchmark against which every claim to beat the market is measured, and the intellectual engine behind the index-fund industry. Its robust core — that consistent risk-adjusted outperformance is very hard and most active managers fail — is well supported, even as its stronger claims remain among the most debated propositions in economics.",
   "working": [
-    {"lead": "Doubt easy edges", "text": "treat claims of a reliable, repeatable way to beat the market with deep suspicion, since competition tends to erase them."},
-    {"lead": "Prefer low-cost diversification", "text": "given how hard outperformance is after costs, favour broad, cheap index investing over costly stock-picking."},
-    {"lead": "Separate efficiency from correctness", "text": "read the hypothesis as a claim about information and difficulty of outperformance, not that prices are always right."}
+    {
+      "lead": "Doubt easy edges",
+      "text": "treat claims of a reliable, repeatable way to beat the market with deep suspicion, since competition tends to erase them."
+    },
+    {
+      "lead": "Prefer low-cost diversification",
+      "text": "given how hard outperformance is after costs, favour broad, cheap index investing over costly stock-picking."
+    },
+    {
+      "lead": "Separate efficiency from correctness",
+      "text": "read the hypothesis as a claim about information and difficulty of outperformance, not that prices are always right."
+    }
   ],
   "limits": "The hypothesis is contested. Behavioural finance points to excess volatility, bubbles, and documented anomalies — value, momentum, size, calendar effects — that strain strict efficiency, and to crashes like the dot-com collapse and 2008 as episodes where prices detached from fundamentals. The Grossman-Stiglitz paradox shows perfect efficiency is impossible in principle. And the joint-hypothesis problem means efficiency can never be tested apart from a pricing model, making it hard to confirm or refute. The honest verdict: approximately right about the difficulty of outperformance, not a literal account of always-correct prices.",
   "misreadings": "Efficiency does not mean prices are always correct or equal to true value — information can be incomplete or wrong, and what counts as a correct price depends on a pricing model. It does not require that investors be perfectly rational; offsetting errors and arbitrage can keep prices informationally efficient even with some irrational traders. And it does not say no one ever makes money or gets lucky; it denies a reliable, repeatable edge, not chance. A random walk in prices is related evidence but not the same claim.",
@@ -45,12 +54,31 @@
   "coinedYear": 1970,
   "namedAfter": "Eugene Fama",
   "sources": [
-    {"text": "Fama, \"Efficient Capital Markets: A Review of Theory and Empirical Work,\" Journal of Finance 25(2):383-417 (1970). — the definitive statement and the three-form taxonomy.", "url": "https://ideas.repec.org/a/bla/jfinan/v25y1970i2p383-417.html", "type": "primary"},
-    {"text": "Grossman & Stiglitz, \"On the Impossibility of Informationally Efficient Markets,\" American Economic Review 70(3):393-408 (1980). — the paradox that perfect efficiency removes the incentive to gather information.", "url": "https://www.aeaweb.org/aer/top20/70.3.393-408.pdf", "type": "primary"},
-    {"text": "Shiller, \"From Efficient Markets Theory to Behavioral Finance,\" Journal of Economic Perspectives (2003). — the excess-volatility and behavioural critique.", "url": "https://www.aeaweb.org/articles?id=10.1257%2F089533003321164967", "type": "primary"}
+    {
+      "text": "Fama, \"Efficient Capital Markets: A Review of Theory and Empirical Work,\" Journal of Finance 25(2):383-417 (1970). — the definitive statement and the three-form taxonomy.",
+      "url": "https://ideas.repec.org/a/bla/jfinan/v25y1970i2p383-417.html",
+      "type": "primary"
+    },
+    {
+      "text": "Grossman & Stiglitz, \"On the Impossibility of Informationally Efficient Markets,\" American Economic Review 70(3):393-408 (1980). — the paradox that perfect efficiency removes the incentive to gather information.",
+      "url": "https://www.aeaweb.org/aer/top20/70.3.393-408.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Shiller, \"From Efficient Markets Theory to Behavioral Finance,\" Journal of Economic Perspectives (2003). — the excess-volatility and behavioural critique.",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2F089533003321164967",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Efficient-market_hypothesis",
   "related": [
-    {"slug": "the-random-walk-hypothesis", "kind": "kindred"}
+    {
+      "slug": "the-random-walk-hypothesis",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-greater-fool-theory",
+      "kind": "tension"
+    }
   ]
 }

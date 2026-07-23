@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It reshaped macroeconomics, driving the field toward microfounded models built on deep parameters and expectations, and remains a permanent caution against reading past correlations as stable policy levers. Lucas won the 1995 Nobel for developing and applying rational expectations, which this critique put at the centre of the discipline.",
   "working": [
-    {"lead": "Distrust historical correlations under new policy", "text": "before predicting a policy's effect, ask whether the relationship you are relying on would itself shift once the policy changes."},
-    {"lead": "Reach for deep parameters", "text": "base policy evaluation on preferences, technology, and constraints, which are more likely invariant, rather than on reduced-form coefficients."},
-    {"lead": "Model expectations explicitly", "text": "treat how people anticipate and respond to the policy rule as part of the analysis, not a fixed background."}
+    {
+      "lead": "Distrust historical correlations under new policy",
+      "text": "before predicting a policy's effect, ask whether the relationship you are relying on would itself shift once the policy changes."
+    },
+    {
+      "lead": "Reach for deep parameters",
+      "text": "base policy evaluation on preferences, technology, and constraints, which are more likely invariant, rather than on reduced-form coefficients."
+    },
+    {
+      "lead": "Model expectations explicitly",
+      "text": "treat how people anticipate and respond to the policy rule as part of the analysis, not a fixed background."
+    }
   ],
   "limits": "The critique is a methodological argument, not an empirical law, and its practical magnitude is contested. Several studies find that reduced-form relationships often do not show the parameter instability the critique predicts across documented policy shifts, treating it as a testable hypothesis with mixed support. The counter-evidence runs both ways. Even the microfounded models built to be critique-proof have been found to have unstable deep parameters, raising doubt about whether truly policy-invariant parameters exist. Its core logic is widely accepted; how much it matters in practice is not settled.",
   "misreadings": "It does not say forecasting is impossible or that all econometrics is worthless — only that relationships estimated under one policy regime cannot be assumed to hold when the regime changes. And it is a specific claim about expectations shifting behaviour, not a vague warning that models are imperfect.",
@@ -45,11 +54,26 @@
   "coinedYear": 1976,
   "namedAfter": "Robert Lucas",
   "sources": [
-    {"text": "Lucas critique, Wikipedia. — the statement, the deep-versus-reduced-form distinction, and the Phillips-curve example.", "url": "https://en.wikipedia.org/wiki/Lucas_critique", "type": "secondary"},
-    {"text": "Lucas (1976) bibliographic record, IDEAS/RePEc. — the paper's title, volume, and pages.", "url": "https://ideas.repec.org/a/eee/crcspp/v1y1976ip19-46.html", "type": "primary"}
+    {
+      "text": "Lucas critique, Wikipedia. — the statement, the deep-versus-reduced-form distinction, and the Phillips-curve example.",
+      "url": "https://en.wikipedia.org/wiki/Lucas_critique",
+      "type": "secondary"
+    },
+    {
+      "text": "Lucas (1976) bibliographic record, IDEAS/RePEc. — the paper's title, volume, and pages.",
+      "url": "https://ideas.repec.org/a/eee/crcspp/v1y1976ip19-46.html",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Lucas_critique",
   "related": [
-    {"slug": "goodharts-law", "kind": "kindred"}
+    {
+      "slug": "goodharts-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-phillips-curve",
+      "kind": "tension"
+    }
   ]
 }

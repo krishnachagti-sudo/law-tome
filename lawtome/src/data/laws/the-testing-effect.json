@@ -2,7 +2,10 @@
   "no": "297",
   "slug": "the-testing-effect",
   "name": "The Testing Effect",
-  "aliases": ["Retrieval practice", "Test-enhanced learning"],
+  "aliases": [
+    "Retrieval practice",
+    "Test-enhanced learning"
+  ],
   "statement": "Retrieving a fact from memory fixes it better than reading it again.",
   "statementAccent": "better than reading it again",
   "meaning": "The act of retrieving information from memory — testing yourself — strengthens long-term retention more than spending the same time restudying the material. A test is not merely a measurement of what you know; the effort of recall itself changes memory and improves later recall. Practising retrieval beats rereading for making learning last.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It overturns the intuition that tests only measure learning by showing that they cause it, one of the most practically important results in the science of study. It explains why rereading, which feels productive, is among the weaker strategies, and why self-testing, which feels harder, is among the strongest — a lesson with direct force for how students and teachers should spend their time.",
   "working": [
-    {"lead": "Test, don't just reread", "text": "practise recalling material from memory rather than rereading it, since retrieval builds far more durable retention."},
-    {"lead": "Add feedback", "text": "check your answers after retrieving, especially for material you are likely to get wrong, to correct errors before they set."},
-    {"lead": "Trust the harder path", "text": "prefer the effortful feeling of self-testing over the easy fluency of rereading, which flatters without teaching."}
+    {
+      "lead": "Test, don't just reread",
+      "text": "practise recalling material from memory rather than rereading it, since retrieval builds far more durable retention."
+    },
+    {
+      "lead": "Add feedback",
+      "text": "check your answers after retrieving, especially for material you are likely to get wrong, to correct errors before they set."
+    },
+    {
+      "lead": "Trust the harder path",
+      "text": "prefer the effortful feeling of self-testing over the easy fluency of rereading, which flatters without teaching."
+    }
   ],
   "limits": "It is among the more replicated findings in cognitive psychology, confirmed by large meta-analyses, but it has boundary conditions. It works best when the initial test permits reasonably high success and comes relatively soon after learning, and feedback matters most where initial recall is weak. Some researchers argue the benefit can shrink for very complex, interconnected material, a live debate, with the practical fix of building understanding first and testing after. Transfer of the benefit to genuinely novel questions is more contested than the same-material effect. And much foundational work rests on undergraduate samples.",
   "misreadings": "A test is not only an assessment — it is itself a learning event, the central correction this research makes. Rereading is not the best way to study; it produces fluency and confidence but comparatively weak long-term retention, and its ease misleads. And the effect is not mere re-exposure: restudy groups re-experience all of the material, yet still lose to testing at a delay, so it is the retrieval, not the second look, that does the work.",
@@ -46,13 +58,35 @@
   "coinedYear": 2006,
   "namedAfter": "Henry Roediger and Jeffrey Karpicke",
   "sources": [
-    {"text": "Roediger & Karpicke, \"Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention,\" Psychological Science 17(3):249-255 (2006). — the prose-passage experiments and the delayed-test crossover.", "url": "https://journals.sagepub.com/doi/10.1111/j.1467-9280.2006.01693.x", "type": "primary"},
-    {"text": "Adesope, Trevisan & Sundararajan, \"Rethinking the Use of Tests: A Meta-Analysis of Practice Testing,\" Review of Educational Research 87(3):659-701 (2017). — practice testing outperforming restudy across 118 articles.", "url": "https://journals.sagepub.com/doi/abs/10.3102/0034654316689306", "type": "primary"},
-    {"text": "Karpicke & Blunt, \"Retrieval Practice Produces More Learning than Elaborative Studying with Concept Mapping,\" Science 331(6018):772-775 (2011). — retrieval practice and transfer.", "url": "https://www.science.org/doi/10.1126/science.1199327", "type": "primary"}
+    {
+      "text": "Roediger & Karpicke, \"Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention,\" Psychological Science 17(3):249-255 (2006). — the prose-passage experiments and the delayed-test crossover.",
+      "url": "https://journals.sagepub.com/doi/10.1111/j.1467-9280.2006.01693.x",
+      "type": "primary"
+    },
+    {
+      "text": "Adesope, Trevisan & Sundararajan, \"Rethinking the Use of Tests: A Meta-Analysis of Practice Testing,\" Review of Educational Research 87(3):659-701 (2017). — practice testing outperforming restudy across 118 articles.",
+      "url": "https://journals.sagepub.com/doi/abs/10.3102/0034654316689306",
+      "type": "primary"
+    },
+    {
+      "text": "Karpicke & Blunt, \"Retrieval Practice Produces More Learning than Elaborative Studying with Concept Mapping,\" Science 331(6018):772-775 (2011). — retrieval practice and transfer.",
+      "url": "https://www.science.org/doi/10.1126/science.1199327",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Testing_effect",
   "related": [
-    {"slug": "the-spacing-effect", "kind": "kindred"},
-    {"slug": "the-serial-position-effect", "kind": "kindred"}
+    {
+      "slug": "the-spacing-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-serial-position-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-google-effect",
+      "kind": "tension"
+    }
   ]
 }

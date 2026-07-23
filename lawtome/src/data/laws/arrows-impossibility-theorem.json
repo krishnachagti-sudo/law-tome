@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is the founding result of social choice theory and a permanent caution against the search for a perfect voting system: every ranked method must compromise some fairness principle. It reshaped how economists and political theorists think about aggregating preferences and won Arrow the Nobel Prize.",
   "working": [
-    {"lead": "Expect every ranked method to compromise", "text": "when choosing a voting rule, accept that it must violate at least one fairness condition, and decide which trade-off you can live with."},
-    {"lead": "Consider cardinal methods with care", "text": "rated systems like approval and score voting escape Arrow's theorem by using preference strength, though they face their own impossibility in Gibbard's theorem."},
-    {"lead": "Restrict the domain where you can", "text": "where preferences are genuinely single-peaked, majority rule regains coherence and a median-voter winner exists."}
+    {
+      "lead": "Expect every ranked method to compromise",
+      "text": "when choosing a voting rule, accept that it must violate at least one fairness condition, and decide which trade-off you can live with."
+    },
+    {
+      "lead": "Consider cardinal methods with care",
+      "text": "rated systems like approval and score voting escape Arrow's theorem by using preference strength, though they face their own impossibility in Gibbard's theorem."
+    },
+    {
+      "lead": "Restrict the domain where you can",
+      "text": "where preferences are genuinely single-peaked, majority rule regains coherence and a median-voter winner exists."
+    }
   ],
   "limits": "The theorem constrains only ordinal, ranked aggregation. Cardinal or rated methods — approval voting, score voting — fall outside it because they use preference-strength information that its framework excludes, though they do not escape impossibility entirely, being subject instead to the Gibbard–Satterthwaite theorem on manipulability. Independence of irrelevant alternatives is the most contested condition, some arguing it is too strong. And the result depends on unrestricted domain: realistic single-peaked preferences can restore a fair rule. The mathematics is settled; its practical significance is debated.",
   "misreadings": "It does not say democracy is impossible or that all voting is worthless — only that no ranked method is perfect on every count at once. And it applies to ranked systems specifically: rated methods sidestep it, so 'no fair voting system exists' overstates a theorem about ordinal aggregation.",
@@ -45,11 +54,30 @@
   "coinedYear": 1951,
   "namedAfter": "Kenneth Arrow",
   "sources": [
-    {"text": "Arrow's impossibility theorem, Wikipedia. — the conditions, the ordinal-versus-cardinal caveat, and the Condorcet ancestry.", "url": "https://en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem", "type": "secondary"},
-    {"text": "\"Arrow's Theorem,\" Stanford Encyclopedia of Philosophy. — the formal conditions and the impossibility proof.", "url": "https://plato.stanford.edu/entries/arrows-theorem/", "type": "secondary"}
+    {
+      "text": "Arrow's impossibility theorem, Wikipedia. — the conditions, the ordinal-versus-cardinal caveat, and the Condorcet ancestry.",
+      "url": "https://en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Arrow's Theorem,\" Stanford Encyclopedia of Philosophy. — the formal conditions and the impossibility proof.",
+      "url": "https://plato.stanford.edu/entries/arrows-theorem/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem",
   "related": [
-    {"slug": "the-condorcet-paradox", "kind": "kindred"}
+    {
+      "slug": "the-condorcet-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "condorcets-jury-theorem",
+      "kind": "tension"
+    },
+    {
+      "slug": "mays-theorem",
+      "kind": "tension"
+    }
   ]
 }

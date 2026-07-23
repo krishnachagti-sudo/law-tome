@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is the central open question of computational complexity and one of the seven Clay Millennium Prize Problems, carrying a million-dollar prize. Its answer would reshape cryptography, optimisation, and our understanding of the limits of efficient computation — telling us whether creativity in problem-solving is fundamentally harder than recognising a good answer.",
   "working": [
-    {"lead": "Separate checking from solving", "text": "when facing a hard problem, distinguish how easily a candidate answer can be verified from how hard it is to find one."},
-    {"lead": "Recognise NP-completeness", "text": "if a problem is NP-complete, expect no known efficient algorithm and reach for approximation or heuristics instead."},
-    {"lead": "Hold the answer as open", "text": "treat P versus NP as unresolved — most believe P is not NP, but neither direction has been proved."}
+    {
+      "lead": "Separate checking from solving",
+      "text": "when facing a hard problem, distinguish how easily a candidate answer can be verified from how hard it is to find one."
+    },
+    {
+      "lead": "Recognise NP-completeness",
+      "text": "if a problem is NP-complete, expect no known efficient algorithm and reach for approximation or heuristics instead."
+    },
+    {
+      "lead": "Hold the answer as open",
+      "text": "treat P versus NP as unresolved — most believe P is not NP, but neither direction has been proved."
+    }
   ],
   "limits": "This is an open, unsolved problem: no proof exists in either direction. The prevailing belief among theorists is that P is not NP — successive expert surveys put agreement above eighty percent — but belief is not proof, and flawed claimed proofs of both possibilities appear regularly, none accepted. The framework around it — the definitions of P, NP, NP-completeness, and the Cook-Levin theorem — is settled mathematics; it is the headline question itself that remains unresolved.",
   "misreadings": "It is not a solved or nearly-solved question — it is genuinely open, and 'P is not NP' is a widely held conjecture, not an established fact. And a proof that P equals NP would not automatically break all encryption overnight; the practical impact would depend on whether the algorithm it produced were efficient in practice.",
@@ -45,11 +54,26 @@
   "coinedYear": 1971,
   "namedAfter": "Stephen Cook and Leonid Levin",
   "sources": [
-    {"text": "P versus NP problem, Wikipedia. — the definitions, the open status, NP-completeness, the expert surveys, and the Clay prize.", "url": "https://en.wikipedia.org/wiki/P_versus_NP_problem", "type": "secondary"},
-    {"text": "P vs NP, Clay Mathematics Institute. — the official framing of the Millennium Prize Problem.", "url": "https://www.claymath.org/millennium/p-vs-np/", "type": "secondary"}
+    {
+      "text": "P versus NP problem, Wikipedia. — the definitions, the open status, NP-completeness, the expert surveys, and the Clay prize.",
+      "url": "https://en.wikipedia.org/wiki/P_versus_NP_problem",
+      "type": "secondary"
+    },
+    {
+      "text": "P vs NP, Clay Mathematics Institute. — the official framing of the Millennium Prize Problem.",
+      "url": "https://www.claymath.org/millennium/p-vs-np/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/P_versus_NP_problem",
   "related": [
-    {"slug": "the-church-turing-thesis", "kind": "kindred"}
+    {
+      "slug": "the-church-turing-thesis",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-time-hierarchy-theorem",
+      "kind": "tension"
+    }
   ]
 }

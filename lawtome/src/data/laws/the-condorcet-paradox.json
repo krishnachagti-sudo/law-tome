@@ -2,7 +2,9 @@
   "no": "185",
   "slug": "the-condorcet-paradox",
   "name": "The Condorcet Paradox",
-  "aliases": ["The paradox of voting"],
+  "aliases": [
+    "The paradox of voting"
+  ],
   "statement": "Majority preferences can cycle even when every voter is perfectly rational.",
   "statementAccent": "Majority preferences can cycle",
   "meaning": "Collective majority preferences can be intransitive: a majority prefers A to B, a majority prefers B to C, yet a majority prefers C to A — even though every individual's own ranking is perfectly consistent. As a result, majority rule over three or more options need not produce any clear winner.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It reveals that 'the will of the majority' can be ill-defined: pairwise majority rule need not yield a coherent collective preference or any winner at all. It launched the formal study of voting and social choice, and it is the concrete puzzle that Arrow's theorem later generalised.",
   "working": [
-    {"lead": "Don't assume a majority winner exists", "text": "with three or more options, check whether any option actually beats all others pairwise, since a Condorcet winner is not guaranteed."},
-    {"lead": "Watch who sets the agenda", "text": "when preferences may cycle, the order of pairwise votes can decide the outcome, so treat agenda control as a lever for manipulation."},
-    {"lead": "Look for single-peaked structure", "text": "if preferences line up along one dimension, a Condorcet winner reappears — the median voter's choice — and cycles vanish."}
+    {
+      "lead": "Don't assume a majority winner exists",
+      "text": "with three or more options, check whether any option actually beats all others pairwise, since a Condorcet winner is not guaranteed."
+    },
+    {
+      "lead": "Watch who sets the agenda",
+      "text": "when preferences may cycle, the order of pairwise votes can decide the outcome, so treat agenda control as a lever for manipulation."
+    },
+    {
+      "lead": "Look for single-peaked structure",
+      "text": "if preferences line up along one dimension, a Condorcet winner reappears — the median voter's choice — and cycles vanish."
+    }
   ],
   "limits": "It is a proven possibility, not a claim that cycles always or usually happen — they can occur, but a Condorcet winner often exists, especially under single-peaked or spatial preferences. How often cycles arise depends heavily on the preference distribution: common under the unrealistic 'impartial culture' assumption, rare and declining with electorate size under realistic models, and well under one percent in studied real elections. Its enduring significance is conceptual — that pairwise majority rule can be intransitive — rather than a frequent practical breakdown.",
   "misreadings": "It does not say majority rule always cycles or always fails — cycles are possible but usually rare, and a clear winner often exists. What it establishes is that intransitivity can occur even with perfectly rational voters, so 'the majority prefers' is not always well-defined.",
@@ -46,11 +57,26 @@
   "coinedYear": 1785,
   "namedAfter": "The Marquis de Condorcet",
   "sources": [
-    {"text": "Condorcet paradox, Wikipedia. — the statement, the worked cycle, the Llull/Condorcet origin, and the link to Arrow's theorem.", "url": "https://en.wikipedia.org/wiki/Condorcet_paradox", "type": "secondary"},
-    {"text": "Condorcet method, Wikipedia. — the Condorcet winner, its possible non-existence, and single-peakedness.", "url": "https://en.wikipedia.org/wiki/Condorcet_method", "type": "secondary"}
+    {
+      "text": "Condorcet paradox, Wikipedia. — the statement, the worked cycle, the Llull/Condorcet origin, and the link to Arrow's theorem.",
+      "url": "https://en.wikipedia.org/wiki/Condorcet_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Condorcet method, Wikipedia. — the Condorcet winner, its possible non-existence, and single-peakedness.",
+      "url": "https://en.wikipedia.org/wiki/Condorcet_method",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Condorcet_paradox",
   "related": [
-    {"slug": "arrows-impossibility-theorem", "kind": "kindred"}
+    {
+      "slug": "arrows-impossibility-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-median-voter-theorem",
+      "kind": "tension"
+    }
   ]
 }

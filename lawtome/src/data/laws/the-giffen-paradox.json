@@ -2,7 +2,9 @@
   "no": "211",
   "slug": "the-giffen-paradox",
   "name": "The Giffen Paradox",
-  "aliases": ["Giffen good"],
+  "aliases": [
+    "Giffen good"
+  ],
   "statement": "A staple so essential to the poor that they buy more of it as its price rises.",
   "statementAccent": "buy more of it as its price rises",
   "meaning": "A Giffen good is one for which demand rises as its price rises and falls as its price falls, violating the ordinary law of demand. It happens only in a narrow corner: a cheap, inferior staple that takes up a large share of a poor household's budget. When its price rises, the household becomes effectively poorer, can no longer afford costlier foods it was adding on, and to stave off hunger buys even more of the cheap staple.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It is the textbook exception that proves the rule, the one respectable way demand can slope upward, and a clean demonstration that a strong income effect can overturn the substitution effect. It sharpens the theory of consumer choice and, in its rare real instances, illuminates the economics of subsistence poverty.",
   "working": [
-    {"lead": "Check all three conditions", "text": "before calling something a Giffen good, confirm it is inferior, lacks close substitutes, and eats a large share of the budget."},
-    {"lead": "Weigh the two effects", "text": "look for a case where the income effect of an inferior staple is large enough to swamp the substitution effect."},
-    {"lead": "Do not confuse it with status goods", "text": "keep Giffen goods, driven by the income effect, separate from Veblen goods, driven by the prestige of a high price."}
+    {
+      "lead": "Check all three conditions",
+      "text": "before calling something a Giffen good, confirm it is inferior, lacks close substitutes, and eats a large share of the budget."
+    },
+    {
+      "lead": "Weigh the two effects",
+      "text": "look for a case where the income effect of an inferior staple is large enough to swamp the substitution effect."
+    },
+    {
+      "lead": "Do not confuse it with status goods",
+      "text": "keep Giffen goods, driven by the income effect, separate from Veblen goods, driven by the prestige of a high price."
+    }
   ],
   "limits": "Real Giffen goods are extremely rare, and for over a century their very existence was doubted, many economists treating them as a theoretical curiosity. The canonical historical potato-and-bread example is contested and probably apocryphal, repeatedly discredited. Rigorous empirical confirmation is recent and narrow — essentially the single Jensen and Miller experiment, and even there the wheat result was weak. Giffen behaviour appears confined to a specific regime of subsistence poverty rather than being a general phenomenon. The theory is sound; its real-world instantiation is what remains contested.",
   "misreadings": "It is not the same as a luxury bought for showing off — that is a Veblen good, driven by status, whereas a Giffen good is a cheap staple driven by the income effect. And it is not a common exception to the law of demand: genuine Giffen goods are vanishingly rare, and the famous potato case is largely a myth.",
@@ -45,11 +56,26 @@
   "provenance": "canon",
   "namedAfter": "Robert Giffen",
   "sources": [
-    {"text": "Giffen good, Wikipedia. — the upward-sloping-demand statement, the three conditions, the disputed potato example, and the Veblen-good distinction.", "url": "https://en.wikipedia.org/wiki/Giffen_good", "type": "secondary"},
-    {"text": "Jensen & Miller, \"Giffen Behavior and Subsistence Consumption,\" American Economic Review 98(4):1553-1577 (2008). — the rice-and-wheat field experiment providing the first rigorous evidence.", "url": "https://www.aeaweb.org/articles?id=10.1257/aer.98.4.1553", "type": "primary"}
+    {
+      "text": "Giffen good, Wikipedia. — the upward-sloping-demand statement, the three conditions, the disputed potato example, and the Veblen-good distinction.",
+      "url": "https://en.wikipedia.org/wiki/Giffen_good",
+      "type": "secondary"
+    },
+    {
+      "text": "Jensen & Miller, \"Giffen Behavior and Subsistence Consumption,\" American Economic Review 98(4):1553-1577 (2008). — the rice-and-wheat field experiment providing the first rigorous evidence.",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/aer.98.4.1553",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Giffen_good",
   "related": [
-    {"slug": "the-law-of-diminishing-marginal-utility", "kind": "tension"}
+    {
+      "slug": "the-law-of-diminishing-marginal-utility",
+      "kind": "tension"
+    },
+    {
+      "slug": "the-veblen-effect",
+      "kind": "tension"
+    }
   ]
 }

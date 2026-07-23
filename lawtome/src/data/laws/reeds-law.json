@@ -28,9 +28,18 @@
   ],
   "whyItMatters": "It offered the most optimistic account of network value in the internet era, formalising the intuition that platforms enabling communities are worth more than those enabling mere connections. It sits at the top of the Sarnoff–Metcalfe–Reed hierarchy and shaped how the value of social and group-forming platforms was argued.",
   "working": [
-    {"lead": "Value group formation, not just connection", "text": "where a network lets members form arbitrary subgroups, the combinatorial explosion of possible groups is where Reed locates the outsized value."},
-    {"lead": "Treat the exponential as a ceiling, not a forecast", "text": "the 2^n count of possible subgroups is exact arithmetic, but real value follows only the tiny fraction of groups that actually form — so do not price a network at 2^n."},
-    {"lead": "Remember human limits", "text": "cognitive bounds like Dunbar's number mean most theoretically possible subgroups never form, so real high-value structure is far sparser than the formula implies."}
+    {
+      "lead": "Value group formation, not just connection",
+      "text": "where a network lets members form arbitrary subgroups, the combinatorial explosion of possible groups is where Reed locates the outsized value."
+    },
+    {
+      "lead": "Treat the exponential as a ceiling, not a forecast",
+      "text": "the 2^n count of possible subgroups is exact arithmetic, but real value follows only the tiny fraction of groups that actually form — so do not price a network at 2^n."
+    },
+    {
+      "lead": "Remember human limits",
+      "text": "cognitive bounds like Dunbar's number mean most theoretically possible subgroups never form, so real high-value structure is far sparser than the formula implies."
+    }
   ],
   "limits": "The exponential claim is contested. Briscoe, Odlyzko and Tilly ('Metcalfe's Law is Wrong', IEEE Spectrum, 2006) argue both Metcalfe's n² and Reed's 2^n are substantial overstatements, and that network value more realistically grows like n·log(n); they note that adding ten people would, under Reed, multiply value a thousandfold, which soon implies absurd totals. Human cognitive limits mean most possible subgroups never form. The 2^n counting of subgroups is exact, but the claim that value actually scales that way is disputed and widely regarded as overstated. The competing n·log(n) figure is itself debated in later literature.",
   "misreadings": "It is a combinatorial model, not an empirically established law: counting subgroups is exact, but equating that count with realised value is the contested leap. It does not mean a real platform's worth doubles with each new member — the vast majority of possible groups never form, and rigorous critiques put real growth far below exponential.",
@@ -41,12 +50,30 @@
   "coinedYear": 2001,
   "namedAfter": "David P. Reed",
   "sources": [
-    {"text": "Reed's law, Wikipedia. — the 2^n − n − 1 formula, the group-forming-network concept, and the HBR 2001 origin.", "url": "https://en.wikipedia.org/wiki/Reed's_law", "type": "secondary"},
-    {"text": "Briscoe, B., Odlyzko, A. & Tilly, B. (2006). \"Metcalfe's Law is Wrong.\" IEEE Spectrum. — the n·log(n) critique of Metcalfe's and Reed's laws.", "url": "https://spectrum.ieee.org/metcalfes-law-is-wrong", "type": "secondary"}
+    {
+      "text": "Reed's law, Wikipedia. — the 2^n − n − 1 formula, the group-forming-network concept, and the HBR 2001 origin.",
+      "url": "https://en.wikipedia.org/wiki/Reed's_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Briscoe, B., Odlyzko, A. & Tilly, B. (2006). \"Metcalfe's Law is Wrong.\" IEEE Spectrum. — the n·log(n) critique of Metcalfe's and Reed's laws.",
+      "url": "https://spectrum.ieee.org/metcalfes-law-is-wrong",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Reed's_law",
   "related": [
-    {"slug": "metcalfes-law", "kind": "kindred"},
-    {"slug": "sarnoffs-law", "kind": "kindred"}
+    {
+      "slug": "metcalfes-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "sarnoffs-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "beckstroms-law",
+      "kind": "tension"
+    }
   ]
 }

@@ -36,9 +36,18 @@
   ],
   "whyItMatters": "It is the quantitative heart of 'network effects' and winner-take-most dynamics: it explains why platforms race for scale, why a network's value can tip suddenly once it passes a threshold, and why the largest network in a category tends to swallow the rest.",
   "working": [
-    {"lead": "Chase the threshold, then the flywheel", "text": "network value is negligible when small and compounds once critical mass is reached; the strategic problem is crossing the threshold where each new user starts pulling in the next."},
-    {"lead": "Seed density, not just headcount", "text": "value comes from connections that are actually used, so a dense, well-connected community beats a larger but disconnected one."},
-    {"lead": "Discount the exponent", "text": "treat n² as an optimistic upper bound; plan on something closer to n·log(n) so your projections survive contact with reality."}
+    {
+      "lead": "Chase the threshold, then the flywheel",
+      "text": "network value is negligible when small and compounds once critical mass is reached; the strategic problem is crossing the threshold where each new user starts pulling in the next."
+    },
+    {
+      "lead": "Seed density, not just headcount",
+      "text": "value comes from connections that are actually used, so a dense, well-connected community beats a larger but disconnected one."
+    },
+    {
+      "lead": "Discount the exponent",
+      "text": "treat n² as an optimistic upper bound; plan on something closer to n·log(n) so your projections survive contact with reality."
+    }
   ],
   "limits": "The n² form almost certainly overstates value. Briscoe, Odlyzko and Tilly argued in 'Metcalfe's Law Is Wrong' (2006) that connections are not equally valuable — weight them by a Zipf law and total value grows like n·log(n), not n² — and noted that the unjustified n² claim helped inflate dot-com valuations by prioritising growth over profit. Empirical fits are genuinely contested: Metcalfe (2013) and Zhang et al. (2015) defend n², while a 2023 study argued a cube law fit some data better still. The exponent should be read as disputed, and the core insight taken as 'value grows super-linearly with a well-connected network', not as a precise n².",
   "misreadings": "It is not a precise law with a settled exponent — the n² is an idealisation that assumes every connection is equally valuable, which is false. Read it as the qualitative claim that a network's value rises faster than its size, and treat the exact power as an open, disputed question.",
@@ -49,13 +58,35 @@
   "coinedYear": 1993,
   "namedAfter": "Robert Metcalfe",
   "sources": [
-    {"text": "Metcalfe's law, Wikipedia. — the statement, the n(n−1)/2 mechanism, the 1980 device framing, and Gilder's 1993 naming.", "url": "https://en.wikipedia.org/wiki/Metcalfe%27s_law", "type": "secondary"},
-    {"text": "Briscoe, B., Odlyzko, A. & Tilly, B. (2006). \"Metcalfe's Law Is Wrong.\" IEEE Spectrum. — the n·log(n) critique and the dot-com-hype argument.", "url": "https://spectrum.ieee.org/metcalfes-law-is-wrong", "type": "secondary"},
-    {"text": "Zhang, X.-Z., Liu, J.-J. & Xu, Z.-W. (2015). \"Tencent and Facebook Data Validate Metcalfe's Law.\" Journal of Computer Science and Technology, 30(2), 246–251.", "url": "https://link.springer.com/article/10.1007/s11390-015-1518-1", "type": "primary"}
+    {
+      "text": "Metcalfe's law, Wikipedia. — the statement, the n(n−1)/2 mechanism, the 1980 device framing, and Gilder's 1993 naming.",
+      "url": "https://en.wikipedia.org/wiki/Metcalfe%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Briscoe, B., Odlyzko, A. & Tilly, B. (2006). \"Metcalfe's Law Is Wrong.\" IEEE Spectrum. — the n·log(n) critique and the dot-com-hype argument.",
+      "url": "https://spectrum.ieee.org/metcalfes-law-is-wrong",
+      "type": "secondary"
+    },
+    {
+      "text": "Zhang, X.-Z., Liu, J.-J. & Xu, Z.-W. (2015). \"Tencent and Facebook Data Validate Metcalfe's Law.\" Journal of Computer Science and Technology, 30(2), 246–251.",
+      "url": "https://link.springer.com/article/10.1007/s11390-015-1518-1",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Metcalfe%27s_law",
   "related": [
-    {"slug": "dunbars-number", "kind": "kindred"},
-    {"slug": "moores-law", "kind": "kindred"}
+    {
+      "slug": "dunbars-number",
+      "kind": "kindred"
+    },
+    {
+      "slug": "moores-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "beckstroms-law",
+      "kind": "tension"
+    }
   ]
 }

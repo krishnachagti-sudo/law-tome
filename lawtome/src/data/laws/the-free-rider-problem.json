@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is a central concept in public economics, explaining why markets under-supply public goods like defence, clean air, and basic research, and why government, taxation, or collective institutions are often needed to provide them. It illuminates everything from union organising to climate cooperation to why people so often leave shared work to others.",
   "working": [
-    {"lead": "Watch non-excludable goods", "text": "expect under-provision wherever a good's benefits cannot be withheld from those who do not pay."},
-    {"lead": "Compel or incentivise contribution", "text": "counter free-riding with taxation, social norms, or assurance mechanisms that condition provision on enough contributors."},
-    {"lead": "Mind group size", "text": "expect the problem to bite hardest in large groups, where each contribution seems negligible and monitoring is weak."}
+    {
+      "lead": "Watch non-excludable goods",
+      "text": "expect under-provision wherever a good's benefits cannot be withheld from those who do not pay."
+    },
+    {
+      "lead": "Compel or incentivise contribution",
+      "text": "counter free-riding with taxation, social norms, or assurance mechanisms that condition provision on enough contributors."
+    },
+    {
+      "lead": "Mind group size",
+      "text": "expect the problem to bite hardest in large groups, where each contribution seems negligible and monitoring is weak."
+    }
   ],
   "limits": "It is a robust framework, but its predictions are only partly borne out: people contribute more than pure self-interest predicts — through charity, voting, and blood donation — so it should not be overstated as inevitable. Solutions genuinely exist: taxation compels contribution to goods like defence; social norms and peer sanctions sustain cooperation; assurance contracts fund a good only if enough pledge; and Ostrom-style self-governance manages many shared resources. The problem is severe mainly for large groups and genuinely non-excludable goods; small groups, repeated interaction, and excludable club goods reduce or dissolve it.",
   "misreadings": "It does not mean cooperation always fails — people contribute to public goods far more than pure theory predicts, and taxation, norms, and assurance mechanisms routinely overcome it. And it is distinct from the tragedy of the commons: free-riding is under-contribution to a good, while the commons problem is over-use of a rivalrous resource.",
@@ -45,12 +54,30 @@
   "coinedYear": 1965,
   "namedAfter": "Mancur Olson",
   "sources": [
-    {"text": "\"The Free Rider Problem,\" Stanford Encyclopedia of Philosophy. — the structure, the non-excludability mechanism, and the solutions.", "url": "https://plato.stanford.edu/entries/free-rider/", "type": "secondary"},
-    {"text": "Free-rider problem, Wikipedia. — the definition, public-goods properties, and the Samuelson and Olson origins.", "url": "https://en.wikipedia.org/wiki/Free-rider_problem", "type": "secondary"}
+    {
+      "text": "\"The Free Rider Problem,\" Stanford Encyclopedia of Philosophy. — the structure, the non-excludability mechanism, and the solutions.",
+      "url": "https://plato.stanford.edu/entries/free-rider/",
+      "type": "secondary"
+    },
+    {
+      "text": "Free-rider problem, Wikipedia. — the definition, public-goods properties, and the Samuelson and Olson origins.",
+      "url": "https://en.wikipedia.org/wiki/Free-rider_problem",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Free-rider_problem",
   "related": [
-    {"slug": "the-tragedy-of-the-commons", "kind": "kindred"},
-    {"slug": "the-prisoners-dilemma", "kind": "kindred"}
+    {
+      "slug": "the-tragedy-of-the-commons",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-prisoners-dilemma",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-tiebout-model",
+      "kind": "tension"
+    }
   ]
 }
