@@ -1,0 +1,55 @@
+{
+  "no": "1166",
+  "slug": "verdoorns-law",
+  "name": "Verdoorn's Law",
+  "statement": "Labor productivity growth is positively related to output growth, with productivity generally rising proportionally to roughly the square root of output growth.",
+  "statementAccent": "Labor productivity growth is positively related to output growth",
+  "meaning": "Verdoorn's law describes an empirically observed long-run relationship in which faster growth of output in an industry or economy is associated with faster growth in labor productivity, reflecting economies of scale and increasing returns rather than exogenous technological change alone. It is expressed in the linear form p = a + bQ, where p is productivity growth, Q is output growth, a is the exogenous productivity growth rate, and b is the \"Verdoorn coefficient.\"",
+  "mechanism": "As output expands, firms and industries can exploit static and dynamic economies of scale, learning-by-doing effects, and greater division of labor, all of which raise output per worker beyond what would occur from technology alone. This creates a process of cumulative causation, later emphasized by Nicholas Kaldor, in which demand-driven output growth fuels productivity growth, which in turn can support further output and export growth.",
+  "examples": [
+    {
+      "tag": "Verdoorn's original 1949 estimate",
+      "text": "In his 1949 paper \"Fattori che regolano lo sviluppo della produttività del lavoro\" in L'Industria, Petrus Verdoorn estimated that a 10 percent increase in output volume tends to be associated with about a 4.5 percent increase in labor productivity."
+    },
+    {
+      "tag": "Typical coefficient estimates",
+      "text": "Subsequent empirical studies across countries and regions commonly estimate the Verdoorn coefficient at around 0.45 to 0.5, broadly consistent with Verdoorn's original finding."
+    },
+    {
+      "tag": "Kaldor and Thirlwall",
+      "text": "Nicholas Kaldor incorporated Verdoorn's relationship into export-led cumulative-causation growth models, and Anthony Thirlwall later extended this line of work into \"Thirlwall's Law\" on balance-of-payments-constrained growth."
+    }
+  ],
+  "whyItMatters": "Verdoorn's law underlies post-Keynesian and Kaldorian growth theory's emphasis on demand-driven, increasing-returns growth as an alternative to neoclassical models like Solow's, which attribute productivity growth mainly to exogenous technological progress. It is used in regional and international studies to explain why fast-growing economies also tend to show faster productivity growth.",
+  "limits": "The relationship is an empirical regularity rather than a structural law, and estimates of the coefficient vary by country, industry, and time period, raising questions about causality — whether output growth drives productivity or shared underlying factors drive both. It can be difficult to disentangle from general business-cycle productivity effects, particularly at short horizons.",
+  "misreadings": "It is sometimes misread as establishing strict causation running only from output to productivity, when in practice many researchers treat it as reflecting a two-way, mutually reinforcing relationship — cumulative causation — rather than one-directional causality.",
+  "origin": "Petrus Johannes Verdoorn, 1949 (\"Fattori che regolano lo sviluppo della produttività del lavoro,\" L'Industria).",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1949,
+  "namedAfter": "Petrus Johannes Verdoorn",
+  "sources": [
+    {
+      "text": "Wikipedia's \"Verdoorn's law\" article giving the formula p = a + bQ, Verdoorn's original 10%/4.5% estimate, his 1949 L'Industria paper, and the connection to Kaldor and Thirlwall — supports the statement, mechanism, and examples.",
+      "url": "https://en.wikipedia.org/wiki/Verdoorn%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "An arXiv paper, \"The Verdoorn Law in the Portuguese Regions,\" applying and discussing empirical estimation of the Verdoorn coefficient — supports the coefficient estimates and limitations.",
+      "url": "https://arxiv.org/pdf/1110.5544",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Verdoorn%27s_law",
+  "related": [
+    {
+      "slug": "the-solow-swan-model",
+      "kind": "tension"
+    },
+    {
+      "slug": "okuns-law",
+      "kind": "near-twin"
+    }
+  ]
+}

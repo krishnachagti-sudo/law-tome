@@ -1,0 +1,55 @@
+{
+  "no": "1161",
+  "slug": "the-von-thunen-model",
+  "name": "The Von Thünen Model",
+  "statement": "Around an isolated market, farmers grow whichever crop yields the highest land rent after subtracting transport cost, forming concentric rings.",
+  "statementAccent": "concentric rings",
+  "meaning": "The model shows that agricultural land use is not random but organized spatially by the trade-off between transport cost and the value or perishability of a crop. Land closer to the central market commands higher \"location rent\" because transport costs are lower there, so farmers bid it away for intensive, perishable, or bulky-but-low-value goods. Farther out, only crops that tolerate transport delay or are self-transporting remain profitable.",
+  "mechanism": "Von Thünen imagined a single isolated town on a uniform featureless plain, with transport cost rising linearly with distance and volume. For each crop, location rent equals market price minus production cost minus (freight rate × distance), so each crop has its own rent-distance line with a different slope. Whichever crop's line lies highest at a given distance wins that ring, and superimposing these lines for many crops produces concentric rings of land use around the market, with rent falling to zero at the model's outer edge.",
+  "examples": [
+    {
+      "tag": "Dairying and market gardening ring",
+      "text": "In the model's innermost ring, dairying and intensive horticulture — highly perishable and needing quick access to market — locate immediately around the town."
+    },
+    {
+      "tag": "Forestry ring",
+      "text": "The second ring is devoted to timber and firewood, since wood was heavy and costly to transport in Von Thünen's early-19th-century oxcart economy, favoring proximity."
+    },
+    {
+      "tag": "Ranching in the outermost ring",
+      "text": "Beyond the grain-farming rings, the outermost ring is given to ranching and livestock grazing, since livestock is largely self-transporting to market."
+    }
+  ],
+  "whyItMatters": "The model is a foundational building block of location theory and economic geography, giving planners and historians a baseline for why land rent and land use vary systematically with distance to a market. Economic historians have used it to interpret pre-industrial European agricultural patterns.",
+  "limits": "It assumes a featureless plain, a single central market, uniform soil and climate, one mode of transport, and perfectly rational profit-maximizing farmers — conditions essentially never met in reality. Modern transport networks, multiple markets, subsidies, and non-market land uses such as suburban sprawl substantially distort or override the simple ring pattern.",
+  "misreadings": "It is sometimes wrongly treated as a literal predictive map of any region's land use rather than an idealized, simplifying heuristic about the transport-cost/rent trade-off.",
+  "origin": "Johann Heinrich von Thünen, 1826 (Der isolierte Staat, \"The Isolated State\").",
+  "category": "economics",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1826,
+  "namedAfter": "Johann Heinrich von Thünen",
+  "sources": [
+    {
+      "text": "Wikipedia's account of the Von Thünen model, its 1826 origin, and the concentric-ring structure of agricultural land use — supports the origin, mechanism, and ring examples.",
+      "url": "https://en.wikipedia.org/wiki/Von_Th%C3%BCnen_model",
+      "type": "secondary"
+    },
+    {
+      "text": "Britannica's entry on location theory noting Von Thünen introduced his model in 1826, with accessibility to the market creating a system of agricultural land use — supports the origin year and rent-gradient mechanism.",
+      "url": "https://www.britannica.com/money/location-theory",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Von_Th%C3%BCnen_model",
+  "related": [
+    {
+      "slug": "central-place-theory",
+      "kind": "kindred"
+    },
+    {
+      "slug": "reillys-law-of-retail-gravitation",
+      "kind": "kindred"
+    }
+  ]
+}
