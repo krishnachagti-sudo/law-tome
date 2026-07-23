@@ -2,7 +2,10 @@
   "no": "521",
   "slug": "the-heisenberg-uncertainty-principle",
   "name": "The Heisenberg Uncertainty Principle",
-  "aliases": ["The uncertainty principle", "Indeterminacy principle"],
+  "aliases": [
+    "The uncertainty principle",
+    "Indeterminacy principle"
+  ],
   "statement": "The more sharply a particle's position is defined, the more its momentum blurs, and no state escapes the trade-off.",
   "statementAccent": "the more its momentum blurs",
   "meaning": "The Heisenberg uncertainty principle holds that certain pairs of physical properties, called conjugate variables, cannot both be defined to arbitrary precision at the same time. For the most famous pair, position and momentum, the product of the two uncertainties has a nonzero lower bound: the spread in position times the spread in momentum is at least the reduced Planck constant divided by two. Crucially this is not a limit on our instruments but an intrinsic feature of quantum states themselves, which simply do not possess sharply defined values of both quantities at once. It is one of the deepest and most misunderstood results in all of physics.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "The uncertainty principle is a cornerstone of quantum mechanics, marking a fundamental break from the classical assumption that a particle has, at every instant, a definite position and momentum waiting to be measured. It underlies zero-point energy, the stability and size of atoms, the natural width of spectral lines, and the very limits of what can be known about a physical system. More broadly, it reshaped the philosophy of science, replacing a deterministic clockwork universe with one in which certain complementary properties are, at bottom, not simultaneously definite.",
   "working": [
-    {"lead": "Trade one spread for the other", "text": "expect that sharpening the position of a quantum particle necessarily broadens its momentum, and vice versa, with a fixed floor on the product."},
-    {"lead": "Read it as intrinsic", "text": "treat the uncertainty as a property of the state itself, not as clumsy measurement, since no preparation can beat the bound."},
-    {"lead": "Watch conjugate pairs", "text": "apply the principle to specific conjugate variables like position and momentum or energy and time, not to every quantity at once."}
+    {
+      "lead": "Trade one spread for the other",
+      "text": "expect that sharpening the position of a quantum particle necessarily broadens its momentum, and vice versa, with a fixed floor on the product."
+    },
+    {
+      "lead": "Read it as intrinsic",
+      "text": "treat the uncertainty as a property of the state itself, not as clumsy measurement, since no preparation can beat the bound."
+    },
+    {
+      "lead": "Watch conjugate pairs",
+      "text": "apply the principle to specific conjugate variables like position and momentum or energy and time, not to every quantity at once."
+    }
   ],
   "limits": "The principle constrains only specific conjugate pairs, not every quantity, so individual observables can each be known precisely, just not both members of a conjugate pair at once. The rigorous position-momentum bound is a statement about the intrinsic statistical spread of a state, distinct from the separate relation describing how a measurement disturbs a system, and conflating the two has caused lasting confusion. The energy-time form is legitimate but rests on subtler foundations, since time is not an operator in the ordinary theory. And the precise bound is the reduced Planck constant over two, which Heisenberg's original heuristic argument, giving only an order-of-magnitude relation, did not itself establish.",
   "misreadings": "It is not merely the observer effect, the idea that measuring disturbs the system; the rigorous principle is about the intrinsic spread of quantum states and holds even for perfect instruments, since no state violating it can even be prepared. It is not measurement error or instrument limitation. It does not say everything is uncertain, only that specific conjugate pairs cannot be sharp together. And the precise one-half-times-reduced-Planck bound comes from Kennard and Weyl, not from Heisenberg's original microscope argument, which gave only a rough relation.",
   "origin": "Introduced by Werner Heisenberg in a 1927 paper in Zeitschrift für Physik using a thought experiment, and given its rigorous inequality form the same year by Earle Kennard and shortly after by Hermann Weyl.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1927,
   "namedAfter": "Werner Heisenberg",
   "sources": [
-    {"text": "Uncertainty principle, Wikipedia. — the position-momentum bound, the Fourier and non-commuting-operator basis, and the intrinsic-not-observer interpretation.", "url": "https://en.wikipedia.org/wiki/Uncertainty_principle", "type": "secondary"},
-    {"text": "The Uncertainty Principle, Stanford Encyclopedia of Philosophy. — Heisenberg's 1927 argument, the Kennard-Weyl inequality, and the disturbance-versus-spread distinction.", "url": "https://plato.stanford.edu/entries/qt-uncertainty/", "type": "secondary"}
+    {
+      "text": "Uncertainty principle, Wikipedia. — the position-momentum bound, the Fourier and non-commuting-operator basis, and the intrinsic-not-observer interpretation.",
+      "url": "https://en.wikipedia.org/wiki/Uncertainty_principle",
+      "type": "secondary"
+    },
+    {
+      "text": "The Uncertainty Principle, Stanford Encyclopedia of Philosophy. — Heisenberg's 1927 argument, the Kennard-Weyl inequality, and the disturbance-versus-spread distinction.",
+      "url": "https://plato.stanford.edu/entries/qt-uncertainty/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Uncertainty_principle",
   "related": [
-    {"slug": "the-bohr-model", "kind": "tension"}
+    {
+      "slug": "the-bohr-model",
+      "kind": "tension"
+    }
   ]
 }

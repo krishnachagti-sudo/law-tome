@@ -32,25 +32,48 @@
   ],
   "whyItMatters": "They are the foundation of classical mechanics and of nearly all engineering, describing the motion of everything from projectiles to planets with precision. For over two centuries they were the very model of a physical law, and they remain the working tools for all motion at everyday scales and speeds.",
   "working": [
-    {"lead": "No force, no acceleration", "text": "when a body's velocity is unchanging, conclude the net force on it is zero, and vice versa."},
-    {"lead": "Compute motion from force and mass", "text": "to find how a body accelerates, divide the net force acting on it by its mass."},
-    {"lead": "Remember the reaction acts elsewhere", "text": "note that the equal and opposite reaction acts on a different body, so the paired forces do not cancel."}
+    {
+      "lead": "No force, no acceleration",
+      "text": "when a body's velocity is unchanging, conclude the net force on it is zero, and vice versa."
+    },
+    {
+      "lead": "Compute motion from force and mass",
+      "text": "to find how a body accelerates, divide the net force acting on it by its mass."
+    },
+    {
+      "lead": "Remember the reaction acts elsewhere",
+      "text": "note that the equal and opposite reaction acts on a different body, so the paired forces do not cancel."
+    }
   ],
   "limits": "The laws are an extremely accurate approximation with a well-defined domain, not a universal truth. Near the speed of light they fail and must be replaced by special relativity; at atomic and subatomic scales they give way to quantum mechanics, though momentum conservation survives. Even the third law, in its simple instantaneous form, can fail when force fields carry momentum, as in electrodynamics — total momentum is conserved only when the field's own momentum is counted. And the laws hold only in inertial frames.",
   "misreadings": "The third law's 'equal and opposite reaction' does not mean forces cancel — the two act on different bodies. And the first law is not a claim that moving things naturally slow down; absent a net force they keep moving forever, friction being an unseen force, not an exception.",
   "origin": "Set out by Isaac Newton as axioms in Philosophiae Naturalis Principia Mathematica (1687), building on the concept of inertia developed by Galileo and refined to straight-line motion by Descartes.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1687,
   "namedAfter": "Isaac Newton",
   "sources": [
-    {"text": "Newton's laws of motion, Wikipedia. — the three laws in original and modern form, inertial frames, momentum conservation, and the relativistic and quantum limits.", "url": "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion", "type": "secondary"},
-    {"text": "\"Newton's laws of motion,\" Encyclopaedia Britannica. — the statements, the 1687 Principia origin, and F equals ma.", "url": "https://www.britannica.com/science/Newtons-laws-of-motion", "type": "secondary"}
+    {
+      "text": "Newton's laws of motion, Wikipedia. — the three laws in original and modern form, inertial frames, momentum conservation, and the relativistic and quantum limits.",
+      "url": "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Newton's laws of motion,\" Encyclopaedia Britannica. — the statements, the 1687 Principia origin, and F equals ma.",
+      "url": "https://www.britannica.com/science/Newtons-laws-of-motion",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion",
   "related": [
-    {"slug": "newtons-law-of-universal-gravitation", "kind": "kindred"},
-    {"slug": "the-conservation-of-energy", "kind": "kindred"}
+    {
+      "slug": "newtons-law-of-universal-gravitation",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-conservation-of-energy",
+      "kind": "kindred"
+    }
   ]
 }

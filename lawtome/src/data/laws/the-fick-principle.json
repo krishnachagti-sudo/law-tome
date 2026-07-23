@@ -2,7 +2,10 @@
   "no": "476",
   "slug": "the-fick-principle",
   "name": "The Fick Principle",
-  "aliases": ["Fick's principle", "The Fick method for cardiac output"],
+  "aliases": [
+    "Fick's principle",
+    "The Fick method for cardiac output"
+  ],
   "statement": "An organ's uptake of a substance equals blood flow times the difference in its arterial and venous concentrations.",
   "statementAccent": "blood flow times the difference",
   "meaning": "The Fick principle states that the total uptake or release of a substance by an organ, or the whole body, equals the blood flow through it multiplied by the difference in the substance's concentration between arterial and venous blood. Rearranged, blood flow equals the uptake divided by that arteriovenous concentration difference. It rests on the conservation of mass: in a steady state, whatever a tissue consumes must be accounted for by the difference between what the blood delivers and what it carries away. Its classic use is to compute cardiac output from oxygen.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "The Fick principle is foundational to quantitative cardiovascular physiology and bedside hemodynamics. It was the first rigorous way to derive a flow, the cardiac output, that could not be measured directly, by measuring things that could, oxygen uptake and blood oxygen contents. Conceptually it is a clean application of conservation of mass to the circulation, and the same logic, uptake divided by arteriovenous difference, generalises to the blood flow of any organ and to the family of indicator-dilution methods.",
   "working": [
-    {"lead": "Balance the mass", "text": "set an organ's uptake of a substance equal to its blood flow times how much of the substance the blood gives up in passing through."},
-    {"lead": "Divide to get flow", "text": "compute the flow that cannot be measured directly as uptake over the arteriovenous concentration difference."},
-    {"lead": "Sample the right blood", "text": "for whole-body cardiac output, use mixed-venous blood from the pulmonary artery, the true whole-body average, not a peripheral vein."}
+    {
+      "lead": "Balance the mass",
+      "text": "set an organ's uptake of a substance equal to its blood flow times how much of the substance the blood gives up in passing through."
+    },
+    {
+      "lead": "Divide to get flow",
+      "text": "compute the flow that cannot be measured directly as uptake over the arteriovenous concentration difference."
+    },
+    {
+      "lead": "Sample the right blood",
+      "text": "for whole-body cardiac output, use mixed-venous blood from the pulmonary artery, the true whole-body average, not a peripheral vein."
+    }
   ],
   "limits": "The principle assumes a steady state, so oxygen uptake and blood flow must be stable during measurement, and it is invalid amid rapidly changing hemodynamics or unstable ventilation. The accurate direct form is invasive, needing arterial and pulmonary-artery sampling by right-heart catheterisation. The indirect form substitutes an assumed oxygen consumption, which can be badly off in the critically ill, elderly, obese, or septic, propagating straight into the result. It is also least accurate when the arteriovenous difference is small, since small measurement errors then cause large flow errors, and it is now used less clinically than thermodilution.",
   "misreadings": "It should not be confused with Fick's laws of diffusion: same person, entirely different principles, one a conservation-of-mass bookkeeping relation for blood flow, the other a description of molecular flux down a concentration gradient. The venous concentration in the cardiac-output formula means mixed venous, from the pulmonary artery, not any peripheral vein. And Fick did not experimentally prove the principle in 1870; he proposed it theoretically, and others validated it later.",
   "origin": "Proposed by the German physiologist Adolf Fick in 1870, in a brief communication to the Physical-Medical Society of Wurzburg, as a conservation-of-mass method for measuring cardiac output; it was experimentally validated by others in the following decades.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1870,
   "namedAfter": "Adolf Fick",
   "sources": [
-    {"text": "Fick principle, Wikipedia. — the conservation-of-mass relation and its application to cardiac output.", "url": "https://en.wikipedia.org/wiki/Fick_principle", "type": "secondary"},
-    {"text": "Calculating Fick Cardiac Output, StatPearls (NCBI Bookshelf). — the oxygen formula, the direct and indirect methods, and the limits.", "url": "https://www.ncbi.nlm.nih.gov/books/NBK606091/", "type": "secondary"}
+    {
+      "text": "Fick principle, Wikipedia. — the conservation-of-mass relation and its application to cardiac output.",
+      "url": "https://en.wikipedia.org/wiki/Fick_principle",
+      "type": "secondary"
+    },
+    {
+      "text": "Calculating Fick Cardiac Output, StatPearls (NCBI Bookshelf). — the oxygen formula, the direct and indirect methods, and the limits.",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK606091/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Fick_principle",
   "related": [
-    {"slug": "the-frank-starling-law", "kind": "kindred"}
+    {
+      "slug": "the-frank-starling-law",
+      "kind": "kindred"
+    }
   ]
 }

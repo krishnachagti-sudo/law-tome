@@ -2,7 +2,9 @@
   "no": "368",
   "slug": "rayleigh-scattering",
   "name": "Rayleigh Scattering",
-  "aliases": ["Rayleigh's scattering law"],
+  "aliases": [
+    "Rayleigh's scattering law"
+  ],
   "statement": "Small particles scatter short blue light far more than long red light, so the sky is blue.",
   "statementAccent": "the sky is blue",
   "meaning": "Rayleigh scattering is the scattering of light by particles much smaller than its wavelength, such as the molecules of the air. Its defining feature is a steep dependence on wavelength: the scattered intensity is inversely proportional to the fourth power of the wavelength, so short-wavelength blue light is scattered far more strongly than long-wavelength red. This is why the daytime sky is blue and why the Sun reddens near the horizon.",
@@ -33,25 +35,48 @@
   ],
   "whyItMatters": "It explains one of the most familiar facts about the world, the colour of the sky and of sunsets, and it underpins how light propagates through the atmosphere and other clear media. It matters for astronomy, remote sensing, and optics, sets a floor on losses in optical fibres, and provides the textbook contrast with Mie scattering that separates the blue sky from the white cloud.",
   "working": [
-    {"lead": "Check the particle size", "text": "apply Rayleigh scattering when scatterers are much smaller than the wavelength; for larger particles use Mie scattering instead."},
-    {"lead": "Expect the fourth-power law", "text": "remember that shorter wavelengths scatter far more, with intensity rising as one over the fourth power of wavelength."},
-    {"lead": "Separate scattered from transmitted", "text": "look to scattered light for the blue sky and to the long-path transmitted beam for the red sunset."}
+    {
+      "lead": "Check the particle size",
+      "text": "apply Rayleigh scattering when scatterers are much smaller than the wavelength; for larger particles use Mie scattering instead."
+    },
+    {
+      "lead": "Expect the fourth-power law",
+      "text": "remember that shorter wavelengths scatter far more, with intensity rising as one over the fourth power of wavelength."
+    },
+    {
+      "lead": "Separate scattered from transmitted",
+      "text": "look to scattered light for the blue sky and to the long-path transmitted beam for the red sunset."
+    }
   ],
   "limits": "It is valid only when the scattering particles are much smaller than the wavelength of light, as air molecules are; for particles comparable to or larger than the wavelength the fourth-power law fails and Mie scattering, nearly independent of colour, takes over. It idealises the scatterers as small dipoles and does not by itself capture multiple scattering, absorption, or the full three-factor account of sky colour, which also involves the Sun's spectrum and the response of the eye.",
   "misreadings": "The sky is not blue because it reflects the ocean; the colour comes from atmospheric scattering and appears even far inland. The sky is not violet, even though violet scatters still more, because sunlight contains less violet and the eye is far less sensitive to it, so the mix reads as blue. And Rayleigh scattering is not what makes clouds white: that is Mie scattering by larger droplets, nearly the same for every colour.",
   "origin": "Named after the British physicist Lord Rayleigh (John William Strutt), who quantified the effect in an 1871 paper and later, by 1899, showed it applied to the air's own molecules; it built on John Tyndall's earlier observations.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1871,
   "namedAfter": "Lord Rayleigh",
   "sources": [
-    {"text": "Rayleigh scattering, Wikipedia. — the inverse-fourth-power wavelength law, the induced-dipole mechanism, and the contrast with Mie scattering.", "url": "https://en.wikipedia.org/wiki/Rayleigh_scattering", "type": "secondary"},
-    {"text": "Rayleigh scattering, Encyclopaedia Britannica. — the effect, its naming after Rayleigh's 1871 paper, and the small-particle condition.", "url": "https://www.britannica.com/science/Rayleigh-scattering", "type": "secondary"}
+    {
+      "text": "Rayleigh scattering, Wikipedia. — the inverse-fourth-power wavelength law, the induced-dipole mechanism, and the contrast with Mie scattering.",
+      "url": "https://en.wikipedia.org/wiki/Rayleigh_scattering",
+      "type": "secondary"
+    },
+    {
+      "text": "Rayleigh scattering, Encyclopaedia Britannica. — the effect, its naming after Rayleigh's 1871 paper, and the small-particle condition.",
+      "url": "https://www.britannica.com/science/Rayleigh-scattering",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Rayleigh_scattering",
   "related": [
-    {"slug": "plancks-law", "kind": "kindred"},
-    {"slug": "snells-law", "kind": "kindred"}
+    {
+      "slug": "plancks-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "snells-law",
+      "kind": "kindred"
+    }
   ]
 }

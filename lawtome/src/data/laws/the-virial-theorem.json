@@ -2,7 +2,10 @@
   "no": "531",
   "slug": "the-virial-theorem",
   "name": "The Virial Theorem",
-  "aliases": ["Clausius's virial theorem", "The 2T + V rule"],
+  "aliases": [
+    "Clausius's virial theorem",
+    "The 2T + V rule"
+  ],
   "statement": "In a stable, gravitationally bound system, the average kinetic energy is exactly half the magnitude of the potential energy.",
   "statementAccent": "exactly half the magnitude of the potential energy",
   "meaning": "The virial theorem relates, for a stable bound system averaged over time, its total kinetic energy to its total potential energy. For the inverse-square forces of gravity and electrostatics, twice the average kinetic energy plus the average potential energy equals zero, so the average kinetic energy is exactly half the magnitude of the potential energy, and the total energy equals minus the kinetic energy. This lets one relate motion to binding without ever solving the equations of motion, which is why it is a workhorse across astrophysics, plasma physics, and even quantum mechanics, and why it delivered the first hint that most of the universe's mass is unseen.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "The virial theorem is a remarkably powerful shortcut, relating the kinetic and potential energy of a bound system from time averages alone, without solving its dynamics. In astrophysics it is the standard way to weigh galaxies and galaxy clusters from their velocity dispersions, and it delivered Zwicky's landmark 1933 inference of dark matter. It explains the counterintuitive negative heat capacity of self-gravitating systems, central to how stars form and evolve, and it reaches into plasma physics, molecular dynamics, and quantum mechanics, making it one of the most broadly useful relations in all of physics.",
   "working": [
-    {"lead": "Relate motion to binding", "text": "for a gravitationally bound system in equilibrium, take the average kinetic energy as half the magnitude of the potential energy, without solving any orbits."},
-    {"lead": "Weigh from velocities", "text": "use the velocity spread of a cluster's members and the virial theorem to estimate its total mass, including any unseen matter."},
-    {"lead": "Expect negative heat capacity", "text": "remember that a self-gravitating system heats up as it loses energy and contracts, a direct consequence of the theorem."}
+    {
+      "lead": "Relate motion to binding",
+      "text": "for a gravitationally bound system in equilibrium, take the average kinetic energy as half the magnitude of the potential energy, without solving any orbits."
+    },
+    {
+      "lead": "Weigh from velocities",
+      "text": "use the velocity spread of a cluster's members and the virial theorem to estimate its total mass, including any unseen matter."
+    },
+    {
+      "lead": "Expect negative heat capacity",
+      "text": "remember that a self-gravitating system heats up as it loses energy and contracts, a direct consequence of the theorem."
+    }
   ],
   "limits": "The theorem holds only for a bound, stable system averaged over time, with motion confined to a finite region and bounded speeds; it is not an instantaneous identity, and it assumes the system is relaxed, or virialised. For merging, unrelaxed, or non-equilibrium clusters that assumption fails, biasing virial mass estimates. The clean gravitational relation, twice kinetic plus potential equals zero, is specific to inverse-square forces, and for other potentials the correct statement uses the power-law form, twice the kinetic energy equals the exponent times the potential energy.",
   "misreadings": "The relation is a time or ensemble average, not an instantaneous one; it does not hold at every moment. The neat two-times-kinetic-plus-potential-equals-zero form applies only to inverse-square forces, and the general rule for a power-law potential uses its exponent instead. A virial, dynamical mass is not the visible mass; the whole force of Zwicky's result is that they differ. And a system must actually be virialised for the theorem to apply, so an unrelaxed cluster can violate its premise.",
   "origin": "Established by Rudolf Clausius in 1870, who coined the term virial from the Latin for force, and famously applied to galaxy clusters by Fritz Zwicky in 1933 to infer dark matter.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1870,
   "namedAfter": "Rudolf Clausius",
   "sources": [
-    {"text": "Virial theorem, Wikipedia. — the general and power-law forms, the etymology and Clausius 1870, and Zwicky's dark-matter application.", "url": "https://en.wikipedia.org/wiki/Virial_theorem", "type": "secondary"},
-    {"text": "Virial theorem, Encyclopedia of Mathematics. — the 2T equals minus the virial statement, the power-law form, and the bounded-domain condition.", "url": "https://encyclopediaofmath.org/wiki/Virial_theorem", "type": "secondary"}
+    {
+      "text": "Virial theorem, Wikipedia. — the general and power-law forms, the etymology and Clausius 1870, and Zwicky's dark-matter application.",
+      "url": "https://en.wikipedia.org/wiki/Virial_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Virial theorem, Encyclopedia of Mathematics. — the 2T equals minus the virial statement, the power-law form, and the bounded-domain condition.",
+      "url": "https://encyclopediaofmath.org/wiki/Virial_theorem",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Virial_theorem",
   "related": [
-    {"slug": "keplers-third-law", "kind": "kindred"}
+    {
+      "slug": "keplers-third-law",
+      "kind": "kindred"
+    }
   ]
 }

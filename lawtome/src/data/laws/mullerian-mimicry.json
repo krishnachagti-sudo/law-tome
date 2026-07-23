@@ -2,7 +2,10 @@
   "no": "539",
   "slug": "mullerian-mimicry",
   "name": "Müllerian Mimicry",
-  "aliases": ["Mutual mimicry", "Shared warning signals"],
+  "aliases": [
+    "Mutual mimicry",
+    "Shared warning signals"
+  ],
   "statement": "Two genuinely dangerous species come to look alike, sharing the cost of teaching predators to stay away.",
   "statementAccent": "sharing the cost of teaching predators",
   "meaning": "Müllerian mimicry is a form of mimicry in which two or more genuinely well-defended species that share common predators converge in appearance, coming to resemble one another's honest warning signals. Unlike the deceptive, one-sided Batesian case, this arrangement is mutualistic: by wearing a common warning pattern, the participating species share the cost of educating predators, so each loses fewer individuals to the predators that must sample and learn. Named for the naturalist Fritz Müller, who explained it from Amazonian butterflies, it turns what looks like copying into cooperation, and its analysis provided one of the earliest mathematical models in evolutionary biology.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "Müllerian mimicry resolved a puzzle that Batesian mimicry could not, why many unrelated but equally distasteful species come to look alike, and it did so with one of the first exact models in evolutionary ecology, an early treatment of frequency-dependent selection. It shows how shared signals can evolve as mutual aid rather than deception, illuminating the economics of warning coloration and the coevolution of defended species. The Heliconius mimicry rings it explains have become a premier model system for studying adaptation, speciation, and the genetics of wing patterns.",
   "working": [
-    {"lead": "Read it as mutual aid", "text": "treat convergence among genuinely defended species as cost-sharing in predator education, not as one species deceiving predators."},
-    {"lead": "Expect mimicry rings", "text": "look for clusters of co-mimetic, defended species sharing a warning pattern in a region, the signature of Müllerian convergence."},
-    {"lead": "Weigh relative abundance", "text": "recognise that the rarer of two co-mimics gains disproportionately, since the benefit scales with the square of relative abundance."}
+    {
+      "lead": "Read it as mutual aid",
+      "text": "treat convergence among genuinely defended species as cost-sharing in predator education, not as one species deceiving predators."
+    },
+    {
+      "lead": "Expect mimicry rings",
+      "text": "look for clusters of co-mimetic, defended species sharing a warning pattern in a region, the signature of Müllerian convergence."
+    },
+    {
+      "lead": "Weigh relative abundance",
+      "text": "recognise that the rarer of two co-mimics gains disproportionately, since the benefit scales with the square of relative abundance."
+    }
   ],
   "limits": "The boundary with Batesian mimicry is not absolute: the two forms sit at ends of a spectrum, with quasi-Batesian intermediates in which a mildly defended mimic still imposes some cost on its better-defended co-mimics. Because the benefit scales with the square of relative abundance, the rarer species may adverge toward the commoner one rather than the two meeting halfway. Müller's model, though pioneering, assumed a fixed number of prey sacrificed per predator to learn the pattern, an idealisation, and describing his work as the first mathematical model in evolutionary biology is a common paraphrase of the more precise claim that it was the earliest exact model of frequency-dependent selection.",
   "misreadings": "Müllerian mimicry is mutualistic, not deceptive: all the participating species are genuinely defended, so there is no undefended cheat exploiting the others, which is what separates it from Batesian mimicry. Shared warning patterns among distasteful species are cooperation in disguise, not one species fooling predators with another's signal. And the viceroy-and-monarch pair, long the textbook Batesian example, belongs here, since the viceroy is itself unpalatable and the resemblance is mutual.",
   "origin": "Proposed by the German-Brazilian zoologist Fritz Müller in 1878, from his study of Neotropical butterflies, providing one of the earliest exact mathematical models of frequency-dependent selection.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1878,
   "namedAfter": "Fritz Müller",
   "sources": [
-    {"text": "Müllerian mimicry, Wikipedia. — the mutual, shared-signal definition, Müller's 1878 model, and mimicry rings.", "url": "https://en.wikipedia.org/wiki/M%C3%BCllerian_mimicry", "type": "secondary"},
-    {"text": "Mimicry: Müllerian mimicry, Encyclopaedia Britannica. — the cost-sharing of predator education across species with a shared warning pattern.", "url": "https://www.britannica.com/science/mimicry/Mullerian-mimicry", "type": "secondary"}
+    {
+      "text": "Müllerian mimicry, Wikipedia. — the mutual, shared-signal definition, Müller's 1878 model, and mimicry rings.",
+      "url": "https://en.wikipedia.org/wiki/M%C3%BCllerian_mimicry",
+      "type": "secondary"
+    },
+    {
+      "text": "Mimicry: Müllerian mimicry, Encyclopaedia Britannica. — the cost-sharing of predator education across species with a shared warning pattern.",
+      "url": "https://www.britannica.com/science/mimicry/Mullerian-mimicry",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/M%C3%BCllerian_mimicry",
   "related": [
-    {"slug": "batesian-mimicry", "kind": "kindred"}
+    {
+      "slug": "batesian-mimicry",
+      "kind": "kindred"
+    }
   ]
 }

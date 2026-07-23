@@ -2,7 +2,9 @@
   "no": "409",
   "slug": "kochs-postulates",
   "name": "Koch's Postulates",
-  "aliases": ["The Henle-Koch postulates"],
+  "aliases": [
+    "The Henle-Koch postulates"
+  ],
   "statement": "Four tests to prove a specific microbe causes a specific disease.",
   "statementAccent": "a specific microbe causes a specific disease",
   "meaning": "Koch's postulates are four criteria for establishing that a particular microorganism causes a particular disease. The microbe must be found in all cases of the disease but not in the healthy; it must be isolated and grown in pure culture; the cultured microbe must cause the disease when introduced into a healthy host; and it must then be recovered from that host and shown identical to the original. Together they turn a suspected link into rigorous proof of causation.",
@@ -33,24 +35,44 @@
   ],
   "whyItMatters": "They are foundational to medical microbiology and germ theory, providing the first rigorous, reproducible method for establishing that a microbe causes a disease rather than merely accompanying it. Koch's work made him a founder of bacteriology and earned him the 1905 Nobel Prize for his tuberculosis research, and the postulates remain a reference point and a starting framework for reasoning about infectious causation.",
   "working": [
-    {"lead": "Move from association to proof", "text": "use the four steps to turn a suspected link between microbe and disease into demonstrated causation, not mere correlation."},
-    {"lead": "Treat them as sufficient, not necessary", "text": "recognise that meeting all four proves causation, but failing to meet them does not disprove it, since many real pathogens cannot satisfy every step."},
-    {"lead": "Reach for updated criteria", "text": "apply molecular postulates or the Bradford Hill criteria when the classical steps cannot be met, as with viruses or chronic disease."}
+    {
+      "lead": "Move from association to proof",
+      "text": "use the four steps to turn a suspected link between microbe and disease into demonstrated causation, not mere correlation."
+    },
+    {
+      "lead": "Treat them as sufficient, not necessary",
+      "text": "recognise that meeting all four proves causation, but failing to meet them does not disprove it, since many real pathogens cannot satisfy every step."
+    },
+    {
+      "lead": "Reach for updated criteria",
+      "text": "apply molecular postulates or the Bradford Hill criteria when the classical steps cannot be met, as with viruses or chronic disease."
+    }
   ],
   "limits": "The postulates have well-known exceptions, and Koch himself abandoned the strict first postulate after finding asymptomatic carriers of cholera and typhoid. Not all pathogens can be grown in pure culture, including viruses and some bacteria, so the second postulate fails for them; deliberately infecting a healthy human host is unethical for human-only pathogens; not all exposed hosts fall ill because susceptibility varies; and some diseases are multifactorial or polymicrobial. They are best treated as a sufficient but not necessary heuristic for causation.",
   "misreadings": "It is not required that all four postulates be satisfied to prove causation; they are sufficient but not necessary, and many accepted pathogens, from viruses to the leprosy bacterium, never met the classical set. Koch did not rigidly insist the microbe be absent from all healthy hosts; he dropped that after finding asymptomatic carriers. And his 1905 Nobel Prize was for his tuberculosis investigations, not specifically for the postulates.",
   "origin": "Formulated by Robert Koch, with Friedrich Loeffler, in 1884 and refined in an 1890 address, building on Jakob Henle's earlier framework and Koch's work on anthrax and tuberculosis.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1884,
   "namedAfter": "Robert Koch",
   "sources": [
-    {"text": "Koch's postulates, Wikipedia. — the four criteria, the Loeffler and Henle history, and the known exceptions.", "url": "https://en.wikipedia.org/wiki/Koch%27s_postulates", "type": "secondary"},
-    {"text": "Exceptions to Koch's Postulates, Biology LibreTexts. — asymptomatic carriers, unculturable pathogens, and the sufficient-not-necessary status.", "url": "https://bio.libretexts.org/Bookshelves/Microbiology/Microbiology_(Boundless)/10%3A_Epidemiology/10.01%3A_Principles_of_Epidemiology/10.1E%3A_Exceptions_to_Kochs_Postulates", "type": "secondary"}
+    {
+      "text": "Koch's postulates, Wikipedia. — the four criteria, the Loeffler and Henle history, and the known exceptions.",
+      "url": "https://en.wikipedia.org/wiki/Koch%27s_postulates",
+      "type": "secondary"
+    },
+    {
+      "text": "Exceptions to Koch's Postulates, Biology LibreTexts. — asymptomatic carriers, unculturable pathogens, and the sufficient-not-necessary status.",
+      "url": "https://bio.libretexts.org/Bookshelves/Microbiology/Microbiology_(Boundless)/10%3A_Epidemiology/10.01%3A_Principles_of_Epidemiology/10.1E%3A_Exceptions_to_Kochs_Postulates",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Koch%27s_postulates",
   "related": [
-    {"slug": "germ-theory-of-disease", "kind": "cause"}
+    {
+      "slug": "germ-theory-of-disease",
+      "kind": "cause"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "614",
   "slug": "the-bradford-hill-criteria",
   "name": "The Bradford Hill Criteria",
-  "aliases": ["Hill's criteria", "Hill's viewpoints on causation"],
+  "aliases": [
+    "Hill's criteria",
+    "Hill's viewpoints on causation"
+  ],
   "statement": "Nine viewpoints help judge whether an observed association is truly a cause, not just a correlation.",
   "statementAccent": "whether an observed association is truly a cause",
   "meaning": "The Bradford Hill criteria are a set of nine considerations proposed to help decide whether an observed statistical association between an exposure and an outcome is likely to be causal rather than merely a correlation. Articulated by the epidemiologist Austin Bradford Hill in 1965, they are strength, consistency, specificity, temporality, biological gradient, plausibility, coherence, experiment, and analogy. Hill offered them not as a rigid checklist or a set of hard-and-fast rules but as viewpoints from which to weigh evidence before concluding that a cause is at work. Of the nine, only temporality, that the cause must precede the effect, is truly necessary. Developed as science established that smoking causes lung cancer, the criteria remain a foundational framework for causal reasoning in epidemiology and public health.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "The Bradford Hill criteria are a foundational framework for causal reasoning in epidemiology, giving public-health scientists a structured way to move from an observed association toward a judgement about causation, which observational data alone cannot prove. They shaped landmark conclusions, above all that smoking causes lung cancer, and they remain widely taught and cited as a checklist of considerations, even as modern causal-inference methods add rigour. By reminding investigators that correlation is not causation and that many imperfect lines of evidence must be weighed together, the criteria guard against both credulous and dismissive readings of statistical associations.",
   "working": [
-    {"lead": "Weigh many viewpoints", "text": "assess an association against the nine considerations together, since no single one proves causation and the case is built by accumulation."},
-    {"lead": "Insist on temporality", "text": "require that the cause precedes the effect, the one criterion that is genuinely necessary, before entertaining a causal claim."},
-    {"lead": "Treat them as guides", "text": "use the criteria as viewpoints to inform judgement, not as a rigid checklist whose boxes must all be ticked."}
+    {
+      "lead": "Weigh many viewpoints",
+      "text": "assess an association against the nine considerations together, since no single one proves causation and the case is built by accumulation."
+    },
+    {
+      "lead": "Insist on temporality",
+      "text": "require that the cause precedes the effect, the one criterion that is genuinely necessary, before entertaining a causal claim."
+    },
+    {
+      "lead": "Treat them as guides",
+      "text": "use the criteria as viewpoints to inform judgement, not as a rigid checklist whose boxes must all be ticked."
+    }
   ],
   "limits": "Hill himself stressed that the criteria are viewpoints, not a rigid checklist, and that, apart from temporality, none is either necessary or sufficient, so mechanically counting satisfied criteria misuses them. They guide judgement rather than deliver proof, and observational associations can never fully exclude confounding or bias. Some criteria, like specificity and analogy, are weak and often criticised. Modern causal-inference methods, based on counterfactuals and causal diagrams, provide more formal tools and in places supersede the informal viewpoints, so the criteria are a valuable heuristic framework rather than a definitive algorithm for establishing cause.",
   "misreadings": "The criteria are not a checklist to be scored, and satisfying more of them does not mechanically prove causation; Hill offered them as considerations to weigh. Except for temporality, none is necessary or sufficient, so their absence does not disprove a cause nor their presence establish one. And they do not overturn the maxim that correlation is not causation; rather, they structure the careful judgement by which one cautiously infers causation from association, a matter of weighing evidence, not applying a formula.",
   "origin": "Set out by the English epidemiologist and statistician Austin Bradford Hill in his 1965 presidential address to the Royal Society of Medicine, published as The Environment and Disease: Association or Causation, in the context of establishing that smoking causes lung cancer.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": 1965,
   "namedAfter": "Austin Bradford Hill",
   "sources": [
-    {"text": "Bradford Hill criteria, Wikipedia. — the nine criteria and their names, temporality as the essential one, Hill's 1965 address and its title, the smoking-lung-cancer context, and that Hill framed them as viewpoints not rigid rules.", "url": "https://en.wikipedia.org/wiki/Bradford_Hill_criteria", "type": "secondary"},
-    {"text": "Hill, The Environment and Disease: Association or Causation? (1965), Embryo Project Encyclopedia, Arizona State University. — the original address and its nine viewpoints.", "url": "https://embryo.asu.edu/pages/environment-and-disease-association-or-causation-1965-austin-bradford-hill", "type": "secondary"}
+    {
+      "text": "Bradford Hill criteria, Wikipedia. — the nine criteria and their names, temporality as the essential one, Hill's 1965 address and its title, the smoking-lung-cancer context, and that Hill framed them as viewpoints not rigid rules.",
+      "url": "https://en.wikipedia.org/wiki/Bradford_Hill_criteria",
+      "type": "secondary"
+    },
+    {
+      "text": "Hill, The Environment and Disease: Association or Causation? (1965), Embryo Project Encyclopedia, Arizona State University. — the original address and its nine viewpoints.",
+      "url": "https://embryo.asu.edu/pages/environment-and-disease-association-or-causation-1965-austin-bradford-hill",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Bradford_Hill_criteria",
   "related": [
-    {"slug": "number-needed-to-treat", "kind": "kindred"},
-    {"slug": "lead-time-bias", "kind": "kindred"}
+    {
+      "slug": "number-needed-to-treat",
+      "kind": "kindred"
+    },
+    {
+      "slug": "lead-time-bias",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "595",
   "slug": "taylors-theorem",
   "name": "Taylor's Theorem",
-  "aliases": ["Taylor series", "Taylor expansion"],
+  "aliases": [
+    "Taylor series",
+    "Taylor expansion"
+  ],
   "statement": "Near a point, a smooth function is closely mirrored by a polynomial built from its derivatives.",
   "statementAccent": "a polynomial built from its derivatives",
   "meaning": "Taylor's theorem says that a sufficiently differentiable function can be approximated near a chosen point by a polynomial assembled from the function's value and successive derivatives at that point, each term weighted by a factorial. This Taylor polynomial matches the function's height, slope, curvature, and higher behaviour at the point, and the theorem supplies an explicit remainder measuring the error of the approximation. As more terms are included, and for well-behaved functions, the polynomial becomes an infinite Taylor series that can equal the function on a whole interval. The special case centred at zero is the Maclaurin series. It is a cornerstone of calculus and analysis, the systematic way to replace a complicated function locally by a manageable polynomial.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "Taylor's theorem is a foundational tool across mathematics, science, and engineering, the basis for approximating functions by polynomials with controlled error. It powers numerical methods, error analysis, and the definition of analytic functions, and it justifies the everyday small-quantity approximations of physics, from small-angle and small-oscillation formulas to perturbation theory. Its famous series for the exponential, sine, and cosine functions are among the most used identities in mathematics. By turning a general smooth function into a polynomial plus a measurable remainder, the theorem makes rigorous the idea of local approximation that pervades applied mathematics and underlies much of calculus itself.",
   "working": [
-    {"lead": "Match derivatives at a point", "text": "build the Taylor polynomial so its value and derivatives agree with the function at the base point, giving a close local approximation."},
-    {"lead": "Track the remainder", "text": "use the explicit error term, such as the Lagrange form with the next derivative, to bound how far the polynomial strays from the function."},
-    {"lead": "Check convergence", "text": "recognise that the series equals the function only where the remainder tends to zero, which depends on the function and the distance from the centre."}
+    {
+      "lead": "Match derivatives at a point",
+      "text": "build the Taylor polynomial so its value and derivatives agree with the function at the base point, giving a close local approximation."
+    },
+    {
+      "lead": "Track the remainder",
+      "text": "use the explicit error term, such as the Lagrange form with the next derivative, to bound how far the polynomial strays from the function."
+    },
+    {
+      "lead": "Check convergence",
+      "text": "recognise that the series equals the function only where the remainder tends to zero, which depends on the function and the distance from the centre."
+    }
   ],
   "limits": "A Taylor series need not converge to the function that generated it: the function equal to e to the minus one over x squared has every derivative zero at the origin, so its Maclaurin series is identically zero while the function is not, an example of a smooth but non-analytic function. Even when a series converges, it may equal the function only within a limited radius, and the approximation degrades far from the base point. The theorem requires the function to be sufficiently differentiable, and the usefulness of the polynomial hinges on the remainder being small, so convergence and equality to the function are distinct issues that must not be assumed.",
   "misreadings": "Having a Taylor series does not guarantee the series equals the function; convergence and equality are separate, and smooth functions like e to the minus one over x squared show a series can converge to the wrong thing. The approximation is local, best near the base point and often poor far away, so a Taylor polynomial is not a global substitute for the function. And the theorem centred at zero is just the Maclaurin case, a special instance rather than a different theorem, so the general expansion can be taken about any point where the function is differentiable enough.",
   "origin": "Published in general form by Brook Taylor in 1715, with the zero-centred case popularised by Colin Maclaurin, and with precursors including James Gregory and the Kerala school of Madhava, which had series for sine, cosine, and arctangent around 1400.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1715,
   "namedAfter": "Brook Taylor",
   "sources": [
-    {"text": "Taylor's theorem, Wikipedia. — the Taylor polynomial and remainder forms, the Lagrange remainder, and the relation to the mean value theorem.", "url": "https://en.wikipedia.org/wiki/Taylor%27s_theorem", "type": "secondary"},
-    {"text": "Taylor series, Wikipedia. — the Maclaurin case, the exponential and sine series, the Taylor 1715 and Madhava history, and the smooth-but-non-analytic counterexample.", "url": "https://en.wikipedia.org/wiki/Taylor_series", "type": "secondary"}
+    {
+      "text": "Taylor's theorem, Wikipedia. — the Taylor polynomial and remainder forms, the Lagrange remainder, and the relation to the mean value theorem.",
+      "url": "https://en.wikipedia.org/wiki/Taylor%27s_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Taylor series, Wikipedia. — the Maclaurin case, the exponential and sine series, the Taylor 1715 and Madhava history, and the smooth-but-non-analytic counterexample.",
+      "url": "https://en.wikipedia.org/wiki/Taylor_series",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Taylor%27s_theorem",
   "related": [
-    {"slug": "the-mean-value-theorem", "kind": "cause"},
-    {"slug": "the-fundamental-theorem-of-calculus", "kind": "kindred"}
+    {
+      "slug": "the-mean-value-theorem",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-fundamental-theorem-of-calculus",
+      "kind": "kindred"
+    }
   ]
 }

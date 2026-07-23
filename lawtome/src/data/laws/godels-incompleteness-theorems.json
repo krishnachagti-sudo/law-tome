@@ -32,24 +32,44 @@
   ],
   "whyItMatters": "They are among the most profound results in the history of logic, ending the dream of a single complete and self-certifying foundation for mathematics and reshaping the philosophy of mathematics. They opened the study of what formal systems can and cannot do, and are deeply intertwined with the theory of computation.",
   "working": [
-    {"lead": "Expect incompleteness in strong systems", "text": "for any consistent, effectively axiomatised system that can do arithmetic, expect true statements it cannot reach."},
-    {"lead": "Do not ask a system to certify itself", "text": "recognise that such a system cannot prove its own consistency; that must come, if at all, from a stronger system."},
-    {"lead": "Keep unprovability relative", "text": "read 'unprovable' as relative to a specified system, since the same statement may be provable in a stronger one."}
+    {
+      "lead": "Expect incompleteness in strong systems",
+      "text": "for any consistent, effectively axiomatised system that can do arithmetic, expect true statements it cannot reach."
+    },
+    {
+      "lead": "Do not ask a system to certify itself",
+      "text": "recognise that such a system cannot prove its own consistency; that must come, if at all, from a stronger system."
+    },
+    {
+      "lead": "Keep unprovability relative",
+      "text": "read 'unprovable' as relative to a specified system, since the same statement may be provable in a stronger one."
+    }
   ],
   "limits": "The theorems apply only under precise conditions, all load-bearing: the system must be consistent, effectively axiomatisable, and strong enough to express elementary arithmetic. Weaken any one and it need not apply — the theory of the real numbers and pure propositional logic, for instance, are complete and decidable. Unprovability is relative to a system, not absolute. And the results are routinely misused: they do not say everything is uncertain, that truth is subjective, or that mathematics is broken, and illegitimate extensions to physics, postmodernism, or theology are widely rejected by logicians.",
   "misreadings": "They do not show that nothing can be known or that all truth is relative — they are precise results about formal provability in specific systems, not sweeping statements about knowledge. And 'true but unprovable' is conditional on the system's consistency; the arithmetic we use is not thereby made unreliable.",
   "origin": "Proved by the logician Kurt Gödel in 'Uber formal unentscheidbare Satze der Principia Mathematica und verwandter Systeme I,' Monatshefte fur Mathematik und Physik 38:173-198 (1931), targeting Hilbert's formalist program; Rosser weakened the consistency assumption in 1936.",
-  "category": "philosophy",
+  "category": "logic",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1931,
   "namedAfter": "Kurt Gödel",
   "sources": [
-    {"text": "\"Gödel's Incompleteness Theorems,\" Stanford Encyclopedia of Philosophy. — the precise statements, conditions, mechanism, and common misinterpretations.", "url": "https://plato.stanford.edu/entries/goedel-incompleteness/", "type": "secondary"},
-    {"text": "Gödel's incompleteness theorems, Wikipedia. — the theorems, the 1931 paper, and the Gödel-numbering and diagonalisation proof.", "url": "https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems", "type": "secondary"}
+    {
+      "text": "\"Gödel's Incompleteness Theorems,\" Stanford Encyclopedia of Philosophy. — the precise statements, conditions, mechanism, and common misinterpretations.",
+      "url": "https://plato.stanford.edu/entries/goedel-incompleteness/",
+      "type": "secondary"
+    },
+    {
+      "text": "Gödel's incompleteness theorems, Wikipedia. — the theorems, the 1931 paper, and the Gödel-numbering and diagonalisation proof.",
+      "url": "https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems",
   "related": [
-    {"slug": "the-halting-problem", "kind": "kindred"}
+    {
+      "slug": "the-halting-problem",
+      "kind": "kindred"
+    }
   ]
 }

@@ -32,24 +32,44 @@
   ],
   "whyItMatters": "It is the founding law of ideal solutions and the basis of the colligative properties — the reason salt lowers water's vapour pressure and raises its boiling point — and it underpins the theory of distillation. Its deviations, in turn, explain azeotropes and the limits of separating mixtures.",
   "working": [
-    {"lead": "Scale by mole fraction", "text": "estimate an ideal component's vapour pressure as its mole fraction times its pure value, and sum for the mixture."},
-    {"lead": "Expect the best fit for similar components", "text": "trust the law most when the mixed liquids are chemically and structurally alike, where intermolecular forces match."},
-    {"lead": "Anticipate azeotropes from strong deviations", "text": "where mixtures deviate strongly, watch for constant-boiling azeotropes that block clean separation by distillation."}
+    {
+      "lead": "Scale by mole fraction",
+      "text": "estimate an ideal component's vapour pressure as its mole fraction times its pure value, and sum for the mixture."
+    },
+    {
+      "lead": "Expect the best fit for similar components",
+      "text": "trust the law most when the mixed liquids are chemically and structurally alike, where intermolecular forces match."
+    },
+    {
+      "lead": "Anticipate azeotropes from strong deviations",
+      "text": "where mixtures deviate strongly, watch for constant-boiling azeotropes that block clean separation by distillation."
+    }
   ],
   "limits": "Raoult's law holds strictly only for ideal solutions of similar components; it is an approximation that improves as the components become more alike. Real mixtures show positive deviations, when unlike molecules attract less than like ones, or negative deviations when they attract more, and strong deviations produce azeotropes — constant-boiling mixtures that evaporate without changing composition and so cannot be separated by simple fractional distillation. It is an empirical limiting law, exact only in the ideal, dilute-solvent limit.",
   "misreadings": "It is not exact for real mixtures — most deviate, sometimes strongly enough to form azeotropes — and it governs the solvent, the abundant component, not the dilute solute, which follows Henry's law instead. Confusing the two limiting laws is the common error.",
   "origin": "Formulated by the French chemist François-Marie Raoult around 1887, from vapour-pressure measurements, following his earlier work on freezing-point depression. The exact year is reported by secondary sources rather than firmly primary-verified.",
-  "category": "science",
+  "category": "chemistry",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1887,
   "namedAfter": "François-Marie Raoult",
   "sources": [
-    {"text": "Raoult's law, Wikipedia. — the statement, the ideal-solution mechanism, deviations and azeotropes, and the Henry relationship.", "url": "https://en.wikipedia.org/wiki/Raoult%27s_law", "type": "secondary"},
-    {"text": "\"Raoult's law,\" Encyclopædia Britannica. — the proportional statement and the dilute-solution limits.", "url": "https://www.britannica.com/science/Raoults-law", "type": "secondary"}
+    {
+      "text": "Raoult's law, Wikipedia. — the statement, the ideal-solution mechanism, deviations and azeotropes, and the Henry relationship.",
+      "url": "https://en.wikipedia.org/wiki/Raoult%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Raoult's law,\" Encyclopædia Britannica. — the proportional statement and the dilute-solution limits.",
+      "url": "https://www.britannica.com/science/Raoults-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Raoult%27s_law",
   "related": [
-    {"slug": "henrys-law", "kind": "kindred"}
+    {
+      "slug": "henrys-law",
+      "kind": "kindred"
+    }
   ]
 }

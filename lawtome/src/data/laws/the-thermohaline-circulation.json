@@ -2,7 +2,10 @@
   "no": "465",
   "slug": "the-thermohaline-circulation",
   "name": "The Thermohaline Circulation",
-  "aliases": ["The global ocean conveyor belt", "Meridional overturning circulation"],
+  "aliases": [
+    "The global ocean conveyor belt",
+    "Meridional overturning circulation"
+  ],
   "statement": "Density differences from heat and salt drive a slow, globe-spanning overturning of the oceans.",
   "statementAccent": "a slow, globe-spanning overturning",
   "meaning": "The thermohaline circulation is the large-scale, density-driven part of global ocean circulation. Its name combines temperature and salt content, the two properties that set seawater density. Cold, salty and therefore dense water forms and sinks at high latitudes, flows through the deep ocean basins, and upwells elsewhere, forming a globe-spanning overturning loop, popularly the conveyor belt, that redistributes heat, salt, dissolved carbon, and nutrients. It is one of the fundamental engines of the climate system, distinct from but interwoven with the wind-driven surface currents.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "The circulation redistributes vast amounts of heat, moderating the climate of northern Europe, and it sequesters carbon by carrying dissolved carbon dioxide into the deep ocean for centuries while transporting the nutrients that support marine life. It is central to paleoclimate, where abrupt events like the Younger Dryas are read as overturning shutdowns driven by freshwater. And it is a focus of present concern, since a warming, freshening North Atlantic could weaken the Atlantic overturning, a low-probability but high-impact tipping point.",
   "working": [
-    {"lead": "Follow the density", "text": "trace the circulation from where cold, salty water sinks to where it slowly upwells, driven by temperature and salt, not wind."},
-    {"lead": "Separate wind from density", "text": "distinguish the density-driven overturning that carries heat northward from the wind-driven surface currents like the Gulf Stream."},
-    {"lead": "Watch the freshwater", "text": "expect added freshwater from ice melt to lower surface density and inhibit the sinking that drives the Atlantic overturning."}
+    {
+      "lead": "Follow the density",
+      "text": "trace the circulation from where cold, salty water sinks to where it slowly upwells, driven by temperature and salt, not wind."
+    },
+    {
+      "lead": "Separate wind from density",
+      "text": "distinguish the density-driven overturning that carries heat northward from the wind-driven surface currents like the Gulf Stream."
+    },
+    {
+      "lead": "Watch the freshwater",
+      "text": "expect added freshwater from ice melt to lower surface density and inhibit the sinking that drives the Atlantic overturning."
+    }
   ],
   "limits": "The core physics is established, but future changes are uncertain and debated. Models and evidence suggest the Atlantic overturning is likely to weaken this century as freshwater from melting ice and warming reduce surface density; the assessed consensus is a very likely decline but only medium confidence that it will not collapse abruptly before 2100, so a full collapse is judged unlikely yet cannot be ruled out. Collapse timing is genuinely contested, with some studies warning of an earlier collapse and others finding greater resilience, and known model biases and incomplete meltwater representation limit confidence.",
   "misreadings": "The conveyor belt is a deliberate simplification, a cartoon of a far more complex, three-dimensional, turbulent, eddying system, not a single narrow tube of water. It is not one narrow current but a spatially distributed overturning involving basin-wide processes and Southern Ocean upwelling. And the popular scenario in which the Gulf Stream shuts down and freezes Europe overnight is exaggerated: the Gulf Stream is wind-driven and will not switch off, and even a significant weakening of the overturning would bring regional cooling over decades, not an instant ice age.",
   "origin": "The 'great ocean conveyor belt' concept and its iconic diagram were popularised by the climate scientist Wallace Broecker in the 1980s, with the two-layer schematic introduced with Tsung-Hung Peng in 1982 and the classic account in his 1991 paper 'The Great Ocean Conveyor'.",
-  "category": "science",
+  "category": "earth-science",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1991,
   "namedAfter": "Wallace Broecker",
   "sources": [
-    {"text": "Broecker, 'The Great Ocean Conveyor,' Oceanography 4(2) (1991): 79-89. — the conveyor-belt concept and the density-driven overturning.", "url": "https://tos.org/oceanography/assets/docs/4-2_broecker.pdf", "type": "primary"},
-    {"text": "Thermohaline circulation, Wikipedia. — the density-driven circulation, deep-water formation, and its climate role.", "url": "https://en.wikipedia.org/wiki/Thermohaline_circulation", "type": "secondary"}
+    {
+      "text": "Broecker, 'The Great Ocean Conveyor,' Oceanography 4(2) (1991): 79-89. — the conveyor-belt concept and the density-driven overturning.",
+      "url": "https://tos.org/oceanography/assets/docs/4-2_broecker.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Thermohaline circulation, Wikipedia. — the density-driven circulation, deep-water formation, and its climate role.",
+      "url": "https://en.wikipedia.org/wiki/Thermohaline_circulation",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Thermohaline_circulation",
   "related": [
-    {"slug": "the-el-nino-southern-oscillation", "kind": "kindred"}
+    {
+      "slug": "the-el-nino-southern-oscillation",
+      "kind": "kindred"
+    }
   ]
 }

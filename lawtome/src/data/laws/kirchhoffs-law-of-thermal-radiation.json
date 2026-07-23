@@ -32,25 +32,48 @@
   ],
   "whyItMatters": "It established that thermal emission is governed by a universal function of wavelength and temperature, the insight that set the stage for black-body radiation and, through Planck, for quantum theory. It also explains everyday radiative behaviour, from why reflective surfaces stay warm to why spectra carry absorption lines.",
   "working": [
-    {"lead": "Read emissivity from absorptivity", "text": "at equilibrium, take a surface's emissivity at a wavelength to equal its absorptivity there, and treat good reflectors as poor emitters."},
-    {"lead": "Use reflectivity to control radiation", "text": "reduce radiative heat loss with low-absorptivity, high-reflectivity surfaces, which by the law also emit little."},
-    {"lead": "Respect the equilibrium requirement", "text": "apply it only to systems in local thermal equilibrium, not to pumped or non-reciprocal emitters."}
+    {
+      "lead": "Read emissivity from absorptivity",
+      "text": "at equilibrium, take a surface's emissivity at a wavelength to equal its absorptivity there, and treat good reflectors as poor emitters."
+    },
+    {
+      "lead": "Use reflectivity to control radiation",
+      "text": "reduce radiative heat loss with low-absorptivity, high-reflectivity surfaces, which by the law also emit little."
+    },
+    {
+      "lead": "Respect the equilibrium requirement",
+      "text": "apply it only to systems in local thermal equilibrium, not to pumped or non-reciprocal emitters."
+    }
   ],
   "limits": "The law requires local thermodynamic equilibrium. It does not apply to systems pumped by an external source — lasers, fluorescence, and negative luminescence all fall outside it. Because it rests on reciprocity, engineered non-reciprocal media can break it: magneto-optical materials in a magnetic field, magnetic Weyl semimetals, and spatiotemporally modulated structures can make emissivity differ from absorptivity, and the first direct experimental violation was reported in 2023. Within equilibrium and reciprocity it is exact, standard physics; it is not a universal identity for all radiating matter.",
   "misreadings": "It is not Kirchhoff's circuit laws — the same person gave both, on entirely different subjects. And it holds only at thermal equilibrium: pumped systems like lasers and, more recently, deliberately non-reciprocal materials break the emissivity-equals-absorptivity equality.",
   "origin": "Proposed by the German physicist Gustav Kirchhoff in 1859, with a proof around 1860, out of his spectroscopy collaboration with Robert Bunsen. Kirchhoff proved the universal emissive function must exist but not its form, which Max Planck supplied in 1900.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1859,
   "namedAfter": "Gustav Kirchhoff",
   "sources": [
-    {"text": "Kirchhoff's law of thermal radiation, Wikipedia. — the emissivity-absorptivity equality, the second-law basis, and the non-equilibrium and non-reciprocal limits.", "url": "https://en.wikipedia.org/wiki/Kirchhoff's_law_of_thermal_radiation", "type": "secondary"},
-    {"text": "Emergency blanket, Wikipedia. — the low-absorptivity, low-emissivity reflective-film example.", "url": "https://en.wikipedia.org/wiki/Emergency_blanket", "type": "secondary"}
+    {
+      "text": "Kirchhoff's law of thermal radiation, Wikipedia. — the emissivity-absorptivity equality, the second-law basis, and the non-equilibrium and non-reciprocal limits.",
+      "url": "https://en.wikipedia.org/wiki/Kirchhoff's_law_of_thermal_radiation",
+      "type": "secondary"
+    },
+    {
+      "text": "Emergency blanket, Wikipedia. — the low-absorptivity, low-emissivity reflective-film example.",
+      "url": "https://en.wikipedia.org/wiki/Emergency_blanket",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Kirchhoff's_law_of_thermal_radiation",
   "related": [
-    {"slug": "plancks-law", "kind": "kindred"},
-    {"slug": "stefan-boltzmann-law", "kind": "kindred"}
+    {
+      "slug": "plancks-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "stefan-boltzmann-law",
+      "kind": "kindred"
+    }
   ]
 }

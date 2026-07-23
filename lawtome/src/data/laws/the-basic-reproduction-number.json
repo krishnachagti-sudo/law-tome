@@ -2,7 +2,10 @@
   "no": "612",
   "slug": "the-basic-reproduction-number",
   "name": "The Basic Reproduction Number",
-  "aliases": ["R0", "R-nought"],
+  "aliases": [
+    "R0",
+    "R-nought"
+  ],
   "statement": "One infected person spreads a disease to this many others in a fully susceptible population.",
   "statementAccent": "this many others in a fully susceptible population",
   "meaning": "The basic reproduction number, written R-nought, is the expected number of secondary cases produced by a single infected individual in a population where everyone is susceptible. It is the central quantity of epidemiology for gauging how contagious an infection is. If R-nought exceeds one, each case leads on average to more than one further case and the infection can grow into an epidemic; if it is below one, the chain of transmission peters out and the outbreak dies away; a value of exactly one marks the threshold between growth and decline. Measles, among the most contagious diseases, has an R-nought around twelve to eighteen, while seasonal influenza sits near one to two. R-nought also sets the herd immunity threshold and frames the whole mathematical study of epidemics.",
@@ -33,23 +36,46 @@
   ],
   "whyItMatters": "The basic reproduction number is the headline measure of how contagious an infection is and the organising quantity of infectious-disease epidemiology. Its threshold at one tells whether an outbreak will grow or fade, and it sets the herd immunity threshold that determines how much of a population must be vaccinated to halt spread. During epidemics like COVID-19 it became a household term, guiding public-health decisions and communication. Because it distils transmissibility, contact, and infectious duration into one number, R-nought lets scientists compare diseases, plan vaccination campaigns, and model the likely course of an epidemic, making it indispensable to public health.",
   "working": [
-    {"lead": "Read contagiousness off it", "text": "treat R-nought as the average secondary cases per infection in a fully susceptible population, larger meaning more contagious."},
-    {"lead": "Watch the threshold", "text": "expect growth when the effective reproduction number is above one and decline when below, and aim interventions at pushing it under one."},
-    {"lead": "Set the immunity target", "text": "compute the herd immunity threshold as one minus one over R-nought to find the immune fraction needed to stop sustained spread."}
+    {
+      "lead": "Read contagiousness off it",
+      "text": "treat R-nought as the average secondary cases per infection in a fully susceptible population, larger meaning more contagious."
+    },
+    {
+      "lead": "Watch the threshold",
+      "text": "expect growth when the effective reproduction number is above one and decline when below, and aim interventions at pushing it under one."
+    },
+    {
+      "lead": "Set the immunity target",
+      "text": "compute the herd immunity threshold as one minus one over R-nought to find the immune fraction needed to stop sustained spread."
+    }
   ],
   "limits": "R-nought is not a fixed biological constant of a pathogen; it depends on transmissibility, contact rates, and infectious duration, so it varies by population, place, and behaviour, and interventions can change it. It measures contagiousness, not severity, so a high R-nought says nothing about how deadly a disease is. By itself it does not give the speed of spread, which also needs the generation time between successive cases. And R-nought is usually estimated from mathematical models whose assumptions differ, so published values are ranges, not precise figures, and can shift as data and models improve.",
   "misreadings": "R-nought is not an intrinsic constant of a virus; the same pathogen has different values in different populations and can be lowered by distancing and vaccination, so quoting a single universal number is misleading. It does not measure how dangerous or deadly a disease is, only how readily it spreads. And a given R-nought does not by itself say how fast an epidemic moves; that depends on the generation time, so two diseases with the same R-nought can spread at very different speeds.",
   "origin": "Rooted in early demography through Alfred Lotka and others, and first applied to epidemiology by George Macdonald in his 1952 malaria models; now the central quantity for describing the transmissibility of infectious diseases.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Empirical",
   "provenance": "canon",
   "sources": [
-    {"text": "Basic reproduction number, Wikipedia. — the definition, the threshold at one, the herd immunity formula one minus one over R-nought, the measles range, and the effective reproduction number.", "url": "https://en.wikipedia.org/wiki/Basic_reproduction_number", "type": "secondary"},
-    {"text": "Delamater et al., Complexity of the Basic Reproduction Number (R0), Emerging Infectious Diseases (CDC), 2019. — that R-nought is not a fixed biological constant and depends on context and model assumptions.", "url": "https://wwwnc.cdc.gov/eid/article/25/1/17-1901_article", "type": "primary"}
+    {
+      "text": "Basic reproduction number, Wikipedia. — the definition, the threshold at one, the herd immunity formula one minus one over R-nought, the measles range, and the effective reproduction number.",
+      "url": "https://en.wikipedia.org/wiki/Basic_reproduction_number",
+      "type": "secondary"
+    },
+    {
+      "text": "Delamater et al., Complexity of the Basic Reproduction Number (R0), Emerging Infectious Diseases (CDC), 2019. — that R-nought is not a fixed biological constant and depends on context and model assumptions.",
+      "url": "https://wwwnc.cdc.gov/eid/article/25/1/17-1901_article",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Basic_reproduction_number",
   "related": [
-    {"slug": "herd-immunity", "kind": "consequence"},
-    {"slug": "farrs-law", "kind": "kindred"}
+    {
+      "slug": "herd-immunity",
+      "kind": "consequence"
+    },
+    {
+      "slug": "farrs-law",
+      "kind": "kindred"
+    }
   ]
 }

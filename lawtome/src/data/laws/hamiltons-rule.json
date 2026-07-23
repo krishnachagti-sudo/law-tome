@@ -32,26 +32,53 @@
   ],
   "whyItMatters": "It is a foundational result of evolutionary biology, the key to one of Darwin's deepest puzzles — how self-sacrificing behaviour could evolve — and the organising idea of the study of social evolution. From insect societies to cooperative breeding to human kinship, it explains why altruism tends to flow toward relatives, and it recast the unit of selection around the gene.",
   "working": [
-    {"lead": "Weigh benefit by relatedness", "text": "to judge whether an altruistic act is favoured, compare the cost to the actor against the benefit to the recipient scaled by their relatedness."},
-    {"lead": "Expect nepotism", "text": "look for helping and self-sacrifice to be directed preferentially toward closer relatives, where the rule most easily holds."},
-    {"lead": "Hold the exact form loosely", "text": "treat the simple inequality as exact only under its assumptions, and use the regression-based general version with care."}
+    {
+      "lead": "Weigh benefit by relatedness",
+      "text": "to judge whether an altruistic act is favoured, compare the cost to the actor against the benefit to the recipient scaled by their relatedness."
+    },
+    {
+      "lead": "Expect nepotism",
+      "text": "look for helping and self-sacrifice to be directed preferentially toward closer relatives, where the rule most easily holds."
+    },
+    {
+      "lead": "Hold the exact form loosely",
+      "text": "treat the simple inequality as exact only under its assumptions, and use the regression-based general version with care."
+    }
   ],
   "limits": "The rule is robustly established as a core principle but sits within active theoretical debate. The exact inequality holds only under simplifying assumptions such as additive, non-synergistic costs and benefits; a general version defines the terms as statistical regression coefficients, but critics argue this generality is partly tautological and weak in predictive power. The old haplodiploidy hypothesis for insect eusociality is widely challenged, since eusociality also arose in diplodiploid termites and the relatedness advantage dilutes under multiple mating. And a high-profile 2010 attack on inclusive fitness theory drew a rebuttal from well over a hundred biologists — a genuine rift, though the mainstream view holds the rule valid.",
   "misreadings": "Organisms do not consciously calculate relatedness or act for the good of the species; the rule describes selection on gene frequencies, not deliberate reasoning or species welfare. It does not require haplodiploidy, which was only one contested special hypothesis. Relatedness is not the fraction of shared DNA overall but a measure of shared genes above the population baseline. And the 2010 critique did not overturn the rule; the field's response reaffirmed it.",
   "origin": "Introduced by W. D. Hamilton in his two-part 1964 paper 'The Genetical Evolution of Social Behaviour' (Journal of Theoretical Biology), which formalised inclusive fitness; George Price later rederived it from his covariance equation, and its scope remains actively debated.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1964,
   "namedAfter": "W. D. Hamilton",
   "sources": [
-    {"text": "The Genetical Evolution of Social Behaviour, Wikipedia. — Hamilton's 1964 papers, inclusive fitness, and the rB greater than C rule.", "url": "https://en.wikipedia.org/wiki/The_Genetical_Evolution_of_Social_Behaviour", "type": "secondary"},
-    {"text": "Nowak, Tarnita & Wilson, \"The evolution of eusociality,\" Nature 466:1057-1062 (2010), and Abbot et al., \"Inclusive fitness theory and eusociality,\" Nature 471:E1-E4 (2011). — the critique of inclusive fitness and the multi-author rebuttal.", "url": "https://www.nature.com/articles/nature09831", "type": "primary"},
-    {"text": "Bourke, \"Hamilton's rule and the causes of social evolution,\" Philosophical Transactions of the Royal Society B (2014). — the exact-versus-general status of the rule.", "url": "https://pubmed.ncbi.nlm.nih.gov/24686934/", "type": "primary"}
+    {
+      "text": "The Genetical Evolution of Social Behaviour, Wikipedia. — Hamilton's 1964 papers, inclusive fitness, and the rB greater than C rule.",
+      "url": "https://en.wikipedia.org/wiki/The_Genetical_Evolution_of_Social_Behaviour",
+      "type": "secondary"
+    },
+    {
+      "text": "Nowak, Tarnita & Wilson, \"The evolution of eusociality,\" Nature 466:1057-1062 (2010), and Abbot et al., \"Inclusive fitness theory and eusociality,\" Nature 471:E1-E4 (2011). — the critique of inclusive fitness and the multi-author rebuttal.",
+      "url": "https://www.nature.com/articles/nature09831",
+      "type": "primary"
+    },
+    {
+      "text": "Bourke, \"Hamilton's rule and the causes of social evolution,\" Philosophical Transactions of the Royal Society B (2014). — the exact-versus-general status of the rule.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24686934/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Kin_selection",
   "related": [
-    {"slug": "the-price-equation", "kind": "cause"},
-    {"slug": "the-prisoners-dilemma", "kind": "kindred"}
+    {
+      "slug": "the-price-equation",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-prisoners-dilemma",
+      "kind": "kindred"
+    }
   ]
 }

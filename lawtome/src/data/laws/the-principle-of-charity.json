@@ -2,7 +2,10 @@
   "no": "759",
   "slug": "the-principle-of-charity",
   "name": "The Principle of Charity",
-  "aliases": ["Charitable interpretation", "Principle of rational accommodation"],
+  "aliases": [
+    "Charitable interpretation",
+    "Principle of rational accommodation"
+  ],
   "statement": "Interpret others by assuming their statements are rational and true, taking the strongest reading available.",
   "statementAccent": "assuming their statements are rational and true",
   "meaning": "The principle of charity is an interpretive norm in philosophy and argumentation that directs one to read another person's statements or arguments in the best, most rational light before criticising them. Rather than seizing on the weakest or least sensible construal, the charitable interpreter assumes the speaker is rational and, where possible, that what they say is true or at least coherent, resolving ambiguities in the speaker's favour. The term was introduced by the philosopher Neil L. Wilson in 1959 and became central to the work of W. V. O. Quine, in his account of radical translation, and especially Donald Davidson, for whom charity is a precondition of interpretation itself: to understand another's words at all, we must largely take them to hold true beliefs and reason validly. As a practical rule of good-faith argument, charity is the opposite of the straw man: it asks you to engage the strongest version of a view, so that any criticism you then make actually tells against the position rather than a caricature of it.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "The principle of charity underpins both good philosophy and good-faith debate. In interpretation, it is the safeguard against misunderstanding: by reading others in their strongest and most rational form, we avoid attributing to them errors that are really artefacts of our own hasty construal, and in Davidson's hands it becomes a deep claim about how understanding is possible at all. In argument, it is the antidote to the straw man fallacy, insisting that criticism engage what an opponent actually means rather than a convenient distortion, which makes disagreement more honest and more productive. The norm also improves one's own thinking, since grappling with the best version of an opposing view guards against confirmation bias and forces stronger reasons. Closely related to, and often seen as the ancestor of, the practice of steelmanning, the principle of charity is a cornerstone of critical thinking, intellectual honesty, and the ethics of interpretation.",
   "working": [
-    {"lead": "Assume rationality", "text": "take the speaker to be reasoning validly and holding largely true or coherent beliefs."},
-    {"lead": "Choose the best reading", "text": "resolve ambiguities and apparent errors in the speaker's favour, reconstructing the strongest version of the claim."},
-    {"lead": "Then engage", "text": "direct any criticism at that strongest reading, so the objection tells against the real position rather than a caricature."}
+    {
+      "lead": "Assume rationality",
+      "text": "take the speaker to be reasoning validly and holding largely true or coherent beliefs."
+    },
+    {
+      "lead": "Choose the best reading",
+      "text": "resolve ambiguities and apparent errors in the speaker's favour, reconstructing the strongest version of the claim."
+    },
+    {
+      "lead": "Then engage",
+      "text": "direct any criticism at that strongest reading, so the objection tells against the real position rather than a caricature."
+    }
   ],
   "limits": "The principle of charity is an interpretive and argumentative norm, not an absolute duty; taken too far it can distort, by reading into a speaker a view they do not actually hold or excusing genuine errors that ought to be identified. There is tension between charity as fidelity to what someone actually meant and the stronger move of improving their argument beyond what they said, which risks misrepresenting their real position, a tension it shares with steelmanning. Davidson's strong version, that charity is a precondition of all interpretation, is a substantive philosophical thesis and has been debated. And charity does not require agreeing with a view, only interpreting it fairly before assessing it. So the principle is a vital corrective against caricature and misreading, best applied as a disciplined default rather than an unlimited obligation to make every claim come out true.",
   "misreadings": "Charity does not mean agreeing with people or pretending weak arguments are strong; it means interpreting them fairly, in their most rational form, before judging them. It is not naivety, since one can read a view charitably and still reject it on the merits. And it can be overdone, drifting into attributing beliefs the person never held, so treating charity as a duty to endorse others, or as licence to rewrite their view into something better than they meant, misreads a norm about fair interpretation and honest engagement.",
   "origin": "The term was introduced by the philosopher Neil L. Wilson in 1959 and developed by W. V. O. Quine in radical translation and by Donald Davidson, for whom charity is a precondition of interpretation.",
-  "category": "philosophy",
+  "category": "logic",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": 1959,
   "namedAfter": null,
   "sources": [
-    {"text": "Principle of charity, Wikipedia. — the norm of interpreting a speaker's statements in the most rational, strongest form, Neil Wilson's 1959 coinage, its use by Quine and Davidson, and its contrast with the straw man.", "url": "https://en.wikipedia.org/wiki/Principle_of_charity", "type": "secondary"},
-    {"text": "Donald Davidson, Stanford Encyclopedia of Philosophy. — Davidson's principle of charity as a precondition of radical interpretation and the interdependence of meaning and belief.", "url": "https://plato.stanford.edu/entries/davidson/", "type": "secondary"}
+    {
+      "text": "Principle of charity, Wikipedia. — the norm of interpreting a speaker's statements in the most rational, strongest form, Neil Wilson's 1959 coinage, its use by Quine and Davidson, and its contrast with the straw man.",
+      "url": "https://en.wikipedia.org/wiki/Principle_of_charity",
+      "type": "secondary"
+    },
+    {
+      "text": "Donald Davidson, Stanford Encyclopedia of Philosophy. — Davidson's principle of charity as a precondition of radical interpretation and the interdependence of meaning and belief.",
+      "url": "https://plato.stanford.edu/entries/davidson/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Principle_of_charity",
   "related": [
-    {"slug": "the-steel-man", "kind": "kindred"},
-    {"slug": "the-straw-man", "kind": "tension"}
+    {
+      "slug": "the-steel-man",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-straw-man",
+      "kind": "tension"
+    }
   ]
 }

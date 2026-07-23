@@ -2,7 +2,10 @@
   "no": "481",
   "slug": "the-baroreceptor-reflex",
   "name": "The Baroreceptor Reflex",
-  "aliases": ["The baroreflex", "The carotid sinus reflex"],
+  "aliases": [
+    "The baroreflex",
+    "The carotid sinus reflex"
+  ],
   "statement": "Stretch sensors in the arteries detect blood-pressure changes and trigger reflex corrections within seconds.",
   "statementAccent": "detect blood-pressure changes and trigger reflex corrections",
   "meaning": "The baroreceptor reflex is a rapid, negative-feedback homeostatic reflex that maintains short-term, beat-to-beat blood pressure stability. Stretch-sensitive receptors in the walls of certain large arteries detect changes in blood pressure by sensing how much the arterial wall is stretched, and their signals reach the brainstem, which adjusts the autonomic nervous system's control of heart rate, contractility, and vascular tone to counteract the change and return pressure toward its set point. It is the body's principal buffer against moment-to-moment swings in arterial pressure.",
@@ -33,23 +36,43 @@
   ],
   "whyItMatters": "It is the body's principal mechanism for buffering moment-to-moment fluctuations in arterial pressure, with posture change, exercise, straining, and stress, preventing both dangerous spikes and drops. It is clinically central to orthostatic hypotension, fainting including carotid sinus hypersensitivity, and autonomic failure in conditions such as diabetes and Parkinson's disease, and a reduced baroreflex sensitivity is a recognised prognostic marker after a heart attack. Understanding it underlies the management of blood pressure in surgery and critical care.",
   "working": [
-    {"lead": "Sense stretch, not pressure", "text": "treat baroreceptors as mechanoreceptors reading arterial wall stretch, which tracks pressure, and adjust autonomic output accordingly."},
-    {"lead": "Trace the reflex arc", "text": "follow a pressure rise through increased firing to more parasympathetic and less sympathetic output, slowing the heart and dilating vessels, and the reverse for a fall."},
-    {"lead": "Scope it to the short term", "text": "use the reflex to explain rapid buffering, not the long-term level of blood pressure, which resetting hands to the kidneys."}
+    {
+      "lead": "Sense stretch, not pressure",
+      "text": "treat baroreceptors as mechanoreceptors reading arterial wall stretch, which tracks pressure, and adjust autonomic output accordingly."
+    },
+    {
+      "lead": "Trace the reflex arc",
+      "text": "follow a pressure rise through increased firing to more parasympathetic and less sympathetic output, slowing the heart and dilating vessels, and the reverse for a fall."
+    },
+    {
+      "lead": "Scope it to the short term",
+      "text": "use the reflex to explain rapid buffering, not the long-term level of blood pressure, which resetting hands to the kidneys."
+    }
   ],
   "limits": "The baroreflex is fundamentally a short-term regulator. Faced with a sustained change in pressure, the receptors reset, shifting their threshold over hours to days so they resume signalling normal around the new level, and in chronic hypertension this resetting makes the reflex defend the elevated pressure. Because of resetting, the classical and dominant view is that the arterial baroreflex does not set the long-term level of blood pressure, which is attributed to the kidneys and fluid balance, though a modern minority view argues resetting is incomplete and the reflex may have a contributory long-term role, a genuine and unsettled debate.",
   "misreadings": "In the standard model the baroreflex does not control chronic, long-term blood pressure, precisely because of resetting; long-term control is renal and fluid-based, with the caveat that this is debated. Resetting is a normal adaptive property, not a malfunction, though in chronic hypertension it becomes maladaptive. Baroreceptors do not sense pressure directly but the stretch of the arterial wall, which is why arterial stiffening with age blunts the reflex. And it is not the carotid sinus alone; the aortic arch, through the vagus, contributes too.",
   "origin": "Established through Heinrich Ewald Hering's work on the carotid sinus reflex in the 1920s, for whom the carotid sinus nerve is named, and extended by Corneille Heymans, who won the 1938 Nobel Prize in Physiology or Medicine for the role of the sinus and aortic mechanisms.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Empirical",
   "provenance": "canon",
   "namedAfter": "Heinrich Ewald Hering and Corneille Heymans",
   "sources": [
-    {"text": "Physiology, Baroreceptors, StatPearls (NCBI Bookshelf). — the anatomy, the reflex arc, and the short-term and resetting caveats.", "url": "https://www.ncbi.nlm.nih.gov/books/NBK538172/", "type": "secondary"},
-    {"text": "Arterial Baroreceptors, CV Physiology. — the mechanism, direction, and clinical relevance.", "url": "https://cvphysiology.com/blood-pressure/bp012", "type": "secondary"}
+    {
+      "text": "Physiology, Baroreceptors, StatPearls (NCBI Bookshelf). — the anatomy, the reflex arc, and the short-term and resetting caveats.",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK538172/",
+      "type": "secondary"
+    },
+    {
+      "text": "Arterial Baroreceptors, CV Physiology. — the mechanism, direction, and clinical relevance.",
+      "url": "https://cvphysiology.com/blood-pressure/bp012",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Baroreflex",
   "related": [
-    {"slug": "the-frank-starling-law", "kind": "kindred"}
+    {
+      "slug": "the-frank-starling-law",
+      "kind": "kindred"
+    }
   ]
 }

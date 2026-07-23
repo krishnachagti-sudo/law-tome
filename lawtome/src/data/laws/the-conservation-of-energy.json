@@ -2,7 +2,9 @@
   "no": "214",
   "slug": "the-conservation-of-energy",
   "name": "The Conservation of Energy",
-  "aliases": ["The first law of thermodynamics"],
+  "aliases": [
+    "The first law of thermodynamics"
+  ],
   "statement": "Energy is never created or destroyed, only changed from one form to another.",
   "statementAccent": "only changed from one form to another",
   "meaning": "The total energy of an isolated system stays constant over time. Energy cannot be made from nothing or made to vanish; whenever it seems to disappear — a rolling ball stopping, a battery running down — it has changed form, into heat, sound, or another store, with the books always balancing.",
@@ -33,24 +35,47 @@
   ],
   "whyItMatters": "It is among the most strongly established laws in all of physics, underpinning thermodynamics, chemistry, and every branch of engineering. It rules out perpetual-motion machines, disciplines every energy budget from engines to ecosystems, and, through Noether's theorem, reveals conservation laws as the shadows of symmetries.",
   "working": [
-    {"lead": "Balance the energy books", "text": "when energy seems to vanish, look for the form it took — heat, sound, deformation — since the total must be conserved."},
-    {"lead": "Reject perpetual motion", "text": "treat any claimed machine that produces energy from nothing as impossible, since it would violate conservation."},
-    {"lead": "Mind the isolated-system boundary", "text": "apply conservation to a whole isolated system; local energy can rise or fall as energy crosses the boundary."}
+    {
+      "lead": "Balance the energy books",
+      "text": "when energy seems to vanish, look for the form it took — heat, sound, deformation — since the total must be conserved."
+    },
+    {
+      "lead": "Reject perpetual motion",
+      "text": "treat any claimed machine that produces energy from nothing as impossible, since it would violate conservation."
+    },
+    {
+      "lead": "Mind the isolated-system boundary",
+      "text": "apply conservation to a whole isolated system; local energy can rise or fall as energy crosses the boundary."
+    }
   ],
   "limits": "In all local and terrestrial contexts the law holds without known exception. Its one genuine subtlety is in general relativity: for the universe as a whole, total energy conservation is not always well-defined, because an expanding, dynamic spacetime lacks the time-translation symmetry that conservation rests on. Local energy-momentum conservation still holds, but 'the total energy of the universe is conserved' is not a well-posed statement in cosmology — for instance, light redshifts and loses energy as space expands. This is a matter of careful formulation in curved spacetime, not a failure where the law applies.",
   "misreadings": "It does not mean energy stays in one form or that motion never fades — friction converts kinetic energy to heat rather than destroying it. And the cosmological caveat is not a claim that conservation is false; locally and in every laboratory it is unbroken.",
   "origin": "Established independently in the 1840s by Julius Robert von Mayer (1842), James Prescott Joule's experiments, and Hermann von Helmholtz's general statement (1847) — a classic case of simultaneous discovery; William Rankine first used the phrase 'conservation of energy' in 1850.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1847,
   "sources": [
-    {"text": "Conservation of energy, Wikipedia. — the constant-total statement, the first law of thermodynamics, the multiple-discovery history, and the general-relativity caveat.", "url": "https://en.wikipedia.org/wiki/Conservation_of_energy", "type": "secondary"},
-    {"text": "Julius von Mayer, Wikipedia. — Mayer's 1842 statement and the mechanical equivalent of heat.", "url": "https://en.wikipedia.org/wiki/Julius_von_Mayer", "type": "secondary"}
+    {
+      "text": "Conservation of energy, Wikipedia. — the constant-total statement, the first law of thermodynamics, the multiple-discovery history, and the general-relativity caveat.",
+      "url": "https://en.wikipedia.org/wiki/Conservation_of_energy",
+      "type": "secondary"
+    },
+    {
+      "text": "Julius von Mayer, Wikipedia. — Mayer's 1842 statement and the mechanical equivalent of heat.",
+      "url": "https://en.wikipedia.org/wiki/Julius_von_Mayer",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Conservation_of_energy",
   "related": [
-    {"slug": "the-second-law-of-thermodynamics", "kind": "kindred"},
-    {"slug": "noethers-theorem", "kind": "cause"}
+    {
+      "slug": "the-second-law-of-thermodynamics",
+      "kind": "kindred"
+    },
+    {
+      "slug": "noethers-theorem",
+      "kind": "cause"
+    }
   ]
 }

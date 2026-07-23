@@ -2,7 +2,10 @@
   "no": "581",
   "slug": "the-riemann-hypothesis",
   "name": "The Riemann Hypothesis",
-  "aliases": ["RH", "The Riemann zeta conjecture"],
+  "aliases": [
+    "RH",
+    "The Riemann zeta conjecture"
+  ],
   "statement": "Every nontrivial zero of the Riemann zeta function lies exactly on the critical line, half.",
   "statementAccent": "lies exactly on the critical line",
   "meaning": "The Riemann hypothesis conjectures that all the nontrivial zeros of the Riemann zeta function have real part equal to one half, lying on a single vertical line in the complex plane called the critical line. The zeta function encodes the distribution of the prime numbers, and the location of its zeros controls how regularly the primes are spaced. Proposed by Bernhard Riemann in 1859, the hypothesis is the most famous unsolved problem in mathematics, one of Hilbert's twenty-three problems and one of the seven Clay Millennium Prize Problems carrying a million-dollar reward. It remains unproven, yet an enormous body of number theory is built on the assumption that it is true.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "The Riemann hypothesis stands at the centre of number theory because the location of the zeta zeros governs the finest structure of the prime numbers, and hundreds of published theorems begin conditionally with if the Riemann hypothesis is true. A proof would sharpen the prime number theorem to its limit, secure results in cryptography and computation that depend on prime distribution, and likely open deep connections between number theory, analysis, and mathematical physics. Unsolved for over a century and a half, it is a benchmark of mathematical difficulty and, through its Clay Millennium status, the most celebrated open problem in the subject.",
   "working": [
-    {"lead": "Read the zeros as prime music", "text": "treat the nontrivial zeros of the zeta function as controlling the fluctuations of the primes around their average density."},
-    {"lead": "Aim for the critical line", "text": "the hypothesis asserts every nontrivial zero has real part exactly one half; proving it would minimise the error in prime counting."},
-    {"lead": "Work conditionally", "text": "note that much of analytic number theory proves results assuming the hypothesis, so a proof would upgrade a large body of conditional theorems to certainty."}
+    {
+      "lead": "Read the zeros as prime music",
+      "text": "treat the nontrivial zeros of the zeta function as controlling the fluctuations of the primes around their average density."
+    },
+    {
+      "lead": "Aim for the critical line",
+      "text": "the hypothesis asserts every nontrivial zero has real part exactly one half; proving it would minimise the error in prime counting."
+    },
+    {
+      "lead": "Work conditionally",
+      "text": "note that much of analytic number theory proves results assuming the hypothesis, so a proof would upgrade a large body of conditional theorems to certainty."
+    }
   ],
   "limits": "The hypothesis is unproven, so results resting on it remain conditional, however strong the numerical and partial evidence. Verifying trillions of zeros on the critical line does not constitute a proof, since infinitely many remain unchecked and a single off-line zero would refute it. Hardy's theorem gives infinitely many zeros on the line but not that all of them lie there, and the analogous statement for function fields, proved by Weil and Deligne, does not carry over to the classical case. The problem's difficulty is that no known method reaches all the zeros at once, and even a proof might illuminate the primes without yielding easy new computations.",
   "misreadings": "The hypothesis concerns only the nontrivial zeros; the zeta function also has trivial zeros at the negative even integers, which are known and not at issue. Checking enormous numbers of zeros by computer confirms but does not prove it, because the claim is about all infinitely many nontrivial zeros. And it is not the same as the prime number theorem, which is proved: the prime number theorem corresponds to there being no zeros on the line where the real part is one, while the Riemann hypothesis makes the far stronger, still-open claim that they all lie on the line one half.",
   "origin": "Formulated by Bernhard Riemann in his 1859 paper on the number of primes below a given magnitude, listed as the eighth of Hilbert's problems in 1900 and as one of the Clay Mathematics Institute's seven Millennium Prize Problems in 2000, and unproven to this day.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Contested",
   "provenance": "canon",
   "coinedYear": 1859,
   "namedAfter": "Bernhard Riemann",
   "sources": [
-    {"text": "Riemann hypothesis, Wikipedia. — the critical-line statement, the 1859 origin, Hilbert's eighth problem and Clay Millennium status, and Hardy's 1914 result.", "url": "https://en.wikipedia.org/wiki/Riemann_hypothesis", "type": "secondary"},
-    {"text": "The Riemann Hypothesis, Clay Mathematics Institute. — the official Millennium Prize Problem statement and its million-dollar prize.", "url": "https://www.claymath.org/millennium/riemann-hypothesis/", "type": "primary"}
+    {
+      "text": "Riemann hypothesis, Wikipedia. — the critical-line statement, the 1859 origin, Hilbert's eighth problem and Clay Millennium status, and Hardy's 1914 result.",
+      "url": "https://en.wikipedia.org/wiki/Riemann_hypothesis",
+      "type": "secondary"
+    },
+    {
+      "text": "The Riemann Hypothesis, Clay Mathematics Institute. — the official Millennium Prize Problem statement and its million-dollar prize.",
+      "url": "https://www.claymath.org/millennium/riemann-hypothesis/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Riemann_hypothesis",
   "related": [
-    {"slug": "the-prime-number-theorem", "kind": "kindred"}
+    {
+      "slug": "the-prime-number-theorem",
+      "kind": "kindred"
+    }
   ]
 }

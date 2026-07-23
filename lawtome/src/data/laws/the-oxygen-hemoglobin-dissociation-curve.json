@@ -2,7 +2,10 @@
   "no": "480",
   "slug": "the-oxygen-hemoglobin-dissociation-curve",
   "name": "The Oxygen-Hemoglobin Dissociation Curve",
-  "aliases": ["The oxygen dissociation curve", "The oxyhemoglobin dissociation curve"],
+  "aliases": [
+    "The oxygen dissociation curve",
+    "The oxyhemoglobin dissociation curve"
+  ],
   "statement": "Hemoglobin's oxygen saturation rises with oxygen pressure along an S-shaped curve, thanks to cooperative binding.",
   "statementAccent": "an S-shaped curve",
   "meaning": "The oxygen-hemoglobin dissociation curve plots the percentage saturation of hemoglobin with oxygen against the partial pressure of oxygen. Its defining feature is a sigmoidal, S-shaped form, quite unlike the simple hyperbola a single-site protein would give. The shape is the key object of study: its flat upper plateau safeguards oxygen loading in the lungs, while its steep middle allows large oxygen unloading for small drops in pressure in the tissues. The curve is the central picture through which respiratory physiology understands how blood carries and delivers oxygen.",
@@ -33,23 +36,43 @@
   ],
   "whyItMatters": "The curve is foundational to respiratory physiology and oxygen delivery, and central in clinical medicine: it underlies the interpretation of pulse oximetry and arterial blood gases, the understanding of carbon monoxide poisoning and abnormal hemoglobins, and the management of critically ill and anaemic patients. It explains how the body adapts to altitude and anaemia through shifts of the curve, and it makes vivid the cooperative, allosteric nature of hemoglobin that lets it both load oxygen efficiently in the lungs and release it generously in the tissues.",
   "working": [
-    {"lead": "Read saturation from pressure", "text": "use the curve to translate an oxygen partial pressure into a hemoglobin saturation, remembering the plateau protects loading and the steep part aids unloading."},
-    {"lead": "Track the shifts", "text": "expect carbon dioxide, acid, heat, and 2,3-bisphosphoglycerate to shift the curve right toward easier unloading, and their opposites to shift it left."},
-    {"lead": "Watch P50", "text": "read the half-saturation pressure as the index of affinity, higher meaning a right shift and lower affinity."}
+    {
+      "lead": "Read saturation from pressure",
+      "text": "use the curve to translate an oxygen partial pressure into a hemoglobin saturation, remembering the plateau protects loading and the steep part aids unloading."
+    },
+    {
+      "lead": "Track the shifts",
+      "text": "expect carbon dioxide, acid, heat, and 2,3-bisphosphoglycerate to shift the curve right toward easier unloading, and their opposites to shift it left."
+    },
+    {
+      "lead": "Watch P50",
+      "text": "read the half-saturation pressure as the index of affinity, higher meaning a right shift and lower affinity."
+    }
   ],
   "limits": "The curve relates saturation to oxygen pressure, and neither of these is the same as oxygen content, which also depends on the hemoglobin concentration, so an anaemic patient can be fully saturated at a normal pressure yet carry dangerously little oxygen. A rightward shift is not simply bad; it slightly impairs loading in the lungs while improving unloading in the tissues, so its value depends on context. The Hill coefficient is an empirical measure of cooperativity, not the number of binding sites, and quoted P50 values assume standard temperature, pH, and carbon dioxide, shifting with the very factors the curve describes.",
   "misreadings": "Saturation, oxygen pressure, and oxygen content are three distinct quantities; the curve relates the first two, while content also depends on hemoglobin concentration, a frequent source of confusion. A right shift is not always harmful, since it aids tissue unloading. The Hill coefficient is not the number of binding sites, being about 2.7 to 3 for hemoglobin rather than 4. And the normal P50 near 26 to 27 millimetres of mercury is condition-dependent, so small differences between sources reflect measurement conditions, not disagreement about the biology.",
   "origin": "Built on the discovery of cooperative oxygen binding by hemoglobin, with the Bohr effect described by Christian Bohr, Karl Hasselbalch, and August Krogh in 1904, A. V. Hill's cooperativity equation in 1910, and Gilbert Adair's tetramer model in 1925.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1904,
   "sources": [
-    {"text": "Physiology, Oxyhemoglobin Dissociation Curve, StatPearls (NCBI Bookshelf). — the sigmoidal shape, cooperativity, P50, and the shift factors.", "url": "https://www.ncbi.nlm.nih.gov/books/NBK499818/", "type": "secondary"},
-    {"text": "Oxygen-hemoglobin dissociation curve, Wikipedia. — the curve, its shifts, and the contrast with myoglobin.", "url": "https://en.wikipedia.org/wiki/Oxygen%E2%80%93hemoglobin_dissociation_curve", "type": "secondary"}
+    {
+      "text": "Physiology, Oxyhemoglobin Dissociation Curve, StatPearls (NCBI Bookshelf). — the sigmoidal shape, cooperativity, P50, and the shift factors.",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK499818/",
+      "type": "secondary"
+    },
+    {
+      "text": "Oxygen-hemoglobin dissociation curve, Wikipedia. — the curve, its shifts, and the contrast with myoglobin.",
+      "url": "https://en.wikipedia.org/wiki/Oxygen%E2%80%93hemoglobin_dissociation_curve",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Oxygen%E2%80%93hemoglobin_dissociation_curve",
   "related": [
-    {"slug": "the-bohr-effect", "kind": "consequence"}
+    {
+      "slug": "the-bohr-effect",
+      "kind": "consequence"
+    }
   ]
 }

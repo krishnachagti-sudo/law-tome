@@ -32,24 +32,44 @@
   ],
   "whyItMatters": "It unified the great conservation laws — energy, momentum, angular momentum, charge — as consequences of symmetry, transforming how physicists understand why anything is conserved at all. It is a cornerstone of classical mechanics, field theory, quantum field theory, and the Standard Model, and one of the most profound results in mathematical physics.",
   "working": [
-    {"lead": "Look for the symmetry behind a conservation law", "text": "when a quantity is conserved, seek the continuous symmetry that produces it, and vice versa."},
-    {"lead": "Read invariance as a conserved charge", "text": "if the action is unchanged by a smooth transformation, expect a corresponding quantity to be constant in time."},
-    {"lead": "Distinguish global from local symmetry", "text": "treat global symmetries as giving conservation laws and local gauge symmetries as giving identities, per the two theorems."}
+    {
+      "lead": "Look for the symmetry behind a conservation law",
+      "text": "when a quantity is conserved, seek the continuous symmetry that produces it, and vice versa."
+    },
+    {
+      "lead": "Read invariance as a conserved charge",
+      "text": "if the action is unchanged by a smooth transformation, expect a corresponding quantity to be constant in time."
+    },
+    {
+      "lead": "Distinguish global from local symmetry",
+      "text": "treat global symmetries as giving conservation laws and local gauge symmetries as giving identities, per the two theorems."
+    }
   ],
   "limits": "It applies only to continuous, differentiable symmetries; discrete symmetries like parity or reflection yield no Noether current. It requires a system derivable from an action, so purely dissipative systems with friction need not obey the corresponding conservation law even when a symmetry is present. And in general relativity, whose diffeomorphism invariance is a local symmetry, energy-momentum conservation becomes subtle and only globally well-defined under special conditions — the very problem that motivated the theorem.",
   "misreadings": "It is not a claim that everything is conserved — only quantities tied to a continuous symmetry are, and only for systems with an action. And the popular version often conflates the two theorems: global symmetries give conservation laws, while local gauge symmetries give identities among the equations of motion.",
   "origin": "Proved by the German mathematician Emmy Noether in 'Invariante Variationsprobleme' (1918), work she undertook at Gottingen amid the general-relativity energy problem posed by Hilbert and Klein — and despite being barred, as a woman, from a regular faculty post until 1919.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1918,
   "namedAfter": "Emmy Noether",
   "sources": [
-    {"text": "Noether's theorem, Wikipedia. — the symmetry-conservation correspondence, the three canonical pairs, and the first and second theorems.", "url": "https://en.wikipedia.org/wiki/Noether%27s_theorem", "type": "secondary"},
-    {"text": "\"Emmy Noether,\" MacTutor History of Mathematics. — the 1918 work, the Gottingen context, and her career.", "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Noether_Emmy/", "type": "secondary"}
+    {
+      "text": "Noether's theorem, Wikipedia. — the symmetry-conservation correspondence, the three canonical pairs, and the first and second theorems.",
+      "url": "https://en.wikipedia.org/wiki/Noether%27s_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Emmy Noether,\" MacTutor History of Mathematics. — the 1918 work, the Gottingen context, and her career.",
+      "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Noether_Emmy/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Noether%27s_theorem",
   "related": [
-    {"slug": "the-conservation-of-energy", "kind": "consequence"}
+    {
+      "slug": "the-conservation-of-energy",
+      "kind": "consequence"
+    }
   ]
 }

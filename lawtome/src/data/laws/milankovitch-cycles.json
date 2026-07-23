@@ -2,7 +2,10 @@
   "no": "462",
   "slug": "milankovitch-cycles",
   "name": "Milankovitch Cycles",
-  "aliases": ["Orbital forcing", "The astronomical theory of ice ages"],
+  "aliases": [
+    "Orbital forcing",
+    "The astronomical theory of ice ages"
+  ],
   "statement": "Slow changes in Earth's orbit and tilt pace the ice ages by redistributing sunlight.",
   "statementAccent": "pace the ice ages by redistributing sunlight",
   "meaning": "Milankovitch cycles are the collective effects of slow, periodic changes in the geometry of Earth's orbit and the orientation of its rotation axis on the amount and distribution of sunlight, or insolation, reaching the surface. These changes do not alter the Sun's total output; they redistribute sunlight, especially the intensity of summer sunlight at high northern latitudes, and in doing so pace the long-term rhythm of Earth's climate, above all the glacial and interglacial cycles of the ice ages. It is a theory of timing: orbital variation acts as a metronome while internal feedbacks amplify the response.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "It provides the leading explanation for the timing of Pleistocene ice ages and interglacials, a foundational achievement of paleoclimatology, and the orbital tuning of sediment records underpins much of the geologic time scale. It ties astronomy, orbital mechanics, and climate physics into one predictive framework, and it supplies essential context for the present: it defines the slow, natural orbital background against which the rapid warming of the industrial era stands out sharply.",
   "working": [
-    {"lead": "Read the pacing", "text": "attribute the timing of glacial and interglacial cycles to the orbital cycles of eccentricity, obliquity, and precession."},
-    {"lead": "Watch high-latitude summer", "text": "focus on how the cycles redistribute northern-summer sunlight, which governs whether ice persists, rather than on total insolation."},
-    {"lead": "Expect amplification", "text": "treat orbital forcing as the trigger and look to feedbacks like carbon dioxide and ice-albedo to supply the large temperature swings."}
+    {
+      "lead": "Read the pacing",
+      "text": "attribute the timing of glacial and interglacial cycles to the orbital cycles of eccentricity, obliquity, and precession."
+    },
+    {
+      "lead": "Watch high-latitude summer",
+      "text": "focus on how the cycles redistribute northern-summer sunlight, which governs whether ice persists, rather than on total insolation."
+    },
+    {
+      "lead": "Expect amplification",
+      "text": "treat orbital forcing as the trigger and look to feedbacks like carbon dioxide and ice-albedo to supply the large temperature swings."
+    }
   ],
   "limits": "Orbital forcing sets the pacing, not the full amplitude: the large glacial-interglacial swings require internal amplifiers and feedbacks, greenhouse gases, ice-albedo, ice-sheet dynamics, dust, and ocean circulation, which do most of the heavy lifting. The 100,000-year problem and the mid-Pleistocene transition remain genuinely debated, with no single agreed mechanism. And the theory does not explain current global warming: orbital changes operate over tens of thousands of years and are currently near-neutral to slightly cooling, while the rapid warming since the industrial era is driven by human greenhouse-gas emissions.",
   "misreadings": "It is not the changing Earth-Sun distance or total sunlight that matters most but the redistribution of insolation, especially high-latitude northern summer intensity governed by tilt and precession. Milankovitch cycles do not cause present-day climate change; the timescales and direction are wrong, and human forcing dominates today. The theory predicts the timing, not the magnitude, of ice ages, which feedbacks set. There is no single twenty-three-thousand-year precession cycle but a band from about nineteen to twenty-six thousand years. And Milankovitch's work was neglected for decades before the 1976 core evidence vindicated it.",
   "origin": "Developed into a detailed mathematical theory by the Serbian scientist Milutin Milankovitch in the 1920s to 1940s, notably his 'Canon of Insolation and the Ice Age Problem' (1941), building on precursors James Croll and Joseph Adhemar, and vindicated by Hays, Imbrie, and Shackleton's 1976 Science paper.",
-  "category": "science",
+  "category": "earth-science",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1941,
   "namedAfter": "Milutin Milankovitch",
   "sources": [
-    {"text": "Milankovitch cycles, Wikipedia. — the three orbital cycles, their periods, and the open problems.", "url": "https://en.wikipedia.org/wiki/Milankovitch_cycles", "type": "secondary"},
-    {"text": "Hays, Imbrie, and Shackleton, 'Variations in the Earth's Orbit: Pacemaker of the Ice Ages,' Science 194 (1976): 1121-1132. — the deep-sea-core confirmation of orbital pacing.", "url": "https://www.science.org/doi/10.1126/science.194.4270.1121", "type": "primary"}
+    {
+      "text": "Milankovitch cycles, Wikipedia. — the three orbital cycles, their periods, and the open problems.",
+      "url": "https://en.wikipedia.org/wiki/Milankovitch_cycles",
+      "type": "secondary"
+    },
+    {
+      "text": "Hays, Imbrie, and Shackleton, 'Variations in the Earth's Orbit: Pacemaker of the Ice Ages,' Science 194 (1976): 1121-1132. — the deep-sea-core confirmation of orbital pacing.",
+      "url": "https://www.science.org/doi/10.1126/science.194.4270.1121",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Milankovitch_cycles",
   "related": [
-    {"slug": "the-keeling-curve", "kind": "tension"}
+    {
+      "slug": "the-keeling-curve",
+      "kind": "tension"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "663",
   "slug": "the-fallacy-fallacy",
   "name": "The Fallacy Fallacy",
-  "aliases": ["Argument from fallacy", "Argumentum ad logicam"],
+  "aliases": [
+    "Argument from fallacy",
+    "Argumentum ad logicam"
+  ],
   "statement": "A bad argument for a claim does not prove the claim false; the conclusion may still be true.",
   "statementAccent": "does not prove the claim false",
   "meaning": "The fallacy fallacy, also called the argument from fallacy or argumentum ad logicam, is the error of concluding that a claim is false simply because the argument offered for it contains a fallacy or is otherwise flawed. Spotting a fallacy in an argument shows only that this particular argument fails to establish its conclusion; it does not show that the conclusion is false, since the claim might still be true for other reasons. Also known as the fallacist's fallacy or the bad reasons fallacy, it is a meta-level warning in logic against a common overreach: treating the refutation of an argument as if it were the refutation of the claim. To show a conclusion actually false, one needs a separate, independent argument, not merely the discovery that one argument for it was bad.",
@@ -33,23 +36,46 @@
   ],
   "whyItMatters": "The fallacy fallacy is an important meta-level principle in logic and critical thinking, guarding against a subtle overreach that is especially tempting in an age of eager fallacy-spotting. It reminds us that catching a fallacy in someone's reasoning refutes their argument, not necessarily their conclusion, so a poorly argued true claim is not thereby false. This matters in debate, where dismissing an opponent's position on the strength of one bad argument is a common error, and in inquiry generally, where the truth of a claim must be assessed on its own merits. By separating the quality of an argument from the truth of its conclusion, it enforces a basic discipline of honest reasoning.",
   "working": [
-    {"lead": "Refute the argument, not the claim", "text": "recognise that exposing a fallacy defeats that argument only, leaving the truth of its conclusion open."},
-    {"lead": "Seek independent grounds", "text": "to show a conclusion actually false, give a separate argument, since a bad argument for it proves nothing about its falsity."},
-    {"lead": "Resist gotcha reasoning", "text": "avoid concluding an opponent's claim is wrong merely because one of their arguments was fallacious; the claim may still be true."}
+    {
+      "lead": "Refute the argument, not the claim",
+      "text": "recognise that exposing a fallacy defeats that argument only, leaving the truth of its conclusion open."
+    },
+    {
+      "lead": "Seek independent grounds",
+      "text": "to show a conclusion actually false, give a separate argument, since a bad argument for it proves nothing about its falsity."
+    },
+    {
+      "lead": "Resist gotcha reasoning",
+      "text": "avoid concluding an opponent's claim is wrong merely because one of their arguments was fallacious; the claim may still be true."
+    }
   ],
   "limits": "The fallacy fallacy concerns the inference from a flawed argument to a false conclusion; it does not mean that fallacious arguments are acceptable or that pointing out fallacies is useless, since exposing a bad argument legitimately shows that it fails to support its conclusion. It leaves the conclusion's truth open, to be decided on independent grounds, rather than vindicating it. Sources differ on whether to classify it as a formal or informal fallacy, reflecting that its invalid structure can be described formally while its typical use is informal. As with other fallacies, applying the label requires care, since sometimes an argument's failure, combined with other evidence, does bear on a conclusion.",
   "misreadings": "Proving an argument fallacious does not prove its conclusion false; it shows only that this argument fails to support the conclusion, whose truth remains an open question. The fallacy fallacy does not imply that fallacies should be ignored or that all arguments are equal; refuting a bad argument is legitimate and useful. And rebutting an argument is not the same as rebutting the claim, so the proper next step after exposing a fallacy is to evaluate the claim independently, not to declare it false.",
   "origin": "A classic meta-level fallacy, the argument from fallacy or argumentum ad logicam, also called the fallacist's fallacy, catalogued in logic and critical-thinking texts as the error of inferring a false conclusion from a flawed argument.",
-  "category": "philosophy",
+  "category": "logic",
   "reliability": "Heuristic",
   "provenance": "canon",
   "sources": [
-    {"text": "Argument from fallacy, Wikipedia. — the definition, the alternate names, the point that a fallacious argument can have a true conclusion, the cat example, and the invalid denying-the-antecedent structure.", "url": "https://en.wikipedia.org/wiki/Argument_from_fallacy", "type": "secondary"},
-    {"text": "Logical Fallacy: Fallacy Fallacy, The Fallacy Files. — that a fallacious argument says nothing about the truth or falsity of its conclusion.", "url": "https://www.fallacyfiles.org/fallfall.html", "type": "secondary"}
+    {
+      "text": "Argument from fallacy, Wikipedia. — the definition, the alternate names, the point that a fallacious argument can have a true conclusion, the cat example, and the invalid denying-the-antecedent structure.",
+      "url": "https://en.wikipedia.org/wiki/Argument_from_fallacy",
+      "type": "secondary"
+    },
+    {
+      "text": "Logical Fallacy: Fallacy Fallacy, The Fallacy Files. — that a fallacious argument says nothing about the truth or falsity of its conclusion.",
+      "url": "https://www.fallacyfiles.org/fallfall.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Argument_from_fallacy",
   "related": [
-    {"slug": "the-straw-man", "kind": "kindred"},
-    {"slug": "begging-the-question", "kind": "kindred"}
+    {
+      "slug": "the-straw-man",
+      "kind": "kindred"
+    },
+    {
+      "slug": "begging-the-question",
+      "kind": "kindred"
+    }
   ]
 }

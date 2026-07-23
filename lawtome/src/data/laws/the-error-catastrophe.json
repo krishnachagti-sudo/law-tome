@@ -2,7 +2,10 @@
   "no": "545",
   "slug": "the-error-catastrophe",
   "name": "The Error Catastrophe",
-  "aliases": ["The error threshold", "Quasispecies melting"],
+  "aliases": [
+    "The error threshold",
+    "Quasispecies melting"
+  ],
   "statement": "Push a replicator's mutation rate past a critical threshold and its genetic information dissolves into noise.",
   "statementAccent": "its genetic information dissolves into noise",
   "meaning": "The error catastrophe is the cumulative loss of genetic information in a replicating population when its mutation rate rises above a critical value, the error threshold. Below the threshold, copies remain faithful enough that the fittest sequence, the master sequence, persists surrounded by a cloud of near-identical mutants. Above it, so many errors accumulate each generation that the master sequence is lost and the population's genetic identity melts, spreading out into a nearly random distribution across the space of possible sequences. Introduced by Manfred Eigen, the concept sets a fundamental limit on how much information a replicator of given fidelity can maintain.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "The error catastrophe is a foundational idea in molecular evolution, quantifying the trade-off between mutation, which fuels adaptation, and fidelity, which preserves information, and setting a hard ceiling on genome size for a given copying accuracy. Through Eigen's paradox it frames a central puzzle in the origin of life, and through quasispecies theory it reshaped how biologists think about rapidly mutating populations such as RNA viruses. It also inspired lethal mutagenesis, a promising antiviral strategy that seeks to defeat a virus not by killing it directly but by overwhelming it with its own mutations.",
   "working": [
-    {"lead": "Balance mutation and fidelity", "text": "recognise that a replicator can maintain only about one genome's worth of information per replication before errors erode its master sequence."},
-    {"lead": "Think in quasispecies", "text": "treat a mutating population as a cloud of related sequences on which selection acts as a whole, not as a single genotype."},
-    {"lead": "Weaponise the threshold", "text": "consider pushing a virus that already replicates near its error threshold over the edge with mutagens to collapse its population."}
+    {
+      "lead": "Balance mutation and fidelity",
+      "text": "recognise that a replicator can maintain only about one genome's worth of information per replication before errors erode its master sequence."
+    },
+    {
+      "lead": "Think in quasispecies",
+      "text": "treat a mutating population as a cloud of related sequences on which selection acts as a whole, not as a single genotype."
+    },
+    {
+      "lead": "Weaponise the threshold",
+      "text": "consider pushing a virus that already replicates near its error threshold over the edge with mutagens to collapse its population."
+    }
   ],
   "limits": "The sharp error threshold is a feature of idealised models, notably a single-peak fitness landscape and an infinite or constant population; on smoother landscapes the transition softens, and survival of the flattest can favour mutationally robust sequences over the fittest. The rule that genome length times error rate is about one is an order-of-magnitude bound that carries a factor depending on the master sequence's selective advantage, not an exact law. And lethal mutagenesis, though inspired by the error catastrophe, is formally distinct: the classical catastrophe is the informational delocalisation of the quasispecies at constant population size, whereas lethal mutagenesis is actual population extinction, which has a demographic component the constant-population model cannot capture.",
   "misreadings": "The error catastrophe, in Eigen's original constant-population model, is the loss of the master sequence and delocalisation of the quasispecies, not necessarily the extinction of the population; that extinction is the separate result of lethal mutagenesis. The genome-length-times-error-rate-about-one relation is an order-of-magnitude bound, not an exact law, since it depends on the master sequence's selective superiority and on the shape of the fitness landscape. And Eigen's error catastrophe should not be confused with Orgel's error catastrophe, a distinct 1963 hypothesis about ageing through errors in protein synthesis.",
   "origin": "Introduced by Manfred Eigen in his 1971 paper 'Selforganization of matter and the evolution of biological macromolecules' in Naturwissenschaften, and developed into quasispecies theory with Peter Schuster later that decade.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1971,
   "namedAfter": "Manfred Eigen",
   "sources": [
-    {"text": "Error threshold (evolution), Wikipedia. — the error threshold, the master sequence and quasispecies, Eigen's paradox, and the genome-length limit.", "url": "https://en.wikipedia.org/wiki/Error_threshold_(evolution)", "type": "secondary"},
-    {"text": "'Lethal Mutagenesis of RNA Viruses and Approved Drugs with Antiviral Mutagenic Activity,' Viruses (2022). — RNA viruses near the threshold and the antiviral application.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9024455/", "type": "secondary"}
+    {
+      "text": "Error threshold (evolution), Wikipedia. — the error threshold, the master sequence and quasispecies, Eigen's paradox, and the genome-length limit.",
+      "url": "https://en.wikipedia.org/wiki/Error_threshold_(evolution)",
+      "type": "secondary"
+    },
+    {
+      "text": "'Lethal Mutagenesis of RNA Viruses and Approved Drugs with Antiviral Mutagenic Activity,' Viruses (2022). — RNA viruses near the threshold and the antiviral application.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9024455/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Error_threshold_(evolution)",
   "related": [
-    {"slug": "mullers-ratchet", "kind": "kindred"}
+    {
+      "slug": "mullers-ratchet",
+      "kind": "kindred"
+    }
   ]
 }

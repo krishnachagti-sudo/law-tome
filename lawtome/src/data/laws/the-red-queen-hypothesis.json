@@ -2,7 +2,9 @@
   "no": "188",
   "slug": "the-red-queen-hypothesis",
   "name": "The Red Queen Hypothesis",
-  "aliases": ["The Red Queen's race"],
+  "aliases": [
+    "The Red Queen's race"
+  ],
   "statement": "You must keep evolving just to hold your ground against everything evolving back.",
   "statementAccent": "just to hold your ground",
   "meaning": "Species must constantly adapt not to get ahead but merely to keep their relative fitness against the competitors, parasites, and predators that are co-evolving alongside them. Any gain one lineage makes is soon offset by counter-adaptation in the species it interacts with, so no one secures a durable long-term advantage — the system stays at a standstill despite ceaseless change.",
@@ -33,24 +35,44 @@
   ],
   "whyItMatters": "It reframed evolution as a treadmill rather than a ladder of progress: improvement can be continuous yet yield no lasting advantage, because rivals improve too. It is among the most influential ideas about coevolution and remains a leading hypothesis for one of biology's deepest puzzles — why sexual reproduction exists at all.",
   "working": [
-    {"lead": "Expect no permanent advantage", "text": "where fitness depends on co-evolving rivals, treat any gain as temporary — the baseline keeps moving."},
-    {"lead": "Look to parasites for the value of sex", "text": "where parasite pressure is high, expect sexual reproduction to be favoured over cloning, as it generates rare resistant genotypes."},
-    {"lead": "Test system by system", "text": "because coevolutionary dynamics resist broad testing, weigh the evidence within specific host-parasite systems rather than assuming universality."}
+    {
+      "lead": "Expect no permanent advantage",
+      "text": "where fitness depends on co-evolving rivals, treat any gain as temporary — the baseline keeps moving."
+    },
+    {
+      "lead": "Look to parasites for the value of sex",
+      "text": "where parasite pressure is high, expect sexual reproduction to be favoured over cloning, as it generates rare resistant genotypes."
+    },
+    {
+      "lead": "Test system by system",
+      "text": "because coevolutionary dynamics resist broad testing, weigh the evidence within specific host-parasite systems rather than assuming universality."
+    }
   ],
   "limits": "Despite the title of Van Valen's paper, 'A New Evolutionary Law,' it is best treated as an influential hypothesis, not an established law. The original Law of Constant Extinction it was invented to explain has itself been questioned and reanalysed. The evidence that parasites maintain sex is suggestive but mixed: the snail system offers some of the strongest field support, yet studies in other systems challenge the generality, and generating genetic variation may not be the primary reason sex persists. Broad coevolutionary claims are hard to test across the tree of life, so support tends to be system-specific.",
   "misreadings": "It does not say evolution makes no progress in any sense, only that relative fitness against co-evolving enemies need not improve. And calling it a 'law' overstates it — it is a framework and hypothesis, well supported in particular systems but not a proven universal.",
   "origin": "Proposed by the evolutionary biologist Leigh Van Valen in 'A New Evolutionary Law,' Evolutionary Theory 1(1):1-30 (1973), in a journal he founded; named for the Red Queen in Lewis Carroll's Through the Looking-Glass (1871), who tells Alice 'it takes all the running you can do, to keep in the same place.'",
-  "category": "science",
+  "category": "biology",
   "reliability": "Contested",
   "provenance": "canon",
   "coinedYear": 1973,
   "namedAfter": "The Red Queen in Lewis Carroll's Through the Looking-Glass",
   "sources": [
-    {"text": "Red Queen hypothesis, Wikipedia. — the standstill-against-coevolution statement, the maintenance-of-sex application, and the Van Valen origin.", "url": "https://en.wikipedia.org/wiki/Red_Queen_hypothesis", "type": "secondary"},
-    {"text": "Lively, C. M. \"Evidence from a New Zealand snail for the maintenance of sex by parasitism,\" Nature 328:519-521 (1987). — the Potamopyrgus parasite-and-sex evidence.", "url": "https://www.nature.com/articles/328519a0", "type": "primary"}
+    {
+      "text": "Red Queen hypothesis, Wikipedia. — the standstill-against-coevolution statement, the maintenance-of-sex application, and the Van Valen origin.",
+      "url": "https://en.wikipedia.org/wiki/Red_Queen_hypothesis",
+      "type": "secondary"
+    },
+    {
+      "text": "Lively, C. M. \"Evidence from a New Zealand snail for the maintenance of sex by parasitism,\" Nature 328:519-521 (1987). — the Potamopyrgus parasite-and-sex evidence.",
+      "url": "https://www.nature.com/articles/328519a0",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Red_Queen_hypothesis",
   "related": [
-    {"slug": "mullers-ratchet", "kind": "kindred"}
+    {
+      "slug": "mullers-ratchet",
+      "kind": "kindred"
+    }
   ]
 }

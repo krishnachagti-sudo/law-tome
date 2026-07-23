@@ -32,26 +32,53 @@
   ],
   "whyItMatters": "It is one of the most far-reaching scaling laws in science, setting limits on the size of animals and structures and explaining why nothing can simply be enlarged while keeping its shape. From the thick legs of elephants to the impossibility of giant insects, from the design of buildings to the metabolism of mice, it shows how geometry alone constrains the living and built worlds.",
   "working": [
-    {"lead": "Scale strength by area, weight by volume", "text": "when enlarging a structure or organism, remember strength grows as the square and weight as the cube, so relative strength falls with size."},
-    {"lead": "Watch the surface-to-volume ratio", "text": "for heat loss, drag, or exchange, track how the falling ratio of surface to volume changes behaviour as size grows."},
-    {"lead": "Expect shape to change, not just size", "text": "anticipate that real large designs must alter proportions, thickening supports rather than scaling isometrically."}
+    {
+      "lead": "Scale strength by area, weight by volume",
+      "text": "when enlarging a structure or organism, remember strength grows as the square and weight as the cube, so relative strength falls with size."
+    },
+    {
+      "lead": "Watch the surface-to-volume ratio",
+      "text": "for heat loss, drag, or exchange, track how the falling ratio of surface to volume changes behaviour as size grows."
+    },
+    {
+      "lead": "Expect shape to change, not just size",
+      "text": "anticipate that real large designs must alter proportions, thickening supports rather than scaling isometrically."
+    }
   ],
   "limits": "The law is a geometric idealisation that assumes isometric scaling — constant shape and proportions — and constant material properties. Real organisms grow allometrically, changing shape as they enlarge, precisely to compensate: large animals thicken their limbs rather than scaling uniformly. Material strength and density vary between structures, so real limits depart from the pure square prediction. And it describes a constraint, not an exact predictor of any single rate — hence the unsettled debate over whether metabolism scales as the two-thirds or three-quarter power of mass.",
   "misreadings": "Giant insects and scaled-up monsters could not exist: enlarged isometrically they would be crushed by their own weight, and insects could not even breathe, since their diffusion-based air supply does not scale up. Metabolic rate does not scale exactly as surface area either — the observed exponent is closer to three-quarters and still debated. And bigger animals are not proportionally larger versions of small ones; their proportions change, precisely because of these constraints.",
   "origin": "First stated by Galileo Galilei in 1638 in his 'Two New Sciences,' where he used it to explain why larger animals need proportionally thicker bones and why a giant of human proportions would collapse; vividly popularised in J. B. S. Haldane's 1926 essay 'On Being the Right Size.'",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1638,
   "namedAfter": "Galileo Galilei",
   "sources": [
-    {"text": "Square-cube law, Wikipedia. — the area-as-square, volume-as-cube statement, Galileo's 1638 origin, and the biomechanical and engineering consequences.", "url": "https://en.wikipedia.org/wiki/Square%E2%80%93cube_law", "type": "secondary"},
-    {"text": "Haldane, \"On Being the Right Size\" (1926), marxists.org. — the falling mouse and the mechanics of scale in organisms.", "url": "https://www.marxists.org/archive/haldane/works/1920s/right-size.htm", "type": "primary"},
-    {"text": "Kleiber's law, Wikipedia. — metabolic rate scaling as the three-quarter power of mass and the unresolved two-thirds debate.", "url": "https://en.wikipedia.org/wiki/Kleiber%27s_law", "type": "secondary"}
+    {
+      "text": "Square-cube law, Wikipedia. — the area-as-square, volume-as-cube statement, Galileo's 1638 origin, and the biomechanical and engineering consequences.",
+      "url": "https://en.wikipedia.org/wiki/Square%E2%80%93cube_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Haldane, \"On Being the Right Size\" (1926), marxists.org. — the falling mouse and the mechanics of scale in organisms.",
+      "url": "https://www.marxists.org/archive/haldane/works/1920s/right-size.htm",
+      "type": "primary"
+    },
+    {
+      "text": "Kleiber's law, Wikipedia. — metabolic rate scaling as the three-quarter power of mass and the unresolved two-thirds debate.",
+      "url": "https://en.wikipedia.org/wiki/Kleiber%27s_law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Square%E2%80%93cube_law",
   "related": [
-    {"slug": "kleibers-law", "kind": "consequence"},
-    {"slug": "bergmanns-rule", "kind": "consequence"}
+    {
+      "slug": "kleibers-law",
+      "kind": "consequence"
+    },
+    {
+      "slug": "bergmanns-rule",
+      "kind": "consequence"
+    }
   ]
 }

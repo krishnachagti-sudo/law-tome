@@ -2,7 +2,10 @@
   "no": "797",
   "slug": "the-oberth-effect",
   "name": "The Oberth Effect",
-  "aliases": ["Oberth maneuver", "Powered flyby"],
+  "aliases": [
+    "Oberth maneuver",
+    "Powered flyby"
+  ],
   "statement": "A rocket burn buys more energy when fired fast and deep in a gravity well than when slow.",
   "statementAccent": "more energy when fired fast and deep in a gravity well",
   "meaning": "The Oberth effect is the principle in astronautics that a rocket engine produces a greater increase in a spacecraft's mechanical energy when it fires while the spacecraft is moving fast, deep in a gravity well, than when it fires at low speed. The same amount of propellant, delivering the same change in velocity, yields a larger gain in kinetic energy if the vehicle is already travelling quickly, because kinetic energy grows with the square of speed. The consequence is a maneuver, the Oberth maneuver or powered flyby, in which a spacecraft dives close to a planet or the Sun and fires its engine at the fastest, lowest point of its trajectory, periapsis, to extract the maximum benefit from a given burn. Named after Hermann Oberth, one of the founders of rocketry, who described it, the effect is a key tool for interplanetary and deep-space missions. It can seem to conflict with energy conservation but does not, since the extra energy comes from the propellant.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "The Oberth effect is a powerful tool in spaceflight, letting mission designers wring more useful energy from a given amount of propellant by choosing when to burn. Because propellant is precious and every kilogram must be lifted from Earth, extracting maximum benefit from each burn is central to reaching the outer solar system and beyond, and the Oberth effect shows that timing a burn for the fast, deep part of a trajectory can dramatically increase its payoff. It underlies the design of interplanetary trajectories, escape maneuvers, and especially powered gravity assists, where a burn at closest approach to a planet compounds the slingshot effect. The effect also carries a conceptual lesson about energy and reference frames, illustrating that the work a burn accomplishes depends on the vehicle's speed, and clarifying why it does not violate conservation of energy. As Hermann Oberth's insight from the early days of rocketry, the effect remains essential knowledge for anyone planning efficient journeys through the solar system.",
   "working": [
-    {"lead": "Build up speed in a gravity well", "text": "let the spacecraft fall deep toward a planet or the Sun, reaching maximum speed at periapsis."},
-    {"lead": "Burn at maximum speed", "text": "fire the engine at that fastest point, where a fixed delta-v yields the largest gain in kinetic energy."},
-    {"lead": "Leave with more energy", "text": "depart with a greater increase in mechanical energy than the same burn would give at low speed far from the body."}
+    {
+      "lead": "Build up speed in a gravity well",
+      "text": "let the spacecraft fall deep toward a planet or the Sun, reaching maximum speed at periapsis."
+    },
+    {
+      "lead": "Burn at maximum speed",
+      "text": "fire the engine at that fastest point, where a fixed delta-v yields the largest gain in kinetic energy."
+    },
+    {
+      "lead": "Leave with more energy",
+      "text": "depart with a greater increase in mechanical energy than the same burn would give at low speed far from the body."
+    }
   ],
   "limits": "The Oberth effect is most useful with high-thrust engines that can deliver a large burn quickly near periapsis; low-thrust systems that must fire over long arcs cannot concentrate their burn at the fast point and benefit less. Exploiting it requires a trajectory that brings the spacecraft deep into a gravity well, which is not always available or desirable. The benefit is real but does not create energy from nothing; the extra mechanical energy comes from the propellant, including its own kinetic energy in the moving frame, so the effect is a matter of efficient conversion, not free energy. Its magnitude depends on the depth of the gravity well and the speed achieved. So the Oberth effect reliably increases the payoff of a burn performed fast and deep, within the constraints of engine thrust, trajectory design, and the correct accounting of energy.",
   "misreadings": "The Oberth effect does not violate the conservation of energy; the extra mechanical energy the vehicle gains comes from the propellant, whose own kinetic energy in the moving frame is transferred to the craft. It is not that the engine becomes more powerful at speed, but that a fixed velocity change adds more kinetic energy when the vehicle is already fast. And it is not free energy or a perpetual gain, so treating the effect as breaking conservation, or as making the rocket stronger, misreads a principle about how the energy from a burn depends on the speed at which it is delivered.",
   "origin": "Named after Hermann Oberth, a founding figure of rocketry, who described the effect in 1927; the greater energy gain from firing a rocket at high speed deep in a gravity well.",
-  "category": "science",
+  "category": "astronomy",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1927,
   "namedAfter": "Hermann Oberth",
   "sources": [
-    {"text": "Oberth effect, Wikipedia. — the greater change in mechanical energy from firing an engine at higher speed, the kinetic-energy and exhaust reasoning, the Oberth maneuver burning at periapsis, the Hermann Oberth attribution, and that it does not violate energy conservation.", "url": "https://en.wikipedia.org/wiki/Oberth_effect", "type": "secondary"},
-    {"text": "The Sun Diver: Combining solar sails with the Oberth effect, arXiv. — a study applying the Oberth effect, confirming that a burn deep in a gravity well at high speed maximizes the energy gain.", "url": "https://arxiv.org/pdf/2009.12659", "type": "secondary"}
+    {
+      "text": "Oberth effect, Wikipedia. — the greater change in mechanical energy from firing an engine at higher speed, the kinetic-energy and exhaust reasoning, the Oberth maneuver burning at periapsis, the Hermann Oberth attribution, and that it does not violate energy conservation.",
+      "url": "https://en.wikipedia.org/wiki/Oberth_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "The Sun Diver: Combining solar sails with the Oberth effect, arXiv. — a study applying the Oberth effect, confirming that a burn deep in a gravity well at high speed maximizes the energy gain.",
+      "url": "https://arxiv.org/pdf/2009.12659",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Oberth_effect",
   "related": [
-    {"slug": "gravity-assist", "kind": "kindred"},
-    {"slug": "the-hohmann-transfer-orbit", "kind": "kindred"}
+    {
+      "slug": "gravity-assist",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-hohmann-transfer-orbit",
+      "kind": "kindred"
+    }
   ]
 }

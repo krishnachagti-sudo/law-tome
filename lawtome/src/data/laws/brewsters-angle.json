@@ -2,7 +2,10 @@
   "no": "367",
   "slug": "brewsters-angle",
   "name": "Brewster's Angle",
-  "aliases": ["The polarizing angle", "Brewster's law"],
+  "aliases": [
+    "The polarizing angle",
+    "Brewster's law"
+  ],
   "statement": "At one special angle, light reflecting off glass or water comes back fully polarized.",
   "statementAccent": "fully polarized",
   "meaning": "Brewster's angle is the angle of incidence at which light reflecting from a dielectric surface such as glass or water becomes completely polarized. At this angle the component of light polarized in the plane of incidence is not reflected at all, so the reflected beam contains only light polarized perpendicular to that plane. The angle is set by the two media's refractive indices: its tangent equals the ratio of the index of the second medium to the first.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "It is a foundational result in optics that connects reflection, refraction, and polarization in a single simple rule, and it has wide practical reach: anti-glare sunglasses and photographic polarizers, low-loss laser windows, ellipsometry and refractive-index measurement, and optical coatings all exploit it. It is the everyday physics behind why glare off water is polarized and why a filter can erase it.",
   "working": [
-    {"lead": "Use the tangent rule", "text": "find the angle whose tangent equals the ratio of the two refractive indices to locate Brewster's angle for an interface."},
-    {"lead": "Orient the filter to the glare", "text": "block the perpendicular-polarized reflected light with a polarizer aligned to cut it, the basis of anti-glare optics."},
-    {"lead": "Remember only one component vanishes", "text": "expect the in-plane polarized reflection to disappear while the perpendicular component still reflects, so the beam is polarized, not absent."}
+    {
+      "lead": "Use the tangent rule",
+      "text": "find the angle whose tangent equals the ratio of the two refractive indices to locate Brewster's angle for an interface."
+    },
+    {
+      "lead": "Orient the filter to the glare",
+      "text": "block the perpendicular-polarized reflected light with a polarizer aligned to cut it, the basis of anti-glare optics."
+    },
+    {
+      "lead": "Remember only one component vanishes",
+      "text": "expect the in-plane polarized reflection to disappear while the perpendicular component still reflects, so the beam is polarized, not absent."
+    }
   ],
   "limits": "The exact zero-reflection result holds for an idealised non-magnetic dielectric interface. For absorbing or metallic surfaces the reflection only reaches a nonzero minimum at a pseudo-Brewster angle, and magnetic materials behave differently again. Only one polarization component is eliminated, not all reflected light. Sources also differ on the date of Brewster's original statement, some giving 1815 and others 1811, so the precise year should be treated with mild caution.",
   "misreadings": "It is not the angle at which all reflection stops — only the component polarized in the plane of incidence vanishes, which is exactly why the remaining reflected light is fully polarized rather than gone. The effect is specific to dielectric surfaces; metals do not show a true zero. And the tangent rule uses the ratio of refractive indices, not their difference or sum.",
   "origin": "Established by the Scottish physicist Sir David Brewster around 1815 (some sources date the work to 1811), building on Étienne-Louis Malus's earlier observation of polarization by reflection.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1815,
   "namedAfter": "David Brewster",
   "sources": [
-    {"text": "Brewster's angle, Wikipedia. — the polarizing angle, the tan(theta) equals n2/n1 rule, and the perpendicular-reflected-ray geometry.", "url": "https://en.wikipedia.org/wiki/Brewster%27s_angle", "type": "secondary"},
-    {"text": "Brewster's law, Encyclopaedia Britannica. — the tangent relation to refractive index and the air-to-glass worked angle.", "url": "https://www.britannica.com/science/Brewsters-law", "type": "secondary"}
+    {
+      "text": "Brewster's angle, Wikipedia. — the polarizing angle, the tan(theta) equals n2/n1 rule, and the perpendicular-reflected-ray geometry.",
+      "url": "https://en.wikipedia.org/wiki/Brewster%27s_angle",
+      "type": "secondary"
+    },
+    {
+      "text": "Brewster's law, Encyclopaedia Britannica. — the tangent relation to refractive index and the air-to-glass worked angle.",
+      "url": "https://www.britannica.com/science/Brewsters-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Brewster%27s_angle",
   "related": [
-    {"slug": "snells-law", "kind": "kindred"},
-    {"slug": "maluss-law", "kind": "kindred"}
+    {
+      "slug": "snells-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "maluss-law",
+      "kind": "kindred"
+    }
   ]
 }

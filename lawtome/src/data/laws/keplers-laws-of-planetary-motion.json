@@ -32,24 +32,44 @@
   ],
   "whyItMatters": "They replaced circles-upon-circles with a clean, predictive geometry of the heavens, gave Newton the target his gravitation had to hit, and still describe satellite and planetary orbits today. They are a landmark of turning precise observation into mathematical law.",
   "working": [
-    {"lead": "Use the period-distance law to size orbits", "text": "from an orbital period, infer the semi-major axis (or vice versa) with period squared proportional to distance cubed."},
-    {"lead": "Expect variable orbital speed", "text": "plan for bodies moving fastest at closest approach and slowest at farthest, per the equal-areas law, rather than at constant speed."},
-    {"lead": "Treat them as the two-body ideal", "text": "apply them as an excellent approximation, adding perturbations and relativistic corrections where precision demands."}
+    {
+      "lead": "Use the period-distance law to size orbits",
+      "text": "from an orbital period, infer the semi-major axis (or vice versa) with period squared proportional to distance cubed."
+    },
+    {
+      "lead": "Expect variable orbital speed",
+      "text": "plan for bodies moving fastest at closest approach and slowest at farthest, per the equal-areas law, rather than at constant speed."
+    },
+    {
+      "lead": "Treat them as the two-body ideal",
+      "text": "apply them as an excellent approximation, adding perturbations and relativistic corrections where precision demands."
+    }
   ],
   "limits": "The laws are exact only for an idealised two-body system. Real planets perturb one another, causing deviations from perfect Keplerian orbits, and Newtonian mechanics cannot fully account for the precession of Mercury's perihelion, which needed general relativity. Kepler's original third law also assumes negligible planetary mass; Newton generalised it to include both masses, so the proportionality constant depends on the total mass.",
   "misreadings": "They are not fundamental first principles but empirical regularities later derived from gravitation — a limiting case of the deeper theory, not its foundation. Nor are they perfectly exact: mutual perturbations and relativity make real orbits depart from the ideal ellipse.",
   "origin": "Discovered by the German astronomer Johannes Kepler from the precise observations of Tycho Brahe: the first two laws published in Astronomia nova (1609), based on the orbit of Mars, and the third in Harmonices Mundi (1619). Newton later derived all three from his law of universal gravitation.",
-  "category": "science",
+  "category": "astronomy",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1609,
   "namedAfter": "Johannes Kepler",
   "sources": [
-    {"text": "\"Orbits and Kepler's Laws,\" NASA Science. — the three laws, the 1609/1619 datings, and Newton's derivation.", "url": "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/", "type": "secondary"},
-    {"text": "Kepler's laws of planetary motion, Wikipedia. — the statements, Tycho Brahe's data, and the two-body idealisation.", "url": "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion", "type": "secondary"}
+    {
+      "text": "\"Orbits and Kepler's Laws,\" NASA Science. — the three laws, the 1609/1619 datings, and Newton's derivation.",
+      "url": "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/",
+      "type": "secondary"
+    },
+    {
+      "text": "Kepler's laws of planetary motion, Wikipedia. — the statements, Tycho Brahe's data, and the two-body idealisation.",
+      "url": "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion",
   "related": [
-    {"slug": "coulombs-law", "kind": "kindred"}
+    {
+      "slug": "coulombs-law",
+      "kind": "kindred"
+    }
   ]
 }

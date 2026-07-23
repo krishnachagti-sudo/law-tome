@@ -2,7 +2,11 @@
   "no": "792",
   "slug": "capillary-action",
   "name": "Capillary Action",
-  "aliases": ["Capillarity", "Capillary rise", "Wicking"],
+  "aliases": [
+    "Capillarity",
+    "Capillary rise",
+    "Wicking"
+  ],
   "statement": "Liquid climbs a narrow tube on its own, drawn up by its attraction to the walls.",
   "statementAccent": "drawn up by its attraction to the walls",
   "meaning": "Capillary action, or capillarity, is the ability of a liquid to flow through narrow spaces, such as thin tubes or the pores of a material, without the help of, or even against, external forces like gravity. Held in a fine enough channel, water will climb up a tube on its own and wet its way through porous solids, moving in any direction rather than only downward. The phenomenon results from the interplay of two molecular attractions: cohesion, the attraction of the liquid's molecules for one another, and adhesion, the attraction between the liquid and the walls of the tube or the surfaces of the pores. When adhesion to the walls outweighs cohesion, the liquid wets the surface and is drawn along it, with surface tension pulling the rest of the liquid behind. Capillary action explains water rising in a thin tube, the wicking of paper towels and sponges, the movement of water through soil, and the drawing of ink and paint, and it works with surface tension in the physics of wetting.",
@@ -33,25 +37,48 @@
   ],
   "whyItMatters": "Capillary action is a fundamental and ubiquitous phenomenon, moving liquids through narrow spaces throughout nature and technology. It is essential to life and the environment: it helps draw water through soil to plant roots and contributes to the movement of water and nutrients in plants, and it governs the behaviour of fluids in porous rocks and membranes. In everyday life it explains how towels, sponges, and cloth absorb liquids, how wicks feed fuel to candles and lamps, and how ink flows from a pen nib and paint from a brush. In technology and science it underlies chromatography, microfluidics, wicking fabrics, blotting, and many laboratory and industrial processes where liquids must be moved without pumps. Working hand in hand with surface tension, capillary action reveals how adhesion and cohesion at small scales can lift and transport liquids against gravity. Its reach, from the soil beneath our feet to the instruments of the laboratory, makes it a cornerstone concept in the physics of liquids and interfaces.",
   "working": [
-    {"lead": "Confine liquid in a narrow space", "text": "place a liquid in a fine tube or porous material whose walls it can wet."},
-    {"lead": "Let adhesion pull it along", "text": "when adhesion to the walls exceeds cohesion, the liquid climbs the walls and surface tension draws the rest along."},
-    {"lead": "Rise by Jurin's law", "text": "watch the liquid rise higher in narrower channels, its equilibrium height inversely proportional to the radius."}
+    {
+      "lead": "Confine liquid in a narrow space",
+      "text": "place a liquid in a fine tube or porous material whose walls it can wet."
+    },
+    {
+      "lead": "Let adhesion pull it along",
+      "text": "when adhesion to the walls exceeds cohesion, the liquid climbs the walls and surface tension draws the rest along."
+    },
+    {
+      "lead": "Rise by Jurin's law",
+      "text": "watch the liquid rise higher in narrower channels, its equilibrium height inversely proportional to the radius."
+    }
   ],
   "limits": "Capillary action requires that the liquid wet the surface, so it works only when adhesion to the walls exceeds cohesion within the liquid; when wetting does not occur, as with mercury on glass, the liquid is depressed rather than raised. The rise height follows Jurin's law only at equilibrium and for simple geometries, and real porous materials have complex pore structures that complicate the picture. Importantly, capillary action alone is not sufficient to lift water to the tops of tall trees; that transport relies primarily on transpiration pulling water up under tension, with capillarity contributing rather than acting alone, so attributing tall-tree water transport to capillarity overstates it. The effect is strongest at small scales where surface forces dominate gravity. So capillary action reliably moves wetting liquids through narrow spaces, within the limits of wetting, geometry, and scale, and as one contributor among several to water movement in plants.",
   "misreadings": "Capillary action does not lift every liquid in every tube; it requires the liquid to wet the walls, so mercury in glass is pushed down, not up. Narrower tubes lift liquid higher, not lower, by Jurin's law, contrary to the intuition that a bigger tube holds more. And capillarity alone does not raise water to the crowns of tall trees, which depends mainly on transpiration, so treating capillary rise as universal, or as the sole means by which trees draw water upward, misreads a phenomenon that needs wetting and works with surface tension and, in plants, other forces.",
   "origin": "A phenomenon of the physics of liquids arising from adhesion, cohesion, and surface tension, long studied and described quantitatively by Jurin's law; the flow of a liquid through narrow spaces.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Capillary action, Wikipedia. — the flow of a liquid through narrow spaces without or against external forces, the adhesion, cohesion, and surface-tension mechanism, Jurin's inverse-radius law, the water and mercury menisci, and examples including wicking and a contributing role in plants.", "url": "https://en.wikipedia.org/wiki/Capillary_action", "type": "secondary"},
-    {"text": "Capillarity, Encyclopaedia Britannica. — the rise or depression of a liquid in a small passage, the dependence on wetting, and the higher rise in narrower tubes.", "url": "https://www.britannica.com/science/capillarity", "type": "secondary"}
+    {
+      "text": "Capillary action, Wikipedia. — the flow of a liquid through narrow spaces without or against external forces, the adhesion, cohesion, and surface-tension mechanism, Jurin's inverse-radius law, the water and mercury menisci, and examples including wicking and a contributing role in plants.",
+      "url": "https://en.wikipedia.org/wiki/Capillary_action",
+      "type": "secondary"
+    },
+    {
+      "text": "Capillarity, Encyclopaedia Britannica. — the rise or depression of a liquid in a small passage, the dependence on wetting, and the higher rise in narrower tubes.",
+      "url": "https://www.britannica.com/science/capillarity",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Capillary_action",
   "related": [
-    {"slug": "surface-tension", "kind": "cause"},
-    {"slug": "the-marangoni-effect", "kind": "kindred"}
+    {
+      "slug": "surface-tension",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-marangoni-effect",
+      "kind": "kindred"
+    }
   ]
 }

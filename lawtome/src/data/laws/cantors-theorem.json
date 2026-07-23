@@ -2,7 +2,9 @@
   "no": "235",
   "slug": "cantors-theorem",
   "name": "Cantor's Theorem",
-  "aliases": ["Cantor's diagonal argument"],
+  "aliases": [
+    "Cantor's diagonal argument"
+  ],
   "statement": "Some infinities are bigger than others, and there is no biggest.",
   "statementAccent": "there is no biggest",
   "meaning": "For any set, the set of all its subsets is strictly larger than the set itself. As a consequence, there are endlessly many sizes of infinity, each larger than the last, with no largest — and the real numbers form a strictly larger infinity than the natural numbers, so they cannot be paired one-to-one with them.",
@@ -33,25 +35,48 @@
   ],
   "whyItMatters": "It founded the modern theory of infinite sets and overturned the intuition that infinity is a single thing, showing instead an endless ladder of sizes. Its diagonal method became one of the most powerful tools in mathematics, reused to prove the deepest limits of logic and computation.",
   "working": [
-    {"lead": "Distinguish sizes of infinity", "text": "do not treat all infinite sets as equally large — the reals genuinely outnumber the naturals."},
-    {"lead": "Test countability by listing", "text": "ask whether a set can be enumerated in a list; if a diagonal construction always escapes, it is uncountable."},
-    {"lead": "Reach for diagonalization", "text": "when proving that no complete enumeration or universal object can exist, consider the self-referential diagonal argument."}
+    {
+      "lead": "Distinguish sizes of infinity",
+      "text": "do not treat all infinite sets as equally large — the reals genuinely outnumber the naturals."
+    },
+    {
+      "lead": "Test countability by listing",
+      "text": "ask whether a set can be enumerated in a list; if a diagonal construction always escapes, it is uncountable."
+    },
+    {
+      "lead": "Reach for diagonalization",
+      "text": "when proving that no complete enumeration or universal object can exist, consider the self-referential diagonal argument."
+    }
   ],
   "limits": "Cantor's theorem is a fully proven result of standard set theory, but two related matters are genuinely unsettled. Constructivist and finitist schools reject its nonconstructive method and the notion of a completed infinity — a philosophical objection to its assumptions, not a demonstration of error. And the continuum hypothesis, about where the reals sit in the hierarchy of sizes, was proved independent of the standard axioms by Godel and Cohen, so it can be neither proved nor disproved there. That independence concerns a related question, not the truth of Cantor's theorem itself.",
   "misreadings": "The independence of the continuum hypothesis does not weaken Cantor's theorem — the reals are provably uncountable; what is undecidable is only where they sit in the ladder of infinities. And the constructivist objections are a stance in the philosophy of mathematics, not a refutation of the theorem within standard set theory.",
   "origin": "Proved by Georg Cantor, who first showed the reals uncountable by a nested-intervals argument in 1874, then gave the diagonal argument and the general power-set theorem in 1891; his work met fierce opposition, notably from Leopold Kronecker.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1891,
   "namedAfter": "Georg Cantor",
   "sources": [
-    {"text": "Cantor's theorem, Wikipedia. — the power-set result, its consequences, and the general proof.", "url": "https://en.wikipedia.org/wiki/Cantor%27s_theorem", "type": "secondary"},
-    {"text": "Cantor's diagonal argument, Wikipedia. — the 1891 diagonal proof of uncountability and its later reuse.", "url": "https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument", "type": "secondary"}
+    {
+      "text": "Cantor's theorem, Wikipedia. — the power-set result, its consequences, and the general proof.",
+      "url": "https://en.wikipedia.org/wiki/Cantor%27s_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Cantor's diagonal argument, Wikipedia. — the 1891 diagonal proof of uncountability and its later reuse.",
+      "url": "https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Cantor%27s_theorem",
   "related": [
-    {"slug": "godels-incompleteness-theorems", "kind": "kindred"},
-    {"slug": "the-halting-problem", "kind": "kindred"}
+    {
+      "slug": "godels-incompleteness-theorems",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-halting-problem",
+      "kind": "kindred"
+    }
   ]
 }

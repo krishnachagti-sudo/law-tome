@@ -32,25 +32,48 @@
   ],
   "whyItMatters": "It is the fundamental relation governing phase transitions in a pressure-temperature diagram, connecting the latent heat of a transition to the shape of its coexistence curve. It explains how boiling points shift with pressure, lets vapour pressures be predicted from latent heats, and supplies the Clausius-Clapeyron scaling that underlies climate reasoning about atmospheric moisture and extreme precipitation.",
   "working": [
-    {"lead": "Use the exact form generally", "text": "for any phase boundary, take the slope as latent heat over temperature times volume change, given the two phases' data."},
-    {"lead": "Approximate for vapour", "text": "for a liquid and its vapour, use the exponential Clausius-Clapeyron form to relate vapour pressure and temperature over modest ranges."},
-    {"lead": "Read the sign of the slope", "text": "note that a negative volume change, as in water freezing, tilts the coexistence line backward, so pressure lowers the transition temperature."}
+    {
+      "lead": "Use the exact form generally",
+      "text": "for any phase boundary, take the slope as latent heat over temperature times volume change, given the two phases' data."
+    },
+    {
+      "lead": "Approximate for vapour",
+      "text": "for a liquid and its vapour, use the exponential Clausius-Clapeyron form to relate vapour pressure and temperature over modest ranges."
+    },
+    {
+      "lead": "Read the sign of the slope",
+      "text": "note that a negative volume change, as in water freezing, tilts the coexistence line backward, so pressure lowers the transition temperature."
+    }
   ],
   "limits": "The exact Clapeyron equation is general but needs the latent heat and volume change as data. The Clausius-Clapeyron approximation rests on three assumptions — ideal-gas vapour, negligible condensed-phase volume, and constant latent heat — all of which degrade over wide temperature ranges and fail entirely near the critical point, where the volume change and latent heat both vanish. The integrated logarithmic form is accurate only over modest intervals. And the seven-per-cent-per-degree figure bounds atmospheric moisture capacity, not actual rainfall, which scales differently by region and storm type.",
   "misreadings": "The Clausius-Clapeyron and Clapeyron equations are not the same: the Clapeyron form is exact and general, while the Clausius-Clapeyron form is the approximate liquid-vapour special case, and its exponential form does not apply to melting lines. The pressure-melting of ice is real but far too small to be the main reason skates glide, which owes more to a surface quasi-liquid layer and frictional heating. And the moisture-capacity figure is a bound on vapour, not a guaranteed rate for precipitation.",
   "origin": "Derived in its exact form by Benoit Paul Emile Clapeyron in 1834 and placed on a firm thermodynamic footing by Rudolf Clausius around 1850, who developed the ideal-gas approximation for the vapour branch.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1834,
   "namedAfter": "Rudolf Clausius and Benoit Clapeyron",
   "sources": [
-    {"text": "Clausius-Clapeyron relation, Wikipedia. — the exact and approximate forms, the derivation from equal Gibbs energies, the ice-line and moisture-scaling examples, and the near-critical caveats.", "url": "https://en.wikipedia.org/wiki/Clausius%E2%80%93Clapeyron_relation", "type": "secondary"},
-    {"text": "The Clapeyron and Clausius-Clapeyron equations, CarnotCycle. — Clapeyron's 1834 memoir, the derivation, and the exactness of the general form.", "url": "https://carnotcycle.wordpress.com/2013/04/01/the-clausius-clapeyron-equation/", "type": "secondary"}
+    {
+      "text": "Clausius-Clapeyron relation, Wikipedia. — the exact and approximate forms, the derivation from equal Gibbs energies, the ice-line and moisture-scaling examples, and the near-critical caveats.",
+      "url": "https://en.wikipedia.org/wiki/Clausius%E2%80%93Clapeyron_relation",
+      "type": "secondary"
+    },
+    {
+      "text": "The Clapeyron and Clausius-Clapeyron equations, CarnotCycle. — Clapeyron's 1834 memoir, the derivation, and the exactness of the general form.",
+      "url": "https://carnotcycle.wordpress.com/2013/04/01/the-clausius-clapeyron-equation/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Clausius%E2%80%93Clapeyron_relation",
   "related": [
-    {"slug": "the-gibbs-phase-rule", "kind": "kindred"},
-    {"slug": "the-second-law-of-thermodynamics", "kind": "cause"}
+    {
+      "slug": "the-gibbs-phase-rule",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-second-law-of-thermodynamics",
+      "kind": "cause"
+    }
   ]
 }

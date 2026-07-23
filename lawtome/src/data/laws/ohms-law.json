@@ -32,25 +32,48 @@
   ],
   "whyItMatters": "It is the first and most-used relationship in electronics — the tool that turns any two of voltage, current, and resistance into the third — and the foundation on which circuit analysis is built. Its neat linearity is also a lesson in scope: it describes a class of materials under conditions, not a universal law of nature.",
   "working": [
-    {"lead": "Use it to solve for the unknown", "text": "given any two of voltage, current, and resistance at constant temperature, compute the third with V = IR."},
-    {"lead": "Check the material is ohmic", "text": "before applying it, confirm the component has a constant resistance; diodes, transistors, and filaments do not, and need their own characteristics."},
-    {"lead": "Hold temperature fixed", "text": "resistance drifts with temperature, so treat the simple form as valid only over a range where the conductor stays thermally steady."}
+    {
+      "lead": "Use it to solve for the unknown",
+      "text": "given any two of voltage, current, and resistance at constant temperature, compute the third with V = IR."
+    },
+    {
+      "lead": "Check the material is ohmic",
+      "text": "before applying it, confirm the component has a constant resistance; diodes, transistors, and filaments do not, and need their own characteristics."
+    },
+    {
+      "lead": "Hold temperature fixed",
+      "text": "resistance drifts with temperature, so treat the simple form as valid only over a range where the conductor stays thermally steady."
+    }
   ],
   "limits": "Ohm's law is not a fundamental law of nature but an empirical, material-dependent approximation — a constitutive property of certain 'ohmic' materials, not a universal principle like charge conservation. Many materials are non-ohmic: diodes, semiconductors, and heated filaments show current that is not proportional to voltage. Even in metals the simple constant-resistance form holds only at fixed temperature, and it breaks down at very high fields or nanoscale dimensions. It is robust and predictive within its domain, and misleading outside it.",
   "misreadings": "It is not a law all materials obey — 'non-ohmic' components are the rule, not the exception, in modern electronics. Nor is resistance a fixed property regardless of conditions; it varies with temperature, so the tidy straight line is a regime, not a guarantee.",
   "origin": "Published by the German physicist Georg Simon Ohm in 'Die galvanische Kette, mathematisch bearbeitet' (1827). Henry Cavendish had found the same proportionality privately in the 1780s but never published, so it remained unknown until Maxwell released his papers decades later — which is why the law carries Ohm's name.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1827,
   "namedAfter": "Georg Simon Ohm",
   "sources": [
-    {"text": "Ohm's law, Wikipedia. — the statement, the microscopic form, the Cavendish precedence, and the non-ohmic exceptions.", "url": "https://en.wikipedia.org/wiki/Ohm%27s_law", "type": "secondary"},
-    {"text": "\"Ohm's law,\" Encyclopædia Britannica. — the canonical statement and its fixed-temperature qualification.", "url": "https://www.britannica.com/science/Ohms-law", "type": "secondary"}
+    {
+      "text": "Ohm's law, Wikipedia. — the statement, the microscopic form, the Cavendish precedence, and the non-ohmic exceptions.",
+      "url": "https://en.wikipedia.org/wiki/Ohm%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Ohm's law,\" Encyclopædia Britannica. — the canonical statement and its fixed-temperature qualification.",
+      "url": "https://www.britannica.com/science/Ohms-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Ohm%27s_law",
   "related": [
-    {"slug": "hookes-law", "kind": "kindred"},
-    {"slug": "coulombs-law", "kind": "kindred"}
+    {
+      "slug": "hookes-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "coulombs-law",
+      "kind": "kindred"
+    }
   ]
 }

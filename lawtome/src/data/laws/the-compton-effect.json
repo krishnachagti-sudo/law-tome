@@ -2,7 +2,10 @@
   "no": "529",
   "slug": "the-compton-effect",
   "name": "The Compton Effect",
-  "aliases": ["Compton scattering", "The Compton shift"],
+  "aliases": [
+    "Compton scattering",
+    "The Compton shift"
+  ],
   "statement": "An X-ray bouncing off an electron comes away with a longer wavelength, as if two particles had collided.",
   "statementAccent": "as if two particles had collided",
   "meaning": "The Compton effect is the increase in wavelength, and so the loss of energy, of an X-ray or gamma-ray photon when it scatters off a free or loosely bound electron. Remarkably, the size of the wavelength shift depends only on the angle through which the photon scatters, not on its original wavelength. Arthur Compton showed in 1923 that this could be explained only by treating light as particles, photons, that collide with electrons and conserve energy and momentum like billiard balls. It was decisive evidence for the particle nature of light and a landmark demonstration of wave-particle duality.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "The Compton effect was one of the pivotal experiments of early quantum physics, providing clear, quantitative evidence that light carries momentum and behaves as particles, not merely waves, and cementing the concept of the photon. It confirmed wave-particle duality and helped establish quantum mechanics, and it remains practically important in gamma-ray astronomy and detectors, medical imaging, and radiation therapy, where Compton scattering governs how high-energy photons interact with matter. Few effects so directly turned a puzzling measurement into proof of a new picture of light.",
   "working": [
-    {"lead": "Treat light as particles", "text": "read the wavelength shift as the recoil of a photon that has collided with an electron, conserving energy and momentum like two particles."},
-    {"lead": "Depend only on angle", "text": "expect the shift to depend on the scattering angle alone, growing from zero at a grazing hit to a maximum at backscatter."},
-    {"lead": "Scale by the Compton wavelength", "text": "use the electron's Compton wavelength, about 2.43 picometres, as the natural unit of the shift, significant only for short-wavelength X-rays and gamma rays."}
+    {
+      "lead": "Treat light as particles",
+      "text": "read the wavelength shift as the recoil of a photon that has collided with an electron, conserving energy and momentum like two particles."
+    },
+    {
+      "lead": "Depend only on angle",
+      "text": "expect the shift to depend on the scattering angle alone, growing from zero at a grazing hit to a maximum at backscatter."
+    },
+    {
+      "lead": "Scale by the Compton wavelength",
+      "text": "use the electron's Compton wavelength, about 2.43 picometres, as the natural unit of the shift, significant only for short-wavelength X-rays and gamma rays."
+    }
   ],
   "limits": "The wavelength shift is a fixed absolute amount independent of the incident wavelength, so the fractional change is negligible for long-wavelength visible light and significant only for short-wavelength X-rays and gamma rays, which is why the effect is seen with those. Alongside the shifted photons an unmodified line persists, from coherent scattering off tightly bound electrons whose effective mass is that of the whole atom, giving an immeasurably small shift. The simple formula treats the electron as free and at rest, an idealisation for loosely bound electrons.",
   "misreadings": "The shift is in wavelength, and it depends on the scattering angle only, not on the incident wavelength, so it is an error to expect it to be larger for longer wavelengths. The scattering is off electrons, free or loosely bound, not off nuclei, and the formula uses the electron mass. Compton scattering, which shifts the wavelength, is distinct from Thomson scattering, its classical, elastic low-energy limit with no shift. And the 2.43-picometre Compton wavelength is the electron's; other particles have their own, far smaller values.",
   "origin": "Discovered by Arthur Compton in 1923 through experiments scattering X-rays off graphite, for which he shared the 1927 Nobel Prize in Physics; the effect was independently derived by Peter Debye around the same time.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1923,
   "namedAfter": "Arthur Compton",
   "sources": [
-    {"text": "Compton scattering, Wikipedia. — the wavelength-shift formula, the angle-only dependence, the 1923 experiment, and the particle-nature significance.", "url": "https://en.wikipedia.org/wiki/Compton_scattering", "type": "secondary"},
-    {"text": "Compton effect, Encyclopaedia Britannica. — the definition, the formula, and the demonstration of light's particle nature.", "url": "https://www.britannica.com/science/Compton-effect", "type": "secondary"}
+    {
+      "text": "Compton scattering, Wikipedia. — the wavelength-shift formula, the angle-only dependence, the 1923 experiment, and the particle-nature significance.",
+      "url": "https://en.wikipedia.org/wiki/Compton_scattering",
+      "type": "secondary"
+    },
+    {
+      "text": "Compton effect, Encyclopaedia Britannica. — the definition, the formula, and the demonstration of light's particle nature.",
+      "url": "https://www.britannica.com/science/Compton-effect",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Compton_scattering",
   "related": [
-    {"slug": "the-photoelectric-effect", "kind": "kindred"}
+    {
+      "slug": "the-photoelectric-effect",
+      "kind": "kindred"
+    }
   ]
 }

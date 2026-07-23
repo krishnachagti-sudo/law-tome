@@ -2,7 +2,10 @@
   "no": "634",
   "slug": "the-exclusionary-rule",
   "name": "The Exclusionary Rule",
-  "aliases": ["The rule against illegally obtained evidence", "Suppression of evidence"],
+  "aliases": [
+    "The rule against illegally obtained evidence",
+    "Suppression of evidence"
+  ],
   "statement": "Evidence the police obtain by violating your constitutional rights cannot be used against you.",
   "statementAccent": "cannot be used against you",
   "meaning": "The exclusionary rule is a legal rule, primarily in United States constitutional law, that prohibits evidence obtained in violation of a defendant's constitutional rights, especially the Fourth Amendment's protection against unreasonable searches and seizures, from being used against them in a criminal prosecution. If the police search or seize unlawfully, the resulting evidence is generally inadmissible. The rule's chief purpose is to deter police misconduct by removing the incentive to gather evidence illegally, and secondarily to preserve the integrity of the courts. Established at the federal level in 1914 and extended to the states in 1961, it is a central and controversial feature of American criminal procedure, praised as essential to enforcing constitutional rights and criticised for letting guilty defendants go free.",
@@ -33,24 +36,47 @@
   ],
   "whyItMatters": "The exclusionary rule is a central and hotly debated feature of American criminal procedure, the primary mechanism by which the Fourth Amendment's protections against unreasonable searches are enforced. By making illegally obtained evidence inadmissible, it aims to deter police from violating constitutional rights, since without a remedy those rights would be, as the Supreme Court put it, a form of words. Critics argue it lets factually guilty defendants escape on a technicality, while defenders insist it is indispensable to holding the state to the Constitution. Its many exceptions reflect the ongoing effort to balance deterring misconduct against the cost of excluding reliable evidence.",
   "working": [
-    {"lead": "Suppress the tainted evidence", "text": "exclude from a criminal trial evidence obtained through a violation of the defendant's constitutional rights, so it cannot prove guilt."},
-    {"lead": "Aim at deterrence", "text": "understand the rule's purpose as deterring police misconduct by removing the incentive to gather evidence illegally, not as rewarding defendants."},
-    {"lead": "Account for the exceptions", "text": "check whether the good-faith, inevitable-discovery, or independent-source exceptions apply, since they can admit otherwise-tainted evidence."}
+    {
+      "lead": "Suppress the tainted evidence",
+      "text": "exclude from a criminal trial evidence obtained through a violation of the defendant's constitutional rights, so it cannot prove guilt."
+    },
+    {
+      "lead": "Aim at deterrence",
+      "text": "understand the rule's purpose as deterring police misconduct by removing the incentive to gather evidence illegally, not as rewarding defendants."
+    },
+    {
+      "lead": "Account for the exceptions",
+      "text": "check whether the good-faith, inevitable-discovery, or independent-source exceptions apply, since they can admit otherwise-tainted evidence."
+    }
   ],
   "limits": "The exclusionary rule is largely a United States doctrine; many countries do not automatically exclude illegally obtained evidence, so it is not a universal principle. It excludes the evidence but does not by itself acquit the defendant, who may still be convicted on other proof. It has significant exceptions, the good-faith, inevitable-discovery, independent-source, and attenuation doctrines, which admit tainted evidence in defined situations, so suppression is not automatic. And because its justification is deterrence rather than compensating the defendant, courts limit it where suppression would not meaningfully deter misconduct, keeping the rule bounded by its own rationale.",
   "misreadings": "The rule is mainly a United States doctrine, not a universal feature of legal systems, so its logic does not automatically apply elsewhere. It suppresses the evidence; it does not itself acquit, since a defendant may still be convicted on lawfully obtained proof. It has substantial exceptions, so illegally tinged evidence is not always excluded. And its aim is to deter police misconduct, not to reward defendants or reflect their innocence, which is why courts decline to apply it where suppression would serve no deterrent purpose.",
   "origin": "Established for federal prosecutions by the United States Supreme Court in Weeks v. United States in 1914 and extended to the states in Mapp v. Ohio in 1961, with the good-faith exception recognised in United States v. Leon in 1984.",
-  "category": "philosophy",
+  "category": "law",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": 1914,
   "sources": [
-    {"text": "Exclusionary rule, Wikipedia. — the definition, the deterrence purpose, Weeks 1914 and Mapp v. Ohio 1961, the fruit-of-the-poisonous-tree extension, and the good-faith exception.", "url": "https://en.wikipedia.org/wiki/Exclusionary_rule", "type": "secondary"},
-    {"text": "Exclusionary rule, Legal Information Institute, Cornell Law School. — that the rule bars evidence gathered in violation of the Constitution and its deterrence rationale and exceptions.", "url": "https://www.law.cornell.edu/wex/exclusionary_rule", "type": "secondary"}
+    {
+      "text": "Exclusionary rule, Wikipedia. — the definition, the deterrence purpose, Weeks 1914 and Mapp v. Ohio 1961, the fruit-of-the-poisonous-tree extension, and the good-faith exception.",
+      "url": "https://en.wikipedia.org/wiki/Exclusionary_rule",
+      "type": "secondary"
+    },
+    {
+      "text": "Exclusionary rule, Legal Information Institute, Cornell Law School. — that the rule bars evidence gathered in violation of the Constitution and its deterrence rationale and exceptions.",
+      "url": "https://www.law.cornell.edu/wex/exclusionary_rule",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Exclusionary_rule",
   "related": [
-    {"slug": "the-fruit-of-the-poisonous-tree", "kind": "cause"},
-    {"slug": "habeas-corpus", "kind": "kindred"}
+    {
+      "slug": "the-fruit-of-the-poisonous-tree",
+      "kind": "cause"
+    },
+    {
+      "slug": "habeas-corpus",
+      "kind": "kindred"
+    }
   ]
 }

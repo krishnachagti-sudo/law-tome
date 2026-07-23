@@ -2,7 +2,10 @@
   "no": "579",
   "slug": "the-brouwer-fixed-point-theorem",
   "name": "The Brouwer Fixed-Point Theorem",
-  "aliases": ["Brouwer's theorem", "The fixed-point theorem"],
+  "aliases": [
+    "Brouwer's theorem",
+    "The fixed-point theorem"
+  ],
   "statement": "Any continuous way of stirring a disc back into itself must leave at least one point exactly where it started.",
   "statementAccent": "must leave at least one point exactly where it started",
   "meaning": "The Brouwer fixed-point theorem states that any continuous function from a closed ball to itself has at least one fixed point, a point that the function leaves unmoved. In the plane this means any continuous deformation of a disc into itself pins at least one point in place; the same holds for a solid ball in any dimension, and more generally for any convex compact set. Vividly, if you stir a cup of coffee continuously and let it settle, some molecule ends up exactly where it began, and a crumpled map of a country laid flat on itself has one point lying over its true location. It is a landmark of topology, remarkable for guaranteeing a fixed point without any hint of where it is.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "The Brouwer fixed-point theorem is a cornerstone of topology and one of the most widely applied existence results in mathematics. Through Kakutani's and Schauder's generalisations it proves the existence of Nash equilibria in game theory, competitive equilibria in economics, and solutions to differential and integral equations across analysis. It is also a philosophically striking result, guaranteeing that a fixed point must exist while giving no way to find it, a purely non-constructive certainty. And it drove the development of algebraic topology, since the tools invented to prove it, degree theory and homology, became central instruments of modern geometry.",
   "working": [
-    {"lead": "Guarantee an equilibrium", "text": "when a continuous process maps a convex compact set into itself, invoke the theorem to assert a fixed point, an equilibrium, exists."},
-    {"lead": "Reduce to no-retraction", "text": "prove it by contradiction: a fixed-point-free self-map would yield an impossible continuous retraction of the ball onto its boundary."},
-    {"lead": "Reach for the generalisations", "text": "use Kakutani for set-valued maps in economics and Schauder for infinite-dimensional spaces in the theory of differential equations."}
+    {
+      "lead": "Guarantee an equilibrium",
+      "text": "when a continuous process maps a convex compact set into itself, invoke the theorem to assert a fixed point, an equilibrium, exists."
+    },
+    {
+      "lead": "Reduce to no-retraction",
+      "text": "prove it by contradiction: a fixed-point-free self-map would yield an impossible continuous retraction of the ball onto its boundary."
+    },
+    {
+      "lead": "Reach for the generalisations",
+      "text": "use Kakutani for set-valued maps in economics and Schauder for infinite-dimensional spaces in the theory of differential equations."
+    }
   ],
   "limits": "The theorem requires the domain to be a compact convex set, or a space topologically equivalent to a ball; it fails for shapes with holes, like an annulus or a circle, where a rotation moves every point. It fails for unbounded or open regions, since a translation on the whole plane has no fixed point, and it fails without continuity. Above all it is non-constructive: it certifies that a fixed point exists but supplies no procedure to locate it, and there may be many, so it answers whether but never where, a limitation that motivated later constructive and computational fixed-point methods.",
   "misreadings": "The theorem guarantees existence, not uniqueness or location; there may be one fixed point or many, and it never says where they are. It applies to continuous maps of a ball or convex compact set into itself, not to spaces with holes, so a rotation of a ring, which fixes nothing, is no counterexample because the ring is not a disc. And its famous non-constructivity is genuine: the standard proofs, ironically given Brouwer's own intuitionist philosophy, establish a fixed point exists without any means of exhibiting it.",
   "origin": "Proved in the general n-dimensional case by L.E.J. Brouwer in 1911, with the three-dimensional case shown earlier by Piers Bohl in 1904; later generalised by Kakutani to set-valued maps and by Schauder to infinite-dimensional spaces.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1911,
   "namedAfter": "L.E.J. Brouwer",
   "sources": [
-    {"text": "Brouwer fixed-point theorem, Wikipedia. — the self-map statement, the coffee and map illustrations, the no-retraction proof, and the Brouwer 1911 attribution.", "url": "https://en.wikipedia.org/wiki/Brouwer_fixed-point_theorem", "type": "secondary"},
-    {"text": "Brouwer Fixed Point Theorem, Wolfram MathWorld. — the continuous-self-map statement and the convex-compact setting.", "url": "https://mathworld.wolfram.com/BrouwerFixedPointTheorem.html", "type": "secondary"}
+    {
+      "text": "Brouwer fixed-point theorem, Wikipedia. — the self-map statement, the coffee and map illustrations, the no-retraction proof, and the Brouwer 1911 attribution.",
+      "url": "https://en.wikipedia.org/wiki/Brouwer_fixed-point_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Brouwer Fixed Point Theorem, Wolfram MathWorld. — the continuous-self-map statement and the convex-compact setting.",
+      "url": "https://mathworld.wolfram.com/BrouwerFixedPointTheorem.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Brouwer_fixed-point_theorem",
   "related": [
-    {"slug": "the-hairy-ball-theorem", "kind": "kindred"},
-    {"slug": "the-intermediate-value-theorem", "kind": "cause"}
+    {
+      "slug": "the-hairy-ball-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-intermediate-value-theorem",
+      "kind": "cause"
+    }
   ]
 }

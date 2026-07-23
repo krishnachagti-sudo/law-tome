@@ -2,7 +2,9 @@
   "no": "123",
   "slug": "gauses-law",
   "name": "Gause's Law",
-  "aliases": ["The competitive exclusion principle"],
+  "aliases": [
+    "The competitive exclusion principle"
+  ],
   "statement": "Two species competing for the same limiting resource cannot stably coexist.",
   "statementAccent": "cannot stably coexist",
   "meaning": "If two species use a limiting resource in exactly the same way — occupying an identical ecological niche — one will always be at least slightly more efficient. That small edge compounds until the less-efficient species is driven out. Perfect ecological equivalents cannot indefinitely share the same environment; coexistence requires that they differ in some meaningful way.",
@@ -33,25 +35,49 @@
   ],
   "whyItMatters": "It is a cornerstone of community ecology, giving a crisp theoretical account of when competitors can and cannot share an environment and underwriting the whole idea of the ecological niche. Its very tidiness makes its exceptions instructive — the ways real ecosystems evade it reveal how coexistence actually works.",
   "working": [
-    {"lead": "Look for the difference that allows coexistence", "text": "when similar species persist together, expect a niche axis — food, space, or time — along which they differ, rather than true ecological identity."},
-    {"lead": "Treat it as an equilibrium benchmark", "text": "the strict prediction holds under constant conditions; real coexistence often depends on the system never settling to equilibrium."},
-    {"lead": "Don't over-apply it", "text": "because an unmeasured niche difference can almost always be invoked, guard against making the principle unfalsifiable in the field."}
+    {
+      "lead": "Look for the difference that allows coexistence",
+      "text": "when similar species persist together, expect a niche axis — food, space, or time — along which they differ, rather than true ecological identity."
+    },
+    {
+      "lead": "Treat it as an equilibrium benchmark",
+      "text": "the strict prediction holds under constant conditions; real coexistence often depends on the system never settling to equilibrium."
+    },
+    {
+      "lead": "Don't over-apply it",
+      "text": "because an unmeasured niche difference can almost always be invoked, guard against making the principle unfalsifiable in the field."
+    }
   ],
   "limits": "Real ecosystems routinely show more coexisting competitors than the 'one resource, one species' bound predicts — the paradox of the plankton is the canonical counterexample. The strict principle holds only under idealised, constant, single-resource, equilibrium conditions; in the real world, spatial and temporal heterogeneity, disturbance, predation, and multiple co-limiting resources all enable coexistence. Because it is easy to rescue by invoking an unmeasured niche difference, some critics regard it as bordering on unfalsifiable in field settings — better treated as a theoretical benchmark than an ironclad law.",
   "misreadings": "It does not say competitors can never coexist — only that complete competitors, identical in resource use under constant conditions, cannot. Nearly all real coexisting species differ along some niche axis, which is exactly what the principle predicts. The phenomenon was demonstrated by Gause; the name 'competitive exclusion principle' and its crisp phrasing came later from Hardin.",
   "origin": "Demonstrated experimentally by the Soviet biologist Georgy Gause with Paramecium, published in 'The Struggle for Existence' (1934), building on the Lotka–Volterra competition models and earlier ideas from Joseph Grinnell. The name 'competitive exclusion principle' and the phrase 'complete competitors cannot coexist' were coined by Garrett Hardin in Science (1960).",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1934,
   "namedAfter": "Georgy Gause",
   "sources": [
-    {"text": "Competitive exclusion principle, Wikipedia. — the principle, Gause's experiments, niche partitioning, and the coexistence exceptions.", "url": "https://en.wikipedia.org/wiki/Competitive_exclusion_principle", "type": "secondary"},
-    {"text": "Hardin, G. (1960). \"The Competitive Exclusion Principle.\" Science, 131(3409), 1292–1297.", "url": "https://pubmed.ncbi.nlm.nih.gov/14399717/", "type": "primary"},
-    {"text": "Hutchinson, G.E. (1961). \"The Paradox of the Plankton.\" The American Naturalist, 95(882), 137–145.", "url": "https://userpages.umbc.edu/~rostamia/math481/1961-diversity-hutchinson.pdf", "type": "primary"}
+    {
+      "text": "Competitive exclusion principle, Wikipedia. — the principle, Gause's experiments, niche partitioning, and the coexistence exceptions.",
+      "url": "https://en.wikipedia.org/wiki/Competitive_exclusion_principle",
+      "type": "secondary"
+    },
+    {
+      "text": "Hardin, G. (1960). \"The Competitive Exclusion Principle.\" Science, 131(3409), 1292–1297.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14399717/",
+      "type": "primary"
+    },
+    {
+      "text": "Hutchinson, G.E. (1961). \"The Paradox of the Plankton.\" The American Naturalist, 95(882), 137–145.",
+      "url": "https://userpages.umbc.edu/~rostamia/math481/1961-diversity-hutchinson.pdf",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Competitive_exclusion_principle",
   "related": [
-    {"slug": "liebigs-law-of-the-minimum", "kind": "kindred"}
+    {
+      "slug": "liebigs-law-of-the-minimum",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,11 @@
   "no": "498",
   "slug": "preferential-attachment",
   "name": "Preferential Attachment",
-  "aliases": ["The rich get richer", "Cumulative advantage", "The Barabási-Albert model"],
+  "aliases": [
+    "The rich get richer",
+    "Cumulative advantage",
+    "The Barabási-Albert model"
+  ],
   "statement": "New links in a growing network attach preferentially to nodes that already have many, so the well-connected grow fastest.",
   "statementAccent": "the well-connected grow fastest",
   "meaning": "Preferential attachment is a network-growth mechanism in which a network expands by adding nodes over time, and each new node connects to existing nodes with a probability proportional to how many connections they already have. Because the already-popular are the most likely to gain still more, the mechanism is a rich-get-richer dynamic. Repeated over a growing network it produces a scale-free degree distribution, in which the fraction of nodes with a given number of links follows a power law: a few enormously connected hubs coexist with a vast majority of sparsely connected nodes, and there is no typical scale.",
@@ -33,24 +37,47 @@
   ],
   "whyItMatters": "Preferential attachment gave network science a simple generative explanation for why hubs and heavy-tailed degree distributions are so common, tying the structure of real networks to a single growth rule rather than to chance. It reframed the ubiquity of inequality in connections, citations, wealth, and popularity as the natural output of proportional growth, and it made scale-free networks, with their robust-yet-fragile character, a central object of study across the web, biology, and infrastructure. It also connected a scattered family of ideas, the Yule process, cumulative advantage, the Matthew effect, and Gibrat's law, under one mechanism.",
   "working": [
-    {"lead": "Watch the feedback", "text": "expect that where growth links to existing popularity in proportion to it, small early leads compound into dominant hubs."},
-    {"lead": "Read the heavy tail", "text": "treat a power-law degree distribution as a clue that a rich-get-richer process, not pure chance, may be shaping the network."},
-    {"lead": "Note robust yet fragile", "text": "recognise that hub-dominated networks shrug off random failures but collapse quickly when their hubs are deliberately hit."}
+    {
+      "lead": "Watch the feedback",
+      "text": "expect that where growth links to existing popularity in proportion to it, small early leads compound into dominant hubs."
+    },
+    {
+      "lead": "Read the heavy tail",
+      "text": "treat a power-law degree distribution as a clue that a rich-get-richer process, not pure chance, may be shaping the network."
+    },
+    {
+      "lead": "Note robust yet fragile",
+      "text": "recognise that hub-dominated networks shrug off random failures but collapse quickly when their hubs are deliberately hit."
+    }
   ],
   "limits": "Barabási and Albert named and generalised the idea but did not originate it: Yule in 1925, Herbert Simon in 1955, and Price in 1976 all modelled the mechanism earlier, and credit for the citation-network version belongs to Price. Whether real networks are truly scale-free is genuinely contested: Broido and Clauset's 2019 analysis of nearly a thousand empirical networks found strong scale-free structure to be rare, with many networks better fit by other heavy-tailed forms such as the lognormal, though the finding was itself debated. The pure model fixes the exponent near three, cannot easily reproduce the varied exponents and high clustering of real networks, and ignores node fitness and ageing, prompting many extensions.",
   "misreadings": "Barabási and Albert did not invent the idea; they named and popularised a mechanism anticipated by Yule, Simon, and especially Price. Scale-free does not describe every large real network; the empirical support is mixed. Preferential attachment is not the only route to a power law, since optimisation and multiplicative random processes can produce one too, so a heavy tail does not by itself prove the mechanism. And scale-free, a property of the degree distribution, is not the same as small-world, a property of path lengths and clustering.",
   "origin": "Anticipated by Udny Yule (1925), Herbert Simon (1955), and Derek de Solla Price (1976), and named and generalised by Albert-László Barabási and Réka Albert in their 1999 Science paper 'Emergence of scaling in random networks'.",
-  "category": "science",
+  "category": "technology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1999,
   "sources": [
-    {"text": "Barabási & Albert, 'Emergence of scaling in random networks,' Science 286:509-512 (1999). — the model and the two mechanisms, growth and preferential attachment.", "url": "https://pubmed.ncbi.nlm.nih.gov/10521342/", "type": "primary"},
-    {"text": "Broido & Clauset, 'Scale-free networks are rare,' Nature Communications 10:411 (2019). — the empirical challenge to the ubiquity of scale-free structure.", "url": "https://www.nature.com/articles/s41467-019-08746-5", "type": "secondary"}
+    {
+      "text": "Barabási & Albert, 'Emergence of scaling in random networks,' Science 286:509-512 (1999). — the model and the two mechanisms, growth and preferential attachment.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10521342/",
+      "type": "primary"
+    },
+    {
+      "text": "Broido & Clauset, 'Scale-free networks are rare,' Nature Communications 10:411 (2019). — the empirical challenge to the ubiquity of scale-free structure.",
+      "url": "https://www.nature.com/articles/s41467-019-08746-5",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Preferential_attachment",
   "related": [
-    {"slug": "power-law-distribution", "kind": "consequence"},
-    {"slug": "matthew-effect", "kind": "kindred"}
+    {
+      "slug": "power-law-distribution",
+      "kind": "consequence"
+    },
+    {
+      "slug": "matthew-effect",
+      "kind": "kindred"
+    }
   ]
 }

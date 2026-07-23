@@ -2,7 +2,10 @@
   "no": "502",
   "slug": "the-law-of-requisite-variety",
   "name": "The Law of Requisite Variety",
-  "aliases": ["Ashby's law", "Only variety can absorb variety"],
+  "aliases": [
+    "Ashby's law",
+    "Only variety can absorb variety"
+  ],
   "statement": "To control a system, a regulator must command at least as much variety as the disturbances it has to counter.",
   "statementAccent": "at least as much variety as the disturbances it has to counter",
   "meaning": "The law of requisite variety, formulated by the cybernetician W. Ross Ashby, states that to regulate or control a system a controller must be able to produce at least as much variety, the number of distinguishable states or responses, as the disturbances it must counteract. Ashby named it in the slogan only variety can destroy variety, later popularised by Stafford Beer as only variety can absorb variety. The point is that a regulator cannot push the variety of outcomes below a limit set by how the variety of disturbances compares with the variety of its own responses: to hold things steady against a varied world, the controller must itself be varied enough.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "Requisite variety is a foundational law of cybernetics and systems thinking, giving a precise sense to the intuition that you cannot control what you cannot match in complexity. It underpins management cybernetics and organisational design through Beer's work, informs the regulation of ecosystems, economies, and safety-critical systems, and frames a recurring lesson: when a controller is overwhelmed by a more varied environment, it must either grow its own repertoire or cut the variety it faces. It connects control, information theory, and organisation under a single, portable inequality.",
   "working": [
-    {"lead": "Match variety to variety", "text": "ensure a controller's range of responses is at least as large as the range of disturbances it must handle, or control will fail."},
-    {"lead": "Attenuate or amplify", "text": "when overwhelmed, either reduce the variety of what the environment sends you or expand your own repertoire, Beer's two levers."},
-    {"lead": "Model what you regulate", "text": "recognise, with the good-regulator theorem, that effective control tends to require an internal model of the system being controlled."}
+    {
+      "lead": "Match variety to variety",
+      "text": "ensure a controller's range of responses is at least as large as the range of disturbances it must handle, or control will fail."
+    },
+    {
+      "lead": "Attenuate or amplify",
+      "text": "when overwhelmed, either reduce the variety of what the environment sends you or expand your own repertoire, Beer's two levers."
+    },
+    {
+      "lead": "Model what you regulate",
+      "text": "recognise, with the good-regulator theorem, that effective control tends to require an internal model of the system being controlled."
+    }
   ],
   "limits": "Requisite variety is a formal theorem within a specific model, of finite states, disturbances, and responses with the regulator treated as a channel, and within that model it is rigorously true. Applied to social, organisational, and political systems it becomes a looser analogy rather than a proof, since variety in a human organisation is rarely cleanly countable and the neat inequality turns into a heuristic. The interpretation of the related good-regulator theorem is itself contested, and its strong readings go beyond what the mathematics clearly establishes. Much of the popular management vocabulary of variety engineering is Beer's elaboration rather than Ashby's original statement.",
   "misreadings": "It does not say more complexity is always better; it sets a minimum matching requirement, and Beer's practical advice is often to reduce, or attenuate, incoming variety rather than only to add more. Ashby's own slogan is only variety can destroy variety; the common only variety can absorb variety is Beer's restatement of the same idea. It is a formal, mathematical result about counts of states and channel capacity, not an empirical law of nature. And requisite variety is distinct from the good-regulator theorem: they are related results from 1956 and 1970, not the same claim.",
   "origin": "Formulated by W. Ross Ashby in 'An Introduction to Cybernetics' (1956), where he named it 'only variety can destroy variety', and extended in management cybernetics by Stafford Beer and in the 1970 Conant-Ashby good-regulator theorem.",
-  "category": "science",
+  "category": "technology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1956,
   "namedAfter": "W. Ross Ashby",
   "sources": [
-    {"text": "Variety (cybernetics), Wikipedia. — Ashby's definition of variety, the law, the information-theoretic link, and Beer's restatement.", "url": "https://en.wikipedia.org/wiki/Variety_(cybernetics)", "type": "secondary"},
-    {"text": "Good regulator theorem, Wikipedia. — Conant & Ashby's 1970 result and its statement and interpretation.", "url": "https://en.wikipedia.org/wiki/Good_regulator_theorem", "type": "secondary"}
+    {
+      "text": "Variety (cybernetics), Wikipedia. — Ashby's definition of variety, the law, the information-theoretic link, and Beer's restatement.",
+      "url": "https://en.wikipedia.org/wiki/Variety_(cybernetics)",
+      "type": "secondary"
+    },
+    {
+      "text": "Good regulator theorem, Wikipedia. — Conant & Ashby's 1970 result and its statement and interpretation.",
+      "url": "https://en.wikipedia.org/wiki/Good_regulator_theorem",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Variety_(cybernetics)",
   "related": [
-    {"slug": "more-is-different", "kind": "kindred"},
-    {"slug": "cascading-failure", "kind": "tension"}
+    {
+      "slug": "more-is-different",
+      "kind": "kindred"
+    },
+    {
+      "slug": "cascading-failure",
+      "kind": "tension"
+    }
   ]
 }

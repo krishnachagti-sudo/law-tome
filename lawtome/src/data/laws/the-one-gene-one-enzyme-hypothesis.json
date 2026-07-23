@@ -2,7 +2,9 @@
   "no": "411",
   "slug": "the-one-gene-one-enzyme-hypothesis",
   "name": "The One Gene-One Enzyme Hypothesis",
-  "aliases": ["One gene-one polypeptide"],
+  "aliases": [
+    "One gene-one polypeptide"
+  ],
   "statement": "Each gene works by directing the making of one specific enzyme.",
   "statementAccent": "one specific enzyme",
   "meaning": "The one gene-one enzyme hypothesis is the proposition that genes act by controlling the production of specific enzymes, with each gene responsible for a single enzyme that in turn governs a single step in a metabolic pathway. It gave the abstract Mendelian gene a concrete job: to specify a particular protein. In its original form it drew a clean one-to-one line from gene to enzyme to biochemical reaction, a picture later refined but historically transformative.",
@@ -33,25 +35,48 @@
   ],
   "whyItMatters": "It forged the first concrete, experimentally grounded link between genes and metabolism, turning the abstract gene into something that acts through specific proteins. This became a foundation of molecular biology and biochemical genetics, helped drive the search for the chemical nature of the gene, and earned Beadle and Tatum a share of the 1958 Nobel Prize, marking a pivotal step from classical genetics toward the molecular understanding of heredity.",
   "working": [
-    {"lead": "Link genes to proteins", "text": "read a gene's action as specifying a protein that carries out a biochemical function, the hypothesis's core insight."},
-    {"lead": "Trace defects to steps", "text": "map a heritable metabolic defect to a single gene blocking a single reaction, as Beadle and Tatum did."},
-    {"lead": "Hold the one-to-one loosely", "text": "treat the clean gene-to-enzyme mapping as a historically pivotal first approximation, since modern genetics is more complex."}
+    {
+      "lead": "Link genes to proteins",
+      "text": "read a gene's action as specifying a protein that carries out a biochemical function, the hypothesis's core insight."
+    },
+    {
+      "lead": "Trace defects to steps",
+      "text": "map a heritable metabolic defect to a single gene blocking a single reaction, as Beadle and Tatum did."
+    },
+    {
+      "lead": "Hold the one-to-one loosely",
+      "text": "treat the clean gene-to-enzyme mapping as a historically pivotal first approximation, since modern genetics is more complex."
+    }
   ],
   "limits": "The strong form proved too simple and was progressively revised. Many proteins are built from several polypeptide chains encoded by different genes, so the unit became one gene-one polypeptide, and even that is incomplete because of alternative splicing, which lets one gene yield many proteins, genes that encode functional RNA rather than protein, polycistronic messages carrying several proteins, overlapping genes, and post-translational modification. It remains historically foundational but superseded in its literal one-to-one form.",
   "misreadings": "It is not still literally true that every gene maps to exactly one enzyme; alternative splicing, multi-subunit proteins, and RNA-only genes all break the one-to-one mapping. It does not mean all genes encode enzymes, since many encode structural or regulatory proteins or functional RNAs. Beadle and Tatum did not coin the catchy name, which came later; their own paper was more cautiously worded. And the 1958 Nobel citation honoured genes regulating chemical events, with a third laureate recognised for separate work.",
   "origin": "Proposed by George Beadle and Edward Tatum from their 1941 experiments on Neurospora, building on Archibald Garrod's earlier concept of inborn errors of metabolism, and honoured with a share of the 1958 Nobel Prize.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1941,
   "namedAfter": "George Beadle and Edward Tatum",
   "sources": [
-    {"text": "Beadle & Tatum, \"Genetic Control of Biochemical Reactions in Neurospora,\" PNAS 27 (1941): 499-506. — the founding experiments.", "url": "https://www.pnas.org/doi/10.1073/pnas.27.11.499", "type": "primary"},
-    {"text": "One gene-one enzyme hypothesis, Wikipedia. — the hypothesis, its Garrod precursor, and its progressive refinement.", "url": "https://en.wikipedia.org/wiki/One_gene%E2%80%93one_enzyme_hypothesis", "type": "secondary"}
+    {
+      "text": "Beadle & Tatum, \"Genetic Control of Biochemical Reactions in Neurospora,\" PNAS 27 (1941): 499-506. — the founding experiments.",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.27.11.499",
+      "type": "primary"
+    },
+    {
+      "text": "One gene-one enzyme hypothesis, Wikipedia. — the hypothesis, its Garrod precursor, and its progressive refinement.",
+      "url": "https://en.wikipedia.org/wiki/One_gene%E2%80%93one_enzyme_hypothesis",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/One_gene%E2%80%93one_enzyme_hypothesis",
   "related": [
-    {"slug": "the-central-dogma-of-molecular-biology", "kind": "kindred"},
-    {"slug": "the-lock-and-key-model", "kind": "kindred"}
+    {
+      "slug": "the-central-dogma-of-molecular-biology",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-lock-and-key-model",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "626",
   "slug": "mens-rea",
   "name": "Mens Rea",
-  "aliases": ["The guilty mind", "Criminal intent"],
+  "aliases": [
+    "The guilty mind",
+    "Criminal intent"
+  ],
   "statement": "A crime usually requires not just a guilty act but a guilty mind behind it.",
   "statementAccent": "a guilty mind behind it",
   "meaning": "Mens rea, Latin for guilty mind, is the mental element of a crime: the intent, knowledge, or other culpable state of mind that, combined with the guilty act, the actus reus, constitutes criminal liability. The governing maxim is that the act is not culpable unless the mind is guilty. To convict, the prosecution must generally prove both that the defendant committed the prohibited act and that they did so with the required mental state. Modern criminal law grades these states of mind by culpability, from acting purposely down to acting negligently. A cornerstone principle of criminal law, mens rea distinguishes deliberate wrongdoing from innocent accident, tying punishment to blameworthiness and ensuring that people are held criminally responsible for their choices, not merely for outcomes.",
@@ -33,23 +36,46 @@
   ],
   "whyItMatters": "Mens rea is a foundational principle of criminal law and of justice itself, ensuring that criminal punishment attaches to blameworthy states of mind rather than to accidents. By requiring proof of intent, knowledge, recklessness, or negligence alongside the act, it separates the culpable from the merely unlucky and calibrates punishment to the degree of fault, so that a deliberate killing is treated differently from an accidental death. It structures how offences are defined and prosecuted, shapes defences, and underlies the moral legitimacy of the criminal law. Its grading of mental states also gives the law a precise vocabulary for degrees of culpability central to fair sentencing.",
   "working": [
-    {"lead": "Require act and mind together", "text": "look for both the guilty act and the required guilty mind, since generally neither alone establishes criminal liability."},
-    {"lead": "Grade the mental state", "text": "classify culpability as purposely, knowingly, recklessly, or negligently, since the level of mens rea affects the offence and the sentence."},
-    {"lead": "Note strict-liability exceptions", "text": "recognise that a few offences dispense with mens rea entirely, so the act alone suffices, but treat these as the exception."}
+    {
+      "lead": "Require act and mind together",
+      "text": "look for both the guilty act and the required guilty mind, since generally neither alone establishes criminal liability."
+    },
+    {
+      "lead": "Grade the mental state",
+      "text": "classify culpability as purposely, knowingly, recklessly, or negligently, since the level of mens rea affects the offence and the sentence."
+    },
+    {
+      "lead": "Note strict-liability exceptions",
+      "text": "recognise that a few offences dispense with mens rea entirely, so the act alone suffices, but treat these as the exception."
+    }
   ],
   "limits": "Mens rea is generally required, but a class of strict-liability offences dispenses with it, so the act alone can establish liability in those cases. It concerns the required mental state regarding the act, not the defendant's motive, the reason behind the act, which is usually not an element of the offence. Proving a state of mind is inherently difficult, since it must often be inferred from conduct and circumstances rather than observed directly. And the precise mental states required vary by offence and jurisdiction, with older common-law terms and modern graded codes coexisting, so mens rea is a family of standards rather than a single uniform test.",
   "misreadings": "Mens rea is not motive; it is the required mental state, intent, knowledge, recklessness, or negligence, regarding the act, whereas motive is why a person acted and is generally not an element of the crime. It is normally required alongside the actus reus, so a guilty act without a guilty mind usually does not suffice, but strict-liability offences are the exception, not the rule. And a guilty mind alone, without a prohibited act, is likewise not a crime, since the two elements must concur.",
   "origin": "A principle with roots in medieval and canon law, the maxim often traced to Sir Edward Coke and, further back, to ecclesiastical sources and Augustine, and systematised in modern law by the graded culpability levels of the American Model Penal Code.",
-  "category": "philosophy",
+  "category": "law",
   "reliability": "Heuristic",
   "provenance": "canon",
   "sources": [
-    {"text": "Mens rea, Wikipedia. — the guilty-mind definition, the actus reus pairing and maxim, the Model Penal Code's graded mental states, and strict liability as the exception.", "url": "https://en.wikipedia.org/wiki/Mens_rea", "type": "secondary"},
-    {"text": "Mens rea, Legal Information Institute, Cornell Law School. — the required state of mind for conviction and the graded culpability levels.", "url": "https://www.law.cornell.edu/wex/mens_rea", "type": "secondary"}
+    {
+      "text": "Mens rea, Wikipedia. — the guilty-mind definition, the actus reus pairing and maxim, the Model Penal Code's graded mental states, and strict liability as the exception.",
+      "url": "https://en.wikipedia.org/wiki/Mens_rea",
+      "type": "secondary"
+    },
+    {
+      "text": "Mens rea, Legal Information Institute, Cornell Law School. — the required state of mind for conviction and the graded culpability levels.",
+      "url": "https://www.law.cornell.edu/wex/mens_rea",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Mens_rea",
   "related": [
-    {"slug": "the-presumption-of-innocence", "kind": "kindred"},
-    {"slug": "the-reasonable-person-standard", "kind": "kindred"}
+    {
+      "slug": "the-presumption-of-innocence",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-reasonable-person-standard",
+      "kind": "kindred"
+    }
   ]
 }

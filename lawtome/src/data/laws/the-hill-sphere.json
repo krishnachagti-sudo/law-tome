@@ -2,7 +2,10 @@
   "no": "798",
   "slug": "the-hill-sphere",
   "name": "The Hill Sphere",
-  "aliases": ["Roche sphere", "Sphere of gravitational influence"],
+  "aliases": [
+    "Roche sphere",
+    "Sphere of gravitational influence"
+  ],
   "statement": "Around every planet is a bubble within which its gravity, not the Sun's, rules any moon.",
   "statementAccent": "its gravity, not the Sun's, rules any moon",
   "meaning": "The Hill sphere is the region around an astronomical body, such as a planet, within which that body's own gravity dominates the motion of satellites, overcoming the gravitational pull of the more massive body it orbits, such as the Sun. A moon can remain gravitationally bound to a planet only if it orbits within the planet's Hill sphere; beyond that boundary, the Sun's gravity would strip it away. The size of the Hill sphere depends on the mass of the smaller body relative to the larger one and on the distance between them, growing with orbital distance and with the cube root of the mass ratio. Named after the American astronomer George William Hill, who developed the concept building on the work of Édouard Roche, it is also called the Roche sphere. The Hill sphere sets the maximum extent of stable moon orbits and marks the region where a body can capture and hold satellites, making it a fundamental idea in celestial mechanics and in the study of moons, both in the solar system and around exoplanets.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "The Hill sphere is a foundational concept for understanding which satellites a body can hold and where stable orbits are possible. It determines the maximum size of a planet's realm of moons, explaining why moons orbit within a certain distance and are lost beyond it, and it governs the capture of satellites and the fate of small bodies passing near a planet. In the solar system it frames the extent of planetary satellite systems, and in the study of exoplanets it constrains where exomoons could survive around distant worlds. The Hill sphere also matters for spacecraft, marking the region where a probe can orbit a planet stably, and it connects to the Lagrange points that lie near its boundary. By quantifying the tug-of-war between a planet's gravity and the Sun's, the Hill sphere gives astronomers a simple, powerful tool for mapping gravitational dominance. It is distinct from the Roche limit, a different concept concerning tidal disruption, and keeping the two apart is important in celestial mechanics.",
   "working": [
-    {"lead": "Weigh the two pulls", "text": "compare the planet's gravity on a nearby object against the Sun's gravity and the orbital effects of circling the Sun."},
-    {"lead": "Find the boundary", "text": "locate the Hill radius, scaling with orbital distance and the cube root of the planet-to-Sun mass ratio."},
-    {"lead": "Bound the moons", "text": "expect stable satellites only within a fraction of that radius, with objects beyond the sphere lost to the Sun."}
+    {
+      "lead": "Weigh the two pulls",
+      "text": "compare the planet's gravity on a nearby object against the Sun's gravity and the orbital effects of circling the Sun."
+    },
+    {
+      "lead": "Find the boundary",
+      "text": "locate the Hill radius, scaling with orbital distance and the cube root of the planet-to-Sun mass ratio."
+    },
+    {
+      "lead": "Bound the moons",
+      "text": "expect stable satellites only within a fraction of that radius, with objects beyond the sphere lost to the Sun."
+    }
   ],
   "limits": "The Hill sphere is an approximation derived from a simplified restricted three-body picture, so its radius is a guide rather than a sharp physical wall; in practice, stable satellite orbits extend only to a fraction of the Hill radius, because orbits near the edge are easily disrupted, and the exact stable region differs for prograde and retrograde orbits. The formula assumes the small body's mass is negligible and depends on orbital distance and eccentricity, so it varies around an eccentric orbit. The Hill sphere must not be confused with the Roche limit, which is an unrelated concept concerning the tidal breakup of a body. Real systems have additional perturbing bodies that further complicate the boundary. So the Hill sphere reliably estimates the region of a body's gravitational dominance, understood as an approximate boundary within which only a fraction actually supports stable orbits.",
   "misreadings": "The Hill sphere is not a hard edge inside which any orbit is safe; stable satellite orbits reach only a fraction of the Hill radius, since orbits near the boundary are easily perturbed. It is not the same as the Roche limit, which concerns tidal disruption of a body, a completely different Roche concept. And it is not fixed regardless of orbit, since it depends on distance and eccentricity, so treating the whole Hill sphere as fully stable, or confusing it with the Roche limit, misreads an approximate region of gravitational dominance whose usable extent is smaller than its nominal radius.",
   "origin": "Named after the American astronomer George William Hill, who developed it in the nineteenth century building on Édouard Roche's work; the region where a body's gravity dominates that of the more massive body it orbits.",
-  "category": "science",
+  "category": "astronomy",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": null,
   "namedAfter": "George William Hill",
   "sources": [
-    {"text": "Hill sphere, Wikipedia. — the region where a body's gravity dominates over the primary's for retaining satellites, the radius formula scaling with distance and the cube root of the mass ratio, the Hill and Roche attribution, Earth's ~1.5 million km sphere, the relation to the L1 and L2 points, and the distinction from the Roche limit.", "url": "https://en.wikipedia.org/wiki/Hill_sphere", "type": "secondary"},
-    {"text": "Roche limit, Wikipedia. — the distinct concept of the distance within which tidal forces break up a body, distinguished from the Hill (Roche) sphere.", "url": "https://en.wikipedia.org/wiki/Roche_limit", "type": "secondary"}
+    {
+      "text": "Hill sphere, Wikipedia. — the region where a body's gravity dominates over the primary's for retaining satellites, the radius formula scaling with distance and the cube root of the mass ratio, the Hill and Roche attribution, Earth's ~1.5 million km sphere, the relation to the L1 and L2 points, and the distinction from the Roche limit.",
+      "url": "https://en.wikipedia.org/wiki/Hill_sphere",
+      "type": "secondary"
+    },
+    {
+      "text": "Roche limit, Wikipedia. — the distinct concept of the distance within which tidal forces break up a body, distinguished from the Hill (Roche) sphere.",
+      "url": "https://en.wikipedia.org/wiki/Roche_limit",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Hill_sphere",
   "related": [
-    {"slug": "lagrange-points", "kind": "kindred"},
-    {"slug": "the-roche-limit", "kind": "tension"}
+    {
+      "slug": "lagrange-points",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-roche-limit",
+      "kind": "tension"
+    }
   ]
 }

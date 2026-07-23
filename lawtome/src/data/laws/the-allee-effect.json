@@ -32,26 +32,53 @@
   ],
   "whyItMatters": "It is central to conservation biology, explaining why small and endangered populations can slide into an extinction vortex, and to the management of invasive species, since it explains why many small introductions fail and how keeping a pest below its threshold can halt an invasion. In fisheries it warns that overharvesting can push a stock past a point of no return from which it cannot recover even after fishing stops.",
   "working": [
-    {"lead": "Guard the threshold", "text": "in conservation, keep populations above the density at which the Allee effect turns growth negative, since below it decline is deterministic."},
-    {"lead": "Exploit it against invaders", "text": "to stop an invasive species, hold it below its Allee threshold, where small founding groups fail to establish."},
-    {"lead": "Set precautionary harvest limits", "text": "manage fisheries cautiously where depensation is possible, since a collapsed stock may not recover when fishing ends."}
+    {
+      "lead": "Guard the threshold",
+      "text": "in conservation, keep populations above the density at which the Allee effect turns growth negative, since below it decline is deterministic."
+    },
+    {
+      "lead": "Exploit it against invaders",
+      "text": "to stop an invasive species, hold it below its Allee threshold, where small founding groups fail to establish."
+    },
+    {
+      "lead": "Set precautionary harvest limits",
+      "text": "manage fisheries cautiously where depensation is possible, since a collapsed stock may not recover when fishing ends."
+    }
   ],
   "limits": "Allee effects are not universal; many populations show only ordinary negative density dependence at low numbers. They are also hard to detect, because demonstrating one requires data at very low densities, precisely where individuals and observations are scarce, so absence of evidence is often just lack of data. A documented component effect does not prove a demographic one, since compensation in other fitness components can mask it. And whether pure demographic stochasticity in small populations counts as an Allee effect is contested; the modern definition requires a systematic positive relationship between density and mean fitness.",
   "misreadings": "The Allee effect is not the same as a strong Allee effect: weak effects, which slow but do not reverse growth and have no threshold, are common. Not every poor showing by a small population is an Allee effect — random demographic variation is not, under the modern definition. And it is specifically about low-density dynamics, not simply the mirror image of crowding at high density.",
   "origin": "Described through the 1930s by the American zoologist Warder Clyde Allee, whose work on animal aggregations, culminating in the 1949 textbook 'Principles of Animal Ecology,' showed cooperation could raise individual survival; the modern framework was set out by Stephens, Sutherland, and Freckleton and by Courchamp and colleagues in 1999.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1949,
   "namedAfter": "Warder Clyde Allee",
   "sources": [
-    {"text": "Allee effect, Wikipedia. — the positive density-fitness relationship, the strong and weak and component and demographic distinctions, and the mechanisms.", "url": "https://en.wikipedia.org/wiki/Allee_effect", "type": "secondary"},
-    {"text": "Stephens, Sutherland & Freckleton, \"What is the Allee effect?\" Oikos 87(1):185-190 (1999). — the modern definition as a positive relationship between mean fitness and density.", "url": "https://conservationbytes.com/wp-content/uploads/2015/09/stephens-et-al-1999-oikos.pdf", "type": "primary"},
-    {"text": "Courchamp, Clutton-Brock & Grenfell, \"Inverse density dependence and the Allee effect,\" Trends in Ecology & Evolution 14(10):405-410 (1999). — the review reframing the effect and its conservation importance.", "url": "http://www.pelagicos.net/MARS6400/readings/Courchamp_et_al._1999_TREE_AlleeEffect.pdf", "type": "primary"}
+    {
+      "text": "Allee effect, Wikipedia. — the positive density-fitness relationship, the strong and weak and component and demographic distinctions, and the mechanisms.",
+      "url": "https://en.wikipedia.org/wiki/Allee_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Stephens, Sutherland & Freckleton, \"What is the Allee effect?\" Oikos 87(1):185-190 (1999). — the modern definition as a positive relationship between mean fitness and density.",
+      "url": "https://conservationbytes.com/wp-content/uploads/2015/09/stephens-et-al-1999-oikos.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Courchamp, Clutton-Brock & Grenfell, \"Inverse density dependence and the Allee effect,\" Trends in Ecology & Evolution 14(10):405-410 (1999). — the review reframing the effect and its conservation importance.",
+      "url": "http://www.pelagicos.net/MARS6400/readings/Courchamp_et_al._1999_TREE_AlleeEffect.pdf",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Allee_effect",
   "related": [
-    {"slug": "the-competitive-exclusion-principle", "kind": "kindred"},
-    {"slug": "genetic-drift", "kind": "kindred"}
+    {
+      "slug": "the-competitive-exclusion-principle",
+      "kind": "kindred"
+    },
+    {
+      "slug": "genetic-drift",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "657",
   "slug": "the-genetic-fallacy",
   "name": "The Genetic Fallacy",
-  "aliases": ["Fallacy of origins", "The fallacy of virtue"],
+  "aliases": [
+    "Fallacy of origins",
+    "The fallacy of virtue"
+  ],
   "statement": "Judge a claim by where it came from rather than by whether it is actually true.",
   "statementAccent": "by where it came from",
   "meaning": "The genetic fallacy is an informal fallacy of judging the truth or merit of a claim, or the goodness of a thing, on the basis of its origin, its source, history, or how it came about, rather than on its current merits, meaning, or the evidence and reasoning that support it. Here genetic refers to genesis, origin, not to genetics or DNA. The fallacy works in both directions: a claim may be wrongly praised because of a prestigious origin or wrongly dismissed because of a disreputable one. Introduced as a term by Morris Cohen and Ernest Nagel in 1934, it underlies related fallacies like the ad hominem and the appeal to authority. The key qualification is that origin is sometimes genuinely relevant, so the fallacy is committed only when the origin is irrelevant to the claim's truth.",
@@ -33,24 +36,47 @@
   ],
   "whyItMatters": "The genetic fallacy is a foundational concept in critical thinking and argument evaluation, naming a pervasive tendency to accept or reject ideas according to their pedigree rather than their content. It underlies familiar failures of reasoning, from dismissing arguments because of their source to accepting claims on the strength of a prestigious name, and it sharpens the crucial distinction between where an idea came from and whether it is true. At the same time, its relevance qualification teaches a subtler lesson, that source and origin can legitimately inform judgements of credibility and bias, so the skill lies in telling relevant considerations of origin from irrelevant ones.",
   "working": [
-    {"lead": "Separate origin from merit", "text": "evaluate a claim by its evidence and reasoning, not by where or from whom it came, since a true claim can have a disreputable source."},
-    {"lead": "Watch both directions", "text": "resist both praising an idea for a prestigious origin and dismissing it for a disreputable one, since both judge by source."},
-    {"lead": "Allow relevant origins", "text": "recognise that a source's reliability or bias can legitimately matter, so the fallacy applies only when the origin is irrelevant to the truth."}
+    {
+      "lead": "Separate origin from merit",
+      "text": "evaluate a claim by its evidence and reasoning, not by where or from whom it came, since a true claim can have a disreputable source."
+    },
+    {
+      "lead": "Watch both directions",
+      "text": "resist both praising an idea for a prestigious origin and dismissing it for a disreputable one, since both judge by source."
+    },
+    {
+      "lead": "Allow relevant origins",
+      "text": "recognise that a source's reliability or bias can legitimately matter, so the fallacy applies only when the origin is irrelevant to the truth."
+    }
   ],
   "limits": "The word genetic here means genesis or origin, not biology, a frequent source of confusion. The fallacy is committed only when the origin is irrelevant to the claim's truth or merit; source reliability can be legitimately relevant, as when weighing a study's funding for potential bias or a witness's history for credibility, so not every appeal to origin is fallacious. Distinguishing relevant from irrelevant appeals to origin requires judgement about the specific claim. As an informal fallacy of relevance, it names a common pattern of misplaced evaluation rather than a formal logical error, so identifying it depends on the content and context of the argument.",
   "misreadings": "Genetic here refers to origin, not genetics or DNA, so the fallacy is about judging by where an idea came from, not about biology. The truth of a claim is independent of its source, so a claim from a discredited origin can still be true, but source reliability can be legitimately relevant in some contexts, so not every appeal to origin is fallacious. And it runs in both directions: crediting an idea for a noble origin is as much the genetic fallacy as dismissing one for a disreputable origin, so it is not only a mode of dismissal.",
   "origin": "Introduced as a term by Morris Cohen and Ernest Nagel in their 1934 book An Introduction to Logic and Scientific Method, describing the error of judging a claim by its origin rather than its merits.",
-  "category": "philosophy",
+  "category": "logic",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": 1934,
   "sources": [
-    {"text": "Genetic fallacy, Wikipedia. — the definition of judging by origin rather than merit, that genetic means genesis, both directions, the relation to ad hominem and appeal to authority, and the Cohen and Nagel 1934 coinage.", "url": "https://en.wikipedia.org/wiki/Genetic_fallacy", "type": "secondary"},
-    {"text": "Genetic Fallacy - Definition & Examples, LogicalFallacies.org. — judging a claim by its source, the relevance nuance, and ad hominem and appeal to authority as special cases.", "url": "https://www.logicalfallacies.org/genetic-fallacy.html", "type": "secondary"}
+    {
+      "text": "Genetic fallacy, Wikipedia. — the definition of judging by origin rather than merit, that genetic means genesis, both directions, the relation to ad hominem and appeal to authority, and the Cohen and Nagel 1934 coinage.",
+      "url": "https://en.wikipedia.org/wiki/Genetic_fallacy",
+      "type": "secondary"
+    },
+    {
+      "text": "Genetic Fallacy - Definition & Examples, LogicalFallacies.org. — judging a claim by its source, the relevance nuance, and ad hominem and appeal to authority as special cases.",
+      "url": "https://www.logicalfallacies.org/genetic-fallacy.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Genetic_fallacy",
   "related": [
-    {"slug": "the-ad-hominem", "kind": "kindred"},
-    {"slug": "the-appeal-to-authority", "kind": "kindred"}
+    {
+      "slug": "the-ad-hominem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-appeal-to-authority",
+      "kind": "kindred"
+    }
   ]
 }

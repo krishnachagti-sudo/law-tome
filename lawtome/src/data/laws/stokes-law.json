@@ -2,7 +2,10 @@
   "no": "366",
   "slug": "stokes-law",
   "name": "Stokes' Law",
-  "aliases": ["Stokes drag", "Stokes's law"],
+  "aliases": [
+    "Stokes drag",
+    "Stokes's law"
+  ],
   "statement": "Drag on a tiny sphere creeping through a viscous fluid grows in proportion to its speed.",
   "statementAccent": "in proportion to its speed",
   "meaning": "Stokes' law gives the drag force on a small rigid sphere moving slowly through a viscous fluid. That force is six times pi times the fluid's viscosity times the sphere's radius times its speed, and it points opposite the motion. Crucially the drag is proportional to speed itself, not to speed squared, which is the signature of the slow, creeping flow regime the law describes.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "It is the foundational description of drag in the slow-flow world of small particles, underpinning sedimentation, aerosol and colloid science, viscometry, and the design of experiments from the Millikan oil drop onward. By fixing how quickly small spheres settle or rise, it governs everything from silt in rivers to cells in a centrifuge, and it is the baseline against which more complex drag models are measured.",
   "working": [
-    {"lead": "Check the Reynolds number", "text": "confirm the flow is slow, Reynolds number well below one, before applying the law, since it fails once inertia and turbulence set in."},
-    {"lead": "Remember drag is linear in speed", "text": "expect force proportional to velocity, not its square, which distinguishes creeping flow from the fast-flow regime."},
-    {"lead": "Mind the assumptions", "text": "use it for a rigid smooth sphere in an unbounded fluid; irregular shapes, nearby walls, or crowding break the simple result."}
+    {
+      "lead": "Check the Reynolds number",
+      "text": "confirm the flow is slow, Reynolds number well below one, before applying the law, since it fails once inertia and turbulence set in."
+    },
+    {
+      "lead": "Remember drag is linear in speed",
+      "text": "expect force proportional to velocity, not its square, which distinguishes creeping flow from the fast-flow regime."
+    },
+    {
+      "lead": "Mind the assumptions",
+      "text": "use it for a rigid smooth sphere in an unbounded fluid; irregular shapes, nearby walls, or crowding break the simple result."
+    }
   ],
   "limits": "It holds only at low Reynolds number, for a rigid smooth sphere in an unbounded incompressible fluid with a no-slip surface and no turbulence. Even at Reynolds number around one the error reaches roughly ten percent, and above it flow separation and a wake make inertial drag dominate, so the force grows closer to the square of speed and the law breaks down. It also does not apply directly to irregular shapes, to particles near walls, or in crowded suspensions where particles interact.",
   "misreadings": "The drag is proportional to speed, not to speed squared; the quadratic law belongs to the fast, high-Reynolds regime, a different world. It applies to spheres in slow flow, not to any falling object: raindrops, parachutes, and skydivers move at high Reynolds number where Stokes' law does not hold. And terminal velocity is not shape-independent in general; the clean radius-squared result is specific to the creeping-flow sphere.",
   "origin": "Derived by the British physicist and mathematician George Gabriel Stokes in 1851, from the low-Reynolds-number limit of the equations of viscous fluid motion.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1851,
   "namedAfter": "George Gabriel Stokes",
   "sources": [
-    {"text": "Stokes's law, Wikipedia. — the F equals 6 pi mu r v drag force, the creeping-flow derivation, and the low-Reynolds-number condition.", "url": "https://en.wikipedia.org/wiki/Stokes%27_law", "type": "secondary"},
-    {"text": "Stokes's law, Encyclopaedia Britannica. — the drag on a sphere and the resulting terminal-velocity relation.", "url": "https://www.britannica.com/science/Stokess-law", "type": "secondary"}
+    {
+      "text": "Stokes's law, Wikipedia. — the F equals 6 pi mu r v drag force, the creeping-flow derivation, and the low-Reynolds-number condition.",
+      "url": "https://en.wikipedia.org/wiki/Stokes%27_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Stokes's law, Encyclopaedia Britannica. — the drag on a sphere and the resulting terminal-velocity relation.",
+      "url": "https://www.britannica.com/science/Stokess-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Stokes%27_law",
   "related": [
-    {"slug": "the-hagen-poiseuille-equation", "kind": "kindred"},
-    {"slug": "bernoullis-principle", "kind": "kindred"}
+    {
+      "slug": "the-hagen-poiseuille-equation",
+      "kind": "kindred"
+    },
+    {
+      "slug": "bernoullis-principle",
+      "kind": "kindred"
+    }
   ]
 }

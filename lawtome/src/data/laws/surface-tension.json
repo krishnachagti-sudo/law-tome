@@ -2,7 +2,10 @@
   "no": "790",
   "slug": "surface-tension",
   "name": "Surface Tension",
-  "aliases": ["Surface energy", "The skin of a liquid"],
+  "aliases": [
+    "Surface energy",
+    "The skin of a liquid"
+  ],
   "statement": "A liquid's surface behaves like a stretched elastic skin, pulling itself to the smallest possible area.",
   "statementAccent": "pulling itself to the smallest possible area",
   "meaning": "Surface tension is the tendency of a liquid surface at rest to shrink to the smallest possible area, behaving as if it were covered by a stretched elastic membrane. It is the property that lets a liquid surface resist an external force and that makes small volumes of liquid pull themselves into rounded shapes. Surface tension arises from the cohesive forces between the liquid's molecules and is measured as a force per unit length along the surface, equivalently an energy per unit area, with water having a relatively high value of about 0.072 newtons per metre at room temperature owing to hydrogen bonding. It is responsible for a host of familiar phenomena: water beading into droplets, small insects walking on water, a needle floating on a still surface, the rounded meniscus in a tube, and, together with adhesion, capillary rise. Surface tension is a fundamental property of liquids, central to the physics of drops, bubbles, films, and interfaces.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "Surface tension is a fundamental property of liquids that shapes an enormous range of natural and technological phenomena. It governs the formation and behaviour of droplets, bubbles, and thin films, underlies capillary action that draws liquids into narrow spaces and porous materials, and sets the shape of the meniscus used in measurement. It allows small creatures to stand and move on water and lets dense but non-wetting objects rest on a surface. In technology it is central to inkjet printing, spraying and atomization, coating and painting, detergency and cleaning, emulsions and foams, and countless processes where liquids meet surfaces or other fluids. Biology depends on it too, from the role of surfactant in keeping lungs functioning to the behaviour of fluids in tissues. Because so much of how liquids behave at their boundaries follows from surface tension, it is a cornerstone concept in physics, chemistry, and engineering, and understanding it illuminates everything from a dewdrop to industrial coating.",
   "working": [
-    {"lead": "Unbalance the surface molecules", "text": "note that molecules at the surface lack neighbours above and feel a net inward pull, unlike balanced bulk molecules."},
-    {"lead": "Minimize the area", "text": "let the higher energy of surface molecules drive the liquid to shrink its surface, rounding droplets and resisting deformation."},
-    {"lead": "Modify it", "text": "raise temperature or add surfactants to lower surface tension, changing wetting, spreading, and droplet behaviour."}
+    {
+      "lead": "Unbalance the surface molecules",
+      "text": "note that molecules at the surface lack neighbours above and feel a net inward pull, unlike balanced bulk molecules."
+    },
+    {
+      "lead": "Minimize the area",
+      "text": "let the higher energy of surface molecules drive the liquid to shrink its surface, rounding droplets and resisting deformation."
+    },
+    {
+      "lead": "Modify it",
+      "text": "raise temperature or add surfactants to lower surface tension, changing wetting, spreading, and droplet behaviour."
+    }
   ],
   "limits": "Surface tension is a property of the interface under given conditions, and its value depends on the liquid, the second medium, temperature, and any surfactants or contaminants present, so a single number applies only to specific conditions. It generally decreases with temperature and can be greatly reduced by surfactants, so it is not fixed. Surface tension dominates at small scales, where it can overwhelm gravity, but at large scales gravity and other forces take over, so its visible effects are most striking for small drops, thin films, and narrow tubes. The elastic-skin picture is an analogy for the energetic tendency to minimize area, not a literal membrane. So surface tension is a robust and fundamental property of liquid interfaces, with its magnitude and importance depending on the liquid, temperature, contaminants, and the scale of the situation.",
   "misreadings": "Surface tension is not a real skin or membrane on the water; it is the energetic tendency of the surface to minimize its area, arising from molecular cohesion. It does not mean the water is stronger at the top in some material sense; the surface molecules simply have unbalanced attractions. And it is not a fixed constant, since it falls with temperature and with added surfactants, so treating the surface as a literal film, or its tension as unchangeable, misreads a property rooted in the cohesive forces between molecules at an interface.",
   "origin": "A fundamental property of liquids arising from intermolecular cohesion, long studied in physics; the tendency of a liquid surface to minimize its area, giving it the behaviour of a stretched elastic skin.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Surface tension, Wikipedia. — the tendency of a liquid surface to minimize its area, the cohesion and unbalanced-force mechanism, the force-per-length and energy-per-area units with water about 0.0728 newtons per metre, the water-strider and droplet examples, and the surfactant and temperature effects.", "url": "https://en.wikipedia.org/wiki/Surface_tension", "type": "secondary"},
-    {"text": "Surface tension, Encyclopaedia Britannica. — surface tension as the property of a liquid surface acting like a stretched elastic membrane, its cohesive origin, the ~0.07275 joules per square metre value for water, and its decrease with temperature.", "url": "https://www.britannica.com/science/surface-tension", "type": "secondary"}
+    {
+      "text": "Surface tension, Wikipedia. — the tendency of a liquid surface to minimize its area, the cohesion and unbalanced-force mechanism, the force-per-length and energy-per-area units with water about 0.0728 newtons per metre, the water-strider and droplet examples, and the surfactant and temperature effects.",
+      "url": "https://en.wikipedia.org/wiki/Surface_tension",
+      "type": "secondary"
+    },
+    {
+      "text": "Surface tension, Encyclopaedia Britannica. — surface tension as the property of a liquid surface acting like a stretched elastic membrane, its cohesive origin, the ~0.07275 joules per square metre value for water, and its decrease with temperature.",
+      "url": "https://www.britannica.com/science/surface-tension",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Surface_tension",
   "related": [
-    {"slug": "capillary-action", "kind": "cause"},
-    {"slug": "the-marangoni-effect", "kind": "consequence"}
+    {
+      "slug": "capillary-action",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-marangoni-effect",
+      "kind": "consequence"
+    }
   ]
 }

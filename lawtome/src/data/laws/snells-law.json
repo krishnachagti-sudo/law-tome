@@ -2,7 +2,11 @@
   "no": "142",
   "slug": "snells-law",
   "name": "Snell's Law",
-  "aliases": ["The law of refraction", "Descartes' law", "The Snell–Descartes law"],
+  "aliases": [
+    "The law of refraction",
+    "Descartes' law",
+    "The Snell–Descartes law"
+  ],
   "statement": "Light bends when crossing between media by an amount set by their refractive indices.",
   "statementAccent": "bends when crossing between media",
   "meaning": "When light passes from one transparent medium into another of different optical density, it changes direction at the boundary. Entering a denser medium it bends toward the perpendicular; entering a thinner one it bends away. The refractive indices fix exactly how much it bends, through the ratio of the sines of the angles.",
@@ -33,24 +37,44 @@
   ],
   "whyItMatters": "It is the quantitative law of refraction, the foundation of all lens and fibre optics and of how we understand rainbows, mirages, and the apparent bending of submerged objects. It is also the classic illustration of Stigler's law — named, almost arbitrarily, for one of its several independent discoverers.",
   "working": [
-    {"lead": "Bend toward the denser medium", "text": "predict the direction by remembering the ray bends toward the perpendicular entering a higher-index medium and away leaving it."},
-    {"lead": "Watch for the critical angle", "text": "going from dense to thin, check whether the incidence angle exceeds the critical angle, beyond which the light is totally internally reflected."},
-    {"lead": "Mind anisotropic media", "text": "in birefringent crystals or metamaterials the simple law needs generalising, so do not assume a single refracted ray."}
+    {
+      "lead": "Bend toward the denser medium",
+      "text": "predict the direction by remembering the ray bends toward the perpendicular entering a higher-index medium and away leaving it."
+    },
+    {
+      "lead": "Watch for the critical angle",
+      "text": "going from dense to thin, check whether the incidence angle exceeds the critical angle, beyond which the light is totally internally reflected."
+    },
+    {
+      "lead": "Mind anisotropic media",
+      "text": "in birefringent crystals or metamaterials the simple law needs generalising, so do not assume a single refracted ray."
+    }
   ],
   "limits": "The simple law applies cleanly to isotropic, homogeneous media. In birefringent, anisotropic crystals a ray can split into an ordinary ray that obeys it and an extraordinary ray that need not. Metamaterials with negative refractive index bend light to the same side of the perpendicular, a regime requiring a generalised formulation. As a ray-optics relation it also does not describe partial-reflection intensities, polarisation, or diffraction.",
   "misreadings": "It is a textbook Stigler's-law case: 'Snell' is historically arbitrary, since Ibn Sahl described the relationship around 984, Thomas Harriot found it in 1602, Snell derived an equivalent form in 1621 without publishing, and Descartes published it first in 1637. It also governs only isotropic media, not the split rays of birefringent crystals or negative refraction.",
   "origin": "Named for the Dutch astronomer Willebrord Snellius, who derived it around 1621 but left it unpublished. It was described by Ibn Sahl around 984, independently found by Thomas Harriot in 1602, and first published by René Descartes in 1637 — so it is called Descartes' law in France.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1621,
   "namedAfter": "Willebrord Snellius",
   "sources": [
-    {"text": "Snell's law, Wikipedia. — the statement, the Fermat and Huygens derivations, the multiple-discoverer history, and total internal reflection.", "url": "https://en.wikipedia.org/wiki/Snell%27s_law", "type": "secondary"},
-    {"text": "Ibn Sahl (mathematician), Wikipedia. — his roughly 984 treatise describing the refraction relationship.", "url": "https://en.wikipedia.org/wiki/Ibn_Sahl_(mathematician)", "type": "secondary"}
+    {
+      "text": "Snell's law, Wikipedia. — the statement, the Fermat and Huygens derivations, the multiple-discoverer history, and total internal reflection.",
+      "url": "https://en.wikipedia.org/wiki/Snell%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Ibn Sahl (mathematician), Wikipedia. — his roughly 984 treatise describing the refraction relationship.",
+      "url": "https://en.wikipedia.org/wiki/Ibn_Sahl_(mathematician)",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Snell%27s_law",
   "related": [
-    {"slug": "stiglers-law", "kind": "kindred"}
+    {
+      "slug": "stiglers-law",
+      "kind": "kindred"
+    }
   ]
 }

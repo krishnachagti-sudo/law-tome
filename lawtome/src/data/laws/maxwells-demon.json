@@ -2,7 +2,10 @@
   "no": "669",
   "slug": "maxwells-demon",
   "name": "Maxwell's Demon",
-  "aliases": ["Maxwell's sorting demon", "The finite being"],
+  "aliases": [
+    "Maxwell's sorting demon",
+    "The finite being"
+  ],
   "statement": "A tiny gatekeeper sorting fast molecules from slow ones seems able to create order from disorder and cheat the second law of thermodynamics.",
   "statementAccent": "create order from disorder and cheat the second law of thermodynamics",
   "meaning": "Maxwell's demon is a thought experiment devised by the physicist James Clerk Maxwell in 1867 to probe the second law of thermodynamics, which says the entropy of an isolated system never decreases. Maxwell imagined a tiny being, later called a demon, controlling a small door in a partition between two halves of a gas-filled box. By opening the door only to let fast molecules pass one way and slow molecules the other, the demon could make one side hotter and the other colder without doing any work, creating a temperature difference and so decreasing entropy, apparently violating the second law. The puzzle stood for generations: it seemed to show that intelligence or information could defeat the statistical tendency toward disorder. Its eventual resolution linked information to physics, showing that the demon's acquisition and erasure of information itself carries a thermodynamic cost.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "Maxwell's demon is a landmark thought experiment that connects thermodynamics, statistical mechanics, and information theory, and its resolution helped found the physics of information. By seeming to let intelligence defeat the second law, it forced physicists to ask what entropy really is and what an observer's knowledge costs, culminating in the insight that information processing has an unavoidable thermodynamic price. Landauer's principle and Bennett's analysis of erasure turned a century-old puzzle into a cornerstone of the modern understanding that information is physical, with implications for the limits of computation and for the energy cost of erasing data. The demon thus stands not only as a classic paradox but as the seed of a deep unification between the abstract notion of information and the concrete laws of heat.",
   "working": [
-    {"lead": "Let the demon sort", "text": "imagine a being opening a frictionless door to separate fast from slow molecules, seeming to lower entropy without doing work."},
-    {"lead": "Account for its information", "text": "recognise that the demon must measure and remember molecular speeds, and that this information is stored in a finite physical memory."},
-    {"lead": "Charge for erasure", "text": "apply Landauer's principle, that erasing each bit dissipates at least kT ln 2 of heat, so resetting the demon's memory generates the entropy that saves the second law."}
+    {
+      "lead": "Let the demon sort",
+      "text": "imagine a being opening a frictionless door to separate fast from slow molecules, seeming to lower entropy without doing work."
+    },
+    {
+      "lead": "Account for its information",
+      "text": "recognise that the demon must measure and remember molecular speeds, and that this information is stored in a finite physical memory."
+    },
+    {
+      "lead": "Charge for erasure",
+      "text": "apply Landauer's principle, that erasing each bit dissipates at least kT ln 2 of heat, so resetting the demon's memory generates the entropy that saves the second law."
+    }
   ],
   "limits": "Maxwell's demon is a thought experiment about the foundations of the second law, not a device that can actually be built to violate it; the consensus resolution is that no such demon can produce a net decrease in total entropy once the cost of its information handling is included. The precise locus of the saving cost was debated, with earlier accounts placing it in measurement and the later Landauer-Bennett analysis placing it in irreversible erasure, and some technical discussion of the argument continues. Landauer's principle itself, while widely accepted and experimentally supported, rests on theoretical reasoning about the link between logical and thermodynamic irreversibility, so the demon remains a conceptual touchstone whose exact interpretation is still explored.",
   "misreadings": "The demon does not show the second law can be broken; properly analysed, it shows why the law holds even against an intelligent sorter, once the entropy cost of information is counted. The rescue does not come free from the mere act of observing; the modern account locates the unavoidable cost in erasing the demon's memory, per Landauer's principle, not simply in measuring. And the experiment is not a practical proposal but a probe of principle, so treating it as a blueprint for a perpetual-motion machine mistakes a puzzle designed to illuminate entropy for a design meant to defeat it.",
   "origin": "Conceived by the physicist James Clerk Maxwell in 1867 as a challenge to the second law of thermodynamics; sharpened by Leó Szilárd in 1929 and resolved through Rolf Landauer's 1961 principle and Charles Bennett's 1982 analysis of information erasure.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": 1867,
   "namedAfter": "James Clerk Maxwell",
   "sources": [
-    {"text": "Maxwell's demon, Wikipedia. — Maxwell's 1867 thought experiment, the sorting door and apparent second-law violation, Szilard's engine, and the Landauer-Bennett resolution via the cost of information erasure.", "url": "https://en.wikipedia.org/wiki/Maxwell%27s_demon", "type": "secondary"},
-    {"text": "Landauer's principle, Wikipedia. — the principle that erasing one bit of information dissipates at least kT ln 2 of heat, and its role in resolving the demon paradox.", "url": "https://en.wikipedia.org/wiki/Landauer%27s_principle", "type": "secondary"}
+    {
+      "text": "Maxwell's demon, Wikipedia. — Maxwell's 1867 thought experiment, the sorting door and apparent second-law violation, Szilard's engine, and the Landauer-Bennett resolution via the cost of information erasure.",
+      "url": "https://en.wikipedia.org/wiki/Maxwell%27s_demon",
+      "type": "secondary"
+    },
+    {
+      "text": "Landauer's principle, Wikipedia. — the principle that erasing one bit of information dissipates at least kT ln 2 of heat, and its role in resolving the demon paradox.",
+      "url": "https://en.wikipedia.org/wiki/Landauer%27s_principle",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Maxwell%27s_demon",
   "related": [
-    {"slug": "schrodingers-cat", "kind": "kindred"},
-    {"slug": "laplaces-demon", "kind": "kindred"}
+    {
+      "slug": "schrodingers-cat",
+      "kind": "kindred"
+    },
+    {
+      "slug": "laplaces-demon",
+      "kind": "kindred"
+    }
   ]
 }

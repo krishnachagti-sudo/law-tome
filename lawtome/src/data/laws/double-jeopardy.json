@@ -2,7 +2,10 @@
   "no": "633",
   "slug": "double-jeopardy",
   "name": "Double Jeopardy",
-  "aliases": ["Non bis in idem", "The rule against being tried twice"],
+  "aliases": [
+    "Non bis in idem",
+    "The rule against being tried twice"
+  ],
   "statement": "Once acquitted or convicted of an offense, you cannot be tried again for the same one.",
   "statementAccent": "you cannot be tried again for the same one",
   "meaning": "Double jeopardy is a procedural protection that prevents a person from being tried or punished twice for the same offense after a valid acquittal or conviction. Rooted in the ancient maxim that no one should be twice troubled for the same cause, often given in the Latin non bis in idem, it guards the accused against repeated prosecutions for the same charge. In the United States it is enshrined in the Fifth Amendment, which provides that no person shall be subject for the same offence to be twice put in jeopardy of life or limb. The clause offers three protections: against a second prosecution after acquittal, against a second prosecution after conviction, and against multiple punishments for the same offense. It is a fundamental safeguard against state harassment through repeated trials.",
@@ -33,23 +36,46 @@
   ],
   "whyItMatters": "Double jeopardy is a fundamental protection against the state's power to wear down an individual through repeated prosecutions, sparing the acquitted the anxiety, expense, and ordeal of being tried again and again for the same alleged crime. With ancient roots in Greek, Roman, canon, and English common law, it expresses a deep commitment to finality and fairness in criminal justice. Its constitutional status in the United States and its presence in legal systems worldwide reflect its importance to the rule of law. Its limits, the dual-sovereignty doctrine and the allowance of retrial after mistrial or successful appeal, define the balance between finality and the pursuit of justice.",
   "working": [
-    {"lead": "Bar the second trial", "text": "prevent the state from prosecuting the same offense again after a valid acquittal or conviction, or from imposing multiple punishments for it."},
-    {"lead": "Mind the exceptions", "text": "recognise that separate sovereigns may each prosecute, and that mistrials and successful appeals can permit a retrial without violating the bar."},
-    {"lead": "Separate criminal and civil", "text": "remember a criminal acquittal does not block a civil suit over the same facts, since the two proceedings are distinct."}
+    {
+      "lead": "Bar the second trial",
+      "text": "prevent the state from prosecuting the same offense again after a valid acquittal or conviction, or from imposing multiple punishments for it."
+    },
+    {
+      "lead": "Mind the exceptions",
+      "text": "recognise that separate sovereigns may each prosecute, and that mistrials and successful appeals can permit a retrial without violating the bar."
+    },
+    {
+      "lead": "Separate criminal and civil",
+      "text": "remember a criminal acquittal does not block a civil suit over the same facts, since the two proceedings are distinct."
+    }
   ],
   "limits": "Double jeopardy bars a second trial for the same offense, not for genuinely different offenses arising from the same conduct, so the same act can support multiple distinct charges. The dual-sovereignty doctrine lets separate sovereigns each prosecute the same act, a significant exception. Retrial is permitted after a mistrial, including a hung jury, or after a defendant's successful appeal, since jeopardy has not conclusively terminated. It does not bar civil suits over the same facts. And some jurisdictions have narrowed the protection, as England and Wales did in 2003 by allowing retrial of serious offenses on new and compelling evidence, so the bar is neither universal nor absolute.",
   "misreadings": "Double jeopardy bars re-trial for the same offense, not for different offenses that happen to arise from the same conduct, so it does not immunise a course of conduct from all further charges. It does not prevent a civil suit after a criminal case, since the two are separate proceedings with different burdens of proof. Dual sovereigns, such as state and federal governments, are an exception rather than a violation. And a hung jury or mistrial generally permits a retrial, because jeopardy has not conclusively ended, so an inconclusive first trial is not a bar.",
   "origin": "An ancient principle expressed in the maxim non bis in idem, with roots in Greek, Roman, canon, and English common law, and enshrined in the United States in the Fifth Amendment's Double Jeopardy Clause ratified in 1791.",
-  "category": "philosophy",
+  "category": "law",
   "reliability": "Heuristic",
   "provenance": "canon",
   "sources": [
-    {"text": "Double jeopardy, Wikipedia. — the definition and non bis in idem maxim, the Fifth Amendment clause, the three protections, the dual-sovereignty doctrine, retrial after mistrial or appeal, and the 2003 English reform.", "url": "https://en.wikipedia.org/wiki/Double_jeopardy", "type": "secondary"},
-    {"text": "Double jeopardy, Legal Information Institute, Cornell Law School. — the Double Jeopardy Clause and its three protections.", "url": "https://www.law.cornell.edu/wex/double_jeopardy", "type": "secondary"}
+    {
+      "text": "Double jeopardy, Wikipedia. — the definition and non bis in idem maxim, the Fifth Amendment clause, the three protections, the dual-sovereignty doctrine, retrial after mistrial or appeal, and the 2003 English reform.",
+      "url": "https://en.wikipedia.org/wiki/Double_jeopardy",
+      "type": "secondary"
+    },
+    {
+      "text": "Double jeopardy, Legal Information Institute, Cornell Law School. — the Double Jeopardy Clause and its three protections.",
+      "url": "https://www.law.cornell.edu/wex/double_jeopardy",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Double_jeopardy",
   "related": [
-    {"slug": "the-presumption-of-innocence", "kind": "kindred"},
-    {"slug": "habeas-corpus", "kind": "kindred"}
+    {
+      "slug": "the-presumption-of-innocence",
+      "kind": "kindred"
+    },
+    {
+      "slug": "habeas-corpus",
+      "kind": "kindred"
+    }
   ]
 }

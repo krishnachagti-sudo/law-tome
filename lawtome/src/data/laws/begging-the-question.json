@@ -2,7 +2,10 @@
   "no": "654",
   "slug": "begging-the-question",
   "name": "Begging the Question",
-  "aliases": ["Petitio principii", "Circular argument"],
+  "aliases": [
+    "Petitio principii",
+    "Circular argument"
+  ],
   "statement": "Assume the very thing you are trying to prove, so the argument proves nothing.",
   "statementAccent": "so the argument proves nothing",
   "meaning": "Begging the question, from the Latin petitio principii, is an informal fallacy, a form of circular reasoning, in which an argument's premises assume the truth of its conclusion instead of supporting it. The conclusion is smuggled into the premises, so the argument, though it may be logically valid, establishes nothing beyond what was already taken for granted. A classic example runs opium induces sleep because it has a soporific quality, where the premise merely restates the conclusion in other words. The phrase is an English rendering of the Latin, itself a translation of Aristotle's asking for the original point. In modern everyday speech, begs the question is very often used to mean raises the question, a usage that differs from and is criticised by logicians as diluting the original meaning.",
@@ -33,23 +36,46 @@
   ],
   "whyItMatters": "Begging the question is a classic informal fallacy central to logic and critical thinking, naming the subtle way an argument can appear to prove a conclusion while merely assuming it. Because such arguments can be perfectly valid in form, spotting the hidden circularity requires care, and doing so is a core skill in evaluating reasoning, from philosophy and law to everyday debate. The fallacy also illustrates a broader lesson about the difference between valid and genuinely persuasive argument. Its tangled history, from Aristotle through the Latin petitio principii to the modern colloquial drift toward raises the question, makes it a favourite case study in both logic and the evolution of language.",
   "working": [
-    {"lead": "Check the premises for the conclusion", "text": "look for the conclusion, or a restatement of it, hiding among the premises; if it is there, the argument begs the question."},
-    {"lead": "Ask who would grant the premise", "text": "test whether someone doubting the conclusion would accept the premise; if not, the premise assumes what it should prove."},
-    {"lead": "Mind the colloquial sense", "text": "distinguish the logical fallacy from the everyday use of begs the question to mean raises the question, which is a different thing."}
+    {
+      "lead": "Check the premises for the conclusion",
+      "text": "look for the conclusion, or a restatement of it, hiding among the premises; if it is there, the argument begs the question."
+    },
+    {
+      "lead": "Ask who would grant the premise",
+      "text": "test whether someone doubting the conclusion would accept the premise; if not, the premise assumes what it should prove."
+    },
+    {
+      "lead": "Mind the colloquial sense",
+      "text": "distinguish the logical fallacy from the everyday use of begs the question to mean raises the question, which is a different thing."
+    }
   ],
   "limits": "Begging the question is about assuming what one is trying to prove, not about being vague, evasive, or merely unconvincing, so not every weak argument commits it. Circular arguments can be logically valid, so the fault is not invalidity but the failure to provide independent support, which can make the circularity hard to detect when the restatement is well disguised. The English phrase is a somewhat imperfect translation of the Latin and Greek, and its modern colloquial use to mean raises the question, though widespread and accepted by some style guides, is a distinct meaning that logicians consider a dilution rather than the fallacy itself.",
   "misreadings": "The phrase does not logically mean raises the question, despite that colloquial usage being common; the fallacy is about assuming the conclusion, not prompting further inquiry. It is not a charge of vagueness or evasiveness but specifically of circularity, where the premises presuppose what they claim to prove. And a question-begging argument can be perfectly valid, so validity is no defence; the flaw is that it offers no independent reason to accept the conclusion beyond assuming it.",
   "origin": "Discussed by Aristotle in his Prior Analytics and Topics as asking for the original point, rendered in Latin as petitio principii and translated into English as begging the question, a phrasing now often colloquially used to mean raises the question.",
-  "category": "philosophy",
+  "category": "logic",
   "reliability": "Heuristic",
   "provenance": "canon",
   "sources": [
-    {"text": "Begging the question, Wikipedia. — the definition and Latin term petitio principii, the opium example, the Aristotelian origin, the circular-reasoning link, and the modern raises-the-question misusage.", "url": "https://en.wikipedia.org/wiki/Begging_the_question", "type": "secondary"},
-    {"text": "Logical Fallacy: Begging the Question, The Fallacy Files. — the circular structure in which the premises assume the conclusion.", "url": "https://www.fallacyfiles.org/begquest.html", "type": "secondary"}
+    {
+      "text": "Begging the question, Wikipedia. — the definition and Latin term petitio principii, the opium example, the Aristotelian origin, the circular-reasoning link, and the modern raises-the-question misusage.",
+      "url": "https://en.wikipedia.org/wiki/Begging_the_question",
+      "type": "secondary"
+    },
+    {
+      "text": "Logical Fallacy: Begging the Question, The Fallacy Files. — the circular structure in which the premises assume the conclusion.",
+      "url": "https://www.fallacyfiles.org/begquest.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Begging_the_question",
   "related": [
-    {"slug": "the-no-true-scotsman", "kind": "kindred"},
-    {"slug": "the-motte-and-bailey", "kind": "kindred"}
+    {
+      "slug": "the-no-true-scotsman",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-motte-and-bailey",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "472",
   "slug": "the-sodium-potassium-pump",
   "name": "The Sodium-Potassium Pump",
-  "aliases": ["The Na+/K+-ATPase", "The sodium pump"],
+  "aliases": [
+    "The Na+/K+-ATPase",
+    "The sodium pump"
+  ],
   "statement": "An ATP-powered pump drives sodium out of the cell and potassium in, three for two, building the gradients life runs on.",
   "statementAccent": "three for two",
   "meaning": "The sodium-potassium pump is an enzyme embedded in the membrane of animal cells that uses the energy of ATP hydrolysis to pump three sodium ions out of the cell and two potassium ions in per cycle, each ion moving against its concentration gradient. By maintaining steep sodium and potassium gradients, it sets up the electrical excitability of nerve and muscle, regulates cell volume, and powers a host of secondary transport processes. Because it moves a net positive charge outward each cycle, it is electrogenic, making a small direct contribution to the membrane potential.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "The pump maintains the ionic gradients that are the substrate for nerve and muscle excitability, so all action potentials draw on its work. It regulates cell volume, counteracting the osmotic tendency of cells to swell, and its gradients power secondary active transport throughout the body, from nutrient absorption in the gut to reabsorption in the kidney. Its discovery by Jens Christian Skou, the first ion-transporting enzyme identified, earned a share of the 1997 Nobel Prize in Chemistry and opened the study of the molecular pumps that sustain the living cell.",
   "working": [
-    {"lead": "Spend ATP to hold gradients", "text": "treat the steep sodium and potassium gradients as actively maintained against constant leak, at real metabolic cost."},
-    {"lead": "Count the charge", "text": "note the three-out, two-in stoichiometry makes the pump electrogenic, exporting a net positive charge each cycle."},
-    {"lead": "Follow the gradient downstream", "text": "recognise the sodium gradient as the power source for cotransporters that move glucose, amino acids, and calcium."}
+    {
+      "lead": "Spend ATP to hold gradients",
+      "text": "treat the steep sodium and potassium gradients as actively maintained against constant leak, at real metabolic cost."
+    },
+    {
+      "lead": "Count the charge",
+      "text": "note the three-out, two-in stoichiometry makes the pump electrogenic, exporting a net positive charge each cycle."
+    },
+    {
+      "lead": "Follow the gradient downstream",
+      "text": "recognise the sodium gradient as the power source for cotransporters that move glucose, amino acids, and calcium."
+    }
   ],
   "limits": "The pump is one of the largest single consumers of cellular energy, though the exact fraction varies widely by tissue and method: brain estimates commonly fall in the range of a fifth to two-fifths of energy use, with some studies higher, so these figures should be given as ranges, not a single number. Its electrogenic contribution to the membrane voltage is small and indirect. Its inhibitor digoxin has a narrow therapeutic window, since over-inhibition causes calcium overload and dangerous arrhythmia. And the gradients it maintains, not the pump current itself, are what nerve and muscle actually use.",
   "misreadings": "The pump is not passive: it is primary active transport requiring ATP hydrolysis, and blocking ATP stops it. It is not electroneutral, since the three-to-two ratio makes it electrogenic. And it does not generate the resting potential, which is set mainly by potassium permeability through the Goldman relation; the pump's job is to maintain the gradients that slowly leak, contributing only a small direct hyperpolarising offset, and in most circumstances it plays no direct part in the action potential itself.",
   "origin": "Discovered by the Danish scientist Jens Christian Skou, who in 1957 identified a sodium- and potassium-dependent ATPase in crab nerve membranes; he was awarded a share of the 1997 Nobel Prize in Chemistry for the first discovery of an ion-transporting enzyme.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1957,
   "namedAfter": "Jens Christian Skou",
   "sources": [
-    {"text": "Skou, 'The influence of some cations on an adenosine triphosphatase from peripheral nerves,' Biochimica et Biophysica Acta 23 (1957): 394-401. — the discovery of the pump.", "url": "https://www.sciencedirect.com/science/article/abs/pii/0006300257903438", "type": "primary"},
-    {"text": "Purves et al., Neuroscience, 'Active Transporters Create and Maintain Ion Gradients' (NCBI Bookshelf). — the pump's stoichiometry, function, and role in the membrane potential.", "url": "https://www.ncbi.nlm.nih.gov/books/NBK10857/", "type": "secondary"}
+    {
+      "text": "Skou, 'The influence of some cations on an adenosine triphosphatase from peripheral nerves,' Biochimica et Biophysica Acta 23 (1957): 394-401. — the discovery of the pump.",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/0006300257903438",
+      "type": "primary"
+    },
+    {
+      "text": "Purves et al., Neuroscience, 'Active Transporters Create and Maintain Ion Gradients' (NCBI Bookshelf). — the pump's stoichiometry, function, and role in the membrane potential.",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK10857/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Sodium%E2%80%93potassium_pump",
   "related": [
-    {"slug": "the-hodgkin-huxley-model", "kind": "kindred"}
+    {
+      "slug": "the-hodgkin-huxley-model",
+      "kind": "kindred"
+    }
   ]
 }

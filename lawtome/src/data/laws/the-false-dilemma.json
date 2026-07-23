@@ -2,7 +2,10 @@
   "no": "653",
   "slug": "the-false-dilemma",
   "name": "The False Dilemma",
-  "aliases": ["False dichotomy", "The either/or fallacy"],
+  "aliases": [
+    "False dichotomy",
+    "The either/or fallacy"
+  ],
   "statement": "Present only two options as if they were the only ones, when in fact more exist.",
   "statementAccent": "as if they were the only ones",
   "meaning": "The false dilemma, also called a false dichotomy or the either/or fallacy, is an informal fallacy in which a limited number of options, usually two, is presented as if they were the only possibilities, when in fact more exist. By framing a situation as a stark either/or, it excludes middle grounds and alternatives, forcing a choice between the two offered options as though no other path were available. It can be committed either by suggesting only two options exist when there are more, or by presenting two options as mutually exclusive when they are not. A common device in rhetoric, politics, and advertising, the false dilemma oversimplifies complex issues to polarise debate or pressure a decision, and it is closely related to black-and-white, all-or-nothing thinking.",
@@ -33,23 +36,46 @@
   ],
   "whyItMatters": "The false dilemma is a common and persuasive fallacy in politics, advertising, and everyday argument, used to force a choice, manufacture urgency, or polarise a debate by hiding the real range of options. Recognising it is a basic critical-thinking skill, because much manipulation works precisely by making a complex question look like a simple either/or. Its cognitive cousin, black-and-white thinking, is a recognised distortion in psychology linked to rigid, polarised judgement. By training people to ask whether the offered options are truly the only ones, and truly incompatible, the false dilemma teaches a habit of looking for the excluded middle that resists oversimplification and coercive framing.",
   "working": [
-    {"lead": "Count the real options", "text": "when presented with an either/or, ask whether the two choices really exhaust the possibilities or whether other options have been hidden."},
-    {"lead": "Check exclusivity", "text": "test whether the two options are genuinely incompatible; often they can both be true or both false, so choosing one need not rule out the other."},
-    {"lead": "Restore the middle", "text": "counter a false dilemma by naming the excluded alternatives or intermediate positions the framing tried to erase."}
+    {
+      "lead": "Count the real options",
+      "text": "when presented with an either/or, ask whether the two choices really exhaust the possibilities or whether other options have been hidden."
+    },
+    {
+      "lead": "Check exclusivity",
+      "text": "test whether the two options are genuinely incompatible; often they can both be true or both false, so choosing one need not rule out the other."
+    },
+    {
+      "lead": "Restore the middle",
+      "text": "counter a false dilemma by naming the excluded alternatives or intermediate positions the framing tried to erase."
+    }
   ],
   "limits": "Not every either/or is a false dilemma; some dichotomies are genuine and exhaustive, like even or odd, so the fallacy is committed only when real alternatives are wrongly excluded or when non-exclusive options are falsely framed as mutually exclusive. Judging whether the options truly exhaust the possibilities can itself be contestable in complex cases. The false dilemma is a fallacy of relevance and framing rather than a formal error, so spotting it requires substantive knowledge of what other options exist. Its precise origin is not attributable to a single author; it is a long-recognised informal fallacy whose pull reflects a built-in human tendency to think in pairs of opposites.",
   "misreadings": "A false dilemma is not any either/or statement; a genuine, exhaustive dichotomy like even or odd is perfectly valid, and the fallacy arises only when true alternatives are excluded. It should not be confused with the logical law of the excluded middle, a valid principle about contradictories; the false dilemma instead wrongly treats mere contraries as if they were contradictories. And it is committed either by omitting options or by falsely presenting options as mutually exclusive, so both narrowing and forced incompatibility count.",
   "origin": "A classic informal fallacy of relevance with no single identifiable originator, reflecting the built-in tendency of language and thought to frame situations as pairs of opposites, long catalogued in logic and critical-thinking texts.",
-  "category": "philosophy",
+  "category": "logic",
   "reliability": "Heuristic",
   "provenance": "canon",
   "sources": [
-    {"text": "False dilemma, Wikipedia. — the definition and alternate names, the true-versus-false dichotomy distinction via contradictories and contraries, and the black-and-white-thinking connection.", "url": "https://en.wikipedia.org/wiki/False_dilemma", "type": "secondary"},
-    {"text": "What Is the Either-Or Fallacy?, Encyclopaedia Britannica. — the presentation of only two options while ignoring others and its use to polarise debate.", "url": "https://www.britannica.com/topic/What-Is-the-Either-Or-Fallacy", "type": "secondary"}
+    {
+      "text": "False dilemma, Wikipedia. — the definition and alternate names, the true-versus-false dichotomy distinction via contradictories and contraries, and the black-and-white-thinking connection.",
+      "url": "https://en.wikipedia.org/wiki/False_dilemma",
+      "type": "secondary"
+    },
+    {
+      "text": "What Is the Either-Or Fallacy?, Encyclopaedia Britannica. — the presentation of only two options while ignoring others and its use to polarise debate.",
+      "url": "https://www.britannica.com/topic/What-Is-the-Either-Or-Fallacy",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/False_dilemma",
   "related": [
-    {"slug": "the-slippery-slope", "kind": "kindred"},
-    {"slug": "the-no-true-scotsman", "kind": "kindred"}
+    {
+      "slug": "the-slippery-slope",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-no-true-scotsman",
+      "kind": "kindred"
+    }
   ]
 }

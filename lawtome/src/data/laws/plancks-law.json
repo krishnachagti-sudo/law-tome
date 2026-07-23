@@ -32,25 +32,48 @@
   ],
   "whyItMatters": "It is the founding law of quantum physics: to fit the measured spectrum of thermal radiation, Planck was forced to quantise energy, introducing the constant that bears his name and launching the quantum revolution. It also remains the exact description of thermal radiation, verified to extraordinary precision by the cosmic microwave background.",
   "working": [
-    {"lead": "Use it for the full spectrum", "text": "when you need emission at each wavelength, not just the total or the peak, Planck's law is the exact black-body curve."},
-    {"lead": "Recover the summary laws from it", "text": "integrate for total power (Stefan–Boltzmann) or differentiate for the peak (Wien) rather than treating them as separate facts."},
-    {"lead": "Correct for real emitters", "text": "apply emissivity and spectral features for real materials, which depart from the ideal black-body curve."}
+    {
+      "lead": "Use it for the full spectrum",
+      "text": "when you need emission at each wavelength, not just the total or the peak, Planck's law is the exact black-body curve."
+    },
+    {
+      "lead": "Recover the summary laws from it",
+      "text": "integrate for total power (Stefan–Boltzmann) or differentiate for the peak (Wien) rather than treating them as separate facts."
+    },
+    {
+      "lead": "Correct for real emitters",
+      "text": "apply emissivity and spectral features for real materials, which depart from the ideal black-body curve."
+    }
   ],
   "limits": "The law describes an idealised perfect black body in thermal equilibrium. Real emitters have emissivity below one and material-dependent spectral features — emission and absorption lines, band structure — so they deviate from a pure Planck curve. Historically, Planck himself first regarded the energy quantisation as a mathematical device before its physical reality was accepted, extended by Einstein's 1905 work on the photoelectric effect. Within its idealisation it is exact and is the best-verified spectrum in physics.",
   "misreadings": "It is not a classical result patched up — the quantisation of energy it requires broke with classical physics and founded quantum theory. Nor does it describe real objects exactly; they emit less than an ideal black body and carry spectral features the smooth Planck curve omits.",
   "origin": "Derived by Max Planck in 1900, presented to the German Physical Society and revised with the quantum postulate that December. It resolved the ultraviolet catastrophe of the classical Rayleigh–Jeans law and introduced the quantum of action, launching quantum physics.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1900,
   "namedAfter": "Max Planck",
   "sources": [
-    {"text": "Planck's law, Wikipedia. — the spectral distribution, the quantisation mechanism, and the related summary laws.", "url": "https://en.wikipedia.org/wiki/Planck%27s_law", "type": "secondary"},
-    {"text": "Max Planck, Wikipedia. — the 1900 derivation, the quantum postulate, and the birth of quantum physics.", "url": "https://en.wikipedia.org/wiki/Max_Planck", "type": "secondary"}
+    {
+      "text": "Planck's law, Wikipedia. — the spectral distribution, the quantisation mechanism, and the related summary laws.",
+      "url": "https://en.wikipedia.org/wiki/Planck%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Max Planck, Wikipedia. — the 1900 derivation, the quantum postulate, and the birth of quantum physics.",
+      "url": "https://en.wikipedia.org/wiki/Max_Planck",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Planck%27s_law",
   "related": [
-    {"slug": "stefan-boltzmann-law", "kind": "kindred"},
-    {"slug": "wiens-displacement-law", "kind": "kindred"}
+    {
+      "slug": "stefan-boltzmann-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "wiens-displacement-law",
+      "kind": "kindred"
+    }
   ]
 }

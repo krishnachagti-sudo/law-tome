@@ -2,7 +2,10 @@
   "no": "589",
   "slug": "the-cauchy-schwarz-inequality",
   "name": "The Cauchy-Schwarz Inequality",
-  "aliases": ["Cauchy-Bunyakovsky-Schwarz inequality", "CBS inequality"],
+  "aliases": [
+    "Cauchy-Bunyakovsky-Schwarz inequality",
+    "CBS inequality"
+  ],
   "statement": "The inner product of two vectors can never exceed the product of their lengths.",
   "statementAccent": "can never exceed the product of their lengths",
   "meaning": "The Cauchy-Schwarz inequality states that for any two vectors, the absolute value of their inner product is at most the product of their lengths, or norms. In coordinates, the square of a sum of products of paired numbers is at most the product of the two sums of squares. Equality holds exactly when the two vectors are linearly dependent, pointing along the same line. It is one of the most important and widely used inequalities in all of mathematics, holding in any inner-product space, real or complex, finite or infinite dimensional. Its power lies in bounding an interaction, the inner product, by the separate sizes of the things interacting, a constraint that turns up everywhere from geometry and analysis to statistics and quantum mechanics.",
@@ -33,23 +36,43 @@
   ],
   "whyItMatters": "The Cauchy-Schwarz inequality is a cornerstone of analysis, geometry, probability, and physics, so ubiquitous that it is often the first tool reached for when bounding an inner product or a sum of products. It underpins the triangle inequality and hence the very notion of distance in vector spaces, makes the definition of angle coherent, guarantees the correlation coefficient lies in its familiar range, and stands behind the uncertainty relations of quantum mechanics through its role in the Robertson-Schrodinger inequality. Elegant, elementary to prove, and endlessly applicable, it is a model of how a single inequality can organise vast swaths of mathematics.",
   "working": [
-    {"lead": "Bound the interaction by the sizes", "text": "whenever an inner product or sum of paired products appears, cap its magnitude by the product of the two norms."},
-    {"lead": "Prove it by positivity", "text": "expand the non-negative length squared of a difference as a quadratic; its non-positive discriminant is exactly the inequality."},
-    {"lead": "Use it to define angle", "text": "rely on it to keep the inner product over the product of lengths within minus one and one, so the cosine of an angle is well defined."}
+    {
+      "lead": "Bound the interaction by the sizes",
+      "text": "whenever an inner product or sum of paired products appears, cap its magnitude by the product of the two norms."
+    },
+    {
+      "lead": "Prove it by positivity",
+      "text": "expand the non-negative length squared of a difference as a quadratic; its non-positive discriminant is exactly the inequality."
+    },
+    {
+      "lead": "Use it to define angle",
+      "text": "rely on it to keep the inner product over the product of lengths within minus one and one, so the cosine of an angle is well defined."
+    }
   ],
   "limits": "The inequality is exactly that, an inequality, becoming an equality only when the two vectors are linearly dependent, so it is tight only in that parallel case. It presupposes a genuine inner product with its positivity and symmetry properties; in settings lacking a true inner product it need not hold. It bounds the inner product by the norms but says nothing about the sign or the precise value of the inner product, only its magnitude. And while it holds in infinite-dimensional spaces, applying it there requires the relevant inner products and norms to be finite, so its use is bounded by the existence of the quantities it relates.",
   "misreadings": "The inequality gives an upper bound, reached as equality only for parallel vectors, so it is not an identity and not generally tight. The Schwarz here is Hermann Amandus Schwarz, a nineteenth-century German analyst, not the twentieth-century Laurent Schwartz of distribution theory, a common confusion. And it concerns the magnitude of the inner product, not its sign, so it constrains how large the interaction can be without telling you whether the vectors point with or against each other, which is a separate matter of the inner product's sign.",
   "origin": "The finite-sum version was given by Augustin-Louis Cauchy in 1821, the integral version by Viktor Bunyakovsky in 1859, and the general inner-product form by Hermann Amandus Schwarz in 1888, whence the combined name Cauchy-Bunyakovsky-Schwarz.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1821,
   "sources": [
-    {"text": "Cauchy-Schwarz inequality, Wikipedia. — the inner-product and sums forms, the equality condition, the three names and dates, and the correlation-coefficient and angle applications.", "url": "https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality", "type": "secondary"},
-    {"text": "Schwarz's Inequality, Wolfram MathWorld. — the inequality with the linear-dependence equality condition.", "url": "https://mathworld.wolfram.com/SchwarzsInequality.html", "type": "secondary"}
+    {
+      "text": "Cauchy-Schwarz inequality, Wikipedia. — the inner-product and sums forms, the equality condition, the three names and dates, and the correlation-coefficient and angle applications.",
+      "url": "https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality",
+      "type": "secondary"
+    },
+    {
+      "text": "Schwarz's Inequality, Wolfram MathWorld. — the inequality with the linear-dependence equality condition.",
+      "url": "https://mathworld.wolfram.com/SchwarzsInequality.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality",
   "related": [
-    {"slug": "jensens-inequality", "kind": "kindred"}
+    {
+      "slug": "jensens-inequality",
+      "kind": "kindred"
+    }
   ]
 }

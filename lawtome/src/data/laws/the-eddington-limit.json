@@ -2,7 +2,10 @@
   "no": "528",
   "slug": "the-eddington-limit",
   "name": "The Eddington Limit",
-  "aliases": ["The Eddington luminosity", "The radiation-pressure limit"],
+  "aliases": [
+    "The Eddington luminosity",
+    "The radiation-pressure limit"
+  ],
   "statement": "A star or accreting object can shine only so brightly before its own light blows its outer layers away.",
   "statementAccent": "before its own light blows its outer layers away",
   "meaning": "The Eddington limit is the maximum luminosity a body can sustain when the outward push of its own radiation pressure just balances the inward pull of gravity. Shine any brighter and radiation pressure overwhelms gravity, driving the outer layers of a star outward or halting the infall of matter onto a compact object. Named for Arthur Eddington and worked out in the study of stellar structure, the limit is proportional to mass, so more massive objects can be more luminous. It sets a natural ceiling on the brightness of stars and on how fast black holes and neutron stars can swallow matter and grow.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "The Eddington limit is a fundamental ceiling in astrophysics, setting the maximum luminosity of stars and the maximum steady rate at which compact objects can accrete and grow. It shapes the structure and mass loss of the most massive stars, governs the physics of quasars and active galactic nuclei, and constrains how quickly the supermassive black holes at galactic centres could have grown in the early universe. Wherever gravity and radiation contend, from a single star to a feeding black hole, the Eddington limit marks the balance point between them.",
   "working": [
-    {"lead": "Balance light against gravity", "text": "treat the Eddington limit as the luminosity at which outward radiation pressure just offsets inward gravity, above which matter is expelled."},
-    {"lead": "Scale with mass", "text": "expect the maximum luminosity to grow in proportion to mass, so more massive stars and black holes can be more luminous."},
-    {"lead": "Cap the accretion", "text": "use the limit to bound the steady rate at which a compact object can swallow matter, since accretion light pushes infalling gas back."}
+    {
+      "lead": "Balance light against gravity",
+      "text": "treat the Eddington limit as the luminosity at which outward radiation pressure just offsets inward gravity, above which matter is expelled."
+    },
+    {
+      "lead": "Scale with mass",
+      "text": "expect the maximum luminosity to grow in proportion to mass, so more massive stars and black holes can be more luminous."
+    },
+    {
+      "lead": "Cap the accretion",
+      "text": "use the limit to bound the steady rate at which a compact object can swallow matter, since accretion light pushes infalling gas back."
+    }
   ],
   "limits": "The classical Eddington limit assumes spherical symmetry, a steady state, and that electron, or Thomson, scattering dominates the opacity, as in fully ionised hydrogen, and these assumptions are often violated in real systems. Objects can exceed the limit transiently or through non-spherical geometry, beaming, or photon trapping, which is how ultraluminous X-ray sources shine apparently super-Eddington without breaking the physics. The exact value also depends on chemical composition, since heavier elements and line opacity change the effective opacity and lower the limit, so the simple formula is an idealisation.",
   "misreadings": "It is not an absolute cap that can never be crossed; it is the steady, spherical balance point, and transient or geometrically beamed sources genuinely exceed it in apparent luminosity. The limit depends on mass, not on the object's radius, which cancels because both forces fall off with the square of distance. And although the proton mass appears in the formula, the relevant cross-section is the electron's, reflecting that electrons scatter the radiation while protons carry the weight.",
   "origin": "Developed by Arthur Eddington in his work on the internal structure of stars in the 1920s, notably in his 1926 'The Internal Constitution of the Stars'.",
-  "category": "science",
+  "category": "astronomy",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1926,
   "namedAfter": "Arthur Eddington",
   "sources": [
-    {"text": "Eddington luminosity, Wikipedia. — the radiation-gravity balance, the formula and per-solar-mass value, and the super-Eddington puzzle.", "url": "https://en.wikipedia.org/wiki/Eddington_luminosity", "type": "secondary"},
-    {"text": "Arthur Eddington, Wikipedia. — the stellar-structure context in which the limit was developed.", "url": "https://en.wikipedia.org/wiki/Arthur_Eddington", "type": "secondary"}
+    {
+      "text": "Eddington luminosity, Wikipedia. — the radiation-gravity balance, the formula and per-solar-mass value, and the super-Eddington puzzle.",
+      "url": "https://en.wikipedia.org/wiki/Eddington_luminosity",
+      "type": "secondary"
+    },
+    {
+      "text": "Arthur Eddington, Wikipedia. — the stellar-structure context in which the limit was developed.",
+      "url": "https://en.wikipedia.org/wiki/Arthur_Eddington",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Eddington_luminosity",
   "related": [
-    {"slug": "the-chandrasekhar-limit", "kind": "kindred"}
+    {
+      "slug": "the-chandrasekhar-limit",
+      "kind": "kindred"
+    }
   ]
 }

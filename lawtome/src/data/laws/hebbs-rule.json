@@ -2,7 +2,11 @@
   "no": "470",
   "slug": "hebbs-rule",
   "name": "Hebb's Rule",
-  "aliases": ["Hebbian theory", "Neurons that fire together wire together", "The Hebb synapse"],
+  "aliases": [
+    "Hebbian theory",
+    "Neurons that fire together wire together",
+    "The Hebb synapse"
+  ],
   "statement": "When one neuron repeatedly helps fire another, the connection between them strengthens.",
   "statementAccent": "the connection between them strengthens",
   "meaning": "Hebb's rule is the principle that when one neuron repeatedly and persistently takes part in firing another, the synaptic connection between them is strengthened. It gives a cellular account of associative learning and memory: correlated activity between a presynaptic and a postsynaptic neuron increases the efficacy of their synapse. It is popularly compressed to the slogan that neurons that fire together wire together, a phrase coined not by Hebb but by Carla Shatz as a mnemonic, and it flattens Hebb's own more careful, causal wording.",
@@ -33,24 +37,44 @@
   ],
   "whyItMatters": "It is a foundational framework for synaptic plasticity, learning, and memory, underlying models of associative memory, developmental wiring, and the formation of cortical maps. It also crossed into machine learning, where Hebbian learning rules and their refinements, Oja's rule and the BCM theory, remain influential, and Hebbian ideas persist in biologically plausible alternatives to backpropagation. Few single sentences in neuroscience have been as generative, giving both a cellular hypothesis for memory and a design principle for artificial networks.",
   "working": [
-    {"lead": "Strengthen the correlated", "text": "expect synapses between neurons that are active together to grow stronger, encoding associations in the connection weights."},
-    {"lead": "Mind the timing", "text": "remember that causal order matters: pre-before-post strengthens, post-before-pre weakens, so simultaneity alone is not enough."},
-    {"lead": "Add a brake", "text": "pair Hebbian strengthening with a normalisation or depression mechanism, since unchecked it grows without bound."}
+    {
+      "lead": "Strengthen the correlated",
+      "text": "expect synapses between neurons that are active together to grow stronger, encoding associations in the connection weights."
+    },
+    {
+      "lead": "Mind the timing",
+      "text": "remember that causal order matters: pre-before-post strengthens, post-before-pre weakens, so simultaneity alone is not enough."
+    },
+    {
+      "lead": "Add a brake",
+      "text": "pair Hebbian strengthening with a normalisation or depression mechanism, since unchecked it grows without bound."
+    }
   ],
   "limits": "Pure Hebbian learning is unstable: it is positive feedback, so weights grow without bound as strengthening begets more co-activation, and it needs a normalisation or constraint such as synaptic scaling or a sliding threshold to be stable. It is purely correlational, capturing correlation rather than causation and including no mechanism for weakening, so it requires extensions such as long-term depression to allow forgetting and decorrelation. And the popular slogan oversimplifies, ignoring the spike timing and causal order that determine whether a synapse actually strengthens.",
   "misreadings": "Hebb did not coin the phrase that neurons that fire together wire together; that slogan is Carla Shatz's, and attributing it to Hebb is the most common error. Hebb did not discover long-term potentiation, which Bliss and Lomo found in 1973, decades later; it is cited as a mechanism consistent with his rule, not something he demonstrated. And the idea was not wholly original to Hebb, since earlier associationist and synaptic-plasticity proposals predate it; his contribution was the crisp synthesis and the cell-assembly framework.",
   "origin": "Set out by the Canadian psychologist Donald Hebb in 'The Organization of Behavior' (1949), building on earlier associationist ideas; its physiological correlate, long-term potentiation, was found later, and the slogan 'fire together wire together' was coined by Carla Shatz.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1949,
   "namedAfter": "Donald Hebb",
   "sources": [
-    {"text": "Donald Olding Hebb, Canadian Association for Neuroscience. — the Hebb postulate, biography, and the Hebb synapse.", "url": "https://can-acn.org/donald-olding-hebb/", "type": "secondary"},
-    {"text": "Hebbian theory overview, ScienceDirect Topics. — the postulate, the cell assembly, and the link to long-term potentiation.", "url": "https://www.sciencedirect.com/topics/neuroscience/hebbian-theory", "type": "secondary"}
+    {
+      "text": "Donald Olding Hebb, Canadian Association for Neuroscience. — the Hebb postulate, biography, and the Hebb synapse.",
+      "url": "https://can-acn.org/donald-olding-hebb/",
+      "type": "secondary"
+    },
+    {
+      "text": "Hebbian theory overview, ScienceDirect Topics. — the postulate, the cell assembly, and the link to long-term potentiation.",
+      "url": "https://www.sciencedirect.com/topics/neuroscience/hebbian-theory",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Hebbian_theory",
   "related": [
-    {"slug": "long-term-potentiation", "kind": "consequence"}
+    {
+      "slug": "long-term-potentiation",
+      "kind": "consequence"
+    }
   ]
 }

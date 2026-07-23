@@ -2,7 +2,10 @@
   "no": "593",
   "slug": "wilsons-theorem",
   "name": "Wilson's Theorem",
-  "aliases": ["Wilson's prime criterion", "Al-Haytham's theorem"],
+  "aliases": [
+    "Wilson's prime criterion",
+    "Al-Haytham's theorem"
+  ],
   "statement": "A number above one is prime exactly when one less than it, factorialised, is one short of a multiple of it.",
   "statementAccent": "one short of a multiple of it",
   "meaning": "Wilson's theorem is a clean characterisation of the prime numbers using factorials. It states that a whole number greater than one is prime if and only if the factorial of one less than it, the product of all positive integers below it, is congruent to minus one modulo that number; equivalently, that factorial plus one is divisible by the number. The condition is both necessary and sufficient, so it perfectly separates primes from composites, unlike weaker tests that admit exceptions. For example, four factorial is twenty-four, and twenty-four plus one is twenty-five, a multiple of five, confirming five is prime. Elegant and exact, the theorem ties together factorials, divisibility, and primality in a single congruence.",
@@ -33,24 +36,47 @@
   ],
   "whyItMatters": "Wilson's theorem is prized as a rare exact characterisation of primality, a single congruence that is true for every prime and false for every composite, with no exceptions of the kind that plague probabilistic tests like the Fermat test and its Carmichael numbers. It is a jewel of elementary number theory, linking factorials to primes and illustrating the group structure of arithmetic modulo a prime. Though beautiful, it is impractical as an actual primality test, because computing the factorial of one less than a large number is far more work than modern tests require, so its value is theoretical and pedagogical rather than computational.",
   "working": [
-    {"lead": "Test primality exactly", "text": "check whether the factorial of one less than a number is congruent to minus one modulo that number; if so the number is prime, if not it is composite."},
-    {"lead": "See the pairing", "text": "understand the prime case through multiplicative inverses pairing off, leaving only the two self-paired terms whose product is minus one."},
-    {"lead": "Do not use it in practice", "text": "treat it as an elegant characterisation, not a working test, since the factorial is far too costly to compute for large numbers."}
+    {
+      "lead": "Test primality exactly",
+      "text": "check whether the factorial of one less than a number is congruent to minus one modulo that number; if so the number is prime, if not it is composite."
+    },
+    {
+      "lead": "See the pairing",
+      "text": "understand the prime case through multiplicative inverses pairing off, leaving only the two self-paired terms whose product is minus one."
+    },
+    {
+      "lead": "Do not use it in practice",
+      "text": "treat it as an elegant characterisation, not a working test, since the factorial is far too costly to compute for large numbers."
+    }
   ],
   "limits": "As a primality test the theorem is impractical, because evaluating the factorial of one less than a number requires more computation than the number of steps efficient modern tests need, so it is prized for elegance rather than use. It applies to whole numbers greater than one, and the small composite four is a special case giving remainder two rather than the zero that all larger composites give. The theorem characterises primality perfectly but offers no shortcut to factoring a composite it flags, so its exactness buys certainty about whether a number is prime without any help in decomposing it.",
   "misreadings": "The theorem is an exact if-and-only-if characterisation, not a one-directional or probabilistic test, so unlike the Fermat test it has no false positives or Carmichael-number exceptions. Its perfection does not make it practical: the factorial involved is astronomically expensive, so it is not used to test large numbers despite being always correct. And the composite case gives remainder zero only for composites greater than four; the number four itself is the lone small exception, giving remainder two, which is a quirk to remember rather than a flaw.",
   "origin": "Known to Ibn al-Haytham around the year one thousand, stated by John Wilson and reported by Edward Waring in his Meditationes Algebraicae of 1770, and first proved by Joseph-Louis Lagrange in 1771.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "namedAfter": "John Wilson",
   "sources": [
-    {"text": "Wilson's theorem, Wikipedia. — the if-and-only-if factorial congruence, the n equals five example, the Ibn al-Haytham, Wilson-Waring, and Lagrange history, and the impracticality as a test.", "url": "https://en.wikipedia.org/wiki/Wilson%27s_theorem", "type": "secondary"},
-    {"text": "Wilson's Theorem, Wolfram MathWorld. — the prime characterisation and its contrast with Fermat's little theorem.", "url": "https://mathworld.wolfram.com/WilsonsTheorem.html", "type": "secondary"}
+    {
+      "text": "Wilson's theorem, Wikipedia. — the if-and-only-if factorial congruence, the n equals five example, the Ibn al-Haytham, Wilson-Waring, and Lagrange history, and the impracticality as a test.",
+      "url": "https://en.wikipedia.org/wiki/Wilson%27s_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Wilson's Theorem, Wolfram MathWorld. — the prime characterisation and its contrast with Fermat's little theorem.",
+      "url": "https://mathworld.wolfram.com/WilsonsTheorem.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Wilson%27s_theorem",
   "related": [
-    {"slug": "fermats-little-theorem", "kind": "kindred"},
-    {"slug": "the-chinese-remainder-theorem", "kind": "kindred"}
+    {
+      "slug": "fermats-little-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-chinese-remainder-theorem",
+      "kind": "kindred"
+    }
   ]
 }

@@ -32,25 +32,48 @@
   ],
   "whyItMatters": "It is the principle behind electric generators, transformers, and much of modern technology — the discovery that magnetism and motion can be turned into electricity. Its subtle circuit exceptions, and the field equation that resolves them, also helped motivate special relativity.",
   "working": [
-    {"lead": "Change the flux to get a voltage", "text": "induce an electromotive force by varying the field, moving the circuit, or changing the loop's area or orientation — anything that changes the flux."},
-    {"lead": "Use Lenz's law for direction", "text": "the induced current always opposes the change that made it, so read off its direction from what it resists."},
-    {"lead": "Fall back to the field equation for edge cases", "text": "for tricky moving-circuit problems, combine the Lorentz force with the exact Maxwell–Faraday equation rather than the naive flux rule."}
+    {
+      "lead": "Change the flux to get a voltage",
+      "text": "induce an electromotive force by varying the field, moving the circuit, or changing the loop's area or orientation — anything that changes the flux."
+    },
+    {
+      "lead": "Use Lenz's law for direction",
+      "text": "the induced current always opposes the change that made it, so read off its direction from what it resists."
+    },
+    {
+      "lead": "Fall back to the field equation for edge cases",
+      "text": "for tricky moving-circuit problems, combine the Lorentz force with the exact Maxwell–Faraday equation rather than the naive flux rule."
+    }
   ],
   "limits": "The naive 'flux rule' has genuine exceptions when the circuit's boundary is chosen carelessly or moves oddly — the homopolar generator produces an electromotive force even though the computed flux does not change with time. The always-correct procedure combines the Lorentz force law with the Maxwell–Faraday equation, which is itself exact within classical electromagnetism. So the law is an extremely well-verified engineering rule with known edge cases, underpinned by an exact field equation.",
   "misreadings": "It is a changing field, not a steady one, that induces a voltage — a strong but constant magnetic field through a loop induces nothing. And the simple flux rule is not exception-free; certain moving-circuit cases need the underlying field equation and the Lorentz force to get right.",
   "origin": "Discovered by Michael Faraday in 1831, whose iron-ring experiment showed a changing current in one coil inducing a current in another. Joseph Henry made the discovery independently around the same time but published later; strict priority is contested, though Faraday published first and holds the primary credit.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1831,
   "namedAfter": "Michael Faraday",
   "sources": [
-    {"text": "Faraday's law of induction, Wikipedia. — the statement, the Maxwell–Faraday form, and the flux-rule exceptions.", "url": "https://en.wikipedia.org/wiki/Faraday%27s_law_of_induction", "type": "secondary"},
-    {"text": "\"Faraday's law of induction,\" Encyclopædia Britannica. — the canonical statement and 1831 discovery.", "url": "https://www.britannica.com/science/Faradays-law-of-induction", "type": "secondary"}
+    {
+      "text": "Faraday's law of induction, Wikipedia. — the statement, the Maxwell–Faraday form, and the flux-rule exceptions.",
+      "url": "https://en.wikipedia.org/wiki/Faraday%27s_law_of_induction",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Faraday's law of induction,\" Encyclopædia Britannica. — the canonical statement and 1831 discovery.",
+      "url": "https://www.britannica.com/science/Faradays-law-of-induction",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Faraday%27s_law_of_induction",
   "related": [
-    {"slug": "lenzs-law", "kind": "kindred"},
-    {"slug": "amperes-law", "kind": "kindred"}
+    {
+      "slug": "lenzs-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "amperes-law",
+      "kind": "kindred"
+    }
   ]
 }

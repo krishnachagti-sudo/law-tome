@@ -2,7 +2,10 @@
   "no": "467",
   "slug": "the-el-nino-southern-oscillation",
   "name": "The El Nino-Southern Oscillation",
-  "aliases": ["ENSO", "El Nino and La Nina"],
+  "aliases": [
+    "ENSO",
+    "El Nino and La Nina"
+  ],
   "statement": "The tropical Pacific swings every few years between a warm El Nino and a cool La Nina, reshaping weather worldwide.",
   "statementAccent": "between a warm El Nino and a cool La Nina",
   "meaning": "The El Nino-Southern Oscillation is an irregular, quasi-periodic climate pattern of coupled ocean and atmosphere variability centred on the tropical Pacific, recurring roughly every two to seven years. Its oceanic signature is above- or below-average sea-surface temperature in the central and eastern equatorial Pacific, warm in El Nino and cool in La Nina, with a neutral phase between. Its atmospheric signature is the Southern Oscillation, a seesaw in surface pressure between the eastern and western Pacific. Ocean and atmosphere are two faces of one coupled phenomenon, and together they are the dominant driver of year-to-year climate variability.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "ENSO is the leading source of predictable interannual climate variability. Because ocean heat content in the tropical Pacific evolves slowly and precedes the atmospheric response, it gives forecasters months of lead time, making it the backbone of seasonal climate prediction worldwide. That underpins agricultural planning, water and reservoir management, fisheries, public-health preparedness, and disaster risk reduction, which is why operational centres issue routine ENSO outlooks. It is often called the most predictable mode of year-to-year climate variability.",
   "working": [
-    {"lead": "Read both faces", "text": "treat the ocean warming or cooling and the pressure seesaw as one coupled phenomenon, not two separate things."},
-    {"lead": "Use the lead time", "text": "exploit the slow evolution of tropical Pacific heat content to forecast seasonal climate months ahead."},
-    {"lead": "Think probabilities", "text": "expect ENSO to shift the odds of droughts, floods, and storms through teleconnections, not to guarantee any single local outcome."}
+    {
+      "lead": "Read both faces",
+      "text": "treat the ocean warming or cooling and the pressure seesaw as one coupled phenomenon, not two separate things."
+    },
+    {
+      "lead": "Use the lead time",
+      "text": "exploit the slow evolution of tropical Pacific heat content to forecast seasonal climate months ahead."
+    },
+    {
+      "lead": "Think probabilities",
+      "text": "expect ENSO to shift the odds of droughts, floods, and storms through teleconnections, not to guarantee any single local outcome."
+    }
   ],
   "limits": "ENSO is irregular, not strictly periodic: events vary in timing, amplitude, pattern, and duration, so the two-to-seven-year cycle is a statistical tendency, not a clock. Forecast skill drops sharply through the northern spring, the spring predictability barrier, limiting lead time. Events come in flavours, eastern-Pacific and central-Pacific, with different teleconnections and predictability. And behaviour under climate change is uncertain: models disagree on how amplitude, frequency, and flavour will change, though recent variability may have been somewhat stronger than in the pre-industrial era.",
   "misreadings": "El Nino is not a single storm or specific event but a basin-scale, months-long climate state of the coupled ocean and atmosphere. El Nino, La Nina, and the Southern Oscillation are not separate things but the oceanic and atmospheric faces of one phenomenon. ENSO does not run on a regular cycle; it is irregular and quasi-periodic. It does not directly cause any local weather but shifts probabilities through teleconnections, and other factors can override the expected signal. El Nino alone did not destroy the Peruvian anchovy fishery; overfishing shared the blame. And ENSO redistributes heat rather than driving long-term global warming.",
   "origin": "Named from the warm Christmas-time current Peruvian fishermen called El Nino; the Southern Oscillation was identified by Gilbert Walker in the early twentieth century, and Jacob Bjerknes recognised the two as one coupled ocean-atmosphere phenomenon in a landmark 1969 paper.",
-  "category": "science",
+  "category": "earth-science",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1969,
   "namedAfter": "Gilbert Walker and Jacob Bjerknes",
   "sources": [
-    {"text": "El Nino, Encyclopaedia Britannica. — the coupled ocean-atmosphere phenomenon, the phases, and the global impacts.", "url": "https://www.britannica.com/science/El-Nino", "type": "secondary"},
-    {"text": "What is the El Nino-Southern Oscillation (ENSO) in a nutshell?, NOAA Climate.gov. — the normal, El Nino, and La Nina states and the wind-and-temperature mechanism.", "url": "https://www.climate.gov/news-features/blogs/enso/what-el-nino-southern-oscillation-enso-nutshell", "type": "secondary"}
+    {
+      "text": "El Nino, Encyclopaedia Britannica. — the coupled ocean-atmosphere phenomenon, the phases, and the global impacts.",
+      "url": "https://www.britannica.com/science/El-Nino",
+      "type": "secondary"
+    },
+    {
+      "text": "What is the El Nino-Southern Oscillation (ENSO) in a nutshell?, NOAA Climate.gov. — the normal, El Nino, and La Nina states and the wind-and-temperature mechanism.",
+      "url": "https://www.climate.gov/news-features/blogs/enso/what-el-nino-southern-oscillation-enso-nutshell",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/El_Ni%C3%B1o%E2%80%93Southern_Oscillation",
   "related": [
-    {"slug": "the-hadley-cell", "kind": "kindred"}
+    {
+      "slug": "the-hadley-cell",
+      "kind": "kindred"
+    }
   ]
 }

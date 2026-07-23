@@ -32,26 +32,53 @@
   ],
   "whyItMatters": "It was the empirical key to atomic spectra, capturing the precise pattern of hydrogen's lines decades before anyone could explain it. That Bohr could then derive its constant from first principles was a landmark validation of the quantum theory of the atom, and the formula remains the starting point for understanding spectral lines, from the laboratory discharge tube to the light of distant galaxies.",
   "working": [
-    {"lead": "Plug in the two levels", "text": "compute a line's wavelength from the difference of the inverse squares of the two principal quantum numbers times the Rydberg constant."},
-    {"lead": "Identify the series", "text": "read the lower level to place a line in its series — Lyman, Balmer, Paschen, and so on — and its region of the spectrum."},
-    {"lead": "Correct for many electrons", "text": "for atoms beyond hydrogen, use the quantum-defect form rather than the bare formula, which is exact only for one electron."}
+    {
+      "lead": "Plug in the two levels",
+      "text": "compute a line's wavelength from the difference of the inverse squares of the two principal quantum numbers times the Rydberg constant."
+    },
+    {
+      "lead": "Identify the series",
+      "text": "read the lower level to place a line in its series — Lyman, Balmer, Paschen, and so on — and its region of the spectrum."
+    },
+    {
+      "lead": "Correct for many electrons",
+      "text": "for atoms beyond hydrogen, use the quantum-defect form rather than the bare formula, which is exact only for one electron."
+    }
   ],
   "limits": "The formula is exact, in the non-relativistic point-nucleus approximation, only for hydrogen and other single-electron ions; it fails for multi-electron atoms, where electron-electron interactions and screening require the quantum-defect correction. The constant for real hydrogen is slightly smaller than the infinite-mass value because the nucleus is not infinitely heavy, so different isotopes give slightly shifted lines. And the formula treats each level as a single energy, ignoring the fine structure, hyperfine structure, and Lamb shift that high-resolution spectra reveal.",
   "misreadings": "The two numbers are the principal quantum numbers of the levels involved, not indices counting the lines. The formula does not work for all atoms — it is quantitatively exact only for one-electron systems, and multi-electron atoms need quantum-defect corrections. And Balmer and Rydberg did not derive it from theory: their formulas were empirical fits, and the physical explanation came only with Bohr and quantum mechanics.",
   "origin": "Grew from Johann Balmer's 1885 empirical fit to the visible hydrogen lines, generalised by Johannes Rydberg in 1888 into a formula in wavenumbers with the constant that bears his name; Niels Bohr explained it and derived the constant from fundamental constants in 1913.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1888,
   "namedAfter": "Johannes Rydberg",
   "sources": [
-    {"text": "Rydberg formula, Wikipedia. — the difference-of-inverse-squares statement, the spectral series, the Balmer and Rydberg history, and the single-electron limit.", "url": "https://en.wikipedia.org/wiki/Rydberg_formula", "type": "secondary"},
-    {"text": "Rydberg constant, NIST CODATA. — the precisely measured value of the Rydberg constant.", "url": "https://physics.nist.gov/cgi-bin/cuu/Value?ryd", "type": "primary"},
-    {"text": "Hydrogen spectral series, Wikipedia. — the Lyman, Balmer, Paschen, Brackett, and Pfund series and their wavelengths.", "url": "https://en.wikipedia.org/wiki/Hydrogen_spectral_series", "type": "secondary"}
+    {
+      "text": "Rydberg formula, Wikipedia. — the difference-of-inverse-squares statement, the spectral series, the Balmer and Rydberg history, and the single-electron limit.",
+      "url": "https://en.wikipedia.org/wiki/Rydberg_formula",
+      "type": "secondary"
+    },
+    {
+      "text": "Rydberg constant, NIST CODATA. — the precisely measured value of the Rydberg constant.",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?ryd",
+      "type": "primary"
+    },
+    {
+      "text": "Hydrogen spectral series, Wikipedia. — the Lyman, Balmer, Paschen, Brackett, and Pfund series and their wavelengths.",
+      "url": "https://en.wikipedia.org/wiki/Hydrogen_spectral_series",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Rydberg_formula",
   "related": [
-    {"slug": "the-pauli-exclusion-principle", "kind": "kindred"},
-    {"slug": "heisenbergs-uncertainty-principle", "kind": "kindred"}
+    {
+      "slug": "the-pauli-exclusion-principle",
+      "kind": "kindred"
+    },
+    {
+      "slug": "heisenbergs-uncertainty-principle",
+      "kind": "kindred"
+    }
   ]
 }

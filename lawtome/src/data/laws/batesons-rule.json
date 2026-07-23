@@ -2,7 +2,10 @@
   "no": "546",
   "slug": "batesons-rule",
   "name": "Bateson's Rule",
-  "aliases": ["The mirror-symmetry rule", "Bateson's law of duplication"],
+  "aliases": [
+    "The mirror-symmetry rule",
+    "Bateson's law of duplication"
+  ],
   "statement": "When an extra limb sprouts beside a normal one, the pair come out as mirror images of each other.",
   "statementAccent": "as mirror images of each other",
   "meaning": "Bateson's rule is the morphological generalisation that when a supernumerary, or extra, appendage arises as a duplication next to an existing one, the extra structures form mirror-image pairs. The new limb and its neighbour are reflections of one another across the plane of duplication, showing bilateral symmetry rather than being additional normal copies. William Bateson drew the rule from a vast catalogue of teratological specimens, deformities with extra legs, antennae, or digits, and it became a touchstone for the study of how organisms lay out their body pattern. Its explanation lies at the heart of modern developmental biology's account of positional information.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "Bateson's rule became important in developmental biology and the study of pattern formation and limb regeneration, because the mirror symmetry of duplicated limbs is a clean clue to how organisms encode and restore their body plan. It helped motivate the positional-information and intercalation models that now underpin our understanding of how limbs are patterned, from the signalling centres that set the axes to the way tissues heal a mismatch. Its author, William Bateson, is doubly notable, since he also championed Mendelism in Britain and coined the very word genetics.",
   "working": [
-    {"lead": "Expect mirror pairs", "text": "read a supernumerary limb beside a normal one as a mirror image of it, not as an extra normal copy."},
-    {"lead": "Think positionally", "text": "explain the symmetry through cells' positional values and the intercalation that fills mismatches, as in the polar coordinate model."},
-    {"lead": "Treat it as a consequence", "text": "regard the rule not as a fundamental law but as an outcome of how developing tissues restore continuity in their map of positions."}
+    {
+      "lead": "Expect mirror pairs",
+      "text": "read a supernumerary limb beside a normal one as a mirror image of it, not as an extra normal copy."
+    },
+    {
+      "lead": "Think positionally",
+      "text": "explain the symmetry through cells' positional values and the intercalation that fills mismatches, as in the polar coordinate model."
+    },
+    {
+      "lead": "Treat it as a consequence",
+      "text": "regard the rule not as a fundamental law but as an outcome of how developing tissues restore continuity in their map of positions."
+    }
   ],
   "limits": "Bateson's rule is an empirical morphological generalisation, not an exceptionless law, and departures from it exist. Modern developmental biology does not treat it as fundamental but as a consequence of positional-information and intercalation dynamics in limb fields, so its explanatory weight now rests on those models rather than on the rule itself. It describes the symmetry of duplicated appendages, a matter of morphology and development, and should not be read as a law of inheritance despite Bateson's later fame in genetics.",
   "misreadings": "The extra limb is typically a mirror-image reflection, often an abnormal one lacking a proper axis, not an independent, correctly handed normal copy. The rule is about the morphology and development of duplications, not a Mendelian law of inheritance, despite Bateson's central role in founding genetics. And it should not be confused with the Bateson-Dobzhansky-Muller incompatibilities, a separate concept in the genetics of speciation that merely shares his name.",
   "origin": "Formulated by the English biologist William Bateson, who coined the word genetics, in his 1894 'Materials for the Study of Variation', and later explained through the positional-information models of limb development.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": 1894,
   "namedAfter": "William Bateson",
   "sources": [
-    {"text": "William Bateson, Wikipedia. — the 1894 'Materials for the Study of Variation', the coining of genetics, and his morphological work.", "url": "https://en.wikipedia.org/wiki/William_Bateson", "type": "secondary"},
-    {"text": "French, Bryant & Bryant, 'Pattern regulation in epimorphic fields,' Science 193:969-981 (1976). — the polar coordinate model explaining mirror-symmetric supernumerary limbs.", "url": "https://pubmed.ncbi.nlm.nih.gov/948762/", "type": "primary"}
+    {
+      "text": "William Bateson, Wikipedia. — the 1894 'Materials for the Study of Variation', the coining of genetics, and his morphological work.",
+      "url": "https://en.wikipedia.org/wiki/William_Bateson",
+      "type": "secondary"
+    },
+    {
+      "text": "French, Bryant & Bryant, 'Pattern regulation in epimorphic fields,' Science 193:969-981 (1976). — the polar coordinate model explaining mirror-symmetric supernumerary limbs.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/948762/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/William_Bateson",
   "related": [
-    {"slug": "the-baldwin-effect", "kind": "kindred"}
+    {
+      "slug": "the-baldwin-effect",
+      "kind": "kindred"
+    }
   ]
 }

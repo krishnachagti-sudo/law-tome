@@ -2,7 +2,10 @@
   "no": "506",
   "slug": "the-butterfly-effect",
   "name": "The Butterfly Effect",
-  "aliases": ["Sensitive dependence on initial conditions", "Deterministic chaos"],
+  "aliases": [
+    "Sensitive dependence on initial conditions",
+    "Deterministic chaos"
+  ],
   "statement": "In a chaotic system, a difference too small to measure grows until it swamps any long-range prediction.",
   "statementAccent": "a difference too small to measure grows",
   "meaning": "The butterfly effect is the property of certain deterministic nonlinear systems that arbitrarily small differences in their initial conditions grow exponentially over time, so two states differing by an imperceptible amount eventually evolve into wholly different ones. This makes accurate long-term prediction impossible even though the system's evolution is fully determined by its equations, with no randomness involved. The name comes from the image of a butterfly's wingbeat, in principle, altering the course of a distant storm, and it captures the strange coexistence of strict determinism with practical unpredictability: the rules are exact, yet the outcomes cannot be foreseen far ahead because the tiniest uncertainty is relentlessly amplified.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "The butterfly effect is the popular face of chaos theory, one of the great conceptual shifts of twentieth-century science, showing that determinism does not guarantee predictability and setting hard limits on forecasting in weather, climate, ecology, economics, and beyond. It taught scientists to distinguish deterministic chaos from genuine randomness, to expect complex, aperiodic behaviour from simple nonlinear rules, and to treat long-range prediction of such systems as impossible in principle, not merely in practice. Its image of tiny causes with vast consequences has become one of the most widely known ideas in all of science.",
   "working": [
-    {"lead": "Separate determined from predictable", "text": "remember that a fully deterministic system can still be unpredictable, because prediction requires an unattainable precision in the starting state."},
-    {"lead": "Respect the horizon", "text": "accept that in a chaotic system forecasts decay past a finite horizon no matter how good the model, since error grows exponentially."},
-    {"lead": "Do not confuse chaos with noise", "text": "read apparent randomness in such systems as amplified uncertainty in a rule-bound process, not as true randomness."}
+    {
+      "lead": "Separate determined from predictable",
+      "text": "remember that a fully deterministic system can still be unpredictable, because prediction requires an unattainable precision in the starting state."
+    },
+    {
+      "lead": "Respect the horizon",
+      "text": "accept that in a chaotic system forecasts decay past a finite horizon no matter how good the model, since error grows exponentially."
+    },
+    {
+      "lead": "Do not confuse chaos with noise",
+      "text": "read apparent randomness in such systems as amplified uncertainty in a rule-bound process, not as true randomness."
+    }
   ],
   "limits": "Chaos is not randomness: chaotic systems follow fixed deterministic rules and only appear random because uncertainty is amplified. The divergence is local and exponential but bounded, since trajectories stay on a strange attractor rather than blowing up without limit, and not all systems are chaotic, which requires nonlinearity and the right parameters, so many deterministic systems remain stable and predictable. The literal strong reading, that a single butterfly's flap actually causes a particular distant tornado, has never been rigorously verified in a realistic weather model and is considered unlikely, even though the underlying sensitivity is real. The precise origin of the butterfly phrasing is also genuinely muddled.",
   "misreadings": "It does not mean a butterfly simply and directly causes a hurricane; the metaphor illustrates sensitivity, not a chain of ordinary billiard-ball causation, and the butterfly does not power the storm. It does not mean every small change has huge consequences, since sensitivity applies within chaotic regimes and many perturbations are damped, not amplified. Chaos is not the same as randomness. And the clean story of who coined butterfly effect is not firmly established: Lorenz did not supply the famous 1972 title, an earlier version used a seagull, and whether the name traces to the metaphor or to the attractor's shape is debated.",
   "origin": "Discovered by the meteorologist Edward Lorenz, whose 1963 paper 'Deterministic Nonperiodic Flow' introduced the Lorenz system, and whose 1972 talk asked whether the flap of a butterfly's wings in Brazil could set off a tornado in Texas, giving the effect its name.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1963,
   "namedAfter": "Edward Lorenz",
   "sources": [
-    {"text": "Lorenz, 'Deterministic Nonperiodic Flow,' Journal of the Atmospheric Sciences 20(2):130-141 (1963). — the founding paper of chaos theory and sensitive dependence.", "url": "https://journals.ametsoc.org/view/journals/atsc/20/2/1520-0469_1963_020_0130_dnf_2_0_co_2.xml", "type": "primary"},
-    {"text": "Butterfly effect, Wikipedia. — sensitive dependence, the Lorenz system, and the murky provenance of the phrase.", "url": "https://en.wikipedia.org/wiki/Butterfly_effect", "type": "secondary"}
+    {
+      "text": "Lorenz, 'Deterministic Nonperiodic Flow,' Journal of the Atmospheric Sciences 20(2):130-141 (1963). — the founding paper of chaos theory and sensitive dependence.",
+      "url": "https://journals.ametsoc.org/view/journals/atsc/20/2/1520-0469_1963_020_0130_dnf_2_0_co_2.xml",
+      "type": "primary"
+    },
+    {
+      "text": "Butterfly effect, Wikipedia. — sensitive dependence, the Lorenz system, and the murky provenance of the phrase.",
+      "url": "https://en.wikipedia.org/wiki/Butterfly_effect",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Butterfly_effect",
   "related": [
-    {"slug": "the-edge-of-chaos", "kind": "kindred"}
+    {
+      "slug": "the-edge-of-chaos",
+      "kind": "kindred"
+    }
   ]
 }

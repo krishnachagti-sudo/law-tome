@@ -2,7 +2,10 @@
   "no": "622",
   "slug": "farrs-law",
   "name": "Farr's Law",
-  "aliases": ["Farr's law of epidemics", "The law of epidemic rise and fall"],
+  "aliases": [
+    "Farr's law of epidemics",
+    "The law of epidemic rise and fall"
+  ],
   "statement": "Epidemics tend to rise and fall in a roughly symmetric bell-shaped curve over time.",
   "statementAccent": "a roughly symmetric bell-shaped curve",
   "meaning": "Farr's law is the empirical observation that epidemics tend to rise and fall over time in a roughly symmetric, bell-shaped pattern that can be approximated by a normal curve: the number of cases or deaths climbs to a peak and then declines in a broadly mirror-image fashion. William Farr, a pioneering British medical statistician, noted this regularity in 1840 while analysing deaths in a smallpox epidemic, showing that the rate of rise and decline followed a predictable mathematical pattern. It is a descriptive regularity rather than a mechanistic model, fitting a curve to observed data without explaining the underlying biology of transmission. As one of the earliest applications of mathematics to epidemics, it helped found the quantitative study of disease and has been revived to forecast the trajectory and peak of later epidemics.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "Farr's law is an early landmark in applying mathematics and statistics to epidemics, part of the nineteenth-century birth of epidemiology and vital statistics in which Farr, working alongside John Snow, was a central figure. Its bell-shaped description of how epidemics rise and fall offers an intuitive picture of an outbreak's course and has been revived repeatedly to attempt forecasts of where an epidemic will peak. Yet its mixed record as a predictor also makes it a cautionary example, showing the difference between describing a pattern and understanding the mechanism that generates it, a distinction central to modern epidemic modelling.",
   "working": [
-    {"lead": "Picture the bell curve", "text": "expect an epidemic's cases to rise to a peak and fall away in a roughly symmetric, bell-shaped pattern over time."},
-    {"lead": "Fit to observed data", "text": "use the regularity descriptively, fitting a curve to counts of cases or deaths rather than modelling transmission mechanics."},
-    {"lead": "Distrust it as a forecaster", "text": "treat projections from the law cautiously, since real epidemics can break the symmetry through waves, interventions, and new variants."}
+    {
+      "lead": "Picture the bell curve",
+      "text": "expect an epidemic's cases to rise to a peak and fall away in a roughly symmetric, bell-shaped pattern over time."
+    },
+    {
+      "lead": "Fit to observed data",
+      "text": "use the regularity descriptively, fitting a curve to counts of cases or deaths rather than modelling transmission mechanics."
+    },
+    {
+      "lead": "Distrust it as a forecaster",
+      "text": "treat projections from the law cautiously, since real epidemics can break the symmetry through waves, interventions, and new variants."
+    }
   ],
   "limits": "Farr's law is an empirical regularity, not a guaranteed law or a mechanistic model, so real epidemics can deviate sharply from the symmetric bell shape. Multiple waves, public-health interventions, behavioural change, and new variants can all break the symmetry, as the failed 1990 projection of the AIDS epidemic showed when the outbreak kept growing instead of cresting. It describes a tendency in the data without explaining the biology of transmission, so it offers no causal understanding and its forecasts are only as good as the assumption that the curve will stay symmetric, which often fails. It is best seen as a descriptive pattern, not a predictive rule.",
   "misreadings": "Farr's law is descriptive, not mechanistic; it fits a curve to epidemic data without explaining why the pattern arises, so it is not a model of transmission. It is a tendency, not a certainty: real epidemics can and do depart from the symmetric bell shape, producing multiple waves or sustained growth, so using it to guarantee a peak has repeatedly failed. And the name credits Farr's 1840 observation, but the law was elaborated and solidified later, notably by Brownlee, so it reflects a lineage of work rather than a single fixed derivation.",
   "origin": "Formulated by the British medical statistician William Farr in 1840 from his analysis of a smallpox epidemic while at the General Register Office, and later revived by John Brownlee and applied to modern epidemic forecasting.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1840,
   "namedAfter": "William Farr",
   "sources": [
-    {"text": "Farr's laws, Wikipedia. — the bell-shaped symmetric epidemic curve, Farr's 1840 smallpox analysis, the use in forecasting, and its descriptive rather than mechanistic nature.", "url": "https://en.wikipedia.org/wiki/Farr%27s_laws", "type": "secondary"},
-    {"text": "William Farr, Wikipedia. — Farr as a founder of medical statistics at the General Register Office and his epidemic analyses.", "url": "https://en.wikipedia.org/wiki/William_Farr", "type": "secondary"}
+    {
+      "text": "Farr's laws, Wikipedia. — the bell-shaped symmetric epidemic curve, Farr's 1840 smallpox analysis, the use in forecasting, and its descriptive rather than mechanistic nature.",
+      "url": "https://en.wikipedia.org/wiki/Farr%27s_laws",
+      "type": "secondary"
+    },
+    {
+      "text": "William Farr, Wikipedia. — Farr as a founder of medical statistics at the General Register Office and his epidemic analyses.",
+      "url": "https://en.wikipedia.org/wiki/William_Farr",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Farr%27s_laws",
   "related": [
-    {"slug": "the-basic-reproduction-number", "kind": "kindred"}
+    {
+      "slug": "the-basic-reproduction-number",
+      "kind": "kindred"
+    }
   ]
 }

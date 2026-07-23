@@ -2,7 +2,11 @@
   "no": "794",
   "slug": "lagrange-points",
   "name": "Lagrange Points",
-  "aliases": ["Lagrangian points", "Libration points", "L-points"],
+  "aliases": [
+    "Lagrangian points",
+    "Libration points",
+    "L-points"
+  ],
   "statement": "Five points hang in a two-body system where a small craft can ride along, holding its place.",
   "statementAccent": "a small craft can ride along, holding its place",
   "meaning": "Lagrange points are five special positions in the orbital plane of a two-body system, such as the Sun and Earth or the Earth and Moon, where a small object can maintain a fixed position relative to the two large bodies. At each of these points, labeled L1 through L5, the combined gravitational pull of the two large masses provides exactly the centripetal force needed for a small object to orbit in step with them, so it appears to hover in a fixed configuration as the whole system revolves. Three of the points, L1, L2, and L3, lie along the line joining the two large bodies, while L4 and L5 sit sixty degrees ahead of and behind the smaller body in its orbit, each forming an equilateral triangle with the two masses. The points are named after the mathematician Joseph-Louis Lagrange, who found L4 and L5, with Leonhard Euler credited for the collinear points. They are invaluable parking spots for spacecraft, occupied by observatories and telescopes, and natural gathering places for asteroids.",
@@ -33,25 +37,48 @@
   ],
   "whyItMatters": "Lagrange points are of great practical and scientific value, providing stable or predictable locations in space that are exploited for missions and that shape the natural distribution of small bodies. The Sun-Earth L1 point offers a continuous, unobstructed view of the Sun and is home to solar and space-weather observatories, while the Sun-Earth L2 point, cold and shielded, is the premier location for space telescopes like James Webb, Gaia, and Planck, which need a stable thermal environment away from Earth's glare. The points also matter for understanding the solar system: the stable triangular points collect populations of Trojan asteroids, most famously at Jupiter, revealing how gravity organizes small bodies. Because the collinear points are unstable, missions there must actively hold station, an engineering consideration in mission design. As positions where the gravitational and orbital forces of a two-body system conspire to hold an object in place, Lagrange points connect elegant celestial mechanics to real spaceflight and to the architecture of planetary systems.",
   "working": [
-    {"lead": "Balance the forces", "text": "find where the gravity of both large bodies and the rotating frame's centrifugal effect combine to hold a small body fixed relative to them."},
-    {"lead": "Locate the five points", "text": "place L1, L2, L3 along the line of the two bodies and L4, L5 sixty degrees ahead and behind the smaller one."},
-    {"lead": "Use stability", "text": "park telescopes at the unstable collinear points with station-keeping, and expect asteroids to gather at the stable triangular points."}
+    {
+      "lead": "Balance the forces",
+      "text": "find where the gravity of both large bodies and the rotating frame's centrifugal effect combine to hold a small body fixed relative to them."
+    },
+    {
+      "lead": "Locate the five points",
+      "text": "place L1, L2, L3 along the line of the two bodies and L4, L5 sixty degrees ahead and behind the smaller one."
+    },
+    {
+      "lead": "Use stability",
+      "text": "park telescopes at the unstable collinear points with station-keeping, and expect asteroids to gather at the stable triangular points."
+    }
   ],
   "limits": "The clean five-point picture comes from the idealized restricted three-body problem, with two large bodies on circular orbits and a negligibly small third body; real systems have additional bodies, eccentric orbits, and radiation pressure that perturb the points. The collinear points L1, L2, and L3 are unstable, so a spacecraft there does not simply sit but must perform station-keeping to avoid drifting away, and objects actually orbit around the points in halo or Lissajous orbits rather than resting exactly at them. The triangular points L4 and L5 are stable only when the mass ratio of the two large bodies exceeds about twenty-five, a condition met by the Sun and planets but not by all pairs. So Lagrange points are precise and useful features of two-body gravity, understood within the idealization and with attention to the instability of the collinear points.",
   "misreadings": "A spacecraft at a collinear Lagrange point is not truly parked and motionless; L1, L2, and L3 are unstable, so it must continually station-keep and actually orbits around the point. The points are not places of zero gravity but places where the gravitational and orbital forces balance for co-rotation. And only L4 and L5 are naturally stable, and only when the primary is far more massive, so treating any Lagrange point as a fixed, effortless parking spot, or all five as stable, misreads a set of balance points three of which require active effort to hold.",
   "origin": "Named after the mathematician Joseph-Louis Lagrange, who found the triangular points L4 and L5 in 1772, with Leonhard Euler credited for the collinear points L1 to L3; solutions of the restricted three-body problem.",
-  "category": "science",
+  "category": "astronomy",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": null,
   "namedAfter": "Joseph-Louis Lagrange",
   "sources": [
-    {"text": "Lagrange point, Wikipedia. — the five points L1 to L5 in a two-body system, their geometry with collinear L1-L3 and triangular L4-L5, the unstable-versus-stable distinction and the ~24.96 mass-ratio condition, the Lagrange and Euler attributions, and uses including JWST at L2 and Jupiter Trojans at L4/L5.", "url": "https://en.wikipedia.org/wiki/Lagrange_point", "type": "secondary"},
-    {"text": "What is a Lagrange Point?, NASA. — the collinear and triangular Lagrange points, the balance of gravitational and centripetal forces, and their use for spacecraft and observatories.", "url": "https://science.nasa.gov/resource/what-is-a-lagrange-point/", "type": "secondary"}
+    {
+      "text": "Lagrange point, Wikipedia. — the five points L1 to L5 in a two-body system, their geometry with collinear L1-L3 and triangular L4-L5, the unstable-versus-stable distinction and the ~24.96 mass-ratio condition, the Lagrange and Euler attributions, and uses including JWST at L2 and Jupiter Trojans at L4/L5.",
+      "url": "https://en.wikipedia.org/wiki/Lagrange_point",
+      "type": "secondary"
+    },
+    {
+      "text": "What is a Lagrange Point?, NASA. — the collinear and triangular Lagrange points, the balance of gravitational and centripetal forces, and their use for spacecraft and observatories.",
+      "url": "https://science.nasa.gov/resource/what-is-a-lagrange-point/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Lagrange_point",
   "related": [
-    {"slug": "the-hill-sphere", "kind": "kindred"},
-    {"slug": "the-roche-lobe", "kind": "kindred"}
+    {
+      "slug": "the-hill-sphere",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-roche-lobe",
+      "kind": "kindred"
+    }
   ]
 }

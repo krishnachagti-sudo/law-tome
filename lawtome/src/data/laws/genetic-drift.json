@@ -2,7 +2,9 @@
   "no": "333",
   "slug": "genetic-drift",
   "name": "Genetic Drift",
-  "aliases": ["The Sewall Wright effect"],
+  "aliases": [
+    "The Sewall Wright effect"
+  ],
   "statement": "Allele frequencies wander by pure chance, and in small populations they wander far.",
   "statementAccent": "by pure chance",
   "meaning": "Genetic drift is the change in the frequency of an allele in a population due to chance — the random sampling of which individuals happen to reproduce — rather than to natural selection. It is directionless, guided only by the mathematics of chance, and its per-generation effect is larger in small populations. Over time it can drive an allele all the way to fixation or to loss, and so it steadily erodes genetic variation.",
@@ -33,26 +35,53 @@
   ],
   "whyItMatters": "It is one of the main mechanisms of evolution alongside natural selection, mutation, and gene flow, and the one that acts by chance rather than design. It is central to molecular evolution through the neutral theory, to conservation genetics through the loss of diversity in small populations, and to the whole understanding that evolution is not selection alone.",
   "working": [
-    {"lead": "Expect strong drift when small", "text": "anticipate large chance swings in allele frequency in small populations, where sampling error dominates."},
-    {"lead": "Use drift as the null", "text": "treat neutral drift as the baseline against which to test for selection, since chance alone reshapes frequencies."},
-    {"lead": "Protect diversity", "text": "in conservation, guard against the loss of variation that drift causes in small populations, which narrows the material selection can work on."}
+    {
+      "lead": "Expect strong drift when small",
+      "text": "anticipate large chance swings in allele frequency in small populations, where sampling error dominates."
+    },
+    {
+      "lead": "Use drift as the null",
+      "text": "treat neutral drift as the baseline against which to test for selection, since chance alone reshapes frequencies."
+    },
+    {
+      "lead": "Protect diversity",
+      "text": "in conservation, guard against the loss of variation that drift causes in small populations, which narrows the material selection can work on."
+    }
   ],
   "limits": "Drift dominates over selection only when a variant is effectively neutral — roughly when the selection coefficient is smaller than the reciprocal of the population size — so for strongly selected alleles selection prevails. Distinguishing drift from selection in real data is genuinely hard, which is why drift serves as the null model. Its relative importance was and remains debated: Fisher downplayed drift while Wright, through his shifting-balance theory, elevated it, and the neutralist-selectionist controversy turned on how much molecular variation is neutral. The nearly neutral theory further ties the balance to effective population size.",
   "misreadings": "Evolution is not natural selection alone; drift, mutation, and gene flow are also mechanisms of change. Drift does not occur only in small populations — it acts in populations of any size, and only the per-generation magnitude of change is larger when populations are small. And drift is not mere inconsequential noise: it can fix or eliminate alleles, reduces genetic variation, and, under the neutral theory, accounts for the bulk of molecular evolution.",
   "origin": "Given its mathematical theory chiefly by Sewall Wright in the late 1920s and early 1930s, who introduced the effective population size, with early treatments by Fisher and the Hagedoorns; a pillar of the modern synthesis and the foundation of Kimura's later neutral theory.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1931,
   "namedAfter": "Sewall Wright",
   "sources": [
-    {"text": "Genetic drift, Wikipedia. — the chance-change definition, the Wright-Fisher model, fixation probability and time, and the drift-versus-selection balance.", "url": "https://en.wikipedia.org/wiki/Genetic_drift", "type": "secondary"},
-    {"text": "Genetic drift, UC Berkeley Understanding Evolution. — drift as a directionless mechanism acting in all populations, and its consequences.", "url": "https://evolution.berkeley.edu/evolution-101/mechanisms-the-processes-of-evolution/genetic-drift/", "type": "secondary"},
-    {"text": "Population bottleneck, Wikipedia. — the northern elephant seal bottleneck and the loss of diversity through drift.", "url": "https://en.wikipedia.org/wiki/Population_bottleneck", "type": "secondary"}
+    {
+      "text": "Genetic drift, Wikipedia. — the chance-change definition, the Wright-Fisher model, fixation probability and time, and the drift-versus-selection balance.",
+      "url": "https://en.wikipedia.org/wiki/Genetic_drift",
+      "type": "secondary"
+    },
+    {
+      "text": "Genetic drift, UC Berkeley Understanding Evolution. — drift as a directionless mechanism acting in all populations, and its consequences.",
+      "url": "https://evolution.berkeley.edu/evolution-101/mechanisms-the-processes-of-evolution/genetic-drift/",
+      "type": "secondary"
+    },
+    {
+      "text": "Population bottleneck, Wikipedia. — the northern elephant seal bottleneck and the loss of diversity through drift.",
+      "url": "https://en.wikipedia.org/wiki/Population_bottleneck",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Genetic_drift",
   "related": [
-    {"slug": "the-founder-effect", "kind": "consequence"},
-    {"slug": "the-neutral-theory-of-molecular-evolution", "kind": "consequence"}
+    {
+      "slug": "the-founder-effect",
+      "kind": "consequence"
+    },
+    {
+      "slug": "the-neutral-theory-of-molecular-evolution",
+      "kind": "consequence"
+    }
   ]
 }

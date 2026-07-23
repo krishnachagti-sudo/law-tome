@@ -2,7 +2,10 @@
   "no": "591",
   "slug": "the-mean-value-theorem",
   "name": "The Mean Value Theorem",
-  "aliases": ["Lagrange's mean value theorem", "MVT"],
+  "aliases": [
+    "Lagrange's mean value theorem",
+    "MVT"
+  ],
   "statement": "Over any interval, a smooth curve has some point where its slope equals the average slope.",
   "statementAccent": "some point where its slope equals the average slope",
   "meaning": "The mean value theorem states that if a function is continuous on a closed interval and differentiable on its interior, then there is at least one point inside where the instantaneous rate of change equals the average rate of change across the whole interval. Geometrically, somewhere on the curve the tangent line is parallel to the straight line joining the endpoints. Concretely, if a car averages sixty miles per hour over a trip, then at some instant its speedometer read exactly sixty. It is a central theorem of differential calculus, the rigorous link between a function's overall change and its momentary behaviour, and the tool from which many other results, from tests for increase to error bounds, are derived.",
@@ -33,23 +36,46 @@
   ],
   "whyItMatters": "The mean value theorem is a linchpin of differential calculus, converting the intuitive link between average and instantaneous change into a precise, provable statement. From it flow the monotonicity tests that tell increasing from decreasing functions, the fact that a zero derivative means a constant function, the proof that two functions with equal derivatives differ by a constant, the justification of L'Hopital's rule through Cauchy's version, and the error bounds of Taylor's theorem and numerical analysis. It is a workhorse rather than a spectacle, quietly underpinning much of the reasoning that makes calculus a rigorous and reliable tool.",
   "working": [
-    {"lead": "Match instantaneous to average", "text": "on a smooth curve over an interval, expect some interior point where the tangent's slope equals the average slope between the endpoints."},
-    {"lead": "Prove via Rolle", "text": "subtract the secant line to make the endpoints level, then apply Rolle's theorem to find a horizontal tangent, recovering the general result."},
-    {"lead": "Deduce global facts", "text": "use it to show a zero derivative forces a constant function and to bound how fast a function can change, foundations of many calculus arguments."}
+    {
+      "lead": "Match instantaneous to average",
+      "text": "on a smooth curve over an interval, expect some interior point where the tangent's slope equals the average slope between the endpoints."
+    },
+    {
+      "lead": "Prove via Rolle",
+      "text": "subtract the secant line to make the endpoints level, then apply Rolle's theorem to find a horizontal tangent, recovering the general result."
+    },
+    {
+      "lead": "Deduce global facts",
+      "text": "use it to show a zero derivative forces a constant function and to bound how fast a function can change, foundations of many calculus arguments."
+    }
   ],
   "limits": "The theorem requires both continuity on the closed interval and differentiability on the open interval; dropping either can defeat it, as the absolute-value function shows at its corner, where no interior point has slope matching a secant across the kink. It guarantees at least one qualifying point but says nothing about how many there are or where they lie, so it is an existence statement, not a locator. It also assumes a real-valued function of a real variable; the naive statement can fail for vector-valued functions, where only an inequality survives, so its clean equality form is specific to the scalar case.",
   "misreadings": "The theorem guarantees existence of a point where the slopes match, not that it is unique or findable, so it does not tell you where the speedometer read the average. It genuinely needs differentiability throughout the interior; a single corner, as in the absolute-value function, can make the equality fail, so the hypotheses are not optional niceties. And it is a statement about real scalar functions; for vector-valued functions the exact equality can break down, leaving only a bound, so one must not transport the clean form uncritically to that setting.",
   "origin": "Its special case, Rolle's theorem, was proved by Michel Rolle in 1691; the mean value theorem itself is attributed to Joseph-Louis Lagrange in the late eighteenth century, with a rigorous formulation and a generalised version given by Augustin-Louis Cauchy in the 1820s.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "sources": [
-    {"text": "Mean value theorem, Wikipedia. — the statement and hypotheses, Rolle's-theorem special case, the Lagrange and Cauchy attributions, and the constant-function and Taylor applications.", "url": "https://en.wikipedia.org/wiki/Mean_value_theorem", "type": "secondary"},
-    {"text": "Mean-Value Theorem, Wolfram MathWorld. — the existence of an interior point where the slope equals the average rate of change.", "url": "https://mathworld.wolfram.com/Mean-ValueTheorem.html", "type": "secondary"}
+    {
+      "text": "Mean value theorem, Wikipedia. — the statement and hypotheses, Rolle's-theorem special case, the Lagrange and Cauchy attributions, and the constant-function and Taylor applications.",
+      "url": "https://en.wikipedia.org/wiki/Mean_value_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Mean-Value Theorem, Wolfram MathWorld. — the existence of an interior point where the slope equals the average rate of change.",
+      "url": "https://mathworld.wolfram.com/Mean-ValueTheorem.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Mean_value_theorem",
   "related": [
-    {"slug": "the-intermediate-value-theorem", "kind": "kindred"},
-    {"slug": "lhopitals-rule", "kind": "consequence"}
+    {
+      "slug": "the-intermediate-value-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "lhopitals-rule",
+      "kind": "consequence"
+    }
   ]
 }

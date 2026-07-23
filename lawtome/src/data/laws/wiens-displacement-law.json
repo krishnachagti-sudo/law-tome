@@ -32,25 +32,48 @@
   ],
   "whyItMatters": "It turns colour into a temperature gauge, foundational to astronomy — reading stellar temperatures from starlight — and to thermal imaging and pyrometry. Together with the Stefan–Boltzmann and Planck laws it completes the classical description of how hot bodies glow.",
   "working": [
-    {"lead": "Read temperature from peak colour", "text": "estimate a black body's temperature from where its emission peaks — bluer means hotter, redder means cooler."},
-    {"lead": "Match detectors to the source", "text": "choose a sensor for the wavelength band where the target actually peaks, which for near-room-temperature objects is the infrared."},
-    {"lead": "Specify the parameterisation of the peak", "text": "state whether you mean the peak per wavelength or per frequency, since the two differ and do not convert by the simple wavelength-frequency relation."}
+    {
+      "lead": "Read temperature from peak colour",
+      "text": "estimate a black body's temperature from where its emission peaks — bluer means hotter, redder means cooler."
+    },
+    {
+      "lead": "Match detectors to the source",
+      "text": "choose a sensor for the wavelength band where the target actually peaks, which for near-room-temperature objects is the infrared."
+    },
+    {
+      "lead": "Specify the parameterisation of the peak",
+      "text": "state whether you mean the peak per wavelength or per frequency, since the two differ and do not convert by the simple wavelength-frequency relation."
+    }
   ],
   "limits": "The law holds strictly only for an ideal black body; real emitters with wavelength-dependent emissivity deviate. There is also a genuine subtlety: the spectrum peaks at a different place depending on whether it is plotted per unit wavelength or per unit frequency, because converting a spectral density introduces a Jacobian factor — so 'the wavelength of maximum emission' is ambiguous until the parameterisation is specified. Its constant is now exact by definition, and it is confirmed continually by spectroscopy and astronomy.",
   "misreadings": "It is not the same as Wien's approximation of 1896, a distinct formula for the whole spectrum that fails at long wavelengths. And the 'peak wavelength' is not a single unambiguous quantity — it depends on whether the spectrum is measured per wavelength or per frequency, which peak at different places.",
   "origin": "Derived by the German physicist Wilhelm Wien in 1893, building on earlier observations by Samuel Langley. Wien received the 1911 Nobel Prize for his black-body work; the displacement law was later placed on rigorous footing as a consequence of Planck's law.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1893,
   "namedAfter": "Wilhelm Wien",
   "sources": [
-    {"text": "Wien's displacement law, Wikipedia. — the statement, the constant, and the per-wavelength/per-frequency peak subtlety.", "url": "https://en.wikipedia.org/wiki/Wien%27s_displacement_law", "type": "secondary"},
-    {"text": "Wien approximation, Wikipedia. — the distinct 1896 short-wavelength formula that shares the name.", "url": "https://en.wikipedia.org/wiki/Wien_approximation", "type": "secondary"}
+    {
+      "text": "Wien's displacement law, Wikipedia. — the statement, the constant, and the per-wavelength/per-frequency peak subtlety.",
+      "url": "https://en.wikipedia.org/wiki/Wien%27s_displacement_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Wien approximation, Wikipedia. — the distinct 1896 short-wavelength formula that shares the name.",
+      "url": "https://en.wikipedia.org/wiki/Wien_approximation",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Wien%27s_displacement_law",
   "related": [
-    {"slug": "plancks-law", "kind": "kindred"},
-    {"slug": "stefan-boltzmann-law", "kind": "kindred"}
+    {
+      "slug": "plancks-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "stefan-boltzmann-law",
+      "kind": "kindred"
+    }
   ]
 }

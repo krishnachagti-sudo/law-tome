@@ -2,7 +2,10 @@
   "no": "803",
   "slug": "the-karman-line",
   "name": "The Kármán Line",
-  "aliases": ["The edge of space", "The 100 km line"],
+  "aliases": [
+    "The edge of space",
+    "The 100 km line"
+  ],
   "statement": "The conventional edge of space sits about a hundred kilometres up, where wings stop working.",
   "statementAccent": "about a hundred kilometres up, where wings stop working",
   "meaning": "The Kármán line is a conventional definition of the boundary between Earth's atmosphere and outer space, most commonly set at an altitude of one hundred kilometres, about sixty-two miles, above mean sea level. It is a widely but not universally accepted marker of where space begins, adopted for record-keeping and the awarding of astronaut status. The line has no sharp physical meaning, since the atmosphere thins gradually rather than ending abruptly, but it captures a real transition: above roughly this height, the air is too thin for aircraft to fly aerodynamically, and travel must instead rely on orbital motion. The line is named after the Hungarian-American engineer and physicist Theodore von Kármán, who reasoned about the altitude at which aeronautics gives way to astronautics. Its exact value is a matter of convention and some dispute: the international governing body for aeronautics uses one hundred kilometres, while the United States has often used about eighty kilometres, or fifty miles, instead.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "The Kármán line matters because defining where space begins has practical consequences for law, records, and the recognition of astronauts, even though the atmosphere has no true edge. As a widely used convention, the hundred-kilometre line determines whether a flight counts as spaceflight for international records and who is credited as having reached space, and it figures in discussions of airspace sovereignty and the legal regime governing space versus air. Its physical basis, von Kármán's insight that aerodynamic flight becomes impossible where the air is too thin, gives the line a rationale grounded in real physics, illustrating the genuine transition from aeronautics to astronautics. At the same time, the dispute between the hundred-kilometre and eighty-kilometre definitions highlights that the boundary is a human choice, not a fact of nature, with real stakes for who earns astronaut status. The Kármán line thus sits at the intersection of physics, engineering, law, and record-keeping, a useful and much-cited marker of the threshold of space.",
   "working": [
-    {"lead": "Thin the air with altitude", "text": "recognise that the atmosphere grows thinner with height, so aircraft must fly faster to generate lift."},
-    {"lead": "Reach the aerodynamic limit", "text": "find the altitude where the speed needed for lift exceeds orbital velocity, so wings can no longer keep a vehicle up."},
-    {"lead": "Set the convention", "text": "adopt a round figure, about one hundred kilometres, as the conventional boundary of space, while noting alternatives like eighty kilometres."}
+    {
+      "lead": "Thin the air with altitude",
+      "text": "recognise that the atmosphere grows thinner with height, so aircraft must fly faster to generate lift."
+    },
+    {
+      "lead": "Reach the aerodynamic limit",
+      "text": "find the altitude where the speed needed for lift exceeds orbital velocity, so wings can no longer keep a vehicle up."
+    },
+    {
+      "lead": "Set the convention",
+      "text": "adopt a round figure, about one hundred kilometres, as the conventional boundary of space, while noting alternatives like eighty kilometres."
+    }
   ],
   "limits": "The Kármán line is a convention, not a sharp physical boundary, since the atmosphere fades out gradually and there is no altitude at which space abruptly begins. Its value is disputed: the international aeronautics federation uses one hundred kilometres, while the United States and some analyses use about eighty kilometres, or fifty miles, and von Kármán's own calculation gave a figure closer to eighty-four kilometres, so the round hundred-kilometre number is a chosen standard rather than a derived constant. The precise altitude at which aerodynamic flight fails also depends on the vehicle and conditions. So the Kármán line is a useful and widely adopted marker of the edge of space, best understood as a physically motivated convention whose exact value is a matter of definition and ongoing debate rather than a fixed natural fact.",
   "misreadings": "The Kármán line is not a real physical edge where the atmosphere stops; the air thins gradually, and the line is a chosen convention. Its value is not universally agreed, since the international federation uses one hundred kilometres while the United States often uses about eighty, so which flights count as spaceflight can differ. And von Kármán's own figure was nearer eighty-four kilometres, with one hundred a rounded standard, so treating the line as a hard boundary of the atmosphere, or as a single undisputed altitude, misreads a physically motivated but conventional marker of where space is said to begin.",
   "origin": "Named after the Hungarian-American engineer and physicist Theodore von Kármán, who reasoned about the altitude where aerodynamic flight fails; conventionally set at 100 km by the Fédération Aéronautique Internationale.",
-  "category": "science",
+  "category": "astronomy",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": null,
   "namedAfter": "Theodore von Kármán",
   "sources": [
-    {"text": "Kármán line, Wikipedia. — the conventional 100 km (about 62 mile) boundary of space with no sharp physical significance, von Kármán's reasoning that above it the air is too thin for aerodynamic flight requiring orbital speed for lift, the von Kármán attribution, and the FAI 100 km versus US 80 km (50 mile) dispute.", "url": "https://en.wikipedia.org/wiki/K%C3%A1rm%C3%A1n_line", "type": "secondary"},
-    {"text": "Kármán line, Encyclopaedia Britannica. — the Kármán line as the roughly 100 km conventional boundary between the atmosphere and space, named after Theodore von Kármán.", "url": "https://www.britannica.com/science/Karman-line", "type": "secondary"}
+    {
+      "text": "Kármán line, Wikipedia. — the conventional 100 km (about 62 mile) boundary of space with no sharp physical significance, von Kármán's reasoning that above it the air is too thin for aerodynamic flight requiring orbital speed for lift, the von Kármán attribution, and the FAI 100 km versus US 80 km (50 mile) dispute.",
+      "url": "https://en.wikipedia.org/wiki/K%C3%A1rm%C3%A1n_line",
+      "type": "secondary"
+    },
+    {
+      "text": "Kármán line, Encyclopaedia Britannica. — the Kármán line as the roughly 100 km conventional boundary between the atmosphere and space, named after Theodore von Kármán.",
+      "url": "https://www.britannica.com/science/Karman-line",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/K%C3%A1rm%C3%A1n_line",
   "related": [
-    {"slug": "escape-velocity", "kind": "kindred"},
-    {"slug": "the-karman-vortex-street", "kind": "kindred"}
+    {
+      "slug": "escape-velocity",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-karman-vortex-street",
+      "kind": "kindred"
+    }
   ]
 }

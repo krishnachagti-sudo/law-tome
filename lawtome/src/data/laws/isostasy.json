@@ -2,7 +2,10 @@
   "no": "458",
   "slug": "isostasy",
   "name": "Isostasy",
-  "aliases": ["Isostatic equilibrium", "Crustal buoyancy"],
+  "aliases": [
+    "Isostatic equilibrium",
+    "Crustal buoyancy"
+  ],
   "statement": "Earth's crust floats in balance on the denser mantle, riding higher where it is thicker or lighter.",
   "statementAccent": "floats in balance on the denser mantle",
   "meaning": "Isostasy is the principle of gravitational, buoyant equilibrium between Earth's rigid outer shell and the denser, ductile layer beneath it, so that the lithosphere floats on the asthenosphere at an elevation set by its thickness and density. It is the geological application of Archimedes' principle: just as an iceberg floats with a height above the waterline fixed by its density and thickness, columns of crust reach equilibrium heights set by their buoyancy. Below a certain depth, the pressure of every overlying column is equal.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "Isostatic compensation explains why gravity over mountains is far weaker than their visible mass implies, so correcting for it is fundamental to interpreting gravity surveys and defining the geoid. It links surface elevation to crustal thickness and density, letting geologists infer crustal structure from topography and gravity. And it underpins the understanding of vertical land motion, from present-day uplift after deglaciation and the sea-level changes it drives, to the long-term evolution of landscapes through cycles of erosion and rebound.",
   "working": [
-    {"lead": "Balance the columns", "text": "treat surface elevation as the buoyant equilibrium of crustal columns floating on the mantle, set by their thickness and density."},
-    {"lead": "Choose the compensation style", "text": "decide whether a feature is better described by thickness variations (Airy), density variations (Pratt), or regional flexure, since real cases mix them."},
-    {"lead": "Expect a viscous lag", "text": "anticipate that adjustment to changing loads, such as melted ice, unfolds slowly over millennia because the mantle flows, not springs, back."}
+    {
+      "lead": "Balance the columns",
+      "text": "treat surface elevation as the buoyant equilibrium of crustal columns floating on the mantle, set by their thickness and density."
+    },
+    {
+      "lead": "Choose the compensation style",
+      "text": "decide whether a feature is better described by thickness variations (Airy), density variations (Pratt), or regional flexure, since real cases mix them."
+    },
+    {
+      "lead": "Expect a viscous lag",
+      "text": "anticipate that adjustment to changing loads, such as melted ice, unfolds slowly over millennia because the mantle flows, not springs, back."
+    }
   ],
   "limits": "Isostasy is an idealised equilibrium; the real Earth is only approximately in isostatic balance. At active margins and over mantle upwellings and downwellings, topography is partly held up by dynamic stresses from mantle flow and by the plate's flexural strength rather than by buoyancy alone, so convergent zones like the Himalaya are not in complete equilibrium. Because the mantle flows slowly, adjustment lags load changes, and rebound continues thousands of years after deglaciation. The simple local Airy and Pratt models also fail for concentrated loads, which is exactly what flexural isostasy was introduced to handle.",
   "misreadings": "It is not that one of Airy and Pratt is right and the other wrong; both capture real behaviour, actual compensation is a mix, and neither local model is complete without flexure. It does not mean the Earth is fully balanced everywhere, since many regions carry loads dynamically or flexurally and sit out of equilibrium. Post-glacial rebound is not the mantle springing back elastically but the slow viscous flow of mantle material, which is why it takes millennia. And the asthenosphere is not molten liquid but solid, ductile rock; floating here means buoyant equilibrium, not floating on a fluid.",
   "origin": "Grew from the Himalayan survey anomaly of the 1850s, with the two local models set out in 1855 by John Henry Pratt and George Biddell Airy and refined by Hayford and Heiskanen; the term was coined by Clarence Dutton in 1882 and formally proposed in 1889, and regional flexure was introduced by Vening Meinesz in 1931.",
-  "category": "science",
+  "category": "earth-science",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1882,
   "namedAfter": "Clarence Dutton",
   "sources": [
-    {"text": "Isostasy, Wikipedia. — the floating-crust principle, the Airy, Pratt, and flexural models, and the depth of compensation.", "url": "https://en.wikipedia.org/wiki/Isostasy", "type": "secondary"},
-    {"text": "Airy, 'On the computation of the effect of the attraction of mountain-masses,' Philosophical Transactions of the Royal Society 145 (1855). — the roots model of compensation.", "url": "https://royalsocietypublishing.org/doi/10.1098/rstl.1855.0003", "type": "primary"}
+    {
+      "text": "Isostasy, Wikipedia. — the floating-crust principle, the Airy, Pratt, and flexural models, and the depth of compensation.",
+      "url": "https://en.wikipedia.org/wiki/Isostasy",
+      "type": "secondary"
+    },
+    {
+      "text": "Airy, 'On the computation of the effect of the attraction of mountain-masses,' Philosophical Transactions of the Royal Society 145 (1855). — the roots model of compensation.",
+      "url": "https://royalsocietypublishing.org/doi/10.1098/rstl.1855.0003",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Isostasy",
   "related": [
-    {"slug": "plate-tectonics", "kind": "kindred"},
-    {"slug": "archimedes-principle", "kind": "kindred"}
+    {
+      "slug": "plate-tectonics",
+      "kind": "kindred"
+    },
+    {
+      "slug": "archimedes-principle",
+      "kind": "kindred"
+    }
   ]
 }

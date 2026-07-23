@@ -2,7 +2,9 @@
   "no": "287",
   "slug": "the-conservation-of-momentum",
   "name": "The Conservation of Momentum",
-  "aliases": ["Conservation of linear momentum"],
+  "aliases": [
+    "Conservation of linear momentum"
+  ],
   "statement": "In a closed system, total momentum never changes.",
   "statementAccent": "total momentum never changes",
   "meaning": "Momentum, the product of an object's mass and velocity, is conserved: the total momentum of a closed system — one on which no net external force acts — stays constant in time. However complicated the interactions inside the system, however many collisions and explosions, the vector sum of all the momenta before equals the sum after. It is one of the deepest and most reliable conservation laws in physics.",
@@ -33,23 +35,46 @@
   ],
   "whyItMatters": "It is among the most powerful tools in physics, letting the outcome of a collision or explosion be found without knowing the messy details of the forces involved. Its grounding in the symmetry of space, through Noether's theorem, makes it one of the clearest illustrations of the deep link between symmetry and conservation, and it holds across classical, relativistic, and quantum physics alike.",
   "working": [
-    {"lead": "Apply momentum before energy", "text": "in a collision, use conservation of momentum first to relate the velocities, then test kinetic energy to classify the collision as elastic or inelastic."},
-    {"lead": "Choose the system boundary well", "text": "draw the system to include the sources of the forces that matter, so that troublesome forces become internal and cancel."},
-    {"lead": "Add momenta as vectors", "text": "conserve momentum component by component, respecting directions and signs, since it is a vector rather than a scalar."}
+    {
+      "lead": "Apply momentum before energy",
+      "text": "in a collision, use conservation of momentum first to relate the velocities, then test kinetic energy to classify the collision as elastic or inelastic."
+    },
+    {
+      "lead": "Choose the system boundary well",
+      "text": "draw the system to include the sources of the forces that matter, so that troublesome forces become internal and cancel."
+    },
+    {
+      "lead": "Add momenta as vectors",
+      "text": "conserve momentum component by component, respecting directions and signs, since it is a vector rather than a scalar."
+    }
   ],
   "limits": "The law requires a closed, isolated system: a nonzero net external force changes the total momentum, so it applies only when external forces sum to zero or act over too short a time to matter. When fields are present, momentum can be stored in the field itself — in electromagnetism the field carries momentum — so the momentum of matter alone need not be conserved, only the total including the field, and the split between matter and field in a medium is a genuinely subtle, contested question. The numerical value of momentum depends on the inertial frame, though the conservation law holds in every such frame; in an accelerating frame, fictitious forces must be accounted for.",
   "misreadings": "Momentum is not the same as kinetic energy: momentum is conserved in all collisions with no external force, but kinetic energy only in elastic ones, and treating a perfectly inelastic collision as if mechanical energy were conserved is a common error. There is no separate law conserving kinetic energy — Noether's theorem conserves total energy, into which kinetic energy can convert. And an apparent failure, like a car slowing to a stop, usually means an external force such as friction with the Earth was left outside the system.",
   "origin": "Rooted in the work of Descartes, Huygens, and Wallis on colliding bodies in the seventeenth century and made precise through Newton's laws of motion; given its deepest grounding by Emmy Noether's 1918 theorem, which ties it to the translational symmetry of space.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "sources": [
-    {"text": "Conservation of Linear Momentum, OpenStax University Physics (LibreTexts). — the closed-system statement, the Newton's-third-law basis, and elastic versus inelastic collisions.", "url": "https://phys.libretexts.org/Bookshelves/University_Physics/University_Physics_(OpenStax)/Book:_University_Physics_I_-_Mechanics_Sound_Oscillations_and_Waves_(OpenStax)/09:_Linear_Momentum_and_Collisions/9.05:_Conservation_of_Linear_Momentum_(Part_1)", "type": "secondary"},
-    {"text": "Baez, \"Noether's Theorem in a Nutshell.\" — momentum conservation as the consequence of the translational symmetry of space.", "url": "https://math.ucr.edu/home/baez/noether.html", "type": "secondary"}
+    {
+      "text": "Conservation of Linear Momentum, OpenStax University Physics (LibreTexts). — the closed-system statement, the Newton's-third-law basis, and elastic versus inelastic collisions.",
+      "url": "https://phys.libretexts.org/Bookshelves/University_Physics/University_Physics_(OpenStax)/Book:_University_Physics_I_-_Mechanics_Sound_Oscillations_and_Waves_(OpenStax)/09:_Linear_Momentum_and_Collisions/9.05:_Conservation_of_Linear_Momentum_(Part_1)",
+      "type": "secondary"
+    },
+    {
+      "text": "Baez, \"Noether's Theorem in a Nutshell.\" — momentum conservation as the consequence of the translational symmetry of space.",
+      "url": "https://math.ucr.edu/home/baez/noether.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Momentum",
   "related": [
-    {"slug": "newtons-laws-of-motion", "kind": "cause"},
-    {"slug": "noethers-theorem", "kind": "cause"}
+    {
+      "slug": "newtons-laws-of-motion",
+      "kind": "cause"
+    },
+    {
+      "slug": "noethers-theorem",
+      "kind": "cause"
+    }
   ]
 }

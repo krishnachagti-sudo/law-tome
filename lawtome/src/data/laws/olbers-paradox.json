@@ -2,7 +2,9 @@
   "no": "378",
   "slug": "olbers-paradox",
   "name": "Olbers' Paradox",
-  "aliases": ["The dark night sky paradox"],
+  "aliases": [
+    "The dark night sky paradox"
+  ],
   "statement": "If the universe were infinite and eternal, the night sky would blaze as bright as the Sun.",
   "statementAccent": "the night sky would blaze",
   "meaning": "Olbers' paradox asks why the night sky is dark. In an infinite, eternal, static universe uniformly filled with stars, every line of sight would eventually meet the surface of a star, so the whole sky should shine as brightly as the Sun. A star's brightness falls with the square of distance, but the number of stars at a given distance grows with the square of distance, so the two effects cancel and every shell of sky contributes equally. The observed darkness contradicts this, and that contradiction is the paradox.",
@@ -33,25 +35,48 @@
   ],
   "whyItMatters": "It is a rare case where the plainest observation, that night is dark, constrains the structure of the cosmos. Requiring only that you look up, it argues against an infinite, eternal, static universe and sits comfortably with a universe of finite age, making it a memorable pointer toward Big Bang cosmology and a classic demonstration that simple questions can carry deep answers.",
   "working": [
-    {"lead": "Take the darkness as data", "text": "treat the dark night sky as a genuine constraint on cosmology, not a triviality, since an infinite static universe predicts otherwise."},
-    {"lead": "Lead with finite age", "text": "explain the darkness first by the universe's finite age and finite observable extent, the primary resolution."},
-    {"lead": "Add redshift second", "text": "include cosmic expansion and redshift as a real but secondary dimming, not the main answer."}
+    {
+      "lead": "Take the darkness as data",
+      "text": "treat the dark night sky as a genuine constraint on cosmology, not a triviality, since an infinite static universe predicts otherwise."
+    },
+    {
+      "lead": "Lead with finite age",
+      "text": "explain the darkness first by the universe's finite age and finite observable extent, the primary resolution."
+    },
+    {
+      "lead": "Add redshift second",
+      "text": "include cosmic expansion and redshift as a real but secondary dimming, not the main answer."
+    }
   ],
   "limits": "The observation is a plain fact; the resolution rests on well-established Big Bang cosmology, with the finite age of the universe as the decisive factor and expansion-driven redshift as a smaller contributor. Quantitative analyses find redshift alone dims the background by only a factor of a few, far too little to account for the darkness. The paradox specifically assumes an infinite population of stars, and it is the finite observable portion, set by finite age, that resolves it.",
   "misreadings": "Intervening dust does not resolve it: over eternity the dust would heat up and re-radiate the absorbed starlight, eventually glowing as brightly as the stars, so absorption only delays the problem. Redshift and expansion alone do not resolve it either; they contribute only modestly, and the primary answer is the universe's finite age. And the darkness is not explained by there simply being few stars, but by our seeing only a finite sphere of an assumed-infinite universe.",
   "origin": "Named after the German astronomer Heinrich Wilhelm Olbers, who discussed it in 1823, though the puzzle was raised earlier by Kepler, Halley, and de Chéseaux; the finite-age resolution was developed through the nineteenth and twentieth centuries.",
-  "category": "science",
+  "category": "astronomy",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1823,
   "namedAfter": "Heinrich Wilhelm Olbers",
   "sources": [
-    {"text": "Olbers's paradox, Wikipedia. — the equal-shells argument, the finite-age resolution, and the secondary role of redshift.", "url": "https://en.wikipedia.org/wiki/Olbers%27s_paradox", "type": "secondary"},
-    {"text": "Olbers' paradox, Encyclopaedia Britannica. — the dark-sky contradiction and its cosmological significance.", "url": "https://www.britannica.com/science/Olbers-paradox", "type": "secondary"}
+    {
+      "text": "Olbers's paradox, Wikipedia. — the equal-shells argument, the finite-age resolution, and the secondary role of redshift.",
+      "url": "https://en.wikipedia.org/wiki/Olbers%27s_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Olbers' paradox, Encyclopaedia Britannica. — the dark-sky contradiction and its cosmological significance.",
+      "url": "https://www.britannica.com/science/Olbers-paradox",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Olbers%27s_paradox",
   "related": [
-    {"slug": "hubbles-law", "kind": "cause"},
-    {"slug": "fermi-paradox", "kind": "kindred"}
+    {
+      "slug": "hubbles-law",
+      "kind": "cause"
+    },
+    {
+      "slug": "fermi-paradox",
+      "kind": "kindred"
+    }
   ]
 }

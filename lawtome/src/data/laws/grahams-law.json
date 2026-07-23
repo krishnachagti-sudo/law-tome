@@ -2,7 +2,9 @@
   "no": "163",
   "slug": "grahams-law",
   "name": "Graham's Law",
-  "aliases": ["Graham's law of effusion"],
+  "aliases": [
+    "Graham's law of effusion"
+  ],
   "statement": "A lighter gas escapes through a small hole faster than a heavier one.",
   "statementAccent": "escapes through a small hole faster",
   "meaning": "The rate at which a gas effuses through a tiny opening is inversely proportional to the square root of its molar mass, so lighter molecules escape faster. Hydrogen, sixteen times lighter than oxygen, effuses about four times as fast, because four is the square root of sixteen.",
@@ -33,24 +35,44 @@
   ],
   "whyItMatters": "It links a gas's molecular mass to how fast it moves and escapes, a direct consequence of kinetic theory and the basis of isotope separation by gaseous diffusion — historically decisive for the atomic bomb and nuclear fuel. It is one of the cleanest illustrations that temperature sets molecular energy, not speed.",
   "working": [
-    {"lead": "Compare rates by square-root of mass", "text": "estimate the ratio of two gases' effusion rates as the inverse ratio of the square roots of their molar masses."},
-    {"lead": "Reserve it for effusion", "text": "apply the precise form to escape through a tiny orifice; treat its use for diffusion through another gas as only approximate."},
-    {"lead": "Expect small isotope separation", "text": "for separating isotopes by mass, plan on a tiny per-stage advantage requiring large cascades, as with uranium hexafluoride."}
+    {
+      "lead": "Compare rates by square-root of mass",
+      "text": "estimate the ratio of two gases' effusion rates as the inverse ratio of the square roots of their molar masses."
+    },
+    {
+      "lead": "Reserve it for effusion",
+      "text": "apply the precise form to escape through a tiny orifice; treat its use for diffusion through another gas as only approximate."
+    },
+    {
+      "lead": "Expect small isotope separation",
+      "text": "for separating isotopes by mass, plan on a tiny per-stage advantage requiring large cascades, as with uranium hexafluoride."
+    }
   ],
   "limits": "The law is strictly valid for effusion — a single gas escaping through a microscopic orifice into vacuum — and for ideal gases. Real diffusion of one gas through another is more complex, involving molecular collisions and concentration gradients, so the clean inverse-square-root relation only approximately holds there. It also assumes ideal-gas behaviour, deviating at high pressure or low temperature. For isotope separation the mass difference gives an extremely small per-stage effect, a practical rather than theoretical limit.",
   "misreadings": "It is precise for effusion but only approximate for the diffusion of one gas through another — a distinction the older name 'Graham's law of diffusion' blurs. Its uranium-enrichment application is real but the per-stage separation is tiny, so the effect must be multiplied through enormous cascades to matter.",
   "origin": "Established by the Scottish chemist Thomas Graham, who related effusion rate to density in the early 1830s and to molar mass in 1848, and was later derived from the kinetic theory of gases.",
-  "category": "science",
+  "category": "chemistry",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1848,
   "namedAfter": "Thomas Graham",
   "sources": [
-    {"text": "Graham's law, Wikipedia. — the statement, the kinetic-theory mechanism, the effusion-versus-diffusion distinction, and uranium enrichment.", "url": "https://en.wikipedia.org/wiki/Graham%27s_law", "type": "secondary"},
-    {"text": "\"Graham's Laws of Diffusion and Effusion,\" Chemistry LibreTexts. — the derivation and the tiny isotope-separation factor.", "url": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Physical_Chemistry_for_the_Biosciences_(LibreTexts)/02%3A_Properties_of_Gases/2.09%3A_Graham's_Laws_of_Diffusion_and_Effusion", "type": "secondary"}
+    {
+      "text": "Graham's law, Wikipedia. — the statement, the kinetic-theory mechanism, the effusion-versus-diffusion distinction, and uranium enrichment.",
+      "url": "https://en.wikipedia.org/wiki/Graham%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Graham's Laws of Diffusion and Effusion,\" Chemistry LibreTexts. — the derivation and the tiny isotope-separation factor.",
+      "url": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Physical_Chemistry_for_the_Biosciences_(LibreTexts)/02%3A_Properties_of_Gases/2.09%3A_Graham's_Laws_of_Diffusion_and_Effusion",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Graham%27s_law",
   "related": [
-    {"slug": "daltons-law", "kind": "kindred"}
+    {
+      "slug": "daltons-law",
+      "kind": "kindred"
+    }
   ]
 }

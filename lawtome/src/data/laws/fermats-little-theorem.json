@@ -2,7 +2,10 @@
   "no": "574",
   "slug": "fermats-little-theorem",
   "name": "Fermat's Little Theorem",
-  "aliases": ["Fermat's theorem on primes", "The a-to-the-p congruence"],
+  "aliases": [
+    "Fermat's theorem on primes",
+    "The a-to-the-p congruence"
+  ],
   "statement": "For a prime p and any integer a, a raised to the p leaves the same remainder as a itself when divided by p.",
   "statementAccent": "a raised to the p leaves the same remainder as a itself",
   "meaning": "Fermat's little theorem states that if p is a prime number, then for any integer a, the number a raised to the power p minus a is a multiple of p; in the language of modular arithmetic, a to the p is congruent to a modulo p. Equivalently, when a is not divisible by p, a raised to the power p minus one is congruent to one modulo p. Named to distinguish it from Fermat's far deeper last theorem, it is a cornerstone of elementary number theory and modular arithmetic, and it underlies both primality testing and the mathematics of public-key cryptography, most famously the RSA cryptosystem.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "Fermat's little theorem is a foundational result of number theory that turns the behaviour of powers modulo a prime into a simple, exploitable identity. It underpins the Fermat primality test and, through Euler's generalisation, the RSA cryptosystem that secures much of digital communication, so a seventeenth-century observation about remainders now protects online commerce. It is also a gateway to the group theory of modular arithmetic and to deeper results, and it stands as a classic example of how an elegant fact about primes can become a workhorse of modern technology.",
   "working": [
-    {"lead": "Reduce powers modulo a prime", "text": "use that a to the p is congruent to a, or a to the p minus one is congruent to one for a coprime to p, to simplify huge powers."},
-    {"lead": "Test for compositeness", "text": "apply the contrapositive: if the congruence fails for some base, the modulus is certainly composite, a fast primality screen."},
-    {"lead": "Generalise with Euler", "text": "when the modulus is not prime, reach for Euler's theorem with the totient function in place of one less than the prime."}
+    {
+      "lead": "Reduce powers modulo a prime",
+      "text": "use that a to the p is congruent to a, or a to the p minus one is congruent to one for a coprime to p, to simplify huge powers."
+    },
+    {
+      "lead": "Test for compositeness",
+      "text": "apply the contrapositive: if the congruence fails for some base, the modulus is certainly composite, a fast primality screen."
+    },
+    {
+      "lead": "Generalise with Euler",
+      "text": "when the modulus is not prime, reach for Euler's theorem with the totient function in place of one less than the prime."
+    }
   ],
   "limits": "The converse of the theorem is false: passing the Fermat test does not prove a number prime, because the Carmichael numbers are composite yet satisfy the congruence for every base coprime to them, the smallest being 561. The theorem is a statement about primes, and its primality test is only a probabilistic screen, not a proof of primality, so cryptographic and computational uses pair it with stronger tests. Its power is real but bounded, giving a necessary condition for primality rather than a sufficient one.",
   "misreadings": "Fermat's little theorem is not Fermat's last theorem; the little theorem is a modular-arithmetic identity, while the last theorem is the far deeper claim that no positive integers satisfy the equation for exponents above two. The converse of the little theorem does not hold, so a number passing the Fermat test can still be composite, as the Carmichael numbers show. And the coprime form requires a not to be divisible by the prime, the case handled separately by the more general a-to-the-p congruence.",
   "origin": "Stated by Pierre de Fermat in a 1640 letter to Frénicle de Bessy without proof, with the first published proof given by Leonhard Euler in 1736 and generalised by Euler's theorem.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1640,
   "namedAfter": "Pierre de Fermat",
   "sources": [
-    {"text": "Fermat's little theorem, Wikipedia. — the congruence, the Fermat 1640 and Euler 1736 history, and the Carmichael-number caveat.", "url": "https://en.wikipedia.org/wiki/Fermat%27s_little_theorem", "type": "secondary"},
-    {"text": "Fermat's Little Theorem, Wolfram MathWorld. — the statement, Euler's generalisation, and the smallest Carmichael number 561.", "url": "https://mathworld.wolfram.com/FermatsLittleTheorem.html", "type": "secondary"}
+    {
+      "text": "Fermat's little theorem, Wikipedia. — the congruence, the Fermat 1640 and Euler 1736 history, and the Carmichael-number caveat.",
+      "url": "https://en.wikipedia.org/wiki/Fermat%27s_little_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Fermat's Little Theorem, Wolfram MathWorld. — the statement, Euler's generalisation, and the smallest Carmichael number 561.",
+      "url": "https://mathworld.wolfram.com/FermatsLittleTheorem.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Fermat%27s_little_theorem",
   "related": [
-    {"slug": "the-chinese-remainder-theorem", "kind": "kindred"},
-    {"slug": "euclids-theorem", "kind": "kindred"}
+    {
+      "slug": "the-chinese-remainder-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "euclids-theorem",
+      "kind": "kindred"
+    }
   ]
 }

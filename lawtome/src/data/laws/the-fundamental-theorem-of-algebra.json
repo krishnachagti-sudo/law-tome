@@ -2,7 +2,10 @@
   "no": "576",
   "slug": "the-fundamental-theorem-of-algebra",
   "name": "The Fundamental Theorem of Algebra",
-  "aliases": ["FTA", "d'Alembert-Gauss theorem"],
+  "aliases": [
+    "FTA",
+    "d'Alembert-Gauss theorem"
+  ],
   "statement": "Every polynomial equation of degree one or more has a root among the complex numbers.",
   "statementAccent": "has a root among the complex numbers",
   "meaning": "The fundamental theorem of algebra states that every non-constant polynomial with complex coefficients has at least one complex root. It follows that a polynomial of degree n has exactly n complex roots, counted with multiplicity, and factors completely into linear factors over the complex numbers. Equivalently, the field of complex numbers is algebraically closed: no polynomial equation over it forces you to invent new numbers to solve it, unlike the real numbers, where the simple equation x squared plus one equals zero has no solution. The theorem is a keystone linking algebra and analysis, guaranteeing that the complex numbers are the natural home in which polynomial equations always have solutions.",
@@ -33,23 +36,46 @@
   ],
   "whyItMatters": "The fundamental theorem of algebra is a bridge between algebra and analysis and the reason the complex numbers are the right setting for solving polynomial equations. It guarantees complete factorisation into linear factors, underpins the theory of eigenvalues in linear algebra since every matrix over the complex numbers has an eigenvalue, and shapes complex analysis, differential equations, and signal processing. It also draws a sharp line between the reals and the complex numbers: extending the reals by a single square root of minus one already closes the system to all polynomial equations, a completeness that no further extension can improve upon.",
   "working": [
-    {"lead": "Work over the complex numbers", "text": "expect any non-constant polynomial to have a root there, so complex arithmetic is the natural setting for solving polynomial equations."},
-    {"lead": "Count roots with multiplicity", "text": "read a degree-n polynomial as having exactly n complex roots and factoring into n linear factors, the complete factorisation."},
-    {"lead": "Expect an analytic ingredient", "text": "remember that proving it needs completeness of the reals; no purely algebraic argument suffices, so some analysis or topology always enters."}
+    {
+      "lead": "Work over the complex numbers",
+      "text": "expect any non-constant polynomial to have a root there, so complex arithmetic is the natural setting for solving polynomial equations."
+    },
+    {
+      "lead": "Count roots with multiplicity",
+      "text": "read a degree-n polynomial as having exactly n complex roots and factoring into n linear factors, the complete factorisation."
+    },
+    {
+      "lead": "Expect an analytic ingredient",
+      "text": "remember that proving it needs completeness of the reals; no purely algebraic argument suffices, so some analysis or topology always enters."
+    }
   ],
   "limits": "The theorem is about the complex numbers: over the reals it fails, since polynomials like x squared plus one have no real root, and over the rationals it fails more sharply still. It is an existence theorem, asserting that roots exist without giving any formula to find them, and by the Abel-Ruffini theorem no general radical formula can exist for degree five and above. Its name is a historical misnomer, since it is not the foundation of algebra as a whole and cannot be proved by algebra alone, always requiring an analytic or topological input reflecting the completeness of the real line.",
   "misreadings": "The theorem does not say every polynomial has a real root, only a complex one, and it says nothing about how to compute the roots, offering existence rather than a formula. Its name misleads: it is neither the single foundation of algebra nor a purely algebraic result, since every proof imports analysis or topology through the completeness of the reals. And having n roots is counted with multiplicity, so a repeated root is counted as many times as it repeats, not as a single distinct solution.",
   "origin": "Conjectured by mathematicians including Albert Girard and Rene Descartes in the seventeenth century, with an early attempted proof by d'Alembert in 1746 and the first widely credited proof by Carl Friedrich Gauss in his 1799 doctoral dissertation, itself later found to have a topological gap.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "sources": [
-    {"text": "Fundamental theorem of algebra, Wikipedia. — the complex-root statement, algebraic closure, the analysis requirement, and the d'Alembert and Gauss history.", "url": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra", "type": "secondary"},
-    {"text": "Fundamental Theorem of Algebra, Wolfram MathWorld. — the existence of a complex root and complete factorisation into linear factors.", "url": "https://mathworld.wolfram.com/FundamentalTheoremofAlgebra.html", "type": "secondary"}
+    {
+      "text": "Fundamental theorem of algebra, Wikipedia. — the complex-root statement, algebraic closure, the analysis requirement, and the d'Alembert and Gauss history.",
+      "url": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra",
+      "type": "secondary"
+    },
+    {
+      "text": "Fundamental Theorem of Algebra, Wolfram MathWorld. — the existence of a complex root and complete factorisation into linear factors.",
+      "url": "https://mathworld.wolfram.com/FundamentalTheoremofAlgebra.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra",
   "related": [
-    {"slug": "the-intermediate-value-theorem", "kind": "cause"},
-    {"slug": "the-fundamental-theorem-of-calculus", "kind": "kindred"}
+    {
+      "slug": "the-intermediate-value-theorem",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-fundamental-theorem-of-calculus",
+      "kind": "kindred"
+    }
   ]
 }

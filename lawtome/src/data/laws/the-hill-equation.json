@@ -2,7 +2,9 @@
   "no": "412",
   "slug": "the-hill-equation",
   "name": "The Hill Equation",
-  "aliases": ["Hill-Langmuir equation"],
+  "aliases": [
+    "Hill-Langmuir equation"
+  ],
   "statement": "Cooperative binding gives an S-shaped curve of how saturated a molecule is with its ligand.",
   "statementAccent": "an S-shaped curve",
   "meaning": "The Hill equation describes how the fraction of a large molecule saturated by a binding ligand rises with the ligand's concentration when binding is cooperative. Instead of the plain hyperbola of independent binding, cooperativity produces a sigmoidal, S-shaped curve. A single number, the Hill coefficient, captures the degree of cooperativity: greater than one for positive cooperativity, one for none, and less than one for negative cooperativity.",
@@ -33,25 +35,48 @@
   ],
   "whyItMatters": "It is a foundational tool across biochemistry, pharmacology, and physiology, used to summarise cooperative binding in a single index and to fit dose-response and saturation curves. It underlies the understanding of hemoglobin's oxygen transport, the behaviour of allosteric enzymes, and drug potency, giving scientists a compact, comparable measure of how strongly binding at one site influences binding at others.",
   "working": [
-    {"lead": "Read the Hill coefficient", "text": "use the coefficient as an index of cooperativity, greater than one for positive, one for none, less than one for negative."},
-    {"lead": "Expect the sigmoid", "text": "look for an S-shaped saturation curve as the signature of positive cooperativity, unlike the hyperbola of independent binding."},
-    {"lead": "Treat it as a fit, not a mechanism", "text": "use the equation to describe data, turning to mechanistic models for the actual binding process."}
+    {
+      "lead": "Read the Hill coefficient",
+      "text": "use the coefficient as an index of cooperativity, greater than one for positive, one for none, less than one for negative."
+    },
+    {
+      "lead": "Expect the sigmoid",
+      "text": "look for an S-shaped saturation curve as the signature of positive cooperativity, unlike the hyperbola of independent binding."
+    },
+    {
+      "lead": "Treat it as a fit, not a mechanism",
+      "text": "use the equation to describe data, turning to mechanistic models for the actual binding process."
+    }
   ],
   "limits": "It is a phenomenological, empirical model that fits curves rather than describing the binding mechanism, as Hill himself stressed. The Hill coefficient does not equal the number of binding sites; hemoglobin has four sites but a coefficient below three, so it is an interaction index, not a site count. The coefficient is also condition-dependent. More mechanistic models such as the concerted and sequential accounts of cooperativity supersede the equation where the actual process matters.",
   "misreadings": "The Hill coefficient is not the number of binding sites; hemoglobin has four sites yet a coefficient of roughly two to three, so it measures cooperativity, not count. The equation does not reveal the molecular mechanism; Hill explicitly disclaimed physical meaning for its parameters. And the compact constant in the denominator is not an ordinary dissociation constant, since it carries the exponent, which is why the half-saturation form is often preferred.",
   "origin": "Derived by the physiologist Archibald Vivian Hill in 1910 from his study of oxygen binding to hemoglobin, and still used as a phenomenological description of cooperative binding.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1910,
   "namedAfter": "Archibald Vivian Hill",
   "sources": [
-    {"text": "Hill equation (biochemistry), Wikipedia. — the saturation equation, the Hill coefficient's meaning, and the caveat that it is not a site count.", "url": "https://en.wikipedia.org/wiki/Hill_equation_(biochemistry)", "type": "secondary"},
-    {"text": "Colquhoun, \"A hundred years ago: the Hill equation\" (2010). — the 1910 origin and Hill's own disclaimer of physical meaning.", "url": "https://occamstypewriter.org/notranting/2010/05/27/a_hundred_years_ago_-_the_hill_equation/", "type": "secondary"}
+    {
+      "text": "Hill equation (biochemistry), Wikipedia. — the saturation equation, the Hill coefficient's meaning, and the caveat that it is not a site count.",
+      "url": "https://en.wikipedia.org/wiki/Hill_equation_(biochemistry)",
+      "type": "secondary"
+    },
+    {
+      "text": "Colquhoun, \"A hundred years ago: the Hill equation\" (2010). — the 1910 origin and Hill's own disclaimer of physical meaning.",
+      "url": "https://occamstypewriter.org/notranting/2010/05/27/a_hundred_years_ago_-_the_hill_equation/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Hill_equation_(biochemistry)",
   "related": [
-    {"slug": "michaelis-menten-kinetics", "kind": "kindred"},
-    {"slug": "the-law-of-mass-action", "kind": "kindred"}
+    {
+      "slug": "michaelis-menten-kinetics",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-law-of-mass-action",
+      "kind": "kindred"
+    }
   ]
 }

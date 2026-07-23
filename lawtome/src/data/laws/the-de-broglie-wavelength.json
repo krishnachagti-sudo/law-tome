@@ -2,7 +2,10 @@
   "no": "607",
   "slug": "the-de-broglie-wavelength",
   "name": "The de Broglie Wavelength",
-  "aliases": ["Matter waves", "The wave nature of matter"],
+  "aliases": [
+    "Matter waves",
+    "The wave nature of matter"
+  ],
   "statement": "Every particle has a wavelength, equal to Planck's constant divided by its momentum.",
   "statementAccent": "equal to Planck's constant divided by its momentum",
   "meaning": "The de Broglie wavelength is the wavelength associated with any particle of matter, given by Planck's constant divided by the particle's momentum. Louis de Broglie proposed in 1924 that just as light, long thought of as a wave, also behaves as particles called photons, so matter, thought of as particles, also has wave properties. The wavelength is inversely proportional to momentum, so faster or heavier objects have shorter wavelengths. For everyday objects the momentum is so large that the wavelength is unimaginably tiny and utterly undetectable, which is why matter seems purely particle-like; only for very small particles like electrons does the wave nature become significant. The idea extended wave-particle duality to all matter and was a founding insight of quantum mechanics.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "The de Broglie wavelength was a foundational step in the birth of quantum mechanics, extending wave-particle duality from light to all matter and directly inspiring Schrodinger's wave equation. It explains why electrons diffract and interfere, and it underlies powerful technologies: electron microscopes achieve resolution far beyond light microscopes because electrons have such short wavelengths, and neutron and electron diffraction reveal the atomic structure of matter. By showing that the sharp line between waves and particles dissolves at the quantum scale, de Broglie's insight reshaped physics and earned him the Nobel Prize, remaining a cornerstone of how we understand the microscopic world.",
   "working": [
-    {"lead": "Divide Planck's constant by momentum", "text": "assign any particle a wavelength equal to Planck's constant over its momentum, shorter for faster or heavier particles."},
-    {"lead": "Expect waves only when small", "text": "look for wave behaviour in tiny particles like electrons, since for macroscopic objects the wavelength is far too small to detect."},
-    {"lead": "Exploit short wavelengths", "text": "use electrons' short de Broglie wavelength for high-resolution imaging and diffraction, as in electron microscopes and materials analysis."}
+    {
+      "lead": "Divide Planck's constant by momentum",
+      "text": "assign any particle a wavelength equal to Planck's constant over its momentum, shorter for faster or heavier particles."
+    },
+    {
+      "lead": "Expect waves only when small",
+      "text": "look for wave behaviour in tiny particles like electrons, since for macroscopic objects the wavelength is far too small to detect."
+    },
+    {
+      "lead": "Exploit short wavelengths",
+      "text": "use electrons' short de Broglie wavelength for high-resolution imaging and diffraction, as in electron microscopes and materials analysis."
+    }
   ],
   "limits": "The wave nature is real for all matter but observable only for very small, low-momentum particles; for anything macroscopic the wavelength is so minuscule that no experiment could reveal it. The de Broglie relation gives a wavelength but not a full description of a particle's behaviour, which requires the Schrodinger equation and the probabilistic interpretation of the wavefunction. Matter waves are not electromagnetic waves and carry no energy through space like light; they are a quantum probability phenomenon. And the simple relation is nonrelativistic in its elementary form, needing modification for particles moving near the speed of light.",
   "misreadings": "The wavelength is inversely proportional to momentum, so faster and heavier particles have shorter, not longer, wavelengths, a relation easy to invert by mistake. The wave nature applies to all matter but is undetectable for everyday objects, so its absence in daily life is a matter of scale, not a failure of the idea. And matter waves are not light or any electromagnetic wave; they are a distinct quantum phenomenon describing the probability amplitude of finding the particle, not a physical undulation of a medium.",
   "origin": "Proposed by Louis de Broglie in his 1924 doctoral thesis, extending wave-particle duality to matter; confirmed by the Davisson-Germer electron-diffraction experiment in 1927, with de Broglie awarded the 1929 Nobel Prize and Davisson and Thomson the 1937 prize.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1924,
   "namedAfter": "Louis de Broglie",
   "sources": [
-    {"text": "Matter wave, Wikipedia. — the de Broglie relation wavelength equals Planck's constant over momentum, the wave-particle duality of matter, de Broglie 1924, and the Davisson-Germer confirmation.", "url": "https://en.wikipedia.org/wiki/Matter_wave", "type": "secondary"},
-    {"text": "de Broglie wave, Encyclopaedia Britannica. — de Broglie's 1924 proposal of matter waves and why macroscopic wavelengths are undetectable.", "url": "https://www.britannica.com/science/de-Broglie-wave", "type": "secondary"}
+    {
+      "text": "Matter wave, Wikipedia. — the de Broglie relation wavelength equals Planck's constant over momentum, the wave-particle duality of matter, de Broglie 1924, and the Davisson-Germer confirmation.",
+      "url": "https://en.wikipedia.org/wiki/Matter_wave",
+      "type": "secondary"
+    },
+    {
+      "text": "de Broglie wave, Encyclopaedia Britannica. — de Broglie's 1924 proposal of matter waves and why macroscopic wavelengths are undetectable.",
+      "url": "https://www.britannica.com/science/de-Broglie-wave",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Matter_wave",
   "related": [
-    {"slug": "the-photoelectric-effect", "kind": "kindred"},
-    {"slug": "heisenbergs-uncertainty-principle", "kind": "kindred"}
+    {
+      "slug": "the-photoelectric-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "heisenbergs-uncertainty-principle",
+      "kind": "kindred"
+    }
   ]
 }

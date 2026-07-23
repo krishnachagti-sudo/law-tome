@@ -32,25 +32,49 @@
   ],
   "whyItMatters": "It is a unifying, level-agnostic framework from which many classical results of evolutionary theory — Fisher's theorem, Hamilton's rule, the breeder's equation, the decomposition of multilevel selection — fall out as special cases. Devised by an untrained outsider whose life ended in tragedy, it is prized less for concrete prediction than for the deep structure it reveals about what selection is.",
   "working": [
-    {"lead": "Partition the change", "text": "to analyse evolutionary change, split it into a selection covariance and a transmission term rather than treating it as a single quantity."},
-    {"lead": "Choose the level freely", "text": "apply the equation at whatever level you need, gene, individual, or group, since it assumes nothing about the entities."},
-    {"lead": "Keep the transmission term", "text": "do not drop the transmission term without stating the assumption of faithful transmission that would justify it."}
+    {
+      "lead": "Partition the change",
+      "text": "to analyse evolutionary change, split it into a selection covariance and a transmission term rather than treating it as a single quantity."
+    },
+    {
+      "lead": "Choose the level freely",
+      "text": "apply the equation at whatever level you need, gene, individual, or group, since it assumes nothing about the entities."
+    },
+    {
+      "lead": "Keep the transmission term",
+      "text": "do not drop the transmission term without stating the assumption of faithful transmission that would justify it."
+    }
   ],
   "limits": "Because it is an identity, the Price equation makes no predictions on its own; it is a bookkeeping tool, not a causal or dynamical model. To project forward you must independently specify the transmission term, the classic charge of dynamic insufficiency, since you cannot iterate it without added structure. There is a live philosophical debate over whether it explains evolution or merely describes it: the covariance term measures selection statistically but does not by itself establish causation. And van Veelen and others argue its very generality can empty its terms of meaning for understanding dynamics.",
   "misreadings": "The equation does not explain evolution so much as describe and partition it; it is an identity, not a mechanism, and predicts nothing by itself. The covariance term does not imply causation — a statistical association between fitness and a trait can arise from confounding, so causal reading needs an added model. And credit is not Price's alone: the covariance part was anticipated by Robertson and Li, his novel contribution being the transmission term and the fully general formulation.",
   "origin": "Derived by George R. Price, a physical chemist turned evolutionary theorist, in 'Selection and Covariance' (Nature, 1970) and extended in 1972; he built it while generalising Hamilton's kin-selection results, and it became a foundation of social-evolution theory.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1970,
   "namedAfter": "George R. Price",
   "sources": [
-    {"text": "Price equation, Wikipedia. — the identity, its selection and transmission terms, the Robertson-Price special case, and the multilevel application.", "url": "https://en.wikipedia.org/wiki/Price_equation", "type": "secondary"},
-    {"text": "Frank, \"Natural selection. IV. The Price equation,\" Journal of Evolutionary Biology 25:1002-1019 (2012), arXiv. — the equation's structure and its role as a general framework.", "url": "https://arxiv.org/abs/1204.1515", "type": "primary"},
-    {"text": "van Veelen, \"The problem with the Price equation,\" Philosophical Transactions of the Royal Society B 375:20190355 (2020). — the critique of its generality and dynamic insufficiency.", "url": "https://royalsocietypublishing.org/doi/10.1098/rstb.2019.0355", "type": "primary"}
+    {
+      "text": "Price equation, Wikipedia. — the identity, its selection and transmission terms, the Robertson-Price special case, and the multilevel application.",
+      "url": "https://en.wikipedia.org/wiki/Price_equation",
+      "type": "secondary"
+    },
+    {
+      "text": "Frank, \"Natural selection. IV. The Price equation,\" Journal of Evolutionary Biology 25:1002-1019 (2012), arXiv. — the equation's structure and its role as a general framework.",
+      "url": "https://arxiv.org/abs/1204.1515",
+      "type": "primary"
+    },
+    {
+      "text": "van Veelen, \"The problem with the Price equation,\" Philosophical Transactions of the Royal Society B 375:20190355 (2020). — the critique of its generality and dynamic insufficiency.",
+      "url": "https://royalsocietypublishing.org/doi/10.1098/rstb.2019.0355",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Price_equation",
   "related": [
-    {"slug": "hamiltons-rule", "kind": "consequence"}
+    {
+      "slug": "hamiltons-rule",
+      "kind": "consequence"
+    }
   ]
 }

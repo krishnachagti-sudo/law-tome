@@ -2,7 +2,10 @@
   "no": "474",
   "slug": "poiseuilles-law",
   "name": "Poiseuille's Law",
-  "aliases": ["The Hagen-Poiseuille equation", "The law of laminar pipe flow"],
+  "aliases": [
+    "The Hagen-Poiseuille equation",
+    "The law of laminar pipe flow"
+  ],
   "statement": "Flow through a tube rises with the fourth power of its radius, so tiny changes in width matter enormously.",
   "statementAccent": "the fourth power of its radius",
   "meaning": "Poiseuille's law describes the steady, laminar flow of an incompressible Newtonian fluid through a long cylindrical pipe. The volumetric flow rate is proportional to the pressure difference across the pipe and to the fourth power of the radius, and inversely proportional to the fluid's viscosity and the pipe's length. Written as flow equals pi times the pressure difference times the radius to the fourth, all over eight times the viscosity times the length, its defining feature is that fourth-power dependence on radius, which makes vessel width by far the most powerful control on flow.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "The law's fourth-power radius term is the single most important quantitative fact in cardiovascular physiology: it explains why the arterioles, by making small changes in their radius, so powerfully control the distribution of blood flow and the level of blood pressure, and why arterial narrowing from atherosclerosis is so consequential. It is basic to the concept of vascular resistance, to the choice of intravenous cannulae, and to understanding airflow in the lungs, making it a workhorse relation across medicine and engineering.",
   "working": [
-    {"lead": "Watch the radius", "text": "treat vessel or tube radius as the dominant control on flow, since flow scales with its fourth power while pressure, length, and viscosity enter only linearly."},
-    {"lead": "Think in resistance", "text": "use the resistance form, resistance rising as radius falls to the fourth, to reason about how narrowing raises the pressure needed to sustain flow."},
-    {"lead": "Check the assumptions", "text": "apply it only to steady, laminar flow of a simple fluid in a straight rigid tube, and expect real physiology to depart from it."}
+    {
+      "lead": "Watch the radius",
+      "text": "treat vessel or tube radius as the dominant control on flow, since flow scales with its fourth power while pressure, length, and viscosity enter only linearly."
+    },
+    {
+      "lead": "Think in resistance",
+      "text": "use the resistance form, resistance rising as radius falls to the fourth, to reason about how narrowing raises the pressure needed to sustain flow."
+    },
+    {
+      "lead": "Check the assumptions",
+      "text": "apply it only to steady, laminar flow of a simple fluid in a straight rigid tube, and expect real physiology to depart from it."
+    }
   ],
   "limits": "The law is an idealisation whose assumptions real physiology violates. It holds only for laminar, not turbulent, flow, so it fails in the aorta, at stenoses, and in fast catheter flow. It assumes a Newtonian fluid, whereas blood is non-Newtonian, with its apparent viscosity varying with shear and vessel size, as in the Fahraeus-Lindqvist effect. It assumes a rigid, straight, constant-radius tube, whereas blood vessels are elastic, tapering, curved, and branching, and it assumes steady flow, whereas blood flow is pulsatile. In physiology it is thus a qualitative guide that correctly captures the dominance of radius, not an exact predictor.",
   "misreadings": "Flow depends on the fourth power of radius, not the second: the most common error is to assume it scales with cross-sectional area, but the velocity itself also rises with radius, compounding the effect. The pressure term is a difference across the pipe, a gradient, not an absolute pressure, and the relevant viscosity is dynamic, not kinematic. And the law describes the volumetric flow rate, not the fluid velocity, which for a given pressure gradient scales only with the radius squared.",
   "origin": "Derived experimentally by the French physician Jean Leonard Marie Poiseuille around 1840, from his study of blood flow in narrow vessels, and independently by Gotthilf Hagen in 1839, hence the Hagen-Poiseuille equation; George Stokes gave the theoretical derivation in 1845.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1840,
   "namedAfter": "Jean Leonard Marie Poiseuille",
   "sources": [
-    {"text": "Hagen-Poiseuille equation, Wikipedia. — the flow equation, the r-to-the-fourth dependence, and the history.", "url": "https://en.wikipedia.org/wiki/Hagen%E2%80%93Poiseuille_equation", "type": "secondary"},
-    {"text": "Determinants of Resistance to Flow (Poiseuille's Equation), CV Physiology. — the resistance form and the sixteen-fold radius effect.", "url": "https://cvphysiology.com/hemodynamics/h003", "type": "secondary"}
+    {
+      "text": "Hagen-Poiseuille equation, Wikipedia. — the flow equation, the r-to-the-fourth dependence, and the history.",
+      "url": "https://en.wikipedia.org/wiki/Hagen%E2%80%93Poiseuille_equation",
+      "type": "secondary"
+    },
+    {
+      "text": "Determinants of Resistance to Flow (Poiseuille's Equation), CV Physiology. — the resistance form and the sixteen-fold radius effect.",
+      "url": "https://cvphysiology.com/hemodynamics/h003",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Hagen%E2%80%93Poiseuille_equation",
   "related": [
-    {"slug": "the-law-of-laplace", "kind": "kindred"}
+    {
+      "slug": "the-law-of-laplace",
+      "kind": "kindred"
+    }
   ]
 }

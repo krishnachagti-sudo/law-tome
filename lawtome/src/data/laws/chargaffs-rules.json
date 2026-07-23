@@ -2,7 +2,9 @@
   "no": "406",
   "slug": "chargaffs-rules",
   "name": "Chargaff's Rules",
-  "aliases": ["Chargaff's parity rules"],
+  "aliases": [
+    "Chargaff's parity rules"
+  ],
   "statement": "In DNA, adenine equals thymine and guanine equals cytosine.",
   "statementAccent": "adenine equals thymine",
   "meaning": "Chargaff's rules describe the base composition of DNA. The first and main rule states that in double-stranded DNA the amount of adenine equals the amount of thymine, and the amount of guanine equals the amount of cytosine, so the total purines equal the total pyrimidines. A second, approximate rule states that even within a single strand the amount of adenine roughly matches thymine and guanine roughly matches cytosine. The first rule was a key clue to the structure of DNA.",
@@ -33,24 +35,44 @@
   ],
   "whyItMatters": "It provided decisive evidence toward the structure of DNA: the equal amounts of adenine and thymine, and of guanine and cytosine, pointed directly to complementary base pairing, which Watson and Crick built into the double helix. By showing that base ratios vary between species while these equalities hold within each, Chargaff also demonstrated that DNA had the compositional variety needed to be the genetic material, refuting the view that it was too uniform.",
   "working": [
-    {"lead": "Use the first rule for double-stranded DNA", "text": "expect adenine to equal thymine and guanine to equal cytosine in duplex DNA, the exact and structurally grounded rule."},
-    {"lead": "Treat the second rule as approximate", "text": "apply single-strand parity loosely, since it is an empirical near-equality with known exceptions, not an exact law."},
-    {"lead": "Read pairing from the equalities", "text": "take the one-to-one ratios as the signature of complementary base pairing that shapes the double helix."}
+    {
+      "lead": "Use the first rule for double-stranded DNA",
+      "text": "expect adenine to equal thymine and guanine to equal cytosine in duplex DNA, the exact and structurally grounded rule."
+    },
+    {
+      "lead": "Treat the second rule as approximate",
+      "text": "apply single-strand parity loosely, since it is an empirical near-equality with known exceptions, not an exact law."
+    },
+    {
+      "lead": "Read pairing from the equalities",
+      "text": "take the one-to-one ratios as the signature of complementary base pairing that shapes the double helix."
+    }
   ],
   "limits": "The first rule holds for double-stranded DNA and does not apply to single-stranded DNA genomes or to RNA, which uses uracil. The second rule is approximate and breaks down for small organellar genomes such as mitochondria and plastids. Base composition, the balance of guanine and cytosine, varies widely between species even though the equalities hold within each. The first rule is essentially exact as a structural consequence of pairing, while the second is an empirical regularity whose full explanation is still debated.",
   "misreadings": "The rules do not mean all four bases are present in equal amounts; that was the discredited tetranucleotide idea, and Chargaff showed adenine equals thymine and guanine equals cytosine without the two pairs being equal to each other. The exact equalities are a property between the two strands, not within a single strand, where only the approximate second rule holds. And the rules apply to double-stranded DNA, not to single-stranded or RNA genomes.",
   "origin": "Established by the biochemist Erwin Chargaff around 1950, using paper chromatography, disproving Levene's tetranucleotide hypothesis and supplying key evidence for Watson and Crick's 1953 double-helix model.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1950,
   "namedAfter": "Erwin Chargaff",
   "sources": [
-    {"text": "Chargaff's rules, Wikipedia. — the two parity rules, the tetranucleotide disproof, and the role in the double-helix model.", "url": "https://en.wikipedia.org/wiki/Chargaff%27s_rules", "type": "secondary"},
-    {"text": "Erwin Chargaff, Wikipedia. — the chromatography method and the base-ratio findings.", "url": "https://en.wikipedia.org/wiki/Erwin_Chargaff", "type": "secondary"}
+    {
+      "text": "Chargaff's rules, Wikipedia. — the two parity rules, the tetranucleotide disproof, and the role in the double-helix model.",
+      "url": "https://en.wikipedia.org/wiki/Chargaff%27s_rules",
+      "type": "secondary"
+    },
+    {
+      "text": "Erwin Chargaff, Wikipedia. — the chromatography method and the base-ratio findings.",
+      "url": "https://en.wikipedia.org/wiki/Erwin_Chargaff",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Chargaff%27s_rules",
   "related": [
-    {"slug": "the-central-dogma-of-molecular-biology", "kind": "kindred"}
+    {
+      "slug": "the-central-dogma-of-molecular-biology",
+      "kind": "kindred"
+    }
   ]
 }

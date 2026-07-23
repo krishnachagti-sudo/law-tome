@@ -2,7 +2,10 @@
   "no": "331",
   "slug": "the-baldwin-effect",
   "name": "The Baldwin Effect",
-  "aliases": ["Organic selection", "Baldwinian evolution"],
+  "aliases": [
+    "Organic selection",
+    "Baldwinian evolution"
+  ],
   "statement": "What a species first learns to do, it may over generations be born able to do.",
   "statementAccent": "over generations be born able to do",
   "meaning": "The Baldwin effect proposes that a learned or plastic behaviour that improves fitness can, over generations, become genetically encoded and instinctive — through ordinary natural selection, without any Lamarckian inheritance of acquired traits. Learning and plasticity keep a lineage alive in new conditions long enough for genetic variants that produce the trait innately, more reliably or cheaply, to arise and be favoured. What is inherited is not the learned behaviour but a heightened capacity to develop it.",
@@ -33,25 +36,49 @@
   ],
   "whyItMatters": "It offers a Darwinian way for learning and behavioural flexibility to influence the course of genetic evolution, a bridge between what organisms do in their lifetimes and what their descendants inherit. Consistent with the modern synthesis yet reaching toward the extended evolutionary synthesis and niche construction, it remains a touchstone in debates over how plasticity shapes evolution.",
   "working": [
-    {"lead": "Read learning as a guide", "text": "treat plasticity and learning as changing the selective environment, which can steer genetic evolution toward innate versions of adaptive traits."},
-    {"lead": "Keep it non-Lamarckian", "text": "remember that nothing acquired is inherited; only heritable variation in the capacity to develop the trait is selected."},
-    {"lead": "Distinguish it from assimilation", "text": "separate the Baldwin effect from Waddington's genetic assimilation, a related mechanism that should not be conflated with it."}
+    {
+      "lead": "Read learning as a guide",
+      "text": "treat plasticity and learning as changing the selective environment, which can steer genetic evolution toward innate versions of adaptive traits."
+    },
+    {
+      "lead": "Keep it non-Lamarckian",
+      "text": "remember that nothing acquired is inherited; only heritable variation in the capacity to develop the trait is selected."
+    },
+    {
+      "lead": "Distinguish it from assimilation",
+      "text": "separate the Baldwin effect from Waddington's genetic assimilation, a related mechanism that should not be conflated with it."
+    }
   ],
   "limits": "The effect is theoretically accepted and consistent with Darwinism, but its real-world importance is genuinely contested. The most compelling demonstrations remain computational models and laboratory genetic-assimilation experiments rather than unambiguous cases in nature. Mayr objected that its classical framing focuses on individual genotypes rather than populations and underweights that plasticity is itself genetically controlled. Some argue it is nothing more than standard selection acting on plasticity, and that the speeding-up seen in models can be a computational illusion. Its prevalence and force in real evolution stay debated.",
   "misreadings": "The Baldwin effect is not Lamarckian — it involves no inheritance of acquired characteristics, only ordinary selection on genetic variation, with learning changing the selective environment. The learned behaviour itself does not become heritable; only the capacity or propensity to develop it does. And model-based speed-ups of evolution do not prove the effect is a major force in nature, a claim that remains disputed.",
   "origin": "Proposed by the psychologist James Mark Baldwin in 'A New Factor in Evolution' (American Naturalist, 1896), and independently by Conwy Lloyd Morgan and Henry Fairfield Osborn under the name organic selection; George Gaylord Simpson named it the Baldwin effect in 1953, and Waddington's genetic assimilation gave a related experimental mechanism.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Contested",
   "provenance": "canon",
   "coinedYear": 1896,
   "namedAfter": "James Mark Baldwin",
   "sources": [
-    {"text": "Baldwin effect, Wikipedia. — the statement, the 1896 origins, Simpson's naming, and the relation to genetic assimilation.", "url": "https://en.wikipedia.org/wiki/Baldwin_effect", "type": "secondary"},
-    {"text": "Hinton & Nowlan, \"How Learning Can Guide Evolution,\" Complex Systems 1(3):495-502 (1987). — the model showing learning accelerates evolution without inheriting the learned trait.", "url": "https://www.cs.toronto.edu/~hinton/absps/evolution.htm", "type": "primary"},
-    {"text": "Genetic assimilation, Wikipedia. — Waddington's crossveinless and bithorax experiments as a related demonstrated mechanism.", "url": "https://en.wikipedia.org/wiki/Genetic_assimilation", "type": "secondary"}
+    {
+      "text": "Baldwin effect, Wikipedia. — the statement, the 1896 origins, Simpson's naming, and the relation to genetic assimilation.",
+      "url": "https://en.wikipedia.org/wiki/Baldwin_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Hinton & Nowlan, \"How Learning Can Guide Evolution,\" Complex Systems 1(3):495-502 (1987). — the model showing learning accelerates evolution without inheriting the learned trait.",
+      "url": "https://www.cs.toronto.edu/~hinton/absps/evolution.htm",
+      "type": "primary"
+    },
+    {
+      "text": "Genetic assimilation, Wikipedia. — Waddington's crossveinless and bithorax experiments as a related demonstrated mechanism.",
+      "url": "https://en.wikipedia.org/wiki/Genetic_assimilation",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Baldwin_effect",
   "related": [
-    {"slug": "the-neutral-theory-of-molecular-evolution", "kind": "kindred"}
+    {
+      "slug": "the-neutral-theory-of-molecular-evolution",
+      "kind": "kindred"
+    }
   ]
 }

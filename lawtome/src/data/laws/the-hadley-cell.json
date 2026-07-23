@@ -52,7 +52,7 @@
   "limits": "The single-cell, symmetric picture is an idealisation. The real circulation is seasonal, since the rain belt and the cells migrate with the Sun and the winter-hemisphere cell is stronger and broader, and it is zonally asymmetric, modified by continents, oceans, and monsoons, so the zonal-mean cell is a statistical average rather than a literal ring. Evidence indicates the Hadley cells have been expanding poleward, on the order of a fraction of a degree of latitude per decade since about 1980 and larger in the Southern Hemisphere, linked in part to greenhouse gases, though exact rates and attribution remain debated.",
   "misreadings": "Hadley air does not rise at the equator and sink at the pole; it sinks in the subtropics near thirty degrees, and a single equator-to-pole cell is unstable on a rotating planet, which is why there are three cells per hemisphere. Hadley did not correctly derive the Coriolis effect; he anticipated it but used linear rather than angular momentum, underestimating the deflection about twofold. Halley was not simply wrong: he correctly identified solar heating, and Hadley added the rotational deflection needed for wind direction. And the cell boundaries are not fixed at exactly thirty and sixty degrees but shift seasonally and are moving poleward.",
   "origin": "Named after George Hadley, an English scientist trained in law, who in 1735 proposed the circulation to explain the trade winds in a paper to the Royal Society, improving on Edmond Halley's 1686 solar-heating account by invoking Earth's rotation.",
-  "category": "science",
+  "category": "earth-science",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1735,
@@ -71,6 +71,9 @@
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Hadley_cell",
   "related": [
-    {"slug": "coriolis-effect", "kind": "cause"}
+    {
+      "slug": "coriolis-effect",
+      "kind": "cause"
+    }
   ]
 }

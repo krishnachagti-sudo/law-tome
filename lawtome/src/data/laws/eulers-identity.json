@@ -32,24 +32,44 @@
   ],
   "whyItMatters": "It unites five fundamental constants — e, the imaginary unit i, pi, one, and zero — with the operations of addition, multiplication, and exponentiation, each appearing once, in a single compact equation. Beyond its celebrated elegance, Euler's formula is the workhorse that connects exponentials to trigonometry and underlies complex analysis, signal processing, and physics.",
   "working": [
-    {"lead": "See exponentials as rotations", "text": "read a complex exponential as a point on the unit circle, turning the algebra of exponentials into the geometry of rotation."},
-    {"lead": "Bridge exponentials and trig", "text": "use Euler's formula to convert between exponential and trigonometric forms, the basis of much of complex analysis."},
-    {"lead": "Work in radians", "text": "apply the formula with angles measured in radians, for which the series identity holds as written."}
+    {
+      "lead": "See exponentials as rotations",
+      "text": "read a complex exponential as a point on the unit circle, turning the algebra of exponentials into the geometry of rotation."
+    },
+    {
+      "lead": "Bridge exponentials and trig",
+      "text": "use Euler's formula to convert between exponential and trigonometric forms, the basis of much of complex analysis."
+    },
+    {
+      "lead": "Work in radians",
+      "text": "apply the formula with angles measured in radians, for which the series identity holds as written."
+    }
   ],
   "limits": "It is an exact mathematical identity, proven from the definitions of the exponential and trigonometric functions, so it has no empirical limits or error bars — its only requirement is that the angle be measured in radians. The frequent descriptions of it as the 'most beautiful' or 'most remarkable' equation are subjective aesthetic judgements from opinion polls, not mathematical facts, and should be attributed as such rather than stated as objective.",
   "misreadings": "The identity, e to the i pi plus one equals zero, is the special case at pi of Euler's general formula; the two are often conflated, and Feynman's 'jewel' praise was for the general formula, not the compact identity. And it is uncertain whether Euler ever wrote the compact five-constant form himself, though the formula is unquestionably his.",
   "origin": "Derived from Euler's formula, which Leonhard Euler published in his Introductio in analysin infinitorum (1748); Roger Cotes had given an equivalent logarithmic relation in 1714, and it is unknown who first stated the compact identity explicitly.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1748,
   "namedAfter": "Leonhard Euler",
   "sources": [
-    {"text": "Euler's identity, Wikipedia. — the identity, its five constants, the relation to Euler's formula, and the authorship uncertainty.", "url": "https://en.wikipedia.org/wiki/Euler%27s_identity", "type": "secondary"},
-    {"text": "Euler's formula, Wikipedia. — the general formula, its series proof, the Cotes precedent, and roots of unity.", "url": "https://en.wikipedia.org/wiki/Euler%27s_formula", "type": "secondary"}
+    {
+      "text": "Euler's identity, Wikipedia. — the identity, its five constants, the relation to Euler's formula, and the authorship uncertainty.",
+      "url": "https://en.wikipedia.org/wiki/Euler%27s_identity",
+      "type": "secondary"
+    },
+    {
+      "text": "Euler's formula, Wikipedia. — the general formula, its series proof, the Cotes precedent, and roots of unity.",
+      "url": "https://en.wikipedia.org/wiki/Euler%27s_formula",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Euler%27s_identity",
   "related": [
-    {"slug": "the-pythagorean-theorem", "kind": "kindred"}
+    {
+      "slug": "the-pythagorean-theorem",
+      "kind": "kindred"
+    }
   ]
 }

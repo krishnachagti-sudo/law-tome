@@ -2,7 +2,9 @@
   "no": "160",
   "slug": "le-chateliers-principle",
   "name": "Le Chatelier's Principle",
-  "aliases": ["The Le Chatelier–Braun principle"],
+  "aliases": [
+    "The Le Chatelier–Braun principle"
+  ],
   "statement": "A system at equilibrium, disturbed, shifts to partly counteract the disturbance.",
   "statementAccent": "shifts to partly counteract the disturbance",
   "meaning": "Disturb a balanced reaction — change a concentration, a pressure, or the temperature — and the equilibrium moves in the direction that partly undoes your change. It never fully cancels the disturbance, only reduces it, and it tells you the direction of the shift, not its size.",
@@ -33,25 +35,48 @@
   ],
   "whyItMatters": "It is the intuitive rule chemists reach for to predict how an equilibrium responds to a change, foundational to teaching and to industrial process design like the Haber–Bosch synthesis. Its documented failure cases also make it a good lesson in the gap between a useful heuristic and a rigorous law.",
   "working": [
-    {"lead": "Use it as a first guess for direction", "text": "predict the qualitative direction of a shift from a single-variable disturbance, then confirm with the reaction quotient for anything that matters."},
-    {"lead": "Watch the known exceptions", "text": "be wary of adding a high-mole-fraction reactant or an inert gas at constant volume, where the naive prediction can be wrong."},
-    {"lead": "Reach for Q versus K when it counts", "text": "for finite changes or multi-component systems, compare the reaction quotient to the equilibrium constant rather than trusting the heuristic."}
+    {
+      "lead": "Use it as a first guess for direction",
+      "text": "predict the qualitative direction of a shift from a single-variable disturbance, then confirm with the reaction quotient for anything that matters."
+    },
+    {
+      "lead": "Watch the known exceptions",
+      "text": "be wary of adding a high-mole-fraction reactant or an inert gas at constant volume, where the naive prediction can be wrong."
+    },
+    {
+      "lead": "Reach for Q versus K when it counts",
+      "text": "for finite changes or multi-component systems, compare the reaction quotient to the equilibrium constant rather than trusting the heuristic."
+    }
   ],
   "limits": "It is a qualitative heuristic, not a theorem, with documented failures. Adding an inert gas at constant volume leaves the partial pressures unchanged and shifts nothing, and adding a reactant already present in high mole fraction can shift a gas equilibrium the 'wrong' way. Chemistry educators note that applied to finite rather than infinitesimal changes it can mispredict pressure and temperature effects, and recommend the reaction-quotient analysis for rigour. It is a reliable directional first guess for small single-variable changes, unreliable beyond that.",
   "misreadings": "It does not fully cancel a disturbance — it only partly counteracts it — and it gives direction, never magnitude. Nor is it exception-free: the inert-gas and high-mole-fraction cases show it is a rule of thumb to be backed by the reaction quotient, not a law to be trusted blindly.",
   "origin": "Formulated by the French chemist Henry Louis Le Chatelier in 1884, extending reasoning from the temperature dependence of equilibria; Karl Ferdinand Braun reached it independently around 1887, hence the joint name.",
-  "category": "science",
+  "category": "chemistry",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": 1884,
   "namedAfter": "Henry Le Chatelier",
   "sources": [
-    {"text": "Le Chatelier's principle, Wikipedia. — the statement, the 1884/1887 origin, and the inert-gas exception.", "url": "https://en.wikipedia.org/wiki/Le_Chatelier%27s_principle", "type": "secondary"},
-    {"text": "\"Five ideas in chemical education that must die: Le Châtelier's principle,\" RSC Education. — the critique of its rigour and the wrong-way cases.", "url": "https://edu.rsc.org/opinion/five-ideas-in-chemical-education-that-must-die-le-chateliers-principle/2010035.article", "type": "secondary"}
+    {
+      "text": "Le Chatelier's principle, Wikipedia. — the statement, the 1884/1887 origin, and the inert-gas exception.",
+      "url": "https://en.wikipedia.org/wiki/Le_Chatelier%27s_principle",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Five ideas in chemical education that must die: Le Châtelier's principle,\" RSC Education. — the critique of its rigour and the wrong-way cases.",
+      "url": "https://edu.rsc.org/opinion/five-ideas-in-chemical-education-that-must-die-le-chateliers-principle/2010035.article",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Le_Chatelier%27s_principle",
   "related": [
-    {"slug": "arrhenius-equation", "kind": "kindred"},
-    {"slug": "nernst-equation", "kind": "kindred"}
+    {
+      "slug": "arrhenius-equation",
+      "kind": "kindred"
+    },
+    {
+      "slug": "nernst-equation",
+      "kind": "kindred"
+    }
   ]
 }

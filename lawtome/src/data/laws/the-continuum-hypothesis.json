@@ -2,7 +2,10 @@
   "no": "582",
   "slug": "the-continuum-hypothesis",
   "name": "The Continuum Hypothesis",
-  "aliases": ["CH", "Cantor's continuum problem"],
+  "aliases": [
+    "CH",
+    "Cantor's continuum problem"
+  ],
   "statement": "There is no size of infinity strictly between the counting numbers and the real number line.",
   "statementAccent": "no size of infinity strictly between",
   "meaning": "The continuum hypothesis conjectures that there is no set whose size is strictly between that of the integers and that of the real numbers. Cantor showed that infinities come in different sizes: the integers form the smallest infinite set, countable infinity, while the real numbers form a strictly larger infinity, the continuum. The hypothesis asserts that the continuum is the very next size up, with no intermediate infinity in between; in the language of cardinal numbers, two to the power of the countable infinity equals the first uncountable cardinal. Posed by Georg Cantor in the 1870s, it was the first of Hilbert's twenty-three problems, and its eventual resolution is one of the most philosophically startling episodes in the history of mathematics.",
@@ -33,23 +36,43 @@
   ],
   "whyItMatters": "The continuum hypothesis is a landmark in the foundations of mathematics because its independence proof showed that a precise, natural question about the infinite can be formally undecidable from the accepted axioms, a concrete realisation of the limits Godel's incompleteness theorems had signalled. Cohen's method of forcing, invented to settle it, became one of the most powerful tools in modern set theory, spawning a vast landscape of independence results. Philosophically, it forces a choice about what mathematical truth means: whether the hypothesis has a definite answer awaiting new axioms, or whether set-theoretic reality genuinely branches, a debate still alive among logicians.",
   "working": [
-    {"lead": "Rank the infinities", "text": "start from Cantor's result that the reals are strictly larger than the integers, then ask whether anything sits between them in size."},
-    {"lead": "Recognise independence", "text": "accept that the standard axioms neither prove nor refute the hypothesis, by Godel's 1940 and Cohen's 1963 results, so it is formally undecidable."},
-    {"lead": "Weigh new axioms", "text": "to give the question an answer, look to candidate extra axioms; without them the hypothesis has no truth value fixed by the usual set theory."}
+    {
+      "lead": "Rank the infinities",
+      "text": "start from Cantor's result that the reals are strictly larger than the integers, then ask whether anything sits between them in size."
+    },
+    {
+      "lead": "Recognise independence",
+      "text": "accept that the standard axioms neither prove nor refute the hypothesis, by Godel's 1940 and Cohen's 1963 results, so it is formally undecidable."
+    },
+    {
+      "lead": "Weigh new axioms",
+      "text": "to give the question an answer, look to candidate extra axioms; without them the hypothesis has no truth value fixed by the usual set theory."
+    }
   ],
   "limits": "The hypothesis is not false and not true within the standard axioms; it is independent, so any attempt to settle it from Zermelo-Fraenkel set theory with choice alone is doomed. Godel's and Cohen's results are relative consistency proofs assuming set theory itself is consistent, which cannot be proved from within by Godel's second incompleteness theorem. Whether the hypothesis has a real answer depends on one's philosophy of mathematics and on which further axioms, if any, one is willing to adopt, and no such axiom has won general acceptance, so the deeper question of its truth remains open even as its formal independence is settled.",
   "misreadings": "Independence does not mean the question is meaningless or that mathematicians simply gave up; it is a proved theorem that the axioms cannot decide it. It does not mean the hypothesis is false, nor that it is true, only that both it and its negation are consistent with the standard axioms. And Cantor's underlying result that the reals outnumber the integers is a proved theorem, not part of what is undecided; what is undecidable is solely whether an intermediate size of infinity can exist, not whether the two infinities differ.",
   "origin": "Formulated by Georg Cantor around 1878 as part of his theory of transfinite numbers, made the first of Hilbert's problems in 1900, and shown independent of the standard axioms of set theory by Kurt Godel in 1940 and Paul Cohen in 1963.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Contested",
   "provenance": "canon",
   "coinedYear": 1878,
   "sources": [
-    {"text": "Continuum hypothesis, Wikipedia. — the no-intermediate-cardinal statement, Cantor's origin, Hilbert's first problem, and the Godel 1940 and Cohen 1963 independence results.", "url": "https://en.wikipedia.org/wiki/Continuum_hypothesis", "type": "secondary"},
-    {"text": "Continuum Hypothesis, Wolfram MathWorld. — the cardinality statement and its independence from Zermelo-Fraenkel set theory.", "url": "https://mathworld.wolfram.com/ContinuumHypothesis.html", "type": "secondary"}
+    {
+      "text": "Continuum hypothesis, Wikipedia. — the no-intermediate-cardinal statement, Cantor's origin, Hilbert's first problem, and the Godel 1940 and Cohen 1963 independence results.",
+      "url": "https://en.wikipedia.org/wiki/Continuum_hypothesis",
+      "type": "secondary"
+    },
+    {
+      "text": "Continuum Hypothesis, Wolfram MathWorld. — the cardinality statement and its independence from Zermelo-Fraenkel set theory.",
+      "url": "https://mathworld.wolfram.com/ContinuumHypothesis.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Continuum_hypothesis",
   "related": [
-    {"slug": "cantors-theorem", "kind": "cause"}
+    {
+      "slug": "cantors-theorem",
+      "kind": "cause"
+    }
   ]
 }

@@ -2,7 +2,9 @@
   "no": "373",
   "slug": "verners-law",
   "name": "Verner's Law",
-  "aliases": ["Verner's exception"],
+  "aliases": [
+    "Verner's exception"
+  ],
   "statement": "Grimm's law's exceptions dissolve once you know where the ancient word-accent fell.",
   "statementAccent": "where the ancient word-accent fell",
   "meaning": "Verner's law explains a class of apparent exceptions to Grimm's law in the history of the Germanic languages. Grimm's law had turned certain Proto-Indo-European voiceless consonants into voiceless fricatives, but in some words the expected sound came out voiced instead, seemingly at random. Verner showed the difference was not random: the fricative became voiced when the original Indo-European word-accent did not fall on the immediately preceding syllable.",
@@ -33,24 +35,44 @@
   ],
   "whyItMatters": "It was a landmark for the Neogrammarian principle that sound changes are exceptionless once the right conditioning is found. By showing that Grimm's law's exceptions were themselves perfectly regular, governed by an accent no longer visible in Germanic, Verner's law vindicated the young science of historical linguistics and its faith in regular sound laws, and it remains a textbook demonstration of how apparent irregularity can hide a deeper rule.",
   "working": [
-    {"lead": "Look to the old accent", "text": "when a Germanic reflex seems to break Grimm's law, check where the Proto-Indo-European accent fell, using Sanskrit or Greek cognates."},
-    {"lead": "Expect voicing off the accent", "text": "predict a voiced fricative when the original accent was not on the immediately preceding syllable, voiceless when it was."},
-    {"lead": "Read alternations as history", "text": "treat grammatischer Wechsel within a word's forms as a record of the ancient shifting accent, not as noise."}
+    {
+      "lead": "Look to the old accent",
+      "text": "when a Germanic reflex seems to break Grimm's law, check where the Proto-Indo-European accent fell, using Sanskrit or Greek cognates."
+    },
+    {
+      "lead": "Expect voicing off the accent",
+      "text": "predict a voiced fricative when the original accent was not on the immediately preceding syllable, voiceless when it was."
+    },
+    {
+      "lead": "Read alternations as history",
+      "text": "treat grammatischer Wechsel within a word's forms as a record of the ancient shifting accent, not as noise."
+    }
   ],
   "limits": "It is a well-established, uncontroversial regular sound law of historical linguistics; what remains debated is fine chronology, including whether Verner's law strictly followed Grimm's law or interacted with it differently. Its scope covers not only the fricatives produced by Grimm's law but also inherited s, which became voiced z and often later r. Its conditioning is the ancient Indo-European mobile accent, not the fixed root-stress of later Germanic, whose shift is precisely what obscured the pattern.",
   "misreadings": "The conditioning accent is the old Proto-Indo-European one preserved in Sanskrit, not the later fixed Germanic stress; the Germanic stress shift hid the rule rather than causing it. The law is not limited to the consonants Grimm's law produced; it also voiced inherited s. And it is not a set of exceptions to be memorised but a regular law that rescued Grimm's law by explaining its apparent failures.",
   "origin": "Formulated by the Danish linguist Karl Verner, who set it out in 1875 in 'Eine Ausnahme der ersten Lautverschiebung' (An Exception to the First Sound Shift), published in 1876; it decisively supported the Neogrammarian view of exceptionless sound laws.",
-  "category": "science",
+  "category": "linguistics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1875,
   "namedAfter": "Karl Verner",
   "sources": [
-    {"text": "Verner's law, Wikipedia. — the accent conditioning, the voicing of Grimm's-law fricatives and inherited s, and grammatischer Wechsel.", "url": "https://en.wikipedia.org/wiki/Verner%27s_law", "type": "secondary"},
-    {"text": "Verner's law, Encyclopaedia Britannica. — the voicing of non-initial fricatives after an unaccented syllable.", "url": "https://www.britannica.com/topic/Verners-law", "type": "secondary"}
+    {
+      "text": "Verner's law, Wikipedia. — the accent conditioning, the voicing of Grimm's-law fricatives and inherited s, and grammatischer Wechsel.",
+      "url": "https://en.wikipedia.org/wiki/Verner%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Verner's law, Encyclopaedia Britannica. — the voicing of non-initial fricatives after an unaccented syllable.",
+      "url": "https://www.britannica.com/topic/Verners-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Verner%27s_law",
   "related": [
-    {"slug": "grimms-law", "kind": "kindred"}
+    {
+      "slug": "grimms-law",
+      "kind": "kindred"
+    }
   ]
 }

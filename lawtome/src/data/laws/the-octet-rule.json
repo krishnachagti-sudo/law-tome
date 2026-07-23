@@ -2,7 +2,9 @@
   "no": "278",
   "slug": "the-octet-rule",
   "name": "The Octet Rule",
-  "aliases": ["The rule of eight"],
+  "aliases": [
+    "The rule of eight"
+  ],
   "statement": "Atoms bond so as to surround themselves with eight valence electrons.",
   "statementAccent": "eight valence electrons",
   "meaning": "Main-group atoms tend to gain, lose, or share electrons until their outermost shell holds eight — the stable, closed-shell arrangement of a noble gas. It is the guiding heuristic behind Lewis structures: draw the bonds and lone pairs so that each atom, hydrogen aside, is ringed by an octet, and you usually capture how the molecule is really put together.",
@@ -33,25 +35,49 @@
   ],
   "whyItMatters": "It is the first organising idea of chemical bonding a student meets, and the backbone of Lewis structures, which remain the everyday language for sketching how atoms connect. For the second-period main-group elements at the heart of organic chemistry it works remarkably well, giving a quick, powerful guide to which molecules are plausible and how their electrons are arranged.",
   "working": [
-    {"lead": "Draw to the octet", "text": "when sketching a Lewis structure, arrange bonds and lone pairs so each main-group atom is surrounded by eight electrons, hydrogen by two."},
-    {"lead": "Expect the exceptions", "text": "treat it as a strong guideline, not a law, and watch for the electron-deficient, odd-electron, and hypervalent cases where it breaks."},
-    {"lead": "Don't reach for d-orbitals", "text": "explain apparent expanded octets by delocalised three-centre bonding, not the outdated notion of d-orbital hybridisation."}
+    {
+      "lead": "Draw to the octet",
+      "text": "when sketching a Lewis structure, arrange bonds and lone pairs so each main-group atom is surrounded by eight electrons, hydrogen by two."
+    },
+    {
+      "lead": "Expect the exceptions",
+      "text": "treat it as a strong guideline, not a law, and watch for the electron-deficient, odd-electron, and hypervalent cases where it breaks."
+    },
+    {
+      "lead": "Don't reach for d-orbitals",
+      "text": "explain apparent expanded octets by delocalised three-centre bonding, not the outdated notion of d-orbital hybridisation."
+    }
   ],
   "limits": "It is a heuristic with many known exceptions, not a fundamental law, and is most reliable for the second-period main-group elements. Some atoms are stable with fewer than eight, like boron in boron trifluoride and beryllium in beryllium chloride. Odd-electron molecules such as nitric oxide, nitrogen dioxide, and chlorine dioxide cannot give every atom an even octet. And heavier central atoms in molecules like sulfur hexafluoride and phosphorus pentachloride appear to exceed eight — long explained by d-orbital participation, an account now largely discredited by calculation and better described by three-centre bonding, so that the very notion of an expanded octet is contested.",
   "misreadings": "It is not a fundamental law but a useful rule of thumb riddled with exceptions. And the standard textbook story that d-orbitals let period-three atoms expand their octet is the most important thing to unlearn: modern computation finds d-orbital involvement small, and hypervalent bonding is better understood without it.",
   "origin": "Grew from Richard Abegg's 1904 rule of eight into Gilbert N. Lewis's electron-pair and cubical-atom theory in 'The Atom and the Molecule' (1916) and Walther Kossel's contemporaneous ionic account; Irving Langmuir systematised and named it, coining 'octet,' in 1919.",
-  "category": "science",
+  "category": "chemistry",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": 1919,
   "namedAfter": "Irving Langmuir",
   "sources": [
-    {"text": "Octet rule, Wikipedia. — the eight-valence-electron statement, the Abegg, Lewis, Kossel, and Langmuir attributions, and the incomplete, odd-electron, and expanded-octet exceptions.", "url": "https://en.wikipedia.org/wiki/Octet_rule", "type": "secondary"},
-    {"text": "Lewis, \"The Atom and the Molecule,\" J. Am. Chem. Soc. 38(4):762-785 (1916). — the shared electron-pair bond and the rule of eight.", "url": "https://pubs.acs.org/doi/10.1021/ja02261a002", "type": "primary"},
-    {"text": "Hypervalent molecule, Wikipedia. — the discrediting of d-orbital participation and the three-centre four-electron account of hypervalency.", "url": "https://en.wikipedia.org/wiki/Hypervalent_molecule", "type": "secondary"}
+    {
+      "text": "Octet rule, Wikipedia. — the eight-valence-electron statement, the Abegg, Lewis, Kossel, and Langmuir attributions, and the incomplete, odd-electron, and expanded-octet exceptions.",
+      "url": "https://en.wikipedia.org/wiki/Octet_rule",
+      "type": "secondary"
+    },
+    {
+      "text": "Lewis, \"The Atom and the Molecule,\" J. Am. Chem. Soc. 38(4):762-785 (1916). — the shared electron-pair bond and the rule of eight.",
+      "url": "https://pubs.acs.org/doi/10.1021/ja02261a002",
+      "type": "primary"
+    },
+    {
+      "text": "Hypervalent molecule, Wikipedia. — the discrediting of d-orbital participation and the three-centre four-electron account of hypervalency.",
+      "url": "https://en.wikipedia.org/wiki/Hypervalent_molecule",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Octet_rule",
   "related": [
-    {"slug": "the-aufbau-principle", "kind": "kindred"}
+    {
+      "slug": "the-aufbau-principle",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,11 @@
   "no": "475",
   "slug": "starlings-principle",
   "name": "Starling's Principle",
-  "aliases": ["The Starling equation", "Starling forces", "Capillary fluid exchange"],
+  "aliases": [
+    "The Starling equation",
+    "Starling forces",
+    "Capillary fluid exchange"
+  ],
   "statement": "Fluid crosses a capillary wall according to the balance of hydrostatic and oncotic pressures.",
   "statementAccent": "the balance of hydrostatic and oncotic pressures",
   "meaning": "Starling's principle states that the movement of fluid across a capillary wall is governed by the balance between hydrostatic pressures, which push fluid out, and colloid osmotic or oncotic pressures, from plasma proteins, which hold fluid in. Net filtration equals the difference between the hydrostatic pressure gradient and the oncotic pressure gradient across the wall, scaled by the wall's water permeability and a reflection coefficient for protein. It governs capillary fluid exchange, and is distinct from the Frank-Starling law of the heart, which concerns stroke volume, though both carry Starling's name.",
@@ -33,24 +37,44 @@
   ],
   "whyItMatters": "It is the framework for understanding tissue fluid balance and therefore edema, whether from heart failure, low albumin, inflammation, or venous obstruction. It guides intravenous fluid therapy, since the revised principle reshapes how crystalloids and colloids are expected to distribute and how effectively colloids expand plasma volume. And by identifying the glycocalyx as the barrier, it makes protecting that fragile layer, degraded in sepsis and surgery, a therapeutic target for preventing capillary leak.",
   "working": [
-    {"lead": "Balance the four forces", "text": "compute net filtration as the hydrostatic push out against the oncotic pull in, scaled by the wall's permeability and protein reflection."},
-    {"lead": "Locate the barrier", "text": "in the revised model, treat the glycocalyx as the semipermeable layer and the oncotic gradient across it, not across the whole wall, as the one that counts."},
-    {"lead": "Return fluid by lymph", "text": "expect most tissues to filter along the whole capillary and clear the surplus through lymphatics, rather than reabsorbing it at the venules."}
+    {
+      "lead": "Balance the four forces",
+      "text": "compute net filtration as the hydrostatic push out against the oncotic pull in, scaled by the wall's permeability and protein reflection."
+    },
+    {
+      "lead": "Locate the barrier",
+      "text": "in the revised model, treat the glycocalyx as the semipermeable layer and the oncotic gradient across it, not across the whole wall, as the one that counts."
+    },
+    {
+      "lead": "Return fluid by lymph",
+      "text": "expect most tissues to filter along the whole capillary and clear the surplus through lymphatics, rather than reabsorbing it at the venules."
+    }
   ],
   "limits": "The classic equation is not wrong about the four forces and their directions, but the modern revision changes which oncotic gradient matters and the steady-state behaviour. The endothelial glycocalyx, not the whole wall, is the barrier, so the effective oncotic pressure opposing filtration is the local sub-glycocalyx gradient, and interstitial oncotic pressure has much less effect than the classic term implies. In most tissues there is low-level filtration along the whole capillary and no sustained venular reabsorption, with fluid returning by lymph. Numeric values for the pressures are tissue-specific, and the canonical figures are idealisations.",
   "misreadings": "Fluid does not, in most tissues, filter at the arterial end and get reabsorbed at the venous end in steady state; there is net filtration along the whole capillary with lymphatic return, and reabsorption is at most transient. The gradient that matters is across the glycocalyx, between plasma and the protein-poor space beneath it, so bulk interstitial protein pulls far less than the classic term suggests. Intravenous colloids do not stay purely intravascular and reliably double plasma volume; their retention depends on an intact glycocalyx. And this is not the Frank-Starling law of the heart, an unrelated mechanism.",
   "origin": "Proposed by the English physiologist Ernest Starling in his 1896 paper 'On the absorption of fluids from the connective tissue spaces'; the equation was formalised later, and the glycocalyx-based revised principle was developed by Levick, Michel, and colleagues around 2004 to 2012.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1896,
   "namedAfter": "Ernest Starling",
   "sources": [
-    {"text": "Levick, 'Revision of the Starling principle: new views of tissue fluid balance,' Journal of Physiology 557 (2004). — the glycocalyx model and the no-absorption rule.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1665155/", "type": "primary"},
-    {"text": "Levick and Michel, 'Microvascular fluid exchange and the revised Starling principle,' Cardiovascular Research 87 (2010): 198-210. — the four forces and the revised steady state.", "url": "https://academic.oup.com/cardiovascres/article/87/2/198/442215", "type": "primary"}
+    {
+      "text": "Levick, 'Revision of the Starling principle: new views of tissue fluid balance,' Journal of Physiology 557 (2004). — the glycocalyx model and the no-absorption rule.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1665155/",
+      "type": "primary"
+    },
+    {
+      "text": "Levick and Michel, 'Microvascular fluid exchange and the revised Starling principle,' Cardiovascular Research 87 (2010): 198-210. — the four forces and the revised steady state.",
+      "url": "https://academic.oup.com/cardiovascres/article/87/2/198/442215",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Starling_equation",
   "related": [
-    {"slug": "the-frank-starling-law", "kind": "kindred"}
+    {
+      "slug": "the-frank-starling-law",
+      "kind": "kindred"
+    }
   ]
 }

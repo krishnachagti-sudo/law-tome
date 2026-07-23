@@ -2,7 +2,10 @@
   "no": "455",
   "slug": "the-faint-young-sun-paradox",
   "name": "The Faint Young Sun Paradox",
-  "aliases": ["The faint young Sun problem", "The Sagan-Mullen paradox"],
+  "aliases": [
+    "The faint young Sun problem",
+    "The Sagan-Mullen paradox"
+  ],
   "statement": "The early Sun was far dimmer, yet the young Earth had liquid water instead of being frozen solid.",
   "statementAccent": "far dimmer, yet the young Earth had liquid water",
   "meaning": "The faint young Sun paradox is the apparent contradiction between two well-supported bodies of evidence. Standard solar models say the Sun's luminosity has risen steadily over its lifetime, so at its formation it radiated only about seventy percent of its present output and remained well below it through the early Earth. With so dim a Sun and today's atmosphere, simple radiative balance predicts the young Earth should have been frozen solid. Yet the geological record shows abundant liquid water, and life, billions of years ago. That mismatch is the paradox.",
@@ -33,24 +36,44 @@
   ],
   "whyItMatters": "It shapes our understanding of early Earth's climate and the setting in which life arose and survived through the Archean. It shows that habitability depends not just on stellar output but on atmospheric composition, albedo, and biological feedbacks, coupling climate and biosphere. And because all main-sequence stars brighten with age, so their habitable zones migrate outward, the paradox is the Solar System's local case study for a general rule: judging a planet's long-term habitability means modelling its star's evolving luminosity together with its atmosphere, not a single snapshot.",
   "working": [
-    {"lead": "Hold both facts", "text": "keep the well-grounded faintness of the young Sun and the geological evidence of early liquid water together, since their tension is the paradox."},
-    {"lead": "Look to the atmosphere", "text": "seek the resolution in a stronger early greenhouse or lower albedo, not in doubting the solar model."},
-    {"lead": "Mind the proxy conflict", "text": "weigh the geochemical limits on early carbon dioxide, which sit in tension with what the climate models need."}
+    {
+      "lead": "Hold both facts",
+      "text": "keep the well-grounded faintness of the young Sun and the geological evidence of early liquid water together, since their tension is the paradox."
+    },
+    {
+      "lead": "Look to the atmosphere",
+      "text": "seek the resolution in a stronger early greenhouse or lower albedo, not in doubting the solar model."
+    },
+    {
+      "lead": "Mind the proxy conflict",
+      "text": "weigh the geochemical limits on early carbon dioxide, which sit in tension with what the climate models need."
+    }
   ],
   "limits": "The paradox itself is well-established, but its resolution is genuinely open. Competing greenhouse models, carbon dioxide versus methane versus combinations and collision-induced absorption, albedo-reduction models, and minor solar-mass-loss models each have supporters and problems. Geochemical proxies from paleosols and banded iron formations constrain, and in places contradict, the leading carbon-dioxide models, with one prominent analysis capping Archean carbon dioxide about ten times below what temperate-climate models require. The luminosity figures are model-derived, and reviews acknowledge that researchers may be missing something fundamental, so no single resolution is settled.",
   "misreadings": "It does not mean the standard solar model is wrong; the fainter young Sun is a prediction of that well-tested model, and the paradox is about reconciling it with Earth's climate, not doubting stellar physics. The Sun was not cooler because it started cold and warmed like a stove; the change is slowly rising fusion-driven luminosity. It has not been solved by high carbon dioxide alone, which is in tension with the proxies. Ammonia was Sagan and Mullen's original proposal but is not the accepted answer. And the young Sun was about seventy percent as bright, not half.",
   "origin": "Posed by Carl Sagan and George Mullen in their 1972 Science paper 'Earth and Mars: Evolution of Atmospheres and Surface Temperatures', which framed the problem and proposed an ammonia greenhouse; the resolution remains an active research question.",
-  "category": "science",
+  "category": "astronomy",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1972,
   "namedAfter": "Carl Sagan and George Mullen",
   "sources": [
-    {"text": "Sagan and Mullen, 'Earth and Mars: Evolution of Atmospheres and Surface Temperatures,' Science 177(4043) (1972): 52-56. — the original statement of the paradox.", "url": "https://www.science.org/doi/10.1126/science.177.4043.52", "type": "primary"},
-    {"text": "Feulner, 'The faint young Sun problem,' Reviews of Geophysics (2012). — the luminosity history, the proposed resolutions, and the proxy tension.", "url": "https://arxiv.org/pdf/1204.4449", "type": "secondary"}
+    {
+      "text": "Sagan and Mullen, 'Earth and Mars: Evolution of Atmospheres and Surface Temperatures,' Science 177(4043) (1972): 52-56. — the original statement of the paradox.",
+      "url": "https://www.science.org/doi/10.1126/science.177.4043.52",
+      "type": "primary"
+    },
+    {
+      "text": "Feulner, 'The faint young Sun problem,' Reviews of Geophysics (2012). — the luminosity history, the proposed resolutions, and the proxy tension.",
+      "url": "https://arxiv.org/pdf/1204.4449",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Faint_young_Sun_paradox",
   "related": [
-    {"slug": "the-gaia-hypothesis", "kind": "kindred"}
+    {
+      "slug": "the-gaia-hypothesis",
+      "kind": "kindred"
+    }
   ]
 }

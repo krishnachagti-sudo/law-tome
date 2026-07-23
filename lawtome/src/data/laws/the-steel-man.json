@@ -2,7 +2,11 @@
   "no": "766",
   "slug": "the-steel-man",
   "name": "The Steel Man",
-  "aliases": ["Steelmanning", "Steelman argument", "The steelman"],
+  "aliases": [
+    "Steelmanning",
+    "Steelman argument",
+    "The steelman"
+  ],
   "statement": "Before you refute an argument, rebuild it into the strongest version its holder could give.",
   "statementAccent": "rebuild it into the strongest version its holder could give",
   "meaning": "A steel man argument, or steelmanning, is the practice of addressing the strongest possible form of an opponent's argument, even a form stronger than the one they actually presented, rather than a weakened version. It is the deliberate opposite of the straw man, the fallacy of attacking a distorted, feeble caricature of a position. To steelman is to reconstruct the other side's case in its most defensible, most persuasive shape, repairing obvious slips and supplying the best available support, and only then to respond to it. The term is a self-conscious play on straw man: steel is strong where straw is weak. It applies the rhetorical principle of charity to argument, and it is prized as a virtue of good-faith debate. If you can defeat the strongest version of a view, your refutation is far more convincing than if you had merely knocked down a caricature; and if you cannot, you have learned something worth knowing.",
@@ -33,25 +37,48 @@
   ],
   "whyItMatters": "Steelmanning has become a widely invoked norm of good-faith argument and critical thinking, a vivid counterpart to the straw man fallacy that everyone is warned against. Its value is both epistemic and ethical. Epistemically, engaging the strongest form of an opposing view guards against confirmation bias, forces one to find better reasons, and makes any resulting refutation genuinely decisive rather than a hollow victory over a caricature. Ethically, it embodies respect for one's interlocutor and for the process of reasoning, treating disagreement as a search for the truth rather than a contest to be won by distortion. Popularised in rationalist and online discourse in the early 2010s, the term gave a memorable name to a practice long implicit in the philosophical principle of charity. Even its critics, who warn that it can slide into misrepresenting what someone actually meant, testify to its influence as a touchstone for how to argue well and honestly.",
   "working": [
-    {"lead": "Reconstruct the strongest form", "text": "restate the opponent's argument in its most defensible version, repairing weak points and adding the best available support."},
-    {"lead": "Confirm it is faithful", "text": "aim for a version the holder would recognise and endorse, so the exercise engages their real position rather than a substitute."},
-    {"lead": "Then respond", "text": "direct criticism at this strongest form, so that a successful refutation is decisive and a failed one teaches you something."}
+    {
+      "lead": "Reconstruct the strongest form",
+      "text": "restate the opponent's argument in its most defensible version, repairing weak points and adding the best available support."
+    },
+    {
+      "lead": "Confirm it is faithful",
+      "text": "aim for a version the holder would recognise and endorse, so the exercise engages their real position rather than a substitute."
+    },
+    {
+      "lead": "Then respond",
+      "text": "direct criticism at this strongest form, so that a successful refutation is decisive and a failed one teaches you something."
+    }
   ],
   "limits": "Steelmanning is a norm of good argument, not an unqualified good, and it carries a real tension. By constructing a version stronger than the one actually presented, it can drift into misrepresenting the person's genuine position, attributing to them reasoning they never offered, which is a distortion in the opposite direction from the straw man. Critics, including the statistician Andrew Gelman, argue that bending over backward to one viewpoint can implicitly dismiss others, that steelmanning can be condescending, and that it can be used to avoid engaging with what someone really said. Its relation to the principle of charity is close but debated, since charity aims at fidelity to what was meant while steelmanning may go beyond it. The term is modern and informal, popularised online in the 2010s, and its exact coinage is uncertain. So steelmanning is a valuable discipline for honest debate, best used to strengthen without silently substituting a different argument for the one a person actually holds.",
   "misreadings": "Steelmanning does not mean agreeing with an opponent or conceding their case; it means engaging its strongest form before judging it, and one can steelman a view and still reject it. It is not merely restating an argument politely, but reconstructing it at its most defensible. And it is not automatically virtuous, since improving on what someone said can misrepresent what they actually meant, so treating steelmanning as endorsement, or as a licence to replace a person's argument with a better one they never made, misreads a practice meant to make criticism fair and decisive rather than to distort or to dodge.",
   "origin": "A modern, informal term coined as the inverse of straw man and popularised in rationalist and online discourse in the early 2010s (dated to around 2011, with LessWrong among its early homes); an application of the older philosophical principle of charity.",
-  "category": "philosophy",
+  "category": "logic",
   "reliability": "Heuristic",
   "provenance": "canon",
   "coinedYear": 2011,
   "namedAfter": null,
   "sources": [
-    {"text": "Straw man, Wikipedia (Steelmanning section). — the steel man as the opposite of the straw man, defined as applying the rhetorical principle of charity by addressing the strongest form of the other person's argument, and the rationale that countering the strongest form yields a stronger position.", "url": "https://en.wikipedia.org/wiki/Straw_man", "type": "secondary"},
-    {"text": "steelman, Wiktionary. — the definition and etymology of steelman as a deliberate inverse of straw man, an improvement of a position that is harder to defeat than the one originally stated, with a 2011 origin noted.", "url": "https://en.wiktionary.org/wiki/steelman", "type": "secondary"}
+    {
+      "text": "Straw man, Wikipedia (Steelmanning section). — the steel man as the opposite of the straw man, defined as applying the rhetorical principle of charity by addressing the strongest form of the other person's argument, and the rationale that countering the strongest form yields a stronger position.",
+      "url": "https://en.wikipedia.org/wiki/Straw_man",
+      "type": "secondary"
+    },
+    {
+      "text": "steelman, Wiktionary. — the definition and etymology of steelman as a deliberate inverse of straw man, an improvement of a position that is harder to defeat than the one originally stated, with a 2011 origin noted.",
+      "url": "https://en.wiktionary.org/wiki/steelman",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Straw_man",
   "related": [
-    {"slug": "the-principle-of-charity", "kind": "kindred"},
-    {"slug": "the-straw-man", "kind": "tension"}
+    {
+      "slug": "the-principle-of-charity",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-straw-man",
+      "kind": "tension"
+    }
   ]
 }

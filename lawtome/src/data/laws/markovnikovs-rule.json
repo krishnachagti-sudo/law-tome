@@ -32,24 +32,44 @@
   ],
   "whyItMatters": "It is one of the first predictive rules of organic chemistry, letting a chemist foresee the major product of adding an acid to an alkene, and its explanation is a cornerstone lesson in how carbocation stability governs reactions. Just as instructive is its exception: the peroxide effect that reverses it was a landmark in the discovery of radical chain mechanisms.",
   "working": [
-    {"lead": "Follow the stable cation", "text": "to predict the product, protonate the double bond the way that gives the more substituted, more stable carbocation, then place the halide there."},
-    {"lead": "Watch for peroxides", "text": "with hydrogen bromide, check for radical initiators; peroxides flip the outcome to the anti-Markovnikov product."},
-    {"lead": "Reach for hydroboration to reverse it", "text": "when you want the anti-Markovnikov alcohol, use hydroboration-oxidation, which places the hydroxyl on the less substituted carbon."}
+    {
+      "lead": "Follow the stable cation",
+      "text": "to predict the product, protonate the double bond the way that gives the more substituted, more stable carbocation, then place the halide there."
+    },
+    {
+      "lead": "Watch for peroxides",
+      "text": "with hydrogen bromide, check for radical initiators; peroxides flip the outcome to the anti-Markovnikov product."
+    },
+    {
+      "lead": "Reach for hydroboration to reverse it",
+      "text": "when you want the anti-Markovnikov alcohol, use hydroboration-oxidation, which places the hydroxyl on the less substituted carbon."
+    }
   ],
   "limits": "It is an empirical regioselectivity rule for ionic, carbocation-mediated addition to simple alkenes, not a universal law. It is reversed by radical conditions: the peroxide effect gives anti-Markovnikov addition, but only for hydrogen bromide — not hydrogen chloride, fluoride, or iodide, whose bond energies make the radical chain unfavourable. Non-carbocation mechanisms such as hydroboration follow their own regiochemistry. And it can mislead where carbocations rearrange to more stable isomers, or where electron-withdrawing substituents invert the expected charge stabilisation. Markovnikov himself, working before electronic theory, could state the pattern but not explain it.",
   "misreadings": "The rule that hydrogen goes to the carbon with more hydrogens is the observation, not the reason; the real driver is the stability of the carbocation intermediate, and the hydrogen-count phrasing is a shortcut that happens to agree. And an anti-Markovnikov result does not mean the rule is wrong — it means a different mechanism, radical or concerted, is at work, each following its own consistent logic.",
   "origin": "Stated by the Russian chemist Vladimir Markovnikov in 1870, in a German-language paper drawn from his work on isomeric butyric acids; sometimes spelled Markownikoff in older literature. Its carbocation basis was worked out over the following decades, and Kharasch and Mayo identified the reversing peroxide effect in 1933.",
-  "category": "science",
+  "category": "chemistry",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1870,
   "namedAfter": "Vladimir Markovnikov",
   "sources": [
-    {"text": "Markovnikov's rule, Wikipedia. — the regiochemistry statement, the carbocation mechanism, the 1870 origin, and the anti-Markovnikov exceptions.", "url": "https://en.wikipedia.org/wiki/Markovnikov's_rule", "type": "secondary"},
-    {"text": "Kharasch & Mayo, \"The Peroxide Effect in the Addition of Reagents to Unsaturated Compounds. I,\" J. Am. Chem. Soc. 55(6):2468-2496 (1933). — the peroxide effect reversing hydrogen bromide addition.", "url": "https://pubs.acs.org/doi/10.1021/ja01333a041", "type": "primary"}
+    {
+      "text": "Markovnikov's rule, Wikipedia. — the regiochemistry statement, the carbocation mechanism, the 1870 origin, and the anti-Markovnikov exceptions.",
+      "url": "https://en.wikipedia.org/wiki/Markovnikov's_rule",
+      "type": "secondary"
+    },
+    {
+      "text": "Kharasch & Mayo, \"The Peroxide Effect in the Addition of Reagents to Unsaturated Compounds. I,\" J. Am. Chem. Soc. 55(6):2468-2496 (1933). — the peroxide effect reversing hydrogen bromide addition.",
+      "url": "https://pubs.acs.org/doi/10.1021/ja01333a041",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Markovnikov's_rule",
   "related": [
-    {"slug": "the-octet-rule", "kind": "kindred"}
+    {
+      "slug": "the-octet-rule",
+      "kind": "kindred"
+    }
   ]
 }

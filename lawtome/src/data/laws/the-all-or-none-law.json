@@ -32,24 +32,44 @@
   ],
   "whyItMatters": "It is a foundational principle of neurophysiology, establishing that the nerve impulse is a discrete, uniform signal rather than a graded one. It shapes how the nervous system must encode the strength of a stimulus — through timing and numbers rather than amplitude — and underlies the digital character of neural communication.",
   "working": [
-    {"lead": "Read the spike as a switch", "text": "treat a fibre's action potential as all-or-nothing, carrying no information in its size about how strong the stimulus was."},
-    {"lead": "Find intensity in frequency", "text": "look for stimulus strength in how fast a fibre fires and how many fibres are recruited, not in spike amplitude."},
-    {"lead": "Distinguish graded potentials", "text": "keep receptor and synaptic potentials, which are graded, separate from the all-or-none propagated action potential."}
+    {
+      "lead": "Read the spike as a switch",
+      "text": "treat a fibre's action potential as all-or-nothing, carrying no information in its size about how strong the stimulus was."
+    },
+    {
+      "lead": "Find intensity in frequency",
+      "text": "look for stimulus strength in how fast a fibre fires and how many fibres are recruited, not in spike amplitude."
+    },
+    {
+      "lead": "Distinguish graded potentials",
+      "text": "keep receptor and synaptic potentials, which are graded, separate from the all-or-none propagated action potential."
+    }
   ],
   "limits": "It applies to the propagated action potential of a single fibre, and to cardiac muscle as an electrically coupled syncytium. It does not apply to graded local potentials — receptor, synaptic, and end-plate potentials — which vary continuously with the stimulus and decay with distance. Whole nerves and skeletal muscles give graded output precisely because stronger stimuli recruit more fibres, each still obeying the law individually. And the fixed amplitude holds for a constant physiological state: fatigue, temperature, and the relative refractory period can alter the size of the maximal response.",
   "misreadings": "It does not mean whole muscles or nerves respond all-or-nothing — those give graded output by recruiting more fibres. And it does not apply to graded receptor or synaptic potentials, which genuinely vary in size; the law is specifically about the single fibre's propagated action potential.",
   "origin": "First stated by Henry Pickering Bowditch for heart muscle in 1871; extended to skeletal muscle by Keith Lucas around 1905-1909 and to nerve by Edgar Adrian in the following years.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1871,
   "namedAfter": "Henry Pickering Bowditch",
   "sources": [
-    {"text": "All-or-none law, Wikipedia. — the full-or-nothing statement, the regenerative mechanism, and the Bowditch, Lucas, and Adrian history.", "url": "https://en.wikipedia.org/wiki/All-or-none_law", "type": "secondary"},
-    {"text": "\"All-or-none law,\" Encyclopaedia Britannica. — the principle, Bowditch's cardiac origin, and the dependence on tissue condition.", "url": "https://www.britannica.com/science/all-or-none-law", "type": "secondary"}
+    {
+      "text": "All-or-none law, Wikipedia. — the full-or-nothing statement, the regenerative mechanism, and the Bowditch, Lucas, and Adrian history.",
+      "url": "https://en.wikipedia.org/wiki/All-or-none_law",
+      "type": "secondary"
+    },
+    {
+      "text": "\"All-or-none law,\" Encyclopaedia Britannica. — the principle, Bowditch's cardiac origin, and the dependence on tissue condition.",
+      "url": "https://www.britannica.com/science/all-or-none-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/All-or-none_law",
   "related": [
-    {"slug": "nernst-equation", "kind": "kindred"}
+    {
+      "slug": "nernst-equation",
+      "kind": "kindred"
+    }
   ]
 }

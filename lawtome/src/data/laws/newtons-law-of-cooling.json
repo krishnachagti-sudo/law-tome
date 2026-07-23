@@ -32,24 +32,44 @@
   ],
   "whyItMatters": "It is the simplest usable model of how things cool, good enough for coffee, forensics, and countless engineering estimates, and a standard first encounter with exponential decay in physics. Its narrow domain — small differences, convective transfer — also teaches when a tidy linear law must give way to the nonlinear truth.",
   "working": [
-    {"lead": "Use it for modest temperature gaps", "text": "the linear approximation is best when the difference is small and heat leaves by convection; apply it there and expect a clean exponential."},
-    {"lead": "Switch models for hot bodies", "text": "when radiation dominates, use the Stefan–Boltzmann fourth-power law instead, since cooling is then far steeper than linear."},
-    {"lead": "Check the body is uniform", "text": "the law assumes one internal temperature, valid for small or well-conducting objects; large or insulating bodies develop internal gradients it ignores."}
+    {
+      "lead": "Use it for modest temperature gaps",
+      "text": "the linear approximation is best when the difference is small and heat leaves by convection; apply it there and expect a clean exponential."
+    },
+    {
+      "lead": "Switch models for hot bodies",
+      "text": "when radiation dominates, use the Stefan–Boltzmann fourth-power law instead, since cooling is then far steeper than linear."
+    },
+    {
+      "lead": "Check the body is uniform",
+      "text": "the law assumes one internal temperature, valid for small or well-conducting objects; large or insulating bodies develop internal gradients it ignores."
+    }
   ],
   "limits": "It is an empirical approximation, not a fundamental law. It holds best for forced convection and modest temperature differences, where the heat-transfer coefficient is roughly constant, and fails for large differences, where natural convection and radiation grow nonlinearly — radiative loss follows the fourth power of absolute temperature. It also assumes a uniform internal temperature, valid only for small or well-conducting bodies. It is superseded by the heat equation for conduction and the Stefan–Boltzmann law for radiation when those regimes matter.",
   "misreadings": "It is not exact and not universal — for hot, radiation-dominated bodies the true cooling is much steeper than linear. Even the clean 'rate proportional to the difference' statement is a later reconstruction: Newton's 1701 paper was chiefly about building a temperature scale, and the modern form was distilled from it afterward.",
   "origin": "Published anonymously by Isaac Newton in 1701 as 'Scala graduum caloris' in the Royal Society's Philosophical Transactions, primarily to establish a temperature scale. The clean 'rate proportional to temperature difference' statement now attached to his name is a later reconstruction of his remarks.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1701,
   "namedAfter": "Isaac Newton",
   "sources": [
-    {"text": "Newton's law of cooling, Wikipedia. — the statement, the exponential-decay solution, and the small-difference/convection limits.", "url": "https://en.wikipedia.org/wiki/Newton%27s_law_of_cooling", "type": "secondary"},
-    {"text": "Stefan–Boltzmann law, Wikipedia. — the fourth-power radiative contrast that bounds Newton's linear law.", "url": "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law", "type": "secondary"}
+    {
+      "text": "Newton's law of cooling, Wikipedia. — the statement, the exponential-decay solution, and the small-difference/convection limits.",
+      "url": "https://en.wikipedia.org/wiki/Newton%27s_law_of_cooling",
+      "type": "secondary"
+    },
+    {
+      "text": "Stefan–Boltzmann law, Wikipedia. — the fourth-power radiative contrast that bounds Newton's linear law.",
+      "url": "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Newton%27s_law_of_cooling",
   "related": [
-    {"slug": "keplers-laws-of-planetary-motion", "kind": "kindred"}
+    {
+      "slug": "keplers-laws-of-planetary-motion",
+      "kind": "kindred"
+    }
   ]
 }

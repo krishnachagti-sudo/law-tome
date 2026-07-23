@@ -2,7 +2,9 @@
   "no": "477",
   "slug": "the-bohr-effect",
   "name": "The Bohr Effect",
-  "aliases": ["The Bohr shift"],
+  "aliases": [
+    "The Bohr shift"
+  ],
   "statement": "Acid and carbon dioxide make hemoglobin release oxygen, unloading it where tissues need it most.",
   "statementAccent": "make hemoglobin release oxygen",
   "meaning": "The Bohr effect is the phenomenon by which hemoglobin's oxygen-binding affinity falls as acidity, that is hydrogen-ion concentration, rises and as carbon dioxide rises. An increase in carbon dioxide or a decrease in pH causes hemoglobin to release oxygen more readily, shifting the oxygen-hemoglobin dissociation curve to the right. The relationship is reciprocal: just as acid and carbon dioxide promote oxygen release, oxygenation of hemoglobin promotes the release of acid and carbon dioxide. It is an elegant, self-regulating system for delivering oxygen where it is most needed.",
@@ -33,25 +35,48 @@
   ],
   "whyItMatters": "It is central to oxygen delivery, exercise physiology, and respiratory physiology, ensuring that oxygen supply is matched to demand: tissues that are working hard, and so producing acid and carbon dioxide, automatically receive more oxygen. It underlies fetal oxygenation across the placenta and has clinical relevance in ventilation, anaesthesia, and acid-base disturbances, where acidosis and alkalosis shift the curve and alter how much oxygen the blood gives up to the tissues.",
   "working": [
-    {"lead": "Read acid as a release signal", "text": "expect rising carbon dioxide and falling pH to lower hemoglobin's oxygen affinity and unload oxygen in the tissues."},
-    {"lead": "Reverse it in the lungs", "text": "expect low carbon dioxide and higher pH there to raise affinity and favour oxygen loading."},
-    {"lead": "Pair it with the Haldane effect", "text": "treat oxygen unloading in tissues and carbon dioxide pickup as linked, two sides of the same allosteric coupling."}
+    {
+      "lead": "Read acid as a release signal",
+      "text": "expect rising carbon dioxide and falling pH to lower hemoglobin's oxygen affinity and unload oxygen in the tissues."
+    },
+    {
+      "lead": "Reverse it in the lungs",
+      "text": "expect low carbon dioxide and higher pH there to raise affinity and favour oxygen loading."
+    },
+    {
+      "lead": "Pair it with the Haldane effect",
+      "text": "treat oxygen unloading in tissues and carbon dioxide pickup as linked, two sides of the same allosteric coupling."
+    }
   ],
   "limits": "The Bohr effect is one of several modulators of the dissociation curve: 2,3-bisphosphoglycerate and temperature also shift it and are conceptually separate from the classic carbon-dioxide and pH effect, though often discussed together. It requires allosteric, multi-subunit hemoglobin, so monomeric myoglobin does not show it. It is a shift in affinity along a continuous sigmoidal curve, not an all-or-nothing switch. And extreme or pathological derangements of pH or carbon dioxide can compromise oxygen loading in the lungs, so the benefit is not unlimited.",
   "misreadings": "The effect is named for Christian Bohr, the physiologist, not his son Niels Bohr, the physicist. It should not be confused with the Haldane effect: the Bohr effect is the influence of carbon dioxide and acid on oxygen binding, while the Haldane effect is the influence of oxygen on carbon dioxide carriage. And it is not synonymous with the general shifts caused by 2,3-bisphosphoglycerate or temperature, which are separate modulators of the same curve.",
   "origin": "Described by the Danish physiologist Christian Bohr, working with Karl Hasselbalch and August Krogh, in 1904, from studies of how the carbon-dioxide tension of blood affects its oxygen binding.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1904,
   "namedAfter": "Christian Bohr",
   "sources": [
-    {"text": "Physiology, Bohr Effect, StatPearls (NCBI Bookshelf). — the affinity shift, its allosteric mechanism, and P50.", "url": "https://www.ncbi.nlm.nih.gov/books/NBK526028/", "type": "secondary"},
-    {"text": "Bohr, Hasselbalch, and Krogh (1904), English translation. — the original description of the carbon-dioxide influence on oxygen binding.", "url": "https://www1.udel.edu/chem/white/C342/Bohr(1904).html", "type": "primary"}
+    {
+      "text": "Physiology, Bohr Effect, StatPearls (NCBI Bookshelf). — the affinity shift, its allosteric mechanism, and P50.",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK526028/",
+      "type": "secondary"
+    },
+    {
+      "text": "Bohr, Hasselbalch, and Krogh (1904), English translation. — the original description of the carbon-dioxide influence on oxygen binding.",
+      "url": "https://www1.udel.edu/chem/white/C342/Bohr(1904).html",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Bohr_effect",
   "related": [
-    {"slug": "the-haldane-effect", "kind": "kindred"},
-    {"slug": "the-oxygen-hemoglobin-dissociation-curve", "kind": "cause"}
+    {
+      "slug": "the-haldane-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-oxygen-hemoglobin-dissociation-curve",
+      "kind": "cause"
+    }
   ]
 }

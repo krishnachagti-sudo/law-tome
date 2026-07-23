@@ -2,7 +2,10 @@
   "no": "365",
   "slug": "torricellis-law",
   "name": "Torricelli's Law",
-  "aliases": ["Torricelli's theorem", "Torricelli's principle"],
+  "aliases": [
+    "Torricelli's theorem",
+    "Torricelli's principle"
+  ],
   "statement": "Fluid escapes a hole at the speed it would reach falling from the surface above it.",
   "statementAccent": "the speed it would reach falling",
   "meaning": "Torricelli's law gives the speed of fluid draining from an opening in a tank under gravity. That speed equals the speed a body would gain by falling freely through the height of the fluid surface above the hole, so it is the square root of two times gravity times that height. A deeper hole, with more liquid above it, produces a faster jet, and as the tank empties and the level drops, the jet slows.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "It is the foundational result for efflux — how fast and how much fluid leaves an opening — used in hydraulics, tank and spillway design, and any estimate of draining or leaking. Simple and memorable, it captures the essential physics of gravity-driven outflow, and its idealised form is the baseline that engineering corrections refine.",
   "working": [
-    {"lead": "Measure height to the hole", "text": "use the vertical distance from the free surface down to the orifice, not the total tank height or the size of the hole."},
-    {"lead": "Expect the jet to slow", "text": "remember the speed falls as the level drops, so draining is not at a constant rate."},
-    {"lead": "Correct for real orifices", "text": "multiply the ideal flow by a discharge coefficient to account for the vena contracta and viscosity in practice."}
+    {
+      "lead": "Measure height to the hole",
+      "text": "use the vertical distance from the free surface down to the orifice, not the total tank height or the size of the hole."
+    },
+    {
+      "lead": "Expect the jet to slow",
+      "text": "remember the speed falls as the level drops, so draining is not at a constant rate."
+    },
+    {
+      "lead": "Correct for real orifices",
+      "text": "multiply the ideal flow by a discharge coefficient to account for the vena contracta and viscosity in practice."
+    }
   ],
   "limits": "It is an idealisation, a special case of Bernoulli's principle, assuming an inviscid, incompressible fluid, atmospheric pressure on both the surface and the jet, and a tank much wider than the hole so the surface velocity is negligible. Real orifices fall short: the jet contracts past a sharp edge, the vena contracta, so the true flow is the ideal reduced by a discharge coefficient, and viscosity slows the efflux further. The law gives the ideal speed, not directly the real volumetric flow rate, which depends on the effective opening.",
   "misreadings": "The height in the formula is the depth of the surface above the hole, not the tank's full height or the size of the opening. The ideal speed depends only on that height and gravity, not on the fluid's density or the hole's area, which instead affect the flow rate and draining time. And the formula gives the ideal efflux speed; the actual discharge is smaller because of the vena contracta and viscosity.",
   "origin": "Stated by the Italian physicist Evangelista Torricelli in 1643, in his work on the motion of fluids appended to 'Opera Geometrica' (1644); Torricelli, who also invented the barometer, was an assistant and follower of Galileo in Galileo's final months.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1643,
   "namedAfter": "Evangelista Torricelli",
   "sources": [
-    {"text": "Torricelli's law, Wikipedia. — the v equals square-root of 2gh statement, the Bernoulli derivation, and the vena-contracta discharge coefficient.", "url": "https://en.wikipedia.org/wiki/Torricelli%27s_law", "type": "secondary"},
-    {"text": "Torricelli's law, Encyclopaedia Britannica. — the efflux speed and its equality with free-fall from the surface height.", "url": "https://www.britannica.com/science/Torricellis-law", "type": "secondary"}
+    {
+      "text": "Torricelli's law, Wikipedia. — the v equals square-root of 2gh statement, the Bernoulli derivation, and the vena-contracta discharge coefficient.",
+      "url": "https://en.wikipedia.org/wiki/Torricelli%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Torricelli's law, Encyclopaedia Britannica. — the efflux speed and its equality with free-fall from the surface height.",
+      "url": "https://www.britannica.com/science/Torricellis-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Torricelli%27s_law",
   "related": [
-    {"slug": "bernoullis-principle", "kind": "cause"},
-    {"slug": "the-hagen-poiseuille-equation", "kind": "kindred"}
+    {
+      "slug": "bernoullis-principle",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-hagen-poiseuille-equation",
+      "kind": "kindred"
+    }
   ]
 }

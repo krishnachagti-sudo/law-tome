@@ -2,7 +2,10 @@
   "no": "587",
   "slug": "fermats-last-theorem",
   "name": "Fermat's Last Theorem",
-  "aliases": ["Fermat's conjecture", "FLT"],
+  "aliases": [
+    "Fermat's conjecture",
+    "FLT"
+  ],
   "statement": "No three positive whole numbers can satisfy a to the n plus b to the n equals c to the n for any power above two.",
   "statementAccent": "for any power above two",
   "meaning": "Fermat's Last Theorem states that no three positive integers a, b, and c can satisfy the equation a to the power n plus b to the power n equals c to the power n whenever the exponent n is an integer greater than two. For the exponent two the equation is just the Pythagorean relation, which has infinitely many whole-number solutions, the Pythagorean triples like three, four, five. Fermat's claim is that this abundance vanishes the moment the power exceeds two: no solutions exist at all. Scrawled by Pierre de Fermat around 1637 in the margin of a book, alongside the tantalising note that he had a marvellous proof too large to fit, it became the most famous unsolved problem in mathematics, resisting proof for over three hundred and fifty years.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "Fermat's Last Theorem is the most celebrated problem in the history of mathematics, a deceptively simple statement whose three-and-a-half-century resistance drove the development of algebraic number theory, from Kummer's ideal numbers to the modern machinery of elliptic curves, modular forms, and Galois representations. Wiles's 1995 proof is a landmark of twentieth-century mathematics, uniting fields that had seemed distant and vindicating decades of work on the modularity conjecture. Wiles received the Abel Prize in 2016 for the achievement. The saga is also a lesson in mathematical humility, since Fermat's own claimed proof was almost certainly mistaken, given that the eventual proof used tools centuries beyond his reach.",
   "working": [
-    {"lead": "Feel the contrast with Pythagoras", "text": "note that the exponent two has infinitely many whole-number solutions, so the theorem's content is that raising the power to three or more kills them all."},
-    {"lead": "Reduce to primes and four", "text": "recognise it suffices to prove the theorem for the exponent four and for each odd prime, since every other exponent reduces to these."},
-    {"lead": "Route through elliptic curves", "text": "understand the modern proof indirectly: a hypothetical solution would yield a non-modular elliptic curve, which Wiles showed cannot exist."}
+    {
+      "lead": "Feel the contrast with Pythagoras",
+      "text": "note that the exponent two has infinitely many whole-number solutions, so the theorem's content is that raising the power to three or more kills them all."
+    },
+    {
+      "lead": "Reduce to primes and four",
+      "text": "recognise it suffices to prove the theorem for the exponent four and for each odd prime, since every other exponent reduces to these."
+    },
+    {
+      "lead": "Route through elliptic curves",
+      "text": "understand the modern proof indirectly: a hypothetical solution would yield a non-modular elliptic curve, which Wiles showed cannot exist."
+    }
   ],
   "limits": "The theorem is specific to exponents greater than two and to positive integers; the exponent two has infinitely many solutions, and allowing zero or non-integer values changes everything. Fermat's own marginal claim of a proof is not part of the established result and is generally regarded as unfounded, since no elementary proof is known and the accepted proof relies on twentieth-century mathematics far beyond his tools. The proof, while complete and checked, is long and highly technical, so the theorem is easy to state but understood in full by relatively few, and it settles a single equation rather than a broad family, its depth lying in the methods it required.",
   "misreadings": "The theorem is not that the equation never balances for any exponent; for the power two it has infinitely many solutions, the Pythagorean triples, and the claim is only about powers above two. Fermat almost certainly did not possess a valid general proof, so his margin note is a historical curiosity, not evidence. And Wiles's proof does not exhibit or rule out particular numbers by search; it argues indirectly that any solution would contradict the modularity of elliptic curves, an impossibility, so the theorem holds for all exponents above two at once.",
   "origin": "Conjectured by Pierre de Fermat around 1637 in a margin of Diophantus's Arithmetica, with special cases proved over centuries by Fermat, Euler, Germain, Dirichlet, and Kummer, and finally proved in full by Andrew Wiles, with Richard Taylor, in work published in 1995.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1637,
   "namedAfter": "Pierre de Fermat",
   "sources": [
-    {"text": "Fermat's Last Theorem, Wikipedia. — the statement for exponents above two, the 1637 margin note, the case-by-case history, and Wiles's 1993-1995 modularity proof with Taylor.", "url": "https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem", "type": "secondary"},
-    {"text": "Fermat's last theorem, MacTutor History of Mathematics Archive. — the marginal claim, Euler's cube case, and the long road to Wiles's proof.", "url": "https://mathshistory.st-andrews.ac.uk/HistTopics/Fermats_last_theorem/", "type": "secondary"}
+    {
+      "text": "Fermat's Last Theorem, Wikipedia. — the statement for exponents above two, the 1637 margin note, the case-by-case history, and Wiles's 1993-1995 modularity proof with Taylor.",
+      "url": "https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Fermat's last theorem, MacTutor History of Mathematics Archive. — the marginal claim, Euler's cube case, and the long road to Wiles's proof.",
+      "url": "https://mathshistory.st-andrews.ac.uk/HistTopics/Fermats_last_theorem/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem",
   "related": [
-    {"slug": "the-pythagorean-theorem", "kind": "tension"},
-    {"slug": "fermats-little-theorem", "kind": "kindred"}
+    {
+      "slug": "the-pythagorean-theorem",
+      "kind": "tension"
+    },
+    {
+      "slug": "fermats-little-theorem",
+      "kind": "kindred"
+    }
   ]
 }

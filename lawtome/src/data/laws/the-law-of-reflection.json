@@ -32,24 +32,51 @@
   ],
   "whyItMatters": "It is the founding rule of geometric optics for reflected light, the basis of every mirror, periscope, and reflecting telescope, and one half of the pair with refraction that governs how light behaves at surfaces. Simple as it looks, it follows from the deepest principles in optics — Fermat's least time and Maxwell's equations — making it a bridge from everyday mirrors to fundamental physics.",
   "working": [
-    {"lead": "Measure from the normal", "text": "take both angles from the perpendicular to the surface, not from the surface itself, when applying the law."},
-    {"lead": "Track the local normal", "text": "on a rough surface, apply the law microfacet by microfacet, using the local normal, to understand diffuse scattering."},
-    {"lead": "Separate direction from amount", "text": "use the law for where the light goes, and the Fresnel equations for how much reflects versus refracts."}
+    {
+      "lead": "Measure from the normal",
+      "text": "take both angles from the perpendicular to the surface, not from the surface itself, when applying the law."
+    },
+    {
+      "lead": "Track the local normal",
+      "text": "on a rough surface, apply the law microfacet by microfacet, using the local normal, to understand diffuse scattering."
+    },
+    {
+      "lead": "Separate direction from amount",
+      "text": "use the law for where the light goes, and the Fresnel equations for how much reflects versus refracts."
+    }
   ],
   "limits": "It is a ray-optics idealisation, exact only where the wavelength is negligible compared with surface features. When roughness is comparable to the wavelength, scattering and diffraction take over, and a surface smooth for radio waves can be rough for visible light. The law says only where light goes, not how much: the reflected fraction is governed by the Fresnel equations and depends on angle, polarisation, and the media. For a periodic surface like a diffraction grating, interference produces multiple orders rather than a single mirror beam.",
   "misreadings": "The angles are measured from the normal, not from the surface — the single commonest error. A rough surface does not violate the law: it holds locally on each microfacet, and the scattering comes from the varying local normals, not any breakdown of the rule. And the law is purely geometric; how much light actually reflects is a separate matter set by the Fresnel equations.",
   "origin": "Known to antiquity, stated in the Catoptrics traditionally ascribed to Euclid around 300 BC and derived by Hero of Alexandria from a shortest-path principle; given a deeper basis by Fermat's principle of least time in the seventeenth century and by Maxwell's electromagnetism in the nineteenth.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "sources": [
-    {"text": "Law of reflection, Encyclopaedia Britannica. — the equal-angle and coplanarity conditions and the Hero and Fermat history.", "url": "https://www.britannica.com/science/law-of-reflection", "type": "secondary"},
-    {"text": "The Law of Reflection, OpenStax College Physics (LibreTexts). — the statement measured from the normal and the ray-optics treatment.", "url": "https://phys.libretexts.org/Bookshelves/College_Physics/College_Physics_1e_(OpenStax)/25:_Geometric_Optics/25.02:_The_Law_of_Reflection", "type": "secondary"},
-    {"text": "Specular vs. Diffuse Reflection, The Physics Classroom. — how the law holds locally on the microfacets of a rough surface.", "url": "https://www.physicsclassroom.com/class/refln/lesson-1/specular-vs-diffuse-reflection", "type": "secondary"}
+    {
+      "text": "Law of reflection, Encyclopaedia Britannica. — the equal-angle and coplanarity conditions and the Hero and Fermat history.",
+      "url": "https://www.britannica.com/science/law-of-reflection",
+      "type": "secondary"
+    },
+    {
+      "text": "The Law of Reflection, OpenStax College Physics (LibreTexts). — the statement measured from the normal and the ray-optics treatment.",
+      "url": "https://phys.libretexts.org/Bookshelves/College_Physics/College_Physics_1e_(OpenStax)/25:_Geometric_Optics/25.02:_The_Law_of_Reflection",
+      "type": "secondary"
+    },
+    {
+      "text": "Specular vs. Diffuse Reflection, The Physics Classroom. — how the law holds locally on the microfacets of a rough surface.",
+      "url": "https://www.physicsclassroom.com/class/refln/lesson-1/specular-vs-diffuse-reflection",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Reflection_(physics)",
   "related": [
-    {"slug": "snells-law", "kind": "kindred"},
-    {"slug": "huygens-principle", "kind": "cause"}
+    {
+      "slug": "snells-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "huygens-principle",
+      "kind": "cause"
+    }
   ]
 }

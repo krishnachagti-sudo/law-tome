@@ -2,7 +2,10 @@
   "no": "416",
   "slug": "the-lock-and-key-model",
   "name": "The Lock-and-Key Model",
-  "aliases": ["Fischer's lock and key", "The key-lock principle"],
+  "aliases": [
+    "Fischer's lock and key",
+    "The key-lock principle"
+  ],
   "statement": "An enzyme fits its substrate like a lock fits one specific key.",
   "statementAccent": "like a lock fits one specific key",
   "meaning": "The lock-and-key model explains enzyme specificity by picturing the enzyme's active site as a rigid pocket precisely complementary in shape and chemistry to a specific substrate. Only a substrate of the matching shape fits, just as only the correctly cut key fits a given lock, so each enzyme acts on only one or a few substrates. It was the first influential account of how enzymes recognise the molecules they work on, though it has since been refined.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "It was the first influential model of enzyme specificity and molecular recognition, explaining the observations of its era and remaining the accepted picture for some sixty years. It is still taught as an introduction to how enzymes recognise substrates, and its core idea of complementary fit reaches across biochemistry to receptors, antibodies, and drug design, making it a foundational, if simplified, concept in the life sciences.",
   "working": [
-    {"lead": "Explain specificity by fit", "text": "account for why an enzyme acts on only certain substrates by the complementary shape and chemistry of its active site."},
-    {"lead": "Treat it as a first approximation", "text": "use lock and key as an introductory picture, then reach for induced fit for how enzymes actually grip and catalyse."},
-    {"lead": "Think transition state, not just substrate", "text": "remember enzymes are best matched to the reaction's transition state, which the rigid model does not capture."}
+    {
+      "lead": "Explain specificity by fit",
+      "text": "account for why an enzyme acts on only certain substrates by the complementary shape and chemistry of its active site."
+    },
+    {
+      "lead": "Treat it as a first approximation",
+      "text": "use lock and key as an introductory picture, then reach for induced fit for how enzymes actually grip and catalyse."
+    },
+    {
+      "lead": "Think transition state, not just substrate",
+      "text": "remember enzymes are best matched to the reaction's transition state, which the rigid model does not capture."
+    }
   ],
   "limits": "The strict lock-and-key model was superseded in its rigid form by the induced-fit model, in which the active site is flexible and changes shape on binding. The assumption of a rigid site is unrealistic, and it fails to explain catalysis, the conformational changes enzymes undergo, and why some molecules bind without reacting. Induced fit, together with conformational selection and protein dynamics, is the fuller, currently accepted picture, so lock and key is a useful but incomplete first approximation.",
   "misreadings": "Enzyme active sites are not rigid; they are flexible and often change shape on binding, as the induced-fit model showed. Lock and key is not the current model of enzyme action but a historical first approximation refined by induced fit and conformational dynamics. And perfect fit to the resting substrate is not what makes enzymes efficient; they are better understood as complementary to the reaction's transition state.",
   "origin": "Proposed by the chemist Emil Fischer in 1894, from his work on the stereochemistry of enzyme action on sugars; it was refined by Daniel Koshland's induced-fit model in 1958.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1894,
   "namedAfter": "Emil Fischer",
   "sources": [
-    {"text": "Fischer, \"Einfluss der Configuration auf die Wirkung der Enzyme,\" Berichte der deutschen chemischen Gesellschaft 27 (1894): 2985-2993. — the original lock-and-key analogy.", "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cber.18940270364", "type": "primary"},
-    {"text": "Enzyme catalysis, Wikipedia. — enzyme specificity, the lock-and-key model, and its supersession by induced fit.", "url": "https://en.wikipedia.org/wiki/Enzyme_catalysis", "type": "secondary"}
+    {
+      "text": "Fischer, \"Einfluss der Configuration auf die Wirkung der Enzyme,\" Berichte der deutschen chemischen Gesellschaft 27 (1894): 2985-2993. — the original lock-and-key analogy.",
+      "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cber.18940270364",
+      "type": "primary"
+    },
+    {
+      "text": "Enzyme catalysis, Wikipedia. — enzyme specificity, the lock-and-key model, and its supersession by induced fit.",
+      "url": "https://en.wikipedia.org/wiki/Enzyme_catalysis",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Enzyme_catalysis",
   "related": [
-    {"slug": "michaelis-menten-kinetics", "kind": "kindred"},
-    {"slug": "the-one-gene-one-enzyme-hypothesis", "kind": "kindred"}
+    {
+      "slug": "michaelis-menten-kinetics",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-one-gene-one-enzyme-hypothesis",
+      "kind": "kindred"
+    }
   ]
 }

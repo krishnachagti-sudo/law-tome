@@ -32,26 +32,53 @@
   ],
   "whyItMatters": "It was pivotal evidence for the quantum nature of light and a turning point in the birth of quantum theory; Einstein's explanation of it, not his relativity, is what his Nobel Prize named. Beyond history, it underlies photodetectors, spectroscopy, and imaging, and it remains the textbook demonstration that energy at the atomic scale is exchanged in discrete quanta.",
   "working": [
-    {"lead": "Raise frequency, not brightness", "text": "to eject electrons or give them more energy, increase the light's frequency; a brighter beam of the same colour only yields more of them."},
-    {"lead": "Read the work function", "text": "find a material's threshold from its work function, the least energy needed to free an electron, and remember it shifts with surface condition."},
-    {"lead": "Distinguish the photovoltaic cousin", "text": "do not conflate the effect with the photovoltaic process of solar cells, which is related but works differently."}
+    {
+      "lead": "Raise frequency, not brightness",
+      "text": "to eject electrons or give them more energy, increase the light's frequency; a brighter beam of the same colour only yields more of them."
+    },
+    {
+      "lead": "Read the work function",
+      "text": "find a material's threshold from its work function, the least energy needed to free an electron, and remember it shifts with surface condition."
+    },
+    {
+      "lead": "Distinguish the photovoltaic cousin",
+      "text": "do not conflate the effect with the photovoltaic process of solar cells, which is related but works differently."
+    }
   ],
   "limits": "Einstein's simple equation and the sharp threshold describe the regime of one photon per electron, valid when the intensity is not too high; at laser intensities multiphoton absorption breaks the threshold picture. The work function depends on the material and is sensitive to surface condition, so oxide layers, contamination, and crystal face all shift it — a persistent source of experimental scatter. And the effect is popularly overcredited as proof that light is quantised: semiclassical theories that quantise the electron while treating the field as a classical wave can reproduce its main features, and the decisive evidence for photons comes instead from photon-correlation experiments.",
   "misreadings": "Brighter light does not give the electrons more energy — it gives more electrons, each with the same maximum energy; only higher frequency raises that energy. And Einstein won his Nobel Prize for explaining this effect, not for relativity. The claim that the effect proves the photon is overstated: it motivated the idea powerfully but is not by itself airtight.",
   "origin": "First noticed by Heinrich Hertz in 1887 and studied quantitatively by Philipp Lenard; explained by Albert Einstein in 1905 with the light-quantum hypothesis and the equation relating electron energy to frequency, confirmed by Robert Millikan around 1916, and recognised by the Nobel Prize designated for 1921.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1905,
   "namedAfter": "Albert Einstein",
   "sources": [
-    {"text": "Photoelectric effect, Wikipedia. — the threshold, instantaneous emission, and frequency-dependence facts, Einstein's photon equation, and the history from Hertz to Millikan.", "url": "https://en.wikipedia.org/wiki/Photoelectric_effect", "type": "secondary"},
-    {"text": "The Nobel Prize in Physics 1921, NobelPrize.org. — Einstein's award for the discovery of the law of the photoelectric effect.", "url": "https://www.nobelprize.org/prizes/physics/1921/summary/", "type": "secondary"},
-    {"text": "Millikan's Measurement of Planck's Constant, APS Physics. — Millikan's confirmation of the frequency relation and determination of Planck's constant despite his doubts.", "url": "https://physics.aps.org/story/v3/st23", "type": "secondary"}
+    {
+      "text": "Photoelectric effect, Wikipedia. — the threshold, instantaneous emission, and frequency-dependence facts, Einstein's photon equation, and the history from Hertz to Millikan.",
+      "url": "https://en.wikipedia.org/wiki/Photoelectric_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "The Nobel Prize in Physics 1921, NobelPrize.org. — Einstein's award for the discovery of the law of the photoelectric effect.",
+      "url": "https://www.nobelprize.org/prizes/physics/1921/summary/",
+      "type": "secondary"
+    },
+    {
+      "text": "Millikan's Measurement of Planck's Constant, APS Physics. — Millikan's confirmation of the frequency relation and determination of Planck's constant despite his doubts.",
+      "url": "https://physics.aps.org/story/v3/st23",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Photoelectric_effect",
   "related": [
-    {"slug": "the-de-broglie-hypothesis", "kind": "kindred"},
-    {"slug": "heisenbergs-uncertainty-principle", "kind": "kindred"}
+    {
+      "slug": "the-de-broglie-hypothesis",
+      "kind": "kindred"
+    },
+    {
+      "slug": "heisenbergs-uncertainty-principle",
+      "kind": "kindred"
+    }
   ]
 }

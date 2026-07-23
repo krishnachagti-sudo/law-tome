@@ -2,7 +2,9 @@
   "no": "122",
   "slug": "copes-rule",
   "name": "Cope's Rule",
-  "aliases": ["The Cope–Depéret rule"],
+  "aliases": [
+    "The Cope–Depéret rule"
+  ],
   "statement": "Lineages tend to evolve toward larger body size over geological time.",
   "statementAccent": "toward larger body size",
   "meaning": "Over long stretches of the fossil record, many animal lineages appear to trend toward larger average body size — descendants tend to be bigger than their ancestors. It is a proposed macroevolutionary generalisation, not a strict law, and it holds in some lineages while failing in others.",
@@ -33,26 +35,53 @@
   ],
   "whyItMatters": "It is one of the classic named generalisations about the direction of macroevolution, and a useful lens on why so many familiar lineages produced ever-larger forms. Its contested status — real in some clades, absent or reversed in others, possibly a statistical artefact — makes it a standing case study in how to test a macroevolutionary 'rule'.",
   "working": [
-    {"lead": "Treat it as a tendency, not a trajectory", "text": "expect size increase in some lineages and not others; do not assume any given lineage must grow over time."},
-    {"lead": "Ask whether the trend is active or passive", "text": "before invoking selection for largeness, check whether the pattern could be passive diffusion from a small-size boundary."},
-    {"lead": "Beware the tidy example", "text": "the horse-lineage story is a simplification of a branching history; use it to illustrate, not to prove, the rule."}
+    {
+      "lead": "Treat it as a tendency, not a trajectory",
+      "text": "expect size increase in some lineages and not others; do not assume any given lineage must grow over time."
+    },
+    {
+      "lead": "Ask whether the trend is active or passive",
+      "text": "before invoking selection for largeness, check whether the pattern could be passive diffusion from a small-size boundary."
+    },
+    {
+      "lead": "Beware the tidy example",
+      "text": "the horse-lineage story is a simplification of a branching history; use it to illustrate, not to prove, the rule."
+    }
   ],
   "limits": "The rule is empirically contested and does not hold universally: many lineages show no size trend or actively shrink. A major critique holds that the apparent trend is a passive statistical artefact — diffusion away from a small ancestral size against a lower boundary — rather than active selection, with Gould calling it a 'psychological artefact'. Dwarfing may also be hidden by preservation and observational biases. The evidence is genuinely mixed, confirmed in some clades and reversed in others.",
   "misreadings": "It is not a law that animals always get bigger, and it was not stated as a rule by Cope himself — the name was applied posthumously, and the concept was also advocated by Depéret. The tidy horse example flattens a branching, non-monotonic history, and the whole pattern may partly reflect statistics rather than a drive toward largeness.",
   "origin": "Named for the American palaeontologist Edward Drinker Cope (1840–1897), who favoured directional evolutionary trends, though he did not formulate it as a rule; the name is generally attributed to Bernhard Rensch around 1948, and the French palaeontologist Charles Depéret advanced the same idea, hence the 'Cope–Depéret rule'.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Contested",
   "provenance": "canon",
   "coinedYear": 1948,
   "namedAfter": "Edward Drinker Cope",
   "sources": [
-    {"text": "Cope's rule, Wikipedia. — the generalisation, the proposed advantages, and the contested empirical status.", "url": "https://en.wikipedia.org/wiki/Cope's_rule", "type": "secondary"},
-    {"text": "Stanley, S.M. (1973). \"An Explanation for Cope's Rule.\" Evolution, 27(1), 1–26. — the passive-diffusion argument.", "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1558-5646.1973.tb05912.x", "type": "primary"},
-    {"text": "Jablonski, D. (1997). \"Body-size evolution in Cretaceous molluscs and the status of Cope's rule.\" Nature, 385, 250–252.", "url": "https://www.nature.com/articles/385250a0", "type": "primary"}
+    {
+      "text": "Cope's rule, Wikipedia. — the generalisation, the proposed advantages, and the contested empirical status.",
+      "url": "https://en.wikipedia.org/wiki/Cope's_rule",
+      "type": "secondary"
+    },
+    {
+      "text": "Stanley, S.M. (1973). \"An Explanation for Cope's Rule.\" Evolution, 27(1), 1–26. — the passive-diffusion argument.",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1558-5646.1973.tb05912.x",
+      "type": "primary"
+    },
+    {
+      "text": "Jablonski, D. (1997). \"Body-size evolution in Cretaceous molluscs and the status of Cope's rule.\" Nature, 385, 250–252.",
+      "url": "https://www.nature.com/articles/385250a0",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Cope's_rule",
   "related": [
-    {"slug": "dollos-law", "kind": "kindred"},
-    {"slug": "bergmanns-rule", "kind": "kindred"}
+    {
+      "slug": "dollos-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "bergmanns-rule",
+      "kind": "kindred"
+    }
   ]
 }

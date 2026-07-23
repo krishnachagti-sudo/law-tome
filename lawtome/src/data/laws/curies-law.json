@@ -32,24 +32,44 @@
   ],
   "whyItMatters": "It is the founding quantitative law of paramagnetism, the basis for measuring magnetic moments and for magnetic refrigeration that reaches toward absolute zero. It also anchors a trio of easily confused 'Curie' ideas, distinguishing the susceptibility law from the Curie point and the Curie–Weiss extension.",
   "working": [
-    {"lead": "Expect susceptibility to fall with heat", "text": "for an ideal paramagnet, treat susceptibility as inversely proportional to absolute temperature, and read the Curie constant from the slope."},
-    {"lead": "Keep the three Curie ideas apart", "text": "distinguish Curie's law of susceptibility from the Curie temperature and the Curie–Weiss law, which describe different things."},
-    {"lead": "Switch models when moments interact or saturate", "text": "use Curie–Weiss or fuller theories where moments interact, and expect saturation at low temperature and high field."}
+    {
+      "lead": "Expect susceptibility to fall with heat",
+      "text": "for an ideal paramagnet, treat susceptibility as inversely proportional to absolute temperature, and read the Curie constant from the slope."
+    },
+    {
+      "lead": "Keep the three Curie ideas apart",
+      "text": "distinguish Curie's law of susceptibility from the Curie temperature and the Curie–Weiss law, which describe different things."
+    },
+    {
+      "lead": "Switch models when moments interact or saturate",
+      "text": "use Curie–Weiss or fuller theories where moments interact, and expect saturation at low temperature and high field."
+    }
   ],
   "limits": "Curie's law holds only for an ideal paramagnet of non-interacting moments in the high-temperature, low-field regime. At low temperature and high field the magnetisation saturates and no longer scales with field over temperature, and where the moments interact — ferromagnetically or antiferromagnetically — the plain law fails and the Curie–Weiss law or richer models apply; even Curie–Weiss fails right at the Curie point. It is an empirical fit later derived as the high-temperature limit of the quantum theory of magnetic moments.",
   "misreadings": "It is not the Curie temperature, the point at which a ferromagnet loses its magnetism, nor the Curie–Weiss law for interacting moments above that point — three distinct 'Curie' ideas that are routinely conflated. And it applies only to non-interacting moments at high temperature and low field, not to saturated or strongly interacting magnets.",
   "origin": "Discovered by the French physicist Pierre Curie in 1895, by fitting experimental data — notably the susceptibility of oxygen falling inversely with temperature. Pierre Weiss extended it to interacting moments as the Curie–Weiss law in 1907.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1895,
   "namedAfter": "Pierre Curie",
   "sources": [
-    {"text": "Curie's law, Wikipedia. — the susceptibility statement, the field-versus-thermal mechanism, the 1895 oxygen observation, and saturation.", "url": "https://en.wikipedia.org/wiki/Curie%27s_law", "type": "secondary"},
-    {"text": "Curie–Weiss law, Wikipedia. — the interacting-moment extension and its failure near the Curie point.", "url": "https://en.wikipedia.org/wiki/Curie%E2%80%93Weiss_law", "type": "secondary"}
+    {
+      "text": "Curie's law, Wikipedia. — the susceptibility statement, the field-versus-thermal mechanism, the 1895 oxygen observation, and saturation.",
+      "url": "https://en.wikipedia.org/wiki/Curie%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Curie–Weiss law, Wikipedia. — the interacting-moment extension and its failure near the Curie point.",
+      "url": "https://en.wikipedia.org/wiki/Curie%E2%80%93Weiss_law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Curie%27s_law",
   "related": [
-    {"slug": "lenzs-law", "kind": "kindred"}
+    {
+      "slug": "lenzs-law",
+      "kind": "kindred"
+    }
   ]
 }

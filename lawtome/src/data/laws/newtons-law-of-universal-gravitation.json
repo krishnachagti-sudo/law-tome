@@ -32,25 +32,48 @@
   ],
   "whyItMatters": "It was the crowning achievement of the scientific revolution, uniting the fall of an apple with the motion of the planets under a single mathematical law and giving humanity its first predictive theory of the cosmos. It remains the working tool for almost all everyday and spaceflight calculations, accurate enough to send probes across the solar system.",
   "working": [
-    {"lead": "Scale the pull by masses and distance", "text": "expect gravitational force to grow with the product of the masses and to fall as the square of the separation."},
-    {"lead": "Treat spheres as points", "text": "for a spherically symmetric body, compute its gravity as if all its mass sat at its centre."},
-    {"lead": "Use it, but know its edge", "text": "rely on it for orbits and trajectories at everyday scales, while remembering general relativity governs the extreme cases."}
+    {
+      "lead": "Scale the pull by masses and distance",
+      "text": "expect gravitational force to grow with the product of the masses and to fall as the square of the separation."
+    },
+    {
+      "lead": "Treat spheres as points",
+      "text": "for a spherically symmetric body, compute its gravity as if all its mass sat at its centre."
+    },
+    {
+      "lead": "Use it, but know its edge",
+      "text": "rely on it for orbits and trajectories at everyday scales, while remembering general relativity governs the extreme cases."
+    }
   ],
   "limits": "It is an extremely accurate approximation superseded, not discarded, by Einstein's general relativity in 1915, which recasts gravity as the curvature of spacetime. Newton's law fails in three tested regimes: it leaves about forty-three arcseconds per century of Mercury's perihelion precession unexplained, predicts only half the bending of light that observation confirms, and breaks down in the strong fields of black holes and neutron stars. It also poses the conceptual puzzle of action at a distance — an instantaneous force across empty space with no mechanism, which troubled Newton himself.",
   "misreadings": "It is not wrong or disproven — it remains an excellent approximation in weak fields at low speeds; it is superseded as the fundamental theory by general relativity. And the apple story, though traceable to Newton's own later recollection, does not include an apple striking his head — that detail is a later embellishment.",
   "origin": "Published by Isaac Newton in Philosophiae Naturalis Principia Mathematica (1687), whose printing was financed by Edmond Halley; Robert Hooke had suggested an inverse-square attraction in correspondence, but could not derive the orbits, and Newton's mathematical derivation was his own.",
-  "category": "science",
+  "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1687,
   "namedAfter": "Isaac Newton",
   "sources": [
-    {"text": "Newton's law of universal gravitation, Wikipedia. — the inverse-square statement, the shell theorem, the Cavendish and Neptune cases, and the general-relativity limits.", "url": "https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation", "type": "secondary"},
-    {"text": "\"Newton's law of gravitation,\" Encyclopaedia Britannica. — the law, the 1687 Principia, and the apple-story provenance.", "url": "https://www.britannica.com/science/Newtons-law-of-gravitation", "type": "secondary"}
+    {
+      "text": "Newton's law of universal gravitation, Wikipedia. — the inverse-square statement, the shell theorem, the Cavendish and Neptune cases, and the general-relativity limits.",
+      "url": "https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Newton's law of gravitation,\" Encyclopaedia Britannica. — the law, the 1687 Principia, and the apple-story provenance.",
+      "url": "https://www.britannica.com/science/Newtons-law-of-gravitation",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation",
   "related": [
-    {"slug": "keplers-laws-of-planetary-motion", "kind": "cause"},
-    {"slug": "newtons-laws-of-motion", "kind": "kindred"}
+    {
+      "slug": "keplers-laws-of-planetary-motion",
+      "kind": "cause"
+    },
+    {
+      "slug": "newtons-laws-of-motion",
+      "kind": "kindred"
+    }
   ]
 }

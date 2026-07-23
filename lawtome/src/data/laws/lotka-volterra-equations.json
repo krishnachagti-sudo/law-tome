@@ -2,7 +2,9 @@
   "no": "190",
   "slug": "lotka-volterra-equations",
   "name": "The Lotka-Volterra Equations",
-  "aliases": ["The predator-prey equations"],
+  "aliases": [
+    "The predator-prey equations"
+  ],
   "statement": "Predator and prey numbers chase each other in endless linked cycles.",
   "statementAccent": "endless linked cycles",
   "meaning": "A pair of equations describing how the populations of a predator and its prey rise and fall together. When prey are plentiful, predators multiply; the growing predators eat the prey down; scarce prey then starve the predators; with few predators, prey rebound — and the cycle repeats, with the predator peak lagging behind the prey peak.",
@@ -33,23 +35,39 @@
   ],
   "whyItMatters": "They are the founding mathematical model of population ecology, the first to show that predator-prey oscillations can arise from the interaction itself rather than from any external driver. Nearly every modern predator-prey model is a refinement of them, and they remain the standard entry point to theoretical ecology.",
   "working": [
-    {"lead": "Expect cycles from coupling alone", "text": "recognise that oscillations in predator and prey numbers can emerge from the interaction itself, with no external cause needed."},
-    {"lead": "Read the lag", "text": "look for the predator peak to follow the prey peak, the signature of a population responding to its food supply."},
-    {"lead": "Add realism before trusting fit", "text": "for real systems, expect the bare equations to fail, and add carrying capacity, predator satiation, or spatial structure."}
+    {
+      "lead": "Expect cycles from coupling alone",
+      "text": "recognise that oscillations in predator and prey numbers can emerge from the interaction itself, with no external cause needed."
+    },
+    {
+      "lead": "Read the lag",
+      "text": "look for the predator peak to follow the prey peak, the signature of a population responding to its food supply."
+    },
+    {
+      "lead": "Add realism before trusting fit",
+      "text": "for real systems, expect the bare equations to fail, and add carrying capacity, predator satiation, or spatial structure."
+    }
   ],
   "limits": "The model is highly idealised: prey grow without bound when predators are absent, with no carrying capacity, and predators have limitless appetite through a non-saturating response. There is no age, stage, or spatial structure, no environmental variation, and no time delay — each population is a single number. Worse, the closed orbits are only neutrally stable: their amplitude is fixed entirely by initial conditions, and any perturbation to the equations — competition, logistic growth, predator satiation, time delays — destroys them, spiralling toward a stable equilibrium or toward extinction. Real systems, even the lynx and hare, rarely match it cleanly.",
   "misreadings": "The neutral cycles are structurally fragile, not robust — the model is not saying real populations trace perfect closed loops, but that even this stripped-down coupling produces oscillation. And the exponential prey growth is a deliberate idealisation, not a claim that prey really grow without limit.",
   "origin": "Derived independently by Alfred J. Lotka, who developed the form from 1910 and applied it to predator-prey systems in his 1925 book, and by Vito Volterra, who published the same equations in 1926 to explain D'Ancona's Adriatic fishery data.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1926,
   "namedAfter": "Alfred J. Lotka and Vito Volterra",
   "sources": [
-    {"text": "Lotka-Volterra equations, Wikipedia. — the equations, the neutral-orbit conservation law, the idealised assumptions, and the Lotka/Volterra/D'Ancona history.", "url": "https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations", "type": "secondary"}
+    {
+      "text": "Lotka-Volterra equations, Wikipedia. — the equations, the neutral-orbit conservation law, the idealised assumptions, and the Lotka/Volterra/D'Ancona history.",
+      "url": "https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations",
   "related": [
-    {"slug": "gauses-law", "kind": "kindred"}
+    {
+      "slug": "gauses-law",
+      "kind": "kindred"
+    }
   ]
 }

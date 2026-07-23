@@ -32,23 +32,43 @@
   ],
   "whyItMatters": "It is one of the most fundamental and widely used results in all of mathematics, the basis of the distance formula, of trigonometry, and of the Euclidean notion of length in any number of dimensions. It has been proved in more ways than almost any other theorem and remains a staple of construction, navigation, and geometry.",
   "working": [
-    {"lead": "Find the third side", "text": "given two sides of a right triangle, square them as needed and use the relation to compute the missing one."},
-    {"lead": "Measure distance by legs", "text": "treat any straight-line distance as the hypotenuse of a right triangle built on horizontal and vertical gaps."},
-    {"lead": "Reach for the law of cosines otherwise", "text": "for triangles without a right angle, use the law of cosines, of which this theorem is the special case."}
+    {
+      "lead": "Find the third side",
+      "text": "given two sides of a right triangle, square them as needed and use the relation to compute the missing one."
+    },
+    {
+      "lead": "Measure distance by legs",
+      "text": "treat any straight-line distance as the hypotenuse of a right triangle built on horizontal and vertical gaps."
+    },
+    {
+      "lead": "Reach for the law of cosines otherwise",
+      "text": "for triangles without a right angle, use the law of cosines, of which this theorem is the special case."
+    }
   ],
   "limits": "It holds only in Euclidean, flat geometry and only for right triangles. On curved surfaces it fails — spherical and hyperbolic geometry modify the relation with curvature terms — and for non-right triangles the law of cosines is needed instead. Within the axioms of Euclidean geometry, however, its truth is certain and admits no counterexample; the limits are of scope, not of correctness.",
   "misreadings": "It applies only to right triangles in flat space — not to every triangle, and not on curved surfaces where the relation breaks down. And though named for Pythagoras, the relation was known and used in Babylon, India, and China long before him, and it is doubtful he personally proved it.",
   "origin": "Named after Pythagoras of Samos (about 570-495 BC), but the relation and its triples were known far earlier — in Babylonian tablets such as Plimpton 322 around 1800 BC, in the Indian Sulba Sutras, and in the Chinese Zhoubi Suanjing; the attribution to Pythagoras himself is uncertain.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "namedAfter": "Pythagoras of Samos",
   "sources": [
-    {"text": "Pythagorean theorem, Wikipedia. — the statement, proofs, the pre-Pythagoras history, and the non-Euclidean limits.", "url": "https://en.wikipedia.org/wiki/Pythagorean_theorem", "type": "secondary"},
-    {"text": "\"Pythagorean theorem,\" Encyclopaedia Britannica. — the theorem, the attribution uncertainty, and the Babylonian precedents.", "url": "https://www.britannica.com/science/Pythagorean-theorem", "type": "secondary"}
+    {
+      "text": "Pythagorean theorem, Wikipedia. — the statement, proofs, the pre-Pythagoras history, and the non-Euclidean limits.",
+      "url": "https://en.wikipedia.org/wiki/Pythagorean_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Pythagorean theorem,\" Encyclopaedia Britannica. — the theorem, the attribution uncertainty, and the Babylonian precedents.",
+      "url": "https://www.britannica.com/science/Pythagorean-theorem",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Pythagorean_theorem",
   "related": [
-    {"slug": "eulers-identity", "kind": "kindred"}
+    {
+      "slug": "eulers-identity",
+      "kind": "kindred"
+    }
   ]
 }

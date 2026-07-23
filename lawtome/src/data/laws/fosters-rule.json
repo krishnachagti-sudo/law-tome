@@ -2,7 +2,9 @@
   "no": "192",
   "slug": "fosters-rule",
   "name": "Foster's Rule",
-  "aliases": ["The island rule"],
+  "aliases": [
+    "The island rule"
+  ],
   "statement": "On islands, big animals tend to shrink and small animals tend to grow.",
   "statementAccent": "big animals tend to shrink and small animals tend to grow",
   "meaning": "Isolated on islands, members of a species evolve toward a different body size than their mainland relatives — large-bodied species tend to become smaller, in insular dwarfism, while small-bodied species tend to become larger, in insular gigantism. Which way a lineage moves depends on the resources and selective pressures the island offers.",
@@ -33,25 +35,48 @@
   ],
   "whyItMatters": "It is one of the most cited generalisations in island biogeography and evolutionary ecology, organising a striking range of fossil and living cases and framing a long-running debate about how island isolation reshapes bodies. Whether or not it holds as a universal rule, it directs attention to the distinctive selective world of islands.",
   "working": [
-    {"lead": "Ask which way the pressure points", "text": "for a species colonising an island, weigh relaxed predation, which favours enlarging small species, against limited resources, which favour shrinking large ones."},
-    {"lead": "Judge by clade, not universally", "text": "expect the pattern to hold within particular groups rather than across all animals, since the evidence is strongest at the taxon level."},
-    {"lead": "Treat striking cases with care", "text": "not every island giant or dwarf is an island-rule effect — some are relics or contested, so verify the case before invoking the rule."}
+    {
+      "lead": "Ask which way the pressure points",
+      "text": "for a species colonising an island, weigh relaxed predation, which favours enlarging small species, against limited resources, which favour shrinking large ones."
+    },
+    {
+      "lead": "Judge by clade, not universally",
+      "text": "expect the pattern to hold within particular groups rather than across all animals, since the evidence is strongest at the taxon level."
+    },
+    {
+      "lead": "Treat striking cases with care",
+      "text": "not every island giant or dwarf is an island-rule effect — some are relics or contested, so verify the case before invoking the rule."
+    }
   ],
   "limits": "Its generality is genuinely disputed. Applying phylogenetic comparative methods, Meiri, Cooper, and Purvis argued in 'The island rule: made to be broken?' (2008) that there is no evidence for a universal island rule — only clade-specific patterns, with the apparent graded trend an artefact of pseudoreplication, as many small enlarging rodents and many large dwarfing deer create a spurious gradient. A 2021 vertebrate-wide study reached the opposite conclusion, so the debate is live in both directions. Mechanisms are multiple and context-dependent, and several celebrated cases are contested.",
   "misreadings": "It is not a law that every island population changes size predictably — it is a contested tendency that holds strongly in some clades and fails in others. And it does not identify a single cause: relaxed predation, limited resources, and altered competition all contribute, differently for herbivores and carnivores.",
   "origin": "Described by J. Bristol Foster in 'The evolution of mammals on islands,' Nature 202:234-235 (1964), from a survey of about 116 insular mammal populations; the term 'the island rule' was coined by Leigh Van Valen in 1973.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Contested",
   "provenance": "canon",
   "coinedYear": 1964,
   "namedAfter": "J. Bristol Foster",
   "sources": [
-    {"text": "Foster's rule, Wikipedia. — the dwarfism/gigantism statement, the mechanisms, and the Foster 1964 origin.", "url": "https://en.wikipedia.org/wiki/Foster's_rule", "type": "secondary"},
-    {"text": "Meiri, Cooper & Purvis, \"The island rule: made to be broken?\" Proc. R. Soc. B 275:141-148, PMC. — the phylogenetic critique and the pseudoreplication argument.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2596178/", "type": "primary"}
+    {
+      "text": "Foster's rule, Wikipedia. — the dwarfism/gigantism statement, the mechanisms, and the Foster 1964 origin.",
+      "url": "https://en.wikipedia.org/wiki/Foster's_rule",
+      "type": "secondary"
+    },
+    {
+      "text": "Meiri, Cooper & Purvis, \"The island rule: made to be broken?\" Proc. R. Soc. B 275:141-148, PMC. — the phylogenetic critique and the pseudoreplication argument.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2596178/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Foster's_rule",
   "related": [
-    {"slug": "bergmanns-rule", "kind": "kindred"},
-    {"slug": "copes-rule", "kind": "kindred"}
+    {
+      "slug": "bergmanns-rule",
+      "kind": "kindred"
+    },
+    {
+      "slug": "copes-rule",
+      "kind": "kindred"
+    }
   ]
 }

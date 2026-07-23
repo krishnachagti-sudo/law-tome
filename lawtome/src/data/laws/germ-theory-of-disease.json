@@ -2,7 +2,9 @@
   "no": "408",
   "slug": "germ-theory-of-disease",
   "name": "The Germ Theory of Disease",
-  "aliases": ["Germ theory"],
+  "aliases": [
+    "Germ theory"
+  ],
   "statement": "Many diseases are caused by microorganisms that invade the body, not by bad air.",
   "statementAccent": "caused by microorganisms",
   "meaning": "The germ theory of disease is the principle that many infectious diseases are caused by microorganisms, the bacteria, viruses, fungi, and protozoa collectively called germs, that invade and multiply within a host. It displaced the older miasma theory, which held that disease arose from bad air, noxious vapours given off by decaying matter. By locating the cause of contagion in specific living agents, germ theory reshaped medicine and public health.",
@@ -33,23 +35,46 @@
   ],
   "whyItMatters": "It is among the most important ideas in the history of medicine, revolutionising how disease is understood, prevented, and treated. It underpins sanitation, antisepsis, sterile surgery, hand hygiene, vaccination, antibiotics, and disease surveillance, and by replacing bad air with specific microbes it made infectious disease something that could be studied, targeted, and controlled, saving countless lives.",
   "working": [
-    {"lead": "Seek the specific microbe", "text": "trace an infectious disease to the particular pathogen that causes it, rather than to vague environmental miasma."},
-    {"lead": "Block transmission", "text": "prevent disease by interrupting how the microbe spreads, through hygiene, clean water, and sterile technique."},
-    {"lead": "Reserve it for infectious disease", "text": "apply germ theory to diseases caused by pathogens, not to genetic, deficiency, autoimmune, or lifestyle diseases."}
+    {
+      "lead": "Seek the specific microbe",
+      "text": "trace an infectious disease to the particular pathogen that causes it, rather than to vague environmental miasma."
+    },
+    {
+      "lead": "Block transmission",
+      "text": "prevent disease by interrupting how the microbe spreads, through hygiene, clean water, and sterile technique."
+    },
+    {
+      "lead": "Reserve it for infectious disease",
+      "text": "apply germ theory to diseases caused by pathogens, not to genetic, deficiency, autoimmune, or lifestyle diseases."
+    }
   ],
   "limits": "Germ theory concerns infectious disease specifically; not all diseases are infectious, since genetic, nutritional, autoimmune, degenerative, and lifestyle diseases have no microbial cause. The microbe-to-disease link is more nuanced than one-to-one, complicated by asymptomatic carriers, the microbiome, opportunistic pathogens, and multifactorial causation. It was also a cumulative achievement, not a single discovery, and the miasma theory it replaced, though wrong on cause, usefully motivated sanitation reforms that genuinely reduced disease.",
   "misreadings": "No single person invented germ theory; it was built cumulatively from Fracastoro and Leeuwenhoek through Snow, Semmelweis, Pasteur, Koch, and Lister, with Pasteur and Koch most often jointly credited. The displaced miasma theory was not wholly useless, since its push for clean water and sanitation really did cut disease even though its mechanism was wrong. And germ theory does not claim all disease is caused by microbes, only infectious disease.",
   "origin": "A cumulative achievement of the nineteenth century, with precursors in Fracastoro and Leeuwenhoek, advanced by Snow, Semmelweis, Pasteur, Koch, and Lister, that displaced the miasma theory by the 1880s.",
-  "category": "science",
+  "category": "medicine",
   "reliability": "Empirical",
   "provenance": "canon",
   "sources": [
-    {"text": "Germ theory of disease, Wikipedia. — the microbial cause of infectious disease, the miasma predecessor, and the cumulative history.", "url": "https://en.wikipedia.org/wiki/Germ_theory_of_disease", "type": "secondary"},
-    {"text": "Germ theory, Encyclopaedia Britannica. — the microorganism cause and its transformation of medicine.", "url": "https://www.britannica.com/science/germ-theory", "type": "secondary"}
+    {
+      "text": "Germ theory of disease, Wikipedia. — the microbial cause of infectious disease, the miasma predecessor, and the cumulative history.",
+      "url": "https://en.wikipedia.org/wiki/Germ_theory_of_disease",
+      "type": "secondary"
+    },
+    {
+      "text": "Germ theory, Encyclopaedia Britannica. — the microorganism cause and its transformation of medicine.",
+      "url": "https://www.britannica.com/science/germ-theory",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Germ_theory_of_disease",
   "related": [
-    {"slug": "cell-theory", "kind": "kindred"},
-    {"slug": "kochs-postulates", "kind": "consequence"}
+    {
+      "slug": "cell-theory",
+      "kind": "kindred"
+    },
+    {
+      "slug": "kochs-postulates",
+      "kind": "consequence"
+    }
   ]
 }

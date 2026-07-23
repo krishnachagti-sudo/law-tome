@@ -2,7 +2,10 @@
   "no": "588",
   "slug": "cantors-diagonal-argument",
   "name": "Cantor's Diagonal Argument",
-  "aliases": ["The diagonal method", "Cantor's diagonalization"],
+  "aliases": [
+    "The diagonal method",
+    "Cantor's diagonalization"
+  ],
   "statement": "List all the real numbers you like; a new one built from the diagonal is always missing.",
   "statementAccent": "a new one built from the diagonal is always missing",
   "meaning": "Cantor's diagonal argument is a proof that the real numbers cannot be put in a one-to-one list with the natural numbers, so the reals are uncountable, a strictly larger infinity than the counting numbers. Suppose someone claims to have listed every real number between zero and one. Cantor constructs a new number by going down the diagonal of the list and changing the n-th digit of the n-th listed number, so the new number differs from every number on the list in at least one place and cannot be anywhere on it. Since no list can be complete, the reals cannot be enumerated. Introduced by Georg Cantor in 1891, the method is one of the most influential ideas in mathematics, the template for a whole family of impossibility proofs.",
@@ -33,25 +36,48 @@
   ],
   "whyItMatters": "Cantor's diagonal argument founded the modern treatment of the infinite, proving that infinity comes in different sizes and that the continuum of real numbers is a larger infinity than the natural numbers. Beyond set theory, its diagonalisation technique became one of the most powerful proof methods in logic and computer science, underlying Russell's paradox, Godel's incompleteness theorems, and Turing's undecidability of the halting problem. It was fiercely controversial in its day, with Kronecker rejecting completed infinities, yet it is now foundational, a compact and beautiful demonstration that some infinite collections simply cannot be counted, however cleverly one tries to list them.",
   "working": [
-    {"lead": "Assume a complete list", "text": "start by supposing every real number has been enumerated in a numbered list, then aim to exhibit one that was left out."},
-    {"lead": "Walk the diagonal", "text": "build a new number by changing the n-th digit of the n-th listed number, guaranteeing it differs from every entry somewhere."},
-    {"lead": "Reuse the pattern", "text": "recognise the same diagonal move in Godel and Turing, where a self-referential object escapes any system claiming to capture everything."}
+    {
+      "lead": "Assume a complete list",
+      "text": "start by supposing every real number has been enumerated in a numbered list, then aim to exhibit one that was left out."
+    },
+    {
+      "lead": "Walk the diagonal",
+      "text": "build a new number by changing the n-th digit of the n-th listed number, guaranteeing it differs from every entry somewhere."
+    },
+    {
+      "lead": "Reuse the pattern",
+      "text": "recognise the same diagonal move in Godel and Turing, where a self-referential object escapes any system claiming to capture everything."
+    }
   ],
   "limits": "Uncountable does not mean finite or merely very large; it means no one-to-one correspondence with the natural numbers exists, a precise cardinality claim. The argument applies to the reals, not the rationals, which are countable and can be listed by a different diagonal enumeration, so the two diagonal ideas must not be conflated. The construction needs the digit-changing to sidestep the dual-decimal-expansion subtlety, and while it proves a missing number exists, it does not by itself resolve deeper questions like whether any infinity sits strictly between the naturals and the reals, which is the separate, independent continuum hypothesis.",
   "misreadings": "The reals being uncountable does not mean they are finite or that there is a largest real; it means they cannot be exhausted by any list indexed by the counting numbers. The rationals are countable, so the diagonal argument is not a trick that works on every infinite set, only on those genuinely larger than the naturals. And the argument is constructive in producing the missing number, so it is not a vague appeal but an explicit recipe, though the number it produces depends on the list and is not a single fixed value.",
   "origin": "Published by Georg Cantor in 1891 in his paper on an elementary question of the theory of manifolds, following his different 1874 proof of the uncountability of the reals, and later recognised as the template for the impossibility proofs of Russell, Godel, and Turing.",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1891,
   "namedAfter": "Georg Cantor",
   "sources": [
-    {"text": "Cantor's diagonal argument, Wikipedia. — the diagonalisation method, the uncountability conclusion, the 1891 date, the power-set generalisation, and the Godel and Turing connections.", "url": "https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument", "type": "secondary"},
-    {"text": "Cantor Diagonal Method, Wolfram MathWorld. — the construction of the missing number and the dual-expansion subtlety.", "url": "https://mathworld.wolfram.com/CantorDiagonalMethod.html", "type": "secondary"}
+    {
+      "text": "Cantor's diagonal argument, Wikipedia. — the diagonalisation method, the uncountability conclusion, the 1891 date, the power-set generalisation, and the Godel and Turing connections.",
+      "url": "https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument",
+      "type": "secondary"
+    },
+    {
+      "text": "Cantor Diagonal Method, Wolfram MathWorld. — the construction of the missing number and the dual-expansion subtlety.",
+      "url": "https://mathworld.wolfram.com/CantorDiagonalMethod.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument",
   "related": [
-    {"slug": "cantors-theorem", "kind": "consequence"},
-    {"slug": "the-continuum-hypothesis", "kind": "kindred"}
+    {
+      "slug": "cantors-theorem",
+      "kind": "consequence"
+    },
+    {
+      "slug": "the-continuum-hypothesis",
+      "kind": "kindred"
+    }
   ]
 }

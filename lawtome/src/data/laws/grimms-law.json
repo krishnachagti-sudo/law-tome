@@ -2,7 +2,9 @@
   "no": "258",
   "slug": "grimms-law",
   "name": "Grimm's Law",
-  "aliases": ["The First Germanic Consonant Shift"],
+  "aliases": [
+    "The First Germanic Consonant Shift"
+  ],
   "statement": "The Germanic languages shifted their consonants in a regular chain away from their Indo-European roots.",
   "statementAccent": "in a regular chain",
   "meaning": "A set of regular sound changes by which the stop consonants of Proto-Indo-European systematically shifted in the Germanic branch. Voiceless stops like p, t, and k became fricatives f, th, and h; voiced stops b, d, and g became voiceless p, t, and k; and the breathy voiced stops became plain voiced b, d, and g. This is why English words inherited from Germanic differ predictably from their Latin and Greek cousins.",
@@ -33,24 +35,44 @@
   ],
   "whyItMatters": "It was a foundational discovery of historical linguistics, demonstrating that sound change is regular and systematic rather than haphazard, and grounding the comparative method for reconstructing ancestral languages. Together with Verner's law, it became the showcase for the principle that sound laws admit no exceptions.",
   "working": [
-    {"lead": "Match cognates by the shift", "text": "expect an inherited Germanic word to differ from its Latin or Greek cognate by these regular consonant correspondences."},
-    {"lead": "Spot borrowings by their sounds", "text": "recognise Latin-derived loanwords in English by their unshifted consonants, which entered too late to undergo the shift."},
-    {"lead": "Look to Verner for exceptions", "text": "when a correspondence seems irregular, check whether Verner's law and the old accent placement explain it."}
+    {
+      "lead": "Match cognates by the shift",
+      "text": "expect an inherited Germanic word to differ from its Latin or Greek cognate by these regular consonant correspondences."
+    },
+    {
+      "lead": "Spot borrowings by their sounds",
+      "text": "recognise Latin-derived loanwords in English by their unshifted consonants, which entered too late to undergo the shift."
+    },
+    {
+      "lead": "Look to Verner for exceptions",
+      "text": "when a correspondence seems irregular, check whether Verner's law and the old accent placement explain it."
+    }
   ],
   "limits": "Grimm's law has systematic apparent exceptions, where a Proto-Indo-European voiceless stop became a voiced fricative rather than the predicted voiceless one. These were resolved by Verner's law in 1875: the outcome depended on where the old Indo-European word-accent fell, an accent later obscured when Germanic fixed stress on the first syllable. Far from undermining the law, this deepened it, turning apparent irregularity into a further regular law — a landmark vindication of the principle that sound change is exceptionless.",
   "misreadings": "It does not apply to words English borrowed from Latin or Greek — those keep their original consonants, having entered after the shift; it governs only the inherited Germanic vocabulary. And its exceptions are not true irregularities but the workings of Verner's law, conditioned by an accent since lost.",
   "origin": "Formulated as a general rule by Jacob Grimm in the second edition of his Deutsche Grammatik (1822); the correspondences had been noted earlier by Rasmus Rask around 1818 and, in part, by Friedrich von Schlegel in 1806, making it a case where the systematiser, not the first observer, gave it his name.",
-  "category": "science",
+  "category": "linguistics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1822,
   "namedAfter": "Jacob Grimm",
   "sources": [
-    {"text": "Grimm's law, Wikipedia. — the three-part consonant shift, the cognate correspondences, the Rask precedence, and Verner's law.", "url": "https://en.wikipedia.org/wiki/Grimm%27s_law", "type": "secondary"},
-    {"text": "\"Grimm's law,\" Encyclopaedia Britannica. — the shift, the examples, and the history of its discovery.", "url": "https://www.britannica.com/topic/Grimms-law", "type": "secondary"}
+    {
+      "text": "Grimm's law, Wikipedia. — the three-part consonant shift, the cognate correspondences, the Rask precedence, and Verner's law.",
+      "url": "https://en.wikipedia.org/wiki/Grimm%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Grimm's law,\" Encyclopaedia Britannica. — the shift, the examples, and the history of its discovery.",
+      "url": "https://www.britannica.com/topic/Grimms-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Grimm%27s_law",
   "related": [
-    {"slug": "zipfs-law", "kind": "kindred"}
+    {
+      "slug": "zipfs-law",
+      "kind": "kindred"
+    }
   ]
 }

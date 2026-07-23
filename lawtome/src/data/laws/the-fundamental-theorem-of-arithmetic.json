@@ -2,7 +2,9 @@
   "no": "236",
   "slug": "the-fundamental-theorem-of-arithmetic",
   "name": "The Fundamental Theorem of Arithmetic",
-  "aliases": ["The unique factorization theorem"],
+  "aliases": [
+    "The unique factorization theorem"
+  ],
   "statement": "Every whole number above one factors into primes in exactly one way.",
   "statementAccent": "in exactly one way",
   "meaning": "Every integer greater than one is either a prime or can be written as a product of primes, and that factorization is unique except for the order of the factors. Primes are the multiplicative building blocks of the whole numbers: every number is assembled from them by multiplication, and the recipe of primes and their multiplicities is fixed for each number.",
@@ -33,24 +35,44 @@
   ],
   "whyItMatters": "It establishes primes as the atoms of arithmetic and underlies the whole of number theory — divisibility, greatest common divisors and least common multiples, and modular arithmetic all rest on unique factorization. It is the reason primes are treated as the fundamental objects from which the integers are built.",
   "working": [
-    {"lead": "Factor into primes", "text": "understand any whole number through its unique prime factorization, the fixed recipe that characterises it multiplicatively."},
-    {"lead": "Use primes for divisibility", "text": "read divisibility, common divisors, and common multiples directly off the prime exponents of the numbers involved."},
-    {"lead": "Keep one out of the primes", "text": "exclude one from the primes deliberately, since counting it would break the uniqueness the theorem asserts."}
+    {
+      "lead": "Factor into primes",
+      "text": "understand any whole number through its unique prime factorization, the fixed recipe that characterises it multiplicatively."
+    },
+    {
+      "lead": "Use primes for divisibility",
+      "text": "read divisibility, common divisors, and common multiples directly off the prime exponents of the numbers involved."
+    },
+    {
+      "lead": "Keep one out of the primes",
+      "text": "exclude one from the primes deliberately, since counting it would break the uniqueness the theorem asserts."
+    }
   ],
   "limits": "It holds for the ordinary integers, but fails in some extended number systems, the non-unique-factorization domains, where a number can factor into irreducibles in genuinely different ways — because there an irreducible element need not be prime, so Euclid's lemma, and with it uniqueness, breaks down. The convention that one is not prime is essential to the statement holding as written. Within the integers, however, the theorem is deductively certain and admits no exception.",
   "misreadings": "It is not that every number system enjoys unique factorization — some do not, and the property defines a special class of number systems. And excluding one from the primes is not arbitrary bookkeeping; it is exactly what preserves the uniqueness the theorem asserts.",
   "origin": "Its groundwork is in Euclid's Elements around 300 BC — Euclid's lemma and a partial uniqueness result — but the first clear full statement with a rigorous proof of uniqueness is Carl Friedrich Gauss's, in Disquisitiones Arithmeticae (1801).",
-  "category": "science",
+  "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1801,
   "namedAfter": "Carl Friedrich Gauss",
   "sources": [
-    {"text": "Fundamental theorem of arithmetic, Wikipedia. — the statement, the two-part proof, Euclid's groundwork, Gauss's uniqueness proof, and the non-unique-factorization counterexample.", "url": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic", "type": "secondary"},
-    {"text": "\"Fundamental theorem of arithmetic,\" Encyclopaedia Britannica. — the unique-factorization statement and Gauss's 1801 proof.", "url": "https://www.britannica.com/science/fundamental-theorem-of-arithmetic", "type": "secondary"}
+    {
+      "text": "Fundamental theorem of arithmetic, Wikipedia. — the statement, the two-part proof, Euclid's groundwork, Gauss's uniqueness proof, and the non-unique-factorization counterexample.",
+      "url": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Fundamental theorem of arithmetic,\" Encyclopaedia Britannica. — the unique-factorization statement and Gauss's 1801 proof.",
+      "url": "https://www.britannica.com/science/fundamental-theorem-of-arithmetic",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic",
   "related": [
-    {"slug": "the-prime-number-theorem", "kind": "kindred"}
+    {
+      "slug": "the-prime-number-theorem",
+      "kind": "kindred"
+    }
   ]
 }

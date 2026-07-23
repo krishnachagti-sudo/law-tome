@@ -2,7 +2,9 @@
   "no": "389",
   "slug": "michaelis-menten-kinetics",
   "name": "Michaelis-Menten Kinetics",
-  "aliases": ["The Michaelis-Menten equation"],
+  "aliases": [
+    "The Michaelis-Menten equation"
+  ],
   "statement": "An enzyme's rate rises with substrate, then levels off as the enzyme saturates.",
   "statementAccent": "then levels off as the enzyme saturates",
   "meaning": "Michaelis-Menten kinetics is the standard model of how the speed of an enzyme-catalysed reaction depends on the amount of substrate. At low substrate the rate climbs almost in proportion, but as substrate increases the enzyme becomes saturated and the rate flattens toward a maximum. The relationship is a rectangular hyperbola, summarised by two numbers: the maximum rate and the substrate concentration that gives half of it, called the Michaelis constant.",
@@ -33,25 +35,48 @@
   ],
   "whyItMatters": "It is the foundational framework of enzyme kinetics, giving biochemists a common language of maximum rate, Michaelis constant, turnover number, and catalytic efficiency to characterise and compare enzymes. Its steady-state logic extends to transporters, receptors, and drug metabolism, making it central to enzymology and pharmacology and one of the most widely used quantitative models in the life sciences.",
   "working": [
-    {"lead": "Read the two parameters", "text": "characterise an enzyme by its maximum rate and its Michaelis constant, the substrate level at half-maximum rate."},
-    {"lead": "Measure initial rates", "text": "apply the model to early-reaction rates under steady state, with substrate in large excess and before product builds up."},
-    {"lead": "Watch for cooperativity", "text": "switch to a cooperative model when the rate curve is sigmoidal rather than hyperbolic, since Michaelis-Menten will not fit."}
+    {
+      "lead": "Read the two parameters",
+      "text": "characterise an enzyme by its maximum rate and its Michaelis constant, the substrate level at half-maximum rate."
+    },
+    {
+      "lead": "Measure initial rates",
+      "text": "apply the model to early-reaction rates under steady state, with substrate in large excess and before product builds up."
+    },
+    {
+      "lead": "Watch for cooperativity",
+      "text": "switch to a cooperative model when the rate curve is sigmoidal rather than hyperbolic, since Michaelis-Menten will not fit."
+    }
   ],
   "limits": "It is a well-established but simplifying model, assuming a single substrate, steady-state or rapid-equilibrium conditions, no product inhibition, and substrate in large excess over enzyme. It does not describe allosteric or cooperative enzymes, whose curves are sigmoidal, nor multi-substrate reactions without extension, nor fast pre-steady-state transients. The Michaelis constant equals the dissociation constant only under the rapid-equilibrium assumption; in general it also includes the catalytic rate, so it is an apparent affinity rather than a pure binding constant.",
   "misreadings": "The Michaelis constant is not exactly the enzyme-substrate binding affinity; that holds only under rapid equilibrium, and in the general steady-state treatment it also contains the catalytic step, making it an apparent affinity. The model is not universal; cooperative and multi-substrate enzymes need different equations. And the maximum rate is not an intrinsic constant of the enzyme alone but depends on how much enzyme is present.",
   "origin": "Introduced by Leonor Michaelis and Maud Menten in 1913, building on Victor Henri's 1903 work, and given its modern steady-state derivation by George Briggs and J. B. S. Haldane in 1925.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1913,
   "namedAfter": "Leonor Michaelis and Maud Menten",
   "sources": [
-    {"text": "Michaelis-Menten kinetics, Wikipedia. — the rate equation, the two parameters, the Henri and Briggs-Haldane history, and the assumptions.", "url": "https://en.wikipedia.org/wiki/Michaelis%E2%80%93Menten_kinetics", "type": "secondary"},
-    {"text": "Johnson & Goody, \"The Original Michaelis Constant,\" Biochemistry (2011). — the 1913 paper, its translation, and the meaning of the Michaelis constant.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3381512/", "type": "secondary"}
+    {
+      "text": "Michaelis-Menten kinetics, Wikipedia. — the rate equation, the two parameters, the Henri and Briggs-Haldane history, and the assumptions.",
+      "url": "https://en.wikipedia.org/wiki/Michaelis%E2%80%93Menten_kinetics",
+      "type": "secondary"
+    },
+    {
+      "text": "Johnson & Goody, \"The Original Michaelis Constant,\" Biochemistry (2011). — the 1913 paper, its translation, and the meaning of the Michaelis constant.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3381512/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Michaelis%E2%80%93Menten_kinetics",
   "related": [
-    {"slug": "the-law-of-mass-action", "kind": "cause"},
-    {"slug": "arrhenius-equation", "kind": "kindred"}
+    {
+      "slug": "the-law-of-mass-action",
+      "kind": "cause"
+    },
+    {
+      "slug": "arrhenius-equation",
+      "kind": "kindred"
+    }
   ]
 }

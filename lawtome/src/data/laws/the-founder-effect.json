@@ -32,26 +32,53 @@
   ],
   "whyItMatters": "It explains why isolated and newly founded populations, from island colonists to human diaspora communities, so often show reduced diversity and elevated rates of rare recessive diseases. It is central to conservation genetics, where small founding numbers threaten the genetic health of reintroduced populations, and to understanding how populations diverge.",
   "working": [
-    {"lead": "Expect reduced diversity", "text": "treat a population founded by few individuals as carrying only a fraction of the source's variation, with shifted allele frequencies."},
-    {"lead": "Watch for rare recessives", "text": "anticipate elevated frequencies of otherwise rare recessive diseases in isolated founder populations, from inbreeding and amplified founder alleles."},
-    {"lead": "Guard founding numbers", "text": "in conservation, use enough genetically diverse founders to avoid baking in an impoverished gene pool."}
+    {
+      "lead": "Expect reduced diversity",
+      "text": "treat a population founded by few individuals as carrying only a fraction of the source's variation, with shifted allele frequencies."
+    },
+    {
+      "lead": "Watch for rare recessives",
+      "text": "anticipate elevated frequencies of otherwise rare recessive diseases in isolated founder populations, from inbreeding and amplified founder alleles."
+    },
+    {
+      "lead": "Guard founding numbers",
+      "text": "in conservation, use enough genetically diverse founders to avoid baking in an impoverished gene pool."
+    }
   ],
   "limits": "The general genetic founder effect — reduced diversity and shifted frequencies in an offshoot — is well established and robust. But Mayr's stronger claim, that founder events trigger genetic revolutions that cause speciation, is contested and now less favoured, Barton and Charlesworth having argued it is a low-probability process with thin theoretical justification and equivocal laboratory support. And not every high-frequency disease in an isolated group is pure founder effect: in some cases, such as Tay-Sachs among Ashkenazi Jews, balancing selection through heterozygote advantage may also contribute, and the attribution is genuinely debated.",
   "misreadings": "The founder effect is not a form of natural selection but genetic drift — the shifts in allele frequency are driven by chance sampling, not fitness, which is why a harmful recessive can rise precisely because selection is not driving it. It is not the same as the bottleneck effect, which reduces an existing population rather than founding a new one. And founder events do not routinely create new species; that stronger claim is the contested part.",
   "origin": "Introduced by Ernst Mayr, who first outlined it in 'Systematics and the Origin of Species' (1942) and developed the founder principle and his genetic-revolution model in 1954; it is understood as a special case of the genetic drift theorised by Sewall Wright.",
-  "category": "science",
+  "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1954,
   "namedAfter": "Ernst Mayr",
   "sources": [
-    {"text": "Founder effect, Wikipedia. — the small-sample definition, the disease examples, the tie to genetic drift, and the bottleneck distinction.", "url": "https://en.wikipedia.org/wiki/Founder_effect", "type": "secondary"},
-    {"text": "Barton & Charlesworth, \"Genetic Revolutions, Founder Effects, and Speciation,\" Annual Review of Ecology and Systematics 15:133-164 (1984). — the critique of founder-effect speciation.", "url": "https://www.annualreviews.org/content/journals/10.1146/annurev.es.15.110184.001025", "type": "primary"},
-    {"text": "The Finnish genetic heritage in 2022, Disease Models & Mechanisms 15(10). — the founder bottleneck behind the Finnish disease heritage.", "url": "https://journals.biologists.com/dmm/article/15/10/dmm049490/278566/The-Finnish-genetic-heritage-in-2022-from", "type": "primary"}
+    {
+      "text": "Founder effect, Wikipedia. — the small-sample definition, the disease examples, the tie to genetic drift, and the bottleneck distinction.",
+      "url": "https://en.wikipedia.org/wiki/Founder_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Barton & Charlesworth, \"Genetic Revolutions, Founder Effects, and Speciation,\" Annual Review of Ecology and Systematics 15:133-164 (1984). — the critique of founder-effect speciation.",
+      "url": "https://www.annualreviews.org/content/journals/10.1146/annurev.es.15.110184.001025",
+      "type": "primary"
+    },
+    {
+      "text": "The Finnish genetic heritage in 2022, Disease Models & Mechanisms 15(10). — the founder bottleneck behind the Finnish disease heritage.",
+      "url": "https://journals.biologists.com/dmm/article/15/10/dmm049490/278566/The-Finnish-genetic-heritage-in-2022-from",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Founder_effect",
   "related": [
-    {"slug": "genetic-drift", "kind": "cause"},
-    {"slug": "the-allee-effect", "kind": "kindred"}
+    {
+      "slug": "genetic-drift",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-allee-effect",
+      "kind": "kindred"
+    }
   ]
 }
