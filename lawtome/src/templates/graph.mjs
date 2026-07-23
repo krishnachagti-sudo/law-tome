@@ -38,13 +38,13 @@ export function graphPage({ base = '/', origin = '', publishedCount } = {}) {
     <div class="graph-search">
       <i class="ti ti-search" aria-hidden="true"></i>
       <input id="graph-q" type="text" placeholder="Start from a law…" autocomplete="off" aria-label="Find a law to explore in the graph">
-      <div class="graph-suggest" id="graph-suggest" role="listbox" hidden></div>
+      <div class="graph-suggest" id="graph-suggest" hidden></div>
     </div>
-    <div class="graph-stage graph-band" id="graph" aria-label="Relationship graph explorer" role="img">
+    <div class="graph-stage graph-band" id="graph" aria-label="Relationship graph explorer" role="group">
       <div class="graph-empty" id="graph-empty">Loading the graph…</div>
     </div>
     <div class="graph-focusbar" id="graph-focusbar" hidden>
-      <button class="graph-back" id="graph-back" type="button" hidden><i class="ti ti-arrow-left" aria-hidden="true"></i> back</button>
+      <button class="graph-back" id="graph-back" type="button" hidden><svg class="ti-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M5 12l6 6M5 12l6-6"/></svg> back</button>
       <span class="graph-focus-name" id="graph-focus-name"></span>
       <span class="graph-focus-meta" id="graph-focus-meta"></span>
       <a class="graph-focus-link" id="graph-focus-link" href="${base}"><i class="ti ti-arrow-right" aria-hidden="true"></i> Open this law</a>

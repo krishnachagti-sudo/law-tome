@@ -393,7 +393,7 @@ ${mapLegend}
   // Save button — carries the law's card fields as data-* so saved.js can store
   // and re-render it with no network. reliability is blank for coined entries.
   const saveBtn = `      <div class="panel panel--save">
-        <button class="btn" id="save" type="button" aria-pressed="false" data-slug="${escapeHtml(law.slug)}" data-name="${escapeHtml(law.name)}" data-statement="${escapeHtml(law.statement || '')}" data-cat="${escapeHtml(law.category || '')}" data-rel="${escapeHtml(coined ? '' : (law.reliability || ''))}" data-no="${escapeHtml(law.no || '')}"><i class="ti ti-bookmark" aria-hidden="true"></i> <span id="save-t">Save</span></button>
+        <button class="btn" id="save" type="button" aria-pressed="false" data-slug="${escapeHtml(law.slug)}" data-name="${escapeHtml(law.name)}" data-statement="${escapeHtml(law.statement || '')}" data-cat="${escapeHtml(law.category || '')}" data-rel="${escapeHtml(coined ? '' : (law.reliability || ''))}" data-no="${escapeHtml(law.no || '')}"><svg class="ti-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 7v14l-6-4-6 4V7a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4z"/></svg> <span id="save-t">Save</span></button>
         <a class="save-link" href="${base}saved/">View saved</a>
       </div>
 `;

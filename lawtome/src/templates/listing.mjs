@@ -68,7 +68,7 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
   <div class="wrap">
     <div class="sec-head">
       <h1>${escapeHtml(h1)}</h1>
-      <span class="sub" id="showing">showing ${rows.length} of ${rows.length}</span>
+      <span class="sub" id="showing" aria-live="polite">showing ${rows.length} of ${rows.length}</span>
     </div>
 ${lede}    <div class="chips" id="chips">${chips}</div>
     <div class="grid" id="grid"${gridAttr}>

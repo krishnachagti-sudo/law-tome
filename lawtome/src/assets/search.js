@@ -215,7 +215,10 @@
         query = q.value.trim().toLowerCase();
         render();
         var idx = document.getElementById('index');
-        if (query && idx) idx.scrollIntoView({ behavior: 'smooth' });
+        // Honour reduced-motion: JS smooth scroll ignores the OS preference, so
+        // opt out explicitly for users who asked for less motion.
+        var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (query && idx) idx.scrollIntoView({ behavior: rm ? 'auto' : 'smooth' });
       });
     }
 

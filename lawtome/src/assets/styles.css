@@ -6,7 +6,7 @@
    so the amber brand accent never collides with the "contested" flag. */
 :root{
   --bg:#14161c; --surface:#1b1e26; --surface-2:#232733;
-  --ink:#f0ece2; --muted:#a29c8e; --faint:#6b6a66; --read:#d6d1c4;
+  --ink:#f0ece2; --muted:#a8a293; --faint:#8b897f; --read:#d6d1c4;
   --line:#282c37; --line-strong:#3b404e;
   --accent:#e0a43f; --accent-ink:#f3cb84; --accent-soft:#332811;
   --gold:#caa153; --gold-soft:#2b2413;
@@ -21,7 +21,7 @@
 }
 html[data-theme="light"]{
   --bg:#f4f1e8; --surface:#fdfbf5; --surface-2:#ece7da;
-  --ink:#191b21; --muted:#585646; --faint:#8b887b; --read:#33352c;
+  --ink:#191b21; --muted:#555341; --faint:#6d6b5e; --read:#33352c;
   --accent:#a4680f; --accent-ink:#734808; --accent-soft:#f0e3c6;
   --gold:#87661f; --gold-soft:#e6dabb;
   --ok:#3d7239; --ok-soft:#dde8d3;
@@ -40,6 +40,9 @@ body{background:var(--bg);background-image:radial-gradient(1100px 620px at 82% -
 .wrap-wide{max-width:1520px;margin:0 auto;padding:0 34px}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--accent);color:var(--on-accent)}
+/* consistent, on-brand keyboard focus ring — visible on the charcoal field.
+   :focus-visible keeps it to keyboard/AT users; mouse clicks stay ring-free. */
+:where(a,button,input,textarea,select,summary,[tabindex]):focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
 
 /* masthead */
 header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px) saturate(1.1);border-bottom:1px solid var(--line-strong);box-shadow:0 1px 0 0 color-mix(in srgb,var(--accent) 22%,transparent)}
@@ -64,6 +67,9 @@ nav.links a.on::after{right:0}
 .icon-btn{width:36px;height:36px;border:1px solid var(--line-strong);border-radius:3px;background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer;transition:color .2s,border-color .2s}
 .icon-btn:hover{color:var(--ink);border-color:var(--ink)}
 .th-ico{width:17px;height:17px}
+/* inline SVG icons (used where the tabler webfont subset has no glyph — keeps
+   these self-contained and tofu-proof). Sizes to the surrounding text. */
+.ti-svg{width:1em;height:1em;flex:none;vertical-align:-.125em}
 .th-sun{display:none}
 html[data-theme="dark"] .th-moon{display:none}
 html[data-theme="dark"] .th-sun{display:block}
@@ -71,12 +77,40 @@ html[data-theme="dark"] .th-sun{display:block}
 .kicker .kick-in{display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);padding:7px 28px}
 .kicker .k-c{flex:1;text-align:center}
 .kicker .k-l,.kicker .k-r{color:var(--accent);white-space:nowrap}
+/* skip-to-content link — first focusable element, hidden until focused */
+.skip{position:fixed;left:10px;top:-60px;z-index:100;background:var(--accent);color:var(--on-accent);font-family:var(--sans);font-size:14px;font-weight:600;padding:10px 16px;border-radius:3px;transition:top .16s ease}
+.skip:focus{top:10px;outline:none}
+#main-content{position:absolute}
+/* mobile menu toggle — hidden on desktop, shown as the nav control on phones */
+.menu-btn{display:none}
+.menu-btn .m-close{display:none}
+header.nav-open .menu-btn .m-open{display:none}
+header.nav-open .menu-btn .m-close{display:block}
 @media(max-width:720px){
   .kicker .k-l,.kicker .k-r{display:none}
   .kicker .k-c{text-align:center}
-  .bar{height:62px;gap:16px}
-  nav.links{display:none}
+  .bar{height:62px;gap:14px}
   .brand-sub{display:none}
+  .menu-btn{display:grid}
+  /* nav becomes a drop panel under the bar, toggled by .nav-open */
+  nav.links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;padding:6px 0;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line-strong);box-shadow:0 24px 34px -22px rgba(0,0,0,.7);display:none;max-height:calc(100vh - 62px);overflow-y:auto}
+  header.nav-open nav.links{display:flex}
+  nav.links a{padding:14px 28px;font-size:16px;color:var(--ink);border-bottom:1px solid var(--line)}
+  nav.links a:last-child{border-bottom:0}
+  nav.links a::after{display:none}
+  nav.links a.on{color:var(--accent)}
+}
+/* comfortable tap targets on touch devices (WCAG 2.5.5) */
+@media(pointer:coarse){
+  .icon-btn{width:44px;height:44px}
+  .chip,.about-chip{min-height:40px;display:inline-flex;align-items:center}
+  .foot-col a{padding:9px 0}
+  nav.links a{min-height:44px;display:flex;align-items:center}
+}
+/* stop right-aligned section subtitles overflowing on narrow screens */
+@media(max-width:560px){
+  .sec-head{flex-wrap:wrap}
+  .sec-head .sub{flex-basis:100%}
 }
 
 /* hero */
@@ -279,6 +313,8 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 @media(max-width:640px){.graph-stage.graph-band{height:440px}}
 .graph-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:#9c988c}
 .gnode:focus{outline:none}
+/* keyboard focus on a graph node: ring the circle (CSS beats the inline stroke) */
+.gnode:focus-visible circle{stroke:var(--accent);stroke-width:4}
 .graph-focusbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:16px}
 .graph-focus-name{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink)}
 .graph-focus-meta{font-family:var(--mono);font-size:12px;color:var(--faint)}

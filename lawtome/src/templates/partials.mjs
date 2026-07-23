@@ -233,7 +233,8 @@ export function header({ base = '/', active, count } = {}) {
     .map(([key, path, label]) => `        <a href="${base}${path}"${key === active ? ' class="on" aria-current="page"' : ''}>${label}</a>`)
     .join('\n');
   const c = count == null ? '—' : count;
-  return `<header>
+  return `<a class="skip" href="#main-content">Skip to content</a>
+<header>
   <div class="kicker"><div class="wrap kick-in">
     <span class="k-l">Vol.&nbsp;I</span>
     <span class="k-c">a living index of named laws · est.&nbsp;mmxxvi</span>
@@ -244,15 +245,17 @@ export function header({ base = '/', active, count } = {}) {
       <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
       <span class="brand-txt"><span class="brand-name">The Law Tome</span><span class="brand-sub">index of named laws</span></span>
     </a>
-    <nav class="links" aria-label="Primary">
+    <nav class="links" id="primary-nav" aria-label="Primary">
 ${nav}
     </nav>
     <div class="right">
       <a class="count" href="${base}browse/"><span class="count-n"${typeof count === 'number' ? ` data-count="${count}"` : ''}>${c}</span><span class="count-l">entries</span></a>
       <button class="icon-btn" id="theme" type="button" aria-label="Toggle light and dark theme"><svg class="th-ico th-moon" viewBox="0 0 24 24" aria-hidden="true"><use href="#moon"/></svg><svg class="th-ico th-sun" viewBox="0 0 24 24" aria-hidden="true"><use href="#sun"/></svg></button>
+      <button class="icon-btn menu-btn" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><svg class="th-ico m-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="th-ico m-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     </div>
   </div>
 </header>
+<span id="main-content" tabindex="-1"></span>
 `;
 }
 

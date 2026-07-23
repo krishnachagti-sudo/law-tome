@@ -27,6 +27,29 @@
     };
   }
 
+  // ---- mobile navigation (works regardless of motion / JS-motion gate) -----
+  function wireNav() {
+    var btn = document.getElementById('menu');
+    if (!btn) return;
+    var hdr = btn.closest('header');
+    var nav = document.getElementById('primary-nav');
+    if (!hdr || !nav) return;
+    function set(open) {
+      hdr.classList.toggle('nav-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    btn.addEventListener('click', function () { set(!hdr.classList.contains('nav-open')); });
+    // Close after choosing a destination, on Escape, or on outside click.
+    nav.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && hdr.classList.contains('nav-open')) { set(false); btn.focus(); }
+    });
+    document.addEventListener('click', function (e) {
+      if (hdr.classList.contains('nav-open') && !hdr.contains(e.target)) set(false);
+    });
+  }
+
   // ---- motion engine (only when <html class="anim">) -----------------------
   function wireMotion() {
     if (!root.classList.contains('anim')) return;
@@ -129,20 +152,25 @@
       if (!track) return;
       sec.classList.add('is-pinned');
       var panels = [].slice.call(track.children);
-      var dist = 0, ticking = false;
+      var dist = 0, vRange = 0, ticking = false;
       function measure() {
+        // Horizontal travel the track must make…
         dist = Math.max(0, track.scrollWidth - window.innerWidth);
-        sec.style.height = (window.innerHeight + dist) + 'px';
+        // …but cap the VERTICAL scroll it costs to ~1.6 screens, so the section
+        // doesn't balloon to five viewports and hijack scroll for that long.
+        vRange = Math.min(dist, Math.round(window.innerHeight * 1.6));
+        sec.style.height = (window.innerHeight + vRange) + 'px';
       }
       function frame() {
         var top = -sec.getBoundingClientRect().top;
-        var p = dist > 0 ? Math.min(1, Math.max(0, top / dist)) : 0;
+        var p = vRange > 0 ? Math.min(1, Math.max(0, top / vRange)) : 0;
         track.style.transform = 'translate3d(' + (-p * dist) + 'px,0,0)';
         if (bar) bar.style.transform = 'scaleX(' + p + ')';
-        var vw = window.innerWidth;
-        for (var i = 0; i < panels.length; i++) {
-          var r = panels[i].getBoundingClientRect();
-          var d = Math.min(1, Math.abs((r.left + r.width / 2) - vw / 2) / vw);
+        // Batch reads then writes (avoid per-panel read/write layout thrash).
+        var vw = window.innerWidth, rects = [], i;
+        for (i = 0; i < panels.length; i++) rects.push(panels[i].getBoundingClientRect());
+        for (i = 0; i < panels.length; i++) {
+          var d = Math.min(1, Math.abs((rects[i].left + rects[i].width / 2) - vw / 2) / vw);
           panels[i].style.opacity = String(1 - d * 0.72);
         }
         ticking = false;
@@ -175,7 +203,7 @@
     }
   }
 
-  function wire() { wireTheme(); wireMotion(); }
+  function wire() { wireTheme(); wireNav(); wireMotion(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
   else wire();
 })();

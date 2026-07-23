@@ -82,6 +82,8 @@
 
     var history = [];
     var current = null;
+    var kbdTravel = false; // set when a keyboard activation triggers a re-render
+    var lastFocusG = null; // the centre node <g> of the current render
 
     // ---- render one law's neighbourhood ----
     function render(slug, pushHistory) {
@@ -157,13 +159,18 @@
         label.textContent = node.name == null ? '' : String(node.name);
         g.appendChild(label);
 
+        if (isFocus) lastFocusG = g;
         function activate() { if (isFocus) location = lawHref(node.slug); else render(node.slug, true); }
         g.addEventListener('click', activate);
-        g.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); activate(); } });
+        g.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); kbdTravel = true; activate(); } });
         nodeLayer.appendChild(g);
       }
       neighbours.forEach(function (nb) { drawNode(nb.node, false); });
       drawNode(focus, true); // focus last -> on top
+      // Keyboard travel wipes the old nodes and drops focus to <body>; move focus to
+      // the new centre node so keyboard users keep their place in the graph.
+      if (kbdTravel && lastFocusG && typeof lastFocusG.focus === 'function') lastFocusG.focus();
+      kbdTravel = false;
 
       // chrome
       if (focusName) focusName.textContent = focus.name || focus.slug;

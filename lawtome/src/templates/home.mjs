@@ -118,13 +118,13 @@ ${trustCell('Rated', 'proven, heuristic, or folklore — marked honestly')}
   <div class="wrap">
     <div class="sec-head">
       <h2>Browse the index of named laws</h2>
-      <span class="sub" id="showing">showing ${teaserLaws.length} of ${count}</span>
+      <span class="sub" id="showing" aria-live="polite">showing ${teaserLaws.length} of ${count}</span>
     </div>
     <div class="chips" id="chips"></div>
     <div class="grid" id="grid" data-limit="18">
 ${teaserCards}
     </div>
-    <div class="sec-more"><a class="ghost" href="${base}browse/"><i class="ti ti-list-details" aria-hidden="true"></i> Browse all ${count} laws</a></div>
+    <div class="sec-more"><a class="ghost" href="${base}browse/"><svg class="ti-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8M13 9h5M13 15h8M13 19h5"/><rect x="3" y="4" width="4" height="4" rx="1"/><rect x="3" y="14" width="4" height="4" rx="1"/></svg> Browse all ${count} laws</a></div>
   </div>
 </section>
 `;
@@ -267,7 +267,7 @@ ${walkLaws.map(panel).join('\n')}
       <div class="hpanel hpanel--outro">
         <span class="hpanel-eyebrow">${count} in total</span>
         <h2>And ${count ? count : 'hundreds'} more.</h2>
-        <a class="btn solid hpanel-outro-cta" href="${base}browse/"><i class="ti ti-list-details" aria-hidden="true"></i> Browse the whole index</a>
+        <a class="btn solid hpanel-outro-cta" href="${base}browse/"><svg class="ti-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8M13 9h5M13 15h8M13 19h5"/><rect x="3" y="4" width="4" height="4" rx="1"/><rect x="3" y="14" width="4" height="4" rx="1"/></svg> Browse the whole index</a>
       </div>
     </div>
     <div class="hscroll-rail"><span class="hscroll-bar"></span></div>
@@ -281,7 +281,9 @@ ${walkLaws.map(panel).join('\n')}
 const LAWS=${featuredJson};
 (function(){
   var s=document.getElementById('stmt');if(!s||LAWS.length<2)return;
-  var hi=0;
+  // Respect reduced-motion: hold on the first statement, no auto-cycling.
+  try{if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;}catch(e){}
+  var hi=0,timer=null,hero=document.querySelector('.hero');
   function setHero(i){
     var l=LAWS[i];
     s.style.opacity=0;
@@ -293,7 +295,14 @@ const LAWS=${featuredJson};
       s.style.opacity=1;
     },300);
   }
-  setInterval(function(){hi=(hi+1)%LAWS.length;setHero(hi)},5200);
+  function tick(){hi=(hi+1)%LAWS.length;setHero(hi);}
+  function play(){if(!timer)timer=setInterval(tick,5200);}
+  function pause(){if(timer){clearInterval(timer);timer=null;}}
+  // Pause while the reader hovers or keyboard-focuses the hero, or the tab is
+  // hidden — so the statement never changes out from under someone reading it.
+  if(hero){hero.addEventListener('pointerenter',pause);hero.addEventListener('pointerleave',play);hero.addEventListener('focusin',pause);hero.addEventListener('focusout',play);}
+  document.addEventListener('visibilitychange',function(){document.hidden?pause():play();});
+  play();
 })();
 </script>
 <script defer src="${base}assets/search.js"></script>`;
