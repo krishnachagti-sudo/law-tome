@@ -223,6 +223,59 @@ ${step('4', 'Traced &amp; rated', 'We follow each law to its earliest reliable o
 </section>
 `;
 
+  // ---- marquee ticker: an endless horizontal ribbon of law names -------
+  // Duplicated once so the CSS translateX(-50%) loop is seamless. Decorative,
+  // so aria-hidden; the names are all reachable through the index below.
+  const marqueeNames = featured.map((f) => f.name).filter(Boolean);
+  const marqueeRun = marqueeNames.length
+    ? marqueeNames.map((n) => `<span class="mq-item">${escapeHtml(n)}</span>`).join('<span class="mq-dot">◆</span>')
+    : '';
+  const marquee = marqueeNames.length
+    ? `<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-run">${marqueeRun}<span class="mq-dot">◆</span></div>
+    <div class="marquee-run">${marqueeRun}<span class="mq-dot">◆</span></div>
+  </div>
+</div>
+`
+    : '';
+
+  // ---- pinned horizontal-scroll gallery: vertical scroll drives a
+  // horizontal "walk" through a handful of marquee laws. With JS + motion it
+  // pins to the viewport and scrubs sideways; without either it degrades to a
+  // plain swipeable rail (still fully usable, keyboard- and touch-accessible).
+  const relClass = { Empirical: 'b-emp', Heuristic: 'b-heu', 'Folk-adage': 'b-folk', Contested: 'b-con' };
+  const walkLaws = featured.slice(0, 6);
+  const panel = (l, i) => `      <a class="hpanel hpanel--law" href="${base}laws/${escapeHtml(l.slug)}/">
+        <span class="hpanel-idx">${String(i + 1).padStart(2, '0')}</span>
+        <span class="hpanel-meta"><span class="badge ${relClass[l.reliability] || 'b-folk'}">${escapeHtml(l.reliability || '')}</span><span class="hpanel-cat">${escapeHtml(l.category || '')}</span></span>
+        <span class="hpanel-name">${escapeHtml(l.name)}</span>
+        <span class="hpanel-stmt"><q>${l.hero}</q></span>
+        <span class="hpanel-go">Read the law <span aria-hidden="true">→</span></span>
+      </a>`;
+  const walk = walkLaws.length
+    ? `<section class="hscroll" data-hscroll aria-label="A walk through the index">
+  <div class="hscroll-sticky">
+    <div class="hscroll-track">
+      <div class="hpanel hpanel--intro">
+        <span class="hpanel-eyebrow">A guided walk</span>
+        <h2>Every law is a door<br>to the next.</h2>
+        <p>Keep scrolling — move sideways through a few of the index's sharpest ideas, then step into any one of them.</p>
+        <span class="hpanel-hint">Scroll <span aria-hidden="true">→</span></span>
+      </div>
+${walkLaws.map(panel).join('\n')}
+      <div class="hpanel hpanel--outro">
+        <span class="hpanel-eyebrow">${count} in total</span>
+        <h2>And ${count ? count : 'hundreds'} more.</h2>
+        <a class="btn solid hpanel-outro-cta" href="${base}browse/"><i class="ti ti-list-details" aria-hidden="true"></i> Browse the whole index</a>
+      </div>
+    </div>
+    <div class="hscroll-rail"><span class="hscroll-bar"></span></div>
+  </div>
+</section>
+`
+    : '';
+
   // ---- inline hero-rotation script (grid/search wiring is Task 10) ------
   const scripts = `<script>
 const LAWS=${featuredJson};
@@ -309,9 +362,11 @@ const LAWS=${featuredJson};
     sprite() +
     header({ base, active: 'browse', count }) +
     hero +
+    marquee +
     trust +
     browse +
     features +
+    walk +
     graphBand +
     method +
     coinBand +

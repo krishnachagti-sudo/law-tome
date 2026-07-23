@@ -129,7 +129,42 @@
       el.addEventListener('pointerleave', function () { el.style.transform = ''; });
     });
 
-    // 5) READING-PROGRESS — a slim top bar tracking scroll depth. The law page
+    // 5) PINNED HORIZONTAL SCROLL — [data-hscroll]: the section grows as tall as
+    // its horizontal overflow, pins to the viewport, and scrubs the inner track
+    // sideways as you scroll down; panels dim toward the edges for depth. Without
+    // this (no-JS / reduced motion) the CSS leaves a plain swipeable rail.
+    [].slice.call(document.querySelectorAll('[data-hscroll]')).forEach(function (sec) {
+      var track = sec.querySelector('.hscroll-track');
+      var bar = sec.querySelector('.hscroll-bar');
+      if (!track) return;
+      sec.classList.add('is-pinned');
+      var panels = [].slice.call(track.children);
+      var dist = 0, ticking = false;
+      function measure() {
+        dist = Math.max(0, track.scrollWidth - window.innerWidth);
+        sec.style.height = (window.innerHeight + dist) + 'px';
+      }
+      function frame() {
+        var top = -sec.getBoundingClientRect().top;
+        var p = dist > 0 ? Math.min(1, Math.max(0, top / dist)) : 0;
+        track.style.transform = 'translate3d(' + (-p * dist) + 'px,0,0)';
+        if (bar) bar.style.transform = 'scaleX(' + p + ')';
+        var vw = window.innerWidth;
+        for (var i = 0; i < panels.length; i++) {
+          var r = panels[i].getBoundingClientRect();
+          var d = Math.min(1, Math.abs((r.left + r.width / 2) - vw / 2) / vw);
+          panels[i].style.opacity = String(1 - d * 0.72);
+        }
+        ticking = false;
+      }
+      function onScroll() { if (ticking) return; ticking = true; requestAnimationFrame(frame); }
+      measure(); frame();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', function () { measure(); onScroll(); }, { passive: true });
+      window.addEventListener('load', function () { measure(); onScroll(); });
+    });
+
+    // 6) READING-PROGRESS — a slim top bar tracking scroll depth. The law page
     // injects its own #progress + scroll-spy; only create one where it's absent so
     // every other long page gets the bar too, without doubling up.
     if (!document.getElementById('progress')) {

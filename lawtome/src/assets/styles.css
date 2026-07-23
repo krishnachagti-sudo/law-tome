@@ -671,6 +671,53 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 /* smooth in-page anchor scrolling (basic) */
 html{scroll-behavior:smooth}
 
+/* ============ marquee ticker ============ */
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface-2);padding:15px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.marquee-track{display:flex;width:max-content}
+.marquee-run{display:flex;align-items:center;flex:none}
+.anim .marquee-track{animation:ltMarquee 52s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.mq-item{font-family:var(--serif);font-size:clamp(18px,2.2vw,25px);color:var(--muted);padding:0 22px;white-space:nowrap;transition:color .2s}
+.mq-item:hover{color:var(--accent)}
+.mq-dot{color:var(--accent);font-size:8px;align-self:center;flex:none}
+@keyframes ltMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============ pinned horizontal-scroll gallery ============ */
+/* Default (no JS / reduced motion): a swipeable, snapping horizontal rail —
+   fully usable on its own. JS upgrades it to the pinned scrub via .is-pinned. */
+.hscroll{position:relative}
+.hscroll-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x proximity;padding:34px 28px 42px;scrollbar-width:none}
+.hscroll-track::-webkit-scrollbar{display:none}
+.hscroll-rail{display:none}
+.hpanel{scroll-snap-align:center;flex:0 0 min(84vw,620px);min-height:340px;border:1px solid var(--line);border-radius:6px;background:var(--surface);padding:32px 34px 28px;display:flex;flex-direction:column;color:inherit;text-decoration:none;position:relative;overflow:hidden}
+.hpanel--intro,.hpanel--outro{background:radial-gradient(120% 140% at 0% 0%,var(--surface-2),var(--surface));justify-content:center;gap:15px}
+.hpanel--intro h2,.hpanel--outro h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.06;letter-spacing:-.02em}
+.hpanel-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.hpanel--intro p{font-family:var(--serif);font-size:16px;color:var(--muted);line-height:1.55;max-width:420px}
+.hpanel-hint,.hpanel-go{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-top:auto}
+.hpanel-outro-cta{width:auto;margin-top:8px;align-self:flex-start}
+.hpanel-idx{font-family:var(--mono);font-size:13px;color:var(--faint);letter-spacing:.05em}
+.hpanel-meta{display:flex;align-items:center;gap:12px;margin:14px 0 2px;font-family:var(--mono);font-size:11px}
+.hpanel-cat{color:var(--accent);text-transform:lowercase;letter-spacing:.03em}
+.hpanel-name{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3vw,38px);letter-spacing:-.02em;line-height:1.06;margin:14px 0 16px}
+.hpanel-stmt{font-family:var(--serif);font-style:italic;font-size:clamp(16px,1.7vw,22px);line-height:1.4;color:var(--muted)}
+.hpanel-stmt q{quotes:none}
+.hpanel-stmt .accent{color:var(--accent);font-style:normal}
+.hpanel--law{transition:border-color .25s,box-shadow .25s,transform .25s}
+.hpanel--law::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--accent);transition:width .35s cubic-bezier(.2,.7,.2,1)}
+.hpanel--law:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));box-shadow:0 22px 50px -30px rgba(0,0,0,.6)}
+.hpanel--law:hover::before{width:100%}
+.hpanel--law:hover .hpanel-go{color:var(--ink)}
+/* pinned mode (JS + motion only): section grows tall, sticky child pins, the
+   track scrubs sideways as you scroll, panels dim toward the edges */
+.hscroll.is-pinned{overflow:visible}
+.hscroll.is-pinned .hscroll-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.hscroll.is-pinned .hscroll-track{overflow:visible;padding:0 clamp(20px,7vw,120px);gap:clamp(20px,3vw,40px);will-change:transform}
+.hscroll.is-pinned .hpanel{flex:0 0 min(64vw,600px);min-height:min(64vh,520px);scroll-snap-align:none}
+.hscroll.is-pinned .hscroll-rail{display:block;position:absolute;left:0;right:0;bottom:40px;margin:0 auto;height:2px;width:min(360px,58%);background:var(--line-strong);border-radius:2px;overflow:hidden}
+.hscroll.is-pinned .hscroll-bar{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:0 50%;background:var(--accent);box-shadow:0 0 10px -1px var(--accent)}
+@media(max-width:640px){.hscroll.is-pinned .hpanel{flex-basis:82vw}}
+
 /* ---- hard reduced-motion backstop: neutralise everything above ---- */
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
