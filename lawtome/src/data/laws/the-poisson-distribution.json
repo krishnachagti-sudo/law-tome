@@ -1,0 +1,51 @@
+{
+  "no": "1080",
+  "slug": "the-poisson-distribution",
+  "name": "The Poisson Distribution",
+  "statement": "The Poisson distribution gives the probability of a number of independent events occurring in a fixed interval at a known constant average rate.",
+  "statementAccent": "a known constant average rate",
+  "meaning": "It models counts of rare, discrete events — radioactive decays, phone calls, defects — that happen independently at a steady long-run rate over a fixed span of time or space. Its single parameter, lambda, is both the mean and the variance. It is the limiting case of the binomial distribution when the number of trials is large and the per-trial probability small.",
+  "mechanism": "The probability of exactly k events is lambda^k · e^(−lambda) / k!. Because events are assumed independent and not simultaneous, the count in any interval is memoryless across disjoint sub-intervals, and summing counts over adjoining intervals with rates lambda1 and lambda2 yields another Poisson variable with rate lambda1 + lambda2.",
+  "examples": [
+    {
+      "tag": "Bombs on London",
+      "text": "In 1946 British statistician R. D. Clarke applied the Poisson distribution to where V-1 and V-2 flying bombs struck London, testing whether hits clustered non-randomly or matched a Poisson pattern of random independent impacts."
+    },
+    {
+      "tag": "Radioactive decay",
+      "text": "The number of decay events a detector records in a fixed window is a textbook Poisson process, since individual atomic decays occur independently at a constant average rate."
+    },
+    {
+      "tag": "Poisson’s gamblers",
+      "text": "Poisson originally devised the distribution to describe how often a gambler would win a rarely-won game across many trials, in his 1837 treatise on probability in legal judgements."
+    }
+  ],
+  "whyItMatters": "It is the standard model for count data across queueing theory, epidemiology, quality control, and astronomy, letting analysts compute the odds of rare-event frequencies from a single average rate. Its one-parameter simplicity makes it the default baseline against which real count data are tested for over- or under-dispersion.",
+  "limits": "The model breaks down when events are not independent (aftershocks cluster after a mainshock) or when the rate is not constant (arrivals surge at certain hours). Real count data frequently show overdispersion — variance exceeding the mean — requiring alternatives like the negative binomial distribution.",
+  "misreadings": "People often apply it to any count data without checking the independence and constant-rate assumptions, or treat \"Poisson-distributed\" as synonymous with \"random\" when clustering or trends actually violate the model.",
+  "origin": "French mathematician Siméon Denis Poisson introduced the distribution in 1837 in \"Recherches sur la probabilité des jugements,\" though Abraham de Moivre had presented related results as early as 1711.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1837,
+  "namedAfter": "Siméon Denis Poisson",
+  "sources": [
+    {
+      "text": "Poisson distribution, Wikipedia. — the probability formula, defining assumptions, 1837 origin, and common examples and misapplications.",
+      "url": "https://en.wikipedia.org/wiki/Poisson_distribution",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Poisson distribution,\" Encyclopaedia Britannica. — the formula, the mean-equals-variance property, and Clarke’s 1946 bombing-pattern analysis.",
+      "url": "https://www.britannica.com/topic/Poisson-distribution",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Poisson_distribution",
+  "related": [
+    {
+      "slug": "students-t-distribution",
+      "kind": "kindred"
+    }
+  ]
+}

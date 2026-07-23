@@ -1,0 +1,45 @@
+{
+  "no": "1082",
+  "slug": "zorns-lemma",
+  "name": "Zorn's Lemma",
+  "statement": "Zorn's lemma states that every nonempty partially ordered set in which every chain has an upper bound contains a maximal element.",
+  "statementAccent": "contains a maximal element",
+  "meaning": "It is a set-theoretic tool for proving the existence of \"biggest\" objects — a basis, an ideal, a subgroup — without constructing them explicitly. Within Zermelo–Fraenkel set theory it is logically equivalent to both the axiom of choice and the well-ordering theorem: assuming any one lets you prove the other two. Zorn proposed it to replace transfinite-induction arguments with a single, more usable statement.",
+  "mechanism": "A partial order is \"inductive\" if every totally ordered subset (chain) has an upper bound in the set. Zorn’s lemma asserts any such nonempty inductive poset must contain at least one maximal element — one with nothing strictly above it — and its proof from the axiom of choice uses choice to build an ever-increasing chain and derives a contradiction if no maximal element existed.",
+  "examples": [
+    {
+      "tag": "Every vector space has a basis",
+      "text": "Zorn’s lemma proves that every vector space, even infinite-dimensional, has a basis, by taking the poset of linearly independent subsets ordered by inclusion and finding a maximal element."
+    },
+    {
+      "tag": "Maximal ideals",
+      "text": "It shows every nontrivial ring with identity contains a maximal ideal, a foundational fact used throughout commutative algebra and algebraic geometry."
+    },
+    {
+      "tag": "Hahn–Banach theorem",
+      "text": "In functional analysis, Zorn’s lemma underlies the proof of the Hahn–Banach theorem, which extends bounded linear functionals from a subspace to the whole space."
+    }
+  ],
+  "whyItMatters": "It is one of the most frequently invoked tools in modern algebra, topology, and analysis whenever an argument needs a maximal object but no explicit construction is available. Its equivalence to the axiom of choice makes it central to foundational debates about which existence proofs count as constructive.",
+  "limits": "The lemma requires a nonempty poset where every chain (including the empty chain) has an upper bound; if that fails, no conclusion follows. It also strictly requires a set, not a proper class — the class of all ordinals meets the chain condition yet has no maximal element (the Burali-Forti paradox), so the lemma cannot be naively extended to classes.",
+  "misreadings": "A common confusion is thinking Zorn’s lemma \"constructs\" the maximal element in any concrete or computable sense; it is a pure existence statement proved via the axiom of choice, guaranteeing existence without providing a method to find the element.",
+  "origin": "Kazimierz Kuratowski proved an early version in 1922; Max Zorn independently formulated and published the standard version in 1935, intending it to supersede cumbersome well-ordering arguments; the name was popularised by John Tukey around 1940.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1935,
+  "namedAfter": "Max Zorn",
+  "sources": [
+    {
+      "text": "Zorn's lemma, Wikipedia. — the precise statement, the Kuratowski/Zorn history, the equivalence to the axiom of choice, and the applications.",
+      "url": "https://en.wikipedia.org/wiki/Zorn%27s_lemma",
+      "type": "secondary"
+    },
+    {
+      "text": "\"The Axiom of Choice,\" Stanford Encyclopedia of Philosophy. — the lemma, Zorn’s 1935 publication, and Artin’s demonstration that it implies the axiom of choice.",
+      "url": "https://plato.stanford.edu/entries/axiom-choice/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Zorn%27s_lemma"
+}

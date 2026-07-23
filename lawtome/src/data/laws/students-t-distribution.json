@@ -1,0 +1,50 @@
+{
+  "no": "1081",
+  "slug": "students-t-distribution",
+  "name": "Student's t-distribution",
+  "statement": "Student's t-distribution generalizes the normal distribution with heavier tails, letting statisticians estimate means from small samples of unknown variance.",
+  "statementAccent": "heavier tails",
+  "meaning": "It is a symmetric, bell-shaped distribution centred at zero whose tails are fatter than the standard normal’s, with the extra spread controlled by a \"degrees of freedom\" parameter. As degrees of freedom grow, it converges to the standard normal; at one degree of freedom it coincides with the Cauchy distribution. It underlies the t-test and t-based confidence intervals used whenever the population standard deviation must be estimated from the sample.",
+  "mechanism": "When sampling from a normal population, the sample mean minus the true mean, divided by the estimated standard error, follows the t-distribution rather than the normal — because the denominator is itself a random estimate subject to sampling variability. This extra uncertainty produces heavier tails, especially for small samples with few degrees of freedom.",
+  "examples": [
+    {
+      "tag": "Guinness barley",
+      "text": "William Sealy Gosset, a chemist at Guinness’s Dublin brewery, developed the distribution to handle the very small samples typical of brewing experiments, where conclusions from few data points required accounting for uncertainty in the estimated variance."
+    },
+    {
+      "tag": "Comparing two means",
+      "text": "A two-sample t-test uses the distribution to judge whether the difference between two small groups’ means — treatment versus control in a small clinical trial — is larger than expected from chance alone."
+    },
+    {
+      "tag": "Confidence intervals",
+      "text": "Researchers build a 95% confidence interval around a sample mean by multiplying the estimated standard error by a critical value from the t-distribution with the appropriate degrees of freedom, rather than from the normal distribution."
+    }
+  ],
+  "whyItMatters": "It made rigorous inference possible with small samples, unavoidable in expensive or destructive experiments such as brewing trials, clinical studies, and quality control. It remains one of the most widely used distributions in applied statistics, underpinning t-tests, regression coefficient tests, and interval estimation.",
+  "limits": "It assumes the underlying population is normal (or the sample large enough for the central limit theorem to apply) and is less appropriate for strongly skewed or heavy-tailed populations. As degrees of freedom increase it becomes practically indistinguishable from the normal distribution, so its distinct value is greatest for small samples.",
+  "misreadings": "A common misreading of the resulting confidence interval is \"there is a 95% probability the true mean lies in this interval,\" when in frequentist terms the probability applies to the interval-construction procedure over repeated sampling, not to the fixed computed interval.",
+  "origin": "Devised by William Sealy Gosset at the Guinness brewery in Dublin, who published it in 1908 in Biometrika under the pseudonym \"Student\" because Guinness barred employees from publishing under their own names.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1908,
+  "sources": [
+    {
+      "text": "Student's t-distribution, Wikipedia. — the shape, degrees-of-freedom parameter, convergence to the normal, and Gosset’s Guinness history.",
+      "url": "https://en.wikipedia.org/wiki/Student%27s_t-distribution",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Student’s t-distribution,\" Encyclopaedia Britannica. — Gosset’s 1908 development under the \"Student\" pseudonym and its use in hypothesis testing.",
+      "url": "https://www.britannica.com/topic/Students-t-distribution",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Student%27s_t-distribution",
+  "related": [
+    {
+      "slug": "the-poisson-distribution",
+      "kind": "kindred"
+    }
+  ]
+}

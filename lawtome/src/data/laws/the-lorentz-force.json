@@ -1,0 +1,51 @@
+{
+  "no": "1076",
+  "slug": "the-lorentz-force",
+  "name": "The Lorentz Force",
+  "statement": "The force on a charged particle equals q(E + v × B), combining electric attraction or repulsion with a magnetic force perpendicular to its velocity.",
+  "statementAccent": "q(E + v × B)",
+  "meaning": "The Lorentz force law gives the total electromagnetic force on a point charge moving through electric and magnetic fields. The electric term pushes the charge along the field direction, while the magnetic term bends its path without changing its speed.",
+  "mechanism": "A charge in an electric field feels a force along the field; if it also moves with some velocity through a magnetic field, it feels an additional force perpendicular to both its motion and the field, producing circular or helical trajectories. Maxwell’s 1865 work contained an implicit version, Heaviside corrected the expression between 1885 and 1889, and Hendrik Lorentz gave the complete modern derivation in 1895.",
+  "examples": [
+    {
+      "tag": "Mass spectrometer",
+      "text": "In a mass spectrometer, ions entering a magnetic field are bent into circular paths by the magnetic part of the Lorentz force; the radius depends on each ion’s mass-to-charge ratio, letting the instrument separate ions by mass."
+    },
+    {
+      "tag": "Auroras",
+      "text": "Charged particles from the solar wind spiral along Earth’s magnetic field lines under the Lorentz force and funnel toward the poles, where they collide with atmospheric atoms to produce the aurora."
+    },
+    {
+      "tag": "Particle accelerators",
+      "text": "Cyclotrons and other accelerators use magnetic fields to curve charged particles into circular paths via the Lorentz force while electric fields accelerate them, enabling high-energy physics experiments."
+    }
+  ],
+  "whyItMatters": "The Lorentz force law bridges electromagnetic field theory and particle mechanics, essential for designing motors, generators, accelerators, and mass spectrometers, and for understanding plasmas and space weather.",
+  "limits": "The classical Lorentz force does not include radiation reaction — the self-force from a charge’s own radiated field — and is superseded at very high energies or strong fields by quantum electrodynamics.",
+  "misreadings": "It is sometimes thought the magnetic force can speed up or slow down a charged particle; because the magnetic term is always perpendicular to velocity, it changes direction only, never speed.",
+  "origin": "Implicit in Maxwell’s 1865 electromagnetic theory; corrected by Oliver Heaviside around 1885–1889; given a complete derivation by Hendrik Lorentz in 1895, after whom it is named.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1895,
+  "namedAfter": "Hendrik Lorentz",
+  "sources": [
+    {
+      "text": "Lorentz force, Wikipedia. — the formula and the Heaviside/Lorentz history of its derivation.",
+      "url": "https://en.wikipedia.org/wiki/Lorentz_force",
+      "type": "secondary"
+    },
+    {
+      "text": "HyperPhysics, \"Mass Spectrometer.\" — that charged particles curve in a magnetic field with radius set by mass-to-charge ratio.",
+      "url": "http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/maspec.html",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Lorentz_force",
+  "related": [
+    {
+      "slug": "maxwells-equations",
+      "kind": "kindred"
+    }
+  ]
+}
