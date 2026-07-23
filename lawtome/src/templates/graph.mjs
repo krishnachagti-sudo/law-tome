@@ -37,7 +37,7 @@ export function graphPage({ base = '/', origin = '', publishedCount } = {}) {
     <p class="graph-intro">Every law is a door to a few others. Start from one and walk its web — the laws it echoes, causes, or contradicts. <b>Search</b> for a law, <b>click</b> a neighbour to travel to it, or click the one in the centre to read its page. Colour marks the reliability tier.</p>
     <div class="graph-search">
       <i class="ti ti-search" aria-hidden="true"></i>
-      <input id="graph-q" type="text" placeholder="Start from a law…" autocomplete="off" aria-label="Find a law to explore in the graph">
+      <input id="graph-q" type="search" placeholder="Start from a law…" autocomplete="off" aria-label="Find a law to explore in the graph">
       <div class="graph-suggest" id="graph-suggest" hidden></div>
     </div>
     <div class="graph-stage graph-band" id="graph" aria-label="Relationship graph explorer" role="group">

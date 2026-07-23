@@ -49,6 +49,15 @@
   }
 
   function build(stage, graph) {
+    // Responsive geometry: on a narrow (portrait) stage use a taller, narrower
+    // viewBox that fills the phone instead of letterboxing a 900-wide canvas down
+    // to ~0.4×, show fewer neighbours so the fan isn't crammed, and size labels
+    // larger in viewBox units so they don't shrink to unreadable on screen.
+    var portrait = (stage.clientWidth || 900) < 620;
+    var W = portrait ? 500 : 900, H = portrait ? 660 : 560, CX = W / 2, CY = H / 2;
+    var MAX_NEIGHBOURS = portrait ? 9 : 18;
+    var RCAP = portrait ? 172 : 232, RBASE = portrait ? 116 : 116;
+    var LFONT = portrait ? 15 : 11, LFONTF = portrait ? 18 : 13;
     var index = {};
     graph.nodes.forEach(function (n) { index[n.slug] = { slug: n.slug, name: n.name, reliability: n.reliability, adj: [] }; });
     (Array.isArray(graph.edges) ? graph.edges : []).forEach(function (e) {
@@ -99,7 +108,7 @@
       edgeLayer.textContent = ''; nodeLayer.textContent = '';
 
       var n = neighbours.length;
-      var R = n <= 1 ? 0 : Math.min(232, 116 + n * 7);   // fan radius grows with count
+      var R = n <= 1 ? 0 : Math.min(RCAP, RBASE + n * 7);   // fan radius grows with count
       var pos = {}; pos[focus.slug] = { x: CX, y: CY };
       neighbours.forEach(function (nb, i) {
         var ang = (-Math.PI / 2) + (2 * Math.PI * i / Math.max(1, n));
@@ -144,7 +153,7 @@
         g.appendChild(dot);
         var label = svgEl('text');
         label.setAttribute('font-family', "'Space Mono',monospace");
-        label.setAttribute('font-size', isFocus ? '13' : '11');
+        label.setAttribute('font-size', isFocus ? LFONTF : LFONT);
         label.setAttribute('fill', isFocus ? '#f6f1e6' : '#e4ddce');
         label.setAttribute('paint-order', 'stroke');
         label.setAttribute('stroke', '#0f1118'); label.setAttribute('stroke-width', isFocus ? '4' : '3.5'); label.setAttribute('stroke-linejoin', 'round');

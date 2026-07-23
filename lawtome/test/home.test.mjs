@@ -33,9 +33,11 @@ test('homepage ships the marketing sections', () => {
   assert.match(html, /class="sec home-trust"/);
   assert.match(html, /class="sec home-features"/);
   assert.match(html, /More than a list/);
-  assert.match(html, /Nothing here is invented/);
   assert.match(html, /href="\/lawtome\/situations\/"/);
   assert.match(html, /href="\/lawtome\/reliability\/"/);
+  // The anti-fabrication method is NOT restated on the home page — it lives on
+  // About (this avoids a third copy of the same "we're rigorous" claim).
+  assert.doesNotMatch(html, /Nothing here is invented/);
 });
 
 // ---- added coverage (Task 5/6 lessons) ---------------------------------

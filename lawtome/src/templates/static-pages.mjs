@@ -70,7 +70,8 @@ ${coinStep('3', 'It’s published — with your name', 'If it clears, it becomes
       </label>
       <label class="field">
         <span class="lbl">Sources / prior art (optional but decisive)</span>
-        <textarea name="sources" rows="2" placeholder="Links or citations. Suggestions without a resolvable source will not be published."></textarea>
+        <textarea name="sources" rows="2" inputmode="url" aria-describedby="sources-hint" placeholder="Links or citations."></textarea>
+        <span class="field-hint" id="sources-hint">Suggestions without a resolvable source will not be published.</span>
       </label>
       <div class="grant">
         <p>By submitting, you <b>grant</b> The Law Tome a non-exclusive, perpetual licence to publish, edit, and cross-link your submission under the <b>CC BY</b> licence that covers the whole corpus, with attribution to you. You <b>warrant</b> that the submission is your own original work (for a coined law) and does not infringe anyone else's rights.</p>

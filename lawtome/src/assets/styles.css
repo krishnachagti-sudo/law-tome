@@ -310,7 +310,7 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .graph-suggest-item:last-child{border-bottom:0}
 .graph-suggest-item:hover{background:var(--surface-2);color:var(--accent)}
 .graph-stage.graph-band{padding:0;height:560px}
-@media(max-width:640px){.graph-stage.graph-band{height:440px}}
+@media(max-width:640px){.graph-stage.graph-band{height:520px}}
 .graph-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:#9c988c}
 .gnode:focus{outline:none}
 /* keyboard focus on a graph node: ring the circle (CSS beats the inline stroke) */
@@ -815,6 +815,7 @@ html{scroll-behavior:smooth}
 .field textarea{resize:vertical;min-height:92px;line-height:1.6}
 .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 20%,transparent)}
 .field input::placeholder,.field textarea::placeholder{color:var(--faint)}
+.field-hint{font-family:var(--sans);font-size:12.5px;line-height:1.5;color:var(--faint)}
 .grant{background:var(--surface-2);border:1px solid var(--line);border-radius:3px;padding:16px 18px}
 .grant p{font-size:13.5px;line-height:1.65;color:var(--muted);margin:0}
 .grant b{color:var(--ink);font-weight:600}

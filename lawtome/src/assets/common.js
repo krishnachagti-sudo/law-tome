@@ -12,7 +12,17 @@
   if (saved) root.setAttribute('data-theme', saved);
   else if (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) root.setAttribute('data-theme', 'light');
 
+  // Keep the browser-chrome colour in step with the ACTUAL theme. The static
+  // <meta theme-color> pair keys off prefers-color-scheme, which a manual toggle
+  // overrides — so add one authoritative meta (no media) that always wins.
+  function syncThemeColor(t) {
+    var m = document.getElementById('tc-dyn');
+    if (!m) { m = document.createElement('meta'); m.name = 'theme-color'; m.id = 'tc-dyn'; document.head.appendChild(m); }
+    m.setAttribute('content', t === 'light' ? '#f4f1e8' : '#14161c');
+  }
+
   function wireTheme() {
+    syncThemeColor(root.getAttribute('data-theme'));
     var btn = document.getElementById('theme');
     // Which glyph shows (moon vs sun) is driven purely by CSS keyed on
     // <html data-theme>, so there's no icon to repaint here — just flip the theme.
@@ -20,6 +30,7 @@
     if (btn) btn.onclick = function () {
       var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
+      syncThemeColor(next);
       try { localStorage.setItem('lt-theme', next); } catch (e) {}
       if (root.classList.contains('anim')) {
         btn.classList.remove('spin'); void btn.offsetWidth; btn.classList.add('spin');

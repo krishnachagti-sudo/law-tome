@@ -87,7 +87,7 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
     <div class="hero-actions">
       <label class="search">
         <i class="ti ti-search" aria-hidden="true"></i>
-        <input id="q" placeholder="Search a law — or describe the feeling…" autocomplete="off" aria-label="Search laws">
+        <input id="q" type="search" placeholder="Search a law — or describe the feeling…" autocomplete="off" aria-label="Search laws">
       </label>
       <button class="ghost" id="rand"><i class="ti ti-arrows-shuffle" aria-hidden="true"></i> Random law</button>
     </div>
@@ -161,25 +161,9 @@ ${feat('named-after/', IC.person, 'By their namesake', 'Browse laws under the pe
 </section>
 `;
 
-  // ---- method / trust: the anti-fabrication promise, marketed -----------
-  const step = (n, t, b) => `      <div class="mstep"><span class="mstep-n">${n}</span><div class="mstep-b"><span class="mstep-t">${t}</span><span class="mstep-p">${b}</span></div></div>`;
-  const method = `<section class="sec home-method">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <h2>Nothing here is invented</h2>
-      <span class="sub">how we keep it honest</span>
-    </div>
-    <p class="home-method-lede">A named law is worthless if it’s misattributed or made up. Every entry earns its place the same way — no exceptions.</p>
-    <div class="method-steps" data-reveal-stagger>
-${step('1', 'Drawn from sources', 'Laws come from the literature, never invented. We start from what is actually attested.')}
-${step('2', 'Cited, or it doesn’t ship', 'No claim reaches a page without a resolvable source behind it.')}
-${step('3', 'Adversarially checked', 'Each entry is challenged — misattributions, apocrypha, and folk-embellishments get caught here.')}
-${step('4', 'Traced &amp; rated', 'We follow each law to its earliest reliable origin and rate its reliability honestly — including when it’s contested.')}
-    </div>
-    <div class="sec-more"><a class="ghost" href="${base}about/"><i class="ti ti-arrow-right" aria-hidden="true"></i> The full method</a></div>
-  </div>
-</section>
-`;
+  // The anti-fabrication method lives in full on the About page (and is summed up
+  // by the trust strip's "Sourced / Rated"); it used to be restated here nearly
+  // verbatim, so the home page no longer carries a third copy of the same claim.
 
   // ---- graph band -------------------------------------------------------
   const graphBand = `<section class="sec" id="graph" style="padding-top:12px">
@@ -377,7 +361,6 @@ const LAWS=${featuredJson};
     features +
     walk +
     graphBand +
-    method +
     coinBand +
     footer({ base, scripts })
   );
