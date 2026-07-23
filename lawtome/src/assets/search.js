@@ -212,8 +212,10 @@
     function render() {
       if (!grid) return;
       var list = filtered();
-      // Cap to the teaser sample only when nothing is filtered (idle homepage).
-      var idle = !query && activeCat === 'all' && !activeRel;
+      // Cap to the teaser sample only on an untouched homepage. Any control —
+      // search, category, tier, sort, or grouping — lifts the cap so it operates
+      // on the whole index, not just the 18-card sample.
+      var idle = !query && activeCat === 'all' && !activeRel && !grouped && activeSort === 'no';
       if (LIMIT > 0 && idle && list.length > LIMIT) list = list.slice(0, LIMIT);
       if (activeSort !== 'no') list = applySort(list); // 'no' keeps natural/relevance order
       grid.textContent = ''; // clear without innerHTML

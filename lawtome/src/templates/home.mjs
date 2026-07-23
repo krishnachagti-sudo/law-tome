@@ -22,7 +22,7 @@
 // client rotation writes via innerHTML (`hero`, `nameHtml`) are PRE-escaped in
 // the blob, so the rotation cannot inject markup either.
 
-import { head, sprite, header, footer, escapeHtml, lawCard } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, browseControls } from './partials.mjs';
 
 /**
  * Escape the statement, then wrap the accent phrase in <span class="accent">.
@@ -121,7 +121,7 @@ ${trustCell('Rated', 'proven, heuristic, or folklore — marked honestly')}
       <span class="sub" id="showing" aria-live="polite">showing ${teaserLaws.length} of ${count}</span>
     </div>
     <div class="chips" id="chips"></div>
-    <div class="grid" id="grid" data-limit="18">
+${browseControls({})}    <div class="grid" id="grid" data-limit="18">
 ${teaserCards}
     </div>
     <div class="sec-more"><a class="ghost" href="${base}browse/"><svg class="ti-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8M13 9h5M13 15h8M13 19h5"/><rect x="3" y="4" width="4" height="4" rx="1"/><rect x="3" y="14" width="4" height="4" rx="1"/></svg> Browse all ${count} laws</a></div>

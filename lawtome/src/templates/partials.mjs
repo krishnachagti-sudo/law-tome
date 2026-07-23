@@ -260,6 +260,31 @@ ${nav}
 }
 
 /**
+ * Faceted browse controls — a reliability-tier filter, a sort selector, and a
+ * "group by tier" toggle. Shared by the homepage teaser and the /browse/ +
+ * category pages so they behave identically; wired client-side by search.js.
+ * @param {object} [o]
+ * @param {boolean} [o.isReliability=false] on a reliability-tier page the tier is
+ *   fixed, so the tier chips and group toggle are omitted (sort only).
+ */
+export function browseControls({ isReliability = false } = {}) {
+  const REL_TIERS = [['', 'All tiers', ''], ['Empirical', 'Empirical', 'var(--ok)'], ['Heuristic', 'Heuristic', 'var(--gold)'], ['Folk-adage', 'Folk-adage', 'var(--faint)'], ['Contested', 'Contested', 'var(--con)']];
+  const relChips = `<div class="chips chips--rel" id="rel-chips" role="group" aria-label="Filter by reliability tier">${REL_TIERS.map(([val, label, col], i) => `<button class="chip${i === 0 ? ' on' : ''}" type="button" data-r="${escapeHtml(val)}">${col ? `<span class="rel-dot" style="background:${col}"></span>` : ''}${escapeHtml(label)}</button>`).join('')}</div>`;
+  const sortControl = `<div class="browse-sort">
+      <label class="browse-sort-l" for="sort">Sort</label>
+      <select id="sort" class="browse-select" aria-label="Sort laws">
+        <option value="no">№ order</option>
+        <option value="az">Name A–Z</option>
+        <option value="za">Name Z–A</option>
+        <option value="rels">Most connected</option>
+        <option value="tier">By reliability</option>
+      </select>${isReliability ? '' : `
+      <button class="chip group-toggle" id="group-toggle" type="button" aria-pressed="false">Group by tier</button>`}
+    </div>`;
+  return `    <div class="browse-controls">${isReliability ? '' : relChips}${sortControl}</div>\n`;
+}
+
+/**
  * Footer (verbatim from the prototype, incl. the CC BY licence line and seal),
  * then the closing </body></html>. Optional `scripts` markup is emitted just
  * before </body> — the prototype's slot for page-specific inline scripts.
