@@ -1,0 +1,50 @@
+{
+  "no": "1128",
+  "slug": "the-universal-scalability-law",
+  "name": "The Universal Scalability Law",
+  "statement": "The Universal Scalability Law models relative capacity as C(N) = N / (1 + a(N-1) + bN(N-1)), where a is contention and b is coherency delay.",
+  "statementAccent": "C(N) = N / (1 + a(N-1) + bN(N-1))",
+  "meaning": "The Universal Scalability Law (USL), developed by Neil J. Gunther, is a quantitative model of how a system’s throughput changes as concurrency (N users, processes, or nodes) increases. It generalises Amdahl’s Law by adding a second penalty term for the cost of keeping distributed state consistent, not just the cost of serialised work. As N grows large enough, the coherency term dominates and capacity can actually decrease rather than merely plateau.",
+  "mechanism": "The denominator has three components corresponding to \"the three Cs\": ideal linear concurrency (the \"1\"), contention for shared resources (the a term, growing with N−1), and coherency from keeping distributed data consistent (the b term, growing with N(N−1)). When a and b are both zero, C(N)=N (perfect linear scaling); when b is nonzero, the model predicts a peak capacity followed by retrograde throughput at high concurrency.",
+  "examples": [
+    {
+      "tag": "Pyramid Technology",
+      "text": "Gunther developed the USL around 1990 at Pyramid Technology to predict TPC benchmark scalability on Unix multiprocessors, first presenting it at the 1993 Computer Measurement Group conference."
+    },
+    {
+      "tag": "Amdahl generalisation",
+      "text": "With b set to zero, the USL formula reduces to a form equivalent to Amdahl’s Law for parallel speedup, making USL a strict generalisation that adds the coherency-delay term Amdahl’s Law omits."
+    },
+    {
+      "tag": "Capacity planning",
+      "text": "The USL has been applied in capacity-planning practice, including load-testing tool analysis and modelling of disk arrays, SANs, and multicore scalability."
+    }
+  ],
+  "whyItMatters": "USL gives practitioners a simple, two-parameter curve fit that can be regressed from a handful of throughput measurements to predict where adding more servers, cores, or users will stop helping — or start hurting — without detailed low-level instrumentation.",
+  "limits": "USL is an empirical curve fit rather than a first-principles law; it requires a reasonably clean set of measured (N, throughput) points to fit its parameters reliably, and its predictions degrade if the underlying bottleneck structure changes qualitatively outside the measured range.",
+  "misreadings": "USL is sometimes conflated with Amdahl’s Law, or treated as if it always predicts a capacity decline — retrograde scaling only appears when the coherency parameter is nonzero; purely contention-limited systems merely plateau.",
+  "origin": "Developed by Neil J. Gunther around 1990–1993, first presented at the 1993 CMG conference and later formalised and extended in work through the 2000s.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1993,
+  "sources": [
+    {
+      "text": "Neil J. Gunther, Wikipedia. — the USL’s development at Pyramid Technology, its purpose, and the 1993 CMG paper.",
+      "url": "https://en.wikipedia.org/wiki/Neil_J._Gunther",
+      "type": "secondary"
+    },
+    {
+      "text": "\"What is the Universal Scalability Law,\" Practical Performance Analyst. — the formula and the contention and coherency parameters.",
+      "url": "https://tangowhisky37.github.io/PracticalPerformanceAnalyst/pages/spe_fundamentals/what_is_universal_scalability_law/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Neil_J._Gunther",
+  "related": [
+    {
+      "slug": "amdahls-law",
+      "kind": "kindred"
+    }
+  ]
+}

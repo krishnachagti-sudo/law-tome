@@ -1,0 +1,50 @@
+{
+  "no": "1126",
+  "slug": "paxos",
+  "name": "Paxos",
+  "statement": "Paxos is a family of protocols that let a network of unreliable processors reach consensus on a single value.",
+  "statementAccent": "family of protocols",
+  "meaning": "Paxos solves the fundamental distributed-systems problem of getting multiple nodes, some of which may fail or be slow, to agree on one value even though messages can be lost or delayed. It guarantees safety — all nodes that decide, decide the same value — under asynchronous, unreliable conditions, provided a majority of participants are functioning.",
+  "mechanism": "Paxos proceeds in proposal-numbered rounds among proposers, acceptors, and learners: a proposer requests a promise from a majority of acceptors not to accept older proposals, then, if it wins that majority, sends an accept request for a value, which acceptors adopt if consistent with their promises; a value is chosen once a majority of acceptors accept it.",
+  "examples": [
+    {
+      "tag": "The Paxos parable",
+      "text": "Lamport cast the algorithm as a whimsical parable about the parliament of the Greek island of Paxos, whose legislators wandered in and out of session yet still needed to pass laws by consensus."
+    },
+    {
+      "tag": "Google Chubby",
+      "text": "Google’s Chubby distributed lock service, along with Spanner and Megastore, use Paxos to keep replicas consistent."
+    },
+    {
+      "tag": "Publication history",
+      "text": "Lamport wrote the paper in 1989 but it was not published until 1998, as \"The Part-Time Parliament,\" ACM Transactions on Computer Systems."
+    }
+  ],
+  "whyItMatters": "Paxos became the foundational consensus algorithm underlying practical fault-tolerant replicated systems, enabling reliable distributed locking, configuration management, and state-machine replication at companies like Google, Microsoft, and Amazon.",
+  "limits": "The original Part-Time Parliament paper was notoriously difficult to understand, prompting Lamport to write \"Paxos Made Simple\" (2001); implementing Paxos correctly in real systems remains complex, spawning variants like Multi-Paxos and Raft.",
+  "misreadings": "Paxos is sometimes assumed to be named after a person, but it is named after the real Greek island of Paxos, the setting for Lamport’s parliamentary allegory.",
+  "origin": "Devised by Leslie Lamport at Digital Equipment Corporation; written and circulated in 1989, formally published in 1998.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1998,
+  "sources": [
+    {
+      "text": "Paxos (computer science), Wikipedia. — the core definition, the naming origin, and real-world deployments.",
+      "url": "https://en.wikipedia.org/wiki/Paxos_(computer_science)",
+      "type": "secondary"
+    },
+    {
+      "text": "Lamport, \"The Part-Time Parliament,\" ACM Transactions on Computer Systems 16(2) (1998). — the primary paper introducing Paxos.",
+      "url": "https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Paxos_(computer_science)",
+  "related": [
+    {
+      "slug": "the-raft-consensus-algorithm",
+      "kind": "near-twin"
+    }
+  ]
+}

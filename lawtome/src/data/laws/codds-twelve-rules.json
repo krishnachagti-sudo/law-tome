@@ -1,0 +1,51 @@
+{
+  "no": "1127",
+  "slug": "codds-twelve-rules",
+  "name": "Codd's Twelve Rules",
+  "statement": "Codd's twelve rules define thirteen requirements, numbered 0 through 12, that a database system must satisfy to be considered truly relational.",
+  "statementAccent": "truly relational",
+  "meaning": "Edgar F. Codd formulated these rules to give a precise, checkable definition of what it means for a database management system to be \"relational,\" rather than merely resembling one. They cover how data is represented, accessed, and manipulated so that all interaction happens through the relational model itself, without bypass mechanisms.",
+  "mechanism": "Rule 0 (the \"Foundation Rule\") requires that a system manage its stored data entirely through its relational capabilities, and the remaining twelve elaborate specific consequences. Rule 1 requires all data to be represented explicitly as values in tables, Rule 3 requires systematic handling of missing (NULL) data independent of type, and Rule 12 (the \"Nonsubversion Rule\") forbids low-level languages from bypassing relational integrity constraints. Together they act as a conformance checklist.",
+  "examples": [
+    {
+      "tag": "Rule 3 — NULLs",
+      "text": "SQL databases use a single NULL marker for both \"value inapplicable\" and \"value unknown,\" which does not fully satisfy Codd’s original distinction between two kinds of missing information."
+    },
+    {
+      "tag": "Rule 6 — view updating",
+      "text": "Vendors generally support updating only views that map to a single base table, since Codd’s requirement that all theoretically updatable views be updatable proved impractical for complex joins."
+    },
+    {
+      "tag": "Rule 12 — nonsubversion",
+      "text": "SQL’s row-by-row cursor operations must still respect declared integrity constraints, reflecting the rule that low-level record-at-a-time access cannot circumvent relational integrity."
+    }
+  ],
+  "whyItMatters": "The rules gave the database industry a rigorous yardstick during the early 1980s, when vendors were rebranding pre-relational products with a \"relational veneer,\" and they remain a reference point for evaluating how faithfully any RDBMS implements the relational model.",
+  "limits": "No commercial database fully satisfies all twelve rules in practice; a 2007 textbook noted no database system complies with all twelve. Codd himself later said the twelve rules offered only \"coarse distinctions\" compared to the 333 features of his more detailed RM/V2 model.",
+  "misreadings": "The rules are sometimes mistaken for a design pattern or best-practice guide rather than a strict conformance test, and cited as if compliance were binary and achieved, when in practice compliance is partial and debated for every major product.",
+  "origin": "Edgar F. Codd outlined the relational ideas in 1970 and 1974, then published the twelve rules explicitly in two Computerworld articles in October 1985.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1985,
+  "namedAfter": "Edgar F. Codd",
+  "sources": [
+    {
+      "text": "Codd's 12 rules, Wikipedia. — the thirteen rules (0–12), the publication history, and later compliance commentary.",
+      "url": "https://en.wikipedia.org/wiki/Codd%27s_12_rules",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Codd’s Twelve Rules,\" Redgate Simple Talk. — each rule with real-world SQL compliance notes.",
+      "url": "https://www.red-gate.com/simple-talk/databases/theory-and-design/codds-twelve-rules/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Codd%27s_12_rules",
+  "related": [
+    {
+      "slug": "acid",
+      "kind": "kindred"
+    }
+  ]
+}

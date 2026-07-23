@@ -1,0 +1,51 @@
+{
+  "no": "1132",
+  "slug": "the-von-neumann-bottleneck",
+  "name": "The von Neumann Bottleneck",
+  "statement": "The von Neumann bottleneck is the limited throughput between CPU and memory that forces a processor to wait as data and instructions move through a single shared connection.",
+  "statementAccent": "the limited throughput between CPU and memory",
+  "meaning": "In the classic von Neumann architecture, a single bus carries both instructions and data one word at a time between processor and memory, so the connection’s bandwidth caps overall performance regardless of how fast the CPU can compute. John Backus argued this is not just a hardware limitation but an \"intellectual\" one, since conventional programming languages are built around the same word-at-a-time, store-and-fetch model.",
+  "mechanism": "Because instructions and data share one path to memory, the CPU repeatedly pauses to fetch each instruction and operand sequentially, so the achievable computation rate is bounded by the store-CPU channel’s bandwidth rather than CPU logic speed. As transistor and clock speeds outpaced memory access speeds over the decades, this gap widened, motivating architectural countermeasures.",
+  "examples": [
+    {
+      "tag": "Backus’s image",
+      "text": "In his 1977 ACM Turing Award lecture, Backus wrote: \"Surely there must be a less primitive way of making big changes in the store than by pushing vast numbers of words back and forth through the von Neumann bottleneck.\""
+    },
+    {
+      "tag": "Caching",
+      "text": "Modern CPUs insert layers of cache memory between processor and main memory specifically to reduce how often the CPU must wait on the slow CPU-memory channel."
+    },
+    {
+      "tag": "Harvard architectures",
+      "text": "Separating instruction and data pathways, as in the modified Harvard architecture used in many microcontrollers and cache designs, is a direct architectural response to the shared-bus bottleneck Backus named."
+    }
+  ],
+  "whyItMatters": "The concept explains a fundamental, persistent constraint on computer performance and motivated decades of architectural innovation — caching hierarchies, pipelining, branch prediction, and dataflow research — as well as Backus’s broader critique of imperative programming languages.",
+  "limits": "The bottleneck describes a structural tendency in the classical model, not a fixed numeric limit; caching, pipelining, out-of-order execution, and parallel architectures substantially mitigate but do not eliminate its impact, and Backus’s proposed functional-programming alternative did not displace mainstream imperative languages.",
+  "misreadings": "It is sometimes reduced to \"memory is slower than CPU\" as a pure hardware footnote, missing Backus’s broader point that conventional programming languages themselves are conceptually shackled to the same word-at-a-time model.",
+  "origin": "The term was coined by John Backus in his 1977 ACM Turing Award lecture, \"Can Programming Be Liberated from the von Neumann Style?\" — named after the von Neumann architecture, not coined by von Neumann himself.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1977,
+  "namedAfter": "John von Neumann",
+  "sources": [
+    {
+      "text": "Von Neumann architecture, Wikipedia. — that Backus coined the term in his 1977 Turing lecture, the quotation, and mitigation techniques.",
+      "url": "https://en.wikipedia.org/wiki/Von_Neumann_architecture",
+      "type": "secondary"
+    },
+    {
+      "text": "John Backus, Wikipedia. — his 1977 ACM Turing Award and lecture title.",
+      "url": "https://en.wikipedia.org/wiki/John_Backus",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Von_Neumann_architecture",
+  "related": [
+    {
+      "slug": "amdahls-law",
+      "kind": "kindred"
+    }
+  ]
+}

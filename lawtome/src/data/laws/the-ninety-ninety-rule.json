@@ -1,0 +1,50 @@
+{
+  "no": "1130",
+  "slug": "the-ninety-ninety-rule",
+  "name": "The Ninety-Ninety Rule",
+  "statement": "The first 90 percent of the code accounts for the first 90 percent of the development time, and the remaining 10 percent accounts for the other 90 percent.",
+  "statementAccent": "the first 90 percent of the development time",
+  "meaning": "The ninety-ninety rule is a wry aphorism about software estimation, observing that the final, seemingly small portion of a project routinely takes as long as, or longer than, everything before it. Its two \"90 percents\" deliberately sum to 180 percent, exaggerating for effect to highlight chronic underestimation of the effort needed to finish integration, edge cases, and polish.",
+  "mechanism": "Early progress on the bulk of a system’s code is often visible and steady, while the last stretch exposes hidden complexity: integration issues, obscure edge cases, performance problems, and testing effort not apparent until the bulk exists. Because estimators anchor on the earlier, smoother pace, they systematically underestimate the disproportionate cost of this final stretch.",
+  "examples": [
+    {
+      "tag": "Coining",
+      "text": "The rule is attributed to Tom Cargill of Bell Labs and was popularised in Jon Bentley’s September 1985 \"Programming Pearls\" column in Communications of the ACM."
+    },
+    {
+      "tag": "\"Relatively done\" work",
+      "text": "The rule is often invoked in agile contexts for work items marked as done but blocked on one final activity — a review or integration step — that ends up consuming disproportionate time."
+    },
+    {
+      "tag": "Schedule overruns",
+      "text": "It is frequently cited as a folk explanation for why software projects run over schedule, since the final debugging and integration phase is systematically underestimated."
+    }
+  ],
+  "whyItMatters": "It functions as a cautionary heuristic in project planning, reminding engineers and managers that percent-of-code-complete is a poor proxy for percent-of-time-remaining, especially near a project’s end.",
+  "limits": "It is a humorous exaggeration rather than a measured statistic — there is no dataset showing time literally splits 90/90; it is best read as a warning about estimation bias, not a quantitative predictive model.",
+  "misreadings": "It is sometimes treated as empirically derived or a literal timing law, when it originated and circulates primarily as programmer folklore illustrating a real cognitive bias in estimation.",
+  "origin": "Attributed to Tom Cargill of Bell Labs; popularised by Jon Bentley’s \"Programming Pearls\" column in the September 1985 Communications of the ACM.",
+  "category": "software",
+  "reliability": "Folk-adage",
+  "provenance": "canon",
+  "coinedYear": 1985,
+  "sources": [
+    {
+      "text": "Ninety–ninety rule, Wikipedia. — the exact wording, the Cargill attribution, and the 1985 Bentley column.",
+      "url": "https://en.wikipedia.org/wiki/Ninety%E2%80%93ninety_rule",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Ninety-Ninety Rule,\" the Jargon File. — the same wording and attribution as long-standing hacker folklore.",
+      "url": "http://www.catb.org/jargon/html/N/Ninety-Ninety-Rule.html",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Ninety%E2%80%93ninety_rule",
+  "related": [
+    {
+      "slug": "brooks-law",
+      "kind": "kindred"
+    }
+  ]
+}

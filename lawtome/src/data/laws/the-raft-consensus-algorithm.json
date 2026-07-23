@@ -1,0 +1,50 @@
+{
+  "no": "1134",
+  "slug": "the-raft-consensus-algorithm",
+  "name": "The Raft Consensus Algorithm",
+  "statement": "Raft achieves distributed consensus on a replicated log by electing a single leader per term who unilaterally manages log replication to followers.",
+  "statementAccent": "electing a single leader per term who unilaterally manages log replication",
+  "meaning": "Raft, introduced by Diego Ongaro and John Ousterhout in their 2014 paper \"In Search of an Understandable Consensus Algorithm,\" keeps a replicated log consistent across a cluster of servers so they can implement the same replicated state machine. It was explicitly designed as an easier-to-understand alternative to Paxos while providing equivalent correctness and efficiency.",
+  "mechanism": "Raft decomposes consensus into three subproblems: leader election (servers use randomised timeouts to become candidates and win a leader role via majority vote for a numbered \"term\"), log replication (the leader appends client commands to its log and replicates them, committing once a majority store an entry), and safety (rules ensuring a newly elected leader holds all previously committed entries). Servers act as leader, follower, or candidate, and leader heartbeats prevent unnecessary elections.",
+  "examples": [
+    {
+      "tag": "Leader election",
+      "text": "If a follower receives no heartbeat within its randomised election timeout, it becomes a candidate, increments the term, and requests votes to become the new leader."
+    },
+    {
+      "tag": "Log replication",
+      "text": "A leader appends a client command to its log and replicates it to followers via AppendEntries RPCs; once a majority durably store the entry, the leader considers it committed and applies it to the state machine."
+    },
+    {
+      "tag": "Production adoption",
+      "text": "Raft underlies widely used systems such as etcd (Kubernetes’ coordination store), HashiCorp Consul, CockroachDB, and Apache Kafka’s KRaft mode."
+    }
+  ],
+  "whyItMatters": "Raft’s emphasis on understandability made distributed consensus far more accessible to engineers and students than Paxos had been — a user study in the original paper found students learned Raft more easily — driving its rapid, widespread adoption in production infrastructure.",
+  "limits": "Raft is not Byzantine fault tolerant — it assumes servers fail by stopping, not by acting maliciously — and it relies on a single leader per term, which can create a temporary availability gap during elections and a throughput bottleneck since all writes flow through one node.",
+  "misreadings": "Raft is sometimes assumed to guarantee strict linearizable reads from any replica without qualification; in practice safe linearizable reads require additional mechanisms such as leader leases or read-index checks, and its guarantees apply only under its non-Byzantine failure model.",
+  "origin": "Devised by Diego Ongaro and John Ousterhout of Stanford University; the paper was presented at USENIX ATC 2014 and received a Best Paper Award.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 2014,
+  "sources": [
+    {
+      "text": "Raft (algorithm), Wikipedia. — the authorship, design goals, roles/terms/election mechanics, the non-Byzantine limitation, and production adopters.",
+      "url": "https://en.wikipedia.org/wiki/Raft_(algorithm)",
+      "type": "secondary"
+    },
+    {
+      "text": "Ongaro & Ousterhout, \"In Search of an Understandable Consensus Algorithm,\" USENIX ATC 2014. — the origin and design.",
+      "url": "https://web.stanford.edu/~ouster/cgi-bin/papers/raft-atc14",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Raft_(algorithm)",
+  "related": [
+    {
+      "slug": "paxos",
+      "kind": "near-twin"
+    }
+  ]
+}

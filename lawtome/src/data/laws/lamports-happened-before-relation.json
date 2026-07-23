@@ -1,0 +1,51 @@
+{
+  "no": "1133",
+  "slug": "lamports-happened-before-relation",
+  "name": "Lamport's Happened-Before Relation",
+  "statement": "The happened-before relation defines a partial causal order on distributed events using only message sends/receives and each process's own local sequence, with no shared clock.",
+  "statementAccent": "defines a partial causal order on distributed events",
+  "meaning": "Introduced by Leslie Lamport in his 1978 paper \"Time, Clocks, and the Ordering of Events in a Distributed System,\" happened-before formalises causality among events across processes that communicate only by message passing. Two events not connected by the relation are \"concurrent,\" meaning neither could have causally influenced the other, even though a real-time observer might see one occur before the other.",
+  "mechanism": "The relation is built from two basic rules plus transitivity: if two events occur in the same process, they are ordered by that process’s own sequence; if event a is the sending of a message and b its receipt, then a happens-before b; and if a happens-before b and b happens-before c, then a happens-before c. Lamport showed this partial order can be captured numerically by logical (Lamport) clocks — counters each process increments locally and updates on receiving a message.",
+  "examples": [
+    {
+      "tag": "Message causality",
+      "text": "If process P sends a message (event a) and process Q receives it (event b), the relation guarantees a happens-before b regardless of the processes’ physical clock readings."
+    },
+    {
+      "tag": "Concurrent events",
+      "text": "Two events in different processes with no causal chain of messages connecting them are \"concurrent,\" meaning their relative order is undefined and either could be considered first without contradiction."
+    },
+    {
+      "tag": "Lamport timestamps",
+      "text": "The paper derives a logical-clock algorithm giving each event an integer timestamp such that happened-before implies a smaller timestamp — the basis for later vector clocks used in conflict detection."
+    }
+  ],
+  "whyItMatters": "It gave distributed systems a rigorous, physically realisable notion of event ordering without relying on synchronised real-world clocks, underpinning later work on vector clocks, distributed snapshots, causal consistency, and consensus protocols.",
+  "limits": "Happened-before gives only a partial order — many event pairs are concurrent — so it cannot by itself resolve all ordering questions; total ordering requires tie-breaking rules Lamport also proposed. Lamport timestamps alone cannot detect concurrency, which is why vector clocks were later developed.",
+  "misreadings": "It is sometimes conflated with real time ordering; happened-before is a causal, not temporal, relation, so two causally unrelated events can be labelled \"concurrent\" even if one is recorded at an earlier wall-clock time.",
+  "origin": "Introduced by Leslie Lamport in 1978 in \"Time, Clocks, and the Ordering of Events in a Distributed System,\" Communications of the ACM.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1978,
+  "namedAfter": "Leslie Lamport",
+  "sources": [
+    {
+      "text": "Happened-before, Wikipedia. — the three defining rules, the partial-order properties, and the link to Lamport and vector clocks.",
+      "url": "https://en.wikipedia.org/wiki/Happened-before",
+      "type": "secondary"
+    },
+    {
+      "text": "Lamport, \"Time, Clocks, and the Ordering of Events in a Distributed System,\" Communications of the ACM (1978). — the origin and its role in freeing distributed systems from physical-clock synchronisation.",
+      "url": "https://lamport.azurewebsites.net/pubs/time-clocks.pdf",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Happened-before",
+  "related": [
+    {
+      "slug": "paxos",
+      "kind": "kindred"
+    }
+  ]
+}

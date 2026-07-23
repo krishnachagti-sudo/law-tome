@@ -1,0 +1,50 @@
+{
+  "no": "1124",
+  "slug": "acid",
+  "name": "ACID",
+  "statement": "ACID is the set of atomicity, consistency, isolation, and durability properties that guarantee database transactions remain valid despite errors or failures.",
+  "statementAccent": "guarantee database transactions remain valid despite errors or failures",
+  "meaning": "ACID names four properties a transaction-processing system should provide so that data stays correct even when hardware crashes, power fails, or many transactions run concurrently. Atomicity means a transaction fully completes or fully rolls back; consistency means it only moves the database between valid states; isolation means concurrent transactions do not corrupt each other’s view of data; durability means committed changes survive later failures.",
+  "mechanism": "Atomicity is typically implemented via write-ahead logging and rollback mechanisms; consistency is enforced by constraints, triggers, and application logic checked at commit; isolation is achieved through locking protocols or multiversion concurrency control at levels such as serializable or snapshot isolation; durability is achieved by flushing logs to persistent storage before acknowledging commit.",
+  "examples": [
+    {
+      "tag": "IBM IMS, 1973",
+      "text": "IBM’s Information Management System supported ACID-style transactions as early as 1973, predating the coining of the acronym."
+    },
+    {
+      "tag": "Relational databases",
+      "text": "PostgreSQL and MySQL’s InnoDB storage engine implement full ACID transaction guarantees in their default operation."
+    },
+    {
+      "tag": "The coining paper",
+      "text": "Theo Härder and Andreas Reuter’s 1983 ACM Computing Surveys paper \"Principles of Transaction-Oriented Database Recovery\" formally introduced the ACID acronym."
+    }
+  ],
+  "whyItMatters": "ACID gives developers a well-defined contract for transactional correctness, letting them reason about concurrent, failure-prone systems as if operations were simple and sequential. It underlies the reliability guarantees of virtually all traditional relational database systems.",
+  "limits": "Full ACID guarantees, especially strict isolation and synchronous durability across replicas, impose performance and availability costs difficult to sustain at large distributed scale, motivating alternatives like BASE. Isolation levels weaker than serializable, such as read-committed, are common in practice and only partially satisfy the ACID ideal.",
+  "misreadings": "\"Consistency\" in ACID refers to application-defined data validity constraints, not the same \"consistency\" used in the CAP theorem, and the two are frequently conflated.",
+  "origin": "Jim Gray articulated atomicity, consistency, and durability in the 1970s; Andreas Reuter and Theo Härder coined the full ACID acronym, adding isolation, in their 1983 paper.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1983,
+  "sources": [
+    {
+      "text": "ACID, Wikipedia. — the definition, the four properties, and the coining history.",
+      "url": "https://en.wikipedia.org/wiki/ACID",
+      "type": "secondary"
+    },
+    {
+      "text": "Härder & Reuter, \"Principles of Transaction-Oriented Database Recovery,\" ACM Computing Surveys 15(4) (1983). — the paper that coined ACID.",
+      "url": "https://dl.acm.org/doi/10.1145/289.291",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/ACID",
+  "related": [
+    {
+      "slug": "base",
+      "kind": "tension"
+    }
+  ]
+}

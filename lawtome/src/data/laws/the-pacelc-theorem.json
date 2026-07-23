@@ -1,0 +1,50 @@
+{
+  "no": "1123",
+  "slug": "the-pacelc-theorem",
+  "name": "The PACELC Theorem",
+  "statement": "If a partition occurs, choose availability or consistency; else, choose latency or consistency.",
+  "statementAccent": "choose availability or consistency",
+  "meaning": "PACELC extends the CAP theorem by pointing out that the consistency/availability trade-off CAP describes is not the whole story. Even when no network partition is happening, distributed systems still trade consistency against latency because replicating data takes time. Daniel Abadi argued CAP is \"incomplete\" because it ignores this always-present trade-off.",
+  "mechanism": "During a network Partition (P), a system must choose Availability (A) or Consistency (C), per CAP. Else (E), during normal operation, it must choose Latency (L) or Consistency (C): synchronously replicating writes to all replicas before acknowledging lowers consistency risk but raises latency, while acknowledging immediately and replicating asynchronously lowers latency but risks stale reads.",
+  "examples": [
+    {
+      "tag": "PA/EL systems",
+      "text": "Amazon Dynamo and Cassandra prioritise availability during partitions and low latency otherwise, accepting weaker consistency in both cases."
+    },
+    {
+      "tag": "PC/EC systems",
+      "text": "BigTable and HBase prioritise consistency both during partitions and during normal operation, at the cost of availability and latency."
+    },
+    {
+      "tag": "PC/EL systems",
+      "text": "Yahoo’s PNUTS chooses consistency during a partition but favours low latency during normal operation."
+    }
+  ],
+  "whyItMatters": "It gives distributed-systems architects a more complete framework than CAP alone for reasoning about the consistency/performance trade-offs their replication strategy forces, even absent any partition, and it directly informs the design of major NoSQL and cloud databases.",
+  "limits": "PACELC is a design-space classification and informal theorem, not a strict impossibility proof like CAP originally was, though Golab and colleagues gave it a formal proof in 2018. It also simplifies a continuum of consistency levels into a binary consistency/latency choice, understating real systems’ nuance.",
+  "misreadings": "PACELC is sometimes mistaken for a component of CAP itself rather than a separate, complementary framework proposed a decade later by Daniel Abadi.",
+  "origin": "Proposed by Daniel Abadi of Yale University in a 2010 blog post and formalised in a 2012 paper; formally proved by Wojciech Golab and colleagues in 2018.",
+  "category": "software",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 2010,
+  "sources": [
+    {
+      "text": "PACELC design principle, Wikipedia. — the formal statement, the originator, and the dates.",
+      "url": "https://en.wikipedia.org/wiki/PACELC_design_principle",
+      "type": "secondary"
+    },
+    {
+      "text": "Golab, \"Proving PACELC,\" University of Waterloo. — the 2018 formal proof of the theorem.",
+      "url": "https://uwaterloo.ca/distributed-algorithms-systems-lab/sites/default/files/uploads/files/proving_pacelc.pdf",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/PACELC_design_principle",
+  "related": [
+    {
+      "slug": "the-cap-theorem",
+      "kind": "kindred"
+    }
+  ]
+}

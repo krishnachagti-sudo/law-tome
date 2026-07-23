@@ -1,0 +1,44 @@
+{
+  "no": "1131",
+  "slug": "worse-is-better",
+  "name": "Worse Is Better",
+  "statement": "In \"worse is better\" design, implementation simplicity is valued above completeness, consistency, and even correctness.",
+  "statementAccent": "implementation simplicity is valued above completeness, consistency",
+  "meaning": "Richard Gabriel described two competing software design philosophies: \"the right thing\" (MIT/Stanford style), which values completeness and correctness even at the cost of complexity, and \"worse is better\" (New Jersey style), which sacrifices completeness or correctness to keep the implementation simple. Gabriel argued the latter tends to spread faster and survive better because it is easier to port, adopt, and incrementally improve.",
+  "mechanism": "A \"worse is better\" design ranks four qualities in order: simplicity first (especially of implementation), then correctness, then consistency, then completeness — each willing to be sacrificed for the one above it. Because the implementation stays small and portable, it gets adopted quickly, and once users depend on it, they push for improvement from a position of installed-base strength rather than waiting for a perfect design.",
+  "examples": [
+    {
+      "tag": "Unix and C vs. Lisp",
+      "text": "Gabriel used early Unix and C as his paradigm case of the New Jersey approach, contrasted with the more complete, consistent Lisp-machine environments it displaced in the marketplace."
+    },
+    {
+      "tag": "The 1989 essay",
+      "text": "Gabriel introduced the idea in his essay \"Lisp: Good News, Bad News, How to Win Big\" (1989); the \"Rise of Worse Is Better\" section became widely known after Jamie Zawinski circulated it in 1991."
+    },
+    {
+      "tag": "Four sacrificed qualities",
+      "text": "In Gabriel’s wording for the New Jersey approach, \"It is slightly better to be simple than correct,\" and completeness can be sacrificed whenever implementation simplicity is jeopardised."
+    }
+  ],
+  "whyItMatters": "The essay became a foundational lens for explaining why technically inferior but simpler, more portable systems often out-compete more \"correct\" designs — a recurring pattern cited from operating systems to protocol design to language adoption.",
+  "limits": "Gabriel later expressed ambivalence, writing a follow-up (\"Is Worse Really Better?\") questioning whether the pattern is universally true; it is a descriptive heuristic about market dynamics, not a provable engineering law, and success stories are easier to recall than the many \"worse\" designs that simply failed.",
+  "misreadings": "It is often misread as endorsing always shipping sloppy or buggy software; Gabriel’s actual point is narrower — that implementation simplicity specifically should be prioritised, not that correctness or quality do not matter.",
+  "origin": "Coined by Richard P. Gabriel in his 1989 essay \"Lisp: Good News, Bad News, How to Win Big\"; the \"Rise of Worse Is Better\" excerpt was popularised in 1991.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1989,
+  "sources": [
+    {
+      "text": "Worse is better, Wikipedia. — Gabriel’s 1989 coinage and the 1991 dissemination via Jamie Zawinski.",
+      "url": "https://en.wikipedia.org/wiki/Worse_is_better",
+      "type": "secondary"
+    },
+    {
+      "text": "Gabriel, \"The Rise of Worse Is Better,\" dreamsongs.com. — the exact wording of the four qualities for both approaches.",
+      "url": "https://dreamsongs.com/RiseOfWorseIsBetter.html",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Worse_is_better"
+}

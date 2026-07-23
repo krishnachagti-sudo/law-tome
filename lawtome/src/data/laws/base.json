@@ -1,0 +1,54 @@
+{
+  "no": "1125",
+  "slug": "base",
+  "name": "BASE",
+  "statement": "BASE trades ACID's strict consistency for a basically-available, soft-state system that becomes consistent only eventually.",
+  "statementAccent": "becomes consistent only eventually",
+  "meaning": "BASE — Basically Available, Soft state, Eventually consistent — describes a consistency model, coined as a chemical pun opposing ACID’s \"acid,\" for large distributed systems that favour availability and partition tolerance over immediate consistency. A basically available system responds to nearly all requests even if data is stale; its state is \"soft\" because it may change over time as updates propagate; and it becomes consistent only after updates finish propagating to all replicas.",
+  "mechanism": "Systems achieve BASE semantics by relaxing synchronous replication: writes are accepted locally or on a subset of replicas and acknowledged immediately, then propagated asynchronously, with conflict resolution such as last-write-wins, vector clocks, or read-repair reconciling divergent copies over time.",
+  "examples": [
+    {
+      "tag": "eBay origin",
+      "text": "Dan Pritchett, an eBay architecture Technical Fellow, introduced BASE in his 2008 ACM Queue article \"BASE: An Acid Alternative\" to describe eBay’s approach to scaling partitioned databases."
+    },
+    {
+      "tag": "Amazon Dynamo",
+      "text": "Amazon’s Dynamo key-value store is a canonical BASE-style system, favouring availability and using eventual consistency across replicas."
+    },
+    {
+      "tag": "Apache Cassandra",
+      "text": "Apache Cassandra, a wide-column NoSQL store, offers tunable consistency but defaults to BASE-style eventual-consistency semantics."
+    }
+  ],
+  "whyItMatters": "BASE gave engineers a named, legitimate alternative to ACID for building the high-availability, horizontally-scaled systems needed by large web applications, directly shaping the NoSQL movement of the 2000s–2010s.",
+  "limits": "BASE is an informal, descriptive heuristic rather than a proven theorem, and its terms — \"basically available,\" \"soft state\" — are not formally defined the way CAP’s or ACID’s terms are, leading to inconsistent usage across the industry.",
+  "misreadings": "BASE is sometimes wrongly treated as older than or foundational to the CAP theorem; Pritchett’s naming (2008) came after Brewer’s CAP conjecture (2000), and BASE is best understood as a practitioner-friendly gloss on CAP-driven eventual-consistency designs rather than an independent theorem.",
+  "origin": "Coined by Dan Pritchett of eBay in his 2008 article \"BASE: An Acid Alternative,\" ACM Queue.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 2008,
+  "sources": [
+    {
+      "text": "Pritchett, \"BASE: An Acid Alternative,\" ACM Queue 6(3) (2008). — the origin, author, year, and core trade-off claim.",
+      "url": "https://dl.acm.org/doi/10.1145/1394127.1394128",
+      "type": "primary"
+    },
+    {
+      "text": "Eventual consistency, Wikipedia. — BASE’s relationship to ACID and eventual consistency.",
+      "url": "https://en.wikipedia.org/wiki/Eventual_consistency",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Eventual_consistency",
+  "related": [
+    {
+      "slug": "acid",
+      "kind": "tension"
+    },
+    {
+      "slug": "the-cap-theorem",
+      "kind": "consequence"
+    }
+  ]
+}

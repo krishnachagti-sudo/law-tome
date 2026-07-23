@@ -1,0 +1,51 @@
+{
+  "no": "1129",
+  "slug": "the-second-system-effect",
+  "name": "The Second-System Effect",
+  "statement": "The second-system effect holds that the second system an architect designs tends to be the most dangerous system they will ever design.",
+  "statementAccent": "the most dangerous",
+  "meaning": "Fred Brooks observed that after a first system succeeds despite (or because of) its lean, disciplined design, the architect gains confidence and is tempted to cram every previously deferred feature, refinement, and generalisation into the follow-up. The result is a second system that is bloated and harder to build, understand, and evolve than either the spare first system or a more mature later one.",
+  "mechanism": "During the first project, a cautious architect keeps scope tightly controlled, deferring nice-to-have ideas. Freed from that caution on the second project, and armed with a backlog of deferred wishes, the architect over-generalises and over-adds, producing excess complexity; Brooks also described over-refining techniques that have become obsolete because the system’s underlying assumptions have shifted.",
+  "examples": [
+    {
+      "tag": "IBM OS/360",
+      "text": "Brooks illustrated the effect with IBM’s move from the simpler 700/7000-series operating systems to the far more ambitious OS/360 for the System/360 family announced in 1964, which he argued contained many instances of misapplied, obsolete refinement."
+    },
+    {
+      "tag": "First-system discipline",
+      "text": "Brooks characterised a typical first system as \"spare and clean\" because its designer, still learning, exercises restraint about uncertain generalisations rather than adding untested features."
+    },
+    {
+      "tag": "Mitigation",
+      "text": "Brooks recommended countermeasures including experienced architectural leadership, making the cost of added features visible, and disciplined scope control to resist the pull toward an over-engineered second system."
+    }
+  ],
+  "whyItMatters": "The concept is widely cited whenever teams plan a \"version 2\" or full rewrite, as a warning that accumulated feature wishlists and overconfidence commonly produce worse outcomes than incremental, disciplined evolution of the first system.",
+  "limits": "The effect is an observational pattern drawn from Brooks’s experience managing OS/360, not a proven statistical law; not every second system is over-engineered, and disciplined teams can avoid it through deliberate scope management.",
+  "misreadings": "It is sometimes misread as claiming any second attempt is doomed, or as being about rewrites of failed systems, when Brooks’s formulation is about a successor to a system that was already succeeding, driven by deferred ambition rather than by fixing failure.",
+  "origin": "Introduced by Fred Brooks in his 1975 book \"The Mythical Man-Month,\" drawing on his experience leading IBM’s OS/360 project.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1975,
+  "namedAfter": "Fred Brooks",
+  "sources": [
+    {
+      "text": "Second-system effect, Wikipedia. — Brooks’s definition, the 1975 origin, the OS/360 example, and the \"spare and clean\" versus \"most dangerous\" contrast.",
+      "url": "https://en.wikipedia.org/wiki/Second-system_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "The Mythical Man-Month, Wikipedia. — the 1975 publication and Brooks’s role managing OS/360.",
+      "url": "https://en.wikipedia.org/wiki/The_Mythical_Man-Month",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Second-system_effect",
+  "related": [
+    {
+      "slug": "brooks-law",
+      "kind": "kindred"
+    }
+  ]
+}
