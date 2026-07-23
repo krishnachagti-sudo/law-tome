@@ -1,0 +1,54 @@
+{
+  "no": "1052",
+  "slug": "the-representativeness-heuristic",
+  "name": "The Representativeness Heuristic",
+  "statement": "People judge the probability of something by how closely it resembles a typical example, ignoring actual base rates.",
+  "statementAccent": "judge the probability of something by how closely it resembles a typical example",
+  "meaning": "The representativeness heuristic is a mental shortcut for estimating likelihood based on similarity to a prototype or stereotype rather than on statistical evidence. It lets people quickly categorise new information by matching it against a mental template of a class or process. This speed comes at the cost of accuracy when resemblance and true probability diverge.",
+  "mechanism": "Instead of calculating probabilities from base rates and sample statistics, the mind substitutes an easier question — \"how similar is this to the typical case?\" — for the harder question of actual likelihood. Because prototypes are built from salient, memorable features, this substitution systematically discounts information like population base rates or sample size, producing predictable errors such as the conjunction fallacy.",
+  "examples": [
+    {
+      "tag": "The Linda problem",
+      "text": "Given a description of \"Linda\" matching a feminist-activist stereotype, most participants judged it more probable that she is \"a bank teller and active in the feminist movement\" than simply \"a bank teller\" — a logical impossibility, since a conjunction cannot exceed either of its parts."
+    },
+    {
+      "tag": "Librarian vs. salesperson",
+      "text": "A person described as \"shy, withdrawn, meek, and tidy\" is often judged more likely to be a librarian than a salesperson, even though salespeople vastly outnumber librarians, ignoring that base rate."
+    },
+    {
+      "tag": "Base-rate neglect",
+      "text": "When a disease is rare — say 1 in 10,000 — even a 99%-accurate test yields mostly false positives among positive results, yet people overestimate the true probability of disease by focusing on the test’s accuracy rather than the base rate."
+    }
+  ],
+  "whyItMatters": "It is one of the foundational concepts of the heuristics-and-biases research programme that reshaped economics and psychology’s view of human rationality, underpinning behavioural economics and influencing fields from medical diagnosis to legal reasoning.",
+  "limits": "The heuristic is a useful, often accurate shortcut in everyday judgement, and its errors are most reliably demonstrated in artificial, decontextualised survey questions; some researchers argue the errors shrink when problems are framed in natural frequencies rather than probabilities. Its scope has been debated between the heuristics-and-biases and ecological-rationality traditions.",
+  "misreadings": "It is sometimes misread as meaning people are simply \"bad at maths,\" when the precise claim is that similarity-based judgement is substituted for probability-based judgement, producing specific, predictable error patterns rather than random mistakes.",
+  "origin": "Introduced by psychologists Amos Tversky and Daniel Kahneman in their early-1970s work on judgement heuristics, formalised in their 1974 Science paper \"Judgment under Uncertainty: Heuristics and Biases.\"",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1974,
+  "sources": [
+    {
+      "text": "Representativeness heuristic, Wikipedia. — the definition, attribution to Tversky and Kahneman, the Linda problem, and base-rate neglect.",
+      "url": "https://en.wikipedia.org/wiki/Representativeness_heuristic",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Heuristic,\" Encyclopaedia Britannica. — the librarian/salesperson example and the 1974 \"Judgment under Uncertainty\" paper.",
+      "url": "https://www.britannica.com/topic/heuristic-reasoning",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Representativeness_heuristic",
+  "related": [
+    {
+      "slug": "the-availability-heuristic",
+      "kind": "kindred"
+    },
+    {
+      "slug": "prospect-theory",
+      "kind": "kindred"
+    }
+  ]
+}

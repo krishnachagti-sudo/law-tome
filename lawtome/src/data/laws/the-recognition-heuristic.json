@@ -1,0 +1,50 @@
+{
+  "no": "1054",
+  "slug": "the-recognition-heuristic",
+  "name": "The Recognition Heuristic",
+  "statement": "When choosing which of two options scores higher on some criterion, people infer that the one they recognize has the higher value.",
+  "statementAccent": "people infer that the one they recognize has the higher value",
+  "meaning": "The recognition heuristic is a simple decision rule for two-alternative choices: if you recognise one object but not the other, infer the recognised one ranks higher on the criterion in question. It belongs to the \"fast and frugal\" family of heuristics that use minimal information to make surprisingly accurate inferences. It works because, in many real environments, being well-known correlates with scoring high on relevant criteria.",
+  "mechanism": "Objects with higher underlying criterion values — larger cities, stronger athletes — tend to be mentioned more often in media and conversation; more mentions increase the chance a person recognises the name later. This creates a real statistical correlation between mere recognition and the criterion, which the heuristic exploits by using recognition itself as a proxy cue instead of gathering further knowledge.",
+  "examples": [
+    {
+      "tag": "German-city test",
+      "text": "In Goldstein and Gigerenzer’s original study, American students judged which of two German cities was larger more accurately than expected given their limited recognition of German city names, and German students did likewise for American cities."
+    },
+    {
+      "tag": "Less-is-more effect",
+      "text": "Because recognising fewer objects can still mean recognising the ones most correlated with high values, people with partial knowledge sometimes outperform those with more complete knowledge — the counterintuitive less-is-more effect."
+    },
+    {
+      "tag": "Tennis prediction",
+      "text": "Studies found that simple recognition of tennis players’ names predicted professional match outcomes at around 73% accuracy in one analysis, rivalling more complex ranking-based methods."
+    }
+  ],
+  "whyItMatters": "The recognition heuristic is a key example supporting the \"ecological rationality\" view that simple heuristics can perform as well as, or better than, information-heavy strategies when the environment has the right statistical structure, influencing decision science, marketing, and forecasting.",
+  "limits": "It fails when recognition is driven by factors unrelated to the criterion — rare but sensational diseases can be highly recognised despite low frequency, breaking the recognition-criterion correlation. Researchers also debate whether people rely on recognition alone or blend it with other partial knowledge, and recognition validity varies across domains.",
+  "misreadings": "It is sometimes overgeneralised as \"less information is always better,\" when the actual claim is conditional: the effect appears only when recognition is a valid, if imperfect, proxy for the criterion in that specific environment.",
+  "origin": "Proposed by Daniel Goldstein and Gerd Gigerenzer, first presented around 1999 and elaborated in their 2002 Psychological Review paper \"Models of Ecological Rationality: The Recognition Heuristic.\"",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1999,
+  "sources": [
+    {
+      "text": "Recognition heuristic, Wikipedia. — the rule, the attribution to Goldstein and Gigerenzer, the German/American city experiment, and the less-is-more effect.",
+      "url": "https://en.wikipedia.org/wiki/Recognition_heuristic",
+      "type": "secondary"
+    },
+    {
+      "text": "Pachur, Todd, Gigerenzer, Schooler & Goldstein, \"The Recognition Heuristic: A Review of Theory and Tests,\" PMC. — recognition validities, the tennis result, and failure cases.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3132682/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Recognition_heuristic",
+  "related": [
+    {
+      "slug": "the-availability-heuristic",
+      "kind": "kindred"
+    }
+  ]
+}
