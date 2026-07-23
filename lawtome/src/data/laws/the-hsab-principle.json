@@ -1,0 +1,50 @@
+{
+  "no": "1102",
+  "slug": "the-hsab-principle",
+  "name": "The HSAB Principle",
+  "statement": "Hard acids preferentially bind hard bases and soft acids preferentially bind soft bases, favoring the more stable acid–base combination.",
+  "statementAccent": "preferentially bind hard bases and soft acids preferentially bind soft bases",
+  "meaning": "HSAB theory classifies Lewis acids and bases as \"hard\" (small, high charge, low polarisability, favouring ionic-type interactions) or \"soft\" (large, low charge, high polarisability, favouring covalent-type interactions). It predicts that reactions and complexes are most stable when hard pairs with hard and soft pairs with soft, giving a qualitative guide to reactivity and selectivity.",
+  "mechanism": "Hard species interact mainly through strong, largely electrostatic attraction because their electron clouds resist distortion, while soft species interact mainly through covalent, orbital-overlap bonding because their clouds are easily distorted. Matching hard-with-hard maximises electrostatic stabilisation and soft-with-soft maximises covalent overlap; mismatched pairs are comparatively destabilised. Pearson and Robert Parr later gave hardness a quantitative footing in 1983.",
+  "examples": [
+    {
+      "tag": "Hard–hard pairing",
+      "text": "Al3+ (a hard acid) forms strong, stable complexes with F− and OH− (hard bases), consistent with ionic-type hard–hard bonding."
+    },
+    {
+      "tag": "Soft–soft pairing",
+      "text": "Hg2+ and Pt2+ (soft acids) form especially stable complexes with soft bases such as CO, thiolates, and hydride, reflecting covalent-type soft–soft bonding."
+    },
+    {
+      "tag": "Heavy-metal toxicity",
+      "text": "The strong affinity of soft heavy-metal acids such as Hg2+ for soft sulfur bases (thiols) underlies both their coordination chemistry and their biological toxicity via binding to protein thiol groups."
+    }
+  ],
+  "whyItMatters": "HSAB gives chemists a simple qualitative rule for predicting relative complex stabilities, the regioselectivity of ambident nucleophiles and electrophiles, and general trends in acid–base and ligand-exchange reactivity without detailed calculation. It remains widely used in coordination chemistry, catalysis, and toxicology.",
+  "limits": "It is a qualitative, empirical classification rather than a rigorous quantitative theory, and hardness and softness are not always unambiguously assignable; it performs poorly for some ambident-nucleophile reactions where kinetic barriers and thermodynamics dominate over hardness–softness matching.",
+  "misreadings": "HSAB is sometimes wrongly treated as a strict, universally quantitative rule rather than a heuristic generalisation, and hardness and softness are sometimes conflated with formal charge alone rather than the fuller combination of size, charge, and polarisability.",
+  "origin": "Proposed by American chemist Ralph G. Pearson in his 1963 paper \"Hard and Soft Acids and Bases,\" Journal of the American Chemical Society.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1963,
+  "sources": [
+    {
+      "text": "HSAB theory, Wikipedia. — Pearson’s 1963 origin, the hard/soft definitions and core rule, and worked examples.",
+      "url": "https://en.wikipedia.org/wiki/HSAB_theory",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Pearson’s Hard-Soft Acid-Base Concept,\" Chemistry LibreTexts. — the 1963 citation, the definitions, and the hard-hard/soft-soft preference.",
+      "url": "https://chem.libretexts.org/Courses/Northern_Michigan_University/CH_215%3A_Chemistry_of_the_Elements_Fall_2023/02%3A_Acid-Base_and_Donor-Acceptor_Chemistry/2.07%3A_The_Hard-Soft_Acid-Base_Concept/2.7.02%3A_Pearson's_Hard-Soft_Acid-Base_Concept",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/HSAB_theory",
+  "related": [
+    {
+      "slug": "fajans-rules",
+      "kind": "kindred"
+    }
+  ]
+}

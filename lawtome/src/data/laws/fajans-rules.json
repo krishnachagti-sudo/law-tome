@@ -1,0 +1,51 @@
+{
+  "no": "1111",
+  "slug": "fajans-rules",
+  "name": "Fajans' Rules",
+  "statement": "Fajans’ rules predict that bonds become more covalent when a small, highly charged cation polarizes a large, easily deformed anion.",
+  "statementAccent": "more covalent",
+  "meaning": "Fajans’ rules, formulated by Kazimierz Fajans in 1923, give qualitative guidance on whether a bond between a cation and anion behaves as predominantly ionic or shows significant covalent character. They rest on the idea that the cation’s electric field distorts (polarises) the anion’s electron cloud, and greater distortion pulls the bond toward shared electron density rather than full charge transfer.",
+  "mechanism": "When a cation approaches an anion it attracts the anion’s outer electrons while repelling its nucleus, distorting the anion’s cloud; small distortion still describes an essentially ionic bond, while large distortion produces covalent character. Polarising power rises with high cation charge and small size; anion polarisability rises with large size and high charge; and cations lacking a noble-gas configuration polarise anions more strongly than noble-gas-configuration cations of similar size and charge.",
+  "examples": [
+    {
+      "tag": "AlF3 vs AlI3",
+      "text": "AlF3 is predominantly ionic because the small, tightly-holding F− resists polarisation, while AlI3 shows substantial covalent character because the large, polarisable I− is strongly distorted by Al3+."
+    },
+    {
+      "tag": "Silver halides",
+      "text": "Among silver halides, covalent character increases in the order AgF < AgCl < AgBr < AgI as the halide anion grows larger and more polarisable."
+    },
+    {
+      "tag": "CaCl2 vs HgCl2",
+      "text": "CaCl2 behaves as predominantly ionic while HgCl2 shows marked covalent character, illustrating that cations without a noble-gas configuration (Hg2+) polarise anions more than similarly sized and charged noble-gas cations (Ca2+)."
+    }
+  ],
+  "whyItMatters": "Fajans’ rules give chemists a quick qualitative predictor of bond character, and resulting properties like melting point, solubility, and colour, from just ionic size, charge, and electron configuration, complementing quantitative electronegativity-based approaches.",
+  "limits": "The rules are qualitative and give no quantitative measure of covalency; as no real bond is ever fully ionic, even nominally ionic bonds retain some covalent character, so the rules describe a continuum rather than a sharp split.",
+  "misreadings": "A common misreading treats the rules as sorting compounds into strictly separate \"ionic\" or \"covalent\" bins rather than describing a continuous polarisation-driven spectrum.",
+  "origin": "Formulated by Polish-American chemist Kazimierz Fajans in 1923 to predict covalent versus ionic bond character from cation and anion charge and size.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1923,
+  "namedAfter": "Kazimierz Fajans",
+  "sources": [
+    {
+      "text": "Fajans’ rules, Wikipedia. — the 1923 origin, the polarisation mechanism, the AlF3/AlI3 example, and that no bond is ever 100% ionic.",
+      "url": "https://en.wikipedia.org/wiki/Fajans%27_rules",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Fajan’s Rule,\" GeeksforGeeks. — the postulates (charge density, polarisability, electron configuration) and worked examples including silver halides.",
+      "url": "https://www.geeksforgeeks.org/chemistry/fajans-rule/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fajans%27_rules",
+  "related": [
+    {
+      "slug": "the-hsab-principle",
+      "kind": "kindred"
+    }
+  ]
+}

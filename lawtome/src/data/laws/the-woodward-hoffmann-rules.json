@@ -1,0 +1,51 @@
+{
+  "no": "1103",
+  "slug": "the-woodward-hoffmann-rules",
+  "name": "The Woodward–Hoffmann Rules",
+  "statement": "A pericyclic reaction is thermally symmetry-allowed only if the total number of electron pairs plus antarafacial components is odd.",
+  "statementAccent": "symmetry-allowed only if the total number of electron pairs plus antarafacial components is odd",
+  "meaning": "The Woodward–Hoffmann rules predict whether a concerted pericyclic reaction — an electrocyclic ring closure, a cycloaddition — proceeds readily under thermal or photochemical conditions, and with what stereochemistry, based on whether the reacting molecular orbitals keep a favourable symmetry relationship throughout. Symmetry-preserving reactions are \"allowed\" with low activation energy; others are \"forbidden\" and face a large barrier.",
+  "mechanism": "The rules rest on conservation of orbital symmetry: as reacting molecular orbitals transform continuously from starting material to product, their symmetry properties must be preserved along an allowed pathway. This can be analysed via orbital/state correlation diagrams or, equivalently, by counting whether a process with N electron pairs and A antarafacial components satisfies N + A = odd for thermal allowedness, with the opposite parity allowed photochemically.",
+  "examples": [
+    {
+      "tag": "Diels–Alder",
+      "text": "The Diels–Alder [4+2] cycloaddition is thermally symmetry-allowed as a suprafacial–suprafacial process, consistent with its ready occurrence under mild thermal conditions."
+    },
+    {
+      "tag": "Hexatriene closure",
+      "text": "For 4n+2 π-electron systems like hexatriene, thermal electrocyclic ring closure proceeds disrotatory while photochemical closure proceeds conrotatory, as the rules predict."
+    },
+    {
+      "tag": "4n systems",
+      "text": "For 4n π-electron systems such as butadiene to cyclobutene, thermal ring closure is conrotatory while the photochemical reaction is disrotatory — the reverse of the 4n+2 case."
+    }
+  ],
+  "whyItMatters": "The rules unified a large body of previously puzzling stereospecific outcomes in pericyclic reactions, giving chemists a predictive framework for feasibility, stereochemistry, and thermal-versus-photochemical selectivity from orbital symmetry alone. The work contributed to Roald Hoffmann sharing the 1981 Nobel Prize in Chemistry (Robert Woodward, who died in 1979, was ineligible posthumously).",
+  "limits": "Symmetry-forbidden reactions are not strictly impossible; they can still occur via non-concerted (stepwise) pathways or when other factors such as ring-strain release compensate for the higher barrier. The rules strictly apply to concerted pericyclic mechanisms and can be complicated by apparently single-step reactions that are actually asynchronous or stepwise.",
+  "misreadings": "\"Symmetry-forbidden\" is often misread as meaning a reaction cannot occur at all, rather than that it faces a large additional barrier under concerted conditions and may instead proceed by an alternative mechanism.",
+  "origin": "Formulated by Robert Burns Woodward and Roald Hoffmann beginning with their 1965 paper \"Stereochemistry of Electrocyclic Reactions,\" Journal of the American Chemical Society, with the generalised orbital-symmetry framework developed through 1969.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1965,
+  "namedAfter": "Robert Burns Woodward and Roald Hoffmann",
+  "sources": [
+    {
+      "text": "Woodward–Hoffmann rules, Wikipedia. — the 1965 origin, the orbital-symmetry mechanism, the N+A=odd rule, and the Diels–Alder and electrocyclic examples.",
+      "url": "https://en.wikipedia.org/wiki/Woodward%E2%80%93Hoffmann_rules",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Woodward Hoffmann rules,\" Chemistry LibreTexts. — orbital-symmetry control of concerted reactions and a worked [4+2] cycloaddition example.",
+      "url": "https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Supplemental_Modules_(Organic_Chemistry)/Reactions/Pericyclic_Reactions/Woodward_Hoffmann_rules",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Woodward%E2%80%93Hoffmann_rules",
+  "related": [
+    {
+      "slug": "huckels-rule",
+      "kind": "kindred"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "no": "1100",
+  "slug": "vsepr-theory",
+  "name": "VSEPR Theory",
+  "statement": "Valence electron pairs around a central atom arrange themselves to minimize mutual repulsion, determining molecular geometry.",
+  "statementAccent": "arrange themselves to minimize mutual repulsion",
+  "meaning": "VSEPR theory predicts the three-dimensional shape of a molecule by treating each bonding pair and lone pair of electrons around a central atom as a region of negative charge that repels every other such region. The geometry that results places these electron domains as far apart as possible. Lone pairs occupy more space than bonding pairs, so they distort ideal bond angles.",
+  "mechanism": "Electron pairs in the valence shell behave as mutually repelling charges confined to a sphere around the nucleus. The preferred arrangement minimises repulsion, giving base geometries — linear, trigonal planar, tetrahedral, trigonal bipyramidal, octahedral — depending on the number of electron domains. Repulsion strength follows lone-pair–lone-pair > lone-pair–bonding-pair > bonding-pair–bonding-pair, which compresses bond angles near lone pairs.",
+  "examples": [
+    {
+      "tag": "Methane",
+      "text": "Four bonding pairs and no lone pairs around carbon give a tetrahedral geometry with about 109.5° H–C–H bond angles."
+    },
+    {
+      "tag": "Water",
+      "text": "Oxygen has two bonding pairs and two lone pairs; the extra lone-pair repulsion compresses the geometry to a bent shape with a roughly 104.5° H–O–H angle."
+    },
+    {
+      "tag": "Sulfur hexafluoride",
+      "text": "Six bonding pairs and no lone pairs around sulfur give a regular octahedral geometry."
+    }
+  ],
+  "whyItMatters": "VSEPR gives chemists a fast, intuitive way to predict molecular shape, bond angles, and polarity directly from a Lewis structure without invoking quantum mechanics. It underlies the teaching of molecular geometry and informs predictions about reactivity, dipole moments, and spectroscopy.",
+  "limits": "It is a simplified electrostatic model, not a rigorous quantum treatment, and fails or needs modification for some transition-metal complexes (such as square-planar d8 species), certain hypervalent and superheavy-element compounds, and cases with significant d-orbital or relativistic effects. It predicts approximate angles, not bond lengths or energies.",
+  "misreadings": "VSEPR is often mistaken for an explanation of why bonds form rather than a model for predicting shape once bonding is assumed; it is also sometimes wrongly conflated with hybridisation theory, though the two are distinct frameworks.",
+  "origin": "The geometry–electron-pair correlation was anticipated by Nevil Sidgwick and Herbert Powell in a 1940 Bakerian Lecture; Ronald Gillespie and Ronald Nyholm developed the modern theory, publishing their foundational formulation in 1957.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1957,
+  "sources": [
+    {
+      "text": "VSEPR theory, Wikipedia. — the development history, the repulsion-based mechanism, and known limitations.",
+      "url": "https://en.wikipedia.org/wiki/VSEPR_theory",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Chemical bonding: Molecular shapes and VSEPR theory,\" Encyclopaedia Britannica. — the Sidgwick/Powell and Gillespie/Nyholm history and the methane, water, and SF6 examples.",
+      "url": "https://www.britannica.com/science/chemical-bonding/Molecular-shapes-and-VSEPR-theory",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/VSEPR_theory",
+  "related": [
+    {
+      "slug": "paulings-rules",
+      "kind": "kindred"
+    }
+  ]
+}

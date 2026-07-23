@@ -1,0 +1,51 @@
+{
+  "no": "1107",
+  "slug": "the-eyring-equation",
+  "name": "The Eyring Equation",
+  "statement": "The Eyring equation gives the reaction rate constant as k = (kappa k_B T / h) exp(-DeltaG double-dagger / RT), from transition state theory.",
+  "statementAccent": "k = (kappa k_B T / h) exp(-DeltaG double-dagger / RT)",
+  "meaning": "The Eyring equation (also the Eyring–Polanyi equation) relates a reaction’s rate constant to absolute temperature and the Gibbs energy of activation needed to reach the transition state. Unlike the empirical Arrhenius equation, it is derived from statistical mechanics and transition state theory, treating the activated complex as in quasi-equilibrium with reactants.",
+  "mechanism": "Transition state theory posits that reactants pass through a high-energy activated complex in rapid pre-equilibrium with the reactants. The rate constant is then expressed via the frequency k_B·T/h at which the complex crosses to products, scaled by a transmission coefficient (often taken as 1) and by the Boltzmann-weighted probability of reaching the transition state, exp(−ΔG‡/RT), where ΔG‡ is the Gibbs energy of activation.",
+  "examples": [
+    {
+      "tag": "Eyring plot",
+      "text": "Plotting ln(k/T) against 1/T yields a straight line whose slope gives the enthalpy of activation and whose intercept gives the entropy of activation — a standard way to extract activation parameters from kinetic data."
+    },
+    {
+      "tag": "Any-phase reactions",
+      "text": "Because it is grounded in statistical thermodynamics rather than a collision model, the equation applies to reactions in gas, solution, and mixed phases, where the simple collision-based Arrhenius picture is less applicable."
+    },
+    {
+      "tag": "1935 derivations",
+      "text": "The equation was derived essentially simultaneously in 1935 by Henry Eyring in the United States and by Meredith Gwynne Evans and Michael Polanyi in the United Kingdom."
+    }
+  ],
+  "whyItMatters": "The equation connects reaction kinetics directly to thermodynamic activation parameters — enthalpy and entropy of activation — giving mechanistic insight the purely empirical Arrhenius equation cannot, and it underlies modern computational and physical-organic treatments of reaction rates.",
+  "limits": "Transition state theory assumes the activated complex is in quasi-equilibrium with reactants and that every system crossing the transition state proceeds to products, assumptions that break down for reactions with recrossing, tunnelling, or non-equilibrium dynamics. It also requires the activation free energy, which is not always easy to obtain.",
+  "misreadings": "It is sometimes treated as interchangeable with the Arrhenius equation, obscuring that the Eyring equation carries an explicit statistical-mechanical derivation and yields activation entropy and enthalpy rather than just an empirical activation energy.",
+  "origin": "Developed in 1935 essentially simultaneously by American chemist Henry Eyring and by British chemists Meredith Gwynne Evans and Michael Polanyi, from the newly formulated transition state (activated-complex) theory.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1935,
+  "namedAfter": "Henry Eyring",
+  "sources": [
+    {
+      "text": "Eyring equation, Wikipedia. — the equation’s form, its terms, the 1935 origin with Eyring, Evans, and Polanyi, and the Eyring-plot method.",
+      "url": "https://en.wikipedia.org/wiki/Eyring_equation",
+      "type": "secondary"
+    },
+    {
+      "text": "Laidler, \"The Development of Transition-State Theory.\" — that transition-state theory was developed in 1935 independently by Eyring and by Evans and Polanyi.",
+      "url": "https://web.iitd.ac.in/~nkurur/2014-15/IIsem/cyl565/Laidler_TST.pdf",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Eyring_equation",
+  "related": [
+    {
+      "slug": "hammonds-postulate",
+      "kind": "kindred"
+    }
+  ]
+}

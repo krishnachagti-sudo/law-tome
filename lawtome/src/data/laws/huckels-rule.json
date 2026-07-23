@@ -1,0 +1,51 @@
+{
+  "no": "1105",
+  "slug": "huckels-rule",
+  "name": "Hückel's Rule",
+  "statement": "A planar, cyclic, fully conjugated molecule is aromatic if it has (4n + 2) pi electrons, where n is a non-negative integer.",
+  "statementAccent": "(4n + 2) pi electrons",
+  "meaning": "Hückel’s rule gives a simple electron-counting criterion for aromatic stability in monocyclic conjugated ring systems. Rings with 2, 6, 10, 14 pi electrons (n = 0, 1, 2, 3) gain extra stability from completely filled bonding orbitals, while rings with 4n pi electrons (4, 8, 12) are antiaromatic and destabilised.",
+  "mechanism": "In a planar, fully conjugated monocyclic system, the pi molecular orbitals form a pattern where one lowest-energy orbital is filled by two electrons and subsequent degenerate pairs are each filled by four. When the count is 4n+2, all bonding orbitals are completely filled with no singly occupied orbitals, giving a closed-shell, low-energy configuration; a 4n count leaves degenerate orbitals half-filled and diradical-like, which is destabilising.",
+  "examples": [
+    {
+      "tag": "Benzene",
+      "text": "Benzene has 6 pi electrons (n = 1), satisfying the 4n+2 rule, and is the archetypal aromatic compound."
+    },
+    {
+      "tag": "Aromatic ions",
+      "text": "The cyclopentadienyl anion and the tropylium cation each have 6 pi electrons and are notably stabilised aromatic ions, despite being 5- and 7-membered rings."
+    },
+    {
+      "tag": "Cyclobutadiene",
+      "text": "Cyclobutadiene has 4 pi electrons (4n, n = 1), making it antiaromatic and highly unstable, existing as a stable species only below about 35 K."
+    }
+  ],
+  "whyItMatters": "The rule gives chemists a fast predictive test for whether a ring will show the special stability, reactivity, and spectroscopic signatures of aromatic compounds, foundational to understanding benzene chemistry, heterocycles, and many natural products and materials.",
+  "limits": "It strictly applies only to monocyclic, planar, fully conjugated systems; non-planar molecules may fail to be aromatic even with the right electron count due to poor p-orbital overlap. Many polycyclic aromatics such as pyrene and coronene are aromatic despite not satisfying the simple 4n+2 count.",
+  "misreadings": "A common error is applying the 4n+2 count as a sufficient standalone test without also requiring planarity and full cyclic conjugation, or extending it uncritically to polycyclic systems.",
+  "origin": "The quantum-mechanical basis was worked out by German physical chemist Erich Hückel in 1931; the concise \"4n+2\" phrasing is attributed to chemist W. von E. Doering in 1951.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1931,
+  "namedAfter": "Erich Hückel",
+  "sources": [
+    {
+      "text": "Hückel’s rule, Wikipedia. — the 4n+2 statement, the 1931 origin, the 1951 phrasing, and the benzene, aromatic-ion, and cyclobutadiene examples.",
+      "url": "https://en.wikipedia.org/wiki/H%C3%BCckel%27s_rule",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Hückel rule,\" Encyclopaedia Britannica. — the definition of the rule as a (4n+2) criterion for aromaticity in planar, cyclic, conjugated molecules.",
+      "url": "https://www.britannica.com/science/Huckel-rule",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/H%C3%BCckel%27s_rule",
+  "related": [
+    {
+      "slug": "the-woodward-hoffmann-rules",
+      "kind": "kindred"
+    }
+  ]
+}

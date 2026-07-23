@@ -1,0 +1,51 @@
+{
+  "no": "1108",
+  "slug": "marcus-theory",
+  "name": "Marcus Theory",
+  "statement": "Marcus theory gives the rate of outer-sphere electron transfer from reorganization energy and free-energy change, predicting a rate-slowing \"inverted region\" at high driving force.",
+  "statementAccent": "inverted region",
+  "meaning": "Marcus theory models electron transfer between a donor and acceptor as occurring at a fixed nuclear geometry, with the surrounding solvent and bonds first reorganising to a configuration where donor and acceptor free-energy surfaces intersect. The rate depends on the reorganisation energy (lambda) and the reaction free energy (ΔG°). Counterintuitively, as a reaction becomes more exergonic the rate first rises, peaks when −ΔG° = lambda, then falls — the \"inverted region.\"",
+  "mechanism": "The semiclassical treatment plots two parabolic free-energy surfaces (reactant and product states) against a nuclear/solvent reaction coordinate, and derives a rate constant depending on the electronic coupling between donor and acceptor, the reorganisation energy, and the free-energy change. Reorganisation energy combines outer-sphere (solvent polarisation) and inner-sphere (bond geometry) contributions.",
+  "examples": [
+    {
+      "tag": "Fe2+/Fe3+ self-exchange",
+      "text": "The aqueous ferrous-ferric self-exchange reaction is a classic outer-sphere electron-transfer system originally used to test Marcus theory’s predictions."
+    },
+    {
+      "tag": "Inverted region confirmed",
+      "text": "Miller, Calcaterra, and Closs (1984) confirmed the Marcus inverted region experimentally using intramolecular electron transfer in rigid, covalently linked donor–acceptor molecules."
+    },
+    {
+      "tag": "Photosynthesis",
+      "text": "Marcus theory is used to describe electron-transfer steps in photosynthetic reaction centres and in solar-cell charge separation."
+    }
+  ],
+  "whyItMatters": "Marcus theory turned electron-transfer kinetics from an empirical black box into a predictive framework linking rate to measurable quantities — driving force, reorganisation energy, electronic coupling — underlying modern understanding of photosynthesis, corrosion, batteries, and solar energy conversion, and earning Marcus the 1992 Nobel Prize in Chemistry.",
+  "limits": "The semiclassical form assumes weak electronic coupling (non-adiabatic transfer) and classical nuclear motion, and struggles with strongly coupled or highly quantum (nuclear tunnelling) regimes without extension. In diffusing bimolecular systems, competing effects long obscured clean observation of the inverted region predicted for fixed-distance systems.",
+  "misreadings": "A common misreading is expecting rate to keep increasing indefinitely with driving force (\"more exergonic = always faster\"), ignoring the inverted-region maximum at −ΔG° = lambda.",
+  "origin": "Developed by Rudolph A. Marcus starting in 1956; he received the 1992 Nobel Prize in Chemistry for the theory of electron-transfer reactions.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1956,
+  "namedAfter": "Rudolph A. Marcus",
+  "sources": [
+    {
+      "text": "Marcus theory, Wikipedia. — the 1956 origin, the rate framework, the inverted region, its 1984 confirmation, and applications.",
+      "url": "https://en.wikipedia.org/wiki/Marcus_theory",
+      "type": "secondary"
+    },
+    {
+      "text": "Rudolph A. Marcus, Facts, NobelPrize.org. — that Marcus received the 1992 Nobel Prize for the theory of electron-transfer reactions.",
+      "url": "https://www.nobelprize.org/prizes/chemistry/1992/marcus/facts/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Marcus_theory",
+  "related": [
+    {
+      "slug": "the-eyring-equation",
+      "kind": "kindred"
+    }
+  ]
+}

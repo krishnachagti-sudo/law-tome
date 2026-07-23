@@ -1,0 +1,51 @@
+{
+  "no": "1104",
+  "slug": "zaitsevs-rule",
+  "name": "Zaitsev's Rule",
+  "statement": "In elimination reactions, the major alkene product is usually the more substituted, more stable alkene.",
+  "statementAccent": "more substituted, more stable alkene",
+  "meaning": "When a base removes a proton beta to a leaving group, more than one alkene can form. Zaitsev’s rule predicts that the product with the greater number of alkyl substituents on the double-bond carbons predominates, because more substituted alkenes are thermodynamically more stable, largely through hyperconjugation.",
+  "mechanism": "In E1 and E2 eliminations a base abstracts a proton from a carbon adjacent to the leaving group, and the electrons form a new pi bond as the leaving group departs. Removing a hydrogen from the more substituted carbon gives a more highly substituted, more stable alkene, favoured where the more stable transition state or product is accessible. The rule reflects a preference for the more stable alkene, not a fixed mechanistic step.",
+  "examples": [
+    {
+      "tag": "2-bromo-2-methylbutane",
+      "text": "Treating 2-bromo-2-methylbutane with sodium ethoxide, a small non-bulky base, gives 2-methyl-2-butene, the more substituted Zaitsev alkene, as the major product."
+    },
+    {
+      "tag": "Bulky base → Hofmann",
+      "text": "The same substrate with the bulky base potassium tert-butoxide favours the less-substituted Hofmann alkene, because steric bulk blocks access to the more substituted proton."
+    },
+    {
+      "tag": "Menthyl chloride",
+      "text": "Menthyl chloride undergoes E2 elimination to give exclusively the less-substituted Hofmann alkene, because the anti-periplanar geometry required for the Zaitsev product is not accessible in that conformation."
+    }
+  ],
+  "whyItMatters": "Zaitsev’s rule lets chemists predict the major product of elimination reactions without full mechanistic calculation, essential in synthesis planning, and it illustrates the broader principle that alkene stability governs reaction outcomes.",
+  "limits": "It is an empirical generalisation, not an absolute law: bulky bases favour the opposite Hofmann product, and stereochemical constraints such as anti-periplanar requirements in cyclohexane systems can force the Hofmann product regardless of base size.",
+  "misreadings": "Students sometimes treat Zaitsev’s rule as an inviolable law rather than a tendency, forgetting that base bulk and stereochemistry can override it.",
+  "origin": "Formulated by Russian chemist Alexander Zaytsev (also transliterated Zaitsev or Saytzeff), who published his observations on elimination products in Justus Liebigs Annalen der Chemie in 1875.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1875,
+  "namedAfter": "Alexander Zaytsev",
+  "sources": [
+    {
+      "text": "Zaitsev’s rule, Wikipedia. — the 1875 publication, the statement, and the bulky-base and menthyl-chloride exceptions.",
+      "url": "https://en.wikipedia.org/wiki/Zaitsev%27s_rule",
+      "type": "secondary"
+    },
+    {
+      "text": "Alexander Zaytsev (chemist), Wikipedia. — his authorship of the 1875 studies of elimination products.",
+      "url": "https://en.wikipedia.org/wiki/Alexander_Zaytsev_(chemist)",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Zaitsev%27s_rule",
+  "related": [
+    {
+      "slug": "markovnikovs-rule",
+      "kind": "near-twin"
+    }
+  ]
+}

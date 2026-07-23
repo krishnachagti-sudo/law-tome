@@ -1,0 +1,51 @@
+{
+  "no": "1109",
+  "slug": "the-van-t-hoff-equation",
+  "name": "The van 't Hoff Equation",
+  "statement": "The van 't Hoff equation states that d(ln K)/dT equals the standard reaction enthalpy divided by RT², linking equilibrium-constant shifts to temperature.",
+  "statementAccent": "d(ln K)/dT",
+  "meaning": "The equation quantifies how a reaction’s equilibrium constant K changes with temperature, given the standard enthalpy change of the reaction. Exothermic reactions have K decrease with rising temperature, endothermic reactions have K increase. Plotting ln K against 1/T (a \"van ’t Hoff plot\") gives a line whose slope yields the reaction enthalpy and whose intercept yields the reaction entropy.",
+  "mechanism": "The relation follows from combining the definition of the equilibrium constant via ΔG° = −RT ln K with the Gibbs–Helmholtz equation relating ΔG° and ΔH°. Integrating over a temperature range, assuming the reaction enthalpy is approximately constant, gives ln(K2/K1) = −(ΔH°/R)(1/T2 − 1/T1).",
+  "examples": [
+    {
+      "tag": "Enthalpy from a plot",
+      "text": "Plotting ln K versus 1/T from equilibrium constants measured at several temperatures and reading the slope and intercept is a standard method to extract the reaction enthalpy and entropy."
+    },
+    {
+      "tag": "Micellisation",
+      "text": "The equation is applied to critical-micelle-concentration data, treated as an equilibrium constant, to determine the thermodynamics of surfactant micelle formation."
+    },
+    {
+      "tag": "Solubility",
+      "text": "It is used to predict how the equilibrium constant for a dissolution or gas-solubility equilibrium shifts with temperature, consistent with Le Chatelier’s principle for exothermic and endothermic processes."
+    }
+  ],
+  "whyItMatters": "It provides a quantitative, thermodynamically grounded bridge between reaction enthalpy and the temperature-dependence of chemical equilibria, letting chemists predict equilibrium shifts and extract thermodynamic parameters from temperature-varying equilibrium data without independent calorimetry.",
+  "limits": "The commonly used integrated form assumes the reaction enthalpy (and implicitly entropy) is constant over the temperature interval, which is only an approximation since both vary with temperature via heat-capacity differences; it is most accurate over narrow ranges.",
+  "misreadings": "A frequent misreading is treating the integrated form as exact over wide temperature ranges, when it is strictly valid only under the constant-enthalpy approximation.",
+  "origin": "Proposed by Dutch chemist Jacobus Henricus van ’t Hoff in 1884 in his book \"Études de Dynamique chimique.\"",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1884,
+  "namedAfter": "Jacobus Henricus van 't Hoff",
+  "sources": [
+    {
+      "text": "Van ’t Hoff equation, Wikipedia. — the differential and integrated forms, the 1884 origin, the constant-enthalpy approximation, and the van ’t Hoff plot.",
+      "url": "https://en.wikipedia.org/wiki/Van_%27t_Hoff_equation",
+      "type": "secondary"
+    },
+    {
+      "text": "\"The van ’t Hoff Equation,\" Chemistry LibreTexts. — the derivation from ΔG° = −RT ln K and the Gibbs–Helmholtz relation.",
+      "url": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Physical_Chemistry_(LibreTexts)/26:_Chemical_Equilibrium/26.07:_The_van_'t_Hoff_Equation",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Van_%27t_Hoff_equation",
+  "related": [
+    {
+      "slug": "le-chateliers-principle",
+      "kind": "kindred"
+    }
+  ]
+}

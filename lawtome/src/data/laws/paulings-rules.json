@@ -1,0 +1,51 @@
+{
+  "no": "1110",
+  "slug": "paulings-rules",
+  "name": "Pauling's Rules",
+  "statement": "Pauling’s rules are five principles, published in 1929, that predict and rationalize the crystal structures of ionic compounds from ionic radii and charge.",
+  "statementAccent": "five principles",
+  "meaning": "The rules describe how cations and anions pack into stable ionic crystals: cations sit in anion polyhedra whose shape is set by the radius ratio, local charges must balance around each ion, and edge- and face-sharing between polyhedra plus the diversity of building blocks are limited for stability. They give a systematic, electrostatics-based way to rationalise why particular ionic structures occur.",
+  "mechanism": "Rule 1 (radius ratio) sets each cation’s coordination number from the cation:anion radius ratio. Rule 2 (electrostatic valence) requires the bond strengths reaching an anion to sum to its charge, enforcing local electroneutrality. Rule 3 states edge- and especially face-sharing of anion polyhedra reduces stability by bringing cations closer. Rule 4 says high-charge, low-coordination cations avoid sharing polyhedron elements. Rule 5 (parsimony) says the number of distinct structural environments tends to be small.",
+  "examples": [
+    {
+      "tag": "Rock salt",
+      "text": "In NaCl, the Na+:Cl− radius ratio of about 0.55 predicts and matches the observed octahedral six-fold coordination of Na+ by Cl−."
+    },
+    {
+      "tag": "Rutile",
+      "text": "Rutile-structured TiO2 forms TiO6 octahedra that share only edges, not faces, with neighbours, consistent with Rule 3 that face-sharing destabilises the structure."
+    },
+    {
+      "tag": "Caesium chloride",
+      "text": "In CsCl, the larger Cs+:Cl− radius ratio of about 0.93 predicts and matches the observed eight-fold cubic coordination, contrasting with NaCl’s six-fold."
+    }
+  ],
+  "whyItMatters": "Pauling’s rules gave mineralogists and inorganic chemists a simple, physically motivated set of heuristics to predict and rationalise ionic crystal structures decades before routine computational prediction, and they remain a standard teaching framework in crystal chemistry and mineralogy.",
+  "limits": "A study of roughly 5,000 oxide structures found only about 66% satisfied the first rule and just 13% satisfied all of the latter rules simultaneously, showing substantially lower universal predictive power than traditionally assumed, especially for structures with significant covalent bonding.",
+  "misreadings": "The rules are sometimes overstated as strict, always-true laws rather than the empirical heuristics Pauling intended, which fail notably for many real, especially covalent-leaning, oxide structures.",
+  "origin": "Published by Linus Pauling in 1929, combining knowledge of known inorganic crystal structures with electrostatic arguments into five rules for ionic crystal stability.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1929,
+  "namedAfter": "Linus Pauling",
+  "sources": [
+    {
+      "text": "Pauling’s rules, Wikipedia. — the five rules, the NaCl/CsCl/rutile examples, and the study finding only about 13% of oxides satisfy all rules.",
+      "url": "https://en.wikipedia.org/wiki/Pauling%27s_rules",
+      "type": "secondary"
+    },
+    {
+      "text": "\"The Limited Predictive Power of the Pauling Rules,\" PMC. — the quantitative rule-satisfaction statistics across thousands of oxide structures.",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7217010/",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Pauling%27s_rules",
+  "related": [
+    {
+      "slug": "vsepr-theory",
+      "kind": "kindred"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "no": "1106",
+  "slug": "the-langmuir-adsorption-isotherm",
+  "name": "The Langmuir Adsorption Isotherm",
+  "statement": "Fractional surface coverage equals K·p divided by (1 + K·p), describing monolayer gas adsorption on a uniform surface with equivalent, independent sites.",
+  "statementAccent": "K·p divided by (1 + K·p)",
+  "meaning": "The Langmuir isotherm models how the fraction of a solid surface covered by adsorbed gas molecules varies with the gas’s equilibrium partial pressure at fixed temperature. It assumes adsorption stops at a single complete monolayer, every site is identical and holds one molecule, and adsorbed molecules do not interact.",
+  "mechanism": "The model treats adsorption as a dynamic equilibrium: molecules strike the surface, are reflected, adsorb at empty sites, and desorb from occupied ones. Setting the rate of adsorption (proportional to pressure and the fraction of empty sites) equal to the rate of desorption (proportional to the fraction of occupied sites) yields the isotherm, where K is an equilibrium constant related to the adsorption and desorption rate constants.",
+  "examples": [
+    {
+      "tag": "1918 paper",
+      "text": "Irving Langmuir introduced the model in his 1918 paper \"The Adsorption of Gases on Plane Surfaces of Glass, Mica and Platinum,\" in the Journal of the American Chemical Society."
+    },
+    {
+      "tag": "Catalyst surfaces",
+      "text": "The isotherm is widely used to describe gas adsorption onto heterogeneous catalyst surfaces, such as metal catalysts, to characterise surface coverage as a function of pressure."
+    },
+    {
+      "tag": "Activated carbon",
+      "text": "The model is commonly applied to fit adsorption data for pollutants or gases onto activated carbon in environmental and industrial engineering."
+    }
+  ],
+  "whyItMatters": "It was one of the first theoretically grounded models of adsorption and remains a standard reference in surface chemistry, catalysis, and materials science for interpreting adsorption data and estimating surface area or binding affinity.",
+  "limits": "Real surfaces are rarely perfectly flat or energetically uniform, so the model fails to capture surface roughness and site heterogeneity; it also neglects adsorbate–adsorbate interactions and cannot describe multilayer adsorption, which the BET isotherm handles instead.",
+  "misreadings": "It is sometimes misapplied to systems with multilayer adsorption or strong adsorbate–adsorbate interactions, where its single-layer, non-interacting-site assumptions no longer hold.",
+  "origin": "Proposed by American chemist Irving Langmuir in 1918; he received the 1932 Nobel Prize in Chemistry in part for his work on surface chemistry.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1918,
+  "namedAfter": "Irving Langmuir",
+  "sources": [
+    {
+      "text": "Langmuir adsorption model, Wikipedia. — the isotherm equation, the underlying assumptions, the 1918 paper, and the surface-roughness limitation.",
+      "url": "https://en.wikipedia.org/wiki/Langmuir_adsorption_model",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Langmuir Adsorption,\" ScienceDirect Topics. — the standard equilibrium form of the isotherm in surface and catalysis science.",
+      "url": "https://www.sciencedirect.com/topics/engineering/langmuir-adsorption",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Langmuir_adsorption_model"
+}
