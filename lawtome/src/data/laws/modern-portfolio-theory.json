@@ -1,0 +1,54 @@
+{
+  "no": "1049",
+  "slug": "modern-portfolio-theory",
+  "name": "Modern Portfolio Theory",
+  "statement": "Combining imperfectly correlated assets can lower a portfolio’s risk for a given expected return, tracing out an efficient frontier of optimal portfolios.",
+  "statementAccent": "lower a portfolio’s risk for a given expected return",
+  "meaning": "Modern portfolio theory formalises diversification: an asset’s contribution to portfolio risk depends not just on its own volatility but on its correlation with other holdings, so combining imperfectly correlated assets can reduce overall variance without sacrificing expected return. This produces an \"efficient frontier\" of portfolios offering the maximum expected return for each level of risk.",
+  "mechanism": "By modelling a portfolio’s expected return as the weighted average of asset returns and its risk as a function of asset variances and pairwise covariances, Markowitz showed that mixing assets whose returns do not move in lockstep reduces total variance below what any individual asset offers, mathematically identifying the risk-minimising weightings for any target return.",
+  "examples": [
+    {
+      "tag": "Markowitz, 1952",
+      "text": "Harry Markowitz introduced the theory in \"Portfolio Selection,\" Journal of Finance vol. 7 (1952), followed by his 1959 book \"Portfolio Selection: Efficient Diversification of Investments,\" which systematised the mean-variance framework."
+    },
+    {
+      "tag": "1990 Nobel Prize",
+      "text": "Harry Markowitz shared the 1990 Nobel Memorial Prize (with William Sharpe and Merton Miller) for pioneering the theory of financial economics built on portfolio choice under risk."
+    },
+    {
+      "tag": "Efficient frontier in practice",
+      "text": "The mean-variance framework underlies the widespread practice of constructing diversified, multi-asset-class portfolios to target a desired risk-return trade-off along the efficient frontier, standard in modern finance curricula and institutional asset allocation."
+    }
+  ],
+  "whyItMatters": "It gave portfolio construction a rigorous quantitative foundation, shifting focus from picking individual good stocks toward optimising whole portfolios for risk-adjusted return, and it laid the groundwork for later asset-pricing models such as CAPM.",
+  "limits": "It relies on historical means, variances, and correlations that are unstable and can shift after estimation; it uses variance as its risk measure, which does not capture the skewed, fat-tailed nature of many real return distributions or distinguish upside from downside volatility. Critics note it assumes rational, risk-averse investors and frictionless markets.",
+  "misreadings": "It is sometimes reduced to the slogan \"just diversify,\" ignoring that its actual prescriptions depend heavily on estimated correlations and expected returns that are themselves highly uncertain and error-prone.",
+  "origin": "Developed by economist Harry Markowitz, published in the Journal of Finance in 1952; Bruno de Finetti had derived related mean-variance results in 1940, but that work remained obscure until rediscovered around 2006.",
+  "category": "economics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1952,
+  "sources": [
+    {
+      "text": "Modern portfolio theory, Wikipedia. — diversification, the efficient frontier, and critiques.",
+      "url": "https://en.wikipedia.org/wiki/Modern_portfolio_theory",
+      "type": "secondary"
+    },
+    {
+      "text": "Harry Markowitz, Wikipedia. — the 1952 paper, 1959 book, and 1990 Nobel Prize.",
+      "url": "https://en.wikipedia.org/wiki/Harry_Markowitz",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Modern_portfolio_theory",
+  "related": [
+    {
+      "slug": "the-capital-asset-pricing-model",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-kelly-criterion",
+      "kind": "kindred"
+    }
+  ]
+}

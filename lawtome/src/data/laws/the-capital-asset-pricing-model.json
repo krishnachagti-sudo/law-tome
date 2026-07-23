@@ -1,0 +1,54 @@
+{
+  "no": "1050",
+  "slug": "the-capital-asset-pricing-model",
+  "name": "The Capital Asset Pricing Model",
+  "statement": "An asset’s expected return equals the risk-free rate plus its beta multiplied by the market’s expected excess return over that risk-free rate.",
+  "statementAccent": "equals the risk-free rate plus its beta multiplied by the market’s expected excess return",
+  "meaning": "CAPM states that in equilibrium an asset’s expected return compensates only for its non-diversifiable (\"systematic\") risk relative to the overall market, measured by beta, since idiosyncratic risk can be diversified away and earns no extra reward. It is expressed as expected return equals the risk-free rate plus beta times the market’s excess return.",
+  "mechanism": "Building on Markowitz’s mean-variance theory, CAPM assumes all investors hold some combination of the risk-free asset and the same fully-diversified market portfolio; because idiosyncratic risk washes out in a diversified portfolio, only an asset’s covariance with the market (beta) drives its required risk premium, producing the linear relationship plotted as the Security Market Line.",
+  "examples": [
+    {
+      "tag": "Four independent originators",
+      "text": "CAPM was developed independently by Jack Treynor (1961-62), William F. Sharpe (1964), John Lintner (1965), and Jan Mossin (1966), extending Markowitz’s portfolio theory into an asset-pricing equilibrium model."
+    },
+    {
+      "tag": "1990 Nobel Prize",
+      "text": "William Sharpe shared the 1990 Nobel Memorial Prize (with Markowitz and Merton Miller) specifically for developing CAPM as a theory of price formation for financial assets."
+    },
+    {
+      "tag": "Fama-French challenge",
+      "text": "In a widely cited 2004 paper, Eugene Fama and Kenneth French argued that empirical tests show the failure of the CAPM implies most applications of the model are invalid, pointing to anomalies such as the low-volatility effect."
+    }
+  ],
+  "whyItMatters": "Despite its empirical weaknesses, CAPM remains a foundational teaching and practical tool for estimating a company’s cost of equity, computing risk-adjusted performance, and framing systematic-versus-idiosyncratic risk — concepts underlying much of modern corporate finance and asset management.",
+  "limits": "Richard Roll’s critique notes the market portfolio required by the model is theoretically all investable assets worldwide and is practically unobservable, making its core prediction untestable in pure form. Beta from historical data is unstable, and multi-factor models (Fama-French three- and five-factor) have empirically outperformed single-factor CAPM in explaining returns.",
+  "misreadings": "CAPM beta is often casually treated as a complete measure of \"risk,\" when it captures only a single dimension — co-movement with a proxy market index — and ignores other empirically important factors such as size, value, and momentum.",
+  "origin": "Developed independently by Jack Treynor, William F. Sharpe, John Lintner, and Jan Mossin in the early-to-mid 1960s, extending Harry Markowitz’s portfolio theory; not the eponym of a single person, though Sharpe is most closely associated with it.",
+  "category": "economics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1964,
+  "sources": [
+    {
+      "text": "Capital asset pricing model, Wikipedia. — the formula, independent development, 1990 Nobel Prize, and Roll and Fama-French critiques.",
+      "url": "https://en.wikipedia.org/wiki/Capital_asset_pricing_model",
+      "type": "secondary"
+    },
+    {
+      "text": "Modern portfolio theory, Wikipedia. — Markowitz’s 1990 Nobel Prize alongside Sharpe and Miller, linking MPT and CAPM.",
+      "url": "https://en.wikipedia.org/wiki/Modern_portfolio_theory",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Capital_asset_pricing_model",
+  "related": [
+    {
+      "slug": "modern-portfolio-theory",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-efficient-market-hypothesis",
+      "kind": "kindred"
+    }
+  ]
+}

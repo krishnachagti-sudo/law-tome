@@ -1,0 +1,50 @@
+{
+  "no": "1046",
+  "slug": "prospect-theory",
+  "name": "Prospect Theory",
+  "statement": "People evaluate outcomes as gains and losses relative to a reference point, weighting losses roughly 1.5–2.5 times more heavily than equivalent gains.",
+  "statementAccent": "weighting losses roughly 1.5–2.5 times more heavily than equivalent gains",
+  "meaning": "Prospect theory is a descriptive account of choice under risk that replaces expected-utility theory. Instead of judging outcomes by final wealth, people code them as gains or losses relative to a reference point, and the resulting value function is concave for gains, convex for losses, and steeper for losses than gains. People also distort probabilities, overweighting small ones and underweighting large or moderate ones.",
+  "mechanism": "The theory’s S-shaped value function captures diminishing sensitivity — further gains or losses matter less as magnitude grows — and loss aversion, since the slope for losses is steeper. A separate probability-weighting function replaces objective probabilities with decision weights, explaining why people simultaneously buy lottery tickets (overweighting tiny win chances) and insurance (overweighting tiny loss chances).",
+  "examples": [
+    {
+      "tag": "Kahneman & Tversky, 1979",
+      "text": "Daniel Kahneman and Amos Tversky introduced the theory in \"Prospect Theory: An Analysis of Decision under Risk,\" Econometrica 47(2), 263-291 (1979), using choices such as preferring a certain $3,000 over an 80% chance of $4,000 to show violations of expected utility."
+    },
+    {
+      "tag": "2002 Nobel Prize",
+      "text": "The Royal Swedish Academy awarded Daniel Kahneman the 2002 Nobel Memorial Prize in part for integrating psychological insights, including prospect theory, into economics; Amos Tversky, who died in 1996, was ineligible but credited as co-author."
+    },
+    {
+      "tag": "Loss aversion in markets",
+      "text": "Loss aversion is cited to explain the disposition effect — investors holding losing stocks too long and selling winners too early — and the endowment effect, where people demand more to give up an object than they would pay to acquire it."
+    }
+  ],
+  "whyItMatters": "Prospect theory reshaped economics by showing decision-making departs from rational expected-utility maximisation in predictable ways. It underpins behavioural economics, influences the design of savings defaults and consumer disclosures, and gives finance a psychological explanation for anomalies like the disposition effect.",
+  "limits": "It is descriptive, not normative: it does not prescribe optimal behaviour, and its parameters — the loss-aversion coefficient, probability-weighting curvature — vary by study, population, and elicitation method, so there is no single universal value. Some researchers argue its lab-experiment origins may not generalise cleanly to complex real-world financial decisions.",
+  "misreadings": "It is often oversimplified to \"losses hurt twice as much as gains,\" treating the roughly 2x loss-aversion figure as a fixed universal constant rather than a context-dependent empirical estimate.",
+  "origin": "Developed by psychologists Daniel Kahneman and Amos Tversky, published in Econometrica in 1979; the name was chosen deliberately as a distinctive, memorable label rather than as an eponym.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1979,
+  "sources": [
+    {
+      "text": "Prospect theory, Wikipedia. — the value function, reference dependence, loss aversion, probability weighting, and origin.",
+      "url": "https://en.wikipedia.org/wiki/Prospect_theory",
+      "type": "secondary"
+    },
+    {
+      "text": "The Prize in Economic Sciences 2002, NobelPrize.org. — Kahneman’s award and Tversky’s ineligibility due to his 1996 death.",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2002/popular-information/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Prospect_theory",
+  "related": [
+    {
+      "slug": "the-allais-paradox",
+      "kind": "kindred"
+    }
+  ]
+}

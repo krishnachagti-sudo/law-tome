@@ -1,0 +1,51 @@
+{
+  "no": "1041",
+  "slug": "the-herfindahl-hirschman-index",
+  "name": "The Herfindahl–Hirschman Index",
+  "statement": "The Herfindahl-Hirschman Index measures market concentration as the sum of the squared market shares of all firms in an industry.",
+  "statementAccent": "sum of the squared market shares of all firms in an industry",
+  "meaning": "The HHI condenses a market’s competitive structure into one number by squaring each firm’s percentage market share and adding the results, from near 0 (many equally small competitors) up to 10,000 (a single-firm monopoly, when shares are whole-number percentages). Squaring gives disproportionately more weight to large firms, so it captures both the number of firms and the inequality of their sizes.",
+  "mechanism": "Because share is squared before summing, a market with a few very large firms yields a much higher HHI than one with the same output split among many small firms. This makes the index rise sharply as an industry consolidates through mergers or the exit of smaller rivals, which is why regulators use the change in HHI from a proposed merger as a screening test for harm to competition.",
+  "examples": [
+    {
+      "tag": "Hirschman 1945, Herfindahl 1950",
+      "text": "Albert O. Hirschman proposed a squared-shares concentration index in his 1945 book on foreign trade; Orris C. Herfindahl independently used the same approach to study US steel concentration in his 1950 PhD dissertation, and later scholarship credited both, yielding the combined name."
+    },
+    {
+      "tag": "DOJ/FTC thresholds",
+      "text": "Under the US 2023 Merger Guidelines, markets with an HHI above 1,800 are highly concentrated and above 1,000 moderately concentrated, and a merger raising HHI by more than 100 points in an already highly concentrated market triggers a presumption of harm."
+    },
+    {
+      "tag": "Worked example",
+      "text": "In a four-firm market with shares of 30%, 30%, 20%, and 20%, the HHI is 30² + 30² + 20² + 20² = 2,600, a value classed as highly concentrated."
+    }
+  ],
+  "whyItMatters": "The HHI is the standard quantitative screen used by antitrust authorities worldwide to flag mergers for closer scrutiny, making it directly consequential for merger approvals and competition policy.",
+  "limits": "Its usefulness depends heavily on how the relevant market is defined; too broad a definition can mask a genuine monopoly in a narrower segment, while too narrow a one can overstate concentration. Geographic definition poses similar problems, and the index does not by itself capture barriers to entry, product differentiation, or potential competition.",
+  "misreadings": "A high HHI is sometimes read as proof that a market is anticompetitive or a merger will harm consumers, but regulators treat the thresholds only as a screening trigger for further analysis, not as conclusive evidence of harm.",
+  "origin": "The squared-share measure was first proposed by Albert O. Hirschman in 1945 and independently reintroduced by Orris C. Herfindahl in his 1950 dissertation on the steel industry; the combined name came into use as both contributions were recognised.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1950,
+  "namedAfter": "Orris C. Herfindahl and Albert O. Hirschman",
+  "sources": [
+    {
+      "text": "Herfindahl-Hirschman index, Wikipedia. — the formula, range, mechanism, and dual origin.",
+      "url": "https://en.wikipedia.org/wiki/Herfindahl%E2%80%93Hirschman_index",
+      "type": "secondary"
+    },
+    {
+      "text": "US Department of Justice, \"Herfindahl-Hirschman Index.\" — the DOJ/FTC concentration thresholds and worked example.",
+      "url": "https://www.justice.gov/atr/herfindahl-hirschman-index",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Herfindahl%E2%80%93Hirschman_index",
+  "related": [
+    {
+      "slug": "the-gini-coefficient",
+      "kind": "kindred"
+    }
+  ]
+}

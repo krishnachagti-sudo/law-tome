@@ -1,0 +1,51 @@
+{
+  "no": "1048",
+  "slug": "the-kelly-criterion",
+  "name": "The Kelly Criterion",
+  "statement": "The optimal fraction of capital to bet on a favorable wager is the edge divided by the odds, maximizing long-run geometric growth of wealth.",
+  "statementAccent": "maximizing long-run geometric growth of wealth",
+  "meaning": "The Kelly criterion is a formula for sizing bets or investments to maximise the expected long-term growth rate of wealth, equivalent to maximising the expected logarithm of wealth. For a simple win/lose bet the fraction is the edge divided by the odds; betting more \"overbets\" and betting less \"underbets\" relative to optimal growth.",
+  "mechanism": "Because wealth compounds multiplicatively, maximising arithmetic expected value per bet can lead to ruin from a single large loss; maximising expected log-wealth instead balances growth against volatility, since log-utility penalises large drawdowns heavily. This makes the Kelly fraction the bet size that maximises the expected compound growth rate over repeated trials.",
+  "examples": [
+    {
+      "tag": "Kelly, 1956",
+      "text": "John L. Kelly Jr., a researcher at Bell Labs, introduced the idea in \"A New Interpretation of Information Rate,\" Bell System Technical Journal (1956), originally framing it in terms of information theory and gambling on a noisy channel."
+    },
+    {
+      "tag": "Thorp’s blackjack and fund",
+      "text": "Mathematician Edward O. Thorp applied the formula to blackjack card counting in the early 1960s and later to markets through his hedge fund Princeton/Newport Partners (1969-1989), which he reported achieved about 20% annualised over 28.5 years."
+    },
+    {
+      "tag": "Fractional Kelly",
+      "text": "Because real-world probabilities and payoffs are never known exactly, practitioners commonly bet a fraction — for example half — of the full Kelly amount to reduce volatility and guard against overestimated edges."
+    }
+  ],
+  "whyItMatters": "The criterion gives a rigorous, mathematically grounded alternative to ad hoc bet or position sizing, linking bankroll management directly to long-run compounding, and it remains a foundational reference in quantitative trading, gambling theory, and portfolio position-sizing.",
+  "limits": "It assumes precisely known probabilities and payoffs, almost never satisfied in real investing; overestimating one’s edge and betting full Kelly sharply increases the risk of large drawdowns or ruin, which is why fractional Kelly is the norm. It also does not incorporate investor-specific risk aversion beyond growth maximisation.",
+  "misreadings": "It is often misapplied by treating a rough estimate of edge and odds as exact known parameters, leading to overbetting; it is also sometimes confused with a guarantee of never losing rather than a growth-optimal strategy that still permits substantial drawdowns.",
+  "origin": "Devised by John L. Kelly Jr., a scientist at Bell Labs, published in 1956; named after him.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1956,
+  "namedAfter": "John L. Kelly Jr.",
+  "sources": [
+    {
+      "text": "Kelly criterion, Wikipedia. — Kelly’s 1956 paper, the formula, the growth-rate rationale, and fractional Kelly practice.",
+      "url": "https://en.wikipedia.org/wiki/Kelly_criterion",
+      "type": "secondary"
+    },
+    {
+      "text": "Edward O. Thorp, Wikipedia. — his use of Kelly-based methods in blackjack and at Princeton/Newport Partners with the reported 20% annualised return.",
+      "url": "https://en.wikipedia.org/wiki/Edward_O._Thorp",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Kelly_criterion",
+  "related": [
+    {
+      "slug": "modern-portfolio-theory",
+      "kind": "kindred"
+    }
+  ]
+}

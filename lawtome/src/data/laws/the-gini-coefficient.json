@@ -1,0 +1,55 @@
+{
+  "no": "1038",
+  "slug": "the-gini-coefficient",
+  "name": "The Gini Coefficient",
+  "statement": "The Gini coefficient measures income or wealth inequality within a population on a scale from 0 (perfect equality) to 1 (perfect inequality).",
+  "statementAccent": "scale from 0 (perfect equality) to 1 (perfect inequality)",
+  "meaning": "The Gini coefficient summarises how evenly income, wealth, or consumption is distributed across a population in a single number. A value of 0 means everyone holds exactly the same amount; a value of 1 (or 100) means one person holds everything and everyone else nothing. It is derived from the Lorenz curve, which plots the cumulative share of total income against the cumulative share of the population, ordered from poorest to richest.",
+  "mechanism": "Geometrically, the coefficient equals the area between the Lorenz curve and the line of perfect equality (a 45-degree diagonal), divided by the total area under that equality line. The more the actual distribution sags below the equality line, the larger that area and the higher the value. This makes it sensitive to the shape of the whole distribution rather than to any single statistic like the mean or median.",
+  "examples": [
+    {
+      "tag": "Corrado Gini, 1912",
+      "text": "Italian statistician Corrado Gini introduced the measure in his 1912 monograph \"Variabilita e Mutabilita\", building on the Lorenz curve developed by American economist Max Lorenz in 1905."
+    },
+    {
+      "tag": "OECD comparisons",
+      "text": "Around 2008-2009, OECD after-tax Gini values ranged from about 0.25 in Denmark to roughly 0.53 in higher-inequality members, illustrating how the index ranks countries by income inequality."
+    },
+    {
+      "tag": "Income vs. wealth gap",
+      "text": "Sweden shows a relatively low income Gini of around 0.31 but a much higher wealth Gini of roughly 0.79-0.86, showing that inequality of income and of accumulated wealth can diverge sharply within one country."
+    }
+  ],
+  "whyItMatters": "It is the most widely used single-number summary of inequality, letting economists, governments, and bodies like the World Bank and OECD compare inequality across countries and over time. It underpins policy debates on taxation, redistribution, and social welfare.",
+  "limits": "The Gini coefficient is a relative measure and ignores absolute income levels, so two countries with very different living standards can share the same value. Different underlying distributions can produce identical Gini values, and the measure is not simply additive across subgroups. It is also sensitive to demographic structure and struggles to capture non-monetary or informal income, especially in developing economies.",
+  "misreadings": "A common misreading is to treat the coefficient as measuring absolute poverty or living standards rather than the relative shape of the distribution; a low Gini does not mean a population is prosperous, only that whatever income exists is evenly spread.",
+  "origin": "Introduced by Italian statistician Corrado Gini in his 1912 work \"Variabilita e Mutabilita\", extending Max O. Lorenz’s 1905 Lorenz curve.",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1912,
+  "namedAfter": "Corrado Gini",
+  "sources": [
+    {
+      "text": "Gini coefficient, Wikipedia. — the definition, range, geometry, origin, and comparative country values.",
+      "url": "https://en.wikipedia.org/wiki/Gini_coefficient",
+      "type": "secondary"
+    },
+    {
+      "text": "Ceriani & Verme, \"The origins of the Gini index,\" Journal of Economic Inequality (2012). — the 1912 origin and Gini’s original formulations.",
+      "url": "https://link.springer.com/article/10.1007/s10888-011-9188-x",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Gini_coefficient",
+  "related": [
+    {
+      "slug": "the-kuznets-curve",
+      "kind": "kindred"
+    },
+    {
+      "slug": "pareto-principle",
+      "kind": "kindred"
+    }
+  ]
+}
