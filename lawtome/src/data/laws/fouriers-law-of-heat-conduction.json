@@ -1,57 +1,29 @@
 {
-  "no": "611",
+  "no": "1190",
   "slug": "fouriers-law-of-heat-conduction",
   "name": "Fourier's Law of Heat Conduction",
-  "aliases": [
-    "Fourier's law",
-    "The law of heat conduction"
-  ],
-  "statement": "Heat flows through a material in proportion to how steeply the temperature drops across it.",
-  "statementAccent": "how steeply the temperature drops across it",
-  "meaning": "Fourier's law of heat conduction states that the rate at which heat flows through a material is proportional to the temperature gradient and to the area through which it flows. In one dimension, the heat flux equals the negative of the material's thermal conductivity times the temperature gradient, the minus sign expressing that heat flows from hot to cold, down the gradient. The constant of proportionality, the thermal conductivity, is a property of the material, large for metals and small for insulators. Formulated by Joseph Fourier in his 1822 treatise on the theory of heat, the law is the foundation of conductive heat transfer and, combined with energy conservation, yields the heat equation that describes how temperature spreads and evolves over time.",
-  "mechanism": "Heat is the disordered energy of a material's molecules, and where one region is hotter than a neighbouring one, energy diffuses from the hotter to the cooler until they equalise. Fourier's law says the flux of this energy is proportional to the local steepness of the temperature difference: a sharp temperature drop drives a large heat flow, a gentle one a small flow, and the proportionality constant is the thermal conductivity that measures how readily the material passes heat along. The minus sign encodes that heat always flows down the gradient, from hot to cold. Combining this flux law with the conservation of energy gives the heat equation, a partial differential equation whose study led Fourier to invent the Fourier series and Fourier analysis that bear his name.",
+  "statement": "Heat flux through a material is proportional to the negative of the local temperature gradient, with thermal conductivity as the constant: q = -k∇T.",
+  "statementAccent": "q = -k∇T",
+  "meaning": "Fourier's law states that heat flows from hot to cold at a rate set by how steep the temperature difference is. In the vector form q = -k∇T, q is the local heat flux density, k the thermal conductivity, and ∇T the temperature gradient. The minus sign encodes that heat moves down the gradient, toward lower temperature.",
+  "mechanism": "Heat conduction transfers thermal energy through molecular and lattice interactions without bulk motion of material. In solids, atomic vibrations — and, in metals, free electrons — carry kinetic energy from hotter, more energetic regions to colder ones via collisions. The net energy transport is proportional to the steepness of the temperature gradient.",
   "examples": [
     {
-      "tag": "Insulation",
-      "text": "A thick, low-conductivity material like fibreglass slows heat flow because it lowers both the conductivity and the temperature gradient across a wall, keeping buildings warm."
+      "tag": "One-dimensional wall",
+      "text": "For steady conduction through a flat wall, the flux equals −k times the temperature change over thickness, so doubling the temperature difference doubles the heat flux."
     },
     {
-      "tag": "Analogous flux laws",
-      "text": "Fourier's law is mathematically the twin of Ohm's law for electric current and Fick's law for diffusion, all expressing a flux proportional to a gradient."
+      "tag": "Conductivity ranking",
+      "text": "Conduction is fastest in solids and slowest in gases because closely spaced particles transmit vibrational energy more effectively."
     },
     {
-      "tag": "The heat equation",
-      "text": "Combined with energy conservation, the law gives the heat equation Fourier developed in 1822, whose solution launched Fourier series and Fourier analysis."
+      "tag": "Foundational analogy",
+      "text": "Fourier's law is the template for a family of transport laws, directly analogous to Fick's law of diffusion, Ohm's law, and Darcy's law."
     }
   ],
-  "variants": [
-    {
-      "name": "The heat equation",
-      "text": "The partial differential equation for how temperature evolves in time, obtained by combining Fourier's flux law with the conservation of energy."
-    },
-    {
-      "name": "The three-dimensional form",
-      "text": "The vector statement that the heat flux is the negative of the thermal conductivity times the gradient of temperature, valid throughout a solid body."
-    }
-  ],
-  "whyItMatters": "Fourier's law is the foundational law of heat conduction, underlying the design of insulation, heat sinks, engines, buildings, and electronics cooling, and the modelling of heat flow in the Earth and the climate. Combined with energy conservation it produces the heat equation, one of the most important partial differential equations in physics, and the mathematics Fourier invented to solve it, Fourier series and the Fourier transform, became indispensable tools across science and engineering, from signal processing to quantum mechanics.",
-  "working": [
-    {
-      "lead": "Flux follows the gradient",
-      "text": "compute heat flow as the thermal conductivity times the steepness of the temperature drop, with a minus sign since heat flows hot to cold."
-    },
-    {
-      "lead": "Choose materials by conductivity",
-      "text": "use high-conductivity metals to move heat and low-conductivity insulators to block it, since conductivity sets the proportionality."
-    },
-    {
-      "lead": "Evolve temperature with the heat equation",
-      "text": "combine the flux law with energy conservation to predict how temperature spreads over time through a body."
-    }
-  ],
-  "limits": "Fourier's law is a phenomenological approximation, an excellent description of ordinary conduction rather than a fundamental law derived from first principles, and it can break down at very small scales or very short times where heat does not simply diffuse. It describes conduction specifically, not convection by moving fluids or radiation across space, which follow their own laws. It assumes the thermal conductivity is well defined, though conductivity itself varies with temperature and material state, and the minus sign is essential, since dropping it would send heat flowing the wrong way, from cold to hot, in violation of the second law of thermodynamics.",
-  "misreadings": "The law is empirical and phenomenological, a very good approximation, not a fundamental law like conservation of energy, and it can fail at nanoscales or ultrafast timescales. The minus sign is not decorative; it enforces that heat flows down the temperature gradient, from hot to cold, and omitting it reverses the physics. And Fourier's law governs conduction alone, so it does not by itself describe heat carried by flowing fluids, which is convection, or radiated as electromagnetic waves, which is radiation, each a separate mode of heat transfer.",
-  "origin": "Formulated by Jean-Baptiste Joseph Fourier in his 1822 treatise Theorie analytique de la chaleur, which also introduced Fourier series and analysis, and standing as the foundational law of conductive heat transfer.",
+  "whyItMatters": "It is the governing rate law for conduction and, combined with energy conservation, yields the heat equation used throughout engineering and physics. It underlies the thermal design of everything from buildings and electronics to engines and spacecraft.",
+  "limits": "It is a continuum, empirical law valid when many carrier collisions occur over the length and time scales of interest. It breaks down at the nanoscale and at very short timescales, where heat transport becomes ballistic rather than diffusive and the local-gradient assumption fails; it also treats conductivity as a property that may itself depend on temperature.",
+  "misreadings": "The negative sign does not mean heat flux is negative; it means flux points opposite to the temperature gradient, toward colder regions. The law describes conduction only, not convection or radiation.",
+  "origin": "Joseph Fourier, first published in his 1822 book Théorie analytique de la chaleur.",
   "category": "science",
   "reliability": "Empirical",
   "provenance": "canon",
@@ -59,28 +31,25 @@
   "namedAfter": "Joseph Fourier",
   "sources": [
     {
-      "text": "Thermal conduction, Wikipedia. — Fourier's law that heat flux equals the negative thermal conductivity times the temperature gradient, the minus-sign meaning, and the analogy to Ohm's and Fick's laws.",
+      "text": "Wikipedia's article on thermal conduction, giving Fourier's law q = -κ∇T, the one-dimensional form, and the conduction mechanism — supports the statement and mechanism.",
       "url": "https://en.wikipedia.org/wiki/Thermal_conduction",
       "type": "secondary"
     },
     {
-      "text": "Heat equation, Wikipedia. — the heat equation from Fourier's law and energy conservation and Fourier's 1822 development.",
-      "url": "https://en.wikipedia.org/wiki/Heat_equation",
+      "text": "Encyclopaedia Britannica's entry on Fourier's law of heat conduction, confirming q = -k∇T with heat-transfer rate proportional to the negative temperature gradient — supports the statement and attribution.",
+      "url": "https://www.britannica.com/science/Fouriers-law-of-heat-conduction",
       "type": "secondary"
     }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Thermal_conduction",
   "related": [
     {
-      "slug": "ohms-law",
-      "kind": "kindred"
+      "slug": "ficks-laws-of-diffusion",
+      "kind": "near-twin"
     },
     {
-      "slug": "ficks-laws-of-diffusion",
+      "slug": "ohms-law",
       "kind": "kindred"
     }
-  ],
-  "redirectFrom": [
-    "laws/fouriers-law/"
   ]
 }

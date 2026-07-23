@@ -1,0 +1,55 @@
+{
+  "no": "1187",
+  "slug": "paris-law",
+  "name": "Paris' Law",
+  "statement": "In the stable regime, a fatigue crack's growth rate per cycle scales as a power of the stress-intensity range: da/dN = C(ΔK)^m.",
+  "statementAccent": "da/dN = C(ΔK)^m",
+  "meaning": "Paris' law, the Paris-Erdogan equation, relates how fast a fatigue crack advances to the cyclic stress-intensity factor range ΔK it experiences. Here da/dN is the crack extension per loading cycle, ΔK is the difference between maximum and minimum stress intensity in a cycle, and C and m are experimentally fitted material constants. Plotted on log-log axes, the relation is a straight line.",
+  "mechanism": "The stress-intensity factor characterizes the elastic stress field at the crack tip. Each cycle drives a small increment of irreversible slip and damage in the crack-tip plastic zone, advancing the crack. Because damage accumulates with the intensity of cyclic loading, the growth rate follows a power law in ΔK.",
+  "examples": [
+    {
+      "tag": "Damage-tolerant life prediction",
+      "text": "Engineers integrate da/dN = C(ΔK)^m over cycles to predict the remaining life of aircraft and structural components and to schedule inspections."
+    },
+    {
+      "tag": "Typical exponent",
+      "text": "The exponent m is usually between 2 and 4 for ductile metals, though high-strength steels can reach values as high as about 10."
+    },
+    {
+      "tag": "Fatigue striations",
+      "text": "Striation markings on a fracture surface, each representing one loading cycle, are physical evidence of the cycle-by-cycle crack advance the law models."
+    }
+  ],
+  "whyItMatters": "It converts fracture mechanics into a quantitative tool for predicting fatigue life, enabling damage-tolerant design and inspection intervals. This lets engineers accept small cracks in service while ensuring they will not grow to failure before detection.",
+  "limits": "It applies only to Region II, the intermediate stable-growth regime. Below the threshold ΔK growth is negligible, and above the fracture toughness growth becomes unstable and catastrophic. It also assumes small-scale yielding and long cracks under linear-elastic conditions; C and m depend on material, environment, temperature, frequency, and stress ratio.",
+  "misreadings": "The constants C and m are not universal physical constants but empirical fits valid only within Region II and the tested conditions. The law does not describe short-crack behavior or the final fast-fracture event.",
+  "origin": "Paul C. Paris introduced the concept in 1961; it was formalized as the Paris-Erdogan equation with F. Erdogan in 1963.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1961,
+  "namedAfter": "Paul C. Paris",
+  "sources": [
+    {
+      "text": "Wikipedia's article on Paris' law, giving da/dN = C(ΔK)^m, the 1961 Paris / 1963 Paris-Erdogan history, the Region II applicability with threshold and toughness bounds, and typical m of 2–4 — supports the statement, mechanism, and limits.",
+      "url": "https://en.wikipedia.org/wiki/Paris%27_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Wikipedia's article on fatigue in materials, confirming the Paris-Erdogan equation is used to predict component life during the crack-growth phase and that growth stops below a threshold — supports the application and limits.",
+      "url": "https://en.wikipedia.org/wiki/Fatigue_(material)",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Paris%27_law",
+  "related": [
+    {
+      "slug": "griffiths-criterion",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-hall-petch-relationship",
+      "kind": "kindred"
+    }
+  ]
+}

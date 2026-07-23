@@ -1,0 +1,51 @@
+{
+  "no": "1196",
+  "slug": "the-faber-jackson-relation",
+  "name": "The Faber-Jackson Relation",
+  "statement": "An elliptical galaxy's luminosity scales with roughly the fourth power of its central stellar velocity dispersion.",
+  "statementAccent": "central stellar velocity dispersion",
+  "meaning": "The Faber-Jackson relation is an empirical power law linking an elliptical galaxy's luminosity to the velocity dispersion of stars in its center, approximately luminosity proportional to dispersion to the fourth power. More luminous, massive ellipticals have larger stellar velocity dispersions. It is now understood as a projection of the more complete \"fundamental plane\" of elliptical galaxies, and the exponent varies with galaxy luminosity range.",
+  "mechanism": "In a pressure-supported elliptical, random stellar motions balance gravity, so the velocity dispersion probes the galaxy's mass. Under simplifying assumptions of roughly constant surface brightness and mass-to-light ratio, the virial theorem yields luminosity proportional to the fourth power of dispersion. Because those assumptions are imperfect, the true relation is tightened by adding a size term, giving the fundamental plane.",
+  "examples": [
+    {
+      "tag": "Distance estimation",
+      "text": "Measuring an elliptical's central velocity dispersion lets astronomers estimate its luminosity and hence its distance."
+    },
+    {
+      "tag": "Fundamental plane",
+      "text": "The Faber-Jackson relation is a projection of the fundamental plane, which reduces the scatter by including galaxy size alongside velocity dispersion."
+    },
+    {
+      "tag": "Varying exponent",
+      "text": "The fitted exponent depends on luminosity: about 2 for low-luminosity ellipticals and around 5 for the most luminous ones."
+    }
+  ],
+  "whyItMatters": "The relation revealed a tight structural regularity among elliptical galaxies, offering a distance indicator and a window into how their mass and light are coupled. It paved the way for the fundamental plane, central to studies of galaxy formation and evolution.",
+  "limits": "The fourth-power derivation rests on assumptions of constant surface brightness and mass-to-light ratio that are not strictly true, so the exponent shifts with luminosity and sample. Cluster galaxies in particular do not maintain constant surface brightness.",
+  "misreadings": "The exponent of 4 is an idealized average, not exact; real ellipticals scatter around it and are better described by the fundamental plane.",
+  "origin": "Sandra M. Faber and Robert E. Jackson; published in the Astrophysical Journal in 1976.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1976,
+  "namedAfter": "Sandra Faber and Robert Jackson",
+  "sources": [
+    {
+      "text": "Wikipedia's article on the Faber-Jackson relation, giving luminosity proportional to dispersion to roughly the fourth power, the 1976 attribution, and its status as a fundamental-plane projection — supports the power law and origin.",
+      "url": "https://en.wikipedia.org/wiki/Faber%E2%80%93Jackson_relation",
+      "type": "secondary"
+    },
+    {
+      "text": "The NASA/IPAC Level 5 review (Kormendy), stating the fundamental correlation between velocity dispersion and total blue luminosity from Faber and Jackson (1976) with an exponent of about 4 — supports the relation, exponent, and attribution.",
+      "url": "https://ned.ipac.caltech.edu/level5/March02/Kormendy/Kormendy4_2_2.html",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Faber%E2%80%93Jackson_relation",
+  "related": [
+    {
+      "slug": "the-tully-fisher-relation",
+      "kind": "near-twin"
+    }
+  ]
+}

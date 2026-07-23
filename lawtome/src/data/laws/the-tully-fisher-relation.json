@@ -1,0 +1,55 @@
+{
+  "no": "1195",
+  "slug": "the-tully-fisher-relation",
+  "name": "The Tully-Fisher Relation",
+  "statement": "A spiral galaxy's luminosity scales with roughly the fourth power of its rotation velocity.",
+  "statementAccent": "fourth power of its rotation velocity",
+  "meaning": "The Tully-Fisher relation is an empirical correlation between a spiral galaxy's intrinsic luminosity (or mass) and its rotation speed, measured from the width of its 21-cm hydrogen emission line. More luminous, massive spirals rotate faster. Because it ties an easily measured line width to intrinsic brightness, it serves as a rung on the cosmic distance ladder, and the baryonic version using stars plus gas is even tighter.",
+  "mechanism": "A galaxy's rotation velocity reflects the total gravitating mass within it, while luminosity tracks the stellar and gas content; the two are linked because more massive galaxies host more stars. Observed rotation velocities also probe dark matter halos, so the relation connects visible light to dynamical mass. The tight baryonic form suggests a deep coupling between baryonic content and total mass.",
+  "examples": [
+    {
+      "tag": "Distance ladder",
+      "text": "Astronomers measure a spiral's HI line width to infer its luminosity, then compare with apparent brightness to estimate distance, feeding measurements of the Hubble constant."
+    },
+    {
+      "tag": "Baryonic Tully-Fisher",
+      "text": "Adding gas mass to stellar mass yields the baryonic Tully-Fisher relation, with baryonic mass proportional to velocity to roughly the 3.5–4 power and reduced scatter."
+    },
+    {
+      "tag": "Precision",
+      "text": "The relation's scatter is about ±0.3 magnitude, translating to roughly ±15% distance uncertainty for a single galaxy."
+    }
+  ],
+  "whyItMatters": "The relation provides a widely used, redshift-independent way to measure distances to spiral galaxies and thus map cosmic expansion. Its tightness, especially in baryonic form, also constrains theories of dark matter and galaxy formation.",
+  "limits": "It applies to rotationally supported disk galaxies; pressure-supported or dispersion-dominated systems show much larger scatter. The fitted exponent varies with the sample, wavelength band, and whether luminosity or baryonic mass is used.",
+  "misreadings": "The roughly fourth-power exponent is an approximation that depends on band and method, not a fixed universal constant.",
+  "origin": "R. Brent Tully and J. Richard Fisher; published in Astronomy and Astrophysics in 1977.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1977,
+  "namedAfter": "R. Brent Tully and J. Richard Fisher",
+  "sources": [
+    {
+      "text": "Wikipedia's article on the Tully-Fisher relation, describing the luminosity-rotation-velocity correlation, its 1977 origin, and its use as a distance indicator — supports the definition, attribution, and application.",
+      "url": "https://en.wikipedia.org/wiki/Tully%E2%80%93Fisher_relation",
+      "type": "secondary"
+    },
+    {
+      "text": "The NASA/IPAC Extragalactic Database Level 5 review (Jacoby et al.), calling the luminosity-line-width (Tully-Fisher) relation one of the most widely used extragalactic distance indicators — supports its role as a distance indicator.",
+      "url": "https://ned.ipac.caltech.edu/level5/Jacoby/Jacoby7_1.html",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Tully%E2%80%93Fisher_relation",
+  "related": [
+    {
+      "slug": "the-faber-jackson-relation",
+      "kind": "near-twin"
+    },
+    {
+      "slug": "hubbles-law",
+      "kind": "kindred"
+    }
+  ]
+}

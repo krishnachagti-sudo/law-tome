@@ -1,0 +1,55 @@
+{
+  "no": "1186",
+  "slug": "the-hall-petch-relationship",
+  "name": "The Hall-Petch Relationship",
+  "statement": "A polycrystalline metal's yield strength rises as its grain size shrinks, in proportion to the inverse square root of the average grain diameter.",
+  "statementAccent": "yield strength rises as its grain size shrinks",
+  "meaning": "The relationship quantifies how refining the grains of a metal makes it stronger. It is written σy = σ0 + ky/√d, where σy is the yield stress, σ0 the intrinsic lattice friction stress, ky a material-specific coefficient, and d the mean grain diameter. Smaller grains therefore mean higher yield strength.",
+  "mechanism": "Grain boundaries act as barriers to dislocation motion because the crystal lattice changes orientation across them. Dislocations pile up against a boundary, and the resulting back-stress opposes further slip. Finer grains give more boundary area and shorter pile-ups, so a larger applied stress is needed to propagate plastic flow into neighboring grains.",
+  "examples": [
+    {
+      "tag": "Grain-refined steel",
+      "text": "Ferritic steels show markedly higher low-temperature yield and cleavage strength as ferrite grain size is reduced, the effect Petch measured in 1953."
+    },
+    {
+      "tag": "Validated size range",
+      "text": "The relation was found experimentally to hold as a useful model for grain sizes from about 1 mm down to roughly 1 μm."
+    },
+    {
+      "tag": "Processing for strength",
+      "text": "Thermomechanical processing that produces fine grains is used industrially to raise strength without adding alloying elements, exploiting the Hall-Petch effect."
+    }
+  ],
+  "whyItMatters": "It is one of the few strengthening routes that increases strength and toughness together, making grain refinement a cornerstone of alloy design. It underpins processing choices for structural steels, aluminum, and many engineering alloys.",
+  "limits": "It is an empirical fit, not a first-principles law, and the coefficients are material-specific. Below a critical grain size of roughly 10 nm the trend reverses — the inverse Hall-Petch effect — because grain-boundary sliding replaces dislocation pile-up as the dominant deformation mode.",
+  "misreadings": "It does not mean strength increases without bound as grains get ever smaller; the benefit saturates and then reverses at the nanoscale, and grain refinement does not improve every property (creep resistance can worsen).",
+  "origin": "E. O. Hall (1951) and N. J. Petch (1953), working independently.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1951,
+  "namedAfter": "E. O. Hall and N. J. Petch",
+  "sources": [
+    {
+      "text": "Wikipedia's article on grain-boundary strengthening, giving the σy = σ0 + ky/√d form, the dislocation-pile-up mechanism, the validity range, and the inverse Hall-Petch reversal near 10 nm — supports the statement, mechanism, and limits.",
+      "url": "https://en.wikipedia.org/wiki/Grain_boundary_strengthening",
+      "type": "secondary"
+    },
+    {
+      "text": "Wikipedia's article on strengthening mechanisms of materials, corroborating that smaller grain diameter raises yield strength via boundary impedance of dislocations — supports the mechanism.",
+      "url": "https://en.wikipedia.org/wiki/Strengthening_mechanisms_of_materials",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Grain_boundary_strengthening",
+  "related": [
+    {
+      "slug": "griffiths-criterion",
+      "kind": "kindred"
+    },
+    {
+      "slug": "paris-law",
+      "kind": "kindred"
+    }
+  ]
+}

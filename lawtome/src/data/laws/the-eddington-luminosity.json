@@ -1,0 +1,51 @@
+{
+  "no": "1194",
+  "slug": "the-eddington-luminosity",
+  "name": "The Eddington Luminosity",
+  "statement": "A star's luminosity cannot exceed the Eddington limit, where outward radiation pressure balances inward gravity.",
+  "statementAccent": "radiation pressure balances inward gravity",
+  "meaning": "The Eddington luminosity is the maximum steady luminosity an object can radiate before its own radiation pressure overcomes gravity and drives matter away. It scales directly with the object's mass and inversely with opacity. Exceeding it launches intense radiation-driven winds or halts accretion.",
+  "mechanism": "Photons streaming outward scatter off electrons through Thomson scattering, transferring momentum and exerting outward radiation pressure on the gas, while gravity pulls the same gas inward. Because both forces fall off as the inverse square of distance, their balance is set by luminosity and mass, independent of radius, defining a mass-dependent luminosity ceiling.",
+  "examples": [
+    {
+      "tag": "Accreting black holes",
+      "text": "The Eddington limit caps how fast a black hole or neutron star can accrete and shine, constraining the growth rates of supermassive black holes."
+    },
+    {
+      "tag": "Massive stars",
+      "text": "Very luminous massive stars sit near their Eddington limit and shed mass through strong radiation-driven stellar winds."
+    },
+    {
+      "tag": "Super-Eddington transients",
+      "text": "Novae, some X-ray binaries, and gamma-ray bursts briefly exceed the Eddington luminosity, producing short, intense episodes of mass loss."
+    }
+  ],
+  "whyItMatters": "The limit governs the maximum brightness of stars and the fastest growth of accreting compact objects, shaping models of stellar winds, black-hole feeding, and galaxy evolution. It links a simple momentum balance to observable ceilings across astrophysics.",
+  "limits": "The classic value assumes spherical accretion, steady state, and Thomson-scattering opacity on ionized hydrogen. Non-spherical geometry, atmospheric porosity, turbulence, and photon-bubble instabilities let real sources sustain super-Eddington luminosities, so the limit is not absolute.",
+  "misreadings": "It is not an inviolable maximum; transient and geometrically complex sources genuinely radiate above it, and the value depends on composition through the opacity.",
+  "origin": "Arthur Eddington; developed in his 1926 work The Internal Constitution of the Stars.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1926,
+  "namedAfter": "Arthur Eddington",
+  "sources": [
+    {
+      "text": "Wikipedia's article on the Eddington luminosity, giving L_E = 4πGMc/κ and the radiation-pressure-versus-gravity balance — supports the definition and the physical mechanism.",
+      "url": "https://en.wikipedia.org/wiki/Eddington_luminosity",
+      "type": "secondary"
+    },
+    {
+      "text": "The review \"Breaking the limit: Super-Eddington accretion onto black holes and neutron stars\" (arXiv:1903.06844), defining the limit as the point where outward radiation force equals gravity — supports the definition and numerical scaling.",
+      "url": "https://arxiv.org/abs/1903.06844",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Eddington_luminosity",
+  "related": [
+    {
+      "slug": "the-chandrasekhar-limit",
+      "kind": "kindred"
+    }
+  ]
+}

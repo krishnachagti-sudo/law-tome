@@ -1,56 +1,51 @@
 {
-  "no": "525",
+  "no": "1193",
   "slug": "the-roche-limit",
   "name": "The Roche Limit",
-  "aliases": ["The Roche radius", "The tidal-disruption limit"],
-  "statement": "Stray too close to a planet and a moon held together only by its own gravity is torn apart by the tides.",
-  "statementAccent": "torn apart by the tides",
-  "meaning": "The Roche limit is the distance from a massive body within which a second body, held together only by its own gravity rather than by material strength, is pulled apart by tidal forces. Inside this limit the difference between the gravitational pull on the near and far sides of the smaller body, the tidal force, exceeds the body's own self-gravity, so it cannot hold itself together. Orbiting material inside the Roche limit tends to disperse and spread into rings, while outside it material tends to gather into moons. It explains why planets have rings of rubble rather than a close-in moon, and why comets sometimes shatter near a giant planet.",
-  "mechanism": "Tides arise because gravity weakens with distance, so the near side of an orbiting body is pulled harder than the far side, stretching it. When the body ventures close enough, this stretching tidal force overwhelms the self-gravity binding it, and it disintegrates. For a rigid body the limit is roughly the primary's radius times the cube root of twice the ratio of the two densities, a coefficient of about 1.26; for a fluid body that deforms under the strain, the coefficient is larger, about 2.44, so fluid bodies break up farther out. Real bodies, with some structure, fall between these two bounds.",
+  "statement": "A moon held together only by its own gravity disintegrates if it orbits inside its planet's Roche limit.",
+  "statementAccent": "Roche limit",
+  "meaning": "The Roche limit is the distance from a massive body inside which a second body, held together only by self-gravity, is torn apart by tidal forces. It depends on the two bodies' sizes and densities, not on the satellite's mass directly. For a fluid satellite, Roche found the limit is about 2.44 times the primary's radius scaled by the cube root of the density ratio. Bodies with internal material strength can survive somewhat closer.",
+  "mechanism": "Gravity from the primary is stronger on the near side of a satellite than on its far side, creating a stretching tidal force. When this differential force exceeds the satellite's own gravitational cohesion, the body pulls apart. Fluid bodies deform progressively, which compounds the stress and hastens breakup, while rigid bodies resist longer.",
   "examples": [
     {
       "tag": "Saturn's rings",
-      "text": "Saturn's bright rings lie within its Roche limit, where tidal forces prevent the icy debris from coalescing into a moon, so the material stays spread as rings."
+      "text": "Saturn's ring particles lie within its Roche limit, where tidal forces prevent them from coalescing into a moon."
     },
     {
-      "tag": "Shoemaker-Levy 9",
-      "text": "In July 1992 Comet Shoemaker-Levy 9 passed deep inside Jupiter's Roche limit and was torn into a string of fragments, which then struck Jupiter in 1994."
+      "tag": "Comet Shoemaker-Levy 9",
+      "text": "In July 1992 the comet passed within Jupiter's Roche limit and broke into fragments that struck the planet in 1994."
     },
     {
-      "tag": "Doomed inner moons",
-      "text": "A moon that spirals inside its planet's Roche limit is destroyed by tides, its debris capable of forming a new ring."
+      "tag": "Phobos",
+      "text": "Mars's moon Phobos orbits inside its Roche limit but survives for now through internal material strength, though it shows grooves consistent with tidal stress."
     }
   ],
-  "variants": [
-    {
-      "name": "Rigid versus fluid",
-      "text": "A rigid body that keeps its shape breaks up closer in, with a coefficient near 1.26, while a deformable fluid body stretches and breaks up farther out, near 2.44."
-    },
-    {
-      "name": "Strength beats gravity",
-      "text": "Bodies small enough to be held together by material strength rather than self-gravity, such as rocks and artificial satellites, survive well inside the Roche limit."
-    }
-  ],
-  "whyItMatters": "The Roche limit is a central concept in planetary science and astrophysics, explaining the origin and location of planetary rings, the tidal breakup of comets and moons, and, at grander scales, the tidal disruption of stars that stray too near a black hole. It draws a clean line between where orbiting matter can gather into a body and where it must remain scattered, organising our understanding of ring systems and close encounters throughout the Solar System and beyond. It is the quantitative expression of when gravity's tides win out over a body's own cohesion.",
-  "working": [
-    {"lead": "Compare tide to self-gravity", "text": "expect a self-gravitating body to survive only where its own gravity beats the primary's tidal stretching, and to break up within the Roche limit."},
-    {"lead": "Read rings as debris", "text": "treat rings within a planet's Roche limit as material that cannot coalesce into a moon, held apart by tides."},
-    {"lead": "Remember strength matters", "text": "recognise that small, cohesive bodies survive inside the limit, since it applies only to bodies held together by gravity alone."}
-  ],
-  "limits": "The Roche limit strictly bounds only bodies held together by self-gravity; small solid objects held by material strength, such as rocks and artificial satellites, can orbit well inside it unharmed. The value depends on whether the satellite behaves as a rigid body, with a coefficient near 1.26, or as a deformable fluid, near 2.44, and real bodies lie between these idealisations. It is a statement about tidal disruption, distinct from the Hill sphere, which concerns where a body can retain its own satellites, and it is not about physical collisions, since the breakup is by tidal stretching, not impact.",
-  "misreadings": "It is about the tidal disruption of a self-gravitating body, not about the Hill sphere, which concerns orbital stability and holding on to satellites, a different idea. It is not about bodies colliding, since disruption comes from tidal stretching rather than impact. And strong, small solid objects can survive inside the Roche limit, because the limit bounds only bodies held together by their own gravity, not by material cohesion.",
-  "origin": "Calculated by the French astronomer Édouard Roche in 1848, who first derived the distance within which tidal forces would disrupt a self-gravitating satellite.",
+  "whyItMatters": "The Roche limit explains why planets have rings rather than close-in moons and predicts the eventual tidal destruction of inspiraling satellites. It sets a fundamental boundary for the stability of gravitationally bound orbiting bodies.",
+  "limits": "The simple formula treats the satellite as a fluid or a rigid sphere held only by gravity; real bodies with tensile strength — small solid moons or artificial satellites — can survive well inside the fluid limit. Rotation, shape, and composition shift the exact distance.",
+  "misreadings": "Crossing the Roche limit does not instantly vaporize a body; small objects held by material strength, not just gravity, can persist inside it.",
+  "origin": "Édouard Roche, French astronomer, calculated it in 1848.",
   "category": "science",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1848,
   "namedAfter": "Édouard Roche",
   "sources": [
-    {"text": "Roche limit, Wikipedia. — the definition, the rigid and fluid formulas, and the ring and strength-versus-gravity nuances.", "url": "https://en.wikipedia.org/wiki/Roche_limit", "type": "secondary"},
-    {"text": "Comet Shoemaker-Levy 9, Encyclopaedia Britannica. — the 1992 tidal breakup inside Jupiter's Roche limit and the 1994 impacts.", "url": "https://www.britannica.com/topic/Comet-Shoemaker-Levy-9", "type": "secondary"}
+    {
+      "text": "Wikipedia's article on the Roche limit, giving the definition, the fluid-body coefficient of about 2.44, and examples like Saturn's rings and Shoemaker-Levy 9 — supports the formula and illustrative cases.",
+      "url": "https://en.wikipedia.org/wiki/Roche_limit",
+      "type": "secondary"
+    },
+    {
+      "text": "Encyclopaedia Britannica's entry on the Roche limit, attributing the 1848 calculation to Édouard Roche and citing Saturn's rings — supports the attribution, date, and example.",
+      "url": "https://www.britannica.com/science/Roche-limit",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Roche_limit",
   "related": [
-    {"slug": "keplers-third-law", "kind": "kindred"}
+    {
+      "slug": "newtons-law-of-universal-gravitation",
+      "kind": "kindred"
+    }
   ]
 }

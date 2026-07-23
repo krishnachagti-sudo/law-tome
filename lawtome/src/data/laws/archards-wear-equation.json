@@ -1,0 +1,51 @@
+{
+  "no": "1189",
+  "slug": "archards-wear-equation",
+  "name": "Archard's Wear Equation",
+  "statement": "The volume of material worn away in sliding contact is proportional to the normal load and sliding distance, and inversely proportional to hardness.",
+  "statementAccent": "proportional to the normal load and sliding distance",
+  "meaning": "Archard's equation predicts how much material is lost to sliding wear. It is written Q = KWL/H, where Q is the worn volume, W the normal load, L the sliding distance, H the hardness of the softer surface, and K a dimensionless wear coefficient found experimentally. The product of load and distance corresponds to the frictional work done.",
+  "mechanism": "The model is based on asperity contact: real contact occurs only at microscopic surface high-points. Under load these asperities deform plastically, and a fraction of the contact junctions shed material as debris during sliding. Because true contact area scales with load over hardness, worn volume grows with load and sliding distance.",
+  "examples": [
+    {
+      "tag": "Wear-coefficient range",
+      "text": "The dimensionless K spans roughly 10⁻⁸ for mild wear up to about 10⁻² for severe wear, depending on materials and conditions."
+    },
+    {
+      "tag": "Component life estimation",
+      "text": "Engineers use Q = KWL/H to estimate wear of bearings, gears, and sliding contacts and to compare material or coating choices."
+    },
+    {
+      "tag": "Abrasive wear analogue",
+      "text": "For abrasive wear a similar form applies, showing the same dependence of worn volume on load and sliding distance over hardness."
+    }
+  ],
+  "whyItMatters": "It gives tribology a simple, quantitative baseline for predicting wear life and selecting materials, coatings, and hardness targets. Its load, distance, and hardness dependence guides the design of nearly all sliding mechanical systems.",
+  "limits": "It is empirical and lumps complex physics into the single coefficient K, which itself varies with surface finish, chemical affinity, and heat transfer. It assumes wear proportional to real contact area and does not capture regime changes, lubrication, or fatigue effects well; K must be measured for each material pair and condition.",
+  "misreadings": "K is not a fundamental constant but an experimentally fitted number specific to the tribosystem. The linear proportionality can break down when wear mechanisms change or when surfaces run in.",
+  "origin": "John Frederick Archard, Journal of Applied Physics, 1953.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1953,
+  "namedAfter": "John Frederick Archard",
+  "sources": [
+    {
+      "text": "Wikipedia's article on the Archard equation, giving Q = KWL/H, the 1953 publication, the asperity-contact basis, and K values from about 10⁻⁸ to 10⁻² — supports the statement, mechanism, and examples.",
+      "url": "https://en.wikipedia.org/wiki/Archard_equation",
+      "type": "secondary"
+    },
+    {
+      "text": "Wikipedia's article on wear, corroborating the adhesive-wear form with worn volume proportional to load times sliding distance over hardness, and the abrasive-wear analogue — supports the statement.",
+      "url": "https://en.wikipedia.org/wiki/Wear",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Archard_equation",
+  "related": [
+    {
+      "slug": "the-hall-petch-relationship",
+      "kind": "kindred"
+    }
+  ]
+}

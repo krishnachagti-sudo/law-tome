@@ -1,0 +1,55 @@
+{
+  "no": "1188",
+  "slug": "griffiths-criterion",
+  "name": "Griffith's Criterion",
+  "statement": "A crack in a brittle solid propagates catastrophically once its length exceeds a critical value set by the balance of released strain energy and new surface energy.",
+  "statementAccent": "balance of released strain energy and new surface energy",
+  "meaning": "Griffith's criterion explains why real brittle materials fail far below their theoretical bond strength: pre-existing flaws concentrate stress. Fracture occurs when the elastic strain energy released by extending a crack exceeds the energy needed to create the two new fracture surfaces. This yields a critical condition in which fracture stress times the square root of crack length equals a constant set by the elastic modulus and surface energy.",
+  "mechanism": "Griffith treated fracture as a thermodynamic energy balance. As a crack grows, stored elastic strain energy is released, while creating new surface costs energy proportional to the surface energy. The system's free energy peaks at a critical crack length; beyond that point further growth lowers total energy, so the crack runs unstably.",
+  "examples": [
+    {
+      "tag": "Glass strength paradox",
+      "text": "Bulk glass fractures near 100 MPa though its atomic bond strength is about 10,000 MPa; Griffith showed microscopic flaws account for the gap."
+    },
+    {
+      "tag": "Ceramics and brittle solids",
+      "text": "The criterion accurately predicts fracture in brittle materials like glass and ceramics, where plastic deformation at the crack tip is minimal."
+    },
+    {
+      "tag": "Irwin-Orowan extension",
+      "text": "Irwin and Orowan (around 1948–1949) added a plastic-dissipation term so the energy balance could apply to ductile metals such as steel."
+    }
+  ],
+  "whyItMatters": "It founded fracture mechanics by showing that flaw size, not just applied stress, governs failure. This reframed strength as a defect-controlled property and led directly to modern damage-tolerant design and the stress-intensity approach.",
+  "limits": "The original criterion applies to ideally brittle materials; for ductile metals the required surface-energy values are unrealistically low, because most energy goes into crack-tip plastic deformation. It assumes linear-elastic behavior and pre-existing sharp flaws, and Irwin and Orowan's plastic-work term was needed to extend it to ductile solids.",
+  "misreadings": "It does not say materials fracture at their theoretical atomic strength; the whole point is that flaws make them far weaker. Nor does it directly apply to ductile fracture without the plastic-energy correction.",
+  "origin": "Alan Arnold Griffith, \"The phenomena of rupture and flow in solids,\" Philosophical Transactions of the Royal Society, 1921.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1921,
+  "namedAfter": "Alan Arnold Griffith",
+  "sources": [
+    {
+      "text": "Wikipedia's article on fracture mechanics, giving Griffith's 1921 paper, the energy-balance criterion, the glass strength paradox, and the Irwin-Orowan plastic-term modification — supports the statement, mechanism, and limits.",
+      "url": "https://en.wikipedia.org/wiki/Fracture_mechanics",
+      "type": "secondary"
+    },
+    {
+      "text": "Wikipedia's article on fracture, confirming fracture strength was first theoretically estimated by Alan Arnold Griffith in 1921, relating it to Young's modulus, surface energy, and micro-crack length — supports the attribution.",
+      "url": "https://en.wikipedia.org/wiki/Fracture",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fracture_mechanics",
+  "related": [
+    {
+      "slug": "paris-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-hall-petch-relationship",
+      "kind": "kindred"
+    }
+  ]
+}

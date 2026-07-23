@@ -1,0 +1,55 @@
+{
+  "no": "1197",
+  "slug": "the-jeans-instability",
+  "name": "The Jeans Instability",
+  "statement": "A gas cloud collapses under its own gravity once its mass exceeds the Jeans mass, overwhelming thermal pressure.",
+  "statementAccent": "Jeans mass",
+  "meaning": "The Jeans instability describes when a cloud of gas becomes unable to resist its own gravity and begins to collapse. The critical threshold is the Jeans mass, or equivalently the Jeans length: regions larger or more massive than this collapse, while smaller ones remain stable. It sets the condition under which interstellar clouds fragment and form stars, with values that depend on the gas density and temperature.",
+  "mechanism": "Two forces compete: inward self-gravity and outward thermal pressure. The Jeans length marks where they balance, and the Jeans mass is the gas contained within that scale. Above it, gravity wins and the region contracts; as density rises during collapse, the Jeans mass falls, driving recursive fragmentation into smaller clumps.",
+  "examples": [
+    {
+      "tag": "Star formation",
+      "text": "Cold, dense cores in molecular clouds exceed their Jeans mass and collapse into protostars, so the Jeans criterion helps set when star formation begins."
+    },
+    {
+      "tag": "Cloud fragmentation",
+      "text": "Because the Jeans mass decreases as a collapsing cloud grows denser, the cloud fragments into successively lower-mass pieces, each collapsing on its own free-fall time."
+    },
+    {
+      "tag": "Structure formation",
+      "text": "The same gravity-versus-pressure analysis describes the growth of density perturbations in the early universe leading to cosmic structure."
+    }
+  ],
+  "whyItMatters": "The Jeans criterion underlies the theory of star formation and, more broadly, gravitational structure formation from gas. It provides the basic threshold that determines whether a cloud stays diffuse or collapses into stars.",
+  "limits": "The classic derivation neglects rotation, magnetic fields, and turbulence, which in real molecular clouds often dominate support against gravity on large scales. The simple analysis is an order-of-magnitude criterion rather than an exact prediction.",
+  "misreadings": "Jeans's original derivation assumed a static uniform background — the \"Jeans swindle\" — an inconsistency whose error fortuitously cancels so the results still hold.",
+  "origin": "Sir James Jeans; developed around 1902.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1902,
+  "namedAfter": "James Jeans",
+  "sources": [
+    {
+      "text": "Wikipedia's article on the Jeans instability, defining the gravity-versus-thermal-pressure balance, the Jeans mass/length threshold, and the Jeans swindle — supports the mechanism, threshold, and caveat.",
+      "url": "https://en.wikipedia.org/wiki/Jeans_instability",
+      "type": "secondary"
+    },
+    {
+      "text": "The peer-reviewed analysis \"Jeans instability criterion\" (arXiv:1407.6431), considering the Jeans instability for self-gravitating fluid and stellar systems — supports that the Jeans mass is the collapse threshold for self-gravitating gas.",
+      "url": "https://arxiv.org/abs/1407.6431",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Jeans_instability",
+  "related": [
+    {
+      "slug": "newtons-law-of-universal-gravitation",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-chandrasekhar-limit",
+      "kind": "kindred"
+    }
+  ]
+}
