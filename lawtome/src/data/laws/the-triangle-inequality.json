@@ -1,0 +1,50 @@
+{
+  "no": "1184",
+  "slug": "the-triangle-inequality",
+  "name": "The Triangle Inequality",
+  "statement": "The length of any side of a triangle is at most the sum of the lengths of the other two sides.",
+  "statementAccent": "sum of the lengths",
+  "meaning": "For a triangle with sides a, b, and c, each side is bounded by the sum of the other two. Abstractly, in a normed space the norm of u + v is at most the norm of u plus the norm of v, and in a metric space the distance from A to C is at most the distance from A to B plus that from B to C. It formalizes that a direct path is never longer than a detour.",
+  "mechanism": "The straight segment between two points is the shortest path, so going through an intermediate point cannot be shorter. For norms, it follows from the Cauchy-Schwarz inequality by expanding the squared norm of u + v and bounding the cross term. Equality requires the points to be collinear, with the vectors on the same ray.",
+  "examples": [
+    {
+      "tag": "Euclid",
+      "text": "Euclid's Elements, Book I, Proposition 20, states that in a triangle the sum of any two sides is greater than the remaining one."
+    },
+    {
+      "tag": "Metric axiom",
+      "text": "It is one of the defining axioms of a metric space, ensuring distances behave consistently: the distance from A to C is at most the distance from A to B plus that from B to C."
+    },
+    {
+      "tag": "Reverse form",
+      "text": "A corollary, the reverse triangle inequality, bounds the difference of two norms by the norm of their sum, useful for estimating differences of lengths."
+    }
+  ],
+  "whyItMatters": "It is the axiom that makes \"distance\" meaningful across geometry, analysis, and topology, and it is essential for defining metric and normed spaces. Countless convergence and continuity proofs rely on chaining it.",
+  "limits": "It holds for genuine norms and metrics; equality occurs only in the degenerate, collinear case — a zero-area triangle with vectors on the same ray. Distance-like functions that violate it, such as squared Euclidean distance, are not true metrics.",
+  "misreadings": "The strict version (strictly greater) holds only for non-degenerate triangles; the general statement uses \"at most\" to include the collinear case. It bounds a side by the sum, not the difference, of the other two.",
+  "origin": "Known since antiquity; stated as Proposition 20 of Book I of Euclid's Elements (c. 300 BCE).",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "namedAfter": "NONE",
+  "sources": [
+    {
+      "text": "Wikipedia's article on the triangle inequality, giving the side-length, norm, and metric forms, the collinear equality condition, and the Euclid Book I Proposition 20 origin — supports the statement and examples.",
+      "url": "https://en.wikipedia.org/wiki/Triangle_inequality",
+      "type": "secondary"
+    },
+    {
+      "text": "Wolfram MathWorld's entry on the triangle inequality, stating the norm bounds relating a sum to the sum of magnitudes — supports the normed-space form.",
+      "url": "https://mathworld.wolfram.com/TriangleInequality.html",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Triangle_inequality",
+  "related": [
+    {
+      "slug": "the-cauchy-schwarz-inequality",
+      "kind": "kindred"
+    }
+  ]
+}

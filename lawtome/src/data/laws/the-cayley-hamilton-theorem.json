@@ -1,0 +1,51 @@
+{
+  "no": "1185",
+  "slug": "the-cayley-hamilton-theorem",
+  "name": "The Cayley-Hamilton Theorem",
+  "statement": "Every square matrix over a commutative ring satisfies its own characteristic equation.",
+  "statementAccent": "its own characteristic equation",
+  "meaning": "If A is an n×n matrix with characteristic polynomial p(λ) = det(λI − A), then substituting A for λ gives p(A) = 0, the zero matrix. So the matrix is annihilated by its own characteristic polynomial. This holds over any commutative ring, not just the real or complex numbers.",
+  "mechanism": "One classical route uses the adjugate identity relating (λI − A) and its adjugate, then treats both sides as polynomials in λ with matrix coefficients and equates them. The naive substitution det(A − A) = 0 is a fallacy; the rigorous proof handles the matrix-valued coefficients carefully, or uses that diagonalizable matrices are dense.",
+  "examples": [
+    {
+      "tag": "2×2 matrix",
+      "text": "For a matrix with trace t and determinant d, the characteristic polynomial is λ² − tλ + d, and indeed A² − tA + dI = 0."
+    },
+    {
+      "tag": "Matrix inverse",
+      "text": "It lets one express the inverse of A, when A is invertible, as a polynomial in A, avoiding explicit cofactor computation."
+    },
+    {
+      "tag": "Matrix powers",
+      "text": "It reduces high powers of A to a linear combination of I, A, …, up to A^(n−1), useful for efficiently computing matrix functions."
+    }
+  ],
+  "whyItMatters": "It is a central result of linear algebra, connecting a matrix's eigenvalues to its algebraic behavior and enabling computation of inverses, powers, and matrix functions. It anchors the theory of minimal polynomials and canonical forms.",
+  "limits": "The statement is about square matrices whose entries lie in a commutative ring. The tempting \"proof\" of plugging A directly into det(λI − A) is invalid because it mixes scalar and matrix substitution. The characteristic polynomial need not be the minimal polynomial.",
+  "misreadings": "It does not say the characteristic polynomial is the smallest annihilating polynomial — that is the minimal polynomial, which may have lower degree. And p(A) = 0 does not follow from the invalid det(A − A) argument.",
+  "origin": "Hamilton proved a special case in 1853; Cayley stated it in 1858 (proving the 2×2 case); Frobenius gave the first general proof in 1878.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1858,
+  "namedAfter": "Arthur Cayley and William Rowan Hamilton",
+  "sources": [
+    {
+      "text": "Wikipedia's article on the Cayley-Hamilton theorem, giving the statement over commutative rings and the Hamilton 1853 / Cayley 1858 / Frobenius 1878 history — supports the statement and origin.",
+      "url": "https://en.wikipedia.org/wiki/Cayley%E2%80%93Hamilton_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Wolfram MathWorld's entry on the Cayley-Hamilton theorem, stating that an n×n matrix is annihilated by its monic degree-n characteristic polynomial — supports the statement.",
+      "url": "https://mathworld.wolfram.com/Cayley-HamiltonTheorem.html",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Cayley%E2%80%93Hamilton_theorem",
+  "related": [
+    {
+      "slug": "the-fundamental-theorem-of-algebra",
+      "kind": "kindred"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "no": "1182",
+  "slug": "the-wiedemann-franz-law",
+  "name": "The Wiedemann-Franz Law",
+  "statement": "The ratio of a metal's electronic thermal conductivity to its electrical conductivity is proportional to temperature, κ/σ = LT.",
+  "statementAccent": "κ/σ = LT",
+  "meaning": "In metals the same free electrons carry both electric charge and heat, so the two conductivities are linked. The Wiedemann-Franz law says their ratio equals a near-universal constant, the Lorenz number L, times absolute temperature. It explains why good electrical conductors are also good thermal conductors.",
+  "mechanism": "Because conduction electrons transport both charge and thermal energy, the same scattering processes limit both currents, and the ratio of the two conductivities becomes largely independent of the details of scattering. Free-electron theory yields a Lorenz number of about 2.44 × 10⁻⁸ V²·K⁻², so the ratio scales linearly with temperature.",
+  "examples": [
+    {
+      "tag": "Common metals",
+      "text": "Copper, silver, and gold, all excellent electrical conductors, are also among the best thermal conductors, consistent with a near-constant Lorenz number."
+    },
+    {
+      "tag": "Estimating thermal conductivity",
+      "text": "The electronic thermal conductivity of a metal can be estimated from its measured electrical conductivity and temperature using κ ≈ LTσ."
+    },
+    {
+      "tag": "Known violations",
+      "text": "The law breaks down in strongly correlated electron systems and in graphene near the Dirac point, where the measured Lorenz ratio departs sharply from the standard value."
+    }
+  ],
+  "whyItMatters": "The law connects thermal and electrical transport through fundamental constants, giving a quick route to a metal's electronic thermal conductivity and a benchmark for testing electron-transport theory. Deviations from it are a key signature of exotic or strongly correlated conductors.",
+  "limits": "It holds best at high and very low temperatures but can fail at intermediate temperatures where inelastic phonon scattering degrades charge and heat currents differently. It also breaks down in strongly correlated materials, certain semimetals, and near quantum-critical or hydrodynamic regimes, and it accounts only for the electronic, not the lattice, contribution to thermal conductivity.",
+  "misreadings": "The Lorenz number is only approximately universal; treating it as an exact constant for all materials and temperatures misses well-documented violations.",
+  "origin": "Gustav Wiedemann and Rudolph Franz, 1853; Ludvig Lorenz identified the temperature proportionality in 1872.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1853,
+  "namedAfter": "Gustav Wiedemann and Rudolph Franz",
+  "sources": [
+    {
+      "text": "Wikipedia's article on the Wiedemann-Franz law, giving κ/σ = LT, the Lorenz-number value, the 1853/1872 attribution, and the graphene and correlated-system violations — supports the statement, mechanism, and limits.",
+      "url": "https://en.wikipedia.org/wiki/Wiedemann%E2%80%93Franz_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Wikipedia's biography of Gustav Heinrich Wiedemann, confirming he and Rudolph Franz developed the law relating thermal and electrical conductivity in 1853 — supports the attribution.",
+      "url": "https://en.wikipedia.org/wiki/Gustav_Heinrich_Wiedemann",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Wiedemann%E2%80%93Franz_law",
+  "related": [
+    {
+      "slug": "matthiessens-rule",
+      "kind": "kindred"
+    },
+    {
+      "slug": "ohms-law",
+      "kind": "kindred"
+    }
+  ]
+}
