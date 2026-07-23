@@ -1,0 +1,53 @@
+{
+  "no": "1097",
+  "slug": "the-first-welfare-theorem",
+  "name": "The First Fundamental Theorem of Welfare Economics",
+  "statement": "In a competitive economy with complete markets, no externalities, and locally non-satiated agents, every market equilibrium is Pareto efficient.",
+  "statementAccent": "every market equilibrium is Pareto efficient",
+  "meaning": "The theorem says that if markets exist for every good, everyone is a price-taker, and there are no unpriced spillovers, then the resulting competitive allocation cannot be improved for one person without harming another. It is the formal counterpart of Adam Smith’s \"invisible hand\": decentralised self-interested trading, under these conditions, produces an allocation with no wasted gains from trade.",
+  "mechanism": "Because every agent optimises against the same prices and local non-satiation rules out unexploited free improvements, any alternative allocation making someone strictly better off would cost more than their equilibrium budget — which a price-taking, utility-maximising agent would never accept — so no Pareto-improving reallocation is affordable for everyone at those prices.",
+  "examples": [
+    {
+      "tag": "Invisible hand",
+      "text": "The theorem is standardly presented as the rigorous modern version of Adam Smith’s claim that self-interested exchange in competitive markets leads to an efficient social outcome, with no planner coordinating trades."
+    },
+    {
+      "tag": "Formalisation",
+      "text": "Vilfredo Pareto gave an early informal statement around 1906–1909, and Kenneth Arrow and Gérard Debreu gave modern rigorous proofs around 1951, building on the Arrow–Debreu framework."
+    },
+    {
+      "tag": "Incomplete information",
+      "text": "Greenwald and Stiglitz’s 1986 paper showed that once markets are incomplete or information is imperfect and asymmetric — the normal case — competitive equilibria generally cease to be Pareto efficient, so intervention can make some better off without harming others."
+    }
+  ],
+  "whyItMatters": "It is the central efficiency result of price theory, providing the theoretical justification economists most often cite for relying on competitive markets to allocate resources without central planning. It also sharply separates efficiency from equity, saying nothing about whether the resulting distribution is fair.",
+  "limits": "It assumes complete markets, perfect competition, full information, and no externalities or public goods — conditions essentially never met exactly — and is silent on distributional fairness, since a highly unequal allocation can still be Pareto efficient.",
+  "misreadings": "It is often misread as proving that unregulated real-world markets are efficient or that efficiency implies fairness, when it is a conditional result about an idealised complete-markets economy and makes no claim about equity.",
+  "origin": "Informally anticipated by Vilfredo Pareto (c. 1906–1909); given rigorous general-equilibrium proofs by Kenneth Arrow and Gérard Debreu around 1951, building toward their 1954 existence proof.",
+  "category": "economics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "sources": [
+    {
+      "text": "Fundamental theorems of welfare economics, Wikipedia. — the first theorem’s conditions and its formalisation by Pareto and by Arrow and Debreu.",
+      "url": "https://en.wikipedia.org/wiki/Fundamental_theorems_of_welfare_economics",
+      "type": "secondary"
+    },
+    {
+      "text": "Greenwald & Stiglitz, \"Externalities in Economies with Imperfect Information and Incomplete Markets,\" Quarterly Journal of Economics (1986). — the challenge to market efficiency under incomplete information.",
+      "url": "https://academic.oup.com/qje/article-abstract/101/2/229/1928643",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fundamental_theorems_of_welfare_economics",
+  "related": [
+    {
+      "slug": "the-arrow-debreu-model",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-second-welfare-theorem",
+      "kind": "kindred"
+    }
+  ]
+}

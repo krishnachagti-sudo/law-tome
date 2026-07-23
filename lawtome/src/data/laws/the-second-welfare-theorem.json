@@ -1,0 +1,49 @@
+{
+  "no": "1098",
+  "slug": "the-second-welfare-theorem",
+  "name": "The Second Fundamental Theorem of Welfare Economics",
+  "statement": "With convex preferences and production sets, every Pareto-efficient allocation can be achieved as a competitive equilibrium via lump-sum redistribution of endowments.",
+  "statementAccent": "every Pareto-efficient allocation can be achieved as a competitive equilibrium",
+  "meaning": "The theorem says efficiency and equity can, in principle, be separated: any Pareto-efficient outcome a society might prefer — not just the one markets happen to produce from existing endowments — can itself be supported by a competitive equilibrium, provided initial endowments or wealth are first redistributed via lump-sum transfers. Markets then only handle allocation, while distribution is handled by a one-time transfer.",
+  "mechanism": "Because preferences and production sets are convex, a Pareto-efficient allocation can be supported by a hyperplane of prices separating each agent’s \"at-least-as-good\" set from the aggregate feasible set; those supporting prices, combined with lump-sum transfers giving each agent exactly the wealth to afford their assigned bundle, turn the target allocation into a genuine competitive equilibrium.",
+  "examples": [
+    {
+      "tag": "Efficiency–equity split",
+      "text": "The theorem is used to argue that a society wanting a more equal outcome need not abandon competitive markets — it can redistribute initial wealth via lump-sum taxes and transfers and then let market prices reach that more equal, still-efficient allocation."
+    },
+    {
+      "tag": "Historical pairing",
+      "text": "Oskar Lange’s 1942 work established the now-standard pairing of the first and second theorems, and Arrow and Debreu gave rigorous convexity-based proofs of the second theorem around 1951."
+    },
+    {
+      "tag": "Practical limitation",
+      "text": "The literature notes the theorem is of limited direct practical value because the required lump-sum transfers — redistribution that does not itself distort prices or incentives — are generally infeasible for real governments to implement."
+    }
+  ],
+  "whyItMatters": "It underlies the standard economic case for addressing inequality through redistribution of endowments or wealth rather than price controls or output restrictions, since the latter sacrifice efficiency while idealised lump-sum transfers do not.",
+  "limits": "It depends on convexity of preferences and production, on genuinely non-distortionary lump-sum transfers, and on complete information about individuals’ circumstances — none of which typically hold — which is why it is regarded as a much weaker policy guide than the first theorem.",
+  "misreadings": "It is sometimes misread as a workable prescription (\"just redistribute and let markets do the rest\"), when real-world transfers are never truly lump-sum and always carry distortionary or informational cost.",
+  "origin": "Traditionally paired with the first theorem by Oskar Lange in 1942; given rigorous convex-economy proofs by Kenneth Arrow and Gérard Debreu around 1951.",
+  "category": "economics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "sources": [
+    {
+      "text": "Fundamental theorems of welfare economics, Wikipedia. — the second theorem’s convexity requirement, the need for lump-sum redistribution, and Lange’s 1942 pairing.",
+      "url": "https://en.wikipedia.org/wiki/Fundamental_theorems_of_welfare_economics",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Gérard Debreu,\" Encyclopaedia Britannica. — his rigorous reformulation of general-equilibrium theory including the convexity assumptions.",
+      "url": "https://www.britannica.com/money/Gerard-Debreu",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fundamental_theorems_of_welfare_economics",
+  "related": [
+    {
+      "slug": "the-first-welfare-theorem",
+      "kind": "kindred"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "no": "1096",
+  "slug": "the-arrow-debreu-model",
+  "name": "The Arrow–Debreu Model",
+  "statement": "The Arrow–Debreu model proves that, given convex preferences, convex production sets, and complete competitive markets, a general equilibrium price vector exists.",
+  "statementAccent": "a general equilibrium price vector exists",
+  "meaning": "The model shows that under idealised perfect competition and complete markets for every good — including goods indexed by time, location, and uncertain states — there is at least one set of prices at which supply equals demand in every market simultaneously. It formalises and rescues the classical Walrasian vision by proving, rather than assuming, that such an equilibrium can exist.",
+  "mechanism": "The proof reformulates the search for equilibrium prices as a fixed-point problem: each consumer maximises utility subject to a budget constraint and each firm maximises profit subject to its production set, and an excess-demand correspondence is built across all markets. Applying Kakutani’s (or Brouwer’s) fixed-point theorem over a compact, convex price simplex guarantees a price vector with no market in excess demand or supply.",
+  "examples": [
+    {
+      "tag": "Nobel recognition",
+      "text": "Kenneth Arrow shared the 1972 Nobel Memorial Prize (with John Hicks) and Gérard Debreu won it alone in 1983, both citations resting substantially on this general-equilibrium existence work."
+    },
+    {
+      "tag": "Independent proof",
+      "text": "Lionel McKenzie independently proved essentially the same existence result in 1954 using similar fixed-point techniques, which is why the framework is sometimes credited to Arrow, Debreu, and McKenzie."
+    },
+    {
+      "tag": "Contingent commodities",
+      "text": "By letting commodities be indexed by the future date and state of the world in which they are delivered, the model extends to economies with uncertainty, becoming a foundation of modern financial economics."
+    }
+  ],
+  "whyItMatters": "It is the central existence result of general-equilibrium theory, giving mathematical rigour to the intuition that decentralised, self-interested trading can be economy-wide consistent. It underlies the fundamental welfare theorems and remains the benchmark for computable general-equilibrium models used in trade, finance, and public-finance analysis.",
+  "limits": "The result establishes existence, not uniqueness or dynamic stability, and its assumptions — perfect competition, complete markets for every contingency, convex preferences and technologies, no externalities — are rarely satisfied by real economies. It says nothing about how or whether real markets actually converge to such a price vector.",
+  "misreadings": "It is often misread as a normative claim that real markets are efficient or that \"the invisible hand\" always works in practice, when it is strictly a mathematical existence result inside an idealised model with strong assumptions.",
+  "origin": "Kenneth Arrow and Gérard Debreu published the proof in 1954; Lionel McKenzie derived an equivalent result independently the same year.",
+  "category": "economics",
+  "reliability": "Contested",
+  "provenance": "canon",
+  "coinedYear": 1954,
+  "namedAfter": "Kenneth Arrow and Gérard Debreu",
+  "sources": [
+    {
+      "text": "Arrow–Debreu model, Wikipedia. — the 1954 proof of competitive-equilibrium existence under convexity and completeness, with McKenzie’s independent contribution.",
+      "url": "https://en.wikipedia.org/wiki/Arrow%E2%80%93Debreu_model",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Kenneth Arrow,\" Encyclopaedia Britannica. — Arrow as co-winner of the 1972 Nobel Prize for general-equilibrium and welfare-theory contributions.",
+      "url": "https://www.britannica.com/money/Kenneth-Arrow",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Arrow%E2%80%93Debreu_model",
+  "related": [
+    {
+      "slug": "the-first-welfare-theorem",
+      "kind": "cause"
+    }
+  ]
+}

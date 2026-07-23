@@ -1,0 +1,51 @@
+{
+  "no": "1099",
+  "slug": "the-gibbard-satterthwaite-theorem",
+  "name": "The Gibbard–Satterthwaite Theorem",
+  "statement": "Every non-dictatorial voting rule with three or more possible outcomes and a full range of outcomes is manipulable by some voter's strategic misreporting.",
+  "statementAccent": "is manipulable by some voter's strategic misreporting",
+  "meaning": "For any deterministic rule that picks a single winner from at least three alternatives based on ranked preferences, at least one voter, in at least one situation, can get a personally better outcome by insincerely misreporting — unless the rule is a dictatorship or restricts which outcomes can ever win. There is no non-dictatorial ranked voting rule that is fully strategy-proof once outcomes and voters both number three or more.",
+  "mechanism": "The proof shows that any voting rule satisfying strategy-proofness, an unrestricted preference domain, and a full range of possible winners can be used to construct a social preference ordering satisfying the conditions Arrow’s impossibility theorem rules out — forcing the voting rule itself to be dictatorial.",
+  "examples": [
+    {
+      "tag": "Independent discovery",
+      "text": "Philosopher Allan Gibbard proved the result in 1973, and economist Mark Satterthwaite proved an equivalent result independently in his 1973 dissertation, published 1975; both built on Arrow’s 1951 impossibility theorem."
+    },
+    {
+      "tag": "Approval voting",
+      "text": "Even under approval voting, a voter who sincerely approves of three candidates may have to submit a truncated ballot depending on what she expects others to do, illustrating that no ballot format lets her best defend her opinions in every situation."
+    },
+    {
+      "tag": "Single-peaked escape",
+      "text": "When preferences are restricted to be single-peaked along one dimension, such as a left–right spectrum, majority-rule median-voter schemes can satisfy strategy-proofness and non-dictatorship simultaneously, escaping the impossibility."
+    }
+  ],
+  "whyItMatters": "It is the central impossibility result of mechanism design applied to voting: it proves strategic voting cannot be engineered away by rule design alone whenever there are three or more options and no restriction on preferences, shaping how economists and political scientists think about the limits of any election system.",
+  "limits": "It applies to deterministic single-winner rules over unrestricted domains with three or more alternatives; restricting the domain (single-peaked preferences), allowing randomised outcomes, or limiting to two alternatives can all avoid the conclusion, so it does not show manipulation is unavoidable in every real context.",
+  "misreadings": "It is sometimes misread as proving all voting systems are equally manipulable in practice, when it only guarantees some manipulation opportunity exists in principle — voters may lack the information or coordination to exploit it, and some rules are far harder to manipulate than others.",
+  "origin": "Conjectured by Michael Dummett and Robin Farquharson in 1961; proved by philosopher Allan Gibbard in 1973 and independently by economist Mark Satterthwaite (1973 dissertation, published 1975).",
+  "category": "economics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1973,
+  "namedAfter": "Allan Gibbard and Mark Satterthwaite",
+  "sources": [
+    {
+      "text": "Gibbard–Satterthwaite theorem, Wikipedia. — Gibbard’s 1973 and Satterthwaite’s 1975 proofs and the dictatorial/two-alternative/manipulable trichotomy.",
+      "url": "https://en.wikipedia.org/wiki/Gibbard%E2%80%93Satterthwaite_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Social Choice Theory,\" Stanford Encyclopedia of Philosophy. — the theorem’s conditions and the single-peaked-preferences escape via median voting.",
+      "url": "https://plato.stanford.edu/entries/social-choice/",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Gibbard%E2%80%93Satterthwaite_theorem",
+  "related": [
+    {
+      "slug": "arrows-impossibility-theorem",
+      "kind": "kindred"
+    }
+  ]
+}
