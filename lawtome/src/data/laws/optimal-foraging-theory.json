@@ -1,0 +1,44 @@
+{
+  "no": "1158",
+  "slug": "optimal-foraging-theory",
+  "name": "Optimal Foraging Theory",
+  "statement": "Optimal foraging theory holds that natural selection favors foraging strategies that maximize net energy gain per unit time spent searching for and handling food.",
+  "statementAccent": "maximize net energy gain per unit time",
+  "meaning": "The theory frames foraging as an economic optimisation in which an animal balances the energetic cost of searching, pursuing, and handling food against the energy it yields. It predicts which prey types or patches an animal should include in its diet and when it should abandon a depleting patch, formalised through a currency (usually energy per time), constraints, and a decision rule.",
+  "mechanism": "Foragers are modelled as choosing among prey types or patches to maximise the ratio of net energy gained to time invested, given encounter rates, handling times, and travel costs. The marginal value theorem extends this to patchy environments, predicting a forager should leave a patch when its instantaneous intake rate drops to the average rate available in the habitat overall.",
+  "examples": [
+    {
+      "tag": "Starling load size",
+      "text": "Starlings adjust the size of food loads they carry back to the nest according to travel distance, consistent with the energy-maximisation predictions of the theory."
+    },
+    {
+      "tag": "Oystercatcher mussels",
+      "text": "Oystercatchers select mussel sizes that balance the energy content of the prey against the effort required to crack the shell open."
+    },
+    {
+      "tag": "Bee nectar loads",
+      "text": "Foraging bees optimise the size of nectar loads to maximise overall energy efficiency for the hive rather than simply maximising raw intake."
+    }
+  ],
+  "whyItMatters": "The theory gave behavioural ecology a quantitative, testable framework for predicting diet breadth and patch-use behaviour instead of relying on descriptive natural history, and it underlies the marginal value theorem, a standard tool across ecology for modelling resource-use decisions.",
+  "limits": "Critics note it assumes near-perfect optimisation while ignoring competing pressures such as predator avoidance and mate-finding. Defining and measuring key variables like encounter rates and prey profitability is often difficult, and applying the framework to human behaviour is complicated by cultural and social factors.",
+  "misreadings": "It is sometimes misread as claiming animals consciously calculate energy budgets, when it is a model of the outcome natural selection is expected to favour, not a claim about cognition.",
+  "origin": "Introduced by Robert H. MacArthur and Eric R. Pianka in their 1966 paper \"On Optimal Use of a Patchy Environment,\" The American Naturalist.",
+  "category": "science",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1966,
+  "sources": [
+    {
+      "text": "MacArthur & Pianka, \"On Optimal Use of a Patchy Environment,\" The American Naturalist 100 (1966). — the origin and the energy-maximisation framework.",
+      "url": "https://ui.adsabs.harvard.edu/abs/1966ANat..100..603M/abstract",
+      "type": "primary"
+    },
+    {
+      "text": "Optimal foraging theory, Wikipedia. — the currency/constraints/decision-rule structure, the marginal value theorem, the examples, and criticisms.",
+      "url": "https://en.wikipedia.org/wiki/Optimal_foraging_theory",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Optimal_foraging_theory"
+}
