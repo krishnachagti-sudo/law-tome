@@ -1,0 +1,49 @@
+{
+  "no": "1065",
+  "slug": "circular-reasoning",
+  "name": "Circular Reasoning",
+  "statement": "An argument's conclusion is smuggled into its own premises, so it proves nothing beyond what it assumes.",
+  "statementAccent": "smuggled into its own premises",
+  "meaning": "Circular reasoning (Latin: circulus in probando, \"circle in proving\") is a fallacy in which the reasoner starts from what they are ultimately trying to establish. It is often expressed as \"A is true because B, and B is true because A,\" though the circle can run through a longer, harder-to-spot chain. It is closely related to, and in modern usage often treated as equivalent to, begging the question.",
+  "mechanism": "The reasoning fails because the premises require exactly as much justification as the conclusion they are meant to support — no independent evidence is ever introduced. It deceives because restating a claim in different words, or looping through several intermediate steps, can look like a chain of support when it is really the original claim doubling back on itself.",
+  "examples": [
+    {
+      "tag": "Self-certifying",
+      "text": "\"This statement is correct because it says it is correct\" offers no evidence beyond the claim itself, illustrating the bare circular form."
+    },
+    {
+      "tag": "Authority loop",
+      "text": "Justifying a rule by appeal to an authority whose legitimacy is in turn justified only by that same rule is a documented \"authority loop\" form of circular reasoning."
+    },
+    {
+      "tag": "Restated premise",
+      "text": "Rephrasing a premise in different words and presenting it as the conclusion — \"restatement\" — gives an illusion of an argument having been made when none has."
+    }
+  ],
+  "whyItMatters": "Circular arguments give a false sense that a claim has been independently proven, which can entrench unfounded beliefs and stall genuine inquiry. Spotting circularity is essential for evaluating philosophical, scientific, religious, and political arguments that rely on self-referential justification.",
+  "limits": "Not every argument that revisits its starting terms is fallacious — a valid deductive argument’s conclusion is, in a sense, \"contained in\" its premises, which is a different matter. Aristotle treated circular demonstration and petitio principii as distinct failures, even though modern usage often conflates them.",
+  "misreadings": "Circular reasoning is frequently used interchangeably with \"begging the question,\" even though historically and technically the two are treated as related but distinct.",
+  "origin": "The problem was identified by ancient Greek philosophers; the Pyrrhonist sceptic Agrippa listed it among his modes, and Sextus Empiricus described the \"reciprocal trope.\" Aristotle separately rejected circular demonstration in the Prior Analytics, since a demonstration’s premises must be logically prior to its conclusion.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "sources": [
+    {
+      "text": "Circular reasoning, Wikipedia. — the definition, the Latin term, its typological forms, and the Agrippa/Sextus history.",
+      "url": "https://en.wikipedia.org/wiki/Circular_reasoning",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Circulus in Probando,\" 1911 Encyclopædia Britannica (Wikisource). — the Latin term and its classical treatment.",
+      "url": "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Circulus_in_Probando",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Circular_reasoning",
+  "related": [
+    {
+      "slug": "begging-the-question",
+      "kind": "near-twin"
+    }
+  ]
+}

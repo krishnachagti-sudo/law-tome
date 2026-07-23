@@ -1,0 +1,49 @@
+{
+  "no": "1064",
+  "slug": "post-hoc-ergo-propter-hoc",
+  "name": "Post Hoc Ergo Propter Hoc",
+  "statement": "Assuming that because event Y followed event X, X must have caused Y.",
+  "statementAccent": "because event Y followed event X, X must have caused Y",
+  "meaning": "Post hoc ergo propter hoc — \"after this, therefore because of this\" — is an informal fallacy that treats mere temporal succession between two events as proof of a causal link. It ignores coincidence, common causes, and confounding variables that could equally explain the sequence. It is a subtype of the broader false-cause (non causa pro causa) family.",
+  "mechanism": "The reasoning fails because \"before\" is confused with \"because of\" — sequence in time is necessary but not sufficient for causation. The deception works because human cognition is primed to detect patterns and infer causal stories from adjacent events, especially when a plausible narrative connects them. Without ruling out coincidence, reverse causation, or a shared prior cause, the inference is unjustified.",
+  "examples": [
+    {
+      "tag": "Rooster and sunrise",
+      "text": "\"The rooster crows immediately before sunrise; therefore the rooster causes the sun to rise.\" The crowing reliably precedes dawn, but both are driven by the same daily light cycle, not by one causing the other."
+    },
+    {
+      "tag": "Pelé’s shirt",
+      "text": "Footballer Pelé reportedly attributed a slump to giving away his shirt, and believed his form recovered only after retrieving \"the original\" — a causal story built purely on sequence."
+    },
+    {
+      "tag": "Vaccine timing",
+      "text": "People who feel unwell shortly after being vaccinated sometimes attribute the complaint to the vaccine, when the timing may be coincidental rather than causal."
+    }
+  ],
+  "whyItMatters": "The fallacy underlies much pseudoscience, superstition, and poor public-health reasoning, because it lets people mistake correlation-in-time for a mechanism. Recognising it is a basic requirement for evaluating any causal claim, from folk remedies to statistical studies.",
+  "limits": "It is not fallacious to note that X preceded Y as one piece of evidence toward causation — temporal order is a genuine necessary condition, and controlled experiments deliberately use before/after comparisons. The fallacy occurs only when succession is treated as sufficient proof, without ruling out coincidence, confounders, or reverse causation.",
+  "misreadings": "It is often confused with \"cum hoc ergo propter hoc,\" which mistakes mere correlation without established temporal order for causation; post hoc specifically requires that one event precede the other.",
+  "origin": "The pattern was discussed in antiquity — Aristotle treated false-cause reasoning — but the fixed Latin tag is a scholastic coinage summarising the classical false-cause fallacy rather than a phrase Aristotle used himself.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "sources": [
+    {
+      "text": "Post hoc ergo propter hoc, Wikipedia. — the definition, the Latin translation, and the rooster and Pelé examples.",
+      "url": "https://en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Post hoc, ergo propter hoc,\" Encyclopaedia Britannica. — the classification as an informal fallacy of causal reasoning.",
+      "url": "https://www.britannica.com/topic/post-hoc-ergo-propter-hoc",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc",
+  "related": [
+    {
+      "slug": "illusory-correlation",
+      "kind": "kindred"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "no": "1066",
+  "slug": "equivocation",
+  "name": "Equivocation",
+  "statement": "An argument secretly shifts the meaning of an ambiguous word between its premises and conclusion.",
+  "statementAccent": "secretly shifts the meaning of an ambiguous word",
+  "meaning": "Equivocation is an informal fallacy that arises from using a word or phrase in more than one sense within the same argument. Because the same word appears throughout, the shift in meaning is easy to overlook, making the argument look valid when it is not. In syllogistic form it produces a \"fallacy of four terms\" (quaternio terminorum), since a term that should be constant actually stands for two different concepts.",
+  "mechanism": "Valid syllogistic inference requires each term to carry one fixed meaning across all premises; equivocation covertly swaps that meaning mid-argument, breaking the logical link while preserving surface-level verbal consistency. It deceives because natural language is riddled with polysemy, so a word can sound like it is doing the same logical work in two places when it is not.",
+  "examples": [
+    {
+      "tag": "Headache painkiller",
+      "text": "\"Annoying co-workers are a headache. Painkillers get rid of a headache. Therefore, painkillers get rid of annoying co-workers.\" \"Headache\" shifts from a figurative annoyance to a literal pain."
+    },
+    {
+      "tag": "Man / woman",
+      "text": "\"Only man is rational. No woman is a man. Therefore, no woman is rational\" trades on \"man\" meaning humanity in the first premise but adult males in the second."
+    },
+    {
+      "tag": "Tree bark / dog bark",
+      "text": "\"All trees have bark. Every dog barks. Therefore a dog is a tree\" equivocates on \"bark,\" using the noun and the verb as if they were the same term."
+    }
+  ],
+  "whyItMatters": "Equivocation lets rhetorically persuasive but logically broken arguments pass unnoticed, and is exploited in political and marketing language, including the motte-and-bailey tactic where a speaker retreats from a bold claim to a modest one sharing the same wording. Recognising it forces arguments to a consistent vocabulary.",
+  "limits": "Using a word with two senses is not automatically fallacious — puns and deliberate double meanings in humour or poetry are not arguments and carry no risk of false inference. The fallacy applies specifically when an argument’s validity depends on treating the shifted-meaning term as constant.",
+  "misreadings": "Equivocation (ambiguity of a single word) is often confused with amphiboly (grammatical or structural ambiguity of a whole phrase); the two are related but separate fallacies.",
+  "origin": "Equivocation was catalogued by Aristotle in his Sophistical Refutations among the \"fallacies dependent on language\" (in dictione), alongside amphiboly and others.",
+  "category": "philosophy",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "sources": [
+    {
+      "text": "Equivocation, Wikipedia. — the definition, the fallacy of four terms, the man/woman and headache examples, and the motte-and-bailey connection.",
+      "url": "https://en.wikipedia.org/wiki/Equivocation",
+      "type": "secondary"
+    },
+    {
+      "text": "Sophistical Refutations, Wikipedia. — Aristotle’s catalogue of language-dependent fallacies including equivocation.",
+      "url": "https://en.wikipedia.org/wiki/Sophistical_Refutations",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Equivocation",
+  "related": [
+    {
+      "slug": "the-motte-and-bailey",
+      "kind": "kindred"
+    }
+  ]
+}
