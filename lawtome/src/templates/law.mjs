@@ -297,37 +297,13 @@ ${h2}${inner}
     ? `<div class="wrap-wide"><div class="dash" data-reveal>\n${dashTiles}\n</div></div>\n`
     : '';
 
-  // FAQ — rendered as a VISIBLE accordion (pushed into <main> as the last block)
-  // AND emitted as FAQPage JSON-LD from the SAME array, so the structured data
-  // always matches on-page content (no invisible-markup / spammy-structured-data
-  // risk). Each answer is a whole, self-contained corpus field — no fabrication,
-  // no stitched sentences — and a question appears only when its field exists.
-  const qa = (name, text) => (text ? { '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } } : null);
-  const faqEntities = [
-    qa(`What is ${L}?`, answer),
-    law.meaning && law.meaning !== answer ? qa(`What does ${L} mean?`, law.meaning) : null,
-    // "What is an example of X?" is one of the most common People-Also-Ask / voice
-    // queries for a named law — answer it with a real corpus example.
-    qa(`What is an example of ${L}?`, firstExample),
-    qa(`Why does ${L} matter?`, law.whyItMatters),
-    qa(`How does ${L} work?`, law.mechanism),
-    (law.namedAfter || law.origin)
-      ? qa(`Who coined ${L}?`, law.origin
-          || `${L} is named after ${law.namedAfter}${law.coinedYear != null ? `, dated to ${law.coinedYear}` : ''}.`)
-      : null,
-    qa(`What is commonly misunderstood about ${L}?`, law.misreadings),
-    qa(`What are the limits of ${L}?`, law.limits),
-  ].filter(Boolean);
-  const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqEntities };
-  if (faqEntities.length) {
-    const faqInner = `        <div class="faq">\n` +
-      faqEntities.map((q, i) =>
-        `          <details class="faq-item"${i === 0 ? ' open' : ''}><summary class="faq-q">${escapeHtml(q.name)}</summary><div class="faq-a"><p>${escapeHtml(q.acceptedAnswer.text)}</p></div></details>`,
-      ).join('\n') +
-      `\n        </div>`;
-    // Last block in the reading flow; block() also registers a TOC entry + <h2>.
-    blocks.push(block('FAQ', faqInner, true, `Frequently asked questions about ${L}`));
-  }
+  // (No FAQ block. It used to render a <details> accordion whose every answer was
+  // a whole corpus field — meaning / whyItMatters / mechanism / origin / limits /
+  // misreadings — i.e. a verbatim restatement of the sections already above it,
+  // which read as padding. The article itself, with its contents rail, already
+  // answers those questions in place. The matching FAQPage JSON-LD is dropped too:
+  // Google restricted FAQ rich results to gov/health sites in 2023, so it earned
+  // nothing here, and emitting it without visible content would be spammy markup.)
 
   // ---- left rail: table of contents (scroll-spy) ------------------------
   const tocNav = toc.length
@@ -543,7 +519,7 @@ document.getElementById('copy').onclick=function(){
       canonical,
       modified: buildDate,
       og: { title: `${law.name}: ${facetList}`, description: answer, image: `${base}og/${law.slug}.png`, type: 'article' },
-      jsonld: [definedTerm, article, breadcrumb, faq],
+      jsonld: [definedTerm, article, breadcrumb],
     }) +
     sprite() +
     '<div class="progress" id="progress" aria-hidden="true"></div>\n' +

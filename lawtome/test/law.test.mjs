@@ -13,8 +13,11 @@ const html = lawPage(law, ctx);
 test('statement renders with the accent span', () => assert.match(html, /<span class="accent">measure becomes a target<\/span>/));
 test('every source renders with its visible link', () => { assert.match(html, /Goodhart \(1975\)/); assert.match(html, /href="https:\/\/x"/); });
 test('cite-this-entry block carries the immutable canonical URL', () => assert.match(html, /conyso\.com\/lawtome\/laws\/goodharts-law\//));
-test('emits the JSON-LD stack: DefinedTerm + Article + BreadcrumbList + FAQPage', () => {
-  for (const t of ['"DefinedTerm"','"Article"','"BreadcrumbList"','"FAQPage"']) assert.match(html, new RegExp(t));
+test('emits the JSON-LD stack: DefinedTerm + Article + BreadcrumbList (no FAQPage)', () => {
+  for (const t of ['"DefinedTerm"','"Article"','"BreadcrumbList"']) assert.match(html, new RegExp(t));
+  // FAQPage was dropped: its answers duplicated the article sections verbatim,
+  // and FAQ rich results no longer apply to a site like this.
+  assert.doesNotMatch(html, /"FAQPage"/);
   assert.match(html, /Goodhart%27s_law/); // sameAs
 });
 test('links related laws by resolved name + permalink', () => { assert.match(html, /Campbell's Law/); assert.match(html, /href="\/lawtome\/laws\/campbells-law\/"/); });
