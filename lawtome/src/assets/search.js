@@ -154,6 +154,25 @@
     // rows, so category chips narrow within the tier instead of the client
     // repainting the grid with the whole corpus.
     var activeRel = (grid && grid.getAttribute('data-reliability')) || '';
+    // Sort + group controls (browse/category pages; absent elsewhere).
+    var sortSel = document.getElementById('sort');
+    var relChipsEl = document.getElementById('rel-chips');
+    var groupBtn = document.getElementById('group-toggle');
+    var activeSort = (sortSel && sortSel.value) || 'no';
+    var grouped = false;
+    var TIERRANK = { Empirical: 0, Heuristic: 1, 'Folk-adage': 2, Contested: 3 };
+    var TIER_ORDER = ['Empirical', 'Heuristic', 'Folk-adage', 'Contested'];
+    function relCount(r) { return Array.isArray(r.related) ? r.related.length : (r.rels || 0); }
+    function byNo(a, b) { return (parseInt(a.no, 10) || 0) - (parseInt(b.no, 10) || 0); }
+    function applySort(list) {
+      var l = list.slice();
+      if (activeSort === 'az') l.sort(function (a, b) { return String(a.name || '').localeCompare(String(b.name || '')); });
+      else if (activeSort === 'za') l.sort(function (a, b) { return String(b.name || '').localeCompare(String(a.name || '')); });
+      else if (activeSort === 'rels') l.sort(function (a, b) { return relCount(b) - relCount(a) || byNo(a, b); });
+      else if (activeSort === 'tier') l.sort(function (a, b) { var ta = TIERRANK[a.reliability]; ta = ta == null ? 9 : ta; var tb = TIERRANK[b.reliability]; tb = tb == null ? 9 : tb; return ta - tb || byNo(a, b); });
+      else return l; // 'no' — keep the natural order (server № order, or search relevance)
+      return l;
+    }
     // Homepage teaser: the grid carries data-limit so an idle (unfiltered) view
     // shows only a sample, not all rows. Any active filter (query or category)
     // reveals the full matches.
@@ -196,10 +215,34 @@
       // Cap to the teaser sample only when nothing is filtered (idle homepage).
       var idle = !query && activeCat === 'all' && !activeRel;
       if (LIMIT > 0 && idle && list.length > LIMIT) list = list.slice(0, LIMIT);
+      if (activeSort !== 'no') list = applySort(list); // 'no' keeps natural/relevance order
       grid.textContent = ''; // clear without innerHTML
       if (list.length) {
         var frag = document.createDocumentFragment();
-        for (var i = 0; i < list.length; i++) frag.appendChild(buildCard(list[i]));
+        if (grouped) {
+          // Grouped view: a full-width tier heading, then that tier's cards, in
+          // Empirical → Heuristic → Folk-adage → Contested order (rows keep their
+          // current sort within each group). A trailing "Other" holds any card
+          // whose reliability isn't one of the four (e.g. a coined law).
+          var seen = {};
+          function groupBlock(label, members) {
+            var h = document.createElement('h2'); h.className = 'grid-group-h';
+            h.appendChild(document.createTextNode(label));
+            var n = document.createElement('span'); n.className = 'grid-group-n'; n.textContent = members.length;
+            h.appendChild(n); frag.appendChild(h);
+            for (var m = 0; m < members.length; m++) frag.appendChild(buildCard(members[m]));
+          }
+          for (var t = 0; t < TIER_ORDER.length; t++) {
+            var tier = TIER_ORDER[t], members = [];
+            for (var g = 0; g < list.length; g++) if (list[g].reliability === tier) members.push(list[g]);
+            if (members.length) { groupBlock(tier, members); seen[tier] = 1; }
+          }
+          var rest = [];
+          for (var r2 = 0; r2 < list.length; r2++) if (!seen[list[r2].reliability]) rest.push(list[r2]);
+          if (rest.length) groupBlock('Other', rest);
+        } else {
+          for (var i = 0; i < list.length; i++) frag.appendChild(buildCard(list[i]));
+        }
         grid.appendChild(frag);
       } else {
         // Only HTML-string path — echoed query is escaped first. BASE is derived
@@ -229,6 +272,29 @@
         activeCat = b.getAttribute('data-c');
         var kids = chipsEl.children;
         for (var i = 0; i < kids.length; i++) kids[i].classList.toggle('on', kids[i] === b);
+        render();
+      });
+    }
+
+    // Reliability-tier filter (single-select; "All tiers" clears it).
+    if (relChipsEl) {
+      relChipsEl.addEventListener('click', function (e) {
+        var b = e.target.closest ? e.target.closest('.chip') : null;
+        if (!b) return;
+        activeRel = b.getAttribute('data-r') || '';
+        var kids = relChipsEl.children;
+        for (var i = 0; i < kids.length; i++) kids[i].classList.toggle('on', kids[i] === b);
+        render();
+      });
+    }
+    // Sort selector.
+    if (sortSel) sortSel.addEventListener('change', function () { activeSort = sortSel.value; render(); });
+    // Group-by-tier toggle.
+    if (groupBtn) {
+      groupBtn.addEventListener('click', function () {
+        grouped = !grouped;
+        groupBtn.setAttribute('aria-pressed', grouped ? 'true' : 'false');
+        groupBtn.classList.toggle('on', grouped);
         render();
       });
     }

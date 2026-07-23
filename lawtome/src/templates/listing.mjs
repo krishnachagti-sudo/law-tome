@@ -64,6 +64,25 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
   const lede = isReliability && RELIABILITY_NOTE[reliabilityKey]
     ? `    <p class="sec-lede">Every entry rated <b>${escapeHtml(reliabilityKey)}</b> — ${escapeHtml(RELIABILITY_NOTE[reliabilityKey])}. Filter by field with the chips, or see the <a href="${base}reliability/">whole reliability scale</a>.</p>\n`
     : '';
+  // Faceted controls: a reliability-tier filter (Empirical / Heuristic / Folk-adage
+  // / Contested), a sort selector, and a "group by tier" toggle. All are driven by
+  // search.js; with JS off the server-rendered grid is still the full, readable
+  // list. Tier chips are omitted on a reliability-tier page (the tier is fixed).
+  const REL_TIERS = [['', 'All tiers', ''], ['Empirical', 'Empirical', 'var(--ok)'], ['Heuristic', 'Heuristic', 'var(--gold)'], ['Folk-adage', 'Folk-adage', 'var(--faint)'], ['Contested', 'Contested', 'var(--con)']];
+  const relChips = `<div class="chips chips--rel" id="rel-chips" role="group" aria-label="Filter by reliability tier">${REL_TIERS.map(([val, label, col], i) => `<button class="chip${i === 0 ? ' on' : ''}" type="button" data-r="${escapeHtml(val)}">${col ? `<span class="rel-dot" style="background:${col}"></span>` : ''}${escapeHtml(label)}</button>`).join('')}</div>`;
+  const sortControl = `<div class="browse-sort">
+      <label class="browse-sort-l" for="sort">Sort</label>
+      <select id="sort" class="browse-select" aria-label="Sort laws">
+        <option value="no">№ order</option>
+        <option value="az">Name A–Z</option>
+        <option value="za">Name Z–A</option>
+        <option value="rels">Most connected</option>
+        <option value="tier">By reliability</option>
+      </select>${isReliability ? '' : `
+      <button class="chip group-toggle" id="group-toggle" type="button" aria-pressed="false">Group by tier</button>`}
+    </div>`;
+  const controls = `    <div class="browse-controls">${isReliability ? '' : relChips}${sortControl}</div>\n`;
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
     <div class="sec-head">
@@ -71,7 +90,7 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
       <span class="sub" id="showing" aria-live="polite">showing ${rows.length} of ${rows.length}</span>
     </div>
 ${lede}    <div class="chips" id="chips">${chips}</div>
-    <div class="grid" id="grid"${gridAttr}>
+${controls}    <div class="grid" id="grid"${gridAttr}>
 ${grid}
     </div>
   </div>
