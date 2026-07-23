@@ -1,0 +1,51 @@
+{
+  "no": "1209",
+  "slug": "the-weibull-distribution",
+  "name": "The Weibull Distribution",
+  "statement": "The Weibull distribution flexibly models time-to-failure, its shape parameter capturing decreasing, constant, or increasing failure rates over time.",
+  "statementAccent": "time-to-failure",
+  "meaning": "The Weibull distribution is a continuous probability distribution widely used to model the time until an event such as failure. Its flexibility comes chiefly from a shape parameter (plus a scale parameter), which lets one distribution family represent many different failure behaviors. This makes it a workhorse of reliability engineering and survival analysis.",
+  "mechanism": "The shape parameter k governs the hazard rate: a value below 1 gives a decreasing hazard (early \"infant mortality\" failures), a value of exactly 1 gives a constant hazard (reducing to the exponential distribution), and a value above 1 gives an increasing hazard (wear-out and aging). By fitting the shape and scale to data, engineers characterize which failure regime a component is in.",
+  "examples": [
+    {
+      "tag": "Reliability engineering",
+      "text": "It is used extensively to model component and system failure times and to estimate lifetimes and warranty risk."
+    },
+    {
+      "tag": "Wind speed modeling",
+      "text": "Weibull distributions are commonly fitted to wind-speed data for wind-energy resource assessment."
+    },
+    {
+      "tag": "Particle size (Rosin-Rammler)",
+      "text": "Rosin and Rammler applied the same distribution in 1933 to describe particle-size distributions in grinding and milling."
+    }
+  ],
+  "whyItMatters": "Because a single two- or three-parameter family can describe infant-mortality, random, and wear-out failures, the Weibull distribution unifies reliability analysis across many engineering and scientific domains. It supports maintenance planning, warranty design, and risk assessment.",
+  "limits": "Fitted parameters can be unstable with small samples, and the model assumes the chosen functional form fits the true failure process. Real systems with mixed failure modes may need mixture or competing-risk models rather than a single Weibull.",
+  "misreadings": "A shape parameter of exactly 1 does not mean \"no aging\" in general; it means the hazard is constant (memoryless), a special exponential case rather than the typical situation.",
+  "origin": "Waloddi Weibull (described 1939, detailed 1951); the distribution was earlier identified by Maurice Fréchet (1927) and applied by Rosin and Rammler (1933).",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1951,
+  "namedAfter": "Waloddi Weibull",
+  "sources": [
+    {
+      "text": "Wikipedia's \"Weibull distribution\" article, giving the definition, the shape-parameter hazard interpretation, reliability uses, and the Weibull/Fréchet/Rosin-Rammler history — supports the definition, mechanism, and origin.",
+      "url": "https://en.wikipedia.org/wiki/Weibull_distribution",
+      "type": "secondary"
+    },
+    {
+      "text": "The NIST/SEMATECH e-Handbook of Statistical Methods, stating the Weibull distribution is used extensively in reliability applications to model failure times — supports the reliability use and parameters.",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3668.htm",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Weibull_distribution",
+  "related": [
+    {
+      "slug": "the-poisson-distribution",
+      "kind": "kindred"
+    }
+  ]
+}

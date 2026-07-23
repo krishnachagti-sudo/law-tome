@@ -1,0 +1,55 @@
+{
+  "no": "1212",
+  "slug": "the-freundlich-adsorption-isotherm",
+  "name": "The Freundlich Adsorption Isotherm",
+  "statement": "On a heterogeneous surface, the amount adsorbed grows as an empirical power law of gas pressure or solute concentration, without a saturation limit.",
+  "statementAccent": "empirical power law",
+  "meaning": "The Freundlich equation expresses the mass adsorbed per unit adsorbent as a power-law function of equilibrium concentration or pressure. The exponent captures the curvature seen when adsorption weakens as coverage increases. It is a fitting relation rather than a mechanistic derivation.",
+  "mechanism": "The power-law form is rationalized by surface heterogeneity: sites vary in binding energy, so high-energy sites fill first and lower-energy sites fill as concentration rises. This gives a progressively decreasing heat of adsorption. Because the relation is empirical, a good fit only suggests, but does not prove, such heterogeneity.",
+  "examples": [
+    {
+      "tag": "Activated carbon water treatment",
+      "text": "Removal of organic pollutants and dyes from water by activated carbon is routinely fit to the Freundlich isotherm over practical concentration ranges."
+    },
+    {
+      "tag": "Soil chemistry",
+      "text": "Sorption of pesticides, phosphate, and heavy metals onto heterogeneous soils is commonly described using Freundlich parameters."
+    },
+    {
+      "tag": "Adsorption from solution",
+      "text": "The equation originally described adsorption of dissolved substances and gases onto solids at moderate pressures where a single-site model fails."
+    }
+  ],
+  "whyItMatters": "It remains one of the most widely used isotherms in environmental engineering, soil science, and industrial adsorption because it flexibly fits data on real, heterogeneous surfaces. Its parameters give a compact empirical summary of sorption capacity and intensity.",
+  "limits": "It is purely empirical with no firm theoretical basis and, lacking a saturation term, unphysically predicts unbounded adsorption, so it fails at high pressure or concentration. It does not reduce to Henry's law at low concentration in a thermodynamically consistent way.",
+  "misreadings": "Fitting the equation does not establish that the surface is heterogeneous, and its parameters are empirical constants, not fundamental thermodynamic quantities.",
+  "origin": "Herbert Freundlich, German chemist, who formulated the empirical isotherm in 1909; a closely related earlier paper appeared in 1907.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1909,
+  "namedAfter": "Herbert Freundlich",
+  "sources": [
+    {
+      "text": "Wikipedia's \"Freundlich equation\" article, giving the 1909 attribution, the power-law form, and its empirical heterogeneous-surface rationale and high-pressure failure — supports the statement and limits.",
+      "url": "https://en.wikipedia.org/wiki/Freundlich_equation",
+      "type": "secondary"
+    },
+    {
+      "text": "Wikipedia's \"Herbert Freundlich\" article, confirming his dates, nationality, and authorship of the adsorption work — supports the attribution.",
+      "url": "https://en.wikipedia.org/wiki/Herbert_Freundlich",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Freundlich_equation",
+  "related": [
+    {
+      "slug": "the-langmuir-adsorption-isotherm",
+      "kind": "near-twin"
+    },
+    {
+      "slug": "le-chateliers-principle",
+      "kind": "kindred"
+    }
+  ]
+}

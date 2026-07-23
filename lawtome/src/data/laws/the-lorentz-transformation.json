@@ -1,0 +1,51 @@
+{
+  "no": "1208",
+  "slug": "the-lorentz-transformation",
+  "name": "The Lorentz Transformation",
+  "statement": "Space and time coordinates transform between inertial frames by the Lorentz transformation, mixing them so light's speed stays constant for all observers.",
+  "statementAccent": "light's speed stays constant",
+  "meaning": "The Lorentz transformation is the set of linear equations relating the space and time coordinates of two inertial frames moving at constant velocity relative to each other. It replaces the classical Galilean transformation and is the mathematical core of special relativity. It ensures that the speed of light in vacuum is measured as the same constant in every inertial frame.",
+  "mechanism": "For motion along one axis, coordinates transform as t' = γ(t − vx/c²) and x' = γ(x − vt), with the Lorentz factor γ = 1/√(1 − v²/c²). Because γ grows as v approaches c, the transformation intertwines time and space, producing time dilation, length contraction, and the relativity of simultaneity. All frames nonetheless agree on the invariant speed of light.",
+  "examples": [
+    {
+      "tag": "Time dilation",
+      "text": "A moving clock runs slow relative to a stationary observer, a direct consequence of the transformation's time equation."
+    },
+    {
+      "tag": "Length contraction",
+      "text": "An object moving at high speed is measured as shortened along its direction of motion in the observer's frame."
+    },
+    {
+      "tag": "Relativity of simultaneity",
+      "text": "Two events simultaneous in one inertial frame need not be simultaneous in another moving frame."
+    }
+  ],
+  "whyItMatters": "The Lorentz transformation underlies special relativity and is essential wherever speeds approach that of light, from particle accelerators to GPS timing corrections. It reshaped the concepts of space, time, and simultaneity in modern physics.",
+  "limits": "It applies to inertial, non-accelerating frames in flat spacetime; gravity and acceleration require general relativity. At everyday speeds much less than that of light, it reduces to the familiar Galilean transformation.",
+  "misreadings": "It is not merely a mathematical trick about clocks and rulers; the mixing of space and time it describes is physically real and experimentally confirmed.",
+  "origin": "Hendrik Antoon Lorentz (1892–1904); Albert Einstein derived it from the relativity principle in 1905, and Henri Poincaré named it after Lorentz; an earlier related form was given by Woldemar Voigt (1887).",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1905,
+  "namedAfter": "Hendrik Antoon Lorentz",
+  "sources": [
+    {
+      "text": "Wikipedia's \"Lorentz transformation\" article, giving the equations, the Lorentz factor, the historical development by Lorentz, Poincaré, and Einstein, and the physical consequences — supports the definition and mechanism.",
+      "url": "https://en.wikipedia.org/wiki/Lorentz_transformation",
+      "type": "secondary"
+    },
+    {
+      "text": "Encyclopaedia Britannica's \"Lorentz transformations\" entry, describing them as equations relating space and time coordinates of frames in relative motion, created by Lorentz in 1904 — supports the definition and origin.",
+      "url": "https://www.britannica.com/science/Lorentz-transformations",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Lorentz_transformation",
+  "related": [
+    {
+      "slug": "the-twin-paradox",
+      "kind": "consequence"
+    }
+  ]
+}

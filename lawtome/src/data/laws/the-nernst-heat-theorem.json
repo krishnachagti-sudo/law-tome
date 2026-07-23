@@ -1,0 +1,51 @@
+{
+  "no": "1213",
+  "slug": "the-nernst-heat-theorem",
+  "name": "The Nernst Heat Theorem",
+  "statement": "For reactions among condensed phases, the entropy change approaches zero as the temperature approaches absolute zero.",
+  "statementAccent": "the entropy change approaches zero as the temperature approaches absolute zero",
+  "meaning": "The theorem states that as temperature tends to absolute zero, the entropy change of a reaction between pure condensed phases tends to zero. Equivalently, the temperature derivatives of the free energy and enthalpy converge as temperature goes to zero. This provides the missing constant needed to compute absolute entropies.",
+  "mechanism": "Nernst framed the theorem in terms of the Gibbs free energy and enthalpy of reaction, whose difference is temperature times the entropy change; requiring their slopes to meet at absolute zero forces the entropy change to vanish. Max Planck later strengthened it by assigning zero entropy to a perfect crystal at absolute zero, giving the modern third law. Nernst himself avoided explicit use of the entropy concept.",
+  "examples": [
+    {
+      "tag": "Absolute entropies from calorimetry",
+      "text": "The theorem lets chemists compute absolute molar entropies by integrating heat capacity from near absolute zero, since the entropy constant is fixed."
+    },
+    {
+      "tag": "Unattainability of absolute zero",
+      "text": "A corollary of the third law is that no finite sequence of processes can cool a system exactly to absolute zero."
+    },
+    {
+      "tag": "Low-temperature behavior",
+      "text": "It predicts that quantities such as thermal expansion coefficients and reaction entropy differences vanish as temperature approaches zero."
+    }
+  ],
+  "whyItMatters": "The theorem is the empirical foundation of the third law of thermodynamics and made absolute entropies calculable, enabling prediction of chemical equilibria from thermal data alone. It earned Nernst the 1920 Nobel Prize in Chemistry.",
+  "limits": "It applies to pure, well-ordered condensed phases in internal equilibrium and can fail for systems with residual entropy, such as glasses or crystals with frozen-in disorder. It is a statement about limiting behavior, not exact behavior at finite temperature.",
+  "misreadings": "It does not claim entropy itself is zero at absolute zero for every substance; that stronger Planck statement holds only for a perfect crystal, and disordered solids retain residual entropy.",
+  "origin": "Walther Nernst, German physical chemist, announced in December 1905 and published in 1906.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1906,
+  "namedAfter": "Walther Nernst",
+  "sources": [
+    {
+      "text": "Wikipedia's \"Nernst heat theorem\" article, stating that the entropy change tends to zero as temperature tends to zero and its role in the third law — supports the statement and mechanism.",
+      "url": "https://en.wikipedia.org/wiki/Nernst_heat_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Wikipedia's \"Walther Nernst\" article, confirming his authorship of the heat theorem and third law and his 1920 Nobel Prize — supports the attribution.",
+      "url": "https://en.wikipedia.org/wiki/Walther_Nernst",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Nernst_heat_theorem",
+  "related": [
+    {
+      "slug": "the-second-law-of-thermodynamics",
+      "kind": "kindred"
+    }
+  ]
+}

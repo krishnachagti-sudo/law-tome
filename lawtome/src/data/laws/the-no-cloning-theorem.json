@@ -1,0 +1,55 @@
+{
+  "no": "1210",
+  "slug": "the-no-cloning-theorem",
+  "name": "The No-Cloning Theorem",
+  "statement": "An arbitrary unknown quantum state cannot be copied exactly, because the linearity of quantum mechanics forbids any universal cloning device.",
+  "statementAccent": "cannot be copied exactly",
+  "meaning": "The no-cloning theorem states that it is impossible to build a device that creates an independent, identical copy of an arbitrary unknown quantum state. Unlike classical information, unknown quantum information cannot be duplicated. It is a foundational constraint on quantum information processing.",
+  "mechanism": "The proof relies on the linearity of quantum mechanics: assuming a single unitary operator could clone any two arbitrary states forces their inner product to satisfy a relation that only holds if the states are identical or orthogonal, contradicting the assumption of a universal cloner. Hence no such operation exists for general unknown states.",
+  "examples": [
+    {
+      "tag": "Quantum error correction",
+      "text": "Classical \"backup copy\" error correction is forbidden for qubits, so specialized quantum error-correcting codes were devised in 1995 to protect information without cloning it."
+    },
+    {
+      "tag": "Quantum cryptography",
+      "text": "No-cloning underlies the security of quantum key distribution, since an eavesdropper cannot perfectly copy transmitted quantum states undetected."
+    },
+    {
+      "tag": "Quantum teleportation",
+      "text": "Teleportation transfers a state without copying it; the original is destroyed, consistent with no-cloning."
+    }
+  ],
+  "whyItMatters": "The theorem shapes the entire architecture of quantum computing and communication, forcing fundamentally different approaches to error correction and enabling provably secure cryptography. It marks a sharp divide between classical and quantum information.",
+  "limits": "It forbids only exact, universal copying of arbitrary unknown states; known states can be prepared repeatedly, orthogonal states can be distinguished and copied, and approximate cloning is possible with limited fidelity.",
+  "misreadings": "It does not say quantum states can never be transmitted or that information is destroyed by measurement in general; it specifically rules out perfect duplication of an unknown state.",
+  "origin": "William Wootters and Wojciech Zurek, and independently Dennis Dieks, in 1982 (with an earlier related no-go result by James Park, 1970).",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1982,
+  "namedAfter": "NONE",
+  "sources": [
+    {
+      "text": "The bibliographic record for Wootters and Zurek's \"A single quantum cannot be cloned,\" Nature vol. 299 (1982), stating the linearity of quantum mechanics forbids amplifying an arbitrary polarization — supports the original theorem and its proof basis.",
+      "url": "https://www.osti.gov/etdeweb/biblio/6422624",
+      "type": "primary"
+    },
+    {
+      "text": "Wikipedia's \"No-cloning theorem\" article, stating an arbitrary unknown quantum state cannot be copied, crediting Wootters, Zurek, and Dieks (1982), and explaining the linearity-based proof — supports the statement, authorship, and mechanism.",
+      "url": "https://en.wikipedia.org/wiki/No-cloning_theorem",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/No-cloning_theorem",
+  "related": [
+    {
+      "slug": "the-heisenberg-uncertainty-principle",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-pauli-exclusion-principle",
+      "kind": "kindred"
+    }
+  ]
+}
