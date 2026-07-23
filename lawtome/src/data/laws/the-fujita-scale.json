@@ -1,0 +1,51 @@
+{
+  "no": "1120",
+  "slug": "the-fujita-scale",
+  "name": "The Fujita Scale",
+  "statement": "The Fujita scale rates tornado intensity from F0 to F5 by the severity of damage a tornado inflicts, not by directly measured wind speed.",
+  "statementAccent": "rates tornado intensity from F0 to F5",
+  "meaning": "Because tornado winds are rarely measured directly, Fujita’s scale infers intensity retrospectively from surveyed damage to structures, trees, and vehicles along the path. Higher numbers correspond to more catastrophic destruction and, originally, higher assigned wind-speed ranges.",
+  "mechanism": "Damage surveyors compare observed destruction — roof damage versus well-built homes levelled — against category benchmarks to assign an F-rating. The Enhanced Fujita (EF) scale that replaced it formalises this with standardised \"damage indicators\" (building and vegetation types) and degrees of damage, yielding more defensible wind-speed estimates.",
+  "examples": [
+    {
+      "tag": "F0",
+      "text": "Light damage from winds under 73 mph — broken branches, damaged signs — on the original scale."
+    },
+    {
+      "tag": "F5 / EF5",
+      "text": "Catastrophic damage; original F5 corresponded to roughly 261–318 mph, while EF5 (over 200 mph) is the top Enhanced Fujita category."
+    },
+    {
+      "tag": "Joplin, 2011",
+      "text": "The 22 May 2011 Joplin, Missouri tornado was rated EF5; survey teams estimated peak winds above 200 mph from the destruction of well-built homes and collapse of a nine-story hospital, and it remains the deadliest single US tornado since 1950."
+    }
+  ],
+  "whyItMatters": "The scale gave meteorologists and emergency managers a common language for classifying tornado severity after the fact, supporting building codes, the historical climatology of tornado outbreaks, and public risk communication.",
+  "limits": "NOAA acknowledged the original scale’s wind-speed numbers were essentially unverified estimates, and engineering studies later showed assigned speeds for the strongest categories exceeded what actually causes the observed damage; ratings also depend on damageable structures being present along the path.",
+  "misreadings": "People often assume F-scale or EF-scale ratings are direct instrumental wind-speed measurements, when they are damage-based estimates assigned after the fact by survey teams.",
+  "origin": "Devised by Tetsuya \"Ted\" Fujita of the University of Chicago in 1971 (with Allen Pearson); the Enhanced Fujita scale was developed 2000–2004 by the Wind Science and Engineering Center at Texas Tech University and adopted operationally in the US on 1 February 2007.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1971,
+  "namedAfter": "Tetsuya Fujita",
+  "sources": [
+    {
+      "text": "Fujita scale, Wikipedia. — Fujita’s 1971 origin, the damage-based methodology, and the 2007 replacement by the Enhanced Fujita scale.",
+      "url": "https://en.wikipedia.org/wiki/Fujita_scale",
+      "type": "secondary"
+    },
+    {
+      "text": "US National Weather Service (Chicago), tornado reminder. — that the 22 May 2011 Joplin tornado was rated EF-5.",
+      "url": "https://www.weather.gov/lot/tornadoreminder",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Fujita_scale",
+  "related": [
+    {
+      "slug": "the-beaufort-scale",
+      "kind": "kindred"
+    }
+  ]
+}

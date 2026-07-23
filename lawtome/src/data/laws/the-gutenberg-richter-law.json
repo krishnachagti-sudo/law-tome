@@ -1,0 +1,51 @@
+{
+  "no": "1112",
+  "slug": "the-gutenberg-richter-law",
+  "name": "The Gutenberg–Richter Law",
+  "statement": "Earthquake frequency and magnitude follow log₁₀N = a − bM, where N is the number of quakes of magnitude ≥ M in a region.",
+  "statementAccent": "log₁₀N = a − bM",
+  "meaning": "The law says that within a region and time span, the number of earthquakes decreases exponentially as magnitude increases. On a plot of log(number of quakes) versus magnitude the data fall on a straight line whose slope is the \"b-value.\" A b-value near 1 means each unit increase in magnitude corresponds to a tenfold decrease in frequency.",
+  "mechanism": "The relationship emerges empirically from earthquake catalogues rather than a single physical derivation, reflecting the self-similar (fractal) nature of fault-rupture sizes across scales. The constant \"a\" reflects overall regional seismic productivity, while \"b\" reflects the proportion of large versus small events, which varies with local stress, rock heterogeneity, and tectonic setting.",
+  "examples": [
+    {
+      "tag": "1944 California study",
+      "text": "Gutenberg and Richter first proposed the relationship in 1944 by tabulating southern California earthquakes and finding a straight-line log-frequency-versus-magnitude trend, then generalised it worldwide in 1949."
+    },
+    {
+      "tag": "Central Italy, 2016",
+      "text": "The August 2016 Central Italy sequence is a documented modern case, though the linear fit breaks down at the lowest magnitudes (undetected small quakes) and highest magnitudes (few large events)."
+    },
+    {
+      "tag": "Elevated b in swarms",
+      "text": "During some earthquake swarms, b-values have risen as high as 2.5, a deviation researchers attribute either to genuine physical differences or to catalogue incompleteness."
+    }
+  ],
+  "whyItMatters": "The law underlies modern probabilistic seismic hazard assessment, letting scientists estimate how often earthquakes of a given size recur from a shorter record of smaller events. It is also used to monitor changes in the b-value as a possible, though contested, precursory signal.",
+  "limits": "The relationship rolls off at very low magnitudes because small quakes go undetected, and at very high magnitudes because there are too few large events or a physical upper bound. The b-value is regionally variable and sensitive to catalogue completeness and magnitude method, so it is not a universal constant.",
+  "misreadings": "It is often mistaken for a strict physical law with a fixed b=1 everywhere, when b varies by region, depth, and regime and must be fitted from local data. It is also sometimes misapplied to predict the timing of a specific earthquake, when it describes only frequency–magnitude statistics.",
+  "origin": "Proposed by seismologists Beno Gutenberg and Charles Francis Richter in a 1944 paper analysing southern California earthquakes, later generalised in a 1949 global study.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1944,
+  "namedAfter": "Beno Gutenberg and Charles Francis Richter",
+  "sources": [
+    {
+      "text": "Gutenberg–Richter law, Wikipedia. — the formula, the 1944/1949 papers, typical b≈1, and the roll-off limitation.",
+      "url": "https://en.wikipedia.org/wiki/Gutenberg%E2%80%93Richter_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Geophysical Journal International (Oxford Academic). — the b-value concept and frequency–magnitude scaling.",
+      "url": "https://academic.oup.com/gji/article/199/3/1765/619003",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Gutenberg%E2%80%93Richter_law",
+  "related": [
+    {
+      "slug": "omoris-law",
+      "kind": "kindred"
+    }
+  ]
+}

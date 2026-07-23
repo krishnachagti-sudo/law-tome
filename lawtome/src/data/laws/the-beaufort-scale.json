@@ -1,0 +1,51 @@
+{
+  "no": "1119",
+  "slug": "the-beaufort-scale",
+  "name": "The Beaufort Scale",
+  "statement": "The Beaufort scale ranks wind force from 0 (calm) to 12 (hurricane) by the observable effects of wind on sea and land conditions.",
+  "statementAccent": "ranks wind force from 0 (calm) to 12 (hurricane)",
+  "meaning": "Devised to standardise sailors’ subjective wind reports, the scale converts qualitative observations — sea state, wave height, smoke drift, tree movement — into a numbered force. Each of the 13 categories (later extended to 17 for typhoon regions) corresponds to a range of wind speeds, letting observers estimate wind strength without an anemometer.",
+  "mechanism": "Each Beaufort number is tied empirically to an approximate wind speed via a power-law relation, though numeric equivalents were added only after the original descriptive scale existed. Observers match visible conditions — small wavelets, large waves with foam — to the closest descriptor, and the associated force number and speed range are read off.",
+  "examples": [
+    {
+      "tag": "Force 0 — Calm",
+      "text": "Wind under 1 knot; described as \"sea like a mirror,\" with smoke rising vertically on land."
+    },
+    {
+      "tag": "Force 10 — Storm",
+      "text": "Winds of 48–55 knots produce very high waves with long overhanging crests, per the Met Office’s marine scale."
+    },
+    {
+      "tag": "Force 12 — Hurricane",
+      "text": "Winds of 64 knots (about 73 mph) or greater; the air is filled with foam and spray, the sea completely white, visibility seriously affected."
+    }
+  ],
+  "whyItMatters": "Before instrumented wind measurement was common, the Beaufort scale gave mariners a shared, reproducible vocabulary for reporting conditions, improving safety and comparability of ship logs and forecasts. It became the basis for international marine warnings — gale, storm, hurricane force — still used today.",
+  "limits": "It was built around open-ocean sea-state cues, so its land-based descriptors are less precise, and its numeric wind-speed conversions were never officially standardised — national services publish slightly different equivalents. It infers speed from visual effects that vary with fetch, depth, and terrain rather than measuring it.",
+  "misreadings": "People sometimes treat the numeric wind-speed ranges as exact thresholds, when they are approximate equivalents retrofitted onto an originally descriptive, effects-based scale.",
+  "origin": "Devised by Francis Beaufort, a Royal Navy officer (later Hydrographer of the Navy), in 1805, refined in the 1830s, and adopted as generally applicable by the First International Meteorological Conference in Brussels in 1853.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1805,
+  "namedAfter": "Francis Beaufort",
+  "sources": [
+    {
+      "text": "Beaufort scale, Wikipedia. — its history, the wind-speed formula, and the force-by-force descriptions.",
+      "url": "https://en.wikipedia.org/wiki/Beaufort_scale",
+      "type": "secondary"
+    },
+    {
+      "text": "UK Met Office, Beaufort wind force scale. — knot ranges and sea-state descriptions for each force, including Force 12 hurricane.",
+      "url": "https://weather.metoffice.gov.uk/guides/coast-and-sea/beaufort-scale",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Beaufort_scale",
+  "related": [
+    {
+      "slug": "the-fujita-scale",
+      "kind": "kindred"
+    }
+  ]
+}

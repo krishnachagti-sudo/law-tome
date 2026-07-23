@@ -1,0 +1,51 @@
+{
+  "no": "1113",
+  "slug": "omoris-law",
+  "name": "Omori's Law",
+  "statement": "After a mainshock, aftershock frequency decays hyperbolically with time following n(t) = k/(c + t).",
+  "statementAccent": "n(t) = k/(c + t)",
+  "meaning": "The law describes how the rate of aftershocks drops off rapidly but persistently after a large earthquake rather than stopping abruptly. Immediately after the mainshock aftershocks are frequent, and their rate falls following a power-law-like decay curve as time passes, with k and c being empirical constants fitted to each sequence.",
+  "mechanism": "The decay reflects the relaxation of stress in the crust surrounding the ruptured fault as smaller subsidiary ruptures release residual stress. In 1961 Tokuji Utsu generalised the formula to n(t) = k/(c+t)^p, adding an exponent p (typically 0.7–1.5) that governs how steeply the decay rate falls, letting the model fit a wider range of sequences.",
+  "examples": [
+    {
+      "tag": "1891 Mino–Owari",
+      "text": "Omori derived his 1894 formula largely from aftershock data following the 1891 Mino–Owari earthquake (magnitude about 8.0), Japan’s largest known inland earthquake."
+    },
+    {
+      "tag": "Modified Omori law",
+      "text": "Utsu’s 1961 modified formula is now the version most commonly fitted to real aftershock sequences, since it captures decay over a broader range of p-values."
+    },
+    {
+      "tag": "Rule-of-thumb decay",
+      "text": "For p about 1, the law implies that if the aftershock rate on day one is a given value, the rate on day two is roughly half, and by day ten roughly a tenth of the first-day rate."
+    }
+  ],
+  "whyItMatters": "Omori’s law underpins operational aftershock forecasting used by seismological agencies to estimate the probability and rate of subsequent shaking after a mainshock, informing public warnings and emergency response.",
+  "limits": "The simple form does not capture all sequences well; the modified law with exponent p is needed in many cases, and even it can fail for complex multi-mainshock sequences. The law describes average statistical decay, not the timing or size of any individual aftershock.",
+  "misreadings": "It is sometimes misread as guaranteeing aftershocks will stop by a specific date, when the hyperbolic decay technically continues indefinitely at ever-lower rates. It is also occasionally confused with the Gutenberg–Richter law, which concerns magnitude distribution rather than decay over time.",
+  "origin": "Formulated by Japanese seismologist Fusakichi Omori in an 1894 memoir; later modified by Tokuji Utsu in 1961.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1894,
+  "namedAfter": "Fusakichi Omori",
+  "sources": [
+    {
+      "text": "Aftershock, Wikipedia. — Omori’s 1894 formula, Utsu’s 1961 modification, and the 1891 Mino–Owari connection.",
+      "url": "https://en.wikipedia.org/wiki/Aftershock",
+      "type": "secondary"
+    },
+    {
+      "text": "1891 Mino–Owari earthquake, Wikipedia. — its magnitude and status as Japan’s largest known inland earthquake.",
+      "url": "https://en.wikipedia.org/wiki/1891_Mino%E2%80%93Owari_earthquake",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Aftershock",
+  "related": [
+    {
+      "slug": "the-gutenberg-richter-law",
+      "kind": "kindred"
+    }
+  ]
+}

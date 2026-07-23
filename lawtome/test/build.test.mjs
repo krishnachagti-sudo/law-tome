@@ -54,7 +54,11 @@ test('build returns a page count and home shows real published count', async () 
   const r = await buildSite({ dataDir:'src/data/laws', catFile:'src/data/categories.json', assetsDir:'src/assets', out, base:'/lawtome/', origin:'https://conyso.com' });
   assert.equal(r.pages, LAW_COUNT + 1); // home + one page per law
   const home = await readFile(join(out, 'index.html'), 'utf8');
-  assert.match(home, new RegExp(`${LAW_COUNT} laws`));
+  // Home renders the count with Intl.NumberFormat('en'), so beyond 999 it carries a
+  // thousands separator (e.g. "1,033 laws"). Format the expectation the same way rather
+  // than assuming a bare integer, so the assertion holds as the corpus grows.
+  const shownCount = new Intl.NumberFormat('en').format(LAW_COUNT);
+  assert.match(home, new RegExp(`${shownCount} laws`));
   await rm(out, { recursive:true, force:true });
 });
 
