@@ -1,0 +1,50 @@
+{
+  "no": "1144",
+  "slug": "markovs-inequality",
+  "name": "Markov's Inequality",
+  "statement": "Markov’s inequality states that for a non-negative random variable X and a > 0, P(X ≥ a) ≤ E[X]/a.",
+  "statementAccent": "P(X ≥ a) ≤ E[X]/a",
+  "meaning": "The inequality gives a universal upper bound on the probability that a non-negative random variable exceeds a given threshold, using only its expected value. It requires no other information about the distribution’s shape, making it one of the most general, though often loose, probabilistic bounds.",
+  "mechanism": "Because X is non-negative, its expectation is at least the expectation restricted to the event that X is at least a, which is itself at least a times the probability of that event; dividing by a gives the inequality. The proof needs only non-negativity of X and a finite mean.",
+  "examples": [
+    {
+      "tag": "Income bound",
+      "text": "If average non-negative income is I, the inequality implies at most 10% of a population can earn 10 times the average or more, since that probability is at most I/(10I) = 1/10."
+    },
+    {
+      "tag": "Test-mistakes bound",
+      "text": "If a student averages 4 mistakes per test, the inequality bounds the probability of 10 or more mistakes at no more than 4/10 = 0.4."
+    },
+    {
+      "tag": "Building Chebyshev",
+      "text": "Applying Markov’s inequality to the non-negative variable (X−E[X])² yields Chebyshev’s inequality, a standard technique for bounding deviations from the mean."
+    }
+  ],
+  "whyItMatters": "It underlies many tail-bound derivations in probability and statistics, including Chebyshev’s inequality and Chernoff bounds used in concentration-of-measure arguments. Its generality — requiring only non-negativity and a finite mean — makes it foundational even though its bounds are often loose.",
+  "limits": "The bound can be very loose for well-behaved distributions with much smaller tail probability than it suggests; it becomes tight only for distributions concentrated on {0, a}. It applies only to non-negative random variables and requires a finite expectation.",
+  "misreadings": "It is sometimes confused with the unrelated Markov brothers’ inequality about polynomial derivatives, or conflated with Chebyshev’s inequality, which it is used to derive but which is a distinct, tighter bound using variance.",
+  "origin": "Named after Russian mathematician Andrey Markov (1856–1922), a student of Pafnuty Chebyshev; the underlying technique appeared earlier in Chebyshev’s own work, so it is sometimes called Chebyshev’s or Bienaymé’s inequality in analysis contexts.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "namedAfter": "Andrey Markov",
+  "sources": [
+    {
+      "text": "Markov’s inequality, Wikipedia. — the statement, the income and test-mistake examples, and the tightness and naming history.",
+      "url": "https://en.wikipedia.org/wiki/Markov%27s_inequality",
+      "type": "secondary"
+    },
+    {
+      "text": "Andrey Markov, Wikipedia. — his dates and relationship as Chebyshev’s student.",
+      "url": "https://en.wikipedia.org/wiki/Andrey_Markov",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Markov%27s_inequality",
+  "related": [
+    {
+      "slug": "chebyshevs-inequality",
+      "kind": "consequence"
+    }
+  ]
+}

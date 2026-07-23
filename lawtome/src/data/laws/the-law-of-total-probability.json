@@ -1,0 +1,49 @@
+{
+  "no": "1140",
+  "slug": "the-law-of-total-probability",
+  "name": "The Law of Total Probability",
+  "statement": "If B1, B2, ... partition the sample space, then P(A) equals the sum over n of P(A given Bn) times P(Bn).",
+  "statementAccent": "P(A) equals the sum over n of P(A given Bn) times P(Bn)",
+  "meaning": "The law lets you compute the overall (marginal) probability of an event by breaking the sample space into mutually exclusive, collectively exhaustive scenarios and combining the conditional probability of the event under each, weighted by how likely that scenario is. It is essentially a probability-weighted average across all the ways an event could occur.",
+  "mechanism": "Because the Bn partition the space, event A decomposes into disjoint pieces A∩Bn whose probabilities sum to P(A); rewriting each P(A∩Bn) as P(A|Bn)P(Bn) via the definition of conditional probability yields the formula.",
+  "examples": [
+    {
+      "tag": "Bulb reliability",
+      "text": "If Factory X supplies 60% of bulbs with a 99% chance of lasting 5000 hours, and Factory Y supplies 40% with a 95% chance, the overall chance a bulb lasts 5000 hours is 0.6·0.99 + 0.4·0.95 = 97.4%."
+    },
+    {
+      "tag": "Unconditional form",
+      "text": "For any partition, P(A) also equals the sum of P(A∩Bn), the simpler form of the same law before rewriting each term via conditional probability."
+    },
+    {
+      "tag": "Weighted average",
+      "text": "Because the weights P(Bn) sum to 1, the resulting marginal probability is sometimes described as an average probability across the partition’s scenarios."
+    }
+  ],
+  "whyItMatters": "It is one of the most-used tools in probability and statistics for computing marginal probabilities from conditional models, underlying Bayes’ theorem, mixture models, and decision-tree probability calculations.",
+  "limits": "It requires the Bn to be a true partition — mutually exclusive and collectively exhaustive; overlapping or non-exhaustive events invalidate the formula. It also requires the conditional probabilities to be well defined, and for infinite partitions the sum must converge appropriately.",
+  "misreadings": "A common mistake is applying the formula with events that overlap or do not cover the whole sample space, which silently breaks the \"add up the disjoint pieces\" logic underlying the law.",
+  "origin": "A direct consequence of Kolmogorov’s probability axioms and the definition of conditional probability; it is treated as a standard foundational theorem rather than attributed to a single originator.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "sources": [
+    {
+      "text": "Law of total probability, Wikipedia. — both forms of the law and the light-bulb worked example.",
+      "url": "https://en.wikipedia.org/wiki/Law_of_total_probability",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Total Probability,\" probabilitycourse.com. — the partition-based formula and weighted-average interpretation.",
+      "url": "https://www.probabilitycourse.com/chapter1/1_4_2_total_probability.php",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Law_of_total_probability",
+  "related": [
+    {
+      "slug": "bayes-theorem",
+      "kind": "cause"
+    }
+  ]
+}

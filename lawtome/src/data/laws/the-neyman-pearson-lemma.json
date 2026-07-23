@@ -1,0 +1,51 @@
+{
+  "no": "1137",
+  "slug": "the-neyman-pearson-lemma",
+  "name": "The Neyman–Pearson Lemma",
+  "statement": "Among all tests of a simple hypothesis against a simple alternative at a fixed significance level, the likelihood-ratio test is the most powerful.",
+  "statementAccent": "the likelihood-ratio test is the most powerful",
+  "meaning": "The lemma identifies the single best possible decision rule for choosing between two exactly specified hypotheses at a fixed tolerance for false positives. It formalises hypothesis testing as an optimisation, maximising the chance of correctly detecting a true alternative (power) while controlling the Type I error rate at a chosen level.",
+  "mechanism": "The optimal test rejects the null whenever the likelihood ratio exceeds a threshold constant, chosen (with possible randomisation at equality) so the test’s size equals the significance level exactly. The proof compares any other level-α test’s critical region against the likelihood-ratio region and shows the latter can never have lower power.",
+  "examples": [
+    {
+      "tag": "Radar detection",
+      "text": "Radar systems use likelihood-ratio thresholds derived from the lemma to set the optimal trade-off between missed detections and false alarms for a given false-alarm rate."
+    },
+    {
+      "tag": "Particle physics",
+      "text": "Searches for new particles use likelihood-ratio test statistics, rooted in Neyman–Pearson theory, to test a signal-plus-background hypothesis against background-only at a fixed significance level."
+    },
+    {
+      "tag": "Karlin–Rubin extension",
+      "text": "The Karlin–Rubin theorem extends the lemma’s simple-hypothesis result to composite one-sided hypotheses when the likelihood ratio is monotone, preserving uniformly-most-powerful optimality."
+    }
+  ],
+  "whyItMatters": "It is the theoretical cornerstone of modern hypothesis testing, establishing that an optimal test exists and showing how to construct it, which reshaped statistics by introducing the alternative hypothesis and the trade-off between Type I and Type II errors. Its likelihood-ratio principle underlies test construction across science and engineering.",
+  "limits": "The lemma applies strictly to simple hypotheses (fully specified distributions on both sides); real problems usually involve composite hypotheses with unknown parameters, requiring extensions like the Karlin–Rubin theorem or generalised likelihood-ratio tests, which lack the same clean optimality guarantee.",
+  "misreadings": "It is sometimes treated as applicable directly to composite hypotheses without additional conditions, or conflated with Fisher’s earlier significance testing, which considered only a single null hypothesis without a specified alternative.",
+  "origin": "Developed by Jerzy Neyman and Egon Pearson, building on their 1928 Biometrika paper and published in full in 1933 as \"On the Problem of the Most Efficient Tests of Statistical Hypotheses.\"",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1933,
+  "namedAfter": "Jerzy Neyman and Egon Pearson",
+  "sources": [
+    {
+      "text": "Neyman–Pearson lemma, Wikipedia. — the most-powerful likelihood-ratio result and the 1933 founding paper.",
+      "url": "https://en.wikipedia.org/wiki/Neyman%E2%80%93Pearson_lemma",
+      "type": "secondary"
+    },
+    {
+      "text": "Egon Pearson, Wikipedia. — the 1933 co-authored paper establishing the lemma, following the 1928 Biometrika collaboration.",
+      "url": "https://en.wikipedia.org/wiki/Egon_Pearson",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Neyman%E2%80%93Pearson_lemma",
+  "related": [
+    {
+      "slug": "the-cramer-rao-bound",
+      "kind": "kindred"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "no": "1142",
+  "slug": "the-bonferroni-correction",
+  "name": "The Bonferroni Correction",
+  "statement": "To control the family-wise error rate across m hypothesis tests, each individual test is judged significant only if its p-value is below alpha divided by m.",
+  "statementAccent": "each individual test is judged significant only if its p-value is below alpha divided by m",
+  "meaning": "When many hypotheses are tested at once, using the ordinary threshold on each inflates the chance of at least one false positive across the whole family of tests. The Bonferroni correction counteracts this by shrinking the per-test threshold in proportion to the number of tests, keeping the overall false-positive rate at the desired level.",
+  "mechanism": "It rests on Bonferroni’s inequality, which bounds the probability of a union of events by the sum of their individual probabilities; applied to m null hypotheses each tested at level alpha/m, the probability of any false rejection is at most m × (alpha/m) = alpha, so testing each at alpha/m controls the family-wise error rate at alpha.",
+  "examples": [
+    {
+      "tag": "20 outcomes",
+      "text": "If a trial tests 20 hypotheses with a desired overall level of 0.05, the Bonferroni-corrected threshold per test becomes 0.05/20 = 0.0025."
+    },
+    {
+      "tag": "Dunn extension",
+      "text": "Olive Jean Dunn’s 1961 paper extended the correction to simultaneous confidence intervals, so the method is sometimes called the Bonferroni–Dunn correction."
+    },
+    {
+      "tag": "Holm step-down",
+      "text": "The Holm–Bonferroni method (1979) applies a sequential, less conservative version, testing the smallest p-value against alpha/m, the next against alpha/(m−1), and so on, while still controlling family-wise error."
+    }
+  ],
+  "whyItMatters": "It is one of the most widely used tools for guarding against false discoveries in fields that run many simultaneous tests, such as genomics, neuroimaging, and clinical trials with multiple endpoints.",
+  "limits": "The correction is conservative, especially as the number of tests grows or when tests are correlated rather than independent, which increases the risk of Type II errors and reduces power. Less conservative alternatives, such as Holm–Bonferroni or the Šidák correction, achieve the same control with more power.",
+  "misreadings": "It is sometimes wrongly treated as controlling the false discovery rate rather than the family-wise error rate — different criteria with different, often much less conservative, procedures like Benjamini–Hochberg.",
+  "origin": "Based on inequalities published by Italian mathematician Carlo Emilio Bonferroni around 1935–1936; formalised for hypothesis testing and confidence intervals by Olive Jean Dunn in 1961, hence the alternate name Bonferroni–Dunn correction.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1936,
+  "namedAfter": "Carlo Emilio Bonferroni",
+  "sources": [
+    {
+      "text": "Bonferroni correction, Wikipedia. — the alpha/m formula, the clinical-trial example, the Bonferroni/Dunn history, and the conservatism limitation.",
+      "url": "https://en.wikipedia.org/wiki/Bonferroni_correction",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Etymologia: Bonferroni Correction,\" CDC Emerging Infectious Diseases. — the attribution to Carlo Emilio Bonferroni.",
+      "url": "https://wwwnc.cdc.gov/eid/article/21/2/ET-2102_article",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Bonferroni_correction"
+}

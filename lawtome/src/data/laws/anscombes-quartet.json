@@ -1,0 +1,45 @@
+{
+  "no": "1141",
+  "slug": "anscombes-quartet",
+  "name": "Anscombe's Quartet",
+  "statement": "Four datasets can share nearly identical mean, variance, correlation, and regression line, yet look completely different when graphed.",
+  "statementAccent": "share nearly identical mean, variance, correlation, and regression line",
+  "meaning": "Anscombe’s quartet is a constructed demonstration, not a law of nature, showing that summary statistics alone can conceal wildly different underlying data structures, including curvature, outliers, and leverage points. It argues for visualising data rather than relying solely on numeric summaries.",
+  "mechanism": "Anscombe engineered four (x, y) datasets of 11 points each so that, to two or three decimal places, all share the same mean of x (9), mean of y (7.50), variance of x (11), variance of y (4.125), correlation (0.816), and least-squares line (y = 3.00 + 0.500x) with R² about 0.67 — despite one being roughly linear, one clearly curved, one dominated by a single outlier, and one driven entirely by one high-leverage point.",
+  "examples": [
+    {
+      "tag": "Dataset I — linear",
+      "text": "The first dataset shows a simple linear relationship with normal-looking scatter consistent with the fitted regression line."
+    },
+    {
+      "tag": "Dataset II — curved",
+      "text": "The second dataset is clearly nonlinear, yet a linear fit produces the same regression statistics as the linear dataset."
+    },
+    {
+      "tag": "Datasaurus Dozen",
+      "text": "A later computer-generated extension called the \"Datasaurus Dozen\" produces thirteen datasets — including one shaped like a dinosaur — that all share the same summary statistics while looking totally different when plotted."
+    }
+  ],
+  "whyItMatters": "It is a canonical teaching example in statistics and data science for why exploratory graphing must accompany, not be replaced by, numerical summary statistics before fitting models.",
+  "limits": "The quartet was deliberately hand-constructed to make a pedagogical point; it does not itself prove anything about real-world data distributions, only that identical summary statistics do not guarantee similar data, so it is a cautionary illustration rather than a general statistical law.",
+  "misreadings": "It is sometimes cited as evidence that correlation and regression are meaningless, when the actual point is narrower: that summary statistics must be paired with visualisation, not abandoned.",
+  "origin": "Constructed by statistician Francis Anscombe and published in his 1973 paper \"Graphs in Statistical Analysis\" in The American Statistician.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1973,
+  "namedAfter": "Francis Anscombe",
+  "sources": [
+    {
+      "text": "Anscombe’s quartet, Wikipedia. — the shared statistics, the 1973 publication, and the Datasaurus Dozen follow-up.",
+      "url": "https://en.wikipedia.org/wiki/Anscombe%27s_quartet",
+      "type": "secondary"
+    },
+    {
+      "text": "Francis Anscombe, Wikipedia. — his authorship and the 1973 publication.",
+      "url": "https://en.wikipedia.org/wiki/Francis_Anscombe",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Anscombe%27s_quartet"
+}

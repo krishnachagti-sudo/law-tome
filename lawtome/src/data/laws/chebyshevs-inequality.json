@@ -1,0 +1,51 @@
+{
+  "no": "1135",
+  "slug": "chebyshevs-inequality",
+  "name": "Chebyshev's Inequality",
+  "statement": "For any random variable with finite variance, the probability it deviates from its mean by k standard deviations or more is at most 1/k².",
+  "statementAccent": "at most 1/k²",
+  "meaning": "This inequality gives a universal, distribution-free bound on how much probability mass can lie far from the mean, using only the mean and variance. It guarantees that extreme deviations are rare in a precise, quantifiable sense even when the exact shape of the distribution is unknown. For k=2 it guarantees at least 75% of the probability mass lies within two standard deviations of the mean.",
+  "mechanism": "The inequality follows from applying Markov’s inequality to the non-negative random variable (X−μ)², since the probability of deviating by k standard deviations equals the probability that (X−μ)² is at least k²σ². Because it makes no assumption about the shape of the distribution, the bound is generally very loose compared with distribution-specific bounds such as the far tighter exponential tails of a normal distribution.",
+  "examples": [
+    {
+      "tag": "Word-count bound",
+      "text": "If articles in a journal average 1,000 words with a standard deviation of 200 words, the inequality guarantees at least 75% of articles have between 600 and 1,400 words (k=2, bound 1/4)."
+    },
+    {
+      "tag": "Weak law of large numbers",
+      "text": "Chebyshev used the inequality to prove his version of the weak law of large numbers, showing sample averages converge in probability to the true mean as sample size grows."
+    },
+    {
+      "tag": "Distribution-free",
+      "text": "Because it requires only a finite variance, the inequality applies identically to any distribution — discrete or continuous, symmetric or skewed — unlike bounds that assume normality."
+    }
+  ],
+  "whyItMatters": "It is one of the few tail bounds requiring no assumption about the underlying distribution beyond a finite variance, making it foundational for proving convergence results such as the weak law of large numbers, and it underlies many concentration-of-measure arguments throughout probability and statistics.",
+  "limits": "The bound is often very loose for well-behaved distributions like the normal, where actual tail probabilities are far smaller than 1/k² suggests. For k≤1 the inequality is trivial, since 1/k²≥1 exceeds any valid probability, giving no information.",
+  "misreadings": "It is often mistaken for an exact probability statement rather than a worst-case upper bound; many assume it gives a tight or typical estimate of tail probability rather than a guarantee valid for the worst possible distribution.",
+  "origin": "First stated without a general proof by Irénée-Jules Bienaymé in 1853; Pafnuty Chebyshev, unaware of that work, published a general proof in 1867, which is why it is also called the Bienaymé–Chebyshev inequality. Chebyshev’s student Andrey Markov gave another proof in his 1884 thesis.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1867,
+  "namedAfter": "Pafnuty Chebyshev",
+  "sources": [
+    {
+      "text": "Chebyshev’s inequality, Wikipedia. — the 1/k² bound and the Bienaymé (1853)/Chebyshev (1867) attribution history.",
+      "url": "https://en.wikipedia.org/wiki/Chebyshev%27s_inequality",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Chebyshev’s inequality,\" Encyclopaedia Britannica. — that the probability of exceeding k standard deviations is at most 1/k², with shared Bienaymé credit.",
+      "url": "https://www.britannica.com/science/Chebyshevs-inequality",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Chebyshev%27s_inequality",
+  "related": [
+    {
+      "slug": "markovs-inequality",
+      "kind": "cause"
+    }
+  ]
+}

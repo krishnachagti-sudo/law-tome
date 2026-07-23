@@ -1,0 +1,44 @@
+{
+  "no": "1143",
+  "slug": "bessels-correction",
+  "name": "Bessel's Correction",
+  "statement": "Bessel’s correction uses n-1 rather than n as the divisor in sample variance, removing the bias from estimating the mean from the same sample.",
+  "statementAccent": "n-1 rather than n",
+  "meaning": "Sample variance calculated by dividing squared deviations by n underestimates population variance, because deviations are measured from the sample mean rather than the true population mean, and the sample mean is by construction closer to the data. Dividing instead by n−1 exactly cancels this bias, yielding an unbiased estimator of the population variance.",
+  "mechanism": "Squared deviations from the sample mean have only n−1 degrees of freedom, because once the sample mean is subtracted the residuals are constrained to sum to zero. Dividing by n−1 rescales the average squared deviation to compensate for that lost degree of freedom, so the expected value of the corrected statistic equals the true population variance.",
+  "examples": [
+    {
+      "tag": "Two-point sample",
+      "text": "For the sample {0, 2}, dividing by n=2 gives a variance of 1, but dividing by n−1=1 gives 2, the unbiased estimate of the population variance."
+    },
+    {
+      "tag": "Software defaults",
+      "text": "R’s var(), Excel’s STDEV.S, and NumPy’s std() with ddof=1 all compute the Bessel-corrected (n−1 divisor) sample variance rather than the plain n-divisor version."
+    },
+    {
+      "tag": "Earlier use by Gauss",
+      "text": "Although named for Friedrich Bessel, statisticians Kenney and Keeping noted the same n−1 correction was used earlier by Carl Friedrich Gauss in his 1823 work."
+    }
+  ],
+  "whyItMatters": "Without this correction, confidence intervals, t-tests, and ANOVA calculations relying on sample variance would systematically underestimate variability and overstate precision. It is one of the most widely applied small-sample corrections in applied statistics.",
+  "limits": "The n−1 correction makes sample variance exactly unbiased, but the sample standard deviation (its square root) remains slightly biased downward, since the square-root transform is concave. The correction is unnecessary when the population mean is already known, and for large n the difference becomes negligible.",
+  "misreadings": "A common misreading is assuming n−1 also makes the standard deviation unbiased; only the variance is exactly unbiased. It is also sometimes applied even when the true population mean is known, where it is unnecessary.",
+  "origin": "Named after German astronomer and mathematician Friedrich Wilhelm Bessel (1784–1846); the same correction had been used earlier by Carl Friedrich Gauss in 1823, but the technique retained Bessel’s name in statistical usage.",
+  "category": "statistics",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "namedAfter": "Friedrich Wilhelm Bessel",
+  "sources": [
+    {
+      "text": "Bessel’s correction, Wikipedia. — the definition, the (0,2) worked example, and the degrees-of-freedom mechanism.",
+      "url": "https://en.wikipedia.org/wiki/Bessel%27s_correction",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Bessel’s Correction,\" Wolfram MathWorld. — the variance-bias formula and the Kenney & Keeping note attributing earlier use to Gauss.",
+      "url": "https://mathworld.wolfram.com/BesselsCorrection.html",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Bessel%27s_correction"
+}
