@@ -1,0 +1,51 @@
+{
+  "no": "1152",
+  "slug": "the-stark-effect",
+  "name": "The Stark Effect",
+  "statement": "The Stark effect is the shifting and splitting of atomic and molecular spectral lines caused by an external electric field.",
+  "statementAccent": "shifting and splitting of atomic and molecular spectral lines",
+  "meaning": "The Stark effect is the electric-field counterpart to the magnetic Zeeman effect: applying an external electric field to atoms or molecules shifts and splits their spectral lines, revealing information about a state’s dipole moment and polarisability. It appears in a linear form for certain degenerate, non-centrosymmetric states and a quadratic form more generally.",
+  "mechanism": "An external electric field perturbs energy levels; for states without inversion symmetry and with field-degenerate sublevels, as in excited hydrogen, the perturbation is first-order and the shift scales linearly with field strength, while for symmetric ground states the field induces a dipole moment and the shift, from second-order perturbation theory, scales with the square of the field.",
+  "examples": [
+    {
+      "tag": "Plasma diagnostics",
+      "text": "Stark broadening of spectral lines from charged-particle microfields is used to measure electron density in laboratory plasmas and in stellar atmospheres such as white dwarfs."
+    },
+    {
+      "tag": "Quantum-confined Stark effect",
+      "text": "The quantum-confined Stark effect in semiconductor quantum wells is exploited in electro-absorption optical modulators used in telecommunications."
+    },
+    {
+      "tag": "Hydrogen Balmer lines",
+      "text": "Stark’s original 1913 experiments showed the hydrogen Balmer lines splitting under a strong applied electric field, an early confirmation supporting the emerging quantum theory of the atom."
+    }
+  ],
+  "whyItMatters": "The Stark effect provided early experimental support for quantum theory and remains a working tool for probing atomic and molecular structure, diagnosing plasma and stellar conditions, and engineering optoelectronic devices.",
+  "limits": "The linear Stark effect only occurs for special degenerate, non-centrosymmetric states, notably excited hydrogen; most atoms and molecules show only the much weaker quadratic effect, and the magnitude and character of the splitting depend strongly on the specific state and field strength.",
+  "misreadings": "The Stark effect (electric field) is sometimes confused with the Zeeman effect (magnetic field); although mathematically analogous in splitting spectral lines, the physical field and underlying interaction differ.",
+  "origin": "Discovered by German physicist Johannes Stark in 1913 via splitting of hydrogen Balmer lines; independently observed the same year by Antonino Lo Surdo. Stark received the 1919 Nobel Prize in Physics.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1913,
+  "namedAfter": "Johannes Stark",
+  "sources": [
+    {
+      "text": "Stark effect, Wikipedia. — the definition, the linear-versus-quadratic mechanisms, and applications in plasma diagnostics and semiconductor modulators.",
+      "url": "https://en.wikipedia.org/wiki/Stark_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Johannes Stark, Wikipedia. — the 1919 Nobel Prize citation covering the splitting of spectral lines in electric fields.",
+      "url": "https://en.wikipedia.org/wiki/Johannes_Stark",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Stark_effect",
+  "related": [
+    {
+      "slug": "the-zeeman-effect",
+      "kind": "near-twin"
+    }
+  ]
+}

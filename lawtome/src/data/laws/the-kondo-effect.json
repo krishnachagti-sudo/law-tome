@@ -1,0 +1,51 @@
+{
+  "no": "1146",
+  "slug": "the-kondo-effect",
+  "name": "The Kondo Effect",
+  "statement": "Dilute magnetic impurities in a metal cause conduction-electron scattering that makes electrical resistivity rise, not fall, as temperature drops toward absolute zero.",
+  "statementAccent": "makes electrical resistivity rise, not fall, as temperature drops",
+  "meaning": "Normally a metal’s resistivity decreases as it cools, since lattice vibrations die down. The Kondo effect describes how a small concentration of magnetic impurities produces an anomalous resistance minimum at some low temperature, below which resistivity rises again as temperature is further reduced.",
+  "mechanism": "Conduction electrons scatter off the localised spin of a magnetic impurity via an exchange interaction; Jun Kondo showed with third-order perturbation theory that this scattering grows logarithmically as temperature approaches zero, competing with the normal phonon-scattering decrease and producing the minimum. Below the characteristic Kondo temperature, conduction electrons collectively screen the impurity spin into a many-body singlet.",
+  "examples": [
+    {
+      "tag": "Iron in gold",
+      "text": "The classic case is dilute iron impurities in gold, where a resistance minimum observed in the 1930s was later explained quantitatively by Kondo’s 1964 theory."
+    },
+    {
+      "tag": "Quantum dots",
+      "text": "The effect appears in semiconductor quantum dots, where a single trapped electron spin acts as the impurity screened by electrons in attached leads, observable as a zero-bias conductance peak."
+    },
+    {
+      "tag": "Heavy fermions",
+      "text": "Compounds containing cerium or ytterbium exhibit dense-lattice versions of the Kondo effect, producing dramatically enhanced effective electron masses and, in some cases, unconventional superconductivity."
+    }
+  ],
+  "whyItMatters": "The Kondo effect was the first solved example of a strongly correlated many-body problem in condensed-matter physics, motivating the renormalisation-group methods later used broadly, and it remains central to understanding heavy-fermion metals, quantum-dot transport, and correlated-electron materials.",
+  "limits": "Kondo’s original perturbative calculation diverges at low temperature and cannot describe the full crossover to the singlet ground state; a complete solution required later non-perturbative work. The effect is specific to isolated, dilute magnetic moments — dense magnetic lattices or ordered magnetism change the physics.",
+  "misreadings": "It is a misconception that any impurity causes a resistance minimum; the effect specifically requires impurities with an unquenched local magnetic moment, not just any scattering defect.",
+  "origin": "Explained theoretically by Jun Kondo in 1964, building on an experimentally puzzling resistance minimum first observed in the 1930s and confirmed to be caused by magnetic impurities.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1964,
+  "namedAfter": "Jun Kondo",
+  "sources": [
+    {
+      "text": "Kondo effect, Wikipedia. — the resistivity minimum, Kondo’s 1964 theory, the Kondo temperature, and applications in quantum dots and heavy fermions.",
+      "url": "https://en.wikipedia.org/wiki/Kondo_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Kondo effect,\" Scholarpedia. — Kondo’s comparison of his theory with iron-in-gold experiments as the paradigmatic case.",
+      "url": "http://www.scholarpedia.org/article/Kondo_effect",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Kondo_effect",
+  "related": [
+    {
+      "slug": "the-hall-effect",
+      "kind": "kindred"
+    }
+  ]
+}

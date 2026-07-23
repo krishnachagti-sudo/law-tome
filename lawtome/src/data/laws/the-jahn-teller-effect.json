@@ -1,0 +1,51 @@
+{
+  "no": "1147",
+  "slug": "the-jahn-teller-effect",
+  "name": "The Jahn–Teller Effect",
+  "statement": "Any non-linear molecule or ion with a spatially degenerate electronic ground state will spontaneously distort its geometry to remove that degeneracy and lower its energy.",
+  "statementAccent": "will spontaneously distort its geometry to remove that degeneracy",
+  "meaning": "When a molecule’s symmetry would force two or more electronic states to have exactly the same energy while being asymmetrically occupied by electrons, the system is unstable at that symmetric geometry. It lowers its total energy by distorting into a less symmetric shape that splits the degenerate levels apart.",
+  "mechanism": "The distortion couples electronic states to a vibrational mode of matching symmetry; splitting the degenerate orbitals lowers the energy of the occupied one more than it raises the unoccupied one, giving a net energetic gain that stabilises the distorted geometry. The theorem guarantees instability at the high-symmetry point but does not predict the direction or magnitude of the distortion.",
+  "examples": [
+    {
+      "tag": "Hexaaquacopper(II)",
+      "text": "The [Cu(H2O)6]2+ ion distorts from a regular octahedron into a tetragonally elongated shape, with axial Cu–O distances of about 238 pm versus equatorial distances of about 195 pm."
+    },
+    {
+      "tag": "Manganites",
+      "text": "In LaMnO3, the Mn3+ ion’s partially filled eg orbitals drive a static Jahn–Teller distortion of the MnO6 octahedra, and dynamic Jahn–Teller polaron physics is central to the colossal magnetoresistance of doped manganites."
+    },
+    {
+      "tag": "Fulleride superconductivity",
+      "text": "Jahn–Teller-active vibrational modes of the C60 fullerene contribute to the electron-pairing mechanism proposed for superconductivity in alkali-doped fullerides."
+    }
+  ],
+  "whyItMatters": "The Jahn–Teller effect is a fundamental mechanism of spontaneous symmetry breaking that explains distorted geometries throughout transition-metal chemistry, spectroscopy, and crystallography, and it is a key ingredient in understanding functional materials such as colossal-magnetoresistance manganites.",
+  "limits": "The theorem applies strictly to non-linear systems with an exactly or nearly degenerate electronic ground state; linear molecules are covered instead by the related Renner–Teller effect. It predicts only that a symmetric structure is unstable, not the specific distorted geometry adopted.",
+  "misreadings": "It is a common misreading to treat the theorem as predicting which direction or exact magnitude a molecule will distort in; it only proves that the symmetric, degenerate configuration cannot be the true energy minimum.",
+  "origin": "Formulated by Hermann Arthur Jahn and Edward Teller in a 1937 paper analysing the mathematical physics of degenerate electronic states in polyatomic molecules.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1937,
+  "namedAfter": "Hermann Arthur Jahn and Edward Teller",
+  "sources": [
+    {
+      "text": "Jahn–Teller effect, Wikipedia. — the theorem, the hexaaquacopper(II) distortion figures, and that it does not predict distortion direction.",
+      "url": "https://en.wikipedia.org/wiki/Jahn%E2%80%93Teller_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Edward Teller, Wikipedia. — that Teller and Jahn analysed the effect in 1937.",
+      "url": "https://en.wikipedia.org/wiki/Edward_Teller",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Jahn%E2%80%93Teller_effect",
+  "related": [
+    {
+      "slug": "vsepr-theory",
+      "kind": "kindred"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "no": "1149",
+  "slug": "the-mossbauer-effect",
+  "name": "The Mössbauer Effect",
+  "statement": "Atomic nuclei bound in a crystal lattice emit or absorb gamma rays without energy loss to nuclear recoil, enabling extremely sharp resonance.",
+  "statementAccent": "emit or absorb gamma rays without energy loss to nuclear recoil",
+  "meaning": "When a nucleus in a free atom emits a gamma ray, the atom recoils and shifts the photon’s energy, spoiling resonance with an identical absorbing nucleus. In a solid crystal lattice the recoil can instead be absorbed by the whole lattice, so much more massive that the recoil energy loss becomes negligible, yielding emission and absorption lines sharp enough to overlap exactly and produce strong resonant absorption.",
+  "mechanism": "The probability of recoil-free emission depends on binding the emitting nucleus rigidly within a lattice, especially at low temperature, so lattice vibrations do not carry away the recoil in a way that broadens the line. Because the gamma-ray linewidth is naturally extremely narrow, even minute energy shifts — from Doppler motion, gravity, or the chemical and magnetic environment — measurably detune the resonance, which Mössbauer spectroscopy exploits by moving the source at controlled velocities.",
+  "examples": [
+    {
+      "tag": "Iron-57 spectroscopy",
+      "text": "Fe-57 is the standard isotope used in Mössbauer spectroscopy to probe oxidation state, magnetic environment, and bonding in iron-containing compounds and minerals."
+    },
+    {
+      "tag": "Pound–Rebka",
+      "text": "The Pound–Rebka experiment used the effect’s narrow linewidth to detect the tiny gravitational redshift of gamma rays over a 22.5-metre tower at Harvard, confirming a prediction of general relativity."
+    },
+    {
+      "tag": "Discovery isotope",
+      "text": "Mössbauer first observed the recoilless resonance using iridium-191 in his 1958 doctoral thesis at the Technical University of Munich."
+    }
+  ],
+  "whyItMatters": "The effect turned gamma-ray spectroscopy into an ultra-high-resolution tool for probing nuclear energy levels and their environment, enabling precision tests of general relativity and detailed chemical and magnetic analysis of solids. It remains standard in solid-state physics, chemistry, mineralogy, and geology.",
+  "limits": "It requires specific isotopes with suitable low-energy, long-lived nuclear transitions (Fe-57, Sn-119) and generally works best in solids, often needing low temperatures to maximise the recoil-free fraction. It is not observable in gases or liquids where atoms are not rigidly bound, and the recoil-free fraction is never 100%.",
+  "misreadings": "It is sometimes misdescribed as eliminating recoil entirely rather than transferring it to the bulk lattice, which absorbs it with negligible resulting velocity. It should not be confused with ordinary nuclear resonance fluorescence, which lacks the recoil-free sharpness.",
+  "origin": "Discovered by Rudolf Mössbauer in his 1958 doctoral thesis at the Technical University of Munich; he was awarded the 1961 Nobel Prize in Physics.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1958,
+  "namedAfter": "Rudolf Mössbauer",
+  "sources": [
+    {
+      "text": "Mössbauer effect, Wikipedia. — the recoil-free resonance definition, the 1958 discovery, and the 1961 Nobel Prize.",
+      "url": "https://en.wikipedia.org/wiki/M%C3%B6ssbauer_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Mössbauer effect,\" Encyclopaedia Britannica. — the recoil-free gamma-ray resonance made possible by fixing nuclei in a solid lattice.",
+      "url": "https://www.britannica.com/science/Mossbauer-effect",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/M%C3%B6ssbauer_effect",
+  "related": [
+    {
+      "slug": "the-stark-effect",
+      "kind": "kindred"
+    }
+  ]
+}

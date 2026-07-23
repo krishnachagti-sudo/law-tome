@@ -1,0 +1,51 @@
+{
+  "no": "1150",
+  "slug": "cherenkov-radiation",
+  "name": "Cherenkov Radiation",
+  "statement": "When a charged particle moves through a transparent medium faster than light does there, it emits Cherenkov radiation as a cone of blue light.",
+  "statementAccent": "emits Cherenkov radiation as a cone of blue light",
+  "meaning": "Cherenkov radiation is the optical analogue of a sonic boom: a charged particle outrunning the local phase velocity of light in a dielectric leaves a coherent electromagnetic shockwave. The radiation forms a cone whose half-angle depends on the particle’s speed and the medium’s refractive index. It is the source of the characteristic blue glow around submerged nuclear reactor cores.",
+  "mechanism": "As a fast charged particle traverses a dielectric, it transiently polarises the medium’s molecules along its path. If the particle moves faster than light propagates in that medium, the wavelets emitted by the polarised medium interfere constructively behind it rather than cancelling, building a coherent conical wavefront. Igor Tamm and Ilya Frank supplied the classical electrodynamic derivation in 1937.",
+  "examples": [
+    {
+      "tag": "Reactor glow",
+      "text": "The blue light around the submerged cores of pool-type reactors comes from Cherenkov radiation emitted by fast electrons from radioactive decay travelling through the surrounding water."
+    },
+    {
+      "tag": "Neutrino detectors",
+      "text": "Water- and ice-based observatories such as Super-Kamiokande and IceCube detect neutrino interactions by imaging the rings of Cherenkov light emitted by the charged particles those interactions produce."
+    },
+    {
+      "tag": "RICH detectors",
+      "text": "Ring-Imaging Cherenkov detectors identify a particle’s species by measuring the opening angle of its Cherenkov light cone."
+    }
+  ],
+  "whyItMatters": "Cherenkov radiation underlies neutrino astronomy, particle identification in collider and cosmic-ray experiments, and dosimetry verification in radiotherapy, making it a core practical tool of modern experimental physics.",
+  "limits": "It only occurs when a particle’s speed exceeds the phase velocity of light in the specific medium — a real, medium-dependent threshold, not the vacuum speed of light. It requires a transparent dielectric and a sufficiently energetic charged particle, and does not occur in vacuum.",
+  "misreadings": "It is commonly but incorrectly described as a particle \"breaking the speed of light,\" suggesting a violation of relativity; the particle never exceeds the vacuum speed of light, only the slower phase velocity of light within the medium.",
+  "origin": "Discovered experimentally by Pavel Cherenkov in 1934 under Sergey Vavilov; theoretically explained by Igor Tamm and Ilya Frank in 1937; the 1958 Nobel Prize in Physics was awarded jointly to Cherenkov, Tamm, and Frank.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1934,
+  "namedAfter": "Pavel Cherenkov",
+  "sources": [
+    {
+      "text": "Cherenkov radiation, Wikipedia. — the definition, the emission-angle relation, and applications including reactor glow, RICH detectors, and neutrino observatories.",
+      "url": "https://en.wikipedia.org/wiki/Cherenkov_radiation",
+      "type": "secondary"
+    },
+    {
+      "text": "Pavel Cherenkov, Wikipedia. — his 1934 observation under Vavilov and the 1958 Nobel citation shared with Tamm and Frank.",
+      "url": "https://en.wikipedia.org/wiki/Pavel_Cherenkov",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Cherenkov_radiation",
+  "related": [
+    {
+      "slug": "the-lorentz-force",
+      "kind": "kindred"
+    }
+  ]
+}

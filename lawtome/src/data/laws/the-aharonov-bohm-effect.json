@@ -1,0 +1,51 @@
+{
+  "no": "1148",
+  "slug": "the-aharonov-bohm-effect",
+  "name": "The Aharonov–Bohm Effect",
+  "statement": "A charged particle's quantum phase is altered by an electromagnetic potential even in a region where both the magnetic and electric fields are exactly zero.",
+  "statementAccent": "is altered by an electromagnetic potential even in a region where both the magnetic and electric fields are exactly zero",
+  "meaning": "In classical physics only fields are considered physically real, with potentials treated as calculational tools. The Aharonov–Bohm effect shows that in quantum mechanics the vector and scalar potentials have direct, measurable consequences on a charged particle’s phase, even along paths that never enter a region of nonzero field.",
+  "mechanism": "In the canonical double-slit-with-solenoid setup, an electron beam splits and passes on either side of a thin solenoid whose magnetic field is fully confined inside it, so neither path experiences a nonzero field. Nonetheless the enclosed magnetic flux shifts the relative quantum phase between the two paths, producing a measurable shift in the interference fringe pattern when the solenoid current is switched on.",
+  "examples": [
+    {
+      "tag": "Tonomura’s magnet",
+      "text": "Akira Tonomura and colleagues used electron holography with a superconducting shield fully confining the field inside a tiny toroidal magnet to demonstrate the fringe shift while excluding any electron exposure to the field, giving decisive confirmation."
+    },
+    {
+      "tag": "Solenoid interferometry",
+      "text": "Electron interference experiments with a long, thin solenoid between two slits show the pattern shifts as the enclosed flux is varied, even though the electrons travel only through field-free regions."
+    },
+    {
+      "tag": "Mesoscopic rings",
+      "text": "Small conducting rings threaded by magnetic flux exhibit flux-periodic oscillations in their conductance, a solid-state manifestation used to study quantum coherence."
+    }
+  ],
+  "whyItMatters": "The effect established that electromagnetic potentials, not just fields, carry independent physical significance in quantum theory, reshaping understanding of gauge invariance and topology, and it underlies phenomena from electron interferometry to flux quantisation and probes of quantum coherence.",
+  "limits": "It is a genuinely quantum phenomenon with no classical analogue and produces a phase shift, not a classical force. Precursor work by Werner Ehrenberg and Raymond Siday in 1949 anticipated the same physics, though Aharonov and Bohm’s independent 1959 analysis brought it to wide attention.",
+  "misreadings": "It is a common misreading to think the electron is somehow physically touched by a stray magnetic field; the entire point of the canonical experiments is that the field is strictly zero along every possible electron path.",
+  "origin": "Predicted by Yakir Aharonov and David Bohm in their 1959 paper \"Significance of Electromagnetic Potentials in the Quantum Theory,\" building on earlier work by Ehrenberg and Siday (1949); decisively confirmed by Akira Tonomura’s group in 1986.",
+  "category": "science",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1959,
+  "namedAfter": "Yakir Aharonov and David Bohm",
+  "sources": [
+    {
+      "text": "Aharonov–Bohm effect, Wikipedia. — the field-free phase shift, the solenoid mechanism, the Ehrenberg–Siday precursor, and Tonomura’s 1986 confirmation.",
+      "url": "https://en.wikipedia.org/wiki/Aharonov%E2%80%93Bohm_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Yakir Aharonov, Wikipedia. — the 1959 paper with David Bohm proposing the effect.",
+      "url": "https://en.wikipedia.org/wiki/Yakir_Aharonov",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Aharonov%E2%80%93Bohm_effect",
+  "related": [
+    {
+      "slug": "maxwells-equations",
+      "kind": "kindred"
+    }
+  ]
+}
