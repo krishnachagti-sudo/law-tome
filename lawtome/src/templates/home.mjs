@@ -286,6 +286,19 @@ const LAWS=${featuredJson};
   // hidden — so the statement never changes out from under someone reading it.
   if(hero){hero.addEventListener('pointerenter',pause);hero.addEventListener('pointerleave',play);hero.addEventListener('focusin',pause);hero.addEventListener('focusout',play);}
   document.addEventListener('visibilitychange',function(){document.hidden?pause():play();});
+  // Fixed-size statement zone: measure the TALLEST law's height across the whole
+  // rotation and lock the block to it, centring each statement inside — so short
+  // and long laws occupy the same space and nothing below ever jumps as it cycles.
+  function reserve(){
+    s.style.height='auto';s.style.display='';
+    var save=s.innerHTML,max=0;
+    for(var i=0;i<LAWS.length;i++){s.innerHTML='<q>'+LAWS[i].hero+'</q>';if(s.offsetHeight>max)max=s.offsetHeight;}
+    s.innerHTML=save;
+    s.style.display='flex';s.style.flexDirection='column';s.style.justifyContent='center';
+    s.style.height=max+'px';
+  }
+  reserve();
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(reserve,180);},{passive:true});
   play();
 })();
 </script>
