@@ -687,6 +687,9 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .s-label{fill:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.02em}
 .s-inbar{fill:var(--on-accent);font-family:var(--mono);font-size:11px}
 .s-tick{fill:var(--faint);font-family:var(--mono);font-size:9px;letter-spacing:.03em}
+.s-area{fill:var(--accent);opacity:.12;stroke:none}
+.s-mean{stroke:var(--line-strong);stroke-width:1.2;stroke-dasharray:4 4;fill:none}
+.s-net{stroke:var(--accent);stroke-width:1.2;fill:none;opacity:.4}
 /* callout cards — give the later prose sections visual weight */
 .callout{display:flex;gap:15px;border:1px solid var(--line);border-left-width:3px;border-radius:3px;padding:18px 20px;background:var(--surface)}
 .callout .co-ic{flex:none;width:23px;height:23px;margin-top:2px}

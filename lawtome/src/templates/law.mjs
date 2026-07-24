@@ -17,7 +17,7 @@
 // statement accent is injected AFTER escaping (see renderStatement).
 
 import { head, sprite, header, footer, escapeHtml, reliabilityClass } from './partials.mjs';
-import { schematicFigure } from './schematics.mjs';
+import { schematicFigure, schematicForLaw } from './schematics.mjs';
 
 /**
  * Wrap the accent phrase in <span class="accent"> within the statement. Splits the
@@ -174,8 +174,9 @@ ${h2}${inner}
   if (vizInner) blocks.push(`      <div class="viz-card" data-reveal>\n${vizInner}\n      </div>`);
 
   if (law.mechanism) blocks.push(block('How it works', `        <p class="prose">${escapeHtml(law.mechanism)}</p>`, true, `How does ${L} work?`));
-  // Concept schematic (illustrative figure), when the law names one.
-  if (law.schematic) { const fig = schematicFigure(law.schematic); if (fig) blocks.push(fig); }
+  // Concept schematic (illustrative figure): an explicit `schematic` field, or
+  // the curated slug->shape fallback for laws with a canonical textbook picture.
+  { const key = schematicForLaw(law); if (key) { const fig = schematicFigure(key); if (fig) blocks.push(fig); } }
 
   // Examples: prefer the richer `examples[]` ({tag,text} or plain string) and fall
   // back to the single legacy `example`. Multiple examples => "Where you'll see it".
