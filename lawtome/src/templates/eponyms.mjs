@@ -27,11 +27,51 @@ ${multi.slice().sort((a, b) => b.laws.length - a.laws.length || a.person.localeC
 `
     : '';
 
+  // Surname initial, accent-folded ("Ångström" -> A, "Émile Durkheim" -> D), used
+  // to break the A–Z list into letter-anchored sections and drive the jump-bar.
+  const initial = (person) => {
+    const parts = String(person || '').trim().split(/\s+/);
+    const c = (parts[parts.length - 1] || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').charAt(0).toUpperCase();
+    return /[A-Z]/.test(c) ? c : '#';
+  };
+
+  // A–Z, grouped by surname initial with an id anchor per letter. rows arrive
+  // surname-sorted, so a single pass emits a heading whenever the initial changes.
+  let alpha = '';
+  const present = new Set();
+  if (rows.length) {
+    let cur = null;
+    for (const g of rows) {
+      const ltr = initial(g.person);
+      present.add(ltr);
+      if (ltr !== cur) {
+        if (cur !== null) alpha += '\n    </div>';
+        alpha += `\n    <h3 class="ep-letter" id="az-${ltr === '#' ? 'sym' : ltr}">${ltr === '#' ? '#' : ltr}</h3>\n    <div class="ep-list">`;
+        cur = ltr;
+      }
+      alpha += '\n' + row(g);
+    }
+    alpha += '\n    </div>';
+  }
+
+  // Jump-bar: every A–Z letter plus '#', letters with no namesake shown inert so
+  // the row never reflows between pages.
+  const alphabet = ['#', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')];
+  const jump = rows.length
+    ? `    <nav class="az-nav" aria-label="Jump to letter">
+${alphabet.map((L) => {
+        const id = L === '#' ? 'sym' : L;
+        return present.has(L)
+          ? `      <a href="#az-${id}">${L}</a>`
+          : `      <span aria-hidden="true">${L}</span>`;
+      }).join('\n')}
+    </nav>
+`
+    : '';
+
   const all = rows.length
-    ? `    <h2 class="ep-h2">Every namesake, A–Z</h2>
-    <div class="ep-list">
-${rows.map(row).join('\n')}
-    </div>`
+    ? `    <h2 class="ep-h2" id="az">Every namesake, A–Z</h2>
+${jump}${alpha}`
     : '<div class="empty">No named laws yet.</div>';
 
   const section = `<section class="sec" id="index">

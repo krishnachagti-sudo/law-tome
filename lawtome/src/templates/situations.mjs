@@ -37,7 +37,7 @@ export function situationsPage(situations = [], { base = '/', origin = '', count
       <h1>What's the law for…?</h1>
       <span class="sub">${rows.length} common ${rows.length === 1 ? 'situation' : 'situations'}</span>
     </div>
-    <p class="sec-lede">You know the feeling but not the name for it. Find the situation you're in and jump to the law that describes it — or just type what's happening into the <a href="${base}">search box</a> and let it find the match.</p>
+    <p class="sec-lede">You know the feeling but not the name for it. Find the situation you're in and jump to the law that describes it — or <a href="${base}">describe what's happening from the home page</a> and let search find the match.</p>
     <div class="sit-list">
 ${items}
     </div>

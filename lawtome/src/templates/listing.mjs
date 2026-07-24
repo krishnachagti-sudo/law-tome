@@ -25,7 +25,7 @@ import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, re
  * @param {string} [o.active] nav key to mark active (defaults to 'browse')
  * @param {string} [o.origin=''] absolute-URL origin for JSON-LD (optional; degrades to base-relative)
  */
-export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '', reliabilityKey = '' } = {}) {
+export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '', reliabilityKey = '', count } = {}) {
   const rows = Array.isArray(laws) ? laws : [];
   // A reliability-tier page (kind='reliability') is a faceted-browse view: the
   // server renders only that tier's laws and stamps the grid so the client keeps
@@ -69,9 +69,16 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
   // still the full, readable list.
   const controls = browseControls({ isReliability });
 
+  // Visible breadcrumb on the deeper listing views (category, reliability tier),
+  // matching the law/compare pages and reflecting the BreadcrumbList JSON-LD so a
+  // reader always has an "up" path back to Browse.
+  const crumb = (kind === 'category' || isReliability)
+    ? `    <nav class="crumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}browse/">Browse</a>${isReliability ? `<span class="sep">/</span><a href="${base}reliability/">Reliability</a>` : ''}<span class="sep">/</span>${escapeHtml(title)}</nav>\n`
+    : '';
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
-    <div class="sec-head">
+${crumb}    <div class="sec-head">
       <h1>${escapeHtml(h1)}</h1>
       <span class="sub" id="showing" aria-live="polite">showing ${rows.length} of ${rows.length}</span>
     </div>
@@ -123,7 +130,7 @@ ${grid}
   return (
     head({ title: seoTitle, description, base, origin, path, jsonld }) +
     sprite() +
-    header({ base, active, count: rows.length }) +
+    header({ base, active, count: count ?? rows.length }) +
     section +
     footer({ base, scripts: `<script defer src="${base}assets/search.js"></script>` })
   );

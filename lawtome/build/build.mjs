@@ -134,7 +134,7 @@ export async function buildSite(opts) {
   for (const cat of present) {
     writes.push(writePage(
       join(out, 'category', cat, 'index.html'),
-      listingPage(membersByCat.get(cat), { title: categories[cat] || cat, base, kind: 'category', origin, categoryKey: cat }),
+      listingPage(membersByCat.get(cat), { title: categories[cat] || cat, base, kind: 'category', origin, categoryKey: cat, count: publishedCount }),
     ));
   }
 
@@ -180,7 +180,7 @@ export async function buildSite(opts) {
   for (const tier of presentTiers) {
     writes.push(writePage(
       join(out, 'reliability', reliabilitySlug(tier), 'index.html'),
-      listingPage(membersByTier.get(tier), { title: `${tier} laws`, base, kind: 'reliability', origin, reliabilityKey: tier }),
+      listingPage(membersByTier.get(tier), { title: `${tier} laws`, base, kind: 'reliability', origin, reliabilityKey: tier, count: publishedCount }),
     ));
   }
 

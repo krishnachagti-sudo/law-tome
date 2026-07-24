@@ -339,9 +339,19 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .ep-laws a:hover{text-decoration:underline}
 .ep-dot{color:var(--faint);margin:0 8px}
 @media(max-width:560px){.ep-row{grid-template-columns:1fr;gap:4px}}
+.ep-letter{font-family:var(--mono);font-size:13px;letter-spacing:2px;color:var(--gold);margin:26px 0 8px;scroll-margin-top:150px}
+
+/* jump-bar (A–Z on /named-after/, eras on /timeline/) — a sticky row of anchors
+   so long index pages aren't a single unbroken scroll. */
+.az-nav{position:sticky;top:60px;z-index:5;display:flex;flex-wrap:wrap;gap:2px 4px;padding:10px 12px;margin:0 0 24px;background:var(--bg);border:1px solid var(--line);border-radius:10px}
+.az-nav a,.az-nav span{font-family:var(--mono);font-size:12px;line-height:1;padding:5px 8px;border-radius:6px;text-decoration:none}
+.az-nav a{color:var(--accent)}
+.az-nav a:hover{background:var(--panel);color:var(--gold)}
+.az-nav span{color:var(--faint);opacity:.4}
+@media(max-width:560px){.az-nav{top:56px;gap:1px 2px;padding:8px}.az-nav a,.az-nav span{padding:4px 6px;font-size:11px}}
 
 /* timeline (/timeline/) */
-.tl-era{margin-bottom:30px}
+.tl-era{margin-bottom:30px;scroll-margin-top:120px}
 .tl-eyebrow{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 14px;display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
 .tl-count{font-family:var(--mono);font-size:11px;color:var(--faint)}
 .tl-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0 24px}
@@ -358,6 +368,9 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .dl-fmt{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--accent)}
 .dl-desc{font-family:var(--serif);font-size:14px;color:var(--muted);line-height:1.5}
 .data-h2{font-family:var(--serif);font-weight:600;font-size:19px;margin:26px 0 8px}
+.data-note{font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--faint);margin:14px 0 0}
+.data-note a{color:var(--accent);text-decoration:none}
+.data-note a:hover{text-decoration:underline}
 .wrap-prose>p{font-family:var(--serif);font-size:16px;line-height:1.65;color:var(--read);margin-bottom:10px}
 .wrap-prose code{font-family:var(--mono);font-size:13px;background:var(--surface-2);padding:1px 5px;border-radius:2px}
 @media(max-width:560px){.dl-row{grid-template-columns:1fr}}

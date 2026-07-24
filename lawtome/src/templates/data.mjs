@@ -9,14 +9,15 @@
 import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
 
 export function dataPage({ base = '/', origin = '', count, generated } = {}) {
-  const n = count == null ? 'every' : String(count);
+  const n = count == null ? 'every' : (typeof count === 'number' ? count.toLocaleString('en-US') : String(count));
+  const entryWord = (typeof count === 'number' && count === 1) ? 'entry' : 'entries';
   const section = `<section class="sec" id="data">
   <div class="wrap wrap-prose">
     <div class="sec-head">
       <h1>Download the dataset</h1>
       <span class="sub">CC BY 4.0</span>
     </div>
-    <p class="sec-lede">The Law Tome's index as data — free to analyse, cite, and build on. Two formats, ${escapeHtml(n)} entry, refreshed with every build.</p>
+    <p class="sec-lede">The Law Tome's index as data — free to analyse, cite, and build on. Two formats, ${escapeHtml(n)} ${entryWord}, refreshed with every build.</p>
 
     <div class="dl-row">
       <a class="dl-card" href="${base}data/lawtome.json" download>
@@ -27,7 +28,12 @@ export function dataPage({ base = '/', origin = '', count, generated } = {}) {
         <span class="dl-fmt">CSV</span>
         <span class="dl-desc">A flat spreadsheet: number, name, category, reliability, year, namesake, and canonical URL.</span>
       </a>
+      <a class="dl-card" href="${base}llms-full.txt">
+        <span class="dl-fmt">llms.txt</span>
+        <span class="dl-desc">Plain-text for language models — every entry's statement, definition, and sources in one file.</span>
+      </a>
     </div>
+    <p class="data-note">Built for generative engines: a compact <a href="${base}llms.txt">llms.txt</a> index and the full <a href="${base}llms-full.txt">llms-full.txt</a> corpus, following the <a href="https://llmstxt.org/" rel="nofollow">llmstxt.org</a> convention.</p>
 
     <h2 class="data-h2">What's in it</h2>
     <p>For each law: its number, slug, name and aliases, category, reliability rating, one-line statement, the year it was coined and who it's named after, its <a href="${base}graph/">relationship-graph</a> edges, its sources, and a link to its page.</p>

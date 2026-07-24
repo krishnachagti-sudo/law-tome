@@ -10,13 +10,15 @@ export function timelinePage(eras = [], { base = '/', origin = '', count } = {})
   const rows = Array.isArray(eras) ? eras : [];
   const total = rows.reduce((n, e) => n + e.laws.length, 0);
   const permalink = (slug) => `${base}laws/${escapeHtml(slug)}/`;
+  // Stable anchor id from an era label (e.g. "20th century" -> "era-20th-century").
+  const eraId = (label) => 'era-' + String(label || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
   const eraBlock = (e) => {
     const items = e.laws.map((l) => {
       const yr = (l.coinedYear != null && Number(l.coinedYear) >= 1) ? String(l.coinedYear) : '—';
       return `        <a class="tl-item" href="${permalink(l.slug)}"><span class="tl-year">${escapeHtml(yr)}</span><span class="tl-name">${escapeHtml(l.name)}</span></a>`;
     }).join('\n');
-    return `    <section class="tl-era">
+    return `    <section class="tl-era" id="${eraId(e.label)}">
       <h2 class="tl-eyebrow">${escapeHtml(e.label)}<span class="tl-count">${e.laws.length}</span></h2>
       <div class="tl-items">
 ${items}
@@ -24,13 +26,21 @@ ${items}
     </section>`;
   };
 
-  const body = rows.length ? rows.map(eraBlock).join('\n') : '<div class="empty">No dated laws yet.</div>';
+  // Jump-bar to each era so the reader isn't stuck scrolling the whole timeline.
+  const jump = rows.length > 1
+    ? `    <nav class="az-nav" aria-label="Jump to era">
+${rows.map((e) => `      <a href="#${eraId(e.label)}">${escapeHtml(e.label)}</a>`).join('\n')}
+    </nav>
+`
+    : '';
+
+  const body = rows.length ? jump + rows.map(eraBlock).join('\n') : '<div class="empty">No dated laws yet.</div>';
 
   const section = `<section class="sec" id="index">
   <div class="wrap">
     <div class="sec-head">
       <h1>A timeline of named laws</h1>
-      <span class="sub">${total} dated across ${rows.length} ${rows.length === 1 ? 'era' : 'eras'}</span>
+      <span class="sub">${total.toLocaleString('en-US')} laws across ${rows.length} ${rows.length === 1 ? 'era' : 'eras'}</span>
     </div>
     <p class="sec-lede">The index read as a history of ideas — every law placed in the century it was named, from ancient maxims to principles coined in living memory.</p>
 ${body}

@@ -100,7 +100,7 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
   const trustCell = (n, l, num) => `      <div class="ht-cell"><span class="ht-n"${num ? ` data-count="${num}"` : ''}>${n}</span><span class="ht-l">${l}</span></div>`;
   const trust = `<section class="sec home-trust">
   <div class="wrap ht-row" data-reveal-stagger>
-${trustCell(count, 'named laws, principles &amp; effects — one index', count)}
+${trustCell(count, 'named laws, principles &amp; effects — one index', publishedCount)}
 ${trustCell('Sourced', 'every entry traced to its origin and cited')}
 ${trustCell('Cross-linked', 'a living graph of relations, not a flat list')}
 ${trustCell('Rated', 'proven, heuristic, or folklore — marked honestly')}

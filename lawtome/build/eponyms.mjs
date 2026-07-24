@@ -25,7 +25,9 @@ export function eponymGroups(laws = []) {
   const by = new Map();
   for (const l of Array.isArray(laws) ? laws : []) {
     const person = l && l.namedAfter != null ? String(l.namedAfter).trim() : '';
-    if (!person) continue;
+    // Skip empties and the "not named after a person" sentinels so they never
+    // render as a bogus namesake (e.g. a person literally called "NONE").
+    if (!person || /^(none|n\/a|na|-|—)$/i.test(person)) continue;
     if (!by.has(person)) by.set(person, []);
     by.get(person).push(l);
   }
