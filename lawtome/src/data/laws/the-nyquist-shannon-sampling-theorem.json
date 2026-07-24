@@ -2,7 +2,9 @@
   "no": "220",
   "slug": "the-nyquist-shannon-sampling-theorem",
   "name": "The Nyquist-Shannon Sampling Theorem",
-  "aliases": ["The sampling theorem"],
+  "aliases": [
+    "The sampling theorem"
+  ],
   "statement": "To capture a signal perfectly, sample it more than twice as fast as its highest frequency.",
   "statementAccent": "more than twice as fast as its highest frequency",
   "meaning": "A continuous signal that contains no frequencies above some limit can be reconstructed exactly from its samples, provided they are taken at a rate greater than twice that highest frequency. That threshold, twice the top frequency, is the Nyquist rate. Sample any slower and the fast components are irrecoverably corrupted.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It is the theoretical foundation of all digital signal processing, defining the bridge between the continuous analog world and discrete digital representation. Every recording, image, and communication that converts a wave into numbers rests on it, and it explains both why digital audio works and why aliasing artefacts appear when it is violated.",
   "working": [
-    {"lead": "Sample above twice the top frequency", "text": "to capture a signal faithfully, set the sampling rate above twice its highest frequency component."},
-    {"lead": "Filter before sampling", "text": "apply an anti-aliasing low-pass filter first, since real signals are never perfectly band-limited."},
-    {"lead": "Keep rate and frequency straight", "text": "distinguish the Nyquist rate, a property of the signal, from the Nyquist frequency, a property of your sampler."}
+    {
+      "lead": "Sample above twice the top frequency",
+      "text": "to capture a signal faithfully, set the sampling rate above twice its highest frequency component."
+    },
+    {
+      "lead": "Filter before sampling",
+      "text": "apply an anti-aliasing low-pass filter first, since real signals are never perfectly band-limited."
+    },
+    {
+      "lead": "Keep rate and frequency straight",
+      "text": "distinguish the Nyquist rate, a property of the signal, from the Nyquist frequency, a property of your sampler."
+    }
   ],
   "limits": "It requires strict band-limiting, an idealisation — a truly band-limited signal is infinite in time, so real signals are only approximately band-limited and need anti-aliasing filters, which have finite transition bands and motivate oversampling margins. The strict inequality matters: sampling at exactly twice the top frequency can miss content at the band edge. And compressed sensing shows the twice-the-highest-frequency bound is sufficient but not always necessary, since sparse signals can be recovered from fewer samples.",
   "misreadings": "It does not say you can never reconstruct an undersampled signal of any kind — under sparsity, sub-Nyquist recovery is possible; the theorem gives a sufficient condition, not the only one. And the Nyquist rate and Nyquist frequency are different quantities, one belonging to the signal and one to the sampler.",
@@ -46,11 +57,17 @@
   "coinedYear": 1949,
   "namedAfter": "Harry Nyquist and Claude Shannon",
   "sources": [
-    {"text": "Nyquist-Shannon sampling theorem, Wikipedia. — the statement, the Nyquist rate and frequency, aliasing, sinc reconstruction, and the discoverers.", "url": "https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem", "type": "secondary"},
-    {"text": "\"The origin story of the sampling theorem and Vladimir Kotelnikov,\" COMSOL Blog. — the multiple independent discoverers and Kotelnikov's 1933 formulation.", "url": "https://www.comsol.com/blogs/the-origin-story-of-the-sampling-theorem-and-vladimir-kotelnikov", "type": "secondary"}
+    {
+      "text": "Nyquist-Shannon sampling theorem, Wikipedia. — the statement, the Nyquist rate and frequency, aliasing, sinc reconstruction, and the discoverers.",
+      "url": "https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "\"The origin story of the sampling theorem and Vladimir Kotelnikov,\" COMSOL Blog. — the multiple independent discoverers and Kotelnikov's 1933 formulation.",
+      "url": "https://www.comsol.com/blogs/the-origin-story-of-the-sampling-theorem-and-vladimir-kotelnikov",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem",
-  "related": [
-    {"slug": "the-halting-problem", "kind": "kindred"}
-  ]
+  "related": []
 }

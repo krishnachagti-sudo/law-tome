@@ -2,7 +2,10 @@
   "no": "448",
   "slug": "the-doomsday-argument",
   "name": "The Doomsday Argument",
-  "aliases": ["The Carter catastrophe", "The Doomsday inference"],
+  "aliases": [
+    "The Carter catastrophe",
+    "The Doomsday inference"
+  ],
   "statement": "If you are a random human in the sequence of all who will ever live, humanity is unlikely to last vastly longer.",
   "statementAccent": "unlikely to last vastly longer",
   "meaning": "The Doomsday argument is a probabilistic argument that claims to bound the future number of human beings, and hence how much longer humanity will last, from an estimate of how many humans have been born so far and the assumption that you should treat your own position in the sequence of all humans as a random sample. If your birth rank is a random draw from the total, it is improbable that you sit at the extreme beginning, which statistically disfavours hypotheses in which vastly many more humans are yet to come, shifting probability toward a nearer end.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It is one of the earliest formal probabilistic arguments that humanity's extinction may be nearer or more likely than naive optimism suggests, feeding into the study of existential risk. It is also a canonical test case for how to reason under observation-selection effects, alongside puzzles like Sleeping Beauty, and it sharpens debates in the philosophy of probability over indexical information, self-locating belief, and the legitimacy of treating one's own existence and position as evidence.",
   "working": [
-    {"lead": "Sample yourself randomly", "text": "to run the argument, treat your birth rank as a random draw from all humans who will ever live, the self-sampling assumption."},
-    {"lead": "Read it as a shift, not a date", "text": "take the conclusion as a change in the probability of a nearer end, not a forecast of when extinction occurs."},
-    {"lead": "Fix the reference class", "text": "recognise that the answer depends sharply on who counts as a member of the sampled population, a choice with no principled resolution."}
+    {
+      "lead": "Sample yourself randomly",
+      "text": "to run the argument, treat your birth rank as a random draw from all humans who will ever live, the self-sampling assumption."
+    },
+    {
+      "lead": "Read it as a shift, not a date",
+      "text": "take the conclusion as a change in the probability of a nearer end, not a forecast of when extinction occurs."
+    },
+    {
+      "lead": "Fix the reference class",
+      "text": "recognise that the answer depends sharply on who counts as a member of the sampled population, a choice with no principled resolution."
+    }
   ],
   "limits": "It is highly contested, with no consensus that it is valid; serious philosophers and physicists line up on both sides. Its numerical output is prior-dependent and reference-class-dependent, so precise years-remaining figures are illustrative only. The self-indication assumption, that your existence favours worlds with more observers, can exactly cancel the Doomsday shift. The reference-class problem, who counts as human, has no principled answer, and Bayesian critics note the conclusion is only a shift from a prior, negligible under broad priors. Carlton Caves' reductio, that Gott's rule predicts a fifty-year-old has a good chance of reaching a hundred and fifty, shows it can give absurd results where a genuine prior exists.",
   "misreadings": "It does not predict a specific doomsday date; it gives probabilistic bounds or shifts, not a forecast. It identifies no physical cause of extinction, being purely statistical and anthropic. It does not claim being early is impossible, only that large futures make an early rank improbable, which merely shifts probabilities. Gott's version and the Carter-Leslie version are independent and methodologically distinct, not one argument. And its status is genuinely open: the disagreement is about premises, self-sampling versus self-indication, the reference class, and priors, not about arithmetic.",
@@ -46,12 +58,30 @@
   "coinedYear": 1983,
   "namedAfter": "Brandon Carter",
   "sources": [
-    {"text": "Doomsday argument, Wikipedia. — the self-sampling reasoning, the birth-rank bound, and the Carter, Leslie, and Gott versions.", "url": "https://en.wikipedia.org/wiki/Doomsday_argument", "type": "secondary"},
-    {"text": "Dieks, 'Doomsday - or: The Dangers of Statistics,' The Philosophical Quarterly 42(166) (1992): 78-86. — the objection that the argument mis-samples one's temporal position.", "url": "https://academic.oup.com/pq/article-abstract/42/166/78/1541942", "type": "primary"}
+    {
+      "text": "Doomsday argument, Wikipedia. — the self-sampling reasoning, the birth-rank bound, and the Carter, Leslie, and Gott versions.",
+      "url": "https://en.wikipedia.org/wiki/Doomsday_argument",
+      "type": "secondary"
+    },
+    {
+      "text": "Dieks, 'Doomsday - or: The Dangers of Statistics,' The Philosophical Quarterly 42(166) (1992): 78-86. — the objection that the argument mis-samples one's temporal position.",
+      "url": "https://academic.oup.com/pq/article-abstract/42/166/78/1541942",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Doomsday_argument",
   "related": [
-    {"slug": "the-copernican-principle", "kind": "cause"},
-    {"slug": "the-great-filter", "kind": "kindred"}
+    {
+      "slug": "the-copernican-principle",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-great-filter",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-anthropic-principle",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "714",
   "slug": "groupthink",
   "name": "Groupthink",
-  "aliases": ["Janis's groupthink", "Concurrence-seeking"],
+  "aliases": [
+    "Janis's groupthink",
+    "Concurrence-seeking"
+  ],
   "statement": "When a group prizes harmony over honest appraisal, it talks itself into bad decisions.",
   "statementAccent": "it talks itself into bad decisions",
   "meaning": "Groupthink is a psychological phenomenon in which the desire for harmony, conformity, or consensus within a decision-making group leads to irrational or dysfunctional outcomes. Striving for unanimity overrides members' motivation to appraise alternatives realistically, so dissent is suppressed, critical evaluation lapses, and the group prizes agreement over sound judgment. The modern theory was developed by the social psychologist Irving Janis, notably in his 1972 book Victims of Groupthink, though the word itself was coined earlier by William Whyte in 1952 as a deliberate echo of the Newspeak vocabulary, such as doublethink, in George Orwell's novel Nineteen Eighty-Four. Janis analysed foreign-policy fiascos such as the Bay of Pigs invasion, Pearl Harbor, and the escalation of the Vietnam War, and the concept has since been applied to disasters like the Challenger space shuttle. Groupthink names the way cohesive, insulated groups can collectively march toward decisions that any member alone might have questioned.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "Groupthink is one of the most influential concepts in social psychology, management, and political science, offering a vocabulary for how well-intentioned, capable groups can make disastrous decisions. It explains why cohesive, insulated teams may suppress dissent and converge on flawed courses of action, and it has been applied to episodes from foreign-policy fiascos to corporate and engineering catastrophes such as the Challenger disaster. The theory is valuable not only as a diagnosis but as a source of concrete remedies, appointing devil's advocates, inviting outside views, and structuring deliberation to protect dissent, that organisations widely adopt to improve decision-making. Even though empirical support for the full model is mixed, the concept has profoundly shaped how leaders, boards, and committees think about the dangers of consensus, making groupthink a durable and practically important idea about the pathologies of group decision-making.",
   "working": [
-    {"lead": "Assemble a cohesive, insulated group", "text": "note the antecedents: strong cohesion, insulation from outside input, directive leadership, homogeneity, and external stress."},
-    {"lead": "Watch consensus-seeking take over", "text": "observe symptoms like self-censorship, illusion of unanimity, pressure on dissenters, and mindguarding suppress critical evaluation."},
-    {"lead": "Reintroduce dissent", "text": "counter it with devil's advocates, outside experts, leaders withholding preferences, and independent subgroups to restore realistic appraisal."}
+    {
+      "lead": "Assemble a cohesive, insulated group",
+      "text": "note the antecedents: strong cohesion, insulation from outside input, directive leadership, homogeneity, and external stress."
+    },
+    {
+      "lead": "Watch consensus-seeking take over",
+      "text": "observe symptoms like self-censorship, illusion of unanimity, pressure on dissenters, and mindguarding suppress critical evaluation."
+    },
+    {
+      "lead": "Reintroduce dissent",
+      "text": "counter it with devil's advocates, outside experts, leaders withholding preferences, and independent subgroups to restore realistic appraisal."
+    }
   ],
   "limits": "Empirical support for the full groupthink model is mixed and contested; studies find only partial support, and the causal role of cohesiveness in particular has not been reliably demonstrated. Much of the evidence comes from retrospective case studies, which are vulnerable to selective interpretation, and the model is difficult to test experimentally. Not every poor group decision results from groupthink, and cohesion can also improve performance, so the concept can be over-applied as a label for any bad outcome. The word was coined by William Whyte, not Janis, who developed the theory, a point sometimes muddled. So while groupthink is a powerful and widely used framework with useful remedies, its precise mechanisms and predictive validity remain debated, and it should be applied with care rather than as a catch-all explanation.",
   "misreadings": "Groupthink is not just any conformity or bad group decision; it names a specific syndrome in which consensus-seeking suppresses critical appraisal under identifiable conditions. Janis did not coin the term, which came from William Whyte; Janis developed the psychological theory. And the model is not fully validated: empirical support is mixed and the role of cohesiveness is uncertain, so labelling every failed group decision as groupthink, or treating the theory as settled, overstates a concept whose evidence base remains contested.",
@@ -46,12 +58,30 @@
   "coinedYear": 1952,
   "namedAfter": null,
   "sources": [
-    {"text": "Groupthink, Wikipedia. — the consensus-seeking definition, Janis's development in Victims of Groupthink (1972), Whyte's 1952 coinage and the Orwell allusion, the eight symptoms and antecedent conditions, the Bay of Pigs and Challenger cases, the remedies, and the mixed empirical support.", "url": "https://en.wikipedia.org/wiki/Groupthink", "type": "secondary"},
-    {"text": "Groupthink, EBSCO Research Starters. — Janis's theory, the symptoms and antecedents, and the criticism that empirical support is limited.", "url": "https://www.ebsco.com/research-starters/social-sciences-and-humanities/groupthink", "type": "secondary"}
+    {
+      "text": "Groupthink, Wikipedia. — the consensus-seeking definition, Janis's development in Victims of Groupthink (1972), Whyte's 1952 coinage and the Orwell allusion, the eight symptoms and antecedent conditions, the Bay of Pigs and Challenger cases, the remedies, and the mixed empirical support.",
+      "url": "https://en.wikipedia.org/wiki/Groupthink",
+      "type": "secondary"
+    },
+    {
+      "text": "Groupthink, EBSCO Research Starters. — Janis's theory, the symptoms and antecedents, and the criticism that empirical support is limited.",
+      "url": "https://www.ebsco.com/research-starters/social-sciences-and-humanities/groupthink",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Groupthink",
   "related": [
-    {"slug": "diffusion-of-responsibility", "kind": "kindred"},
-    {"slug": "deindividuation", "kind": "kindred"}
+    {
+      "slug": "diffusion-of-responsibility",
+      "kind": "kindred"
+    },
+    {
+      "slug": "deindividuation",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-asch-conformity-experiments",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "715",
   "slug": "the-overjustification-effect",
   "name": "The Overjustification Effect",
-  "aliases": ["Overjustification", "The undermining effect"],
+  "aliases": [
+    "Overjustification",
+    "The undermining effect"
+  ],
   "statement": "Pay people for something they already loved doing, and their inner motivation for it can wither.",
   "statementAccent": "their inner motivation for it can wither",
   "meaning": "The overjustification effect is a phenomenon in which offering an expected external reward, such as money or a prize, for an activity a person already finds intrinsically rewarding can reduce their intrinsic motivation to do it. The external incentive over-justifies the behaviour, leading the person to attribute their action to the reward rather than to their own interest, so once the reward is removed their motivation can fall below where it started. The classic demonstration is a 1973 study by Mark Lepper, David Greene, and Richard Nisbett, in which preschool children who already enjoyed drawing were given a Good Player Award: those told in advance they would receive the award later spent less free time drawing than children who got an unexpected reward or none at all. Edward Deci's 1971 experiment paying people to solve puzzles found the same undermining of later voluntary engagement. The effect challenges the simple behaviourist assumption that rewards always strengthen behaviour.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The overjustification effect is a landmark finding in the psychology of motivation, with far-reaching implications for education, parenting, and management. It shows that rewards are not uniformly beneficial: paying or prizing people for activities they already enjoy can crowd out the intrinsic interest that sustained the behaviour, so incentive schemes may backfire once the rewards stop. This challenges the behaviourist assumption that reinforcement always strengthens behaviour and underlies self-determination theory's emphasis on autonomy, competence, and relatedness as sources of durable motivation. In practice it cautions against over-relying on grades, bonuses, and prizes for inherently engaging work, and it highlights the value of unexpected rewards and praise, which do not undermine motivation. The effect thus reshaped how psychologists and practitioners think about the relationship between external incentives and the inner drive to do things for their own sake.",
   "working": [
-    {"lead": "Start with intrinsic interest", "text": "identify an activity the person already finds rewarding for its own sake, so there is intrinsic motivation to affect."},
-    {"lead": "Add an expected, tangible reward", "text": "offer a salient reward promised in advance for doing the activity, which becomes an external justification for the behaviour."},
-    {"lead": "Remove the reward", "text": "note that motivation can then fall below its original level, as the person now attributes the activity to the reward rather than their own interest."}
+    {
+      "lead": "Start with intrinsic interest",
+      "text": "identify an activity the person already finds rewarding for its own sake, so there is intrinsic motivation to affect."
+    },
+    {
+      "lead": "Add an expected, tangible reward",
+      "text": "offer a salient reward promised in advance for doing the activity, which becomes an external justification for the behaviour."
+    },
+    {
+      "lead": "Remove the reward",
+      "text": "note that motivation can then fall below its original level, as the person now attributes the activity to the reward rather than their own interest."
+    }
   ],
   "limits": "The overjustification effect has clear boundary conditions: it applies mainly to tangible, expected rewards for tasks that are already intrinsically interesting, while unexpected rewards, verbal praise, and rewards for dull tasks do not undermine and can even help. The strength of the effect is debated. A 1999 meta-analysis by Deci, Koestner, and Ryan supported the undermining of intrinsic motivation by such rewards, while an earlier analysis by Cameron and Pierce argued the effect is limited and largely inconsequential, and the two sides disputed each other's methods. The effect also appears stronger in children than adults, and some cited magnitudes come from secondary summaries. So while the phenomenon is well established within its boundary conditions, its size and generality remain contested, and rewards are not universally harmful to motivation.",
   "misreadings": "The effect does not show that rewards always reduce motivation; it applies to tangible, expected rewards for already-interesting tasks, while praise, unexpected rewards, and incentives for dull tasks do not undermine and may help. It is not that any payment ruins enjoyment, but that a salient external justification can crowd out intrinsic interest, especially when the reward is anticipated. And the effect's magnitude is debated, with meta-analyses reaching different conclusions, so treating overjustification as proof that all incentives backfire, or dismissing it as a myth, both overstate a real but bounded and contested phenomenon.",
@@ -46,12 +58,34 @@
   "coinedYear": 1973,
   "namedAfter": null,
   "sources": [
-    {"text": "Overjustification effect, Wikipedia. — the undermining of intrinsic motivation by expected external rewards, the Lepper, Greene, and Nisbett 1973 Good Player Award study, Deci's 1971 puzzle study, the self-perception and cognitive-evaluation mechanisms, the boundary conditions, and the Deci-Koestner-Ryan versus Cameron-Pierce debate.", "url": "https://en.wikipedia.org/wiki/Overjustification_effect", "type": "secondary"},
-    {"text": "Overjustification Effect, The Decision Lab. — the effect, its mechanisms, and its boundary conditions.", "url": "https://thedecisionlab.com/biases/overjustification-effect", "type": "secondary"}
+    {
+      "text": "Overjustification effect, Wikipedia. — the undermining of intrinsic motivation by expected external rewards, the Lepper, Greene, and Nisbett 1973 Good Player Award study, Deci's 1971 puzzle study, the self-perception and cognitive-evaluation mechanisms, the boundary conditions, and the Deci-Koestner-Ryan versus Cameron-Pierce debate.",
+      "url": "https://en.wikipedia.org/wiki/Overjustification_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Overjustification Effect, The Decision Lab. — the effect, its mechanisms, and its boundary conditions.",
+      "url": "https://thedecisionlab.com/biases/overjustification-effect",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Overjustification_effect",
   "related": [
-    {"slug": "goodharts-law", "kind": "kindred"},
-    {"slug": "the-ikea-effect", "kind": "kindred"}
+    {
+      "slug": "goodharts-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-ikea-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "operant-conditioning",
+      "kind": "tension"
+    },
+    {
+      "slug": "self-determination-theory",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,9 @@
   "no": "062",
   "slug": "brandolinis-law",
   "name": "Brandolini's Law",
-  "aliases": ["The bullshit asymmetry principle"],
+  "aliases": [
+    "The bullshit asymmetry principle"
+  ],
   "statement": "The amount of energy needed to refute bullshit is an order of magnitude bigger than that needed to produce it.",
   "statementAccent": "an order of magnitude bigger",
   "meaning": "Making a false or sloppy claim is cheap and fast; disproving it is expensive and slow. Falsehoods can therefore be generated far faster than any honest party can correct them.",
@@ -37,9 +39,18 @@
   ],
   "whyItMatters": "It explains why debunking feels like bailing out the sea, and why misinformation, propaganda, and bad-faith debate are so effective: the attacker's costs are trivial and the defender's are enormous. It reframes the fight against falsehood as a problem of asymmetric economics, not of simply 'being right'.",
   "working": [
-    {"lead": "Don't try to refute everything", "text": "point-by-point rebuttal is the losing game the asymmetry is designed to win; triage to the claims that matter most and let the rest go."},
-    {"lead": "Inoculate before the fact", "text": "'pre-bunking' — warning people about a manipulation technique before they meet it — is cheaper than debunking each instance after it spreads."},
-    {"lead": "Raise the cost of producing nonsense", "text": "friction, provenance, and accountability on the supply side scale better than refutation on the demand side."}
+    {
+      "lead": "Don't try to refute everything",
+      "text": "point-by-point rebuttal is the losing game the asymmetry is designed to win; triage to the claims that matter most and let the rest go."
+    },
+    {
+      "lead": "Inoculate before the fact",
+      "text": "'pre-bunking' — warning people about a manipulation technique before they meet it — is cheaper than debunking each instance after it spreads."
+    },
+    {
+      "lead": "Raise the cost of producing nonsense",
+      "text": "friction, provenance, and accountability on the supply side scale better than refutation on the demand side."
+    }
   ],
   "limits": "It is an aphorism, not a measured law: the 'order of magnitude' is rhetorical, signalling 'far greater', not a calibrated ratio. Its main hazard is in reverse — the label 'bullshit' can be used to wave away genuine, good-faith criticism without engaging it, so invoking Brandolini's law to justify not responding can itself shield bad claims from scrutiny. It also presupposes that one side already knows which claims are the bullshit. It describes why debunking is hard; it offers no method for doing it, and can breed fatalism.",
   "misreadings": "It does not say refutation is impossible or pointless, nor that whoever asserts loudest is wrong. It describes an asymmetry of effort — that producing falsehood is cheap and refuting it is dear — which is an argument for choosing your battles and inoculating early, not for giving up on truth.",
@@ -50,12 +61,31 @@
   "coinedYear": 2013,
   "namedAfter": "Alberto Brandolini",
   "sources": [
-    {"text": "Brandolini's law, Wikipedia. — the canonical wording, the January 2013 origin, the Berlusconi/Travaglio trigger, and the Swift antecedent.", "url": "https://en.wikipedia.org/wiki/Brandolini%27s_law", "type": "secondary"},
-    {"text": "Gish gallop, Wikipedia. — the debate tactic that operationalises the asymmetry (coined 1994 by Eugenie Scott).", "url": "https://en.wikipedia.org/wiki/Gish_gallop", "type": "secondary"},
-    {"text": "Paul, C. & Matthews, M. (2016). \"The Russian 'Firehose of Falsehood' Propaganda Model.\" RAND Corporation.", "url": "https://www.rand.org/pubs/perspectives/PE198.html", "type": "secondary"}
+    {
+      "text": "Brandolini's law, Wikipedia. — the canonical wording, the January 2013 origin, the Berlusconi/Travaglio trigger, and the Swift antecedent.",
+      "url": "https://en.wikipedia.org/wiki/Brandolini%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Gish gallop, Wikipedia. — the debate tactic that operationalises the asymmetry (coined 1994 by Eugenie Scott).",
+      "url": "https://en.wikipedia.org/wiki/Gish_gallop",
+      "type": "secondary"
+    },
+    {
+      "text": "Paul, C. & Matthews, M. (2016). \"The Russian 'Firehose of Falsehood' Propaganda Model.\" RAND Corporation.",
+      "url": "https://www.rand.org/pubs/perspectives/PE198.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Brandolini%27s_law",
   "related": [
-    {"slug": "poes-law", "kind": "kindred"}
+    {
+      "slug": "poes-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-gish-gallop",
+      "kind": "kindred"
+    }
   ]
 }

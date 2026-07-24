@@ -2,7 +2,10 @@
   "no": "726",
   "slug": "the-fisher-effect",
   "name": "The Fisher Effect",
-  "aliases": ["Fisher hypothesis", "The Fisher equation"],
+  "aliases": [
+    "Fisher hypothesis",
+    "The Fisher equation"
+  ],
   "statement": "When expected inflation rises, nominal interest rates rise with it, leaving the real return unchanged.",
   "statementAccent": "leaving the real return unchanged",
   "meaning": "The Fisher effect is an economic theory, attributed to the American economist Irving Fisher, describing the relationship between nominal interest rates, real interest rates, and expected inflation. It holds that the real interest rate is determined by real factors and is unaffected by expected inflation, so the nominal interest rate adjusts one-for-one with expected inflation, leaving the real rate unchanged in the long run. The relationship is captured by the Fisher equation, one plus the nominal rate equals one plus the real rate times one plus expected inflation, commonly approximated as the nominal rate being about the real rate plus expected inflation, or equivalently the real rate being about the nominal rate minus expected inflation. Fisher developed the idea in works including The Rate of Interest in 1907 and The Theory of Interest in 1930. A related extension, the international Fisher effect, links interest-rate differences between countries to expected exchange-rate changes. The Fisher effect is fundamental to monetary economics, finance, and the analysis of inflation and interest rates.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The Fisher effect is a foundational relationship in monetary economics and finance, providing the standard way to connect inflation expectations, interest rates, and real returns. It explains why nominal interest rates tend to rise with expected inflation, underlies the distinction between real and nominal rates that pervades bond pricing, lending, and macroeconomic policy, and lets analysts back out real interest rates and inflation expectations from observed nominal rates. Its international extension informs the analysis of exchange rates and cross-border investment. Central banks, investors, and economists rely on the Fisher framework to reason about how monetary conditions and inflation feed into the cost of borrowing and the returns to saving. Even where the strict one-for-one adjustment holds only approximately, the Fisher equation's separation of nominal returns into real return plus inflation compensation is an indispensable tool for thinking clearly about money, interest, and inflation.",
   "working": [
-    {"lead": "Split the nominal rate", "text": "decompose the nominal interest rate into a real rate plus compensation for expected inflation, via the Fisher equation."},
-    {"lead": "Hold the real rate fixed", "text": "assume the real rate is set by real factors and independent of inflation, so monetary changes do not alter it."},
-    {"lead": "Adjust nominal rates", "text": "conclude that a change in expected inflation moves the nominal rate one-for-one, and extend the logic across countries for exchange rates."}
+    {
+      "lead": "Split the nominal rate",
+      "text": "decompose the nominal interest rate into a real rate plus compensation for expected inflation, via the Fisher equation."
+    },
+    {
+      "lead": "Hold the real rate fixed",
+      "text": "assume the real rate is set by real factors and independent of inflation, so monetary changes do not alter it."
+    },
+    {
+      "lead": "Adjust nominal rates",
+      "text": "conclude that a change in expected inflation moves the nominal rate one-for-one, and extend the logic across countries for exchange rates."
+    }
   ],
   "limits": "The strict one-for-one Fisher effect is a long-run tendency, and empirical support is mixed, especially in the short run, where nominal rates may not fully or immediately reflect changes in expected inflation. Real interest rates are not truly constant; they vary with the business cycle, saving and investment, and shocks, so the assumption that they are independent of monetary conditions is an approximation. Taxes on nominal interest and risk premia further complicate the pure relationship, driving a wedge between the simple equation and observed rates. Periods of unusual monetary policy, such as large-scale asset purchases, can also disturb it. So the Fisher effect is an essential organising framework and a good long-run guide, but it should be applied with awareness that real rates move and that the one-for-one adjustment holds only imperfectly.",
   "misreadings": "The Fisher effect does not say nominal and real rates are the same; it distinguishes them, with the nominal rate exceeding the real rate by expected inflation. It does not claim the real rate never changes in reality, only that it is treated as independent of inflation in the long run, an approximation that fails in the short run. And the one-for-one adjustment is a tendency, not an exact empirical fact, complicated by taxes, risk, and monetary policy, so treating the Fisher equation as a precise prediction rather than a long-run relationship overstates its reliability.",
@@ -45,12 +57,30 @@
   "provenance": "canon",
   "namedAfter": "Irving Fisher",
   "sources": [
-    {"text": "Fisher equation, Wikipedia. — the relationship among nominal and real interest rates and inflation, the equation one plus the nominal rate equals one plus the real rate times one plus inflation, and its attribution to Irving Fisher.", "url": "https://en.wikipedia.org/wiki/Fisher_equation", "type": "secondary"},
-    {"text": "Fisher hypothesis, Wikipedia. — the hypothesis that the real rate is independent of monetary factors, so nominal rates adjust one-for-one with expected inflation.", "url": "https://en.wikipedia.org/wiki/Fisher_hypothesis", "type": "secondary"}
+    {
+      "text": "Fisher equation, Wikipedia. — the relationship among nominal and real interest rates and inflation, the equation one plus the nominal rate equals one plus the real rate times one plus inflation, and its attribution to Irving Fisher.",
+      "url": "https://en.wikipedia.org/wiki/Fisher_equation",
+      "type": "secondary"
+    },
+    {
+      "text": "Fisher hypothesis, Wikipedia. — the hypothesis that the real rate is independent of monetary factors, so nominal rates adjust one-for-one with expected inflation.",
+      "url": "https://en.wikipedia.org/wiki/Fisher_hypothesis",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Fisher_equation",
   "related": [
-    {"slug": "the-money-illusion", "kind": "kindred"},
-    {"slug": "the-quantity-theory-of-money", "kind": "kindred"}
+    {
+      "slug": "the-money-illusion",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-quantity-theory-of-money",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-fisher-equation",
+      "kind": "near-twin"
+    }
   ]
 }

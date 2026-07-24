@@ -2,7 +2,9 @@
   "no": "359",
   "slug": "the-trolley-problem",
   "name": "The Trolley Problem",
-  "aliases": ["The trolley dilemma"],
+  "aliases": [
+    "The trolley dilemma"
+  ],
   "statement": "Most would divert a runaway trolley to kill one instead of five, but few would push a man to do the same.",
   "statementAccent": "kill one instead of five",
   "meaning": "The trolley problem is a family of ethical thought experiments probing why our moral intuitions diverge across cases that seem numerically alike. In the basic case, a runaway trolley will kill five people on the track; you can pull a lever to divert it onto a side track where it kills one. Most people judge that you may pull the lever. In the footbridge variant, the only way to stop the trolley is to push a large stranger off a bridge into its path, killing him to save five — and most judge that you may not. The puzzle is what accounts for the different verdicts.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It is the most famous thought experiment in modern moral philosophy, a workbench for testing consequentialist and deontological theories against considered intuitions. It anchors debates over the doctrine of double effect, killing versus letting die, and the moral significance of using a person as a means, and it has shaped experimental moral psychology and public discussion of machine ethics, from medical triage to the programming of autonomous vehicles.",
   "working": [
-    {"lead": "Vary one feature at a time", "text": "compare cases that differ in a single respect — means versus side effect, personal versus impersonal — to isolate what your intuition is tracking."},
-    {"lead": "Name the distinction you are using", "text": "make explicit whether you appeal to double effect, doing versus allowing, or something else, rather than leaving the verdict unexplained."},
-    {"lead": "Hold intuitions lightly", "text": "treat the split judgements as data to be explained, not as settled ethics, since the artificiality of the cases limits what they can establish."}
+    {
+      "lead": "Vary one feature at a time",
+      "text": "compare cases that differ in a single respect — means versus side effect, personal versus impersonal — to isolate what your intuition is tracking."
+    },
+    {
+      "lead": "Name the distinction you are using",
+      "text": "make explicit whether you appeal to double effect, doing versus allowing, or something else, rather than leaving the verdict unexplained."
+    },
+    {
+      "lead": "Hold intuitions lightly",
+      "text": "treat the split judgements as data to be explained, not as settled ethics, since the artificiality of the cases limits what they can establish."
+    }
   ],
   "limits": "It is a thought experiment probing intuitions, not a settled ethical law, and there is no consensus on its resolution. Critics argue the scenarios are so artificial — perfect knowledge, guaranteed outcomes, no alternatives — that they may mislead about real moral life, where uncertainty and relationships dominate. The empirical dual-process findings are influential but contested and have faced replication and interpretation challenges. And applications to self-driving cars are widely questioned, since real driving rarely presents a clean one-versus-five choice, so the puzzle illuminates moral reasoning more than it dictates policy.",
   "misreadings": "It is not asking for the single correct action so much as why our verdicts differ across similar cases. Foot introduced the original case in 1967, but it was Judith Jarvis Thomson who named it the trolley problem and developed the footbridge and transplant variants in essays from 1976 and 1985. And the neuroscience does not prove which answer is right: showing that emotion drives the footbridge verdict does not by itself show that verdict is mistaken, a further and contested inference.",
@@ -46,12 +57,35 @@
   "coinedYear": 1967,
   "namedAfter": "Philippa Foot",
   "sources": [
-    {"text": "Doctrine of Double Effect, Stanford Encyclopedia of Philosophy. — Foot's 1967 case, the intended-versus-foreseen distinction, and the trolley cases.", "url": "https://plato.stanford.edu/entries/double-effect/", "type": "secondary"},
-    {"text": "Greene et al., \"An fMRI Investigation of Emotional Engagement in Moral Judgment,\" Science 293 (2001): 2105-2108. — the personal-versus-impersonal dilemma finding.", "url": "https://www.science.org/doi/10.1126/science.1062872", "type": "primary"},
-    {"text": "Trolley problem, Wikipedia. — the switch and footbridge cases and the Foot and Thomson attributions.", "url": "https://en.wikipedia.org/wiki/Trolley_problem", "type": "secondary"}
+    {
+      "text": "Doctrine of Double Effect, Stanford Encyclopedia of Philosophy. — Foot's 1967 case, the intended-versus-foreseen distinction, and the trolley cases.",
+      "url": "https://plato.stanford.edu/entries/double-effect/",
+      "type": "secondary"
+    },
+    {
+      "text": "Greene et al., \"An fMRI Investigation of Emotional Engagement in Moral Judgment,\" Science 293 (2001): 2105-2108. — the personal-versus-impersonal dilemma finding.",
+      "url": "https://www.science.org/doi/10.1126/science.1062872",
+      "type": "primary"
+    },
+    {
+      "text": "Trolley problem, Wikipedia. — the switch and footbridge cases and the Foot and Thomson attributions.",
+      "url": "https://en.wikipedia.org/wiki/Trolley_problem",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Trolley_problem",
   "related": [
-    {"slug": "the-veil-of-ignorance", "kind": "kindred"}
+    {
+      "slug": "the-veil-of-ignorance",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-doctrine-of-double-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "utilitarianism",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,9 @@
   "no": "206",
   "slug": "gibrats-law",
   "name": "Gibrat's Law",
-  "aliases": ["The law of proportionate effect"],
+  "aliases": [
+    "The law of proportionate effect"
+  ],
   "statement": "A firm's growth rate does not depend on how big it already is.",
   "statementAccent": "does not depend on how big it already is",
   "meaning": "The proportional, or percentage, rate of growth of a firm — or a city — is independent of its absolute size. Whether an enterprise is tiny or huge, it has the same expected percentage growth and the same spread of possible outcomes. Growth is treated as a size-independent random draw applied to current size, so who ends up large is the cumulative result of many independent lucky and unlucky shocks.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It is a foundational null model for how firms and cities grow and why their sizes are so unequally distributed. As a baseline of pure proportionate growth, it frames the central empirical questions of industrial and urban economics — and the ways real data depart from it are themselves informative.",
   "working": [
-    {"lead": "Use it as a growth baseline", "text": "treat size-independent proportional growth as the null hypothesis, then test whether real firms or cities deviate from it."},
-    {"lead": "Expect lognormal sizes", "text": "where growth is roughly multiplicative and size-independent, anticipate a lognormal spread of sizes rather than a typical size."},
-    {"lead": "Watch the small and the surviving", "text": "remember the law fits large surviving firms better than small young ones, which tend to grow faster and exit more often."}
+    {
+      "lead": "Use it as a growth baseline",
+      "text": "treat size-independent proportional growth as the null hypothesis, then test whether real firms or cities deviate from it."
+    },
+    {
+      "lead": "Expect lognormal sizes",
+      "text": "where growth is roughly multiplicative and size-independent, anticipate a lognormal spread of sizes rather than a typical size."
+    },
+    {
+      "lead": "Watch the small and the surviving",
+      "text": "remember the law fits large surviving firms better than small young ones, which tend to grow faster and exit more often."
+    }
   ],
   "limits": "The law is empirically contested, especially for firms. Evidence repeatedly shows smaller firms grow faster than larger ones and are more likely to exit, contradicting strict size-independence; survivorship bias makes the law look better when only surviving firms are studied. Growth depends on age and other characteristics too. It survives better as a long-run regularity and for large, established firms. The city-size version is also disputed: the largest cities follow a power law rather than lognormal, leaving the whole-distribution question unsettled. The law functions best as a useful null model of proportionate growth rather than an established regularity.",
   "misreadings": "It does not claim all firms grow at the same rate — only that the expected percentage growth does not depend on size; actual growth is a random draw. And the evidence does not confirm it as an iron law: at the firm level the record runs mostly against strict size-independence in the short run.",
@@ -46,11 +57,26 @@
   "coinedYear": 1931,
   "namedAfter": "Robert Gibrat",
   "sources": [
-    {"text": "Gibrat's law, Wikipedia. — the size-independent-growth statement, the lognormal mechanism, and the firm-level evidence against it.", "url": "https://en.wikipedia.org/wiki/Gibrat%27s_law", "type": "secondary"},
-    {"text": "Eeckhout, \"Gibrat's Law for (All) Cities,\" American Economic Review 94(5):1429-1451 (2004). — the lognormal city-size result and the Zipf-tail contrast.", "url": "https://www.aeaweb.org/articles?id=10.1257/0002828043052303", "type": "primary"}
+    {
+      "text": "Gibrat's law, Wikipedia. — the size-independent-growth statement, the lognormal mechanism, and the firm-level evidence against it.",
+      "url": "https://en.wikipedia.org/wiki/Gibrat%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Eeckhout, \"Gibrat's Law for (All) Cities,\" American Economic Review 94(5):1429-1451 (2004). — the lognormal city-size result and the Zipf-tail contrast.",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/0002828043052303",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Gibrat%27s_law",
   "related": [
-    {"slug": "zipfs-law", "kind": "kindred"}
+    {
+      "slug": "zipfs-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "preferential-attachment",
+      "kind": "kindred"
+    }
   ]
 }

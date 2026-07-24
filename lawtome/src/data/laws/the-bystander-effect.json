@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is a landmark of social psychology, shaping how emergencies, bystander training, and prosocial behaviour are understood. But it is also a cautionary tale about how a vivid, misreported anecdote can drive a field and enter popular culture, and about the importance of checking laboratory narratives against real-world evidence.",
   "working": [
-    {"lead": "Name a specific helper", "text": "if you need help in a crowd, point to one person and ask them directly, defeating the diffusion of responsibility."},
-    {"lead": "Break the ambiguity", "text": "as a witness, state plainly that this is an emergency, so others do not read your calm as a sign nothing is wrong."},
-    {"lead": "Do not over-trust the pessimism", "text": "recognise that in real public conflicts people usually do intervene, so the classic dispiriting version overstates inaction."}
+    {
+      "lead": "Name a specific helper",
+      "text": "if you need help in a crowd, point to one person and ask them directly, defeating the diffusion of responsibility."
+    },
+    {
+      "lead": "Break the ambiguity",
+      "text": "as a witness, state plainly that this is an emergency, so others do not read your calm as a sign nothing is wrong."
+    },
+    {
+      "lead": "Do not over-trust the pessimism",
+      "text": "recognise that in real public conflicts people usually do intervene, so the classic dispiriting version overstates inaction."
+    }
   ],
   "limits": "The effect is a real, replicable laboratory phenomenon under specific conditions — ambiguous, non-dangerous emergencies among strangers — but its popular version is overstated, and its founding anecdote was false. The story of thirty-eight witnesses who watched Kitty Genovese die and did nothing is unsupported by the evidence; there is no basis for the number, and at least one witness shouted at the attacker. Real-world CCTV analysis finds bystanders intervene in the great majority of public conflicts, and the effect attenuates or reverses in clearly dangerous emergencies. It is best seen as genuine under narrow conditions, wrapped in an exaggerated narrative.",
   "misreadings": "It does not show that crowds reliably fail to help — in real recorded emergencies, intervention is the norm, and more bystanders can mean more help. And the Kitty Genovese story that inspired it is largely a myth, so it should be cited as the misreported case that sparked the research, not as fact.",
@@ -45,11 +54,26 @@
   "coinedYear": 1968,
   "namedAfter": "John Darley and Bibb Latane",
   "sources": [
-    {"text": "Bystander effect, Wikipedia. — the definition, the mechanisms, the 1968 experiments, and the Genovese myth and Philpot real-world findings.", "url": "https://en.wikipedia.org/wiki/Bystander_effect", "type": "secondary"},
-    {"text": "Manning, Levine & Collins, \"The Kitty Genovese murder and the social psychology of helping,\" American Psychologist 62(6):555-562 (2007), PubMed.", "url": "https://pubmed.ncbi.nlm.nih.gov/17874896/", "type": "primary"}
+    {
+      "text": "Bystander effect, Wikipedia. — the definition, the mechanisms, the 1968 experiments, and the Genovese myth and Philpot real-world findings.",
+      "url": "https://en.wikipedia.org/wiki/Bystander_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Manning, Levine & Collins, \"The Kitty Genovese murder and the social psychology of helping,\" American Psychologist 62(6):555-562 (2007), PubMed.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17874896/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Bystander_effect",
   "related": [
-    {"slug": "cognitive-dissonance", "kind": "kindred"}
+    {
+      "slug": "diffusion-of-responsibility",
+      "kind": "cause"
+    },
+    {
+      "slug": "social-proof",
+      "kind": "kindred"
+    }
   ]
 }

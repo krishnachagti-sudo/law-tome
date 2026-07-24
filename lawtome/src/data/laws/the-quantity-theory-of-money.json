@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is one of the oldest and most influential ideas in economics, four centuries in the making, and the intellectual backbone of monetarism and much central banking. Its core long-run insight — that sustained inflation is fundamentally a monetary phenomenon — is broadly accepted, and its explanation of hyperinflations is beyond serious dispute, even as its short-run and low-inflation applications are contested.",
   "working": [
-    {"lead": "Watch money against output", "text": "expect sustained inflation where the money supply persistently grows faster than real output, especially over long horizons."},
-    {"lead": "Mind velocity", "text": "do not assume a bigger money supply must raise prices, since a fall in velocity or idle reserves can offset it."},
-    {"lead": "Separate identity from theory", "text": "remember the equation of exchange is a truism, predictive only once you assume velocity and output are independent of money."}
+    {
+      "lead": "Watch money against output",
+      "text": "expect sustained inflation where the money supply persistently grows faster than real output, especially over long horizons."
+    },
+    {
+      "lead": "Mind velocity",
+      "text": "do not assume a bigger money supply must raise prices, since a fall in velocity or idle reserves can offset it."
+    },
+    {
+      "lead": "Separate identity from theory",
+      "text": "remember the equation of exchange is a truism, predictive only once you assume velocity and output are independent of money."
+    }
   ],
   "limits": "The strict, short-run, proportional version fails empirically. Velocity is not stable in the short run, as quantitative easing showed when a huge base expansion produced little inflation because velocity fell and reserves sat idle. Keynesians note that money demand depends on interest rates, that a liquidity trap hoards new money, and that output is not always at full capacity. Which monetary aggregate matters is unclear, and the money supply is partly endogenous, driven by bank lending — reasons central banks abandoned money-supply targeting for inflation targeting. The theory holds far better over long horizons and for large changes than in the short run, and the causes of the 2021 inflation are genuinely contested.",
   "misreadings": "The equation of exchange does not by itself prove the theory — it is an identity, predictive only under added assumptions about velocity and output. Not every increase in the money supply must raise prices proportionally, especially when output is slack or velocity offsets it. Printing money does not always cause hyperinflation; the vast post-2008 base expansion did not, since hyperinflation needs sustained deficit monetisation and collapsing money demand. And velocity is not a constant, however stable it looks over long stretches.",
@@ -45,12 +54,35 @@
   "coinedYear": 1911,
   "namedAfter": "Irving Fisher",
   "sources": [
-    {"text": "Quantity theory of money, Wikipedia. — the proportionality statement, the equation of exchange, the history, and the velocity and endogenous-money critiques.", "url": "https://en.wikipedia.org/wiki/Quantity_theory_of_money", "type": "secondary"},
-    {"text": "Friedman, \"The Counter-Revolution in Monetary Theory\" (1970), Hoover Institution. — the monetarist restatement and the inflation-is-a-monetary-phenomenon dictum.", "url": "https://miltonfriedman.hoover.org/internal/media/dispatcher/214480/full", "type": "primary"},
-    {"text": "Jung, \"The Quantity Theory of Money, 1870-2020,\" ECB Working Paper 2940 (2024). — long-run proportionality and its weakening during the low-inflation decades.", "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp.2940.en.pdf", "type": "primary"}
+    {
+      "text": "Quantity theory of money, Wikipedia. — the proportionality statement, the equation of exchange, the history, and the velocity and endogenous-money critiques.",
+      "url": "https://en.wikipedia.org/wiki/Quantity_theory_of_money",
+      "type": "secondary"
+    },
+    {
+      "text": "Friedman, \"The Counter-Revolution in Monetary Theory\" (1970), Hoover Institution. — the monetarist restatement and the inflation-is-a-monetary-phenomenon dictum.",
+      "url": "https://miltonfriedman.hoover.org/internal/media/dispatcher/214480/full",
+      "type": "primary"
+    },
+    {
+      "text": "Jung, \"The Quantity Theory of Money, 1870-2020,\" ECB Working Paper 2940 (2024). — long-run proportionality and its weakening during the low-inflation decades.",
+      "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp.2940.en.pdf",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Quantity_theory_of_money",
   "related": [
-    {"slug": "the-phillips-curve", "kind": "kindred"}
+    {
+      "slug": "the-phillips-curve",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-cantillon-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-liquidity-trap",
+      "kind": "tension"
+    }
   ]
 }

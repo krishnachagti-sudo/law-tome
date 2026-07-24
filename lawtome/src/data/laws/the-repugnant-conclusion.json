@@ -2,7 +2,10 @@
   "no": "686",
   "slug": "the-repugnant-conclusion",
   "name": "The Repugnant Conclusion",
-  "aliases": ["Parfit's repugnant conclusion", "The mere addition problem"],
+  "aliases": [
+    "Parfit's repugnant conclusion",
+    "The mere addition problem"
+  ],
   "statement": "Adding up welfare implies that a vast crowd of barely-worth-living lives can be better than a smaller world of flourishing ones.",
   "statementAccent": "a vast crowd of barely-worth-living lives can be better than a smaller world of flourishing ones",
   "meaning": "The repugnant conclusion is a problem in population ethics identified by the philosopher Derek Parfit in his 1984 book Reasons and Persons. Parfit stated it roughly as follows: for any possible population of at least ten billion people, all with a very high quality of life, there must be some much larger imaginable population whose existence, if other things are equal, would be better, even though its members have lives that are barely worth living. In other words, a smaller, flourishing population, call it A, can always be judged worse than a sufficiently enormous population, call it Z, each of whose members has a life only marginally above the point of not being worth living. Parfit found this conclusion deeply counterintuitive, indeed repugnant, and much of the work in population ethics has been an attempt to find a theory that avoids it while remaining consistent, an aim Parfit himself did not think he had achieved.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The repugnant conclusion is a central problem of population ethics, forcing a reckoning with how to compare populations that differ in both the number and the quality of lives. It shows that the natural and widely held idea that betterness tracks total welfare leads to a conclusion almost everyone rejects, that a vast crowd of barely worthwhile lives can outrank a smaller flourishing world. This tension has generated decades of work seeking a consistent theory that avoids it, and the accompanying impossibility results suggest that every option carries some counterintuitive cost, a sobering lesson about the limits of population axiology. The problem bears directly on questions of enormous practical weight, from long-term policy and the ethics of future generations to debates within effective altruism about how much the sheer number of future people should matter.",
   "working": [
-    {"lead": "Value the total", "text": "adopt the view that a population's value is the sum of its members' well-being, so more positive lives always add to the total."},
-    {"lead": "Trade quality for quantity", "text": "notice that enough barely worthwhile lives can outweigh fewer excellent ones on total welfare, yielding Z better than A."},
-    {"lead": "Try to escape", "text": "seek a theory that avoids the conclusion, and confront that averaging brings new problems and impossibility results block a fully satisfactory fix."}
+    {
+      "lead": "Value the total",
+      "text": "adopt the view that a population's value is the sum of its members' well-being, so more positive lives always add to the total."
+    },
+    {
+      "lead": "Trade quality for quantity",
+      "text": "notice that enough barely worthwhile lives can outweigh fewer excellent ones on total welfare, yielding Z better than A."
+    },
+    {
+      "lead": "Try to escape",
+      "text": "seek a theory that avoids the conclusion, and confront that averaging brings new problems and impossibility results block a fully satisfactory fix."
+    }
   ],
   "limits": "The repugnant conclusion is a problem for total utilitarianism in particular, and how damning it is depends on one's theory of population value; some philosophers bite the bullet and accept it, arguing the intuition of repugnance is unreliable when imagining astronomically large numbers. Alternatives that avoid it, such as average utilitarianism or critical-level views, incur their own counterintuitive consequences, and the impossibility theorems associated with Arrhenius suggest no theory escapes every plausible objection, though the precise formal conditions are technical and debated. The conclusion also involves idealised comparisons of enormous hypothetical populations, where intuitions may be shaky. So it functions as a deep constraint on population ethics that every theory must confront rather than a decisive refutation of any single view.",
   "misreadings": "The conclusion is not that a barely-worth-living life is worthless or bad; each such life is stipulated to be worth living, which is exactly why adding enough of them raises the total. It does not claim that quantity always trumps quality as a moral ideal, but that total-welfare reasoning implies it, which is why Parfit found the result repugnant rather than acceptable. And it is not cleanly avoided by any known theory: switching to averaging or other views trades one counterintuitive result for another, so presenting some particular fix as the settled escape misrepresents an unresolved problem.",
@@ -46,12 +58,30 @@
   "coinedYear": 1984,
   "namedAfter": null,
   "sources": [
-    {"text": "The Repugnant Conclusion, Stanford Encyclopedia of Philosophy. — Parfit's 1984 formulation and exact statement, the total-utilitarian mechanism, the search for Theory X, and the Arrhenius impossibility results.", "url": "https://plato.stanford.edu/entries/repugnant-conclusion/", "type": "secondary"},
-    {"text": "Mere addition paradox, Wikipedia. — the A, A+, B−, B argument leading to the repugnant conclusion and the contrast between total and average utilitarianism.", "url": "https://en.wikipedia.org/wiki/Mere_addition_paradox", "type": "secondary"}
+    {
+      "text": "The Repugnant Conclusion, Stanford Encyclopedia of Philosophy. — Parfit's 1984 formulation and exact statement, the total-utilitarian mechanism, the search for Theory X, and the Arrhenius impossibility results.",
+      "url": "https://plato.stanford.edu/entries/repugnant-conclusion/",
+      "type": "secondary"
+    },
+    {
+      "text": "Mere addition paradox, Wikipedia. — the A, A+, B−, B argument leading to the repugnant conclusion and the contrast between total and average utilitarianism.",
+      "url": "https://en.wikipedia.org/wiki/Mere_addition_paradox",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Mere_addition_paradox",
   "related": [
-    {"slug": "the-utility-monster", "kind": "kindred"},
-    {"slug": "the-experience-machine", "kind": "kindred"}
+    {
+      "slug": "the-utility-monster",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-experience-machine",
+      "kind": "kindred"
+    },
+    {
+      "slug": "utilitarianism",
+      "kind": "tension"
+    }
   ]
 }

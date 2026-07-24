@@ -2,7 +2,10 @@
   "no": "728",
   "slug": "the-liquidity-trap",
   "name": "The Liquidity Trap",
-  "aliases": ["The zero lower bound trap", "Pushing on a string"],
+  "aliases": [
+    "The zero lower bound trap",
+    "Pushing on a string"
+  ],
   "statement": "When interest rates hit zero, printing more money just gets hoarded and monetary policy stops working.",
   "statementAccent": "printing more money just gets hoarded and monetary policy stops working",
   "meaning": "A liquidity trap is a situation in monetary economics, described by John Maynard Keynes, in which nominal interest rates are at or near zero, so conventional monetary policy, expanding the money supply to lower rates, becomes ineffective at stimulating the economy. Because rates cannot fall meaningfully further, people and banks prefer to hold cash rather than bonds or investments, so additional money injected into the economy is simply hoarded rather than spent or lent. The metaphor is that monetary policy is pushing on a string. Keynes set out the concept in his 1936 General Theory, and John Hicks formalised it in his 1937 IS-LM model as the flat portion of the LM curve, where monetary expansion has no effect on rates or output. Japan since the 1990s and much of the developed world after the 2008 financial crisis are commonly cited as real-world liquidity traps.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The liquidity trap is a central concept in Keynesian macroeconomics and in the analysis of monetary policy at the zero lower bound, explaining why central banks can lose their usual power to fight recessions. When rates are already near zero, cutting them further is impossible and pumping in more money is hoarded, so the standard levers fail, which is why deep downturns like Japan's lost decades and the aftermath of 2008 posed such difficult policy problems. The concept underpins the case for fiscal policy as the more effective response in such conditions and motivated the unconventional tools, quantitative easing, forward guidance, and negative rates, that central banks deployed to try to escape the trap. It also frames a long-running debate: monetarists like Milton Friedman dispute how binding the trap really is, arguing monetary policy can still work through other channels, making the liquidity trap a focal point in disputes over how to combat recessions.",
   "working": [
-    {"lead": "Drive rates to zero", "text": "let nominal interest rates fall to or near zero, exhausting the room for conventional rate cuts."},
-    {"lead": "Watch money get hoarded", "text": "note that with bonds yielding nothing and risking loss, people hold any extra money as cash rather than spending or lending it."},
-    {"lead": "Turn to other tools", "text": "recognise that conventional monetary policy is impotent, so fiscal policy and unconventional measures like quantitative easing are used to respond."}
+    {
+      "lead": "Drive rates to zero",
+      "text": "let nominal interest rates fall to or near zero, exhausting the room for conventional rate cuts."
+    },
+    {
+      "lead": "Watch money get hoarded",
+      "text": "note that with bonds yielding nothing and risking loss, people hold any extra money as cash rather than spending or lending it."
+    },
+    {
+      "lead": "Turn to other tools",
+      "text": "recognise that conventional monetary policy is impotent, so fiscal policy and unconventional measures like quantitative easing are used to respond."
+    }
   ],
   "limits": "Whether liquidity traps are real and important is debated. Monetarists, notably Milton Friedman, argue that monetary policy retains power even at zero short-term rates, since the central bank can expand the monetary base and operate on longer-term or riskier assets, so any nonzero rate along the yield curve provides a channel. The efficacy of unconventional tools like quantitative easing is itself contested, and the trap's practical bite depends on expectations, the state of the banking system, and fiscal capacity. The concept is often analysed within the stylised IS-LM model, which abstracts from many complications. So the liquidity trap is a widely used and influential framework for thinking about policy at the zero lower bound, but its existence, severity, and the best escape routes remain matters of active dispute.",
   "misreadings": "A liquidity trap does not mean all policy is powerless; it means conventional interest-rate cuts fail, while fiscal policy and unconventional measures may still act. It is not simply that rates are low, but that they are so low that extra money is hoarded rather than transmitted to spending. And it is contested: monetarists argue monetary policy still works through other channels, so treating the liquidity trap as a proven, absolute wall, or as a reason nothing can be done, misstates a concept whose importance and remedies are debated.",
@@ -46,12 +58,26 @@
   "coinedYear": 1936,
   "namedAfter": null,
   "sources": [
-    {"text": "Liquidity trap, Wikipedia. — the near-zero-rate impotence of monetary policy, the Keynes 1936 origin and Hicks IS-LM formalisation, the elastic-money-demand mechanism, the Japan and 2008 examples, the fiscal-policy and quantitative-easing responses, and the monetarist debate.", "url": "https://en.wikipedia.org/wiki/Liquidity_trap", "type": "secondary"},
-    {"text": "Liquidity Trap: definition, examples and explanation, Economics Help. — the liquidity trap, its mechanism, and policy responses.", "url": "https://www.economicshelp.org/blog/1892/economics/liquidity-trap/", "type": "secondary"}
+    {
+      "text": "Liquidity trap, Wikipedia. — the near-zero-rate impotence of monetary policy, the Keynes 1936 origin and Hicks IS-LM formalisation, the elastic-money-demand mechanism, the Japan and 2008 examples, the fiscal-policy and quantitative-easing responses, and the monetarist debate.",
+      "url": "https://en.wikipedia.org/wiki/Liquidity_trap",
+      "type": "secondary"
+    },
+    {
+      "text": "Liquidity Trap: definition, examples and explanation, Economics Help. — the liquidity trap, its mechanism, and policy responses.",
+      "url": "https://www.economicshelp.org/blog/1892/economics/liquidity-trap/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Liquidity_trap",
   "related": [
-    {"slug": "the-paradox-of-thrift", "kind": "kindred"},
-    {"slug": "the-quantity-theory-of-money", "kind": "kindred"}
+    {
+      "slug": "the-paradox-of-thrift",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-quantity-theory-of-money",
+      "kind": "tension"
+    }
   ]
 }

@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is a foundational concept in the economics of information and insurance, explaining why protection against risk changes behaviour and why contracts, regulation, and incentives must be designed to counter it. It shapes the design of insurance, banking regulation, executive pay, and safety nets across the economy.",
   "working": [
-    {"lead": "Expect protection to change behaviour", "text": "when a party is shielded from the cost of a bad outcome, anticipate more risk-taking or less care than if it bore the cost."},
-    {"lead": "Make the actor share the cost", "text": "counter it with deductibles, co-payments, monitoring, and performance-based incentives that realign the agent's stake in the outcome."},
-    {"lead": "Distinguish it from adverse selection", "text": "keep hidden action after the contract separate from hidden information before it, since the two call for different remedies."}
+    {
+      "lead": "Expect protection to change behaviour",
+      "text": "when a party is shielded from the cost of a bad outcome, anticipate more risk-taking or less care than if it bore the cost."
+    },
+    {
+      "lead": "Make the actor share the cost",
+      "text": "counter it with deductibles, co-payments, monitoring, and performance-based incentives that realign the agent's stake in the outcome."
+    },
+    {
+      "lead": "Distinguish it from adverse selection",
+      "text": "keep hidden action after the contract separate from hidden information before it, since the two call for different remedies."
+    }
   ],
   "limits": "The core concept is rigorously formalised and empirically studied, but the magnitude of moral hazard in specific settings is genuinely contested. On bailouts, whether it is more costly to rescue large firms or to let them fail cannot be definitively settled; in health insurance, the real argument is subtler than the popular usage, and empirical estimates of its size are debated. The term is also frequently invoked loosely and rhetorically in public debate. So the mechanism is robust, but its practical weight and policy application are areas of legitimate dispute.",
   "misreadings": "It is not the same as adverse selection — moral hazard is hidden action after a contract, adverse selection is hidden information before it, and conflating them is the most common error. And its everyday size is not settled; the concept is often deployed rhetorically well beyond what the evidence supports.",
@@ -44,11 +53,26 @@
   "provenance": "canon",
   "coinedYear": 1963,
   "sources": [
-    {"text": "Moral hazard, Wikipedia. — the definition, the hidden-action mechanism, the insurance origin and Arrow formalisation, and the distinction from adverse selection.", "url": "https://en.wikipedia.org/wiki/Moral_hazard", "type": "secondary"},
-    {"text": "Arrow, \"Uncertainty and the Welfare Economics of Medical Care,\" American Economic Review 53:941-973 (1963), PubMed reprint.", "url": "https://pubmed.ncbi.nlm.nih.gov/15042238/", "type": "primary"}
+    {
+      "text": "Moral hazard, Wikipedia. — the definition, the hidden-action mechanism, the insurance origin and Arrow formalisation, and the distinction from adverse selection.",
+      "url": "https://en.wikipedia.org/wiki/Moral_hazard",
+      "type": "secondary"
+    },
+    {
+      "text": "Arrow, \"Uncertainty and the Welfare Economics of Medical Care,\" American Economic Review 53:941-973 (1963), PubMed reprint.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15042238/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Moral_hazard",
   "related": [
-    {"slug": "the-market-for-lemons", "kind": "kindred"}
+    {
+      "slug": "the-market-for-lemons",
+      "kind": "kindred"
+    },
+    {
+      "slug": "peltzman-effect",
+      "kind": "kindred"
+    }
   ]
 }

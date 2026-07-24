@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It gives a precise account of self-control failure — procrastination, addiction, under-saving — as the predictable result of a discount curve that overweights the present, and it explains the otherwise puzzling demand for commitment devices. It reshaped economic models of intertemporal choice and is a pillar of behavioural economics.",
   "working": [
-    {"lead": "Anticipate the flip", "text": "expect that a virtuous plan made for the future may be abandoned when its moment arrives, as near-term impatience takes over."},
-    {"lead": "Use commitment", "text": "bind your future self in advance — automatic saving, locked options — to hold to plans that present bias would otherwise upend."},
-    {"lead": "Watch for confounds", "text": "before attributing behaviour to a hyperbolic curve, consider uncertainty and how the choice is framed, which can mimic it."}
+    {
+      "lead": "Anticipate the flip",
+      "text": "expect that a virtuous plan made for the future may be abandoned when its moment arrives, as near-term impatience takes over."
+    },
+    {
+      "lead": "Use commitment",
+      "text": "bind your future self in advance — automatic saving, locked options — to hold to plans that present bias would otherwise upend."
+    },
+    {
+      "lead": "Watch for confounds",
+      "text": "before attributing behaviour to a hyperbolic curve, consider uncertainty and how the choice is framed, which can mimic it."
+    }
   ],
   "limits": "The observation of declining impatience and preference reversals is robust; the claim that the discount function is specifically hyperbolic is not settled. A rational agent facing uncertainty about whether a promised future reward will really arrive can look hyperbolic while discounting exponentially. Read's work argues discounting is subadditive — larger when a delay is split into parts — and found little independent evidence of declining impatience, pointing to an interval-length confound. Recent meta-analyses find present bias real on average but highly variable, with evidence of selective reporting and a magnitude for purely monetary choices close to time-consistent, the effect being stronger for effort and consumption than for money.",
   "misreadings": "Present bias in real effort and consumption choices is fairly well supported, but that does not confirm the discount curve is hyperbolic rather than exponential-plus-uncertainty or an artefact of measurement. And for money specifically, the average bias appears much smaller than early work implied — money-based experiments are vulnerable to arbitrage and much of the classic evidence rests on student samples.",
@@ -44,13 +53,39 @@
   "provenance": "canon",
   "coinedYear": 1975,
   "sources": [
-    {"text": "Ainslie, \"Specious Reward: A Behavioral Theory of Impulsiveness and Impulse Control,\" Psychological Bulletin 82(4):463-496 (1975). — hyperbolic delay curves that cross and predict preference reversals.", "url": "http://www.picoeconomics.org/Nut2/texts/Specious.html", "type": "primary"},
-    {"text": "Laibson, \"Golden Eggs and Hyperbolic Discounting,\" Quarterly Journal of Economics 112(2):443-477 (1997). — the quasi-hyperbolic beta-delta model and its application to saving.", "url": "https://scholar.harvard.edu/files/laibson/files/golden_eggs_and_hyperbolic_discounting.pdf", "type": "primary"},
-    {"text": "Imai, Rutter & Camerer, \"Meta-Analysis of Present-Bias Estimation using Convex Time Budgets,\" The Economic Journal 131(636):1788-1814 (2021). — heterogeneity, selective reporting, and near-time-consistent monetary discounting.", "url": "https://academic.oup.com/ej/article/131/636/1788/5912830", "type": "primary"}
+    {
+      "text": "Ainslie, \"Specious Reward: A Behavioral Theory of Impulsiveness and Impulse Control,\" Psychological Bulletin 82(4):463-496 (1975). — hyperbolic delay curves that cross and predict preference reversals.",
+      "url": "http://www.picoeconomics.org/Nut2/texts/Specious.html",
+      "type": "primary"
+    },
+    {
+      "text": "Laibson, \"Golden Eggs and Hyperbolic Discounting,\" Quarterly Journal of Economics 112(2):443-477 (1997). — the quasi-hyperbolic beta-delta model and its application to saving.",
+      "url": "https://scholar.harvard.edu/files/laibson/files/golden_eggs_and_hyperbolic_discounting.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Imai, Rutter & Camerer, \"Meta-Analysis of Present-Bias Estimation using Convex Time Budgets,\" The Economic Journal 131(636):1788-1814 (2021). — heterogeneity, selective reporting, and near-time-consistent monetary discounting.",
+      "url": "https://academic.oup.com/ej/article/131/636/1788/5912830",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Hyperbolic_discounting",
   "related": [
-    {"slug": "the-sunk-cost-fallacy", "kind": "kindred"},
-    {"slug": "loss-aversion", "kind": "kindred"}
+    {
+      "slug": "the-sunk-cost-fallacy",
+      "kind": "kindred"
+    },
+    {
+      "slug": "loss-aversion",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-marshmallow-test",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-life-cycle-hypothesis",
+      "kind": "tension"
+    }
   ]
 }

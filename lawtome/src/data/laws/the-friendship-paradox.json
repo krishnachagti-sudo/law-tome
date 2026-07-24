@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is a clean, proven example of how sampling bias produces a genuinely lopsided average from a symmetric relationship, and a caution against the social comparison that makes people feel inadequate against their friends. It has also been put to practical use, from epidemic sensors to vaccination strategies that target well-connected people.",
   "working": [
-    {"lead": "Read it as sampling, not popularity", "text": "attribute the gap to hubs being over-counted among 'friends', not to any individual being unusually unpopular."},
-    {"lead": "Exploit it to find central people", "text": "to reach well-connected individuals cheaply, sample a random person's friend rather than a random person."},
-    {"lead": "Treat it as an average, not a rule", "text": "expect it to hold in aggregate, not for everyone; a person more connected than all their friends is a valid exception."}
+    {
+      "lead": "Read it as sampling, not popularity",
+      "text": "attribute the gap to hubs being over-counted among 'friends', not to any individual being unusually unpopular."
+    },
+    {
+      "lead": "Exploit it to find central people",
+      "text": "to reach well-connected individuals cheaply, sample a random person's friend rather than a random person."
+    },
+    {
+      "lead": "Treat it as an average, not a rule",
+      "text": "expect it to hold in aggregate, not for everyone; a person more connected than all their friends is a valid exception."
+    }
   ],
   "limits": "It is a statement about averages, driven by the variance and skew of the degree distribution; it does not hold for every individual, and someone more connected than all their friends is a perfectly valid exception. The inequality is strict only when people's friend counts actually vary — in a perfectly regular network everyone averages the same. It is a real, proven result, not a fallacy or cognitive bias, though it is frequently misdescribed as applying to every person.",
   "misreadings": "It does not mean you personally are less popular than all your friends — it is an aggregate driven by hubs being over-sampled, and individual exceptions abound. Nor is it a psychological illusion; it is a proven mathematical fact about how averages over a network work.",
@@ -45,11 +54,22 @@
   "coinedYear": 1991,
   "namedAfter": "Scott L. Feld",
   "sources": [
-    {"text": "Friendship paradox, Wikipedia. — the statement, the mean-plus-variance-over-mean mechanism, Feld's origin, and the epidemic-detection application.", "url": "https://en.wikipedia.org/wiki/Friendship_paradox", "type": "secondary"},
-    {"text": "Christakis, N.A. & Fowler, J.H. (2010). \"Social Network Sensors for Early Detection of Contagious Outbreaks.\" PLOS ONE, 5(9): e12948.", "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0012948", "type": "primary"}
+    {
+      "text": "Friendship paradox, Wikipedia. — the statement, the mean-plus-variance-over-mean mechanism, Feld's origin, and the epidemic-detection application.",
+      "url": "https://en.wikipedia.org/wiki/Friendship_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Christakis, N.A. & Fowler, J.H. (2010). \"Social Network Sensors for Early Detection of Contagious Outbreaks.\" PLOS ONE, 5(9): e12948.",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0012948",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Friendship_paradox",
   "related": [
-    {"slug": "metcalfes-law", "kind": "kindred"}
+    {
+      "slug": "the-inspection-paradox",
+      "kind": "kindred"
+    }
   ]
 }

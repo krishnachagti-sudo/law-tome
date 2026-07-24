@@ -2,7 +2,11 @@
   "no": "431",
   "slug": "the-law-of-triviality",
   "name": "The Law of Triviality",
-  "aliases": ["Bikeshedding", "The bike-shed effect", "Parkinson's law of triviality"],
+  "aliases": [
+    "Bikeshedding",
+    "The bike-shed effect",
+    "Parkinson's law of triviality"
+  ],
   "statement": "The time a group spends on an issue is inversely proportional to how much it matters.",
   "statementAccent": "inversely proportional to how much it matters",
   "meaning": "The law of triviality holds that an organisation, especially a committee, devotes attention to an issue in inverse proportion to its actual importance or cost. Groups give disproportionate weight to trivial, easily grasped matters while under-scrutinising the important, complex, or expensive ones. In software culture the same pattern is called bikeshedding, from Parkinson's image of a committee waving through a nuclear reactor but bickering endlessly over a bicycle shed. A bike-shed discussion is one that consumes energy out of all proportion to its stakes.",
@@ -33,9 +37,18 @@
   ],
   "whyItMatters": "It explains how agendas get distorted so that low-stakes, high-comprehension items crowd out the high-stakes, high-complexity ones, degrading consequential decisions. Boards and committees can appear to exercise vigorous oversight of trivia while effectively rubber-stamping the choices that carry the real risk, precisely because those are hard to scrutinise. In engineering teams, naming the pattern as bikeshedding is itself a defence, letting maintainers recognise and shut down debate that has grown out of proportion to what is at stake.",
   "working": [
-    {"lead": "Watch the ratio", "text": "notice when discussion time is running inversely to importance, a sign the easy items are crowding out the vital ones."},
-    {"lead": "Guard the big decisions", "text": "ensure complex, costly choices get genuine scrutiny rather than deference, since their difficulty is what lets them slip through."},
-    {"lead": "Name the bike shed", "text": "call out bikeshedding when a cosmetic detail attracts disproportionate argument, to reclaim attention for what matters."}
+    {
+      "lead": "Watch the ratio",
+      "text": "notice when discussion time is running inversely to importance, a sign the easy items are crowding out the vital ones."
+    },
+    {
+      "lead": "Guard the big decisions",
+      "text": "ensure complex, costly choices get genuine scrutiny rather than deference, since their difficulty is what lets them slip through."
+    },
+    {
+      "lead": "Name the bike shed",
+      "text": "call out bikeshedding when a cosmetic detail attracts disproportionate argument, to reclaim attention for what matters."
+    }
   ],
   "limits": "It is an illustrative heuristic, not a measured relationship: Parkinson wrote as a satirist, and the committee scene and its figures are a fictional illustration rather than data, so the 'inverse proportion' phrasing is rhetorical. Nor is disproportionate attention always irrational; small recurring costs, precedent-setting items, and morale can genuinely warrant discussion, and quick approval of a large item may reflect legitimate prior vetting rather than negligence. The effect is strongest where members lack expertise on the big item and feel accountable to be seen participating, and weaker where real expertise or clear ownership exists.",
   "misreadings": "It is not the same as Parkinson's Law proper, that work expands to fill the time available; the two are distinct ideas from the same book. Bikeshedding is not old slang but a term traceable to Kamp's 1999 email, decades after Parkinson. The reactor, shed, and coffee figures are Parkinson's invented example, not a report of a real meeting. And the claim is about disproportionate attention, not that small matters are worthless.",
@@ -46,11 +59,30 @@
   "coinedYear": 1957,
   "namedAfter": "C. Northcote Parkinson",
   "sources": [
-    {"text": "Law of triviality, Wikipedia. — Parkinson's committee example, the figures, and Kamp's bikeshedding coinage.", "url": "https://en.wikipedia.org/wiki/Law_of_triviality", "type": "secondary"},
-    {"text": "Kamp, 'A bike shed (any colour will do on greener grass...)', FreeBSD mailing list, 2 October 1999 (archived). — the origin of the bike-shed metaphor in software culture.", "url": "http://phk.freebsd.dk/sagas/bikeshed/", "type": "primary"}
+    {
+      "text": "Law of triviality, Wikipedia. — Parkinson's committee example, the figures, and Kamp's bikeshedding coinage.",
+      "url": "https://en.wikipedia.org/wiki/Law_of_triviality",
+      "type": "secondary"
+    },
+    {
+      "text": "Kamp, 'A bike shed (any colour will do on greener grass...)', FreeBSD mailing list, 2 October 1999 (archived). — the origin of the bike-shed metaphor in software culture.",
+      "url": "http://phk.freebsd.dk/sagas/bikeshed/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Law_of_triviality",
   "related": [
-    {"slug": "parkinsons-law", "kind": "kindred"}
+    {
+      "slug": "parkinsons-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "parkinsons-law-of-triviality",
+      "kind": "near-twin"
+    },
+    {
+      "slug": "sayres-law",
+      "kind": "kindred"
+    }
   ]
 }

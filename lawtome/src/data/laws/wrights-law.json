@@ -2,7 +2,10 @@
   "no": "207",
   "slug": "wrights-law",
   "name": "Wright's Law",
-  "aliases": ["The learning curve", "The experience curve"],
+  "aliases": [
+    "The learning curve",
+    "The experience curve"
+  ],
   "statement": "Every time cumulative production doubles, the cost per unit falls by a constant percentage.",
   "statementAccent": "the cost per unit falls by a constant percentage",
   "meaning": "For every doubling of the total number of units ever produced, the cost or labour per unit drops by a roughly fixed percentage. Cost declines track accumulated production experience, not calendar time. Plotting unit cost against cumulative output on log-log axes yields an approximately straight downward line.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It is one of the most useful regularities in technology forecasting and industrial strategy, letting analysts project how costs fall as a technology scales. It has proved a strong predictor across dozens of industries, from aircraft to solar to semiconductors, and underlies the case that scaling up production is itself a route to lower cost.",
   "working": [
-    {"lead": "Forecast cost from cumulative volume", "text": "to project a technology's future cost, extrapolate the constant percentage fall per doubling of total units produced."},
-    {"lead": "Track experience, not the calendar", "text": "tie cost declines to how much has been made, not how much time has passed, since production experience is the driver."},
-    {"lead": "Keep the rate industry-specific", "text": "estimate the learning rate from the sector's own data rather than assuming a universal figure, and expect it to vary."}
+    {
+      "lead": "Forecast cost from cumulative volume",
+      "text": "to project a technology's future cost, extrapolate the constant percentage fall per doubling of total units produced."
+    },
+    {
+      "lead": "Track experience, not the calendar",
+      "text": "tie cost declines to how much has been made, not how much time has passed, since production experience is the driver."
+    },
+    {
+      "lead": "Keep the rate industry-specific",
+      "text": "estimate the learning rate from the sector's own data rather than assuming a universal figure, and expect it to vary."
+    }
   ],
   "limits": "It is an empirical regularity, not a physical law: the percentage varies by industry and is not guaranteed to persist. The learning mechanism is entangled with economies of scale, research spending, and time, so experience effects are hard to isolate — some argue they cannot be cleanly separated from scale. Disruptive technology shifts, raw-material cost floors, saturated learning, or supply shocks can bend or break the curve. Even the best forecasting models carry errors that grow over the horizon. It is best treated as an empirically grounded regularity rather than a guaranteed causal law.",
   "misreadings": "It is not the same as the Boston Consulting Group's experience curve, which covers total costs and came decades later, nor as Moore's law, which runs on time rather than cumulative production. And the constant percentage is a robust pattern, not a law of nature that must hold at a fixed rate forever.",
@@ -46,11 +58,22 @@
   "coinedYear": 1936,
   "namedAfter": "Theodore Paul Wright",
   "sources": [
-    {"text": "Experience curve effect, Wikipedia. — Wright's 1936 origin, the learning-rate convention, and the distinction from the BCG experience curve.", "url": "https://en.wikipedia.org/wiki/Experience_curve_effect", "type": "secondary"},
-    {"text": "Nagy, Farmer, Bui & Trancik, \"Statistical Basis for Predicting Technological Progress,\" PLOS ONE (2013). — the sixty-two-technology comparison of Wright's law and Moore's law.", "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0052669", "type": "primary"}
+    {
+      "text": "Experience curve effect, Wikipedia. — Wright's 1936 origin, the learning-rate convention, and the distinction from the BCG experience curve.",
+      "url": "https://en.wikipedia.org/wiki/Experience_curve_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Nagy, Farmer, Bui & Trancik, \"Statistical Basis for Predicting Technological Progress,\" PLOS ONE (2013). — the sixty-two-technology comparison of Wright's law and Moore's law.",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0052669",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Experience_curve_effect",
   "related": [
-    {"slug": "metcalfes-law", "kind": "kindred"}
+    {
+      "slug": "the-experience-curve",
+      "kind": "near-twin"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "508",
   "slug": "the-birthday-paradox",
   "name": "The Birthday Paradox",
-  "aliases": ["The birthday problem", "The birthday coincidence"],
+  "aliases": [
+    "The birthday problem",
+    "The birthday coincidence"
+  ],
   "statement": "In a room of just 23 people, it is more likely than not that two of them share a birthday.",
   "statementAccent": "two of them share a birthday",
   "meaning": "The birthday paradox is the surprising fact that in a group of only 23 people the probability that at least two share a birthday is already greater than one half, about 50.7 percent, and by 70 people it is around 99.9 percent. It is called a paradox not because it is self-contradictory but because it clashes so sharply with intuition: most people guess you would need something closer to half of 365. The result is a staple lesson in how badly human intuition handles combinations and probabilities, and it has a serious edge in cryptography, where the same counting underlies attacks on hash functions.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The birthday paradox is one of the clearest demonstrations that human intuition systematically underestimates the likelihood of coincidences, because we think in terms of individuals rather than the far more numerous pairs. Beyond its value as a teaching example in probability, it has concrete consequences in computer science and cryptography, where the birthday bound sets the security margin of hash functions and dictates that collision resistance requires roughly twice the output length of preimage resistance. It is a small puzzle with a long reach into how we reason about chance and how we secure information.",
   "working": [
-    {"lead": "Count the pairs", "text": "when looking for a coincidence in a group, count the number of pairs, which grows with the square of the group, not the number of individuals."},
-    {"lead": "Use the complement", "text": "compute the chance that no match occurs and subtract from one, usually far easier than tallying the matches directly."},
-    {"lead": "Mind the square root", "text": "expect collisions in a space of N possibilities after roughly the square root of N draws, the rule that sizes cryptographic hashes."}
+    {
+      "lead": "Count the pairs",
+      "text": "when looking for a coincidence in a group, count the number of pairs, which grows with the square of the group, not the number of individuals."
+    },
+    {
+      "lead": "Use the complement",
+      "text": "compute the chance that no match occurs and subtract from one, usually far easier than tallying the matches directly."
+    },
+    {
+      "lead": "Mind the square root",
+      "text": "expect collisions in a space of N possibilities after roughly the square root of N draws, the rule that sizes cryptographic hashes."
+    }
   ],
   "limits": "The classic figures assume all 365 days are equally likely, that birthdays are independent, and that leap-day births are ignored. Real birthdays are not perfectly uniform, but any unevenness only makes shared birthdays slightly more likely, never less, so 23 is if anything a conservative threshold. The result is exact within these idealisations and shifts only marginally in the real world. The paradox is a statement about the probability of some shared birthday among any pair, and its figures do not transfer to the different question of matching one particular, fixed birthday.",
   "misreadings": "It does not say 23 people are enough for someone to share your birthday; that far rarer event needs about 253 people, and confusing the two is the heart of the illusion. It does not require anywhere near 183 people, half of 365, which is the wrong intuition it corrects. And non-uniform real-world birthdays do not weaken the effect but slightly strengthen it, so the everyday world makes coincidences a touch more common, not less.",
@@ -44,12 +56,30 @@
   "reliability": "Empirical",
   "provenance": "canon",
   "sources": [
-    {"text": "Birthday problem, Wikipedia. — the 50.7 percent at 23 people, the 253 pairs, the complement calculation, and the birthday attack.", "url": "https://en.wikipedia.org/wiki/Birthday_problem", "type": "secondary"},
-    {"text": "Birthday problem, Encyclopaedia Britannica. — independent confirmation of the 50.7 percent at 23 and the complement method.", "url": "https://www.britannica.com/science/birthday-problem", "type": "secondary"}
+    {
+      "text": "Birthday problem, Wikipedia. — the 50.7 percent at 23 people, the 253 pairs, the complement calculation, and the birthday attack.",
+      "url": "https://en.wikipedia.org/wiki/Birthday_problem",
+      "type": "secondary"
+    },
+    {
+      "text": "Birthday problem, Encyclopaedia Britannica. — independent confirmation of the 50.7 percent at 23 and the complement method.",
+      "url": "https://www.britannica.com/science/birthday-problem",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Birthday_problem",
   "related": [
-    {"slug": "the-coupon-collectors-problem", "kind": "kindred"},
-    {"slug": "the-law-of-truly-large-numbers", "kind": "kindred"}
+    {
+      "slug": "the-coupon-collectors-problem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-law-of-truly-large-numbers",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-birthday-problem",
+      "kind": "near-twin"
+    }
   ]
 }

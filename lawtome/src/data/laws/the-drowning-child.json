@@ -2,7 +2,10 @@
   "no": "677",
   "slug": "the-drowning-child",
   "name": "The Drowning Child",
-  "aliases": ["The shallow pond", "Singer's pond"],
+  "aliases": [
+    "The shallow pond",
+    "Singer's pond"
+  ],
   "statement": "If you would ruin your clothes to save a drowning child at your feet, you cannot consistently refuse to give to save a dying child far away.",
   "statementAccent": "you cannot consistently refuse to give to save a dying child far away",
   "meaning": "The drowning child is a thought experiment by the philosopher Peter Singer, from his 1972 paper Famine, Affluence, and Morality, written amid the Bengal famine crisis. Singer asks you to imagine walking past a shallow pond and seeing a small child drowning in it. You could easily wade in and save the child, but doing so would ruin your clothes and make you muddy. Almost everyone agrees you are morally obligated to save the child, and that the trivial cost to your clothing is no excuse. Singer draws a general principle from the case and argues that it commits affluent people to give substantially to save distant strangers dying of poverty and preventable disease, since distance and the presence of other bystanders make no moral difference. Failing to donate to effective aid, he concludes, is morally comparable to walking past the drowning child.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The drowning child is one of the most influential arguments in modern applied ethics and a foundational text of the effective altruism movement. It gives vivid form to the claim that geographic distance and the diffusion of responsibility do not lessen our duty to prevent suffering, pressing affluent people to see failing to give as akin to letting a child drown. The argument reframed debates about charity, moving giving from optional generosity toward stringent obligation, and it has shaped how a generation thinks about global poverty, aid effectiveness, and the ethics of wealth. Its power lies in leveraging an intuition almost no one denies, the duty to save the child in the pond, and following it relentlessly to a conclusion many find uncomfortable, which is why it remains both persuasive and hotly contested.",
   "working": [
-    {"lead": "Start from the pond", "text": "grant the near-universal intuition that you must save the drowning child even at the cost of ruined clothes."},
-    {"lead": "Extract the principle", "text": "generalise to the rule that we ought to prevent something bad when we can without sacrificing anything of comparable moral importance."},
-    {"lead": "Deny that distance excuses", "text": "argue that distance and the presence of other potential helpers are morally irrelevant, so the duty extends to giving toward distant strangers."}
+    {
+      "lead": "Start from the pond",
+      "text": "grant the near-universal intuition that you must save the drowning child even at the cost of ruined clothes."
+    },
+    {
+      "lead": "Extract the principle",
+      "text": "generalise to the rule that we ought to prevent something bad when we can without sacrificing anything of comparable moral importance."
+    },
+    {
+      "lead": "Deny that distance excuses",
+      "text": "argue that distance and the presence of other potential helpers are morally irrelevant, so the duty extends to giving toward distant strangers."
+    }
   ],
   "limits": "The argument's force depends on its guiding principle and on the analogy between the pond and distant aid, both of which are challenged. The demandingness objection holds that the strong version, requiring giving until one reaches marginal utility, is unreasonably severe, and critics such as John Arthur and others have pressed this. Others note disanalogies: the pond involves a single identifiable victim, a near-certain rescue, and a one-off act, whereas aid concerns statistical strangers, uncertain effectiveness, and an endless demand. Singer's moderate version blunts the demandingness worry but yields a weaker conclusion. So the experiment establishes a powerful prima facie case for a duty of assistance rather than a proof of any exact obligation, and how far the duty extends remains debated.",
   "misreadings": "The argument is not merely that giving to charity is admirable but that failing to give can be seriously wrong, on a par with ignoring the drowning child. It does not rest on claiming distant aid is as certain as a rescue at your feet; that disanalogy is a live objection Singer's critics press, not a premise he assumes. And the strong and moderate versions differ in what they demand, so attributing only the most extreme demand to Singer, or dismissing the whole argument because that demand seems too high, overlooks the weaker principle he also defends.",
@@ -46,12 +58,30 @@
   "coinedYear": 1972,
   "namedAfter": null,
   "sources": [
-    {"text": "Famine, Affluence, and Morality, Wikipedia. — Singer's 1972 paper, the shallow-pond and muddy-clothes setup, the comparable-moral-importance principle, the distance-is-irrelevant analogy to global poverty, the effective-altruism connection, and the demandingness objection.", "url": "https://en.wikipedia.org/wiki/Famine,_Affluence,_and_Morality", "type": "secondary"},
-    {"text": "Study Guide: Peter Singer's Famine, Affluence, and Morality, utilitarianism.net. — the strong and moderate versions of the principle and the argument's structure.", "url": "https://utilitarianism.net/peter-singer-famine-affluence-and-morality/", "type": "secondary"}
+    {
+      "text": "Famine, Affluence, and Morality, Wikipedia. — Singer's 1972 paper, the shallow-pond and muddy-clothes setup, the comparable-moral-importance principle, the distance-is-irrelevant analogy to global poverty, the effective-altruism connection, and the demandingness objection.",
+      "url": "https://en.wikipedia.org/wiki/Famine,_Affluence,_and_Morality",
+      "type": "secondary"
+    },
+    {
+      "text": "Study Guide: Peter Singer's Famine, Affluence, and Morality, utilitarianism.net. — the strong and moderate versions of the principle and the argument's structure.",
+      "url": "https://utilitarianism.net/peter-singer-famine-affluence-and-morality/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Famine,_Affluence,_and_Morality",
   "related": [
-    {"slug": "the-trolley-problem", "kind": "kindred"},
-    {"slug": "the-veil-of-ignorance", "kind": "kindred"}
+    {
+      "slug": "the-trolley-problem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-veil-of-ignorance",
+      "kind": "kindred"
+    },
+    {
+      "slug": "consequentialism",
+      "kind": "kindred"
+    }
   ]
 }

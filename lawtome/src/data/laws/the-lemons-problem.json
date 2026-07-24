@@ -2,7 +2,10 @@
   "no": "718",
   "slug": "the-lemons-problem",
   "name": "The Lemons Problem",
-  "aliases": ["The market for lemons", "Akerlof's lemons"],
+  "aliases": [
+    "The market for lemons",
+    "Akerlof's lemons"
+  ],
   "statement": "When buyers cannot tell good from bad, sellers of good goods leave, and the market fills with junk.",
   "statementAccent": "sellers of good goods leave, and the market fills with junk",
   "meaning": "The lemons problem, from George Akerlof's landmark 1970 paper The Market for Lemons, analyses how asymmetric information, where sellers know more about a product's quality than buyers, can cause markets to fail through adverse selection. In the used-car market Akerlof used to illustrate it, bad cars are lemons and good ones are sometimes called peaches or cherries. Sellers know which is which, but buyers cannot tell them apart, so buyers will pay only a price reflecting average quality. At that average price, owners of good cars refuse to sell below their cars' true worth and withdraw, which lowers the average quality of what remains, pushing the price down further, in a downward spiral that can shrink or unravel the market. The paper, initially rejected by several journals, became foundational to information economics and contributed to Akerlof's 2001 Nobel Memorial Prize, shared with Michael Spence and Joseph Stiglitz.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The lemons problem is a foundational contribution to information economics, showing that asymmetric information alone can cause markets to malfunction or collapse even when willing buyers and sellers of good products exist. It reframed how economists think about markets, moving beyond the assumption of full information to explain a wide range of real phenomena: adverse selection in insurance, where the least healthy are most eager to buy; difficulties in credit and labour markets, where quality is hard to observe; and the design of institutions, from warranties and brands to certification, licensing, and online reputation systems, that exist precisely to overcome information gaps. Alongside Michael Spence's work on signalling and Joseph Stiglitz's on screening, it earned Akerlof a share of the 2001 Nobel Memorial Prize and helped establish the economics of information as a central field.",
   "working": [
-    {"lead": "Hide quality from buyers", "text": "let sellers know product quality while buyers cannot distinguish good from bad before purchase."},
-    {"lead": "Price at the average", "text": "note that buyers rationally pay only what average quality is worth, too little for owners of good items."},
-    {"lead": "Watch the spiral", "text": "see good sellers exit, average quality fall, price drop further, and the market shrink or collapse unless information is restored."}
+    {
+      "lead": "Hide quality from buyers",
+      "text": "let sellers know product quality while buyers cannot distinguish good from bad before purchase."
+    },
+    {
+      "lead": "Price at the average",
+      "text": "note that buyers rationally pay only what average quality is worth, too little for owners of good items."
+    },
+    {
+      "lead": "Watch the spiral",
+      "text": "see good sellers exit, average quality fall, price drop further, and the market shrink or collapse unless information is restored."
+    }
   ],
   "limits": "The lemons problem shows what can happen under asymmetric information, not what must happen; in practice, institutions frequently overcome it. Warranties, guarantees, brands, reputation, certification, licensing, and signalling and screening mechanisms all reduce the information gap and let quality trades proceed, which is why many used-car and other markets function rather than collapse. The model is a stylised illustration, assuming buyers cannot verify quality at all and sellers know it perfectly, whereas reality lies between these extremes. Signalling and screening, the remedies associated with Spence and Stiglitz, are complementary contributions rather than parts of Akerlof's original paper. So the lemons problem identifies a genuine tendency toward market breakdown that asymmetric information creates, while the prevalence of countermeasures explains why so many such markets survive.",
   "misreadings": "The lemons problem does not claim that markets with hidden quality always collapse; it shows a tendency that institutions like warranties, reputation, and certification routinely counteract. It is not about deliberate fraud but about the structural consequences of buyers being unable to observe quality, even with honest sellers. And signalling and screening, though closely associated with the topic, are Spence's and Stiglitz's separate contributions, not parts of Akerlof's 1970 paper, so attributing them to the original lemons analysis blurs distinct advances in the economics of information.",
@@ -46,12 +58,30 @@
   "coinedYear": 1970,
   "namedAfter": null,
   "sources": [
-    {"text": "The Market for Lemons, Wikipedia. — Akerlof's 1970 paper, the asymmetric-information and adverse-selection analysis, the used-car lemons spiral, the bad-drives-out-good point and Gresham's-law analogy, the 2001 Nobel, and the warranty, reputation, and signalling remedies.", "url": "https://en.wikipedia.org/wiki/The_Market_for_Lemons", "type": "secondary"},
-    {"text": "George Akerlof, Writing The Market for Lemons: A Personal and Interpretive Essay, Nobel Prize. — Akerlof's account of the paper and its contribution to information economics.", "url": "https://www.nobelprize.org/prizes/economic-sciences/2001/akerlof/article/", "type": "primary"}
+    {
+      "text": "The Market for Lemons, Wikipedia. — Akerlof's 1970 paper, the asymmetric-information and adverse-selection analysis, the used-car lemons spiral, the bad-drives-out-good point and Gresham's-law analogy, the 2001 Nobel, and the warranty, reputation, and signalling remedies.",
+      "url": "https://en.wikipedia.org/wiki/The_Market_for_Lemons",
+      "type": "secondary"
+    },
+    {
+      "text": "George Akerlof, Writing The Market for Lemons: A Personal and Interpretive Essay, Nobel Prize. — Akerlof's account of the paper and its contribution to information economics.",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2001/akerlof/article/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/The_Market_for_Lemons",
   "related": [
-    {"slug": "the-principal-agent-problem", "kind": "kindred"},
-    {"slug": "greshams-law", "kind": "kindred"}
+    {
+      "slug": "the-principal-agent-problem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "greshams-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-market-for-lemons",
+      "kind": "near-twin"
+    }
   ]
 }

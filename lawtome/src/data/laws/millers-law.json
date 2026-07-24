@@ -2,7 +2,9 @@
   "no": "098",
   "slug": "millers-law",
   "name": "Miller's Law",
-  "aliases": ["The magical number seven, plus or minus two"],
+  "aliases": [
+    "The magical number seven, plus or minus two"
+  ],
   "statement": "Working memory holds about seven items, plus or minus two.",
   "statementAccent": "seven items, plus or minus two",
   "meaning": "The number of distinct things an average person can keep in immediate memory at once is small and roughly fixed — about five to nine. The way to hold more is to group information into meaningful units, or 'chunks': the limit is on the number of chunks, not the number of raw letters or digits inside them.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It planted the idea that human short-term memory is small, capacity-limited, and chunk-based — one of the founding results of cognitive psychology and among the most-cited papers in the field. Even after the specific number was revised down, the underlying picture endures and shapes how information is designed to be remembered.",
   "working": [
-    {"lead": "Design for chunks, not raw items", "text": "group information into meaningful units so people carry more within a fixed number of slots — the practical payoff of the whole idea."},
-    {"lead": "Use four, not seven, as the honest estimate", "text": "for uncushioned capacity without rehearsal, Cowan's ~4 is the better modern figure; treat 7±2 as directionally right, not exact."},
-    {"lead": "Don't apply it to visible choices", "text": "recognition tasks — menus, lists on screen — are not limited by memory span, so the '7 items' rule does not follow from Miller's work."}
+    {
+      "lead": "Design for chunks, not raw items",
+      "text": "group information into meaningful units so people carry more within a fixed number of slots — the practical payoff of the whole idea."
+    },
+    {
+      "lead": "Use four, not seven, as the honest estimate",
+      "text": "for uncushioned capacity without rehearsal, Cowan's ~4 is the better modern figure; treat 7±2 as directionally right, not exact."
+    },
+    {
+      "lead": "Don't apply it to visible choices",
+      "text": "recognition tasks — menus, lists on screen — are not limited by memory span, so the '7 items' rule does not follow from Miller's work."
+    }
   ],
   "limits": "The specific 'seven' has been superseded: Nelson Cowan's 2001 reconsideration put uncushioned capacity nearer four chunks (fewer in children and older adults). Miller's number blended two different tasks — absolute judgement of one-dimensional stimuli and memory span — which he himself flagged as possibly coincidental and which later work treats as separate limits. Span also varies by material, roughly seven for digits, six for letters, five for words, and some accounts argue the real constraint is time or rehearsal rather than a fixed item count. The popular 'seven menu items' rule is a genuine misapplication.",
   "misreadings": "It is not a precise, universal constant, and it does not say a person can comprehend only seven things or that interfaces should cap options at seven. Miller's 'magical' was ironic — he opened by complaining of being persecuted by an integer and insisted there was nothing magical about it. The honest modern reading is that working memory is small and chunk-based, with about four uncushioned chunks the better estimate.",
@@ -46,13 +57,31 @@
   "coinedYear": 1956,
   "namedAfter": "George A. Miller",
   "sources": [
-    {"text": "Miller, G.A. (1956). \"The Magical Number Seven, Plus or Minus Two.\" Psychological Review, 63(2), 81–97.", "url": "https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two", "type": "primary"},
-    {"text": "Cowan, N. (2001). \"The magical number 4 in short-term memory: A reconsideration of mental storage capacity.\" Behavioral and Brain Sciences, 24(1), 87–114.", "url": "https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/magical-number-4-in-shortterm-memory-a-reconsideration-of-mental-storage-capacity/44023F1147D4A1D44BDC0AD226838496", "type": "primary"},
-    {"text": "\"Myth #23: Choices should always be limited to 7±2,\" UX Myths. — the recognition-versus-recall menu-design misapplication.", "url": "https://uxmyths.com/post/931925744/myth-23-choices-should-always-be-limited-to-seven", "type": "secondary"}
+    {
+      "text": "Miller, G.A. (1956). \"The Magical Number Seven, Plus or Minus Two.\" Psychological Review, 63(2), 81–97.",
+      "url": "https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two",
+      "type": "primary"
+    },
+    {
+      "text": "Cowan, N. (2001). \"The magical number 4 in short-term memory: A reconsideration of mental storage capacity.\" Behavioral and Brain Sciences, 24(1), 87–114.",
+      "url": "https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/magical-number-4-in-shortterm-memory-a-reconsideration-of-mental-storage-capacity/44023F1147D4A1D44BDC0AD226838496",
+      "type": "primary"
+    },
+    {
+      "text": "\"Myth #23: Choices should always be limited to 7±2,\" UX Myths. — the recognition-versus-recall menu-design misapplication.",
+      "url": "https://uxmyths.com/post/931925744/myth-23-choices-should-always-be-limited-to-seven",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two",
   "related": [
-    {"slug": "hicks-law", "kind": "kindred"},
-    {"slug": "ebbinghaus-forgetting-curve", "kind": "kindred"}
+    {
+      "slug": "hicks-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "ebbinghaus-forgetting-curve",
+      "kind": "kindred"
+    }
   ]
 }

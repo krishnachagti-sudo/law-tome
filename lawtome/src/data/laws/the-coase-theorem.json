@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It founded the economic analysis of law and, through its focus on transaction costs, the field of new institutional economics. Its real lesson is the opposite of the frictionless idealisation people remember: because bargaining is rarely costless, the assignment of legal rights matters enormously, and attention should fall on the institutions that shape those costs.",
   "working": [
-    {"lead": "Ask what blocks the bargain", "text": "when an efficient deal over an externality fails to appear, look to transaction costs and poorly defined rights as the culprits."},
-    {"lead": "Treat the frictionless case as a foil", "text": "use the zero-cost result as a benchmark that highlights real-world frictions, not as a description of how markets actually work."},
-    {"lead": "Design the rights carefully", "text": "where bargaining is costly, recognise that who holds the initial entitlement affects the outcome, and assign rights with that in mind."}
+    {
+      "lead": "Ask what blocks the bargain",
+      "text": "when an efficient deal over an externality fails to appear, look to transaction costs and poorly defined rights as the culprits."
+    },
+    {
+      "lead": "Treat the frictionless case as a foil",
+      "text": "use the zero-cost result as a benchmark that highlights real-world frictions, not as a description of how markets actually work."
+    },
+    {
+      "lead": "Design the rights carefully",
+      "text": "where bargaining is costly, recognise that who holds the initial entitlement affects the outcome, and assign rights with that in mind."
+    }
   ],
   "limits": "It is a conditional result whose antecedent — zero transaction costs — essentially never holds, so its real-world applicability is genuinely debated. With many parties, coordination costs explode; dispersed rights invite holdouts; assembling contributions invites free-riding. Behavioural evidence on the endowment effect shows willingness-to-accept exceeds willingness-to-pay, so the initial allocation does change outcomes, violating the invariance claim. Information asymmetry defeats the efficient bargain. Its main value is analytical: to reveal that where efficiency fails, transaction costs and ill-defined rights are to blame. The popular version — markets fix externalities, so deregulate — inverts Coase's own institutional message.",
   "misreadings": "Coase himself did not call it a theorem, nor did he intend the frictionless idealisation as a description of reality — George Stigler named it, and Coase's point was that because transaction costs are real and large, the initial assignment of rights matters greatly. Reading it as a case for laissez-faire reverses its intent.",
@@ -45,11 +54,26 @@
   "coinedYear": 1960,
   "namedAfter": "Ronald Coase",
   "sources": [
-    {"text": "Coase theorem, Wikipedia. — the bargaining-to-efficiency statement, the transaction-cost pivot, and Stigler's naming.", "url": "https://en.wikipedia.org/wiki/Coase_theorem", "type": "secondary"},
-    {"text": "The Problem of Social Cost, Wikipedia. — Coase's rancher/farmer and Sturges v Bridgman examples and his real argument about transaction costs.", "url": "https://en.wikipedia.org/wiki/The_Problem_of_Social_Cost", "type": "secondary"}
+    {
+      "text": "Coase theorem, Wikipedia. — the bargaining-to-efficiency statement, the transaction-cost pivot, and Stigler's naming.",
+      "url": "https://en.wikipedia.org/wiki/Coase_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "The Problem of Social Cost, Wikipedia. — Coase's rancher/farmer and Sturges v Bridgman examples and his real argument about transaction costs.",
+      "url": "https://en.wikipedia.org/wiki/The_Problem_of_Social_Cost",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Coase_theorem",
   "related": [
-    {"slug": "the-modigliani-miller-theorem", "kind": "kindred"}
+    {
+      "slug": "the-modigliani-miller-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-tragedy-of-the-commons",
+      "kind": "kindred"
+    }
   ]
 }

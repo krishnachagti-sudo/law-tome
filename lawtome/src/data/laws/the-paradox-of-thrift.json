@@ -2,7 +2,10 @@
   "no": "727",
   "slug": "the-paradox-of-thrift",
   "name": "The Paradox of Thrift",
-  "aliases": ["The paradox of saving", "Keynes's thrift paradox"],
+  "aliases": [
+    "The paradox of saving",
+    "Keynes's thrift paradox"
+  ],
   "statement": "If everyone saves more at once in a slump, incomes fall and total saving may not rise at all.",
   "statementAccent": "incomes fall and total saving may not rise at all",
   "meaning": "The paradox of thrift, also called the paradox of saving, is a proposition in economics popularised by John Maynard Keynes: if everyone tries to save more during an economic downturn, aggregate demand falls, which lowers total output and incomes, and can ultimately reduce total saving in the economy rather than increase it. What is prudent for an individual, saving more, can be harmful when everyone does it at once. Keynes formalised the idea in his 1936 General Theory of Employment, Interest and Money, and it has earlier antecedents, including Bernard Mandeville's Fable of the Bees. The paradox is a leading example of the fallacy of composition, the error of assuming that what is true for one part must be true for the whole. It applies chiefly in a demand-deficient recession, below full employment, and it is contested by economists who argue that at full employment increased saving simply funds investment.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The paradox of thrift is a central proposition of Keynesian macroeconomics, illustrating how individually sensible behaviour can be collectively harmful and why economies can get stuck in downturns. It is a vivid demonstration of the fallacy of composition and of the interdependence of spending and income, showing that during a demand-deficient recession a general rush to save can shrink output and defeat itself. The idea underlies the case against austerity in slumps and the argument for fiscal stimulus, since if households and firms all retrench, government spending may be needed to sustain demand and prevent a deeper contraction. It connects to related dynamics like the paradox of deleveraging and to the multiplier. Because it is also contested, with classical economists arguing that saving funds investment, the paradox of thrift sits at the heart of long-running debates about how economies behave in recessions and how policy should respond.",
   "working": [
-    {"lead": "Have everyone save more", "text": "suppose all households cut consumption to increase saving during a downturn with idle resources."},
-    {"lead": "Watch incomes fall", "text": "note that lower spending means lower sales, so firms cut output and jobs, and incomes drop across the economy."},
-    {"lead": "See saving fail to rise", "text": "recognise that with lower incomes, households cannot save as intended, so total saving stalls or falls while output contracts."}
+    {
+      "lead": "Have everyone save more",
+      "text": "suppose all households cut consumption to increase saving during a downturn with idle resources."
+    },
+    {
+      "lead": "Watch incomes fall",
+      "text": "note that lower spending means lower sales, so firms cut output and jobs, and incomes drop across the economy."
+    },
+    {
+      "lead": "See saving fail to rise",
+      "text": "recognise that with lower incomes, households cannot save as intended, so total saving stalls or falls while output contracts."
+    }
   ],
   "limits": "The paradox of thrift applies mainly in a demand-deficient recession, when the economy is below full employment with idle resources; it is not a general law of saving. At full employment, the classical and loanable-funds view holds that increased saving lowers interest rates and is channelled into productive investment, so more saving need not reduce output, and the paradox does not arise. Critics also note that saving is essential for long-run growth, so the paradox concerns short-run demand management, not the value of thrift over time. Whether and when the paradox binds depends on the state of the economy, the responsiveness of investment to interest rates, and monetary conditions. So it is a powerful and influential proposition within Keynesian conditions rather than a universal truth about saving.",
   "misreadings": "The paradox does not say saving is bad in general; it concerns a specific situation, a demand-deficient recession, in which a simultaneous rush to save can be self-defeating. It is not a claim that individual thrift is imprudent, only that generalising it in a slump lowers incomes and total saving, the fallacy of composition. And it is contested rather than universal: at full employment the classical view holds saving funds investment, so treating the paradox as always true, or as condemning thrift outright, misreads a proposition bounded by recessionary conditions.",
@@ -46,12 +58,30 @@
   "coinedYear": 1936,
   "namedAfter": null,
   "sources": [
-    {"text": "Paradox of thrift, Wikipedia. — the proposition that collective saving reduces aggregate demand, output, and total saving, the Keynes and General Theory attribution, the fallacy-of-composition mechanism, the below-full-employment condition, the classical loanable-funds criticism, and the Mandeville antecedent.", "url": "https://en.wikipedia.org/wiki/Paradox_of_thrift", "type": "secondary"},
-    {"text": "Government austerity policy and the paradox of thrift, CORE Economics (The Economy). — the paradox in the context of recession, aggregate demand, and austerity.", "url": "https://books.core-econ.org/the-economy/macroeconomics/05-macroeconomic-policy-08-government-austerity.html", "type": "secondary"}
+    {
+      "text": "Paradox of thrift, Wikipedia. — the proposition that collective saving reduces aggregate demand, output, and total saving, the Keynes and General Theory attribution, the fallacy-of-composition mechanism, the below-full-employment condition, the classical loanable-funds criticism, and the Mandeville antecedent.",
+      "url": "https://en.wikipedia.org/wiki/Paradox_of_thrift",
+      "type": "secondary"
+    },
+    {
+      "text": "Government austerity policy and the paradox of thrift, CORE Economics (The Economy). — the paradox in the context of recession, aggregate demand, and austerity.",
+      "url": "https://books.core-econ.org/the-economy/macroeconomics/05-macroeconomic-policy-08-government-austerity.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Paradox_of_thrift",
   "related": [
-    {"slug": "the-liquidity-trap", "kind": "kindred"},
-    {"slug": "the-tragedy-of-the-commons", "kind": "kindred"}
+    {
+      "slug": "the-liquidity-trap",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-tragedy-of-the-commons",
+      "kind": "kindred"
+    },
+    {
+      "slug": "says-law",
+      "kind": "tension"
+    }
   ]
 }

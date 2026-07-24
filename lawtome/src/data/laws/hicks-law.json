@@ -2,7 +2,9 @@
   "no": "096",
   "slug": "hicks-law",
   "name": "Hick's Law",
-  "aliases": ["The Hick–Hyman law"],
+  "aliases": [
+    "The Hick–Hyman law"
+  ],
   "statement": "The time to decide grows with the logarithm of the number of choices.",
   "statementAccent": "logarithm of the number of choices",
   "meaning": "The more options a person faces, the longer they take to pick one — but not in proportion. Because the relationship is logarithmic, doubling the number of choices does not double the decision time; each additional option adds less delay than the one before it.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It gives interface and cognitive design a quantitative handle on choice: adding options has a real but diminishing cost, and the cost is paid in decision time. It underwrites the case for grouping and hierarchy over flat, sprawling lists — and, read carefully, it also warns against the lazy conclusion that fewer options are always better.",
   "working": [
-    {"lead": "Structure choices so they can be halved", "text": "the logarithmic speed-up only appears when users can subdivide by category; group and label options rather than merely trimming them."},
-    {"lead": "Don't cut options blindly", "text": "the law is often over-applied to justify 'always fewer choices' — but a searchable, well-organised long list can beat an artificially short one."},
-    {"lead": "Design for known intent", "text": "when users arrive knowing what they want, prioritise findability (search, clear labels) over raw option count, since the law's assumptions no longer bind."}
+    {
+      "lead": "Structure choices so they can be halved",
+      "text": "the logarithmic speed-up only appears when users can subdivide by category; group and label options rather than merely trimming them."
+    },
+    {
+      "lead": "Don't cut options blindly",
+      "text": "the law is often over-applied to justify 'always fewer choices' — but a searchable, well-organised long list can beat an artificially short one."
+    },
+    {
+      "lead": "Design for known intent",
+      "text": "when users arrive knowing what they want, prioritise findability (search, clear labels) over raw option count, since the law's assumptions no longer bind."
+    }
   ],
   "limits": "Hick's law applies to simple choice-reaction tasks with equally likely, known, pre-visible alternatives. It does not straightforwardly cover large menus where users scan (linear time) or must categorise (logarithmic only if the structure supports subdivision). Documented exceptions weaken or reverse it: verbal responses show little reaction-time increase with more elements, saccadic eye movements show no relationship or even faster responses, and sequence learning traces a sigmoid rather than linear curve. Its quantitative predictions are domain-limited, not universal.",
   "misreadings": "It is not a blanket rule that fewer options are always faster or better — its logarithm means the marginal cost of each added option shrinks, and its scope is narrow. In UX it is routinely overstretched; practitioners note that organisation and hierarchy usually matter more than sheer option count, and that some complexity is irreducible.",
@@ -46,12 +57,31 @@
   "coinedYear": 1952,
   "namedAfter": "William Edmund Hick",
   "sources": [
-    {"text": "Hick, W.E. (1952). \"On the rate of gain of information.\" Quarterly Journal of Experimental Psychology, 4, 11–26.", "url": "https://journals.sagepub.com/doi/10.1080/17470215208416600", "type": "primary"},
-    {"text": "Hick's law, Wikipedia. — the log₂ and entropy forms, the mechanism, and the scanning/verbal/saccadic exceptions.", "url": "https://en.wikipedia.org/wiki/Hick%27s_law", "type": "secondary"},
-    {"text": "\"Hick's Law,\" Interaction Design Foundation. — the categorisation-over-deletion reading and the known-intent exception.", "url": "https://www.interaction-design.org/literature/topics/hick-s-law", "type": "secondary"}
+    {
+      "text": "Hick, W.E. (1952). \"On the rate of gain of information.\" Quarterly Journal of Experimental Psychology, 4, 11–26.",
+      "url": "https://journals.sagepub.com/doi/10.1080/17470215208416600",
+      "type": "primary"
+    },
+    {
+      "text": "Hick's law, Wikipedia. — the log₂ and entropy forms, the mechanism, and the scanning/verbal/saccadic exceptions.",
+      "url": "https://en.wikipedia.org/wiki/Hick%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Hick's Law,\" Interaction Design Foundation. — the categorisation-over-deletion reading and the known-intent exception.",
+      "url": "https://www.interaction-design.org/literature/topics/hick-s-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Hick%27s_law",
   "related": [
-    {"slug": "fitts-law", "kind": "kindred"}
+    {
+      "slug": "fitts-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-hick-hyman-law",
+      "kind": "near-twin"
+    }
   ]
 }

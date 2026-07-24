@@ -2,7 +2,10 @@
   "no": "697",
   "slug": "the-grue-paradox",
   "name": "The Grue Paradox",
-  "aliases": ["The new riddle of induction", "Goodman's grue"],
+  "aliases": [
+    "The new riddle of induction",
+    "Goodman's grue"
+  ],
   "statement": "The same green emeralds that support all emeralds are green equally support that they are grue, which predicts blue.",
   "statementAccent": "equally support that they are grue, which predicts blue",
   "meaning": "The grue paradox, which the American philosopher Nelson Goodman called the new riddle of induction, is a problem about confirmation and inductive reasoning presented in his 1955 book Fact, Fiction, and Forecast. Goodman defines a strange predicate, grue: an object is grue if it is examined before some future time t and found green, or is not examined before t and is blue. Every emerald observed so far, all before t, has been green, and therefore also grue. So the same evidence, our stock of observed green emeralds, equally supports the hypothesis that all emeralds are green and the hypothesis that all emeralds are grue. Yet these hypotheses diverge for emeralds first examined after t: the green hypothesis predicts they will be green, while the grue hypothesis predicts they will be blue. Identical past evidence thus supports contradictory predictions, showing that induction cannot be justified on purely formal grounds.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The grue paradox is a landmark problem in the philosophy of science, confirmation theory, and the metaphysics of natural kinds and laws, reframing the problem of induction. Where Hume asked why past regularities give reason to expect future ones, Goodman showed that even granting inductive support, we face a prior question of which regularities to project, since the same evidence supports incompatible generalisations depending on the predicates used. This new riddle demonstrates that confirmation cannot be a purely formal or syntactic relation and that some notion of projectibility, of which predicates are lawlike and inductively usable, is indispensable. The paradox has shaped decades of work on laws of nature, natural kinds, and the foundations of scientific inference, and Goodman's proposed answer through entrenchment remains a reference point in debates about what makes a generalisation genuinely lawlike.",
   "working": [
-    {"lead": "Introduce grue", "text": "define grue as green if examined before t and blue otherwise, so observed green emeralds are all grue as well."},
-    {"lead": "Notice the equal support", "text": "see that the same evidence confirms both all emeralds are green and all emeralds are grue, which predict different futures."},
-    {"lead": "Ask what is projectible", "text": "conclude that induction needs a way to say which predicates are lawlike, with Goodman appealing to entrenchment rather than pure logic."}
+    {
+      "lead": "Introduce grue",
+      "text": "define grue as green if examined before t and blue otherwise, so observed green emeralds are all grue as well."
+    },
+    {
+      "lead": "Notice the equal support",
+      "text": "see that the same evidence confirms both all emeralds are green and all emeralds are grue, which predict different futures."
+    },
+    {
+      "lead": "Ask what is projectible",
+      "text": "conclude that induction needs a way to say which predicates are lawlike, with Goodman appealing to entrenchment rather than pure logic."
+    }
   ],
   "limits": "The grue paradox poses the problem of projectibility but does not, on its own, definitively solve it; Goodman's entrenchment proposal is influential but contested, and critics argue it is descriptive rather than justificatory, telling us which predicates we do project without fully explaining why that is rational. Alternative responses appeal to naturalness, causal structure, or laws of nature to distinguish green from grue, each with its own difficulties. The symmetry point shows the asymmetry between grue and green is not purely formal, which deepens the problem rather than resolving it. So the new riddle is best understood as an enduring challenge that reshaped how philosophers think about induction and lawlikeness rather than a puzzle with an agreed answer, and debate over projectibility continues.",
   "misreadings": "Grue is not simply a colour that changes over time; it is defined by reference to whether and when an object is examined, which is what makes green emeralds count as grue. The paradox does not claim we cannot tell green from grue in practice; it claims no purely logical criterion distinguishes which predicate to project, so the appeal must be to something like entrenchment or naturalness. And the time-dependence is not a decisive objection, since grue and green are inter-definable and which looks time-dependent depends on one's basic vocabulary, so dismissing grue as obviously ill-formed misses the riddle's point.",
@@ -46,12 +58,30 @@
   "coinedYear": 1955,
   "namedAfter": null,
   "sources": [
-    {"text": "New riddle of induction, Wikipedia. — Goodman's 1955 Fact, Fiction, and Forecast, the definitions of grue and bleen, the equal confirmation of all emeralds are grue predicting blue, the projectibility problem, entrenchment, and the symmetry point.", "url": "https://en.wikipedia.org/wiki/New_riddle_of_induction", "type": "secondary"},
-    {"text": "Nelson Goodman, Stanford Encyclopedia of Philosophy. — the new riddle of induction, grue, projectibility, and Goodman's appeal to entrenchment.", "url": "https://plato.stanford.edu/entries/goodman/", "type": "secondary"}
+    {
+      "text": "New riddle of induction, Wikipedia. — Goodman's 1955 Fact, Fiction, and Forecast, the definitions of grue and bleen, the equal confirmation of all emeralds are grue predicting blue, the projectibility problem, entrenchment, and the symmetry point.",
+      "url": "https://en.wikipedia.org/wiki/New_riddle_of_induction",
+      "type": "secondary"
+    },
+    {
+      "text": "Nelson Goodman, Stanford Encyclopedia of Philosophy. — the new riddle of induction, grue, projectibility, and Goodman's appeal to entrenchment.",
+      "url": "https://plato.stanford.edu/entries/goodman/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/New_riddle_of_induction",
   "related": [
-    {"slug": "the-raven-paradox", "kind": "kindred"},
-    {"slug": "the-berry-paradox", "kind": "kindred"}
+    {
+      "slug": "the-raven-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-berry-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-problem-of-induction",
+      "kind": "kindred"
+    }
   ]
 }

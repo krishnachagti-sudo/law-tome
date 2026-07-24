@@ -2,7 +2,11 @@
   "no": "424",
   "slug": "the-impossible-trinity",
   "name": "The Impossible Trinity",
-  "aliases": ["The trilemma", "The open-economy trilemma", "The Mundell-Fleming trilemma"],
+  "aliases": [
+    "The trilemma",
+    "The open-economy trilemma",
+    "The Mundell-Fleming trilemma"
+  ],
   "statement": "A country can have any two of a fixed exchange rate, free capital flows, and its own monetary policy, but never all three.",
   "statementAccent": "any two of",
   "meaning": "The impossible trinity holds that a country cannot simultaneously maintain a fixed exchange rate, free movement of capital across its borders, and an independent monetary policy. It can secure at most two of the three; pursuing all three at once is impossible. A policymaker must therefore give up one corner to hold the other two, choosing which goal to sacrifice. The result is a foundational constraint on how open economies can manage their exchange rates, their capital accounts, and their control over domestic interest rates.",
@@ -33,9 +37,18 @@
   ],
   "whyItMatters": "It is foundational to international macroeconomics, structuring how economists and policymakers think about the choice of exchange-rate regime for any open economy. It clarifies the trade-offs behind the euro, the debates over capital controls, the design of the Bretton Woods system, and the acute tensions facing emerging markets that want stable pegs, open capital accounts, and domestic monetary control at once. By naming a hard limit, it disciplines expectations about what monetary and exchange-rate policy can jointly achieve.",
   "working": [
-    {"lead": "Pick two corners", "text": "when designing exchange-rate and monetary policy, accept that at most two of fixed rate, open capital, and monetary autonomy can be held together."},
-    {"lead": "Trace the arbitrage", "text": "expect that with open capital markets, defending a peg will consume monetary policy through the pressure of cross-border flows."},
-    {"lead": "Read regimes as choices", "text": "interpret a country's exchange-rate arrangement as a decision about which corner of the trinity it has given up."}
+    {
+      "lead": "Pick two corners",
+      "text": "when designing exchange-rate and monetary policy, accept that at most two of fixed rate, open capital, and monetary autonomy can be held together."
+    },
+    {
+      "lead": "Trace the arbitrage",
+      "text": "expect that with open capital markets, defending a peg will consume monetary policy through the pressure of cross-border flows."
+    },
+    {
+      "lead": "Read regimes as choices",
+      "text": "interpret a country's exchange-rate arrangement as a decision about which corner of the trinity it has given up."
+    }
   ],
   "limits": "It is a model-based proposition, not an empirical law, and its clean corners are idealisations. The real world offers intermediate regimes, managed floats, crawling pegs, partial or targeted capital controls, and sterilised intervention, that occupy the middle ground rather than pure corners. Capital controls are imperfect, often evaded, and introduce distortions, complicating the fixed-rate-plus-autonomy corner. The most prominent modern challenge is Helene Rey's argument that a floating exchange rate does not fully insulate monetary policy, because a global financial cycle constrains it whenever capital is mobile, turning the trilemma into a dilemma.",
   "misreadings": "It does not mean a country can have a little of all three; the strict proposition is a corner constraint, and intermediate regimes represent partial trade-offs, not an escape from it. A fixed exchange rate does not by itself cost a country its monetary independence; the binding condition is a fixed rate combined with open capital markets, since a peg plus capital controls can preserve autonomy. And a floating exchange rate does not guarantee full monetary independence, which is precisely the traditional claim that Rey's work disputes.",
@@ -46,11 +59,26 @@
   "coinedYear": 1963,
   "namedAfter": "Robert Mundell",
   "sources": [
-    {"text": "Impossible trinity, Wikipedia. — the three-way constraint, the arbitrage mechanism, the Mundell-Fleming origin, and Rey's dilemma critique.", "url": "https://en.wikipedia.org/wiki/Impossible_trinity", "type": "secondary"},
-    {"text": "Mundell, 'Capital Mobility and Stabilization Policy under Fixed and Flexible Exchange Rates,' Canadian Journal of Economics and Political Science 29(4) (1963): 475-485. — the underlying open-economy model.", "url": "https://www.jstor.org/stable/139336", "type": "primary"}
+    {
+      "text": "Impossible trinity, Wikipedia. — the three-way constraint, the arbitrage mechanism, the Mundell-Fleming origin, and Rey's dilemma critique.",
+      "url": "https://en.wikipedia.org/wiki/Impossible_trinity",
+      "type": "secondary"
+    },
+    {
+      "text": "Mundell, 'Capital Mobility and Stabilization Policy under Fixed and Flexible Exchange Rates,' Canadian Journal of Economics and Political Science 29(4) (1963): 475-485. — the underlying open-economy model.",
+      "url": "https://www.jstor.org/stable/139336",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Impossible_trinity",
   "related": [
-    {"slug": "purchasing-power-parity", "kind": "kindred"}
+    {
+      "slug": "purchasing-power-parity",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-triffin-dilemma",
+      "kind": "kindred"
+    }
   ]
 }

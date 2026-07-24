@@ -2,7 +2,9 @@
   "no": "260",
   "slug": "the-sapir-whorf-hypothesis",
   "name": "The Sapir-Whorf Hypothesis",
-  "aliases": ["Linguistic relativity"],
+  "aliases": [
+    "Linguistic relativity"
+  ],
   "statement": "The language you speak shapes the way you think.",
   "statementAccent": "shapes the way you think",
   "meaning": "The proposition that the structure of a language influences or shapes how its speakers perceive and think about the world. It comes in two versions: a strong one, linguistic determinism, holding that language determines and limits thought, which is largely rejected; and a weak one, linguistic relativity, holding that language influences habitual thought without strictly constraining it, which has some support and is contested.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It poses one of the deepest questions about language and mind — whether the tongue you speak shapes the thoughts you can have — and it has driven decades of research across linguistics, anthropology, and cognitive science. The debate between relativists and universalists remains among the most consequential in the study of language and cognition.",
   "working": [
-    {"lead": "Specify which version", "text": "never treat the hypothesis as simply true or false — distinguish the rejected strong determinism from the partially supported weak relativity."},
-    {"lead": "Look to obligatory distinctions", "text": "where a language forces a category — a colour split, an absolute direction — look for a modest, habitual effect on perception or memory."},
-    {"lead": "Weigh the universalist case", "text": "hold the relativist evidence against universalist findings like shared colour categories before drawing conclusions."}
+    {
+      "lead": "Specify which version",
+      "text": "never treat the hypothesis as simply true or false — distinguish the rejected strong determinism from the partially supported weak relativity."
+    },
+    {
+      "lead": "Look to obligatory distinctions",
+      "text": "where a language forces a category — a colour split, an absolute direction — look for a modest, habitual effect on perception or memory."
+    },
+    {
+      "lead": "Weigh the universalist case",
+      "text": "hold the relativist evidence against universalist findings like shared colour categories before drawing conclusions."
+    }
   ],
   "limits": "The hypothesis is genuinely contested and must be split. The strong version, that language determines thought, is rejected by mainstream cognitive science. The weak version has some domain-specific support, notably in colour discrimination and spatial cognition, but effect sizes are modest, some findings such as grammatical gender fail to replicate, and interpretation is disputed. Universalist critiques weigh heavily against it: Berlin and Kay found broadly universal colour categories, Pinker argued for a universal language of thought, and the famous claim of many Eskimo words for snow is a debunked myth, often wrongly attributed to Whorf.",
   "misreadings": "It is not simply true or false — the strong determinist version is rejected while the weak relativist version has partial support, so any flat verdict misleads. And the many-words-for-snow story is a myth, not evidence for it, and was not even Whorf's claim; the count of snow roots is roughly comparable to English.",
@@ -45,11 +56,22 @@
   "provenance": "canon",
   "namedAfter": "Edward Sapir and Benjamin Lee Whorf",
   "sources": [
-    {"text": "Linguistic relativity, Wikipedia. — the strong and weak versions, the Russian-blues and Guugu Yimithirr evidence, the universalist critiques, and the later naming.", "url": "https://en.wikipedia.org/wiki/Linguistic_relativity", "type": "secondary"},
-    {"text": "Pullum, \"The Great Eskimo Vocabulary Hoax.\" — the debunking of the many-words-for-snow myth.", "url": "https://www.lel.ed.ac.uk/~gpullum/EskimoHoax.pdf", "type": "secondary"}
+    {
+      "text": "Linguistic relativity, Wikipedia. — the strong and weak versions, the Russian-blues and Guugu Yimithirr evidence, the universalist critiques, and the later naming.",
+      "url": "https://en.wikipedia.org/wiki/Linguistic_relativity",
+      "type": "secondary"
+    },
+    {
+      "text": "Pullum, \"The Great Eskimo Vocabulary Hoax.\" — the debunking of the many-words-for-snow myth.",
+      "url": "https://www.lel.ed.ac.uk/~gpullum/EskimoHoax.pdf",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Linguistic_relativity",
   "related": [
-    {"slug": "the-gricean-maxims", "kind": "kindred"}
+    {
+      "slug": "universal-grammar",
+      "kind": "tension"
+    }
   ]
 }

@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is a foundational idea of quantitative finance and the statistical companion of the efficient-market hypothesis, capturing why markets are so hard to beat and why passive investing works. Its history, from Bachelier's forgotten thesis to Samuelson's proof and Malkiel's bestseller, traces the emergence of the modern understanding of how prices move.",
   "working": [
-    {"lead": "Distrust chart patterns", "text": "treat apparent patterns in past prices as unlikely to forecast future moves, since increments are close to independent."},
-    {"lead": "Index rather than time", "text": "given unpredictability, prefer buying and holding a diversified index to trying to forecast the next move."},
-    {"lead": "Separate walk from martingale", "text": "distinguish the strict random walk from the weaker fair-game condition, which is what efficiency really requires."}
+    {
+      "lead": "Distrust chart patterns",
+      "text": "treat apparent patterns in past prices as unlikely to forecast future moves, since increments are close to independent."
+    },
+    {
+      "lead": "Index rather than time",
+      "text": "given unpredictability, prefer buying and holding a diversified index to trying to forecast the next move."
+    },
+    {
+      "lead": "Separate walk from martingale",
+      "text": "distinguish the strict random walk from the weaker fair-game condition, which is what efficiency really requires."
+    }
   ],
   "limits": "The hypothesis is contested and, in strict form, statistically rejected. Lo and MacKinlay presented variance-ratio evidence against a pure random walk in weekly stock returns, and predictability, though small and unstable, exists as momentum and mean reversion. The random walk is an approximation: real returns show volatility clustering and fat tails, so the Gaussian-increment version fails, as Mandelbrot showed for cotton prices. The weaker claim, that prices are hard to predict and roughly a fair game, has broader support, while behavioural finance argues that mispricings arise from bounded rationality.",
   "misreadings": "A random walk does not mean prices are pure noise with no direction — they typically drift upward over time, and it is the deviations around that trend that are unpredictable. It is not identical to the efficient-market hypothesis: weak-form efficiency implies unpredictability but not full statistical independence. It does not mean fundamentals are irrelevant; prices move randomly precisely because they absorb new information at once. And rejecting the strict walk does not make markets easily beatable, since the predictability is small and often erased by costs.",
@@ -44,12 +53,31 @@
   "provenance": "canon",
   "coinedYear": 1900,
   "sources": [
-    {"text": "Random walk hypothesis, Wikipedia. — the unpredictability statement, the Bachelier-Kendall-Samuelson-Malkiel history, and the martingale distinction.", "url": "https://en.wikipedia.org/wiki/Random_walk_hypothesis", "type": "secondary"},
-    {"text": "Kendall, \"The Analysis of Economic Time-Series - Part I: Prices,\" Journal of the Royal Statistical Society 116:11-34 (1953). — the finding that price changes looked random.", "url": "https://www.scirp.org/reference/referencespapers?referenceid=2914783", "type": "primary"},
-    {"text": "Lo & MacKinlay, A Non-Random Walk Down Wall Street (Princeton University Press, 1999). — variance-ratio evidence rejecting the pure random walk.", "url": "http://www.e-m-h.org/Lo%20&%20MacKinlay%20A%20Non-Random%20Walk%20down%20Wall%20Street%20Introduction.htm", "type": "primary"}
+    {
+      "text": "Random walk hypothesis, Wikipedia. — the unpredictability statement, the Bachelier-Kendall-Samuelson-Malkiel history, and the martingale distinction.",
+      "url": "https://en.wikipedia.org/wiki/Random_walk_hypothesis",
+      "type": "secondary"
+    },
+    {
+      "text": "Kendall, \"The Analysis of Economic Time-Series - Part I: Prices,\" Journal of the Royal Statistical Society 116:11-34 (1953). — the finding that price changes looked random.",
+      "url": "https://www.scirp.org/reference/referencespapers?referenceid=2914783",
+      "type": "primary"
+    },
+    {
+      "text": "Lo & MacKinlay, A Non-Random Walk Down Wall Street (Princeton University Press, 1999). — variance-ratio evidence rejecting the pure random walk.",
+      "url": "http://www.e-m-h.org/Lo%20&%20MacKinlay%20A%20Non-Random%20Walk%20down%20Wall%20Street%20Introduction.htm",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Random_walk_hypothesis",
   "related": [
-    {"slug": "the-efficient-market-hypothesis", "kind": "kindred"}
+    {
+      "slug": "the-efficient-market-hypothesis",
+      "kind": "kindred"
+    },
+    {
+      "slug": "brownian-motion",
+      "kind": "kindred"
+    }
   ]
 }

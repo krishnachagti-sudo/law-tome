@@ -33,9 +33,18 @@
   ],
   "whyItMatters": "It explains a pervasive barrier to clear communication, teaching, writing, and design, and it warns experts that fluency in a subject can make them worse, not better, at conveying it to newcomers. It matters across education, technical documentation, user-interface design, and economics, and it names why the people who know the most often struggle hardest to reach those who know the least.",
   "working": [
-    {"lead": "Assume less shared knowledge", "text": "when explaining, deliberately spell out the context and terms that feel obvious to you, since your audience may not have them."},
-    {"lead": "Test on a novice", "text": "check your communication against someone who lacks your background, since you cannot reliably simulate their perspective yourself."},
-    {"lead": "Strip the jargon", "text": "translate specialist language into plain terms, because familiarity blinds you to how opaque it is to others."}
+    {
+      "lead": "Assume less shared knowledge",
+      "text": "when explaining, deliberately spell out the context and terms that feel obvious to you, since your audience may not have them."
+    },
+    {
+      "lead": "Test on a novice",
+      "text": "check your communication against someone who lacks your background, since you cannot reliably simulate their perspective yourself."
+    },
+    {
+      "lead": "Strip the jargon",
+      "text": "translate specialist language into plain terms, because familiarity blinds you to how opaque it is to others."
+    }
   ],
   "limits": "It is a real, repeatedly documented bias with an experimental basis in economics and psychology, and reducing the knowledge gap, as market forces can, lessens but does not eliminate it. It is distinct from mere arrogance, being an involuntary cognitive limit rather than an attitude, and it is broader than hindsight bias, which concerns one's own past self rather than others. Some historical details, such as the exact title of Newton's dissertation, are reported inconsistently.",
   "misreadings": "It is not simple condescension or talking down; it is an unwilled inability to model a less-informed mind. It was not coined by the popularisers who spread it, but by Camerer, Loewenstein, and Weber in 1989. And it is not identical to hindsight bias: hindsight bias is over-assuming past predictability, while the curse of knowledge is projecting present knowledge onto other people.",
@@ -45,12 +54,30 @@
   "provenance": "canon",
   "coinedYear": 1989,
   "sources": [
-    {"text": "Camerer, Loewenstein & Weber, \"The Curse of Knowledge in Economic Settings,\" Journal of Political Economy 97 (1989): 1232-1254. — the coining of the term and the market experiments.", "url": "https://www.cmu.edu/dietrich/sds/docs/loewenstein/CurseknowledgeEconSet.pdf", "type": "primary"},
-    {"text": "Curse of knowledge, Wikipedia. — the perspective-taking failure, the tappers-and-listeners study, and the link to hindsight bias.", "url": "https://en.wikipedia.org/wiki/Curse_of_knowledge", "type": "secondary"}
+    {
+      "text": "Camerer, Loewenstein & Weber, \"The Curse of Knowledge in Economic Settings,\" Journal of Political Economy 97 (1989): 1232-1254. — the coining of the term and the market experiments.",
+      "url": "https://www.cmu.edu/dietrich/sds/docs/loewenstein/CurseknowledgeEconSet.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Curse of knowledge, Wikipedia. — the perspective-taking failure, the tappers-and-listeners study, and the link to hindsight bias.",
+      "url": "https://en.wikipedia.org/wiki/Curse_of_knowledge",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Curse_of_knowledge",
   "related": [
-    {"slug": "the-hindsight-bias", "kind": "kindred"},
-    {"slug": "the-spotlight-effect", "kind": "kindred"}
+    {
+      "slug": "the-hindsight-bias",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-spotlight-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-illusion-of-transparency",
+      "kind": "kindred"
+    }
   ]
 }

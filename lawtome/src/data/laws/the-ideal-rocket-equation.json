@@ -2,7 +2,10 @@
   "no": "610",
   "slug": "the-ideal-rocket-equation",
   "name": "The Ideal Rocket Equation",
-  "aliases": ["Tsiolkovsky rocket equation", "The rocket equation"],
+  "aliases": [
+    "Tsiolkovsky rocket equation",
+    "The rocket equation"
+  ],
   "statement": "A rocket's change in speed equals its exhaust speed times the logarithm of its mass ratio.",
   "statementAccent": "times the logarithm of its mass ratio",
   "meaning": "The ideal rocket equation relates the change in velocity a rocket can achieve, its delta-v, to how fast it expels exhaust and how much of its mass is propellant. The change in velocity equals the effective exhaust velocity multiplied by the natural logarithm of the ratio of the rocket's initial fuelled mass to its final empty mass. Because a rocket has nothing to push against in space, it accelerates by throwing mass out the back, and this equation, derived by Konstantin Tsiolkovsky in 1903 from conservation of momentum, is the foundational relation of astronautics. Its logarithm carries a harsh message: reaching high speeds demands exponentially more propellant, the constraint that shapes every aspect of rocket and mission design.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The ideal rocket equation is the foundational relation of spaceflight, governing every mission from a satellite launch to an interplanetary probe by setting how much propellant a given change in velocity demands. Its logarithmic form is the central hard fact of astronautics, explaining why rockets are overwhelmingly propellant, why they must be staged, and why raising exhaust velocity with ion or nuclear engines is so prized. It frames the entire challenge of leaving Earth and travelling through space, and it makes clear why chemical rockets strain to reach high speeds and why every kilogram of payload is fought for. No aspect of mission design escapes it.",
   "working": [
-    {"lead": "Tie delta-v to mass ratio", "text": "compute the achievable change in velocity as the exhaust velocity times the natural logarithm of the initial-to-final mass ratio."},
-    {"lead": "Respect the logarithm", "text": "recognise that propellant grows exponentially with delta-v, so doubling the target speed squares the required mass ratio rather than doubling it."},
-    {"lead": "Stage and raise exhaust speed", "text": "shed empty mass by staging and use high-exhaust-velocity engines to win delta-v without impossibly large propellant loads."}
+    {
+      "lead": "Tie delta-v to mass ratio",
+      "text": "compute the achievable change in velocity as the exhaust velocity times the natural logarithm of the initial-to-final mass ratio."
+    },
+    {
+      "lead": "Respect the logarithm",
+      "text": "recognise that propellant grows exponentially with delta-v, so doubling the target speed squares the required mass ratio rather than doubling it."
+    },
+    {
+      "lead": "Stage and raise exhaust speed",
+      "text": "shed empty mass by staging and use high-exhaust-velocity engines to win delta-v without impossibly large propellant loads."
+    }
   ],
   "limits": "The equation gives the ideal delta-v with no external forces; real launches lose velocity to gravity, aerodynamic drag, and steering, so the delta-v actually available is less than the equation suggests. It assumes a fixed effective exhaust velocity and treats the rocket as expelling mass in one direction, so variable engine performance and other complications require refinement. It is a statement about momentum budgeting, not about thrust or time, and says nothing directly about how quickly the burn happens. Its logarithmic form is not a limitation of the equation but of reality, imposing the exponential propellant cost that constrains all rocketry.",
   "misreadings": "The equation gives the ideal delta-v, ignoring gravity, drag, and steering losses, so a real rocket achieves less than the bare formula implies. The relationship is logarithmic, so doubling the desired delta-v does not double the propellant but squares the mass ratio, a far steeper cost. And exhaust velocity, tied to specific impulse, is the other lever: raising it buys delta-v more cheaply than adding propellant, which is why high-exhaust-velocity engines matter even though they usually give low thrust.",
@@ -46,11 +58,26 @@
   "coinedYear": 1903,
   "namedAfter": "Konstantin Tsiolkovsky",
   "sources": [
-    {"text": "Tsiolkovsky rocket equation, Wikipedia. — the formula delta-v equals exhaust velocity times the log of the mass ratio, the exponential-propellant consequence, the momentum basis, Tsiolkovsky 1903, and the multistaging rationale.", "url": "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation", "type": "secondary"},
-    {"text": "Ideal Rocket Equation, NASA Glenn Research Center Beginner's Guide to Aeronautics. — the equation relating velocity change to exhaust velocity and mass ratio.", "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/", "type": "primary"}
+    {
+      "text": "Tsiolkovsky rocket equation, Wikipedia. — the formula delta-v equals exhaust velocity times the log of the mass ratio, the exponential-propellant consequence, the momentum basis, Tsiolkovsky 1903, and the multistaging rationale.",
+      "url": "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation",
+      "type": "secondary"
+    },
+    {
+      "text": "Ideal Rocket Equation, NASA Glenn Research Center Beginner's Guide to Aeronautics. — the equation relating velocity change to exhaust velocity and mass ratio.",
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation",
   "related": [
-    {"slug": "keplers-third-law", "kind": "kindred"}
+    {
+      "slug": "keplers-third-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-conservation-of-momentum",
+      "kind": "cause"
+    }
   ]
 }

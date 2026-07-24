@@ -2,7 +2,10 @@
   "no": "225",
   "slug": "kolmogorov-complexity",
   "name": "Kolmogorov Complexity",
-  "aliases": ["Algorithmic complexity", "Solomonoff-Kolmogorov-Chaitin complexity"],
+  "aliases": [
+    "Algorithmic complexity",
+    "Solomonoff-Kolmogorov-Chaitin complexity"
+  ],
   "statement": "The complexity of an object is the length of the shortest program that produces it.",
   "statementAccent": "the shortest program that produces it",
   "meaning": "The Kolmogorov complexity of a string is the length of the shortest computer program, in a fixed universal language, that outputs that string and halts. It measures the object's information content: an object is simple if it has a short description and complex, or random, if its shortest description is essentially itself.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It gives a rigorous, machine-independent definition of the information content and randomness of an individual object, founding the field of algorithmic information theory. It sharpens what compression, simplicity, and randomness mean, and connects deeply to the limits of proof and computation through Godel and the halting problem.",
   "working": [
-    {"lead": "Read shortness as simplicity", "text": "gauge an object's regularity by how short a program can generate it — the shorter the description, the more structure it has."},
-    {"lead": "Treat incompressibility as randomness", "text": "when nothing shorter than the object itself describes it, regard the object as algorithmically random."},
-    {"lead": "Expect only upper bounds", "text": "since the true complexity is uncomputable, work with the best short description you can find, knowing a shorter one may exist."}
+    {
+      "lead": "Read shortness as simplicity",
+      "text": "gauge an object's regularity by how short a program can generate it — the shorter the description, the more structure it has."
+    },
+    {
+      "lead": "Treat incompressibility as randomness",
+      "text": "when nothing shorter than the object itself describes it, regard the object as algorithmically random."
+    },
+    {
+      "lead": "Expect only upper bounds",
+      "text": "since the true complexity is uncomputable, work with the best short description you can find, knowing a shorter one may exist."
+    }
   ],
   "limits": "Kolmogorov complexity is provably uncomputable: no algorithm can compute it in general, a fact equivalent in strength to solving the halting problem. One can only obtain upper bounds by finding ever-shorter programs, never certify the true minimum. It is also defined only up to an additive constant, so absolute complexity values for specific short objects are not uniquely meaningful — the theory is asymptotic. And it must not be confused with computational complexity, which concerns running time rather than description length.",
   "misreadings": "It is not a quantity you can calculate for an arbitrary object — it is uncomputable, and only upper bounds are ever available. And it is not about how long a program takes to run; it is about how short the program can be.",
@@ -46,12 +58,30 @@
   "coinedYear": 1965,
   "namedAfter": "Andrey Kolmogorov",
   "sources": [
-    {"text": "Kolmogorov complexity, Wikipedia. — the shortest-program definition, the invariance theorem, uncomputability, and the multiple discovery.", "url": "https://en.wikipedia.org/wiki/Kolmogorov_complexity", "type": "secondary"},
-    {"text": "Vitanyi, \"An Introduction to Kolmogorov Complexity,\" CWI. — the discovery history and the invariance property.", "url": "https://homepages.cwi.nl/~paulv/kolmogorov.html", "type": "secondary"}
+    {
+      "text": "Kolmogorov complexity, Wikipedia. — the shortest-program definition, the invariance theorem, uncomputability, and the multiple discovery.",
+      "url": "https://en.wikipedia.org/wiki/Kolmogorov_complexity",
+      "type": "secondary"
+    },
+    {
+      "text": "Vitanyi, \"An Introduction to Kolmogorov Complexity,\" CWI. — the discovery history and the invariance property.",
+      "url": "https://homepages.cwi.nl/~paulv/kolmogorov.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Kolmogorov_complexity",
   "related": [
-    {"slug": "the-halting-problem", "kind": "kindred"},
-    {"slug": "godels-incompleteness-theorems", "kind": "kindred"}
+    {
+      "slug": "the-halting-problem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "godels-incompleteness-theorems",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-berry-paradox",
+      "kind": "kindred"
+    }
   ]
 }

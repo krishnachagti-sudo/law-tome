@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is a founding puzzle of decision theory, the problem that forced economists to replace 'maximise expected money' with expected utility and to formalise risk aversion. That it still resists a single agreed resolution keeps it a live foundational question rather than a settled curiosity.",
   "working": [
-    {"lead": "Value gambles by utility, not money", "text": "weigh a risky prospect by the satisfaction its outcomes bring, since expected monetary value can be infinite yet worthless."},
-    {"lead": "Respect diminishing marginal utility", "text": "treat each extra unit of money as worth less than the last, which tames the infinite sum toward a sensible figure."},
-    {"lead": "Remember payoffs are bounded in reality", "text": "real bankrolls and lifespans cap the prizes, so the practical value is finite and small however the theory runs."}
+    {
+      "lead": "Value gambles by utility, not money",
+      "text": "weigh a risky prospect by the satisfaction its outcomes bring, since expected monetary value can be infinite yet worthless."
+    },
+    {
+      "lead": "Respect diminishing marginal utility",
+      "text": "treat each extra unit of money as worth less than the last, which tames the infinite sum toward a sensible figure."
+    },
+    {
+      "lead": "Remember payoffs are bounded in reality",
+      "text": "real bankrolls and lifespans cap the prizes, so the practical value is finite and small however the theory runs."
+    }
   ],
   "limits": "There is no single agreed resolution, which is the key nuance. Diminishing marginal utility alone does not settle it: Menger showed that any unbounded utility function can be defeated by a suitably steep super-St.-Petersburg game, so only bounded utility escapes. Competing modern proposals invoke bounded utility, finite resources, or probability weighting, and the paradox remains cited and unsettled. It is a genuine foundational paradox of decision theory, not a trick or a solved curiosity.",
   "misreadings": "Daniel Bernoulli's diminishing-utility resolution is not the last word — Menger's construction shows it fails for unbounded utility, so bounded utility is required. And the paradox is real, not a sleight of hand: the infinite expected value is genuine, and the point is precisely that expected money cannot capture rational choice.",
@@ -44,9 +53,22 @@
   "provenance": "canon",
   "coinedYear": 1738,
   "sources": [
-    {"text": "St. Petersburg paradox, Wikipedia. — the game, the infinite expected value, the Bernoulli/Cramer origin, and the competing resolutions.", "url": "https://en.wikipedia.org/wiki/St._Petersburg_paradox", "type": "secondary"},
-    {"text": "\"The St. Petersburg Paradox,\" Stanford Encyclopedia of Philosophy. — the expected-utility resolution and Menger's super-St.-Petersburg objection.", "url": "https://plato.stanford.edu/entries/paradox-stpetersburg/", "type": "secondary"}
+    {
+      "text": "St. Petersburg paradox, Wikipedia. — the game, the infinite expected value, the Bernoulli/Cramer origin, and the competing resolutions.",
+      "url": "https://en.wikipedia.org/wiki/St._Petersburg_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "\"The St. Petersburg Paradox,\" Stanford Encyclopedia of Philosophy. — the expected-utility resolution and Menger's super-St.-Petersburg objection.",
+      "url": "https://plato.stanford.edu/entries/paradox-stpetersburg/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/St._Petersburg_paradox",
-  "related": []
+  "related": [
+    {
+      "slug": "diminishing-marginal-utility",
+      "kind": "kindred"
+    }
+  ]
 }
