@@ -6,13 +6,30 @@
 
 import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
 
+/**
+ * Stable anchor id for an era label ("20th century" -> "era-20th-century").
+ * Exported so the law page can deep-link its "Coined" tile at the right century
+ * instead of re-deriving (and drifting from) this format.
+ */
+export function eraId(label) {
+  return 'era-' + String(label || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+/** Ordinal century label for a year: 1975 -> "20th century". Mirrors build/timeline.mjs. */
+export function centuryLabelForYear(year) {
+  const y = Number(year);
+  if (!Number.isFinite(y) || y < 1) return '';
+  const c = Math.floor((y - 1) / 100) + 1;
+  const suffix = (c % 10 === 1 && c % 100 !== 11) ? 'st'
+    : (c % 10 === 2 && c % 100 !== 12) ? 'nd'
+      : (c % 10 === 3 && c % 100 !== 13) ? 'rd' : 'th';
+  return `${c}${suffix} century`;
+}
+
 export function timelinePage(eras = [], { base = '/', origin = '', count } = {}) {
   const rows = Array.isArray(eras) ? eras : [];
   const total = rows.reduce((n, e) => n + e.laws.length, 0);
   const permalink = (slug) => `${base}laws/${escapeHtml(slug)}/`;
-  // Stable anchor id from an era label (e.g. "20th century" -> "era-20th-century").
-  const eraId = (label) => 'era-' + String(label || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-
   const eraBlock = (e) => {
     const items = e.laws.map((l) => {
       const yr = (l.coinedYear != null && Number(l.coinedYear) >= 1) ? String(l.coinedYear) : '—';

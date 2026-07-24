@@ -159,7 +159,7 @@ ${tierRow}
 
     <h2 class="about-h2">Start exploring</h2>
     <div class="about-explore">
-      ${explore('browse/', 'Browse all')}${explore('situations/', 'What’s the law for…?')}${explore('graph/', 'The graph')}${explore('collections/', 'Collections')}${explore('tension/', 'Laws in tension')}${explore('reliability/', 'By reliability')}${explore('data/', 'Download the data')}
+      ${explore('browse/', 'Browse all')}${explore('situations/', 'What’s the law for…?')}${explore('graph/', 'The graph')}${explore('collections/', 'Collections')}${explore('compare/', 'Compare two laws')}${explore('tension/', 'Laws in tension')}${explore('reliability/', 'By reliability')}${explore('timeline/', 'The timeline')}${explore('named-after/', 'By namesake')}${explore('for/', 'Find your laws')}${explore('quiz/', 'Law of the day')}${explore('manifesto/', 'Why name a law?')}${explore('data/', 'Download the data')}
     </div>
   </div>
 </section>

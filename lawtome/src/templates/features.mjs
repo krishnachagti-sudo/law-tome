@@ -65,7 +65,7 @@ export function featuresPage({ base = '/', origin = '', count } = {}) {
       <h1>What The Law Tome does</h1>
       <span class="sub">a tour</span>
     </div>
-    <p class="sec-lede">Forty half-finished listicles will give you a name and a one-liner. This gives you the whole apparatus — search that meets you where you are, a graph of how the ideas connect, honest ratings, and the sources behind every claim.</p>
+    <p class="sec-lede">Forty half-finished listicles will give you a name and a one-liner. This gives you the whole apparatus — search that meets you where you are, a graph of how the ideas connect, honest ratings, and the sources behind every claim. For the reasoning behind it, read <a href="${base}manifesto/">why we name a law</a>.</p>
     <div class="ftr-list">
 ${blocks}
     </div>

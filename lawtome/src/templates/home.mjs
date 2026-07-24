@@ -140,6 +140,9 @@ ${teaserCards}
     stack: svg('<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>'),
     clock: svg('<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>'),
     person: svg('<circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/>'),
+    versus: svg('<rect x="3" y="5" width="7" height="14" rx="1.2"/><rect x="14" y="5" width="7" height="14" rx="1.2"/><path d="M12 4v16"/>'),
+    daily: svg('<circle cx="12" cy="12" r="9"/><path d="M9.2 9.4a2.8 2.8 0 0 1 5.4 1c0 1.8-2.6 2.2-2.6 4"/><circle cx="12" cy="17.5" r="0.6" fill="currentColor"/>'),
+    compass: svg('<circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>'),
   };
   const feat = (href, icon, title, body) =>
     `      <a class="feat" href="${base}${href}" data-tilt>${icon}<span class="feat-t">${title}</span><span class="feat-b">${body}</span></a>`;
@@ -156,6 +159,9 @@ ${feat('reliability/', IC.shield, 'Proven, or folklore?', 'Every entry is rated 
 ${feat('collections/', IC.stack, 'Curated collections', 'Themed sets that cut across the index: the razors, why incentives backfire, laws every engineer learns.')}
 ${feat('timeline/', IC.clock, 'A history of ideas', 'Walk the corpus by century — from ancient maxims to principles coined in living memory.')}
 ${feat('named-after/', IC.person, 'By their namesake', 'Browse laws under the people behind them — the one-law figures and the thinkers with several.')}
+${feat('compare/', IC.versus, 'Two laws, side by side', 'The ideas that get mixed up — Brooks’s Law vs Linus’s Law, precision vs accuracy — laid out together so the difference is obvious.')}
+${feat('for/', IC.compass, 'Find your laws', 'Curated ways in for engineers, decision-makers, writers, leaders, and the endlessly curious.')}
+${feat('quiz/', IC.daily, 'A law a day', 'One law surfaced fresh each morning, plus a quick round of “name that law” from its statement alone.')}
     </div>
   </div>
 </section>

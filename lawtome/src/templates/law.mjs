@@ -16,8 +16,9 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug } from './partials.mjs';
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
+import { eraId, centuryLabelForYear } from './timeline.mjs';
 
 /**
  * Wrap the accent phrase in <span class="accent"> within the statement. Splits the
@@ -297,19 +298,29 @@ ${h2}${inner}
   }
 
   // ---- dashboard stat strip (under the hero) ----------------------------
-  const statTile = (k, v) => (v == null || v === '')
-    ? ''
-    : `      <div class="stat"><span class="s-k">${escapeHtml(k)}</span><span class="s-v">${escapeHtml(v)}</span></div>`;
+  // Each tile that names a browsable facet becomes a link into that facet's index
+  // (reliability tier, century, eponym index, field). These are the corpus's most
+  // natural internal links: without them the facet hubs are reachable only from the
+  // footer, while the 1,100+ law pages that *have* the facet link nowhere.
+  const statTile = (k, v, href) => {
+    if (v == null || v === '') return '';
+    const inner = `<span class="s-k">${escapeHtml(k)}</span><span class="s-v">${escapeHtml(v)}</span>`;
+    return href
+      ? `      <a class="stat stat--link" href="${href}">${inner}</a>`
+      : `      <div class="stat">${inner}</div>`;
+  };
   const relCount = Array.isArray(law.related) ? law.related.length : 0;
   const srcCount = Array.isArray(law.sources) ? law.sources.length : 0;
+  const era = centuryLabelForYear(law.coinedYear);
   const dashTiles = [
-    statTile('Reliability', coined ? 'Coined' : law.reliability),
-    statTile('Coined', law.coinedYear),
+    statTile('Reliability', coined ? 'Coined' : law.reliability,
+      coined ? `${base}coined/` : (law.reliability ? `${base}reliability/${reliabilitySlug(law.reliability)}/` : '')),
+    statTile('Coined', law.coinedYear, era ? `${base}timeline/#${eraId(era)}` : `${base}timeline/`),
     statTile('Popular form', law.popularYear),
-    statTile('Named after', law.namedAfter),
-    statTile('Field', catLabel),
-    relCount ? statTile('Related', String(relCount)) : '',
-    srcCount ? statTile('Sources', String(srcCount)) : '',
+    statTile('Named after', law.namedAfter, `${base}named-after/`),
+    statTile('Field', catLabel, law.category ? `${base}category/${escapeHtml(law.category)}/` : ''),
+    relCount ? statTile('Related', String(relCount), '#sec-related-laws') : '',
+    srcCount ? statTile('Sources', String(srcCount), '#sec-sources') : '',
   ].filter(Boolean).join('\n');
   const dash = dashTiles
     ? `<div class="wrap-wide"><div class="dash" data-reveal>\n${dashTiles}\n</div></div>\n`

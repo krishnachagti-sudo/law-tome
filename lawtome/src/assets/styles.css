@@ -602,6 +602,12 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .stat{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:13px 15px;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,transform .2s}
 .stat .s-k{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint)}
 .stat .s-v{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--ink);line-height:1.12;letter-spacing:-.01em}
+/* tiles that lead somewhere (a tier, a century, the eponym index) get real link
+   affordance; the plain informational tiles stay inert. */
+a.stat--link{text-decoration:none}
+a.stat--link:hover{border-color:var(--accent)}
+a.stat--link:hover .s-v{color:var(--accent)}
+a.stat--link .s-k::after{content:" →";letter-spacing:0;opacity:.55}
 
 /* left contents rail. A full-height track line runs the length of the viewport;
    an accent fill (--scroll, 0..1, set on scroll) travels down it, and the active

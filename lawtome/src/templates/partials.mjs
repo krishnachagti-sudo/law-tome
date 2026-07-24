@@ -329,7 +329,7 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
     </div>
 ${col('Browse', [['browse/', 'All laws'], ['for/', 'Find your laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['reliability/', 'By reliability']])}
 ${col('Discover', [['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['compare/', 'Compare laws'], ['tension/', 'Laws in tension'], ['features/', 'Features'], ['quiz/', 'Law of the day'], ['saved/', 'Saved laws']])}
-${col('The project', [['about/', 'About & method'], ['manifesto/', 'Why name a law?'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['privacy/', 'Privacy']])}
+${col('The project', [['about/', 'About & method'], ['manifesto/', 'Why name a law?'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['feed.xml', 'Subscribe (RSS)'], ['privacy/', 'Privacy']])}
   </div>
   <div class="wrap foot-rule">
     <span>Canon: attested &amp; verified. Coined: original, credited, clearly marked.</span>
