@@ -2,7 +2,10 @@
   "no": "640",
   "slug": "the-doherty-threshold",
   "name": "The Doherty Threshold",
-  "aliases": ["The 400ms threshold", "Rapid response time"],
+  "aliases": [
+    "The 400ms threshold",
+    "Rapid response time"
+  ],
   "statement": "Keep a computer's response under about four-tenths of a second and productivity leaps.",
   "statementAccent": "under about four-tenths of a second",
   "meaning": "The Doherty threshold is a principle of human-computer interaction stating that productivity soars when a computer and its users interact at a pace, with system response times under about four hundred milliseconds, that ensures neither has to wait on the other. Keeping response time below roughly four hundred milliseconds keeps users engaged and dramatically boosts productivity. Introduced by Walter Doherty and Ahrvind Thadani of IBM in a 1982 paper, The Economic Value of Rapid Response Time, it replaced the earlier two-second standard with a far more demanding target. The key finding was that faster response yields a disproportionate, more-than-proportional gain in productivity, because rapid feedback sustains attention and flow. One of the widely cited Laws of UX, it links system responsiveness directly to engagement and output.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The Doherty threshold is a foundational principle of human-computer interaction, one of the earliest empirical demonstrations that system responsiveness has outsized value for user engagement, satisfaction, and productivity. It set the enduring target of sub-four-hundred-millisecond response and showed that faster feedback pays off nonlinearly, shaping how interfaces, applications, and websites are engineered for speed. Its lesson that perceived performance matters, that feedback can make slowness bearable, guides the everyday design of loading indicators and responsive interactions. In an era where speed drives adoption and retention, the threshold remains a practical benchmark for keeping users in flow rather than waiting.",
   "working": [
-    {"lead": "Target sub-400ms feedback", "text": "aim for system responses under about four hundred milliseconds so interactions feel immediate and users stay engaged."},
-    {"lead": "Expect nonlinear payoff", "text": "treat faster response as buying more than the time saved, since quick feedback keeps users in a productive flow and lifts output disproportionately."},
-    {"lead": "Fake speed when needed", "text": "where true speed is impossible, use progress indicators, skeleton screens, and animation to improve perceived performance and preserve engagement."}
+    {
+      "lead": "Target sub-400ms feedback",
+      "text": "aim for system responses under about four hundred milliseconds so interactions feel immediate and users stay engaged."
+    },
+    {
+      "lead": "Expect nonlinear payoff",
+      "text": "treat faster response as buying more than the time saved, since quick feedback keeps users in a productive flow and lifts output disproportionately."
+    },
+    {
+      "lead": "Fake speed when needed",
+      "text": "where true speed is impossible, use progress indicators, skeleton screens, and animation to improve perceived performance and preserve engagement."
+    }
   ],
   "limits": "The Doherty threshold concerns response time, the system's responsiveness to an action, not the total time to complete a task, so a fast-responding interface can still involve lengthy overall work. The four-hundred-millisecond figure is an approximate threshold rather than a hard cutoff, describing a gradient in which effects strengthen as response time drops. Widely repeated specific productivity percentages attached to the threshold are often from secondary sources rather than the original paper and should be treated cautiously. And because perceived performance matters, the principle is as much about the feel of speed as its reality, so it guides feedback design rather than dictating raw engineering alone.",
   "misreadings": "The threshold is about response time, how quickly the system reacts, not overall task-completion time, so a responsive interface is not necessarily a fast workflow. The four hundred milliseconds is approximate, a gradient rather than a precise line, so treating it as an exact rule overstates it. And it does not require literally faster processing in every case: because perceived performance counts, feedback techniques can preserve engagement even when the underlying operation cannot be sped up, so the principle is not solely about raw speed.",
@@ -45,11 +57,22 @@
   "provenance": "canon",
   "coinedYear": 1982,
   "sources": [
-    {"text": "Doherty Threshold, Laws of UX (Jon Yablonski). — the sub-400ms productivity principle, the Doherty and Thadani 1982 IBM origin, and the perceived-performance design implication.", "url": "https://lawsofux.com/doherty-threshold/", "type": "secondary"},
-    {"text": "Doherty & Thadani, The Economic Value of Rapid Response Time, IBM Systems Journal (1982). — the 400ms target and the more-than-proportional productivity gain.", "url": "http://www.vm.ibm.com/devpages/jelliott/evrrt3.html", "type": "primary"}
+    {
+      "text": "Doherty Threshold, Laws of UX (Jon Yablonski). — the sub-400ms productivity principle, the Doherty and Thadani 1982 IBM origin, and the perceived-performance design implication.",
+      "url": "https://lawsofux.com/doherty-threshold/",
+      "type": "secondary"
+    },
+    {
+      "text": "Doherty & Thadani, The Economic Value of Rapid Response Time, IBM Systems Journal (1982). — the 400ms target and the more-than-proportional productivity gain.",
+      "url": "http://web.archive.org/web/20190922074837/http://www.vm.ibm.com/devpages/jelliott/evrrt3.html",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://lawsofux.com/doherty-threshold/",
   "related": [
-    {"slug": "hicks-law", "kind": "kindred"}
+    {
+      "slug": "hicks-law",
+      "kind": "kindred"
+    }
   ]
 }

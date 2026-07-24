@@ -2,7 +2,9 @@
   "no": "363",
   "slug": "moravecs-paradox",
   "name": "Moravec's Paradox",
-  "aliases": ["Moravec's paradox in AI and robotics"],
+  "aliases": [
+    "Moravec's paradox in AI and robotics"
+  ],
   "statement": "For machines, high-level reasoning is easy and a toddler's perception and movement are hard.",
   "statementAccent": "reasoning is easy",
   "meaning": "Moravec's paradox is the observation that, contrary to intuition, the abstract reasoning humans find hard — chess, logic, calculation — takes relatively little computation to reproduce in machines, while the sensorimotor skills a one-year-old performs effortlessly — seeing, walking, grasping, recognising faces — demand enormous computation and remain extraordinarily difficult. In Hans Moravec's words, it is comparatively easy to make computers perform at adult level on intelligence tests or at checkers, and difficult or impossible to give them the perceptual and motor skills of a one-year-old.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It reframed expectations in artificial intelligence and robotics, explaining why symbolic reasoning fell to machines early while perception and dexterity lagged for decades, and why robotics is hard in ways the public underestimates. It guides where effort and humility are warranted, warns against equating fluent reasoning with general competence, and remains a useful lens on why today's systems can argue and calculate while reliable physical manipulation stays stubbornly difficult.",
   "working": [
-    {"lead": "Invert the intuition", "text": "expect tasks that feel intellectually hard to humans to be relatively tractable for machines, and tasks that feel effortless to be computationally deep."},
-    {"lead": "Respect the sensorimotor", "text": "budget for perception, movement, and manipulation as genuinely hard problems rather than assuming they follow easily once reasoning is solved."},
-    {"lead": "Read the boundary as shifting", "text": "treat the paradox as a durable observation whose exact line moves as deep learning narrows some perception gaps, not as a fixed law."}
+    {
+      "lead": "Invert the intuition",
+      "text": "expect tasks that feel intellectually hard to humans to be relatively tractable for machines, and tasks that feel effortless to be computationally deep."
+    },
+    {
+      "lead": "Respect the sensorimotor",
+      "text": "budget for perception, movement, and manipulation as genuinely hard problems rather than assuming they follow easily once reasoning is solved."
+    },
+    {
+      "lead": "Read the boundary as shifting",
+      "text": "treat the paradox as a durable observation whose exact line moves as deep learning narrows some perception gaps, not as a fixed law."
+    }
   ],
   "limits": "It is an observation and generalisation, not a formal law with a precise measure or proof. Its boundary shifts: modern deep learning has narrowed some perception gaps — machine vision and speech recognition among them — even as broad physical dexterity remains hard, so some argue the paradox is being partly eroded. The evolutionary explanation is plausible and widely accepted but is an interpretation rather than a demonstrated mechanism. It is best read as a heuristic that captured a real and lasting pattern in AI, with the details of where the easy-hard line falls always subject to revision.",
   "misreadings": "It does not say machines cannot do sensorimotor tasks — only that these are far harder to engineer than the reasoning tasks that seem impressive to us. It is not a precise law but an observation, so exact thresholds and its current boundary are matters of judgement. And it is not obsolete: although perception has advanced, general dexterity and robust real-world manipulation still lag reasoning, which is the pattern the paradox names.",
@@ -46,11 +57,21 @@
   "coinedYear": 1988,
   "namedAfter": "Hans Moravec",
   "sources": [
-    {"text": "Moravec's paradox, Wikipedia. — Moravec's one-year-old quote, the evolutionary explanation, and the Minsky, Brooks, and Pinker statements.", "url": "https://en.wikipedia.org/wiki/Moravec%27s_paradox", "type": "secondary"},
-    {"text": "Moravec, Mind Children: The Future of Robot and Human Intelligence (Harvard University Press, 1988). — the original formulation and the 'thinnest veneer' passage.", "url": "https://www.hup.harvard.edu/books/9780674576162", "type": "primary"}
+    {
+      "text": "Moravec's paradox, Wikipedia. — Moravec's one-year-old quote, the evolutionary explanation, and the Minsky, Brooks, and Pinker statements.",
+      "url": "https://en.wikipedia.org/wiki/Moravec%27s_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Moravec, Mind Children: The Future of Robot and Human Intelligence (Harvard University Press, 1988). — the original formulation and the 'thinnest veneer' passage.",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Moravec%27s_paradox",
   "related": [
-    {"slug": "the-chinese-room", "kind": "kindred"}
+    {
+      "slug": "the-chinese-room",
+      "kind": "kindred"
+    }
   ]
 }

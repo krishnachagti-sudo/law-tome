@@ -2,7 +2,10 @@
   "no": "357",
   "slug": "the-munchhausen-trilemma",
   "name": "The Münchhausen Trilemma",
-  "aliases": ["Agrippa's trilemma", "The regress problem"],
+  "aliases": [
+    "Agrippa's trilemma",
+    "The regress problem"
+  ],
   "statement": "Every attempt to justify a claim ends in infinite regress, circularity, or an unjustified stopping point.",
   "statementAccent": "infinite regress, circularity, or an unjustified stopping point",
   "meaning": "The Münchhausen trilemma is the argument that no belief can be given a complete, non-question-begging justification. Any demand to justify a claim, and then to justify that justification, and so on, must end in one of three unsatisfactory ways: an infinite regress of reasons that is never completed, a circle in which the claim ultimately supports itself, or a dogmatic halt at some assumption asserted without further support. The name evokes Baron Münchhausen's tall tale of pulling himself out of a swamp by his own hair.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It is a sharp statement of the regress problem, one of the oldest and most fundamental challenges in epistemology. By showing that every structure of justification faces the same three exits, it frames the central debate between foundationalism, coherentism, and infinitism, and it fuels philosophical scepticism about whether any belief can be conclusively rationally grounded. Any theory of knowledge must say which horn it takes and why that horn is not fatal.",
   "working": [
-    {"lead": "Trace the chain of reasons", "text": "keep asking why a justification holds, and watch which of the three exits the chain is heading toward."},
-    {"lead": "Identify your horn", "text": "recognise that any account of justification must accept a regress, a circle, or a stopping point, and be explicit about which."},
-    {"lead": "Defend the stopping point", "text": "if you halt at basic beliefs, give a reason they need no further support, rather than merely asserting them, to avoid the dogmatic charge."}
+    {
+      "lead": "Trace the chain of reasons",
+      "text": "keep asking why a justification holds, and watch which of the three exits the chain is heading toward."
+    },
+    {
+      "lead": "Identify your horn",
+      "text": "recognise that any account of justification must accept a regress, a circle, or a stopping point, and be explicit about which."
+    },
+    {
+      "lead": "Defend the stopping point",
+      "text": "if you halt at basic beliefs, give a reason they need no further support, rather than merely asserting them, to avoid the dogmatic charge."
+    }
   ],
   "limits": "It is a contested argument, not a proof that knowledge is impossible: foundationalists deny that stopping at properly basic beliefs is dogmatic, coherentists deny that holistic circularity is vicious, and infinitists defend the regress, so each horn has serious defenders. Its provenance is layered — the ancient version is Agrippa's five modes, not three, and the modern three-horned framing and the Münchhausen name were given by Hans Albert in the twentieth century. Whether the trilemma genuinely defeats the possibility of justified belief, or merely maps the options for it, is itself debated.",
   "misreadings": "It does not prove that nothing can be known — it lays out three problematic structures of justification, each of which some serious theory of knowledge accepts and defends. It is not originally three-horned: the ancient Agrippan modes number five, and the trilemma is a modern distillation. And the name is Hans Albert's coinage, not an ancient title; Albert popularised the three-horned form, drawing on the older sceptical tradition.",
@@ -46,11 +58,22 @@
   "coinedYear": 1968,
   "namedAfter": "Hans Albert",
   "sources": [
-    {"text": "Münchhausen trilemma, Wikipedia. — the three horns, the Hans Albert coinage, and the Agrippan ancestry.", "url": "https://en.wikipedia.org/wiki/M%C3%BCnchhausen_trilemma", "type": "secondary"},
-    {"text": "Epistemic Regress, Stanford Encyclopedia of Philosophy. — the regress problem and the foundationalist, coherentist, and infinitist responses.", "url": "https://plato.stanford.edu/entries/epistemic-regress/", "type": "secondary"}
+    {
+      "text": "Münchhausen trilemma, Wikipedia. — the three horns, the Hans Albert coinage, and the Agrippan ancestry.",
+      "url": "https://en.wikipedia.org/wiki/M%C3%BCnchhausen_trilemma",
+      "type": "secondary"
+    },
+    {
+      "text": "Foundationalist Theories of Epistemic Justification, Stanford Encyclopedia of Philosophy. — the regress problem the trilemma formalises, and the foundationalist response to it.",
+      "url": "https://plato.stanford.edu/entries/justep-foundational/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/M%C3%BCnchhausen_trilemma",
   "related": [
-    {"slug": "the-problem-of-induction", "kind": "kindred"}
+    {
+      "slug": "the-problem-of-induction",
+      "kind": "kindred"
+    }
   ]
 }
