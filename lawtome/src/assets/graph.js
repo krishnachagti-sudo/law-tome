@@ -100,8 +100,16 @@
     controls.appendChild(zin); controls.appendChild(zout); controls.appendChild(zreset);
     stage.appendChild(controls);
 
-    // ---- legend (categories present in the current view) ----
-    var legend = el('div', 'graph-legend'); stage.appendChild(legend);
+    // ---- key (comprehensive & static): every field colour + the edge grammar.
+    // Unlike the old per-view legend, this is a stable reference you can open
+    // once and rely on as you navigate. Toggleable so it never clutters. ----
+    var keyWrap = el('div', 'graph-key');
+    var keyToggle = el('button', 'graph-key-toggle'); keyToggle.type = 'button';
+    var keyToggleTxt = el('span'); keyToggleTxt.textContent = 'Key'; keyToggle.appendChild(keyToggleTxt);
+    keyToggle.setAttribute('aria-label', 'Toggle the graph key');
+    var keyPanel = el('div', 'graph-key-panel');
+    keyWrap.appendChild(keyToggle); keyWrap.appendChild(keyPanel);
+    stage.appendChild(keyWrap);
 
     // ---- page chrome refs ----
     var focusName = document.getElementById('graph-focus-name');
@@ -129,17 +137,16 @@
     var nodeEls = {}, labelEls = {};
 
     function pickVisible(focus) {
-      // focus + all 1-hop + capped 2-hop (by degree) so the web has real context
-      var CAP = (stage.clientWidth || 900) < 620 ? 22 : 46;
+      // Focus + its direct neighbours only (one hop). A second hop turns a hub
+      // into a hairball, so we keep it to the ego network and cap the fan to the
+      // best-connected neighbours; the count of any hidden ones is surfaced.
+      var CAP = (stage.clientWidth || 900) < 620 ? 10 : 16;
       var chosen = {}; chosen[focus.slug] = focus;
-      var one = focus.adj.map(function (a) { return a.node; })
-        .sort(function (a, b) { return deg(b) - deg(a); });
-      one.forEach(function (n) { chosen[n.slug] = n; });
-      // second hop, best-connected first, until cap
-      var ring = [];
-      one.forEach(function (n) { n.adj.forEach(function (a) { if (!chosen[a.node.slug]) ring.push(a.node); }); });
-      ring.sort(function (a, b) { return deg(b) - deg(a); });
-      for (var i = 0; i < ring.length && Object.keys(chosen).length < CAP; i++) chosen[ring[i].slug] = ring[i];
+      var seen = {}; var one = [];
+      focus.adj.forEach(function (a) { if (a.node.slug !== focus.slug && !seen[a.node.slug]) { seen[a.node.slug] = 1; one.push(a.node); } });
+      one.sort(function (a, b) { return deg(b) - deg(a); });
+      focus._hidden = Math.max(0, one.length - CAP);
+      one.slice(0, CAP).forEach(function (n) { chosen[n.slug] = n; });
       return chosen;
     }
 
@@ -182,7 +189,6 @@
       tickPositions(); fitView();
       sim.needFit = true; sim.alpha = 0.16; if (!sim.raf) loop();
       updateChrome(focus, vslugs.length);
-      buildLegend(visible);
     }
 
     // frame all nodes into the viewBox with padding (zoom-to-fit)
@@ -200,6 +206,25 @@
       var pad = 30, bw = Math.max(1, maxx - minx), bh = Math.max(1, maxy - miny);
       var k = Math.min((W - 2 * pad) / bw, (H - 2 * pad) / bh); k = Math.max(0.45, Math.min(1.9, k));
       view.k = k; view.x = W / 2 - k * (minx + maxx) / 2; view.y = H / 2 - k * (miny + maxy) / 2; applyView(); reflectZoom();
+    }
+
+    // Greedy, non-overlapping labels: the focus and the best-connected nodes get
+    // labelled first; any label that would collide with one already placed is
+    // hidden (it still appears on hover). Keeps a dense hub legible instead of a
+    // pile of overlapping text. When zoomed in past `showAll`, reveal everything.
+    function labelBox(nd) { var fs = nd.isFocus ? 15 : 11.5; var w = String(nd.name || '').length * fs * 0.54 + 6; return { x: nd.x - w / 2, y: nd.y + nd.r + 2, w: w, h: fs + 4 }; }
+    function boxHit(a, b) { return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y; }
+    function placeLabels(showAll) {
+      var order = sim.nodes.slice().sort(function (a, b) { return (b.isFocus ? 1e9 : b.deg) - (a.isFocus ? 1e9 : a.deg); });
+      var placed = [];
+      order.forEach(function (nd) {
+        if (!nd.labelEl) return;
+        var show;
+        if (showAll || nd.isFocus) { show = true; placed.push(labelBox(nd)); }
+        else { var box = labelBox(nd); show = true; for (var i = 0; i < placed.length; i++) if (boxHit(box, placed[i])) { show = false; break; } if (show) placed.push(box); }
+        nd._baseLabel = show;
+        if (!nd._hovered) nd.labelEl.setAttribute('opacity', show ? (nd.isFocus ? '1' : '0.92') : '0');
+      });
     }
 
     // ---- draw DOM (created once per render; positions updated each tick) ----
@@ -234,12 +259,10 @@
         label.setAttribute('font-size', nd.isFocus ? 15 : 11.5);
         label.setAttribute('paint-order', 'stroke'); label.setAttribute('stroke', '#0f1118'); label.setAttribute('stroke-width', nd.isFocus ? 4 : 3.2); label.setAttribute('stroke-linejoin', 'round');
         label.setAttribute('fill', nd.isFocus ? '#f6f1e6' : '#e4ddce');
-        // default label visibility: focus + direct neighbours of focus; others fade in on hover/zoom
-        var direct = nd.isFocus || (index[current] && index[current].adj.some(function (a) { return a.node.slug === nd.slug; }));
-        if (!direct) label.setAttribute('opacity', '0');
+        label.setAttribute('opacity', nd.isFocus ? '1' : '0'); // placeLabels() decides the rest
         label.textContent = nd.name == null ? '' : String(nd.name);
         g.appendChild(label);
-        nd.el = g; nd.dotEl = dot; nd.labelEl = label; nd.direct = direct;
+        nd.el = g; nd.dotEl = dot; nd.labelEl = label; nd._baseLabel = nd.isFocus;
         nodeEls[nd.slug] = g;
 
         // interactions
@@ -268,7 +291,7 @@
     }
     function step() {
       var nodes = sim.nodes, n = nodes.length, i, j;
-      var REP = 5200, L = 108, SPRING = 0.045, GRAV = 0.028, a = sim.alpha;
+      var REP = 7200, L = 132, SPRING = 0.045, GRAV = 0.024, a = sim.alpha;
       // repulsion (O(n^2); n is capped small)
       for (i = 0; i < n; i++) { var p = nodes[i]; for (j = i + 1; j < n; j++) {
         var qn = nodes[j]; var dx = p.x - qn.x, dy = p.y - qn.y; var d2 = dx * dx + dy * dy || 0.01; var d = Math.sqrt(d2);
@@ -293,7 +316,11 @@
       sim.nodes.forEach(function (o) {
         var lit = !on || near[o.slug];
         o.el.style.opacity = lit ? '1' : '0.18';
-        if (o.labelEl && !o.direct && !o.isFocus) o.labelEl.setAttribute('opacity', (on && near[o.slug]) ? '1' : '0');
+        if (o.labelEl && !o.isFocus) {
+          o._hovered = on && near[o.slug];
+          // on hover: reveal every neighbour's label; otherwise fall back to the placed baseline
+          o.labelEl.setAttribute('opacity', o._hovered ? '1' : (o._baseLabel ? '0.92' : '0'));
+        }
       });
       edgeEls.forEach(function (e) { var lit = !on || e.a.slug === nd.slug || e.b.slug === nd.slug; e.el.style.opacity = lit ? '' : '0.06'; });
     }
@@ -340,29 +367,48 @@
     zin.addEventListener('click', function () { var r = svg.getBoundingClientRect(); zoomAt(r.left + r.width / 2, r.top + r.height / 2, 1.25); });
     zout.addEventListener('click', function () { var r = svg.getBoundingClientRect(); zoomAt(r.left + r.width / 2, r.top + r.height / 2, 1 / 1.25); });
     zreset.addEventListener('click', function () { fitView(); });
-    function reflectZoom() {
-      // reveal all labels when zoomed in enough
-      var showAll = view.k > 1.35;
-      sim.nodes.forEach(function (nd) { if (nd.labelEl && !nd.direct && !nd.isFocus) nd.labelEl.setAttribute('opacity', showAll ? '0.9' : '0'); });
-    }
+    function reflectZoom() { placeLabels(view.k > 1.5); }
 
-    // ---- legend ----
-    function buildLegend(visible) {
-      legend.textContent = '';
-      var cats = {}; Object.keys(visible).forEach(function (s) { cats[visible[s].category] = 1; });
-      var keys = Object.keys(cats).sort(function (a, b) { return (CAT_LABEL[a] || a).localeCompare(CAT_LABEL[b] || b); });
-      keys.forEach(function (c) {
+    // ---- key (built once) ----
+    // A comprehensive, stable reference: every field colour present in the tome
+    // plus the edge grammar (related / in tension / leads to) and the size cue.
+    function buildKey() {
+      keyPanel.textContent = '';
+      // Fields — every category that appears anywhere in the corpus, by label.
+      var present = {}; all.forEach(function (n) { if (n.category) present[n.category] = 1; });
+      var cats = Object.keys(present).sort(function (a, b) { return (CAT_LABEL[a] || a).localeCompare(CAT_LABEL[b] || b); });
+      var secF = el('div', 'graph-key-sec');
+      var hF = el('div', 'graph-key-h'); hF.textContent = 'Fields'; secF.appendChild(hF);
+      var grid = el('div', 'graph-key-cats');
+      cats.forEach(function (c) {
         var item = el('span', 'graph-leg-item');
         var sw = el('span', 'graph-leg-swatch'); sw.style.background = catColor(c);
         var tx = el('span'); tx.textContent = CAT_LABEL[c] || c;
-        item.appendChild(sw); item.appendChild(tx); legend.appendChild(item);
+        item.appendChild(sw); item.appendChild(tx); grid.appendChild(item);
       });
+      secF.appendChild(grid); keyPanel.appendChild(secF);
+      // Links — how the connecting lines read.
+      var secL = el('div', 'graph-key-sec');
+      var hL = el('div', 'graph-key-h'); hL.textContent = 'Links'; secL.appendChild(hL);
+      [['line-kindred', 'Related'], ['line-tension', 'In tension'], ['line-directed', 'Leads to']].forEach(function (p) {
+        var item = el('span', 'graph-leg-item');
+        var ln = el('span', 'graph-key-line ' + p[0]);
+        var tx = el('span'); tx.textContent = p[1];
+        item.appendChild(ln); item.appendChild(tx); secL.appendChild(item);
+      });
+      keyPanel.appendChild(secL);
+      var note = el('div', 'graph-key-note'); note.textContent = 'Bigger dots have more connections.';
+      keyPanel.appendChild(note);
     }
+    var keyOpen = !(window.matchMedia && window.matchMedia('(max-width: 640px)').matches);
+    function reflectKey() { keyWrap.classList.toggle('is-open', keyOpen); keyToggle.setAttribute('aria-expanded', keyOpen ? 'true' : 'false'); }
+    keyToggle.addEventListener('click', function () { keyOpen = !keyOpen; reflectKey(); });
+    buildKey(); reflectKey();
 
     // ---- chrome ----
     function updateChrome(focus, shown) {
       if (focusName) focusName.textContent = focus.name || focus.slug;
-      if (focusMeta) { var d = focus.adj.length; focusMeta.textContent = d + (d === 1 ? ' connection' : ' connections') + (focus.category ? ' · ' + (CAT_LABEL[focus.category] || focus.category) : ''); }
+      if (focusMeta) { var d = focus.adj.length; focusMeta.textContent = d + (d === 1 ? ' connection' : ' connections') + (focus._hidden ? ' (top ' + (d - focus._hidden) + ' shown)' : '') + (focus.category ? ' · ' + (CAT_LABEL[focus.category] || focus.category) : ''); }
       if (focusLink) focusLink.setAttribute('href', lawHref(focus.slug));
       if (focusBar) focusBar.hidden = false;
       if (backBtn) backBtn.hidden = history.length === 0;

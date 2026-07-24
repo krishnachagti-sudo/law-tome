@@ -344,11 +344,25 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .graph-controls{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:6px;z-index:6}
 .graph-ctrl{width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:17px;line-height:1;color:#e4ddce;background:rgba(26,30,40,.82);border:1px solid #333a49;border-radius:6px;cursor:pointer;backdrop-filter:blur(3px)}
 .graph-ctrl:hover{border-color:var(--accent);color:#f6f1e6;background:#20252f}
-/* category legend, bottom-left of the stage */
-.graph-legend{position:absolute;left:12px;bottom:12px;right:56px;display:flex;flex-wrap:wrap;gap:5px 12px;z-index:6;pointer-events:none;max-height:96px;overflow:hidden}
-.graph-leg-item{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:#b7b1a3;background:rgba(15,17,24,.55);padding:2px 7px 2px 5px;border-radius:20px}
+/* comprehensive key, bottom-left of the stage — toggleable so it never clutters */
+.graph-key{position:absolute;left:12px;bottom:12px;z-index:6;max-width:min(340px,calc(100% - 68px))}
+.graph-key-toggle{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#cbc4b4;background:rgba(15,17,24,.72);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:5px 12px;cursor:pointer}
+.graph-key-toggle:hover{color:#f6f1e6;border-color:rgba(255,255,255,.3)}
+.graph-key-toggle::before{content:"\25B8";font-size:10px;transition:transform .15s ease}
+.graph-key.is-open .graph-key-toggle::before{transform:rotate(90deg)}
+.graph-key-panel{display:none;margin-top:8px;background:rgba(15,17,24,.85);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 14px;max-height:min(340px,58vh);overflow:auto}
+.graph-key.is-open .graph-key-panel{display:block}
+.graph-key-sec{margin-bottom:11px}.graph-key-sec:last-child{margin-bottom:0}
+.graph-key-h{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8b8575;margin-bottom:7px}
+.graph-key-cats{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
+.graph-leg-item{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.01em;color:#c7c1b2;line-height:1.5}
 .graph-leg-swatch{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
-@media(max-width:640px){.graph-legend{display:none}}
+.graph-key-line{width:22px;flex:0 0 auto;height:0;position:relative;border-top:2px solid #8a7440}
+.graph-key-line.line-tension{border-top:2px dashed #e0705a}
+.graph-key-line.line-directed{border-top:2px solid #7d879b}
+.graph-key-line.line-directed::after{content:"";position:absolute;right:-1px;top:-4px;border-left:6px solid #7d879b;border-top:3px solid transparent;border-bottom:3px solid transparent}
+.graph-key-note{font-family:var(--sans);font-size:10.5px;color:#8b8575;line-height:1.45;margin-top:2px}
+@media(max-width:640px){.graph-key{left:8px;bottom:8px}.graph-key-cats{grid-template-columns:1fr}}
 .graph-focusbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:16px}
 .graph-focus-name{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink)}
 .graph-focus-meta{font-family:var(--mono);font-size:12px;color:var(--faint)}
