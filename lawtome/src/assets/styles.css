@@ -80,7 +80,12 @@ html[data-theme="dark"] .th-sun{display:block}
 /* skip-to-content link — first focusable element, hidden until focused */
 .skip{position:fixed;left:10px;top:-60px;z-index:100;background:var(--accent);color:var(--on-accent);font-family:var(--sans);font-size:14px;font-weight:600;padding:10px 16px;border-radius:3px;transition:top .16s ease}
 .skip:focus{top:10px;outline:none}
-#main-content{position:absolute}
+/* #main-content is the <main> landmark (skip-link target). It must stay in
+   normal flow — it wraps all page content; scroll-margin keeps the focused
+   top edge clear of the sticky header. (It was previously an empty anchor span
+   styled position:absolute; as a wrapping <main> that rule broke page flow.) */
+#main-content{scroll-margin-top:70px}
+#main-content:focus{outline:none}
 /* mobile menu toggle — hidden on desktop, shown as the nav control on phones */
 .menu-btn{display:none}
 .menu-btn .m-close{display:none}
