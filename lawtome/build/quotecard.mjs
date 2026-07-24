@@ -9,6 +9,7 @@
 // interpolation so an `&`, `<`, or `>` in a law can't break the SVG document.
 import { Resvg } from '@resvg/resvg-js';
 import { escapeHtml } from '../src/templates/partials.mjs';
+import { schematicForLaw, schematicOgSvg, SCHEMATIC_OG_STYLE } from '../src/templates/schematics.mjs';
 
 // Midnight palette (same hues as the site's dark-first theme).
 const BG = '#14161c';   // charcoal-ink field
@@ -46,9 +47,15 @@ export function quoteCardSvg(law) {
   const name = escapeHtml(law.name ?? '');
   const no = escapeHtml(String(law.no ?? ''));
 
+  // When the law has a concept schematic, dedicate the right column to it and
+  // narrow the statement so the two don't collide. The shape becomes the card's
+  // visual (in place of the faint seal watermark).
+  const shapeKey = schematicForLaw(law);
+  const shape = shapeKey ? schematicOgSvg(shapeKey, { x: 726, y: 214, w: 404 }) : '';
+
   // Wrap on the RAW statement (word/char budget), escape each resulting line so
   // an `&`/`<`/`>` mid-line still yields valid XML.
-  const rawLines = wrapLines(law.statement ?? '', 34);
+  const rawLines = wrapLines(law.statement ?? '', shape ? 24 : 34);
   // Scale the statement type down a touch if it runs long, so it stays in-frame.
   const fontSize = rawLines.length > 5 ? 46 : rawLines.length > 3 ? 54 : 62;
   const lineHeight = Math.round(fontSize * 1.25);
@@ -70,10 +77,17 @@ export function quoteCardSvg(law) {
       </g>
     </g>`;
 
+  // With a schematic, show it in a soft panel on the right instead of the seal.
+  const shapePanel = shape
+    ? `${SCHEMATIC_OG_STYLE}
+    <rect x="700" y="196" width="452" height="240" rx="16" fill="#191c24" stroke="#2b303b" stroke-width="1.5"/>
+    ${shape}`
+    : seal;
+
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <rect width="${W}" height="${H}" fill="${BG}"/>
   <rect x="24" y="24" width="${W - 48}" height="${H - 48}" fill="none" stroke="${GOLD}" stroke-width="2" opacity="0.5"/>
-  ${seal}
+  ${shapePanel}
   <text x="90" y="90" font-family="Space Mono" font-size="26" letter-spacing="6" fill="${GOLD}">THE LAW TOME</text>
   <text x="90" y="130" font-family="Space Mono" font-size="24" letter-spacing="2" fill="${INK}" opacity="0.7">№ ${no}</text>
   <text font-family="Fraunces" font-size="${fontSize}" fill="${INK}">${tspans}</text>

@@ -234,6 +234,39 @@ export function schematicForLaw(law) {
   return law.schematic || SLUG_SHAPES[law.slug];
 }
 
+// Concrete-colour stylesheet for embedding a schematic in a standalone SVG (the
+// OG card) where the page's CSS classes aren't available. Axis/tick TEXT is
+// hidden so only the shape reads — a decorative motif, not a labelled chart.
+export const SCHEMATIC_OG_STYLE = `<style>
+.s-axis{stroke:#4a4e59;stroke-width:2.4;fill:none}
+.s-proxy{stroke:#e0a43f;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.s-goal{stroke:#c98b3a;stroke-width:5;fill:none;stroke-linecap:round}
+.s-area{fill:#e0a43f;opacity:.14;stroke:none}
+.s-mean{stroke:#565b67;stroke-width:2;stroke-dasharray:5 6;fill:none}
+.s-net{stroke:#e0a43f;stroke-width:2.6;fill:none;opacity:.5}
+.s-dot-proxy{fill:#e0a43f}.s-dot-goal{fill:#c98b3a}
+.s-fill{fill:#e0a43f}.s-track{fill:#20242c;stroke:#2c313b}
+.s-proxy-sw{fill:#e0a43f}.s-goal-sw{fill:#c98b3a}
+.s-tick,.s-label,.s-inbar{display:none}
+</style>`;
+
+/**
+ * Return a schematic as a nested <svg> positioned at (x,y) with width w, for
+ * embedding in another SVG document. Pair it with SCHEMATIC_OG_STYLE (once, in
+ * the host <svg>) so the s-* classes resolve. Returns '' for an unknown key.
+ */
+export function schematicOgSvg(key, { x = 0, y = 0, w = 380 } = {}) {
+  const f = figures[key];
+  if (!f) return '';
+  const m = f.svg.match(/viewBox="([^"]+)"/);
+  const vb = m ? m[1] : '0 0 460 210';
+  const p = vb.split(/\s+/).map(Number);
+  const vbw = p[2] || 460, vbh = p[3] || 210;
+  const h = Math.round(w * (vbh / vbw));
+  const inner = f.svg.replace(/^\s*<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+  return `<svg x="${x}" y="${y}" width="${w}" height="${h}" viewBox="${vb}" preserveAspectRatio="xMidYMid meet">${inner}</svg>`;
+}
+
 /**
  * Return a figure block for a named schematic, or '' if the name is unknown.
  * The returned markup is a self-contained <figure> (no corpus text interpolated).
