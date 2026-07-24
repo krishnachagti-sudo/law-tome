@@ -324,6 +324,8 @@ const LAWS=${featuredJson};
     url: homeUrl,
     description,
     inLanguage: 'en',
+    isAccessibleForFree: true,
+    publishingPrinciples: `${homeUrl}about/`,
     potentialAction: {
       '@type': 'SearchAction',
       target: { '@type': 'EntryPoint', urlTemplate: `${origin}${base}?q={search_term_string}` },
@@ -337,6 +339,9 @@ const LAWS=${featuredJson};
     url: homeUrl,
     description: 'A living, sourced index of named laws, principles, and effects.',
     logo: { '@type': 'ImageObject', url: `${homeUrl}assets/logo.svg`, width: 512, height: 512 },
+    // E-E-A-T: the editorial method + corrections process are stated on /about/.
+    publishingPrinciples: `${homeUrl}about/`,
+    correctionsPolicy: `${homeUrl}about/`,
     // The Law Tome is an initiative by Conyso, its publisher.
     parentOrganization: {
       '@type': 'Organization',

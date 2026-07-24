@@ -629,6 +629,9 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .sources-list .stext a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
 .sources-list .stext a:hover{color:var(--accent)}
 .sources-list .stype{font-family:var(--mono);font-size:8.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);flex:none;align-self:center;border:1px solid var(--line);border-radius:3px;padding:1px 4px}
+.src-trust{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-family:var(--sans);font-size:12.5px;line-height:1.55;color:var(--faint)}
+.src-trust a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.src-trust a:hover{color:var(--accent)}
 /* related laws as cards (replaces the row list) */
 .rel-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 @media(max-width:640px){.rel-cards{grid-template-columns:1fr}}

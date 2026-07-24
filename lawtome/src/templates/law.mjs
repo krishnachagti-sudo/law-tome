@@ -242,7 +242,11 @@ ${h2}${inner}
       const type = s.type ? `<span class="stype">${escapeHtml(s.type)}</span>` : '';
       return `          <li><span class="snum">${i + 1}</span><span class="stext">${label}</span>${type}</li>`;
     }).join('\n');
-    blocks.push(block('Sources', `        <ol class="sources-list">\n${items}\n        </ol>`, true, `Sources & further reading`));
+    // Per-entry trust cue: restate the anti-fabrication promise and the open
+    // corrections path (an E-E-A-T signal that mirrors the publishingPrinciples /
+    // correctionsPolicy JSON-LD, both pointing at the About page's method).
+    const srcTrust = `        <p class="src-trust">Every claim on this page is traced to the sources above — nothing here is invented, and reliability is <a href="${base}about/">marked honestly</a>. Spot an error or a better source? <a href="${base}coin/">Suggest a fix.</a></p>`;
+    blocks.push(block('Sources', `        <ol class="sources-list">\n${items}\n        </ol>\n${srcTrust}`, true, `Sources & further reading`));
   }
 
   if (Array.isArray(law.confusedWith) && law.confusedWith.length) {
@@ -436,6 +440,10 @@ ${prevnext}</div>
     logo: { '@type': 'ImageObject', url: `${origin}${base}assets/logo.svg`, width: 512, height: 512 },
     // Published as an initiative by Conyso.
     parentOrganization: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
+    // E-E-A-T signals: the editorial method and how to report an error both live
+    // on the About page, which states the anti-fabrication sourcing standard.
+    publishingPrinciples: `${origin}${base}about/`,
+    correctionsPolicy: `${origin}${base}about/`,
   };
   // Search keywords: the name, its real aliases, the field, and the generic terms
   // people pair with a named law. All honest synonyms — nothing invented.
@@ -468,6 +476,8 @@ ${prevnext}</div>
     mainEntityOfPage: canonical,
     author: publisher,
     publisher,
+    publishingPrinciples: `${origin}${base}about/`,
+    isAccessibleForFree: true,
     ...(buildDate ? { dateModified: buildDate } : {}),
     // Voice/assistant answer target: read the title and the plain-English definition.
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.law-title', '.lead'] },
