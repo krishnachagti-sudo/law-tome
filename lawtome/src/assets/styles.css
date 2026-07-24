@@ -578,7 +578,7 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 /* three-zone dashboard layout: left contents rail · roomy content · right info rail.
    Rails sit at the wide-shell edges (near the screen edges); the centre is 1fr. */
 .entry-layout{display:grid;grid-template-columns:236px minmax(0,1fr) 300px;gap:clamp(38px,3.6vw,58px);padding:30px 0 44px;align-items:start}
-@media(max-width:1240px){.entry-layout{grid-template-columns:minmax(0,1fr) 300px;gap:46px}.toc{display:none}}
+@media(max-width:1240px){.entry-layout{grid-template-columns:minmax(0,1fr) 300px;gap:46px}}
 @media(max-width:860px){.entry-layout{grid-template-columns:1fr;gap:34px}.aside{position:static}}
 
 /* dashboard stat strip under the hero */
@@ -599,6 +599,11 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .toc a{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--faint);padding:5px 0;line-height:1.3;transition:color .3s ease,font-size .35s cubic-bezier(.2,.7,.2,1),padding .3s ease,font-weight .3s}
 .toc a:hover{color:var(--muted)}
 .toc a.on{color:var(--accent);font-size:15px;font-weight:700;padding-left:5px}
+/* Hide the sticky TOC rail below the 3-column breakpoint. This rule sits AFTER
+   the base `.toc{display:flex}` above so it wins the cascade — the old hide
+   inside the .entry-layout media block came BEFORE it and was silently
+   overridden, leaving the rail visible (and overlapping the article) on mobile. */
+@media(max-width:1240px){.toc{display:none}}
 
 /* right-rail relationship mini-map */
 .panel--map{padding-bottom:16px}
