@@ -376,8 +376,30 @@ ${mapLegend}
       </div>
 `;
 
+  // Cross-links to the "X vs Y" pages for this law's near-twin / tension pairs,
+  // so the compare surface is reachable from every relevant law page (the
+  // internal linking that lets those pages earn their long-tail queries). The
+  // pair slug is ordered by `no` to match the generated compare page exactly.
+  const cmpKind = (k = '') => /tension|oppos|contra|against|versus|counter|rival|near-twin|twin|confus/i.test(k);
+  const cmpSeen = new Set();
+  const compareLinks = (Array.isArray(law.related) ? law.related : [])
+    .filter((r) => r && cmpKind(r.kind) && r.slug !== law.slug && byslug[r.slug])
+    .map((r) => byslug[r.slug])
+    .filter((o) => { if (cmpSeen.has(o.slug)) return false; cmpSeen.add(o.slug); return true; });
+  const cmpSlug = (o) =>
+    String(law.no ?? '').localeCompare(String(o.no ?? ''), 'en', { numeric: true }) <= 0
+      ? `${law.slug}-vs-${o.slug}` : `${o.slug}-vs-${law.slug}`;
+  const comparePanel = compareLinks.length
+    ? `      <div class="panel panel--compare">
+        <h4>Compare</h4>
+        <ul class="cmp-side">
+${compareLinks.map((o) => `          <li><a href="${base}compare/${cmpSlug(o)}/"><span class="cmp-side-vs">vs</span> ${escapeHtml(o.name)}</a></li>`).join('\n')}
+        </ul>
+      </div>\n`
+    : '';
+
   const aside = `    <aside class="aside">
-${saveBtn}${mapPanel}      <div class="panel">
+${saveBtn}${mapPanel}${comparePanel}      <div class="panel">
         <h4>Cite this entry</h4>
         <div class="cite-box" id="cite">${citeText}</div>
         <button class="btn" id="copy"><i class="ti ti-copy" aria-hidden="true"></i> <span id="copy-t">Copy citation</span></button>

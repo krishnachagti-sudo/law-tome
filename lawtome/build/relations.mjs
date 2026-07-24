@@ -12,6 +12,11 @@ export function isTensionKind(kind = '') {
   return /tension|oppos|contra|against|versus|counter|rival/i.test(kind || '');
 }
 
+/** Does a `kind` denote a near-twin — two laws that are easily confused? */
+export function isTwinKind(kind = '') {
+  return /near-twin|twin|confus/i.test(kind || '');
+}
+
 // Compare two `no` values as zero-padded strings so ordering matches the
 // corpus's own numeric sort ("088" < "103"); falls back to string compare.
 function byNo(a, b) {
@@ -46,6 +51,45 @@ export function tensionPairs(laws = []) {
       pairs.push({ a: x, b: y, kind: rel.kind });
     }
   }
+  pairs.sort((p, q) => byNo(p.a.no, q.a.no) || byNo(p.b.no, q.b.no));
+  return pairs;
+}
+
+/**
+ * Every distinct pair of laws worth a side-by-side "X vs Y" page: those the
+ * corpus joins with a TENSION edge (they pull opposite ways) or a NEAR-TWIN
+ * edge (they're easily confused). Undirected & deduped like tensionPairs. Each
+ * pair carries a `relation` of 'tension' | 'near-twin' and a stable compare
+ * `slug` ("<a>-vs-<b>", members ordered by `no`). Nothing is fabricated: a pair
+ * exists only where the corpus itself marks such an edge between two real
+ * entries. A pair marked both ways resolves deterministically to 'tension'
+ * (the stronger claim).
+ * @param {object[]} laws corpus entries (each with slug/no/name/related[]).
+ * @returns {{a:object,b:object,relation:string,slug:string}[]}
+ */
+export function comparePairs(laws = []) {
+  const rows = Array.isArray(laws) ? laws : [];
+  const byslug = Object.fromEntries(rows.map((l) => [l.slug, l]));
+  const seen = new Map();
+  for (const a of rows) {
+    if (!Array.isArray(a.related)) continue;
+    for (const rel of a.related) {
+      if (!rel) continue;
+      const ten = isTensionKind(rel.kind), twin = isTwinKind(rel.kind);
+      if (!ten && !twin) continue;
+      const b = byslug[rel.slug];
+      if (!b || b.slug === a.slug) continue;
+      const key = [a.slug, b.slug].sort().join('|');
+      const relation = ten ? 'tension' : 'near-twin';
+      if (seen.has(key)) {
+        if (relation === 'tension') seen.get(key).relation = 'tension';
+        continue;
+      }
+      const [x, y] = byNo(a.no, b.no) <= 0 ? [a, b] : [b, a];
+      seen.set(key, { a: x, b: y, relation, slug: `${x.slug}-vs-${y.slug}` });
+    }
+  }
+  const pairs = [...seen.values()];
   pairs.sort((p, q) => byNo(p.a.no, q.a.no) || byNo(p.b.no, q.b.no));
   return pairs;
 }

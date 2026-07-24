@@ -14,7 +14,8 @@ import { listingPage } from '../src/templates/listing.mjs';
 import { graphPage } from '../src/templates/graph.mjs';
 import { coinPage, aboutPage, coinedIndex, privacyPage, notFoundPage } from '../src/templates/static-pages.mjs';
 import { tensionPage } from '../src/templates/tension.mjs';
-import { tensionPairs } from './relations.mjs';
+import { comparePage, compareHubPage } from '../src/templates/compare.mjs';
+import { tensionPairs, comparePairs } from './relations.mjs';
 import { reliabilityHubPage } from '../src/templates/reliability.mjs';
 import { RELIABILITY_TIERS, reliabilitySlug } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
@@ -147,6 +148,14 @@ export async function buildSite(opts) {
   // when a corpus has none), so the footer link never dangles.
   const tension = tensionPairs(laws);
   writes.push(writePage(join(out, 'tension', 'index.html'), tensionPage(tension, { base, origin, count: publishedCount })));
+  // "X vs Y" comparison pages: one per near-twin / tension pair the corpus marks,
+  // plus a /compare/ hub. High-intent long-tail capture ("Occam vs Hanlon"); pure
+  // recombination of each law's verified fields — nothing is authored per pair.
+  const compares = comparePairs(laws);
+  writes.push(writePage(join(out, 'compare', 'index.html'), compareHubPage(compares, { base, origin, count: publishedCount })));
+  for (const pair of compares) {
+    writes.push(writePage(join(out, 'compare', pair.slug, 'index.html'), comparePage(pair, { base, origin, categories, count: publishedCount })));
+  }
 
   // Reliability (veracity) facet: a hub explaining the scale, plus one faceted
   // listing per tier PRESENT in the corpus. Each tier page renders only its own
@@ -247,6 +256,8 @@ export async function buildSite(opts) {
     'coined/',
     'privacy/',
     'tension/',                               // cross-corpus opposing-pairs view
+    'compare/',                               // "X vs Y" comparison hub
+    ...compares.map((p) => `compare/${p.slug}/`), // one per compared pair
     'reliability/',                           // veracity facet hub
     ...presentTiers.map((v) => `reliability/${reliabilitySlug(v)}/`),
     'collections/',                           // curated-collections hub

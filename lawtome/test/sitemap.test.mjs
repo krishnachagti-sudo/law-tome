@@ -46,6 +46,7 @@ import { readFile, writeFile, mkdtemp, rm, cp } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { buildSite } from '../build/build.mjs';
+import { comparePairs } from '../build/relations.mjs';
 
 // Corpus-relative sitemap expectations, so adding a law (or a law in a new
 // category / reliability tier) never breaks the count. Locs = home + one per law
@@ -67,7 +68,9 @@ const AUD_COUNT = RAW_AUD.filter((a) => (a.laws || []).some((s) => SLUGS.has(s))
 // + quiz + situations + named-after + timeline + data (the /saved/ page is
 // noindex and the .json/.csv downloads are data files, so none are in the sitemap)
 // + marketing: the /for/ hub + one per audience + features + manifesto.
-const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + (1 + AUD_COUNT + 1 + 1);
+// Compare: the /compare/ hub + one page per near-twin/tension pair the corpus marks.
+const COMPARE_COUNT = comparePairs(PARSED).length;
+const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + (1 + AUD_COUNT + 1 + 1);
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));
