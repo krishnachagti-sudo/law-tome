@@ -336,6 +336,17 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .gnode .glabel,.gedge{transition:opacity .18s ease}
 .gnode-halo{animation:gpulse 3.2s ease-in-out infinite}
 @keyframes gpulse{0%,100%{opacity:.16}50%{opacity:.28}}
+/* entrance: nodes fade + pop in, rippling out from the focus; edges fade after.
+   `backwards` fill leaves the browser back in control once each finishes, so
+   hover dimming and the physics keep working. */
+@media(prefers-reduced-motion:no-preference){
+  .graph-live .gnode{animation:gnodeIn .4s var(--gd,0ms) ease backwards}
+  .graph-live .gdot{transform-box:fill-box;transform-origin:center;animation:gdotIn .52s var(--gd,0ms) cubic-bezier(.2,1.3,.35,1) backwards}
+  .graph-live .gedge{animation:gedgeIn .55s .1s ease backwards}
+}
+@keyframes gnodeIn{from{opacity:0}}
+@keyframes gdotIn{from{transform:scale(.25)}}
+@keyframes gedgeIn{from{opacity:0}}
 @media(prefers-reduced-motion:reduce){.gnode-halo{animation:none}}
 .gnode:focus{outline:none}
 /* keyboard focus on a graph node: ring the circle (CSS beats the inline stroke) */

@@ -123,9 +123,29 @@
     var history = [];
     var current = null;
 
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     // ---- view transform (pan/zoom) ----
     var view = { k: 1, x: 0, y: 0 };
     function applyView() { viewport.setAttribute('transform', 'translate(' + view.x + ' ' + view.y + ') scale(' + view.k + ')'); }
+    // Eased camera moves — used when the view re-frames itself (fit / re-centre)
+    // so the canvas glides to the new framing instead of hard-cutting. Direct
+    // user gestures (pan/zoom/drag) set the view straight and cancel any glide.
+    var camRaf = 0;
+    function cancelCam() { if (camRaf) { cancelAnimationFrame(camRaf); camRaf = 0; } }
+    function animateView(tk, tx, ty) {
+      cancelCam();
+      if (reduceMotion) { view.k = tk; view.x = tx; view.y = ty; applyView(); reflectZoom(); return; }
+      var sk = view.k, sx = view.x, sy = view.y, t0 = null, dur = 560;
+      function frame(ts) {
+        if (t0 == null) t0 = ts;
+        var p = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - p, 3); // easeOutCubic
+        view.k = sk + (tk - sk) * e; view.x = sx + (tx - sx) * e; view.y = sy + (ty - sy) * e;
+        applyView(); reflectZoom();
+        camRaf = p < 1 ? requestAnimationFrame(frame) : 0;
+      }
+      camRaf = requestAnimationFrame(frame);
+    }
     function clientToWorld(cx, cy) {
       var ctm = viewport.getScreenCTM(); if (!ctm) return { x: 0, y: 0 };
       var inv = ctm.inverse(); var p = svg.createSVGPoint(); p.x = cx; p.y = cy; p = p.matrixTransform(inv);
@@ -205,7 +225,7 @@
       });
       var pad = 30, bw = Math.max(1, maxx - minx), bh = Math.max(1, maxy - miny);
       var k = Math.min((W - 2 * pad) / bw, (H - 2 * pad) / bh); k = Math.max(0.45, Math.min(1.9, k));
-      view.k = k; view.x = W / 2 - k * (minx + maxx) / 2; view.y = H / 2 - k * (miny + maxy) / 2; applyView(); reflectZoom();
+      animateView(k, W / 2 - k * (minx + maxx) / 2, H / 2 - k * (miny + maxy) / 2);
     }
 
     // Greedy, non-overlapping labels: the focus and the best-connected nodes get
@@ -243,14 +263,16 @@
         if (isDirected(e.kind)) ln.setAttribute('marker-end', 'url(#gph-arrow)');
         edgeLayer.appendChild(ln); e.el = ln; edgeEls.push(e);
       });
-      sim.nodes.forEach(function (nd) {
+      sim.nodes.forEach(function (nd, i) {
         var g = svgEl('g'); g.setAttribute('class', 'gnode' + (nd.isFocus ? ' gnode-focus' : ''));
+        // staggered entrance: neighbours ripple outward from the focus
+        g.style.setProperty('--gd', (nd.isFocus ? 0 : 40 + i * 26) + 'ms');
         g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button');
         g.setAttribute('aria-label', (nd.name || nd.slug) + (nd.isFocus ? ' (current)' : ''));
         var r = nd.isFocus ? 16 : 7 + Math.min(9, nd.deg * 0.5);
         nd.r = r;
         if (nd.isFocus) { var halo = svgEl('circle'); halo.setAttribute('class', 'gnode-halo'); halo.setAttribute('r', r + 7); halo.setAttribute('fill', catColor(nd.category)); halo.setAttribute('opacity', '0.18'); g.appendChild(halo); }
-        var dot = svgEl('circle');
+        var dot = svgEl('circle'); dot.setAttribute('class', 'gdot');
         dot.setAttribute('r', r); dot.setAttribute('fill', catColor(nd.category));
         dot.setAttribute('stroke', nd.isFocus ? '#f4efe4' : '#12151d'); dot.setAttribute('stroke-width', nd.isFocus ? 2.5 : 1.5);
         g.appendChild(dot);
@@ -331,7 +353,7 @@
       g.addEventListener('pointerenter', function () { if (!dragging) spotlight(nd, true); });
       g.addEventListener('pointerleave', function () { if (!dragging) spotlight(nd, false); });
       g.addEventListener('pointerdown', function (ev) {
-        ev.stopPropagation(); sim.needFit = false; dragging = nd; dragMoved = false; downXY = { x: ev.clientX, y: ev.clientY };
+        ev.stopPropagation(); sim.needFit = false; cancelCam(); dragging = nd; dragMoved = false; downXY = { x: ev.clientX, y: ev.clientY };
         nd._pinned = (nd.fx != null); var w = clientToWorld(ev.clientX, ev.clientY); nd._off = { x: w.x - nd.x, y: w.y - nd.y };
         nd.fx = nd.x; nd.fy = nd.y; try { g.setPointerCapture(ev.pointerId); } catch (e) {}
         reheat();
@@ -353,11 +375,11 @@
 
     // ---- canvas pan / zoom ----
     var panning = null;
-    svg.addEventListener('pointerdown', function (ev) { if (ev.target.closest && ev.target.closest('.gnode')) return; sim.needFit = false; panning = { x: ev.clientX, y: ev.clientY, vx: view.x, vy: view.y }; svg.style.cursor = 'grabbing'; });
+    svg.addEventListener('pointerdown', function (ev) { if (ev.target.closest && ev.target.closest('.gnode')) return; sim.needFit = false; cancelCam(); panning = { x: ev.clientX, y: ev.clientY, vx: view.x, vy: view.y }; svg.style.cursor = 'grabbing'; });
     window.addEventListener('pointermove', function (ev) { if (!panning) return; view.x = panning.vx + (ev.clientX - panning.x); view.y = panning.vy + (ev.clientY - panning.y); applyView(); });
     window.addEventListener('pointerup', function () { if (panning) { panning = null; svg.style.cursor = ''; } });
     function zoomAt(cx, cy, factor) {
-      sim.needFit = false;
+      sim.needFit = false; cancelCam();
       var r = svg.getBoundingClientRect(); var sx = (cx - r.left) / r.width * W, sy = (cy - r.top) / r.height * H;
       var k2 = Math.max(0.35, Math.min(3.2, view.k * factor));
       // keep the point under the cursor fixed
