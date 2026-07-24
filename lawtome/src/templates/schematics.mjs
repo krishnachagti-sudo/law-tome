@@ -193,6 +193,17 @@ const figures = {
       <text class="s-tick" x="30" y="34" text-anchor="end" transform="rotate(-90 30 34)">response</text>
     </svg>`,
   },
+  // Trade-off: gaining more of one thing costs you the other (a downward curve).
+  'tradeoff': {
+    caption: 'You can’t maximise both at once: push one up and the other slides down along the curve.',
+    svg: `<svg viewBox="0 0 460 210" role="img" aria-label="Schematic: a downward-sloping trade-off curve">
+      <line class="s-axis" x1="44" y1="24" x2="44" y2="176"/>
+      <line class="s-axis" x1="44" y1="176" x2="430" y2="176"/>
+      <path class="s-proxy" d="M52,40 C150,54 250,140 424,168"/>
+      <text class="s-tick" x="44" y="196" text-anchor="start">more of one →</text>
+      <text class="s-tick" x="30" y="34" text-anchor="end" transform="rotate(-90 30 34)">the other</text>
+    </svg>`,
+  },
 };
 
 // Curated, hand-verified map of law slug -> canonical schematic shape, for laws
@@ -201,21 +212,32 @@ const figures = {
 // law's canonical picture (not a loose analogy), so nothing here misrepresents.
 const SLUG_SHAPES = {
   'central-limit-theorem': 'bell-curve',
+  'students-t-distribution': 'bell-curve',
+  'farrs-law': 'bell-curve',
   'zipfs-law': 'long-tail',
   'power-law-distribution': 'long-tail',
   'benfords-law': 'long-tail',
   'diffusion-of-innovations': 's-curve',
+  'the-hill-equation': 's-curve',
+  'the-oxygen-hemoglobin-dissociation-curve': 's-curve',
   'moores-law': 'exp-growth',
+  'kryders-law': 'exp-growth',
+  'the-rule-of-72': 'exp-growth',
   'the-malthusian-trap': 'exp-growth',
   'ebbinghaus-forgetting-curve': 'exp-decay',
+  'beer-lambert-law': 'exp-decay',
+  'newtons-law-of-cooling': 'exp-decay',
   'the-experience-curve': 'exp-decay',
   'wrights-law': 'exp-decay',
   'diminishing-marginal-utility': 'diminishing-returns',
   'the-law-of-diminishing-marginal-utility': 'diminishing-returns',
+  'the-solow-swan-model': 'diminishing-returns',
   'yerkes-dodson-law': 'inverted-u',
+  'the-golden-mean': 'inverted-u',
   'the-laffer-curve': 'inverted-u',
   'the-kuznets-curve': 'inverted-u',
   'the-environmental-kuznets-curve': 'inverted-u',
+  'the-phillips-curve': 'tradeoff',
   'matthew-effect': 'feedback-loop',
   'preferential-attachment': 'feedback-loop',
   'cobra-effect': 'feedback-loop',
@@ -223,6 +245,9 @@ const SLUG_SHAPES = {
   'reeds-law': 'network-effect',
   'the-network-effect': 'network-effect',
   'the-doherty-threshold': 'threshold',
+  'herd-immunity': 'threshold',
+  'the-basic-reproduction-number': 'threshold',
+  'escape-velocity': 'threshold',
 };
 
 /**
