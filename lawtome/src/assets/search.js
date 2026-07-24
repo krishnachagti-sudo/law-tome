@@ -276,7 +276,7 @@
         if (!b) return;
         activeCat = b.getAttribute('data-c');
         var kids = chipsEl.children;
-        for (var i = 0; i < kids.length; i++) kids[i].classList.toggle('on', kids[i] === b);
+        for (var i = 0; i < kids.length; i++) { var on = kids[i] === b; kids[i].classList.toggle('on', on); kids[i].setAttribute('aria-pressed', on ? 'true' : 'false'); }
         render();
       });
     }
@@ -288,7 +288,7 @@
         if (!b) return;
         activeRel = b.getAttribute('data-r') || '';
         var kids = relChipsEl.children;
-        for (var i = 0; i < kids.length; i++) kids[i].classList.toggle('on', kids[i] === b);
+        for (var i = 0; i < kids.length; i++) { var on = kids[i] === b; kids[i].classList.toggle('on', on); kids[i].setAttribute('aria-pressed', on ? 'true' : 'false'); }
         render();
       });
     }

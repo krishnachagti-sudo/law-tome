@@ -418,7 +418,7 @@ ${compareLinks.map((o) => `          <li><a href="${base}compare/${cmpSlug(o)}/"
 ${saveBtn}${mapPanel}${comparePanel}      <div class="panel">
         <h3>Cite this entry</h3>
         <div class="cite-box" id="cite">${citeText}</div>
-        <button class="btn" id="copy"><i class="ti ti-copy" aria-hidden="true"></i> <span id="copy-t">Copy citation</span></button>
+        <button class="btn" id="copy" type="button"><i class="ti ti-copy" aria-hidden="true"></i> <span id="copy-t">Copy citation</span></button>
         <a class="btn solid" href="${base}og/${escapeHtml(law.slug)}.png" target="_blank" rel="noopener"><i class="ti ti-photo" aria-hidden="true"></i> Open quote-card</a>
       </div>
     </aside>`;

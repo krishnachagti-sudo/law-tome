@@ -41,7 +41,7 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
   const chips = cats
     .map((c, i) => {
       const on = categoryKey ? c === categoryKey : i === 0;
-      return `<button class="chip${on ? ' on' : ''}" data-c="${escapeHtml(c)}">${escapeHtml(c)}</button>`;
+      return `<button class="chip${on ? ' on' : ''}" type="button" aria-pressed="${on ? 'true' : 'false'}" data-c="${escapeHtml(c)}">${escapeHtml(c)}</button>`;
     })
     .join('');
 

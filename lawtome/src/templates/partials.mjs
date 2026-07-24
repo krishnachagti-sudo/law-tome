@@ -287,7 +287,7 @@ ${nav}
  */
 export function browseControls({ isReliability = false } = {}) {
   const REL_TIERS = [['', 'All tiers', ''], ['Empirical', 'Empirical', 'var(--ok)'], ['Heuristic', 'Heuristic', 'var(--gold)'], ['Folk-adage', 'Folk-adage', 'var(--faint)'], ['Contested', 'Contested', 'var(--con)']];
-  const relChips = `<div class="chips chips--rel" id="rel-chips" role="group" aria-label="Filter by reliability tier">${REL_TIERS.map(([val, label, col], i) => `<button class="chip${i === 0 ? ' on' : ''}" type="button" data-r="${escapeHtml(val)}">${col ? `<span class="rel-dot" style="background:${col}"></span>` : ''}${escapeHtml(label)}</button>`).join('')}</div>`;
+  const relChips = `<div class="chips chips--rel" id="rel-chips" role="group" aria-label="Filter by reliability tier">${REL_TIERS.map(([val, label, col], i) => `<button class="chip${i === 0 ? ' on' : ''}" type="button" aria-pressed="${i === 0 ? 'true' : 'false'}" data-r="${escapeHtml(val)}">${col ? `<span class="rel-dot" style="background:${col}"></span>` : ''}${escapeHtml(label)}</button>`).join('')}</div>`;
   const sortControl = `<div class="browse-sort">
       <label class="browse-sort-l" for="sort">Sort</label>
       <select id="sort" class="browse-select" aria-label="Sort laws">
