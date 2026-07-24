@@ -325,12 +325,30 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .graph-suggest-item{display:block;width:100%;text-align:left;font-family:var(--serif);font-size:14px;padding:9px 14px;background:none;border:0;border-bottom:1px solid var(--line);color:var(--ink);cursor:pointer}
 .graph-suggest-item:last-child{border-bottom:0}
 .graph-suggest-item:hover{background:var(--surface-2);color:var(--accent)}
-.graph-stage.graph-band{padding:0;height:560px}
-@media(max-width:640px){.graph-stage.graph-band{height:520px}}
+.graph-stage.graph-band{padding:0;height:600px}
+@media(max-width:640px){.graph-stage.graph-band{height:560px}}
 .graph-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:#9c988c}
+/* force-directed explorer: a live, grabbable canvas */
+.graph-stage.graph-live{cursor:grab}
+.graph-stage.graph-live:active{cursor:grabbing}
+.gnode{cursor:pointer}
+.gnode-focus{cursor:pointer}
+.gnode .glabel,.gedge{transition:opacity .18s ease}
+.gnode-halo{animation:gpulse 3.2s ease-in-out infinite}
+@keyframes gpulse{0%,100%{opacity:.16}50%{opacity:.28}}
+@media(prefers-reduced-motion:reduce){.gnode-halo{animation:none}}
 .gnode:focus{outline:none}
 /* keyboard focus on a graph node: ring the circle (CSS beats the inline stroke) */
 .gnode:focus-visible circle{stroke:var(--accent);stroke-width:4}
+/* zoom / reset controls, top-right of the stage */
+.graph-controls{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:6px;z-index:6}
+.graph-ctrl{width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:17px;line-height:1;color:#e4ddce;background:rgba(26,30,40,.82);border:1px solid #333a49;border-radius:6px;cursor:pointer;backdrop-filter:blur(3px)}
+.graph-ctrl:hover{border-color:var(--accent);color:#f6f1e6;background:#20252f}
+/* category legend, bottom-left of the stage */
+.graph-legend{position:absolute;left:12px;bottom:12px;right:56px;display:flex;flex-wrap:wrap;gap:5px 12px;z-index:6;pointer-events:none;max-height:96px;overflow:hidden}
+.graph-leg-item{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:#b7b1a3;background:rgba(15,17,24,.55);padding:2px 7px 2px 5px;border-radius:20px}
+.graph-leg-swatch{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+@media(max-width:640px){.graph-legend{display:none}}
 .graph-focusbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:16px}
 .graph-focus-name{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink)}
 .graph-focus-meta{font-family:var(--mono);font-size:12px;color:var(--faint)}
