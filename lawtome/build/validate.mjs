@@ -23,10 +23,18 @@ export const SOURCE_FILE = Symbol('sourceFile');
 export function validateCorpus(laws, categories) {
   // `known` excludes falsy slugs so a dangling ref can't spuriously "resolve"
   // against an entry that is itself missing its slug (which already errors).
-  const errs = [], slugs = new Set(), nos = new Set(), known = new Set(laws.map(l => l.slug).filter(Boolean));
+  const errs = [], slugs = new Set(), nos = new Set(), names = new Set(), known = new Set(laws.map(l => l.slug).filter(Boolean));
   for (const l of laws) {
     const id = l.slug || l.name || '(unknown)';
     for (const f of REQUIRED) if (!l[f]) errs.push(`${id}: missing required field "${f}"`);
+    // Name uniqueness (case-insensitive): two entries sharing a display name are a
+    // duplicate concept — two competing pages for one law. Slug/no uniqueness alone
+    // doesn't catch it (the "Iron Law of Oligarchy" / "Graham's Law" duplicates).
+    if (l.name) {
+      const nk = l.name.trim().toLowerCase();
+      if (names.has(nk)) errs.push(`duplicate name "${l.name}"`);
+      names.add(nk);
+    }
     // At least one worked example, in either the legacy `example` string or the
     // richer `examples[]` array.
     if (!l.example && !(Array.isArray(l.examples) && l.examples.length))
