@@ -22,6 +22,7 @@
 html[data-theme="light"]{
   --bg:#f4f1e8; --surface:#fdfbf5; --surface-2:#ece7da;
   --ink:#191b21; --muted:#555341; --faint:#6d6b5e; --read:#33352c;
+  --line:#dcd5c3; --line-strong:#c4b998;
   --accent:#a4680f; --accent-ink:#734808; --accent-soft:#f0e3c6;
   --gold:#87661f; --gold-soft:#e6dabb;
   --ok:#3d7239; --ok-soft:#dde8d3;
@@ -343,15 +344,15 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 
 /* jump-bar (A–Z on /named-after/, eras on /timeline/) — a sticky row of anchors
    so long index pages aren't a single unbroken scroll. */
-.az-nav{position:sticky;top:60px;z-index:5;display:flex;flex-wrap:wrap;gap:2px 4px;padding:10px 12px;margin:0 0 24px;background:var(--bg);border:1px solid var(--line);border-radius:10px}
+.az-nav{position:sticky;top:72px;z-index:5;display:flex;flex-wrap:wrap;gap:2px 4px;padding:10px 12px;margin:0 0 24px;background:var(--bg);border:1px solid var(--line);border-radius:10px}
 .az-nav a,.az-nav span{font-family:var(--mono);font-size:12px;line-height:1;padding:5px 8px;border-radius:6px;text-decoration:none}
 .az-nav a{color:var(--accent)}
-.az-nav a:hover{background:var(--panel);color:var(--gold)}
+.az-nav a:hover{background:var(--surface-2);color:var(--gold)}
 .az-nav span{color:var(--faint);opacity:.4}
-@media(max-width:560px){.az-nav{top:56px;gap:1px 2px;padding:8px}.az-nav a,.az-nav span{padding:4px 6px;font-size:11px}}
+@media(max-width:560px){.az-nav{top:62px;gap:1px 2px;padding:8px}.az-nav a,.az-nav span{padding:4px 6px;font-size:11px}}
 
 /* timeline (/timeline/) */
-.tl-era{margin-bottom:30px;scroll-margin-top:120px}
+.tl-era{margin-bottom:30px;scroll-margin-top:132px}
 .tl-eyebrow{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 14px;display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
 .tl-count{font-family:var(--mono);font-size:11px;color:var(--faint)}
 .tl-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0 24px}
@@ -903,7 +904,7 @@ html{scroll-behavior:smooth}
 .aside{position:sticky;top:88px;display:flex;flex-direction:column;gap:20px}
 @media(max-width:860px){.aside{position:static}}
 .panel{border:1px solid var(--line);border-radius:3px;background:var(--surface);padding:18px 20px}
-.panel h4{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:400;margin-bottom:14px}
+.panel h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:400;margin-bottom:14px}
 .glance .row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:13px}
 .glance .row:first-child{border-top:none}
 .glance .k{color:var(--faint);font-family:var(--mono);font-size:11px;letter-spacing:.02em;text-transform:uppercase}

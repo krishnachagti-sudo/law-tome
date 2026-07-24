@@ -52,6 +52,12 @@ export function lawPage(law, ctx = {}) {
   // from the marketing meta description below so answer engines get the real
   // definition, not a keyword-facet blurb.
   const answer = law.meaning || law.statement;
+  // Social cards (Twitter/X especially) truncate past ~200 chars; clamp the OG
+  // description at a word boundary so the preview doesn't cut mid-word. The full
+  // `answer` still feeds the JSON-LD description and on-page FAQ.
+  const ogDescription = answer && answer.length > 200
+    ? answer.slice(0, 197).replace(/\s+\S*$/, '') + '…'
+    : answer;
   const firstExample = Array.isArray(law.examples) && law.examples[0]
     ? (law.examples[0].text || '')
     : (law.example || '');
@@ -92,7 +98,7 @@ export function lawPage(law, ctx = {}) {
   const entry = `<section class="entry">
   <svg class="entry-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
   <div class="wrap-wide">
-    <nav class="crumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}category/${escapeHtml(law.category)}/">${escapeHtml(catLabel)}</a><span class="sep">/</span>${escapeHtml(law.name)}</nav>
+    <nav class="crumb" aria-label="Breadcrumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}category/${escapeHtml(law.category)}/">${escapeHtml(catLabel)}</a><span class="sep">/</span>${escapeHtml(law.name)}</nav>
     <div class="entry-meta" style="margin-top:18px">
       ${meta.join('\n      ')}
     </div>
@@ -369,7 +375,7 @@ ${toc.map((t) => `      <a href="#${t.id}">${escapeHtml(t.label)}</a>`).join('\n
   const mapLegend = `        <div class="mg-legend"><span class="mg-lg"><i class="mg-sw mg-sw--kin"></i>${nCount - nTension} kindred</span>${nTension ? `<span class="mg-lg"><i class="mg-sw mg-sw--ten"></i>${nTension} in tension</span>` : ''}</div>`;
   const mapPanel = neighbours.length
     ? `      <div class="panel panel--map">
-        <h4>Related map</h4>
+        <h3>Related map</h3>
         <div class="minigraph">${miniGraph()}</div>
 ${mapLegend}
         <a class="mg-link" href="${base}graph/?law=${escapeHtml(law.slug)}">Open in the full graph <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
@@ -401,7 +407,7 @@ ${mapLegend}
       ? `${law.slug}-vs-${o.slug}` : `${o.slug}-vs-${law.slug}`;
   const comparePanel = compareLinks.length
     ? `      <div class="panel panel--compare">
-        <h4>Compare</h4>
+        <h3>Compare</h3>
         <ul class="cmp-side">
 ${compareLinks.map((o) => `          <li><a href="${base}compare/${cmpSlug(o)}/"><span class="cmp-side-vs">vs</span> ${escapeHtml(o.name)}</a></li>`).join('\n')}
         </ul>
@@ -410,7 +416,7 @@ ${compareLinks.map((o) => `          <li><a href="${base}compare/${cmpSlug(o)}/"
 
   const aside = `    <aside class="aside">
 ${saveBtn}${mapPanel}${comparePanel}      <div class="panel">
-        <h4>Cite this entry</h4>
+        <h3>Cite this entry</h3>
         <div class="cite-box" id="cite">${citeText}</div>
         <button class="btn" id="copy"><i class="ti ti-copy" aria-hidden="true"></i> <span id="copy-t">Copy citation</span></button>
         <a class="btn solid" href="${base}og/${escapeHtml(law.slug)}.png" target="_blank" rel="noopener"><i class="ti ti-photo" aria-hidden="true"></i> Open quote-card</a>
@@ -423,7 +429,7 @@ ${saveBtn}${mapPanel}${comparePanel}      <div class="panel">
     const sides = [];
     if (prev) sides.push(`    <a href="${permalink(prev.slug)}"><span class="lab">← Prev · № ${escapeHtml(prev.no)}</span><span class="t">${escapeHtml(prev.name)}</span></a>`);
     if (next) sides.push(`    <a class="n2" href="${permalink(next.slug)}"><span class="lab">Next · № ${escapeHtml(next.no)} →</span><span class="t">${escapeHtml(next.name)}</span></a>`);
-    prevnext = `\n  <nav class="prevnext">\n${sides.join('\n')}\n  </nav>\n`;
+    prevnext = `\n  <nav class="prevnext" aria-label="Previous and next law">\n${sides.join('\n')}\n  </nav>\n`;
   }
 
   const layout = `<div class="wrap-wide">
@@ -474,6 +480,7 @@ ${prevnext}</div>
     ...(Array.isArray(law.aliases) && law.aliases.length ? { alternativeHeadline: law.aliases[0] } : {}),
     name: law.name,
     description: answer,
+    image: `${origin}${base}og/${law.slug}.png`,
     keywords,
     about: { '@type': 'Thing', name: law.name, ...(law.sameAs ? { sameAs: law.sameAs } : {}) },
     inLanguage: 'en',
@@ -483,7 +490,9 @@ ${prevnext}</div>
     publisher,
     publishingPrinciples: `${origin}${base}about/`,
     isAccessibleForFree: true,
-    ...(buildDate ? { dateModified: buildDate } : {}),
+    // The corpus has no per-entry authoring date; the site is a living document
+    // rebuilt each deploy, so publish and modified both carry the build date.
+    ...(buildDate ? { datePublished: buildDate, dateModified: buildDate } : {}),
     // Voice/assistant answer target: read the title and the plain-English definition.
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.law-title', '.lead'] },
   };
@@ -558,7 +567,7 @@ document.getElementById('copy').onclick=function(){
       path: `laws/${law.slug}/`,
       canonical,
       modified: buildDate,
-      og: { title: `${law.name}: ${facetList}`, description: answer, image: `${base}og/${law.slug}.png`, type: 'article' },
+      og: { title: `${law.name}: ${facetList}`, description: ogDescription, image: `${base}og/${law.slug}.png`, type: 'article' },
       alternates: [{ type: 'text/markdown', title: `${law.name} (Markdown)`, href: `${canonical}index.md` }],
       jsonld: [definedTerm, article, breadcrumb],
     }) +

@@ -73,7 +73,7 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
   // matching the law/compare pages and reflecting the BreadcrumbList JSON-LD so a
   // reader always has an "up" path back to Browse.
   const crumb = (kind === 'category' || isReliability)
-    ? `    <nav class="crumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}browse/">Browse</a>${isReliability ? `<span class="sep">/</span><a href="${base}reliability/">Reliability</a>` : ''}<span class="sep">/</span>${escapeHtml(title)}</nav>\n`
+    ? `    <nav class="crumb" aria-label="Breadcrumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}browse/">Browse</a>${isReliability ? `<span class="sep">/</span><a href="${base}reliability/">Reliability</a>` : ''}<span class="sep">/</span>${escapeHtml(title)}</nav>\n`
     : '';
 
   const section = `<section class="sec" id="index">

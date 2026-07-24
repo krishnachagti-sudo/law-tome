@@ -91,6 +91,11 @@
       }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
       var els = document.querySelectorAll('[data-reveal],[data-reveal-stagger]');
       for (var i = 0; i < els.length; i++) io.observe(els[i]);
+    } else {
+      // No IntersectionObserver: reveal everything immediately so content is never
+      // left stuck at opacity:0 (the hidden state is scoped to .anim [data-reveal]).
+      var all = document.querySelectorAll('[data-reveal],[data-reveal-stagger],[data-reveal-stagger]>*');
+      for (var k = 0; k < all.length; k++) all[k].classList.add('in');
     }
 
     // 2) COUNT-UP — [data-count] tallies 0 → its value the first time it's seen.
