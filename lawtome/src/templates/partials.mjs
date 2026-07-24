@@ -99,7 +99,7 @@ export function jsonLd(obj) {
  * @param {string} [o.robots]     robots directive (defaults to a permissive, rich-preview policy)
  * @param {object[]} [o.jsonld]   array of JSON-LD objects; each emitted via jsonLd()
  */
-export function head({ title, description, base = '/', origin = '', path, canonical, og, jsonld, siteName = 'The Law Tome', robots, modified, published } = {}) {
+export function head({ title, description, base = '/', origin = '', path, canonical, og, jsonld, siteName = 'The Law Tome', robots, modified, published, alternates } = {}) {
   const canon = canonical || (path != null ? `${origin}${base}${path}` : undefined);
   const out = [
     '<!DOCTYPE html>',
@@ -152,6 +152,10 @@ export function head({ title, description, base = '/', origin = '', path, canoni
   out.push(`<link rel="apple-touch-icon" href="${base}icon-512.png">`);
   out.push(`<link rel="manifest" href="${base}site.webmanifest">`);
   out.push(`<link rel="alternate" type="application/atom+xml" title="${escapeHtml(siteName)} — latest entries" href="${base}feed.xml">`);
+  // Extra alternate representations (e.g. a clean Markdown twin for LLMs/agents).
+  if (Array.isArray(alternates)) for (const a of alternates) {
+    if (a && a.href && a.type) out.push(`<link rel="alternate" type="${escapeHtml(a.type)}"${a.title ? ` title="${escapeHtml(a.title)}"` : ''} href="${escapeHtml(a.href)}">`);
+  }
   // Self-hosted stylesheets — replaces the prototype's Google-Fonts + jsDelivr
   // <link>s. Fonts are pulled in by the @font-face rules inside styles.css.
   out.push(`<link rel="stylesheet" href="${base}assets/styles.css">`);

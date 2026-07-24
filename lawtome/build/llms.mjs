@@ -81,6 +81,71 @@ export function buildLlmsIndex(laws, categories, { baseUrl = '/', siteName = 'Th
 }
 
 /**
+ * Build a clean Markdown twin of a single law — a plain-text representation an
+ * LLM or agent can fetch and ground on without parsing HTML (GEO). Every section
+ * is the entry's own verified field; nothing is added that isn't in the corpus.
+ * @param {object} law a corpus entry.
+ * @param {object} opts
+ * @param {string} opts.baseUrl absolute prefix ending in '/' (origin + base).
+ * @param {string} [opts.categoryLabel] human label for law.category.
+ * @param {object} [opts.byslug] slug -> law map, to name related entries.
+ * @returns {string} Markdown document.
+ */
+export function buildLawMarkdown(law, { baseUrl = '/', categoryLabel = '', byslug = {} } = {}) {
+  const url = `${baseUrl}laws/${law.slug}/`;
+  const out = [];
+  out.push(`# ${oneLine(law.name)}`);
+  if (law.statement) { out.push(''); out.push(`> ${oneLine(law.statement)}`); }
+  const meta = [];
+  if (categoryLabel || law.category) meta.push(`**Field:** ${oneLine(categoryLabel || law.category)}`);
+  if (law.provenance === 'coined') meta.push('**Type:** Coined for The Law Tome');
+  else if (law.reliability) meta.push(`**Reliability:** ${law.reliability}`);
+  if (law.coinedYear != null) meta.push(`**Coined:** ${law.coinedYear}`);
+  if (law.namedAfter) meta.push(`**Named after:** ${oneLine(law.namedAfter)}`);
+  if (meta.length) { out.push(''); out.push(meta.join(' · ')); }
+  if (Array.isArray(law.aliases) && law.aliases.length) {
+    out.push(''); out.push(`*Also known as: ${law.aliases.map(oneLine).join('; ')}*`);
+  }
+  const section = (title, body) => { if (body) { out.push(''); out.push(`## ${title}`); out.push(''); out.push(oneLine(body)); } };
+  section('What it means', law.meaning);
+  section('How it works', law.mechanism);
+  const examples = Array.isArray(law.examples) ? law.examples : [];
+  if (examples.length) {
+    out.push(''); out.push('## Examples'); out.push('');
+    for (const ex of examples) {
+      if (!ex) continue;
+      const tag = typeof ex === 'object' ? oneLine(ex.tag) : '';
+      const text = typeof ex === 'object' ? oneLine(ex.text) : oneLine(ex);
+      if (text) out.push(`- ${tag ? `**${tag}:** ` : ''}${text}`);
+    }
+  } else if (law.example) { section('Example', law.example); }
+  section('Why it matters', law.whyItMatters);
+  section('Where it breaks down', law.limits);
+  section('Common misreadings', law.misreadings);
+  section('Origin', law.origin);
+  const related = Array.isArray(law.related) ? law.related.filter((r) => r && byslug[r.slug]) : [];
+  if (related.length) {
+    out.push(''); out.push('## Related'); out.push('');
+    for (const r of related) {
+      const o = byslug[r.slug];
+      out.push(`- [${oneLine(o.name)}](${baseUrl}laws/${o.slug}/)${r.kind ? ` — ${oneLine(r.kind)}` : ''}`);
+    }
+  }
+  const sources = Array.isArray(law.sources) ? law.sources.filter(Boolean) : [];
+  if (sources.length) {
+    out.push(''); out.push('## Sources'); out.push('');
+    for (const s of sources) {
+      const t = oneLine(s.text || s.url || '');
+      out.push(s.url ? `- [${t}](${s.url})` : `- ${t}`);
+    }
+  }
+  out.push(''); out.push('---');
+  out.push(`Source: ${url} · The Law Tome — a sourced index of named laws.`);
+  out.push('');
+  return out.join('\n');
+}
+
+/**
  * Build llms-full.txt: each entry's name, URL, category, reliability, aliases,
  * statement, definition (meaning), and source URLs, separated by `---`.
  * @param {object[]} laws corpus entries.

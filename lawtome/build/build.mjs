@@ -38,7 +38,7 @@ import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng } from './quotecard.mjs';
 import { buildSitemap } from './sitemap.mjs';
-import { buildLlmsIndex, buildLlmsFull } from './llms.mjs';
+import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
 import { readFile } from 'node:fs/promises';
 import { buildFeed } from './feed.mjs';
 
@@ -100,6 +100,10 @@ export async function buildSite(opts) {
   for (let i = 0; i < laws.length; i++) {
     const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, buildDate });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
+    // Clean Markdown twin at /laws/<slug>/index.md — a fetch-friendly plain-text
+    // representation for LLMs/agents (GEO). Linked from the page via rel=alternate.
+    writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.md'),
+      buildLawMarkdown(laws[i], { baseUrl: `${origin}${base}`, categoryLabel: categories[laws[i].category] || laws[i].category, byslug })));
   }
 
   // One Open Graph quote-card PNG per law at og/<slug>.png — matches the

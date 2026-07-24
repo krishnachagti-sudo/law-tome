@@ -544,6 +544,7 @@ document.getElementById('copy').onclick=function(){
       canonical,
       modified: buildDate,
       og: { title: `${law.name}: ${facetList}`, description: answer, image: `${base}og/${law.slug}.png`, type: 'article' },
+      alternates: [{ type: 'text/markdown', title: `${law.name} (Markdown)`, href: `${canonical}index.md` }],
       jsonld: [definedTerm, article, breadcrumb],
     }) +
     sprite() +
