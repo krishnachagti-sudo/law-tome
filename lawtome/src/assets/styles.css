@@ -780,10 +780,12 @@ html{scroll-behavior:smooth}
 .hscroll-track::-webkit-scrollbar{display:none}
 .hscroll-rail{display:none}
 .hpanel{scroll-snap-align:center;flex:0 0 min(84vw,620px);min-height:340px;border:1px solid var(--line);border-radius:6px;background:var(--surface);padding:32px 34px 28px;display:flex;flex-direction:column;color:inherit;text-decoration:none;position:relative;overflow:hidden}
-.hpanel--intro,.hpanel--outro{background:radial-gradient(120% 140% at 0% 0%,var(--surface-2),var(--surface));justify-content:center;gap:15px}
-.hpanel--intro h2,.hpanel--outro h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.06;letter-spacing:-.02em}
+.hpanel--intro,.hpanel--outro,.hpanel--about{background:radial-gradient(120% 140% at 0% 0%,var(--surface-2),var(--surface));justify-content:center;gap:15px}
+.hpanel--intro h2,.hpanel--outro h2,.hpanel--about h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.06;letter-spacing:-.02em}
 .hpanel-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-.hpanel--intro p{font-family:var(--serif);font-size:16px;color:var(--muted);line-height:1.55;max-width:420px}
+.hpanel--intro p,.hpanel--about p{font-family:var(--serif);font-size:16px;color:var(--muted);line-height:1.55;max-width:420px}
+.hpanel--about{gap:13px}
+.hpanel--about .hpanel-idx{position:absolute;top:26px;right:30px}
 .hpanel-hint,.hpanel-go{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-top:auto}
 .hpanel-outro-cta{width:auto;margin-top:8px;align-self:flex-start}
 .hpanel-idx{font-family:var(--mono);font-size:13px;color:var(--faint);letter-spacing:.05em}

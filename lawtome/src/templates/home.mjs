@@ -228,37 +228,44 @@ ${feat('named-after/', IC.person, 'By their namesake', 'Browse laws under the pe
   // horizontal "walk" through a handful of marquee laws. With JS + motion it
   // pins to the viewport and scrubs sideways; without either it degrades to a
   // plain swipeable rail (still fully usable, keyboard- and touch-accessible).
-  const relClass = { Empirical: 'b-emp', Heuristic: 'b-heu', 'Folk-adage': 'b-folk', Contested: 'b-con' };
-  const walkLaws = featured.slice(0, 6);
-  const panel = (l, i) => `      <a class="hpanel hpanel--law" href="${base}laws/${escapeHtml(l.slug)}/">
+  // The panels introduce the platform itself — what the Tome is, how it's
+  // built, and the ways in — rather than parading individual laws. Every claim
+  // here is true of the site as it actually ships (verified content, the depth
+  // fields, the graph, the reliability tiers, the browse facets).
+  const aboutPanels = [
+    { eyebrow: 'What it is', h: 'An encyclopedia of<br>named&nbsp;laws', p: 'Every principle that earned a name — laws, effects, razors, paradoxes — gathered in one place and explained in plain language.' },
+    { eyebrow: 'Verified, never invented', h: 'Every fact is<br>traced to a&nbsp;source', p: 'Dates, people, and references are checked against primary sources. Nothing here is fabricated or written from memory.' },
+    { eyebrow: 'Real depth', h: 'Not just a<br>definition', p: 'Each entry lays out what it says, what it means, the mechanism beneath it, worked examples, where it breaks, and how it gets misread.' },
+    { eyebrow: 'The connections', h: 'A map, not<br>a&nbsp;list', p: 'An interactive graph links the laws that reinforce — and contradict — one another, so you can see how the ideas pull against each other.' },
+    { eyebrow: 'Honest about certainty', h: 'How far to<br>trust&nbsp;it', p: 'Every law is marked Empirical, Heuristic, Folk-adage, or Contested — so a hard result and a catchy saying are never mistaken for one another.' },
+    { eyebrow: 'Ways in', h: 'Find it<br>your&nbsp;way', p: 'Browse by field, by era, or by the person a law is named after — or search by the problem you’re actually trying to solve.' },
+  ];
+  const aboutPanel = (a, i) => `      <div class="hpanel hpanel--about">
         <span class="hpanel-idx">${String(i + 1).padStart(2, '0')}</span>
-        <span class="hpanel-meta"><span class="badge ${relClass[l.reliability] || 'b-folk'}">${escapeHtml(l.reliability || '')}</span><span class="hpanel-cat">${escapeHtml(l.category || '')}</span></span>
-        <span class="hpanel-name">${escapeHtml(l.name)}</span>
-        <span class="hpanel-stmt"><q>${l.hero}</q></span>
-        <span class="hpanel-go">Read the law <span aria-hidden="true">→</span></span>
-      </a>`;
-  const walk = walkLaws.length
-    ? `<section class="hscroll" data-hscroll aria-label="A walk through the index">
+        <span class="hpanel-eyebrow">${a.eyebrow}</span>
+        <h2>${a.h}</h2>
+        <p>${a.p}</p>
+      </div>`;
+  const walk = `<section class="hscroll" data-hscroll aria-label="An introduction to The Law Tome">
   <div class="hscroll-sticky">
     <div class="hscroll-track">
       <div class="hpanel hpanel--intro">
-        <span class="hpanel-eyebrow">A guided walk</span>
-        <h2>Every law is a door<br>to the next.</h2>
-        <p>Keep scrolling — move sideways through a few of the index's sharpest ideas, then step into any one of them.</p>
+        <span class="hpanel-eyebrow">A quick tour</span>
+        <h2>What is<br>The Law Tome?</h2>
+        <p>A reference for the named laws, effects, and principles that quietly shape how the world works. Keep scrolling for what makes it different.</p>
         <span class="hpanel-hint">Scroll <span aria-hidden="true">→</span></span>
       </div>
-${walkLaws.map(panel).join('\n')}
+${aboutPanels.map(aboutPanel).join('\n')}
       <div class="hpanel hpanel--outro">
-        <span class="hpanel-eyebrow">${count} in total</span>
-        <h2>And ${count ? count : 'hundreds'} more.</h2>
+        <span class="hpanel-eyebrow">${count ? count + ' laws and counting' : 'The whole index'}</span>
+        <h2>Start reading.</h2>
         <a class="btn solid hpanel-outro-cta" href="${base}browse/"><svg class="ti-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8M13 9h5M13 15h8M13 19h5"/><rect x="3" y="4" width="4" height="4" rx="1"/><rect x="3" y="14" width="4" height="4" rx="1"/></svg> Browse the whole index</a>
       </div>
     </div>
     <div class="hscroll-rail"><span class="hscroll-bar"></span></div>
   </div>
 </section>
-`
-    : '';
+`;
 
   // ---- inline hero-rotation script (grid/search wiring is Task 10) ------
   const scripts = `<script>
