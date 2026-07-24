@@ -419,9 +419,9 @@ ${saveBtn}${mapPanel}${comparePanel}      <div class="panel">
 
   const layout = `<div class="wrap-wide">
   <div class="entry-layout">
-${tocNav}    <main>
+${tocNav}    <div class="lawmain">
 ${blocks.join('\n\n')}
-    </main>
+    </div>
 
 ${aside}
   </div>

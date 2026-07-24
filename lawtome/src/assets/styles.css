@@ -652,8 +652,8 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .block-h:last-child{margin-bottom:0}
 .lbl::after{content:"";flex:1;height:1px;background:var(--line)}
 /* numbered section labels give the long article visible structure */
-.entry-layout main{counter-reset:sec}
-.entry-layout main .block>.lbl::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);font-size:10px;letter-spacing:.04em;color:var(--faint);border:1px solid var(--line-strong);border-radius:3px;padding:3px 7px}
+.entry-layout .lawmain{counter-reset:sec}
+.entry-layout .lawmain .block>.lbl::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);font-size:10px;letter-spacing:.04em;color:var(--faint);border:1px solid var(--line-strong);border-radius:3px;padding:3px 7px}
 .block{margin-bottom:60px}
 .block:last-child{margin-bottom:0}
 /* infographic card: reliability meter + lineage timeline (real per-law data) */

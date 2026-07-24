@@ -156,6 +156,12 @@ export function head({ title, description, base = '/', origin = '', path, canoni
   if (Array.isArray(alternates)) for (const a of alternates) {
     if (a && a.href && a.type) out.push(`<link rel="alternate" type="${escapeHtml(a.type)}"${a.title ? ` title="${escapeHtml(a.title)}"` : ''} href="${escapeHtml(a.href)}">`);
   }
+  // Preload the two primary text faces (Newsreader roman + italic, Latin) so the
+  // above-the-fold title and statement paint without waiting on the stylesheet to
+  // parse first — cuts LCP. Same URLs the @font-face rules resolve to, so they
+  // dedupe. Fonts require crossorigin even when same-origin.
+  out.push(`<link rel="preload" as="font" type="font/woff2" crossorigin href="${base}assets/fonts/Newsreader-normal-latin.woff2">`);
+  out.push(`<link rel="preload" as="font" type="font/woff2" crossorigin href="${base}assets/fonts/Newsreader-italic-latin.woff2">`);
   // Self-hosted stylesheets — replaces the prototype's Google-Fonts + jsDelivr
   // <link>s. Fonts are pulled in by the @font-face rules inside styles.css.
   out.push(`<link rel="stylesheet" href="${base}assets/styles.css">`);
@@ -259,7 +265,7 @@ ${nav}
     </div>
   </div>
 </header>
-<span id="main-content" tabindex="-1"></span>
+<main id="main-content" tabindex="-1">
 `;
 }
 
@@ -300,7 +306,9 @@ export function footer({ base = '/', scripts = '' } = {}) {
         <h4>${escapeHtml(heading)}</h4>
 ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(label)}</a>`).join('\n')}
       </nav>`;
-  return `<footer>
+  // Close the <main> landmark opened in header() before the site footer.
+  return `</main>
+<footer>
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <a class="foot-seal" href="${base}" aria-label="The Law Tome — home">
