@@ -204,6 +204,28 @@ const figures = {
       <text class="s-tick" x="30" y="34" text-anchor="end" transform="rotate(-90 30 34)">the other</text>
     </svg>`,
   },
+  // Linear: directly proportional — double the cause, double the effect.
+  'linear': {
+    caption: 'Directly proportional: double the input and you double the output — a straight line through the origin.',
+    svg: `<svg viewBox="0 0 460 210" role="img" aria-label="Schematic: a straight-line, directly-proportional relationship">
+      <line class="s-axis" x1="44" y1="24" x2="44" y2="176"/>
+      <line class="s-axis" x1="44" y1="176" x2="430" y2="176"/>
+      <path class="s-proxy" d="M48,172 L424,44"/>
+      <text class="s-tick" x="44" y="196" text-anchor="start">cause →</text>
+      <text class="s-tick" x="30" y="34" text-anchor="end" transform="rotate(-90 30 34)">effect</text>
+    </svg>`,
+  },
+  // Oscillation: a quantity that swings back and forth around a level in cycles.
+  'oscillation': {
+    caption: 'A quantity that swings back and forth around a level, rising and falling in cycles rather than settling.',
+    svg: `<svg viewBox="0 0 460 210" role="img" aria-label="Schematic: a wave oscillating around a midline">
+      <line class="s-axis" x1="44" y1="24" x2="44" y2="176"/>
+      <line class="s-axis" x1="44" y1="176" x2="430" y2="176"/>
+      <line class="s-mean" x1="44" y1="100" x2="430" y2="100"/>
+      <path class="s-proxy" d="M48,100.0 L53,88.3 L58,77.2 L64,67.1 L69,58.6 L74,52.1 L79,47.8 L85,46.1 L90,46.8 L95,50.1 L100,55.8 L105,63.5 L111,73.0 L116,83.8 L121,95.3 L126,107.0 L132,118.5 L137,129.0 L142,138.2 L147,145.5 L152,150.7 L158,153.5 L163,153.8 L168,151.5 L173,146.8 L179,139.8 L184,131.0 L189,120.7 L194,109.4 L199,97.6 L205,86.0 L210,75.1 L215,65.3 L220,57.2 L226,51.1 L231,47.3 L236,46.0 L241,47.3 L246,51.1 L252,57.2 L257,65.3 L262,75.1 L267,86.0 L273,97.6 L278,109.4 L283,120.7 L288,131.0 L293,139.8 L299,146.8 L304,151.5 L309,153.8 L314,153.5 L320,150.7 L325,145.5 L330,138.2 L335,129.0 L340,118.5 L346,107.0 L351,95.3 L356,83.8 L361,73.0 L367,63.5 L372,55.8 L377,50.1 L382,46.8 L387,46.1 L393,47.8 L398,52.1 L403,58.6 L408,67.1 L414,77.2 L419,88.3 L424,100.0"/>
+      <text class="s-tick" x="44" y="196" text-anchor="start">time →</text>
+    </svg>`,
+  },
 };
 
 // Curated, hand-verified map of law slug -> canonical schematic shape, for laws
@@ -248,6 +270,26 @@ const SLUG_SHAPES = {
   'herd-immunity': 'threshold',
   'the-basic-reproduction-number': 'threshold',
   'escape-velocity': 'threshold',
+  'griffiths-criterion': 'threshold',
+  'the-error-catastrophe': 'threshold',
+  'the-jeans-instability': 'threshold',
+  'the-photoelectric-effect': 'threshold',
+  'the-beveridge-curve': 'tradeoff',
+  'michaelis-menten-kinetics': 'diminishing-returns',
+  // linear — directly proportional relationships
+  'hookes-law': 'linear',
+  'ohms-law': 'linear',
+  'darcys-law': 'linear',
+  'faradays-laws-of-electrolysis': 'linear',
+  'fouriers-law-of-heat-conduction': 'linear',
+  'gay-lussacs-law': 'linear',
+  'henrys-law': 'linear',
+  'sarnoffs-law': 'linear',
+  'stokes-law': 'linear',
+  // oscillation — cyclic swings around a level
+  'the-el-nino-southern-oscillation': 'oscillation',
+  'the-foucault-pendulum': 'oscillation',
+  'lotka-volterra-equations': 'oscillation',
 };
 
 /**
