@@ -60,6 +60,14 @@ export function validateCorpus(laws, categories) {
     // Rule 2: closure. Every related/confusedWith slug must resolve to a corpus entry.
     for (const r of l.related || []) if (!known.has(r.slug)) errs.push(`${id}: related reference "${r.slug}" does not resolve`);
     for (const s of l.confusedWith || []) if (!known.has(s)) errs.push(`${id}: confusedWith reference "${s}" does not resolve`);
+    // Rule 3: source/sameAs URLs must be http(s). A `javascript:`/`data:` URL
+    // would render as an execute-on-click link on the law page; reject at build.
+    for (const s of l.sources || []) {
+      if (s && s.url != null && String(s.url).trim() !== '' && !/^https?:\/\//i.test(String(s.url).trim()))
+        errs.push(`${id}: source url is not http(s): "${s.url}"`);
+    }
+    if (l.sameAs != null && String(l.sameAs).trim() !== '' && !/^https?:\/\//i.test(String(l.sameAs).trim()))
+      errs.push(`${id}: sameAs is not http(s): "${l.sameAs}"`);
   }
   return errs;
 }

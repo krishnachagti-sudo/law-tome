@@ -111,7 +111,7 @@ export async function buildSite(opts) {
   // synchronous), so render each card then write concurrently. The TTFs must be
   // embedded explicitly (resvg can't fetch fonts or decode WOFF2).
   for (const law of laws) {
-    const png = renderPng(quoteCardSvg(law));
+    const png = renderPng(quoteCardSvg(law, { origin, base }));
     writes.push(writePage(join(out, 'og', `${law.slug}.png`), png));
   }
 

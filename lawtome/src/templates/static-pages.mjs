@@ -218,7 +218,7 @@ export function coinedIndex(coinedLaws = [], { base = '/', origin = '', count } 
 
   const grid = rows.length
     ? `<div class="grid" id="grid">
-${rows.map((l) => lawCard(l, base)).join('\n')}
+${rows.map((l) => lawCard(l, base, 2)).join('\n')}
     </div>`
     : `<div class="empty">No coined laws yet. The Coined wing fills as readers submit original laws that clear verification — <a href="${base}coin/">coin the first one</a>.</div>`;
 

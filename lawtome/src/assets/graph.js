@@ -77,11 +77,20 @@
     if (empty && empty.parentNode) empty.parentNode.removeChild(empty);
     stage.classList.add('graph-live');
 
-    var W = 1000, H = 600;             // viewBox units (world space)
+    // World height tracks the STAGE aspect so the viewBox matches its container:
+    // on a tall (portrait, mobile) stage this makes the graph fill the space
+    // instead of being letterboxed into a thin band with dead area above/below.
+    // Clamped so the world stays sane if the stage hasn't measured yet.
+    var W = 1000;
+    var ar = (stage.clientHeight || 600) / (stage.clientWidth || 1000);
+    var H = Math.round(W * Math.min(1.5, Math.max(0.55, ar)));   // viewBox units (world space)
     var svg = svgEl('svg');
     svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
     svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%');
     svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', 'Interactive relationship graph. Use the search box above to explore laws, or open a law page for its links as text.');
+    var svgTitle = svgEl('title'); svgTitle.textContent = 'Relationship graph'; svg.appendChild(svgTitle);
     svg.style.display = 'block'; svg.style.touchAction = 'none';
     // arrowhead marker for directed (cause/consequence) edges
     var defs = svgEl('defs');
@@ -268,7 +277,12 @@
         // staggered entrance: neighbours ripple outward from the focus
         g.style.setProperty('--gd', (nd.isFocus ? 0 : 40 + i * 26) + 'ms');
         g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button');
-        g.setAttribute('aria-label', (nd.name || nd.slug) + (nd.isFocus ? ' (current)' : ''));
+        // Voice the color- and shape-encoded info (field, reliability) for AT,
+        // since a screen reader can't see the palette or edge styles.
+        g.setAttribute('aria-label', (nd.name || nd.slug)
+          + (nd.category ? ', ' + (CAT_LABEL[nd.category] || nd.category) : '')
+          + (nd.reliability ? ', ' + nd.reliability : '')
+          + (nd.isFocus ? ' (current)' : ''));
         var r = nd.isFocus ? 16 : 7 + Math.min(9, nd.deg * 0.5);
         nd.r = r;
         if (nd.isFocus) { var halo = svgEl('circle'); halo.setAttribute('class', 'gnode-halo'); halo.setAttribute('r', r + 7); halo.setAttribute('fill', catColor(nd.category)); halo.setAttribute('opacity', '0.18'); g.appendChild(halo); }

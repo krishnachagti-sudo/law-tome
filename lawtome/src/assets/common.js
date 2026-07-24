@@ -24,12 +24,16 @@
   function wireTheme() {
     syncThemeColor(root.getAttribute('data-theme'));
     var btn = document.getElementById('theme');
+    // aria-pressed reflects "dark mode is on" so screen-reader users hear the
+    // toggle's current state, not just its label.
+    if (btn) btn.setAttribute('aria-pressed', root.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
     // Which glyph shows (moon vs sun) is driven purely by CSS keyed on
     // <html data-theme>, so there's no icon to repaint here — just flip the theme.
     // A brief .spin class gives the toggle a satisfying rotation on press.
     if (btn) btn.onclick = function () {
       var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
+      btn.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false');
       syncThemeColor(next);
       try { localStorage.setItem('lt-theme', next); } catch (e) {}
       if (root.classList.contains('anim')) {

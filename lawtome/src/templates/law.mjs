@@ -236,7 +236,12 @@ ${h2}${inner}
     }
   } else if (Array.isArray(law.sources) && law.sources.length) {
     const items = law.sources.map((s, i) => {
-      const label = s.url
+      // Only hyperlink http(s) URLs. escapeHtml blocks attribute breakout, but a
+      // `javascript:`/`data:` scheme would still execute on click — so a non-http
+      // URL renders as plain text, never a live href. (The build also rejects
+      // such URLs via validateCorpus, so this is defence-in-depth.)
+      const safeUrl = s.url && /^https?:\/\//i.test(String(s.url).trim());
+      const label = safeUrl
         ? `<a href="${escapeHtml(s.url)}">${escapeHtml(s.text)}</a>`
         : escapeHtml(s.text);
       const type = s.type ? `<span class="stype">${escapeHtml(s.type)}</span>` : '';

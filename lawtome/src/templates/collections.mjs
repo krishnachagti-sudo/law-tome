@@ -76,7 +76,7 @@ export function collectionPage(collection, { base = '/', origin = '', count } = 
   const c = collection || {};
   const laws = Array.isArray(c.laws) ? c.laws : [];
   const grid = laws.length
-    ? laws.map((l) => lawCard(l, base)).join('\n')
+    ? laws.map((l) => lawCard(l, base, 2)).join('\n')
     : '<div class="empty">No laws in this collection yet.</div>';
 
   const section = `<section class="sec" id="index">

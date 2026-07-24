@@ -136,7 +136,9 @@ export function buildLawMarkdown(law, { baseUrl = '/', categoryLabel = '', byslu
     out.push(''); out.push('## Sources'); out.push('');
     for (const s of sources) {
       const t = oneLine(s.text || s.url || '');
-      out.push(s.url ? `- [${t}](${s.url})` : `- ${t}`);
+      // Angle-bracket the destination so a URL containing parentheses (common in
+      // Wikipedia/LibreTexts links) doesn't prematurely close the Markdown link.
+      out.push(s.url ? `- [${t}](<${s.url}>)` : `- ${t}`);
     }
   }
   out.push(''); out.push('---');

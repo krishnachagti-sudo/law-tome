@@ -52,7 +52,7 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
     + (reliabilityKey ? ` data-reliability="${escapeHtml(reliabilityKey)}"` : '');
 
   const grid = rows.length
-    ? rows.map((l) => lawCard(l, base)).join('\n')
+    ? rows.map((l) => lawCard(l, base, 2)).join('\n')
     : '<div class="empty">No laws to show yet.</div>';
 
   // On-page H1: category and reliability pages use their own title (already a

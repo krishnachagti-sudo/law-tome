@@ -19,8 +19,10 @@ export async function loadCorpus(dir) {
   }));
   // Tolerate a missing `no` here (|| '') so the loader doesn't throw a file-less
   // TypeError before validateCorpus can emit its clean "missing required field"
-  // error. Zero-padded 3-digit `no`s sort correctly by plain string comparison.
-  return laws.sort((a, b) => (a.no || '').localeCompare(b.no || ''));
+  // error. Numeric-aware compare so mixed-width `no`s order correctly — plain
+  // string compare would slot every 4-digit no (1000+) in the middle of the
+  // 3-digit range (e.g. '1000' < '101'), scrambling corpus order and prev/next.
+  return laws.sort((a, b) => (a.no || '').localeCompare(b.no || '', 'en', { numeric: true }));
 }
 
 export async function loadCategories(path) { return JSON.parse(await readFile(path, 'utf8')); }

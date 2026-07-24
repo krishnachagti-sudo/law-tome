@@ -43,9 +43,12 @@ function wrapLines(text, maxChars) {
  * @param {{name:string, statement:string, no:string}} law
  * @returns {string} SVG document
  */
-export function quoteCardSvg(law) {
+export function quoteCardSvg(law, { origin = 'https://conyso.com', base = '/lawtome/' } = {}) {
   const name = escapeHtml(law.name ?? '');
   const no = escapeHtml(String(law.no ?? ''));
+  // Display host+path, derived from the build's origin+base so the card never
+  // drifts from the real domain (no hardcoded string). e.g. "conyso.com/lawtome".
+  const displayUrl = escapeHtml(`${origin}${base}`.replace(/^https?:\/\//, '').replace(/\/+$/, ''));
 
   // When the law has a concept schematic, dedicate the right column to it and
   // narrow the statement so the two don't collide. The shape becomes the card's
@@ -92,7 +95,7 @@ export function quoteCardSvg(law) {
   <text x="90" y="130" font-family="Space Mono" font-size="24" letter-spacing="2" fill="${INK}" opacity="0.7">№ ${no}</text>
   <text font-family="Fraunces" font-size="${fontSize}" fill="${INK}">${tspans}</text>
   <text x="90" y="${H - 90}" font-family="Space Mono" font-size="30" fill="${GOLD}">${name}</text>
-  <text x="90" y="${H - 50}" font-family="Space Mono" font-size="22" fill="${INK}" opacity="0.6">conyso.com/lawtome</text>
+  <text x="90" y="${H - 50}" font-family="Space Mono" font-size="22" fill="${INK}" opacity="0.6">${displayUrl}</text>
 </svg>`;
 }
 

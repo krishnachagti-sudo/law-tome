@@ -58,11 +58,16 @@ export function reliabilitySlug(reliability) {
  * Shared by the browse/category listings and the Coined wing so the card shape
  * cannot drift between them. Every corpus string is escaped.
  */
-export function lawCard(law, base) {
+// `level` is the heading level for the card title (default 3). Pages that place
+// cards directly under the page <h1> with no intervening section heading (browse,
+// category, collections, audiences, the Coined wing) pass 2 to avoid an h1→h3
+// skip; the homepage keeps 3 (its cards sit under an <h2> section head).
+export function lawCard(law, base, level = 3) {
   const rels = Array.isArray(law.related) ? law.related.length : 0;
+  const h = level === 2 ? 'h2' : 'h3';
   return `   <a class="card" href="${base}laws/${escapeHtml(law.slug)}/">
      <div class="top"><span class="no">№ ${escapeHtml(law.no)}</span><span class="badge ${reliabilityClass(law.reliability)}">${escapeHtml(law.reliability)}</span></div>
-     <h3>${escapeHtml(law.name)}</h3>
+     <${h} class="card-name">${escapeHtml(law.name)}</${h}>
      <div class="say">"${escapeHtml(law.statement)}"</div>
      <div class="foot"><span class="cat">${escapeHtml(law.category)}</span><span class="rel"><i class="ti ti-affiliate" style="font-size:13px" aria-hidden="true"></i> ${rels} related</span></div>
    </a>`;
@@ -242,7 +247,10 @@ export function header({ base = '/', active, count } = {}) {
   ]
     .map(([key, path, label]) => `        <a href="${base}${path}"${key === active ? ' class="on" aria-current="page"' : ''}>${label}</a>`)
     .join('\n');
-  const c = count == null ? '—' : count;
+  // Ship the thousands-separated number in the static HTML so no-JS readers (and
+  // the first paint before common.js runs) see "1,122", not "1122". The count-up
+  // animation still reads the raw value from data-count.
+  const c = count == null ? '—' : (typeof count === 'number' ? count.toLocaleString('en-US') : count);
   return `<a class="skip" href="#main-content">Skip to content</a>
 <header>
   <div class="kicker"><div class="wrap kick-in">
@@ -260,7 +268,7 @@ ${nav}
     </nav>
     <div class="right">
       <a class="count" href="${base}browse/"><span class="count-n"${typeof count === 'number' ? ` data-count="${count}"` : ''}>${c}</span><span class="count-l">entries</span></a>
-      <button class="icon-btn" id="theme" type="button" aria-label="Toggle light and dark theme"><svg class="th-ico th-moon" viewBox="0 0 24 24" aria-hidden="true"><use href="#moon"/></svg><svg class="th-ico th-sun" viewBox="0 0 24 24" aria-hidden="true"><use href="#sun"/></svg></button>
+      <button class="icon-btn" id="theme" type="button" aria-label="Toggle light and dark theme" aria-pressed="false"><svg class="th-ico th-moon" viewBox="0 0 24 24" aria-hidden="true"><use href="#moon"/></svg><svg class="th-ico th-sun" viewBox="0 0 24 24" aria-hidden="true"><use href="#sun"/></svg></button>
       <button class="icon-btn menu-btn" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><svg class="th-ico m-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="th-ico m-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     </div>
   </div>
@@ -303,7 +311,7 @@ export function browseControls({ isReliability = false } = {}) {
  */
 export function footer({ base = '/', scripts = '' } = {}) {
   const col = (heading, links) => `      <nav class="foot-col" aria-label="${escapeHtml(heading)}">
-        <h4>${escapeHtml(heading)}</h4>
+        <h2>${escapeHtml(heading)}</h2>
 ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(label)}</a>`).join('\n')}
       </nav>`;
   // Close the <main> landmark opened in header() before the site footer.

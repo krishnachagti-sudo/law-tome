@@ -191,7 +191,7 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .b-heu{background:var(--gold-soft);color:var(--gold);border-color:color-mix(in srgb,var(--gold) 30%,transparent)}
 .b-folk{background:var(--surface-2);color:var(--faint);border-color:var(--line-strong)}
 .b-con{background:var(--con-soft);color:var(--con);border-color:color-mix(in srgb,var(--con) 32%,transparent)}
-.card h3{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:-.01em;margin-bottom:8px}
+.card .card-name{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:-.01em;margin:0 0 8px}
 .card .say{font-family:var(--serif);font-weight:400;font-style:italic;font-size:14.5px;color:var(--muted);line-height:1.5}
 .card .foot{margin-top:auto;padding-top:14px;display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--faint)}
 .card .foot .cat{color:var(--accent)}
@@ -551,7 +551,7 @@ footer{border-top:2px solid var(--line-strong);margin-top:56px;background:var(--
 .foot-seal .brand-name{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em}
 .foot-blurb{font-family:var(--serif);font-size:14.5px;line-height:1.65;color:var(--muted);margin:15px 0 0}
 .foot-motto{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--faint);margin-top:14px}
-.foot-col h4{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;font-weight:400}
+.foot-col h2{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin:0 0 14px;font-weight:400}
 .foot-col a{display:block;font-family:var(--serif);font-size:15px;color:var(--muted);padding:5px 0;transition:color .2s}
 .foot-col a:hover{color:var(--accent)}
 .foot-rule{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:18px 28px 40px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--faint)}

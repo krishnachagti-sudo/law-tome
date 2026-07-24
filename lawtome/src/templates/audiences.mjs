@@ -71,7 +71,7 @@ export function audiencePage(audience, { base = '/', origin = '', count } = {}) 
   const a = audience || {};
   const laws = Array.isArray(a.laws) ? a.laws : [];
   const grid = laws.length
-    ? laws.map((l) => lawCard(l, base)).join('\n')
+    ? laws.map((l) => lawCard(l, base, 2)).join('\n')
     : '<div class="empty">No laws yet.</div>';
 
   const section = `<section class="sec" id="index">
