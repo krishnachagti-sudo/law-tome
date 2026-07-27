@@ -27,11 +27,21 @@ jobs:
           node-version: '22'
       - run: npm install
       - run: npm test
-      # GitHub Pages project sites serve at https://<owner>.github.io/<repo>/, which
-      # differs from the canonical production origin+base baked into site.config.json.
-      # Override both for this build so canonical/og/sitemap URLs point at the host
-      # that actually serves the pages.
-      - run: npm run build -- --base=/${{ github.event.repository.name }}/ --origin=https://${{ github.repository_owner }}.github.io
+      # Build for the CANONICAL production URL, not the Pages preview URL.
+      #
+      # The artifact is served at conyso.com/lawtome/, so every canonical, sitemap
+      # entry, OG card URL and asset path must say that. Building with the
+      # <owner>.github.io/<repo>/ preview origin instead would publish 1,100+ pages
+      # canonicalised to the wrong host and force a full migration later.
+      #
+      # NOTE: a subpath on a custom domain cannot come from GitHub Pages alone — a
+      # Pages custom domain serves at the domain ROOT. conyso.com must rewrite
+      # /lawtome/* onto this Pages deployment (Cloudflare/Netlify/equivalent). That
+      # same layer is what makes dist/_headers (CSP, nosniff, immutable asset
+      # caching) take effect; Pages serves no custom headers.
+      #
+      # Overridable so a fork or a staging host can still build for its own URL.
+      - run: npm run build -- --base=${{ vars.SITE_BASE || '/lawtome/' }} --origin=${{ vars.SITE_ORIGIN || 'https://conyso.com' }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
