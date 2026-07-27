@@ -35,10 +35,17 @@ test('about attributes curation to the org/team, NOT a fabricated person', () =>
   assert.doesNotMatch(h, /Dr\.\s+[A-Z][a-z]+\s+[A-Z][a-z]+/); // no invented "Dr. Firstname Lastname"
 });
 
-test('coin form posts to the api/submit endpoint and offers suggest|coin modes', () => {
+test('coin form targets the repo issue tracker (no dead endpoint) and offers suggest|coin modes', () => {
   const h = coinPage({ base:'/lawtome/' });
-  assert.match(h, /action="\/lawtome\/api\/submit"/);
-  assert.match(h, /method="post"/i);
+  // There is no server behind this static site: the old action="/api/submit"
+  // 404'd and silently discarded every submission. The form now targets the
+  // repo's new-issue endpoint, which works with JS off (GitHub reads ?title=)
+  // and is upgraded by common.js into a fully pre-filled issue body.
+  assert.doesNotMatch(h, /api\/submit/);
+  assert.match(h, /action="https:\/\/github\.com\/[^"]+\/issues\/new"/);
+  assert.match(h, /method="get"/i);
+  assert.match(h, /id="coin-form"/);
+  assert.match(h, /data-repo="[^"]+\/[^"]+"/);
   assert.match(h, /name="mode"/);
   assert.match(h, /value="suggest"/);
   assert.match(h, /value="coin"/);

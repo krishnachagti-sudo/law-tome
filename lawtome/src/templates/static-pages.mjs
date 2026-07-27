@@ -48,7 +48,7 @@ ${coinStep('3', 'It’s published — with your name', 'If it clears, it becomes
     <p class="sec-lede coin-what">A coinable law is a single, testable claim about how the world tends to work — sharp enough to be wrong, general enough to recur. Not a joke, not a definition, not a personal grievance. If you can picture three unrelated situations it explains, you’re close.</p>
 
     <h2 class="about-h2">Submit</h2>
-    <form class="coin-form" action="${base}api/submit" method="post">
+    <form class="coin-form" id="coin-form" method="get" action="https://github.com/krishnachagti-sudo/law-tome/issues/new" data-repo="krishnachagti-sudo/law-tome">
       <label class="field">
         <span class="lbl">Your name (for credit)</span>
         <input type="text" name="name" autocomplete="name" required>
@@ -84,6 +84,7 @@ ${coinStep('3', 'It’s published — with your name', 'If it clears, it becomes
         <button class="cta" type="submit"><i class="ti ti-feather" aria-hidden="true"></i> Submit for review</button>
       </div>
     </form>
+    <p class="fine">Submitting opens a <b>pre-filled public issue</b> on the project's <a href="https://github.com/krishnachagti-sudo/law-tome/issues" rel="noopener">GitHub repository</a> — the same place the corpus itself is maintained, so every submission and the review of it stay in the open. You'll see exactly what will be posted before anything is sent, and you can edit it there. A free GitHub account is required.</p>
     <p class="fine">Submissions are reviewed by hand before anything is published. Nothing you enter here appears on the site until it clears verification.</p>
   </div>
 </section>

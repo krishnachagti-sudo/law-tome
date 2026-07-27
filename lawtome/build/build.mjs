@@ -223,7 +223,7 @@ export async function buildSite(opts) {
   // Situations: a visible reverse-lookup ("what's the law for…?") built from the
   // same curated map folded into the search index. Emitted unconditionally (empty
   // state when a corpus has none), so the footer link never dangles.
-  writes.push(writePage(join(out, 'situations', 'index.html'), situationsPage(situations, { base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'situations', 'index.html'), situationsPage(situations, { base, origin, count: publishedCount, categories })));
 
   // Marketing: audience ("for …") pages, a features tour, and a manifesto.
   // Audiences are curated persona shortlists (optional file; unknown slugs dropped).
@@ -357,7 +357,7 @@ export async function buildSite(opts) {
     '  Referrer-Policy: strict-origin-when-cross-origin',
     '  X-Frame-Options: DENY',
     '  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()',
-    "  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'",
+    "  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self' https://github.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'",
     '',
     '# Hashed by ?v=<contenthash>, so a changed file is always a new URL.',
     '/assets/*',

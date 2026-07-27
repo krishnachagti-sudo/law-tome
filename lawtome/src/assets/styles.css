@@ -1058,3 +1058,13 @@ html{scroll-behavior:smooth}
 .ten-group-h{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 14px;display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
 .ten-group-n{font-family:var(--mono);font-size:11px;color:var(--faint)}
 .az-nav .az-n{font-size:10px;opacity:.6;margin-left:3px}
+/* situations: themed sections + a right-pinned arrow rail so the column edge
+   stays straight regardless of law-name length. */
+.sit-group{display:flex;flex-direction:column;gap:10px;margin-top:30px;scroll-margin-top:132px}
+.sit-group-h{font-family:var(--serif);font-weight:600;font-size:19px;margin:0 0 4px;display:flex;align-items:baseline;gap:11px;border-bottom:1px solid var(--line);padding-bottom:7px}
+.sit-group-n{font-family:var(--mono);font-size:11px;color:var(--faint)}
+.sit-list{gap:0}
+.sit-answer .badge{min-width:86px;text-align:center}
+.badge--none{visibility:hidden}
+.sit-arrow{width:14px;text-align:right}
+@media(max-width:560px){.sit-answer .badge{min-width:0}.sit-arrow{display:none}}

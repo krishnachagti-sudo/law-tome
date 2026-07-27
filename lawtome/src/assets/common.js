@@ -223,7 +223,52 @@
     }
   }
 
-  function wire() { wireTheme(); wireNav(); wireMotion(); }
+  // ---- coin form -> pre-filled GitHub issue --------------------------------
+  // The form has no server (this is a static site), so it targets the repo's
+  // "new issue" endpoint. Without JS that still works — GitHub reads ?title= —
+  // but only the title survives. Here we compose the WHOLE submission into the
+  // issue body so nothing the visitor typed is dropped, then hand off. The
+  // corpus is maintained in that repo, so review happens where the data lives.
+  function wireCoinForm() {
+    var form = document.getElementById('coin-form');
+    if (!form) return;
+    var repo = form.getAttribute('data-repo');
+    if (!repo) return;
+    form.addEventListener('submit', function (e) {
+      // Let the browser run its own required-field validation first.
+      if (typeof form.checkValidity === 'function' && !form.checkValidity()) return;
+      e.preventDefault();
+      var get = function (n) {
+        var el = form.elements[n];
+        return el && el.value ? String(el.value).trim() : '';
+      };
+      var mode = get('mode') === 'suggest' ? 'Suggest' : 'Coin';
+      var law = get('title');
+      var lines = [
+        '**Submission type:** ' + (mode === 'Coin' ? 'Coin — an original law' : 'Suggest — an existing, attested law'),
+        '**Proposed name:** ' + (law || '—'),
+        '',
+        '**Statement**',
+        '', get('statement') || '—',
+        '',
+        '**Sources / prior art**',
+        '', get('sources') || '_none supplied_',
+        '',
+        '**Credit to:** ' + (get('name') || '—'),
+        '',
+        '---',
+        'Submitted via the “Coin a law” form on The Law Tome. The submitter granted a',
+        'non-exclusive, perpetual CC BY licence to publish, edit and cross-link this',
+        'submission with attribution, and asserted it is their own original work.',
+      ];
+      var url = 'https://github.com/' + repo + '/issues/new'
+        + '?title=' + encodeURIComponent('[' + mode + '] ' + (law || 'Untitled submission'))
+        + '&body=' + encodeURIComponent(lines.join('\n'));
+      window.location.href = url;
+    });
+  }
+
+  function wire() { wireTheme(); wireNav(); wireMotion(); wireCoinForm(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
   else wire();
 })();

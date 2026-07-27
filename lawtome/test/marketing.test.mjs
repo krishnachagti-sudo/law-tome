@@ -57,7 +57,7 @@ test('manifesto argues the case and credits Conyso', () => {
 
 test('coin page keeps its working form AND gains a pitch', () => {
   const h = coinPage({ base: '/lawtome/', origin: 'https://conyso.com' });
-  assert.match(h, /action="\/lawtome\/api\/submit"/);   // form intact
+  assert.match(h, /action="https:\/\/github\.com\/[^"]+\/issues\/new"/); // form intact, real target
   assert.match(h, /How it works/);                      // pitch added
   assert.match(h, /What makes a good one/);
   assert.match(h, /with your name/i);
