@@ -12,7 +12,7 @@
 // rendered by graph.js via SVG textContent (never innerHTML). So this template has
 // no untrusted-string surface; the count is numeric.
 
-import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, asset } from './partials.mjs';
 
 /**
  * The graph explorer page.
@@ -72,6 +72,6 @@ export function graphPage({ base = '/', origin = '', publishedCount } = {}) {
     sprite() +
     header({ base, active: 'graph', count }) +
     section +
-    footer({ base, scripts: `<script defer src="${escapeHtml(base)}assets/graph.js"></script>` })
+    footer({ base, scripts: `<script defer src="${asset(base, 'assets/graph.js')}"></script>` })
   );
 }

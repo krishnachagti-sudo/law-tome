@@ -1015,3 +1015,46 @@ html{scroll-behavior:smooth}
 @font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/SpaceMono-Regular-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/SpaceMono-Bold-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/SpaceMono-Bold-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* ---- print -----------------------------------------------------------------
+   A reference work gets printed and saved to PDF, so an entry should print as
+   the entry: title, statement, prose, sources. Everything that only makes sense
+   on screen (chrome, rails, controls, decoration, animation) is dropped, and the
+   page is forced to ink-on-white regardless of the reader's theme. */
+@media print{
+  /* Ink on white whatever the on-screen theme, so dark mode doesn't print a
+     black slab. Overrides the token set for the printed page only. */
+  :root,html[data-theme="dark"],html[data-theme="light"]{
+    --bg:#fff;--surface:#fff;--surface-2:#fff;
+    --ink:#000;--read:#1a1a1a;--muted:#333;--faint:#555;
+    --line:#bbb;--line-strong:#888;
+    --accent:#000;--accent-ink:#000;--accent-soft:#fff;--gold:#000;--gold-soft:#fff;
+    --on-accent:#fff;--glow:none;
+  }
+  body{background:#fff!important;background-image:none!important;color:#000}
+  /* Screen-only furniture. */
+  .kicker,header,footer,.toc,.aside,.progress,.skip,.chips,.browse-controls,
+  .az-nav,.sec-more,.field-hub,.prevnext,.entry-mark,.hero-mark,.orn,
+  .graph-band,.coin,.hscroll,.src-trust,.cmp-foot,.quiz-foot,#rand,.search{display:none!important}
+  /* Reveal-animated blocks must never print blank. */
+  [data-reveal],[data-reveal-stagger]>*{opacity:1!important;transform:none!important;filter:none!important}
+  main,.wrap,.wrap-wide,.wrap-prose,.entry-layout,.lawmain{max-width:none;width:auto;margin:0;padding:0;display:block}
+  /* Keep a heading with its content, and don't split a card across pages. */
+  h1,h2,h3{break-after:avoid-page;page-break-after:avoid}
+  .block,.card,.example,.variant,.stat,figure,blockquote,.src-item{break-inside:avoid;page-break-inside:avoid}
+  .law-title{font-size:26pt;margin-bottom:6pt}
+  .entry-stmt{font-size:13pt;border-left:2pt solid #000;padding-left:10pt}
+  body,p,li{font-size:11pt;line-height:1.45}
+  a{color:#000;text-decoration:underline}
+  /* Sources are the point of the corpus — print the destination, not just the
+     label, so a printed citation stays checkable. Only for real external URLs. */
+  .src-item a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;word-break:break-all}
+  /* The "→" cue means "this tile is a link" — meaningless on paper. */
+  a.stat--link .s-k::after{content:none}
+  /* The footer is hidden, so restate provenance once at the very END of the page. */
+  main::after{content:"The Law Tome — a sourced index of named laws.";display:block;margin-top:16pt;padding-top:6pt;border-top:1px solid #bbb;font-size:9pt;color:#555}
+}
+.ten-group{margin-top:34px;scroll-margin-top:132px}
+.ten-group-h{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 14px;display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.ten-group-n{font-family:var(--mono);font-size:11px;color:var(--faint)}
+.az-nav .az-n{font-size:10px;opacity:.6;margin-left:3px}

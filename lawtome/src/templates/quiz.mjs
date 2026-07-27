@@ -5,7 +5,7 @@
 // (2) runs a name-that-law game (a statement + four names, one right). With JS
 // off, the shell shows a graceful message and a Browse link — no dead page.
 
-import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, asset } from './partials.mjs';
 
 export function quizPage({ base = '/', origin = '', count } = {}) {
   const section = `<section class="sec" id="quiz-sec">
@@ -59,6 +59,6 @@ export function quizPage({ base = '/', origin = '', count } = {}) {
     sprite() +
     header({ base, active: 'browse', count }) +
     section +
-    footer({ base, scripts: `<script defer src="${base}assets/quiz.js"></script>` })
+    footer({ base, scripts: `<script defer src="${asset(base, 'assets/quiz.js')}"></script>` })
   );
 }

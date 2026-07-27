@@ -22,7 +22,7 @@
 // client rotation writes via innerHTML (`hero`, `nameHtml`) are PRE-escaped in
 // the blob, so the rotation cannot inject markup either.
 
-import { head, sprite, header, footer, escapeHtml, lawCard, browseControls } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, browseControls, asset } from './partials.mjs';
 
 /**
  * Escape the statement, then wrap the accent phrase in <span class="accent">.
@@ -315,7 +315,7 @@ const LAWS=${featuredJson};
   play();
 })();
 </script>
-<script defer src="${base}assets/search.js"></script>`;
+<script defer src="${asset(base, 'assets/search.js')}"></script>`;
 
   // ---- JSON-LD: identify the site + wire the sitelinks searchbox --------
   // WebSite carries a SearchAction so search engines can surface an in-SERP

@@ -3,7 +3,8 @@
 // verbatim copy of the assets directory. Throws before writing anything if the
 // corpus fails validation, so a corpus that breaks any anti-fabrication rule
 // never ships a page.
-import { mkdir, writeFile, cp, rm } from 'node:fs/promises';
+import { mkdir, writeFile, cp, rm, readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadCorpus, loadCategories } from './corpus.mjs';
@@ -17,7 +18,7 @@ import { tensionPage } from '../src/templates/tension.mjs';
 import { comparePage, compareHubPage } from '../src/templates/compare.mjs';
 import { tensionPairs, comparePairs } from './relations.mjs';
 import { reliabilityHubPage } from '../src/templates/reliability.mjs';
-import { RELIABILITY_TIERS, reliabilitySlug } from '../src/templates/partials.mjs';
+import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
 import { resolveCollections } from './collections.mjs';
 import { quizPage } from '../src/templates/quiz.mjs';
@@ -39,7 +40,6 @@ import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng } from './quotecard.mjs';
 import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
-import { readFile } from 'node:fs/promises';
 import { buildFeed } from './feed.mjs';
 
 async function writePage(path, html) {
@@ -54,6 +54,23 @@ export async function buildSite(opts) {
 
   const errs = validateCorpus(laws, categories);
   if (errs.length) throw new Error('validation failed:\n' + errs.join('\n'));
+
+  // Content-hash the mutable assets BEFORE any page renders, so every emitted
+  // reference carries ?v=<hash>. Without this a returning visitor can be served a
+  // cached stylesheet/script against freshly-rebuilt HTML. Fonts and the logo are
+  // deliberately excluded: they're effectively immutable and already long-cached.
+  const VERSIONED = [
+    'assets/styles.css', 'assets/icons/tabler.css', 'assets/common.js',
+    'assets/search.js', 'assets/graph.js', 'assets/quiz.js', 'assets/saved.js',
+  ];
+  const versions = {};
+  await Promise.all(VERSIONED.map(async (rel) => {
+    try {
+      const buf = await readFile(join(assetsDir, rel.replace(/^assets\//, '')));
+      versions[rel] = createHash('sha256').update(buf).digest('hex').slice(0, 8);
+    } catch { /* asset absent in this build — fall back to an unversioned URL */ }
+  }));
+  setAssetVersions(versions);
 
   // Validation passed — clean the output tree so a rebuild can't serve a ghost
   // page for a since-removed or renamed law. Done AFTER the validation gate, so a
@@ -151,7 +168,7 @@ export async function buildSite(opts) {
   // opposing. Derived from related[] tension edges — always emitted (empty state
   // when a corpus has none), so the footer link never dangles.
   const tension = tensionPairs(laws);
-  writes.push(writePage(join(out, 'tension', 'index.html'), tensionPage(tension, { base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'tension', 'index.html'), tensionPage(tension, { base, origin, count: publishedCount, categories })));
   // "X vs Y" comparison pages: one per near-twin / tension pair the corpus marks,
   // plus a /compare/ hub. High-intent long-tail capture ("Occam vs Hanlon"); pure
   // recombination of each law's verified fields — nothing is authored per pair.
@@ -323,6 +340,31 @@ export async function buildSite(opts) {
   const redirectsBody = '# Netlify-style redirect map (from  to  status). Seeded from law.redirectFrom.\n'
     + (redirects.length ? redirects.join('\n') + '\n' : '');
   writes.push(writePage(join(out, '_redirects'), redirectsBody));
+
+  // _headers: Netlify/Cloudflare-Pages-style security + caching headers, emitted
+  // alongside _redirects. INERT on GitHub Pages (which serves no custom headers),
+  // so this only takes effect once the canonical domain is fronted by a host that
+  // honours it — harmless either way.
+  //
+  // The CSP is deliberately not `script-src 'self'` alone: the theme-init and the
+  // law page's scroll-spy are inline <script> blocks (they must run before first
+  // paint), so 'unsafe-inline' is required until those are externalised. Everything
+  // else is locked to same-origin — the site loads zero third-party resources.
+  const headersBody = [
+    '# Netlify / Cloudflare Pages headers. No effect on GitHub Pages.',
+    '/*',
+    '  X-Content-Type-Options: nosniff',
+    '  Referrer-Policy: strict-origin-when-cross-origin',
+    '  X-Frame-Options: DENY',
+    '  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()',
+    "  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'",
+    '',
+    '# Hashed by ?v=<contenthash>, so a changed file is always a new URL.',
+    '/assets/*',
+    '  Cache-Control: public, max-age=31536000',
+    '',
+  ].join('\n');
+  writes.push(writePage(join(out, '_headers'), headersBody));
 
   await Promise.all(writes);
 

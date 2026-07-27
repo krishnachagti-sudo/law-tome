@@ -5,7 +5,7 @@
 // ones you save show up here. With JS off it explains itself and points to
 // Browse — never a dead page.
 
-import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, asset } from './partials.mjs';
 
 export function savedPage({ base = '/', origin = '', count } = {}) {
   const section = `<section class="sec" id="index">
@@ -39,6 +39,6 @@ export function savedPage({ base = '/', origin = '', count } = {}) {
     sprite() +
     header({ base, active: 'browse', count }) +
     section +
-    footer({ base, scripts: `<script defer src="${base}assets/saved.js"></script>` })
+    footer({ base, scripts: `<script defer src="${asset(base, 'assets/saved.js')}"></script>` })
   );
 }

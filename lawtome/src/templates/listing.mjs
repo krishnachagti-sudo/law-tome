@@ -13,7 +13,7 @@
 // every slug used in an href goes through escapeHtml — the Task 5/6/7 gates all
 // failed on missed escaping.
 
-import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, reliabilitySlug, browseControls } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, reliabilitySlug, browseControls, asset } from './partials.mjs';
 
 /**
  * A browse or per-category listing page — one full HTML document.
@@ -160,6 +160,6 @@ ${fieldHub}  </div>
     sprite() +
     header({ base, active, count: count ?? rows.length }) +
     section +
-    footer({ base, scripts: `<script defer src="${base}assets/search.js"></script>` })
+    footer({ base, scripts: `<script defer src="${asset(base, 'assets/search.js')}"></script>` })
   );
 }

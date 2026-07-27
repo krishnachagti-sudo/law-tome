@@ -15,6 +15,27 @@
 //   head({...}) + sprite() + header({...}) + '<main>…</main>' + footer({...})
 // head() opens <!doctype>/<html>/<head>/<body>; footer() closes </body>/</html>.
 
+// ---- asset cache-busting ---------------------------------------------------
+// The CSS/JS filenames are stable, so a returning visitor can be served a cached
+// stylesheet against freshly-rebuilt HTML after a deploy. build.mjs hashes each
+// mutable asset's contents and registers it here; asset() then stamps a ?v=
+// query so a changed file is always a new URL. Falls back to the bare path when
+// no version is registered, so unit tests that render templates directly (and
+// never call setAssetVersions) keep producing clean, stable markup.
+const ASSET_V = new Map();
+
+/** @param {Record<string,string>} map asset path (e.g. 'assets/styles.css') -> short content hash */
+export function setAssetVersions(map) {
+  ASSET_V.clear();
+  for (const [k, v] of Object.entries(map || {})) if (v) ASSET_V.set(k, v);
+}
+
+/** Versioned URL for a build asset. `path` is base-relative, e.g. 'assets/styles.css'. */
+export function asset(base, path) {
+  const v = ASSET_V.get(path);
+  return `${base}${path}${v ? `?v=${v}` : ''}`;
+}
+
 /**
  * Escape a string for interpolation into HTML text or a DOUBLE-QUOTED attribute.
  * Encodes &, <, >, and ". Apostrophes are intentionally left literal: they are
@@ -169,15 +190,15 @@ export function head({ title, description, base = '/', origin = '', path, canoni
   out.push(`<link rel="preload" as="font" type="font/woff2" crossorigin href="${base}assets/fonts/Newsreader-italic-latin.woff2">`);
   // Self-hosted stylesheets — replaces the prototype's Google-Fonts + jsDelivr
   // <link>s. Fonts are pulled in by the @font-face rules inside styles.css.
-  out.push(`<link rel="stylesheet" href="${base}assets/styles.css">`);
-  out.push(`<link rel="stylesheet" href="${base}assets/icons/tabler.css">`);
+  out.push(`<link rel="stylesheet" href="${asset(base, 'assets/styles.css')}">`);
+  out.push(`<link rel="stylesheet" href="${asset(base, 'assets/icons/tabler.css')}">`);
   // Inline theme-init (mirrors common.js): set data-theme before first paint so
   // dark-mode readers never flash the light theme. common.js is deferred below.
   // Theme-init (flash-free dark mode) + reveal-arm: add `.anim` before first paint
   // so scroll-reveal never flashes, but ONLY when motion is allowed and IO exists —
   // otherwise content stays fully visible with no JS dependency.
   out.push(`<script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('lt-theme')}catch(e){}if(t)d.setAttribute('data-theme',t);else if(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)d.setAttribute('data-theme','light');try{if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)d.classList.add('anim')}catch(e){}})();</script>`);
-  out.push(`<script defer src="${base}assets/common.js"></script>`);
+  out.push(`<script defer src="${asset(base, 'assets/common.js')}"></script>`);
   if (Array.isArray(jsonld)) for (const block of jsonld) out.push(jsonLd(block));
   out.push('</head>');
   out.push('<body>');

@@ -16,7 +16,7 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset } from './partials.mjs';
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 
@@ -588,6 +588,6 @@ document.getElementById('copy').onclick=function(){
     entry +
     dash +
     layout +
-    footer({ base, scripts: `${scripts}\n<script defer src="${base}assets/saved.js"></script>` })
+    footer({ base, scripts: `${scripts}\n<script defer src="${asset(base, 'assets/saved.js')}"></script>` })
   );
 }
