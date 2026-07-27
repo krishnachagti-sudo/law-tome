@@ -118,7 +118,7 @@ export async function buildSite(opts) {
   // Browse page: every law.
   writes.push(writePage(
     join(out, 'browse', 'index.html'),
-    listingPage(laws, { title: 'Browse', base, kind: 'browse', active: 'browse', origin }),
+    listingPage(laws, { title: 'Browse', base, kind: 'browse', active: 'browse', origin, categories }),
   ));
 
   // One category page per category PRESENT in the corpus, using the label from

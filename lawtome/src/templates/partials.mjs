@@ -238,10 +238,13 @@ export function sprite() {
  * @param {number|string} [o.count] published-law count; caller-supplied placeholder when absent
  */
 export function header({ base = '/', active, count } = {}) {
+  // Primary nav. "What's the law for…?" is the promise the hero makes, so it earns
+  // a header slot rather than living only in the footer.
   const nav = [
     ['browse', 'browse/', 'Browse'],
-    ['features', 'features/', 'Features'],
+    ['situations', 'situations/', 'What’s the law for…?'],
     ['graph', 'graph/', 'The graph'],
+    ['features', 'features/', 'Features'],
     ['coin', 'coin/', 'Coin a law'],
     ['about', 'about/', 'About'],
   ]

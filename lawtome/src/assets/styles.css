@@ -92,19 +92,25 @@ html[data-theme="dark"] .th-sun{display:block}
 .menu-btn .m-close{display:none}
 header.nav-open .menu-btn .m-open{display:none}
 header.nav-open .menu-btn .m-close{display:block}
-@media(max-width:720px){
-  .kicker .k-l,.kicker .k-r{display:none}
-  .kicker .k-c{text-align:center}
-  .bar{height:62px;gap:14px}
-  .brand-sub{display:none}
+/* The horizontal nav stops fitting well before the phone breakpoint — in the
+   tablet band the labels wrap mid-phrase ("Coin a / law"). Hand over to the drop
+   panel here instead, so the nav is a clean vertical list on every width where
+   the row would otherwise break. */
+@media(max-width:940px){
   .menu-btn{display:grid}
-  /* nav becomes a drop panel under the bar, toggled by .nav-open */
-  nav.links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;padding:6px 0;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line-strong);box-shadow:0 24px 34px -22px rgba(0,0,0,.7);display:none;max-height:calc(100vh - 62px);overflow-y:auto}
+  nav.links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;padding:6px 0;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line-strong);box-shadow:0 24px 34px -22px rgba(0,0,0,.7);display:none;max-height:calc(100vh - 72px);overflow-y:auto}
   header.nav-open nav.links{display:flex}
   nav.links a{padding:14px 28px;font-size:16px;color:var(--ink);border-bottom:1px solid var(--line)}
   nav.links a:last-child{border-bottom:0}
   nav.links a::after{display:none}
   nav.links a.on{color:var(--accent)}
+}
+@media(max-width:720px){
+  .kicker .k-l,.kicker .k-r{display:none}
+  .kicker .k-c{text-align:center}
+  .bar{height:62px;gap:14px}
+  .brand-sub{display:none}
+  nav.links{max-height:calc(100vh - 62px)}
 }
 /* comfortable tap targets on touch devices (WCAG 2.5.5) */
 @media(pointer:coarse){
@@ -180,6 +186,15 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 
 /* card grid */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+/* "Browse by field" — the category taxonomy as real links, under the index grid.
+   The chips above it are JS filters; this is the crawlable/no-JS path in. */
+.field-hub{margin-top:44px;padding-top:26px;border-top:1px solid var(--line)}
+.field-hub-h{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:400;margin-bottom:16px}
+.field-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:2px 20px}
+.field-link{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.field-name{font-family:var(--serif);font-size:15.5px;color:var(--ink)}
+.field-link:hover .field-name{color:var(--accent)}
+.field-n{font-family:var(--mono);font-size:11px;color:var(--faint)}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:22px 22px 18px;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s;position:relative;display:flex;flex-direction:column;min-height:186px;overflow:hidden}
 /* a hairline accent ticks in from the top-left corner on hover — an editorial
    "flag" that reads without shouting */

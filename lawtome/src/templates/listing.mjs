@@ -25,7 +25,7 @@ import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, re
  * @param {string} [o.active] nav key to mark active (defaults to 'browse')
  * @param {string} [o.origin=''] absolute-URL origin for JSON-LD (optional; degrades to base-relative)
  */
-export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '', reliabilityKey = '', count } = {}) {
+export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '', reliabilityKey = '', count, categories = {} } = {}) {
   const rows = Array.isArray(laws) ? laws : [];
   // A reliability-tier page (kind='reliability') is a faceted-browse view: the
   // server renders only that tier's laws and stamps the grid so the client keeps
@@ -76,6 +76,34 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
     ? `    <nav class="crumb" aria-label="Breadcrumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}browse/">Browse</a>${isReliability ? `<span class="sep">/</span><a href="${base}reliability/">Reliability</a>` : ''}<span class="sep">/</span>${escapeHtml(title)}</nav>\n`
     : '';
 
+  // "Browse by field" — the category taxonomy as REAL links. The chips above are
+  // client-side filter buttons, so without this the 20 category pages had no
+  // anchor pointing at them from the index that owns them: they were reachable
+  // only by first landing on a law that happens to be in that field (and not at
+  // all with JS off). Only rendered on the browse index, where it's the hub.
+  let fieldHub = '';
+  if (kind === 'browse') {
+    const counts = new Map();
+    for (const l of rows) {
+      if (l.category == null) continue;
+      counts.set(l.category, (counts.get(l.category) || 0) + 1);
+    }
+    // Controlled-vocabulary order, filtered to fields the corpus actually uses.
+    const order = Object.keys(categories).filter((k) => counts.has(k));
+    for (const k of counts.keys()) if (!order.includes(k)) order.push(k);
+    if (order.length) {
+      const items = order.map((k) =>
+        `        <a class="field-link" href="${base}category/${escapeHtml(k)}/"><span class="field-name">${escapeHtml(categories[k] || k)}</span><span class="field-n">${counts.get(k)}</span></a>`).join('\n');
+      fieldHub = `    <section class="field-hub">
+      <h2 class="field-hub-h">Browse by field</h2>
+      <div class="field-grid">
+${items}
+      </div>
+    </section>
+`;
+    }
+  }
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
 ${crumb}    <div class="sec-head">
@@ -86,7 +114,7 @@ ${lede}    <div class="chips" id="chips">${chips}</div>
 ${controls}    <div class="grid" id="grid"${gridAttr}>
 ${grid}
     </div>
-  </div>
+${fieldHub}  </div>
 </section>
 `;
 

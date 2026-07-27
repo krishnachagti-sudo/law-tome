@@ -71,7 +71,7 @@ ${items}
       jsonld,
     }) +
     sprite() +
-    header({ base, active: 'browse', count }) +
+    header({ base, active: 'situations', count }) +
     section +
     footer({ base })
   );
