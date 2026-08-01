@@ -1113,3 +1113,16 @@ html[data-theme="light"] .card .foot .cat{color:var(--accent)}
 html[data-theme="light"] .chip{color:var(--muted);border-color:var(--line-strong)}
 html[data-theme="light"] .chip:hover{color:var(--accent);border-color:var(--accent)}
 html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+
+/* The card's index number takes the field colour — it's the one remaining piece
+   of card furniture with no job other than identity, so it can carry hue. */
+.card .no{color:var(--field,var(--faint))}
+/* Reliability badges keep their OWN hue (green/amber/grey/red): that pill is the
+   "proven, heuristic or folklore" signal, and repainting it by field would erase
+   it. Give it more presence through the border instead — brightening the fill
+   drops the contested pill's text to ~4.0:1, under AA, whereas a border carries
+   no legibility burden. */
+.b-emp{border-color:color-mix(in srgb,var(--ok) 62%,transparent)}
+.b-heu{border-color:color-mix(in srgb,var(--gold) 62%,transparent)}
+.b-con{border-color:color-mix(in srgb,var(--con) 62%,transparent)}
+.b-folk{border-color:color-mix(in srgb,var(--muted) 48%,transparent)}
