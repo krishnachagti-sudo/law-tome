@@ -22,7 +22,7 @@
 // client rotation writes via innerHTML (`hero`, `nameHtml`) are PRE-escaped in
 // the blob, so the rotation cannot inject markup either.
 
-import { head, sprite, header, footer, escapeHtml, lawCard, browseControls, asset } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, browseControls, asset, portrait } from './partials.mjs';
 
 /**
  * Escape the statement, then wrap the accent phrase in <span class="accent">.
@@ -40,7 +40,7 @@ function renderStatement(statement, accent) {
     escapeHtml(statement.slice(i + accent.length));
 }
 
-export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '' } = {}) {
+export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '', images } = {}) {
   const nf = new Intl.NumberFormat('en');
   const count = publishedCount == null ? '—' : nf.format(publishedCount);
 
@@ -384,6 +384,29 @@ const BASE=${JSON.stringify(base)};
     ...(publishedCount != null ? { hasDefinedTerm: `${publishedCount} named laws, principles, and effects` } : {}),
   };
 
+  // ---- the people band --------------------------------------------------
+  // Real faces, not stock and not generated: every portrait here is a verified,
+  // licensed image of a person the corpus is named after (see build/fetch-images.py),
+  // and each one is the link to the eponym index. It earns its place by being the
+  // one thing a text-only index can never show — that these are real people who
+  // put their name to an idea. Renders nothing at all if no images are curated.
+  const faces = Object.values((images && images.people) || {});
+  const peopleBand = faces.length >= 12
+    ? `<section class="sec people-band">
+  <div class="wrap">
+    <div class="pb-head">
+      <h2>The people who put their name to an idea</h2>
+      <a class="pb-more" href="${base}named-after/">Browse every namesake <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="pb-strip">
+${faces.slice(0, 28).map((img) => `      <a class="pb-face" href="${base}named-after/#ep-${escapeHtml(img.slug)}" title="${escapeHtml(img.person)}">${portrait(img, { base, small: true, alt: img.person })}</a>`).join('\n')}
+    </div>
+    <p class="pb-note">Every image is a real photograph or engraving, in the public domain or under a Creative Commons licence — <a href="${base}credits/">credited in full</a>. None of it is generated.</p>
+  </div>
+</section>
+`
+    : '';
+
   return (
     head({
       title: 'The Law Tome — Named Laws, Principles & Effects, Explained & Sourced',
@@ -398,6 +421,7 @@ const BASE=${JSON.stringify(base)};
     hero +
     marquee +
     trust +
+    peopleBand +
     browse +
     features +
     walk +

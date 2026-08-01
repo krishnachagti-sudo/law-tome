@@ -240,9 +240,23 @@ ${h2}${inner}
   if (vizInner) blocks.push(`      <div class="viz-card" data-reveal>\n${vizInner}\n      </div>`);
 
   if (law.mechanism) blocks.push(block('How it works', `        <p class="prose">${prose(law.mechanism)}</p>`, true, `How does ${L} work?`));
-  // Concept schematic (illustrative figure): an explicit `schematic` field, or
-  // the curated slug->shape fallback for laws with a canonical textbook picture.
-  { const key = schematicForLaw(law); if (key) { const fig = schematicFigure(key); if (fig) blocks.push(fig); } }
+  // Illustration. A REAL figure — the diagram, plate or apparatus photograph from
+  // the law's own Wikipedia article, verified and licensed (build/fetch-images.py)
+  // — outranks the abstract schematic, which is a drawn shape standing in for a
+  // picture we did not have. Only one of the two renders, so the article never
+  // carries a photograph and a doodle of the same idea.
+  const figureImg = (images && images.figures && images.figures[law.slug]) || null;
+  if (figureImg) {
+    blocks.push(`      <figure class="lawfig" data-reveal>
+        <img src="${base}assets/img/figures/${escapeHtml(law.slug)}.webp" width="${figureImg.width || 640}" height="${figureImg.height || 400}" loading="lazy" decoding="async" alt="Figure illustrating ${escapeHtml(law.name)}">
+        <figcaption>${escapeHtml(law.name)} — ${imageCredit(figureImg)}</figcaption>
+      </figure>`);
+  } else {
+    // Concept schematic (illustrative figure): an explicit `schematic` field, or
+    // the curated slug->shape fallback for laws with a canonical textbook picture.
+    const key = schematicForLaw(law);
+    if (key) { const fig = schematicFigure(key); if (fig) blocks.push(fig); }
+  }
 
   // Examples: prefer the richer `examples[]` ({tag,text} or plain string) and fall
   // back to the single legacy `example`. Multiple examples => "Where you'll see it".

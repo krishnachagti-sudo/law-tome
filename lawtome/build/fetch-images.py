@@ -202,15 +202,24 @@ def confirms_law(text, laws, person):
     return None, None
 
 
-def page_image(title):
+def page_image(title, width=900):
+    """The article's lead image, as a URL we can actually decode.
+
+    Prefer Wikipedia's own rendered thumbnail over the original file. Most law
+    articles lead with an SVG diagram — exactly the figures worth having — and
+    Pillow cannot open SVG, so asking for the original silently loses them. The
+    thumbnail endpoint rasterises SVG to PNG and caps the pixel size, which also
+    spares us downloading 40MB scans of 19th-century plates."""
     d = api(WP_API, {
         'action': 'query', 'format': 'json', 'redirects': 1, 'titles': title,
-        'prop': 'pageimages', 'piprop': 'original|name',
+        'prop': 'pageimages', 'piprop': 'original|thumbnail|name', 'pithumbsize': width,
     })
     for page in d.get('query', {}).get('pages', {}).values():
-        orig = page.get('original')
-        if orig and orig.get('source'):
-            return orig['source'], page.get('pageimage')
+        thumb = (page.get('thumbnail') or {}).get('source')
+        orig = (page.get('original') or {}).get('source')
+        url = thumb or orig
+        if url:
+            return url, page.get('pageimage')
     return None, None
 
 
