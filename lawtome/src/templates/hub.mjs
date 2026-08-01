@@ -23,6 +23,7 @@ export const HUBS = [
   ['for/', 'Find your laws', 'curated ways in for engineers, writers, decision-makers'],
   ['timeline/', 'Timeline', 'the index as a history of ideas, century by century'],
   ['named-after/', 'By namesake', 'the people who lent these ideas their names'],
+  ['origins/', 'Where they came from', "the namesakes' birthplaces, on a map"],
   ['reliability/', 'By reliability', 'measured findings, rules of thumb, and folklore, separated'],
   ['tension/', 'Laws in tension', 'the pairs that contradict each other'],
   ['compare/', 'Compare', 'two laws side by side, for the ones people mix up'],

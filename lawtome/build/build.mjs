@@ -13,6 +13,7 @@ import { lawPage } from '../src/templates/law.mjs';
 import { homePage } from '../src/templates/home.mjs';
 import { listingPage } from '../src/templates/listing.mjs';
 import { graphPage } from '../src/templates/graph.mjs';
+import { originsPage } from '../src/templates/origins.mjs';
 import { coinPage, aboutPage, coinedIndex, privacyPage, notFoundPage } from '../src/templates/static-pages.mjs';
 import { tensionPage } from '../src/templates/tension.mjs';
 import { comparePage, compareHubPage } from '../src/templates/compare.mjs';
@@ -71,6 +72,13 @@ export async function buildSite(opts) {
   let facts = {};
   try { facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')); }
   catch { /* not harvested yet */ }
+
+  // The coastline for the origins map — one pre-projected SVG path, generated
+  // once by build/make-worldmap.py from public-domain Natural Earth data and
+  // committed, so the build stays offline. Optional like the rest.
+  let world = {};
+  try { world = JSON.parse(await readFile('src/data/world-land.json', 'utf8')); }
+  catch { /* no map data */ }
 
   const errs = validateCorpus(laws, categories);
   if (errs.length) throw new Error('validation failed:\n' + errs.join('\n'));
@@ -284,6 +292,12 @@ export async function buildSite(opts) {
   // Eponym index + timeline: two more browse axes over existing fields
   // (namedAfter, coinedYear). No new corpus data.
   writes.push(writePage(join(out, 'named-after', 'index.html'), eponymsPage(eponymGroups(laws), { base, origin, count: publishedCount, images })));
+  // Where the namesakes were born, on a map — birthplaces from facts.json over
+  // the Natural Earth coastline. Emitted unconditionally (with an empty state
+  // when nothing is harvested), because every hub's footer links it and a
+  // conditional page there would be a conditional 404.
+  writes.push(writePage(join(out, 'origins', 'index.html'),
+    originsPage(eponymGroups(laws), { base, origin, count: publishedCount, facts, world })));
   // Image credits — the attribution the CC licences require, in one auditable list.
   writes.push(writePage(join(out, 'credits', 'index.html'), creditsPage(images, { base, origin, count: publishedCount })));
   writes.push(writePage(join(out, 'timeline', 'index.html'), timelinePage(eraGroups(laws), { base, origin, count: publishedCount, images })));
@@ -335,6 +349,7 @@ export async function buildSite(opts) {
     ...audiences.map((a) => `for/${a.slug}/`),
     'features/',                              // product tour
     'manifesto/',                             // positioning essay
+    'origins/',                               // birthplace map of the namesakes
     'credits/',                               // image sources + licences
   ];
   writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate)));

@@ -1420,6 +1420,34 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .rel-ex a:hover{border-color:var(--accent);color:var(--accent)}
 .rel-sec-more{margin:16px 0 0}
 
+/* ---- origins map ----------------------------------------------------------
+   The SVG is authored in degrees (a 360x180 viewBox) and scaled by the browser,
+   so vector-effect keeps the coastline hairline-thin at any width instead of
+   ballooning with the scale factor. */
+.omap-wrap{margin:26px 0 0}
+.omap{display:block;width:100%;height:auto;background:var(--surface);border:1px solid var(--line);border-radius:3px}
+.omap-sea{fill:transparent}
+.omap-land{fill:var(--surface-2);stroke:var(--line-strong);stroke-width:.9;vector-effect:non-scaling-stroke}
+.omap-grid line{stroke:var(--line);stroke-width:.6;vector-effect:non-scaling-stroke}
+.omap-grid .omap-eq{stroke:var(--line-strong)}
+.omap-dots circle{fill:color-mix(in srgb,var(--gold) 62%,transparent);stroke:var(--gold);stroke-width:.8;
+  vector-effect:non-scaling-stroke;transition:fill .16s}
+.omap-dot:hover circle,.omap-dot:focus-visible circle{fill:var(--gold)}
+.omap-cap{margin:10px 0 0;font-size:12px;line-height:1.5;color:var(--faint)}
+.omap-cap a{color:var(--muted)}
+.ori-list{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px 26px}
+.ori-place{padding-top:12px;border-top:1px solid var(--line)}
+.ori-place-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin:0 0 8px;
+  font-family:var(--serif);font-weight:600;font-size:17px}
+.ori-n{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--faint);font-weight:400}
+.ori-people{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.ori-people>li{font-size:13.5px;line-height:1.45}
+.ori-people>li>a{color:var(--ink);text-decoration:none}
+.ori-people>li>a:hover{color:var(--accent)}
+.ori-laws{display:block;color:var(--muted);font-size:12.5px}
+.ori-laws a{color:var(--muted)}
+.ori-laws a:hover{color:var(--accent)}
+
 /* Member lists on the collection and audience cards. */
 .coll-laws{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
 .coll-laws a{display:inline-block;padding:4px 10px;background:var(--surface-2,var(--surface));border:1px solid var(--line);

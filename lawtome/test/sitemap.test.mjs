@@ -70,9 +70,10 @@ const AUD_COUNT = RAW_AUD.filter((a) => (a.laws || []).some((s) => SLUGS.has(s))
 // + marketing: the /for/ hub + one per audience + features + manifesto.
 // + /credits/: the image sources and licences (indexable, and the attribution
 //   the CC-licensed portraits oblige us to publish).
+// + /origins/: the namesakes' birthplaces on a map.
 // Compare: the /compare/ hub + one page per near-twin/tension pair the corpus marks.
 const COMPARE_COUNT = comparePairs(PARSED).length;
-const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + (1 + AUD_COUNT + 1 + 1) + 1;
+const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + (1 + AUD_COUNT + 1 + 1) + 1 + 1;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));
