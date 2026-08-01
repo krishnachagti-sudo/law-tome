@@ -1084,16 +1084,32 @@ html{scroll-behavior:smooth}
    field label on a card, giving the index a per-discipline rhythm instead of one
    flat gold. Text-only: no new blocks of colour, and the reliability badges keep
    owning the green/amber/grey/red signal. */
-[data-cat-c="economics"]{--field:#e0a43f}   [data-cat-c="management"]{--field:#d8b45a}
-[data-cat-c="planning"]{--field:#c9a86a}    [data-cat-c="sociology"]{--field:#e8926e}
-[data-cat-c="psychology"]{--field:#f0a0be}  [data-cat-c="media"]{--field:#f2b56b}
-[data-cat-c="philosophy"]{--field:#d9cf92}  [data-cat-c="logic"]{--field:#a9d15a}
-[data-cat-c="law"]{--field:#cabf8f}         [data-cat-c="linguistics"]{--field:#d3a9e6}
-[data-cat-c="technology"]{--field:#5cc6a2}  [data-cat-c="software"]{--field:#77a6f2}
-[data-cat-c="statistics"]{--field:#c79be6}  [data-cat-c="mathematics"]{--field:#b79cff}
-[data-cat-c="physics"]{--field:#6db3e6}     [data-cat-c="chemistry"]{--field:#d873c8}
-[data-cat-c="biology"]{--field:#82c07d}     [data-cat-c="medicine"]{--field:#df735b}
-[data-cat-c="earth-science"]{--field:#c39b62} [data-cat-c="astronomy"]{--field:#69cfc6}
+[data-cat-c="economics"],[data-c="economics"]{--field:#e0a43f}   [data-cat-c="management"],[data-c="management"]{--field:#d8b45a}
+[data-cat-c="planning"],[data-c="planning"]{--field:#c9a86a}    [data-cat-c="sociology"],[data-c="sociology"]{--field:#e8926e}
+[data-cat-c="psychology"],[data-c="psychology"]{--field:#f0a0be}  [data-cat-c="media"],[data-c="media"]{--field:#f2b56b}
+[data-cat-c="philosophy"],[data-c="philosophy"]{--field:#d9cf92}  [data-cat-c="logic"],[data-c="logic"]{--field:#a9d15a}
+[data-cat-c="law"],[data-c="law"]{--field:#cabf8f}         [data-cat-c="linguistics"],[data-c="linguistics"]{--field:#d3a9e6}
+[data-cat-c="technology"],[data-c="technology"]{--field:#5cc6a2}  [data-cat-c="software"],[data-c="software"]{--field:#77a6f2}
+[data-cat-c="statistics"],[data-c="statistics"]{--field:#c79be6}  [data-cat-c="mathematics"],[data-c="mathematics"]{--field:#b79cff}
+[data-cat-c="physics"],[data-c="physics"]{--field:#6db3e6}     [data-cat-c="chemistry"],[data-c="chemistry"]{--field:#d873c8}
+[data-cat-c="biology"],[data-c="biology"]{--field:#82c07d}     [data-cat-c="medicine"],[data-c="medicine"]{--field:#df735b}
+[data-cat-c="earth-science"],[data-c="earth-science"]{--field:#c39b62} [data-cat-c="astronomy"],[data-c="astronomy"]{--field:#69cfc6}
 /* The graph hues are tuned for a dark field; on cream they need darkening to stay
    legible, so light mode keeps the single restrained gold. */
 html[data-theme="light"] .card .foot .cat{color:var(--accent)}
+
+/* Field colour, applied with real weight rather than one 11px label.
+   A card carries its discipline as a coloured spine — the shelf-of-books read
+   the codex framing already wants — and the filter chips carry the same hue, so
+   the palette is one consistent language across the page instead of decoration. */
+.card{border-left-width:3px;border-left-color:var(--field,var(--line))}
+.card:hover{border-left-color:var(--field,var(--accent))}
+.chip{color:var(--field,var(--muted));border-color:color-mix(in srgb,var(--field,var(--line-strong)) 42%,transparent)}
+.chip:hover{border-color:var(--field,var(--accent));color:var(--field,var(--accent))}
+.chip.on{background:var(--field,var(--accent));border-color:var(--field,var(--accent));color:var(--on-accent)}
+/* Light theme: the graph hues are tuned for a dark field, so text set in them
+   goes muddy on cream. Keep labels/chips in the restrained gold there, but let
+   the spine carry the colour — a 3px band has no legibility burden. */
+html[data-theme="light"] .chip{color:var(--muted);border-color:var(--line-strong)}
+html[data-theme="light"] .chip:hover{color:var(--accent);border-color:var(--accent)}
+html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}

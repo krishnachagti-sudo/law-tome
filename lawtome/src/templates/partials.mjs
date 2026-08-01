@@ -86,11 +86,11 @@ export function reliabilitySlug(reliability) {
 export function lawCard(law, base, level = 3) {
   const rels = Array.isArray(law.related) ? law.related.length : 0;
   const h = level === 2 ? 'h2' : 'h3';
-  return `   <a class="card" href="${base}laws/${escapeHtml(law.slug)}/">
+  return `   <a class="card" data-cat-c="${escapeHtml(law.category)}" href="${base}laws/${escapeHtml(law.slug)}/">
      <div class="top"><span class="no">№ ${escapeHtml(law.no)}</span><span class="badge ${reliabilityClass(law.reliability)}">${escapeHtml(law.reliability)}</span></div>
      <${h} class="card-name">${escapeHtml(law.name)}</${h}>
      <div class="say">"${escapeHtml(law.statement)}"</div>
-     <div class="foot" data-cat-c="${escapeHtml(law.category)}"><span class="cat">${escapeHtml(law.category)}</span><span class="rel"><i class="ti ti-affiliate" style="font-size:13px" aria-hidden="true"></i> ${rels} related</span></div>
+     <div class="foot"><span class="cat">${escapeHtml(law.category)}</span><span class="rel"><i class="ti ti-affiliate" style="font-size:13px" aria-hidden="true"></i> ${rels} related</span></div>
    </a>`;
 }
 

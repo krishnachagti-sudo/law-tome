@@ -105,6 +105,9 @@
   function buildCard(row) {
     var a = el('a', 'card');
     a.setAttribute('href', BASE + 'laws/' + encodeURIComponent(row.slug) + '/');
+    // Mirror the server-rendered card: the field palette in styles.css keys off
+    // this attribute and cascades --field to the spine and the label.
+    if (row.category) a.setAttribute('data-cat-c', row.category);
 
     var top = el('div', 'top');
     var no = el('span', 'no'); no.textContent = '№ ' + (row.no || '');
@@ -120,9 +123,6 @@
     var say = el('div', 'say'); say.textContent = '"' + (row.statement || '') + '"';
 
     var foot = el('div', 'foot');
-    // Mirror the server-rendered card: the field palette in styles.css keys off
-    // this attribute. setAttribute (not innerHTML) keeps the no-innerHTML rule.
-    if (row.category) foot.setAttribute('data-cat-c', row.category);
     var cat = el('span', 'cat'); cat.textContent = row.category || '';
     foot.appendChild(cat);
     var relN = Array.isArray(row.related) ? row.related.length : row.rels;
