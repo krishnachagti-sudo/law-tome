@@ -319,6 +319,36 @@ def article_is_the_law(title, extract, law):
     return None
 
 
+
+def resolve_law_article(name):
+    """Find the Wikipedia article for a law, trying the ways an encyclopedia
+    actually files it.
+
+    An exact-title lookup alone missed 679 of 1,119 laws: we write "The Cobra
+    Effect" and Wikipedia files "Cobra effect", we write "The Law of Demand" and
+    it lives under "Demand". So: exact title, then without the leading article,
+    then a search. The search hit is NOT trusted on its own — every candidate
+    still has to clear article_is_the_law, which demands the title match the law
+    or the law be named in the opening sentence. A loose search plus a strict
+    gate finds more and admits nothing extra."""
+    for candidate in (name, re.sub(r'^[Tt]he\s+', '', name)):
+        title, text = wiki_article(candidate)
+        if title:
+            return title, text
+    try:
+        d = api(WP_API, {
+            'action': 'query', 'format': 'json', 'list': 'search',
+            'srsearch': name, 'srlimit': 3, 'srnamespace': 0,
+        })
+        for hit in (d.get('query', {}) or {}).get('search', []) or []:
+            title, text = wiki_article(hit.get('title', ''))
+            if title:
+                return title, text
+    except Exception:
+        pass
+    return None, None
+
+
 def fetch_figures(args):
     """One figure per law, from the law's own Wikipedia article."""
     laws = []
@@ -349,7 +379,7 @@ def fetch_figures(args):
             stats['have'] += 1
             continue
         try:
-            title, text = wiki_article(law['name'])
+            title, text = resolve_law_article(law['name'])
             if not title:
                 stats['no_article'] += 1
                 continue
