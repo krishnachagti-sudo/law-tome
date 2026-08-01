@@ -701,8 +701,41 @@ WIKIDATA_API = 'https://www.wikidata.org/w/api.php'
 # never be filled with a chart, however well the filename matches the surname —
 # "Conway law diagram.svg" is about the law, not the man.
 NOT_A_PERSON = re.compile(
-    r'(diagram|chart|graph|plot|curve|equation|formula|schema|figure|fig\d|'
-    r'map|logo|signature|grave|plaque|building|museum|university|award|medal)', re.I)
+    r'\b(diagram|chart|graph|plot|curve|equation|formula|schema|figure|fig\d|'
+    r'map|logo|signature|grave|plaque|building|museum|university|award|medal)\b', re.I)
+# \b matters: without it "graph" matched inside "Studio_portrait_photograph_of_
+# Edwin_Powell_Hubble" and threw away a real portrait.
+
+# Things that are never a picture OF a person, however they were reached.
+NEVER_A_PORTRAIT = re.compile(
+    r'\b(signature|autograph|grave|gravestone|headstone|tomb|tombstone|memorial|'
+    r'plaque|cenotaph|logo|coat[_ ]of[_ ]arms|banknote|postage|stamp|'
+    r'frontispiece|title[_ ]?page)\b', re.I)
+
+
+def depicts_the_person(file_name, person):
+    """Is this file plausibly a picture of this person?
+
+    Wikipedia's LEAD image is just "the article's picture". For a subject with
+    no free photograph that is routinely something else entirely: Theodore
+    Sturgeon's article leads with a 1948 Weird Tales cover, and it shipped as
+    his portrait, captioned with his name, on every page his law touches. No
+    keyword list catches that — "Weird_Tales_November_1948" contains nothing
+    suspicious. What it lacks is his NAME.
+
+    So a lead image has to carry a piece of the person's name in its filename.
+    That is a weak signal in isolation and a sufficient one here, because the
+    alternative was accepting anything the article happened to open with.
+    """
+    # Separators to spaces BEFORE the keyword test: an underscore is a word
+    # character, so \b never fires inside "Cavendish_Henry_signature" and the
+    # signature sailed through.
+    bare = re.sub(r'[^a-z0-9]+', ' ', norm(str(file_name).rsplit('.', 1)[0]))
+    if NEVER_A_PORTRAIT.search(bare):
+        return False
+    words = set(bare.split())
+    parts = [w for w in re.split(r'[^a-z0-9]+', norm(person)) if len(w) >= 4]
+    return bool(parts) and any(w in words for w in parts)
 
 
 def wikidata_image(title):
@@ -1005,6 +1038,10 @@ def main():
             if not url or not file_name:
                 stats['no_image'] += 1
                 print(f'  -  no image         {person} ({title})', flush=True)
+                continue
+            if not depicts_the_person(file_name, person):
+                stats['not_a_portrait'] = stats.get('not_a_portrait', 0) + 1
+                print(f'  x  not a portrait   {person} — {file_name}', flush=True)
                 continue
             lic = commons_licence(file_name)
             if not lic:

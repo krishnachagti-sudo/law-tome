@@ -8,6 +8,7 @@
 
 import { head, sprite, header, footer, escapeHtml, reliabilityClass, personSlug } from './partials.mjs';
 import { hubHead, hubNav, hubJsonLd } from './hub.mjs';
+import { monogram } from './eponyms.mjs';
 
 /**
  * @param {{situation:string, law:object}[]} situations resolved rows.
@@ -27,11 +28,11 @@ export function situationsPage(situations = [], { base = '/', origin = '', count
   // the most list-like thing on the site; a column of the people who named
   // these things turns it into something you scan rather than read.
   const people = (images && images.people) || {};
-  const figures = (images && images.figures) || {};
+  // Portraits only in the circle — a diagram does not survive a 34px crop.
   const face = (law) => {
     const por = law.namedAfter ? people[personSlug(law.namedAfter)] : null;
     if (por) return `<img class="sit-face" src="${base}assets/img/people/${escapeHtml(por.slug)}.webp" alt="" loading="lazy" decoding="async">`;
-    if (figures[law.slug]) return `<img class="sit-face sit-face--fig" src="${base}assets/img/figures/${escapeHtml(law.slug)}.webp" alt="" loading="lazy" decoding="async">`;
+    if (law.namedAfter) return `<span class="sit-face sit-mono" aria-hidden="true">${escapeHtml(monogram(law.namedAfter))}</span>`;
     return '<span class="sit-face sit-face--none" aria-hidden="true"></span>';
   };
   const row = ({ situation, law }) => {

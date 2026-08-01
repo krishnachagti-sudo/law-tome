@@ -9,6 +9,7 @@
 
 import { head, sprite, header, footer, escapeHtml, reliabilityClass, personSlug } from './partials.mjs';
 import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
+import { monogram } from './eponyms.mjs';
 
 // The bucket for pairs whose two laws come from DIFFERENT fields. This was a
 // literal NUL byte in the source, invisible in every tool that reads the file.
@@ -25,18 +26,18 @@ const ACROSS = '__across__';
  * @param {string} [o.origin=''] absolute origin for canonical/JSON-LD.
  * @param {number|string} [o.count] published-law count for the masthead.
  */
-export function tensionPage(pairs = [], { base = '/', origin = '', count, categories = {}, images } = {}) {
+export function tensionPage(pairs = [], { base = '/', origin = '', count, categories = {}, images, compareSlugs = {} } = {}) {
   const rows = Array.isArray(pairs) ? pairs : [];
   const permalink = (slug) => `${base}laws/${escapeHtml(slug)}/`;
 
   // The same face treatment as /compare/: a disagreement between two people
   // should look like one.
   const people = (images && images.people) || {};
-  const figures = (images && images.figures) || {};
+  // Portraits only in the circle — a diagram does not survive a 30px crop.
   const face = (law) => {
     const por = law.namedAfter ? people[personSlug(law.namedAfter)] : null;
     if (por) return `<img class="ten-face" src="${base}assets/img/people/${escapeHtml(por.slug)}.webp" alt="" loading="lazy" decoding="async">`;
-    if (figures[law.slug]) return `<img class="ten-face ten-face--fig" src="${base}assets/img/figures/${escapeHtml(law.slug)}.webp" alt="" loading="lazy" decoding="async">`;
+    if (law.namedAfter) return `<span class="ten-face ten-face--none" aria-hidden="true">${escapeHtml(monogram(law.namedAfter))}</span>`;
     return '';
   };
   const side = (law) => {
@@ -51,11 +52,21 @@ export function tensionPage(pairs = [], { base = '/', origin = '', count, catego
       </a>`;
   };
 
-  const pairCard = (p) => `    <div class="ten-pair" data-reveal>
+  // Every one of these pairs already has a page of its own comparing the two
+  // field by field — it was reachable only from /compare/, so from here the
+  // pair looked like a dead end. The divider is now the way in.
+  const key = (p) => [p.a.slug, p.b.slug].sort().join('|');
+  const pairCard = (p) => {
+    const cs = compareSlugs[key(p)];
+    const mid = cs
+      ? `      <a class="ten-vs ten-vs--link" href="${base}compare/${escapeHtml(cs)}/" aria-label="Compare ${escapeHtml(p.a.name)} with ${escapeHtml(p.b.name)}"><span>vs</span><span class="ten-vs-cta">compare</span></a>`
+      : '      <div class="ten-vs" aria-hidden="true"><span>vs</span></div>';
+    return `    <div class="ten-pair" data-reveal>
 ${side(p.a)}
-      <div class="ten-vs" aria-hidden="true"><span>vs</span></div>
+${mid}
 ${side(p.b)}
     </div>`;
+  };
 
   // Group by field so 130+ pairs read as a set of scannable sections rather than
   // one unbroken wall. A pair is filed under the field both laws share, or

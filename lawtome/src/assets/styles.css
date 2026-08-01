@@ -1491,6 +1491,62 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .cmp-hub-list>li{display:flex}
 .cmp-hub-list>li>.cvs{flex:1}
 
+/* The "browse all" footer under a card grid. It had no rule of its own, so it
+   sat flush against the last row: the button's border and the card's border
+   met with nothing between them, reading as one box overlapping the other. */
+.sec-more{display:flex;justify-content:center;margin:34px 0 0}
+
+/* ---- comparison page substance --------------------------------------------
+   The dimension grid is the page's spine: one row per aspect, both laws' own
+   words under a shared heading, each side tinted by its field so the eye can
+   follow one law down the page. */
+.cmp-face{width:30px;height:30px;flex:0 0 30px;border-radius:50%;object-fit:cover;object-position:50% 22%;
+  border:1px solid var(--line-strong);background:var(--surface-2);filter:grayscale(1) contrast(1.05)}
+.cmp-face--mono{display:flex;align-items:center;justify-content:center;font-family:var(--mono);
+  font-size:10.5px;color:var(--muted)}
+.cmp-who{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:12px;
+  font-size:13px;color:var(--muted)}
+.cmp-who a{color:var(--ink);text-decoration:none}
+.cmp-who a:hover{color:var(--field,var(--accent))}
+.cmp-yr{display:block;font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.04em}
+
+.cmp-common{margin-top:52px}
+.cmp-common h2,.cmp-dims h2,.cmp-src h2,.cmp-more h2{font-family:var(--serif);font-weight:600;font-size:21px;
+  margin:0 0 14px}
+.cmp-common ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.cmp-common li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.6;color:var(--read)}
+.cmp-common li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;
+  background:var(--accent);opacity:.6}
+
+.cmp-dims{margin-top:52px}
+.cmp-dim{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;padding:18px 0;border-top:1px solid var(--line)}
+.cmp-dim-h{grid-column:1/-1;margin:0 0 12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--faint)}
+.cmp-dim-a,.cmp-dim-b{font-size:14.5px;line-height:1.65;color:var(--read);
+  padding-left:14px;border-left:2px solid var(--field,var(--line))}
+.cmp-dim-w{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--field,var(--faint));margin-bottom:6px}
+.cmp-dim q{font-family:var(--serif);font-size:16px;color:var(--ink)}
+.cmp-none{color:var(--faint);font-style:italic}
+@media(max-width:720px){.cmp-dim{grid-template-columns:1fr;gap:16px}}
+
+.cmp-src{margin-top:52px}
+.cmp-src-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.cmp-src-col h3{margin:0 0 8px;font-family:var(--serif);font-size:15.5px}
+.cmp-src-col h3 a{color:var(--ink);text-decoration:none}
+.cmp-src-col ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.cmp-src-col li{font-size:12.5px;line-height:1.5;color:var(--muted)}
+@media(max-width:720px){.cmp-src-grid{grid-template-columns:1fr}}
+
+.cmp-more{margin-top:52px}
+.cmp-more-list{list-style:none;margin:0;padding:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px}
+.cmp-more-list a{display:block;padding:10px 13px;background:var(--surface);border:1px solid var(--line);
+  border-radius:3px;font-size:13.5px;color:var(--ink);text-decoration:none;transition:border-color .16s}
+.cmp-more-list a:hover{border-color:var(--accent)}
+.cmp-more-list span{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--faint);margin:0 4px}
+
 /* "not a person" tag on the eponym index. */
 .ep-kind{margin-left:8px;padding:1px 6px;border:1px solid var(--line-strong);border-radius:2px;
   font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);

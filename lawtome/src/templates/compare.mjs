@@ -11,7 +11,7 @@
 
 import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, personSlug } from './partials.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
-import { personId } from './eponyms.mjs';
+import { personId, monogram } from './eponyms.mjs';
 import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
 
 const FRAMING = {
@@ -39,8 +39,9 @@ function provenanceLabel(p) {
  * @param {object} [o.categories] category key -> label map.
  * @param {number|string} [o.count] published-law count for the masthead.
  */
-export function comparePage(pair, { base = '/', origin = '', categories = {}, count } = {}) {
+export function comparePage(pair, { base = '/', origin = '', categories = {}, count, images, byslug = {}, allPairs = [] } = {}) {
   const { a, b, relation, slug } = pair;
+  const people = (images && images.people) || {};
   const frame = FRAMING[relation] || FRAMING['near-twin'];
   const permalink = (s) => `${base}laws/${escapeHtml(s)}/`;
   const catLabel = (c) => escapeHtml((categories && categories[c]) || c || '—');
@@ -64,23 +65,142 @@ export function comparePage(pair, { base = '/', origin = '', categories = {}, co
     ? `<a href="${base}coined/">${provenanceLabel(law.provenance)}</a>`
     : provenanceLabel(law.provenance);
 
+  const face = (law) => {
+    const por = law.namedAfter ? people[personSlug(law.namedAfter)] : null;
+    if (por) return `<img class="cmp-face" src="${base}assets/img/people/${escapeHtml(por.slug)}.webp" alt="${escapeHtml(law.namedAfter)}" loading="lazy" decoding="async">`;
+    if (law.namedAfter) return `<span class="cmp-face cmp-face--mono" aria-hidden="true">${escapeHtml(monogram(law.namedAfter))}</span>`;
+    return '';
+  };
   const panel = (law) => {
     const badge = law.reliability
       ? `<a class="badge ${reliabilityClass(law.reliability)}" href="${base}reliability/${reliabilitySlug(law.reliability)}/">${escapeHtml(law.reliability)}</a>`
       : '';
     const stmt = law.statement ? `<p class="cmp-stmt"><q>${escapeHtml(law.statement)}</q></p>` : '';
-    const mean = law.meaning ? `<p class="cmp-mean">${escapeHtml(law.meaning)}</p>` : '';
-    return `      <article class="cmp-col">
+    const who = law.namedAfter
+      ? `<span class="cmp-who">${face(law)}<span><a href="${base}named-after/#${escapeHtml(personId(law.namedAfter))}">${escapeHtml(law.namedAfter)}</a>${law.coinedYear ? `<span class="cmp-yr">${escapeHtml(String(law.coinedYear))}</span>` : ''}</span></span>`
+      : '';
+    return `      <article class="cmp-col" data-c="${escapeHtml(law.category || '')}">
         <div class="cmp-col-top">
           <a class="cmp-name" href="${permalink(law.slug)}">${escapeHtml(law.name)}</a>
           ${badge}
         </div>
         <span class="cmp-cat">${catCell(law.category)}</span>
 ${stmt}
-${mean}
+${who}
         <a class="cmp-read" href="${permalink(law.slug)}">Read the full law <span aria-hidden="true">→</span></a>
       </article>`;
   };
+
+  // ---- the substance -------------------------------------------------------
+  // Dimension by dimension, both laws' OWN words under the same heading. This
+  // is where a comparison earns its page: two statements and a facts table tell
+  // you the pair exists, not what separates them. Every cell is a corpus field;
+  // a dimension only appears when at least one side has something to say, and
+  // where one side is silent it says so rather than inventing parity.
+  const DIMENSIONS = [
+    ['What it claims', (l) => l.statement, 'q'],
+    ['In plain English', (l) => l.meaning],
+    ['How it works', (l) => l.mechanism],
+    ['Why it matters', (l) => l.whyItMatters],
+    ['Where it breaks down', (l) => l.limits],
+    ['Commonly misread as', (l) => l.misreadings],
+    ['A worked example', (l) => (Array.isArray(l.examples) && l.examples[0] ? l.examples[0].text : l.example)],
+    ['Where it came from', (l) => l.origin],
+  ];
+  const dimRows = DIMENSIONS.map(([label, get, tag]) => {
+    const av = get(a), bv = get(b);
+    if (!av && !bv) return '';
+    const cell = (v) => v
+      ? (tag === 'q' ? `<q>${escapeHtml(v)}</q>` : escapeHtml(v))
+      : '<span class="cmp-none">Not recorded for this entry.</span>';
+    return `      <div class="cmp-dim">
+        <h3 class="cmp-dim-h">${escapeHtml(label)}</h3>
+        <div class="cmp-dim-a" data-c="${escapeHtml(a.category || '')}"><span class="cmp-dim-w">${escapeHtml(a.name)}</span>${cell(av)}</div>
+        <div class="cmp-dim-b" data-c="${escapeHtml(b.category || '')}"><span class="cmp-dim-w">${escapeHtml(b.name)}</span>${cell(bv)}</div>
+      </div>`;
+  }).filter(Boolean).join('\n');
+
+  // What the two genuinely have in common, computed rather than asserted.
+  const relSlugs = (l) => new Set((Array.isArray(l.related) ? l.related : []).map((r) => r && r.slug).filter(Boolean));
+  const shared = [...relSlugs(a)].filter((x) => relSlugs(b).has(x) && byslug[x]).map((x) => byslug[x]);
+  const common = [];
+  if (a.category && a.category === b.category) common.push(`Both sit in <a href="${base}category/${escapeHtml(a.category)}/">${catLabel(a.category)}</a>.`);
+  else if (a.category && b.category) common.push(`They come from different fields — <a href="${base}category/${escapeHtml(a.category)}/">${catLabel(a.category)}</a> and <a href="${base}category/${escapeHtml(b.category)}/">${catLabel(b.category)}</a>.`);
+  if (a.reliability && a.reliability === b.reliability) common.push(`Both are rated <a href="${base}reliability/${reliabilitySlug(a.reliability)}/">${escapeHtml(a.reliability)}</a>, so they stand on the same kind of evidence.`);
+  else if (a.reliability && b.reliability) common.push(`They are not equally well established: ${escapeHtml(a.name)} is rated <a href="${base}reliability/${reliabilitySlug(a.reliability)}/">${escapeHtml(a.reliability)}</a> and ${escapeHtml(b.name)} <a href="${base}reliability/${reliabilitySlug(b.reliability)}/">${escapeHtml(b.reliability)}</a>.`);
+  if (a.coinedYear && b.coinedYear) {
+    const gap = Math.abs(Number(a.coinedYear) - Number(b.coinedYear));
+    const older = Number(a.coinedYear) <= Number(b.coinedYear) ? a : b;
+    common.push(gap === 0
+      ? `Both were named in ${escapeHtml(String(a.coinedYear))}.`
+      : `${escapeHtml(older.name)} is the older of the two by ${gap} ${gap === 1 ? 'year' : 'years'}.`);
+  }
+  if (shared.length) {
+    common.push(`Both are linked to ${shared.slice(0, 3).map((l) => `<a href="${permalink(l.slug)}">${escapeHtml(l.name)}</a>`).join(', ')}.`);
+  }
+  const commonBlock = common.length
+    ? `    <section class="cmp-common">
+      <h2>What they have in common</h2>
+      <ul>${common.map((c) => `<li>${c}</li>`).join('')}</ul>
+    </section>
+`
+    : '';
+
+  // Sources for both, so the page is checkable without leaving it.
+  const srcList = (law) => {
+    const ss = (Array.isArray(law.sources) ? law.sources : []).filter(Boolean).slice(0, 4);
+    if (!ss.length) return '';
+    return `      <div class="cmp-src-col">
+        <h3><a href="${permalink(law.slug)}">${escapeHtml(law.name)}</a></h3>
+        <ul>${ss.map((x) => `<li>${x.url ? `<a href="${escapeHtml(x.url)}">${escapeHtml(x.text || x.url)}</a>` : escapeHtml(x.text || '')}</li>`).join('')}</ul>
+      </div>`;
+  };
+  const sources = (srcList(a) || srcList(b))
+    ? `    <section class="cmp-src">
+      <h2>Sources</h2>
+      <div class="cmp-src-grid">
+${srcList(a)}
+${srcList(b)}
+      </div>
+    </section>
+`
+    : '';
+
+  // Other comparisons either law appears in — the reason a reader who landed
+  // here from a search has somewhere to go next.
+  const siblings = (Array.isArray(allPairs) ? allPairs : [])
+    .filter((p) => p.slug !== slug && (p.a.slug === a.slug || p.b.slug === a.slug || p.a.slug === b.slug || p.b.slug === b.slug))
+    .slice(0, 8);
+  const more = siblings.length
+    ? `    <section class="cmp-more">
+      <h2>Related comparisons</h2>
+      <ul class="cmp-more-list">${siblings.map((p) => `<li><a href="${base}compare/${escapeHtml(p.slug)}/">${escapeHtml(p.a.name)} <span>vs</span> ${escapeHtml(p.b.name)}</a></li>`).join('')}</ul>
+    </section>
+`
+    : '';
+
+  const faq = hubFaq([
+    {
+      q: `What is the difference between ${a.name} and ${b.name}?`,
+      a: `${escapeHtml(a.name)} says ${a.statement ? `“${escapeHtml(a.statement)}”` : 'one thing'}; ${escapeHtml(b.name)} says ${b.statement ? `“${escapeHtml(b.statement)}”` : 'another'}. ${relation === 'tension' ? 'They pull in opposite directions, so which applies depends on your conditions — the two are compared field by field above.' : 'They are near-twins and easy to confuse; the field-by-field comparison above sets out what each actually claims.'}`,
+    },
+    {
+      q: `Are ${a.name} and ${b.name} the same thing?`,
+      a: relation === 'tension'
+        ? 'No — the corpus records them as opposed: what one recommends, the other warns against.'
+        : 'No, though they are routinely mistaken for each other. They are recorded here as near-twins precisely because the confusion is common.',
+    },
+    {
+      q: 'Which one should I apply?',
+      a: 'This page does not answer that, on purpose. Both laws\' conditions and limits are set out above in their own words; deciding which fits your case is a judgement about your situation, and a site that made it for you would be inventing a finding neither law states.',
+    },
+  ], { heading: 'Questions about this pair' });
+
+  const substance = `${commonBlock}    <section class="cmp-dims">
+      <h2>Side by side</h2>
+${dimRows}
+    </section>
+${sources}${more}${faq.html}`;
 
   // "At a glance" — pure structured facts, the kind of table answer engines lift.
   const row = (label, av, bv) =>
@@ -113,7 +233,7 @@ ${panel(a)}
 ${panel(b)}
     </div>
 ${table}
-    <div class="cmp-foot">
+${substance}    <div class="cmp-foot">
       <a class="btn ghost" href="${base}compare/">All comparisons</a>
       <a class="btn ghost" href="${base}graph/">See the graph</a>
     </div>
@@ -146,6 +266,7 @@ ${table}
         { '@type': 'ListItem', position: 2, name: `${a.name} vs ${b.name}` },
       ],
     },
+    ...(faq.jsonld ? [faq.jsonld] : []),
   ];
 
   return (
@@ -179,12 +300,16 @@ export function compareHubPage(pairs = [], { base = '/', origin = '', count, ima
   // disagreeing rather than two strings either side of the word "vs" — which is
   // the whole point of a head-to-head.
   const people = (images && images.people) || {};
-  const figures = (images && images.figures) || {};
+  // Portraits only. A figure was tried here and it does not survive the crop:
+  // these are diagrams and photographs drawn for a page, and at 34px in a
+  // circle they became a white disc (an inverted line drawing), a smear of
+  // supermarket shelving, and an engraving nobody could identify. A face reads
+  // at that size; nothing else here does. Otherwise the namesake's monogram,
+  // which is what /named-after/ uses for the same situation.
   const thumb = (law) => {
     const por = law.namedAfter ? people[personSlug(law.namedAfter)] : null;
     if (por) return `<img class="cvs-face" src="${base}assets/img/people/${escapeHtml(por.slug)}.webp" alt="" loading="lazy" decoding="async">`;
-    if (figures[law.slug]) return `<img class="cvs-face cvs-face--fig" src="${base}assets/img/figures/${escapeHtml(law.slug)}.webp" alt="" loading="lazy" decoding="async">`;
-    return `<span class="cvs-face cvs-face--none" aria-hidden="true">${escapeHtml(String(law.name || '?').replace(/^The\s+/i, '').charAt(0).toUpperCase())}</span>`;
+    return `<span class="cvs-face cvs-face--none" aria-hidden="true">${escapeHtml(law.namedAfter ? monogram(law.namedAfter) : '')}</span>`;
   };
   const side = (law, cls) => `<span class="cvs-side cvs-side--${cls}">${thumb(law)}<span class="cvs-name">${escapeHtml(law.name)}</span></span>`;
   const item = (p) => `        <li class="cmp-hub-item"><a class="cvs" href="${base}compare/${escapeHtml(p.slug)}/" data-c="${escapeHtml(p.a.category || '')}">

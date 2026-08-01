@@ -691,18 +691,26 @@ document.getElementById('copy').onclick=function(){
     var apply=function(){
       ticking=false;
       if(lock){ if(Date.now()<lockT){mark(lock);return;} lock=null; }
-      var vh=window.innerHeight,best=null,bestArea=-1;
+      // The section that owns the READING LINE — a third of the way down the
+      // content area. Two earlier rules both failed the same way, by running
+      // ahead of the reader: line-crossing at the very top of the viewport, and
+      // largest-visible-area, which hands the win to the next section as soon
+      // as it claims half the screen. Measured against where the eye actually
+      // is, both named section 6 while section 5 filled the view.
+      //
+      // Switching only when the NEXT heading passes the line is not a lag; it
+      // is the definition of which section you are reading.
+      var vh=window.innerHeight;
+      var line=HEADER+0.30*(vh-HEADER);
+      var best=null;
       for(var i=0;i<secs.length;i++){
-        var top=secs[i].el.getBoundingClientRect().top;
-        var end=(i+1<secs.length)
-          ? secs[i+1].el.getBoundingClientRect().top
-          : top+secs[i].el.offsetHeight;
-        var visible=Math.min(end,vh)-Math.max(top,HEADER);
-        // >= so a tie goes to the later section: scrolling forward should advance
-        if(visible>=bestArea){bestArea=visible;best=secs[i];}
+        if(secs[i].el.getBoundingClientRect().top<=line) best=secs[i];
       }
-      // above the first section (still in the hero) nothing is active yet
-      mark(bestArea>0&&best?best.a:null);
+      if(!best) best=secs[0];
+      // At the foot of the page the last sections can be too short to ever
+      // reach the line, so nothing past the penultimate one would light up.
+      if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4) best=secs[secs.length-1];
+      mark(best?best.a:null);
     };
     var onScroll=function(){ if(!ticking){ticking=true;requestAnimationFrame(apply);} };
     // an explicit TOC click wins over the spy while the smooth scroll is in flight —
