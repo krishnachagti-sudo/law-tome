@@ -71,13 +71,24 @@ def sh(cmd):
     return p.stdout
 
 
-def api(url, params):
-    q = '&'.join(f'{k}={subprocess.list2cmdline([str(v)])}' for k, v in params.items())
-    # build the query string ourselves so we control encoding
+def api(url, params, tries=3):
+    """A MediaWiki API call, retried on a blank or unparseable body.
+
+    Over a 700-item run the occasional request comes back empty — a throttle, a
+    proxy hiccup, a dropped connection. Without a retry that surfaces as
+    "Expecting value: line 1 column 1" and silently costs coverage, so back off
+    briefly and ask again rather than treating a blip as an absent article."""
     from urllib.parse import urlencode
     full = url + '?' + urlencode(params)
-    raw = sh(['curl', '-sS', '-A', UA, '--max-time', '30', full])
-    return json.loads(raw.decode('utf-8', 'replace'))
+    last = None
+    for attempt in range(tries):
+        try:
+            raw = sh(['curl', '-sS', '-A', UA, '--max-time', '30', full])
+            return json.loads(raw.decode('utf-8', 'replace'))
+        except Exception as e:
+            last = e
+            time.sleep(0.6 * (attempt + 1))
+    raise last
 
 
 def slugify(s):
@@ -320,6 +331,34 @@ def article_is_the_law(title, extract, law):
 
 
 
+
+def resolve_person_article(person):
+    """Find a person's article, trying the exact name and then a search.
+
+    The portrait run was written before the figure run taught us that exact-title
+    lookup misses a lot: 82 namesakes came back "no article" when Wikipedia files
+    them under a fuller or shorter form ("Bill Atkinson" vs "William Atkinson",
+    "Fick" vs "Adolf Eugen Fick"). Searching is safe here for the same reason it
+    is safe for laws — the candidate still has to clear confirms_law, which
+    requires the article to tie this name to the eponym. A search that surfaces
+    the wrong Gene Amdahl is rejected exactly as an exact-title miss would be."""
+    title, text = wiki_article(person)
+    if title:
+        return title, text
+    try:
+        d = api(WP_API, {
+            'action': 'query', 'format': 'json', 'list': 'search',
+            'srsearch': person, 'srlimit': 3, 'srnamespace': 0,
+        })
+        for hit in (d.get('query', {}) or {}).get('search', []) or []:
+            title, text = wiki_article(hit.get('title', ''))
+            if title:
+                return title, text
+    except Exception:
+        pass
+    return None, None
+
+
 def resolve_law_article(name):
     """Find the Wikipedia article for a law, trying the ways an encyclopedia
     actually files it.
@@ -432,6 +471,168 @@ def fetch_figures(args):
     print('\n' + json.dumps(stats, indent=2))
 
 
+# ---------------------------------------------------------------------------
+# Artifacts: the sketch, apparatus photograph, manuscript page or plate that
+# sits further DOWN a law's article rather than at the top of it.
+#
+# The figures pass only ever looks at the lead image, which is why 684 laws came
+# away with nothing: plenty of articles open with no image at all, or with a
+# portrait we already show, while the interesting object — Hooke's drawing,
+# Milgram's shock box, the original title page — is three sections in. This pass
+# walks the article's full image list and takes the first one that is a real
+# illustration under a licence we may publish.
+#
+# The subject gate is unchanged: we only ever look inside an article that has
+# already been confirmed to BE this law. What changes is which image we take
+# from it, never whose article we take it from.
+
+# Files Wikipedia puts on a page that are not illustrations of anything: chrome,
+# badges, icons, flags, and the maintenance furniture of the encyclopedia itself.
+ARTIFACT_REJECT = re.compile(
+    r'(logo|wiki(pedia|tionary|source|quote|books|data|versity|news|species|media)|'
+    r'question_book|ambox|edit-|symbol|padlock|portal|icon|banner|stub|'
+    r'^flag_of|_flag\.|disambig|nuvola|crystal_|folder_|magnify|'
+    r'red_pog|blue_pog|loudspeaker|speakerlink|text_document|'
+    r'increase2?\.|decrease2?\.|steady2?\.|yes_check|x_mark|'
+    r'\.ogg$|\.oga$|\.wav$|\.webm$|\.ogv$)', re.I)
+
+
+def reject_filename(name):
+    """Wikipedia's file names vary the separator freely — "Question book-new.svg"
+    and "Question_book-new.svg" are the same furniture — so fold both to one form
+    before matching, or the filter passes exactly the files it was written to stop."""
+    return bool(ARTIFACT_REJECT.search(str(name).replace(' ', '_')))
+
+
+def article_images(title):
+    """Every file used on an article, in page order."""
+    d = api(WP_API, {
+        'action': 'query', 'format': 'json', 'redirects': 1, 'titles': title,
+        'prop': 'images', 'imlimit': 40,
+    })
+    for page in d.get('query', {}).get('pages', {}).values():
+        return [im.get('title', '') for im in (page.get('images') or [])]
+    return []
+
+
+def commons_file(file_title, width=900):
+    """Licence, credit and a RENDERED url for a Commons file.
+
+    iiurlwidth gives back a rasterised thumbnail, which is what makes SVG
+    diagrams usable at all and stops us pulling multi-megabyte plate scans."""
+    d = api(COMMONS_API, {
+        'action': 'query', 'format': 'json', 'titles': file_title,
+        'prop': 'imageinfo', 'iiprop': 'extmetadata|url|size', 'iiurlwidth': width,
+    })
+    for page in d.get('query', {}).get('pages', {}).values():
+        info = (page.get('imageinfo') or [{}])[0]
+        if not info:
+            return None
+        em = info.get('extmetadata') or {}
+
+        def val(k):
+            return (em.get(k) or {}).get('value')
+
+        # Skip anything too small to be an illustration — icons and badges that
+        # slipped past the name filter.
+        if (info.get('width') or 0) < 260:
+            return None
+        lic = str(val('License') or '').strip().lower()
+        short = strip_tags(val('LicenseShortName')) or ''
+        if not (LICENCE_OK.match(lic) or PD_HINT.match(lic) or PD_HINT.match(short)):
+            return None
+        return {
+            'url': info.get('thumburl') or info.get('url'),
+            'licence': short or lic,
+            'licenceUrl': val('LicenseUrl') or '',
+            'artist': strip_tags(val('Artist')) or 'Unknown',
+            'source': info.get('descriptionurl') or '',
+            'file': file_title.replace('File:', ''),
+        }
+    return None
+
+
+def fetch_artifacts(args):
+    """Fill in laws the lead-image pass left empty."""
+    laws = []
+    for fn in sorted(os.listdir(LAWS_DIR)):
+        if not fn.endswith('.json'):
+            continue
+        with io.open(os.path.join(LAWS_DIR, fn), encoding='utf-8') as fh:
+            laws.append(json.load(fh))
+
+    manifest = {}
+    if os.path.exists(MANIFEST):
+        with io.open(MANIFEST, encoding='utf-8') as fh:
+            manifest = json.load(fh)
+    figures = manifest.setdefault('figures', {})
+    portraits = {v.get('file') for v in (manifest.get('people') or {}).values()}
+
+    todo = [l for l in laws if l['slug'] not in figures]
+    if args.only:
+        todo = [l for l in todo if args.only.lower() in l['name'].lower()]
+    if args.limit:
+        todo = todo[:args.limit]
+
+    stats = {'ok': 0, 'no_article': 0, 'not_the_law': 0, 'no_usable_image': 0, 'error': 0}
+    for i, law in enumerate(todo, 1):
+        try:
+            title, text = resolve_law_article(law['name'])
+            if not title:
+                stats['no_article'] += 1
+                continue
+            via = article_is_the_law(title, text, law)
+            if not via:
+                stats['not_the_law'] += 1
+                continue
+            chosen = None
+            for file_title in article_images(title):
+                bare = file_title.replace('File:', '')
+                if reject_filename(bare) or bare in portraits:
+                    continue
+                if not re.search(r'\.(jpe?g|png|gif|svg|tiff?)$', bare, re.I):
+                    continue
+                info = commons_file(file_title)
+                if info:
+                    chosen = info
+                    break
+            if not chosen:
+                stats['no_usable_image'] += 1
+                continue
+            dims = None
+            if not args.dry_run:
+                raw = sh(['curl', '-sSL', '-A', UA, '--max-time', '60', chosen['url']])
+                im = Image.open(io.BytesIO(raw)).convert('RGB')
+                if im.width > 640:
+                    im = im.resize((640, max(1, round(im.height * 640 / im.width))), Image.LANCZOS)
+                os.makedirs(FIGURE_DIR, exist_ok=True)
+                im.save(os.path.join(FIGURE_DIR, f'{law["slug"]}.webp'), 'WEBP', quality=78, method=6)
+                dims = (im.width, im.height)
+            entry = {
+                'law': law['name'], 'slug': law['slug'],
+                'wikipedia': f'https://en.wikipedia.org/wiki/{title.replace(" ", "_")}',
+                'confirmedVia': via, 'kind': 'artifact',
+                'licence': chosen['licence'], 'licenceUrl': chosen['licenceUrl'],
+                'artist': chosen['artist'], 'source': chosen['source'], 'file': chosen['file'],
+            }
+            if dims:
+                entry['width'], entry['height'] = dims
+            figures[law['slug']] = entry
+            stats['ok'] += 1
+            if not args.dry_run:
+                manifest['figures'] = figures
+                with io.open(MANIFEST, 'w', encoding='utf-8') as fh:
+                    json.dump(manifest, fh, ensure_ascii=False, indent=2, sort_keys=True)
+                    fh.write('\n')
+            print(f'  OK {i}/{len(todo)}  {law["name"]} — {chosen["file"][:48]} ({chosen["licence"]})', flush=True)
+        except Exception as e:
+            stats['error'] += 1
+            print(f'  !  error  {law["name"]}: {e}', flush=True)
+        time.sleep(0.12)
+
+    print('\n' + json.dumps(stats, indent=2))
+
+
 def save(manifest, people_manifest):
     manifest['people'] = people_manifest
     with io.open(MANIFEST, 'w', encoding='utf-8') as fh:
@@ -444,11 +645,13 @@ def main():
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--only', default='')
-    ap.add_argument('--mode', choices=('people', 'figures'), default='people')
+    ap.add_argument('--mode', choices=('people', 'figures', 'artifacts'), default='people')
     args = ap.parse_args()
 
     if args.mode == 'figures':
         return fetch_figures(args)
+    if args.mode == 'artifacts':
+        return fetch_artifacts(args)
 
     people = load_people()
     manifest = {}
@@ -469,7 +672,7 @@ def main():
             continue
         laws = people[person]
         try:
-            title, text = wiki_article(person)
+            title, text = resolve_person_article(person)
             if not title:
                 stats['no_article'] += 1
                 print(f'  -  no article        {person}', flush=True)
