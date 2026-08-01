@@ -6,7 +6,7 @@
 // renderer returns '' when the fact is absent, so a page shows a dimension only
 // where we actually have it rather than printing an empty shell.
 
-import { escapeHtml } from './partials.mjs';
+import { escapeHtml, personSlug } from './partials.mjs';
 
 const LANG_NAME = {
   fr: 'French', de: 'German', es: 'Spanish', it: 'Italian', pt: 'Portuguese',
@@ -56,11 +56,23 @@ export function diffusionBlock(fact, law, { base = '/' } = {}) {
         </figure>`;
 }
 
+// A handful of `namedAfter` values are not people — "The Hawthorne Works",
+// "The Monte Carlo Casino", "A misspelling of Murphy". They are honest
+// descriptions and they belong in the field, but offering to pronounce one is
+// nonsense: the harvester matched a recording of "Murphy" to the phrase "A
+// misspelling of Murphy". Every one of them opens with an article, and no
+// personal name does, so that is the test.
+const NOT_A_PERSON = /^(a|an|the)\s/i;
+
 /** How the namesake's name is said, in a real recording of it. */
 export function pronunciation(personFact, person, { base = '/' } = {}) {
   const a = personFact && personFact.audio;
   if (!a) return '';
-  const src = `${base}assets/audio/${escapeHtml(personFact.slug || '')}${escapeHtml(a.ext || '.ogg')}`;
+  if (NOT_A_PERSON.test(String(person || '').trim())) return '';
+  // The file on disk is named for the person, not stored on the record — the
+  // harvester writes assets/audio/<personSlug>.<ext>. Reading a `slug` field
+  // that was never written produced `/assets/audio/.ogg` on every page.
+  const src = `${base}assets/audio/${escapeHtml(personSlug(person))}${escapeHtml(a.ext || '.ogg')}`;
   return `        <div class="pronounce">
           <button class="pron-btn" type="button" data-audio="${src}" aria-label="Hear ${escapeHtml(person)} pronounced">
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
