@@ -52,14 +52,14 @@ html[data-theme="light"] body{background-image:radial-gradient(1100px 620px at 8
    (mean lift is ~rgb(4,4,4)) and no corner reads warmer than another — the
    exact failure the gradient had. Fixed, so it sits still while the page
    scrolls, like grain in the paper rather than printed on it. */
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.07;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:200px 200px}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.15;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px 180px}
 /* On cream the same grain reads as the paper stock it is imitating, a touch
    stronger because a light field hides it. */
-html[data-theme="light"] body::before{opacity:.055}
+html[data-theme="light"] body::before{opacity:.1}
 /* Grain is decoration; anyone who asked for less motion/effect keeps a clean field. */
-@media(prefers-reduced-motion:reduce){body::before{opacity:.035}}
+@media(prefers-reduced-motion:reduce){body::before{opacity:.08}}
 .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
 /* wide shell for the law page: pushes the rails out toward the screen edges and
    frees a roomy centre column between them */

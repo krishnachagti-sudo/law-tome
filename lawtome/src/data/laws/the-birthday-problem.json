@@ -2,11 +2,16 @@
   "no": "177",
   "slug": "the-birthday-problem",
   "name": "The Birthday Problem",
-  "aliases": ["The birthday paradox"],
+  "aliases": [
+    "The birthday paradox",
+    "The Birthday Paradox",
+    "The birthday problem",
+    "The birthday coincidence"
+  ],
   "statement": "In a group of just 23 people, two probably share a birthday.",
   "statementAccent": "just 23 people, two probably share a birthday",
-  "meaning": "With only 23 people the chance that some two of them share a birthday already exceeds a half; by 70 it is virtually certain. It feels impossible, which is why it is called a paradox, but the mathematics is exact — the surprise is entirely psychological.",
-  "mechanism": "The trick is that it counts pairs, not people. A group of 23 offers not 23 chances of a match but 253 pairs, each a chance for a coincidence. You compute it by the complement — one minus the probability that all birthdays differ — which for 23 people works out to about 50.7 percent. Because collisions become likely once the group size nears the square root of the number of possible birthdays, and the square root of 365 is about 19, the threshold falls near 23.",
+  "meaning": "The birthday paradox is the surprising fact that in a group of only 23 people the probability that at least two share a birthday is already greater than one half, about 50.7 percent, and by 70 people it is around 99.9 percent. It is called a paradox not because it is self-contradictory but because it clashes so sharply with intuition: most people guess you would need something closer to half of 365. The result is a staple lesson in how badly human intuition handles combinations and probabilities, and it has a serious edge in cryptography, where the same counting underlies attacks on hash functions.",
+  "mechanism": "The key is that the comparison is over pairs, not people. With 23 people there are 23 times 22 divided by 2, or 253 distinct pairs, and each pair is a separate chance for a match. The probability is easiest to compute by its complement: work out the chance that all 23 birthdays are different, by multiplying 365 over 365, times 364 over 365, and so on down, which comes to about 0.4927, and subtract from one to get roughly 0.5073. The confusion arises because people instinctively solve a different problem, whether anyone shares their own particular birthday, which really would need about 253 other people to reach even odds.",
   "examples": [
     {
       "tag": "The 23 threshold",
@@ -31,25 +36,61 @@
       "text": "The cryptographic application: collisions among values drawn from a large space become likely near the square root of its size, setting the required length of hash functions."
     }
   ],
-  "whyItMatters": "It is the classic demonstration that coincidences are far more likely than intuition allows, because we underestimate how many pairs a group contains. Beyond the party trick, its square-root mathematics governs hash-collision security across cryptography.",
+  "whyItMatters": "The birthday paradox is one of the clearest demonstrations that human intuition systematically underestimates the likelihood of coincidences, because we think in terms of individuals rather than the far more numerous pairs. Beyond its value as a teaching example in probability, it has concrete consequences in computer science and cryptography, where the birthday bound sets the security margin of hash functions and dictates that collision resistance requires roughly twice the output length of preimage resistance. It is a small puzzle with a long reach into how we reason about chance and how we secure information.",
   "working": [
-    {"lead": "Count pairs, not people", "text": "gauge coincidence likelihood by the number of pairs, which grows with the square of the group size, not by the head count."},
-    {"lead": "Use the square-root rule of thumb", "text": "expect collisions to become likely once a sample nears the square root of the number of possible categories."},
-    {"lead": "Size hashes against the birthday bound", "text": "in cryptography, choose hash lengths so that the square-root collision cost stays infeasible."}
+    {
+      "lead": "Count pairs, not people",
+      "text": "gauge coincidence likelihood by the number of pairs, which grows with the square of the group size, not by the head count."
+    },
+    {
+      "lead": "Use the square-root rule of thumb",
+      "text": "expect collisions to become likely once a sample nears the square root of the number of possible categories."
+    },
+    {
+      "lead": "Size hashes against the birthday bound",
+      "text": "in cryptography, choose hash lengths so that the square-root collision cost stays infeasible."
+    }
   ],
-  "limits": "The standard result assumes 365 equally likely, independent birthdays and ignores leap years and twins. Real birthday distributions are slightly uneven, but that only increases the collision chance, so the uniform assumption gives a conservative, lowest-case estimate. It is a correct, provable result, not a fallacy — the 'paradox' is only that it defies intuition, a veridical paradox rather than a flawed argument.",
-  "misreadings": "It is not asking whether someone matches your birthday — that would need far more people — but whether any pair among the group matches, which is why 23 suffices. And it is not a trick or a fallacy: the mathematics is exact, and the surprise is purely psychological.",
+  "limits": "The classic figures assume all 365 days are equally likely, that birthdays are independent, and that leap-day births are ignored. Real birthdays are not perfectly uniform, but any unevenness only makes shared birthdays slightly more likely, never less, so 23 is if anything a conservative threshold. The result is exact within these idealisations and shifts only marginally in the real world. The paradox is a statement about the probability of some shared birthday among any pair, and its figures do not transfer to the different question of matching one particular, fixed birthday.",
+  "misreadings": "It does not say 23 people are enough for someone to share your birthday; that far rarer event needs about 253 people, and confusing the two is the heart of the illusion. It does not require anywhere near 183 people, half of 365, which is the wrong intuition it corrects. And non-uniform real-world birthdays do not weaken the effect but slightly strengthen it, so the everyday world makes coincidences a touch more common, not less.",
   "origin": "A classic result of elementary probability with no single clean originator: the problem is generally attributed to Harold Davenport around 1927, though he did not publish it, and the first published version was by Richard von Mises in 1939.",
   "category": "statistics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1939,
   "sources": [
-    {"text": "Birthday problem, Wikipedia. — the 23/70/367 figures, the pair-counting insight, and the Davenport/von Mises attribution.", "url": "https://en.wikipedia.org/wiki/Birthday_problem", "type": "secondary"},
-    {"text": "Birthday attack, Wikipedia. — the cryptographic application and the square-root birthday bound.", "url": "https://en.wikipedia.org/wiki/Birthday_attack", "type": "secondary"}
+    {
+      "text": "Birthday problem, Wikipedia. — the 23/70/367 figures, the pair-counting insight, and the Davenport/von Mises attribution.",
+      "url": "https://en.wikipedia.org/wiki/Birthday_problem",
+      "type": "secondary"
+    },
+    {
+      "text": "Birthday attack, Wikipedia. — the cryptographic application and the square-root birthday bound.",
+      "url": "https://en.wikipedia.org/wiki/Birthday_attack",
+      "type": "secondary"
+    },
+    {
+      "text": "Birthday problem, Encyclopaedia Britannica. — independent confirmation of the 50.7 percent at 23 and the complement method.",
+      "url": "https://www.britannica.com/science/birthday-problem",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Birthday_problem",
   "related": [
-    {"slug": "the-pigeonhole-principle", "kind": "kindred"}
+    {
+      "slug": "the-coupon-collectors-problem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-law-of-truly-large-numbers",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-pigeonhole-principle",
+      "kind": "kindred"
+    }
+  ],
+  "redirectFrom": [
+    "laws/the-birthday-paradox/"
   ]
 }

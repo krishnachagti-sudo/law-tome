@@ -2,7 +2,10 @@
   "no": "719",
   "slug": "the-principal-agent-problem",
   "name": "The Principal-Agent Problem",
-  "aliases": ["The agency problem", "Agency dilemma"],
+  "aliases": [
+    "The agency problem",
+    "Agency dilemma"
+  ],
   "statement": "When one person acts for another whose interests differ and whose watching is imperfect, the agent may serve themselves.",
   "statementAccent": "the agent may serve themselves",
   "meaning": "The principal-agent problem, or agency problem, arises when one party, the agent, is able to make decisions or take actions on behalf of another, the principal, but the agent's interests are not fully aligned with the principal's and the principal cannot perfectly observe or control the agent's behaviour. Under this combination of conflicting incentives and asymmetric information, the agent may act in their own interest rather than the principal's. The problem is central to economics, political science, and organizational theory. Stephen Ross gave an early formal statement in 1973, and Michael Jensen and William Meckling's influential 1976 paper analysed agency costs and ownership structure in the theory of the firm. The classic example is the relationship between a company's shareholders, the principals, and its managers, the agents, who may pursue perks or empire-building rather than shareholder value; similar dynamics arise between voters and politicians, clients and lawyers, and patients and doctors.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The principal-agent problem is a cornerstone of modern economics and a central concern of corporate governance, contract theory, organizational economics, and public choice. It explains why delegation, indispensable in firms, governments, and professions, is inherently fraught, and why so much institutional design, from executive compensation and boards of directors to auditing, disclosure rules, and performance contracts, exists to align the interests of agents with those of principals. The framework illuminates conflicts throughout the economy and polity: between owners and managers, voters and elected officials, insurers and the insured, employers and employees. By naming the twin difficulties of conflicting incentives and imperfect observation, and the agency costs they generate, it provides a unifying lens for understanding how relationships of delegation are structured, monitored, and incentivised across countless settings.",
   "working": [
-    {"lead": "Delegate to an agent", "text": "have one party act on behalf of another whose interests differ and whose actions cannot be perfectly observed."},
-    {"lead": "Recognise the gap", "text": "note that conflicting incentives plus information asymmetry let the agent pursue their own interest, imposing agency costs."},
-    {"lead": "Align and monitor", "text": "use incentive contracts like performance pay and stock options, plus monitoring by boards and audits, to narrow the gap."}
+    {
+      "lead": "Delegate to an agent",
+      "text": "have one party act on behalf of another whose interests differ and whose actions cannot be perfectly observed."
+    },
+    {
+      "lead": "Recognise the gap",
+      "text": "note that conflicting incentives plus information asymmetry let the agent pursue their own interest, imposing agency costs."
+    },
+    {
+      "lead": "Align and monitor",
+      "text": "use incentive contracts like performance pay and stock options, plus monitoring by boards and audits, to narrow the gap."
+    }
   ],
   "limits": "The principal-agent framework identifies a pervasive tension but does not imply agents always shirk or exploit principals; reputation, professional norms, intrinsic motivation, and well-designed incentives frequently keep interests reasonably aligned. The remedies carry their own costs and side effects: performance pay can encourage gaming or excessive risk-taking, and monitoring consumes resources, so some residual agency cost typically remains. The model also assumes interests can be cleanly separated and contracts written around observable measures, whereas real relationships involve incomplete contracts and hard-to-measure goals. So the problem is a lens for understanding delegation and designing institutions rather than a prediction that delegation always fails, and the best arrangements manage agency costs rather than eliminate them.",
   "misreadings": "The principal-agent problem is not a claim that agents are inherently dishonest; it follows from the structure of conflicting incentives and imperfect observation even among well-meaning people. It is not solved simply by writing a contract, since contracts are incomplete and monitoring is costly, so some residual loss remains. And aligning incentives is not a cure-all: performance pay can be gamed or induce risk-taking, so treating incentive schemes as fully resolving the problem, or agents as reliably self-serving, both oversimplify a framework about managing, not abolishing, the costs of delegation.",
@@ -46,12 +58,26 @@
   "coinedYear": 1976,
   "namedAfter": null,
   "sources": [
-    {"text": "Principal-agent problem, Wikipedia. — the conflict of interest and information asymmetry between principal and agent, moral hazard and adverse selection, agency costs, the shareholders-versus-managers example, the Ross 1973 and Jensen and Meckling 1976 contributions, and the incentive-alignment and monitoring solutions.", "url": "https://en.wikipedia.org/wiki/Principal%E2%80%93agent_problem", "type": "secondary"},
-    {"text": "Jensen and Meckling, Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure, Journal of Financial Economics (1976). — the foundational analysis of agency costs and ownership structure.", "url": "https://ideas.repec.org/a/eee/jfinec/v3y1976i4p305-360.html", "type": "primary"}
+    {
+      "text": "Principal-agent problem, Wikipedia. — the conflict of interest and information asymmetry between principal and agent, moral hazard and adverse selection, agency costs, the shareholders-versus-managers example, the Ross 1973 and Jensen and Meckling 1976 contributions, and the incentive-alignment and monitoring solutions.",
+      "url": "https://en.wikipedia.org/wiki/Principal%E2%80%93agent_problem",
+      "type": "secondary"
+    },
+    {
+      "text": "Jensen and Meckling, Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure, Journal of Financial Economics (1976). — the foundational analysis of agency costs and ownership structure.",
+      "url": "https://ideas.repec.org/a/eee/jfinec/v3y1976i4p305-360.html",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Principal%E2%80%93agent_problem",
   "related": [
-    {"slug": "the-lemons-problem", "kind": "kindred"},
-    {"slug": "moral-hazard", "kind": "kindred"}
+    {
+      "slug": "the-market-for-lemons",
+      "kind": "kindred"
+    },
+    {
+      "slug": "moral-hazard",
+      "kind": "kindred"
+    }
   ]
 }

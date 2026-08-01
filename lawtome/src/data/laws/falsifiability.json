@@ -5,7 +5,9 @@
   "aliases": [
     "Falsificationism",
     "Refutability",
-    "Popper's criterion"
+    "Popper's criterion",
+    "Popper's Falsifiability",
+    "The criterion of demarcation"
   ],
   "statement": "A theory is scientific only if it forbids something: if some possible observation could prove it wrong.",
   "statementAccent": "only if it forbids something",
@@ -52,7 +54,7 @@
   ],
   "limits": "Falsifiability in its naive form faces serious objections, several rooted in the Duhem-Quine problem. Because a hypothesis is never tested in isolation but only together with auxiliary assumptions about instruments and conditions, a failed prediction never tells us with certainty which element is at fault, so a falsification can always be deflected by blaming an auxiliary rather than the target theory, and there is always room for ad hoc rescue. Thomas Kuhn observed that scientists do not in fact abandon a governing theory at the first anomaly, and arguably should not, since promising theories often face unsolved problems early on. The theory-ladenness of observation complicates the idea of a clean refuting observation, since what we take ourselves to observe is shaped by theory. Popper himself refined the view, distinguishing scientific from ad hoc modifications and developing notions of corroboration and degrees of testability, and later philosophers such as Lakatos tried to repair falsificationism. Whether probabilistic and statistical hypotheses can be strictly falsified, and whether the criterion is entirely adequate, remain debated.",
   "misreadings": "Falsifiability is not the claim that scientific theories are false, but that they must be refutable in principle, capable of clashing with some possible observation. It is not verificationism, since Popper denied that theories are ever verified or proven, holding they are only corroborated or falsified. And an unfalsifiable theory is not thereby meaningless or worthless, only unscientific by Popper's criterion, so treating falsifiability as branding science false, as a form of confirmation, or as a test of meaning, misreads Popper's demarcation criterion.",
-  "origin": "Karl Popper's criterion, set out in Logik der Forschung (1934), that a theory is scientific if and only if it is falsifiable, proposed as a solution to the demarcation problem in opposition to inductive verification.",
+  "origin": "Proposed by Karl Popper in 'Logik der Forschung' (1934, imprint 1935; translated as 'The Logic of Scientific Discovery', 1959) and developed in 'Conjectures and Refutations' (1963), against the verificationism of the Vienna Circle.",
   "category": "philosophy",
   "reliability": "Contested",
   "provenance": "canon",
@@ -68,6 +70,11 @@
       "text": "Karl Popper: Philosophy of Science, Internet Encyclopedia of Philosophy. — falsifiability as the mark of the scientific, the Einstein light-bending example, the degeneration of Marxism into an unfalsifiable theory through ad hoc rescues, and the criticisms including the Duhem-Quine problem and theory-ladenness.",
       "url": "https://iep.utm.edu/pop-sci/",
       "type": "secondary"
+    },
+    {
+      "text": "Science and Pseudo-Science, Stanford Encyclopedia of Philosophy. — the demarcation criterion, its criticisms, and the unresolved status of the problem.",
+      "url": "https://plato.stanford.edu/entries/pseudo-science/",
+      "type": "secondary"
     }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Falsifiability",
@@ -77,20 +84,19 @@
       "kind": "consequence"
     },
     {
-      "slug": "the-problem-of-induction",
-      "kind": "cause"
-    },
-    {
       "slug": "the-duhem-quine-thesis",
       "kind": "tension"
     },
     {
-      "slug": "verificationism",
-      "kind": "tension"
+      "slug": "the-problem-of-induction",
+      "kind": "cause"
     },
     {
-      "slug": "poppers-falsifiability",
-      "kind": "near-twin"
+      "slug": "verificationism",
+      "kind": "tension"
     }
+  ],
+  "redirectFrom": [
+    "laws/poppers-falsifiability/"
   ]
 }

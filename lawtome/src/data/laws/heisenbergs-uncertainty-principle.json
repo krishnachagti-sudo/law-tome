@@ -4,8 +4,8 @@
   "name": "Heisenberg's Uncertainty Principle",
   "statement": "The more precisely you fix a particle's position, the less its momentum can be defined.",
   "statementAccent": "the less its momentum can be defined",
-  "meaning": "There is a fundamental limit to how precisely certain complementary pairs of properties — most famously a particle's position and momentum — can both be defined at once. The product of their uncertainties cannot fall below a fixed minimum, roughly half the reduced Planck constant. A particle prepared with a sharp position has a genuinely undefined momentum, and the reverse.",
-  "mechanism": "It is rooted in the wave nature of matter. Position and momentum are conjugate variables related by a Fourier transform: a wavefunction sharply localised in position is necessarily spread out in momentum, and vice versa. Formally, the bound follows from the way the two observables fail to commute. The rigorous principle concerns the preparation of quantum states, not clumsy measurement — the limit holds even for a particle that has never been touched by any instrument.",
+  "meaning": "The Heisenberg uncertainty principle holds that certain pairs of physical properties, called conjugate variables, cannot both be defined to arbitrary precision at the same time. For the most famous pair, position and momentum, the product of the two uncertainties has a nonzero lower bound: the spread in position times the spread in momentum is at least the reduced Planck constant divided by two. Crucially this is not a limit on our instruments but an intrinsic feature of quantum states themselves, which simply do not possess sharply defined values of both quantities at once. It is one of the deepest and most misunderstood results in all of physics.",
+  "mechanism": "The principle follows from the wave nature of matter. A quantum state's descriptions in position and in momentum are Fourier transforms of one another, and a function sharply peaked in one representation is necessarily spread out in the other, so localising a particle in space forces its momentum to fan out. Formally, the position and momentum operators do not commute, their commutator being the imaginary unit times the reduced Planck constant, and non-commuting observables cannot share a common set of definite-valued states. Werner Heisenberg's original 1927 argument used a gamma-ray microscope thought experiment and gave only an order-of-magnitude relation; Earle Kennard and Hermann Weyl then supplied the rigorous inequality in terms of standard deviations.",
   "examples": [
     {
       "tag": "Position and momentum",
@@ -30,7 +30,7 @@
       "text": "A related inequality tying the spread in energy to a characteristic time, but with a different logical status, since time is a parameter in quantum mechanics rather than an observable."
     }
   ],
-  "whyItMatters": "It is a defining feature of quantum mechanics, marking a fundamental break from classical physics: nature itself, not our instruments, sets a limit on how sharply complementary quantities can be defined. It explains the stability and size of atoms, the energy of the quantum vacuum, and the widths of spectral lines.",
+  "whyItMatters": "The uncertainty principle is a cornerstone of quantum mechanics, marking a fundamental break from the classical assumption that a particle has, at every instant, a definite position and momentum waiting to be measured. It underlies zero-point energy, the stability and size of atoms, the natural width of spectral lines, and the very limits of what can be known about a physical system. More broadly, it reshaped the philosophy of science, replacing a deterministic clockwork universe with one in which certain complementary properties are, at bottom, not simultaneously definite.",
   "working": [
     {
       "lead": "Trade one precision for the other",
@@ -45,8 +45,8 @@
       "text": "understand the conjugate quantity as genuinely undefined, not merely hidden, unlike ordinary classical ignorance."
     }
   ],
-  "limits": "The single most important caveat is that the rigorous principle is about intrinsic statistical spread, not measurement disturbance. Heisenberg's original 1927 picture of a microscope knocking the electron — the 'observer effect' — is a distinct idea, and modern work shows measurement error-disturbance relations are separate from the fundamental preparation bound. The energy-time relation has a different status, since time is not an observable in standard quantum mechanics. And the principle is not about experimental clumsiness: no improvement in instruments can beat the limit.",
-  "misreadings": "It is not the observer effect — it does not merely say that measuring a particle disturbs it; the limit holds for particles never measured, arising from the quantum state itself. And it is fundamental, not instrumental: better technology cannot evade it, and the conjugate quantity is undefined, not just unknown.",
+  "limits": "The principle constrains only specific conjugate pairs, not every quantity, so individual observables can each be known precisely, just not both members of a conjugate pair at once. The rigorous position-momentum bound is a statement about the intrinsic statistical spread of a state, distinct from the separate relation describing how a measurement disturbs a system, and conflating the two has caused lasting confusion. The energy-time form is legitimate but rests on subtler foundations, since time is not an operator in the ordinary theory. And the precise bound is the reduced Planck constant over two, which Heisenberg's original heuristic argument, giving only an order-of-magnitude relation, did not itself establish.",
+  "misreadings": "It is not merely the observer effect, the idea that measuring disturbs the system; the rigorous principle is about the intrinsic spread of quantum states and holds even for perfect instruments, since no state violating it can even be prepared. It is not measurement error or instrument limitation. It does not say everything is uncertain, only that specific conjugate pairs cannot be sharp together. And the precise one-half-times-reduced-Planck bound comes from Kennard and Weyl, not from Heisenberg's original microscope argument, which gave only a rough relation.",
   "origin": "Introduced by Werner Heisenberg in a 1927 paper in Zeitschrift fur Physik, where he argued it semi-quantitatively via a microscope thought experiment; Earle Kennard gave the rigorous inequality the same year, and Howard Robertson generalised it in 1929.",
   "category": "physics",
   "reliability": "Empirical",
@@ -68,12 +68,20 @@
   "sameAs": "https://en.wikipedia.org/wiki/Uncertainty_principle",
   "related": [
     {
-      "slug": "the-pauli-exclusion-principle",
-      "kind": "kindred"
+      "slug": "the-bohr-model",
+      "kind": "tension"
     },
     {
-      "slug": "the-heisenberg-uncertainty-principle",
-      "kind": "near-twin"
+      "slug": "the-pauli-exclusion-principle",
+      "kind": "kindred"
     }
+  ],
+  "aliases": [
+    "The Heisenberg Uncertainty Principle",
+    "The uncertainty principle",
+    "Indeterminacy principle"
+  ],
+  "redirectFrom": [
+    "laws/the-heisenberg-uncertainty-principle/"
   ]
 }

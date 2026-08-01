@@ -4,12 +4,14 @@
   "name": "Parkinson's Law of Triviality",
   "aliases": [
     "Bikeshedding",
-    "The bike-shed effect"
+    "The bike-shed effect",
+    "The Law of Triviality",
+    "Parkinson's law of triviality"
   ],
   "statement": "The time a committee spends on an item is inversely proportional to the money involved.",
   "statementAccent": "inversely proportional to the money involved",
-  "meaning": "Groups devote disproportionate time and energy to small, familiar, easy-to-grasp matters while waving through the genuinely important, costly, and complex ones. Effort is allocated in inverse proportion to actual stakes.",
-  "mechanism": "People weigh in on what they understand and feel qualified to judge. A multi-million-pound reactor is too technical for the average committee member to engage with, so they defer and approve it quickly. A bicycle shed is within everyone's comprehension — everyone can picture one — so everyone has an opinion and wants to leave a mark, and the trivial item swallows the meeting.",
+  "meaning": "The law of triviality holds that an organisation, especially a committee, devotes attention to an issue in inverse proportion to its actual importance or cost. Groups give disproportionate weight to trivial, easily grasped matters while under-scrutinising the important, complex, or expensive ones. In software culture the same pattern is called bikeshedding, from Parkinson's image of a committee waving through a nuclear reactor but bickering endlessly over a bicycle shed. A bike-shed discussion is one that consumes energy out of all proportion to its stakes.",
+  "mechanism": "The driving force is comprehensibility and the sense of competence it confers. A vast, technical, expensive item, a nuclear reactor, is beyond most committee members, so rather than engage they defer, assuming someone else checked the details. A trivial item, a bicycle shed or the coffee budget, is within everyone's grasp, so everyone feels qualified to weigh in and does. Because contributing an opinion is how members demonstrate diligence and belonging, the easy items lower the barrier to participation and attract a flood of it, while the consequential ones pass in near silence.",
   "examples": [
     {
       "tag": "The committee",
@@ -34,7 +36,7 @@
       "text": "The close relative: in any dispute the intensity of feeling is inversely proportional to the value of the issues at stake — which is why the trivial agenda item generates the most heat."
     }
   ],
-  "whyItMatters": "It explains a universal failure of meetings: the cheap, comprehensible item crowds out the expensive, consequential one, because scrutiny follows understanding rather than importance. Naming it lets a chair defend the decisions that matter from the ones everyone can weigh in on.",
+  "whyItMatters": "It explains how agendas get distorted so that low-stakes, high-comprehension items crowd out the high-stakes, high-complexity ones, degrading consequential decisions. Boards and committees can appear to exercise vigorous oversight of trivia while effectively rubber-stamping the choices that carry the real risk, precisely because those are hard to scrutinise. In engineering teams, naming the pattern as bikeshedding is itself a defence, letting maintainers recognise and shut down debate that has grown out of proportion to what is at stake.",
   "working": [
     {
       "lead": "Put a clock on the trivial",
@@ -49,8 +51,8 @@
       "text": "when a topic draws unusually broad participation, check whether it is drawing that energy because it matters or merely because it is easy to picture."
     }
   ],
-  "limits": "It began as satire, not measurement — the figures and timings are an illustrative anecdote, not data — and it is a caricature: real decision processes vary, and some apparently 'trivial' debates (a product name, a UI colour, a policy's wording) genuinely matter. It is nonetheless a widely-recognised organisational tendency with strong face validity. It is best read as a sharp observation about attention, not a quantified law.",
-  "misreadings": "It is not a claim that small things never matter, nor a licence to skip discussion of details. It is the observation that groups systematically over-weight the trivial because it is comprehensible — a prompt to ration attention by stakes, not by how easy something is to have an opinion about.",
+  "limits": "It is an illustrative heuristic, not a measured relationship: Parkinson wrote as a satirist, and the committee scene and its figures are a fictional illustration rather than data, so the 'inverse proportion' phrasing is rhetorical. Nor is disproportionate attention always irrational; small recurring costs, precedent-setting items, and morale can genuinely warrant discussion, and quick approval of a large item may reflect legitimate prior vetting rather than negligence. The effect is strongest where members lack expertise on the big item and feel accountable to be seen participating, and weaker where real expertise or clear ownership exists.",
+  "misreadings": "It is not the same as Parkinson's Law proper, that work expands to fill the time available; the two are distinct ideas from the same book. Bikeshedding is not old slang but a term traceable to Kamp's 1999 email, decades after Parkinson. The reactor, shed, and coffee figures are Parkinson's invented example, not a report of a real meeting. And the claim is about disproportionate attention, not that small matters are worthless.",
   "origin": "Stated by C. Northcote Parkinson in his 1957 book Parkinson's Law, or The Pursuit of Progress, in the essay 'High Finance, or the Point of Vanishing Interest' — a different essay from, and not to be confused with, his main law that work expands to fill the time available. The software term 'bikeshedding' comes from Poul-Henning Kamp's 1999 FreeBSD email.",
   "category": "management",
   "reliability": "Heuristic",
@@ -84,5 +86,8 @@
       "slug": "sayres-law",
       "kind": "kindred"
     }
+  ],
+  "redirectFrom": [
+    "laws/the-law-of-triviality/"
   ]
 }

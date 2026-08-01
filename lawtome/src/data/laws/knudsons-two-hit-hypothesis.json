@@ -4,7 +4,7 @@
   "name": "Knudson's Two-Hit Hypothesis",
   "statement": "Knudson's two-hit hypothesis holds that cancer arises from a tumor suppressor gene only after both of its alleles have been inactivated by separate mutational hits.",
   "statementAccent": "both of its alleles have been inactivated",
-  "meaning": "The hypothesis explains why some cancers, like retinoblastoma, appear earlier and more often bilaterally in hereditary cases than in sporadic ones. It proposes that a single functional copy of a tumour suppressor gene is normally sufficient to prevent tumour formation, so cancer requires loss of function in both copies.",
+  "meaning": "The hypothesis holds that both copies of a tumor-suppressor gene must be inactivated, by mutation or epigenetic silencing, before its protective function is lost. In inherited cancer syndromes one defective allele is present from birth, so a single additional somatic hit suffices. In sporadic cases both hits must occur independently in the same cell.",
   "mechanism": "In hereditary cases a child inherits one already-mutated allele in every cell (the first hit), so only one additional somatic mutation is needed to inactivate the second allele and trigger a tumour, allowing earlier and multifocal disease. In sporadic cases both inactivating mutations must occur by chance in the same somatic cell, which is statistically rarer and later in onset, typically producing a single unilateral tumour.",
   "examples": [
     {
@@ -39,6 +39,11 @@
       "text": "\"Retinoblastoma: From the Two-Hit Hypothesis...,\" Cancer Research (AACR). — the retinoblastoma biology and the identification of the RB1 tumour suppressor.",
       "url": "https://aacrjournals.org/cancerres/article/67/16/7547/533292/Retinoblastoma-From-the-Two-Hit-Hypothesis-to",
       "type": "secondary"
+    },
+    {
+      "text": "Wikipedia's \"Alfred G. Knudson\" article, confirming his dates and 1971 formulation of the hypothesis from retinoblastoma statistics — supports the attribution.",
+      "url": "https://en.wikipedia.org/wiki/Alfred_G._Knudson",
+      "type": "secondary"
     }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Two-hit_hypothesis",
@@ -46,10 +51,12 @@
     {
       "slug": "the-warburg-effect",
       "kind": "kindred"
-    },
-    {
-      "slug": "the-knudson-two-hit-hypothesis",
-      "kind": "near-twin"
     }
+  ],
+  "aliases": [
+    "The Knudson Two-Hit Hypothesis"
+  ],
+  "redirectFrom": [
+    "laws/the-knudson-two-hit-hypothesis/"
   ]
 }

@@ -4,7 +4,9 @@
   "name": "The Competitive Exclusion Principle",
   "aliases": [
     "Gause's law",
-    "One niche, one species"
+    "One niche, one species",
+    "Gause's Law",
+    "The competitive exclusion principle"
   ],
   "statement": "Two species living the exact same way cannot coexist; one wins out.",
   "statementAccent": "one wins out",
@@ -49,9 +51,9 @@
       "text": "read apparent violations, like the plankton, as signs that the principle's assumptions of equilibrium and few resources do not hold."
     }
   ],
-  "limits": "The principle applies to stable, equilibrium conditions and to truly identical niches; it does not forbid coexistence in general. Niche differentiation, disturbance, predation, spatial heterogeneity, and fluctuating environments all readily permit competing species to persist, and the real world shows widespread coexistence, with clean exclusion rarely observed in nature. There is also a genuine testability problem: because the same niche is hard to define and measure, defining niches by observed coexistence can make the principle circular and hard to falsify.",
+  "limits": "Real ecosystems routinely show more coexisting competitors than the 'one resource, one species' bound predicts — the paradox of the plankton is the canonical counterexample. The strict principle holds only under idealised, constant, single-resource, equilibrium conditions; in the real world, spatial and temporal heterogeneity, disturbance, predation, and multiple co-limiting resources all enable coexistence. Because it is easy to rescue by invoking an unmeasured niche difference, some critics regard it as bordering on unfalsifiable in field settings — better treated as a theoretical benchmark than an ironclad law.",
   "misreadings": "It does not say competing species can never coexist — only that species with complete niche overlap under constant conditions cannot, while partial overlap plus differentiation, the norm in nature, permits it. Gause did not coin the law; he supplied the key experiments, and the term came later from Hardin. And the paradox of the plankton does not disprove the principle; it shows that its assumptions rarely hold, which is why exclusion is seldom seen.",
-  "origin": "Rooted in Darwin and in Grinnell's field observations, with the mathematical basis in the Lotka-Volterra competition equations; its empirical touchstone is Gause's 1934 'The Struggle for Existence,' and the term competitive exclusion principle was coined by Garrett Hardin in Science in 1960.",
+  "origin": "Demonstrated experimentally by the Soviet biologist Georgy Gause with Paramecium, published in 'The Struggle for Existence' (1934), building on the Lotka–Volterra competition models and earlier ideas from Joseph Grinnell. The name 'competitive exclusion principle' and the phrase 'complete competitors cannot coexist' were coined by Garrett Hardin in Science (1960).",
   "category": "biology",
   "reliability": "Empirical",
   "provenance": "canon",
@@ -72,10 +74,19 @@
       "text": "Hutchinson, \"The Paradox of the Plankton,\" The American Naturalist 95(882):137-145 (1961). — the apparent violation and its proposed resolutions.",
       "url": "https://userpages.umbc.edu/~rostamia/math481/1961-diversity-hutchinson.pdf",
       "type": "primary"
+    },
+    {
+      "text": "Hardin, G. (1960). \"The Competitive Exclusion Principle.\" Science, 131(3409), 1292–1297.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14399717/",
+      "type": "primary"
     }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Competitive_exclusion_principle",
   "related": [
+    {
+      "slug": "liebigs-law-of-the-minimum",
+      "kind": "kindred"
+    },
     {
       "slug": "lotka-volterra-equations",
       "kind": "cause"
@@ -84,5 +95,8 @@
       "slug": "the-allee-effect",
       "kind": "kindred"
     }
+  ],
+  "redirectFrom": [
+    "laws/gauses-law/"
   ]
 }
