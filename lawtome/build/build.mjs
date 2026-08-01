@@ -216,7 +216,7 @@ export async function buildSite(opts) {
   // plus a /compare/ hub. High-intent long-tail capture ("Occam vs Hanlon"); pure
   // recombination of each law's verified fields — nothing is authored per pair.
   const compares = comparePairs(laws);
-  writes.push(writePage(join(out, 'compare', 'index.html'), compareHubPage(compares, { base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'compare', 'index.html'), compareHubPage(compares, { base, origin, count: publishedCount, images })));
   for (const pair of compares) {
     writes.push(writePage(join(out, 'compare', pair.slug, 'index.html'), comparePage(pair, { base, origin, categories, count: publishedCount })));
   }
@@ -237,7 +237,7 @@ export async function buildSite(opts) {
     join(out, 'reliability', 'index.html'),
     reliabilityHubPage(
       presentTiers.map((v) => ({ value: v, count: membersByTier.get(v).length, laws: membersByTier.get(v) })),
-      { base, origin, count: publishedCount },
+      { base, origin, count: publishedCount, images },
     ),
   ));
   for (const tier of presentTiers) {
@@ -257,7 +257,7 @@ export async function buildSite(opts) {
   catch { rawCollections = []; }
   const { collections, dropped: droppedColl } = resolveCollections(rawCollections, byslug);
   if (droppedColl.length) console.warn(`collections: dropped ${droppedColl.length} unknown slug(s): ${droppedColl.join(', ')}`);
-  writes.push(writePage(join(out, 'collections', 'index.html'), collectionsIndexPage(collections, { base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'collections', 'index.html'), collectionsIndexPage(collections, { base, origin, count: publishedCount, images })));
   for (const c of collections) {
     writes.push(writePage(join(out, 'collections', c.slug, 'index.html'), collectionPage(c, { base, origin, count: publishedCount, images })));
   }
@@ -269,7 +269,7 @@ export async function buildSite(opts) {
   // Situations: a visible reverse-lookup ("what's the law for…?") built from the
   // same curated map folded into the search index. Emitted unconditionally (empty
   // state when a corpus has none), so the footer link never dangles.
-  writes.push(writePage(join(out, 'situations', 'index.html'), situationsPage(situations, { base, origin, count: publishedCount, categories })));
+  writes.push(writePage(join(out, 'situations', 'index.html'), situationsPage(situations, { base, origin, count: publishedCount, categories, images })));
 
   // Marketing: audience ("for …") pages, a features tour, and a manifesto.
   // Audiences are curated persona shortlists (optional file; unknown slugs dropped).
@@ -279,7 +279,7 @@ export async function buildSite(opts) {
   catch { rawAudiences = []; }
   const { audiences, dropped: droppedAud } = resolveAudiences(rawAudiences, byslug);
   if (droppedAud.length) console.warn(`audiences: dropped ${droppedAud.length} unknown slug(s): ${droppedAud.join(', ')}`);
-  writes.push(writePage(join(out, 'for', 'index.html'), audiencesIndexPage(audiences, { base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'for', 'index.html'), audiencesIndexPage(audiences, { base, origin, count: publishedCount, images })));
   for (const a of audiences) {
     writes.push(writePage(join(out, 'for', a.slug, 'index.html'), audiencePage(a, { base, origin, count: publishedCount, images })));
   }

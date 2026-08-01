@@ -13,7 +13,7 @@
 // rather than a number you have to click.
 
 import {
-  head, sprite, header, footer, escapeHtml,
+  head, sprite, header, footer, escapeHtml, figureStrip,
   reliabilityClass, reliabilitySlug, RELIABILITY_TIERS, RELIABILITY_NOTE,
 } from './partials.mjs';
 import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
@@ -47,7 +47,7 @@ function samples(laws, n) {
  * @param {string} [o.origin=''] absolute origin.
  * @param {number|string} [o.count] published-law count for the masthead.
  */
-export function reliabilityHubPage(tiers = [], { base = '/', origin = '', count } = {}) {
+export function reliabilityHubPage(tiers = [], { base = '/', origin = '', count, images } = {}) {
   const present = new Map((Array.isArray(tiers) ? tiers : []).map((t) => [t.value, t]));
   // Canonical order, keeping only tiers that actually have members.
   const ordered = RELIABILITY_TIERS
@@ -98,7 +98,7 @@ ${ex.map((l) => `          <li><a href="${base}laws/${escapeHtml(l.slug)}/">${es
         </div>
         <p class="rel-sec-note">${escapeHtml(RELIABILITY_NOTE[t.value] || '')}.</p>
         <p class="rel-sec-test"><span class="rel-test-k">What it takes</span> ${escapeHtml(TIER_TEST[t.value] || '')}</p>
-${list}
+${figureStrip(images, samples(t.laws, 60), { base, limit: 10, min: 4 })}${list}
         <p class="rel-sec-more"><a class="ghost" href="${href(t.value)}"><i class="ti ti-arrow-right" aria-hidden="true"></i> Browse all ${t.count} ${escapeHtml(t.value)} laws</a></p>
       </section>`;
   }).join('\n');

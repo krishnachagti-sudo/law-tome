@@ -5,7 +5,7 @@
 // every law is an existing, sourced entry.
 
 import { head, sprite, header, footer, escapeHtml, lawCard, figureStrip } from './partials.mjs';
-import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
+import { hubHead, hubNav, hubFaq, hubJsonLd, hubTiles, dominantField } from './hub.mjs';
 
 /**
  * The hub: one panel per audience.
@@ -15,21 +15,26 @@ import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
  * recommendation IS the content and a reader deciding which persona is theirs
  * should be able to judge it from the names.
  */
-export function audiencesIndexPage(audiences = [], { base = '/', origin = '', count } = {}) {
+export function audiencesIndexPage(audiences = [], { base = '/', origin = '', count, images } = {}) {
   const rows = Array.isArray(audiences) ? audiences : [];
   const total = rows.reduce((n, a) => n + a.laws.length, 0);
   const cards = rows.length
-    ? rows.map((a) => {
+    ? rows.map((a, i) => {
       const laws = a.laws || [];
       const shown = laws.slice(0, 8);
       const rest = laws.length - shown.length;
-      return `      <article class="aud-card" id="a-${escapeHtml(a.slug)}">
-        <h2 class="aud-h"><a href="${base}for/${escapeHtml(a.slug)}/">${escapeHtml(a.title)}</a></h2>
-        <p class="aud-blurb">${escapeHtml(a.problem)}</p>
-        <ul class="coll-laws">
-${shown.map((l) => `          <li><a href="${base}laws/${escapeHtml(l.slug)}/">${escapeHtml(l.name)}</a></li>`).join('\n')}
-${rest > 0 ? `          <li class="coll-rest"><a href="${base}for/${escapeHtml(a.slug)}/">+${rest} more</a></li>\n` : ''}        </ul>
-        <p class="aud-count"><a class="ghost" href="${base}for/${escapeHtml(a.slug)}/"><i class="ti ti-arrow-right" aria-hidden="true"></i> All ${laws.length} laws<span class="sr-only"> for ${escapeHtml(a.who || a.title)}</span></a></p>
+      const art = hubTiles(images, laws, { base });
+      return `      <article class="hcard${art ? '' : ' hcard--noart'}" data-c="${escapeHtml(dominantField(laws))}" id="a-${escapeHtml(a.slug)}">
+        <a class="hcard-hit" href="${base}for/${escapeHtml(a.slug)}/" aria-label="${escapeHtml(a.title)} — ${laws.length} laws"></a>
+${art}        <span class="hcard-no" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+        <div class="hcard-body">
+          <h2 class="hcard-h">${escapeHtml(a.title)}</h2>
+          <p class="hcard-blurb">${escapeHtml(a.problem)}</p>
+          <ul class="coll-laws">
+${shown.map((l) => `            <li><a href="${base}laws/${escapeHtml(l.slug)}/">${escapeHtml(l.name)}</a></li>`).join('\n')}
+${rest > 0 ? `            <li class="coll-rest"><a href="${base}for/${escapeHtml(a.slug)}/">+${rest} more</a></li>\n` : ''}          </ul>
+          <p class="hcard-cta"><span class="hcard-n">${laws.length}</span> laws <span class="hcard-arrow" aria-hidden="true">→</span></p>
+        </div>
       </article>`;
     }).join('\n')
     : '<div class="empty">No audiences yet.</div>';
@@ -64,7 +69,7 @@ ${hubHead({
     lede,
     stats: [[rows.length, 'reading lists'], [total, 'laws recommended']],
     base,
-  })}    <div class="aud-grid" data-reveal-stagger>
+  })}    <div class="hcard-grid" data-reveal-stagger>
 ${cards}
     </div>
 ${faq.html}${hubNav('for/', { base })}  </div>

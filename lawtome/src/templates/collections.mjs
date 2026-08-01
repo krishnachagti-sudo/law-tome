@@ -8,7 +8,7 @@
 // description), never invented facts about the laws themselves.
 
 import { head, sprite, header, footer, escapeHtml, lawCard, figureStrip } from './partials.mjs';
-import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
+import { hubHead, hubNav, hubFaq, hubJsonLd, hubTiles, dominantField } from './hub.mjs';
 
 /**
  * The hub: one panel per collection, linking to its page.
@@ -18,21 +18,26 @@ import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
  * the hub is a table of contents rather than a menu of closed doors, and the
  * law names it advertises are all links.
  */
-export function collectionsIndexPage(collections = [], { base = '/', origin = '', count } = {}) {
+export function collectionsIndexPage(collections = [], { base = '/', origin = '', count, images } = {}) {
   const rows = Array.isArray(collections) ? collections : [];
   const total = rows.reduce((n, c) => n + c.laws.length, 0);
   const cards = rows.length
-    ? rows.map((c) => {
+    ? rows.map((c, i) => {
       const laws = c.laws || [];
       const shown = laws.slice(0, 8);
       const rest = laws.length - shown.length;
-      return `      <article class="coll-card" id="c-${escapeHtml(c.slug)}">
-        <h2 class="coll-h"><a href="${base}collections/${escapeHtml(c.slug)}/">${escapeHtml(c.title)}</a></h2>
-        <p class="coll-blurb">${escapeHtml(c.blurb)}</p>
-        <ul class="coll-laws">
-${shown.map((l) => `          <li><a href="${base}laws/${escapeHtml(l.slug)}/">${escapeHtml(l.name)}</a></li>`).join('\n')}
-${rest > 0 ? `          <li class="coll-rest"><a href="${base}collections/${escapeHtml(c.slug)}/">+${rest} more</a></li>\n` : ''}        </ul>
-        <p class="coll-count"><a class="ghost" href="${base}collections/${escapeHtml(c.slug)}/"><i class="ti ti-arrow-right" aria-hidden="true"></i> All ${laws.length} laws<span class="sr-only"> in ${escapeHtml(c.title)}</span></a></p>
+      const art = hubTiles(images, laws, { base });
+      return `      <article class="hcard${art ? '' : ' hcard--noart'}" data-c="${escapeHtml(dominantField(laws))}" id="c-${escapeHtml(c.slug)}">
+        <a class="hcard-hit" href="${base}collections/${escapeHtml(c.slug)}/" aria-label="${escapeHtml(c.title)} — ${laws.length} laws"></a>
+${art}        <span class="hcard-no" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+        <div class="hcard-body">
+          <h2 class="hcard-h">${escapeHtml(c.title)}</h2>
+          <p class="hcard-blurb">${escapeHtml(c.blurb)}</p>
+          <ul class="coll-laws">
+${shown.map((l) => `            <li><a href="${base}laws/${escapeHtml(l.slug)}/">${escapeHtml(l.name)}</a></li>`).join('\n')}
+${rest > 0 ? `            <li class="coll-rest"><a href="${base}collections/${escapeHtml(c.slug)}/">+${rest} more</a></li>\n` : ''}          </ul>
+          <p class="hcard-cta"><span class="hcard-n">${laws.length}</span> laws <span class="hcard-arrow" aria-hidden="true">→</span></p>
+        </div>
       </article>`;
     }).join('\n')
     : '<div class="empty">No collections yet.</div>';
@@ -69,7 +74,7 @@ ${hubHead({
     lede,
     stats: [[rows.length, 'collections'], [total, 'laws gathered']],
     base,
-  })}    <div class="coll-grid">
+  })}    <div class="hcard-grid">
 ${cards}
     </div>
 ${faq.html}${hubNav('collections/', { base })}  </div>

@@ -9,7 +9,7 @@
 // the difference" sentence — that would be fabrication. The honest presentation
 // is both claims, laid out, for the reader to weigh.
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, personSlug } from './partials.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
 import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
@@ -170,12 +170,26 @@ ${table}
  * style queries in its own right).
  * @param {{a:object,b:object,relation:string,slug:string}[]} pairs
  */
-export function compareHubPage(pairs = [], { base = '/', origin = '', count } = {}) {
+export function compareHubPage(pairs = [], { base = '/', origin = '', count, images } = {}) {
   const rows = Array.isArray(pairs) ? pairs : [];
   const twins = rows.filter((p) => p.relation === 'near-twin');
   const tensions = rows.filter((p) => p.relation === 'tension');
 
-  const item = (p) => `        <li class="cmp-hub-item"><a href="${base}compare/${escapeHtml(p.slug)}/"><span class="cmp-hub-a">${escapeHtml(p.a.name)}</span><span class="cmp-hub-vs">vs</span><span class="cmp-hub-b">${escapeHtml(p.b.name)}</span></a></li>`;
+  // A face for each side where we have one. The pair reads as two people
+  // disagreeing rather than two strings either side of the word "vs" — which is
+  // the whole point of a head-to-head.
+  const people = (images && images.people) || {};
+  const figures = (images && images.figures) || {};
+  const thumb = (law) => {
+    const por = law.namedAfter ? people[personSlug(law.namedAfter)] : null;
+    if (por) return `<img class="cvs-face" src="${base}assets/img/people/${escapeHtml(por.slug)}.webp" alt="" loading="lazy" decoding="async">`;
+    if (figures[law.slug]) return `<img class="cvs-face cvs-face--fig" src="${base}assets/img/figures/${escapeHtml(law.slug)}.webp" alt="" loading="lazy" decoding="async">`;
+    return `<span class="cvs-face cvs-face--none" aria-hidden="true">${escapeHtml(String(law.name || '?').replace(/^The\s+/i, '').charAt(0).toUpperCase())}</span>`;
+  };
+  const side = (law, cls) => `<span class="cvs-side cvs-side--${cls}">${thumb(law)}<span class="cvs-name">${escapeHtml(law.name)}</span></span>`;
+  const item = (p) => `        <li class="cmp-hub-item"><a class="cvs" href="${base}compare/${escapeHtml(p.slug)}/" data-c="${escapeHtml(p.a.category || '')}">
+          ${side(p.a, 'a')}<span class="cvs-vs" aria-hidden="true">vs</span>${side(p.b, 'b')}
+        </a></li>`;
   const group = (title, blurb, list) => list.length
     ? `    <div class="cmp-hub-group">
       <h2>${title} <span class="cmp-hub-n">${list.length}</span></h2>

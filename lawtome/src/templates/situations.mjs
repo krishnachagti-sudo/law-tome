@@ -6,7 +6,7 @@
 // queries, made browsable. Fabricates nothing: every row points at an existing
 // entry (build/situations.resolveSituations drops any unknown slug).
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, personSlug } from './partials.mjs';
 import { hubHead, hubNav, hubJsonLd } from './hub.mjs';
 
 /**
@@ -16,18 +16,30 @@ import { hubHead, hubNav, hubJsonLd } from './hub.mjs';
  * @param {string} [o.origin=''] absolute origin.
  * @param {number|string} [o.count] published-law count for the masthead.
  */
-export function situationsPage(situations = [], { base = '/', origin = '', count, categories = {} } = {}) {
+export function situationsPage(situations = [], { base = '/', origin = '', count, categories = {}, images } = {}) {
   const rows = Array.isArray(situations) ? situations : [];
   const permalink = (slug) => `${base}laws/${escapeHtml(slug)}/`;
 
   // Name, then badge, then the arrow LAST so it pins to the row's right edge.
   // With the arrow leading a variable-length name it landed at a different x on
   // every row, giving the column a jittery edge.
+  // The answering law's own face, where it has one. A reverse-lookup table is
+  // the most list-like thing on the site; a column of the people who named
+  // these things turns it into something you scan rather than read.
+  const people = (images && images.people) || {};
+  const figures = (images && images.figures) || {};
+  const face = (law) => {
+    const por = law.namedAfter ? people[personSlug(law.namedAfter)] : null;
+    if (por) return `<img class="sit-face" src="${base}assets/img/people/${escapeHtml(por.slug)}.webp" alt="" loading="lazy" decoding="async">`;
+    if (figures[law.slug]) return `<img class="sit-face sit-face--fig" src="${base}assets/img/figures/${escapeHtml(law.slug)}.webp" alt="" loading="lazy" decoding="async">`;
+    return '<span class="sit-face sit-face--none" aria-hidden="true"></span>';
+  };
   const row = ({ situation, law }) => {
     const badge = law.reliability
       ? `<span class="badge ${reliabilityClass(law.reliability)}">${escapeHtml(law.reliability)}</span>`
       : '<span class="badge badge--none" aria-hidden="true"></span>';
-    return `        <a class="sit-row" href="${permalink(law.slug)}">
+    return `        <a class="sit-row" href="${permalink(law.slug)}" data-c="${escapeHtml(law.category || '')}">
+          ${face(law)}
           <span class="sit-desc">${escapeHtml(situation)}</span>
           <span class="sit-answer"><span class="sit-name">${escapeHtml(law.name)}</span>${badge}<span class="sit-arrow" aria-hidden="true">→</span></span>
         </a>`;

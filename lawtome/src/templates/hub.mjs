@@ -13,7 +13,64 @@
 //   3. A footer of the other hubs, because the ways into 1,100 laws are the
 //      most useful thing the site has and each one was a dead end.
 
-import { escapeHtml } from './partials.mjs';
+import { escapeHtml, personSlug } from './partials.mjs';
+
+/**
+ * The art band for a hub card: a strip of this set's own imagery.
+ *
+ * The hubs had all the structure they needed and still read as stacked text,
+ * because the one thing the site has in quantity — 458 verified portraits and
+ * 561 diagrams and manuscript scans — never appeared on them. A collection of
+ * laws about incentives looks like something once it has Goodhart's and
+ * Campbell's faces on it.
+ *
+ * Faces before figures, for the reason figureStrip gives: most figures were
+ * drawn for white paper and a row of them on a dark page is a row of bright
+ * rectangles at six aspect ratios. Returns '' below `min` rather than render a
+ * gappy band — a card with one tile looks broken, a card with none looks
+ * deliberate.
+ *
+ * @param {object} images src/data/images.json
+ * @param {object[]} laws the set this card stands for
+ */
+export function hubTiles(images, laws, { base = '/', n = 4, min = 3 } = {}) {
+  const people = (images && images.people) || {};
+  const figures = (images && images.figures) || {};
+  const rows = Array.isArray(laws) ? laws : [];
+  const picked = [];
+  const seen = new Set();
+  for (const law of rows) {
+    if (picked.length >= n) break;
+    const por = law.namedAfter ? people[personSlug(law.namedAfter)] : null;
+    if (por && !seen.has(por.slug)) {
+      seen.add(por.slug);
+      picked.push({ src: `${base}assets/img/people/${escapeHtml(por.slug)}.webp`, kind: 'por' });
+    }
+  }
+  for (const law of rows) {
+    if (picked.length >= n) break;
+    if (figures[law.slug] && !seen.has(law.slug)) {
+      seen.add(law.slug);
+      picked.push({ src: `${base}assets/img/figures/${escapeHtml(law.slug)}.webp`, kind: 'fig' });
+    }
+  }
+  if (picked.length < min) return '';
+  return `        <span class="hcard-art" aria-hidden="true">
+${picked.map((p) => `          <img class="hca hca--${p.kind}" src="${p.src}" alt="" loading="lazy" decoding="async">`).join('\n')}
+        </span>
+`;
+}
+
+/** The field most of a set belongs to, for the card's accent colour. */
+export function dominantField(laws) {
+  const n = new Map();
+  for (const l of (Array.isArray(laws) ? laws : [])) {
+    if (l && l.category) n.set(l.category, (n.get(l.category) || 0) + 1);
+  }
+  let best = '', bestN = 0;
+  for (const [k, v] of n) if (v > bestN) { best = k; bestN = v; }
+  return best;
+}
 
 /** Every hub, for the cross-links at the foot of each one. */
 export const HUBS = [
