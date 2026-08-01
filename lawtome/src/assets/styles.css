@@ -40,7 +40,12 @@ html[data-theme="light"]{
 /* atmospheric depth: a single warm amber wash bleeding from the top-right, fixed to
    the viewport so it reads as ambient light over the charcoal field rather than a
    band that scrolls with content. Barely-there on the light theme (darker accent). */
-body{background:var(--bg);background-image:radial-gradient(1100px 620px at 82% -6%,color-mix(in srgb,var(--accent) 8%,transparent),transparent 62%);background-attachment:fixed;color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;transition:background-color .35s ease,color .35s ease}
+/* Dark mode is BLACK — no page-wide wash. A radial gold gradient used to sit
+   over the whole background; at 8% accent it lifts the top-right corner to
+   rgb(18,13,5), which is exactly the muddy not-quite-black that gives a dark
+   theme away. The light theme keeps it, where a warm paper cast is the point. */
+body{background:var(--bg);background-attachment:fixed;color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;transition:background-color .35s ease,color .35s ease}
+html[data-theme="light"] body{background-image:radial-gradient(1100px 620px at 82% -6%,color-mix(in srgb,var(--accent) 8%,transparent),transparent 62%)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
 /* wide shell for the law page: pushes the rails out toward the screen edges and
    frees a roomy centre column between them */
