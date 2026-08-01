@@ -24,6 +24,19 @@
   --mono:'Space Mono',ui-monospace,monospace;
   --r:2px;
   --glow:0 0 0 1px rgba(224,164,63,.14);
+  /* Elevation. Depth was carried entirely by 1px borders, which on a black
+     field reads as line-art: everything sat in the same plane and only the
+     hover state ever lifted. On a dark theme a drop shadow alone cannot do the
+     job — black on black is invisible — so a raised surface gets a hairline
+     rim-light along its top edge (the way a real object catches ambient light)
+     plus a soft shadow beneath it. The rim is what sells it; the shadow only
+     anchors it. */
+  --e1:inset 0 1px 0 0 rgba(255,255,255,.055), inset 0 -1px 0 0 rgba(0,0,0,.5), 0 1px 2px rgba(0,0,0,.6);
+  --e2:inset 0 1px 0 0 rgba(255,255,255,.075), inset 0 -1px 0 0 rgba(0,0,0,.55), 0 3px 6px rgba(0,0,0,.5);
+  --e3:inset 0 1px 0 0 rgba(255,255,255,.1), inset 0 -1px 0 0 rgba(0,0,0,.6), 0 6px 14px rgba(0,0,0,.45);
+  /* The inverse: a recess, for anything the page should read as cut INTO the
+     surface rather than laid on top of it — inputs, meters, wells. */
+  --well:inset 0 2px 5px -2px rgba(0,0,0,.85), inset 0 -1px 0 0 rgba(255,255,255,.03);
 }
 html[data-theme="light"]{
   --bg:#f4f1e8; --surface:#fdfbf5; --surface-2:#ece7da;
@@ -35,6 +48,13 @@ html[data-theme="light"]{
   --con:#b0402a; --con-soft:#f2ddd4;
   --on-accent:#fbf7ec;
   --glow:0 0 0 1px rgba(164,104,15,.12);
+  /* On cream the trick reverses: a rim-light would be invisible and a real,
+     warm-tinted shadow does all the work. Tinted rather than neutral grey, so
+     a raised card still looks like paper on paper. */
+  --e1:0 1px 1px rgba(60,48,26,.05), 0 3px 8px -4px rgba(60,48,26,.14);
+  --e2:0 2px 3px rgba(60,48,26,.06), 0 10px 20px -10px rgba(60,48,26,.2);
+  --e3:0 4px 6px rgba(60,48,26,.07), 0 20px 36px -16px rgba(60,48,26,.26);
+  --well:inset 0 2px 4px -2px rgba(60,48,26,.22);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 /* atmospheric depth: a single warm amber wash bleeding from the top-right, fixed to
@@ -179,7 +199,7 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .attrib a.who:hover,.attrib a.who:focus-visible{color:var(--accent);border-bottom-color:currentColor}
 .stmt-meta a.cat:hover,.stmt-meta a.cat:focus-visible{color:var(--accent);border-bottom-color:currentColor}
 .hero-actions{display:flex;align-items:center;gap:14px;margin-top:30px;flex-wrap:wrap}
-.search{display:flex;align-items:center;gap:11px;background:var(--surface);border:1px solid var(--line-strong);border-radius:3px;padding:0 15px;height:52px;width:min(480px,100%);transition:border-color .2s,box-shadow .2s}
+.search{display:flex;align-items:center;gap:11px;background:var(--surface);border:1px solid var(--line-strong);border-radius:3px;padding:0 15px;height:52px;width:min(480px,100%);box-shadow:var(--well);transition:border-color .2s,box-shadow .2s}
 .search:focus-within{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
 .search i{font-size:19px;color:var(--faint)}
 .search input{border:none;background:transparent;outline:none;font-family:var(--sans);font-size:15px;color:var(--ink);width:100%}
@@ -225,11 +245,11 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .field-name{font-family:var(--serif);font-size:15.5px;color:var(--ink)}
 .field-link:hover .field-name{color:var(--accent)}
 .field-n{font-family:var(--mono);font-size:11px;color:var(--faint)}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:22px 22px 18px;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s;position:relative;display:flex;flex-direction:column;min-height:186px;overflow:hidden}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:22px 22px 18px;cursor:pointer;box-shadow:var(--e1);transition:border-color .2s,transform .2s,box-shadow .2s;position:relative;display:flex;flex-direction:column;min-height:186px;overflow:hidden}
 /* a hairline accent ticks in from the top-left corner on hover — an editorial
    "flag" that reads without shouting */
 .card::before{content:"";position:absolute;left:0;top:0;width:0;height:2px;background:var(--accent);transition:width .28s cubic-bezier(.2,.7,.2,1)}
-.card:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(0,0,0,.55),0 0 0 1px color-mix(in srgb,var(--accent) 10%,transparent)}
+.card:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));transform:translateY(-3px);box-shadow:var(--e3),0 0 0 1px color-mix(in srgb,var(--accent) 10%,transparent)}
 .card:hover::before{width:100%}
 .card .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .card .no{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.05em}
@@ -252,8 +272,8 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 
 /* "Laws in tension" — facing pairs of opposing principles */
 .ten-grid{display:flex;flex-direction:column;gap:16px}
-.ten-pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:3px;overflow:hidden}
-.ten-pair:hover{border-color:var(--line-strong)}
+.ten-pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:3px;overflow:hidden;box-shadow:var(--e1);transition:border-color .18s,box-shadow .18s}
+.ten-pair:hover{border-color:var(--line-strong);box-shadow:var(--e2)}
 .ten-side{display:flex;flex-direction:column;gap:8px;padding:20px 22px;text-decoration:none;color:inherit;transition:background .18s}
 .ten-side:hover{background:var(--surface-2)}
 .ten-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
@@ -277,7 +297,7 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .cmp-head h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-.02em;margin:10px 0 12px}
 .cmp-vs{color:var(--accent);font-style:italic;font-weight:500}
 .cmp-lede{font-family:var(--serif);font-size:16px;color:var(--muted);line-height:1.6;max-width:640px}
-.cmp-cols{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;background:var(--surface);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-bottom:22px}
+.cmp-cols{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;background:var(--surface);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-bottom:22px;box-shadow:var(--e2)}
 .cmp-col{display:flex;flex-direction:column;gap:12px;padding:26px 28px}
 .cmp-col-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
 .cmp-name{font-family:var(--serif);font-weight:600;font-size:22px;letter-spacing:-.01em;color:var(--ink);text-decoration:none;line-height:1.1}
@@ -314,8 +334,8 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .cmp-hub-n{font-family:var(--mono);font-size:12px;color:var(--faint);font-weight:400}
 .cmp-hub-blurb{font-family:var(--sans);font-size:14px;color:var(--muted);margin:4px 0 14px}
 .cmp-hub-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px}
-.cmp-hub-item a{display:flex;align-items:baseline;gap:8px;padding:11px 14px;background:var(--surface);border:1px solid var(--line);border-radius:4px;text-decoration:none;color:inherit;transition:border-color .18s,background .18s}
-.cmp-hub-item a:hover{border-color:var(--accent);background:var(--surface-2)}
+.cmp-hub-item a{display:flex;align-items:baseline;gap:8px;padding:11px 14px;background:var(--surface);border:1px solid var(--line);border-radius:4px;text-decoration:none;color:inherit;box-shadow:var(--e1);transition:border-color .18s,background .18s,box-shadow .18s}
+.cmp-hub-item a:hover{border-color:var(--accent);background:var(--surface-2);box-shadow:var(--e2)}
 .cmp-hub-a,.cmp-hub-b{font-family:var(--serif);font-size:14.5px;color:var(--ink);flex:1;min-width:0}
 .cmp-hub-b{text-align:right}
 .cmp-hub-vs{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);flex:0 0 auto}
@@ -338,8 +358,8 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .quiz{margin-top:8px;max-width:640px}
 .quiz-stmt{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.45;color:var(--ink);border-left:3px solid var(--gold);padding-left:16px;margin:0 0 20px}
 .quiz-options{display:grid;gap:10px}
-.quiz-opt{font-family:var(--serif);font-size:16px;text-align:left;background:var(--surface);border:1px solid var(--line-strong);border-radius:3px;padding:12px 16px;cursor:pointer;transition:border-color .15s,background .15s;color:var(--ink)}
-.quiz-opt:hover:not(:disabled){border-color:var(--ink)}
+.quiz-opt{font-family:var(--serif);font-size:16px;text-align:left;background:var(--surface);border:1px solid var(--line-strong);border-radius:3px;padding:12px 16px;cursor:pointer;box-shadow:var(--e1);transition:border-color .15s,background .15s,box-shadow .15s;color:var(--ink)}
+.quiz-opt:hover:not(:disabled){border-color:var(--ink);box-shadow:var(--e2)}
 .quiz-opt:disabled{cursor:default}
 .quiz-opt.correct{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
 .quiz-opt.wrong{background:var(--con-soft);border-color:var(--con);color:var(--con)}
@@ -850,7 +870,7 @@ a.stat--link .s-k::after{content:" →";letter-spacing:0;opacity:.55}
 a.prose-law{color:inherit;text-decoration:none;border-bottom:1px solid var(--line-strong);transition:color .16s,border-color .16s}
 a.prose-law:hover,a.prose-law:focus-visible{color:var(--accent);border-bottom-color:var(--accent)}
 .prose b{color:var(--ink);font-weight:600}
-.example{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 22px;font-size:15.5px;line-height:1.66;color:var(--ink)}
+.example{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 22px;font-size:15.5px;line-height:1.66;color:var(--ink);box-shadow:var(--e1)}
 .example .ex-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:9px}
 .sources{list-style:none}
 .sources li{position:relative;padding:13px 0 13px 36px;border-top:1px solid var(--line);font-size:13.5px;line-height:1.55;color:var(--muted)}
@@ -876,7 +896,7 @@ a.prose-law:hover,a.prose-law:focus-visible{color:var(--accent);border-bottom-co
 /* named variants / corollaries as numbered cards (e.g. the four types of Goodhart) */
 .variants{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;counter-reset:variant}
 @media(max-width:640px){.variants{grid-template-columns:1fr}}
-.variant{position:relative;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:3px;padding:16px 18px 16px 18px;counter-increment:variant;transition:border-color .2s,transform .2s}
+.variant{position:relative;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:3px;padding:16px 18px 16px 18px;counter-increment:variant;box-shadow:var(--e1);transition:border-color .2s,transform .2s}
 .variant:hover{transform:none}
 .variant .vname{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:7px}
 .variant .vname::before{content:counter(variant,decimal-leading-zero);font-size:10px;color:var(--faint);border:1px solid var(--line-strong);border-radius:3px;padding:1px 5px}
@@ -1020,7 +1040,7 @@ html{scroll-behavior:smooth}
 /* aside */
 .aside{position:sticky;top:88px;display:flex;flex-direction:column;gap:20px}
 @media(max-width:860px){.aside{position:static}}
-.panel{border:1px solid var(--line);border-radius:3px;background:var(--surface);padding:18px 20px}
+.panel{border:1px solid var(--line);border-radius:3px;background:var(--surface);padding:18px 20px;box-shadow:var(--e1)}
 .panel h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:400;margin-bottom:14px}
 .glance .row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:13px}
 .glance .row:first-child{border-top:none}
@@ -1392,15 +1412,25 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .hub-faq-a a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 
 /* ---- reliability hub: the split, then a shelf per tier --------------------- */
-.rel-bar{display:flex;margin:22px 0 0;height:26px;border-radius:3px;overflow:hidden;border:1px solid var(--line)}
+.rel-bar{display:flex;margin:22px 0 0;height:26px;border-radius:3px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--well)}
 .rel-bar-seg{display:flex;align-items:center;justify-content:center;min-width:0;overflow:hidden;
   background:var(--surface-2);border-right:1px solid var(--bg)}
 .rel-bar-seg:last-child{border-right:0}
-.rel-bar-seg.b-emp{background:color-mix(in srgb,var(--ok) 34%,transparent)}
-.rel-bar-seg.b-heu{background:color-mix(in srgb,var(--gold) 34%,transparent)}
-.rel-bar-seg.b-folk{background:color-mix(in srgb,var(--muted) 26%,transparent)}
-.rel-bar-seg.b-con{background:color-mix(in srgb,var(--con) 34%,transparent)}
+.rel-bar-seg.b-emp,.rel-key.b-emp{background:color-mix(in srgb,var(--ok) 34%,transparent)}
+.rel-bar-seg.b-heu,.rel-key.b-heu{background:color-mix(in srgb,var(--gold) 34%,transparent)}
+.rel-bar-seg.b-folk,.rel-key.b-folk{background:color-mix(in srgb,var(--muted) 26%,transparent)}
+.rel-bar-seg.b-con,.rel-key.b-con{background:color-mix(in srgb,var(--con) 34%,transparent)}
 .rel-bar-lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--ink);white-space:nowrap;padding:0 8px}
+/* The jump nav doubles as the bar's legend, so it carries the tier's colour and
+   its share. One list of four tiers, not two stacked lists saying the same thing. */
+.az-nav--key a{display:inline-flex;align-items:center;gap:8px}
+/* The generic .az-nav span rules give every span a 32px tap target and dim it
+   to 40% — right for a letter, wrong for a 9px colour chip. */
+.az-nav .rel-key{min-width:0;min-height:0;padding:0;opacity:1}
+.rel-key{width:9px;height:9px;flex:0 0 9px;border-radius:2px;background:var(--surface-2)}
+/* Percentage width is not pixel width: on a phone even a 19% segment is ~70px,
+   too narrow for "Heuristic 19.4%". Below this the legend carries the labels. */
+@media(max-width:720px){.rel-bar-lab{display:none}}
 .rel-sec{margin-top:44px;padding-left:16px;border-left:2px solid var(--line-strong)}
 .rel-sec.b-emp{border-left-color:var(--ok)}
 .rel-sec.b-heu{border-left-color:var(--gold)}
@@ -1429,9 +1459,9 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .hcard-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px}
 .hcard{position:relative;display:flex;flex-direction:column;background:var(--surface);
   border:1px solid var(--line);border-left:2px solid var(--field,var(--line-strong));border-radius:3px;
-  overflow:hidden;transition:border-color .18s,transform .18s,box-shadow .18s}
+  overflow:hidden;box-shadow:var(--e1);transition:border-color .18s,transform .18s,box-shadow .18s}
 .hcard:hover{border-color:var(--field,var(--accent));border-left-color:var(--field,var(--accent));
-  transform:translateY(-3px);box-shadow:0 16px 34px -24px rgba(0,0,0,.7)}
+  transform:translateY(-3px);box-shadow:var(--e3)}
 /* The stretched link. Sits under the body so the law chips remain clickable. */
 .hcard-hit{position:absolute;inset:0;z-index:1;text-indent:-9999px;overflow:hidden}
 /* grid-auto-rows must be pinned: with the default `auto` the row sizes to the
@@ -1523,7 +1553,7 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .setten-note,.setadj-note{margin:0 0 14px;font-size:13.5px;line-height:1.6;color:var(--muted);max-width:70ch}
 .setten-list{list-style:none;margin:0;padding:0;display:grid;
   grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px}
-.setten-list a,.setten-list span{display:block;padding:10px 13px;background:var(--surface);
+.setten-list a,.setten-list span{display:block;padding:10px 13px;background:var(--surface);box-shadow:var(--e1);
   border:1px solid var(--line);border-left:2px solid var(--con);border-radius:3px;
   font-size:13.5px;color:var(--ink);text-decoration:none;transition:border-color .16s}
 .setten-list a:hover{border-color:var(--con)}

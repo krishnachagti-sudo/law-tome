@@ -64,6 +64,11 @@ export function reliabilityHubPage(tiers = [], { base = '/', origin = '', count,
   // A segment narrower than about 8% cannot hold its label — it clipped
   // "Folk-adage 2.3%" to the word "dag" — so a thin tier carries only its title
   // attribute and lets the aria-label on the bar do the describing.
+  //
+  // A percentage is not a width, though: on a phone even a 19% segment is ~70px
+  // and "Heuristic 19.4%" was cut mid-word again. Below 720px the CSS drops the
+  // in-bar labels entirely and the jump nav underneath — which already names
+  // every tier and now carries a colour key and the share — is the legend.
   const bar = total
     ? `    <div class="rel-bar" role="img" aria-label="${ordered.map((t) => `${t.value} ${pct(t.count)} per cent`).join(', ')}">
 ${ordered.map((t) => {
@@ -76,8 +81,8 @@ ${ordered.map((t) => {
     : '';
 
   const jump = ordered.length > 1
-    ? `    <nav class="az-nav" aria-label="Jump to a tier">
-${ordered.map((t) => `      <a href="#tier-${reliabilitySlug(t.value)}">${escapeHtml(t.value)} <span class="az-n">${t.count}</span></a>`).join('\n')}
+    ? `    <nav class="az-nav az-nav--key" aria-label="Jump to a tier">
+${ordered.map((t) => `      <a href="#tier-${reliabilitySlug(t.value)}"><span class="rel-key ${reliabilityClass(t.value)}" aria-hidden="true"></span>${escapeHtml(t.value)} <span class="az-n">${t.count} · ${pct(t.count)}%</span></a>`).join('\n')}
     </nav>
 `
     : '';
