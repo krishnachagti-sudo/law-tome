@@ -16,7 +16,7 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit } from './partials.mjs';
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
@@ -89,7 +89,7 @@ function glanceRow(k, v) {
 }
 
 export function lawPage(law, ctx = {}) {
-  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, buildDate } = ctx;
+  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, buildDate, images } = ctx;
   const coined = law.provenance === 'coined';
   const catLabel = categories[law.category] || law.category || '';
   const canonical = `${origin}${base}laws/${law.slug}/`;
@@ -456,6 +456,23 @@ ${mapLegend}
 
   // Save button — carries the law's card fields as data-* so saved.js can store
   // and re-render it with no network. reliability is blank for coined entries.
+  // Who the law is named for, with their face. The portrait is a real, licensed
+  // photograph or engraving from Wikimedia Commons — see build/fetch-images.py for
+  // how it is verified as the right person — and it carries the author/licence
+  // credit inline, because for the CC-licensed files that credit is the condition
+  // of use, not a nicety. A namesake we could not verify simply gets no panel.
+  const namesakeImg = law.namedAfter ? personImage(images, law.namedAfter) : null;
+  const namesakePanel = namesakeImg
+    ? `      <div class="panel panel--face">
+        <h3>Named after</h3>
+        <a class="face" href="${base}named-after/#${escapeHtml(personId(law.namedAfter))}">
+          ${portrait(namesakeImg, { base, alt: `${law.namedAfter}, who ${law.name} is named after` })}
+          <span class="face-name">${escapeHtml(law.namedAfter)}</span>
+        </a>
+        ${imageCredit(namesakeImg)}
+      </div>\n`
+    : '';
+
   const saveBtn = `      <div class="panel panel--save">
         <button class="btn" id="save" type="button" aria-pressed="false" data-slug="${escapeHtml(law.slug)}" data-name="${escapeHtml(law.name)}" data-statement="${escapeHtml(law.statement || '')}" data-cat="${escapeHtml(law.category || '')}" data-rel="${escapeHtml(coined ? '' : (law.reliability || ''))}" data-no="${escapeHtml(law.no || '')}"><svg class="ti-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 7v14l-6-4-6 4V7a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4z"/></svg> <span id="save-t">Save</span></button>
         <a class="save-link" href="${base}saved/">View saved</a>
@@ -485,7 +502,7 @@ ${compareLinks.map((o) => `          <li><a href="${base}compare/${cmpSlug(o)}/"
     : '';
 
   const aside = `    <aside class="aside">
-${saveBtn}${mapPanel}${comparePanel}      <div class="panel">
+${saveBtn}${namesakePanel}${mapPanel}${comparePanel}      <div class="panel">
         <h3>Cite this entry</h3>
         <div class="cite-box" id="cite">${citeText}</div>
         <button class="btn" id="copy" type="button"><i class="ti ti-copy" aria-hidden="true"></i> <span id="copy-t">Copy citation</span></button>

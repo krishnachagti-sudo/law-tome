@@ -29,6 +29,7 @@ import { resolveAudiences } from './audiences.mjs';
 import { featuresPage } from '../src/templates/features.mjs';
 import { manifestoPage } from '../src/templates/manifesto.mjs';
 import { eponymsPage } from '../src/templates/eponyms.mjs';
+import { creditsPage } from '../src/templates/credits.mjs';
 import { eponymGroups } from './eponyms.mjs';
 import { timelinePage } from '../src/templates/timeline.mjs';
 import { eraGroups } from './timeline.mjs';
@@ -51,6 +52,17 @@ export async function buildSite(opts) {
   const { dataDir, catFile, assetsDir, out, base = '/', origin = '' } = opts;
 
   const [laws, categories] = await Promise.all([loadCorpus(dataDir), loadCategories(catFile)]);
+
+  // Curated image manifest (src/data/images.json), produced by build/fetch-images.py.
+  // Optional: an absent or unreadable manifest just means the site renders without
+  // portraits, never a broken build — the images are an enhancement, not a
+  // dependency. Every entry carries the author, licence and source URL that the
+  // licence obliges us to display, so the renderer can always attribute it.
+  let images = { people: {} };
+  try {
+    images = JSON.parse(await readFile('src/data/images.json', 'utf8'));
+    images.people = images.people || {};
+  } catch { /* no manifest yet */ }
 
   const errs = validateCorpus(laws, categories);
   if (errs.length) throw new Error('validation failed:\n' + errs.join('\n'));
@@ -115,7 +127,7 @@ export async function buildSite(opts) {
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
-    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, buildDate });
+    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, buildDate, images });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
     // Clean Markdown twin at /laws/<slug>/index.md — a fetch-friendly plain-text
     // representation for LLMs/agents (GEO). Linked from the page via rel=alternate.
@@ -242,7 +254,9 @@ export async function buildSite(opts) {
 
   // Eponym index + timeline: two more browse axes over existing fields
   // (namedAfter, coinedYear). No new corpus data.
-  writes.push(writePage(join(out, 'named-after', 'index.html'), eponymsPage(eponymGroups(laws), { base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'named-after', 'index.html'), eponymsPage(eponymGroups(laws), { base, origin, count: publishedCount, images })));
+  // Image credits — the attribution the CC licences require, in one auditable list.
+  writes.push(writePage(join(out, 'credits', 'index.html'), creditsPage(images, { base, origin, count: publishedCount })));
   writes.push(writePage(join(out, 'timeline', 'index.html'), timelinePage(eraGroups(laws), { base, origin, count: publishedCount })));
 
   // Saved shortlist: a client-only page (localStorage), noindex — filled by
@@ -292,6 +306,7 @@ export async function buildSite(opts) {
     ...audiences.map((a) => `for/${a.slug}/`),
     'features/',                              // product tour
     'manifesto/',                             // positioning essay
+    'credits/',                               // image sources + licences
   ];
   writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate)));
   writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n# llms.txt: ${origin}${base}llms.txt\n`));

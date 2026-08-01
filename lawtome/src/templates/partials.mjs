@@ -353,7 +353,7 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
     </div>
 ${col('Browse', [['browse/', 'All laws'], ['for/', 'Find your laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['reliability/', 'By reliability']])}
 ${col('Discover', [['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['compare/', 'Compare laws'], ['tension/', 'Laws in tension'], ['features/', 'Features'], ['quiz/', 'Law of the day'], ['saved/', 'Saved laws']])}
-${col('The project', [['about/', 'About & method'], ['manifesto/', 'Why name a law?'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['feed.xml', 'Subscribe (RSS)'], ['privacy/', 'Privacy']])}
+${col('The project', [['about/', 'About & method'], ['manifesto/', 'Why name a law?'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['feed.xml', 'Subscribe (RSS)'], ['credits/', 'Image credits'], ['privacy/', 'Privacy']])}
   </div>
   <div class="wrap foot-rule">
     <span>Canon: attested &amp; verified. Coined: original, credited, clearly marked.</span>
@@ -363,4 +363,53 @@ ${col('The project', [['about/', 'About & method'], ['manifesto/', 'Why name a l
 ${scripts ? scripts + '\n' : ''}</body>
 </html>
 `;
+}
+
+// ---- curated imagery -------------------------------------------------------
+// Portraits come from src/data/images.json, written by build/fetch-images.py from
+// Wikimedia Commons. Nothing is generated and nothing is used without a licence:
+// every entry carries its author, licence and source, and the renderer below
+// always prints them, because for the CC files that credit is the condition of use.
+
+/** Mirror of the Python slugify in build/fetch-images.py — the two must agree
+ *  or a portrait silently fails to resolve. */
+export function personSlug(person) {
+  return String(person || '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-+|-+$/g, '').toLowerCase();
+}
+
+/** The manifest entry for a namesake, or null when we have no verified image. */
+export function personImage(images, person) {
+  const people = (images && images.people) || {};
+  return people[personSlug(person)] || null;
+}
+
+/**
+ * A portrait with its mandatory credit.
+ * @param {object} img manifest entry
+ * @param {object} o
+ * @param {string} o.base site base
+ * @param {boolean} [o.small] use the 72px thumbnail
+ * @param {string} [o.alt] override the alt text
+ */
+export function portrait(img, { base = '/', small = false, alt = '' } = {}) {
+  if (!img) return '';
+  const file = `${img.slug}${small ? '-sm' : ''}.webp`;
+  const w = small ? 72 : (img.width || 320);
+  const h = small ? 72 : (img.height || 320);
+  return `<img class="portrait${small ? ' portrait--sm' : ''}" src="${base}assets/img/people/${escapeHtml(file)}"`
+    + ` width="${w}" height="${h}" loading="lazy" decoding="async"`
+    + ` alt="${escapeHtml(alt || img.person)}">`;
+}
+
+/** The credit line a licence obliges us to show: who made it, under what, and where. */
+export function imageCredit(img) {
+  if (!img) return '';
+  const licence = img.licenceUrl
+    ? `<a href="${escapeHtml(img.licenceUrl)}" rel="license">${escapeHtml(img.licence)}</a>`
+    : escapeHtml(img.licence);
+  const who = escapeHtml(img.artist || 'Unknown');
+  const src = img.source ? ` · <a href="${escapeHtml(img.source)}">source</a>` : '';
+  return `<span class="img-credit">${who} · ${licence}${src}</span>`;
 }

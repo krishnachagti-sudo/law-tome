@@ -4,7 +4,7 @@
 // than one law are featured up top (the interesting clusters — "Parkinson's
 // laws"), then the full A–Z. Built from eponymGroups; nothing invented.
 
-import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, personImage, portrait } from './partials.mjs';
 
 /**
  * Stable anchor id for a namesake ("W. Edwards Deming" -> "ep-w-edwards-deming").
@@ -17,7 +17,7 @@ export function personId(person) {
     .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
-export function eponymsPage(groups = [], { base = '/', origin = '', count } = {}) {
+export function eponymsPage(groups = [], { base = '/', origin = '', count, images } = {}) {
   const rows = Array.isArray(groups) ? groups : [];
   const permalink = (slug) => `${base}laws/${escapeHtml(slug)}/`;
   const lawLinks = (laws) => laws
@@ -26,8 +26,18 @@ export function eponymsPage(groups = [], { base = '/', origin = '', count } = {}
 
   // The A–Z pass carries the person anchor (`anchored`); the featured block repeats
   // the same people higher up, so it renders id-less to keep every id unique.
+  // A verified portrait where we have one (see build/fetch-images.py); people we
+  // could not confirm keep a plain initial, so the column stays aligned and the
+  // page never implies we know a face we do not.
+  const avatar = (person) => {
+    const img = personImage(images, person);
+    if (img) return portrait(img, { base, small: true, alt: person });
+    const initial = String(person || '?').trim().charAt(0).toUpperCase();
+    return `<span class="ep-initial" aria-hidden="true">${escapeHtml(initial)}</span>`;
+  };
+
   const row = (g, anchored) => `      <div class="ep-row"${anchored ? ` id="${escapeHtml(personId(g.person))}"` : ''}>
-        <span class="ep-person">${escapeHtml(g.person)}${g.laws.length > 1 ? `<span class="ep-badge">${g.laws.length}</span>` : ''}</span>
+        <span class="ep-person">${avatar(g.person)}<span class="ep-pname">${escapeHtml(g.person)}${g.laws.length > 1 ? `<span class="ep-badge">${g.laws.length}</span>` : ''}</span></span>
         <span class="ep-laws">${lawLinks(g.laws)}</span>
       </div>`;
 
