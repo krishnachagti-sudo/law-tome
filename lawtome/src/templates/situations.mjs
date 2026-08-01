@@ -47,7 +47,7 @@ export function situationsPage(situations = [], { base = '/', origin = '', count
 
   const items = rows.length
     ? ordered.map(([k, rs]) => `      <section class="sit-group" id="${gid(k)}">
-        <h2 class="sit-group-h">${escapeHtml(label(k))}<span class="sit-group-n">${rs.length}</span></h2>
+        <h2 class="sit-group-h">${categories[k] ? `<a href="${base}category/${escapeHtml(k)}/">${escapeHtml(label(k))}</a>` : escapeHtml(label(k))}<span class="sit-group-n">${rs.length}</span></h2>
 ${rs.map(row).join('\n')}
       </section>`).join('\n')
     : '<div class="empty">No situations yet.</div>';

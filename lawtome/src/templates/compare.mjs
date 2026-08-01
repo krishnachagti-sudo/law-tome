@@ -9,7 +9,9 @@
 // the difference" sentence — that would be fabrication. The honest presentation
 // is both claims, laid out, for the reader to weigh.
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug } from './partials.mjs';
+import { eraId, centuryLabelForYear } from './timeline.mjs';
+import { personId } from './eponyms.mjs';
 
 const FRAMING = {
   'near-twin': {
@@ -41,10 +43,29 @@ export function comparePage(pair, { base = '/', origin = '', categories = {}, co
   const frame = FRAMING[relation] || FRAMING['near-twin'];
   const permalink = (s) => `${base}laws/${escapeHtml(s)}/`;
   const catLabel = (c) => escapeHtml((categories && categories[c]) || c || '—');
+  // Every fact in the comparison table names a browsable facet — field, tier,
+  // century, namesake — so each cell links into it rather than sitting inert.
+  const catCell = (c) => c
+    ? `<a href="${base}category/${escapeHtml(c)}/">${catLabel(c)}</a>`
+    : '—';
+  const tierCell = (r) => r
+    ? `<a href="${base}reliability/${reliabilitySlug(r)}/">${escapeHtml(r)}</a>`
+    : '—';
+  const yearCell = (y) => {
+    if (!y) return '—';
+    const era = centuryLabelForYear(y);
+    return `<a href="${base}timeline/${era ? `#${eraId(era)}` : ''}">${escapeHtml(String(y))}</a>`;
+  };
+  const personCell = (p) => p
+    ? `<a href="${base}named-after/#${escapeHtml(personId(p))}">${escapeHtml(p)}</a>`
+    : '—';
+  const typeCell = (law) => law.provenance === 'coined'
+    ? `<a href="${base}coined/">${provenanceLabel(law.provenance)}</a>`
+    : provenanceLabel(law.provenance);
 
   const panel = (law) => {
     const badge = law.reliability
-      ? `<span class="badge ${reliabilityClass(law.reliability)}">${escapeHtml(law.reliability)}</span>`
+      ? `<a class="badge ${reliabilityClass(law.reliability)}" href="${base}reliability/${reliabilitySlug(law.reliability)}/">${escapeHtml(law.reliability)}</a>`
       : '';
     const stmt = law.statement ? `<p class="cmp-stmt"><q>${escapeHtml(law.statement)}</q></p>` : '';
     const mean = law.meaning ? `<p class="cmp-mean">${escapeHtml(law.meaning)}</p>` : '';
@@ -53,7 +74,7 @@ export function comparePage(pair, { base = '/', origin = '', categories = {}, co
           <a class="cmp-name" href="${permalink(law.slug)}">${escapeHtml(law.name)}</a>
           ${badge}
         </div>
-        <span class="cmp-cat">${catLabel(law.category)}</span>
+        <span class="cmp-cat">${catCell(law.category)}</span>
 ${stmt}
 ${mean}
         <a class="cmp-read" href="${permalink(law.slug)}">Read the full law <span aria-hidden="true">→</span></a>
@@ -68,11 +89,11 @@ ${mean}
       <caption class="sr-only">${escapeHtml(a.name)} compared with ${escapeHtml(b.name)}</caption>
       <thead><tr><th scope="col"><span class="sr-only">Attribute</span></th><th scope="col">${escapeHtml(a.name)}</th><th scope="col">${escapeHtml(b.name)}</th></tr></thead>
       <tbody>
-${row('Field', catLabel(a.category), catLabel(b.category))}
-${row('Reliability', escapeHtml(a.reliability || '—'), escapeHtml(b.reliability || '—'))}
-${row('Coined', escapeHtml(a.coinedYear ? String(a.coinedYear) : '—'), escapeHtml(b.coinedYear ? String(b.coinedYear) : '—'))}
-${row('Named after', escapeHtml(a.namedAfter || '—'), escapeHtml(b.namedAfter || '—'))}
-${row('Type', provenanceLabel(a.provenance), provenanceLabel(b.provenance))}
+${row('Field', catCell(a.category), catCell(b.category))}
+${row('Reliability', tierCell(a.reliability), tierCell(b.reliability))}
+${row('Coined', yearCell(a.coinedYear), yearCell(b.coinedYear))}
+${row('Named after', personCell(a.namedAfter), personCell(b.namedAfter))}
+${row('Type', typeCell(a), typeCell(b))}
       </tbody>
     </table>
       </div>`;

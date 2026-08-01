@@ -34,7 +34,7 @@
     chemistry: 'Chemistry', biology: 'Biology', medicine: 'Medicine',
     'earth-science': 'Earth science', astronomy: 'Astronomy',
   };
-  function catColor(c) { return CAT_COLOR[c] || '#9aa0ab'; }
+  function catColor(c) { return CAT_COLOR[c] || '#a19f9d'; }
   function isTension(k) { return /oppos|contra|tension|versus|counter|rival|against/i.test(k || ''); }
   function isDirected(k) { return /cause|consequence/i.test(k || ''); }
 
@@ -94,7 +94,7 @@
     svg.style.display = 'block'; svg.style.touchAction = 'none';
     // arrowhead marker for directed (cause/consequence) edges
     var defs = svgEl('defs');
-    defs.innerHTML = '<marker id="gph-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7d879b"/></marker>';
+    defs.innerHTML = '<marker id="gph-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#888684"/></marker>';
     svg.appendChild(defs);
     var viewport = svgEl('g');               // pan/zoom transform lives here
     var edgeLayer = svgEl('g'), nodeLayer = svgEl('g');
@@ -264,7 +264,7 @@
         var ln = svgEl('line');
         ln.setAttribute('class', 'gedge' + (e.incident ? ' gedge-on' : ''));
         var tension = isTension(e.kind);
-        ln.setAttribute('stroke', tension ? '#e0705a' : (isDirected(e.kind) ? '#7d879b' : '#8a7440'));
+        ln.setAttribute('stroke', tension ? '#e0705a' : (isDirected(e.kind) ? '#888684' : '#8a7440'));
         ln.setAttribute('stroke-width', e.incident ? 1.7 : 1);
         ln.setAttribute('stroke-linecap', 'round');
         ln.setAttribute('stroke-opacity', e.incident ? 0.85 : 0.34);
@@ -288,12 +288,12 @@
         if (nd.isFocus) { var halo = svgEl('circle'); halo.setAttribute('class', 'gnode-halo'); halo.setAttribute('r', r + 7); halo.setAttribute('fill', catColor(nd.category)); halo.setAttribute('opacity', '0.18'); g.appendChild(halo); }
         var dot = svgEl('circle'); dot.setAttribute('class', 'gdot');
         dot.setAttribute('r', r); dot.setAttribute('fill', catColor(nd.category));
-        dot.setAttribute('stroke', nd.isFocus ? '#f4efe4' : '#12151d'); dot.setAttribute('stroke-width', nd.isFocus ? 2.5 : 1.5);
+        dot.setAttribute('stroke', nd.isFocus ? '#f4efe4' : '#171513'); dot.setAttribute('stroke-width', nd.isFocus ? 2.5 : 1.5);
         g.appendChild(dot);
         var label = svgEl('text'); label.setAttribute('class', 'glabel');
         label.setAttribute('text-anchor', 'middle'); label.setAttribute('y', r + 13);
         label.setAttribute('font-size', nd.isFocus ? 15 : 11.5);
-        label.setAttribute('paint-order', 'stroke'); label.setAttribute('stroke', '#0f1118'); label.setAttribute('stroke-width', nd.isFocus ? 4 : 3.2); label.setAttribute('stroke-linejoin', 'round');
+        label.setAttribute('paint-order', 'stroke'); label.setAttribute('stroke', '#000000'); label.setAttribute('stroke-width', nd.isFocus ? 4 : 3.2); label.setAttribute('stroke-linejoin', 'round');
         label.setAttribute('fill', nd.isFocus ? '#f6f1e6' : '#e4ddce');
         label.setAttribute('opacity', nd.isFocus ? '1' : '0'); // placeLabels() decides the rest
         label.textContent = nd.name == null ? '' : String(nd.name);

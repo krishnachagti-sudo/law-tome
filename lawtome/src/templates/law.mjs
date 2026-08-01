@@ -19,6 +19,7 @@
 import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset } from './partials.mjs';
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
+import { personId } from './eponyms.mjs';
 
 /**
  * Wrap the accent phrase in <span class="accent"> within the statement. Splits the
@@ -34,6 +35,51 @@ function renderStatement(law) {
   return escapeHtml(statement.slice(0, i)) +
     `<span class="accent">${escapeHtml(statementAccent)}</span>` +
     escapeHtml(statement.slice(i + statementAccent.length));
+}
+
+// ---- in-prose cross-links -------------------------------------------------
+// When a law's own prose names ANOTHER entry in the corpus, that name should be
+// a link — it is the most natural cross-reference the site can offer, and
+// without it the reader hits a dead name mid-sentence. Only exact, unambiguous
+// matches are linked: a full entry name of 10+ characters, at most once per
+// section, and never a law already surfaced as a related/confused-with card
+// (those have their own prominent link, so a second one would just be noise).
+//
+// The alternation is compiled once per corpus and cached — recompiling ~1,100
+// alternatives on each of ~1,100 pages would dominate the build.
+const NAME_RE_CACHE = new WeakMap();
+function nameMatcher(byslug) {
+  let cached = NAME_RE_CACHE.get(byslug);
+  if (cached) return cached;
+  const entries = Object.values(byslug || {})
+    .filter((l) => l && l.name && l.slug && l.name.length >= 10)
+    // longest first, so "Murphy's Law" is preferred over a shorter prefix entry
+    .sort((a, b) => b.name.length - a.name.length);
+  const bySafeName = new Map(entries.map((l) => [escapeHtml(l.name), l.slug]));
+  const re = entries.length
+    ? new RegExp(`(${entries.map((l) => escapeHtml(l.name).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g')
+    : null;
+  cached = { re, bySafeName };
+  NAME_RE_CACHE.set(byslug, cached);
+  return cached;
+}
+
+/**
+ * Link the first mention of each other corpus law inside an ESCAPED prose string.
+ * Input must already be escaped; only anchors are inserted, so no entity can be
+ * broken and no corpus text is reinterpreted as markup.
+ */
+function linkLawNames(escaped, { byslug, base, skip }) {
+  const { re, bySafeName } = nameMatcher(byslug);
+  if (!re) return escaped;
+  const used = new Set();
+  re.lastIndex = 0;
+  return escaped.replace(re, (m) => {
+    const slug = bySafeName.get(m);
+    if (!slug || skip.has(slug) || used.has(slug)) return m;
+    used.add(slug);
+    return `<a class="prose-law" href="${base}laws/${escapeHtml(slug)}/">${m}</a>`;
+  });
 }
 
 /** A single "At a glance" row, only when the value is present. */
@@ -81,16 +127,22 @@ export function lawPage(law, ctx = {}) {
     : answer;
 
   // ---- entry section ----------------------------------------------------
+  // Every fact in this strip names a facet the site can browse, so every one of
+  // them is a link: the tier to its reliability index, the field to its category
+  // page, the year to its century on the timeline. Dead metadata otherwise.
+  const heroEra = centuryLabelForYear(law.coinedYear);
   const metaBadge = coined
-    ? '<span class="badge b-folk">Coined</span>'
-    : `<span class="badge ${reliabilityClass(law.reliability)}">${escapeHtml(law.reliability)}</span>`;
+    ? `<a class="badge b-folk" href="${base}coined/">Coined</a>`
+    : law.reliability
+      ? `<a class="badge ${reliabilityClass(law.reliability)}" href="${base}reliability/${reliabilitySlug(law.reliability)}/">${escapeHtml(law.reliability)}</a>`
+      : `<span class="badge ${reliabilityClass(law.reliability)}">${escapeHtml(law.reliability || '')}</span>`;
 
   const meta = [
     `<span>№ ${escapeHtml(law.no)}</span><span class="dot"></span>`,
     `${metaBadge}<span class="dot"></span>`,
-    `<span class="cat">${escapeHtml(law.category)}</span>`,
+    `<a class="cat" href="${base}category/${escapeHtml(law.category)}/">${escapeHtml(law.category)}</a>`,
   ];
-  if (law.coinedYear != null) meta.push(`<span class="dot"></span>\n      <span>coined ${escapeHtml(law.coinedYear)}</span>`);
+  if (law.coinedYear != null) meta.push(`<span class="dot"></span>\n      <a href="${base}timeline/${heroEra ? `#${eraId(heroEra)}` : ''}">coined ${escapeHtml(law.coinedYear)}</a>`);
 
   const aka = Array.isArray(law.aliases) && law.aliases.length
     ? `\n    <div class="aka">also known as — ${law.aliases.map(escapeHtml).join(', ')}</div>`
@@ -134,8 +186,15 @@ ${h2}${inner}
       </div>`;
   };
   const L = law.name;
+  // Laws already surfaced as their own card elsewhere on the page — don't
+  // double-link them from inside the prose.
+  const proseSkip = new Set([law.slug,
+    ...(Array.isArray(law.related) ? law.related.map((r) => r && r.slug) : []),
+    ...(Array.isArray(law.confusedWith) ? law.confusedWith : []),
+  ].filter(Boolean));
+  const prose = (text) => linkLawNames(escapeHtml(text), { byslug, base, skip: proseSkip });
 
-  if (law.meaning) blocks.push(block('In plain English', `        <p class="lead">${escapeHtml(law.meaning)}</p>`, true, `What does ${L} mean?`));
+  if (law.meaning) blocks.push(block('In plain English', `        <p class="lead">${prose(law.meaning)}</p>`, true, `What does ${L} mean?`));
 
   // ---- infographic card: reliability meter + lineage timeline. Both use only
   // real per-law data (the controlled reliability tier; the coined/popular years),
@@ -156,7 +215,7 @@ ${h2}${inner}
     return `      <div class="viz-col">
         <div class="viz-h">Reliability</div>
         <div class="meter" role="img" aria-label="Reliability tier: ${escapeHtml(law.reliability)}">${segs}</div>
-        <p class="viz-note">Rated <b>${escapeHtml(law.reliability)}</b> — ${escapeHtml(TIER_NOTE[law.reliability] || 'see the reliability scale')}.</p>
+        <p class="viz-note">Rated <b>${escapeHtml(law.reliability)}</b> — ${escapeHtml(TIER_NOTE[law.reliability] || 'see the reliability scale')}. <a href="${base}reliability/${reliabilitySlug(law.reliability)}/">See every ${escapeHtml(law.reliability)} law</a>, or <a href="${base}reliability/">the whole scale</a>.</p>
       </div>`;
   };
   const lineageTimeline = () => {
@@ -180,7 +239,7 @@ ${h2}${inner}
   const vizInner = reliabilityMeter() + lineageTimeline();
   if (vizInner) blocks.push(`      <div class="viz-card" data-reveal>\n${vizInner}\n      </div>`);
 
-  if (law.mechanism) blocks.push(block('How it works', `        <p class="prose">${escapeHtml(law.mechanism)}</p>`, true, `How does ${L} work?`));
+  if (law.mechanism) blocks.push(block('How it works', `        <p class="prose">${prose(law.mechanism)}</p>`, true, `How does ${L} work?`));
   // Concept schematic (illustrative figure): an explicit `schematic` field, or
   // the curated slug->shape fallback for laws with a canonical textbook picture.
   { const key = schematicForLaw(law); if (key) { const fig = schematicFigure(key); if (fig) blocks.push(fig); } }
@@ -233,13 +292,13 @@ ${h2}${inner}
 
   if (law.limits) blocks.push(block('Where it breaks down', callout('warn', law.limits), true, `What are the limits of ${L}?`));
   if (law.misreadings) blocks.push(block("What it doesn't say", callout('info', law.misreadings), true, `What are common misconceptions about ${L}?`));
-  if (law.origin) blocks.push(block('Origin', `        <p class="prose">${escapeHtml(law.origin)}</p>`, true, `Where did ${L} come from?`));
+  if (law.origin) blocks.push(block('Origin', `        <p class="prose">${prose(law.origin)}</p>`, true, `Where did ${L} come from?`));
 
   if (coined) {
     // Coined laws carry no external sources; credit the submitter instead.
     if (law.submittedBy) {
       blocks.push(block('Submitted by',
-        `        <p class="prose">Coined for The Law Tome by ${escapeHtml(law.submittedBy)}.</p>`, true, `Who coined ${L}`));
+        `        <p class="prose">Coined for The Law Tome by ${escapeHtml(law.submittedBy)}. See the <a href="${base}coined/">other coined laws</a>, or <a href="${base}coin/">coin one of your own</a>.</p>`, true, `Who coined ${L}`));
     }
   } else if (Array.isArray(law.sources) && law.sources.length) {
     const items = law.sources.map((s, i) => {
@@ -317,7 +376,7 @@ ${h2}${inner}
       coined ? `${base}coined/` : (law.reliability ? `${base}reliability/${reliabilitySlug(law.reliability)}/` : '')),
     statTile('Coined', law.coinedYear, era ? `${base}timeline/#${eraId(era)}` : `${base}timeline/`),
     statTile('Popular form', law.popularYear),
-    statTile('Named after', law.namedAfter, `${base}named-after/`),
+    statTile('Named after', law.namedAfter, `${base}named-after/#${escapeHtml(personId(law.namedAfter))}`),
     statTile('Field', catLabel, law.category ? `${base}category/${escapeHtml(law.category)}/` : ''),
     relCount ? statTile('Related', String(relCount), '#sec-related-laws') : '',
     srcCount ? statTile('Sources', String(srcCount), '#sec-sources') : '',
@@ -545,25 +604,41 @@ document.getElementById('copy').onclick=function(){
   var links=[].slice.call(document.querySelectorAll('.toc a'));
   var secs=links.map(function(a){return {a:a,el:document.getElementById(a.getAttribute('href').slice(1))};}).filter(function(o){return o.el;});
   if(secs.length){
-    var ticking=false;
+    var ticking=false,lock=null,lockT=0;
+    var mark=function(a){
+      for(var j=0;j<links.length;j++)links[j].classList.remove('on');
+      if(!a)return;
+      a.classList.add('on');
+      // run the rail fill down to the centre of the active item
+      if(toc)toc.style.setProperty('--fill',(a.offsetTop+a.offsetHeight/2)+'px');
+    };
     var apply=function(){
       ticking=false;
+      if(lock){ if(Date.now()<lockT){mark(lock);return;} lock=null; }
       var h=document.documentElement,y=window.scrollY||h.scrollTop,mx=h.scrollHeight-h.clientHeight;
-      // active = the last section whose heading has crossed a reading line. The line
-      // sits ~32% down for most of the page (responsive) but DESCENDS toward the
-      // bottom as you approach the end (prog^2 ramp), so it sweeps through the short
-      // trailing sections crammed in the final viewport — every section, however
-      // short, gets its moment as active instead of being skipped.
-      var vh=window.innerHeight,prog=mx>0?Math.min(1,y/mx):1;
-      var line=y+vh*(0.32+prog*prog*0.62),cur=secs[0];
+      // active = the last section whose heading has crossed the reading line, which
+      // sits just under the sticky header — i.e. the section you are actually reading.
+      // In the final viewport the page can no longer scroll, so a section can never
+      // reach that line; the slack term extends the line by exactly the amount of
+      // scroll that is missing, sweeping it to the viewport bottom at the very end so
+      // the short trailing sections still get their turn instead of being skipped.
+      var vh=window.innerHeight,top=92,rest=Math.max(0,mx-y);
+      var slack=Math.max(0,(vh-top)-rest);
+      var line=y+top+slack,cur=secs[0];
       for(var i=0;i<secs.length;i++){if(secs[i].el.getBoundingClientRect().top+y<=line)cur=secs[i];}
-      for(var j=0;j<links.length;j++)links[j].classList.remove('on');
-      if(cur){cur.a.classList.add('on');
-        // run the rail fill down to the centre of the active item
-        if(toc)toc.style.setProperty('--fill',(cur.a.offsetTop+cur.a.offsetHeight/2)+'px');
-      }
+      mark(cur&&cur.a);
     };
     var onScroll=function(){ if(!ticking){ticking=true;requestAnimationFrame(apply);} };
+    // an explicit TOC click wins over the spy while the smooth scroll is in flight —
+    // otherwise the animation's intermediate positions repaint the highlight onto a
+    // neighbouring section and it settles on the wrong one. Any real input releases it.
+    for(var k=0;k<links.length;k++)links[k].addEventListener('click',function(){
+      lock=this;lockT=Date.now()+1400;mark(this);
+    });
+    var release=function(){ if(lock){lock=null;onScroll();} };
+    addEventListener('wheel',release,{passive:true});
+    addEventListener('touchstart',release,{passive:true});
+    addEventListener('keydown',release);
     addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);apply();
   }
 })();

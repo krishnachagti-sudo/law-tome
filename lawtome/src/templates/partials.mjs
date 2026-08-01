@@ -171,7 +171,7 @@ export function head({ title, description, base = '/', origin = '', path, canoni
   if (ogImage) out.push(`<meta name="twitter:image" content="${escapeHtml(ogImage)}">`);
   // Theme-color: match the masthead paper/ink so the browser chrome blends in.
   out.push('<meta name="theme-color" content="#f4f1e8" media="(prefers-color-scheme: light)">');
-  out.push('<meta name="theme-color" content="#14161c" media="(prefers-color-scheme: dark)">');
+  out.push('<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">');
   // Site identity: SVG favicon (modern browsers), a rasterised apple-touch-icon,
   // a web-app manifest, and RSS/Atom autodiscovery for the latest-entries feed.
   out.push(`<link rel="icon" href="${base}assets/logo.svg" type="image/svg+xml">`);

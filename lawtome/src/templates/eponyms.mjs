@@ -6,6 +6,17 @@
 
 import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
 
+/**
+ * Stable anchor id for a namesake ("W. Edwards Deming" -> "ep-w-edwards-deming").
+ * Exported so a law page can deep-link its "Named after" tile straight at the
+ * person's row here, instead of dropping the reader at the top of a 900-name index.
+ */
+export function personId(person) {
+  return 'ep-' + String(person || '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
 export function eponymsPage(groups = [], { base = '/', origin = '', count } = {}) {
   const rows = Array.isArray(groups) ? groups : [];
   const permalink = (slug) => `${base}laws/${escapeHtml(slug)}/`;
@@ -13,7 +24,9 @@ export function eponymsPage(groups = [], { base = '/', origin = '', count } = {}
     .map((l) => `<a href="${permalink(l.slug)}">${escapeHtml(l.name)}</a>`)
     .join('<span class="ep-dot">·</span>');
 
-  const row = (g) => `      <div class="ep-row">
+  // The A–Z pass carries the person anchor (`anchored`); the featured block repeats
+  // the same people higher up, so it renders id-less to keep every id unique.
+  const row = (g, anchored) => `      <div class="ep-row"${anchored ? ` id="${escapeHtml(personId(g.person))}"` : ''}>
         <span class="ep-person">${escapeHtml(g.person)}${g.laws.length > 1 ? `<span class="ep-badge">${g.laws.length}</span>` : ''}</span>
         <span class="ep-laws">${lawLinks(g.laws)}</span>
       </div>`;
@@ -22,7 +35,7 @@ export function eponymsPage(groups = [], { base = '/', origin = '', count } = {}
   const featured = multi.length
     ? `    <h2 class="ep-h2">Namesakes with more than one law</h2>
     <div class="ep-list">
-${multi.slice().sort((a, b) => b.laws.length - a.laws.length || a.person.localeCompare(b.person, 'en')).map(row).join('\n')}
+${multi.slice().sort((a, b) => b.laws.length - a.laws.length || a.person.localeCompare(b.person, 'en')).map((g) => row(g, false)).join('\n')}
     </div>
 `
     : '';
@@ -49,7 +62,7 @@ ${multi.slice().sort((a, b) => b.laws.length - a.laws.length || a.person.localeC
         alpha += `\n    <h3 class="ep-letter" id="az-${ltr === '#' ? 'sym' : ltr}">${ltr === '#' ? '#' : ltr}</h3>\n    <div class="ep-list">`;
         cur = ltr;
       }
-      alpha += '\n' + row(g);
+      alpha += '\n' + row(g, true);
     }
     alpha += '\n    </div>';
   }

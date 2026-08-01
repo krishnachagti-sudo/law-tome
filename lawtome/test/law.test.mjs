@@ -70,7 +70,8 @@ test('resolved related/confusedWith/prev/next names are escaped (not raw)', () =
 
 test('reliability badge class matches the vocabulary (Folk-adage -> b-folk, not b-heu)', () => {
   const h = lawPage({ ...law, reliability:'Folk-adage' }, ctx);
-  assert.match(h, /class="badge b-folk">Folk-adage/);
+  // the badge is a link into that tier's index, so assert the class AND the target
+  assert.match(h, /class="badge b-folk" href="[^"]*reliability\/folk-adage\/">Folk-adage/);
   assert.doesNotMatch(h, /class="badge b-heu"/);
 });
 

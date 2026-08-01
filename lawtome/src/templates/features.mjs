@@ -14,7 +14,9 @@ const FEATURES = [
   { href: 'graph/', cta: 'Open the graph',
     icon: svg('<circle cx="5" cy="12" r="2.2"/><circle cx="19" cy="6" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M7 11l10-4M7 13l10 4"/>'),
     title: 'A graph, not a flat list',
-    body: 'Every law links to the ones it echoes, causes, or contradicts. Start anywhere and walk the web — Goodhart to Campbell to the Cobra Effect to Streisand. The connective tissue no A–Z can give you.' },
+    // named laws in body copy are real entries — a `body` may be a function of
+    // `base` so it can link them instead of merely name-dropping them
+    body: (base) => `Every law links to the ones it echoes, causes, or contradicts. Start anywhere and walk the web — <a href="${base}laws/goodharts-law/">Goodhart</a> to <a href="${base}laws/campbells-law/">Campbell</a> to the <a href="${base}laws/cobra-effect/">Cobra Effect</a> to <a href="${base}laws/streisand-effect/">Streisand</a>. The connective tissue no A–Z can give you.` },
   { href: 'tension/', cta: 'See the tensions',
     icon: svg('<circle cx="6" cy="6" r="2.3"/><circle cx="6" cy="18" r="2.3"/><path d="M8.3 6H13l3.5 6-3.5 6H8.3"/><path d="M12 12h6"/>'),
     title: 'The laws that disagree',
@@ -54,7 +56,7 @@ export function featuresPage({ base = '/', origin = '', count } = {}) {
         <div class="ftr-icwrap">${f.icon}</div>
         <div class="ftr-body">
           <h2 class="ftr-t">${f.title}</h2>
-          <p class="ftr-p">${f.body}</p>
+          <p class="ftr-p">${typeof f.body === 'function' ? f.body(base) : f.body}</p>
           <a class="ftr-link" href="${base}${f.href}">${f.cta} <span aria-hidden="true">→</span></a>
         </div>
       </div>`).join('\n');

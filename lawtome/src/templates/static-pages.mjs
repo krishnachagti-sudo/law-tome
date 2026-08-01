@@ -33,7 +33,7 @@ export function coinPage({ base = '/', origin = '', count } = {}) {
   const section = `<section class="sec" id="coin">
   <div class="wrap">
     <div class="sec-head"><h1>Coin a law</h1><span class="sub">nobody else lets you do this</span></div>
-    <p class="sec-lede">You’ve seen it a dozen times but it has no name — the pattern that keeps repeating, the effect everyone recognises and no one can point to. Name it. If it holds up, it goes into the <a href="${base}coined/">Coined wing</a> alongside Goodhart and Parkinson — credited, clearly marked, with your name on it. This is the one thing a static list can never offer: a way in.</p>
+    <p class="sec-lede">You’ve seen it a dozen times but it has no name — the pattern that keeps repeating, the effect everyone recognises and no one can point to. Name it. If it holds up, it goes into the <a href="${base}coined/">Coined wing</a> alongside <a href="${base}laws/goodharts-law/">Goodhart</a> and <a href="${base}laws/parkinsons-law/">Parkinson</a> — credited, clearly marked, with your name on it. This is the one thing a static list can never offer: a way in.</p>
 
     <div class="coin-how">
       <h2 class="about-h2">How it works</h2>

@@ -71,7 +71,13 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
   const heroStmt = first ? `<q>${first.hero}</q>` : '<q>—</q>';
   const heroNo = first ? `№ ${escapeHtml(first.no)}` : '№ —';
   const heroCat = first ? escapeHtml(first.category) : '';
-  const heroAttrib = first ? `— <span class="who">${escapeHtml(first.name)}</span>` : '';
+  // The rotating statement is the site's shop window — its name and field are the
+  // two things a reader wants to click, so both are links (and stay links as the
+  // rotation swaps laws underneath them).
+  const heroCatHref = first ? `${base}category/${escapeHtml(first.category)}/` : `${base}browse/`;
+  const heroAttrib = first
+    ? `— <a class="who" href="${base}laws/${escapeHtml(first.slug)}/">${escapeHtml(first.name)}</a>`
+    : '';
 
   const hero = `<section class="hero">
   <svg class="hero-mark" viewBox="0 0 100 100" aria-hidden="true" data-parallax="0.16"><use href="#seal"/></svg>
@@ -80,7 +86,7 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
     <h1 class="lede">Every named law, principle, and effect — <b>explained, sourced, and cross-linked.</b> One place instead of forty half-finished lists.</h1>
     <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
     <div class="stmt-wrap">
-      <div class="stmt-meta"><span id="m-no">${heroNo}</span><span class="dot"></span><span class="cat" id="m-cat">${heroCat}</span></div>
+      <div class="stmt-meta"><span id="m-no">${heroNo}</span><span class="dot"></span><a class="cat" id="m-cat" href="${heroCatHref}">${heroCat}</a></div>
       <div class="stmt" id="stmt">${heroStmt}</div>
       <div class="attrib" id="attrib">${heroAttrib}</div>
     </div>
@@ -97,13 +103,15 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
 `;
 
   // ---- differentiator strip (why this, not a listicle) ------------------
-  const trustCell = (n, l, num) => `      <div class="ht-cell"><span class="ht-n"${num ? ` data-count="${num}"` : ''}>${n}</span><span class="ht-l">${l}</span></div>`;
+  // Each claim in the strip is backed by a real page — the index, the method, the
+  // graph, the reliability scale — so each cell is the link to its own evidence.
+  const trustCell = (n, l, href, num) => `      <a class="ht-cell" href="${base}${href}"><span class="ht-n"${num ? ` data-count="${num}"` : ''}>${n}</span><span class="ht-l">${l}</span></a>`;
   const trust = `<section class="sec home-trust">
   <div class="wrap ht-row" data-reveal-stagger>
-${trustCell(count, 'named laws, principles &amp; effects — one index', publishedCount)}
-${trustCell('Sourced', 'every entry traced to its origin and cited')}
-${trustCell('Cross-linked', 'a living graph of relations, not a flat list')}
-${trustCell('Rated', 'proven, heuristic, or folklore — marked honestly')}
+${trustCell(count, 'named laws, principles &amp; effects — one index', 'browse/', publishedCount)}
+${trustCell('Sourced', 'every entry traced to its origin and cited', 'about/')}
+${trustCell('Cross-linked', 'a living graph of relations, not a flat list', 'graph/')}
+${trustCell('Rated', 'proven, heuristic, or folklore — marked honestly', 'reliability/')}
   </div>
 </section>
 `;
@@ -177,7 +185,7 @@ ${feat('quiz/', IC.daily, 'A law a day', 'One law surfaced fresh each morning, p
     <div class="graph-band" data-reveal="scale">
       <div class="gb-eyebrow">The connective tissue</div>
       <h2>Every law is a door to three others.</h2>
-      <p>Follow Goodhart to Campbell to the Cobra Effect to Streisand. The relationship graph is the thing no flat list can give you.</p>
+      <p>Follow <a href="${base}laws/goodharts-law/">Goodhart</a> to <a href="${base}laws/campbells-law/">Campbell</a> to the <a href="${base}laws/cobra-effect/">Cobra Effect</a> to <a href="${base}laws/streisand-effect/">Streisand</a>. The relationship graph is the thing no flat list can give you.</p>
       <a class="ghost" href="${base}graph/"><i class="ti ti-affiliate" aria-hidden="true"></i> Explore the graph</a>
       <svg class="constellation" viewBox="0 0 440 300" aria-hidden="true">
         <g stroke="#3b404e" stroke-width="1" fill="none">
@@ -276,6 +284,7 @@ ${aboutPanels.map(aboutPanel).join('\n')}
   // ---- inline hero-rotation script (grid/search wiring is Task 10) ------
   const scripts = `<script>
 const LAWS=${featuredJson};
+const BASE=${JSON.stringify(base)};
 (function(){
   var s=document.getElementById('stmt');if(!s||LAWS.length<2)return;
   // Respect reduced-motion: hold on the first statement, no auto-cycling.
@@ -286,9 +295,10 @@ const LAWS=${featuredJson};
     s.style.opacity=0;
     setTimeout(function(){
       document.getElementById('m-no').textContent='№ '+l.no;
-      document.getElementById('m-cat').textContent=l.category;
+      var mc=document.getElementById('m-cat');mc.textContent=l.category;
+      mc.setAttribute('href',BASE+'category/'+encodeURIComponent(l.category)+'/');
       s.innerHTML='<q>'+l.hero+'</q>';
-      document.getElementById('attrib').innerHTML='— <span class="who">'+l.nameHtml+'</span>';
+      document.getElementById('attrib').innerHTML='— <a class="who" href="'+BASE+'laws/'+encodeURIComponent(l.slug)+'/">'+l.nameHtml+'</a>';
       s.style.opacity=1;
     },300);
   }

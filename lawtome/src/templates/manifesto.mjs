@@ -10,7 +10,7 @@ export function manifestoPage({ base = '/', origin = '', count } = {}) {
   const section = `<section class="sec" id="manifesto">
   <div class="wrap wrap-prose">
     <div class="sec-head"><h1>Why name a law?</h1></div>
-    <p class="mf-lede">A good name is a handle on a hard idea. Say “Goodhart’s Law” and a whole pattern — the target that gets gamed the moment it becomes a target — arrives in three words. That compression is the point. It’s why named laws spread, and why they’re worth collecting properly.</p>
+    <p class="mf-lede">A good name is a handle on a hard idea. Say “<a href="${base}laws/goodharts-law/">Goodhart’s Law</a>” and a whole pattern — the target that gets gamed the moment it becomes a target — arrives in three words. That compression is the point. It’s why named laws spread, and why they’re worth collecting properly.</p>
 
     <h2 class="about-h2">The problem with the lists</h2>
     <p class="about-p">Search for any of these and you’ll find the same thing: a listicle. Forty of a name, a one-line gloss, no source, no idea where it came from or whether it’s even true. Half are misattributed. A few are invented. Most are stranded — a name with nothing around it, no sense of which other ideas it touches or contradicts. You leave knowing a phrase, not an idea.</p>

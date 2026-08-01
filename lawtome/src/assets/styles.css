@@ -11,14 +11,14 @@
      as a single flat field. These steps are solved to fixed targets (card lifts
      off the page at 1.25:1, border reads at 1.40:1) and warmed toward the ink-on-
      paper character the light theme already has. */
-  --bg:#131316; --surface:#292725; --surface-2:#383634;
+  --bg:#000000; --surface:#292725; --surface-2:#383634;
   --ink:#f0ece2; --muted:#a8a293; --faint:#97958c; --read:#d6d1c4;
   --line:#403e3c; --line-strong:#63615f;
   --accent:#e0a43f; --accent-ink:#f3cb84; --accent-soft:#332811;
   --gold:#caa153; --gold-soft:#2b2413;
   --ok:#7fbb7c; --ok-soft:#182417;
   --con:#df735b; --con-soft:#331812;
-  --on-accent:#171922;
+  --on-accent:#1b1917;
   --serif:'Newsreader',Georgia,'Times New Roman',serif;
   --sans:'Newsreader',Georgia,serif;
   --mono:'Space Mono',ui-monospace,monospace;
@@ -27,7 +27,7 @@
 }
 html[data-theme="light"]{
   --bg:#f4f1e8; --surface:#fdfbf5; --surface-2:#ece7da;
-  --ink:#191b21; --muted:#555341; --faint:#6d6b5e; --read:#33352c;
+  --ink:#1d1b19; --muted:#555341; --faint:#6d6b5e; --read:#33352c;
   --line:#dcd5c3; --line-strong:#c4b998;
   --accent:#a4680f; --accent-ink:#734808; --accent-soft:#f0e3c6;
   --gold:#87661f; --gold-soft:#e6dabb;
@@ -154,6 +154,11 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .stmt .accent{color:var(--accent)}
 .attrib{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:18px}
 .attrib .who{color:var(--ink)}
+/* the featured law's name and field are the hero's two click targets */
+.attrib a.who{text-decoration:none;border-bottom:1px dotted var(--line-strong);transition:color .16s,border-color .16s}
+.stmt-meta a.cat{text-decoration:none;border-bottom:1px solid transparent;transition:color .16s,border-color .16s}
+.attrib a.who:hover,.attrib a.who:focus-visible{color:var(--accent);border-bottom-color:currentColor}
+.stmt-meta a.cat:hover,.stmt-meta a.cat:focus-visible{color:var(--accent);border-bottom-color:currentColor}
 .hero-actions{display:flex;align-items:center;gap:14px;margin-top:30px;flex-wrap:wrap}
 .search{display:flex;align-items:center;gap:11px;background:var(--surface);border:1px solid var(--line-strong);border-radius:3px;padding:0 15px;height:52px;width:min(480px,100%);transition:border-color .2s,box-shadow .2s}
 .search:focus-within{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
@@ -273,6 +278,11 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .cmp-table thead th{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--ink);border-bottom:1px solid var(--line-strong)}
 .cmp-table tbody th{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);font-weight:400;white-space:nowrap}
 .cmp-table tbody td{font-family:var(--sans);color:var(--ink)}
+/* every cell is a doorway into that facet — dotted until hover, so the table
+   still reads as a table rather than a wall of blue */
+.cmp-table tbody td a,.cmp-cat a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--line-strong);transition:color .16s,border-color .16s}
+.cmp-table tbody td a:hover,.cmp-table tbody td a:focus-visible{color:var(--accent);border-bottom-style:solid;border-bottom-color:var(--accent)}
+.cmp-cat a:hover,.cmp-cat a:focus-visible{border-bottom-color:currentColor}
 .cmp-foot{display:flex;flex-wrap:wrap;gap:10px}
 .cmp-foot .btn{width:auto;padding:0 18px}
 @media(max-width:640px){
@@ -357,7 +367,9 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 /* eponym index (/named-after/) */
 .ep-h2{font-family:var(--serif);font-weight:600;font-size:20px;margin:30px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .ep-list{display:flex;flex-direction:column}
-.ep-row{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.ep-row{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--line);align-items:baseline;scroll-margin-top:120px}
+/* a law page deep-links its namesake here — flag the row it landed on */
+.ep-row:target{background:var(--surface);box-shadow:-10px 0 0 var(--surface),10px 0 0 var(--surface);border-left:2px solid var(--accent);padding-left:10px;margin-left:-12px}
 .ep-person{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--ink)}
 .ep-badge{display:inline-block;margin-left:8px;font-family:var(--mono);font-size:10px;color:var(--bg);background:var(--gold);border-radius:10px;padding:1px 7px;vertical-align:middle}
 .ep-laws{font-family:var(--serif);font-size:15px;line-height:1.6}
@@ -403,12 +415,12 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 
 /* graph band (always dark — a deep-charcoal stage lit by the amber accent, tuned to
    sit a shade below the Midnight surfaces so the constellation reads as a "night sky") */
-.graph-band{background:#0f1118;border-radius:3px;padding:44px 40px;position:relative;overflow:hidden;border:1px solid #2a2f3d;box-shadow:inset 0 0 120px -40px rgba(224,164,63,.16)}
+.graph-band{background:#13110f;border-radius:3px;padding:44px 40px;position:relative;overflow:hidden;border:1px solid #312f2d;box-shadow:inset 0 0 120px -40px rgba(224,164,63,.16)}
 .graph-band .gb-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#e0a43f}
 .graph-band h2{font-family:var(--serif);font-weight:600;font-size:30px;color:#f0ece2;margin:12px 0 10px;letter-spacing:-.01em;max-width:440px;line-height:1.12}
 .graph-band p{font-family:var(--sans);font-size:14.5px;color:#9c988c;max-width:400px;margin-bottom:26px}
-.graph-band .ghost{border-color:#3b404e;color:#f0ece2}
-.graph-band .ghost:hover{border-color:#e0a43f;background:#1a1e28}
+.graph-band .ghost{border-color:#42403e;color:#f0ece2}
+.graph-band .ghost:hover{border-color:#e0a43f;background:#201e1c}
 .graph-band .ghost i{color:#e0a43f}
 
 /* graph explorer (/graph/) — search, stage, focus bar */
@@ -449,8 +461,8 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .gnode:focus-visible circle{stroke:var(--accent);stroke-width:4}
 /* zoom / reset controls, top-right of the stage */
 .graph-controls{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:6px;z-index:6}
-.graph-ctrl{width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:17px;line-height:1;color:#e4ddce;background:rgba(26,30,40,.82);border:1px solid #333a49;border-radius:6px;cursor:pointer;backdrop-filter:blur(3px)}
-.graph-ctrl:hover{border-color:var(--accent);color:#f6f1e6;background:#20252f}
+.graph-ctrl{width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:17px;line-height:1;color:#e4ddce;background:rgba(26,30,40,.82);border:1px solid #3c3a38;border-radius:6px;cursor:pointer;backdrop-filter:blur(3px)}
+.graph-ctrl:hover{border-color:var(--accent);color:#f6f1e6;background:#272523}
 /* comprehensive key, bottom-left of the stage — toggleable so it never clutters */
 .graph-key{position:absolute;left:12px;bottom:12px;z-index:6;max-width:min(340px,calc(100% - 68px))}
 .graph-key-toggle{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#cbc4b4;background:rgba(15,17,24,.72);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:5px 12px;cursor:pointer}
@@ -483,6 +495,9 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .home-trust{padding-top:10px;padding-bottom:10px}
 .ht-row{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
 .ht-cell{display:flex;flex-direction:column;gap:6px}
+a.ht-cell{text-decoration:none;color:inherit;border-left:2px solid transparent;padding-left:12px;margin-left:-14px;transition:border-color .18s,color .18s}
+a.ht-cell:hover,a.ht-cell:focus-visible{border-left-color:var(--accent)}
+a.ht-cell:hover .ht-n,a.ht-cell:focus-visible .ht-n{color:var(--accent)}
 .ht-n{font-family:var(--serif);font-weight:600;font-size:25px;letter-spacing:-.01em;color:var(--ink);line-height:1}
 .ht-l{font-family:var(--sans);font-size:13.5px;color:var(--muted);line-height:1.45}
 @media(max-width:720px){.ht-row{grid-template-columns:1fr 1fr;gap:22px}}
@@ -610,6 +625,12 @@ html[data-theme="dark"] .entry-mark{color:var(--gold);opacity:.06}
 .entry-meta{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.03em;margin-bottom:16px;flex-wrap:wrap}
 .entry-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--faint)}
 .entry-meta .cat{color:var(--accent)}
+/* the strip's facts are links (tier, field, year) — keep them looking like the
+   quiet metadata they are until hover, when they declare themselves clickable */
+.entry-meta a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .16s,border-color .16s}
+.entry-meta a:hover,.entry-meta a:focus-visible{color:var(--ink);border-bottom-color:currentColor}
+.entry-meta a.badge:hover,.entry-meta a.badge:focus-visible{border-bottom-color:transparent;filter:brightness(1.14)}
+a.badge{text-decoration:none;display:inline-block}
 .law-title{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,54px);letter-spacing:-.02em;line-height:1.02}
 .aka{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:12px}
 .entry-stmt{font-family:var(--serif);font-weight:500;font-style:italic;font-size:clamp(20px,2.6vw,28px);line-height:1.3;color:var(--muted);max-width:740px;margin:24px 0 30px;padding-left:22px;border-left:2px solid var(--accent)}
@@ -711,7 +732,8 @@ a.stat--link .s-k::after{content:" →";letter-spacing:0;opacity:.55}
 /* numbered section labels give the long article visible structure */
 .entry-layout .lawmain{counter-reset:sec}
 .entry-layout .lawmain .block>.lbl::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);font-size:10px;letter-spacing:.04em;color:var(--faint);border:1px solid var(--line-strong);border-radius:3px;padding:3px 7px}
-.block{margin-bottom:60px}
+/* jumped-to sections must clear the sticky header (72px desktop / 62px mobile) */
+.block{margin-bottom:60px;scroll-margin-top:92px}
 .block:last-child{margin-bottom:0}
 /* infographic card: reliability meter + lineage timeline (real per-law data) */
 .viz-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 24px;margin-bottom:60px}
@@ -761,6 +783,10 @@ a.stat--link .s-k::after{content:" →";letter-spacing:0;opacity:.55}
 /* drop cap on the opening (plain-English) paragraph */
 .lead::first-letter{float:left;font-family:var(--serif);font-weight:600;font-size:3.5em;line-height:.8;margin:5px 12px 0 0;color:var(--accent)}
 .prose{font-size:16.5px;line-height:1.78;color:var(--read)}
+/* another law named mid-sentence: underlined, not recoloured, so the paragraph
+   still reads as prose rather than a field of links */
+a.prose-law{color:inherit;text-decoration:none;border-bottom:1px solid var(--line-strong);transition:color .16s,border-color .16s}
+a.prose-law:hover,a.prose-law:focus-visible{color:var(--accent);border-bottom-color:var(--accent)}
 .prose b{color:var(--ink);font-weight:600}
 .example{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 22px;font-size:15.5px;line-height:1.66;color:var(--ink)}
 .example .ex-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:9px}
@@ -1070,6 +1096,9 @@ html{scroll-behavior:smooth}
    stays straight regardless of law-name length. */
 .sit-group{display:flex;flex-direction:column;gap:10px;margin-top:30px;scroll-margin-top:132px}
 .sit-group-h{font-family:var(--serif);font-weight:600;font-size:19px;margin:0 0 4px;display:flex;align-items:baseline;gap:11px;border-bottom:1px solid var(--line);padding-bottom:7px}
+/* each field heading is a way into that field's own page */
+.ten-group-h a,.sit-group-h a{color:inherit;text-decoration:none;transition:color .16s}
+.ten-group-h a:hover,.ten-group-h a:focus-visible,.sit-group-h a:hover,.sit-group-h a:focus-visible{color:var(--accent)}
 .sit-group-n{font-family:var(--mono);font-size:11px;color:var(--faint)}
 .sit-list{gap:0}
 .sit-answer .badge{min-width:86px;text-align:center}

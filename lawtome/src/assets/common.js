@@ -18,7 +18,7 @@
   function syncThemeColor(t) {
     var m = document.getElementById('tc-dyn');
     if (!m) { m = document.createElement('meta'); m.name = 'theme-color'; m.id = 'tc-dyn'; document.head.appendChild(m); }
-    m.setAttribute('content', t === 'light' ? '#f4f1e8' : '#14161c');
+    m.setAttribute('content', t === 'light' ? '#f4f1e8' : '#000000');
   }
 
   function wireTheme() {
