@@ -95,9 +95,15 @@ export const HUBS = [
  * @param {string} [o.lede]     the human paragraph under it
  * @param {string} [o.sub]      the count chip beside the title
  * @param {Array}  [o.stats]    [[value, label], …] rendered as a stat row
+ * @param {Array}  [o.crumbs]   [[href, label], …] before the title. Defaults to
+ *                              Home / Browse, which is right for a grouping page
+ *                              and wrong for the likes of /about/ and /credits/.
  */
-export function hubHead({ title, answer, lede = '', sub = '', stats = [], base = '/' }) {
-  const crumb = `    <nav class="crumb" aria-label="Breadcrumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}browse/">Browse</a><span class="sep">/</span>${escapeHtml(title)}</nav>\n`;
+export function hubHead({ title, answer, lede = '', sub = '', stats = [], base = '/', crumbs = [['browse/', 'Browse']] }) {
+  const trail = [['', 'Home'], ...(Array.isArray(crumbs) ? crumbs : [])]
+    .map(([href, label]) => `<a href="${base}${href}">${escapeHtml(label)}</a>`)
+    .join('<span class="sep">/</span>');
+  const crumb = `    <nav class="crumb" aria-label="Breadcrumb">${trail}<span class="sep">/</span>${escapeHtml(title)}</nav>\n`;
   const statRow = stats.length
     ? `    <div class="hub-stats">${stats.map(([v, l]) =>
         `<span class="hub-stat"><b>${escapeHtml(String(v))}</b> ${escapeHtml(l)}</span>`).join('')}</div>\n`

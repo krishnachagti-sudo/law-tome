@@ -19,6 +19,7 @@
 //      (spec §13) is explicit.
 
 import { head, sprite, header, footer, escapeHtml, lawCard, reliabilityClass, RELIABILITY_TIERS, RELIABILITY_NOTE } from './partials.mjs';
+import { hubHead, hubFaq, hubNav } from './hub.mjs';
 
 /**
  * "Coin a law" page — a form that POSTs to ${base}api/submit (no live rendering).
@@ -109,7 +110,9 @@ export function aboutPage({ base = '/', origin = '', count } = {}) {
   const description =
     'How The Law Tome is built and verified: enumerate-from-sources, a citation gate, adversarial verification, and source-resolution — curated by The Law Tome editorial team at Conyso, licensed CC BY.';
 
-  const n = count == null ? '—' : String(count);
+  // Formatted, not stringified: the masthead says 1,105 and an unpunctuated
+  // 1105 two lines below it reads as a different number.
+  const n = count == null ? '—' : Number(count).toLocaleString('en-US');
   const statCell = (v, l) => `      <div class="ht-cell"><span class="ht-n">${v}</span><span class="ht-l">${l}</span></div>`;
   const step = (i, t, b) => `      <div class="mstep"><span class="mstep-n">${i}</span><div class="mstep-b"><span class="mstep-t">${t}</span><span class="mstep-p">${b}</span></div></div>`;
   const tierRow = RELIABILITY_TIERS.map((tier) =>
@@ -117,10 +120,38 @@ export function aboutPage({ base = '/', origin = '', count } = {}) {
   ).join('\n');
   const explore = (href, t) => `<a class="about-chip" href="${base}${href}">${t}</a>`;
 
+  const faq = hubFaq([
+    {
+      q: 'What is The Law Tome?',
+      a: `A single sourced reference for the named laws, principles and effects that turn up across every field — ${n} of them, each explained in plain language, rated for how well established it is, cross-linked to the ones it echoes and contradicts, and cited.`,
+    },
+    {
+      q: 'Who writes it, and can I trust it?',
+      a: `It is written and maintained by <a href="https://conyso.com/founder/" rel="author">Krishna Chagti</a>, an initiative of <a href="https://conyso.com">Conyso</a>. Trust is not asked for: no claim reaches a page without a resolvable source, every entry carries its own citations, and each one wears a rating that says how far it can be pushed. Where a law is disputed, the entry says who disputes it.`,
+    },
+    {
+      q: 'Are any of these laws made up?',
+      a: `No entry is invented. Laws are drawn from the literature and traced to the earliest reliable attribution; anything that cannot be cited does not ship. The one exception is labelled as such: the <a href="${base}coined/">Coined wing</a> holds original laws submitted by readers, marked <code>provenance: coined</code> and never presented as historical.`,
+    },
+    {
+      q: 'How do I report a mistake?',
+      a: `<a href="${base}coin/">Through the same form</a> that takes new laws. A better source or an earlier attribution is more useful than a new entry — corrections are the only thing this project asks of its readers.`,
+    },
+    {
+      q: 'Can I reuse it?',
+      a: `Yes, under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>, including commercially, with credit. <a href="${base}data/">Download the dataset</a> in JSON or CSV.`,
+    },
+  ], { heading: 'Common questions' });
+
   const section = `<section class="sec" id="about">
   <div class="wrap">
-    <div class="sec-head"><h1>About The Law Tome</h1></div>
-    <p class="sec-lede">The Law Tome is one unified, sourced index of named laws, principles, and effects — explained, cross-linked, and verified. One place instead of forty half-finished lists.</p>
+${hubHead({
+    title: 'About The Law Tome',
+    answer: `The Law Tome is a single, sourced index of ${n} named laws, principles and effects — each explained in plain language, cited, rated for how well established it is, and cross-linked to the laws it agrees and disagrees with. It is published by Conyso, carries no ads, and tracks nothing about what you read.`,
+    lede: 'One place instead of forty half-finished lists. This page is the method: where the entries come from, what has to be true before one ships, and who is answerable for it.',
+    crumbs: [],
+    base,
+  })}
 
     <div class="ht-row about-stats">
 ${statCell(n, 'named laws, principles &amp; effects')}
@@ -162,7 +193,7 @@ ${tierRow}
     <div class="about-explore">
       ${explore('browse/', 'Browse all')}${explore('situations/', 'What’s the law for…?')}${explore('graph/', 'The graph')}${explore('collections/', 'Collections')}${explore('compare/', 'Compare two laws')}${explore('tension/', 'Laws in tension')}${explore('reliability/', 'By reliability')}${explore('timeline/', 'The timeline')}${explore('named-after/', 'By namesake')}${explore('for/', 'Find your laws')}${explore('quiz/', 'Name that law')}${explore('manifesto/', 'Why name a law?')}${explore('data/', 'Download the data')}
     </div>
-  </div>
+${faq.html}  </div>
 </section>
 `;
 
@@ -199,7 +230,23 @@ ${tierRow}
   };
 
   return (
-    head({ title: 'About & Method — How The Law Tome Is Built | The Law Tome', description, base, origin, path: 'about/', jsonld: [aboutLd, person] }) +
+    head({
+      title: 'About & Method — How The Law Tome Is Built | The Law Tome',
+      description, base, origin, path: 'about/',
+      jsonld: [
+        aboutLd,
+        person,
+        {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}${base}` },
+            { '@type': 'ListItem', position: 2, name: 'About The Law Tome' },
+          ],
+        },
+        ...(faq.jsonld ? [faq.jsonld] : []),
+      ],
+    }) +
     sprite() +
     header({ base, active: 'about', count }) +
     section +
@@ -223,16 +270,40 @@ ${rows.map((l) => lawCard(l, base, 2)).join('\n')}
     </div>`
     : `<div class="empty">No coined laws yet. The Coined wing fills as readers submit original laws that clear verification — <a href="${base}coin/">coin the first one</a>.</div>`;
 
+  const faq = hubFaq([
+    {
+      q: 'What is the Coined wing?',
+      a: `The one part of The Law Tome that is not drawn from the historical record. Everywhere else, a law has to be attested in the literature before it can have a page. Here a reader can name a pattern nobody has named yet — credited to them, carried under <code>provenance: coined</code>, and kept visibly separate from the ${rows.length ? 'rest of the' : ''} index so it can never be mistaken for something with a century of citations behind it.`,
+    },
+    {
+      q: 'Why keep them apart from the rest?',
+      a: 'Because mixing them would quietly destroy the thing that makes the index worth reading. An encyclopedia that lets new inventions sit unmarked beside sourced entries is a list of assertions. The separation is not a demotion of coined laws — it is what lets them exist here at all.',
+    },
+    {
+      q: 'What does a submission have to clear?',
+      a: `It has to be original, it has to be yours to give, and it has to say something a reader could actually test or recognise. A restatement of an existing law is filed as that law instead. <a href="${base}coin/">The form</a> sets out the rights grant and the originality warranty in full.`,
+    },
+    {
+      q: 'Do I keep the credit?',
+      a: 'Yes. A coined entry carries its author\'s name, and the machine-readable record carries it too, so the attribution survives anyone reusing the dataset under its licence.',
+    },
+  ], { heading: 'About coining' });
+
   const section = `<section class="sec" id="coined">
   <div class="wrap">
-    <div class="sec-head">
-      <h1>The Coined wing</h1>
-      <span class="sub">community-submitted originals · credited · clearly marked</span>
-    </div>
-    <p class="lede">These laws were <b>coined</b> by readers, not drawn from the historical record. Each is credited to its author, marked <code>provenance: coined</code>, and never laundered as historical Canon. Think you've spotted a real pattern with no name? <a href="${base}coin/">Coin it.</a></p>
-    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
+${hubHead({
+    title: 'The Coined wing',
+    sub: 'community-submitted originals · credited · clearly marked',
+    answer: rows.length
+      ? `The Coined wing holds ${rows.length} named ${rows.length === 1 ? 'law' : 'laws'} coined by readers of The Law Tome rather than drawn from the historical record — each credited to its author, marked <code>provenance: coined</code>, and kept apart from the sourced index so the two can never be confused.`
+      : 'The Coined wing is where original laws submitted by readers are published — credited to their authors, marked <code>provenance: coined</code>, and kept apart from the sourced historical index so the two can never be confused. It is empty so far.',
+    lede: `Every other entry here had to be attested somewhere before it could exist. This is the exception, and it is labelled as one. Think you have spotted a real pattern with no name? <a href="${base}coin/">Coin it.</a>`,
+    stats: [[rows.length, rows.length === 1 ? 'coined law' : 'coined laws'], ['Credited', 'to their authors'], ['Marked', 'never passed off as Canon']],
+    crumbs: [['about/', 'About']],
+    base,
+  })}    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
     ${grid}
-  </div>
+${faq.html}${hubNav('', { base })}  </div>
 </section>
 `;
 
@@ -243,6 +314,31 @@ ${rows.map((l) => lawCard(l, base, 2)).join('\n')}
       base,
       origin,
       path: 'coined/',
+      jsonld: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: 'The Coined wing',
+          url: `${origin}${base}coined/`,
+          description: 'Original laws coined by readers of The Law Tome — credited, clearly marked, and never laundered as historical Canon.',
+          isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
+          mainEntity: {
+            '@type': 'ItemList',
+            numberOfItems: rows.length,
+            itemListElement: rows.map((l, i) => ({ '@type': 'ListItem', position: i + 1, name: l.name, url: `${origin}${base}laws/${l.slug}/` })),
+          },
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}${base}` },
+            { '@type': 'ListItem', position: 2, name: 'About', item: `${origin}${base}about/` },
+            { '@type': 'ListItem', position: 3, name: 'The Coined wing' },
+          ],
+        },
+        ...(faq.jsonld ? [faq.jsonld] : []),
+      ],
     }) +
     sprite() +
     header({ base, active: 'coin', count }) +

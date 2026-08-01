@@ -8,17 +8,47 @@
 
 import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
 import { corpusCharts } from './charts.mjs';
+import { hubHead, hubFaq, hubNav } from './hub.mjs';
 
 export function dataPage({ base = '/', origin = '', count, generated, laws = [], categories = {} } = {}) {
   const n = count == null ? 'every' : (typeof count === 'number' ? count.toLocaleString('en-US') : String(count));
   const entryWord = (typeof count === 'number' && count === 1) ? 'entry' : 'entries';
+  const fields = Object.keys(categories || {}).length;
+
+  const faq = hubFaq([
+    {
+      q: 'Can I use this dataset commercially?',
+      a: 'Yes. It is <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>, which permits commercial use, redistribution and derivative works. The single condition is attribution: credit The Law Tome and link back to it.',
+    },
+    {
+      q: 'What is the difference between the JSON and the CSV?',
+      a: 'Same entries, different shapes. The JSON keeps the nested structure — aliases, the relationship-graph edges and the full source list per entry — plus a <code>meta</code> block with the licence and the build date. The CSV flattens each entry to one row of scalar columns, which loses the lists but drops straight into a spreadsheet.',
+    },
+    {
+      q: 'How current is it?',
+      a: `Both files are regenerated from the corpus on every build, so they cannot drift from the site${generated ? `. This copy was generated ${escapeHtml(String(generated).slice(0, 10))}` : ''}. The charts below are computed from the same data at the same moment, which is why they can never disagree with the download.`,
+    },
+    {
+      q: 'Why is the writing not in the download?',
+      a: `Because the explanations are the work, and a copy of them detached from its sources is exactly the unsourced listicle this project exists to replace. Every record carries the canonical URL of its entry, where the meaning, mechanism, examples, limits and citations live. Take the metadata; <a href="${base}browse/">link people to the page</a>.`,
+    },
+    {
+      q: 'How should I cite it?',
+      a: `“The Law Tome — index metadata” (${escapeHtml(origin + base)}data/), CC BY 4.0${generated ? `, retrieved ${escapeHtml(String(generated).slice(0, 10))}` : ''}. Machine-readable licence terms are in the JSON's <code>meta</code> block and in this page's <code>Dataset</code> structured data.`,
+    },
+  ], { heading: 'Questions about the data' });
+
   const section = `<section class="sec" id="data">
   <div class="wrap wrap-prose">
-    <div class="sec-head">
-      <h1>Download the dataset</h1>
-      <span class="sub">CC BY 4.0</span>
-    </div>
-    <p class="sec-lede">The Law Tome's index as data — free to analyse, cite, and build on. Two formats, ${escapeHtml(n)} ${entryWord}, refreshed with every build.</p>
+${hubHead({
+    title: 'Download the dataset',
+    sub: 'CC BY 4.0',
+    answer: `The Law Tome publishes its whole index as an open dataset — ${escapeHtml(n)} ${entryWord} of named laws with their categories, reliability ratings, dates, namesakes, relationship edges and citations — in JSON and CSV under CC BY 4.0, free to analyse, cite and build on.`,
+    lede: `The download is metadata: everything that makes the index an index. The long-form writing stays on each entry's page, and every record carries the URL to it.`,
+    stats: [[n, entryWord], [fields || '—', 'fields'], ['3', 'formats'], ['CC BY 4.0', 'licence']],
+    crumbs: [['about/', 'About']],
+    base,
+  })}
 
     <div class="dl-row">
       <a class="dl-card" href="${base}data/lawtome.json" download>
@@ -47,7 +77,7 @@ ${corpusCharts(laws, categories, { base })}
 
     <h2 class="data-h2">Licence</h2>
     <p>Released under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0</a>. Use it however you like — including commercially — as long as you credit <b>The Law Tome</b> (${escapeHtml(origin + base)}) and link back. Machine-readable terms are in the JSON's <code>meta</code> block.</p>
-  </div>
+${faq.html}${hubNav('', { base })}  </div>
 </section>
 `;
 
@@ -67,7 +97,17 @@ ${corpusCharts(laws, categories, { base })}
       { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: `${origin}${base}data/lawtome.json` },
       { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: `${origin}${base}data/lawtome.csv` },
     ],
-  }];
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}${base}` },
+      { '@type': 'ListItem', position: 2, name: 'About', item: `${origin}${base}about/` },
+      { '@type': 'ListItem', position: 3, name: 'Download the dataset' },
+    ],
+  },
+  ...(faq.jsonld ? [faq.jsonld] : [])];
 
   return (
     head({

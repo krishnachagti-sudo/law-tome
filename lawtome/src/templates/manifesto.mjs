@@ -4,13 +4,37 @@
 // claims about specific laws it can't stand behind.
 
 import { head, sprite, header, footer } from './partials.mjs';
+import { hubHead, hubFaq, hubNav } from './hub.mjs';
 
 export function manifestoPage({ base = '/', origin = '', count } = {}) {
-  const n = count == null ? 'hundreds of' : `${count}`;
+  const n = count == null ? 'hundreds of' : Number(count).toLocaleString('en-US');
+  const faq = hubFaq([
+    {
+      q: 'Why do named laws spread so well?',
+      a: 'Because a name is a handle. Once a pattern has one, it can be pointed at in a meeting, argued about, and carried between fields that share no vocabulary at all. The compression is the whole value — and it is also the risk, because a name travels far more easily than the evidence behind it.',
+    },
+    {
+      q: 'Is a "law" here the same thing as a law of physics?',
+      a: `No, and pretending otherwise is the failure this project was built against. The word covers measured findings, dependable rules of thumb, sayings that hardened into proverbs, and claims specialists still fight over. Every entry <a href="${base}reliability/">wears its tier</a> so the difference is never left to the reader's guess.`,
+    },
+    {
+      q: 'Why not just use Wikipedia?',
+      a: `For an individual law, often you should — and the entries here cite it where it is the best available source. What is missing everywhere else is the shape of the whole: the ratings side by side, <a href="${base}tension/">the pairs that contradict each other</a>, and <a href="${base}graph/">a graph you can actually walk</a>. A thousand separate articles is not an index.`,
+    },
+    {
+      q: 'What stops this becoming another listicle?',
+      a: `A refusal to grow by padding. Ten thousand confident unsourced summaries would be easy and worthless. <a href="${base}about/">The method</a> is the constraint: drawn from sources, cited or it does not ship, adversarially checked, traced to the earliest reliable attribution.`,
+    },
+  ], { heading: 'The argument, in questions' });
+
   const section = `<section class="sec" id="manifesto">
   <div class="wrap wrap-prose">
-    <div class="sec-head"><h1>Why name a law?</h1></div>
-    <p class="mf-lede">A good name is a handle on a hard idea. Say “<a href="${base}laws/goodharts-law/">Goodhart’s Law</a>” and a whole pattern — the target that gets gamed the moment it becomes a target — arrives in three words. That compression is the point. It’s why named laws spread, and why they’re worth collecting properly.</p>
+${hubHead({
+    title: 'Why name a law?',
+    answer: `A named law is a handle on a hard idea: say “Goodhart's Law” and a whole pattern arrives in three words. That compression is why these ideas spread — and why they deserve a proper reference rather than another unsourced list. The Law Tome is ${n} of them, each explained, cited, rated for how far it can be trusted, and linked to the laws it echoes and contradicts.`,
+    crumbs: [['about/', 'About']],
+    base,
+  })}    <p class="mf-lede">A good name is a handle on a hard idea. Say “<a href="${base}laws/goodharts-law/">Goodhart’s Law</a>” and a whole pattern — the target that gets gamed the moment it becomes a target — arrives in three words. That compression is the point. It’s why named laws spread, and why they’re worth collecting properly.</p>
 
     <h2 class="about-h2">The problem with the lists</h2>
     <p class="about-p">Search for any of these and you’ll find the same thing: a listicle. Forty of a name, a one-line gloss, no source, no idea where it came from or whether it’s even true. Half are misattributed. A few are invented. Most are stranded — a name with nothing around it, no sense of which other ideas it touches or contradicts. You leave knowing a phrase, not an idea.</p>
@@ -30,7 +54,7 @@ export function manifestoPage({ base = '/', origin = '', count } = {}) {
       <a class="ghost" href="${base}for/">Find your laws</a>
     </div>
     <p class="mf-sig">The Law Tome is an initiative by <a href="${origin || 'https://conyso.com'}">Conyso</a>.</p>
-  </div>
+${faq.html}${hubNav('', { base })}  </div>
 </section>
 `;
 
@@ -44,7 +68,17 @@ export function manifestoPage({ base = '/', origin = '', count } = {}) {
     url: `${origin}${base}manifesto/`,
     description,
     isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
-  }];
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}${base}` },
+      { '@type': 'ListItem', position: 2, name: 'About', item: `${origin}${base}about/` },
+      { '@type': 'ListItem', position: 3, name: 'Why name a law?' },
+    ],
+  },
+  ...(faq.jsonld ? [faq.jsonld] : [])];
 
   return (
     head({ title: 'Why Name a Law? — The Manifesto | The Law Tome', description, base, origin, path: 'manifesto/', jsonld }) +
