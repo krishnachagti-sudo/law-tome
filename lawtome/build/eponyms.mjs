@@ -28,7 +28,14 @@ export function eponymGroups(laws = []) {
     if (!by.has(person)) by.set(person, []);
     by.get(person).push(l);
   }
-  const groups = [...by.entries()].map(([person, ls]) => ({ person, laws: ls.slice().sort((a, b) => byNo(a.no, b.no)) }));
+  // Carry the namesake's kind through. Every law sharing a namedAfter shares
+  // its kind, so the first law that states one settles it; a group whose laws
+  // are all silent gets no kind, which downstream must read as "unknown"
+  // rather than "person" (see docs/CORPUS-SCHEMA.md).
+  const groups = [...by.entries()].map(([person, ls]) => {
+    const kind = (ls.find((l) => l.namesakeKind) || {}).namesakeKind;
+    return { person, laws: ls.slice().sort((a, b) => byNo(a.no, b.no)), ...(kind ? { kind } : {}) };
+  });
   groups.sort((a, b) => surnameKey(a.person).localeCompare(surnameKey(b.person), 'en')
     || a.person.localeCompare(b.person, 'en'));
   return groups;

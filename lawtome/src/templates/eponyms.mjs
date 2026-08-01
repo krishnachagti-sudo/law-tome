@@ -66,8 +66,27 @@ export function eponymsPage(groups = [], { base = '/', origin = '', count, image
     return `<span class="ep-initial" aria-hidden="true">${escapeHtml(surnameInitial(person))}</span>`;
   };
 
+  // Most namesakes are people; a handful are a factory, a casino, a gospel, a
+  // character in a novel. They belong in this index — the law really is named
+  // after them — but the row should say so rather than let the page's own
+  // "the person who lent it" framing quietly misdescribe them.
+  // [tag on the row, phrase for the tooltip] — "named after a fictional" is
+  // not a sentence, so the two are not the same string.
+  const KIND_LABEL = {
+    group: ['group', 'a group of people'],
+    place: ['place', 'a place'],
+    work: ['work', 'a published work'],
+    fictional: ['fictional', 'a fictional character'],
+    event: ['event', 'a historical event'],
+    animal: ['animal', 'an animal'],
+  };
+  const kindTag = (g) => {
+    const l = g.kind && g.kind !== 'person' && KIND_LABEL[g.kind];
+    return l ? `<span class="ep-kind" title="Not a person: this law is named after ${escapeHtml(l[1])}">${escapeHtml(l[0])}</span>` : '';
+  };
+
   const row = (g, anchored) => `      <div class="ep-row"${anchored ? ` id="${escapeHtml(personId(g.person))}"` : ''}>
-        <span class="ep-person">${avatar(g.person)}<span class="ep-pname">${escapeHtml(g.person)}${g.laws.length > 1 ? `<span class="ep-badge">${g.laws.length}</span>` : ''}</span></span>
+        <span class="ep-person">${avatar(g.person)}<span class="ep-pname">${escapeHtml(g.person)}${kindTag(g)}${g.laws.length > 1 ? `<span class="ep-badge">${g.laws.length}</span>` : ''}</span></span>
         <span class="ep-laws">${lawLinks(g.laws)}</span>
       </div>`;
 
@@ -124,19 +143,20 @@ ${jump}${alpha}`
     : '<div class="empty">No named laws yet.</div>';
 
   const eponymCount = rows.reduce((n, g) => n + g.laws.length, 0);
+  const notPeople = rows.filter((g) => g.kind && g.kind !== 'person');
   const withFace = rows.filter((g) => personImage(images, g.person)).length;
   const top = multi.slice().sort((a, b) => b.laws.length - a.laws.length || a.person.localeCompare(b.person, 'en'));
 
   const answer = rows.length
-    ? `${eponymCount} of the named laws in The Law Tome carry a person's name, and they belong to ${rows.length} people. ${multi.length} of those namesakes have more than one law to their credit${top.length ? `, led by ${top.slice(0, 3).map((g) => `${escapeHtml(g.person)} (${g.laws.length})`).join(', ')}` : ''}.`
+    ? `${eponymCount} of the named laws in The Law Tome carry a namesake's name, across ${rows.length} namesakes. ${multi.length} of them have more than one law to their credit${top.length ? `, led by ${top.slice(0, 3).map((g) => `${escapeHtml(g.person)} (${g.laws.length})`).join(', ')}` : ''}.${notPeople.length ? ` ${notPeople.length} are not people at all — a factory, a casino, a gospel, a character in a novel — and are tagged as such.` : ''}`
     : 'Named laws gathered under the person each is named after.';
 
-  const lede = `Every law that carries someone's name, filed under the person who lent it — useful when you remember the surname but not which of their laws you meant. Being the namesake is not the same as being the discoverer: plenty of these people got the credit second-hand, and each law page says whose work it really was.${withFace ? ` ${withFace} of the ${rows.length} have a verified public-domain or freely-licensed portrait here; the rest keep a plain initial rather than a stand-in face.` : ''}`;
+  const lede = `Every law that carries a name, filed under whoever — or whatever — lent it. Useful when you remember the surname but not which of their laws you meant. Two caveats the page marks rather than hides: being the namesake is not the same as being the discoverer, and plenty of these people got the credit second-hand; and not every namesake is a person${notPeople.length ? `, so the ${notPeople.length} that are a place, a group, a work or a fictional character carry a tag` : ''}.${withFace ? ` ${withFace} of the ${rows.length} have a verified public-domain or freely-licensed portrait here; the rest keep a plain initial rather than a stand-in face.` : ''}`;
 
   const faq = hubFaq([
     {
       q: 'How many named laws are named after a person?',
-      a: `${eponymCount}, spread across ${rows.length} namesakes. The rest of the index is named for a place, a phenomenon, or nothing in particular.`,
+      a: `${eponymCount} entries carry a namesake, across ${rows.length} distinct namesakes${notPeople.length ? `, of which ${rows.length - notPeople.length} are people and ${notPeople.length} are not — ${notPeople.slice(0, 4).map((g) => `${escapeHtml(g.person)} (${escapeHtml(g.kind)})`).join(', ')}` : ''}. The rest of the index is named for a phenomenon, or nothing in particular.`,
     },
     {
       q: 'Who has the most laws named after them?',

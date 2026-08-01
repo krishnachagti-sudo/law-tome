@@ -108,3 +108,26 @@ test('loadCorpus rejects malformed JSON naming the file', async () => {
     await rm(dir, { recursive:true, force:true });
   }
 });
+
+// --- namesakeKind ----------------------------------------------------------
+// What sort of thing a law is named after. Fetched per namesake from Wikidata
+// P31 (build/fetch-namesake-kind.py), never hand-written, because inferring it
+// from the string does not work in either direction: "The Hawthorne Works" is
+// three capitalised words and a factory, while "Jacobus Henricus van 't Hoff"
+// is a person. Absence means UNKNOWN, never person — the pronunciation player
+// and the birthplace map both read it that way.
+test('a known namesakeKind passes', () =>
+  assert.deepEqual(validate([{ ...ok, namedAfter: 'Jane Doe', namesakeKind: 'person' }], cats), []));
+test('every documented namesakeKind is accepted', () => {
+  for (const k of ['person', 'group', 'place', 'work', 'fictional', 'event', 'animal']) {
+    assert.deepEqual(validate([{ ...ok, namedAfter: 'X', namesakeKind: k }], cats), [], `${k} should be valid`);
+  }
+});
+test('off-vocabulary namesakeKind fails', () =>
+  assert.ok(validate([{ ...ok, namedAfter: 'Jane Doe', namesakeKind: 'robot' }], cats)
+    .some((e) => /namesakeKind/.test(e))));
+test('namesakeKind without namedAfter fails', () =>
+  assert.ok(validate([{ ...ok, namesakeKind: 'person' }], cats)
+    .some((e) => /namesakeKind/.test(e) && /namedAfter/.test(e))));
+test('an entry with no namesakeKind still passes — absence is "unknown", not an error', () =>
+  assert.deepEqual(validate([{ ...ok, namedAfter: 'Jane Doe' }], cats), []));

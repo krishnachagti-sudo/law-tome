@@ -511,7 +511,7 @@ ${mapLegend}
           ${portrait(namesakeImg, { base, alt: `${law.namedAfter}, who ${law.name} is named after` })}
           <span class="face-name">${escapeHtml(law.namedAfter)}</span>
         </a>
-${pronunciation(personFact, law.namedAfter, { base })}
+${pronunciation(personFact, law.namedAfter, { base, namesakeKind: law.namesakeKind })}
         ${imageCredit(namesakeImg)}
       </div>\n`
     : '';

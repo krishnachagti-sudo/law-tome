@@ -56,19 +56,22 @@ export function diffusionBlock(fact, law, { base = '/' } = {}) {
         </figure>`;
 }
 
-// A handful of `namedAfter` values are not people — "The Hawthorne Works",
-// "The Monte Carlo Casino", "A misspelling of Murphy". They are honest
-// descriptions and they belong in the field, but offering to pronounce one is
-// nonsense: the harvester matched a recording of "Murphy" to the phrase "A
-// misspelling of Murphy". Every one of them opens with an article, and no
-// personal name does, so that is the test.
-const NOT_A_PERSON = /^(a|an|the)\s/i;
-
-/** How the namesake's name is said, in a real recording of it. */
-export function pronunciation(personFact, person, { base = '/' } = {}) {
+/**
+ * How the namesake's name is said, in a real recording of it.
+ *
+ * Gated on the law's `namesakeKind` being `person`. Some namesakes are a
+ * factory, a casino, a gospel, a character in a novel, or — for Muphry's Law —
+ * a misspelling, and offering to pronounce one of those is nonsense; the
+ * harvester had matched a recording of "Murphy" to the phrase "A misspelling of
+ * Murphy". This was briefly gated on the string starting with an article, which
+ * worked for the ten cases I had looked at and would have failed the moment a
+ * non-person turned up without one. Absence of the field means "not
+ * established", so it also withholds the button — the honest default.
+ */
+export function pronunciation(personFact, person, { base = '/', namesakeKind } = {}) {
   const a = personFact && personFact.audio;
   if (!a) return '';
-  if (NOT_A_PERSON.test(String(person || '').trim())) return '';
+  if (namesakeKind !== 'person') return '';
   // The file on disk is named for the person, not stored on the record — the
   // harvester writes assets/audio/<personSlug>.<ext>. Reading a `slug` field
   // that was never written produced `/assets/audio/.ogg` on every page.

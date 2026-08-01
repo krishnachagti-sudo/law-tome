@@ -7,6 +7,16 @@
 // ships a page.
 const RELIABILITY = new Set(['Empirical', 'Heuristic', 'Folk-adage', 'Contested']);
 const PROVENANCE = new Set(['canon', 'coined']);
+// What kind of thing a law is named after. Most are people, but not all: the
+// Hawthorne Effect is named for a factory, the Red Queen Hypothesis for a
+// character in a novel, the Matthew Effect for a gospel. Pages that speak about
+// the namesake — a pronunciation button, a birthplace map, an index whose lede
+// says "the person who lent it" — need to know which, and inferring it from the
+// shape of the string does not work ("The Hawthorne Works" reads as a name).
+// Established per namesake from Wikidata P31 by build/fetch-namesake-kind.py.
+// ABSENT MEANS UNKNOWN, NOT PERSON: an entry whose namesake could not be
+// resolved carries no field, and callers must not read that silence as a claim.
+const NAMESAKE_KIND = new Set(['person', 'group', 'place', 'work', 'fictional', 'event', 'animal']);
 // `example` is handled separately below: an entry satisfies it with either the
 // singular `example` string or a non-empty `examples[]` array (the richer form).
 const REQUIRED = ['no','slug','name','statement','meaning','origin','category','reliability','provenance'];
@@ -51,6 +61,12 @@ export function validateCorpus(laws, categories) {
     if (l.provenance && !PROVENANCE.has(l.provenance)) errs.push(`${id}: provenance "${l.provenance}" invalid`);
     if (l.provenance === 'canon' && (!Array.isArray(l.sources) || l.sources.length === 0))
       errs.push(`${id}: canon entry must have at least one source`);
+    if (l.namesakeKind && !NAMESAKE_KIND.has(l.namesakeKind))
+      errs.push(`${id}: namesakeKind "${l.namesakeKind}" invalid`);
+    // A kind with nothing to qualify is a stray: it would claim a namesake the
+    // entry does not have.
+    if (l.namesakeKind && !l.namedAfter)
+      errs.push(`${id}: namesakeKind set without namedAfter`);
     if (l.provenance === 'coined' && l.namedAfter)
       errs.push(`${id}: coined entry must not assert a real-person namedAfter without verification`);
     // Rule 3: statementAccent, when present, must be an EXACT substring of

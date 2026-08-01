@@ -96,7 +96,8 @@ one invented citation destroys it. These rules are not negotiable.
 | `whyItMatters` | string | The "so what". **Omit** where the law is purely descriptive and forcing advice would be strained. |
 | `coinedYear` | number | Year first stated. Omit where genuinely indeterminate — `occams-razor` omits it because Ockham's own formulations are early-14th-century and undated while the famous phrasing is 1639. |
 | `popularYear` | number | Year it took its famous form or reached wide currency, where meaningfully later than `coinedYear`. |
-| `namedAfter` | string | The real person the law is named for. May name more than one (`"David Dunning and Justin Kruger"`). Omit when the law is not named after a person (`cobra-effect`). Never present on coined entries. |
+| `namedAfter` | string | Who or what the law is named for. May name more than one (`"David Dunning and Justin Kruger"`). Usually a person, but not always — the Hawthorne Effect is named for a factory. Omit when the law is named after nothing in particular (`cobra-effect`). Never present on coined entries. |
+| `namesakeKind` | string | What kind of thing `namedAfter` is: `person`, `group`, `place`, `work`, `fictional`, `event`, `animal`. **Absent means not established, never `person`.** Established per namesake from Wikidata's P31 by `build/fetch-namesake-kind.py`, which records the QID it matched in `src/data/namesake-kinds.json`; do not hand-write it. Requires `namedAfter`. |
 | `sameAs` | string | Wikipedia/Wikidata URL, used for schema.org disambiguation. |
 | `related` | array | `{slug, kind}`. 2–4 where genuinely apt — fewer is fine, padding is not. Subject to closure. |
 | `confusedWith` | string[] | Slugs people genuinely mix this one up with. Distinct from `related`. Omit if none. Subject to closure. |
@@ -146,6 +147,28 @@ Be honest. This field is the reader's guide to how much weight the claim carries
 | --- | --- |
 | `canon` | Historically attested outside this site. Requires ≥1 real, verified source. |
 | `coined` | A community-submitted original. Must not claim a real-person `namedAfter`. |
+
+### `namesakeKind`
+
+What sort of thing the law is named after. Fetched, not judged: `build/fetch-namesake-kind.py`
+resolves the namesake to a Wikidata item and reads P31 (instance of), walking up P279 when the
+direct class is too specific, and writes the QID it matched into `src/data/namesake-kinds.json`
+so every verdict is checkable.
+
+| Value | Means | Example |
+| --- | --- | --- |
+| `person` | A real human being. The overwhelming majority. | Cyril Northcote Parkinson |
+| `group` | An organisation, company, institution, or named group of people. | The Baader–Meinhof group |
+| `place` | A building, city, or other location. | The Hawthorne Works |
+| `work` | A book, text, or other published work. | the Gospel of Matthew |
+| `fictional` | A character from literature or myth. | The Red Queen; Pygmalion |
+| `event` | A historical event. | — |
+| `animal` | An actual animal. | Clever Hans, the counting horse |
+
+A namesake the fetcher could not resolve — `"A misspelling of Murphy"` is not an entity in any
+database — is left with **no** `namesakeKind`. Code that speaks about the namesake as a person
+(the pronunciation player, the birthplace map, the eponym index's copy) must test for
+`namesakeKind === 'person'` and treat absence as "don't know", not as a person.
 
 ---
 

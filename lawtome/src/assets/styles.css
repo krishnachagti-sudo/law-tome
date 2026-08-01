@@ -1491,6 +1491,11 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .cmp-hub-list>li{display:flex}
 .cmp-hub-list>li>.cvs{flex:1}
 
+/* "not a person" tag on the eponym index. */
+.ep-kind{margin-left:8px;padding:1px 6px;border:1px solid var(--line-strong);border-radius:2px;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);
+  vertical-align:middle}
+
 /* Faces on the facing panels of /tension/, matching /compare/. */
 .ten-side{border-left:2px solid var(--field,transparent)}
 .ten-id{display:flex;align-items:center;gap:10px}

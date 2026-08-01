@@ -35,12 +35,17 @@ function placeId(place) {
 export function originsPage(groups = [], { base = '/', origin = '', count, facts = {}, world = {} } = {}) {
   const rows = Array.isArray(groups) ? groups : [];
   const people = (facts && facts._people) || {};
+  const personCount = rows.filter((g) => g.kind === 'person').length;
 
   // Gather every namesake we have a birthplace for, folded together by place —
   // 30 people born in London should be one dot that says 30, not 30 dots.
   const byPlace = new Map();
   let located = 0;
   for (const g of rows) {
+    // People only. A factory and a casino have coordinates too, and Wikidata
+    // will hand them over quite happily, but "where the Monte Carlo Casino was
+    // born" is not a sentence — and this map's whole claim is about people.
+    if (g.kind !== 'person') continue;
     const rec = people[personSlug(g.person)];
     const o = rec && rec.origin;
     if (!o || !Number.isFinite(Number(o.lat)) || !Number.isFinite(Number(o.lon))) continue;
@@ -106,7 +111,7 @@ ${p.people.map((g) => `          <li><a href="${base}named-after/#${escapeHtml(p
     ? `${located} of the people with a law named after them have a birthplace on record, in ${places.length} different places${biggest ? `, most of them in ${escapeHtml(biggest.place)} (${biggest.people.length})` : ''}. This map plots those birthplaces — where the namesakes were born, which is a different question from where the ideas were had.`
     : 'A map of where the people with laws named after them were born.';
 
-  const lede = `A dot here marks a <em>birthplace</em>, and only that. Fermi was born in Rome and did the work he is remembered for in Chicago; plenty of these people left as children and never went back. What the map is good for is the other question — who has historically been in a position to get a law named after them — and on that it is blunt, because the clustering is not subtle. Coordinates come from Wikidata and each place links to its source. The ${rows.length - located} namesakes with no confirmed birthplace are absent rather than approximated.`;
+  const lede = `A dot here marks a <em>birthplace</em>, and only that. Fermi was born in Rome and did the work he is remembered for in Chicago; plenty of these people left as children and never went back. What the map is good for is the other question — who has historically been in a position to get a law named after them — and on that it is blunt, because the clustering is not subtle. Coordinates come from Wikidata and each place links to its source. The ${personCount - located} with no confirmed birthplace are absent rather than approximated.`;
 
   const faq = hubFaq([
     {
@@ -140,7 +145,7 @@ ${hubHead({
       [located, 'birthplaces'],
       [places.length, 'places'],
       ...(biggest ? [[biggest.people.length, `most, in ${biggest.place}`]] : []),
-      [rows.length - located, 'not placed'],
+      [Math.max(0, personCount - located), 'not placed'],
     ],
     base,
   })}${map}${list}
