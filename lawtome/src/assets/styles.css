@@ -417,7 +417,7 @@ a:hover .portrait,a:focus-visible .portrait{filter:none}
    the column never shifts and we never imply a face we do not have). */
 .ep-person{display:flex;align-items:center;gap:11px}
 .ep-person .portrait--sm{width:34px;height:34px;object-fit:cover;border-radius:50%;flex:none}
-.ep-initial{width:34px;height:34px;flex:none;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;color:var(--faint)}
+.ep-initial{width:34px;height:34px;flex:none;border-radius:50%;border:1px solid var(--line);background:var(--surface-2);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--muted)}
 .ep-pname{min-width:0}
 /* a law page deep-links its namesake here — flag the row it landed on */
 .ep-row:target{background:var(--surface);box-shadow:-10px 0 0 var(--surface),10px 0 0 var(--surface);border-left:2px solid var(--accent);padding-left:10px;margin-left:-12px}

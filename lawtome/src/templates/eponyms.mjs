@@ -40,6 +40,26 @@ export function surnameInitial(person) {
   return /[A-Z]/.test(c) ? c : '#';
 }
 
+/**
+ * The monogram for a namesake with no portrait: "Mary Ainsworth" -> "MA".
+ *
+ * Two earlier attempts were both wrong. The forename's initial contradicted
+ * the section the row sits in — section A full of circles reading M, G, P.
+ * The surname's initial agreed with the section and therefore said nothing:
+ * a column of identical A's next to the letter A. A monogram carries the one
+ * piece of information a placeholder can honestly carry, which is who the row
+ * is about, and it varies down the column so the eye can use it.
+ */
+export function monogram(person) {
+  const one = String(person || '').trim().split(/\s+(?:and|&|with)\s+|,\s*/i)[0] || '';
+  const parts = one.split(/\s+/).filter(Boolean);
+  const letter = (w) => (w || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^A-Za-z]/g, '').charAt(0).toUpperCase();
+  const first = letter(parts[0]);
+  const last = parts.length > 1 ? letter(parts[parts.length - 1]) : '';
+  return (first + last) || '·';
+}
+
 export function personId(person) {
   return 'ep-' + String(person || '')
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -61,9 +81,9 @@ export function eponymsPage(groups = [], { base = '/', origin = '', count, image
   const avatar = (person) => {
     const img = personImage(images, person);
     if (img) return portrait(img, { base, small: true, alt: person });
-    // The SURNAME's initial, matching the letter section this row sits in. It
-    // used to be the forename's, so the A section showed circles reading M, G, P.
-    return `<span class="ep-initial" aria-hidden="true">${escapeHtml(surnameInitial(person))}</span>`;
+    // A monogram, not a single letter — see monogram() for why both earlier
+    // versions of this were useless.
+    return `<span class="ep-initial" aria-hidden="true">${escapeHtml(monogram(person))}</span>`;
   };
 
   // Most namesakes are people; a handful are a factory, a casino, a gospel, a
