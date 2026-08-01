@@ -18,7 +18,7 @@ import { tensionPage } from '../src/templates/tension.mjs';
 import { comparePage, compareHubPage } from '../src/templates/compare.mjs';
 import { tensionPairs, comparePairs } from './relations.mjs';
 import { reliabilityHubPage } from '../src/templates/reliability.mjs';
-import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions } from '../src/templates/partials.mjs';
+import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, personSlug } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
 import { resolveCollections } from './collections.mjs';
 import { quizPage } from '../src/templates/quiz.mjs';
@@ -90,6 +90,11 @@ export async function buildSite(opts) {
   await rm(out, { recursive: true, force: true });
 
   const byslug = Object.fromEntries(laws.map(l => [l.slug, l]));
+  // The namesakes that actually have a row on /named-after/. The home page's
+  // people band links straight at those rows, so it must not offer a face whose
+  // anchor no longer exists — merging duplicate laws can retire a namesake while
+  // their portrait stays in the image manifest.
+  const eponymSlugs = new Set(eponymGroups(laws).map((g) => personSlug(g.person)));
   const publishedCount = opts.publishedCount ?? laws.length;
   // A single build timestamp shared by every page, surfaced as the JSON-LD
   // dateModified + article:modified_time freshness signal. Honest: it records
@@ -112,7 +117,7 @@ export async function buildSite(opts) {
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
     // Home: first 12 laws as the featured rotation.
-    writePage(join(out, 'index.html'), homePage(laws.slice(0, 18), { publishedCount, base, origin, images })),
+    writePage(join(out, 'index.html'), homePage(laws.slice(0, 18), { publishedCount, base, origin, images, eponymSlugs })),
     // Prebuilt client-search index (a DATA file, not a "page"): fetched by
     // src/assets/search.js. Curated situation phrasing is folded in so a typed
     // problem description surfaces the mapped law. In the concurrent writes[] so

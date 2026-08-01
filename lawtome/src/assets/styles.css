@@ -1240,3 +1240,7 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .lawfig figcaption{margin-top:12px;font-family:var(--mono);font-size:10px;line-height:1.5;letter-spacing:.02em;color:#5c574c}
 .lawfig figcaption .img-credit{display:inline;margin:0;color:inherit}
 .lawfig figcaption a{color:#7a5a12}
+
+/* The search results are scrolled to when a query starts; keep the heading clear
+   of the sticky masthead instead of tucking it underneath. */
+#index{scroll-margin-top:84px}

@@ -40,7 +40,7 @@ function renderStatement(statement, accent) {
     escapeHtml(statement.slice(i + accent.length));
 }
 
-export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '', images } = {}) {
+export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '', images, eponymSlugs } = {}) {
   const nf = new Intl.NumberFormat('en');
   const count = publishedCount == null ? '—' : nf.format(publishedCount);
 
@@ -390,7 +390,12 @@ const BASE=${JSON.stringify(base)};
   // and each one is the link to the eponym index. It earns its place by being the
   // one thing a text-only index can never show — that these are real people who
   // put their name to an idea. Renders nothing at all if no images are curated.
-  const faces = Object.values((images && images.people) || {});
+  // Only people who actually have a row in the eponym index: merging duplicate
+  // laws can retire a namesake while their portrait stays in the manifest, and
+  // linking to an anchor that no longer exists drops the reader at the top of a
+  // 600-name page with no idea why.
+  const faces = Object.values((images && images.people) || {})
+    .filter((img) => !eponymSlugs || eponymSlugs.has(img.slug));
   const peopleBand = faces.length >= 12
     ? `<section class="sec people-band">
   <div class="wrap">

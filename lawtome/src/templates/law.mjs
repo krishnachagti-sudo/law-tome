@@ -643,21 +643,37 @@ document.getElementById('copy').onclick=function(){
       // run the rail fill down to the centre of the active item
       if(toc)toc.style.setProperty('--fill',(a.offsetTop+a.offsetHeight/2)+'px');
     };
+    // Active section = the one filling most of the screen, not the one whose
+    // heading last crossed a line.
+    //
+    // The reading-line approach was wrong in a way no amount of tuning fixes.
+    // A line can only switch when the NEXT heading reaches it, so a section
+    // occupying three quarters of the viewport still reads as the previous one
+    // until its title climbs to the top — which is exactly the desync you see
+    // when a long section follows a short one. Measuring area asks the question
+    // the reader is actually asking, "what am I looking at", and it needs no
+    // special case for the end of the page: the last section wins on area once
+    // it fills the screen, however little scroll is left.
+    //
+    // Each section claims the space from its own top to the NEXT section's top,
+    // so the figures and infographic cards that sit between blocks count toward
+    // the section they follow instead of belonging to nobody.
+    var HEADER=92;
     var apply=function(){
       ticking=false;
       if(lock){ if(Date.now()<lockT){mark(lock);return;} lock=null; }
-      var h=document.documentElement,y=window.scrollY||h.scrollTop,mx=h.scrollHeight-h.clientHeight;
-      // active = the last section whose heading has crossed the reading line, which
-      // sits just under the sticky header — i.e. the section you are actually reading.
-      // In the final viewport the page can no longer scroll, so a section can never
-      // reach that line; the slack term extends the line by exactly the amount of
-      // scroll that is missing, sweeping it to the viewport bottom at the very end so
-      // the short trailing sections still get their turn instead of being skipped.
-      var vh=window.innerHeight,top=92,rest=Math.max(0,mx-y);
-      var slack=Math.max(0,(vh-top)-rest);
-      var line=y+top+slack,cur=secs[0];
-      for(var i=0;i<secs.length;i++){if(secs[i].el.getBoundingClientRect().top+y<=line)cur=secs[i];}
-      mark(cur&&cur.a);
+      var vh=window.innerHeight,best=null,bestArea=-1;
+      for(var i=0;i<secs.length;i++){
+        var top=secs[i].el.getBoundingClientRect().top;
+        var end=(i+1<secs.length)
+          ? secs[i+1].el.getBoundingClientRect().top
+          : top+secs[i].el.offsetHeight;
+        var visible=Math.min(end,vh)-Math.max(top,HEADER);
+        // >= so a tie goes to the later section: scrolling forward should advance
+        if(visible>=bestArea){bestArea=visible;best=secs[i];}
+      }
+      // above the first section (still in the hero) nothing is active yet
+      mark(bestArea>0&&best?best.a:null);
     };
     var onScroll=function(){ if(!ticking){ticking=true;requestAnimationFrame(apply);} };
     // an explicit TOC click wins over the spy while the smooth scroll is in flight —

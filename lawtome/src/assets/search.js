@@ -263,14 +263,42 @@
 
     if (q) {
       q.addEventListener('input', function () {
+        // Narrowing a search removes cards, the document gets shorter, and the
+        // browser clamps scrollY to the new maximum — so the page slides upward
+        // under the reader on almost every keystroke. That is the other half of
+        // the jumpiness, and no amount of not-calling-scrollIntoView fixes it.
+        // Hold the grid at its tallest while a query is being typed, so the
+        // document never shrinks mid-word; the floor is released when the field
+        // is cleared or left.
+        var floor = grid ? grid.offsetHeight : 0;
         query = q.value.trim().toLowerCase();
         render();
-        var idx = document.getElementById('index');
-        // Honour reduced-motion: JS smooth scroll ignores the OS preference, so
-        // opt out explicitly for users who asked for less motion.
-        var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (query && idx) idx.scrollIntoView({ behavior: rm ? 'auto' : 'smooth' });
+        if (grid) {
+          if (!query) grid.style.minHeight = '';
+          else if (grid.offsetHeight < floor) grid.style.minHeight = floor + 'px';
+        }
       });
+      // Typing NEVER moves the page.
+      //
+      // It used to scroll the results into view on every input event, which was
+      // unusable for a reason worth writing down: the search box lives in the
+      // hero, so scrolling to the grid pushes the focused field off-screen, and
+      // the browser then scrolls BACK on the next character to keep the caret
+      // visible. Our code and the browser fought each other, once per letter.
+      // The grid filters live and the count updates, so there is nothing to
+      // chase — and Enter, a deliberate act, is what jumps to the results.
+      q.addEventListener('keydown', function (e) {
+        if (e.key !== 'Enter') return;
+        e.preventDefault();
+        var idx = document.getElementById('index');
+        if (!idx) return;
+        // Blur first: with the field unfocused the browser has no caret to keep
+        // on screen, so the jump stays put instead of springing back.
+        q.blur();
+        var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        idx.scrollIntoView({ behavior: rm ? 'auto' : 'smooth', block: 'start' });
+      });
+      q.addEventListener('blur', function () { if (grid) grid.style.minHeight = ''; });
     }
 
     if (chipsEl) {
