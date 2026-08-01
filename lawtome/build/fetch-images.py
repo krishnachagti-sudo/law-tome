@@ -552,6 +552,58 @@ def commons_file(file_title, width=900):
     return None
 
 
+
+# Words that carry no subject information: the grammar of a law's name, and the
+# nouns every eponym ends in. "Law", "effect" and "the" match half of Commons.
+SUBJECT_STOPWORDS = set(
+    'the a an of and or in on for to with is are law laws rule rules principle '
+    'effect equation theorem lemma paradox razor criterion criteria problem '
+    'model theory hypothesis conjecture experiment argument thesis maxim'.split()
+)
+
+
+def subject_tokens(law):
+    """The words that actually identify this law, for matching against filenames."""
+    words = re.split(r'[^a-z0-9]+', norm(law.get('name') or ''))
+    toks = {w for w in words if len(w) >= 4 and w not in SUBJECT_STOPWORDS}
+    for alt in (law.get('aliases') or []):
+        toks |= {w for w in re.split(r'[^a-z0-9]+', norm(alt))
+                 if len(w) >= 4 and w not in SUBJECT_STOPWORDS}
+    return toks
+
+
+def is_about_subject(file_name, tokens, law):
+    """Does this file plausibly depict THIS law?
+
+    Taking the first usable image on the page is too loose: it hands Scientific
+    Realism a picture of Socrates and Russell's Teapot a portrait of Russell —
+    both are on the page, neither shows the idea. So the filename has to share a
+    significant word with the law's name. Some good diagrams get dropped by this,
+    which is the right trade: a caption that says "figure illustrating X" over a
+    picture of something else is a small lie, and the whole project rests on not
+    telling those.
+
+    A file named only for the namesake is rejected outright — that is a portrait,
+    and the portrait already has its own panel on the page."""
+    if not tokens:
+        return False
+    bare = norm(file_name.rsplit('.', 1)[0])
+    words = set(re.split(r'[^a-z0-9]+', bare))
+    hits = tokens & words
+    if not hits:
+        return False
+    # A file named for the whole person is a portrait — "Bertrand Russell
+    # transparent bg.png" on the Russell's Teapot page — and the portrait already
+    # has its own panel. Matching the SURNAME alone would be wrong here: the
+    # surname is usually in the law's name too, so it would also throw out
+    # "Bragg's law.svg" and "Bayes continuous diagram.svg", which are the
+    # diagrams we came for.
+    person = [w for w in re.split(r'[^a-z0-9]+', norm(law.get('namedAfter') or '')) if len(w) >= 3]
+    if len(person) >= 2 and all(w in words for w in person):
+        return False
+    return True
+
+
 def fetch_artifacts(args):
     """Fill in laws the lead-image pass left empty."""
     laws = []
@@ -585,12 +637,15 @@ def fetch_artifacts(args):
             if not via:
                 stats['not_the_law'] += 1
                 continue
+            tokens = subject_tokens(law)
             chosen = None
             for file_title in article_images(title):
                 bare = file_title.replace('File:', '')
                 if reject_filename(bare) or bare in portraits:
                     continue
                 if not re.search(r'\.(jpe?g|png|gif|svg|tiff?)$', bare, re.I):
+                    continue
+                if not is_about_subject(bare, tokens, law):
                     continue
                 info = commons_file(file_title)
                 if info:
