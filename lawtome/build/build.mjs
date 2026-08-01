@@ -211,7 +211,7 @@ export async function buildSite(opts) {
   // opposing. Derived from related[] tension edges — always emitted (empty state
   // when a corpus has none), so the footer link never dangles.
   const tension = tensionPairs(laws);
-  writes.push(writePage(join(out, 'tension', 'index.html'), tensionPage(tension, { base, origin, count: publishedCount, categories })));
+  writes.push(writePage(join(out, 'tension', 'index.html'), tensionPage(tension, { base, origin, count: publishedCount, categories, images })));
   // "X vs Y" comparison pages: one per near-twin / tension pair the corpus marks,
   // plus a /compare/ hub. High-intent long-tail capture ("Occam vs Hanlon"); pure
   // recombination of each law's verified fields — nothing is authored per pair.

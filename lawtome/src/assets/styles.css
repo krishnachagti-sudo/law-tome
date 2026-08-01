@@ -1491,6 +1491,14 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .cmp-hub-list>li{display:flex}
 .cmp-hub-list>li>.cvs{flex:1}
 
+/* Faces on the facing panels of /tension/, matching /compare/. */
+.ten-side{border-left:2px solid var(--field,transparent)}
+.ten-id{display:flex;align-items:center;gap:10px}
+.ten-face{width:30px;height:30px;flex:0 0 30px;border-radius:50%;object-fit:cover;object-position:50% 22%;
+  border:1px solid var(--line-strong);background:var(--surface-2);filter:grayscale(1) contrast(1.05)}
+.ten-face--fig{object-fit:contain;padding:3px;filter:grayscale(1) invert(1)}
+.ten-side:hover .ten-face{filter:grayscale(.2) contrast(1.05)}
+
 /* A face for the answering law on /situations/, and the field colour on the
    spine, so the reverse-lookup table is scannable rather than a wall of rows. */
 .sit-row{border-left:2px solid var(--field,var(--line-strong))}
