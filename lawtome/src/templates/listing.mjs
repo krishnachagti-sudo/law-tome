@@ -13,7 +13,7 @@
 // every slug used in an href goes through escapeHtml — the Task 5/6/7 gates all
 // failed on missed escaping.
 
-import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, reliabilitySlug, browseControls, asset } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, reliabilitySlug, browseControls, asset, figureStrip } from './partials.mjs';
 
 /**
  * A browse or per-category listing page — one full HTML document.
@@ -25,7 +25,7 @@ import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, re
  * @param {string} [o.active] nav key to mark active (defaults to 'browse')
  * @param {string} [o.origin=''] absolute-URL origin for JSON-LD (optional; degrades to base-relative)
  */
-export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '', reliabilityKey = '', count, categories = {} } = {}) {
+export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '', reliabilityKey = '', count, categories = {}, images } = {}) {
   const rows = Array.isArray(laws) ? laws : [];
   // A reliability-tier page (kind='reliability') is a faceted-browse view: the
   // server renders only that tier's laws and stamps the grid so the client keeps
@@ -104,13 +104,20 @@ ${items}
     }
   }
 
+  // A band of this set's own imagery above the controls. Only on the focused
+  // views: /browse/ is every law, so a strip there would say nothing about what
+  // you are looking at, whereas on a field or a tier it is a portrait of that
+  // set. Client-side filtering never touches it, so it stays a stable header
+  // rather than flickering as chips are pressed.
+  const strip = (kind === 'category' || isReliability) ? figureStrip(images, rows, { base }) : '';
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
 ${crumb}    <div class="sec-head">
       <h1>${escapeHtml(h1)}</h1>
       <span class="sub" id="showing" aria-live="polite">showing ${rows.length} of ${rows.length}</span>
     </div>
-${lede}    <div class="chips" id="chips">${chips}</div>
+${lede}${strip}    <div class="chips" id="chips">${chips}</div>
 ${controls}    <div class="grid" id="grid"${gridAttr}>
 ${grid}
     </div>

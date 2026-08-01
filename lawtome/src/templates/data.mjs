@@ -7,8 +7,9 @@
 // back to.
 
 import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
+import { corpusCharts } from './charts.mjs';
 
-export function dataPage({ base = '/', origin = '', count, generated } = {}) {
+export function dataPage({ base = '/', origin = '', count, generated, laws = [], categories = {} } = {}) {
   const n = count == null ? 'every' : (typeof count === 'number' ? count.toLocaleString('en-US') : String(count));
   const entryWord = (typeof count === 'number' && count === 1) ? 'entry' : 'entries';
   const section = `<section class="sec" id="data">
@@ -35,6 +36,9 @@ export function dataPage({ base = '/', origin = '', count, generated } = {}) {
     </div>
     <p class="data-note">Built for generative engines: a compact <a href="${base}llms.txt">llms.txt</a> index and the full <a href="${base}llms-full.txt">llms-full.txt</a> corpus, following the <a href="https://llmstxt.org/" rel="nofollow">llmstxt.org</a> convention.</p>
 
+    <h2 class="data-h2">The shape of the corpus</h2>
+    <p>Three views of the same data you can download, computed from it at build time — so these bars and the file can never disagree. Every bar links to the laws it counts.</p>
+${corpusCharts(laws, categories, { base })}
     <h2 class="data-h2">What's in it</h2>
     <p>For each law: its number, slug, name and aliases, category, reliability rating, one-line statement, the year it was coined and who it's named after, its <a href="${base}graph/">relationship-graph</a> edges, its sources, and a link to its page.</p>
 

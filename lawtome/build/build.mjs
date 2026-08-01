@@ -126,7 +126,7 @@ export async function buildSite(opts) {
     // Prebuilt relationship graph (a DATA file, not a "page"): fetched by
     // src/assets/graph.js, which renders a local neighbourhood from it. In the
     // concurrent writes[] so it's covered by the pre-clean rm + Promise.all.
-    writePage(join(out, 'graph.json'), JSON.stringify(buildGraph(laws))),
+    writePage(join(out, 'graph.json'), JSON.stringify(buildGraph(laws, new Set(Object.keys(images.people || {}))))),
     // The graph explorer page (chrome + empty #graph stage; graph.js fills it).
     writePage(join(out, 'graph', 'index.html'), graphPage({ base, origin, publishedCount })),
   ];
@@ -168,7 +168,7 @@ export async function buildSite(opts) {
   for (const cat of present) {
     writes.push(writePage(
       join(out, 'category', cat, 'index.html'),
-      listingPage(membersByCat.get(cat), { title: categories[cat] || cat, base, kind: 'category', origin, categoryKey: cat, count: publishedCount }),
+      listingPage(membersByCat.get(cat), { title: categories[cat] || cat, base, kind: 'category', origin, categoryKey: cat, count: publishedCount, images }),
     ));
   }
 
@@ -214,7 +214,7 @@ export async function buildSite(opts) {
   for (const tier of presentTiers) {
     writes.push(writePage(
       join(out, 'reliability', reliabilitySlug(tier), 'index.html'),
-      listingPage(membersByTier.get(tier), { title: `${tier} laws`, base, kind: 'reliability', origin, reliabilityKey: tier, count: publishedCount }),
+      listingPage(membersByTier.get(tier), { title: `${tier} laws`, base, kind: 'reliability', origin, reliabilityKey: tier, count: publishedCount, images }),
     ));
   }
 
@@ -230,7 +230,7 @@ export async function buildSite(opts) {
   if (droppedColl.length) console.warn(`collections: dropped ${droppedColl.length} unknown slug(s): ${droppedColl.join(', ')}`);
   writes.push(writePage(join(out, 'collections', 'index.html'), collectionsIndexPage(collections, { base, origin, count: publishedCount })));
   for (const c of collections) {
-    writes.push(writePage(join(out, 'collections', c.slug, 'index.html'), collectionPage(c, { base, origin, count: publishedCount })));
+    writes.push(writePage(join(out, 'collections', c.slug, 'index.html'), collectionPage(c, { base, origin, count: publishedCount, images })));
   }
 
   // Law of the day + name-that-law quiz: a static shell filled by assets/quiz.js
@@ -252,7 +252,7 @@ export async function buildSite(opts) {
   if (droppedAud.length) console.warn(`audiences: dropped ${droppedAud.length} unknown slug(s): ${droppedAud.join(', ')}`);
   writes.push(writePage(join(out, 'for', 'index.html'), audiencesIndexPage(audiences, { base, origin, count: publishedCount })));
   for (const a of audiences) {
-    writes.push(writePage(join(out, 'for', a.slug, 'index.html'), audiencePage(a, { base, origin, count: publishedCount })));
+    writes.push(writePage(join(out, 'for', a.slug, 'index.html'), audiencePage(a, { base, origin, count: publishedCount, images })));
   }
   writes.push(writePage(join(out, 'features', 'index.html'), featuresPage({ base, origin, count: publishedCount })));
   writes.push(writePage(join(out, 'manifesto', 'index.html'), manifestoPage({ base, origin, count: publishedCount })));
@@ -262,7 +262,7 @@ export async function buildSite(opts) {
   writes.push(writePage(join(out, 'named-after', 'index.html'), eponymsPage(eponymGroups(laws), { base, origin, count: publishedCount, images })));
   // Image credits — the attribution the CC licences require, in one auditable list.
   writes.push(writePage(join(out, 'credits', 'index.html'), creditsPage(images, { base, origin, count: publishedCount })));
-  writes.push(writePage(join(out, 'timeline', 'index.html'), timelinePage(eraGroups(laws), { base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'timeline', 'index.html'), timelinePage(eraGroups(laws), { base, origin, count: publishedCount, images })));
 
   // Saved shortlist: a client-only page (localStorage), noindex — filled by
   // assets/saved.js, which every law page's Save button writes to.
@@ -273,7 +273,7 @@ export async function buildSite(opts) {
   // written value stays on-site while the index/graph/citations are freely
   // reusable under CC BY. The .json/.csv are data files (not crawlable pages), so
   // they are NOT added to the sitemap.
-  writes.push(writePage(join(out, 'data', 'index.html'), dataPage({ base, origin, count: publishedCount, generated: buildDate })));
+  writes.push(writePage(join(out, 'data', 'index.html'), dataPage({ base, origin, count: publishedCount, generated: buildDate, laws, categories })));
   writes.push(writePage(join(out, 'data', 'lawtome.json'), JSON.stringify(buildDataset(laws, { baseUrl: `${origin}${base}`, generated: buildDate }), null, 2)));
   writes.push(writePage(join(out, 'data', 'lawtome.csv'), datasetCsv(laws, { baseUrl: `${origin}${base}` })));
   // 404.html at the output root: the host serves it for unmatched paths. A

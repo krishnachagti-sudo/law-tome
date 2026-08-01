@@ -193,6 +193,98 @@ const figures = {
       <text class="s-tick" x="30" y="34" text-anchor="end" transform="rotate(-90 30 34)">response</text>
     </svg>`,
   },
+  // ---- structural shapes -------------------------------------------------
+  // The curve shapes above only fit a law that describes a QUANTITY. Most of
+  // philosophy, logic and psychology describes a STRUCTURE instead — an order of
+  // stages, a loop, a fork, a gap between two things — and those pages have been
+  // imageless because no photograph of an argument exists. These draw the
+  // structure the entry already states, and carry the same "Schematic" label as
+  // every other figure here, so none of them is passed off as an artifact.
+
+  // Stages: an ordered progression, each resting on the one before it.
+  'ladder': {
+    caption: 'An ordered progression: each stage rests on the one below it and is reached in sequence rather than skipped.',
+    svg: `<svg viewBox="0 0 460 210" role="img" aria-label="Schematic: five ascending stages, each resting on the one below">
+      <line class="s-axis" x1="44" y1="24" x2="44" y2="176"/>
+      <line class="s-axis" x1="44" y1="176" x2="430" y2="176"/>
+      <rect class="s-bar" x="60" y="160" width="58" height="16"/>
+      <rect class="s-bar" x="134" y="134" width="58" height="42"/>
+      <rect class="s-bar" x="208" y="108" width="58" height="68"/>
+      <rect class="s-bar" x="282" y="82" width="58" height="94"/>
+      <rect class="s-bar" x="356" y="56" width="58" height="120"/>
+      <path class="s-proxy" d="M89,150 L163,124 L237,98 L311,72 L385,46" fill="none"/>
+      <text class="s-tick" x="44" y="196" text-anchor="start">stage →</text>
+    </svg>`,
+  },
+  // Cycle: the end condition recreates the starting condition.
+  'cycle': {
+    caption: 'A closed loop: the state at the end recreates the conditions at the start, so the sequence runs again instead of resolving.',
+    svg: `<svg viewBox="0 0 460 210" role="img" aria-label="Schematic: four stages arranged in a closed loop">
+      <circle class="s-ring" cx="230" cy="100" r="66" fill="none"/>
+      <circle class="s-dot" cx="230.0" cy="34.0" r="8"/>
+      <circle class="s-dot" cx="296.0" cy="100.0" r="8"/>
+      <circle class="s-dot" cx="230.0" cy="166.0" r="8"/>
+      <circle class="s-dot" cx="164.0" cy="100.0" r="8"/>
+      <path class="s-arrow-head" d="M230,26 l-9,8 l18,0 z"/>
+      <text class="s-tick" x="230" y="196" text-anchor="middle">the loop closes on itself</text>
+    </svg>`,
+  },
+  // Dichotomy: two options whose pull is mutually exclusive.
+  'dichotomy': {
+    caption: 'Two options pulling against each other: what is rational for one side is costly for the other, and both cannot be satisfied at once.',
+    svg: `<svg viewBox="0 0 460 210" role="img" aria-label="Schematic: two opposed boxes pulling against each other">
+      <rect class="s-box" x="52" y="58" width="150" height="84" rx="3"/>
+      <rect class="s-box" x="258" y="58" width="150" height="84" rx="3"/>
+      <line class="s-axis" x1="208" y1="100" x2="252" y2="100"/>
+      <path class="s-arrow-head" d="M208,100 l10,-6 l0,12 z"/>
+      <path class="s-arrow-head" d="M252,100 l-10,-6 l0,12 z"/>
+      <text class="s-tick" x="127" y="104" text-anchor="middle">one side</text>
+      <text class="s-tick" x="333" y="104" text-anchor="middle">the other</text>
+      <text class="s-tick" x="230" y="192" text-anchor="middle">a gain on one is a loss on the other</text>
+    </svg>`,
+  },
+  // Gap: two things taken to be one thing come apart.
+  'gap': {
+    caption: 'Two things taken to be the same that are not: the claim and the case run apart, and the distance between them is the whole point.',
+    svg: `<svg viewBox="0 0 460 210" role="img" aria-label="Schematic: two lines diverging, with the gap between them marked">
+      <line class="s-axis" x1="44" y1="24" x2="44" y2="176"/>
+      <line class="s-axis" x1="44" y1="176" x2="430" y2="176"/>
+      <path class="s-actual" d="M50,110 L424,110"/>
+      <path class="s-proxy" d="M50,110 C170,110 300,58 424,42"/>
+      <line class="s-mean" x1="424" y1="42" x2="424" y2="110"/>
+      <text class="s-tick" x="414" y="80" text-anchor="end">the gap</text>
+      <text class="s-tick" x="44" y="196" text-anchor="start">as it goes on →</text>
+    </svg>`,
+  },
+  // Filter: many enter, few survive each successive constraint.
+  'filter': {
+    caption: 'A funnel of constraints: everything enters at the wide end and only what survives every stage comes out, so the survivors are not a fair sample of the entrants.',
+    svg: `<svg viewBox="0 0 460 210" role="img" aria-label="Schematic: a funnel narrowing through successive stages">
+      <rect class="s-bar" x="70" y="58" width="60" height="84" rx="2"/>
+      <rect class="s-bar" x="148" y="71" width="60" height="58" rx="2"/>
+      <rect class="s-bar" x="226" y="84" width="60" height="32" rx="2"/>
+      <rect class="s-bar" x="304" y="97" width="60" height="6" rx="2"/>
+      <path class="s-proxy" d="M70,100 L400,116" fill="none"/>
+      <text class="s-tick" x="70" y="196" text-anchor="start">all of them</text>
+      <text class="s-tick" x="404" y="196" text-anchor="end">what is left</text>
+    </svg>`,
+  },
+  // Broken chain: an inference whose steps do not in fact connect.
+  'broken-chain': {
+    caption: 'A chain of reasoning with a link that does not hold: every step looks like the last, but one of them does not follow, and the conclusion inherits the break.',
+    svg: `<svg viewBox="0 0 460 210" role="img" aria-label="Schematic: a chain of steps with one broken link">
+      <rect class="s-box" x="40" y="76" width="76" height="48" rx="3"/>
+      <rect class="s-box" x="146" y="76" width="76" height="48" rx="3"/>
+      <rect class="s-box" x="252" y="76" width="76" height="48" rx="3"/>
+      <rect class="s-box" x="358" y="76" width="76" height="48" rx="3"/>
+      <line class="s-axis" x1="116" y1="100" x2="146" y2="100"/>
+      <line class="s-axis" x1="328" y1="100" x2="358" y2="100"/>
+      <line class="s-break" x1="222" y1="100" x2="252" y2="100"/>
+      <path class="s-arrow-head" d="M146,100 l-10,-6 l0,12 z"/>
+      <path class="s-arrow-head" d="M358,100 l-10,-6 l0,12 z"/>
+      <text class="s-tick" x="237" y="66" text-anchor="middle">does not follow</text>
+    </svg>`,
+  },
   // Trade-off: gaining more of one thing costs you the other (a downward curve).
   'tradeoff': {
     caption: 'You can’t maximise both at once: push one up and the other slides down along the curve.',
@@ -233,6 +325,67 @@ const figures = {
 // entry. Kept conservative: a shape is assigned only where it genuinely IS the
 // law's canonical picture (not a loose analogy), so nothing here misrepresents.
 const SLUG_SHAPES = {
+  'the-lump-of-labour-fallacy': 'broken-chain',
+  'the-broken-window-fallacy': 'broken-chain',
+  'the-nirvana-fallacy': 'broken-chain',
+  'the-naturalistic-fallacy': 'broken-chain',
+  'the-fallacy-fallacy': 'broken-chain',
+  'the-genetic-fallacy': 'broken-chain',
+  'the-intentional-fallacy': 'broken-chain',
+  'the-mcnamara-fallacy': 'broken-chain',
+  'the-problem-of-induction': 'broken-chain',
+  'the-munchhausen-trilemma': 'broken-chain',
+  'milankovitch-cycles': 'cycle',
+  'the-life-cycle-hypothesis': 'cycle',
+  'the-triffin-dilemma': 'dichotomy',
+  'the-paradox-of-tragedy': 'dichotomy',
+  'the-problem-of-other-minds': 'gap',
+  'the-problem-of-universals': 'gap',
+  'the-problem-of-the-criterion': 'gap',
+
+  // ---- structural shapes: laws whose SHAPE is an order, a loop, a fork, a
+  // gap or a broken inference rather than a curve. Assigned by hand, and only
+  // where the structure is what the entry itself describes.
+  'blooms-taxonomy': 'ladder',
+  'eriksons-stages-of-psychosocial-development': 'ladder',
+  'kohlbergs-stages-of-moral-development': 'ladder',
+  'maslows-hierarchy-of-needs': 'ladder',
+  'piagets-stages-of-cognitive-development': 'ladder',
+  'the-kubler-ross-model': 'ladder',
+  'the-ooda-loop': 'cycle',
+  'moral-hazard': 'dichotomy',
+  'the-free-rider-problem': 'dichotomy',
+  'the-game-of-chicken': 'dichotomy',
+  'the-principal-agent-problem': 'dichotomy',
+  'the-prisoners-dilemma': 'dichotomy',
+  'the-security-dilemma': 'dichotomy',
+  'the-stag-hunt': 'dichotomy',
+  'the-tragedy-of-the-commons': 'dichotomy',
+  'the-analytic-synthetic-distinction': 'gap',
+  'the-explanatory-gap': 'gap',
+  'the-hard-problem-of-consciousness': 'gap',
+  'the-is-ought-problem': 'gap',
+  'the-planning-fallacy': 'gap',
+  'survivorship-bias': 'filter',
+  'the-anthropic-principle': 'filter',
+  'the-great-filter': 'filter',
+  'begging-the-question': 'broken-chain',
+  'circular-reasoning': 'broken-chain',
+  'equivocation': 'broken-chain',
+  'moving-the-goalposts': 'broken-chain',
+  'post-hoc-ergo-propter-hoc': 'broken-chain',
+  'the-ad-hominem': 'broken-chain',
+  'the-appeal-to-authority': 'broken-chain',
+  'the-appeal-to-nature': 'broken-chain',
+  'the-base-rate-fallacy': 'broken-chain',
+  'the-false-dilemma': 'broken-chain',
+  'the-gamblers-fallacy': 'broken-chain',
+  'the-no-true-scotsman': 'broken-chain',
+  'the-slippery-slope': 'broken-chain',
+  'the-straw-man': 'broken-chain',
+  'the-sunk-cost-fallacy': 'broken-chain',
+  'the-texas-sharpshooter-fallacy': 'broken-chain',
+
   'central-limit-theorem': 'bell-curve',
   'students-t-distribution': 'bell-curve',
   'farrs-law': 'bell-curve',

@@ -37,6 +37,7 @@ import subprocess
 import sys
 import time
 import unicodedata
+import collections
 from collections import OrderedDict
 
 from PIL import Image
@@ -688,6 +689,265 @@ def fetch_artifacts(args):
     print('\n' + json.dumps(stats, indent=2))
 
 
+# ---------------------------------------------------------------------------
+# Second-chance passes. The first portrait run only ever looked at an article's
+# LEAD image, and 149 namesakes failed on exactly that: the article exists, the
+# person is confirmed, and there is simply no picture at the top. Their face is
+# often further down, or recorded on Wikidata, or in their Commons category.
+
+WIKIDATA_API = 'https://www.wikidata.org/w/api.php'
+
+# Words that mark a file as a diagram rather than a person. A portrait slot must
+# never be filled with a chart, however well the filename matches the surname —
+# "Conway law diagram.svg" is about the law, not the man.
+NOT_A_PERSON = re.compile(
+    r'(diagram|chart|graph|plot|curve|equation|formula|schema|figure|fig\d|'
+    r'map|logo|signature|grave|plaque|building|museum|university|award|medal)', re.I)
+
+
+def wikidata_image(title):
+    """The image Wikidata records for an article's subject (property P18).
+
+    Wikipedia's pageimages API and Wikidata frequently disagree — an article with
+    no lead image can still have a perfectly good photo recorded on the item."""
+    d = api(WIKIDATA_API, {
+        'action': 'wbgetentities', 'format': 'json', 'sites': 'enwiki',
+        'titles': title, 'props': 'claims',
+    })
+    for ent in (d.get('entities') or {}).values():
+        for claim in ((ent.get('claims') or {}).get('P18') or []):
+            name = (((claim.get('mainsnak') or {}).get('datavalue') or {}).get('value'))
+            if name:
+                return 'File:' + str(name)
+    return None
+
+
+def commons_category_files(title):
+    """Files in the subject's own Commons category (Wikidata P373).
+
+    Scoped to the category, never a free-text Commons search: searching bare
+    names returns census sheets and unrelated people, which is precisely the kind
+    of near-miss this project must not publish."""
+    d = api(WIKIDATA_API, {
+        'action': 'wbgetentities', 'format': 'json', 'sites': 'enwiki',
+        'titles': title, 'props': 'claims',
+    })
+    cat = None
+    for ent in (d.get('entities') or {}).values():
+        for claim in ((ent.get('claims') or {}).get('P373') or []):
+            cat = (((claim.get('mainsnak') or {}).get('datavalue') or {}).get('value'))
+    if not cat:
+        return []
+    d = api(COMMONS_API, {
+        'action': 'query', 'format': 'json', 'list': 'categorymembers',
+        'cmtitle': 'Category:' + cat, 'cmtype': 'file', 'cmlimit': 25,
+    })
+    return [m.get('title', '') for m in (d.get('query', {}) or {}).get('categorymembers', [])]
+
+
+def looks_like_person_file(file_name, person):
+    """Accept only a file named for this person and not obviously a diagram."""
+    bare = norm(file_name.rsplit('.', 1)[0])
+    words = set(re.split(r'[^a-z0-9]+', bare))
+    parts = [w for w in re.split(r'[^a-z0-9]+', norm(person)) if len(w) >= 4]
+    if not parts or not any(w in words for w in parts):
+        return False
+    return not NOT_A_PERSON.search(bare)
+
+
+def fetch_people_second_pass(args):
+    """Portraits for namesakes the lead-image pass could not serve."""
+    people = load_people()
+    manifest = {}
+    if os.path.exists(MANIFEST):
+        with io.open(MANIFEST, encoding='utf-8') as fh:
+            manifest = json.load(fh)
+    pm = manifest.setdefault('people', {})
+
+    todo = [p for p in people if slugify(p) not in pm]
+    if args.only:
+        todo = [p for p in todo if args.only.lower() in p.lower()]
+    if args.limit:
+        todo = todo[:args.limit]
+
+    stats = {'ok': 0, 'no_article': 0, 'unconfirmed': 0, 'nothing_usable': 0,
+             'bad_licence': 0, 'error': 0}
+    via_counts = collections.Counter()
+    for i, person in enumerate(todo, 1):
+        slug = slugify(person)
+        laws = people[person]
+        try:
+            title, text = resolve_person_article(person)
+            if not title:
+                stats['no_article'] += 1
+                continue
+            confirmed, gate = confirms_law(text, laws, person)
+            if not confirmed:
+                stats['unconfirmed'] += 1
+                continue
+            # in order of how much we trust the association
+            candidates = []
+            wd = wikidata_image(title)
+            if wd:
+                candidates.append(('wikidata', wd))
+            for f in article_images(title):
+                candidates.append(('article', f))
+            for f in commons_category_files(title):
+                candidates.append(('commons-category', f))
+
+            chosen = via = None
+            for source, file_title in candidates:
+                bare = file_title.replace('File:', '')
+                if reject_filename(bare):
+                    continue
+                if not re.search(r'\.(jpe?g|png|tiff?)$', bare, re.I):
+                    continue
+                # Wikidata's P18 IS the subject's picture by definition, so it
+                # needs no filename evidence; anything scraped off a page does.
+                if source != 'wikidata' and not looks_like_person_file(bare, person):
+                    continue
+                info = commons_file(file_title, width=480)
+                if info:
+                    chosen, via = info, source
+                    break
+            if not chosen:
+                stats['nothing_usable'] += 1
+                continue
+            if not args.dry_run:
+                raw = sh(['curl', '-sSL', '-A', UA, '--max-time', '60', chosen['url']])
+                im = Image.open(io.BytesIO(raw)).convert('RGB')
+                os.makedirs(IMG_DIR, exist_ok=True)
+                dims = None
+                for suffix, width in SIZES:
+                    c = im.copy()
+                    if c.width > width:
+                        c = c.resize((width, max(1, round(c.height * width / c.width))), Image.LANCZOS)
+                    c.save(os.path.join(IMG_DIR, f'{slug}{suffix}.webp'), 'WEBP', quality=76, method=6)
+                    if suffix == '':
+                        dims = (c.width, c.height)
+            pm[slug] = {
+                'person': person, 'slug': slug,
+                'wikipedia': f'https://en.wikipedia.org/wiki/{title.replace(" ", "_")}',
+                'confirmedBy': confirmed, 'confirmedVia': gate, 'foundVia': via,
+                'licence': chosen['licence'], 'licenceUrl': chosen['licenceUrl'],
+                'artist': chosen['artist'], 'source': chosen['source'], 'file': chosen['file'],
+            }
+            if not args.dry_run and dims:
+                pm[slug]['width'], pm[slug]['height'] = dims
+            via_counts[via] += 1
+            stats['ok'] += 1
+            if not args.dry_run:
+                save(manifest, pm)
+            print(f'  OK {i}/{len(todo)}  {person} — {via} — {chosen["licence"]}', flush=True)
+        except Exception as e:
+            stats['error'] += 1
+            print(f'  !  error  {person}: {e}', flush=True)
+        time.sleep(0.12)
+    print('\n' + json.dumps(stats, indent=2))
+    print('found via:', dict(via_counts))
+
+
+def fetch_source_scans(args):
+    """Title pages and plates named for the work a law was first published in.
+
+    The artifact pass matches a filename against the LAW's name, so it can never
+    find "An Inquiry into the Nature and Causes of the Wealth of Nations title
+    page.jpg". This matches against the corpus's own citation titles instead —
+    still inside an article already confirmed to be about the law, so the only
+    thing that changes is which file in it we are willing to take."""
+    laws = []
+    for fn in sorted(os.listdir(LAWS_DIR)):
+        if fn.endswith('.json'):
+            with io.open(os.path.join(LAWS_DIR, fn), encoding='utf-8') as fh:
+                laws.append(json.load(fh))
+    manifest = {}
+    if os.path.exists(MANIFEST):
+        with io.open(MANIFEST, encoding='utf-8') as fh:
+            manifest = json.load(fh)
+    figures = manifest.setdefault('figures', {})
+    portraits = {v.get('file') for v in (manifest.get('people') or {}).values()}
+
+    todo = [l for l in laws if l['slug'] not in figures and (l.get('sources') or [])]
+    if args.only:
+        todo = [l for l in todo if args.only.lower() in l['name'].lower()]
+    if args.limit:
+        todo = todo[:args.limit]
+
+    stats = {'ok': 0, 'no_article': 0, 'not_the_law': 0, 'no_match': 0, 'error': 0}
+    for i, law in enumerate(todo, 1):
+        try:
+            # distinctive words from the cited works, minus citation furniture
+            toks = set()
+            for src in (law.get('sources') or []):
+                for w in re.split(r'[^a-z0-9]+', norm(src.get('text') or '')):
+                    if len(w) >= 5 and w not in SUBJECT_STOPWORDS and not w.isdigit():
+                        toks.add(w)
+            if not toks:
+                stats['no_match'] += 1
+                continue
+            title, text = resolve_law_article(law['name'])
+            if not title:
+                stats['no_article'] += 1
+                continue
+            if not article_is_the_law(title, text, law):
+                stats['not_the_law'] += 1
+                continue
+            chosen = None
+            for file_title in article_images(title):
+                bare = file_title.replace('File:', '')
+                if reject_filename(bare) or bare in portraits:
+                    continue
+                if not re.search(r'\.(jpe?g|png|tiff?|svg)$', bare, re.I):
+                    continue
+                words = set(re.split(r'[^a-z0-9]+', norm(bare.rsplit('.', 1)[0])))
+                # two matching words, so a single common term cannot carry it
+                if len(toks & words) < 2:
+                    continue
+                # A citation names its author, so an author's PORTRAIT matches the
+                # citation tokens perfectly — "Bertrand Russell transparent bg.png"
+                # sailed through as a figure for The Theory of Descriptions. Same
+                # whole-name rule the artifact gate uses: a file named for the
+                # person is a portrait, and the portrait has its own panel.
+                person = [w for w in re.split(r'[^a-z0-9]+', norm(law.get('namedAfter') or '')) if len(w) >= 3]
+                if len(person) >= 2 and all(w in words for w in person):
+                    continue
+                info = commons_file(file_title)
+                if info:
+                    chosen = info
+                    break
+            if not chosen:
+                stats['no_match'] += 1
+                continue
+            if not args.dry_run:
+                raw = sh(['curl', '-sSL', '-A', UA, '--max-time', '60', chosen['url']])
+                im = Image.open(io.BytesIO(raw)).convert('RGB')
+                if im.width > 640:
+                    im = im.resize((640, max(1, round(im.height * 640 / im.width))), Image.LANCZOS)
+                os.makedirs(FIGURE_DIR, exist_ok=True)
+                im.save(os.path.join(FIGURE_DIR, f'{law["slug"]}.webp'), 'WEBP', quality=78, method=6)
+            figures[law['slug']] = {
+                'law': law['name'], 'slug': law['slug'], 'kind': 'source-scan',
+                'wikipedia': f'https://en.wikipedia.org/wiki/{title.replace(" ", "_")}',
+                'confirmedVia': 'source-title',
+                'licence': chosen['licence'], 'licenceUrl': chosen['licenceUrl'],
+                'artist': chosen['artist'], 'source': chosen['source'], 'file': chosen['file'],
+            }
+            if not args.dry_run:
+                im2 = Image.open(os.path.join(FIGURE_DIR, f'{law["slug"]}.webp'))
+                figures[law['slug']]['width'], figures[law['slug']]['height'] = im2.size
+                manifest['figures'] = figures
+                with io.open(MANIFEST, 'w', encoding='utf-8') as fh:
+                    json.dump(manifest, fh, ensure_ascii=False, indent=2, sort_keys=True)
+                    fh.write('\n')
+            stats['ok'] += 1
+            print(f'  OK {i}/{len(todo)}  {law["name"]} — {chosen["file"][:50]}', flush=True)
+        except Exception as e:
+            stats['error'] += 1
+            print(f'  !  error  {law["name"]}: {e}', flush=True)
+        time.sleep(0.12)
+    print('\n' + json.dumps(stats, indent=2))
+
+
 def save(manifest, people_manifest):
     manifest['people'] = people_manifest
     with io.open(MANIFEST, 'w', encoding='utf-8') as fh:
@@ -700,13 +960,17 @@ def main():
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--only', default='')
-    ap.add_argument('--mode', choices=('people', 'figures', 'artifacts'), default='people')
+    ap.add_argument('--mode', choices=('people', 'figures', 'artifacts', 'people2', 'sources'), default='people')
     args = ap.parse_args()
 
     if args.mode == 'figures':
         return fetch_figures(args)
     if args.mode == 'artifacts':
         return fetch_artifacts(args)
+    if args.mode == 'people2':
+        return fetch_people_second_pass(args)
+    if args.mode == 'sources':
+        return fetch_source_scans(args)
 
     people = load_people()
     manifest = {}

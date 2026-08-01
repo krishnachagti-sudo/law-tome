@@ -7,7 +7,7 @@
 // exactly like a browse card. Blurbs are editorial framing (like a category
 // description), never invented facts about the laws themselves.
 
-import { head, sprite, header, footer, escapeHtml, lawCard } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, figureStrip } from './partials.mjs';
 
 /** The hub: one panel per collection, linking to its page. */
 export function collectionsIndexPage(collections = [], { base = '/', origin = '', count } = {}) {
@@ -72,7 +72,7 @@ ${cards}
 }
 
 /** One collection: title + blurb, then its curated laws as a card grid. */
-export function collectionPage(collection, { base = '/', origin = '', count } = {}) {
+export function collectionPage(collection, { base = '/', origin = '', count, images } = {}) {
   const c = collection || {};
   const laws = Array.isArray(c.laws) ? c.laws : [];
   const grid = laws.length
@@ -87,7 +87,7 @@ export function collectionPage(collection, { base = '/', origin = '', count } = 
       <span class="sub">${laws.length} ${laws.length === 1 ? 'law' : 'laws'}</span>
     </div>
     <p class="sec-lede">${escapeHtml(c.blurb || '')}</p>
-    <div class="grid">
+${figureStrip(images, laws, { base })}    <div class="grid">
 ${grid}
     </div>
   </div>

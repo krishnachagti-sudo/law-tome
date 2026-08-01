@@ -413,3 +413,47 @@ export function imageCredit(img) {
   const src = img.source ? ` · <a href="${escapeHtml(img.source)}">source</a>` : '';
   return `<span class="img-credit">${who} · ${licence}${src}</span>`;
 }
+
+/**
+ * A strip of real imagery for a SET of laws — used to open the field, tier,
+ * collection and audience pages, which were text from the masthead down.
+ *
+ * Draws only on images already curated for those laws (their own figure, or
+ * their namesake's portrait), so it costs no new fetching and can never show a
+ * picture belonging to a law that isn't in the set. Renders nothing at all
+ * below a useful minimum: four lonely thumbnails look like a mistake, whereas
+ * none looks like a deliberately spare page.
+ */
+export function figureStrip(images, laws, { base = '/', limit = 16, min = 5 } = {}) {
+  const figures = (images && images.figures) || {};
+  const people = (images && images.people) || {};
+  // Faces first, figures only to fill.
+  //
+  // A row built figure-first looks like a mistake: most figures are line
+  // diagrams drawn for white paper, so on a dark page they become a run of
+  // bright rectangles at every aspect ratio, several of them near-blank at
+  // thumbnail size. Portraits crop to a uniform frame and read instantly as a
+  // set of people, which is also the truer summary of a field.
+  const rows = Array.isArray(laws) ? laws : [];
+  const picked = [];
+  const seenPerson = new Set();
+  for (const law of rows) {
+    if (picked.length >= limit) break;
+    const por = law.namedAfter ? people[personSlug(law.namedAfter)] : null;
+    if (por && !seenPerson.has(por.slug)) {
+      seenPerson.add(por.slug);
+      picked.push({ src: `${base}assets/img/people/${escapeHtml(por.slug)}.webp`, law, kind: 'por' });
+    }
+  }
+  for (const law of rows) {
+    if (picked.length >= limit) break;
+    if (figures[law.slug] && !picked.some((x) => x.law.slug === law.slug)) {
+      picked.push({ src: `${base}assets/img/figures/${escapeHtml(law.slug)}.webp`, law, kind: 'fig' });
+    }
+  }
+  if (picked.length < min) return '';
+  return `    <div class="figstrip" aria-hidden="true">
+${picked.map((p) => `      <a class="fs-item fs-item--${p.kind}" href="${base}laws/${escapeHtml(p.law.slug)}/" tabindex="-1"><img src="${p.src}" alt="" loading="lazy" decoding="async"><span class="fs-cap">${escapeHtml(p.law.name)}</span></a>`).join('\n')}
+    </div>
+`;
+}

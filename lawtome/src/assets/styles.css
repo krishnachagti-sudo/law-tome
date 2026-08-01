@@ -806,6 +806,17 @@ a.stat--link .s-k::after{content:" →";letter-spacing:0;opacity:.55}
 .sfig figcaption{margin-top:12px;font-size:12.5px;line-height:1.55;color:var(--muted)}
 .s-illus{display:inline-block;font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);border:1px solid var(--line-strong);border-radius:3px;padding:1px 6px;margin-left:4px;vertical-align:middle}
 .s-axis{stroke:var(--line-strong);stroke-width:1.5;fill:none}
+/* Structural schematics (ladder, cycle, dichotomy, gap, filter, broken chain).
+   Same restrained vocabulary as the curve figures: the accent carries the thing
+   being described, everything structural stays in the line colours. */
+.s-bar{fill:color-mix(in srgb,var(--accent) 22%,transparent);stroke:var(--accent);stroke-width:1.2}
+.s-box{fill:var(--surface-2);stroke:var(--line-strong);stroke-width:1.4}
+.s-ring{stroke:var(--accent);stroke-width:2.4;fill:none;stroke-dasharray:6 7;stroke-linecap:round}
+.s-dot{fill:var(--accent)}
+.s-arrow-head{fill:var(--line-strong)}
+.s-actual{stroke:var(--line-strong);stroke-width:2;fill:none;stroke-dasharray:5 6}
+/* the link that does not hold — the one red thing in the set */
+.s-break{stroke:var(--bad,#c14a38);stroke-width:2.4;stroke-dasharray:3 5;stroke-linecap:round}
 .s-proxy{stroke:var(--accent);stroke-width:2.6;fill:none;stroke-linecap:round}
 .s-goal{stroke:var(--gold);stroke-width:2.6;fill:none;stroke-linecap:round}
 .s-dot-proxy{fill:var(--accent)}
@@ -1244,3 +1255,52 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 /* The search results are scrolled to when a query starts; keep the heading clear
    of the sticky masthead instead of tucking it underneath. */
 #index{scroll-margin-top:84px}
+
+/* ---- figure strip ---------------------------------------------------------
+   A band of real imagery at the head of a set page (a field, a tier, a
+   collection). Uniform tiles so mixed media — a plate, a chart, a portrait —
+   read as one row rather than a ransom note; greyscale until hover for the
+   same reason the eponym index is. Decorative: the same laws are listed in
+   full below, so it is aria-hidden and out of the tab order. */
+/* One row that scrolls, not a wrapping grid: a wrapped strip leaves an orphan
+   tile on its own line at most widths, which reads as a layout bug rather than
+   a band. Masked at both ends so it is visibly continuable. */
+.figstrip{display:flex;gap:8px;margin:22px 0 4px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,#000 92%,transparent)}
+.figstrip::-webkit-scrollbar{display:none}
+.fs-item{position:relative;display:block;flex:0 0 116px;aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line);border-radius:3px;background:var(--surface)}
+.fs-item img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.03);transition:filter .25s,transform .4s,opacity .25s}
+/* Figures keep their own contrast — they are already line art, so greyscaling
+   only flattens them — but sit dimmed so a white diagram mat does not glare
+   out of a dark page next to the portraits. */
+.fs-item--fig img{object-fit:contain;background:#e9e5d9;padding:6px;filter:none;opacity:.72}
+.fs-item--fig:hover img,.fs-item--fig:focus-visible img{opacity:1}
+.fs-item--por img{object-position:center 22%}
+.fs-item:hover img,.fs-item:focus-visible img{filter:none;transform:scale(1.04)}
+.fs-cap{position:absolute;inset:auto 0 0 0;padding:14px 7px 5px;font-family:var(--mono);font-size:9px;line-height:1.25;color:#fff;
+  background:linear-gradient(transparent,rgba(0,0,0,.82));opacity:0;transition:opacity .2s;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fs-item:hover .fs-cap,.fs-item:focus-visible .fs-cap{opacity:1}
+@media(max-width:560px){.fs-item{flex-basis:92px}}
+/* A namesake's face inside a graph node — muted so the category colour of the
+   ring still carries the field, full strength on hover like every other portrait. */
+.gface{filter:grayscale(1) contrast(1.05);opacity:.9;pointer-events:none}
+.gnode:hover .gface{filter:none;opacity:1}
+/* The answer's quote-card, revealed once the question is answered. */
+.quiz-card{display:block;width:100%;max-width:520px;height:auto;margin:18px 0 4px;border:1px solid var(--line);border-radius:3px}
+
+/* ---- corpus charts (/data/) -----------------------------------------------
+   Drawn from the same records the page offers for download. Each row is a link
+   to the laws it counts, so the chart doubles as a way into the index. */
+.charts{display:flex;flex-direction:column;gap:34px;margin:26px 0 34px}
+.chart{margin:0}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart-h{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--ink);margin-bottom:12px}
+.chart-note{margin-top:10px;font-size:12.5px;line-height:1.55;color:var(--muted)}
+.ch-bar{fill:var(--accent);opacity:.62;transition:opacity .16s}
+.ch-lab{fill:var(--muted);font-family:var(--mono);font-size:10.5px}
+.ch-n{fill:var(--faint);font-family:var(--mono);font-size:10.5px}
+.ch-row{cursor:pointer}
+.ch-row:hover .ch-bar,.ch-row:focus-visible .ch-bar{opacity:1}
+.ch-row:hover .ch-lab,.ch-row:focus-visible .ch-lab{fill:var(--ink)}

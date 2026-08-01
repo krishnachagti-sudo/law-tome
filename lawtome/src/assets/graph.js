@@ -64,7 +64,7 @@
   function build(stage, graph) {
     // ---- index + adjacency ----
     var index = {};
-    graph.nodes.forEach(function (n) { index[n.slug] = { slug: n.slug, name: n.name, category: n.category, reliability: n.reliability, adj: [] }; });
+    graph.nodes.forEach(function (n) { index[n.slug] = { slug: n.slug, name: n.name, category: n.category, reliability: n.reliability, face: n.face, adj: [] }; });
     (Array.isArray(graph.edges) ? graph.edges : []).forEach(function (e) {
       var a = index[e.a], b = index[e.b]; if (!a || !b) return;
       a.adj.push({ node: b, kind: e.kind }); b.adj.push({ node: a, kind: e.kind });
@@ -193,7 +193,7 @@
         var isF = s === slug;
         var r = isF ? 0 : 60 + i * 12;
         var a = i * GOLD;
-        var nd = { slug: s, name: visible[s].name, category: visible[s].category, reliability: visible[s].reliability,
+        var nd = { slug: s, name: visible[s].name, category: visible[s].category, reliability: visible[s].reliability, face: visible[s].face,
           deg: deg(visible[s]), isFocus: isF,
           x: W / 2 + r * Math.cos(a), y: H / 2 + r * Math.sin(a), vx: 0, vy: 0, fx: null, fy: null };
         if (isF) { nd.fx = W / 2; nd.fy = H / 2; } // pin the centre so the view stays anchored
@@ -290,6 +290,24 @@
         dot.setAttribute('r', r); dot.setAttribute('fill', catColor(nd.category));
         dot.setAttribute('stroke', nd.isFocus ? '#f4efe4' : '#171513'); dot.setAttribute('stroke-width', nd.isFocus ? 2.5 : 1.5);
         g.appendChild(dot);
+        // An eponymous law whose namesake we have a verified portrait of shows
+        // the person's face inside the node. The circle stays underneath as the
+        // category colour and as the fallback if the image 404s, and the ring
+        // keeps the node reading as a node rather than a floating photograph.
+        if (nd.face && r >= 9) {
+          var clipId = 'gface-' + nd.slug;
+          var cp = svgEl('clipPath'); cp.setAttribute('id', clipId);
+          var cc = svgEl('circle'); cc.setAttribute('r', r - 1); cp.appendChild(cc);
+          g.appendChild(cp);
+          var img = svgEl('image');
+          img.setAttribute('href', BASE + 'assets/img/people/' + encodeURIComponent(nd.face) + '-sm.webp');
+          img.setAttribute('x', -(r - 1)); img.setAttribute('y', -(r - 1));
+          img.setAttribute('width', (r - 1) * 2); img.setAttribute('height', (r - 1) * 2);
+          img.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+          img.setAttribute('clip-path', 'url(#' + clipId + ')');
+          img.setAttribute('class', 'gface');
+          g.appendChild(img);
+        }
         var label = svgEl('text'); label.setAttribute('class', 'glabel');
         label.setAttribute('text-anchor', 'middle'); label.setAttribute('y', r + 13);
         label.setAttribute('font-size', nd.isFocus ? 15 : 11.5);

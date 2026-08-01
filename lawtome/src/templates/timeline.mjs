@@ -4,7 +4,7 @@
 // laws listed chronologically with the year. Undated laws sit in a final bucket.
 // Uses only existing coinedYear data.
 
-import { head, sprite, header, footer, escapeHtml } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, figureStrip } from './partials.mjs';
 
 /**
  * Stable anchor id for an era label ("20th century" -> "era-20th-century").
@@ -26,7 +26,7 @@ export function centuryLabelForYear(year) {
   return `${c}${suffix} century`;
 }
 
-export function timelinePage(eras = [], { base = '/', origin = '', count } = {}) {
+export function timelinePage(eras = [], { base = '/', origin = '', count, images } = {}) {
   const rows = Array.isArray(eras) ? eras : [];
   const total = rows.reduce((n, e) => n + e.laws.length, 0);
   const permalink = (slug) => `${base}laws/${escapeHtml(slug)}/`;
@@ -37,7 +37,7 @@ export function timelinePage(eras = [], { base = '/', origin = '', count } = {})
     }).join('\n');
     return `    <section class="tl-era" id="${eraId(e.label)}">
       <h2 class="tl-eyebrow">${escapeHtml(e.label)}<span class="tl-count">${e.laws.length}</span></h2>
-      <div class="tl-items">
+${figureStrip(images, e.laws, { base, limit: 8, min: 4 })}      <div class="tl-items">
 ${items}
       </div>
     </section>`;

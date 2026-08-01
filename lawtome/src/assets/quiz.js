@@ -131,6 +131,16 @@
               if (kids[j].textContent === (answer.name || '')) kids[j].classList.add('correct');
             }
           }
+          // Reveal the law's quote-card. The site already renders one per law for
+          // social previews and has never shown them anywhere on the site itself;
+          // the answer reveal is the one place a single 50KB card earns its weight,
+          // because it IS the payoff of the question.
+          var card = el('img', 'quiz-card');
+          card.setAttribute('src', BASE + 'og/' + encodeURIComponent(answer.slug) + '.png');
+          card.setAttribute('alt', (answer.name || '') + ' — quote card');
+          card.setAttribute('loading', 'lazy');
+          card.setAttribute('decoding', 'async');
+          optsEl.appendChild(card);
           // append a link to read the answer
           var link = el('a', 'quiz-link');
           link.setAttribute('href', lawHref(answer.slug));

@@ -4,7 +4,7 @@
 // The per-audience grid reuses the shared lawCard. Copy is editorial framing;
 // every law is an existing, sourced entry.
 
-import { head, sprite, header, footer, escapeHtml, lawCard } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, figureStrip } from './partials.mjs';
 
 /** The hub: one panel per audience. */
 export function audiencesIndexPage(audiences = [], { base = '/', origin = '', count } = {}) {
@@ -67,7 +67,7 @@ ${cards}
 }
 
 /** One audience: a persona hero, then its curated laws as a card grid. */
-export function audiencePage(audience, { base = '/', origin = '', count } = {}) {
+export function audiencePage(audience, { base = '/', origin = '', count, images } = {}) {
   const a = audience || {};
   const laws = Array.isArray(a.laws) ? a.laws : [];
   const grid = laws.length
@@ -83,7 +83,7 @@ export function audiencePage(audience, { base = '/', origin = '', count } = {}) 
     </div>
     <p class="aud-problem">${escapeHtml(a.problem || '')}</p>
     <p class="sec-lede">${escapeHtml(a.blurb || '')}</p>
-    <div class="grid">
+${figureStrip(images, laws, { base })}    <div class="grid">
 ${grid}
     </div>
     <div class="sec-more"><a class="ghost" href="${base}browse/"><i class="ti ti-arrow-right" aria-hidden="true"></i> Browse the whole index</a></div>

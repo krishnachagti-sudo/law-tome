@@ -1,3 +1,4 @@
+import { personSlug } from '../src/templates/partials.mjs';
 // Task 11 — graph data. Pure, I/O-free transforms over the loaded corpus:
 //   buildGraph(laws) -> { nodes, edges } for the graph explorer + graph.json
 //   neighbourhood(graph, slug, hops) -> a focused local subgraph
@@ -20,9 +21,17 @@
  *   (an A->B and a B->A collapse; a repeated A->B collapses). Edges to a slug
  *   with no node (dangling) and self-loops (a law relating to itself) are dropped.
  */
-export function buildGraph(laws = []) {
+export function buildGraph(laws = [], faces = null) {
   const rows = Array.isArray(laws) ? laws : [];
-  const nodes = rows.map((l) => ({ slug: l.slug, name: l.name, category: l.category, reliability: l.reliability }));
+  // `face` is the portrait slug for an eponymous law whose namesake we have a
+  // verified picture of, so the explorer can draw the person instead of a dot.
+  // Absent for everything else; the renderer falls back to the coloured circle.
+  const nodes = rows.map((l) => {
+    const face = l.namedAfter && faces && faces.has(personSlug(l.namedAfter))
+      ? personSlug(l.namedAfter) : null;
+    return { slug: l.slug, name: l.name, category: l.category, reliability: l.reliability,
+      ...(face ? { face } : {}) };
+  });
 
   const known = new Set(nodes.map((n) => n.slug));
   const seen = new Map(); // "ab" -> {a, b, kind} — first kind seen wins
