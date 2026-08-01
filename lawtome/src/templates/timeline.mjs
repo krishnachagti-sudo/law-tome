@@ -5,6 +5,7 @@
 // Uses only existing coinedYear data.
 
 import { head, sprite, header, footer, escapeHtml, figureStrip } from './partials.mjs';
+import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
 
 /**
  * Stable anchor id for an era label ("20th century" -> "era-20th-century").
@@ -53,29 +54,81 @@ ${rows.map((e) => `      <a href="#${eraId(e.label)}">${escapeHtml(e.label)}</a>
 
   const body = rows.length ? jump + rows.map(eraBlock).join('\n') : '<div class="empty">No dated laws yet.</div>';
 
+  // Facts the page can state about itself, all read off the corpus: the span it
+  // covers, the busiest century, and how many entries carry no date at all —
+  // that last one matters, because a timeline that hides its gaps is lying.
+  const years = rows.flatMap((e) => e.laws.map((l) => Number(l.coinedYear)).filter((y) => Number.isFinite(y) && y >= 1));
+  const earliest = years.length ? Math.min(...years) : null;
+  const latest = years.length ? Math.max(...years) : null;
+  const dated = years.length;
+  const undated = total - dated;
+  const busiest = rows.filter((e) => e.laws.some((l) => Number(l.coinedYear) >= 1))
+    .slice().sort((a, b) => b.laws.length - a.laws.length)[0];
+  const yr = (y) => (y < 0 ? `${Math.abs(y)} BC` : String(y));
+
+  const answer = total
+    ? `This timeline places ${dated.toLocaleString('en-US')} of The Law Tome's ${total.toLocaleString('en-US')} named laws in the century each was coined${earliest != null ? `, spanning ${yr(earliest)} to ${yr(latest)}` : ''}.${busiest ? ` The <a href="#${eraId(busiest.label)}">${escapeHtml(busiest.label)}</a> is the busiest by a wide margin, with ${busiest.laws.length} of them.` : ''}${undated > 0 ? ` The remaining ${undated} carry no date anyone can pin down, and are grouped at the end rather than guessed at.` : ''}`
+    : 'A chronological view of named laws, grouped by the century each was coined.';
+
+  const lede = `The index read as a history of ideas. A century here is when the law got its <em>name</em>, not when the thing it describes started happening — Zipf did not invent the distribution he measured, and gravity predates <a href="${base}browse/">the entry</a> by some margin. Dates come from the corpus's coinedYear field, and where a date is disputed or unknown the entry says so instead of picking one.`;
+
+  const faq = hubFaq([
+    {
+      q: 'What is the oldest named law here?',
+      a: earliest != null
+        ? `The earliest dated entry is from ${yr(earliest)}. Ancient maxims cluster in the first eras of the timeline above; most of the index is far younger.`
+        : 'No entry currently carries a date.',
+    },
+    {
+      q: 'When were most named laws coined?',
+      a: busiest
+        ? `The ${escapeHtml(busiest.label)} accounts for the largest share — ${busiest.laws.length} of ${total.toLocaleString('en-US')} entries. <a href="#${eraId(busiest.label)}">Jump to it</a>.`
+        : 'The corpus has no dated entries yet.',
+    },
+    {
+      q: 'Does the date mean when the law was discovered?',
+      a: 'No. It is when the principle acquired the name it now goes by, which is often decades after the underlying work and sometimes by someone other than the namesake. Each law page gives the fuller story and its sources.',
+    },
+    ...(undated > 0 ? [{
+      q: 'Why are some laws undated?',
+      a: `${undated} of the ${total.toLocaleString('en-US')} entries have no date anyone can pin down — a phrase in circulation before it was written down, or an attribution the sources disagree on. Rather than invent a year, they are grouped separately.`,
+    }] : []),
+  ]);
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
-    <div class="sec-head">
-      <h1>A timeline of named laws</h1>
-      <span class="sub">${total.toLocaleString('en-US')} laws across ${rows.length} ${rows.length === 1 ? 'era' : 'eras'}</span>
-    </div>
-    <p class="sec-lede">The index read as a history of ideas — every law placed in the century it was named, from ancient maxims to principles coined in living memory.</p>
-${body}
-  </div>
+${hubHead({
+    title: 'A timeline of named laws',
+    sub: `${total.toLocaleString('en-US')} laws across ${rows.length} ${rows.length === 1 ? 'era' : 'eras'}`,
+    answer,
+    lede,
+    stats: [
+      [total.toLocaleString('en-US'), 'laws placed'],
+      ...(earliest != null ? [[`${yr(earliest)}–${yr(latest)}`, 'span']] : []),
+      [rows.length, 'eras'],
+      ...(undated > 0 ? [[undated, 'undated']] : []),
+    ],
+    base,
+  })}${body}
+${faq.html}${hubNav('timeline/', { base })}  </div>
 </section>
 `;
 
-  const description =
-    'A chronological view of named laws, principles, and effects — grouped by the century each was coined, from antiquity to the present. A history of ideas from The Law Tome.';
+  const description = total
+    ? `${total.toLocaleString('en-US')} named laws, principles and effects placed in the century each was coined${earliest != null ? `, from ${yr(earliest)} to ${yr(latest)}` : ''} — a history of ideas from The Law Tome.`
+    : 'A chronological view of named laws, principles, and effects — grouped by the century each was coined.';
 
-  const jsonld = [{
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'A timeline of named laws',
-    url: `${origin}${base}timeline/`,
-    description,
-    isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
-  }];
+  const jsonld = [
+    ...hubJsonLd({
+      name: 'A timeline of named laws',
+      description,
+      path: 'timeline/',
+      items: rows.map((e) => ({ name: `${e.label} (${e.laws.length} laws)` })),
+      origin,
+      base,
+    }),
+    ...(faq.jsonld ? [faq.jsonld] : []),
+  ];
 
   return (
     head({

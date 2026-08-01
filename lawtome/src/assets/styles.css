@@ -1304,3 +1304,134 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .ch-row{cursor:pointer}
 .ch-row:hover .ch-bar,.ch-row:focus-visible .ch-bar{opacity:1}
 .ch-row:hover .ch-lab,.ch-row:focus-visible .ch-lab{fill:var(--ink)}
+
+/* ---- the law as itself ----------------------------------------------------
+   Wikimedia renders the formula to SVG at harvest time, so the page carries no
+   math library. Dark themes invert it: the SVG paints in currentColor-ish black,
+   so it sits on a light plate like the other line figures rather than vanishing. */
+.formula{margin:0;background:#f2efe6;border:1px solid var(--line);border-radius:3px;padding:26px 22px 16px;text-align:center}
+.formula-img{display:inline-block;max-width:100%;height:auto;min-height:26px}
+.formula figcaption{margin-top:18px;font-family:var(--mono);font-size:10px;line-height:1.5;color:#5c574c;text-align:left}
+.formula figcaption code{font-size:10px;color:#3f3a31;word-break:break-all}
+.formula figcaption a{color:#7a5a12}
+
+/* ---- how the name spread --------------------------------------------------- */
+.diffusion{margin:0}
+.diffusion svg{display:block;width:100%;height:auto;background:var(--surface);border:1px solid var(--line);border-radius:3px}
+.dif-area{fill:color-mix(in srgb,var(--accent) 20%,transparent)}
+.dif-line{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linejoin:round}
+.dif-coined{stroke:var(--line-strong);stroke-width:1.2;stroke-dasharray:3 4}
+.dif-axis{display:flex;justify-content:space-between;gap:10px;margin-top:6px;font-family:var(--mono);font-size:10px;color:var(--faint)}
+.dif-mark{color:var(--muted)}
+.diffusion figcaption{margin-top:12px;font-size:12.5px;line-height:1.6;color:var(--muted)}
+
+/* ---- pronunciation --------------------------------------------------------- */
+.pronounce{margin-top:10px}
+.pron-btn{display:inline-flex;align-items:center;gap:7px;background:var(--surface-2);border:1px solid var(--line-strong);border-radius:3px;
+  color:var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.04em;padding:6px 11px;cursor:pointer;transition:border-color .16s,color .16s}
+.pron-btn svg{width:15px;height:15px}
+.pron-btn:hover,.pron-btn:focus-visible{border-color:var(--accent);color:var(--accent)}
+.pron-btn.playing{border-color:var(--accent);color:var(--accent)}
+.pron-credit{display:block;margin-top:7px;font-family:var(--mono);font-size:9.5px;line-height:1.45;color:var(--faint)}
+.pron-credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+
+/* ---- the same idea, other languages ---------------------------------------- */
+.on-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px 22px}
+.on-list li{display:flex;align-items:baseline;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}
+.on-lang{flex:0 0 92px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.on-name{font-family:var(--serif);font-size:16px;color:var(--read)}
+.on-note{margin-top:14px;font-size:12.5px;color:var(--muted)}
+
+/* ---- playable laws --------------------------------------------------------- */
+.widget{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 22px 16px}
+.wg-lede{margin:0 0 16px;font-size:14.5px;color:var(--read)}
+.wg-in{display:grid;grid-template-columns:1fr 84px;grid-template-areas:"lab out" "rng rng";gap:4px 12px;align-items:center;margin-bottom:14px}
+.wg-lab{grid-area:lab;font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--muted)}
+.wg-in output{grid-area:out;justify-self:end;font-family:var(--mono);font-size:13px;color:var(--accent)}
+.wg-in input[type=range]{grid-area:rng;width:100%;accent-color:var(--accent);cursor:pointer}
+.wg-res{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:9px 0;border-top:1px solid var(--line)}
+.wg-res-lab{font-size:13.5px;color:var(--muted)}
+.wg-res-v{font-family:var(--mono);font-size:19px;color:var(--ink);white-space:nowrap}
+.wg-note{margin:14px 0 0;font-size:11.5px;line-height:1.5;color:var(--faint)}
+.wg-note code{font-size:11px;color:var(--muted)}
+
+/* ---- hub furniture ---------------------------------------------------------
+   The direct answer is deliberately prominent: it is the sentence a reader
+   needs first and the one an answer engine will lift. */
+.hub-answer{font-family:var(--serif);font-size:19px;line-height:1.6;color:var(--ink);margin:14px 0 0;max-width:66ch}
+.hub-answer b{color:var(--accent);font-weight:600}
+.hub-stats{display:flex;flex-wrap:wrap;gap:8px 26px;margin:16px 0 0;padding-top:14px;border-top:1px solid var(--line)}
+.hub-stat{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:var(--muted)}
+.hub-stat b{font-size:16px;color:var(--ink);font-weight:400;margin-right:5px}
+.hub-lede{margin:20px 0 30px;max-width:72ch}
+.hub-more{margin-top:64px;padding-top:30px;border-top:1px solid var(--line)}
+.hub-more-h{font-family:var(--serif);font-weight:600;font-size:19px;margin:0 0 16px}
+.hub-more-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(226px,1fr));gap:10px}
+.hub-more-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;background:var(--surface);
+  border:1px solid var(--line);border-left:2px solid var(--line-strong);border-radius:3px;text-decoration:none;
+  transition:border-color .16s,transform .16s}
+.hub-more-card:hover,.hub-more-card:focus-visible{border-left-color:var(--accent);transform:translateY(-2px)}
+.hmc-t{font-family:var(--serif);font-size:15.5px;color:var(--ink)}
+.hmc-b{font-size:12.5px;line-height:1.5;color:var(--muted)}
+
+/* The hub FAQ. <details> rather than always-open prose: the answers are for the
+   reader who has that exact question and for the crawler, and neither is served
+   by five open paragraphs pushing the actual index below the fold. */
+.hub-faq{margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
+.hub-faq-h{font-family:var(--serif);font-weight:600;font-size:21px;margin:0 0 14px}
+.hub-faq-i{border-bottom:1px solid var(--line)}
+.hub-faq-i>summary{list-style:none;cursor:pointer;padding:13px 30px 13px 0;position:relative}
+.hub-faq-i>summary::-webkit-details-marker{display:none}
+.hub-faq-i>summary h3{display:inline;font-family:var(--serif);font-weight:500;font-size:16.5px;color:var(--ink);margin:0}
+.hub-faq-i>summary::after{content:"+";position:absolute;right:4px;top:11px;font-family:var(--mono);font-size:17px;
+  color:var(--faint);transition:transform .18s,color .18s}
+.hub-faq-i[open]>summary::after{content:"−";color:var(--accent)}
+.hub-faq-i>summary:hover h3{color:var(--accent)}
+.hub-faq-a{padding:0 0 16px;font-size:14.5px;line-height:1.65;color:var(--muted);max-width:74ch}
+.hub-faq-a a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:2px}
+.hub-faq-a a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+
+/* ---- reliability hub: the split, then a shelf per tier --------------------- */
+.rel-bar{display:flex;margin:22px 0 0;height:26px;border-radius:3px;overflow:hidden;border:1px solid var(--line)}
+.rel-bar-seg{display:flex;align-items:center;justify-content:center;min-width:0;overflow:hidden;
+  background:var(--surface-2);border-right:1px solid var(--bg)}
+.rel-bar-seg:last-child{border-right:0}
+.rel-bar-seg.b-emp{background:color-mix(in srgb,var(--ok) 34%,transparent)}
+.rel-bar-seg.b-heu{background:color-mix(in srgb,var(--gold) 34%,transparent)}
+.rel-bar-seg.b-folk{background:color-mix(in srgb,var(--muted) 26%,transparent)}
+.rel-bar-seg.b-con{background:color-mix(in srgb,var(--con) 34%,transparent)}
+.rel-bar-lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--ink);white-space:nowrap;padding:0 8px}
+.rel-sec{margin-top:44px;padding-left:16px;border-left:2px solid var(--line-strong)}
+.rel-sec.b-emp{border-left-color:var(--ok)}
+.rel-sec.b-heu{border-left-color:var(--gold)}
+.rel-sec.b-folk{border-left-color:var(--line-strong)}
+.rel-sec.b-con{border-left-color:var(--con)}
+.rel-sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.rel-sec-head h2{margin:0;font-size:inherit}
+.rel-sec-head h2 a{text-decoration:none}
+.rel-sec-n{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.rel-sec-n b{color:var(--ink);font-weight:400;font-size:14px}
+.rel-sec-note{margin:10px 0 0;font-family:var(--serif);font-size:16px;color:var(--ink)}
+.rel-sec-test{margin:8px 0 0;font-size:13.5px;line-height:1.6;color:var(--muted);max-width:74ch}
+.rel-test-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-right:8px}
+.rel-ex{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:7px}
+.rel-ex a{display:inline-block;padding:5px 11px;background:var(--surface);border:1px solid var(--line);border-radius:2px;
+  font-size:13px;color:var(--ink);text-decoration:none;transition:border-color .16s,color .16s}
+.rel-ex a:hover{border-color:var(--accent);color:var(--accent)}
+.rel-sec-more{margin:16px 0 0}
+
+/* Member lists on the collection and audience cards. */
+.coll-laws{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.coll-laws a{display:inline-block;padding:4px 10px;background:var(--surface-2,var(--surface));border:1px solid var(--line);
+  border-radius:2px;font-size:12.5px;color:var(--muted);text-decoration:none;transition:border-color .16s,color .16s}
+.coll-laws a:hover{border-color:var(--accent);color:var(--accent)}
+.coll-rest a{border-style:dashed;color:var(--faint)}
+/* The card is a flex column and the blurb used to be the element that stretched.
+   With a member list under it, the list is what should absorb the slack —
+   otherwise a short blurb pushes the chips down and they collide with the CTA. */
+.coll-card>.coll-blurb,.aud-card>.aud-blurb{flex:0 0 auto;margin:0}
+.coll-card>.coll-laws,.aud-card>.coll-laws{flex:1 1 auto;align-content:flex-start}
+.coll-card>.coll-count,.aud-card>.aud-count{margin:0;text-transform:none;font-size:12px}
+.coll-card h2.coll-h,.aud-card h2.aud-h{margin:0}
+.coll-card h2.coll-h a,.aud-card h2.aud-h a{text-decoration:none;color:inherit}
+.coll-card h2.coll-h a:hover,.aud-card h2.aud-h a:hover{color:var(--accent)}

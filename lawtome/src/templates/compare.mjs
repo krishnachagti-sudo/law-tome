@@ -12,6 +12,7 @@
 import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug } from './partials.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
+import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
 
 const FRAMING = {
   'near-twin': {
@@ -185,42 +186,59 @@ ${list.map(item).join('\n')}
     </div>`
     : '';
 
+  const answer = rows.length
+    ? `There are ${rows.length} side-by-side comparison pages here: ${twins.length} pairs of near-twins that readers routinely mistake for each other, and ${tensions.length} pairs that pull in opposite directions. Each page sets out both laws' claims, reliability ratings, dates and namesakes in one table.`
+    : 'Side-by-side comparisons of the named laws people confuse with each other.';
+
+  const lede = `"X vs Y" is how people actually search for these, because the confusion is the question. Every comparison below is built from the two entries' own fields — no page here authors a "the difference is…" sentence, since deciding which one your case falls under is the reader's job and inventing the verdict would be inventing a fact. See also <a href="${base}tension/">every opposing pair at once</a>.`;
+
+  const faq = hubFaq([
+    {
+      q: 'Which named laws get confused with each other?',
+      a: twins.length
+        ? `${twins.length} pairs on this site. The most searched are ${twins.slice(0, 5).map((p) => `<a href="${base}compare/${escapeHtml(p.slug)}/">${escapeHtml(p.a.name)} vs ${escapeHtml(p.b.name)}</a>`).join(', ')}.`
+        : 'None are currently marked as near-twins.',
+    },
+    {
+      q: 'What does a comparison page show?',
+      a: 'Both laws\' statements and plain-English meanings side by side, then an at-a-glance table of field, reliability tier, year coined, namesake and whether the term is established or coined — every cell linking to that facet so you can keep browsing from it.',
+    },
+    {
+      q: 'How are the pairs chosen?',
+      a: `From the corpus's own relation edges: a pair appears here if one entry records the other as a near-twin or as opposed. ${rows.length} pairs qualify today.`,
+    },
+  ]);
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
-    <div class="sec-head">
-      <h1>Compare the laws</h1>
-      <span class="sub">${rows.length} side-by-side ${rows.length === 1 ? 'comparison' : 'comparisons'}</span>
-    </div>
-    <p class="sec-lede">The pairs people mix up, and the pairs that disagree — set against each other, one page at a time. Each comparison lays out what both laws claim, side by side, drawn straight from their entries.</p>
-${group('Often confused', 'Near-twins that are easy to mistake for one another.', twins)}
+${hubHead({
+    title: 'Compare the laws',
+    sub: `${rows.length} side-by-side ${rows.length === 1 ? 'comparison' : 'comparisons'}`,
+    answer,
+    lede,
+    stats: [[rows.length, 'comparisons'], [twins.length, 'often confused'], [tensions.length, 'in tension']],
+    base,
+  })}${group('Often confused', 'Near-twins that are easy to mistake for one another.', twins)}
 ${group('In tension', 'Principles that pull in opposite directions.', tensions)}
-  </div>
+${faq.html}${hubNav('compare/', { base })}  </div>
 </section>
 `;
 
-  const description =
-    'Side-by-side comparisons of named laws — the ones people confuse, and the ones that contradict each other. Each pair on its own page from The Law Tome.';
+  const description = rows.length
+    ? `${rows.length} side-by-side comparisons of named laws — ${twins.length} pairs people confuse and ${tensions.length} that contradict each other, each with both claims and an at-a-glance table.`
+    : 'Side-by-side comparisons of named laws — the ones people confuse, and the ones that contradict each other.';
 
-  const jsonld = [{
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'Compare the laws',
-    url: `${origin}${base}compare/`,
-    description,
-    isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
-    ...(rows.length ? {
-      mainEntity: {
-        '@type': 'ItemList',
-        numberOfItems: rows.length,
-        itemListElement: rows.slice(0, 200).map((p, i) => ({
-          '@type': 'ListItem',
-          position: i + 1,
-          name: `${p.a.name} vs ${p.b.name}`,
-          url: `${origin}${base}compare/${p.slug}/`,
-        })),
-      },
-    } : {}),
-  }];
+  const jsonld = [
+    ...hubJsonLd({
+      name: 'Compare the laws',
+      description,
+      path: 'compare/',
+      items: rows.map((p) => ({ name: `${p.a.name} vs ${p.b.name}`, href: `compare/${p.slug}/` })),
+      origin,
+      base,
+    }),
+    ...(faq.jsonld ? [faq.jsonld] : []),
+  ];
 
   return (
     head({

@@ -4,13 +4,10 @@
 // browsable axis — the eponym index — so a reader can find "Parkinson's laws" or
 // see every principle Durkheim lent his name to. Uses only existing data.
 
-// Surname = last whitespace-separated token of the name, for A–Z sorting
-// ("Cyril Northcote Parkinson" -> "parkinson"). Good enough for an index sort;
-// the displayed name is always the full `namedAfter` string.
-function surnameKey(person) {
-  const parts = String(person || '').trim().split(/\s+/);
-  return (parts[parts.length - 1] || '').toLowerCase();
-}
+// The A–Z key comes from the template, which also uses it for the letter
+// headings and the avatar initial. Deriving it twice is how the page ended up
+// sorting by one rule and labelling by another.
+import { surnameKey } from '../src/templates/eponyms.mjs';
 
 function byNo(a, b) {
   return String(a == null ? '' : a).localeCompare(String(b == null ? '' : b), 'en', { numeric: true });

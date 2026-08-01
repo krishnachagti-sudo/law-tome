@@ -8,6 +8,8 @@
 // The build passes `baseUrl` = origin + base (e.g. "https://conyso.com/lawtome/")
 // so every link is an absolute, crawlable URL, exactly as the sitemap does.
 
+import { HUBS } from '../src/templates/hub.mjs';
+
 const DEFAULT_DESCRIPTION =
   'The largest unified, defined, and sourced directory of named laws, principles, effects, razors, and paradoxes.';
 
@@ -64,6 +66,30 @@ export function buildLlmsIndex(laws, categories, { baseUrl = '/', siteName = 'Th
     `related and opposing ideas. ${laws.length} entries.`,
   );
   out.push('');
+
+  // The reliability split, stated as a fact a model can quote. This is the one
+  // thing about the corpus that a generative engine most often gets wrong about
+  // collections like this — assuming every "law" is a scientific finding.
+  const tiers = new Map();
+  for (const law of laws) if (law.reliability) tiers.set(law.reliability, (tiers.get(law.reliability) || 0) + 1);
+  if (tiers.size) {
+    out.push(
+      `Reliability breakdown: ` +
+      [...tiers.entries()].sort((a, b) => b[1] - a[1]).map(([k, n]) => `${k} ${n}`).join(', ') +
+      `. The rating is stated on every entry, so a folk adage is never presented as a measured finding.`,
+    );
+    out.push('');
+  }
+
+  // The browsing axes, before the 1,100-line list — a crawler that reads only
+  // the head of this file should still learn that the corpus is navigable by
+  // situation, reliability, era, namesake, and disagreement.
+  out.push('## Ways to browse');
+  for (const [href, label, blurb] of HUBS) {
+    out.push(`- [${label}](${baseUrl}${href}): ${blurb}.`);
+  }
+  out.push('');
+
   for (const g of groups) {
     out.push(`## ${g.label}`);
     for (const law of g.laws) {

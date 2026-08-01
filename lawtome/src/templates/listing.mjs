@@ -14,6 +14,7 @@
 // failed on missed escaping.
 
 import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, reliabilitySlug, browseControls, asset, figureStrip } from './partials.mjs';
+import { hubNav } from './hub.mjs';
 
 /**
  * A browse or per-category listing page — one full HTML document.
@@ -111,17 +112,26 @@ ${items}
   // rather than flickering as chips are pressed.
   const strip = (kind === 'category' || isReliability) ? figureStrip(images, rows, { base }) : '';
 
+  // The browse index is the site's front door for crawlers and its only page
+  // with no "up" — it got a bare H1 and nothing else. Give it the same direct
+  // answer the other hubs carry, and the same footer of other ways in, so the
+  // A–Z is a starting point rather than the only route.
+  const browseAnswer = kind === 'browse' && rows.length
+    ? `    <p class="hub-answer">The Law Tome indexes ${rows.length.toLocaleString('en-US')} named laws, principles, effects, razors and paradoxes across ${new Set(rows.map((l) => l.category).filter(Boolean)).size} fields. Every entry is defined in plain language, traced to a source, and rated for how well established it is. Filter the list below by field or reliability, or use one of the other ways in at the foot of the page.</p>\n`
+    : '';
+  const browseMore = kind === 'browse' ? hubNav('browse/', { base }) : '';
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
 ${crumb}    <div class="sec-head">
       <h1>${escapeHtml(h1)}</h1>
       <span class="sub" id="showing" aria-live="polite">showing ${rows.length} of ${rows.length}</span>
     </div>
-${lede}${strip}    <div class="chips" id="chips">${chips}</div>
+${browseAnswer}${lede}${strip}    <div class="chips" id="chips">${chips}</div>
 ${controls}    <div class="grid" id="grid"${gridAttr}>
 ${grid}
     </div>
-${fieldHub}  </div>
+${fieldHub}${browseMore}  </div>
 </section>
 `;
 
@@ -143,6 +153,14 @@ ${fieldHub}  </div>
         '@type': 'DefinedTermSet',
         name: 'The Law Tome',
         url: `${origin}${base}browse/`,
+        ...(rows.length ? { hasDefinedTerm: { '@type': 'ItemList', numberOfItems: rows.length } } : {}),
+      }, {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}${base}` },
+          { '@type': 'ListItem', position: 2, name: 'Browse' },
+        ],
       }];
 
   const description = isReliability

@@ -272,3 +272,29 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
   else wire();
 })();
+
+  // ---- pronunciation ------------------------------------------------------
+  // One <audio> element reused for every button on the page: the recordings are
+  // small, but creating an element per namesake would preload them all for a
+  // sound most readers never play.
+  (function wirePronounce() {
+    var btns = document.querySelectorAll('.pron-btn');
+    if (!btns.length) return;
+    var player = null;
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener('click', function () {
+        var btn = this;
+        var src = btn.getAttribute('data-audio');
+        if (!src) return;
+        if (!player) { player = new Audio(); player.preload = 'none'; }
+        player.pause();
+        player.src = src;
+        btn.classList.add('playing');
+        var done = function () { btn.classList.remove('playing'); };
+        player.onended = done;
+        player.onerror = done;
+        var p = player.play();
+        if (p && p.catch) p.catch(done);
+      });
+    }
+  })();

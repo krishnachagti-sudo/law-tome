@@ -5,50 +5,87 @@
 // every law is an existing, sourced entry.
 
 import { head, sprite, header, footer, escapeHtml, lawCard, figureStrip } from './partials.mjs';
+import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
 
-/** The hub: one panel per audience. */
+/**
+ * The hub: one panel per audience.
+ *
+ * As with /collections/, the panels used to be closed doors — a title, a
+ * problem, a count. Each now shows the laws it is recommending, because the
+ * recommendation IS the content and a reader deciding which persona is theirs
+ * should be able to judge it from the names.
+ */
 export function audiencesIndexPage(audiences = [], { base = '/', origin = '', count } = {}) {
   const rows = Array.isArray(audiences) ? audiences : [];
+  const total = rows.reduce((n, a) => n + a.laws.length, 0);
   const cards = rows.length
-    ? rows.map((a) => `      <a class="aud-card" href="${base}for/${escapeHtml(a.slug)}/">
-        <span class="aud-h">${escapeHtml(a.title)}</span>
-        <span class="aud-blurb">${escapeHtml(a.problem)}</span>
-        <span class="aud-count">${a.laws.length} laws →</span>
-      </a>`).join('\n')
+    ? rows.map((a) => {
+      const laws = a.laws || [];
+      const shown = laws.slice(0, 8);
+      const rest = laws.length - shown.length;
+      return `      <article class="aud-card" id="a-${escapeHtml(a.slug)}">
+        <h2 class="aud-h"><a href="${base}for/${escapeHtml(a.slug)}/">${escapeHtml(a.title)}</a></h2>
+        <p class="aud-blurb">${escapeHtml(a.problem)}</p>
+        <ul class="coll-laws">
+${shown.map((l) => `          <li><a href="${base}laws/${escapeHtml(l.slug)}/">${escapeHtml(l.name)}</a></li>`).join('\n')}
+${rest > 0 ? `          <li class="coll-rest"><a href="${base}for/${escapeHtml(a.slug)}/">+${rest} more</a></li>\n` : ''}        </ul>
+        <p class="aud-count"><a class="ghost" href="${base}for/${escapeHtml(a.slug)}/"><i class="ti ti-arrow-right" aria-hidden="true"></i> All ${laws.length} laws<span class="sr-only"> for ${escapeHtml(a.who || a.title)}</span></a></p>
+      </article>`;
+    }).join('\n')
     : '<div class="empty">No audiences yet.</div>';
+
+  const answer = rows.length
+    ? `The Law Tome has ${rows.length} curated reading lists for particular kinds of work — ${rows.map((a) => `<a href="${base}for/${escapeHtml(a.slug)}/">${escapeHtml(a.title)}</a>`).join(', ')} — recommending ${total} of its named laws between them.`
+    : 'Curated reading lists of named laws for particular kinds of work.';
+
+  const lede = `Over a thousand entries is too many to read and the wrong ones are worse than none. Each list below is short on purpose: the laws that keep coming up in one kind of work, in the order they tend to bite. If none of them is you, <a href="${base}situations/">start from the situation</a> or <a href="${base}browse/">browse the lot</a>.`;
+
+  const faq = hubFaq([
+    {
+      q: 'Which named laws should I actually know?',
+      a: `It depends what you do, which is why there are ${rows.length} lists rather than one. ${rows.map((a) => `<a href="${base}for/${escapeHtml(a.slug)}/">${escapeHtml(a.title)}</a> (${a.laws.length})`).join(', ')}.`,
+    },
+    ...rows.slice(0, 6).map((a) => ({
+      q: `What laws should ${String(a.who || a.title).toLowerCase()} know?`,
+      a: `${escapeHtml(a.problem)} This list has ${a.laws.length}, starting with ${a.laws.slice(0, 5).map((l) => `<a href="${base}laws/${escapeHtml(l.slug)}/">${escapeHtml(l.name)}</a>`).join(', ')}. <a href="${base}for/${escapeHtml(a.slug)}/">Read the list</a>.`,
+    })),
+    {
+      q: 'How were these picked?',
+      a: 'By hand, from the entries already in the index. Every law on a list has its own page with sources; the list is an editorial ordering of existing material, not extra claims about it.',
+    },
+  ]);
 
   const section = `<section class="sec" id="index">
   <div class="wrap">
-    <div class="sec-head">
-      <h1>Find your laws</h1>
-      <span class="sub">${rows.length} starting points</span>
-    </div>
-    <p class="sec-lede">The index is big. These are curated ways in — the laws that matter most for what you do, with the noise stripped out. Pick the one that sounds like you.</p>
-    <div class="aud-grid" data-reveal-stagger>
+${hubHead({
+    title: 'Find your laws',
+    sub: `${rows.length} starting points`,
+    answer,
+    lede,
+    stats: [[rows.length, 'reading lists'], [total, 'laws recommended']],
+    base,
+  })}    <div class="aud-grid" data-reveal-stagger>
 ${cards}
     </div>
-  </div>
+${faq.html}${hubNav('for/', { base })}  </div>
 </section>
 `;
 
-  const description =
-    'Curated entry points into The Law Tome for engineers, decision-makers, writers, leaders, and the endlessly curious — the named laws that matter most for what you do.';
+  const description = rows.length
+    ? `${rows.length} curated reading lists of named laws — ${rows.slice(0, 5).map((a) => a.title).join(', ')} — recommending ${total} entries for the work you actually do.`
+    : 'Curated entry points into The Law Tome for engineers, decision-makers, writers, leaders, and the endlessly curious.';
 
-  const jsonld = [{
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'Find your laws',
-    url: `${origin}${base}for/`,
-    description,
-    isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
-    ...(rows.length ? {
-      mainEntity: {
-        '@type': 'ItemList',
-        numberOfItems: rows.length,
-        itemListElement: rows.map((a, i) => ({ '@type': 'ListItem', position: i + 1, name: a.title, url: `${origin}${base}for/${a.slug}/` })),
-      },
-    } : {}),
-  }];
+  const jsonld = [
+    ...hubJsonLd({
+      name: 'Find your laws',
+      description,
+      path: 'for/',
+      items: rows.map((a) => ({ name: a.title, href: `for/${a.slug}/` })),
+      origin,
+      base,
+    }),
+    ...(faq.jsonld ? [faq.jsonld] : []),
+  ];
 
   return (
     head({

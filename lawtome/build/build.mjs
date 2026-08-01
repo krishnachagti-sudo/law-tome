@@ -64,6 +64,14 @@ export async function buildSite(opts) {
     images.people = images.people || {};
   } catch { /* no manifest yet */ }
 
+  // Non-image facts (src/data/facts.json) from build/fetch-facts.py: each law's
+  // defining formula, the frequency of its name in print, the names it goes by
+  // in other languages, and its namesake's pronunciation and birthplace. Also
+  // optional — the site renders without it.
+  let facts = {};
+  try { facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')); }
+  catch { /* not harvested yet */ }
+
   const errs = validateCorpus(laws, categories);
   if (errs.length) throw new Error('validation failed:\n' + errs.join('\n'));
 
@@ -114,6 +122,16 @@ export async function buildSite(opts) {
   if (droppedSit.length) console.warn(`situations: dropped ${droppedSit.length} unknown slug(s): ${droppedSit.join(', ')}`);
   const sitMap = situationsBySlug(rawSituations);
 
+  // The graph is built once and used twice: written out as graph.json for the
+  // client, and summarised on the /graph/ page so that page can state its own
+  // scale instead of describing an unquantified "web".
+  const graph = buildGraph(laws, new Set(Object.keys(images.people || {})));
+  const graphStats = {
+    nodes: (graph.nodes || []).length,
+    edges: (graph.edges || graph.links || []).length,
+    opposed: (graph.edges || graph.links || []).filter((e) => e && (e.kind === 'opposed' || e.kind === 'tension')).length,
+  };
+
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
     // Home: first 12 laws as the featured rotation.
@@ -126,13 +144,13 @@ export async function buildSite(opts) {
     // Prebuilt relationship graph (a DATA file, not a "page"): fetched by
     // src/assets/graph.js, which renders a local neighbourhood from it. In the
     // concurrent writes[] so it's covered by the pre-clean rm + Promise.all.
-    writePage(join(out, 'graph.json'), JSON.stringify(buildGraph(laws, new Set(Object.keys(images.people || {}))))),
+    writePage(join(out, 'graph.json'), JSON.stringify(graph)),
     // The graph explorer page (chrome + empty #graph stage; graph.js fills it).
-    writePage(join(out, 'graph', 'index.html'), graphPage({ base, origin, publishedCount })),
+    writePage(join(out, 'graph', 'index.html'), graphPage({ base, origin, publishedCount, stats: graphStats })),
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
-    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, buildDate, images });
+    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, buildDate, images, facts });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
     // Clean Markdown twin at /laws/<slug>/index.md — a fetch-friendly plain-text
     // representation for LLMs/agents (GEO). Linked from the page via rel=alternate.
@@ -209,7 +227,10 @@ export async function buildSite(opts) {
   const presentTiers = RELIABILITY_TIERS.filter((v) => membersByTier.has(v));
   writes.push(writePage(
     join(out, 'reliability', 'index.html'),
-    reliabilityHubPage(presentTiers.map((v) => ({ value: v, count: membersByTier.get(v).length })), { base, origin, count: publishedCount }),
+    reliabilityHubPage(
+      presentTiers.map((v) => ({ value: v, count: membersByTier.get(v).length, laws: membersByTier.get(v) })),
+      { base, origin, count: publishedCount },
+    ),
   ));
   for (const tier of presentTiers) {
     writes.push(writePage(
@@ -254,7 +275,10 @@ export async function buildSite(opts) {
   for (const a of audiences) {
     writes.push(writePage(join(out, 'for', a.slug, 'index.html'), audiencePage(a, { base, origin, count: publishedCount, images })));
   }
-  writes.push(writePage(join(out, 'features', 'index.html'), featuresPage({ base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'features', 'index.html'), featuresPage({
+    base, origin, count: publishedCount,
+    imagery: { people: Object.keys(images.people || {}).length, figures: Object.keys(images.figures || {}).length },
+  })));
   writes.push(writePage(join(out, 'manifesto', 'index.html'), manifestoPage({ base, origin, count: publishedCount })));
 
   // Eponym index + timeline: two more browse axes over existing fields

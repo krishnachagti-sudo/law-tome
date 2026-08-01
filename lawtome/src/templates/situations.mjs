@@ -7,6 +7,7 @@
 // entry (build/situations.resolveSituations drops any unknown slug).
 
 import { head, sprite, header, footer, escapeHtml, reliabilityClass } from './partials.mjs';
+import { hubHead, hubNav, hubJsonLd } from './hub.mjs';
 
 /**
  * @param {{situation:string, law:object}[]} situations resolved rows.
@@ -59,35 +60,54 @@ ${ordered.map(([k, rs]) => `      <a href="#${gid(k)}">${escapeHtml(label(k))} <
 `
     : '';
 
+  const answer = rows.length
+    ? `This page maps ${rows.length} everyday situations — a target that gets gamed, a meeting that fills its hour, a rule nobody remembers the reason for — each onto the named law that describes it, across ${ordered.length} ${ordered.length === 1 ? 'field' : 'fields'}. Read down the left column until something sounds like your week, then follow the link.`
+    : 'A reverse lookup: describe the situation, find the named law for it.';
+
+  const lede = `You know the feeling but not the name for it, and a name is what makes a thing arguable in a meeting. Every row here is a plain-language description paired with the one law that names it. Nothing on this page is hypothetical — each answer is <a href="${base}browse/">an entry in the index</a> with its sources and its <a href="${base}reliability/">reliability rating</a>. If your situation isn't listed, <a href="${base}">describe it on the home page</a> and let search find the match.`;
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
-    <div class="sec-head">
-      <h1>What's the law for…?</h1>
-      <span class="sub">${rows.length} common ${rows.length === 1 ? 'situation' : 'situations'}</span>
-    </div>
-    <p class="sec-lede">You know the feeling but not the name for it. Find the situation you're in and jump to the law that describes it — or <a href="${base}">describe what's happening from the home page</a> and let search find the match.</p>
-${jump}    <div class="sit-list">
+${hubHead({
+    title: "What's the law for…?",
+    sub: `${rows.length} common ${rows.length === 1 ? 'situation' : 'situations'}`,
+    answer,
+    lede,
+    stats: [[rows.length, 'situations mapped'], [ordered.length, 'fields covered']],
+    base,
+  })}${jump}    <div class="sit-list">
 ${items}
     </div>
-  </div>
+${hubNav('situations/', { base })}  </div>
 </section>
 `;
 
-  const description =
-    'What law describes this? A reverse lookup from common situations — a target that gets gamed, a project that runs late, a rule nobody remembers the reason for — to the named law that explains each one.';
+  const description = rows.length
+    ? `What law describes this? ${rows.length} everyday situations — a target that gets gamed, a project that runs late, a rule nobody remembers the reason for — each mapped to the named law that explains it.`
+    : 'What law describes this? A reverse lookup from common situations to the named law that explains each one.';
 
   // FAQPage: each situation is a "What law explains …?" Q with the law as answer.
   // The situation text is a whole authored line and the law name is corpus data,
   // so the structured data matches the visible rows exactly (no spam risk).
-  const jsonld = [{
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: rows.map(({ situation, law }) => ({
-      '@type': 'Question',
-      name: `What law explains this: ${situation}?`,
-      acceptedAnswer: { '@type': 'Answer', text: `${law.name}${law.statement ? ` — ${law.statement}` : ''}` },
-    })),
-  }];
+  const jsonld = [
+    ...hubJsonLd({
+      name: "What's the law for…?",
+      description,
+      path: 'situations/',
+      items: rows.map(({ situation, law }) => ({ name: situation, href: `laws/${law.slug}/` })),
+      origin,
+      base,
+    }),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: rows.map(({ situation, law }) => ({
+        '@type': 'Question',
+        name: `What law explains this: ${situation}?`,
+        acceptedAnswer: { '@type': 'Answer', text: `${law.name}${law.statement ? ` — ${law.statement}` : ''}` },
+      })),
+    },
+  ];
 
   return (
     head({

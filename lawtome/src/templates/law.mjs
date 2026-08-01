@@ -20,6 +20,8 @@ import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliability
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
+import { formulaBlock, diffusionBlock, pronunciation, otherNames } from './facts.mjs';
+import { widgetBlock, widgetFor } from './widgets.mjs';
 
 /**
  * Wrap the accent phrase in <span class="accent"> within the statement. Splits the
@@ -89,7 +91,7 @@ function glanceRow(k, v) {
 }
 
 export function lawPage(law, ctx = {}) {
-  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, buildDate, images } = ctx;
+  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, buildDate, images, facts = {} } = ctx;
   const coined = law.provenance === 'coined';
   const catLabel = categories[law.category] || law.category || '';
   const canonical = `${origin}${base}laws/${law.slug}/`;
@@ -186,6 +188,11 @@ ${h2}${inner}
       </div>`;
   };
   const L = law.name;
+  // The non-image dimensions, all optional: a law shows a formula, a diffusion
+  // curve or a set of foreign names only where we actually have one.
+  const fact = facts[law.slug] || null;
+  const personFact = law.namedAfter ? ((facts._people || {})[personId(law.namedAfter).replace(/^ep-/, '')] || null) : null;
+
   // Laws already surfaced as their own card elsewhere on the page — don't
   // double-link them from inside the prose.
   const proseSkip = new Set([law.slug,
@@ -195,6 +202,18 @@ ${h2}${inner}
   const prose = (text) => linkLawNames(escapeHtml(text), { byslug, base, skip: proseSkip });
 
   if (law.meaning) blocks.push(block('In plain English', `        <p class="lead">${prose(law.meaning)}</p>`, true, `What does ${L} mean?`));
+
+  // The law written as itself, where one exists. Placed right after the plain
+  // English so the two readings of the same claim sit together.
+  {
+    const fig = formulaBlock(fact, law, { base });
+    if (fig) blocks.push(block('In symbols', fig, true, `What is the formula for ${L}?`));
+    // …and, for the few laws with a single agreed closed form, a slider that
+    // computes it. Placed right after the formula so the reader can see the
+    // identity and then move it.
+    const wg = widgetBlock(law.slug);
+    if (wg) blocks.push(block('Run the numbers', wg, true, `${L} calculator`));
+  }
 
   // ---- infographic card: reliability meter + lineage timeline. Both use only
   // real per-law data (the controlled reliability tier; the coined/popular years),
@@ -307,6 +326,15 @@ ${h2}${inner}
   if (law.limits) blocks.push(block('Where it breaks down', callout('warn', law.limits), true, `What are the limits of ${L}?`));
   if (law.misreadings) blocks.push(block("What it doesn't say", callout('info', law.misreadings), true, `What are common misconceptions about ${L}?`));
   if (law.origin) blocks.push(block('Origin', `        <p class="prose">${prose(law.origin)}</p>`, true, `Where did ${L} come from?`));
+
+  // When the NAME caught on, and what the idea is called elsewhere. Both belong
+  // beside Origin: they are the afterlife of the name rather than the idea.
+  {
+    const dif = diffusionBlock(fact, law, { base });
+    if (dif) blocks.push(block('How the name spread', dif, true, `When did people start saying “${L}”?`));
+    const others = otherNames(fact);
+    if (others) blocks.push(block('Known elsewhere as', others, true, `What is ${L} called in other languages?`));
+  }
 
   if (coined) {
     // Coined laws carry no external sources; credit the submitter instead.
@@ -483,6 +511,7 @@ ${mapLegend}
           ${portrait(namesakeImg, { base, alt: `${law.namedAfter}, who ${law.name} is named after` })}
           <span class="face-name">${escapeHtml(law.namedAfter)}</span>
         </a>
+${pronunciation(personFact, law.namedAfter, { base })}
         ${imageCredit(namesakeImg)}
       </div>\n`
     : '';
@@ -710,6 +739,9 @@ document.getElementById('copy').onclick=function(){
     entry +
     dash +
     layout +
-    footer({ base, scripts: `${scripts}\n<script defer src="${asset(base, 'assets/saved.js')}"></script>` })
+    footer({ base, scripts: `${scripts}\n<script defer src="${asset(base, 'assets/saved.js')}"></script>`
+      // widget.js only where there IS a widget: nine laws should not cost the
+      // other 1,096 an extra request.
+      + (widgetFor(law.slug) ? `\n<script defer src="${asset(base, 'assets/widget.js')}"></script>` : '') })
   );
 }

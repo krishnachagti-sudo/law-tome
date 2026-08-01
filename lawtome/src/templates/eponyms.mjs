@@ -5,12 +5,41 @@
 // laws"), then the full A–Z. Built from eponymGroups; nothing invented.
 
 import { head, sprite, header, footer, escapeHtml, personImage, portrait } from './partials.mjs';
+import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
 
 /**
  * Stable anchor id for a namesake ("W. Edwards Deming" -> "ep-w-edwards-deming").
  * Exported so a law page can deep-link its "Named after" tile straight at the
  * person's row here, instead of dropping the reader at the top of a 900-name index.
  */
+/**
+ * The name this person files under, A–Z: their surname, accent-folded.
+ *
+ * Two subtleties, both learned from the rendered page.
+ *  - A joint namesake ("Paul Menzerath and Gabriel Altmann") files under the
+ *    FIRST person, because the law is Menzerath's Law and a reader looking for
+ *    it will look under M, not under Altmann.
+ *  - This is the single source of truth for the ordering, the letter headings
+ *    and the initial in the avatar. They were derived separately and disagreed:
+ *    the list grouped by surname while the avatar showed the forename's letter,
+ *    so section A was full of circles reading M, G and P.
+ *
+ * @returns {string} lowercase, accent-folded surname ('' if there is no name).
+ */
+export function surnameKey(person) {
+  const first = String(person || '').trim().split(/\s+(?:and|&|with)\s+|,\s*/i)[0] || '';
+  const parts = first.trim().split(/\s+/);
+  return (parts[parts.length - 1] || '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
+/** The A–Z bucket for a namesake: their surname's initial, or '#'. */
+export function surnameInitial(person) {
+  const c = surnameKey(person).charAt(0).toUpperCase();
+  return /[A-Z]/.test(c) ? c : '#';
+}
+
 export function personId(person) {
   return 'ep-' + String(person || '')
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -32,8 +61,9 @@ export function eponymsPage(groups = [], { base = '/', origin = '', count, image
   const avatar = (person) => {
     const img = personImage(images, person);
     if (img) return portrait(img, { base, small: true, alt: person });
-    const initial = String(person || '?').trim().charAt(0).toUpperCase();
-    return `<span class="ep-initial" aria-hidden="true">${escapeHtml(initial)}</span>`;
+    // The SURNAME's initial, matching the letter section this row sits in. It
+    // used to be the forename's, so the A section showed circles reading M, G, P.
+    return `<span class="ep-initial" aria-hidden="true">${escapeHtml(surnameInitial(person))}</span>`;
   };
 
   const row = (g, anchored) => `      <div class="ep-row"${anchored ? ` id="${escapeHtml(personId(g.person))}"` : ''}>
@@ -50,13 +80,9 @@ ${multi.slice().sort((a, b) => b.laws.length - a.laws.length || a.person.localeC
 `
     : '';
 
-  // Surname initial, accent-folded ("Ångström" -> A, "Émile Durkheim" -> D), used
-  // to break the A–Z list into letter-anchored sections and drive the jump-bar.
-  const initial = (person) => {
-    const parts = String(person || '').trim().split(/\s+/);
-    const c = (parts[parts.length - 1] || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').charAt(0).toUpperCase();
-    return /[A-Z]/.test(c) ? c : '#';
-  };
+  // Surname initial — shared with the avatar and with the build's A–Z sort,
+  // so the three cannot disagree (see surnameKey).
+  const initial = surnameInitial;
 
   // A–Z, grouped by surname initial with an id anchor per letter. rows arrive
   // surname-sorted, so a single pass emits a heading whenever the initial changes.
@@ -97,29 +123,71 @@ ${alphabet.map((L) => {
 ${jump}${alpha}`
     : '<div class="empty">No named laws yet.</div>';
 
+  const eponymCount = rows.reduce((n, g) => n + g.laws.length, 0);
+  const withFace = rows.filter((g) => personImage(images, g.person)).length;
+  const top = multi.slice().sort((a, b) => b.laws.length - a.laws.length || a.person.localeCompare(b.person, 'en'));
+
+  const answer = rows.length
+    ? `${eponymCount} of the named laws in The Law Tome carry a person's name, and they belong to ${rows.length} people. ${multi.length} of those namesakes have more than one law to their credit${top.length ? `, led by ${top.slice(0, 3).map((g) => `${escapeHtml(g.person)} (${g.laws.length})`).join(', ')}` : ''}.`
+    : 'Named laws gathered under the person each is named after.';
+
+  const lede = `Every law that carries someone's name, filed under the person who lent it — useful when you remember the surname but not which of their laws you meant. Being the namesake is not the same as being the discoverer: plenty of these people got the credit second-hand, and each law page says whose work it really was.${withFace ? ` ${withFace} of the ${rows.length} have a verified public-domain or freely-licensed portrait here; the rest keep a plain initial rather than a stand-in face.` : ''}`;
+
+  const faq = hubFaq([
+    {
+      q: 'How many named laws are named after a person?',
+      a: `${eponymCount}, spread across ${rows.length} namesakes. The rest of the index is named for a place, a phenomenon, or nothing in particular.`,
+    },
+    {
+      q: 'Who has the most laws named after them?',
+      a: top.length
+        ? `${top.slice(0, 5).map((g) => `<a href="#${escapeHtml(personId(g.person))}">${escapeHtml(g.person)}</a> (${g.laws.length})`).join(', ')}. ${multi.length} people have more than one.`
+        : 'Every namesake here has exactly one.',
+    },
+    {
+      q: 'Does the namesake always mean the discoverer?',
+      a: 'No — and this is common enough to have its own name. A law often gets attached to whoever popularised it or wrote the memorable version, not whoever did the work first. Where that happened, the law\'s own page says so.',
+    },
+    ...(withFace ? [{
+      q: 'Where do the portraits come from?',
+      a: `Wikimedia Commons and Wikidata, restricted to public-domain and freely-licensed images, and matched to the right person before use. Every one is credited on <a href="${base}credits/">the credits page</a>. ${rows.length - withFace} namesakes have no confirmed portrait and show an initial instead.`,
+    }] : []),
+  ]);
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
-    <div class="sec-head">
-      <h1>Laws by their namesake</h1>
-      <span class="sub">${rows.length} ${rows.length === 1 ? 'person' : 'people'}</span>
-    </div>
-    <p class="sec-lede">Every law that carries someone's name, gathered under the person who lent it. Some names turn up more than once — a few thinkers have a whole handful of principles to their credit.</p>
-${featured}${all}
-  </div>
+${hubHead({
+    title: 'Laws by their namesake',
+    sub: `${rows.length} ${rows.length === 1 ? 'person' : 'people'}`,
+    answer,
+    lede,
+    stats: [
+      [rows.length, 'namesakes'],
+      [eponymCount, 'eponymous laws'],
+      [multi.length, 'with more than one'],
+      ...(withFace ? [[withFace, 'with a portrait']] : []),
+    ],
+    base,
+  })}${featured}${all}
+${faq.html}${hubNav('named-after/', { base })}  </div>
 </section>
 `;
 
-  const description =
-    'Browse named laws by the person behind them — every principle, effect, and razor gathered under its namesake, from the one-law figures to the thinkers with several to their name.';
+  const description = rows.length
+    ? `${eponymCount} named laws gathered under the ${rows.length} people they are named after — from the one-law figures to the ${multi.length} thinkers with several to their name.`
+    : 'Browse named laws by the person behind them — every principle, effect, and razor gathered under its namesake.';
 
-  const jsonld = [{
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'Laws by their namesake',
-    url: `${origin}${base}named-after/`,
-    description,
-    isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
-  }];
+  const jsonld = [
+    ...hubJsonLd({
+      name: 'Laws by their namesake',
+      description,
+      path: 'named-after/',
+      items: top.slice(0, 100).map((g) => ({ name: `${g.person} (${g.laws.length} laws)` })),
+      origin,
+      base,
+    }),
+    ...(faq.jsonld ? [faq.jsonld] : []),
+  ];
 
   return (
     head({
