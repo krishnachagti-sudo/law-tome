@@ -90,7 +90,7 @@ export function lawCard(law, base, level = 3) {
      <div class="top"><span class="no">№ ${escapeHtml(law.no)}</span><span class="badge ${reliabilityClass(law.reliability)}">${escapeHtml(law.reliability)}</span></div>
      <${h} class="card-name">${escapeHtml(law.name)}</${h}>
      <div class="say">"${escapeHtml(law.statement)}"</div>
-     <div class="foot"><span class="cat">${escapeHtml(law.category)}</span><span class="rel"><i class="ti ti-affiliate" style="font-size:13px" aria-hidden="true"></i> ${rels} related</span></div>
+     <div class="foot" data-cat-c="${escapeHtml(law.category)}"><span class="cat">${escapeHtml(law.category)}</span><span class="rel"><i class="ti ti-affiliate" style="font-size:13px" aria-hidden="true"></i> ${rels} related</span></div>
    </a>`;
 }
 

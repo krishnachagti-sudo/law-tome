@@ -5,9 +5,15 @@
    hues — green (empirical) · amber (heuristic) · grey (folk) · rust-red (contested) —
    so the amber brand accent never collides with the "contested" flag. */
 :root{
-  --bg:#14161c; --surface:#1b1e26; --surface-2:#232733;
-  --ink:#f0ece2; --muted:#a8a293; --faint:#8b897f; --read:#d6d1c4;
-  --line:#282c37; --line-strong:#3b404e;
+  /* Warm-neutral charcoal ramp. The previous set was a cold blue-grey with only
+     ~1.09:1 between the page and a card and 1.19:1 between a card and its own
+     border — every surface landed inside one narrow band, so the whole page read
+     as a single flat field. These steps are solved to fixed targets (card lifts
+     off the page at 1.25:1, border reads at 1.40:1) and warmed toward the ink-on-
+     paper character the light theme already has. */
+  --bg:#131316; --surface:#292725; --surface-2:#383634;
+  --ink:#f0ece2; --muted:#a8a293; --faint:#97958c; --read:#d6d1c4;
+  --line:#403e3c; --line-strong:#63615f;
   --accent:#e0a43f; --accent-ink:#f3cb84; --accent-soft:#332811;
   --gold:#caa153; --gold-soft:#2b2413;
   --ok:#7fbb7c; --ok-soft:#182417;
@@ -211,7 +217,9 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .card .card-name{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:-.01em;margin:0 0 8px}
 .card .say{font-family:var(--serif);font-weight:400;font-style:italic;font-size:14.5px;color:var(--muted);line-height:1.5}
 .card .foot{margin-top:auto;padding-top:14px;display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--faint)}
-.card .foot .cat{color:var(--accent)}
+/* --field is set per discipline on .foot[data-cat-c] (see the field palette near
+   the end of this file); falls back to the brand accent for anything unmapped. */
+.card .foot .cat{color:var(--field,var(--accent))}
 .card .foot .rel{display:flex;align-items:center;gap:5px}
 .empty{grid-column:1/-1;text-align:center;padding:40px;font-family:var(--mono);font-size:13px;color:var(--faint)}
 
@@ -1068,3 +1076,24 @@ html{scroll-behavior:smooth}
 .badge--none{visibility:hidden}
 .sit-arrow{width:14px;text-align:right}
 @media(max-width:560px){.sit-answer .badge{min-width:0}.sit-arrow{display:none}}
+
+/* ---- field colour ----------------------------------------------------------
+   Each discipline already has a colour on the relationship graph, but nowhere
+   else — so 1,100 cards showed their field in the same amber and every card
+   looked identical. Reuse that palette (same hues as graph.js CAT_COLOR) for the
+   field label on a card, giving the index a per-discipline rhythm instead of one
+   flat gold. Text-only: no new blocks of colour, and the reliability badges keep
+   owning the green/amber/grey/red signal. */
+[data-cat-c="economics"]{--field:#e0a43f}   [data-cat-c="management"]{--field:#d8b45a}
+[data-cat-c="planning"]{--field:#c9a86a}    [data-cat-c="sociology"]{--field:#e8926e}
+[data-cat-c="psychology"]{--field:#f0a0be}  [data-cat-c="media"]{--field:#f2b56b}
+[data-cat-c="philosophy"]{--field:#d9cf92}  [data-cat-c="logic"]{--field:#a9d15a}
+[data-cat-c="law"]{--field:#cabf8f}         [data-cat-c="linguistics"]{--field:#d3a9e6}
+[data-cat-c="technology"]{--field:#5cc6a2}  [data-cat-c="software"]{--field:#77a6f2}
+[data-cat-c="statistics"]{--field:#c79be6}  [data-cat-c="mathematics"]{--field:#b79cff}
+[data-cat-c="physics"]{--field:#6db3e6}     [data-cat-c="chemistry"]{--field:#d873c8}
+[data-cat-c="biology"]{--field:#82c07d}     [data-cat-c="medicine"]{--field:#df735b}
+[data-cat-c="earth-science"]{--field:#c39b62} [data-cat-c="astronomy"]{--field:#69cfc6}
+/* The graph hues are tuned for a dark field; on cream they need darkening to stay
+   legible, so light mode keeps the single restrained gold. */
+html[data-theme="light"] .card .foot .cat{color:var(--accent)}
