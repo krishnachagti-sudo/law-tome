@@ -167,6 +167,162 @@ ${rows.map(({ q, a }) => `      <details class="hub-faq-i">
   };
 }
 
+/**
+ * What a curated set of laws actually consists of, read off the members.
+ *
+ * A collection page used to be a blurb and a grid: the reader could see the
+ * names but nothing about the set as a set — how many fields it spans, whether
+ * it is built on measured findings or rules of thumb, how far back it reaches.
+ * All of that is already in the corpus and none of it needs authoring.
+ *
+ * @returns {{stats: Array, html: string, fields: Array, tiers: Array}}
+ */
+export function setShape(laws = [], { base = '/', categories = {} } = {}) {
+  const rows = Array.isArray(laws) ? laws : [];
+  const tally = (key) => {
+    const m = new Map();
+    for (const l of rows) if (l && l[key]) m.set(l[key], (m.get(l[key]) || 0) + 1);
+    return [...m.entries()].sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0])));
+  };
+  const fields = tally('category');
+  const tiers = tally('reliability');
+  const years = rows.map((l) => Number(l.coinedYear)).filter((y) => Number.isFinite(y) && y >= 1);
+  const span = years.length ? [Math.min(...years), Math.max(...years)] : null;
+  const named = rows.filter((l) => l.namedAfter).length;
+
+  const bar = (entries, href) => entries.length
+    ? `        <ul class="shape-list">
+${entries.map(([k, n]) => `          <li>${href ? `<a href="${href(k)}">${escapeHtml(categories[k] || k)}</a>` : escapeHtml(k)}<span>${n}</span></li>`).join('\n')}
+        </ul>`
+    : '';
+
+  const html = rows.length
+    ? `    <section class="setshape">
+      <h2 class="setshape-h">What is in this set</h2>
+      <div class="setshape-grid">
+        <div class="setshape-col">
+          <h3>Fields</h3>
+${bar(fields, (k) => `${base}category/${escapeHtml(k)}/`)}
+        </div>
+        <div class="setshape-col">
+          <h3>How well established</h3>
+${bar(tiers, (k) => `${base}reliability/${String(k).toLowerCase()}/`)}
+        </div>
+        <div class="setshape-col">
+          <h3>Span</h3>
+          <p class="setshape-note">${span
+            ? `Named between <b>${span[0]}</b> and <b>${span[1]}</b>${span[0] !== span[1] ? `, ${span[1] - span[0]} years apart` : ''}.`
+            : 'None of these carries a reliable date.'}${named
+              // "12 of the 12 are named after someone" is a sentence no editor
+              // would let through; when the set is unanimous, say so.
+              ? named === rows.length
+                ? ` ${rows.length === 1 ? 'It is' : `All ${rows.length} are`} named after someone.`
+                : ` ${named} of the ${rows.length} are named after someone.`
+              : ''}</p>
+        </div>
+      </div>
+    </section>
+`
+    : '';
+
+  return {
+    html,
+    fields,
+    tiers,
+    span,
+    stats: [
+      [rows.length, 'laws'],
+      [fields.length, fields.length === 1 ? 'field' : 'fields'],
+      ...(span ? [[`${span[0]}–${span[1]}`, 'span']] : []),
+    ],
+  };
+}
+
+/** Member pairs that the corpus marks as opposed — a set arguing with itself. */
+export function setTensions(laws = [], { base = '/', compareSlugs = {} } = {}) {
+  const rows = Array.isArray(laws) ? laws : [];
+  const inSet = new Map(rows.map((l) => [l.slug, l]));
+  const seen = new Set();
+  const pairs = [];
+  for (const l of rows) {
+    for (const r of (Array.isArray(l.related) ? l.related : [])) {
+      if (!r || !/oppos|tension|contradict/i.test(String(r.kind || ''))) continue;
+      const other = inSet.get(r.slug);
+      if (!other) continue;
+      const key = [l.slug, other.slug].sort().join('|');
+      if (seen.has(key)) continue;
+      seen.add(key);
+      pairs.push({ a: l, b: other, compare: compareSlugs[key] });
+    }
+  }
+  if (!pairs.length) return '';
+  return `    <section class="setten">
+      <h2>Where this set disagrees with itself</h2>
+      <p class="setten-note">${pairs.length} ${pairs.length === 1 ? 'pair' : 'pairs'} inside this set pull in opposite directions. That is not a flaw in the selection — it is the useful part.</p>
+      <ul class="setten-list">
+${pairs.map((p) => `        <li>${p.compare
+    ? `<a href="${base}compare/${escapeHtml(p.compare)}/">${escapeHtml(p.a.name)} <span>vs</span> ${escapeHtml(p.b.name)}</a>`
+    : `<span>${escapeHtml(p.a.name)} vs ${escapeHtml(p.b.name)}</span>`}</li>`).join('\n')}
+      </ul>
+    </section>
+`;
+}
+
+/**
+ * Laws just outside the set: entries the members repeatedly point at that the
+ * curator did not include. Ranked by how many members link them, so the list is
+ * "what this set keeps gesturing towards", not a random neighbour dump.
+ */
+export function setAdjacent(laws = [], { base = '/', byslug = {}, limit = 8 } = {}) {
+  const rows = Array.isArray(laws) ? laws : [];
+  const inSet = new Set(rows.map((l) => l.slug));
+  const votes = new Map();
+  for (const l of rows) {
+    for (const r of (Array.isArray(l.related) ? l.related : [])) {
+      if (!r || !r.slug || inSet.has(r.slug) || !byslug[r.slug]) continue;
+      votes.set(r.slug, (votes.get(r.slug) || 0) + 1);
+    }
+  }
+  const top = [...votes.entries()]
+    .filter(([, n]) => n >= 2)
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, limit)
+    .map(([slug, n]) => ({ law: byslug[slug], n }));
+  if (!top.length) return '';
+  return `    <section class="setadj">
+      <h2>Just outside this set</h2>
+      <p class="setadj-note">Entries these laws keep pointing at that the collection does not include — each linked by at least two members.</p>
+      <ul class="coll-laws">
+${top.map((t) => `        <li><a href="${base}laws/${escapeHtml(t.law.slug)}/">${escapeHtml(t.law.name)}</a></li>`).join('\n')}
+      </ul>
+    </section>
+`;
+}
+
+/**
+ * The set on the OTHER axis that shares the most members with this one.
+ *
+ * Collections group by problem, reading lists by the work you do, and a law can
+ * honestly sit in both — "Biases that skew decisions" and "For product &
+ * decision-makers" share five. Overlap only reads as duplication when it is
+ * unexplained, so each page names its closest counterpart and says how many
+ * they share. (The one pair that WAS duplication — a collection whose members
+ * were a strict subset of a reading list, titled after a person rather than a
+ * problem — is gone; see build/build.mjs's redirect map.)
+ */
+export function crossAxis(laws = [], others = [], { base = '/', hrefBase = '', label = '' } = {}) {
+  const mine = new Set((Array.isArray(laws) ? laws : []).map((l) => l && l.slug).filter(Boolean));
+  if (!mine.size) return '';
+  let best = null;
+  for (const o of (Array.isArray(others) ? others : [])) {
+    const n = (o.laws || []).filter((l) => mine.has(l.slug)).length;
+    if (n >= 2 && (!best || n > best.n)) best = { o, n };
+  }
+  if (!best) return '';
+  return `    <p class="crossaxis">Shares ${best.n} of these with ${escapeHtml(label)} <a href="${base}${hrefBase}${escapeHtml(best.o.slug)}/">${escapeHtml(best.o.title)}</a>.</p>
+`;
+}
+
 /** CollectionPage + ItemList + BreadcrumbList, the set every hub should declare. */
 export function hubJsonLd({ name, description, path, items = [], origin = '', base = '/' }) {
   const url = `${origin}${base}${path}`;

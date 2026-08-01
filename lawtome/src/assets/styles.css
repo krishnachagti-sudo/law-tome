@@ -1496,6 +1496,41 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
    met with nothing between them, reading as one box overlapping the other. */
 .sec-more{display:flex;justify-content:center;margin:34px 0 0}
 
+/* The one-line pointer at the other grouping axis. Sits between the card grid
+   and the set-shape block, so it needs its own breathing room rather than
+   inheriting the grid's zero bottom margin. */
+.crossaxis{margin:28px 0 0;font-size:13.5px;line-height:1.65;color:var(--muted);
+  padding-left:13px;border-left:2px solid var(--line-strong)}
+.crossaxis a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-strong)}
+.crossaxis a:hover{color:var(--accent);border-bottom-color:currentColor}
+
+/* ---- "what is in this set" on a collection / reading-list page ------------- */
+.setshape{margin-top:52px;padding-top:26px;border-top:1px solid var(--line)}
+.setshape-h,.setten h2,.setadj h2{font-family:var(--serif);font-weight:600;font-size:21px;margin:0 0 16px}
+.setshape-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.setshape-col h3{margin:0 0 10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--faint);font-weight:400}
+.shape-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.shape-list li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  font-size:13.5px;color:var(--read);border-bottom:1px dotted var(--line);padding-bottom:5px}
+.shape-list a{color:var(--read);text-decoration:none}
+.shape-list a:hover{color:var(--accent)}
+.shape-list span{font-family:var(--mono);font-size:11.5px;color:var(--faint)}
+.setshape-note{margin:0;font-size:13.5px;line-height:1.6;color:var(--muted)}
+.setshape-note b{color:var(--ink);font-weight:500}
+
+.setten{margin-top:44px}
+.setten-note,.setadj-note{margin:0 0 14px;font-size:13.5px;line-height:1.6;color:var(--muted);max-width:70ch}
+.setten-list{list-style:none;margin:0;padding:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px}
+.setten-list a,.setten-list span{display:block;padding:10px 13px;background:var(--surface);
+  border:1px solid var(--line);border-left:2px solid var(--con);border-radius:3px;
+  font-size:13.5px;color:var(--ink);text-decoration:none;transition:border-color .16s}
+.setten-list a:hover{border-color:var(--con)}
+.setten-list a span{display:inline;padding:0;border:0;background:none;font-family:var(--mono);
+  font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:0 4px}
+.setadj{margin-top:44px}
+
 /* ---- comparison page substance --------------------------------------------
    The dimension grid is the page's spine: one row per aspect, both laws' own
    words under a shared heading, each side tinted by its field so the eye can

@@ -108,12 +108,23 @@ test('build emits a well-formed _redirects map from law.redirectFrom', async () 
   await buildSite({ dataDir:'src/data/laws', catFile:'src/data/categories.json', assetsDir:'src/assets', out, base:'/lawtome/', origin:'https://conyso.com' });
   assert.ok(existsSync(join(out, '_redirects')), 'missing _redirects');
   const rd = await readFile(join(out, '_redirects'), 'utf8');
-  // The corpus carries permalink redirects (301s seeded from duplicate-slug
-  // cleanup). Every non-comment, non-blank line must be a well-formed
-  // `from  to  301` triple pointing into /lawtome/laws/.
+  // Two kinds of line live here: permalink redirects seeded from duplicate-slug
+  // cleanup (laws → laws), and retirements of whole pages (the collection that
+  // duplicated a reading list). Both must be well-formed `from  to  301`
+  // triples rooted at the base, and every target must stay inside the site.
   const lines = rd.split('\n').filter(l => l.trim() && !l.startsWith('#'));
+  assert.ok(lines.length, 'no redirect lines emitted');
   for (const l of lines)
-    assert.match(l, /^\/lawtome\/laws\/\S+\/\s+\/lawtome\/laws\/\S+\/\s+301$/, `malformed redirect line: ${l}`);
+    assert.match(l, /^\/lawtome\/\S+\/\s+\/lawtome\/\S+\/\s+301$/, `malformed redirect line: ${l}`);
+  const lawLines = lines.filter(l => l.startsWith('/lawtome/laws/'));
+  for (const l of lawLines)
+    assert.match(l, /^\/lawtome\/laws\/\S+\/\s+\/lawtome\/laws\/\S+\/\s+301$/, `law permalink must point at a law: ${l}`);
+  // The retired collection must keep pointing at the reading list that
+  // superseded it, or an indexed URL 404s.
+  assert.ok(
+    lines.some(l => l.startsWith('/lawtome/collections/laws-every-engineer-learns/  /lawtome/for/engineers/')),
+    'missing the retired-collection redirect',
+  );
   await rm(out, { recursive:true, force:true });
 });
 

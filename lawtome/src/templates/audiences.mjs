@@ -5,7 +5,7 @@
 // every law is an existing, sourced entry.
 
 import { head, sprite, header, footer, escapeHtml, lawCard, figureStrip } from './partials.mjs';
-import { hubHead, hubNav, hubFaq, hubJsonLd, hubTiles, dominantField } from './hub.mjs';
+import { hubHead, hubNav, hubFaq, hubJsonLd, hubTiles, dominantField, setShape, setTensions, setAdjacent, crossAxis } from './hub.mjs';
 
 /**
  * The hub: one panel per audience.
@@ -109,27 +109,48 @@ ${faq.html}${hubNav('for/', { base })}  </div>
 }
 
 /** One audience: a persona hero, then its curated laws as a card grid. */
-export function audiencePage(audience, { base = '/', origin = '', count, images } = {}) {
+export function audiencePage(audience, { base = '/', origin = '', count, images, categories = {}, byslug = {}, compareSlugs = {}, siblings = [], crossSets = [] } = {}) {
   const a = audience || {};
   const laws = Array.isArray(a.laws) ? a.laws : [];
   const grid = laws.length
     ? laws.map((l) => lawCard(l, base, 2)).join('\n')
     : '<div class="empty">No laws yet.</div>';
 
+  const shape = setShape(laws, { base, categories });
+  const fieldNames = shape.fields.map(([k]) => categories[k] || k);
+  const answer = laws.length
+    ? `${escapeHtml(a.title || '')} is a reading list of ${laws.length} named laws${fieldNames.length > 1 ? ` drawn from ${fieldNames.length} fields — ${fieldNames.slice(0, 3).join(', ')}${fieldNames.length > 3 ? ' and more' : ''}` : fieldNames.length ? ` from ${fieldNames[0]}` : ''}, chosen for one kind of work: ${escapeHtml(String(a.problem || '').replace(/\.$/, ''))}.`
+    : escapeHtml(a.problem || '');
+  const others = (Array.isArray(siblings) ? siblings : []).filter((x) => x.slug !== a.slug);
+  const faq = hubFaq([
+    {
+      q: `What laws should ${String(a.who || a.title || 'you').toLowerCase()} know?`,
+      a: `These ${laws.length}: ${laws.map((l) => `<a href="${base}laws/${escapeHtml(l.slug)}/">${escapeHtml(l.name)}</a>`).join(', ')}.`,
+    },
+    ...(shape.tiers.length ? [{
+      q: 'Are these proven, or rules of thumb?',
+      a: `Both, and the list says which: ${shape.tiers.map(([k, n]) => `${n} rated <a href="${base}reliability/${String(k).toLowerCase()}/">${escapeHtml(k)}</a>`).join(', ')}.`,
+    }] : []),
+    ...(others.length ? [{
+      q: 'What if this is not quite me?',
+      a: `There are ${others.length} other reading lists — ${others.map((x) => `<a href="${base}for/${escapeHtml(x.slug)}/">${escapeHtml(x.title)}</a>`).join(', ')} — or start from <a href="${base}situations/">the situation you are in</a>.`,
+    }] : []),
+  ], { heading: 'Questions about this list' });
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
     <nav class="crumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}for/">For…</a><span class="sep">/</span>${escapeHtml(a.who || a.title || '')}</nav>
-    <div class="sec-head">
-      <h1>${escapeHtml(a.title || '')}</h1>
-      <span class="sub">${laws.length} ${laws.length === 1 ? 'law' : 'laws'}</span>
-    </div>
-    <p class="aud-problem">${escapeHtml(a.problem || '')}</p>
-    <p class="sec-lede">${escapeHtml(a.blurb || '')}</p>
-${figureStrip(images, laws, { base })}    <div class="grid">
+${hubHead({
+    title: a.title || '',
+    sub: `${laws.length} ${laws.length === 1 ? 'law' : 'laws'}`,
+    answer,
+    lede: escapeHtml(a.blurb || a.problem || ''),
+    stats: shape.stats,
+    base,
+  })}${figureStrip(images, laws, { base })}    <div class="grid">
 ${grid}
     </div>
-    <div class="sec-more"><a class="ghost" href="${base}browse/"><i class="ti ti-arrow-right" aria-hidden="true"></i> Browse the whole index</a></div>
-  </div>
+${crossAxis(laws, crossSets, { base, hrefBase: 'collections/', label: 'the collection' })}${shape.html}${setTensions(laws, { base, compareSlugs })}${setAdjacent(laws, { base, byslug })}${faq.html}${hubNav('for/', { base })}  </div>
 </section>
 `;
 
@@ -158,6 +179,7 @@ ${grid}
         { '@type': 'ListItem', position: 3, name: a.title },
       ],
     },
+    ...(faq.jsonld ? [faq.jsonld] : []),
   ];
 
   return (

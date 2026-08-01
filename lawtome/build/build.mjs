@@ -255,6 +255,16 @@ export async function buildSite(opts) {
   // is optional (a corpus without it simply gets no collections); any slug that
   // isn't in the corpus is dropped (no dead links), and empty collections are
   // skipped. Slugs point at existing, already-validated entries only.
+  // Both sets are resolved here, before either is written: a collection page
+  // names its closest reading list and vice versa (crossAxis), so each write
+  // needs the other axis already in hand.
+  const audiencesFile = opts.audiencesFile ?? join(dirname(catFile), 'audiences.json');
+  let rawAudiences = [];
+  try { rawAudiences = JSON.parse(await readFile(audiencesFile, 'utf8')); }
+  catch { rawAudiences = []; }
+  const { audiences, dropped: droppedAud } = resolveAudiences(rawAudiences, byslug);
+  if (droppedAud.length) console.warn(`audiences: dropped ${droppedAud.length} unknown slug(s): ${droppedAud.join(', ')}`);
+
   const collectionsFile = opts.collectionsFile ?? join(dirname(catFile), 'collections.json');
   let rawCollections = [];
   try { rawCollections = JSON.parse(await readFile(collectionsFile, 'utf8')); }
@@ -263,7 +273,7 @@ export async function buildSite(opts) {
   if (droppedColl.length) console.warn(`collections: dropped ${droppedColl.length} unknown slug(s): ${droppedColl.join(', ')}`);
   writes.push(writePage(join(out, 'collections', 'index.html'), collectionsIndexPage(collections, { base, origin, count: publishedCount, images })));
   for (const c of collections) {
-    writes.push(writePage(join(out, 'collections', c.slug, 'index.html'), collectionPage(c, { base, origin, count: publishedCount, images })));
+    writes.push(writePage(join(out, 'collections', c.slug, 'index.html'), collectionPage(c, { base, origin, count: publishedCount, images, categories, byslug, compareSlugs, siblings: collections, crossSets: audiences })));
   }
 
   // Law of the day + name-that-law quiz: a static shell filled by assets/quiz.js
@@ -277,15 +287,9 @@ export async function buildSite(opts) {
 
   // Marketing: audience ("for …") pages, a features tour, and a manifesto.
   // Audiences are curated persona shortlists (optional file; unknown slugs dropped).
-  const audiencesFile = opts.audiencesFile ?? join(dirname(catFile), 'audiences.json');
-  let rawAudiences = [];
-  try { rawAudiences = JSON.parse(await readFile(audiencesFile, 'utf8')); }
-  catch { rawAudiences = []; }
-  const { audiences, dropped: droppedAud } = resolveAudiences(rawAudiences, byslug);
-  if (droppedAud.length) console.warn(`audiences: dropped ${droppedAud.length} unknown slug(s): ${droppedAud.join(', ')}`);
   writes.push(writePage(join(out, 'for', 'index.html'), audiencesIndexPage(audiences, { base, origin, count: publishedCount, images })));
   for (const a of audiences) {
-    writes.push(writePage(join(out, 'for', a.slug, 'index.html'), audiencePage(a, { base, origin, count: publishedCount, images })));
+    writes.push(writePage(join(out, 'for', a.slug, 'index.html'), audiencePage(a, { base, origin, count: publishedCount, images, categories, byslug, compareSlugs, siblings: audiences, crossSets: collections })));
   }
   writes.push(writePage(join(out, 'features', 'index.html'), featuresPage({
     base, origin, count: publishedCount,
@@ -391,7 +395,14 @@ export async function buildSite(opts) {
   // _redirects: one `from  to  301` line per law.redirectFrom entry (each an old
   // base-relative path that should 301 to the law's current permalink). Seed data
   // has none, so the file is just a header comment — its presence proves the hook.
-  const redirects = [];
+  // Retired URLs that are not law permalinks. "Laws every engineer learns" was
+  // a collection whose six members were a strict subset of the "For engineers &
+  // builders" reading list, and whose title named a PERSON rather than a
+  // problem — which is the one thing that distinguishes the two axes. It is the
+  // reading list, so it now lives there and its old URL points at it.
+  const redirects = [
+    `${base}collections/laws-every-engineer-learns/  ${base}for/engineers/  301`,
+  ];
   for (const law of laws) {
     // Array.isArray guard: a non-array redirectFrom (a stray string would iterate
     // characters; a number/object would throw and fail the build) yields no lines.
