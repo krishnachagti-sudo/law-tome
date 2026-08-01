@@ -352,7 +352,7 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
       <p class="foot-motto">Sapere aude.</p>
     </div>
 ${col('Browse', [['browse/', 'All laws'], ['for/', 'Find your laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['origins/', 'Where they came from'], ['reliability/', 'By reliability']])}
-${col('Discover', [['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['compare/', 'Compare laws'], ['tension/', 'Laws in tension'], ['features/', 'Features'], ['quiz/', 'Law of the day'], ['saved/', 'Saved laws']])}
+${col('Discover', [['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['compare/', 'Compare laws'], ['tension/', 'Laws in tension'], ['features/', 'Features'], ['quiz/', 'Name that law'], ['saved/', 'Saved laws']])}
 ${col('The project', [['about/', 'About & method'], ['manifesto/', 'Why name a law?'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['feed.xml', 'Subscribe (RSS)'], ['credits/', 'Image credits'], ['privacy/', 'Privacy']])}
   </div>
   <div class="wrap foot-rule">

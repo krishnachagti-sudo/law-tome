@@ -23,6 +23,7 @@ import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, personSlug } from
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
 import { resolveCollections } from './collections.mjs';
 import { quizPage } from '../src/templates/quiz.mjs';
+import { dayIndex } from './quiz.mjs';
 import { situationsPage } from '../src/templates/situations.mjs';
 import { resolveSituations, situationsBySlug } from './situations.mjs';
 import { audiencesIndexPage, audiencePage } from '../src/templates/audiences.mjs';
@@ -140,10 +141,17 @@ export async function buildSite(opts) {
     opposed: (graph.edges || graph.links || []).filter((e) => e && (e.kind === 'opposed' || e.kind === 'tension')).length,
   };
 
+  // The law of the day, server-rendered onto the home page. dayIndex is the same
+  // pure function assets/quiz.js mirrors, and it indexes into `laws` — the exact
+  // array buildSearchIndex maps 1:1 — so the shipped markup and the client agree
+  // for as long as the build is fresh. `today` is injectable so a test can pin it.
+  const today = opts.today ?? new Date().toISOString().slice(0, 10);
+  const lawOfTheDay = laws.length ? laws[dayIndex(today, laws.length)] : null;
+
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
-    // Home: first 12 laws as the featured rotation.
-    writePage(join(out, 'index.html'), homePage(laws.slice(0, 18), { publishedCount, base, origin, images, eponymSlugs })),
+    // Home: first 12 laws as the featured rotation, plus the law of the day.
+    writePage(join(out, 'index.html'), homePage(laws.slice(0, 18), { publishedCount, base, origin, images, eponymSlugs, lawOfTheDay })),
     // Prebuilt client-search index (a DATA file, not a "page"): fetched by
     // src/assets/search.js. Curated situation phrasing is folded in so a typed
     // problem description surfaces the mapped law. In the concurrent writes[] so
@@ -278,7 +286,7 @@ export async function buildSite(opts) {
 
   // Law of the day + name-that-law quiz: a static shell filled by assets/quiz.js
   // (which fetches the search index). A learning/return loop, not a "law page".
-  writes.push(writePage(join(out, 'quiz', 'index.html'), quizPage({ base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'quiz', 'index.html'), quizPage({ base, origin, count: publishedCount, categories })));
 
   // Situations: a visible reverse-lookup ("what's the law for…?") built from the
   // same curated map folded into the search index. Emitted unconditionally (empty

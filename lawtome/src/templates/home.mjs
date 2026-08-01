@@ -40,7 +40,7 @@ function renderStatement(statement, accent) {
     escapeHtml(statement.slice(i + accent.length));
 }
 
-export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '', images, eponymSlugs } = {}) {
+export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '', images, eponymSlugs, lawOfTheDay } = {}) {
   const nf = new Intl.NumberFormat('en');
   const count = publishedCount == null ? '—' : nf.format(publishedCount);
 
@@ -101,6 +101,36 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
   </div>
 </section>
 `;
+
+  // ---- law of the day ----------------------------------------------------
+  // This used to live on /quiz/, where nobody arriving at the site ever saw it.
+  // It belongs on the front page: one entry, in full, every day, as a reason to
+  // come back.
+  //
+  // Server-rendered rather than left to the client, so the band is real content
+  // in the HTML — visible with JS off and readable by a crawler. The pick is
+  // deterministic from the date (build/quiz.dayIndex), so the shipped markup is
+  // the build day's law; assets/quiz.js recomputes on load and swaps in the
+  // reader's actual day when they differ.
+  const BADGE = { Empirical: 'b-emp', Heuristic: 'b-heu', 'Folk-adage': 'b-folk', Contested: 'b-con' };
+  const lotd = lawOfTheDay
+    ? `<section class="sec home-lotd" id="lotd-sec">
+  <div class="wrap">
+    <div class="lotd" id="lotd" aria-live="polite">
+      <div class="lotd-eyebrow">Law of the day</div>
+      <div class="lotd-body">
+        <a class="lotd-card" href="${base}laws/${escapeHtml(lawOfTheDay.slug)}/">
+          <div class="lotd-top"><span class="lotd-no">№ ${escapeHtml(String(lawOfTheDay.no || ''))}</span>${lawOfTheDay.reliability ? `<span class="badge ${BADGE[lawOfTheDay.reliability] || 'b-heu'}">${escapeHtml(lawOfTheDay.reliability)}</span>` : ''}</div>
+          <div class="lotd-name">${escapeHtml(lawOfTheDay.name || '')}</div>
+          <div class="lotd-say">“${escapeHtml(lawOfTheDay.statement || '')}”</div>
+        </a>
+      </div>
+      <p class="lotd-aside">A different entry every day. Think you can name a law from its statement alone? <a href="${base}quiz/">Take the quiz</a>.</p>
+    </div>
+  </div>
+</section>
+`
+    : '';
 
   // ---- differentiator strip (why this, not a listicle) ------------------
   // Each claim in the strip is backed by a real page — the index, the method, the
@@ -169,7 +199,7 @@ ${feat('timeline/', IC.clock, 'A history of ideas', 'Walk the corpus by century 
 ${feat('named-after/', IC.person, 'By their namesake', 'Browse laws under the people behind them — the one-law figures and the thinkers with several.')}
 ${feat('compare/', IC.versus, 'Two laws, side by side', 'The ideas that get mixed up — Brooks’s Law vs Linus’s Law, precision vs accuracy — laid out together so the difference is obvious.')}
 ${feat('for/', IC.compass, 'Find your laws', 'Curated ways in for engineers, decision-makers, writers, leaders, and the endlessly curious.')}
-${feat('quiz/', IC.daily, 'A law a day', 'One law surfaced fresh each morning, plus a quick round of “name that law” from its statement alone.')}
+${feat('quiz/', IC.daily, 'Test yourself', 'Ten questions from the index: name the law, match the statement, place the field, and judge how far it can be trusted.')}
     </div>
   </div>
 </section>
@@ -325,7 +355,8 @@ const BASE=${JSON.stringify(base)};
   play();
 })();
 </script>
-<script defer src="${asset(base, 'assets/search.js')}"></script>`;
+<script defer src="${asset(base, 'assets/search.js')}"></script>
+<script defer src="${asset(base, 'assets/quiz.js')}"></script>`;
 
   // ---- JSON-LD: identify the site + wire the sitelinks searchbox --------
   // WebSite carries a SearchAction so search engines can surface an in-SERP
@@ -425,6 +456,7 @@ ${faces.slice(0, 28).map((img) => `      <a class="pb-face" href="${base}named-a
     header({ base, active: 'browse', count }) +
     hero +
     marquee +
+    lotd +
     trust +
     peopleBand +
     browse +

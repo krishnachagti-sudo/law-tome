@@ -22,13 +22,27 @@ test('dayIndex tolerates degenerate counts', () => {
   assert.equal(dayIndex('', 5) >= 0 && dayIndex('', 5) < 5, true);
 });
 
-test('quiz page ships the shell, the client script, and a JS-off fallback', () => {
+test('quiz page ships the round shell, the client script, and a JS-off fallback', () => {
   const h = quizPage({ base: '/lawtome/', origin: 'https://conyso.com', count: 948 });
-  assert.match(h, /<h1>Law of the day &amp; the quiz<\/h1>/);
-  assert.match(h, /id="lotd"/);
+  assert.match(h, /<h1>Name that law<\/h1>/);
   assert.match(h, /id="quiz"/);
   assert.match(h, /id="quiz-options"/);
+  assert.match(h, /id="quiz-done"/);
+  assert.match(h, /id="quiz-prog"/);
   assert.match(h, /<noscript>/);
   assert.match(h, /assets\/quiz\.js/);
   assert.match(h, /canonical" href="https:\/\/conyso\.com\/lawtome\/quiz\/"/);
+  // The law of the day moved to the home page; this page must not claim it.
+  assert.doesNotMatch(h, /id="lotd"/);
+});
+
+test('quiz page hands the client its field names, escaped for an inline script', () => {
+  const h = quizPage({
+    base: '/', count: 3,
+    categories: { software: 'Software & systems', 'x</script><b>': 'Nope' },
+  });
+  assert.match(h, /window\.LT_CATS=/);
+  assert.match(h, /Software &amp; systems|Software & systems/);
+  // A category key can never close the inline script element.
+  assert.doesNotMatch(h, /<\/script><b>/);
 });

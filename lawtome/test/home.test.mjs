@@ -76,3 +76,32 @@ test('hero rotation writes a pre-escaped name (no runtime innerHTML injection)',
   assert.match(h, /"nameHtml":"B &lt;img onerror=x&gt; &amp; Co"/); // escaped name carried in the blob
   assert.doesNotMatch(h, /\+l\.name\+/);                            // raw name never concatenated into markup
 });
+
+// The law of the day moved off /quiz/ and onto the front page. It is
+// SERVER-rendered — the point is that it is real content in the HTML, not an
+// empty div a crawler sees nothing in — and omitted entirely when the build
+// passes no pick, rather than shipping a hollow band.
+test('home page renders the law of the day as real markup', () => {
+  const h = homePage(laws, {
+    publishedCount: 212, base: '/lawtome/',
+    lawOfTheDay: { slug: 'a', no: '001', name: 'A', statement: 'S', reliability: 'Heuristic' },
+  });
+  assert.match(h, /id="lotd"/);
+  assert.match(h, /class="lotd-card" href="\/lawtome\/laws\/a\//);
+  assert.match(h, /class="lotd-name">A</);
+  assert.match(h, /badge b-heu">Heuristic</);
+  assert.match(h, /\/lawtome\/quiz\//);
+});
+
+test('home page omits the band entirely when there is no pick', () => {
+  assert.doesNotMatch(html, /id="lotd"/);
+});
+
+test('the law of the day escapes corpus text like every other field', () => {
+  const h = homePage(laws, {
+    publishedCount: 212, base: '/lawtome/',
+    lawOfTheDay: { slug: 'a', no: '001', name: 'A <img onerror=x>', statement: 'S', reliability: 'Heuristic' },
+  });
+  assert.match(h, /A &lt;img onerror=x&gt;/);
+  assert.doesNotMatch(h, /<img onerror=x>/);
+});
