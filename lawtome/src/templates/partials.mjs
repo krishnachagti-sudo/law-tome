@@ -242,6 +242,21 @@ export function sprite() {
   <symbol id="moon" viewBox="0 0 24 24">
     <path d="M21 12.9A9 9 0 1 1 11.1 3 7 7 0 0 0 21 12.9Z" fill="currentColor"/>
   </symbol>
+  <symbol id="sh-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/>
+    <path d="M8.3 10.8 15.7 6.4M8.3 13.2l7.4 4.4"/>
+  </symbol>
+  <symbol id="sh-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.5 13.5a4 4 0 0 0 5.7 0l3-3a4 4 0 1 0-5.7-5.7l-1.7 1.7"/>
+    <path d="M13.5 10.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 1 0 5.7 5.7l1.7-1.7"/>
+  </symbol>
+  <symbol id="sh-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.5" y="5.5" width="19" height="13" rx="2.2"/>
+    <path d="M6 15.5v-7l3 3.4 3-3.4v7"/><path d="M16.5 8.5v5.4M14.4 12l2.1 2.1 2.1-2.1"/>
+  </symbol>
+  <symbol id="sh-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.5" y="5" width="19" height="14" rx="2.2"/><path d="m3.4 7.2 8.6 6 8.6-6"/>
+  </symbol>
   <symbol id="sun" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="4.2" fill="currentColor"/>
     <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2.4v2.4"/><path d="M12 19.2v2.4"/><path d="M4.2 4.2l1.7 1.7"/><path d="M18.1 18.1l1.7 1.7"/><path d="M2.4 12h2.4"/><path d="M19.2 12h2.4"/><path d="M4.2 19.8l1.7-1.7"/><path d="M18.1 5.9l1.7-1.7"/></g>
@@ -296,7 +311,10 @@ export function header({ base = '/', active, count } = {}) {
     ['equations/', 'Equations', 'the ninety-odd laws that are also formulas'],
     ['pronunciation/', 'Pronunciation', 'hear the names said out loud'],
     ['sources/', 'The bibliography', 'every citation, by where it points'],
-    ['data/', 'The dataset', 'download the whole corpus'],
+    ['diagnose/', 'What is the law for this?', 'describe the problem, get the laws that fit'],
+    ['print/', 'The printed edition', 'the whole index as one document, for paper'],
+    ['embed/', 'Embed a card', 'put any entry on your own site, one line of HTML'],
+    ['data/', 'The dataset', 'download the whole corpus, or one entry as JSON'],
     ['credits/', 'Credits', 'every image, its author and its licence'],
   ];
   const more = `        <details class="navmore" id="navmore">
@@ -441,6 +459,10 @@ ${col('Browse', [['browse/', 'All laws'], ['for/', 'Find your laws'], ['collecti
 ${col('Discover', [['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['compare/', 'Compare laws'], ['tension/', 'Laws in tension'], ['features/', 'Features'], ['quiz/', 'Name that law'], ['saved/', 'Saved laws']])}
 ${col('The project', [['about/', 'About & method'], ['manifesto/', 'Why name a law?'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['feed.xml', 'Subscribe (RSS)'], ['credits/', 'Image credits'], ['privacy/', 'Privacy']])}
   </div>
+  <div class="wrap foot-share">
+    <span class="fs-lab">Found something worth passing on?</span>
+${shareRow({ live: true, compact: true, label: 'Share this page' }).trimEnd()}
+  </div>
   <div class="wrap foot-rule">
     <span>Canon: attested &amp; verified. Coined: original, credited, clearly marked.</span>
     <span>Corpus licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a>.</span>
@@ -541,5 +563,79 @@ export function figureStrip(images, laws, { base = '/', limit = 16, min = 5 } = 
   return `    <div class="figstrip" aria-hidden="true">
 ${picked.map((p) => `      <a class="fs-item fs-item--${p.kind}" href="${base}laws/${escapeHtml(p.law.slug)}/" tabindex="-1"><img src="${p.src}" alt="" loading="lazy" decoding="async"><span class="fs-cap">${escapeHtml(p.law.name)}</span></a>`).join('\n')}
     </div>
+`;
+}
+
+// ---- sharing ---------------------------------------------------------------
+
+/**
+ * The share row.
+ *
+ * Every share button on the web is normally a third-party script that watches
+ * who clicks it. None of these are: each network link is a plain <a> to that
+ * network's own compose URL, built at build time, and the two copy buttons are
+ * six lines of inline-free JS in common.js. Nothing is loaded from anywhere,
+ * nothing is counted, and the row works with the page's own stylesheet.
+ *
+ * The network buttons are text, not logos, on purpose — a hand-drawn
+ * approximation of somebody's trademark is both a worse mark and a wronger one,
+ * and the site's rule against inventing things does not stop at prose.
+ *
+ * Order is deliberate. Native share first where the device has it (on a phone
+ * that is the only control anybody wants), then the link, then Markdown —
+ * because the readers most likely to pass an entry on are pasting it into a
+ * document, an issue or a wiki, not into a timeline.
+ *
+ * @param {object} o
+ * @param {string} o.url    absolute URL of the thing being shared
+ * @param {string} o.title  its name, used as the subject/title on networks that take one
+ * @param {string} [o.text] one line of context — a statement, a definition
+ * @param {string} [o.label] the row's accessible name
+ * @param {boolean} [o.compact] drop the heading and tighten the row
+ * @param {boolean} [o.live] the thing being shared is the CURRENT url, which the
+ *   page rewrites as the reader filters. A network's compose URL is baked in at
+ *   build time and cannot follow that, so a live row drops them and offers only
+ *   the two controls that read the address bar at the moment they are pressed.
+ */
+export function shareRow({ url, title = '', text = '', label = 'Share this page', compact = false, live = false } = {}) {
+  if (!live && (!url || !title)) return '';
+  const u = String(url || '');
+  const t = String(title);
+  const blurb = String(text || '').trim();
+  const e = encodeURIComponent;
+  // What a network's compose box is pre-filled with. Kept to the name and one
+  // quoted line: anything longer is the reader's word count, not ours.
+  const line = blurb ? `${t} — “${blurb}”` : t;
+
+  // Markdown is assembled here rather than in the browser so the button has
+  // nothing to get wrong, and so the same string is testable.
+  // A live row has no URL to write into a link, so the browser assembles it
+  // from the address bar and the document title at the moment the button is
+  // pressed. Everywhere else it is baked in and cannot go stale.
+  const md = live ? '' : (blurb ? `[${t}](${u}) — ${blurb}` : `[${t}](${u})`);
+
+  const nets = live ? [] : [
+    ['X', `https://x.com/intent/post?text=${e(line)}&url=${e(u)}`],
+    ['Bluesky', `https://bsky.app/intent/compose?text=${e(`${line} ${u}`)}`],
+    ['LinkedIn', `https://www.linkedin.com/sharing/share-offsite/?url=${e(u)}`],
+    ['Reddit', `https://www.reddit.com/submit?url=${e(u)}&title=${e(t)}`],
+    ['Hacker News', `https://news.ycombinator.com/submitlink?u=${e(u)}&t=${e(t)}`],
+  ];
+
+  return `      <div class="share${compact ? ' share--compact' : ''}" data-share
+           data-share-url="${escapeHtml(u)}" data-share-title="${escapeHtml(t)}"
+           data-share-text="${escapeHtml(blurb)}" data-share-md="${escapeHtml(md)}"
+           role="group" aria-label="${escapeHtml(label)}">
+        <button class="sh-b sh-b--go" type="button" data-share-native hidden>
+          <svg class="sh-i" aria-hidden="true"><use href="#sh-share"></use></svg> Share</button>
+        <button class="sh-b" type="button" data-share-copy="url" hidden>
+          <svg class="sh-i" aria-hidden="true"><use href="#sh-link"></use></svg> <span data-share-face>Copy link</span></button>
+        <button class="sh-b" type="button" data-share-copy="md" hidden>
+          <svg class="sh-i" aria-hidden="true"><use href="#sh-md"></use></svg> <span data-share-face>Copy as Markdown</span></button>
+${nets.map(([n, href]) => `        <a class="sh-b sh-b--net" href="${escapeHtml(href)}" target="_blank" rel="noopener nofollow">${escapeHtml(n)}</a>`).join('\n')}${nets.length ? `
+        <a class="sh-b" href="mailto:?subject=${escapeHtml(e(t))}&amp;body=${escapeHtml(e(`${line}\n\n${u}`))}">
+          <svg class="sh-i" aria-hidden="true"><use href="#sh-mail"></use></svg> Email</a>` : ''}
+        <span class="sh-said" data-share-said role="status" aria-live="polite"></span>
+      </div>
 `;
 }

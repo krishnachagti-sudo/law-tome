@@ -16,7 +16,7 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow } from './partials.mjs';
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
@@ -714,8 +714,21 @@ ${compareLinks.map((o) => `          <li><a href="${base}compare/${cmpSlug(o)}/"
       </div>\n`
     : '';
 
+  // Passing an entry on is a different act from citing it, and it wants
+  // different text: a citation is for a bibliography, a share is for a person
+  // who has not read the page yet, so the blurb is the statement in the form it
+  // is usually quoted rather than the site's name and URL.
+  const sharePanel = `      <div class="panel panel--share">
+        <h3>Pass it on</h3>
+${shareRow({
+    url: canonical,
+    title: law.name,
+    text: law.statement || answer,
+    label: `Share ${law.name}`,
+  })}      </div>\n`;
+
   const aside = `    <aside class="aside">
-${saveBtn}${namesakePanel}${mapPanel}${comparePanel}      <div class="panel">
+${saveBtn}${namesakePanel}${mapPanel}${comparePanel}${sharePanel}      <div class="panel">
         <h3>Cite this entry</h3>
         <div class="cite-box" id="cite">${citeText}</div>
         <button class="btn" id="copy" type="button"><i class="ti ti-copy" aria-hidden="true"></i> <span id="copy-t">Copy citation</span></button>

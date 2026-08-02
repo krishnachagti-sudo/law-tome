@@ -461,3 +461,89 @@
 
     for (var n = 0; n < inputs.length; n++) wire(inputs[n]);
   })();
+
+/* ---- sharing --------------------------------------------------------------
+   Every affordance in a [data-share] row that needs JS is hidden in the markup
+   and revealed here, so a reader without JS sees only the plain links that
+   actually work rather than three buttons that do nothing.
+
+   No network is contacted, nothing is counted, and the only API used beyond
+   the clipboard is navigator.share — which exists on phones, is where a phone
+   reader expects to find the sheet, and is absent on the desktops where the
+   explicit buttons are the better control anyway. */
+(function () {
+  var rows = document.querySelectorAll('[data-share]');
+  if (!rows.length) return;
+
+  var say = function (row, msg) {
+    var s = row.querySelector('[data-share-said]');
+    if (!s) return;
+    s.textContent = msg;
+    clearTimeout(s._t);
+    s._t = setTimeout(function () { s.textContent = ''; }, 2400);
+  };
+
+  var write = function (txt) {
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(txt);
+    /* Older Safari and every browser on an insecure origin: the textarea trick
+       is the only thing left, and it is better than a button that lies. */
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement('textarea');
+      ta.value = txt;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:-1000px;opacity:0';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      ok ? resolve() : reject(new Error('copy'));
+    });
+  };
+
+  for (var i = 0; i < rows.length; i++) {
+    (function (row) {
+      var url = row.getAttribute('data-share-url');
+      var title = row.getAttribute('data-share-title');
+      var text = row.getAttribute('data-share-text') || '';
+      /* A live row (the footer, the /diagnose/ filter) is deliberately empty in
+         the markup: what it shares is whatever the address bar says at the
+         moment the button is pressed, so both fall back to the document. */
+      var md = row.getAttribute('data-share-md');
+
+      var native = row.querySelector('[data-share-native]');
+      if (native && navigator.share) {
+        native.hidden = false;
+        native.addEventListener('click', function () {
+          navigator.share({ title: title || document.title, text: text, url: url || location.href })
+            .catch(function () { /* the reader dismissed the sheet; that is not an error */ });
+        });
+      }
+
+      var copies = row.querySelectorAll('[data-share-copy]');
+      for (var c = 0; c < copies.length; c++) {
+        (function (btn) {
+          btn.hidden = false;
+          var face = btn.querySelector('[data-share-face]');
+          var was = face ? face.textContent : '';
+          btn.addEventListener('click', function () {
+            var here = url || location.href;
+            var payload = btn.getAttribute('data-share-copy') === 'md'
+              ? (md || '[' + (title || document.title) + '](' + here + ')')
+              : here;
+            write(payload).then(function () {
+              if (face) {
+                face.textContent = 'Copied';
+                clearTimeout(btn._t);
+                btn._t = setTimeout(function () { face.textContent = was; }, 1800);
+              }
+              say(row, 'Copied to the clipboard.');
+            }, function () {
+              say(row, 'Could not copy — the link is in the address bar.');
+            });
+          });
+        }(copies[c]));
+      }
+    }(rows[i]));
+  }
+})();

@@ -135,8 +135,10 @@ const COUNTRY_COUNT = countriesWithPages(countryGroups(PARSED, FACTS)).length;
 const COMPARE_COUNT = comparePairs(PARSED).length;
 const NAMESAKE_COUNT = namesakesWithPages(eponymGroups(PARSED)).length;
 const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + NAMESAKE_COUNT + (1 + AUD_COUNT + 1 + 1) + 1 + 1 + (1 + NAMES_LANG_COUNT) + PERIOD_COUNT + COUNTRY_COUNT
-  // + /equations/, /pronunciation/, /sources/, /is-it-real/, /misattributed/
-  + 5 + FIELD_PERIOD_COUNT;
+  // + /equations/, /pronunciation/, /sources/, /is-it-real/, /misattributed/,
+  // /diagnose/, /embed/. (/print/ and the per-entry cards are noindex, and the
+  // .json records are data files, so none of those are listed.)
+  + 7 + FIELD_PERIOD_COUNT;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));

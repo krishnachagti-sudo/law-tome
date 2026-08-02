@@ -1118,7 +1118,14 @@ html{scroll-behavior:smooth}
 }
 
 /* aside */
-.aside{position:sticky;top:calc(var(--header-h) + 16px);display:flex;flex-direction:column;gap:20px}
+.aside{position:sticky;top:calc(var(--header-h) + 16px);align-self:start;display:flex;flex-direction:column;gap:20px;max-height:calc(100dvh - var(--header-h) - 32px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--line-strong) transparent}
+/* A sticky column taller than the window pins its top and puts everything
+   below the fold permanently out of reach — which is what happened the
+   moment the aside grew a fifth panel: the citation and the share row
+   could not be scrolled to at all on a laptop. Capping it to the viewport
+   and letting it scroll inside itself keeps the pinning without the trap. */
+.aside::-webkit-scrollbar{width:6px}
+.aside::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:3px}
 @media(max-width:860px){.aside{position:static}}
 .panel{border:1px solid var(--line);border-radius:3px;background:var(--surface);padding:18px 20px;box-shadow:var(--e1)}
 .panel h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:400;margin-bottom:14px}
@@ -1962,3 +1969,60 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .fp-band-h{font-family:var(--serif);font-weight:600;font-size:17px;margin:0 0 10px}
 .fp-band-row{display:flex;flex-wrap:wrap;gap:8px}
 @media(max-width:760px){.vr-row,.ms-row{grid-template-columns:1fr;gap:4px}.ms-q{grid-column:1;grid-row:auto}}
+
+/* /diagnose/ — the three questions and their answers. */
+.dg{margin-top:26px;display:flex;flex-direction:column;gap:26px}
+.dg-q{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.dg-legend{width:100%;display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:19px;color:var(--ink);margin-bottom:4px;padding:0}
+.dg-step{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--line-strong);font-family:var(--mono);font-size:11px;color:var(--muted)}
+.dg-opt{display:flex;align-items:baseline;gap:10px;padding:11px 15px;border:1px solid var(--line);border-radius:var(--r2);background:var(--surface);box-shadow:var(--e1);color:inherit;font:inherit;font-size:14.5px;text-align:left;cursor:pointer}
+.dg-opt:hover:not(:disabled){border-color:var(--line-strong);box-shadow:var(--e2)}
+.dg-opt.on{border-color:var(--accent);box-shadow:var(--e2);color:var(--accent)}
+.dg-opt:disabled{opacity:.35;cursor:default}
+.dg-opt--sm{font-size:13.5px;padding:8px 13px}
+.dg-opt--any{border-style:dashed}
+.dg-opt-n{font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+.dg-opt.on .dg-opt-n{color:var(--accent)}
+.dg-hint{width:100%;margin:2px 0 0;font-size:12.5px;color:var(--faint)}
+.dg-out{display:flex;flex-direction:column;border-top:1px solid var(--line);padding-top:18px}
+.dg-count{margin:0 0 12px;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint)}
+.dg-hit{display:grid;grid-template-columns:1fr minmax(140px,230px) 90px;gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.dg-hit:hover{background:var(--surface);box-shadow:-10px 0 0 var(--surface),10px 0 0 var(--surface)}
+.dg-hit-s{font-size:15px;color:var(--read)}
+.dg-hit-n{font-family:var(--serif);font-size:16px;color:var(--ink)}
+.dg-hit:hover .dg-hit-n{color:var(--accent)}
+.dg-hit-m{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+@media(max-width:720px){.dg-hit{grid-template-columns:1fr;gap:3px}}
+
+/* /embed/ — the how-to page (the cards themselves carry their own CSS). */
+.emb-block{margin-top:34px}
+.emb-h{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.emb-note{font-size:13.5px;color:var(--muted);margin:0 0 16px;max-width:70ch}
+.emb-demo{margin-bottom:14px}
+.emb-code{margin:0;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r2);background:var(--surface-2);box-shadow:var(--well);overflow-x:auto}
+.emb-code code{font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--read);white-space:pre}
+
+/* ============ share row ============ */
+/* Text, not logos: see the note in partials.mjs. That decision also makes the
+   row cheap — no images, no third-party CSS, and every control is one shape. */
+.share{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-top:12px}
+.share--compact{gap:6px;margin-top:10px}
+.sh-b{display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border:1px solid var(--line-strong);border-radius:3px;background:transparent;color:var(--muted);font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.01em;line-height:1;cursor:pointer;white-space:nowrap;transition:color .18s,border-color .18s,background-color .18s}
+.sh-b:hover{color:var(--ink);border-color:var(--ink);background:var(--surface-2)}
+.sh-b--go{color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent) 55%,transparent)}
+.sh-b--go:hover{color:var(--on-accent);background:var(--accent);border-color:var(--accent)}
+.sh-b--net{font-size:12px;padding:7px 10px;color:var(--faint)}
+.sh-i{width:15px;height:15px;flex:none}
+.sh-said{font-size:12px;color:var(--accent-ink);flex-basis:100%;min-height:0}
+.sh-said:empty{display:none}
+.share--compact .sh-b{padding:6px 9px;font-size:12px}
+@media (max-width:520px){ .sh-b--net{font-size:11.5px;padding:6px 9px} }
+.foot-share{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:16px 0 0;border-top:1px solid var(--line)}
+.foot-share .fs-lab{font-family:var(--serif);font-size:14.5px;color:var(--muted)}
+.foot-share .share{margin-top:0}
+.dg-share{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.dg-share .dg-hint{margin:0}
+.panel--share .share{margin-top:2px;gap:6px}
+/* In a 300px column a ragged row of eight chips reads as debris. Letting every
+   control grow makes each line flush, so it reads as one block of options. */
+.panel--share .sh-b{flex:1 1 auto;justify-content:center}

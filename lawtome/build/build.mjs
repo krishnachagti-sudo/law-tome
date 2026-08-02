@@ -27,6 +27,9 @@ import { resolveCollections } from './collections.mjs';
 import { quizPage } from '../src/templates/quiz.mjs';
 import { dayIndex } from './quiz.mjs';
 import { situationsPage } from '../src/templates/situations.mjs';
+import { diagnosePage, diagnoseData } from '../src/templates/diagnose.mjs';
+import { printPage } from '../src/templates/print.mjs';
+import { embedCard, embedToday, embedDocsPage } from '../src/templates/embed.mjs';
 import { resolveSituations, situationsBySlug } from './situations.mjs';
 import { audiencesIndexPage, audiencePage } from '../src/templates/audiences.mjs';
 import { resolveAudiences } from './audiences.mjs';
@@ -48,7 +51,7 @@ import { fieldPeriodPage } from '../src/templates/field-period.mjs';
 import { eraGroups } from './timeline.mjs';
 import { savedPage } from '../src/templates/saved.mjs';
 import { dataPage } from '../src/templates/data.mjs';
-import { buildDataset, datasetCsv } from './dataset.mjs';
+import { buildDataset, datasetCsv, lawRecord, apiIndex } from './dataset.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng } from './quotecard.mjs';
@@ -397,6 +400,27 @@ export async function buildSite(opts) {
         others: countryPages.filter((o) => o.slug !== g.slug),
       })));
   }
+  // Arrive with a problem, leave with the laws that describe it — the same
+  // curated situations as /situations/, asked as questions.
+  writes.push(writePage(join(out, 'diagnose', 'index.html'),
+    diagnosePage(diagnoseData(situations, rawSituations), { base, origin, count: publishedCount, categories })));
+
+  // The whole index as one document, typeset for paper. noindex — it is the
+  // same text as 1,101 pages that are indexed, and a duplicate of the corpus is
+  // not something to offer a crawler.
+  writes.push(writePage(join(out, 'print', 'index.html'),
+    printPage(laws, { base, origin, categories, buildDate, bib: bibliography(laws) })));
+
+  // Embeddable cards. Self-contained documents, noindex, absolute links: an
+  // iframe has no base to resolve against and no stylesheet of ours.
+  for (const l of laws) {
+    writes.push(writePage(join(out, 'embed', l.slug, 'index.html'), embedCard(l, { base, origin })));
+  }
+  writes.push(writePage(join(out, 'embed', 'today', 'index.html'),
+    embedToday(laws[dayIndex(new Date(buildDate), laws.length)] || laws[0], { base, origin })));
+  writes.push(writePage(join(out, 'embed', 'index.html'),
+    embedDocsPage(laws.find((l) => l.slug === 'goodharts-law') || laws[0], { base, origin, count: publishedCount })));
+
   // Two question-shaped pages over judgements the corpus already carried: the
   // reliability rating, and the entries whose own origin text says the namesake
   // was not the whole story.
@@ -447,6 +471,34 @@ export async function buildSite(opts) {
   writes.push(writePage(join(out, 'data', 'index.html'), dataPage({ base, origin, count: publishedCount, generated: buildDate, laws, categories })));
   writes.push(writePage(join(out, 'data', 'lawtome.json'), JSON.stringify(buildDataset(laws, { baseUrl: `${origin}${base}`, generated: buildDate }), null, 2)));
   writes.push(writePage(join(out, 'data', 'lawtome.csv'), datasetCsv(laws, { baseUrl: `${origin}${base}` })));
+
+  // One JSON record per entry, at laws/<slug>.json — the page's URL with a
+  // different extension, which is the convention a consumer guesses first.
+  // Data files, not pages: they stay out of `pages`/`listings` and out of the
+  // sitemap, exactly like search-index.json and graph.json.
+  {
+    const baseUrl = `${origin}${base}`;
+    // Which entries point AT each entry. The corpus records relations one way
+    // per file, so a consumer reading one record cannot see the other side.
+    const inbound = new Map();
+    for (const l of laws) {
+      for (const r of (Array.isArray(l.related) ? l.related : [])) {
+        if (!r || !r.slug || !byslug[r.slug]) continue;
+        if (!inbound.has(r.slug)) inbound.set(r.slug, []);
+        inbound.get(r.slug).push({ slug: l.slug, kind: r.kind ?? null });
+      }
+    }
+    for (const l of laws) {
+      writes.push(writePage(join(out, 'laws', `${l.slug}.json`), JSON.stringify(lawRecord(l, {
+        baseUrl,
+        categories,
+        situations: situations.filter((x) => x.law && x.law.slug === l.slug).map((x) => x.situation),
+        inbound: inbound.get(l.slug) || [],
+        generated: buildDate,
+      }), null, 2)));
+    }
+    writes.push(writePage(join(out, 'api.json'), JSON.stringify(apiIndex(laws, { baseUrl, generated: buildDate }), null, 2)));
+  }
   // 404.html at the output root: the host serves it for unmatched paths. A
   // crawler-facing error page (noindex), not a "page", so it doesn't touch counts.
   writes.push(writePage(join(out, '404.html'), notFoundPage({ base, origin, count: publishedCount })));
@@ -493,6 +545,8 @@ export async function buildSite(opts) {
     'equations/',                             // the laws that are formulas
     'pronunciation/',                         // how the namesakes' names sound
     'sources/',                               // the bibliography, by domain
+    'diagnose/',                              // problem in, laws out
+    'embed/',                                 // how to put a card on your site
     'is-it-real/',                            // every entry rated by evidence
     'misattributed/',                         // Stigler's law, with the receipts
   ];
