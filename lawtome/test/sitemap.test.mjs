@@ -94,6 +94,7 @@ import { namesakesWithPages } from '../src/templates/namesake.mjs';
 import { languagesPresent } from '../src/templates/names.mjs';
 import { periods, fieldPeriods } from '../build/periods.mjs';
 import { countryGroups, countriesWithPages } from '../build/countries.mjs';
+import { kinds } from '../build/kinds.mjs';
 
 // Corpus-relative sitemap expectations, so adding a law (or a law in a new
 // category / reliability tier) never breaks the count. Locs = home + one per law
@@ -134,11 +135,15 @@ const FIELD_PERIOD_COUNT = fieldPeriods(PARSED).length;
 const COUNTRY_COUNT = countriesWithPages(countryGroups(PARSED, FACTS)).length;
 const COMPARE_COUNT = comparePairs(PARSED).length;
 const NAMESAKE_COUNT = namesakesWithPages(eponymGroups(PARSED)).length;
+// Kinds: the /kinds/ hub + one page per kind of named thing above the floor —
+// razors, paradoxes, theorems, fallacies, read off the entries' own names.
+const KIND_COUNT = kinds(PARSED).length;
 const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + NAMESAKE_COUNT + (1 + AUD_COUNT + 1 + 1) + 1 + 1 + (1 + NAMES_LANG_COUNT) + PERIOD_COUNT + COUNTRY_COUNT
   // + /equations/, /pronunciation/, /sources/, /is-it-real/, /misattributed/,
   // /diagnose/, /embed/. (/print/ and the per-entry cards are noindex, and the
   // .json records are data files, so none of those are listed.)
-  + 7 + FIELD_PERIOD_COUNT;
+  + 7 + FIELD_PERIOD_COUNT
+  + (1 + KIND_COUNT);
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));

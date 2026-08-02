@@ -21,6 +21,8 @@ import { tensionPage } from '../src/templates/tension.mjs';
 import { comparePage, compareHubPage } from '../src/templates/compare.mjs';
 import { tensionPairs, comparePairs } from './relations.mjs';
 import { reliabilityHubPage } from '../src/templates/reliability.mjs';
+import { kinds, kindPath } from './kinds.mjs';
+import { kindsHubPage, kindPage } from '../src/templates/kinds.mjs';
 import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, personSlug } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
 import { resolveCollections } from './collections.mjs';
@@ -293,6 +295,33 @@ export async function buildSite(opts) {
     ));
   }
 
+  // What kind of thing is it — /kinds/ and one page per kind.
+  //
+  // The list axis: razors, paradoxes, fallacies, theorems, thought experiments.
+  // Membership is read off the entry's own name (build/kinds.mjs), so the pages
+  // are verifiable by eye and honestly incomplete, and every one of them says so
+  // above the list.
+  const kindGroups = kinds(laws);
+  writes.push(writePage(
+    join(out, 'kinds', 'index.html'),
+    kindsHubPage(kindGroups, { base, origin, count: publishedCount, total: laws.length }),
+  ));
+  for (const g of kindGroups) {
+    writes.push(writePage(
+      join(out, 'kinds', g.slug, 'index.html'),
+      kindPage(g, {
+        base,
+        origin,
+        count: publishedCount,
+        images,
+        categories,
+        byslug,
+        compareSlugs,
+        others: kindGroups.filter((o) => o.key !== g.key).sort((a, b) => b.count - a.count),
+      }),
+    ));
+  }
+
   // Curated collections: an editorial hub + one page per theme. The source file
   // is optional (a corpus without it simply gets no collections); any slug that
   // isn't in the corpus is dropped (no dead links), and empty collections are
@@ -523,6 +552,8 @@ export async function buildSite(opts) {
     ...compares.map((p) => `compare/${p.slug}/`), // one per compared pair
     'reliability/',                           // veracity facet hub
     ...presentTiers.map((v) => `reliability/${reliabilitySlug(v)}/`),
+    'kinds/',                                 // the index by kind of named thing
+    ...kindGroups.map((g) => kindPath(g)),    // one per kind above the floor
     'collections/',                           // curated-collections hub
     ...collections.map((c) => `collections/${c.slug}/`),
     'quiz/',                                  // law of the day + quiz

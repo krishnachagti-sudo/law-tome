@@ -77,6 +77,7 @@ export const HUBS = [
   ['browse/', 'All laws', 'the whole index, filterable by field and by how well established it is'],
   ['situations/', "What's the law for…?", 'start from the problem you actually have'],
   ['diagnose/', 'Describe the problem', 'answer three questions, get the laws that describe it'],
+  ['kinds/', 'By kind', 'the razors, the paradoxes, the theorems, the fallacies — grouped by what kind of thing they are'],
   ['collections/', 'Collections', 'hand-picked sets that cut across fields'],
   ['for/', 'Find your laws', 'curated ways in for engineers, writers, decision-makers'],
   ['timeline/', 'Timeline', 'the index as a history of ideas, century by century'],

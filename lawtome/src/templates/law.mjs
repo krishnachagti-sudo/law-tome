@@ -21,6 +21,7 @@ import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
 import { formulaBlock, diffusionBlock, pronunciation, otherNames, otherNamesText } from './facts.mjs';
+import { kindOf, KINDS, kindPath } from '../../build/kinds.mjs';
 import { widgetBlock, widgetFor } from './widgets.mjs';
 
 /**
@@ -581,6 +582,13 @@ ${items}
     statTile('Popular form', law.popularYear),
     statTile('Named after', law.namedAfter, `${base}named-after/#${escapeHtml(personId(law.namedAfter))}`),
     statTile('Field', catLabel, law.category ? `${base}category/${escapeHtml(law.category)}/` : ''),
+    // What kind of thing the name says this is — a razor, a paradox, a theorem.
+    // Derived from the name itself (build/kinds.mjs), so it is absent rather
+    // than guessed for the third of the index whose name does not say.
+    (() => {
+      const k = KINDS.find((x) => x.key === kindOf(law));
+      return k ? statTile('Kind', k.one.replace(/^./, (c) => c.toUpperCase()), `${base}${kindPath(k)}`) : '';
+    })(),
     relCount ? statTile('Related', String(relCount), '#sec-related-laws') : '',
     srcCount ? statTile('Sources', String(srcCount), '#sec-sources') : '',
   ].filter(Boolean).join('\n');

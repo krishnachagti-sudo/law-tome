@@ -2026,3 +2026,19 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 /* In a 300px column a ragged row of eight chips reads as debris. Letting every
    control grow makes each line flush, so it reads as one block of options. */
 .panel--share .sh-b{flex:1 1 auto;justify-content:center}
+
+/* ============ /kinds/ ============ */
+/* The hub is a set of doors, and the number is the headline on each — a reader
+   who came for "how many razors are there" is answered before they click. */
+.kd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:12px;margin:26px 0 8px}
+.kd-card{display:flex;flex-direction:column;gap:6px;padding:18px 18px 16px;background:var(--surface);
+  border:1px solid var(--line);border-radius:4px;text-decoration:none;
+  transition:border-color .2s,transform .2s,background-color .2s}
+.kd-card:hover{border-color:var(--accent);background:var(--surface-2);transform:translateY(-2px)}
+.kd-n{font-family:var(--serif);font-weight:700;font-size:27px;line-height:1;color:var(--accent);letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums}
+.kd-t{font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.2}
+.kd-g{font-size:12.8px;line-height:1.55;color:var(--muted)}
+.kd-note{margin:20px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:13px;line-height:1.6;color:var(--faint)}
+.kd-h2{font-family:var(--serif);font-size:clamp(21px,2.4vw,27px);margin:38px 0 4px;color:var(--ink)}
+.kd-list{margin-top:14px}
