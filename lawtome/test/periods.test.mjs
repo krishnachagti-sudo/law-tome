@@ -154,3 +154,52 @@ test('a law page links the period its coinage actually falls in', async () => {
   }
   await rm(out, { recursive: true, force: true });
 });
+
+// --- field x period: the cut that had no URL -------------------------------
+import { fieldPeriods, fieldPeriodPath } from '../build/periods.mjs';
+import { fieldPeriodPage } from '../src/templates/field-period.mjs';
+
+test('a field-period bucket earns a page only at the threshold', () => {
+  const psych = Array.from({ length: 10 }, (_, i) => ({ ...LAW(`p${i}`, 1970 + (i % 5)), category: 'psychology' }));
+  const econ = Array.from({ length: 3 }, (_, i) => ({ ...LAW(`e${i}`, 1971), category: 'economics' }));
+  const fps = fieldPeriods([...psych, ...econ]);
+  const slugs = fps.map((f) => f.slug);
+  assert.ok(slugs.includes('psychology/20th-century'), slugs.join(','));
+  assert.ok(slugs.includes('psychology/1970s'));
+  assert.ok(!slugs.some((s) => s.startsWith('economics/')), 'a 3-entry field got a page');
+});
+
+test('fieldPeriodPath matches the directory the build writes', () => {
+  const [fp] = fieldPeriods(Array.from({ length: 12 }, (_, i) => ({ ...LAW(`x${i}`, 1974), category: 'psychology' })));
+  assert.equal(fieldPeriodPath(fp), `category/psychology/${fp.period.slug}/`);
+});
+
+test('the page states the intersection and links both parents', () => {
+  const laws = Array.from({ length: 12 }, (_, i) => ({ ...LAW(`x${i}`, 1970 + i % 6), category: 'psychology' }));
+  const [fp] = fieldPeriods(laws).filter((f) => f.period.kind === 'decade');
+  const html = fieldPeriodPage(fp, {
+    base: '/', origin: 'https://e.com', count: 12,
+    categories: { psychology: 'Psychology & cognition' },
+    siblings: fieldPeriods(laws), fieldTotal: 12, periodTotal: 12,
+  });
+  assert.match(html, /Psychology &amp; cognition in the 1970s/);
+  assert.match(html, /href="\/category\/psychology\/"/);
+  assert.match(html, /href="\/timeline\/1970s\/"/);
+  // Only dated entries are in it, and the page says why the undated are not.
+  assert.match(html, /entries whose coinage cannot be dated/);
+});
+
+test('build writes every field-period bucket and links it from both parents', async () => {
+  const out = await mkdtemp(join(tmpdir(), 'lt-fp-'));
+  await buildSite({ dataDir: 'src/data/laws', catFile: 'src/data/categories.json', assetsDir: 'src/assets', out, base: '/lawtome/', origin: 'https://conyso.com' });
+  const fps = fieldPeriods(PARSED);
+  assert.ok(fps.length > 20, `expected many crosses, got ${fps.length}`);
+  for (const fp of fps) {
+    assert.ok(existsSync(join(out, ...fieldPeriodPath(fp).split('/').filter(Boolean), 'index.html')), `missing ${fp.slug}`);
+  }
+  const field = await readFile(join(out, 'category', fps[0].field, 'index.html'), 'utf8');
+  assert.match(field, new RegExp(`href="/lawtome/category/${fps[0].field}/${fps[0].period.slug}/"`));
+  const period = await readFile(join(out, 'timeline', fps[0].period.slug, 'index.html'), 'utf8');
+  assert.match(period, new RegExp(`href="/lawtome/category/${fps[0].field}/${fps[0].period.slug}/"`));
+  await rm(out, { recursive: true, force: true });
+});

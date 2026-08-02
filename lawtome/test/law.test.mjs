@@ -13,11 +13,18 @@ const html = lawPage(law, ctx);
 test('statement renders with the accent span', () => assert.match(html, /<span class="accent">measure becomes a target<\/span>/));
 test('every source renders with its visible link', () => { assert.match(html, /Goodhart \(1975\)/); assert.match(html, /href="https:\/\/x"/); });
 test('cite-this-entry block carries the immutable canonical URL', () => assert.match(html, /conyso\.com\/lawtome\/laws\/goodharts-law\//));
-test('emits the JSON-LD stack: DefinedTerm + Article + BreadcrumbList (no FAQPage)', () => {
+test('emits the JSON-LD stack: DefinedTerm + Article + BreadcrumbList + FAQPage', () => {
   for (const t of ['"DefinedTerm"','"Article"','"BreadcrumbList"']) assert.match(html, new RegExp(t));
-  // FAQPage was dropped: its answers duplicated the article sections verbatim,
-  // and FAQ rich results no longer apply to a site like this.
-  assert.doesNotMatch(html, /"FAQPage"/);
+  // FAQPage was dropped once, on the grounds that its answers duplicated the
+  // article sections and FAQ rich results had been withdrawn for sites like
+  // this. It came back for the other reason it exists: answer engines read it,
+  // and every question here is a heading a reader can also see. Each answer is
+  // lifted from that section's own prose, so the two cannot drift.
+  assert.match(html, /"FAQPage"/);
+  // This fixture's prose is one letter per field, and an answer under 40
+  // characters is not published as one — so the question that survives is the
+  // verdict, which is assembled from the tier rather than from the entry's text.
+  assert.match(html, /"@type":"Question","name":"Is Goodhart's Law real\?"/);
   assert.match(html, /Goodhart%27s_law/); // sameAs
 });
 test('links related laws by resolved name + permalink', () => { assert.match(html, /Campbell's Law/); assert.match(html, /href="\/lawtome\/laws\/campbells-law\/"/); });

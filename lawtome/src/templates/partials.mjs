@@ -288,6 +288,8 @@ export function header({ base = '/', active, count } = {}) {
     ['origins/', 'Where they came from', 'the namesakes\' birthplaces, by country'],
     ['names/', 'In other languages', 'the names these ideas already go by'],
     ['reliability/', 'By reliability', 'measured findings, rules of thumb, folklore'],
+    ['is-it-real/', 'Is it real?', 'every entry rated by the evidence behind it'],
+    ['misattributed/', 'Wrongly named', "Stigler's law, with the receipts quoted"],
     ['tension/', 'Laws in tension', 'the pairs that contradict each other'],
     ['compare/', 'Compare', 'two laws side by side, for the ones people mix up'],
     ['quiz/', 'Quiz', 'name the law from its statement'],

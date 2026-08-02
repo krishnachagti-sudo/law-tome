@@ -128,3 +128,39 @@ export function decadesIn(century, laws = [], { minDecade = MIN_DECADE } = {}) {
   }
   return out;
 }
+
+/**
+ * A field crossed with a period: "20th-century psychology", "the 1970s in
+ * economics".
+ *
+ * This is the cut people actually ask for and the one axis the site could not
+ * address: /category/psychology/ holds 200 entries spanning four centuries and
+ * /timeline/20th-century/ holds 575 across twenty fields, but the intersection
+ * — which is a smaller, more useful, more searchable set than either — had no
+ * URL. Same thresholds as everywhere else: a bucket earns a page only when it
+ * holds enough entries to say something about.
+ *
+ * @returns {{field:string, period:object, slug:string, laws:object[]}[]}
+ */
+export function fieldPeriods(laws = [], { min = 10, minDecade = MIN_DECADE } = {}) {
+  const all = periods(laws, { minDecade });
+  const out = [];
+  for (const p of all) {
+    const byField = new Map();
+    for (const l of p.laws) {
+      if (!l.category) continue;
+      if (!byField.has(l.category)) byField.set(l.category, []);
+      byField.get(l.category).push(l);
+    }
+    for (const [field, ls] of byField) {
+      if (ls.length < min) continue;
+      out.push({ field, period: p, slug: `${field}/${p.slug}`, laws: ls });
+    }
+  }
+  return out.sort((a, b) => a.field.localeCompare(b.field) || a.period.from - b.period.from);
+}
+
+/** The path for a field-period page, base-relative. */
+export function fieldPeriodPath(fp) {
+  return `category/${fp.field}/${fp.period.slug}/`;
+}

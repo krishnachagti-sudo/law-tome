@@ -270,6 +270,12 @@ ${h2}${inner}
       </div>`;
   };
   const L = law.name;
+  // The same name, escaped, for the places it goes into HTML rather than into a
+  // heading or a JSON string. `L` is raw: block() escapes the headings it builds
+  // and JSON.stringify escapes the structured answers, but a template that drops
+  // `L` straight into markup is an injection hole, and the escaping test caught
+  // exactly that when the verdict block was added.
+  const LH = escapeHtml(law.name);
   // The non-image dimensions, all optional: a law shows a formula, a diffusion
   // curve or a set of foreign names only where we actually have one.
   const fact = facts[law.slug] || null;
@@ -430,6 +436,56 @@ ${h2}${inner}
 
   if (law.limits) blocks.push(block('Where it breaks down', callout('warn', law.limits), true, `What are the limits of ${L}?`));
   if (law.misreadings) blocks.push(block("What it doesn't say", callout('info', law.misreadings), true, `What are common misconceptions about ${L}?`));
+
+  // "Is the Dunning–Kruger effect real?" is how people actually search for the
+  // thing this whole index is organised around, and the page answered it only
+  // obliquely — a coloured badge near the title and a limits section two
+  // screens down. This states it in a sentence.
+  //
+  // Assembled from the controlled reliability tier plus the entry's OWN limits
+  // and misreadings text; nothing is authored per law, so no entry can end up
+  // with a verdict its evidence does not support. The wording is deliberately
+  // careful: a tier is a claim about what kind of support an idea has, not a
+  // promise that it holds in your case.
+  if (!coined && law.reliability) {
+    const VERDICT = {
+      Empirical: `<b>Yes, as far as the evidence goes.</b> ${LH} is rated <b>Empirical</b> here, meaning it rests on studies or measurements rather than on a saying. That is a claim about the support behind it, not a guarantee that it holds in every setting.`,
+      Heuristic: `<b>Real as a rule of thumb, not as a theorem.</b> ${LH} is rated <b>Heuristic</b> here: it is dependable enough to plan with and has no proof behind it. Treat it as a prior, not a law of nature.`,
+      'Folk-adage': `<b>It is a saying, not a finding.</b> ${LH} is rated <b>Folk-adage</b> here — it circulates because it is memorable and often true, not because anyone measured it. Quoting it as science is the usual mistake.`,
+      Contested: `<b>That is exactly what is in dispute.</b> ${LH} is rated <b>Contested</b> here: the effect is claimed, the evidence is argued over, and reasonable specialists disagree. Anyone telling you it is settled — in either direction — is ahead of the evidence.`,
+    };
+    const v = VERDICT[law.reliability];
+    if (v) {
+      const caveat = law.limits
+        ? ` <span class="verdict-more">Where it stops working is set out under <a href="#sec-where-it-breaks-down">Where it breaks down</a>.</span>`
+        : '';
+      const inner = `        <p class="verdict">${v}${caveat}</p>
+        <p class="verdict-scale">Rated on <a href="${base}reliability/">this index's four-tier scale</a>, which separates measured findings from rules of thumb, folklore and disputed claims. <a href="${base}reliability/${reliabilitySlug(law.reliability)}/">Every ${escapeHtml(law.reliability)} entry</a>.</p>`;
+      // The structured answer gets the verdict plus the entry's own caveat, so a
+      // machine quoting it quotes the qualification too.
+      const answer = `${v.replace(/<[^>]+>/g, '')}${law.limits ? ' ' + String(law.limits).split(/(?<=[.!?])\s/)[0] : ''}`;
+      blocks.push(block('Is it real?', inner, true, `Is ${L} real?`, answer));
+    }
+  }
+
+  // "What is the opposite of X?" — the corpus already records which entries pull
+  // against which, but only as a card in the relations grid labelled "in
+  // tension", which is not the phrase anyone types.
+  {
+    const against = (Array.isArray(law.related) ? law.related : [])
+      .filter((r) => r && r.slug && byslug[r.slug] && /oppos|contra|tension|versus|counter|against|rival/i.test(r.kind || ''))
+      .map((r) => ({ law: byslug[r.slug], note: r.note || '' }));
+    if (against.length) {
+      const items = against.map((a) => `          <li><a href="${base}laws/${escapeHtml(a.law.slug)}/">${escapeHtml(a.law.name)}</a>${a.note ? ` — ${prose(a.note)}` : ''}</li>`).join('\n');
+      const inner = `        <p class="prose">Nothing here is the formal negation of ${escapeHtml(law.name)} — these are the ${against.length === 1 ? 'entry' : 'entries'} in this index that ${against.length === 1 ? 'pulls' : 'pull'} the other way, so that following both at once forces a choice.</p>
+        <ul class="opp-list">
+${items}
+        </ul>
+        <p class="prose"><a href="${base}tension/">Every opposing pair in the index</a>.</p>`;
+      const answer = `The ${against.length === 1 ? 'entry' : 'entries'} that pull against ${law.name}: ${against.map((a) => a.law.name).join(', ')}. None is a formal negation — they are principles that push the other way, so following both at once forces a choice.`;
+      blocks.push(block('What pulls against it', inner, true, `What is the opposite of ${L}?`, answer));
+    }
+  }
   if (law.origin) blocks.push(block('Origin', `        <p class="prose">${prose(law.origin)}</p>`, true, `Where did ${L} come from?`));
 
   // When the NAME caught on, and what the idea is called elsewhere. Both belong

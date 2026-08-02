@@ -26,7 +26,7 @@ import { hubNav, hubFaq, fieldShape, setTensions, setAdjacent } from './hub.mjs'
  * @param {string} [o.active] nav key to mark active (defaults to 'browse')
  * @param {string} [o.origin=''] absolute-URL origin for JSON-LD (optional; degrades to base-relative)
  */
-export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '', reliabilityKey = '', count, categories = {}, images, byslug = {}, compareSlugs = {} } = {}) {
+export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '', reliabilityKey = '', count, categories = {}, images, byslug = {}, compareSlugs = {}, periodCrosses = [] } = {}) {
   const rows = Array.isArray(laws) ? laws : [];
   // A reliability-tier page (kind='reliability') is a faceted-browse view: the
   // server renders only that tier's laws and stamps the grid so the client keeps
@@ -184,7 +184,13 @@ ${crumb}    <div class="sec-head">
       <span class="sub" id="showing" aria-live="polite">showing ${rows.length} of ${rows.length}</span>
     </div>
 ${browseAnswer}${fieldAnswer}${lede}${shape ? `    <div class="hub-stats">${shape.stats.map(([v, l]) => `<span class="hub-stat"><b>${escapeHtml(String(v))}</b> ${escapeHtml(l)}</span>`).join('')}</div>\n` : ''}${strip}    <div class="chips" id="chips">${chips}</div>
-${controls}    <div class="grid" id="grid"${gridAttr}>
+${periodCrosses.length ? `    <nav class="fp-band" aria-label="By period">
+      <h2 class="fp-band-h">This field, period by period</h2>
+      <div class="fp-band-row">
+${periodCrosses.map((c) => `        <a class="cy-chip" href="${base}category/${escapeHtml(c.field)}/${escapeHtml(c.period.slug)}/"><span>${escapeHtml(c.period.label)}</span><b>${c.laws.length}</b></a>`).join('\n')}
+      </div>
+    </nav>
+` : ''}${controls}    <div class="grid" id="grid"${gridAttr}>
 ${grid}
     </div>
 ${fieldHub}${fieldMore}${browseMore}  </div>

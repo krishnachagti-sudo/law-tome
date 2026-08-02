@@ -92,7 +92,7 @@ import { comparePairs } from '../build/relations.mjs';
 import { eponymGroups } from '../build/eponyms.mjs';
 import { namesakesWithPages } from '../src/templates/namesake.mjs';
 import { languagesPresent } from '../src/templates/names.mjs';
-import { periods } from '../build/periods.mjs';
+import { periods, fieldPeriods } from '../build/periods.mjs';
 import { countryGroups, countriesWithPages } from '../build/countries.mjs';
 
 // Corpus-relative sitemap expectations, so adding a law (or a law in a new
@@ -128,13 +128,15 @@ const FACTS = JSON.parse(readFileSync('src/data/facts.json', 'utf8'));
 const NAMES_LANG_COUNT = languagesPresent(PARSED, FACTS).length;
 // Periods: one page per century, plus one per decade that clears the threshold.
 const PERIOD_COUNT = periods(PARSED).length;
+// …plus one per field x period bucket holding at least ten entries.
+const FIELD_PERIOD_COUNT = fieldPeriods(PARSED).length;
 // Countries: one page per country with enough entries born in it.
 const COUNTRY_COUNT = countriesWithPages(countryGroups(PARSED, FACTS)).length;
 const COMPARE_COUNT = comparePairs(PARSED).length;
 const NAMESAKE_COUNT = namesakesWithPages(eponymGroups(PARSED)).length;
 const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + NAMESAKE_COUNT + (1 + AUD_COUNT + 1 + 1) + 1 + 1 + (1 + NAMES_LANG_COUNT) + PERIOD_COUNT + COUNTRY_COUNT
-  // + /equations/, /pronunciation/, /sources/
-  + 3;
+  // + /equations/, /pronunciation/, /sources/, /is-it-real/, /misattributed/
+  + 5 + FIELD_PERIOD_COUNT;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));

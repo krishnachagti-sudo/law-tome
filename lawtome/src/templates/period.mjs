@@ -76,7 +76,7 @@ ${[
  */
 export function periodPage(p, {
   base = '/', origin = '', count, images, categories = {}, byslug = {},
-  compareSlugs = {}, siblings = [], decades = [],
+  compareSlugs = {}, siblings = [], decades = [], fieldCrosses = [],
 } = {}) {
   const laws = p.laws;
   const total = laws.length;
@@ -137,7 +137,13 @@ ${hubHead({
 ${total > 24 ? listFilter({ target: 'per-items', label: `Filter ${num(total)} entries`, placeholder: 'Filter these entries…', noun: 'entries' }) : ''}      <div class="tl-items" id="per-items">
 ${items}
       </div>
-${setTensions(laws, { base, compareSlugs, noun })}${setAdjacent(laws, { base, byslug, noun })}${periodNav(p, siblings, { base })}${faq.html}${hubNav('timeline/', { base })}  </div>
+${fieldCrosses.length ? `    <nav class="fp-band" aria-label="By field">
+      <h2 class="fp-band-h">This ${escapeHtml(noun)}, one field at a time</h2>
+      <div class="fp-band-row">
+${fieldCrosses.map((c) => `        <a class="cy-chip" href="${base}category/${escapeHtml(c.field)}/${escapeHtml(p.slug)}/"><span>${escapeHtml(categories[c.field] || c.field)}</span><b>${num(c.laws.length)}</b></a>`).join('\n')}
+      </div>
+    </nav>
+` : ''}${setTensions(laws, { base, compareSlugs, noun })}${setAdjacent(laws, { base, byslug, noun })}${periodNav(p, siblings, { base })}${faq.html}${hubNav('timeline/', { base })}  </div>
 </section>
 `;
 

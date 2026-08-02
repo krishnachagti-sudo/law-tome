@@ -37,11 +37,14 @@ import { namesHubPage, namesLangPage, namesFor, namesPath, languagesPresent } fr
 import { namesakePage, namesakePath, namesakesWithPages, siblingOrderings } from '../src/templates/namesake.mjs';
 import { creditsPage } from '../src/templates/credits.mjs';
 import { equationsPage, pronunciationPage, sourcesPage } from '../src/templates/surfaces.mjs';
+import { isItRealPage, misattributedPage, ratingContradictions } from '../src/templates/veracity.mjs';
+import { misattributed } from './attribution.mjs';
 import { equations, pronunciations, bibliography } from './surfaces.mjs';
 import { eponymGroups } from './eponyms.mjs';
 import { timelinePage } from '../src/templates/timeline.mjs';
 import { periodPage } from '../src/templates/period.mjs';
-import { periods, periodPath, decadesIn } from './periods.mjs';
+import { periods, periodPath, decadesIn, fieldPeriods, fieldPeriodPath } from './periods.mjs';
+import { fieldPeriodPage } from '../src/templates/field-period.mjs';
 import { eraGroups } from './timeline.mjs';
 import { savedPage } from '../src/templates/saved.mjs';
 import { dataPage } from '../src/templates/data.mjs';
@@ -133,6 +136,13 @@ export async function buildSite(opts) {
   // not write — see build/periods.mjs for which decades earn a page.
   const periodList = periods(laws);
   const periodSlugs = new Set(periodList.map((p) => p.slug));
+  // …and the field x period crosses, hoisted for the same reason: both the
+  // field listings and the period pages link them, and both are written before
+  // the crosses' own pages are.
+  const fps = fieldPeriods(laws);
+  const fieldTotals = {};
+  for (const l of laws) if (l.category) fieldTotals[l.category] = (fieldTotals[l.category] || 0) + 1;
+  const periodTotals = Object.fromEntries(periodList.map((p) => [p.slug, p.laws.length]));
   // A single build timestamp shared by every page, surfaced as the JSON-LD
   // dateModified + article:modified_time freshness signal. Honest: it records
   // when the page was last generated. Overridable so a reproducible build can
@@ -228,7 +238,7 @@ export async function buildSite(opts) {
   for (const cat of present) {
     writes.push(writePage(
       join(out, 'category', cat, 'index.html'),
-      listingPage(membersByCat.get(cat), { title: categories[cat] || cat, base, kind: 'category', origin, categoryKey: cat, count: publishedCount, images, categories, byslug, compareSlugs }),
+      listingPage(membersByCat.get(cat), { title: categories[cat] || cat, base, kind: 'category', origin, categoryKey: cat, count: publishedCount, images, categories, byslug, compareSlugs, periodCrosses: fps.filter((x) => x.field === cat) }),
     ));
   }
 
@@ -358,6 +368,17 @@ export async function buildSite(opts) {
         others: namesLangs.filter((o) => o.code !== lang.code),
       })));
   }
+  // The cut nobody could address: a field crossed with a period. Only buckets
+  // holding at least ten entries earn a page (build/periods.mjs).
+  for (const fp of fps) {
+    writes.push(writePage(join(out, 'category', fp.field, fp.period.slug, 'index.html'),
+      fieldPeriodPage(fp, {
+        base, origin, count: publishedCount, images, categories, compareSlugs,
+        siblings: fps,
+        fieldTotal: fieldTotals[fp.field] || 0,
+        periodTotal: periodTotals[fp.period.slug] || 0,
+      })));
+  }
   // Where the namesakes were born, on a map — birthplaces from facts.json over
   // the Natural Earth coastline. Emitted unconditionally (with an empty state
   // when nothing is harvested), because every hub's footer links it and a
@@ -376,6 +397,21 @@ export async function buildSite(opts) {
         others: countryPages.filter((o) => o.slug !== g.slug),
       })));
   }
+  // Two question-shaped pages over judgements the corpus already carried: the
+  // reliability rating, and the entries whose own origin text says the namesake
+  // was not the whole story.
+  // An entry rated Empirical whose own limits open "the effect is contested" is
+  // answering the same question two ways. Warn rather than fail: the fix is an
+  // editorial judgement about evidence, not something a build should make.
+  const contradictions = ratingContradictions(laws);
+  if (contradictions.length) {
+    console.warn(`reliability: ${contradictions.length} Empirical entr${contradictions.length === 1 ? 'y' : 'ies'} whose own limits call the effect contested: ${contradictions.map((c) => c.slug).join(', ')}`);
+  }
+  writes.push(writePage(join(out, 'is-it-real', 'index.html'),
+    isItRealPage(laws, { base, origin, count: publishedCount, categories })));
+  const misnamed = misattributed(laws);
+  writes.push(writePage(join(out, 'misattributed', 'index.html'),
+    misattributedPage(misnamed, { base, origin, count: publishedCount })));
   // Three reference surfaces over data the corpus already held one item at a
   // time: the formulas, the spoken names, and the whole bibliography.
   writes.push(writePage(join(out, 'equations', 'index.html'),
@@ -395,6 +431,7 @@ export async function buildSite(opts) {
         base, origin, count: publishedCount, images, categories, byslug, compareSlugs,
         siblings: periodList,
         decades: p.kind === 'century' ? decadesIn(p.century, laws) : [],
+        fieldCrosses: fps.filter((x) => x.period.slug === p.slug),
       })));
   }
 
@@ -444,6 +481,7 @@ export async function buildSite(opts) {
     ...namesakePages.map((g) => namesakePath(g.person)), // one per multi-law person
     'timeline/',                              // by-era browse
     ...periodList.map((p) => periodPath(p)),  // one per century and busy decade
+    ...fps.map((fp) => fieldPeriodPath(fp)),  // one per field x period with >=10
     'data/',                                  // dataset download page (indexable)
     'for/',                                   // audience hub
     ...audiences.map((a) => `for/${a.slug}/`),
@@ -455,6 +493,8 @@ export async function buildSite(opts) {
     'equations/',                             // the laws that are formulas
     'pronunciation/',                         // how the namesakes' names sound
     'sources/',                               // the bibliography, by domain
+    'is-it-real/',                            // every entry rated by evidence
+    'misattributed/',                         // Stigler's law, with the receipts
   ];
   // Which images each page actually carries, for the sitemap's image extension.
   // Only the canonical home of each picture is declared: a law's own figure and
