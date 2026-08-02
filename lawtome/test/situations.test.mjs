@@ -70,3 +70,31 @@ test('the shipped situations all resolve against the corpus', () => {
   assert.deepEqual(dropped, [], `unknown situation slugs: ${dropped.join(', ')}`);
   assert.equal(situations.length, raw.length);
 });
+
+// The situations map is the site's highest-intent surface — a reader types the
+// problem, not the name — and it was its smallest, at 37 entries for 1,105
+// laws. Every entry must point at a law that exists and describe it only once;
+// a mapping to a missing slug is silently dropped at build time, so a typo
+// would shrink the map without failing anything.
+const SITS = JSON.parse(readFileSync('src/data/situations.json', 'utf8'));
+const CORPUS_SLUGS = new Set(readdirSync('src/data/laws').filter((f) => f.endsWith('.json'))
+  .map((f) => JSON.parse(readFileSync(join('src/data/laws', f), 'utf8')).slug));
+
+test('every situation points at a law that exists', () => {
+  const missing = SITS.filter((s) => !CORPUS_SLUGS.has(s.law)).map((s) => s.law);
+  assert.deepEqual(missing, [], `situations pointing at no law: ${missing.join(', ')}`);
+});
+
+test('no law is described by two situations, and no phrasing repeats', () => {
+  const laws = SITS.map((s) => s.law);
+  assert.equal(new Set(laws).size, laws.length, 'a law is mapped twice');
+  const texts = SITS.map((s) => s.situation.toLowerCase());
+  assert.equal(new Set(texts).size, texts.length, 'two situations share a phrasing');
+});
+
+test('every situation carries cues for the search index to match on', () => {
+  for (const s of SITS) {
+    assert.ok(s.situation && s.situation.length > 15, `too short: ${s.situation}`);
+    assert.ok(Array.isArray(s.cues) && s.cues.length >= 3, `too few cues: ${s.situation}`);
+  }
+});

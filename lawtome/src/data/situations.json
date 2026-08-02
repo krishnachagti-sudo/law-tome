@@ -1,39 +1,1647 @@
 [
-  { "situation": "You set a target and people optimise the number instead of the real goal", "law": "goodharts-law", "cues": ["metric", "reward", "bonus", "gamed", "gaming", "measure", "kpi", "quota", "incentive"] },
-  { "situation": "A measure used to judge people stops measuring what it used to", "law": "campbells-law", "cues": ["metric", "corrupt", "gamed", "indicator", "test scores", "distort"] },
-  { "situation": "A reward meant to fix a problem makes people cause more of it", "law": "cobra-effect", "cues": ["incentive", "perverse", "backfire", "bounty", "unintended consequence"] },
-  { "situation": "Someone good at their job keeps getting promoted until they reach a role they're bad at", "law": "the-peter-principle", "cues": ["promotion", "incompetence", "manager", "level", "over their head"] },
-  { "situation": "The work keeps expanding to fill all the time you gave it", "law": "parkinsons-law", "cues": ["deadline", "expand", "time available", "procrastinate", "fills the time"] },
-  { "situation": "The team argues forever about something trivial and rushes the hard decision", "law": "parkinsons-law-of-triviality", "cues": ["bikeshedding", "bike shed", "meeting", "logo", "colour", "trivial detail", "important"] },
-  { "situation": "Adding more people to a late project makes it even later", "law": "brooks-law", "cues": ["hiring", "manpower", "developers", "headcount", "deadline", "slips", "onboarding", "behind schedule"] },
-  { "situation": "The software ends up shaped like the org chart that built it", "law": "conways-law", "cues": ["architecture", "teams", "communication structure", "microservices", "org chart"] },
-  { "situation": "The task is taking far longer than planned even though you expected delays", "law": "hofstadters-law", "cues": ["estimate", "always takes longer", "deadline", "overrun", "behind"] },
-  { "situation": "Users come to depend on a quirk of your system you never meant to promise", "law": "hyrums-law", "cues": ["api", "undocumented", "behaviour", "implicit", "breaking change", "contract"] },
-  { "situation": "Software keeps getting slower even as the hardware gets faster", "law": "wirths-law", "cues": ["bloat", "slower", "faster hardware", "performance", "sluggish"] },
-  { "situation": "Your estimate was too optimistic and the project blew past the deadline", "law": "the-planning-fallacy", "cues": ["underestimate", "optimistic", "overrun", "schedule", "behind", "took longer"] },
-  { "situation": "People behave differently just because they know they are being watched", "law": "hawthorne-effect", "cues": ["observed", "monitored", "study", "under observation", "productivity"] },
-  { "situation": "Most of the results come from a small fraction of the causes", "law": "pareto-principle", "cues": ["80/20", "eighty twenty", "vital few", "most of", "small fraction"] },
-  { "situation": "Two explanations fit the facts and you need to pick which to trust first", "law": "occams-razor", "cues": ["simplest", "fewest assumptions", "parsimony", "simpler explanation"] },
-  { "situation": "Something went wrong and you are tempted to assume malice over a simple mistake", "law": "hanlons-razor", "cues": ["malice", "stupidity", "incompetence", "conspiracy", "blame"] },
-  { "situation": "Someone makes a big claim but offers no evidence for it", "law": "hitchens-razor", "cues": ["without evidence", "burden of proof", "dismissed", "unsupported claim"] },
-  { "situation": "Trying to hide or suppress something only draws more attention to it", "law": "streisand-effect", "cues": ["censor", "suppress", "delete", "cover up", "backfire", "viral", "attention"] },
-  { "situation": "The least skilled people are the most confident that they are right", "law": "dunning-kruger-effect", "cues": ["incompetent", "overconfident", "overestimate", "skill", "too dumb to know"] },
-  { "situation": "You keep looking only for evidence that confirms what you already believe", "law": "confirmation-bias", "cues": ["cherry pick", "beliefs", "ignore evidence", "echo chamber"] },
-  { "situation": "You judge success by the survivors and ignore everything that failed and vanished", "law": "survivorship-bias", "cues": ["survivors", "winners", "ignore failures", "dropout", "planes returned"] },
-  { "situation": "You keep investing because of how much you have already spent, not the future payoff", "law": "the-sunk-cost-fallacy", "cues": ["already spent", "throwing good money", "quit", "cut losses", "committed"] },
-  { "situation": "The first number mentioned quietly anchors the whole negotiation", "law": "the-anchoring-effect", "cues": ["first offer", "negotiation", "price", "estimate", "reference point"] },
-  { "situation": "After it happened everyone insists they knew it all along", "law": "the-hindsight-bias", "cues": ["knew it all along", "obvious in retrospect", "should have seen", "predictable afterwards"] },
-  { "situation": "You overestimate how common something is because examples come to mind easily", "law": "the-availability-heuristic", "cues": ["recent", "memorable", "overestimate risk", "vivid", "comes to mind"] },
-  { "situation": "The same choice feels better or worse depending only on how it is worded", "law": "the-framing-effect", "cues": ["worded", "positive negative", "loss gain", "spin", "presentation"] },
-  { "situation": "A deliberately worse third option pushes people toward the pricier choice", "law": "the-decoy-effect", "cues": ["third option", "pricing", "nudge", "pricier", "asymmetric dominance"] },
-  { "situation": "Everyone assumes someone else will step in, so nobody does", "law": "the-bystander-effect", "cues": ["emergency", "nobody helps", "diffusion of responsibility", "crowd"] },
-  { "situation": "One good trait makes you assume a person is good at everything", "law": "halo-effect", "cues": ["attractive", "first impression", "assume competent", "overall impression"] },
-  { "situation": "You just learned a word and suddenly you notice it everywhere", "law": "baader-meinhof-phenomenon", "cues": ["frequency illusion", "suddenly everywhere", "notice", "just learned"] },
-  { "situation": "Someone wants to remove a rule without understanding why it was put there", "law": "chestertons-fence", "cues": ["remove the rule", "reason it exists", "tradition", "why is this here", "tear down"] },
-  { "situation": "You are frustrated that most of the work in any field seems mediocre", "law": "sturgeons-law", "cues": ["ninety percent", "crap", "mediocre", "most of everything"] },
-  { "situation": "A wildly unlikely coincidence happens and it feels like it must mean something", "law": "littlewoods-law", "cues": ["coincidence", "miracle", "one in a million", "rare event", "chance"] },
-  { "situation": "A complex system was built from scratch and none of it works", "law": "galls-law", "cues": ["complex system", "simple system", "big bang rewrite", "evolve", "never works"] },
-  { "situation": "Anything that can go wrong eventually does", "law": "murphys-law", "cues": ["go wrong", "worst case", "fails", "if it can happen"] },
-  { "situation": "You are trying to keep up with far more relationships than feels manageable", "law": "dunbars-number", "cues": ["150", "friends", "social group", "relationships", "community size"] },
-  { "situation": "A headline poses a yes-or-no question and you suspect the answer is no", "law": "betteridges-law", "cues": ["headline", "clickbait", "question mark", "answer is no", "journalism"] }
+  {
+    "situation": "You set a target and people optimise the number instead of the real goal",
+    "law": "goodharts-law",
+    "cues": [
+      "metric",
+      "reward",
+      "bonus",
+      "gamed",
+      "gaming",
+      "measure",
+      "kpi",
+      "quota",
+      "incentive"
+    ]
+  },
+  {
+    "situation": "A measure used to judge people stops measuring what it used to",
+    "law": "campbells-law",
+    "cues": [
+      "metric",
+      "corrupt",
+      "gamed",
+      "indicator",
+      "test scores",
+      "distort"
+    ]
+  },
+  {
+    "situation": "A reward meant to fix a problem makes people cause more of it",
+    "law": "cobra-effect",
+    "cues": [
+      "incentive",
+      "perverse",
+      "backfire",
+      "bounty",
+      "unintended consequence"
+    ]
+  },
+  {
+    "situation": "Someone good at their job keeps getting promoted until they reach a role they're bad at",
+    "law": "the-peter-principle",
+    "cues": [
+      "promotion",
+      "incompetence",
+      "manager",
+      "level",
+      "over their head"
+    ]
+  },
+  {
+    "situation": "The work keeps expanding to fill all the time you gave it",
+    "law": "parkinsons-law",
+    "cues": [
+      "deadline",
+      "expand",
+      "time available",
+      "procrastinate",
+      "fills the time"
+    ]
+  },
+  {
+    "situation": "The team argues forever about something trivial and rushes the hard decision",
+    "law": "parkinsons-law-of-triviality",
+    "cues": [
+      "bikeshedding",
+      "bike shed",
+      "meeting",
+      "logo",
+      "colour",
+      "trivial detail",
+      "important"
+    ]
+  },
+  {
+    "situation": "Adding more people to a late project makes it even later",
+    "law": "brooks-law",
+    "cues": [
+      "hiring",
+      "manpower",
+      "developers",
+      "headcount",
+      "deadline",
+      "slips",
+      "onboarding",
+      "behind schedule"
+    ]
+  },
+  {
+    "situation": "The software ends up shaped like the org chart that built it",
+    "law": "conways-law",
+    "cues": [
+      "architecture",
+      "teams",
+      "communication structure",
+      "microservices",
+      "org chart"
+    ]
+  },
+  {
+    "situation": "The task is taking far longer than planned even though you expected delays",
+    "law": "hofstadters-law",
+    "cues": [
+      "estimate",
+      "always takes longer",
+      "deadline",
+      "overrun",
+      "behind"
+    ]
+  },
+  {
+    "situation": "Users come to depend on a quirk of your system you never meant to promise",
+    "law": "hyrums-law",
+    "cues": [
+      "api",
+      "undocumented",
+      "behaviour",
+      "implicit",
+      "breaking change",
+      "contract"
+    ]
+  },
+  {
+    "situation": "Software keeps getting slower even as the hardware gets faster",
+    "law": "wirths-law",
+    "cues": [
+      "bloat",
+      "slower",
+      "faster hardware",
+      "performance",
+      "sluggish"
+    ]
+  },
+  {
+    "situation": "Your estimate was too optimistic and the project blew past the deadline",
+    "law": "the-planning-fallacy",
+    "cues": [
+      "underestimate",
+      "optimistic",
+      "overrun",
+      "schedule",
+      "behind",
+      "took longer"
+    ]
+  },
+  {
+    "situation": "People behave differently just because they know they are being watched",
+    "law": "hawthorne-effect",
+    "cues": [
+      "observed",
+      "monitored",
+      "study",
+      "under observation",
+      "productivity"
+    ]
+  },
+  {
+    "situation": "Most of the results come from a small fraction of the causes",
+    "law": "pareto-principle",
+    "cues": [
+      "80/20",
+      "eighty twenty",
+      "vital few",
+      "most of",
+      "small fraction"
+    ]
+  },
+  {
+    "situation": "Two explanations fit the facts and you need to pick which to trust first",
+    "law": "occams-razor",
+    "cues": [
+      "simplest",
+      "fewest assumptions",
+      "parsimony",
+      "simpler explanation"
+    ]
+  },
+  {
+    "situation": "Something went wrong and you are tempted to assume malice over a simple mistake",
+    "law": "hanlons-razor",
+    "cues": [
+      "malice",
+      "stupidity",
+      "incompetence",
+      "conspiracy",
+      "blame"
+    ]
+  },
+  {
+    "situation": "Someone makes a big claim but offers no evidence for it",
+    "law": "hitchens-razor",
+    "cues": [
+      "without evidence",
+      "burden of proof",
+      "dismissed",
+      "unsupported claim"
+    ]
+  },
+  {
+    "situation": "Trying to hide or suppress something only draws more attention to it",
+    "law": "streisand-effect",
+    "cues": [
+      "censor",
+      "suppress",
+      "delete",
+      "cover up",
+      "backfire",
+      "viral",
+      "attention"
+    ]
+  },
+  {
+    "situation": "The least skilled people are the most confident that they are right",
+    "law": "dunning-kruger-effect",
+    "cues": [
+      "incompetent",
+      "overconfident",
+      "overestimate",
+      "skill",
+      "too dumb to know"
+    ]
+  },
+  {
+    "situation": "You keep looking only for evidence that confirms what you already believe",
+    "law": "confirmation-bias",
+    "cues": [
+      "cherry pick",
+      "beliefs",
+      "ignore evidence",
+      "echo chamber"
+    ]
+  },
+  {
+    "situation": "You judge success by the survivors and ignore everything that failed and vanished",
+    "law": "survivorship-bias",
+    "cues": [
+      "survivors",
+      "winners",
+      "ignore failures",
+      "dropout",
+      "planes returned"
+    ]
+  },
+  {
+    "situation": "You keep investing because of how much you have already spent, not the future payoff",
+    "law": "the-sunk-cost-fallacy",
+    "cues": [
+      "already spent",
+      "throwing good money",
+      "quit",
+      "cut losses",
+      "committed"
+    ]
+  },
+  {
+    "situation": "The first number mentioned quietly anchors the whole negotiation",
+    "law": "the-anchoring-effect",
+    "cues": [
+      "first offer",
+      "negotiation",
+      "price",
+      "estimate",
+      "reference point"
+    ]
+  },
+  {
+    "situation": "After it happened everyone insists they knew it all along",
+    "law": "the-hindsight-bias",
+    "cues": [
+      "knew it all along",
+      "obvious in retrospect",
+      "should have seen",
+      "predictable afterwards"
+    ]
+  },
+  {
+    "situation": "You overestimate how common something is because examples come to mind easily",
+    "law": "the-availability-heuristic",
+    "cues": [
+      "recent",
+      "memorable",
+      "overestimate risk",
+      "vivid",
+      "comes to mind"
+    ]
+  },
+  {
+    "situation": "The same choice feels better or worse depending only on how it is worded",
+    "law": "the-framing-effect",
+    "cues": [
+      "worded",
+      "positive negative",
+      "loss gain",
+      "spin",
+      "presentation"
+    ]
+  },
+  {
+    "situation": "A deliberately worse third option pushes people toward the pricier choice",
+    "law": "the-decoy-effect",
+    "cues": [
+      "third option",
+      "pricing",
+      "nudge",
+      "pricier",
+      "asymmetric dominance"
+    ]
+  },
+  {
+    "situation": "Everyone assumes someone else will step in, so nobody does",
+    "law": "the-bystander-effect",
+    "cues": [
+      "emergency",
+      "nobody helps",
+      "diffusion of responsibility",
+      "crowd"
+    ]
+  },
+  {
+    "situation": "One good trait makes you assume a person is good at everything",
+    "law": "halo-effect",
+    "cues": [
+      "attractive",
+      "first impression",
+      "assume competent",
+      "overall impression"
+    ]
+  },
+  {
+    "situation": "You just learned a word and suddenly you notice it everywhere",
+    "law": "baader-meinhof-phenomenon",
+    "cues": [
+      "frequency illusion",
+      "suddenly everywhere",
+      "notice",
+      "just learned"
+    ]
+  },
+  {
+    "situation": "Someone wants to remove a rule without understanding why it was put there",
+    "law": "chestertons-fence",
+    "cues": [
+      "remove the rule",
+      "reason it exists",
+      "tradition",
+      "why is this here",
+      "tear down"
+    ]
+  },
+  {
+    "situation": "You are frustrated that most of the work in any field seems mediocre",
+    "law": "sturgeons-law",
+    "cues": [
+      "ninety percent",
+      "crap",
+      "mediocre",
+      "most of everything"
+    ]
+  },
+  {
+    "situation": "A wildly unlikely coincidence happens and it feels like it must mean something",
+    "law": "littlewoods-law",
+    "cues": [
+      "coincidence",
+      "miracle",
+      "one in a million",
+      "rare event",
+      "chance"
+    ]
+  },
+  {
+    "situation": "A complex system was built from scratch and none of it works",
+    "law": "galls-law",
+    "cues": [
+      "complex system",
+      "simple system",
+      "big bang rewrite",
+      "evolve",
+      "never works"
+    ]
+  },
+  {
+    "situation": "Anything that can go wrong eventually does",
+    "law": "murphys-law",
+    "cues": [
+      "go wrong",
+      "worst case",
+      "fails",
+      "if it can happen"
+    ]
+  },
+  {
+    "situation": "You are trying to keep up with far more relationships than feels manageable",
+    "law": "dunbars-number",
+    "cues": [
+      "150",
+      "friends",
+      "social group",
+      "relationships",
+      "community size"
+    ]
+  },
+  {
+    "situation": "A headline poses a yes-or-no question and you suspect the answer is no",
+    "law": "betteridges-law",
+    "cues": [
+      "headline",
+      "clickbait",
+      "question mark",
+      "answer is no",
+      "journalism"
+    ]
+  },
+  {
+    "situation": "The argument is getting louder the less it actually matters",
+    "law": "sayres-law",
+    "cues": [
+      "argument",
+      "bikeshed",
+      "trivial",
+      "heated",
+      "petty",
+      "office"
+    ]
+  },
+  {
+    "situation": "The people who care about the organisation itself end up running it",
+    "law": "pournelles-iron-law-of-bureaucracy",
+    "cues": [
+      "bureaucracy",
+      "process",
+      "admin",
+      "committee",
+      "organisation",
+      "politics"
+    ]
+  },
+  {
+    "situation": "However democratic we start, a small group ends up making the decisions",
+    "law": "iron-law-of-oligarchy",
+    "cues": [
+      "oligarchy",
+      "committee",
+      "board",
+      "democracy",
+      "power",
+      "control"
+    ]
+  },
+  {
+    "situation": "Our worst performers keep getting promoted into management",
+    "law": "dilbert-principle",
+    "cues": [
+      "promotion",
+      "manager",
+      "incompetent",
+      "promoted",
+      "management"
+    ]
+  },
+  {
+    "situation": "The department that solves the problem has no interest in solving it",
+    "law": "shirky-principle",
+    "cues": [
+      "institution",
+      "incentive",
+      "self-preservation",
+      "consultant",
+      "department"
+    ]
+  },
+  {
+    "situation": "We only manage what we can measure, and quietly ignore everything else",
+    "law": "the-mcnamara-fallacy",
+    "cues": [
+      "measure",
+      "metric",
+      "quantify",
+      "data-driven",
+      "dashboard",
+      "ignore"
+    ]
+  },
+  {
+    "situation": "Small changes in customer demand turn into wild swings in our orders",
+    "law": "the-bullwhip-effect",
+    "cues": [
+      "supply chain",
+      "inventory",
+      "orders",
+      "demand",
+      "stock",
+      "forecast"
+    ]
+  },
+  {
+    "situation": "Costs keep rising in the parts of the business that cannot be automated",
+    "law": "baumols-cost-disease",
+    "cues": [
+      "cost",
+      "wages",
+      "productivity",
+      "services",
+      "healthcare",
+      "education"
+    ]
+  },
+  {
+    "situation": "Every time we double output the unit cost drops by the same percentage",
+    "law": "the-experience-curve",
+    "cues": [
+      "cost",
+      "volume",
+      "learning curve",
+      "scale",
+      "manufacturing",
+      "unit cost"
+    ]
+  },
+  {
+    "situation": "Nothing we build lands on schedule or on budget",
+    "law": "cheops-law",
+    "cues": [
+      "deadline",
+      "budget",
+      "overrun",
+      "schedule",
+      "project",
+      "late"
+    ]
+  },
+  {
+    "situation": "How busy the system is depends on arrival rate and how long things sit",
+    "law": "littles-law",
+    "cues": [
+      "queue",
+      "wip",
+      "throughput",
+      "backlog",
+      "cycle time",
+      "capacity"
+    ]
+  },
+  {
+    "situation": "We added capacity and somehow everything got slower",
+    "law": "braess-paradox",
+    "cues": [
+      "congestion",
+      "traffic",
+      "capacity",
+      "road",
+      "network",
+      "slower"
+    ]
+  },
+  {
+    "situation": "Neither side will back down and a collision helps nobody",
+    "law": "the-game-of-chicken",
+    "cues": [
+      "standoff",
+      "brinkmanship",
+      "negotiation",
+      "escalation",
+      "deadlock"
+    ]
+  },
+  {
+    "situation": "We have to decide with information we know is incomplete and wrong",
+    "law": "the-fog-of-war",
+    "cues": [
+      "uncertainty",
+      "incomplete",
+      "war",
+      "decision",
+      "information",
+      "unclear"
+    ]
+  },
+  {
+    "situation": "Buyers cannot tell the good ones from the bad, so the good ones leave",
+    "law": "the-market-for-lemons",
+    "cues": [
+      "used car",
+      "quality",
+      "asymmetric",
+      "information",
+      "seller",
+      "lemon"
+    ]
+  },
+  {
+    "situation": "Insured against the downside, people start taking bigger risks",
+    "law": "moral-hazard",
+    "cues": [
+      "insurance",
+      "bailout",
+      "risk",
+      "safety net",
+      "consequences"
+    ]
+  },
+  {
+    "situation": "Everyone benefits whether or not they contribute, so nobody contributes",
+    "law": "the-free-rider-problem",
+    "cues": [
+      "free rider",
+      "contribute",
+      "public good",
+      "shared",
+      "chip in"
+    ]
+  },
+  {
+    "situation": "A shared resource gets used up because nobody owns the cost",
+    "law": "the-tragedy-of-the-commons",
+    "cues": [
+      "commons",
+      "overuse",
+      "shared",
+      "fishery",
+      "grazing",
+      "depletion"
+    ]
+  },
+  {
+    "situation": "Both of us would do better cooperating, and both of us defect",
+    "law": "the-prisoners-dilemma",
+    "cues": [
+      "cooperate",
+      "defect",
+      "betray",
+      "game theory",
+      "trust",
+      "dilemma"
+    ]
+  },
+  {
+    "situation": "Nobody can improve by changing their own move alone",
+    "law": "the-nash-equilibrium",
+    "cues": [
+      "equilibrium",
+      "stable",
+      "strategy",
+      "game theory",
+      "stuck"
+    ]
+  },
+  {
+    "situation": "We won the auction and immediately suspected we had paid too much",
+    "law": "the-winners-curse",
+    "cues": [
+      "auction",
+      "bid",
+      "overpay",
+      "acquisition",
+      "winner",
+      "tender"
+    ]
+  },
+  {
+    "situation": "Making it more efficient made us use far more of it, not less",
+    "law": "jevons-paradox",
+    "cues": [
+      "efficiency",
+      "rebound",
+      "fuel",
+      "energy",
+      "consumption",
+      "savings"
+    ]
+  },
+  {
+    "situation": "Every competitor's product has drifted to look exactly like everyone else's",
+    "law": "hotellings-law",
+    "cues": [
+      "differentiation",
+      "me-too",
+      "positioning",
+      "middle",
+      "competitors",
+      "similar"
+    ]
+  },
+  {
+    "situation": "The good version disappears from circulation and the shoddy one stays",
+    "law": "greshams-law",
+    "cues": [
+      "currency",
+      "quality",
+      "counterfeit",
+      "coins",
+      "drives out"
+    ]
+  },
+  {
+    "situation": "Raising the rate further started bringing in less, not more",
+    "law": "the-laffer-curve",
+    "cues": [
+      "tax",
+      "rate",
+      "revenue",
+      "diminishing",
+      "laffer"
+    ]
+  },
+  {
+    "situation": "They rejected a real gain because the split felt insulting",
+    "law": "the-ultimatum-game",
+    "cues": [
+      "fairness",
+      "split",
+      "offer",
+      "reject",
+      "spite",
+      "negotiation"
+    ]
+  },
+  {
+    "situation": "People pay more for it precisely because it costs more",
+    "law": "the-veblen-effect",
+    "cues": [
+      "luxury",
+      "status",
+      "price",
+      "prestige",
+      "conspicuous"
+    ]
+  },
+  {
+    "situation": "Everyone is buying it mainly because everyone is buying it",
+    "law": "the-bandwagon-effect",
+    "cues": [
+      "hype",
+      "trend",
+      "popular",
+      "herd",
+      "fomo",
+      "everyone"
+    ]
+  },
+  {
+    "situation": "The pie is fixed, so anything you gain I must lose",
+    "law": "zero-sum-game",
+    "cues": [
+      "zero sum",
+      "fixed pie",
+      "win lose",
+      "negotiation",
+      "competition"
+    ]
+  },
+  {
+    "situation": "We keep valuing the thing we assembled ourselves far above what it is worth",
+    "law": "the-ikea-effect",
+    "cues": [
+      "built it",
+      "in-house",
+      "effort",
+      "ownership",
+      "overvalue",
+      "diy"
+    ]
+  },
+  {
+    "situation": "We got richer as a country and nobody reports being happier",
+    "law": "easterlin-paradox",
+    "cues": [
+      "happiness",
+      "income",
+      "gdp",
+      "wellbeing",
+      "richer"
+    ]
+  },
+  {
+    "situation": "They are fighting over a smaller share of work that they think is fixed",
+    "law": "the-lump-of-labour-fallacy",
+    "cues": [
+      "jobs",
+      "automation",
+      "immigration",
+      "work",
+      "unemployment"
+    ]
+  },
+  {
+    "situation": "Rebuilding after the damage is being counted as economic gain",
+    "law": "the-broken-window-fallacy",
+    "cues": [
+      "stimulus",
+      "destruction",
+      "rebuild",
+      "economy",
+      "disaster",
+      "spending"
+    ]
+  },
+  {
+    "situation": "Every policy we model stops working once people know about it",
+    "law": "the-lucas-critique",
+    "cues": [
+      "policy",
+      "model",
+      "forecast",
+      "behaviour",
+      "expectations",
+      "regime"
+    ]
+  },
+  {
+    "situation": "Our promise to be tough later is not credible today",
+    "law": "hyperbolic-discounting",
+    "cues": [
+      "procrastination",
+      "willpower",
+      "later",
+      "discount",
+      "short term",
+      "commitment"
+    ]
+  },
+  {
+    "situation": "Losing it would hurt more than gaining the same thing would please",
+    "law": "loss-aversion",
+    "cues": [
+      "loss",
+      "risk",
+      "downside",
+      "prospect",
+      "averse"
+    ]
+  },
+  {
+    "situation": "Now that we own it, we will not sell it for what we would have paid",
+    "law": "the-endowment-effect",
+    "cues": [
+      "own",
+      "sell",
+      "price",
+      "attached",
+      "possession"
+    ]
+  },
+  {
+    "situation": "I keep liking it more each time I see it, for no other reason",
+    "law": "the-mere-exposure-effect",
+    "cues": [
+      "familiar",
+      "repeat",
+      "advert",
+      "liking",
+      "exposure"
+    ]
+  },
+  {
+    "situation": "The evidence contradicts what they believe, so they changed the evidence",
+    "law": "cognitive-dissonance",
+    "cues": [
+      "dissonance",
+      "belief",
+      "contradiction",
+      "justify",
+      "rationalise"
+    ]
+  },
+  {
+    "situation": "The horoscope felt uncannily accurate to almost everyone who read it",
+    "law": "the-forer-effect",
+    "cues": [
+      "horoscope",
+      "personality test",
+      "astrology",
+      "vague",
+      "barnum"
+    ]
+  },
+  {
+    "situation": "They keep judging the whole experience by how it ended",
+    "law": "the-peak-end-rule",
+    "cues": [
+      "experience",
+      "ending",
+      "memory",
+      "review",
+      "satisfaction",
+      "last impression"
+    ]
+  },
+  {
+    "situation": "I explained it badly because I could not remember not knowing it",
+    "law": "the-curse-of-knowledge",
+    "cues": [
+      "explain",
+      "onboarding",
+      "expert",
+      "jargon",
+      "teaching",
+      "assume"
+    ]
+  },
+  {
+    "situation": "Repeating the claim is making people believe it",
+    "law": "the-illusory-truth-effect",
+    "cues": [
+      "repetition",
+      "misinformation",
+      "propaganda",
+      "familiar",
+      "believe"
+    ]
+  },
+  {
+    "situation": "When they fail it is their character, when I fail it is my circumstances",
+    "law": "the-fundamental-attribution-error",
+    "cues": [
+      "blame",
+      "character",
+      "excuse",
+      "attribution",
+      "judge"
+    ]
+  },
+  {
+    "situation": "They take the credit for the wins and blame everything else for the losses",
+    "law": "the-self-serving-bias",
+    "cues": [
+      "credit",
+      "blame",
+      "postmortem",
+      "ego",
+      "attribution"
+    ]
+  },
+  {
+    "situation": "We are certain this project will go better than the last five did",
+    "law": "the-optimism-bias",
+    "cues": [
+      "optimism",
+      "overconfident",
+      "estimate",
+      "plan",
+      "risk"
+    ]
+  },
+  {
+    "situation": "Bad news lands far harder than the equivalent good news",
+    "law": "the-negativity-bias",
+    "cues": [
+      "negative",
+      "criticism",
+      "bad news",
+      "feedback",
+      "weighting"
+    ]
+  },
+  {
+    "situation": "Everyone must have noticed my mistake — except nobody did",
+    "law": "the-spotlight-effect",
+    "cues": [
+      "embarrassed",
+      "noticed",
+      "self-conscious",
+      "attention",
+      "stumble"
+    ]
+  },
+  {
+    "situation": "We only have one tool, so every problem is being made to fit it",
+    "law": "the-law-of-the-instrument",
+    "cues": [
+      "hammer",
+      "tool",
+      "framework",
+      "overuse",
+      "fit"
+    ]
+  },
+  {
+    "situation": "The victim must have done something to deserve it",
+    "law": "the-just-world-hypothesis",
+    "cues": [
+      "blame",
+      "victim",
+      "fair",
+      "deserve",
+      "karma",
+      "justice"
+    ]
+  },
+  {
+    "situation": "The odd one out is the only one anybody remembers",
+    "law": "the-von-restorff-effect",
+    "cues": [
+      "stand out",
+      "distinct",
+      "memorable",
+      "isolation",
+      "different"
+    ]
+  },
+  {
+    "situation": "They remember the start and the end of the list and nothing in between",
+    "law": "the-serial-position-effect",
+    "cues": [
+      "list",
+      "order",
+      "primacy",
+      "recency",
+      "remember"
+    ]
+  },
+  {
+    "situation": "Cramming it all into one session did not make it stick",
+    "law": "the-spacing-effect",
+    "cues": [
+      "study",
+      "revision",
+      "cram",
+      "learning",
+      "spaced",
+      "retention"
+    ]
+  },
+  {
+    "situation": "Testing myself works better than reading it again",
+    "law": "the-testing-effect",
+    "cues": [
+      "revision",
+      "quiz",
+      "recall",
+      "study",
+      "flashcards",
+      "retrieval"
+    ]
+  },
+  {
+    "situation": "Under pressure performance improved, then collapsed",
+    "law": "yerkes-dodson-law",
+    "cues": [
+      "stress",
+      "pressure",
+      "arousal",
+      "performance",
+      "deadline",
+      "choke"
+    ]
+  },
+  {
+    "situation": "We made it safer and people started behaving more dangerously",
+    "law": "peltzman-effect",
+    "cues": [
+      "safety",
+      "risk compensation",
+      "seatbelt",
+      "helmet",
+      "offset"
+    ]
+  },
+  {
+    "situation": "Everyone in the group is putting in less than they would alone",
+    "law": "ringelmann-effect",
+    "cues": [
+      "social loafing",
+      "group",
+      "team",
+      "effort",
+      "slack"
+    ]
+  },
+  {
+    "situation": "Expecting more of them seems to have made them better",
+    "law": "pygmalion-effect",
+    "cues": [
+      "expectations",
+      "teacher",
+      "manager",
+      "performance",
+      "self-fulfilling"
+    ]
+  },
+  {
+    "situation": "Most of what we learned last week has already gone",
+    "law": "ebbinghaus-forgetting-curve",
+    "cues": [
+      "forget",
+      "memory",
+      "retention",
+      "training",
+      "decay",
+      "review"
+    ]
+  },
+  {
+    "situation": "The unfinished task is the one I cannot stop thinking about",
+    "law": "zeigarnik-effect",
+    "cues": [
+      "unfinished",
+      "open loop",
+      "nagging",
+      "incomplete",
+      "memory"
+    ]
+  },
+  {
+    "situation": "The difference only registers in proportion to what was already there",
+    "law": "weber-fechner-law",
+    "cues": [
+      "perception",
+      "just noticeable",
+      "proportion",
+      "loudness",
+      "brightness"
+    ]
+  },
+  {
+    "situation": "They can only hold a handful of things in mind at once",
+    "law": "millers-law",
+    "cues": [
+      "working memory",
+      "chunk",
+      "seven",
+      "overload",
+      "short term"
+    ]
+  },
+  {
+    "situation": "Every extra option on the menu is slowing the decision down",
+    "law": "hicks-law",
+    "cues": [
+      "choice",
+      "menu",
+      "options",
+      "decision",
+      "paralysis",
+      "ux"
+    ]
+  },
+  {
+    "situation": "The button is small and far away and everyone misses it",
+    "law": "fitts-law",
+    "cues": [
+      "ui",
+      "target",
+      "button",
+      "pointer",
+      "click",
+      "touch"
+    ]
+  },
+  {
+    "situation": "The exceptional result went back to normal on its own",
+    "law": "regression-to-the-mean",
+    "cues": [
+      "regression",
+      "average",
+      "outlier",
+      "fluke",
+      "follow-up",
+      "reverted"
+    ]
+  },
+  {
+    "situation": "Every segment shows one trend and the total shows the opposite",
+    "law": "simpsons-paradox",
+    "cues": [
+      "paradox",
+      "aggregate",
+      "segment",
+      "confounding",
+      "reversal"
+    ]
+  },
+  {
+    "situation": "The number looked remarkable, and it turned out to be an error",
+    "law": "twymans-law",
+    "cues": [
+      "anomaly",
+      "surprising",
+      "data quality",
+      "spike",
+      "outlier",
+      "check"
+    ]
+  },
+  {
+    "situation": "Two unrelated things look linked because of how we selected the sample",
+    "law": "berksons-paradox",
+    "cues": [
+      "selection",
+      "sample",
+      "bias",
+      "correlation",
+      "hospital",
+      "admission"
+    ]
+  },
+  {
+    "situation": "Someone is certain, and certainty is exactly what the evidence cannot support",
+    "law": "cromwells-rule",
+    "cues": [
+      "certain",
+      "probability",
+      "zero",
+      "prior",
+      "dogmatic"
+    ]
+  },
+  {
+    "situation": "Given enough attempts, the impossible coincidence turned up",
+    "law": "the-law-of-truly-large-numbers",
+    "cues": [
+      "coincidence",
+      "chance",
+      "rare",
+      "lottery",
+      "big numbers"
+    ]
+  },
+  {
+    "situation": "The figures say the classes are bigger than the school claims",
+    "law": "the-inspection-paradox",
+    "cues": [
+      "class size",
+      "sampling",
+      "waiting time",
+      "bus",
+      "average",
+      "paradox"
+    ]
+  },
+  {
+    "situation": "Moving one case between groups improved the average of both",
+    "law": "will-rogers-phenomenon",
+    "cues": [
+      "stage migration",
+      "average",
+      "reclassify",
+      "statistics",
+      "groups"
+    ]
+  },
+  {
+    "situation": "The leading digits in this ledger are not distributed the way real data is",
+    "law": "benfords-law",
+    "cues": [
+      "fraud",
+      "audit",
+      "digits",
+      "accounting",
+      "forensic",
+      "fake data"
+    ]
+  },
+  {
+    "situation": "A few items account for almost all the frequency and the rest is a long tail",
+    "law": "zipfs-law",
+    "cues": [
+      "long tail",
+      "frequency",
+      "rank",
+      "power law",
+      "distribution"
+    ]
+  },
+  {
+    "situation": "I have to stop looking and choose, without seeing the rest of the options",
+    "law": "the-secretary-problem",
+    "cues": [
+      "hiring",
+      "stopping",
+      "optimal",
+      "choose",
+      "search",
+      "dating"
+    ]
+  },
+  {
+    "situation": "Two clocks disagree and now I trust neither",
+    "law": "segals-law",
+    "cues": [
+      "two sources",
+      "conflicting",
+      "dashboards",
+      "metrics",
+      "disagree"
+    ]
+  },
+  {
+    "situation": "Parallelising it stopped helping because part of the work is serial",
+    "law": "amdahls-law",
+    "cues": [
+      "parallel",
+      "threads",
+      "speedup",
+      "scaling",
+      "serial",
+      "cores"
+    ]
+  },
+  {
+    "situation": "The abstraction we built keeps leaking the thing it was supposed to hide",
+    "law": "law-of-leaky-abstractions",
+    "cues": [
+      "abstraction",
+      "orm",
+      "leaky",
+      "framework",
+      "underlying"
+    ]
+  },
+  {
+    "situation": "We simplified the interface and the complexity just moved somewhere else",
+    "law": "teslers-law",
+    "cues": [
+      "complexity",
+      "simplify",
+      "ux",
+      "tradeoff",
+      "hidden"
+    ]
+  },
+  {
+    "situation": "This code was as clever as I could make it and now I cannot debug it",
+    "law": "kernighans-law",
+    "cues": [
+      "clever",
+      "debug",
+      "readable",
+      "maintain",
+      "complexity"
+    ]
+  },
+  {
+    "situation": "The system keeps growing more complex unless someone spends effort on it",
+    "law": "the-lehman-laws",
+    "cues": [
+      "legacy",
+      "maintenance",
+      "entropy",
+      "refactor",
+      "complexity",
+      "evolution"
+    ]
+  },
+  {
+    "situation": "We assumed the network was reliable and it is not",
+    "law": "the-fallacies-of-distributed-computing",
+    "cues": [
+      "network",
+      "latency",
+      "distributed",
+      "timeout",
+      "partition",
+      "assumptions"
+    ]
+  },
+  {
+    "situation": "When the network splits we have to choose consistency or availability",
+    "law": "the-cap-theorem",
+    "cues": [
+      "distributed",
+      "consistency",
+      "availability",
+      "partition",
+      "database"
+    ]
+  },
+  {
+    "situation": "Neither service can ever be certain the other received the message",
+    "law": "the-two-generals-problem",
+    "cues": [
+      "ack",
+      "message",
+      "delivery",
+      "consensus",
+      "unreliable",
+      "retry"
+    ]
+  },
+  {
+    "situation": "Some of the nodes may be lying and we still need agreement",
+    "law": "the-byzantine-generals-problem",
+    "cues": [
+      "consensus",
+      "byzantine",
+      "fault",
+      "malicious",
+      "blockchain",
+      "agreement"
+    ]
+  },
+  {
+    "situation": "We wanted a tool to decide whether this program will finish",
+    "law": "the-halting-problem",
+    "cues": [
+      "undecidable",
+      "infinite loop",
+      "analysis",
+      "terminate",
+      "static"
+    ]
+  },
+  {
+    "situation": "The security of this depends on keeping the design secret",
+    "law": "kerckhoffs-principle",
+    "cues": [
+      "security",
+      "obscurity",
+      "secret",
+      "cipher",
+      "key",
+      "design"
+    ]
+  },
+  {
+    "situation": "Sampling it at that rate is losing the high frequencies",
+    "law": "the-nyquist-shannon-sampling-theorem",
+    "cues": [
+      "sampling",
+      "aliasing",
+      "audio",
+      "rate",
+      "frequency",
+      "digitise"
+    ]
+  },
+  {
+    "situation": "The machine does the hard reasoning easily and cannot manage what a toddler does",
+    "law": "moravecs-paradox",
+    "cues": [
+      "robotics",
+      "ai",
+      "perception",
+      "dexterity",
+      "hard",
+      "easy"
+    ]
+  },
+  {
+    "situation": "The thread has reached the point where someone made a Nazi comparison",
+    "law": "godwins-law",
+    "cues": [
+      "online",
+      "argument",
+      "hitler",
+      "nazi",
+      "thread",
+      "forum"
+    ]
+  },
+  {
+    "situation": "Posting a wrong answer got a faster correction than asking the question did",
+    "law": "cunninghams-law",
+    "cues": [
+      "internet",
+      "correction",
+      "answer",
+      "forum",
+      "ask",
+      "wrong"
+    ]
+  },
+  {
+    "situation": "Refuting this nonsense is taking ten times the effort it took to produce",
+    "law": "brandolinis-law",
+    "cues": [
+      "debunk",
+      "misinformation",
+      "refute",
+      "effort",
+      "bullshit"
+    ]
+  },
+  {
+    "situation": "I cannot tell whether they mean it or are parodying it",
+    "law": "poes-law",
+    "cues": [
+      "satire",
+      "parody",
+      "sincere",
+      "irony",
+      "extreme",
+      "online"
+    ]
+  },
+  {
+    "situation": "The paper is wrong about my field and I still trust it on everything else",
+    "law": "gell-mann-amnesia-effect",
+    "cues": [
+      "news",
+      "media",
+      "trust",
+      "expertise",
+      "wrong",
+      "journalism"
+    ]
+  },
+  {
+    "situation": "They asserted it with no evidence and expect me to disprove it",
+    "law": "russells-teapot",
+    "cues": [
+      "burden of proof",
+      "unfalsifiable",
+      "claim",
+      "disprove",
+      "assert"
+    ]
+  },
+  {
+    "situation": "This is a big claim and the evidence offered is ordinary",
+    "law": "sagan-standard",
+    "cues": [
+      "evidence",
+      "extraordinary",
+      "claim",
+      "proof",
+      "skeptic"
+    ]
+  },
+  {
+    "situation": "My correction of their writing contained its own mistake",
+    "law": "muphrys-law",
+    "cues": [
+      "typo",
+      "correction",
+      "proofread",
+      "editing",
+      "irony"
+    ]
+  },
+  {
+    "situation": "The message did not land the way it was sent, again",
+    "law": "wiios-laws",
+    "cues": [
+      "communication",
+      "misunderstood",
+      "message",
+      "clarity",
+      "fails"
+    ]
+  },
+  {
+    "situation": "What is politically sayable has shifted, and quickly",
+    "law": "overton-window",
+    "cues": [
+      "politics",
+      "acceptable",
+      "discourse",
+      "shift",
+      "mainstream",
+      "policy"
+    ]
+  },
+  {
+    "situation": "Whoever is already ahead keeps getting further ahead",
+    "law": "matthew-effect",
+    "cues": [
+      "advantage",
+      "rich get richer",
+      "citation",
+      "fame",
+      "compounding"
+    ]
+  },
+  {
+    "situation": "The discovery is named after someone who did not discover it",
+    "law": "stiglers-law",
+    "cues": [
+      "eponym",
+      "named after",
+      "credit",
+      "discovery",
+      "misattributed"
+    ]
+  },
+  {
+    "situation": "The thing has lasted this long, so it will probably last a while yet",
+    "law": "lindy-effect",
+    "cues": [
+      "longevity",
+      "survival",
+      "old",
+      "durable",
+      "technology",
+      "books"
+    ]
+  },
+  {
+    "situation": "We expected too much of it this year and too little of it this decade",
+    "law": "amaras-law",
+    "cues": [
+      "hype",
+      "technology",
+      "short term",
+      "long term",
+      "overestimate",
+      "adoption"
+    ]
+  },
+  {
+    "situation": "Each new user makes the thing more valuable to every other user",
+    "law": "the-network-effect",
+    "cues": [
+      "network",
+      "users",
+      "platform",
+      "adoption",
+      "value",
+      "lock-in"
+    ]
+  },
+  {
+    "situation": "Being lenient in what we accept keeps the integration working",
+    "law": "postels-law",
+    "cues": [
+      "interoperability",
+      "parser",
+      "strict",
+      "lenient",
+      "protocol",
+      "api"
+    ]
+  },
+  {
+    "situation": "Visible neglect seems to be inviting more of it",
+    "law": "the-broken-windows-theory",
+    "cues": [
+      "disorder",
+      "neglect",
+      "graffiti",
+      "policing",
+      "decay",
+      "crime"
+    ]
+  },
+  {
+    "situation": "One new purchase made everything else look shabby and now I am buying more",
+    "law": "the-diderot-effect",
+    "cues": [
+      "consumption",
+      "upgrade",
+      "spiral",
+      "matching",
+      "buy"
+    ]
+  }
 ]
