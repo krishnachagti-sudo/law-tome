@@ -131,3 +131,54 @@ test('namesakeKind without namedAfter fails', () =>
     .some((e) => /namesakeKind/.test(e) && /namedAfter/.test(e))));
 test('an entry with no namesakeKind still passes — absence is "unknown", not an error', () =>
   assert.deepEqual(validate([{ ...ok, namedAfter: 'Jane Doe' }], cats), []));
+
+// An alias is a claim that this entry is ALSO called X. Two entries claiming one
+// name means at most one of them is right — a duplicate to merge, or an alias to
+// take off the entry it does not belong to. The name-only check missed this for
+// as long as the corpus has existed: "The Giffen Paradox" and "The Giffen Good"
+// were two pages, each listing the other's name as its alias, rated Contested and
+// Empirical, citing the same two sources.
+const twin = (over) => ({
+  no: '001', slug: 'a', name: 'A Law', statement: 'S', meaning: 'M', origin: 'O',
+  category: 'economics', reliability: 'Heuristic', provenance: 'canon',
+  example: 'E', sources: [{ url: 'https://example.org/' }], ...over,
+});
+
+test('two entries cannot claim the same alias', () => {
+  const errs = validateCorpus([
+    twin({}),
+    twin({ no: '002', slug: 'b', name: 'B Law', aliases: ['A Law'] }),
+  ], { economics: 'Economics' });
+  assert.ok(errs.some((e) => /claimed by both/.test(e)), errs.join(' | '));
+});
+
+test("an alias may not be another entry's display name", () => {
+  const errs = validateCorpus([
+    twin({ name: "Cantor's Theorem" }),
+    twin({ no: '002', slug: 'b', name: "Cantor's Diagonal Argument", aliases: ["Cantor's Theorem"] }),
+  ], { economics: 'Economics' });
+  assert.ok(errs.some((e) => /claimed by both/.test(e)), errs.join(' | '));
+});
+
+test('a leading article does not disguise the same claim', () => {
+  const errs = validateCorpus([
+    twin({ aliases: ['The Original Position'] }),
+    twin({ no: '002', slug: 'b', name: 'B Law', aliases: ['Original position'] }),
+  ], { economics: 'Economics' });
+  assert.ok(errs.some((e) => /claimed by both/.test(e)), errs.join(' | '));
+});
+
+test('an entry may keep several aliases of its own', () => {
+  const errs = validateCorpus([
+    twin({ aliases: ['Giffen paradox', 'The upward-sloping demand good'] }),
+  ], { economics: 'Economics' });
+  assert.deepEqual(errs, []);
+});
+
+test('the shipped corpus has no name or alias claimed twice', async () => {
+  const { loadCorpus, loadCategories } = await import('../build/corpus.mjs');
+  const [laws, cats] = await Promise.all([
+    loadCorpus('src/data/laws'), loadCategories('src/data/categories.json'),
+  ]);
+  assert.deepEqual(validateCorpus(laws, cats).filter((e) => /claimed by both/.test(e)), []);
+});

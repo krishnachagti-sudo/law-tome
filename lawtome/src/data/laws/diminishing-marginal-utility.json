@@ -2,7 +2,11 @@
   "no": "724",
   "slug": "diminishing-marginal-utility",
   "name": "Diminishing Marginal Utility",
-  "aliases": ["Gossen's first law", "The law of diminishing utility"],
+  "aliases": [
+    "Gossen's first law",
+    "The law of diminishing utility",
+    "The Law of Diminishing Marginal Utility"
+  ],
   "statement": "Each extra slice of cake gives you a little less pleasure than the one before.",
   "statementAccent": "a little less pleasure than the one before",
   "meaning": "The law of diminishing marginal utility states that, holding other things constant, as a person consumes more units of a good or service, the additional satisfaction gained from each successive unit decreases. Utility is the satisfaction a good provides, and marginal utility is the extra utility from consuming one more unit. The first slice of cake yields the most satisfaction; each further slice yields less than the one before, so while total utility keeps rising, it rises at a decreasing rate, and beyond a point of satiation marginal utility can fall to zero or even turn negative. The principle emerged in the marginal revolution of the 1870s, developed independently by William Stanley Jevons, Carl Menger, and Léon Walras, and had been articulated earlier by Hermann Heinrich Gossen in 1854 as what is now called Gossen's first law. It is a foundational idea in microeconomics and consumer theory.",
@@ -33,9 +37,18 @@
   ],
   "whyItMatters": "Diminishing marginal utility is a foundational concept in microeconomics and consumer theory, central to how economists explain choice, value, and demand. It resolves the ancient diamond-water paradox by distinguishing marginal from total utility, showing that scarcity and marginal value, not overall usefulness, drive price. It underlies the downward-sloping demand curve and the equimarginal principle by which consumers allocate spending to equalise marginal utility per dollar across goods. Applied to income, its implication that an extra dollar is worth more to the poor than to the rich provides a standard rationale for progressive taxation and redistribution. Emerging from the marginal revolution that transformed economics in the 1870s, and anticipated by Gossen decades earlier, the principle remains one of the most widely used building blocks for analysing how people value and choose among goods.",
   "working": [
-    {"lead": "Consume successive units", "text": "add more of a good, noting that the most urgent wants are satisfied by the earliest units."},
-    {"lead": "Watch marginal utility fall", "text": "see each additional unit add less satisfaction than the last, so total utility rises at a decreasing rate toward satiation."},
-    {"lead": "Read off the implications", "text": "apply the principle to explain the diamond-water paradox, the downward-sloping demand curve, and the diminishing marginal utility of income."}
+    {
+      "lead": "Consume successive units",
+      "text": "add more of a good, noting that the most urgent wants are satisfied by the earliest units."
+    },
+    {
+      "lead": "Watch marginal utility fall",
+      "text": "see each additional unit add less satisfaction than the last, so total utility rises at a decreasing rate toward satiation."
+    },
+    {
+      "lead": "Read off the implications",
+      "text": "apply the principle to explain the diamond-water paradox, the downward-sloping demand curve, and the diminishing marginal utility of income."
+    }
   ],
   "limits": "Diminishing marginal utility holds other things constant and describes a general tendency rather than a universal law; for some goods, over some ranges, early units can raise the marginal value of later ones, as with complementary or addictive goods where consumption breeds desire. Utility itself is not directly measurable, and modern consumer theory often works with ordinal preferences and indifference curves rather than cardinal utility, so the principle is sometimes restated in those terms. Interpersonal comparisons of utility, invoked in redistribution arguments, are contested on the grounds that one cannot rigorously compare satisfaction across people. So while diminishing marginal utility is a robust and foundational insight, it is a modelling assumption with exceptions and measurement caveats rather than an exact empirical fact about all goods and all consumers.",
   "misreadings": "The law concerns marginal, not total, utility: total satisfaction keeps rising as long as marginal utility is positive, so the point is that each added unit adds less, not that consuming more makes one worse off, until satiation. It does not say the good becomes worthless, only that additional units are valued less. And it holds other things equal, so it can be overridden for complementary or habit-forming goods. Reading it as a claim that more is always bad, or as an exact measurable quantity, misstates a principle about the declining value of successive units.",
@@ -46,12 +59,29 @@
   "coinedYear": 1854,
   "namedAfter": null,
   "sources": [
-    {"text": "Marginal utility, Wikipedia. — the declining additional satisfaction from successive units, marginal versus total utility and satiation, the marginalist origins and Gossen's first law, the diamond-water paradox resolution, and the demand-curve and diminishing-marginal-utility-of-income implications.", "url": "https://en.wikipedia.org/wiki/Marginal_utility", "type": "secondary"},
-    {"text": "Paradox of value (diamond-water paradox), EBSCO Research Starters. — the resolution of the diamond-water paradox through marginal utility.", "url": "https://www.ebsco.com/research-starters/earth-and-atmospheric-sciences/paradox-value-diamond-water-paradox", "type": "secondary"}
+    {
+      "text": "Marginal utility, Wikipedia. — the declining additional satisfaction from successive units, marginal versus total utility and satiation, the marginalist origins and Gossen's first law, the diamond-water paradox resolution, and the demand-curve and diminishing-marginal-utility-of-income implications.",
+      "url": "https://en.wikipedia.org/wiki/Marginal_utility",
+      "type": "secondary"
+    },
+    {
+      "text": "Paradox of value (diamond-water paradox), EBSCO Research Starters. — the resolution of the diamond-water paradox through marginal utility.",
+      "url": "https://www.ebsco.com/research-starters/earth-and-atmospheric-sciences/paradox-value-diamond-water-paradox",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Marginal_utility",
   "related": [
-    {"slug": "giffen-good", "kind": "kindred"},
-    {"slug": "the-st-petersburg-paradox", "kind": "kindred"}
+    {
+      "slug": "giffen-good",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-st-petersburg-paradox",
+      "kind": "kindred"
+    }
+  ],
+  "redirectFrom": [
+    "laws/the-law-of-diminishing-marginal-utility/"
   ]
 }

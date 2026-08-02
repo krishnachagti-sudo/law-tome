@@ -14,7 +14,7 @@ import { homePage } from '../src/templates/home.mjs';
 import { listingPage } from '../src/templates/listing.mjs';
 import { graphPage } from '../src/templates/graph.mjs';
 import { originsPage } from '../src/templates/origins.mjs';
-import { coinPage, aboutPage, coinedIndex, privacyPage, notFoundPage } from '../src/templates/static-pages.mjs';
+import { coinPage, aboutPage, coinedIndex, privacyPage, notFoundPage, redirectStub } from '../src/templates/static-pages.mjs';
 import { tensionPage } from '../src/templates/tension.mjs';
 import { comparePage, compareHubPage } from '../src/templates/compare.mjs';
 import { tensionPairs, comparePairs } from './relations.mjs';
@@ -431,20 +431,36 @@ export async function buildSite(opts) {
   // builders" reading list, and whose title named a PERSON rather than a
   // problem — which is the one thing that distinguishes the two axes. It is the
   // reading list, so it now lives there and its old URL points at it.
-  const redirects = [
-    `${base}collections/laws-every-engineer-learns/  ${base}for/engineers/  301`,
+  //
+  // Each retirement is emitted TWICE: as a line here, and as a stub page at the
+  // old path. GitHub Pages ignores _redirects entirely — it serves static files
+  // and nothing else — so every one of these was a live 404, which is precisely
+  // what a redirect map exists to prevent. See redirectStub().
+  const moves = [
+    { from: 'collections/laws-every-engineer-learns/', to: 'for/engineers/', label: 'For engineers & builders' },
   ];
   for (const law of laws) {
     // Array.isArray guard: a non-array redirectFrom (a stray string would iterate
-    // characters; a number/object would throw and fail the build) yields no lines.
+    // characters; a number/object would throw and fail the build) yields nothing.
     const from = Array.isArray(law.redirectFrom) ? law.redirectFrom : [];
-    for (const old of from) {
-      redirects.push(`${base}${old}  ${base}laws/${law.slug}/  301`);
-    }
+    for (const old of from) moves.push({ from: old, to: `laws/${law.slug}/`, label: law.name });
   }
+  // A stub is written to the old path, so an old path that is ALSO a live slug
+  // would bury the real page under a redirect to somewhere else. The _redirects
+  // line was harmless in that case; a file is not. Drop those and say so.
+  const livePaths = new Set(laws.map((l) => `laws/${l.slug}/`));
+  const collided = moves.filter((m) => livePaths.has(m.from));
+  if (collided.length) {
+    console.warn(`redirects: ${collided.length} redirectFrom path(s) collide with a live law and are skipped: ${collided.map((m) => m.from).join(', ')}`);
+  }
+  const safeMoves = moves.filter((m) => !livePaths.has(m.from));
   const redirectsBody = '# Netlify-style redirect map (from  to  status). Seeded from law.redirectFrom.\n'
-    + (redirects.length ? redirects.join('\n') + '\n' : '');
+    + (safeMoves.length ? safeMoves.map((m) => `${base}${m.from}  ${base}${m.to}  301`).join('\n') + '\n' : '');
   writes.push(writePage(join(out, '_redirects'), redirectsBody));
+  for (const m of safeMoves) {
+    writes.push(writePage(join(out, ...m.from.split('/').filter(Boolean), 'index.html'),
+      redirectStub(m.to, { base, origin, label: m.label })));
+  }
 
   // _headers: Netlify/Cloudflare-Pages-style security + caching headers, emitted
   // alongside _redirects. INERT on GitHub Pages (which serves no custom headers),

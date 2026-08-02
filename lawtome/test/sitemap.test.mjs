@@ -155,3 +155,50 @@ test('site files do not inflate the build return counts', async () => {
   assert.equal(r.pages, LAW_COUNT + 1); // home + one page per law
   await rm(out, { recursive:true, force:true });
 });
+
+// GitHub Pages ignores _redirects entirely — it serves static files and nothing
+// else — so every line in that map was a live 404, which is the exact failure a
+// redirect map exists to prevent. Each retirement is therefore ALSO a stub page
+// at the old path. The stub must never bury a real page.
+test('every redirect also exists as a stub page a static host can serve', async () => {
+  const out = await mkdtemp(join(tmpdir(), 'lt-stub-'));
+  await buildSite({ dataDir:'src/data/laws', catFile:'src/data/categories.json', assetsDir:'src/assets', out, base:'/lawtome/', origin:'https://conyso.com' });
+  const rd = await readFile(join(out, '_redirects'), 'utf8');
+  const lines = rd.split('\n').filter((l) => l.trim() && !l.startsWith('#'));
+  assert.ok(lines.length >= 40, `expected the seeded permalink redirects, got ${lines.length}`);
+  for (const line of lines) {
+    const [from, to] = line.trim().split(/\s+/);
+    const rel = from.replace('/lawtome/', '');
+    const stub = join(out, ...rel.split('/').filter(Boolean), 'index.html');
+    assert.ok(existsSync(stub), `no stub page for ${from}`);
+    const html = await readFile(stub, 'utf8');
+    // Instant refresh for a reader, canonical for a crawler, a real link for
+    // anyone whose browser blocks the refresh.
+    assert.match(html, new RegExp(`http-equiv="refresh" content="0; url=${to.replace(/[/]/g, '\\/')}"`));
+    assert.match(html, new RegExp(`rel="canonical" href="https:\\/\\/conyso\\.com${to.replace(/[/]/g, '\\/')}"`));
+    assert.match(html, new RegExp(`<a href="${to.replace(/[/]/g, '\\/')}"`));
+    // A stub is a signpost, not a destination: it must not carry the full page
+    // chrome, or it would compete with the page it points at.
+    assert.doesNotMatch(html, /<header|class="sec"/);
+  }
+  await rm(out, { recursive:true, force:true });
+});
+
+test('a redirect whose old path is a live law is dropped, not written over it', async () => {
+  const data = await mkdtemp(join(tmpdir(), 'lt-coll-'));
+  await cp('src/data/laws', data, { recursive:true });
+  // Point goodhart's redirectFrom at a slug that IS a live law.
+  const f = join(data, 'goodharts-law.json');
+  const law = JSON.parse(await readFile(f, 'utf8'));
+  law.redirectFrom = ['laws/campbells-law/'];
+  await writeFile(f, JSON.stringify(law));
+  const out = await mkdtemp(join(tmpdir(), 'lt-coll-out-'));
+  await buildSite({ dataDir:data, catFile:'src/data/categories.json', assetsDir:'src/assets', out, base:'/lawtome/', origin:'https://conyso.com' });
+  const victim = await readFile(join(out, 'laws', 'campbells-law', 'index.html'), 'utf8');
+  assert.doesNotMatch(victim, /http-equiv="refresh"/, 'a stub buried a real law page');
+  assert.match(victim, /Campbell's Law/);
+  const rd = await readFile(join(out, '_redirects'), 'utf8');
+  assert.doesNotMatch(rd, /laws\/campbells-law\/\s+\/lawtome\/laws\/goodharts-law\//);
+  await rm(data, { recursive:true, force:true });
+  await rm(out, { recursive:true, force:true });
+});

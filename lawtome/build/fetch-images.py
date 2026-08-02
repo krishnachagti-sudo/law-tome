@@ -211,6 +211,26 @@ def confirms_law(text, laws, person):
         pat = re.compile(r'\b' + re.escape(surname) + r"['’]?s?[\s\-–—]+(?:" + EPONYM_KINDS + r')\b')
         if pat.search(hay):
             return laws[0]['name'], 'eponym'
+        # descriptive — the article discusses the law WITHOUT ever attaching the
+        # name possessively. Isaac Newton's article is the case that exposed
+        # this: it says "law of universal gravitation", "the three laws of
+        # motion" and "law of cooling", and the string "Newton's law" appears
+        # nowhere in 87,000 characters. Both paths above therefore failed, and
+        # the most portrait-rich subject in the corpus had no portrait.
+        #
+        # Strip the possessive prefix from the law's own name and look for what
+        # is left. Safe because the remainder must be DISTINCTIVE — two words
+        # and fourteen characters at minimum. "Amdahl's Law" leaves "law", far
+        # under the floor, so the wrong-Gene-Amdahl defence is untouched. What
+        # qualifies is "law of universal gravitation", "inclined plane",
+        # "reaction series", "diagonal argument": phrases that do not turn up in
+        # an unrelated person's article by accident.
+        if re.search(r'\b' + re.escape(surname) + r'\b', hay):
+            for law in laws:
+                for candidate in [law['name']] + list(law.get('aliases') or []):
+                    rest = re.sub(r"^(the\s+)?\S+['’]s\s+", '', norm(candidate)).strip()
+                    if len(rest) >= 14 and len(rest.split()) >= 2 and rest in hay:
+                        return law['name'], 'descriptive'
     return None, None
 
 
@@ -727,10 +747,22 @@ def depicts_the_person(file_name, person):
     That is a weak signal in isolation and a sufficient one here, because the
     alternative was accepting anything the article happened to open with.
     """
+    # Split CamelCase BEFORE folding to lowercase, or the name is invisible.
+    # Commons filenames very often run words together — Newton's own portrait is
+    # "GodfreyKneller-IsaacNewton-1689.jpg", which folds to the single token
+    # "isaacnewton", and the membership test below then finds neither "isaac"
+    # nor "newton". That is why Newton, von Neumann and Galileo — three people
+    # with an embarrassment of public-domain portraits — had none: the gate was
+    # rejecting the right picture for a formatting reason.
+    stem = str(file_name).rsplit('.', 1)[0]
+    stem = re.sub(r'(?<=[a-z0-9])(?=[A-Z])', ' ', stem)
+    # …and split a run of capitals from the word that follows it, so
+    # "JSBachPortrait" yields "JS Bach Portrait" rather than "JSBach Portrait".
+    stem = re.sub(r'(?<=[A-Z])(?=[A-Z][a-z])', ' ', stem)
     # Separators to spaces BEFORE the keyword test: an underscore is a word
     # character, so \b never fires inside "Cavendish_Henry_signature" and the
     # signature sailed through.
-    bare = re.sub(r'[^a-z0-9]+', ' ', norm(str(file_name).rsplit('.', 1)[0]))
+    bare = re.sub(r'[^a-z0-9]+', ' ', norm(stem))
     if NEVER_A_PORTRAIT.search(bare):
         return False
     words = set(bare.split())

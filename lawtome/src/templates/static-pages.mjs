@@ -485,6 +485,47 @@ ${faq.html}  </div>
 }
 
 /**
+ * A redirect, for a host that cannot do redirects.
+ *
+ * dist/_redirects is the Netlify/Cloudflare format, and GitHub Pages ignores it
+ * completely: it serves static files and nothing else. So every one of the 49
+ * redirects the build emits — the retired collection, and 48 law permalinks
+ * seeded from duplicate-slug cleanup — has been a 404 on the live site, which
+ * is the exact failure the redirect map exists to prevent.
+ *
+ * The static-host answer is a stub at the old path: an instant meta refresh for
+ * a reader, a canonical pointing at the destination so a search engine folds the
+ * two together, and a real visible link so the page works with the refresh
+ * blocked. `_redirects` stays for the eventual conyso.com rewrite layer, where
+ * a proper 301 is available and better.
+ *
+ * Deliberately NOT noindex: a canonical and a noindex on the same URL are
+ * contradictory instructions, and the canonical is the one that does the job.
+ *
+ * @param {string} to base-relative destination path (e.g. 'for/engineers/')
+ * @param {string} label what the destination is called, for the visible link
+ */
+export function redirectStub(to, { base = '/', origin = '', label = '' } = {}) {
+  const url = `${base}${to}`;
+  const abs = `${origin}${url}`;
+  const name = label || to;
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url=${escapeHtml(url)}">
+<link rel="canonical" href="${escapeHtml(abs)}">
+<title>Moved — ${escapeHtml(name)} | The Law Tome</title>
+<meta name="description" content="This page has moved to ${escapeHtml(name)}.">
+</head>
+<body>
+<p>This page has moved to <a href="${escapeHtml(url)}">${escapeHtml(name)}</a>.</p>
+</body>
+</html>
+`;
+}
+
+/**
  * 404 Not Found page. Written to dist/404.html so the host (Netlify-style) serves
  * it for unmatched paths. robots: noindex (an error page must never be indexed),
  * follow so crawlers still traverse its recovery links. No canonical/og:url — a

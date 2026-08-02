@@ -2,7 +2,12 @@
   "no": "716",
   "slug": "giffen-good",
   "name": "The Giffen Good",
-  "aliases": ["Giffen paradox", "The upward-sloping demand good"],
+  "aliases": [
+    "Giffen paradox",
+    "The upward-sloping demand good",
+    "The Giffen Paradox",
+    "Giffen good"
+  ],
   "statement": "A staple so central to the poor that they buy more of it as its price rises.",
   "statementAccent": "buy more of it as its price rises",
   "meaning": "A Giffen good is a product that people consume more of as its price rises, and less as its price falls, in apparent violation of the basic law of demand, which holds that quantity demanded falls when price rises. This gives it an upward-sloping demand curve over some range. The concept is named after the Scottish economist and statistician Sir Robert Giffen, to whom Alfred Marshall attributed the idea in his Principles of Economics. A Giffen good must be an inferior good that makes up a large share of a poor consumer's budget and has no close substitutes; for such a good, a price rise can drive consumption up rather than down. Long treated as a theoretical curiosity with no firmly documented real-world example, Giffen behaviour was eventually found empirically among very poor households, making it a striking, genuine exception to a foundational rule of economics.",
@@ -33,9 +38,18 @@
   ],
   "whyItMatters": "The Giffen good is a famous and instructive exception to the law of demand, one of the most basic principles in economics, and it is a staple of microeconomics teaching. By showing that a price rise can, under specific conditions, increase consumption, it forces a careful understanding of how substitution and income effects combine to shape demand, and it demonstrates that the downward-sloping demand curve, while nearly universal, is not a logical necessity. For a long time no rigorously documented real-world Giffen good existed, and some economists doubted that any did, which made the eventual empirical confirmation among poor households consuming subsistence staples a notable event. The Giffen good thus serves both as a conceptual sharpening tool for consumer theory and as a reminder that even foundational economic laws have carefully bounded exceptions.",
   "working": [
-    {"lead": "Check the good is an inferior staple", "text": "confirm it is an inferior good taking up a large share of a poor consumer's budget with no close substitutes."},
-    {"lead": "Raise the price", "text": "note that a price rise makes the household poorer, forcing it to give up costlier foods it can no longer afford."},
-    {"lead": "Watch consumption rise", "text": "see the household buy even more of the cheap staple, as the income effect outweighs the substitution effect."}
+    {
+      "lead": "Check the good is an inferior staple",
+      "text": "confirm it is an inferior good taking up a large share of a poor consumer's budget with no close substitutes."
+    },
+    {
+      "lead": "Raise the price",
+      "text": "note that a price rise makes the household poorer, forcing it to give up costlier foods it can no longer afford."
+    },
+    {
+      "lead": "Watch consumption rise",
+      "text": "see the household buy even more of the cheap staple, as the income effect outweighs the substitution effect."
+    }
   ],
   "limits": "Genuine Giffen goods are rare because all three conditions must hold at once: the good must be inferior, take a large budget share, and lack close substitutes, a combination found mainly among very poor households consuming subsistence staples. The classic historical examples, especially the Irish potato famine, are disputed, and for a long time no real-world case was firmly documented. The strongest empirical evidence, from Jensen and Miller's China study, was clear for rice in Hunan but weaker for wheat in Gansu, so even the confirming data are uneven. The effect also holds only over a range of prices and incomes, not universally. So the Giffen good is a real but narrow phenomenon, important theoretically and as a rare empirical curiosity rather than a common feature of markets.",
   "misreadings": "A Giffen good is not simply any good bought more at higher prices; it specifically requires an inferior staple with a large budget share and no substitutes, where the income effect dominates. It is not the same as a Veblen good, which is a luxury bought more at higher prices for status, an entirely different mechanism. And the classic potato-famine story is not established fact; its status as a true Giffen case is disputed, so citing it as the definitive example, or treating Giffen goods as common, overstates a rare and carefully conditioned exception.",
@@ -46,12 +60,29 @@
   "namedAfter": "Robert Giffen",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Giffen good, Wikipedia. — the upward-sloping demand definition, the Giffen and Marshall attribution, the income-versus-substitution mechanism and three conditions, the disputed potato example, the Jensen and Miller China study, and the contrast with Veblen goods.", "url": "https://en.wikipedia.org/wiki/Giffen_good", "type": "secondary"},
-    {"text": "Jensen and Miller, Giffen Behavior and Subsistence Consumption, American Economic Review (2008). — field evidence of Giffen behaviour for rice and wheat among poor households in China.", "url": "https://www.aeaweb.org/articles?id=10.1257/aer.98.4.1553", "type": "primary"}
+    {
+      "text": "Giffen good, Wikipedia. — the upward-sloping demand definition, the Giffen and Marshall attribution, the income-versus-substitution mechanism and three conditions, the disputed potato example, the Jensen and Miller China study, and the contrast with Veblen goods.",
+      "url": "https://en.wikipedia.org/wiki/Giffen_good",
+      "type": "secondary"
+    },
+    {
+      "text": "Jensen and Miller, Giffen Behavior and Subsistence Consumption, American Economic Review (2008). — field evidence of Giffen behaviour for rice and wheat among poor households in China.",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/aer.98.4.1553",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Giffen_good",
   "related": [
-    {"slug": "veblen-good", "kind": "tension"},
-    {"slug": "diminishing-marginal-utility", "kind": "kindred"}
+    {
+      "slug": "veblen-good",
+      "kind": "tension"
+    },
+    {
+      "slug": "diminishing-marginal-utility",
+      "kind": "kindred"
+    }
+  ],
+  "redirectFrom": [
+    "laws/the-giffen-paradox/"
   ]
 }

@@ -17,6 +17,13 @@ const PROVENANCE = new Set(['canon', 'coined']);
 // ABSENT MEANS UNKNOWN, NOT PERSON: an entry whose namesake could not be
 // resolved carries no field, and callers must not read that silence as a claim.
 const NAMESAKE_KIND = new Set(['person', 'group', 'place', 'work', 'fictional', 'event', 'animal']);
+
+/** Fold a name or alias for comparison: drop a leading article, keep letters. */
+function aliasKey(s) {
+  return String(s || '').toLowerCase().trim()
+    .replace(/^(the|a|an)\s+/, '')
+    .replace(/[^a-z0-9]/g, '');
+}
 // `example` is handled separately below: an entry satisfies it with either the
 // singular `example` string or a non-empty `examples[]` array (the richer form).
 const REQUIRED = ['no','slug','name','statement','meaning','origin','category','reliability','provenance'];
@@ -34,6 +41,15 @@ export function validateCorpus(laws, categories) {
   // `known` excludes falsy slugs so a dangling ref can't spuriously "resolve"
   // against an entry that is itself missing its slug (which already errors).
   const errs = [], slugs = new Set(), nos = new Set(), names = new Set(), known = new Set(laws.map(l => l.slug).filter(Boolean));
+  // Every display name, seeded before the alias pass so an alias colliding with
+  // another entry's NAME is caught too — "Cantor's Theorem" listing "Cantor's
+  // diagonal argument", which is a different entry's name, not another name for
+  // this one. Leading articles are folded: "The Original Position" and "Original
+  // position" are the same claim on the same words.
+  const aliasOwner = new Map();
+  for (const l of laws) {
+    if (l && l.name) aliasOwner.set(aliasKey(l.name), l.slug || l.name);
+  }
   for (const l of laws) {
     const id = l.slug || l.name || '(unknown)';
     for (const f of REQUIRED) if (!l[f]) errs.push(`${id}: missing required field "${f}"`);
@@ -44,6 +60,23 @@ export function validateCorpus(laws, categories) {
       const nk = l.name.trim().toLowerCase();
       if (names.has(nk)) errs.push(`duplicate name "${l.name}"`);
       names.add(nk);
+    }
+    // …and the same across ALIASES, which the name check alone missed for years.
+    // The corpus grew in waves and a later wave rewrote an entry an earlier one
+    // already had, under the other of its two usual names: "The Giffen Paradox"
+    // and "The Giffen Good" were two pages, each listing the other's name as its
+    // alias, rated Contested and Empirical, citing the same two sources. An
+    // alias is a claim that this entry is ALSO called X; if two entries claim
+    // one name, at most one of them is right, so this is an error either way —
+    // a duplicate to merge, or an alias to take off the entry it does not
+    // belong to. `aliasOwner` is filled after the loop, over all entries.
+    for (const a of (Array.isArray(l.aliases) ? l.aliases : [])) {
+      if (typeof a !== 'string' || !a.trim()) continue;
+      const ak = aliasKey(a);
+      if (!ak) continue;
+      const prev = aliasOwner.get(ak);
+      if (prev && prev !== id) errs.push(`name/alias "${a}" is claimed by both ${prev} and ${id}`);
+      else aliasOwner.set(ak, id);
     }
     // At least one worked example, in either the legacy `example` string or the
     // richer `examples[]` array.
