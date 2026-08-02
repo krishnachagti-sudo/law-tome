@@ -189,6 +189,12 @@ export async function buildSite(opts) {
     listingPage(laws, { title: 'Browse', base, kind: 'browse', active: 'browse', origin, categories }),
   ));
 
+  // Comparison pairs are resolved here rather than beside the /compare/ writes:
+  // three page types now link a pair at the page that compares it — the tension
+  // hub, the collection and reading-list pages, and each field page.
+  const compares = comparePairs(laws);
+  const compareSlugs = Object.fromEntries(compares.map((p) => [[p.a.slug, p.b.slug].sort().join('|'), p.slug]));
+
   // One category page per category PRESENT in the corpus, using the label from
   // categories.json for the page title. First-seen order over corpus order.
   const present = [];
@@ -202,7 +208,7 @@ export async function buildSite(opts) {
   for (const cat of present) {
     writes.push(writePage(
       join(out, 'category', cat, 'index.html'),
-      listingPage(membersByCat.get(cat), { title: categories[cat] || cat, base, kind: 'category', origin, categoryKey: cat, count: publishedCount, images }),
+      listingPage(membersByCat.get(cat), { title: categories[cat] || cat, base, kind: 'category', origin, categoryKey: cat, count: publishedCount, images, categories, byslug, compareSlugs }),
     ));
   }
 
@@ -219,11 +225,6 @@ export async function buildSite(opts) {
   // opposing. Derived from related[] tension edges — always emitted (empty state
   // when a corpus has none), so the footer link never dangles.
   const tension = tensionPairs(laws);
-  // Built before the tension hub renders: each opposing pair links at the page
-  // that actually compares the two, which until now was reachable only from
-  // /compare/.
-  const compares = comparePairs(laws);
-  const compareSlugs = Object.fromEntries(compares.map((p) => [[p.a.slug, p.b.slug].sort().join('|'), p.slug]));
   writes.push(writePage(join(out, 'tension', 'index.html'), tensionPage(tension, { base, origin, count: publishedCount, categories, images, compareSlugs })));
   // "X vs Y" comparison pages: one per near-twin / tension pair the corpus marks,
   // plus a /compare/ hub. High-intent long-tail capture ("Occam vs Hanlon"); pure

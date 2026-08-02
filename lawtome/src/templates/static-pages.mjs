@@ -31,10 +31,39 @@ export function coinPage({ base = '/', origin = '', count } = {}) {
     'Coin an original law or suggest one for the Canon. Submissions are verified before publication and, if coined, credited to you in the Coined wing.';
 
   const coinStep = (i, t, b) => `      <div class="mstep"><span class="mstep-n">${i}</span><div class="mstep-b"><span class="mstep-t">${t}</span><span class="mstep-p">${b}</span></div></div>`;
+
+  const faq = hubFaq([
+    {
+      q: 'What actually happens after I submit?',
+      a: `The form opens a pre-filled public issue on the project's GitHub repository — you see exactly what will be posted and can edit it before it is sent. Nothing appears on the site until it has been reviewed by hand. Because the issue is public, the review happens in the open rather than in a private inbox.`,
+    },
+    {
+      q: 'What is the difference between coining and suggesting?',
+      a: `Coining is naming a pattern that has no name yet: it is your original work, and if it is published it goes into <a href="${base}coined/">the Coined wing</a> credited to you. Suggesting is telling us about a law that already exists in the literature and is missing from the index — those join the sourced corpus and need a resolvable source before they can ship.`,
+    },
+    {
+      q: 'What makes a submission likely to be rejected?',
+      a: 'A joke with no claim in it, a definition dressed as a law, a restatement of something already indexed under another name, or — for a suggestion — no source anyone can check. The most common failure by far is prior art: the pattern already has a name, usually an older one.',
+    },
+    {
+      q: 'Do I keep any rights over it?',
+      a: 'You keep the authorship. The licence you grant is non-exclusive, so it remains yours to use anywhere else; what it lets us do is publish, edit and cross-link it under the CC BY licence that covers the whole corpus, with the credit attached.',
+    },
+    {
+      q: 'Can I use this to report a mistake instead?',
+      a: `Yes, and please do. A better source or an earlier attribution for an entry that already exists is worth more to the index than a new entry. Use the same form and say what is wrong; <a href="${base}about/">the method page</a> explains why corrections matter more here than volume.`,
+    },
+  ], { heading: 'Before you submit' });
+
   const section = `<section class="sec" id="coin">
   <div class="wrap">
-    <div class="sec-head"><h1>Coin a law</h1><span class="sub">nobody else lets you do this</span></div>
-    <p class="sec-lede">You’ve seen it a dozen times but it has no name — the pattern that keeps repeating, the effect everyone recognises and no one can point to. Name it. If it holds up, it goes into the <a href="${base}coined/">Coined wing</a> alongside <a href="${base}laws/goodharts-law/">Goodhart</a> and <a href="${base}laws/parkinsons-law/">Parkinson</a> — credited, clearly marked, with your name on it. This is the one thing a static list can never offer: a way in.</p>
+${hubHead({
+    title: 'Coin a law',
+    sub: 'nobody else lets you do this',
+    answer: `Coining a law means naming a pattern that has no name yet. Submit it here and it is reviewed by hand; if it holds up, it is published in <a href="${base}coined/">the Coined wing</a> as a real entry — explained, cross-linked into the graph, marked <code>provenance: coined</code>, and credited to you under CC BY. You can also use the same form to suggest an existing law the index is missing, or to report a mistake in one it already has.`,
+    crumbs: [],
+    base,
+  })}    <p class="sec-lede">You’ve seen it a dozen times but it has no name — the pattern that keeps repeating, the effect everyone recognises and no one can point to. Name it. If it holds up, it goes into the <a href="${base}coined/">Coined wing</a> alongside <a href="${base}laws/goodharts-law/">Goodhart</a> and <a href="${base}laws/parkinsons-law/">Parkinson</a> — credited, clearly marked, with your name on it. This is the one thing a static list can never offer: a way in.</p>
 
     <div class="coin-how">
       <h2 class="about-h2">How it works</h2>
@@ -87,12 +116,34 @@ ${coinStep('3', 'It’s published — with your name', 'If it clears, it becomes
     </form>
     <p class="fine">Submitting opens a <b>pre-filled public issue</b> on the project's <a href="https://github.com/krishnachagti-sudo/law-tome/issues" rel="noopener">GitHub repository</a> — the same place the corpus itself is maintained, so every submission and the review of it stay in the open. You'll see exactly what will be posted before anything is sent, and you can edit it there. A free GitHub account is required.</p>
     <p class="fine">Submissions are reviewed by hand before anything is published. Nothing you enter here appears on the site until it clears verification.</p>
-  </div>
+${faq.html}  </div>
 </section>
 `;
 
   return (
-    head({ title: 'Coin a law — The Law Tome', description, base, origin, path: 'coin/' }) +
+    head({
+      title: 'Coin a Law — Name a Pattern Nobody Has Named | The Law Tome',
+      description, base, origin, path: 'coin/',
+      jsonld: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Coin a law',
+          url: `${origin}${base}coin/`,
+          description,
+          isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}${base}` },
+            { '@type': 'ListItem', position: 2, name: 'Coin a law' },
+          ],
+        },
+        ...(faq.jsonld ? [faq.jsonld] : []),
+      ],
+    }) +
     sprite() +
     header({ base, active: 'coin', count }) +
     section +
@@ -356,11 +407,38 @@ export function privacyPage({ base = '/', origin = '', count } = {}) {
   const description =
     'The Law Tome privacy notice: what a coin submission collects, the consent basis for publishing it, and our no-tracking posture.';
 
+  const faq = hubFaq([
+    {
+      q: 'Does The Law Tome use cookies?',
+      a: 'It sets none. The two things the site remembers — your light or dark theme, and <a href="' + base + 'saved/">your saved shortlist</a> — are kept in your browser\'s own local storage, which is never transmitted with a request the way a cookie is. Clearing site data clears both.',
+    },
+    {
+      q: 'Do you know which laws I read?',
+      a: 'No. There is no analytics script on any page, no pixel, no third-party embed, and no server-side log we consult. The site is static files; the only record of a visit is whatever the host keeps to serve it.',
+    },
+    {
+      q: 'What happens to a submission I make?',
+      a: `The <a href="${base}coin/">coin form</a> opens a public issue on the project's GitHub repository with the text you entered — so it becomes public at the moment you send it, under GitHub's own terms as well as this notice. Do not put anything in it you would not want read.`,
+    },
+    {
+      q: 'How do I get something removed?',
+      a: 'Ask, through the same form or on the repository, and say which submission. Consent is the basis for publishing it, and withdrawing consent withdraws the entry — including the credit line, if a coined law of yours has been published.',
+    },
+    {
+      q: 'Is there an account?',
+      a: `None, anywhere on the site. There is nothing to sign up for, so there is no password, no email list, and no profile to delete.`,
+    },
+  ], { heading: 'Privacy questions' });
+
   const section = `<section class="sec" id="privacy">
   <div class="wrap narrow">
-    <div class="sec-head"><h1>Privacy</h1></div>
-    <p class="lede">The Law Tome is a reference project. There are <b>no ads and no tracking of what you read</b> — no analytics cookies, no reading profile, no third-party trackers on any page.</p>
-    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
+${hubHead({
+    title: 'Privacy',
+    answer: 'The Law Tome sets no cookies, runs no analytics, and keeps no record of which laws you read. The only personal data it ever holds is what you deliberately type into the coin form, which is used to review and — with your consent — publish and credit your submission.',
+    lede: 'A reference project, not a business with a funnel. There are <b>no ads and no tracking</b> — no analytics cookies, no reading profile, no third-party scripts on any page.',
+    crumbs: [['about/', 'About']],
+    base,
+  })}    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
 
     <h2>What we collect</h2>
     <p>Only what you type into the <a href="${base}coin/">coin form</a> when you choose to submit a law: the name you give for credit, the law's title and statement, your chosen mode (coin or suggest), and any sources you provide. Browsing the rest of the site collects nothing about you.</p>
@@ -370,12 +448,35 @@ export function privacyPage({ base = '/', origin = '', count } = {}) {
 
     <h2>What we don't do</h2>
     <p>We don't sell your data, we don't build advertising profiles, and we don't track which laws you read. Submission data is used only to review and, if it clears verification, publish your entry.</p>
-  </div>
+${faq.html}  </div>
 </section>
 `;
 
   return (
-    head({ title: 'Privacy — The Law Tome', description, base, origin, path: 'privacy/' }) +
+    head({
+      title: 'Privacy — No Ads, No Tracking, No Account | The Law Tome',
+      description, base, origin, path: 'privacy/',
+      jsonld: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Privacy',
+          url: `${origin}${base}privacy/`,
+          description,
+          isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}${base}` },
+            { '@type': 'ListItem', position: 2, name: 'About', item: `${origin}${base}about/` },
+            { '@type': 'ListItem', position: 3, name: 'Privacy' },
+          ],
+        },
+        ...(faq.jsonld ? [faq.jsonld] : []),
+      ],
+    }) +
     sprite() +
     header({ base, active: 'about', count }) +
     section +

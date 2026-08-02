@@ -245,7 +245,7 @@ ${bar(tiers, (k) => `${base}reliability/${String(k).toLowerCase()}/`)}
 }
 
 /** Member pairs that the corpus marks as opposed — a set arguing with itself. */
-export function setTensions(laws = [], { base = '/', compareSlugs = {} } = {}) {
+export function setTensions(laws = [], { base = '/', compareSlugs = {}, noun = 'set' } = {}) {
   const rows = Array.isArray(laws) ? laws : [];
   const inSet = new Map(rows.map((l) => [l.slug, l]));
   const seen = new Set();
@@ -263,8 +263,8 @@ export function setTensions(laws = [], { base = '/', compareSlugs = {} } = {}) {
   }
   if (!pairs.length) return '';
   return `    <section class="setten">
-      <h2>Where this set disagrees with itself</h2>
-      <p class="setten-note">${pairs.length} ${pairs.length === 1 ? 'pair' : 'pairs'} inside this set pull in opposite directions. That is not a flaw in the selection — it is the useful part.</p>
+      <h2>Where this ${escapeHtml(noun)} disagrees with itself</h2>
+      <p class="setten-note">${pairs.length} ${pairs.length === 1 ? 'pair' : 'pairs'} inside this ${escapeHtml(noun)} pull in opposite directions. That is not a flaw in the ${escapeHtml(noun)} — it is the useful part.</p>
       <ul class="setten-list">
 ${pairs.map((p) => `        <li>${p.compare
     ? `<a href="${base}compare/${escapeHtml(p.compare)}/">${escapeHtml(p.a.name)} <span>vs</span> ${escapeHtml(p.b.name)}</a>`
@@ -279,7 +279,7 @@ ${pairs.map((p) => `        <li>${p.compare
  * curator did not include. Ranked by how many members link them, so the list is
  * "what this set keeps gesturing towards", not a random neighbour dump.
  */
-export function setAdjacent(laws = [], { base = '/', byslug = {}, limit = 8 } = {}) {
+export function setAdjacent(laws = [], { base = '/', byslug = {}, limit = 8, noun = 'set' } = {}) {
   const rows = Array.isArray(laws) ? laws : [];
   const inSet = new Set(rows.map((l) => l.slug));
   const votes = new Map();
@@ -296,13 +296,103 @@ export function setAdjacent(laws = [], { base = '/', byslug = {}, limit = 8 } = 
     .map(([slug, n]) => ({ law: byslug[slug], n }));
   if (!top.length) return '';
   return `    <section class="setadj">
-      <h2>Just outside this set</h2>
-      <p class="setadj-note">Entries these laws keep pointing at that the collection does not include — each linked by at least two members.</p>
+      <h2>Just outside this ${escapeHtml(noun)}</h2>
+      <p class="setadj-note">Entries these laws keep pointing at from outside the ${escapeHtml(noun)} — each linked by at least two members.</p>
       <ul class="coll-laws">
 ${top.map((t) => `        <li><a href="${base}laws/${escapeHtml(t.law.slug)}/">${escapeHtml(t.law.name)}</a></li>`).join('\n')}
       </ul>
     </section>
 `;
+}
+
+/**
+ * The shape of a FIELD, read off its members.
+ *
+ * setShape's first column tallies fields, which is degenerate on a page whose
+ * every member is in the same one. A field wants a different third fact: which
+ * other fields it borders, counted from the relations its own laws draw. That
+ * is the one thing a field page can say that a list of its members cannot —
+ * psychology's laws point at economics 31 times, and that IS the relationship
+ * between the two disciplines as this corpus records it.
+ *
+ * @returns {{html: string, tiers: Array, span: Array|null, named: number, neighbours: Array, stats: Array}}
+ */
+export function fieldShape(laws = [], { base = '/', categories = {}, byslug = {}, field = '' } = {}) {
+  const rows = Array.isArray(laws) ? laws : [];
+  const tiers = (() => {
+    const m = new Map();
+    for (const l of rows) if (l && l.reliability) m.set(l.reliability, (m.get(l.reliability) || 0) + 1);
+    return [...m.entries()].sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0])));
+  })();
+  const years = rows.map((l) => Number(l.coinedYear)).filter((y) => Number.isFinite(y) && y >= 1);
+  const span = years.length ? [Math.min(...years), Math.max(...years)] : null;
+  const named = rows.filter((l) => l.namedAfter).length;
+
+  // Count each relation ONCE per edge, not once per endpoint: a link is a link
+  // whichever member drew it, and double-counting would make a field look twice
+  // as connected as it is.
+  const edges = new Set();
+  const votes = new Map();
+  for (const l of rows) {
+    for (const r of (Array.isArray(l.related) ? l.related : [])) {
+      const other = r && r.slug && byslug[r.slug];
+      if (!other || !other.category || other.category === field) continue;
+      const key = [l.slug, r.slug].sort().join('|');
+      if (edges.has(key)) continue;
+      edges.add(key);
+      votes.set(other.category, (votes.get(other.category) || 0) + 1);
+    }
+  }
+  const neighbours = [...votes.entries()]
+    .sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0])))
+    .slice(0, 6);
+
+  const list = (entries, href) => entries.length
+    ? `        <ul class="shape-list">
+${entries.map(([k, n]) => `          <li><a href="${href(k)}">${escapeHtml(categories[k] || k)}</a><span>${n}</span></li>`).join('\n')}
+        </ul>`
+    : '        <p class="setshape-note">None recorded.</p>';
+
+  const html = rows.length
+    ? `    <section class="setshape">
+      <h2 class="setshape-h">The shape of this field</h2>
+      <div class="setshape-grid">
+        <div class="setshape-col">
+          <h3>How well established</h3>
+${list(tiers, (k) => `${base}reliability/${String(k).toLowerCase()}/`)}
+        </div>
+        <div class="setshape-col">
+          <h3>Fields it borders</h3>
+${list(neighbours, (k) => `${base}category/${escapeHtml(k)}/`)}
+        </div>
+        <div class="setshape-col">
+          <h3>Span</h3>
+          <p class="setshape-note">${span
+            ? `Named between <b>${span[0]}</b> and <b>${span[1]}</b>${span[0] !== span[1] ? `, ${span[1] - span[0]} years apart` : ''}.`
+            : 'None of these carries a reliable date.'}${named
+              ? named === rows.length
+                ? ` ${rows.length === 1 ? 'It is' : `All ${rows.length} are`} <a href="${base}named-after/">named after someone</a>.`
+                : ` ${named} of the ${rows.length} are <a href="${base}named-after/">named after someone</a>.`
+              : ''}</p>
+        </div>
+      </div>
+    </section>
+`
+    : '';
+
+  return {
+    html,
+    tiers,
+    span,
+    named,
+    neighbours,
+    stats: [
+      [rows.length, rows.length === 1 ? 'law' : 'laws'],
+      ...(tiers.length ? [[tiers[0][1], `rated ${String(tiers[0][0]).toLowerCase()}`]] : []),
+      ...(span ? [[`${span[0]}–${span[1]}`, 'span']] : []),
+      ...(neighbours.length ? [[neighbours.length, neighbours.length === 1 ? 'field it borders' : 'fields it borders']] : []),
+    ],
+  };
 }
 
 /**

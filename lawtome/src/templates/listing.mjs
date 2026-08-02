@@ -14,7 +14,7 @@
 // failed on missed escaping.
 
 import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, reliabilitySlug, browseControls, asset, figureStrip } from './partials.mjs';
-import { hubNav } from './hub.mjs';
+import { hubNav, hubFaq, fieldShape, setTensions, setAdjacent } from './hub.mjs';
 
 /**
  * A browse or per-category listing page — one full HTML document.
@@ -26,7 +26,7 @@ import { hubNav } from './hub.mjs';
  * @param {string} [o.active] nav key to mark active (defaults to 'browse')
  * @param {string} [o.origin=''] absolute-URL origin for JSON-LD (optional; degrades to base-relative)
  */
-export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '', reliabilityKey = '', count, categories = {}, images } = {}) {
+export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '', reliabilityKey = '', count, categories = {}, images, byslug = {}, compareSlugs = {} } = {}) {
   const rows = Array.isArray(laws) ? laws : [];
   // A reliability-tier page (kind='reliability') is a faceted-browse view: the
   // server renders only that tier's laws and stamps the grid so the client keeps
@@ -121,17 +121,71 @@ ${items}
     : '';
   const browseMore = kind === 'browse' ? hubNav('browse/', { base }) : '';
 
+  // A field page was the last page type still built the way everything was
+  // built at the start: a crumb, an H1 and a grid. It said nothing about the
+  // field as a field, so its length was purely a function of how many laws the
+  // field happens to hold — linguistics, with six, came to 210 words. All of
+  // what follows is read off the members; none of it is authored per field.
+  const isField = kind === 'category' && rows.length > 0;
+  const shape = isField ? fieldShape(rows, { base, categories, byslug, field: categoryKey }) : null;
+  let fieldAnswer = '';
+  let fieldMore = '';
+  let fieldFaq = { html: '', jsonld: null };
+  if (isField) {
+    // "6 empirical by how well established each one is" is only a sentence when
+    // the field actually splits across tiers; a unanimous field should say so.
+    const tierPhrase = !shape.tiers.length
+      ? ''
+      : shape.tiers.length === 1
+        ? `every one of them rated <a href="${base}reliability/${String(shape.tiers[0][0]).toLowerCase()}/">${escapeHtml(shape.tiers[0][0])}</a>`
+        : `${shape.tiers.map(([k, n]) => `${n} rated <a href="${base}reliability/${String(k).toLowerCase()}/">${escapeHtml(k)}</a>`).join(', ')}`;
+    const oldest = rows
+      .filter((l) => Number.isFinite(Number(l.coinedYear)) && Number(l.coinedYear) >= 1)
+      .sort((a, b) => Number(a.coinedYear) - Number(b.coinedYear))[0];
+    const newest = rows
+      .filter((l) => Number.isFinite(Number(l.coinedYear)) && Number(l.coinedYear) >= 1)
+      .sort((a, b) => Number(b.coinedYear) - Number(a.coinedYear))[0];
+    const lawLink = (l) => `<a href="${base}laws/${escapeHtml(l.slug)}/">${escapeHtml(l.name)}</a>`;
+
+    fieldAnswer = `    <p class="hub-answer">The Law Tome lists ${rows.length} named ${rows.length === 1 ? 'law' : 'laws'}, principles and effects under <b>${escapeHtml(title)}</b>${shape.span ? `, named between ${shape.span[0]} and ${shape.span[1]}` : ''}${tierPhrase ? ` — ${tierPhrase}` : ''}. Every entry is defined in plain language, traced to a source, and linked to the laws it echoes and contradicts.</p>\n`;
+
+    fieldFaq = hubFaq([
+      {
+        q: `What are the named laws of ${title.toLowerCase()}?`,
+        a: `${rows.length} of them are indexed here: ${rows.map(lawLink).join(', ')}.`,
+      },
+      ...(shape.tiers.length ? [{
+        q: 'How well established are they?',
+        a: `${shape.tiers.map(([k, n]) => `${n} rated <a href="${base}reliability/${String(k).toLowerCase()}/">${escapeHtml(k)}</a>`).join(', ')}. The rating is on every card and at the top of every entry, so a measured finding in this field is never dressed as a rule of thumb.`,
+      }] : []),
+      ...(oldest && newest && oldest.slug !== newest.slug ? [{
+        q: `Which is the oldest, and which the newest?`,
+        a: `The earliest dated entry here is ${lawLink(oldest)} (${oldest.coinedYear}); the most recent is ${lawLink(newest)} (${newest.coinedYear}). Walk the whole corpus by date on <a href="${base}timeline/">the timeline</a>.`,
+      }] : []),
+      ...(shape.neighbours.length ? [{
+        q: `What other fields does ${title.toLowerCase()} border?`,
+        a: `Counting the relations these laws actually draw: ${shape.neighbours.map(([k, n]) => `<a href="${base}category/${escapeHtml(k)}/">${escapeHtml(categories[k] || k)}</a> (${n} ${n === 1 ? 'link' : 'links'})`).join(', ')}.`,
+      }] : []),
+    ], { heading: `Questions about ${title.toLowerCase()}` });
+
+    fieldMore = setTensions(rows, { base, compareSlugs, noun: 'field' })
+      + setAdjacent(rows, { base, byslug, noun: 'field' })
+      + shape.html
+      + fieldFaq.html
+      + hubNav(`category/${categoryKey}/`, { base });
+  }
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
 ${crumb}    <div class="sec-head">
       <h1>${escapeHtml(h1)}</h1>
       <span class="sub" id="showing" aria-live="polite">showing ${rows.length} of ${rows.length}</span>
     </div>
-${browseAnswer}${lede}${strip}    <div class="chips" id="chips">${chips}</div>
+${browseAnswer}${fieldAnswer}${lede}${shape ? `    <div class="hub-stats">${shape.stats.map(([v, l]) => `<span class="hub-stat"><b>${escapeHtml(String(v))}</b> ${escapeHtml(l)}</span>`).join('')}</div>\n` : ''}${strip}    <div class="chips" id="chips">${chips}</div>
 ${controls}    <div class="grid" id="grid"${gridAttr}>
 ${grid}
     </div>
-${fieldHub}${browseMore}  </div>
+${fieldHub}${fieldMore}${browseMore}  </div>
 </section>
 `;
 
@@ -147,7 +201,24 @@ ${fieldHub}${browseMore}  </div>
           ...(isReliability ? [{ '@type': 'ListItem', position: 3, name: 'Reliability', item: `${origin}${base}reliability/` }] : []),
           { '@type': 'ListItem', position: isReliability ? 4 : 3, name: title },
         ],
-      }]
+      },
+      // A field page IS a collection of its members; declaring the ItemList
+      // lets an answer engine lift "the named laws of X" without scraping cards.
+      ...(kind === 'category' && rows.length ? [{
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: title,
+        url: `${origin}${base}category/${categoryKey}/`,
+        isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: rows.length,
+          itemListElement: rows.slice(0, 100).map((l, i) => ({
+            '@type': 'ListItem', position: i + 1, name: l.name, url: `${origin}${base}laws/${l.slug}/`,
+          })),
+        },
+      }] : []),
+      ...(fieldFaq.jsonld ? [fieldFaq.jsonld] : [])]
     : [{
         '@context': 'https://schema.org',
         '@type': 'DefinedTermSet',
