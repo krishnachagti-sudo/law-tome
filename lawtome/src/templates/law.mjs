@@ -368,9 +368,18 @@ ${h2}${inner}
 
   // Variants: named sub-forms / corollaries ({name, text}) — e.g. the four types of Goodhart.
   if (Array.isArray(law.variants) && law.variants.length) {
-    const items = law.variants.map((v) =>
-      `          <div class="variant" data-reveal><span class="vname">${escapeHtml(v.name)}</span><p class="vtext">${escapeHtml(v.text)}</p></div>`
-    ).join('\n');
+    // Each variant is a NAMED thing — "mutational meltdown", "regressional
+    // Goodhart" — and until now none of the 1,877 of them was addressable. A
+    // reader who wants to point a colleague at one sub-type had to say "scroll
+    // to types and look for the third card". Every card now has a stable id and
+    // a permalink, deduped because a couple of laws name two variants the same.
+    const seenV = new Set();
+    const items = law.variants.map((v) => {
+      let vid = 'v-' + idify(v.name);
+      if (seenV.has(vid)) { let n = 2; while (seenV.has(`${vid}-${n}`)) n++; vid = `${vid}-${n}`; }
+      seenV.add(vid);
+      return `          <div class="variant" id="${vid}" data-reveal><span class="vname">${escapeHtml(v.name)}</span><a class="vlink" href="#${vid}" aria-label="Link to ${escapeHtml(v.name)}">§</a><p class="vtext">${escapeHtml(v.text)}</p></div>`;
+    }).join('\n');
     const varAnswer = law.variants.map((v) => `${v.name} — ${v.text}`).join(' ');
     blocks.push(block('Types & variants', `        <div class="variants">\n${items}\n        </div>`, false, `What are the types of ${L}?`, varAnswer));
   }

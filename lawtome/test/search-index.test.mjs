@@ -152,3 +152,17 @@ test('the shipped search index stays within the client-fetch budget', () => {
   const gz = gzipSync(JSON.stringify(buildSearchIndex(laws))).length;
   assert.ok(gz < 260 * 1024, `search index is ${(gz / 1024).toFixed(0)}KB gzipped, over the 260KB budget`);
 });
+
+// A variant NAME is a search term in its own right — someone looks up
+// "mutational meltdown", not "Muller's Ratchet". It goes in the base blob, not
+// the concept bag, so the multi-word phrase survives intact rather than being
+// shredded into two capped, deduplicated words. The variant TEXT stays out.
+test('variant names are searchable, variant prose is not', () => {
+  const rows = buildSearchIndex([{
+    slug: 'mr', no: '001', name: "Muller's Ratchet", statement: 'Harmful mutations build up.',
+    category: 'biology', reliability: 'Empirical',
+    variants: [{ name: 'Mutational meltdown', text: 'An accelerating spiral of shrinking population size.' }],
+  }]);
+  assert.match(rows[0].blob, /mutational meltdown/);
+  assert.doesNotMatch(rows[0].blob, /accelerating spiral/);
+});

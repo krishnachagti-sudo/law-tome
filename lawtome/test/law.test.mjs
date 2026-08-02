@@ -171,3 +171,26 @@ test('structured answers carry decoded text, not HTML entities', () => {
   assert.match(a, /"a target"/);
   assert.doesNotMatch(a, /&amp;|&quot;|&#39;/);
 });
+
+// Each named variant is a thing people search for and link to — "mutational
+// meltdown", "regressional Goodhart" — and none of the 1,877 of them was
+// addressable. Ids must be stable and unique per page; a couple of laws name two
+// variants the same, and two elements sharing an id would make one unreachable.
+test('every named variant is individually addressable', () => {
+  const l = {
+    no: '005', slug: 'u', name: 'U Law', statement: 'S', category: 'economics', reliability: 'Heuristic',
+    meaning: 'A meaning long enough to carry into the structured data as an answer.',
+    variants: [
+      { name: 'Regressional', text: 'One.' },
+      { name: 'Extremal', text: 'Two.' },
+      { name: 'Regressional', text: 'A second card an editor named the same thing.' },
+    ],
+    sources: [{ title: 'T', url: 'https://example.org/' }],
+  };
+  const h = lawPage(l, { base: '/', origin: 'https://conyso.com' });
+  const ids = [...h.matchAll(/class="variant" id="([^"]+)"/g)].map((m) => m[1]);
+  assert.deepEqual(ids, ['v-regressional', 'v-extremal', 'v-regressional-2']);
+  assert.equal(new Set(ids).size, ids.length, 'variant ids must be unique on the page');
+  // Each carries a permalink pointing at its own id.
+  for (const id of ids) assert.match(h, new RegExp(`class="vlink" href="#${id}"`));
+});

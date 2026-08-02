@@ -36,7 +36,16 @@ export function buildSearchIndex(laws = [], situationsBySlug = {}) {
     const category = l.category ?? '';
     // Base blob: the fields whose exact phrasing matters (names, the one-line
     // statement). Kept contiguous so multi-word substrings still work.
-    const base = [name, ...aliases, statement, category].join(' ').toLowerCase();
+    //
+    // Variant NAMES belong here rather than in the concept bag. "Mutational
+    // meltdown" and "regressional Goodhart" are things people search for by
+    // name, and the phrase has to survive intact for a multi-word match — the
+    // concept bag would shred it into two capped, deduplicated words. The
+    // variant TEXT stays out; only the names are search terms.
+    const variantNames = Array.isArray(l.variants)
+      ? l.variants.map((v) => (v && v.name) || '').filter(Boolean)
+      : [];
+    const base = [name, ...aliases, ...variantNames, statement, category].join(' ').toLowerCase();
     // Concept bag: so a search can find a law by the SITUATION it describes, not
     // just its name. Pull unique content words from `meaning` + example texts that
     // aren't already in the base and aren't stopwords, capped. This is what makes

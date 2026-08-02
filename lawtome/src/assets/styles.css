@@ -956,6 +956,16 @@ a.prose-law:hover,a.prose-law:focus-visible{color:var(--accent);border-bottom-co
 .variant .vname{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:7px}
 .variant .vname::before{content:counter(variant,decimal-leading-zero);font-size:10px;color:var(--faint);border:1px solid var(--line-strong);border-radius:3px;padding:1px 5px}
 .variant .vtext{font-size:15px;line-height:1.66;color:var(--read)}
+/* Each variant is its own linkable thing. The § sits out of the way until the
+   card is hovered or the link is focused, and clears the sticky masthead when
+   someone arrives on the anchor. */
+.variant{scroll-margin-top:96px}
+.vlink{position:absolute;top:12px;right:12px;font-size:13px;line-height:1;color:var(--faint);
+  text-decoration:none;opacity:0;transition:opacity .16s,color .16s}
+.variant:hover .vlink,.vlink:focus-visible{opacity:1}
+.vlink:hover{color:var(--accent)}
+.variant:target{border-left-color:var(--gold);box-shadow:var(--e2),0 0 0 1px color-mix(in srgb,var(--gold) 30%,transparent)}
+.variant:target .vlink{opacity:1;color:var(--gold)}
 /* "working with it" playbook — numbered steps */
 .playbook{list-style:none;display:flex;flex-direction:column;gap:12px;counter-reset:step}
 .playbook li{position:relative;padding-left:40px;font-size:16px;line-height:1.68;color:var(--read);counter-increment:step;min-height:26px;display:flex;align-items:center;flex-wrap:wrap}
