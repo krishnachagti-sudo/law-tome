@@ -49,11 +49,17 @@ test('build emits 404.html, copies the logo, and stamps publisher.logo into JSON
   const homeHtml = await readFile(join(out, 'index.html'), 'utf8');
   assert.match(homeHtml, /"@type":"ImageObject","url":"https:\/\/conyso\.com\/lawtome\/assets\/logo\.svg"/);
 
-  // The FAQ accordion + FAQPage JSON-LD were removed: every answer was a verbatim
-  // corpus field already rendered in the sections above (padding), and FAQ rich
-  // results no longer apply to a site like this.
+  // The visible FAQ accordion stays gone: every answer was a verbatim corpus
+  // field already rendered in the sections above it, which read as padding.
   assert.doesNotMatch(lawHtml, /faq-item/);
-  assert.doesNotMatch(lawHtml, /"@type":"FAQPage"/);
+  // The FAQPage JSON-LD came BACK, on different grounds. It was dropped with the
+  // accordion because markup without visible content is spam; what is emitted now
+  // is built from the rendered sections themselves, so it can only ever say what
+  // the page already says. It buys no Google rich result — those were restricted
+  // to government and health sites in 2023 — and is not claimed to; it is here
+  // for consistency with every other page type on the site.
+  assert.match(lawHtml, /"@type":"FAQPage"/);
+  assert.match(lawHtml, /"name":"What does Goodhart's Law mean\?"/);
 
   // Site identity + feed: favicon/apple-touch/manifest/feed head links, and the
   // files they point at, all emitted.

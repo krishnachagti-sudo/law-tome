@@ -20,8 +20,38 @@ import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliability
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
-import { formulaBlock, diffusionBlock, pronunciation, otherNames } from './facts.mjs';
+import { formulaBlock, diffusionBlock, pronunciation, otherNames, otherNamesText } from './facts.mjs';
 import { widgetBlock, widgetFor } from './widgets.mjs';
+
+/**
+ * Trim to at most `max` characters, ending on a sentence boundary where one is
+ * available in the last third — so an answer stops at a full stop rather than
+ * mid-clause. Returns the string untouched when it already fits.
+ */
+function clip(s, max) {
+  const t = String(s).trim();
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max);
+  const stop = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('? '), cut.lastIndexOf('! '));
+  return stop > max * 0.66 ? cut.slice(0, stop + 1) : `${cut.replace(/\s+\S*$/, '')}…`;
+}
+
+/**
+ * Undo escapeHtml, for text that is going into JSON-LD rather than markup.
+ *
+ * Structured data is JSON, not HTML: an answer containing "&amp;" reaches the
+ * consumer as the literal five characters, not an ampersand. Only the five
+ * entities escapeHtml produces need reversing, and `&amp;` must come LAST or
+ * "&amp;lt;" would decode twice into a stray "<".
+ */
+function decodeEntities(s) {
+  return String(s)
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, '&');
+}
 
 /**
  * Wrap the accent phrase in <span class="accent"> within the statement. Splits the
@@ -178,10 +208,49 @@ export function lawPage(law, ctx = {}) {
   // X mean?", "How does X work?", "Where did X come from?") to target featured
   // snippets / People-Also-Ask / AI Overviews. heading defaults to the label when
   // omitted; navigational sections (Sources, Related) keep statement headings.
-  const block = (label, inner, reveal = true, heading = '') => {
+  // Every section whose heading is a real question also becomes one Q&A in the
+  // page's FAQPage. The answer is the section's OWN rendered prose with the tags
+  // taken off — not a summary written alongside it — so the visible page and the
+  // structured data cannot drift apart. That is the same rule hubFaq follows,
+  // and it is why a section with no prose to give (a formula figure, a
+  // calculator, a list of links) contributes nothing: `answerText` comes back
+  // too short and the entry is dropped rather than filled with alt text.
+  const faq = [];
+  const plain = (h) => decodeEntities(
+    String(h)
+      // A chart's text nodes are axis labels, not prose. Left in, the diffusion
+      // curve answered "when did people start saying X?" with "1800coined
+      // 19642019 How often…".
+      .replace(/<svg[\s\S]*?<\/svg>/gi, ' ')
+      // A <br> or a block edge is a sentence boundary; without this the stripped
+      // text runs two list items together into one unreadable word.
+      .replace(/<(br|\/p|\/li|\/h[1-6]|\/div|\/blockquote|\/span)[^>]*>/gi, ' ')
+      .replace(/<[^>]+>/g, ''),
+  ).replace(/\s+/g, ' ').trim();
+
+  // A figure's caption IS its prose — it is where the chart is put into words —
+  // so for a block built around one, the caption is the answer and the rest of
+  // the markup is scaffolding.
+  const captionOf = (h) => {
+    const m = /<figcaption[^>]*>([\s\S]*?)<\/figcaption>/i.exec(String(h));
+    return m ? plain(m[1]) : '';
+  };
+
+  // `answer` overrides the stripped-HTML default for sections that render as
+  // cards or lists rather than prose. Reading the first output showed why it is
+  // needed: a variant card is a name span butted against a text paragraph, and
+  // stripping the tags produced "RegressionalThe proxy correlates…". The override
+  // is assembled from the SAME corpus fields the cards render, so it still cannot
+  // say anything the page does not — it just punctuates them.
+  const block = (label, inner, reveal = true, heading = '', answer = '') => {
     const id = 'sec-' + idify(label);
     toc.push({ label, id });
-    const h2 = `        <h2 class="block-h">${escapeHtml(heading || label)}</h2>\n`;
+    const q = heading || label;
+    if (/\?\s*$/.test(q)) {
+      const a = answer ? plain(answer) : (captionOf(inner) || plain(inner));
+      if (a.length >= 40) faq.push({ q, a });
+    }
+    const h2 = `        <h2 class="block-h">${escapeHtml(q)}</h2>\n`;
     return `      <div class="block" id="${id}"${reveal ? ' data-reveal' : ''}>
         <div class="lbl">${escapeHtml(label)}</div>
 ${h2}${inner}
@@ -289,7 +358,12 @@ ${h2}${inner}
       return `          <div class="example" data-reveal><span class="ex-tag">${escapeHtml(tag)}</span> ${escapeHtml(text)}</div>`;
     }).join('\n');
     const grid = `        <div class="examples-grid">\n${cards}\n        </div>`;
-    blocks.push(block(exItems.length > 1 ? "Where you'll see it" : 'An example', grid, false, `What are examples of ${L}?`));
+    const exAnswer = exItems.map((e) => {
+      const text = typeof e === 'string' ? e : (e && e.text) || '';
+      const tag = (e && typeof e === 'object' && e.tag) ? e.tag : '';
+      return tag ? `${tag}: ${text}` : text;
+    }).filter(Boolean).join(' ');
+    blocks.push(block(exItems.length > 1 ? "Where you'll see it" : 'An example', grid, false, `What are examples of ${L}?`, exAnswer));
   }
 
   // Variants: named sub-forms / corollaries ({name, text}) — e.g. the four types of Goodhart.
@@ -297,7 +371,8 @@ ${h2}${inner}
     const items = law.variants.map((v) =>
       `          <div class="variant" data-reveal><span class="vname">${escapeHtml(v.name)}</span><p class="vtext">${escapeHtml(v.text)}</p></div>`
     ).join('\n');
-    blocks.push(block('Types & variants', `        <div class="variants">\n${items}\n        </div>`, false, `What are the types of ${L}?`));
+    const varAnswer = law.variants.map((v) => `${v.name} — ${v.text}`).join(' ');
+    blocks.push(block('Types & variants', `        <div class="variants">\n${items}\n        </div>`, false, `What are the types of ${L}?`, varAnswer));
   }
 
   // Callout cards give the later, prose-only sections visual weight (inline SVG
@@ -315,12 +390,20 @@ ${h2}${inner}
   if (Array.isArray(law.working) && law.working.length) {
     const items = law.working.map((w) => {
       if (w && typeof w === 'object') {
-        const lead = w.lead ? `<b>${escapeHtml(w.lead)}.</b> ` : '';
+        // An em dash, not a full stop. The corpus writes `lead` as a short
+        // imperative LABEL and `text` as the clause that continues it — 2,797 of
+        // the 2,807 items start lowercase — so a full stop produced "Track the
+        // three components. reason about intracranial problems…" on every
+        // playbook on the site. Reading one FAQ answer out loud is what caught it.
+        const lead = w.lead ? `<b>${escapeHtml(w.lead)}</b> — ` : '';
         return `          <li>${lead}${escapeHtml(w.text || '')}</li>`;
       }
       return `          <li>${escapeHtml(w)}</li>`;
     }).join('\n');
-    blocks.push(block('Working with it', `        <ul class="playbook">\n${items}\n        </ul>`, true, `How do you apply ${L}?`));
+    const workAnswer = law.working.map((w) => (w && typeof w === 'object')
+      ? [w.lead ? `${w.lead} —` : '', w.text || ''].filter(Boolean).join(' ')
+      : String(w)).filter(Boolean).join(' ');
+    blocks.push(block('Working with it', `        <ul class="playbook">\n${items}\n        </ul>`, true, `How do you apply ${L}?`, workAnswer));
   }
 
   if (law.limits) blocks.push(block('Where it breaks down', callout('warn', law.limits), true, `What are the limits of ${L}?`));
@@ -333,7 +416,7 @@ ${h2}${inner}
     const dif = diffusionBlock(fact, law, { base });
     if (dif) blocks.push(block('How the name spread', dif, true, `When did people start saying “${L}”?`));
     const others = otherNames(fact);
-    if (others) blocks.push(block('Known elsewhere as', others, true, `What is ${L} called in other languages?`));
+    if (others) blocks.push(block('Known elsewhere as', others, true, `What is ${L} called in other languages?`, otherNamesText(fact)));
   }
 
   if (coined) {
@@ -427,13 +510,22 @@ ${h2}${inner}
     ? `<div class="wrap-wide"><div class="dash" data-reveal>\n${dashTiles}\n</div></div>\n`
     : '';
 
-  // (No FAQ block. It used to render a <details> accordion whose every answer was
-  // a whole corpus field — meaning / whyItMatters / mechanism / origin / limits /
-  // misreadings — i.e. a verbatim restatement of the sections already above it,
-  // which read as padding. The article itself, with its contents rail, already
-  // answers those questions in place. The matching FAQPage JSON-LD is dropped too:
-  // Google restricted FAQ rich results to gov/health sites in 2023, so it earned
-  // nothing here, and emitting it without visible content would be spammy markup.)
+  // (Still no visible FAQ block, and it should stay that way. It used to render a
+  // <details> accordion whose every answer was a whole corpus field — meaning /
+  // whyItMatters / mechanism / origin / limits / misreadings — i.e. a verbatim
+  // restatement of the sections already above it, which read as padding. The
+  // article itself, with its contents rail, answers those questions in place.
+  //
+  // The FAQPage JSON-LD went with it, on the grounds that markup without visible
+  // content is spam. That reasoning held for an accordion invented to justify the
+  // markup; it does not hold for what is emitted now, which is built FROM the
+  // rendered sections and can only ever say what the page already says.
+  //
+  // Be clear about what it does and does not buy: Google restricted FAQ rich
+  // results to government and health sites in 2023, so this earns no rich result
+  // here and is not expected to. It is emitted for consistency — every other page
+  // type on the site declares its questions — and because the entries are a
+  // faithful machine-readable index of a 1,200-word article's actual sections.)
 
   // ---- left rail: table of contents (scroll-spy) ------------------------
   const tocNav = toc.length
@@ -637,8 +729,21 @@ ${prevnext}</div>
     ],
   };
 
-  // (FAQ + FAQPage JSON-LD are built earlier, near the dash block, so the visible
-  // accordion and the structured data come from one array.)
+  // One Q&A per question-headed section, each answer lifted from that section's
+  // own rendered prose (see `block`). Long answers are trimmed at a sentence
+  // boundary rather than mid-word: a 600-word mechanism is a section, not an
+  // answer, and a consumer quoting it whole would be quoting the whole page.
+  const faqPage = faq.length
+    ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: clip(a, 700) },
+      })),
+    }
+    : null;
 
   // ---- page scripts: copy-citation + reading-progress + scroll-reveal ----
   // Reveal is a pure enhancement: it only runs when <html> already carries `.anim`
@@ -739,7 +844,7 @@ document.getElementById('copy').onclick=function(){
       modified: buildDate,
       og: { title: `${law.name}: ${facetList}`, description: ogDescription, image: `${base}og/${law.slug}.png`, type: 'article' },
       alternates: [{ type: 'text/markdown', title: `${law.name} (Markdown)`, href: `${canonical}index.md` }],
-      jsonld: [definedTerm, article, breadcrumb],
+      jsonld: [definedTerm, article, breadcrumb, ...(faqPage ? [faqPage] : [])],
     }) +
     sprite() +
     '<div class="progress" id="progress" aria-hidden="true"></div>\n' +

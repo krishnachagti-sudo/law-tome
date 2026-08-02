@@ -86,3 +86,88 @@ test('accent that collides with an escaped entity does not corrupt it', () => {
   assert.match(h, /R&amp;D <span class="accent">amp<\/span>/);
   assert.doesNotMatch(h, /&<span class="accent">amp<\/span>;/);
 });
+
+// Every question-headed section on a law page also becomes one Q&A in the page's
+// FAQPage. The rule that matters is that the answer is the section's OWN content
+// — visible page and structured data cannot drift, because there is only one
+// source. (This earns no Google rich result: FAQ rich results were restricted to
+// government and health sites in 2023. It is emitted for consistency with every
+// other page type and as a faithful machine-readable index of the article.)
+function faqOf(html) {
+  const out = [];
+  for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    const d = JSON.parse(m[1]);
+    for (const node of (Array.isArray(d) ? d : [d])) {
+      if (node && node['@type'] === 'FAQPage') out.push(...node.mainEntity);
+    }
+  }
+  return out;
+}
+
+test('a law page declares one Q&A per question-headed section', () => {
+  const l = {
+    no: '001', slug: 'q', name: 'Q Law', statement: 'S', category: 'economics', reliability: 'Heuristic',
+    meaning: 'It means the thing it means, at enough length to clear the minimum.',
+    mechanism: 'It works by the mechanism described here, at enough length to clear the minimum.',
+    origin: 'It came from somewhere documented, at enough length to clear the minimum.',
+    sources: [{ title: 'T', url: 'https://example.org/' }],
+  };
+  const qs = faqOf(lawPage(l, { base: '/', origin: 'https://conyso.com' }));
+  const names = qs.map((q) => q.name);
+  assert.ok(names.includes('What does Q Law mean?'), names.join(' | '));
+  assert.ok(names.includes('How does Q Law work?'));
+  assert.ok(names.includes('Where did Q Law come from?'));
+  // Every question is a question; nothing statement-headed leaks in.
+  for (const n of names) assert.match(n, /\?$/);
+  // Every answer is the section's own prose.
+  assert.equal(qs.find((q) => q.name === 'What does Q Law mean?').acceptedAnswer.text, l.meaning);
+});
+
+test('structured answers are readable text, not stripped markup', () => {
+  const l = {
+    no: '002', slug: 'r', name: 'R Law', statement: 'S', category: 'economics', reliability: 'Heuristic',
+    meaning: 'A meaning long enough to be carried into the structured data as an answer.',
+    // A card whose label and body are adjacent elements: stripping the tags used
+    // to fuse them into "RegressionalThe proxy correlates…".
+    variants: [{ name: 'Regressional', text: 'The proxy correlates with the goal but is not identical to it.' }],
+    working: [{ lead: 'Track the three components', text: 'reason about the problem in terms of the parts.' }],
+    examples: [{ tag: 'Education', text: 'Rank schools on test scores and teachers teach to the test.' }],
+    sources: [{ title: 'T', url: 'https://example.org/' }],
+  };
+  const html = lawPage(l, { base: '/', origin: 'https://conyso.com' });
+  const by = Object.fromEntries(faqOf(html).map((q) => [q.name, q.acceptedAnswer.text]));
+  assert.match(by['What are the types of R Law?'], /Regressional — The proxy/);
+  assert.match(by['How do you apply R Law?'], /Track the three components — reason about/);
+  assert.match(by['What are examples of R Law?'], /Education: Rank schools/);
+  // …and the visible playbook uses the same separator, because a full stop before
+  // a lowercase clause was wrong on the page too.
+  assert.match(html, /<b>Track the three components<\/b> — reason about/);
+  assert.doesNotMatch(html, /<b>Track the three components\.<\/b>/);
+});
+
+test('a section with no prose to give contributes no Q&A', () => {
+  const l = {
+    no: '003', slug: 's', name: 'S Law', statement: 'S', category: 'economics', reliability: 'Heuristic',
+    meaning: 'Long enough to be a real answer in the structured data for this entry.',
+    sources: [{ title: 'T', url: 'https://example.org/' }],
+  };
+  const qs = faqOf(lawPage(l, { base: '/', origin: 'https://conyso.com' }));
+  // No examples, variants or working were supplied, so none of their questions
+  // may appear — an empty answer must drop the entry, never ship a hollow one.
+  const names = qs.map((q) => q.name);
+  assert.ok(!names.some((n) => /examples|types of|apply/.test(n)), names.join(' | '));
+  for (const q of qs) assert.ok(q.acceptedAnswer.text.length >= 40);
+});
+
+test('structured answers carry decoded text, not HTML entities', () => {
+  const l = {
+    no: '004', slug: 't', name: 'T Law', statement: 'S', category: 'economics', reliability: 'Heuristic',
+    meaning: 'Risk & reward move together, and "a target" is never quite the goal itself.',
+    sources: [{ title: 'T', url: 'https://example.org/' }],
+  };
+  const a = faqOf(lawPage(l, { base: '/', origin: 'https://conyso.com' }))
+    .find((q) => q.name === 'What does T Law mean?').acceptedAnswer.text;
+  assert.match(a, /Risk & reward/);
+  assert.match(a, /"a target"/);
+  assert.doesNotMatch(a, /&amp;|&quot;|&#39;/);
+});

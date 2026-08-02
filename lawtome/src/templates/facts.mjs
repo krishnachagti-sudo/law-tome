@@ -86,6 +86,22 @@ export function pronunciation(personFact, person, { base = '/', namesakeKind } =
 }
 
 /** What the idea is called where it isn't called this. */
+/**
+ * The same recorded names as `otherNames`, punctuated as a sentence.
+ *
+ * The rendered list is a label span butted against a name span, which is right
+ * on screen and unreadable once the tags come off — "Arabicقانون جودهارت
+ * GermanGoodharts Gesetz". A structured answer needs the separators, and it must
+ * come from this data rather than be written beside it.
+ */
+export function otherNamesText(fact) {
+  const n = fact && fact.names;
+  if (!n || !n.labels) return '';
+  const rows = Object.entries(n.labels).filter(([, v]) => v);
+  if (rows.length < 3) return '';
+  return `${rows.map(([lang, v]) => `${LANG_NAME[lang] || lang}: ${v}`).join('; ')}. These are the names the idea already goes by, as recorded on Wikidata — not translations we made.`;
+}
+
 export function otherNames(fact) {
   const n = fact && fact.names;
   if (!n || !n.labels) return '';
