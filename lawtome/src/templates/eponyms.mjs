@@ -66,7 +66,7 @@ export function personId(person) {
     .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
-export function eponymsPage(groups = [], { base = '/', origin = '', count, images } = {}) {
+export function eponymsPage(groups = [], { base = '/', origin = '', count, images, namesakeHrefs = {} } = {}) {
   const rows = Array.isArray(groups) ? groups : [];
   const permalink = (slug) => `${base}laws/${escapeHtml(slug)}/`;
   const lawLinks = (laws) => laws
@@ -105,8 +105,19 @@ export function eponymsPage(groups = [], { base = '/', origin = '', count, image
     return l ? `<span class="ep-kind" title="Not a person: this law is named after ${escapeHtml(l[1])}">${escapeHtml(l[0])}</span>` : '';
   };
 
+  // A namesake with several laws has a page of their own; one with a single law
+  // does not, because that page would restate the law under a second URL. So the
+  // name is a link exactly when there is somewhere for it to go.
+  const pname = (g) => {
+    const href = namesakeHrefs[g.person];
+    const inner = `${escapeHtml(g.person)}${kindTag(g)}${g.laws.length > 1 ? `<span class="ep-badge">${g.laws.length}</span>` : ''}`;
+    return href
+      ? `<a class="ep-pname ep-pname--link" href="${escapeHtml(href)}">${inner}</a>`
+      : `<span class="ep-pname">${inner}</span>`;
+  };
+
   const row = (g, anchored) => `      <div class="ep-row"${anchored ? ` id="${escapeHtml(personId(g.person))}"` : ''}>
-        <span class="ep-person">${avatar(g.person)}<span class="ep-pname">${escapeHtml(g.person)}${kindTag(g)}${g.laws.length > 1 ? `<span class="ep-badge">${g.laws.length}</span>` : ''}</span></span>
+        <span class="ep-person">${avatar(g.person)}${pname(g)}</span>
         <span class="ep-laws">${lawLinks(g.laws)}</span>
       </div>`;
 

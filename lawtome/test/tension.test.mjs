@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { tensionPairs, isTensionKind } from '../build/relations.mjs';
+import { tensionPairs, isTensionKind, comparePairs } from '../build/relations.mjs';
 import { tensionPage } from '../src/templates/tension.mjs';
 
 const LAWS = [
@@ -51,4 +51,58 @@ test('page shows an empty state when there are no pairs', () => {
   const html = tensionPage([], { base: '/lawtome/' });
   assert.match(html, /class="empty"/);
   assert.match(html, /0 opposing pairs/);
+});
+
+// A kindred pair earns a comparison page on evidence, never on a guess. The
+// corpus links ~1,500 pairs and marks only 163 as opposed or near-twin;
+// publishing the rest would be a thousand thin permutations of writing that
+// already exists. Two checkable gates let the real ones through.
+test('a kindred pair whose names share an uncommon word gets a page', () => {
+  const laws = [
+    { no: '1', slug: 'change-blindness', name: 'Change Blindness', category: 'psychology',
+      related: [{ slug: 'inattentional-blindness', kind: 'kindred' }] },
+    { no: '2', slug: 'inattentional-blindness', name: 'Inattentional Blindness', category: 'psychology', related: [] },
+  ];
+  const p = comparePairs(laws);
+  assert.equal(p.length, 1);
+  assert.equal(p[0].evidence, 'shared-name');
+  assert.equal(p[0].slug, 'change-blindness-vs-inattentional-blindness');
+});
+
+test('a kindred pair named in the other entry\'s prose gets a page', () => {
+  const laws = [
+    { no: '1', slug: 'a', name: 'Parkinson\'s Law', category: 'management',
+      misreadings: "Often confused with Parkinson's Law of Triviality, which is a different claim.",
+      related: [{ slug: 'b', kind: 'kindred' }] },
+    { no: '2', slug: 'b', name: "Parkinson's Law of Triviality", category: 'management', related: [] },
+  ];
+  assert.equal(comparePairs(laws)[0].evidence, 'named-in-prose');
+});
+
+test('a merely kindred pair with no evidence gets no page', () => {
+  const laws = [
+    { no: '1', slug: 'a', name: 'Something Entirely', category: 'physics', related: [{ slug: 'b', kind: 'kindred' }] },
+    { no: '2', slug: 'b', name: 'Wholly Different', category: 'physics', related: [] },
+  ];
+  assert.deepEqual(comparePairs(laws), []);
+});
+
+test('a genre word shared by two names is not evidence', () => {
+  // Both contain "law" and "the"; neither is a distinguishing collision.
+  const laws = [
+    { no: '1', slug: 'a', name: "The First Law of Widgets", category: 'physics', related: [{ slug: 'b', kind: 'kindred' }] },
+    { no: '2', slug: 'b', name: "The Law of Sprockets", category: 'physics', related: [] },
+  ];
+  assert.deepEqual(comparePairs(laws), []);
+});
+
+test('an opposed edge outranks kindred for the same pair', () => {
+  const laws = [
+    { no: '1', slug: 'a', name: 'Alpha Blindness', category: 'psychology',
+      related: [{ slug: 'b', kind: 'kindred' }, { slug: 'b', kind: 'tension' }] },
+    { no: '2', slug: 'b', name: 'Beta Blindness', category: 'psychology', related: [] },
+  ];
+  const p = comparePairs(laws);
+  assert.equal(p.length, 1);
+  assert.equal(p[0].relation, 'tension');
 });

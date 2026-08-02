@@ -47,6 +47,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { buildSite } from '../build/build.mjs';
 import { comparePairs } from '../build/relations.mjs';
+import { eponymGroups } from '../build/eponyms.mjs';
+import { namesakesWithPages } from '../src/templates/namesake.mjs';
 
 // Corpus-relative sitemap expectations, so adding a law (or a law in a new
 // category / reliability tier) never breaks the count. Locs = home + one per law
@@ -71,9 +73,13 @@ const AUD_COUNT = RAW_AUD.filter((a) => (a.laws || []).some((s) => SLUGS.has(s))
 // + /credits/: the image sources and licences (indexable, and the attribution
 //   the CC-licensed portraits oblige us to publish).
 // + /origins/: the namesakes' birthplaces on a map.
-// Compare: the /compare/ hub + one page per near-twin/tension pair the corpus marks.
+// Compare: the /compare/ hub + one page per pair that earns one — opposed,
+//   near-twin, or a kindred pair with evidence (see build/relations.mjs).
+// + one page per namesake with more than one law. Only those: a page for a
+//   one-law namesake would restate the law under a second URL.
 const COMPARE_COUNT = comparePairs(PARSED).length;
-const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + (1 + AUD_COUNT + 1 + 1) + 1 + 1;
+const NAMESAKE_COUNT = namesakesWithPages(eponymGroups(PARSED)).length;
+const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + NAMESAKE_COUNT + (1 + AUD_COUNT + 1 + 1) + 1 + 1;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));

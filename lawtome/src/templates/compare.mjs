@@ -344,7 +344,7 @@ ${list.map(item).join('\n')}
     },
     {
       q: 'How are the pairs chosen?',
-      a: `From the corpus's own relation edges: a pair appears here if one entry records the other as a near-twin or as opposed. ${rows.length} pairs qualify today.`,
+      a: `On evidence, never on a guess. A pair qualifies if the corpus records the two as opposed or as near-twins, or — for merely kindred pairs — if one entry's own prose names the other, or if their names share an uncommon word (Change Blindness and Inattentional Blindness; Hanlon's Razor and Hitchens's Razor). ${rows.length} pairs qualify today, out of roughly 1,500 linked pairs: a page for every link would be a thousand thin permutations of writing that already exists elsewhere on the site.`,
     },
   ]);
 

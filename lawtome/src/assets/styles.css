@@ -1449,6 +1449,32 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .hub-stat{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:var(--muted)}
 .hub-stat b{font-size:16px;color:var(--ink);font-weight:400;margin-right:5px}
 .hub-lede{margin:20px 0 30px;max-width:72ch}
+/* ---- a namesake's own page -------------------------------------------------
+   Portrait, then the sourced facts, then their laws. No biography: see
+   src/templates/namesake.mjs for why there must never be one. */
+.ns-face{margin:26px 0 0;max-width:210px}
+.ns-face img{width:100%;height:auto;border-radius:3px;border:1px solid var(--line-strong);
+  background:var(--surface-2);filter:grayscale(1) contrast(1.04);box-shadow:var(--e2)}
+.ns-face figcaption{margin-top:9px;font-size:11.5px;line-height:1.5;color:var(--faint)}
+.ns-face figcaption a{color:var(--muted)}
+.ns-face--mono{display:grid;place-items:center;width:120px;height:120px;border-radius:3px;
+  background:var(--surface-2);border:1px solid var(--line-strong);box-shadow:var(--e1)}
+.ns-face--mono span{font-family:var(--mono);font-size:26px;color:var(--muted);letter-spacing:.06em}
+.ns-facts{display:flex;flex-wrap:wrap;gap:8px 26px;margin:20px 0 4px;
+  font-size:13.5px;line-height:1.6;color:var(--muted)}
+.ns-fact b{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--faint);font-weight:400;margin-right:7px}
+.ns-fact a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-strong)}
+.ns-fact a:hover{color:var(--accent);border-bottom-color:currentColor}
+/* Whose record this is, when the namesake names two people and the fetch
+   resolved one of them. Unlabelled, the link would misattribute. */
+.ns-who{color:var(--faint);font-size:12px}
+.ns-src{font-family:var(--mono);font-size:10.5px}
+/* A namesake with a page of their own is a link in the A–Z; one with a single
+   law is not, because that page would restate the law under a second URL. */
+.ep-pname--link{text-decoration:none;color:inherit;border-bottom:1px solid transparent}
+.ep-pname--link:hover{color:var(--accent);border-bottom-color:currentColor}
+
 /* Ledes and answers carry real links — "start from the situation", "coin it" —
    and nothing styled them, so they read as plain prose and went unclicked. */
 .sec-lede a,.hub-answer a{color:var(--ink);text-decoration:none;

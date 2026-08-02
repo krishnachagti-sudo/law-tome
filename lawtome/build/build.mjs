@@ -31,6 +31,7 @@ import { resolveAudiences } from './audiences.mjs';
 import { featuresPage } from '../src/templates/features.mjs';
 import { manifestoPage } from '../src/templates/manifesto.mjs';
 import { eponymsPage } from '../src/templates/eponyms.mjs';
+import { namesakePage, namesakePath, namesakesWithPages, siblingOrderings } from '../src/templates/namesake.mjs';
 import { creditsPage } from '../src/templates/credits.mjs';
 import { eponymGroups } from './eponyms.mjs';
 import { timelinePage } from '../src/templates/timeline.mjs';
@@ -80,6 +81,13 @@ export async function buildSite(opts) {
   let world = {};
   try { world = JSON.parse(await readFile('src/data/world-land.json', 'utf8')); }
   catch { /* no map data */ }
+
+  // What sort of thing each namesake is, with the Wikidata QID that settled it
+  // (build/fetch-namesake-kind.py). A namesake page uses it twice: to publish
+  // only for people, and to link the record instead of paraphrasing a life.
+  let namesakeKinds = {};
+  try { namesakeKinds = JSON.parse(await readFile('src/data/namesake-kinds.json', 'utf8')); }
+  catch { /* not harvested yet */ }
 
   const errs = validateCorpus(laws, categories);
   if (errs.length) throw new Error('validation failed:\n' + errs.join('\n'));
@@ -308,13 +316,26 @@ export async function buildSite(opts) {
 
   // Eponym index + timeline: two more browse axes over existing fields
   // (namedAfter, coinedYear). No new corpus data.
-  writes.push(writePage(join(out, 'named-after', 'index.html'), eponymsPage(eponymGroups(laws), { base, origin, count: publishedCount, images })));
+  const epGroups = eponymGroups(laws);
+  // Fifty-two people account for 117 laws between them, and until now that
+  // cluster was a row in a 625-name A–Z. Each gets a page; a one-law namesake
+  // does not, because that page would restate the law under a second URL.
+  const namesakePages = namesakesWithPages(epGroups);
+  const namesakeHrefs = Object.fromEntries(namesakePages.map((g) => [g.person, `${base}${namesakePath(g.person)}`]));
+  // Matched across ALL groups, not just the ones with pages: an ordering that
+  // carries a single law has no page, but the pair still deserves the pointer.
+  const orderings = siblingOrderings(epGroups);
+  writes.push(writePage(join(out, 'named-after', 'index.html'), eponymsPage(epGroups, { base, origin, count: publishedCount, images, namesakeHrefs })));
+  for (const g of namesakePages) {
+    writes.push(writePage(join(out, ...namesakePath(g.person).split('/').filter(Boolean), 'index.html'),
+      namesakePage(g, { base, origin, count: publishedCount, images, facts, categories, byslug, compareSlugs, kinds: namesakeKinds, siblings: orderings[g.person] || [] })));
+  }
   // Where the namesakes were born, on a map — birthplaces from facts.json over
   // the Natural Earth coastline. Emitted unconditionally (with an empty state
   // when nothing is harvested), because every hub's footer links it and a
   // conditional page there would be a conditional 404.
   writes.push(writePage(join(out, 'origins', 'index.html'),
-    originsPage(eponymGroups(laws), { base, origin, count: publishedCount, facts, world })));
+    originsPage(epGroups, { base, origin, count: publishedCount, facts, world })));
   // Image credits — the attribution the CC licences require, in one auditable list.
   writes.push(writePage(join(out, 'credits', 'index.html'), creditsPage(images, { base, origin, count: publishedCount })));
   writes.push(writePage(join(out, 'timeline', 'index.html'), timelinePage(eraGroups(laws), { base, origin, count: publishedCount, images })));
@@ -360,6 +381,7 @@ export async function buildSite(opts) {
     'quiz/',                                  // law of the day + quiz
     'situations/',                            // reverse lookup: problem -> law
     'named-after/',                           // eponym index
+    ...namesakePages.map((g) => namesakePath(g.person)), // one per multi-law person
     'timeline/',                              // by-era browse
     'data/',                                  // dataset download page (indexable)
     'for/',                                   // audience hub
