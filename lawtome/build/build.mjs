@@ -21,8 +21,9 @@ import { tensionPage } from '../src/templates/tension.mjs';
 import { comparePage, compareHubPage } from '../src/templates/compare.mjs';
 import { tensionPairs, comparePairs } from './relations.mjs';
 import { reliabilityHubPage } from '../src/templates/reliability.mjs';
-import { kinds, kindPath } from './kinds.mjs';
+import { kinds, kindPath, kindOf } from './kinds.mjs';
 import { kindsHubPage, kindPage } from '../src/templates/kinds.mjs';
+import { akaPage, quotesPage } from '../src/templates/lookup.mjs';
 import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, personSlug } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
 import { resolveCollections } from './collections.mjs';
@@ -295,6 +296,14 @@ export async function buildSite(opts) {
     ));
   }
 
+  // Two lookup surfaces for a reader who does not have the headword: every
+  // other name these ideas travel under, and every statement in the form it is
+  // quoted. Both are the corpus re-sorted — nothing on either is new.
+  writes.push(writePage(join(out, 'also-known-as', 'index.html'),
+    akaPage(laws, { base, origin, count: publishedCount, categories })));
+  writes.push(writePage(join(out, 'quotes', 'index.html'),
+    quotesPage(laws, { base, origin, count: publishedCount, categories })));
+
   // What kind of thing is it — /kinds/ and one page per kind.
   //
   // The list axis: razors, paradoxes, fallacies, theorems, thought experiments.
@@ -304,7 +313,19 @@ export async function buildSite(opts) {
   const kindGroups = kinds(laws);
   writes.push(writePage(
     join(out, 'kinds', 'index.html'),
-    kindsHubPage(kindGroups, { base, origin, count: publishedCount, total: laws.length }),
+    kindsHubPage(kindGroups, {
+      base,
+      origin,
+      count: publishedCount,
+      total: laws.length,
+      // The entries whose names say nothing about what kind of thing they are.
+      // Listed on the hub rather than silently dropped: a page that files 750
+      // of 1,101 and never mentions the other 351 is quietly claiming to be a
+      // complete map of the index.
+      unclassified: laws.filter((l) => !kindOf(l))
+        .sort((a, b) => String(a.name).replace(/^(the|a|an)\s+/i, '')
+          .localeCompare(String(b.name).replace(/^(the|a|an)\s+/i, ''), 'en')),
+    }),
   ));
   for (const g of kindGroups) {
     writes.push(writePage(
@@ -552,6 +573,8 @@ export async function buildSite(opts) {
     ...compares.map((p) => `compare/${p.slug}/`), // one per compared pair
     'reliability/',                           // veracity facet hub
     ...presentTiers.map((v) => `reliability/${reliabilitySlug(v)}/`),
+    'also-known-as/',                         // every alias, cross-referenced
+    'quotes/',                                // every statement, as it is quoted
     'kinds/',                                 // the index by kind of named thing
     ...kindGroups.map((g) => kindPath(g)),    // one per kind above the floor
     'collections/',                           // curated-collections hub

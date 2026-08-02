@@ -119,7 +119,7 @@ export function audiencePage(audience, { base = '/', origin = '', count, images,
   const shape = setShape(laws, { base, categories });
   const fieldNames = shape.fields.map(([k]) => categories[k] || k);
   const answer = laws.length
-    ? `${escapeHtml(a.title || '')} is a reading list of ${laws.length} named laws${fieldNames.length > 1 ? ` drawn from ${fieldNames.length} fields — ${fieldNames.slice(0, 3).join(', ')}${fieldNames.length > 3 ? ' and more' : ''}` : fieldNames.length ? ` from ${fieldNames[0]}` : ''}, chosen for one kind of work: ${escapeHtml(String(a.problem || '').replace(/\.$/, ''))}.`
+    ? `${escapeHtml(a.title || '')} is a reading list of ${laws.length} named laws${fieldNames.length > 1 ? ` drawn from ${fieldNames.length} fields — ${fieldNames.slice(0, 3).join(', ')}${fieldNames.length > 3 ? ' and more' : ''}` : fieldNames.length ? ` from ${fieldNames[0]}` : ''}, chosen for one kind of work. ${escapeHtml(String(a.problem || '').replace(/\s+$/, ''))}`
     : escapeHtml(a.problem || '');
   const others = (Array.isArray(siblings) ? siblings : []).filter((x) => x.slug !== a.slug);
   const faq = hubFaq([
@@ -139,7 +139,6 @@ export function audiencePage(audience, { base = '/', origin = '', count, images,
 
   const section = `<section class="sec" id="index">
   <div class="wrap">
-    <nav class="crumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}for/">For…</a><span class="sep">/</span>${escapeHtml(a.who || a.title || '')}</nav>
 ${hubHead({
     title: a.title || '',
     sub: `${laws.length} ${laws.length === 1 ? 'law' : 'laws'}`,
@@ -147,6 +146,9 @@ ${hubHead({
     lede: escapeHtml(a.blurb || a.problem || ''),
     stats: shape.stats,
     base,
+    // hubHead draws the crumb. This page used to hand-roll a second one above
+    // it, so every audience shipped two breadcrumb trails, one under the other.
+    crumbs: [['browse/', 'Browse'], ['for/', 'Find your laws']],
   })}${figureStrip(images, laws, { base })}    <div class="grid">
 ${grid}
     </div>

@@ -31,7 +31,7 @@ const RULE = 'Membership here is read off the name. An entry is on this page bec
 /**
  * @param {object[]} groups from build/kinds.mjs `kinds()`
  */
-export function kindsHubPage(groups = [], { base = '/', origin = '', count, total = 0 } = {}) {
+export function kindsHubPage(groups = [], { base = '/', origin = '', count, total = 0, unclassified = [] } = {}) {
   const rows = (Array.isArray(groups) ? groups : []).slice()
     .sort((a, b) => b.count - a.count);
   const covered = rows.reduce((n, g) => n + g.count, 0);
@@ -50,7 +50,7 @@ export function kindsHubPage(groups = [], { base = '/', origin = '', count, tota
   const faq = hubFaq([
     { q: 'How is the kind decided?', a: `${RULE} Occam's Razor is a razor because it is called a razor; the Prisoner's Dilemma is a dilemma for the same reason. Where an entry's own name says nothing, the names it also travels under are checked — which is the only reason Newton's Flaming Laser Sword appears among <a href="${base}kinds/razors/">the razors</a>, since it is also known as Alder's Razor.` },
     { q: 'Why is my favourite bias not on the biases page?', a: `Because its name does not contain the word. The index holds many more cognitive biases than the <a href="${base}kinds/biases/">biases page</a> shows — Anchoring, the Halo Effect, Loss Aversion — but they are conventionally named as effects or as bare nouns, and this classification does not overrule what a thing is called. For the psychology of judgement as a subject, <a href="${base}category/psychology/">the field page</a> is the better door.` },
-    { q: `What about the other ${num(unnamed)} entries?`, a: `Their names do not say what kind of thing they are — Anomie, Cognitive Dissonance, Brownian Motion, Chesterton's Fence. They are on no page here, and are reached by <a href="${base}browse/">name</a>, by <a href="${base}category/">field</a>, or through <a href="${base}situations/">the problem you are having</a>.` },
+    { q: `What about the other ${num(unnamed)} entries?`, a: `Their names do not say what kind of thing they are — Anomie, Cognitive Dissonance, Brownian Motion, Chesterton's Fence. They are on no page here. Reach them by name from <a href="${base}browse/">the full index</a>, which also filters by field and by how well established each entry is, or start from <a href="${base}situations/">the problem you are having</a>.` },
     { q: 'Is a law more reliable than a rule of thumb?', a: `Not by its name, no — which is the point of rating them separately. Some entries called laws are measured to many decimal places and some are jokes that stuck; <a href="${base}is-it-real/">the reliability scale</a> says which is which, entry by entry, and it does not track the word at the end of the name.` },
   ]);
 
@@ -67,7 +67,15 @@ ${hubHead({
   })}    <div class="kd-grid">
 ${cards}
     </div>
-    <p class="kd-note">${escapeHtml(RULE)} ${num(unnamed)} entries carry no kind word in any of their names and appear on none of these pages.</p>
+    <p class="kd-note">${escapeHtml(RULE)} ${num(unnamed)} entries carry no kind word in any of their names and appear on none of the pages above. They are listed below rather than left out of the accounting.</p>
+${unclassified.length ? `    <section class="kd-rest" id="unclassified">
+      <h2 class="kd-h2">The ${num(unclassified.length)} that do not say</h2>
+      <p class="kd-note kd-note--top">Anomie. Cognitive Dissonance. Chesterton's Fence. Brownian Motion. Names that state the thing and not its category — which is most of the oldest and several of the best. Nothing here has been assigned a kind, because assigning one would mean deciding, unsourced, what these ideas really are.</p>
+${listFilter({ target: 'kd-rest', label: `Filter ${num(unclassified.length)} entries`, placeholder: 'Filter by name…', noun: 'entries' })}      <div class="kd-rest-list" id="kd-rest">
+${unclassified.map((l) => `        <a class="kd-rest-i" href="${base}laws/${escapeHtml(l.slug)}/" data-filter-row data-filter-text="${escapeHtml(`${l.name} ${(l.aliases || []).join(' ')}`)}">${escapeHtml(l.name)}</a>`).join('\n')}
+      </div>
+    </section>
+` : ''}
 ${faq.html}${hubNav('kinds/', { base })}  </div>
 </section>
 `;

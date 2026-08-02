@@ -143,7 +143,10 @@ const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT 
   // /diagnose/, /embed/. (/print/ and the per-entry cards are noindex, and the
   // .json records are data files, so none of those are listed.)
   + 7 + FIELD_PERIOD_COUNT
-  + (1 + KIND_COUNT);
+  + (1 + KIND_COUNT)
+  // + /also-known-as/ (every alias, cross-referenced) and /quotes/ (every
+  // statement, as it is quoted).
+  + 2;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));
