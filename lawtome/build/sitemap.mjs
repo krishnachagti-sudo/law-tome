@@ -20,13 +20,34 @@ function xmlEscape(s) {
  *   <lastmod> to every URL — a crawl freshness hint for search + answer engines.
  * @returns {string} well-formed sitemap XML.
  */
-export function buildSitemap(paths, origin, lastmod) {
+export function buildSitemap(paths, origin, lastmod, images = {}) {
   const mod = lastmod ? `<lastmod>${xmlEscape(lastmod)}</lastmod>` : '';
+  // Image search is a search surface of its own, and the site had 1,026
+  // licensed images — 465 portraits and 561 diagrams and manuscript scans,
+  // every one of them fetched with its author, licence and source recorded —
+  // that no crawler could discover as images. The sitemaps.org image extension
+  // is the whole fix: declare, per page, the images that page actually carries.
+  //
+  // A caption is worth giving because ours is not decoration: it is the credit
+  // the licence obliges us to publish, so the same string does two jobs.
+  const hasImages = Object.values(images).some((v) => v && v.length);
+  const imageXml = (p) => (images[p] || [])
+    .map((img) => `\n    <image:image><image:loc>${xmlEscape(img.loc)}</image:loc>`
+      + (img.title ? `<image:title>${xmlEscape(img.title)}</image:title>` : '')
+      + (img.caption ? `<image:caption>${xmlEscape(img.caption)}</image:caption>` : '')
+      + '</image:image>')
+    .join('');
   const urls = paths
-    .map(p => `  <url><loc>${xmlEscape(origin + p)}</loc>${mod}</url>`)
+    .map((p) => {
+      const imgs = imageXml(p);
+      return `  <url><loc>${xmlEscape(origin + p)}</loc>${mod}${imgs}${imgs ? '\n  ' : ''}</url>`;
+    })
     .join('\n');
+  const ns = hasImages
+    ? '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'
+    : '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${ns}
 ${urls}
 </urlset>
 `;

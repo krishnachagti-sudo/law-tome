@@ -271,6 +271,38 @@ export function header({ base = '/', active, count } = {}) {
   ]
     .map(([key, path, label]) => `        <a href="${base}${path}"${key === active ? ' class="on" aria-current="page"' : ''}>${label}</a>`)
     .join('\n');
+
+  // "More" — the ways into the index that outgrew the bar.
+  //
+  // The site kept gaining whole browsing axes (by era, by namesake, by
+  // birthplace, by language, by reliability, by what two laws disagree about)
+  // and every one of them was reachable only from the foot of another hub. Six
+  // top-level links is the right size for a masthead; the rest belong behind one.
+  // A <details> so it works with no JavaScript at all, closed by common.js on
+  // outside click and Escape.
+  const MORE = [
+    ['collections/', 'Collections', 'hand-picked sets that cut across fields'],
+    ['for/', 'Find your laws', 'ways in for engineers, writers, decision-makers'],
+    ['timeline/', 'Timeline', 'century by century, and decade by decade'],
+    ['named-after/', 'By namesake', 'the people who lent these ideas their names'],
+    ['origins/', 'Where they came from', 'the namesakes\' birthplaces, by country'],
+    ['names/', 'In other languages', 'the names these ideas already go by'],
+    ['reliability/', 'By reliability', 'measured findings, rules of thumb, folklore'],
+    ['tension/', 'Laws in tension', 'the pairs that contradict each other'],
+    ['compare/', 'Compare', 'two laws side by side, for the ones people mix up'],
+    ['quiz/', 'Quiz', 'name the law from its statement'],
+    ['equations/', 'Equations', 'the ninety-odd laws that are also formulas'],
+    ['pronunciation/', 'Pronunciation', 'hear the names said out loud'],
+    ['sources/', 'The bibliography', 'every citation, by where it points'],
+    ['data/', 'The dataset', 'download the whole corpus'],
+    ['credits/', 'Credits', 'every image, its author and its licence'],
+  ];
+  const more = `        <details class="navmore" id="navmore">
+          <summary aria-label="More ways to browse">More<svg class="nm-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="nm-panel">
+${MORE.map(([path, label, blurb]) => `            <a class="nm-item" href="${base}${path}"><span class="nm-t">${escapeHtml(label)}</span><span class="nm-b">${escapeHtml(blurb)}</span></a>`).join('\n')}
+          </div>
+        </details>`;
   // Ship the thousands-separated number in the static HTML so no-JS readers (and
   // the first paint before common.js runs) see "1,122", not "1122". The count-up
   // animation still reads the raw value from data-count.
@@ -289,6 +321,7 @@ export function header({ base = '/', active, count } = {}) {
     </a>
     <nav class="links" id="primary-nav" aria-label="Primary">
 ${nav}
+${more}
     </nav>
     <div class="right">
       <a class="count" href="${base}browse/"><span class="count-n"${typeof count === 'number' ? ` data-count="${count}"` : ''}>${c}</span><span class="count-l">entries</span></a>
@@ -309,6 +342,57 @@ ${nav}
  * @param {boolean} [o.isReliability=false] on a reliability-tier page the tier is
  *   fixed, so the tier chips and group toggle are omitted (sort only).
  */
+/**
+ * A search field wired to the corpus-wide index (assets/search.js).
+ *
+ * The listing pages carry the whole corpus and had no way to type at it: the
+ * only search box on the site was on the home page, so a reader who had already
+ * navigated to /browse/ or a field had to go back to the front door to look
+ * something up. search.js binds to `#q` wherever it finds one, so the box only
+ * ever needed to exist here.
+ *
+ * @param {string} [placeholder] the prompt, worth varying by page — on a field
+ *   page "search within" would be a lie, since the index searches everything.
+ */
+export function searchBox(placeholder = 'Search a law — or describe the feeling…') {
+  return `      <label class="search">
+        <i class="ti ti-search" aria-hidden="true"></i>
+        <input id="q" type="search" placeholder="${escapeHtml(placeholder)}" autocomplete="off" aria-label="Search laws">
+      </label>
+`;
+}
+
+/**
+ * A live filter over rows already on the page.
+ *
+ * Different thing from searchBox: no index, no fetch, no ranking — it hides the
+ * rows in one container that do not contain what you typed. That is the right
+ * tool for the indexes that are not lists of laws (605 Arabic names, 900
+ * namesakes, 337 citation domains), where the corpus search index has nothing
+ * to say and the reader's actual problem is finding one row in a long column.
+ *
+ * Wired by assets/common.js against `data-filter` on the container.
+ *
+ * @param {object} o
+ * @param {string} o.target id of the container whose children get filtered
+ * @param {string} o.label visible label, e.g. "Filter 605 names"
+ * @param {string} [o.placeholder]
+ * @param {string} [o.noun] plural noun for the live count ("names", "people")
+ */
+export function listFilter({ target, label, placeholder = 'Type to filter…', noun = 'rows' }) {
+  const id = `filter-${target}`;
+  return `    <div class="lfilter">
+      <label class="search search--filter" for="${escapeHtml(id)}">
+        <i class="ti ti-search" aria-hidden="true"></i>
+        <input id="${escapeHtml(id)}" type="search" placeholder="${escapeHtml(placeholder)}"
+               autocomplete="off" aria-label="${escapeHtml(label)}"
+               data-filter="${escapeHtml(target)}" data-filter-noun="${escapeHtml(noun)}">
+      </label>
+      <p class="lfilter-count" id="${escapeHtml(id)}-count" role="status" aria-live="polite"></p>
+    </div>
+`;
+}
+
 export function browseControls({ isReliability = false } = {}) {
   const REL_TIERS = [['', 'All tiers', ''], ['Empirical', 'Empirical', 'var(--ok)'], ['Heuristic', 'Heuristic', 'var(--gold)'], ['Folk-adage', 'Folk-adage', 'var(--faint)'], ['Contested', 'Contested', 'var(--con)']];
   const relChips = `<div class="chips chips--rel" id="rel-chips" role="group" aria-label="Filter by reliability tier">${REL_TIERS.map(([val, label, col], i) => `<button class="chip${i === 0 ? ' on' : ''}" type="button" aria-pressed="${i === 0 ? 'true' : 'false'}" data-r="${escapeHtml(val)}">${col ? `<span class="rel-dot" style="background:${col}"></span>` : ''}${escapeHtml(label)}</button>`).join('')}</div>`;

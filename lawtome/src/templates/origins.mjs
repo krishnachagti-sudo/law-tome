@@ -32,7 +32,7 @@ function placeId(place) {
  * @param {object} facts    src/data/facts.json (reads facts._people[slug].origin).
  * @param {object} world    src/data/world-land.json — {path, viewBox}.
  */
-export function originsPage(groups = [], { base = '/', origin = '', count, facts = {}, world = {} } = {}) {
+export function originsPage(groups = [], { base = '/', origin = '', count, facts = {}, world = {}, countries = [] } = {}) {
   const rows = Array.isArray(groups) ? groups : [];
   const people = (facts && facts._people) || {};
   const personCount = rows.filter((g) => g.kind === 'person').length;
@@ -92,6 +92,20 @@ ${dots}
 `
     : '';
 
+  // The countries that hold enough of these people to be worth a page. A dot on
+  // a map is not linkable and not searchable; "named laws from Hungary" is both.
+  const cRows = Array.isArray(countries) ? countries : [];
+  const byCountry = cRows.length
+    ? `    <nav class="ori-countries" aria-label="By country">
+      <h2 class="ori-countries-h">By country of birth</h2>
+      <p class="ori-countries-note">Countries with at least three entries to their name have an index of their own. The country is the one Wikidata records for the birthplace, which is a fact about the place and not a claim about the person's nationality.</p>
+      <div class="ori-countries-row">
+${cRows.map((c) => `        <a class="cy-chip" href="${base}origins/${escapeHtml(c.slug)}/"><span>${escapeHtml(c.country)}</span><b>${c.laws.length}</b></a>`).join('\n')}
+      </div>
+    </nav>
+`
+    : '';
+
   // The ranked list. Every dot has a row, and every row names the people and
   // links their laws, so the map is never the only way to read the data (and
   // the page still works with images or SVG off).
@@ -148,7 +162,7 @@ ${hubHead({
       [Math.max(0, personCount - located), 'not placed'],
     ],
     base,
-  })}${map}${list}
+  })}${map}${byCountry}${list}
 ${faq.html}${hubNav('origins/', { base })}  </div>
 </section>
 `;

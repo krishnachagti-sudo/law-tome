@@ -14,6 +14,8 @@ import { homePage } from '../src/templates/home.mjs';
 import { listingPage } from '../src/templates/listing.mjs';
 import { graphPage } from '../src/templates/graph.mjs';
 import { originsPage } from '../src/templates/origins.mjs';
+import { countryPage } from '../src/templates/country.mjs';
+import { countryGroups, countriesWithPages, countryPath } from './countries.mjs';
 import { coinPage, aboutPage, coinedIndex, privacyPage, notFoundPage, redirectStub } from '../src/templates/static-pages.mjs';
 import { tensionPage } from '../src/templates/tension.mjs';
 import { comparePage, compareHubPage } from '../src/templates/compare.mjs';
@@ -31,10 +33,15 @@ import { resolveAudiences } from './audiences.mjs';
 import { featuresPage } from '../src/templates/features.mjs';
 import { manifestoPage } from '../src/templates/manifesto.mjs';
 import { eponymsPage } from '../src/templates/eponyms.mjs';
+import { namesHubPage, namesLangPage, namesFor, namesPath, languagesPresent } from '../src/templates/names.mjs';
 import { namesakePage, namesakePath, namesakesWithPages, siblingOrderings } from '../src/templates/namesake.mjs';
 import { creditsPage } from '../src/templates/credits.mjs';
+import { equationsPage, pronunciationPage, sourcesPage } from '../src/templates/surfaces.mjs';
+import { equations, pronunciations, bibliography } from './surfaces.mjs';
 import { eponymGroups } from './eponyms.mjs';
 import { timelinePage } from '../src/templates/timeline.mjs';
+import { periodPage } from '../src/templates/period.mjs';
+import { periods, periodPath, decadesIn } from './periods.mjs';
 import { eraGroups } from './timeline.mjs';
 import { savedPage } from '../src/templates/saved.mjs';
 import { dataPage } from '../src/templates/data.mjs';
@@ -121,6 +128,11 @@ export async function buildSite(opts) {
   // their portrait stays in the image manifest.
   const eponymSlugs = new Set(eponymGroups(laws).map((g) => personSlug(g.person)));
   const publishedCount = opts.publishedCount ?? laws.length;
+  // Centuries and busy decades. Hoisted above the law pages because each one
+  // links its own period, and a law page must not offer a URL the build did
+  // not write — see build/periods.mjs for which decades earn a page.
+  const periodList = periods(laws);
+  const periodSlugs = new Set(periodList.map((p) => p.slug));
   // A single build timestamp shared by every page, surfaced as the JSON-LD
   // dateModified + article:modified_time freshness signal. Honest: it records
   // when the page was last generated. Overridable so a reproducible build can
@@ -174,7 +186,7 @@ export async function buildSite(opts) {
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
-    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, buildDate, images, facts });
+    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, buildDate, images, facts, periodSlugs });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
     // Clean Markdown twin at /laws/<slug>/index.md — a fetch-friendly plain-text
     // representation for LLMs/agents (GEO). Linked from the page via rel=alternate.
@@ -330,15 +342,61 @@ export async function buildSite(opts) {
     writes.push(writePage(join(out, ...namesakePath(g.person).split('/').filter(Boolean), 'index.html'),
       namesakePage(g, { base, origin, count: publishedCount, images, facts, categories, byslug, compareSlugs, kinds: namesakeKinds, siblings: orderings[g.person] || [] })));
   }
+  // The names these ideas already go by elsewhere — one index per language, off
+  // /names/. Only languages with at least one recorded name get a page.
+  const namesLangs = languagesPresent(laws, facts);
+  const lawsWithNames = laws.filter((l) => {
+    const f = facts[l.slug];
+    return !!(f && f.names && f.names.labels && Object.values(f.names.labels).some(Boolean));
+  }).length;
+  writes.push(writePage(join(out, 'names', 'index.html'),
+    namesHubPage(namesLangs, { base, origin, count: publishedCount, lawsWithNames })));
+  for (const lang of namesLangs) {
+    writes.push(writePage(join(out, 'names', lang.code, 'index.html'),
+      namesLangPage(lang, namesFor(laws, facts, lang.code), {
+        base, origin, count: publishedCount,
+        others: namesLangs.filter((o) => o.code !== lang.code),
+      })));
+  }
   // Where the namesakes were born, on a map — birthplaces from facts.json over
   // the Natural Earth coastline. Emitted unconditionally (with an empty state
   // when nothing is harvested), because every hub's footer links it and a
   // conditional page there would be a conditional 404.
+  const allCountries = countryGroups(laws, facts);
+  const countryPages = countriesWithPages(allCountries);
   writes.push(writePage(join(out, 'origins', 'index.html'),
-    originsPage(epGroups, { base, origin, count: publishedCount, facts, world })));
+    originsPage(epGroups, { base, origin, count: publishedCount, facts, world, countries: countryPages })));
+  // One page per country with enough entries to be worth landing on. Birthplace
+  // only — see build/countries.mjs for what that does and does not claim.
+  for (const g of countryPages) {
+    writes.push(writePage(join(out, 'origins', g.slug, 'index.html'),
+      countryPage(g, {
+        base, origin, count: publishedCount, images, categories, byslug, compareSlugs,
+        namesakeHrefs,
+        others: countryPages.filter((o) => o.slug !== g.slug),
+      })));
+  }
+  // Three reference surfaces over data the corpus already held one item at a
+  // time: the formulas, the spoken names, and the whole bibliography.
+  writes.push(writePage(join(out, 'equations', 'index.html'),
+    equationsPage(equations(laws, facts), { base, origin, count: publishedCount, categories })));
+  writes.push(writePage(join(out, 'pronunciation', 'index.html'),
+    pronunciationPage(pronunciations(laws, facts), { base, origin, count: publishedCount })));
+  writes.push(writePage(join(out, 'sources', 'index.html'),
+    sourcesPage(bibliography(laws), { base, origin, count: publishedCount, total: publishedCount })));
   // Image credits — the attribution the CC licences require, in one auditable list.
   writes.push(writePage(join(out, 'credits', 'index.html'), creditsPage(images, { base, origin, count: publishedCount })));
-  writes.push(writePage(join(out, 'timeline', 'index.html'), timelinePage(eraGroups(laws), { base, origin, count: publishedCount, images })));
+  writes.push(writePage(join(out, 'timeline', 'index.html'), timelinePage(eraGroups(laws), { base, origin, count: publishedCount, images, periodSlugs })));
+  // One page per century, and one per decade with enough entries to be worth a
+  // page (see build/periods.mjs) — both hang off /timeline/.
+  for (const p of periodList) {
+    writes.push(writePage(join(out, 'timeline', p.slug, 'index.html'),
+      periodPage(p, {
+        base, origin, count: publishedCount, images, categories, byslug, compareSlugs,
+        siblings: periodList,
+        decades: p.kind === 'century' ? decadesIn(p.century, laws) : [],
+      })));
+  }
 
   // Saved shortlist: a client-only page (localStorage), noindex — filled by
   // assets/saved.js, which every law page's Save button writes to.
@@ -380,18 +438,61 @@ export async function buildSite(opts) {
     ...collections.map((c) => `collections/${c.slug}/`),
     'quiz/',                                  // law of the day + quiz
     'situations/',                            // reverse lookup: problem -> law
+    'names/',                                 // the names these ideas go by elsewhere
+    ...namesLangs.map((l) => namesPath(l.code)), // one index per language
     'named-after/',                           // eponym index
     ...namesakePages.map((g) => namesakePath(g.person)), // one per multi-law person
     'timeline/',                              // by-era browse
+    ...periodList.map((p) => periodPath(p)),  // one per century and busy decade
     'data/',                                  // dataset download page (indexable)
     'for/',                                   // audience hub
     ...audiences.map((a) => `for/${a.slug}/`),
     'features/',                              // product tour
     'manifesto/',                             // positioning essay
     'origins/',                               // birthplace map of the namesakes
+    ...countryPages.map((g) => countryPath(g.slug)), // one per well-represented country
     'credits/',                               // image sources + licences
+    'equations/',                             // the laws that are formulas
+    'pronunciation/',                         // how the namesakes' names sound
+    'sources/',                               // the bibliography, by domain
   ];
-  writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate)));
+  // Which images each page actually carries, for the sitemap's image extension.
+  // Only the canonical home of each picture is declared: a law's own figure and
+  // its namesake's portrait on the law page, and the portrait again on that
+  // person's eponym page (where it is the subject, not an illustration).
+  // Thumbnail strips on hub pages are deliberately left out — the same file
+  // listed on forty pages tells a crawler nothing about where it belongs.
+  //
+  // The caption is the credit line the licence obliges us to publish, in plain
+  // text: the same string doing two jobs.
+  const imgCaption = (img) => [img.artist || 'Unknown', img.licence, img.source]
+    .filter(Boolean).join(' · ');
+  const imagesByPath = {};
+  const pushImg = (p, entry) => { (imagesByPath[p] ||= []).push(entry); };
+  for (const l of laws) {
+    const p = `laws/${l.slug}/`;
+    const fig = (images.figures || {})[l.slug];
+    if (fig) pushImg(p, {
+      loc: `${origin}${base}assets/img/figures/${l.slug}.webp`,
+      title: l.name,
+      caption: imgCaption(fig),
+    });
+    const por = l.namedAfter ? (images.people || {})[personSlug(l.namedAfter)] : null;
+    if (por) pushImg(p, {
+      loc: `${origin}${base}assets/img/people/${por.slug}.webp`,
+      title: por.person || l.namedAfter,
+      caption: imgCaption(por),
+    });
+  }
+  for (const g of namesakePages) {
+    const por = (images.people || {})[personSlug(g.person)];
+    if (por) pushImg(namesakePath(g.person), {
+      loc: `${origin}${base}assets/img/people/${por.slug}.webp`,
+      title: por.person || g.person,
+      caption: imgCaption(por),
+    });
+  }
+  writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate, imagesByPath)));
   writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n# llms.txt: ${origin}${base}llms.txt\n`));
 
   // llms.txt + llms-full.txt (GEO): the llmstxt.org content map for generative

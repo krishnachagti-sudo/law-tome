@@ -13,7 +13,7 @@
 // every slug used in an href goes through escapeHtml — the Task 5/6/7 gates all
 // failed on missed escaping.
 
-import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, reliabilitySlug, browseControls, asset, figureStrip } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, reliabilitySlug, browseControls, searchBox, asset, figureStrip } from './partials.mjs';
 import { hubNav, hubFaq, fieldShape, setTensions, setAdjacent } from './hub.mjs';
 
 /**
@@ -68,7 +68,9 @@ export function listingPage(laws = [], { title, base = '/', kind = 'browse', act
   // Faceted controls (reliability filter + sort + group-by-tier), shared with the
   // homepage teaser via browseControls(). With JS off the server-rendered grid is
   // still the full, readable list.
-  const controls = browseControls({ isReliability });
+  // …with a search field above them. The index search.js loads covers the whole
+  // corpus, so the prompt must not promise a search scoped to this page.
+  const controls = searchBox('Search all 1,100 entries…') + browseControls({ isReliability });
 
   // Visible breadcrumb on the deeper listing views (category, reliability tier),
   // matching the law/compare pages and reflecting the BreadcrumbList JSON-LD so a

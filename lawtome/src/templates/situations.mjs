@@ -6,7 +6,7 @@
 // queries, made browsable. Fabricates nothing: every row points at an existing
 // entry (build/situations.resolveSituations drops any unknown slug).
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, personSlug } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, personSlug, listFilter } from './partials.mjs';
 import { hubHead, hubNav, hubJsonLd } from './hub.mjs';
 import { monogram } from './eponyms.mjs';
 
@@ -39,7 +39,7 @@ export function situationsPage(situations = [], { base = '/', origin = '', count
     const badge = law.reliability
       ? `<span class="badge ${reliabilityClass(law.reliability)}">${escapeHtml(law.reliability)}</span>`
       : '<span class="badge badge--none" aria-hidden="true"></span>';
-    return `        <a class="sit-row" href="${permalink(law.slug)}" data-c="${escapeHtml(law.category || '')}">
+    return `        <a class="sit-row" data-filter-row href="${permalink(law.slug)}" data-c="${escapeHtml(law.category || '')}">
           ${face(law)}
           <span class="sit-desc">${escapeHtml(situation)}</span>
           <span class="sit-answer"><span class="sit-name">${escapeHtml(law.name)}</span>${badge}<span class="sit-arrow" aria-hidden="true">→</span></span>
@@ -60,7 +60,7 @@ export function situationsPage(situations = [], { base = '/', origin = '', count
   const gid = (k) => 'sit-' + String(label(k)).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
   const items = rows.length
-    ? ordered.map(([k, rs]) => `      <section class="sit-group" id="${gid(k)}">
+    ? ordered.map(([k, rs]) => `      <section class="sit-group" data-filter-group id="${gid(k)}">
         <h2 class="sit-group-h">${categories[k] ? `<a href="${base}category/${escapeHtml(k)}/">${escapeHtml(label(k))}</a>` : escapeHtml(label(k))}<span class="sit-group-n">${rs.length}</span></h2>
 ${rs.map(row).join('\n')}
       </section>`).join('\n')
@@ -88,7 +88,7 @@ ${hubHead({
     lede,
     stats: [[rows.length, 'situations mapped'], [ordered.length, 'fields covered']],
     base,
-  })}${jump}    <div class="sit-list">
+  })}${listFilter({ target: 'sit-list', label: `Filter ${rows.length} situations`, placeholder: 'Describe the problem…', noun: 'situations' })}${jump}    <div class="sit-list" id="sit-list">
 ${items}
     </div>
 ${hubNav('situations/', { base })}  </div>

@@ -8,7 +8,7 @@
 // Nothing here is generated imagery; see build/fetch-images.py for how each
 // image is matched to its subject and how the licence is checked.
 
-import { head, sprite, header, footer, escapeHtml, portrait } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, portrait, listFilter } from './partials.mjs';
 import { hubHead, hubFaq, hubNav } from './hub.mjs';
 
 export function creditsPage(images = {}, { base = '/', origin = '', count } = {}) {
@@ -27,7 +27,7 @@ export function creditsPage(images = {}, { base = '/', origin = '', count } = {}
     const src = img.source
       ? `<a href="${escapeHtml(img.source)}">Commons&nbsp;file</a>`
       : 'Wikimedia Commons';
-    return `      <div class="cr-row">
+    return `      <div class="cr-row" data-filter-row>
         <span class="cr-face">${portrait(img, { base, small: true, alt: img.person })}</span>
         <span class="cr-who">${escapeHtml(img.person)}</span>
         <span class="cr-by">${escapeHtml(img.artist || 'Unknown')}</span>
@@ -37,7 +37,7 @@ export function creditsPage(images = {}, { base = '/', origin = '', count } = {}
   };
 
   const body = people.length
-    ? `    <div class="cr-list">
+    ? `${listFilter({ target: 'cr-list', label: `Filter ${people.length} credits`, placeholder: 'Filter by subject, photographer or licence…', noun: 'images' })}    <div class="cr-list" id="cr-list">
       <div class="cr-row cr-head" aria-hidden="true">
         <span class="cr-face"></span><span class="cr-who">Subject</span>
         <span class="cr-by">Photographer / artist</span><span class="cr-lic">Licence</span>

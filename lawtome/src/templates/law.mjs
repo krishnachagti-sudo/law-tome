@@ -121,7 +121,7 @@ function glanceRow(k, v) {
 }
 
 export function lawPage(law, ctx = {}) {
-  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, buildDate, images, facts = {} } = ctx;
+  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, buildDate, images, facts = {}, periodSlugs } = ctx;
   const coined = law.provenance === 'coined';
   const catLabel = categories[law.category] || law.category || '';
   const canonical = `${origin}${base}laws/${law.slug}/`;
@@ -163,6 +163,19 @@ export function lawPage(law, ctx = {}) {
   // them is a link: the tier to its reliability index, the field to its category
   // page, the year to its century on the timeline. Dead metadata otherwise.
   const heroEra = centuryLabelForYear(law.coinedYear);
+  // Where "coined 1974" goes. A period page beats an anchor in a 1,100-row
+  // timeline: it is the same set, already filtered, with its own shape. The
+  // decade page when the corpus gave that decade one, the century otherwise,
+  // and the timeline itself when the entry carries no date at all.
+  const periodHref = (() => {
+    const y = Number(law.coinedYear);
+    if (!Number.isFinite(y) || y < 1) return `${base}timeline/`;
+    const dec = `${Math.floor(y / 10) * 10}s`;
+    if (periodSlugs && periodSlugs.has(dec)) return `${base}timeline/${dec}/`;
+    const cent = heroEra ? heroEra.replace(/\s+/g, '-') : '';
+    if (cent && periodSlugs && periodSlugs.has(cent)) return `${base}timeline/${cent}/`;
+    return heroEra ? `${base}timeline/#${eraId(heroEra)}` : `${base}timeline/`;
+  })();
   const metaBadge = coined
     ? `<a class="badge b-folk" href="${base}coined/">Coined</a>`
     : law.reliability
@@ -174,7 +187,7 @@ export function lawPage(law, ctx = {}) {
     `${metaBadge}<span class="dot"></span>`,
     `<a class="cat" href="${base}category/${escapeHtml(law.category)}/">${escapeHtml(law.category)}</a>`,
   ];
-  if (law.coinedYear != null) meta.push(`<span class="dot"></span>\n      <a href="${base}timeline/${heroEra ? `#${eraId(heroEra)}` : ''}">coined ${escapeHtml(law.coinedYear)}</a>`);
+  if (law.coinedYear != null) meta.push(`<span class="dot"></span>\n      <a href="${periodHref}">coined ${escapeHtml(law.coinedYear)}</a>`);
 
   const aka = Array.isArray(law.aliases) && law.aliases.length
     ? `\n    <div class="aka">also known as — ${law.aliases.map(escapeHtml).join(', ')}</div>`
@@ -424,7 +437,7 @@ ${h2}${inner}
   {
     const dif = diffusionBlock(fact, law, { base });
     if (dif) blocks.push(block('How the name spread', dif, true, `When did people start saying “${L}”?`));
-    const others = otherNames(fact);
+    const others = otherNames(fact, { base });
     if (others) blocks.push(block('Known elsewhere as', others, true, `What is ${L} called in other languages?`, otherNamesText(fact)));
   }
 
@@ -508,7 +521,7 @@ ${h2}${inner}
   const dashTiles = [
     statTile('Reliability', coined ? 'Coined' : law.reliability,
       coined ? `${base}coined/` : (law.reliability ? `${base}reliability/${reliabilitySlug(law.reliability)}/` : '')),
-    statTile('Coined', law.coinedYear, era ? `${base}timeline/#${eraId(era)}` : `${base}timeline/`),
+    statTile('Coined', law.coinedYear, periodHref),
     statTile('Popular form', law.popularYear),
     statTile('Named after', law.namedAfter, `${base}named-after/#${escapeHtml(personId(law.namedAfter))}`),
     statTile('Field', catLabel, law.category ? `${base}category/${escapeHtml(law.category)}/` : ''),

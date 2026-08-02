@@ -27,7 +27,14 @@ export function centuryLabelForYear(year) {
   return `${c}${suffix} century`;
 }
 
-export function timelinePage(eras = [], { base = '/', origin = '', count, images } = {}) {
+export function timelinePage(eras = [], { base = '/', origin = '', count, images, periodSlugs } = {}) {
+  // A century with a page of its own gets its heading linked. The undated
+  // bucket never does, and neither does a century whose page the build chose
+  // not to write — a heading that links nowhere is worse than a plain one.
+  const eraHref = (label) => {
+    const slug = String(label || '').replace(/\s+/g, '-');
+    return periodSlugs && periodSlugs.has(slug) ? `${base}timeline/${slug}/` : '';
+  };
   const rows = Array.isArray(eras) ? eras : [];
   const total = rows.reduce((n, e) => n + e.laws.length, 0);
   const permalink = (slug) => `${base}laws/${escapeHtml(slug)}/`;
@@ -37,7 +44,9 @@ export function timelinePage(eras = [], { base = '/', origin = '', count, images
       return `        <a class="tl-item" href="${permalink(l.slug)}"><span class="tl-year">${escapeHtml(yr)}</span><span class="tl-name">${escapeHtml(l.name)}</span></a>`;
     }).join('\n');
     return `    <section class="tl-era" id="${eraId(e.label)}">
-      <h2 class="tl-eyebrow">${escapeHtml(e.label)}<span class="tl-count">${e.laws.length}</span></h2>
+      <h2 class="tl-eyebrow">${eraHref(e.label)
+        ? `<a href="${eraHref(e.label)}">${escapeHtml(e.label)}</a>`
+        : escapeHtml(e.label)}<span class="tl-count">${e.laws.length}</span></h2>
 ${figureStrip(images, e.laws, { base, limit: 8, min: 4 })}      <div class="tl-items">
 ${items}
       </div>

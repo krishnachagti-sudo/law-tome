@@ -41,8 +41,23 @@
   var BADGE = { Empirical: 'b-emp', Heuristic: 'b-heu', 'Folk-adage': 'b-folk', Contested: 'b-con' };
   function badgeClass(r) { return BADGE[r] || 'b-heu'; }
 
+  // Byte-identical twin of build/search-index.mjs `fold`. See that file for why
+  // an apostrophe is deleted while every other separator becomes a space; if the
+  // two ever drift, "murphys" stops finding Murphy's Law again and nothing else
+  // in the build notices. test/search.test.mjs pins them equal.
+  function fold(s) {
+    return String(s == null ? '' : s)
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/['\u2019\u02bc\u2018`\u00b4]/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
+  }
+
   function tokenize(q) {
-    return String(q || '').toLowerCase().trim().split(/\s+/).filter(Boolean);
+    var f = fold(q);
+    return f ? f.split(' ').filter(Boolean) : [];
   }
 
   // Mirror of build/search-index.mjs STOPWORDS + contentTokens.
@@ -56,12 +71,17 @@
   // Mirror of build/search-index.mjs rankRow: -1 miss, 1 statement-only, 2 name/alias.
   function rankRow(row, tokens) {
     if (!tokens.length) return -1;
-    var nameBlob = ([row.name].concat(row.aliases || [])).join(' ').toLowerCase();
+    var nameBlob = fold(([row.name].concat(row.aliases || [])).join(' '));
+    var nsq = nameBlob.replace(/ /g, '');
     var inName = false;
     for (var i = 0; i < tokens.length; i++) {
       var t = tokens[i];
-      if (row.blob.indexOf(t) === -1) return -1;
-      if (nameBlob.indexOf(t) !== -1) inName = true;
+      var inBlob = row.blob.indexOf(t) !== -1;
+      // Run-together query ("murphyslaw"): absent from the spaced blob, present
+      // in the squashed names. Mirrors build/search-index.mjs rankRow.
+      var inSquashed = !inBlob && t.length > 3 && nsq.indexOf(t) !== -1;
+      if (!inBlob && !inSquashed) return -1;
+      if (nameBlob.indexOf(t) !== -1 || inSquashed) inName = true;
     }
     return inName ? 2 : 1;
   }
@@ -88,7 +108,7 @@
     var fuzzy = [];
     for (var j = 0; j < rows.length; j++) {
       var row = rows[j];
-      var nameBlob = ([row.name].concat(row.aliases || [])).join(' ').toLowerCase();
+      var nameBlob = fold(([row.name].concat(row.aliases || [])).join(' '));
       var hits = 0, nameHits = 0;
       for (var k = 0; k < content.length; k++) {
         if (row.blob.indexOf(content[k]) !== -1) { hits++; if (nameBlob.indexOf(content[k]) !== -1) nameHits++; }
@@ -187,7 +207,7 @@
     // on first paint so the query the user typed elsewhere is already applied.
     try {
       var pq = (new URLSearchParams(location.search).get('q') || '').trim();
-      if (pq) { query = pq.toLowerCase(); if (q) q.value = pq; }
+      if (pq) { query = pq; if (q) q.value = pq; }
     } catch (e) { /* URLSearchParams unsupported — ignore */ }
 
     // Populate chips on the homepage (browse/category pages ship static chips).
@@ -271,7 +291,7 @@
         // document never shrinks mid-word; the floor is released when the field
         // is cleared or left.
         var floor = grid ? grid.offsetHeight : 0;
-        query = q.value.trim().toLowerCase();
+        query = q.value.trim();
         render();
         if (grid) {
           if (!query) grid.style.minHeight = '';

@@ -40,6 +40,48 @@ test('XML-escapes <, > and " in a path (not just &)', () => {
   assert.doesNotMatch(esc, /q=<a>"b"/);   // no raw <, >, " survive inside the loc
 });
 
+// --- image extension (sitemaps.org image/1.1) ---
+
+test('omits the image namespace entirely when no page declares an image', () => {
+  assert.doesNotMatch(xml, /xmlns:image/);
+  assert.doesNotMatch(xml, /<image:/);
+  // An empty map is the same as no map: still no namespace, still no children.
+  const none = buildSitemap(['browse/'], 'https://conyso.com/lawtome/', '', { 'browse/': [] });
+  assert.doesNotMatch(none, /xmlns:image/);
+});
+
+test('declares each page\'s images as <image:image> children of its <url>', () => {
+  const withImgs = buildSitemap(
+    ['laws/goodharts-law/', 'browse/'],
+    'https://conyso.com/lawtome/',
+    '2026-08-02',
+    {
+      'laws/goodharts-law/': [
+        { loc: 'https://conyso.com/lawtome/assets/img/people/charles-goodhart.webp', title: 'Charles Goodhart', caption: 'Someone · CC BY-SA 4.0' },
+      ],
+    },
+  );
+  assert.match(withImgs, /xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1"/);
+  assert.equal((withImgs.match(/<image:image>/g) || []).length, 1);
+  assert.match(withImgs, /<image:loc>https:\/\/conyso\.com\/lawtome\/assets\/img\/people\/charles-goodhart\.webp<\/image:loc>/);
+  assert.match(withImgs, /<image:title>Charles Goodhart<\/image:title>/);
+  assert.match(withImgs, /<image:caption>Someone · CC BY-SA 4\.0<\/image:caption>/);
+  // The image belongs to the law's <url>, not to /browse/.
+  const browseUrl = withImgs.split('\n').find((l) => l.includes('/browse/'));
+  assert.doesNotMatch(browseUrl, /image:/);
+});
+
+test('image title and caption are optional and XML-escaped', () => {
+  const bare = buildSitemap(['x/'], 'https://e.com/', '', { 'x/': [{ loc: 'https://e.com/a&b.webp' }] });
+  assert.match(bare, /<image:loc>https:\/\/e\.com\/a&amp;b\.webp<\/image:loc><\/image:image>/);
+  assert.doesNotMatch(bare, /image:title|image:caption/);
+  const esc = buildSitemap(['x/'], 'https://e.com/', '', {
+    'x/': [{ loc: 'https://e.com/a.webp', title: 'Tom & "Jerry"', caption: '<b>x</b>' }],
+  });
+  assert.match(esc, /<image:title>Tom &amp; &quot;Jerry&quot;<\/image:title>/);
+  assert.match(esc, /<image:caption>&lt;b&gt;x&lt;\/b&gt;<\/image:caption>/);
+});
+
 // --- build integration: site files (sitemap.xml, robots.txt, _redirects) ---
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { readFile, writeFile, mkdtemp, rm, cp } from 'node:fs/promises';
@@ -49,6 +91,9 @@ import { buildSite } from '../build/build.mjs';
 import { comparePairs } from '../build/relations.mjs';
 import { eponymGroups } from '../build/eponyms.mjs';
 import { namesakesWithPages } from '../src/templates/namesake.mjs';
+import { languagesPresent } from '../src/templates/names.mjs';
+import { periods } from '../build/periods.mjs';
+import { countryGroups, countriesWithPages } from '../build/countries.mjs';
 
 // Corpus-relative sitemap expectations, so adding a law (or a law in a new
 // category / reliability tier) never breaks the count. Locs = home + one per law
@@ -77,16 +122,28 @@ const AUD_COUNT = RAW_AUD.filter((a) => (a.laws || []).some((s) => SLUGS.has(s))
 //   near-twin, or a kindred pair with evidence (see build/relations.mjs).
 // + one page per namesake with more than one law. Only those: a page for a
 //   one-law namesake would restate the law under a second URL.
+// Name indexes: the /names/ hub + one page per language that has at least one
+// recorded Wikidata label anywhere in the corpus.
+const FACTS = JSON.parse(readFileSync('src/data/facts.json', 'utf8'));
+const NAMES_LANG_COUNT = languagesPresent(PARSED, FACTS).length;
+// Periods: one page per century, plus one per decade that clears the threshold.
+const PERIOD_COUNT = periods(PARSED).length;
+// Countries: one page per country with enough entries born in it.
+const COUNTRY_COUNT = countriesWithPages(countryGroups(PARSED, FACTS)).length;
 const COMPARE_COUNT = comparePairs(PARSED).length;
 const NAMESAKE_COUNT = namesakesWithPages(eponymGroups(PARSED)).length;
-const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + NAMESAKE_COUNT + (1 + AUD_COUNT + 1 + 1) + 1 + 1;
+const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + NAMESAKE_COUNT + (1 + AUD_COUNT + 1 + 1) + 1 + 1 + (1 + NAMES_LANG_COUNT) + PERIOD_COUNT + COUNTRY_COUNT
+  // + /equations/, /pronunciation/, /sources/
+  + 3;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));
   await buildSite({ dataDir:'src/data/laws', catFile:'src/data/categories.json', assetsDir:'src/assets', out, base:'/lawtome/', origin:'https://conyso.com' });
   const sm = await readFile(join(out, 'sitemap.xml'), 'utf8');
   assert.match(sm, /^<\?xml/);
-  assert.match(sm, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
+  // The real corpus carries images, so the urlset also declares the image
+  // extension namespace (see the image-sitemap tests below).
+  assert.match(sm, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9" xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1">/);
   assert.match(sm, /<\/urlset>/);
   // home + one per law + browse + one per present category + graph + 5 static pages
   // (coin, about, coined, privacy, tension).
@@ -96,6 +153,34 @@ test('build emits a well-formed sitemap.xml listing crawlable pages only', async
   assert.match(sm, /<loc>https:\/\/conyso\.com\/lawtome\/laws\/goodharts-law\/<\/loc>/);
   // Data files and OG images are NOT listed.
   assert.doesNotMatch(sm, /search-index\.json|graph\.json|og\//);
+  await rm(out, { recursive:true, force:true });
+});
+
+test('build declares real, on-disk images against the pages that carry them', async () => {
+  const out = await mkdtemp(join(tmpdir(), 'lt-smi-'));
+  await buildSite({ dataDir:'src/data/laws', catFile:'src/data/categories.json', assetsDir:'src/assets', out, base:'/lawtome/', origin:'https://conyso.com' });
+  const sm = await readFile(join(out, 'sitemap.xml'), 'utf8');
+  const imgs = [...sm.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map((m) => m[1]);
+  assert.ok(imgs.length > 500, `expected the curated imagery to be declared, got ${imgs.length}`);
+  // Every declared image must be a file the build actually shipped — a sitemap
+  // pointing at a 404 is worse than one that stays quiet.
+  const prefix = 'https://conyso.com/lawtome/';
+  for (const loc of imgs) {
+    assert.ok(loc.startsWith(prefix), `not an absolute site URL: ${loc}`);
+    const rel = loc.slice(prefix.length);
+    assert.ok(existsSync(join(out, ...rel.split('/'))), `declared image missing on disk: ${rel}`);
+  }
+  // Images are attached to law and namesake pages only, never to hub pages
+  // whose thumbnail strips merely borrow them.
+  for (const m of sm.matchAll(/<url><loc>([^<]+)<\/loc>[\s\S]*?<\/url>/g)) {
+    if (!m[0].includes('<image:')) continue;
+    const rel = m[1].slice(prefix.length);
+    assert.match(rel, /^(laws|named-after)\//, `unexpected page carries images: ${rel}`);
+  }
+  // Every declared image names its licence credit as the caption.
+  const caps = [...sm.matchAll(/<image:caption>([^<]*)<\/image:caption>/g)].map((m) => m[1]);
+  assert.equal(caps.length, imgs.length);
+  for (const c of caps) assert.ok(c.trim().length > 0, 'empty image caption');
   await rm(out, { recursive:true, force:true });
 });
 

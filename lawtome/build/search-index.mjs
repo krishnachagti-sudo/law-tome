@@ -14,10 +14,41 @@
  * @param {object[]} laws
  * @returns {{slug:string,no:string,name:string,aliases:string[],category:string,statement:string,blob:string,reliability:string,rels:number}[]}
  */
+/**
+ * Fold a string to its searchable form.
+ *
+ * Typing "murphys law" found nothing, because the index held "murphy's law" and
+ * the match is a plain substring test — the apostrophe sat in the middle of the
+ * token and broke it. The same class of miss covered every entry with a
+ * possessive (most of the eponyms), every accented namesake ("godel" vs
+ * "Gödel", "poincare" vs "Poincaré"), every en-dashed pair ("dunning-kruger" vs
+ * "Dunning–Kruger") and every curly apostrophe the corpus prefers typographically.
+ *
+ * Three rules, applied to the index and to the query identically:
+ *   1. Decompose and drop combining marks, so accents stop mattering.
+ *   2. DELETE apostrophes rather than replace them, so "murphy's" and "murphys"
+ *      fold to one string. (Replacing with a space would give "murphy s".)
+ *   3. Turn every other non-alphanumeric run into a single space, so hyphens,
+ *      en dashes, slashes and punctuation are all word separators.
+ *
+ * Both sides must use this function or the two disagree and the disagreement is
+ * invisible until someone types a name with an apostrophe in it. build/ and
+ * assets/search.js keep byte-identical copies, pinned by test/search.test.mjs.
+ */
+export function fold(s) {
+  return String(s == null ? '' : s)
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/['\u2019\u02bc\u2018`\u00b4]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
 // Words counting toward the concept keyword bag: >2 chars, splitting on any
 // non-alphanumeric. (Mirrors the query-side token length used by contentTokens.)
 function bagWords(s) {
-  return String(s || '').toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 2);
+  return fold(s).split(' ').filter((w) => w.length > 2);
 }
 
 // Cap on concept keywords appended per law. The base blob (name/aliases/
@@ -45,7 +76,7 @@ export function buildSearchIndex(laws = [], situationsBySlug = {}) {
     const variantNames = Array.isArray(l.variants)
       ? l.variants.map((v) => (v && v.name) || '').filter(Boolean)
       : [];
-    const base = [name, ...aliases, ...variantNames, statement, category].join(' ').toLowerCase();
+    const base = fold([name, ...aliases, ...variantNames, statement, category].join(' '));
     // Concept bag: so a search can find a law by the SITUATION it describes, not
     // just its name. Pull unique content words from `meaning` + example texts that
     // aren't already in the base and aren't stopwords, capped. This is what makes
@@ -82,7 +113,8 @@ export function buildSearchIndex(laws = [], situationsBySlug = {}) {
 
 /** Tokenise a query: lowercase, split on whitespace, drop empties. */
 export function tokenize(query) {
-  return String(query || '').toLowerCase().trim().split(/\s+/).filter(Boolean);
+  const f = fold(query);
+  return f ? f.split(' ').filter(Boolean) : [];
 }
 
 // Function words carry no topic signal, so they are dropped before the
@@ -109,13 +141,22 @@ export function contentTokens(query) {
  */
 export function rankRow(row, tokens) {
   if (!tokens.length) return -1;
-  const nameBlob = [row.name, ...(Array.isArray(row.aliases) ? row.aliases : [])]
-    .join(' ')
-    .toLowerCase();
+  const nameBlob = fold([row.name, ...(Array.isArray(row.aliases) ? row.aliases : [])].join(' '));
+  // The names with their spaces taken out, so a run-together query finds them:
+  // people type "murphyslaw", "occamsrazor", "dunningkruger". Derived per call
+  // rather than stored on the row — shipping it pushed the client index past
+  // its transfer budget, and only the NAMES are squashed, so it is cheap.
+  // (Squashing the whole blob would let any two adjacent words in a statement
+  // fuse into a spurious match, as well as doubling the index.)
+  const nsq = nameBlob.replace(/ /g, '');
   let inName = false;
   for (const t of tokens) {
-    if (!row.blob.includes(t)) return -1; // token-AND: one miss disqualifies the row
-    if (nameBlob.includes(t)) inName = true;
+    const inBlob = row.blob.includes(t);
+    // A run-together token ("murphyslaw") is absent from the spaced blob but
+    // present in the squashed names.
+    const inSquashed = !inBlob && t.length > 3 && nsq.includes(t);
+    if (!inBlob && !inSquashed) return -1; // token-AND: one miss disqualifies the row
+    if (nameBlob.includes(t) || inSquashed) inName = true;
   }
   return inName ? 2 : 1;
 }
@@ -151,7 +192,7 @@ export function searchRows(rows, query) {
   const fuzzy = [];
   for (let i = 0; i < list.length; i++) {
     const row = list[i];
-    const nameBlob = [row.name, ...(Array.isArray(row.aliases) ? row.aliases : [])].join(' ').toLowerCase();
+    const nameBlob = fold([row.name, ...(Array.isArray(row.aliases) ? row.aliases : [])].join(' '));
     let hits = 0, nameHits = 0;
     for (const t of content) {
       if (row.blob.includes(t)) { hits++; if (nameBlob.includes(t)) nameHits++; }

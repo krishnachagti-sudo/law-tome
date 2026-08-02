@@ -7,7 +7,7 @@
 // side by side is the honest presentation: the corpus says they are in tension;
 // the reader sees both claims and the tension speaks for itself.
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, personSlug } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, personSlug, listFilter } from './partials.mjs';
 import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
 import { monogram } from './eponyms.mjs';
 
@@ -61,7 +61,7 @@ export function tensionPage(pairs = [], { base = '/', origin = '', count, catego
     const mid = cs
       ? `      <a class="ten-vs ten-vs--link" href="${base}compare/${escapeHtml(cs)}/" aria-label="Compare ${escapeHtml(p.a.name)} with ${escapeHtml(p.b.name)}"><span>vs</span><span class="ten-vs-cta">compare</span></a>`
       : '      <div class="ten-vs" aria-hidden="true"><span>vs</span></div>';
-    return `    <div class="ten-pair" data-reveal>
+    return `    <div class="ten-pair" data-filter-row data-reveal>
 ${side(p.a)}
 ${mid}
 ${side(p.b)}
@@ -85,7 +85,7 @@ ${side(p.b)}
   const groupId = (k) => 'tn-' + String(label(k)).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
   const body = rows.length
-    ? ordered.map(([k, ps]) => `    <section class="ten-group" id="${groupId(k)}">
+    ? ordered.map(([k, ps]) => `    <section class="ten-group" data-filter-group id="${groupId(k)}">
       <h2 class="ten-group-h">${categories[k] ? `<a href="${base}category/${escapeHtml(k)}/">${escapeHtml(label(k))}</a>` : escapeHtml(label(k))}<span class="ten-group-n">${ps.length}</span></h2>
       <div class="ten-grid">
 ${ps.map(pairCard).join('\n')}
@@ -135,7 +135,9 @@ ${hubHead({
     lede,
     stats: [[rows.length, 'opposing pairs'], [laws.size, 'laws involved'], [across.length, 'across fields']],
     base,
-  })}${jump}${body}
+  })}${rows.length ? listFilter({ target: 'ten-list', label: `Filter ${rows.length} pairs`, placeholder: 'Filter the pairs…', noun: 'pairs' }) : ''}${jump}    <div id="ten-list">
+${body}
+    </div>
 ${faq.html}${hubNav('tension/', { base })}  </div>
 </section>
 `;

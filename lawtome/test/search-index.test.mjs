@@ -166,3 +166,74 @@ test('variant names are searchable, variant prose is not', () => {
   assert.match(rows[0].blob, /mutational meltdown/);
   assert.doesNotMatch(rows[0].blob, /accelerating spiral/);
 });
+
+// --- fold: apostrophes, accents, dashes and run-together names -------------
+//
+// Every one of these was a real miss. "murphys" returned nothing because the
+// index held the apostrophe and the match is a substring test; "godel" and
+// "poincare" missed for the accent; "dunning-kruger" missed because the corpus
+// spells it with an en dash.
+import { fold } from '../build/search-index.mjs';
+import { readFileSync as _rfs } from 'node:fs';
+
+test('fold deletes apostrophes and folds accents, dashes and case', () => {
+  assert.equal(fold("Murphy's Law"), 'murphys law');
+  assert.equal(fold('Murphy’s Law'), 'murphys law');      // curly
+  assert.equal(fold('Gödel'), 'godel');
+  assert.equal(fold('Poincaré Recurrence'), 'poincare recurrence');
+  assert.equal(fold('Dunning–Kruger'), 'dunning kruger');       // en dash
+  assert.equal(fold('  P vs. NP  '), 'p vs np');
+  assert.equal(fold(null), '');
+  assert.equal(fold(undefined), '');
+});
+
+const FOLD_LAWS = [
+  { slug: 'murphys-law', no: '1', name: "Murphy's Law", statement: 'Anything that can go wrong will go wrong', category: 'planning', aliases: ["Sod's Law"] },
+  { slug: 'godels', no: '2', name: "Gödel's Incompleteness Theorems", statement: 'No consistent system proves its own consistency', category: 'mathematics' },
+  { slug: 'dk', no: '3', name: 'The Dunning–Kruger Effect', statement: 'The unskilled overrate themselves', category: 'psychology' },
+];
+const FOLD_ROWS = buildSearchIndex(FOLD_LAWS);
+
+test('a query finds a name whatever the reader does with its punctuation', () => {
+  for (const q of ['murphys', "murphy's", 'MURPHYS', 'murphys law', "sod's law", 'sods law']) {
+    assert.deepEqual(searchRows(FOLD_ROWS, q).map((r) => r.slug), ['murphys-law'], `query: ${q}`);
+  }
+});
+
+test('a query finds an accented name typed without the accent', () => {
+  for (const q of ['godel', 'Gödel', 'godels incompleteness']) {
+    assert.deepEqual(searchRows(FOLD_ROWS, q).map((r) => r.slug), ['godels'], `query: ${q}`);
+  }
+});
+
+test('a hyphen, an en dash and a space are the same separator', () => {
+  for (const q of ['dunning kruger', 'dunning-kruger', 'Dunning–Kruger']) {
+    assert.deepEqual(searchRows(FOLD_ROWS, q).map((r) => r.slug), ['dk'], `query: ${q}`);
+  }
+});
+
+test('a run-together query matches the names, but not two words of a statement', () => {
+  assert.deepEqual(searchRows(FOLD_ROWS, 'murphyslaw').map((r) => r.slug), ['murphys-law']);
+  assert.deepEqual(searchRows(FOLD_ROWS, 'dunningkruger').map((r) => r.slug), ['dk']);
+  // "can go wrong" lives in a statement; squashing the whole blob would make
+  // "cangowrong" a hit, and every adjacent word pair with it.
+  assert.deepEqual(searchRows(FOLD_ROWS, 'cangowrong'), []);
+});
+
+test('the browser twin of fold is byte-identical to this one', () => {
+  // Two copies exist because search.js cannot import from build/. They must not
+  // drift: a difference here is invisible until a reader types an apostrophe.
+  const js = _rfs('src/assets/search.js', 'utf8');
+  const body = (src, name) => {
+    const i = src.indexOf(`function ${name}(s)`);
+    assert.ok(i !== -1, `${name} not found`);
+    const open = src.indexOf('{', i);
+    let depth = 0, end = open;
+    for (let k = open; k < src.length; k++) {
+      if (src[k] === '{') depth++;
+      else if (src[k] === '}') { depth--; if (!depth) { end = k; break; } }
+    }
+    return src.slice(open + 1, end).replace(/\s+/g, ' ').replace(/^var /, 'const ').trim();
+  };
+  assert.equal(body(js, 'fold'), body(_rfs('build/search-index.mjs', 'utf8'), 'fold'));
+});

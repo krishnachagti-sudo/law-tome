@@ -5,6 +5,21 @@
    hues — green (empirical) · amber (heuristic) · grey (folk) · rust-red (contested) —
    so the amber brand accent never collides with the "contested" flag. */
 :root{
+  /* How tall the sticky masthead actually is. Every other sticky thing on the
+     site — the A–Z jump bar, the law page's contents rail, the aside — parks
+     itself just below the header, and each one used to carry its own hard-coded
+     guess at that height. The guesses were made when the header was shorter,
+     so the jump bar spent months sliding 32px UNDER the masthead and losing its
+     first row behind it. One variable, set here as a fallback and measured for
+     real by assets/common.js on load and on resize, so a header that changes
+     height (it wraps at narrow widths) can never orphan the things below it. */
+  --header-h:104px;
+  /* …and how tall the sticky A–Z / by-field jump bar under it is, 0 on the
+     pages that have none. A jump link that only clears the masthead drops its
+     heading straight behind the jump bar itself, which is the same bug one row
+     lower down. Measured alongside --header-h. */
+  --jump-h:0px;
+
   /* Warm-neutral charcoal ramp. The previous set was a cold blue-grey with only
      ~1.09:1 between the page and a card and 1.19:1 between a card and its own
      border — every surface landed inside one narrow band, so the whole page read
@@ -130,7 +145,7 @@ html[data-theme="dark"] .th-sun{display:block}
    normal flow — it wraps all page content; scroll-margin keeps the focused
    top edge clear of the sticky header. (It was previously an empty anchor span
    styled position:absolute; as a wrapping <main> that rule broke page flow.) */
-#main-content{scroll-margin-top:70px}
+#main-content{scroll-margin-top:calc(var(--header-h) + 8px)}
 #main-content:focus{outline:none}
 /* mobile menu toggle — hidden on desktop, shown as the nav control on phones */
 .menu-btn{display:none}
@@ -461,7 +476,7 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 /* eponym index (/named-after/) */
 .ep-h2{font-family:var(--serif);font-weight:600;font-size:20px;margin:30px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .ep-list{display:flex;flex-direction:column}
-.ep-row{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center;scroll-margin-top:120px}
+.ep-row{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center;scroll-margin-top:calc(var(--header-h) + var(--jump-h) + 16px)}
 /* Image credits table: subject, who made it, licence, original. */
 .cr-list{margin-top:26px;font-size:13.5px}
 .cr-row{display:grid;grid-template-columns:44px minmax(130px,1.1fr) minmax(140px,1.4fr) 110px 110px;gap:14px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
@@ -503,19 +518,19 @@ a:hover .portrait,a:focus-visible .portrait{filter:none}
 .ep-laws a:hover{text-decoration:underline}
 .ep-dot{color:var(--faint);margin:0 8px}
 @media(max-width:560px){.ep-row{grid-template-columns:1fr;gap:4px}}
-.ep-letter{font-family:var(--mono);font-size:13px;letter-spacing:2px;color:var(--gold);margin:26px 0 8px;scroll-margin-top:150px}
+.ep-letter{font-family:var(--mono);font-size:13px;letter-spacing:2px;color:var(--gold);margin:26px 0 8px;scroll-margin-top:calc(var(--header-h) + var(--jump-h) + 20px)}
 
 /* jump-bar (A–Z on /named-after/, eras on /timeline/) — a sticky row of anchors
    so long index pages aren't a single unbroken scroll. */
-.az-nav{position:sticky;top:72px;z-index:5;display:flex;flex-wrap:wrap;gap:2px 4px;padding:10px 12px;margin:0 0 24px;background:var(--bg);border:1px solid var(--line);border-radius:10px}
+.az-nav{position:sticky;top:calc(var(--header-h) + 8px);max-height:calc(100vh - var(--header-h) - 32px);overflow:auto;z-index:5;display:flex;flex-wrap:wrap;gap:2px 4px;padding:10px 12px;margin:0 0 24px;background:var(--bg);border:1px solid var(--line);border-radius:10px}
 .az-nav a,.az-nav span{font-family:var(--mono);font-size:12px;line-height:1;padding:5px 8px;border-radius:6px;text-decoration:none}
 .az-nav a{color:var(--accent)}
 .az-nav a:hover{background:var(--surface-2);color:var(--gold)}
 .az-nav span{color:var(--faint);opacity:.4}
-@media(max-width:560px){.az-nav{top:62px;gap:3px;padding:8px}.az-nav a,.az-nav span{min-width:30px;padding:7px 4px;font-size:12px;text-align:center}}
+@media(max-width:560px){.az-nav{gap:3px;padding:8px}.az-nav a,.az-nav span{min-width:30px;padding:7px 4px;font-size:12px;text-align:center}}
 
 /* timeline (/timeline/) */
-.tl-era{margin-bottom:30px;scroll-margin-top:132px}
+.tl-era{margin-bottom:30px;scroll-margin-top:calc(var(--header-h) + var(--jump-h) + 20px)}
 .tl-eyebrow{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 14px;display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
 .tl-count{font-family:var(--mono);font-size:11px;color:var(--faint)}
 .tl-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0 24px}
@@ -783,7 +798,7 @@ a.stat--link .s-k::after{content:" →";letter-spacing:0;opacity:.55}
    an accent fill (--scroll, 0..1, set on scroll) travels down it, and the active
    item grows + turns accent. The active state is driven by scroll position in JS,
    so it tracks instantly rather than lagging behind an IntersectionObserver. */
-.toc{position:sticky;top:112px;align-self:start;height:calc(100vh - 150px);display:flex;flex-direction:column;justify-content:space-between;gap:6px;padding:10px 0 12px 18px;border-left:2px solid var(--line);--fill:0px}
+.toc{position:sticky;top:calc(var(--header-h) + 8px);align-self:start;height:calc(100vh - var(--header-h) - 46px);display:flex;flex-direction:column;justify-content:space-between;gap:6px;padding:10px 0 12px 18px;border-left:2px solid var(--line);--fill:0px}
 /* the accent line runs down to the CURRENT item (its centre), so the indicator
    tracks the active section name rather than raw scroll position */
 .toc::before{content:"";position:absolute;left:-2px;top:0;width:2px;height:var(--fill);background:var(--accent);transition:height .3s cubic-bezier(.2,.7,.2,1)}
@@ -859,7 +874,7 @@ a.stat--link .s-k::after{content:" →";letter-spacing:0;opacity:.55}
 .entry-layout .lawmain{counter-reset:sec}
 .entry-layout .lawmain .block>.lbl::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);font-size:10px;letter-spacing:.04em;color:var(--faint);border:1px solid var(--line-strong);border-radius:3px;padding:3px 7px}
 /* jumped-to sections must clear the sticky header (72px desktop / 62px mobile) */
-.block{margin-bottom:60px;scroll-margin-top:92px}
+.block{margin-bottom:60px;scroll-margin-top:calc(var(--header-h) + 12px)}
 .block:last-child{margin-bottom:0}
 /* infographic card: reliability meter + lineage timeline (real per-law data) */
 .viz-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 24px;margin-bottom:60px}
@@ -959,7 +974,7 @@ a.prose-law:hover,a.prose-law:focus-visible{color:var(--accent);border-bottom-co
 /* Each variant is its own linkable thing. The § sits out of the way until the
    card is hovered or the link is focused, and clears the sticky masthead when
    someone arrives on the anchor. */
-.variant{scroll-margin-top:96px}
+.variant{scroll-margin-top:calc(var(--header-h) + 16px)}
 .vlink{position:absolute;top:12px;right:12px;font-size:13px;line-height:1;color:var(--faint);
   text-decoration:none;opacity:0;transition:opacity .16s,color .16s}
 .variant:hover .vlink,.vlink:focus-visible{opacity:1}
@@ -1103,7 +1118,7 @@ html{scroll-behavior:smooth}
 }
 
 /* aside */
-.aside{position:sticky;top:88px;display:flex;flex-direction:column;gap:20px}
+.aside{position:sticky;top:calc(var(--header-h) + 16px);display:flex;flex-direction:column;gap:20px}
 @media(max-width:860px){.aside{position:static}}
 .panel{border:1px solid var(--line);border-radius:3px;background:var(--surface);padding:18px 20px;box-shadow:var(--e1)}
 .panel h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:400;margin-bottom:14px}
@@ -1235,13 +1250,13 @@ html{scroll-behavior:smooth}
   /* The footer is hidden, so restate provenance once at the very END of the page. */
   main::after{content:"The Law Tome — a sourced index of named laws.";display:block;margin-top:16pt;padding-top:6pt;border-top:1px solid #bbb;font-size:9pt;color:#555}
 }
-.ten-group{margin-top:34px;scroll-margin-top:132px}
+.ten-group{margin-top:34px;scroll-margin-top:calc(var(--header-h) + var(--jump-h) + 20px)}
 .ten-group-h{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 14px;display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
 .ten-group-n{font-family:var(--mono);font-size:11px;color:var(--faint)}
 .az-nav .az-n{font-size:10px;opacity:.6;margin-left:3px}
 /* situations: themed sections + a right-pinned arrow rail so the column edge
    stays straight regardless of law-name length. */
-.sit-group{display:flex;flex-direction:column;gap:10px;margin-top:30px;scroll-margin-top:132px}
+.sit-group{display:flex;flex-direction:column;gap:10px;margin-top:30px;scroll-margin-top:calc(var(--header-h) + var(--jump-h) + 20px)}
 .sit-group-h{font-family:var(--serif);font-weight:600;font-size:19px;margin:0 0 4px;display:flex;align-items:baseline;gap:11px;border-bottom:1px solid var(--line);padding-bottom:7px}
 /* each field heading is a way into that field's own page */
 .ten-group-h a,.sit-group-h a{color:inherit;text-decoration:none;transition:color .16s}
@@ -1339,7 +1354,7 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 
 /* The search results are scrolled to when a query starts; keep the heading clear
    of the sticky masthead instead of tucking it underneath. */
-#index{scroll-margin-top:84px}
+#index{scroll-margin-top:calc(var(--header-h) + 8px)}
 
 /* ---- figure strip ---------------------------------------------------------
    A band of real imagery at the head of a set page (a field, a tier, a
@@ -1779,3 +1794,137 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .coll-card h2.coll-h,.aud-card h2.aud-h{margin:0}
 .coll-card h2.coll-h a,.aud-card h2.aud-h a{text-decoration:none;color:inherit}
 .coll-card h2.coll-h a:hover,.aud-card h2.aud-h a:hover{color:var(--accent)}
+
+/* Name indexes (/names/ and /names/<lang>/) — the names these ideas already
+   go by elsewhere. The foreign name leads and the English title follows it,
+   because the whole point of the page is to be scannable by someone reading
+   the other language; a column of English with the name tucked behind it
+   would be the law page's collapsed block again, under a new URL. */
+.nx-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-top:26px}
+.nx-card{display:flex;flex-direction:column;gap:5px;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r2);background:var(--surface);box-shadow:var(--e1);text-decoration:none;color:inherit;transition:border-color .18s,box-shadow .18s,transform .18s}
+.nx-card:hover{border-color:var(--line-strong);box-shadow:var(--e2);transform:translateY(-1px)}
+.nx-card-n{font-family:var(--serif);font-size:23px;line-height:1.2;color:var(--ink)}
+.nx-card:hover .nx-card-n{color:var(--accent)}
+.nx-card-e{font-size:13.5px;color:var(--muted)}
+.nx-card-c{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.nx-list{display:flex;flex-direction:column;margin-top:26px}
+.nx-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.nx-row:hover{background:var(--surface);box-shadow:-10px 0 0 var(--surface),10px 0 0 var(--surface)}
+.nx-name{font-size:17px;line-height:1.45;color:var(--ink)}
+.nx-row:hover .nx-name{color:var(--accent)}
+.nx-en{font-size:13.5px;color:var(--muted)}
+.nx-langs{margin-top:34px}
+.nx-langs-h{font-family:var(--serif);font-weight:600;font-size:17px;margin:0 0 12px}
+.nx-langs-row{display:flex;flex-wrap:wrap;gap:8px}
+.nx-lang{display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);box-shadow:var(--e1);text-decoration:none;color:inherit}
+.nx-lang:hover{border-color:var(--line-strong);color:var(--accent)}
+.nx-lang-n{font-size:14.5px}
+.nx-lang-c{font-family:var(--mono);font-size:10px;color:var(--faint)}
+@media(max-width:560px){.nx-row{grid-template-columns:1fr;gap:2px}}
+
+/* Period pages (/timeline/<century|decade>/) — the decade strip and the
+   before/inside/after nav. The strip is a row of linked cells rather than a
+   chart: at ten bars the labels carry the information and a link is something
+   a keyboard can reach. */
+.perdec{margin-top:34px}
+.perdec h2{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.perdec-note{font-size:13.5px;color:var(--muted);margin:0 0 16px;max-width:64ch}
+.pd-strip{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;align-items:end;min-height:150px}
+.pd-cell{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;padding:8px 4px 10px;border:1px solid var(--line);border-radius:var(--r2);background:var(--surface);box-shadow:var(--e1);height:100%;text-decoration:none;color:inherit}
+.pd-cell--link:hover{border-color:var(--line-strong);box-shadow:var(--e2)}
+.pd-cell--link:hover .pd-bar{background:var(--accent)}
+.pd-bar{width:60%;min-height:2px;background:var(--line-strong);border-radius:2px 2px 0 0;margin-top:auto}
+.pd-lab{font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--muted)}
+.pd-n{font-family:var(--mono);font-size:11px;color:var(--faint)}
+.pd-cell--link .pd-n{color:var(--ink)}
+.pernav{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:34px}
+.pnav-l{display:flex;flex-direction:column;gap:3px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r2);background:var(--surface);box-shadow:var(--e1);text-decoration:none;color:inherit}
+.pnav-l:hover{border-color:var(--line-strong);box-shadow:var(--e2)}
+.pnav-k{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.pnav-n{font-family:var(--serif);font-size:18px;color:var(--ink)}
+.pnav-l:hover .pnav-n{color:var(--accent)}
+.pnav-c{font-size:12px;color:var(--muted)}
+.tl-eyebrow a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line-strong)}
+.tl-eyebrow a:hover{color:var(--accent)}
+@media(max-width:700px){.pd-strip{grid-template-columns:repeat(5,1fr)}}
+/* The strip runs straight into the chronological list below it; the list needs
+   its own air, and the bars need to read as quantities rather than as grey
+   placeholders. */
+.tl-eyebrow--period{margin-top:38px}
+.pd-bar{width:72%;background:var(--line-strong)}
+.pd-cell--link .pd-bar{background:linear-gradient(180deg,var(--accent),color-mix(in srgb,var(--accent) 45%,transparent))}
+
+/* Country pages (/origins/<country>/) and the country band on the map page. */
+.ori-countries{margin:34px 0}
+.ori-countries-h{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.ori-countries-note,.cy-places{font-size:13.5px;color:var(--muted);margin:0 0 16px;max-width:70ch}
+.ori-countries-row,.cy-others-row{display:flex;flex-wrap:wrap;gap:8px}
+.cy-chip{display:inline-flex;align-items:baseline;gap:8px;padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--surface);box-shadow:var(--e1);text-decoration:none;color:inherit;font-size:14px}
+.cy-chip:hover{border-color:var(--line-strong);color:var(--accent)}
+.cy-chip b{font-family:var(--mono);font-size:11px;color:var(--faint);font-weight:400}
+.cy-chip:hover b{color:var(--accent)}
+.cy-h2,.cy-others-h{font-family:var(--serif);font-weight:600;font-size:20px;margin:34px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.cy-list{display:flex;flex-direction:column}
+.cy-row{display:grid;grid-template-columns:minmax(150px,220px) minmax(90px,150px) 1fr;gap:16px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.cy-who{display:flex;align-items:center;gap:10px;min-width:0}
+.cy-who .portrait--sm{width:34px;height:34px;object-fit:cover;border-radius:50%;flex:none}
+.cy-pname{font-family:var(--serif);font-size:15.5px;color:var(--ink);text-decoration:none;border-bottom:1px solid transparent}
+.cy-pname:hover{color:var(--accent);border-bottom-color:currentColor}
+.cy-place{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--faint)}
+.cy-laws{font-size:14px}
+.cy-others{margin-top:34px}
+@media(max-width:640px){.cy-row{grid-template-columns:1fr;gap:4px}}
+
+/* "More" in the masthead — a <details> panel, so it opens without JavaScript
+   and common.js only adds the niceties (outside click, Escape, one-at-a-time). */
+.navmore{position:relative}
+.navmore>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.navmore>summary::-webkit-details-marker{display:none}
+.navmore>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.nm-chev{width:13px;height:13px;transition:transform .18s}
+.navmore[open]>summary .nm-chev{transform:rotate(180deg)}
+.navmore[open]>summary{color:var(--accent)}
+.nm-panel{position:absolute;top:calc(100% + 14px);right:0;z-index:30;width:min(92vw,560px);
+  display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;padding:14px;
+  background:var(--bg);border:1px solid var(--line-strong);border-radius:var(--r2);box-shadow:var(--e3)}
+.nm-item{display:flex;flex-direction:column;gap:1px;padding:9px 10px;border-radius:8px;text-decoration:none;color:inherit}
+.nm-item:hover,.nm-item:focus-visible{background:var(--surface)}
+.nm-t{font-size:14.5px;color:var(--ink)}
+.nm-item:hover .nm-t{color:var(--accent)}
+.nm-b{font-size:11.5px;line-height:1.35;color:var(--faint)}
+@media(max-width:940px){
+  .nm-panel{position:static;width:auto;grid-template-columns:1fr;border:0;box-shadow:none;padding:4px 0 0;background:transparent}
+  .navmore{width:100%}
+  .nm-b{display:none}
+}
+
+/* In-page row filter (see partials.mjs listFilter). */
+.lfilter{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:24px 0 4px}
+.search--filter{flex:1 1 260px;max-width:420px}
+.lfilter-count{margin:0;font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--faint);min-height:1em}
+.is-filtered-out{display:none !important}
+
+/* /equations/, /pronunciation/, /sources/ — three reference tables over data
+   the corpus used to show one item at a time. */
+.eq-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:6px}
+.eq-row{display:flex;flex-direction:column;gap:10px;padding:16px;border:1px solid var(--line);border-radius:var(--r2);background:var(--surface);box-shadow:var(--e1);text-decoration:none;color:inherit}
+.eq-row:hover{border-color:var(--line-strong);box-shadow:var(--e2)}
+.eq-img{max-width:100%;height:auto;max-height:64px;object-fit:contain;object-position:left;filter:invert(1) hue-rotate(180deg)}
+:root[data-theme="light"] .eq-img{filter:none}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]) .eq-img{filter:none}}
+.eq-meta{display:flex;flex-direction:column;gap:3px;min-width:0}
+.eq-name{font-family:var(--serif);font-size:16px;color:var(--ink)}
+.eq-row:hover .eq-name{color:var(--accent)}
+.eq-tex{font-family:var(--mono);font-size:10.5px;color:var(--faint);overflow-wrap:anywhere}
+.pr-list,.sr-list{display:flex;flex-direction:column;margin-top:6px}
+.pr-row{display:grid;grid-template-columns:110px minmax(120px,200px) 1fr minmax(140px,240px);gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.pr-who{font-family:var(--serif);font-size:15.5px;color:var(--ink)}
+.pr-laws{font-size:14px}
+.pr-credit{font-size:11px;color:var(--faint)}
+.sr-row{display:grid;grid-template-columns:minmax(160px,260px) 110px 1fr;gap:14px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line)}
+.sr-host a{font-family:var(--mono);font-size:13px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-strong);overflow-wrap:anywhere}
+.sr-host a:hover{color:var(--accent)}
+.sr-n{font-family:var(--mono);font-size:11px;color:var(--faint)}
+.sr-laws{font-size:13.5px;color:var(--muted)}
+.sr-more{margin-left:8px;font-size:11.5px;color:var(--faint)}
+@media(max-width:760px){.pr-row,.sr-row{grid-template-columns:1fr;gap:5px}}

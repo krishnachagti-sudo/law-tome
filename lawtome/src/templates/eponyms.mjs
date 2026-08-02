@@ -4,7 +4,7 @@
 // than one law are featured up top (the interesting clusters — "Parkinson's
 // laws"), then the full A–Z. Built from eponymGroups; nothing invented.
 
-import { head, sprite, header, footer, escapeHtml, personImage, portrait } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, personImage, portrait, listFilter } from './partials.mjs';
 import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
 
 /**
@@ -116,17 +116,22 @@ export function eponymsPage(groups = [], { base = '/', origin = '', count, image
       : `<span class="ep-pname">${inner}</span>`;
   };
 
-  const row = (g, anchored) => `      <div class="ep-row"${anchored ? ` id="${escapeHtml(personId(g.person))}"` : ''}>
+  const row = (g, anchored) => `      <div class="ep-row" data-filter-row${anchored ? ` id="${escapeHtml(personId(g.person))}"` : ''}>
         <span class="ep-person">${avatar(g.person)}${pname(g)}</span>
         <span class="ep-laws">${lawLinks(g.laws)}</span>
       </div>`;
 
   const multi = rows.filter((g) => g.laws.length > 1);
+  // The same people as the A–Z below, shown twice on purpose. Marked so the
+  // in-page filter hides the whole block while a query is active: otherwise the
+  // reader filters the index and this block sits above it, unchanged.
   const featured = multi.length
-    ? `    <h2 class="ep-h2">Namesakes with more than one law</h2>
+    ? `    <section data-filter-hide="ep-az">
+    <h2 class="ep-h2">Namesakes with more than one law</h2>
     <div class="ep-list">
 ${multi.slice().sort((a, b) => b.laws.length - a.laws.length || a.person.localeCompare(b.person, 'en')).map((g) => row(g, false)).join('\n')}
     </div>
+    </section>
 `
     : '';
 
@@ -144,13 +149,16 @@ ${multi.slice().sort((a, b) => b.laws.length - a.laws.length || a.person.localeC
       const ltr = initial(g.person);
       present.add(ltr);
       if (ltr !== cur) {
-        if (cur !== null) alpha += '\n    </div>';
-        alpha += `\n    <h3 class="ep-letter" id="az-${ltr === '#' ? 'sym' : ltr}">${ltr === '#' ? '#' : ltr}</h3>\n    <div class="ep-list">`;
+        // Each letter is its own section so the in-page filter can hide a
+        // letter whose every namesake was filtered out, rather than leaving a
+        // row of orphaned headings down the page.
+        if (cur !== null) alpha += '\n    </div></section>';
+        alpha += `\n    <section class="ep-letter-grp" data-filter-group><h3 class="ep-letter" id="az-${ltr === '#' ? 'sym' : ltr}">${ltr === '#' ? '#' : ltr}</h3>\n    <div class="ep-list">`;
         cur = ltr;
       }
       alpha += '\n' + row(g, true);
     }
-    alpha += '\n    </div>';
+    alpha += '\n    </div></section>';
   }
 
   // Jump-bar: every A–Z letter plus '#', letters with no namesake shown inert so
@@ -168,9 +176,15 @@ ${alphabet.map((L) => {
 `
     : '';
 
+  // One filter over the whole A–Z, above the jump bar: 900 rows is past the
+  // point where hopping to the right letter and reading down is the fast way.
+  const filter = rows.length
+    ? listFilter({ target: 'ep-az', label: `Filter ${rows.length} namesakes`, placeholder: `Filter ${rows.length} namesakes…`, noun: 'namesakes' })
+    : '';
   const all = rows.length
     ? `    <h2 class="ep-h2" id="az">Every namesake, A–Z</h2>
-${jump}${alpha}`
+${filter}${jump}    <div id="ep-az">${alpha}
+    </div>`
     : '<div class="empty">No named laws yet.</div>';
 
   const eponymCount = rows.reduce((n, g) => n + g.laws.length, 0);

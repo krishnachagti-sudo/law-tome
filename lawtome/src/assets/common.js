@@ -298,3 +298,166 @@
       });
     }
   })();
+
+  /* The masthead measures itself into --header-h.
+   *
+   * Everything sticky below the header parks at `calc(var(--header-h) + n)`.
+   * The stylesheet ships a fallback, but the real height depends on the
+   * viewport (the nav wraps at narrow widths) and on the font actually loaded,
+   * so the only reliable number is the measured one. Recomputed on resize and
+   * after webfonts land, which is when the header's height last changes.
+   */
+  (function () {
+    var header = document.querySelector('header');
+    if (!header) return;
+    /* The jump bar sticks directly under the header, so an anchor has to clear
+       both or it lands behind the bar. */
+    var jump = document.querySelector('.az-nav');
+    var last = 0, lastJump = -1;
+    var sync = function () {
+      var h = Math.round(header.getBoundingClientRect().height);
+      if (h && h !== last) {
+        last = h;
+        document.documentElement.style.setProperty('--header-h', h + 'px');
+      }
+      var j = jump ? Math.round(jump.getBoundingClientRect().height) : 0;
+      if (j !== lastJump) {
+        lastJump = j;
+        document.documentElement.style.setProperty('--jump-h', j + 'px');
+      }
+    };
+    sync();
+    window.addEventListener('resize', sync, { passive: true });
+    window.addEventListener('orientationchange', sync);
+    if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
+      document.fonts.ready.then(sync);
+    }
+    /* The header grows when the mobile menu opens; that must not push every
+       sticky element down the page, so only the collapsed height is recorded. */
+    if (window.ResizeObserver) {
+      new ResizeObserver(function () {
+        if (!header.classList.contains('nav-open')) sync();
+      }).observe(header);
+    }
+  })();
+
+  /* The masthead's "More" panel: dismissable, and never two open at once.
+   *
+   * The markup is a <details>, so the panel already opens and closes with no
+   * script at all. What script adds is the part a <details> does not do: close
+   * when the reader clicks away from it or presses Escape, which is what
+   * everyone expects of a dropdown and is otherwise a trap on touch.
+   */
+  (function () {
+    var panels = document.querySelectorAll('details.navmore');
+    if (!panels.length) return;
+    var closeAll = function (except) {
+      for (var i = 0; i < panels.length; i++) {
+        if (panels[i] !== except) panels[i].removeAttribute('open');
+      }
+    };
+    for (var i = 0; i < panels.length; i++) {
+      panels[i].addEventListener('toggle', function () {
+        if (this.hasAttribute('open')) closeAll(this);
+      });
+    }
+    document.addEventListener('click', function (e) {
+      for (var j = 0; j < panels.length; j++) {
+        if (panels[j].hasAttribute('open') && !panels[j].contains(e.target)) {
+          panels[j].removeAttribute('open');
+        }
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      for (var k = 0; k < panels.length; k++) {
+        if (panels[k].hasAttribute('open')) {
+          panels[k].removeAttribute('open');
+          var sum = panels[k].querySelector('summary');
+          if (sum) sum.focus();
+        }
+      }
+    });
+  })();
+
+  /* In-page row filters (partials.mjs listFilter).
+   *
+   * Hides the rows of one container that do not contain what you typed. Not a
+   * search: no index, no ranking, no network. The indexes it serves — 605 names
+   * in Arabic, 900 namesakes, 337 citation domains — are columns you scan, and
+   * the reader's problem there is finding one row, not ranking a thousand.
+   *
+   * Matching folds the same way the corpus search does (assets/search.js
+   * `fold`), so "murphys" finds "Murphy's" and "godel" finds "Gödel" here too.
+   * Anything else would be two different search behaviours on one site.
+   */
+  (function () {
+    var inputs = document.querySelectorAll('input[data-filter]');
+    if (!inputs.length) return;
+
+    var fold = function (s) {
+      return String(s == null ? '' : s)
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/['\u2019\u02bc\u2018`\u00b4]/g, '')
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim();
+    };
+
+    var wire = function (input) {
+      var box = document.getElementById(input.getAttribute('data-filter'));
+      if (!box) return;
+      var noun = input.getAttribute('data-filter-noun') || 'rows';
+      var out = document.getElementById(input.id + '-count');
+      /* A row is whatever the template marked as one; a group is a heading plus
+         the rows under it, and disappears when none of them survives. Falling
+         back to direct children keeps a plain <div> of <a>s working with no
+         extra attributes. */
+      var rowEls = box.querySelectorAll('[data-filter-row]');
+      if (!rowEls.length) rowEls = box.children;
+      var rows = [];
+      for (var i = 0; i < rowEls.length; i++) {
+        rows.push({ el: rowEls[i], text: fold(rowEls[i].textContent) });
+      }
+      var groups = box.querySelectorAll('[data-filter-group]');
+      /* Blocks elsewhere on the page that are made of the same rows — the
+         eponym index repeats its multi-law namesakes in a featured block above
+         the A–Z. Left alone they stay fully visible while the list below them
+         narrows, so the page reads as if the filter did nothing. */
+      var hideWhenActive = document.querySelectorAll('[data-filter-hide="' + box.id + '"]');
+      var total = rows.length;
+
+      var apply = function () {
+        var q = fold(input.value);
+        var terms = q ? q.split(' ') : [];
+        var shown = 0;
+        for (var j = 0; j < rows.length; j++) {
+          var hit = true;
+          for (var t = 0; t < terms.length; t++) {
+            if (rows[j].text.indexOf(terms[t]) === -1) { hit = false; break; }
+          }
+          rows[j].el.classList.toggle('is-filtered-out', !hit);
+          if (hit) shown++;
+        }
+        for (var g = 0; g < groups.length; g++) {
+          var live = groups[g].querySelectorAll('[data-filter-row]:not(.is-filtered-out)');
+          groups[g].classList.toggle('is-filtered-out', live.length === 0);
+        }
+        for (var h = 0; h < hideWhenActive.length; h++) {
+          hideWhenActive[h].classList.toggle('is-filtered-out', terms.length > 0);
+        }
+        if (out) {
+          out.textContent = terms.length
+            ? (shown ? shown + ' of ' + total + ' ' + noun : 'no ' + noun + ' match \u201c' + input.value.trim() + '\u201d')
+            : '';
+        }
+      };
+      input.addEventListener('input', apply);
+      /* A browser restoring a typed value on back-navigation must not leave the
+         list unfiltered under a filled box. */
+      if (input.value) apply();
+    };
+
+    for (var n = 0; n < inputs.length; n++) wire(inputs[n]);
+  })();

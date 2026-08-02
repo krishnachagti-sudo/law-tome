@@ -9,7 +9,7 @@
 // the difference" sentence — that would be fabrication. The honest presentation
 // is both claims, laid out, for the reader to weigh.
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, personSlug } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, personSlug, listFilter } from './partials.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId, monogram } from './eponyms.mjs';
 import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
@@ -312,11 +312,11 @@ export function compareHubPage(pairs = [], { base = '/', origin = '', count, ima
     return `<span class="cvs-face cvs-face--none" aria-hidden="true">${escapeHtml(law.namedAfter ? monogram(law.namedAfter) : '')}</span>`;
   };
   const side = (law, cls) => `<span class="cvs-side cvs-side--${cls}">${thumb(law)}<span class="cvs-name">${escapeHtml(law.name)}</span></span>`;
-  const item = (p) => `        <li class="cmp-hub-item"><a class="cvs" href="${base}compare/${escapeHtml(p.slug)}/" data-c="${escapeHtml(p.a.category || '')}">
+  const item = (p) => `        <li class="cmp-hub-item" data-filter-row><a class="cvs" href="${base}compare/${escapeHtml(p.slug)}/" data-c="${escapeHtml(p.a.category || '')}">
           ${side(p.a, 'a')}<span class="cvs-vs" aria-hidden="true">vs</span>${side(p.b, 'b')}
         </a></li>`;
   const group = (title, blurb, list) => list.length
-    ? `    <div class="cmp-hub-group">
+    ? `    <div class="cmp-hub-group" data-filter-group>
       <h2>${title} <span class="cmp-hub-n">${list.length}</span></h2>
       <p class="cmp-hub-blurb">${blurb}</p>
       <ul class="cmp-hub-list">
@@ -357,8 +357,10 @@ ${hubHead({
     lede,
     stats: [[rows.length, 'comparisons'], [twins.length, 'often confused'], [tensions.length, 'in tension']],
     base,
-  })}${group('Often confused', 'Near-twins that are easy to mistake for one another.', twins)}
+  })}${rows.length ? listFilter({ target: 'cmp-hub', label: `Filter ${rows.length} comparisons`, placeholder: 'Filter by either law…', noun: 'comparisons' }) : ''}    <div id="cmp-hub">
+${group('Often confused', 'Near-twins that are easy to mistake for one another.', twins)}
 ${group('In tension', 'Principles that pull in opposite directions.', tensions)}
+    </div>
 ${faq.html}${hubNav('compare/', { base })}  </div>
 </section>
 `;

@@ -102,7 +102,7 @@ export function otherNamesText(fact) {
   return `${rows.map(([lang, v]) => `${LANG_NAME[lang] || lang}: ${v}`).join('; ')}. These are the names the idea already goes by, as recorded on Wikidata — not translations we made.`;
 }
 
-export function otherNames(fact) {
+export function otherNames(fact, { base = '/' } = {}) {
   const n = fact && fact.names;
   if (!n || !n.labels) return '';
   const rows = Object.entries(n.labels)
@@ -111,6 +111,6 @@ export function otherNames(fact) {
   if (rows.length < 3) return '';
   return `        <div class="othernames">
           <ul class="on-list">${rows.join('')}</ul>
-          <p class="on-note">The names this idea already goes by, as recorded on <a href="${escapeHtml(n.source)}">Wikidata</a> — not translations we made.</p>
+          <p class="on-note">The names this idea already goes by, as recorded on <a href="${escapeHtml(n.source)}">Wikidata</a> — not translations we made. Every recorded name, language by language, is indexed <a href="${base}names/">here</a>.</p>
         </div>`;
 }
