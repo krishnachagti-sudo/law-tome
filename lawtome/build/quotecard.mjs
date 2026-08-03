@@ -10,6 +10,7 @@
 import { Resvg } from '@resvg/resvg-js';
 import { escapeHtml } from '../src/templates/partials.mjs';
 import { schematicForLaw, schematicOgSvg, SCHEMATIC_OG_STYLE } from '../src/templates/schematics.mjs';
+import { scoreVerdict } from './quiz.mjs';
 
 // Midnight palette (same hues as the site's dark-first theme).
 const BG = '#14161c';   // charcoal-ink field
@@ -252,6 +253,50 @@ export function siteCardSvg({ origin = 'https://conyso.com', base = '/lawtome/',
   <text x="90" y="404" font-family="Fraunces" font-size="40" fill="${INK}" opacity="0.72">Defined, sourced, and rated for</text>
   <text x="90" y="456" font-family="Fraunces" font-size="40" fill="${INK}" opacity="0.72">how well established each one is.</text>
   <text x="90" y="${H - 50}" font-family="Space Mono" font-size="22" fill="${GOLD}">${displayUrl}</text>
+</svg>`;
+}
+
+/**
+ * The card a finished quiz round unfurls as.
+ *
+ * A shared score is a link somebody else clicks, and a link with no picture is
+ * a link nobody clicks. Eleven of these are rendered at build time — one per
+ * possible score — and the score page for each names it as its og:image. The
+ * card shows the score and the grid, which is exactly what the shared text
+ * already says, so the picture cannot disagree with the words.
+ *
+ * The grid is drawn as squares rather than set as emoji: resvg has no colour
+ * font, and a row of empty boxes would be worse than no grid at all.
+ *
+ * @param {object} o
+ * @param {number} o.score right answers
+ * @param {number} [o.total=10]
+ */
+export function scoreCardSvg({ score = 0, total = 10, origin = 'https://conyso.com', base = '/lawtome/' } = {}) {
+  const s = Math.max(0, Math.min(total, Math.round(Number(score) || 0)));
+  const displayUrl = escapeHtml(`${origin}${base}quiz/`.replace(/^https?:\/\//, '').replace(/\/+$/, ''));
+  const verdict = escapeHtml(scoreVerdict(s, total));
+
+  // One square per question: the right ones first, because the card is about a
+  // score and not about which question anybody missed — the order of a real
+  // round is the reader's to share in the text, not ours to invent in a picture.
+  const BOX = 62, GAP = 14;
+  const gridW = total * BOX + (total - 1) * GAP;
+  const x0 = Math.round((W - gridW) / 2);
+  const boxes = Array.from({ length: total }, (_, i) => {
+    const on = i < s;
+    return `<rect x="${x0 + i * (BOX + GAP)}" y="392" width="${BOX}" height="${BOX}" rx="8" `
+      + (on ? `fill="${GOLD}"/>` : `fill="none" stroke="${INK}" stroke-width="2" opacity="0.28"/>`);
+  }).join('\n  ');
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+  <rect width="${W}" height="${H}" fill="${BG}"/>
+  <rect x="24" y="24" width="${W - 48}" height="${H - 48}" fill="none" stroke="${GOLD}" stroke-width="2" opacity="0.5"/>
+  <text x="${W / 2}" y="118" text-anchor="middle" font-family="Space Mono" font-size="24" letter-spacing="6" fill="${GOLD}">THE LAW TOME QUIZ</text>
+  <text x="${W / 2}" y="272" text-anchor="middle" font-family="Fraunces" font-size="150" fill="${INK}">${s} / ${total}</text>
+  <text x="${W / 2}" y="336" text-anchor="middle" font-family="Fraunces" font-size="42" fill="${INK}" opacity="0.74">${verdict}</text>
+  ${boxes}
+  <text x="${W / 2}" y="${H - 58}" text-anchor="middle" font-family="Space Mono" font-size="22" fill="${GOLD}">${displayUrl}</text>
 </svg>`;
 }
 

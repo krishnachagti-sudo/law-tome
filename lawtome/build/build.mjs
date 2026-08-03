@@ -28,8 +28,8 @@ import { bestKnown, bestKnownPage } from '../src/templates/bestknown.mjs';
 import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, setBuildDate, personSlug } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
 import { resolveCollections } from './collections.mjs';
-import { quizPage } from '../src/templates/quiz.mjs';
-import { dayIndex } from './quiz.mjs';
+import { quizPage, scorePage } from '../src/templates/quiz.mjs';
+import { dayIndex, ROUND as QUIZ_ROUND } from './quiz.mjs';
 import { situationsPage } from '../src/templates/situations.mjs';
 import { diagnosePage, diagnoseData } from '../src/templates/diagnose.mjs';
 import { printPage } from '../src/templates/print.mjs';
@@ -58,7 +58,7 @@ import { dataPage } from '../src/templates/data.mjs';
 import { buildDataset, datasetCsv, lawRecord, apiIndex } from './dataset.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
-import { quoteCardSvg, renderPng, siteCardSvg } from './quotecard.mjs';
+import { quoteCardSvg, renderPng, siteCardSvg, scoreCardSvg } from './quotecard.mjs';
 import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
 import { buildFeed } from './feed.mjs';
@@ -389,6 +389,17 @@ export async function buildSite(opts) {
   // Law of the day + name-that-law quiz: a static shell filled by assets/quiz.js
   // (which fetches the search index). A learning/return loop, not a "law page".
   writes.push(writePage(join(out, 'quiz', 'index.html'), quizPage({ base, origin, count: publishedCount, categories })));
+
+  // A finished round is shareable — but a score pasted into a chat is a bare
+  // number until it carries a link, and a link is ignored until it unfurls into
+  // a picture. So: eleven landing pages, one per possible score, each naming its
+  // own card. They are noindex (see scorePage) and stay out of the sitemap.
+  for (let s = 0; s <= QUIZ_ROUND; s += 1) {
+    writes.push(writePage(join(out, 'quiz', 'score', String(s), 'index.html'),
+      scorePage({ score: s, total: QUIZ_ROUND, base, origin, count: publishedCount })));
+    writes.push(writePage(join(out, 'og', `quiz-${s}.png`),
+      renderPng(scoreCardSvg({ score: s, total: QUIZ_ROUND, origin, base }))));
+  }
 
   // Situations: a visible reverse-lookup ("what's the law for…?") built from the
   // same curated map folded into the search index. Emitted unconditionally (empty

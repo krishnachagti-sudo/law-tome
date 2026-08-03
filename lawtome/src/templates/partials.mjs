@@ -350,6 +350,10 @@ export function sprite() {
     <rect x="2.5" y="5.5" width="19" height="13" rx="2.2"/>
     <path d="M6 15.5v-7l3 3.4 3-3.4v7"/><path d="M16.5 8.5v5.4M14.4 12l2.1 2.1 2.1-2.1"/>
   </symbol>
+  <symbol id="sh-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4.5" width="18" height="15" rx="2.2"/>
+    <circle cx="8.5" cy="10" r="1.6"/><path d="M4 17l4.8-4.6L13 16l2.7-2.4L20 17.5"/>
+  </symbol>
   <symbol id="sh-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
     <rect x="2.5" y="5" width="19" height="14" rx="2.2"/><path d="m3.4 7.2 8.6 6 8.6-6"/>
   </symbol>

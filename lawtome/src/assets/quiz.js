@@ -87,15 +87,75 @@
   // ---- the quiz -----------------------------------------------------------
   var ROUND = 10;
   var BEST_KEY = 'lawtome:quiz:best';
+  var DAILY_KEY = 'lawtome:quiz:daily';
+
+  // Mirrors of build/quiz.mjs. Every one of these has a Node test asserting the
+  // two copies agree; if you change one, change both, or the round the reader
+  // plays stops being the round the site says everybody is playing.
+  var DAILY_EPOCH = '2026-08-01';
+  var QUIZ_MODES = ['name', 'says', 'field', 'tier'];
+
+  function seedFromDate(dateStr) {
+    var s = String(dateStr || ''), h = 2166136261 >>> 0;
+    for (var i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i);
+      h = Math.imul(h, 16777619) >>> 0;
+    }
+    return h >>> 0;
+  }
+  function mulberry32(seed) {
+    var a = seed >>> 0;
+    return function () {
+      a = (a + 0x6d2b79f5) >>> 0;
+      var t = a;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function daysBetween(from, to) {
+    function p(s) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s || ''));
+      return m ? Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])) : NaN;
+    }
+    var a = p(from), b = p(to);
+    if (!isFinite(a) || !isFinite(b)) return 0;
+    return Math.round((b - a) / 86400000);
+  }
+  function dailyNo(dateStr) { return Math.max(1, daysBetween(DAILY_EPOCH, dateStr) + 1); }
+
+  function roundModes(rnd, n) {
+    var base = QUIZ_MODES.concat(QUIZ_MODES);
+    while (base.length < n) base.push(QUIZ_MODES[Math.floor(rnd() * QUIZ_MODES.length)]);
+    for (var i = base.length - 1; i > 0; i--) {
+      var j = Math.floor(rnd() * (i + 1));
+      var t = base[i]; base[i] = base[j]; base[j] = t;
+    }
+    return base.slice(0, n);
+  }
+
+  // The one source of randomness in the whole round. In endless mode it is
+  // Math.random; in the daily round it is a generator seeded off the date, and
+  // because every draw in the round — the laws, the wrong answers, the order of
+  // the options — comes through here, seeding it is all it takes to hand two
+  // strangers the same ten questions.
+  //
+  // One caveat worth stating plainly: a round is a function of the date AND of
+  // the index it draws from. If the site is rebuilt with a new entry partway
+  // through a day, anybody loading the page after that gets a different ten
+  // from anybody who loaded it before. Nothing here can prevent that without
+  // freezing the round into the build — which would mean shipping a list of
+  // today's answers to the browser, a worse trade for a rarer problem.
+  var RND = Math.random;
 
   function shuffle(arr) {
     for (var i = arr.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
+      var j = Math.floor(RND() * (i + 1));
       var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
     }
     return arr;
   }
-  function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+  function pick(arr) { return arr[Math.floor(RND() * arr.length)]; }
 
   function readBest() {
     try { return Number(localStorage.getItem(BEST_KEY)) || 0; } catch (e) { return 0; }
@@ -116,14 +176,14 @@
     var pool = byCat[answer.category] || [];
     while (out.length < n && guard < 400 && pool.length > 1) {
       guard++;
-      var c = pool[Math.floor(Math.random() * pool.length)];
+      var c = pool[Math.floor(RND() * pool.length)];
       if (used[c.slug]) continue;
       used[c.slug] = 1; out.push(c);
     }
     guard = 0;
     while (out.length < n && guard < 800) {
       guard++;
-      var r = rows[Math.floor(Math.random() * rows.length)];
+      var r = rows[Math.floor(RND() * rows.length)];
       if (used[r.slug]) continue;
       used[r.slug] = 1; out.push(r);
     }
@@ -196,32 +256,88 @@
     var finalEl = document.getElementById('quiz-final');
     var recapEl = document.getElementById('quiz-recap');
     var againBtn = document.getElementById('quiz-again');
+    var switchEl = document.getElementById('quiz-switch');
+    var dailyBtn = document.getElementById('quiz-daily');
+    var endlessBtn = document.getElementById('quiz-endless');
+    var switchNote = document.getElementById('quiz-switch-note');
+    var eyebrowEl = document.getElementById('quiz-eyebrow');
+    var tomorrowEl = document.getElementById('quiz-tomorrow');
+    var toEndlessBtn = document.getElementById('quiz-to-endless');
 
-    var MODES = ['name', 'says', 'field', 'tier'];
-    var order = [], asked = 0, score = 0, streak = 0, bestStreak = 0, seen = [];
+    var queue = [], asked = 0, score = 0, streak = 0, bestStreak = 0, seen = [];
     // qNo is the question ON SCREEN; asked is how many have been answered. They
     // differ for the whole time the reveal is up, which is when a reader is
     // most likely to be looking at the counter.
     var q = null, qNo = 0, answered = false;
+    var daily = true, today = todayKey(), todayNo = dailyNo(today);
+
+    /**
+     * Build the whole round up front.
+     *
+     * It used to be generated question by question, which was fine when every
+     * round was random and fatal the moment one had to be reproducible: a
+     * seeded stream only yields the same round if it is drawn in the same order
+     * every time, and a reader who abandons question four and comes back would
+     * otherwise resume a different round from the one everybody else played.
+     */
+    function buildRound(order) {
+      var out = [], guard;
+      for (var i = 0; i < order.length; i++) {
+        var made = null;
+        guard = 0;
+        while (!made && guard < 40) { made = makeQuestion(rows, byCat, order[i]); guard++; }
+        if (made) out.push(made);
+      }
+      return out;
+    }
 
     function newRound() {
-      order = shuffle(MODES.concat(MODES, MODES.slice(0, 2))).slice(0, ROUND);
+      var order;
+      if (daily) {
+        RND = mulberry32(seedFromDate(today));
+        order = roundModes(RND, ROUND);
+      } else {
+        RND = Math.random;
+        order = shuffle(QUIZ_MODES.concat(QUIZ_MODES, QUIZ_MODES.slice(0, 2))).slice(0, ROUND);
+      }
+      queue = buildRound(order);
+      RND = Math.random; // nothing after this point should touch the seeded stream
       asked = 0; qNo = 0; score = 0; streak = 0; bestStreak = 0; seen = [];
       if (doneEl) doneEl.hidden = true;
+      if (shareBox) shareBox.hidden = true;
+      if (tomorrowEl) tomorrowEl.hidden = true;
+      if (againBtn) againBtn.hidden = false;
+      if (!queue.length) return;
       root.hidden = false;
       nextQuestion();
     }
 
+    // ---- today's record ----------------------------------------------------
+    // Kept in the reader's own browser, like the best streak and the shortlist.
+    // Its only job is to stop the daily round being re-rolled until the score
+    // looks good — which would make every shared grid meaningless, including
+    // the honest ones.
+    function readDaily() {
+      try {
+        var raw = JSON.parse(localStorage.getItem(DAILY_KEY) || 'null');
+        return (raw && raw.d === today) ? raw : null;
+      } catch (e) { return null; }
+    }
+    function writeDaily(rec) {
+      try { localStorage.setItem(DAILY_KEY, JSON.stringify(rec)); } catch (e) { /* private mode */ }
+    }
+
     function setHud() {
       if (scoreEl) scoreEl.textContent = score + ' / ' + asked + (streak > 1 ? '  ·  ' + streak + ' in a row' : '');
-      if (progEl) progEl.style.width = Math.round((asked / ROUND) * 100) + '%';
-      if (modeEl && q) modeEl.textContent = 'Q' + qNo + ' of ' + ROUND + '  ·  ' + q.mode;
+      if (progEl) progEl.style.width = Math.round((asked / queue.length) * 100) + '%';
+      // The daily number is already on the switch a few lines above; repeating
+      // it here only pushed the mode name onto a second line on a phone.
+      if (modeEl && q) modeEl.textContent = 'Q' + qNo + ' of ' + queue.length + '  ·  ' + q.mode;
     }
 
     function nextQuestion() {
-      if (asked >= ROUND) return finish();
-      var guard = 0;
-      do { q = makeQuestion(rows, byCat, order[asked]); guard++; } while (!q && guard < 40);
+      if (asked >= queue.length) return finish();
+      q = queue[asked];
       if (!q) return finish();
       qNo = asked + 1;
       answered = false;
@@ -284,7 +400,7 @@
       setHud();
       if (nextBtn) {
         nextBtn.disabled = false;
-        nextBtn.textContent = asked >= ROUND ? 'See the round' : 'Next';
+        nextBtn.textContent = asked >= queue.length ? 'See the round' : 'Next';
         nextBtn.focus();
       }
     }
@@ -292,17 +408,36 @@
     function finish() {
       root.hidden = true;
       if (!doneEl) return;
-      doneEl.hidden = false;
+      var total = queue.length || ROUND;
+      var marks = seen.map(function (s) { return !!s.right; });
       var best = readBest();
       if (bestStreak > best) { writeBest(bestStreak); best = bestStreak; }
+      if (daily) writeDaily({ d: today, no: todayNo, score: score, total: total, marks: marks, streak: bestStreak });
+      showResult({ score: score, total: total, marks: marks, streak: bestStreak, best: best, seen: seen, daily: daily, replay: false });
+    }
+
+    /**
+     * Paint the result panel. Split out of finish() because it is also what a
+     * reader sees when they open the page having already played today — the
+     * round is over either way, and showing them a fresh board they are not
+     * allowed to play would be worse than showing them what they scored.
+     */
+    function showResult(r) {
+      doneEl.hidden = false;
+      root.hidden = true;
+      if (eyebrowEl) eyebrowEl.textContent = r.daily ? 'Daily №' + todayNo : 'Round over';
       if (finalEl) {
-        finalEl.textContent = score + ' out of ' + ROUND +
-          (bestStreak > 1 ? '. Longest run: ' + bestStreak + '.' : '.') +
-          (best > 1 ? ' Your best run so far: ' + best + '.' : '');
+        finalEl.textContent = r.score + ' out of ' + r.total +
+          (r.streak > 1 ? '. Longest run: ' + r.streak + '.' : '.') +
+          (r.best > 1 ? ' Your best run so far: ' + r.best + '.' : '');
       }
+      paintShare(r);
+
       if (recapEl) {
         recapEl.textContent = '';
-        seen.forEach(function (s) {
+        // A replayed record keeps the score and the grid, not the ten laws — so
+        // there is nothing honest to recap, and an empty list is the truth.
+        (r.seen || []).forEach(function (s) {
           var li = el('li', s.right ? 'qr-ok' : 'qr-no');
           var a = el('a', null);
           a.setAttribute('href', lawHref(s.law.slug));
@@ -316,11 +451,104 @@
           recapEl.appendChild(li);
         });
       }
-      if (againBtn) againBtn.focus();
+      // In daily mode "play again" would hand out a second go at the round the
+      // grid claims to be a record of, so it is replaced by the way out.
+      if (againBtn) againBtn.hidden = !!r.daily;
+      if (tomorrowEl) tomorrowEl.hidden = !r.daily;
+      if (againBtn && !r.daily) againBtn.focus();
     }
 
+    // ---- sharing a round ---------------------------------------------------
+    // Built here rather than by the shared [data-share] handler in common.js,
+    // which snapshots its text once at load: what is shared here does not exist
+    // until the last question is answered.
+    var gridEl = document.getElementById('quiz-grid');
+    var shareBox = document.getElementById('quiz-share');
+    var shNative = document.getElementById('qsh-native');
+    var shCopy = document.getElementById('qsh-copy');
+    var shCopyT = document.getElementById('qsh-copy-t');
+    var shX = document.getElementById('qsh-x');
+    var shBsky = document.getElementById('qsh-bsky');
+    var shSaid = document.getElementById('qsh-said');
+    var shareBody = '';
+
+    function scoreUrl(score) {
+      return location.origin + BASE + 'quiz/score/' + score + '/';
+    }
+
+    function paintShare(r) {
+      if (!shareBox) return;
+      var grid = r.marks.map(function (m) { return m ? '\u{1f7e9}' : '\u{1f7e5}'; }).join('');
+      var url = scoreUrl(r.score);
+      var lines = [
+        r.daily ? 'The Law Tome — Daily №' + todayNo : 'The Law Tome — Name that law',
+        r.score + '/' + r.total + '  ' + grid,
+      ];
+      if (r.streak > 2) lines.push('Longest run: ' + r.streak);
+      lines.push(url);
+      shareBody = lines.join('\n');
+
+      if (gridEl) gridEl.textContent = grid;
+      if (shX) shX.href = 'https://x.com/intent/post?text=' + encodeURIComponent(shareBody);
+      if (shBsky) shBsky.href = 'https://bsky.app/intent/compose?text=' + encodeURIComponent(shareBody);
+      if (shNative) shNative.hidden = !navigator.share;
+      shareBox.hidden = false;
+    }
+
+    function said(msg) {
+      if (!shSaid) return;
+      shSaid.textContent = msg;
+      clearTimeout(shSaid._t);
+      shSaid._t = setTimeout(function () { shSaid.textContent = ''; }, 2400);
+    }
+
+    if (shNative) {
+      shNative.addEventListener('click', function () {
+        if (!navigator.share) return;
+        navigator.share({ text: shareBody }).catch(function () { /* sheet dismissed */ });
+      });
+    }
+    if (shCopy) {
+      shCopy.addEventListener('click', function () {
+        var write = (navigator.clipboard && navigator.clipboard.writeText)
+          ? navigator.clipboard.writeText(shareBody)
+          : Promise.reject(new Error('no clipboard'));
+        write.then(function () {
+          if (shCopyT) {
+            shCopyT.textContent = 'Copied';
+            clearTimeout(shCopy._t);
+            shCopy._t = setTimeout(function () { shCopyT.textContent = 'Copy result'; }, 1800);
+          }
+          said('Copied — paste it anywhere.');
+        }, function () { said('Could not copy. Select the grid above instead.'); });
+      });
+    }
+
+    // ---- the daily / endless switch ----------------------------------------
+    function setMode(isDaily) {
+      daily = !!isDaily;
+      if (dailyBtn) { dailyBtn.classList.toggle('is-on', daily); dailyBtn.setAttribute('aria-pressed', daily ? 'true' : 'false'); }
+      if (endlessBtn) { endlessBtn.classList.toggle('is-on', !daily); endlessBtn.setAttribute('aria-pressed', daily ? 'false' : 'true'); }
+      if (switchNote) {
+        switchNote.textContent = daily
+          ? 'Daily №' + todayNo + ' — everybody gets the same ten today.'
+          : 'A fresh random round every time. Nothing is recorded.';
+      }
+      var rec = daily ? readDaily() : null;
+      if (rec) {
+        showResult({ score: rec.score, total: rec.total || ROUND, marks: rec.marks || [], streak: rec.streak || 0, best: readBest(), seen: [], daily: true, replay: true });
+      } else {
+        newRound();
+      }
+    }
+
+    if (dailyBtn) dailyBtn.addEventListener('click', function () { setMode(true); });
+    if (endlessBtn) endlessBtn.addEventListener('click', function () { setMode(false); });
+    if (toEndlessBtn) toEndlessBtn.addEventListener('click', function () { setMode(false); });
+    if (switchEl) switchEl.hidden = false;
+
     if (nextBtn) nextBtn.addEventListener('click', function () { if (answered) nextQuestion(); });
-    if (againBtn) againBtn.addEventListener('click', newRound);
+    if (againBtn) againBtn.addEventListener('click', function () { newRound(); });
 
     // Keyboard: 1–4 answers, Enter advances. Skipped while the reader is typing
     // in the site search, which shares the page chrome.
@@ -341,7 +569,9 @@
     });
 
     if (boot) boot.hidden = true;
-    newRound();
+    // The daily round is the landing state, and setMode() is what decides
+    // whether that means a fresh board or today's finished one.
+    setMode(true);
   }
 
   function start() {

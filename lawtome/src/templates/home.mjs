@@ -125,7 +125,12 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
           <div class="lotd-say">“${escapeHtml(lawOfTheDay.statement || '')}”</div>
         </a>
       </div>
-      <p class="lotd-aside">A different entry every day. Think you can name a law from its statement alone? <a href="${base}quiz/">Take the quiz</a>.</p>
+      <p class="lotd-aside">A different entry every day.</p>
+      <a class="lotd-daily" href="${base}quiz/">
+        <span class="ld-eyebrow">Today's ten</span>
+        <span class="ld-t">Can you name a law from its statement alone?</span>
+        <span class="ld-s">Ten questions, the same ten for everybody today. <b>Play →</b></span>
+      </a>
     </div>
   </div>
 </section>

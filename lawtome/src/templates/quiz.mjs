@@ -18,6 +18,7 @@
 
 import { head, sprite, header, footer, escapeHtml, asset } from './partials.mjs';
 import { hubFaq } from './hub.mjs';
+import { scoreVerdict } from '../../build/quiz.mjs';
 
 const MODES = [
   ['Name that law', 'A statement appears; pick the law it belongs to.'],
@@ -37,7 +38,7 @@ export function quizPage({ base = '/', origin = '', count, categories = {} } = {
   const faq = hubFaq([
     {
       q: 'What is the Law Tome quiz?',
-      a: `A ten-question round drawn at random from ${n ? `all ${n}` : 'every'} entries in the index. Four kinds of question — ${MODES.map(([m]) => m.toLowerCase()).join(', ')} — mixed through the round. Nothing is invented for the game: every question, every wrong answer and every explanation comes from an entry that already exists here, with its own sourced page.`,
+      a: `A ten-question round drawn from ${n ? `all ${n}` : 'every'} entries in the index. Four kinds of question — ${MODES.map(([m]) => m.toLowerCase()).join(', ')} — mixed through the round. Nothing is invented for the game: every question, every wrong answer and every explanation comes from an entry that already exists here, with its own sourced page.`,
     },
     {
       q: 'How do I get better at it?',
@@ -49,7 +50,15 @@ export function quizPage({ base = '/', origin = '', count, categories = {} } = {
     },
     {
       q: 'Is my score saved anywhere?',
-      a: 'Your best streak is kept in your own browser and never leaves it. There is no account, no server and no tracking — the same as the rest of the site.',
+      a: 'Today’s result and your best streak are kept in your own browser and never leave it. There is no account, no server and no tracking — the same as the rest of the site. Clearing your site data clears them, and a second browser will not know you have played.',
+    },
+    {
+      q: 'What is the difference between the daily round and endless mode?',
+      a: 'The daily round is the same ten questions, in the same order, with the same wrong answers, for everybody who plays on that date — which is what makes a score worth sharing. Once you finish it, the page shows you what you scored rather than handing you a second go. That record lives in your own browser, so nothing stops a determined person from clearing it; it is there to keep the ordinary path honest, not to police it. Endless mode draws a fresh random round whenever you want one and keeps no record at all — it is the one to practise on.',
+    },
+    {
+      q: 'Does the shared grid give the answers away?',
+      a: 'No. It is a row of green and red squares in the order you answered them, plus the score — enough to compare two people’s rounds, and not enough to help anybody who has not played yet. The names of the laws are never in it.',
     },
   ], { heading: 'About the quiz' });
 
@@ -60,7 +69,13 @@ export function quizPage({ base = '/', origin = '', count, categories = {} } = {
       <h1>Name that law</h1>
       <span class="sub">ten questions, four ways to be wrong</span>
     </div>
-    <p class="sec-lede hub-lede">Reading an index does not tell you whether you have learned it. Ten questions, pulled at random from ${n ? `all ${n} entries` : 'the whole index'}: name a law from its statement, match a law to what it actually says, place it in its field, and — the one that catches people — say how far it can be trusted.</p>
+    <p class="sec-lede hub-lede">Reading an index does not tell you whether you have learned it. Ten questions, pulled from ${n ? `all ${n} entries` : 'the whole index'}: name a law from its statement, match a law to what it actually says, place it in its field, and — the one that catches people — say how far it can be trusted. Everyone gets the same ten each day.</p>
+
+    <div class="quiz-modes-switch" id="quiz-switch" hidden>
+      <button class="qs-b is-on" type="button" id="quiz-daily" aria-pressed="true">Today's ten</button>
+      <button class="qs-b" type="button" id="quiz-endless" aria-pressed="false">Endless</button>
+      <span class="qs-note" id="quiz-switch-note">Everybody gets the same ten questions today.</span>
+    </div>
 
     <div class="quiz" id="quiz" hidden>
       <div class="quiz-hud">
@@ -81,10 +96,26 @@ export function quizPage({ base = '/', origin = '', count, categories = {} } = {
     </div>
 
     <div class="quiz-done" id="quiz-done" hidden>
-      <div class="quiz-eyebrow">Round over</div>
+      <div class="quiz-eyebrow" id="quiz-eyebrow">Round over</div>
       <p class="quiz-final" id="quiz-final"></p>
+
+      <div class="quiz-share" id="quiz-share" hidden>
+        <pre class="qsh-grid" id="quiz-grid"></pre>
+        <div class="share share--compact" id="quiz-share-row" role="group" aria-label="Share your round">
+          <button class="sh-b sh-b--go" type="button" id="qsh-native" hidden>
+            <svg class="sh-i" aria-hidden="true"><use href="#sh-share"></use></svg> Share</button>
+          <button class="sh-b" type="button" id="qsh-copy">
+            <svg class="sh-i" aria-hidden="true"><use href="#sh-link"></use></svg> <span id="qsh-copy-t">Copy result</span></button>
+          <a class="sh-b sh-b--net" id="qsh-x" href="#" target="_blank" rel="noopener nofollow">X</a>
+          <a class="sh-b sh-b--net" id="qsh-bsky" href="#" target="_blank" rel="noopener nofollow">Bluesky</a>
+          <span class="sh-said" id="qsh-said" role="status" aria-live="polite"></span>
+        </div>
+        <p class="qsh-note">The grid gives your score away and none of the answers.</p>
+      </div>
+
       <ul class="quiz-recap" id="quiz-recap"></ul>
       <button class="btn solid" id="quiz-again" type="button">Play again</button>
+      <p class="quiz-tomorrow" id="quiz-tomorrow" hidden>Today's round is played. <button class="lnk-b" type="button" id="quiz-to-endless">Keep going in endless mode</button>, or come back tomorrow for the next one.</p>
     </div>
 
     <p class="quiz-boot" id="quiz-boot">Loading the index… <a href="${base}browse/">browse it</a> in the meantime.</p>
@@ -142,5 +173,82 @@ ${faq.html}  </div>
       base,
       scripts: `<script>window.LT_CATS=${catsJson};</script>\n<script defer src="${asset(base, 'assets/quiz.js')}"></script>`,
     })
+  );
+}
+
+// ---- the score pages ---------------------------------------------------------
+//
+// Eleven pages, /quiz/score/0/ through /quiz/score/10/, each the landing place
+// for a shared result. They exist for one reason: a score pasted into a chat is
+// a bare number until it carries a link, and a link is ignored until it unfurls
+// into a picture. Each of these names its own quote-card as its og:image, so
+// "8/10" arrives as a card that says 8/10.
+//
+// They are marked noindex. A search engine has nothing to gain from eleven
+// near-identical pages about a number, and the site does not need the traffic
+// badly enough to publish thin pages to get it. `follow` is kept, so the links
+// out of them still count and a crawler that lands on one leaves by the front
+// door. They are excluded from the sitemap for the same reason.
+//
+// The wording is careful on one point. The page cannot know whose score it is
+// or whether anybody actually got it — a static file has no way to check — so
+// it never says "you scored" or "they scored". It says what the score is worth
+// and invites the reader to go and get their own.
+
+/**
+ * One score landing page.
+ * @param {object} o
+ * @param {number} o.score 0..total
+ * @param {number} [o.total=10]
+ */
+export function scorePage({ score = 0, total = 10, base = '/', origin = '', count } = {}) {
+  const s = Math.max(0, Math.min(total, Math.round(Number(score) || 0)));
+  const nf = new Intl.NumberFormat('en');
+  const n = count == null ? null : nf.format(count);
+  const verdict = scoreVerdict(s, total);
+  const path = `quiz/score/${s}/`;
+  const words = ['Nought', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
+  const word = words[s] || String(s);
+
+  const description =
+    `${s} out of ${total} on the Law Tome quiz — ten questions on named laws, principles and effects, `
+    + `the same ten for everybody each day. ${verdict} Play today's round.`;
+
+  const section = `<section class="sec">
+  <div class="wrap">
+    <nav class="crumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}quiz/">Quiz</a><span class="sep">/</span>${s} of ${total}</nav>
+    <div class="score-hero">
+      <div class="score-big">${s}<span class="score-of">/${total}</span></div>
+      <h1>${escapeHtml(word)} out of ${escapeHtml((words[total] || String(total)).toLowerCase())} on the Law Tome quiz</h1>
+      <p class="score-verdict">${escapeHtml(verdict)}</p>
+      <p class="sec-lede">Somebody sent you a score. The round behind it is ten questions drawn from ${n ? `all ${n} entries` : 'the whole index'} of named laws, principles and effects — and everybody who plays on the same day gets the same ten, which is the only reason a score means anything.</p>
+      <p class="score-cta"><a class="btn solid" href="${base}quiz/">Play today's round <i class="ti ti-arrow-right" aria-hidden="true"></i></a> <a class="btn" href="${base}browse/">Read the index first</a></p>
+    </div>
+
+    <section class="quiz-modes">
+      <h2>What the ten questions ask</h2>
+      <ul class="qm-list">
+${MODES.map(([m, d], i) => `        <li><span class="qm-no">${String(i + 1).padStart(2, '0')}</span><b>${escapeHtml(m)}</b> ${escapeHtml(d)}</li>`).join('\n')}
+      </ul>
+      <p class="qm-after">The fourth is the one that decides a round. Every entry in the index is rated for how far it can be trusted — <a href="${base}reliability/">Empirical, Heuristic, Folk-adage or Contested</a> — and a measured finding reads exactly like a catchy saying until you check.</p>
+    </section>
+  </div>
+</section>
+`;
+
+  return (
+    head({
+      title: `${s} / ${total} on the Law Tome quiz`,
+      description,
+      base,
+      origin,
+      path,
+      robots: 'noindex, follow, max-image-preview:large',
+      og: { image: `${origin}${base}og/quiz-${s}.png` },
+    }) +
+    sprite() +
+    header({ base, active: 'browse', count }) +
+    section +
+    footer({ base })
   );
 }

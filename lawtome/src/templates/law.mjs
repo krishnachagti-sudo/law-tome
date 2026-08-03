@@ -743,14 +743,17 @@ ${shareRow({
     title: law.name,
     text: law.statement || answer,
     label: `Share ${law.name}`,
-  })}      </div>\n`;
+  })}        <div class="share share--compact">
+          <a class="sh-b" href="${base}og/${escapeHtml(law.slug)}.png" download="${escapeHtml(law.slug)}-lawtome.png">
+            <svg class="sh-i" aria-hidden="true"><use href="#sh-img"></use></svg> Save the card</a>
+        </div>
+      </div>\n`;
 
   const aside = `    <aside class="aside">
 ${saveBtn}${namesakePanel}${mapPanel}${comparePanel}${sharePanel}      <div class="panel">
         <h3>Cite this entry</h3>
         <div class="cite-box" id="cite">${citeText}</div>
         <button class="btn" id="copy" type="button"><i class="ti ti-copy" aria-hidden="true"></i> <span id="copy-t">Copy citation</span></button>
-        <a class="btn solid" href="${base}og/${escapeHtml(law.slug)}.png" target="_blank" rel="noopener"><i class="ti ti-photo" aria-hidden="true"></i> Open quote-card</a>
       </div>
     </aside>`;
 
