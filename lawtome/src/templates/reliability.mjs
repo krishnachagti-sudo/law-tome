@@ -161,7 +161,7 @@ ${faq.html}${hubNav('reliability/', { base })}  </div>
 
   const jsonld = [
     ...hubJsonLd({
-      name: 'Named laws by reliability',
+      name: 'How reliable is each law?',
       description,
       path: 'reliability/',
       items: ordered.map((t) => ({ name: `${t.value} laws (${t.count})`, href: `reliability/${reliabilitySlug(t.value)}/` })),

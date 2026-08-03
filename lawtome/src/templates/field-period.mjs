@@ -97,6 +97,7 @@ ${setTensions(laws, { base, compareSlugs, noun: 'set' })}${band(otherEras, `${la
 
   const jsonld = [
     ...hubJsonLd({
+        crumbs: [['browse/', 'Browse'], [`category/${fp.field}/`, label], ['timeline/', 'Timeline']],
       name: `${label} in the ${era}`,
       description,
       path: fpPath(fp),

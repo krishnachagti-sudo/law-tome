@@ -111,6 +111,7 @@ ${setTensions(laws, { base, compareSlugs, noun: 'country' })}${setAdjacent(laws,
 
   const jsonld = [
     ...hubJsonLd({
+        crumbs: [['browse/', 'Browse'], ['origins/', 'Where they came from']],
       name: `Named laws from ${g.country}`,
       description,
       path: countryPath(g.slug),

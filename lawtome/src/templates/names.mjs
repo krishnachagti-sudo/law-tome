@@ -166,6 +166,7 @@ ${nav}${faq.html}${hubNav('names/', { base })}  </div>
 
   const jsonld = [
     ...hubJsonLd({
+        crumbs: [['browse/', 'Browse'], ['names/', 'In other languages']],
       name: `Named laws in ${name}`,
       description,
       path,
@@ -247,6 +248,7 @@ ${faq.html}${hubNav('names/', { base })}  </div>
 
   const jsonld = [
     ...hubJsonLd({
+        crumbs: [['browse/', 'Browse']],
       name: 'These laws in other languages',
       description,
       path: 'names/',

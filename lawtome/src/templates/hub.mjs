@@ -428,7 +428,10 @@ export function crossAxis(laws = [], others = [], { base = '/', hrefBase = '', l
 }
 
 /** CollectionPage + ItemList + BreadcrumbList, the set every hub should declare. */
-export function hubJsonLd({ name, description, path, items = [], origin = '', base = '/', modified = buildDate() }) {
+export function hubJsonLd({
+  name, description, path, items = [], origin = '', base = '/', modified = buildDate(),
+  crumbs = [['browse/', 'Browse']],
+}) {
   const url = `${origin}${base}${path}`;
   const out = [{
     '@context': 'https://schema.org',
@@ -473,10 +476,18 @@ export function hubJsonLd({ name, description, path, items = [], origin = '', ba
   }, {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    // Built from the SAME crumbs hubHead renders. It used to be hardcoded to
+    // Home / Browse / name, so any page with a different trail shipped a
+    // structured breadcrumb contradicting the visible one — /diagnose/ told a
+    // reader it sat under "What's the law for…?" and told Google it sat under
+    // Browse. Google's guidance is that the markup reflect the page's actual
+    // position, and two answers to that is worse than one wrong one.
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}${base}` },
-      { '@type': 'ListItem', position: 2, name: 'Browse', item: `${origin}${base}browse/` },
-      { '@type': 'ListItem', position: 3, name },
+      ...(Array.isArray(crumbs) ? crumbs : []).map(([href, label], i) => ({
+        '@type': 'ListItem', position: i + 2, name: label, item: `${origin}${base}${href}`,
+      })),
+      { '@type': 'ListItem', position: (Array.isArray(crumbs) ? crumbs.length : 0) + 2, name },
     ],
   }];
   return out;

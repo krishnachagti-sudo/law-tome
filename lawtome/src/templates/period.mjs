@@ -151,6 +151,7 @@ ${fieldCrosses.map((c) => `        <a class="cy-chip" href="${base}category/${es
 
   const jsonld = [
     ...hubJsonLd({
+        crumbs: [['browse/', 'Browse'], ['timeline/', 'Timeline']],
       name: `Named laws of the ${p.label}`,
       description,
       path: periodPath(p),

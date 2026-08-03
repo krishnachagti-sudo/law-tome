@@ -108,6 +108,7 @@ ${faq.html}${hubNav('reliability/', { base })}  </div>
 
   const jsonld = [
     ...hubJsonLd({
+        crumbs: [['browse/', 'Browse']],
       name: 'Is it real?',
       description,
       path: 'is-it-real/',
@@ -212,6 +213,7 @@ ${faq.html}${hubNav('named-after/', { base })}  </div>
 
   const jsonld = [
     ...hubJsonLd({
+        crumbs: [['browse/', 'Browse'], ['named-after/', 'By namesake']],
       name: 'Named after the wrong person',
       description,
       path: 'misattributed/',

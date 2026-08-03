@@ -100,6 +100,49 @@ export function quoteCardSvg(law, { origin = 'https://conyso.com', base = '/lawt
 }
 
 /**
+ * The site's own card, for every page that is not a single entry.
+ *
+ * 526 indexable pages — every hub, field, era, country and comparison — had no
+ * og:image at all, so a share of any of them unfurled as bare text and the
+ * Twitter card degraded from a large image to a summary. That is a lot of
+ * click-through to leave on the table on a site that just grew a share button
+ * on every page.
+ *
+ * Deliberately generic: it says what the index is and how big it is, and it
+ * does not pretend to be about whichever page was shared. A card claiming to
+ * depict a page it was not built from would be the image equivalent of a stock
+ * photo, and this project does not use those either.
+ *
+ * @param {object} o
+ * @param {number} o.count published entries, so the card ages with the corpus
+ */
+export function siteCardSvg({ origin = 'https://conyso.com', base = '/lawtome/', count = 0 } = {}) {
+  const displayUrl = escapeHtml(`${origin}${base}`.replace(/^https?:\/\//, '').replace(/\/+$/, ''));
+  const n = escapeHtml(Number(count).toLocaleString('en-US'));
+  const seal = `
+    <g transform="translate(830,150) scale(4.6)" opacity="0.07" fill="none" stroke="${GOLD}">
+      <circle cx="50" cy="50" r="47.2" stroke-width="1.4"/>
+      <circle cx="50" cy="50" r="39.5" stroke-width="0.6" stroke-dasharray="0.4 3" stroke-linecap="round"/>
+      <g stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M50,39 v23"/>
+        <path d="M50,39 C43,35 34,35 27,38 L27,58 C34,55 43,55 50,59 Z"/>
+        <path d="M50,39 C57,35 66,35 73,38 L73,58 C66,55 57,55 50,59 Z"/>
+      </g>
+    </g>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+  <rect width="${W}" height="${H}" fill="${BG}"/>
+  <rect x="24" y="24" width="${W - 48}" height="${H - 48}" fill="none" stroke="${GOLD}" stroke-width="2" opacity="0.5"/>
+  ${seal}
+  <text x="90" y="96" font-family="Space Mono" font-size="26" letter-spacing="6" fill="${GOLD}">THE LAW TOME</text>
+  <text x="90" y="240" font-family="Fraunces" font-size="76" fill="${INK}">${n} named laws,</text>
+  <text x="90" y="326" font-family="Fraunces" font-size="76" fill="${INK}">principles and effects</text>
+  <text x="90" y="404" font-family="Fraunces" font-size="40" fill="${INK}" opacity="0.72">Defined, sourced, and rated for</text>
+  <text x="90" y="456" font-family="Fraunces" font-size="40" fill="${INK}" opacity="0.72">how well established each one is.</text>
+  <text x="90" y="${H - 50}" font-family="Space Mono" font-size="22" fill="${GOLD}">${displayUrl}</text>
+</svg>`;
+}
+
+/**
  * Render an SVG string to a PNG Buffer. The TTFs are CWD-relative (the build runs
  * from lawtome/); loadSystemFonts:false guarantees a loud failure over a silent
  * system-serif fallback.

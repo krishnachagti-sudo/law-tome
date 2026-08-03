@@ -247,7 +247,13 @@ export function head({ title, description, base = '/', origin = '', path, canoni
   }
   // og:image → absolute (crawlers reject base-relative refs). A caller passes the
   // base-relative path (starts with `base`, i.e. '/'); prefix the origin.
-  let ogImage = og && og.image;
+  // Every page gets a card. 526 indexable pages had none, so a share of any hub,
+  // field, era or comparison unfurled as bare text and the Twitter card fell
+  // back from a large image to a summary — on a site that carries a share row
+  // on every page. Entry pages pass their own quote-card; everything else falls
+  // back to the site card, which claims to be about the index rather than about
+  // whichever page was shared.
+  let ogImage = (og && og.image) || `${base}og/site.png`;
   if (ogImage && origin && ogImage.startsWith('/')) ogImage = origin + ogImage;
   if (ogImage) {
     out.push(`<meta property="og:image" content="${escapeHtml(ogImage)}">`);

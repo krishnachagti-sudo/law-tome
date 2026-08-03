@@ -58,7 +58,7 @@ import { dataPage } from '../src/templates/data.mjs';
 import { buildDataset, datasetCsv, lawRecord, apiIndex } from './dataset.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
-import { quoteCardSvg, renderPng } from './quotecard.mjs';
+import { quoteCardSvg, renderPng, siteCardSvg } from './quotecard.mjs';
 import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
 import { buildFeed } from './feed.mjs';
@@ -222,6 +222,12 @@ export async function buildSite(opts) {
     const png = renderPng(quoteCardSvg(law, { origin, base }));
     writes.push(writePage(join(out, 'og', `${law.slug}.png`), png));
   }
+
+  // …and one card for the site, used by every page that is not a single entry.
+  writes.push(writePage(
+    join(out, 'og', 'site.png'),
+    renderPng(siteCardSvg({ origin, base, count: publishedCount })),
+  ));
 
   // Browse page: every law.
   writes.push(writePage(

@@ -82,6 +82,7 @@ ${faq.html}${hubNav('for/', { base })}  </div>
 
   const jsonld = [
     ...hubJsonLd({
+      crumbs: [['browse/', 'Browse']],
       name: 'Find your laws',
       description,
       path: 'for/',
@@ -176,9 +177,12 @@ ${crossAxis(laws, crossSets, { base, hrefBase: 'collections/', label: 'the colle
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
+        // Must match the crumb this page renders (Browse / Find your laws),
+        // not a shorter trail invented for the markup.
         { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}${base}` },
-        { '@type': 'ListItem', position: 2, name: 'For…', item: `${origin}${base}for/` },
-        { '@type': 'ListItem', position: 3, name: a.title },
+        { '@type': 'ListItem', position: 2, name: 'Browse', item: `${origin}${base}browse/` },
+        { '@type': 'ListItem', position: 3, name: 'Find your laws', item: `${origin}${base}for/` },
+        { '@type': 'ListItem', position: 4, name: a.title },
       ],
     },
     ...(faq.jsonld ? [faq.jsonld] : []),

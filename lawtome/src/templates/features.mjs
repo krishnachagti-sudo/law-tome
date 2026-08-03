@@ -145,7 +145,9 @@ ${faq.html}${hubNav('features/', { base })}  </div>
       },
     },
     // Breadcrumb only — the page itself is a WebPage, not a CollectionPage.
-    ...hubJsonLd({ name: 'Features', description, path: 'features/', origin, base }).slice(1),
+    // The heading says "What The Law Tome does"; the markup used to say
+    // "Features", so the breadcrumb named a page that is not this one.
+    ...hubJsonLd({ name: 'What The Law Tome does', description, path: 'features/', origin, base }).slice(1),
     ...(faq.jsonld ? [faq.jsonld] : []),
   ];
 

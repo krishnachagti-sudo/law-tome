@@ -219,6 +219,42 @@ test('the machine-readable files state the terms and the reliability scale', asy
   assert.ok(meta.attribution && meta.generated && meta.endpoints.entry);
 });
 
+test('the structured breadcrumb says what the visible one says', () => {
+  // These used to disagree on fourteen pages: /diagnose/ told a reader it sat
+  // under "What's the law for…?" and told Google it sat under Browse, and the
+  // audience pages hand-rolled a shorter trail than the one they rendered.
+  const bad = [];
+  for (const { p, html } of indexable()) {
+    const vis = /<nav class="crumb"[^>]*>([\s\S]*?)<\/nav>/.exec(html);
+    if (!vis) continue;
+    const crumb = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+      .map((m) => { try { return JSON.parse(m[1].replace(/\\u003c/g, '<')); } catch { return null; } })
+      .find((o) => o && o['@type'] === 'BreadcrumbList');
+    if (!crumb) continue;
+    const j = crumb.itemListElement.map((x) => x.name).join(' / ');
+    const v = decode(vis[1].replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim()
+      .split(' / ').map((x) => x.trim()).join(' / ');
+    if (j !== v) bad.push(`${p}\n    markup: ${j}\n   visible: ${v}`);
+  }
+  assert.deepEqual(bad.slice(0, 3), [], `${bad.length} breadcrumb mismatches`);
+});
+
+test('every page that renders through head() carries a social card', () => {
+  // 526 indexable pages had no og:image, so a share unfurled as bare text and
+  // the Twitter card degraded to a summary — on a site with a share row on
+  // every page. Entry pages use their own quote-card; the rest fall back to the
+  // site card, which is about the index rather than about the page shared.
+  assert.ok(existsSync(join(out, 'og', 'site.png')), 'no site card was rendered');
+  const missing = [];
+  for (const { p, html } of indexable()) {
+    // The redirect stubs write a minimal head of their own and are not pages.
+    if (/http-equiv="refresh"/.test(html)) continue;
+    if (!/property="og:image"/.test(html)) missing.push(p);
+    else if (!/name="twitter:card" content="summary_large_image"/.test(html)) missing.push(`${p} (small card)`);
+  }
+  assert.deepEqual(missing.slice(0, 5), [], `${missing.length} pages without a large card`);
+});
+
 test('robots.txt names the answer engines instead of relying on the wildcard', async () => {
   const robots = await readFile(join(out, 'robots.txt'), 'utf8');
   for (const a of ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended', 'OAI-SearchBot', 'CCBot']) {

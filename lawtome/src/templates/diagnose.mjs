@@ -151,7 +151,8 @@ ${faq.html}${hubNav('situations/', { base })}  </div>
     title: 'What Is the Law for This? — Describe the Problem | The Law Tome',
     description, base, origin, path: 'diagnose/',
     jsonld: [
-      ...hubJsonLd({ name: 'What is the law for this?', description, path: 'diagnose/', items: [], origin, base }),
+      ...hubJsonLd({
+        crumbs: [['situations/', "What's the law for…?"]], name: 'What is the law for this?', description, path: 'diagnose/', items: [], origin, base }),
       ...(faq.jsonld ? [faq.jsonld] : []),
     ],
   }) + sprite() + header({ base, active: 'situations', count }) + section + footer({ base, scripts });

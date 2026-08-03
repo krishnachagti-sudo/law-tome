@@ -144,6 +144,7 @@ ${faq.html}${hubNav('data/', { base })}  </div>
   const description = 'Embed any of the named laws in this index on your own site with one line of HTML — a self-contained card, no script, no tracking, CC BY 4.0.';
 
   const jsonld = hubJsonLd({
+        crumbs: [['data/', 'The dataset']],
     name: 'Put a law on your own site',
     description,
     path: 'embed/',

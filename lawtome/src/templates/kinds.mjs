@@ -87,9 +87,11 @@ ${faq.html}${hubNav('kinds/', { base })}  </div>
     description, base, origin, path: 'kinds/',
     jsonld: [
       ...hubJsonLd({
-        name: 'The index by kind',
+        // Match the h1 the page renders, not a second name for the same page.
+        name: 'What kind of thing is it?',
         description,
         path: 'kinds/',
+        crumbs: [['browse/', 'Browse']],
         items: rows.map((g) => ({ name: g.title, url: `${origin}${base}${kindPath(g)}` })),
         origin,
         base,
@@ -200,6 +202,7 @@ ${setTensions(laws, { base, compareSlugs, noun: g.one })}${setAdjacent(laws, { b
         name: g.title,
         description,
         path: kindPath(g),
+        crumbs: [['browse/', 'Browse'], ['kinds/', 'By kind']],
         items: laws.slice(0, 100).map((l) => ({ name: l.name, url: `${origin}${base}laws/${l.slug}/` })),
         origin,
         base,
