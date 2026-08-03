@@ -18,15 +18,63 @@ const GOLD = '#e0a43f'; // warm amber accent
 
 const W = 1200, H = 630;
 
-// Greedy word-wrap to a max characters-per-line budget. resvg has no auto-wrap,
-// so the statement is split into lines here; each line becomes a <tspan>.
-function wrapLines(text, maxChars) {
+// ---- fitting the statement to the card --------------------------------------
+//
+// The old layout guessed: wrap at a fixed character count, then pick one of
+// three font sizes from a line count. It broke in both directions. Campbell's
+// Law, at 229 characters, wrapped to eight lines that struck straight through
+// the masthead at the top and the attribution at the bottom; and where an entry
+// carried a schematic, a 24-character budget still ran the text under the panel,
+// because character COUNT is not width — "William" and "illiili" are the same
+// count and nothing like the same size.
+//
+// This measures instead. Each candidate size is wrapped to the real pixel width
+// of the text column and kept only if the resulting block also fits the column's
+// height; the first size that fits wins. Nothing can overflow, because overflow
+// is the condition being tested for.
+
+/**
+ * Approximate advance width of a string in Fraunces, in em.
+ *
+ * Not a font metric — resvg gives us no measurement API and shelling out to one
+ * for 1,116 cards would dominate the build. It is a per-character table good to
+ * a few percent for Latin text, which is all the fitter needs: it is used to
+ * decide between 40px and 46px, not to typeset.
+ *
+ * Deliberately errs wide (the default for an unlisted character is generous) so
+ * a mis-estimate leaves a line short rather than letting it overrun.
+ */
+export const CARD = { W: 1200, H: 630, PAD: 90, TOP: 196, BOTTOM: 630 - 150, PANEL_X: 690 };
+
+const NARROW = "ijlt.,;:'!|()[]/\\ ";
+const WIDE = 'mwMW@%';
+const CAPS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+export function emWidth(str) {
+  let w = 0;
+  for (const ch of String(str)) {
+    if (ch === ' ') w += 0.26;
+    else if (NARROW.includes(ch)) w += 0.30;
+    else if (WIDE.includes(ch)) w += 0.86;
+    else if (CAPS.includes(ch)) w += 0.66;
+    else if (ch >= '0' && ch <= '9') w += 0.55;
+    else w += 0.52;
+  }
+  return w;
+}
+
+/**
+ * Greedy word-wrap to a PIXEL width at a given font size.
+ * A single word too long for the column is left over-long rather than broken:
+ * there is no such word in this corpus, and hyphenating one would look worse
+ * than the rare overhang it prevents.
+ */
+function wrapToWidth(text, fontSize, maxPx) {
   const words = String(text).split(/\s+/).filter(Boolean);
   const lines = [];
   let line = '';
   for (const word of words) {
-    const candidate = line ? line + ' ' + word : word;
-    if (candidate.length > maxChars && line) {
+    const candidate = line ? `${line} ${word}` : word;
+    if (line && emWidth(candidate) * fontSize > maxPx) {
       lines.push(line);
       line = word;
     } else {
@@ -38,6 +86,44 @@ function wrapLines(text, maxChars) {
 }
 
 /**
+ * The largest size at which the statement fits the column, and its wrapping.
+ *
+ * Sizes descend from display-large to a floor. The floor is reached only by the
+ * handful of statements over ~200 characters, and at that point the card is a
+ * paragraph rather than a pull-quote — which is the honest rendering of an
+ * entry whose statement really is a paragraph.
+ */
+// Top of the ramp is display-scale: a six-word statement should fill the card,
+// not sit small in the middle of it.
+/**
+ * Space Mono is monospaced at a 0.6em advance, so a line's width is exactly
+ * known. Step the size down until the string fits — the longest entry name in
+ * the corpus clears 28px with little to spare, and the next long one added
+ * should shrink rather than run out of the frame.
+ */
+function monoFit(text, maxPx, sizes) {
+  const len = String(text).length;
+  for (const size of sizes) if (len * size * 0.6 <= maxPx) return size;
+  return sizes[sizes.length - 1];
+}
+
+const SIZES = [84, 76, 68, 62, 56, 50, 45, 40, 36, 32, 29, 26];
+function fitStatement(text, { maxPx, maxHeight }) {
+  for (const size of SIZES) {
+    const lines = wrapToWidth(text, size, maxPx);
+    const lineHeight = Math.round(size * 1.28);
+    if (lines.length * lineHeight <= maxHeight) return { size, lines, lineHeight };
+  }
+  const size = SIZES[SIZES.length - 1];
+  const lineHeight = Math.round(size * 1.28);
+  // Still too tall at the floor: clip on a word boundary and mark the cut, so
+  // the card is short rather than broken. No entry currently reaches this.
+  const lines = wrapToWidth(text, size, maxPx).slice(0, Math.floor(maxHeight / lineHeight));
+  if (lines.length) lines[lines.length - 1] = `${lines[lines.length - 1].replace(/[\s,;:]+$/, '')}…`;
+  return { size, lines, lineHeight };
+}
+
+/**
  * Build a 1200×630 quote-card SVG for a law. Codex-dark; statement in Fraunces,
  * metadata (index code + attribution + URL) in Space Mono, faint seal watermark.
  * @param {{name:string, statement:string, no:string}} law
@@ -46,31 +132,43 @@ function wrapLines(text, maxChars) {
 export function quoteCardSvg(law, { origin = 'https://conyso.com', base = '/lawtome/' } = {}) {
   const name = escapeHtml(law.name ?? '');
   const no = escapeHtml(String(law.no ?? ''));
+  const tier = escapeHtml(law.provenance === 'coined' ? 'Coined' : (law.reliability || ''));
   // Display host+path, derived from the build's origin+base so the card never
   // drifts from the real domain (no hardcoded string). e.g. "conyso.com/lawtome".
   const displayUrl = escapeHtml(`${origin}${base}`.replace(/^https?:\/\//, '').replace(/\/+$/, ''));
 
-  // When the law has a concept schematic, dedicate the right column to it and
-  // narrow the statement so the two don't collide. The shape becomes the card's
-  // visual (in place of the faint seal watermark).
+  // The layout, stated once as numbers so the text column and the panel cannot
+  // disagree about where the boundary is. The column runs from the left margin
+  // to either the panel's left edge or the right margin, and vertically between
+  // the masthead and the attribution — nothing is allowed outside it.
+  const PAD = 90;
+  const TOP = 196;              // clears "THE LAW TOME" + the index number
+  const BOTTOM = H - 150;       // clears the name + URL at the foot
   const shapeKey = schematicForLaw(law);
-  const shape = shapeKey ? schematicOgSvg(shapeKey, { x: 726, y: 214, w: 404 }) : '';
+  const PANEL_X = 690;
+  const colWidth = (shapeKey ? PANEL_X - 40 : W - PAD) - PAD;
+  const { size, lines, lineHeight } = fitStatement(law.statement ?? '', {
+    maxPx: colWidth,
+    maxHeight: BOTTOM - TOP,
+  });
 
-  // Wrap on the RAW statement (word/char budget), escape each resulting line so
-  // an `&`/`<`/`>` mid-line still yields valid XML.
-  const rawLines = wrapLines(law.statement ?? '', shape ? 24 : 34);
-  // Scale the statement type down a touch if it runs long, so it stays in-frame.
-  const fontSize = rawLines.length > 5 ? 46 : rawLines.length > 3 ? 54 : 62;
-  const lineHeight = Math.round(fontSize * 1.25);
-  const startY = Math.round(H / 2 - ((rawLines.length - 1) * lineHeight) / 2) - 10;
-  const tspans = rawLines
-    .map((ln, i) =>
-      `<tspan x="90" ${i === 0 ? `y="${startY}"` : `dy="${lineHeight}"`}>${escapeHtml(ln)}</tspan>`)
+  // Vertically centre the block inside the column rather than on the canvas: a
+  // one-line statement centred on the canvas sits below the masthead's optical
+  // centre, and an eight-line one used to start above it entirely.
+  const blockH = lines.length * lineHeight;
+  const startY = Math.round(TOP + (BOTTOM - TOP - blockH) / 2) + Math.round(size * 0.78);
+  const tspans = lines
+    .map((ln, i) => `<tspan x="${PAD}" ${i === 0 ? `y="${startY}"` : `dy="${lineHeight}"`}>${escapeHtml(ln)}</tspan>`)
     .join('');
 
-  // The #seal vector (from partials.sprite), placed faint as a watermark.
+  const shape = shapeKey ? schematicOgSvg(shapeKey, { x: PANEL_X + 28, y: 232, w: 396 }) : '';
+
+  // The #seal vector (from partials.sprite), placed faint as a watermark and
+  // sized to sit INSIDE the rule. It used to be scaled and offset so that its
+  // right third fell outside the border, which read as a rendering fault rather
+  // than as a watermark.
   const seal = `
-    <g transform="translate(880,300) scale(3.4)" opacity="0.06" fill="none" stroke="${GOLD}">
+    <g transform="translate(966,392) scale(1.9)" opacity="0.08" fill="none" stroke="${GOLD}">
       <circle cx="50" cy="50" r="47.2" stroke-width="1.4"/>
       <circle cx="50" cy="50" r="39.5" stroke-width="0.6" stroke-dasharray="0.4 3" stroke-linecap="round"/>
       <g stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
@@ -80,22 +178,37 @@ export function quoteCardSvg(law, { origin = 'https://conyso.com', base = '/lawt
       </g>
     </g>`;
 
-  // With a schematic, show it in a soft panel on the right instead of the seal.
-  const shapePanel = shape
+  // With a schematic, the right column is the diagram; otherwise it is the seal.
+  const rightColumn = shape
     ? `${SCHEMATIC_OG_STYLE}
-    <rect x="700" y="196" width="452" height="240" rx="16" fill="#191c24" stroke="#2b303b" stroke-width="1.5"/>
+    <rect x="${PANEL_X}" y="200" width="452" height="260" rx="16" fill="#191c24" stroke="#2b303b" stroke-width="1.5"/>
     ${shape}`
     : seal;
+
+  // The reliability mark, on the card. It is the one thing this index says that
+  // a shared screenshot of a quotation otherwise loses entirely — and a Contested
+  // claim travelling as a bare aphorism is exactly the failure the scale exists
+  // to prevent.
+  const nameSize = monoFit(law.name ?? '', W - PAD * 2, [28, 25, 22, 20, 18]);
+
+  const chip = tier
+    ? `<g transform="translate(${PAD},${H - 128})">
+      <rect x="0" y="-20" width="${Math.round(tier.length * 17 * 0.6 + (tier.length - 1) * 1 + 30)}" height="30" rx="15"
+            fill="none" stroke="${GOLD}" stroke-width="1.2" opacity="0.55"/>
+      <text x="15" y="1" font-family="Space Mono" font-size="17" letter-spacing="1" fill="${GOLD}" opacity="0.9">${tier}</text>
+    </g>`
+    : '';
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <rect width="${W}" height="${H}" fill="${BG}"/>
   <rect x="24" y="24" width="${W - 48}" height="${H - 48}" fill="none" stroke="${GOLD}" stroke-width="2" opacity="0.5"/>
-  ${shapePanel}
-  <text x="90" y="90" font-family="Space Mono" font-size="26" letter-spacing="6" fill="${GOLD}">THE LAW TOME</text>
-  <text x="90" y="130" font-family="Space Mono" font-size="24" letter-spacing="2" fill="${INK}" opacity="0.7">№ ${no}</text>
-  <text font-family="Fraunces" font-size="${fontSize}" fill="${INK}">${tspans}</text>
-  <text x="90" y="${H - 90}" font-family="Space Mono" font-size="30" fill="${GOLD}">${name}</text>
-  <text x="90" y="${H - 50}" font-family="Space Mono" font-size="22" fill="${INK}" opacity="0.6">${displayUrl}</text>
+  ${rightColumn}
+  <text x="${PAD}" y="90" font-family="Space Mono" font-size="26" letter-spacing="6" fill="${GOLD}">THE LAW TOME</text>
+  <text x="${PAD}" y="130" font-family="Space Mono" font-size="24" letter-spacing="2" fill="${INK}" opacity="0.7">№ ${no}</text>
+  <text font-family="Fraunces" font-size="${size}" fill="${INK}">${tspans}</text>
+  ${chip}
+  <text x="${PAD}" y="${H - 78}" font-family="Space Mono" font-size="${nameSize}" fill="${GOLD}">${name}</text>
+  <text x="${PAD}" y="${H - 44}" font-family="Space Mono" font-size="20" fill="${INK}" opacity="0.6">${displayUrl}</text>
 </svg>`;
 }
 

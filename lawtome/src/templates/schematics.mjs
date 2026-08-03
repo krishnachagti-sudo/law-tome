@@ -467,7 +467,11 @@ export const SCHEMATIC_OG_STYLE = `<style>
 .s-dot-proxy{fill:#e0a43f}.s-dot-goal{fill:#c98b3a}
 .s-fill{fill:#e0a43f}.s-track{fill:#20242c;stroke:#2c313b}
 .s-proxy-sw{fill:#e0a43f}.s-goal-sw{fill:#c98b3a}
-.s-tick,.s-label,.s-inbar{display:none}
+/* Labels are too small to read at card size, so they are hidden — and with them
+   the legend swatches, which without their labels rendered as two unexplained
+   gold dashes floating above the plot. A key with nothing to key is worse than
+   no key. */
+.s-tick,.s-label,.s-inbar,.s-proxy-sw,.s-goal-sw{display:none}
 </style>`;
 
 /**
