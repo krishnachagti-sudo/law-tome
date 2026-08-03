@@ -1,0 +1,76 @@
+{
+  "no": "1217",
+  "slug": "the-liskov-substitution-principle",
+  "name": "The Liskov Substitution Principle",
+  "aliases": [
+    "LSP",
+    "Behavioural subtyping",
+    "The substitution property"
+  ],
+  "statement": "An object of a superclass must be replaceable by an object of any subclass without breaking the program.",
+  "statementAccent": "replaceable",
+  "meaning": "Inheritance is a promise, not a convenience. If code works with a type, it must go on working when handed any subtype of it — otherwise every caller has to know which subtype it really has, and the abstraction has bought nothing.",
+  "mechanism": "Liskov and Wing's formal version states it as a property of provable statements: if φ(x) holds of objects x of type T, then φ(y) must hold of objects y of type S wherever S is a subtype of T. Practically, that constrains a subtype in ways a compiler will not: it may not demand more of its callers than the parent did, may not deliver less than the parent promised, may not throw exceptions the parent did not, and may not break the invariants the parent maintained. A subtype that violates any of these still compiles, because the type system checks signatures and not behaviour — which is why the principle has to be stated at all.",
+  "examples": [
+    {
+      "tag": "Square and Rectangle",
+      "text": "The standard case. A Square is a Rectangle in geometry, but a Rectangle whose width and height can be set independently is not substitutable by a Square, which must change both. Code that widens a rectangle and checks the height is unchanged fails on the subtype."
+    },
+    {
+      "tag": "The subclass that refuses",
+      "text": "A read-only collection inherits from a mutable one and throws on every write. Every caller that took a collection must now ask what kind it is before writing — the substitution has failed, and the type has stopped carrying information."
+    },
+    {
+      "tag": "Strengthened preconditions",
+      "text": "A parent accepts any string; the override rejects empty ones. Nothing in the signature says so, so the failure appears at a call site written years earlier by someone who read the parent's contract."
+    }
+  ],
+  "whyItMatters": "It is the reason 'is-a' is the wrong test for inheritance and 'behaves-as' is the right one, and it supplies the L in the SOLID set that has shaped two decades of object-oriented design teaching. More broadly it is the clearest statement of a general truth about interfaces: a type system checks that the shapes match, and nothing checks that the promises do.",
+  "working": [
+    {
+      "lead": "Test the parent's contract against the child",
+      "text": "run the superclass's test suite over every subclass. A subtype that fails a parent's test is a substitution violation, stated as a red test rather than as an argument."
+    },
+    {
+      "lead": "Prefer composition when the promise does not hold",
+      "text": "if the subtype genuinely cannot honour the parent's contract, the relationship was never inheritance. Hold the object instead of extending it."
+    },
+    {
+      "lead": "Weaken preconditions, strengthen postconditions",
+      "text": "the safe direction. A subtype may accept more and promise more; it may never accept less or promise less."
+    }
+  ],
+  "limits": "It is a constraint on behavioural subtyping, and behaviour is not fully specified by most codebases: applying it requires knowing what the parent actually promised, which is often nowhere written down. It says nothing about whether an inheritance hierarchy is a good idea in the first place, only about what a hierarchy must satisfy once it exists. The formal version is also stronger than most designs need or can check — Liskov and Wing's condition quantifies over provable properties, and no mainstream language enforces it.",
+  "misreadings": "It is not the rule that a subclass must not override anything; overriding is exactly what it governs. Nor is it a claim that Square should never inherit from Rectangle in any design — the violation comes from the mutable setters, and an immutable Rectangle has no such problem. It is also not a compiler feature: nothing in a type system stops you from breaking it.",
+  "origin": "Introduced by Barbara Liskov in a 1987 conference keynote, \"Data Abstraction and Hierarchy\", and given a rigorous form by Liskov with Jeannette Wing in \"A Behavioral Notion of Subtyping\" (ACM Transactions on Programming Languages and Systems, 1994). The name and the practitioner-facing statement come from Robert C. Martin, whose 1996 Engineering Notebook column in the C++ Report put it as: functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it. It later became the L of Martin's SOLID set.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1987,
+  "popularYear": 1996,
+  "namedAfter": "Barbara Liskov",
+  "namesakeKind": "person",
+  "sources": [
+    {
+      "text": "Liskov, B. & Wing, J. (1994). \"A Behavioral Notion of Subtyping.\" ACM Transactions on Programming Languages and Systems 16(6). — the formal statement of the substitution property.",
+      "url": "https://dl.acm.org/doi/10.1145/197320.197383",
+      "type": "primary"
+    },
+    {
+      "text": "Martin, R. C. (1996). \"The Liskov Substitution Principle.\" Engineering Notebook, C++ Report. — the naming and the practitioner formulation.",
+      "url": "https://www.cs.utexas.edu/~downing/papers/LSP-1996.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "\"Liskov substitution principle.\" Wikipedia — the 1987 keynote, the Liskov–Wing formalisation, and the behavioural conditions on subtypes.",
+      "url": "https://en.wikipedia.org/wiki/Liskov_substitution_principle",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Liskov_substitution_principle",
+  "related": [
+    { "slug": "the-law-of-demeter", "kind": "kindred" },
+    { "slug": "hyrums-law", "kind": "kindred" },
+    { "slug": "law-of-leaky-abstractions", "kind": "kindred" }
+  ]
+}

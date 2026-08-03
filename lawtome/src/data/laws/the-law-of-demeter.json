@@ -1,0 +1,71 @@
+{
+  "no": "1218",
+  "slug": "the-law-of-demeter",
+  "name": "The Law of Demeter",
+  "aliases": [
+    "The principle of least knowledge",
+    "Only talk to your immediate friends",
+    "Don't talk to strangers",
+    "The one-dot rule"
+  ],
+  "statement": "Each unit should talk only to its immediate friends, and never to strangers.",
+  "statementAccent": "immediate friends",
+  "meaning": "A method should call methods on things it already knows about — itself, what it was handed, what it holds, what it just made — and not go reaching through those things to get at their internals. Reaching further means knowing the shape of somebody else's structure, and that knowledge becomes a dependency on it.",
+  "mechanism": "Formally, a method may invoke methods only on: itself, its own parameters, objects it creates, its own attributes, and accessible globals. The practical shorthand is 'use only one dot': a chain like a.getB().getC().doThing() states, in code, that the caller knows the internal structure of A and of B. It is now coupled to two designs it does not own, and either one changing shape breaks it — a break at a distance, in a file whose author never heard of it. Keeping calls one hop away limits how far a structural change can travel.",
+  "examples": [
+    {
+      "tag": "The chain that breaks at a distance",
+      "text": "order.getCustomer().getAddress().getPostcode() ties the caller to the internals of Order, Customer and Address. Changing how an address is stored breaks code three types away."
+    },
+    {
+      "tag": "The paperboy and the wallet",
+      "text": "The teaching example: a paperboy who reaches into the customer's pocket, takes the wallet and removes the money. Correct in outcome, wrong in structure — the customer should be asked to pay."
+    },
+    {
+      "tag": "Tell, don't ask",
+      "text": "Instead of pulling a value out to make a decision about it, send the decision inward: order.chargeTo(paymentMethod) rather than reading the balance and comparing it outside."
+    }
+  ],
+  "whyItMatters": "It converts an abstract worry about coupling into a rule you can apply while reading a single line, which is rare and valuable. It is also the clearest statement of why encapsulation is not about making fields private: a getter that returns an object you then reach into has exposed the structure just as thoroughly as a public field would.",
+  "working": [
+    {
+      "lead": "Count the dots, then ask why",
+      "text": "the count is a smell rather than a verdict. Two dots on a fluent builder or a stream pipeline are fine; two dots that walk somebody else's object graph are the case the rule is about."
+    },
+    {
+      "lead": "Move the behaviour to the data",
+      "text": "if you keep fetching three things from an object to compute something, the computation probably belongs on that object."
+    },
+    {
+      "lead": "Exempt data structures",
+      "text": "the rule protects behaviour, not records. A plain data object with no logic has no internals to hide, and applying the rule to it just adds wrappers."
+    }
+  ],
+  "limits": "The standard criticism is the cost of obeying it: propagating calls through wrappers takes time and space at runtime, and done poorly it inflates a class's interface with auxiliary methods that exist only to forward. That is a genuine trade — maintainability bought with complexity and some efficiency. It also does not apply cleanly to data-transfer objects, to fluent interfaces, or to standard-library types whose structure is stable by contract, and mechanical enforcement by counting dots produces false positives in all three.",
+  "misreadings": "It is not a law in any sense stronger than a design guideline, and the name is a project name, not a claim to lawfulness. It is not a rule against method chaining as such. And 'don't talk to strangers' does not forbid using objects you were given — those are friends; strangers are the objects you reach through them to find.",
+  "origin": "Proposed by Ian Holland at Northeastern University in late 1987, during work on the Demeter Project — an adaptive-programming research effort named after the Greek goddess of agriculture, chosen to signal a bottom-up philosophy of programming and as a sister name to Zeus, the project's hardware description language. So the law is named after a goddess by way of a research project, not after a person who stated it.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1987,
+  "namedAfter": "Demeter",
+  "namesakeKind": "fictional",
+  "sources": [
+    {
+      "text": "\"Law of Demeter.\" Wikipedia — Ian Holland's authorship at Northeastern in 1987, the Demeter Project naming, the formal statement of which methods may be called, and the documented criticisms.",
+      "url": "https://en.wikipedia.org/wiki/Law_of_Demeter",
+      "type": "secondary"
+    },
+    {
+      "text": "Lieberherr, K. & Holland, I. (1989). \"Assuring Good Style for Object-Oriented Programs.\" IEEE Software 6(5). — the law as published by the Demeter group.",
+      "url": "https://ieeexplore.ieee.org/document/35588",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Law_of_Demeter",
+  "related": [
+    { "slug": "the-liskov-substitution-principle", "kind": "kindred" },
+    { "slug": "conways-law", "kind": "kindred" },
+    { "slug": "hyrums-law", "kind": "kindred" }
+  ]
+}

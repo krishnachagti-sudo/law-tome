@@ -77,6 +77,7 @@ export const HUBS = [
   ['browse/', 'All laws', 'the whole index, filterable by field and by how well established it is'],
   ['situations/', "What's the law for…?", 'start from the problem you actually have'],
   ['diagnose/', 'Describe the problem', 'answer three questions, get the laws that describe it'],
+  ['best-known/', 'The best-known', 'ranked by how often each name actually appears in print'],
   ['quotes/', 'The statements', 'every named law in the form it actually gets quoted'],
   ['also-known-as/', 'Also known as', 'the other names these ideas travel under, cross-referenced'],
   ['kinds/', 'By kind', 'the razors, the paradoxes, the theorems, the fallacies — grouped by what kind of thing they are'],

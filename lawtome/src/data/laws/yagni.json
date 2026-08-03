@@ -1,0 +1,77 @@
+{
+  "no": "1214",
+  "slug": "yagni",
+  "name": "YAGNI",
+  "aliases": [
+    "You Aren't Gonna Need It",
+    "You Ain't Gonna Need It",
+    "You're NOT gonna need it"
+  ],
+  "statement": "Build a capability when you actually need it, never when you merely foresee needing it.",
+  "statementAccent": "actually need it",
+  "meaning": "A feature you add because you expect to want it later costs you now and usually turns out to be the wrong feature. The principle says to wait: implement the capability at the moment a real requirement arrives, not at the moment somebody imagines one.",
+  "mechanism": "A presumptive feature is a bet on a forecast, and software forecasts are poor. If the guess is wrong you have paid for something nobody uses; if it is right, you have often built the wrong shape of it, because the real requirement arrives with details the forecast lacked. Martin Fowler enumerates four costs that land either way: the cost of building it, the cost of delaying the features you could have built instead, the cost of carrying the extra complexity in every subsequent change, and the cost of repairing it once the real need contradicts the guess. Waiting converts a bet into a decision made with information.",
+  "examples": [
+    {
+      "tag": "The configurable everything",
+      "text": "A setting is made configurable 'in case someone wants to change it'. Nobody ever does, and every code path that reads it must now handle values that never occur in production."
+    },
+    {
+      "tag": "The premature abstraction",
+      "text": "An interface with one implementation is introduced because a second is expected. When the second arrives it does not fit the interface, so the abstraction is rewritten — having cost indirection in the meantime."
+    },
+    {
+      "tag": "Multi-tenancy on day one",
+      "text": "A product for one customer is built to serve many. The second customer arrives two years later wanting something the design did not anticipate, and the generality built for them is discarded."
+    }
+  ],
+  "whyItMatters": "It is the clearest statement of a bias that costs software teams more than almost any other: the instinct to build for an imagined future. It reframes 'flexible' from a virtue into a cost with a name and a bill, and it gives a reviewer a short, quotable reason to ask why a capability exists now rather than later.",
+  "working": [
+    {
+      "lead": "Ask what breaks if you wait",
+      "text": "if the answer is 'nothing, we add it then', that is the case for waiting. If the answer is 'the data would be unrecoverable', that is a real reason to act now."
+    },
+    {
+      "lead": "Separate flexibility from features",
+      "text": "Fowler's distinction is the useful one — Yagni is about capabilities built for presumed features, not about effort spent making the code easy to change. Refactoring, tests and clean seams are not violations of it."
+    },
+    {
+      "lead": "Write the requirement down instead",
+      "text": "record the anticipated need where the team will see it when it becomes real, rather than encoding the guess in the system."
+    }
+  ],
+  "limits": "It assumes change stays cheap, which is exactly what its own methodology has to supply: the practice was stated inside Extreme Programming alongside continuous refactoring, automated tests and continuous integration, and without those the deferred work becomes rework rather than saved effort. It also bites hardest on reversible decisions. Choices that are expensive or impossible to revisit later — a data model that silently discards information, a public API, an encryption scheme, a regulatory obligation — are precisely the ones where anticipating is cheaper than repairing.",
+  "misreadings": "It is not an argument for careless code, for skipping design, or for refusing to think about the future. It says nothing against making a system easy to change; it says only that building a capability before a requirement exists is a bet you usually lose. Nor does it license shipping a known-inadequate design where the inadequacy is already a present, not a future, problem.",
+  "origin": "Stated as a practice of Extreme Programming in the late 1990s and most often quoted from Ron Jeffries, one of XP's three founders, in the form \"Always implement things when you actually need them, never when you just foresee that you need them.\" The acronym circulated on the WikiWikiWeb before entering general use; Martin Fowler's 2015 bliki entry gave it the four-costs analysis now usually cited with it. No single publication is the first appearance of the phrase.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "popularYear": 2015,
+  "sources": [
+    {
+      "text": "Fowler, M. (26 May 2015). \"Yagni.\" martinfowler.com — the cost-of-build, cost-of-delay, cost-of-carry, cost-of-repair analysis, and the distinction between presumptive features and modifiability.",
+      "url": "https://martinfowler.com/bliki/Yagni.html",
+      "type": "primary"
+    },
+    {
+      "text": "\"You aren't gonna need it.\" Wikipedia — the Jeffries formulation and the dependency on refactoring, unit testing and continuous integration.",
+      "url": "https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it",
+  "related": [
+    {
+      "slug": "dry",
+      "kind": "kindred"
+    },
+    {
+      "slug": "kiss-principle",
+      "kind": "kindred"
+    },
+    {
+      "slug": "knuths-optimization-principle",
+      "kind": "kindred"
+    }
+  ]
+}

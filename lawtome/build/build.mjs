@@ -24,6 +24,7 @@ import { reliabilityHubPage } from '../src/templates/reliability.mjs';
 import { kinds, kindPath, kindOf } from './kinds.mjs';
 import { kindsHubPage, kindPage } from '../src/templates/kinds.mjs';
 import { akaPage, quotesPage } from '../src/templates/lookup.mjs';
+import { bestKnown, bestKnownPage } from '../src/templates/bestknown.mjs';
 import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, personSlug } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
 import { resolveCollections } from './collections.mjs';
@@ -304,6 +305,14 @@ export async function buildSite(opts) {
   writes.push(writePage(join(out, 'quotes', 'index.html'),
     quotesPage(laws, { base, origin, count: publishedCount, categories })));
 
+  // The one honest answer to "what are the most famous?": somebody else's
+  // measurement of how often each name is printed, with the counted phrase
+  // shown on every row so the reader can audit it.
+  writes.push(writePage(join(out, 'best-known', 'index.html'),
+    bestKnownPage(bestKnown(laws, facts), {
+      base, origin, count: publishedCount, categories, corpusTotal: laws.length,
+    })));
+
   // What kind of thing is it — /kinds/ and one page per kind.
   //
   // The list axis: razors, paradoxes, fallacies, theorems, thought experiments.
@@ -573,6 +582,7 @@ export async function buildSite(opts) {
     ...compares.map((p) => `compare/${p.slug}/`), // one per compared pair
     'reliability/',                           // veracity facet hub
     ...presentTiers.map((v) => `reliability/${reliabilitySlug(v)}/`),
+    'best-known/',                            // ranked by printed frequency
     'also-known-as/',                         // every alias, cross-referenced
     'quotes/',                                // every statement, as it is quoted
     'kinds/',                                 // the index by kind of named thing

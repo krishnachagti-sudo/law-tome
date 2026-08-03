@@ -297,6 +297,7 @@ export function header({ base = '/', active, count } = {}) {
   // outside click and Escape.
   const MORE = [
     ['kinds/', 'By kind', 'the razors, the paradoxes, the theorems, the fallacies'],
+    ['best-known/', 'The best-known', 'ranked by how often each name appears in print'],
     ['quotes/', 'The statements', 'every law in the form it actually gets quoted'],
     ['also-known-as/', 'Also known as', 'the other names these ideas travel under'],
     ['collections/', 'Collections', 'hand-picked sets that cut across fields'],
@@ -458,7 +459,7 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
       <p class="foot-conyso">Created by <a href="https://conyso.com/founder/" rel="author">Krishna Chagti</a> · an initiative by <a href="https://conyso.com">Conyso</a>.</p>
       <p class="foot-motto">Sapere aude.</p>
     </div>
-${col('Browse', [['browse/', 'All laws'], ['kinds/', 'By kind'], ['quotes/', 'The statements'], ['also-known-as/', 'Also known as'], ['for/', 'Find your laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['origins/', 'Where they came from'], ['reliability/', 'By reliability']])}
+${col('Browse', [['browse/', 'All laws'], ['best-known/', 'The best-known'], ['kinds/', 'By kind'], ['quotes/', 'The statements'], ['also-known-as/', 'Also known as'], ['for/', 'Find your laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['origins/', 'Where they came from'], ['reliability/', 'By reliability']])}
 ${col('Discover', [['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['compare/', 'Compare laws'], ['tension/', 'Laws in tension'], ['features/', 'Features'], ['quiz/', 'Name that law'], ['saved/', 'Saved laws']])}
 ${col('The project', [['about/', 'About & method'], ['manifesto/', 'Why name a law?'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['feed.xml', 'Subscribe (RSS)'], ['credits/', 'Image credits'], ['privacy/', 'Privacy']])}
   </div>
