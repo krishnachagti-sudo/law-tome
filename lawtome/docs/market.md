@@ -1,0 +1,221 @@
+# The market this site is entering
+
+Researched 2026-08-03 against live sources. Every claim below is either linked or
+marked as inference. Where I could not measure something — traffic, revenue,
+search volume — I say so rather than estimating it, because a made-up number in
+a strategy document is the same failure mode as a made-up fact in an entry.
+
+## 1. Who else is doing this
+
+The honest headline: **nobody is doing what this site does, and the reason is
+probably that it is tedious rather than that it is clever.** The field divides
+into four kinds of competitor, none of which overlaps us squarely.
+
+### a. The general list — Wikipedia's *List of eponymous laws*
+
+The closest thing to a direct competitor, and the thing most of this traffic
+currently lands on.
+
+| | Wikipedia's list | The Law Tome |
+|---|---|---|
+| Entries | ~200–250 | **1,116** |
+| Sources per entry | none on the list itself | every entry, linked |
+| Evidence rating | **none** | four-tier, on every entry |
+| Worked examples | none | 3,345 |
+| Where it stops working | none | on every entry |
+| Misattribution noted | occasionally | 69 entries, with the receipts |
+
+Fetched and analysed directly. The gap that matters is not size — it is that the
+list "blends rigorous scientific principles (Newton's laws, Ohm's law) with
+humorous observations (Murphy's law, Dilbert principle) without clear
+differentiation, potentially confusing readers about credibility levels."
+
+That sentence is the entire case for this project, and it was written by an
+external reading of the competitor rather than by us about ourselves.
+
+Everything else in this category is worse: a HandWiki mirror of the same list, a
+LessWrong post, a Medium listicle, a WordPress "Grand Encyclopedia" post. There
+is no structured, sourced, searchable index of named laws on the internet.
+
+### b. The vertical, beautifully done — Laws of UX
+
+31 principles. Not a database — a design object. Entry pages are a title and one
+or two sentences. Sells a **poster**, a **card deck** and a **book**.
+
+We should be honest about the comparison: Laws of UX has 31 entries to our 1,116
+and is far better known. It wins on being *finished*, *narrow*, and *physical*.
+Its lesson is not "add more entries" — it is that **an artefact you can pin to a
+wall outperforms a website you have to remember to visit**, which is why
+`/sheets/` exists.
+
+### c. The thinking-tools sites — Untools, Farnam Street
+
+Untools: ~30 tools, five categories, a **19,500-subscriber newsletter**, and a
+one-time-payment template vault. Farnam Street: ~100 models, a book series, a
+large audience built out of Charlie Munger's slipstream.
+
+These are not really competitors — they sell *application* ("here is how to
+think"), we sell *reference* ("here is what this is and how far it holds"). But
+they prove two things about format: a **newsletter** is the standard recurring
+hook in this space, and people **pay for the packaged version** of free content.
+
+### d. The bias catalogues — The Decision Lab
+
+~130 biases, each with a question-shaped title ("Why do we prefer doing
+something to doing nothing?"). No evidence grading, no replication status. The
+index is lead-generation for a consultancy.
+
+The question-shaped titles are worth stealing outright. They match how people
+actually search, and our new `/situations/{theme}/` pages already move in that
+direction.
+
+### e. The one that should worry us — FORRT
+
+Not a competitor for traffic, but the closest thing to an authority in the space
+we claim. FORRT runs a **Replication Database (FReD)** — 1,239 original findings
+paired with replications — and a *Replications & Reversals* list of **600+
+effects across 22 disciplines**, each with original and replication effect sizes
+and a status (replicated / not replicated / reversed / mixed). There is an R
+package.
+
+This is both a threat and the single biggest opportunity in this document, and it
+gets its own section below.
+
+## 2. What the demand actually looks like
+
+Three things I could establish, and one I could not.
+
+**The "is it real?" question is live, large, and badly served.** The Dunning-Kruger
+effect alone has a McGill Office for Science and Society piece titled "probably
+not real", a July 2026 phys.org write-up of Bath/LSE work finding the effect may
+run the *opposite* way, plus Substacks, forum threads and blog posts. The Pareto
+principle has the same shape: Forbes, Econsultancy, several Mediums, a LinkedIn
+post. Every one of these is a *single-topic opinion piece*. Nobody offers the
+comparative version — the rating, the entry's own limits, and where it sits
+against the rest of the canon. That is exactly what shipped today as the 104
+`/is-it-real/` pages.
+
+**The replication crisis is the wind at our back.** Of 97 psychology studies in
+one reproducibility effort, significance replicated in **36%**. That is a
+mainstream story now, not an academic one, and it makes an evidence-rated index
+of exactly this material timely rather than pedantic.
+
+**Named-law demand is real but the supply is blogspam.** Search for any of these
+names and you get Wikipedia, then Medium, then LinkedIn. That is a description of
+an unserved query, not a crowded market.
+
+**What I could not establish:** actual search volume for any of these terms, or
+traffic for any competitor. Keyword and traffic tools are paid and I have no
+access to one. Everything above is inferred from what ranks, what exists, and
+what gets written about — which is *evidence of demand shape*, not *evidence of
+demand size*. Do not let anyone, including me, put a traffic number on this
+without a tool behind it.
+
+## 3. The thing that changed while we were building
+
+Search is no longer principally about clicks, and this reframes the whole
+distribution plan.
+
+- Zero-click rates in Google's AI Mode are reported around **93%** (Semrush,
+  2025); AI Overviews are associated with CTR reductions in the **58%** range.
+- Only **17%** of AI Overview citations come from pages ranking in the organic
+  top ten. Being cited is a *different game* from ranking.
+- Structured data, clear entity markup and **tables** raise citation frequency.
+
+Read that against what this site already has: schema.org on every page, FAQPage
+across 1,116 entries, `llms.txt` and `llms-full.txt`, a per-entry JSON record,
+`api.json`, a CC BY corpus download, and per-entry Markdown twins. We built for
+citation before it was obviously the right thing to build for. That is luck as
+much as foresight, but it is the asset.
+
+**The strategic consequence:** the goal is not traffic. The goal is to be *the
+thing quoted when a model answers "is the bystander effect real?"* — and the
+reason a model would pick us over a Medium post is that we carry a rating, a
+limits section, and a linked primary source in machine-readable form.
+
+## 4. What we should do about it
+
+Ranked by leverage, with the honest cost.
+
+### 4.1 Join to FReD — the biggest single move available
+
+Our reliability rating is our own judgement. We say so on `/how-solid/`, and it is
+the softest joint in the whole project. FORRT's replication database is external,
+academic, citable, and covers 600+ effects across 22 disciplines — a set that
+must overlap our psychology, economics and sociology entries substantially.
+
+An entry that could say *"we rate this Contested; FORRT records the replication as
+failed, effect size 0.08 against an original 0.61"* would be carrying somebody
+else's evidence, not ours. It would make the ratings defensible in a way nothing
+else on the roadmap does.
+
+**The blocker to check first:** the FORRT site is CC BY-NC-SA. Our corpus is
+CC BY. Non-commercial and share-alike are both incompatible with what we publish,
+so **we cannot absorb their data into ours** if that licence covers the records.
+What we can almost certainly do is *link* and *cite* — "FORRT records a
+replication attempt for this effect", with a URL — which needs no licence at all
+and is the better citation anyway. Confirm the data licence before writing a line
+of code.
+
+### 4.2 Question-shaped titles, borrowed from The Decision Lab
+
+Our hub titles describe; theirs ask. "Why do we prefer doing something to doing
+nothing?" is a search query. The problem-theme pages shipped today already do
+this; the same treatment applied to entry pages and field hubs is cheap.
+
+### 4.3 A newsletter
+
+The standard recurring hook in this space, and the one format this site does not
+have. Untools has 19,500 subscribers off 30 tools. We have 1,116 entries, a
+deterministic law-of-the-day, and now a `today.json` endpoint that would generate
+it. The cost is not technical — it is that a newsletter is a *commitment*, and an
+abandoned one is worse than none.
+
+### 4.4 The physical artefact
+
+Laws of UX sells a poster and a deck off 31 entries. `/sheets/` is the free
+version of that argument. Whether to sell anything is a business decision, not a
+technical one, and it interacts with the no-ads / no-tracking promise on every
+page — so it needs deciding deliberately rather than drifting into.
+
+### 4.5 The live news hook
+
+The July 2026 Bath/LSE Dunning-Kruger reversal is exactly the kind of event this
+site should be able to respond to within a day: update the entry, update the
+rating, and the `/is-it-real/` page and `/how-solid/` headline both move
+automatically because they are computed. **Check whether our Dunning-Kruger entry
+reflects the 2026 work.** If it does not, that is the first thing to fix — being
+current is the only claim a reference site cannot fake.
+
+## 5. What I would not do
+
+- **Grow the corpus.** 1,116 against Wikipedia's ~250 and Laws of UX's 31. Size
+  stopped being the constraint a long time ago.
+- **Compete on "how to think".** Farnam Street and Untools own the application
+  frame and have audiences we do not. Reference is the defensible position and it
+  is the one nobody else wants because it is laborious.
+- **Chase traffic numbers.** With 93% zero-click in AI Mode, optimising for
+  sessions is optimising for a metric that is being removed.
+
+## Method and its limits
+
+Live web search and direct fetches of lawsofux.com, untools.co,
+thedecisionlab.com, en.wikipedia.org and forrt.org, plus search across the
+replication-crisis and zero-click-SEO literature. No paid keyword or traffic
+tool was used, so **there is not a single audience-size number in this document
+and there should not be one until someone runs a real tool**. Competitor entry
+counts are as reported by their own pages on the date above and will drift.
+
+## Sources
+
+- [List of eponymous laws — Wikipedia](https://en.wikipedia.org/wiki/List_of_eponymous_laws)
+- [Laws of UX](https://lawsofux.com/)
+- [Untools](https://untools.co/)
+- [The Decision Lab — biases index](https://thedecisionlab.com/biases)
+- [FORRT — Replications & Reversals](https://forrt.org/reversals/)
+- [The Replication Database (FReD), Journal of Open Psychology Data](https://openpsychologydata.metajnl.com/articles/10.5334/jopd.101)
+- [The Dunning-Kruger Effect Is Probably Not Real — McGill OSS](https://www.mcgill.ca/oss/article/critical-thinking/dunning-kruger-effect-probably-not-real)
+- [New research turns the Dunning-Kruger effect on its head — phys.org, July 2026](https://phys.org/news/2026-07-dunning-kruger-effect-rethinking-confident.html)
+- [Debunking the Pareto principle — Econsultancy](https://econsultancy.com/debunking-pareto-principle-why-we-should-be-critical-of-accepted-truths-in-marketing/)
+- [AI SEO statistics 2026 — GoodFirms](https://www.goodfirms.co/resources/seo-statistics-ai-search-rankings-zero-click-trends)
+- [Zero-click search 2026 — PikaSEO](https://pikaseo.com/articles/zero-click-search-ai-overviews-2026)
