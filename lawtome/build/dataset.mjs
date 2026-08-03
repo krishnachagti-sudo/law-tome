@@ -122,7 +122,7 @@ export function apiIndex(laws = [], { baseUrl = '/', generated } = {}) {
       url: baseUrl,
       count: rows.length,
       license: 'CC BY 4.0',
-      licenseUrl: 'https://creativecommons.org/licenses/4.0/',
+      licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
       attribution: `The Law Tome — ${baseUrl}`,
       ...(generated ? { generated } : {}),
       endpoints: {

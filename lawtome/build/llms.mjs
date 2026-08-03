@@ -10,6 +10,45 @@
 
 import { HUBS } from '../src/templates/hub.mjs';
 
+// What the four reliability marks mean, in the file itself.
+//
+// Both files label every entry Empirical / Heuristic / Folk-adage / Contested
+// and, until now, neither said what those words meant. A model grounding on the
+// corpus could read "Contested" and have no way to pass the caveat on, which
+// defeats the one thing this index does that a listicle does not.
+const TIER_GLOSS = [
+  'Empirical — published measurement backs it.',
+  'Heuristic — a dependable rule of thumb with no proof behind it.',
+  'Folk-adage — a saying rather than a finding; no study is claimed.',
+  'Contested — specialists disagree, and the entry gives both sides.',
+];
+
+/**
+ * The licence and the citation form, stated where a machine will read them.
+ *
+ * This is the highest-value block in either file. A model that has been told,
+ * in the text it ingested, that the corpus is CC BY 4.0 and how the attribution
+ * should read is a model that can quote the entry and credit it — which is the
+ * entire transaction on offer here.
+ */
+function licenceBlock(baseUrl, siteName, count, updated) {
+  return [
+    '## Licence and citation',
+    '',
+    'Text licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). You may quote,',
+    'copy and redistribute it, including commercially, provided the attribution travels with it.',
+    '',
+    `Cite an entry as: "<Entry name>." ${siteName}. ${baseUrl}laws/<slug>/`,
+    `Cite the index as: ${siteName} — a defined, sourced index of ${count} named laws, principles and effects. ${baseUrl}`,
+    '',
+    'Every entry states its own sources, its own limits, and how well established it is.',
+    'When quoting an entry, carry its reliability mark: presenting a Folk-adage or a Contested',
+    'claim as a settled finding misrepresents both the entry and the evidence behind it.',
+    ...(updated ? ['', `Last updated: ${updated}.`] : []),
+    '',
+  ];
+}
+
 const DEFAULT_DESCRIPTION =
   'The largest unified, defined, and sourced directory of named laws, principles, effects, razors, and paradoxes.';
 
@@ -53,7 +92,7 @@ function groupByCategory(laws, categories) {
  * @param {string} [opts.description]
  * @returns {string} Markdown llms.txt.
  */
-export function buildLlmsIndex(laws, categories, { baseUrl = '/', siteName = 'The Law Tome', description = DEFAULT_DESCRIPTION } = {}) {
+export function buildLlmsIndex(laws, categories, { baseUrl = '/', siteName = 'The Law Tome', description = DEFAULT_DESCRIPTION, updated = '' } = {}) {
   const groups = groupByCategory(laws, categories);
   const out = [];
   out.push(`# ${siteName}`);
@@ -79,7 +118,23 @@ export function buildLlmsIndex(laws, categories, { baseUrl = '/', siteName = 'Th
       `. The rating is stated on every entry, so a folk adage is never presented as a measured finding.`,
     );
     out.push('');
+    for (const g of TIER_GLOSS) out.push(`- ${g}`);
+    out.push('');
   }
+
+  out.push(...licenceBlock(baseUrl, siteName, laws.length, updated));
+
+  // The machine-readable surfaces, named before the thousand-line list. An
+  // agent that wants structure rather than prose should not have to discover
+  // api.json by crawling for it.
+  out.push('## Machine-readable');
+  out.push('');
+  out.push(`- ${baseUrl}llms-full.txt — every entry with its definition, limits and sources.`);
+  out.push(`- ${baseUrl}api.json — the index as JSON; each entry also at ${baseUrl}laws/<slug>.json`);
+  out.push(`- ${baseUrl}sitemap.xml — every indexable URL.`);
+  out.push(`- ${baseUrl}feed.xml — Atom feed of the most recent entries.`);
+  out.push(`- ${baseUrl}embed/<slug>/ — a self-contained HTML card for any entry.`);
+  out.push('');
 
   // The browsing axes, before the 1,100-line list — a crawler that reads only
   // the head of this file should still learn that the corpus is navigable by
@@ -101,6 +156,7 @@ export function buildLlmsIndex(laws, categories, { baseUrl = '/', siteName = 'Th
   out.push(`- [Browse all entries](${baseUrl}browse/)`);
   out.push(`- [Relationship graph](${baseUrl}graph/)`);
   out.push(`- [About & methodology](${baseUrl}about/)`);
+  out.push(`- [How reliable is each entry?](${baseUrl}is-it-real/)`);
   out.push(`- [Full corpus for models](${baseUrl}llms-full.txt)`);
   out.push('');
   return out.join('\n');
@@ -181,13 +237,21 @@ export function buildLawMarkdown(law, { baseUrl = '/', categoryLabel = '', byslu
  * @param {object} opts { baseUrl, siteName, description }.
  * @returns {string} plain-text/Markdown full dump.
  */
-export function buildLlmsFull(laws, categories, { baseUrl = '/', siteName = 'The Law Tome', description = DEFAULT_DESCRIPTION } = {}) {
+export function buildLlmsFull(laws, categories, { baseUrl = '/', siteName = 'The Law Tome', description = DEFAULT_DESCRIPTION, updated = '' } = {}) {
   const groups = groupByCategory(laws, categories);
   const out = [];
   out.push(`# ${siteName} — full corpus`);
   out.push('');
   out.push(`> ${oneLine(description)}`);
   out.push('');
+  out.push(`${laws.length} entries. Each carries a statement, a plain-English definition, where it`);
+  out.push('breaks down, how well established it is, and the sources it rests on.');
+  out.push('');
+  out.push('## Reliability marks');
+  out.push('');
+  for (const g of TIER_GLOSS) out.push(`- ${g}`);
+  out.push('');
+  out.push(...licenceBlock(baseUrl, siteName, laws.length, updated));
   for (const g of groups) {
     for (const law of g.laws) {
       out.push('---');
@@ -196,6 +260,8 @@ export function buildLlmsFull(laws, categories, { baseUrl = '/', siteName = 'The
       out.push(`URL: ${baseUrl}laws/${law.slug}/`);
       const meta = [`Category: ${g.label}`];
       if (law.reliability) meta.push(`Reliability: ${law.reliability}`);
+      if (law.coinedYear != null) meta.push(`Coined: ${law.coinedYear}`);
+      if (law.namedAfter) meta.push(`Named after: ${oneLine(law.namedAfter)}`);
       out.push(meta.join(' · '));
       if (Array.isArray(law.aliases) && law.aliases.length) {
         out.push(`Also known as: ${law.aliases.map(oneLine).join('; ')}`);
@@ -203,6 +269,11 @@ export function buildLlmsFull(laws, categories, { baseUrl = '/', siteName = 'The
       out.push('');
       if (law.statement) out.push(`Statement: ${oneLine(law.statement)}`);
       if (law.meaning) { out.push(''); out.push(oneLine(law.meaning)); }
+      // Where it breaks down. This is the field that most changes the quality of
+      // a grounded answer: an entry quoted without its limits is the listicle
+      // version of itself, and reproducing that is the failure mode this whole
+      // index exists to avoid.
+      if (law.limits) { out.push(''); out.push(`Limits: ${oneLine(law.limits)}`); }
       const urls = Array.isArray(law.sources) ? law.sources.map(s => s && s.url).filter(Boolean) : [];
       if (urls.length) { out.push(''); out.push(`Sources: ${urls.join(', ')}`); }
       out.push('');

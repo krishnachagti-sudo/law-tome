@@ -437,6 +437,19 @@ export function hubJsonLd({ name, description, path, items = [], origin = '', ba
     url,
     description,
     isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
+    inLanguage: 'en',
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    // Hubs carried no publisher at all, so the E-E-A-T signals the law pages
+    // spell out — who stands behind this, where the method is written down,
+    // how to report an error — stopped at the entry level.
+    publisher: {
+      '@type': 'Organization',
+      name: 'The Law Tome',
+      url: `${origin}${base}`,
+      parentOrganization: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
+      publishingPrinciples: `${origin}${base}about/`,
+      correctionsPolicy: `${origin}${base}about/`,
+    },
     // Freshness. The corpus has no per-page authoring date and the site is
     // rebuilt whole on every deploy, so the build date is the honest answer to
     // "when did this last change" — and answer engines weight recency.

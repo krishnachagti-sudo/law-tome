@@ -156,6 +156,69 @@ test('a hub ItemList carries links, not just names', () => {
   }
 });
 
+test('an entry declares its sources, its licence and its standing to a machine', () => {
+  const html = readFileSync(join(out, 'laws', 'goodharts-law', 'index.html'), 'utf8');
+  const article = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map((m) => JSON.parse(m[1].replace(/\\u003c/g, '<')))
+    .find((o) => o['@type'] === 'Article');
+  assert.ok(Array.isArray(article.citation) && article.citation.length, 'no citations declared');
+  for (const c of article.citation) {
+    assert.equal(c['@type'], 'CreativeWork');
+    assert.ok(c.name, 'a citation with no name');
+  }
+  assert.equal(article.license, 'https://creativecommons.org/licenses/by/4.0/');
+  // Reliability is an additionalProperty, NOT creativeWorkStatus — that field
+  // means a lifecycle stage, and bending it to fit is the structured-data
+  // version of the flattening this index refuses to do in prose.
+  assert.equal(article.creativeWorkStatus, undefined);
+  assert.equal(article.additionalProperty.name, 'Reliability');
+  assert.equal(article.additionalProperty.value, 'Heuristic');
+  assert.match(article.additionalProperty.url, /is-it-real\/$/);
+});
+
+test('a hub says who stands behind it', () => {
+  const html = readFileSync(join(out, 'kinds', 'index.html'), 'utf8');
+  const page = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map((m) => JSON.parse(m[1].replace(/\\u003c/g, '<')))
+    .find((o) => o['@type'] === 'CollectionPage');
+  assert.equal(page.publisher['@type'], 'Organization');
+  assert.match(page.publisher.publishingPrinciples, /about\/$/);
+  assert.match(page.publisher.correctionsPolicy, /about\/$/);
+  assert.equal(page.inLanguage, 'en');
+  assert.equal(page.license, 'https://creativecommons.org/licenses/by/4.0/');
+});
+
+test('the machine-readable files state the terms and the reliability scale', async () => {
+  const [idx, full, api] = await Promise.all([
+    readFile(join(out, 'llms.txt'), 'utf8'),
+    readFile(join(out, 'llms-full.txt'), 'utf8'),
+    readFile(join(out, 'api.json'), 'utf8'),
+  ]);
+  for (const [label, text] of [['llms.txt', idx], ['llms-full.txt', full]]) {
+    // The single most valuable block in either file: what a model may do with
+    // the text, and how the credit should read.
+    assert.match(text, /creativecommons\.org\/licenses\/by\/4\.0\//, `${label}: no licence URL`);
+    assert.match(text, /Cite an entry as:/, `${label}: no citation form`);
+    assert.match(text, /Last updated: \d{4}-\d{2}-\d{2}\./, `${label}: no date`);
+    // Both label entries Empirical/Heuristic/Folk-adage/Contested; both must
+    // say what those words mean, or the caveat cannot travel with the quote.
+    for (const t of ['Empirical —', 'Heuristic —', 'Folk-adage —', 'Contested —']) {
+      assert.ok(text.includes(t), `${label}: reliability scale not defined (${t})`);
+    }
+  }
+  // The differentiating field. An entry quoted without its limits is the
+  // listicle version of itself.
+  assert.ok(full.split('\nLimits: ').length > 900, 'llms-full.txt carries almost no limits');
+  assert.match(idx, /api\.json/);
+  assert.match(idx, /feed\.xml/);
+
+  // A dead licence URL in the machine-readable manifest is the one link an
+  // ingester is most likely to follow. This one was missing its /by/ segment.
+  const meta = JSON.parse(api).meta;
+  assert.equal(meta.licenseUrl, 'https://creativecommons.org/licenses/by/4.0/');
+  assert.ok(meta.attribution && meta.generated && meta.endpoints.entry);
+});
+
 test('robots.txt names the answer engines instead of relying on the wildcard', async () => {
   const robots = await readFile(join(out, 'robots.txt'), 'utf8');
   for (const a of ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended', 'OAI-SearchBot', 'CCBot']) {

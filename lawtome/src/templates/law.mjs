@@ -16,7 +16,7 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE } from './partials.mjs';
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
@@ -826,6 +826,41 @@ ${prevnext}</div>
     ...(buildDate ? { datePublished: buildDate, dateModified: buildDate } : {}),
     // Voice/assistant answer target: read the title and the plain-English definition.
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.law-title', '.lead'] },
+    // The sources, as structured citations rather than only as a rendered list.
+    // Every entry has cited its origin on the page since the first build and
+    // declared none of it to a machine — which is the one claim this index most
+    // wants a crawler to be able to check.
+    ...(Array.isArray(law.sources) && law.sources.length
+      ? {
+        citation: law.sources.filter(Boolean).map((src) => ({
+          '@type': 'CreativeWork',
+          name: decodeEntities(clip(String(src.text || src.url || ''), 300)),
+          ...(src.url ? { url: src.url } : {}),
+        })),
+      }
+      : {}),
+    // Stated so a reuser does not have to find the footer to learn the terms.
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    // How well established this entry is, as a machine-readable claim rather
+    // than only a badge — because leaving it implicit invites exactly the
+    // flattening the scale exists to prevent: every named law read as a
+    // scientific finding.
+    //
+    // Modelled as an additionalProperty and not as creativeWorkStatus, which
+    // schema.org defines as a lifecycle stage (Draft, Published, Obsolete). A
+    // rating is not a lifecycle stage, and bending a property to fit is the
+    // structured-data equivalent of the thing this index refuses to do in prose.
+    ...(law.reliability
+      ? {
+        additionalProperty: {
+          '@type': 'PropertyValue',
+          name: 'Reliability',
+          value: law.reliability,
+          ...(RELIABILITY_NOTE[law.reliability] ? { description: RELIABILITY_NOTE[law.reliability] } : {}),
+          url: `${origin}${base}is-it-real/`,
+        },
+      }
+      : {}),
   };
 
   // The namesake, as an entity rather than a string.

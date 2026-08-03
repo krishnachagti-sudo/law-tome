@@ -697,7 +697,7 @@ export async function buildSite(opts) {
   // crawlers. Compact index (one bullet per entry, grouped by category) plus a
   // full dump inlining each entry's definition and sources. Crawler-facing site
   // files, so — like the sitemap — they don't count toward `pages`/`listings`.
-  const llmsOpts = { baseUrl: `${origin}${base}` };
+  const llmsOpts = { baseUrl: `${origin}${base}`, updated: buildDate };
   writes.push(writePage(join(out, 'llms.txt'), buildLlmsIndex(laws, categories, llmsOpts)));
   writes.push(writePage(join(out, 'llms-full.txt'), buildLlmsFull(laws, categories, llmsOpts)));
 
@@ -713,8 +713,11 @@ export async function buildSite(opts) {
     start_url: base,
     scope: base,
     display: 'standalone',
-    background_color: '#14161c',
-    theme_color: '#14161c',
+    // Match the site's own dark surface. #14161c is a colour the stylesheet no
+    // longer uses, so an installed app opened with browser chrome a different
+    // shade to the masthead it framed.
+    background_color: '#000000',
+    theme_color: '#000000',
     icons: [
       { src: `${base}assets/logo.svg`, type: 'image/svg+xml', sizes: 'any' },
       { src: `${base}icon-512.png`, type: 'image/png', sizes: '512x512', purpose: 'any' },
