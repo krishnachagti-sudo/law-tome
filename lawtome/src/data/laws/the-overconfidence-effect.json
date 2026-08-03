@@ -1,0 +1,69 @@
+{
+  "no": "1226",
+  "slug": "the-overconfidence-effect",
+  "name": "The Overconfidence Effect",
+  "aliases": [
+    "Overconfidence bias",
+    "Overprecision",
+    "The overconfidence bias"
+  ],
+  "statement": "People's confidence in their own judgements is reliably greater than the accuracy of those judgements.",
+  "statementAccent": "greater than the accuracy",
+  "meaning": "Not that people are wrong more often than they are right, but that the certainty is miscalibrated: when a group says it is 90% sure, it is correct rather less than 90% of the time, and the gap widens as the confidence rises.",
+  "mechanism": "Researchers separate three things the one word covers. Overestimation is thinking you did better than you did. Overplacement is thinking you did better than others — the finding behind Svenson's 1981 result that 93% of American drivers rated themselves above the median. Overprecision is holding a belief with more certainty than the evidence supports, and it is the most robust and the hardest to shift. The common driver is that the evidence for a judgement is more available than the evidence against it: you can see the reasons you thought of, and cannot see the ones you did not. Oskamp's 1965 study made the shape of it visible — as clinical psychologists were given more case material their confidence climbed steadily while their accuracy did not.",
+  "examples": [
+    {
+      "tag": "The confidence interval that misses",
+      "text": "Asked for a range they are 90% sure contains the true value, people give ranges that contain it far less often. This is overprecision, and it survives being warned about."
+    },
+    {
+      "tag": "The 20% that should have been zero",
+      "text": "Adams and Adams (1960): subjects who declared themselves certain of a spelling were wrong about a fifth of the time."
+    },
+    {
+      "tag": "More information, same accuracy",
+      "text": "Oskamp's clinicians grew markedly more confident as case material accumulated while their judgements got no better — the extra material bought certainty, not correctness."
+    }
+  ],
+  "whyItMatters": "It underlies the systematic optimism in project estimates, budgets, forecasts and expert testimony, and it explains why gathering more information can make a decision worse rather than better. It is also the reason calibration — scoring predictions against outcomes — is worth the trouble: it is the only feedback that touches the gap directly.",
+  "working": [
+    {
+      "lead": "Score your own predictions",
+      "text": "record confidence at the time, check outcomes later, and read the calibration curve. Nothing else reliably narrows the gap, because the gap is invisible from inside a single judgement."
+    },
+    {
+      "lead": "Widen the interval, then widen it again",
+      "text": "for a range you are 90% sure of, the empirically calibrated version is much wider than the one that feels right."
+    },
+    {
+      "lead": "Ask what would make you wrong",
+      "text": "the mechanism is that disconfirming evidence is less available, so requiring it explicitly is the countermeasure that matches the cause."
+    }
+  ],
+  "limits": "The size of the effect depends heavily on how the question is asked, and it reverses on easy tasks — Kruger (1999) and the hard–easy pattern show underconfidence where items are simple. Gigerenzer's 1993 critique argues that part of the classic overconfidence result is an artefact of how researchers selected questions and of confusing judgements about single items with judgements about sets. The three forms also do not travel together: someone strongly overprecise may show no overplacement at all, so 'overconfidence' as a single trait is not well supported.",
+  "misreadings": "It is not the claim that people are usually wrong, nor that confidence is a bad thing — Taylor and Brown argued in 1988 that positive illusions carry real benefits for coping and persistence. It is also distinct from the Dunning–Kruger effect, which is about the relationship between skill and self-assessment across a range of ability, not about the calibration of confidence in general.",
+  "origin": "Documented across a long experimental literature rather than coined in one place. Landmarks include Adams and Adams (1960) on certainty in spelling, Oskamp (1965) on clinicians whose confidence rose with information while accuracy did not, Svenson (1981) on drivers rating themselves above the median, and the later separation of the effect into overestimation, overplacement and overprecision.",
+  "category": "psychology",
+  "reliability": "Empirical",
+  "provenance": "canon",
+  "coinedYear": 1960,
+  "sources": [
+    {
+      "text": "\"Overconfidence effect.\" Wikipedia — the three-way distinction between overestimation, overplacement and overprecision, and the Adams & Adams (1960), Oskamp (1965), Svenson (1981), Kruger (1999), Taylor & Brown (1988) and Gigerenzer (1993) findings cited here.",
+      "url": "https://en.wikipedia.org/wiki/Overconfidence_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Oskamp, S. (1965). \"Overconfidence in case-study judgments.\" Journal of Consulting Psychology 29(3), 261–265. — confidence rising with information while accuracy does not.",
+      "url": "https://psycnet.apa.org/record/1965-13416-001",
+      "type": "primary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Overconfidence_effect",
+  "related": [
+    { "slug": "dunning-kruger-effect", "kind": "kindred" },
+    { "slug": "the-planning-fallacy", "kind": "kindred" },
+    { "slug": "the-optimism-bias", "kind": "kindred" },
+    { "slug": "the-illusion-of-control", "kind": "kindred" }
+  ]
+}

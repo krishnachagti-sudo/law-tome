@@ -1,0 +1,73 @@
+{
+  "no": "1220",
+  "slug": "solid",
+  "name": "SOLID",
+  "aliases": [
+    "The SOLID principles",
+    "The first five principles of object-oriented design"
+  ],
+  "statement": "Five design principles — single responsibility, open–closed, Liskov substitution, interface segregation and dependency inversion — meant together to keep object-oriented code understandable and changeable.",
+  "statementAccent": "understandable and changeable",
+  "meaning": "Not one rule but a checklist of five, each naming a different way a class can become hard to change: doing too many jobs, having to be edited to be extended, breaking its parent's promises, forcing callers to depend on what they don't use, and wiring itself directly to the details it should be insulated from.",
+  "mechanism": "Each principle attacks a different source of the same failure — a change in one place forcing changes in another. Single responsibility limits how many reasons a class has to change at all. Open–closed pushes new behaviour into new code rather than edits to old. Liskov substitution keeps a subtype honest so callers need not know which one they hold. Interface segregation stops a client depending on methods it never calls, so changes to those methods cannot reach it. Dependency inversion points both high-level and low-level code at an abstraction between them, so the concrete detail can be swapped without touching the policy above it. Taken together they trade a larger number of smaller parts for fewer forced edits.",
+  "examples": [
+    {
+      "tag": "Single responsibility",
+      "text": "A class that both computes a payroll figure and formats it as a report has two reasons to change — a tax rule and a layout — and every accountant's change risks the printer's."
+    },
+    {
+      "tag": "Open–closed",
+      "text": "A shape-area function with a switch over shape types must be edited for every new shape. Handing each shape an area method lets a new shape be added without touching the old code."
+    },
+    {
+      "tag": "Interface segregation",
+      "text": "A fat 'Machine' interface with print, scan and fax forces a simple printer to implement scanning it cannot do. Three small interfaces let each device implement only what it is."
+    },
+    {
+      "tag": "Dependency inversion",
+      "text": "An order service that constructs a PostgresRepository directly cannot be tested without a database. Depending on a Repository abstraction lets the test supply an in-memory one."
+    }
+  ],
+  "whyItMatters": "It is the most widely taught design curriculum in object-oriented programming, the framing behind most code-review vocabulary in that world, and the reason a generation of interviews ask what the letters stand for. Its value is less in any one of the five than in being a short, memorable inventory of the ways coupling creeps in.",
+  "working": [
+    {
+      "lead": "Use it as a diagnosis, not a target",
+      "text": "each letter is a name for a symptom you have already noticed. Applying all five to code with none of the symptoms produces indirection nobody needed."
+    },
+    {
+      "lead": "Ask what changes together",
+      "text": "single responsibility is about reasons to change, not about line counts. Two things that always change together belong together, however different they look."
+    },
+    {
+      "lead": "Invert the dependencies you actually want to swap",
+      "text": "an abstraction with exactly one implementation and no prospect of a second is a cost with no benefit."
+    }
+  ],
+  "limits": "The principles are stated for class-based object orientation and transfer unevenly: in functional or data-oriented code several of them either dissolve or are satisfied by construction. Applied maximally they produce the fragmentation they were meant to prevent — a system of many tiny classes and interfaces in which no single file explains anything, which practitioners have criticised for years. And 'one reason to change' is not decidable from the code: what counts as one reason depends on what the business does next, which the designer does not know.",
+  "misreadings": "SOLID is a mnemonic, not a specification, and it was assembled after the fact — Martin did not set out to write five principles beginning with those letters, and Feathers reordered them to spell the word. Nor is it a measure of code quality: code can satisfy all five and be unreadable, or violate several and be perfectly maintainable.",
+  "origin": "The five principles were collected by Robert C. Martin in his 2000 paper \"Design Principles and Design Patterns\", written about software rot; several had circulated individually before that, and the Liskov substitution principle is older still. Michael Feathers coined the SOLID acronym around 2004 by reordering them.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 2000,
+  "popularYear": 2004,
+  "sources": [
+    {
+      "text": "Martin, R. C. (2000). \"Design Principles and Design Patterns.\" — the paper collecting the five principles.",
+      "url": "https://web.archive.org/web/20150906155800/http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "\"SOLID.\" Wikipedia — the five statements as usually quoted, Martin's 2000 paper, and Michael Feathers's coining of the acronym around 2004.",
+      "url": "https://en.wikipedia.org/wiki/SOLID",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/SOLID",
+  "related": [
+    { "slug": "the-liskov-substitution-principle", "kind": "kindred" },
+    { "slug": "the-single-responsibility-principle", "kind": "kindred" },
+    { "slug": "separation-of-concerns", "kind": "kindred" },
+    { "slug": "the-law-of-demeter", "kind": "kindred" }
+  ]
+}

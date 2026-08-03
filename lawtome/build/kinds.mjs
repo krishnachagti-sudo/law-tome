@@ -96,6 +96,9 @@ export const KINDS = [
   { key: 'effect', one: 'effect', many: 'effects', slug: 'effects',
     title: 'Effects',
     gloss: 'A named outcome that turns up again whenever the same conditions do. The name is a handle for the pattern, not an explanation of it.' },
+  { key: 'doctrine', one: 'doctrine', many: 'doctrines', slug: 'doctrines',
+    title: 'Doctrines',
+    gloss: 'A position held and taught as settled by those who hold it — a rule of decision in law, or a stated stance a school of thought argues from.' },
   { key: 'law', one: 'law', many: 'laws', slug: 'laws',
     title: 'Laws',
     gloss: 'A regularity stated as a rule. Some are measured to many decimal places; some are jokes that hardened into sayings — and this index rates each one rather than treating them alike.' },
@@ -124,6 +127,7 @@ const FORMS = new Map([
   ['principle', ['principle', 'principles']],
   ['rule', ['rule', 'rules']],
   ['effect', ['effect', 'effects']],
+  ['doctrine', ['doctrine', 'doctrines']],
   ['law', ['law', 'laws']],
 ]);
 

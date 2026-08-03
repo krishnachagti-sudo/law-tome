@@ -1,0 +1,81 @@
+{
+  "no": "1222",
+  "slug": "separation-of-concerns",
+  "name": "Separation of Concerns",
+  "aliases": [
+    "The separation of concerns"
+  ],
+  "statement": "Study one aspect of a subject at a time, in isolation, even though the aspects are not truly independent — it is the only available technique for ordering one's thoughts effectively.",
+  "statementAccent": "one aspect of a subject at a time",
+  "meaning": "A system too large to hold in one head can be held in several, if each is about one thing. The principle says to look at correctness without looking at speed, at what the program does without how it is stored, at content without presentation — knowing all the while that the separation is a convenience, not a fact about the system.",
+  "mechanism": "Understanding does not scale with size; it scales with how many things must be true at once. Dijkstra's argument was epistemic rather than architectural: a mind can reason soundly about one aspect at a time, and cannot reason soundly about several simultaneously, so the only way to think effectively about a large artefact is to attend to one aspect while provisionally ignoring the rest. The engineering consequence follows — if you are going to think in separated aspects, the artefact is easier to work with when its structure matches those aspects, which is what layers, modules and interfaces are for.",
+  "examples": [
+    {
+      "tag": "The protocol stack",
+      "text": "SMTP concerns itself with mail sessions, TCP with reliable delivery, IP with routing. None needs to know how the others work, which is why any of them can be replaced."
+    },
+    {
+      "tag": "Content, presentation, behaviour",
+      "text": "HTML, CSS and JavaScript split a page along three axes so a redesign need not touch the words and a copy edit need not touch the layout."
+    },
+    {
+      "tag": "The concerns that will not separate",
+      "text": "Logging and security cut across every module, which is what aspect-oriented programming was invented to address — evidence that the separation is a technique rather than a property of systems."
+    }
+  ],
+  "whyItMatters": "It is the oldest and most general statement of why modularity works, and it names the reason rather than the technique: not that small parts are neater, but that a mind can only be rigorous about one thing at a time. Nearly every structural idea in software — layers, interfaces, microservices, model–view separation — is a particular application of it.",
+  "working": [
+    {
+      "lead": "Separate along the axis of change",
+      "text": "a boundary is useful when the two sides move independently. A boundary drawn where nothing varies is overhead with a diagram."
+    },
+    {
+      "lead": "Name the concern before drawing the line",
+      "text": "if you cannot say in a sentence what one side is about, the split is structural rather than conceptual, and it will not survive contact with a feature."
+    },
+    {
+      "lead": "Expect leaks and plan for them",
+      "text": "Dijkstra said the separation is never perfectly possible. Performance, security and failure handling cross every boundary you will draw."
+    }
+  ],
+  "limits": "Dijkstra's own qualification is the limit: the aspects are not in fact independent, so every separation is provisional and some concerns — timing, memory, failure, security — refuse to stay on one side of any line. Over-applied, it produces boundaries that a single ordinary feature must cross five times, at which point the cost of the structure exceeds the cost of the complexity it was hiding. It also offers no guidance on where the seams are: it says think in aspects, not which aspects.",
+  "misreadings": "It is not a claim that concerns really are independent — Dijkstra explicitly said they are not. It is also not the same as modularity: you can have many modules with no separation of concerns at all, if each module contains a slice of everything. And it does not mean each concern needs its own service, its own repository or its own team.",
+  "origin": "Coined by Edsger W. Dijkstra in \"On the Role of Scientific Thought\" (1974), where he described it as \"the separation of concerns\", which \"even if not perfectly possible, is yet the only available technique for effective ordering of one's thoughts\".",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 1974,
+  "namedAfter": "Edsger W. Dijkstra",
+  "namesakeKind": "person",
+  "sources": [
+    {
+      "text": "Dijkstra, E. W. (1974). \"On the Role of Scientific Thought.\" EWD447. — the coinage and the quoted qualification.",
+      "url": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD04xx/EWD447.html",
+      "type": "primary"
+    },
+    {
+      "text": "\"Separation of concerns.\" Wikipedia — Dijkstra's 1974 coinage, and the protocol-stack, HTML/CSS/JS and aspect-oriented examples.",
+      "url": "https://en.wikipedia.org/wiki/Separation_of_concerns",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Separation_of_concerns",
+  "related": [
+    {
+      "slug": "the-single-responsibility-principle",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-law-of-demeter",
+      "kind": "kindred"
+    },
+    {
+      "slug": "law-of-leaky-abstractions",
+      "kind": "opposed"
+    },
+    {
+      "slug": "conways-law",
+      "kind": "kindred"
+    }
+  ]
+}

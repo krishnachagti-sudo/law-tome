@@ -1,0 +1,82 @@
+{
+  "no": "1221",
+  "slug": "the-single-responsibility-principle",
+  "name": "The Single Responsibility Principle",
+  "aliases": [
+    "SRP",
+    "One reason to change"
+  ],
+  "statement": "There should never be more than one reason for a class to change.",
+  "statementAccent": "one reason for a class to change",
+  "meaning": "A unit of code should answer to one constituency. If a tax rule and a page layout can each force you to edit the same class, that class serves two masters and every change made for one risks breaking the other.",
+  "mechanism": "The unit of the principle is the reason, not the line count, and a reason traces back to a person or role who can ask for a change. When two reasons live in one module, an edit made on behalf of one of them must be tested against the other, because they share state, share the file and share the deployment. The coupling is organisational before it is technical: two groups now have a shared point of contention that neither chose. Splitting on the axis of who asks for changes puts each group's edits in a place where nobody else's work can be broken by them.",
+  "examples": [
+    {
+      "tag": "The report that also calculates",
+      "text": "Martin's own framing: a class computing pay and formatting a payslip answers to accounting and to presentation. A layout tweak now needs the payroll tests run."
+    },
+    {
+      "tag": "The model that persists itself",
+      "text": "An object holding business rules and its own SQL changes both when the rules change and when the schema does — two teams, two release cadences, one file."
+    },
+    {
+      "tag": "The utility bucket",
+      "text": "A Helpers class accretes functions with nothing in common. It has as many reasons to change as it has functions, and every one of them is a merge conflict."
+    }
+  ],
+  "whyItMatters": "It is the first and most quoted of the SOLID principles, and the one that gives 'this class does too much' a testable meaning: not too many lines, but too many people who can demand a change to it. Read that way it is a claim about organisations as much as about code, and it is the bridge between design advice and Conway's Law.",
+  "working": [
+    {
+      "lead": "Name the person behind each reason",
+      "text": "if you can name two different roles who would ask for changes to a module, it has two responsibilities. If you can only invent hypothetical ones, it has one."
+    },
+    {
+      "lead": "Split on change, not on nouns",
+      "text": "the axis that matters is what varies together over time, which is discovered from the history of the file rather than from a class diagram."
+    },
+    {
+      "lead": "Let cohesion pull back",
+      "text": "the principle is a counterweight to modules that do too much, not a mandate for modules that do almost nothing. Two things that always change together should not be separated to satisfy it."
+    }
+  ],
+  "limits": "'One reason to change' cannot be decided from the code, only from a forecast of what the organisation will ask for next — and that forecast is exactly what nobody has. The principle also has no natural stopping point: taken to its limit it produces a class per method, a design its own advocates reject but the wording does not exclude. Martin later reformulated it around actors rather than reasons partly because the original phrasing was so widely read as a licence to fragment.",
+  "misreadings": "It does not say a class should do only one thing, and it is not a rule about size. A large class with one reason to change satisfies it; a three-line class serving two masters does not. It is also not an argument against classes that coordinate several collaborators — coordination can itself be the single responsibility.",
+  "origin": "Stated by Robert C. Martin, who collected it with four others in his 2000 paper \"Design Principles and Design Patterns\" and made it the S of the SOLID set. Martin credits the underlying idea of cohesion to earlier structured-design work, and has since restated the principle in terms of actors — gather together the things that change for the same reason, and separate those that change for different reasons.",
+  "category": "software",
+  "reliability": "Heuristic",
+  "provenance": "canon",
+  "coinedYear": 2000,
+  "namedAfter": "Robert C. Martin",
+  "namesakeKind": "person",
+  "sources": [
+    {
+      "text": "Martin, R. C. (2000). \"Design Principles and Design Patterns.\" — the principle as first collected, with the payroll example.",
+      "url": "https://web.archive.org/web/20150906155800/http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "\"SOLID.\" Wikipedia — the canonical wording, 'there should never be more than one reason for a class to change', and its place in the set.",
+      "url": "https://en.wikipedia.org/wiki/SOLID",
+      "type": "secondary"
+    }
+  ],
+  "sameAs": "https://en.wikipedia.org/wiki/Single-responsibility_principle",
+  "related": [
+    {
+      "slug": "solid",
+      "kind": "kindred"
+    },
+    {
+      "slug": "separation-of-concerns",
+      "kind": "kindred"
+    },
+    {
+      "slug": "conways-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "dry",
+      "kind": "kindred"
+    }
+  ]
+}
