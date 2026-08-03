@@ -46,6 +46,8 @@ import { creditsPage } from '../src/templates/credits.mjs';
 import { equationsPage, pronunciationPage, sourcesPage } from '../src/templates/surfaces.mjs';
 import { isItRealPage, misattributedPage, ratingContradictions } from '../src/templates/veracity.mjs';
 import { findings } from './findings.mjs';
+import { sheets, sheetPath } from './sheets.mjs';
+import { sheetsHubPage, sheetPage } from '../src/templates/sheets.mjs';
 import { findingsPage } from '../src/templates/findings.mjs';
 import { misattributed } from './attribution.mjs';
 import { equations, pronunciations, bibliography } from './surfaces.mjs';
@@ -456,7 +458,7 @@ export async function buildSite(opts) {
   for (const lang of namesLangs) {
     writes.push(writePage(join(out, 'names', lang.code, 'index.html'),
       namesLangPage(lang, namesFor(laws, facts, lang.code), {
-        base, origin, count: publishedCount,
+        base, origin, count: publishedCount, categories,
         others: namesLangs.filter((o) => o.code !== lang.code),
       })));
   }
@@ -533,6 +535,17 @@ export async function buildSite(opts) {
   // drift from the corpus it describes.
   writes.push(writePage(join(out, 'how-solid', 'index.html'),
     findingsPage(found, { base, origin, count: publishedCount, categories })));
+
+  // Cheat sheets: one field per printable page. The index is the right size for
+  // a reference and the wrong size for a wall, and nothing here sat between one
+  // entry and all 1,116 of them.
+  const allSheets = sheets(laws, ranked, categories);
+  writes.push(writePage(join(out, 'sheets', 'index.html'),
+    sheetsHubPage(allSheets, { base, origin, count: publishedCount })));
+  for (const sh of allSheets) {
+    writes.push(writePage(join(out, 'sheets', sh.slug, 'index.html'),
+      sheetPage(sh, { base, origin, count: publishedCount, siblings: allSheets })));
+  }
   writes.push(writePage(join(out, 'og', 'how-solid.png'), renderPng(findingCardSvg({
     rows: [
       ...found.curve.map((c) => ({ label: `Top ${c.n}`, share: c.share })),
@@ -658,6 +671,8 @@ export async function buildSite(opts) {
     'diagnose/',                              // problem in, laws out
     'embed/',                                 // how to put a card on your site
     'how-solid/',                             // the finding: fame runs against evidence
+    'sheets/',                                // one printable page per field
+    ...allSheets.map((s) => sheetPath(s)),    // …and the sheets themselves
     'is-it-real/',                            // every entry rated by evidence
     'misattributed/',                         // Stigler's law, with the receipts
   ];

@@ -13,7 +13,7 @@
 // would be fabrication dressed as reach. Every page says so in its own words,
 // in its own language's section, and links back to the English entry.
 
-import { head, sprite, header, footer, escapeHtml, listFilter } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, listFilter, reliabilityClass } from './partials.mjs';
 import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
 
 /**
@@ -98,11 +98,26 @@ export function languagesPresent(laws, facts) {
  * under it. `lang` and `dir` are set per cell, not per page, so a browser
  * picks the right font and a screen reader the right voice.
  */
-function nameRows(rows, { base, code, dir }) {
-  return rows.map(({ name, law }) => `      <a class="nx-row" data-filter-row href="${base}laws/${escapeHtml(law.slug)}/">
+function nameRows(rows, { base, code, dir, categories = {} }) {
+  return rows.map(({ name, law }) => {
+    // The statement is the reason this page is worth landing on. Without it the
+    // row is a redirect wearing a name — someone who searched "Ley de Murphy"
+    // arrives, sees two words they already knew, and leaves. With it they have
+    // the answer before they click, which is the whole promise of the index.
+    //
+    // It stays in English, and the page says so above in plain terms. A
+    // machine-translated statement would be an unverified claim in a project
+    // whose one rule is that it does not publish those.
+    const field = categories[law.category] || law.category || '';
+    return `      <a class="nx-row" data-filter-row
+         data-filter-text="${escapeHtml(`${name} ${law.name} ${field}`)}"
+         href="${base}laws/${escapeHtml(law.slug)}/">
         <span class="nx-name" lang="${escapeHtml(code)}"${dir === 'rtl' ? ' dir="rtl"' : ''}>${escapeHtml(name)}</span>
-        <span class="nx-en">${escapeHtml(law.name)}</span>
-      </a>`).join('\n');
+        <span class="nx-en">${escapeHtml(law.name)}${field ? `<span class="nx-cat">${escapeHtml(field)}</span>` : ''}</span>
+        <span class="nx-say">${escapeHtml(law.statement || '')}</span>
+        <span class="badge ${reliabilityClass(law.reliability)} nx-badge">${escapeHtml(law.reliability || '')}</span>
+      </a>`;
+  }).join('\n');
 }
 
 /**
@@ -111,7 +126,7 @@ function nameRows(rows, { base, code, dir }) {
  * @param {object} lang entry from LANGS, with `count`
  * @param {{name: string, law: object}[]} rows from namesFor
  */
-export function namesLangPage(lang, rows, { base = '/', origin = '', count, others = [] } = {}) {
+export function namesLangPage(lang, rows, { base = '/', origin = '', count, others = [], categories = {} } = {}) {
   const { code, name, native, dir } = lang;
   const total = rows.length;
   const path = namesPath(code);
@@ -156,7 +171,7 @@ ${hubHead({
     base,
     crumbs: [['browse/', 'Browse'], ['names/', 'In other languages']],
   })}${listFilter({ target: 'nx-list', label: `Filter ${num(total)} ${name} names`, placeholder: `Filter ${num(total)} names…`, noun: 'names' })}    <div class="nx-list" id="nx-list">
-${nameRows(rows, { base, code, dir })}
+${nameRows(rows, { base, code, dir, categories })}
     </div>
 ${nav}${faq.html}${hubNav('names/', { base })}  </div>
 </section>
