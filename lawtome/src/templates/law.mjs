@@ -16,7 +16,7 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle } from './partials.mjs';
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
@@ -152,7 +152,17 @@ export function lawPage(law, ctx = {}) {
   const facetList = facets.length > 1
     ? facets.slice(0, -1).join(', ') + ' & ' + facets[facets.length - 1]
     : facets[0];
-  const pageTitle = `${law.name}: ${facetList} | The Law Tome`;
+  // Longest facet list that still fits the result slot. A long entry name spends
+  // the budget the facets would have used, and losing "& Origin" is far cheaper
+  // than having the name itself cut — the name is what the searcher typed.
+  const pageTitle = fitTitle(law.name, [
+    `: ${facetList} | The Law Tome`,
+    `: ${facetList}`,
+    ...(facets.length > 2 ? [`: ${facets.slice(0, 2).join(' & ')}`] : []),
+    ': Meaning',
+    ' | The Law Tome',
+    '',
+  ]);
   // Meta description leads with the one-line statement (the featured-snippet
   // payload), then the facets and a trust signal. Falls back to the answer.
   const metaDescription = law.statement
@@ -817,6 +827,42 @@ ${prevnext}</div>
     // Voice/assistant answer target: read the title and the plain-English definition.
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.law-title', '.lead'] },
   };
+
+  // The namesake, as an entity rather than a string.
+  //
+  // 907 entries name a person and, until now, none of them said so in a way a
+  // machine could resolve — the name was a word in a sentence. A Person node
+  // with a Wikidata sameAs turns "named after Charles Goodhart" into a claim
+  // about an identifiable human being, which is what an entity graph is for and
+  // what an answer engine needs to connect this page to everything else about
+  // him. Emitted only from data we hold: the Wikidata URL comes from the
+  // birthplace lookup, the birthPlace from the same record, the image from the
+  // curated portrait set. A namesake we know only as a name gets a Person with
+  // just a name, which is honest and still linkable.
+  const namesakePerson = (() => {
+    if (!law.namedAfter || law.namesakeKind === 'group') return null;
+    if (law.namesakeKind && law.namesakeKind !== 'person') return null;
+    const o = (personFact && personFact.origin) || null;
+    const por = images && images.people ? images.people[personSlug(law.namedAfter)] : null;
+    const node = { '@type': 'Person', name: law.namedAfter };
+    if (o && o.source) node.sameAs = o.source;
+    if (o && o.place) {
+      node.birthPlace = {
+        '@type': 'Place',
+        name: o.country ? `${o.place}, ${o.country}` : o.place,
+        ...(o.placeQid ? { sameAs: `https://www.wikidata.org/wiki/${o.placeQid}` } : {}),
+        ...(Number.isFinite(o.lat) && Number.isFinite(o.lon)
+          ? { geo: { '@type': 'GeoCoordinates', latitude: o.lat, longitude: o.lon } }
+          : {}),
+      };
+    }
+    if (por && por.slug) node.image = `${origin}${base}assets/img/people/${por.slug}.webp`;
+    // A Person carrying only a bare name adds nothing a crawler cannot already
+    // read off the page, so it is only worth emitting once it resolves to
+    // something — a Wikidata record, a birthplace, or a portrait.
+    return (node.sameAs || node.birthPlace || node.image) ? node : null;
+  })();
+  if (namesakePerson) article.mentions = [namesakePerson];
 
   const breadcrumb = {
     '@context': 'https://schema.org',

@@ -13,7 +13,7 @@
 // every slug used in an href goes through escapeHtml — the Task 5/6/7 gates all
 // failed on missed escaping.
 
-import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, reliabilitySlug, browseControls, searchBox, asset, figureStrip } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, RELIABILITY_NOTE, reliabilitySlug, browseControls, searchBox, asset, figureStrip, fitTitle } from './partials.mjs';
 import { hubNav, hubFaq, fieldShape, setTensions, setAdjacent } from './hub.mjs';
 
 /**
@@ -250,11 +250,26 @@ ${fieldHub}${fieldMore}${browseMore}  </div>
 
   // SEO title: keyword-led and distinct from the on-page <h1> (which stays the
   // short section label). Category pages target "<Field> laws & principles".
+  // Several field labels are themselves long ("Logic, fallacies & argument"),
+  // so the trimmings are tried longest-first and dropped whole rather than let
+  // the field name get cut — the field name is the query.
   const seoTitle = isReliability
-    ? `${title} — Named Laws Rated ${reliabilityKey} | The Law Tome`
+    ? fitTitle(title, [
+      ` — Named Laws Rated ${reliabilityKey} | The Law Tome`,
+      ` — Named Laws Rated ${reliabilityKey}`,
+      ' — Named Laws | The Law Tome',
+      '',
+    ])
     : kind === 'category'
-      ? `${title} Laws & Principles — Meaning & Examples | The Law Tome`
-      : 'All Named Laws, Principles & Effects — Index | The Law Tome';
+      ? fitTitle(title, [
+        ' Laws & Principles — Meaning & Examples | The Law Tome',
+        ' Laws & Principles — Meaning & Examples',
+        ' Laws & Principles | The Law Tome',
+        ' — Named Laws & Principles',
+        ' — Named Laws',
+        '',
+      ])
+      : 'All Named Laws, Principles & Effects | The Law Tome';
 
   const path = isReliability
     ? `reliability/${reliabilitySlug(reliabilityKey)}/`

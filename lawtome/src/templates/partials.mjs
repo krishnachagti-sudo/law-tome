@@ -24,6 +24,17 @@
 // never call setAssetVersions) keep producing clean, stable markup.
 const ASSET_V = new Map();
 
+// The build date, registered once and read wherever a page needs to declare
+// when it last changed. The corpus carries no per-entry authoring date and the
+// whole site is regenerated on every deploy, so this is the only honest answer
+// to "when did this change" — and it is one an answer engine weights. Kept
+// beside the asset versions because it is the same kind of build-time fact.
+let BUILD_DATE = '';
+/** @param {string} d ISO date, e.g. '2026-08-03' */
+export function setBuildDate(d) { BUILD_DATE = d ? String(d) : ''; }
+/** The registered build date, or '' when a template is rendered outside a build. */
+export function buildDate() { return BUILD_DATE; }
+
 /** @param {Record<string,string>} map asset path (e.g. 'assets/styles.css') -> short content hash */
 export function setAssetVersions(map) {
   ASSET_V.clear();
@@ -105,6 +116,79 @@ export function jsonLd(obj) {
   return `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
 }
 
+// ---- SERP budgets -----------------------------------------------------------
+// A title Google truncates mid-word and a description it cuts at a comma are
+// both wasted slots, and 619 law titles and 1,108 law descriptions were over
+// budget. Rather than police every generator, the two are clamped here, at the
+// one place every page passes through.
+//
+// The title clamp drops the brand suffix FIRST. " | The Law Tome" costs sixteen
+// characters to repeat information the result already shows twice — in the
+// domain and in the breadcrumb — so on a long title it is the cheapest thing to
+// lose, and losing it usually saves the whole title. Only if the title is still
+// over budget without it does anything get cut, and then at a word boundary.
+
+/** Pixel budgets are the real constraint; these are the character equivalents. */
+export const TITLE_MAX = 60;
+export const DESC_MAX = 158;
+
+const BRAND_RE = /\s*[|—–-]\s*The Law Tome\s*$/;
+
+/**
+ * Build a title from a core plus a list of optional trimmings, longest first,
+ * and return the first combination that fits the budget.
+ *
+ * Better than letting clampTitle() cut, because it drops a whole clause at a
+ * clause boundary rather than ending the title in an ellipsis: for a pair of
+ * long names, "Aesthetic Experience vs The Aesthetic Attitude" reads properly
+ * where "…vs The Aesthetic Attitude — What's…" does not.
+ *
+ * @param {string} core the part that must survive
+ * @param {string[]} tails suffixes to try, longest/most-preferred first; the
+ *   last entry should be '' so the bare core is always an option
+ */
+export function fitTitle(core, tails = [''], max = TITLE_MAX) {
+  const c = String(core).trim();
+  for (const tail of tails) {
+    const t = `${c}${tail}`;
+    if (t.length <= max) return t;
+  }
+  return c;
+}
+
+/**
+ * Fit a title to the SERP: keep the brand suffix when it fits, drop it when it
+ * does not, and only truncate when the title is too long even without it.
+ */
+export function clampTitle(title, max = TITLE_MAX) {
+  const t = String(title == null ? '' : title).trim();
+  if (t.length <= max) return t;
+  const bare = t.replace(BRAND_RE, '').trim();
+  if (bare && bare.length <= max) return bare;
+  const src = bare || t;
+  if (src.length <= max) return src;
+  // Cut at the last word boundary that leaves room for the ellipsis.
+  const cut = src.slice(0, max - 1);
+  const sp = cut.lastIndexOf(' ');
+  return `${(sp > max * 0.5 ? cut.slice(0, sp) : cut).replace(/[\s,;:—–-]+$/, '')}…`;
+}
+
+/**
+ * Fit a description to the SERP, preferring to end on a sentence and falling
+ * back to a word boundary. Never cuts mid-word, and never leaves a dangling
+ * comma or dash where the cut landed.
+ */
+export function clampDescription(text, max = DESC_MAX) {
+  const t = String(text == null ? '' : text).replace(/\s+/g, ' ').trim();
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max);
+  // A full stop in the last third is a better ending than any word boundary.
+  const stop = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('? '), cut.lastIndexOf('! '));
+  if (stop > max * 0.6) return cut.slice(0, stop + 1);
+  const sp = cut.lastIndexOf(' ');
+  return `${(sp > max * 0.5 ? cut.slice(0, sp) : cut.slice(0, max - 1)).replace(/[\s,;:—–-]+$/, '')}…`;
+}
+
 /**
  * Document head — everything from <!doctype html> through the opening <body>.
  *
@@ -127,15 +211,21 @@ export function jsonLd(obj) {
  */
 export function head({ title, description, base = '/', origin = '', path, canonical, og, jsonld, siteName = 'The Law Tome', robots, modified, published, alternates } = {}) {
   const canon = canonical || (path != null ? `${origin}${base}${path}` : undefined);
+  // Clamped here so no generator can ship a truncated result slot. The OG and
+  // Twitter copy below deliberately uses the UNCLAMPED text: an unfurl card has
+  // a much larger budget than a search result, so shortening for Google's sake
+  // would needlessly shorten what a reader sees in a chat or a message.
+  const serpTitle = clampTitle(title);
+  const serpDescription = description ? clampDescription(description) : description;
   const out = [
     '<!DOCTYPE html>',
     '<html lang="en" data-theme="dark">',
     '<head>',
     '<meta charset="utf-8">',
     '<meta name="viewport" content="width=device-width, initial-scale=1">',
-    `<title>${escapeHtml(title)}</title>`,
+    `<title>${escapeHtml(serpTitle)}</title>`,
   ];
-  if (description) out.push(`<meta name="description" content="${escapeHtml(description)}">`);
+  if (serpDescription) out.push(`<meta name="description" content="${escapeHtml(serpDescription)}">`);
   // Crawler + generative-answer directives: index freely and allow large image /
   // full-text previews so AI answer engines can quote and cite the entry.
   out.push(`<meta name="robots" content="${escapeHtml(robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')}">`);

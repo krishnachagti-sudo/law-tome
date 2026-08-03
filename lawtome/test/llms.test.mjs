@@ -90,7 +90,10 @@ test('robots.txt advertises llms.txt', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-llms-rb-'));
   await buildSite({ dataDir: 'src/data/laws', catFile: 'src/data/categories.json', assetsDir: 'src/assets', out, base: '/lawtome/', origin: 'https://conyso.com' });
   const robots = await readFile(join(out, 'robots.txt'), 'utf8');
-  assert.match(robots, /# llms\.txt: https:\/\/conyso\.com\/lawtome\/llms\.txt/);
+  // The comment block now lists all three machine-readable surfaces, not just one.
+  assert.match(robots, /#\s+https:\/\/conyso\.com\/lawtome\/llms\.txt/);
+  assert.match(robots, /#\s+https:\/\/conyso\.com\/lawtome\/llms-full\.txt/);
+  assert.match(robots, /#\s+https:\/\/conyso\.com\/lawtome\/api\.json/);
   await rm(out, { recursive: true, force: true });
 });
 

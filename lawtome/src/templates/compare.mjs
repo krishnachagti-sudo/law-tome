@@ -9,7 +9,7 @@
 // the difference" sentence — that would be fabrication. The honest presentation
 // is both claims, laid out, for the reader to weigh.
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, personSlug, listFilter } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, personSlug, listFilter, fitTitle } from './partials.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId, monogram } from './eponyms.mjs';
 import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
@@ -271,7 +271,15 @@ ${substance}    <div class="cmp-foot">
 
   return (
     head({
-      title: `${a.name} vs ${b.name} — What’s the Difference? | The Law Tome`,
+      // Longest trimming that still fits the result slot: the pair of names is
+      // the part a searcher typed, so it is the part that must survive whole.
+      title: fitTitle(`${a.name} vs ${b.name}`, [
+        ' — What’s the Difference? | The Law Tome',
+        ' — What’s the Difference?',
+        ' — Compared | The Law Tome',
+        ' — Compared',
+        '',
+      ]),
       description,
       base,
       origin,

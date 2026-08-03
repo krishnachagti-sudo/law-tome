@@ -25,7 +25,7 @@ import { kinds, kindPath, kindOf } from './kinds.mjs';
 import { kindsHubPage, kindPage } from '../src/templates/kinds.mjs';
 import { akaPage, quotesPage } from '../src/templates/lookup.mjs';
 import { bestKnown, bestKnownPage } from '../src/templates/bestknown.mjs';
-import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, personSlug } from '../src/templates/partials.mjs';
+import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, setBuildDate, personSlug } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
 import { resolveCollections } from './collections.mjs';
 import { quizPage } from '../src/templates/quiz.mjs';
@@ -155,6 +155,9 @@ export async function buildSite(opts) {
   // when the page was last generated. Overridable so a reproducible build can
   // pin it. ISO 8601 (date only keeps it stable across a day's rebuilds).
   const buildDate = opts.buildDate ?? new Date().toISOString().slice(0, 10);
+  // Register it once so every hub's CollectionPage can declare dateModified
+  // without fifteen call sites having to remember to pass it.
+  setBuildDate(buildDate);
 
   // Curated situation → law map. Optional file; loaded early because its phrases
   // are folded into the search index (so a typed problem description lands on the
@@ -651,7 +654,44 @@ export async function buildSite(opts) {
     });
   }
   writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate, imagesByPath)));
-  writes.push(writePage(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}${base}sitemap.xml\n# llms.txt: ${origin}${base}llms.txt\n`));
+  // robots.txt — a stated policy rather than a default.
+  //
+  // The generative crawlers are named explicitly and allowed explicitly. A bare
+  // `User-agent: *` already permits them, but several of these agents are
+  // routinely blocked elsewhere and a named Allow is an unambiguous statement
+  // that this corpus may be read, quoted and cited. Google-Extended in
+  // particular is the switch that governs whether the site can be used to
+  // ground answers rather than merely be crawled, and leaving it implicit is
+  // the kind of omission that quietly costs the thing this index exists for.
+  //
+  // Nothing is disallowed. The noindex surfaces (/print/, /embed/, /saved/)
+  // must stay crawlable, because a Disallow would stop a crawler ever reading
+  // the noindex directive that keeps them out of the index.
+  const AI_AGENTS = [
+    'GPTBot', 'OAI-SearchBot', 'ChatGPT-User',
+    'ClaudeBot', 'Claude-User', 'Claude-SearchBot', 'anthropic-ai',
+    'PerplexityBot', 'Perplexity-User',
+    'Google-Extended', 'Applebot-Extended', 'Bingbot', 'CCBot',
+    'Amazonbot', 'meta-externalagent', 'Bytespider', 'cohere-ai', 'Diffbot',
+  ];
+  writes.push(writePage(join(out, 'robots.txt'), [
+    '# The Law Tome — a defined, sourced index of named laws, principles and effects.',
+    '# Text licensed CC BY 4.0. Read it, quote it, cite it; the attribution travels with it.',
+    '',
+    'User-agent: *',
+    'Allow: /',
+    '',
+    '# Answer and generative engines: allowed by name, not merely by default.',
+    ...AI_AGENTS.flatMap((a) => [`User-agent: ${a}`, 'Allow: /']),
+    '',
+    `Sitemap: ${origin}${base}sitemap.xml`,
+    '',
+    '# Machine-readable summaries of this site, for agents that prefer them:',
+    `#   ${origin}${base}llms.txt        — the map, ~190 KB`,
+    `#   ${origin}${base}llms-full.txt   — every entry in full`,
+    `#   ${origin}${base}api.json        — the index as JSON, one record per entry`,
+    '',
+  ].join('\n')));
 
   // llms.txt + llms-full.txt (GEO): the llmstxt.org content map for generative
   // crawlers. Compact index (one bullet per entry, grouped by category) plus a

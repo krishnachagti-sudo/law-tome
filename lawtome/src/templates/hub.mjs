@@ -13,7 +13,7 @@
 //   3. A footer of the other hubs, because the ways into 1,100 laws are the
 //      most useful thing the site has and each one was a dead end.
 
-import { escapeHtml, personSlug } from './partials.mjs';
+import { escapeHtml, personSlug, buildDate } from './partials.mjs';
 
 /**
  * The art band for a hub card: a strip of this set's own imagery.
@@ -428,7 +428,7 @@ export function crossAxis(laws = [], others = [], { base = '/', hrefBase = '', l
 }
 
 /** CollectionPage + ItemList + BreadcrumbList, the set every hub should declare. */
-export function hubJsonLd({ name, description, path, items = [], origin = '', base = '/' }) {
+export function hubJsonLd({ name, description, path, items = [], origin = '', base = '/', modified = buildDate() }) {
   const url = `${origin}${base}${path}`;
   const out = [{
     '@context': 'https://schema.org',
@@ -437,13 +437,23 @@ export function hubJsonLd({ name, description, path, items = [], origin = '', ba
     url,
     description,
     isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
+    // Freshness. The corpus has no per-page authoring date and the site is
+    // rebuilt whole on every deploy, so the build date is the honest answer to
+    // "when did this last change" — and answer engines weight recency.
+    ...(modified ? { dateModified: modified } : {}),
     ...(items.length ? {
       mainEntity: {
         '@type': 'ItemList',
         numberOfItems: items.length,
+        // Callers pass EITHER a base-relative `href` or an already-absolute
+        // `url`. Ten of the fifteen call sites pass `url`, and reading only
+        // `href` silently shipped those ten an ItemList of bare names with
+        // nothing to click — an ItemList without links is a list of strings.
         itemListElement: items.slice(0, 100).map((it, i) => ({
-          '@type': 'ListItem', position: i + 1, name: it.name,
-          ...(it.href ? { url: `${origin}${base}${it.href}` } : {}),
+          '@type': 'ListItem',
+          position: i + 1,
+          name: it.name,
+          ...(it.url ? { url: it.url } : it.href ? { url: `${origin}${base}${it.href}` } : {}),
         })),
       },
     } : {}),
