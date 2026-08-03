@@ -81,15 +81,57 @@ about the concept — is. Filtering on that:
 films about the idea rather than the idea.** Had we bulk-edited from that list,
 this site would now be cited as the description of a 1994 film.
 
-## What to do with this
+## The review, and what it found
 
-1. **Review the 120 candidates by hand.** They are in
-   `docs/wikidata-candidates.json` with `verified: false` on each. Set it true
-   as each is confirmed; the field exists so a partial review is resumable.
-2. **Add the QIDs we confirm to our own data first.** Every confirmed match
-   improves `sameAs` in the published dataset and adds that entry's foreign
-   names — a site improvement that needs nobody's permission and no edit to
-   anyone else's project.
+The 120 were reviewed on 2026-08-03. `build/wikidata-review.mjs` pulled the
+evidence each judgement needs — what the item *is* (P31), its aliases, its
+sitelink count — and each was read against our own entry's statement. Verdicts
+are recorded per candidate in `docs/wikidata-candidates.json`, with a named
+reason on every rejection.
+
+| | |
+|---|---|
+| Accepted | **92** |
+| Rejected | **28** |
+
+The rejections vindicate the decision not to bulk-accept. Two are exactly the
+failure mode the audit predicted — an acronym matching an unrelated item:
+
+| Our entry | What the search returned |
+|---|---|
+| The Single Responsibility Principle | **Serbian** — matched on *SRP* |
+| The Principle of Least Astonishment | **Pola**, a female given name — matched on *POLA* |
+| YAGNI | **Yagnik**, a family name |
+| SOLID | **solid**, the state of matter |
+
+Several more are the publication-for-concept swap the audit was built to catch:
+The Michelson-Morley Experiment matched an *Ohio historical marker*
+commemorating it; The Rule of Three matched an *Agatha Christie play*; The
+Nocebo Effect and The Rubber Hand Illusion each matched a *clinical trial* that
+used them; The Mind-Body Problem matched a *2024 encyclopedia article* about it.
+
+And three are subtler, which is the argument for reading rather than scripting:
+
+- **Ampère's Law** matched *Ampère's force law*. Same person, adjacent physics,
+  different law. A label-similarity score would have accepted it.
+- **Retrograde Motion** matched *actual* retrograde orbital motion; our entry is
+  about the *apparent* motion seen from Earth.
+- **Presentism** matched presentism the *historiographical fallacy*, not
+  presentism about time.
+
+The 92 accepted links are now in `src/data/facts.json`, and with them **580
+foreign names** for entries that had none — pulled from Wikidata, not
+translated. That takes the corpus from 766 linked entries to **858**.
+
+## What is left to do
+
+1. **Look hardest at the 79 with no item.** If they are genuinely absent rather
+   than just missed by an English-label search, they are the most defensible
+   part of the corpus — and the case for creating items is a contribution
+   argument, not a promotional one.
+2. **Re-run the search for the 28 rejected.** A wrong top hit does not mean no
+   right item exists; Ampère's circuital law and the uncertainty principle
+   certainly have their own items, which this shallow probe did not surface.
 3. **Only then consider contributing upstream, and never in bulk.** A reference
    URL added one item at a time where it genuinely improves the item is a
    contribution. Seven hundred added by script is link-spam, would be reverted,

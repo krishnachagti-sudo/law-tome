@@ -31,10 +31,12 @@ import { resolveCollections } from './collections.mjs';
 import { quizPage, scorePage } from '../src/templates/quiz.mjs';
 import { dayIndex, ROUND as QUIZ_ROUND } from './quiz.mjs';
 import { situationsPage } from '../src/templates/situations.mjs';
+import { problemPage } from '../src/templates/problems.mjs';
 import { diagnosePage, diagnoseData } from '../src/templates/diagnose.mjs';
 import { printPage } from '../src/templates/print.mjs';
 import { embedCard, embedToday, embedDocsPage } from '../src/templates/embed.mjs';
 import { resolveSituations, situationsBySlug } from './situations.mjs';
+import { problems, problemPath } from './problems.mjs';
 import { audiencesIndexPage, audiencePage } from '../src/templates/audiences.mjs';
 import { resolveAudiences } from './audiences.mjs';
 import { featuresPage } from '../src/templates/features.mjs';
@@ -45,6 +47,8 @@ import { namesakePage, namesakePath, namesakesWithPages, siblingOrderings } from
 import { creditsPage } from '../src/templates/credits.mjs';
 import { equationsPage, pronunciationPage, sourcesPage } from '../src/templates/surfaces.mjs';
 import { isItRealPage, misattributedPage, ratingContradictions } from '../src/templates/veracity.mjs';
+import { verdictPage } from '../src/templates/verdict.mjs';
+import { verdicts, verdictPath } from './verdicts.mjs';
 import { findings } from './findings.mjs';
 import { sheets, sheetPath } from './sheets.mjs';
 import { sheetsHubPage, sheetPage } from '../src/templates/sheets.mjs';
@@ -199,6 +203,9 @@ export async function buildSite(opts) {
   const ranked = bestKnown(laws, facts);
   const misnamed = misattributed(laws);
   const found = findings(laws, ranked, misnamed);
+  // Hoisted with the rest: the /is-it-real/ hub links these, each page is built
+  // from them, and the sitemap lists them, so they must be computed once.
+  const allVerdicts = verdicts(laws, ranked, { kindOf });
 
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
@@ -416,7 +423,18 @@ export async function buildSite(opts) {
   // Situations: a visible reverse-lookup ("what's the law for…?") built from the
   // same curated map folded into the search index. Emitted unconditionally (empty
   // state when a corpus has none), so the footer link never dangles.
-  writes.push(writePage(join(out, 'situations', 'index.html'), situationsPage(situations, { base, origin, count: publishedCount, categories, images })));
+  // …and the same rows cut by PROBLEM rather than by field. The hub answers 581
+  // questions at once, which is a good browse and a poor landing page; these are
+  // the pages a reader who typed one of those questions can actually arrive on.
+  // The assignment is computed from the situation's own wording (build/problems),
+  // so no row was hand-filed onto a page it flatters.
+  const { themes: problemThemes, unassigned: sitUnassigned } = problems(rawSituations, byslug);
+  writes.push(writePage(join(out, 'situations', 'index.html'), situationsPage(situations, { base, origin, count: publishedCount, categories, images, themes: problemThemes })));
+  for (const th of problemThemes) {
+    writes.push(writePage(join(out, 'situations', th.slug, 'index.html'),
+      problemPage(th, { base, origin, count: publishedCount, siblings: problemThemes, images, total: situations.length })));
+  }
+  console.log(`problems: ${problemThemes.length} themes, ${situations.length - sitUnassigned} of ${situations.length} situations placed`);
 
   // Marketing: audience ("for …") pages, a features tour, and a manifesto.
   // Audiences are curated persona shortlists (optional file; unknown slugs dropped).
@@ -523,7 +541,19 @@ export async function buildSite(opts) {
     console.warn(`reliability: ${contradictions.length} Empirical entr${contradictions.length === 1 ? 'y' : 'ies'} whose own limits call the effect contested: ${contradictions.map((c) => c.slug).join(', ')}`);
   }
   writes.push(writePage(join(out, 'is-it-real', 'index.html'),
-    isItRealPage(laws, { base, origin, count: publishedCount, categories })));
+    isItRealPage(laws, { base, origin, count: publishedCount, categories, verdicts: allVerdicts })));
+
+  // …and a page per entry for the ones the question is actually asked about:
+  // in the print-frequency ranking (somebody is asking) and not rated Empirical
+  // (the answer is interesting). "Is Ohm's law real" needs no page. Each of these
+  // carries three numbers no entry page has — the entry's rank, its field's share
+  // of soft ratings, and the corpus share — which is the whole reason it is a
+  // separate URL rather than a second description of the same idea.
+  for (const v of allVerdicts) {
+    writes.push(writePage(join(out, 'is-it-real', v.slug, 'index.html'),
+      verdictPage(v, { base, origin, count: publishedCount, categories })));
+  }
+  console.log(`verdicts: ${allVerdicts.length} entries are well known, softly rated, and the kind of claim that can fail`);
   writes.push(writePage(join(out, 'misattributed', 'index.html'),
     misattributedPage(misnamed, { base, origin, count: publishedCount })));
 
@@ -650,6 +680,8 @@ export async function buildSite(opts) {
     ...collections.map((c) => `collections/${c.slug}/`),
     'quiz/',                                  // law of the day + quiz
     'situations/',                            // reverse lookup: problem -> law
+    ...problemThemes.map((t) => problemPath(t)), // …and one page per problem theme
+    ...allVerdicts.map((v) => verdictPath(v)), // "is X real?", one per well-known soft entry
     'names/',                                 // the names these ideas go by elsewhere
     ...namesLangs.map((l) => namesPath(l.code)), // one index per language
     'named-after/',                           // eponym index
@@ -749,6 +781,7 @@ export async function buildSite(opts) {
     `#   ${origin}${base}llms.txt        — the map, ~190 KB`,
     `#   ${origin}${base}llms-full.txt   — every entry in full`,
     `#   ${origin}${base}api.json        — the index as JSON, one record per entry`,
+    `#   ${origin}${base}today.json      — the entry selected for today, as JSON`,
     '',
   ].join('\n')));
 
@@ -762,7 +795,42 @@ export async function buildSite(opts) {
 
   // Atom feed of the newest entries + site identity (favicon PNG derived from the
   // brand logo, and a web-app manifest). All crawler/OS-facing, not "pages".
-  writes.push(writePage(join(out, 'feed.xml'), buildFeed(laws, { baseUrl: `${origin}${base}`, updated: `${buildDate}T00:00:00Z`, siteName: 'The Law Tome' })));
+  const feedStamp = `${buildDate}T00:00:00Z`;
+  const baseHref = `${origin}${base}`;
+  writes.push(writePage(join(out, 'feed.xml'), buildFeed(laws, { baseUrl: baseHref, updated: feedStamp, siteName: 'The Law Tome' })));
+
+  // …and one feed per field. A single site-wide feed makes a reader who cares
+  // about linguistics subscribe to 1,116 entries to get eleven of them, which is
+  // how a feed gets unsubscribed from. Each declares its own self link, because a
+  // feed is identified by that URL and twenty feeds claiming /feed.xml are one.
+  for (const [slug, title] of Object.entries(categories)) {
+    const inField = laws.filter((l) => l.category === slug);
+    if (!inField.length) continue;
+    writes.push(writePage(join(out, 'category', slug, 'feed.xml'), buildFeed(inField, {
+      baseUrl: baseHref,
+      updated: feedStamp,
+      path: `category/${slug}/feed.xml`,
+      link: `${baseHref}category/${slug}/`,
+      title: `The Law Tome — ${title}`,
+      subtitle: `Named laws, principles and effects in ${title.toLowerCase()} — defined, sourced, and rated for how far the evidence goes.`,
+    })));
+  }
+
+  // The law of the day as JSON. /embed/today/ already serves it as an iframe, but
+  // an iframe cannot be styled by the site embedding it and cannot be read by
+  // anything that is not a browser. This is the same selection — same date, same
+  // deterministic index — as data, so a widget, a bot or a shell script can carry
+  // it. Cached for an hour rather than immutably: the answer changes at midnight.
+  const todayLaw = laws[dayIndex(new Date(buildDate), laws.length)] || laws[0];
+  writes.push(writePage(join(out, 'today.json'), JSON.stringify({
+    date: buildDate,
+    generated: buildDate,
+    note: 'The entry selected for this date. Deterministic: the same date always yields the same entry.',
+    law: lawRecord(todayLaw, { baseUrl: baseHref, categories }),
+    license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+    attribution: `The Law Tome — ${baseHref}`,
+  }, null, 2)));
   const logoSvg = await readFile(join(assetsDir, 'logo.svg'), 'utf8');
   writes.push(writePage(join(out, 'icon-512.png'), renderPng(logoSvg)));
   const manifest = {
@@ -844,6 +912,12 @@ export async function buildSite(opts) {
     '# Hashed by ?v=<contenthash>, so a changed file is always a new URL.',
     '/assets/*',
     '  Cache-Control: public, max-age=31536000',
+    '',
+    '# The answer changes at midnight, so a long cache would serve yesterday.',
+    '# CORS is open because the point of it is to be read from someone else\'s page.',
+    '/today.json',
+    '  Cache-Control: public, max-age=3600',
+    '  Access-Control-Allow-Origin: *',
     '',
   ].join('\n');
   writes.push(writePage(join(out, '_headers'), headersBody));

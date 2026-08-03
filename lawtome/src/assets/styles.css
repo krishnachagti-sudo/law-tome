@@ -2264,3 +2264,42 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .skc-n{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;
   text-transform:uppercase;color:var(--gold);margin:6px 0 8px}
 .skc-l{display:block;font-size:12.5px;line-height:1.5;color:var(--faint)}
+
+/* Problem themes — the way into /situations/ by problem rather than by field.
+   The question is the point of the card: it is the sentence a reader might have
+   typed, so it gets the room, and the theme title sits above it as a label. */
+.pb-cards{margin:0 0 40px}
+.pb-cards-h{font-family:var(--serif);font-weight:600;font-size:19px;margin:0 0 14px}
+.pb-cards-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.pb-card{display:block;padding:16px 18px;border:1px solid var(--line-strong);border-radius:4px;
+  text-decoration:none;transition:border-color .15s}
+.pb-card:hover{border-color:var(--accent)}
+.pbc-t{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--faint);margin:0 0 7px}
+.pbc-q{display:block;font-family:var(--serif);font-size:16px;line-height:1.4;color:var(--ink)}
+.pbc-n{display:block;font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-top:9px}
+.pb-others{margin:0 0 44px;padding-top:24px;border-top:1px solid var(--line)}
+.pb-others-row{display:flex;flex-wrap:wrap;gap:8px}
+
+/* "Is X real?" — the verdict pages and the way into them from the hub. */
+.vr-asked{margin:0 0 34px;padding:20px 22px;border:1px solid var(--line-strong);border-radius:4px}
+.vr-asked-h{font-family:var(--serif);font-weight:600;font-size:19px;margin:0 0 8px}
+.vr-asked-b{font-size:13.5px;line-height:1.6;color:var(--faint);margin:0 0 14px;max-width:62ch}
+.vr-asked-row{display:flex;flex-wrap:wrap;gap:8px}
+.vr-ask{display:inline-flex;padding:7px 12px;border:1px solid var(--line-strong);border-radius:3px;
+  font-size:13px;color:var(--dim);text-decoration:none;transition:border-color .15s,color .15s}
+.vr-ask:hover{color:var(--ink);border-color:var(--accent)}
+/* The three comparisons — the part of a verdict page the entry page cannot carry,
+   so they sit above the entry's own text rather than under it. */
+.vd-cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:0 0 30px}
+.vd-c{padding:16px 18px;border:1px solid var(--line);border-radius:4px}
+.vd-cn{display:block;font-family:var(--mono);font-size:22px;color:var(--ink);margin:0 0 6px}
+.vd-cl{display:block;font-size:12.5px;line-height:1.55;color:var(--faint)}
+.vd-badge{display:flex;align-items:center;gap:10px;margin:0 0 30px;flex-wrap:wrap}
+.vd-bn{font-size:13.5px;color:var(--faint)}
+.vd-h{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 10px}
+.vd-p{font-size:15px;line-height:1.72;color:var(--dim);margin:0 0 30px;max-width:70ch}
+.vd-src{margin:0 0 30px;padding-left:20px;max-width:70ch}
+.vd-src li{font-size:13.5px;line-height:1.6;color:var(--dim);margin:0 0 9px}
+.vd-st{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint)}
+.vd-full{margin:0 0 34px}

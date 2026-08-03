@@ -32,7 +32,7 @@ const TIER_BLURB = {
  *
  * @param {object[]} laws corpus entries
  */
-export function isItRealPage(laws = [], { base = '/', origin = '', count, categories = {} } = {}) {
+export function isItRealPage(laws = [], { base = '/', origin = '', count, categories = {}, verdicts = [] } = {}) {
   const rows = (Array.isArray(laws) ? laws : []).filter((l) => l && l.reliability);
   const byTier = new Map(TIER_ORDER.map((t) => [t, []]));
   for (const l of rows) if (byTier.has(l.reliability)) byTier.get(l.reliability).push(l);
@@ -51,7 +51,13 @@ export function isItRealPage(laws = [], { base = '/', origin = '', count, catego
     return one.length > 190 ? `${one.slice(0, 187).replace(/[\s,;:]+\S*$/, '')}…` : one;
   };
 
-  const row = (l) => `      <a class="vr-row" data-filter-row href="${base}laws/${escapeHtml(l.slug)}/">
+  // Entries that have their own verdict page are linked to it rather than to the
+  // entry: this hub is that page's parent, and sending a reader who clicked a
+  // rating to a page about what the idea SAYS answers a question they did not ask.
+  const hasVerdict = new Set((Array.isArray(verdicts) ? verdicts : []).map((v) => v.slug));
+  const dest = (l) => (hasVerdict.has(l.slug) ? `${base}is-it-real/${escapeHtml(l.slug)}/` : `${base}laws/${escapeHtml(l.slug)}/`);
+
+  const row = (l) => `      <a class="vr-row" data-filter-row href="${dest(l)}">
         <span class="vr-name">${escapeHtml(l.name)}</span>
         <span class="badge ${reliabilityClass(l.reliability)} vr-badge">${escapeHtml(l.reliability)}</span>
         <span class="vr-limit">${escapeHtml(firstLimit(l)) || '<span class="vr-none">No limit recorded.</span>'}</span>
@@ -88,6 +94,21 @@ ${(byTier.get(t) || []).map(row).join('\n')}
     },
   ]);
 
+  // The verdict pages, most-printed first. These are the entries where the
+  // question gets typed into a search box, so they lead — the full rated list
+  // below is the reference, this is the way in.
+  const top = (Array.isArray(verdicts) ? verdicts : []).slice(0, 24);
+  const asked = top.length
+    ? `    <nav class="vr-asked" aria-label="Entries with their own verdict">
+      <h2 class="vr-asked-h">The ones people ask about</h2>
+      <p class="vr-asked-b">${num(verdicts.length)} entries are well enough known to be measured in print, rated as something other than a measured finding, and the kind of claim that could turn out not to hold. Each has its own page on that question alone — a doctrine or a proved theorem gets none, because "is it real?" is not a question either of those can answer.</p>
+      <div class="vr-asked-row">
+${top.map((v) => `        <a class="vr-ask" href="${base}is-it-real/${escapeHtml(v.slug)}/">Is ${escapeHtml(v.law.name)} real?</a>`).join('\n')}
+      </div>
+    </nav>
+`
+    : '';
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
 ${hubHead({
@@ -97,7 +118,7 @@ ${hubHead({
     lede,
     stats: present.map((t) => [num(n(t)), t.toLowerCase()]),
     base,
-  })}${listFilter({ target: 'vr-all', label: `Filter ${num(rows.length)} entries`, placeholder: 'Filter by name…', noun: 'entries' })}    <div id="vr-all">
+  })}${asked}${listFilter({ target: 'vr-all', label: `Filter ${num(rows.length)} entries`, placeholder: 'Filter by name…', noun: 'entries' })}    <div id="vr-all">
 ${groups}
     </div>
 ${faq.html}${hubNav('reliability/', { base })}  </div>

@@ -275,7 +275,25 @@ ${fieldHub}${fieldMore}${browseMore}  </div>
     ? `reliability/${reliabilitySlug(reliabilityKey)}/`
     : kind === 'category' ? `category/${categoryKey}/` : 'browse/';
   return (
-    head({ title: seoTitle, description, base, origin, path, jsonld }) +
+    // A field page advertises its own feed as well as the site-wide one. Without
+    // this the per-field feeds exist but nothing discovers them: a reader's
+    // browser and their reader both look for <link rel="alternate"> on the page
+    // they are standing on, not on the home page.
+    head({
+      title: seoTitle,
+      description,
+      base,
+      origin,
+      path,
+      jsonld,
+      alternates: kind === 'category' && categoryKey
+        ? [{
+          type: 'application/atom+xml',
+          title: `The Law Tome — ${title}`,
+          href: `${base}category/${escapeHtml(categoryKey)}/feed.xml`,
+        }]
+        : undefined,
+    }) +
     sprite() +
     header({ base, active, count: count ?? rows.length }) +
     section +

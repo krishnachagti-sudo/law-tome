@@ -94,8 +94,11 @@ import { namesakesWithPages } from '../src/templates/namesake.mjs';
 import { languagesPresent } from '../src/templates/names.mjs';
 import { periods, fieldPeriods } from '../build/periods.mjs';
 import { countryGroups, countriesWithPages } from '../build/countries.mjs';
-import { kinds } from '../build/kinds.mjs';
+import { kinds, kindOf } from '../build/kinds.mjs';
 import { sheets } from '../build/sheets.mjs';
+import { problems } from '../build/problems.mjs';
+import { verdicts } from '../build/verdicts.mjs';
+import { bestKnown } from '../src/templates/bestknown.mjs';
 
 // Corpus-relative sitemap expectations, so adding a law (or a law in a new
 // category / reliability tier) never breaks the count. Locs = home + one per law
@@ -141,6 +144,15 @@ const NAMESAKE_COUNT = namesakesWithPages(eponymGroups(PARSED)).length;
 const KIND_COUNT = kinds(PARSED).length;
 // Sheets: the /sheets/ hub plus one per field big enough to fill a page.
 const SHEET_COUNT = sheets(PARSED, [], {}).length;
+// Problem themes: /situations/{theme}/ for each theme above the floor. The
+// assignment is computed from the situations file, so the count is read from the
+// same function the build uses rather than typed here.
+const RAW_SIT = JSON.parse(readFileSync('src/data/situations.json', 'utf8'));
+const BY_SLUG = Object.fromEntries(PARSED.map((l) => [l.slug, l]));
+const PROBLEM_COUNT = problems(Array.isArray(RAW_SIT) ? RAW_SIT : RAW_SIT.situations, BY_SLUG).themes.length;
+// Verdicts: one "is X real?" per entry that is well known, softly rated, and the
+// kind of claim that can turn out not to hold.
+const VERDICT_COUNT = verdicts(PARSED, bestKnown(PARSED, FACTS), { kindOf }).length;
 const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + NAMESAKE_COUNT + (1 + AUD_COUNT + 1 + 1) + 1 + 1 + (1 + NAMES_LANG_COUNT) + PERIOD_COUNT + COUNTRY_COUNT
   // + /equations/, /pronunciation/, /sources/, /is-it-real/, /misattributed/,
   // /diagnose/, /embed/. (/print/ and the per-entry cards are noindex, and the
@@ -154,7 +166,10 @@ const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT 
   // noindex landing places for a shared result, so they are deliberately absent.
   + 1
   // + /sheets/ and one printable sheet per field above the floor.
-  + (1 + SHEET_COUNT);
+  + (1 + SHEET_COUNT)
+  // + one page per problem theme, and one verdict page per testable entry.
+  // (/situations/ itself is already counted among the seven hubs above.)
+  + PROBLEM_COUNT + VERDICT_COUNT;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));

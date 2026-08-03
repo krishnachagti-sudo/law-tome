@@ -23,8 +23,18 @@ const numNo = l => { const n = parseInt(String(l && l.no), 10); return Number.is
  * @param {number} [opts.limit] max entries (default 50).
  * @returns {string} Atom XML.
  */
-export function buildFeed(laws, { baseUrl = '/', siteName = 'The Law Tome', updated, limit = 50 } = {}) {
-  const selfHref = `${baseUrl}feed.xml`;
+export function buildFeed(laws, {
+  baseUrl = '/', siteName = 'The Law Tome', updated, limit = 50,
+  // A feed is identified by its self link, so a per-field feed MUST declare its
+  // own path — twenty feeds all claiming to be /feed.xml is one feed as far as a
+  // reader is concerned, and the last one wins.
+  path = 'feed.xml',
+  title = `${siteName} — latest entries`,
+  subtitle = 'Named laws, principles, effects, razors, and paradoxes — defined and sourced.',
+  link,
+} = {}) {
+  const selfHref = `${baseUrl}${path}`;
+  const homeHref = link || baseUrl;
   const stamp = updated || '1970-01-01T00:00:00Z';
   const recent = [...laws].sort((a, b) => numNo(b) - numNo(a)).slice(0, limit);
   const entries = recent.map((l) => {
@@ -40,11 +50,11 @@ export function buildFeed(laws, { baseUrl = '/', siteName = 'The Law Tome', upda
   }).join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>${xmlEscape(siteName)} — latest entries</title>
-  <subtitle>Named laws, principles, effects, razors, and paradoxes — defined and sourced.</subtitle>
-  <link href="${xmlEscape(baseUrl)}"/>
+  <title>${xmlEscape(title)}</title>
+  <subtitle>${xmlEscape(subtitle)}</subtitle>
+  <link href="${xmlEscape(homeHref)}"/>
   <link rel="self" href="${xmlEscape(selfHref)}"/>
-  <id>${xmlEscape(baseUrl)}</id>
+  <id>${xmlEscape(selfHref)}</id>
   <updated>${xmlEscape(stamp)}</updated>
 ${entries}
 </feed>

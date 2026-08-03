@@ -17,7 +17,9 @@ import { monogram } from './eponyms.mjs';
  * @param {string} [o.origin=''] absolute origin.
  * @param {number|string} [o.count] published-law count for the masthead.
  */
-export function situationsPage(situations = [], { base = '/', origin = '', count, categories = {}, images } = {}) {
+export function situationsPage(situations = [], {
+  base = '/', origin = '', count, categories = {}, images, themes = [],
+} = {}) {
   const rows = Array.isArray(situations) ? situations : [];
   const permalink = (slug) => `${base}laws/${escapeHtml(slug)}/`;
 
@@ -79,6 +81,23 @@ ${ordered.map(([k, rs]) => `      <a href="#${gid(k)}">${escapeHtml(label(k))} <
 
   const lede = `You know the feeling but not the name for it, and a name is what makes a thing arguable in a meeting. Every row here is a plain-language description paired with the one law that names it. Nothing on this page is hypothetical — each answer is <a href="${base}browse/">an entry in the index</a> with its sources and its <a href="${base}reliability/">reliability rating</a>. If your situation isn't listed, <a href="${base}">describe it on the home page</a> and let search find the match.`;
 
+  // The themed pages, up front. The hub is a good browse and a poor landing
+  // page — nobody searches for 581 things at once — so the first thing on it is
+  // the way in by problem rather than by field.
+  const themeCards = themes.length
+    ? `    <nav class="pb-cards" aria-label="Browse by problem">
+      <h2 class="pb-cards-h">Start with the problem</h2>
+      <div class="pb-cards-row">
+${themes.map((t) => `        <a class="pb-card" href="${base}situations/${escapeHtml(t.slug)}/">
+          <span class="pbc-t">${escapeHtml(t.title)}</span>
+          <span class="pbc-q">${escapeHtml(t.question)}</span>
+          <span class="pbc-n">${t.count} situations</span>
+        </a>`).join('\n')}
+      </div>
+    </nav>
+`
+    : '';
+
   const section = `<section class="sec" id="index">
   <div class="wrap">
 ${hubHead({
@@ -88,7 +107,7 @@ ${hubHead({
     lede,
     stats: [[rows.length, 'situations mapped'], [ordered.length, 'fields covered']],
     base,
-  })}${listFilter({ target: 'sit-list', label: `Filter ${rows.length} situations`, placeholder: 'Describe the problem…', noun: 'situations' })}${jump}    <div class="sit-list" id="sit-list">
+  })}${themeCards}${listFilter({ target: 'sit-list', label: `Filter ${rows.length} situations`, placeholder: 'Describe the problem…', noun: 'situations' })}${jump}    <div class="sit-list" id="sit-list">
 ${items}
     </div>
 ${hubNav('situations/', { base })}  </div>
