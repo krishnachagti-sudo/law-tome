@@ -18,6 +18,7 @@ import {
 } from './partials.mjs';
 import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
 import { verdictPath, verdictLine } from '../../build/verdicts.mjs';
+import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
 
 const num = (n) => Number(n).toLocaleString('en-US');
 const pc = (a, b) => (b ? `${Math.round((a / b) * 100)}%` : '—');
@@ -26,7 +27,7 @@ const pc = (a, b) => (b ? `${Math.round((a / b) * 100)}%` : '—');
  * One entry's verdict page.
  * @param {object} v a row from build/verdicts.verdicts()
  */
-export function verdictPage(v, { base = '/', origin = '', count, categories = {} } = {}) {
+export function verdictPage(v, { base = '/', origin = '', count, categories = {}, replication } = {}) {
   const { law, rank, rankOf, fieldSoft, fieldTotal, corpusSoft, corpusTotal } = v;
   const path = verdictPath(v);
   const fieldName = categories[v.field] || v.field;
@@ -56,6 +57,21 @@ export function verdictPage(v, { base = '/', origin = '', count, categories = {}
       </div>
     </div>
 `;
+
+  // The one number on this page that is not ours. A verdict page exists to put
+  // our rating next to context a reader can check; an external replication count
+  // is the strongest form of that, so it goes above our own text rather than
+  // below it.
+  const rep = replicationFor(law, replication);
+  const repBlock = rep
+    ? `    <div class="vd-rep">
+      <h2 class="vd-h">What the replications say</h2>
+      <p class="vd-p">${escapeHtml(replicationLine(rep))}${contradictsRating(law, rep) ? ' <b>That sits awkwardly against our own Empirical rating. Both are on this page because picking one quietly is the failure this index exists to avoid.</b>' : ''}</p>
+      <p class="vd-repcite">Source: <a href="${escapeHtml(rep.source)}" rel="nofollow noopener">${escapeHtml(rep.cite)}</a> — an external, crowdsourced academic record, not our judgement.</p>
+    </div>
+
+`
+    : '';
 
   const sources = Array.isArray(law.sources) ? law.sources : [];
   const sourceList = sources.length
@@ -93,7 +109,7 @@ ${hubHead({
   })}${compare}
     <p class="vd-badge"><span class="badge ${reliabilityClass(tier)}">${escapeHtml(tier)}</span> <span class="vd-bn">${escapeHtml(RELIABILITY_NOTE[tier] || '')}</span></p>
 
-    <h2 class="vd-h">Where it runs out</h2>
+${repBlock}    <h2 class="vd-h">Where it runs out</h2>
     <p class="vd-p">${escapeHtml(law.limits || '')}</p>
 
     <h2 class="vd-h">What people get wrong about it</h2>

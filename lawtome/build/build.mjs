@@ -49,6 +49,7 @@ import { equationsPage, pronunciationPage, sourcesPage } from '../src/templates/
 import { isItRealPage, misattributedPage, ratingContradictions } from '../src/templates/veracity.mjs';
 import { verdictPage } from '../src/templates/verdict.mjs';
 import { verdicts, verdictPath } from './verdicts.mjs';
+import { replicationSummary } from './replication.mjs';
 import { findings } from './findings.mjs';
 import { sheets, sheetPath } from './sheets.mjs';
 import { sheetsHubPage, sheetPage } from '../src/templates/sheets.mjs';
@@ -112,6 +113,13 @@ export async function buildSite(opts) {
   // only for people, and to link the record instead of paraphrasing a life.
   let namesakeKinds = {};
   try { namesakeKinds = JSON.parse(await readFile('src/data/namesake-kinds.json', 'utf8')); }
+  catch { /* not harvested yet */ }
+
+  // FORRT's replication counts (build/fetch-replication.py), matched to the
+  // corpus by effect name. Optional like the rest of the harvested data: without
+  // it every page renders exactly as before, minus one externally-sourced line.
+  let replication = { entries: {} };
+  try { replication = JSON.parse(await readFile('src/data/replication.json', 'utf8')); }
   catch { /* not harvested yet */ }
 
   const errs = validateCorpus(laws, categories);
@@ -225,7 +233,7 @@ export async function buildSite(opts) {
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
-    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, buildDate, images, facts, periodSlugs });
+    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, buildDate, images, facts, periodSlugs, replication });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
     // Clean Markdown twin at /laws/<slug>/index.md — a fetch-friendly plain-text
     // representation for LLMs/agents (GEO). Linked from the page via rel=alternate.
@@ -551,9 +559,12 @@ export async function buildSite(opts) {
   // separate URL rather than a second description of the same idea.
   for (const v of allVerdicts) {
     writes.push(writePage(join(out, 'is-it-real', v.slug, 'index.html'),
-      verdictPage(v, { base, origin, count: publishedCount, categories })));
+      verdictPage(v, { base, origin, count: publishedCount, categories, replication })));
   }
   console.log(`verdicts: ${allVerdicts.length} entries are well known, softly rated, and the kind of claim that can fail`);
+  const repSum = replicationSummary(laws, replication);
+  console.log(`replication: ${repSum.matched} entries carry FReD counts (${repSum.studies} studies, ${repSum.results} results); `
+    + `${repSum.contradictions.length} sit awkwardly against our own rating`);
   writes.push(writePage(join(out, 'misattributed', 'index.html'),
     misattributedPage(misnamed, { base, origin, count: publishedCount })));
 

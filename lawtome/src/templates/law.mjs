@@ -17,6 +17,7 @@
 // statement accent is injected AFTER escaping (see renderStatement).
 
 import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE } from './partials.mjs';
+import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
@@ -122,7 +123,7 @@ function glanceRow(k, v) {
 }
 
 export function lawPage(law, ctx = {}) {
-  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, buildDate, images, facts = {}, periodSlugs } = ctx;
+  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, buildDate, images, facts = {}, periodSlugs, replication } = ctx;
   const coined = law.provenance === 'coined';
   const catLabel = categories[law.category] || law.category || '';
   const canonical = `${origin}${base}laws/${law.slug}/`;
@@ -470,11 +471,21 @@ ${h2}${inner}
       const caveat = law.limits
         ? ` <span class="verdict-more">Where it stops working is set out under <a href="#sec-where-it-breaks-down">Where it breaks down</a>.</span>`
         : '';
+      // Somebody else's count, where FORRT has one. This is the only number in
+      // the block that is not our judgement, so it is labelled as theirs and
+      // linked — and when it sits awkwardly against our own rating, the page
+      // says so in the same breath rather than letting a reader find the
+      // discrepancy for themselves.
+      const rep = replicationFor(law, replication);
+      const repLine = rep
+        ? `        <p class="verdict-rep">${escapeHtml(replicationLine(rep))}${contradictsRating(law, rep) ? ` <b>That sits awkwardly against our own Empirical rating, and we are leaving both on the page rather than quietly picking one.</b>` : ''} <a href="${escapeHtml(rep.source)}" rel="nofollow noopener">${escapeHtml(rep.cite)}</a></p>\n`
+        : '';
       const inner = `        <p class="verdict">${v}${caveat}</p>
-        <p class="verdict-scale">Rated on <a href="${base}reliability/">this index's four-tier scale</a>, which separates measured findings from rules of thumb, folklore and disputed claims. <a href="${base}reliability/${reliabilitySlug(law.reliability)}/">Every ${escapeHtml(law.reliability)} entry</a>.</p>`;
+${repLine}        <p class="verdict-scale">Rated on <a href="${base}reliability/">this index's four-tier scale</a>, which separates measured findings from rules of thumb, folklore and disputed claims. <a href="${base}reliability/${reliabilitySlug(law.reliability)}/">Every ${escapeHtml(law.reliability)} entry</a>.</p>`;
       // The structured answer gets the verdict plus the entry's own caveat, so a
-      // machine quoting it quotes the qualification too.
-      const answer = `${v.replace(/<[^>]+>/g, '')}${law.limits ? ' ' + String(law.limits).split(/(?<=[.!?])\s/)[0] : ''}`;
+      // machine quoting it quotes the qualification too — and the replication
+      // count when there is one, because that is the part a machine should carry.
+      const answer = `${v.replace(/<[^>]+>/g, '')}${law.limits ? ' ' + String(law.limits).split(/(?<=[.!?])\s/)[0] : ''}${rep ? ' ' + replicationLine(rep) : ''}`;
       blocks.push(block('Is it real?', inner, true, `Is ${L} real?`, answer));
     }
   }

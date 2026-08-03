@@ -32,11 +32,20 @@
   ],
   "whyItMatters": "It is a cornerstone of the heuristics-and-biases account of human judgement, explaining why perceived risk so often diverges from statistical reality. It shapes fear of rare dangers, public reaction to vivid events, and the outsized influence of the media on how people gauge what is common — with real consequences for policy and personal decisions.",
   "working": [
-    {"lead": "Distrust the vivid", "text": "when a risk feels alarming, ask whether it is truly common or merely memorable, dramatic, or recent."},
-    {"lead": "Reach for base rates", "text": "for frequency judgements, look up actual statistics rather than trusting how many examples you can summon."},
-    {"lead": "Watch the media's pull", "text": "notice that heavy coverage makes an event feel more common, and correct for that inflation."}
+    {
+      "lead": "Distrust the vivid",
+      "text": "when a risk feels alarming, ask whether it is truly common or merely memorable, dramatic, or recent."
+    },
+    {
+      "lead": "Reach for base rates",
+      "text": "for frequency judgements, look up actual statistics rather than trusting how many examples you can summon."
+    },
+    {
+      "lead": "Watch the media's pull",
+      "text": "notice that heavy coverage makes an event feel more common, and correct for that inflation."
+    }
   ],
-  "limits": "The phenomenon is well replicated, but its precise mechanism is contested. Schwarz and colleagues showed that recalling many examples of a trait can make people believe they have less of it, since the effort feels difficult — suggesting the driver is the metacognitive feeling of ease, not the count of items recalled. That specific ease-of-retrieval paradigm has faced replication scrutiny, even as the core finding stands. Some early commentators also argued that part of the effect may reflect response artefacts rather than pure cognition. The bias is real; the interpretation is still debated.",
+  "limits": "The effect is real and much smaller than the original study implied. Tversky and Kahneman's 1973 word-frequency demonstration reported d = 0.82; the Many Labs 3 replication (Ebersole et al., 2016) ran it across 21 sites and recorded a median site-level d of 0.07, ranging from -0.29 to 0.42. The replication authors counted it a success — the pooled effect was in the predicted direction and statistically detectable — but at roughly a tenth of the original size, which is the number to carry rather than the headline. The mechanism is also disputed: Schwarz and colleagues showed that recalling many examples of a trait can make people believe they have less of it, since the effort feels difficult, suggesting the driver is the metacognitive feeling of ease rather than the count of items recalled, and that ease-of-retrieval paradigm has itself faced replication scrutiny. Treat availability as a small, real tilt in judgement, not as the large and reliable force the original demonstration suggested.",
   "misreadings": "It is not that memory is simply unreliable — the shortcut is usually reasonable, because common things often are easy to recall; it fails specifically when ease of recall is inflated by vividness or coverage. And it does not claim people ignore statistics entirely, only that ease of retrieval crowds them out.",
   "origin": "Identified by Amos Tversky and Daniel Kahneman in 'Availability: A heuristic for judging frequency and probability,' Cognitive Psychology 5(2):207-232 (1973), part of the heuristics-and-biases programme.",
   "category": "psychology",
@@ -46,12 +55,31 @@
   "namedAfter": "Amos Tversky and Daniel Kahneman",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Availability heuristic, Wikipedia. — the ease-of-retrieval statement, the letter-K and lethal-events examples, and the ease-versus-content debate.", "url": "https://en.wikipedia.org/wiki/Availability_heuristic", "type": "secondary"},
-    {"text": "Tversky & Kahneman, \"Availability: A heuristic for judging frequency and probability,\" Cognitive Psychology 5(2):207-232 (1973).", "url": "https://www.sciencedirect.com/science/article/abs/pii/0010028573900339", "type": "primary"}
+    {
+      "text": "Availability heuristic, Wikipedia. — the ease-of-retrieval statement, the letter-K and lethal-events examples, and the ease-versus-content debate.",
+      "url": "https://en.wikipedia.org/wiki/Availability_heuristic",
+      "type": "secondary"
+    },
+    {
+      "text": "Tversky & Kahneman, \"Availability: A heuristic for judging frequency and probability,\" Cognitive Psychology 5(2):207-232 (1973).",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/0010028573900339",
+      "type": "primary"
+    },
+    {
+      "text": "Ebersole et al. (2016). \"Many Labs 3: Evaluating participant pool quality across the academic semester via replication.\" Journal of Experimental Social Psychology 67, 68-82 — replicated the 1973 word-frequency task across 21 sites; original d = 0.82, median site-level replication d = 0.07.",
+      "url": "https://doi.org/10.1016/j.jesp.2015.10.012",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Availability_heuristic",
   "related": [
-    {"slug": "the-base-rate-fallacy", "kind": "kindred"},
-    {"slug": "the-anchoring-effect", "kind": "kindred"}
+    {
+      "slug": "the-base-rate-fallacy",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-anchoring-effect",
+      "kind": "kindred"
+    }
   ]
 }
