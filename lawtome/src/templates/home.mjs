@@ -40,12 +40,14 @@ function renderStatement(statement, accent) {
     escapeHtml(statement.slice(i + accent.length));
 }
 
-export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '', images, eponymSlugs, lawOfTheDay } = {}) {
+export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '', images, eponymSlugs, lawOfTheDay, found } = {}) {
   const nf = new Intl.NumberFormat('en');
   const count = publishedCount == null ? '—' : nf.format(publishedCount);
 
+  // The meta description leads with the finding too, so the result snippet and
+  // the page make the same promise.
   const description =
-    'The largest unified, defined & sourced index of named laws, principles, and effects — explained, cross-linked, and searchable.';
+    `${publishedCount == null ? 'Every' : count} named laws, principles and effects — each one defined, sourced, and rated for how much evidence actually stands behind it. Searchable, cross-linked, and free.`;
 
   // ---- featured payload for the inline hero rotation ---------------------
   // Only the fields the hero needs. `hero` is the accent-highlighted, escaped
@@ -79,12 +81,30 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
     ? `— <a class="who" href="${base}laws/${escapeHtml(first.slug)}/">${escapeHtml(first.name)}</a>`
     : '';
 
+  // The hook: the site's one finding, stated in its own numbers, immediately
+  // under the positioning line.
+  //
+  // This used to be a scale claim — "the largest index of named laws" — which
+  // is true, unfalsifiable from the outside, and the same thing every catalogue
+  // says about itself. A reader has no way to check it and no reason to care.
+  // The finding is checkable, surprising, and the one thing here nobody else is
+  // in a position to say, because saying it needs both a reliability rating and
+  // a fame ranking over the same corpus.
+  //
+  // Rendered only when the numbers are actually present: a build without the
+  // n-gram facts file has no fame ranking, and a hook with a blank in it is
+  // worse than no hook.
+  const band = found && found.curve && found.curve[0];
+  const hook = band && found.softAllShare
+    ? `    <p class="hero-hook"><a href="${base}how-solid/"><b>${Math.round(band.share * 100)}% of the ${band.n} best-known</b> rest on something other than measurement — against ${Math.round(found.softAllShare * 100)}% of the index as a whole. <span class="hh-go">What we found →</span></a></p>\n`
+    : '';
+
   const hero = `<section class="hero">
   <svg class="hero-mark" viewBox="0 0 100 100" aria-hidden="true" data-parallax="0.16"><use href="#seal"/></svg>
   <div class="wrap">
-    <div class="eyebrow">The largest unified, defined &amp; sourced index of named laws</div>
-    <h1 class="lede">Every named law, principle, and effect — <b>explained, sourced, and cross-linked.</b> One place instead of forty half-finished lists.</h1>
-    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
+    <div class="eyebrow">${escapeHtml(count)} named laws, principles &amp; effects — every one sourced</div>
+    <h1 class="lede">Everyone quotes these. <b>Nobody checks them.</b> So we rated all ${escapeHtml(count)} for how much evidence is actually behind each one.</h1>
+${hook}    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
     <div class="stmt-wrap">
       <div class="stmt-meta"><span id="m-no">${heroNo}</span><span class="dot"></span><a class="cat" id="m-cat" href="${heroCatHref}">${heroCat}</a></div>
       <div class="stmt" id="stmt">${heroStmt}</div>

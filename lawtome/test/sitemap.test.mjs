@@ -146,7 +146,10 @@ const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT 
   + (1 + KIND_COUNT)
   // + /also-known-as/ (every alias, cross-referenced) and /quotes/ (every
   // statement, as it is quoted), and /best-known/ (ranked by printed frequency).
-  + 3;
+  + 3
+  // + /how-solid/ — the corpus-level finding. The /quiz/score/N/ pages are
+  // noindex landing places for a shared result, so they are deliberately absent.
+  + 1;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));

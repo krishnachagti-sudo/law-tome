@@ -88,6 +88,7 @@ export const HUBS = [
   ['origins/', 'Where they came from', "the namesakes' birthplaces, on a map"],
   ['names/', 'In other languages', 'the names these ideas already go by, in ten languages'],
   ['reliability/', 'By reliability', 'measured findings, rules of thumb, and folklore, separated'],
+  ['how-solid/', 'How solid is any of this?', 'what happens when you rate the whole canon and cross it with fame'],
   ['is-it-real/', 'Is it real?', 'every entry rated by the evidence behind it'],
   ['misattributed/', 'Named after the wrong person', "Stigler's law, with the receipts"],
   ['tension/', 'Laws in tension', 'the pairs that contradict each other'],

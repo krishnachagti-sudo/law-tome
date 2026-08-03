@@ -301,6 +301,45 @@ export function scoreCardSvg({ score = 0, total = 10, origin = 'https://conyso.c
 }
 
 /**
+ * The card for /how-solid/ — the site's one finding, as a picture.
+ *
+ * A launch artifact whose whole job is to be shared cannot unfurl as the
+ * generic site card. This is the same chart the page draws, at the same honest
+ * 0-100% axis: a truncated axis would make the finding look bigger than it is,
+ * and a card that oversells the page it links to is a bait-and-switch even when
+ * every number on it is true.
+ *
+ * @param {{label:string, share:number}[]} rows the bands, best-known first
+ */
+export function findingCardSvg({ rows = [], origin = 'https://conyso.com', base = '/lawtome/' } = {}) {
+  const displayUrl = escapeHtml(`${origin}${base}how-solid/`.replace(/^https?:\/\//, '').replace(/\/+$/, ''));
+  const top = rows[0] || { share: 0 };
+  const pct = (x) => `${Math.round(x * 100)}%`;
+
+  // The track is the full 0-100% axis; a fill is exactly its share of it.
+  const X = 90, LABEL = 250, TRACK = 450, ROW = 56, Y0 = 300;
+  const bars = rows.slice(0, 5).map((r, i) => {
+    const y = Y0 + i * ROW;
+    const fill = Math.max(2, Math.round(TRACK * Math.min(1, Math.max(0, r.share))));
+    return `  <text x="${X}" y="${y + 15}" font-family="Space Mono" font-size="17" fill="${INK}" opacity="0.62">${escapeHtml(r.label)}</text>
+  <rect x="${X + LABEL}" y="${y}" width="${TRACK}" height="22" rx="3" fill="${INK}" opacity="0.12"/>
+  <rect x="${X + LABEL}" y="${y}" width="${fill}" height="22" rx="3" fill="${GOLD}"/>
+  <text x="${X + LABEL + TRACK + 20}" y="${y + 18}" font-family="Fraunces" font-size="22" fill="${INK}">${pct(r.share)}</text>`;
+  }).join('\n');
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+  <rect width="${W}" height="${H}" fill="${BG}"/>
+  <rect x="24" y="24" width="${W - 48}" height="${H - 48}" fill="none" stroke="${GOLD}" stroke-width="2" opacity="0.5"/>
+  <text x="${X}" y="96" font-family="Space Mono" font-size="22" letter-spacing="6" fill="${GOLD}">THE LAW TOME</text>
+  <text x="${X}" y="186" font-family="Fraunces" font-size="54" fill="${INK}">The better known a law is,</text>
+  <text x="${X}" y="248" font-family="Fraunces" font-size="54" fill="${INK}">the less settled it turns out to be.</text>
+${bars}
+  <text x="${X}" y="${H - 48}" font-family="Space Mono" font-size="19" fill="${INK}" opacity="0.55">share NOT resting on measurement</text>
+  <text x="${W - X}" y="${H - 48}" text-anchor="end" font-family="Space Mono" font-size="19" fill="${GOLD}">${displayUrl}</text>
+</svg>`;
+}
+
+/**
  * Render an SVG string to a PNG Buffer. The TTFs are CWD-relative (the build runs
  * from lawtome/); loadSystemFonts:false guarantees a loud failure over a silent
  * system-serif fallback.

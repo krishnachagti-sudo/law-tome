@@ -45,6 +45,8 @@ import { namesakePage, namesakePath, namesakesWithPages, siblingOrderings } from
 import { creditsPage } from '../src/templates/credits.mjs';
 import { equationsPage, pronunciationPage, sourcesPage } from '../src/templates/surfaces.mjs';
 import { isItRealPage, misattributedPage, ratingContradictions } from '../src/templates/veracity.mjs';
+import { findings } from './findings.mjs';
+import { findingsPage } from '../src/templates/findings.mjs';
 import { misattributed } from './attribution.mjs';
 import { equations, pronunciations, bibliography } from './surfaces.mjs';
 import { eponymGroups } from './eponyms.mjs';
@@ -58,7 +60,7 @@ import { dataPage } from '../src/templates/data.mjs';
 import { buildDataset, datasetCsv, lawRecord, apiIndex } from './dataset.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
-import { quoteCardSvg, renderPng, siteCardSvg, scoreCardSvg } from './quotecard.mjs';
+import { quoteCardSvg, renderPng, siteCardSvg, scoreCardSvg, findingCardSvg } from './quotecard.mjs';
 import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
 import { buildFeed } from './feed.mjs';
@@ -188,10 +190,18 @@ export async function buildSite(opts) {
   const today = opts.today ?? new Date().toISOString().slice(0, 10);
   const lawOfTheDay = laws.length ? laws[dayIndex(today, laws.length)] : null;
 
+  // The corpus-level finding, computed once and used three times: the home
+  // page leads with it, /how-solid/ is built entirely out of it, and
+  // /best-known/ shares its ranking. Cheap and pure, so it is done up here
+  // where everything downstream can read the same numbers.
+  const ranked = bestKnown(laws, facts);
+  const misnamed = misattributed(laws);
+  const found = findings(laws, ranked, misnamed);
+
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
     // Home: first 12 laws as the featured rotation, plus the law of the day.
-    writePage(join(out, 'index.html'), homePage(laws.slice(0, 18), { publishedCount, base, origin, images, eponymSlugs, lawOfTheDay })),
+    writePage(join(out, 'index.html'), homePage(laws.slice(0, 18), { publishedCount, base, origin, images, eponymSlugs, lawOfTheDay, found })),
     // Prebuilt client-search index (a DATA file, not a "page"): fetched by
     // src/assets/search.js. Curated situation phrasing is folded in so a typed
     // problem description surfaces the mapped law. In the concurrent writes[] so
@@ -318,7 +328,7 @@ export async function buildSite(opts) {
   // measurement of how often each name is printed, with the counted phrase
   // shown on every row so the reader can audit it.
   writes.push(writePage(join(out, 'best-known', 'index.html'),
-    bestKnownPage(bestKnown(laws, facts), {
+    bestKnownPage(ranked, {
       base, origin, count: publishedCount, categories, corpusTotal: laws.length,
     })));
 
@@ -512,9 +522,25 @@ export async function buildSite(opts) {
   }
   writes.push(writePage(join(out, 'is-it-real', 'index.html'),
     isItRealPage(laws, { base, origin, count: publishedCount, categories })));
-  const misnamed = misattributed(laws);
   writes.push(writePage(join(out, 'misattributed', 'index.html'),
     misattributedPage(misnamed, { base, origin, count: publishedCount })));
+
+  // /how-solid/ — the one page that argues something rather than listing it.
+  // It needs both of the site's independent measures at once: the reliability
+  // rating on every entry, and the external print-frequency ranking. Crossing
+  // them is the only claim this project is in a position to make, and it is
+  // computed here rather than written into the template so the page can never
+  // drift from the corpus it describes.
+  writes.push(writePage(join(out, 'how-solid', 'index.html'),
+    findingsPage(found, { base, origin, count: publishedCount, categories })));
+  writes.push(writePage(join(out, 'og', 'how-solid.png'), renderPng(findingCardSvg({
+    rows: [
+      ...found.curve.map((c) => ({ label: `Top ${c.n}`, share: c.share })),
+      { label: 'All entries', share: found.softAllShare },
+    ],
+    origin,
+    base,
+  }))));
   // Three reference surfaces over data the corpus already held one item at a
   // time: the formulas, the spoken names, and the whole bibliography.
   writes.push(writePage(join(out, 'equations', 'index.html'),
@@ -631,6 +657,7 @@ export async function buildSite(opts) {
     'sources/',                               // the bibliography, by domain
     'diagnose/',                              // problem in, laws out
     'embed/',                                 // how to put a card on your site
+    'how-solid/',                             // the finding: fame runs against evidence
     'is-it-real/',                            // every entry rated by evidence
     'misattributed/',                         // Stigler's law, with the receipts
   ];

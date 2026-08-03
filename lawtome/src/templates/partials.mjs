@@ -406,6 +406,7 @@ export function header({ base = '/', active, count } = {}) {
     ['named-after/', 'By namesake', 'the people who lent these ideas their names'],
     ['origins/', 'Where they came from', 'the namesakes\' birthplaces, by country'],
     ['names/', 'In other languages', 'the names these ideas already go by'],
+    ['how-solid/', 'How solid is any of this?', 'what the whole index says about itself'],
     ['reliability/', 'By reliability', 'measured findings, rules of thumb, folklore'],
     ['is-it-real/', 'Is it real?', 'every entry rated by the evidence behind it'],
     ['misattributed/', 'Wrongly named', "Stigler's law, with the receipts quoted"],
@@ -560,7 +561,7 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
       <p class="foot-motto">Sapere aude.</p>
     </div>
 ${col('Browse', [['browse/', 'All laws'], ['best-known/', 'The best-known'], ['kinds/', 'By kind'], ['quotes/', 'The statements'], ['also-known-as/', 'Also known as'], ['for/', 'Find your laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['origins/', 'Where they came from'], ['reliability/', 'By reliability']])}
-${col('Discover', [['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['compare/', 'Compare laws'], ['tension/', 'Laws in tension'], ['features/', 'Features'], ['quiz/', 'Name that law'], ['saved/', 'Saved laws']])}
+${col('Discover', [['how-solid/', 'How solid is any of this?'], ['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['compare/', 'Compare laws'], ['tension/', 'Laws in tension'], ['features/', 'Features'], ['quiz/', 'Name that law'], ['saved/', 'Saved laws']])}
 ${col('The project', [['about/', 'About & method'], ['manifesto/', 'Why name a law?'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['feed.xml', 'Subscribe (RSS)'], ['credits/', 'Image credits'], ['privacy/', 'Privacy']])}
   </div>
   <div class="wrap foot-share">

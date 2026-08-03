@@ -4,7 +4,19 @@ import { homePage } from '../src/templates/home.mjs';
 const laws = [{no:'001', slug:'a', name:'A', statement:'S </script> x', statementAccent:'S', category:'economics', reliability:'Heuristic', related:[]}];
 const html = homePage(laws, { publishedCount: 212, base:'/lawtome/' });
 test('renders the ACTUAL published count, not a hard-coded 1,400', () => { assert.match(html, /212/); assert.doesNotMatch(html, /1,400/); });
-test('uses the qualified superlative claim', () => assert.match(html, /unified,\s*(defined|sourced)/i));
+// The hero used to open with "the largest unified, defined & sourced index of
+// named laws" — a superlative, qualified into safety. It has been replaced by
+// the site's actual finding, which is checkable rather than merely careful. So
+// this no longer polices the qualification; it polices the superlative itself,
+// which is what the qualification was ever for.
+test('makes no unqualified superlative claim', () => {
+  assert.doesNotMatch(html, /world'?s largest|the largest index|biggest (index|collection)/i);
+});
+
+test('the positioning line leads with the rating, not the size', () => {
+  assert.match(html, /<h1 class="lede">[^<]*Everyone quotes these/);
+  assert.match(html, /rated all 212 for how much evidence/);
+});
 test('escapes </script> in inline featured JSON', () => assert.doesNotMatch(html, /S <\/script> x/));
 test('embeds featured laws for the rotating hero', () => assert.match(html, /"slug":"a"/));
 test('wraps the directory in DefinedTermSet JSON-LD', () => assert.match(html, /"DefinedTermSet"/));
