@@ -26,9 +26,25 @@ test('wraps the directory in DefinedTermSet JSON-LD', () => assert.match(html, /
 test('homepage credits the creator and the publisher, on-page and in JSON-LD', () => {
   assert.match(html, /By <a href="https:\/\/conyso\.com\/founder\/"[^>]*>Krishna Chagti<\/a>/);
   assert.match(html, /an initiative by <a href="https:\/\/conyso\.com">Conyso<\/a>/);
-  assert.match(html, /"parentOrganization":\{"@type":"Organization","name":"Conyso"/);
-  assert.match(html, /"founder":\{"@type":"Person","name":"Krishna Chagti","jobTitle":"Founder & CEO, Conyso"/);
+  // The creator is ONE entity with a stable id, not a description repeated per
+  // page. Three Person nodes with drifting contents read to a crawler as
+  // several people who share a name, which is the opposite of what an entity
+  // graph is for.
+  assert.match(html, /"founder":\{"@type":"Person","@id":"[^"]*#krishna-chagti"/);
+  // The title alone, with the employer as a related entity — not a job title
+  // that happens to contain a comma and a company name.
+  assert.match(html, /"jobTitle":"Founder & CEO"/);
+  assert.doesNotMatch(html, /"jobTitle":"Founder & CEO, Conyso"/);
+  // The founder relationship, asserted from both ends and agreeing. One side is
+  // a claim; both sides pointing at each other is corroboration, and
+  // corroboration is the only thing a knowledge graph acts on.
+  assert.match(html, /"worksFor":\{"@id":"https:\/\/conyso\.com\/#organization"\}/);
+  assert.match(html, /"founderOf":\{"@id":"https:\/\/conyso\.com\/#organization"\}/);
+  assert.match(html, /"@id":"https:\/\/conyso\.com\/#organization","name":"Conyso"[^}]*"founder":\{"@id":"[^"]*#krishna-chagti"\}/);
+  // Every sameAs is a profile that can be fetched and checked back. ORCID is
+  // the one that proves the name refers to one specific human.
   assert.match(html, /"sameAs":\["https:\/\/conyso\.com\/founder\/","https:\/\/www\.linkedin\.com\/in\/krishna-chagti"/);
+  assert.match(html, /https:\/\/orcid\.org\/0009-0003-6401-1788/);
 });
 
 // The landing grid is a capped, server-rendered SAMPLE (data-limit), never the

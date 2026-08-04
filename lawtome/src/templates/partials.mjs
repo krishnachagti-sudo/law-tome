@@ -35,6 +35,110 @@ export function setBuildDate(d) { BUILD_DATE = d ? String(d) : ''; }
 /** The registered build date, or '' when a template is rendered outside a build. */
 export function buildDate() { return BUILD_DATE; }
 
+/**
+ * The creator, as one entity rather than three copies of a description.
+ *
+ * This site emitted a Person node in three places, and they had already drifted:
+ * the one on /about/ carried a job title, an employer and three sameAs links;
+ * the one in the same file's AboutPage carried a name and a URL and nothing
+ * else. To a crawler that is not one person described twice, it is two people
+ * who happen to share a name — and the whole point of an entity graph is that
+ * the machine can tell those apart.
+ *
+ * So: described once, referenced everywhere, from a single definition here.
+ *
+ * `sameAs` is the part that does the work. It is how a knowledge graph decides
+ * that the Krishna Chagti on this site is the Krishna Chagti it already knows
+ * about, and it is corroboration rather than assertion — every URL in it is a
+ * profile that can be fetched and checked back. That is also why it is short.
+ * Four identifiers that resolve and agree beat a dozen that cannot be verified,
+ * and a sameAs pointing somewhere unverifiable is the one way this markup could
+ * actively mislead rather than merely fail.
+ *
+ * ORCID earns its place: it is a persistent identifier issued by a body whose
+ * whole function is saying that a name refers to one specific human. Its record
+ * was fetched and it names Krishna Chagti with a researcher URL pointing back at
+ * conyso.com, so the link is reciprocal — which is exactly the property that
+ * makes an identity claim checkable.
+ *
+ * No Wikidata item exists for this person or for The Law Tome. When one does,
+ * its QID belongs at the top of this list; it is the strongest single bridge
+ * into a knowledge graph and nothing else here substitutes for it.
+ */
+const FOUNDER = {
+  name: 'Krishna Chagti',
+  // `jobTitle` is the title alone and the employer goes in `worksFor`, which is
+  // what schema.org actually specifies. It previously read "Founder & CEO,
+  // Conyso" — a string a parser has to split before it can relate two entities,
+  // and one that reads as a job title containing a comma rather than as a role
+  // at a named organisation. Separating them states the relationship instead of
+  // spelling it.
+  jobTitle: 'Founder & CEO',
+  description: 'Founder and CEO of Conyso; creator of The Law Tome.',
+  url: 'https://conyso.com/founder/',
+  // Ordered deliberately. A knowledge graph weighs the registries it already
+  // trusts, and ORCID is a registry OF RESEARCHERS — so an identity described
+  // to Google mainly through ORCID gets described back as a researcher, which
+  // is exactly what has happened here. ORCID stays, because it is the strongest
+  // proof that this name refers to one specific person and its record links
+  // back to conyso.com. But it is no longer the first thing in the list, and
+  // the founder relationship is now asserted structurally below rather than
+  // left implicit in a job-title string.
+  sameAs: [
+    'https://conyso.com/founder/',
+    'https://www.linkedin.com/in/krishna-chagti',
+    'https://github.com/krishnachagti-sudo',
+    'https://orcid.org/0009-0003-6401-1788',
+  ],
+};
+
+/** The canonical node id for the creator, stable across every page. */
+export function founderId(origin = '', base = '/') {
+  return `${origin}${base}about/#krishna-chagti`;
+}
+
+/**
+ * The full description. Emit this once per page at most; use founderRef()
+ * everywhere else so the graph has one node rather than several.
+ */
+export function founderNode(origin = '', base = '/') {
+  return {
+    '@type': 'Person',
+    '@id': founderId(origin, base),
+    ...FOUNDER,
+    // Both directions of the same fact. `worksFor` says he is at Conyso;
+    // conysoOrg() says Conyso was founded by him, pointing back at this exact
+    // node id. A relationship asserted from one side is a claim; asserted from
+    // both and agreeing, it is corroboration — and corroboration is the only
+    // thing that moves an entity graph, which cannot be told what to say.
+    worksFor: { '@id': CONYSO_ID },
+    founderOf: { '@id': CONYSO_ID },
+  };
+}
+
+/** Conyso's stable node id, so both directions of the founder link agree. */
+export const CONYSO_ID = 'https://conyso.com/#organization';
+
+/**
+ * Conyso as an entity, naming its founder. Used wherever the parent company
+ * appears, so the founder relationship is stated on every page rather than
+ * only on /about/.
+ */
+export function conysoOrg(origin = '', base = '/') {
+  return {
+    '@type': 'Organization',
+    '@id': CONYSO_ID,
+    name: 'Conyso',
+    url: 'https://conyso.com',
+    founder: { '@id': founderId(origin, base) },
+  };
+}
+
+/** A pointer to the node above, for the other places that mention him. */
+export function founderRef(origin = '', base = '/') {
+  return { '@type': 'Person', '@id': founderId(origin, base), name: FOUNDER.name };
+}
+
 /** @param {Record<string,string>} map asset path (e.g. 'assets/styles.css') -> short content hash */
 export function setAssetVersions(map) {
   ASSET_V.clear();

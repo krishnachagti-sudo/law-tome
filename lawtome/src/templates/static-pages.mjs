@@ -18,7 +18,7 @@
 //      links to the Privacy page, and the rights-grant + originality warranty copy
 //      (spec §13) is explicit.
 
-import { head, sprite, header, footer, escapeHtml, lawCard, reliabilityClass, RELIABILITY_TIERS, RELIABILITY_NOTE } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, reliabilityClass, RELIABILITY_TIERS, RELIABILITY_NOTE, founderNode, founderRef, conysoOrg } from './partials.mjs';
 import { hubHead, hubFaq, hubNav } from './hub.mjs';
 
 /**
@@ -250,15 +250,7 @@ ${faq.html}  </div>
 
   // Person node for the creator — the "who" behind the project, for the entity
   // graph / knowledge panel. Only verified facts: name + GitHub. No invented bio.
-  const person = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Krishna Chagti',
-    jobTitle: 'Founder & CEO, Conyso',
-    url: 'https://conyso.com/founder/',
-    sameAs: ['https://conyso.com/founder/', 'https://www.linkedin.com/in/krishna-chagti', 'https://github.com/krishnachagti-sudo'],
-    worksFor: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
-  };
+  const person = { '@context': 'https://schema.org', ...founderNode(origin, base) };
   const aboutLd = {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
@@ -269,11 +261,9 @@ ${faq.html}  </div>
       '@type': 'Organization',
       name: 'The Law Tome',
       url: `${origin}${base}`,
-      founder: { '@type': 'Person', name: 'Krishna Chagti', url: 'https://conyso.com/founder/' },
+      founder: founderRef(origin, base),
       parentOrganization: {
-        '@type': 'Organization',
-        name: 'Conyso',
-        url: 'https://conyso.com',
+        ...conysoOrg(origin, base),
         slogan: 'Building and backing companies, run with operating discipline.',
         description: 'A holding company that builds and backs companies run with operating discipline — strategy, education, software, and ventures under one roof.',
       },

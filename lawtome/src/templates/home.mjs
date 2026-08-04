@@ -22,7 +22,7 @@
 // client rotation writes via innerHTML (`hero`, `nameHtml`) are PRE-escaped in
 // the blob, so the rotation cannot inject markup either.
 
-import { head, sprite, header, footer, escapeHtml, lawCard, browseControls, asset, portrait } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, lawCard, browseControls, asset, portrait, founderNode, conysoOrg } from './partials.mjs';
 
 /**
  * Escape the statement, then wrap the accent phrase in <span class="accent">.
@@ -416,20 +416,13 @@ const BASE=${JSON.stringify(base)};
     correctionsPolicy: `${homeUrl}about/`,
     // The Law Tome is an initiative by Conyso, its publisher.
     parentOrganization: {
-      '@type': 'Organization',
-      name: 'Conyso',
-      url: 'https://conyso.com',
+      ...conysoOrg(homeUrl, ''),
       slogan: 'Building and backing companies, run with operating discipline.',
       description: 'A holding company that builds and backs companies run with operating discipline — strategy, education, software, and ventures under one roof.',
     },
-    // Creator — the person behind the project (also founder & CEO of Conyso).
-    founder: {
-      '@type': 'Person',
-      name: 'Krishna Chagti',
-      jobTitle: 'Founder & CEO, Conyso',
-      url: 'https://conyso.com/founder/',
-      sameAs: ['https://conyso.com/founder/', 'https://www.linkedin.com/in/krishna-chagti', 'https://github.com/krishnachagti-sudo'],
-    },
+    // Creator. The home page carries the full description because it is the
+    // page most likely to be fetched first; everywhere else references it.
+    founder: founderNode(homeUrl, ''),
   };
   const definedTermSet = {
     '@context': 'https://schema.org',
