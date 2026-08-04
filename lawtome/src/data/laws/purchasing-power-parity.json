@@ -2,7 +2,10 @@
   "no": "420",
   "slug": "purchasing-power-parity",
   "name": "Purchasing Power Parity",
-  "aliases": ["PPP", "The purchasing-power-parity theory of exchange rates"],
+  "aliases": [
+    "PPP",
+    "The purchasing-power-parity theory of exchange rates"
+  ],
   "statement": "Exchange rates should adjust until the same basket of goods costs the same across countries.",
   "statementAccent": "the same basket of goods costs the same",
   "meaning": "Purchasing power parity holds that exchange rates should move so that an identical basket of goods costs the same in every country once prices are converted into a common currency. It extends the law of one price, which says a single good with no trade costs should sell for the same everywhere, from individual goods to whole national price levels. In its absolute form the exchange rate equals the ratio of the two countries' price levels; in its weaker relative form the rate of change of the exchange rate matches the difference in their inflation rates.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It is foundational to international economics and exchange-rate theory, and it is the standard basis for meaningful comparison of output and living standards across countries, since parity-adjusted GDP corrects for the price-level differences that market exchange rates ignore. It gives a benchmark for judging whether a currency is over- or under-valued and a long-run anchor for thinking about where exchange rates should settle, shaping how economists compare economies and how bodies like the World Bank report global income.",
   "working": [
-    {"lead": "Convert at parity for comparisons", "text": "use purchasing-power-parity rates, not market rates, when comparing real output or living standards across countries."},
-    {"lead": "Treat it as a long-run anchor", "text": "expect parity to hold only as a slow tendency, not at any given moment, since market rates deviate widely and persistently."},
-    {"lead": "Distinguish tradables from the rest", "text": "apply the logic most strongly to traded goods and least to services and other non-tradables, which are not linked internationally."}
+    {
+      "lead": "Convert at parity for comparisons",
+      "text": "use purchasing-power-parity rates, not market rates, when comparing real output or living standards across countries."
+    },
+    {
+      "lead": "Treat it as a long-run anchor",
+      "text": "expect parity to hold only as a slow tendency, not at any given moment, since market rates deviate widely and persistently."
+    },
+    {
+      "lead": "Distinguish tradables from the rest",
+      "text": "apply the logic most strongly to traded goods and least to services and other non-tradables, which are not linked internationally."
+    }
   ],
   "limits": "Parity does not hold in the short or medium run; deviations are large and persistent. The market exchange rate is more volatile than the parity rate because it responds to shifting demand for currencies. Non-tradable goods and services are not linked across borders, transport costs and trade barriers weaken the law of one price, and countries consume different baskets, all of which drive departures. The Balassa-Samuelson effect makes price levels systematically higher in richer countries, and the persistence of deviations, with half-lives of several years, is the well-known purchasing-power-parity puzzle. It works as a long-run tendency, better for tradables than for the whole economy.",
   "misreadings": "Parity does not hold at every moment, and market exchange rates do not continuously equal parity rates; deviations are substantial and long-lasting, which is why the market rate and the parity rate routinely diverge. The Big Mac index is not a precise measurement but a deliberately light, single-good illustration. And parity is not equally valid for the whole economy: it bites on tradable goods and holds far more weakly for services and other things not traded across borders.",
@@ -47,12 +59,31 @@
   "namedAfter": "Gustav Cassel",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Purchasing power parity, Wikipedia. — absolute and relative parity, the law of one price, the Big Mac index, and the limits.", "url": "https://en.wikipedia.org/wiki/Purchasing_power_parity", "type": "secondary"},
-    {"text": "Gustav Cassel, Concise Encyclopedia of Economics (Econlib). — Cassel's development of the theory and his League of Nations work.", "url": "https://www.econlib.org/library/Enc/bios/Cassel.html", "type": "secondary"}
+    {
+      "text": "Cassel, G. (1918). \"Abnormal Deviations in International Exchanges.\" The Economic Journal 28(112), 413-415 — the paper that set out purchasing power parity.",
+      "url": "https://doi.org/10.2307/2223329",
+      "type": "primary"
+    },
+    {
+      "text": "Purchasing power parity, Wikipedia. — absolute and relative parity, the law of one price, the Big Mac index, and the limits.",
+      "url": "https://en.wikipedia.org/wiki/Purchasing_power_parity",
+      "type": "secondary"
+    },
+    {
+      "text": "Gustav Cassel, Concise Encyclopedia of Economics (Econlib). — Cassel's development of the theory and his League of Nations work.",
+      "url": "https://www.econlib.org/library/Enc/bios/Cassel.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Purchasing_power_parity",
   "related": [
-    {"slug": "the-law-of-one-price", "kind": "cause"},
-    {"slug": "the-fisher-equation", "kind": "kindred"}
+    {
+      "slug": "the-law-of-one-price",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-fisher-equation",
+      "kind": "kindred"
+    }
   ]
 }
