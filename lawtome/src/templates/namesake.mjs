@@ -20,6 +20,11 @@ import { head, sprite, header, footer, escapeHtml, portrait, personImage, person
 import { hubHead, hubFaq, hubNav, setTensions, setAdjacent } from './hub.mjs';
 import { monogram } from './eponyms.mjs';
 
+const NUM_WORDS = ['none', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+const numWord = (n) => (n >= 0 && n < NUM_WORDS.length ? NUM_WORDS[n] : String(n));
+const cap = (s) => String(s).charAt(0).toUpperCase() + String(s).slice(1);
+const plural = (n, word) => (n === 1 ? word : `${word}s`);
+
 /** The URL path for a namesake page (no leading or trailing slash). */
 export function namesakePath(person) {
   return `named-after/${personSlug(person)}/`;
@@ -97,7 +102,9 @@ export function namesakePage(group, {
   const tiers = new Map();
   for (const l of laws) if (l.reliability) tiers.set(l.reliability, (tiers.get(l.reliability) || 0) + 1);
 
-  const fieldNames = fields.map(([k]) => categories[k] || k);
+  // Escaped at the point of construction: `answer` is interpolated into HTML
+  // unescaped, and every field display name contains an ampersand.
+  const fieldNames = fields.map(([k]) => escapeHtml(categories[k] || k));
   const lawLink = (l) => `<a href="${base}laws/${escapeHtml(l.slug)}/">${escapeHtml(l.name)}</a>`;
 
   // "Amos Tversky and Daniel Kahneman has 4 named laws" is not a sentence.
@@ -143,6 +150,64 @@ export function namesakePage(group, {
     ? `    <p class="crossaxis">The corpus also files ${sibs.map((o) => `<a href="${base}${namesakePath(o.person)}">${escapeHtml(o.person)}</a> (${o.laws.length})`).join(' and ')} — the same people in the order each paper printed them, so both orderings are kept rather than one being rewritten to match the other.</p>\n`
     : '';
 
+  // --- What the set is built on ---------------------------------------------
+  //
+  // These pages were the thinnest indexable pages on the site — a portrait, a
+  // sentence, a grid of cards and a nav block. The missing content was sitting
+  // in the corpus the whole time: the entries carry sources, and a namesake is
+  // exactly the axis along which a reader would want them collected. So the
+  // page now prints the original publications behind the person's laws as one
+  // list, deduplicated across the set.
+  //
+  // It also prints how many of the laws have NO primary source located yet.
+  // That number is unflattering on some pages and it stays: a bibliography that
+  // only lists what it found, without saying what it did not, invites the
+  // reader to assume the gap is not there.
+  const full = laws.map((l) => byslug[l.slug] || l);
+  const seenSrc = new Set();
+  const primary = [];
+  let unsourced = 0;
+  for (const l of full) {
+    const own = (Array.isArray(l.sources) ? l.sources : []).filter((s) => s && s.type === 'primary');
+    if (!own.length) { unsourced++; continue; }
+    for (const s of own) {
+      const key = String(s.url || s.text || '').trim();
+      if (!key || seenSrc.has(key)) continue;
+      seenSrc.add(key);
+      primary.push({ src: s, law: l });
+    }
+  }
+  const biblio = primary.length
+    ? `    <h2 class="ns-h">The publications behind these ${numWord(laws.length)}</h2>
+    <p class="ns-lede">The original ${plural(primary.length, 'work')}, not ${primary.length === 1 ? 'an account' : 'accounts'} of ${primary.length === 1 ? 'it' : 'them'} — collected across the set and deduplicated.${unsourced ? ` ${cap(numWord(unsourced))} of the ${numWord(laws.length)} ${unsourced === 1 ? 'entry has' : 'entries have'} no original publication located yet, and ${unsourced === 1 ? 'is' : 'are'} carried on secondary sources; ${unsourced === 1 ? 'it is' : 'they are'} marked as such on ${unsourced === 1 ? 'its' : 'their'} own ${plural(unsourced, 'page')}.` : ''}</p>
+    <ol class="ns-biblio">
+${primary.map(({ src, law }) => `      <li>${src.url && /^https?:\/\//i.test(String(src.url).trim())
+        ? `<a href="${escapeHtml(src.url)}">${escapeHtml(src.text || src.url)}</a>`
+        : escapeHtml(src.text || '')} <span class="ns-for">for ${lawLink(law)}</span></li>`).join('\n')}
+    </ol>
+`
+    : (laws.length
+      ? `    <h2 class="ns-h">The publications behind these ${numWord(laws.length)}</h2>
+    <p class="ns-lede">None of the ${numWord(laws.length)} entries carrying this name has had its original publication located yet — they rest on secondary sources, listed on the entry pages. That is a gap in this index, not a judgement about the work.</p>
+`
+      : '');
+
+  // When each name actually took hold in print. Google Books Ngrams, the same
+  // series /best-known/ ranks on; the peak year is read off the series rather
+  // than asserted. Only rendered when the set gives more than one data point,
+  // because "one name peaked in 1978" is a fact about a law, not about a set.
+  const peaks = laws.map((l) => {
+    const ng = (facts[l.slug] || {}).ngram;
+    if (!ng || !Array.isArray(ng.series) || ng.series.length < 2 || !Number.isFinite(Number(ng.from))) return null;
+    let best = 0;
+    for (let i = 1; i < ng.series.length; i++) if (ng.series[i] > ng.series[best]) best = i;
+    if (!(ng.series[best] > 0)) return null;
+    return { law: l, year: Number(ng.from) + best };
+  }).filter(Boolean).sort((a, b) => a.year - b.year);
+  const printNote = peaks.length > 1
+    ? `    <p class="ns-print">In printed English the names peaked at different times — ${peaks.map((p) => `${lawLink(p.law)} around ${p.year}`).join(', ')} — measured on <a href="https://books.google.com/ngrams/" rel="noopener nofollow">Google Books Ngrams</a>. Printing frequency is not importance, and it is not evidence; it is when a phrase was in the air. <a href="${base}best-known/">The whole index ranked that way</a>.</p>\n`
+    : '';
+
   const faq = hubFaq([
     {
       q: `What laws are named after ${person}?`,
@@ -160,6 +225,10 @@ export function namesakePage(group, {
       q: `Why is there another page for the same people?`,
       a: `Because the corpus records the namesake in the order each law's own paper printed it, and these two people published in both orders. ${sibs.map((o) => `<a href="${base}${namesakePath(o.person)}">${escapeHtml(o.person)}</a> carries ${o.laws.length}`).join('; ')}. Merging them would mean rewriting a citation to tidy an index.`,
     }] : []),
+    {
+      q: `What are these entries actually based on?`,
+      a: `${primary.length ? `${cap(numWord(primary.length))} original ${plural(primary.length, 'publication')}, listed above with the entry ${primary.length === 1 ? 'it' : 'each'} supports` : 'Secondary sources — encyclopaedia and review articles'}${unsourced && primary.length ? `, plus secondary sources for the ${unsourced === 1 ? 'one entry' : `${numWord(unsourced)} entries`} whose original has not been located` : ''}. Every source is linked on the entry's own page, so you can read what the rating was made from rather than take it on trust.`,
+    },
     {
       q: `Where can I read about ${person} themselves?`,
       a: `${wd.title ? `On <a href="https://en.wikipedia.org/wiki/${encodeURIComponent(String(wd.title).replace(/ /g, '_'))}">Wikipedia</a>${wd.qid ? ` and <a href="https://www.wikidata.org/wiki/${escapeHtml(wd.qid)}">Wikidata</a>` : ''}.` : 'On Wikipedia and Wikidata.'} The Law Tome indexes what a name is attached to, not the life behind it — writing a biography from memory is exactly the kind of invented fact this project refuses, so this page links to one instead of paraphrasing it.`,
@@ -182,7 +251,7 @@ ${hubHead({
   })}${face}${factRow}${siblingNote}    <div class="grid">
 ${grid}
     </div>
-${setTensions(laws, { base, compareSlugs, noun: 'set' })}${setAdjacent(laws, { base, byslug, noun: 'set' })}${faq.html}${hubNav('named-after/', { base })}  </div>
+${printNote}${biblio}${setTensions(laws, { base, compareSlugs, noun: 'set' })}${setAdjacent(laws, { base, byslug, noun: 'set' })}${faq.html}${hubNav('named-after/', { base })}  </div>
 </section>
 `;
 

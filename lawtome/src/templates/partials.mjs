@@ -852,7 +852,12 @@ export function shareRow({ url, title = '', text = '', label = 'Share this page'
     ['Hacker News', `https://news.ycombinator.com/submitlink?u=${e(u)}&t=${e(t)}`],
   ];
 
-  return `      <div class="share${compact ? ' share--compact' : ''}" data-share
+  // data-nosnippet: the row is a widget, not content. Without it the same
+  // "Copy as Markdown X Bluesky LinkedIn Reddit Hacker News Email" string sits
+  // inside <main> on all 1,116 entry pages and is eligible to be lifted into a
+  // search snippet — a thousand pages whose extractable text starts with an
+  // identical list of button labels is exactly the shape of a templated farm.
+  return `      <div class="share${compact ? ' share--compact' : ''}" data-nosnippet data-share
            data-share-url="${escapeHtml(u)}" data-share-title="${escapeHtml(t)}"
            data-share-text="${escapeHtml(blurb)}" data-share-md="${escapeHtml(md)}"
            role="group" aria-label="${escapeHtml(label)}">

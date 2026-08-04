@@ -24,6 +24,28 @@ export function formulaBlock(fact, law, { base = '/' } = {}) {
 }
 
 /**
+ * The caption's warning that a chart of a NAME is not a chart of an idea.
+ *
+ * It used to be the same clause on all 965 entries with a diffusion chart. The
+ * two dates needed to make it specific were already on the page — the year the
+ * idea was coined, and the year its name reaches a tenth of its eventual peak
+ * in print — so the warning now measures the gap instead of asserting it, and
+ * only falls back to the general statement when one of the dates is missing.
+ *
+ * The gap is stated as a lag, never as a cause: print frequency measures when a
+ * phrase was in circulation, not when anyone had the thought.
+ */
+function gapNote(coined, firstYear) {
+  const generic = 'This tracks the <b>phrase</b>, not the idea — a law is usually older than the name for it.';
+  if (!coined || !firstYear || !Number.isFinite(coined) || !Number.isFinite(firstYear)) return generic;
+  const lag = firstYear - coined;
+  if (lag >= 15) return `The idea dates to ${coined}: the <b>phrase</b> took about ${lag} years to reach print in any quantity, which is the gap this chart measures.`;
+  if (lag <= -15) return `The <b>phrase</b> was already in print some ${Math.abs(lag)} years before ${coined}, the date recorded for the idea here — a chart of words is not a chart of when anyone had the thought.`;
+  if (Math.abs(lag) < 15) return `Coined ${coined} and in print by about ${firstYear} — unusually close, though this remains a chart of the <b>phrase</b> rather than of the idea.`;
+  return generic;
+}
+
+/**
  * When the phrase entered the language.
  *
  * This charts the NAME, not the idea — Occam's razor is six centuries older
@@ -52,7 +74,7 @@ export function diffusionBlock(fact, law, { base = '/' } = {}) {
             ${coinedX != null ? `<line class="dif-coined" x1="${coinedX.toFixed(1)}" y1="${pad}" x2="${coinedX.toFixed(1)}" y2="${H - pad}"/>` : ''}
           </svg>
           <div class="dif-axis"><span>${g.from}</span>${coined ? `<span class="dif-mark">coined ${escapeHtml(String(coined))}</span>` : ''}<span>${g.to}</span></div>
-          <figcaption>How often “${escapeHtml(g.phrase)}” appears in printed English${firstYear ? `, which takes hold around ${firstYear}` : ''}${firstYear && peakYear && peakYear !== firstYear ? ` and peaks around ${peakYear}` : ''}. This tracks the <b>phrase</b>, not the idea — a law is usually older than the name for it. Source: <a href="${escapeHtml(g.source)}">Google Books Ngrams</a>.</figcaption>
+          <figcaption>How often “${escapeHtml(g.phrase)}” appears in printed English${firstYear ? `, which takes hold around ${firstYear}` : ''}${firstYear && peakYear && peakYear !== firstYear ? ` and peaks around ${peakYear}` : ''}. ${gapNote(coined, firstYear)} Source: <a href="${escapeHtml(g.source)}">Google Books Ngrams</a>.</figcaption>
         </figure>`;
 }
 
@@ -111,6 +133,6 @@ export function otherNames(fact, { base = '/' } = {}) {
   if (rows.length < 3) return '';
   return `        <div class="othernames">
           <ul class="on-list">${rows.join('')}</ul>
-          <p class="on-note">The names this idea already goes by, as recorded on <a href="${escapeHtml(n.source)}">Wikidata</a> — not translations we made. Every recorded name, language by language, is indexed <a href="${base}names/">here</a>.</p>
+          <p class="on-note">${rows.length} languages, as recorded on <a href="${escapeHtml(n.source)}">Wikidata</a> — names the idea already goes by, not translations we made. <a href="${base}names/">The whole index by language</a>.</p>
         </div>`;
 }

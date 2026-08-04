@@ -191,8 +191,12 @@ ${srcList(b)}
         : 'No, though they are routinely mistaken for each other. They are recorded here as near-twins precisely because the confusion is common.',
     },
     {
+      // Deliberately no recommendation — but the reason has to be said in terms
+      // of THESE two entries, or it is a disclaimer stamped on 235 pages.
+      // Pointing at each law's own limits section makes the refusal useful:
+      // it hands the reader the two paragraphs the decision actually turns on.
       q: 'Which one should I apply?',
-      a: 'This page does not answer that, on purpose. Both laws\' conditions and limits are set out above in their own words; deciding which fits your case is a judgement about your situation, and a site that made it for you would be inventing a finding neither law states.',
+      a: `Whichever one's conditions your case meets — this page will not guess which that is. ${escapeHtml(a.name)} ${a.limits ? 'states where it stops working' : 'sets out its scope'}, and so does ${escapeHtml(b.name)}; both passages are above, in the entries' own words. Reading the two limits side by side answers this faster than a recommendation from a site that cannot see your situation.`,
     },
   ], { heading: 'Questions about this pair' });
 

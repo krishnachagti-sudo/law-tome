@@ -135,7 +135,12 @@ export function hubHead({ title, answer, lede = '', sub = '', stats = [], base =
 /** The other ways in, at the foot of every hub. */
 export function hubNav(current, { base = '/' } = {}) {
   const rest = HUBS.filter(([href]) => href !== current);
-  return `    <nav class="hub-more" aria-label="Other ways to browse">
+  // data-nosnippet for the same reason as the share row: this is a directory of
+  // eighteen destinations, identical on every hub page, and it is the longest
+  // run of repeated text inside <main> anywhere on the site. It should be
+  // crawled and followed — the links are the point — but never quoted as though
+  // it were what the page is about.
+  return `    <nav class="hub-more" aria-label="Other ways to browse" data-nosnippet>
       <h2 class="hub-more-h">Other ways into the index</h2>
       <div class="hub-more-grid">
 ${rest.map(([href, label, blurb]) => `        <a class="hub-more-card" href="${base}${href}">

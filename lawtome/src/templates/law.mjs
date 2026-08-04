@@ -17,6 +17,7 @@
 // statement accent is injected AFTER escaping (see renderStatement).
 
 import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE } from './partials.mjs';
+import { hostOf } from '../../build/surfaces.mjs';
 import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
 import { LASTMOD_TOKEN } from '../../build/lastmod.mjs';
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
@@ -116,6 +117,31 @@ function linkLawNames(escaped, { byslug, base, skip }) {
     return `<a class="prose-law" href="${base}laws/${escapeHtml(slug)}/">${m}</a>`;
   });
 }
+
+// How many entries sit at each reliability tier, counted once per corpus rather
+// than once per page — the same WeakMap trick as the name matcher above, for the
+// same reason. Used to give the "Is it real?" block a number instead of a
+// restatement of the scale.
+const TIER_COUNT_CACHE = new WeakMap();
+function tierCounts(byslug) {
+  let c = TIER_COUNT_CACHE.get(byslug);
+  if (c) return c;
+  c = { total: 0, tiers: new Map() };
+  for (const l of Object.values(byslug || {})) {
+    if (!l || !l.slug) continue;
+    c.total++;
+    if (l.reliability) c.tiers.set(l.reliability, (c.tiers.get(l.reliability) || 0) + 1);
+  }
+  TIER_COUNT_CACHE.set(byslug, c);
+  return c;
+}
+const tierCount = (byslug, tier) => tierCounts(byslug).tiers.get(tier) || 0;
+const TOTAL_LAWS = (byslug) => tierCounts(byslug).total.toLocaleString('en-GB');
+
+/** Small counts read better as words in prose; large ones as digits. */
+const NUM_WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+const numWord = (n) => (n >= 0 && n < NUM_WORDS.length ? NUM_WORDS[n] : String(n));
+const plural = (n, word) => (n === 1 ? word : word === 'publication' ? 'publications' : `${word}s`);
 
 /** A single "At a glance" row, only when the value is present. */
 function glanceRow(k, v) {
@@ -335,7 +361,7 @@ ${h2}${inner}
     return `      <div class="viz-col">
         <div class="viz-h">Reliability</div>
         <div class="meter" role="img" aria-label="Reliability tier: ${escapeHtml(law.reliability)}">${segs}</div>
-        <p class="viz-note">Rated <b>${escapeHtml(law.reliability)}</b> — ${escapeHtml(TIER_NOTE[law.reliability] || 'see the reliability scale')}. <a href="${base}reliability/${reliabilitySlug(law.reliability)}/">See every ${escapeHtml(law.reliability)} law</a>, or <a href="${base}reliability/">the whole scale</a>.</p>
+        <p class="viz-note">Rated <b>${escapeHtml(law.reliability)}</b> — ${escapeHtml(TIER_NOTE[law.reliability] || 'see the reliability scale')}. <a href="${base}reliability/${reliabilitySlug(law.reliability)}/">The other ${(tierCount(byslug, law.reliability) - 1).toLocaleString('en-GB')}</a>.</p>
       </div>`;
   };
   const lineageTimeline = () => {
@@ -462,16 +488,13 @@ ${h2}${inner}
   // promise that it holds in your case.
   if (!coined && law.reliability) {
     const VERDICT = {
-      Empirical: `<b>Yes, as far as the evidence goes.</b> ${LH} is rated <b>Empirical</b> here, meaning it rests on studies or measurements rather than on a saying. That is a claim about the support behind it, not a guarantee that it holds in every setting.`,
-      Heuristic: `<b>Real as a rule of thumb, not as a theorem.</b> ${LH} is rated <b>Heuristic</b> here: it is dependable enough to plan with and has no proof behind it. Treat it as a prior, not a law of nature.`,
-      'Folk-adage': `<b>It is a saying, not a finding.</b> ${LH} is rated <b>Folk-adage</b> here — it circulates because it is memorable and often true, not because anyone measured it. Quoting it as science is the usual mistake.`,
-      Contested: `<b>That is exactly what is in dispute.</b> ${LH} is rated <b>Contested</b> here: the effect is claimed, the evidence is argued over, and reasonable specialists disagree. Anyone telling you it is settled — in either direction — is ahead of the evidence.`,
+      Empirical: `<b>Yes, as far as the evidence goes.</b> ${LH} is rated <b>Empirical</b> here: it rests on studies or measurements rather than on a saying.`,
+      Heuristic: `<b>Real as a rule of thumb, not as a theorem.</b> ${LH} is rated <b>Heuristic</b> here — dependable enough to plan with, with no proof behind it.`,
+      'Folk-adage': `<b>It is a saying, not a finding.</b> ${LH} is rated <b>Folk-adage</b> here: it circulates because it is memorable and often true, not because anyone measured it.`,
+      Contested: `<b>That is exactly what is in dispute.</b> ${LH} is rated <b>Contested</b> here: the effect is claimed, the evidence is argued over, and specialists disagree.`,
     };
     const v = VERDICT[law.reliability];
     if (v) {
-      const caveat = law.limits
-        ? ` <span class="verdict-more">Where it stops working is set out under <a href="#sec-where-it-breaks-down">Where it breaks down</a>.</span>`
-        : '';
       // Somebody else's count, where FORRT has one. This is the only number in
       // the block that is not our judgement, so it is labelled as theirs and
       // linked — and when it sits awkwardly against our own rating, the page
@@ -481,8 +504,34 @@ ${h2}${inner}
       const repLine = rep
         ? `        <p class="verdict-rep">${escapeHtml(replicationLine(rep))}${contradictsRating(law, rep) ? ` <b>That sits awkwardly against our own Empirical rating, and we are leaving both on the page rather than quietly picking one.</b>` : ''} <a href="${escapeHtml(rep.source)}" rel="nofollow noopener">${escapeHtml(rep.cite)}</a></p>\n`
         : '';
-      const inner = `        <p class="verdict">${v}${caveat}</p>
-${repLine}        <p class="verdict-scale">Rated on <a href="${base}reliability/">this index's four-tier scale</a>, which separates measured findings from rules of thumb, folklore and disputed claims. <a href="${base}reliability/${reliabilitySlug(law.reliability)}/">Every ${escapeHtml(law.reliability)} entry</a>.</p>`;
+      // What the rating was made from, in numbers a reader can check against the
+      // Sources list two sections down. This replaced a sentence that restated
+      // the four-tier scale in the same words on all 1,116 entries: it said
+      // nothing about THIS law, and a paragraph repeated verbatim a thousand
+      // times is what mass-produced pages look like from the outside. Three
+      // independent quantities — source count, how many are primary, how large
+      // the tier is — so the line differs almost everywhere without a word of it
+      // being authored per entry.
+      const srcs = Array.isArray(law.sources) ? law.sources : [];
+      const prim = srcs.filter((s) => s && s.type === 'primary').length;
+      const tierN = tierCount(byslug, law.reliability);
+      const basisParts = [];
+      if (srcs.length) {
+        // Just the count here. Whether those sources are primary is stated once,
+        // under the Sources list where a reader can see which is which — saying
+        // it twice on one page is how a page starts to sound like filler.
+        basisParts.push(`Rated from ${numWord(srcs.length)} ${plural(srcs.length, 'source')}`);
+      }
+      if (tierN) {
+        basisParts.push(`<a href="${base}reliability/${reliabilitySlug(law.reliability)}/">${tierN} of the ${TOTAL_LAWS(byslug)} entries</a> carry this rating`);
+      }
+      const inner = [
+        `        <p class="verdict">${v}</p>`,
+        repLine.replace(/\n$/, ''),
+        basisParts.length
+          ? `        <p class="verdict-basis">${basisParts.join('. ')}. <a href="${base}reliability/">How the scale works</a>.</p>`
+          : '',
+      ].filter(Boolean).join('\n');
       // The structured answer gets the verdict plus the entry's own caveat, so a
       // machine quoting it quotes the qualification too — and the replication
       // count when there is one, because that is the part a machine should carry.
@@ -542,7 +591,37 @@ ${items}
     // Per-entry trust cue: restate the anti-fabrication promise and the open
     // corrections path (an E-E-A-T signal that mirrors the publishingPrinciples /
     // correctionsPolicy JSON-LD, both pointing at the About page's method).
-    const srcTrust = `        <p class="src-trust">Every claim on this page is traced to the sources above — nothing here is invented, and reliability is <a href="${base}about/">marked honestly</a>. Spot an error or a better source? <a href="${base}coin/">Suggest a fix.</a></p>`;
+    // The promise used to be stated in the same sentence on every entry, which
+    // is the least persuasive way to make it: a claim repeated 1,116 times
+    // verbatim is a slogan. What it says now is specific to this list — whether
+    // an original publication is among the sources, or only accounts of one —
+    // which is the part a reader can actually check, and which is honest about
+    // the entries where the primary source has not been found yet.
+    const nPrim = law.sources.filter((s) => s && s.type === 'primary').length;
+    // Naming the hosts is what stops this from being a slogan. "Two secondary
+    // sources" is true of 638 entries; "Britannica and Wikipedia" is true of
+    // 111, and "the Stanford Encyclopedia and the IEP" of another 46 — the
+    // reader learns what kind of authority the entry is standing on before
+    // clicking anything, and the sentence stops being interchangeable.
+    //
+    // Two sources on one host is the common case and needs its own wording:
+    // "two sources — en.wikipedia.org, en.wikipedia.org" is a bug in prose.
+    const n = law.sources.length;
+    const hosts = [...new Set(law.sources.map((s) => hostOf(s && s.url)).filter(Boolean))];
+    const where = hosts.length === 0 || hosts.length > 3
+      ? `the ${numWord(n)} ${plural(n, 'source')} listed`
+      : hosts.length === 1
+        ? (n === 1 ? escapeHtml(hosts[0]) : `${numWord(n)} pages on ${escapeHtml(hosts[0])}`)
+        : `${hosts.slice(0, -1).map((h) => escapeHtml(h)).join(', ')} and ${escapeHtml(hosts[hosts.length - 1])}`;
+    // The count is already in `where` when the sources share a host ("two pages
+    // on en.wikipedia.org"), so the second half must not repeat it.
+    const counted = hosts.length === 1 && n > 1;
+    const provenance = nPrim === 0
+      ? `Everything above traces to ${where} — ${n === 1 ? 'a secondary source, an account' : `${counted ? 'both' : numWord(n)} secondary${counted ? '' : ' sources'}, accounts`} of the original rather than the original itself, which has not been located for this entry.`
+      : nPrim === n
+        ? `Everything above traces to ${where} — the ${plural(n, 'publication')} ${n === 1 ? 'itself' : 'themselves'}, not ${n === 1 ? 'an account' : 'accounts'} of ${n === 1 ? 'it' : 'them'}.`
+        : `Everything above traces to ${where}${counted ? '' : ` — ${numWord(n)} sources`}, ${numWord(nPrim)} of them the original ${plural(nPrim, 'publication')} rather than ${nPrim === 1 ? 'an account' : 'accounts'} of it.`;
+    const srcTrust = `        <p class="src-trust">${provenance} Nothing is written from memory. Spot an error or a better source? <a href="${base}coin/">Suggest a fix.</a></p>`;
     blocks.push(block('Sources', `        <ol class="sources-list">\n${items}\n        </ol>\n${srcTrust}`, true, `Sources & further reading`));
   }
 

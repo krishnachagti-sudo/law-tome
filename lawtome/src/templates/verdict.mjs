@@ -103,7 +103,10 @@ ${hubHead({
     title: `Is ${law.name} real?`,
     sub: `rated ${tier}`,
     answer,
-    lede: `${escapeHtml(law.name)} says: <b>${escapeHtml(law.statement || '')}</b> Below: how far the evidence goes, in the entry's own words, and how that compares with the ${num(corpusTotal)} entries around it.`,
+    // The second sentence used to be the same on all 156 verdict pages. It now
+    // counts what this particular entry is standing on, which is both more
+    // informative and different almost everywhere.
+    lede: `${escapeHtml(law.name)} says: <b>${escapeHtml(law.statement || '')}</b> ${sources.length ? `${num(sources.length)} ${sources.length === 1 ? 'source' : 'sources'} sit behind the ${escapeHtml(tier)} rating${sources.filter((s) => s && s.type === 'primary').length ? `, ${num(sources.filter((s) => s && s.type === 'primary').length)} of them primary` : ', none of them the original publication'}` : `The ${escapeHtml(tier)} rating`} — below, how far that goes in the entry's own words, and how it compares with the ${num(corpusTotal)} entries around it.`,
     base,
     crumbs: [['is-it-real/', 'Is it real?']],
   })}${compare}
