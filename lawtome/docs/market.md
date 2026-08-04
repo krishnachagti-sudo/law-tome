@@ -158,6 +158,56 @@ thing quoted when a model answers "is the bystander effect real?"* — and the
 reason a model would pick us over a Medium post is that we carry a rating, a
 limits section, and a linked primary source in machine-readable form.
 
+## 3b. Where this is being published, and what that host looks like
+
+Added 2026-08-04 from Search Console and crawl-stats exports for conyso.com,
+8 June – 2 August 2026. This is the first hard measurement in this document
+rather than inference, and it settled a decision.
+
+**The parent domain, measured:**
+
+| | |
+|---|---|
+| Clicks (56 days) | **88** — 33 of them for the query "conyso" |
+| Impressions | 4,685 (CTR 1.88%) |
+| Queries with impressions | 787 |
+| **Median position** | **69** |
+| Queries ranking top-10 | 41 |
+| URLs in sitemap | **1,104** |
+| URLs Google knows about | **382** (325 indexed, 57 not) |
+| Googlebot requests | ~65/day; 11.3% return 404 |
+
+**Roughly two thirds of conyso.com is in the sitemap and has never been
+processed.** Google has the list and is not crawling it. At ~40 useful HTML
+fetches a day, one full pass over 1,104 URLs takes about four weeks.
+
+**The decision this settled: The Law Tome ships to `lawtome.conyso.com`, its own
+hostname, served at the root.** Adding our 1,785 URLs to conyso.com would make it
+2,889 URLs against the same crawl budget — about ten weeks per full pass — and
+put us at the back of a queue already 720 pages deep. A subdomain gets its own
+crawl allocation, earned on its own behaviour: static, fast, near-100% 200s, and
+now an honest `lastmod`. The counter-argument for a subpath is inheriting the
+parent's authority, and at median position 69 there is not yet any to inherit.
+
+Two things worth fixing on conyso.com itself, both found in passing:
+
+- **713 of its 1,045 sitemap URLs carry the same `lastmod`** (2026-07-27) — the
+  same bulk-stamp defect this repo fixed in `build/lastmod.mjs`. Google uses the
+  field only if it is "consistently and verifiably accurate", so this throws
+  away a crawl-scheduling signal on a site that badly needs crawl demand.
+- **`beaconforge.conyso.com` serves an indexable hosting placeholder** ("PHP
+  Stack", HTTP 200, no `noindex`, permissive robots.txt). `bench`, `cadence` and
+  `lens` do not resolve at all — the DNS errors in the crawl report.
+
+**The finding that matters most for strategy:** the backlink export contains
+almost nothing earned. Medium accounts, a Substack, SlideShare profiles, a
+LinkedIn company page, `aetris.co`, own subdomains — all self-published. The
+only external entries are ORCID and Connectively, both directory listings.
+**Zero earned links** is the strongest available evidence that link-building is
+not the route here, and it is the first real support for §3's argument that
+being *citable* — sourced, granular, machine-readable, openly licensed — is the
+game this project can actually win.
+
 ## 4. What we should do about it
 
 Ranked by leverage, with the honest cost.

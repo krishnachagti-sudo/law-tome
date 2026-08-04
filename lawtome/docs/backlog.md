@@ -230,11 +230,30 @@ pages that rank in the organic top ten, **citation is the goal and traffic is a
 lagging proxy for it.** Two items in this section were written before that
 research and are corrected in place below.
 
-### D1. The custom domain — **S, none, blocking**
-`SITE_BASE` / `SITE_ORIGIN` repo variables. Every surface built in the last two
-weeks ships to a `github.io` path. This has been my top recommendation for weeks
-and remains it: it is one settings change and it gates the credibility of
-everything else.
+### D1. The custom domain — **S, none, blocking, decided**
+**Target: `lawtome.conyso.com`** — its own hostname, served at the root. Decided
+2026-08-04 against Search Console data for conyso.com; the reasoning is in
+[market.md §3b](market.md). Short version: conyso.com cannot crawl the 1,104
+URLs it already has (382 known to Google, ~65 crawl requests/day, 11.3% of them
+404s), so a subpath would put our 1,785 URLs at the back of a 720-page queue.
+
+**The repo side is done.** The build emits `dist/CNAME` from `SITE_ORIGIN`
+whenever the site is served from a host root, `site.config.json` targets the
+subdomain, and the `lastmod` manifest has been re-baselined against the
+production base and origin.
+
+**What is left is yours, in this order:**
+
+1. **DNS** — a CNAME record for `lawtome` pointing at `<owner>.github.io.`
+   (the user/org host, not the repo).
+2. **Repository variables** — `SITE_BASE = /` and
+   `SITE_ORIGIN = https://lawtome.conyso.com`.
+3. **Push.** The build writes the CNAME file; Pages reads it. It must come from
+   the build rather than being set once by hand, because every deploy replaces
+   the whole artifact.
+
+Then `INDEXNOW_ENABLED = true` (D3c), which only works once the key file is at a
+host root — which it now is.
 
 ### D2. Author and Organization schema — **S, author**
 Cited-source credibility signals. We have `DefinedTerm`, `CollectionPage`,

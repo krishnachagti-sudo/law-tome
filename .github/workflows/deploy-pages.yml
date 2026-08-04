@@ -29,21 +29,29 @@ jobs:
       - run: npm test
       # Build for the host that ACTUALLY serves this artifact.
       #
-      # This job publishes to GitHub Pages, which serves a project site at
-      # https://<owner>.github.io/<repo>/ — so `base` MUST be /<repo>/ or every
-      # stylesheet, script and internal link 404s. Defaulting to the eventual
-      # conyso.com path instead produces a deployment that looks fine in the build
-      # log and is completely broken in the browser.
+      # The target is lawtome.conyso.com — its own hostname, served at the root.
+      # Until DNS is live these defaults keep the github.io project path working,
+      # where `base` MUST be /<repo>/ or every stylesheet, script and internal
+      # link 404s.
       #
-      # SWITCHING TO conyso.com/lawtome: set the repository variables
-      #   SITE_BASE   = /lawtome/
-      #   SITE_ORIGIN = https://conyso.com
-      # and do it at the same time as the rewrite goes live, not before. Note a
-      # subpath on a custom domain cannot come from Pages alone — a Pages custom
-      # domain serves at the domain ROOT, so conyso.com has to rewrite /lawtome/*
-      # onto this deployment (Cloudflare/Netlify/equivalent). That same layer is
-      # what makes dist/_headers (CSP, nosniff, immutable asset caching) take
-      # effect; Pages serves no custom headers.
+      # GOING LIVE ON lawtome.conyso.com — three steps, in this order:
+      #
+      #   1. DNS: a CNAME record for `lawtome` pointing at
+      #      <owner>.github.io.  (Not at the repo, at the user/org host.)
+      #   2. Repository variables:
+      #        SITE_BASE   = /
+      #        SITE_ORIGIN = https://lawtome.conyso.com
+      #   3. Push. The build writes dist/CNAME from SITE_ORIGIN, which is how
+      #      Pages learns the domain. Every deploy replaces the whole artifact,
+      #      so that file has to be emitted by the build, not set once by hand —
+      #      otherwise the custom domain silently drops on the next push.
+      #
+      # Why a subdomain and not conyso.com/lawtome: a Pages custom domain serves
+      # at the domain ROOT, so a subpath would need a rewrite layer in front of
+      # conyso.com. It would also share conyso.com's crawl budget — which, at
+      # ~40 useful HTML fetches a day against a sitemap of 1,104 URLs, already
+      # leaves roughly two thirds of that site undiscovered. Adding 1,785 URLs
+      # to that queue would slow both. See docs/market.md.
       - run: npm run build -- --base=${{ vars.SITE_BASE || format('/{0}/', github.event.repository.name) }} --origin=${{ vars.SITE_ORIGIN || format('https://{0}.github.io', github.repository_owner) }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

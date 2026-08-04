@@ -793,6 +793,21 @@ export async function buildSite(opts) {
       caption: imgCaption(por),
     });
   }
+  // CNAME — how GitHub Pages learns its custom domain.
+  //
+  // Pages reads a file literally named CNAME at the root of the published
+  // artifact and serves the site from that host. Without it a custom domain
+  // configured in the repository settings is silently dropped on the next
+  // deploy, because each deploy replaces the whole artifact.
+  //
+  // Emitted only when the site is served from the ROOT of its own host. A Pages
+  // custom domain always serves at the root, so a base of anything other than
+  // '/' means the site is behind a rewrite on somebody else's host and a CNAME
+  // would be a claim on a domain this artifact does not own.
+  if (base === '/' && origin) {
+    writes.push(writePage(join(out, 'CNAME'), `${new URL(origin).host}\n`));
+  }
+
   // IndexNow proof-of-ownership file. Named after the key, containing the key,
   // at the site root — that is the entire verification scheme. The key is public
   // by design: it proves that whoever submits URLs can also write to this site,
