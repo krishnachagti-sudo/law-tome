@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is one of the most general and useful results in operations, letting managers convert between crowding, flow, and waiting time in queues of every kind — shops, factories, call centres, software pipelines. Its distribution-free generality means it applies almost anywhere items flow through a stable system.",
   "working": [
-    {"lead": "Convert between the three quantities", "text": "given any two of population, arrival rate, and dwell time in a stable system, compute the third."},
-    {"lead": "Cut work in progress to cut wait", "text": "in a flow system with fixed throughput, limit the work in progress to shorten cycle time, as Kanban does."},
-    {"lead": "Check for steady state", "text": "apply it only to stationary systems in equilibrium, not to transient or growing ones where the averages are not yet stable."}
+    {
+      "lead": "Convert between the three quantities",
+      "text": "given any two of population, arrival rate, and dwell time in a stable system, compute the third."
+    },
+    {
+      "lead": "Cut work in progress to cut wait",
+      "text": "in a flow system with fixed throughput, limit the work in progress to shorten cycle time, as Kanban does."
+    },
+    {
+      "lead": "Check for steady state",
+      "text": "apply it only to stationary systems in equilibrium, not to transient or growing ones where the averages are not yet stable."
+    }
   ],
   "limits": "It requires a stationary system in steady state — stable, with items conserved so that the average arrival rate equals the average departure rate. It is misapplied to transient, unstable, or growing systems. It concerns long-run averages and finite means, and says nothing about variance, distribution shape, or any individual item's wait. On finite observation windows it holds only approximately, needing care about items present at the start and not yet departed at the end.",
   "misreadings": "It is not a statement about any individual's waiting time, only about long-run averages, and it says nothing about variability. And it holds only in steady state — applying it to a system that is still filling up, draining, or unstable gives wrong answers.",
@@ -46,11 +55,27 @@
   "namedAfter": "John D. C. Little",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Little's law, Wikipedia. — the L = λW identity, its distribution-independence, and the stationarity requirement.", "url": "https://en.wikipedia.org/wiki/Little%27s_law", "type": "secondary"},
-    {"text": "Kumar, K. \"A Brief History of Little's Law,\" Polaris Flow Dispatch. — Little's 1961 proof and the Morse challenge.", "url": "https://www.polaris-flow-dispatch.com/p/a-brief-history-of-littles-law", "type": "secondary"}
+    {
+      "text": "Little, J. D. C. (1961). \"A Proof for the Queuing Formula: L = λW.\" Operations Research 9(3), 383-387 — the proof.",
+      "url": "https://doi.org/10.1287/opre.9.3.383",
+      "type": "primary"
+    },
+    {
+      "text": "Little's law, Wikipedia. — the L = λW identity, its distribution-independence, and the stationarity requirement.",
+      "url": "https://en.wikipedia.org/wiki/Little%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Kumar, K. \"A Brief History of Little's Law,\" Polaris Flow Dispatch. — Little's 1961 proof and the Morse challenge.",
+      "url": "https://www.polaris-flow-dispatch.com/p/a-brief-history-of-littles-law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Little%27s_law",
   "related": [
-    {"slug": "brooks-law", "kind": "kindred"}
+    {
+      "slug": "brooks-law",
+      "kind": "kindred"
+    }
   ]
 }
