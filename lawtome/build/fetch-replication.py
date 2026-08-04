@@ -60,12 +60,20 @@ OUT = 'src/data/replication.json'
 # which found no signal", which means something quite different about how much
 # scrutiny the effect has had.
 #
-# The anchoring effect shows the same shape from the other side: 552 rows, but 56
+# The anchoring effect shows the same shape from the other side: 554 rows, but 60
 # distinct replication studies. Counting rows overstates it tenfold; counting
 # studies is the honest number and is still a large one.
 #
-# So the unit of scrutiny is the distinct replication REFERENCE, and the
-# site-level rows are reported separately as "results".
+# So the unit of scrutiny is the distinct replication STUDY, and the site-level
+# rows are reported separately as "results".
+#
+# And the study must be keyed on its DOI, not on its reference string. That
+# correction came out of a QA pass: counting distinct reference strings said the
+# availability heuristic had THREE replication studies, and the page said so.
+# It has one. FReD stores the same Ebersole reference four different ways for
+# those 21 rows - two with trailing whitespace, two with a "Study 1"/"Study 2"
+# suffix - and all four carry the identical DOI 10.1016/j.jesp.2015.10.012. A
+# bibliography string is free text and will not deduplicate; a DOI will.
 MIN_STUDIES = 1
 MIN_OUTCOMES = 3
 
@@ -149,17 +157,23 @@ def main():
             outcome = ''
         ref = r[ix['ref_replication']]
         ref = str(ref).strip() if ref else ''
-        e = found.setdefault(slug, {'effects': set(), 'refs': set(), 'rows': 0, 'outcomes': []})
+        doi = r[ix['doi_replication']]
+        doi = str(doi).strip().lower() if doi else ''
+        e = found.setdefault(slug, {'effects': set(), 'keys': set(), 'refs': {}, 'rows': 0, 'outcomes': []})
         e['effects'].add(effect)
         e['rows'] += 1
-        if ref:
-            e['refs'].add(ref)
+        # DOI where there is one; otherwise a whitespace-collapsed prefix of the
+        # reference, which at least catches trailing-space duplicates.
+        key = doi or ' '.join(ref.split())[:120].lower()
+        if key:
+            e['keys'].add(key)
+            e['refs'].setdefault(key, ref)
         if outcome:
             e['outcomes'].append(outcome)
 
     out = {}
     for slug, e in found.items():
-        studies = len(e['refs'])
+        studies = len(e['keys'])
         if studies < MIN_STUDIES:
             continue
         outcomes = e['outcomes']
@@ -172,7 +186,7 @@ def main():
             # is the difference between a statistic and something a reader can go
             # and check - and where a single study carries many results, knowing
             # WHICH study is the whole of the interpretation.
-            'ref': sorted(e['refs'])[0][:300] if studies == 1 else None,
+            'ref': (list(e['refs'].values())[0][:300] if studies == 1 else None),
             'db': 'FReD',
             'cite': FRED_CITE,
             'source': FRED_DOI,

@@ -42,15 +42,25 @@ defensible first pass and would change the ratio meaningfully.
 *Risk of not doing it: someone writes the "it's just Wikipedia with a stylesheet"
 post, and they will be half right.*
 
-### A2. The reliability ratings are unaccompanied judgement — **L, harvest, high value**
+### A2. ~~The reliability ratings are unaccompanied judgement~~ — **done for 31 entries**
 Every rating is ours. `/how-solid/` says so, which is the right thing to do and
 does not make it less true. FORRT's replication database records
 replicated/failed/reversed status with effect sizes for 600+ effects across 22
 disciplines. Citing it per entry — *not* absorbing it — would put external
 evidence beside our judgement.
 
-**Check the data licence first.** FORRT's site is CC BY-NC-SA; ours is CC BY.
-Linking and citing needs no licence; ingesting probably cannot be done.
+**Done, and the licence caution here was wrong.** FORRT's *site* is CC BY-NC-SA
+but the *dataset* is CC BY 4.0, so it could be joined rather than merely linked.
+31 entries now carry FReD's counts on the entry page and the verdict page. Two
+counting traps are recorded in build/fetch-replication.py: a FReD row is a
+site-level result, not a replication attempt, and the same study appears under
+several reference strings, so studies must be keyed on DOI. Getting either wrong
+publishes a confident falsehood — the second one did, briefly, and said the
+availability heuristic had three replication studies when it has one.
+
+Still open: the remaining ~1,085 entries have no external evidence beside their
+rating, because FReD covers effects in psychology and economics and most of this
+index is not that.
 
 ### A3. 484 entries have no fame measurement, and most look harvestable — **M, harvest, higher value than it looks**
 `ngram` covers 633 of 1,116 (57%). The unmeasured **484** are excluded from

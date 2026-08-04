@@ -39,17 +39,35 @@ export function replicationFor(law, doc) {
 /**
  * Does FReD's record sit awkwardly against our rating?
  *
- * Deliberately narrow: it fires only when we call something Empirical and a
- * majority of coded replication attempts found no signal. That is the one
- * combination a reader would be entitled to call us out on, and the page should
- * say it before they do. It does NOT fire the other way — an entry we rate
- * Contested whose replications succeed is us being cautious, which needs no
- * apology.
+ * Narrow, and narrower than it first was. It fires only when we call something
+ * Empirical, a majority of coded results found no signal, AND more than one
+ * study is involved.
+ *
+ * That last condition was added after looking at the built page. The
+ * availability heuristic has one replication study reporting 21 site-level
+ * results, 19 of which found no signal — and on the old rule the entry
+ * announced that this "sits awkwardly against our own Empirical rating",
+ * directly under a verdict saying "Yes, as far as the evidence goes".
+ *
+ * The flag was wrong, not the verdict. Many Labs 3 counted that replication a
+ * SUCCESS: the pooled effect was in the predicted direction and statistically
+ * detectable. Individual sites failing to reach significance on a small effect
+ * is what underpowered individual sites do; reading it as a failed replication
+ * is a statistical error, and one this site would be embarrassed to make on a
+ * page about how carefully to read evidence. Where several independent studies
+ * disagree with us, that is a real contradiction and worth saying. Where one
+ * multi-site study's sites disagree with each other, the study's own pooled
+ * conclusion is the finding, and the entry's limits section is the place for the
+ * detail.
+ *
+ * It still does not fire the other way. An entry we rate Contested whose
+ * replications succeed is us being cautious, which needs no apology.
  *
  * @returns {boolean}
  */
 export function contradictsRating(law, rep) {
   if (!law || !rep || rep.signal === undefined) return false;
+  if (!(rep.studies > 1)) return false;
   return law.reliability === 'Empirical' && rep.noSignal > rep.signal;
 }
 

@@ -91,3 +91,23 @@ test('the corpus summary counts what it says it counts', () => {
   assert.equal(s.matched, laws.length);
   assert.deepEqual(s.contradictions, [], 'nothing rated Contested can contradict');
 });
+
+test('a single multi-site study cannot flag a contradiction', () => {
+  // The availability heuristic: one study, 21 site-level results, 19 with no
+  // signal — and Many Labs 3 counted it a successful replication because the
+  // POOLED effect held. Treating the site-level misses as a failed replication
+  // is a statistical error, and the old rule put it on the page.
+  const one = rep({ studies: 1, results: 21, coded: 21, signal: 2, noSignal: 19 });
+  assert.ok(!contradictsRating({ reliability: 'Empirical' }, one));
+  // Several independent studies disagreeing is a real contradiction.
+  const many = rep({ studies: 6, results: 12, coded: 12, signal: 3, noSignal: 9 });
+  assert.ok(contradictsRating({ reliability: 'Empirical' }, many));
+});
+
+test('nothing in the shipped data claims a contradiction it cannot support', () => {
+  for (const [slug, v] of Object.entries(DOC.entries)) {
+    if (contradictsRating({ reliability: 'Empirical' }, v)) {
+      assert.ok(v.studies > 1, `${slug} flags a contradiction off a single study`);
+    }
+  }
+});

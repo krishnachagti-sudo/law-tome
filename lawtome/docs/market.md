@@ -149,13 +149,13 @@ failed, effect size 0.08 against an original 0.61"* would be carrying somebody
 else's evidence, not ours. It would make the ratings defensible in a way nothing
 else on the roadmap does.
 
-**The blocker to check first:** the FORRT site is CC BY-NC-SA. Our corpus is
-CC BY. Non-commercial and share-alike are both incompatible with what we publish,
-so **we cannot absorb their data into ours** if that licence covers the records.
-What we can almost certainly do is *link* and *cite* — "FORRT records a
-replication attempt for this effect", with a URL — which needs no licence at all
-and is the better citation anyway. Confirm the data licence before writing a line
-of code.
+**Checked, and better than this document first assumed.** I recorded the FORRT
+*site* licence — CC BY-NC-SA — and concluded we could link but not ingest. The
+*dataset* is **CC BY 4.0**, compatible with ours, so this is a join rather than a
+link. Done: 31 entries now carry FReD's replication counts, attributed and
+sourced to the OSF deposit. The lesson worth keeping is that a project's site
+licence and its data licence are different things and only one of them governs
+the records.
 
 ### 4.2 Question-shaped titles, borrowed from The Decision Lab
 
