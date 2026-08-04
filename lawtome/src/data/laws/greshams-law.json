@@ -36,9 +36,18 @@
   ],
   "whyItMatters": "It is a foundational result in monetary economics, explaining why good coin disappears under debasement and why fixed exchange arrangements leak. Understood with its scope condition, it also inoculates against the loose analogies ('bad journalism drives out good') that borrow its slogan without its mechanism.",
   "working": [
-    {"lead": "Look for the forced-par constraint", "text": "the law only bites where a legal-tender rule or fixed rate forces two monies to trade at the same value; that constraint is the whole engine."},
-    {"lead": "Expect the good money to hide", "text": "when one form of money is worth more than its face value, assume it will be hoarded, melted, or exported rather than spent."},
-    {"lead": "Don't over-extend the slogan", "text": "'bad X drives out good X' for software or culture usually lacks the forced-par mechanism, so treat those as rhetoric, not the law."}
+    {
+      "lead": "Look for the forced-par constraint",
+      "text": "the law only bites where a legal-tender rule or fixed rate forces two monies to trade at the same value; that constraint is the whole engine."
+    },
+    {
+      "lead": "Expect the good money to hide",
+      "text": "when one form of money is worth more than its face value, assume it will be hoarded, melted, or exported rather than spent."
+    },
+    {
+      "lead": "Don't over-extend the slogan",
+      "text": "'bad X drives out good X' for software or culture usually lacks the forced-par mechanism, so treat those as rhetoric, not the law."
+    }
   ],
   "limits": "Gresham's law holds only within a bounded scope: it requires a binding legal-tender law or fixed exchange ratio forcing acceptance at par. Remove that constraint and the law fails and can reverse — Thiers' law — as it does in hyperinflations where people abandon the bad money entirely. Mundell's qualifier ('if they exchange for the same price') is the true condition, and dropping it makes the 'law' false. It is also endlessly over-extended by analogy to non-monetary domains, where the mechanism does not apply.",
   "misreadings": "It does not say bad things always beat good things in general — it is a specific claim about money under forced par. Outside that constraint it does not hold and can even run backwards, and the popular 'bad drives out good' analogies mostly borrow the words without the mechanism.",
@@ -50,12 +59,32 @@
   "namedAfter": "Thomas Gresham",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Gresham's law, Wikipedia. — the statement, Mundell's qualifier, the Macleod naming, and the earlier statements by Copernicus, Oresme, and Aristophanes.", "url": "https://en.wikipedia.org/wiki/Gresham%27s_law", "type": "secondary"},
-    {"text": "Thiers' law, Wikipedia. — the reverse case under collapsed legal tender.", "url": "https://en.wikipedia.org/wiki/Thiers%27_law", "type": "secondary"},
-    {"text": "Coinage Act of 1965, Wikipedia. — the removal of silver and the disappearance of silver coins from US circulation.", "url": "https://en.wikipedia.org/wiki/Coinage_Act_of_1965", "type": "secondary"}
+    {
+      "text": "Macleod, H. D. (1858). “The Elements of Political Economy.” London: Longman, Brown, Green, Longmans and Roberts. — the book that NAMED the law after Gresham. Gresham never stated it, and Macleod’s attribution is the source of the name rather than of the idea — which is why this entry is also in the misattributed set.",
+      "url": "https://archive.org/details/elementspolitic00maclgoog",
+      "type": "primary"
+    },
+    {
+      "text": "Gresham's law, Wikipedia. — the statement, Mundell's qualifier, the Macleod naming, and the earlier statements by Copernicus, Oresme, and Aristophanes.",
+      "url": "https://en.wikipedia.org/wiki/Gresham%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Thiers' law, Wikipedia. — the reverse case under collapsed legal tender.",
+      "url": "https://en.wikipedia.org/wiki/Thiers%27_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Coinage Act of 1965, Wikipedia. — the removal of silver and the disappearance of silver coins from US circulation.",
+      "url": "https://en.wikipedia.org/wiki/Coinage_Act_of_1965",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Gresham%27s_law",
   "related": [
-    {"slug": "stiglers-law", "kind": "kindred"}
+    {
+      "slug": "stiglers-law",
+      "kind": "kindred"
+    }
   ]
 }
