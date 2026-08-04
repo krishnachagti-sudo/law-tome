@@ -60,7 +60,7 @@ ${hubHead({
     answer,
     stats: edges ? [[nf.format(nodes), 'laws'], [nf.format(edges), 'links'], ...(opposed ? [[nf.format(opposed), 'contradictions']] : [])] : [],
     base,
-  })}    <p class="graph-intro">Every law is a door to a few others. Start from one and walk its web — the laws it echoes, causes, or contradicts. <b>Drag</b> nodes to untangle them, zoom with <b>scroll</b> or the <b>+/−</b> buttons, <b>hover or tap</b> a law to spotlight its links, and <b>select</b> a neighbour to re-centre on it (or the centre law to open it). Dashed red edges mark laws in tension; arrows point cause → consequence. Colour marks the field.</p>
+  })}    <p class="graph-intro">Every law is a door to a few others. Start from one and walk its web — the laws it echoes, causes, or contradicts. <span class="ptr-fine"><b>Drag</b> nodes to untangle them, zoom with <b>scroll</b> or the <b>+/−</b> buttons, <b>hover</b> a law to spotlight its links, and <b>click</b> a neighbour to re-centre on it (or the centre law to open it).</span><span class="ptr-coarse"><b>Drag</b> nodes to untangle them, <b>pinch</b> to zoom or use the <b>+/−</b> buttons, <b>tap</b> a law to spotlight its links, and tap it <b>again</b> to re-centre on it (or the centre law to open it).</span> Dashed red edges mark laws in tension; arrows point cause → consequence. Colour marks the field.</p>
     <div class="graph-search">
       <i class="ti ti-search" aria-hidden="true"></i>
       <input id="graph-q" type="search" placeholder="Start from a law…" autocomplete="off" aria-label="Find a law to explore in the graph">

@@ -2443,3 +2443,28 @@ footer { padding-bottom: env(safe-area-inset-bottom); }
   .card .say { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
                overflow: hidden; }
 }
+
+/* --- 8. Instructions that match the device ---------------------------------
+   Copy describing an interaction is only correct for one pointer type. Telling
+   a phone to "zoom with scroll" or to "hover" names inputs it does not have.
+   Both sentences are in the HTML; the pointer decides which is shown, so no
+   JavaScript is involved and either can still be read by anything parsing the
+   page. */
+.ptr-coarse { display: none; }
+@media (pointer: coarse) {
+  .ptr-fine { display: none; }
+  .ptr-coarse { display: inline; }
+}
+
+/* --- 9. Landscape on a phone -----------------------------------------------
+   The sticky masthead is 11% of a portrait phone, which is fine, and 27% of the
+   same phone turned sideways, which is not — a quarter of the screen given to
+   chrome before a word of the page. Short viewports drop the kicker strip and
+   tighten the bar. Keyed to height rather than orientation so a small window on
+   a laptop gets the same treatment. */
+@media (max-height: 480px) {
+  .kicker { display: none; }
+  .bar { height: 52px; }
+  header { font-size: 15px; }
+  .brand-sub { display: none; }
+}
