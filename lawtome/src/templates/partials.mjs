@@ -326,7 +326,11 @@ export function head({ title, description, base = '/', origin = '', path, canoni
     '<html lang="en" data-theme="dark">',
     '<head>',
     '<meta charset="utf-8">',
-    '<meta name="viewport" content="width=device-width, initial-scale=1">',
+    // viewport-fit=cover lets the page use the full screen on notched phones.
+    // It is only safe paired with the env(safe-area-inset-*) padding in
+    // styles.css — without that, landscape content slides under the notch. The
+    // two belong together and neither should be removed alone.
+    '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
     `<title>${escapeHtml(serpTitle)}</title>`,
   ];
   if (serpDescription) out.push(`<meta name="description" content="${escapeHtml(serpDescription)}">`);

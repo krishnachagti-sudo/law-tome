@@ -249,7 +249,12 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .grid-group-h{grid-column:1/-1;font-family:var(--serif);font-weight:600;font-size:19px;letter-spacing:-.01em;color:var(--ink);margin:16px 0 2px;padding-bottom:9px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:10px}
 .grid-group-h:first-child{margin-top:0}
 .grid-group-n{font-family:var(--mono);font-size:12px;color:var(--faint);font-weight:400}
-@media(max-width:560px){.browse-sort{margin-left:0;width:100%}.browse-select{flex:1}}
+/* flex-wrap on the sort row. It holds a label, a select and a toggle chip in
+   a nowrap flex line; once the select went to 16px for touch (see the MOBILE
+   block) the chip no longer fitted and pushed 25px of horizontal scroll onto
+   /browse/, / and the field pages. Letting the row wrap is the fix the row
+   always needed — the nowrap only survived because the select was small. */
+@media(max-width:560px){.browse-sort{margin-left:0;width:100%;flex-wrap:wrap}.browse-select{flex:1 1 160px}}
 
 /* card grid */
 /* minmax(min(Npx,100%),1fr), not minmax(Npx,1fr), on every auto-fill grid.
@@ -2335,3 +2340,106 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .vd-rep .vd-h{margin-top:0}
 .vd-rep .vd-p{margin-bottom:10px}
 .vd-repcite{font-size:12.5px;line-height:1.6;color:var(--faint);margin:0}
+
+/* ============================================================================
+   MOBILE
+   ----------------------------------------------------------------------------
+   Everything above this point was designed on a wide screen and then checked
+   for overflow on a narrow one. Not the same thing as designing for a phone,
+   and the measurements said so. This block is the phone pass.
+   ========================================================================== */
+
+/* --- 1. Form controls must be at least 16px on touch -----------------------
+   Not a preference. iOS Safari ZOOMS THE WHOLE PAGE when a control smaller
+   than 16px receives focus, and does not zoom back out. The site search input
+   was 15px and the sort select 12px, so tapping either — the two most likely
+   first interactions on a phone — threw the reader into a zoomed viewport they
+   then had to pinch their way out of. */
+@media (pointer: coarse) {
+  /* Editable fields only. iOS zooms on focus of a field you can TYPE into;
+     a button never triggers it. Including `button` here pushed the filter
+     chips on /browse/ wider than the row and put 25px of horizontal scroll
+     back on three pages — a fix creating the bug it sat next to. */
+  input, select, textarea { font-size: 16px; }
+  /* .search input sets 15px at (0,1,1). A media query adds no specificity, so
+     the bare `input` rule above at (0,0,1) loses to it — the selectors have to
+     be matched class for class or the zoom bug survives the fix. */
+  .search input, .search--filter input, .lfilter select,
+  .browse-controls select, .coin-form input, .coin-form textarea,
+  .coin-form select { font-size: 16px; }
+}
+
+/* --- 2. Notch and home-indicator safety ------------------------------------
+   Paired with viewport-fit=cover in the <head>. Cover lets the page paint the
+   full screen, which is what we want; without these insets it also lets
+   landscape text slide under the notch and the footer under the home
+   indicator. Neither half works alone. */
+.wrap { padding-left: max(28px, env(safe-area-inset-left));
+        padding-right: max(28px, env(safe-area-inset-right)); }
+footer { padding-bottom: env(safe-area-inset-bottom); }
+@media (max-width: 560px) {
+  .wrap { padding-left: max(18px, env(safe-area-inset-left));
+          padding-right: max(18px, env(safe-area-inset-right)); }
+}
+
+/* --- 3. Touch feel ---------------------------------------------------------
+   The default tap highlight is a translucent blue-grey box that looks wrong on
+   a dark editorial page and appears on every link. Replaced with a faint warm
+   flash. touch-action:manipulation drops the legacy double-tap-to-zoom wait on
+   controls, so buttons respond immediately. */
+@media (pointer: coarse) {
+  a, button, summary, .card, .sit-row, .cvs {
+    -webkit-tap-highlight-color: rgba(201, 162, 77, .18);
+  }
+  a, button, summary, input, select { touch-action: manipulation; }
+}
+
+/* --- 4. The drop-panel nav ------------------------------------------------
+   Every link in the open menu is padded 14px/28px, but the "More" <details>
+   inherited none of it and sat flush against the left edge, one row out of
+   alignment with the six above it. Its sub-items were indented 10px against
+   their 28px. Both now match the rows they sit in. */
+@media (max-width: 940px) {
+  .navmore > summary { padding: 14px 28px; min-height: 44px; font-size: 16px;
+                       color: var(--ink); border-bottom: 1px solid var(--line); }
+  .navmore[open] > summary { border-bottom-color: var(--line-strong); }
+  .nm-panel { padding: 0; }
+  .nm-item { padding: 13px 28px 13px 40px; min-height: 44px; justify-content: center;
+             border-bottom: 1px solid var(--line); border-radius: 0; }
+  .nm-item:last-child { border-bottom: 0; }
+}
+
+/* --- 5. Tap targets that are genuinely too small ---------------------------
+   The § permalink beside each named variant was a 13px glyph — a real target
+   with a hit area smaller than a fingertip. Breadcrumbs were 17px. Padding
+   gives them a 24px box without moving anything visually, since the glyph
+   stays where it was. */
+@media (pointer: coarse) {
+  .vlink { padding: 6px; margin: -6px; }
+  .crumb a { display: inline-block; padding: 4px 0; }
+  .entry-meta a, .foot-conyso a, .img-credit a { padding: 3px 0; display: inline-block; }
+}
+
+/* --- 6. Dense runs of inline links -----------------------------------------
+   Field pages answer "which laws are in this field?" with the whole list as
+   comma-separated links in one paragraph — 144 of them on /category/psychology/.
+   WCAG exempts inline links in prose from the target-size rule, and padding
+   them would wreck the sentence, so the fix is vertical: more line-height means
+   more clear space between the rows of links, which is where the mis-taps
+   actually happen. */
+@media (pointer: coarse) {
+  .hub-faq-a { line-height: 2; }
+}
+
+/* --- 7. Browse card density ------------------------------------------------
+   /browse/ renders all 1,116 entries server-side, which is deliberate and stays
+   that way — the links are the crawlable index. But at 250px per card that is
+   306 phone-screens of scrolling, and the statement quote is 109px of each one.
+   Clamped to three lines on narrow screens: the card drops to about 175px, the
+   page to roughly 210 screens, and the full statement is still in the HTML for
+   anything reading rather than scrolling. */
+@media (max-width: 560px) {
+  .card { min-height: 0; padding: 18px 18px 15px; }
+  .card .say { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+               overflow: hidden; }
+}
