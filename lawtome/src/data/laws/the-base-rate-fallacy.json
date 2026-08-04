@@ -2,7 +2,9 @@
   "no": "181",
   "slug": "the-base-rate-fallacy",
   "name": "The Base Rate Fallacy",
-  "aliases": ["Base rate neglect"],
+  "aliases": [
+    "Base rate neglect"
+  ],
   "statement": "Judging a case on its specifics while ignoring how common it is to begin with.",
   "statementAccent": "ignoring how common it is to begin with",
   "meaning": "The tendency, when judging a probability, to over-rely on specific information about the case and ignore the base rate — the general prevalence in the population. Because a rare condition is rare, a positive test for it is often a false positive, yet people fixate on the test's accuracy and forget how uncommon the condition is.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It distorts judgement wherever rare events meet imperfect tests — medical screening, security, and law — and drives systematic overconfidence in positive results. It is the practical failure that Bayes' theorem exists to correct, and a staple of the heuristics-and-biases account of human reasoning.",
   "working": [
-    {"lead": "Start from the base rate", "text": "before weighing a test result, ask how common the condition is, and let that prior temper your reading of the evidence."},
-    {"lead": "Compute the positive predictive value", "text": "for a rare condition, work out how many positives are actually true rather than trusting the headline accuracy."},
-    {"lead": "Reframe in natural frequencies", "text": "recast probabilities as counts — say, ten in a thousand rather than one percent — which sharply improves people's Bayesian reasoning."}
+    {
+      "lead": "Start from the base rate",
+      "text": "before weighing a test result, ask how common the condition is, and let that prior temper your reading of the evidence."
+    },
+    {
+      "lead": "Compute the positive predictive value",
+      "text": "for a rare condition, work out how many positives are actually true rather than trusting the headline accuracy."
+    },
+    {
+      "lead": "Reframe in natural frequencies",
+      "text": "recast probabilities as counts — say, ten in a thousand rather than one percent — which sharply improves people's Bayesian reasoning."
+    }
   ],
   "limits": "It is a robust, widely replicated cognitive bias with a precise normative benchmark in Bayes' theorem. A notable qualification: Gigerenzer and Hoffrage showed that presenting the same problem in natural frequencies rather than probabilities substantially increases correct answers, so the error is partly a matter of representation and can be reduced, though not eliminated. There is also genuine scholarly debate over how irrational base-rate neglect really is and how to characterise it normatively — the empirical phenomenon is not in doubt, but its interpretation is contested.",
   "misreadings": "It is not that base rates always dominate — specific evidence matters too — but that people wrongly ignore the base rate almost entirely. And it is not immovable: reframing the problem in natural frequencies reliably reduces the error, so it is partly a failure of presentation, not only of reasoning.",
@@ -47,11 +58,27 @@
   "namedAfter": "Amos Tversky and Daniel Kahneman",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Base rate fallacy, Wikipedia. — the definition, the medical and screening examples, and the Bayesian benchmark.", "url": "https://en.wikipedia.org/wiki/Base_rate_fallacy", "type": "secondary"},
-    {"text": "Representativeness heuristic, Wikipedia. — the Tom W. and taxicab problems and base-rate neglect.", "url": "https://en.wikipedia.org/wiki/Representativeness_heuristic", "type": "secondary"}
+    {
+      "text": "Kahneman, D. & Tversky, A. (1973). “On the psychology of prediction.” Psychological Review, vol. 80. — the paper demonstrating base-rate neglect.",
+      "url": "https://doi.org/10.1037/h0034747",
+      "type": "primary"
+    },
+    {
+      "text": "Base rate fallacy, Wikipedia. — the definition, the medical and screening examples, and the Bayesian benchmark.",
+      "url": "https://en.wikipedia.org/wiki/Base_rate_fallacy",
+      "type": "secondary"
+    },
+    {
+      "text": "Representativeness heuristic, Wikipedia. — the Tom W. and taxicab problems and base-rate neglect.",
+      "url": "https://en.wikipedia.org/wiki/Representativeness_heuristic",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Base_rate_fallacy",
   "related": [
-    {"slug": "bayes-theorem", "kind": "tension"}
+    {
+      "slug": "bayes-theorem",
+      "kind": "tension"
+    }
   ]
 }

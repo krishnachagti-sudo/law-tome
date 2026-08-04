@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is the foundational bridge between the informal idea of computation and its precise mathematical model, licensing the whole theory of computability. Because of it, results proved about Turing machines — like the undecidability of the halting problem — are taken to apply to every possible computer and programming language.",
   "working": [
-    {"lead": "Treat Turing-computable as computable", "text": "when reasoning about what any algorithm can do, use the Turing machine as the stand-in for computation in general."},
-    {"lead": "Read the equivalences as evidence", "text": "take the coincidence of independent models on one function class as the reason to accept the thesis, not a proof of it."},
-    {"lead": "Separate the versions", "text": "keep the original computability thesis distinct from the physical and efficiency versions, which are separate and contested claims."}
+    {
+      "lead": "Treat Turing-computable as computable",
+      "text": "when reasoning about what any algorithm can do, use the Turing machine as the stand-in for computation in general."
+    },
+    {
+      "lead": "Read the equivalences as evidence",
+      "text": "take the coincidence of independent models on one function class as the reason to accept the thesis, not a proof of it."
+    },
+    {
+      "lead": "Separate the versions",
+      "text": "keep the original computability thesis distinct from the physical and efficiency versions, which are separate and contested claims."
+    }
   ],
   "limits": "It is a thesis, not a theorem, and cannot be formally proved, because one side of it — 'effectively calculable' — is an informal, pre-mathematical notion, and no proof can equate a precise class with a vague intuition. It could in principle be refuted by exhibiting an accepted mechanical procedure that no Turing machine computes, which has never happened. Its physical version, about what real devices can compute, depends on open physics; its efficiency version is challenged by quantum computing. These stronger claims are logically separate from the original and should not be conflated with it.",
   "misreadings": "It is not a proven theorem — the equivalence of the various computation models is proved, but the thesis linking them to the informal notion of computability is not and cannot be. And the popular slogans about physical devices or efficient simulation are separate, contested theses, not the original claim.",
@@ -46,11 +55,27 @@
   "namedAfter": "Alonzo Church and Alan Turing",
   "namesakeKind": "person",
   "sources": [
-    {"text": "The Church-Turing Thesis, Stanford Encyclopedia of Philosophy. — the statement, why it is a thesis not a theorem, and the separate physical and extended versions.", "url": "https://plato.stanford.edu/entries/church-turing/", "type": "secondary"},
-    {"text": "Church-Turing thesis, Wikipedia. — the effective-calculability formulation and the convergence of computation models.", "url": "https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis", "type": "secondary"}
+    {
+      "text": "Turing, A. (1937). “On Computable Numbers, with an Application to the Entscheidungsproblem.” Proceedings of the London Mathematical Society, s2-42. — Turing's half of the thesis, published in the 1937 volume.",
+      "url": "https://doi.org/10.1112/plms/s2-42.1.230",
+      "type": "primary"
+    },
+    {
+      "text": "The Church-Turing Thesis, Stanford Encyclopedia of Philosophy. — the statement, why it is a thesis not a theorem, and the separate physical and extended versions.",
+      "url": "https://plato.stanford.edu/entries/church-turing/",
+      "type": "secondary"
+    },
+    {
+      "text": "Church-Turing thesis, Wikipedia. — the effective-calculability formulation and the convergence of computation models.",
+      "url": "https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis",
   "related": [
-    {"slug": "the-halting-problem", "kind": "kindred"}
+    {
+      "slug": "the-halting-problem",
+      "kind": "kindred"
+    }
   ]
 }

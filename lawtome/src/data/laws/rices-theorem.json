@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It vastly generalises the halting problem, showing that undecidability is not a quirk of one question but pervades every behavioural property of programs. It is the theoretical reason perfect, general-purpose program analysis, verification, and optimisation are impossible, and why such tools rely on sound approximation instead.",
   "working": [
-    {"lead": "Expect behavioural questions to be undecidable", "text": "for any non-trivial property of what an arbitrary program does, assume no general algorithm can decide it."},
-    {"lead": "Lean on syntactic properties where you can", "text": "note that properties of the source text itself, unlike behaviour, are often decidable and can be checked directly."},
-    {"lead": "Approximate soundly", "text": "since perfect behavioural analysis is impossible, build tools that safely over- or under-approximate rather than aim for exact answers."}
+    {
+      "lead": "Expect behavioural questions to be undecidable",
+      "text": "for any non-trivial property of what an arbitrary program does, assume no general algorithm can decide it."
+    },
+    {
+      "lead": "Lean on syntactic properties where you can",
+      "text": "note that properties of the source text itself, unlike behaviour, are often decidable and can be checked directly."
+    },
+    {
+      "lead": "Approximate soundly",
+      "text": "since perfect behavioural analysis is impossible, build tools that safely over- or under-approximate rather than aim for exact answers."
+    }
   ],
   "limits": "It applies only to semantic, behavioural properties — properties of the function computed. Syntactic properties of the source text, such as its length or whether it contains a certain keyword, are decidable, and the theorem says nothing against them. Trivial properties, true of every program or of none, are also decidable; non-triviality is a required hypothesis. And it concerns general algorithms over all programs — many specific instances, and restricted or finite-state classes, are perfectly decidable.",
   "misreadings": "It does not say every property of a program is undecidable — syntactic properties of the source are decidable, and so are trivial properties. And it is about general algorithms over all programs, not about any particular program, whose behaviour may well be determinable case by case.",
@@ -46,12 +55,31 @@
   "namedAfter": "Henry Gordon Rice",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Rice's theorem, Wikipedia. — the non-trivial-semantic-property statement, the halting-problem reduction, and the semantic-versus-syntactic distinction.", "url": "https://en.wikipedia.org/wiki/Rice%27s_theorem", "type": "secondary"},
-    {"text": "Rice's theorem, Wolfram MathWorld. — the index-set formulation and the 1953 citation.", "url": "https://mathworld.wolfram.com/RicesTheorem.html", "type": "secondary"}
+    {
+      "text": "Rice, H. (1953). “Classes of recursively enumerable sets and their decision problems.” Transactions of the American Mathematical Society, vol. 74. — the paper proving the theorem.",
+      "url": "https://doi.org/10.1090/S0002-9947-1953-0053041-6",
+      "type": "primary"
+    },
+    {
+      "text": "Rice's theorem, Wikipedia. — the non-trivial-semantic-property statement, the halting-problem reduction, and the semantic-versus-syntactic distinction.",
+      "url": "https://en.wikipedia.org/wiki/Rice%27s_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Rice's theorem, Wolfram MathWorld. — the index-set formulation and the 1953 citation.",
+      "url": "https://mathworld.wolfram.com/RicesTheorem.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Rice%27s_theorem",
   "related": [
-    {"slug": "the-halting-problem", "kind": "cause"},
-    {"slug": "godels-incompleteness-theorems", "kind": "kindred"}
+    {
+      "slug": "the-halting-problem",
+      "kind": "cause"
+    },
+    {
+      "slug": "godels-incompleteness-theorems",
+      "kind": "kindred"
+    }
   ]
 }

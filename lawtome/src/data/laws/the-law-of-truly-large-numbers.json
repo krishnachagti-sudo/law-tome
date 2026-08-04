@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is the statistical antidote to belief in the miraculous, explaining why astonishing coincidences are expected rather than meaningful. It disciplines how we interpret rare events, prophetic-seeming dreams, and lucky streaks, and it is a staple of skeptical inquiry into the paranormal.",
   "working": [
-    {"lead": "Count all the chances", "text": "before marvelling at a coincidence, ask how many opportunities for it existed across all people, times, and near-matches, not just your own."},
-    {"lead": "Rescope from one to many", "text": "shift the question from the odds of this happening to you to the odds of something like it happening to someone, which is often near-certain."},
-    {"lead": "Do not read meaning into the rare", "text": "treat an expected coincidence as evidence of large numbers, not of a hidden cause or design."}
+    {
+      "lead": "Count all the chances",
+      "text": "before marvelling at a coincidence, ask how many opportunities for it existed across all people, times, and near-matches, not just your own."
+    },
+    {
+      "lead": "Rescope from one to many",
+      "text": "shift the question from the odds of this happening to you to the odds of something like it happening to someone, which is often near-certain."
+    },
+    {
+      "lead": "Do not read meaning into the rare",
+      "text": "treat an expected coincidence as evidence of large numbers, not of a hidden cause or design."
+    }
   ],
   "limits": "It is a colloquial principle about coincidences, not a formal theorem — it rests on the sound elementary probability that at least one occurrence becomes near-certain over enough trials. It must not be confused with the actual law of large numbers, a rigorously proven theorem about averages converging; the shared wording is a deliberate pun. It assumes the events are roughly independent with roughly constant probability, and it explains the base rate of coincidences without, by itself, ruling out a genuine cause in any particular case.",
   "misreadings": "It is not the law of large numbers, which is a proven theorem about sample averages converging to the expected value — the two share a name only as a pun. And it does not prove any specific coincidence is meaningless; it shows that coincidences in general are expected, so the burden is on claiming one is special.",
@@ -46,12 +55,31 @@
   "namedAfter": "Persi Diaconis and Frederick Mosteller",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Law of truly large numbers, Wikipedia. — the with-enough-chances statement, the complement-rule mechanism, and the distinction from the law of large numbers.", "url": "https://en.wikipedia.org/wiki/Law_of_truly_large_numbers", "type": "secondary"},
-    {"text": "Law of Truly Large Numbers, Wolfram MathWorld. — the Diaconis-Mosteller statement and the Littlewood connection.", "url": "https://mathworld.wolfram.com/LawofTrulyLargeNumbers.html", "type": "secondary"}
+    {
+      "text": "Diaconis, P. & Mosteller, F. (1989). “Methods for Studying Coincidences.” Journal of the American Statistical Association, vol. 84. — the paper naming the law.",
+      "url": "https://doi.org/10.1080/01621459.1989.10478847",
+      "type": "primary"
+    },
+    {
+      "text": "Law of truly large numbers, Wikipedia. — the with-enough-chances statement, the complement-rule mechanism, and the distinction from the law of large numbers.",
+      "url": "https://en.wikipedia.org/wiki/Law_of_truly_large_numbers",
+      "type": "secondary"
+    },
+    {
+      "text": "Law of Truly Large Numbers, Wolfram MathWorld. — the Diaconis-Mosteller statement and the Littlewood connection.",
+      "url": "https://mathworld.wolfram.com/LawofTrulyLargeNumbers.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Law_of_truly_large_numbers",
   "related": [
-    {"slug": "littlewoods-law", "kind": "kindred"},
-    {"slug": "the-birthday-problem", "kind": "kindred"}
+    {
+      "slug": "littlewoods-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-birthday-problem",
+      "kind": "kindred"
+    }
   ]
 }

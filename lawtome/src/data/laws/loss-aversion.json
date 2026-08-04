@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "Loss aversion is one of the most cited ideas in behavioural economics, invoked to explain the endowment effect, the disposition effect, status quo bias, and the power of loss framing in policy and marketing. It sits at the heart of prospect theory, the framework that earned Daniel Kahneman a Nobel Prize and reshaped how economists model decisions.",
   "working": [
-    {"lead": "Watch the reference point", "text": "notice that whether an outcome feels like a gain or a loss depends on the baseline it is compared against, which framing can shift."},
-    {"lead": "Expect resistance to giving up", "text": "anticipate that people will demand more to surrender something than they would pay to get it, and that losses will weigh heavily in their choices."},
-    {"lead": "Hold the magnitude loosely", "text": "treat the roughly twofold figure as a rough approximation, not a fixed constant, since it varies with stakes and context."}
+    {
+      "lead": "Watch the reference point",
+      "text": "notice that whether an outcome feels like a gain or a loss depends on the baseline it is compared against, which framing can shift."
+    },
+    {
+      "lead": "Expect resistance to giving up",
+      "text": "anticipate that people will demand more to surrender something than they would pay to get it, and that losses will weigh heavily in their choices."
+    },
+    {
+      "lead": "Hold the magnitude loosely",
+      "text": "treat the roughly twofold figure as a rough approximation, not a fixed constant, since it varies with stakes and context."
+    }
   ],
   "limits": "The broad prospect-theory framework is influential and well replicated, but loss aversion specifically is genuinely contested. The roughly twofold coefficient comes from a small early sample and varies from about one-and-a-half to two-and-a-half across studies, depending on stakes, framing, and population; small stakes often show little or none. Gal and Rucker have argued loss aversion is substantially overstated and often absent, with many effects better explained by inertia or the status quo, calling it essentially a fallacy as a general bias. Defenders find real but variable support. The qualitative claim that losses often weigh more is solid; the fixed magnitude and universality are not.",
   "misreadings": "It is not an exact law that losing hurts precisely twice as much as winning feels good — the magnitude is context-dependent and disputed. And loss aversion specifically should not be conflated with the whole of prospect theory, which is broadly influential even where loss aversion as a universal bias is challenged.",
@@ -46,11 +55,27 @@
   "namedAfter": "Daniel Kahneman and Amos Tversky",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Loss aversion, Wikipedia. — the losses-loom-larger statement, the roughly twofold ratio, and the Gal-Rucker critique.", "url": "https://en.wikipedia.org/wiki/Loss_aversion", "type": "secondary"},
-    {"text": "Prospect theory, Wikipedia. — the value function, the 1979 and 1992 papers, and the framework's status.", "url": "https://en.wikipedia.org/wiki/Prospect_theory", "type": "secondary"}
+    {
+      "text": "Kahneman, D. & Tversky, A. (1979). “Prospect Theory: An Analysis of Decision under Risk.” Econometrica, vol. 47, p. 263. — the paper introducing prospect theory and the loss-aversion asymmetry.",
+      "url": "https://doi.org/10.2307/1914185",
+      "type": "primary"
+    },
+    {
+      "text": "Loss aversion, Wikipedia. — the losses-loom-larger statement, the roughly twofold ratio, and the Gal-Rucker critique.",
+      "url": "https://en.wikipedia.org/wiki/Loss_aversion",
+      "type": "secondary"
+    },
+    {
+      "text": "Prospect theory, Wikipedia. — the value function, the 1979 and 1992 papers, and the framework's status.",
+      "url": "https://en.wikipedia.org/wiki/Prospect_theory",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Loss_aversion",
   "related": [
-    {"slug": "the-endowment-effect", "kind": "consequence"}
+    {
+      "slug": "the-endowment-effect",
+      "kind": "consequence"
+    }
   ]
 }
