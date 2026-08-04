@@ -2360,13 +2360,15 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
      a button never triggers it. Including `button` here pushed the filter
      chips on /browse/ wider than the row and put 25px of horizontal scroll
      back on three pages — a fix creating the bug it sat next to. */
-  input, select, textarea { font-size: 16px; }
-  /* .search input sets 15px at (0,1,1). A media query adds no specificity, so
-     the bare `input` rule above at (0,0,1) loses to it — the selectors have to
-     be matched class for class or the zoom bug survives the fix. */
-  .search input, .search--filter input, .lfilter select,
-  .browse-controls select, .coin-form input, .coin-form textarea,
-  .coin-form select { font-size: 16px; }
+  /* !important, deliberately, and the one place in this stylesheet that earns
+     it. A media query adds no specificity, so a bare `input` rule loses to any
+     `.something input` — and the first version of this fix enumerated the
+     classes it knew about and missed .graph-search input, which sat at 13px
+     through a whole audit. Enumerating is the bug. This is a hard device
+     constraint rather than a style preference: no field on this site may be
+     under 16px on touch, whatever it is called or is nested inside. */
+  input:not([type="checkbox"]):not([type="radio"]),
+  select, textarea { font-size: 16px !important; }
 }
 
 /* --- 2. Notch and home-indicator safety ------------------------------------
@@ -2431,6 +2433,17 @@ footer { padding-bottom: env(safe-area-inset-bottom); }
   .hub-faq-a { line-height: 2; }
 }
 
+/* --- 6b. Standalone links in dense index lists -----------------------------
+   /also-known-as/ pairs 1,400 aliases with the entry each one names. The law
+   link is not prose — it is the whole point of the row and the only thing to
+   tap — so unlike the inline runs above it gets a real target box. On a narrow
+   screen it already occupies its own grid row, so the padding costs nothing
+   but the height it is there to provide. Same for the category chip on cards
+   and the small links on /best-known/. */
+@media (pointer: coarse) {
+  .aka-l, .card .cat, .bk-l { display: inline-block; padding: 4px 0; min-height: 24px; }
+}
+
 /* --- 7. Browse card density ------------------------------------------------
    /browse/ renders all 1,116 entries server-side, which is deliberate and stays
    that way — the links are the crawlable index. But at 250px per card that is
@@ -2467,4 +2480,32 @@ footer { padding-bottom: env(safe-area-inset-bottom); }
   .bar { height: 52px; }
   header { font-size: 15px; }
   .brand-sub { display: none; }
+}
+
+/* --- 6c. Reference-index rows ----------------------------------------------
+   The index pages are tables in everything but markup: one row per quote,
+   source host, pronunciation or misattribution, and the law it belongs to is
+   the single link in its cell. /quotes/ alone is 1,116 of them. A link that is
+   the entire content of a cell is not a link in prose — nothing reads around
+   it, so a target box costs no legibility. `.sr-laws` and `.cy-laws` hold
+   dot-separated runs rather than one link, but they are still a list of
+   destinations rather than a sentence, so they get the same treatment and are
+   free to wrap between items.
+
+   `.ms-who` ("named after X") and `.pr-credit` ("author · licence · source")
+   are deliberately left out: those are sentences with a link inside, which is
+   exactly the inline case WCAG exempts and padding would visibly break.
+
+   The same argument covers two list shapes that carry no class of their own:
+   `.shape-list li` (a law and its year, one per row, on the timeline, origin,
+   kind and audience pages) and the body cells of `.cmp-table`, where the link
+   is the cell. */
+@media (pointer: coarse) {
+  .qt-c a, .cr-src a, .cr-lic a, .sr-host a, .sr-laws a, .pr-laws a,
+  .ms-law a, .cy-laws a, .shape-list a, .cmp-table tbody td a, .cmp-cat a,
+  .cmp-who a, .cmp-src-col h3 a, .save-link {
+    display: inline-block;
+    padding: 3px 0;
+    min-height: 24px;
+  }
 }
