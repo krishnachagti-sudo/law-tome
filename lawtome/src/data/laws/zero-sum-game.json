@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is a foundational concept in game theory and the setting for von Neumann's minimax theorem, defining the class of purely competitive interactions. Just as important is knowing its boundary: recognising that most real interactions — trade, growth, cooperation — are not zero-sum, and that treating them as if they were is a well-documented and costly error.",
   "working": [
-    {"lead": "Check whether the pie is fixed", "text": "before treating a situation as win-lose, ask whether the total really is fixed, since most interactions allow mutual gain."},
-    {"lead": "Solve strict competition with minimax", "text": "for a genuine two-player zero-sum game, find the optimal play through the minimax theorem and its value."},
-    {"lead": "Beware zero-sum thinking", "text": "resist the bias of casting positive-sum situations like trade or negotiation as pure competition, which leads to worse outcomes."}
+    {
+      "lead": "Check whether the pie is fixed",
+      "text": "before treating a situation as win-lose, ask whether the total really is fixed, since most interactions allow mutual gain."
+    },
+    {
+      "lead": "Solve strict competition with minimax",
+      "text": "for a genuine two-player zero-sum game, find the optimal play through the minimax theorem and its value."
+    },
+    {
+      "lead": "Beware zero-sum thinking",
+      "text": "resist the bias of casting positive-sum situations like trade or negotiation as pure competition, which leads to worse outcomes."
+    }
   ],
   "limits": "Zero-sum games are a narrow, idealised class; most real-world interactions are not zero-sum. Trade, investment, innovation, and economic growth are positive-sum, expanding the total, while some interactions, such as costly wars and litigation, are negative-sum, shrinking it. Treating positive-sum situations as zero-sum is a recognised cognitive bias with real consequences, from misjudged negotiations to zero-sum framings of trade and immigration. Even the standard examples carry caveats: poker is zero-sum only among the players before the house takes its cut.",
   "misreadings": "It is not a description of how most of the world works — most interactions are positive-sum, allowing all parties to gain, and treating them as zero-sum is a documented fallacy. And 'zero-sum' as a worldview is a contested metaphor, quite distinct from the precise mathematical class of games.",
@@ -46,12 +55,31 @@
   "namedAfter": "John von Neumann",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Zero-sum game, Wikipedia. — the fixed-total definition, the contrast with non-zero-sum games, and the zero-sum-thinking fallacy.", "url": "https://en.wikipedia.org/wiki/Zero-sum_game", "type": "secondary"},
-    {"text": "Minimax theorem, Wikipedia. — von Neumann's 1928 result for two-person zero-sum games.", "url": "https://en.wikipedia.org/wiki/Minimax_theorem", "type": "secondary"}
+    {
+      "text": "von Neumann, J. (1928). “Zur Theorie der Gesellschaftsspiele.” Mathematische Annalen, vol. 100. — the paper that formalised two-person zero-sum play.",
+      "url": "https://doi.org/10.1007/BF01448847",
+      "type": "primary"
+    },
+    {
+      "text": "Zero-sum game, Wikipedia. — the fixed-total definition, the contrast with non-zero-sum games, and the zero-sum-thinking fallacy.",
+      "url": "https://en.wikipedia.org/wiki/Zero-sum_game",
+      "type": "secondary"
+    },
+    {
+      "text": "Minimax theorem, Wikipedia. — von Neumann's 1928 result for two-person zero-sum games.",
+      "url": "https://en.wikipedia.org/wiki/Minimax_theorem",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Zero-sum_game",
   "related": [
-    {"slug": "the-minimax-theorem", "kind": "kindred"},
-    {"slug": "the-nash-equilibrium", "kind": "kindred"}
+    {
+      "slug": "the-minimax-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-nash-equilibrium",
+      "kind": "kindred"
+    }
   ]
 }

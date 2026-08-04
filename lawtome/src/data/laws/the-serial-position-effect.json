@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It is one of the most reliable findings in memory research and a cornerstone of the case for separate short- and long-term memory systems. Its clean experimental dissociation — a delay wiping out recency but not primacy — made it a classic demonstration in cognitive psychology, and it informs how lists, presentations, and messages are ordered.",
   "working": [
-    {"lead": "Place key items at the ends", "text": "put the most important points first or last, where they are best remembered, not buried in the middle."},
-    {"lead": "Read recency as short-term", "text": "treat the memory for the last few items as fragile, since a delay or distraction erases it."},
-    {"lead": "Give middle items extra support", "text": "reinforce the material in the middle of a list, which is most easily lost, through repetition or emphasis."}
+    {
+      "lead": "Place key items at the ends",
+      "text": "put the most important points first or last, where they are best remembered, not buried in the middle."
+    },
+    {
+      "lead": "Read recency as short-term",
+      "text": "treat the memory for the last few items as fragile, since a delay or distraction erases it."
+    },
+    {
+      "lead": "Give middle items extra support",
+      "text": "reinforce the material in the middle of a list, which is most easily lost, through repetition or emphasis."
+    }
   ],
   "limits": "The empirical effect is robust and highly replicated, but its interpretation is debated. The clean story that recency simply reflects short-term memory emptying is challenged by the long-term recency effect, in which recency reappears even after distractor-filled delays under certain conditions — which a pure short-term account does not predict, motivating alternative context-based and temporal-distinctiveness models. So the data, both the curve and the delay dissociation, are solid, while the mechanistic claim that recency is just short-term memory is contested.",
   "misreadings": "It is not that middle items cannot be remembered at all — they are recalled less well, not never. And the recency advantage is not permanent; a short delay or distracting task erases it, which is exactly what distinguishes it from the durable primacy advantage.",
@@ -46,12 +55,31 @@
   "namedAfter": "Hermann Ebbinghaus",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Serial-position effect, Wikipedia. — the primacy and recency effects, the two-store mechanism, and the distractor findings.", "url": "https://en.wikipedia.org/wiki/Serial-position_effect", "type": "secondary"},
-    {"text": "\"Serial Position Effect,\" Simply Psychology. — the Murdock 1962 curve and the Glanzer and Cunitz 1966 delay dissociation.", "url": "https://www.simplypsychology.org/primacy-recency.html", "type": "secondary"}
+    {
+      "text": "Ebbinghaus, H. (1913). “Memory: A contribution to experimental psychology.” — the English translation of Ebbinghaus's 1885 Über das Gedächtnis.",
+      "url": "https://doi.org/10.1037/10011-000",
+      "type": "primary"
+    },
+    {
+      "text": "Serial-position effect, Wikipedia. — the primacy and recency effects, the two-store mechanism, and the distractor findings.",
+      "url": "https://en.wikipedia.org/wiki/Serial-position_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Serial Position Effect,\" Simply Psychology. — the Murdock 1962 curve and the Glanzer and Cunitz 1966 delay dissociation.",
+      "url": "https://www.simplypsychology.org/primacy-recency.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Serial-position_effect",
   "related": [
-    {"slug": "millers-law", "kind": "kindred"},
-    {"slug": "zeigarnik-effect", "kind": "kindred"}
+    {
+      "slug": "millers-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "zeigarnik-effect",
+      "kind": "kindred"
+    }
   ]
 }

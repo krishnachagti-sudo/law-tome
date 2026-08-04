@@ -32,9 +32,18 @@
   ],
   "whyItMatters": "It was the founding theorem of game theory — von Neumann held there could be no theory of games without it — and the cornerstone of his 1944 book with Morgenstern. It established that pure competition has a determinate solution, seeded the modern equilibrium concepts, and links game theory to linear programming and to the algorithms behind game-playing computers.",
   "working": [
-    {"lead": "Randomise to be unexploitable", "text": "in a strictly competitive game, use a mixed strategy, since any predictable pure strategy can be exploited by the opponent."},
-    {"lead": "Read the value as the fair price", "text": "treat the game's value as what optimal play guarantees, the ceiling one player can force and the floor the other can secure."},
-    {"lead": "Keep to two-player zero-sum", "text": "apply the theorem only to strictly competitive two-person games, and reach for Nash equilibrium beyond them."}
+    {
+      "lead": "Randomise to be unexploitable",
+      "text": "in a strictly competitive game, use a mixed strategy, since any predictable pure strategy can be exploited by the opponent."
+    },
+    {
+      "lead": "Read the value as the fair price",
+      "text": "treat the game's value as what optimal play guarantees, the ceiling one player can force and the floor the other can secure."
+    },
+    {
+      "lead": "Keep to two-player zero-sum",
+      "text": "apply the theorem only to strictly competitive two-person games, and reach for Nash equilibrium beyond them."
+    }
   ],
   "limits": "It applies specifically to two-person, zero-sum, finite games, and mixed strategies are essential, since the pure-strategy version generally fails. It does not extend as it stands to non-zero-sum games or to three or more players. Nash equilibrium is the generalisation that guarantees an equilibrium exists in finite many-player, non-zero-sum games — but there the clean features are lost: the equilibrium need not have a single value, may not be unique, and the interchangeability of max-min and min-max no longer holds. The theorem is exact only within the standard expected-utility framework.",
   "misreadings": "It does not apply to games where players can both gain or both lose — those are non-zero-sum, and Nash equilibrium, not minimax, is the tool. And the guaranteed value requires mixed strategies; there is generally no optimal single deterministic move.",
@@ -46,12 +55,31 @@
   "namedAfter": "John von Neumann",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Minimax theorem, Wikipedia. — the max-min equals min-max statement, the saddle point, and the 1928 von Neumann origin.", "url": "https://en.wikipedia.org/wiki/Minimax_theorem", "type": "secondary"},
-    {"text": "Minimax Theorem, Wolfram MathWorld. — the formal statement and the role of mixed strategies.", "url": "https://mathworld.wolfram.com/MinimaxTheorem.html", "type": "secondary"}
+    {
+      "text": "von Neumann, J. (1928). “Zur Theorie der Gesellschaftsspiele.” Mathematische Annalen, vol. 100. — the paper proving the theorem.",
+      "url": "https://doi.org/10.1007/BF01448847",
+      "type": "primary"
+    },
+    {
+      "text": "Minimax theorem, Wikipedia. — the max-min equals min-max statement, the saddle point, and the 1928 von Neumann origin.",
+      "url": "https://en.wikipedia.org/wiki/Minimax_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Minimax Theorem, Wolfram MathWorld. — the formal statement and the role of mixed strategies.",
+      "url": "https://mathworld.wolfram.com/MinimaxTheorem.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Minimax_theorem",
   "related": [
-    {"slug": "zero-sum-game", "kind": "kindred"},
-    {"slug": "the-nash-equilibrium", "kind": "kindred"}
+    {
+      "slug": "zero-sum-game",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-nash-equilibrium",
+      "kind": "kindred"
+    }
   ]
 }
