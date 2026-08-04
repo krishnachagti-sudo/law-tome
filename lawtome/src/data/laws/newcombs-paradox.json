@@ -2,7 +2,9 @@
   "no": "358",
   "slug": "newcombs-paradox",
   "name": "Newcomb's Paradox",
-  "aliases": ["Newcomb's problem"],
+  "aliases": [
+    "Newcomb's problem"
+  ],
   "statement": "Two rules of rational choice — dominance and expected value — give opposite answers to the same decision.",
   "statementAccent": "give opposite answers",
   "meaning": "Newcomb's paradox is a decision puzzle in which two standard principles of rational choice conflict. A reliable predictor has already put money in two boxes: a transparent box holds a small sure sum, and an opaque box holds a large sum, but only if the predictor foresaw that you would take the opaque box alone. You choose between taking both boxes or only the opaque one. One line of reasoning says take both; another says take only one; and each seems compellingly rational, so the paradox is that rationality appears to speak with two voices.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It is a central test case in decision theory, dividing the field into causal and evidential camps and forcing precision about how prediction, correlation, and causation bear on rational choice. Its structure recurs in real problems of cooperation, commitment, and prediction, and it remains a benchmark against which theories of rationality are measured, including in recent work on decision-making by predictable agents.",
   "working": [
-    {"lead": "See the conflict of principles", "text": "recognise that dominance and expected-value reasoning genuinely diverge here, which is the source of the puzzle rather than a mistake in either."},
-    {"lead": "Ask what the choice can affect", "text": "notice that your decision cannot causally change the already-fixed contents, yet is strongly correlated with them — the crux dividing causal and evidential theorists."},
-    {"lead": "Pick a decision theory", "text": "commit to whether rationality tracks causal consequences or evidential expectations, since Newcomb's problem forces the choice and neither answer is uncontested."}
+    {
+      "lead": "See the conflict of principles",
+      "text": "recognise that dominance and expected-value reasoning genuinely diverge here, which is the source of the puzzle rather than a mistake in either."
+    },
+    {
+      "lead": "Ask what the choice can affect",
+      "text": "notice that your decision cannot causally change the already-fixed contents, yet is strongly correlated with them — the crux dividing causal and evidential theorists."
+    },
+    {
+      "lead": "Pick a decision theory",
+      "text": "commit to whether rationality tracks causal consequences or evidential expectations, since Newcomb's problem forces the choice and neither answer is uncontested."
+    }
   ],
   "limits": "It is an unresolved problem with no consensus: able philosophers defend one-boxing and two-boxing, and the split between causal and evidential decision theory persists. Some argue the scenario is underspecified or even incoherent — that a truly infallible predictor and genuine free choice sit uneasily together — so part of the dispute concerns whether the problem is well posed. The verdict one reaches depends on prior commitments about causation and rationality that the problem itself does not settle, which is why it functions as a probe rather than a solvable exercise.",
   "misreadings": "It is not a simple maths error with an obvious right answer — sophisticated theorists land on opposite sides, and the disagreement is principled. It does not require backward causation: the predictor's accuracy can rest on ordinary prediction, not on your choice reaching back in time. And it is not merely academic; its logic underlies real dilemmas of prediction and commitment where a rational agent's choice is correlated with what others have already anticipated.",
@@ -47,11 +58,27 @@
   "namedAfter": "William Newcomb",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Causal Decision Theory, Stanford Encyclopedia of Philosophy. — Newcomb's problem and the causal-versus-evidential divide it created.", "url": "https://plato.stanford.edu/entries/decision-causal/", "type": "secondary"},
-    {"text": "Newcomb's paradox, Wikipedia. — the two-box setup, the Newcomb and Nozick attribution, and the one-boxer and two-boxer arguments.", "url": "https://en.wikipedia.org/wiki/Newcomb%27s_paradox", "type": "secondary"}
+    {
+      "text": "Nozick, R. (1969). “Newcomb’s Problem and Two Principles of Choice.” Essays in Honor of Carl G. Hempel. — Nozick's paper, which introduced Newcomb's problem to philosophy.",
+      "url": "https://doi.org/10.1007/978-94-017-1466-2_7",
+      "type": "primary"
+    },
+    {
+      "text": "Causal Decision Theory, Stanford Encyclopedia of Philosophy. — Newcomb's problem and the causal-versus-evidential divide it created.",
+      "url": "https://plato.stanford.edu/entries/decision-causal/",
+      "type": "secondary"
+    },
+    {
+      "text": "Newcomb's paradox, Wikipedia. — the two-box setup, the Newcomb and Nozick attribution, and the one-boxer and two-boxer arguments.",
+      "url": "https://en.wikipedia.org/wiki/Newcomb%27s_paradox",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Newcomb%27s_paradox",
   "related": [
-    {"slug": "the-prisoners-dilemma", "kind": "kindred"}
+    {
+      "slug": "the-prisoners-dilemma",
+      "kind": "kindred"
+    }
   ]
 }
