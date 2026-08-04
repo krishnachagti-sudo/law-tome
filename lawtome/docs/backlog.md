@@ -223,9 +223,12 @@ business decision rather than a technical one.
 
 # D. Distribution and citation
 
-Read [docs/market.md §3](market.md) first: with ~93% zero-click in AI Mode and
-only 17% of AI Overview citations coming from the organic top ten, **citation is
-the goal and traffic is a lagging proxy for it.**
+Read [docs/market.md §3](market.md) first, and
+[docs/SEARCH-VISIBILITY.md](SEARCH-VISIBILITY.md) for the mechanics behind it:
+with ~93% zero-click in AI Mode and only 38% of AI Overview citations coming from
+pages that rank in the organic top ten, **citation is the goal and traffic is a
+lagging proxy for it.** Two items in this section were written before that
+research and are corrected in place below.
 
 ### D1. The custom domain — **S, none, blocking**
 `SITE_BASE` / `SITE_ORIGIN` repo variables. Every surface built in the last two
@@ -238,9 +241,52 @@ Cited-source credibility signals. We have `DefinedTerm`, `CollectionPage`,
 `FAQPage`, `BreadcrumbList`. Explicit Organization and Author markup is what
 answer engines use to decide a source is real.
 
+**Raised in priority by the 2026-08-04 research, and given a specific shape.** An
+`Organization` block with `sameAs` pointing at our Wikidata item is the one piece
+of structured data with a durable payoff: it is a machine-readable identity that
+survives paraphrase and summarisation, which is exactly the failure mode of being
+quoted without being named. Everything else in our JSON-LD describes content;
+this would describe *us*.
+
+Note also that **`FAQPage` no longer produces a rich result** — Google's
+deprecation notice went up 2026-05-07 and Search Console support was pulled
+through August. The markup stays (Google says it still uses it to understand a
+page, and removing 1,116 working blocks buys nothing), but it should no longer be
+counted in this list as an answer-engine asset. See `SEARCH-VISIBILITY.md` §4.
+
 ### D3. More tables — **M, derive**
 Tables are reported to raise citation frequency because they are trivially
 parseable. Much of what we present as prose or cards is tabular underneath.
+Filed under *plausible-but-unproven* in `SEARCH-VISIBILITY.md` §9 — the mechanism
+is sound, the published numbers are vendor claims. Do it where a table is the
+honest format for the data, not as a citation tactic.
+
+### D3b. `lastmod` from content, not build time — **S, derive, new**
+Google *"uses the `<lastmod>` value if it's consistently and verifiably accurate"*
+— and ignores it thereafter if it isn't. A generator that stamps every URL with
+the build date teaches Google to discard the field permanently.
+
+**Checked, and we do exactly this.** `buildSitemap(paths, origin, lastmod, …)`
+takes one date and writes it into every `<lastmod>`; the caller passes
+`buildDate`. So every one of ~7,000 URLs claims to have changed today, on every
+build, including the 1,116 entries that have not been touched in months. That is
+the *worst* case for this signal — not a missing field but a consistently false
+one, which is what Google's "consistently and verifiably accurate" test is
+designed to catch.
+
+The fix is a per-path content hash: hash the rendered bytes, compare against a
+committed manifest, and only advance `lastmod` when the hash moves. The manifest
+has to be committed because `dist/` is gitignored and CI builds from scratch. Not
+a five-minute edit, but the highest effort-to-effect item added here in weeks.
+
+While in there: `<priority>` and `<changefreq>` are not currently emitted, which
+is correct — Google ignores both. Keep it that way.
+
+### D3c. IndexNow ping on publish — **S, derive, new**
+One HTTP POST reaches Bing, Yandex, Naver, Seznam and Yep. Bing's index backs
+ChatGPT Search and Copilot, so this is the fastest published-to-retrievable path
+for a large slice of the assistant market. Google does not participate and there
+is no equivalent for it beyond Search Console. Almost nobody does this.
 
 ### D4. Submit to the places that matter — **S, author**
 Wikipedia external links where genuinely useful (and never otherwise), the

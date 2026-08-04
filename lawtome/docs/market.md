@@ -118,15 +118,40 @@ distribution plan.
 
 - Zero-click rates in Google's AI Mode are reported around **93%** (Semrush,
   2025); AI Overviews are associated with CTR reductions in the **58%** range.
-- Only **17%** of AI Overview citations come from pages ranking in the organic
-  top ten. Being cited is a *different game* from ranking.
+- Citation has decoupled from ranking. Ahrefs, across 863,000 keywords and ~4M
+  AI Overview URLs, found only **38%** of cited pages also rank in the organic
+  top ten — down from **76%** seven months earlier — with ~**31%** of citations
+  coming from pages not in the top 100 at all. The mechanism is query fan-out:
+  the assistant decomposes a question, retrieves per sub-question, and cites
+  whatever best answers each part.
 - Structured data, clear entity markup and **tables** raise citation frequency.
 
-Read that against what this site already has: schema.org on every page, FAQPage
-across 1,116 entries, `llms.txt` and `llms-full.txt`, a per-entry JSON record,
-`api.json`, a CC BY corpus download, and per-entry Markdown twins. We built for
-citation before it was obviously the right thing to build for. That is luck as
-much as foresight, but it is the asset.
+**That fan-out finding is the most important line in this document for us.** It
+means a site of 1,116 small, precise, separately-addressable entries is the shape
+the retrieval layer now rewards, and a site of forty long guides is not. Our
+granularity stopped being a curation choice and became a distribution advantage.
+
+Read the rest against what this site already has: schema.org on every page, a
+per-entry JSON record, `api.json`, a CC BY corpus download, per-entry Markdown
+twins, and server-rendered HTML throughout — which matters more than it sounds,
+because most AI crawlers fetch JavaScript and never execute it.
+
+**Two corrections to earlier optimism in this document**, both from research on
+2026-08-04 and both written up in `SEARCH-VISIBILITY.md`:
+
+- **`llms.txt` is not a citation asset and should stop being counted as one.**
+  Ahrefs' server logs across 137,210 domains (May 2026): 97% of published
+  `llms.txt` files received zero requests in the month; of the 3% fetched, only
+  19.5% of requests came from named AI tools while 21.7% came from SEO audit
+  tools checking the file exists; and no AI bot ever requested one that wasn't
+  there — they do not probe for it. Google states plainly that no AI text file is
+  needed. Ours costs two function calls at build time, so it stays as a courtesy
+  export, but it is worth nothing strategically.
+- **FAQPage no longer produces a rich result.** Google added the deprecation
+  notice on 2026-05-07 and pulled the Search Console reporting through
+  June–August. The markup is still valid and Google says it still helps it
+  understand a page, so the 1,116 blocks stay — but the rich-result payoff we
+  built them for is gone, and no further work should be planned on that promise.
 
 **The strategic consequence:** the goal is not traffic. The goal is to be *the
 thing quoted when a model answers "is the bystander effect real?"* — and the

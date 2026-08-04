@@ -761,10 +761,23 @@ export async function buildSite(opts) {
   // The generative crawlers are named explicitly and allowed explicitly. A bare
   // `User-agent: *` already permits them, but several of these agents are
   // routinely blocked elsewhere and a named Allow is an unambiguous statement
-  // that this corpus may be read, quoted and cited. Google-Extended in
-  // particular is the switch that governs whether the site can be used to
-  // ground answers rather than merely be crawled, and leaving it implicit is
-  // the kind of omission that quietly costs the thing this index exists for.
+  // that this corpus may be read, quoted and cited.
+  //
+  // Two of these are widely misunderstood and worth stating precisely, because
+  // getting them wrong is how a site ends up invisible to an assistant while
+  // ranking perfectly well in search:
+  //
+  //   OAI-SearchBot is not GPTBot. GPTBot is training; OAI-SearchBot builds the
+  //   index ChatGPT Search answers from. Allowing one does not allow the other.
+  //   Anthropic and Perplexity split their agents the same way, which is why
+  //   all three of each are named here rather than one apiece.
+  //
+  //   Google-Extended governs training and grounding for Gemini Apps and Vertex
+  //   AI. It is NOT the switch for AI Overviews or AI Mode in Google Search —
+  //   those run off ordinary Googlebot access plus the snippet controls — and
+  //   Google states it is not a ranking signal. Allowing it is still right for
+  //   an openly-licensed corpus that wants to be quoted; it just does not do
+  //   the thing it is usually described as doing.
   //
   // Nothing is disallowed. The noindex surfaces (/print/, /embed/, /saved/)
   // must stay crawlable, because a Disallow would stop a crawler ever reading
@@ -796,10 +809,24 @@ export async function buildSite(opts) {
     '',
   ].join('\n')));
 
-  // llms.txt + llms-full.txt (GEO): the llmstxt.org content map for generative
-  // crawlers. Compact index (one bullet per entry, grouped by category) plus a
-  // full dump inlining each entry's definition and sources. Crawler-facing site
-  // files, so — like the sitemap — they don't count toward `pages`/`listings`.
+  // llms.txt + llms-full.txt: the llmstxt.org content map. Compact index (one
+  // bullet per entry, grouped by category) plus a full dump inlining each
+  // entry's definition and sources. Crawler-facing site files, so — like the
+  // sitemap — they don't count toward `pages`/`listings`.
+  //
+  // Kept, but not believed in. Ahrefs' server-log study across 137,210 domains
+  // (May 2026) found 97% of published llms.txt files received zero requests in
+  // the month; that of the 3% fetched, only 19.5% of requests came from named AI
+  // tools against 21.7% from SEO audit tools checking the file exists; and —
+  // decisively — that no AI bot ever requested an llms.txt that wasn't there.
+  // They do not probe for it, so the file cannot be found by adoption. Google
+  // says outright that no AI text file is needed for AI Overviews or AI Mode.
+  //
+  // These stay because the corpus is already in memory and generating them is
+  // two function calls, which is a fair price for a courtesy export. They are
+  // not a distribution channel and nothing downstream should treat them as one.
+  // The per-entry Markdown twins and api.json are the exports that a person or
+  // an agent can actually build against.
   const llmsOpts = { baseUrl: `${origin}${base}`, updated: buildDate };
   writes.push(writePage(join(out, 'llms.txt'), buildLlmsIndex(laws, categories, llmsOpts)));
   writes.push(writePage(join(out, 'llms-full.txt'), buildLlmsFull(laws, categories, llmsOpts)));
