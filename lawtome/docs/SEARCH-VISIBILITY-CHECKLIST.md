@@ -29,6 +29,15 @@ stops being worth it.
 - [ ] `<lastmod>` derived from **actual content change** (content hash or real
       file mtime), never from build time. A build-time stamp trains Google to
       ignore the field permanently.
+  - [ ] If hashing rendered pages: the rendered date is excluded from the hash
+        (render a token, hash, then substitute) — otherwise every page differs
+        every day and you have rebuilt the bug.
+  - [ ] The origin and base path are normalised out of the hash, so the manifest
+        is not valid for only one deploy target.
+  - [ ] The manifest is committed to version control, not written beside the
+        build output that CI throws away.
+  - [ ] The build prints how many pages changed, so "all of them, on a day I
+        edited nothing" is visible rather than silent.
 - [ ] `<priority>` and `<changefreq>` **removed**. Google ignores both.
 - [ ] `<lastmod>` in W3C datetime format, with timezone.
 - [ ] Image sitemap or `<image:image>` entries if images are part of the value.

@@ -433,8 +433,22 @@ ${MORE.map(([path, label, blurb]) => `            <a class="nm-item" href="${bas
   // the first paint before common.js runs) see "1,122", not "1122". The count-up
   // animation still reads the raw value from data-count.
   const c = count == null ? '—' : (typeof count === 'number' ? count.toLocaleString('en-US') : count);
+  // data-nosnippet on the masthead and the site footer.
+  //
+  // Google picks a page's snippet from anywhere in the served HTML, and on this
+  // site the same forty words of chrome — "Vol. I", "a living index of named
+  // laws", "no ads · no tracking", and the twenty-odd links behind "More" —
+  // appear on all 1,785 pages. That is exactly the shape of text that gets
+  // chosen when the real answer is further down, and it is identical on every
+  // page, so when it is chosen the result is 1,785 pages with interchangeable
+  // snippets. Marking it excluded costs nothing and cannot suppress content,
+  // because there is no content in it: the attribute goes on the navigation and
+  // the boilerplate, never on an entry's own words.
+  //
+  // It is a hint to snippet selection only. It does not affect indexing, does
+  // not remove the links from the crawl, and does not change what a reader sees.
   return `<a class="skip" href="#main-content">Skip to content</a>
-<header>
+<header data-nosnippet>
   <div class="kicker"><div class="wrap kick-in">
     <span class="k-l">Vol.&nbsp;I</span>
     <span class="k-c">a living index of named laws · est.&nbsp;mmxxvi</span>
@@ -549,8 +563,10 @@ export function footer({ base = '/', scripts = '' } = {}) {
 ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(label)}</a>`).join('\n')}
       </nav>`;
   // Close the <main> landmark opened in header() before the site footer.
+  // Excluded from snippet selection for the same reason as the header — it is
+  // the same links and the same legal boilerplate on every page. See header().
   return `</main>
-<footer>
+<footer data-nosnippet>
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <a class="foot-seal" href="${base}" aria-label="The Law Tome — home">

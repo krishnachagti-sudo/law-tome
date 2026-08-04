@@ -276,19 +276,87 @@ the *worst* case for this signal — not a missing field but a consistently fals
 one, which is what Google's "consistently and verifiably accurate" test is
 designed to catch.
 
-The fix is a per-path content hash: hash the rendered bytes, compare against a
-committed manifest, and only advance `lastmod` when the hash moves. The manifest
-has to be committed because `dist/` is gitignored and CI builds from scratch. Not
-a five-minute edit, but the highest effort-to-effect item added here in weeks.
+~~The fix is a per-path content hash.~~ **Done.** `build/lastmod.mjs` hashes each
+rendered page, compares against a committed manifest at `src/data/lastmod.json`,
+and only advances the date when the hash moves. Two builds in a row now report
+`lastmod: 0 of 2969 pages changed`.
 
-While in there: `<priority>` and `<changefreq>` are not currently emitted, which
-is correct — Google ignores both. Keep it that way.
+Three things had to be right, and two of them were traps:
+
+1. **The date is part of the page.** `article:modified_time` and `dateModified`
+   are rendered into the HTML, so hashing the finished page folds today's date
+   into the hash and every page differs from yesterday — the original bug, with
+   more machinery. Pages are rendered with a token where the date goes, hashed
+   with the hole still in them, and stamped only once the date is decided.
+2. **The hash must not depend on where the site is deployed.** Every page
+   carries its canonical URL and hundreds of hrefs, so a `--base=/law-tome/`
+   build and a `--base=/lawtome/` build produce different bytes for identical
+   content. Unnormalised, a manifest committed locally would match nothing in
+   CI, CI would re-date the whole site every deploy, and CI does not commit a
+   manifest — so it would never converge. Origin and base are normalised out
+   before hashing. **Constraint: regenerate the manifest with a real base, never
+   `--base=/`** — a bare slash is a prefix of every path in the document.
+3. **Tests must not rewrite the manifest.** The integration suites run full
+   builds; persisting is opt-in and only the CLI asks for it.
+
+Two further things the measurement caught, neither of which reading the code
+would have:
+
+- **Only the site's own URL prefix may be normalised, never the bare origin.**
+  Templates link to `https://conyso.com` as the *publisher* — `parentOrganization`,
+  the footer credit — and those links mean the same thing wherever the site is
+  served. Normalising the bare origin rewrote them in the conyso build and left
+  them alone in the github.io build, so the two disagreed on **1,798 of 2,969**
+  pages. A link to the publisher is content; the site's own prefix is a deploy
+  detail.
+- **Percent-encoded forms count.** The share row on every page carries the
+  page's own URL encoded as a query parameter, so each prefix has to be
+  normalised in both plain and `encodeURIComponent` form.
+
+**21 pages remain origin-dependent, and correctly so:** `/about/`, `/manifesto/`
+and the 19 cheat sheets print the site's host as visible text, because a sheet
+that gets printed needs to say where it came from. Those genuinely change when
+the domain changes. Same-origin determinism is exactly 0 of 2,969.
+
+The build now names the changed pages when there are 25 or fewer. That was added
+mid-diagnosis: grepping the output for suspicious strings sent me after the wrong
+21 pages twice before the build was simply asked which ones.
+
+`datePublished` was removed rather than fixed. It carried the build date too,
+which claimed all 1,116 entries were first published this morning — a stronger
+false claim than the modified one, and one the corpus genuinely cannot support.
+
+**Workflow: run `npm run build` locally and commit `src/data/lastmod.json`
+alongside any content change.** If a build reports every page changed when
+nothing was edited, something volatile has crept into a page and the manifest
+has stopped meaning anything — the count is printed on every build for exactly
+that reason.
+
+`<priority>` and `<changefreq>` are still not emitted, which is correct.
 
 ### D3c. IndexNow ping on publish — **S, derive, new**
-One HTTP POST reaches Bing, Yandex, Naver, Seznam and Yep. Bing's index backs
-ChatGPT Search and Copilot, so this is the fastest published-to-retrievable path
-for a large slice of the assistant market. Google does not participate and there
-is no equivalent for it beyond Search Console. Almost nobody does this.
+~~One HTTP POST reaches Bing, Yandex, Naver, Seznam and Yep.~~ **Built, and
+switched off.** `build/indexnow.mjs` submits only the URLs the lastmod manifest
+says changed — submitting everything every deploy is how a feed stops carrying
+information. The build writes the proof-of-ownership key file; a job in
+`deploy-pages.yml` runs after deployment.
+
+**It does nothing until you set the repository variable `INDEXNOW_ENABLED=true`.**
+A deploy should not start posting to a third party on its own, and there is a
+second reason to wait: the key file must be served at the DOMAIN ROOT, and on a
+`github.io` project path it lands under `/law-tome/`. Verification will fail
+there. This becomes useful at the same moment D1 does.
+
+Google does not participate in IndexNow and there is no equivalent beyond Search
+Console.
+
+### D3d. `data-nosnippet` on the chrome — **S, derive, done**
+The masthead and site footer are the same forty words of boilerplate and twenty
+links on all 1,785 pages, and Google picks snippets from anywhere in the served
+HTML. When that text gets chosen the result is 1,785 pages with interchangeable
+snippets. Both are now marked excluded from snippet selection. It is a hint to
+snippet choice only — it does not affect indexing, does not remove the links
+from the crawl, and never touches an entry's own words.
 
 ### D4. Submit to the places that matter — **S, author**
 Wikipedia external links where genuinely useful (and never otherwise), the

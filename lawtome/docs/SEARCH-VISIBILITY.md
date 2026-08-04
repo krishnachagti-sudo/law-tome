@@ -196,7 +196,27 @@ the served HTML.
   URL with the build time teaches Google to ignore your `lastmod` permanently. A
   generator that derives `lastmod` from the content hash or the file's last real
   edit gets a working freshness signal. **This is the single most commonly
-  self-inflicted wound in static-site SEO** and it costs about twenty lines to fix.
+  self-inflicted wound in static-site SEO.**
+
+  Three traps if you implement it by hashing rendered pages, all of which make
+  the feature look installed while doing nothing:
+
+  1. **The date is inside the page.** `dateModified` and `article:modified_time`
+     are rendered into the HTML, so hashing the finished page folds today's date
+     into the hash and every page differs from yesterday. Render a token where
+     the date goes, hash with the hole in it, substitute afterwards.
+  2. **The hash must not depend on the deploy target.** Pages carry canonical
+     URLs and hundreds of hrefs, so the same content hashed at
+     `example.com/docs/` and `preview.example.com/docs/` gives different
+     digests. Normalise the origin (and base path) out before hashing, or the
+     manifest is valid for exactly one environment.
+  3. **The manifest must be in version control**, not beside the build output.
+     CI builds from a clean checkout; a manifest that doesn't travel in git is
+     empty on every run, and CI usually can't commit one back.
+
+  A manifest that shows every page changed on a build where nothing was edited
+  means something volatile has leaked into a page. Print the changed count on
+  every build so that failure is visible rather than silent.
 
 **Canonicals, redirects, trailing slashes.** Pick one URL shape, enforce it, and
 never let two URLs serve the same content. Reference sites generate near-duplicates

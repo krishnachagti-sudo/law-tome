@@ -16,12 +16,24 @@ function xmlEscape(s) {
  * @param {string[]} paths base-relative page paths (e.g. 'laws/goodharts-law/',
  *   'browse/', '' for the home root). Each becomes an absolute <loc> = origin + path.
  * @param {string} origin absolute prefix already ending in '/' (origin + base).
- * @param {string} [lastmod] optional ISO date (e.g. '2026-07-18') added as
- *   <lastmod> to every URL — a crawl freshness hint for search + answer engines.
+ * @param {string|Record<string,string>} [lastmod] either one ISO date for every
+ *   URL, or — preferred — a map of base-relative path to the date that page
+ *   actually last changed, as computed by build/lastmod.mjs.
+ *
+ *   The single-string form is kept because a caller with genuinely no per-page
+ *   information is better served by one date than by none, and the tests use it
+ *   to check the element's shape. It is not what the site should ship. Google
+ *   uses <lastmod> "if it's consistently and verifiably accurate", so stamping
+ *   every URL with the build date does not add a weak signal — it retires the
+ *   field. A path absent from the map gets no <lastmod> at all, which is the
+ *   honest output when we do not know.
  * @returns {string} well-formed sitemap XML.
  */
 export function buildSitemap(paths, origin, lastmod, images = {}) {
-  const mod = lastmod ? `<lastmod>${xmlEscape(lastmod)}</lastmod>` : '';
+  const el = (d) => (d ? `<lastmod>${xmlEscape(d)}</lastmod>` : '');
+  const modFor = typeof lastmod === 'string' || !lastmod
+    ? () => el(lastmod)
+    : (p) => el(lastmod[p]);
   // Image search is a search surface of its own, and the site had 1,026
   // licensed images — 465 portraits and 561 diagrams and manuscript scans,
   // every one of them fetched with its author, licence and source recorded —
@@ -40,7 +52,7 @@ export function buildSitemap(paths, origin, lastmod, images = {}) {
   const urls = paths
     .map((p) => {
       const imgs = imageXml(p);
-      return `  <url><loc>${xmlEscape(origin + p)}</loc>${mod}${imgs}${imgs ? '\n  ' : ''}</url>`;
+      return `  <url><loc>${xmlEscape(origin + p)}</loc>${modFor(p)}${imgs}${imgs ? '\n  ' : ''}</url>`;
     })
     .join('\n');
   const ns = hasImages

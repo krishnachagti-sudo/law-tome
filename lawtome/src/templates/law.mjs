@@ -18,6 +18,7 @@
 
 import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE } from './partials.mjs';
 import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
+import { LASTMOD_TOKEN } from '../../build/lastmod.mjs';
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
@@ -123,7 +124,7 @@ function glanceRow(k, v) {
 }
 
 export function lawPage(law, ctx = {}) {
-  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, buildDate, images, facts = {}, periodSlugs, replication } = ctx;
+  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, images, facts = {}, periodSlugs, replication } = ctx;
   const coined = law.provenance === 'coined';
   const catLabel = categories[law.category] || law.category || '';
   const canonical = `${origin}${base}laws/${law.slug}/`;
@@ -835,9 +836,18 @@ ${prevnext}</div>
     publisher,
     publishingPrinciples: `${origin}${base}about/`,
     isAccessibleForFree: true,
-    // The corpus has no per-entry authoring date; the site is a living document
-    // rebuilt each deploy, so publish and modified both carry the build date.
-    ...(buildDate ? { datePublished: buildDate, dateModified: buildDate } : {}),
+    // `dateModified` is a token here, replaced after the page is hashed — see
+    // build/lastmod.mjs. It resolves to the day this entry's rendered bytes last
+    // actually changed, not the day the site was rebuilt.
+    //
+    // `datePublished` is gone rather than fixed. It used to carry the build
+    // date too, which asserted that all 1,116 entries were first published this
+    // morning — a stronger and more obviously false claim than the modified one.
+    // The corpus genuinely has no per-entry authoring date, and the manifest can
+    // only record when a path first appeared to it, which is not the same thing.
+    // Omitting a field we do not know is the whole editorial position of this
+    // site applied to its own metadata.
+    dateModified: LASTMOD_TOKEN,
     // Voice/assistant answer target: read the title and the plain-English definition.
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.law-title', '.lead'] },
     // The sources, as structured citations rather than only as a rendered list.
@@ -1035,7 +1045,7 @@ document.getElementById('copy').onclick=function(){
       origin,
       path: `laws/${law.slug}/`,
       canonical,
-      modified: buildDate,
+      modified: LASTMOD_TOKEN,
       og: { title: `${law.name}: ${facetList}`, description: ogDescription, image: `${base}og/${law.slug}.png`, type: 'article' },
       alternates: [{ type: 'text/markdown', title: `${law.name} (Markdown)`, href: `${canonical}index.md` }],
       jsonld: [definedTerm, article, breadcrumb, ...(faqPage ? [faqPage] : [])],

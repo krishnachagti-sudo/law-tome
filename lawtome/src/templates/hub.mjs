@@ -13,7 +13,8 @@
 //   3. A footer of the other hubs, because the ways into 1,100 laws are the
 //      most useful thing the site has and each one was a dead end.
 
-import { escapeHtml, personSlug, buildDate } from './partials.mjs';
+import { escapeHtml, personSlug } from './partials.mjs';
+import { LASTMOD_TOKEN } from '../../build/lastmod.mjs';
 
 /**
  * The art band for a hub card: a strip of this set's own imagery.
@@ -431,7 +432,7 @@ export function crossAxis(laws = [], others = [], { base = '/', hrefBase = '', l
 
 /** CollectionPage + ItemList + BreadcrumbList, the set every hub should declare. */
 export function hubJsonLd({
-  name, description, path, items = [], origin = '', base = '/', modified = buildDate(),
+  name, description, path, items = [], origin = '', base = '/', modified = LASTMOD_TOKEN,
   crumbs = [['browse/', 'Browse']],
 }) {
   const url = `${origin}${base}${path}`;

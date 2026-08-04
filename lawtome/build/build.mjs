@@ -5,10 +5,12 @@
 // never ships a page.
 import { mkdir, writeFile, cp, rm, readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import { dirname, join } from 'node:path';
+import { dirname, join, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadCorpus, loadCategories } from './corpus.mjs';
 import { validateCorpus } from './validate.mjs';
+import { manifestFile, resolve as resolveLastmod, stamp } from './lastmod.mjs';
+import { keyFile as indexNowKeyFile, validKey as validIndexNowKey } from './indexnow.mjs';
 import { lawPage } from '../src/templates/law.mjs';
 import { homePage } from '../src/templates/home.mjs';
 import { listingPage } from '../src/templates/listing.mjs';
@@ -72,13 +74,49 @@ import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
 import { buildFeed } from './feed.mjs';
 
-async function writePage(path, html) {
-  await mkdir(dirname(path), { recursive: true });
-  await writeFile(path, html, 'utf8');
+/**
+ * Every page the build produces, held until the end.
+ *
+ * Nothing reaches disk while the site is being rendered. Pages carry a token
+ * where their "last modified" date goes, and the date cannot be decided until
+ * the page has been hashed against the previous build — so the write has to
+ * happen after the whole site exists. See build/lastmod.mjs for why.
+ *
+ * The `writes.push(writePage(...))` shape at all eighty call sites is left
+ * alone: writePage still returns a promise and still gets awaited, it simply
+ * resolves once the page is buffered rather than once it is written.
+ */
+async function writePage(path, data) {
+  // Stored as given, NOT coerced to a string. Some callers pass a Buffer — the
+  // 1,116 Open Graph PNGs among them — and String(buffer) turns every non-UTF-8
+  // byte into U+FFFD. The old writePage passed the value straight to writeFile,
+  // which writes Buffers raw and ignores the encoding argument; buffering has to
+  // preserve that. The quote-card suite caught this by checking the PNG magic
+  // number, which came back as EF BF BD: three bytes of replacement character
+  // where the file signature should be.
+  PAGES.set(path, data);
+}
+let PAGES = new Map();
+
+/**
+ * File path -> the path the sitemap uses, which is what the manifest is keyed
+ * on. `dist/laws/x/index.html` is the file; `laws/x/` is the URL; they have to
+ * agree or every page looks new on every build.
+ */
+function urlKey(absPath, out) {
+  const r = relative(out, absPath).split(sep).join('/');
+  if (r === 'index.html') return '';
+  return r.endsWith('/index.html') ? r.slice(0, -'index.html'.length) : r;
 }
 
 export async function buildSite(opts) {
   const { dataDir, catFile, assetsDir, out, base = '/', origin = '' } = opts;
+  // Persisting the manifest is opt-in, and the CLI is the only caller that asks.
+  // The integration suites run full builds into temp directories; if those
+  // rewrote the committed manifest, a test run would leave the working tree
+  // dirty and the next real build would see every page as changed.
+  const { writeManifest = false } = opts;
+  PAGES = new Map();
 
   const [laws, categories] = await Promise.all([loadCorpus(dataDir), loadCategories(catFile)]);
 
@@ -233,7 +271,7 @@ export async function buildSite(opts) {
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
-    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, buildDate, images, facts, periodSlugs, replication });
+    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, images, facts, periodSlugs, replication });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
     // Clean Markdown twin at /laws/<slug>/index.md — a fetch-friendly plain-text
     // representation for LLMs/agents (GEO). Linked from the page via rel=alternate.
@@ -755,7 +793,24 @@ export async function buildSite(opts) {
       caption: imgCaption(por),
     });
   }
-  writes.push(writePage(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, buildDate, imagesByPath)));
+  // IndexNow proof-of-ownership file. Named after the key, containing the key,
+  // at the site root — that is the entire verification scheme. The key is public
+  // by design: it proves that whoever submits URLs can also write to this site,
+  // which is all the protocol needs it to prove.
+  //
+  // Written whether or not submission is switched on, because the file has to
+  // already be there when the first ping happens, and an unused text file costs
+  // 33 bytes.
+  if (opts.indexNowKey && validIndexNowKey(opts.indexNowKey)) {
+    const kf = indexNowKeyFile(opts.indexNowKey);
+    writes.push(writePage(join(out, kf.name), kf.body));
+  }
+
+  // The sitemap is NOT written here. It needs a real per-page <lastmod>, which
+  // needs every page's hash, which needs every page to have been rendered — so
+  // it is built at the flush below, after the last writePage call in this
+  // function. Leaving the call here would have silently dated only the pages
+  // rendered above this line.
   // robots.txt — a stated policy rather than a default.
   //
   // The generative crawlers are named explicitly and allowed explicitly. A bare
@@ -960,7 +1015,76 @@ export async function buildSite(opts) {
   ].join('\n');
   writes.push(writePage(join(out, '_headers'), headersBody));
 
+  // ---- flush -----------------------------------------------------------------
+  //
+  // Everything above buffered its output. Now: work out what actually changed
+  // since the last build, date those pages and only those, build the sitemap
+  // from the result, and write the lot.
   await Promise.all(writes);
+
+  let prevManifest = null;
+  try {
+    prevManifest = JSON.parse(await readFile(manifestFile, 'utf8'));
+  } catch {
+    // No manifest yet, or an unreadable one. resolve() treats that as "every
+    // page is new", which is where this site starts from anyway. A corrupt
+    // manifest must never be able to fail a deploy.
+  }
+
+  const htmlPages = {};
+  for (const [p, html] of PAGES) {
+    if (p.endsWith('.html') && typeof html === 'string') htmlPages[urlKey(p, out)] = html;
+  }
+  // The site's own location, normalised out of every hash, so the manifest
+  // describes content rather than a deploy target. Longest-first ordering is
+  // handled inside pageHash. See build/lastmod.mjs for why this matters.
+  //
+  // A bare '/' base is excluded deliberately. It is a prefix of every path in
+  // the document, so normalising it would replace every slash in every page —
+  // technically deterministic, but it would flatten away most of what the hash
+  // is supposed to notice, AND it would still not match a build with a real
+  // base. The practical consequence: the committed manifest must be generated
+  // with the same base the deploy uses (a non-'/' one). Origin can differ
+  // freely, which is the case that actually varies — github.io today, the
+  // custom domain later.
+  //
+  // The bare origin is NOT in this list, and that is deliberate. Templates link
+  // to https://conyso.com as the PUBLISHER — parentOrganization, the founder
+  // credit in the footer — and those links mean the same thing wherever the site
+  // is served. Normalising the bare origin rewrote them in the conyso build and
+  // left them alone in the github.io build, so the two disagreed on 1,798 of
+  // 2,969 pages. Only the site's own URL prefix is a deploy detail; a link to
+  // the publisher is content.
+  const sitePrefixes = [`${origin}${base}`, base].filter((p) => p && p !== '/');
+  const { dates, manifest: nextManifest, changed } = resolveLastmod(htmlPages, prevManifest, buildDate, sitePrefixes);
+
+  PAGES.set(join(out, 'sitemap.xml'), buildSitemap(paths, `${origin}${base}`, dates, imagesByPath));
+
+  await Promise.all([...PAGES].map(async ([p, data]) => {
+    await mkdir(dirname(p), { recursive: true });
+    if (typeof data !== 'string') {
+      // Binary, and it must reach disk byte-for-byte. No stamping, no encoding.
+      await writeFile(p, data);
+      return;
+    }
+    // Text output that is not a page carries no token, so stamping it is a
+    // no-op; doing it unconditionally is cheaper than deciding twice.
+    await writeFile(p, stamp(data, dates[urlKey(p, out)] || buildDate), 'utf8');
+  }));
+
+  if (writeManifest) {
+    await writeFile(manifestFile, `${JSON.stringify(nextManifest, null, 2)}\n`, 'utf8');
+    // Worth printing. If this says 1,785 on a build where nothing was edited,
+    // something volatile has crept into a page and the manifest has quietly
+    // stopped meaning anything — which is the failure mode that put us here.
+    console.log(`lastmod: ${changed.length} of ${Object.keys(htmlPages).length} pages changed`);
+    // Name them when there are few enough to read. Diagnosing "why did 21 pages
+    // change" by grepping the output for suspicious strings sends you after the
+    // wrong 21; the build already knows which, so it should say.
+    if (changed.length && changed.length <= 25) {
+      for (const p of changed) console.log(`  changed: ${p || '(home)'}`);
+    }
+  }
 
   await cp(assetsDir, join(out, 'assets'), { recursive: true });
 
@@ -987,6 +1111,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   // canonical/og URLs that point at where the site is ACTUALLY served, instead of
   // the production origin baked into site.config.json.
   const origin = arg('origin') || cfg.origin;
-  buildSite({ dataDir: 'src/data/laws', catFile: 'src/data/categories.json', assetsDir: 'src/assets', out: 'dist', ...cfg, base, origin })
+  // writeManifest: the CLI is the only caller that persists src/data/lastmod.json.
+  // Run a build locally and commit the result alongside the content change.
+  buildSite({ dataDir: 'src/data/laws', catFile: 'src/data/categories.json', assetsDir: 'src/assets', out: 'dist', ...cfg, base, origin, writeManifest: true })
     .then(r => console.log('built', r));
 }

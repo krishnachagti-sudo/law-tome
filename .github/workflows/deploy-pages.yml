@@ -49,6 +49,15 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: lawtome/dist
+      # The build rewrites src/data/lastmod.json with the dates for THIS build,
+      # so it is the record of which pages actually changed. The IndexNow job
+      # runs after deployment and in a fresh checkout, so hand it across rather
+      # than recomputing it (which would mean a second five-minute build).
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lastmod
+          path: lawtome/src/data/lastmod.json
+          retention-days: 1
 
   deploy:
     needs: build
@@ -59,3 +68,39 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Tell Bing what changed. Bing's index backs ChatGPT Search and Copilot, so
+  # this is the fastest published-to-retrievable path for a large slice of the
+  # assistant market. Google does not participate in IndexNow — it declined
+  # after evaluating the protocol — so this does nothing there; the sitemap and
+  # Search Console remain the only route to Google.
+  #
+  # OFF BY DEFAULT. This job posts URLs to a third party, which is not something
+  # a deploy should start doing on its own. To switch it on, set the repository
+  # variable:
+  #
+  #   INDEXNOW_ENABLED = true
+  #
+  # Two things must be true before it will work, and both are already in place:
+  # the key in site.config.json must be served at the DOMAIN ROOT as
+  # <key>.txt (the build writes it), and the site must actually be at the origin
+  # passed below. On a github.io project path the key file lands under
+  # /law-tome/, not at the root, so verification will fail there — this becomes
+  # useful at the same moment the custom domain does.
+  indexnow:
+    needs: deploy
+    if: vars.INDEXNOW_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lawtome
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/download-artifact@v4
+        with:
+          name: lastmod
+          path: lawtome/src/data/
+      - run: node build/indexnow.mjs --base=${{ vars.SITE_BASE || format('/{0}/', github.event.repository.name) }} --origin=${{ vars.SITE_ORIGIN || format('https://{0}.github.io', github.repository_owner) }}
