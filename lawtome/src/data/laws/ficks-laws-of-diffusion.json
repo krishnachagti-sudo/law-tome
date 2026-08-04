@@ -23,7 +23,7 @@
   "whyItMatters": "The laws are the quantitative foundation for mass transport in materials processing, semiconductors, physiology, and chemical engineering. They let engineers predict how quickly species mix, dope, corrode, or permeate.",
   "limits": "The simple form assumes a constant diffusion coefficient and dilute, ideal conditions. Fickian behavior fails in porous media, in swelling polymers near the glass transition, and in advanced semiconductor nodes where atomic-scale effects dominate; the diffusivity can itself depend on concentration, temperature, and stress.",
   "misreadings": "Diffusion does not require a driving force other than random motion; the gradient sets the net flux, not a push on individual particles. The negative sign indicates direction, not a negative amount of transport.",
-  "origin": "Adolf Fick, first reported in 1855 from experimental results.",
+  "origin": "Published by the German physiologist Adolf Fick in \"Ueber Diffusion\", Annalen der Physik, 1855. Fick was working by analogy: Fourier had already written heat conduction as flow down a temperature gradient, and Fick proposed that matter diffuses down a concentration gradient in the same mathematical form. He supported it with experiments on salt diffusing through water, and the analogy turned out to be exact rather than merely suggestive.",
   "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
@@ -31,6 +31,11 @@
   "namedAfter": "Adolf Fick",
   "namesakeKind": "person",
   "sources": [
+    {
+      "text": "Fick, A. (1855). \"Ueber Diffusion.\" Annalen der Physik 170(1), p. 59.",
+      "url": "https://doi.org/10.1002/andp.18551700105",
+      "type": "primary"
+    },
     {
       "text": "Wikipedia's article on Fick's laws of diffusion, giving the first law J = -D dφ/dx, the second law, the 1855 origin, and the non-Fickian limits — supports the statement, mechanism, and limits.",
       "url": "https://en.wikipedia.org/wiki/Fick%27s_laws_of_diffusion",

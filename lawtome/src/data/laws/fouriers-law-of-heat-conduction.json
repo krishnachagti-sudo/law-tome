@@ -23,7 +23,7 @@
   "whyItMatters": "It is the governing rate law for conduction and, combined with energy conservation, yields the heat equation used throughout engineering and physics. It underlies the thermal design of everything from buildings and electronics to engines and spacecraft.",
   "limits": "It is a continuum, empirical law valid when many carrier collisions occur over the length and time scales of interest. It breaks down at the nanoscale and at very short timescales, where heat transport becomes ballistic rather than diffusive and the local-gradient assumption fails; it also treats conductivity as a property that may itself depend on temperature.",
   "misreadings": "The negative sign does not mean heat flux is negative; it means flux points opposite to the temperature gradient, toward colder regions. The law describes conduction only, not convection or radiation.",
-  "origin": "Joseph Fourier, first published in his 1822 book Théorie analytique de la chaleur.",
+  "origin": "Published by Joseph Fourier in Théorie analytique de la chaleur (1822), the culmination of work he had begun in Grenoble more than a decade earlier and which the Institut de France had received sceptically. To solve the conduction equation Fourier invented the trigonometric series that carry his name; the mathematics went on to outgrow the physics that prompted it.",
   "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",
@@ -31,6 +31,11 @@
   "namedAfter": "Joseph Fourier",
   "namesakeKind": "person",
   "sources": [
+    {
+      "text": "Fourier, J. (1822). \"Théorie analytique de la chaleur\" — the treatise stating the conduction law. Cambridge Library Collection reissue.",
+      "url": "https://doi.org/10.1017/cbo9780511693229",
+      "type": "primary"
+    },
     {
       "text": "Wikipedia's article on thermal conduction, giving Fourier's law q = -κ∇T, the one-dimensional form, and the conduction mechanism — supports the statement and mechanism.",
       "url": "https://en.wikipedia.org/wiki/Thermal_conduction",
