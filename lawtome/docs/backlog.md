@@ -268,8 +268,10 @@ the build date teaches Google to discard the field permanently.
 
 **Checked, and we do exactly this.** `buildSitemap(paths, origin, lastmod, …)`
 takes one date and writes it into every `<lastmod>`; the caller passes
-`buildDate`. So every one of ~7,000 URLs claims to have changed today, on every
-build, including the 1,116 entries that have not been touched in months. That is
+`buildDate`. Confirmed against the live sitemap: 1,785 `<loc>` entries, and
+exactly one distinct `<lastmod>` value across all of them. So every URL claims to
+have changed today, on every build, including the 1,116 entries that have not
+been touched in months. That is
 the *worst* case for this signal — not a missing field but a consistently false
 one, which is what Google's "consistently and verifiably accurate" test is
 designed to catch.
