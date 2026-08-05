@@ -619,14 +619,19 @@ ${items}
       : hosts.length === 1
         ? (n === 1 ? escapeHtml(hosts[0]) : `${numWord(n)} pages on ${escapeHtml(hosts[0])}`)
         : `${hosts.slice(0, -1).map((h) => escapeHtml(h)).join(', ')} and ${escapeHtml(hosts[hosts.length - 1])}`;
-    // The count is already in `where` when the sources share a host ("two pages
-    // on en.wikipedia.org"), so the second half must not repeat it.
-    const counted = hosts.length === 1 && n > 1;
+    // True whenever `where` has already said how many there are -- "two pages on
+    // en.wikipedia.org" and "the four sources listed" both do. This was only
+    // checking the shared-host case, so entries with more than three distinct
+    // hosts shipped "the four sources listed, four sources in all". Found by
+    // reading the deployed page rather than the template.
+    const counted = (hosts.length === 1 && n > 1) || hosts.length === 0 || hosts.length > 3;
     const provenance = nPrim === 0
       ? `Everything above traces to ${where}: ${n === 1 ? 'a secondary source, an account' : `${counted ? 'both' : numWord(n)} secondary${counted ? '' : ' sources'}, accounts`} of the original rather than the original itself, which has not been located for this entry.`
       : nPrim === n
         ? `Everything above traces to ${where}: the ${plural(n, 'publication')} ${n === 1 ? 'itself' : 'themselves'}, not ${n === 1 ? 'an account' : 'accounts'} of ${n === 1 ? 'it' : 'them'}.`
-        : `Everything above traces to ${where}${counted ? '' : `, ${numWord(n)} sources in all`}, ${numWord(nPrim)} of them the original ${plural(nPrim, 'publication')} rather than ${nPrim === 1 ? 'an account' : 'accounts'} of it.`;
+        // "the original publications rather than accounts of it" was a plural
+        // head with a singular tail. Both halves now agree with nPrim.
+        : `Everything above traces to ${where}${counted ? '' : `, ${numWord(n)} sources in all`}, ${numWord(nPrim)} of them the original ${plural(nPrim, 'publication')} rather than ${nPrim === 1 ? 'an account of it' : 'accounts of them'}.`;
     // The link to /about/ is not decoration. It is the target of this site's
     // publishingPrinciples and correctionsPolicy in JSON-LD, and dropping it
     // from this line took it from 1,116 contextual in-links to seven. The
