@@ -4,13 +4,47 @@ import { homePage } from '../src/templates/home.mjs';
 const laws = [{no:'001', slug:'a', name:'A', statement:'S </script> x', statementAccent:'S', category:'economics', reliability:'Heuristic', related:[]}];
 const html = homePage(laws, { publishedCount: 212, base:'/lawtome/' });
 test('renders the ACTUAL published count, not a hard-coded 1,400', () => { assert.match(html, /212/); assert.doesNotMatch(html, /1,400/); });
-// The hero used to open with "the largest unified, defined & sourced index of
-// named laws" — a superlative, qualified into safety. It has been replaced by
-// the site's actual finding, which is checkable rather than merely careful. So
-// this no longer polices the qualification; it polices the superlative itself,
-// which is what the qualification was ever for.
-test('makes no unqualified superlative claim', () => {
+// The hero once opened with "the largest unified, defined & sourced index of
+// named laws" -- a superlative qualified into safety, which is a claim asking
+// to be believed. That was banned outright, and rightly.
+//
+// It is allowed back on one condition: the evidence is on the same page. The
+// site now counts the other public collections of named laws, names them, links
+// them and dates the count, so "largest" is checkable in under a minute instead
+// of being taken on trust. The rule this enforces is therefore not "never boast"
+// but "never boast without the receipts" -- and the two cases below are what
+// make it a rule rather than a preference.
+//
+// This fixture passes no comparison data, so the claim must not appear.
+test('makes no superlative claim when it has nothing to back it', () => {
   assert.doesNotMatch(html, /world'?s largest|the largest index|biggest (index|collection)/i);
+  assert.match(html, /212 named laws, principles &amp; effects/);
+});
+
+test('makes the claim, with its receipts, once the counts are there', () => {
+  const withData = homePage(laws, {
+    publishedCount: 212,
+    base: '/lawtome/',
+    comparison: {
+      checkedOn: '2026-08-05',
+      others: [{ name: 'Some Other List', url: 'https://example.org/list', count: 40, approx: true }],
+    },
+  });
+  assert.match(withData, /The largest index of named laws anywhere/);
+  // The receipts: the rival named, counted, and linked so it can be checked.
+  assert.match(withData, /Some Other List/);
+  assert.match(withData, /href="https:\/\/example\.org\/list"/);
+  assert.match(withData, /about 40/);
+  assert.match(withData, /counted 2026-08-05/);
+});
+
+test('drops the claim the day something bigger turns up', () => {
+  const beaten = homePage(laws, {
+    publishedCount: 212,
+    base: '/lawtome/',
+    comparison: { checkedOn: '2026-08-05', others: [{ name: 'Bigger List', url: 'https://example.org/x', count: 900 }] },
+  });
+  assert.doesNotMatch(beaten, /the largest index|biggest (index|collection)/i);
 });
 
 test('the positioning line leads with the rating, not the size', () => {

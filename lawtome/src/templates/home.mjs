@@ -40,14 +40,17 @@ function renderStatement(statement, accent) {
     escapeHtml(statement.slice(i + accent.length));
 }
 
-export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '', images, eponymSlugs, lawOfTheDay, found } = {}) {
+export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '', images, eponymSlugs, lawOfTheDay, found, comparison } = {}) {
   const nf = new Intl.NumberFormat('en');
   const count = publishedCount == null ? '—' : nf.format(publishedCount);
 
   // The meta description leads with the finding too, so the result snippet and
   // the page make the same promise.
-  const description =
-    `${publishedCount == null ? 'Every' : count} named laws, principles and effects — each one defined, sourced, and rated for how much evidence actually stands behind it. Searchable, cross-linked, and free.`;
+  const runnerUp = comparison && Array.isArray(comparison.others) && comparison.others.length
+    ? Math.max(...comparison.others.map((r) => Number(r.count) || 0)) : 0;
+  const description = (publishedCount && runnerUp && publishedCount > runnerUp)
+    ? `The largest index of named laws anywhere: ${count} principles, effects, razors and paradoxes, against about ${nf.format(runnerUp)} in the next-biggest list. Each one defined, sourced, and rated for how much evidence stands behind it.`
+    : `${publishedCount == null ? 'Every' : count} named laws, principles and effects, each one defined, sourced, and rated for how much evidence actually stands behind it. Searchable, cross-linked, and free.`;
 
   // ---- featured payload for the inline hero rotation ---------------------
   // Only the fields the hero needs. `hero` is the accent-highlighted, escaped
@@ -99,10 +102,20 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
     ? `    <p class="hero-hook"><a href="${base}how-solid/"><b>${Math.round(band.share * 100)}% of the ${band.n} best-known</b> rest on something other than measurement — against ${Math.round(found.softAllShare * 100)}% of the index as a whole. <span class="hh-go">What we found →</span></a></p>\n`
     : '';
 
+  // The superlative is allowed only when the block that proves it is on the
+  // same page. A test enforces this, and it is the right test: "the largest"
+  // with nothing behind it is the one sentence on this site a reader would be
+  // asked to take on faith. No comparison data, no claim.
+  const canClaimLargest = Boolean(comparison && Array.isArray(comparison.others) && comparison.others.length && publishedCount
+    && publishedCount > Math.max(...comparison.others.map((r) => Number(r.count) || 0)));
+  const eyebrow = canClaimLargest
+    ? `The largest index of named laws anywhere: ${escapeHtml(count)}, every one sourced and rated`
+    : `${escapeHtml(count)} named laws, principles &amp; effects — every one sourced`;
+
   const hero = `<section class="hero">
   <svg class="hero-mark" viewBox="0 0 100 100" aria-hidden="true" data-parallax="0.16"><use href="#seal"/></svg>
   <div class="wrap">
-    <div class="eyebrow">${escapeHtml(count)} named laws, principles &amp; effects — every one sourced</div>
+    <div class="eyebrow">${eyebrow}</div>
     <h1 class="lede">Everyone quotes these. <b>Nobody checks them.</b> So we rated all ${escapeHtml(count)} for how much evidence is actually behind each one.</h1>
 ${hook}    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
     <div class="stmt-wrap">
@@ -163,13 +176,50 @@ ${hook}    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#
   const trustCell = (n, l, href, num) => `      <a class="ht-cell" href="${base}${href}"><span class="ht-n"${num ? ` data-count="${num}"` : ''}>${n}</span><span class="ht-l">${l}</span></a>`;
   const trust = `<section class="sec home-trust">
   <div class="wrap ht-row" data-reveal-stagger>
-${trustCell(count, 'named laws, principles &amp; effects — one index', 'browse/', publishedCount)}
+${trustCell(count, 'named laws, principles &amp; effects: more than any other index', 'browse/', publishedCount)}
 ${trustCell('Sourced', 'every entry traced to its origin and cited', 'about/')}
 ${trustCell('Cross-linked', 'a living graph of relations, not a flat list', 'graph/')}
 ${trustCell('Rated', 'proven, heuristic, or folklore — marked honestly', 'reliability/')}
   </div>
 </section>
 `;
+
+  // ---- scale, stated as a comparison rather than as an adjective ---------
+  //
+  // "The biggest" is a claim a reader has to take on trust, and this site's
+  // whole argument is that it does not ask for trust. So the claim arrives with
+  // the runners-up named, counted and linked: anyone can open the three tabs
+  // and check in under a minute. That is also the stronger version as
+  // marketing, because 1,116 against 300 lands harder than a superlative does.
+  //
+  // Counts live in src/data/comparison.json with the date they were read, and
+  // those pages grow. If one of them ever overtakes this index, the block
+  // starts telling the truth about that instead, which is the point.
+  const scaleRows = (comparison && Array.isArray(comparison.others) ? comparison.others : []);
+  const scaleMax = Math.max(publishedCount || 0, ...scaleRows.map((r) => r.count || 0), 1);
+  const bar = (label, n, href, mine, approx) => `        <li class="sc-row${mine ? ' sc-mine' : ''}">
+          <span class="sc-l">${href ? `<a href="${escapeHtml(href)}" rel="nofollow noopener">${escapeHtml(label)}</a>` : escapeHtml(label)}</span>
+          <span class="sc-bar"><i style="width:${Math.max(2, Math.round((n / scaleMax) * 100))}%"></i></span>
+          <span class="sc-n">${approx ? 'about ' : ''}${nf.format(n)}</span>
+        </li>`;
+  // The heading tracks the data, not the ambition. If one of these collections
+  // ever overtakes this index the block keeps rendering and simply stops
+  // boasting -- which is the only version of this section that is safe to leave
+  // running unattended, and the version a reader can trust the rest of the time.
+  const scale = (publishedCount && scaleRows.length) ? `<section class="sec home-scale">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>${canClaimLargest ? 'The biggest collection of these there is' : 'How this compares'}</h2>
+      <span class="sub">counted ${escapeHtml(String(comparison.checkedOn || ''))}</span>
+    </div>
+    <ul class="sc-list">
+${bar('The Law Tome', publishedCount, '', true, false)}
+${scaleRows.map((r) => bar(r.name, r.count, r.url, false, r.approx)).join('\n')}
+    </ul>
+    <p class="sc-note">${canClaimLargest ? 'Every other collection of named laws we can find is a list. This one is an index:' : 'What the others are is lists. This one is an index:'} ${escapeHtml(count)} entries, each with what it says, where it came from, where it breaks down, the sources behind it, and a rating for how much evidence there actually is. None of the three above rates its entries at all, and between them they carry a handful of citations. <a href="${base}how-solid/">How the rating works</a>, or <a href="${base}browse/">start reading</a>.</p>
+  </div>
+</section>
+` : '';
 
   // ---- browse teaser: a SAMPLE of the index, server-rendered so it's
   // visible with JS off and never balloons to all ${count} cards. The client
@@ -496,6 +546,7 @@ ${faces.slice(0, 28).map((img) => `      <a class="pb-face" href="${base}named-a
     marquee +
     lotd +
     trust +
+    scale +
     peopleBand +
     browse +
     features +

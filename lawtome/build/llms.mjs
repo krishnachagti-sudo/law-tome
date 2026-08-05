@@ -49,6 +49,10 @@ function licenceBlock(baseUrl, siteName, count, updated) {
   ];
 }
 
+// The blockquote a generative engine reads first. Kept to one line, and the
+// scale claim is appended by the caller from src/data/comparison.json rather
+// than written in here, so it cannot drift from the figures the home page
+// shows or outlive the day one of those collections overtakes this one.
 const DEFAULT_DESCRIPTION =
   'The largest unified, defined, and sourced directory of named laws, principles, effects, razors, and paradoxes.';
 

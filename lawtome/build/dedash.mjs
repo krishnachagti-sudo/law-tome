@@ -85,17 +85,27 @@ export function dedash(input) {
   s = s.replace(/\(([^()]*)\)\s*([.,;:!?])/g, (m, inner, mark) => `(${inner})${mark}`);
 
   // --- single: a head, a dash, a tail --------------------------------------
+  //
+  // `from` walks forward past dashes this cannot classify, instead of stopping
+  // at the first one. The earlier version took s.indexOf(DASH) every pass and
+  // broke on failure, so a single hard case -- "Force 0 — Calm", where the head
+  // is a two-word label -- shielded every later dash in the same string from
+  // ever being looked at. That left 44 dashes standing across 36 entries and
+  // made the pass look like it had run out of safe conversions when it had only
+  // run into one.
   let guard = 0;
-  while (s.includes(DASH) && guard++ < 8) {
-    const i = s.indexOf(DASH);
+  let from = 0;
+  while (guard++ < 24) {
+    const i = s.indexOf(DASH, from);
+    if (i < 0) break;
     const head = s.slice(0, i).replace(/\s+$/, '');
     const tail = s.slice(i + DASH.length).replace(/^\s+/, '');
-    if (!head || !tail) break;
+    if (!head || !tail) { from = i + DASH.length; continue; }
 
     // A dash between two digits, or inside a joint name, is an en-dash job that
     // happens to be typed long. Not this pass's business.
-    if (/\d$/.test(head) && /^\d/.test(tail)) break;
-    if (/\p{Lu}\p{L}*$/u.test(head) && /^\p{Lu}/u.test(tail)) break;
+    if (/\d$/.test(head) && /^\d/.test(tail)) { from = i + DASH.length; continue; }
+    if (/\p{Lu}\p{L}*$/u.test(head) && /^\p{Lu}/u.test(tail)) { from = i + DASH.length; continue; }
     // The head has to be able to stand as a clause for a colon or a full stop
     // to read. This was once a test for an auxiliary verb, which rejected every
     // head whose only verb was lexical -- "Real searches violate these", "the
@@ -138,9 +148,10 @@ export function dedash(input) {
         if (end) joined = `${head} (${end[1].replace(/\s+$/, '')})${end[2]}${end[3] || ''}`;
       }
     }
-    if (joined == null) break;   // judgement call — leave the dash in place
+    if (joined == null) { from = i + DASH.length; continue; } // judgement call: leave it
     s = joined;
     fixed++;
+    from = 0;   // the string changed shape; rescan from the start
   }
 
   // Tidy: a colon or full stop should not have inherited a comma from the head.

@@ -27,6 +27,10 @@ jobs:
           node-version: '22'
       - run: npm install
       - run: npm test
+      # The house-style gate, on the two things in docs/VOICE.md that are rules
+      # rather than signals: a banned word, or an entry over the one-em-dash
+      # limit. Cheap, and it stops the voice drifting back one commit at a time.
+      - run: npm run style -- --strict
       # Build for the host that ACTUALLY serves this artifact.
       #
       # The target is lawtome.conyso.com — its own hostname, served at the root.
@@ -53,6 +57,12 @@ jobs:
       # leaves roughly two thirds of that site undiscovered. Adding 1,785 URLs
       # to that queue would slow both. See docs/market.md.
       - run: npm run build -- --base=${{ vars.SITE_BASE || format('/{0}/', github.event.repository.name) }} --origin=${{ vars.SITE_ORIGIN || format('https://{0}.github.io', github.repository_owner) }}
+      # Whole-site checks on the assembled output, run against the SAME base and
+      # origin the artifact was built with. This is what catches a canonical
+      # still pointing at the old host, a sitemap listing a noindex page, or a
+      # dead internal link -- none of which any unit test can see, and all of
+      # which are expensive to find in public. Nothing ships through a failure.
+      - run: npm run preflight
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

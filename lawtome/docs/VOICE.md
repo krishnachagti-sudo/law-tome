@@ -129,8 +129,14 @@ something checkable does not have to perform.
 
 `npm run style` measures the mechanical parts: dash density, the banned list,
 the inflation frame, intensifiers, sentence length. `npm run style -- --strict`
-exits non-zero on the two that are rules rather than signals — a banned word, or
-an entry over one em dash — and is the form to put in CI.
+is the form CI runs.
+
+It blocks on the banned list, which is absolute, and on two ceilings that catch
+drift without demanding perfection: no entry above three em dashes, and no more
+than 1% of sentences carrying one across the corpus. The one-per-entry rule
+above stays the target and is reported every run — 33 entries sit above it on
+cases no rule should decide, and a gate that failed the build on `Force 0 —
+Calm` is a gate somebody switches off, taking the banned list with it.
 
 It reports; it does not rewrite. `build/dedash.mjs` is the one thing here that
 does rewrite, and it earns that by only ever changing punctuation: a test

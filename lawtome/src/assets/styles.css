@@ -2517,3 +2517,31 @@ footer { padding-bottom: env(safe-area-inset-bottom); }
     min-height: 24px;
   }
 }
+
+/* --- The scale comparison on the home page ---------------------------------
+   A claim of "biggest" that shows its working. Bars are proportional to the
+   counts in src/data/comparison.json; this index's own row is accented so the
+   comparison reads at a glance without the labels having to be. Grid rather
+   than flex so the three columns line up across rows of very different label
+   length, and minmax(0,1fr) on the bar so a long source name cannot push the
+   numbers off a narrow screen. */
+.home-scale .sc-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px;max-width:760px}
+.sc-row{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr) auto;align-items:center;gap:14px}
+.sc-l{font-size:13.5px;color:var(--muted);overflow-wrap:anywhere}
+.sc-l a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line-strong)}
+.sc-l a:hover{color:var(--accent)}
+.sc-bar{display:block;height:10px;background:var(--line);border-radius:2px;overflow:hidden}
+.sc-bar i{display:block;height:100%;background:var(--line-strong);border-radius:2px}
+/* Fixed width, so every track is the same length and the fills are actually
+   comparable. Without it the number column sizes to its content and "about
+   300" shortens its own bar, which distorts the one thing this block is for. */
+.sc-n{font-family:var(--mono);font-size:12.5px;color:var(--faint);white-space:nowrap;
+      min-width:5.6em;text-align:right}
+.sc-mine .sc-l{color:var(--ink);font-weight:600}
+.sc-mine .sc-bar i{background:var(--accent)}
+.sc-mine .sc-n{color:var(--accent)}
+.sc-note{margin:24px 0 0;max-width:72ch;font-size:14.5px;line-height:1.75;color:var(--dim)}
+@media (max-width:560px){
+  .sc-row{grid-template-columns:minmax(0,1fr) auto;gap:4px 12px}
+  .sc-bar{grid-column:1/-1;order:3}
+}

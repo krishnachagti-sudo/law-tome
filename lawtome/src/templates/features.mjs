@@ -67,7 +67,7 @@ const FEATURES = [
  * @param {object} [o.imagery] {people, figures} counts from the image manifest,
  *   so the imagery block states a real number instead of a stale hardcoded one.
  */
-export function featuresPage({ base = '/', origin = '', count, imagery = {} } = {}) {
+export function featuresPage({ base = '/', origin = '', count, imagery = {}, comparison } = {}) {
   const nf = new Intl.NumberFormat('en');
   const ctx = { people: imagery.people ? nf.format(imagery.people) : 0, figures: imagery.figures ? nf.format(imagery.figures) : 0 };
   const blocks = FEATURES.map((f, i) => `      <div class="ftr" data-reveal="${i % 2 ? 'right' : 'left'}">
@@ -81,9 +81,17 @@ export function featuresPage({ base = '/', origin = '', count, imagery = {} } = 
 
   const lawCount = count == null ? null : Number(String(count).replace(/[^0-9]/g, '')) || null;
 
-  const answer = `The Law Tome is a free, ad-free encyclopedia of ${lawCount ? `${nf.format(lawCount)} ` : ''}named laws, principles and effects, with ${FEATURES.length} things a list of names cannot do: search by the situation rather than the name, a graph of how the ideas connect, the pairs that contradict each other, a reliability rating on every entry, side-by-side comparisons, live calculators, verified historical images, a downloadable open dataset, and a way to submit a law of your own.`;
+  // Same rule as the home page: the superlative only appears alongside the
+  // number that backs it, and both come from src/data/comparison.json rather
+  // than being typed here, so there is one place to correct when the other
+  // collections grow.
+  const runnerUp = comparison && Array.isArray(comparison.others) && comparison.others.length
+    ? Math.max(...comparison.others.map((r) => Number(r.count) || 0)) : 0;
+  const largest = Boolean(lawCount && runnerUp && lawCount > runnerUp);
 
-  const lede = `Forty half-finished listicles will give you a name and a one-liner. This gives you the whole apparatus — search that meets you where you are, a graph of how the ideas connect, honest ratings, and the sources behind every claim. For the reasoning behind it, read <a href="${base}manifesto/">why we name a law</a>.`;
+  const answer = `The Law Tome is ${largest ? 'the largest index of named laws anywhere: ' : ''}a free, ad-free encyclopedia of ${lawCount ? `${nf.format(lawCount)} ` : ''}named laws, principles and effects${largest ? `, against about ${nf.format(runnerUp)} in the next-biggest collection there is` : ''}. It has ${FEATURES.length} things a list of names cannot do: search by the situation rather than the name, a graph of how the ideas connect, the pairs that contradict each other, a reliability rating on every entry, side-by-side comparisons, live calculators, verified historical images, a downloadable open dataset, and a way to submit a law of your own.`;
+
+  const lede = `Forty half-finished listicles will give you a name and a one-liner. ${largest ? 'This is the biggest collection of these anywhere, and it' : 'This'} gives you the whole apparatus: search that meets you where you are, a graph of how the ideas connect, honest ratings, and the sources behind every claim. For the reasoning behind it, read <a href="${base}manifesto/">why we name a law</a>.`;
 
   const faq = hubFaq([
     {

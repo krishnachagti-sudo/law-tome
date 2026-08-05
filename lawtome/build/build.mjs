@@ -160,6 +160,13 @@ export async function buildSite(opts) {
   try { replication = JSON.parse(await readFile('src/data/replication.json', 'utf8')); }
   catch { /* not harvested yet */ }
 
+  // Counts of the other public collections of named laws, so the home page can
+  // show the scale claim as a comparison instead of asserting a superlative.
+  // Absent, the block simply does not render.
+  let comparison = null;
+  try { comparison = JSON.parse(await readFile('src/data/comparison.json', 'utf8')); }
+  catch { /* no comparison recorded */ }
+
   const errs = validateCorpus(laws, categories);
   if (errs.length) throw new Error('validation failed:\n' + errs.join('\n'));
 
@@ -256,7 +263,7 @@ export async function buildSite(opts) {
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
     // Home: first 12 laws as the featured rotation, plus the law of the day.
-    writePage(join(out, 'index.html'), homePage(laws.slice(0, 18), { publishedCount, base, origin, images, eponymSlugs, lawOfTheDay, found })),
+    writePage(join(out, 'index.html'), homePage(laws.slice(0, 18), { publishedCount, base, origin, images, eponymSlugs, lawOfTheDay, found, comparison })),
     // Prebuilt client-search index (a DATA file, not a "page"): fetched by
     // src/assets/search.js. Curated situation phrasing is folded in so a typed
     // problem description surfaces the mapped law. In the concurrent writes[] so
@@ -489,7 +496,7 @@ export async function buildSite(opts) {
     writes.push(writePage(join(out, 'for', a.slug, 'index.html'), audiencePage(a, { base, origin, count: publishedCount, images, categories, byslug, compareSlugs, siblings: audiences, crossSets: collections })));
   }
   writes.push(writePage(join(out, 'features', 'index.html'), featuresPage({
-    base, origin, count: publishedCount,
+    base, origin, count: publishedCount, comparison,
     imagery: { people: Object.keys(images.people || {}).length, figures: Object.keys(images.figures || {}).length },
   })));
   writes.push(writePage(join(out, 'manifesto', 'index.html'), manifestoPage({ base, origin, count: publishedCount })));
@@ -897,7 +904,20 @@ export async function buildSite(opts) {
   // not a distribution channel and nothing downstream should treat them as one.
   // The per-entry Markdown twins and api.json are the exports that a person or
   // an agent can actually build against.
-  const llmsOpts = { baseUrl: `${origin}${base}`, updated: buildDate };
+  // The scale claim is appended to the summary line rather than written into
+  // llms.mjs, so the figure comes from src/data/comparison.json like every
+  // other place it appears, and disappears the day this index stops being the
+  // largest. Same rule as the home page and /features/.
+  const rivalTop = (comparison && Array.isArray(comparison.others) && comparison.others.length)
+    ? Math.max(...comparison.others.map((r) => Number(r.count) || 0)) : 0;
+  const llmsOpts = {
+    baseUrl: `${origin}${base}`,
+    updated: buildDate,
+    ...(rivalTop && publishedCount > rivalTop ? {
+      description: 'The largest unified, defined, and sourced directory of named laws, principles, effects, razors, and paradoxes.'
+        + ` No other collection comes close: the next-biggest carries ${rivalTop} entries and rates none of them (counted ${comparison.checkedOn}).`,
+    } : {}),
+  };
   writes.push(writePage(join(out, 'llms.txt'), buildLlmsIndex(laws, categories, llmsOpts)));
   writes.push(writePage(join(out, 'llms-full.txt'), buildLlmsFull(laws, categories, llmsOpts)));
 
