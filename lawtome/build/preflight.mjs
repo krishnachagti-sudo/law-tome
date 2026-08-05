@@ -13,7 +13,21 @@ import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DIST = 'dist';
+
+// The SAME base and origin the artifact was built with, resolved the same way
+// build.mjs resolves them: CLI flag first, site.config.json as the fallback.
+//
+// This is not a nicety. CI passes --base/--origin from repository variables and
+// falls back to the github.io project path when they are unset, so a preflight
+// that read site.config.json alone would compare a /law-tome/ build against the
+// lawtome.conyso.com origin, call all 40,000 internal links dead, and block the
+// very deploy it exists to protect.
 const cfg = JSON.parse(readFileSync('site.config.json', 'utf8'));
+const arg = (n) => (process.argv.find((a) => a.startsWith(`--${n}=`)) || '').split('=')[1];
+const BASE = (arg('base') || cfg.base || '/').replace(/\/*$/, '/');
+const ORIGIN = (arg('origin') || cfg.origin || '').replace(/\/$/, '');
+// Site-absolute paths in the HTML carry the base; paths on disk do not.
+const unbase = (p) => (BASE !== '/' && p.startsWith(BASE) ? p.slice(BASE.length - 1) : p);
 
 function walk(dir, out = []) {
   for (const e of readdirSync(dir)) {
@@ -29,10 +43,10 @@ const fail = [];
 const check = (cond, msg) => { if (!cond) fail.push(msg); };
 
 // --- where the site thinks it lives -----------------------------------------
-check(typeof cfg.origin === 'string' && /^https:\/\/[^/]+$/.test(cfg.origin),
-  `site.config origin looks wrong: ${cfg.origin}`);
-const host = cfg.origin ? new URL(cfg.origin).host : '';
-if (cfg.base === '/' && cfg.origin) {
+check(/^https:\/\/[^/]+$/.test(ORIGIN), `origin looks wrong: ${ORIGIN}`);
+const host = ORIGIN ? new URL(ORIGIN).host : '';
+// A CNAME is only written, and only wanted, for a root-served custom domain.
+if (BASE === '/' && ORIGIN) {
   check(existsSync(join(DIST, 'CNAME')), 'dist/CNAME missing — GitHub Pages will not serve the custom domain');
   if (existsSync(join(DIST, 'CNAME'))) {
     const cname = readFileSync(join(DIST, 'CNAME'), 'utf8').trim();
@@ -52,11 +66,11 @@ for (const f of pages) {
   if (!tags.length) { noCanon++; continue; }
   if (tags.length > 1) multiCanon++;
   const u = tags[0].match(/href="([^"]+)"/)[1];
-  if (!u.startsWith(`${cfg.origin}/`)) badCanon++;
+  if (!u.startsWith(`${ORIGIN}${BASE}`)) badCanon++;
 }
 check(noCanon === 0, `${noCanon} pages have no canonical`);
 check(multiCanon === 0, `${multiCanon} pages declare more than one canonical`);
-check(badCanon === 0, `${badCanon} canonicals do not point at ${cfg.origin}`);
+check(badCanon === 0, `${badCanon} canonicals do not point at ${ORIGIN}${BASE}`);
 
 // --- internal links ----------------------------------------------------------
 const have = new Set(all.map((f) => f.replace(/^dist/, '')));
@@ -67,6 +81,7 @@ for (const f of pages) {
     if (m[1].startsWith('//')) continue;
     let p;
     try { p = decodeURI(m[1]); } catch { p = m[1]; }
+    p = unbase(p);
     if (!have.has(p) && !have.has(`${p}index.html`) && !have.has(p.replace(/\/$/, ''))) dead.add(p);
   }
 }
@@ -74,18 +89,18 @@ check(dead.size === 0, `${dead.size} internal links point at nothing: ${[...dead
 
 // --- robots and sitemap agree with each other and with the pages -------------
 const robots = readFileSync(join(DIST, 'robots.txt'), 'utf8');
-check(robots.includes(`Sitemap: ${cfg.origin}${cfg.base}sitemap.xml`) || robots.includes(`Sitemap: ${cfg.origin}/sitemap.xml`),
-  'robots.txt does not advertise the sitemap at the live origin');
+check(robots.includes(`Sitemap: ${ORIGIN}${BASE}sitemap.xml`),
+  `robots.txt does not advertise the sitemap at ${ORIGIN}${BASE}sitemap.xml`);
 check(!/^\s*Disallow:\s*\/\s*$/m.test(robots), 'robots.txt disallows the entire site');
 
 const locs = [...readFileSync(join(DIST, 'sitemap.xml'), 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 check(locs.length > 500, `sitemap lists only ${locs.length} urls`);
-check(locs.every((u) => u.startsWith(cfg.origin)), 'sitemap lists urls on a different origin');
+check(locs.every((u) => u.startsWith(`${ORIGIN}${BASE}`)), `sitemap lists urls outside ${ORIGIN}${BASE}`);
 check(new Set(locs).size === locs.length, 'sitemap lists the same url twice');
 
 // A page that is both noindex and in the sitemap sends search engines two
 // contradictory instructions, and Search Console reports it as an error.
-const inSitemap = new Set(locs.map((u) => u.slice(cfg.origin.length)));
+const inSitemap = new Set(locs.map((u) => unbase(u.slice(ORIGIN.length))));
 let contradiction = 0;
 for (const f of pages) {
   const h = readFileSync(f, 'utf8');
@@ -117,4 +132,4 @@ if (fail.length) {
   for (const m of fail) console.error(`  • ${m}`);
   process.exit(1);
 }
-console.log(`preflight passed: ${pages.length} html files, ${locs.length} sitemap urls, 0 dead internal links.`);
+console.log(`preflight passed for ${ORIGIN}${BASE} — ${pages.length} html files, ${locs.length} sitemap urls, 0 dead internal links.`);

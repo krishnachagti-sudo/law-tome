@@ -62,7 +62,7 @@ jobs:
       # still pointing at the old host, a sitemap listing a noindex page, or a
       # dead internal link -- none of which any unit test can see, and all of
       # which are expensive to find in public. Nothing ships through a failure.
-      - run: npm run preflight
+      - run: npm run preflight -- --base=${{ vars.SITE_BASE || format('/{0}/', github.event.repository.name) }} --origin=${{ vars.SITE_ORIGIN || format('https://{0}.github.io', github.repository_owner) }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
