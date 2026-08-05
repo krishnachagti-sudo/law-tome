@@ -535,7 +535,13 @@ ${h2}${inner}
       // The structured answer gets the verdict plus the entry's own caveat, so a
       // machine quoting it quotes the qualification too — and the replication
       // count when there is one, because that is the part a machine should carry.
-      const answer = `${v.replace(/<[^>]+>/g, '')}${law.limits ? ' ' + String(law.limits).split(/(?<=[.!?])\s/)[0] : ''}${rep ? ' ' + replicationLine(rep) : ''}`;
+      // An answer engine quoting "Is X real?" should carry what the rating was
+      // made from, not only the rating. A verdict with its evidence base
+      // attached is a citable answer; a verdict alone is an opinion.
+      const answerBasis = srcs.length
+        ? ` The rating rests on ${numWord(srcs.length)} cited ${plural(srcs.length, 'source')}${prim ? `, ${numWord(prim)} of them the original publication` : ', none of them the original publication'}.`
+        : '';
+      const answer = `${v.replace(/<[^>]+>/g, '')}${law.limits ? ' ' + String(law.limits).split(/(?<=[.!?])\s/)[0] : ''}${answerBasis}${rep ? ' ' + replicationLine(rep) : ''}`;
       blocks.push(block('Is it real?', inner, true, `Is ${L} real?`, answer));
     }
   }
@@ -621,7 +627,11 @@ ${items}
       : nPrim === n
         ? `Everything above traces to ${where}: the ${plural(n, 'publication')} ${n === 1 ? 'itself' : 'themselves'}, not ${n === 1 ? 'an account' : 'accounts'} of ${n === 1 ? 'it' : 'them'}.`
         : `Everything above traces to ${where}${counted ? '' : `, ${numWord(n)} sources in all`}, ${numWord(nPrim)} of them the original ${plural(nPrim, 'publication')} rather than ${nPrim === 1 ? 'an account' : 'accounts'} of it.`;
-    const srcTrust = `        <p class="src-trust">${provenance} Nothing is written from memory. Spot an error or a better source? <a href="${base}coin/">Suggest a fix.</a></p>`;
+    // The link to /about/ is not decoration. It is the target of this site's
+    // publishingPrinciples and correctionsPolicy in JSON-LD, and dropping it
+    // from this line took it from 1,116 contextual in-links to seven. The
+    // anchor text says what the page is rather than gesturing at it.
+    const srcTrust = `        <p class="src-trust">${provenance} Nothing is written from memory, and <a href="${base}about/">the method is written down</a>. Spot an error or a better source? <a href="${base}coin/">Suggest a fix.</a></p>`;
     blocks.push(block('Sources', `        <ol class="sources-list">\n${items}\n        </ol>\n${srcTrust}`, true, `Sources & further reading`));
   }
 

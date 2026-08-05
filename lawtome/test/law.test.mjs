@@ -201,3 +201,40 @@ test('every named variant is individually addressable', () => {
   // Each carries a permalink pointing at its own id.
   for (const id of ids) assert.match(h, new RegExp(`class="vlink" href="#${id}"`));
 });
+
+// --- internal linking and answer quality, both regressions caught in an audit
+//
+// The /about/ link went from 1,116 entry pages to 7 in a single edit, because
+// the sentence carrying it was rewritten and the anchor went with it. /about/
+// is the target of this site's publishingPrinciples and correctionsPolicy in
+// JSON-LD, so it is the one page every entry has a reason to point at. Nothing
+// failed; the site just quietly stopped linking its own method page.
+test('every entry links the method page, which the JSON-LD claims as its policy', () => {
+  assert.match(html, /href="\/lawtome\/about\/"/);
+  const main = html.slice(html.indexOf('<main'), html.indexOf('</main>'));
+  assert.ok(main.includes('href="/lawtome/about/"'), '/about/ must be linked from <main>, not only the footer');
+});
+
+test('the corrections path stays on the entry page', () => {
+  assert.match(html, /href="\/lawtome\/coin\/"/);
+});
+
+test('both reliability targets survive: the tier list and the scale itself', () => {
+  assert.match(html, /href="\/lawtome\/reliability\/heuristic\/"/);
+  assert.match(html, /href="\/lawtome\/reliability\/"/);
+});
+
+// An answer engine quoting the verdict should carry what the verdict was made
+// from. A rating with no evidence base attached is an opinion with a badge.
+test('the structured verdict answer states the evidence base', () => {
+  const faq = html.match(/"@type":"Question","name":"Is Goodhart's Law real\?"[\s\S]{0,900}?"text":"([^"]*)"/);
+  assert.ok(faq, 'verdict question must be in the FAQPage');
+  assert.match(faq[1], /rests on one cited source/);
+  assert.match(faq[1], /the original publication/);
+});
+
+test('the sourcing line names the hosts rather than repeating a slogan', () => {
+  // Same sentence on 1,116 pages is what mass production looks like; the host
+  // set differs across 165 combinations, so this line does not.
+  assert.match(html, /Everything above traces to x/);
+});

@@ -279,6 +279,19 @@ ${printNote}${biblio}${setTensions(laws, { base, compareSlugs, noun: 'set' })}${
         } : {}),
         ...(fact && fact.origin && fact.origin.place ? { birthPlace: { '@type': 'Place', name: fact.origin.place } } : {}),
       },
+      // The bibliography, machine-readable. The page prints these publications
+      // for a reader; `citation` is the same list for anything parsing the page,
+      // and a claim with a resolvable citation attached is the shape a
+      // generative engine can actually carry a reference for. Only the primary
+      // sources — citing an encyclopaedia article as the work behind a law
+      // would misrepresent what is being pointed at.
+      ...(primary.length ? {
+        citation: primary.map(({ src }) => ({
+          '@type': 'CreativeWork',
+          name: String(src.text || '').split(/\s+[—:]\s+/)[0].trim() || String(src.text || ''),
+          ...(src.url && /^https?:\/\//i.test(String(src.url).trim()) ? { url: src.url } : {}),
+        })),
+      } : {}),
       mainEntity: {
         '@type': 'ItemList',
         numberOfItems: laws.length,
