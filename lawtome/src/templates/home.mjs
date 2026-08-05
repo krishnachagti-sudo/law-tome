@@ -344,7 +344,26 @@ const BASE=${JSON.stringify(base)};
   var s=document.getElementById('stmt');if(!s||LAWS.length<2)return;
   // Respect reduced-motion: hold on the first statement, no auto-cycling.
   try{if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;}catch(e){}
+  var FADE=240; // must match the .stmt opacity transition in styles.css
   var hi=0,timer=null,hero=document.querySelector('.hero');
+  // How long each statement holds, in proportion to its length. A single
+  // interval cannot serve this set: the twelve featured laws run from 8 words
+  // to 39, so one number either rushes the short ones or parks on the long one.
+  //
+  // The band is chosen so every law is quicker than the flat 5200ms it
+  // replaced -- 2000ms for the shortest, 4200ms for Goodhart's 39-word
+  // original -- because "faster" should not have an exception on the first
+  // statement a visitor sees. Hover and keyboard focus still pause it, which is
+  // what makes the shorter dwell safe.
+  function dwell(i){
+    // \\s, not \s: this whole script is inside a template literal, so a single
+    // backslash is eaten at build time and the browser received /s+/ -- which
+    // splits on the letter "s". Every law measured as a handful of words and
+    // every dwell collapsed to the 2400ms floor, which looked like the feature
+    // working. Caught by hooking setTimeout in the page and reading the delays.
+    var words=String(LAWS[i].hero).replace(/<[^>]+>/g,' ').split(/\\s+/).length;
+    return Math.max(2000,Math.min(4200,1100+words*95));
+  }
   function setHero(i){
     var l=LAWS[i];
     s.style.opacity=0;
@@ -355,11 +374,12 @@ const BASE=${JSON.stringify(base)};
       s.innerHTML='<q>'+l.hero+'</q>';
       document.getElementById('attrib').innerHTML='— <a class="who" href="'+BASE+'laws/'+encodeURIComponent(l.slug)+'/">'+l.nameHtml+'</a>';
       s.style.opacity=1;
-    },300);
+    },FADE);
   }
-  function tick(){hi=(hi+1)%LAWS.length;setHero(hi);}
-  function play(){if(!timer)timer=setInterval(tick,5200);}
-  function pause(){if(timer){clearInterval(timer);timer=null;}}
+  // setTimeout rather than setInterval, because the delay now differs per law.
+  function tick(){hi=(hi+1)%LAWS.length;setHero(hi);timer=setTimeout(tick,dwell(hi));}
+  function play(){if(!timer)timer=setTimeout(tick,dwell(hi));}
+  function pause(){if(timer){clearTimeout(timer);timer=null;}}
   // Pause while the reader hovers or keyboard-focuses the hero, or the tab is
   // hidden — so the statement never changes out from under someone reading it.
   if(hero){hero.addEventListener('pointerenter',pause);hero.addEventListener('pointerleave',play);hero.addEventListener('focusin',pause);hero.addEventListener('focusout',play);}
