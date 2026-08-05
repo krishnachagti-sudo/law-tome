@@ -2,7 +2,10 @@
   "no": "752",
   "slug": "the-motion-aftereffect",
   "name": "The Motion Aftereffect",
-  "aliases": ["The waterfall illusion", "Motion adaptation"],
+  "aliases": [
+    "The waterfall illusion",
+    "Motion adaptation"
+  ],
   "statement": "Stare at a waterfall, then at the rocks beside it, and the still rocks seem to drift upward.",
   "statementAccent": "the still rocks seem to drift upward",
   "meaning": "The motion aftereffect is a visual illusion experienced after viewing a moving stimulus steadily for a while, typically thirty to sixty seconds, and then looking at a stationary scene: the stationary scene appears to move in the direction opposite to the previously viewed motion. Its most famous demonstration gives it the name the waterfall illusion, from the observation that staring at a waterfall and then looking at the adjacent stationary rocks makes them appear to drift upward. The effect was described in 1834 by Robert Addams after he observed the Falls of Foyers in Scotland, with an ancient antecedent in Aristotle's report of illusory motion after watching a flowing river. The motion aftereffect is a classic and important illusion in vision science, taken as direct evidence that the brain contains neurons selective for the direction of motion, and it has been localised to the motion-processing area of the visual cortex known as MT or V5.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The motion aftereffect is a classic and important illusion in vision science, historically providing some of the first psychophysical evidence that the brain analyses motion with neurons specifically tuned to direction. By showing that adapting to motion in one direction produces illusory motion in the opposite direction, it revealed the existence of direction-selective motion channels and demonstrated feature-specific neural adaptation, a landmark in understanding how the visual system is organised. Modern neuroscience has confirmed and localised the effect, tying it to the motion area MT, or V5, and using it to probe how motion is represented and adapted in the cortex. The illusion also poses a deep puzzle in the paradox of motion without displacement, which continues to inform theories of how motion and position are computed. Simple to demonstrate yet rich in implications, it remains a cornerstone example of adaptation and motion perception.",
   "working": [
-    {"lead": "Adapt to one direction", "text": "view motion in a single direction steadily for perhaps a minute, so the neurons tuned to that direction adapt and respond less."},
-    {"lead": "Look at a still scene", "text": "shift to a stationary scene, where the depressed neurons leave the population signal unbalanced toward the opposite direction."},
-    {"lead": "Perceive reverse motion", "text": "experience the still scene appearing to move the opposite way, a motion aftereffect localised to area MT."}
+    {
+      "lead": "Adapt to one direction",
+      "text": "view motion in a single direction steadily for perhaps a minute, so the neurons tuned to that direction adapt and respond less."
+    },
+    {
+      "lead": "Look at a still scene",
+      "text": "shift to a stationary scene, where the depressed neurons leave the population signal unbalanced toward the opposite direction."
+    },
+    {
+      "lead": "Perceive reverse motion",
+      "text": "experience the still scene appearing to move the opposite way, a motion aftereffect localised to area MT."
+    }
   ],
   "limits": "The motion aftereffect requires prolonged adaptation to consistent motion and is temporary, fading over seconds to minutes as the adapted neurons recover. Its strength depends on the duration, speed, and contrast of the adapting motion and on the properties of the test stimulus, and it varies across observers. The effect is direction-specific and reflects adaptation in motion-processing neurons rather than a general failure of vision. Some historical attributions, such as an ancient description by Lucretius, are uncertain, though Addams's 1834 account and Aristotle's antecedent are firm. The paradoxical percept of motion without position change is genuine but still not fully explained. So the illusion reliably demonstrates direction-selective adaptation and the neural basis of motion perception, within the specific conditions of prolonged adaptation, while some of its features remain subjects of research.",
   "misreadings": "The illusory motion is not real movement of the scene; the stationary features do not actually move or change position, which is exactly the paradox. The effect is not eye fatigue in general but adaptation of specific direction-selective neurons, so it is direction-specific and reverses the adapting motion. And it is temporary, fading as the neurons recover, so treating the aftereffect as the scene truly moving, or as generic tiredness of the eyes, misreads a phenomenon that reveals the brain's dedicated motion-detecting machinery.",
@@ -46,12 +58,26 @@
   "coinedYear": 1834,
   "namedAfter": null,
   "sources": [
-    {"text": "Motion aftereffect, Wikipedia. — the illusion of reverse motion after adaptation, the waterfall-illusion name, Addams's 1834 Falls of Foyers description and the Aristotle antecedent, the direction-selective-neuron adaptation mechanism, the motion-without-displacement paradox, and the MT or V5 localisation.", "url": "https://en.wikipedia.org/wiki/Motion_aftereffect", "type": "secondary"},
-    {"text": "Waterfall Illusion, The Illusions Index (University of Glasgow). — the motion aftereffect, its mechanism, and the paradoxical motion-without-displacement percept.", "url": "https://www.illusionsindex.org/i/waterfall-illusion", "type": "secondary"}
+    {
+      "text": "Motion aftereffect, Wikipedia. — the illusion of reverse motion after adaptation, the waterfall-illusion name, Addams's 1834 Falls of Foyers description and the Aristotle antecedent, the direction-selective-neuron adaptation mechanism, the motion-without-displacement paradox, and the MT or V5 localisation.",
+      "url": "https://en.wikipedia.org/wiki/Motion_aftereffect",
+      "type": "secondary"
+    },
+    {
+      "text": "Waterfall Illusion, The Illusions Index (University of Glasgow). — the motion aftereffect, its mechanism, and the paradoxical motion-without-displacement percept.",
+      "url": "https://www.illusionsindex.org/i/waterfall-illusion",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Motion_aftereffect",
   "related": [
-    {"slug": "the-mccollough-effect", "kind": "kindred"},
-    {"slug": "troxler-fading", "kind": "kindred"}
+    {
+      "slug": "the-mccollough-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "troxler-fading",
+      "kind": "kindred"
+    }
   ]
 }

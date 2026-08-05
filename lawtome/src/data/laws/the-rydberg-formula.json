@@ -4,8 +4,8 @@
   "name": "The Rydberg Formula",
   "statement": "A hydrogen line's wavelength comes from the difference of two inverse squares.",
   "statementAccent": "the difference of two inverse squares",
-  "meaning": "The Rydberg formula predicts the wavelengths of the spectral lines of hydrogen and other one-electron atoms. The reciprocal of the wavelength equals a constant, the Rydberg constant, times the difference between the inverse squares of two whole numbers — the principal quantum numbers of the levels involved. From two integers and one constant, it gives the precise colours hydrogen emits and absorbs.",
-  "mechanism": "Each spectral line comes from an electron jumping between two quantized energy levels of the atom, whose energies fall off as one over the square of a whole number. When the electron drops from a higher level to a lower one, it emits a photon whose energy is the difference between the two levels, and that energy fixes the wavelength — giving the difference of inverse squares. Bohr's 1913 model derived the Rydberg constant itself from fundamental constants, matching the empirical number and vindicating early quantum theory.",
+  "meaning": "The Rydberg formula predicts the wavelengths of the spectral lines of hydrogen and other one-electron atoms. The reciprocal of the wavelength equals a constant, the Rydberg constant, times the difference between the inverse squares of two whole numbers: the principal quantum numbers of the levels involved. From two integers and one constant, it gives the precise colours hydrogen emits and absorbs.",
+  "mechanism": "Each spectral line comes from an electron jumping between two quantized energy levels of the atom, whose energies fall off as one over the square of a whole number. When the electron drops from a higher level to a lower one, it emits a photon whose energy is the difference between the two levels, and that energy fixes the wavelength: giving the difference of inverse squares. Bohr's 1913 model derived the Rydberg constant itself from fundamental constants, matching the empirical number and vindicating early quantum theory.",
   "examples": [
     {
       "tag": "The Balmer series",
@@ -13,7 +13,7 @@
     },
     {
       "tag": "The spectral series",
-      "text": "Each lower level names a series — Lyman in the ultraviolet, Balmer in the visible, then Paschen, Brackett, and Pfund in the infrared — as the electron falls to the first, second, third, and higher levels."
+      "text": "Each lower level names a series (Lyman in the ultraviolet, Balmer in the visible, then Paschen, Brackett, and Pfund in the infrared) as the electron falls to the first, second, third, and higher levels."
     },
     {
       "tag": "Reading the stars",
@@ -38,7 +38,7 @@
     },
     {
       "lead": "Identify the series",
-      "text": "read the lower level to place a line in its series — Lyman, Balmer, Paschen, and so on — and its region of the spectrum."
+      "text": "read the lower level to place a line in its series (Lyman, Balmer, Paschen, and so on) and its region of the spectrum."
     },
     {
       "lead": "Correct for many electrons",
@@ -46,7 +46,7 @@
     }
   ],
   "limits": "The formula is exact, in the non-relativistic point-nucleus approximation, only for hydrogen and other single-electron ions; it fails for multi-electron atoms, where electron-electron interactions and screening require the quantum-defect correction. The constant for real hydrogen is slightly smaller than the infinite-mass value because the nucleus is not infinitely heavy, so different isotopes give slightly shifted lines. And the formula treats each level as a single energy, ignoring the fine structure, hyperfine structure, and Lamb shift that high-resolution spectra reveal.",
-  "misreadings": "The two numbers are the principal quantum numbers of the levels involved, not indices counting the lines. The formula does not work for all atoms — it is quantitatively exact only for one-electron systems, and multi-electron atoms need quantum-defect corrections. And Balmer and Rydberg did not derive it from theory: their formulas were empirical fits, and the physical explanation came only with Bohr and quantum mechanics.",
+  "misreadings": "The two numbers are the principal quantum numbers of the levels involved, not indices counting the lines. The formula does not work for all atoms. It is quantitatively exact only for one-electron systems, and multi-electron atoms need quantum-defect corrections. And Balmer and Rydberg did not derive it from theory: their formulas were empirical fits, and the physical explanation came only with Bohr and quantum mechanics.",
   "origin": "Grew from Johann Balmer's 1885 empirical fit to the visible hydrogen lines, generalised by Johannes Rydberg in 1888 into a formula in wavenumbers with the constant that bears his name; Niels Bohr explained it and derived the constant from fundamental constants in 1913.",
   "category": "physics",
   "reliability": "Empirical",

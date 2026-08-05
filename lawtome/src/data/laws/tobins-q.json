@@ -2,7 +2,10 @@
   "no": "519",
   "slug": "tobins-q",
   "name": "Tobin's q",
-  "aliases": ["The q ratio", "The Brainard-Tobin q"],
+  "aliases": [
+    "The q ratio",
+    "The Brainard-Tobin q"
+  ],
   "statement": "When the market values a firm's capital above what it costs to replace, it pays to build more; below that, it does not.",
   "statementAccent": "it pays to build more",
   "meaning": "Tobin's q is the ratio of the market value of a firm's, or an economy's, physical capital to the cost of replacing that capital. It links financial markets to real investment: when q is greater than one, the market values installed capital above its replacement cost, so building new capital creates value and firms have an incentive to invest; when q is less than one, existing assets are worth less than it would cost to rebuild them, so it is cheaper to buy than to build and investment falls. In principle q gravitates toward one, where the marginal value of capital just equals its replacement cost. It is a foundational bridge between asset prices and capital spending.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "Tobin's q gave economics a clean, market-based theory of investment, tying a firm's decision to build capital directly to how financial markets value that capital, and it remains a standard tool in corporate finance and macroeconomics. As an aggregate measure it offers a long-run yardstick for whether equities are cheap or dear relative to the replacement cost of real assets, informing debates about bubbles and mean reversion. It was part of the body of work on financial markets for which James Tobin won the 1981 Nobel prize in economics, and it endures as a core link between Wall Street and the real economy.",
   "working": [
-    {"lead": "Compare value to replacement cost", "text": "read q above one as a signal to invest and below one as a signal to hold back or buy existing assets instead of building."},
-    {"lead": "Mind marginal versus average", "text": "remember that investment is driven by marginal q, while the measurable figure is average q, and the two coincide only under specific conditions."},
-    {"lead": "Use it as a long-run gauge", "text": "treat aggregate q as a yardstick for whether the market is dear or cheap against real assets, not a short-term timing signal."}
+    {
+      "lead": "Compare value to replacement cost",
+      "text": "read q above one as a signal to invest and below one as a signal to hold back or buy existing assets instead of building."
+    },
+    {
+      "lead": "Mind marginal versus average",
+      "text": "remember that investment is driven by marginal q, while the measurable figure is average q, and the two coincide only under specific conditions."
+    },
+    {
+      "lead": "Use it as a long-run gauge",
+      "text": "treat aggregate q as a yardstick for whether the market is dear or cheap against real assets, not a short-term timing signal."
+    }
   ],
   "limits": "Replacement cost is hard to measure, especially at the level of a whole economy, which makes q noisy in practice. Average q is a biased proxy for the marginal q that actually drives investment whenever Hayashi's conditions fail, under imperfect competition, market power, or non-constant returns. Intangible assets such as research, brands, and software are poorly captured in replacement-cost measures, biasing q upward, and the ratio relies on market prices reflecting fundamentals, so mispricing distorts its signal. Empirically q can stay far from one for long stretches, undermining the tidy story that it reverts quickly, so it is better as a long-run guide than a precise short-run rule.",
   "misreadings": "Average q should not be treated as marginal q without Hayashi's conditions of constant returns and competitive markets; conflating them is the common technical error. Q need not revert to exactly one quickly, since adjustment costs and frictions keep it away. It is related to, but not the same as, the price-to-book ratio, because book value is not replacement cost. A firm-level q above one is not automatically overvaluation, since it can reflect genuine growth prospects, intangibles, or monopoly rents. And Tobin's 1981 Nobel was for his broad analysis of financial markets, not specifically for q.",
@@ -47,11 +59,22 @@
   "namedAfter": "James Tobin",
   "namesakeKind": "person",
   "sources": [
-    {"text": "The Sveriges Riksbank Prize in Economic Sciences 1981 (James Tobin), NobelPrize.org. — the award and the description of Tobin's q.", "url": "https://www.nobelprize.org/prizes/economic-sciences/1981/summary/", "type": "secondary"},
-    {"text": "Hayashi, 'Tobin's Marginal q and Average q: A Neoclassical Interpretation,' Econometrica 50(1):213-224 (1982). — the conditions under which average q equals marginal q.", "url": "https://doi.org/10.2307/1912538", "type": "primary"}
+    {
+      "text": "The Sveriges Riksbank Prize in Economic Sciences 1981 (James Tobin), NobelPrize.org. — the award and the description of Tobin's q.",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/1981/summary/",
+      "type": "secondary"
+    },
+    {
+      "text": "Hayashi, 'Tobin's Marginal q and Average q: A Neoclassical Interpretation,' Econometrica 50(1):213-224 (1982). — the conditions under which average q equals marginal q.",
+      "url": "https://doi.org/10.2307/1912538",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Tobin%27s_q",
   "related": [
-    {"slug": "the-efficient-market-hypothesis", "kind": "kindred"}
+    {
+      "slug": "the-efficient-market-hypothesis",
+      "kind": "kindred"
+    }
   ]
 }

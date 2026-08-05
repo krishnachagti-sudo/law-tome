@@ -2,7 +2,9 @@
   "no": "372",
   "slug": "will-rogers-phenomenon",
   "name": "The Will Rogers Phenomenon",
-  "aliases": ["Stage migration"],
+  "aliases": [
+    "Stage migration"
+  ],
   "statement": "Move one item between two groups and the average of both groups can rise, though nothing changed.",
   "statementAccent": "the average of both groups can rise",
   "meaning": "The Will Rogers phenomenon is a statistical artifact in which moving a single item from one group to another raises the average of both groups at once, even though no individual value has changed. It happens when the moved item is below the average of the group it leaves, so removing it lifts that group's mean, and above the average of the group it joins, so adding it lifts that group's mean too. The overall average across both groups is untouched.",
@@ -10,11 +12,11 @@
   "examples": [
     {
       "tag": "The namesake joke",
-      "text": "The name comes from a quip that when migrants left one state for another, they raised the average intelligence of both — though its attribution to the humorist Will Rogers is itself uncertain and likely apocryphal."
+      "text": "The name comes from a quip that when migrants left one state for another, they raised the average intelligence of both, though its attribution to the humorist Will Rogers is itself uncertain and likely apocryphal."
     },
     {
       "tag": "Cancer stage migration",
-      "text": "Feinstein's 1985 study found lung-cancer survival apparently improved within every stage group after better imaging reclassified patients, with no real gain in treatment — the phenomenon named."
+      "text": "Feinstein's 1985 study found lung-cancer survival apparently improved within every stage group after better imaging reclassified patients, with no real gain in treatment: the phenomenon named."
     },
     {
       "tag": "Any regrouped average",
@@ -33,12 +35,21 @@
   ],
   "whyItMatters": "It is a standard caution in reading medical and epidemiological statistics, especially apparent improvements in survival over time when diagnostic or classification criteria have shifted. More broadly it warns against comparing grouped averages across any period in which the rule for sorting items into groups has changed, since every subgroup can seem to improve while nothing real has happened.",
   "working": [
-    {"lead": "Watch for reclassification", "text": "when group averages all improve, check whether the criteria for assigning items to groups changed over the same period."},
-    {"lead": "Look at the whole, not the parts", "text": "compare the overall pooled average, which the phenomenon leaves unchanged, rather than trusting rises in every subgroup."},
-    {"lead": "Hold the classification fixed", "text": "to compare fairly, use a definition of the groups that does not shift over time, as Feinstein did with symptom-based staging."}
+    {
+      "lead": "Watch for reclassification",
+      "text": "when group averages all improve, check whether the criteria for assigning items to groups changed over the same period."
+    },
+    {
+      "lead": "Look at the whole, not the parts",
+      "text": "compare the overall pooled average, which the phenomenon leaves unchanged, rather than trusting rises in every subgroup."
+    },
+    {
+      "lead": "Hold the classification fixed",
+      "text": "to compare fairly, use a definition of the groups that does not shift over time, as Feinstein did with symptom-based staging."
+    }
   ],
   "limits": "It is a named statistical artifact, not a law, and a well-understood one; it operates only when the two groups' distributions overlap, so that a moved value can lie below one mean and above the other. The overall average is unchanged, so the effect is confined to subgroup statistics. And it describes a real, reproducible confounder of grouped comparisons, not a universal force that always acts. The eponymous quote's attribution to Will Rogers is traditional but unverified.",
-  "misreadings": "No individual value goes up — only the group averages move, purely because membership changed. The whole population's average does not rise; only the two subgroup means do. And in the cancer example nothing about treatment improved: the apparent survival gain is entirely an artifact of reclassifying patients through better imaging.",
+  "misreadings": "No individual value goes up, only the group averages move, purely because membership changed. The whole population's average does not rise; only the two subgroup means do. And in the cancer example nothing about treatment improved: the apparent survival gain is entirely an artifact of reclassifying patients through better imaging.",
   "origin": "The medical term was introduced by the clinician Alvan Feinstein and colleagues in a 1985 New England Journal of Medicine paper on cancer stage migration; the name invokes a joke traditionally, though unreliably, attributed to the humorist Will Rogers.",
   "category": "statistics",
   "reliability": "Heuristic",
@@ -47,12 +58,26 @@
   "namedAfter": "Will Rogers",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Will Rogers phenomenon, Wikipedia. — the both-means-rise mechanism, the apocryphal Rogers quote, and the Feinstein stage-migration coinage.", "url": "https://en.wikipedia.org/wiki/Will_Rogers_phenomenon", "type": "secondary"},
-    {"text": "Feinstein, Sosin & Wells, \"The Will Rogers Phenomenon,\" New England Journal of Medicine 312 (1985): 1604-1608. — stage migration inflating apparent cancer survival.", "url": "https://pubmed.ncbi.nlm.nih.gov/4000199/", "type": "primary"}
+    {
+      "text": "Will Rogers phenomenon, Wikipedia. — the both-means-rise mechanism, the apocryphal Rogers quote, and the Feinstein stage-migration coinage.",
+      "url": "https://en.wikipedia.org/wiki/Will_Rogers_phenomenon",
+      "type": "secondary"
+    },
+    {
+      "text": "Feinstein, Sosin & Wells, \"The Will Rogers Phenomenon,\" New England Journal of Medicine 312 (1985): 1604-1608. — stage migration inflating apparent cancer survival.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/4000199/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Will_Rogers_phenomenon",
   "related": [
-    {"slug": "simpsons-paradox", "kind": "kindred"},
-    {"slug": "regression-to-the-mean", "kind": "kindred"}
+    {
+      "slug": "simpsons-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "regression-to-the-mean",
+      "kind": "kindred"
+    }
   ]
 }

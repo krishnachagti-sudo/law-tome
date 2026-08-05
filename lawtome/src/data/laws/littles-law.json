@@ -5,7 +5,7 @@
   "statement": "How crowded a system is equals how fast things arrive times how long they stay.",
   "statementAccent": "how fast things arrive times how long they stay",
   "meaning": "In a stable system, the average number of items present equals the average arrival rate multiplied by the average time each item spends inside. If customers arrive at ten an hour and each stays half an hour, five are present on average. It converts between three quantities you can measure separately: population, flow rate, and dwell time.",
-  "mechanism": "It is an accounting identity for stationary systems — bookkeeping on the item-time accumulated inside. Remarkably, it holds regardless of the arrival-process distribution, the service-time distribution, the number of servers, or the queue discipline. The only requirement is that the system be in steady state with finite averages, which is what makes it so general.",
+  "mechanism": "It is an accounting identity for stationary systems: bookkeeping on the item-time accumulated inside. Remarkably, it holds regardless of the arrival-process distribution, the service-time distribution, the number of servers, or the queue discipline. The only requirement is that the system be in steady state with finite averages, which is what makes it so general.",
   "examples": [
     {
       "tag": "Checkout and call centres",
@@ -13,7 +13,7 @@
     },
     {
       "tag": "Software response time",
-      "text": "With ten jobs in the system and a throughput of fifty a second, the mean response time is ten over fifty, a fifth of a second — the law rearranged to find dwell time."
+      "text": "With ten jobs in the system and a throughput of fifty a second, the mean response time is ten over fifty, a fifth of a second: the law rearranged to find dwell time."
     },
     {
       "tag": "Work in progress",
@@ -30,7 +30,7 @@
       "text": "The broader field the law belongs to, where it stands out as one of the most general results precisely because it is distribution-free."
     }
   ],
-  "whyItMatters": "It is one of the most general and useful results in operations, letting managers convert between crowding, flow, and waiting time in queues of every kind — shops, factories, call centres, software pipelines. Its distribution-free generality means it applies almost anywhere items flow through a stable system.",
+  "whyItMatters": "It is one of the most general and useful results in operations, letting managers convert between crowding, flow, and waiting time in queues of every kind: shops, factories, call centres, software pipelines. Its distribution-free generality means it applies almost anywhere items flow through a stable system.",
   "working": [
     {
       "lead": "Convert between the three quantities",
@@ -45,7 +45,7 @@
       "text": "apply it only to stationary systems in equilibrium, not to transient or growing ones where the averages are not yet stable."
     }
   ],
-  "limits": "It requires a stationary system in steady state — stable, with items conserved so that the average arrival rate equals the average departure rate. It is misapplied to transient, unstable, or growing systems. It concerns long-run averages and finite means, and says nothing about variance, distribution shape, or any individual item's wait. On finite observation windows it holds only approximately, needing care about items present at the start and not yet departed at the end.",
+  "limits": "It requires a stationary system in steady state: stable, with items conserved so that the average arrival rate equals the average departure rate. It is misapplied to transient, unstable, or growing systems. It concerns long-run averages and finite means, and says nothing about variance, distribution shape, or any individual item's wait. On finite observation windows it holds only approximately, needing care about items present at the start and not yet departed at the end.",
   "misreadings": "It is not a statement about any individual's waiting time, only about long-run averages, and it says nothing about variability. And it holds only in steady state — applying it to a system that is still filling up, draining, or unstable gives wrong answers.",
   "origin": "First given a general proof by John D. C. Little in 'A Proof for the Queuing Formula: L = λW' (Operations Research, 1961); the relationship had been used earlier and conjectured by his advisor Philip Morse, but Little showed no counterexample exists.",
   "category": "planning",

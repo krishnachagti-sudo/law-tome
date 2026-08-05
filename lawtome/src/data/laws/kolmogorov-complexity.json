@@ -13,7 +13,7 @@
   "examples": [
     {
       "tag": "Pattern versus noise",
-      "text": "The string 'ab' repeated a thousand times has a tiny description — 'write ab a thousand times' — while a string of random characters of the same length has no shorter description than itself, so it is nearly incompressible."
+      "text": "The string 'ab' repeated a thousand times has a tiny description, 'write ab a thousand times', while a string of random characters of the same length has no shorter description than itself, so it is nearly incompressible."
     },
     {
       "tag": "Most strings are random",
@@ -27,7 +27,7 @@
   "variants": [
     {
       "name": "Chaitin's constant",
-      "text": "The halting probability of a universal machine — the chance a random program halts — which is definable yet algorithmically random and uncomputable, a concrete number embodying the theory's limits."
+      "text": "The halting probability of a universal machine, the chance a random program halts, which is definable yet algorithmically random and uncomputable, a concrete number embodying the theory's limits."
     },
     {
       "name": "Minimum description length",
@@ -38,7 +38,7 @@
   "working": [
     {
       "lead": "Read shortness as simplicity",
-      "text": "gauge an object's regularity by how short a program can generate it — the shorter the description, the more structure it has."
+      "text": "gauge an object's regularity by how short a program can generate it: the shorter the description, the more structure it has."
     },
     {
       "lead": "Treat incompressibility as randomness",
@@ -49,9 +49,9 @@
       "text": "since the true complexity is uncomputable, work with the best short description you can find, knowing a shorter one may exist."
     }
   ],
-  "limits": "Kolmogorov complexity is provably uncomputable: no algorithm can compute it in general, a fact equivalent in strength to solving the halting problem. One can only obtain upper bounds by finding ever-shorter programs, never certify the true minimum. It is also defined only up to an additive constant, so absolute complexity values for specific short objects are not uniquely meaningful — the theory is asymptotic. And it must not be confused with computational complexity, which concerns running time rather than description length.",
-  "misreadings": "It is not a quantity you can calculate for an arbitrary object — it is uncomputable, and only upper bounds are ever available. And it is not about how long a program takes to run; it is about how short the program can be.",
-  "origin": "Discovered independently by Ray Solomonoff (1960 and 1964), Andrey Kolmogorov (1965), and Gregory Chaitin (published 1969), each approaching it from inductive inference, randomness, or string structure — a classic case of multiple discovery.",
+  "limits": "Kolmogorov complexity is provably uncomputable: no algorithm can compute it in general, a fact equivalent in strength to solving the halting problem. One can only obtain upper bounds by finding ever-shorter programs, never certify the true minimum. It is also defined only up to an additive constant, so absolute complexity values for specific short objects are not uniquely meaningful: the theory is asymptotic. And it must not be confused with computational complexity, which concerns running time rather than description length.",
+  "misreadings": "It is not a quantity you can calculate for an arbitrary object. It is uncomputable, and only upper bounds are ever available. And it is not about how long a program takes to run; it is about how short the program can be.",
+  "origin": "Discovered independently by Ray Solomonoff (1960 and 1964), Andrey Kolmogorov (1965), and Gregory Chaitin (published 1969), each approaching it from inductive inference, randomness, or string structure: a classic case of multiple discovery.",
   "category": "software",
   "reliability": "Empirical",
   "provenance": "canon",

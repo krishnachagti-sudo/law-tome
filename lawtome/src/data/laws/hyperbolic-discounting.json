@@ -5,11 +5,11 @@
   "statement": "The future's pull weakens sharply up close and gently far off, so plans flip.",
   "statementAccent": "so plans flip",
   "meaning": "People value future rewards less than immediate ones, and they do so, the evidence suggests, along a curve better described as hyperbolic than exponential. That means impatience is intense in the near term and mild in the long term, which makes preferences present-biased and time-inconsistent: a plan that looks best when made can look worse when the moment to carry it out arrives.",
-  "mechanism": "Under the exponential discounting of standard economics, a constant rate applies each period, so adding the same delay to two options multiplies both by the same factor and never changes their ranking. Hyperbolic discounting breaks that. Because the curve is steep over the first stretch of delay and nearly flat far out, the sooner reward can win when it is immediate yet lose when both are pushed far into the future — the two discount curves cross. Economists often use a tractable stand-in, the quasi-hyperbolic beta-delta model, which multiplies everything beyond the present moment by a single extra discount, capturing present bias with one added kink.",
+  "mechanism": "Under the exponential discounting of standard economics, a constant rate applies each period, so adding the same delay to two options multiplies both by the same factor and never changes their ranking. Hyperbolic discounting breaks that. Because the curve is steep over the first stretch of delay and nearly flat far out, the sooner reward can win when it is immediate yet lose when both are pushed far into the future: the two discount curves cross. Economists often use a tractable stand-in, the quasi-hyperbolic beta-delta model, which multiplies everything beyond the present moment by a single extra discount, capturing present bias with one added kink.",
   "examples": [
     {
       "tag": "The preference reversal",
-      "text": "Many people prefer a hundred dollars now to a hundred and ten tomorrow, yet prefer a hundred and ten in thirty-one days to a hundred in thirty — the same one-day wait, valued oppositely near and far, the signature of the effect."
+      "text": "Many people prefer a hundred dollars now to a hundred and ten tomorrow, yet prefer a hundred and ten in thirty-one days to a hundred in thirty: the same one-day wait, valued oppositely near and far, the signature of the effect."
     },
     {
       "tag": "Procrastination",
@@ -17,7 +17,7 @@
     },
     {
       "tag": "Commitment devices",
-      "text": "A person who foresees their own future weakness will pay to bind that later self — locking savings away, using apps that shut them out — behaviour that is evidence of present bias."
+      "text": "A person who foresees their own future weakness will pay to bind that later self (locking savings away, using apps that shut them out) behaviour that is evidence of present bias."
     }
   ],
   "variants": [
@@ -30,7 +30,7 @@
       "text": "Ainslie's framework picturing a person as a population of competing interests bargaining across time, from which willpower emerges as the outcome of intertemporal bargaining."
     }
   ],
-  "whyItMatters": "It gives a precise account of self-control failure — procrastination, addiction, under-saving — as the predictable result of a discount curve that overweights the present, and it explains the otherwise puzzling demand for commitment devices. It reshaped economic models of intertemporal choice and is a pillar of behavioural economics.",
+  "whyItMatters": "It gives a precise account of self-control failure (procrastination, addiction, under-saving) as the predictable result of a discount curve that overweights the present, and it explains the otherwise puzzling demand for commitment devices. It reshaped economic models of intertemporal choice and is a pillar of behavioural economics.",
   "working": [
     {
       "lead": "Anticipate the flip",
@@ -38,14 +38,14 @@
     },
     {
       "lead": "Use commitment",
-      "text": "bind your future self in advance — automatic saving, locked options — to hold to plans that present bias would otherwise upend."
+      "text": "bind your future self in advance (automatic saving, locked options) to hold to plans that present bias would otherwise upend."
     },
     {
       "lead": "Watch for confounds",
       "text": "before attributing behaviour to a hyperbolic curve, consider uncertainty and how the choice is framed, which can mimic it."
     }
   ],
-  "limits": "The observation of declining impatience and preference reversals is robust; the claim that the discount function is specifically hyperbolic is not settled. A rational agent facing uncertainty about whether a promised future reward will really arrive can look hyperbolic while discounting exponentially. Read's work argues discounting is subadditive — larger when a delay is split into parts — and found little independent evidence of declining impatience, pointing to an interval-length confound. Recent meta-analyses find present bias real on average but highly variable, with evidence of selective reporting and a magnitude for purely monetary choices close to time-consistent, the effect being stronger for effort and consumption than for money.",
+  "limits": "The observation of declining impatience and preference reversals is robust; the claim that the discount function is specifically hyperbolic is not settled. A rational agent facing uncertainty about whether a promised future reward will really arrive can look hyperbolic while discounting exponentially. Read's work argues discounting is subadditive, larger when a delay is split into parts, and found little independent evidence of declining impatience, pointing to an interval-length confound. Recent meta-analyses find present bias real on average but highly variable, with evidence of selective reporting and a magnitude for purely monetary choices close to time-consistent, the effect being stronger for effort and consumption than for money.",
   "misreadings": "Present bias in real effort and consumption choices is fairly well supported, but that does not confirm the discount curve is hyperbolic rather than exponential-plus-uncertainty or an artefact of measurement. And for money specifically, the average bias appears much smaller than early work implied — money-based experiments are vulnerable to arbitrage and much of the classic evidence rests on student samples.",
   "origin": "Grew from Herrnstein's matching law and George Ainslie's 1975 'Specious Reward,' which argued impulsiveness reflects crossing hyperbolic delay curves; David Laibson brought the quasi-hyperbolic model into mainstream economics in 'Golden Eggs and Hyperbolic Discounting' (1997), with the beta-delta idea tracing back to Phelps and Pollak.",
   "category": "economics",

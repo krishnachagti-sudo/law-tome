@@ -2,7 +2,9 @@
   "no": "398",
   "slug": "the-peak-end-rule",
   "name": "The Peak-End Rule",
-  "aliases": ["Peak-end effect"],
+  "aliases": [
+    "Peak-end effect"
+  ],
   "statement": "We judge an experience by its most intense moment and its ending, not its whole.",
   "statementAccent": "its most intense moment and its ending",
   "meaning": "The peak-end rule is the finding that people judge a past experience largely by how they felt at its most intense point, the peak, and at its end, rather than by the average or sum of every moment. The overall length of the experience has surprisingly little effect on the remembered impression, a companion finding called duration neglect. Memory keeps something like a snapshot weighted toward the peak and the finish.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It is foundational in behavioural economics, separating remembered from experienced utility, and it guides the design of medical procedures, customer service, and user experiences, where a strong peak and a good ending shape satisfaction. It reframes how we should evaluate and plan repeat experiences, and it warns that the self that chooses may systematically misjudge the self that lives through the moments.",
   "working": [
-    {"lead": "Attend to peak and end", "text": "when shaping an experience for others, invest in a strong high point and a positive close, which dominate the memory."},
-    {"lead": "Do not ignore the middle entirely", "text": "remember that the average of the whole experience still predicts memory well, so peak and end are not the only things that matter."},
-    {"lead": "Distinguish living from remembering", "text": "recognise that choices about repeating an experience are made by the remembering self, which can misweigh the actual moments."}
+    {
+      "lead": "Attend to peak and end",
+      "text": "when shaping an experience for others, invest in a strong high point and a positive close, which dominate the memory."
+    },
+    {
+      "lead": "Do not ignore the middle entirely",
+      "text": "remember that the average of the whole experience still predicts memory well, so peak and end are not the only things that matter."
+    },
+    {
+      "lead": "Distinguish living from remembering",
+      "text": "recognise that choices about repeating an experience are made by the remembering self, which can misweigh the actual moments."
+    }
   ],
   "limits": "It is well supported within its paradigms and, by meta-analysis, a large and robust effect, but its scope is limited. The same analysis finds the average of the whole experience predicts memory about as well, so the rule is a strong heuristic, not a claim that only peak and end matter. It has boundary conditions and weakens for long, complex, or high-involvement experiences, and duration neglect is not absolute, since duration still has some effect. It applies to pleasant experiences too, though the classic evidence is from aversive ones.",
   "misreadings": "Duration does not never matter; duration neglect means it matters little relative to peak and end, not nothing. It is not true that only the peak and end count, since the average of the whole experience is a comparably strong predictor. And it does not apply uniformly to every experience, weakening for extended or complex ones. It is also not confined to pain, applying to pleasant experiences as well.",
@@ -45,12 +56,26 @@
   "provenance": "canon",
   "coinedYear": 1993,
   "sources": [
-    {"text": "Redelmeier & Kahneman, \"Patients' memories of painful medical treatments,\" Pain 66 (1996): 3-8. — the colonoscopy study of peak and end.", "url": "https://pubmed.ncbi.nlm.nih.gov/8857625/", "type": "primary"},
-    {"text": "Peak-end rule, Wikipedia. — the rule, duration neglect, the two selves, and the meta-analytic scope.", "url": "https://en.wikipedia.org/wiki/Peak%E2%80%93end_rule", "type": "secondary"}
+    {
+      "text": "Redelmeier & Kahneman, \"Patients' memories of painful medical treatments,\" Pain 66 (1996): 3-8. — the colonoscopy study of peak and end.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8857625/",
+      "type": "primary"
+    },
+    {
+      "text": "Peak-end rule, Wikipedia. — the rule, duration neglect, the two selves, and the meta-analytic scope.",
+      "url": "https://en.wikipedia.org/wiki/Peak%E2%80%93end_rule",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Peak%E2%80%93end_rule",
   "related": [
-    {"slug": "the-serial-position-effect", "kind": "kindred"},
-    {"slug": "hyperbolic-discounting", "kind": "kindred"}
+    {
+      "slug": "the-serial-position-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "hyperbolic-discounting",
+      "kind": "kindred"
+    }
   ]
 }

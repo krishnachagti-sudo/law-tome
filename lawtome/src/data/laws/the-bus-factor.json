@@ -10,8 +10,8 @@
   ],
   "statement": "The number of people who would have to vanish before a project stalls for want of anyone who knows how it works.",
   "statementAccent": "before a project stalls",
-  "meaning": "A blunt measure of concentrated knowledge. If the answer is one, the project is one resignation, illness or holiday away from stopping — not because the work is hard, but because only one person knows where anything is.",
-  "mechanism": "Knowledge accumulates wherever work is done, and work concentrates on whoever is already fastest at it. The person who wrote the deployment script is the quickest to fix it, so they fix it again, and the gap between them and everyone else widens with every incident. Nothing about this feels like a risk while it is happening — it looks like efficiency, and it is, right up to the moment that person is unavailable. The measure is deliberately morbid because the failure mode is ordinary: people leave jobs far more often than they are hit by buses.",
+  "meaning": "A blunt measure of concentrated knowledge. If the answer is one, the project is one resignation, illness or holiday away from stopping, not because the work is hard, but because only one person knows where anything is.",
+  "mechanism": "Knowledge accumulates wherever work is done, and work concentrates on whoever is already fastest at it. The person who wrote the deployment script is the quickest to fix it, so they fix it again, and the gap between them and everyone else widens with every incident. Nothing about this feels like a risk while it is happening. It looks like efficiency, and it is, right up to the moment that person is unavailable. The measure is deliberately morbid because the failure mode is ordinary: people leave jobs far more often than they are hit by buses.",
   "examples": [
     {
       "tag": "The undocumented deploy",
@@ -41,9 +41,9 @@
       "text": "a bus factor of one on a prototype is fine. On the release pipeline it is the whole company's availability resting on one person's calendar."
     }
   ],
-  "limits": "It is a count with no agreed method of counting: what constitutes 'stalling', over what time horizon, and how much of a system a person must know to count are all unspecified, so two honest estimates of the same team can differ by several. It also treats all knowledge as equally critical and all people as equally replaceable-by-documentation, which is not true of either. And raising it has real costs — cross-training is slower than letting the expert do it — so the right number is rarely the highest one.",
+  "limits": "It is a count with no agreed method of counting: what constitutes 'stalling', over what time horizon, and how much of a system a person must know to count are all unspecified, so two honest estimates of the same team can differ by several. It also treats all knowledge as equally critical and all people as equally replaceable-by-documentation, which is not true of either. And raising it has real costs, cross-training is slower than letting the expert do it, so the right number is rarely the highest one.",
   "misreadings": "It is not a claim that anyone is expendable, and it is not a headcount target. Nor does a high bus factor mean the knowledge is written down: it means more than one person holds it, which is a different and more fragile thing than documentation.",
-  "origin": "Software folklore with no single author. An early documented instance is Michael McLay's 1994 question about Python's prospects without Guido van Rossum; the idea appears in the Pattern Languages of Program Design series in 1995 and is established as 'truck number' in the 2004 book Organizational Patterns of Agile Software Development. The variants — truck factor, lottery factor, circus factor — are attempts at the same idea with less gallows in them.",
+  "origin": "Software folklore with no single author. An early documented instance is Michael McLay's 1994 question about Python's prospects without Guido van Rossum; the idea appears in the Pattern Languages of Program Design series in 1995 and is established as 'truck number' in the 2004 book Organizational Patterns of Agile Software Development. The variants (truck factor, lottery factor, circus factor) are attempts at the same idea with less gallows in them.",
   "category": "software",
   "reliability": "Heuristic",
   "provenance": "canon",
@@ -62,8 +62,17 @@
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Bus_factor",
   "related": [
-    { "slug": "conways-law", "kind": "kindred" },
-    { "slug": "brooks-law", "kind": "kindred" },
-    { "slug": "the-curse-of-knowledge", "kind": "kindred" }
+    {
+      "slug": "conways-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "brooks-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-curse-of-knowledge",
+      "kind": "kindred"
+    }
   ]
 }

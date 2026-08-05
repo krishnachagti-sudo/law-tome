@@ -2,7 +2,10 @@
   "no": "425",
   "slug": "ricardian-equivalence",
   "name": "Ricardian Equivalence",
-  "aliases": ["The Barro-Ricardo equivalence proposition", "Debt neutrality"],
+  "aliases": [
+    "The Barro-Ricardo equivalence proposition",
+    "Debt neutrality"
+  ],
   "statement": "How a government funds its spending, by taxes now or borrowing to be repaid later, makes no difference to the economy.",
   "statementAccent": "makes no difference",
   "meaning": "Ricardian equivalence is the proposition that, for a given level of government spending, financing it by current taxes or by borrowing has no effect on aggregate demand, consumption, interest rates, or capital accumulation. Because rational, forward-looking households recognise that a deficit today implies higher taxes tomorrow to service and repay the debt, they save the whole of a deficit-financed tax cut to meet the coming liability. A deficit-financed tax cut therefore does not stimulate spending; in the strong form, households do not treat government bonds as net wealth.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It is central to debates over whether deficit-financed tax cuts and fiscal stimulus can boost demand, whether government debt crowds out private saving and investment, and whether deficits impose a burden. As a limiting case it defines the benchmark against which the real effects of deficits are measured: to argue that deficits matter is to argue that one of its strong assumptions fails. It thus organises much of the theory of fiscal policy, even for economists who regard it as descriptively false.",
   "working": [
-    {"lead": "Treat it as a benchmark", "text": "use equivalence as the limiting case against which to measure the real effects of deficits, not as a description of how economies respond."},
-    {"lead": "Check the assumptions", "text": "to judge whether a deficit will matter, ask which of its conditions, infinite horizons, perfect capital markets, lump-sum taxes, no uncertainty, is violated."},
-    {"lead": "Expect only partial offset", "text": "anticipate that households offset part but not all of a deficit, since liquidity constraints and finite horizons blunt the full result."}
+    {
+      "lead": "Treat it as a benchmark",
+      "text": "use equivalence as the limiting case against which to measure the real effects of deficits, not as a description of how economies respond."
+    },
+    {
+      "lead": "Check the assumptions",
+      "text": "to judge whether a deficit will matter, ask which of its conditions, infinite horizons, perfect capital markets, lump-sum taxes, no uncertainty, is violated."
+    },
+    {
+      "lead": "Expect only partial offset",
+      "text": "anticipate that households offset part but not all of a deficit, since liquidity constraints and finite horizons blunt the full result."
+    }
   ],
   "limits": "Equivalence relies on strong assumptions widely believed not to hold. It requires infinite horizons or intergenerational altruism through operative bequest motives; if households are finitely-lived and do not fully value their descendants' burdens, it fails. It requires perfect capital markets, so liquidity-constrained households, who spend a tax cut, break it. It assumes lump-sum, non-distortionary taxes and no uncertainty about future income, taxes, or lifespan. Empirically the evidence is mixed and generally finds only partial equivalence, so most economists treat it as a theoretical benchmark rather than an accurate account of how economies respond to deficits.",
   "misreadings": "It is not an empirically established fact; the evidence is mixed and at best supports approximate or partial equivalence, so it is best treated as a benchmark rather than a description of reality. The name overstates Ricardo's endorsement: he articulated the logic but explicitly doubted it would hold in practice, and it was Barro, not Ricardo, who revived it as a strong modern proposition. And it does not say deficits never matter in general; it says they are neutral only under conditions that frequently fail.",
@@ -47,11 +59,22 @@
   "namedAfter": "Robert Barro",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Barro, 'Are Government Bonds Net Wealth?,' Journal of Political Economy 82(6) (1974): 1095-1117 (Harvard DASH full text). — the modern formalisation and the bequest-motive argument.", "url": "https://dash.harvard.edu/handle/1/3451399", "type": "primary"},
-    {"text": "Ricardian equivalence, Wikipedia. — the proposition, Ricardo's own doubt, the assumptions, and the mixed empirical record.", "url": "https://en.wikipedia.org/wiki/Ricardian_equivalence", "type": "secondary"}
+    {
+      "text": "Barro, 'Are Government Bonds Net Wealth?,' Journal of Political Economy 82(6) (1974): 1095-1117 (Harvard DASH full text). — the modern formalisation and the bequest-motive argument.",
+      "url": "https://dash.harvard.edu/handle/1/3451399",
+      "type": "primary"
+    },
+    {
+      "text": "Ricardian equivalence, Wikipedia. — the proposition, Ricardo's own doubt, the assumptions, and the mixed empirical record.",
+      "url": "https://en.wikipedia.org/wiki/Ricardian_equivalence",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Ricardian_equivalence",
   "related": [
-    {"slug": "says-law", "kind": "kindred"}
+    {
+      "slug": "says-law",
+      "kind": "kindred"
+    }
   ]
 }

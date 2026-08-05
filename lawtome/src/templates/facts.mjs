@@ -36,12 +36,12 @@ export function formulaBlock(fact, law, { base = '/' } = {}) {
  * phrase was in circulation, not when anyone had the thought.
  */
 function gapNote(coined, firstYear) {
-  const generic = 'This tracks the <b>phrase</b>, not the idea — a law is usually older than the name for it.';
+  const generic = 'This tracks the <b>phrase</b> and not the idea. A law is usually older than the name for it.';
   if (!coined || !firstYear || !Number.isFinite(coined) || !Number.isFinite(firstYear)) return generic;
   const lag = firstYear - coined;
   if (lag >= 15) return `The idea dates to ${coined}: the <b>phrase</b> took about ${lag} years to reach print in any quantity, which is the gap this chart measures.`;
-  if (lag <= -15) return `The <b>phrase</b> was already in print some ${Math.abs(lag)} years before ${coined}, the date recorded for the idea here — a chart of words is not a chart of when anyone had the thought.`;
-  if (Math.abs(lag) < 15) return `Coined ${coined} and in print by about ${firstYear} — unusually close, though this remains a chart of the <b>phrase</b> rather than of the idea.`;
+  if (lag <= -15) return `The <b>phrase</b> was already in print some ${Math.abs(lag)} years before ${coined}, the date recorded for the idea here. A chart of words is not a chart of when anyone had the thought.`;
+  if (Math.abs(lag) < 15) return `Coined ${coined} and in print by about ${firstYear}, unusually close together. This still charts the <b>phrase</b> rather than the idea.`;
   return generic;
 }
 
@@ -133,6 +133,6 @@ export function otherNames(fact, { base = '/' } = {}) {
   if (rows.length < 3) return '';
   return `        <div class="othernames">
           <ul class="on-list">${rows.join('')}</ul>
-          <p class="on-note">${rows.length} languages, as recorded on <a href="${escapeHtml(n.source)}">Wikidata</a> — names the idea already goes by, not translations we made. <a href="${base}names/">The whole index by language</a>.</p>
+          <p class="on-note">${rows.length} languages, as recorded on <a href="${escapeHtml(n.source)}">Wikidata</a>. These are names the idea already goes by, not translations we made. <a href="${base}names/">The whole index by language</a>.</p>
         </div>`;
 }

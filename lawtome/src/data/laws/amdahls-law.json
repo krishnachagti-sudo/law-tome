@@ -4,7 +4,7 @@
   "name": "Amdahl's Law",
   "statement": "The speedup from parallelising a task is capped by the part that stays sequential.",
   "statementAccent": "capped by the part that stays sequential",
-  "meaning": "If some fraction of a job must run in sequence, adding more processors speeds up only the rest — so the serial part becomes the bottleneck, and you can never finish faster than that part alone takes. The returns from extra processors diminish and then flatten against a hard ceiling.",
+  "meaning": "If some fraction of a job must run in sequence, adding more processors speeds up only the rest, so the serial part becomes the bottleneck, and you can never finish faster than that part alone takes. The returns from extra processors diminish and then flatten against a hard ceiling.",
   "mechanism": "The speedup is S = 1 / ((1 − p) + p/N), where p is the parallelisable fraction, (1 − p) the serial fraction, and N the number of processors. The serial fraction sets a floor on execution time and therefore a ceiling on speedup: as N grows without bound, the p/N term vanishes and S approaches 1/(1 − p). Amdahl's 1967 argument was really a qualitative case against the single-processor-array approach; the compact formula is a faithful later crystallisation of it.",
   "examples": [
     {
@@ -13,7 +13,7 @@
     },
     {
       "tag": "Diminishing cores",
-      "text": "At 90% parallel, the ceiling is 10×; going from one to eight cores already gets you most of the way there, and adding thousands more buys almost nothing — the serial tenth dominates the total time."
+      "text": "At 90% parallel, the ceiling is 10×; going from one to eight cores already gets you most of the way there, and adding thousands more buys almost nothing: the serial tenth dominates the total time."
     },
     {
       "tag": "Optimising one routine",
@@ -23,21 +23,30 @@
   "variants": [
     {
       "name": "Gustafson's law",
-      "text": "The optimistic counterpoint: if you scale the problem size up with the processor count rather than holding it fixed, the parallel work grows and speedup rises nearly linearly — answering a different question about a different quantity."
+      "text": "The optimistic counterpoint: if you scale the problem size up with the processor count rather than holding it fixed, the parallel work grows and speedup rises nearly linearly (answering a different question about a different quantity)."
     },
     {
       "name": "The universal scalability law",
-      "text": "Neil Gunther's extension, which adds a coherency or crosstalk term to the serial one, so real speedup can peak and then decline as processors are added — modelling the overhead both idealised laws omit."
+      "text": "Neil Gunther's extension, which adds a coherency or crosstalk term to the serial one, so real speedup can peak and then decline as processors are added: modelling the overhead both idealised laws omit."
     }
   ],
   "whyItMatters": "It is the founding sobering result of parallel computing: throwing hardware at a problem has a mathematically fixed limit set by the part that cannot be parallelised. It disciplines expectations for multicore and cluster performance and directs effort toward shrinking the serial fraction rather than merely adding cores.",
   "working": [
-    {"lead": "Attack the serial fraction", "text": "since the sequential part sets the ceiling, the highest-value work is usually reducing or removing it, not adding more processors."},
-    {"lead": "Estimate the ceiling before you scale", "text": "compute 1/(1 − p) for a realistic parallel fraction to know the best case; if it is low, more hardware will not rescue you."},
-    {"lead": "Count the overhead too", "text": "communication and synchronisation costs make real speedup worse than Amdahl's bound, so treat the formula as an optimistic limit, not a promise."}
+    {
+      "lead": "Attack the serial fraction",
+      "text": "since the sequential part sets the ceiling, the highest-value work is usually reducing or removing it, not adding more processors."
+    },
+    {
+      "lead": "Estimate the ceiling before you scale",
+      "text": "compute 1/(1 − p) for a realistic parallel fraction to know the best case; if it is low, more hardware will not rescue you."
+    },
+    {
+      "lead": "Count the overhead too",
+      "text": "communication and synchronisation costs make real speedup worse than Amdahl's bound, so treat the formula as an optimistic limit, not a promise."
+    }
   ],
-  "limits": "Amdahl's law assumes a fixed problem size (strong scaling) and a constant serial fraction. Gustafson's rebuttal is that real workloads grow to fill available parallelism, so the effective serial fraction shrinks with scale and Amdahl is pessimistic for many practical high-performance problems. It also ignores overhead — inter-processor communication, synchronisation, memory contention, scheduling — which can make measured speedup fall short of the bound, the gap the universal scalability law was built to capture. The formula itself is uncontested; only its modelling assumptions are.",
-  "misreadings": "It does not say parallelism is futile — only that its benefit is bounded by the serial share. Nor is it the whole story: whether the serial fraction is really fixed is exactly what Gustafson disputes for scalable workloads. Read it as a ceiling on fixed-size speedup, not as a verdict against large parallel machines.",
+  "limits": "Amdahl's law assumes a fixed problem size (strong scaling) and a constant serial fraction. Gustafson's rebuttal is that real workloads grow to fill available parallelism, so the effective serial fraction shrinks with scale and Amdahl is pessimistic for many practical high-performance problems. It also ignores overhead (inter-processor communication, synchronisation, memory contention, scheduling), which can make measured speedup fall short of the bound, the gap the universal scalability law was built to capture. The formula itself is uncontested; only its modelling assumptions are.",
+  "misreadings": "It does not say parallelism is futile, only that its benefit is bounded by the serial share. Nor is it the whole story: whether the serial fraction is really fixed is exactly what Gustafson disputes for scalable workloads. Read it as a ceiling on fixed-size speedup, not as a verdict against large parallel machines.",
   "origin": "Stated by the computer architect Gene Amdahl in 'Validity of the single processor approach to achieving large scale computing capabilities' (AFIPS Spring Joint Computer Conference, 1967), while he was at IBM. The pithy algebraic 'law' is a later formalisation of his argument, which was originally a qualitative case against massively parallel arrays.",
   "category": "software",
   "reliability": "Empirical",
@@ -46,12 +55,26 @@
   "namedAfter": "Gene Amdahl",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Amdahl, G.M. (1967). \"Validity of the single processor approach to achieving large scale computing capabilities.\" AFIPS Conference Proceedings, 30, 483–485.", "url": "https://dl.acm.org/doi/10.1145/1465482.1465560", "type": "primary"},
-    {"text": "Amdahl's law, Wikipedia. — the formula, the asymptotic ceiling, and the fixed-size assumption.", "url": "https://en.wikipedia.org/wiki/Amdahl%27s_law", "type": "secondary"}
+    {
+      "text": "Amdahl, G.M. (1967). \"Validity of the single processor approach to achieving large scale computing capabilities.\" AFIPS Conference Proceedings, 30, 483–485.",
+      "url": "https://dl.acm.org/doi/10.1145/1465482.1465560",
+      "type": "primary"
+    },
+    {
+      "text": "Amdahl's law, Wikipedia. — the formula, the asymptotic ceiling, and the fixed-size assumption.",
+      "url": "https://en.wikipedia.org/wiki/Amdahl%27s_law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Amdahl%27s_law",
   "related": [
-    {"slug": "gustafsons-law", "kind": "tension"},
-    {"slug": "brooks-law", "kind": "kindred"}
+    {
+      "slug": "gustafsons-law",
+      "kind": "tension"
+    },
+    {
+      "slug": "brooks-law",
+      "kind": "kindred"
+    }
   ]
 }

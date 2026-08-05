@@ -4,12 +4,12 @@
   "name": "The End-to-End Principle",
   "statement": "Put the smarts at the edges of a network, and keep the core simple.",
   "statementAccent": "keep the core simple",
-  "meaning": "The end-to-end principle holds that application-specific functions should live at the end points of a communication system rather than in the network in between. Because a function can often be completely and correctly implemented only with the knowledge and help of the applications at the endpoints, providing it inside the network is redundant or insufficient — though a partial version in the network can still be a useful performance optimisation. The core should be simple and general; the intelligence belongs at the edges.",
-  "mechanism": "The reasoning is captured by the careful file-transfer example. Sending a file correctly must guard against errors at many points — disk reads, memory, software, the network, a crash mid-transfer — so the application must run its own end-to-end check whatever happens. If it must anyway, then making the network itself perfectly reliable does not remove the need for that check; it only reduces how often the application retries. So reliability in the network is an engineering tradeoff for performance, not a requirement for correctness, and correctness is best secured at the ends.",
+  "meaning": "The end-to-end principle holds that application-specific functions should live at the end points of a communication system rather than in the network in between. Because a function can often be completely and correctly implemented only with the knowledge and help of the applications at the endpoints, providing it inside the network is redundant or insufficient, though a partial version in the network can still be a useful performance optimisation. The core should be simple and general; the intelligence belongs at the edges.",
+  "mechanism": "The reasoning is captured by the careful file-transfer example. Sending a file correctly must guard against errors at many points (disk reads, memory, software, the network, a crash mid-transfer), so the application must run its own end-to-end check whatever happens. If it must anyway, then making the network itself perfectly reliable does not remove the need for that check; it only reduces how often the application retries. So reliability in the network is an engineering tradeoff for performance, not a requirement for correctness, and correctness is best secured at the ends.",
   "examples": [
     {
       "tag": "TCP over IP",
-      "text": "The internet's design: IP provides a simple, best-effort delivery service, while TCP supplies reliability at the endpoints — the archetype of a dumb network with smart edges."
+      "text": "The internet's design: IP provides a simple, best-effort delivery service, while TCP supplies reliability at the endpoints (the archetype of a dumb network with smart edges)."
     },
     {
       "tag": "End-to-end encryption",
@@ -17,7 +17,7 @@
     },
     {
       "tag": "The corrupting gateway",
-      "text": "The authors' own anecdote: a network that checksummed each hop still silently corrupted files, because a gateway's transient bug scrambled data while it sat unprotected in a buffer — the errors the hop checks could not catch."
+      "text": "The authors' own anecdote: a network that checksummed each hop still silently corrupted files, because a gateway's transient bug scrambled data while it sat unprotected in a buffer (the errors the hop checks could not catch)."
     }
   ],
   "variants": [
@@ -27,17 +27,26 @@
     },
     {
       "name": "The stupid network",
-      "text": "David Isenberg's popularisation contrasting the internet's general, edge-intelligent design with the telephone system's smart core and dumb endpoints — a later phrasing, not the original."
+      "text": "David Isenberg's popularisation contrasting the internet's general, edge-intelligent design with the telephone system's smart core and dumb endpoints: a later phrasing, not the original."
     }
   ],
   "whyItMatters": "It is one of the founding design principles of the internet, the argument for a simple, general core over which any application can be built at the edges, enabling permissionless innovation and new uses the network's designers never anticipated. It is a widely cited intellectual precursor to network neutrality, and a lasting guide for deciding what belongs in a system's core versus its endpoints.",
   "working": [
-    {"lead": "Push function to the edges", "text": "implement application-specific functions at the endpoints, keeping the network core simple and general."},
-    {"lead": "Use the core for performance only", "text": "add function to the network as a performance enhancement, not as a guarantee of correctness the endpoints must provide anyway."},
-    {"lead": "Identify the right ends", "text": "apply the argument carefully, since which points count as the ends depends on the application, as real-time voice and stored voicemail show."}
+    {
+      "lead": "Push function to the edges",
+      "text": "implement application-specific functions at the endpoints, keeping the network core simple and general."
+    },
+    {
+      "lead": "Use the core for performance only",
+      "text": "add function to the network as a performance enhancement, not as a guarantee of correctness the endpoints must provide anyway."
+    },
+    {
+      "lead": "Identify the right ends",
+      "text": "apply the argument carefully, since which points count as the ends depends on the application, as real-time voice and stored voicemail show."
+    }
   ],
-  "limits": "The authors themselves called it a guideline, not an absolute rule — a kind of Occam's razor for system design that requires care in identifying which points are the ends. They explicitly endorsed in-network mechanisms as performance enhancements, since on a lossy link some reliability is worthwhile; the point is only that the lower levels need not be perfect. The pure model has since eroded: network address translation, firewalls, middleboxes, content delivery networks, and quality-of-service place function and state in the network for security, performance, or policy, in tension with the end-to-end pull to keep it out.",
-  "misreadings": "The principle does not say put nothing in the network; it endorses in-network mechanisms as performance enhancements, just not as guarantees of correctness. It is not an absolute law but a guideline, and even the endpoints are not always the obvious hosts. The dumb-network, smart-edges phrasing comes from later popularisers, not the original authors, whose statement is more precise and more hedged. And it directly mandates net neutrality only in policy debates — the principle itself is an engineering argument about where functions belong.",
+  "limits": "The authors themselves called it a guideline, not an absolute rule: a kind of Occam's razor for system design that requires care in identifying which points are the ends. They explicitly endorsed in-network mechanisms as performance enhancements, since on a lossy link some reliability is worthwhile; the point is only that the lower levels need not be perfect. The pure model has since eroded: network address translation, firewalls, middleboxes, content delivery networks, and quality-of-service place function and state in the network for security, performance, or policy, in tension with the end-to-end pull to keep it out.",
+  "misreadings": "The principle does not say put nothing in the network; it endorses in-network mechanisms as performance enhancements, just not as guarantees of correctness. It is not an absolute law but a guideline, and even the endpoints are not always the obvious hosts. The dumb-network, smart-edges phrasing comes from later popularisers, not the original authors, whose statement is more precise and more hedged. And it directly mandates net neutrality only in policy debates: the principle itself is an engineering argument about where functions belong.",
   "origin": "Articulated by Jerome Saltzer, David Reed, and David Clark in 'End-to-End Arguments in System Design,' first presented in 1981 and published in ACM Transactions on Computer Systems in 1984; a foundational statement of internet architecture.",
   "category": "software",
   "reliability": "Empirical",
@@ -46,13 +55,31 @@
   "namedAfter": "Saltzer, Reed, and Clark",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Saltzer, Reed & Clark, \"End-to-End Arguments in System Design,\" ACM Transactions on Computer Systems 2(4):277-288 (1984), author PDF. — the statement, the file-transfer reasoning, and the performance caveat.", "url": "https://web.mit.edu/saltzer/www/publications/endtoend/endtoend.pdf", "type": "primary"},
-    {"text": "End-to-end principle, Wikipedia. — the TCP/IP example, the erosions by NATs and middleboxes, and the net-neutrality lineage.", "url": "https://en.wikipedia.org/wiki/End-to-end_principle", "type": "secondary"},
-    {"text": "Blumenthal & Clark, \"Rethinking the design of the Internet: the end-to-end arguments vs. the brave new world,\" ACM Transactions on Internet Technology 1(1) (2001). — the tensions pulling function into the network.", "url": "https://dl.acm.org/doi/10.1145/383034.383037", "type": "primary"}
+    {
+      "text": "Saltzer, Reed & Clark, \"End-to-End Arguments in System Design,\" ACM Transactions on Computer Systems 2(4):277-288 (1984), author PDF. — the statement, the file-transfer reasoning, and the performance caveat.",
+      "url": "https://web.mit.edu/saltzer/www/publications/endtoend/endtoend.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "End-to-end principle, Wikipedia. — the TCP/IP example, the erosions by NATs and middleboxes, and the net-neutrality lineage.",
+      "url": "https://en.wikipedia.org/wiki/End-to-end_principle",
+      "type": "secondary"
+    },
+    {
+      "text": "Blumenthal & Clark, \"Rethinking the design of the Internet: the end-to-end arguments vs. the brave new world,\" ACM Transactions on Internet Technology 1(1) (2001). — the tensions pulling function into the network.",
+      "url": "https://dl.acm.org/doi/10.1145/383034.383037",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/End-to-end_principle",
   "related": [
-    {"slug": "the-fallacies-of-distributed-computing", "kind": "kindred"},
-    {"slug": "postels-law", "kind": "kindred"}
+    {
+      "slug": "the-fallacies-of-distributed-computing",
+      "kind": "kindred"
+    },
+    {
+      "slug": "postels-law",
+      "kind": "kindred"
+    }
   ]
 }

@@ -350,7 +350,7 @@ ${h2}${inner}
     Empirical: 'grounded in studies or measurable evidence',
     Heuristic: 'a dependable rule of thumb, not a proven theorem',
     'Folk-adage': 'a proverb or saying, not a scientific finding',
-    Contested: 'disputed — the evidence is debated',
+    Contested: 'disputed, with the evidence still argued over',
   };
   const reliabilityMeter = () => {
     if (coined || !law.reliability) return '';
@@ -361,7 +361,7 @@ ${h2}${inner}
     return `      <div class="viz-col">
         <div class="viz-h">Reliability</div>
         <div class="meter" role="img" aria-label="Reliability tier: ${escapeHtml(law.reliability)}">${segs}</div>
-        <p class="viz-note">Rated <b>${escapeHtml(law.reliability)}</b> — ${escapeHtml(TIER_NOTE[law.reliability] || 'see the reliability scale')}. <a href="${base}reliability/${reliabilitySlug(law.reliability)}/">The other ${(tierCount(byslug, law.reliability) - 1).toLocaleString('en-GB')}</a>.</p>
+        <p class="viz-note">Rated <b>${escapeHtml(law.reliability)}</b>: ${escapeHtml(TIER_NOTE[law.reliability] || 'see the reliability scale')}. <a href="${base}reliability/${reliabilitySlug(law.reliability)}/">The other ${(tierCount(byslug, law.reliability) - 1).toLocaleString('en-GB')}</a>.</p>
       </div>`;
   };
   const lineageTimeline = () => {
@@ -489,7 +489,7 @@ ${h2}${inner}
   if (!coined && law.reliability) {
     const VERDICT = {
       Empirical: `<b>Yes, as far as the evidence goes.</b> ${LH} is rated <b>Empirical</b> here: it rests on studies or measurements rather than on a saying.`,
-      Heuristic: `<b>Real as a rule of thumb, not as a theorem.</b> ${LH} is rated <b>Heuristic</b> here — dependable enough to plan with, with no proof behind it.`,
+      Heuristic: `<b>Real as a rule of thumb, not as a theorem.</b> ${LH} is rated <b>Heuristic</b> here: dependable enough to plan with, and with no proof behind it.`,
       'Folk-adage': `<b>It is a saying, not a finding.</b> ${LH} is rated <b>Folk-adage</b> here: it circulates because it is memorable and often true, not because anyone measured it.`,
       Contested: `<b>That is exactly what is in dispute.</b> ${LH} is rated <b>Contested</b> here: the effect is claimed, the evidence is argued over, and specialists disagree.`,
     };
@@ -617,10 +617,10 @@ ${items}
     // on en.wikipedia.org"), so the second half must not repeat it.
     const counted = hosts.length === 1 && n > 1;
     const provenance = nPrim === 0
-      ? `Everything above traces to ${where} — ${n === 1 ? 'a secondary source, an account' : `${counted ? 'both' : numWord(n)} secondary${counted ? '' : ' sources'}, accounts`} of the original rather than the original itself, which has not been located for this entry.`
+      ? `Everything above traces to ${where}: ${n === 1 ? 'a secondary source, an account' : `${counted ? 'both' : numWord(n)} secondary${counted ? '' : ' sources'}, accounts`} of the original rather than the original itself, which has not been located for this entry.`
       : nPrim === n
-        ? `Everything above traces to ${where} — the ${plural(n, 'publication')} ${n === 1 ? 'itself' : 'themselves'}, not ${n === 1 ? 'an account' : 'accounts'} of ${n === 1 ? 'it' : 'them'}.`
-        : `Everything above traces to ${where}${counted ? '' : ` — ${numWord(n)} sources`}, ${numWord(nPrim)} of them the original ${plural(nPrim, 'publication')} rather than ${nPrim === 1 ? 'an account' : 'accounts'} of it.`;
+        ? `Everything above traces to ${where}: the ${plural(n, 'publication')} ${n === 1 ? 'itself' : 'themselves'}, not ${n === 1 ? 'an account' : 'accounts'} of ${n === 1 ? 'it' : 'them'}.`
+        : `Everything above traces to ${where}${counted ? '' : `, ${numWord(n)} sources in all`}, ${numWord(nPrim)} of them the original ${plural(nPrim, 'publication')} rather than ${nPrim === 1 ? 'an account' : 'accounts'} of it.`;
     const srcTrust = `        <p class="src-trust">${provenance} Nothing is written from memory. Spot an error or a better source? <a href="${base}coin/">Suggest a fix.</a></p>`;
     blocks.push(block('Sources', `        <ol class="sources-list">\n${items}\n        </ol>\n${srcTrust}`, true, `Sources & further reading`));
   }

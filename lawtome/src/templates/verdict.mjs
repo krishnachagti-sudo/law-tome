@@ -49,7 +49,7 @@ export function verdictPage(v, { base = '/', origin = '', count, categories = {}
       </div>
       <div class="vd-c">
         <span class="vd-cn">${num(fieldSoft)} of ${num(fieldTotal)}</span>
-        <span class="vd-cl">entries in ${escapeHtml(String(fieldName).toLowerCase())} rest on something other than measurement — ${pc(fieldSoft, fieldTotal)} of the field</span>
+        <span class="vd-cl">entries in ${escapeHtml(String(fieldName).toLowerCase())} rest on something other than measurement, ${pc(fieldSoft, fieldTotal)} of the field</span>
       </div>
       <div class="vd-c">
         <span class="vd-cn">${pc(corpusSoft, corpusTotal)}</span>
@@ -89,7 +89,7 @@ ${sources.map((s) => `      <li>${s.url ? `<a href="${escapeHtml(s.url)}" rel="n
     },
     {
       q: 'Who decides the rating?',
-      a: `We do, and that is the softest part of this whole index — it is stated on <a href="${base}how-solid/">the page that makes the argument</a> rather than buried. The rating is applied against a published scale, the entry's own limits are quoted rather than summarised, and every source is linked so you can disagree with us from the same evidence.`,
+      a: `We do, and that is the softest part of this whole index. It is stated on <a href="${base}how-solid/">the page that makes the argument</a> rather than buried. The rating is applied against a published scale, the entry's own limits are quoted rather than summarised, and every source is linked so you can disagree with us from the same evidence.`,
     },
     {
       q: 'Where is the rest of it?',
@@ -106,7 +106,7 @@ ${hubHead({
     // The second sentence used to be the same on all 156 verdict pages. It now
     // counts what this particular entry is standing on, which is both more
     // informative and different almost everywhere.
-    lede: `${escapeHtml(law.name)} says: <b>${escapeHtml(law.statement || '')}</b> ${sources.length ? `${num(sources.length)} ${sources.length === 1 ? 'source' : 'sources'} sit behind the ${escapeHtml(tier)} rating${sources.filter((s) => s && s.type === 'primary').length ? `, ${num(sources.filter((s) => s && s.type === 'primary').length)} of them primary` : ', none of them the original publication'}` : `The ${escapeHtml(tier)} rating`} — below, how far that goes in the entry's own words, and how it compares with the ${num(corpusTotal)} entries around it.`,
+    lede: `${escapeHtml(law.name)} says: <b>${escapeHtml(law.statement || '')}</b> ${sources.length ? `${num(sources.length)} ${sources.length === 1 ? 'source' : 'sources'} sit behind the ${escapeHtml(tier)} rating${sources.filter((s) => s && s.type === 'primary').length ? `, ${num(sources.filter((s) => s && s.type === 'primary').length)} of them primary` : ', none of them the original publication'}` : `The ${escapeHtml(tier)} rating`}. Below: how far that goes in the entry's own words, and how it compares with the ${num(corpusTotal)} entries around it.`,
     base,
     crumbs: [['is-it-real/', 'Is it real?']],
   })}${compare}

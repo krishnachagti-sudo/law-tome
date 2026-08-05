@@ -4,7 +4,7 @@
   "name": "The Borel–Cantelli Lemma",
   "statement": "If the probabilities of a sequence of events sum to a finite value, then almost surely only finitely many of the events occur.",
   "statementAccent": "then almost surely only finitely many of the events occur",
-  "meaning": "This first lemma gives a simple sufficient condition — a convergent sum of event probabilities — for concluding that, with probability 1, all but finitely many of the events fail to happen. A companion second lemma provides a partial converse: if the events are independent and their probabilities sum to infinity, then almost surely infinitely many occur.",
+  "meaning": "This first lemma gives a simple sufficient condition, a convergent sum of event probabilities, for concluding that, with probability 1, all but finitely many of the events fail to happen. A companion second lemma provides a partial converse: if the events are independent and their probabilities sum to infinity, then almost surely infinitely many occur.",
   "mechanism": "The first lemma follows from countable subadditivity: the probability that infinitely many events occur is bounded above by the tail sum of probabilities from any starting index, which shrinks to zero as the convergent series is truncated further out. The second lemma uses independence and the bound 1−p ≤ e^(−p) to show the probability that none of a growing block occurs vanishes when the probabilities sum to infinity.",
   "examples": [
     {

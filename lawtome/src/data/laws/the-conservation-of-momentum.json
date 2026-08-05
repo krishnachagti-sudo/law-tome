@@ -7,8 +7,8 @@
   ],
   "statement": "In a closed system, total momentum never changes.",
   "statementAccent": "total momentum never changes",
-  "meaning": "Momentum, the product of an object's mass and velocity, is conserved: the total momentum of a closed system — one on which no net external force acts — stays constant in time. However complicated the interactions inside the system, however many collisions and explosions, the vector sum of all the momenta before equals the sum after. It is one of the deepest and most reliable conservation laws in physics.",
-  "mechanism": "At the Newtonian level the law follows from the third law of motion: when two bodies interact they push on each other with equal and opposite forces, so the momentum one gains the other loses, and internal forces cancel in pairs. Only forces from outside the system can change its total momentum. More fundamentally, by Noether's theorem the conservation of momentum is the consequence of the translational symmetry of space — the fact that the laws of physics are the same everywhere. That deeper root is why the law survives intact into relativity and quantum mechanics.",
+  "meaning": "Momentum, the product of an object's mass and velocity, is conserved: the total momentum of a closed system (one on which no net external force acts) stays constant in time. However complicated the interactions inside the system, however many collisions and explosions, the vector sum of all the momenta before equals the sum after. It is one of the deepest and most reliable conservation laws in physics.",
+  "mechanism": "At the Newtonian level the law follows from the third law of motion: when two bodies interact they push on each other with equal and opposite forces, so the momentum one gains the other loses, and internal forces cancel in pairs. Only forces from outside the system can change its total momentum. More fundamentally, by Noether's theorem the conservation of momentum is the consequence of the translational symmetry of space: the fact that the laws of physics are the same everywhere. That deeper root is why the law survives intact into relativity and quantum mechanics.",
   "examples": [
     {
       "tag": "Collisions elastic and inelastic",
@@ -16,7 +16,7 @@
     },
     {
       "tag": "Recoil and rockets",
-      "text": "A gun recoils backward as the bullet flies forward, and a rocket climbs as it throws exhaust downward — the total momentum of gun-and-bullet, or rocket-and-exhaust, staying constant."
+      "text": "A gun recoils backward as the bullet flies forward, and a rocket climbs as it throws exhaust downward: the total momentum of gun-and-bullet, or rocket-and-exhaust, staying constant."
     },
     {
       "tag": "The explosion",
@@ -48,8 +48,8 @@
       "text": "conserve momentum component by component, respecting directions and signs, since it is a vector rather than a scalar."
     }
   ],
-  "limits": "The law requires a closed, isolated system: a nonzero net external force changes the total momentum, so it applies only when external forces sum to zero or act over too short a time to matter. When fields are present, momentum can be stored in the field itself — in electromagnetism the field carries momentum — so the momentum of matter alone need not be conserved, only the total including the field, and the split between matter and field in a medium is a genuinely subtle, contested question. The numerical value of momentum depends on the inertial frame, though the conservation law holds in every such frame; in an accelerating frame, fictitious forces must be accounted for.",
-  "misreadings": "Momentum is not the same as kinetic energy: momentum is conserved in all collisions with no external force, but kinetic energy only in elastic ones, and treating a perfectly inelastic collision as if mechanical energy were conserved is a common error. There is no separate law conserving kinetic energy — Noether's theorem conserves total energy, into which kinetic energy can convert. And an apparent failure, like a car slowing to a stop, usually means an external force such as friction with the Earth was left outside the system.",
+  "limits": "The law requires a closed, isolated system: a nonzero net external force changes the total momentum, so it applies only when external forces sum to zero or act over too short a time to matter. When fields are present, momentum can be stored in the field itself (in electromagnetism the field carries momentum), so the momentum of matter alone need not be conserved, only the total including the field, and the split between matter and field in a medium is a genuinely subtle, contested question. The numerical value of momentum depends on the inertial frame, though the conservation law holds in every such frame; in an accelerating frame, fictitious forces must be accounted for.",
+  "misreadings": "Momentum is not the same as kinetic energy: momentum is conserved in all collisions with no external force, but kinetic energy only in elastic ones, and treating a perfectly inelastic collision as if mechanical energy were conserved is a common error. There is no separate law conserving kinetic energy: Noether's theorem conserves total energy, into which kinetic energy can convert. And an apparent failure, like a car slowing to a stop, usually means an external force such as friction with the Earth was left outside the system.",
   "origin": "Rooted in the work of Descartes, Huygens, and Wallis on colliding bodies in the seventeenth century and made precise through Newton's laws of motion; given its deepest grounding by Emmy Noether's 1918 theorem, which ties it to the translational symmetry of space.",
   "category": "physics",
   "reliability": "Empirical",

@@ -5,7 +5,7 @@
   "statement": "Two things each in equilibrium with a third are in equilibrium with each other.",
   "statementAccent": "in equilibrium with each other",
   "meaning": "If system A is in thermal equilibrium with system C, and system B is also in thermal equilibrium with system C, then A and B are in thermal equilibrium with each other. Thermal equilibrium is transitive. This apparently obvious statement is what makes temperature a meaningful, well-defined property and what allows a thermometer to work.",
-  "mechanism": "Treat thermal equilibrium as a relation between systems. It is reflexive, symmetric, and — this is the law's real content — transitive, which together make it an equivalence relation. An equivalence relation sorts all systems into disjoint classes, and every system in a class shares one label. That label is temperature: two systems have the same temperature exactly when they would sit in thermal equilibrium if brought into contact. Transitivity is precisely what lets you compare two systems that have never touched, by comparing each against a common reference — the logic on which all thermometry rests.",
+  "mechanism": "Treat thermal equilibrium as a relation between systems. It is reflexive, symmetric, and (this is the law's real content) transitive, which together make it an equivalence relation. An equivalence relation sorts all systems into disjoint classes, and every system in a class shares one label. That label is temperature: two systems have the same temperature exactly when they would sit in thermal equilibrium if brought into contact. Transitivity is precisely what lets you compare two systems that have never touched, by comparing each against a common reference: the logic on which all thermometry rests.",
   "examples": [
     {
       "tag": "The thermometer",
@@ -27,14 +27,14 @@
     },
     {
       "name": "Empirical versus absolute temperature",
-      "text": "The law licenses only an empirical temperature — any consistent labelling of the classes; fixing the absolute thermodynamic scale requires the second law, not the zeroth."
+      "text": "The law licenses only an empirical temperature: any consistent labelling of the classes; fixing the absolute thermodynamic scale requires the second law, not the zeroth."
     }
   ],
   "whyItMatters": "It is the logical foundation of temperature and thermometry, the reason a single number can characterise how hot a thing is and why measuring instruments give comparable readings. Numbered zero because it is prior to the first and second laws yet was named after them, it supplies the concept those later laws take for granted.",
   "working": [
     {
       "lead": "Trust the reference",
-      "text": "compare two systems that never meet by comparing each with a common third — a thermometer — relying on transitivity."
+      "text": "compare two systems that never meet by comparing each with a common third, a thermometer, relying on transitivity."
     },
     {
       "lead": "Read equal temperature as equilibrium",
@@ -46,7 +46,7 @@
     }
   ],
   "limits": "In classical thermodynamics the law is a postulate, not a theorem. The step from transitivity to a single real-valued temperature function is not automatic: it needs reflexivity and symmetry assumed alongside transitivity, plus regularity assumptions, and the rigorous-foundations literature shows a global temperature need not follow from local results without added structure. The law holds for conventional short-range systems with non-negative heat capacity; explicit violations have been constructed for non-ergodic or non-additive interactions and for negative-heat-capacity states such as some self-gravitating systems. And the exact year the term was coined is uncertain, somewhere in the later 1930s.",
-  "misreadings": "It does not say heat flows from hot to cold, nor even fix what final state two unequal systems reach in contact — that directionality is the second law. And it does not fix the temperature scale: it licenses only an empirical temperature, any consistent labelling of the equilibrium classes, while the absolute scale comes from the second law.",
+  "misreadings": "It does not say heat flows from hot to cold, nor even fix what final state two unequal systems reach in contact. That directionality is the second law. And it does not fix the temperature scale: it licenses only an empirical temperature, any consistent labelling of the equilibrium classes, while the absolute scale comes from the second law.",
   "origin": "The concept is Maxwell-era, from the 1870s; the name is a twentieth-century retrofit. Ralph Fowler is credited, per Sommerfeld, with coining 'zeroth law,' and it appears in print in Fowler and Guggenheim's Statistical Thermodynamics of about 1939; Saha and Srivastava had stated the transitivity idea explicitly in 1935.",
   "category": "physics",
   "reliability": "Empirical",

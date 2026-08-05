@@ -22,7 +22,7 @@
   ],
   "whyItMatters": "It is one of the most widely used tools for guarding against false discoveries in fields that run many simultaneous tests, such as genomics, neuroimaging, and clinical trials with multiple endpoints.",
   "limits": "The correction is conservative, especially as the number of tests grows or when tests are correlated rather than independent, which increases the risk of Type II errors and reduces power. Less conservative alternatives, such as Holm–Bonferroni or the Šidák correction, achieve the same control with more power.",
-  "misreadings": "It is sometimes wrongly treated as controlling the false discovery rate rather than the family-wise error rate — different criteria with different, often much less conservative, procedures like Benjamini–Hochberg.",
+  "misreadings": "It is sometimes wrongly treated as controlling the false discovery rate rather than the family-wise error rate: different criteria with different, often much less conservative, procedures like Benjamini–Hochberg.",
   "origin": "Based on inequalities published by Italian mathematician Carlo Emilio Bonferroni around 1935–1936; formalised for hypothesis testing and confidence intervals by Olive Jean Dunn in 1961, hence the alternate name Bonferroni–Dunn correction.",
   "category": "statistics",
   "reliability": "Empirical",

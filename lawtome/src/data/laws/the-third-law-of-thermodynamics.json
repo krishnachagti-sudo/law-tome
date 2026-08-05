@@ -5,7 +5,7 @@
   "statement": "As temperature approaches absolute zero, a perfect crystal's entropy approaches zero.",
   "statementAccent": "a perfect crystal's entropy approaches zero",
   "meaning": "As a system is cooled toward absolute zero, the entropy of a pure, perfectly crystalline substance falls toward zero. This fixes an absolute reference point for entropy: not merely how entropy changes, but its value. A companion statement, the unattainability principle, holds that absolute zero itself can never be reached in any finite number of steps.",
-  "mechanism": "The statistical basis is Boltzmann's relation, that entropy is proportional to the logarithm of the number of accessible microstates. A perfect crystal in its unique, non-degenerate ground state has exactly one accessible arrangement, and the logarithm of one is zero, so its entropy vanishes at absolute zero. This is why the entropy of every pure crystalline substance tends to the same value there. If instead the ground state is degenerate, several arrangements of the same lowest energy, the entropy tends not to zero but to the logarithm of that degeneracy — the origin of residual entropy.",
+  "mechanism": "The statistical basis is Boltzmann's relation, that entropy is proportional to the logarithm of the number of accessible microstates. A perfect crystal in its unique, non-degenerate ground state has exactly one accessible arrangement, and the logarithm of one is zero, so its entropy vanishes at absolute zero. This is why the entropy of every pure crystalline substance tends to the same value there. If instead the ground state is degenerate, several arrangements of the same lowest energy, the entropy tends not to zero but to the logarithm of that degeneracy: the origin of residual entropy.",
   "examples": [
     {
       "tag": "Residual entropy in ice",
@@ -13,17 +13,17 @@
     },
     {
       "tag": "Vanishing heat capacities",
-      "text": "The law forces the heat capacity of a substance to fall to zero as absolute zero is approached — a quantum result that classical models, which predict a constant heat capacity, cannot reproduce."
+      "text": "The law forces the heat capacity of a substance to fall to zero as absolute zero is approached: a quantum result that classical models, which predict a constant heat capacity, cannot reproduce."
     },
     {
       "tag": "The retreating goal",
-      "text": "Each stage of cooling extracts less entropy than the last as the entropy curves converge, so reaching absolute zero would take infinitely many steps — the unattainability of absolute zero."
+      "text": "Each stage of cooling extracts less entropy than the last as the entropy curves converge, so reaching absolute zero would take infinitely many steps: the unattainability of absolute zero."
     }
   ],
   "variants": [
     {
       "name": "The Nernst heat theorem",
-      "text": "Nernst's original 1906 statement, that the entropy change of a reaction between pure crystalline solids approaches zero as temperature approaches zero — a claim about entropy differences, weaker than Planck's."
+      "text": "Nernst's original 1906 statement, that the entropy change of a reaction between pure crystalline solids approaches zero as temperature approaches zero: a claim about entropy differences, weaker than Planck's."
     },
     {
       "name": "Planck's formulation",
@@ -45,8 +45,8 @@
       "text": "approach absolute zero as closely as you like, but recognise it as unreachable in any finite number of cooling steps."
     }
   ],
-  "limits": "The law applies to perfect crystals in internal equilibrium. Glasses, imperfectly ordered crystals like carbon monoxide, and systems with frozen-in disorder retain a nonzero entropy at absolute zero — not violations but cases outside its stated conditions. Systems with a genuinely degenerate ground state approach a positive constant rather than zero, so the careful statement is that entropy tends to a value independent of the other variables. The law is not derivable from the first and second laws but stands as an independent postulate, or follows only from deeper quantum-statistical principles. Its several formulations are not trivially equivalent: recent work argues the entropy statement and the unattainability principle are logically independent, an active rather than settled question.",
-  "misreadings": "It is not that the entropy of everything is zero at absolute zero — only a perfect crystal with a unique ground state reaches zero; real materials with disorder or degeneracy keep a residual entropy, and they do not violate the law. And the unattainability of absolute zero is a matter of principle, requiring infinitely many steps, not merely a limit of present cooling technology.",
+  "limits": "The law applies to perfect crystals in internal equilibrium. Glasses, imperfectly ordered crystals like carbon monoxide, and systems with frozen-in disorder retain a nonzero entropy at absolute zero, not violations but cases outside its stated conditions. Systems with a genuinely degenerate ground state approach a positive constant rather than zero, so the careful statement is that entropy tends to a value independent of the other variables. The law is not derivable from the first and second laws but stands as an independent postulate, or follows only from deeper quantum-statistical principles. Its several formulations are not trivially equivalent: recent work argues the entropy statement and the unattainability principle are logically independent, an active rather than settled question.",
+  "misreadings": "It is not that the entropy of everything is zero at absolute zero, only a perfect crystal with a unique ground state reaches zero; real materials with disorder or degeneracy keep a residual entropy, and they do not violate the law. And the unattainability of absolute zero is a matter of principle, requiring infinitely many steps, not merely a limit of present cooling technology.",
   "origin": "Formulated by Walther Nernst in 1906 as his heat theorem, from studies of chemical equilibria at low temperature, and strengthened around 1911 by Max Planck into a statement about absolute entropies; Lewis and Randall later refined the convention. A general quantum derivation of the unattainability principle was given by Masanes and Oppenheim in 2017.",
   "category": "physics",
   "reliability": "Empirical",

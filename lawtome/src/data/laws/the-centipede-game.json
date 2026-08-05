@@ -2,7 +2,10 @@
   "no": "428",
   "slug": "the-centipede-game",
   "name": "The Centipede Game",
-  "aliases": ["Rosenthal's centipede", "The share-or-quit game"],
+  "aliases": [
+    "Rosenthal's centipede",
+    "The share-or-quit game"
+  ],
   "statement": "Two players can keep passing a growing pot, but backward reasoning says grab it all on the very first move.",
   "statementAccent": "grab it all on the very first move",
   "meaning": "The centipede game is a finite, sequential game of perfect information in which two players alternate turns. At each turn a player chooses either to take the larger of two growing piles of money, ending the game at once, or to pass, letting the pot grow and handing the choice to the other. Every pass multiplies the stakes, so both players would do far better by continuing for many rounds. Yet the logic of backward induction predicts that a rational player takes at the very first node, leaving both with the smallest payoffs.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It is a central test case in debates over the plausibility of backward induction, common knowledge of rationality, and the descriptive limits of classical game theory. The gap between its stark prediction and how people actually play motivated major lines of work: reputation and incomplete-information models in which a few altruists rationalise cooperation, and quantal response equilibrium, which models players as choosing equilibrium with error. It stands as the classic example of a theoretically unambiguous prediction that experiment consistently refutes.",
   "working": [
-    {"lead": "Unravel from the end", "text": "to find the equilibrium, reason backward from the last node, where taking dominates, and let the logic cascade to the first move."},
-    {"lead": "Expect cooperation in practice", "text": "anticipate that real players pass for several rounds rather than taking immediately, contrary to the theory."},
-    {"lead": "Look to beliefs and error", "text": "explain the gap through a small chance of altruistic opponents or through decision error, not through simple irrationality."}
+    {
+      "lead": "Unravel from the end",
+      "text": "to find the equilibrium, reason backward from the last node, where taking dominates, and let the logic cascade to the first move."
+    },
+    {
+      "lead": "Expect cooperation in practice",
+      "text": "anticipate that real players pass for several rounds rather than taking immediately, contrary to the theory."
+    },
+    {
+      "lead": "Look to beliefs and error",
+      "text": "explain the gap through a small chance of altruistic opponents or through decision error, not through simple irrationality."
+    }
   ],
   "limits": "The rational prediction rests on common knowledge of rationality, which is philosophically contested. There is a genuine unresolved debate: Aumann proved that common knowledge of rationality implies the backward-induction outcome in perfect-information games, whereas Stalnaker argued it does not, the disagreement turning on how to model counterfactual reasoning at nodes that are never reached. Experiments consistently violate the prediction, so the game is a proven theoretical result whose behavioural predictions famously fail. It is best regarded as reliable as theory and refuted as description, its interest lying precisely in that clash.",
   "misreadings": "It is not true that game theory makes no clear prediction here; the prediction is unique and unambiguous, take at the first node, and all equilibria and their refinements agree. Passing is not simply irrational either: incomplete-information and error models show it can be rational once beliefs about opponents are admitted. McKelvey and Palfrey did not conclude that people are irrational; a structural model with a few altruists and modest error fits the data well. And the payoff growth is version-specific, linear in Rosenthal's original and multiplied in later ones, not a fixed doubling.",
@@ -47,12 +59,26 @@
   "namedAfter": "Robert Rosenthal",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Rosenthal, 'Games of Perfect Information, Predatory Pricing and the Chain-Store Paradox,' Journal of Economic Theory 25(1) (1981): 92-100. — the original centipede game and the backward-induction prediction.", "url": "https://ideas.repec.org/a/eee/jetheo/v25y1981i1p92-100.html", "type": "primary"},
-    {"text": "McKelvey and Palfrey, 'An Experimental Study of the Centipede Game,' Econometrica 60(4) (1992): 803-836. — the experimental refutation and the altruist explanation.", "url": "https://www.jstor.org/stable/2951567", "type": "primary"}
+    {
+      "text": "Rosenthal, 'Games of Perfect Information, Predatory Pricing and the Chain-Store Paradox,' Journal of Economic Theory 25(1) (1981): 92-100. — the original centipede game and the backward-induction prediction.",
+      "url": "https://ideas.repec.org/a/eee/jetheo/v25y1981i1p92-100.html",
+      "type": "primary"
+    },
+    {
+      "text": "McKelvey and Palfrey, 'An Experimental Study of the Centipede Game,' Econometrica 60(4) (1992): 803-836. — the experimental refutation and the altruist explanation.",
+      "url": "https://www.jstor.org/stable/2951567",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Centipede_game",
   "related": [
-    {"slug": "the-prisoners-dilemma", "kind": "kindred"},
-    {"slug": "the-nash-equilibrium", "kind": "kindred"}
+    {
+      "slug": "the-prisoners-dilemma",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-nash-equilibrium",
+      "kind": "kindred"
+    }
   ]
 }

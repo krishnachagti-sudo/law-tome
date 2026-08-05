@@ -4,12 +4,12 @@
   "name": "The Pauli Exclusion Principle",
   "statement": "No two identical fermions can occupy the same quantum state at once.",
   "statementAccent": "the same quantum state at once",
-  "meaning": "Two identical fermions — particles of half-integer spin, such as electrons — cannot simultaneously occupy the same quantum state. For electrons in an atom, no two can share the same set of all four quantum numbers. Equivalently, the combined wavefunction of identical fermions is antisymmetric: swapping two of them flips its sign.",
-  "mechanism": "The antisymmetry requirement is the deep statement. If two identical fermions were in the same state, exchanging them would leave the wavefunction unchanged; but antisymmetry demands a sign flip, and the only quantity equal to its own negative is zero — so the amplitude for two fermions in one state vanishes. The link between half-integer spin and this antisymmetry is not assumed but follows from the spin-statistics theorem, a result of relativistic quantum field theory that Pauli established in 1940.",
+  "meaning": "Two identical fermions (particles of half-integer spin, such as electrons) cannot simultaneously occupy the same quantum state. For electrons in an atom, no two can share the same set of all four quantum numbers. Equivalently, the combined wavefunction of identical fermions is antisymmetric: swapping two of them flips its sign.",
+  "mechanism": "The antisymmetry requirement is the deep statement. If two identical fermions were in the same state, exchanging them would leave the wavefunction unchanged; but antisymmetry demands a sign flip, and the only quantity equal to its own negative is zero, so the amplitude for two fermions in one state vanishes. The link between half-integer spin and this antisymmetry is not assumed but follows from the spin-statistics theorem, a result of relativistic quantum field theory that Pauli established in 1940.",
   "examples": [
     {
       "tag": "The periodic table",
-      "text": "Because electrons cannot share a quantum state, they fill successive orbitals and shells rather than all collapsing into the lowest one — which gives atoms their structure and explains the periodicity of the elements."
+      "text": "Because electrons cannot share a quantum state, they fill successive orbitals and shells rather than all collapsing into the lowest one, which gives atoms their structure and explains the periodicity of the elements."
     },
     {
       "tag": "The rigidity of matter",
@@ -17,7 +17,7 @@
     },
     {
       "tag": "White dwarfs",
-      "text": "In a white dwarf, electron degeneracy pressure — a consequence of exclusion, not of heat — holds the star against gravity up to the Chandrasekhar limit of about 1.4 solar masses."
+      "text": "In a white dwarf, electron degeneracy pressure (a consequence of exclusion, not of heat) holds the star against gravity up to the Chandrasekhar limit of about 1.4 solar masses."
     }
   ],
   "variants": [
@@ -27,7 +27,7 @@
     },
     {
       "name": "Degeneracy pressure",
-      "text": "The outward pressure from exclusion that supports compact stars — electron degeneracy in white dwarfs, and neutron degeneracy, from neutrons rather than electrons, in neutron stars."
+      "text": "The outward pressure from exclusion that supports compact stars: electron degeneracy in white dwarfs, and neutron degeneracy, from neutrons rather than electrons, in neutron stars."
     }
   ],
   "whyItMatters": "It is a cornerstone of quantum mechanics, responsible for the structure of every atom, the shape of the periodic table, the chemistry of the elements, and the very solidity of matter. It also governs the fate of dying stars, setting the mass limits of white dwarfs and neutron stars.",
@@ -45,8 +45,8 @@
       "text": "apply the principle only to half-integer-spin particles; bosons can share a state freely, as in a laser or a condensate."
     }
   ],
-  "limits": "It applies only to fermions, particles of half-integer spin; bosons, of integer spin, are exempt and can pile into one state without limit. It is not a force — it is a consequence of wavefunction antisymmetry, so describing it as electrons pushing each other apart is a shorthand, not a real interaction. And the popular gloss that no two things can touch or share a location oversimplifies it: the rigorous statement concerns identical quantum states, and two electrons of opposite spin can share the same spatial orbital.",
-  "misreadings": "It is not a repulsive force between electrons — it is the antisymmetry of the wavefunction, and 'exclusion pressure' is a shorthand. And it is about quantum states, not positions: opposite-spin electrons happily share an orbital, and neutron stars are held up by neutron, not electron, degeneracy.",
+  "limits": "It applies only to fermions, particles of half-integer spin; bosons, of integer spin, are exempt and can pile into one state without limit. It is not a force. It is a consequence of wavefunction antisymmetry, so describing it as electrons pushing each other apart is a shorthand, not a real interaction. And the popular gloss that no two things can touch or share a location oversimplifies it: the rigorous statement concerns identical quantum states, and two electrons of opposite spin can share the same spatial orbital.",
+  "misreadings": "It is not a repulsive force between electrons. It is the antisymmetry of the wavefunction, and 'exclusion pressure' is a shorthand. And it is about quantum states, not positions: opposite-spin electrons happily share an orbital, and neutron stars are held up by neutron, not electron, degeneracy.",
   "origin": "Formulated by Wolfgang Pauli in 1925, building on his 1924 proposal of a fourth quantum degree of freedom; he received the 1945 Nobel Prize in Physics for the discovery.",
   "category": "physics",
   "reliability": "Empirical",

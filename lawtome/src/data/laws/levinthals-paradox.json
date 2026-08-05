@@ -4,12 +4,12 @@
   "name": "Levinthal's Paradox",
   "statement": "A protein could not find its correctly folded native state by randomly sampling all possible conformations within any realistic biological timescale.",
   "statementAccent": "randomly sampling all possible conformations",
-  "meaning": "If a protein tried every combination of backbone angles at each residue, exhaustively searching for the lowest-energy shape, the search would take vastly longer than the age of the universe even for a modest protein. Yet real proteins fold correctly in milliseconds to microseconds, so folding cannot be a random search — it must be guided.",
+  "meaning": "If a protein tried every combination of backbone angles at each residue, exhaustively searching for the lowest-energy shape, the search would take vastly longer than the age of the universe even for a modest protein. Yet real proteins fold correctly in milliseconds to microseconds, so folding cannot be a random search. It must be guided.",
   "mechanism": "For a 100-residue protein with a few stable conformations per residue, the accessible conformational space is astronomically large (Levinthal cited figures near 10^300), and sampling even at a picosecond per conformation would take far longer than cosmological timescales. The paradox is resolved by the folding-funnel model: evolved sequences have a minimally frustrated, funnel-shaped energy surface that steers the chain toward the native state via biased, cooperative local folding rather than exhaustive search.",
   "examples": [
     {
       "tag": "The 3^200 estimate",
-      "text": "For a 100-residue protein with two dihedral angles per residue and three conformations per angle, the space reaches roughly 3^200 possibilities — an exhaustive search could not complete within the age of the universe."
+      "text": "For a 100-residue protein with two dihedral angles per residue and three conformations per angle, the space reaches roughly 3^200 possibilities: an exhaustive search could not complete within the age of the universe."
     },
     {
       "tag": "Villin headpiece",
@@ -20,9 +20,9 @@
       "text": "Bryngelson and Wolynes’s energy-landscape theory showed that funnelled landscapes, obeying a principle of minimal frustration, let proteins fold quickly by following an energy gradient rather than trial-and-error."
     }
   ],
-  "whyItMatters": "The paradox reframed protein folding from a search problem into a landscape and dynamics problem, motivating decades of biophysical theory and computational methods — including modern structure prediction — built around funnelled energy landscapes rather than brute-force enumeration.",
+  "whyItMatters": "The paradox reframed protein folding from a search problem into a landscape and dynamics problem, motivating decades of biophysical theory and computational methods (including modern structure prediction) built around funnelled energy landscapes rather than brute-force enumeration.",
   "limits": "It is a thought experiment about brute-force search, not a claim that folding is physically impossible, and it does not itself explain the folding mechanism. It applies most cleanly to small single-domain proteins; larger multidomain proteins and those needing chaperones fold via more complex pathways.",
-  "misreadings": "It is sometimes misquoted as proof that folding is not understood at all, or as contradicting Anfinsen’s dogma, when it addresses folding kinetics while Anfinsen’s dogma addresses the folding outcome — the two are complementary, not conflicting.",
+  "misreadings": "It is sometimes misquoted as proof that folding is not understood at all, or as contradicting Anfinsen’s dogma, when it addresses folding kinetics while Anfinsen’s dogma addresses the folding outcome: the two are complementary, not conflicting.",
   "origin": "Proposed by molecular biologist Cyrus Levinthal in a 1969 talk and proceedings paper titled \"How to Fold Graciously.\"",
   "category": "biology",
   "reliability": "Heuristic",

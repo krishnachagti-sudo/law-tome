@@ -4,12 +4,12 @@
   "name": "Segal's Law",
   "statement": "A man with a watch knows what time it is. A man with two watches is never sure.",
   "statementAccent": "never sure",
-  "meaning": "Adding a second source of information does not automatically raise your certainty — it can destroy it. One watch gives a single, actionable reading; two that disagree leave you unable to say which to trust, so more data has produced less confidence, not more.",
-  "mechanism": "When two measurements conflict and you have no independent basis to decide between them, you cannot reconcile them — there is no majority, no tie-breaker, no way to spot the faulty instrument. A single source at least yields a definite, if possibly wrong, answer you can act on. The disagreement of two sources carries no information about which one is right, which is exactly why the navigator's fix is three, not two — three allows a majority to isolate the outlier.",
+  "meaning": "Adding a second source of information does not automatically raise your certainty. It can destroy it. One watch gives a single, actionable reading; two that disagree leave you unable to say which to trust, so more data has produced less confidence, not more.",
+  "mechanism": "When two measurements conflict and you have no independent basis to decide between them, you cannot reconcile them. There is no majority, no tie-breaker, no way to spot the faulty instrument. A single source at least yields a definite, if possibly wrong, answer you can act on. The disagreement of two sources carries no information about which one is right, which is exactly why the navigator's fix is three, not two: three allows a majority to isolate the outlier.",
   "examples": [
     {
       "tag": "Two clocks",
-      "text": "Two clocks in a room showing different times leave you less sure of the hour than one clock would — the second reading has removed your certainty rather than confirmed it."
+      "text": "Two clocks in a room showing different times leave you less sure of the hour than one clock would: the second reading has removed your certainty rather than confirmed it."
     },
     {
       "tag": "Conflicting sensors",
@@ -30,25 +30,45 @@
       "text": "Fittingly, the eponym is a misattribution: the saying appeared anonymously in a 1930 newspaper and was only later pinned on a 'Segal'. It is its own example of a name that does not identify the originator."
     }
   ],
-  "whyItMatters": "It is a caution about naive redundancy: bolting on a second source without a way to reconcile disagreement can leave you worse off than trusting one. It points, by its own logic, at the real fix — an odd number of sources and a method to combine them — which is the basis of everything from redundant avionics to a single source of truth in data systems.",
+  "whyItMatters": "It is a caution about naive redundancy: bolting on a second source without a way to reconcile disagreement can leave you worse off than trusting one. It points, by its own logic, at the real fix (an odd number of sources and a method to combine them), which is the basis of everything from redundant avionics to a single source of truth in data systems.",
   "working": [
-    {"lead": "Add a third, not a second", "text": "when sources can conflict and you need reliability, a lone backup only creates deadlock; an odd number lets a majority break the tie."},
-    {"lead": "Reconcile with a method, don't freeze", "text": "average, vote, or model the error rather than being paralysed by two disagreeing readings — the joke is about unmethodical comparison, not about redundancy itself."},
-    {"lead": "Beware false confidence from a single source", "text": "the man with one watch feels sure precisely because he has no way to detect that his watch is wrong; certainty is not the same as accuracy."}
+    {
+      "lead": "Add a third, not a second",
+      "text": "when sources can conflict and you need reliability, a lone backup only creates deadlock; an odd number lets a majority break the tie."
+    },
+    {
+      "lead": "Reconcile with a method, don't freeze",
+      "text": "average, vote, or model the error rather than being paralysed by two disagreeing readings: the joke is about unmethodical comparison, not about redundancy itself."
+    },
+    {
+      "lead": "Beware false confidence from a single source",
+      "text": "the man with one watch feels sure precisely because he has no way to detect that his watch is wrong; certainty is not the same as accuracy."
+    }
   ],
-  "limits": "It is a witticism, not a finding, and its literal claim is false as engineering: multiple measurements, when properly reconciled by averaging, voting, or statistical fusion, generally increase accuracy — that is the entire basis of redundancy in avionics, GPS, and ensemble methods. The joke targets naive handling of conflicting data, and its own built-in answer is not 'go back to one' but 'take three'. Even the name is unreliable: the true author is unknown, so 'Segal's law' is itself a misattribution.",
-  "misreadings": "It is not an argument against redundancy or multiple sources — used well, more sources improve accuracy. It is a caution about the specific case of two conflicting sources with no way to adjudicate between them, whose remedy is a third source and a method, not fewer.",
-  "origin": "The eponym is unidentified — no documented person named Segal authored it. The saying first appears anonymously in the San Diego Union in 1930 ('a man with one watch knows what time it is, and a man with two watches could never be sure'), was attributed by a 1961 columnist to the Dallas broadcaster Lee Segall, and picked up the label 'Segal's law' via Arthur Bloch's Murphy's Law books. Common attributions to Twain and Einstein are unsupported.",
+  "limits": "It is a witticism, not a finding, and its literal claim is false as engineering: multiple measurements, when properly reconciled by averaging, voting, or statistical fusion, generally increase accuracy. That is the entire basis of redundancy in avionics, GPS, and ensemble methods. The joke targets naive handling of conflicting data, and its own built-in answer is not 'go back to one' but 'take three'. Even the name is unreliable: the true author is unknown, so 'Segal's law' is itself a misattribution.",
+  "misreadings": "It is not an argument against redundancy or multiple sources: used well, more sources improve accuracy. It is a caution about the specific case of two conflicting sources with no way to adjudicate between them, whose remedy is a third source and a method, not fewer.",
+  "origin": "The eponym is unidentified: no documented person named Segal authored it. The saying first appears anonymously in the San Diego Union in 1930 ('a man with one watch knows what time it is, and a man with two watches could never be sure'), was attributed by a 1961 columnist to the Dallas broadcaster Lee Segall, and picked up the label 'Segal's law' via Arthur Bloch's Murphy's Law books. Common attributions to Twain and Einstein are unsupported.",
   "category": "statistics",
   "reliability": "Folk-adage",
   "provenance": "canon",
   "coinedYear": 1930,
   "sources": [
-    {"text": "Segal's law, Wikipedia. — the wording, the 1930 anonymous origin, the Lee Segall attribution, and the redundancy cross-references.", "url": "https://en.wikipedia.org/wiki/Segal%27s_law", "type": "secondary"},
-    {"text": "\"A Person With One Watch Knows What Time It Is. A Person With Two Watches Is Never Sure.\" Quote Investigator (2022). — the 1930 first citation and the debunked Twain/Einstein attributions.", "url": "https://quoteinvestigator.com/2022/07/04/watch/", "type": "secondary"}
+    {
+      "text": "Segal's law, Wikipedia. — the wording, the 1930 anonymous origin, the Lee Segall attribution, and the redundancy cross-references.",
+      "url": "https://en.wikipedia.org/wiki/Segal%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "\"A Person With One Watch Knows What Time It Is. A Person With Two Watches Is Never Sure.\" Quote Investigator (2022). — the 1930 first citation and the debunked Twain/Einstein attributions.",
+      "url": "https://quoteinvestigator.com/2022/07/04/watch/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Segal%27s_law",
   "related": [
-    {"slug": "occams-razor", "kind": "kindred"}
+    {
+      "slug": "occams-razor",
+      "kind": "kindred"
+    }
   ]
 }

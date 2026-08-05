@@ -2,7 +2,11 @@
   "no": "427",
   "slug": "the-game-of-chicken",
   "name": "The Game of Chicken",
-  "aliases": ["Chicken", "The hawk-dove game", "Brinkmanship"],
+  "aliases": [
+    "Chicken",
+    "The hawk-dove game",
+    "Brinkmanship"
+  ],
   "statement": "Two players race toward a collision; each wants the other to swerve, and mutual nerve is the worst outcome for both.",
   "statementAccent": "each wants the other to swerve",
   "meaning": "The game of chicken is an anti-coordination game modelling two players on a collision course. In the classic image, two drivers speed toward each other and each can swerve or go straight. If both go straight they crash, the worst outcome for both; if both swerve, they tie, each surviving but winning nothing; if one swerves while the other goes straight, the one who held his nerve wins and the swerver loses face. The defining tension is that each player would rather go straight if the other swerves, but rather swerve if the other goes straight.",
@@ -33,9 +37,18 @@
   ],
   "whyItMatters": "It is a canonical model across game theory, international relations, and evolutionary biology, giving a precise structure to standoffs and brinkmanship. It illuminates nuclear confrontations, labour disputes and strikes, price wars, and political showdowns such as debt-ceiling and shutdown confrontations, and through its equivalence to hawk-dove it models evolutionary conflict over shareable resources. Above all it shows how a credible, irreversible commitment, even one that looks like folly, can determine who prevails.",
   "working": [
-    {"lead": "Look for two equilibria", "text": "expect the stable outcomes to be the two asymmetric ones in which one side yields, with no dominant strategy for either player."},
-    {"lead": "Value credible commitment", "text": "recognise that visibly and irreversibly removing your own option to back down can force the other side to yield."},
-    {"lead": "Fear mutual nerve", "text": "treat the both-go-straight outcome as catastrophic for both, the feature that distinguishes chicken from other conflict games."}
+    {
+      "lead": "Look for two equilibria",
+      "text": "expect the stable outcomes to be the two asymmetric ones in which one side yields, with no dominant strategy for either player."
+    },
+    {
+      "lead": "Value credible commitment",
+      "text": "recognise that visibly and irreversibly removing your own option to back down can force the other side to yield."
+    },
+    {
+      "lead": "Fear mutual nerve",
+      "text": "treat the both-go-straight outcome as catastrophic for both, the feature that distinguishes chicken from other conflict games."
+    }
   ],
   "limits": "It is a highly simplified two-by-two model, while real standoffs involve incomplete information, many players, and repeated or dynamic play. Its predictions are also fragile: with two pure equilibria plus a mixed one and no dominant strategy, the theory does not single out a unique outcome, which is the source of the game's instability rather than a defect to be repaired. And the commitment strategies that win it depend on the commitment being genuinely observable and irreversible, conditions that are hard to meet and easy to bluff, so applying the model to real conflicts requires care.",
   "misreadings": "It is not the same as the prisoner's dilemma. In chicken, mutual defection, both going straight, is the worst outcome for both, whereas in the prisoner's dilemma mutual defection is bad but not the worst, and being the lone cooperator is worst. Consequently chicken has no dominant strategy, while in the prisoner's dilemma defection strictly dominates. It also has no single solution: there are two pure equilibria and a mixed one, not one predicted outcome. And the cliff-edge race in 'Rebel Without a Cause' is a variant, not the head-on form.",
@@ -44,12 +57,26 @@
   "reliability": "Empirical",
   "provenance": "canon",
   "sources": [
-    {"text": "Chicken (game), Wikipedia. — the anti-coordination structure, the two equilibria, brinkmanship, and the hawk-dove equivalence.", "url": "https://en.wikipedia.org/wiki/Chicken_(game)", "type": "secondary"},
-    {"text": "Maynard Smith and Price, 'The Logic of Animal Conflict,' Nature 246 (1973): 15-18. — the hawk-dove game and the evolutionarily stable strategy.", "url": "https://www.nature.com/articles/246015a0", "type": "primary"}
+    {
+      "text": "Chicken (game), Wikipedia. — the anti-coordination structure, the two equilibria, brinkmanship, and the hawk-dove equivalence.",
+      "url": "https://en.wikipedia.org/wiki/Chicken_(game)",
+      "type": "secondary"
+    },
+    {
+      "text": "Maynard Smith and Price, 'The Logic of Animal Conflict,' Nature 246 (1973): 15-18. — the hawk-dove game and the evolutionarily stable strategy.",
+      "url": "https://www.nature.com/articles/246015a0",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Chicken_(game)",
   "related": [
-    {"slug": "the-prisoners-dilemma", "kind": "tension"},
-    {"slug": "the-nash-equilibrium", "kind": "kindred"}
+    {
+      "slug": "the-prisoners-dilemma",
+      "kind": "tension"
+    },
+    {
+      "slug": "the-nash-equilibrium",
+      "kind": "kindred"
+    }
   ]
 }

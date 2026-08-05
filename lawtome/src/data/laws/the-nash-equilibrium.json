@@ -5,25 +5,25 @@
   "statement": "A stable outcome where no player can do better by changing strategy alone.",
   "statementAccent": "no player can do better by changing strategy alone",
   "meaning": "A Nash equilibrium is a set of strategies, one per player, such that no player can increase their own payoff by unilaterally changing their strategy while everyone else holds theirs fixed. Each player's choice is a best response to the others', so once all choices are revealed, no one wishes they had chosen differently, given what everyone else did.",
-  "mechanism": "It is a fixed point of mutual best responses: every player simultaneously best-responds to all the others. Players may use pure strategies, choosing one action deterministically, or mixed strategies, randomising over actions. Nash proved that every game with finitely many players and finitely many strategies has at least one equilibrium, though possibly only in mixed strategies — a result established with a fixed-point theorem. It does not require anyone to like the outcome, only that no one can improve alone.",
+  "mechanism": "It is a fixed point of mutual best responses: every player simultaneously best-responds to all the others. Players may use pure strategies, choosing one action deterministically, or mixed strategies, randomising over actions. Nash proved that every game with finitely many players and finitely many strategies has at least one equilibrium, though possibly only in mixed strategies: a result established with a fixed-point theorem. It does not require anyone to like the outcome, only that no one can improve alone.",
   "examples": [
     {
       "tag": "Mutual defection",
-      "text": "In the prisoner's dilemma, both defecting is the unique Nash equilibrium — given the other defects, defecting is each player's best response — even though both would do better by cooperating."
+      "text": "In the prisoner's dilemma, both defecting is the unique Nash equilibrium (given the other defects, defecting is each player's best response), even though both would do better by cooperating."
     },
     {
       "tag": "Driving conventions",
-      "text": "Everyone driving on the same side of the road is a Nash equilibrium: given that others drive on the right, you had better too — one of several equilibria, illustrating that they need not be unique."
+      "text": "Everyone driving on the same side of the road is a Nash equilibrium: given that others drive on the right, you had better too (one of several equilibria, illustrating that they need not be unique)."
     },
     {
       "tag": "Matching pennies",
-      "text": "In this zero-sum game there is no pure-strategy equilibrium; the only equilibrium has each player randomising fifty-fifty — the classic mixed-strategy Nash equilibrium."
+      "text": "In this zero-sum game there is no pure-strategy equilibrium; the only equilibrium has each player randomising fifty-fifty: the classic mixed-strategy Nash equilibrium."
     }
   ],
   "variants": [
     {
       "name": "Pure versus mixed strategies",
-      "text": "An equilibrium may have each player choosing one action deterministically, or randomising over actions — the mixed case being what guarantees existence in every finite game."
+      "text": "An equilibrium may have each player choosing one action deterministically, or randomising over actions: the mixed case being what guarantees existence in every finite game."
     },
     {
       "name": "Subgame-perfect equilibrium",
@@ -45,7 +45,7 @@
       "text": "remember an equilibrium can be inefficient and need not be unique, so identifying one does not mean it is the best outcome."
     }
   ],
-  "limits": "An equilibrium need not be unique — many games have several, raising the problem of which will actually be played — and it need not be efficient, as the prisoner's dilemma shows, where the equilibrium is worse for everyone than an available alternative. It rests on strong assumptions: that players are rational, correctly anticipate others' strategies, and typically share common knowledge of the game, conditions rarely fully met. Some equilibria rely on non-credible threats, motivating refinements. And real human behaviour in experiments often departs from Nash predictions, so its descriptive accuracy is a modelling question distinct from the settled mathematics.",
+  "limits": "An equilibrium need not be unique (many games have several, raising the problem of which will actually be played) and it need not be efficient, as the prisoner's dilemma shows, where the equilibrium is worse for everyone than an available alternative. It rests on strong assumptions: that players are rational, correctly anticipate others' strategies, and typically share common knowledge of the game, conditions rarely fully met. Some equilibria rely on non-credible threats, motivating refinements. And real human behaviour in experiments often departs from Nash predictions, so its descriptive accuracy is a modelling question distinct from the settled mathematics.",
   "misreadings": "It is not necessarily the best or a unique outcome — equilibria can be inefficient, and a game may have many. And its existence theorem holds for finite games and may require mixed strategies, so it does not promise a pure-strategy solution in every case.",
   "origin": "Introduced by John Forbes Nash in his 1950 Princeton thesis and papers, with the existence theorem in 'Non-Cooperative Games,' Annals of Mathematics 54(2):286-295 (1951); Nash shared the 1994 Nobel Prize with John Harsanyi and Reinhard Selten.",
   "category": "economics",

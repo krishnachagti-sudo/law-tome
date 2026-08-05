@@ -5,11 +5,11 @@
   "statement": "When the host reveals a goat, switching doors doubles your chance of the car.",
   "statementAccent": "switching doors doubles your chance",
   "meaning": "You pick one of three doors, one hiding a car; the host, who knows what is behind them, opens a different door revealing a goat and offers to let you switch. Counterintuitively, switching wins the car two-thirds of the time and staying only one-third, so you should always switch.",
-  "mechanism": "Your original pick is right one time in three, and that stays fixed at one-third even after a door is opened. The host is constrained — he can never open your door or the car — so his reveal is not neutral: it concentrates the remaining two-thirds probability onto the single other unopened door. Put another way, whenever your first guess was wrong, which is two times in three, the host is forced to leave the car behind the door you can switch to.",
+  "mechanism": "Your original pick is right one time in three, and that stays fixed at one-third even after a door is opened. The host is constrained (he can never open your door or the car), so his reveal is not neutral: it concentrates the remaining two-thirds probability onto the single other unopened door. Put another way, whenever your first guess was wrong, which is two times in three, the host is forced to leave the car behind the door you can switch to.",
   "examples": [
     {
       "tag": "The three-door count",
-      "text": "Enumerating the three equally likely car positions with a fixed first pick shows switching wins in two of the three and staying in one — the cleanest proof of the two-thirds result."
+      "text": "Enumerating the three equally likely car positions with a fixed first pick shows switching wins in two of the three and staying in one: the cleanest proof of the two-thirds result."
     },
     {
       "tag": "The hundred-door version",
@@ -17,7 +17,7 @@
     },
     {
       "tag": "The famous dispute",
-      "text": "When Marilyn vos Savant gave the correct answer in 1990, some ten thousand readers wrote in, close to a thousand with doctorates, insisting she was wrong. She was right — and Paul Erdős reportedly stayed unconvinced until shown a simulation."
+      "text": "When Marilyn vos Savant gave the correct answer in 1990, some ten thousand readers wrote in, close to a thousand with doctorates, insisting she was wrong. She was right, and Paul Erdős reportedly stayed unconvinced until shown a simulation."
     }
   ],
   "variants": [
@@ -30,14 +30,23 @@
       "text": "A mathematically equivalent puzzle popularised by Martin Gardner in 1959, showing the same information leak from a constrained reveal."
     }
   ],
-  "whyItMatters": "It is the most famous illustration of how a constrained reveal leaks information and of how badly intuition misjudges conditional probability — a lesson that fooled even professional mathematicians. It is a standing reminder to check the assumptions behind a probability rather than trusting the fifty-fifty feeling.",
+  "whyItMatters": "It is the most famous illustration of how a constrained reveal leaks information and of how badly intuition misjudges conditional probability: a lesson that fooled even professional mathematicians. It is a standing reminder to check the assumptions behind a probability rather than trusting the fifty-fifty feeling.",
   "working": [
-    {"lead": "Switch, under the standard rules", "text": "with a knowing host who always opens a goat and always offers the switch, take the switch for two-to-one odds."},
-    {"lead": "Interrogate the host's behaviour", "text": "the answer hinges entirely on the host's rules, so check whether he always opens a goat and always offers the switch before trusting two-thirds."},
-    {"lead": "Simulate when intuition rebels", "text": "when the result feels wrong, run or imagine many trials — the empirical two-thirds is what convinced the sceptics."}
+    {
+      "lead": "Switch, under the standard rules",
+      "text": "with a knowing host who always opens a goat and always offers the switch, take the switch for two-to-one odds."
+    },
+    {
+      "lead": "Interrogate the host's behaviour",
+      "text": "the answer hinges entirely on the host's rules, so check whether he always opens a goat and always offers the switch before trusting two-thirds."
+    },
+    {
+      "lead": "Simulate when intuition rebels",
+      "text": "when the result feels wrong, run or imagine many trials: the empirical two-thirds is what convinced the sceptics."
+    }
   ],
-  "limits": "The two-thirds answer holds only under specific host assumptions: that the host always opens a door revealing a goat, never the car or your door; that he always offers the switch; and that he chooses at random among goats when your first pick is the car. Change his behaviour and the answer changes — if he opens a door at random and it happens to show a goat, switching wins only half the time, and if he offers the switch only when you first picked the car, switching always loses. Ambiguity in the original wording, which did not pin down these rules, is much of why the dispute raged.",
-  "misreadings": "It is not that two remaining doors are fifty-fifty — the host's constrained reveal breaks the symmetry and concentrates the odds on the door you can switch to. And the two-thirds result is not unconditional: it depends on the host's exact rules, without which the number changes.",
+  "limits": "The two-thirds answer holds only under specific host assumptions: that the host always opens a door revealing a goat, never the car or your door; that he always offers the switch; and that he chooses at random among goats when your first pick is the car. Change his behaviour and the answer changes, if he opens a door at random and it happens to show a goat, switching wins only half the time, and if he offers the switch only when you first picked the car, switching always loses. Ambiguity in the original wording, which did not pin down these rules, is much of why the dispute raged.",
+  "misreadings": "It is not that two remaining doors are fifty-fifty: the host's constrained reveal breaks the symmetry and concentrates the odds on the door you can switch to. And the two-thirds result is not unconditional: it depends on the host's exact rules, without which the number changes.",
   "origin": "Named for Monty Hall, host of the game show Let's Make a Deal, and first posed by the biostatistician Steve Selvin in a 1975 letter to The American Statistician; it became famous through Marilyn vos Savant's 1990 'Ask Marilyn' column and the storm of objections that followed.",
   "category": "statistics",
   "reliability": "Empirical",
@@ -46,11 +55,22 @@
   "namedAfter": "Monty Hall",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Monty Hall problem, Wikipedia. — the setup, the two-thirds proof, the Selvin origin, and the assumption-dependent variants.", "url": "https://en.wikipedia.org/wiki/Monty_Hall_problem", "type": "secondary"},
-    {"text": "\"The Time Everyone 'Corrected' the World's Smartest Woman,\" Priceonomics. — the vos Savant controversy.", "url": "https://priceonomics.com/the-time-everyone-corrected-the-worlds-smartest/", "type": "secondary"}
+    {
+      "text": "Monty Hall problem, Wikipedia. — the setup, the two-thirds proof, the Selvin origin, and the assumption-dependent variants.",
+      "url": "https://en.wikipedia.org/wiki/Monty_Hall_problem",
+      "type": "secondary"
+    },
+    {
+      "text": "\"The Time Everyone 'Corrected' the World's Smartest Woman,\" Priceonomics. — the vos Savant controversy.",
+      "url": "https://priceonomics.com/the-time-everyone-corrected-the-worlds-smartest/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Monty_Hall_problem",
   "related": [
-    {"slug": "bayes-theorem", "kind": "kindred"}
+    {
+      "slug": "bayes-theorem",
+      "kind": "kindred"
+    }
   ]
 }

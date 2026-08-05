@@ -17,7 +17,7 @@
     },
     {
       "tag": "The model that persists itself",
-      "text": "An object holding business rules and its own SQL changes both when the rules change and when the schema does — two teams, two release cadences, one file."
+      "text": "An object holding business rules and its own SQL changes both when the rules change and when the schema does: two teams, two release cadences, one file."
     },
     {
       "tag": "The utility bucket",
@@ -39,9 +39,9 @@
       "text": "the principle is a counterweight to modules that do too much, not a mandate for modules that do almost nothing. Two things that always change together should not be separated to satisfy it."
     }
   ],
-  "limits": "'One reason to change' cannot be decided from the code, only from a forecast of what the organisation will ask for next — and that forecast is exactly what nobody has. The principle also has no natural stopping point: taken to its limit it produces a class per method, a design its own advocates reject but the wording does not exclude. Martin later reformulated it around actors rather than reasons partly because the original phrasing was so widely read as a licence to fragment.",
+  "limits": "'One reason to change' cannot be decided from the code, only from a forecast of what the organisation will ask for next, and that forecast is exactly what nobody has. The principle also has no natural stopping point: taken to its limit it produces a class per method, a design its own advocates reject but the wording does not exclude. Martin later reformulated it around actors rather than reasons partly because the original phrasing was so widely read as a licence to fragment.",
   "misreadings": "It does not say a class should do only one thing, and it is not a rule about size. A large class with one reason to change satisfies it; a three-line class serving two masters does not. It is also not an argument against classes that coordinate several collaborators — coordination can itself be the single responsibility.",
-  "origin": "Stated by Robert C. Martin, who collected it with four others in his 2000 paper \"Design Principles and Design Patterns\" and made it the S of the SOLID set. Martin credits the underlying idea of cohesion to earlier structured-design work, and has since restated the principle in terms of actors — gather together the things that change for the same reason, and separate those that change for different reasons.",
+  "origin": "Stated by Robert C. Martin, who collected it with four others in his 2000 paper \"Design Principles and Design Patterns\" and made it the S of the SOLID set. Martin credits the underlying idea of cohesion to earlier structured-design work, and has since restated the principle in terms of actors: gather together the things that change for the same reason, and separate those that change for different reasons.",
   "category": "software",
   "reliability": "Heuristic",
   "provenance": "canon",

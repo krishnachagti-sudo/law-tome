@@ -2,7 +2,10 @@
   "no": "572",
   "slug": "the-ski-rental-problem",
   "name": "The Ski Rental Problem",
-  "aliases": ["The rent-or-buy problem", "Break-even analysis"],
+  "aliases": [
+    "The rent-or-buy problem",
+    "Break-even analysis"
+  ],
   "statement": "Not knowing how long you'll keep skiing, rent until the rentals equal the purchase price, then buy.",
   "statementAccent": "rent until the rentals equal the purchase price",
   "meaning": "The ski rental problem is the archetypal rent-or-buy decision under uncertainty, the canonical example of online algorithms and competitive analysis. You will ski for an unknown number of days; each day you can rent skis for a dollar, or at any point buy them once for some larger amount and ski free thereafter, but you never know when the season will end. The goal is to keep your total cost close to what you would have paid with perfect hindsight. The problem crisply captures a whole family of wait-versus-commit choices, and its clean answer illustrates how to reason about decisions made without knowledge of the future.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The ski rental problem is the standard teaching example of online algorithms and competitive analysis, the study of decisions made without knowledge of the future measured against the best possible hindsight. Its simple break-even rule and two-competitive guarantee model a vast range of real wait-versus-commit tradeoffs, from TCP acknowledgement batching and cache coherence to cloud resource provisioning and capacity planning. It shows how a provable worst-case guarantee can be extracted from an apparently hopeless situation, and it opened a rich line of work, including randomised and learning-augmented strategies, in the theory of decision-making under uncertainty.",
   "working": [
-    {"lead": "Rent to the break-even point", "text": "keep renting until your rental spending equals the purchase price, then buy, the deterministic two-competitive rule."},
-    {"lead": "Measure against hindsight", "text": "judge an online strategy by its competitive ratio, the worst-case factor by which it exceeds the best cost achievable with foreknowledge."},
-    {"lead": "Randomise to do better", "text": "when possible, buy on a randomly chosen day to lower the competitive ratio toward the optimal one over one minus one over e, about 1.58."}
+    {
+      "lead": "Rent to the break-even point",
+      "text": "keep renting until your rental spending equals the purchase price, then buy, the deterministic two-competitive rule."
+    },
+    {
+      "lead": "Measure against hindsight",
+      "text": "judge an online strategy by its competitive ratio, the worst-case factor by which it exceeds the best cost achievable with foreknowledge."
+    },
+    {
+      "lead": "Randomise to do better",
+      "text": "when possible, buy on a randomly chosen day to lower the competitive ratio toward the optimal one over one minus one over e, about 1.58."
+    }
   ],
   "limits": "The clean ratios are asymptotic: the deterministic optimum is two minus one over the purchase price, approaching two for large prices, and the randomised optimum of about 1.58 also holds in the limit. The randomised bound assumes an oblivious adversary that fixes the input without seeing the algorithm's coin flips; against an adaptive adversary randomness gives no advantage and the ratio returns to two. The model assumes a known constant buy cost and linearly accruing rentals, and competitive analysis is deliberately pessimistic, worst-case over all inputs, which motivated later average-case and prediction-augmented refinements.",
   "misreadings": "A competitive ratio is a worst-case guarantee against the hindsight optimum, not an average or expected performance. Two-competitive does not mean the strategy costs twice as much as renting or buying; it means at most twice the best possible cost, reached only in the single worst case where the season ends exactly at the break-even day. And the randomised strategy legitimately beats the deterministic lower bound because the adversary cannot predict the coin flips, so this is no contradiction.",
@@ -44,11 +56,22 @@
   "reliability": "Empirical",
   "provenance": "canon",
   "sources": [
-    {"text": "Ski rental problem, Wikipedia. — the rent-or-buy setup, the break-even two-competitive result, and the randomised optimum.", "url": "https://en.wikipedia.org/wiki/Ski_rental_problem", "type": "secondary"},
-    {"text": "Karlin, Manasse, Rudolph & Sleator, 'Competitive Snoopy Caching,' Algorithmica (1988). — the rent-or-buy analysis equivalent to ski rental.", "url": "https://link.springer.com/article/10.1007/BF01762111", "type": "primary"}
+    {
+      "text": "Ski rental problem, Wikipedia. — the rent-or-buy setup, the break-even two-competitive result, and the randomised optimum.",
+      "url": "https://en.wikipedia.org/wiki/Ski_rental_problem",
+      "type": "secondary"
+    },
+    {
+      "text": "Karlin, Manasse, Rudolph & Sleator, 'Competitive Snoopy Caching,' Algorithmica (1988). — the rent-or-buy analysis equivalent to ski rental.",
+      "url": "https://link.springer.com/article/10.1007/BF01762111",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Ski_rental_problem",
   "related": [
-    {"slug": "the-secretary-problem", "kind": "kindred"}
+    {
+      "slug": "the-secretary-problem",
+      "kind": "kindred"
+    }
   ]
 }

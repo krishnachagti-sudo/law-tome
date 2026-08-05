@@ -2,7 +2,10 @@
   "no": "513",
   "slug": "the-ellsberg-paradox",
   "name": "The Ellsberg Paradox",
-  "aliases": ["Ambiguity aversion", "The three-colour urn"],
+  "aliases": [
+    "Ambiguity aversion",
+    "The three-colour urn"
+  ],
   "statement": "People will pay to avoid unknown odds, preferring a known gamble even when it cannot be squared with any consistent belief.",
   "statementAccent": "preferring a known gamble",
   "meaning": "The Ellsberg paradox is a decision-theory puzzle showing that people systematically prefer gambles with known probabilities to gambles with unknown or ambiguous ones, in a way that no assignment of subjective probabilities can rationalise. In the classic three-colour urn, most people make a pair of choices that together are inconsistent with expected utility theory. The lesson is ambiguity aversion: beyond ordinary caution about risk, people dislike not knowing the odds at all, and will forgo value to avoid ambiguity. It revived Frank Knight's distinction between measurable risk and unmeasurable uncertainty and launched a large literature on decision-making under ambiguity.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The Ellsberg paradox is one of the most important challenges to the standard theory of rational choice, demonstrating that real preferences violate the axioms of subjective expected utility not through random error but through a systematic, replicable taste for known odds. It established ambiguity aversion as a distinct phenomenon and spurred a rich body of alternative models, from maxmin expected utility to Choquet and smooth-ambiguity representations, that now inform economics, finance, and decision theory. Its author, Daniel Ellsberg, later became famous for releasing the Pentagon Papers, but this urn is his lasting mark on the science of choice.",
   "working": [
-    {"lead": "Separate ambiguity from risk", "text": "notice when a choice is driven by not knowing the odds at all, distinct from ordinary aversion to a known spread of outcomes."},
-    {"lead": "Watch the common outcome", "text": "recall that an outcome shared by both options should not sway the choice, so a preference that flips when it is added signals an inconsistency."},
-    {"lead": "Model beliefs as a set", "text": "when odds are unknown, consider representing beliefs as a range of probabilities and weighing worst cases, as ambiguity-averse models do."}
+    {
+      "lead": "Separate ambiguity from risk",
+      "text": "notice when a choice is driven by not knowing the odds at all, distinct from ordinary aversion to a known spread of outcomes."
+    },
+    {
+      "lead": "Watch the common outcome",
+      "text": "recall that an outcome shared by both options should not sway the choice, so a preference that flips when it is added signals an inconsistency."
+    },
+    {
+      "lead": "Model beliefs as a set",
+      "text": "when odds are unknown, consider representing beliefs as a range of probabilities and weighing worst cases, as ambiguity-averse models do."
+    }
   ],
   "limits": "Whether ambiguity aversion is a mistake or a reasonable response is genuinely contested: it violates Savage's axioms, yet in a real experiment where the urn's composition is set by another party, avoiding the ambiguous bet is a sensible hedge against being the less-informed side. The effect is strong for gains but can reverse toward ambiguity-seeking in the domain of losses, and its size is sensitive to framing. A substantial minority of people do not show it, behaving consistently with expected utility or even ambiguity-loving, and learning about the paradox reduces but does not eliminate the pattern. The precise prize amount is illustrative; the logic holds for any positive stake.",
   "misreadings": "Ambiguity aversion is not the same as risk aversion: both known bets in the urn are still risky, and the preference is driven by knowing the odds, not by a smaller spread, so standard risk aversion cannot generate the reversal. The paradox is not dissolved by supposing the urn is rigged, since even with a fair draw no single probability rationalises both choices; the inconsistency is structural. And yellow, the outcome common to the second pair of bets, is exactly what the sure-thing principle says should be irrelevant, which is why its influence is the tell.",
@@ -47,12 +59,26 @@
   "namedAfter": "Daniel Ellsberg",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Ellsberg paradox, Wikipedia. — the three-colour urn, the preference reversals, and the sure-thing-principle violation.", "url": "https://en.wikipedia.org/wiki/Ellsberg_paradox", "type": "secondary"},
-    {"text": "Ellsberg, 'Risk, Ambiguity, and the Savage Axioms,' Quarterly Journal of Economics 75(4):643-669 (1961). — the original statement and the ambiguity concept.", "url": "https://academic.oup.com/qje/article-abstract/75/4/643/1913802", "type": "primary"}
+    {
+      "text": "Ellsberg paradox, Wikipedia. — the three-colour urn, the preference reversals, and the sure-thing-principle violation.",
+      "url": "https://en.wikipedia.org/wiki/Ellsberg_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Ellsberg, 'Risk, Ambiguity, and the Savage Axioms,' Quarterly Journal of Economics 75(4):643-669 (1961). — the original statement and the ambiguity concept.",
+      "url": "https://academic.oup.com/qje/article-abstract/75/4/643/1913802",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Ellsberg_paradox",
   "related": [
-    {"slug": "the-st-petersburg-paradox", "kind": "kindred"},
-    {"slug": "loss-aversion", "kind": "kindred"}
+    {
+      "slug": "the-st-petersburg-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "loss-aversion",
+      "kind": "kindred"
+    }
   ]
 }

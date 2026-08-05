@@ -2,7 +2,10 @@
   "no": "482",
   "slug": "the-fog-of-war",
   "name": "The Fog of War",
-  "aliases": ["Clausewitzian uncertainty", "The uncertainty of war"],
+  "aliases": [
+    "Clausewitzian uncertainty",
+    "The uncertainty of war"
+  ],
   "statement": "In war, information is pervasively uncertain, so commanders must act on conjecture, not knowledge.",
   "statementAccent": "act on conjecture, not knowledge",
   "meaning": "The fog of war denotes the pervasive uncertainty, ambiguity, and unreliability of information that commanders and combatants face during military operations. It covers imperfect knowledge of one's own forces and their condition, of the enemy's capabilities, dispositions, and intentions, and of the evolving battlefield situation itself. Because information in war is typically incomplete, delayed, contradictory, or false, decisions must be made on the basis of conjecture rather than certainty. It is the epistemic condition of warfare, the reason plans built on perfect knowledge so often fail.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It explains why rigid, over-detailed plans fail and why doctrine favours decentralised command, commander's intent, and initiative, the logic of mission command. It frames intelligence as risk reduction under irreducible uncertainty rather than the delivery of certainty, and it is a foundational metaphor for acting rationally with incomplete, unreliable data. The phrase has spread far beyond the military, into business, management, emergency response, and policy, wherever leaders must decide amid ambiguity.",
   "working": [
-    {"lead": "Plan for uncertainty", "text": "build flexible plans and decentralised command rather than assume the perfect information you will never have."},
-    {"lead": "Separate fog from friction", "text": "distinguish not knowing, the information problem, from things going wrong in execution, the resistance problem, since each needs a different remedy."},
-    {"lead": "Expect new error with new sensors", "text": "treat more information channels as reducing some uncertainty while adding fresh ways to be misled, not as ending the fog."}
+    {
+      "lead": "Plan for uncertainty",
+      "text": "build flexible plans and decentralised command rather than assume the perfect information you will never have."
+    },
+    {
+      "lead": "Separate fog from friction",
+      "text": "distinguish not knowing, the information problem, from things going wrong in execution, the resistance problem, since each needs a different remedy."
+    },
+    {
+      "lead": "Expect new error with new sensors",
+      "text": "treat more information channels as reducing some uncertainty while adding fresh ways to be misled, not as ending the fog."
+    }
   ],
   "limits": "Technology reduces but does not eliminate the fog. Advanced sensors and networks shrink some uncertainty while adding new failure modes, data overload, false or spoofed information, sensor gaps, and more points at which error can enter, so the claim that information superiority could lift the fog is widely judged unrealistic. Clausewitz's figure that three-quarters of the factors are wrapped in fog is rhetorical emphasis, not a measured proportion. The concept is a heuristic framing of an enduring condition of war, not a quantitative law.",
   "misreadings": "Clausewitz did not coin the crisp phrase 'fog of war' or its German equivalent; he used fog, twilight, and moonlight metaphors for uncertainty, and the polished phrasing is a later paraphrase, prominent partly through a twentieth-century translation choosing the word fog. Fog and friction are not the same: fog is the uncertainty of information, while friction is the accumulated practical difficulty of execution. And modern technology has not ended the fog of war; it reduces some uncertainty while introducing new sources of error and confusion.",
@@ -47,12 +59,26 @@
   "namedAfter": "Carl von Clausewitz",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Fog of war, Wikipedia. — the definition, the coinage flag, and the concept's spread.", "url": "https://en.wikipedia.org/wiki/Fog_of_war", "type": "secondary"},
-    {"text": "Clausewitz, On War, Book 1, Chapter 3 (Graham translation, ClausewitzStudies.org). — the uncertainty, twilight, and guesses-at-truth passages.", "url": "https://clausewitzstudies.org/readings/OnWar1873/BK1ch03.html", "type": "primary"}
+    {
+      "text": "Fog of war, Wikipedia. — the definition, the coinage flag, and the concept's spread.",
+      "url": "https://en.wikipedia.org/wiki/Fog_of_war",
+      "type": "secondary"
+    },
+    {
+      "text": "Clausewitz, On War, Book 1, Chapter 3 (Graham translation, ClausewitzStudies.org). — the uncertainty, twilight, and guesses-at-truth passages.",
+      "url": "https://clausewitzstudies.org/readings/OnWar1873/BK1ch03.html",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Fog_of_war",
   "related": [
-    {"slug": "the-culminating-point-of-victory", "kind": "kindred"},
-    {"slug": "the-ooda-loop", "kind": "kindred"}
+    {
+      "slug": "the-culminating-point-of-victory",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-ooda-loop",
+      "kind": "kindred"
+    }
   ]
 }

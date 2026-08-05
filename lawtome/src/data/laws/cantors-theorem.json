@@ -5,12 +5,12 @@
   "aliases": [],
   "statement": "Some infinities are bigger than others, and there is no biggest.",
   "statementAccent": "there is no biggest",
-  "meaning": "For any set, the set of all its subsets is strictly larger than the set itself. As a consequence, there are endlessly many sizes of infinity, each larger than the last, with no largest — and the real numbers form a strictly larger infinity than the natural numbers, so they cannot be paired one-to-one with them.",
+  "meaning": "For any set, the set of all its subsets is strictly larger than the set itself. As a consequence, there are endlessly many sizes of infinity, each larger than the last, with no largest, and the real numbers form a strictly larger infinity than the natural numbers, so they cannot be paired one-to-one with them.",
   "mechanism": "The diagonal argument proves the uncountability of the reals. Suppose you had a complete numbered list of all real numbers between zero and one; construct a new number whose nth digit differs from the nth digit of the nth number on the list. The new number differs from every listed number in at least one place, so it cannot be on the list, contradicting the assumption that the list was complete. The general theorem uses the same idea: for any function from a set to its subsets, the set of elements not belonging to their own image cannot be hit, so no such function is onto.",
   "examples": [
     {
       "tag": "The reals are uncountable",
-      "text": "The numbers between zero and one cannot be enumerated in a list — the diagonal construction always produces a real that was left out — so the reals are a strictly larger infinity than the counting numbers."
+      "text": "The numbers between zero and one cannot be enumerated in a list, the diagonal construction always produces a real that was left out, so the reals are a strictly larger infinity than the counting numbers."
     },
     {
       "tag": "Countable infinities",
@@ -18,24 +18,24 @@
     },
     {
       "tag": "The tower of infinities",
-      "text": "Taking subsets of the naturals gives a larger infinity, taking subsets of that gives a larger one still, and so on without end — an unbounded hierarchy of ever-greater sizes."
+      "text": "Taking subsets of the naturals gives a larger infinity, taking subsets of that gives a larger one still, and so on without end: an unbounded hierarchy of ever-greater sizes."
     }
   ],
   "variants": [
     {
       "name": "The continuum hypothesis",
-      "text": "The conjecture that no set has a size strictly between the naturals and the reals — proved independent of the standard axioms of set theory by Godel and Cohen, so neither provable nor disprovable there."
+      "text": "The conjecture that no set has a size strictly between the naturals and the reals: proved independent of the standard axioms of set theory by Godel and Cohen, so neither provable nor disprovable there."
     },
     {
       "name": "The diagonal method reused",
-      "text": "The same self-referential technique later drove Godel's incompleteness theorems, Turing's halting problem, and Russell's paradox — one of the most productive ideas in logic."
+      "text": "The same self-referential technique later drove Godel's incompleteness theorems, Turing's halting problem, and Russell's paradox: one of the most productive ideas in logic."
     }
   ],
   "whyItMatters": "It founded the modern theory of infinite sets and overturned the intuition that infinity is a single thing, showing instead an endless ladder of sizes. Its diagonal method became one of the most powerful tools in mathematics, reused to prove the deepest limits of logic and computation.",
   "working": [
     {
       "lead": "Distinguish sizes of infinity",
-      "text": "do not treat all infinite sets as equally large — the reals genuinely outnumber the naturals."
+      "text": "do not treat all infinite sets as equally large: the reals genuinely outnumber the naturals."
     },
     {
       "lead": "Test countability by listing",
@@ -46,8 +46,8 @@
       "text": "when proving that no complete enumeration or universal object can exist, consider the self-referential diagonal argument."
     }
   ],
-  "limits": "Cantor's theorem is a fully proven result of standard set theory, but two related matters are genuinely unsettled. Constructivist and finitist schools reject its nonconstructive method and the notion of a completed infinity — a philosophical objection to its assumptions, not a demonstration of error. And the continuum hypothesis, about where the reals sit in the hierarchy of sizes, was proved independent of the standard axioms by Godel and Cohen, so it can be neither proved nor disproved there. That independence concerns a related question, not the truth of Cantor's theorem itself.",
-  "misreadings": "The independence of the continuum hypothesis does not weaken Cantor's theorem — the reals are provably uncountable; what is undecidable is only where they sit in the ladder of infinities. And the constructivist objections are a stance in the philosophy of mathematics, not a refutation of the theorem within standard set theory.",
+  "limits": "Cantor's theorem is a fully proven result of standard set theory, but two related matters are genuinely unsettled. Constructivist and finitist schools reject its nonconstructive method and the notion of a completed infinity: a philosophical objection to its assumptions, not a demonstration of error. And the continuum hypothesis, about where the reals sit in the hierarchy of sizes, was proved independent of the standard axioms by Godel and Cohen, so it can be neither proved nor disproved there. That independence concerns a related question, not the truth of Cantor's theorem itself.",
+  "misreadings": "The independence of the continuum hypothesis does not weaken Cantor's theorem: the reals are provably uncountable; what is undecidable is only where they sit in the ladder of infinities. And the constructivist objections are a stance in the philosophy of mathematics, not a refutation of the theorem within standard set theory.",
   "origin": "Proved by Georg Cantor, who first showed the reals uncountable by a nested-intervals argument in 1874, then gave the diagonal argument and the general power-set theorem in 1891; his work met fierce opposition, notably from Leopold Kronecker.",
   "category": "mathematics",
   "reliability": "Empirical",

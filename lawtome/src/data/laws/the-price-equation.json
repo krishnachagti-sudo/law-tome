@@ -9,7 +9,7 @@
   "examples": [
     {
       "tag": "Deriving Hamilton's rule",
-      "text": "Expanding the covariance term by regressing on relatedness recovers Hamilton's rule for kin selection — the derivation that was Price's original motivation and Hamilton's own use of the equation."
+      "text": "Expanding the covariance term by regressing on relatedness recovers Hamilton's rule for kin selection: the derivation that was Price's original motivation and Hamilton's own use of the equation."
     },
     {
       "tag": "Fisher's fundamental theorem",
@@ -17,20 +17,20 @@
     },
     {
       "tag": "Group selection",
-      "text": "Applied recursively, the equation splits change into a between-group term and a within-group term — the standard formal decomposition of individual against group selection."
+      "text": "Applied recursively, the equation splits change into a between-group term and a within-group term: the standard formal decomposition of individual against group selection."
     }
   ],
   "variants": [
     {
       "name": "The Robertson-Price identity",
-      "text": "The special case with faithful transmission, in which the change in the mean equals the covariance between relative fitness and the trait — the secondary theorem of natural selection."
+      "text": "The special case with faithful transmission, in which the change in the mean equals the covariance between relative fitness and the trait: the secondary theorem of natural selection."
     },
     {
       "name": "Multilevel selection",
       "text": "The nested application of the equation that separates selection acting between groups from selection acting within them, making it a workhorse of group-selection analysis."
     }
   ],
-  "whyItMatters": "It is a unifying, level-agnostic framework from which many classical results of evolutionary theory — Fisher's theorem, Hamilton's rule, the breeder's equation, the decomposition of multilevel selection — fall out as special cases. Devised by an untrained outsider whose life ended in tragedy, it is prized less for concrete prediction than for the deep structure it reveals about what selection is.",
+  "whyItMatters": "It is a unifying, level-agnostic framework from which many classical results of evolutionary theory (Fisher's theorem, Hamilton's rule, the breeder's equation, the decomposition of multilevel selection) fall out as special cases. Devised by an untrained outsider whose life ended in tragedy, it is prized less for concrete prediction than for the deep structure it reveals about what selection is.",
   "working": [
     {
       "lead": "Partition the change",
@@ -46,7 +46,7 @@
     }
   ],
   "limits": "Because it is an identity, the Price equation makes no predictions on its own; it is a bookkeeping tool, not a causal or dynamical model. To project forward you must independently specify the transmission term, the classic charge of dynamic insufficiency, since you cannot iterate it without added structure. There is a live philosophical debate over whether it explains evolution or merely describes it: the covariance term measures selection statistically but does not by itself establish causation. And van Veelen and others argue its very generality can empty its terms of meaning for understanding dynamics.",
-  "misreadings": "The equation does not explain evolution so much as describe and partition it; it is an identity, not a mechanism, and predicts nothing by itself. The covariance term does not imply causation — a statistical association between fitness and a trait can arise from confounding, so causal reading needs an added model. And credit is not Price's alone: the covariance part was anticipated by Robertson and Li, his novel contribution being the transmission term and the fully general formulation.",
+  "misreadings": "The equation does not explain evolution so much as describe and partition it; it is an identity, not a mechanism, and predicts nothing by itself. The covariance term does not imply causation: a statistical association between fitness and a trait can arise from confounding, so causal reading needs an added model. And credit is not Price's alone: the covariance part was anticipated by Robertson and Li, his novel contribution being the transmission term and the fully general formulation.",
   "origin": "Derived by George R. Price, a physical chemist turned evolutionary theorist, in 'Selection and Covariance' (Nature, 1970) and extended in 1972; he built it while generalising Hamilton's kin-selection results, and it became a foundation of social-evolution theory.",
   "category": "biology",
   "reliability": "Empirical",

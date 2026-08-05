@@ -4,7 +4,7 @@
   "name": "The Central Limit Theorem",
   "statement": "Add up many independent random quantities and their total tends to a bell curve.",
   "statementAccent": "their total tends to a bell curve",
-  "meaning": "Whenever an observed quantity is effectively the sum or average of many small, independent, comparable random contributions — with no single one dominating — the aggregate tends toward a normal, bell-shaped distribution, whatever the shape of the individual pieces. It is why the bell curve turns up so often in nature and measurement.",
+  "meaning": "Whenever an observed quantity is effectively the sum or average of many small, independent, comparable random contributions (with no single one dominating) the aggregate tends toward a normal, bell-shaped distribution, whatever the shape of the individual pieces. It is why the bell curve turns up so often in nature and measurement.",
   "mechanism": "Independent fluctuations add: their means add, their variances add, and dividing by the square root of the count keeps the spread stable while symmetric cancellation smooths the shape into a bell. The classical form needs the pieces to be independent, identically distributed, and to have finite variance; as the count grows, the standardised sum approaches the standard normal distribution.",
   "examples": [
     {
@@ -13,24 +13,24 @@
     },
     {
       "tag": "Averaging dice",
-      "text": "A single die is flat and uniform, but the average of many rolls is bell-shaped and near-normal — a classic demonstration that the theorem is about the aggregate, not the individual roll."
+      "text": "A single die is flat and uniform, but the average of many rolls is bell-shaped and near-normal: a classic demonstration that the theorem is about the aggregate, not the individual roll."
     },
     {
       "tag": "Poll margins",
-      "text": "A poll's sample proportion is an average of independent yes-or-no responses, so its sampling distribution is approximately normal — which is why margins of error are computed with normal-based intervals."
+      "text": "A poll's sample proportion is an average of independent yes-or-no responses, so its sampling distribution is approximately normal, which is why margins of error are computed with normal-based intervals."
     }
   ],
   "variants": [
     {
       "name": "The law of large numbers",
-      "text": "A distinct theorem often confused with it: the law of large numbers says where the sample mean goes — it converges to the true mean — while the central limit theorem describes the Gaussian shape of the fluctuations around it."
+      "text": "A distinct theorem often confused with it: the law of large numbers says where the sample mean goes (it converges to the true mean), while the central limit theorem describes the Gaussian shape of the fluctuations around it."
     },
     {
       "name": "The generalised central limit theorem",
-      "text": "For heavy-tailed variables with infinite variance, normalised sums converge not to the normal but to stable distributions with power-law tails — the normal is only the finite-variance case."
+      "text": "For heavy-tailed variables with infinite variance, normalised sums converge not to the normal but to stable distributions with power-law tails: the normal is only the finite-variance case."
     }
   ],
-  "whyItMatters": "It explains the ubiquity of the normal distribution and underwrites vast swathes of statistics — confidence intervals, significance tests, and error analysis all lean on it. It is the reason averages of messy data behave so predictably even when the data themselves do not.",
+  "whyItMatters": "It explains the ubiquity of the normal distribution and underwrites vast swathes of statistics: confidence intervals, significance tests, and error analysis all lean on it. It is the reason averages of messy data behave so predictably even when the data themselves do not.",
   "working": [
     {
       "lead": "Expect averages to be normal, not the data",
@@ -45,8 +45,8 @@
       "text": "for heavy-tailed data like some financial returns, the normal approximation can fail badly and underestimate extremes."
     }
   ],
-  "limits": "The classical theorem requires finite variance and, in its basic form, independence — the load-bearing assumptions. It fails for heavy-tailed distributions with infinite variance, such as the Cauchy or steep power laws, whose sample means never settle into a normal shape; this is the heart of the fat-tails critique of applying Gaussian methods to real-world risk. Convergence can also be slow or biased for highly skewed or discrete data, so the normal approximation may be poor at realistic sample sizes. It is a proven theorem whose real-world use depends on checking its conditions.",
-  "misreadings": "It does not say individual data are normal — only that their sums or averages tend to be. Nor is it universal: it needs finite variance, and heavy-tailed distributions break it. And it is not the law of large numbers, which locates the mean rather than describing the spread of fluctuations around it.",
+  "limits": "The classical theorem requires finite variance and, in its basic form, independence: the load-bearing assumptions. It fails for heavy-tailed distributions with infinite variance, such as the Cauchy or steep power laws, whose sample means never settle into a normal shape; this is the heart of the fat-tails critique of applying Gaussian methods to real-world risk. Convergence can also be slow or biased for highly skewed or discrete data, so the normal approximation may be poor at realistic sample sizes. It is a proven theorem whose real-world use depends on checking its conditions.",
+  "misreadings": "It does not say individual data are normal, only that their sums or averages tend to be. Nor is it universal: it needs finite variance, and heavy-tailed distributions break it. And it is not the law of large numbers, which locates the mean rather than describing the spread of fluctuations around it.",
   "origin": "Developed over two centuries: Abraham de Moivre found the binomial special case in 1733, Laplace generalised it toward 1812, Aleksandr Lyapunov gave the first rigorous general proof in 1901, and the name 'central limit theorem' was popularised by George Pólya around 1920.",
   "category": "statistics",
   "reliability": "Empirical",

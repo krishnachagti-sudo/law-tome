@@ -2,7 +2,10 @@
   "no": "484",
   "slug": "the-ooda-loop",
   "name": "The OODA Loop",
-  "aliases": ["Boyd's cycle", "Observe-Orient-Decide-Act"],
+  "aliases": [
+    "Boyd's cycle",
+    "Observe-Orient-Decide-Act"
+  ],
   "statement": "Whoever cycles through observe, orient, decide, and act faster and truer gets inside the other's decisions.",
   "statementAccent": "gets inside the other's decisions",
   "meaning": "The OODA loop is a decision-making model describing a continuous four-phase cycle, observe, orient, decide, and act, that individuals and organisations run through when acting in a competitive or conflictual environment. Its central claim is that a party who can cycle through the loop faster and more accurately than an adversary can get inside the opponent's decision cycle: by the time the opponent orients and acts, the situation has already changed, so their responses arrive stale, compounding their confusion until they can no longer respond coherently. Crucially it is not a simple linear circle; orientation governs the whole process.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The OODA loop became one of the most influential frameworks in modern military strategy, underpinning manoeuvre-warfare doctrine and the shift from attrition toward tempo- and cohesion-based approaches. Beyond the military it offers a general theory of adapting under uncertainty in any adversarial, fast-decision domain, from business competition to cybersecurity to crisis response, where the decisive variable is not the size of one's resources but how quickly and accurately one can make sense of a changing situation and act before the opponent can.",
   "working": [
-    {"lead": "Prize orientation", "text": "invest in seeing the situation correctly, since orientation shapes observation, decision, and action, and a fast but mis-oriented loop loses."},
-    {"lead": "Aim at the opponent's loop", "text": "seek to disrupt the adversary's cycle, not merely accelerate your own, so their actions are always stale."},
-    {"lead": "Allow implicit action", "text": "let trained pattern-recognition act without full deliberation where speed matters, the shortcut Boyd's diagram builds in."}
+    {
+      "lead": "Prize orientation",
+      "text": "invest in seeing the situation correctly, since orientation shapes observation, decision, and action, and a fast but mis-oriented loop loses."
+    },
+    {
+      "lead": "Aim at the opponent's loop",
+      "text": "seek to disrupt the adversary's cycle, not merely accelerate your own, so their actions are always stale."
+    },
+    {
+      "lead": "Allow implicit action",
+      "text": "let trained pattern-recognition act without full deliberation where speed matters, the shortcut Boyd's diagram builds in."
+    }
   ],
   "limits": "Boyd's corpus is mostly briefing slides plus a single essay, with essentially no authoritative monograph, so interpretations legitimately diverge. The popular four-box graphic misrepresents the model by dropping the dominance of orientation and the feedback and implicit-control structure. It is not universally applicable: in domains where deliberation, accuracy, or consensus beat raw speed, such as long-horizon planning, safety-critical engineering, or judicial reasoning, getting inside the loop faster can be actively harmful, since speed helps only when coupled to accurate orientation. And the model presumes a reactive opponent, mapping less cleanly onto cooperative problems.",
   "misreadings": "It does not just mean make decisions fast: Boyd's emphasis is on orienting correctly and on disrupting the opponent's loop, and fast but poorly-oriented action loses. It is not a simple four-box linear cycle; Boyd's own diagram is non-linear, with feedback and implicit-guidance links that can skip the decide phase entirely. And Boyd did not write a book laying it out; he worked through in-person briefings and left little formal writing, so much rests on interpretation.",
@@ -47,11 +59,22 @@
   "namedAfter": "John Boyd",
   "namesakeKind": "person",
   "sources": [
-    {"text": "OODA loop, Wikipedia. — the four phases, getting inside the opponent's cycle, and the primacy of orientation.", "url": "https://en.wikipedia.org/wiki/OODA_loop", "type": "secondary"},
-    {"text": "Richards, 'Boyd's OODA Loop' (peer-reviewed article by a Boyd associate). — the dominance of orientation and the non-linear structure.", "url": "https://ooda.de/media/chet_richards_-_boyds_ooda_loop.pdf", "type": "secondary"}
+    {
+      "text": "OODA loop, Wikipedia. — the four phases, getting inside the opponent's cycle, and the primacy of orientation.",
+      "url": "https://en.wikipedia.org/wiki/OODA_loop",
+      "type": "secondary"
+    },
+    {
+      "text": "Richards, 'Boyd's OODA Loop' (peer-reviewed article by a Boyd associate). — the dominance of orientation and the non-linear structure.",
+      "url": "https://ooda.de/media/chet_richards_-_boyds_ooda_loop.pdf",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/OODA_loop",
   "related": [
-    {"slug": "the-fog-of-war", "kind": "kindred"}
+    {
+      "slug": "the-fog-of-war",
+      "kind": "kindred"
+    }
   ]
 }

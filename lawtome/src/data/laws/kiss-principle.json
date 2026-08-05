@@ -10,7 +10,7 @@
   ],
   "statement": "Most systems work best if they are kept simple rather than made complicated, so simplicity should be a design goal and needless complexity avoided.",
   "statementAccent": "simplicity should be a design goal",
-  "meaning": "Complexity is not free, and it is rarely bought deliberately — it accumulates. The principle makes simplicity something a design is judged against rather than something left over after the features are in, on the grounds that the simple version is the one that can be built, understood, repaired and trusted.",
+  "meaning": "Complexity is not free, and it is rarely bought deliberately: it accumulates. The principle makes simplicity something a design is judged against rather than something left over after the features are in, on the grounds that the simple version is the one that can be built, understood, repaired and trusted.",
   "mechanism": "Every added part is a part that can fail, a part that must be understood before anything near it can be changed, and a part that interacts with all the others. Interactions grow faster than parts, so complexity buys failure modes at an accelerating rate while buying capability at a linear one. The origin story is about exactly this: Johnson's constraint at Lockheed's Skunk Works was that a combat aircraft had to be repairable by an average mechanic in the field with a handful of tools, which is a design goal that rules out sophistication no matter how well it performs on a test bench.",
   "examples": [
     {
@@ -41,7 +41,7 @@
       "text": "and only add once the simple version has demonstrably failed at something real, which also gives you the requirement the addition has to satisfy."
     }
   ],
-  "limits": "Simple is not defined, which is the principle's real weakness: two engineers who agree on KISS will disagree about which of their designs is the simpler one, and both will be arguing honestly. It also has no answer to essential complexity — a problem that is genuinely complicated cannot be made simple, only made to look simple somewhere and worse somewhere else. Applied without that distinction it becomes an argument for under-engineering, and 'we kept it simple' is a common post-mortem finding.",
+  "limits": "Simple is not defined, which is the principle's real weakness: two engineers who agree on KISS will disagree about which of their designs is the simpler one, and both will be arguing honestly. It also has no answer to essential complexity: a problem that is genuinely complicated cannot be made simple, only made to look simple somewhere and worse somewhere else. Applied without that distinction it becomes an argument for under-engineering, and 'we kept it simple' is a common post-mortem finding.",
   "misreadings": "The word 'stupid' is not aimed at the user, and Johnson's own writing has no comma: the injunction is to keep the thing simple and foolproof, not to insult whoever reads it. It is also not a licence to omit necessary parts. And it is not the same claim as Occam's Razor, which is about choosing between explanations of evidence, not between designs.",
   "origin": "Attributed to Kelly Johnson, lead engineer at Lockheed's Skunk Works, and associated with his instruction that the aircraft his engineers designed be repairable in the field by an average mechanic with a few basic tools. The U.S. Navy documented a 'Project KISS' in 1960 and the term was in general use by 1970. The attribution is not airtight: a 'keep it short and simple' variant appears in a 1938 Minneapolis Star article, predating Johnson's association with the phrase.",
   "category": "software",
@@ -59,9 +59,21 @@
   ],
   "sameAs": "https://en.wikipedia.org/wiki/KISS_principle",
   "related": [
-    { "slug": "occams-razor", "kind": "kindred" },
-    { "slug": "yagni", "kind": "kindred" },
-    { "slug": "galls-law", "kind": "kindred" },
-    { "slug": "worse-is-better", "kind": "kindred" }
+    {
+      "slug": "occams-razor",
+      "kind": "kindred"
+    },
+    {
+      "slug": "yagni",
+      "kind": "kindred"
+    },
+    {
+      "slug": "galls-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "worse-is-better",
+      "kind": "kindred"
+    }
   ]
 }

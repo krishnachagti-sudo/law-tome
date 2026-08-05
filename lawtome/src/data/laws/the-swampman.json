@@ -2,7 +2,10 @@
   "no": "684",
   "slug": "the-swampman",
   "name": "The Swampman",
-  "aliases": ["Davidson's Swampman", "Swamp man"],
+  "aliases": [
+    "Davidson's Swampman",
+    "Swamp man"
+  ],
   "statement": "If lightning by freak chance assembled an exact copy of you, its thoughts would mean nothing, because it has no history.",
   "statementAccent": "its thoughts would mean nothing, because it has no history",
   "meaning": "Swampman is a thought experiment introduced by the philosopher Donald Davidson in his 1987 paper Knowing One's Own Mind. Davidson imagines himself walking near a swamp when a lightning bolt strikes and kills him. At the same instant, by an incredible coincidence, another bolt strikes a nearby dead tree and rearranges its molecules so as to form an exact physical replica of Davidson, Swampman. Molecule for molecule identical, Swampman behaves just as Davidson would: it walks out of the swamp, seems to recognise and greet Davidson's friends, appears to remember his life, and seems to speak English. Yet Davidson argues that despite this perfect physical identity, Swampman's states do not have genuine meaning, content, or memories, because meaning and mental content depend on the right causal history, a history Swampman entirely lacks. The case is a vivid argument that thought and language are anchored not just in present physical structure but in one's causal connections to the world.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "Swampman is a famous thought experiment in the philosophy of mind and language, a sharp test of the idea that meaning and mental content depend on history rather than on current physical constitution alone. By imagining a perfect duplicate with no past, it isolates the role of causal and historical connection in fixing what thoughts and words are about, supporting content externalism and bearing on teleosemantic theories that ground meaning in an item's history or function. The case connects to Putnam's Twin Earth and to broader debates about whether an instant physical copy could genuinely have a mind. It is also prized as a limiting case that forces theorists to say clearly what they think meaning requires, and its counterintuitive verdict, that a physical twin of you might mean nothing by its words, keeps it at the centre of arguments about the sources of content.",
   "working": [
-    {"lead": "Build a duplicate with no past", "text": "imagine an exact molecular replica formed by chance an instant ago, physically identical to a person but lacking any causal history."},
-    {"lead": "Ask what its words mean", "text": "consider Davidson's claim that its utterances mean nothing, since they were never learned in any meaning-conferring context."},
-    {"lead": "Locate content in history", "text": "conclude that if the duplicate lacks genuine thoughts, meaning must depend on causal-historical connection to the world, supporting content externalism."}
+    {
+      "lead": "Build a duplicate with no past",
+      "text": "imagine an exact molecular replica formed by chance an instant ago, physically identical to a person but lacking any causal history."
+    },
+    {
+      "lead": "Ask what its words mean",
+      "text": "consider Davidson's claim that its utterances mean nothing, since they were never learned in any meaning-conferring context."
+    },
+    {
+      "lead": "Locate content in history",
+      "text": "conclude that if the duplicate lacks genuine thoughts, meaning must depend on causal-historical connection to the world, supporting content externalism."
+    }
   ],
   "limits": "Swampman's verdict is a contested intuition, not an established result; many philosophers find it hard to accept that a molecule-for-molecule duplicate would lack thoughts, and hold instead that it would have mental content in virtue of its present structure. Davidson himself did not develop the example at length, and the Stanford Encyclopedia notes its usefulness is limited. The case presupposes a historical or causal theory of content, so it will not persuade those who reject that framework, and it trades on a scenario so far-fetched that some doubt our intuitions about it are reliable. The experiment therefore sharpens a debate between historical externalism and its rivals rather than settling it, and how much weight it can bear depends on prior commitments about the nature of meaning.",
   "misreadings": "The claim is not that Swampman behaves oddly or is detectably different; by stipulation it acts exactly like the original. The point is the philosophical one that its states lack genuine content because it has no causal history, a conclusion many dispute. Davidson is not asserting a proven fact but using a limiting case to argue for historical externalism, so treating Swampman as settled doctrine overstates it. And the case does not deny that physical duplicates are behaviourally indistinguishable; it questions whether behaviour and structure alone suffice for meaning, which is precisely what is at issue.",
@@ -46,12 +58,26 @@
   "coinedYear": 1987,
   "namedAfter": null,
   "sources": [
-    {"text": "Swampman, Wikipedia. — Davidson's 1987 paper, the lightning-strike molecular-duplicate setup, the argument that content depends on causal history, and the claim that Swampman lacks genuine meaning and memory.", "url": "https://en.wikipedia.org/wiki/Swampman", "type": "secondary"},
-    {"text": "Donald Davidson, Stanford Encyclopedia of Philosophy. — the Swampman example, its use in arguing that mental content depends on causal-historical relations, and the note that Davidson did not elaborate it.", "url": "https://plato.stanford.edu/entries/davidson/", "type": "secondary"}
+    {
+      "text": "Swampman, Wikipedia. — Davidson's 1987 paper, the lightning-strike molecular-duplicate setup, the argument that content depends on causal history, and the claim that Swampman lacks genuine meaning and memory.",
+      "url": "https://en.wikipedia.org/wiki/Swampman",
+      "type": "secondary"
+    },
+    {
+      "text": "Donald Davidson, Stanford Encyclopedia of Philosophy. — the Swampman example, its use in arguing that mental content depends on causal-historical relations, and the note that Davidson did not elaborate it.",
+      "url": "https://plato.stanford.edu/entries/davidson/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Swampman",
   "related": [
-    {"slug": "twin-earth", "kind": "kindred"},
-    {"slug": "the-teletransportation-paradox", "kind": "kindred"}
+    {
+      "slug": "twin-earth",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-teletransportation-paradox",
+      "kind": "kindred"
+    }
   ]
 }

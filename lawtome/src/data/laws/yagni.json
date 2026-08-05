@@ -18,7 +18,7 @@
     },
     {
       "tag": "The premature abstraction",
-      "text": "An interface with one implementation is introduced because a second is expected. When the second arrives it does not fit the interface, so the abstraction is rewritten — having cost indirection in the meantime."
+      "text": "An interface with one implementation is introduced because a second is expected. When the second arrives it does not fit the interface, so the abstraction is rewritten: having cost indirection in the meantime."
     },
     {
       "tag": "Multi-tenancy on day one",
@@ -40,7 +40,7 @@
       "text": "record the anticipated need where the team will see it when it becomes real, rather than encoding the guess in the system."
     }
   ],
-  "limits": "It assumes change stays cheap, which is exactly what its own methodology has to supply: the practice was stated inside Extreme Programming alongside continuous refactoring, automated tests and continuous integration, and without those the deferred work becomes rework rather than saved effort. It also bites hardest on reversible decisions. Choices that are expensive or impossible to revisit later — a data model that silently discards information, a public API, an encryption scheme, a regulatory obligation — are precisely the ones where anticipating is cheaper than repairing.",
+  "limits": "It assumes change stays cheap, which is exactly what its own methodology has to supply: the practice was stated inside Extreme Programming alongside continuous refactoring, automated tests and continuous integration, and without those the deferred work becomes rework rather than saved effort. It also bites hardest on reversible decisions. Choices that are expensive or impossible to revisit later (a data model that silently discards information, a public API, an encryption scheme, a regulatory obligation) are precisely the ones where anticipating is cheaper than repairing.",
   "misreadings": "It is not an argument for careless code, for skipping design, or for refusing to think about the future. It says nothing against making a system easy to change; it says only that building a capability before a requirement exists is a bet you usually lose. Nor does it license shipping a known-inadequate design where the inadequacy is already a present, not a future, problem.",
   "origin": "Stated as a practice of Extreme Programming in the late 1990s and most often quoted from Ron Jeffries, one of XP's three founders, in the form \"Always implement things when you actually need them, never when you just foresee that you need them.\" The acronym circulated on the WikiWikiWeb before entering general use; Martin Fowler's 2015 bliki entry gave it the four-costs analysis now usually cited with it. No single publication is the first appearance of the phrase.",
   "category": "software",

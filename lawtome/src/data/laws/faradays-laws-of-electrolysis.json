@@ -4,12 +4,12 @@
   "name": "Faraday's Laws of Electrolysis",
   "statement": "The amount of substance deposited in electrolysis is proportional to the charge passed.",
   "statementAccent": "proportional to the charge passed",
-  "meaning": "Electric charge is the currency of electrochemical change. The first law says the mass deposited or liberated at an electrode is proportional to the total charge passed; the second says that, for the same charge, the masses of different substances scale with their chemical equivalent weights — molar mass divided by valence.",
-  "mechanism": "Each ion must capture or release a fixed whole number of electrons to be discharged — one for silver, two for copper, three for aluminium. The Faraday constant is the charge carried by one mole of electrons, so the moles of substance deposited equal the charge divided by that constant and the valence. The valence dependence is exactly why the second law scales with equivalent weight.",
+  "meaning": "Electric charge is the currency of electrochemical change. The first law says the mass deposited or liberated at an electrode is proportional to the total charge passed; the second says that, for the same charge, the masses of different substances scale with their chemical equivalent weights: molar mass divided by valence.",
+  "mechanism": "Each ion must capture or release a fixed whole number of electrons to be discharged: one for silver, two for copper, three for aluminium. The Faraday constant is the charge carried by one mole of electrons, so the moles of substance deposited equal the charge divided by that constant and the valence. The valence dependence is exactly why the second law scales with equivalent weight.",
   "examples": [
     {
       "tag": "Electroplating",
-      "text": "Depositing a controlled thickness of silver, gold, or chromium: the charge passed, current times time, fixes the mass plated — the most direct use of the first law."
+      "text": "Depositing a controlled thickness of silver, gold, or chromium: the charge passed, current times time, fixes the mass plated (the most direct use of the first law)."
     },
     {
       "tag": "Aluminium smelting",
@@ -17,7 +17,7 @@
     },
     {
       "tag": "Copper refining",
-      "text": "In electrorefining, an impure copper anode dissolves and pure copper plates onto the cathode at a rate the laws set per ampere-hour — the basis of industrial copper purification."
+      "text": "In electrorefining, an impure copper anode dissolves and pure copper plates onto the cathode at a rate the laws set per ampere-hour: the basis of industrial copper purification."
     }
   ],
   "variants": [
@@ -30,7 +30,7 @@
       "text": "The practical correction: the fraction of charge that actually drives the intended reaction, less than one when side reactions siphon off current."
     }
   ],
-  "whyItMatters": "They are the quantitative foundation of electrochemistry, governing electroplating, metal refining, aluminium and chlorine production, and the design of every electrolytic process. Historically they were also used to measure the Faraday constant and, through it, the Avogadro number — tying industrial chemistry to atomic-scale constants.",
+  "whyItMatters": "They are the quantitative foundation of electrochemistry, governing electroplating, metal refining, aluminium and chlorine production, and the design of every electrolytic process. Historically they were also used to measure the Faraday constant and, through it, the Avogadro number: tying industrial chemistry to atomic-scale constants.",
   "working": [
     {
       "lead": "Compute mass from charge",
@@ -45,8 +45,8 @@
       "text": "for the same charge through different cells, expect masses in the ratio of the substances' equivalent weights."
     }
   ],
-  "limits": "The laws assume complete current efficiency — that every electron drives the intended electrode reaction. In real cells side and competing reactions siphon off current, such as hydrogen evolving instead of a metal depositing, so actual yield usually falls below the prediction. This is not a flaw in the laws but a defined correction: the ratio of actual to theoretical yield is the current efficiency, and once it is accounted for the laws are essentially exact. They set the charge-to-mass relationship for the intended reaction, not which reactions win when several compete.",
-  "misreadings": "These are Faraday's laws of electrolysis, an electrochemistry result, not his separate law of induction in electromagnetism — the same person gave both, but they are entirely different physics. And the laws are exact only once current efficiency is counted; real yields fall short when side reactions consume charge.",
+  "limits": "The laws assume complete current efficiency: that every electron drives the intended electrode reaction. In real cells side and competing reactions siphon off current, such as hydrogen evolving instead of a metal depositing, so actual yield usually falls below the prediction. This is not a flaw in the laws but a defined correction: the ratio of actual to theoretical yield is the current efficiency, and once it is accounted for the laws are essentially exact. They set the charge-to-mass relationship for the intended reaction, not which reactions win when several compete.",
+  "misreadings": "These are Faraday's laws of electrolysis, an electrochemistry result, not his separate law of induction in electromagnetism: the same person gave both, but they are entirely different physics. And the laws are exact only once current efficiency is counted; real yields fall short when side reactions consume charge.",
   "origin": "Established by the English scientist Michael Faraday through experiments in 1833 and published in 1834, before the modern concept of valence existed, so the equivalent-weight interpretation is a later formalisation.",
   "category": "chemistry",
   "reliability": "Empirical",

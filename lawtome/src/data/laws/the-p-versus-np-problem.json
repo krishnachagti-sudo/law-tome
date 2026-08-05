@@ -9,7 +9,7 @@
   "examples": [
     {
       "tag": "Verifying versus finding",
-      "text": "Checking a completed jigsaw or a filled-in Sudoku is easy, but finding the solution from scratch can be enormously hard — the everyday shape of the gap between verifying and solving."
+      "text": "Checking a completed jigsaw or a filled-in Sudoku is easy, but finding the solution from scratch can be enormously hard: the everyday shape of the gap between verifying and solving."
     },
     {
       "tag": "NP-complete problems",
@@ -42,7 +42,7 @@
     },
     {
       "lead": "Hold the answer as open",
-      "text": "treat P versus NP as unresolved — most believe P is not NP, but neither direction has been proved."
+      "text": "treat P versus NP as unresolved: most believe P is not NP, but neither direction has been proved."
     }
   ],
   "limits": "P versus NP is unresolved, and its difficulty is itself a major topic. No proof is known in either direction despite decades of intense effort, and results in complexity theory suggest why: broad classes of proof techniques, such as relativizing and natural-proofs approaches, are known to be incapable of settling the question, so a resolution will likely require genuinely new methods. The near-universal belief that P is not equal to NP is a conjecture, not a theorem, and while overwhelming circumstantial evidence supports it, no one has proven that even a single NP-complete problem lacks a polynomial-time algorithm. The classes P and NP are defined for decision problems and for worst-case, asymptotic running time, so the theoretical distinction does not always track practical performance, since some NP-complete problems are solved well in practice on typical inputs while some polynomial-time algorithms are too slow to use. Cook's paper is dated 1971, Karp's 1972, Levin's independent work is often dated to its 1973 publication, and Godel's letter to von Neumann is dated 1956.",

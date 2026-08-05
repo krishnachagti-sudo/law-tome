@@ -4,16 +4,16 @@
   "name": "The Framing Effect",
   "statement": "The same choice, described as a gain or a loss, draws opposite decisions.",
   "statementAccent": "described as a gain or a loss",
-  "meaning": "The framing effect is the bias by which people react differently to the same choice depending on how it is worded — as a gain or a loss, as lives saved or lives lost — even when the options are logically identical. The description, not just the substance, moves the decision, producing predictable reversals of preference from a mere change of phrasing.",
+  "meaning": "The framing effect is the bias by which people react differently to the same choice depending on how it is worded (as a gain or a loss, as lives saved or lives lost), even when the options are logically identical. The description, not just the substance, moves the decision, producing predictable reversals of preference from a mere change of phrasing.",
   "mechanism": "The effect grows out of prospect theory. The value people place on outcomes is concave for gains and convex for losses, so they tend to be risk-averse when weighing gains and risk-seeking when weighing losses. A frame sets the reference point that decides whether an outcome reads as a gain or a loss, and so flips which side of that value function governs the choice. Cast a policy as saving lives and people cling to the sure thing; cast the same policy as letting people die and they gamble to avoid the certain loss.",
   "examples": [
     {
       "tag": "The Asian disease problem",
-      "text": "Told a program would save 200 of 600, most chose it over an equal-value gamble; told the same program meant 400 would die, most rejected it for the gamble — a full reversal from identical numbers."
+      "text": "Told a program would save 200 of 600, most chose it over an equal-value gamble; told the same program meant 400 would die, most rejected it for the gamble: a full reversal from identical numbers."
     },
     {
       "tag": "Lean or fat",
-      "text": "Ground beef labelled seventy-five per cent lean is rated more favourably than the same beef labelled twenty-five per cent fat — attribute framing, where a single trait's wording shifts the whole judgement."
+      "text": "Ground beef labelled seventy-five per cent lean is rated more favourably than the same beef labelled twenty-five per cent fat: attribute framing, where a single trait's wording shifts the whole judgement."
     },
     {
       "tag": "Survival or mortality",
@@ -30,14 +30,23 @@
       "text": "The Kahneman-Tversky account of decision under risk from which the effect follows, with its reference-dependent value function and loss aversion supplying the mechanism."
     }
   ],
-  "whyItMatters": "It shows that human preferences are not fixed properties of the options but are partly constructed by how those options are described — a deep challenge to the rational-choice assumption that logically equivalent choices are treated alike. It shapes medicine, marketing, public health, and policy, wherever the wording of a choice can be tuned, and it is one of the founding results of behavioural economics.",
+  "whyItMatters": "It shows that human preferences are not fixed properties of the options but are partly constructed by how those options are described: a deep challenge to the rational-choice assumption that logically equivalent choices are treated alike. It shapes medicine, marketing, public health, and policy, wherever the wording of a choice can be tuned, and it is one of the founding results of behavioural economics.",
   "working": [
-    {"lead": "Reframe before deciding", "text": "restate a choice in both gain and loss terms and check whether your preference holds; if it flips, the frame is doing the deciding."},
-    {"lead": "Watch the reference point", "text": "notice what a description treats as the baseline, since that is what turns an outcome into a gain or a loss and steers the risk attitude."},
-    {"lead": "Match the frame to the aim", "text": "in persuasion, recognise that loss frames often move behaviour more in goal framing, while positive frames tend to favour attribute evaluation — there is no universally better frame."}
+    {
+      "lead": "Reframe before deciding",
+      "text": "restate a choice in both gain and loss terms and check whether your preference holds; if it flips, the frame is doing the deciding."
+    },
+    {
+      "lead": "Watch the reference point",
+      "text": "notice what a description treats as the baseline, since that is what turns an outcome into a gain or a loss and steers the risk attitude."
+    },
+    {
+      "lead": "Match the frame to the aim",
+      "text": "in persuasion, recognise that loss frames often move behaviour more in goal framing, while positive frames tend to favour attribute evaluation. There is no universally better frame."
+    }
   ],
-  "limits": "It is one of the more reliably reproduced biases, but its size varies substantially with method: a large meta-analysis called it reliable yet small-to-moderate, strongly moderated by whether the task is a choice or a rating and by between- versus within-subject design. Individual differences are real — some people show little framing, and the three types need not co-occur within a person. The direction of the effect depends on the framing type, so no single frame is always more persuasive. And it must not be conflated with anchoring, a related but distinct formulation-dependence bias about numerical reference points.",
-  "misreadings": "Framing does not change the facts — the whole point is that the options are logically equivalent and only the description differs. It is not confined to risky gambles, since attribute and goal framing act on ordinary evaluations and persuasion. And it is neither a synonym for anchoring nor for prospect theory: it is one phenomenon that prospect theory explains, and a separate bias from anchoring.",
+  "limits": "It is one of the more reliably reproduced biases, but its size varies substantially with method: a large meta-analysis called it reliable yet small-to-moderate, strongly moderated by whether the task is a choice or a rating and by between- versus within-subject design. Individual differences are real: some people show little framing, and the three types need not co-occur within a person. The direction of the effect depends on the framing type, so no single frame is always more persuasive. And it must not be conflated with anchoring, a related but distinct formulation-dependence bias about numerical reference points.",
+  "misreadings": "Framing does not change the facts: the whole point is that the options are logically equivalent and only the description differs. It is not confined to risky gambles, since attribute and goal framing act on ordinary evaluations and persuasion. And it is neither a synonym for anchoring nor for prospect theory: it is one phenomenon that prospect theory explains, and a separate bias from anchoring.",
   "origin": "Introduced by Amos Tversky and Daniel Kahneman in 'The Framing of Decisions and the Psychology of Choice' (Science, 1981), with the Asian disease problem, as an application of their 1979 prospect theory; the taxonomy of framing types is due to Levin, Schneider, and Gaeth (1998).",
   "category": "psychology",
   "reliability": "Empirical",
@@ -46,13 +55,31 @@
   "namedAfter": "Amos Tversky and Daniel Kahneman",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Tversky & Kahneman, \"The Framing of Decisions and the Psychology of Choice,\" Science 211(4481):453-458 (1981). — the definition, the Asian disease problem, and the risk-aversion-to-risk-seeking reversal.", "url": "https://sites.stat.columbia.edu/gelman/surveys.course/TverskyKahneman1981.pdf", "type": "primary"},
-    {"text": "Levin, Schneider & Gaeth, \"All Frames Are Not Created Equal,\" Organizational Behavior and Human Decision Processes 76(2):149-188 (1998). — the risky-choice, attribute, and goal framing typology.", "url": "https://pubmed.ncbi.nlm.nih.gov/9831520/", "type": "primary"},
-    {"text": "Kuhberger, \"The Influence of Framing on Risky Decisions: A Meta-analysis,\" Organizational Behavior and Human Decision Processes 75(1):23-55 (1998). — framing as a reliable but small-to-moderate effect, strongly method-dependent.", "url": "https://pubmed.ncbi.nlm.nih.gov/9719656/", "type": "primary"}
+    {
+      "text": "Tversky & Kahneman, \"The Framing of Decisions and the Psychology of Choice,\" Science 211(4481):453-458 (1981). — the definition, the Asian disease problem, and the risk-aversion-to-risk-seeking reversal.",
+      "url": "https://sites.stat.columbia.edu/gelman/surveys.course/TverskyKahneman1981.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Levin, Schneider & Gaeth, \"All Frames Are Not Created Equal,\" Organizational Behavior and Human Decision Processes 76(2):149-188 (1998). — the risky-choice, attribute, and goal framing typology.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9831520/",
+      "type": "primary"
+    },
+    {
+      "text": "Kuhberger, \"The Influence of Framing on Risky Decisions: A Meta-analysis,\" Organizational Behavior and Human Decision Processes 75(1):23-55 (1998). — framing as a reliable but small-to-moderate effect, strongly method-dependent.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9719656/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Framing_effect_(psychology)",
   "related": [
-    {"slug": "loss-aversion", "kind": "cause"},
-    {"slug": "the-anchoring-effect", "kind": "kindred"}
+    {
+      "slug": "loss-aversion",
+      "kind": "cause"
+    },
+    {
+      "slug": "the-anchoring-effect",
+      "kind": "kindred"
+    }
   ]
 }

@@ -8,7 +8,7 @@
   "statement": "A cipher should stay secure even if everything but the key is public.",
   "statementAccent": "everything but the key",
   "meaning": "Kerckhoffs's principle holds that a cryptographic system should remain secure even if everything about it, except the key, is public knowledge. Security must rest on the secrecy of the key alone, never on the secrecy of the algorithm or design. It is the direct opposite of security through obscurity, and the reason modern cryptography publishes its algorithms and hides only its keys.",
-  "mechanism": "Keys are small, changeable at will, and specific to each user, while an algorithm embedded in widely distributed hardware and software cannot be kept secret or changed once fielded — it will eventually be reverse-engineered. So resting security on the key, the one thing that can genuinely be protected and rotated, is the robust choice. Publishing the algorithm also invites open analysis: a design that survives repeated public attack earns justified confidence, whereas secrecy denies that evidence and hides flaws.",
+  "mechanism": "Keys are small, changeable at will, and specific to each user, while an algorithm embedded in widely distributed hardware and software cannot be kept secret or changed once fielded. It will eventually be reverse-engineered. So resting security on the key, the one thing that can genuinely be protected and rotated, is the robust choice. Publishing the algorithm also invites open analysis: a design that survives repeated public attack earns justified confidence, whereas secrecy denies that evidence and hides flaws.",
   "examples": [
     {
       "tag": "Open standards",
@@ -16,7 +16,7 @@
     },
     {
       "tag": "Broken secret ciphers",
-      "text": "Ciphers whose security depended on a secret design, such as the GSM cipher A5/1 and the DVD scrambling system, were broken once reverse-engineered — the failure mode the principle warns against."
+      "text": "Ciphers whose security depended on a secret design, such as the GSM cipher A5/1 and the DVD scrambling system, were broken once reverse-engineered: the failure mode the principle warns against."
     },
     {
       "tag": "Shannon's maxim",
@@ -30,7 +30,7 @@
     },
     {
       "name": "Security through obscurity",
-      "text": "The rejected opposite, resting security on a secret algorithm — fragile because secrets leak, and unable to earn the confidence that public scrutiny provides."
+      "text": "The rejected opposite, resting security on a secret algorithm: fragile because secrets leak, and unable to earn the confidence that public scrutiny provides."
     }
   ],
   "whyItMatters": "It is a foundational norm of modern cryptography, the reason algorithms are published and scrutinised while only keys are kept secret. It underlies the open-competition model by which standards are chosen and analysed in the open, and it explains a recurring lesson of security history: that ciphers relying on secret designs fall once those designs are exposed.",
@@ -49,7 +49,7 @@
     }
   ],
   "limits": "The principle is a widely accepted norm and best practice, not a mathematical theorem, and it is occasionally debated at the margins in specific threat models. Obscurity can serve as a supplementary layer of defence in depth, but never as the sole basis of security. And resting all secrecy on the key raises the stakes of key management, which becomes the critical point of protection. It is a guideline for sound design rather than a guarantee that a given key-secret system is unbreakable.",
-  "misreadings": "Obscurity does not have literally zero value — the principle says security must not depend on it, not that concealment can never add a minor layer. Kerckhoffs did not say the algorithm must be published; he said the system must remain secure even if it becomes public, a robustness requirement rather than a mandate to publish. And the crisp phrasing that the enemy knows the system is Shannon's, not Kerckhoffs's own.",
+  "misreadings": "Obscurity does not have literally zero value: the principle says security must not depend on it, not that concealment can never add a minor layer. Kerckhoffs did not say the algorithm must be published; he said the system must remain secure even if it becomes public, a robustness requirement rather than a mandate to publish. And the crisp phrasing that the enemy knows the system is Shannon's, not Kerckhoffs's own.",
   "origin": "Stated by the Dutch cryptographer Auguste Kerckhoffs in 'La Cryptographie Militaire' (Journal des sciences militaires, 1883) as one of six design rules for military ciphers, and restated by Claude Shannon in 1949 as the maxim that the enemy knows the system.",
   "category": "software",
   "reliability": "Empirical",

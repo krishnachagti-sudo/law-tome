@@ -5,19 +5,19 @@
   "statement": "A reaction's rate climbs exponentially as the temperature rises.",
   "statementAccent": "climbs exponentially as the temperature rises",
   "meaning": "Chemical reactions go faster when hotter, and not gently: the rate constant rises exponentially with absolute temperature. A reaction with a higher activation-energy barrier is more temperature-sensitive, changing more per degree, while a low-barrier reaction is comparatively steady.",
-  "mechanism": "The rate constant equals a pre-exponential factor, capturing how often molecules collide with the right orientation, times a Boltzmann factor — the exponential of the negative activation energy over the gas constant and temperature. That exponential is the fraction of molecules carrying enough energy to clear the barrier, and as temperature rises the energy distribution broadens and that fraction grows.",
+  "mechanism": "The rate constant equals a pre-exponential factor, capturing how often molecules collide with the right orientation, times a Boltzmann factor: the exponential of the negative activation energy over the gas constant and temperature. That exponential is the fraction of molecules carrying enough energy to clear the barrier, and as temperature rises the energy distribution broadens and that fraction grows.",
   "examples": [
     {
       "tag": "Doubling per ten degrees",
-      "text": "A common rule of thumb is that a reaction's rate roughly doubles for every ten-degree rise, corresponding to a moderate activation energy — though real temperature coefficients fall nearer two to three than exactly two."
+      "text": "A common rule of thumb is that a reaction's rate roughly doubles for every ten-degree rise, corresponding to a moderate activation energy, though real temperature coefficients fall nearer two to three than exactly two."
     },
     {
       "tag": "Refrigeration",
-      "text": "Cooling food slows the chemical and enzymatic reactions and microbial metabolism that spoil it, extending shelf life — the Arrhenius temperature dependence run in reverse."
+      "text": "Cooling food slows the chemical and enzymatic reactions and microbial metabolism that spoil it, extending shelf life: the Arrhenius temperature dependence run in reverse."
     },
     {
       "tag": "The Arrhenius plot",
-      "text": "Plotting the logarithm of the rate constant against inverse temperature gives a straight line whose slope yields the activation energy — the standard experimental method the equation enables."
+      "text": "Plotting the logarithm of the rate constant against inverse temperature gives a straight line whose slope yields the activation energy: the standard experimental method the equation enables."
     }
   ],
   "variants": [
@@ -46,7 +46,7 @@
     }
   ],
   "limits": "It is empirical, not a fundamental law. Many reactions show non-Arrhenius behaviour with curved plots rather than straight lines, and the pre-exponential factor and activation energy can themselves depend weakly on temperature, which the simple two-parameter form ignores. It breaks down at very low temperatures where quantum tunnelling speeds reactions beyond its prediction, and in complex multi-step mechanisms, enzyme reactions, glass transitions, and heterogeneous catalysis. Collision theory and transition state theory later gave rate laws a firmer footing, but they are separate frameworks, not derivations of the Arrhenius form.",
-  "misreadings": "It is a robust empirical fit, not a first-principles law, and its straight-line plot is not universal — curvature and temperature-dependent parameters are common. Its history is also shared: van 't Hoff had the mathematical form first, and Arrhenius contributed the activation-energy interpretation that gives the equation its name.",
+  "misreadings": "It is a robust empirical fit, not a first-principles law, and its straight-line plot is not universal: curvature and temperature-dependent parameters are common. Its history is also shared: van 't Hoff had the mathematical form first, and Arrhenius contributed the activation-energy interpretation that gives the equation its name.",
   "origin": "Proposed by the Swedish chemist Svante Arrhenius in 1889, building on the functional form Jacobus van 't Hoff had written in 1884; Arrhenius's contribution was the physical interpretation in terms of activation energy.",
   "category": "chemistry",
   "reliability": "Empirical",

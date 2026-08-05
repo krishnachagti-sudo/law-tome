@@ -4,16 +4,16 @@
   "name": "Metcalfe's Law",
   "statement": "The value of a network grows with the square of the number of its users.",
   "statementAccent": "the square of the number of its users",
-  "meaning": "Each new member of a network raises its value for every existing member, so total value grows much faster than membership — double the users and you roughly quadruple the value.",
-  "mechanism": "With n members there are n(n−1)/2 possible pairwise connections — 2 phones make 1 link, 5 make 10, 12 make 66. Because that count grows as n² for large n, and if every connection is treated as equally valuable, total value is taken to be proportional to n². It is the classic argument for positive network effects: each node's presence increases the utility of all the others, which is why large networks tend to win.",
+  "meaning": "Each new member of a network raises its value for every existing member, so total value grows much faster than membership: double the users and you roughly quadruple the value.",
+  "mechanism": "With n members there are n(n−1)/2 possible pairwise connections: 2 phones make 1 link, 5 make 10, 12 make 66. Because that count grows as n² for large n, and if every connection is treated as equally valuable, total value is taken to be proportional to n². It is the classic argument for positive network effects: each node's presence increases the utility of all the others, which is why large networks tend to win.",
   "examples": [
     {
       "tag": "Fax machines & phones",
-      "text": "A single fax machine or telephone is useless. Value appears only as compatible devices join, and each new one makes every existing device more useful — the original, device-based framing Metcalfe intended."
+      "text": "A single fax machine or telephone is useless. Value appears only as compatible devices join, and each new one makes every existing device more useful: the original, device-based framing Metcalfe intended."
     },
     {
       "tag": "Social networks",
-      "text": "Platforms like Facebook and Tencent's grow more valuable to each user as others join, expanding the connections available to all — the modern, user-based reading of the law."
+      "text": "Platforms like Facebook and Tencent's grow more valuable to each user as others join, expanding the connections available to all: the modern, user-based reading of the law."
     },
     {
       "tag": "Testing the claim",
@@ -23,15 +23,15 @@
   "variants": [
     {
       "name": "Reed's law",
-      "text": "David Reed's claim that value can scale even faster — as 2ⁿ — because a network's real payoff is the number of groups its members can form, which grows exponentially."
+      "text": "David Reed's claim that value can scale even faster, as 2ⁿ, because a network's real payoff is the number of groups its members can form, which grows exponentially."
     },
     {
       "name": "Sarnoff's law",
-      "text": "For one-to-many broadcast media, where the audience does not interconnect, value grows only linearly with n — the modest cousin of Metcalfe's law."
+      "text": "For one-to-many broadcast media, where the audience does not interconnect, value grows only linearly with n: the modest cousin of Metcalfe's law."
     },
     {
       "name": "Odlyzko–Tilly (n·log n)",
-      "text": "The leading critique: because connections are not equally valuable, value more realistically grows as n·log(n), not n² — far slower, and enough to deflate a great deal of network hype."
+      "text": "The leading critique: because connections are not equally valuable, value more realistically grows as n·log(n), not n² (far slower, and enough to deflate a great deal of network hype)."
     }
   ],
   "whyItMatters": "It is the quantitative heart of 'network effects' and winner-take-most dynamics: it explains why platforms race for scale, why a network's value can tip suddenly once it passes a threshold, and why the largest network in a category tends to swallow the rest.",
@@ -49,9 +49,9 @@
       "text": "treat n² as an optimistic upper bound; plan on something closer to n·log(n) so your projections survive contact with reality."
     }
   ],
-  "limits": "The n² form almost certainly overstates value. Briscoe, Odlyzko and Tilly argued in 'Metcalfe's Law Is Wrong' (2006) that connections are not equally valuable — weight them by a Zipf law and total value grows like n·log(n), not n² — and noted that the unjustified n² claim helped inflate dot-com valuations by prioritising growth over profit. Empirical fits are genuinely contested: Metcalfe (2013) and Zhang et al. (2015) defend n², while a 2023 study argued a cube law fit some data better still. The exponent should be read as disputed, and the core insight taken as 'value grows super-linearly with a well-connected network', not as a precise n².",
-  "misreadings": "It is not a precise law with a settled exponent — the n² is an idealisation that assumes every connection is equally valuable, which is false. Read it as the qualitative claim that a network's value rises faster than its size, and treat the exact power as an open, disputed question.",
-  "origin": "Attributed to Robert Metcalfe, co-inventor of Ethernet and founder of 3Com, who framed it around 1980 in terms of compatible communicating devices — not users — and presented it to 3Com's sales force in 1983. It was named 'Metcalfe's Law' and recast in terms of network users by the writer George Gilder in a 1993 Forbes article.",
+  "limits": "The n² form almost certainly overstates value. Briscoe, Odlyzko and Tilly argued in 'Metcalfe's Law Is Wrong' (2006) that connections are not equally valuable (weight them by a Zipf law and total value grows like n·log(n), not n²) and noted that the unjustified n² claim helped inflate dot-com valuations by prioritising growth over profit. Empirical fits are genuinely contested: Metcalfe (2013) and Zhang et al. (2015) defend n², while a 2023 study argued a cube law fit some data better still. The exponent should be read as disputed, and the core insight taken as 'value grows super-linearly with a well-connected network', not as a precise n².",
+  "misreadings": "It is not a precise law with a settled exponent: the n² is an idealisation that assumes every connection is equally valuable, which is false. Read it as the qualitative claim that a network's value rises faster than its size, and treat the exact power as an open, disputed question.",
+  "origin": "Attributed to Robert Metcalfe, co-inventor of Ethernet and founder of 3Com, who framed it around 1980 in terms of compatible communicating devices (not users) and presented it to 3Com's sales force in 1983. It was named 'Metcalfe's Law' and recast in terms of network users by the writer George Gilder in a 1993 Forbes article.",
   "category": "technology",
   "reliability": "Heuristic",
   "provenance": "canon",

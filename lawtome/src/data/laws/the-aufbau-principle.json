@@ -8,7 +8,7 @@
   "statement": "Electrons fill the lowest-energy orbitals first, building an atom up from the bottom.",
   "statementAccent": "building an atom up from the bottom",
   "meaning": "To find an atom's ground-state electron configuration, add its electrons one at a time to the available orbitals, always taking the lowest-energy vacancy first. The German name means building-up: the atom is assembled from the ground up, shell by shell. Paired with the rule that each orbital holds at most two electrons and the rule that degenerate orbitals fill singly first, it predicts the electron arrangement of most elements.",
-  "mechanism": "The order of filling follows the empirical Madelung rule: orbitals fill by increasing sum of the two quantum numbers n and l, and ties break in favour of the lower n. This gives the familiar sequence 1s, 2s, 2p, 3s, 3p, 4s, 3d, and onward. Underneath it is energy minimisation — the atom settles into its lowest total energy — but the ordering is subtler than a fixed ladder of one-electron energies, because it depends on how much each orbital penetrates toward the nucleus and is shielded from it, and on the repulsion between electrons. The rule captures the pattern; the true determinant is the whole many-electron energy.",
+  "mechanism": "The order of filling follows the empirical Madelung rule: orbitals fill by increasing sum of the two quantum numbers n and l, and ties break in favour of the lower n. This gives the familiar sequence 1s, 2s, 2p, 3s, 3p, 4s, 3d, and onward. Underneath it is energy minimisation, the atom settles into its lowest total energy, but the ordering is subtler than a fixed ladder of one-electron energies, because it depends on how much each orbital penetrates toward the nucleus and is shielded from it, and on the repulsion between electrons. The rule captures the pattern; the true determinant is the whole many-electron energy.",
   "examples": [
     {
       "tag": "The 4s-before-3d step",
@@ -20,7 +20,7 @@
     },
     {
       "tag": "The copper anomaly",
-      "text": "Copper likewise adopts a filled 3d shell and a lone 4s electron rather than the predicted arrangement — the standard companion exception to chromium."
+      "text": "Copper likewise adopts a filled 3d shell and a lone 4s electron rather than the predicted arrangement: the standard companion exception to chromium."
     }
   ],
   "variants": [
@@ -49,7 +49,7 @@
     }
   ],
   "limits": "The rule is a heuristic, not a law, with roughly twenty known exceptions concentrated among the transition metals, lanthanides, and actinides, where competing configurations lie very close in energy and some heavy-element cases are experimentally uncertain. Its usual justification is shakier than the rule itself: the claim that 4s lies below 3d fails across the d-block, where 3d is in fact the lower orbital from scandium onward, and the paradox that 4s fills first yet empties first on ionisation exposes the trouble. The textbook appeal to special stability of half-filled and filled subshells to explain chromium and copper is likewise a post-hoc story that does not survive careful analysis. What is solid is the set of configurations it predicts, most of which match experiment; what is weak is the simple energy-level picture used to explain them.",
-  "misreadings": "It is not that 4s is simply lower in energy than 3d — that ordering does not hold for the transition metals, and the filling-order and ionisation-order appear reversed. And the special stability of half-filled and full subshells, wheeled out to explain chromium and copper, is an oversimplification, not the established cause; the real driver is minimisation of the total atomic energy.",
+  "misreadings": "It is not that 4s is simply lower in energy than 3d. That ordering does not hold for the transition metals, and the filling-order and ionisation-order appear reversed. And the special stability of half-filled and full subshells, wheeled out to explain chromium and copper, is an oversimplification, not the established cause; the real driver is minimisation of the total atomic energy.",
   "origin": "The building-up concept traces to Niels Bohr's early-1920s quantum account of electron arrangement; the German term Aufbauprinzip comes from that literature. The n-plus-l ordering was arranged by Charles Janet around 1929, stated empirically by Erwin Madelung in 1936, and given a theoretical rationale by V. M. Klechkowski around 1962.",
   "category": "chemistry",
   "reliability": "Heuristic",

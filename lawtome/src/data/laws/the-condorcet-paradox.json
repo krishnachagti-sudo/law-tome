@@ -7,12 +7,12 @@
   ],
   "statement": "Majority preferences can cycle even when every voter is perfectly rational.",
   "statementAccent": "Majority preferences can cycle",
-  "meaning": "Collective majority preferences can be intransitive: a majority prefers A to B, a majority prefers B to C, yet a majority prefers C to A — even though every individual's own ranking is perfectly consistent. As a result, majority rule over three or more options need not produce any clear winner.",
+  "meaning": "Collective majority preferences can be intransitive: a majority prefers A to B, a majority prefers B to C, yet a majority prefers C to A, even though every individual's own ranking is perfectly consistent. As a result, majority rule over three or more options need not produce any clear winner.",
   "mechanism": "Take three voters ranking three options in a rotating, rock-paper-scissors pattern. Each pairwise majority favours a different option, so the majorities point in a loop rather than converging: A beats B, B beats C, and C beats A. The cycle arises because the individual rankings are rotations of one another, so there is no option that beats all the others and no consistent group order.",
   "examples": [
     {
       "tag": "The three-voter cycle",
-      "text": "With voters ranking A over B over C, B over C over A, and C over A over B, each pairwise vote splits two to one for a different winner, producing a cycle with no Condorcet winner — the canonical demonstration."
+      "text": "With voters ranking A over B over C, B over C over A, and C over A over B, each pairwise vote splits two to one for a different winner, producing a cycle with no Condorcet winner: the canonical demonstration."
     },
     {
       "tag": "Agenda control",
@@ -20,7 +20,7 @@
     },
     {
       "tag": "Rare in practice",
-      "text": "Real ranked elections show cycles only occasionally — studies find them in well under one percent of cases — because a Condorcet winner usually does exist, especially when preferences line up along a single dimension."
+      "text": "Real ranked elections show cycles only occasionally, studies find them in well under one percent of cases, because a Condorcet winner usually does exist, especially when preferences line up along a single dimension."
     }
   ],
   "variants": [
@@ -45,10 +45,10 @@
     },
     {
       "lead": "Look for single-peaked structure",
-      "text": "if preferences line up along one dimension, a Condorcet winner reappears — the median voter's choice — and cycles vanish."
+      "text": "if preferences line up along one dimension, a Condorcet winner reappears (the median voter's choice) and cycles vanish."
     }
   ],
-  "limits": "It is a proven possibility, not a claim that cycles always or usually happen — they can occur, but a Condorcet winner often exists, especially under single-peaked or spatial preferences. How often cycles arise depends heavily on the preference distribution: common under the unrealistic 'impartial culture' assumption, rare and declining with electorate size under realistic models, and well under one percent in studied real elections. Its enduring significance is conceptual — that pairwise majority rule can be intransitive — rather than a frequent practical breakdown.",
+  "limits": "It is a proven possibility, not a claim that cycles always or usually happen. They can occur, but a Condorcet winner often exists, especially under single-peaked or spatial preferences. How often cycles arise depends heavily on the preference distribution: common under the unrealistic 'impartial culture' assumption, rare and declining with electorate size under realistic models, and well under one percent in studied real elections. Its enduring significance is conceptual (that pairwise majority rule can be intransitive), rather than a frequent practical breakdown.",
   "misreadings": "It does not say majority rule always cycles or always fails — cycles are possible but usually rare, and a clear winner often exists. What it establishes is that intransitivity can occur even with perfectly rational voters, so 'the majority prefers' is not always well-defined.",
   "origin": "Formalised by the Marquis de Condorcet in his 1785 Essay on the Application of Analysis to the Probability of Majority Decisions; pairwise-comparison voting methods anticipating it were devised by Ramon Llull in the thirteenth century, in manuscripts rediscovered around 2001.",
   "category": "sociology",

@@ -4,12 +4,12 @@
   "name": "Ohm's Law",
   "statement": "The current through a conductor is proportional to the voltage across it.",
   "statementAccent": "proportional to the voltage across it",
-  "meaning": "Push harder — apply more voltage — and more current flows; the more a material resists, the less current flows for the same push. The constant of proportionality is the conductor's resistance, so voltage, current, and resistance are locked together as V = IR.",
-  "mechanism": "For an ohmic conductor at fixed temperature the resistance is constant, so the current-versus-voltage graph is a straight line through the origin. The microscopic reason, in the Drude picture, is that an applied field accelerates conduction electrons until they collide with the lattice, giving a steady average drift velocity proportional to the field — which yields the pointwise form, current density proportional to field, with a conductivity fixed by the material.",
+  "meaning": "Push harder, apply more voltage, and more current flows; the more a material resists, the less current flows for the same push. The constant of proportionality is the conductor's resistance, so voltage, current, and resistance are locked together as V = IR.",
+  "mechanism": "For an ohmic conductor at fixed temperature the resistance is constant, so the current-versus-voltage graph is a straight line through the origin. The microscopic reason, in the Drude picture, is that an applied field accelerates conduction electrons until they collide with the lattice, giving a steady average drift velocity proportional to the field, which yields the pointwise form, current density proportional to field, with a conductivity fixed by the material.",
   "examples": [
     {
       "tag": "Sizing a resistor",
-      "text": "To pass a chosen current through a component you compute the resistance from R = V/I — the everyday use that makes the law the workhorse of circuit design, from limiting current to an LED to setting a bias point."
+      "text": "To pass a chosen current through a component you compute the resistance from R = V/I: the everyday use that makes the law the workhorse of circuit design, from limiting current to an LED to setting a bias point."
     },
     {
       "tag": "Non-ohmic components",
@@ -23,14 +23,14 @@
   "variants": [
     {
       "name": "The microscopic form",
-      "text": "The continuum version, current density proportional to electric field (J = σE), valid pointwise inside a material — the form that generalises the circuit law to arbitrary geometries."
+      "text": "The continuum version, current density proportional to electric field (J = σE), valid pointwise inside a material: the form that generalises the circuit law to arbitrary geometries."
     },
     {
       "name": "Kirchhoff's laws",
       "text": "The conservation rules for charge and energy around a circuit that combine with Ohm's law to solve multi-element networks, extending it from a single resistor to whole circuits."
     }
   ],
-  "whyItMatters": "It is the first and most-used relationship in electronics — the tool that turns any two of voltage, current, and resistance into the third — and the foundation on which circuit analysis is built. Its neat linearity is also a lesson in scope: it describes a class of materials under conditions, not a universal law of nature.",
+  "whyItMatters": "It is the first and most-used relationship in electronics (the tool that turns any two of voltage, current, and resistance into the third) and the foundation on which circuit analysis is built. Its neat linearity is also a lesson in scope: it describes a class of materials under conditions, not a universal law of nature.",
   "working": [
     {
       "lead": "Use it to solve for the unknown",
@@ -45,9 +45,9 @@
       "text": "resistance drifts with temperature, so treat the simple form as valid only over a range where the conductor stays thermally steady."
     }
   ],
-  "limits": "Ohm's law is not a fundamental law of nature but an empirical, material-dependent approximation — a constitutive property of certain 'ohmic' materials, not a universal principle like charge conservation. Many materials are non-ohmic: diodes, semiconductors, and heated filaments show current that is not proportional to voltage. Even in metals the simple constant-resistance form holds only at fixed temperature, and it breaks down at very high fields or nanoscale dimensions. It is robust and predictive within its domain, and misleading outside it.",
+  "limits": "Ohm's law is not a fundamental law of nature but an empirical, material-dependent approximation: a constitutive property of certain 'ohmic' materials, not a universal principle like charge conservation. Many materials are non-ohmic: diodes, semiconductors, and heated filaments show current that is not proportional to voltage. Even in metals the simple constant-resistance form holds only at fixed temperature, and it breaks down at very high fields or nanoscale dimensions. It is robust and predictive within its domain, and misleading outside it.",
   "misreadings": "It is not a law all materials obey — 'non-ohmic' components are the rule, not the exception, in modern electronics. Nor is resistance a fixed property regardless of conditions; it varies with temperature, so the tidy straight line is a regime, not a guarantee.",
-  "origin": "Published by the German physicist Georg Simon Ohm in 'Die galvanische Kette, mathematisch bearbeitet' (1827). Henry Cavendish had found the same proportionality privately in the 1780s but never published, so it remained unknown until Maxwell released his papers decades later — which is why the law carries Ohm's name.",
+  "origin": "Published by the German physicist Georg Simon Ohm in 'Die galvanische Kette, mathematisch bearbeitet' (1827). Henry Cavendish had found the same proportionality privately in the 1780s but never published, so it remained unknown until Maxwell released his papers decades later, which is why the law carries Ohm's name.",
   "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",

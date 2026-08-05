@@ -2,7 +2,10 @@
   "no": "548",
   "slug": "the-poverty-of-the-stimulus",
   "name": "The Poverty of the Stimulus",
-  "aliases": ["Plato's problem", "The argument from underdetermination"],
+  "aliases": [
+    "Plato's problem",
+    "The argument from underdetermination"
+  ],
   "statement": "Children learn a grammar richer than anything their limited, uncorrected input could have taught them.",
   "statementAccent": "richer than anything their limited, uncorrected input could have taught them",
   "meaning": "The poverty of the stimulus is an argument central to Chomskyan linguistics that the linguistic knowledge children acquire is underdetermined by the input they receive. The speech a child hears is finite, noisy with errors and false starts, and lacking systematic negative evidence, correction of what is ungrammatical, yet children reliably and rapidly converge on a rich, abstract, systematic grammar that goes far beyond that input. From this gap the argument concludes that some grammatical knowledge must be innate, supplying the constraints the data cannot. It is the chief motivation for universal grammar, and one of the most disputed claims in the study of language.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The poverty of the stimulus is the linchpin argument for linguistic nativism and universal grammar, shaping decades of debate in linguistics, cognitive science, and philosophy about how much of the mind is built in. It sharpened questions about what children actually hear, what counts as learning, and whether general cognition or language-specific endowment does the work, and it drove the development of statistical and Bayesian models of acquisition designed to test it. Whether or not it succeeds, it forced the field to make its assumptions about input and learning explicit and testable.",
   "working": [
-    {"lead": "Compare input to outcome", "text": "ask whether the grammar a child attains could plausibly be induced from the specific evidence the child actually received."},
-    {"lead": "Watch for missing evidence", "text": "note the claimed scarcity of disambiguating sentences and the absence of systematic correction, the two planks of the argument."},
-    {"lead": "Question the premise", "text": "treat the impoverished-input claim as an empirical hypothesis to be checked against corpora, not an established fact."}
+    {
+      "lead": "Compare input to outcome",
+      "text": "ask whether the grammar a child attains could plausibly be induced from the specific evidence the child actually received."
+    },
+    {
+      "lead": "Watch for missing evidence",
+      "text": "note the claimed scarcity of disambiguating sentences and the absence of systematic correction, the two planks of the argument."
+    },
+    {
+      "lead": "Question the premise",
+      "text": "treat the impoverished-input claim as an empirical hypothesis to be checked against corpora, not an established fact."
+    }
   ],
   "limits": "The argument is heavily contested, and its empirical premise is exactly what critics dispute. Pullum and Scholz argued in 2002 that the crucial input, such as the relevant complex questions, is actually attested in corpora, so the claim of impoverished data is unsupported. Statistical and Bayesian learning models, notably by Perfors, Tenenbaum, and Regier, show that an ideal learner with general-purpose, not language-specific, capacities can prefer the hierarchical grammar from realistic input, learning structure-dependence without innate universal grammar. Nativists such as Berwick and Chomsky have replied that these results smuggle in structural assumptions, so the matter remains unresolved.",
   "misreadings": "The argument does not claim language is entirely innate; it holds that some specific grammatical knowledge is innate, with input still essential. It is not a claim that children hear very little speech overall, but that they lack the particular disambiguating data and the negative evidence needed to fix certain abstract rules. No negative evidence does not mean no feedback of any kind, only the absence of systematic correction of grammatical errors. And it is an argument, not a single empirical finding, whose force depends on premises about the input that are themselves contestable.",
@@ -45,12 +57,26 @@
   "provenance": "canon",
   "coinedYear": 1980,
   "sources": [
-    {"text": "Poverty of the stimulus, Wikipedia. — the underdetermination argument, structure-dependence, the no-negative-evidence point, and the criticisms.", "url": "https://en.wikipedia.org/wiki/Poverty_of_the_stimulus", "type": "secondary"},
-    {"text": "Pullum & Scholz, 'Empirical assessment of stimulus poverty arguments,' The Linguistic Review 19:9-50 (2002). — the challenge that the crucial input is attested in corpora.", "url": "https://www.degruyter.com/document/doi/10.1515/tlir.19.1-2.9/html", "type": "primary"}
+    {
+      "text": "Poverty of the stimulus, Wikipedia. — the underdetermination argument, structure-dependence, the no-negative-evidence point, and the criticisms.",
+      "url": "https://en.wikipedia.org/wiki/Poverty_of_the_stimulus",
+      "type": "secondary"
+    },
+    {
+      "text": "Pullum & Scholz, 'Empirical assessment of stimulus poverty arguments,' The Linguistic Review 19:9-50 (2002). — the challenge that the crucial input is attested in corpora.",
+      "url": "https://www.degruyter.com/document/doi/10.1515/tlir.19.1-2.9/html",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Poverty_of_the_stimulus",
   "related": [
-    {"slug": "universal-grammar", "kind": "consequence"},
-    {"slug": "the-critical-period-hypothesis", "kind": "kindred"}
+    {
+      "slug": "universal-grammar",
+      "kind": "consequence"
+    },
+    {
+      "slug": "the-critical-period-hypothesis",
+      "kind": "kindred"
+    }
   ]
 }

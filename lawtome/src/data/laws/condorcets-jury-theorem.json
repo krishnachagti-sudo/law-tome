@@ -2,7 +2,10 @@
   "no": "510",
   "slug": "condorcets-jury-theorem",
   "name": "Condorcet's Jury Theorem",
-  "aliases": ["The jury theorem", "Condorcet's theorem on majorities"],
+  "aliases": [
+    "The jury theorem",
+    "Condorcet's theorem on majorities"
+  ],
   "statement": "If each voter is more likely right than wrong, a larger majority is almost certain to reach the correct verdict.",
   "statementAccent": "a larger majority is almost certain to reach the correct verdict",
   "meaning": "Condorcet's jury theorem is a result in probability and social choice about the accuracy of majority voting on a question with a correct answer. If each voter independently has a probability greater than one half of choosing correctly between two options, then as the number of voters grows the probability that the majority is correct rises toward one, and adding voters always helps. The mirror image is just as important: if each voter is more likely wrong than right, adding voters drives the majority toward certain error. The theorem is a foundational, and double-edged, argument for the epistemic value of democracy and the wisdom of crowds.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "Condorcet's jury theorem forms the technical core of epistemic arguments for democracy, giving a precise sense in which larger electorates or juries can track the truth better than smaller ones or than experts. It grounds the wisdom of crowds, informs the design of committees, juries, and prediction markets, and frames debates about when collective judgement is trustworthy. But its two-sidedness is equally instructive: the very same mathematics that makes competent crowds nearly infallible makes systematically biased ones nearly certain to err, a warning that aggregation amplifies whatever direction the voters lean.",
   "working": [
-    {"lead": "Check better-than-chance", "text": "trust a growing majority only when each voter is genuinely more likely right than wrong, since below that threshold size makes things worse."},
-    {"lead": "Guard independence", "text": "watch for shared information, herding, and common biases, which correlate votes and can void the theorem's guarantee."},
-    {"lead": "Mind mixed competence", "text": "remember that adding many far less competent voters can lower the majority's accuracy, so more is not automatically better."}
+    {
+      "lead": "Check better-than-chance",
+      "text": "trust a growing majority only when each voter is genuinely more likely right than wrong, since below that threshold size makes things worse."
+    },
+    {
+      "lead": "Guard independence",
+      "text": "watch for shared information, herding, and common biases, which correlate votes and can void the theorem's guarantee."
+    },
+    {
+      "lead": "Mind mixed competence",
+      "text": "remember that adding many far less competent voters can lower the majority's accuracy, so more is not automatically better."
+    }
   ],
   "limits": "The theorem depends on assumptions that are often violated. Independence is crucial and fragile: causal separation does not make votes probabilistically independent, since common causes, shared evidence, and opinion leaders create correlations that can wreck the result. The simplest version assumes equal competence; with heterogeneous voters, larger bodies can perform worse when new members are much less able. It presumes sincere voting, so strategic behaviour departs from the model, and it is framed for a binary choice with a single objectively correct answer, which does not fit many real decisions. And if voters are systematically worse than random, the theorem works against the crowd.",
   "misreadings": "It does not endorse majority rule unconditionally; it only helps when each voter is better than chance, and below that threshold it actively harms. Independence is not automatic, since shared information and biases correlate votes and can void the guarantee. It is not the same as Condorcet's voting paradox, which is about cyclic majority preferences over three or more options, a different result that shares only the name. And the homogeneous, equal-competence version does not generalise cleanly to voters of unequal skill.",
@@ -47,12 +59,26 @@
   "namedAfter": "Marquis de Condorcet",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Jury Theorems, Stanford Encyclopedia of Philosophy. — the statement, the competence and independence assumptions, and the criticisms.", "url": "https://plato.stanford.edu/entries/jury-theorems/", "type": "secondary"},
-    {"text": "Condorcet's jury theorem, Wikipedia. — the p-above-half result, the incompetent-crowd flip, and the correlated-votes and heterogeneity caveats.", "url": "https://en.wikipedia.org/wiki/Condorcet%27s_jury_theorem", "type": "secondary"}
+    {
+      "text": "Jury Theorems, Stanford Encyclopedia of Philosophy. — the statement, the competence and independence assumptions, and the criticisms.",
+      "url": "https://plato.stanford.edu/entries/jury-theorems/",
+      "type": "secondary"
+    },
+    {
+      "text": "Condorcet's jury theorem, Wikipedia. — the p-above-half result, the incompetent-crowd flip, and the correlated-votes and heterogeneity caveats.",
+      "url": "https://en.wikipedia.org/wiki/Condorcet%27s_jury_theorem",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Condorcet%27s_jury_theorem",
   "related": [
-    {"slug": "mays-theorem", "kind": "kindred"},
-    {"slug": "arrows-impossibility-theorem", "kind": "tension"}
+    {
+      "slug": "mays-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "arrows-impossibility-theorem",
+      "kind": "tension"
+    }
   ]
 }

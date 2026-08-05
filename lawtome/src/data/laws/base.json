@@ -4,7 +4,7 @@
   "name": "BASE",
   "statement": "BASE trades ACID's strict consistency for a basically-available, soft-state system that becomes consistent only eventually.",
   "statementAccent": "becomes consistent only eventually",
-  "meaning": "BASE — Basically Available, Soft state, Eventually consistent — describes a consistency model, coined as a chemical pun opposing ACID’s \"acid,\" for large distributed systems that favour availability and partition tolerance over immediate consistency. A basically available system responds to nearly all requests even if data is stale; its state is \"soft\" because it may change over time as updates propagate; and it becomes consistent only after updates finish propagating to all replicas.",
+  "meaning": "BASE (Basically Available, Soft state, Eventually consistent) describes a consistency model, coined as a chemical pun opposing ACID’s \"acid,\" for large distributed systems that favour availability and partition tolerance over immediate consistency. A basically available system responds to nearly all requests even if data is stale; its state is \"soft\" because it may change over time as updates propagate; and it becomes consistent only after updates finish propagating to all replicas.",
   "mechanism": "Systems achieve BASE semantics by relaxing synchronous replication: writes are accepted locally or on a subset of replicas and acknowledged immediately, then propagated asynchronously, with conflict resolution such as last-write-wins, vector clocks, or read-repair reconciling divergent copies over time.",
   "examples": [
     {
@@ -21,7 +21,7 @@
     }
   ],
   "whyItMatters": "BASE gave engineers a named, legitimate alternative to ACID for building the high-availability, horizontally-scaled systems needed by large web applications, directly shaping the NoSQL movement of the 2000s–2010s.",
-  "limits": "BASE is an informal, descriptive heuristic rather than a proven theorem, and its terms — \"basically available,\" \"soft state\" — are not formally defined the way CAP’s or ACID’s terms are, leading to inconsistent usage across the industry.",
+  "limits": "BASE is an informal, descriptive heuristic rather than a proven theorem, and its terms (\"basically available,\" \"soft state\") are not formally defined the way CAP’s or ACID’s terms are, leading to inconsistent usage across the industry.",
   "misreadings": "BASE is sometimes wrongly treated as older than or foundational to the CAP theorem; Pritchett’s naming (2008) came after Brewer’s CAP conjecture (2000), and BASE is best understood as a practitioner-friendly gloss on CAP-driven eventual-consistency designs rather than an independent theorem.",
   "origin": "Coined by Dan Pritchett of eBay in his 2008 article \"BASE: An Acid Alternative,\" ACM Queue.",
   "category": "software",

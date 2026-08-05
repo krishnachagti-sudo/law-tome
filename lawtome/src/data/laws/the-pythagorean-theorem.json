@@ -4,20 +4,20 @@
   "name": "The Pythagorean Theorem",
   "statement": "In a right triangle, the square of the longest side equals the sum of the squares of the other two.",
   "statementAccent": "the sum of the squares of the other two",
-  "meaning": "In a right-angled triangle, the square of the hypotenuse — the side opposite the right angle — equals the sum of the squares of the two shorter sides. Knowing the two legs, you can find the longest side by squaring each, adding, and taking the square root. Geometrically, the square built on the hypotenuse has the same area as the two squares on the legs combined.",
+  "meaning": "In a right-angled triangle, the square of the hypotenuse (the side opposite the right angle) equals the sum of the squares of the two shorter sides. Knowing the two legs, you can find the longest side by squaring each, adding, and taking the square root. Geometrically, the square built on the hypotenuse has the same area as the two squares on the legs combined.",
   "mechanism": "Hundreds of distinct proofs exist. One classic drops a perpendicular from the right angle to the hypotenuse, splitting the triangle into two smaller ones each similar to the original; the proportions among their sides, summed, give the relation. Another arranges four copies of the triangle inside a larger square two ways, so that comparing the leftover areas forces the squares on the legs to equal the square on the hypotenuse. Euclid's Elements gives the classic version as Book I, Proposition 47.",
   "examples": [
     {
       "tag": "The 3-4-5 triangle",
-      "text": "Three squared plus four squared is nine plus sixteen, which equals twenty-five, or five squared — the simplest Pythagorean triple, used since antiquity to lay out right angles."
+      "text": "Three squared plus four squared is nine plus sixteen, which equals twenty-five, or five squared: the simplest Pythagorean triple, used since antiquity to lay out right angles."
     },
     {
       "tag": "The distance formula",
-      "text": "The straight-line distance between two points in the plane is the square root of the sum of the squares of the horizontal and vertical gaps — the theorem applied to the legs of a right triangle."
+      "text": "The straight-line distance between two points in the plane is the square root of the sum of the squares of the horizontal and vertical gaps: the theorem applied to the legs of a right triangle."
     },
     {
       "tag": "Squaring a corner",
-      "text": "Builders check a right angle by measuring three units along one edge and four along the other; if the diagonal is five, the corner is square — the 3-4-5 method."
+      "text": "Builders check a right angle by measuring three units along one edge and four along the other; if the diagonal is five, the corner is square: the 3-4-5 method."
     }
   ],
   "variants": [
@@ -27,7 +27,7 @@
     },
     {
       "name": "Fermat's Last Theorem",
-      "text": "The famous generalisation to higher powers, proved to have no positive-integer solutions beyond the squared case — so the Pythagorean exponent of two is the only one with non-trivial whole-number triples."
+      "text": "The famous generalisation to higher powers, proved to have no positive-integer solutions beyond the squared case, so the Pythagorean exponent of two is the only one with non-trivial whole-number triples."
     }
   ],
   "whyItMatters": "It is one of the most fundamental and widely used results in all of mathematics, the basis of the distance formula, of trigonometry, and of the Euclidean notion of length in any number of dimensions. It has been proved in more ways than almost any other theorem and remains a staple of construction, navigation, and geometry.",
@@ -45,9 +45,9 @@
       "text": "for triangles without a right angle, use the law of cosines, of which this theorem is the special case."
     }
   ],
-  "limits": "It holds only in Euclidean, flat geometry and only for right triangles. On curved surfaces it fails — spherical and hyperbolic geometry modify the relation with curvature terms — and for non-right triangles the law of cosines is needed instead. Within the axioms of Euclidean geometry, however, its truth is certain and admits no counterexample; the limits are of scope, not of correctness.",
-  "misreadings": "It applies only to right triangles in flat space — not to every triangle, and not on curved surfaces where the relation breaks down. And though named for Pythagoras, the relation was known and used in Babylon, India, and China long before him, and it is doubtful he personally proved it.",
-  "origin": "Named after Pythagoras of Samos (about 570-495 BC), but the relation and its triples were known far earlier — in Babylonian tablets such as Plimpton 322 around 1800 BC, in the Indian Sulba Sutras, and in the Chinese Zhoubi Suanjing; the attribution to Pythagoras himself is uncertain.",
+  "limits": "It holds only in Euclidean, flat geometry and only for right triangles. On curved surfaces it fails, spherical and hyperbolic geometry modify the relation with curvature terms, and for non-right triangles the law of cosines is needed instead. Within the axioms of Euclidean geometry, however, its truth is certain and admits no counterexample; the limits are of scope, not of correctness.",
+  "misreadings": "It applies only to right triangles in flat space, not to every triangle, and not on curved surfaces where the relation breaks down. And though named for Pythagoras, the relation was known and used in Babylon, India, and China long before him, and it is doubtful he personally proved it.",
+  "origin": "Named after Pythagoras of Samos (about 570-495 BC), but the relation and its triples were known far earlier: in Babylonian tablets such as Plimpton 322 around 1800 BC, in the Indian Sulba Sutras, and in the Chinese Zhoubi Suanjing; the attribution to Pythagoras himself is uncertain.",
   "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",

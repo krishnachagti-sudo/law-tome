@@ -5,7 +5,7 @@
   "statement": "Any consistent system rich enough for arithmetic holds truths it cannot prove, and cannot prove its own consistency.",
   "statementAccent": "truths it cannot prove",
   "meaning": "The first theorem says that any consistent formal system powerful enough to express elementary arithmetic is incomplete: there are statements it can neither prove nor disprove. The second says that such a system cannot prove its own consistency using only its own rules. Adding the missing statement as a new axiom only yields a larger system with its own new unreachable truths.",
-  "mechanism": "The proof arithmetises syntax. Every symbol, formula, and proof of the system is coded as a number — a Godel number — so that statements about provability become statements about numbers. A diagonal construction then builds a sentence that, in effect, asserts 'this sentence is not provable in the system.' If the system could prove it, the system would be inconsistent; if it could refute it, the system would be inconsistent in a related sense. So the sentence is undecidable within the system, yet true, assuming the system is consistent.",
+  "mechanism": "The proof arithmetises syntax. Every symbol, formula, and proof of the system is coded as a number (a Godel number), so that statements about provability become statements about numbers. A diagonal construction then builds a sentence that, in effect, asserts 'this sentence is not provable in the system.' If the system could prove it, the system would be inconsistent; if it could refute it, the system would be inconsistent in a related sense. So the sentence is undecidable within the system, yet true, assuming the system is consistent.",
   "examples": [
     {
       "tag": "The Gödel sentence",
@@ -17,13 +17,13 @@
     },
     {
       "tag": "Natural independent statements",
-      "text": "Later, genuinely mathematical examples appeared — the Paris-Harrington theorem and Goodstein's theorem are true statements expressible in Peano arithmetic but unprovable within it, provable only in stronger systems."
+      "text": "Later, genuinely mathematical examples appeared: the Paris-Harrington theorem and Goodstein's theorem are true statements expressible in Peano arithmetic but unprovable within it, provable only in stronger systems."
     }
   ],
   "variants": [
     {
       "name": "Hilbert's program",
-      "text": "The formalist project the theorems undercut — Hilbert's aim to found all of mathematics on a complete, consistent, finitistically provable axiomatic basis, which the theorems showed unattainable in that form."
+      "text": "The formalist project the theorems undercut: Hilbert's aim to found all of mathematics on a complete, consistent, finitistically provable axiomatic basis, which the theorems showed unattainable in that form."
     },
     {
       "name": "The halting problem",
@@ -45,8 +45,8 @@
       "text": "read 'unprovable' as relative to a specified system, since the same statement may be provable in a stronger one."
     }
   ],
-  "limits": "The theorems apply only under precise conditions, all load-bearing: the system must be consistent, effectively axiomatisable, and strong enough to express elementary arithmetic. Weaken any one and it need not apply — the theory of the real numbers and pure propositional logic, for instance, are complete and decidable. Unprovability is relative to a system, not absolute. And the results are routinely misused: they do not say everything is uncertain, that truth is subjective, or that mathematics is broken, and illegitimate extensions to physics, postmodernism, or theology are widely rejected by logicians.",
-  "misreadings": "They do not show that nothing can be known or that all truth is relative — they are precise results about formal provability in specific systems, not sweeping statements about knowledge. And 'true but unprovable' is conditional on the system's consistency; the arithmetic we use is not thereby made unreliable.",
+  "limits": "The theorems apply only under precise conditions, all load-bearing: the system must be consistent, effectively axiomatisable, and strong enough to express elementary arithmetic. Weaken any one and it need not apply: the theory of the real numbers and pure propositional logic, for instance, are complete and decidable. Unprovability is relative to a system, not absolute. And the results are routinely misused: they do not say everything is uncertain, that truth is subjective, or that mathematics is broken, and illegitimate extensions to physics, postmodernism, or theology are widely rejected by logicians.",
+  "misreadings": "They do not show that nothing can be known or that all truth is relative. They are precise results about formal provability in specific systems, not sweeping statements about knowledge. And 'true but unprovable' is conditional on the system's consistency; the arithmetic we use is not thereby made unreliable.",
   "origin": "Proved by the logician Kurt Gödel in 'Uber formal unentscheidbare Satze der Principia Mathematica und verwandter Systeme I,' Monatshefte fur Mathematik und Physik 38:173-198 (1931), targeting Hilbert's formalist program; Rosser weakened the consistency assumption in 1936.",
   "category": "logic",
   "reliability": "Empirical",

@@ -2,19 +2,22 @@
   "no": "293",
   "slug": "the-decoy-effect",
   "name": "The Decoy Effect",
-  "aliases": ["The asymmetric dominance effect", "The attraction effect"],
+  "aliases": [
+    "The asymmetric dominance effect",
+    "The attraction effect"
+  ],
   "statement": "Add a third option no one picks, and it pushes the choice toward its neighbour.",
   "statementAccent": "no one picks",
-  "meaning": "The decoy effect is a context effect in choice: adding a third, decoy option that is clearly worse than one existing option in every respect, but only worse than the other in some, raises the chance the dominating option — the target — is chosen. The decoy is not meant to be selected; it exists to make the target look better by comparison. Because introducing an inferior alternative increases a rival's share, it violates the principles of rational choice.",
-  "mechanism": "The decoy provides an easy, favourable comparison. Since the target beats the decoy on every attribute while the competitor does not, the target scores an unambiguous win the competitor lacks, and supplies an easy reason to pick it. This breaks two normative rules at once. Regularity says adding an option should never increase an existing option's share, yet the target's share rises. Independence of irrelevant alternatives says a third, dominated option should not change the split between the first two, yet it does. The decoy must be asymmetrically dominated — beaten by the target but not the competitor — for the pull to appear.",
+  "meaning": "The decoy effect is a context effect in choice: adding a third, decoy option that is clearly worse than one existing option in every respect, but only worse than the other in some, raises the chance the dominating option (the target) is chosen. The decoy is not meant to be selected; it exists to make the target look better by comparison. Because introducing an inferior alternative increases a rival's share, it violates the principles of rational choice.",
+  "mechanism": "The decoy provides an easy, favourable comparison. Since the target beats the decoy on every attribute while the competitor does not, the target scores an unambiguous win the competitor lacks, and supplies an easy reason to pick it. This breaks two normative rules at once. Regularity says adding an option should never increase an existing option's share, yet the target's share rises. Independence of irrelevant alternatives says a third, dominated option should not change the split between the first two, yet it does. The decoy must be asymmetrically dominated, beaten by the target but not the competitor, for the pull to appear.",
   "examples": [
     {
       "tag": "The magazine subscription",
-      "text": "Ariely's much-cited demonstration offered web-only, print-only, and print-plus-web at the same price as print-only; almost everyone took the bundle, but with the pointless print-only decoy removed, most switched to the cheap web-only — though this classroom illustration should be taken as illustrative, the science resting on Huber and colleagues."
+      "text": "Ariely's much-cited demonstration offered web-only, print-only, and print-plus-web at the same price as print-only; almost everyone took the bundle, but with the pointless print-only decoy removed, most switched to the cheap web-only, though this classroom illustration should be taken as illustrative, the science resting on Huber and colleagues."
     },
     {
       "tag": "Sizes and menus",
-      "text": "A near-useless medium priced close to the large nudges buyers to the large, and a very expensive bottle makes mid-range wines look reasonable — textbook illustrations of the principle rather than documented experiments."
+      "text": "A near-useless medium priced close to the large nudges buyers to the large, and a very expensive bottle makes mid-range wines look reasonable: textbook illustrations of the principle rather than documented experiments."
     },
     {
       "tag": "The original finding",
@@ -24,34 +27,61 @@
   "variants": [
     {
       "name": "The compromise effect",
-      "text": "Simonson's distinct context effect, in which a middle option is favoured as a compromise between extremes — no dominated decoy involved, and not to be confused with the attraction effect."
+      "text": "Simonson's distinct context effect, in which a middle option is favoured as a compromise between extremes: no dominated decoy involved, and not to be confused with the attraction effect."
     },
     {
       "name": "Reason-based choice",
       "text": "The account that people choose the option best supported by reasons, which the decoy supplies by giving the target a clean, justifiable win."
     }
   ],
-  "whyItMatters": "It is one of the clearest laboratory violations of rational-choice axioms, showing that preferences are not simply read off fixed values but constructed in context — the presence of an irrelevant option reshapes the decision. That makes it a favourite of marketing lore and a touchstone in the debate over how stable human preferences really are.",
+  "whyItMatters": "It is one of the clearest laboratory violations of rational-choice axioms, showing that preferences are not simply read off fixed values but constructed in context: the presence of an irrelevant option reshapes the decision. That makes it a favourite of marketing lore and a touchstone in the debate over how stable human preferences really are.",
   "working": [
-    {"lead": "Spot the dominated option", "text": "when a menu includes a choice that seems strictly worse than another, ask whether it is a decoy placed to steer you toward its neighbour."},
-    {"lead": "Compare on the merits", "text": "evaluate the options you would actually consider on their own terms, ignoring an alternative no one would pick."},
-    {"lead": "Hold the marketing claims lightly", "text": "treat confident stories of decoys reliably manipulating shoppers with caution, since the effect is fragile outside numeric, abstract choices."}
+    {
+      "lead": "Spot the dominated option",
+      "text": "when a menu includes a choice that seems strictly worse than another, ask whether it is a decoy placed to steer you toward its neighbour."
+    },
+    {
+      "lead": "Compare on the merits",
+      "text": "evaluate the options you would actually consider on their own terms, ignoring an alternative no one would pick."
+    },
+    {
+      "lead": "Hold the marketing claims lightly",
+      "text": "treat confident stories of decoys reliably manipulating shoppers with caution, since the effect is fragile outside numeric, abstract choices."
+    }
   ],
-  "limits": "Its robustness is genuinely contested. Frederick, Lee, and Baskin argued the effect is fragile and largely confined to numerically or abstractly represented attributes, tending to vanish with perceptual or real stimuli. Yang and Lynn, across many attempts spanning dozens of product classes, found reliable attraction effects in only a small fraction. The original authors defended it as robust when study conditions are closely replicated, while conceding its size is context-dependent. The balanced view: the effect is real and reproducible under specific conditions — numeric attributes, comparable overall value, justification pressure — but often small or absent with real stimuli, so confident claims of routine real-world exploitation should be qualified.",
-  "misreadings": "The decoy is not the option that gets chosen — in the magazine demonstration none picked it; its whole role is to reshape the comparison. And the decoy effect is not the compromise effect: a decoy is a dominated alternative, a compromise a middle one between extremes. Nor did Ariely discover it — he popularised one illustration; the rigorous demonstration is Huber, Payne, and Puto's, extended by Simonson.",
+  "limits": "Its robustness is genuinely contested. Frederick, Lee, and Baskin argued the effect is fragile and largely confined to numerically or abstractly represented attributes, tending to vanish with perceptual or real stimuli. Yang and Lynn, across many attempts spanning dozens of product classes, found reliable attraction effects in only a small fraction. The original authors defended it as robust when study conditions are closely replicated, while conceding its size is context-dependent. The balanced view: the effect is real and reproducible under specific conditions (numeric attributes, comparable overall value, justification pressure), but often small or absent with real stimuli, so confident claims of routine real-world exploitation should be qualified.",
+  "misreadings": "The decoy is not the option that gets chosen: in the magazine demonstration none picked it; its whole role is to reshape the comparison. And the decoy effect is not the compromise effect: a decoy is a dominated alternative, a compromise a middle one between extremes. Nor did Ariely discover it: he popularised one illustration; the rigorous demonstration is Huber, Payne, and Puto's, extended by Simonson.",
   "origin": "Demonstrated by Joel Huber, John Payne, and Christopher Puto in 'Adding Asymmetrically Dominated Alternatives' (Journal of Consumer Research, 1982), which named the asymmetric dominance effect; Simonson distinguished it from the compromise effect in 1989, and its robustness was debated in a 2014 exchange in the Journal of Marketing Research.",
   "category": "psychology",
   "reliability": "Contested",
   "provenance": "canon",
   "coinedYear": 1982,
   "sources": [
-    {"text": "Huber, Payne & Puto, \"Adding Asymmetrically Dominated Alternatives: Violations of Regularity and the Similarity Hypothesis,\" Journal of Consumer Research 9(1):90-98 (1982). — the founding demonstration and the regularity violation.", "url": "https://academic.oup.com/jcr/article-abstract/9/1/90/1839380", "type": "primary"},
-    {"text": "Frederick, Lee & Baskin, \"The Limits of Attraction,\" Journal of Marketing Research 51(4):487-507 (2014). — the effect's fragility with perceptual and real stimuli.", "url": "https://journals.sagepub.com/doi/abs/10.1509/jmr.12.0061", "type": "primary"},
-    {"text": "Huber, Payne & Puto, \"Let's Be Honest About the Attraction Effect,\" Journal of Marketing Research 51(4):520-525 (2014). — the original authors' qualified defence.", "url": "https://journals.sagepub.com/doi/10.1509/jmr.14.0208", "type": "primary"}
+    {
+      "text": "Huber, Payne & Puto, \"Adding Asymmetrically Dominated Alternatives: Violations of Regularity and the Similarity Hypothesis,\" Journal of Consumer Research 9(1):90-98 (1982). — the founding demonstration and the regularity violation.",
+      "url": "https://academic.oup.com/jcr/article-abstract/9/1/90/1839380",
+      "type": "primary"
+    },
+    {
+      "text": "Frederick, Lee & Baskin, \"The Limits of Attraction,\" Journal of Marketing Research 51(4):487-507 (2014). — the effect's fragility with perceptual and real stimuli.",
+      "url": "https://journals.sagepub.com/doi/abs/10.1509/jmr.12.0061",
+      "type": "primary"
+    },
+    {
+      "text": "Huber, Payne & Puto, \"Let's Be Honest About the Attraction Effect,\" Journal of Marketing Research 51(4):520-525 (2014). — the original authors' qualified defence.",
+      "url": "https://journals.sagepub.com/doi/10.1509/jmr.14.0208",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Decoy_effect",
   "related": [
-    {"slug": "the-framing-effect", "kind": "kindred"},
-    {"slug": "the-anchoring-effect", "kind": "kindred"}
+    {
+      "slug": "the-framing-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-anchoring-effect",
+      "kind": "kindred"
+    }
   ]
 }

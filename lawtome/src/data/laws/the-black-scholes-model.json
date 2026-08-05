@@ -5,7 +5,7 @@
   "statement": "A European option’s price can be derived from the underlying asset’s price, strike, volatility, time to expiry, and the risk-free rate.",
   "statementAccent": "derived from the underlying asset’s price, strike, volatility, time to expiry, and the risk-free rate",
   "meaning": "The Black-Scholes model gives a closed-form formula for pricing European call and put options by assuming the underlying follows geometric Brownian motion with constant volatility and that markets are frictionless and arbitrage-free. It shows an option can be replicated by continuously trading the underlying asset and a risk-free bond, so its price does not depend on the asset’s expected return.",
-  "mechanism": "The model constructs a riskless, continuously-rebalanced hedge portfolio combining the option and the underlying stock; because this hedge earns the risk-free rate under no-arbitrage, the option’s value must satisfy a partial differential equation — the Black-Scholes PDE — whose closed-form solution is the pricing formula involving the cumulative normal distribution.",
+  "mechanism": "The model constructs a riskless, continuously-rebalanced hedge portfolio combining the option and the underlying stock; because this hedge earns the risk-free rate under no-arbitrage, the option’s value must satisfy a partial differential equation (the Black-Scholes PDE) whose closed-form solution is the pricing formula involving the cumulative normal distribution.",
   "examples": [
     {
       "tag": "1973 publication",
@@ -21,7 +21,7 @@
     }
   ],
   "whyItMatters": "The formula turned options trading from an ad hoc activity into a standardised, liquid market, enabling the explosive growth of derivatives since the 1970s and giving traders and risk managers a common pricing and hedging language still embedded in modern risk systems.",
-  "limits": "Its assumptions — constant volatility, no dividends, continuous frictionless trading, lognormal returns — are known to be violated; the \"volatility smile\" in traded option prices is direct evidence markets do not price options exactly as the model predicts. Warren Buffett has criticised applying it to long-dated options, and some commentators argue model-based derivative pricing contributed to the 2008 crisis.",
+  "limits": "Its assumptions (constant volatility, no dividends, continuous frictionless trading, lognormal returns) are known to be violated; the \"volatility smile\" in traded option prices is direct evidence markets do not price options exactly as the model predicts. Warren Buffett has criticised applying it to long-dated options, and some commentators argue model-based derivative pricing contributed to the 2008 crisis.",
   "misreadings": "It is sometimes misread as a guarantee of \"fair value\" rather than a model-dependent approximation; practitioners in fact routinely adjust the volatility input per strike and maturity rather than treating the output as literal truth.",
   "origin": "Developed by economists Fischer Black and Myron Scholes, with Robert C. Merton independently extending the proof; published in 1973 in the Journal of Political Economy. Named after Black and Scholes.",
   "category": "economics",

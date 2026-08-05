@@ -2,7 +2,10 @@
   "no": "497",
   "slug": "the-small-world-phenomenon",
   "name": "The Small-World Phenomenon",
-  "aliases": ["Six degrees of separation", "The small-world problem"],
+  "aliases": [
+    "Six degrees of separation",
+    "The small-world problem"
+  ],
   "statement": "In a vast, mostly clustered social network, any two people are linked by a surprisingly short chain of acquaintances.",
   "statementAccent": "a surprisingly short chain of acquaintances",
   "meaning": "The small-world phenomenon is the property that in a large network most nodes can be reached from any other through only a few intermediate links, even though the network is enormous and mostly locally clustered, so your friends tend to know one another. In network terms it is the coexistence of high local clustering, like a regular lattice, with short average path length, like a random graph. Applied to human society it is the popular idea, captured in the phrase six degrees of separation, that any two people are on average separated by only a handful of acquaintance links, though the famous number is far shakier than the legend suggests.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The small-world phenomenon launched modern network science, giving a precise, measurable meaning to the intuition that the world is smaller than it feels, and showing how short global reach can coexist with tight local community. It matters for how fast information, fashions, innovations, and diseases spread, for the design of efficient communication and transport networks, and for understanding brains, ecosystems, and the web, all of which show small-world structure. It also stands as a cautionary tale in how a vivid number, six degrees, can outrun the evidence behind it.",
   "working": [
-    {"lead": "Expect short paths with clustering", "text": "look for networks that are both tightly clustered locally and globally reachable in a few steps, the small-world signature."},
-    {"lead": "Value the long-range shortcut", "text": "recognise that a few random distant links, not dense local ties, are what make the whole network reachable quickly."},
-    {"lead": "Hold six degrees loosely", "text": "treat the famous number as an average over completed chains, not a universal law, since most of Milgram's chains never finished."}
+    {
+      "lead": "Expect short paths with clustering",
+      "text": "look for networks that are both tightly clustered locally and globally reachable in a few steps, the small-world signature."
+    },
+    {
+      "lead": "Value the long-range shortcut",
+      "text": "recognise that a few random distant links, not dense local ties, are what make the whole network reachable quickly."
+    },
+    {
+      "lead": "Hold six degrees loosely",
+      "text": "treat the famous number as an average over completed chains, not a universal law, since most of Milgram's chains never finished."
+    }
   ],
   "limits": "The popular six-degrees figure rests on shaky ground. Judith Kleinfeld's re-examination of Milgram's data found very low completion rates, small samples, and selection bias, so the number reflects only the minority of chains that happened to reach the target, and if attrition is roughly constant per step, longer chains are systematically undercounted, meaning the true distance could even be larger. Online results such as Facebook's four degrees use a different, complete-graph definition of a link and are not directly comparable to Milgram's lossy real-world forwarding. Short path length alone does not make a small world; the defining insight is that short paths must coexist with high clustering.",
   "misreadings": "It does not say everyone is exactly six steps apart; the figure was a median over completed chains, not a constant. Milgram did not prove six degrees, since most chains failed; he showed that short, findable paths exist for some pairs. Degrees of separation, the intermediaries, are not the same as hops, the edges, and sloppy counting is the source of much confusion, as Karinthy's five intermediaries is about six links. And online-platform distances are not interchangeable with real-world acquaintance chains.",
@@ -45,12 +57,26 @@
   "provenance": "canon",
   "coinedYear": 1967,
   "sources": [
-    {"text": "Small-world experiment, Wikipedia. — Milgram's completion figures, the five-and-a-half-to-six median, Kleinfeld's critique, and the Karinthy origin.", "url": "https://en.wikipedia.org/wiki/Small-world_experiment", "type": "secondary"},
-    {"text": "Backstrom, Boldi, Rosa, Ugander & Vigna, 'Four Degrees of Separation' (2012), arXiv:1111.4570. — the Facebook study finding an average distance of about four.", "url": "https://arxiv.org/abs/1111.4570", "type": "primary"}
+    {
+      "text": "Small-world experiment, Wikipedia. — Milgram's completion figures, the five-and-a-half-to-six median, Kleinfeld's critique, and the Karinthy origin.",
+      "url": "https://en.wikipedia.org/wiki/Small-world_experiment",
+      "type": "secondary"
+    },
+    {
+      "text": "Backstrom, Boldi, Rosa, Ugander & Vigna, 'Four Degrees of Separation' (2012), arXiv:1111.4570. — the Facebook study finding an average distance of about four.",
+      "url": "https://arxiv.org/abs/1111.4570",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Small-world_experiment",
   "related": [
-    {"slug": "the-strength-of-weak-ties", "kind": "kindred"},
-    {"slug": "preferential-attachment", "kind": "kindred"}
+    {
+      "slug": "the-strength-of-weak-ties",
+      "kind": "kindred"
+    },
+    {
+      "slug": "preferential-attachment",
+      "kind": "kindred"
+    }
   ]
 }

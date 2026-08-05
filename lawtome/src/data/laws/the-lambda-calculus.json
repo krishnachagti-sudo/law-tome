@@ -2,7 +2,10 @@
   "no": "561",
   "slug": "the-lambda-calculus",
   "name": "The Lambda Calculus",
-  "aliases": ["λ-calculus", "Church's calculus"],
+  "aliases": [
+    "λ-calculus",
+    "Church's calculus"
+  ],
   "statement": "Build all of computation out of nothing but functions that take arguments and are applied to them.",
   "statementAccent": "nothing but functions that take arguments",
   "meaning": "The lambda calculus is a formal system for expressing computation based entirely on function abstraction and application, using variable binding and substitution. In it, everything is a function. Terms are built from just three ingredients: variables; abstraction, written lambda x dot M, denoting a function of x with body M; and application, writing one term next to another to apply a function to an argument. Introduced by Alonzo Church in the 1930s, it is one of the two classical foundations of computability, equal in power to the Turing machine, and it is the theoretical basis of functional programming, type theory, and proof assistants.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The lambda calculus is one of the two founding models of computation, and through the Church-Turing thesis it helped define what is computable. It is the theoretical bedrock of functional programming languages such as Lisp, ML, and Haskell, and of denotational semantics, type theory, and the proof assistants used to verify mathematics and software. The Curry-Howard correspondence it supports, identifying proofs with programs, is one of the deepest bridges between logic and computer science. Few formal systems so small have proved so fertile.",
   "working": [
-    {"lead": "Reduce everything to functions", "text": "express computation using only variables, abstraction, and application, treating data and control alike as functions."},
-    {"lead": "Compute by substitution", "text": "drive computation with beta-reduction, substituting arguments for bound variables, with alpha-conversion to avoid variable capture."},
-    {"lead": "Recover recursion", "text": "use a fixed-point combinator to give anonymous functions self-reference, the ingredient that makes the untyped calculus Turing-complete."}
+    {
+      "lead": "Reduce everything to functions",
+      "text": "express computation using only variables, abstraction, and application, treating data and control alike as functions."
+    },
+    {
+      "lead": "Compute by substitution",
+      "text": "drive computation with beta-reduction, substituting arguments for bound variables, with alpha-conversion to avoid variable capture."
+    },
+    {
+      "lead": "Recover recursion",
+      "text": "use a fixed-point combinator to give anonymous functions self-reference, the ingredient that makes the untyped calculus Turing-complete."
+    }
   ],
   "limits": "Beta-reduction is confluent, so a normal form is unique when it exists, but not every term has one: some terms reduce forever, so evaluation may not terminate. Naive substitution can accidentally capture free variables, which is why capture-avoiding substitution and alpha-conversion are needed. Turing-completeness belongs to the untyped calculus; adding simple types buys guaranteed termination at the cost of that universal power, an inherent trade-off, and richer type systems are needed to regain it. And the Church-Turing thesis, that the calculus captures the informal notion of effective computability, is a thesis, not a formally provable theorem.",
   "misreadings": "The lambda calculus is not merely a programming language; it is a minimal formal system and model of computation that programming languages draw on but greatly extend. The simply typed lambda calculus is not Turing-complete, being deliberately strongly normalising; only the untyped version, or richer typed ones with recursion, has universal power. Church's lambda-calculus work of the 1930s predates and parallels Turing's machines rather than following them, and the two were proved equivalent. And Church numerals are functions that encode numbers by iteration, not numbers themselves.",
@@ -47,12 +59,26 @@
   "namedAfter": "Alonzo Church",
   "namesakeKind": "person",
   "sources": [
-    {"text": "The Lambda Calculus, Stanford Encyclopedia of Philosophy. — the term-forming rules, beta-reduction, Turing-completeness, and Curry-Howard.", "url": "https://plato.stanford.edu/entries/lambda-calculus/", "type": "secondary"},
-    {"text": "Lambda calculus, Wikipedia. — the syntax, reduction rules, Church encodings, and typed-versus-untyped distinction.", "url": "https://en.wikipedia.org/wiki/Lambda_calculus", "type": "secondary"}
+    {
+      "text": "The Lambda Calculus, Stanford Encyclopedia of Philosophy. — the term-forming rules, beta-reduction, Turing-completeness, and Curry-Howard.",
+      "url": "https://plato.stanford.edu/entries/lambda-calculus/",
+      "type": "secondary"
+    },
+    {
+      "text": "Lambda calculus, Wikipedia. — the syntax, reduction rules, Church encodings, and typed-versus-untyped distinction.",
+      "url": "https://en.wikipedia.org/wiki/Lambda_calculus",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Lambda_calculus",
   "related": [
-    {"slug": "the-turing-machine", "kind": "kindred"},
-    {"slug": "the-church-turing-thesis", "kind": "kindred"}
+    {
+      "slug": "the-turing-machine",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-church-turing-thesis",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "570",
   "slug": "the-stable-marriage-problem",
   "name": "The Stable Marriage Problem",
-  "aliases": ["Stable matching", "The Gale-Shapley problem"],
+  "aliases": [
+    "Stable matching",
+    "The Gale-Shapley problem"
+  ],
   "statement": "Given two groups ranking each other, you can always pair them so no two would rather abandon their partners for each other.",
   "statementAccent": "no two would rather abandon their partners",
   "meaning": "The stable marriage problem asks, given two equal-sized groups whose members each rank all members of the other group by preference, to find a stable matching: a one-to-one pairing with no blocking pair, no two people who both prefer each other to their assigned partners. Gale and Shapley proved that such a stable matching always exists, for any preferences, and can be found efficiently by the deferred-acceptance algorithm. The problem is a cornerstone of matching theory and market design, with the surprising guarantee of a stable outcome and a practical algorithm that together underpin real systems from medical residency matching to school choice.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The stable marriage problem is a foundational result in economics, computer science, and market design, combining a guarantee that a stable outcome always exists with an efficient algorithm to find it. Its deferred-acceptance mechanism is used to run real markets that cannot rely on prices, matching doctors to hospitals, students to schools, and more, and its ideas extend to organ exchange and beyond. Lloyd Shapley and Alvin Roth received the 2012 Nobel Memorial Prize in Economics for the theory of stable allocations and the practice of market design, a recognition of how deeply the idea reshaped both theory and institutions.",
   "working": [
-    {"lead": "Seek stability", "text": "aim for a matching with no blocking pair, so no two people would both prefer to leave their partners for each other."},
-    {"lead": "Run deferred acceptance", "text": "have one side propose and the other tentatively hold the best offer so far, iterating to a guaranteed stable matching."},
-    {"lead": "Mind who proposes", "text": "remember that the proposing side gets its best stable outcome and the receiving side its worst, so the roles are not symmetric."}
+    {
+      "lead": "Seek stability",
+      "text": "aim for a matching with no blocking pair, so no two people would both prefer to leave their partners for each other."
+    },
+    {
+      "lead": "Run deferred acceptance",
+      "text": "have one side propose and the other tentatively hold the best offer so far, iterating to a guaranteed stable matching."
+    },
+    {
+      "lead": "Mind who proposes",
+      "text": "remember that the proposing side gets its best stable outcome and the receiving side its worst, so the roles are not symmetric."
+    }
   ],
   "limits": "The classic result assumes strict, complete preferences over the other side and equal-sized groups. Variants complicate it: ties in preferences, incomplete lists where some partners are unacceptable, and the many-to-one hospitals-and-residents generalisation with quotas. The one-sided stable roommates problem, pairing within a single set, may have no stable matching at all, unlike the two-sided marriage problem. And the deferred-acceptance outcome is only one extreme, proposer-optimal, among possibly many stable matchings, and is not egalitarian or utilitarian-optimal.",
   "misreadings": "Stable means there is no blocking pair, not that partners are each other's top choices, nor that the matching maximises total happiness. Proposer-optimality does not mean every proposer gets a first choice; it means each gets the best partner achievable across all stable matchings. Multiple stable matchings can exist, and the algorithm returns one extreme, not all of them. And the always-exists guarantee is specific to the two-sided problem; the one-sided roommates version can lack any stable matching.",
@@ -45,12 +57,26 @@
   "provenance": "canon",
   "coinedYear": 1962,
   "sources": [
-    {"text": "Gale-Shapley algorithm, Wikipedia. — the stable-matching and blocking-pair definitions, the existence guarantee, and proposer-optimality.", "url": "https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm", "type": "secondary"},
-    {"text": "The Sveriges Riksbank Prize in Economic Sciences 2012, NobelPrize.org. — the award to Roth and Shapley for stable allocations and market design.", "url": "https://www.nobelprize.org/prizes/economic-sciences/2012/summary/", "type": "secondary"}
+    {
+      "text": "Gale-Shapley algorithm, Wikipedia. — the stable-matching and blocking-pair definitions, the existence guarantee, and proposer-optimality.",
+      "url": "https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm",
+      "type": "secondary"
+    },
+    {
+      "text": "The Sveriges Riksbank Prize in Economic Sciences 2012, NobelPrize.org. — the award to Roth and Shapley for stable allocations and market design.",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2012/summary/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Stable_marriage_problem",
   "related": [
-    {"slug": "the-shapley-value", "kind": "kindred"},
-    {"slug": "the-secretary-problem", "kind": "kindred"}
+    {
+      "slug": "the-shapley-value",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-secretary-problem",
+      "kind": "kindred"
+    }
   ]
 }

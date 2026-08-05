@@ -2,7 +2,10 @@
   "no": "696",
   "slug": "the-raven-paradox",
   "name": "The Raven Paradox",
-  "aliases": ["Hempel's ravens", "The paradox of confirmation"],
+  "aliases": [
+    "Hempel's ravens",
+    "The paradox of confirmation"
+  ],
   "statement": "Observing a green apple, which is a non-black non-raven, seems to confirm that all ravens are black.",
   "statementAccent": "seems to confirm that all ravens are black",
   "meaning": "The raven paradox, also called Hempel's ravens or the paradox of confirmation, is a puzzle about the logic of inductive support, proposed by the German logician and philosopher Carl Gustav Hempel in the 1940s. Consider the hypothesis that all ravens are black. It seems that observing a black raven confirms this hypothesis. But all ravens are black is logically equivalent to its contrapositive, all non-black things are non-ravens, and it seems that whatever confirms a statement also confirms anything logically equivalent to it. So observing a non-black non-raven, such as a green apple or a white shoe, confirms all non-black things are non-ravens and therefore also confirms that all ravens are black. The paradox is that one could apparently gather evidence about the colour of ravens by examining apples and shoes indoors, never looking at a raven at all, a conclusion Hempel wryly compared to indoor ornithology.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The raven paradox is a central problem in confirmation theory and the philosophy of science, exposing tensions in the seemingly obvious idea that instances confirm generalisations. By deriving an absurd-looking conclusion from innocuous principles about evidence, logical equivalence, and confirmation, it forced philosophers to examine what it means for observations to support a hypothesis and drove the development of quantitative, Bayesian approaches to confirmation. The Bayesian resolution, that irrelevant-seeming evidence confirms only negligibly, became a model for how probability can rescue and refine intuitions about induction. The paradox remains a standard reference point in debates about inductive logic, the role of background knowledge, and the relation between logic and evidence, and its memorable image of confirming ornithology from an armchair keeps it a favourite teaching example.",
   "working": [
-    {"lead": "Take the hypothesis", "text": "start from all ravens are black and its contrapositive, all non-black things are non-ravens."},
-    {"lead": "Apply the confirmation principles", "text": "use Nicod's criterion and the equivalence condition to conclude that a non-black non-raven confirms both statements."},
-    {"lead": "Weigh the confirmation", "text": "resolve the oddity by noting the confirmation from a green apple is genuine but negligible, since such objects vastly outnumber ravens."}
+    {
+      "lead": "Take the hypothesis",
+      "text": "start from all ravens are black and its contrapositive, all non-black things are non-ravens."
+    },
+    {
+      "lead": "Apply the confirmation principles",
+      "text": "use Nicod's criterion and the equivalence condition to conclude that a non-black non-raven confirms both statements."
+    },
+    {
+      "lead": "Weigh the confirmation",
+      "text": "resolve the oddity by noting the confirmation from a green apple is genuine but negligible, since such objects vastly outnumber ravens."
+    }
   ],
   "limits": "The raven paradox is a problem about the logic of confirmation rather than a claim that examining apples is a good way to study ravens; the Bayesian resolution grants that such evidence confirms only by a negligible amount, so in practice it is useless while in principle it is not zero. The resolution depends on assumptions about the relative numbers of ravens and non-black things and on a Bayesian framework that not everyone accepts, and alternative diagnoses reject one of the generating principles instead. Hempel's own bullet-biting response treats the conclusion as merely counterintuitive, shifting the burden to explaining the intuition rather than blocking the argument. So the paradox marks an ongoing issue in confirmation theory, with several proposed treatments, rather than a single settled fix.",
   "misreadings": "The paradox does not recommend confirming hypotheses about ravens by studying apples; the point is that such evidence, while technically confirming, is negligible, not useful. It is not resolved by denying that black ravens confirm the hypothesis, which they plainly do. And accepting the Bayesian dissolution does not mean the confirmation is exactly zero; it means it is vanishingly small, so treating the paradox as showing that logic is broken, or that induction is worthless, misreads a puzzle designed to refine how we understand evidence.",
@@ -46,12 +58,26 @@
   "namedAfter": "Carl Gustav Hempel",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Raven paradox, Wikipedia. — Hempel's 1940s formulation, Nicod's criterion, the contrapositive equivalence and equivalence condition, the green-apple and white-shoe conclusion, the indoor-ornithology absurdity, and the Bayesian negligible-confirmation resolution.", "url": "https://en.wikipedia.org/wiki/Raven_paradox", "type": "secondary"},
-    {"text": "Carl Hempel, Stanford Encyclopedia of Philosophy. — the raven paradox within Hempel's Studies in the Logic of Confirmation and its place in confirmation theory.", "url": "https://plato.stanford.edu/entries/hempel/", "type": "secondary"}
+    {
+      "text": "Raven paradox, Wikipedia. — Hempel's 1940s formulation, Nicod's criterion, the contrapositive equivalence and equivalence condition, the green-apple and white-shoe conclusion, the indoor-ornithology absurdity, and the Bayesian negligible-confirmation resolution.",
+      "url": "https://en.wikipedia.org/wiki/Raven_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Carl Hempel, Stanford Encyclopedia of Philosophy. — the raven paradox within Hempel's Studies in the Logic of Confirmation and its place in confirmation theory.",
+      "url": "https://plato.stanford.edu/entries/hempel/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Raven_paradox",
   "related": [
-    {"slug": "the-grue-paradox", "kind": "kindred"},
-    {"slug": "the-texas-sharpshooter-fallacy", "kind": "kindred"}
+    {
+      "slug": "the-grue-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-texas-sharpshooter-fallacy",
+      "kind": "kindred"
+    }
   ]
 }

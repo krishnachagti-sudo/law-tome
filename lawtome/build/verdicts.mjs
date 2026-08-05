@@ -129,7 +129,7 @@ export function verdictLine(law) {
     case 'Heuristic':
       return 'It is a rule of thumb, not a finding. It is useful and widely relied on, but it was never established by measurement and does not claim to be.';
     case 'Folk-adage':
-      return 'It is a saying, not a result. It circulates because it is memorable and often true enough to be worth repeating — no study underwrites it.';
+      return 'It is a saying, not a result. It circulates because it is memorable and often true enough to be worth repeating. No study underwrites it.';
     default:
       return 'Rated as grounded in studies or measurable evidence.';
   }

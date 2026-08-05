@@ -5,7 +5,7 @@
   "statement": "Offered an unfair split, people reject it and take nothing, punishing the offer out of spite.",
   "statementAccent": "reject it and take nothing",
   "meaning": "In this two-player bargaining game, one player proposes how to divide a sum and the other either accepts, so both are paid the proposed split, or rejects, so both get nothing. Pure self-interest predicts the proposer offers the smallest positive amount and it is accepted, since anything beats zero. In reality, proposers offer far more than the minimum, and responders frequently reject unfair offers, sacrificing their own payoff to punish the offer.",
-  "mechanism": "By backward induction, a self-interested responder should accept any positive offer, so a self-interested proposer should offer almost nothing — the subgame-perfect prediction. Real behaviour departs sharply: across hundreds of experiments, offers cluster around forty to fifty percent, and offers below roughly a fifth to a third are rejected at high and rising rates. Rejection is a form of costly punishment: the responder pays, by forgoing their share, to deny the proposer — evidence that fairness norms and negative reciprocity override narrow self-interest.",
+  "mechanism": "By backward induction, a self-interested responder should accept any positive offer, so a self-interested proposer should offer almost nothing: the subgame-perfect prediction. Real behaviour departs sharply: across hundreds of experiments, offers cluster around forty to fifty percent, and offers below roughly a fifth to a third are rejected at high and rising rates. Rejection is a form of costly punishment: the responder pays, by forgoing their share, to deny the proposer (evidence that fairness norms and negative reciprocity override narrow self-interest).",
   "examples": [
     {
       "tag": "The typical result",
@@ -13,11 +13,11 @@
     },
     {
       "tag": "Costly punishment",
-      "text": "A responder who turns down a lopsided offer gets nothing rather than a small sum, paying a real price to deny the proposer a large one — spite as an enforcer of fairness."
+      "text": "A responder who turns down a lopsided offer gets nothing rather than a small sum, paying a real price to deny the proposer a large one: spite as an enforcer of fairness."
     },
     {
       "tag": "Culture matters",
-      "text": "In a study of the Machiguenga of the Peruvian Amazon, proposers offered about a quarter on average and low offers were rarely rejected, unlike Western students — so the forty-to-fifty-percent norm is not a human universal."
+      "text": "In a study of the Machiguenga of the Peruvian Amazon, proposers offered about a quarter on average and low offers were rarely rejected, unlike Western students, so the forty-to-fifty-percent norm is not a human universal."
     }
   ],
   "variants": [
@@ -32,12 +32,21 @@
   ],
   "whyItMatters": "It is among the most cited results in experimental economics and a headline challenge to the model of humans as pure income-maximisers. It established that fairness, reciprocity, and a willingness to pay to punish unfairness are real forces in economic decisions, reshaping how economists model behaviour.",
   "working": [
-    {"lead": "Expect fairness to bind", "text": "in bargaining, anticipate that lopsided offers will be rejected even at cost, and that proposers offer well above the minimum."},
-    {"lead": "Read rejection as punishment", "text": "treat a rejected unfair offer as costly punishment of the proposer, not as a mistake."},
-    {"lead": "Weigh culture and stakes", "text": "expect the size of fair offers and rejection thresholds to vary across societies, and to shift as the stakes rise."}
+    {
+      "lead": "Expect fairness to bind",
+      "text": "in bargaining, anticipate that lopsided offers will be rejected even at cost, and that proposers offer well above the minimum."
+    },
+    {
+      "lead": "Read rejection as punishment",
+      "text": "treat a rejected unfair offer as costly punishment of the proposer, not as a mistake."
+    },
+    {
+      "lead": "Weigh culture and stakes",
+      "text": "expect the size of fair offers and rejection thresholds to vary across societies, and to shift as the stakes rise."
+    }
   ],
   "limits": "The core phenomenon is robustly replicated, but its magnitude and interpretation are debated. Offers and rejection thresholds vary substantially across societies, so the forty-to-fifty-percent norm is a feature of Western populations, not a human universal. The effect of stakes is genuinely contested: several studies found behaviour insensitive to stake size, while a study using very large stakes in India found rejection rates falling toward zero as stakes rose. And whether rejections reflect fairness, anger, spite, or confusion remains disputed. The existence of the effect is not in doubt; its moderators and mechanism are.",
-  "misreadings": "It does not show people are irrational — it shows they value fairness and reciprocity alongside money, which standard models had ignored. And the fair-offer norm is not universal: it varies by culture, and the effect of raising the stakes is still contested.",
+  "misreadings": "It does not show people are irrational: it shows they value fairness and reciprocity alongside money, which standard models had ignored. And the fair-offer norm is not universal: it varies by culture, and the effect of raising the stakes is still contested.",
   "origin": "Introduced by Werner Guth, Rolf Schmittberger, and Bernd Schwarze in 'An Experimental Analysis of Ultimatum Bargaining,' Journal of Economic Behavior and Organization 3(4):367-388 (1982); extended cross-culturally by Joseph Henrich and colleagues.",
   "category": "economics",
   "reliability": "Empirical",
@@ -46,11 +55,22 @@
   "namedAfter": "Werner Guth, Rolf Schmittberger, and Bernd Schwarze",
   "namesakeKind": "person",
   "sources": [
-    {"text": "\"The Ultimatum Game,\" iMotions. — the rules, the subgame-perfect prediction versus actual behaviour, and the rejection thresholds.", "url": "https://imotions.com/blog/learning/research-fundamentals/the-ultimatum-game/", "type": "secondary"},
-    {"text": "Henrich, \"Does Culture Matter in Economic Behavior? Ultimatum Game Bargaining among the Machiguenga,\" American Economic Review 90(4):973-979 (2000).", "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.90.4.973", "type": "primary"}
+    {
+      "text": "\"The Ultimatum Game,\" iMotions. — the rules, the subgame-perfect prediction versus actual behaviour, and the rejection thresholds.",
+      "url": "https://imotions.com/blog/learning/research-fundamentals/the-ultimatum-game/",
+      "type": "secondary"
+    },
+    {
+      "text": "Henrich, \"Does Culture Matter in Economic Behavior? Ultimatum Game Bargaining among the Machiguenga,\" American Economic Review 90(4):973-979 (2000).",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.90.4.973",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Ultimatum_game",
   "related": [
-    {"slug": "the-nash-equilibrium", "kind": "tension"}
+    {
+      "slug": "the-nash-equilibrium",
+      "kind": "tension"
+    }
   ]
 }

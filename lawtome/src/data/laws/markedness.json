@@ -2,7 +2,10 @@
   "no": "557",
   "slug": "markedness",
   "name": "Markedness",
-  "aliases": ["Marked and unmarked", "The markedness relation"],
+  "aliases": [
+    "Marked and unmarked",
+    "The markedness relation"
+  ],
   "statement": "In a pair of forms, one is the plain default and the other is the special, more complex, rarer case.",
   "statementAccent": "one is the plain default and the other is the special",
   "meaning": "Markedness is a concept in which one member of a contrasting pair or set of linguistic elements is the unmarked form, basic, default, more general, more frequent, and structurally simpler, while the other is the marked form, more specific, less frequent, more complex, and often overtly signalled. Marked forms tend to carry extra morphological material, to be rarer across the world's languages, to be acquired later by children, and to appear in a narrower range of contexts. Originating in the Prague School, the marked-unmarked distinction became a pervasive organising idea across every level of linguistics, though it has also drawn sharp criticism for vagueness.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "Markedness became one of the most pervasive organising concepts in linguistics, providing a common vocabulary for asymmetries across phonology, morphology, syntax, semantics, and typology, and connecting frequency, structural complexity, acquisition order, and cross-linguistic universals. It shaped typology through Greenberg's implicational universals and formal phonology through Optimality Theory's ranked constraints. Even the critique of the concept, which charges it with conflating too many distinct ideas, has been productive, pushing the field toward more precise, frequency-based explanations of the very asymmetries markedness was invented to describe.",
   "working": [
-    {"lead": "Find the default", "text": "identify which member of a contrast is the plain, more frequent, structurally simpler unmarked form and which is the special marked one."},
-    {"lead": "Expect the correlates", "text": "look for marked forms to be rarer, more complex, acquired later, and more restricted in distribution, though these need not all align."},
-    {"lead": "Rank the constraints", "text": "in Optimality Theory, weigh markedness constraints against faithfulness constraints, with their ranking producing the grammar of a language."}
+    {
+      "lead": "Find the default",
+      "text": "identify which member of a contrast is the plain, more frequent, structurally simpler unmarked form and which is the special marked one."
+    },
+    {
+      "lead": "Expect the correlates",
+      "text": "look for marked forms to be rarer, more complex, acquired later, and more restricted in distribution, though these need not all align."
+    },
+    {
+      "lead": "Rank the constraints",
+      "text": "in Optimality Theory, weigh markedness constraints against faithfulness constraints, with their ranking producing the grammar of a language."
+    }
   ],
   "limits": "Markedness has been criticised as vague and inconsistently applied, because its several criteria, frequency, complexity, distribution, and difficulty, do not always align: a category rare across languages may be frequent within a particular one. Martin Haspelmath argued in 2006 that the term conflates roughly a dozen distinct senses, that it is superfluous, and that it should be replaced by more precise notions, above all frequency-based explanation together with concrete factors such as phonetic difficulty and pragmatic inference. Critics accept the underlying asymmetries but reject markedness as their explanation, so the concept's status is genuinely contested even as the phenomena it names are real.",
   "misreadings": "Marked is not a value judgement meaning worse or abnormal; it is a structural and statistical relation. There is no single defining criterion, since frequency, complexity, distribution, and acquisition are correlated tendencies that can diverge, which is the heart of the critique. Language-internal frequency is not the same as cross-linguistic frequency, and conflating them is a common error. And markedness does not always mean overt morphological marking, since in phonology it originally meant the presence of a feature, and semantic or distributional markedness can exist with no overt marker.",
@@ -44,12 +56,26 @@
   "reliability": "Contested",
   "provenance": "canon",
   "sources": [
-    {"text": "Markedness, Wikipedia. — the marked-unmarked distinction, the correlated properties, the Prague School origin, and the Optimality Theory connection.", "url": "https://en.wikipedia.org/wiki/Markedness", "type": "secondary"},
-    {"text": "Haspelmath, 'Against markedness (and what to replace it with),' Journal of Linguistics 42(1):25-70 (2006). — the argument that the term conflates many senses and should be replaced by frequency.", "url": "https://www.cambridge.org/core/journals/journal-of-linguistics/article/abs/against-markedness-and-what-to-replace-it-with/24EAC648FEED82E204539D5F952690B7", "type": "primary"}
+    {
+      "text": "Markedness, Wikipedia. — the marked-unmarked distinction, the correlated properties, the Prague School origin, and the Optimality Theory connection.",
+      "url": "https://en.wikipedia.org/wiki/Markedness",
+      "type": "secondary"
+    },
+    {
+      "text": "Haspelmath, 'Against markedness (and what to replace it with),' Journal of Linguistics 42(1):25-70 (2006). — the argument that the term conflates many senses and should be replaced by frequency.",
+      "url": "https://www.cambridge.org/core/journals/journal-of-linguistics/article/abs/against-markedness-and-what-to-replace-it-with/24EAC648FEED82E204539D5F952690B7",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Markedness",
   "related": [
-    {"slug": "the-arbitrariness-of-the-sign", "kind": "kindred"},
-    {"slug": "the-sonority-hierarchy", "kind": "kindred"}
+    {
+      "slug": "the-arbitrariness-of-the-sign",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-sonority-hierarchy",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,19 +2,21 @@
   "no": "112",
   "slug": "zawinskis-law",
   "name": "Zawinski's Law",
-  "aliases": ["The law of software envelopment"],
-  "statement": "Every program expands until it can read mail — or is replaced by one that can.",
+  "aliases": [
+    "The law of software envelopment"
+  ],
+  "statement": "Every program expands until it can read mail, or is replaced by one that can.",
   "statementAccent": "expands until it can read mail",
   "meaning": "A wry observation about software scope creep: successful programs keep accreting features until they take on functions far outside their original purpose, with email as the archetypal kitchen-sink example. Programs that fail to keep expanding get displaced by ones that do.",
-  "mechanism": "Feature creep, or creeping featurism: frequently used programs accrete unrelated features over time under user demand and competitive pressure, growing well beyond their original scope. Zawinski's own gloss sharpens it toward platformisation — apps that users live in all day face pressure to become everything, a viewer becoming a mail reader becoming, in the limit, an operating system.",
+  "mechanism": "Feature creep, or creeping featurism: frequently used programs accrete unrelated features over time under user demand and competitive pressure, growing well beyond their original scope. Zawinski's own gloss sharpens it toward platformisation: apps that users live in all day face pressure to become everything, a viewer becoming a mail reader becoming, in the limit, an operating system.",
   "examples": [
     {
       "tag": "Netscape",
-      "text": "The example from Zawinski's own work: a web browser that grew Netscape Mail & News, then became Communicator — browser, mail, newsreader, and HTML editor. His site cites it as embodying the law."
+      "text": "The example from Zawinski's own work: a web browser that grew Netscape Mail & News, then became Communicator (browser, mail, newsreader, and HTML editor). His site cites it as embodying the law."
     },
     {
       "tag": "Emacs reads mail",
-      "text": "The perennial in-joke that Emacs is a fine operating system lacking only a decent editor — a text editor that did indeed grow the ability to read mail. Folklore rather than a sourced case, but the canonical illustration."
+      "text": "The perennial in-joke that Emacs is a fine operating system lacking only a decent editor: a text editor that did indeed grow the ability to read mail. Folklore rather than a sourced case, but the canonical illustration."
     },
     {
       "tag": "Everything becomes a platform",
@@ -24,21 +26,30 @@
   "variants": [
     {
       "name": "Creeping featurism",
-      "text": "The Jargon File term for the underlying tendency — the steady, unplanned accretion of features that Zawinski's law satirises."
+      "text": "The Jargon File term for the underlying tendency: the steady, unplanned accretion of features that Zawinski's law satirises."
     },
     {
       "name": "Software bloat",
       "text": "The result the law points at: size and complexity outpacing user value, as programs swell past the point of coherence."
     }
   ],
-  "whyItMatters": "It gave a memorable name to a real and recurring dynamic in software: the gravitational pull of successful programs toward doing everything. It is a standing caution against unchecked scope, and — in Zawinski's own reading — a lens on why the applications people live in tend toward becoming platforms.",
+  "whyItMatters": "It gave a memorable name to a real and recurring dynamic in software: the gravitational pull of successful programs toward doing everything. It is a standing caution against unchecked scope, and (in Zawinski's own reading) a lens on why the applications people live in tend toward becoming platforms.",
   "working": [
-    {"lead": "Guard the scope of what you build", "text": "treat each new unrelated feature as a cost to coherence, not a free win; the pull toward 'do everything' is strong and mostly downhill."},
-    {"lead": "Distinguish envelopment from platformisation", "text": "Zawinski's point was less about copycat bloat than about apps users inhabit all day being pressured to become everything — notice which force is acting."},
-    {"lead": "Read it as satire, not spec", "text": "it makes no falsifiable prediction; use it to name a tendency, not to justify or forbid any particular feature."}
+    {
+      "lead": "Guard the scope of what you build",
+      "text": "treat each new unrelated feature as a cost to coherence, not a free win; the pull toward 'do everything' is strong and mostly downhill."
+    },
+    {
+      "lead": "Distinguish envelopment from platformisation",
+      "text": "Zawinski's point was less about copycat bloat than about apps users inhabit all day being pressured to become everything — notice which force is acting."
+    },
+    {
+      "lead": "Read it as satire, not spec",
+      "text": "it makes no falsifiable prediction; use it to name a tendency, not to justify or forbid any particular feature."
+    }
   ],
-  "limits": "It is a humorous adage, not an empirical law — it makes no falsifiable prediction and has no quantitative basis, and its 'read mail' framing is dated to a mid-1990s world where switching apps to check mail was routine. Zawinski himself has pushed back on the common 'it's about bloat' reading, saying his point was about platformisation, so the popular interpretation and the author's intent diverge. It belongs to programming folklore, valuable as a coinage rather than as engineering fact.",
-  "misreadings": "It is not a measured principle and, per its author, not really a complaint about copycat bloat at all — the deeper point is that the software people live in is pushed to become everything, up to an operating system. The 'read mail' line is a period joke, not a literal claim about email features.",
+  "limits": "It is a humorous adage, not an empirical law. It makes no falsifiable prediction and has no quantitative basis, and its 'read mail' framing is dated to a mid-1990s world where switching apps to check mail was routine. Zawinski himself has pushed back on the common 'it's about bloat' reading, saying his point was about platformisation, so the popular interpretation and the author's intent diverge. It belongs to programming folklore, valuable as a coinage rather than as engineering fact.",
+  "misreadings": "It is not a measured principle and, per its author, not really a complaint about copycat bloat at all: the deeper point is that the software people live in is pushed to become everything, up to an operating system. The 'read mail' line is a period joke, not a literal claim about email features.",
   "origin": "Coined by Jamie Zawinski ('jwz'), the programmer behind Lucid Emacs / XEmacs, Netscape Navigator, and Netscape Mail & News, and recorded in the Jargon File. The exact date of first formulation is not pinned down, but it is generally placed in the mid-1990s; Zawinski later clarified the platformisation reading around 2020.",
   "category": "software",
   "reliability": "Folk-adage",
@@ -47,12 +58,26 @@
   "namedAfter": "Jamie Zawinski",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Jamie Zawinski, Wikipedia. — the verbatim law, its attribution, the Jargon File record, and the 2020 platformisation clarification.", "url": "https://en.wikipedia.org/wiki/Jamie_Zawinski", "type": "secondary"},
-    {"text": "jwz.org — Zawinski's own site, citing Netscape Mail & News as the law's embodiment.", "url": "https://www.jwz.org/hacks/", "type": "primary"}
+    {
+      "text": "Jamie Zawinski, Wikipedia. — the verbatim law, its attribution, the Jargon File record, and the 2020 platformisation clarification.",
+      "url": "https://en.wikipedia.org/wiki/Jamie_Zawinski",
+      "type": "secondary"
+    },
+    {
+      "text": "jwz.org — Zawinski's own site, citing Netscape Mail & News as the law's embodiment.",
+      "url": "https://www.jwz.org/hacks/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Jamie_Zawinski",
   "related": [
-    {"slug": "wirths-law", "kind": "kindred"},
-    {"slug": "atwoods-law", "kind": "kindred"}
+    {
+      "slug": "wirths-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "atwoods-law",
+      "kind": "kindred"
+    }
   ]
 }

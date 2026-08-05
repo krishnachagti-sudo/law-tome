@@ -5,7 +5,7 @@
   "statement": "The flow rate of a fluid through a porous medium is directly proportional to the pressure (hydraulic head) gradient driving it.",
   "statementAccent": "is directly proportional to the pressure",
   "meaning": "Darcy’s law says that water or another fluid moving through sand, soil, or rock flows faster when the pressure difference pushing it is larger, and more slowly through less permeable material, in a simple linear relationship. It is the fluid-flow analogue of Ohm’s law, with hydraulic head difference playing the role of voltage and permeability playing the role of conductivity.",
-  "mechanism": "Darcy derived the law empirically by passing water through vertical sand-filled columns and measuring how flow rate varied with the column’s cross-section, length, and head difference. The result states that volumetric flux is proportional to the permeability of the medium divided by the fluid’s viscosity, times the pressure or head gradient — flow always moving from high to low head, and ceasing when there is no gradient.",
+  "mechanism": "Darcy derived the law empirically by passing water through vertical sand-filled columns and measuring how flow rate varied with the column’s cross-section, length, and head difference. The result states that volumetric flux is proportional to the permeability of the medium divided by the fluid’s viscosity, times the pressure or head gradient: flow always moving from high to low head, and ceasing when there is no gradient.",
   "examples": [
     {
       "tag": "Groundwater flow",
@@ -22,7 +22,7 @@
   ],
   "whyItMatters": "Darcy’s law is the fundamental governing equation for virtually all subsurface fluid-flow modelling, underpinning groundwater management, contaminant-transport prediction, and petroleum reservoir engineering. Its simple linear form allows tractable solutions from laboratory columns to entire aquifers.",
   "limits": "The law holds only for slow, laminar (viscous-dominated) flow, generally a Reynolds number below about 1, and becomes inaccurate as flow speeds increase in coarse, highly permeable media. At higher rates, non-Darcy (Forchheimer) behaviour appears, requiring an added inertial term.",
-  "misreadings": "A common misreading applies Darcy’s law uncritically to fast or turbulent flow — through gravel, fractured rock, or near a pumping well — where the linear assumption breaks down and Forchheimer or other nonlinear corrections are needed.",
+  "misreadings": "A common misreading applies Darcy’s law uncritically to fast or turbulent flow (through gravel, fractured rock, or near a pumping well) where the linear assumption breaks down and Forchheimer or other nonlinear corrections are needed.",
   "origin": "Formulated empirically by French hydraulic engineer Henry Darcy, from sand-column experiments to design Dijon’s water supply, and published in his 1856 report \"Les Fontaines Publiques de la Ville de Dijon.\"",
   "category": "physics",
   "reliability": "Empirical",

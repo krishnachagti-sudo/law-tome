@@ -5,19 +5,19 @@
   "statement": "The richer a household, the smaller the share of its budget spent on food.",
   "statementAccent": "the smaller the share of its budget spent on food",
   "meaning": "As a household's income rises, the proportion it spends on food falls, even though the total amount spent on food still goes up. Poor households must devote much of everything they earn to eating; as income grows, that fraction shrinks and money frees up for housing, clothing, schooling, and leisure. Food is a necessity, not a luxury.",
-  "mechanism": "Food satisfies a roughly capped biological need — a person can eat only so much, and quality upgrades cost far less than proportional income gains. Once basic nutrition is met, extra income flows disproportionately to more income-elastic goods and services. Formally, food's income elasticity of demand lies between zero and one, so food spending rises less than proportionally with income, which mechanically lowers its budget share as income climbs.",
+  "mechanism": "Food satisfies a roughly capped biological need: a person can eat only so much, and quality upgrades cost far less than proportional income gains. Once basic nutrition is met, extra income flows disproportionately to more income-elastic goods and services. Formally, food's income elasticity of demand lies between zero and one, so food spending rises less than proportionally with income, which mechanically lowers its budget share as income climbs.",
   "examples": [
     {
       "tag": "The development corollary",
-      "text": "As economies grow richer, agriculture shrinks as a share of activity — the United States farm workforce fell from roughly 41 percent of workers in 1900 to under 2 percent by 2000, the macro echo of falling food budget shares."
+      "text": "As economies grow richer, agriculture shrinks as a share of activity: the United States farm workforce fell from roughly 41 percent of workers in 1900 to under 2 percent by 2000, the macro echo of falling food budget shares."
     },
     {
       "tag": "Rich and poor households",
-      "text": "A low-income family may spend well over half its budget on food, while a wealthy one spends a small fraction — the same total may rise across the two, but the share falls sharply."
+      "text": "A low-income family may spend well over half its budget on food, while a wealthy one spends a small fraction: the same total may rise across the two, but the share falls sharply."
     },
     {
       "tag": "A living-standard gauge",
-      "text": "Because the food share tracks affluence so reliably, statisticians use the Engel coefficient — food spending as a share of the total — as a rough index of a household's or nation's standard of living."
+      "text": "Because the food share tracks affluence so reliably, statisticians use the Engel coefficient (food spending as a share of the total) as a rough index of a household's or nation's standard of living."
     }
   ],
   "variants": [
@@ -27,17 +27,26 @@
     },
     {
       "name": "The Engel coefficient",
-      "text": "Food expenditure as a share of total spending, used as a development and living-standard indicator — the lower the coefficient, the more affluent the household or country."
+      "text": "Food expenditure as a share of total spending, used as a development and living-standard indicator: the lower the coefficient, the more affluent the household or country."
     }
   ],
   "whyItMatters": "It is one of the oldest and most robust empirical regularities in economics, confirmed across household budget surveys worldwide for over a century and a half. It grounds the idea of necessity versus luxury goods, informs poverty measurement and the construction of price indices, and predicts the structural shrinking of agriculture as economies develop.",
   "working": [
-    {"lead": "Read the food share as affluence", "text": "compare households or countries by the fraction of budget spent on food — a high share signals poverty, a low share affluence."},
-    {"lead": "Distinguish share from amount", "text": "remember that richer households spend more on food in total; it is the proportion, not the sum, that falls."},
-    {"lead": "Use it across large income gaps", "text": "trust the regularity most when comparing substantially different income levels, where it is strongest, rather than small differences."}
+    {
+      "lead": "Read the food share as affluence",
+      "text": "compare households or countries by the fraction of budget spent on food: a high share signals poverty, a low share affluence."
+    },
+    {
+      "lead": "Distinguish share from amount",
+      "text": "remember that richer households spend more on food in total; it is the proportion, not the sum, that falls."
+    },
+    {
+      "lead": "Use it across large income gaps",
+      "text": "trust the regularity most when comparing substantially different income levels, where it is strongest, rather than small differences."
+    }
   ],
-  "limits": "It holds most reliably across large income differences — between rich and poor countries or households — and weakens over small ones, where household size, relative prices, region, culture, and eating-out patterns confound the pure income effect. It is not strictly universal; some argue it fits only part of the world's population, given differences in tastes and family structure. And the historiography of Engel's original derivation is uncertain: he never fully disclosed his small sample or method, so the specific elasticity he reported is less firm than the regularity itself.",
-  "misreadings": "It does not say the rich spend less money on food — they usually spend more; only the share of the budget falls. And it is a statistical regularity across income levels, not a rule that any given family's food share must drop the moment its income ticks up.",
+  "limits": "It holds most reliably across large income differences, between rich and poor countries or households, and weakens over small ones, where household size, relative prices, region, culture, and eating-out patterns confound the pure income effect. It is not strictly universal; some argue it fits only part of the world's population, given differences in tastes and family structure. And the historiography of Engel's original derivation is uncertain: he never fully disclosed his small sample or method, so the specific elasticity he reported is less firm than the regularity itself.",
+  "misreadings": "It does not say the rich spend less money on food: they usually spend more; only the share of the budget falls. And it is a statistical regularity across income levels, not a rule that any given family's food share must drop the moment its income ticks up.",
   "origin": "Stated by the German statistician Ernst Engel in 1857, in a study of consumption in the Kingdom of Saxony drawing on Belgian working-class household budgets; he is not to be confused with Friedrich Engels, Marx's collaborator.",
   "category": "economics",
   "reliability": "Empirical",
@@ -46,11 +55,22 @@
   "namedAfter": "Ernst Engel",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Engel's law, Wikipedia. — the falling-food-share statement, the income-elasticity mechanism, and the Ernst Engel origin.", "url": "https://en.wikipedia.org/wiki/Engel%27s_law", "type": "secondary"},
-    {"text": "\"Engel, Ernst,\" Encyclopedia.com. — Engel's biography and the Belgian budget data behind the law.", "url": "https://www.encyclopedia.com/social-sciences/applied-and-social-sciences-magazines/engel-ernst", "type": "secondary"}
+    {
+      "text": "Engel's law, Wikipedia. — the falling-food-share statement, the income-elasticity mechanism, and the Ernst Engel origin.",
+      "url": "https://en.wikipedia.org/wiki/Engel%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Engel, Ernst,\" Encyclopedia.com. — Engel's biography and the Belgian budget data behind the law.",
+      "url": "https://www.encyclopedia.com/social-sciences/applied-and-social-sciences-magazines/engel-ernst",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Engel%27s_law",
   "related": [
-    {"slug": "wagners-law", "kind": "kindred"}
+    {
+      "slug": "wagners-law",
+      "kind": "kindred"
+    }
   ]
 }

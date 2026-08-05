@@ -4,7 +4,7 @@
   "name": "The Law of Reflection",
   "statement": "The angle a ray strikes a surface equals the angle it leaves.",
   "statementAccent": "equals the angle it leaves",
-  "meaning": "When light, or any wave, reflects from a surface, the angle of incidence equals the angle of reflection, both measured from the normal — the line perpendicular to the surface at the point of contact. And the incident ray, the reflected ray, and the normal all lie in a single plane. The two conditions together are the complete law; the equal-angle statement alone is incomplete without the coplanarity.",
+  "meaning": "When light, or any wave, reflects from a surface, the angle of incidence equals the angle of reflection, both measured from the normal: the line perpendicular to the surface at the point of contact. And the incident ray, the reflected ray, and the normal all lie in a single plane. The two conditions together are the complete law; the equal-angle statement alone is incomplete without the coplanarity.",
   "mechanism": "The law can be reached three independent ways, all agreeing. By Huygens' wavefront construction, the envelope of secondary wavelets bouncing off the surface forms a reflected wavefront with equal angles. By Fermat's principle, the actual path is the one for which travel time is stationary, which for reflection is the shortest path and forces the equal angles. And by electromagnetism, requiring the tangential electric and magnetic fields to be continuous across the boundary compels the reflected angle to equal the incident one, while the Fresnel equations fix how much light reflects rather than transmits.",
   "examples": [
     {
@@ -30,7 +30,7 @@
       "text": "At an interface light generally both reflects at the equal angle and refracts by Snell's law, with the Fresnel equations setting how the two share the incident light."
     }
   ],
-  "whyItMatters": "It is the founding rule of geometric optics for reflected light, the basis of every mirror, periscope, and reflecting telescope, and one half of the pair with refraction that governs how light behaves at surfaces. Simple as it looks, it follows from the deepest principles in optics — Fermat's least time and Maxwell's equations — making it a bridge from everyday mirrors to fundamental physics.",
+  "whyItMatters": "It is the founding rule of geometric optics for reflected light, the basis of every mirror, periscope, and reflecting telescope, and one half of the pair with refraction that governs how light behaves at surfaces. Simple as it looks, it follows from the deepest principles in optics (Fermat's least time and Maxwell's equations) making it a bridge from everyday mirrors to fundamental physics.",
   "working": [
     {
       "lead": "Measure from the normal",
@@ -46,7 +46,7 @@
     }
   ],
   "limits": "It is a ray-optics idealisation, exact only where the wavelength is negligible compared with surface features. When roughness is comparable to the wavelength, scattering and diffraction take over, and a surface smooth for radio waves can be rough for visible light. The law says only where light goes, not how much: the reflected fraction is governed by the Fresnel equations and depends on angle, polarisation, and the media. For a periodic surface like a diffraction grating, interference produces multiple orders rather than a single mirror beam.",
-  "misreadings": "The angles are measured from the normal, not from the surface — the single commonest error. A rough surface does not violate the law: it holds locally on each microfacet, and the scattering comes from the varying local normals, not any breakdown of the rule. And the law is purely geometric; how much light actually reflects is a separate matter set by the Fresnel equations.",
+  "misreadings": "The angles are measured from the normal, not from the surface: the single commonest error. A rough surface does not violate the law: it holds locally on each microfacet, and the scattering comes from the varying local normals, not any breakdown of the rule. And the law is purely geometric; how much light actually reflects is a separate matter set by the Fresnel equations.",
   "origin": "Known to antiquity, stated in the Catoptrics traditionally ascribed to Euclid around 300 BC and derived by Hero of Alexandria from a shortest-path principle; given a deeper basis by Fermat's principle of least time in the seventeenth century and by Maxwell's electromagnetism in the nineteenth.",
   "category": "physics",
   "reliability": "Empirical",

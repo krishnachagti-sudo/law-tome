@@ -20,8 +20,8 @@
       "text": "Raft underlies widely used systems such as etcd (Kubernetes’ coordination store), HashiCorp Consul, CockroachDB, and Apache Kafka’s KRaft mode."
     }
   ],
-  "whyItMatters": "Raft’s emphasis on understandability made distributed consensus far more accessible to engineers and students than Paxos had been — a user study in the original paper found students learned Raft more easily — driving its rapid, widespread adoption in production infrastructure.",
-  "limits": "Raft is not Byzantine fault tolerant — it assumes servers fail by stopping, not by acting maliciously — and it relies on a single leader per term, which can create a temporary availability gap during elections and a throughput bottleneck since all writes flow through one node.",
+  "whyItMatters": "Raft’s emphasis on understandability made distributed consensus far more accessible to engineers and students than Paxos had been, a user study in the original paper found students learned Raft more easily, driving its rapid, widespread adoption in production infrastructure.",
+  "limits": "Raft is not Byzantine fault tolerant (it assumes servers fail by stopping, not by acting maliciously) and it relies on a single leader per term, which can create a temporary availability gap during elections and a throughput bottleneck since all writes flow through one node.",
   "misreadings": "Raft is sometimes assumed to guarantee strict linearizable reads from any replica without qualification; in practice safe linearizable reads require additional mechanisms such as leader leases or read-index checks, and its guarantees apply only under its non-Byzantine failure model.",
   "origin": "Devised by Diego Ongaro and John Ousterhout of Stanford University; the paper was presented at USENIX ATC 2014 and received a Best Paper Award.",
   "category": "software",

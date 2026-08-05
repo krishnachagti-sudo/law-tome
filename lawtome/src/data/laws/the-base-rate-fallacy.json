@@ -7,12 +7,12 @@
   ],
   "statement": "Judging a case on its specifics while ignoring how common it is to begin with.",
   "statementAccent": "ignoring how common it is to begin with",
-  "meaning": "The tendency, when judging a probability, to over-rely on specific information about the case and ignore the base rate — the general prevalence in the population. Because a rare condition is rare, a positive test for it is often a false positive, yet people fixate on the test's accuracy and forget how uncommon the condition is.",
+  "meaning": "The tendency, when judging a probability, to over-rely on specific information about the case and ignore the base rate: the general prevalence in the population. Because a rare condition is rare, a positive test for it is often a false positive, yet people fixate on the test's accuracy and forget how uncommon the condition is.",
   "mechanism": "It is a failure to apply Bayes' theorem: people confuse the probability of the hypothesis given the evidence with the probability of the evidence given the hypothesis, over-weighting the specific likelihood and under-weighting the prior. When the base rate is low, the many true negatives generate more false positives than the few true cases generate true positives, so the posterior stays low even after strong-seeming evidence.",
   "examples": [
     {
       "tag": "The rare-disease test",
-      "text": "For a condition present in two percent of people, an accurate test can still leave a positive result more likely false than true, because the healthy majority produces most of the positives — the same test looks reliable in a high-prevalence group and unreliable in a low one."
+      "text": "For a condition present in two percent of people, an accurate test can still leave a positive result more likely false than true, because the healthy majority produces most of the positives: the same test looks reliable in a high-prevalence group and unreliable in a low one."
     },
     {
       "tag": "The taxicab problem",
@@ -33,7 +33,7 @@
       "text": "The mental shortcut behind it, identified by Tversky and Kahneman: judging likelihood by how well a case resembles a category, while neglecting how common that category is."
     }
   ],
-  "whyItMatters": "It distorts judgement wherever rare events meet imperfect tests — medical screening, security, and law — and drives systematic overconfidence in positive results. It is the practical failure that Bayes' theorem exists to correct, and a staple of the heuristics-and-biases account of human reasoning.",
+  "whyItMatters": "It distorts judgement wherever rare events meet imperfect tests (medical screening, security, and law) and drives systematic overconfidence in positive results. It is the practical failure that Bayes' theorem exists to correct, and a staple of the heuristics-and-biases account of human reasoning.",
   "working": [
     {
       "lead": "Start from the base rate",
@@ -45,11 +45,11 @@
     },
     {
       "lead": "Reframe in natural frequencies",
-      "text": "recast probabilities as counts — say, ten in a thousand rather than one percent — which sharply improves people's Bayesian reasoning."
+      "text": "recast probabilities as counts (say, ten in a thousand rather than one percent), which sharply improves people's Bayesian reasoning."
     }
   ],
-  "limits": "It is a robust, widely replicated cognitive bias with a precise normative benchmark in Bayes' theorem. A notable qualification: Gigerenzer and Hoffrage showed that presenting the same problem in natural frequencies rather than probabilities substantially increases correct answers, so the error is partly a matter of representation and can be reduced, though not eliminated. There is also genuine scholarly debate over how irrational base-rate neglect really is and how to characterise it normatively — the empirical phenomenon is not in doubt, but its interpretation is contested.",
-  "misreadings": "It is not that base rates always dominate — specific evidence matters too — but that people wrongly ignore the base rate almost entirely. And it is not immovable: reframing the problem in natural frequencies reliably reduces the error, so it is partly a failure of presentation, not only of reasoning.",
+  "limits": "It is a robust, widely replicated cognitive bias with a precise normative benchmark in Bayes' theorem. A notable qualification: Gigerenzer and Hoffrage showed that presenting the same problem in natural frequencies rather than probabilities substantially increases correct answers, so the error is partly a matter of representation and can be reduced, though not eliminated. There is also genuine scholarly debate over how irrational base-rate neglect really is and how to characterise it normatively: the empirical phenomenon is not in doubt, but its interpretation is contested.",
+  "misreadings": "It is not that base rates always dominate, specific evidence matters too, but that people wrongly ignore the base rate almost entirely. And it is not immovable: reframing the problem in natural frequencies reliably reduces the error, so it is partly a failure of presentation, not only of reasoning.",
   "origin": "Studied by Amos Tversky and Daniel Kahneman from the 1970s as part of the heuristics-and-biases programme, through problems such as the cab problem and the 'Tom W.' sketch, and tied to the representativeness heuristic.",
   "category": "psychology",
   "reliability": "Empirical",

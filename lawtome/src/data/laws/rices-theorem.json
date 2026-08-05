@@ -4,12 +4,12 @@
   "name": "Rice's Theorem",
   "statement": "Every non-trivial question about what a program does is undecidable.",
   "statementAccent": "what a program does is undecidable",
-  "meaning": "Every non-trivial semantic property of a program — any property of the behaviour or function it computes, that holds for some programs but not all — is undecidable. There is no general algorithm that can decide, for every possible program, any interesting question about what that program actually does.",
-  "mechanism": "The proof reduces from the halting problem. Suppose a decider existed for some non-trivial behavioural property; arrange, without loss of generality, that a never-halting program lacks the property while some program has it. Given any program and input, build a new program that first simulates the given one and, only if that halts, behaves like the program with the property. The new program has the property exactly when the original halts — so deciding the property would decide halting, which is impossible. The property must be semantic, depending only on the function computed, so that two programs computing the same function are treated alike.",
+  "meaning": "Every non-trivial semantic property of a program (any property of the behaviour or function it computes, that holds for some programs but not all) is undecidable. There is no general algorithm that can decide, for every possible program, any interesting question about what that program actually does.",
+  "mechanism": "The proof reduces from the halting problem. Suppose a decider existed for some non-trivial behavioural property; arrange, without loss of generality, that a never-halting program lacks the property while some program has it. Given any program and input, build a new program that first simulates the given one and, only if that halts, behaves like the program with the property. The new program has the property exactly when the original halts, so deciding the property would decide halting, which is impossible. The property must be semantic, depending only on the function computed, so that two programs computing the same function are treated alike.",
   "examples": [
     {
       "tag": "Does it ever print this?",
-      "text": "Whether an arbitrary program ever outputs a particular value is a non-trivial semantic property — some programs do, some do not — and is therefore undecidable in general."
+      "text": "Whether an arbitrary program ever outputs a particular value is a non-trivial semantic property (some programs do, some do not) and is therefore undecidable in general."
     },
     {
       "tag": "Are two programs equivalent?",
@@ -45,7 +45,7 @@
       "text": "since perfect behavioural analysis is impossible, build tools that safely over- or under-approximate rather than aim for exact answers."
     }
   ],
-  "limits": "It applies only to semantic, behavioural properties — properties of the function computed. Syntactic properties of the source text, such as its length or whether it contains a certain keyword, are decidable, and the theorem says nothing against them. Trivial properties, true of every program or of none, are also decidable; non-triviality is a required hypothesis. And it concerns general algorithms over all programs — many specific instances, and restricted or finite-state classes, are perfectly decidable.",
+  "limits": "It applies only to semantic, behavioural properties: properties of the function computed. Syntactic properties of the source text, such as its length or whether it contains a certain keyword, are decidable, and the theorem says nothing against them. Trivial properties, true of every program or of none, are also decidable; non-triviality is a required hypothesis. And it concerns general algorithms over all programs: many specific instances, and restricted or finite-state classes, are perfectly decidable.",
   "misreadings": "It does not say every property of a program is undecidable — syntactic properties of the source are decidable, and so are trivial properties. And it is about general algorithms over all programs, not about any particular program, whose behaviour may well be determinable case by case.",
   "origin": "Proved by Henry Gordon Rice in 'Classes of recursively enumerable sets and their decision problems,' Transactions of the American Mathematical Society 74:358-366 (1953), drawn from his doctoral work.",
   "category": "software",

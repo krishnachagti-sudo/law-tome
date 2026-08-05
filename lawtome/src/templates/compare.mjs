@@ -17,7 +17,7 @@ import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
 const FRAMING = {
   'near-twin': {
     eyebrow: 'Often confused',
-    lede: 'These two are easy to mix up. Here is what each one actually claims — side by side — so you can tell them apart.',
+    lede: 'These two are easy to mix up. Here is what each one actually claims, side by side, so you can tell them apart.',
   },
   tension: {
     eyebrow: 'In tension',
@@ -125,7 +125,7 @@ ${who}
   const shared = [...relSlugs(a)].filter((x) => relSlugs(b).has(x) && byslug[x]).map((x) => byslug[x]);
   const common = [];
   if (a.category && a.category === b.category) common.push(`Both sit in <a href="${base}category/${escapeHtml(a.category)}/">${catLabel(a.category)}</a>.`);
-  else if (a.category && b.category) common.push(`They come from different fields — <a href="${base}category/${escapeHtml(a.category)}/">${catLabel(a.category)}</a> and <a href="${base}category/${escapeHtml(b.category)}/">${catLabel(b.category)}</a>.`);
+  else if (a.category && b.category) common.push(`They come from different fields: <a href="${base}category/${escapeHtml(a.category)}/">${catLabel(a.category)}</a> and <a href="${base}category/${escapeHtml(b.category)}/">${catLabel(b.category)}</a>.`);
   if (a.reliability && a.reliability === b.reliability) common.push(`Both are rated <a href="${base}reliability/${reliabilitySlug(a.reliability)}/">${escapeHtml(a.reliability)}</a>, so they stand on the same kind of evidence.`);
   else if (a.reliability && b.reliability) common.push(`They are not equally well established: ${escapeHtml(a.name)} is rated <a href="${base}reliability/${reliabilitySlug(a.reliability)}/">${escapeHtml(a.reliability)}</a> and ${escapeHtml(b.name)} <a href="${base}reliability/${reliabilitySlug(b.reliability)}/">${escapeHtml(b.reliability)}</a>.`);
   if (a.coinedYear && b.coinedYear) {
@@ -182,12 +182,12 @@ ${srcList(b)}
   const faq = hubFaq([
     {
       q: `What is the difference between ${a.name} and ${b.name}?`,
-      a: `${escapeHtml(a.name)} says ${a.statement ? `“${escapeHtml(a.statement)}”` : 'one thing'}; ${escapeHtml(b.name)} says ${b.statement ? `“${escapeHtml(b.statement)}”` : 'another'}. ${relation === 'tension' ? 'They pull in opposite directions, so which applies depends on your conditions — the two are compared field by field above.' : 'They are near-twins and easy to confuse; the field-by-field comparison above sets out what each actually claims.'}`,
+      a: `${escapeHtml(a.name)} says ${a.statement ? `“${escapeHtml(a.statement)}”` : 'one thing'}; ${escapeHtml(b.name)} says ${b.statement ? `“${escapeHtml(b.statement)}”` : 'another'}. ${relation === 'tension' ? 'They pull in opposite directions, so which applies depends on your conditions. The two are compared field by field above.' : 'They are near-twins and easy to confuse; the field-by-field comparison above sets out what each actually claims.'}`,
     },
     {
       q: `Are ${a.name} and ${b.name} the same thing?`,
       a: relation === 'tension'
-        ? 'No — the corpus records them as opposed: what one recommends, the other warns against.'
+        ? 'No. The corpus records them as opposed: what one recommends, the other warns against.'
         : 'No, though they are routinely mistaken for each other. They are recorded here as near-twins precisely because the confusion is common.',
     },
     {
@@ -196,7 +196,7 @@ ${srcList(b)}
       // Pointing at each law's own limits section makes the refusal useful:
       // it hands the reader the two paragraphs the decision actually turns on.
       q: 'Which one should I apply?',
-      a: `Whichever one's conditions your case meets — this page will not guess which that is. ${escapeHtml(a.name)} ${a.limits ? 'states where it stops working' : 'sets out its scope'}, and so does ${escapeHtml(b.name)}; both passages are above, in the entries' own words. Reading the two limits side by side answers this faster than a recommendation from a site that cannot see your situation.`,
+      a: `Whichever one's conditions your case meets. This page will not guess which that is. ${escapeHtml(a.name)} ${a.limits ? 'states where it stops working' : 'sets out its scope'}, and so does ${escapeHtml(b.name)}; both passages are above, in the entries' own words. Reading the two limits side by side answers this faster than a recommendation from a site that cannot see your situation.`,
     },
   ], { heading: 'Questions about this pair' });
 

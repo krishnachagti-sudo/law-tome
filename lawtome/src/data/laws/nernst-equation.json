@@ -4,12 +4,12 @@
   "name": "The Nernst Equation",
   "statement": "A cell's voltage depends on the concentrations of its reactants, not just the standard value.",
   "statementAccent": "depends on the concentrations of its reactants",
-  "meaning": "The voltage an electrochemical cell actually delivers is its standard potential adjusted by a term that depends on the concentrations — strictly, the activities — of the species involved. As the reaction proceeds toward equilibrium the correction grows and the voltage falls toward zero, which is why a battery goes flat.",
+  "meaning": "The voltage an electrochemical cell actually delivers is its standard potential adjusted by a term that depends on the concentrations (strictly, the activities) of the species involved. As the reaction proceeds toward equilibrium the correction grows and the voltage falls toward zero, which is why a battery goes flat.",
   "mechanism": "The cell potential equals the standard potential minus a term proportional to absolute temperature and the logarithm of the reaction quotient, divided by the number of electrons transferred and the Faraday constant. It is not an independent postulate but the electrochemical restatement of Gibbs free energy, combining the relation between free energy and the reaction quotient with the expression of free energy as electrical work.",
   "examples": [
     {
       "tag": "A dying battery",
-      "text": "As reactants deplete and products build up, the reaction quotient shifts, the correction term grows, and the terminal voltage falls toward zero at equilibrium — a dead battery is a cell that has reached it."
+      "text": "As reactants deplete and products build up, the reaction quotient shifts, the correction term grows, and the terminal voltage falls toward zero at equilibrium: a dead battery is a cell that has reached it."
     },
     {
       "tag": "pH meters and ion sensors",
@@ -17,7 +17,7 @@
     },
     {
       "tag": "The neuron's membrane potential",
-      "text": "The equilibrium voltage across a membrane for a single permeant ion is a Nernst potential, set by the concentration difference across the membrane — foundational to how nerves work."
+      "text": "The equilibrium voltage across a membrane for a single permeant ion is a Nernst potential, set by the concentration difference across the membrane: foundational to how nerves work."
     }
   ],
   "variants": [
@@ -45,8 +45,8 @@
       "text": "for concentrated or non-ideal electrolytes, use activities rather than concentrations, and apply it only at negligible net current."
     }
   ],
-  "limits": "The equation is rigorous only in terms of activities; using concentrations is valid only in dilute, near-ideal solutions and deviates in concentrated electrolytes. It assumes equilibrium and reversibility, applying only when there is no net current — under significant current, kinetic effects and overpotential make the measured potential depart from the prediction. At extremely low concentrations the logarithm diverges and the prediction becomes unphysical. It is a rigorous consequence of equilibrium thermodynamics whose reliability degrades predictably outside those assumptions.",
-  "misreadings": "It is not an empirical fit but a consequence of equilibrium thermodynamics, and it holds only near equilibrium with negligible current — a cell delivering real current departs from it through overpotential. Its concentration term is strictly in activities, so treating concentrations as activities is an approximation valid only in dilute solutions.",
+  "limits": "The equation is rigorous only in terms of activities; using concentrations is valid only in dilute, near-ideal solutions and deviates in concentrated electrolytes. It assumes equilibrium and reversibility, applying only when there is no net current: under significant current, kinetic effects and overpotential make the measured potential depart from the prediction. At extremely low concentrations the logarithm diverges and the prediction becomes unphysical. It is a rigorous consequence of equilibrium thermodynamics whose reliability degrades predictably outside those assumptions.",
+  "misreadings": "It is not an empirical fit but a consequence of equilibrium thermodynamics, and it holds only near equilibrium with negligible current: a cell delivering real current departs from it through overpotential. Its concentration term is strictly in activities, so treating concentrations as activities is an approximation valid only in dilute solutions.",
   "origin": "Derived by the German physical chemist Walther Nernst in 1889 from the thermodynamics of electrochemical cells; he later won the 1920 Nobel Prize in Chemistry for his work on thermochemistry, though for the heat theorem rather than this equation.",
   "category": "chemistry",
   "reliability": "Empirical",

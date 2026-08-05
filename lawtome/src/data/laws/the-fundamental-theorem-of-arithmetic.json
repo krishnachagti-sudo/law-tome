@@ -8,7 +8,7 @@
   "statement": "Every whole number above one factors into primes in exactly one way.",
   "statementAccent": "in exactly one way",
   "meaning": "Every integer greater than one is either a prime or can be written as a product of primes, and that factorization is unique except for the order of the factors. Primes are the multiplicative building blocks of the whole numbers: every number is assembled from them by multiplication, and the recipe of primes and their multiplicities is fixed for each number.",
-  "mechanism": "The theorem has two parts. Existence — that every number above one is a product of primes — follows by induction: a prime stands alone, and a composite splits into smaller factors that themselves factor into primes. Uniqueness — that the factorization is essentially the only one — rests on Euclid's lemma, that if a prime divides a product it must divide one of the factors. Euclid's lemma is exactly what forbids rearranged alternative factorizations, which is why uniqueness fails in number systems where irreducible elements need not be prime.",
+  "mechanism": "The theorem has two parts. Existence (that every number above one is a product of primes) follows by induction: a prime stands alone, and a composite splits into smaller factors that themselves factor into primes. Uniqueness (that the factorization is essentially the only one) rests on Euclid's lemma, that if a prime divides a product it must divide one of the factors. Euclid's lemma is exactly what forbids rearranged alternative factorizations, which is why uniqueness fails in number systems where irreducible elements need not be prime.",
   "examples": [
     {
       "tag": "A worked factorization",
@@ -16,24 +16,24 @@
     },
     {
       "tag": "Why one is not prime",
-      "text": "If one counted as prime, factorizations could be padded endlessly with extra ones, destroying uniqueness — so one is excluded to keep each number's factorization unique."
+      "text": "If one counted as prime, factorizations could be padded endlessly with extra ones, destroying uniqueness, so one is excluded to keep each number's factorization unique."
     },
     {
       "tag": "Where uniqueness breaks",
-      "text": "In some extended number systems factorization is not unique: in one such system, six factors both as two times three and as a product of two other irreducibles — because there an irreducible need not be prime."
+      "text": "In some extended number systems factorization is not unique: in one such system, six factors both as two times three and as a product of two other irreducibles, because there an irreducible need not be prime."
     }
   ],
   "variants": [
     {
       "name": "Euclid's lemma",
-      "text": "The result that a prime dividing a product must divide one of the factors — the engine of the uniqueness half of the theorem."
+      "text": "The result that a prime dividing a product must divide one of the factors: the engine of the uniqueness half of the theorem."
     },
     {
       "name": "Unique factorization domains",
       "text": "The general algebraic setting: number systems in which factorization into irreducibles is unique are called unique factorization domains, and not all number systems are."
     }
   ],
-  "whyItMatters": "It establishes primes as the atoms of arithmetic and underlies the whole of number theory — divisibility, greatest common divisors and least common multiples, and modular arithmetic all rest on unique factorization. It is the reason primes are treated as the fundamental objects from which the integers are built.",
+  "whyItMatters": "It establishes primes as the atoms of arithmetic and underlies the whole of number theory: divisibility, greatest common divisors and least common multiples, and modular arithmetic all rest on unique factorization. It is the reason primes are treated as the fundamental objects from which the integers are built.",
   "working": [
     {
       "lead": "Factor into primes",
@@ -48,9 +48,9 @@
       "text": "exclude one from the primes deliberately, since counting it would break the uniqueness the theorem asserts."
     }
   ],
-  "limits": "It holds for the ordinary integers, but fails in some extended number systems, the non-unique-factorization domains, where a number can factor into irreducibles in genuinely different ways — because there an irreducible element need not be prime, so Euclid's lemma, and with it uniqueness, breaks down. The convention that one is not prime is essential to the statement holding as written. Within the integers, however, the theorem is deductively certain and admits no exception.",
-  "misreadings": "It is not that every number system enjoys unique factorization — some do not, and the property defines a special class of number systems. And excluding one from the primes is not arbitrary bookkeeping; it is exactly what preserves the uniqueness the theorem asserts.",
-  "origin": "Its groundwork is in Euclid's Elements around 300 BC — Euclid's lemma and a partial uniqueness result — but the first clear full statement with a rigorous proof of uniqueness is Carl Friedrich Gauss's, in Disquisitiones Arithmeticae (1801).",
+  "limits": "It holds for the ordinary integers, but fails in some extended number systems, the non-unique-factorization domains, where a number can factor into irreducibles in genuinely different ways, because there an irreducible element need not be prime, so Euclid's lemma, and with it uniqueness, breaks down. The convention that one is not prime is essential to the statement holding as written. Within the integers, however, the theorem is deductively certain and admits no exception.",
+  "misreadings": "It is not that every number system enjoys unique factorization: some do not, and the property defines a special class of number systems. And excluding one from the primes is not arbitrary bookkeeping; it is exactly what preserves the uniqueness the theorem asserts.",
+  "origin": "Its groundwork is in Euclid's Elements around 300 BC, Euclid's lemma and a partial uniqueness result, but the first clear full statement with a rigorous proof of uniqueness is Carl Friedrich Gauss's, in Disquisitiones Arithmeticae (1801).",
   "category": "mathematics",
   "reliability": "Empirical",
   "provenance": "canon",

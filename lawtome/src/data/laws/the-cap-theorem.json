@@ -2,7 +2,9 @@
   "no": "229",
   "slug": "the-cap-theorem",
   "name": "The CAP Theorem",
-  "aliases": ["Brewer's theorem"],
+  "aliases": [
+    "Brewer's theorem"
+  ],
   "statement": "When the network splits, a distributed store must choose between staying consistent and staying available.",
   "statementAccent": "choose between staying consistent and staying available",
   "meaning": "A distributed data store can provide at most two of three guarantees at once: consistency, that every read sees the latest write; availability, that every request gets a non-error response; and partition tolerance, that the system keeps working despite dropped messages between nodes. Because network partitions are a fact of distributed life, the real choice, when one occurs, is between consistency and availability.",
@@ -10,7 +12,7 @@
   "examples": [
     {
       "tag": "Consistency-first systems",
-      "text": "Stores that refuse to serve stale or divergent data during a partition — favouring consistency over availability — such as systems built around a single authoritative master."
+      "text": "Stores that refuse to serve stale or divergent data during a partition, favouring consistency over availability, such as systems built around a single authoritative master."
     },
     {
       "tag": "Availability-first systems",
@@ -18,13 +20,13 @@
     },
     {
       "tag": "Tunable in one product",
-      "text": "Cassandra and DynamoDB offer tunable consistency, so a single system can be operated at different points on the spectrum — reinforcing that the fixed two-of-three picture oversimplifies."
+      "text": "Cassandra and DynamoDB offer tunable consistency, so a single system can be operated at different points on the spectrum: reinforcing that the fixed two-of-three picture oversimplifies."
     }
   ],
   "variants": [
     {
       "name": "The PACELC theorem",
-      "text": "Abadi's extension: if there is a partition, trade availability against consistency; else, even in normal operation, trade latency against consistency — capturing the latency dimension CAP ignores."
+      "text": "Abadi's extension: if there is a partition, trade availability against consistency; else, even in normal operation, trade latency against consistency (capturing the latency dimension CAP ignores)."
     },
     {
       "name": "Eventual consistency",
@@ -33,12 +35,21 @@
   ],
   "whyItMatters": "It is the organising principle of distributed database design, forcing architects to confront an unavoidable trade-off and to decide, in advance, how their system should behave when the network fails. It named the tension at the heart of every replicated data store and shaped a generation of NoSQL systems.",
   "working": [
-    {"lead": "Plan for the partition", "text": "decide in advance whether your system should sacrifice consistency or availability when a network partition strikes."},
-    {"lead": "Treat partition tolerance as mandatory", "text": "for any real distributed system, assume partitions will happen and design for them rather than pretending to avoid them."},
-    {"lead": "Remember normal operation is different", "text": "recognise that outside a partition you can have both consistency and availability, and the trade-off then becomes latency versus consistency."}
+    {
+      "lead": "Plan for the partition",
+      "text": "decide in advance whether your system should sacrifice consistency or availability when a network partition strikes."
+    },
+    {
+      "lead": "Treat partition tolerance as mandatory",
+      "text": "for any real distributed system, assume partitions will happen and design for them rather than pretending to avoid them."
+    },
+    {
+      "lead": "Remember normal operation is different",
+      "text": "recognise that outside a partition you can have both consistency and availability, and the trade-off then becomes latency versus consistency."
+    }
   ],
-  "limits": "The formal impossibility result is a proven theorem, but the popular 'pick two of three' slogan is widely considered misleading — including by Brewer himself in his 2012 retrospective. The consistency-versus-availability choice only arises during a partition; when the network is healthy, a system can have both. Partition tolerance is effectively mandatory, so giving it up is not a real option for a distributed system. Availability is a spectrum and consistency comes in degrees, and the choice can vary by subsystem or even by operation. CAP also says nothing about latency, which the PACELC extension addresses. Its consistency, meaning linearizability, is also not the consistency of database ACID.",
-  "misreadings": "It does not mean you permanently pick two of three properties and forever forgo the third — the trade-off bites only during a partition, and in normal operation you can have both consistency and availability. And 'CA' is not a meaningful choice for a real distributed system, since partitions cannot be wished away.",
+  "limits": "The formal impossibility result is a proven theorem, but the popular 'pick two of three' slogan is widely considered misleading: including by Brewer himself in his 2012 retrospective. The consistency-versus-availability choice only arises during a partition; when the network is healthy, a system can have both. Partition tolerance is effectively mandatory, so giving it up is not a real option for a distributed system. Availability is a spectrum and consistency comes in degrees, and the choice can vary by subsystem or even by operation. CAP also says nothing about latency, which the PACELC extension addresses. Its consistency, meaning linearizability, is also not the consistency of database ACID.",
+  "misreadings": "It does not mean you permanently pick two of three properties and forever forgo the third: the trade-off bites only during a partition, and in normal operation you can have both consistency and availability. And 'CA' is not a meaningful choice for a real distributed system, since partitions cannot be wished away.",
   "origin": "Conjectured by Eric Brewer in a 2000 keynote and proved by Seth Gilbert and Nancy Lynch in 'Brewer's Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services' (ACM SIGACT News, 2002); Brewer clarified the oversimplified reading in a 2012 retrospective.",
   "category": "software",
   "reliability": "Empirical",
@@ -47,12 +58,26 @@
   "namedAfter": "Eric Brewer",
   "namesakeKind": "person",
   "sources": [
-    {"text": "CAP theorem, Wikipedia. — the three guarantees, the Gilbert-Lynch proof, and Brewer's 2012 clarification.", "url": "https://en.wikipedia.org/wiki/CAP_theorem", "type": "secondary"},
-    {"text": "Brewer, \"CAP Twelve Years Later: How the 'Rules' Have Changed,\" IEEE Computer (2012). — why the two-of-three framing misleads and the choice only bites during a partition.", "url": "https://ieeexplore.ieee.org/document/6133253/", "type": "primary"}
+    {
+      "text": "CAP theorem, Wikipedia. — the three guarantees, the Gilbert-Lynch proof, and Brewer's 2012 clarification.",
+      "url": "https://en.wikipedia.org/wiki/CAP_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Brewer, \"CAP Twelve Years Later: How the 'Rules' Have Changed,\" IEEE Computer (2012). — why the two-of-three framing misleads and the choice only bites during a partition.",
+      "url": "https://ieeexplore.ieee.org/document/6133253/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/CAP_theorem",
   "related": [
-    {"slug": "the-two-generals-problem", "kind": "kindred"},
-    {"slug": "the-byzantine-generals-problem", "kind": "kindred"}
+    {
+      "slug": "the-two-generals-problem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-byzantine-generals-problem",
+      "kind": "kindred"
+    }
   ]
 }

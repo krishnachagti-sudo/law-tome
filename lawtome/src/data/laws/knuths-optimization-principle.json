@@ -7,14 +7,14 @@
     "The root of all evil",
     "Hoare's Dictum"
   ],
-  "statement": "We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil — yet we should not pass up our opportunities in that critical 3%.",
+  "statement": "We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil, yet we should not pass up our opportunities in that critical 3%.",
   "statementAccent": "premature optimization is the root of all evil",
-  "meaning": "Most of a program's code does not matter to its speed, and time spent making that code faster is time lost twice — once in the writing, and again in every later attempt to read or debug the result. The small remainder that does matter should be found by measurement and then optimised hard.",
+  "meaning": "Most of a program's code does not matter to its speed, and time spent making that code faster is time lost twice: once in the writing, and again in every later attempt to read or debug the result. The small remainder that does matter should be found by measurement and then optimised hard.",
   "mechanism": "Execution time in almost any non-trivial program is concentrated: a small fraction of the code accounts for most of the running time, and which fraction it is cannot reliably be guessed from reading the source. Optimising by intuition therefore mostly touches code that was never the constraint, while making it denser, more coupled and harder to change — costs that are paid on every subsequent edit. Measuring first inverts the order: it identifies the small region where the same effort buys a real improvement, and leaves the rest legible. Knuth's whole passage makes this the argument, not the slogan: the objection is to the wasted 97%, not to optimisation.",
   "examples": [
     {
       "tag": "The hand-unrolled loop",
-      "text": "A loop is rewritten for speed and becomes unreadable. It runs once per request, takes microseconds, and sits behind a database call taking milliseconds — the saving is invisible and the cost is permanent."
+      "text": "A loop is rewritten for speed and becomes unreadable. It runs once per request, takes microseconds, and sits behind a database call taking milliseconds: the saving is invisible and the cost is permanent."
     },
     {
       "tag": "The profiler's surprise",
@@ -22,7 +22,7 @@
     },
     {
       "tag": "The 3% that pays",
-      "text": "The other half of the sentence, usually dropped. An inner loop in a codec, a hot path in an allocator, an index on the query that runs a million times a day — all worth doing at any cost in readability, because measurement showed they are where the time is."
+      "text": "The other half of the sentence, usually dropped. An inner loop in a codec, a hot path in an allocator, an index on the query that runs a million times a day: all worth doing at any cost in readability, because measurement showed they are where the time is."
     }
   ],
   "whyItMatters": "It is the most quoted sentence in programming, and the one most often quoted against its author's meaning. Read whole, it is a claim about where effort should go rather than a claim that effort is bad, and it supplies the argument for the profiler as a standard tool: not because measuring is virtuous, but because guessing is demonstrably poor.",
@@ -33,15 +33,15 @@
     },
     {
       "lead": "Optimise the critical 3% without apology",
-      "text": "the sentence explicitly says not to pass those up. Once measurement has found the hot path, unreadable code there is a fair trade — with a comment saying why."
+      "text": "the sentence explicitly says not to pass those up. Once measurement has found the hot path, unreadable code there is a fair trade: with a comment saying why."
     },
     {
       "lead": "Separate design choices from micro-optimisation",
       "text": "picking the right data structure or avoiding a quadratic algorithm is not premature optimisation; it is design, and it is far more expensive to retrofit than a tight loop is."
     }
   ],
-  "limits": "It is advice about micro-optimisation, and it is regularly stretched to cover architectural decisions it was never about — an algorithm with the wrong complexity class, a schema that forces a full scan, or a protocol chattier than the network allows are choices measurement will confirm too late to change cheaply. The 97/3 split is rhetorical, not measured. And the whole argument assumes a profiler and a representative workload; where neither exists, 'measure first' is not available and judgement has to serve.",
-  "misreadings": "It is not an argument against caring about performance, and Knuth — who wrote the passage inside an article defending the judicious use of goto for exactly performance reasons — plainly did care. The operative word is premature: optimisation before measurement, not optimisation. The sentence is also almost always quoted with its second half removed, which reverses the balance of the advice.",
+  "limits": "It is advice about micro-optimisation, and it is regularly stretched to cover architectural decisions it was never about: an algorithm with the wrong complexity class, a schema that forces a full scan, or a protocol chattier than the network allows are choices measurement will confirm too late to change cheaply. The 97/3 split is rhetorical, not measured. And the whole argument assumes a profiler and a representative workload; where neither exists, 'measure first' is not available and judgement has to serve.",
+  "misreadings": "It is not an argument against caring about performance, and Knuth (who wrote the passage inside an article defending the judicious use of goto for exactly performance reasons) plainly did care. The operative word is premature: optimisation before measurement, not optimisation. The sentence is also almost always quoted with its second half removed, which reverses the balance of the advice.",
   "origin": "From Donald Knuth's \"Structured Programming with go to Statements\", ACM Computing Surveys 6(4), December 1974, pp. 261–301, at section 1. Fifteen years later, in \"The Errors of TeX\" (Software—Practice & Experience 19(7), 1989), Knuth referred to the maxim as Hoare's Dictum; C. A. R. Hoare is not documented as having originated it, and the attribution is doubtful. The 1974 wording is the one quoted here.",
   "category": "software",
   "reliability": "Heuristic",
@@ -63,9 +63,21 @@
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Program_optimization",
   "related": [
-    { "slug": "yagni", "kind": "kindred" },
-    { "slug": "amdahls-law", "kind": "kindred" },
-    { "slug": "pareto-principle", "kind": "kindred" },
-    { "slug": "worse-is-better", "kind": "kindred" }
+    {
+      "slug": "yagni",
+      "kind": "kindred"
+    },
+    {
+      "slug": "amdahls-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "pareto-principle",
+      "kind": "kindred"
+    },
+    {
+      "slug": "worse-is-better",
+      "kind": "kindred"
+    }
   ]
 }

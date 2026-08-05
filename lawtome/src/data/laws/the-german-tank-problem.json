@@ -2,7 +2,10 @@
   "no": "693",
   "slug": "the-german-tank-problem",
   "name": "The German Tank Problem",
-  "aliases": ["Serial number estimation", "Maximum estimation problem"],
+  "aliases": [
+    "Serial number estimation",
+    "Maximum estimation problem"
+  ],
   "statement": "From a handful of captured serial numbers you can estimate how many tanks the enemy built, and do it startlingly well.",
   "statementAccent": "estimate how many tanks the enemy built, and do it startlingly well",
   "meaning": "The German tank problem is a problem in statistical estimation: inferring the total number of items in a population, the maximum of a discrete uniform distribution, from a sample of observed serial numbers. It takes its name from a striking real application during the Second World War, when the Western Allies wanted to estimate German tank production, especially of the Panther. German tanks carried sequential serial numbers on components such as gearboxes, chassis, and engines, and Allied statisticians used the numbers from captured and destroyed tanks to estimate how many had been built. Their statistical estimates turned out to be far more accurate than conventional intelligence estimates, which greatly overstated production. The problem is now a celebrated illustration of how a small, well-analysed sample and the mathematics of order statistics can outperform guesswork, and it is widely taught as an example of estimating a population size from serial numbers.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The German tank problem is a celebrated real-world demonstration of the power of statistical estimation, showing how a principled analysis of a small sample can dramatically outperform impressionistic intelligence. It gives a concrete, memorable application of order statistics and unbiased estimation, and its wartime success, with statistical estimates landing within a percent or two of figures only revealed after the war, is a classic vindication of quantitative methods over conventional guesswork. The problem is a standard example in statistics courses, teaching how to reason from observed serial numbers to a hidden population size and how to correct the natural bias of using the sample maximum. It also generalises well beyond tanks, to any setting where sequentially numbered items leak information about an unknown total, from manufacturing to estimating the size of collections.",
   "working": [
-    {"lead": "Collect serial numbers", "text": "gather the sequential numbers of a random sample of items from a population numbered one up to an unknown total."},
-    {"lead": "Correct the sample maximum", "text": "take the largest observed number and add the expected gap to the true maximum, giving the estimator m plus m over k minus one."},
-    {"lead": "Compare to alternatives", "text": "note how the statistical estimate beat wartime intelligence figures, and that a Bayesian version yields a full posterior over the total."}
+    {
+      "lead": "Collect serial numbers",
+      "text": "gather the sequential numbers of a random sample of items from a population numbered one up to an unknown total."
+    },
+    {
+      "lead": "Correct the sample maximum",
+      "text": "take the largest observed number and add the expected gap to the true maximum, giving the estimator m plus m over k minus one."
+    },
+    {
+      "lead": "Compare to alternatives",
+      "text": "note how the statistical estimate beat wartime intelligence figures, and that a Bayesian version yields a full posterior over the total."
+    }
   ],
   "limits": "The estimator relies on assumptions that may not hold exactly: that items are numbered consecutively without gaps, that the observed sample is effectively random, and that numbering starts from a known point. In practice serial numbers can restart, skip, or encode batches, and captured samples may be biased toward certain units or times, all of which can distort the estimate. The frequentist and Bayesian analyses can give different answers, especially with very small samples, and the method estimates the maximum reached, not necessarily current or future production. The wartime figures, while genuinely impressive, come from a particular historical case and depend on the reliability of the recovered numbers. So the problem is a powerful illustration of estimation under clean assumptions rather than a formula to be applied uncritically.",
   "misreadings": "The method does not simply take the largest captured serial number as the answer; that value is biased low and must be corrected upward by the expected gap, which is the whole point. The wartime accuracy was real but reflects a favourable case with consecutive numbering and a decent sample, not a guarantee that serial-number estimation always works so well. And the technique estimates a population maximum under specific assumptions; where numbering is irregular or the sample is not random, the estimate can be badly off, so it is a model to be applied with care rather than a universal shortcut.",
@@ -45,12 +57,26 @@
   "provenance": "canon",
   "namedAfter": null,
   "sources": [
-    {"text": "German tank problem, Wikipedia. — the serial-number estimation setup, the wartime origin using gearbox and other numbers, the minimum-variance unbiased estimator m plus m over k minus one, and the comparison of statistical (about 246 per month) versus intelligence (about 1,400) versus actual (245) figures.", "url": "https://en.wikipedia.org/wiki/German_tank_problem", "type": "secondary"},
-    {"text": "Lessons from the German Tank Problem, S. J. Miller et al. (Williams College). — an academic treatment of the estimator and its statistical basis.", "url": "https://web.williams.edu/Mathematics/sjmiller/public_html/math/papers/GTPv10.pdf", "type": "secondary"}
+    {
+      "text": "German tank problem, Wikipedia. — the serial-number estimation setup, the wartime origin using gearbox and other numbers, the minimum-variance unbiased estimator m plus m over k minus one, and the comparison of statistical (about 246 per month) versus intelligence (about 1,400) versus actual (245) figures.",
+      "url": "https://en.wikipedia.org/wiki/German_tank_problem",
+      "type": "secondary"
+    },
+    {
+      "text": "Lessons from the German Tank Problem, S. J. Miller et al. (Williams College). — an academic treatment of the estimator and its statistical basis.",
+      "url": "https://web.williams.edu/Mathematics/sjmiller/public_html/math/papers/GTPv10.pdf",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/German_tank_problem",
   "related": [
-    {"slug": "the-boy-or-girl-paradox", "kind": "kindred"},
-    {"slug": "regression-to-the-mean", "kind": "kindred"}
+    {
+      "slug": "the-boy-or-girl-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "regression-to-the-mean",
+      "kind": "kindred"
+    }
   ]
 }

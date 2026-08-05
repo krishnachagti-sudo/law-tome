@@ -24,7 +24,7 @@ const num = (n) => Number(n).toLocaleString('en-US');
 // The sentence every kind page has to carry, and the one the hub carries once.
 // Written in one place so the two cannot drift into saying different things
 // about how the same list was built.
-const RULE = 'Membership here is read off the name. An entry is on this page because the name it is known by says so — not because anybody judged the idea to fit.';
+const RULE = 'Membership here is read off the name. An entry is on this page because the name it is known by says so, not because anybody judged the idea to fit.';
 
 /* -------------------------------------------------------------------- hub */
 

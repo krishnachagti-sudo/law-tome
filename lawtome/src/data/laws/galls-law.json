@@ -4,12 +4,12 @@
   "name": "Gall's Law",
   "statement": "A complex system that works is invariably found to have evolved from a simple system that worked.",
   "statementAccent": "evolved from a simple system",
-  "meaning": "Working complexity grows out of working simplicity — you rarely get a big system right by designing the whole thing up front.",
-  "mechanism": "A simple system that works is a foundation you can trust: you add to it one change at a time and check that each step still works. A complex system built from scratch has too many interacting parts to get right at once, and too many places for a fault to hide — so it tends not to work, and patching rarely rescues it. Evolution beats grand design because it validates continuously.",
+  "meaning": "Working complexity grows out of working simplicity: you rarely get a big system right by designing the whole thing up front.",
+  "mechanism": "A simple system that works is a foundation you can trust: you add to it one change at a time and check that each step still works. A complex system built from scratch has too many interacting parts to get right at once, and too many places for a fault to hide, so it tends not to work, and patching rarely rescues it. Evolution beats grand design because it validates continuously.",
   "examples": [
     {
       "tag": "Grew from simple",
-      "text": "The web began as a plain way to link documents and grew, one working feature at a time, into a platform. It is the standard illustration of the law — a complex system whose every layer was added to something that already worked."
+      "text": "The web began as a plain way to link documents and grew, one working feature at a time, into a platform. It is the standard illustration of the law: a complex system whose every layer was added to something that already worked."
     },
     {
       "tag": "The rewrite trap",
@@ -17,13 +17,13 @@
     },
     {
       "tag": "The big-bang launch",
-      "text": "Healthcare.gov (2013) went live as a vast system wiring together many agencies and insurers at once, and collapsed for most users on launch day — a complex system built and switched on whole, rather than evolved from a working simple one."
+      "text": "Healthcare.gov (2013) went live as a vast system wiring together many agencies and insurers at once, and collapsed for most users on launch day: a complex system built and switched on whole, rather than evolved from a working simple one."
     }
   ],
   "variants": [
     {
       "name": "Worse is better",
-      "text": "Richard Gabriel's thesis (c. 1989–91): a simpler design that ships and spreads often beats the more correct, more complete one that arrives late. A close cousin — simplicity wins by getting into the world and evolving there."
+      "text": "Richard Gabriel's thesis (c. 1989–91): a simpler design that ships and spreads often beats the more correct, more complete one that arrives late. A close cousin: simplicity wins by getting into the world and evolving there."
     },
     {
       "name": "The MVP / incremental delivery",
@@ -46,12 +46,12 @@
     },
     {
       "lead": "Remember simple is necessary, not sufficient",
-      "text": "Gall's own caveat is that 'a simple system may or may not work' — starting small buys you a path, not a guarantee."
+      "text": "Gall's own caveat is that 'a simple system may or may not work': starting small buys you a path, not a guarantee."
     }
   ],
-  "limits": "Gall wrote Systemantics as satire, and the law is an aphorism, not a proven theorem — there is no study behind it. It leans on survivorship bias: we observe the complex systems that survived and infer they all grew from simple ones, without seeing the simple systems that never grew or the clean-slate designs that quietly succeeded. Clean-sheet redesign is sometimes genuinely necessary, and the strong 'never rewrite' reading is contested — documented cases exist on both sides. And Gall's own qualifier undercuts naïve optimism: a simple system may or may not work, so starting small is necessary but never sufficient.",
-  "misreadings": "It does not say planning or architecture are useless, or that any simple thing will grow into the right complex thing — plenty of simple systems evolve into messes. The claim is about the reliable path to working complexity, not a guarantee about the destination.",
-  "origin": "Stated by the author and paediatrician John Gall in his 1975 book General Systemantics (later retitled Systemantics, then The Systems Bible). The book pairs it with a blunt corollary — 'a complex system designed from scratch never works and cannot be patched up to make it work; you have to start over, beginning with a working simple system' — and a caution that 'a simple system may or may not work'. The label 'Gall's Law' was attached by later readers, not by the book itself.",
+  "limits": "Gall wrote Systemantics as satire, and the law is an aphorism, not a proven theorem. There is no study behind it. It leans on survivorship bias: we observe the complex systems that survived and infer they all grew from simple ones, without seeing the simple systems that never grew or the clean-slate designs that quietly succeeded. Clean-sheet redesign is sometimes genuinely necessary, and the strong 'never rewrite' reading is contested: documented cases exist on both sides. And Gall's own qualifier undercuts naïve optimism: a simple system may or may not work, so starting small is necessary but never sufficient.",
+  "misreadings": "It does not say planning or architecture are useless, or that any simple thing will grow into the right complex thing: plenty of simple systems evolve into messes. The claim is about the reliable path to working complexity, not a guarantee about the destination.",
+  "origin": "Stated by the author and paediatrician John Gall in his 1975 book General Systemantics (later retitled Systemantics, then The Systems Bible). The book pairs it with a blunt corollary: 'a complex system designed from scratch never works and cannot be patched up to make it work; you have to start over, beginning with a working simple system', and a caution that 'a simple system may or may not work'. The label 'Gall's Law' was attached by later readers, not by the book itself.",
   "category": "software",
   "reliability": "Heuristic",
   "provenance": "canon",

@@ -4,16 +4,16 @@
   "name": "The Hawthorne Effect",
   "statement": "People change their behaviour when they know they are being watched.",
   "statementAccent": "when they know they are being watched",
-  "meaning": "The mere fact of being observed or studied can change what people do — the attention, the novelty, the sense of being singled out — independently of whatever the study is actually manipulating. In research this contaminates the effect you are trying to measure: the observing becomes an uncontrolled variable of its own.",
+  "meaning": "The mere fact of being observed or studied can change what people do (the attention, the novelty, the sense of being singled out) independently of whatever the study is actually manipulating. In research this contaminates the effect you are trying to measure: the observing becomes an uncontrolled variable of its own.",
   "mechanism": "Awareness of being watched is thought to change behaviour through several channels: motivation to please or impress the observer, extra effort under scrutiny, the novelty of being studied, feedback from the attention, and shifted group dynamics. The mechanisms are debated rather than settled, and the effect is better regarded as a family of reactivity phenomena than a single clean cause.",
   "examples": [
     {
       "tag": "Output rose whatever the lighting",
-      "text": "The founding story: in the Hawthorne illumination experiments, worker output was said to rise whether the lighting was brightened or dimmed, suggesting the attention of being studied, not the lighting, drove the change. This is the classic narrative — and the very claim later reanalysis disputes."
+      "text": "The founding story: in the Hawthorne illumination experiments, worker output was said to rise whether the lighting was brightened or dimmed, suggesting the attention of being studied, not the lighting, drove the change. This is the classic narrative, and the very claim later reanalysis disputes."
     },
     {
       "tag": "Trial-participation reactivity",
-      "text": "Participants in clinical and behavioural trials often improve — taking medication more faithfully, eating better, washing hands more — simply because they know they are enrolled and monitored, which can inflate an apparent treatment effect."
+      "text": "Participants in clinical and behavioural trials often improve (taking medication more faithfully, eating better, washing hands more) simply because they know they are enrolled and monitored, which can inflate an apparent treatment effect."
     },
     {
       "tag": "Monitored work",
@@ -23,7 +23,7 @@
   "variants": [
     {
       "name": "The observer effect",
-      "text": "The broader term for observation altering the thing observed — the Hawthorne effect is the human-behaviour, awareness-driven case of it."
+      "text": "The broader term for observation altering the thing observed: the Hawthorne effect is the human-behaviour, awareness-driven case of it."
     },
     {
       "name": "The John Henry effect",
@@ -31,18 +31,27 @@
     },
     {
       "name": "Demand characteristics",
-      "text": "When subjects infer what a study is looking for and unconsciously conform to it — a close cousin, driven by guessing the experimenter's aim rather than mere awareness of being watched."
+      "text": "When subjects infer what a study is looking for and unconsciously conform to it: a close cousin, driven by guessing the experimenter's aim rather than mere awareness of being watched."
     }
   ],
   "whyItMatters": "It is the standard warning that studying people can change them, and the reason researchers use blinding, control groups, and unobtrusive measures. But it is also a lesson in how a memorable name outran its evidence: the original studies turn out to be far weaker than the textbook telling, so the effect must be invoked with care.",
   "working": [
-    {"lead": "Design to reduce reactivity", "text": "use blinding, controls, longer observation, and unobtrusive measures so that being studied does not masquerade as the effect you want."},
-    {"lead": "Discount short-term improvement under observation", "text": "expect a temporary bump when monitoring starts and fades; do not mistake it for a durable change."},
-    {"lead": "Don't lean on the original studies as proof", "text": "cite the phenomenon of reactivity, not the Hawthorne illumination data, which the Levitt–List reanalysis found largely does not support the classic story."}
+    {
+      "lead": "Design to reduce reactivity",
+      "text": "use blinding, controls, longer observation, and unobtrusive measures so that being studied does not masquerade as the effect you want."
+    },
+    {
+      "lead": "Discount short-term improvement under observation",
+      "text": "expect a temporary bump when monitoring starts and fades; do not mistake it for a durable change."
+    },
+    {
+      "lead": "Don't lean on the original studies as proof",
+      "text": "cite the phenomenon of reactivity, not the Hawthorne illumination data, which the Levitt–List reanalysis found largely does not support the classic story."
+    }
   ],
-  "limits": "The popular Hawthorne story is substantially oversold. The original illumination data were long thought lost; when Steven Levitt and John List located and reanalysed them (NBER working paper, 2009; published 2011), they reported that the famous patterns were, in their words, 'entirely fictional' — the claim that every lighting change boosted output is not supported, and the apparent effect largely disappears once day-of-week and pay-period cycles are controlled for, leaving only 'hints of more subtle manifestations'. The original studies also rested on tiny samples and tangled confounds (pay incentives, supervision changes, worker replacement). Reactivity is real in general, but the canonical evidence for it is weak.",
-  "misreadings": "It is not cleanly proven by the Hawthorne studies — that is the irony of the name. The illumination experiments do not show output reliably rising with every change; a modern reanalysis found the classic pattern to be largely an artefact. The defensible claim is the general one, that awareness of observation can change behaviour, not that the original factory data demonstrate it robustly.",
-  "origin": "Named for the Hawthorne Works, a Western Electric factory in Cicero, Illinois, where a series of productivity studies ran from 1924 to 1932, including the illumination and relay-assembly experiments associated with Elton Mayo's team. The term itself was coined decades later, during 1950s reanalyses of the data — usually credited to Henry Landsberger in 1958, with an earlier informal use sometimes attributed to John R. P. French.",
+  "limits": "The popular Hawthorne story is substantially oversold. The original illumination data were long thought lost; when Steven Levitt and John List located and reanalysed them (NBER working paper, 2009; published 2011), they reported that the famous patterns were, in their words, 'entirely fictional': the claim that every lighting change boosted output is not supported, and the apparent effect largely disappears once day-of-week and pay-period cycles are controlled for, leaving only 'hints of more subtle manifestations'. The original studies also rested on tiny samples and tangled confounds (pay incentives, supervision changes, worker replacement). Reactivity is real in general, but the canonical evidence for it is weak.",
+  "misreadings": "It is not cleanly proven by the Hawthorne studies. That is the irony of the name. The illumination experiments do not show output reliably rising with every change; a modern reanalysis found the classic pattern to be largely an artefact. The defensible claim is the general one, that awareness of observation can change behaviour, not that the original factory data demonstrate it robustly.",
+  "origin": "Named for the Hawthorne Works, a Western Electric factory in Cicero, Illinois, where a series of productivity studies ran from 1924 to 1932, including the illumination and relay-assembly experiments associated with Elton Mayo's team. The term itself was coined decades later, during 1950s reanalyses of the data: usually credited to Henry Landsberger in 1958, with an earlier informal use sometimes attributed to John R. P. French.",
   "category": "psychology",
   "reliability": "Contested",
   "provenance": "canon",
@@ -50,13 +59,31 @@
   "namedAfter": "The Hawthorne Works",
   "namesakeKind": "place",
   "sources": [
-    {"text": "Hawthorne effect, Wikipedia. — the studies, the coinage history, and the Levitt–List reanalysis.", "url": "https://en.wikipedia.org/wiki/Hawthorne_effect", "type": "secondary"},
-    {"text": "Levitt, S.D. & List, J.A. (2011). \"Was There Really a Hawthorne Effect at the Hawthorne Plant?\" American Economic Journal: Applied Economics, 3(1), 224–238 (NBER w15016).", "url": "https://www.nber.org/papers/w15016", "type": "primary"},
-    {"text": "\"Hawthorne Effect,\" Simply Psychology. — the phenomenon, the classic narrative, and its caveats.", "url": "https://www.simplypsychology.org/hawthorne-effect.html", "type": "secondary"}
+    {
+      "text": "Hawthorne effect, Wikipedia. — the studies, the coinage history, and the Levitt–List reanalysis.",
+      "url": "https://en.wikipedia.org/wiki/Hawthorne_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Levitt, S.D. & List, J.A. (2011). \"Was There Really a Hawthorne Effect at the Hawthorne Plant?\" American Economic Journal: Applied Economics, 3(1), 224–238 (NBER w15016).",
+      "url": "https://www.nber.org/papers/w15016",
+      "type": "primary"
+    },
+    {
+      "text": "\"Hawthorne Effect,\" Simply Psychology. — the phenomenon, the classic narrative, and its caveats.",
+      "url": "https://www.simplypsychology.org/hawthorne-effect.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Hawthorne_effect",
   "related": [
-    {"slug": "goodharts-law", "kind": "kindred"},
-    {"slug": "pygmalion-effect", "kind": "kindred"}
+    {
+      "slug": "goodharts-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "pygmalion-effect",
+      "kind": "kindred"
+    }
   ]
 }

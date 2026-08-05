@@ -2,7 +2,10 @@
   "no": "439",
   "slug": "swansons-law",
   "name": "Swanson's Law",
-  "aliases": ["The solar learning curve", "The Swanson effect"],
+  "aliases": [
+    "The solar learning curve",
+    "The Swanson effect"
+  ],
   "statement": "Solar module prices fall about 20% for every doubling of cumulative shipped volume.",
   "statementAccent": "for every doubling of cumulative shipped volume",
   "meaning": "Swanson's law is the observation that the price of solar photovoltaic modules tends to fall by about twenty percent for every doubling of cumulative shipped volume. It is a solar-specific instance of the experience or learning curve, keyed to how much has ever been produced rather than to the passage of time. A commonly cited corollary is that, at the growth rates of recent decades, costs have fallen by around three-quarters roughly every ten years. The figure is a rough regularity, with estimates clustering near twenty percent, not an exact constant.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It captured a fall in solar costs that mainstream energy forecasters repeatedly and dramatically underestimated, reframing solar from a niche, subsidy-dependent technology into one increasingly cost-competitive with or cheaper than fossil fuels for new generation. That reshaped energy-transition and climate modelling and gave a deployment-driven basis for projecting future costs: policies that grow cumulative volume mechanically drive price down. It has become a standard reference point in debates over how fast renewable energy can scale.",
   "working": [
-    {"lead": "Key cost to volume", "text": "project module price from cumulative shipped volume rather than from the calendar, since the doubling of production is what drives the fall."},
-    {"lead": "Expect the pace to slow", "text": "anticipate each doubling taking longer as the industry matures, so annual price declines ease even as the curve continues."},
-    {"lead": "Look past the module", "text": "remember that module price is only part of an installed system's cost, so a module drop does not translate one-for-one to cheaper rooftop solar."}
+    {
+      "lead": "Key cost to volume",
+      "text": "project module price from cumulative shipped volume rather than from the calendar, since the doubling of production is what drives the fall."
+    },
+    {
+      "lead": "Expect the pace to slow",
+      "text": "anticipate each doubling taking longer as the industry matures, so annual price declines ease even as the curve continues."
+    },
+    {
+      "lead": "Look past the module",
+      "text": "remember that module price is only part of an installed system's cost, so a module drop does not translate one-for-one to cheaper rooftop solar."
+    }
   ],
   "limits": "It is an empirical trend, not a physical law, a fitted regularity with scatter around the twenty percent line and no guarantee of continuing. It depends on cumulative volume continuing to double, and as the industry matures each doubling takes longer while material and processing floors constrain further drops; forecasters now project only a few percent annual module-price decline, versus fifteen to twenty percent in the prior decade, consistent with a slowing rather than repealed curve. Module price is also only part of total system cost: balance-of-system and soft costs such as inverters, mounting, labour, and permitting have not fallen nearly as fast. The learning rate itself is uncertain, around twenty to twenty-five percent.",
   "misreadings": "It is not like Moore's law and not about time: Moore's law is roughly time-based, while Swanson's law is keyed to cumulative volume, and the 'cheaper every decade' figure is a derived consequence of past volume growth, not a fundamental clock. It is not twenty percent cheaper every year; the twenty percent is per doubling of cumulative volume, which only coincided with near-annual declines while volume was doubling fast. It governs module price, not the price of a whole installed system, which includes large non-module costs. And Swanson did not invent it in 2012; The Economist popularised the name then, over an older underlying relationship.",
@@ -47,12 +59,26 @@
   "namedAfter": "Richard Swanson",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Swanson's law, Wikipedia. — the ~20 percent per doubling statement, the price history, and the naming by The Economist.", "url": "https://en.wikipedia.org/wiki/Swanson%27s_law", "type": "secondary"},
-    {"text": "Our World in Data, 'Solar photovoltaic panel prices.' — the long-run module price series and learning-curve dataset.", "url": "https://ourworldindata.org/grapher/solar-pv-prices", "type": "secondary"}
+    {
+      "text": "Swanson's law, Wikipedia. — the ~20 percent per doubling statement, the price history, and the naming by The Economist.",
+      "url": "https://en.wikipedia.org/wiki/Swanson%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Our World in Data, 'Solar photovoltaic panel prices.' — the long-run module price series and learning-curve dataset.",
+      "url": "https://ourworldindata.org/grapher/solar-pv-prices",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Swanson%27s_law",
   "related": [
-    {"slug": "the-experience-curve", "kind": "cause"},
-    {"slug": "wrights-law", "kind": "kindred"}
+    {
+      "slug": "the-experience-curve",
+      "kind": "cause"
+    },
+    {
+      "slug": "wrights-law",
+      "kind": "kindred"
+    }
   ]
 }

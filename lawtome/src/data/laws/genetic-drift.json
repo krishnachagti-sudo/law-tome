@@ -7,16 +7,16 @@
   ],
   "statement": "Allele frequencies wander by pure chance, and in small populations they wander far.",
   "statementAccent": "by pure chance",
-  "meaning": "Genetic drift is the change in the frequency of an allele in a population due to chance — the random sampling of which individuals happen to reproduce — rather than to natural selection. It is directionless, guided only by the mathematics of chance, and its per-generation effect is larger in small populations. Over time it can drive an allele all the way to fixation or to loss, and so it steadily erodes genetic variation.",
-  "mechanism": "The alleles passed to the next generation are a random sample of those in the current one, and in any finite population this sampling has error, so frequencies fluctuate generation to generation. The standard idealisation, the Wright-Fisher model, imagines a fixed population reproducing by drawing alleles at random. From it follow clean results: the chance a neutral allele eventually fixes equals its current frequency, so a brand-new neutral mutation fixes with probability one over twice the population size, and the average time to fixation scales with population size — smaller populations fixing alleles faster.",
+  "meaning": "Genetic drift is the change in the frequency of an allele in a population due to chance, the random sampling of which individuals happen to reproduce, rather than to natural selection. It is directionless, guided only by the mathematics of chance, and its per-generation effect is larger in small populations. Over time it can drive an allele all the way to fixation or to loss, and so it steadily erodes genetic variation.",
+  "mechanism": "The alleles passed to the next generation are a random sample of those in the current one, and in any finite population this sampling has error, so frequencies fluctuate generation to generation. The standard idealisation, the Wright-Fisher model, imagines a fixed population reproducing by drawing alleles at random. From it follow clean results: the chance a neutral allele eventually fixes equals its current frequency, so a brand-new neutral mutation fixes with probability one over twice the population size, and the average time to fixation scales with population size (smaller populations fixing alleles faster).",
   "examples": [
     {
       "tag": "The jar of marbles",
-      "text": "Draw a random handful from a jar of ten red and ten blue marbles to found each new generation and the colour proportions drift by chance until one is fixed — the classic illustration of drift's random, directionless nature."
+      "text": "Draw a random handful from a jar of ten red and ten blue marbles to found each new generation and the colour proportions drift by chance until one is fixed: the classic illustration of drift's random, directionless nature."
     },
     {
       "tag": "The elephant seal bottleneck",
-      "text": "Northern elephant seals fell to about thirty individuals in the 1890s and, though now hundreds of thousands, carry very little genetic diversity — drift through a bottleneck stamped into a whole species."
+      "text": "Northern elephant seals fell to about thirty individuals in the 1890s and, though now hundreds of thousands, carry very little genetic diversity: drift through a bottleneck stamped into a whole species."
     },
     {
       "tag": "Fixing neutral mutations",
@@ -26,7 +26,7 @@
   "variants": [
     {
       "name": "Founder and bottleneck effects",
-      "text": "Special cases in which a small number of individuals — a founding group or the survivors of a crash — carry a chance sample of the gene pool, amplifying drift."
+      "text": "Special cases in which a small number of individuals, a founding group or the survivors of a crash, carry a chance sample of the gene pool, amplifying drift."
     },
     {
       "name": "The nearly neutral theory",
@@ -48,8 +48,8 @@
       "text": "in conservation, guard against the loss of variation that drift causes in small populations, which narrows the material selection can work on."
     }
   ],
-  "limits": "Drift dominates over selection only when a variant is effectively neutral — roughly when the selection coefficient is smaller than the reciprocal of the population size — so for strongly selected alleles selection prevails. Distinguishing drift from selection in real data is genuinely hard, which is why drift serves as the null model. Its relative importance was and remains debated: Fisher downplayed drift while Wright, through his shifting-balance theory, elevated it, and the neutralist-selectionist controversy turned on how much molecular variation is neutral. The nearly neutral theory further ties the balance to effective population size.",
-  "misreadings": "Evolution is not natural selection alone; drift, mutation, and gene flow are also mechanisms of change. Drift does not occur only in small populations — it acts in populations of any size, and only the per-generation magnitude of change is larger when populations are small. And drift is not mere inconsequential noise: it can fix or eliminate alleles, reduces genetic variation, and, under the neutral theory, accounts for the bulk of molecular evolution.",
+  "limits": "Drift dominates over selection only when a variant is effectively neutral, roughly when the selection coefficient is smaller than the reciprocal of the population size, so for strongly selected alleles selection prevails. Distinguishing drift from selection in real data is genuinely hard, which is why drift serves as the null model. Its relative importance was and remains debated: Fisher downplayed drift while Wright, through his shifting-balance theory, elevated it, and the neutralist-selectionist controversy turned on how much molecular variation is neutral. The nearly neutral theory further ties the balance to effective population size.",
+  "misreadings": "Evolution is not natural selection alone; drift, mutation, and gene flow are also mechanisms of change. Drift does not occur only in small populations: it acts in populations of any size, and only the per-generation magnitude of change is larger when populations are small. And drift is not mere inconsequential noise: it can fix or eliminate alleles, reduces genetic variation, and, under the neutral theory, accounts for the bulk of molecular evolution.",
   "origin": "Given its mathematical theory chiefly by Sewall Wright in the late 1920s and early 1930s, who introduced the effective population size, with early treatments by Fisher and the Hagedoorns; a pillar of the modern synthesis and the foundation of Kimura's later neutral theory.",
   "category": "biology",
   "reliability": "Empirical",

@@ -4,7 +4,7 @@
   "name": "The Planning Fallacy",
   "statement": "We underestimate how long things will take, even knowing how long they took last time.",
   "statementAccent": "even knowing how long they took last time",
-  "meaning": "The planning fallacy is the tendency to underestimate the time a future task will need — and, in its later, broader form, the cost and risk too — even when one knows that similar past tasks have overrun. Its striking feature is that the optimism survives the memory of previous delays: people plan as if this time will go smoothly, though it rarely has before.",
+  "meaning": "The planning fallacy is the tendency to underestimate the time a future task will need (and, in its later, broader form, the cost and risk too), even when one knows that similar past tasks have overrun. Its striking feature is that the optimism survives the memory of previous delays: people plan as if this time will go smoothly, though it rarely has before.",
   "mechanism": "The bias is oddly specific to one's own tasks. Asked to forecast their own project, people build a best-case path through the particular steps and give too little weight to the many ways it can slip. Asked to forecast others doing the same task, they turn realistic or even pessimistic. The proposed cure is to swap this inside view for an outside view: ignore the case's details and use the distribution of outcomes from a reference class of similar past projects. That method, reference class forecasting, was developed by Bent Flyvbjerg and adopted by several governments.",
   "examples": [
     {
@@ -13,7 +13,7 @@
     },
     {
       "tag": "The Sydney Opera House",
-      "text": "Estimated to open in 1963 at a few million pounds, a scaled-down version opened in 1973 at more than a hundred million — the archetypal runaway public project, though its exact figures vary by source."
+      "text": "Estimated to open in 1963 at a few million pounds, a scaled-down version opened in 1973 at more than a hundred million: the archetypal runaway public project, though its exact figures vary by source."
     },
     {
       "tag": "Systematic cost overruns",
@@ -30,14 +30,23 @@
       "text": "Flyvbjerg's rival explanation for megaprojects: that promoters deliberately low-ball costs and inflate benefits to win approval, so the overruns are less honest error than calculated deception."
     }
   ],
-  "whyItMatters": "It names one of the most consequential and universal biases in planning, from students misjudging a deadline to governments misjudging a railway by billions. Its remedy — taking the outside view, forecasting from a reference class of past cases — is a genuinely practical corrective now written into public-project guidance in several countries.",
+  "whyItMatters": "It names one of the most consequential and universal biases in planning, from students misjudging a deadline to governments misjudging a railway by billions. Its remedy (taking the outside view, forecasting from a reference class of past cases) is a genuinely practical corrective now written into public-project guidance in several countries.",
   "working": [
-    {"lead": "Take the outside view", "text": "forecast a task from the record of similar past tasks rather than from a hopeful walk through this one's particulars."},
-    {"lead": "Unpack the task", "text": "break a project into its component subtasks and estimate each, which tends to yield longer, more accurate totals."},
-    {"lead": "Distrust the best case", "text": "treat your smooth-path estimate as a floor, not a forecast, and weight the many ways things can slip."}
+    {
+      "lead": "Take the outside view",
+      "text": "forecast a task from the record of similar past tasks rather than from a hopeful walk through this one's particulars."
+    },
+    {
+      "lead": "Break the task down",
+      "text": "break a project into its component subtasks and estimate each, which tends to yield longer, more accurate totals."
+    },
+    {
+      "lead": "Distrust the best case",
+      "text": "treat your smooth-path estimate as a floor, not a forecast, and weight the many ways things can slip."
+    }
   ],
-  "limits": "The original 1979 statement was about time; the extension to cost, risk, and benefits is a later broadening by Lovallo and Kahneman, not to be read back into the earlier work. Whether the cause is pure cognitive optimism is contested: for megaprojects Flyvbjerg argues the overruns are best explained not by honest bias but by strategic misrepresentation — deliberate low-balling to secure approval. Review evidence on optimism as the driver of cost misestimation is mixed, with some studies finding no bias or even pessimism. And the monetary figures for the famous cases vary by source and by whether they are stated in nominal or constant currency.",
-  "misreadings": "It is not a general claim that all forecasts are too optimistic — the bias attaches to one's own tasks, while forecasts of others' identical tasks tend to be realistic or pessimistic. And for large public projects, underestimation may not be an innocent cognitive error at all but a strategic one, which the purely psychological framing misses.",
+  "limits": "The original 1979 statement was about time; the extension to cost, risk, and benefits is a later broadening by Lovallo and Kahneman, not to be read back into the earlier work. Whether the cause is pure cognitive optimism is contested: for megaprojects Flyvbjerg argues the overruns are best explained not by honest bias but by strategic misrepresentation (deliberate low-balling to secure approval). Review evidence on optimism as the driver of cost misestimation is mixed, with some studies finding no bias or even pessimism. And the monetary figures for the famous cases vary by source and by whether they are stated in nominal or constant currency.",
+  "misreadings": "It is not a general claim that all forecasts are too optimistic: the bias attaches to one's own tasks, while forecasts of others' identical tasks tend to be realistic or pessimistic. And for large public projects, underestimation may not be an innocent cognitive error at all but a strategic one, which the purely psychological framing misses.",
   "origin": "Coined by Daniel Kahneman and Amos Tversky in 'Intuitive Prediction: Biases and Corrective Procedures' (1979); established experimentally by Roger Buehler, Dale Griffin, and Michael Ross in 1994, broadened to cost and risk by Lovallo and Kahneman in 2003, and applied to megaprojects through Bent Flyvbjerg's reference-class forecasting.",
   "category": "psychology",
   "reliability": "Empirical",
@@ -46,13 +55,31 @@
   "namedAfter": "Daniel Kahneman and Amos Tversky",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Buehler, Griffin & Ross, \"Exploring the 'Planning Fallacy',\" Journal of Personality and Social Psychology 67(3):366-381 (1994). — the thesis study and the self-other asymmetry.", "url": "https://web.mit.edu/curhan/www/docs/Articles/biases/67_J_Personality_and_Social_Psychology_366,_1994.pdf", "type": "primary"},
-    {"text": "Flyvbjerg, Holm & Buhl, \"Underestimating Costs in Public Works Projects: Error or Lie?\" Journal of the American Planning Association (2002). — systematic cost overruns and the strategic-misrepresentation argument.", "url": "https://ti.org/pdfs/Flyvbjerg02.pdf", "type": "primary"},
-    {"text": "Planning fallacy, Wikipedia. — the definition, the inside/outside view, reference class forecasting, and the standard examples.", "url": "https://en.wikipedia.org/wiki/Planning_fallacy", "type": "secondary"}
+    {
+      "text": "Buehler, Griffin & Ross, \"Exploring the 'Planning Fallacy',\" Journal of Personality and Social Psychology 67(3):366-381 (1994). — the thesis study and the self-other asymmetry.",
+      "url": "https://web.mit.edu/curhan/www/docs/Articles/biases/67_J_Personality_and_Social_Psychology_366,_1994.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Flyvbjerg, Holm & Buhl, \"Underestimating Costs in Public Works Projects: Error or Lie?\" Journal of the American Planning Association (2002). — systematic cost overruns and the strategic-misrepresentation argument.",
+      "url": "https://ti.org/pdfs/Flyvbjerg02.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Planning fallacy, Wikipedia. — the definition, the inside/outside view, reference class forecasting, and the standard examples.",
+      "url": "https://en.wikipedia.org/wiki/Planning_fallacy",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Planning_fallacy",
   "related": [
-    {"slug": "the-sunk-cost-fallacy", "kind": "kindred"},
-    {"slug": "hofstadters-law", "kind": "kindred"}
+    {
+      "slug": "the-sunk-cost-fallacy",
+      "kind": "kindred"
+    },
+    {
+      "slug": "hofstadters-law",
+      "kind": "kindred"
+    }
   ]
 }

@@ -2,10 +2,10 @@
   "no": "119",
   "slug": "groschs-law",
   "name": "Grosch's Law",
-  "statement": "Computer power rises as the square of the price — so bigger machines were the bargain.",
+  "statement": "Computer power rises as the square of the price, so bigger machines were the bargain.",
   "statementAccent": "as the square of the price",
-  "meaning": "In the mainframe era, a computer's performance grew as the square of its cost: to get twice the power you paid only about 1.4 times as much, and doubling your spend bought roughly four times the performance. So one large machine delivered far more computing per dollar than several small ones — the economic case for centralised mainframes.",
-  "mechanism": "An empirical economy of scale in mid-twentieth-century computing. Within the mainframe regime, faster circuitry, larger memories, and greater throughput scaled up in capability faster than in cost, and fixed overheads — operators, facilities, peripherals, software — were amortised across far more work on a big machine, reinforcing the per-unit advantage of size.",
+  "meaning": "In the mainframe era, a computer's performance grew as the square of its cost: to get twice the power you paid only about 1.4 times as much, and doubling your spend bought roughly four times the performance. So one large machine delivered far more computing per dollar than several small ones: the economic case for centralised mainframes.",
+  "mechanism": "An empirical economy of scale in mid-twentieth-century computing. Within the mainframe regime, faster circuitry, larger memories, and greater throughput scaled up in capability faster than in cost, and fixed overheads (operators, facilities, peripherals, software) were amortised across far more work on a big machine, reinforcing the per-unit advantage of size.",
   "examples": [
     {
       "tag": "Buy the biggest machine",
@@ -17,7 +17,7 @@
     },
     {
       "tag": "Confirmed, then not",
-      "text": "Kenneth Knight's analysis of rental cost-and-performance data found the law held for commercial and scientific machines from about 1951 to 1963 — but did not hold for machines of 1963 to 1967, an early sign of its coming breakdown."
+      "text": "Kenneth Knight's analysis of rental cost-and-performance data found the law held for commercial and scientific machines from about 1951 to 1963, but did not hold for machines of 1963 to 1967, an early sign of its coming breakdown."
     }
   ],
   "variants": [
@@ -30,14 +30,23 @@
       "text": "Phillip Ein-Dor's 'Economies of scale in computing: Grosch's law revisited' (Communications of the ACM, 1985) and its follow-ups re-examined the claim and found the economies far more qualified than the simple square rule."
     }
   ],
-  "whyItMatters": "It shaped a generation of computing economics, justifying centralised mainframes and time-sharing over distributed machines. Its later collapse is just as instructive — a vivid case of an empirical 'law' that described one technological era and then failed when the underlying economics inverted.",
+  "whyItMatters": "It shaped a generation of computing economics, justifying centralised mainframes and time-sharing over distributed machines. Its later collapse is just as instructive: a vivid case of an empirical 'law' that described one technological era and then failed when the underlying economics inverted.",
   "working": [
-    {"lead": "Read it as history, not guidance", "text": "Grosch's law described mainframe-era economics; it is obsolete as a present-day rule and should not steer modern buy-big-versus-many decisions."},
-    {"lead": "Watch for regime changes", "text": "the law held until the technology base shifted; treat any 'bigger is cheaper per unit' claim as contingent on the current hardware regime, which can invert."},
-    {"lead": "Distinguish within-class from across-class scaling", "text": "later analysis found economies of scale within a size class but diseconomies across classes, so blanket 'bigger is always cheaper' does not hold."}
+    {
+      "lead": "Read it as history, not guidance",
+      "text": "Grosch's law described mainframe-era economics; it is obsolete as a present-day rule and should not steer modern buy-big-versus-many decisions."
+    },
+    {
+      "lead": "Watch for regime changes",
+      "text": "the law held until the technology base shifted; treat any 'bigger is cheaper per unit' claim as contingent on the current hardware regime, which can invert."
+    },
+    {
+      "lead": "Distinguish within-class from across-class scaling",
+      "text": "later analysis found economies of scale within a size class but diseconomies across classes, so blanket 'bigger is always cheaper' does not hold."
+    }
   ],
-  "limits": "Grosch's law is an empirical, era-bound observation, not a physical law, and it broke down. Knight's data already showed it failing for 1963–1967 machines, and the rise of minicomputers, then microprocessors and commodity distributed computing in the 1970s and 1980s inverted the economics — many cheap mass-produced machines beat one large mainframe, and large-scale integration is often said to have almost completely invalidated it. Ein-Dor's 1985 re-examination found economies of scale within a size category but diseconomies across categories, undercutting any blanket claim. It described the mainframe era and then failed.",
-  "misreadings": "It is not a timeless principle of computing economics but a mid-century regularity that later evidence contradicted and the microprocessor era overturned. Its exact origin date is uncertain — a 1953 publication is reported by secondary sources, while the famous wording dates to 1965 — and it should be cited as a historical belief, not a current guide.",
+  "limits": "Grosch's law is an empirical, era-bound observation, not a physical law, and it broke down. Knight's data already showed it failing for 1963–1967 machines, and the rise of minicomputers, then microprocessors and commodity distributed computing in the 1970s and 1980s inverted the economics: many cheap mass-produced machines beat one large mainframe, and large-scale integration is often said to have almost completely invalidated it. Ein-Dor's 1985 re-examination found economies of scale within a size category but diseconomies across categories, undercutting any blanket claim. It described the mainframe era and then failed.",
+  "misreadings": "It is not a timeless principle of computing economics but a mid-century regularity that later evidence contradicted and the microprocessor era overturned. Its exact origin date is uncertain (a 1953 publication is reported by secondary sources, while the famous wording dates to 1965) and it should be cited as a historical belief, not a current guide.",
   "origin": "Named for Herbert Grosch, an IBM computer scientist. The assertion is reported to have first appeared in 1953, with its most-quoted formulation dating to 1965: added economy grows only as the square root of the increase in speed. It was empirically supported into the early 1960s and then progressively invalidated by cheap commodity computing.",
   "category": "technology",
   "reliability": "Contested",
@@ -45,12 +54,26 @@
   "coinedYear": 1965,
   "namedAfter": "Herbert Grosch",
   "sources": [
-    {"text": "Grosch's law, Wikipedia. — the formulation, the mainframe-scale logic, Knight's data, and the breakdown under LSI/commodity computing.", "url": "https://en.wikipedia.org/wiki/Grosch%27s_law", "type": "secondary"},
-    {"text": "Ein-Dor, P. (1985). \"Economies of scale in computing: Grosch's law revisited.\" Communications of the ACM, 28(2), 142–151. — the within-class vs across-class re-examination.", "url": "https://dl.acm.org/doi/10.1145/2786.2787", "type": "secondary"}
+    {
+      "text": "Grosch's law, Wikipedia. — the formulation, the mainframe-scale logic, Knight's data, and the breakdown under LSI/commodity computing.",
+      "url": "https://en.wikipedia.org/wiki/Grosch%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Ein-Dor, P. (1985). \"Economies of scale in computing: Grosch's law revisited.\" Communications of the ACM, 28(2), 142–151. — the within-class vs across-class re-examination.",
+      "url": "https://dl.acm.org/doi/10.1145/2786.2787",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Grosch%27s_law",
   "related": [
-    {"slug": "moores-law", "kind": "tension"},
-    {"slug": "amdahls-law", "kind": "kindred"}
+    {
+      "slug": "moores-law",
+      "kind": "tension"
+    },
+    {
+      "slug": "amdahls-law",
+      "kind": "kindred"
+    }
   ]
 }

@@ -8,16 +8,16 @@
   ],
   "statement": "Roughly 80% of effects come from 20% of causes.",
   "statementAccent": "20% of causes",
-  "meaning": "In many situations a small share of the inputs accounts for most of the output — a vital few matter far more than the trivial many.",
-  "mechanism": "When contributions are unequal rather than uniform — some customers buy more, some bugs recur more, some tasks deliver more — the total concentrates in the top slice. The 80/20 split is just a memorable label for that skew; the real point is that effort and reward are rarely evenly distributed, so where you aim attention matters enormously.",
+  "meaning": "In many situations a small share of the inputs accounts for most of the output: a vital few matter far more than the trivial many.",
+  "mechanism": "When contributions are unequal rather than uniform (some customers buy more, some bugs recur more, some tasks deliver more) the total concentrates in the top slice. The 80/20 split is just a memorable label for that skew; the real point is that effort and reward are rarely evenly distributed, so where you aim attention matters enormously.",
   "examples": [
     {
       "tag": "Support tickets",
-      "text": "A support team finds that a handful of recurring issues generate the bulk of its tickets; fixing those few root causes clears most of the queue. This is the quality-control use Joseph Juran built the principle around — rank the causes, fix the vital few."
+      "text": "A support team finds that a handful of recurring issues generate the bulk of its tickets; fixing those few root causes clears most of the queue. This is the quality-control use Joseph Juran built the principle around: rank the causes, fix the vital few."
     },
     {
       "tag": "Software crashes",
-      "text": "Microsoft reported that fixing the roughly 20% most-frequently-reported bugs eliminated about 80% of the errors and crashes users actually hit, because a small number of faults recur across millions of machines. (Ballmer went further, saying 1% of bugs caused half of all errors — figures stated by the company, not a controlled study.)"
+      "text": "Microsoft reported that fixing the roughly 20% most-frequently-reported bugs eliminated about 80% of the errors and crashes users actually hit, because a small number of faults recur across millions of machines. (Ballmer went further, saying 1% of bugs caused half of all errors: figures stated by the company, not a controlled study.)"
     },
     {
       "tag": "Customers & revenue",
@@ -27,15 +27,15 @@
   "variants": [
     {
       "name": "The numbers need not sum to 100",
-      "text": "80 and 20 measure different things — a share of causes and a share of effects — so their adding to 100 is a coincidence of the famous example. The real split might be 90/10, 70/20, or 99/1; the principle is about skew, formalised as a power-law (Pareto) distribution."
+      "text": "80 and 20 measure different things, a share of causes and a share of effects, so their adding to 100 is a coincidence of the famous example. The real split might be 90/10, 70/20, or 99/1; the principle is about skew, formalised as a power-law (Pareto) distribution."
     },
     {
       "name": "The vital few of the vital few",
-      "text": "Apply it twice and the concentration deepens: 20% of the 20% — about 4% of causes — can drive 80% of the 80%, roughly 64% of effects. Ballmer's '1% of bugs cause 50% of errors' is this recursion in the wild."
+      "text": "Apply it twice and the concentration deepens: 20% of the 20%, about 4% of causes, can drive 80% of the 80%, roughly 64% of effects. Ballmer's '1% of bugs cause 50% of errors' is this recursion in the wild."
     },
     {
       "name": "The long tail (counterpoint)",
-      "text": "Chris Anderson's corrective: when storage and distribution get cheap, real aggregate value can accumulate in the many low-frequency items — the 'trivial many' — so focusing only on the head can miss it. Same skewed distribution, read from the other end."
+      "text": "Chris Anderson's corrective: when storage and distribution get cheap, real aggregate value can accumulate in the many low-frequency items (the 'trivial many'), so focusing only on the head can miss it. Same skewed distribution, read from the other end."
     }
   ],
   "whyItMatters": "It is a prioritisation tool: find the vital few inputs that drive most of the result and concentrate there before touching the trivial many. It reframes productivity as leverage rather than uniform effort.",
@@ -54,11 +54,11 @@
     },
     {
       "lead": "Re-measure",
-      "text": "the vital few shift as you fix them — today's top 20% changes once resolved, so the analysis is a repeating cycle."
+      "text": "the vital few shift as you fix them: today's top 20% changes once resolved, so the analysis is a repeating cycle."
     }
   ],
-  "limits": "The Pareto Principle is an empirical rule of thumb about skew, not a law of nature: the exact split varies widely and is rarely exactly 80/20, the numbers are illustrative, and not every distribution is a power law — force 80/20 onto a roughly uniform phenomenon and you have made a category error. It is also easily misused to justify neglect ('the other 80% doesn't matter') when tail cases matter for fairness, growth, or rare-but-severe risks. Even Pareto analysis has a known blind spot: it can miss problems that are small today but grow with time.",
-  "misreadings": "The numbers are not a law of nature — 80 and 20 need not sum to 100, and the real split might be 90/10 or 70/30; they are a rule of thumb for skew, not a constant. Nor does it mean the other causes are worthless, only that they carry less leverage.",
+  "limits": "The Pareto Principle is an empirical rule of thumb about skew, not a law of nature: the exact split varies widely and is rarely exactly 80/20, the numbers are illustrative, and not every distribution is a power law (force 80/20 onto a roughly uniform phenomenon and you have made a category error). It is also easily misused to justify neglect ('the other 80% doesn't matter') when tail cases matter for fairness, growth, or rare-but-severe risks. Even Pareto analysis has a known blind spot: it can miss problems that are small today but grow with time.",
+  "misreadings": "The numbers are not a law of nature: 80 and 20 need not sum to 100, and the real split might be 90/10 or 70/30; they are a rule of thumb for skew, not a constant. Nor does it mean the other causes are worthless, only that they carry less leverage.",
   "origin": "Named for the economist Vilfredo Pareto, who observed around 1896 that roughly 80% of Italy's land was held by 20% of the population. The management theorist Joseph M. Juran later generalised the observation into a broad 'vital few' principle and attached Pareto's name to it in the mid-20th century.",
   "category": "statistics",
   "reliability": "Heuristic",

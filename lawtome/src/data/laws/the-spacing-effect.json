@@ -2,11 +2,13 @@
   "no": "296",
   "slug": "the-spacing-effect",
   "name": "The Spacing Effect",
-  "aliases": ["Distributed practice"],
+  "aliases": [
+    "Distributed practice"
+  ],
   "statement": "Study spread over time sticks; study crammed into one session fades.",
   "statementAccent": "spread over time sticks",
   "meaning": "Learning is more durable when study sessions are spaced out over time than when they are massed together in one sitting. For long-term retention, distributed practice reliably beats cramming. The same total time, sliced into intervals with gaps between, leaves a stronger, longer-lasting memory than the same time spent all at once.",
-  "mechanism": "Several accounts compete, and the mechanism is still debated. Encoding variability holds that spaced repetitions happen in more varied contexts, so the memory picks up more retrieval cues. Study-phase retrieval holds that a spaced repetition makes you retrieve and strengthen the earlier trace, whereas a massed one, with the first still fresh, does not. Deficient processing holds that closely packed repetitions get shallower attention. These may operate on different timescales — deficient processing over short gaps, study-phase retrieval over longer ones.",
+  "mechanism": "Several accounts compete, and the mechanism is still debated. Encoding variability holds that spaced repetitions happen in more varied contexts, so the memory picks up more retrieval cues. Study-phase retrieval holds that a spaced repetition makes you retrieve and strengthen the earlier trace, whereas a massed one, with the first still fresh, does not. Deficient processing holds that closely packed repetitions get shallower attention. These may operate on different timescales: deficient processing over short gaps, study-phase retrieval over longer ones.",
   "examples": [
     {
       "tag": "Spaced repetition software",
@@ -14,7 +16,7 @@
     },
     {
       "tag": "The Leitner box",
-      "text": "A paper-flashcard method that moves cards between boxes by how well they are recalled, reviewing hard ones more often and easy ones less — spacing by hand."
+      "text": "A paper-flashcard method that moves cards between boxes by how well they are recalled, reviewing hard ones more often and easy ones less: spacing by hand."
     },
     {
       "tag": "The lag effect",
@@ -28,17 +30,26 @@
     },
     {
       "name": "Desirable difficulties",
-      "text": "The Bjorks' framing of conditions that slow acquisition, spacing among them, yet improve long-term retention and transfer — the counterintuitive idea that harder practice teaches better."
+      "text": "The Bjorks' framing of conditions that slow acquisition, spacing among them, yet improve long-term retention and transfer: the counterintuitive idea that harder practice teaches better."
     }
   ],
   "whyItMatters": "It is one of the most robust and replicated findings in the science of learning, documented across thousands of studies since Ebbinghaus, and one of the most useful: it tells students, teachers, and software designers that when you study matters as much as how long, and that spreading practice out is the reliable route to lasting memory.",
   "working": [
-    {"lead": "Space your study", "text": "distribute practice over several sessions with gaps rather than cramming it into one, to make learning last."},
-    {"lead": "Match the gap to the goal", "text": "widen the interval the longer you need to remember, since the best gap grows with the retention interval."},
-    {"lead": "Distrust the fluency of cramming", "text": "resist the strong feeling of mastery that massed study gives, since it predicts poor retention days later."}
+    {
+      "lead": "Space your study",
+      "text": "distribute practice over several sessions with gaps rather than cramming it into one, to make learning last."
+    },
+    {
+      "lead": "Match the gap to the goal",
+      "text": "widen the interval the longer you need to remember, since the best gap grows with the retention interval."
+    },
+    {
+      "lead": "Distrust the fluency of cramming",
+      "text": "resist the strong feeling of mastery that massed study gives, since it predicts poor retention days later."
+    }
   ],
-  "limits": "The spacing-beats-massing finding is exceptionally robust, but the best schedule is not one-size-fits-all: the optimal gap depends on the retention interval, and the popular claim that expanding intervals reliably beat fixed ones is not settled — the sturdy core is that spacing beats massing, not that any one schedule shape wins. The mechanism remains genuinely debated, likely reflecting several processes across timescales. And the precise figures often quoted, from Ebbinghaus's forgetting percentages to exact optimal-gap fractions, are approximations that vary by source and by how the studies are summarised.",
-  "misreadings": "Cramming is not effective just because it feels so — massed study and rereading produce a strong sense of mastery and better scores on an immediate test, but markedly worse retention days or weeks later; learners mistake short-term fluency for durable learning. And more spacing is not always better without limit: at any given test delay, stretching the gap first raises then gradually lowers final retention.",
+  "limits": "The spacing-beats-massing finding is exceptionally robust, but the best schedule is not one-size-fits-all: the optimal gap depends on the retention interval, and the popular claim that expanding intervals reliably beat fixed ones is not settled (the sturdy core is that spacing beats massing, not that any one schedule shape wins). The mechanism remains genuinely debated, likely reflecting several processes across timescales. And the precise figures often quoted, from Ebbinghaus's forgetting percentages to exact optimal-gap fractions, are approximations that vary by source and by how the studies are summarised.",
+  "misreadings": "Cramming is not effective just because it feels so: massed study and rereading produce a strong sense of mastery and better scores on an immediate test, but markedly worse retention days or weeks later; learners mistake short-term fluency for durable learning. And more spacing is not always better without limit: at any given test delay, stretching the gap first raises then gradually lowers final retention.",
   "origin": "First documented by Hermann Ebbinghaus in his 1885 monograph 'Uber das Gedachtnis,' through self-experiments memorising nonsense syllables; quantified in modern meta-analyses by Nicholas Cepeda and colleagues (2006, 2008), and set within the Bjorks' 'desirable difficulties' framework.",
   "category": "psychology",
   "reliability": "Empirical",
@@ -47,13 +58,31 @@
   "namedAfter": "Hermann Ebbinghaus",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Cepeda, Pashler, Vul, Wixted & Rohrer, \"Distributed practice in verbal recall tasks: A review and quantitative synthesis,\" Psychological Bulletin 132:354-380 (2006). — the meta-analysis and the joint role of study and retention intervals.", "url": "https://www.yorku.ca/ncepeda/publications/CPVWR2006.html", "type": "primary"},
-    {"text": "Cepeda, Vul, Rohrer, Wixted & Pashler, \"Spacing effects in learning: A temporal ridgeline of optimal retention,\" Psychological Science 19:1095-1102 (2008). — the optimal gap growing in absolute terms but shrinking as a fraction of test delay.", "url": "https://www.yorku.ca/ncepeda/publications/CVRWP2008.html", "type": "primary"},
-    {"text": "Spacing effect, Wikipedia. — the distributed-versus-massed statement, the Ebbinghaus origin, and the competing mechanism theories.", "url": "https://en.wikipedia.org/wiki/Spacing_effect", "type": "secondary"}
+    {
+      "text": "Cepeda, Pashler, Vul, Wixted & Rohrer, \"Distributed practice in verbal recall tasks: A review and quantitative synthesis,\" Psychological Bulletin 132:354-380 (2006). — the meta-analysis and the joint role of study and retention intervals.",
+      "url": "https://www.yorku.ca/ncepeda/publications/CPVWR2006.html",
+      "type": "primary"
+    },
+    {
+      "text": "Cepeda, Vul, Rohrer, Wixted & Pashler, \"Spacing effects in learning: A temporal ridgeline of optimal retention,\" Psychological Science 19:1095-1102 (2008). — the optimal gap growing in absolute terms but shrinking as a fraction of test delay.",
+      "url": "https://www.yorku.ca/ncepeda/publications/CVRWP2008.html",
+      "type": "primary"
+    },
+    {
+      "text": "Spacing effect, Wikipedia. — the distributed-versus-massed statement, the Ebbinghaus origin, and the competing mechanism theories.",
+      "url": "https://en.wikipedia.org/wiki/Spacing_effect",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Spacing_effect",
   "related": [
-    {"slug": "the-testing-effect", "kind": "kindred"},
-    {"slug": "the-serial-position-effect", "kind": "kindred"}
+    {
+      "slug": "the-testing-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-serial-position-effect",
+      "kind": "kindred"
+    }
   ]
 }

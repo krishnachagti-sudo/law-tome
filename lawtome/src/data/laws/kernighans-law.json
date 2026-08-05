@@ -2,7 +2,9 @@
   "no": "375",
   "slug": "kernighans-law",
   "name": "Kernighan's Law",
-  "aliases": ["Kernighan's lever (informal)"],
+  "aliases": [
+    "Kernighan's lever (informal)"
+  ],
   "statement": "Debugging is twice as hard as writing the code, so write it less cleverly than you can.",
   "statementAccent": "twice as hard as writing the code",
   "meaning": "Kernighan's law is a maxim of software craftsmanship: since finding and fixing bugs is harder than writing code in the first place, you should write code well within your abilities rather than at the very limit of your cleverness. In Brian Kernighan's original words, everyone knows debugging is twice as hard as writing a program, so if you write it as cleverly as you can, how will you ever debug it? The lesson is to prize clarity over cleverness.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It is one of the most-quoted maxims in software engineering, a compact argument for readability and maintainability over showing off. In an industry where code is read and debugged far more often than it is written, it reminds programmers to leave themselves room to reason about their own work, and it anchors the cultural preference for clear code that senior engineers pass on.",
   "working": [
-    {"lead": "Leave cognitive headroom", "text": "write below your ceiling of cleverness so you retain the capacity to debug the result when it fails."},
-    {"lead": "Favour the obvious construction", "text": "prefer the plain, readable form over the ingenious one, since clarity pays off in maintenance."},
-    {"lead": "Write for the reader", "text": "assume code will be read and fixed by someone, possibly you, with less context than you have now."}
+    {
+      "lead": "Leave cognitive headroom",
+      "text": "write below your ceiling of cleverness so you retain the capacity to debug the result when it fails."
+    },
+    {
+      "lead": "Favour the obvious construction",
+      "text": "prefer the plain, readable form over the ingenious one, since clarity pays off in maintenance."
+    },
+    {
+      "lead": "Write for the reader",
+      "text": "assume code will be read and fixed by someone, possibly you, with less context than you have now."
+    }
   ],
   "limits": "It is an aphorism and heuristic, not a measured law, and the 'twice as hard' figure is rhetorical rather than quantitative. It is a guideline about the balance of cleverness and clarity, not a ban on all sophistication, since some problems genuinely require intricate code. Its authority rests on long practitioner experience and the standing of its author rather than on empirical study. The label 'Kernighan's law' was applied by the community; the idea comes from a specific book.",
   "misreadings": "The memorable form ending 'you are not smart enough to debug it' is a common paraphrase, not Kernighan's exact wording, which asks how you will ever debug code written as cleverly as you can. It does not say cleverness is always bad, only that writing at your limit leaves no room to debug. And it is due to Kernighan with his co-author P. J. Plauger from a specific book, not a free-floating proverb.",
@@ -47,12 +58,26 @@
   "namedAfter": "Brian Kernighan",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Brian Kernighan, Wikiquote. — the verified original wording from The Elements of Programming Style, 2nd edition.", "url": "https://en.wikiquote.org/wiki/Brian_Kernighan", "type": "primary"},
-    {"text": "The Elements of Programming Style, Wikipedia. — the Kernighan and Plauger authorship and the book's editions.", "url": "https://en.wikipedia.org/wiki/The_Elements_of_Programming_Style", "type": "secondary"}
+    {
+      "text": "Brian Kernighan, Wikiquote. — the verified original wording from The Elements of Programming Style, 2nd edition.",
+      "url": "https://en.wikiquote.org/wiki/Brian_Kernighan",
+      "type": "primary"
+    },
+    {
+      "text": "The Elements of Programming Style, Wikipedia. — the Kernighan and Plauger authorship and the book's editions.",
+      "url": "https://en.wikipedia.org/wiki/The_Elements_of_Programming_Style",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikiquote.org/wiki/Brian_Kernighan",
   "related": [
-    {"slug": "brooks-law", "kind": "kindred"},
-    {"slug": "law-of-leaky-abstractions", "kind": "kindred"}
+    {
+      "slug": "brooks-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "law-of-leaky-abstractions",
+      "kind": "kindred"
+    }
   ]
 }

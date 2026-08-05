@@ -4,7 +4,7 @@
   "name": "The Poisson Distribution",
   "statement": "The Poisson distribution gives the probability of a number of independent events occurring in a fixed interval at a known constant average rate.",
   "statementAccent": "a known constant average rate",
-  "meaning": "It models counts of rare, discrete events — radioactive decays, phone calls, defects — that happen independently at a steady long-run rate over a fixed span of time or space. Its single parameter, lambda, is both the mean and the variance. It is the limiting case of the binomial distribution when the number of trials is large and the per-trial probability small.",
+  "meaning": "It models counts of rare, discrete events (radioactive decays, phone calls, defects) that happen independently at a steady long-run rate over a fixed span of time or space. Its single parameter, lambda, is both the mean and the variance. It is the limiting case of the binomial distribution when the number of trials is large and the per-trial probability small.",
   "mechanism": "The probability of exactly k events is lambda^k · e^(−lambda) / k!. Because events are assumed independent and not simultaneous, the count in any interval is memoryless across disjoint sub-intervals, and summing counts over adjoining intervals with rates lambda1 and lambda2 yields another Poisson variable with rate lambda1 + lambda2.",
   "examples": [
     {
@@ -21,7 +21,7 @@
     }
   ],
   "whyItMatters": "It is the standard model for count data across queueing theory, epidemiology, quality control, and astronomy, letting analysts compute the odds of rare-event frequencies from a single average rate. Its one-parameter simplicity makes it the default baseline against which real count data are tested for over- or under-dispersion.",
-  "limits": "The model breaks down when events are not independent (aftershocks cluster after a mainshock) or when the rate is not constant (arrivals surge at certain hours). Real count data frequently show overdispersion — variance exceeding the mean — requiring alternatives like the negative binomial distribution.",
+  "limits": "The model breaks down when events are not independent (aftershocks cluster after a mainshock) or when the rate is not constant (arrivals surge at certain hours). Real count data frequently show overdispersion, variance exceeding the mean, requiring alternatives like the negative binomial distribution.",
   "misreadings": "People often apply it to any count data without checking the independence and constant-rate assumptions, or treat \"Poisson-distributed\" as synonymous with \"random\" when clustering or trends actually violate the model.",
   "origin": "French mathematician Siméon Denis Poisson introduced the distribution in 1837 in \"Recherches sur la probabilité des jugements,\" though Abraham de Moivre had presented related results as early as 1711.",
   "category": "statistics",

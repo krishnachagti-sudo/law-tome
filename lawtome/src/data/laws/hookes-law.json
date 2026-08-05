@@ -5,11 +5,11 @@
   "statement": "The force a spring exerts is proportional to how far it is stretched.",
   "statementAccent": "proportional to how far it is stretched",
   "meaning": "Pull or push twice as hard on a spring and it stretches or compresses twice as far — provided you do not push it too far. Force and deformation rise together in fixed proportion, a straight line whose slope is the spring's stiffness.",
-  "mechanism": "The stiffness constant k measures a material's resistance to deformation: a stiffer spring needs more force per unit stretch. Generalised to continuous materials, the law says stress is proportional to strain, with the constant being an elastic modulus such as Young's modulus. It is the leading-order, small-deformation approximation of a material's generally nonlinear response — the first term, so to speak, of how solids give under load.",
+  "mechanism": "The stiffness constant k measures a material's resistance to deformation: a stiffer spring needs more force per unit stretch. Generalised to continuous materials, the law says stress is proportional to strain, with the constant being an elastic modulus such as Young's modulus. It is the leading-order, small-deformation approximation of a material's generally nonlinear response: the first term, so to speak, of how solids give under load.",
   "examples": [
     {
       "tag": "The spring scale",
-      "text": "A weight hung from a spring stretches it in proportion to the load, which is exactly what lets a spring balance read force off a length — the most direct use of the law."
+      "text": "A weight hung from a spring stretches it in proportion to the load, which is exactly what lets a spring balance read force off a length: the most direct use of the law."
     },
     {
       "tag": "Structural beams",
@@ -23,11 +23,11 @@
   "variants": [
     {
       "name": "Stress and strain",
-      "text": "The continuum generalisation: stress proportional to strain, with Young's modulus as the constant — the form used across materials science and engineering."
+      "text": "The continuum generalisation: stress proportional to strain, with Young's modulus as the constant (the form used across materials science and engineering)."
     },
     {
       "name": "The stiffness tensor",
-      "text": "For anisotropic materials, where force and displacement need not share a direction, the scalar constant becomes a stiffness tensor relating the full stress and strain — the generalised Hooke's law."
+      "text": "For anisotropic materials, where force and displacement need not share a direction, the scalar constant becomes a stiffness tensor relating the full stress and strain: the generalised Hooke's law."
     }
   ],
   "whyItMatters": "It is the founding law of elasticity, the reason springs, scales, and load-bearing structures behave predictably, and the starting point for the whole theory of how solids deform. Its clean linearity holds only within a limit, which makes it a model example of a law that is precise inside its domain and silent beyond it.",
@@ -46,8 +46,8 @@
     }
   ],
   "limits": "Hooke's law holds only within the elastic limit, for small deformations. Beyond that threshold materials yield and deform plastically, then fracture, and the linear force-extension proportionality breaks down. Not all materials are linearly elastic even at small strains — rubber and many polymers are strongly nonlinear. It is a first-order phenomenological approximation with a well-defined domain of validity, not a fundamental law derived from first principles.",
-  "misreadings": "It does not say a spring stretches proportionally forever — push past the elastic limit and it yields, deforms permanently, or breaks, and the law no longer applies. Nor is it universal: some materials depart from linear elasticity even at modest stretch, so the straight line is a bounded approximation.",
-  "origin": "Stated by the English natural philosopher Robert Hooke, who said he had known it since 1660, published it in 1676 as the anagram 'ceiiinosssttuv', and revealed the solution in 1678 as 'ut tensio, sic vis' — 'as the extension, so the force'.",
+  "misreadings": "It does not say a spring stretches proportionally forever: push past the elastic limit and it yields, deforms permanently, or breaks, and the law no longer applies. Nor is it universal: some materials depart from linear elasticity even at modest stretch, so the straight line is a bounded approximation.",
+  "origin": "Stated by the English natural philosopher Robert Hooke, who said he had known it since 1660, published it in 1676 as the anagram 'ceiiinosssttuv', and revealed the solution in 1678 as 'ut tensio, sic vis': 'as the extension, so the force'.",
   "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",

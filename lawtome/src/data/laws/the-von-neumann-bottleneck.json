@@ -20,10 +20,10 @@
       "text": "Separating instruction and data pathways, as in the modified Harvard architecture used in many microcontrollers and cache designs, is a direct architectural response to the shared-bus bottleneck Backus named."
     }
   ],
-  "whyItMatters": "The concept explains a fundamental, persistent constraint on computer performance and motivated decades of architectural innovation — caching hierarchies, pipelining, branch prediction, and dataflow research — as well as Backus’s broader critique of imperative programming languages.",
+  "whyItMatters": "The concept explains a fundamental, persistent constraint on computer performance and motivated decades of architectural innovation (caching hierarchies, pipelining, branch prediction, and dataflow research) as well as Backus’s broader critique of imperative programming languages.",
   "limits": "The bottleneck describes a structural tendency in the classical model, not a fixed numeric limit; caching, pipelining, out-of-order execution, and parallel architectures substantially mitigate but do not eliminate its impact, and Backus’s proposed functional-programming alternative did not displace mainstream imperative languages.",
   "misreadings": "It is sometimes reduced to \"memory is slower than CPU\" as a pure hardware footnote, missing Backus’s broader point that conventional programming languages themselves are conceptually shackled to the same word-at-a-time model.",
-  "origin": "The term was coined by John Backus in his 1977 ACM Turing Award lecture, \"Can Programming Be Liberated from the von Neumann Style?\" — named after the von Neumann architecture, not coined by von Neumann himself.",
+  "origin": "The term was coined by John Backus in his 1977 ACM Turing Award lecture, \"Can Programming Be Liberated from the von Neumann Style?\": named after the von Neumann architecture, not coined by von Neumann himself.",
   "category": "software",
   "reliability": "Empirical",
   "provenance": "canon",

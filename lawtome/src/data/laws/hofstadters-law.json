@@ -4,8 +4,8 @@
   "name": "Hofstadter's Law",
   "statement": "It always takes longer than you expect, even when you take into account Hofstadter's Law.",
   "statementAccent": "even when you take into account",
-  "meaning": "Estimates run long, and knowing that they run long does not save you — you pad the estimate and it still runs long.",
-  "mechanism": "Estimating a task means modelling it, but the model omits the very surprises — the unknown unknowns — that eat the time. You cannot budget for what you cannot foresee, and the law's self-reference means even your correction gets absorbed: pad the estimate and the padding, too, is swallowed.",
+  "meaning": "Estimates run long, and knowing that they run long does not save you: you pad the estimate and it still runs long.",
+  "mechanism": "Estimating a task means modelling it, but the model omits the very surprises (the unknown unknowns) that eat the time. You cannot budget for what you cannot foresee, and the law's self-reference means even your correction gets absorbed: pad the estimate and the padding, too, is swallowed.",
   "examples": [
     {
       "tag": "Software",
@@ -13,7 +13,7 @@
     },
     {
       "tag": "The Sydney Opera House",
-      "text": "Planned to open around 1963, it finally opened in 1973 — roughly a decade late, with costs escalating many times over. It is the textbook megaproject illustration of the planning fallacy the law captures."
+      "text": "Planned to open around 1963, it finally opened in 1973: roughly a decade late, with costs escalating many times over. It is the textbook megaproject illustration of the planning fallacy the law captures."
     },
     {
       "tag": "The Edinburgh trams",
@@ -30,10 +30,10 @@
   "working": [
     {
       "lead": "Estimate from the outside view",
-      "text": "base the forecast on how long a class of similar past projects actually took — reference-class forecasting — not on how long this one feels like it should."
+      "text": "base the forecast on how long a class of similar past projects actually took, reference-class forecasting, not on how long this one feels like it should."
     },
     {
-      "lead": "Unpack the task",
+      "lead": "Break the task down",
       "text": "breaking work into named pieces surfaces the steps a single gut estimate silently drops, and reduces (though never removes) the underestimate."
     },
     {
@@ -45,8 +45,8 @@
       "text": "assume some of the schedule will go to problems you cannot yet name, and protect slack for them explicitly."
     }
   ],
-  "limits": "Hofstadter's Law is a self-referential adage, not a formula — it makes no numeric prediction and is deliberately un-actionable (any correction you apply is, by its own terms, underestimated too). The rigour lives in the planning fallacy beneath it, studied by Kahneman, Tversky, Buehler and others, and in the debiasing methods that genuinely reduce the error — reference-class forecasting, the outside view, unpacking tasks. So the 'even when you account for it' fatalism is rhetorical, not literal: the overrun can be shrunk. The bias is also specific to the forecaster's own upcoming work; detached observers tend to over-estimate instead.",
-  "misreadings": "It is a wry observation about planning under uncertainty, not a mandate to inflate estimates without end (the self-reference makes that futile). Nor does it claim every task overruns by the same amount — it says complex, novel work resists its own forecasts. The practical reading is to plan for discovery, not to abandon planning.",
+  "limits": "Hofstadter's Law is a self-referential adage, not a formula. It makes no numeric prediction and is deliberately un-actionable (any correction you apply is, by its own terms, underestimated too). The rigour lives in the planning fallacy beneath it, studied by Kahneman, Tversky, Buehler and others, and in the debiasing methods that genuinely reduce the error: reference-class forecasting, the outside view, breaking tasks down. So the 'even when you account for it' fatalism is rhetorical, not literal: the overrun can be shrunk. The bias is also specific to the forecaster's own upcoming work; detached observers tend to over-estimate instead.",
+  "misreadings": "It is a wry observation about planning under uncertainty, not a mandate to inflate estimates without end (the self-reference makes that futile). Nor does it claim every task overruns by the same amount: it says complex, novel work resists its own forecasts. The practical reading is to plan for discovery, not to abandon planning.",
   "origin": "Douglas Hofstadter stated it in his 1979 book Gödel, Escher, Bach: An Eternal Golden Braid (p. 152), in a discussion of how repeatedly people underestimated when a computer would beat the best human chess players. The law is deliberately self-referential, in keeping with the book's preoccupation with self-reference and strange loops.",
   "category": "planning",
   "reliability": "Heuristic",

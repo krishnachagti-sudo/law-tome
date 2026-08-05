@@ -2,7 +2,10 @@
   "no": "739",
   "slug": "the-sleeper-effect",
   "name": "The Sleeper Effect",
-  "aliases": ["Delayed persuasion effect", "The discounting-cue effect"],
+  "aliases": [
+    "Delayed persuasion effect",
+    "The discounting-cue effect"
+  ],
   "statement": "A message from a doubtful source can grow more persuasive over time, once you forget who said it.",
   "statementAccent": "grow more persuasive over time, once you forget who said it",
   "meaning": "The sleeper effect is a persuasion phenomenon in which a message accompanied by a discounting cue, such as a low-credibility source or a disclaimer, has little immediate persuasive impact but becomes more persuasive over time, so that delayed persuasion exceeds immediate persuasion. The reason is that people continue to remember the message content while gradually forgetting or dissociating it from the discounting cue, so the message's influence resurfaces later. The effect was identified by Carl Hovland and colleagues in the Yale Communication Research Program, who studied the persuasive effects of army orientation films on soldiers during the Second World War, published in Experiments on Mass Communication in 1949, and found that some messages had greater impact after a delay than immediately. The sleeper effect is notoriously fragile and hard to replicate, occurring reliably only under specific conditions, but it remains relevant to advertising, propaganda, negative political campaigning, and misinformation.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The sleeper effect is a notable phenomenon in the psychology of persuasion, showing that the impact of a message is not fixed at the moment of exposure but can grow over time as memory of its source or context fades. This has practical significance for advertising, propaganda, and political campaigning, especially negative advertising, since a message discounted at first, because it came from a distrusted source or bore a disclaimer, may nonetheless exert influence later once the discounting cue is forgotten. It is increasingly relevant to concerns about misinformation, where a dubious claim may leave a lasting impression even after its unreliable origin is discredited. Scientifically, the effect is also important as a cautionary case study in fragility and replication: it occurs only under specific conditions, and its difficult, contested history illustrates how delicate and boundary-dependent persuasion effects can be.",
   "working": [
-    {"lead": "Pair message with a discounting cue", "text": "present a persuasive message together with a low-credibility source or disclaimer that suppresses immediate acceptance."},
-    {"lead": "Let the association decay", "text": "over time, have memory of the cue fade faster than memory of the message, dissociating the two."},
-    {"lead": "Measure rising persuasion", "text": "find that persuasion increases with delay, as the freed message exerts more influence than it did at first."}
+    {
+      "lead": "Pair message with a discounting cue",
+      "text": "present a persuasive message together with a low-credibility source or disclaimer that suppresses immediate acceptance."
+    },
+    {
+      "lead": "Let the association decay",
+      "text": "over time, have memory of the cue fade faster than memory of the message, dissociating the two."
+    },
+    {
+      "lead": "Measure rising persuasion",
+      "text": "find that persuasion increases with delay, as the freed message exerts more influence than it did at first."
+    }
   ],
   "limits": "The sleeper effect is famously fragile and difficult to replicate, and it does not occur under most conditions. Research shows it appears reliably only when the message is persuasive enough on its own, the discounting cue follows the message, and the cue has a strong initial impact; absent these, delayed persuasion does not exceed immediate persuasion, and the ordinary pattern of decay over time prevails. Its contested history, captured in a famous paper title declaring the effect dead and then alive, reflects how boundary-dependent it is. So the sleeper effect is a genuine but narrow phenomenon, valuable for what it reveals about memory and source dissociation, rather than a general rule that discounted messages always gain force over time.",
   "misreadings": "The sleeper effect is not a general claim that all messages become more persuasive over time; ordinarily persuasion decays, and the effect requires specific conditions to appear at all. It does not mean low-credibility sources are as effective as credible ones, only that their initial discounting can wear off if the source is forgotten. And it is fragile and often fails to replicate, so treating it as a reliable, easily reproduced phenomenon, or as evidence that source credibility never matters, misreads a delicate effect bounded by strict conditions.",
@@ -46,12 +58,26 @@
   "coinedYear": 1949,
   "namedAfter": null,
   "sources": [
-    {"text": "Sleeper effect, Wikipedia. — the delayed increase in persuasion with a discounting cue, the Hovland wartime army-film origin, the dissociation discounting-cue mechanism, and the fragility and reliability conditions from Gruder and Pratkanis.", "url": "https://en.wikipedia.org/wiki/Sleeper_effect", "type": "secondary"},
-    {"text": "Pratkanis, Greenwald, Leippe, and Baumgardner, In Search of Reliable Persuasion Effects: The Sleeper Effect, Journal of Personality and Social Psychology (1988). — the conditions under which the sleeper effect reliably occurs.", "url": "https://faculty.washington.edu/agg/pdf/Pratkanis&GLB.JPSP.1988.pdf", "type": "primary"}
+    {
+      "text": "Sleeper effect, Wikipedia. — the delayed increase in persuasion with a discounting cue, the Hovland wartime army-film origin, the dissociation discounting-cue mechanism, and the fragility and reliability conditions from Gruder and Pratkanis.",
+      "url": "https://en.wikipedia.org/wiki/Sleeper_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Pratkanis, Greenwald, Leippe, and Baumgardner, In Search of Reliable Persuasion Effects: The Sleeper Effect, Journal of Personality and Social Psychology (1988). — the conditions under which the sleeper effect reliably occurs.",
+      "url": "https://faculty.washington.edu/agg/pdf/Pratkanis&GLB.JPSP.1988.pdf",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Sleeper_effect",
   "related": [
-    {"slug": "the-illusory-truth-effect", "kind": "kindred"},
-    {"slug": "the-elaboration-likelihood-model", "kind": "kindred"}
+    {
+      "slug": "the-illusory-truth-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-elaboration-likelihood-model",
+      "kind": "kindred"
+    }
   ]
 }

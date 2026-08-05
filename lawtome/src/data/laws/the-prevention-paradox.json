@@ -2,7 +2,10 @@
   "no": "620",
   "slug": "the-prevention-paradox",
   "name": "The Prevention Paradox",
-  "aliases": ["Rose's prevention paradox", "The population-strategy paradox"],
+  "aliases": [
+    "Rose's prevention paradox",
+    "The population-strategy paradox"
+  ],
   "statement": "A measure that saves many across a population offers almost nothing to any one person taking it.",
   "statementAccent": "offers almost nothing to any one person",
   "meaning": "The prevention paradox is the observation that a preventive measure bringing large benefits to a whole community offers little to each participating individual. A population-wide strategy can prevent a great many cases in aggregate while giving each person only a tiny chance of personal benefit, so individuals have little motivation to take part even though the collective effect is large. Described by the British epidemiologist Geoffrey Rose in the early 1980s, it rests on his insight that most cases of a disease arise from the large number of people at low or moderate risk, not the small number at high risk. Consequently, shifting the whole population's risk slightly prevents more cases than intensively targeting only high-risk individuals, even though almost no one gains much personally.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The prevention paradox is foundational to public-health strategy, illuminating the structural tension between individual and population approaches to prevention. It explains why measures that demonstrably save many lives, from seatbelt laws to salt reduction to mass immunisation, can meet low individual uptake and political resistance, since each participant gains so little personally. Rose's distinction between population and high-risk strategies became a guiding principle of preventive medicine, showing that acting on the low-risk majority can prevent more cases than focusing on the high-risk few. The paradox helps policymakers understand, and argue for, interventions whose value is real but invisible at the level of any single person.",
   "working": [
-    {"lead": "Weigh community against individual", "text": "recognise that a population measure can bring large collective benefit while offering each participant only a tiny personal gain."},
-    {"lead": "Target the majority's risk", "text": "shift the whole population's risk slightly, since most cases come from the large low-and-moderate-risk group, not the high-risk few."},
-    {"lead": "Anticipate weak motivation", "text": "expect population measures to face low individual enthusiasm and political resistance, and make the collective case explicitly."}
+    {
+      "lead": "Weigh community against individual",
+      "text": "recognise that a population measure can bring large collective benefit while offering each participant only a tiny personal gain."
+    },
+    {
+      "lead": "Target the majority's risk",
+      "text": "shift the whole population's risk slightly, since most cases come from the large low-and-moderate-risk group, not the high-risk few."
+    },
+    {
+      "lead": "Anticipate weak motivation",
+      "text": "expect population measures to face low individual enthusiasm and political resistance, and make the collective case explicitly."
+    }
   ],
   "limits": "The prevention paradox is a genuine paradox of scale, not a claim that prevention fails; the population strategy can prevent more total cases than the high-risk approach precisely because it acts on the large majority. It does not mean high-risk strategies are useless, since Rose held the two approaches to be complementary, with the population strategy having greater aggregate potential. The paradox describes a structural tension rather than dictating policy, and applying it requires judging when population-wide action is warranted against its costs and the modest benefit to each person, which depends on the disease and the measure.",
   "misreadings": "The prevention paradox does not say prevention does not work; it says a measure can help the community greatly while helping each individual only slightly, a mismatch of scales. It does not make high-risk strategies worthless; Rose saw population and high-risk approaches as complementary. And the small individual benefit is not a flaw in the measure but a feature of acting across a large low-risk majority, where preventing many total cases necessarily means each person's personal gain is tiny.",
@@ -47,12 +59,26 @@
   "namedAfter": "Geoffrey Rose",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Prevention paradox, Wikipedia. — the statement, the population-versus-high-risk-strategy distinction, the seatbelt and other examples, and Geoffrey Rose's 1981 and 1985 authorship.", "url": "https://en.wikipedia.org/wiki/Prevention_paradox", "type": "secondary"},
-    {"text": "Rose, Sick Individuals and Sick Populations, International Journal of Epidemiology (1985). — the primary paper contrasting the population and high-risk strategies.", "url": "https://academic.oup.com/ije/article/30/3/427/736897", "type": "primary"}
+    {
+      "text": "Prevention paradox, Wikipedia. — the statement, the population-versus-high-risk-strategy distinction, the seatbelt and other examples, and Geoffrey Rose's 1981 and 1985 authorship.",
+      "url": "https://en.wikipedia.org/wiki/Prevention_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Rose, Sick Individuals and Sick Populations, International Journal of Epidemiology (1985). — the primary paper contrasting the population and high-risk strategies.",
+      "url": "https://academic.oup.com/ije/article/30/3/427/736897",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Prevention_paradox",
   "related": [
-    {"slug": "the-inverse-care-law", "kind": "kindred"},
-    {"slug": "herd-immunity", "kind": "kindred"}
+    {
+      "slug": "the-inverse-care-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "herd-immunity",
+      "kind": "kindred"
+    }
   ]
 }

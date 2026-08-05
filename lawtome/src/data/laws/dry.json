@@ -23,10 +23,10 @@
     },
     {
       "tag": "Documentation as a second copy",
-      "text": "A README states the default timeout. The default changes in code, the README does not, and the document is now actively misleading — which is why generated documentation is a DRY technique, not a stylistic preference."
+      "text": "A README states the default timeout. The default changes in code, the README does not, and the document is now actively misleading, which is why generated documentation is a DRY technique, not a stylistic preference."
     }
   ],
-  "whyItMatters": "It names the reason maintenance costs grow faster than codebases do, and it gives the most common review comment in software a principle behind it. It also explains why so many tools exist — constants, code generation, schema-driven builds, single-source configuration — that look like indirection and are really attempts to keep one fact in one place.",
+  "whyItMatters": "It names the reason maintenance costs grow faster than codebases do, and it gives the most common review comment in software a principle behind it. It also explains why so many tools exist (constants, code generation, schema-driven builds, single-source configuration) that look like indirection and are really attempts to keep one fact in one place.",
   "working": [
     {
       "lead": "Ask whether it is one fact or two",
@@ -34,16 +34,16 @@
     },
     {
       "lead": "Prefer a shared source over a shared copy",
-      "text": "generate the second representation from the first — types from a schema, docs from code, clients from an interface definition — rather than keeping them in step by hand."
+      "text": "generate the second representation from the first (types from a schema, docs from code, clients from an interface definition), rather than keeping them in step by hand."
     },
     {
       "lead": "Wait for the third occurrence",
       "text": "the rule of three: two instances are a coincidence, three are a pattern with enough evidence to say what the abstraction should be."
     }
   ],
-  "limits": "Applied to text rather than to knowledge it does real harm, because it collapses things that merely resemble each other into one abstraction that then has to serve two masters. Sandi Metz's formulation of the counterweight is blunt: prefer duplication over the wrong abstraction, since duplication is cheap to fix and a wrong abstraction is not. The AHA principle — avoid hasty abstractions — makes the same point as advice about timing. Coupling is the price: every de-duplication creates a dependency, and a dependency across a boundary that should stay independent (two services, two teams, two release cycles) can cost more than the duplicate did.",
+  "limits": "Applied to text rather than to knowledge it does real harm, because it collapses things that merely resemble each other into one abstraction that then has to serve two masters. Sandi Metz's formulation of the counterweight is blunt: prefer duplication over the wrong abstraction, since duplication is cheap to fix and a wrong abstraction is not. The AHA principle, avoid hasty abstractions, makes the same point as advice about timing. Coupling is the price: every de-duplication creates a dependency, and a dependency across a boundary that should stay independent (two services, two teams, two release cycles) can cost more than the duplicate did.",
   "misreadings": "It is not a ban on repeated characters, and 'DRY' is not satisfied by extracting every three-line similarity into a helper. It is also not a claim that all coupling is good: the principle says one fact should have one home, not that two unrelated systems should share code because their code looks alike.",
-  "origin": "Formulated by Andy Hunt and Dave Thomas in The Pragmatic Programmer (Addison-Wesley, 1999), where it appears with the wording given here. The opposing backronym WET — 'write everything twice' — is later and informal.",
+  "origin": "Formulated by Andy Hunt and Dave Thomas in The Pragmatic Programmer (Addison-Wesley, 1999), where it appears with the wording given here. The opposing backronym WET, 'write everything twice', is later and informal.",
   "category": "software",
   "reliability": "Heuristic",
   "provenance": "canon",

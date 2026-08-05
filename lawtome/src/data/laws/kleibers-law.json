@@ -5,11 +5,11 @@
   "statement": "An animal's metabolic rate scales as the three-quarter power of its body mass.",
   "statementAccent": "the three-quarter power of its body mass",
   "meaning": "Bigger animals use more energy in total but less per unit of mass. Because the exponent is below one, metabolic rate rises more slowly than mass, so a mouse burns far more energy per gram than an elephant. The mass-specific rate falls with size, as mass to the minus one-quarter.",
-  "mechanism": "The older competing prediction was two-thirds, from surface-area geometry: heat loss scales with surface area, which scales as mass to the two-thirds. The leading modern explanation for three-quarters, from West, Brown and Enquist (1997), is that metabolic rate is constrained by a fractal, hierarchically branching resource-distribution network — such as the circulatory system — optimised to minimise transport losses. That mechanism is influential but contested and not generally accepted.",
+  "mechanism": "The older competing prediction was two-thirds, from surface-area geometry: heat loss scales with surface area, which scales as mass to the two-thirds. The leading modern explanation for three-quarters, from West, Brown and Enquist (1997), is that metabolic rate is constrained by a fractal, hierarchically branching resource-distribution network (such as the circulatory system) optimised to minimise transport losses. That mechanism is influential but contested and not generally accepted.",
   "examples": [
     {
       "tag": "Mouse versus elephant",
-      "text": "A cat with a hundred times the mass of a mouse uses only about thirty-two times the energy, because a hundred to the three-quarter power is roughly thirty-two — so small animals run at a far higher metabolism per gram."
+      "text": "A cat with a hundred times the mass of a mouse uses only about thirty-two times the energy, because a hundred to the three-quarter power is roughly thirty-two, so small animals run at a far higher metabolism per gram."
     },
     {
       "tag": "A slope across scales",
@@ -17,20 +17,20 @@
     },
     {
       "tag": "Allometric drug dosing",
-      "text": "Scaling doses and clearances between species of different size draws on metabolic and allometric exponents, a practical application of the law — though the exact exponent used in practice varies."
+      "text": "Scaling doses and clearances between species of different size draws on metabolic and allometric exponents, a practical application of the law, though the exact exponent used in practice varies."
     }
   ],
   "variants": [
     {
       "name": "The surface law",
-      "text": "Rubner's older two-thirds prediction, grounded in surface-area-to-volume geometry — the historical rival that Kleiber's three-quarters displaced for large animals but which still fits many small ones better."
+      "text": "Rubner's older two-thirds prediction, grounded in surface-area-to-volume geometry: the historical rival that Kleiber's three-quarters displaced for large animals but which still fits many small ones better."
     },
     {
       "name": "The metabolic theory of ecology",
-      "text": "The West–Brown–Enquist framework extending three-quarter scaling, plus temperature terms, from individual metabolism to ecological rates — an ambitious generalisation built on the law."
+      "text": "The West–Brown–Enquist framework extending three-quarter scaling, plus temperature terms, from individual metabolism to ecological rates: an ambitious generalisation built on the law."
     }
   ],
-  "whyItMatters": "It is the founding result of allometric scaling — the study of how biological traits change with body size — and one of the broadest quantitative regularities in biology, spanning microbes to whales. It shapes how physiologists reason about energy, lifespan, and dosing, even as its exact exponent and cause remain live scientific questions.",
+  "whyItMatters": "It is the founding result of allometric scaling, the study of how biological traits change with body size, and one of the broadest quantitative regularities in biology, spanning microbes to whales. It shapes how physiologists reason about energy, lifespan, and dosing, even as its exact exponent and cause remain live scientific questions.",
   "working": [
     {
       "lead": "Reason per-mass, not per-animal",
@@ -46,7 +46,7 @@
     }
   ],
   "limits": "The exact exponent is genuinely unresolved: metabolic rates of small animals, birds under about ten kilograms, and insects often fit two-thirds better, while larger animals fit three-quarters, and some analyses find curvature on the log-log plot, so a single fixed exponent may oversimplify. Empirical exponents range from roughly 0.66 to above 0.75 across datasets. The West–Brown–Enquist fractal mechanism is contested and not universally accepted. One peer-reviewed title flatly calls it 'neither a Law nor a Rule but rather an Empirical Approximation'. It is a robust broad pattern, not a strict physical law.",
-  "misreadings": "Three-quarters is not a settled, exact constant — it is an empirical approximation that competes with two-thirds depending on taxon and size, and the data may even curve rather than follow one clean power. And the fractal-network explanation, though popular, is a contested hypothesis, not an established cause.",
+  "misreadings": "Three-quarters is not a settled, exact constant. It is an empirical approximation that competes with two-thirds depending on taxon and size, and the data may even curve rather than follow one clean power. And the fractal-network explanation, though popular, is a contested hypothesis, not an established cause.",
   "origin": "From the Swiss-American physiologist Max Kleiber's 'Body size and metabolism' (Hilgardia, 1932), working at UC Davis; Samuel Brody independently reported a similar relationship the same year. The three-quarter exponent and the fractal-network explanation of it have been debated ever since, notably by West, Brown and Enquist (1997).",
   "category": "biology",
   "reliability": "Empirical",

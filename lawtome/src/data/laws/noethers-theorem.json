@@ -4,33 +4,33 @@
   "name": "Noether's Theorem",
   "statement": "Every continuous symmetry of a physical system yields a conserved quantity.",
   "statementAccent": "yields a conserved quantity",
-  "meaning": "For any system describable by an action, each continuous symmetry — a smooth transformation that leaves the action unchanged — corresponds to a quantity that stays constant in time. Symmetries and conservation laws are two sides of one coin: if the laws of physics do not change over time, energy is conserved; if they are the same everywhere in space, momentum is conserved; if they are the same in every direction, angular momentum is conserved.",
+  "meaning": "For any system describable by an action, each continuous symmetry (a smooth transformation that leaves the action unchanged) corresponds to a quantity that stays constant in time. Symmetries and conservation laws are two sides of one coin: if the laws of physics do not change over time, energy is conserved; if they are the same everywhere in space, momentum is conserved; if they are the same in every direction, angular momentum is conserved.",
   "mechanism": "A system is described by an action, the integral over time of a Lagrangian. A continuous symmetry is a transformation depending smoothly on a parameter that leaves the action invariant. Noether's procedure constructs, from each such symmetry, an explicit conserved current whose divergence vanishes whenever the equations of motion hold; integrating it gives a conserved charge. So a Lagrangian with no explicit time dependence conserves energy, and an ignorable coordinate conserves its conjugate momentum.",
   "examples": [
     {
       "tag": "Time and energy",
-      "text": "Because the laws of physics do not change from one moment to the next — time-translation symmetry — energy is conserved; this is the deep reason behind the conservation of energy."
+      "text": "Because the laws of physics do not change from one moment to the next, time-translation symmetry, energy is conserved; this is the deep reason behind the conservation of energy."
     },
     {
       "tag": "Space and momentum",
-      "text": "Because the laws are the same at every location — spatial-translation symmetry — total linear momentum is conserved."
+      "text": "Because the laws are the same at every location, spatial-translation symmetry, total linear momentum is conserved."
     },
     {
       "tag": "Direction and angular momentum",
-      "text": "Because the laws are the same in every orientation — rotational symmetry — angular momentum is conserved; and the phase symmetry of a charged field yields conservation of electric charge."
+      "text": "Because the laws are the same in every orientation, rotational symmetry, angular momentum is conserved; and the phase symmetry of a charged field yields conservation of electric charge."
     }
   ],
   "variants": [
     {
       "name": "Noether's second theorem",
-      "text": "The companion result for local, gauge symmetries parametrised by arbitrary functions, which yields identities among the equations of motion rather than ordinary conservation laws — the reason energy in general relativity is subtle."
+      "text": "The companion result for local, gauge symmetries parametrised by arbitrary functions, which yields identities among the equations of motion rather than ordinary conservation laws: the reason energy in general relativity is subtle."
     },
     {
       "name": "Gauge symmetry and charge",
       "text": "The application to the phase symmetries underlying electromagnetism and the Standard Model, where local invariance underpins the conservation of charge."
     }
   ],
-  "whyItMatters": "It unified the great conservation laws — energy, momentum, angular momentum, charge — as consequences of symmetry, transforming how physicists understand why anything is conserved at all. It is a cornerstone of classical mechanics, field theory, quantum field theory, and the Standard Model, and one of the most profound results in mathematical physics.",
+  "whyItMatters": "It unified the great conservation laws (energy, momentum, angular momentum, charge) as consequences of symmetry, transforming how physicists understand why anything is conserved at all. It is a cornerstone of classical mechanics, field theory, quantum field theory, and the Standard Model, and one of the most profound results in mathematical physics.",
   "working": [
     {
       "lead": "Look for the symmetry behind a conservation law",
@@ -45,9 +45,9 @@
       "text": "treat global symmetries as giving conservation laws and local gauge symmetries as giving identities, per the two theorems."
     }
   ],
-  "limits": "It applies only to continuous, differentiable symmetries; discrete symmetries like parity or reflection yield no Noether current. It requires a system derivable from an action, so purely dissipative systems with friction need not obey the corresponding conservation law even when a symmetry is present. And in general relativity, whose diffeomorphism invariance is a local symmetry, energy-momentum conservation becomes subtle and only globally well-defined under special conditions — the very problem that motivated the theorem.",
-  "misreadings": "It is not a claim that everything is conserved — only quantities tied to a continuous symmetry are, and only for systems with an action. And the popular version often conflates the two theorems: global symmetries give conservation laws, while local gauge symmetries give identities among the equations of motion.",
-  "origin": "Proved by the German mathematician Emmy Noether in 'Invariante Variationsprobleme' (1918), work she undertook at Gottingen amid the general-relativity energy problem posed by Hilbert and Klein — and despite being barred, as a woman, from a regular faculty post until 1919.",
+  "limits": "It applies only to continuous, differentiable symmetries; discrete symmetries like parity or reflection yield no Noether current. It requires a system derivable from an action, so purely dissipative systems with friction need not obey the corresponding conservation law even when a symmetry is present. And in general relativity, whose diffeomorphism invariance is a local symmetry, energy-momentum conservation becomes subtle and only globally well-defined under special conditions: the very problem that motivated the theorem.",
+  "misreadings": "It is not a claim that everything is conserved, only quantities tied to a continuous symmetry are, and only for systems with an action. And the popular version often conflates the two theorems: global symmetries give conservation laws, while local gauge symmetries give identities among the equations of motion.",
+  "origin": "Proved by the German mathematician Emmy Noether in 'Invariante Variationsprobleme' (1918), work she undertook at Gottingen amid the general-relativity energy problem posed by Hilbert and Klein, and despite being barred, as a woman, from a regular faculty post until 1919.",
   "category": "physics",
   "reliability": "Empirical",
   "provenance": "canon",

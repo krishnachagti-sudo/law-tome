@@ -2,7 +2,10 @@
   "no": "518",
   "slug": "the-taylor-rule",
   "name": "The Taylor Rule",
-  "aliases": ["The Taylor principle", "Taylor's monetary rule"],
+  "aliases": [
+    "The Taylor principle",
+    "Taylor's monetary rule"
+  ],
   "statement": "A central bank should raise its interest rate by more than one point for each point of inflation, adjusting also for economic slack.",
   "statementAccent": "by more than one point for each point of inflation",
   "meaning": "The Taylor rule is a formula prescribing how a central bank should set its short-term nominal interest rate in response to inflation and the state of the economy. John Taylor's original version sets the target federal funds rate equal to an assumed equilibrium real rate plus current inflation, plus one half the gap between inflation and its target, plus one half the output gap, the deviation of real output from its potential. It became both a description of how central banks actually behaved and a normative benchmark against which policy is judged, and it distilled a large question, how to run monetary policy, into a simple, transparent reaction function.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The Taylor rule is a workhorse of modern monetary economics, serving at once as a description of central-bank behaviour, a normative benchmark for whether policy is too tight or too loose, and a building block in the macroeconomic models used to analyse inflation and interest rates. Its clarity gave policymakers, economists, and the public a shared language for evaluating monetary policy, and the Taylor principle it embodies, that the real rate must rise with inflation to keep inflation anchored, became a central tenet of how central banks think about stability.",
   "working": [
-    {"lead": "Beat inflation more than one-for-one", "text": "raise the nominal rate by more than a point per point of inflation, so the real rate rises and inflation is pulled back."},
-    {"lead": "Weigh inflation and slack together", "text": "set the rate from both the inflation gap and the output gap, the deviation of output from potential, not inflation alone."},
-    {"lead": "Use it as a benchmark", "text": "compare the actual policy rate to the rule's prescription to gauge whether policy is loose or tight, without treating the rule as automatic."}
+    {
+      "lead": "Beat inflation more than one-for-one",
+      "text": "raise the nominal rate by more than a point per point of inflation, so the real rate rises and inflation is pulled back."
+    },
+    {
+      "lead": "Weigh inflation and slack together",
+      "text": "set the rate from both the inflation gap and the output gap, the deviation of output from potential, not inflation alone."
+    },
+    {
+      "lead": "Use it as a benchmark",
+      "text": "compare the actual policy rate to the rule's prescription to gauge whether policy is loose or tight, without treating the rule as automatic."
+    }
   ],
   "limits": "The rule depends on unobservable inputs, the equilibrium real rate and potential output, which must be estimated and are subject to large, persistent errors, and results shift with the inflation measure chosen. In deep downturns it can prescribe a negative nominal rate that cannot be implemented, the zero-lower-bound problem. There is a standing debate over rules versus discretion, with critics arguing policy should be systematic but not mechanical, since judgement about hard-to-measure variables matters. Taylor himself argued the Fed held rates well below the rule in the mid-2000s and thereby fuelled the housing bubble, a causal claim disputed by others, so it remains contested rather than settled.",
   "misreadings": "The coefficient on inflation is not one half; that is the weight on the inflation gap, while the total response of the nominal rate to inflation is about one and a half, which is the whole point. The 0.5 weights and 2 percent targets are Taylor's illustrative baseline, not a fixed law, since Taylor-type rules use many settings. The rule is a benchmark and a description, not a mandate the Fed mechanically follows. The output term is the output gap, the deviation from potential, not the growth rate of output. And the claim that deviations from the rule caused the housing bubble is Taylor's disputed interpretation, not established fact.",
@@ -47,11 +59,22 @@
   "namedAfter": "John B. Taylor",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Taylor, 'Discretion versus policy rules in practice,' Carnegie-Rochester Conference Series on Public Policy 39:195-214 (1993). — the original rule and calibration.", "url": "https://web.stanford.edu/~johntayl/Onlinepaperscombinedbyyear/1993/Discretion_versus_Policy_Rules_in_Practice.pdf", "type": "primary"},
-    {"text": "Bernanke, 'The Taylor Rule: A benchmark for monetary policy?', Brookings Institution (2015). — the rule as description and benchmark, and the rules-versus-discretion debate.", "url": "https://www.brookings.edu/articles/the-taylor-rule-a-benchmark-for-monetary-policy/", "type": "secondary"}
+    {
+      "text": "Taylor, 'Discretion versus policy rules in practice,' Carnegie-Rochester Conference Series on Public Policy 39:195-214 (1993). — the original rule and calibration.",
+      "url": "https://web.stanford.edu/~johntayl/Onlinepaperscombinedbyyear/1993/Discretion_versus_Policy_Rules_in_Practice.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Bernanke, 'The Taylor Rule: A benchmark for monetary policy?', Brookings Institution (2015). — the rule as description and benchmark, and the rules-versus-discretion debate.",
+      "url": "https://www.brookings.edu/articles/the-taylor-rule-a-benchmark-for-monetary-policy/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Taylor_rule",
   "related": [
-    {"slug": "the-quantity-theory-of-money", "kind": "kindred"}
+    {
+      "slug": "the-quantity-theory-of-money",
+      "kind": "kindred"
+    }
   ]
 }

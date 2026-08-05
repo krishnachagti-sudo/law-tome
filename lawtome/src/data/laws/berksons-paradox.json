@@ -8,16 +8,16 @@
   ],
   "statement": "Two unrelated traits can look negatively correlated within a group selected on having at least one of them.",
   "statementAccent": "within a group selected",
-  "meaning": "Within a selected sample, two traits that are independent — or even positively related — in the wider population can appear to trade off against each other, so that having one seems to predict lacking the other. The correlation is an illusion created by how the sample was chosen.",
-  "mechanism": "It is collider bias. A collider is a variable caused by two others; selecting your sample on that common effect opens a spurious statistical path between its causes. If admission to the sample requires at least one of two traits, then within the sample a low value on one trait must be compensated by a high value on the other — because the members with neither trait are systematically absent. No real relationship is needed to produce the inverse one.",
+  "meaning": "Within a selected sample, two traits that are independent (or even positively related) in the wider population can appear to trade off against each other, so that having one seems to predict lacking the other. The correlation is an illusion created by how the sample was chosen.",
+  "mechanism": "It is collider bias. A collider is a variable caused by two others; selecting your sample on that common effect opens a spurious statistical path between its causes. If admission to the sample requires at least one of two traits, then within the sample a low value on one trait must be compensated by a high value on the other, because the members with neither trait are systematically absent. No real relationship is needed to produce the inverse one.",
   "examples": [
     {
       "tag": "Hospital data",
-      "text": "Berkson's original case: among hospital inpatients, two unrelated diseases can appear negatively correlated, because a patient admitted without one condition is more likely to have been admitted for the other — an artefact of studying only the admitted."
+      "text": "Berkson's original case: among hospital inpatients, two unrelated diseases can appear negatively correlated, because a patient admitted without one condition is more likely to have been admitted for the other (an artefact of studying only the admitted)."
     },
     {
       "tag": "The dating pool",
-      "text": "Among the people you would consider dating — who must clear some combined bar of, say, kindness and looks — the attractive ones can seem to be less kind and the kind ones less attractive, because a rude person had to be extra good-looking to make the cut. The traits need not be related at all."
+      "text": "Among the people you would consider dating (who must clear some combined bar of, say, kindness and looks) the attractive ones can seem to be less kind and the kind ones less attractive, because a rude person had to be extra good-looking to make the cut. The traits need not be related at all."
     },
     {
       "tag": "Selective admissions",
@@ -27,14 +27,14 @@
   "variants": [
     {
       "name": "Collider bias",
-      "text": "The modern causal-inference name for the mechanism — conditioning on a common effect — of which Berkson's paradox is the classic special case."
+      "text": "The modern causal-inference name for the mechanism, conditioning on a common effect, of which Berkson's paradox is the classic special case."
     },
     {
       "name": "Selection bias",
       "text": "The broad family Berkson's belongs to: distortions introduced by how units enter the sample rather than by the underlying relationship."
     }
   ],
-  "whyItMatters": "It is one of the commonest ways a real dataset produces a false relationship — and it hides wherever data is gathered from a selected group: hospital patients, admitted students, funded startups, published studies. Recognising it is essential to not mistaking an artefact of selection for a fact about the world, a hazard highlighted anew in collider-bias critiques of observational Covid-19 research.",
+  "whyItMatters": "It is one of the commonest ways a real dataset produces a false relationship, and it hides wherever data is gathered from a selected group: hospital patients, admitted students, funded startups, published studies. Recognising it is essential to not mistaking an artefact of selection for a fact about the world, a hazard highlighted anew in collider-bias critiques of observational Covid-19 research.",
   "working": [
     {
       "lead": "Ask how the sample was selected",
@@ -46,10 +46,10 @@
     },
     {
       "lead": "Draw the causal graph",
-      "text": "if two variables both feed into the selection criterion, conditioning on that criterion will link them — mark the collider and avoid conditioning on it."
+      "text": "if two variables both feed into the selection criterion, conditioning on that criterion will link them: mark the collider and avoid conditioning on it."
     }
   ],
-  "limits": "It is a real statistical artefact, not a logical paradox — Berkson framed it as a limitation of analysing selected (hospital) data, and it is a 'veridical' paradox whose surprise dissolves once the selection mechanism is drawn out. The induced negative correlation is entirely a property of the sampling frame and says nothing about the population-level or causal relationship. Its danger is precisely that it looks like a real finding; the fix is to recognise the selection, not to trust the within-sample correlation.",
+  "limits": "It is a real statistical artefact, not a logical paradox: Berkson framed it as a limitation of analysing selected (hospital) data, and it is a 'veridical' paradox whose surprise dissolves once the selection mechanism is drawn out. The induced negative correlation is entirely a property of the sampling frame and says nothing about the population-level or causal relationship. Its danger is precisely that it looks like a real finding; the fix is to recognise the selection, not to trust the within-sample correlation.",
   "misreadings": "It does not mean the two traits really are opposed, or that the population relationship is negative — usually it is not. The negative correlation exists only inside the selected group and is an artefact of who was let in.",
   "origin": "Described by the Mayo Clinic biostatistician Joseph Berkson in a 1946 paper, 'Limitations of the Application of Fourfold Table Analysis to Hospital Data', which showed how studying only hospital patients can manufacture spurious associations between diseases. It is now understood as the classic instance of collider bias in causal inference.",
   "category": "statistics",

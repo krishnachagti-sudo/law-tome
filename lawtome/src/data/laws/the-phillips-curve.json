@@ -4,7 +4,7 @@
   "name": "The Phillips Curve",
   "statement": "When unemployment is low, inflation tends to run high, and the reverse.",
   "statementAccent": "inflation tends to run high",
-  "meaning": "The Phillips curve describes an inverse relationship between unemployment and inflation — originally between unemployment and the rate of change of wages. When joblessness is low, a tight labour market pushes wages and prices up; when joblessness is high, inflation eases. For a time it was read as a stable menu of choices, a tradeoff policymakers could ride between the two evils.",
+  "meaning": "The Phillips curve describes an inverse relationship between unemployment and inflation: originally between unemployment and the rate of change of wages. When joblessness is low, a tight labour market pushes wages and prices up; when joblessness is high, inflation eases. For a time it was read as a stable menu of choices, a tradeoff policymakers could ride between the two evils.",
   "mechanism": "The intuitive engine is wage and price setting: a falling unemployment rate signals stronger demand for labour, so employers bid wages up, and higher wages feed into higher prices. The crucial modern refinement is that expectations shift the whole relationship. Only inflation that is unexpected moves unemployment away from its natural rate; once workers and firms come to expect a given inflation, it is built into wage bargains and the apparent tradeoff dissolves. In modern models, firms set prices looking forward, tying today's inflation to expected future inflation.",
   "examples": [
     {
@@ -13,7 +13,7 @@
     },
     {
       "tag": "The policy menu",
-      "text": "Samuelson and Solow recast the curve for American price inflation and presented it as a tradeoff a government could exploit — accept a little more inflation to buy lower unemployment."
+      "text": "Samuelson and Solow recast the curve for American price inflation and presented it as a tradeoff a government could exploit: accept a little more inflation to buy lower unemployment."
     },
     {
       "tag": "The stagflation break",
@@ -32,11 +32,20 @@
   ],
   "whyItMatters": "It has been one of the central relationships of macroeconomics and a workhorse of monetary policy for over half a century, framing the perceived tension between fighting inflation and fighting unemployment. Its rise, breakdown, and reinterpretation trace the whole modern history of thinking about inflation, from a naive exploitable tradeoff to the expectations-based understanding that underpins today's central banking.",
   "working": [
-    {"lead": "Distinguish short run from long", "text": "treat any downward-sloping tradeoff as a short-run phenomenon, with no permanent exchange of inflation for lower unemployment in the long run."},
-    {"lead": "Watch expectations", "text": "recognise that what moves real outcomes is inflation relative to what was expected, so anchored expectations weaken the observed link."},
-    {"lead": "Do not bank on stability", "text": "avoid treating the curve as a fixed structural relation, since it shifts with regime and expectations."}
+    {
+      "lead": "Distinguish short run from long",
+      "text": "treat any downward-sloping tradeoff as a short-run phenomenon, with no permanent exchange of inflation for lower unemployment in the long run."
+    },
+    {
+      "lead": "Watch expectations",
+      "text": "recognise that what moves real outcomes is inflation relative to what was expected, so anchored expectations weaken the observed link."
+    },
+    {
+      "lead": "Do not bank on stability",
+      "text": "avoid treating the curve as a fixed structural relation, since it shifts with regime and expectations."
+    }
   ],
-  "limits": "The Phillips curve is not a stable structural law but an empirical regularity that shifts with expectations and policy regime — the lesson of both the 1970s breakdown and the Lucas critique, which warns that a historically fitted relationship need not survive attempts to exploit it. The short-run and long-run versions differ sharply, a downward slope coexisting with a vertical long-run curve. In recent decades the curve has appeared to flatten, with inflation responding little to unemployment, a shift whose cause and even reality are debated, and the 2021 inflation surge has reopened the argument. Whether it still holds usefully in real time is genuinely contested.",
+  "limits": "The Phillips curve is not a stable structural law but an empirical regularity that shifts with expectations and policy regime: the lesson of both the 1970s breakdown and the Lucas critique, which warns that a historically fitted relationship need not survive attempts to exploit it. The short-run and long-run versions differ sharply, a downward slope coexisting with a vertical long-run curve. In recent decades the curve has appeared to flatten, with inflation responding little to unemployment, a shift whose cause and even reality are debated, and the 2021 inflation surge has reopened the argument. Whether it still holds usefully in real time is genuinely contested.",
   "misreadings": "It is not a permanent, exploitable tradeoff that lets policymakers buy lower unemployment forever with a little more inflation. Friedman and Phelps showed that attempts to ride it merely raise inflation expectations, shifting the curve, so unemployment returns to its natural rate. The existence of the curve does not by itself prove that growth causes inflation, nor does it refute the monetarist account.",
   "origin": "Documented by A. W. Phillips in a 1958 study of United Kingdom wage inflation and unemployment over roughly a century; recast for American price inflation and framed as a policy tradeoff by Samuelson and Solow in 1960, then revised by Friedman and Phelps around 1968 into the expectations-augmented form with a vertical long-run curve.",
   "category": "economics",
@@ -46,13 +55,31 @@
   "namedAfter": "A. W. Phillips",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Phillips, \"The Relation between Unemployment and the Rate of Change of Money Wage Rates in the United Kingdom, 1861-1957,\" Economica 25(100):283-299 (1958). — the original empirical relationship.", "url": "https://public.econ.duke.edu/~kdh9/Courses/Graduate%20Macro%20History/Readings-1/Phillips.pdf", "type": "primary"},
-    {"text": "Hoover, \"Phillips Curve,\" Concise Encyclopedia of Economics (Econlib). — the history, the stagflation breakdown, and the natural-rate revision.", "url": "https://www.econlib.org/library/Enc/PhillipsCurve.html", "type": "secondary"},
-    {"text": "Engemann, \"What's the Phillips Curve and Why Has It Flattened?\" Federal Reserve Bank of St. Louis (2020). — the flattening and the role of anchored expectations.", "url": "https://www.stlouisfed.org/open-vault/2020/january/what-is-phillips-curve-why-flattened", "type": "secondary"}
+    {
+      "text": "Phillips, \"The Relation between Unemployment and the Rate of Change of Money Wage Rates in the United Kingdom, 1861-1957,\" Economica 25(100):283-299 (1958). — the original empirical relationship.",
+      "url": "https://public.econ.duke.edu/~kdh9/Courses/Graduate%20Macro%20History/Readings-1/Phillips.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Hoover, \"Phillips Curve,\" Concise Encyclopedia of Economics (Econlib). — the history, the stagflation breakdown, and the natural-rate revision.",
+      "url": "https://www.econlib.org/library/Enc/PhillipsCurve.html",
+      "type": "secondary"
+    },
+    {
+      "text": "Engemann, \"What's the Phillips Curve and Why Has It Flattened?\" Federal Reserve Bank of St. Louis (2020). — the flattening and the role of anchored expectations.",
+      "url": "https://www.stlouisfed.org/open-vault/2020/january/what-is-phillips-curve-why-flattened",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Phillips_curve",
   "related": [
-    {"slug": "the-lucas-critique", "kind": "tension"},
-    {"slug": "the-quantity-theory-of-money", "kind": "kindred"}
+    {
+      "slug": "the-lucas-critique",
+      "kind": "tension"
+    },
+    {
+      "slug": "the-quantity-theory-of-money",
+      "kind": "kindred"
+    }
   ]
 }

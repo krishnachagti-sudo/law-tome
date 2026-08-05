@@ -5,14 +5,14 @@
   "aliases": [
     "Newcomb's problem"
   ],
-  "statement": "Two rules of rational choice — dominance and expected value — give opposite answers to the same decision.",
+  "statement": "Two rules of rational choice, dominance and expected value, give opposite answers to the same decision.",
   "statementAccent": "give opposite answers",
   "meaning": "Newcomb's paradox is a decision puzzle in which two standard principles of rational choice conflict. A reliable predictor has already put money in two boxes: a transparent box holds a small sure sum, and an opaque box holds a large sum, but only if the predictor foresaw that you would take the opaque box alone. You choose between taking both boxes or only the opaque one. One line of reasoning says take both; another says take only one; and each seems compellingly rational, so the paradox is that rationality appears to speak with two voices.",
   "mechanism": "The setup pits two principles against each other. The dominance principle notes that the predictor has already acted and the boxes' contents are fixed: whatever is in the opaque box, taking both boxes yields the extra sure sum, so two-boxing dominates. The expected-value principle notes that the predictor is reliable, so one-boxers almost always find the large sum and two-boxers almost always find only the small one; conditional on your choice, one-boxing has the higher expected payoff. Because your decision is correlated with a prediction already made, the two principles come apart, and which one governs turns on how causation and evidence bear on rational choice.",
   "examples": [
     {
       "tag": "The two boxes",
-      "text": "A transparent box holds a thousand dollars; an opaque box holds a million if the predictor expected you to take it alone, and nothing otherwise — you may take both boxes or only the opaque one."
+      "text": "A transparent box holds a thousand dollars; an opaque box holds a million if the predictor expected you to take it alone, and nothing otherwise. You may take both boxes or only the opaque one."
     },
     {
       "tag": "The one-boxer's case",
@@ -20,7 +20,7 @@
     },
     {
       "tag": "The two-boxer's case",
-      "text": "The money is already in or out of the opaque box and cannot change now, so taking both boxes gets you whatever it holds plus the sure thousand — a dominating strategy."
+      "text": "The money is already in or out of the opaque box and cannot change now, so taking both boxes gets you whatever it holds plus the sure thousand: a dominating strategy."
     }
   ],
   "variants": [
@@ -41,15 +41,15 @@
     },
     {
       "lead": "Ask what the choice can affect",
-      "text": "notice that your decision cannot causally change the already-fixed contents, yet is strongly correlated with them — the crux dividing causal and evidential theorists."
+      "text": "notice that your decision cannot causally change the already-fixed contents, yet is strongly correlated with them: the crux dividing causal and evidential theorists."
     },
     {
       "lead": "Pick a decision theory",
       "text": "commit to whether rationality tracks causal consequences or evidential expectations, since Newcomb's problem forces the choice and neither answer is uncontested."
     }
   ],
-  "limits": "It is an unresolved problem with no consensus: able philosophers defend one-boxing and two-boxing, and the split between causal and evidential decision theory persists. Some argue the scenario is underspecified or even incoherent — that a truly infallible predictor and genuine free choice sit uneasily together — so part of the dispute concerns whether the problem is well posed. The verdict one reaches depends on prior commitments about causation and rationality that the problem itself does not settle, which is why it functions as a probe rather than a solvable exercise.",
-  "misreadings": "It is not a simple maths error with an obvious right answer — sophisticated theorists land on opposite sides, and the disagreement is principled. It does not require backward causation: the predictor's accuracy can rest on ordinary prediction, not on your choice reaching back in time. And it is not merely academic; its logic underlies real dilemmas of prediction and commitment where a rational agent's choice is correlated with what others have already anticipated.",
+  "limits": "It is an unresolved problem with no consensus: able philosophers defend one-boxing and two-boxing, and the split between causal and evidential decision theory persists. Some argue the scenario is underspecified or even incoherent (that a truly infallible predictor and genuine free choice sit uneasily together), so part of the dispute concerns whether the problem is well posed. The verdict one reaches depends on prior commitments about causation and rationality that the problem itself does not settle, which is why it functions as a probe rather than a solvable exercise.",
+  "misreadings": "It is not a simple maths error with an obvious right answer: sophisticated theorists land on opposite sides, and the disagreement is principled. It does not require backward causation: the predictor's accuracy can rest on ordinary prediction, not on your choice reaching back in time. And it is not merely academic; its logic underlies real dilemmas of prediction and commitment where a rational agent's choice is correlated with what others have already anticipated.",
   "origin": "Devised by the physicist William Newcomb around 1960 and brought to philosophical attention by Robert Nozick in 'Newcomb's Problem and Two Principles of Choice' (1969); it became the founding puzzle of the debate between causal and evidential decision theory.",
   "category": "philosophy",
   "reliability": "Contested",

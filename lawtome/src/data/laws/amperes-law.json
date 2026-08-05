@@ -9,15 +9,15 @@
   "statement": "An electric current is wrapped by a magnetic field proportional to the current enclosed.",
   "statementAccent": "wrapped by a magnetic field",
   "meaning": "An electric current creates a magnetic field that circulates around it. Trace any closed loop and add up the magnetic field along the path, and the total is set by how much current threads through the loop. More enclosed current means a stronger circulating field.",
-  "mechanism": "The line integral of the magnetic field around a closed loop equals a constant times the current passing through it — in differential form, the curl of the magnetic field is proportional to the current density. It captures one of the two ways magnetic fields arise; the other, a changing electric field, is the correction Maxwell later added.",
+  "mechanism": "The line integral of the magnetic field around a closed loop equals a constant times the current passing through it: in differential form, the curl of the magnetic field is proportional to the current density. It captures one of the two ways magnetic fields arise; the other, a changing electric field, is the correction Maxwell later added.",
   "examples": [
     {
       "tag": "The straight wire",
-      "text": "The magnetic field circles a current-carrying wire and weakens with distance as one over the radius — the simplest application, and the field that first deflected Ørsted's compass."
+      "text": "The magnetic field circles a current-carrying wire and weakens with distance as one over the radius: the simplest application, and the field that first deflected Ørsted's compass."
     },
     {
       "tag": "The solenoid",
-      "text": "A tightly wound coil produces a nearly uniform field along its axis, its strength set by the current and the turns per unit length — derived directly from the circuital law."
+      "text": "A tightly wound coil produces a nearly uniform field along its axis, its strength set by the current and the turns per unit length: derived directly from the circuital law."
     },
     {
       "tag": "Electromagnets",
@@ -27,18 +27,18 @@
   "variants": [
     {
       "name": "The Ampère–Maxwell law",
-      "text": "The completed form, with Maxwell's displacement-current term added, so that a changing electric field also sources a magnetic one — one of the four Maxwell's equations and the key to electromagnetic waves."
+      "text": "The completed form, with Maxwell's displacement-current term added, so that a changing electric field also sources a magnetic one: one of the four Maxwell's equations and the key to electromagnetic waves."
     },
     {
       "name": "The Biot–Savart law",
       "text": "The complementary relation giving the magnetic field of a current element directly, useful where the symmetry needed for the circuital law is absent."
     }
   ],
-  "whyItMatters": "It quantifies how currents make magnetic fields, the basis of electromagnets, solenoids, and motors. Its famous incompleteness — and Maxwell's fix — is a landmark in physics: adding one missing term unified electricity, magnetism, and light and predicted electromagnetic waves.",
+  "whyItMatters": "It quantifies how currents make magnetic fields, the basis of electromagnets, solenoids, and motors. Its famous incompleteness, and Maxwell's fix, is a landmark in physics: adding one missing term unified electricity, magnetism, and light and predicted electromagnetic waves.",
   "working": [
     {
       "lead": "Exploit symmetry",
-      "text": "use the circuital law where the geometry is symmetric — wires, solenoids, toroids — so the field can be pulled out of the loop integral."
+      "text": "use the circuital law where the geometry is symmetric (wires, solenoids, toroids), so the field can be pulled out of the loop integral."
     },
     {
       "lead": "Add the displacement term for changing fields",
@@ -50,7 +50,7 @@
     }
   ],
   "limits": "The original form is incomplete for time-varying fields. The canonical failure is a charging capacitor: current flows in the wires but no charge crosses the gap, yet a magnetic field exists there, and the law gives contradictory answers depending on which surface you choose. Maxwell's displacement-current term resolves this, restoring consistency with charge conservation and enabling electromagnetic waves. The uncorrected law is valid only for steady currents and magnetostatics.",
-  "misreadings": "It is not complete on its own — for changing electric fields the original law is self-contradictory, and only Maxwell's displacement-current correction makes it universal. The name is also honorific: the modern integral form was cast by others, building on Ampère's experimental work, rather than written down by Ampère himself.",
+  "misreadings": "It is not complete on its own: for changing electric fields the original law is self-contradictory, and only Maxwell's displacement-current correction makes it universal. The name is also honorific: the modern integral form was cast by others, building on Ampère's experimental work, rather than written down by Ampère himself.",
   "origin": "Rooted in Ørsted's 1820 discovery that a current deflects a compass and in André-Marie Ampère's 1820s experiments on the forces between current-carrying wires. The circuital law was later given its integral form and completed by James Clerk Maxwell's displacement-current term in 1861–1862.",
   "category": "physics",
   "reliability": "Empirical",

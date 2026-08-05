@@ -4,8 +4,8 @@
   "name": "The Stefan–Boltzmann Law",
   "statement": "A body radiates energy in proportion to the fourth power of its absolute temperature.",
   "statementAccent": "the fourth power of its absolute temperature",
-  "meaning": "Hotter objects radiate dramatically more energy, not just a little more. Because the total power emitted per unit area grows as temperature to the fourth power, doubling the absolute temperature multiplies the radiated power sixteenfold — a steep nonlinearity that makes temperature the dominant driver of radiative energy loss.",
-  "mechanism": "Summing the black body's emission across every wavelength — integrating Planck's law over the whole spectrum — gives a total proportional to temperature to the fourth power, with the Stefan–Boltzmann constant as the accumulated factor. Real surfaces radiate a fraction of that, captured by their emissivity.",
+  "meaning": "Hotter objects radiate dramatically more energy, not just a little more. Because the total power emitted per unit area grows as temperature to the fourth power, doubling the absolute temperature multiplies the radiated power sixteenfold: a steep nonlinearity that makes temperature the dominant driver of radiative energy loss.",
+  "mechanism": "Summing the black body's emission across every wavelength, integrating Planck's law over the whole spectrum, gives a total proportional to temperature to the fourth power, with the Stefan–Boltzmann constant as the accumulated factor. Real surfaces radiate a fraction of that, captured by their emissivity.",
   "examples": [
     {
       "tag": "Weighing the stars",
@@ -13,7 +13,7 @@
     },
     {
       "tag": "A brighter filament",
-      "text": "Because output scales with the fourth power, a modest rise in an incandescent filament's temperature sharply increases its radiated power and shifts its glow toward the visible — disproportionately brighter and whiter."
+      "text": "Because output scales with the fourth power, a modest rise in an incandescent filament's temperature sharply increases its radiated power and shifts its glow toward the visible: disproportionately brighter and whiter."
     },
     {
       "tag": "Planetary temperature",
@@ -34,7 +34,7 @@
   "working": [
     {
       "lead": "Respect the fourth power",
-      "text": "expect radiated power to change far faster than temperature — a small temperature rise is a large jump in emission."
+      "text": "expect radiated power to change far faster than temperature: a small temperature rise is a large jump in emission."
     },
     {
       "lead": "Apply emissivity for real surfaces",
@@ -46,7 +46,7 @@
     }
   ],
   "limits": "The law is exact only for an ideal black body, a perfect absorber and emitter. Real bodies have emissivity below one, sometimes varying with wavelength and direction, so the grey-body form is itself an approximation. It requires absolute temperature and describes thermal-equilibrium radiation; net radiative exchange between bodies needs the difference of their fourth-power emissions. Within these bounds it is a bedrock, exactly-grounded law, its constant now fixed by fundamental constants.",
-  "misreadings": "It is not a linear rule — radiated power rises with the fourth power of temperature, so intuition that scales it directly with temperature badly underestimates the effect. And it describes an ideal black body; real objects emit less, in proportion to their emissivity.",
+  "misreadings": "It is not a linear rule: radiated power rises with the fourth power of temperature, so intuition that scales it directly with temperature badly underestimates the effect. And it describes an ideal black body; real objects emit less, in proportion to their emissivity.",
   "origin": "Established empirically by Josef Stefan in 1879 from radiation measurements, and derived thermodynamically by his former student Ludwig Boltzmann in 1884. It is later understood as the wavelength-integral of Planck's quantum law, with a constant fixed by fundamental constants.",
   "category": "physics",
   "reliability": "Empirical",

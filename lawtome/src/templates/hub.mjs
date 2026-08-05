@@ -81,7 +81,7 @@ export const HUBS = [
   ['best-known/', 'The best-known', 'ranked by how often each name actually appears in print'],
   ['quotes/', 'The statements', 'every named law in the form it actually gets quoted'],
   ['also-known-as/', 'Also known as', 'the other names these ideas travel under, cross-referenced'],
-  ['kinds/', 'By kind', 'the razors, the paradoxes, the theorems, the fallacies — grouped by what kind of thing they are'],
+  ['kinds/', 'By kind', 'the razors, the paradoxes, the theorems, the fallacies, grouped by what kind of thing they are'],
   ['collections/', 'Collections', 'hand-picked sets that cut across fields'],
   ['for/', 'Find your laws', 'curated ways in for engineers, writers, decision-makers'],
   ['timeline/', 'Timeline', 'the index as a history of ideas, century by century'],
@@ -89,7 +89,7 @@ export const HUBS = [
   ['origins/', 'Where they came from', "the namesakes' birthplaces, on a map"],
   ['names/', 'In other languages', 'the names these ideas already go by, in ten languages'],
   ['reliability/', 'By reliability', 'measured findings, rules of thumb, and folklore, separated'],
-  ['sheets/', 'Cheat sheets', 'one field on one printable page — the short version of the index'],
+  ['sheets/', 'Cheat sheets', 'one field on one printable page: the short version of the index'],
   ['how-solid/', 'How solid is any of this?', 'what happens when you rate the whole canon and cross it with fame'],
   ['is-it-real/', 'Is it real?', 'every entry rated by the evidence behind it'],
   ['misattributed/', 'Named after the wrong person', "Stigler's law, with the receipts"],
@@ -280,7 +280,7 @@ export function setTensions(laws = [], { base = '/', compareSlugs = {}, noun = '
   if (!pairs.length) return '';
   return `    <section class="setten">
       <h2>Where this ${escapeHtml(noun)} disagrees with itself</h2>
-      <p class="setten-note">${pairs.length} ${pairs.length === 1 ? 'pair' : 'pairs'} inside this ${escapeHtml(noun)} pull in opposite directions. That is not a flaw in the ${escapeHtml(noun)} — it is the useful part.</p>
+      <p class="setten-note">${pairs.length} ${pairs.length === 1 ? 'pair' : 'pairs'} inside this ${escapeHtml(noun)} pull in opposite directions. That is not a flaw in the ${escapeHtml(noun)}. It is the useful part.</p>
       <ul class="setten-list">
 ${pairs.map((p) => `        <li>${p.compare
     ? `<a href="${base}compare/${escapeHtml(p.compare)}/">${escapeHtml(p.a.name)} <span>vs</span> ${escapeHtml(p.b.name)}</a>`
@@ -313,7 +313,7 @@ export function setAdjacent(laws = [], { base = '/', byslug = {}, limit = 8, nou
   if (!top.length) return '';
   return `    <section class="setadj">
       <h2>Just outside this ${escapeHtml(noun)}</h2>
-      <p class="setadj-note">Entries these laws keep pointing at from outside the ${escapeHtml(noun)} — each linked by at least two members.</p>
+      <p class="setadj-note">Entries these laws keep pointing at from outside the ${escapeHtml(noun)}, each linked by at least two members.</p>
       <ul class="coll-laws">
 ${top.map((t) => `        <li><a href="${base}laws/${escapeHtml(t.law.slug)}/">${escapeHtml(t.law.name)}</a></li>`).join('\n')}
       </ul>

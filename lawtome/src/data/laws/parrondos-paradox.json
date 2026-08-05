@@ -2,7 +2,9 @@
   "no": "371",
   "slug": "parrondos-paradox",
   "name": "Parrondo's Paradox",
-  "aliases": ["Parrondo's games"],
+  "aliases": [
+    "Parrondo's games"
+  ],
   "statement": "Two games that each lose on their own can, played in the right sequence, win.",
   "statementAccent": "can, played in the right sequence, win",
   "meaning": "Parrondo's paradox is the counterintuitive fact that there exist pairs of gambling games, each a losing proposition when played alone, that combine into a winning one when alternated or mixed. A player who would steadily lose playing either game by itself can come out ahead by switching between them. The paradox is not a violation of probability but a consequence of a hidden dependence engineered between the two games.",
@@ -33,9 +35,18 @@
   ],
   "whyItMatters": "It is a striking, rigorous demonstration that combining strategies is not the same as averaging them, and that structure and dependence can turn losses into gains. It has drawn interest across physics, biology, and engineering as a model of how alternation or noise can produce directed benefit, from molecular ratchets to switched control, and it sharpens intuition about when mixing helps and why.",
   "working": [
-    {"lead": "Look for the dependence", "text": "recognise that the paradox needs the games to be coupled, as through capital-dependent odds, not truly independent fair games."},
-    {"lead": "Mind the sequence", "text": "remember the mixing pattern matters, since some alternations win and others lose for the same pair of games."},
-    {"lead": "Resist the free-lunch reading", "text": "treat the gain as coming from engineered structure, like a driven ratchet, not from beating probability itself."}
+    {
+      "lead": "Look for the dependence",
+      "text": "recognise that the paradox needs the games to be coupled, as through capital-dependent odds, not truly independent fair games."
+    },
+    {
+      "lead": "Mind the sequence",
+      "text": "remember the mixing pattern matters, since some alternations win and others lose for the same pair of games."
+    },
+    {
+      "lead": "Resist the free-lunch reading",
+      "text": "treat the gain as coming from engineered structure, like a driven ratchet, not from beating probability itself."
+    }
   ],
   "limits": "It is a real, mathematically rigorous result, not folklore, but it is often misdescribed. It requires a specific dependence between the games, such as capital-dependent odds or coupling between agents; two genuinely independent losing games cannot combine into a winner. The apparent gain comes from that engineered structure, analogous to a ratchet needing an external drive, not from any loophole in probability. Its many proposed applications, especially in finance, range from solid to speculative and should be treated with care.",
   "misreadings": "It does not violate the laws of probability or manufacture free money; expected values are computed correctly, and the advantage comes entirely from the games' dependence. Not any two losing games work, only ones with the right coupling. And alternating does not always win, since the sequence itself matters. Like the flashing ratchet, it operates out of equilibrium and takes nothing for free.",
@@ -47,12 +58,26 @@
   "namedAfter": "Juan Parrondo",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Parrondo's paradox, Wikipedia. — the losing-games construction, the capital-dependence mechanism, and the flashing-ratchet analogy.", "url": "https://en.wikipedia.org/wiki/Parrondo%27s_paradox", "type": "secondary"},
-    {"text": "Harmer & Abbott, \"Losing strategies can win by Parrondo's paradox,\" Nature 402 (1999): 864. — the naming and formal demonstration.", "url": "https://www.nature.com/articles/47220", "type": "primary"}
+    {
+      "text": "Parrondo's paradox, Wikipedia. — the losing-games construction, the capital-dependence mechanism, and the flashing-ratchet analogy.",
+      "url": "https://en.wikipedia.org/wiki/Parrondo%27s_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Harmer & Abbott, \"Losing strategies can win by Parrondo's paradox,\" Nature 402 (1999): 864. — the naming and formal demonstration.",
+      "url": "https://www.nature.com/articles/47220",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Parrondo%27s_paradox",
   "related": [
-    {"slug": "the-st-petersburg-paradox", "kind": "kindred"},
-    {"slug": "the-second-law-of-thermodynamics", "kind": "tension"}
+    {
+      "slug": "the-st-petersburg-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-second-law-of-thermodynamics",
+      "kind": "tension"
+    }
   ]
 }

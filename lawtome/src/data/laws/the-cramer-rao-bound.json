@@ -5,7 +5,7 @@
   "statement": "The variance of any unbiased estimator of a parameter is bounded below by the reciprocal of the Fisher information.",
   "statementAccent": "bounded below by the reciprocal of the Fisher information",
   "meaning": "The bound sets a fundamental limit on how precisely any unbiased estimator can pin down an unknown parameter from data, no matter how clever the estimator. An estimator that attains the bound exactly is called \"efficient,\" and the bound is the benchmark against which real estimators such as maximum-likelihood estimators are judged.",
-  "mechanism": "The bound is derived from the Cauchy–Schwarz inequality applied to the score function (the derivative of the log-likelihood), with Fisher information measuring the expected curvature of the log-likelihood around the true parameter — sharper curvature means more information and a lower achievable variance. It generalises to biased estimators via a bias-correction term and to vector parameters via the inverse Fisher information matrix.",
+  "mechanism": "The bound is derived from the Cauchy–Schwarz inequality applied to the score function (the derivative of the log-likelihood), with Fisher information measuring the expected curvature of the log-likelihood around the true parameter: sharper curvature means more information and a lower achievable variance. It generalises to biased estimators via a bias-correction term and to vector parameters via the inverse Fisher information matrix.",
   "examples": [
     {
       "tag": "Sample mean",
@@ -17,11 +17,11 @@
     },
     {
       "tag": "Gravitational waves",
-      "text": "Fisher-information-based Cramér–Rao estimates approximate the best-achievable uncertainty on inferred source parameters — mass, distance — from gravitational-wave detector data."
+      "text": "Fisher-information-based Cramér–Rao estimates approximate the best-achievable uncertainty on inferred source parameters (mass, distance) from gravitational-wave detector data."
     }
   ],
   "whyItMatters": "It provides a universal yardstick for evaluating estimator quality across statistics and engineering, letting researchers know when an estimator is already essentially optimal versus when improvement is possible, and it underlies experimental-design questions such as how much data is needed to reach a target precision.",
-  "limits": "The bound applies only under regularity conditions — differentiable likelihood, support not depending on the parameter — and is not always attainable; some unbiased estimators of minimum variance still exceed it. For biased estimators a lower mean-squared error than the unbiased bound is sometimes achievable, which can mislead if bias is ignored.",
+  "limits": "The bound applies only under regularity conditions (differentiable likelihood, support not depending on the parameter) and is not always attainable; some unbiased estimators of minimum variance still exceed it. For biased estimators a lower mean-squared error than the unbiased bound is sometimes achievable, which can mislead if bias is ignored.",
   "misreadings": "It is sometimes misapplied to biased estimators or used as if an attainable, tight estimator always exists, when in some models no unbiased estimator meets the bound at all.",
   "origin": "Independently derived by Maurice Fréchet (1943), C. R. Rao (1945), and Harald Cramér (1946), with earlier related work by Aitken and Silverstone (1942); named for Cramér and Rao, and sometimes the Fréchet–Darmois–Cramér–Rao bound.",
   "category": "statistics",

@@ -53,7 +53,7 @@ export function countryPage(g, {
 
   const answer = `${num(total)} named laws, principles and effects in The Law Tome are named after ${g.people.length === 1 ? 'someone' : `${g.people.length} people`} born in ${escapeHtml(g.country)}${topField ? `, most of them in ${escapeHtml(categories[topField[0]] || topField[0])} (${topField[1]})` : ''}${span ? `, named between ${span[0]} and ${span[1]}` : ''}.`;
 
-  const lede = `Filed by <em>birthplace</em>, which is the one fact here with a source behind it. It is not nationality, not citizenship, and not where the work was done — several of these people left ${escapeHtml(g.country)} as children and did everything they are remembered for somewhere else. The country is the one Wikidata records for the birthplace itself${wikidata ? ` (<a href="${escapeHtml(wikidata)}">${escapeHtml(g.country)} on Wikidata</a>)` : ''}, so a place whose item still carries a historical state is filed under that state rather than being quietly modernised.`;
+  const lede = `Filed by <em>birthplace</em>, which is the one fact here with a source behind it. It is not nationality, not citizenship, and not where the work was done. Several of these people left ${escapeHtml(g.country)} as children and did everything they are remembered for somewhere else. The country is the one Wikidata records for the birthplace itself${wikidata ? ` (<a href="${escapeHtml(wikidata)}">${escapeHtml(g.country)} on Wikidata</a>)` : ''}, so a place whose item still carries a historical state is filed under that state rather than being quietly modernised.`;
 
   const faq = hubFaq([
     {
@@ -66,7 +66,7 @@ export function countryPage(g, {
     },
     {
       q: 'Does this mean the law was discovered here?',
-      a: `No. It means the person it is named after was born here. Where an idea was actually worked out, and by whom, is on the entry's own page — and the namesake is often not the discoverer either.`,
+      a: `No. It means the person it is named after was born here. Where an idea was actually worked out, and by whom, is on the entry's own page, and the namesake is often not the discoverer either.`,
     },
     {
       q: 'Why are some countries missing?',

@@ -4,12 +4,12 @@
   "name": "Arrow's Impossibility Theorem",
   "statement": "No ranked voting system can be fair on every reasonable count at once.",
   "statementAccent": "fair on every reasonable count at once",
-  "meaning": "With three or more options, no method for turning individuals' ranked preferences into a single group ranking can satisfy a short list of basic fairness conditions simultaneously — unless it simply hands all power to one person. It is not a flaw in any particular voting method but a mathematical limit on the whole class of rank-based methods.",
+  "meaning": "With three or more options, no method for turning individuals' ranked preferences into a single group ranking can satisfy a short list of basic fairness conditions simultaneously, unless it simply hands all power to one person. It is not a flaw in any particular voting method but a mathematical limit on the whole class of rank-based methods.",
   "mechanism": "The conditions are unrestricted domain, that the rule works for every possible set of preferences; Pareto efficiency, that if everyone prefers A to B society does too; independence of irrelevant alternatives, that society's ranking of A against B depends only on how voters rank A against B, not on some third option; and non-dictatorship. Arrow proved that for three or more alternatives the first three conditions together force a dictator, so all four cannot hold at once.",
   "examples": [
     {
       "tag": "Voting cycles",
-      "text": "Three voters ranking three options in a rotating pattern produce pairwise majorities that cycle — A beats B, B beats C, yet C beats A — so no consistent group ranking exists, the pathology Arrow generalised."
+      "text": "Three voters ranking three options in a rotating pattern produce pairwise majorities that cycle (A beats B, B beats C, yet C beats A), so no consistent group ranking exists, the pathology Arrow generalised."
     },
     {
       "tag": "The spoiler effect",
@@ -17,7 +17,7 @@
     },
     {
       "tag": "The single-peaked escape",
-      "text": "If preferences are restricted to a single left-right dimension — breaking unrestricted domain — the conditions become compatible and majority rule yields the median voter's choice, showing where the impossibility comes from."
+      "text": "If preferences are restricted to a single left-right dimension, breaking unrestricted domain, the conditions become compatible and majority rule yields the median voter's choice, showing where the impossibility comes from."
     }
   ],
   "variants": [
@@ -45,8 +45,8 @@
       "text": "where preferences are genuinely single-peaked, majority rule regains coherence and a median-voter winner exists."
     }
   ],
-  "limits": "The theorem constrains only ordinal, ranked aggregation. Cardinal or rated methods — approval voting, score voting — fall outside it because they use preference-strength information that its framework excludes, though they do not escape impossibility entirely, being subject instead to the Gibbard–Satterthwaite theorem on manipulability. Independence of irrelevant alternatives is the most contested condition, some arguing it is too strong. And the result depends on unrestricted domain: realistic single-peaked preferences can restore a fair rule. The mathematics is settled; its practical significance is debated.",
-  "misreadings": "It does not say democracy is impossible or that all voting is worthless — only that no ranked method is perfect on every count at once. And it applies to ranked systems specifically: rated methods sidestep it, so 'no fair voting system exists' overstates a theorem about ordinal aggregation.",
+  "limits": "The theorem constrains only ordinal, ranked aggregation. Cardinal or rated methods (approval voting, score voting) fall outside it because they use preference-strength information that its framework excludes, though they do not escape impossibility entirely, being subject instead to the Gibbard–Satterthwaite theorem on manipulability. Independence of irrelevant alternatives is the most contested condition, some arguing it is too strong. And the result depends on unrestricted domain: realistic single-peaked preferences can restore a fair rule. The mathematics is settled; its practical significance is debated.",
+  "misreadings": "It does not say democracy is impossible or that all voting is worthless, only that no ranked method is perfect on every count at once. And it applies to ranked systems specifically: rated methods sidestep it, so 'no fair voting system exists' overstates a theorem about ordinal aggregation.",
   "origin": "Proved by the economist Kenneth Arrow in his 1951 book Social Choice and Individual Values, derived from his doctoral thesis; he won the 1972 Nobel Memorial Prize in Economics, the youngest economics laureate.",
   "category": "sociology",
   "reliability": "Empirical",

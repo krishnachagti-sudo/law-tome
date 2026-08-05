@@ -2,7 +2,10 @@
   "no": "596",
   "slug": "the-euclidean-algorithm",
   "name": "The Euclidean Algorithm",
-  "aliases": ["Euclid's algorithm", "The GCD algorithm"],
+  "aliases": [
+    "Euclid's algorithm",
+    "The GCD algorithm"
+  ],
   "statement": "To find two numbers' greatest common divisor, keep replacing the larger by its remainder on the smaller.",
   "statementAccent": "keep replacing the larger by its remainder on the smaller",
   "meaning": "The Euclidean algorithm is an efficient method for computing the greatest common divisor of two integers, the largest number dividing both. It works by repeatedly replacing the larger number with its remainder after division by the smaller, based on the fact that the greatest common divisor of two numbers equals the greatest common divisor of the smaller number and that remainder. Repeating this shrinks the pair quickly, and when the remainder finally reaches zero, the last nonzero value is the greatest common divisor. Described in Euclid's Elements around 300 BC, it is one of the oldest algorithms still in everyday use, a model of algorithmic thinking, and a foundational tool of number theory and computer science.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The Euclidean algorithm is foundational in both number theory and computer science, the standard way to compute greatest common divisors and, in its extended form, modular inverses that secure the RSA cryptosystem and much of digital communication. It anticipates the whole idea of an algorithm, a finite, mechanical, terminating procedure, and its efficiency analysis, tying the worst case to the Fibonacci numbers through Lame's theorem, is an early landmark of computational complexity. It generalises to polynomials and abstract Euclidean domains, underlies continued fractions, and remains a first example students meet of an ancient method that is still optimal and indispensable today.",
   "working": [
-    {"lead": "Take remainders repeatedly", "text": "replace the larger number by its remainder on division by the smaller, repeating until the remainder is zero; the last nonzero value is the greatest common divisor."},
-    {"lead": "Extend for combinations", "text": "carry extra bookkeeping to express the greatest common divisor as a whole-number combination of the inputs, giving Bezout coefficients and modular inverses."},
-    {"lead": "Prefer division to subtraction", "text": "use the remainder form rather than repeated subtraction, since it converges in far fewer steps, logarithmic in the size of the numbers."}
+    {
+      "lead": "Take remainders repeatedly",
+      "text": "replace the larger number by its remainder on division by the smaller, repeating until the remainder is zero; the last nonzero value is the greatest common divisor."
+    },
+    {
+      "lead": "Extend for combinations",
+      "text": "carry extra bookkeeping to express the greatest common divisor as a whole-number combination of the inputs, giving Bezout coefficients and modular inverses."
+    },
+    {
+      "lead": "Prefer division to subtraction",
+      "text": "use the remainder form rather than repeated subtraction, since it converges in far fewer steps, logarithmic in the size of the numbers."
+    }
   ],
   "limits": "The algorithm computes the greatest common divisor, not directly the least common multiple, though the latter follows by dividing the product of the numbers by their greatest common divisor. The plain version yields only the divisor; obtaining the Bezout combination or a modular inverse requires the extended version's extra bookkeeping. The subtraction-based form, while correct, can be very slow when the numbers differ greatly, so the efficient method uses remainders. Its speed, logarithmic in the input size, is excellent, but it solves a specific problem and gives no help with the far harder task of fully factoring the numbers into primes.",
   "misreadings": "The algorithm finds the greatest common divisor, not the least common multiple, although one can be obtained from the other. It does not factor the numbers into primes, which is a much harder problem; it only extracts their largest shared divisor efficiently. And the fast version uses division remainders, not repeated subtraction; the subtraction form is the historical original and is correct but can be far slower, so equating the algorithm with subtraction understates how quickly the remainder version terminates.",
@@ -46,12 +58,26 @@
   "namedAfter": "Euclid",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Euclidean algorithm, Wikipedia. — the greatest-common-divisor identity, the remainder procedure, Euclid's Elements, the extended algorithm and Bezout's identity, and Lame's Fibonacci worst case.", "url": "https://en.wikipedia.org/wiki/Euclidean_algorithm", "type": "secondary"},
-    {"text": "Euclidean Algorithm, Wolfram MathWorld. — the algorithm, its Book VII and Book X origins, and the Fibonacci worst case.", "url": "https://mathworld.wolfram.com/EuclideanAlgorithm.html", "type": "secondary"}
+    {
+      "text": "Euclidean algorithm, Wikipedia. — the greatest-common-divisor identity, the remainder procedure, Euclid's Elements, the extended algorithm and Bezout's identity, and Lame's Fibonacci worst case.",
+      "url": "https://en.wikipedia.org/wiki/Euclidean_algorithm",
+      "type": "secondary"
+    },
+    {
+      "text": "Euclidean Algorithm, Wolfram MathWorld. — the algorithm, its Book VII and Book X origins, and the Fibonacci worst case.",
+      "url": "https://mathworld.wolfram.com/EuclideanAlgorithm.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Euclidean_algorithm",
   "related": [
-    {"slug": "the-chinese-remainder-theorem", "kind": "kindred"},
-    {"slug": "the-fundamental-theorem-of-arithmetic", "kind": "kindred"}
+    {
+      "slug": "the-chinese-remainder-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-fundamental-theorem-of-arithmetic",
+      "kind": "kindred"
+    }
   ]
 }

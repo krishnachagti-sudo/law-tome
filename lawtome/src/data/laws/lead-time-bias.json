@@ -2,7 +2,10 @@
   "no": "623",
   "slug": "lead-time-bias",
   "name": "Lead-Time Bias",
-  "aliases": ["Lead time bias", "The earlier-diagnosis illusion"],
+  "aliases": [
+    "Lead time bias",
+    "The earlier-diagnosis illusion"
+  ],
   "statement": "Finding a disease earlier makes survival look longer even if the patient dies at the same time.",
   "statementAccent": "makes survival look longer even if the patient dies",
   "meaning": "Lead-time bias is the apparent but artificial increase in survival time that occurs simply because a disease is detected earlier by screening, without the patient actually living any longer. Because survival is measured from the moment of diagnosis, moving diagnosis earlier lengthens the measured survival even when the time of death is unchanged. The extra interval, called the lead time, is the gap between early detection by screening and when the disease would have been diagnosed from symptoms. Adding this interval to survival-from-diagnosis inflates apparent survival while doing nothing to postpone death. A fundamental concept in evaluating screening programmes, lead-time bias explains why survival statistics can make screening look more beneficial than it truly is, and why disease-specific mortality, not survival, is the honest yardstick.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "Lead-time bias is central to evaluating screening programmes and interpreting survival statistics honestly. It shows why improved five-year survival after screening does not by itself prove that screening saves lives, since earlier diagnosis can lengthen measured survival without postponing death. This distinction guides evidence-based medicine to judge screening by reductions in disease-specific mortality in randomised trials rather than by survival-from-diagnosis. Together with its relatives, length-time bias and overdiagnosis, it explains how well-meaning early detection can appear beneficial while delivering little or no real gain, protecting patients and policymakers from being misled by statistics that flatter screening.",
   "working": [
-    {"lead": "Distrust survival gains from screening", "text": "treat longer survival-from-diagnosis after screening as possibly just lead-time bias, not evidence that patients live longer."},
-    {"lead": "Judge by mortality", "text": "assess whether screening helps by looking for reduced disease-specific mortality, ideally in randomised trials, which lead-time bias cannot fake."},
-    {"lead": "Watch the related biases", "text": "account also for length-time bias and overdiagnosis, which similarly make screening look more beneficial than it is."}
+    {
+      "lead": "Distrust survival gains from screening",
+      "text": "treat longer survival-from-diagnosis after screening as possibly just lead-time bias, not evidence that patients live longer."
+    },
+    {
+      "lead": "Judge by mortality",
+      "text": "assess whether screening helps by looking for reduced disease-specific mortality, ideally in randomised trials, which lead-time bias cannot fake."
+    },
+    {
+      "lead": "Watch the related biases",
+      "text": "account also for length-time bias and overdiagnosis, which similarly make screening look more beneficial than it is."
+    }
   ],
   "limits": "Lead-time bias specifically concerns the inflation of survival-from-diagnosis by earlier detection; it does not mean screening is always useless, since some screening genuinely reduces mortality, which is exactly why the unbiased mortality endpoint matters. It is one of several screening biases, alongside length-time bias and overdiagnosis, that must all be considered together, so correcting for lead time alone is not enough. Distinguishing real benefit from bias generally requires randomised trials with mortality endpoints, which are expensive and slow, so in their absence the true value of a screening test can remain genuinely uncertain rather than simply biased.",
   "misreadings": "Improved five-year survival after screening does not prove that screening saves lives; the gain can be entirely lead-time bias, with death occurring at the same time regardless. The bias inflates measured survival without extending life, so survival-from-diagnosis is an unreliable endpoint for screening. And it is not the only trap: length-time bias, which favours detecting slow-growing cases, and overdiagnosis, which finds harmless disease, compound the illusion, so only mortality reduction in randomised trials reliably shows benefit.",
@@ -44,12 +56,26 @@
   "reliability": "Empirical",
   "provenance": "canon",
   "sources": [
-    {"text": "Lead time bias, Wikipedia. — the definition that earlier detection inflates measured survival without extending life, the lead-time interval, and the effect on five-year survival.", "url": "https://en.wikipedia.org/wiki/Lead_time_bias", "type": "secondary"},
-    {"text": "Crunching Numbers: What Cancer Screening Statistics Really Tell Us, National Cancer Institute. — that mortality not survival is the unbiased screening measure, and length-time bias and overdiagnosis as related biases.", "url": "https://www.cancer.gov/about-cancer/screening/research/what-screening-statistics-mean", "type": "secondary"}
+    {
+      "text": "Lead time bias, Wikipedia. — the definition that earlier detection inflates measured survival without extending life, the lead-time interval, and the effect on five-year survival.",
+      "url": "https://en.wikipedia.org/wiki/Lead_time_bias",
+      "type": "secondary"
+    },
+    {
+      "text": "Crunching Numbers: What Cancer Screening Statistics Really Tell Us, National Cancer Institute. — that mortality not survival is the unbiased screening measure, and length-time bias and overdiagnosis as related biases.",
+      "url": "https://www.cancer.gov/about-cancer/screening/research/what-screening-statistics-mean",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Lead_time_bias",
   "related": [
-    {"slug": "the-bradford-hill-criteria", "kind": "kindred"},
-    {"slug": "survivorship-bias", "kind": "kindred"}
+    {
+      "slug": "the-bradford-hill-criteria",
+      "kind": "kindred"
+    },
+    {
+      "slug": "survivorship-bias",
+      "kind": "kindred"
+    }
   ]
 }

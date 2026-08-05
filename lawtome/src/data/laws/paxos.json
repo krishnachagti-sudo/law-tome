@@ -4,7 +4,7 @@
   "name": "Paxos",
   "statement": "Paxos is a family of protocols that let a network of unreliable processors reach consensus on a single value.",
   "statementAccent": "family of protocols",
-  "meaning": "Paxos solves the fundamental distributed-systems problem of getting multiple nodes, some of which may fail or be slow, to agree on one value even though messages can be lost or delayed. It guarantees safety — all nodes that decide, decide the same value — under asynchronous, unreliable conditions, provided a majority of participants are functioning.",
+  "meaning": "Paxos solves the fundamental distributed-systems problem of getting multiple nodes, some of which may fail or be slow, to agree on one value even though messages can be lost or delayed. It guarantees safety (all nodes that decide, decide the same value) under asynchronous, unreliable conditions, provided a majority of participants are functioning.",
   "mechanism": "Paxos proceeds in proposal-numbered rounds among proposers, acceptors, and learners: a proposer requests a promise from a majority of acceptors not to accept older proposals, then, if it wins that majority, sends an accept request for a value, which acceptors adopt if consistent with their promises; a value is chosen once a majority of acceptors accept it.",
   "examples": [
     {

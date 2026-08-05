@@ -5,7 +5,7 @@
   "statement": "Student's t-distribution generalizes the normal distribution with heavier tails, letting statisticians estimate means from small samples of unknown variance.",
   "statementAccent": "heavier tails",
   "meaning": "It is a symmetric, bell-shaped distribution centred at zero whose tails are fatter than the standard normal’s, with the extra spread controlled by a \"degrees of freedom\" parameter. As degrees of freedom grow, it converges to the standard normal; at one degree of freedom it coincides with the Cauchy distribution. It underlies the t-test and t-based confidence intervals used whenever the population standard deviation must be estimated from the sample.",
-  "mechanism": "When sampling from a normal population, the sample mean minus the true mean, divided by the estimated standard error, follows the t-distribution rather than the normal — because the denominator is itself a random estimate subject to sampling variability. This extra uncertainty produces heavier tails, especially for small samples with few degrees of freedom.",
+  "mechanism": "When sampling from a normal population, the sample mean minus the true mean, divided by the estimated standard error, follows the t-distribution rather than the normal, because the denominator is itself a random estimate subject to sampling variability. This extra uncertainty produces heavier tails, especially for small samples with few degrees of freedom.",
   "examples": [
     {
       "tag": "Guinness barley",
@@ -13,7 +13,7 @@
     },
     {
       "tag": "Comparing two means",
-      "text": "A two-sample t-test uses the distribution to judge whether the difference between two small groups’ means — treatment versus control in a small clinical trial — is larger than expected from chance alone."
+      "text": "A two-sample t-test uses the distribution to judge whether the difference between two small groups’ means, treatment versus control in a small clinical trial, is larger than expected from chance alone."
     },
     {
       "tag": "Confidence intervals",

@@ -8,7 +8,7 @@
   "statement": "In real-world data spanning many orders of magnitude, the leading digit is a 1 about 30% of the time.",
   "statementAccent": "the leading digit is a 1",
   "meaning": "Gather a large set of numbers that vary widely in size and look only at each one's first digit. You might expect each digit 1–9 to turn up about a ninth of the time; instead 1 leads about 30% of the time, 2 about 18%, and the frequencies fall away to 9 at under 5%.",
-  "mechanism": "The distribution follows P(d) = log₁₀(1 + 1/d). The deep reason is scale invariance: if a dataset's first-digit pattern does not depend on the units it is measured in — dollars or euros, miles or kilometres — then that pattern must be Benford's law, which is the unique scale-invariant one. Equivalently, it holds when the logarithms of the numbers are spread roughly uniformly, which requires data ranging over many orders of magnitude.",
+  "mechanism": "The distribution follows P(d) = log₁₀(1 + 1/d). The deep reason is scale invariance: if a dataset's first-digit pattern does not depend on the units it is measured in (dollars or euros, miles or kilometres) then that pattern must be Benford's law, which is the unique scale-invariant one. Equivalently, it holds when the logarithms of the numbers are spread roughly uniformly, which requires data ranging over many orders of magnitude.",
   "examples": [
     {
       "tag": "Forensic accounting",
@@ -16,11 +16,11 @@
     },
     {
       "tag": "Found data",
-      "text": "Benford's own 1938 study spanned river surface areas, populations, physical constants, and molecular weights — thousands of 'found' numbers whose leading digits obediently followed the curve."
+      "text": "Benford's own 1938 study spanned river surface areas, populations, physical constants, and molecular weights: thousands of 'found' numbers whose leading digits obediently followed the curve."
     },
     {
       "tag": "Where it is misused",
-      "text": "It is repeatedly, and wrongly, applied to election vote counts. Precinct totals sit in a narrow range, so Benford's law is not expected to hold — and analysts including Walter Mebane have shown it is unreliable for detecting election fraud."
+      "text": "It is repeatedly, and wrongly, applied to election vote counts. Precinct totals sit in a narrow range, so Benford's law is not expected to hold, and analysts including Walter Mebane have shown it is unreliable for detecting election fraud."
     }
   ],
   "variants": [
@@ -30,14 +30,14 @@
     },
     {
       "name": "Newcomb's priority",
-      "text": "A textbook Stigler's-law case: the astronomer Simon Newcomb noticed the effect in 1881 — the early pages of logarithm books wore out fastest — decades before Benford, whose name it carries."
+      "text": "A textbook Stigler's-law case: the astronomer Simon Newcomb noticed the effect in 1881, the early pages of logarithm books wore out fastest, decades before Benford, whose name it carries."
     }
   ],
   "whyItMatters": "It turns an abstract regularity into a working fraud detector: because honest financial data tends to be Benford-distributed, auditors can screen large datasets for the tell-tale deviation of numbers that were made up. It is also a caution about its own misuse in domains where its conditions do not hold.",
   "working": [
     {
       "lead": "Use it to flag, never to prove",
-      "text": "a deviation from Benford is at most a screening signal that prompts investigation — it is never on its own evidence of fraud."
+      "text": "a deviation from Benford is at most a screening signal that prompts investigation. It is never on its own evidence of fraud."
     },
     {
       "lead": "Check the data spans orders of magnitude",
@@ -48,9 +48,9 @@
       "text": "heights, phone numbers, postcodes, sequential invoice IDs, and narrow-range vote counts do not follow Benford, and testing them is a category error."
     }
   ],
-  "limits": "Benford's law applies only to data that spans many orders of magnitude with no imposed scale; it fails for bounded, assigned, or narrow-range figures such as human heights, IQ scores, telephone numbers, and postcodes. Its most notorious misuse is election forensics: precinct vote counts are range-bound, so conformity or deviation follows no reliable pattern, and leading researchers judge it 'problematical at best' as a fraud test — a misuse that went viral around the 2020 US election. Deviation is a prompt to look closer, never a proof of manipulation.",
-  "misreadings": "It is not a law of nature that all numbers obey, nor a fraud detector you can point at any dataset. It is a statistical regularity of wide-ranging 'found' data, useful for screening where its conditions hold and meaningless — even misleading — where they do not.",
-  "origin": "First noticed by the astronomer and mathematician Simon Newcomb in an 1881 paper, from the observation that the early pages of logarithm tables (those starting with 1) were the most worn. It was rediscovered and popularised by the physicist Frank Benford in his 1938 paper 'The Law of Anomalous Numbers', tested across more than twenty thousand values, and named after him — a classic instance of Stigler's law of eponymy.",
+  "limits": "Benford's law applies only to data that spans many orders of magnitude with no imposed scale; it fails for bounded, assigned, or narrow-range figures such as human heights, IQ scores, telephone numbers, and postcodes. Its most notorious misuse is election forensics: precinct vote counts are range-bound, so conformity or deviation follows no reliable pattern, and leading researchers judge it 'problematical at best' as a fraud test (a misuse that went viral around the 2020 US election). Deviation is a prompt to look closer, never a proof of manipulation.",
+  "misreadings": "It is not a law of nature that all numbers obey, nor a fraud detector you can point at any dataset. It is a statistical regularity of wide-ranging 'found' data, useful for screening where its conditions hold and meaningless (even misleading) where they do not.",
+  "origin": "First noticed by the astronomer and mathematician Simon Newcomb in an 1881 paper, from the observation that the early pages of logarithm tables (those starting with 1) were the most worn. It was rediscovered and popularised by the physicist Frank Benford in his 1938 paper 'The Law of Anomalous Numbers', tested across more than twenty thousand values, and named after him: a classic instance of Stigler's law of eponymy.",
   "category": "statistics",
   "reliability": "Empirical",
   "provenance": "canon",

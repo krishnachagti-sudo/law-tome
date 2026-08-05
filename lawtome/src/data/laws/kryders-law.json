@@ -4,12 +4,12 @@
   "name": "Kryder's Law",
   "statement": "Disk storage density grows exponentially, once even faster than transistor counts.",
   "statementAccent": "grows exponentially",
-  "meaning": "The areal density of magnetic hard drives — and so the cost per bit of disk storage — improved exponentially for decades. At its naming the trend was running even faster than Moore's law for transistors, which is what made cheap mass storage possible.",
+  "meaning": "The areal density of magnetic hard drives, and so the cost per bit of disk storage, improved exponentially for decades. At its naming the trend was running even faster than Moore's law for transistors, which is what made cheap mass storage possible.",
   "mechanism": "Successive magnetic-recording innovations drove the density gains: giant-magnetoresistance read heads, then perpendicular recording replacing longitudinal, and later heat-assisted magnetic recording. Each let engineers shrink the magnetic grain and bit-cell size while keeping the data readable and thermally stable, packing more bits onto every square inch of platter.",
   "examples": [
     {
       "tag": "Half a century of density",
-      "text": "From the first disk drive in 1956 to 2005, areal density rose from roughly two thousand bits per square inch to around a hundred gigabits — a jump on the order of fifty-million-fold, the trend the law names."
+      "text": "From the first disk drive in 1956 to 2005, areal density rose from roughly two thousand bits per square inch to around a hundred gigabits: a jump on the order of fifty-million-fold, the trend the law names."
     },
     {
       "tag": "Cheap mass storage",
@@ -19,18 +19,27 @@
   "variants": [
     {
       "name": "Moore's law",
-      "text": "The semiconductor analogue Kryder's law was explicitly measured against — transistor counts doubling roughly every two years — and the trend that Kryder's disk-density gains briefly outran."
+      "text": "The semiconductor analogue Kryder's law was explicitly measured against, transistor counts doubling roughly every two years, and the trend that Kryder's disk-density gains briefly outran."
     },
     {
       "name": "Koomey's law",
-      "text": "A sibling in the family of exponential-technology trends: the energy efficiency of computing, computations per joule, doubling over time — another 'law' that is really a fitted empirical curve."
+      "text": "A sibling in the family of exponential-technology trends: the energy efficiency of computing, computations per joule, doubling over time (another 'law' that is really a fitted empirical curve)."
     }
   ],
-  "whyItMatters": "It named and popularised the exponential fall in the cost of disk storage that underwrote the data-abundant era — cheap backups, media libraries, and cloud storage all rested on it. Its later slowdown is equally instructive, a clean case of an exponential 'law' that was really a trend and duly bent.",
+  "whyItMatters": "It named and popularised the exponential fall in the cost of disk storage that underwrote the data-abundant era: cheap backups, media libraries, and cloud storage all rested on it. Its later slowdown is equally instructive, a clean case of an exponential 'law' that was really a trend and duly bent.",
   "working": [
-    {"lead": "Don't extrapolate the exponential", "text": "Kryder's law held for a period and then slowed sharply; plans that assumed its continuation — cheap multi-terabyte drives on schedule — did not pan out."},
-    {"lead": "Treat storage-cost curves as trends, not laws", "text": "areal density is bounded by physics, so read it as an empirical regularity that can and did decelerate, not a guaranteed doubling."},
-    {"lead": "Factor in the flash alternative", "text": "solid-state storage reshaped the market as disk gains slowed; weigh both curves when projecting cost per bit."}
+    {
+      "lead": "Don't extrapolate the exponential",
+      "text": "Kryder's law held for a period and then slowed sharply; plans that assumed its continuation, cheap multi-terabyte drives on schedule, did not pan out."
+    },
+    {
+      "lead": "Treat storage-cost curves as trends, not laws",
+      "text": "areal density is bounded by physics, so read it as an empirical regularity that can and did decelerate, not a guaranteed doubling."
+    },
+    {
+      "lead": "Factor in the flash alternative",
+      "text": "solid-state storage reshaped the market as disk gains slowed; weigh both curves when projecting cost per bit."
+    }
   ],
   "limits": "Kryder's law slowed markedly after about 2010. Actual annual areal-density growth fell toward roughly fifteen percent by 2014, against the forty percent that projections assumed, and Kryder's 2009 forecast of a cheap 40-terabyte 2.5-inch drive by 2020 did not materialise. The causes were physical and practical: the approach to the superparamagnetic limit, where grains become thermally unstable, and the repeatedly delayed, costly transition to heat-assisted recording, alongside competition from flash. One analysis estimates disk ended up about seven times more expensive than the pre-2010 trend implied. It is an empirical, era-bound trend, not a physical law, and the curve has bent.",
   "misreadings": "It is not a law of nature but a fitted historical trend that has demonstrably decelerated, so it should not be extrapolated forward. The often-quoted '13-month doubling' is a commonly cited figure rather than the 2005 article's own headline phrasing, which emphasised a thousandfold rise over fifteen years and 'faster than Moore's law'.",
@@ -42,13 +51,31 @@
   "namedAfter": "Mark Kryder",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Walter, C. (2005). \"Kryder's Law.\" Scientific American, August 2005. — the coinage, the density trend, and the Moore's-law comparison.", "url": "https://www.scientificamerican.com/article/kryders-law/", "type": "primary"},
-    {"text": "Mark Kryder, Wikipedia. — his role, the naming, and the post-2010 slowdown.", "url": "https://en.wikipedia.org/wiki/Mark_Kryder", "type": "secondary"},
-    {"text": "\"Kryder's law craps out,\" The Register (2014). — the deceleration data and the failed 40 TB projection.", "url": "https://www.theregister.com/2014/11/10/kryders_law_of_ever_cheaper_storage_disproven/", "type": "secondary"}
+    {
+      "text": "Walter, C. (2005). \"Kryder's Law.\" Scientific American, August 2005. — the coinage, the density trend, and the Moore's-law comparison.",
+      "url": "https://www.scientificamerican.com/article/kryders-law/",
+      "type": "primary"
+    },
+    {
+      "text": "Mark Kryder, Wikipedia. — his role, the naming, and the post-2010 slowdown.",
+      "url": "https://en.wikipedia.org/wiki/Mark_Kryder",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Kryder's law craps out,\" The Register (2014). — the deceleration data and the failed 40 TB projection.",
+      "url": "https://www.theregister.com/2014/11/10/kryders_law_of_ever_cheaper_storage_disproven/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Mark_Kryder",
   "related": [
-    {"slug": "moores-law", "kind": "kindred"},
-    {"slug": "koomeys-law", "kind": "kindred"}
+    {
+      "slug": "moores-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "koomeys-law",
+      "kind": "kindred"
+    }
   ]
 }

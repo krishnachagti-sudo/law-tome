@@ -4,33 +4,33 @@
   "name": "Bernoulli's Principle",
   "statement": "In a moving fluid, where the flow speeds up the pressure drops.",
   "statementAccent": "where the flow speeds up the pressure drops",
-  "meaning": "Along a streamline in a flowing fluid, speed and pressure trade off: where the fluid moves faster, its static pressure is lower, and where it slows, the pressure rises. It is an energy budget — motion, pressure, and height together stay fixed along a flow path, so spending more on speed leaves less as pressure.",
-  "mechanism": "It is conservation of energy along a streamline: the sum of kinetic energy, pressure energy, and gravitational potential energy per unit volume is constant, so a rise in one must be offset by a fall in another. Equivalently, from Newton's second law, it is a pressure gradient that accelerates a fluid parcel — the faster region sits at lower pressure.",
+  "meaning": "Along a streamline in a flowing fluid, speed and pressure trade off: where the fluid moves faster, its static pressure is lower, and where it slows, the pressure rises. It is an energy budget: motion, pressure, and height together stay fixed along a flow path, so spending more on speed leaves less as pressure.",
+  "mechanism": "It is conservation of energy along a streamline: the sum of kinetic energy, pressure energy, and gravitational potential energy per unit volume is constant, so a rise in one must be offset by a fall in another. Equivalently, from Newton's second law, it is a pressure gradient that accelerates a fluid parcel: the faster region sits at lower pressure.",
   "examples": [
     {
       "tag": "The Venturi effect",
-      "text": "In a pipe that narrows, the fluid must speed up through the constriction, so its pressure there falls — the principle behind carburettors, flow meters, and aspirators."
+      "text": "In a pipe that narrows, the fluid must speed up through the constriction, so its pressure there falls: the principle behind carburettors, flow meters, and aspirators."
     },
     {
       "tag": "The atomiser",
-      "text": "Fast air blown across the top of a tube lowers the pressure there, drawing liquid up to be sprayed — a perfume atomiser or spray gun working by the pressure drop."
+      "text": "Fast air blown across the top of a tube lowers the pressure there, drawing liquid up to be sprayed: a perfume atomiser or spray gun working by the pressure drop."
     },
     {
       "tag": "Lift, done carefully",
-      "text": "Air genuinely moves faster over a wing's upper surface and the pressure there is genuinely lower, so Bernoulli contributes to lift — but the popular 'equal transit time' explanation of why the air speeds up is a misconception debunked by NASA."
+      "text": "Air genuinely moves faster over a wing's upper surface and the pressure there is genuinely lower, so Bernoulli contributes to lift, but the popular 'equal transit time' explanation of why the air speeds up is a misconception debunked by NASA."
     }
   ],
   "variants": [
     {
       "name": "The Bernoulli equation",
-      "text": "The quantitative form, summing kinetic, pressure, and potential energy per unit volume to a constant along a streamline — with separate incompressible and compressible versions."
+      "text": "The quantitative form, summing kinetic, pressure, and potential energy per unit volume to a constant along a streamline: with separate incompressible and compressible versions."
     },
     {
       "name": "The continuity equation",
       "text": "The mass-conservation partner: for incompressible flow, area times speed is constant, which is why fluid speeds up through a constriction in the first place."
     }
   ],
-  "whyItMatters": "It is the founding principle of fluid dynamics in motion, explaining flow through pipes, the operation of carburettors and flow meters, and part of how wings generate lift. It is also a cautionary tale in physics teaching, since its most famous application — aeroplane lift — is routinely explained with reasoning that is simply wrong.",
+  "whyItMatters": "It is the founding principle of fluid dynamics in motion, explaining flow through pipes, the operation of carburettors and flow meters, and part of how wings generate lift. It is also a cautionary tale in physics teaching, since its most famous application (aeroplane lift) is routinely explained with reasoning that is simply wrong.",
   "working": [
     {
       "lead": "Expect low pressure where flow is fast",
@@ -42,11 +42,11 @@
     },
     {
       "lead": "Don't explain lift by equal transit time",
-      "text": "Bernoulli contributes to lift, but the claim that air must rejoin at the trailing edge is false — use flow turning and circulation instead."
+      "text": "Bernoulli contributes to lift, but the claim that air must rejoin at the trailing edge is false: use flow turning and circulation instead."
     }
   ],
-  "limits": "The standard incompressible form holds only for flow that is steady, incompressible, and inviscid, evaluated along a single streamline; compressible, unsteady, or viscous and turbulent flow needs modified forms. Its most notorious misuse is the 'equal transit time' account of aeroplane lift, which NASA explicitly debunks: symmetric wings and inverted flight both contradict it, and it predicts far too little lift. The principle itself is correct — air does move faster and at lower pressure over a wing — but that popular justification for the speed difference is wrong.",
-  "misreadings": "It does not say a longer upper wing surface forces the air to speed up to 'meet' the lower air — that equal-transit-time story is a genuine misconception. The principle is sound within its assumptions; the failures are misapplications outside them, not flaws in the law.",
+  "limits": "The standard incompressible form holds only for flow that is steady, incompressible, and inviscid, evaluated along a single streamline; compressible, unsteady, or viscous and turbulent flow needs modified forms. Its most notorious misuse is the 'equal transit time' account of aeroplane lift, which NASA explicitly debunks: symmetric wings and inverted flight both contradict it, and it predicts far too little lift. The principle itself is correct, air does move faster and at lower pressure over a wing, but that popular justification for the speed difference is wrong.",
+  "misreadings": "It does not say a longer upper wing surface forces the air to speed up to 'meet' the lower air. That equal-transit-time story is a genuine misconception. The principle is sound within its assumptions; the failures are misapplications outside them, not flaws in the law.",
   "origin": "Set out by the Swiss mathematician Daniel Bernoulli in Hydrodynamica (1738), based on experiments with liquids. The equation in its now-usual form was derived later by Leonhard Euler.",
   "category": "physics",
   "reliability": "Empirical",

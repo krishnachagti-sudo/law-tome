@@ -4,12 +4,12 @@
   "name": "Reed's Law",
   "statement": "The value of a group-forming network can grow exponentially with its members.",
   "statementAccent": "grow exponentially with its members",
-  "meaning": "In a network where members can freely form arbitrary subgroups — not just one-to-one links — the dominant source of value is the sheer number of distinct groups that can form. Because possible subgroups multiply exponentially with membership, Reed argues that beyond a certain scale group-forming value overtakes both broadcast and pairwise-connection value.",
+  "meaning": "In a network where members can freely form arbitrary subgroups, not just one-to-one links, the dominant source of value is the sheer number of distinct groups that can form. Because possible subgroups multiply exponentially with membership, Reed argues that beyond a certain scale group-forming value overtakes both broadcast and pairwise-connection value.",
   "mechanism": "A set of n members has 2^n possible subsets. Excluding the empty set and the n single-member sets leaves 2^n − n − 1 possible groups of two or more. That exponential term grows far faster than the pairwise-connection count of Metcalfe's law, about n². Reed calls networks that draw their worth from this the group-forming networks.",
   "examples": [
     {
       "tag": "Platforms built on groups",
-      "text": "Social platforms with communities — group chats, servers, subreddits, workspaces — derive much of their value from users self-organising into many overlapping groups, the phenomenon Reed's 2^n term is meant to capture. Illustrative of the model's intent rather than proof it scales that way."
+      "text": "Social platforms with communities (group chats, servers, subreddits, workspaces) derive much of their value from users self-organising into many overlapping groups, the phenomenon Reed's 2^n term is meant to capture. Illustrative of the model's intent rather than proof it scales that way."
     },
     {
       "tag": "Contrast with pairwise",
@@ -34,7 +34,7 @@
     },
     {
       "lead": "Treat the exponential as a ceiling, not a forecast",
-      "text": "the 2^n count of possible subgroups is exact arithmetic, but real value follows only the tiny fraction of groups that actually form — so do not price a network at 2^n."
+      "text": "the 2^n count of possible subgroups is exact arithmetic, but real value follows only the tiny fraction of groups that actually form, so do not price a network at 2^n."
     },
     {
       "lead": "Remember human limits",
@@ -42,7 +42,7 @@
     }
   ],
   "limits": "The exponential claim is contested. Briscoe, Odlyzko and Tilly ('Metcalfe's Law is Wrong', IEEE Spectrum, 2006) argue both Metcalfe's n² and Reed's 2^n are substantial overstatements, and that network value more realistically grows like n·log(n); they note that adding ten people would, under Reed, multiply value a thousandfold, which soon implies absurd totals. Human cognitive limits mean most possible subgroups never form. The 2^n counting of subgroups is exact, but the claim that value actually scales that way is disputed and widely regarded as overstated. The competing n·log(n) figure is itself debated in later literature.",
-  "misreadings": "It is a combinatorial model, not an empirically established law: counting subgroups is exact, but equating that count with realised value is the contested leap. It does not mean a real platform's worth doubles with each new member — the vast majority of possible groups never form, and rigorous critiques put real growth far below exponential.",
+  "misreadings": "It is a combinatorial model, not an empirically established law: counting subgroups is exact, but equating that count with realised value is the contested leap. It does not mean a real platform's worth doubles with each new member: the vast majority of possible groups never form, and rigorous critiques put real growth far below exponential.",
   "origin": "Proposed by the computer scientist David P. Reed around 1999–2001, notably in his essay 'That Sneaky Exponential' and the article 'The Law of the Pack' (Harvard Business Review, February 2001). Reed set out the Sarnoff–Metcalfe–Reed trio of linear, quadratic, and exponential network value.",
   "category": "technology",
   "reliability": "Contested",

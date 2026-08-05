@@ -2,7 +2,10 @@
   "no": "692",
   "slug": "the-sleeping-beauty-problem",
   "name": "The Sleeping Beauty Problem",
-  "aliases": ["The Sleeping Beauty paradox", "Halfers versus thirders"],
+  "aliases": [
+    "The Sleeping Beauty paradox",
+    "Halfers versus thirders"
+  ],
   "statement": "Woken with no way to know how many times, what should Beauty believe about a coin flip, one half or one third?",
   "statementAccent": "what should Beauty believe about a coin flip, one half or one third",
   "meaning": "The Sleeping Beauty problem is a puzzle in probability and formal epistemology about self-locating belief, brought to prominence by the philosopher Adam Elga in a 2000 paper in the journal Analysis and generally credited in origin to Arnold Zuboff. Sleeping Beauty agrees to an experiment. On Sunday she is put to sleep, and a fair coin is flipped. If it lands heads, she is woken once, on Monday. If it lands tails, she is woken twice, on Monday and on Tuesday, but after the Monday waking she is given a drug that erases her memory of it, so every waking feels the same from the inside. Whenever she is woken she is asked one question: what is your credence, your degree of belief, that the coin landed heads? The puzzle is that two lines of reasoning give different answers, one third and one half, and the debate over which is correct remains unresolved, dividing philosophers into thirders and halfers.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The Sleeping Beauty problem is a central puzzle in the epistemology of self-locating and indexical belief, probing how a rational agent should assign credences when uncertain not about the world but about which situation, or which time, she occupies. It presses on the principles governing Bayesian updating, the relation between subjective credence and objective chance, and the treatment of amnesia and repeated experiences, and it connects to anthropic reasoning about observers and self-location. Because thoughtful philosophers line up on both sides and no consensus has emerged, the problem serves as a testing ground for theories of rational belief, forcing precise statements of when finding oneself in a situation counts as evidence. Its simple setup and stubborn disagreement have made it one of the most discussed problems in formal epistemology.",
   "working": [
-    {"lead": "Set up the wakings", "text": "flip a fair coin, wake Beauty once on heads and twice on tails with the Monday memory erased, so all wakings feel identical."},
-    {"lead": "Weigh the two arguments", "text": "count three equally likely wakings for one third, or note the fair coin and lack of new information for one half."},
-    {"lead": "Locate the disagreement", "text": "decide whether merely finding herself awake is self-locating evidence that should shift her credence, the crux dividing thirders and halfers."}
+    {
+      "lead": "Set up the wakings",
+      "text": "flip a fair coin, wake Beauty once on heads and twice on tails with the Monday memory erased, so all wakings feel identical."
+    },
+    {
+      "lead": "Weigh the two arguments",
+      "text": "count three equally likely wakings for one third, or note the fair coin and lack of new information for one half."
+    },
+    {
+      "lead": "Locate the disagreement",
+      "text": "decide whether merely finding herself awake is self-locating evidence that should shift her credence, the crux dividing thirders and halfers."
+    }
   ],
   "limits": "The Sleeping Beauty problem has no agreed solution; thirders and halfers each marshal serious arguments, and the literature remains divided, so it is best presented as an open debate rather than a settled result. The answer one favours depends on contested principles about self-locating belief, about what counts as new information, and about how credence relates to objective chance, and different framings, including betting arguments, can seem to pull in different directions. Some hold the dispute is partly verbal, turning on what precisely is being asked. Because the setup is idealised, involving perfect memory erasure and indistinguishable wakings, its lessons apply most directly to the theory of rational belief rather than to everyday reasoning, and its unresolved status is part of what makes it philosophically important.",
   "misreadings": "The problem is not asking the objective probability that a fair coin lands heads, which is plainly one half; it asks what credence Beauty should have upon waking given her peculiar epistemic situation, which is exactly what is disputed. The thirder answer does not deny the coin is fair; it claims that being awake is self-locating evidence that shifts the credence. And there is no established correct answer, so presenting either one third or one half as simply right misrepresents a live and genuinely unresolved debate in formal epistemology.",
@@ -46,12 +58,26 @@
   "coinedYear": 2000,
   "namedAfter": null,
   "sources": [
-    {"text": "Sleeping Beauty problem, Wikipedia. — the coin-flip and memory-erasure setup, the credence-in-heads question, the thirder position of Elga and the halfer position of Lewis, and the unresolved debate over self-locating belief.", "url": "https://en.wikipedia.org/wiki/Sleeping_Beauty_problem", "type": "secondary"},
-    {"text": "Adam Elga, Self-locating Belief and the Sleeping Beauty Problem, Analysis 60(2), 2000. — the original argument for the thirder answer of one third.", "url": "https://www.princeton.edu/~adame/papers/sleeping/sleeping.pdf", "type": "primary"}
+    {
+      "text": "Sleeping Beauty problem, Wikipedia. — the coin-flip and memory-erasure setup, the credence-in-heads question, the thirder position of Elga and the halfer position of Lewis, and the unresolved debate over self-locating belief.",
+      "url": "https://en.wikipedia.org/wiki/Sleeping_Beauty_problem",
+      "type": "secondary"
+    },
+    {
+      "text": "Adam Elga, Self-locating Belief and the Sleeping Beauty Problem, Analysis 60(2), 2000. — the original argument for the thirder answer of one third.",
+      "url": "https://www.princeton.edu/~adame/papers/sleeping/sleeping.pdf",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Sleeping_Beauty_problem",
   "related": [
-    {"slug": "the-doomsday-argument", "kind": "kindred"},
-    {"slug": "the-monty-hall-problem", "kind": "kindred"}
+    {
+      "slug": "the-doomsday-argument",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-monty-hall-problem",
+      "kind": "kindred"
+    }
   ]
 }

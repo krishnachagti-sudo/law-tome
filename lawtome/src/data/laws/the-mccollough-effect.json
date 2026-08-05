@@ -2,7 +2,10 @@
   "no": "749",
   "slug": "the-mccollough-effect",
   "name": "The McCollough Effect",
-  "aliases": ["Orientation-contingent colour aftereffect", "McCollough aftereffect"],
+  "aliases": [
+    "Orientation-contingent colour aftereffect",
+    "McCollough aftereffect"
+  ],
   "statement": "Stare at colored stripes for minutes and black-and-white stripes look tinted for hours, days, even weeks afterward.",
   "statementAccent": "black-and-white stripes look tinted for hours, days, even weeks afterward",
   "meaning": "The McCollough effect is a striking visual phenomenon in which, after prolonged viewing of coloured striped patterns, an observer sees colourless black-and-white striped patterns tinged with colour that depends on the orientation of the stripes. It is an orientation-contingent colour aftereffect: unlike a simple afterimage, the illusory colour is tied to the orientation of the gratings rather than to a fixed retinal location. It was discovered by the American psychologist Celeste McCollough, who published it in the journal Science in 1965. What most sets it apart is its extraordinary persistence: after only a few minutes of induction, the effect can last hours, days, weeks, or even months, far longer than ordinary afterimages, which fade in seconds. The effect is not a retinal phenomenon but a cortical one, revealing how the brain links colour and form, and its remarkable duration has made it a lasting puzzle in vision science.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The McCollough effect is an important phenomenon in vision science because it reveals feature-contingent adaptation and the intimate interaction between colour and form processing in the brain. By showing that an illusory colour can be tied specifically to stripe orientation, it demonstrates that colour and orientation are processed together by neurons in the visual cortex, and that adaptation can be conditional on such conjunctions of features. Its most theoretically significant feature is its extraordinary duration: that a few minutes of viewing can leave a colour aftereffect lasting days, weeks, or months challenges simple models of neural adaptation and has prompted accounts invoking learning or error correction. The effect has become a touchstone for studying how the visual system adapts, where colour and form are bound, and how perceptual learning and adaptation can leave surprisingly durable traces, making it a rich and enduring subject of vision research.",
   "working": [
-    {"lead": "Pair colour with orientation", "text": "alternately view coloured gratings of opposite orientation, each stripe direction paired with a different colour, for several minutes."},
-    {"lead": "Adapt the cortical neurons", "text": "let neurons jointly selective for colour and orientation in the visual cortex adapt to the paired features."},
-    {"lead": "See the contingent tint", "text": "view black-and-white gratings and see each orientation tinged with the complement of the colour it was paired with, lasting far longer than an afterimage."}
+    {
+      "lead": "Pair colour with orientation",
+      "text": "alternately view coloured gratings of opposite orientation, each stripe direction paired with a different colour, for several minutes."
+    },
+    {
+      "lead": "Adapt the cortical neurons",
+      "text": "let neurons jointly selective for colour and orientation in the visual cortex adapt to the paired features."
+    },
+    {
+      "lead": "See the contingent tint",
+      "text": "view black-and-white gratings and see each orientation tinged with the complement of the colour it was paired with, lasting far longer than an afterimage."
+    }
   ],
   "limits": "The McCollough effect is a robust but conditional phenomenon: it requires the specific induction of colour paired with orientation, and the resulting tint is faint and contingent on stripe orientation rather than a vivid, location-locked afterimage. Its extraordinary duration varies with induction time and testing, and repeated testing can hasten its decay, complicating measurement. The exact mechanism is genuinely debated, with neural-adaptation, learning, and associative accounts competing, though the cortical locus is well supported. The illustrative colours used, such as orange and green, are conventions; the essential point is that each orientation acquires the complement of the colour it was shown with. So the effect reliably demonstrates cortical, feature-contingent adaptation and its surprising persistence, while the full explanation of why it lasts so long remains unresolved.",
   "misreadings": "The McCollough effect is not an ordinary afterimage; it is contingent on stripe orientation, not on a fixed retinal spot, and it lasts far longer than the seconds a bleaching afterimage persists. It is not a retinal effect but a cortical one, arising from neurons selective for both colour and orientation. And the specific colours are illustrative, not fixed, so treating the effect as a simple coloured afterimage, or as located in the eye, misreads a durable, feature-contingent cortical adaptation whose mechanism is still debated.",
@@ -47,12 +59,26 @@
   "namedAfter": "Celeste McCollough",
   "namesakeKind": "person",
   "sources": [
-    {"text": "McCollough effect, Wikipedia. — the orientation-contingent colour aftereffect, the induction procedure and complementary result, McCollough's 1965 Science paper, the remarkably long duration, and the cortical, debated mechanism.", "url": "https://en.wikipedia.org/wiki/McCollough_effect", "type": "secondary"},
-    {"text": "McCollough Effect, The Illusions Index (University of Glasgow). — the aftereffect, its induction, and its persistence.", "url": "https://www.illusionsindex.org/i/mccollough-effect", "type": "secondary"}
+    {
+      "text": "McCollough effect, Wikipedia. — the orientation-contingent colour aftereffect, the induction procedure and complementary result, McCollough's 1965 Science paper, the remarkably long duration, and the cortical, debated mechanism.",
+      "url": "https://en.wikipedia.org/wiki/McCollough_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "McCollough Effect, The Illusions Index (University of Glasgow). — the aftereffect, its induction, and its persistence.",
+      "url": "https://www.illusionsindex.org/i/mccollough-effect",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/McCollough_effect",
   "related": [
-    {"slug": "the-motion-aftereffect", "kind": "kindred"},
-    {"slug": "troxler-fading", "kind": "kindred"}
+    {
+      "slug": "the-motion-aftereffect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "troxler-fading",
+      "kind": "kindred"
+    }
   ]
 }

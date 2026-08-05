@@ -2,7 +2,10 @@
   "no": "648",
   "slug": "decision-fatigue",
   "name": "Decision Fatigue",
-  "aliases": ["Decision-making fatigue", "Choice depletion"],
+  "aliases": [
+    "Decision-making fatigue",
+    "Choice depletion"
+  ],
   "statement": "The more decisions you make, the worse your later decisions tend to get.",
   "statementAccent": "the worse your later decisions tend to get",
   "meaning": "Decision fatigue is the deteriorating quality of decisions made by an individual after a long session of decision-making. As people make more and more decisions, their capacity to decide well appears to degrade, leading to poorer choices, avoidance of deciding, defaulting to the status quo, or impulsive picks. The idea is often linked to ego depletion, the hypothesis that self-control draws on a limited mental resource that depletes with use. A famous supporting study found that parole judges granted parole far more often early in a session than just before a break. Decision fatigue has been influential in psychology, behavioural economics, medicine, and design, though its underlying mechanism is scientifically contested, with ego depletion failing several replications, so its robustness remains uncertain.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "Decision fatigue is an influential idea across psychology, behavioural economics, medicine, marketing, and design, offering an intuitive account of why decision quality might decline over a long stretch of choosing. It has shaped advice to make important decisions early in the day, to reduce trivial choices, and to lean on defaults, and it informs retail tactics like placing tempting items at the checkout. In design it motivates limiting options and providing smart defaults. Yet its lasting importance may lie as much in scientific caution, since its ego-depletion mechanism has faltered in replication and its flagship study faces alternative explanations, making it a case study in holding a compelling idea to honest evidentiary standards.",
   "working": [
-    {"lead": "Front-load hard choices", "text": "make important decisions earlier, when decision-making capacity is fresher, rather than after a long run of choices."},
-    {"lead": "Reduce trivial choices", "text": "simplify routine decisions and lean on defaults to conserve mental resources for choices that matter."},
-    {"lead": "Hold the mechanism loosely", "text": "treat decision fatigue as a plausible but contested effect, since its ego-depletion basis has failed replications and its evidence is disputed."}
+    {
+      "lead": "Front-load hard choices",
+      "text": "make important decisions earlier, when decision-making capacity is fresher, rather than after a long run of choices."
+    },
+    {
+      "lead": "Reduce trivial choices",
+      "text": "simplify routine decisions and lean on defaults to conserve mental resources for choices that matter."
+    },
+    {
+      "lead": "Hold the mechanism loosely",
+      "text": "treat decision fatigue as a plausible but contested effect, since its ego-depletion basis has failed replications and its evidence is disputed."
+    }
   ],
   "limits": "Decision fatigue is genuinely contested. Its proposed mechanism, ego depletion, failed a large preregistered multi-lab replication that found no effect significantly different from zero, and evidence suggests any effect may depend on believing willpower is limited. The famous parole-judges study has published critiques arguing its case ordering was not random and its effect size implausibly large, so the fatigue interpretation is disputed. The effect concerns the cumulative volume of decisions rather than the difficulty of any single one, and its real-world magnitude is uncertain. It should therefore be treated as a plausible but not robust phenomenon, with practical advice offered as sensible habit rather than proven science.",
   "misreadings": "Decision fatigue is about the cumulative number of decisions, not the difficulty of one hard decision, so it is not simply the strain of a single tough choice. Its underlying ego-depletion mechanism is disputed, with major replication failures, so its robustness and cause are uncertain rather than established. And the parole-judges study, its most cited evidence, has alternative explanations such as non-random case ordering, so it should not be treated as clean proof that fatigue drives the rulings.",
@@ -44,12 +56,26 @@
   "reliability": "Contested",
   "provenance": "canon",
   "sources": [
-    {"text": "Decision fatigue, Wikipedia. — the definition, the ego-depletion link and its contested status, the manifestations and coping strategies, and the parole-judges study and its critiques.", "url": "https://en.wikipedia.org/wiki/Decision_fatigue", "type": "secondary"},
-    {"text": "Danziger, Levav & Avnaim-Pesso, Extraneous factors in judicial decisions, PNAS (2011). — the parole-decisions study showing favourable rulings declining through a session.", "url": "https://www.pnas.org/doi/10.1073/pnas.1018033108", "type": "primary"}
+    {
+      "text": "Decision fatigue, Wikipedia. — the definition, the ego-depletion link and its contested status, the manifestations and coping strategies, and the parole-judges study and its critiques.",
+      "url": "https://en.wikipedia.org/wiki/Decision_fatigue",
+      "type": "secondary"
+    },
+    {
+      "text": "Danziger, Levav & Avnaim-Pesso, Extraneous factors in judicial decisions, PNAS (2011). — the parole-decisions study showing favourable rulings declining through a session.",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.1018033108",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Decision_fatigue",
   "related": [
-    {"slug": "the-paradox-of-choice", "kind": "kindred"},
-    {"slug": "hicks-law", "kind": "kindred"}
+    {
+      "slug": "the-paradox-of-choice",
+      "kind": "kindred"
+    },
+    {
+      "slug": "hicks-law",
+      "kind": "kindred"
+    }
   ]
 }

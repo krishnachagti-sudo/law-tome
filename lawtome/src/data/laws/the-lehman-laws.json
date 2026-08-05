@@ -2,7 +2,10 @@
   "no": "441",
   "slug": "the-lehman-laws",
   "name": "Lehman's Laws of Software Evolution",
-  "aliases": ["Lehman's laws", "The laws of software evolution"],
+  "aliases": [
+    "Lehman's laws",
+    "The laws of software evolution"
+  ],
   "statement": "Software that is actually used must keep changing, and grows more complex unless work is spent to fight it.",
   "statementAccent": "must keep changing",
   "meaning": "Lehman's laws of software evolution are a set of observations about how large, actively-used software systems change over time. They apply specifically to what Lehman called E-type systems, those embedded in and used in a real-world environment. The two central and most robustly supported ideas are that such a system must be continually changed or it becomes progressively less satisfactory, and that its complexity increases over time unless work is deliberately spent to reduce it. The set began as three observations around 1974 and grew to eight by the mid-1990s, empirical generalisations rather than proven laws.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The laws are the empirical backbone for how the field understands software maintenance, software rot, and technical debt: useful software cannot stand still, and its structure decays by default unless resources are spent to preserve it. They explain why maintenance, not initial development, dominates the lifecycle cost of long-lived systems, and why continual investment in reducing complexity is not optional overhead but the price of keeping a system usable. They gave software engineering a vocabulary for the inevitability of change decades before technical debt became a common term.",
   "working": [
-    {"lead": "Expect continual change", "text": "plan for an in-use system to require ongoing adaptation, since it degrades in usefulness if it stands still."},
-    {"lead": "Budget against complexity", "text": "spend deliberate effort on refactoring and structure, because complexity rises on its own unless work is done to reduce it."},
-    {"lead": "Scope to E-type systems", "text": "apply the laws to software embedded in a changing environment, not to self-contained programs judged only against a specification."}
+    {
+      "lead": "Expect continual change",
+      "text": "plan for an in-use system to require ongoing adaptation, since it degrades in usefulness if it stands still."
+    },
+    {
+      "lead": "Budget against complexity",
+      "text": "spend deliberate effort on refactoring and structure, because complexity rises on its own unless work is done to reduce it."
+    },
+    {
+      "lead": "Scope to E-type systems",
+      "text": "apply the laws to software embedded in a changing environment, not to self-contained programs judged only against a specification."
+    }
   ],
   "limits": "The laws are empirical generalisations, not proven laws, and later studies, especially of open-source software, have qualified several. The Linux kernel's super-linear growth undermines the invariant-work-rate law and the growth slowdown for volunteer, distributed projects. Broad surveys find that typically only continuing change and continuing growth are confirmed across all systems, while the other six are violated by at least some projects, and applicability depends heavily on system type, measurement choices, and development model. The laws are also hard to falsify precisely, because terms like complexity, quality, and satisfaction lack universal operational definitions.",
   "misreadings": "They are not laws in the sense of physics but empirical observations about tendencies, with acknowledged exceptions. They do not apply to all software: they are explicitly scoped to E-type systems, and self-contained S-type programs are exempt. Increasing complexity is not inevitable and unstoppable; the second law says complexity rises unless work is done to reduce it, so refactoring is the built-in escape hatch. There have not always been eight laws; they grew from three to eight over two decades. And Lehman did not work alone: the early empirical foundation was a collaboration with Laszlo Belady.",
@@ -46,11 +58,22 @@
   "coinedYear": 1980,
   "namedAfter": "Meir Lehman",
   "sources": [
-    {"text": "Lehman, 'Programs, Life Cycles, and Laws of Software Evolution,' Proceedings of the IEEE 68(9) (1980): 1060-1076. — the laws and the S/P/E program classification.", "url": "https://ieeexplore.ieee.org/document/1456074", "type": "primary"},
-    {"text": "Lehman's laws of software evolution, Wikipedia. — the eight laws, the E-type scope, and the open-source critiques.", "url": "https://en.wikipedia.org/wiki/Lehman%27s_laws_of_software_evolution", "type": "secondary"}
+    {
+      "text": "Lehman, 'Programs, Life Cycles, and Laws of Software Evolution,' Proceedings of the IEEE 68(9) (1980): 1060-1076. — the laws and the S/P/E program classification.",
+      "url": "https://ieeexplore.ieee.org/document/1456074",
+      "type": "primary"
+    },
+    {
+      "text": "Lehman's laws of software evolution, Wikipedia. — the eight laws, the E-type scope, and the open-source critiques.",
+      "url": "https://en.wikipedia.org/wiki/Lehman%27s_laws_of_software_evolution",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Lehman%27s_laws_of_software_evolution",
   "related": [
-    {"slug": "conways-law", "kind": "kindred"}
+    {
+      "slug": "conways-law",
+      "kind": "kindred"
+    }
   ]
 }

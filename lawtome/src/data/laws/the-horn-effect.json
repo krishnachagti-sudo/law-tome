@@ -9,12 +9,12 @@
   ],
   "statement": "One bad trait colours the whole judgement: a person seen as failing in one respect is assumed to be failing in others.",
   "statementAccent": "colours the whole judgement",
-  "meaning": "The dark twin of the halo effect. Where the halo lets one good quality flatter everything else about a person, the horn lets one poor one contaminate it — and the person judging experiences neither as a bias, only as an impression.",
+  "meaning": "The dark twin of the halo effect. Where the halo lets one good quality flatter everything else about a person, the horn lets one poor one contaminate it, and the person judging experiences neither as a bias, only as an impression.",
   "mechanism": "Forming a separate estimate of every quality of a person is expensive, and the mind does not do it. It forms one global impression and reads the specifics off it, which is why ratings of unrelated attributes correlate far more tightly than the attributes themselves do. Thorndike found exactly this in 1920: officers' ratings of their men moved together as though the raters were thinking of each man as generally good or generally inferior rather than judging each trait. The horn is that machinery running downward — once the global impression is negative, every particular is read to fit it, and the fit is invisible from the inside.",
   "examples": [
     {
       "tag": "The interview that ends early",
-      "text": "A candidate arrives late. Everything afterwards — a pause before an answer, a question about hours — is read as further evidence of the same thing."
+      "text": "A candidate arrives late. Everything afterwards (a pause before an answer, a question about hours) is read as further evidence of the same thing."
     },
     {
       "tag": "Appearance and sentencing",
@@ -22,7 +22,7 @@
     },
     {
       "tag": "The demonised figure",
-      "text": "A public figure disliked enough that their successes cannot be assessed at all — every achievement is read as accident or as cover."
+      "text": "A public figure disliked enough that their successes cannot be assessed at all: every achievement is read as accident or as cover."
     }
   ],
   "whyItMatters": "It names the mechanism behind a large share of unfair evaluation in hiring, appraisal, teaching and justice, and it explains why one bad first impression is so hard to recover from: the person forming it is not weighing evidence against you, they are reading all subsequent evidence through you.",
@@ -41,7 +41,7 @@
     }
   ],
   "limits": "It is a name for a direction of the halo effect rather than a separately established finding: Thorndike's 1920 work documented the general phenomenon and did not name the negative case, and much of the evidence cited for the horn effect is really evidence for the halo effect run backwards. Effect sizes vary widely with how the judgement is structured, and the courtroom-attractiveness literature in particular has the replication problems common to that era of social psychology. Treat the direction as well attested and any particular magnitude as not.",
-  "misreadings": "It is not the claim that first impressions are always wrong, nor that a negative impression is necessarily unfounded — the bias is in the spread from one trait to unrelated ones, not in the original observation. It is also not the same as confirmation bias, though the two compound: the horn effect sets the impression, confirmation bias then defends it.",
+  "misreadings": "It is not the claim that first impressions are always wrong, nor that a negative impression is necessarily unfounded: the bias is in the spread from one trait to unrelated ones, not in the original observation. It is also not the same as confirmation bias, though the two compound: the horn effect sets the impression, confirmation bias then defends it.",
   "origin": "The negative counterpart of the halo effect, named from the devil's horns as the halo's opposite. The underlying research is Edward Thorndike's 1920 study \"A Constant Error in Psychological Ratings\", which found that raters' judgements of separate qualities moved together as though driven by a single impression of the man as generally good or generally inferior; Thorndike named the halo, not the horn, and the horn label is later usage.",
   "category": "psychology",
   "reliability": "Heuristic",
@@ -61,8 +61,17 @@
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Horn_effect",
   "related": [
-    { "slug": "halo-effect", "kind": "opposed" },
-    { "slug": "confirmation-bias", "kind": "kindred" },
-    { "slug": "the-fundamental-attribution-error", "kind": "kindred" }
+    {
+      "slug": "halo-effect",
+      "kind": "opposed"
+    },
+    {
+      "slug": "confirmation-bias",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-fundamental-attribution-error",
+      "kind": "kindred"
+    }
   ]
 }

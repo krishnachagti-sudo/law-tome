@@ -4,8 +4,8 @@
   "name": "The All-or-None Law",
   "statement": "A nerve or muscle fibre fires at full strength or not at all.",
   "statementAccent": "at full strength or not at all",
-  "meaning": "A single nerve axon or muscle fibre either produces a complete, full-strength response — an action potential, or in muscle a maximal twitch — or it does not respond at all. Once the stimulus reaches the fibre's threshold, the size of the response is fixed and does not grow with a stronger stimulus. Below threshold, nothing propagates.",
-  "mechanism": "A sub-threshold stimulus produces only a small, local change that dies out with distance. At threshold, voltage-gated sodium channels open and let sodium rush in, which opens still more channels — a regenerative, self-reinforcing depolarisation that drives the membrane to its peak regardless of how far past threshold the stimulus went. Repolarisation follows as sodium channels inactivate and potassium leaves. The refractory period that follows, rooted in that inactivation, sets a ceiling on firing rate and keeps impulses discrete and one-directional.",
+  "meaning": "A single nerve axon or muscle fibre either produces a complete, full-strength response (an action potential, or in muscle a maximal twitch) or it does not respond at all. Once the stimulus reaches the fibre's threshold, the size of the response is fixed and does not grow with a stronger stimulus. Below threshold, nothing propagates.",
+  "mechanism": "A sub-threshold stimulus produces only a small, local change that dies out with distance. At threshold, voltage-gated sodium channels open and let sodium rush in, which opens still more channels: a regenerative, self-reinforcing depolarisation that drives the membrane to its peak regardless of how far past threshold the stimulus went. Repolarisation follows as sodium channels inactivate and potassium leaves. The refractory period that follows, rooted in that inactivation, sets a ceiling on firing rate and keeps impulses discrete and one-directional.",
   "examples": [
     {
       "tag": "The neuron's spike",
@@ -13,7 +13,7 @@
     },
     {
       "tag": "Cardiac muscle",
-      "text": "Bowditch's original case: a supra-threshold shock to heart muscle produces a maximal contraction, a sub-threshold one produces none — with no graded response in between."
+      "text": "Bowditch's original case: a supra-threshold shock to heart muscle produces a maximal contraction, a sub-threshold one produces none (with no graded response in between)."
     },
     {
       "tag": "Coding intensity",
@@ -27,10 +27,10 @@
     },
     {
       "name": "Frequency coding and recruitment",
-      "text": "The two ways a fixed-amplitude system encodes graded intensity — higher firing frequency in a fibre and the recruitment of more fibres."
+      "text": "The two ways a fixed-amplitude system encodes graded intensity: higher firing frequency in a fibre and the recruitment of more fibres."
     }
   ],
-  "whyItMatters": "It is a foundational principle of neurophysiology, establishing that the nerve impulse is a discrete, uniform signal rather than a graded one. It shapes how the nervous system must encode the strength of a stimulus — through timing and numbers rather than amplitude — and underlies the digital character of neural communication.",
+  "whyItMatters": "It is a foundational principle of neurophysiology, establishing that the nerve impulse is a discrete, uniform signal rather than a graded one. It shapes how the nervous system must encode the strength of a stimulus, through timing and numbers rather than amplitude, and underlies the digital character of neural communication.",
   "working": [
     {
       "lead": "Read the spike as a switch",
@@ -45,8 +45,8 @@
       "text": "keep receptor and synaptic potentials, which are graded, separate from the all-or-none propagated action potential."
     }
   ],
-  "limits": "It applies to the propagated action potential of a single fibre, and to cardiac muscle as an electrically coupled syncytium. It does not apply to graded local potentials — receptor, synaptic, and end-plate potentials — which vary continuously with the stimulus and decay with distance. Whole nerves and skeletal muscles give graded output precisely because stronger stimuli recruit more fibres, each still obeying the law individually. And the fixed amplitude holds for a constant physiological state: fatigue, temperature, and the relative refractory period can alter the size of the maximal response.",
-  "misreadings": "It does not mean whole muscles or nerves respond all-or-nothing — those give graded output by recruiting more fibres. And it does not apply to graded receptor or synaptic potentials, which genuinely vary in size; the law is specifically about the single fibre's propagated action potential.",
+  "limits": "It applies to the propagated action potential of a single fibre, and to cardiac muscle as an electrically coupled syncytium. It does not apply to graded local potentials (receptor, synaptic, and end-plate potentials), which vary continuously with the stimulus and decay with distance. Whole nerves and skeletal muscles give graded output precisely because stronger stimuli recruit more fibres, each still obeying the law individually. And the fixed amplitude holds for a constant physiological state: fatigue, temperature, and the relative refractory period can alter the size of the maximal response.",
+  "misreadings": "It does not mean whole muscles or nerves respond all-or-nothing: those give graded output by recruiting more fibres. And it does not apply to graded receptor or synaptic potentials, which genuinely vary in size; the law is specifically about the single fibre's propagated action potential.",
   "origin": "First stated by Henry Pickering Bowditch for heart muscle in 1871; extended to skeletal muscle by Keith Lucas around 1905-1909 and to nerve by Edgar Adrian in the following years.",
   "category": "medicine",
   "reliability": "Empirical",

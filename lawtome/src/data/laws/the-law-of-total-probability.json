@@ -21,7 +21,7 @@
     }
   ],
   "whyItMatters": "It is one of the most-used tools in probability and statistics for computing marginal probabilities from conditional models, underlying Bayes’ theorem, mixture models, and decision-tree probability calculations.",
-  "limits": "It requires the Bn to be a true partition — mutually exclusive and collectively exhaustive; overlapping or non-exhaustive events invalidate the formula. It also requires the conditional probabilities to be well defined, and for infinite partitions the sum must converge appropriately.",
+  "limits": "It requires the Bn to be a true partition: mutually exclusive and collectively exhaustive; overlapping or non-exhaustive events invalidate the formula. It also requires the conditional probabilities to be well defined, and for infinite partitions the sum must converge appropriately.",
   "misreadings": "A common mistake is applying the formula with events that overlap or do not cover the whole sample space, which silently breaks the \"add up the disjoint pieces\" logic underlying the law.",
   "origin": "A direct consequence of Kolmogorov’s probability axioms and the definition of conditional probability; it is treated as a standard foundational theorem rather than attributed to a single originator.",
   "category": "statistics",

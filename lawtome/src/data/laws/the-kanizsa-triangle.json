@@ -2,7 +2,10 @@
   "no": "751",
   "slug": "the-kanizsa-triangle",
   "name": "The Kanizsa Triangle",
-  "aliases": ["Illusory contours", "Subjective contours"],
+  "aliases": [
+    "Illusory contours",
+    "Subjective contours"
+  ],
   "statement": "Three notched circles conjure a bright white triangle with crisp edges that are not actually there.",
   "statementAccent": "a bright white triangle with crisp edges that are not actually there",
   "meaning": "The Kanizsa triangle is a classic optical illusion that demonstrates illusory contours, also called subjective contours: the visual system perceives clear edges, and a whole shape, where no physical edge or luminance change exists. In the standard figure, three black shapes like Pac-Man, circles each with a wedge removed, are arranged with their missing wedges facing inward, and the arrangement induces the vivid perception of a solid white triangle lying on top of them. The triangle's edges appear as distinct contours, and its surface looks brighter, whiter, than the surrounding page, even though the paper is uniformly white and no triangle is drawn. The illusion is named after the Italian psychologist Gaetano Kanizsa, whose influential 1955 paper renewed scientific interest in such phenomena. It is a foundational demonstration that perception is constructive: the brain actively completes and infers shapes from context.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The Kanizsa triangle is a foundational demonstration in vision science of illusory contours and of the constructive, top-down nature of perception. By making the brain perceive edges, a surface, and even added brightness where none physically exist, it shows that seeing is not a passive recording of the retinal image but an active process of inference and completion, a central tenet of Gestalt psychology. The illusion has been especially important for neuroscience: the finding that neurons in early visual cortex, notably area V2, respond to illusory contours as if to real edges provided direct evidence that the brain builds representations of contours and surfaces that go beyond the input. The Kanizsa triangle thus connects a compelling everyday illusion to deep questions about how the visual system organises figures, completes occluded objects, and constructs the perceived world, making it a staple of both textbooks and research.",
   "working": [
-    {"lead": "Arrange the inducers", "text": "place notched shapes so their gaps align as if a surface were occluding complete figures behind them."},
-    {"lead": "Infer the occluder", "text": "have the visual system explain the arrangement by inferring a shape in front, completing its edges across the undrawn gaps."},
-    {"lead": "Perceive the phantom shape", "text": "see the illusory triangle with crisp contours and added brightness, its edges reflected in cortical neurons that respond as to real edges."}
+    {
+      "lead": "Arrange the inducers",
+      "text": "place notched shapes so their gaps align as if a surface were occluding complete figures behind them."
+    },
+    {
+      "lead": "Infer the occluder",
+      "text": "have the visual system explain the arrangement by inferring a shape in front, completing its edges across the undrawn gaps."
+    },
+    {
+      "lead": "Perceive the phantom shape",
+      "text": "see the illusory triangle with crisp contours and added brightness, its edges reflected in cortical neurons that respond as to real edges."
+    }
   ],
   "limits": "The Kanizsa triangle demonstrates illusory contours under specific configurations; the effect depends on the inducers being arranged so that an occluding surface is the simplest interpretation, and it weakens or vanishes when the alignment is disrupted. It is a demonstration of constructive perception rather than a complete theory of how the brain completes shapes, and the precise cortical mechanisms, and the roles of V1 and V2, are still studied. The strength of the illusion varies with the figure's geometry, contrast, and the observer. So while the Kanizsa triangle reliably reveals that the visual system infers contours and surfaces not present in the stimulus, and that early visual cortex participates in this, the full account of how illusory contours are computed remains an active area of research.",
   "misreadings": "There is no triangle physically present; the edges and the brighter surface are constructed by the brain, so measuring the page finds no contour and uniform brightness. The illusion is not a trick of the paper but a demonstration that perception actively completes figures from context. And it is not merely a curiosity: cortical neurons respond to the illusory edges as to real ones, so treating the triangle as an artefact of the image, or the perception as a simple mistake, misreads a phenomenon that reveals how the visual system constructs contours and surfaces.",
@@ -47,12 +59,26 @@
   "namedAfter": "Gaetano Kanizsa",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Illusory contours, Wikipedia. — the perception of edges and a shape without physical contours, the three-notched-circle arrangement and brighter illusory triangle, Kanizsa's 1955 work, modal and amodal completion, and the V1 and V2 neural responses.", "url": "https://en.wikipedia.org/wiki/Illusory_contours", "type": "secondary"},
-    {"text": "Kanizsa Triangle, The Illusions Index (University of Glasgow). — the illusory-contour figure and its constructive-perception interpretation.", "url": "https://www.illusionsindex.org/i/kanizsa-triangle", "type": "secondary"}
+    {
+      "text": "Illusory contours, Wikipedia. — the perception of edges and a shape without physical contours, the three-notched-circle arrangement and brighter illusory triangle, Kanizsa's 1955 work, modal and amodal completion, and the V1 and V2 neural responses.",
+      "url": "https://en.wikipedia.org/wiki/Illusory_contours",
+      "type": "secondary"
+    },
+    {
+      "text": "Kanizsa Triangle, The Illusions Index (University of Glasgow). — the illusory-contour figure and its constructive-perception interpretation.",
+      "url": "https://www.illusionsindex.org/i/kanizsa-triangle",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Illusory_contours",
   "related": [
-    {"slug": "the-phi-phenomenon", "kind": "kindred"},
-    {"slug": "the-cafe-wall-illusion", "kind": "kindred"}
+    {
+      "slug": "the-phi-phenomenon",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-cafe-wall-illusion",
+      "kind": "kindred"
+    }
   ]
 }

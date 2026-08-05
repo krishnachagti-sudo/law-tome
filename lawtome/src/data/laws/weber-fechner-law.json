@@ -5,15 +5,15 @@
   "statement": "Perceived intensity grows with the logarithm of the stimulus, so we sense proportion, not amount.",
   "statementAccent": "logarithm of the stimulus",
   "meaning": "Our senses respond to relative change, not absolute change. Adding one candle to a dark room is dramatic; adding the same candle to a sunlit one is imperceptible, even though the physical light added is identical. The brain works as a relative-change detector rather than an absolute-magnitude meter.",
-  "mechanism": "The name bundles two related but distinct claims. Weber's law is the empirical observation that the smallest detectable change in a stimulus — the just-noticeable difference — is a constant fraction of the baseline, ΔI/I = k. Fechner's law is the scaling relation he derived by treating each just-noticeable difference as one equal step of sensation and integrating: subjective sensation grows as the logarithm of stimulus intensity, S = k·log(I/I₀). The first is about discrimination thresholds; the second is a mathematical construction built on top of it, and the two are often conflated but are not the same claim.",
+  "mechanism": "The name bundles two related but distinct claims. Weber's law is the empirical observation that the smallest detectable change in a stimulus, the just-noticeable difference, is a constant fraction of the baseline, ΔI/I = k. Fechner's law is the scaling relation he derived by treating each just-noticeable difference as one equal step of sensation and integrating: subjective sensation grows as the logarithm of stimulus intensity, S = k·log(I/I₀). The first is about discrimination thresholds; the second is a mathematical construction built on top of it, and the two are often conflated but are not the same claim.",
   "examples": [
     {
       "tag": "Weight in the hand",
-      "text": "Weber's original paradigm: holding 100 grams, you need about 102 to feel a difference; holding 200, you need about 204 — the same roughly two-percent fraction. What the hand detects is proportion, not absolute added weight."
+      "text": "Weber's original paradigm: holding 100 grams, you need about 102 to feel a difference; holding 200, you need about 204 (the same roughly two-percent fraction). What the hand detects is proportion, not absolute added weight."
     },
     {
       "tag": "Loudness and decibels",
-      "text": "The decibel scale is logarithmic because perceived loudness tracks the logarithm of sound intensity. Each ten-decibel step is a tenfold jump in physical intensity but sounds like a roughly even increase in loudness — a Weber–Fechner-style compression built into the unit."
+      "text": "The decibel scale is logarithmic because perceived loudness tracks the logarithm of sound intensity. Each ten-decibel step is a tenfold jump in physical intensity but sounds like a roughly even increase in loudness: a Weber–Fechner-style compression built into the unit."
     },
     {
       "tag": "Star magnitudes (with a caveat)",
@@ -27,18 +27,18 @@
     },
     {
       "name": "Fechner's law",
-      "text": "The derived half: sensation grows as the logarithm of the stimulus. Fechner built it by assuming every just-noticeable difference is subjectively equal — an assumption, not an observation."
+      "text": "The derived half: sensation grows as the logarithm of the stimulus. Fechner built it by assuming every just-noticeable difference is subjectively equal: an assumption, not an observation."
     },
     {
       "name": "Stevens's power law",
-      "text": "The modern competitor. S.S. Stevens (1957) proposed that sensation follows a power law, ψ = k·I^a, with an exponent that varies by sense — and for some, like electric shock, sensation grows faster than the stimulus, which the logarithm cannot capture."
+      "text": "The modern competitor. S.S. Stevens (1957) proposed that sensation follows a power law, ψ = k·I^a, with an exponent that varies by sense, and for some, like electric shock, sensation grows faster than the stimulus, which the logarithm cannot capture."
     }
   ],
-  "whyItMatters": "It founded psychophysics — the quantitative study of how physical stimuli map to sensation — and gave a first mathematical bridge between the outer world and inner experience. Its core insight, that perception is proportional, still explains why so many of our scales (sound, brightness, pitch) are logarithmic.",
+  "whyItMatters": "It founded psychophysics, the quantitative study of how physical stimuli map to sensation, and gave a first mathematical bridge between the outer world and inner experience. Its core insight, that perception is proportional, still explains why so many of our scales (sound, brightness, pitch) are logarithmic.",
   "working": [
     {
       "lead": "Think in ratios, not differences",
-      "text": "when designing anything sensed — audio levels, display brightness, pricing tiers — equal perceptual steps mean equal ratios, not equal absolute increments."
+      "text": "when designing anything sensed (audio levels, display brightness, pricing tiers) equal perceptual steps mean equal ratios, not equal absolute increments."
     },
     {
       "lead": "Expect it to hold in the middle, not the extremes",
@@ -49,8 +49,8 @@
       "text": "for exact modelling across a wide range and multiple senses, Stevens's power law often fits better than Fechner's logarithm."
     }
   ],
-  "limits": "Both laws fail at the extremes — near the absolute threshold and at very high intensities — and are best in the mid-range. Fechner's specific logarithmic form is challenged and partly superseded by Stevens's power law, which describes a wider range of senses and, for modalities like electric shock, captures sensation growing faster than the stimulus, the opposite of logarithmic compression. Even Weber's fraction is not perfectly constant within a sense; it drifts, especially near threshold. It is a genuine, foundational approximation, not an exact universal model of perception.",
-  "misreadings": "Weber's law and Fechner's law are not the same thing, though the joint name invites the confusion: Weber's is the empirical constant-fraction threshold, Fechner's is the derived logarithmic scaling. And the logarithm is not the last word — for many senses Stevens's power law fits better. The durable claim is qualitative: perception responds to proportion, not absolute amount.",
+  "limits": "Both laws fail at the extremes, near the absolute threshold and at very high intensities, and are best in the mid-range. Fechner's specific logarithmic form is challenged and partly superseded by Stevens's power law, which describes a wider range of senses and, for modalities like electric shock, captures sensation growing faster than the stimulus, the opposite of logarithmic compression. Even Weber's fraction is not perfectly constant within a sense; it drifts, especially near threshold. It is a genuine, foundational approximation, not an exact universal model of perception.",
+  "misreadings": "Weber's law and Fechner's law are not the same thing, though the joint name invites the confusion: Weber's is the empirical constant-fraction threshold, Fechner's is the derived logarithmic scaling. And the logarithm is not the last word: for many senses Stevens's power law fits better. The durable claim is qualitative: perception responds to proportion, not absolute amount.",
   "origin": "Named for two Germans. Ernst Heinrich Weber (1795–1878) established the constant-fraction threshold through weight-discrimination experiments in the 1830s. Gustav Theodor Fechner (1801–1887) formalised the logarithmic sensation law in Elemente der Psychophysik (1860), the founding text of psychophysics, integrating Weber's observation into a mathematical scale.",
   "category": "psychology",
   "reliability": "Empirical",

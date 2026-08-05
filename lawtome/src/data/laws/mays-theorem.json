@@ -2,7 +2,10 @@
   "no": "511",
   "slug": "mays-theorem",
   "name": "May's Theorem",
-  "aliases": ["May's characterization of majority rule", "The majority-rule theorem"],
+  "aliases": [
+    "May's characterization of majority rule",
+    "The majority-rule theorem"
+  ],
   "statement": "For a choice between just two options, simple majority rule is the only method that treats voters and options fairly and responds the right way to a switched vote.",
   "statementAccent": "the only method that treats voters and options fairly",
   "meaning": "May's theorem is a foundational result in social choice theory showing that, for a decision between exactly two alternatives, simple majority rule is the unique voting method satisfying a short list of compelling fairness conditions. Rather than assuming majority rule is fair, the theorem derives it: any method obeying anonymity, neutrality, and positive responsiveness must be majority rule, and majority rule obeys them all. It is a rare positive result in a field better known for impossibility theorems, and its power comes precisely from the restriction to two options, where the obstacles that block fair aggregation over three or more alternatives simply do not arise.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "May's theorem gives majority rule an axiomatic justification rather than treating it as a mere convention, showing that for binary choices it is the unique method meeting basic democratic fairness. It is a cornerstone of social choice theory and the natural counterpoint to Arrow's impossibility theorem: where Arrow shows that no fair rule exists over three or more alternatives, May shows that over two, one uniquely does. That contrast pinpoints exactly where the difficulty of collective choice enters, and it explains why so much of voting theory concerns how to handle more than two options.",
   "working": [
-    {"lead": "Read it as a characterisation", "text": "treat majority rule not as an assumption but as the derived consequence of anonymity, neutrality, and positive responsiveness for two options."},
-    {"lead": "Separate the fairness axioms", "text": "keep anonymity, about treating voters equally, distinct from neutrality, about treating the options equally."},
-    {"lead": "Respect the binary scope", "text": "apply the uniqueness result only to two-alternative choices, since with more options the clean result breaks down."}
+    {
+      "lead": "Read it as a characterisation",
+      "text": "treat majority rule not as an assumption but as the derived consequence of anonymity, neutrality, and positive responsiveness for two options."
+    },
+    {
+      "lead": "Separate the fairness axioms",
+      "text": "keep anonymity, about treating voters equally, distinct from neutrality, about treating the options equally."
+    },
+    {
+      "lead": "Respect the binary scope",
+      "text": "apply the uniqueness result only to two-alternative choices, since with more options the clean result breaks down."
+    }
   ],
   "limits": "The theorem holds only for exactly two alternatives; with three or more, the clean characterisation fails, majority rule can produce cyclic, intransitive collective preferences, and Arrow's impossibility theorem takes over. This binary scope is not a footnote but the load-bearing condition that makes the positive result possible, because with only two options Arrow's independence-of-irrelevant-alternatives condition becomes vacuous. The result also requires a decisive rule over an unrestricted domain, and the strict, positive form of responsiveness matters, since weaker monotonicity would admit other rules. It is a statement about fairness axioms, not a claim that majority rule yields the best or wisest outcome.",
   "misreadings": "It does not say majority rule is best in general or for elections among many candidates; its uniqueness claim is strictly for two-option choices. It does not survive to three or more alternatives, where Arrow's impossibility, not May's uniqueness, is the relevant result. Neutrality, about treating the two options symmetrically, and anonymity, about treating voters symmetrically, are distinct conditions and should not be conflated. And the positive, strict form of responsiveness is what pins down majority rule, so a weaker version would not.",
@@ -47,12 +59,26 @@
   "namedAfter": "Kenneth O. May",
   "namesakeKind": "person",
   "sources": [
-    {"text": "May's theorem, Wikipedia. — the three conditions, the biconditional characterisation, and the two-alternative scope.", "url": "https://en.wikipedia.org/wiki/May%27s_theorem", "type": "secondary"},
-    {"text": "Social Choice Theory, Stanford Encyclopedia of Philosophy. — May's axioms and the contrast with Arrow's impossibility theorem.", "url": "https://plato.stanford.edu/entries/social-choice/", "type": "secondary"}
+    {
+      "text": "May's theorem, Wikipedia. — the three conditions, the biconditional characterisation, and the two-alternative scope.",
+      "url": "https://en.wikipedia.org/wiki/May%27s_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Social Choice Theory, Stanford Encyclopedia of Philosophy. — May's axioms and the contrast with Arrow's impossibility theorem.",
+      "url": "https://plato.stanford.edu/entries/social-choice/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/May%27s_theorem",
   "related": [
-    {"slug": "condorcets-jury-theorem", "kind": "kindred"},
-    {"slug": "arrows-impossibility-theorem", "kind": "tension"}
+    {
+      "slug": "condorcets-jury-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "arrows-impossibility-theorem",
+      "kind": "tension"
+    }
   ]
 }

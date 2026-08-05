@@ -9,11 +9,11 @@
   "examples": [
     {
       "tag": "Purchasing power parity",
-      "text": "Applied to a whole basket of goods, the law implies exchange rates should equalise the cost of that basket across countries — the idea behind purchasing power parity, and its single-good form."
+      "text": "Applied to a whole basket of goods, the law implies exchange rates should equalise the cost of that basket across countries: the idea behind purchasing power parity, and its single-good form."
     },
     {
       "tag": "The Big Mac Index",
-      "text": "The Economist's lighthearted 1986 gauge, introduced by Pam Woodall, prices a single standardised McDonald's burger across countries as a rough test of purchasing power parity — burgernomics."
+      "text": "The Economist's lighthearted 1986 gauge, introduced by Pam Woodall, prices a single standardised McDonald's burger across countries as a rough test of purchasing power parity: burgernomics."
     },
     {
       "tag": "Triangular arbitrage",
@@ -23,31 +23,51 @@
   "variants": [
     {
       "name": "Purchasing power parity",
-      "text": "The law extended to a basket of goods — absolute parity equalises price levels, while relative parity ties exchange-rate changes to inflation differences between countries."
+      "text": "The law extended to a basket of goods: absolute parity equalises price levels, while relative parity ties exchange-rate changes to inflation differences between countries."
     },
     {
       "name": "The border effect",
-      "text": "Engel and Rogers's 1996 finding that crossing the US-Canada border adds as much price volatility as thousands of miles of distance — a striking empirical failure of the law."
+      "text": "Engel and Rogers's 1996 finding that crossing the US-Canada border adds as much price volatility as thousands of miles of distance: a striking empirical failure of the law."
     }
   ],
   "whyItMatters": "It is a foundational no-arbitrage condition running through international economics and finance, underpinning purchasing power parity and rational asset pricing. As an idealised benchmark it disciplines how economists think about prices, exchange rates, and arbitrage, even where real markets fall short of it.",
   "working": [
-    {"lead": "Hunt for the arbitrage", "text": "when an identical good shows two prices, look for the friction blocking the trade that would close the gap."},
-    {"lead": "Insist on true identity", "text": "apply the law only to genuinely identical goods — same quality, location, timing, and terms — since apparent violations often reflect real differences."},
-    {"lead": "Treat it as a tendency", "text": "expect prices to converge more nearly the more perfect the market, rather than to be exactly equal in the frictioned real world."}
+    {
+      "lead": "Hunt for the arbitrage",
+      "text": "when an identical good shows two prices, look for the friction blocking the trade that would close the gap."
+    },
+    {
+      "lead": "Insist on true identity",
+      "text": "apply the law only to genuinely identical goods (same quality, location, timing, and terms), since apparent violations often reflect real differences."
+    },
+    {
+      "lead": "Treat it as a tendency",
+      "text": "expect prices to converge more nearly the more perfect the market, rather than to be exactly equal in the frictioned real world."
+    }
   ],
-  "limits": "As a literal empirical regularity it frequently fails. Transport costs, tariffs, taxes, and trade barriers create price wedges, so the law holds only within a band. Non-tradable goods — land, haircuts, restaurant meals — cannot be arbitraged at all. Sticky nominal prices and pricing-to-market slow adjustment, and information and search costs keep buyers from always finding the lowest price. The border effect documents large, persistent deviations even between neighbouring countries. So the law functions as an idealised benchmark and limiting condition rather than an exact description.",
+  "limits": "As a literal empirical regularity it frequently fails. Transport costs, tariffs, taxes, and trade barriers create price wedges, so the law holds only within a band. Non-tradable goods (land, haircuts, restaurant meals) cannot be arbitraged at all. Sticky nominal prices and pricing-to-market slow adjustment, and information and search costs keep buyers from always finding the lowest price. The border effect documents large, persistent deviations even between neighbouring countries. So the law functions as an idealised benchmark and limiting condition rather than an exact description.",
   "misreadings": "It does not claim identical goods really do sell everywhere at one price — in the real world they routinely do not; it states what would hold absent frictions, so the deviations measure those frictions. And it is not the efficient-market hypothesis: it is a narrower no-arbitrage condition on identical goods.",
   "origin": "An old, diffuse principle with no single originator; anticipated by Cournot's 1838 definition of a market and by Jevons's 1871 'law of indifference' that there cannot be two prices in one market, given its canonical 'same price for the same thing at the same time' phrasing by Marshall in 1890, and named in modern international economics.",
   "category": "economics",
   "reliability": "Heuristic",
   "provenance": "canon",
   "sources": [
-    {"text": "Law of one price, Wikipedia. — the frictionless-arbitrage statement, purchasing power parity, and the empirical limits.", "url": "https://en.wikipedia.org/wiki/Law_of_one_price", "type": "secondary"},
-    {"text": "Big Mac Index, Wikipedia. — the 1986 origin and its use as a purchasing-power-parity gauge.", "url": "https://en.wikipedia.org/wiki/Big_Mac_Index", "type": "secondary"}
+    {
+      "text": "Law of one price, Wikipedia. — the frictionless-arbitrage statement, purchasing power parity, and the empirical limits.",
+      "url": "https://en.wikipedia.org/wiki/Law_of_one_price",
+      "type": "secondary"
+    },
+    {
+      "text": "Big Mac Index, Wikipedia. — the 1986 origin and its use as a purchasing-power-parity gauge.",
+      "url": "https://en.wikipedia.org/wiki/Big_Mac_Index",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Law_of_one_price",
   "related": [
-    {"slug": "the-modigliani-miller-theorem", "kind": "kindred"}
+    {
+      "slug": "the-modigliani-miller-theorem",
+      "kind": "kindred"
+    }
   ]
 }

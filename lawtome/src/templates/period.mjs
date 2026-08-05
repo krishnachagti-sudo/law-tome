@@ -92,7 +92,7 @@ export function periodPage(p, {
 
   const answer = `${num(total)} of the named laws, principles and effects in The Law Tome were coined in the ${escapeHtml(p.label)} (${spanText(p)})${topField ? `, most of them in ${escapeHtml(categories[topField[0]] || topField[0])} (${topField[1]})` : ''}${first && last && first !== last ? `, from ${escapeHtml(first.name)} in ${first.coinedYear} to ${escapeHtml(last.name)} in ${last.coinedYear}` : ''}.`;
 
-  const lede = `Every entry here carries a date we could source, and the date is when the NAME was coined — not when the phenomenon started, and not always when the work behind it was done. ${named ? `${named} of the ${num(total)} are named after somebody.` : 'None of them is named after a person.'} Entries with no datable coinage are not in this ${noun}, or in any other; they sit undated on <a href="${base}timeline/">the timeline</a> rather than being placed by guesswork.`;
+  const lede = `Every entry here carries a date we could source, and the date is when the NAME was coined, not when the phenomenon started, and not always when the work behind it was done. ${named ? `${named} of the ${num(total)} are named after somebody.` : 'None of them is named after a person.'} Entries with no datable coinage are not in this ${noun}, or in any other; they sit undated on <a href="${base}timeline/">the timeline</a> rather than being placed by guesswork.`;
 
   const faq = hubFaq([
     {

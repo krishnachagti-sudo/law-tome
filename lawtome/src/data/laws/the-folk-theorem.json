@@ -5,11 +5,11 @@
   "statement": "In a game repeated forever, almost any outcome can be held in place if players are patient enough.",
   "statementAccent": "almost any outcome can be held in place",
   "meaning": "In an infinitely repeated game, any outcome that is feasible and gives each player at least their guaranteed worst-case payoff can be sustained as an equilibrium, provided the players are patient enough. Cooperation that could never survive a single encounter becomes rational when the game recurs, because the value of future rounds outweighs the gain from cheating today.",
-  "mechanism": "Two conditions bound the achievable outcomes: feasibility, that the payoff is some average of the game's possible outcomes, and individual rationality, that each player gets at least their minmax payoff, the most they can guarantee themselves. Cooperation is enforced by trigger strategies: everyone plays the agreed action until someone deviates, whereupon the others punish the deviator, in the harshest version by holding them to their minmax forever. The threat only deters cheating if players weigh the future heavily — the discount factor near one, the shadow of the future.",
+  "mechanism": "Two conditions bound the achievable outcomes: feasibility, that the payoff is some average of the game's possible outcomes, and individual rationality, that each player gets at least their minmax payoff, the most they can guarantee themselves. Cooperation is enforced by trigger strategies: everyone plays the agreed action until someone deviates, whereupon the others punish the deviator, in the harshest version by holding them to their minmax forever. The threat only deters cheating if players weigh the future heavily: the discount factor near one, the shadow of the future.",
   "examples": [
     {
       "tag": "Sustained cooperation",
-      "text": "In the infinitely repeated prisoner's dilemma, mutual cooperation, impossible in the one-shot game, becomes an equilibrium under a grim-trigger strategy — cooperate until a defection, then punish — when players are patient enough."
+      "text": "In the infinitely repeated prisoner's dilemma, mutual cooperation, impossible in the one-shot game, becomes an equilibrium under a grim-trigger strategy (cooperate until a defection, then punish) when players are patient enough."
     },
     {
       "tag": "Tacit collusion",
@@ -27,29 +27,52 @@
     },
     {
       "name": "Trigger strategies",
-      "text": "The enforcement device — cooperate until someone deviates, then punish — with the grim trigger reverting to permanent punishment after any single defection."
+      "text": "The enforcement device (cooperate until someone deviates, then punish) with the grim trigger reverting to permanent punishment after any single defection."
     }
   ],
-  "whyItMatters": "It is the central result on how cooperation can be sustained through repeated interaction, formalising the shadow of the future that underlies trust, collusion, and self-enforcing agreements. It explains why long-term relationships can support behaviour that one-shot incentives would destroy — and, in its indeterminacy, why predicting which outcome results is so hard.",
+  "whyItMatters": "It is the central result on how cooperation can be sustained through repeated interaction, formalising the shadow of the future that underlies trust, collusion, and self-enforcing agreements. It explains why long-term relationships can support behaviour that one-shot incentives would destroy, and, in its indeterminacy, why predicting which outcome results is so hard.",
   "working": [
-    {"lead": "Look to repetition for cooperation", "text": "where a relationship recurs indefinitely and players are patient, expect cooperation the one-shot game could not support."},
-    {"lead": "Enforce with credible punishment", "text": "sustain an agreement by making deviation trigger a punishment costly enough, and credible enough, to deter it."},
-    {"lead": "Do not expect a unique prediction", "text": "recognise that the theorem supports a vast range of outcomes, so it identifies what is possible, not what will happen."}
+    {
+      "lead": "Look to repetition for cooperation",
+      "text": "where a relationship recurs indefinitely and players are patient, expect cooperation the one-shot game could not support."
+    },
+    {
+      "lead": "Enforce with credible punishment",
+      "text": "sustain an agreement by making deviation trigger a punishment costly enough, and credible enough, to deter it."
+    },
+    {
+      "lead": "Do not expect a unique prediction",
+      "text": "recognise that the theorem supports a vast range of outcomes, so it identifies what is possible, not what will happen."
+    }
   ],
-  "limits": "Its power is also its weakness: it shows an enormous multiplicity of equilibria — almost any individually rational, feasible outcome can be supported — so equilibrium analysis loses predictive power, guaranteeing that many equilibria exist without selecting among them. It requires an infinite or indefinite horizon and patient players; in a finitely repeated game with a unique stage equilibrium, backward induction unravels cooperation from the last period back. And it is a family of condition-dependent theorems, not a single universal law, differing by whether punishment reverts to a Nash outcome or the harsher minmax.",
-  "misreadings": "It does not predict that cooperation will happen — it shows cooperation is one of very many possible equilibria, so it explains what repeated interaction makes possible, not what players will actually do. And it needs an indefinite horizon: with a fixed, known last round and a unique stage equilibrium, cooperation unravels.",
+  "limits": "Its power is also its weakness: it shows an enormous multiplicity of equilibria (almost any individually rational, feasible outcome can be supported), so equilibrium analysis loses predictive power, guaranteeing that many equilibria exist without selecting among them. It requires an infinite or indefinite horizon and patient players; in a finitely repeated game with a unique stage equilibrium, backward induction unravels cooperation from the last period back. And it is a family of condition-dependent theorems, not a single universal law, differing by whether punishment reverts to a Nash outcome or the harsher minmax.",
+  "misreadings": "It does not predict that cooperation will happen. It shows cooperation is one of very many possible equilibria, so it explains what repeated interaction makes possible, not what players will actually do. And it needs an indefinite horizon: with a fixed, known last round and a unique stage equilibrium, cooperation unravels.",
   "origin": "Called the folk theorem because it was widely known among game theorists in the 1950s before anyone published it; the subgame-perfect version is due to James Friedman (1971), and the perfect folk theorem for discounted games to Drew Fudenberg and Eric Maskin (1986).",
   "category": "economics",
   "reliability": "Empirical",
   "provenance": "canon",
   "coinedYear": 1971,
   "sources": [
-    {"text": "Folk theorem (game theory), Wikipedia. — the feasible-and-individually-rational statement, trigger strategies, the folk-name origin, and the Friedman and Fudenberg-Maskin results.", "url": "https://en.wikipedia.org/wiki/Folk_theorem_(game_theory)", "type": "secondary"},
-    {"text": "Fudenberg & Maskin, \"The Folk Theorem in Repeated Games with Discounting or with Incomplete Information,\" Econometrica 54(3):533-554 (1986).", "url": "https://www.econometricsociety.org/publications/econometrica/1986/05/01/folk-theorem-repeated-games-discounting-or-incomplete", "type": "primary"}
+    {
+      "text": "Folk theorem (game theory), Wikipedia. — the feasible-and-individually-rational statement, trigger strategies, the folk-name origin, and the Friedman and Fudenberg-Maskin results.",
+      "url": "https://en.wikipedia.org/wiki/Folk_theorem_(game_theory)",
+      "type": "secondary"
+    },
+    {
+      "text": "Fudenberg & Maskin, \"The Folk Theorem in Repeated Games with Discounting or with Incomplete Information,\" Econometrica 54(3):533-554 (1986).",
+      "url": "https://www.econometricsociety.org/publications/econometrica/1986/05/01/folk-theorem-repeated-games-discounting-or-incomplete",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Folk_theorem_(game_theory)",
   "related": [
-    {"slug": "the-prisoners-dilemma", "kind": "kindred"},
-    {"slug": "tit-for-tat", "kind": "kindred"}
+    {
+      "slug": "the-prisoners-dilemma",
+      "kind": "kindred"
+    },
+    {
+      "slug": "tit-for-tat",
+      "kind": "kindred"
+    }
   ]
 }

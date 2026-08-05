@@ -4,8 +4,8 @@
   "name": "The St. Petersburg Paradox",
   "statement": "A gamble worth infinite expected money is one a sensible person will barely pay for.",
   "statementAccent": "one a sensible person will barely pay for",
-  "meaning": "A coin is tossed until it lands heads; if the first heads comes on toss n, the prize is 2 to the n. The expected payout is infinite, so maximising expected money says you should pay any finite fee to play — yet almost no one would pay more than a few coins. That gap is the paradox, and it shows expected monetary value fails to describe rational choice.",
-  "mechanism": "Each doubling of the prize is exactly cancelled by a halving of its probability, so every term contributes the same amount and the sum of expected value diverges to infinity. But the game is overwhelmingly likely to pay little — half the time just 2, three-quarters of the time no more than 4. A divergent mean sits atop an outcome that almost always pays a modest amount.",
+  "meaning": "A coin is tossed until it lands heads; if the first heads comes on toss n, the prize is 2 to the n. The expected payout is infinite, so maximising expected money says you should pay any finite fee to play, yet almost no one would pay more than a few coins. That gap is the paradox, and it shows expected monetary value fails to describe rational choice.",
+  "mechanism": "Each doubling of the prize is exactly cancelled by a halving of its probability, so every term contributes the same amount and the sum of expected value diverges to infinity. But the game is overwhelmingly likely to pay little: half the time just 2, three-quarters of the time no more than 4. A divergent mean sits atop an outcome that almost always pays a modest amount.",
   "examples": [
     {
       "tag": "The coin game",
@@ -46,7 +46,7 @@
     }
   ],
   "limits": "There is no single agreed resolution, which is the key nuance. Diminishing marginal utility alone does not settle it: Menger showed that any unbounded utility function can be defeated by a suitably steep super-St.-Petersburg game, so only bounded utility escapes. Competing modern proposals invoke bounded utility, finite resources, or probability weighting, and the paradox remains cited and unsettled. It is a genuine foundational paradox of decision theory, not a trick or a solved curiosity.",
-  "misreadings": "Daniel Bernoulli's diminishing-utility resolution is not the last word — Menger's construction shows it fails for unbounded utility, so bounded utility is required. And the paradox is real, not a sleight of hand: the infinite expected value is genuine, and the point is precisely that expected money cannot capture rational choice.",
+  "misreadings": "Daniel Bernoulli's diminishing-utility resolution is not the last word: Menger's construction shows it fails for unbounded utility, so bounded utility is required. And the paradox is real, not a sleight of hand: the infinite expected value is genuine, and the point is precisely that expected money cannot capture rational choice.",
   "origin": "Posed by Nicolas Bernoulli in 1713 and given its famous analysis by his cousin Daniel Bernoulli in 1738 at the St. Petersburg Academy, introducing expected utility and the diminishing marginal utility of money; Gabriel Cramer had proposed a similar idea in 1728.",
   "category": "statistics",
   "reliability": "Contested",

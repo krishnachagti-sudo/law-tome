@@ -8,11 +8,11 @@
   "statement": "You cannot losslessly compress data below its entropy.",
   "statementAccent": "below its entropy",
   "meaning": "A data source's output can be compressed, on average, to no fewer bits per symbol than its entropy, and no lower without loss. Entropy is the fundamental floor of lossless compression: squeeze below it and information is certain to be lost. Predictable, redundant sources have low entropy and compress well; unpredictable ones have high entropy and resist compression.",
-  "mechanism": "Entropy measures the average information content, or average surprise, of a source, computed from the probabilities of its symbols. As the block length grows, almost all sequences a source emits fall into a typical set of roughly a fixed size, and because only those carry essentially all the probability, indexing them needs about the entropy in bits per symbol. Compression can approach the entropy arbitrarily closely over long blocks, but generally cannot beat it — an optimal code's average length sits between the entropy and one bit above it.",
+  "mechanism": "Entropy measures the average information content, or average surprise, of a source, computed from the probabilities of its symbols. As the block length grows, almost all sequences a source emits fall into a typical set of roughly a fixed size, and because only those carry essentially all the probability, indexing them needs about the entropy in bits per symbol. Compression can approach the entropy arbitrarily closely over long blocks, but generally cannot beat it: an optimal code's average length sits between the entropy and one bit above it.",
   "examples": [
     {
       "tag": "Why text compresses",
-      "text": "English has far less than the information of random letters — its per-character entropy is low because of redundancy — which is why compressors like gzip can shrink text substantially while random data barely budges."
+      "text": "English has far less than the information of random letters (its per-character entropy is low because of redundancy), which is why compressors like gzip can shrink text substantially while random data barely budges."
     },
     {
       "tag": "Entropy coders",
@@ -20,24 +20,24 @@
     },
     {
       "tag": "Random data is incompressible",
-      "text": "Maximum-entropy random data already sits at the limit, so no lossless scheme can shrink it on average — the reason no compressor can shrink every possible input."
+      "text": "Maximum-entropy random data already sits at the limit, so no lossless scheme can shrink it on average: the reason no compressor can shrink every possible input."
     }
   ],
   "variants": [
     {
       "name": "The noisy-channel coding theorem",
-      "text": "Shannon's companion result on reliable transmission over a noisy channel up to its capacity — channel coding, which protects against errors, as distinct from source coding, which removes redundancy."
+      "text": "Shannon's companion result on reliable transmission over a noisy channel up to its capacity: channel coding, which protects against errors, as distinct from source coding, which removes redundancy."
     },
     {
       "name": "Shannon entropy",
       "text": "The central quantity, the average information per symbol measured in bits, which the theorem identifies as the exact limit of lossless compression."
     }
   ],
-  "whyItMatters": "It founded information theory and gave a precise, universal answer to how far data can be compressed, defining the bit as the unit of information. Every compression scheme — for text, audio, images, and communication — is measured against the entropy limit it established, and it remains bedrock across computing and telecommunications.",
+  "whyItMatters": "It founded information theory and gave a precise, universal answer to how far data can be compressed, defining the bit as the unit of information. Every compression scheme (for text, audio, images, and communication) is measured against the entropy limit it established, and it remains bedrock across computing and telecommunications.",
   "working": [
     {
       "lead": "Measure the floor with entropy",
-      "text": "to know how far a source can be losslessly compressed, compute its entropy — the average bits per symbol you cannot beat."
+      "text": "to know how far a source can be losslessly compressed, compute its entropy: the average bits per symbol you cannot beat."
     },
     {
       "lead": "Exploit redundancy",
@@ -49,7 +49,7 @@
     }
   ],
   "limits": "It concerns average, asymptotic lossless compression of a source with a known probabilistic model, classically a memoryless source, with extensions to stationary sources via the entropy rate. It does not bound lossy compression, which is governed by a separate rate-distortion theory. Individual messages may compress better or worse than the average; the bound is an expectation over the source distribution. And real data with dependencies is better handled by the entropy rate or, for single objects, by Kolmogorov complexity.",
-  "misreadings": "It is not a promise about any single file — a particular message may compress more or less; the limit is an average over the source. And it governs lossless compression only: lossy schemes, which discard information deliberately, live under a different theory.",
+  "misreadings": "It is not a promise about any single file: a particular message may compress more or less; the limit is an average over the source. And it governs lossless compression only: lossy schemes, which discard information deliberately, live under a different theory.",
   "origin": "Proved by Claude Shannon in 'A Mathematical Theory of Communication,' Bell System Technical Journal (1948), the paper that founded information theory and also gave the separate noisy-channel coding theorem.",
   "category": "technology",
   "reliability": "Empirical",

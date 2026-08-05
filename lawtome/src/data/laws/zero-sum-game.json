@@ -5,15 +5,15 @@
   "statement": "One player's gain is exactly the other's loss, so the pie is fixed.",
   "statementAccent": "the pie is fixed",
   "meaning": "A zero-sum game is a situation in which one participant's gain is exactly balanced by an equivalent loss to the others, so the total of all payoffs is zero for every outcome. It is a strictly competitive interaction over a fixed quantity: whatever one side wins, the other loses by the same amount, and there is no way for all parties to come out ahead together.",
-  "mechanism": "Payoffs across all players sum to a constant — zero — in every outcome, the special case of a constant-sum game where the constant is zero. Because the total is fixed, cooperation cannot expand the joint payoff; one player can be made better off only by making another worse off. In the two-player case the game is captured by a single payoff matrix, since one player's gain is the other's loss, which is exactly what makes such games so tractable and solvable by the minimax theorem.",
+  "mechanism": "Payoffs across all players sum to a constant, zero, in every outcome, the special case of a constant-sum game where the constant is zero. Because the total is fixed, cooperation cannot expand the joint payoff; one player can be made better off only by making another worse off. In the two-player case the game is captured by a single payoff matrix, since one player's gain is the other's loss, which is exactly what makes such games so tractable and solvable by the minimax theorem.",
   "examples": [
     {
       "tag": "Matching pennies",
-      "text": "Two players each show a coin; one wins if they match, the other if they differ, so every outcome is a pure transfer between them — the canonical two-player zero-sum game."
+      "text": "Two players each show a coin; one wins if they match, the other if they differ, so every outcome is a pure transfer between them: the canonical two-player zero-sum game."
     },
     {
       "tag": "Poker among players",
-      "text": "The money one player wins equals what the others lose, so the pot is merely redistributed — though the house's cut makes real casino play negative-sum for the players collectively."
+      "text": "The money one player wins equals what the others lose, so the pot is merely redistributed, though the house's cut makes real casino play negative-sum for the players collectively."
     },
     {
       "tag": "Win, lose, or draw",
@@ -23,14 +23,14 @@
   "variants": [
     {
       "name": "Non-zero-sum games",
-      "text": "The far larger class in which one player's gain need not equal another's loss, so mutual gain is possible — as when two countries trade surpluses and both benefit."
+      "text": "The far larger class in which one player's gain need not equal another's loss, so mutual gain is possible: as when two countries trade surpluses and both benefit."
     },
     {
       "name": "Zero-sum thinking",
       "text": "The cognitive bias of treating a situation as fixed-pie competition when it is not, applying win-lose logic to interactions where cooperation could make everyone better off."
     }
   ],
-  "whyItMatters": "It is a foundational concept in game theory and the setting for von Neumann's minimax theorem, defining the class of purely competitive interactions. Just as important is knowing its boundary: recognising that most real interactions — trade, growth, cooperation — are not zero-sum, and that treating them as if they were is a well-documented and costly error.",
+  "whyItMatters": "It is a foundational concept in game theory and the setting for von Neumann's minimax theorem, defining the class of purely competitive interactions. Just as important is knowing its boundary: recognising that most real interactions (trade, growth, cooperation) are not zero-sum, and that treating them as if they were is a well-documented and costly error.",
   "working": [
     {
       "lead": "Check whether the pie is fixed",
@@ -46,7 +46,7 @@
     }
   ],
   "limits": "Zero-sum games are a narrow, idealised class; most real-world interactions are not zero-sum. Trade, investment, innovation, and economic growth are positive-sum, expanding the total, while some interactions, such as costly wars and litigation, are negative-sum, shrinking it. Treating positive-sum situations as zero-sum is a recognised cognitive bias with real consequences, from misjudged negotiations to zero-sum framings of trade and immigration. Even the standard examples carry caveats: poker is zero-sum only among the players before the house takes its cut.",
-  "misreadings": "It is not a description of how most of the world works — most interactions are positive-sum, allowing all parties to gain, and treating them as zero-sum is a documented fallacy. And 'zero-sum' as a worldview is a contested metaphor, quite distinct from the precise mathematical class of games.",
+  "misreadings": "It is not a description of how most of the world works: most interactions are positive-sum, allowing all parties to gain, and treating them as zero-sum is a documented fallacy. And 'zero-sum' as a worldview is a contested metaphor, quite distinct from the precise mathematical class of games.",
   "origin": "Formalised in John von Neumann's 1928 paper 'Zur Theorie der Gesellschaftsspiele,' where he proved the minimax theorem for two-person zero-sum games; developed further in von Neumann and Morgenstern's Theory of Games and Economic Behavior (1944).",
   "category": "economics",
   "reliability": "Empirical",

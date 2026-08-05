@@ -20,9 +20,9 @@
       "text": "The USL has been applied in capacity-planning practice, including load-testing tool analysis and modelling of disk arrays, SANs, and multicore scalability."
     }
   ],
-  "whyItMatters": "USL gives practitioners a simple, two-parameter curve fit that can be regressed from a handful of throughput measurements to predict where adding more servers, cores, or users will stop helping — or start hurting — without detailed low-level instrumentation.",
+  "whyItMatters": "USL gives practitioners a simple, two-parameter curve fit that can be regressed from a handful of throughput measurements to predict where adding more servers, cores, or users will stop helping (or start hurting) without detailed low-level instrumentation.",
   "limits": "USL is an empirical curve fit rather than a first-principles law; it requires a reasonably clean set of measured (N, throughput) points to fit its parameters reliably, and its predictions degrade if the underlying bottleneck structure changes qualitatively outside the measured range.",
-  "misreadings": "USL is sometimes conflated with Amdahl’s Law, or treated as if it always predicts a capacity decline — retrograde scaling only appears when the coherency parameter is nonzero; purely contention-limited systems merely plateau.",
+  "misreadings": "USL is sometimes conflated with Amdahl’s Law, or treated as if it always predicts a capacity decline: retrograde scaling only appears when the coherency parameter is nonzero; purely contention-limited systems merely plateau.",
   "origin": "Developed by Neil J. Gunther around 1990–1993, first presented at the 1993 CMG conference and later formalised and extended in work through the 2000s.",
   "category": "software",
   "reliability": "Empirical",

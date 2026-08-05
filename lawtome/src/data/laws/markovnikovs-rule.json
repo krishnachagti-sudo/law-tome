@@ -4,8 +4,8 @@
   "name": "Markovnikov's Rule",
   "statement": "When acid adds to a lopsided double bond, the hydrogen goes to the carbon that already has more.",
   "statementAccent": "the carbon that already has more",
-  "meaning": "In the addition of a hydrogen halide, or another polar reagent, across an unsymmetrical carbon-carbon double bond, the hydrogen attaches to the double-bond carbon that already bears the most hydrogens, and the halide goes to the more substituted carbon. The mnemonic is that the rich get richer. It predicts which of two possible products dominates — the regiochemistry of the reaction.",
-  "mechanism": "The rule falls out of carbocation stability. The double bond is first protonated, and it protonates in whichever way gives the more stable carbocation — a more substituted cation, tertiary over secondary over primary, stabilised by the electron-donating alkyl groups around it. The halide then attacks that cation, landing on the more substituted carbon. Markovnikov's own 1870 statement was purely empirical, a pattern read off the products; the electronic explanation came decades later, once carbocations and the theory of electron-releasing groups were understood.",
+  "meaning": "In the addition of a hydrogen halide, or another polar reagent, across an unsymmetrical carbon-carbon double bond, the hydrogen attaches to the double-bond carbon that already bears the most hydrogens, and the halide goes to the more substituted carbon. The mnemonic is that the rich get richer. It predicts which of two possible products dominates: the regiochemistry of the reaction.",
+  "mechanism": "The rule falls out of carbocation stability. The double bond is first protonated, and it protonates in whichever way gives the more stable carbocation: a more substituted cation, tertiary over secondary over primary, stabilised by the electron-donating alkyl groups around it. The halide then attacks that cation, landing on the more substituted carbon. Markovnikov's own 1870 statement was purely empirical, a pattern read off the products; the electronic explanation came decades later, once carbocations and the theory of electron-releasing groups were understood.",
   "examples": [
     {
       "tag": "Hydrogen bromide and propene",
@@ -17,7 +17,7 @@
     },
     {
       "tag": "The anti-Markovnikov reversal",
-      "text": "With hydrogen bromide in the presence of peroxides the addition runs backward, bromine landing on the less substituted carbon — the peroxide effect that first revealed the rule's boundary."
+      "text": "With hydrogen bromide in the presence of peroxides the addition runs backward, bromine landing on the less substituted carbon: the peroxide effect that first revealed the rule's boundary."
     }
   ],
   "variants": [
@@ -45,8 +45,8 @@
       "text": "when you want the anti-Markovnikov alcohol, use hydroboration-oxidation, which places the hydroxyl on the less substituted carbon."
     }
   ],
-  "limits": "It is an empirical regioselectivity rule for ionic, carbocation-mediated addition to simple alkenes, not a universal law. It is reversed by radical conditions: the peroxide effect gives anti-Markovnikov addition, but only for hydrogen bromide — not hydrogen chloride, fluoride, or iodide, whose bond energies make the radical chain unfavourable. Non-carbocation mechanisms such as hydroboration follow their own regiochemistry. And it can mislead where carbocations rearrange to more stable isomers, or where electron-withdrawing substituents invert the expected charge stabilisation. Markovnikov himself, working before electronic theory, could state the pattern but not explain it.",
-  "misreadings": "The rule that hydrogen goes to the carbon with more hydrogens is the observation, not the reason; the real driver is the stability of the carbocation intermediate, and the hydrogen-count phrasing is a shortcut that happens to agree. And an anti-Markovnikov result does not mean the rule is wrong — it means a different mechanism, radical or concerted, is at work, each following its own consistent logic.",
+  "limits": "It is an empirical regioselectivity rule for ionic, carbocation-mediated addition to simple alkenes, not a universal law. It is reversed by radical conditions: the peroxide effect gives anti-Markovnikov addition, but only for hydrogen bromide, not hydrogen chloride, fluoride, or iodide, whose bond energies make the radical chain unfavourable. Non-carbocation mechanisms such as hydroboration follow their own regiochemistry. And it can mislead where carbocations rearrange to more stable isomers, or where electron-withdrawing substituents invert the expected charge stabilisation. Markovnikov himself, working before electronic theory, could state the pattern but not explain it.",
+  "misreadings": "The rule that hydrogen goes to the carbon with more hydrogens is the observation, not the reason; the real driver is the stability of the carbocation intermediate, and the hydrogen-count phrasing is a shortcut that happens to agree. And an anti-Markovnikov result does not mean the rule is wrong. It means a different mechanism, radical or concerted, is at work, each following its own consistent logic.",
   "origin": "Stated by the Russian chemist Vladimir Markovnikov in 1870, in a German-language paper drawn from his work on isomeric butyric acids; sometimes spelled Markownikoff in older literature. Its carbocation basis was worked out over the following decades, and Kharasch and Mayo identified the reversing peroxide effect in 1933.",
   "category": "chemistry",
   "reliability": "Empirical",

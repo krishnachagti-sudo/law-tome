@@ -2,8 +2,11 @@
   "no": "381",
   "slug": "zenos-paradoxes",
   "name": "Zeno's Paradoxes",
-  "aliases": ["Zeno's paradoxes of motion", "Achilles and the tortoise"],
-  "statement": "To cross a room you must first cross half, then half again — so motion seems impossible.",
+  "aliases": [
+    "Zeno's paradoxes of motion",
+    "Achilles and the tortoise"
+  ],
+  "statement": "To cross a room you must first cross half, then half again, so motion seems impossible.",
   "statementAccent": "so motion seems impossible",
   "meaning": "Zeno's paradoxes are a set of ancient arguments purporting to show that motion is impossible or illusory. In the Dichotomy, to reach a destination you must first cover half the distance, then half the remainder, and so on without end, so you can never finish, or even begin. In Achilles and the tortoise, the swift runner can never overtake a tortoise with a head start, because whenever he reaches where it was, it has moved on. In the Arrow, at any instant a flying arrow occupies just its own length and so is at rest.",
   "mechanism": "Each paradox breaks a motion into an infinite sequence and argues that an infinite sequence cannot be completed. The Dichotomy and Achilles depend on splitting a finite distance into endlessly many finite steps; the Arrow depends on treating time as a series of frozen instants at each of which nothing moves, so that motion becomes a sum of rest. The arguments are reductions to absurdity, framed to defend Parmenides' claim that reality is one and unchanging and that plurality and motion are illusions.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "They are among the most influential puzzles in the history of thought, forcing careful treatment of infinity, limits, continuity, and the structure of space and time, and helping motivate the rigorous mathematics behind the calculus. Still discussed in the philosophy of mathematics and physics, they show how a simple challenge, that you cannot cross a room, can drive centuries of progress in how we handle the infinite.",
   "working": [
-    {"lead": "Separate the arithmetic from the metaphysics", "text": "grant that the convergent series sums to a finite value while asking separately whether completing infinitely many steps is coherent."},
-    {"lead": "Read them as Parmenides' defence", "text": "treat the paradoxes as arguments that denying an unchanging reality leads to absurdity, not as Zeno's sincere denial of motion."},
-    {"lead": "Mind the reconstructed text", "text": "remember the arguments survive only in paraphrase, so specific numbers and phrasings are later reconstructions."}
+    {
+      "lead": "Separate the arithmetic from the metaphysics",
+      "text": "grant that the convergent series sums to a finite value while asking separately whether completing infinitely many steps is coherent."
+    },
+    {
+      "lead": "Read them as Parmenides' defence",
+      "text": "treat the paradoxes as arguments that denying an unchanging reality leads to absurdity, not as Zeno's sincere denial of motion."
+    },
+    {
+      "lead": "Mind the reconstructed text",
+      "text": "remember the arguments survive only in paraphrase, so specific numbers and phrasings are later reconstructions."
+    }
   ],
   "limits": "The arithmetic is settled: an infinite geometric series can have a finite sum, which quantitatively resolves the Dichotomy and Achilles, and this rests on the rigorous nineteenth-century definition of a limit. Whether that dissolves the underlying metaphysics, the possibility of completing infinitely many tasks, remains genuinely contested, and nothing guarantees that physical space and time have the continuum's structure the math assumes. Zeno's own arguments survive only secondhand, mainly through Aristotle and later commentators, so their exact form is reconstructed.",
   "misreadings": "Calculus does not trivially and completely dissolve them: summing the series settles the arithmetic but not the philosophical question of supertasks, which stays open. Zeno most likely did not believe motion was literally impossible as his own view; the paradoxes defend Parmenides by showing the absurdity of denying him. And the claim is not that infinitely many steps must take infinite time, a misreading with no basis in the sources.",
@@ -46,12 +58,26 @@
   "namedAfter": "Zeno of Elea",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Zeno's Paradoxes, Stanford Encyclopedia of Philosophy. — the Dichotomy, Achilles, and Arrow, the convergent-series reply, and the supertask debate.", "url": "https://plato.stanford.edu/entries/paradox-zeno/", "type": "secondary"},
-    {"text": "Zeno's paradoxes, Wikipedia. — the arguments, their transmission through Aristotle, and their relation to Parmenides.", "url": "https://en.wikipedia.org/wiki/Zeno%27s_paradoxes", "type": "secondary"}
+    {
+      "text": "Zeno's Paradoxes, Stanford Encyclopedia of Philosophy. — the Dichotomy, Achilles, and Arrow, the convergent-series reply, and the supertask debate.",
+      "url": "https://plato.stanford.edu/entries/paradox-zeno/",
+      "type": "secondary"
+    },
+    {
+      "text": "Zeno's paradoxes, Wikipedia. — the arguments, their transmission through Aristotle, and their relation to Parmenides.",
+      "url": "https://en.wikipedia.org/wiki/Zeno%27s_paradoxes",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Zeno%27s_paradoxes",
   "related": [
-    {"slug": "the-sorites-paradox", "kind": "kindred"},
-    {"slug": "banach-tarski-paradox", "kind": "kindred"}
+    {
+      "slug": "the-sorites-paradox",
+      "kind": "kindred"
+    },
+    {
+      "slug": "banach-tarski-paradox",
+      "kind": "kindred"
+    }
   ]
 }

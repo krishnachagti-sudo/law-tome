@@ -182,7 +182,7 @@ export const RELIABILITY_NOTE = {
   Empirical: 'grounded in studies or measurable evidence',
   Heuristic: 'a dependable rule of thumb, not a proven theorem',
   'Folk-adage': 'a proverb or saying, not a scientific finding',
-  Contested: 'disputed — the evidence is debated',
+  Contested: 'disputed, with the evidence still argued over',
 };
 /** URL slug for a reliability value: 'Folk-adage' -> 'folk-adage'. */
 export function reliabilitySlug(reliability) {

@@ -2,11 +2,13 @@
   "no": "104",
   "slug": "baader-meinhof-phenomenon",
   "name": "The Baader–Meinhof Phenomenon",
-  "aliases": ["The frequency illusion"],
+  "aliases": [
+    "The frequency illusion"
+  ],
   "statement": "Once you notice something, you start seeing it everywhere.",
   "statementAccent": "you start seeing it everywhere",
-  "meaning": "You learn a new word, settle on a car model, or hear an unusual name — and suddenly it seems to be everywhere. Nothing in the world changed. Your attention started registering instances it used to filter out, and you mistook that shift in noticing for a shift in reality.",
-  "mechanism": "Two cognitive processes work together. Selective attention: once something is flagged as relevant, the brain unconsciously filters for it and registers instances it previously ignored. Confirmation bias: each new sighting is taken as evidence that the thing really has become more common, while the absences that would disprove it go uncounted. The underlying base rate never moved — only detection and interpretation did.",
+  "meaning": "You learn a new word, settle on a car model, or hear an unusual name, and suddenly it seems to be everywhere. Nothing in the world changed. Your attention started registering instances it used to filter out, and you mistook that shift in noticing for a shift in reality.",
+  "mechanism": "Two cognitive processes work together. Selective attention: once something is flagged as relevant, the brain unconsciously filters for it and registers instances it previously ignored. Confirmation bias: each new sighting is taken as evidence that the thing really has become more common, while the absences that would disprove it go uncounted. The underlying base rate never moved, only detection and interpretation did.",
   "examples": [
     {
       "tag": "The new word",
@@ -14,31 +16,40 @@
     },
     {
       "tag": "The car you just chose",
-      "text": "You decide you want a particular car, and suddenly you spot it on every street. The cars were always there — you simply started registering them instead of filtering them out."
+      "text": "You decide you want a particular car, and suddenly you spot it on every street. The cars were always there: you simply started registering them instead of filtering them out."
     },
     {
       "tag": "The unfamiliar name",
-      "text": "You hear an uncommon name for the first time and then seem to meet it repeatedly, in unrelated contexts, within days — the same attention-then-confirmation loop applied to a name."
+      "text": "You hear an uncommon name for the first time and then seem to meet it repeatedly, in unrelated contexts, within days: the same attention-then-confirmation loop applied to a name."
     }
   ],
   "variants": [
     {
       "name": "The recency illusion",
-      "text": "Also coined by Arnold Zwicky: the belief that something you have only recently noticed is itself new to the world, when it may be long-established — a sibling illusion about time rather than frequency."
+      "text": "Also coined by Arnold Zwicky: the belief that something you have only recently noticed is itself new to the world, when it may be long-established (a sibling illusion about time rather than frequency)."
     },
     {
       "name": "Selective attention and confirmation bias",
-      "text": "Not variants so much as the two component mechanisms — the attentional filter that does the noticing and the interpretive bias that 'confirms' the pattern."
+      "text": "Not variants so much as the two component mechanisms: the attentional filter that does the noticing and the interpretive bias that 'confirms' the pattern."
     }
   ],
-  "whyItMatters": "It is a clean, everyday demonstration that perceived frequency is a product of attention, not a reliable readout of the world. Recognising it inoculates against a common reasoning error — treating 'I keep seeing this' as evidence that something is actually spreading, when only your alertness has changed.",
+  "whyItMatters": "It is a clean, everyday demonstration that perceived frequency is a product of attention, not a reliable readout of the world. Recognising it inoculates against a common reasoning error: treating 'I keep seeing this' as evidence that something is actually spreading, when only your alertness has changed.",
   "working": [
-    {"lead": "Distrust 'suddenly it's everywhere'", "text": "when something you just noticed seems to be spiking, suspect your attention before you conclude the world changed."},
-    {"lead": "Count absences, not just hits", "text": "the illusion feeds on unrecorded misses; to gauge real frequency, look for the instances that would disconfirm the pattern, not only the ones that confirm it."},
-    {"lead": "Separate salience from base rate", "text": "ask whether the thing genuinely became more common or merely more relevant to you — only the first is a fact about the world."}
+    {
+      "lead": "Distrust 'suddenly it's everywhere'",
+      "text": "when something you just noticed seems to be spiking, suspect your attention before you conclude the world changed."
+    },
+    {
+      "lead": "Count absences, not just hits",
+      "text": "the illusion feeds on unrecorded misses; to gauge real frequency, look for the instances that would disconfirm the pattern, not only the ones that confirm it."
+    },
+    {
+      "lead": "Separate salience from base rate",
+      "text": "ask whether the thing genuinely became more common or merely more relevant to you, only the first is a fact about the world."
+    }
   ],
-  "limits": "It is a perceptual and cognitive illusion, not a real change in frequency — that is its defining caveat. Much of the supporting evidence is anecdotal and self-reported, and the effect is inherently hard to measure because you cannot easily quantify what a person failed to notice before. The construct originates in linguistics blogging (2005) and lexicography rather than a controlled psychology experiment, and rigorous experimental isolation of the named effect is limited: adjacent work exists on attention and frequency estimation, but no single definitive demonstration is well established.",
-  "misreadings": "It is not a claim that things really do cluster once you notice them, nor a mystical synchronicity — the base rate is unchanged and only attention has shifted. It is also more lightly studied than its fame suggests: a well-described heuristic grounded in known biases, not a heavily replicated experimental effect.",
+  "limits": "It is a perceptual and cognitive illusion, not a real change in frequency. That is its defining caveat. Much of the supporting evidence is anecdotal and self-reported, and the effect is inherently hard to measure because you cannot easily quantify what a person failed to notice before. The construct originates in linguistics blogging (2005) and lexicography rather than a controlled psychology experiment, and rigorous experimental isolation of the named effect is limited: adjacent work exists on attention and frequency estimation, but no single definitive demonstration is well established.",
+  "misreadings": "It is not a claim that things really do cluster once you notice them, nor a mystical synchronicity: the base rate is unchanged and only attention has shifted. It is also more lightly studied than its fame suggests: a well-described heuristic grounded in known biases, not a heavily replicated experimental effect.",
   "origin": "The term 'frequency illusion' was coined by the Stanford linguist Arnold Zwicky in an August 2005 Language Log post. The nickname 'Baader–Meinhof phenomenon' comes from a 1994 reader submission to the St. Paul Pioneer Press, from a writer who had heard the name of the West German militant group twice in quick succession. The Oxford English Dictionary added 'frequency illusion' in its March 2019 update.",
   "category": "psychology",
   "reliability": "Heuristic",
@@ -46,12 +57,27 @@
   "coinedYear": 2005,
   "namedAfter": "The Baader–Meinhof group",
   "sources": [
-    {"text": "Frequency illusion, Wikipedia. — the definition, the Zwicky coinage, and the 1994 Pioneer Press origin.", "url": "https://en.wikipedia.org/wiki/Frequency_illusion", "type": "secondary"},
-    {"text": "Zimmer, B. \"'Frequency illusion' in the OED,\" Language Log. — Zwicky's 2005 coinage and the OED's 2019 addition.", "url": "https://languagelog.ldc.upenn.edu/nll/?p=42180", "type": "secondary"},
-    {"text": "\"What's the Baader-Meinhof Phenomenon?\" HowStuffWorks. — the newspaper origin and the attention-plus-confirmation mechanism.", "url": "https://science.howstuffworks.com/life/inside-the-mind/human-brain/baader-meinhof-phenomenon.htm", "type": "secondary"}
+    {
+      "text": "Frequency illusion, Wikipedia. — the definition, the Zwicky coinage, and the 1994 Pioneer Press origin.",
+      "url": "https://en.wikipedia.org/wiki/Frequency_illusion",
+      "type": "secondary"
+    },
+    {
+      "text": "Zimmer, B. \"'Frequency illusion' in the OED,\" Language Log. — Zwicky's 2005 coinage and the OED's 2019 addition.",
+      "url": "https://languagelog.ldc.upenn.edu/nll/?p=42180",
+      "type": "secondary"
+    },
+    {
+      "text": "\"What's the Baader-Meinhof Phenomenon?\" HowStuffWorks. — the newspaper origin and the attention-plus-confirmation mechanism.",
+      "url": "https://science.howstuffworks.com/life/inside-the-mind/human-brain/baader-meinhof-phenomenon.htm",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Frequency_illusion",
   "related": [
-    {"slug": "littlewoods-law", "kind": "kindred"}
+    {
+      "slug": "littlewoods-law",
+      "kind": "kindred"
+    }
   ]
 }

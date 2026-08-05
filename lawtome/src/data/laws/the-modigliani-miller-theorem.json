@@ -2,11 +2,13 @@
   "no": "205",
   "slug": "the-modigliani-miller-theorem",
   "name": "The Modigliani-Miller Theorem",
-  "aliases": ["The capital structure irrelevance principle"],
+  "aliases": [
+    "The capital structure irrelevance principle"
+  ],
   "statement": "In an idealized market, how a firm is financed does not change what it is worth.",
   "statementAccent": "does not change what it is worth",
-  "meaning": "Under idealised assumptions — no taxes, no bankruptcy or agency costs, no asymmetric information, and an efficient market — a firm's total value is independent of its capital structure, the mix of debt and equity used to finance it. What the firm is worth depends on the real cash flows its assets generate, not on how those flows are packaged and divided among investors.",
-  "mechanism": "The result is enforced by arbitrage. Under Proposition I, a levered firm and an otherwise identical unlevered one must have equal value; if not, an investor could sell the dearer and replicate its payoff using 'homemade leverage' — borrowing on personal account to buy the cheaper — and the trades drive the values together. Because investors can create leverage themselves on the same terms, they will not pay a premium for the firm to do it for them. Under Proposition II, the cost of equity rises with the debt-to-equity ratio: cheaper debt is exactly offset by the higher return now demanded on riskier equity, so the overall cost of capital stays flat. There is no free lunch from adding debt.",
+  "meaning": "Under idealised assumptions (no taxes, no bankruptcy or agency costs, no asymmetric information, and an efficient market) a firm's total value is independent of its capital structure, the mix of debt and equity used to finance it. What the firm is worth depends on the real cash flows its assets generate, not on how those flows are packaged and divided among investors.",
+  "mechanism": "The result is enforced by arbitrage. Under Proposition I, a levered firm and an otherwise identical unlevered one must have equal value; if not, an investor could sell the dearer and replicate its payoff using 'homemade leverage' (borrowing on personal account to buy the cheaper) and the trades drive the values together. Because investors can create leverage themselves on the same terms, they will not pay a premium for the firm to do it for them. Under Proposition II, the cost of equity rises with the debt-to-equity ratio: cheaper debt is exactly offset by the higher return now demanded on riskier equity, so the overall cost of capital stays flat. There is no free lunch from adding debt.",
   "examples": [
     {
       "tag": "Slicing the pizza",
@@ -14,30 +16,39 @@
     },
     {
       "tag": "Homemade leverage",
-      "text": "An investor wanting a levered payoff when only unlevered shares exist can borrow personally and buy more shares, manufacturing the same leverage — so the firm's own choice to borrow adds no value, the engine behind Proposition I."
+      "text": "An investor wanting a levered payoff when only unlevered shares exist can borrow personally and buy more shares, manufacturing the same leverage, so the firm's own choice to borrow adds no value, the engine behind Proposition I."
     },
     {
       "tag": "The tax-adjusted version",
-      "text": "Once corporate taxes enter, the 1963 correction shows firm value rises with debt by the present value of the interest tax shield — the point at which capital structure starts to matter."
+      "text": "Once corporate taxes enter, the 1963 correction shows firm value rises with debt by the present value of the interest tax shield: the point at which capital structure starts to matter."
     }
   ],
   "variants": [
     {
       "name": "The 1963 tax correction",
-      "text": "Modigliani and Miller's revision incorporating corporate income taxes, under which value equals the unlevered value plus the tax shield on debt — reversing the practical takeaway of the no-tax version."
+      "text": "Modigliani and Miller's revision incorporating corporate income taxes, under which value equals the unlevered value plus the tax shield on debt: reversing the practical takeaway of the no-tax version."
     },
     {
       "name": "Trade-off and pecking-order theories",
       "text": "The responses that restore relevance: firms balancing the tax benefit of debt against distress costs, or, under asymmetric information, preferring internal funds, then debt, then equity last."
     }
   ],
-  "whyItMatters": "It is the foundation of modern corporate finance, the benchmark against which every real financing decision is measured. Like a frictionless plane in physics, it is false as a literal description but invaluable because it isolates exactly which real-world imperfections — taxes, distress costs, agency conflicts, information gaps — actually make capital structure matter. Modigliani and Miller each later won the Nobel Prize.",
+  "whyItMatters": "It is the foundation of modern corporate finance, the benchmark against which every real financing decision is measured. Like a frictionless plane in physics, it is false as a literal description but invaluable because it isolates exactly which real-world imperfections (taxes, distress costs, agency conflicts, information gaps) actually make capital structure matter. Modigliani and Miller each later won the Nobel Prize.",
   "working": [
-    {"lead": "Start from irrelevance", "text": "treat financing as value-neutral first, then ask which specific friction in the case at hand makes it matter."},
-    {"lead": "Look to the frictions for value", "text": "seek the gains or costs of debt in taxes, distress risk, and incentives — not in financial packaging itself."},
-    {"lead": "Mind which version applies", "text": "distinguish the no-tax irrelevance result from the 1963 tax version, under which debt does add value through the tax shield."}
+    {
+      "lead": "Start from irrelevance",
+      "text": "treat financing as value-neutral first, then ask which specific friction in the case at hand makes it matter."
+    },
+    {
+      "lead": "Look to the frictions for value",
+      "text": "seek the gains or costs of debt in taxes, distress risk, and incentives, not in financial packaging itself."
+    },
+    {
+      "lead": "Mind which version applies",
+      "text": "distinguish the no-tax irrelevance result from the 1963 tax version, under which debt does add value through the tax shield."
+    }
   ],
-  "limits": "The theorem holds exactly only under assumptions known not to obtain, and those very frictions are what make capital structure matter in practice. Corporate and personal taxes favour debt through interest deductibility. Bankruptcy and financial-distress costs cap how much debt is optimal. Agency conflicts among shareholders, managers, and creditors, and asymmetric information driving signalling and adverse selection, all break irrelevance. Even the homemade-leverage argument assumes individuals borrow on the same terms as corporations, which is unrealistic. Its enduring contribution is methodological — the arbitrage-and-valuation logic — not a literal prescription.",
+  "limits": "The theorem holds exactly only under assumptions known not to obtain, and those very frictions are what make capital structure matter in practice. Corporate and personal taxes favour debt through interest deductibility. Bankruptcy and financial-distress costs cap how much debt is optimal. Agency conflicts among shareholders, managers, and creditors, and asymmetric information driving signalling and adverse selection, all break irrelevance. Even the homemade-leverage argument assumes individuals borrow on the same terms as corporations, which is unrealistic. Its enduring contribution is methodological, the arbitrage-and-valuation logic, not a literal prescription.",
   "misreadings": "It is not advice that financing never matters — in the real world it clearly does; the theorem's role is to show precisely which frictions make it matter. And the pure irrelevance result is the no-tax version; once taxes enter, the 1963 correction shows debt does change firm value.",
   "origin": "Proved by Franco Modigliani and Merton Miller in 'The Cost of Capital, Corporation Finance and the Theory of Investment,' American Economic Review 48(3):261-297 (1958), with a corporate-tax correction in 1963; Modigliani won the Nobel in 1985 and Miller, separately, in 1990.",
   "category": "economics",
@@ -47,12 +58,26 @@
   "namedAfter": "Franco Modigliani and Merton Miller",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Modigliani-Miller theorem, Wikipedia. — Propositions I and II, homemade leverage, the 1963 tax correction, and the separate Nobel prizes.", "url": "https://en.wikipedia.org/wiki/Modigliani%E2%80%93Miller_theorem", "type": "secondary"},
-    {"text": "\"Why Merton Miller Remains Misunderstood,\" Chicago Booth Review. — the pizza illustration and Miller's framing of the theorem.", "url": "https://www.chicagobooth.edu/review/why-merton-miller-remains-misunderstood", "type": "secondary"}
+    {
+      "text": "Modigliani-Miller theorem, Wikipedia. — Propositions I and II, homemade leverage, the 1963 tax correction, and the separate Nobel prizes.",
+      "url": "https://en.wikipedia.org/wiki/Modigliani%E2%80%93Miller_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "\"Why Merton Miller Remains Misunderstood,\" Chicago Booth Review. — the pizza illustration and Miller's framing of the theorem.",
+      "url": "https://www.chicagobooth.edu/review/why-merton-miller-remains-misunderstood",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Modigliani%E2%80%93Miller_theorem",
   "related": [
-    {"slug": "the-law-of-one-price", "kind": "kindred"},
-    {"slug": "the-coase-theorem", "kind": "kindred"}
+    {
+      "slug": "the-law-of-one-price",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-coase-theorem",
+      "kind": "kindred"
+    }
   ]
 }

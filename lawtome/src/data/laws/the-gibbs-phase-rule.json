@@ -7,7 +7,7 @@
   ],
   "statement": "Degrees of freedom equal components minus phases, plus two.",
   "statementAccent": "components minus phases, plus two",
-  "meaning": "For a system at equilibrium, the phase rule counts how many intensive variables — temperature, pressure, concentrations — you can vary independently while keeping the same set of phases coexisting. That number, the degrees of freedom, is F = C minus P plus 2: the number of chemically independent components, less the number of phases present, plus two for temperature and pressure. It tells you whether a state is a region, a line, or a single fixed point on a phase diagram.",
+  "meaning": "For a system at equilibrium, the phase rule counts how many intensive variables (temperature, pressure, concentrations) you can vary independently while keeping the same set of phases coexisting. That number, the degrees of freedom, is F = C minus P plus 2: the number of chemically independent components, less the number of phases present, plus two for temperature and pressure. It tells you whether a state is a region, a line, or a single fixed point on a phase diagram.",
   "mechanism": "The rule is a tally of variables minus constraints. To fix each phase's composition you need its concentrations; across all the phases, together with the shared temperature and pressure, that is a fixed count of variables. Equilibrium then demands that each component have the same chemical potential in every phase, and each such equality is a constraint that removes a degree of freedom. Subtract the constraints from the variables and the phase rule, F = C minus P plus 2, is what remains. The two counts temperature and pressure; hold one of them fixed and it drops to plus one.",
   "examples": [
     {
@@ -16,7 +16,7 @@
     },
     {
       "tag": "The coexistence curve",
-      "text": "Where liquid water and its vapour coexist there are two phases, so F equals one: choosing the temperature fixes the pressure, and the states trace a line — the boiling curve."
+      "text": "Where liquid water and its vapour coexist there are two phases, so F equals one: choosing the temperature fixes the pressure, and the states trace a line (the boiling curve)."
     },
     {
       "tag": "The triple point",
@@ -26,14 +26,14 @@
   "variants": [
     {
       "name": "The condensed phase rule",
-      "text": "When pressure is held fixed, as for solids and liquids in metallurgy, one variable is removed and the rule becomes F = C minus P plus 1 — though it should not be used for condensed systems at high pressure, as in geology."
+      "text": "When pressure is held fixed, as for solids and liquids in metallurgy, one variable is removed and the rule becomes F = C minus P plus 1, though it should not be used for condensed systems at high pressure, as in geology."
     },
     {
       "name": "The generalised rule",
       "text": "Replacing the two with N gives F = C minus P plus N, where N counts every independent way of doing work, letting the rule accommodate magnetic or electric fields beyond temperature and pressure."
     }
   ],
-  "whyItMatters": "It is the organising principle of phase diagrams, the master relation that says how many degrees of freedom a system of coexisting phases has, and so how those diagrams must be built. From metallurgy and materials science to geology and chemical engineering, it governs how many conditions can be tuned before a phase appears or vanishes — and it is one of the founding results of chemical thermodynamics.",
+  "whyItMatters": "It is the organising principle of phase diagrams, the master relation that says how many degrees of freedom a system of coexisting phases has, and so how those diagrams must be built. From metallurgy and materials science to geology and chemical engineering, it governs how many conditions can be tuned before a phase appears or vanishes, and it is one of the founding results of chemical thermodynamics.",
   "working": [
     {
       "lead": "Count components and phases",
@@ -48,8 +48,8 @@
       "text": "reduce the component count by every independent chemical reaction and constraint, since it is the minimum set that fixes all compositions."
     }
   ],
-  "limits": "The rule holds only at thermodynamic equilibrium; it says nothing about metastable states, kinetics, or rates. The two applies specifically to temperature and pressure — fix one and it becomes plus one, and other intensive variables such as magnetic or electric fields change it again, calling for the generalised form. Components must be counted as the minimum number of independent constituents: each independent chemical reaction at equilibrium, and constraints like electroneutrality, reduce the count, and mistaking species for components is the commonest error. Only intensive variables count; the amounts of each phase do not. A negative result signals that too many phases were assumed to coexist.",
-  "misreadings": "The component count is not simply the number of chemical species present; it is the number of independent components, which reactions and constraints reduce. And degrees of freedom count only independent intensive variables — the relative amounts of the phases, being extensive, do not enter, so F equal to zero does not mean the amounts cannot change, only that no intensive variable can be tuned freely while the phases coexist.",
+  "limits": "The rule holds only at thermodynamic equilibrium; it says nothing about metastable states, kinetics, or rates. The two applies specifically to temperature and pressure: fix one and it becomes plus one, and other intensive variables such as magnetic or electric fields change it again, calling for the generalised form. Components must be counted as the minimum number of independent constituents: each independent chemical reaction at equilibrium, and constraints like electroneutrality, reduce the count, and mistaking species for components is the commonest error. Only intensive variables count; the amounts of each phase do not. A negative result signals that too many phases were assumed to coexist.",
+  "misreadings": "The component count is not simply the number of chemical species present; it is the number of independent components, which reactions and constraints reduce. And degrees of freedom count only independent intensive variables: the relative amounts of the phases, being extensive, do not enter, so F equal to zero does not mean the amounts cannot change, only that no intensive variable can be tuned freely while the phases coexist.",
   "origin": "Derived by the American physicist Josiah Willard Gibbs in his monograph 'On the Equilibrium of Heterogeneous Substances,' published by the Connecticut Academy of Arts and Sciences in two parts in 1875 and 1878, the work that founded chemical thermodynamics and introduced the chemical potential on which the rule rests.",
   "category": "chemistry",
   "reliability": "Empirical",

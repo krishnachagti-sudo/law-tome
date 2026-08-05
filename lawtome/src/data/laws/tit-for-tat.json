@@ -5,11 +5,11 @@
   "statement": "Start by cooperating, then do whatever the other did last.",
   "statementAccent": "do whatever the other did last",
   "meaning": "A strategy for the repeated prisoner's dilemma: cooperate on the first move, then on every move afterward copy whatever the opponent did on the previous move. It rewards cooperation with cooperation and punishes defection with an immediate, one-for-one defection. It famously won Robert Axelrod's computer tournaments, becoming the emblem of how cooperation can emerge among self-interested players.",
-  "mechanism": "Axelrod attributed its success to four qualities. It is nice — never the first to defect. It is retaliatory, or provocable — it punishes defection at once, so it cannot be exploited. It is forgiving — it returns to cooperation the moment the opponent does, avoiding endless punishment. And it is clear and non-envious — simple enough that opponents learn cooperation pays, and it never tries to score more than its partner. Niceness avoids needless trouble, retaliation deters persistent defection, forgiveness restores cooperation, and clarity elicits it.",
+  "mechanism": "Axelrod attributed its success to four qualities. It is nice, never the first to defect. It is retaliatory, or provocable. It punishes defection at once, so it cannot be exploited. It is forgiving. It returns to cooperation the moment the opponent does, avoiding endless punishment. And it is clear and non-envious: simple enough that opponents learn cooperation pays, and it never tries to score more than its partner. Niceness avoids needless trouble, retaliation deters persistent defection, forgiveness restores cooperation, and clarity elicits it.",
   "examples": [
     {
       "tag": "Axelrod's tournaments",
-      "text": "In Axelrod's round-robin computer tournaments, tit-for-tat, submitted by Anatol Rapoport as a four-line program, scored highest against the whole field twice — despite never beating any single opponent head-to-head."
+      "text": "In Axelrod's round-robin computer tournaments, tit-for-tat, submitted by Anatol Rapoport as a four-line program, scored highest against the whole field twice, despite never beating any single opponent head-to-head."
     },
     {
       "tag": "Reciprocal altruism",
@@ -32,12 +32,21 @@
   ],
   "whyItMatters": "It became the iconic answer to how cooperation can arise and persist among self-interested agents without central authority, influencing thinking across biology, political science, and economics. Axelrod's account of nice, retaliatory, forgiving, clear strategies shaped a generation of research on the evolution of cooperation.",
   "working": [
-    {"lead": "Begin generously, then reciprocate", "text": "in an ongoing relationship, cooperate first and thereafter mirror the other party's last move."},
-    {"lead": "Retaliate but forgive", "text": "punish defection promptly to avoid being exploited, but return to cooperation as soon as the other does."},
-    {"lead": "Guard against noise", "text": "where mistakes or misperceptions are likely, use a more forgiving variant to avoid a spiral of mutual retaliation."}
+    {
+      "lead": "Begin generously, then reciprocate",
+      "text": "in an ongoing relationship, cooperate first and thereafter mirror the other party's last move."
+    },
+    {
+      "lead": "Retaliate but forgive",
+      "text": "punish defection promptly to avoid being exploited, but return to cooperation as soon as the other does."
+    },
+    {
+      "lead": "Guard against noise",
+      "text": "where mistakes or misperceptions are likely, use a more forgiving variant to avoid a spiral of mutual retaliation."
+    }
   ],
-  "limits": "Tit-for-tat is not universally optimal. Its central weakness is vulnerability to noise: a single mistaken or misperceived move triggers an unending echo of mutual retaliation, since it has no error correction — the reason for generous and forgiving variants. It is not evolutionarily unbeatable: win-stay-lose-shift outperforms it in noisy settings; a colluding team of programs beat it in a 2004 tournament by exploiting the rules; and zero-determinant strategies can extort a naive adaptive opponent. It also requires repeated interaction with the ability to recognise and remember partners, collapsing in one-shot or anonymous settings.",
-  "misreadings": "It is not a proven best strategy — its dominance is context-dependent, and it has been beaten by later strategies and by collusion. And it is fragile under noise: a single error can lock two tit-for-tat players into endless mutual punishment.",
+  "limits": "Tit-for-tat is not universally optimal. Its central weakness is vulnerability to noise: a single mistaken or misperceived move triggers an unending echo of mutual retaliation, since it has no error correction (the reason for generous and forgiving variants). It is not evolutionarily unbeatable: win-stay-lose-shift outperforms it in noisy settings; a colluding team of programs beat it in a 2004 tournament by exploiting the rules; and zero-determinant strategies can extort a naive adaptive opponent. It also requires repeated interaction with the ability to recognise and remember partners, collapsing in one-shot or anonymous settings.",
+  "misreadings": "It is not a proven best strategy. Its dominance is context-dependent, and it has been beaten by later strategies and by collusion. And it is fragile under noise: a single error can lock two tit-for-tat players into endless mutual punishment.",
   "origin": "Submitted by Anatol Rapoport to Robert Axelrod's computer tournaments around 1980, and analysed in Axelrod and Hamilton's 'The Evolution of Cooperation,' Science 211:1390-1396 (1981), and Axelrod's 1984 book of that name.",
   "category": "economics",
   "reliability": "Heuristic",
@@ -46,11 +55,22 @@
   "namedAfter": "Anatol Rapoport",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Tit for tat, Wikipedia. — the strategy, Axelrod's four properties, the tournament wins, and the noise and zero-determinant limits.", "url": "https://en.wikipedia.org/wiki/Tit_for_tat", "type": "secondary"},
-    {"text": "Axelrod & Hamilton, \"The Evolution of Cooperation,\" Science 211:1390-1396 (1981), reference record.", "url": "https://www.scirp.org/reference/referencespapers?referenceid=1737567", "type": "primary"}
+    {
+      "text": "Tit for tat, Wikipedia. — the strategy, Axelrod's four properties, the tournament wins, and the noise and zero-determinant limits.",
+      "url": "https://en.wikipedia.org/wiki/Tit_for_tat",
+      "type": "secondary"
+    },
+    {
+      "text": "Axelrod & Hamilton, \"The Evolution of Cooperation,\" Science 211:1390-1396 (1981), reference record.",
+      "url": "https://www.scirp.org/reference/referencespapers?referenceid=1737567",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Tit_for_tat",
   "related": [
-    {"slug": "the-prisoners-dilemma", "kind": "kindred"}
+    {
+      "slug": "the-prisoners-dilemma",
+      "kind": "kindred"
+    }
   ]
 }

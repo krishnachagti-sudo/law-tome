@@ -2,7 +2,10 @@
   "no": "753",
   "slug": "the-stroop-effect",
   "name": "The Stroop Effect",
-  "aliases": ["Stroop interference", "The colour-word interference effect"],
+  "aliases": [
+    "Stroop interference",
+    "The colour-word interference effect"
+  ],
   "statement": "Naming the ink colour of a word is slow and error-prone when the word spells a different colour.",
   "statementAccent": "slow and error-prone when the word spells a different colour",
   "meaning": "The Stroop effect is a phenomenon in cognitive psychology demonstrating interference in reaction time. When the name of a colour is printed in an ink colour that does not match the word, for example the word red printed in blue ink, naming the ink colour takes longer and produces more errors than when the word and ink colour match or for neutral stimuli. Reading the word red printed in red is easy, but naming the blue ink of the word red is hard, because the meaning of the word conflicts with the colour to be named. The effect is named after the American psychologist John Ridley Stroop, who published the classic study in 1935, though the phenomenon had earlier antecedents. Because it produces a robust, easily measured slowdown that indexes the conflict between automatic and controlled mental processes, the Stroop task has become one of the most widely used paradigms in all of psychology.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The Stroop effect is one of the most famous and widely used phenomena in psychology, prized as a clean, reliable demonstration of cognitive interference and of the tension between automatic and controlled mental processes. The Stroop task has become a standard tool for measuring selective attention, cognitive control, processing speed, and the ability to inhibit a prepotent response, making it central to research on executive function. It is used clinically and in neuropsychological assessment, since altered interference effects appear in conditions affecting attention and control, and its emotional variant probes how emotionally charged information captures attention. The effect vividly illustrates that skilled processes like reading become automatic and hard to suppress, a key insight into how practice shapes the mind. Simple to run yet deeply informative, the Stroop paradigm has generated an enormous literature and remains a cornerstone method across cognitive, clinical, and developmental psychology.",
   "working": [
-    {"lead": "Present a colour word in mismatched ink", "text": "show a colour word printed in an ink colour that names a different colour, creating a conflict."},
-    {"lead": "Ask for the ink colour", "text": "require the participant to name the ink colour while the word's meaning is automatically read."},
-    {"lead": "Measure the interference", "text": "record the slower, more error-prone responses to incongruent stimuli, indexing the conflict between automatic reading and controlled naming."}
+    {
+      "lead": "Present a colour word in mismatched ink",
+      "text": "show a colour word printed in an ink colour that names a different colour, creating a conflict."
+    },
+    {
+      "lead": "Ask for the ink colour",
+      "text": "require the participant to name the ink colour while the word's meaning is automatically read."
+    },
+    {
+      "lead": "Measure the interference",
+      "text": "record the slower, more error-prone responses to incongruent stimuli, indexing the conflict between automatic reading and controlled naming."
+    }
   ],
   "limits": "The Stroop effect is highly robust but depends on the participant being a fluent reader, since the interference stems from automatic reading; it is weaker or absent in those who cannot read the words or in unfamiliar scripts. The exact size of the effect varies with the stimuli, the response mode, and individual differences in attention and cognitive control, and the precise interpretation among competing accounts, automaticity, speed of processing, selective attention, and parallel processing, remains debated even as all point to automatic-versus-controlled conflict. The task measures interference and control under specific conditions rather than a single fixed trait. So the Stroop effect reliably demonstrates cognitive interference and is a valuable measure of attention and control, while the fine details of its mechanism and the interpretation of individual scores require care.",
   "misreadings": "The Stroop effect is not about people being unable to see colours; it is that the automatically read word meaning interferes with naming a mismatched ink colour. It is not merely a curiosity but a widely used index of selective attention and cognitive control. And the interference reflects the automaticity of reading rather than a general slowness, so treating the effect as a simple perception problem, or the Stroop task as measuring one fixed ability, misreads a phenomenon that reveals the conflict between automatic and controlled processing.",
@@ -47,12 +59,26 @@
   "namedAfter": "John Ridley Stroop",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Stroop effect, Wikipedia. — the interference in naming the ink colour of mismatched colour words, Stroop's 1935 study, the incongruent-condition slowdown, the automaticity-of-reading and related explanations, and its use to measure attention and cognitive control.", "url": "https://en.wikipedia.org/wiki/Stroop_effect", "type": "secondary"},
-    {"text": "Stroop Effect: Definition, Experiment and Examples, SimplyPsychology. — the effect, the classic task, and the automaticity explanation.", "url": "https://www.simplypsychology.org/stroop-effect.html", "type": "secondary"}
+    {
+      "text": "Stroop effect, Wikipedia. — the interference in naming the ink colour of mismatched colour words, Stroop's 1935 study, the incongruent-condition slowdown, the automaticity-of-reading and related explanations, and its use to measure attention and cognitive control.",
+      "url": "https://en.wikipedia.org/wiki/Stroop_effect",
+      "type": "secondary"
+    },
+    {
+      "text": "Stroop Effect: Definition, Experiment and Examples, SimplyPsychology. — the effect, the classic task, and the automaticity explanation.",
+      "url": "https://www.simplypsychology.org/stroop-effect.html",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Stroop_effect",
   "related": [
-    {"slug": "the-mcgurk-effect", "kind": "kindred"},
-    {"slug": "the-cocktail-party-effect", "kind": "kindred"}
+    {
+      "slug": "the-mcgurk-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-cocktail-party-effect",
+      "kind": "kindred"
+    }
   ]
 }

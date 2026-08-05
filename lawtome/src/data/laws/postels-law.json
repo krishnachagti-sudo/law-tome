@@ -2,11 +2,13 @@
   "no": "063",
   "slug": "postels-law",
   "name": "Postel's Law",
-  "aliases": ["The robustness principle"],
+  "aliases": [
+    "The robustness principle"
+  ],
   "statement": "Be conservative in what you do; be liberal in what you accept from others.",
   "statementAccent": "liberal in what you accept",
-  "meaning": "When implementing a protocol or interface, send output that strictly follows the specification, but accept input tolerantly — including slightly non-conformant input — as long as its meaning is clear. The goal is that independently-built systems interoperate.",
-  "mechanism": "Independent implementations of a spec differ in small ways and carry bugs. If every receiver rejected any deviation, the network would fragment into non-interoperating islands. Tolerant parsing lets a receiver keep working despite a peer's minor faults, while strict sending minimises the faults others must tolerate — so in a young, fast-evolving system, leniency in what you accept maximises the chance any two nodes can talk.",
+  "meaning": "When implementing a protocol or interface, send output that strictly follows the specification, but accept input tolerantly (including slightly non-conformant input) as long as its meaning is clear. The goal is that independently-built systems interoperate.",
+  "mechanism": "Independent implementations of a spec differ in small ways and carry bugs. If every receiver rejected any deviation, the network would fragment into non-interoperating islands. Tolerant parsing lets a receiver keep working despite a peer's minor faults, while strict sending minimises the faults others must tolerate, so in a young, fast-evolving system, leniency in what you accept maximises the chance any two nodes can talk.",
   "examples": [
     {
       "tag": "TCP/IP",
@@ -14,11 +16,11 @@
     },
     {
       "tag": "Web browsers",
-      "text": "Browsers have long rendered malformed HTML — unclosed tags, missing quotes — rather than rejecting it. That tolerance helped the web scale, and also bred years of inconsistency, eventually pinned down by the HTML5 parsing algorithm."
+      "text": "Browsers have long rendered malformed HTML (unclosed tags, missing quotes), rather than rejecting it. That tolerance helped the web scale, and also bred years of inconsistency, eventually pinned down by the HTML5 parsing algorithm."
     },
     {
       "tag": "The reversal",
-      "text": "The modern IETF view is that this leniency backfires. RFC 9413 (2023) argues tolerant acceptance 'conceals problems, making it harder, if not impossible, to fix them later' — so security-focused protocols like TLS 1.3 and QUIC deliberately reduce it."
+      "text": "The modern IETF view is that this leniency backfires. RFC 9413 (2023) argues tolerant acceptance 'conceals problems, making it harder, if not impossible, to fix them later', so security-focused protocols like TLS 1.3 and QUIC deliberately reduce it."
     }
   ],
   "variants": [
@@ -31,15 +33,24 @@
       "text": "Liberal acceptance is how Hyrum's law bites a protocol: every quirk a receiver tolerates becomes an observable behaviour someone depends on, hardening into an unremovable de-facto contract."
     }
   ],
-  "whyItMatters": "It shaped the early internet's success — interoperability over strictness — and its reversal now shapes the design of secure modern protocols. The arc of Postel's law, from foundational wisdom to cautionary tale, is a case study in how a good engineering principle can curdle at scale.",
+  "whyItMatters": "It shaped the early internet's success, interoperability over strictness, and its reversal now shapes the design of secure modern protocols. The arc of Postel's law, from foundational wisdom to cautionary tale, is a case study in how a good engineering principle can curdle at scale.",
   "working": [
-    {"lead": "Always send strictly-conforming output", "text": "the 'conservative in what you do' half is uncontroversial: emit exactly what the spec allows, so you never become the deviation others must tolerate."},
-    {"lead": "Be wary of accepting too liberally", "text": "every non-conformance you quietly accept becomes a de-facto contract; tolerance you cannot later withdraw is a debt, not a kindness."},
-    {"lead": "Prefer strictness plus active maintenance", "text": "for anything security-sensitive, reject ambiguous input and evolve the protocol deliberately rather than absorbing quirks forever."}
+    {
+      "lead": "Always send strictly-conforming output",
+      "text": "the 'conservative in what you do' half is uncontroversial: emit exactly what the spec allows, so you never become the deviation others must tolerate."
+    },
+    {
+      "lead": "Be wary of accepting too liberally",
+      "text": "every non-conformance you quietly accept becomes a de-facto contract; tolerance you cannot later withdraw is a debt, not a kindness."
+    },
+    {
+      "lead": "Prefer strictness plus active maintenance",
+      "text": "for anything security-sensitive, reject ambiguous input and evolve the protocol deliberately rather than absorbing quirks forever."
+    }
   ],
-  "limits": "The principle is now genuinely contested. Liberal acceptance accumulates de-facto behaviours (the Hyrum's-law dynamic), enables ambiguity and security holes, and produces ossification that makes protocols hard to evolve — flaws become 'bug-for-bug compatible' standards no one can remove. A published IETF standard (RFC 9413, 2023) argues the robustness principle is net-harmful for long-term robustness and security, and the security-protocol community has largely moved to strictness plus active maintenance. Its defensible core survives only for the 'conservative in what you send' half.",
-  "misreadings": "It is not a licence to accept anything, nor a claim that lenient parsing is always good. It was a pragmatic bet for a young, heterogeneous network, and at scale the 'accept liberally' half has proven to cause ossification and insecurity — which is why modern practice has turned against it.",
-  "origin": "Stated by Jon Postel — the long-time RFC Editor and founder of IANA — as the 'Robustness Principle' in section 2.10 of the TCP specifications RFC 761 (1980) and RFC 793 (1981). The RFCs' exact wording is 'be conservative in what you do, be liberal in what you accept from others'; the common 'in what you send' variant is a paraphrase.",
+  "limits": "The principle is now genuinely contested. Liberal acceptance accumulates de-facto behaviours (the Hyrum's-law dynamic), enables ambiguity and security holes, and produces ossification that makes protocols hard to evolve: flaws become 'bug-for-bug compatible' standards no one can remove. A published IETF standard (RFC 9413, 2023) argues the robustness principle is net-harmful for long-term robustness and security, and the security-protocol community has largely moved to strictness plus active maintenance. Its defensible core survives only for the 'conservative in what you send' half.",
+  "misreadings": "It is not a licence to accept anything, nor a claim that lenient parsing is always good. It was a pragmatic bet for a young, heterogeneous network, and at scale the 'accept liberally' half has proven to cause ossification and insecurity, which is why modern practice has turned against it.",
+  "origin": "Stated by Jon Postel, the long-time RFC Editor and founder of IANA, as the 'Robustness Principle' in section 2.10 of the TCP specifications RFC 761 (1980) and RFC 793 (1981). The RFCs' exact wording is 'be conservative in what you do, be liberal in what you accept from others'; the common 'in what you send' variant is a paraphrase.",
   "category": "software",
   "reliability": "Contested",
   "provenance": "canon",
@@ -47,12 +58,27 @@
   "namedAfter": "Jon Postel",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Postel, J. (ed.) (1981). RFC 793: Transmission Control Protocol, §2.10. — the Robustness Principle, verbatim.", "url": "https://www.rfc-editor.org/rfc/rfc793.txt", "type": "primary"},
-    {"text": "Thomson, M. & Schinazi, D. (2023). RFC 9413: Maintaining Robust Protocols. — the IETF reversal (drafted as 'The Harmful Consequences of the Robustness Principle').", "url": "https://www.rfc-editor.org/rfc/rfc9413.html", "type": "primary"},
-    {"text": "Robustness principle, Wikipedia. — the origin, the browser/HTML example, and the modern critique.", "url": "https://en.wikipedia.org/wiki/Robustness_principle", "type": "secondary"}
+    {
+      "text": "Postel, J. (ed.) (1981). RFC 793: Transmission Control Protocol, §2.10. — the Robustness Principle, verbatim.",
+      "url": "https://www.rfc-editor.org/rfc/rfc793.txt",
+      "type": "primary"
+    },
+    {
+      "text": "Thomson, M. & Schinazi, D. (2023). RFC 9413: Maintaining Robust Protocols. — the IETF reversal (drafted as 'The Harmful Consequences of the Robustness Principle').",
+      "url": "https://www.rfc-editor.org/rfc/rfc9413.html",
+      "type": "primary"
+    },
+    {
+      "text": "Robustness principle, Wikipedia. — the origin, the browser/HTML example, and the modern critique.",
+      "url": "https://en.wikipedia.org/wiki/Robustness_principle",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Robustness_principle",
   "related": [
-    {"slug": "hyrums-law", "kind": "kindred"}
+    {
+      "slug": "hyrums-law",
+      "kind": "kindred"
+    }
   ]
 }

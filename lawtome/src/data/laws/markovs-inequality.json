@@ -20,7 +20,7 @@
       "text": "Applying Markov’s inequality to the non-negative variable (X−E[X])² yields Chebyshev’s inequality, a standard technique for bounding deviations from the mean."
     }
   ],
-  "whyItMatters": "It underlies many tail-bound derivations in probability and statistics, including Chebyshev’s inequality and Chernoff bounds used in concentration-of-measure arguments. Its generality — requiring only non-negativity and a finite mean — makes it foundational even though its bounds are often loose.",
+  "whyItMatters": "It underlies many tail-bound derivations in probability and statistics, including Chebyshev’s inequality and Chernoff bounds used in concentration-of-measure arguments. Its generality, requiring only non-negativity and a finite mean, makes it foundational even though its bounds are often loose.",
   "limits": "The bound can be very loose for well-behaved distributions with much smaller tail probability than it suggests; it becomes tight only for distributions concentrated on {0, a}. It applies only to non-negative random variables and requires a finite expectation.",
   "misreadings": "It is sometimes confused with the unrelated Markov brothers’ inequality about polynomial derivatives, or conflated with Chebyshev’s inequality, which it is used to derive but which is a distinct, tighter bound using variance.",
   "origin": "Named after Russian mathematician Andrey Markov (1856–1922), a student of Pafnuty Chebyshev; the underlying technique appeared earlier in Chebyshev’s own work, so it is sometimes called Chebyshev’s or Bienaymé’s inequality in analysis contexts.",

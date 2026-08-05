@@ -90,12 +90,12 @@ export function replicationLine(rep) {
   // an effect has had by an order of magnitude.
   const studies = `${n(rep.studies)} replication ${rep.studies === 1 ? 'study' : 'studies'}`;
   const multi = rep.results > rep.studies
-    ? `, reporting ${n(rep.results)} separate results — replications run across many sites contribute one study and many results`
+    ? `, reporting ${n(rep.results)} separate results, since replications run across many sites contribute one study and many results`
     : '';
   const head = `FORRT's Replication Database records ${studies} of this effect${multi}`;
 
   if (rep.signal === undefined) {
-    return `${head}. It has not yet computed an outcome for any of them, so there is no pass or fail to report here — only that the work exists.`;
+    return `${head}. It has not yet computed an outcome for any of them, so there is no pass or fail to report here, only that the work exists.`;
   }
   return `${head}. Of the ${n(rep.coded)} results it has scored, ${n(rep.signal)} found a signal and ${n(rep.noSignal)} did not.`;
 }

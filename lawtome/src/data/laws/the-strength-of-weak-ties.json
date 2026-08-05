@@ -2,7 +2,10 @@
   "no": "503",
   "slug": "the-strength-of-weak-ties",
   "name": "The Strength of Weak Ties",
-  "aliases": ["Granovetter's weak ties", "Weak-tie theory"],
+  "aliases": [
+    "Granovetter's weak ties",
+    "Weak-tie theory"
+  ],
   "statement": "Acquaintances, not close friends, are often the ones who bring you genuinely new information.",
   "statementAccent": "the ones who bring you genuinely new information",
   "meaning": "The strength of weak ties is Mark Granovetter's finding that weak social ties, acquaintances, are often more valuable than strong ties, close friends and family, for spreading information, including news of jobs. The reason is structural: close friends tend to know one another and the same things you already know, so their information is redundant, whereas acquaintances reach into distant parts of the social network and carry novel, non-redundant information. Weak ties act as bridges between otherwise separate dense clusters, and it is precisely their weakness, and the different circles they move in, that gives them access to what your tight-knit group does not have.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The strength of weak ties is one of the most cited ideas in social science, reshaping how we understand information flow, job markets, and the architecture of communities. It explains why loose acquaintance networks matter for opportunity and social mobility, informs thinking about diffusion of innovations, organisational knowledge, and online networks, and grounds the later theory of structural holes and brokerage. Its counterintuitive core, that the ties we invest in least can be the ones that matter most for reaching the wider world, has proven both durable and, in recent large-scale experiments, causally supported.",
   "working": [
-    {"lead": "Prize the bridge", "text": "look to acquaintances in other circles for novel information, since close friends mostly recirculate what you already know."},
-    {"lead": "Map redundancy", "text": "ask whether a contact reaches a part of the network you cannot, which is what makes a weak tie valuable, not the weakness itself."},
-    {"lead": "Do not discard strong ties", "text": "keep in view that strong ties still provide trust, effort, and high-bandwidth help, even if weak ties win for reach."}
+    {
+      "lead": "Prize the bridge",
+      "text": "look to acquaintances in other circles for novel information, since close friends mostly recirculate what you already know."
+    },
+    {
+      "lead": "Map redundancy",
+      "text": "ask whether a contact reaches a part of the network you cannot, which is what makes a weak tie valuable, not the weakness itself."
+    },
+    {
+      "lead": "Do not discard strong ties",
+      "text": "keep in view that strong ties still provide trust, effort, and high-bandwidth help, even if weak ties win for reach."
+    }
   ],
   "limits": "The advantage is comparative and mechanism-specific, and the simple weaker-is-better reading is too strong: the 2022 LinkedIn experiment found an inverted-U, with moderately weak ties best for job mobility, and a real dependence on context, weak ties helping most in fast-moving digital sectors and strong ties in less digital ones. Weak ties efficiently carry simple information at low cost, but complex, trust-dependent, or high-bandwidth information can travel better along strong ties. Burt's structural-holes account relocates the value from weakness to bridging position. And Granovetter's original job study was a modest, geographically narrow sample, limiting how far it generalises across class, gender, and labour market.",
   "misreadings": "It does not claim strong ties are useless; they provide trust, motivation, and willingness to exert real effort, and the theory's claim is specifically about reaching novel information across the network. It is not that the weaker the tie the better, since the evidence shows an optimum at moderately weak ties. The advantage comes from network position, from bridging, not from weakness as such, which is Burt's clarifying point. And the value depends on the kind of information and the industry, not on tie strength alone.",
@@ -47,11 +59,22 @@
   "namedAfter": "Mark Granovetter",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Granovetter, 'The Strength of Weak Ties,' American Journal of Sociology 78(6):1360-1380 (1973). — the bridging argument, tie strength, and the forbidden triad.", "url": "https://www.cs.cmu.edu/~jure/pub/papers/granovetter73ties.pdf", "type": "primary"},
-    {"text": "Rajkumar, Saint-Jacques, Bojinov, Brynjolfsson & Aral, 'A Causal Test of the Strength of Weak Ties,' Science 377:1304-1310 (2022). — the large-scale LinkedIn experiment and the inverted-U finding.", "url": "https://www.science.org/doi/10.1126/science.abl4476", "type": "primary"}
+    {
+      "text": "Granovetter, 'The Strength of Weak Ties,' American Journal of Sociology 78(6):1360-1380 (1973). — the bridging argument, tie strength, and the forbidden triad.",
+      "url": "https://www.cs.cmu.edu/~jure/pub/papers/granovetter73ties.pdf",
+      "type": "primary"
+    },
+    {
+      "text": "Rajkumar, Saint-Jacques, Bojinov, Brynjolfsson & Aral, 'A Causal Test of the Strength of Weak Ties,' Science 377:1304-1310 (2022). — the large-scale LinkedIn experiment and the inverted-U finding.",
+      "url": "https://www.science.org/doi/10.1126/science.abl4476",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Interpersonal_ties",
   "related": [
-    {"slug": "the-small-world-phenomenon", "kind": "kindred"}
+    {
+      "slug": "the-small-world-phenomenon",
+      "kind": "kindred"
+    }
   ]
 }

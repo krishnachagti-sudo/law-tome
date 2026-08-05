@@ -2,7 +2,10 @@
   "no": "544",
   "slug": "taylors-law",
   "name": "Taylor's Law",
-  "aliases": ["Taylor's power law", "The law of the mean"],
+  "aliases": [
+    "Taylor's power law",
+    "The law of the mean"
+  ],
   "statement": "Across sampled populations, the variance in a species' abundance grows as a power of its mean abundance.",
   "statementAccent": "grows as a power of its mean abundance",
   "meaning": "Taylor's law, or Taylor's power law, is an empirical regularity in ecology stating that the variance of the number or density of individuals of a species across a set of sampling areas is related to the corresponding mean by a power law: variance equals a constant times the mean raised to an exponent. On log-log axes this is a straight line whose slope is the exponent. The exponent measures how clumped the organisms are, and the law holds so broadly, across thousands of species and far beyond ecology, that it ranks among the most widely verified quantitative patterns in the life sciences, even as the mechanism behind it remains debated.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "Taylor's law is one of ecology's most robust empirical patterns, documented in over a thousand studies and across a startling range of systems, from insects and fish to epidemics, markets, and genomes. It gives a compact, practical description of how the variability of a population scales with its size, underpins the design of sampling and pest-management surveys, and connects ecology to the broader physics of fluctuation scaling. Its very generality raises a deep question, still unresolved, of whether it reflects real biology or is a near-inevitable statistical consequence of how means and variances relate.",
   "working": [
-    {"lead": "Relate spread to average", "text": "expect the variance of a species' abundance to scale as a power of its mean, appearing as a straight line on log-log axes."},
-    {"lead": "Read the exponent", "text": "take an exponent of one as random spacing and values above one as aggregation, using it as an index of how clumped individuals are."},
-    {"lead": "Design the sampling", "text": "use the fitted exponent to plan how many samples are needed to estimate density to a chosen precision."}
+    {
+      "lead": "Relate spread to average",
+      "text": "expect the variance of a species' abundance to scale as a power of its mean, appearing as a straight line on log-log axes."
+    },
+    {
+      "lead": "Read the exponent",
+      "text": "take an exponent of one as random spacing and values above one as aggregation, using it as an index of how clumped individuals are."
+    },
+    {
+      "lead": "Design the sampling",
+      "text": "use the fitted exponent to plan how many samples are needed to estimate density to a chosen precision."
+    }
   ],
   "limits": "Taylor's law is primarily an empirical pattern with a contested mechanism, and there is genuine debate over whether it reflects biological processes or is largely a statistical artefact of how means and variances relate, since the power-law variance function can arise from many families of distributions. It can fit poorly at low densities, where means are small, and estimated exponents are sensitive to the sampling scheme, spatial and temporal scale, and estimation method, so sample and population exponents can differ. The exponent is not a fixed universal constant but varies by species and context, most often between one and two though occasionally higher.",
   "misreadings": "The exponent is not a fixed universal constant; it varies by species, scale, and context. A straight line on log-log axes does not by itself prove an underlying biological mechanism, since the pattern can be a statistical consequence of the distribution's form. An exponent of one, not zero, marks the random, Poisson baseline, and it should not be confused with constant variance. And while the exponent usually lies between one and two, that is a common range rather than a strict ceiling, since higher values are sometimes reported.",
@@ -47,11 +59,22 @@
   "namedAfter": "Lionel Roy Taylor",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Taylor's law, Wikipedia. — the variance-equals-a-times-mean-to-the-b form, the aggregation interpretation, and the broad generality and contested mechanism.", "url": "https://en.wikipedia.org/wiki/Taylor%27s_law", "type": "secondary"},
-    {"text": "Cohen, Xu & Brunborg, 'Fluctuation Scaling, Taylor's Law, and Crime,' PLoS ONE (2013). — the connection to fluctuation scaling beyond ecology.", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4182799/", "type": "primary"}
+    {
+      "text": "Taylor's law, Wikipedia. — the variance-equals-a-times-mean-to-the-b form, the aggregation interpretation, and the broad generality and contested mechanism.",
+      "url": "https://en.wikipedia.org/wiki/Taylor%27s_law",
+      "type": "secondary"
+    },
+    {
+      "text": "Cohen, Xu & Brunborg, 'Fluctuation Scaling, Taylor's Law, and Crime,' PLoS ONE (2013). — the connection to fluctuation scaling beyond ecology.",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4182799/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Taylor%27s_law",
   "related": [
-    {"slug": "power-law-distribution", "kind": "kindred"}
+    {
+      "slug": "power-law-distribution",
+      "kind": "kindred"
+    }
   ]
 }

@@ -109,14 +109,14 @@ export function namesakePage(group, {
 
   // "Amos Tversky and Daniel Kahneman has 4 named laws" is not a sentence.
   const joint = isJoint(person);
-  const answer = `${escapeHtml(person)} ${joint ? 'have' : 'has'} ${laws.length} named laws, principles or effects in The Law Tome — ${laws.map(lawLink).join(', ')}${fieldNames.length > 1 ? `, spanning ${fieldNames.slice(0, 3).join(', ')}${fieldNames.length > 3 ? ' and more' : ''}` : fieldNames.length ? `, all in ${fieldNames[0]}` : ''}${span ? `, named between ${span[0]} and ${span[1]}` : ''}.`;
+  const answer = `${escapeHtml(person)} ${joint ? 'have' : 'has'} ${laws.length} named laws, principles or effects in The Law Tome: ${laws.map(lawLink).join(', ')}${fieldNames.length > 1 ? `, spanning ${fieldNames.slice(0, 3).join(', ')}${fieldNames.length > 3 ? ' and more' : ''}` : fieldNames.length ? `, all in ${fieldNames[0]}` : ''}${span ? `, named between ${span[0]} and ${span[1]}` : ''}.`;
 
   // The portrait, with the credit the licence requires. No caption invented
   // beyond what imageCredit states from the manifest.
   const face = img
     ? `    <figure class="ns-face">
       ${portrait(img, { base, alt: person })}
-      <figcaption>${escapeHtml(person)} — ${imageCredit(img)}</figcaption>
+      <figcaption>${escapeHtml(person)}. ${imageCredit(img)}</figcaption>
     </figure>
 `
     : `    <div class="ns-face ns-face--mono" aria-hidden="true"><span>${escapeHtml(monogram(person))}</span></div>
@@ -231,7 +231,7 @@ ${primary.map(({ src, law }) => `      <li>${src.url && /^https?:\/\//i.test(Str
     },
     {
       q: `Where can I read about ${person} themselves?`,
-      a: `${wd.title ? `On <a href="https://en.wikipedia.org/wiki/${encodeURIComponent(String(wd.title).replace(/ /g, '_'))}">Wikipedia</a>${wd.qid ? ` and <a href="https://www.wikidata.org/wiki/${escapeHtml(wd.qid)}">Wikidata</a>` : ''}.` : 'On Wikipedia and Wikidata.'} The Law Tome indexes what a name is attached to, not the life behind it — writing a biography from memory is exactly the kind of invented fact this project refuses, so this page links to one instead of paraphrasing it.`,
+      a: `${wd.title ? `On <a href="https://en.wikipedia.org/wiki/${encodeURIComponent(String(wd.title).replace(/ /g, '_'))}">Wikipedia</a>${wd.qid ? ` and <a href="https://www.wikidata.org/wiki/${escapeHtml(wd.qid)}">Wikidata</a>` : ''}.` : 'On Wikipedia and Wikidata.'} The Law Tome indexes what a name is attached to, not the life behind it. Writing a biography from memory is exactly the kind of invented fact this project refuses, so this page links to one instead of paraphrasing it.`,
     },
   ], { heading: `Questions about ${person}` });
 

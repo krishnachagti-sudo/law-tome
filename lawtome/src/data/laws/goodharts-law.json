@@ -7,12 +7,12 @@
   ],
   "statement": "When a measure becomes a target, it ceases to be a good measure.",
   "statementAccent": "measure becomes a target",
-  "meaning": "The moment you reward people for hitting a number, they start optimising the number itself — not the thing the number was supposed to stand for. A measure chosen because it tracked something you cared about stops tracking it the instant a reward is pinned to it.",
-  "mechanism": "Every metric is a proxy: it stands in for a goal you cannot measure directly — learning, health, productivity, safety. The proxy is useful because it correlates with the goal across the ordinary range of behaviour. Attach a strong enough incentive and people (or markets, or optimisers) push the proxy toward its extreme, and at the extreme two things go wrong at once: the cheapest ways to move the proxy are almost never the ways that move the goal, and the correlation that made the proxy trustworthy quietly stops holding. The number keeps climbing while the thing it was meant to represent stalls or reverses.",
+  "meaning": "The moment you reward people for hitting a number, they start optimising the number itself, not the thing the number was supposed to stand for. A measure chosen because it tracked something you cared about stops tracking it the instant a reward is pinned to it.",
+  "mechanism": "Every metric is a proxy: it stands in for a goal you cannot measure directly (learning, health, productivity, safety). The proxy is useful because it correlates with the goal across the ordinary range of behaviour. Attach a strong enough incentive and people (or markets, or optimisers) push the proxy toward its extreme, and at the extreme two things go wrong at once: the cheapest ways to move the proxy are almost never the ways that move the goal, and the correlation that made the proxy trustworthy quietly stops holding. The number keeps climbing while the thing it was meant to represent stalls or reverses.",
   "examples": [
     {
       "tag": "Education",
-      "text": "Rank schools on test scores and teachers teach to the test — drilling exam format, narrowing the curriculum, and in documented cases outright altering answer sheets. Scores rise; the broader learning the scores were meant to signal does not follow."
+      "text": "Rank schools on test scores and teachers teach to the test: drilling exam format, narrowing the curriculum, and in documented cases outright altering answer sheets. Scores rise; the broader learning the scores were meant to signal does not follow."
     },
     {
       "tag": "Healthcare",
@@ -24,13 +24,13 @@
     },
     {
       "tag": "Research",
-      "text": "Judge scholars by citation counts and the h-index, and citation rings, salami-sliced papers, and self-citation follow — the metric of influence gets optimised in place of influence itself."
+      "text": "Judge scholars by citation counts and the h-index, and citation rings, salami-sliced papers, and self-citation follow: the metric of influence gets optimised in place of influence itself."
     }
   ],
   "variants": [
     {
       "name": "Regressional",
-      "text": "The proxy correlates with the goal but is not identical. Select hard for the top of the proxy and you select partly for the goal and partly for the noise that happened to inflate it — so your winners are luckier on the metric than they are good at the thing."
+      "text": "The proxy correlates with the goal but is not identical. Select hard for the top of the proxy and you select partly for the goal and partly for the noise that happened to inflate it, so your winners are luckier on the metric than they are good at the thing."
     },
     {
       "name": "Extremal",
@@ -38,14 +38,14 @@
     },
     {
       "name": "Causal",
-      "text": "Someone intervenes on the proxy believing it causes the goal, when in fact both share a common cause — so forcing the proxy up does nothing for the goal underneath."
+      "text": "Someone intervenes on the proxy believing it causes the goal, when in fact both share a common cause, so forcing the proxy up does nothing for the goal underneath."
     },
     {
       "name": "Adversarial",
       "text": "Other agents learn the metric and deliberately manipulate it. This is the outright gaming most people picture, and it arrives fastest wherever the stakes are highest."
     }
   ],
-  "whyItMatters": "Any KPI, OKR, bonus, league table, or ranking turns a proxy into a target and invites this law. It is the single most important thing to understand before you attach consequences to a number: the act of attaching them changes what the number means. Whole systems — school-accountability regimes, hospital targets, ad-tech optimisation, the reward functions of AI models — are large bets that Goodhart won't bite, and they often lose.",
+  "whyItMatters": "Any KPI, OKR, bonus, league table, or ranking turns a proxy into a target and invites this law. It is the single most important thing to understand before you attach consequences to a number: the act of attaching them changes what the number means. Whole systems (school-accountability regimes, hospital targets, ad-tech optimisation, the reward functions of AI models) are large bets that Goodhart won't bite, and they often lose.",
   "working": [
     {
       "lead": "Keep measures diagnostic, not targets",
@@ -64,9 +64,9 @@
       "text": "a measure that cannot be gamed today becomes gameable once people learn it; retire metrics before they harden into goals."
     }
   ],
-  "limits": "Goodhart's Law is a strong tendency, not a theorem: the size of the effect scales with the optimisation pressure and with the gap between proxy and goal. A well-chosen measure under light incentive can stay useful for a long time, and a measure nearly identical to the goal resists gaming — it is just rarely available. Measurement is not the enemy; refusing to measure is worse. The law warns against coupling reward to a proxy, not against looking at numbers at all.",
-  "misreadings": "It is not an argument against measurement — you cannot manage what you refuse to look at. It says a metric degrades once it becomes the target, not that metrics are worthless. The fix is to keep measures diagnostic — watched, plural, and quietly revised — rather than turning any single one into the prize.",
-  "origin": "The economist Charles Goodhart first stated it in a 1975 paper on UK monetary policy: any statistical regularity the authorities leaned on would collapse once it was used for control — a monetary cousin of the Lucas critique. The now-famous phrasing, 'When a measure becomes a target, it ceases to be a good measure', is a 1997 generalisation by the anthropologist Marilyn Strathern, writing about audit culture in British universities. The four-way taxonomy of how the law bites — regressional, extremal, causal, and adversarial — was set out by David Manheim and Scott Garrabrant in 2018.",
+  "limits": "Goodhart's Law is a strong tendency, not a theorem: the size of the effect scales with the optimisation pressure and with the gap between proxy and goal. A well-chosen measure under light incentive can stay useful for a long time, and a measure nearly identical to the goal resists gaming. It is just rarely available. Measurement is not the enemy; refusing to measure is worse. The law warns against coupling reward to a proxy, not against looking at numbers at all.",
+  "misreadings": "It is not an argument against measurement: you cannot manage what you refuse to look at. It says a metric degrades once it becomes the target, not that metrics are worthless. The fix is to keep measures diagnostic (watched, plural, and quietly revised), rather than turning any single one into the prize.",
+  "origin": "The economist Charles Goodhart first stated it in a 1975 paper on UK monetary policy: any statistical regularity the authorities leaned on would collapse once it was used for control (a monetary cousin of the Lucas critique). The now-famous phrasing, 'When a measure becomes a target, it ceases to be a good measure', is a 1997 generalisation by the anthropologist Marilyn Strathern, writing about audit culture in British universities. The four-way taxonomy of how the law bites (regressional, extremal, causal, and adversarial) was set out by David Manheim and Scott Garrabrant in 2018.",
   "category": "economics",
   "reliability": "Heuristic",
   "provenance": "canon",

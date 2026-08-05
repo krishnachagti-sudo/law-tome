@@ -2,7 +2,10 @@
   "no": "618",
   "slug": "the-nocebo-effect",
   "name": "The Nocebo Effect",
-  "aliases": ["Nocebo response", "The harmful-expectation effect"],
+  "aliases": [
+    "Nocebo response",
+    "The harmful-expectation effect"
+  ],
   "statement": "Expecting a harmless treatment to hurt you can make it produce real, unpleasant symptoms.",
   "statementAccent": "can make it produce real, unpleasant symptoms",
   "meaning": "The nocebo effect is the mirror image of the placebo effect: when a harmless or inert treatment, or simply a negative expectation, produces genuine harmful or unpleasant symptoms because the person expects or believes it will harm them. The name comes from the Latin for I shall harm, contrasting with placebo, I shall please. Driven by negative expectations, anxiety, and conditioning rather than by any pharmacological action, the effect can generate real physiological symptoms such as pain, nausea, or fatigue. It complicates informed consent, since warning patients about side effects can help induce them, and it inflates the adverse-event rates seen in the placebo arms of clinical trials. Introduced as a term by Walter Kennedy in 1961, the nocebo effect is a genuine and clinically important phenomenon.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The nocebo effect matters clinically because it turns communication itself into a cause of symptoms, complicating informed consent, drug labelling, and adherence. Warning patients of side effects, though ethically necessary, can help produce them, and nocebo responses drive real dropout and adverse-event rates, including a substantial share of the side effects reported after treatments and vaccines. It confounds the interpretation of clinical trials, since placebo groups report harms that cannot be blamed on any active drug. Understanding the nocebo effect helps clinicians frame information carefully, reduce avoidable harm from expectation, and interpret trial data honestly, making it a practically important as well as fascinating phenomenon.",
   "working": [
-    {"lead": "Take the symptoms seriously", "text": "treat nocebo symptoms as real physiological responses driven by expectation, not as imaginary or feigned complaints."},
-    {"lead": "Frame information with care", "text": "recognise that how side effects are communicated can induce them, and word warnings to inform without needlessly amplifying anxiety."},
-    {"lead": "Read placebo-arm harms rightly", "text": "attribute adverse events in a trial's placebo group partly to the nocebo effect rather than to any active drug."}
+    {
+      "lead": "Take the symptoms seriously",
+      "text": "treat nocebo symptoms as real physiological responses driven by expectation, not as imaginary or feigned complaints."
+    },
+    {
+      "lead": "Frame information with care",
+      "text": "recognise that how side effects are communicated can induce them, and word warnings to inform without needlessly amplifying anxiety."
+    },
+    {
+      "lead": "Read placebo-arm harms rightly",
+      "text": "attribute adverse events in a trial's placebo group partly to the nocebo effect rather than to any active drug."
+    }
   ],
   "limits": "The nocebo effect is real but hard to quantify precisely, since disentangling expectation-driven symptoms from the natural course of illness and from genuine drug effects is difficult. Its strength varies with the individual, their anxiety and prior experiences, and the framing of information, so it is not uniform. It poses an ethical dilemma rather than offering a clean solution, since withholding side-effect information to avoid inducing symptoms conflicts with informed consent. Extreme illustrations sometimes cited, like voodoo death or mass psychogenic illness, are less rigorously established than the everyday nocebo responses seen in trials and clinics, so they should be treated as evocative rather than settled.",
   "misreadings": "Nocebo symptoms are genuine, with measurable physiological correlates, not merely imagined or malingered, so dismissing them as unreal misunderstands the effect. It is driven by expectation, not by any pharmacological action of the inert treatment, so the harm comes from the mind's anticipation, not a hidden ingredient. And it is the true mirror image of the placebo effect, sharing its expectation-based mechanism, so the two are counterparts rather than unrelated phenomena, one producing benefit and the other harm from belief.",
@@ -45,11 +57,22 @@
   "provenance": "canon",
   "coinedYear": 1961,
   "sources": [
-    {"text": "Nocebo, Wikipedia. — the definition and Latin meaning, the negative-expectation mechanism, warned patients reporting more side effects, the informed-consent dilemma, and Kennedy's 1961 coinage.", "url": "https://en.wikipedia.org/wiki/Nocebo", "type": "secondary"},
-    {"text": "Wells & Kaptchuk, The Problem of the Nocebo Effect for Informed Consent, NIH PMC. — the ethical tension between disclosing side effects and inducing them.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3352765/", "type": "primary"}
+    {
+      "text": "Nocebo, Wikipedia. — the definition and Latin meaning, the negative-expectation mechanism, warned patients reporting more side effects, the informed-consent dilemma, and Kennedy's 1961 coinage.",
+      "url": "https://en.wikipedia.org/wiki/Nocebo",
+      "type": "secondary"
+    },
+    {
+      "text": "Wells & Kaptchuk, The Problem of the Nocebo Effect for Informed Consent, NIH PMC. — the ethical tension between disclosing side effects and inducing them.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3352765/",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Nocebo",
   "related": [
-    {"slug": "confirmation-bias", "kind": "kindred"}
+    {
+      "slug": "confirmation-bias",
+      "kind": "kindred"
+    }
   ]
 }

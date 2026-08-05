@@ -2,7 +2,10 @@
   "no": "563",
   "slug": "the-cook-levin-theorem",
   "name": "The Cook-Levin Theorem",
-  "aliases": ["Cook's theorem", "SAT is NP-complete"],
+  "aliases": [
+    "Cook's theorem",
+    "SAT is NP-complete"
+  ],
   "statement": "Boolean satisfiability is NP-complete, so every problem whose answer is easy to check reduces to it.",
   "statementAccent": "every problem whose answer is easy to check reduces to it",
   "meaning": "The Cook-Levin theorem states that the Boolean satisfiability problem, SAT, is NP-complete: SAT is in NP, and every problem in NP can be reduced to it in polynomial time. It was the first problem ever proved NP-complete, establishing that NP-complete problems exist at all. Its force is that SAT is at least as hard as any problem in NP, the vast class of problems whose candidate solutions can be checked quickly, so a fast algorithm for SAT would give a fast algorithm for all of them. Proved independently by Stephen Cook and Leonid Levin around 1971, it launched the theory of NP-completeness that pervades computer science.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The Cook-Levin theorem founded the theory of NP-completeness, one of the most important frameworks in computer science, by exhibiting the first NP-complete problem and giving a template for proving others complete by reduction. Following Karp's twenty-one problems, NP-completeness turned out to be everywhere, from scheduling and routing to circuit design and biology, so recognising a problem as NP-complete tells a practitioner that a fast, exact, general algorithm is unlikely and that heuristics or approximations are the realistic path. It also anchors the P-versus-NP question, one of the great open problems of mathematics.",
   "working": [
-    {"lead": "Reduce to SAT", "text": "understand that any NP problem can be encoded as a Boolean formula satisfiable exactly when the problem has a solution, making SAT universally hard within NP."},
-    {"lead": "Prove new problems complete", "text": "show a problem NP-complete by reducing a known NP-complete problem to it, the method the theorem made possible."},
-    {"lead": "Read the P-NP stakes", "text": "recognise that a polynomial-time SAT algorithm would collapse P and NP, so NP-completeness signals likely, not proven, intractability."}
+    {
+      "lead": "Reduce to SAT",
+      "text": "understand that any NP problem can be encoded as a Boolean formula satisfiable exactly when the problem has a solution, making SAT universally hard within NP."
+    },
+    {
+      "lead": "Prove new problems complete",
+      "text": "show a problem NP-complete by reducing a known NP-complete problem to it, the method the theorem made possible."
+    },
+    {
+      "lead": "Read the P-NP stakes",
+      "text": "recognise that a polynomial-time SAT algorithm would collapse P and NP, so NP-completeness signals likely, not proven, intractability."
+    }
   ],
   "limits": "NP-completeness concerns worst-case complexity, so it does not mean every instance of an NP-complete problem is hard, and many such problems have heuristics and modern solvers that perform well on real-world inputs. The theorem does not resolve the P-versus-NP question, which remains open and is one of the Clay Mathematics Institute's Millennium Prize Problems, so no super-polynomial lower bound for SAT is actually known. Its guarantees are asymptotic and about the general problem, not about the tractability of the particular instances one meets in practice.",
   "misreadings": "NP does not stand for non-polynomial; it means nondeterministic polynomial time, the class of problems whose solutions can be verified quickly. NP-complete does not mean a problem is proven intractable, since no super-polynomial lower bound is known and intractability is only conjectured through the belief that P is not NP. The theorem establishes SAT's status as hardest within NP, not that P differs from NP, which is still open. And practical SAT solvers routinely dispatch huge instances despite the worst-case theory.",
@@ -45,12 +57,26 @@
   "provenance": "canon",
   "coinedYear": 1971,
   "sources": [
-    {"text": "Cook-Levin theorem, Wikipedia. — SAT as the first NP-complete problem, the reduction, and the P-versus-NP connection.", "url": "https://en.wikipedia.org/wiki/Cook%E2%80%93Levin_theorem", "type": "secondary"},
-    {"text": "Stephen A. Cook, A.M. Turing Award, ACM. — Cook's 1971 result and the 1982 Turing Award.", "url": "https://amturing.acm.org/award_winners/cook_n991950.cfm", "type": "secondary"}
+    {
+      "text": "Cook-Levin theorem, Wikipedia. — SAT as the first NP-complete problem, the reduction, and the P-versus-NP connection.",
+      "url": "https://en.wikipedia.org/wiki/Cook%E2%80%93Levin_theorem",
+      "type": "secondary"
+    },
+    {
+      "text": "Stephen A. Cook, A.M. Turing Award, ACM. — Cook's 1971 result and the 1982 Turing Award.",
+      "url": "https://amturing.acm.org/award_winners/cook_n991950.cfm",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Cook%E2%80%93Levin_theorem",
   "related": [
-    {"slug": "the-p-versus-np-problem", "kind": "kindred"},
-    {"slug": "the-traveling-salesman-problem", "kind": "consequence"}
+    {
+      "slug": "the-p-versus-np-problem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-traveling-salesman-problem",
+      "kind": "consequence"
+    }
   ]
 }

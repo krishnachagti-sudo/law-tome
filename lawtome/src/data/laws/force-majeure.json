@@ -2,7 +2,10 @@
   "no": "637",
   "slug": "force-majeure",
   "name": "Force Majeure",
-  "aliases": ["Superior force", "Act of God clause"],
+  "aliases": [
+    "Superior force",
+    "Act of God clause"
+  ],
   "statement": "An extraordinary event beyond anyone's control can excuse a party from performing a contract.",
   "statementAccent": "beyond anyone's control can excuse a party",
   "meaning": "Force majeure, French for superior force, is a contract-law concept, a clause in common-law systems or a doctrine in civil-law systems, that frees parties from liability or obligation when an extraordinary event beyond their control prevents them from performing their contractual duties. Typical events include natural disasters, so-called acts of God like floods and earthquakes, as well as war, terrorism, riots, strikes, epidemics, and government actions. The event must generally be external to the parties, unforeseeable, and unavoidable, rendering performance impossible or, in some formulations, impracticable. Originating in the French Civil Code and Roman law, force majeure is codified in civil-law systems but in common law must usually be written into the contract as an express clause. It is a key mechanism for allocating the risk of catastrophic, unforeseeable events.",
@@ -14,7 +17,8 @@
     },
     {
       "tag": "Common law needs a clause",
-      "text": "In England and the United States there is no automatic force majeure doctrine, so parties must expressly include a clause, which courts interpret narrowly."},
+      "text": "In England and the United States there is no automatic force majeure doctrine, so parties must expressly include a clause, which courts interpret narrowly."
+    },
     {
       "tag": "The pandemic surge",
       "text": "The COVID-19 pandemic prompted widespread invocation of force majeure clauses, though parties still had to prove the event was unforeseeable and made performance impossible."
@@ -32,9 +36,18 @@
   ],
   "whyItMatters": "Force majeure is a key mechanism for allocating the risk of catastrophic, unforeseeable events in contracts, deciding who bears the loss when war, disaster, or pandemic makes performance impossible. It lets parties plan for the unplannable, and its wording can determine whether a business survives a crisis or is held to obligations it cannot meet. The COVID-19 pandemic put the concept in the spotlight as countless parties invoked their clauses. Understanding force majeure, its civil-law codification versus the common-law need for an express clause, and its strict requirements, is essential to contract drafting and to knowing when extraordinary circumstances genuinely excuse performance and when they do not.",
   "working": [
-    {"lead": "Define the covered events", "text": "in common-law contracts, expressly list the extraordinary events, disasters, war, strikes, epidemics, that will excuse performance, since courts read the clause narrowly."},
-    {"lead": "Test the requirements", "text": "confirm the event was beyond control, unforeseeable, and unavoidable, and that it actually prevented performance, not merely made it costlier."},
-    {"lead": "Fall back on related doctrines", "text": "where no clause exists in common law, consider frustration of purpose or impossibility, the doctrines that may otherwise excuse performance."}
+    {
+      "lead": "Define the covered events",
+      "text": "in common-law contracts, expressly list the extraordinary events, disasters, war, strikes, epidemics, that will excuse performance, since courts read the clause narrowly."
+    },
+    {
+      "lead": "Test the requirements",
+      "text": "confirm the event was beyond control, unforeseeable, and unavoidable, and that it actually prevented performance, not merely made it costlier."
+    },
+    {
+      "lead": "Fall back on related doctrines",
+      "text": "where no clause exists in common law, consider frustration of purpose or impossibility, the doctrines that may otherwise excuse performance."
+    }
   ],
   "limits": "In common-law systems force majeure is not automatic; it depends entirely on the specific clause and its wording, and courts interpret such clauses narrowly, excusing performance only for events actually named. It is not a blanket excuse for hardship: performance becoming more difficult, more expensive, or less profitable generally does not qualify, since the event must render performance impossible or, at most, genuinely impracticable. The event must be external, unforeseeable, and unavoidable, so a foreseeable or self-induced problem is excluded. And an act of God is only a subset of force majeure, which also covers human events like war and strikes, so the concept is broader than natural disaster alone.",
   "misreadings": "In common law force majeure is not an automatic doctrine; it must be expressly written into the contract, and its scope depends on the clause's exact wording, which courts construe strictly. It is not a general escape from any hardship: mere difficulty, higher cost, or lost profit does not qualify, because performance must be genuinely prevented, not just made less attractive. And an act of God is only one category of force majeure, which also includes war, terrorism, strikes, and government action, so equating force majeure solely with natural disaster is too narrow.",
@@ -44,11 +57,22 @@
   "provenance": "canon",
   "coinedYear": 1804,
   "sources": [
-    {"text": "Force majeure, Wikipedia. — the French meaning and definition, typical covered events, the external, unforeseeable, and unavoidable requirements, the civil-law origin versus common-law need for a clause, and that mere hardship does not qualify.", "url": "https://en.wikipedia.org/wiki/Force_majeure", "type": "secondary"},
-    {"text": "Force majeure, Legal Information Institute, Cornell Law School. — the clause freeing parties when an extraordinary event prevents performance and the narrow common-law interpretation.", "url": "https://www.law.cornell.edu/wex/force_majeure", "type": "secondary"}
+    {
+      "text": "Force majeure, Wikipedia. — the French meaning and definition, typical covered events, the external, unforeseeable, and unavoidable requirements, the civil-law origin versus common-law need for a clause, and that mere hardship does not qualify.",
+      "url": "https://en.wikipedia.org/wiki/Force_majeure",
+      "type": "secondary"
+    },
+    {
+      "text": "Force majeure, Legal Information Institute, Cornell Law School. — the clause freeing parties when an extraordinary event prevents performance and the narrow common-law interpretation.",
+      "url": "https://www.law.cornell.edu/wex/force_majeure",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Force_majeure",
   "related": [
-    {"slug": "caveat-emptor", "kind": "kindred"}
+    {
+      "slug": "caveat-emptor",
+      "kind": "kindred"
+    }
   ]
 }

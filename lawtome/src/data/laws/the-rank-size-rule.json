@@ -2,7 +2,10 @@
   "no": "437",
   "slug": "the-rank-size-rule",
   "name": "The Rank-Size Rule",
-  "aliases": ["Zipf's law for cities", "The Auerbach-Lotka-Zipf law"],
+  "aliases": [
+    "Zipf's law for cities",
+    "The Auerbach-Lotka-Zipf law"
+  ],
   "statement": "A country's nth-largest city tends to be about one-nth the size of its largest.",
   "statementAccent": "about one-nth the size of its largest",
   "meaning": "The rank-size rule holds that in a country's system of cities, a city's population tends to be inversely proportional to its rank: the second-largest city is about half the size of the largest, the third about a third, the fourth about a quarter, and so on. Equivalently, rank times population is roughly constant. It is a special case of Zipf's law with an exponent near one, a power-law tail that appears as a straight line of slope about minus one on a log-log plot of rank against size.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "It is one of the most cited empirical regularities in urban economics, economic geography, and regional science, shaping how researchers model national settlement hierarchies and city-size distributions. It serves as a benchmark that growth models are built to reproduce, and its violations, primate cities dominating their neighbours, are themselves treated as diagnostic of political and economic structure. That such a simple pattern recurs across many countries has made explaining it, and its exceptions, a durable research programme.",
   "working": [
-    {"lead": "Check the upper tail", "text": "apply the rule to the largest cities, where it fits best, rather than to the whole size distribution, which is better described as log-normal."},
-    {"lead": "Fix the definition first", "text": "settle whether you mean city limits, metro areas, or natural cities before testing the fit, since the answer swings the result."},
-    {"lead": "Read deviations", "text": "treat a dominant primate city as a signal about a country's political and economic structure, not merely as noise."}
+    {
+      "lead": "Check the upper tail",
+      "text": "apply the rule to the largest cities, where it fits best, rather than to the whole size distribution, which is better described as log-normal."
+    },
+    {
+      "lead": "Fix the definition first",
+      "text": "settle whether you mean city limits, metro areas, or natural cities before testing the fit, since the answer swings the result."
+    },
+    {
+      "lead": "Read deviations",
+      "text": "treat a dominant primate city as a signal about a country's political and economic structure, not merely as noise."
+    }
   ],
   "limits": "As a universal law it is rejected in most countries. A cross-country study of seventy-three nations rejected the exponent-one form in fifty-three of them by one estimator and thirty by another, far more than chance, and the two estimators disagreeing is itself part of the debate. The rule fits the upper tail, not the whole distribution, which turns log-normal once small cities are included, and the largest city often deviates through the King effect. Results swing with how a city is defined and where the population cutoff is set. There is also genuine debate over whether the pattern reflects a deep economic mechanism or is largely a byproduct of how proportionate-growth processes generate power-law tails.",
   "misreadings": "It is not an exact formula but an approximate, empirical tendency for the upper tail, so 'the largest city is exactly twice the second' is false in general. It is not universal: many countries, especially those with primate cities, deviate strongly. A good rank-size fit does not prove a deep cause, since power-law tails arise easily from random proportionate growth, so the pattern is something to explain rather than an explanation. It shares the mathematical form of Zipf's law for word frequencies but is a different domain, and the exponent is not always exactly one but scatters around it.",
@@ -47,11 +59,22 @@
   "namedAfter": "Felix Auerbach, Alfred Lotka, and George Kingsley Zipf",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Rank-size distribution, Wikipedia. — the one-over-n statement, the NYC-LA and Kinshasa examples, the King effect, and the log-normal caveat.", "url": "https://en.wikipedia.org/wiki/Rank%E2%80%93size_distribution", "type": "secondary"},
-    {"text": "Gabaix, 'Zipf's Law for Cities: An Explanation,' Quarterly Journal of Economics 114(3) (1999): 739-767. — the proportionate-growth (Gibrat) mechanism for the exponent-one tail.", "url": "https://ideas.repec.org/a/oup/qjecon/v114y1999i3p739-767..html", "type": "primary"}
+    {
+      "text": "Rank-size distribution, Wikipedia. — the one-over-n statement, the NYC-LA and Kinshasa examples, the King effect, and the log-normal caveat.",
+      "url": "https://en.wikipedia.org/wiki/Rank%E2%80%93size_distribution",
+      "type": "secondary"
+    },
+    {
+      "text": "Gabaix, 'Zipf's Law for Cities: An Explanation,' Quarterly Journal of Economics 114(3) (1999): 739-767. — the proportionate-growth (Gibrat) mechanism for the exponent-one tail.",
+      "url": "https://ideas.repec.org/a/oup/qjecon/v114y1999i3p739-767..html",
+      "type": "primary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Rank%E2%80%93size_distribution",
   "related": [
-    {"slug": "zipfs-law", "kind": "kindred"}
+    {
+      "slug": "zipfs-law",
+      "kind": "kindred"
+    }
   ]
 }

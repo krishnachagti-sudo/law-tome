@@ -2,7 +2,10 @@
   "no": "512",
   "slug": "the-revelation-principle",
   "name": "The Revelation Principle",
-  "aliases": ["The revelation theorem", "Direct-mechanism equivalence"],
+  "aliases": [
+    "The revelation theorem",
+    "Direct-mechanism equivalence"
+  ],
   "statement": "Anything a clever mechanism can achieve, a simple honest one can achieve too, where telling the truth is the best strategy.",
   "statementAccent": "telling the truth is the best strategy",
   "meaning": "The revelation principle is a foundational result in mechanism design stating that anything achievable by some mechanism, in some equilibrium, is also achievable by a direct mechanism in which players simply report their private information truthfully and truth-telling is itself an equilibrium, yielding the same outcome. Its practical payoff is enormous: instead of searching the boundless space of every conceivable auction, contract, or bargaining game, a theorist can restrict attention, without loss of generality, to the tractable class of incentive-compatible, truthful, direct-revelation mechanisms. Whatever any elaborate game can accomplish, some report-your-type-honestly scheme can accomplish too.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The revelation principle is the workhorse simplification of modern mechanism design, auction theory, and contract theory, letting economists characterise what outcomes are attainable by examining only truthful direct mechanisms rather than an unbounded universe of institutions. It underlies Myerson's optimal auction, the analysis of regulation, optimal taxation, and public-goods provision, and it was part of the body of work recognised by the 2007 Nobel prize in economics awarded to Leonid Hurwicz, Eric Maskin, and Roger Myerson for founding mechanism design theory. It turns an impossible search into a tractable one.",
   "working": [
-    {"lead": "Restrict to truthful mechanisms", "text": "when hunting for an optimal design, search only incentive-compatible direct mechanisms, since they achieve any outcome the general ones can."},
-    {"lead": "See manipulation absorbed", "text": "recognise that a mechanism can play a player's own best strategy for them, leaving honesty with nothing to gain."},
-    {"lead": "Mind the equilibrium notion", "text": "distinguish the demanding dominant-strategy form from the weaker Bayesian-Nash form, which covers a larger class of achievable outcomes."}
+    {
+      "lead": "Restrict to truthful mechanisms",
+      "text": "when hunting for an optimal design, search only incentive-compatible direct mechanisms, since they achieve any outcome the general ones can."
+    },
+    {
+      "lead": "See manipulation absorbed",
+      "text": "recognise that a mechanism can play a player's own best strategy for them, leaving honesty with nothing to gain."
+    },
+    {
+      "lead": "Mind the equilibrium notion",
+      "text": "distinguish the demanding dominant-strategy form from the weaker Bayesian-Nash form, which covers a larger class of achievable outcomes."
+    }
   ],
   "limits": "The principle holds under idealising assumptions and weakens when they break. It requires full commitment by the designer, who must credibly not re-optimise after reports; with limited commitment or renegotiation it can fail. It assumes no collusion, so coalitional deviations can make truthful direct mechanisms non-optimal, and it assumes costless, unrestricted communication, so communication or complexity constraints undermine it. It is a static, single-stage result that needs care in dynamic settings, and it guarantees only that truth-telling is an equilibrium, not the unique one, which is exactly why the separate and harder problem of implementation exists. It is an equivalence result, not a claim that real institutions are direct mechanisms.",
   "misreadings": "It does not mean honesty is always the best policy for people in the world; it says a mechanism can be designed so truth-telling is an equilibrium yielding a given outcome. It does not imply real institutions should be direct report-your-type schemes, since indirect mechanisms like ascending auctions may be preferred for robustness or simplicity. It does not guarantee truth-telling is the unique equilibrium, which is why implementation theory is a distinct question. And it was not the invention of any single person, nor was the 2007 Nobel awarded for it specifically: Gibbard supplied the dominant-strategy version, several authors the Bayesian one, and the prize honoured mechanism design broadly.",
@@ -45,12 +57,26 @@
   "provenance": "canon",
   "coinedYear": 1973,
   "sources": [
-    {"text": "Revelation principle, Wikipedia. — the statement, the dominant-strategy and Bayesian versions, and the attributions.", "url": "https://en.wikipedia.org/wiki/Revelation_principle", "type": "secondary"},
-    {"text": "Mechanism design, Wikipedia. — the Bayesian revelation-principle formulation and the 2007 Nobel to Hurwicz, Maskin, and Myerson.", "url": "https://en.wikipedia.org/wiki/Mechanism_design", "type": "secondary"}
+    {
+      "text": "Revelation principle, Wikipedia. — the statement, the dominant-strategy and Bayesian versions, and the attributions.",
+      "url": "https://en.wikipedia.org/wiki/Revelation_principle",
+      "type": "secondary"
+    },
+    {
+      "text": "Mechanism design, Wikipedia. — the Bayesian revelation-principle formulation and the 2007 Nobel to Hurwicz, Maskin, and Myerson.",
+      "url": "https://en.wikipedia.org/wiki/Mechanism_design",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Revelation_principle",
   "related": [
-    {"slug": "arrows-impossibility-theorem", "kind": "kindred"},
-    {"slug": "the-market-for-lemons", "kind": "kindred"}
+    {
+      "slug": "arrows-impossibility-theorem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-market-for-lemons",
+      "kind": "kindred"
+    }
   ]
 }

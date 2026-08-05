@@ -5,11 +5,11 @@
   "statement": "Any map can be coloured with just four colours so no two neighbours match.",
   "statementAccent": "just four colours",
   "meaning": "Any map drawn in the plane, or equivalently on a sphere, can be coloured with at most four colours so that no two regions sharing a border segment receive the same colour. Four colours always suffice, no matter how the map is carved up, and some maps genuinely require all four.",
-  "mechanism": "Adjacency means sharing a boundary of non-zero length, not merely touching at a single corner where several regions meet — a distinction that is essential, since otherwise many regions could meet at a point and no bound would exist. Turn each region into a vertex and join two vertices whose regions share a border; the result is always a planar graph, so colouring the map becomes colouring a planar graph with four colours. The proof reduces the infinitude of maps to a finite set of configurations that every map must contain, then shows none can appear in a minimal counterexample.",
+  "mechanism": "Adjacency means sharing a boundary of non-zero length, not merely touching at a single corner where several regions meet: a distinction that is essential, since otherwise many regions could meet at a point and no bound would exist. Turn each region into a vertex and join two vertices whose regions share a border; the result is always a planar graph, so colouring the map becomes colouring a planar graph with four colours. The proof reduces the infinitude of maps to a finite set of configurations that every map must contain, then shows none can appear in a minimal counterexample.",
   "examples": [
     {
       "tag": "Four mutually bordering regions",
-      "text": "Whenever four regions each share a border with the other three, they need four distinct colours — the reason three colours cannot suffice in general and the bound is four."
+      "text": "Whenever four regions each share a border with the other three, they need four distinct colours: the reason three colours cannot suffice in general and the bound is four."
     },
     {
       "tag": "Point contact does not count",
@@ -46,7 +46,7 @@
     }
   ],
   "limits": "Its scope is the plane and sphere; other surfaces require different numbers of colours, a torus needing up to seven. The controversy it sparked was methodological, not mathematical: because the 1976 proof reduced the problem to a large set of configurations checked by computer, it could not be verified by hand, raising the question of whether an un-surveyable proof is a genuine proof. That concern about method has been largely settled on the correctness side by the 2005 machine-verified formalisation; no serious doubt remains that the statement is true.",
-  "misreadings": "It applies only to flat maps — on curved surfaces the number of colours needed changes. And the debate it caused was about what counts as a proof, not about whether the theorem is correct; its truth is not in doubt, especially after the formal machine-checked proof.",
+  "misreadings": "It applies only to flat maps: on curved surfaces the number of colours needed changes. And the debate it caused was about what counts as a proof, not about whether the theorem is correct; its truth is not in doubt, especially after the formal machine-checked proof.",
   "origin": "Conjectured by Francis Guthrie in 1852; Alfred Kempe's 1879 proof was accepted for over a decade until Percy Heawood found its flaw in 1890; finally proved by Kenneth Appel and Wolfgang Haken at the University of Illinois in 1976, with computer assistance.",
   "category": "mathematics",
   "reliability": "Empirical",

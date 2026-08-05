@@ -8,15 +8,15 @@
   "statement": "Software gets slower faster than hardware gets faster.",
   "statementAccent": "slower faster than hardware",
   "meaning": "Even as processors, memory, and storage grow faster and cheaper, software grows bloated fast enough that the performance a user actually feels stagnates or gets worse. Hardware gains are consumed by software growth rather than delivered to the user.",
-  "mechanism": "Wirth's 'A Plea for Lean Software' named two drivers: rapidly improving hardware removes the pressure to be efficient — the 'free lunch' of Moore's law — and developers and customers fail to distinguish essential features from nice-to-have ones, so feature creep accumulates. Layers of abstraction, code cruft, and a preference for development speed over runtime speed pile on. And there is a reinforcing loop: bigger software drives demand for faster hardware, which permits still bigger software.",
+  "mechanism": "Wirth's 'A Plea for Lean Software' named two drivers: rapidly improving hardware removes the pressure to be efficient, the 'free lunch' of Moore's law, and developers and customers fail to distinguish essential features from nice-to-have ones, so feature creep accumulates. Layers of abstraction, code cruft, and a preference for development speed over runtime speed pile on. And there is a reinforcing loop: bigger software drives demand for faster hardware, which permits still bigger software.",
   "examples": [
     {
       "tag": "Feature creep",
-      "text": "Successive versions of an office or productivity suite add features and consume more memory and processor while the core task — typing, saving — feels no faster, despite hardware many times more powerful. This is the case Wirth's own article targets."
+      "text": "Successive versions of an office or productivity suite add features and consume more memory and processor while the core task (typing, saving) feels no faster, despite hardware many times more powerful. This is the case Wirth's own article targets."
     },
     {
       "tag": "Heavy web apps",
-      "text": "Modern web pages, built on deep stacks of JavaScript frameworks and abstraction, can feel sluggish on hardware orders of magnitude faster than the machines of the 1990s — the law's most visible contemporary form."
+      "text": "Modern web pages, built on deep stacks of JavaScript frameworks and abstraction, can feel sluggish on hardware orders of magnitude faster than the machines of the 1990s: the law's most visible contemporary form."
     },
     {
       "tag": "Andy and Bill",
@@ -26,7 +26,7 @@
   "variants": [
     {
       "name": "Andy and Bill's law",
-      "text": "'What Andy giveth, Bill taketh away' — named for Intel's Andy Grove and Microsoft's Bill Gates: new software consumes whatever extra power new hardware provides. Sometimes called the Great Moore's Law Compensator."
+      "text": "'What Andy giveth, Bill taketh away': named for Intel's Andy Grove and Microsoft's Bill Gates: new software consumes whatever extra power new hardware provides. Sometimes called the Great Moore's Law Compensator."
     },
     {
       "name": "Gates's, May's & Page's laws",
@@ -48,9 +48,9 @@
       "text": "assume users are not all on the newest machines, and that gains you bank on will be eaten by the abstractions you add."
     }
   ],
-  "limits": "It is an aphorism and, in Wirth's hands, a 'plea' — a normative argument for lean software, not an empirically measured law with a rate constant like the one it mirrors. It has clear counterexamples: optimising compilers, JIT runtimes, and heavily-tuned game engines have all made software faster. It also leans on selection bias — bloat is salient and memorable while quiet efficiency wins go unnoticed — and the 'halves every 18 months' variants are deliberate jokes, not measurements.",
-  "misreadings": "It does not claim all software always gets slower — plenty has been optimised — nor that hardware progress is worthless. It is a provocation about incentives: because faster hardware removes the pressure to be efficient, software tends to expand to fill it, and leanness has to be chosen.",
-  "origin": "Named for the computer scientist Niklaus Wirth, who stated it in his 1995 article 'A Plea for Lean Software' (IEEE Computer). Wirth himself attributed the adage to Martin Reiser — who wrote that software 'manages to outgrow hardware in size and sluggishness' — which is why it is also called Reiser's law.",
+  "limits": "It is an aphorism and, in Wirth's hands, a 'plea': a normative argument for lean software, not an empirically measured law with a rate constant like the one it mirrors. It has clear counterexamples: optimising compilers, JIT runtimes, and heavily-tuned game engines have all made software faster. It also leans on selection bias, bloat is salient and memorable while quiet efficiency wins go unnoticed, and the 'halves every 18 months' variants are deliberate jokes, not measurements.",
+  "misreadings": "It does not claim all software always gets slower, plenty has been optimised, nor that hardware progress is worthless. It is a provocation about incentives: because faster hardware removes the pressure to be efficient, software tends to expand to fill it, and leanness has to be chosen.",
+  "origin": "Named for the computer scientist Niklaus Wirth, who stated it in his 1995 article 'A Plea for Lean Software' (IEEE Computer). Wirth himself attributed the adage to Martin Reiser, who wrote that software 'manages to outgrow hardware in size and sluggishness', which is why it is also called Reiser's law.",
   "category": "software",
   "reliability": "Heuristic",
   "provenance": "canon",

@@ -2,7 +2,10 @@
   "no": "772",
   "slug": "just-intonation",
   "name": "Just Intonation",
-  "aliases": ["Pure intonation", "Just tuning"],
+  "aliases": [
+    "Pure intonation",
+    "Just tuning"
+  ],
   "statement": "Tune every interval to a simple whole-number ratio and the chords ring pure, but only in one key.",
   "statementAccent": "the chords ring pure, but only in one key",
   "meaning": "Just intonation is a tuning system in which the frequencies of notes are related by ratios of small whole numbers, giving intervals that align with the harmonic series and sound maximally pure. The octave is two to one, the perfect fifth three to two, the perfect fourth four to three, the major third five to four, the minor third six to five, and so on. Because these ratios match the natural overtones of vibrating bodies, intervals tuned justly produce little or no beating and have a clear, sweet, resonant quality that tempered tunings only approximate. The cost of this purity is inflexibility. A scale tuned justly for one key has impure intervals in other keys, cannot modulate freely, and even produces multiple sizes of nominally the same interval, differences captured by small intervals such as the syntonic comma. Just intonation is therefore the tuning of maximum consonance within a key, at the price of the universal playability that equal temperament provides.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "Just intonation represents the ideal of maximally pure, consonant harmony, and it clarifies what tempered tunings sacrifice and why. Because it derives intervals straight from the harmonic series, it embodies the natural basis of consonance and shows why simple ratios sound sweet, making it central to understanding tuning, acoustics, and the physics of chords. In practice, ensembles with flexible pitch, unaccompanied choirs, string groups, and barbershop singers, gravitate toward just intonation because pure intervals lock together resonantly, and skilled musicians adjust pitch on the fly to tune chords justly. Its limitations, the inability to modulate freely and the proliferation of comma-sized discrepancies, are precisely the problems that drove the development of meantone, well, and equal temperaments, so just intonation stands at the historical and conceptual root of the whole story of tuning. It also lives on in contemporary microtonal and experimental music, where composers exploit its pure and unusual intervals deliberately.",
   "working": [
-    {"lead": "Set pure ratios", "text": "tune each interval to a small whole-number ratio, three to two for the fifth, five to four for the major third."},
-    {"lead": "Lock the chords", "text": "let the coinciding overtones make triads beatless and resonant, the sound of maximum consonance."},
-    {"lead": "Accept the key limit", "text": "recognise that the pure tuning holds only within a key and cannot modulate freely, as commas make intervals conflict elsewhere."}
+    {
+      "lead": "Set pure ratios",
+      "text": "tune each interval to a small whole-number ratio, three to two for the fifth, five to four for the major third."
+    },
+    {
+      "lead": "Lock the chords",
+      "text": "let the coinciding overtones make triads beatless and resonant, the sound of maximum consonance."
+    },
+    {
+      "lead": "Accept the key limit",
+      "text": "recognise that the pure tuning holds only within a key and cannot modulate freely, as commas make intervals conflict elsewhere."
+    }
   ],
   "limits": "Just intonation is key-specific and impractical for fixed-pitch keyboard instruments, since a scale tuned justly for one key is out of tune in others and cannot modulate freely; this is why it was largely abandoned for keyboards in favour of meantone and then equal temperament. It also produces multiple sizes of the same interval and small discrepancies like the syntonic comma, which complicate notation and performance. Its purity is fully realised only by instruments and voices that can adjust pitch continuously, not by pianos or fretted instruments with fixed tuning. And the term covers a family of related systems rather than one fixed scale, since which ratios are chosen depends on the music. So just intonation is the tuning of purest consonance within a key, valuable for flexible-pitch ensembles and for understanding harmony, but limited by its inability to serve the free modulation of common-practice keyboard music.",
   "misreadings": "Just intonation is not simply the correct or natural tuning that others fail to reach; its purity comes at the cost of being unable to play in tune across keys, which is a real limitation, not a detail. It is not a single scale but a family of systems, and it does not eliminate all tuning problems, since it introduces commas and multiple interval sizes. And its full purity requires flexible-pitch instruments, not fixed keyboards, so treating just intonation as strictly superior to equal temperament, or as a single universal scale, misreads a tuning that trades modulation for consonance and works best where pitch can be freely adjusted.",
@@ -46,12 +58,26 @@
   "coinedYear": null,
   "namedAfter": null,
   "sources": [
-    {"text": "Just intonation, Wikipedia. — tuning by ratios of small whole numbers (octave 2:1, fifth 3:2, third 5:4, minor third 6:5), the alignment with overtones and beatless purity, the syntonic comma 81:80, the limitation on free modulation, and uses by a cappella, string, and barbershop ensembles.", "url": "https://en.wikipedia.org/wiki/Just_intonation", "type": "secondary"},
-    {"text": "Just intonation, Encyclopaedia Britannica. — just intonation as tuning from pure natural thirds and fifths, and its impracticality for polyphonic keyboard music.", "url": "https://www.britannica.com/art/just-intonation", "type": "secondary"}
+    {
+      "text": "Just intonation, Wikipedia. — tuning by ratios of small whole numbers (octave 2:1, fifth 3:2, third 5:4, minor third 6:5), the alignment with overtones and beatless purity, the syntonic comma 81:80, the limitation on free modulation, and uses by a cappella, string, and barbershop ensembles.",
+      "url": "https://en.wikipedia.org/wiki/Just_intonation",
+      "type": "secondary"
+    },
+    {
+      "text": "Just intonation, Encyclopaedia Britannica. — just intonation as tuning from pure natural thirds and fifths, and its impracticality for polyphonic keyboard music.",
+      "url": "https://www.britannica.com/art/just-intonation",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Just_intonation",
   "related": [
-    {"slug": "equal-temperament", "kind": "tension"},
-    {"slug": "the-harmonic-series", "kind": "cause"}
+    {
+      "slug": "equal-temperament",
+      "kind": "tension"
+    },
+    {
+      "slug": "the-harmonic-series",
+      "kind": "cause"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "no": "638",
   "slug": "jakobs-law",
   "name": "Jakob's Law",
-  "aliases": ["Jakob's law of the internet user experience", "The law of familiarity"],
+  "aliases": [
+    "Jakob's law of the internet user experience",
+    "The law of familiarity"
+  ],
   "statement": "Users spend most of their time on other sites, so they expect yours to work like the ones they know.",
   "statementAccent": "they expect yours to work like the ones they know",
   "meaning": "Jakob's Law of the internet user experience states that users spend most of their time on other sites, which means they prefer your site to work the same way as all the other sites they already know. Because people carry expectations built from countless other products and interfaces, designs that follow familiar conventions are easier to use than novel ones. Coined by the usability expert Jakob Nielsen, co-founder of the Nielsen Norman Group, and one of the widely cited Laws of UX, the principle rests on the idea of mental models: users form models of how things work from prior experience, and matching those models lets them focus on their tasks rather than on learning a new interface. It is a foundational principle of interface design about conventions and consistency.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "Jakob's Law is a cornerstone of user-experience and interface design, capturing why consistency with established conventions is not conservatism but usability. Because users bring expectations from the entire web, designs that respect familiar patterns let people accomplish their goals with minimal learning, while needless novelty imposes a cost that frustrates and drives them away. The principle guides everything from icon choices and navigation layouts to the careful handling of redesigns, and it underlies the broader practice of following platform and design conventions. For designers it is a reminder that the competition sets user expectations, so meeting those expectations is often wiser than reinventing them.",
   "working": [
-    {"lead": "Follow the conventions", "text": "use familiar patterns, icons, and layouts so users can rely on mental models built from other sites rather than learning yours from scratch."},
-    {"lead": "Match the mental model", "text": "design so the interface behaves as users already expect, reducing the cognitive load and errors of unfamiliarity."},
-    {"lead": "Ease transitions", "text": "when redesigning a familiar interface, minimise disruption, for instance by letting users keep the old version for a while, since they resist upended expectations."}
+    {
+      "lead": "Follow the conventions",
+      "text": "use familiar patterns, icons, and layouts so users can rely on mental models built from other sites rather than learning yours from scratch."
+    },
+    {
+      "lead": "Match the mental model",
+      "text": "design so the interface behaves as users already expect, reducing the cognitive load and errors of unfamiliarity."
+    },
+    {
+      "lead": "Ease transitions",
+      "text": "when redesigning a familiar interface, minimise disruption, for instance by letting users keep the old version for a while, since they resist upended expectations."
+    }
   ],
   "limits": "Jakob's Law counsels respecting conventions where they exist, but it does not forbid innovation; genuinely better patterns can be worth their learning cost, and slavishly copying competitors can entrench mediocrity. Conventions also vary by platform, culture, and audience, so what is familiar to one group may not be to another. The principle is a design heuristic rather than a hard rule, and it must be balanced against the value of differentiation and improvement. Its evidence is drawn largely from usability practice, so it is a well-supported guideline about expectations, not a precise quantitative law, and knowing when to break a convention is itself a matter of judgement.",
   "misreadings": "Jakob's Law does not mean never innovate or blindly copy competitors; it means respect established conventions and user expectations where they exist, because novelty carries a learning cost. It is not an argument against all originality, only against gratuitous unfamiliarity that forces users to relearn basics. And it is a heuristic about expectations, not a guarantee, so it must be weighed against the benefits of a better design and the specifics of the audience, which is why skilled designers sometimes deliberately depart from convention.",
@@ -46,12 +58,26 @@
   "namedAfter": "Jakob Nielsen",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Jakob's Law, Laws of UX (Jon Yablonski). — the exact statement, the mental-model and convention implication, and the redesign caveat with the YouTube example.", "url": "https://lawsofux.com/jakobs-law/", "type": "secondary"},
-    {"text": "Jakob's Law of Internet User Experience, Nielsen Norman Group. — Jakob Nielsen's statement that users prefer sites to work like the others they know.", "url": "https://www.nngroup.com/videos/jakobs-law-internet-ux/", "type": "secondary"}
+    {
+      "text": "Jakob's Law, Laws of UX (Jon Yablonski). — the exact statement, the mental-model and convention implication, and the redesign caveat with the YouTube example.",
+      "url": "https://lawsofux.com/jakobs-law/",
+      "type": "secondary"
+    },
+    {
+      "text": "Jakob's Law of Internet User Experience, Nielsen Norman Group. — Jakob Nielsen's statement that users prefer sites to work like the others they know.",
+      "url": "https://www.nngroup.com/videos/jakobs-law-internet-ux/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://lawsofux.com/jakobs-law/",
   "related": [
-    {"slug": "the-aesthetic-usability-effect", "kind": "kindred"},
-    {"slug": "hicks-law", "kind": "kindred"}
+    {
+      "slug": "the-aesthetic-usability-effect",
+      "kind": "kindred"
+    },
+    {
+      "slug": "hicks-law",
+      "kind": "kindred"
+    }
   ]
 }

@@ -217,7 +217,7 @@ ${teaserCards}
     </div>
     <div class="feat-grid" data-reveal-stagger>
 ${feat('situations/', IC.feeling, 'Describe the feeling', 'Don’t know the name? Say what’s happening — “we hit the target but the product got worse” — and land on the law that names it.')}
-${feat('tension/', IC.tension, 'Laws in tension', 'The principles that disagree, side by side — where one law’s advice is another’s warning.')}
+${feat('tension/', IC.tension, 'Laws in tension', 'The principles that disagree, side by side, where one law’s advice is another’s warning.')}
 ${feat('reliability/', IC.shield, 'Proven, or folklore?', 'Every entry is rated — from measured evidence to plain adage — so you always know what you’re quoting.')}
 ${feat('collections/', IC.stack, 'Curated collections', 'Themed sets that cut across the index: the razors, why incentives backfire, laws every engineer learns.')}
 ${feat('timeline/', IC.clock, 'A history of ideas', 'Walk the corpus by century — from ancient maxims to principles coined in living memory.')}

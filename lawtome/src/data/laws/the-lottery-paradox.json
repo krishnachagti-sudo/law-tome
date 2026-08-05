@@ -2,7 +2,10 @@
   "no": "685",
   "slug": "the-lottery-paradox",
   "name": "The Lottery Paradox",
-  "aliases": ["Kyburg's lottery paradox", "The lottery problem"],
+  "aliases": [
+    "Kyburg's lottery paradox",
+    "The lottery problem"
+  ],
   "statement": "It seems rational to believe each ticket will lose, yet believing that of every ticket means believing no ticket wins.",
   "statementAccent": "believing that of every ticket means believing no ticket wins",
   "meaning": "The lottery paradox is a puzzle in epistemology about the relationship between rational belief, probability, and knowledge, first stated by the philosopher Henry Kyburg in his 1961 book Probability and the Logic of Rational Belief. Consider a fair lottery with a large number of tickets, say a thousand, exactly one of which will win. For any single ticket, the chance it loses is very high, so it seems rational to accept that that ticket will lose, and the same holds for every ticket individually. Yet you also know that some ticket will win. If rational acceptance carries over to conjunctions, then combining the belief that ticket one loses, that ticket two loses, and so on for all the tickets yields the belief that no ticket wins, which contradicts what you know. The paradox exposes a tension between the idea that high probability suffices for rational belief and the principle that rational beliefs can be conjoined.",
@@ -33,9 +36,18 @@
   ],
   "whyItMatters": "The lottery paradox is a central puzzle in formal epistemology, exposing a deep tension in how probability, rational belief, and knowledge fit together. It challenges the tempting idea that high probability is enough for justified belief, since accepting each highly probable claim and conjoining them can generate a contradiction, and it puts pressure on the conjunction and closure principles that seem to govern rational acceptance. Its knowledge version, our reluctance to say we know a lottery ticket will lose even though it almost surely will, has shaped theories of knowledge, especially those that treat knowledge as requiring more than high probability. Alongside the closely related preface paradox, it has driven work on the lockean thesis, contextualism, and the relation between full belief and degrees of confidence, making it a durable test case for any account of rational belief.",
   "working": [
-    {"lead": "Believe each ticket loses", "text": "note that for each ticket the probability of losing is very high, so accepting that it loses looks rational."},
-    {"lead": "Try to conjoin", "text": "combine those individually rational beliefs across all tickets and reach the belief that no ticket wins, which contradicts what you know."},
-    {"lead": "Give up a principle", "text": "resolve the clash by rejecting conjunction closure, denying that high probability suffices for acceptance, or separating belief from graded confidence."}
+    {
+      "lead": "Believe each ticket loses",
+      "text": "note that for each ticket the probability of losing is very high, so accepting that it loses looks rational."
+    },
+    {
+      "lead": "Try to conjoin",
+      "text": "combine those individually rational beliefs across all tickets and reach the belief that no ticket wins, which contradicts what you know."
+    },
+    {
+      "lead": "Give up a principle",
+      "text": "resolve the clash by rejecting conjunction closure, denying that high probability suffices for acceptance, or separating belief from graded confidence."
+    }
   ],
   "limits": "The lottery paradox reveals a genuine tension among plausible principles but does not by itself dictate which to abandon, and epistemologists disagree about the right response. Rejecting conjunction closure avoids the contradiction but gives up an intuitive principle; denying that high probability suffices for acceptance preserves closure but complicates the relation between belief and evidence; distinguishing belief from credence reframes the problem rather than dissolving it. The puzzle is sensitive to how acceptance, belief, and knowledge are defined, so different frameworks locate the fault differently. It therefore functions as a diagnostic that any theory of rational belief must address rather than as a puzzle with an agreed solution, and its relation to the preface paradox shows the difficulty generalises beyond lotteries.",
   "misreadings": "The paradox does not show it is irrational to buy or reason about lottery tickets; it targets the abstract principles linking high probability, belief, and conjunction. It is not resolved simply by noting that some ticket will win, since that fact is exactly what the conjoined beliefs contradict. And it does not prove that high probability is worthless for belief, only that high probability plus unrestricted conjunction leads to trouble, so treating the paradox as a reason to distrust probabilistic reasoning altogether misreads a puzzle meant to refine, not reject, our principles of rational acceptance.",
@@ -46,12 +58,26 @@
   "coinedYear": 1961,
   "namedAfter": null,
   "sources": [
-    {"text": "Lottery paradox, Wikipedia. — Kyburg's 1961 statement, the fair-lottery setup, the three inconsistent principles and the conjunction-closure contradiction, the high-probability-not-sufficient point, and the preface-paradox link.", "url": "https://en.wikipedia.org/wiki/Lottery_paradox", "type": "secondary"},
-    {"text": "Epistemic Paradoxes, Stanford Encyclopedia of Philosophy. — the lottery paradox in relation to knowledge, closure, and the reluctance to say one knows a ticket will lose.", "url": "https://plato.stanford.edu/entries/epistemic-paradoxes/", "type": "secondary"}
+    {
+      "text": "Lottery paradox, Wikipedia. — Kyburg's 1961 statement, the fair-lottery setup, the three inconsistent principles and the conjunction-closure contradiction, the high-probability-not-sufficient point, and the preface-paradox link.",
+      "url": "https://en.wikipedia.org/wiki/Lottery_paradox",
+      "type": "secondary"
+    },
+    {
+      "text": "Epistemic Paradoxes, Stanford Encyclopedia of Philosophy. — the lottery paradox in relation to knowledge, closure, and the reluctance to say one knows a ticket will lose.",
+      "url": "https://plato.stanford.edu/entries/epistemic-paradoxes/",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Lottery_paradox",
   "related": [
-    {"slug": "the-gettier-problem", "kind": "kindred"},
-    {"slug": "the-sorites-paradox", "kind": "kindred"}
+    {
+      "slug": "the-gettier-problem",
+      "kind": "kindred"
+    },
+    {
+      "slug": "the-sorites-paradox",
+      "kind": "kindred"
+    }
   ]
 }

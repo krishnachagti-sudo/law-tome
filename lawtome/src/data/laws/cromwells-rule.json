@@ -4,8 +4,8 @@
   "name": "Cromwell's Rule",
   "statement": "Never assign a probability of exactly 0 or 1 to anything that is not logically certain.",
   "statementAccent": "not logically certain",
-  "meaning": "In Bayesian reasoning, avoid being absolutely certain about any contingent, empirical claim. Leave at least a sliver of doubt — and a sliver of credence for the alternative — so that evidence can still move your beliefs. It is intellectual humility written as a rule about priors.",
-  "mechanism": "By Bayes' theorem, the posterior is proportional to the prior times the likelihood. If your prior for a hypothesis is 0, the posterior stays 0 no matter how strong the evidence; if it is 1, it stays 1. A prior of 0 or 1 is a locked door that no observation can open — so a dogmatic prior makes you literally unpersuadable by data. The fix, in Lindley's words, is to leave a little probability for even the wildest possibility, so that a surprise can still update you rather than leave you unmoved.",
+  "meaning": "In Bayesian reasoning, avoid being absolutely certain about any contingent, empirical claim. Leave at least a sliver of doubt, and a sliver of credence for the alternative, so that evidence can still move your beliefs. It is intellectual humility written as a rule about priors.",
+  "mechanism": "By Bayes' theorem, the posterior is proportional to the prior times the likelihood. If your prior for a hypothesis is 0, the posterior stays 0 no matter how strong the evidence; if it is 1, it stays 1. A prior of 0 or 1 is a locked door that no observation can open, so a dogmatic prior makes you literally unpersuadable by data. The fix, in Lindley's words, is to leave a little probability for even the wildest possibility, so that a surprise can still update you rather than leave you unmoved.",
   "examples": [
     {
       "tag": "The locked prior",
@@ -13,7 +13,7 @@
     },
     {
       "tag": "The moon of green cheese",
-      "text": "Lindley's illustration: keep the prior that the moon is made of green cheese tiny — one in a million, say — rather than zero, so that if astronauts returned with cheese samples your belief could actually update instead of being frozen."
+      "text": "Lindley's illustration: keep the prior that the moon is made of green cheese tiny (one in a million, say), rather than zero, so that if astronauts returned with cheese samples your belief could actually update instead of being frozen."
     },
     {
       "tag": "Overconfident forecasts",
@@ -23,7 +23,7 @@
   "variants": [
     {
       "name": "'Think it possible you may be mistaken'",
-      "text": "Cromwell's own line, used as a stand-alone maxim of epistemic humility — the plain-English version of the rule."
+      "text": "Cromwell's own line, used as a stand-alone maxim of epistemic humility: the plain-English version of the rule."
     },
     {
       "name": "The strengthened form",
@@ -34,7 +34,7 @@
   "working": [
     {
       "lead": "Leave a sliver of doubt",
-      "text": "for any empirical claim, hold a prior strictly between 0 and 1 — even a tiny margin keeps you able to update."
+      "text": "for any empirical claim, hold a prior strictly between 0 and 1, even a tiny margin keeps you able to update."
     },
     {
       "lead": "Distrust your own certainties",
@@ -42,11 +42,11 @@
     },
     {
       "lead": "Reserve 0 and 1 for logic alone",
-      "text": "assign certainty only to what is logically or mathematically true or false — everything contingent stays in the open interval."
+      "text": "assign certainty only to what is logically or mathematically true or false: everything contingent stays in the open interval."
     }
   ],
-  "limits": "It is a normative principle of Bayesian reasoning, not a law of nature or a theorem, and it explicitly exempts logical and mathematical certainties, which legitimately take probability 0 or 1. In some engineering or modelling contexts it is convenient and harmless to treat certain events as impossible or certain by definition; the rule is a caution against doing so for genuinely empirical claims, not a blanket ban. Its force is prescriptive — how you ought to set priors — rather than a claim about the world.",
-  "misreadings": "It does not say you must be uncertain about everything, including logic and mathematics — those can be certain. It says do not close the door on contingent, empirical claims, because a prior of 0 or 1 makes you unteachable by evidence.",
+  "limits": "It is a normative principle of Bayesian reasoning, not a law of nature or a theorem, and it explicitly exempts logical and mathematical certainties, which legitimately take probability 0 or 1. In some engineering or modelling contexts it is convenient and harmless to treat certain events as impossible or certain by definition; the rule is a caution against doing so for genuinely empirical claims, not a blanket ban. Its force is prescriptive, how you ought to set priors, rather than a claim about the world.",
+  "misreadings": "It does not say you must be uncertain about everything, including logic and mathematics. Those can be certain. It says do not close the door on contingent, empirical claims, because a prior of 0 or 1 makes you unteachable by evidence.",
   "origin": "Named by the statistician Dennis Lindley, who set it out in his work on Bayesian decision-making. The name honours Oliver Cromwell's 1650 letter to the General Assembly of the Church of Scotland: 'I beseech you, in the bowels of Christ, think it possible that you may be mistaken.'",
   "category": "statistics",
   "reliability": "Heuristic",

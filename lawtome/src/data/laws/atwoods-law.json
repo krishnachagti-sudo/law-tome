@@ -4,41 +4,50 @@
   "name": "Atwood's Law",
   "statement": "Any application that can be written in JavaScript will eventually be written in JavaScript.",
   "statementAccent": "will eventually be written in JavaScript",
-  "meaning": "JavaScript is so universally available — the one language every web browser runs natively — that over time software of nearly every kind gets rewritten in it. What began as browser scripting steadily expands to cover domains once reserved for other languages.",
-  "mechanism": "JavaScript's ubiquity in browsers gave it the widest install base of any runtime, so developers gravitate to it to reach the most users with the least friction — a practical expression of the principle of least power. Later platforms pushed it beyond the browser: Node.js brought it to servers and command lines, Electron to cross-platform desktop apps, and WebAssembly and fast engines to performance-sensitive work like graphics and machine learning, each step widening the set of applications it can absorb.",
+  "meaning": "JavaScript is so universally available, the one language every web browser runs natively, that over time software of nearly every kind gets rewritten in it. What began as browser scripting steadily expands to cover domains once reserved for other languages.",
+  "mechanism": "JavaScript's ubiquity in browsers gave it the widest install base of any runtime, so developers gravitate to it to reach the most users with the least friction: a practical expression of the principle of least power. Later platforms pushed it beyond the browser: Node.js brought it to servers and command lines, Electron to cross-platform desktop apps, and WebAssembly and fast engines to performance-sensitive work like graphics and machine learning, each step widening the set of applications it can absorb.",
   "examples": [
     {
       "tag": "Desktop via Electron",
-      "text": "VS Code and Slack ship as desktop apps built on Electron, which bundles a Chromium and Node.js runtime so the program is essentially HTML, CSS, and JavaScript running natively — JavaScript colonising the desktop."
+      "text": "VS Code and Slack ship as desktop apps built on Electron, which bundles a Chromium and Node.js runtime so the program is essentially HTML, CSS, and JavaScript running natively: JavaScript colonising the desktop."
     },
     {
       "tag": "Servers via Node.js",
-      "text": "Node.js took the V8 engine out of the browser and let JavaScript run web servers, APIs, and tooling — a domain long dominated by Java, Python, PHP, and Ruby."
+      "text": "Node.js took the V8 engine out of the browser and let JavaScript run web servers, APIs, and tooling: a domain long dominated by Java, Python, PHP, and Ruby."
     },
     {
       "tag": "Machine learning in the browser",
-      "text": "Libraries like TensorFlow.js run models directly in the browser, while WebGL, WebGPU, and WebAssembly enable in-browser graphics and compute — extending JavaScript into numeric territory once considered off-limits."
+      "text": "Libraries like TensorFlow.js run models directly in the browser, while WebGL, WebGPU, and WebAssembly enable in-browser graphics and compute: extending JavaScript into numeric territory once considered off-limits."
     }
   ],
   "variants": [
     {
       "name": "The principle of least power",
-      "text": "The serious idea Atwood was riffing on, articulated by Tim Berners-Lee and codified by the W3C: choose the least powerful language suitable for a purpose, to maximise reusability and analysability — which favours portable, ubiquitous tools."
+      "text": "The serious idea Atwood was riffing on, articulated by Tim Berners-Lee and codified by the W3C: choose the least powerful language suitable for a purpose, to maximise reusability and analysability, which favours portable, ubiquitous tools."
     },
     {
       "name": "Zawinski's law",
-      "text": "A kindred humorous adage about software expanding to fill its niche — every program growing until it can read mail — from the same genre of tongue-in-cheek laws of software."
+      "text": "A kindred humorous adage about software expanding to fill its niche, every program growing until it can read mail, from the same genre of tongue-in-cheek laws of software."
     }
   ],
-  "whyItMatters": "It named, early and memorably, the trend that turned JavaScript from a browser toy into a near-universal application language. Coined as a joke in 2007, it has been broadly borne out by Node.js, Electron, and WebAssembly — a folk law that predicted a real and consequential shift in how software is built.",
+  "whyItMatters": "It named, early and memorably, the trend that turned JavaScript from a browser toy into a near-universal application language. Coined as a joke in 2007, it has been broadly borne out by Node.js, Electron, and WebAssembly: a folk law that predicted a real and consequential shift in how software is built.",
   "working": [
-    {"lead": "Expect JavaScript to reach your domain", "text": "when weighing platforms, assume the reach and momentum of the web runtime will eventually make a JavaScript option viable, even in areas it once couldn't touch."},
-    {"lead": "Separate availability from suitability", "text": "the law describes where JavaScript spreads because it can run everywhere, not where it is the best tool — plenty of applications are still better written elsewhere."},
-    {"lead": "Take it as observation, not mandate", "text": "it is a witty prediction about trends, not a rule that you should write everything in JavaScript."}
+    {
+      "lead": "Expect JavaScript to reach your domain",
+      "text": "when weighing platforms, assume the reach and momentum of the web runtime will eventually make a JavaScript option viable, even in areas it once couldn't touch."
+    },
+    {
+      "lead": "Separate availability from suitability",
+      "text": "the law describes where JavaScript spreads because it can run everywhere, not where it is the best tool: plenty of applications are still better written elsewhere."
+    },
+    {
+      "lead": "Take it as observation, not mandate",
+      "text": "it is a witty prediction about trends, not a rule that you should write everything in JavaScript."
+    }
   ],
-  "limits": "It is a humorous, observational adage — Atwood coined it 'in the spirit of recent memes' as a corollary joke — not a scientific or formal law. It is unfalsifiable as literally stated (there is always an 'eventually'), and it reflects a trend rather than a mechanism: critics note it describes JavaScript's availability and momentum, not its suitability, and many applications remain better written in other languages. It should be read as folklore that trends have largely vindicated, not as engineering necessity.",
-  "misreadings": "It is not advice to write everything in JavaScript, nor a claim that JavaScript is the best language for any task — only that its ubiquity draws ever more kinds of software toward it. Its 'vindication' is real but rests on trend commentary rather than a second formal statement from Atwood.",
-  "origin": "Coined by Jeff Atwood — Coding Horror blogger and co-founder of Stack Overflow — in his 17 July 2007 post 'The Principle of Least Power', where he proposed it explicitly as a corollary to the W3C's rule of least power and named it after himself in the spirit of the meme.",
+  "limits": "It is a humorous, observational adage (Atwood coined it 'in the spirit of recent memes' as a corollary joke), not a scientific or formal law. It is unfalsifiable as literally stated (there is always an 'eventually'), and it reflects a trend rather than a mechanism: critics note it describes JavaScript's availability and momentum, not its suitability, and many applications remain better written in other languages. It should be read as folklore that trends have largely vindicated, not as engineering necessity.",
+  "misreadings": "It is not advice to write everything in JavaScript, nor a claim that JavaScript is the best language for any task, only that its ubiquity draws ever more kinds of software toward it. Its 'vindication' is real but rests on trend commentary rather than a second formal statement from Atwood.",
+  "origin": "Coined by Jeff Atwood, Coding Horror blogger and co-founder of Stack Overflow, in his 17 July 2007 post 'The Principle of Least Power', where he proposed it explicitly as a corollary to the W3C's rule of least power and named it after himself in the spirit of the meme.",
   "category": "software",
   "reliability": "Folk-adage",
   "provenance": "canon",
@@ -46,12 +55,26 @@
   "namedAfter": "Jeff Atwood",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Atwood, J. (2007). \"The Principle of Least Power.\" Coding Horror. — the post coining the law, dated 17 July 2007.", "url": "https://blog.codinghorror.com/the-principle-of-least-power/", "type": "primary"},
-    {"text": "\"Atwood's Law,\" Wiktionary. — the definition, attribution, and date.", "url": "https://en.wiktionary.org/wiki/Atwood's_Law", "type": "secondary"}
+    {
+      "text": "Atwood, J. (2007). \"The Principle of Least Power.\" Coding Horror. — the post coining the law, dated 17 July 2007.",
+      "url": "https://blog.codinghorror.com/the-principle-of-least-power/",
+      "type": "primary"
+    },
+    {
+      "text": "\"Atwood's Law,\" Wiktionary. — the definition, attribution, and date.",
+      "url": "https://en.wiktionary.org/wiki/Atwood's_Law",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wiktionary.org/wiki/Atwood's_Law",
   "related": [
-    {"slug": "zawinskis-law", "kind": "kindred"},
-    {"slug": "greenspuns-tenth-rule", "kind": "kindred"}
+    {
+      "slug": "zawinskis-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "greenspuns-tenth-rule",
+      "kind": "kindred"
+    }
   ]
 }

@@ -9,19 +9,19 @@
   "statement": "Entities should not be multiplied beyond necessity.",
   "statementAccent": "multiplied beyond necessity",
   "meaning": "When two explanations both account for the facts, prefer the one that assumes less. It is a tie-breaker between rival explanations, not a general preference for whatever sounds simplest.",
-  "mechanism": "Each extra assumption a theory makes is one more thing that can be wrong and one more thing you must independently justify. Between two explanations that fit the evidence equally well, the one with fewer moving parts has fewer ways to fail and is easier to test — so it is the more rational default until the evidence forces more complexity.",
+  "mechanism": "Each extra assumption a theory makes is one more thing that can be wrong and one more thing you must independently justify. Between two explanations that fit the evidence equally well, the one with fewer moving parts has fewer ways to fail and is easier to test, so it is the more rational default until the evidence forces more complexity.",
   "examples": [
     {
       "tag": "Debugging",
-      "text": "Your site's error rate tripled at 02:00. One story: a coordinated bot attack probing a new endpoint. Another: the deploy that went out at 01:58. Both fit the graph, but the second invents no new actors — check the deploy first."
+      "text": "Your site's error rate tripled at 02:00. One story: a coordinated bot attack probing a new endpoint. Another: the deploy that went out at 01:58. Both fit the graph, but the second invents no new actors: check the deploy first."
     },
     {
       "tag": "Medicine",
-      "text": "The clinician's version is Theodore Woodward's teaching maxim, 'when you hear hoofbeats, think horses, not zebras' — reach for the common diagnosis that accounts for the symptoms before the exotic one that also would."
+      "text": "The clinician's version is Theodore Woodward's teaching maxim, 'when you hear hoofbeats, think horses, not zebras': reach for the common diagnosis that accounts for the symptoms before the exotic one that also would."
     },
     {
       "tag": "Astronomy",
-      "text": "The heliocentric model is the textbook parsimony argument: it dispenses with the tower of epicycles the Earth-centred system needed to fit the sky. Honestly, the earliest heliocentric models were not actually simpler to compute — so this illustrates the parsimony argument more than it proves simplicity settled the matter."
+      "text": "The heliocentric model is the textbook parsimony argument: it dispenses with the tower of epicycles the Earth-centred system needed to fit the sky. Honestly, the earliest heliocentric models were not actually simpler to compute, so this illustrates the parsimony argument more than it proves simplicity settled the matter."
     },
     {
       "tag": "Statistics",
@@ -42,11 +42,11 @@
       "text": "Information-theoretic reconstructions cash out 'simpler' as 'shorter': minimum description length and Solomonoff induction prefer the hypothesis that yields the most compressed total description of the data."
     }
   ],
-  "whyItMatters": "The razor shaves assumptions, not complexity. Reality is often genuinely complicated, and a simpler theory that fails to explain the evidence is not the winner — it is disqualified. Used honestly, it tells you which hypothesis to test first, not which one is true.",
+  "whyItMatters": "The razor shaves assumptions, not complexity. Reality is often genuinely complicated, and a simpler theory that fails to explain the evidence is not the winner. It is disqualified. Used honestly, it tells you which hypothesis to test first, not which one is true.",
   "working": [
     {
       "lead": "Use it to order tests, not to declare truth",
-      "text": "the simpler hypothesis is the one to check first because it is cheapest to rule out — not the one to believe without checking."
+      "text": "the simpler hypothesis is the one to check first because it is cheapest to rule out, not the one to believe without checking."
     },
     {
       "lead": "Count assumptions, not effort",
@@ -58,12 +58,12 @@
     },
     {
       "lead": "Drop it the moment it stops fitting",
-      "text": "as soon as the simpler theory fails to explain the evidence, it is out — the razor never licenses ignoring facts to stay tidy."
+      "text": "as soon as the simpler theory fails to explain the evidence, it is out: the razor never licenses ignoring facts to stay tidy."
     }
   ],
-  "limits": "The razor is a heuristic, not a proof: it guides which hypothesis to prefer, never demonstrates that the simpler one is true. 'Simplest' is itself slippery — philosophers separate syntactic elegance (fewer, tighter principles) from ontological parsimony (fewer kinds of thing), and the two can pull apart with no agreed metric to settle them. Appeals to simplicity have been on the wrong side of history more than once — meteorites, continental drift, and ball lightning were all resisted as needless complications before the evidence vindicated them — and Francis Crick warned that in biology, which is full of contingent complexity, the razor is 'a very dangerous implement.' Any preference for simplicity ultimately rests on assumptions about prior probability; it is not assumption-free.",
-  "misreadings": "It does not say the simplest answer is true, only that it is the best starting bet among equals; reality is sometimes genuinely complicated, and the razor yields the moment a simpler theory stops fitting the facts. 'Simplest' means fewest unsupported assumptions — not least effort, and not most intuitive.",
-  "origin": "Named for the English Franciscan friar William of Ockham (c. 1287–1347), who argued repeatedly for parsimony — \"Pluralitas non est ponenda sine necessitate\" (plurality should not be posited without necessity). The famous Latin phrasing usually put in his mouth, \"Entia non sunt multiplicanda praeter necessitatem\", is nowhere in his surviving works: it was written by the Irish Franciscan John Punch in a 1639 commentary on Duns Scotus, who called it a common axiom of the Scholastics. The name itself came later still — Libert Froidmont coined \"novacula occami\" (Occam's razor) in 1649. The underlying principle is far older than Ockham; Aristotle and Ptolemy both stated versions.",
+  "limits": "The razor is a heuristic, not a proof: it guides which hypothesis to prefer, never demonstrates that the simpler one is true. 'Simplest' is itself slippery: philosophers separate syntactic elegance (fewer, tighter principles) from ontological parsimony (fewer kinds of thing), and the two can pull apart with no agreed metric to settle them. Appeals to simplicity have been on the wrong side of history more than once: meteorites, continental drift, and ball lightning were all resisted as needless complications before the evidence vindicated them, and Francis Crick warned that in biology, which is full of contingent complexity, the razor is 'a very dangerous implement.' Any preference for simplicity ultimately rests on assumptions about prior probability; it is not assumption-free.",
+  "misreadings": "It does not say the simplest answer is true, only that it is the best starting bet among equals; reality is sometimes genuinely complicated, and the razor yields the moment a simpler theory stops fitting the facts. 'Simplest' means fewest unsupported assumptions, not least effort, and not most intuitive.",
+  "origin": "Named for the English Franciscan friar William of Ockham (c. 1287–1347), who argued repeatedly for parsimony: \"Pluralitas non est ponenda sine necessitate\" (plurality should not be posited without necessity). The famous Latin phrasing usually put in his mouth, \"Entia non sunt multiplicanda praeter necessitatem\", is nowhere in his surviving works: it was written by the Irish Franciscan John Punch in a 1639 commentary on Duns Scotus, who called it a common axiom of the Scholastics. The name itself came later still: Libert Froidmont coined \"novacula occami\" (Occam's razor) in 1649. The underlying principle is far older than Ockham; Aristotle and Ptolemy both stated versions.",
   "category": "logic",
   "reliability": "Heuristic",
   "provenance": "canon",

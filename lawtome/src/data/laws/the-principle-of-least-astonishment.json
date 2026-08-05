@@ -11,7 +11,7 @@
   "statement": "A component should behave the way most of its users already expect, so that using it produces no surprise.",
   "statementAccent": "the way most of its users already expect",
   "meaning": "Where a design has two defensible options and one of them matches what people already assume, take that one. Correctness is not enough: behaviour that is right and unexpected still costs every user the moment they discover it.",
-  "mechanism": "People do not read documentation before acting; they act on a model built from everything similar they have used before. A design that matches that model is understood without being learned. A design that contradicts it is learned only after it has caused a failure, and the failure is expensive precisely because the user was confident — the wrongness was invisible until it produced a bug. A 1972 formulation puts the operational test crisply: every construct in the system should behave exactly as its syntax suggests. Where syntax and behaviour disagree, the reader is misled by the thing they are reading.",
+  "mechanism": "People do not read documentation before acting; they act on a model built from everything similar they have used before. A design that matches that model is understood without being learned. A design that contradicts it is learned only after it has caused a failure, and the failure is expensive precisely because the user was confident: the wrongness was invisible until it produced a bug. A 1972 formulation puts the operational test crisply: every construct in the system should behave exactly as its syntax suggests. Where syntax and behaviour disagree, the reader is misled by the thing they are reading.",
   "examples": [
     {
       "tag": "parseInt and the leading zero",
@@ -26,7 +26,7 @@
       "text": "A command named delete that archives, or one named save that also publishes. The name is the user's model, and a behaviour wider than the name is a trap with a friendly label."
     }
   ],
-  "whyItMatters": "It is the design principle that explains why convention beats cleverness in interfaces of every kind — APIs, keyboard shortcuts, command-line flags, configuration formats. It also supplies the argument against a certain class of technically superior design: superiority measured against a blank slate is worthless when the user is not a blank slate.",
+  "whyItMatters": "It is the design principle that explains why convention beats cleverness in interfaces of every kind: APIs, keyboard shortcuts, command-line flags, configuration formats. It also supplies the argument against a certain class of technically superior design: superiority measured against a blank slate is worthless when the user is not a blank slate.",
   "working": [
     {
       "lead": "Match the neighbours",
@@ -41,8 +41,8 @@
       "text": "the least surprising choice differs for an end user, a programmer and a system administrator, so the principle only becomes actionable once you have said which one you mean."
     }
   ],
-  "limits": "Astonishment is relative to an audience, and the article that states the principle says so: the least surprising behaviour for a system administrator is not the least surprising for an end user, and a design serving both must surprise one of them. It is also conservative by construction — held absolutely, it forbids every genuine improvement, because a better idea is by definition not what people already expect. And 'most users' is unmeasured in nearly every application of it; in practice the designer's own expectation is what gets used.",
-  "misreadings": "It is not a rule that software should be simple, nor that it should never do anything novel. It concerns the gap between what a thing appears to do and what it does — a complicated system whose parts behave as their names suggest satisfies it, and a simple one full of quiet special cases does not.",
+  "limits": "Astonishment is relative to an audience, and the article that states the principle says so: the least surprising behaviour for a system administrator is not the least surprising for an end user, and a design serving both must surprise one of them. It is also conservative by construction: held absolutely, it forbids every genuine improvement, because a better idea is by definition not what people already expect. And 'most users' is unmeasured in nearly every application of it; in practice the designer's own expectation is what gets used.",
+  "misreadings": "It is not a rule that software should be simple, nor that it should never do anything novel. It concerns the gap between what a thing appears to do and what it does: a complicated system whose parts behave as their names suggest satisfies it, and a simple one full of quiet special cases does not.",
   "origin": "Circulated in computing from the late 1960s; an early reference appears in the PL/I Bulletin in 1967, and the principle was stated in print in a 1972 systems-programming-language paper as the requirement that every construct in the system behave exactly as its syntax suggests. It has no single named author.",
   "category": "software",
   "reliability": "Heuristic",
@@ -57,8 +57,17 @@
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Principle_of_least_astonishment",
   "related": [
-    { "slug": "jakobs-law", "kind": "kindred" },
-    { "slug": "hyrums-law", "kind": "kindred" },
-    { "slug": "kiss-principle", "kind": "kindred" }
+    {
+      "slug": "jakobs-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "hyrums-law",
+      "kind": "kindred"
+    },
+    {
+      "slug": "kiss-principle",
+      "kind": "kindred"
+    }
   ]
 }

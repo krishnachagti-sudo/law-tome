@@ -4,8 +4,8 @@
   "name": "The Gell-Mann Amnesia Effect",
   "statement": "You spot a newspaper's errors on subjects you know, then trust it on subjects you don't.",
   "statementAccent": "trust it on subjects you don't",
-  "meaning": "When the news covers your own field, you can see how much it gets wrong. But instead of concluding the source is unreliable, you turn the page and read it on unfamiliar topics as though it were accurate — your firsthand knowledge of its failures never transfers into scepticism about everything else.",
-  "mechanism": "Error-detection only works where you have domain knowledge; on unfamiliar topics you have no yardstick, so nothing triggers doubt, and the earlier evidence of unreliability is not generalised. It is also simply more comfortable to keep trusting a source than to discount everything it says, so the reader quietly forgets the prior disappointment — helped along by the authoritative packaging that lends the source a credibility Crichton called 'totally undeserved'.",
+  "meaning": "When the news covers your own field, you can see how much it gets wrong. But instead of concluding the source is unreliable, you turn the page and read it on unfamiliar topics as though it were accurate: your firsthand knowledge of its failures never transfers into scepticism about everything else.",
+  "mechanism": "Error-detection only works where you have domain knowledge; on unfamiliar topics you have no yardstick, so nothing triggers doubt, and the earlier evidence of unreliability is not generalised. It is also simply more comfortable to keep trusting a source than to discount everything it says, so the reader quietly forgets the prior disappointment: helped along by the authoritative packaging that lends the source a credibility Crichton called 'totally undeserved'.",
   "examples": [
     {
       "tag": "The expert reader",
@@ -17,7 +17,7 @@
     },
     {
       "tag": "In the story yourself",
-      "text": "Someone personally involved in a reported event notices the coverage is inaccurate, then goes on trusting that outlet's reporting on events they were not part of — the failure to generalise, made vivid."
+      "text": "Someone personally involved in a reported event notices the coverage is inaccurate, then goes on trusting that outlet's reporting on events they were not part of: the failure to generalise, made vivid."
     }
   ],
   "variants": [
@@ -26,14 +26,23 @@
       "text": "The close cousin, attributed to the editor Erwin Knoll: 'Everything you read in the newspapers is absolutely true, except for the rare story of which you happen to have firsthand knowledge.'"
     }
   ],
-  "whyItMatters": "It is a warning about how we calibrate trust in information: expertise gives us a rare, direct test of a source's reliability, and we routinely throw the result away. In an age of confident, authoritative-sounding sources — human and machine — remembering the errors you can see is the cheapest defence against the ones you can't.",
+  "whyItMatters": "It is a warning about how we calibrate trust in information: expertise gives us a rare, direct test of a source's reliability, and we routinely throw the result away. In an age of confident, authoritative-sounding sources (human and machine) remembering the errors you can see is the cheapest defence against the ones you can't.",
   "working": [
-    {"lead": "Let in-domain errors update your trust", "text": "when a source is wrong about the thing you know, treat that as evidence about the source, not just about that one story."},
-    {"lead": "Discount out-of-domain claims accordingly", "text": "read a source's coverage of things you cannot check with the scepticism its coverage of things you can check has earned."},
-    {"lead": "Triangulate where it matters", "text": "for consequential claims outside your expertise, seek an independent source rather than resetting your trust to full with every page turn."}
+    {
+      "lead": "Let in-domain errors update your trust",
+      "text": "when a source is wrong about the thing you know, treat that as evidence about the source, not just about that one story."
+    },
+    {
+      "lead": "Discount out-of-domain claims accordingly",
+      "text": "read a source's coverage of things you cannot check with the scepticism its coverage of things you can check has earned."
+    },
+    {
+      "lead": "Triangulate where it matters",
+      "text": "for consequential claims outside your expertise, seek an independent source rather than resetting your trust to full with every page turn."
+    }
   ],
-  "limits": "It is an anecdotal observation from a persuasive talk, not a measured or experimentally established effect, and it does not appear in the peer-reviewed cognitive-bias literature as a validated construct — the name is a deliberate joke by its coiner. There is a genuine logical gap, too: errors in one section do not necessarily predict errors elsewhere, since different beats have different reporters and standards, so total distrust can over-generalise from a small sample. Taken too far, it curdles into a blanket cynicism about all media, which is its own unwarranted leap.",
-  "misreadings": "It is not proof that the media is uniformly wrong, nor a licence to disbelieve everything. It names a specific inconsistency — that we notice a source's errors in our own field and then fail to carry that scepticism to its other coverage — and asks us to calibrate, not to despair.",
+  "limits": "It is an anecdotal observation from a persuasive talk, not a measured or experimentally established effect, and it does not appear in the peer-reviewed cognitive-bias literature as a validated construct: the name is a deliberate joke by its coiner. There is a genuine logical gap, too: errors in one section do not necessarily predict errors elsewhere, since different beats have different reporters and standards, so total distrust can over-generalise from a small sample. Taken too far, it curdles into a blanket cynicism about all media, which is its own unwarranted leap.",
+  "misreadings": "It is not proof that the media is uniformly wrong, nor a licence to disbelieve everything. It names a specific inconsistency (that we notice a source's errors in our own field and then fail to carry that scepticism to its other coverage) and asks us to calibrate, not to despair.",
   "origin": "Coined by the novelist Michael Crichton in his 2002 talk 'Why Speculate?', delivered to the International Leadership Forum. He named it, tongue in cheek, after the physicist Murray Gell-Mann, explaining that by dropping a famous name he lent the effect more importance than it would otherwise have — Gell-Mann had nothing to do with it.",
   "category": "media",
   "reliability": "Folk-adage",
@@ -42,11 +51,22 @@
   "namedAfter": "Murray Gell-Mann",
   "namesakeKind": "person",
   "sources": [
-    {"text": "Crichton, M. (2002). \"Why Speculate?\" Talk to the International Leadership Forum, La Jolla; reproduced at Ritholtz, The Big Picture. — the passage coining the effect.", "url": "https://ritholtz.com/2002/04/michael-crichtons-why-speculate/", "type": "primary"},
-    {"text": "Gell-Mann amnesia effect, Wikipedia (redirects to Michael Crichton). — the effect and its naming.", "url": "https://en.wikipedia.org/wiki/Gell-Mann_amnesia_effect", "type": "secondary"}
+    {
+      "text": "Crichton, M. (2002). \"Why Speculate?\" Talk to the International Leadership Forum, La Jolla; reproduced at Ritholtz, The Big Picture. — the passage coining the effect.",
+      "url": "https://ritholtz.com/2002/04/michael-crichtons-why-speculate/",
+      "type": "primary"
+    },
+    {
+      "text": "Gell-Mann amnesia effect, Wikipedia (redirects to Michael Crichton). — the effect and its naming.",
+      "url": "https://en.wikipedia.org/wiki/Gell-Mann_amnesia_effect",
+      "type": "secondary"
+    }
   ],
   "sameAs": "https://en.wikipedia.org/wiki/Gell-Mann_amnesia_effect",
   "related": [
-    {"slug": "betteridges-law", "kind": "kindred"}
+    {
+      "slug": "betteridges-law",
+      "kind": "kindred"
+    }
   ]
 }

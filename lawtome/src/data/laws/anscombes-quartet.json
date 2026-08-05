@@ -5,7 +5,7 @@
   "statement": "Four datasets can share nearly identical mean, variance, correlation, and regression line, yet look completely different when graphed.",
   "statementAccent": "share nearly identical mean, variance, correlation, and regression line",
   "meaning": "Anscombe’s quartet is a constructed demonstration, not a law of nature, showing that summary statistics alone can conceal wildly different underlying data structures, including curvature, outliers, and leverage points. It argues for visualising data rather than relying solely on numeric summaries.",
-  "mechanism": "Anscombe engineered four (x, y) datasets of 11 points each so that, to two or three decimal places, all share the same mean of x (9), mean of y (7.50), variance of x (11), variance of y (4.125), correlation (0.816), and least-squares line (y = 3.00 + 0.500x) with R² about 0.67 — despite one being roughly linear, one clearly curved, one dominated by a single outlier, and one driven entirely by one high-leverage point.",
+  "mechanism": "Anscombe engineered four (x, y) datasets of 11 points each so that, to two or three decimal places, all share the same mean of x (9), mean of y (7.50), variance of x (11), variance of y (4.125), correlation (0.816), and least-squares line (y = 3.00 + 0.500x) with R² about 0.67, despite one being roughly linear, one clearly curved, one dominated by a single outlier, and one driven entirely by one high-leverage point.",
   "examples": [
     {
       "tag": "Dataset I — linear",
@@ -17,7 +17,7 @@
     },
     {
       "tag": "Datasaurus Dozen",
-      "text": "A later computer-generated extension called the \"Datasaurus Dozen\" produces thirteen datasets — including one shaped like a dinosaur — that all share the same summary statistics while looking totally different when plotted."
+      "text": "A later computer-generated extension called the \"Datasaurus Dozen\" produces thirteen datasets, including one shaped like a dinosaur, that all share the same summary statistics while looking totally different when plotted."
     }
   ],
   "whyItMatters": "It is a canonical teaching example in statistics and data science for why exploratory graphing must accompany, not be replaced by, numerical summary statistics before fitting models.",
