@@ -114,6 +114,40 @@ That last step is the whole method. The value in this repository is not the
 before it was passing its own test. A fork that copies the finished shape
 inherits the complexity without the reason for any of it.
 
+## Starting the fork in a new session
+
+This document says what to keep. It does not say what you are building, and a
+fresh session has neither the files nor that. Both gaps close with one message:
+
+```
+Fork The Law Tome's engine into a new site.
+
+Source: https://github.com/krishnachagti-sudo/law-tome (public — clone it).
+Read lawtome/docs/FORK.md first and follow it. Ignore the corpus entirely.
+
+The new site:
+  what it indexes  ...
+  one entry has    ...        (the fields, e.g. name, statement, source, date)
+  domain           ...        (or "github.io project path for now")
+  brand            ...
+
+Work in this order:
+  1. Copy only the "transfers unchanged" list. Get `npm run build` and
+     `npm run preflight` green on a single hand-written page.
+  2. Then the entry template, with a test, before any second page type.
+  3. Stop after that and show me what a page looks like.
+
+Constraints carried over: verify every fact online, never invent one; a
+superlative only ships beside the evidence for it; docs/VOICE.md is the
+house style; every commit passes the test suite.
+```
+
+The four blanks are the only things a new session cannot work out for itself.
+The ordering matters more than it looks — step 1 is deliberately one page, and
+step 3 is a stop, because the failure mode of forking a finished site is
+inheriting all 36 page types before finding out whether the first one was
+right.
+
 ## Licence
 
 The code is this repository's licence. The corpus is published CC BY 4.0
