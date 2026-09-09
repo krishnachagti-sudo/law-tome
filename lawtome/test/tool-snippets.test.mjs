@@ -142,3 +142,24 @@ test('all JSON-LD on every law page still parses', () => {
     assert.ok(!ld(slug).some((x) => x['@type'] === 'PARSE ERROR'), `${slug}: broken JSON-LD`);
   }
 });
+
+/* The shipped stylesheet is comment-stripped. That is a build step operating on
+ * CSS with a regex, which is exactly the kind of thing that works until it
+ * silently eats a rule, so the output is checked rather than assumed. */
+test('the shipped stylesheet is lean but intact', () => {
+  const shipped = fs.readFileSync(path.join(root, 'dist/assets/styles.css'), 'utf8');
+  const source = fs.readFileSync(path.join(root, 'src/assets/styles.css'), 'utf8');
+  assert.equal(shipped.includes('/*'), false, 'comments still shipping');
+  assert.ok(source.includes('/*'), 'the SOURCE must keep its comments');
+  const braces = (t) => [(t.match(/\{/g) || []).length, (t.match(/\}/g) || []).length];
+  const [o, c] = braces(shipped);
+  assert.equal(o, c, 'unbalanced braces after stripping');
+  // Rules that only exist because of this session's work, spot-checked so a
+  // future strip cannot quietly remove the blocks the interactions depend on.
+  for (const sel of ['.wg-formula', '.wg-syms', '.ix-fields', '.ix-case', '.ix-chart',
+                     '.ix-stage', '.ix-choice', '.ix-scene', '.ix-verdict',
+                     'prefers-reduced-motion', '.entry-layout .lawmain']) {
+    assert.ok(shipped.includes(sel), `${sel} lost from the shipped stylesheet`);
+  }
+  assert.ok(shipped.length < source.length * 0.85, 'strip did not actually save anything');
+});

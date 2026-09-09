@@ -1138,6 +1138,32 @@ export async function buildSite(opts) {
 
   await cp(assetsDir, join(out, 'assets'), { recursive: true });
 
+  // Ship the stylesheet without its comments.
+  //
+  // styles.css is 204 kB, of which 106 kB is commentary, and it is a
+  // render-blocking request on all 1,785 pages. Stripping comments takes the
+  // gzipped payload from 48.6 kB to 28.6 kB, which is nearly everything a full
+  // minifier would win, at a fraction of the risk: no whitespace collapsing, no
+  // selector rewriting, nothing that can change what a rule matches.
+  //
+  // The SOURCE keeps every comment. They explain why rules exist and are worth
+  // more than the bytes; they are simply not worth sending to a browser.
+  //
+  // The hash is computed from the source above, so it still changes whenever
+  // the source does. It is not a digest of the shipped bytes and does not need
+  // to be — it only has to invalidate when the styles change.
+  for (const rel of ['styles.css', 'icons/tabler.css']) {
+    const f = join(out, 'assets', rel);
+    try {
+      const css = await readFile(f, 'utf8');
+      const lean = css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n[ \t]*\n+/g, '\n');
+      // Balanced braces after the strip, or something was eaten that should not
+      // have been. Better a fat stylesheet than a broken one.
+      const bal = (t) => (t.match(/\{/g) || []).length === (t.match(/\}/g) || []).length;
+      if (bal(lean) && lean.length < css.length) await writeFile(f, lean);
+    } catch { /* asset absent in this build */ }
+  }
+
   // `pages` counts home + one page per law (unchanged semantics). Browse and
   // per-category listings are reported in `listings`; the graph explorer is a
   // distinct page reported separately so no existing count assertion shifts.
