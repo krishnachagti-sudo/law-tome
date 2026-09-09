@@ -217,6 +217,59 @@
     'the-wiedemann-franz-law': function (v) {
       return { kap: 2.44e-8 * v.t * (v.sig * 1e6) };
     },
+    // ---- wave 4, 2026-09-09 ----
+    'the-taylor-rule': function (v) {
+      var i = v.r + v.pi + 0.5 * (v.pi - v.tgt) + 0.5 * v.gap;
+      return { i: i, real: i - v.pi };
+    },
+    'reeds-law': function (v) {
+      var n = Math.round(v.n);
+      var g = Math.pow(2, n) - n - 1, pairs = n * (n - 1) / 2;
+      return { g: g, pairs: pairs, ratio: pairs ? g / pairs : Infinity };
+    },
+    'dennard-scaling': function (v) {
+      var k = Math.pow(v.k, Math.round(v.g));
+      return { dens: k * k, speed: k, pd: 1 };
+    },
+    'cherenkov-radiation': function (v) {
+      var cos = 1 / (v.n * v.b);
+      return { th: cos <= 1 ? Math.acos(cos) * 180 / Math.PI : NaN,
+               thr: 1 / v.n, glow: v.b > 1 / v.n ? 1 : 0 };
+    },
+    'cromwells-rule': function (v) {
+      var pr = v.pr / 100;
+      // Odds form makes the point: a prior of exactly 0 has odds 0, and 0 times
+      // any likelihood ratio is still 0. No evidence can ever move it.
+      var odds = pr / (1 - pr) * v.lr;
+      var post = pr >= 1 ? 1 : odds / (1 + odds);
+      return { post: post * 100, moved: Math.abs(post - pr) > 1e-12 ? 1 : 0 };
+    },
+    'the-minimax-theorem': function (v) {
+      var a = v.a, b = v.b, c = v.c, d = v.d;
+      // A saddle point exists when some entry is its row min and column max.
+      var saddle = 0;
+      var rows = [[a, b], [c, d]];
+      for (var i = 0; i < 2 && !saddle; i++) {
+        for (var j = 0; j < 2 && !saddle; j++) {
+          var x = rows[i][j];
+          if (x === Math.min(rows[i][0], rows[i][1]) && x === Math.max(rows[0][j], rows[1][j])) saddle = 1;
+        }
+      }
+      var den = a + d - b - c;
+      if (saddle || den === 0) {
+        // pure play: the row player's maximin
+        var mm = Math.max(Math.min(a, b), Math.min(c, d));
+        return { v: mm, p: Math.min(a, b) >= Math.min(c, d) ? 100 : 0, saddle: 1 };
+      }
+      return { v: (a * d - b * c) / den, p: (d - c) / den * 100, saddle: 0 };
+    },
+    'simpsons-paradox': function (v) {
+      var e = v.easy / 100, h = v.hard / 100, edge = v.edge / 100;
+      var aa = v.aa / 100, ab = v.ab / 100;
+      var ra = aa * e + (1 - aa) * h;
+      var rb = ab * (e + edge) + (1 - ab) * (h + edge);
+      return { ra: ra * 100, rb: rb * 100, rev: rb < ra ? 1 : 0 };
+    },
     'bayes-theorem': function (v) {
       var pr = v.prior / 100, se = v.sens / 100, sp = v.spec / 100;
       var tp = pr * se, fp = (1 - pr) * (1 - sp);
