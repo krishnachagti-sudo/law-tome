@@ -26,6 +26,7 @@ import { personId } from './eponyms.mjs';
 import { formulaBlock, diffusionBlock, pronunciation, otherNames, otherNamesText } from './facts.mjs';
 import { kindOf, KINDS, kindPath } from '../../build/kinds.mjs';
 import { widgetBlock, widgetFor } from './widgets.mjs';
+import { interactiveBlock, interactiveFor } from './interactives.mjs';
 
 /**
  * Trim to at most `max` characters, ending on a sentence boundary where one is
@@ -340,6 +341,11 @@ ${h2}${inner}
     // identity and then move it.
     const wg = widgetBlock(law.slug);
     if (wg) blocks.push(block('Run the numbers', wg, true, `${L} calculator`));
+    // Laws with no closed form can still be DONE rather than read: a solver
+    // with validated input, a mechanism you run, a case you judge. Same slot,
+    // different engine.
+    const ix = interactiveBlock(law.slug);
+    if (ix) blocks.push(block(interactiveFor(law.slug).title, ix, true, `${L} solver`));
   }
 
   // ---- infographic card: reliability meter + lineage timeline. Both use only
@@ -1153,6 +1159,7 @@ document.getElementById('copy').onclick=function(){
     footer({ base, scripts: `${scripts}\n<script defer src="${asset(base, 'assets/saved.js')}"></script>`
       // widget.js only where there IS a widget: nine laws should not cost the
       // other 1,096 an extra request.
-      + (widgetFor(law.slug) ? `\n<script defer src="${asset(base, 'assets/widget.js')}"></script>` : '') })
+      + (widgetFor(law.slug) ? `\n<script defer src="${asset(base, 'assets/widget.js')}"></script>` : '')
+      + (interactiveFor(law.slug) ? `\n<script defer src="${asset(base, 'assets/interactive.js')}"></script>` : '') })
   );
 }

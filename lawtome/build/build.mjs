@@ -74,6 +74,7 @@ import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
 import { buildFeed } from './feed.mjs';
 import { widgetSlugs } from '../src/templates/widgets.mjs';
+import { interactiveSlugs } from '../src/templates/interactives.mjs';
 
 /**
  * Every page the build produces, held until the end.
@@ -178,7 +179,7 @@ export async function buildSite(opts) {
   // build rather than ship another silent no-op.
   {
     const slugs = new Set(laws.map((l) => l.slug));
-    const orphans = widgetSlugs().filter((k) => !slugs.has(k));
+    const orphans = widgetSlugs().concat(interactiveSlugs()).filter((k) => !slugs.has(k));
     if (orphans.length) {
       throw new Error('widget spec keyed to unknown slug(s): ' + orphans.join(', '));
     }

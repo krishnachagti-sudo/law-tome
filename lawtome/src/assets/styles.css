@@ -939,7 +939,11 @@ a.stat--link .s-k::after{content:" →";letter-spacing:0;opacity:.55}
 .block-h:last-child{margin-bottom:0}
 .lbl::after{content:"";flex:1;height:1px;background:var(--line)}
 /* numbered section labels give the long article visible structure */
-.entry-layout .lawmain{counter-reset:sec}
+/* A grid item defaults to min-width:auto, so it refuses to shrink below its
+   content's min-content width and pushes the whole page sideways instead of
+   letting a wide child scroll. Nothing here demanded that until the solver's
+   work-steps, which are deliberately unwrapped single lines. */
+.entry-layout .lawmain{counter-reset:sec;min-width:0}
 .entry-layout .lawmain .block>.lbl::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);font-size:10px;letter-spacing:.04em;color:var(--faint);border:1px solid var(--line-strong);border-radius:3px;padding:3px 7px}
 /* jumped-to sections must clear the sticky header (72px desktop / 62px mobile) */
 .block{margin-bottom:60px;scroll-margin-top:calc(var(--header-h) + 12px)}
@@ -1521,6 +1525,31 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 /* ---- playable laws --------------------------------------------------------- */
 .widget{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 22px 16px}
 .wg-lede{margin:0 0 16px;font-size:14.5px;color:var(--read)}
+/* Interactions that are not calculators: typed input, validated, with the
+   construction shown. Shares the widget's surface and type so the two read as
+   one family rather than two features. */
+.interactive{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 22px 16px;min-width:0}
+/* min() lets the track collapse to one column on a narrow screen. A bare
+   minmax(190px,1fr) keeps two columns and pushes the whole page sideways,
+   which is what it did at 375px. */
+.ix-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:10px 16px;margin:0 0 14px;min-width:0}
+.ix-f{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:10px;align-items:center;min-width:0}
+.ix-lab{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--muted);min-width:0;overflow-wrap:anywhere}
+.ix-f input{width:100%;padding:6px 8px;font-family:var(--mono);font-size:14px;color:var(--ink);
+  background:var(--bg);border:1px solid var(--line);border-radius:3px}
+.ix-f input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.ix-msg{margin:0 0 12px;padding:9px 11px;border-left:2px solid var(--accent);background:var(--bg);
+  font-size:12.5px;line-height:1.5;color:var(--read)}
+.ix-msg[hidden]{display:none}
+.ix-result{font-family:var(--mono);font-size:19px;color:var(--ink);padding:9px 0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  max-width:100%;overflow-x:auto;overflow-wrap:anywhere}
+.ix-result:empty{display:none}
+.ix-work{margin:12px 0 0;min-width:0}
+/* The steps are long single lines and must scroll inside their own box.
+   Without max-width they set a min-content width on every ancestor instead. */
+.ix-step{margin:0 0 5px;font-family:var(--mono);font-size:11.5px;line-height:1.55;color:var(--muted);
+  overflow-x:auto;white-space:nowrap;max-width:100%;min-width:0}
 /* The formula key. Added with the symbols renderer but never styled, so on
    every widget page the identity and its symbols rendered as a bare stacked
    dt/dd list in body serif. The dl is a two-column grid and .wg-sym is
