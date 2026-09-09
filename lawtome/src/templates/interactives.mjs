@@ -204,6 +204,111 @@ const INTERACTIVES = {
     ],
     note: 'A model of the stated mechanism, not measured data. Set displacement to zero and this reduces to Goodhart: the indicator decouples but does no harm. Campbell is the claim that displacement is not zero.',
   },
+
+  // ---- kind: spot, in scenario form. A scene, then questions, some of which
+  // have no right answer. An open case explains what each reply commits you
+  // to instead of marking it. ----
+  'the-gettier-problem': {
+    kind: 'spot',
+    title: 'Work the case',
+    lede: 'For two thousand years knowledge was justified true belief. Gettier ended that in three pages, with cases like this one.',
+    scene: [
+      'Smith has excellent evidence that Jones owns a Ford: he has ridden in it, Jones has produced the papers, Jones has driven it for years.',
+      'From this Smith infers something more general: someone in the office owns a Ford.',
+      'Unknown to Smith, Jones sold the Ford last week and now drives a rental. But Brown, who also works in the office and whom Smith has never discussed cars with, happens to own one.',
+    ],
+    prompt: 'Take the claim "someone in the office owns a Ford", as Smith holds it.',
+    yesLabel: 'Yes',
+    noLabel: 'No',
+    cases: [
+      { text: 'Is the claim true?', yes: true,
+        why: 'Brown owns a Ford, so someone in the office does. It is true, though not for the reason Smith thinks.' },
+      { text: 'Does Smith believe it?', yes: true,
+        why: 'He inferred it deliberately from evidence he trusts, which is belief in the fullest sense.' },
+      { text: 'Is Smith justified in believing it?', yes: true,
+        why: 'His evidence about Jones was as good as evidence gets, and the inference from it is valid. Being justified does not require being right about why.' },
+      { text: 'Does Smith KNOW that someone in the office owns a Ford?', open: true,
+        whyYes: 'A defensible answer, and it costs you something: if this is knowledge, then knowledge can rest entirely on a false premise and be rescued by luck. Most people who say yes here revise when the luck is made explicit.',
+        whyNo: 'The common answer, and it is fatal to the classical definition. You have just agreed the belief is justified, true, and held, and then denied it is knowledge. The three conditions cannot be sufficient.' },
+    ],
+    verdict: 'If you answered yes, yes, yes, no, you have reconstructed Gettier’s argument yourself. Justified true belief is not enough, because the justification can be disconnected from what makes the belief true. Sixty years of epistemology have gone into repairing this and no repair commands agreement.',
+    note: 'Gettier’s 1963 paper is three pages long and contains two cases. This is the first of them, lightly retold.',
+  },
+  'chestertons-fence': {
+    kind: 'spot',
+    title: 'Decide the cases',
+    lede: 'Chesterton’s rule is not "never remove anything". It is that the burden falls on the remover to find out why it is there first. The interesting question is when that burden has been met.',
+    prompt: 'For each, decide whether Chesterton’s rule permits removing it now.',
+    yesLabel: 'Go ahead',
+    noLabel: 'Find out first',
+    cases: [
+      { text: 'A gate across a farm track. Nobody currently working the farm knows why it is there. It is inconvenient.', yes: false,
+        why: 'The exact case Chesterton describes. Nobody knowing the reason is not evidence there was none, it is evidence you have not looked.' },
+      { text: 'A deployment step whose commit message reads "workaround for the 2019 load balancer, remove after migration". The migration completed last year.', yes: true,
+        why: 'The reason was recorded and has expired. Chesterton asks you to learn why the fence was put up, and you have. That is the rule satisfied, not defied.' },
+      { text: 'A rule nobody can explain, in a system where the person who wrote it still works down the corridor.', yes: false,
+        why: 'The cheapest possible investigation has not been done. Chesterton’s objection is to removal in ignorance, and here ignorance is a five-minute walk away.' },
+      { text: 'A safety interlock that is currently injuring people, whose purpose is unknown, and the next incident is expected within days.', open: true,
+        whyYes: 'Defensible, and worth being explicit about: you are saying the expected harm from waiting exceeds the expected harm from removing something you do not understand. That is a real trade-off, not an exemption from the rule.',
+        whyNo: 'Also defensible, and the harder discipline. Interlocks are exactly the class of thing that looks pointless because it is working, and the injuries may be the symptom of a different fault.' },
+      { text: 'A validation check with no comment, no history, and no test covering it, in code you are rewriting entirely.', yes: false,
+        why: 'The absence of documentation is the reason to investigate, not permission to skip it. An uncommented check is the fence at its most Chestertonian.' },
+    ],
+    verdict: 'The rule is procedural rather than conservative. It does not say the fence is good; it says find out, and then decide. Most of the disagreement about it comes from people arguing as though it said the first thing.',
+    note: 'From Chesterton’s The Thing, 1929. He was writing about institutions, and the argument transfers to code without much strain.',
+  },
+  'the-duhem-quine-thesis': {
+    kind: 'spot',
+    title: 'Assign the blame',
+    lede: 'A hypothesis never faces the evidence alone. It goes into the test bundled with assumptions about the instruments, the sample, the background theory, and the arithmetic. When the result comes back wrong, the logic tells you the bundle is wrong. It does not tell you which part.',
+    scene: [
+      'You predict that a new compound absorbs light at 340 nanometres. You run the spectrometer. Nothing appears at 340.',
+      'The prediction failed. Something in what you assumed is false.',
+    ],
+    prompt: 'For each response, decide whether it is logically available to you.',
+    yesLabel: 'Logically available',
+    noLabel: 'Ruled out',
+    cases: [
+      { text: 'Conclude the compound does not absorb at 340, and abandon the hypothesis.', yes: true,
+        why: 'Available, and usually the honest reading. But notice it is a choice, not something the failure forced on you.' },
+      { text: 'Conclude the spectrometer is miscalibrated, and keep the hypothesis.', yes: true,
+        why: 'Equally available. Instruments do drift, and this is a routine and legitimate response. Duhem’s point is that logic cannot tell you it is the wrong one.' },
+      { text: 'Conclude the sample was contaminated, and keep the hypothesis.', yes: true,
+        why: 'Available again. Any auxiliary assumption can absorb the failure, which is why a determined researcher can always save a hypothesis.' },
+      { text: 'Conclude that the failure proves the hypothesis false, with no further assumption required.', yes: false,
+        why: 'This is the one thing the failure does NOT establish. The test was of a conjunction, so its falsity licenses only the claim that at least one conjunct is false.' },
+      { text: 'Given that any of these is available, is choosing between them therefore arbitrary?', open: true,
+        whyYes: 'The strong Quinean reading, and it leads somewhere uncomfortable: if theory choice is not settled by evidence, something else settles it, and Kuhn and the sociology of science follow.',
+        whyNo: 'The common working answer, and the one most scientists hold: the choice is underdetermined by logic but not by judgement. Calibrating the instrument is cheap and testable; that is a good reason, just not a deductive one.' },
+    ],
+    verdict: 'The thesis is not that science cannot decide. It is that the deciding is done by something other than the logic of falsification, which means the something else deserves examination rather than assumption.',
+    note: 'Duhem argued it for physics in 1906; Quine generalised it to all of knowledge in 1951. The strong and weak readings are genuinely different claims and are often conflated.',
+  },
+  'the-teletransportation-paradox': {
+    kind: 'spot',
+    title: 'Decide who steps out',
+    lede: 'Parfit uses this to argue that personal identity is not what matters, and that our confidence in it does not survive being asked carefully.',
+    scene: [
+      'A machine on Earth scans every cell of your body, records the exact state, and destroys the original. A machine on Mars builds a copy from local matter to that specification. The copy wakes with all your memories, continuous in every psychological respect.',
+    ],
+    prompt: 'Work through the versions. The first questions have answers; the later ones are the argument.',
+    yesLabel: 'Yes',
+    noLabel: 'No',
+    cases: [
+      { text: 'Does the person on Mars remember your childhood, hold your commitments, and continue your projects?', yes: true,
+        why: 'By construction, yes. Every psychological connection that normally holds between you yesterday and you today holds here too.' },
+      { text: 'Is any physical atom of the original transported to Mars?', yes: false,
+        why: 'None. The Martian body is built from Martian matter. Any account resting on material continuity has to say this is a different person.' },
+      { text: 'Is the person who steps out on Mars you?', open: true,
+        whyYes: 'Then identity travels with the pattern rather than the substance. Accept it and ordinary survival looks the same in kind: the atoms in you now are largely not the ones from ten years ago either.',
+        whyNo: 'Then you have just been killed and replaced by a very convincing stranger, and everyone who loves them is mistaken. Consistency then requires saying what physical thread does the work, and every candidate is replaced gradually in ordinary life.' },
+      { text: 'Now suppose the Earth scanner malfunctions and does NOT destroy the original, so both of you exist. Is the one on Mars still you?', open: true,
+        whyYes: 'Then you are in two places, and the two immediately diverge into different people. Identity cannot be one-to-many, so something has to give.',
+        whyNo: 'The usual answer. But nothing about the Martian changed: the same scan, the same matter, the same memories. Whether they are you now depends on an event on another planet, which is Parfit’s point.' },
+    ],
+    verdict: 'Parfit’s conclusion is that the question has no determinate answer, and that this is not a gap in our knowledge but a fact about identity. What matters, he argues, is psychological continuity and connectedness, and identity is not what matters.',
+    note: 'From Reasons and Persons, 1984. The branching version is the one that does the real work, because it makes the answer depend on a distant event that changes nothing locally.',
+  },
 };
 
 export function interactiveSlugs() {
@@ -238,20 +343,40 @@ ${symbols}
  * alternative, holding the cases in a script and injecting them, would have
  * made the page empty to both. */
 function spotBlock(slug, w) {
-  const cases = w.cases.map((c, i) => `            <li class="ix-case" data-ix-case="${i}" data-answer="${c.yes ? '1' : '0'}">
+  // An OPEN case has no right answer. A thought experiment's interesting
+  // question is usually of this shape: both replies are defensible and each
+  // commits you to something, so the page explains the commitment rather than
+  // marking you. Open cases are not scored.
+  const cases = w.cases.map((c, i) => {
+    if (c.open) {
+      return `            <li class="ix-case" data-ix-case="${i}" data-open="1">
+              <p class="ix-case-text">${esc(c.text)}</p>
+              <div class="ix-case-why" data-ix-why data-why-yes>
+                <p><strong>${esc(w.yesLabel)}.</strong> ${esc(c.whyYes)}</p>
+              </div>
+              <div class="ix-case-why" data-ix-why data-why-no>
+                <p><strong>${esc(w.noLabel)}.</strong> ${esc(c.whyNo)}</p>
+              </div>
+            </li>`;
+    }
+    return `            <li class="ix-case" data-ix-case="${i}" data-answer="${c.yes ? '1' : '0'}">
               <p class="ix-case-text">${esc(c.text)}</p>
               <div class="ix-case-why" data-ix-why>
                 <p><strong>${esc(c.yes ? w.yesLabel : w.noLabel)}.</strong> ${esc(c.why)}</p>
               </div>
-            </li>`).join('\n');
+            </li>`;
+  }).join('\n');
+  const scene = (w.scene || []).map((p) => `          <p class="ix-scene-p">${esc(p)}</p>`).join('\n');
   return `        <div class="interactive ix-spot" data-interactive="${esc(slug)}"
              data-yes="${esc(w.yesLabel)}" data-no="${esc(w.noLabel)}">
           <p class="wg-lede">${esc(w.lede)}</p>
+${scene ? `          <div class="ix-scene">\n${scene}\n          </div>` : ''}
           <p class="ix-prompt">${esc(w.prompt)}</p>
           <ol class="ix-cases">
 ${cases}
           </ol>
           <p class="ix-score" data-ix-score hidden></p>
+${w.verdict ? `          <div class="ix-verdict" data-ix-verdict-box hidden><p>${esc(w.verdict)}</p></div>` : ''}
           <p class="wg-note">${esc(w.note)}</p>
         </div>`;
 }

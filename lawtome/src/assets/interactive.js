@@ -140,20 +140,27 @@
     var yes = root.getAttribute('data-yes'), no = root.getAttribute('data-no');
     var cases = root.querySelectorAll('[data-ix-case]');
     var scoreEl = root.querySelector('[data-ix-score]');
-    var right = 0, done = 0;
+    var right = 0, done = 0, answered = 0;
 
     function tell() {
+      if (!scored) return;                 // an all-open scenario keeps no score
       scoreEl.hidden = false;
-      scoreEl.textContent = done < cases.length
+      scoreEl.textContent = done < scored
         ? right + ' of ' + done + ' so far'
-        : 'Final: ' + right + ' of ' + cases.length;
+        : 'Final: ' + right + ' of ' + scored;
     }
+
+    var scored = 0;
+    for (var i = 0; i < cases.length; i++) if (!cases[i].getAttribute('data-open')) scored++;
+    var verdictBox = root.querySelector('[data-ix-verdict-box]');
 
     for (var i = 0; i < cases.length; i++) {
       (function (li) {
+        var isOpen = li.getAttribute('data-open') === '1';
         var want = li.getAttribute('data-answer') === '1';
-        var why = li.querySelector('[data-ix-why]');
-        why.hidden = true;
+        var whys = li.querySelectorAll('[data-ix-why]');
+        for (var w = 0; w < whys.length; w++) whys[w].hidden = true;
+        var why = whys[0];
         var bar = document.createElement('div');
         bar.className = 'ix-choices';
         [[yes, true], [no, false]].forEach(function (pair) {
@@ -164,15 +171,24 @@
           b.addEventListener('click', function () {
             if (li.getAttribute('data-ix-done')) return;
             li.setAttribute('data-ix-done', '1');
-            var ok = pair[1] === want;
-            if (ok) right++;
-            done++;
-            li.setAttribute('data-ix-verdict', ok ? 'right' : 'wrong');
             b.setAttribute('data-ix-picked', '1');
             var all = bar.querySelectorAll('button');
             for (var j = 0; j < all.length; j++) all[j].disabled = true;
-            why.hidden = false;
-            tell();
+            if (isOpen) {
+              // No verdict: show the reading that matches what they chose.
+              var pick = li.querySelector(pair[1] ? '[data-why-yes]' : '[data-why-no]');
+              if (pick) pick.hidden = false;
+              li.setAttribute('data-ix-verdict', 'open');
+            } else {
+              var ok = pair[1] === want;
+              if (ok) right++;
+              done++;
+              li.setAttribute('data-ix-verdict', ok ? 'right' : 'wrong');
+              why.hidden = false;
+              tell();
+            }
+            answered++;
+            if (answered === cases.length && verdictBox) verdictBox.hidden = false;
           });
           bar.appendChild(b);
         });

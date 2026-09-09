@@ -1546,6 +1546,13 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 /* kind: spot. Rendered as a plain numbered list of cases with their
    explanations; the script hides the explanations and adds the buttons. With
    no JavaScript this stays a readable argument rather than an empty box. */
+.ix-scene{margin:0 0 16px;padding:12px 14px;background:var(--bg);border:1px solid var(--line);border-radius:3px}
+.ix-scene-p{margin:0 0 9px;font-size:14px;line-height:1.6;color:var(--read)}
+.ix-scene-p:last-child{margin-bottom:0}
+.ix-verdict{margin:16px 0 0;padding:12px 14px;border-left:2px solid var(--accent);background:var(--bg)}
+.ix-verdict[hidden]{display:none}
+.ix-verdict p{margin:0;font-size:13.5px;line-height:1.6;color:var(--read)}
+.ix-case[data-ix-verdict=open] .ix-case-why{border-left-color:var(--accent)}
 .ix-prompt{margin:0 0 14px;font-family:var(--mono);font-size:11px;letter-spacing:.03em;
   text-transform:uppercase;color:var(--muted)}
 .ix-cases{margin:0;padding:0 0 0 1.4em;display:grid;gap:16px}

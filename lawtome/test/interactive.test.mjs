@@ -69,16 +69,32 @@ test('spot cases are complete', () => {
     assert.ok(w.prompt && w.yesLabel && w.noLabel, `${slug}: missing prompt or labels`);
     assert.ok(w.cases.length >= 4, `${slug}: only ${w.cases.length} cases`);
     for (const c of w.cases) {
-      assert.equal(typeof c.yes, 'boolean', `${slug}: a case has no boolean answer`);
       assert.ok(c.text && c.text.length > 15, `${slug}: a case has no real text`);
-      assert.ok(c.why && c.why.length > 40, `${slug}: a case has no real explanation`);
+      if (c.open) {
+        // An open case must explain BOTH replies, or it is a scored case
+        // pretending to be open.
+        assert.ok(c.whyYes && c.whyYes.length > 40, `${slug}: open case missing whyYes`);
+        assert.ok(c.whyNo && c.whyNo.length > 40, `${slug}: open case missing whyNo`);
+        assert.equal(c.yes, undefined, `${slug}: open case also carries an answer`);
+      } else {
+        assert.equal(typeof c.yes, 'boolean', `${slug}: a case has no boolean answer`);
+        assert.ok(c.why && c.why.length > 40, `${slug}: a case has no real explanation`);
+      }
     }
   }
 });
 
+/* A scenario whose scored cases are the PREMISES of a derivation legitimately
+ * points one way: Gettier needs true, believed and justified all answered yes
+ * before the fourth question can bite. That is a guided argument rather than a
+ * quiz, and the reader is not being tested on it. */
+const DERIVATIONS = new Set(['the-gettier-problem']);
+
 test('spot answers are mixed, so the quiz cannot be gamed', () => {
   for (const slug of spots) {
-    const ans = interactiveFor(slug).cases.map((c) => c.yes);
+    if (DERIVATIONS.has(slug)) continue;
+    const ans = interactiveFor(slug).cases.filter((c) => !c.open).map((c) => c.yes);
+    if (ans.length < 2) continue;          // an all-open scenario keeps no score
     const yes = ans.filter(Boolean).length;
     assert.ok(yes > 0 && yes < ans.length, `${slug}: every answer is the same`);
     // No run of four identical answers, which is the other way to guess right.
@@ -93,7 +109,9 @@ test('spot blocks render every case and every explanation into the HTML', () => 
     const html = interactiveBlock(slug);
     const w = interactiveFor(slug);
     assert.equal((html.match(/ix-case-text/g) || []).length, w.cases.length);
-    assert.equal((html.match(/ix-case-why/g) || []).length, w.cases.length);
+    // An open case renders BOTH readings into the HTML.
+    const whys = w.cases.reduce((n, c) => n + (c.open ? 2 : 1), 0);
+    assert.equal((html.match(/ix-case-why/g) || []).length, whys);
     // Readable with no script at all: nothing is hidden in the served markup.
     assert.ok(!/data-ix-why hidden/.test(html), `${slug}: explanations hidden server-side`);
     assert.ok(html.includes('data-answer='), `${slug}: no answers encoded`);
@@ -231,4 +249,40 @@ test('Campbell: displacement drives the outcome down while the indicator climbs'
 test('the outcome is floored at zero rather than going negative', () => {
   const r = ENGINES['campbells-law']({ cq: 10, cg: 1, d: 0, disp: 100, n: 40 });
   assert.ok(r.series.q.every((x) => x >= 0), 'a real outcome below zero is meaningless');
+});
+
+test('scenario scenes and verdicts are rendered into the HTML', () => {
+  for (const slug of spots) {
+    const w = interactiveFor(slug);
+    const html = interactiveBlock(slug);
+    if (w.scene) {
+      assert.equal((html.match(/ix-scene-p/g) || []).length, w.scene.length,
+        `${slug}: scene paragraphs missing`);
+    }
+    if (w.verdict) assert.ok(html.includes('ix-verdict'), `${slug}: verdict missing`);
+  }
+});
+
+test('open cases exist only where the law genuinely has no single answer', () => {
+  // A scenario whose every case is open teaches nothing checkable; one with
+  // none is a quiz, not a thought experiment. Both are fine, but a scenario
+  // carrying a verdict should have at least one open case to earn it.
+  for (const slug of spots) {
+    const w = interactiveFor(slug);
+    if (!w.verdict) continue;
+    assert.ok(w.cases.some((c) => c.open),
+      `${slug}: has a closing verdict but no open question to reach it`);
+  }
+});
+
+test('a derivation really is one, so the exemption cannot be borrowed', () => {
+  for (const slug of DERIVATIONS) {
+    const w = interactiveFor(slug);
+    const scored = w.cases.filter((c) => !c.open);
+    assert.ok(new Set(scored.map((c) => c.yes)).size === 1,
+      `${slug}: answers are mixed after all, so it should not be exempt`);
+    assert.ok(w.cases.some((c) => c.open),
+      `${slug}: a derivation must end in the open question it was building towards`);
+    assert.ok(w.verdict, `${slug}: a derivation must state what it derived`);
+  }
 });
