@@ -1636,6 +1636,12 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .ix-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:10px 16px;margin:0 0 14px;min-width:0}
 .ix-f{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:10px;align-items:center;min-width:0}
 .ix-lab{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--muted);min-width:0;overflow-wrap:anywhere}
+.ix-f-wide{grid-template-columns:1fr;gap:6px}
+/* cols defaults to 20 characters, which sets an intrinsic min-width and
+   pushes the page sideways below about 300px. */
+.ix-f textarea{width:100%;min-width:0;padding:8px 9px;font-family:var(--mono);font-size:12.5px;line-height:1.6;
+  color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:3px;resize:vertical}
+.ix-f textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
 .ix-f input{width:100%;padding:6px 8px;font-family:var(--mono);font-size:14px;color:var(--ink);
   background:var(--bg);border:1px solid var(--line);border-radius:3px}
 .ix-f input:focus{outline:2px solid var(--accent);outline-offset:1px}

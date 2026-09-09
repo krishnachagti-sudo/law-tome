@@ -140,6 +140,147 @@
         },
       };
     },
+    'the-cook-levin-theorem': function (f) {
+      var src = String(f.f || '').trim();
+      if (!src) return { error: 'Type a formula, for example (a | b) & (!a | c).' };
+      // Parentheses are only grouping here, since & and | fix the structure of
+      // conjunctive normal form. But an unbalanced one is a typo, and silently
+      // reinterpreting somebody's formula is worse than refusing it.
+      var depth = 0;
+      for (var c = 0; c < src.length; c++) {
+        if (src.charAt(c) === '(') depth++;
+        else if (src.charAt(c) === ')') depth--;
+        if (depth < 0) return { error: 'A closing bracket with nothing open before it.' };
+      }
+      if (depth !== 0) return { error: 'Unbalanced brackets: ' + depth + ' left open.' };
+      // Clauses are separated by &; literals inside a clause by |. Anything
+      // else is refused rather than guessed at.
+      var chunks = src.split('&');
+      var clauses = [], vars = [], seen = {};
+      for (var i = 0; i < chunks.length; i++) {
+        var body = chunks[i].replace(/[()]/g, '').trim();
+        if (!body) return { error: 'Empty clause near "&". Every clause needs at least one literal.' };
+        var lits = body.split('|'), clause = [];
+        for (var j = 0; j < lits.length; j++) {
+          var t = lits[j].trim();
+          if (!t) return { error: 'Empty literal near "|" in clause ' + (i + 1) + '.' };
+          var neg = false;
+          while (t.charAt(0) === '!' || t.charAt(0) === '~' || t.charAt(0) === '-') {
+            neg = !neg; t = t.slice(1).trim();
+          }
+          if (!/^[A-Za-z][A-Za-z0-9_]*$/.test(t)) {
+            return { error: 'Not a variable name: "' + t + '". Use letters, and ! for negation.' };
+          }
+          if (!(t in seen)) { seen[t] = vars.length; vars.push(t); }
+          clause.push({ v: seen[t], neg: neg });
+        }
+        clauses.push(clause);
+      }
+      if (vars.length > 16) {
+        return { error: vars.length + ' variables is 2^' + vars.length
+          + ' assignments. Capped at sixteen, which is where a web page should stop pretending.' };
+      }
+      var total = Math.pow(2, vars.length), tried = 0, model = null;
+      for (var a = 0; a < total; a++) {
+        tried++;
+        var ok = true;
+        for (i = 0; i < clauses.length && ok; i++) {
+          var sat = false;
+          for (j = 0; j < clauses[i].length; j++) {
+            var bit = (a >> clauses[i][j].v) & 1;
+            if ((bit === 1) !== clauses[i][j].neg) { sat = true; break; }
+          }
+          if (!sat) ok = false;
+        }
+        if (ok) { model = a; break; }
+      }
+      var work = [
+        vars.length + ' variables, ' + clauses.length + ' clauses, ' + total + ' possible assignments.',
+      ];
+      if (model === null) {
+        work.push('Every one of the ' + tried + ' assignments was tried and every one falsified some clause.');
+        work.push('Verifying that would still be quick if someone handed you a satisfying assignment. Showing there is none took the whole search.');
+        return { result: 'Unsatisfiable.', work: work };
+      }
+      var parts = [];
+      for (i = 0; i < vars.length; i++) parts.push(vars[i] + ' = ' + (((model >> i) & 1) ? 'true' : 'false'));
+      work.push('Found on assignment ' + tried + ' of ' + total + '.');
+      work.push('Checking it: ' + clauses.length + ' clauses, one substitution each. That is the asymmetry the theorem is about.');
+      return { result: 'Satisfiable with ' + parts.join(', '), work: work };
+    },
+    'lamports-happened-before-relation': function (f) {
+      var lines = String(f.f || '').split('\n');
+      var procs = [], msgs = [], evOrder = [], home = {};
+      for (var i = 0; i < lines.length; i++) {
+        var line = lines[i].trim();
+        if (!line) continue;
+        var pm = line.match(/^([A-Za-z][A-Za-z0-9_]*)\s*:\s*(.+)$/);
+        if (pm) {
+          var evs = pm[2].trim().split(/[\s,]+/);
+          for (var j = 0; j < evs.length; j++) {
+            if (!/^[A-Za-z][A-Za-z0-9_]*$/.test(evs[j])) {
+              return { error: 'Not an event name: "' + evs[j] + '".' };
+            }
+            if (evs[j] in home) return { error: 'Event "' + evs[j] + '" appears twice.' };
+            home[evs[j]] = procs.length;
+            evOrder.push(evs[j]);
+          }
+          procs.push({ name: pm[1], events: evs });
+          continue;
+        }
+        var mm = line.match(/^([A-Za-z][A-Za-z0-9_]*)\s*->\s*([A-Za-z][A-Za-z0-9_]*)$/);
+        if (mm) { msgs.push([mm[1], mm[2]]); continue; }
+        return { error: 'Cannot read "' + line + '". Use "P1: a b c" for a process, or "b->d" for a message.' };
+      }
+      if (!procs.length) return { error: 'Describe at least one process, as "P1: a b c".' };
+      for (i = 0; i < msgs.length; i++) {
+        if (!(msgs[i][0] in home)) return { error: 'Message from unknown event "' + msgs[i][0] + '".' };
+        if (!(msgs[i][1] in home)) return { error: 'Message to unknown event "' + msgs[i][1] + '".' };
+        if (home[msgs[i][0]] === home[msgs[i][1]]) {
+          return { error: '"' + msgs[i][0] + '" and "' + msgs[i][1]
+            + '" are in the same process, so that is local order rather than a message.' };
+        }
+      }
+      var n = evOrder.length, idx = {};
+      for (i = 0; i < n; i++) idx[evOrder[i]] = i;
+      var hb = [];
+      for (i = 0; i < n; i++) { hb.push([]); for (var k = 0; k < n; k++) hb[i].push(false); }
+      // Local order within each process.
+      for (i = 0; i < procs.length; i++) {
+        var e = procs[i].events;
+        for (j = 0; j < e.length; j++) for (k = j + 1; k < e.length; k++) hb[idx[e[j]]][idx[e[k]]] = true;
+      }
+      // Each send precedes its receive.
+      for (i = 0; i < msgs.length; i++) hb[idx[msgs[i][0]]][idx[msgs[i][1]]] = true;
+      // Transitive closure (Floyd-Warshall over booleans).
+      for (k = 0; k < n; k++) for (i = 0; i < n; i++) {
+        if (hb[i][k]) for (j = 0; j < n; j++) if (hb[k][j]) hb[i][j] = true;
+      }
+      for (i = 0; i < n; i++) if (hb[i][i]) {
+        return { error: 'Those messages make a cycle through ' + evOrder[i]
+          + ', so an event would have to precede itself. Check the arrows.' };
+      }
+      var conc = [], ordered = 0;
+      for (i = 0; i < n; i++) for (j = i + 1; j < n; j++) {
+        if (hb[i][j] || hb[j][i]) ordered++;
+        else conc.push(evOrder[i] + ' | ' + evOrder[j]);
+      }
+      var pairs = n * (n - 1) / 2;
+      var work = [
+        n + ' events across ' + procs.length + ' processes, ' + msgs.length + ' messages, ' + pairs + ' pairs.',
+        'Ordered by the relation: ' + ordered + '. Concurrent: ' + conc.length + '.',
+      ];
+      if (conc.length) {
+        work.push('Concurrent pairs: ' + conc.join(',  '));
+        work.push('For each of those, no observer inside the system can say which came first, and neither order contradicts anything anyone saw.');
+      } else {
+        work.push('Every pair is ordered, so this run happens to have a single consistent timeline.');
+      }
+      return {
+        result: conc.length + ' of ' + pairs + ' pairs are concurrent',
+        work: work,
+      };
+    },
     'the-chinese-remainder-theorem': function (f) {
       var pairs = [], i;
       for (i = 0; i < 3; i++) {
@@ -539,7 +680,7 @@
     if (root.className.indexOf('ix-sim') !== -1) return wireSim(root);
     var run = ENGINES[slug];
     if (!run) return;
-    var fields = root.querySelectorAll('input[data-ix]');
+    var fields = root.querySelectorAll('input[data-ix], textarea[data-ix]');
     var msg = root.querySelector('[data-ix-msg]');
     var outResult = root.querySelector('[data-ix-out="result"]');
     var outWork = root.querySelector('[data-ix-out="work"]');
@@ -547,7 +688,9 @@
     function go() {
       var f = {}, i;
       for (i = 0; i < fields.length; i++) {
-        f[fields[i].getAttribute('data-ix')] = parseFloat(fields[i].value);
+        var el = fields[i];
+        f[el.getAttribute('data-ix')] = el.tagName === 'TEXTAREA'
+          ? el.value : parseFloat(el.value);
       }
       var res;
       try { res = run(f); } catch (e) { return; }

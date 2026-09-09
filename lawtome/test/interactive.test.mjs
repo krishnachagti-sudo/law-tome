@@ -453,3 +453,91 @@ test('the planning fallacy reports the reader, not a population', () => {
       'a probe must not report a population finding as though it measured the reader');
   }
 });
+
+const SAT = (f) => ENGINES['the-cook-levin-theorem']({ f });
+const HB = (f) => ENGINES['lamports-happened-before-relation']({ f });
+
+test('SAT: satisfiable formulas get an assignment that actually satisfies them', () => {
+  const cases = [
+    '(a | b | !c) & (!a | c) & (!b | !c) & (a | !b)',
+    'a',
+    '(a | b) & (b | c) & (c | a)',
+    '(!a | !b) & (a | b)',
+  ];
+  for (const f of cases) {
+    const r = SAT(f);
+    assert.ok(!r.error, `${f}: ${r.error}`);
+    assert.match(r.result, /^Satisfiable/, f);
+    // Re-check the model independently of the solver that produced it.
+    const model = {};
+    for (const m of r.result.replace('Satisfiable with ', '').split(', ')) {
+      const [k, v] = m.split(' = ');
+      model[k] = v === 'true';
+    }
+    for (const clause of f.split('&')) {
+      const lits = clause.replace(/[()]/g, '').trim().split('|');
+      const ok = lits.some((t) => {
+        t = t.trim();
+        let neg = false;
+        while ('!~-'.includes(t[0])) { neg = !neg; t = t.slice(1).trim(); }
+        return model[t] !== neg;
+      });
+      assert.ok(ok, `${f}: returned model falsifies clause ${clause.trim()}`);
+    }
+  }
+});
+
+test('SAT: unsatisfiable formulas are reported as such, not guessed at', () => {
+  for (const f of ['a & !a', '(a | b) & (!a | b) & (a | !b) & (!a | !b)']) {
+    assert.equal(SAT(f).result, 'Unsatisfiable.', f);
+  }
+});
+
+test('SAT refuses malformed input rather than reinterpreting it', () => {
+  const bad = ['a & & b', '(a|b) & (1x|c)', '(a | b', 'a|b)', '', 'a | '];
+  for (const f of bad) assert.ok(SAT(f).error, `should have refused: "${f}"`);
+});
+
+test('SAT caps the search rather than hanging the page', () => {
+  const many = Array.from({ length: 20 }, (_, i) => `v${i}`).join(' | ');
+  assert.match(SAT(many).error, /sixteen/);
+});
+
+test('happened-before: concurrency is computed, and matches a hand count', () => {
+  // P1 a<b<c, P2 d<e<f, P3 g<h, with b->d, e->c, g->e.
+  const r = HB('P1: a b c\nP2: d e f\nP3: g h\nb->d\ne->c\ng->e');
+  assert.ok(!r.error, r.error);
+  assert.equal(r.result, '10 of 28 pairs are concurrent');
+  // Spot-check the relation itself: a precedes f through b->d, and a is
+  // concurrent with everything on P3 because no message reaches it.
+  assert.match(r.work[2], /a \| g/);
+  assert.match(r.work[2], /a \| h/);
+  assert.ok(!/a \| f/.test(r.work[2]), 'a precedes f via the message, so they are not concurrent');
+});
+
+test('happened-before: a fully connected run has no concurrency', () => {
+  const r = HB('P1: a b\nP2: c d\nb->c');
+  assert.equal(r.result, '0 of 6 pairs are concurrent');
+});
+
+test('happened-before refuses cycles, self-messages and unknown events', () => {
+  assert.match(HB('P1: a b\nP2: c d\nb->c\nd->a').error, /cycle/);
+  assert.match(HB('P1: a b\na->b').error, /same process/);
+  assert.match(HB('P1: a b\nP2: c\nb->z').error, /unknown event/);
+  assert.match(HB('P1: a b\nP2: b c').error, /twice/);
+  assert.match(HB('nonsense line').error, /Cannot read/);
+  assert.match(HB('').error, /at least one process/);
+});
+
+test('happened-before is a partial order: nothing precedes itself', () => {
+  // Any acyclic input must produce ordered + concurrent = every pair, exactly.
+  for (const f of ['P1: a b c\nP2: d e\nb->d',
+                   'P1: a\nP2: b\nP3: c',
+                   'P1: a b c d\nP2: e f\na->e\nf->d']) {
+    const r = HB(f);
+    assert.ok(!r.error, `${f}: ${r.error}`);
+    const [, conc, pairs] = r.result.match(/^(\d+) of (\d+)/).map(Number);
+    const ordered = Number(r.work[1].match(/Ordered by the relation: (\d+)/)[1]);
+    assert.equal(ordered + conc, pairs, `${f}: pairs do not add up`);
+  }
+});

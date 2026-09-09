@@ -411,6 +411,38 @@ const INTERACTIVES = {
     ],
     note: 'The first question invites the inside view: you simulate the work and add up the steps, and the simulation contains no interruptions, because you cannot picture the ones you have not had yet. The last two invite the outside view, which already contains every interruption that actually occurred. The gap between your own two answers is the fallacy, measured on you.',
   },
+
+  'the-cook-levin-theorem': {
+    kind: 'solver',
+    title: 'Solve one',
+    lede: 'Satisfiability was the first problem proved NP-complete, which means every problem whose answer is quick to CHECK can be rewritten as one of these. Type a formula and watch the asymmetry: verifying an assignment is one substitution, finding one is a search.',
+    identity: 'SAT is NP-complete: easy to check, no known way to find',
+    symbols: [
+      { sym: '&', means: 'AND, between clauses' },
+      { sym: '|', means: 'OR, inside a clause' },
+      { sym: '!', means: 'NOT, before a variable' },
+    ],
+    fields: [
+      { id: 'f', type: 'text', rows: 4, label: 'A formula in conjunctive normal form',
+        value: '(a | b | !c) & (!a | c) & (!b | !c) & (a | !b)' },
+    ],
+    note: 'Brute force over every assignment, which is the honest method: no solver known to anyone does essentially better in the worst case, and whether one can is the P versus NP question. Capped at sixteen variables, because 2^16 is the point where a page should stop pretending.',
+  },
+  'lamports-happened-before-relation': {
+    kind: 'solver',
+    title: 'Build one',
+    lede: 'Without a shared clock, "before" is not a total order. Two events can be genuinely incomparable, and the relation tells you exactly which. Describe the processes and the messages between them.',
+    identity: 'a -> b if same process and earlier, or a is a send and b its receive, or by transitivity',
+    symbols: [
+      { sym: 'P1: a b c', means: 'A process and its events, in local order' },
+      { sym: 'b->d', means: 'Event b sends a message received at d' },
+    ],
+    fields: [
+      { id: 'f', type: 'text', rows: 5, label: 'Processes, one per line, then the messages',
+        value: 'P1: a b c\nP2: d e f\nP3: g h\nb->d\ne->c\ng->e' },
+    ],
+    note: 'Everything the relation can know comes from local order and message passing. Any pair it leaves unordered is concurrent, and no observer inside the system can say which happened first. Lamport built vector clocks to carry exactly this information.',
+  },
 };
 
 export function interactiveSlugs() {
@@ -594,12 +626,24 @@ export function interactiveBlock(slug) {
   if (w.kind === 'demo') return demoBlock(slug, w);
   if (w.kind === 'probe') return probeBlock(slug, w);
   const key = keyBlock(w);
-  const fields = w.fields.map((f) => `            <label class="ix-f">
+  const fields = w.fields.map((f) => {
+    // A text field is for input with structure a number cannot carry: a
+    // boolean formula, a set of events and the messages between them. It is
+    // parsed and validated by the engine, which refuses rather than guesses.
+    if (f.type === 'text') {
+      return `            <label class="ix-f ix-f-wide">
+              <span class="ix-lab">${esc(f.label)}</span>
+              <textarea data-ix="${esc(f.id)}" rows="${f.rows || 3}" spellcheck="false"
+                        aria-label="${esc(f.label)}">${esc(f.value)}</textarea>
+            </label>`;
+    }
+    return `            <label class="ix-f">
               <span class="ix-lab">${esc(f.label)}</span>
               <input type="number" inputmode="numeric" data-ix="${esc(f.id)}"
                      value="${f.value}" min="${f.min}" max="${f.max}" step="1"
                      aria-label="${esc(f.label)}">
-            </label>`).join('\n');
+            </label>`;
+  }).join('\n');
   return `        <div class="interactive" data-interactive="${esc(slug)}">
           <p class="wg-lede">${esc(w.lede)}</p>
 ${key}
