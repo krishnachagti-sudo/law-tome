@@ -131,6 +131,51 @@ const KNOWN = [
   ['the-photoelectric-effect', { lam: 400, phi: 2.3 }, 'ke', 0.79960, 0.001],
   ['the-bohr-model', { n1: 3, n2: 2 }, 'de', 1.88968, 0.001],
   ['the-rydberg-formula', { n1: 2, n2: 3 }, 'lam', 656.11, 0.001],
+  // Wave 6: closed forms outside the hard sciences.
+  ['sods-law', { p: 1, n: 100 }, 'atl', 63.397],
+  ['the-prevention-paradox', { base: 2, rrr: 25, pop: 1e6 }, 'nnt', 200],
+  ['the-prevention-paradox', { base: 2, rrr: 25, pop: 1e6 }, 'saved', 5000],
+  ['the-abc-conjecture', { a: 1, b: 8 }, 'rad', 6],
+  ['the-abc-conjecture', { a: 1, b: 8 }, 'q', 1.22629],
+  ['the-abc-conjecture', { a: 2, b: 4 }, 'cop', 0],
+  ['the-marginal-value-theorem', { t: 8, k: 2, g: 100 }, 'ts', 4],
+  ['the-shannon-hartley-theorem', { b: 1e6, snr: 30 }, 'c', 9966742, 0.001],
+  ['gustafsons-law', { s: 10, n: 64 }, 'sc', 57.7],
+  ['gustafsons-law', { s: 10, n: 64 }, 'am', 8.7671],
+  ['berksons-paradox', { pa: 20, pb: 20 }, 'nb', 100],
+  ['brooks-law', { n: 10, add: 5 }, 'p0', 45],
+  ['the-experience-curve', { c1: 100, b: 80, n: 2 }, 'cn', 80],
+  ['the-kardashev-scale', { p: 1e16 }, 'k', 1],
+  ['koomeys-law', { y: 15.7 }, 'g', 1024],
+  ['the-winners-curse', { n: 10, s: 100, v: 10000 }, 'ov', 81.818],
+  ['the-friendship-paradox', { m: 10, sd: 10 }, 'fm', 20],
+  ['the-inspection-paradox', { m: 10, sd: 10 }, 'w', 10],
+  ['reillys-law-of-retail-gravitation', { d: 100, pa: 1e5, pb: 25000 }, 'da', 66.667],
+  ['byzantine-fault-tolerance', { n: 4 }, 'f', 1],
+  ['byzantine-fault-tolerance', { n: 3 }, 'ok', 0],
+  ['littlewoods-law', { r: 1e6, e: 1, h: 8 }, 'd', 34.722],
+  ['braess-paradox', { n: 4000, f: 45, d: 100 }, 'b', 65],
+  ['braess-paradox', { n: 4000, f: 45, d: 100 }, 'a', 80],
+  ['the-pythagorean-comma', { n: 12 }, 'c', 23.460, 0.001],
+  ['condorcets-jury-theorem', { n: 3, p: 60 }, 'maj', 64.8],
+  ['condorcets-jury-theorem', { n: 101, p: 50 }, 'maj', 50],
+  ['regression-to-the-mean', { m: 100, sd: 15, x: 130, r: 0.7 }, 'e', 121],
+  ['fitts-law', { d: 200, w: 20, a: 0, b: 100 }, 'id', 4.32193],
+  ['omoris-law', { k: 100, c: 0.1, t: 1 }, 'cum', 239.79],
+  // 2^(1/0.33) is 8.170, not the 8.217 I first wrote by hand.
+  ['stevens-power-law', { a: 0.33, i: 10 }, 'dbl', 8.16981, 0.001],
+  ['goldbachs-conjecture', { n: 100 }, 'ways', 6],
+  ['goldbachs-conjecture', { n: 4 }, 'ways', 1],
+  ['the-price-equation', { p: 50, wa: 1.2, wb: 0.8, za: 1, zb: 0 }, 'dz', 0.1],
+  ['the-shapley-value', { va: 10, vb: 20, vab: 50 }, 'pa', 20],
+  ['paris-law', { dk: 10, c: 1e-12, m: 3 }, 'cyc', 1e6],
+  ['the-faber-jackson-relation', { s1: 100, s2: 200 }, 'r', 16],
+  ['bergmanns-rule', { m1: 1, m2: 8 }, 'r', 0.5],
+  ['engels-law', { y0: 2000, dy: 50, f0: 40, df: 10 }, 'el', 0.2],
+  // A ten-fold text multiplies vocabulary by 10^0.49 = 3.09, i.e. +209%.
+  ['heaps-law', { n: 1e6, k: 44, b: 0.49 }, 'gain', 209.0295, 0.001],
+  ['the-bus-factor', { n: 10, k: 2, p: 15 }, 'ps', 45.570, 0.001],
+  ['the-jeans-instability', { t: 10, n: 1e4, mu: 2.33 }, 'mj', 5.375, 0.02],
 ];
 
 test('known values, checked against the literature', () => {
@@ -139,5 +184,36 @@ test('known values, checked against the literature', () => {
     const got = LAWS[slug](input)[key];
     const ok = want === 0 ? Math.abs(got) < 1e-9 : Math.abs(got - want) / Math.abs(want) <= tol;
     assert.ok(ok, `${slug}.${key}: got ${got}, expected ${want}`);
+  }
+});
+
+/* A slider that changes nothing is a lie about the law: it invites the reader
+ * to explore a variable the arithmetic ignores. Berkson's paradox shipped with
+ * a second trait-rate slider wired to no output at all.
+ *
+ * The exception is a law whose whole content is that the variable does NOT
+ * matter. Fermat's little theorem returns 1 for every base when p is prime,
+ * and the frozen readout is the demonstration. */
+const FROZEN_ON_PURPOSE = new Set(['fermats-little-theorem:a']);
+test('every slider actually moves something', () => {
+  for (const [slug, w] of specs) {
+    const base = LAWS[slug](defaults(w));
+    for (const i of w.inputs) {
+      const probe = defaults(w);
+      // Nudge within the declared range, away from whichever end we sit on.
+      const span = i.max - i.min;
+      probe[i.id] = i.value + (i.value + span * 0.37 <= i.max ? span * 0.37 : -span * 0.37);
+      const after = LAWS[slug](probe);
+      const moved = w.outputs.some((o) => {
+        const a = base[o.id], b = after[o.id];
+        if (Number.isNaN(a) && Number.isNaN(b)) return false;
+        return a !== b;
+      });
+      if (FROZEN_ON_PURPOSE.has(`${slug}:${i.id}`)) {
+        assert.ok(!moved, `${slug}: "${i.id}" now moves an output, so the allowlist entry is stale`);
+        continue;
+      }
+      assert.ok(moved, `${slug}: moving "${i.id}" changes no output`);
+    }
   }
 });

@@ -565,6 +565,211 @@
       var q = v.q * 1e-9, eps = 8.8541878128e-12;
       return { e: q / (4 * Math.PI * eps * v.r * v.r), fl: q / eps };
     },
+    'sods-law': function (v) {
+      var p = v.p / 100, n = Math.round(v.n);
+      return { atl: (1 - Math.pow(1 - p, n)) * 100, exp: n * p,
+               half: p > 0 && p < 1 ? Math.log(0.5) / Math.log(1 - p) : NaN };
+    },
+    'the-prevention-paradox': function (v) {
+      var arr = (v.base / 100) * (v.rrr / 100);
+      return { arr: arr * 100, nnt: arr > 0 ? 1 / arr : NaN, saved: arr * v.pop };
+    },
+    'the-abc-conjecture': function (v) {
+      var a = Math.round(v.a), b = Math.round(v.b), c = a + b;
+      var gcd = function (x, y) { while (y) { var t = x % y; x = y; y = t; } return x; };
+      if (gcd(a, b) !== 1) return { c: c, rad: NaN, q: NaN, cop: 0 };
+      // rad is the product of the DISTINCT primes dividing abc, so each prime
+      // counts once however many times it divides.
+      var rad = 1, m = a * b * c;
+      for (var f = 2; f * f <= m; f++) {
+        if (m % f === 0) { rad *= f; while (m % f === 0) m /= f; }
+      }
+      if (m > 1) rad *= m;
+      return { c: c, rad: rad, q: rad > 1 ? Math.log(c) / Math.log(rad) : NaN, cop: 1 };
+    },
+    'the-marginal-value-theorem': function (v) {
+      // Maximising g(t)/(T+t) for g = G t/(k+t) gives t* = sqrt(k T) exactly.
+      var ts = Math.sqrt(v.k * v.t);
+      var got = v.g * ts / (v.k + ts);
+      return { ts: ts, rate: got / (v.t + ts), got: got };
+    },
+    'the-shannon-hartley-theorem': function (v) {
+      var snr = Math.pow(10, v.snr / 10);
+      var eff = Math.log(1 + snr) / Math.LN2;
+      return { c: v.b * eff, eff: eff };
+    },
+    'gustafsons-law': function (v) {
+      var s = v.s / 100, n = Math.round(v.n);
+      var sc = n - s * (n - 1);
+      var am = 1 / (s + (1 - s) / n);
+      return { sc: sc, am: am, gap: sc / am };
+    },
+    'the-time-hierarchy-theorem': function (v) {
+      var f = Math.pow(v.n, v.a);
+      var lg = Math.log(f) / Math.LN2;
+      return { f: f, fl: f * lg, r: lg };
+    },
+    'berksons-paradox': function (v) {
+      // A and B independent in the world. Admit anyone with either. Inside the
+      // admitted group, lacking B GUARANTEES A, because that is the only other
+      // way through the door.
+      var pa = v.pa / 100, pb = v.pb / 100;
+      return { base: v.pa, adm: (pa + pb - pa * pb) * 100, wb: v.pa, nb: 100 };
+    },
+    'brooks-law': function (v) {
+      var n = Math.round(v.n), a = Math.round(v.add);
+      var p0 = n * (n - 1) / 2, p1 = (n + a) * (n + a - 1) / 2;
+      return { p0: p0, p1: p1, gr: p0 > 0 ? (p1 / p0 - 1) * 100 : NaN };
+    },
+    'the-experience-curve': function (v) {
+      var e = Math.log(v.b / 100) / Math.LN2;
+      var cn = v.c1 * Math.pow(v.n, e);
+      return { cn: cn, drop: (1 - cn / v.c1) * 100, dbl: Math.log(v.n) / Math.LN2 };
+    },
+    'the-kardashev-scale': function (v) {
+      var k = (Math.log(v.p) / Math.LN10 - 6) / 10;
+      return { k: k, t1: Math.pow(10, 16) / v.p };
+    },
+    'koomeys-law': function (v) {
+      var d = v.y / 1.57, g = Math.pow(2, d);
+      return { g: g, d: d, e: 100 / g };
+    },
+    'the-winners-curse': function (v) {
+      var n = Math.round(v.n);
+      // Estimates spread uniformly either side of the truth; the winner is the
+      // highest of n draws, and E[max] sits (n-1)/(n+1) of the way to the top.
+      var ov = v.s * (n - 1) / (n + 1);
+      return { ov: ov, bid: v.v + ov, pc: ov / v.v * 100 };
+    },
+    'the-friendship-paradox': function (v) {
+      var fm = v.m + (v.sd * v.sd) / v.m;
+      return { fm: fm, gap: fm - v.m, pc: (fm / v.m - 1) * 100 };
+    },
+    'the-inspection-paradox': function (v) {
+      var ob = v.m + (v.sd * v.sd) / v.m;
+      return { ob: ob, w: ob / 2, nv: v.m / 2 };
+    },
+    'reillys-law-of-retail-gravitation': function (v) {
+      var da = v.d / (1 + Math.sqrt(v.pb / v.pa));
+      return { da: da, db: v.d - da, sh: da / v.d * 100 };
+    },
+    'byzantine-fault-tolerance': function (v) {
+      var n = Math.round(v.n), f = Math.floor((n - 1) / 3);
+      return { f: f, q: 2 * f + 1, ok: f >= 1 ? 1 : 0 };
+    },
+    'littlewoods-law': function (v) {
+      var per = v.e * v.h * 3600;
+      return { d: v.r / per, y: per * 365 / v.r, n: per };
+    },
+    'braess-paradox': function (v) {
+      // Two symmetric routes, each one congested leg plus one fixed leg. The
+      // shortcut lets everyone take BOTH congested legs, which is individually
+      // rational and collectively worse.
+      var before = v.f + (v.n / 2) / v.d;
+      var after = 2 * v.n / v.d;
+      return { b: before, a: after, w: (after / before - 1) * 100 };
+    },
+    'the-pythagorean-comma': function (v) {
+      var n = Math.round(v.n), lf = Math.log(1.5) / Math.LN2;
+      var oct = n * lf, near = Math.round(oct), diff = oct - near;
+      return { c: diff * 1200, r: Math.pow(2, diff), o: near };
+    },
+    'condorcets-jury-theorem': function (v) {
+      var n = Math.round(v.n), p = v.p / 100;
+      if (n % 2 === 0) n += 1;                       // a tie has no majority
+      // Binomial tail above n/2, built forward so no factorial is formed.
+      var term = Math.pow(1 - p, n), sum = 0;
+      for (var i = 0; i <= n; i++) {
+        if (i > n / 2) sum += term;
+        term = term * (p / (1 - p)) * (n - i) / (i + 1);
+      }
+      return { maj: sum * 100, gain: (sum - p) * 100 };
+    },
+    'regression-to-the-mean': function (v) {
+      var e = v.m + v.r * (v.x - v.m);
+      return { e: e, d: e - v.x, z: v.sd > 0 ? (v.x - v.m) / v.sd : NaN };
+    },
+    'fitts-law': function (v) {
+      var id = Math.log(2 * v.d / v.w) / Math.LN2;
+      var idw = Math.log(2 * v.d / (2 * v.w)) / Math.LN2;
+      return { id: id, mt: v.a + v.b * id, dbl: v.a + v.b * idw };
+    },
+    'omoris-law': function (v) {
+      var n = v.k / (v.c + v.t);
+      return { n: n, cum: v.k * Math.log((v.c + v.t) / v.c), half: n / (v.k / v.c) * 100 };
+    },
+    'stevens-power-law': function (v) {
+      return { psi: Math.pow(v.i, v.a),
+               dbl: Math.pow(2, 1 / v.a),
+               half: Math.pow(0.5, 1 / v.a) };
+    },
+    'goldbachs-conjecture': function (v) {
+      var n = Math.round(v.n); if (n % 2) n += 1;
+      var sieve = [], i, j;
+      for (i = 0; i <= n; i++) sieve.push(i >= 2);
+      for (i = 2; i * i <= n; i++) if (sieve[i]) for (j = i * i; j <= n; j += i) sieve[j] = false;
+      var ways = 0, first = NaN, second = NaN;
+      for (i = 2; i <= n / 2; i++) {
+        if (sieve[i] && sieve[n - i]) { ways++; if (isNaN(first)) { first = i; second = n - i; } }
+      }
+      return { ways: ways, p: first, q: second };
+    },
+    'the-price-equation': function (v) {
+      var p = v.p / 100;
+      var wbar = p * v.wa + (1 - p) * v.wb;
+      var dz = wbar > 0 ? p * (1 - p) * (v.wa - v.wb) * (v.za - v.zb) / wbar : NaN;
+      return { wbar: wbar, dz: dz, pn: wbar > 0 ? p * v.wa / wbar * 100 : NaN };
+    },
+    'the-shapley-value': function (v) {
+      var s = v.vab - v.va - v.vb;
+      return { pa: v.va + s / 2, pb: v.vb + s / 2, s: s };
+    },
+    'paris-law': function (v) {
+      var da = v.c * Math.pow(v.dk, v.m);
+      // A tenth more load raises dK a tenth, and life falls as 1.1^-m.
+      return { da: da, cyc: da > 0 ? 0.001 / da : Infinity, up: Math.pow(1.1, -v.m) * 100 };
+    },
+    'the-faber-jackson-relation': function (v) {
+      var r = Math.pow(v.s2 / v.s1, 4);
+      return { r: r, mag: 2.5 * Math.log(r) / Math.LN10 };
+    },
+    'bergmanns-rule': function (v) {
+      var lin = Math.pow(v.m2 / v.m1, 1 / 3);
+      var r = 1 / lin;                       // surface per unit mass goes as M^(-1/3)
+      return { r: r, lin: lin, sv: (1 - r) * 100 };
+    },
+    'engels-law': function (v) {
+      var el = v.dy > 0 ? v.df / v.dy : NaN;
+      var f0 = v.y0 * v.f0 / 100;
+      var sh = f0 * (1 + v.df / 100) / (v.y0 * (1 + v.dy / 100)) * 100;
+      return { el: el, sh: sh, nec: el < 1 ? 1 : 0 };
+    },
+    'heaps-law': function (v) {
+      var f = function (n) { return v.k * Math.pow(n, v.b); };
+      return { v: f(v.n), ten: f(v.n * 10), gain: (Math.pow(10, v.b) - 1) * 100 };
+    },
+    'brandolinis-law': function (v) {
+      var r = v.t * v.k;
+      return { r: r, need: v.k, day: v.h * 60 / v.t };
+    },
+    'the-bus-factor': function (v) {
+      var n = Math.round(v.n), k = Math.round(v.k), p = v.p / 100;
+      if (k > n) return { ps: 0, yrs: Infinity, exp: n * p };
+      var term = Math.pow(1 - p, n), cum = 0;
+      for (var i = 0; i < k; i++) { cum += term; term = term * (p / (1 - p)) * (n - i) / (i + 1); }
+      var ps = 1 - cum;
+      return { ps: ps * 100, yrs: ps > 0 && ps < 1 ? Math.log(0.5) / Math.log(1 - ps) : NaN,
+               exp: n * p };
+    },
+    'the-jeans-instability': function (v) {
+      var k = 1.380649e-23, G = 6.67430e-11, mH = 1.6735575e-27;
+      var rho = v.n * 1e6 * v.mu * mH;                 // per cm3 -> per m3
+      var mj = Math.pow(5 * k * v.t / (G * v.mu * mH), 1.5)
+             * Math.pow(3 / (4 * Math.PI * rho), 0.5);
+      var cs = Math.sqrt(5 * k * v.t / (3 * v.mu * mH));
+      var lj = cs * Math.sqrt(Math.PI / (G * rho));
+      return { mj: mj / 1.98892e30, lj: lj / 3.0857e16 };
+    },
     'bayes-theorem': function (v) {
       var pr = v.prior / 100, se = v.sens / 100, sp = v.spec / 100;
       var tp = pr * se, fp = (1 - pr) * (1 - sp);
