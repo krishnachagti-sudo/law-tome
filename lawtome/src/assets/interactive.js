@@ -71,8 +71,58 @@
     },
   };
 
+  /* kind: spot. The cases and their explanations are already in the page and
+   * readable with no script at all. This turns that list into a quiz: hide the
+   * explanations, add two buttons per case, reveal on answer, keep score.
+   * Nothing is inserted that was not already served. */
+  function wireSpot(root) {
+    var yes = root.getAttribute('data-yes'), no = root.getAttribute('data-no');
+    var cases = root.querySelectorAll('[data-ix-case]');
+    var scoreEl = root.querySelector('[data-ix-score]');
+    var right = 0, done = 0;
+
+    function tell() {
+      scoreEl.hidden = false;
+      scoreEl.textContent = done < cases.length
+        ? right + ' of ' + done + ' so far'
+        : 'Final: ' + right + ' of ' + cases.length;
+    }
+
+    for (var i = 0; i < cases.length; i++) {
+      (function (li) {
+        var want = li.getAttribute('data-answer') === '1';
+        var why = li.querySelector('[data-ix-why]');
+        why.hidden = true;
+        var bar = document.createElement('div');
+        bar.className = 'ix-choices';
+        [[yes, true], [no, false]].forEach(function (pair) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'ix-choice';
+          b.textContent = pair[0];
+          b.addEventListener('click', function () {
+            if (li.getAttribute('data-ix-done')) return;
+            li.setAttribute('data-ix-done', '1');
+            var ok = pair[1] === want;
+            if (ok) right++;
+            done++;
+            li.setAttribute('data-ix-verdict', ok ? 'right' : 'wrong');
+            b.setAttribute('data-ix-picked', '1');
+            var all = bar.querySelectorAll('button');
+            for (var j = 0; j < all.length; j++) all[j].disabled = true;
+            why.hidden = false;
+            tell();
+          });
+          bar.appendChild(b);
+        });
+        li.insertBefore(bar, why);
+      }(cases[i]));
+    }
+  }
+
   function wire(root) {
     var slug = root.getAttribute('data-interactive');
+    if (root.className.indexOf('ix-spot') !== -1) return wireSpot(root);
     var run = ENGINES[slug];
     if (!run) return;
     var fields = root.querySelectorAll('input[data-ix]');

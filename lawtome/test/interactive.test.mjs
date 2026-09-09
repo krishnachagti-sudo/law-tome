@@ -21,19 +21,24 @@ const body = src.slice(src.indexOf('  function gcd'), src.indexOf('  function wi
 // of ESM strict mode.
 const ENGINES = eval(`(function () { ${body} return ENGINES; })()`);
 
-test('every interactive spec has an engine', () => {
+const solvers = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'solver');
+const spots = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'spot');
+
+test('every spec names a kind this build understands', () => {
   for (const slug of interactiveSlugs()) {
-    assert.ok(ENGINES[slug], `${slug}: spec with no engine behind it`);
+    assert.ok(['solver', 'spot'].includes(interactiveFor(slug).kind),
+      `${slug}: unknown kind "${interactiveFor(slug).kind}"`);
   }
 });
 
-test('every engine has a spec', () => {
-  const known = new Set(interactiveSlugs());
+test('every solver spec has an engine, and every engine a spec', () => {
+  for (const slug of solvers) assert.ok(ENGINES[slug], `${slug}: spec with no engine behind it`);
+  const known = new Set(solvers);
   for (const k of Object.keys(ENGINES)) assert.ok(known.has(k), `${k}: engine with no spec`);
 });
 
-test('every spec renders a block with all its fields', () => {
-  for (const slug of interactiveSlugs()) {
+test('every solver renders its fields and a result slot', () => {
+  for (const slug of solvers) {
     const html = interactiveBlock(slug);
     assert.ok(html.includes(`data-interactive="${slug}"`));
     for (const f of interactiveFor(slug).fields) {
@@ -43,12 +48,52 @@ test('every spec renders a block with all its fields', () => {
   }
 });
 
-test('defaults produce an answer, not an error', () => {
-  for (const slug of interactiveSlugs()) {
+test('solvers produce an answer at their own defaults, not an error', () => {
+  for (const slug of solvers) {
     const f = Object.fromEntries(interactiveFor(slug).fields.map((x) => [x.id, x.value]));
     const res = ENGINES[slug](f);
     assert.ok(!res.error, `${slug}: errors at its own defaults: ${res.error}`);
     assert.ok(res.result, `${slug}: no result at defaults`);
+  }
+});
+
+/* The spot kind is content, so the tests are about the content being sound.
+ * A quiz where every answer is the same teaches the reader to click one button
+ * and learn nothing, and it would pass every structural check. */
+test('spot cases are complete', () => {
+  for (const slug of spots) {
+    const w = interactiveFor(slug);
+    assert.ok(w.prompt && w.yesLabel && w.noLabel, `${slug}: missing prompt or labels`);
+    assert.ok(w.cases.length >= 4, `${slug}: only ${w.cases.length} cases`);
+    for (const c of w.cases) {
+      assert.equal(typeof c.yes, 'boolean', `${slug}: a case has no boolean answer`);
+      assert.ok(c.text && c.text.length > 15, `${slug}: a case has no real text`);
+      assert.ok(c.why && c.why.length > 40, `${slug}: a case has no real explanation`);
+    }
+  }
+});
+
+test('spot answers are mixed, so the quiz cannot be gamed', () => {
+  for (const slug of spots) {
+    const ans = interactiveFor(slug).cases.map((c) => c.yes);
+    const yes = ans.filter(Boolean).length;
+    assert.ok(yes > 0 && yes < ans.length, `${slug}: every answer is the same`);
+    // No run of four identical answers, which is the other way to guess right.
+    for (let i = 0; i + 3 < ans.length; i++) {
+      assert.ok(new Set(ans.slice(i, i + 4)).size > 1, `${slug}: four identical answers in a row`);
+    }
+  }
+});
+
+test('spot blocks render every case and every explanation into the HTML', () => {
+  for (const slug of spots) {
+    const html = interactiveBlock(slug);
+    const w = interactiveFor(slug);
+    assert.equal((html.match(/ix-case-text/g) || []).length, w.cases.length);
+    assert.equal((html.match(/ix-case-why/g) || []).length, w.cases.length);
+    // Readable with no script at all: nothing is hidden in the served markup.
+    assert.ok(!/data-ix-why hidden/.test(html), `${slug}: explanations hidden server-side`);
+    assert.ok(html.includes('data-answer='), `${slug}: no answers encoded`);
   }
 });
 

@@ -1525,6 +1525,29 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 /* ---- playable laws --------------------------------------------------------- */
 .widget{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 22px 16px}
 .wg-lede{margin:0 0 16px;font-size:14.5px;color:var(--read)}
+/* kind: spot. Rendered as a plain numbered list of cases with their
+   explanations; the script hides the explanations and adds the buttons. With
+   no JavaScript this stays a readable argument rather than an empty box. */
+.ix-prompt{margin:0 0 14px;font-family:var(--mono);font-size:11px;letter-spacing:.03em;
+  text-transform:uppercase;color:var(--muted)}
+.ix-cases{margin:0;padding:0 0 0 1.4em;display:grid;gap:16px}
+.ix-case{padding:0 0 14px;border-bottom:1px solid var(--line)}
+.ix-case:last-child{border-bottom:0;padding-bottom:0}
+.ix-case-text{margin:0 0 10px;font-size:14.5px;line-height:1.55;color:var(--ink)}
+.ix-choices{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.ix-choice{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;padding:6px 13px;
+  color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:3px;cursor:pointer}
+.ix-choice:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.ix-choice:disabled{cursor:default;opacity:.5}
+.ix-choice[data-ix-picked]{opacity:1;border-color:var(--accent);color:var(--accent)}
+.ix-case-why{font-size:13px;line-height:1.6;color:var(--read);padding-left:11px;
+  border-left:2px solid var(--line)}
+.ix-case-why[hidden]{display:none}
+.ix-case-why p{margin:0}
+.ix-case[data-ix-verdict=right] .ix-case-why{border-left-color:var(--accent)}
+.ix-case[data-ix-verdict=wrong] .ix-case-why{border-left-color:var(--ink)}
+.ix-score{margin:16px 0 0;font-family:var(--mono);font-size:12px;color:var(--accent)}
+.ix-score[hidden]{display:none}
 /* Interactions that are not calculators: typed input, validated, with the
    construction shown. Shares the widget's surface and type so the two read as
    one family rather than two features. */
