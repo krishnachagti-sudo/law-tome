@@ -23,17 +23,20 @@ const ENGINES = eval(`(function () { ${body} return ENGINES; })()`);
 
 const solvers = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'solver');
 const spots = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'spot');
+const sims = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'sim');
 
 test('every spec names a kind this build understands', () => {
   for (const slug of interactiveSlugs()) {
-    assert.ok(['solver', 'spot'].includes(interactiveFor(slug).kind),
+    assert.ok(['solver', 'spot', 'sim'].includes(interactiveFor(slug).kind),
       `${slug}: unknown kind "${interactiveFor(slug).kind}"`);
   }
 });
 
-test('every solver spec has an engine, and every engine a spec', () => {
-  for (const slug of solvers) assert.ok(ENGINES[slug], `${slug}: spec with no engine behind it`);
-  const known = new Set(solvers);
+test('every solver and sim spec has an engine, and every engine a spec', () => {
+  for (const slug of solvers.concat(sims)) {
+    assert.ok(ENGINES[slug], `${slug}: spec with no engine behind it`);
+  }
+  const known = new Set(solvers.concat(sims));
   for (const k of Object.keys(ENGINES)) assert.ok(known.has(k), `${k}: engine with no spec`);
 });
 
@@ -153,4 +156,79 @@ test('CRT shows its working and checks itself', () => {
   assert.ok(res.work.length >= 4, 'should show the construction');
   assert.ok(res.work.some((w) => w.startsWith('N = 105')));
   assert.ok(res.work.some((w) => w.startsWith('Check:')), 'should verify its own answer');
+});
+
+/* The sim kind runs a model of a law's stated mechanism. The model is only
+ * worth showing if it actually reproduces the claim the law makes, so each of
+ * these asserts the law rather than the code. */
+const simDefaults = (slug) =>
+  Object.fromEntries(interactiveFor(slug).fields.map((f) => [f.id, f.value]));
+
+test('sims return every declared series and output, with no NaN', () => {
+  for (const slug of sims) {
+    const w = interactiveFor(slug);
+    const res = ENGINES[slug](simDefaults(slug));
+    for (const s of w.series) {
+      assert.ok(Array.isArray(res.series[s.id]), `${slug}: series ${s.id} missing`);
+      assert.equal(res.series[s.id].length, Math.round(simDefaults(slug).n) + 1,
+        `${slug}: series ${s.id} is the wrong length`);
+      assert.ok(res.series[s.id].every((x) => Number.isFinite(x)),
+        `${slug}: series ${s.id} contains a non-finite value`);
+    }
+    for (const o of w.outputs) {
+      assert.ok(o.id in res.out, `${slug}: output ${o.id} never computed`);
+      if (o.fmt !== 'text') assert.ok(!Number.isNaN(res.out[o.id]), `${slug}: ${o.id} is NaN`);
+    }
+    for (const k of Object.keys(res.out)) {
+      assert.ok(w.outputs.some((o) => o.id === k), `${slug}: computes ${k} with nowhere to show it`);
+    }
+  }
+});
+
+test('every sim series starts from the same baseline', () => {
+  for (const slug of sims) {
+    const res = ENGINES[slug](simDefaults(slug));
+    const firsts = Object.values(res.series).map((a) => a[0]);
+    assert.ok(new Set(firsts).size === 1, `${slug}: series do not start together, so divergence is not visible`);
+  }
+});
+
+test("Goodhart: when gaming is cheaper, the measure rises and the thing does not", () => {
+  const r = ENGINES['goodharts-law']({ cq: 10, cg: 3, d: 20, n: 20 });
+  assert.equal(r.out.route, 'gaming the measure');
+  assert.ok(r.out.p > 600, `measure only reached ${r.out.p}`);
+  assert.equal(r.out.q, 100, 'the real thing must not move when no effort goes to it');
+  assert.ok(r.out.share > 80, 'most of the measure should be gaming by now');
+  assert.ok(r.series.q.every((x) => x === 100));
+});
+
+test('Goodhart: enough scrutiny makes the work the cheaper route again', () => {
+  const r = ENGINES['goodharts-law']({ cq: 10, cg: 3, d: 90, n: 20 });
+  assert.equal(r.out.route, 'doing the work');
+  assert.equal(r.out.share, 0);
+  assert.equal(r.out.p, r.out.q, 'with no gaming the measure IS the thing');
+});
+
+test('Campbell with no displacement is exactly Goodhart', () => {
+  const c = ENGINES['campbells-law']({ cq: 10, cg: 3, d: 20, disp: 0, n: 20 });
+  const g = ENGINES['goodharts-law']({ cq: 10, cg: 3, d: 20, n: 20 });
+  assert.deepEqual(c.series.p, g.series.p);
+  assert.deepEqual(c.series.q, g.series.q);
+  assert.equal(c.out.drop, 0, 'without displacement the outcome is unharmed');
+});
+
+test('Campbell: displacement drives the outcome down while the indicator climbs', () => {
+  const r = ENGINES['campbells-law']({ cq: 10, cg: 3, d: 10, disp: 20, n: 12 });
+  assert.ok(r.out.drop < 0, 'the outcome must fall, which is the whole difference from Goodhart');
+  assert.ok(r.out.p > 300, 'the indicator must climb anyway');
+  // Monotone in both directions, which is the shape the law describes.
+  for (let i = 1; i < r.series.q.length; i++) {
+    assert.ok(r.series.q[i] <= r.series.q[i - 1], 'outcome should never rise under displacement');
+    assert.ok(r.series.p[i] >= r.series.p[i - 1], 'indicator should never fall');
+  }
+});
+
+test('the outcome is floored at zero rather than going negative', () => {
+  const r = ENGINES['campbells-law']({ cq: 10, cg: 1, d: 0, disp: 100, n: 40 });
+  assert.ok(r.series.q.every((x) => x >= 0), 'a real outcome below zero is meaningless');
 });

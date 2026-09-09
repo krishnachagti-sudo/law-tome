@@ -1525,6 +1525,24 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 /* ---- playable laws --------------------------------------------------------- */
 .widget{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 22px 16px}
 .wg-lede{margin:0 0 16px;font-size:14.5px;color:var(--read)}
+/* kind: sim. Reuses the widget slider styling so the two read as one family. */
+.ix-sim .wg-in{display:grid;grid-template-columns:1fr 84px;grid-template-areas:"lab out" "rng rng";
+  gap:4px 12px;align-items:center;margin-bottom:14px;min-width:0}
+.ix-sim .wg-in input[type=range]{grid-area:rng;width:100%;accent-color:var(--accent);cursor:pointer}
+.ix-sim .wg-in output{grid-area:out;justify-self:end;font-family:var(--mono);font-size:13px;color:var(--accent)}
+.ix-legend{display:flex;flex-wrap:wrap;gap:16px;margin:4px 0 8px}
+.ix-key{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--muted);
+  display:inline-flex;align-items:center;gap:7px}
+.ix-key::before{content:"";width:16px;height:2px;background:var(--accent)}
+.ix-key[data-series="1"]::before{background:var(--muted);height:0;border-top:2px dashed var(--muted)}
+.ix-chart{margin:0 0 14px;background:var(--bg);border:1px solid var(--line);border-radius:3px;
+  padding:8px;min-width:0}
+.ix-chart:empty{display:none}
+.ix-svg{display:block;width:100%;height:150px}
+.ix-base{stroke:var(--line);stroke-width:1;stroke-dasharray:2 4}
+.ix-line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;
+  vector-effect:non-scaling-stroke}
+.ix-line[data-series="1"]{stroke:var(--muted);stroke-dasharray:5 4}
 /* kind: spot. Rendered as a plain numbered list of cases with their
    explanations; the script hides the explanations and adds the buttons. With
    no JavaScript this stays a readable argument rather than an empty box. */

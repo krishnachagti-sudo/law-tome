@@ -134,6 +134,76 @@ const INTERACTIVES = {
     ],
     note: 'The working test: would the person you are describing read your restatement and say yes, that is what I think, you have put it better than I did.',
   },
+
+  // ---- kind: sim. Run the stated mechanism forward and watch it diverge. ----
+  //
+  // These two laws are usually quoted as aphorisms and left there. Both make a
+  // mechanical claim that can be run: effort moves to whichever route raises
+  // the measured number per unit of cost, and if gaming is cheaper than doing
+  // the work, the number keeps climbing while the thing it measured does not.
+  //
+  // This is a MODEL of the mechanism, not data. It is stated as such on the
+  // page, and every number in it comes from the reader's own sliders.
+  'goodharts-law': {
+    kind: 'sim',
+    title: 'Run it',
+    lede: 'A measure works while nobody is optimising it. Put a target on it and effort moves to whichever route raises the number more cheaply, which is usually not the work.',
+    identity: 'effort goes to min(cost of the work, cost of gaming / (1 - scrutiny))',
+    symbols: [
+      { sym: 'cq', means: 'Cost of one point of the real thing' },
+      { sym: 'cg', means: 'Cost of one point of gaming' },
+      { sym: 'd', means: 'Share of gaming that gets caught and reversed', unit: '%' },
+    ],
+    fields: [
+      { id: 'cq', label: 'Cost of doing the work', min: 1, max: 40, step: 1, value: 10 },
+      { id: 'cg', label: 'Cost of gaming the measure', min: 1, max: 40, step: 1, value: 3 },
+      { id: 'd', label: 'Gaming caught and reversed', min: 0, max: 95, step: 1, value: 20, unit: '%' },
+      { id: 'n', label: 'Rounds under the target', min: 2, max: 40, step: 1, value: 20 },
+    ],
+    series: [
+      { id: 'p', label: 'The measure' },
+      { id: 'q', label: 'What it was measuring' },
+    ],
+    outputs: [
+      { id: 'p', label: 'The measure now reads', fmt: '' },
+      { id: 'q', label: 'The real thing is at', fmt: '' },
+      { id: 'share', label: 'Share of the measure that is gaming', fmt: '%' },
+      { id: 'route', label: 'Where the effort goes', fmt: 'text' },
+    ],
+    note: 'A model of the stated mechanism, not measured data. Raise scrutiny until gaming costs more than the work and the two lines rejoin, which is the only fix the mechanism admits.',
+  },
+  'campbells-law': {
+    kind: 'sim',
+    title: 'Run it',
+    lede: 'Campbell goes further than Goodhart. The indicator does not merely stop tracking the thing: the effort spent on the indicator is taken from the thing, so it actively degrades what it was watching.',
+    identity: 'gaming both inflates the indicator and displaces the work',
+    symbols: [
+      { sym: 'cq', means: 'Cost of one point of the real outcome' },
+      { sym: 'cg', means: 'Cost of one point of indicator-only gain' },
+      { sym: 'displacement', means: 'Real outcome lost per point of gaming', unit: '%' },
+    ],
+    fields: [
+      { id: 'cq', label: 'Cost of the real outcome', min: 1, max: 40, step: 1, value: 10 },
+      { id: 'cg', label: 'Cost of lifting the indicator alone', min: 1, max: 40, step: 1, value: 3 },
+      { id: 'd', label: 'Gaming caught and reversed', min: 0, max: 95, step: 1, value: 10, unit: '%' },
+      { id: 'disp', label: 'Real outcome displaced per point gamed', min: 0, max: 100, step: 1, value: 20, unit: '%' },
+      // Twelve rounds at 20% displacement lands the outcome around a quarter of
+      // where it started. Longer or harsher and it floors at zero, which is a
+      // true consequence of the model but reads like the model breaking.
+      { id: 'n', label: 'Rounds under the indicator', min: 2, max: 40, step: 1, value: 12 },
+    ],
+    series: [
+      { id: 'p', label: 'The indicator' },
+      { id: 'q', label: 'The outcome it was meant to track' },
+    ],
+    outputs: [
+      { id: 'p', label: 'The indicator now reads', fmt: '' },
+      { id: 'q', label: 'The outcome is at', fmt: '' },
+      { id: 'drop', label: 'Change in the real outcome', fmt: '%' },
+      { id: 'route', label: 'Where the effort goes', fmt: 'text' },
+    ],
+    note: 'A model of the stated mechanism, not measured data. Set displacement to zero and this reduces to Goodhart: the indicator decouples but does no harm. Campbell is the claim that displacement is not zero.',
+  },
 };
 
 export function interactiveSlugs() {
@@ -186,10 +256,40 @@ ${cases}
         </div>`;
 }
 
+/* kind: sim. Sliders, an SVG the engine draws, and numeric readouts. The
+ * chart is drawn client-side because it depends entirely on the reader's
+ * settings; the numbers beside it carry the same information for anyone
+ * without scripts, so nothing is only in the picture. */
+function simBlock(slug, w) {
+  const fields = w.fields.map((f) => `            <label class="wg-in">
+              <span class="wg-lab">${esc(f.label)}</span>
+              <input type="range" min="${f.min}" max="${f.max}" step="${f.step}" value="${f.value}"
+                     data-ix="${esc(f.id)}" data-unit="${esc(f.unit || '')}" aria-label="${esc(f.label)}">
+              <output data-ixout="${esc(f.id)}">${f.value}${esc(f.unit || '')}</output>
+            </label>`).join('\n');
+  const legend = w.series.map((y, i) => `            <span class="ix-key" data-series="${i}">${esc(y.label)}</span>`).join('\n');
+  const outs = w.outputs.map((o) => `            <div class="wg-res">
+              <span class="wg-res-lab">${esc(o.label)}</span>
+              <span class="wg-res-v" data-ixres="${esc(o.id)}" data-unit="${esc(o.fmt || '')}">—</span>
+            </div>`).join('\n');
+  return `        <div class="interactive ix-sim" data-interactive="${esc(slug)}">
+          <p class="wg-lede">${esc(w.lede)}</p>
+${keyBlock(w)}
+${fields}
+          <div class="ix-legend">
+${legend}
+          </div>
+          <div class="ix-chart" data-ix-chart aria-hidden="true"></div>
+${outs}
+          <p class="wg-note">${esc(w.note)}</p>
+        </div>`;
+}
+
 export function interactiveBlock(slug) {
   const w = interactiveFor(slug);
   if (!w) return '';
   if (w.kind === 'spot') return spotBlock(slug, w);
+  if (w.kind === 'sim') return simBlock(slug, w);
   const key = keyBlock(w);
   const fields = w.fields.map((f) => `            <label class="ix-f">
               <span class="ix-lab">${esc(f.label)}</span>

@@ -24,7 +24,68 @@
     return ((x % m) + m) % m;
   }
 
+  /* The metric-gaming model, shared by Goodhart and Campbell.
+   *
+   * Each round the population spends a fixed effort budget. A point of the
+   * real thing costs cq. A point of metric-only gain costs cg, but a share d
+   * of it is caught and reversed, so its effective cost is cg/(1-d). Identical
+   * rational agents put the whole budget into whichever is cheaper.
+   *
+   * Campbell's addition is `disp`: effort that goes into gaming is taken OUT
+   * of the real work, so the outcome falls rather than merely stalling. With
+   * disp = 0 this is exactly Goodhart.
+   */
+  function metricGaming(v, disp) {
+    var E = 100, rounds = Math.round(v.n);
+    var d = v.d / 100;
+    var effGame = d >= 1 ? Infinity : v.cg / (1 - d);
+    var gaming = effGame < v.cq;
+    var q = 100, g = 0, P = [100], Q = [100];
+    for (var i = 0; i < rounds; i++) {
+      if (gaming) {
+        var gained = E / effGame;
+        g += gained;
+        q -= disp * gained;              // Campbell: the work is displaced
+        if (q < 0) q = 0;
+      } else {
+        q += E / v.cq;
+      }
+      P.push(q + g);
+      Q.push(q);
+    }
+    return {
+      series: { p: P, q: Q },
+      p: q + g,
+      q: q,
+      g: g,
+      gaming: gaming,
+      route: gaming ? 'gaming the measure' : 'doing the work',
+    };
+  }
+
   var ENGINES = {
+    'goodharts-law': function (v) {
+      var r = metricGaming(v, 0);
+      return {
+        series: r.series,
+        out: {
+          p: r.p, q: r.q,
+          share: r.p > 0 ? r.g / r.p * 100 : 0,
+          route: r.route,
+        },
+      };
+    },
+    'campbells-law': function (v) {
+      var r = metricGaming(v, v.disp / 100);
+      return {
+        series: r.series,
+        out: {
+          p: r.p, q: r.q,
+          drop: (r.q / 100 - 1) * 100,
+          route: r.route,
+        },
+      };
+    },
     'the-chinese-remainder-theorem': function (f) {
       var pairs = [], i;
       for (i = 0; i < 3; i++) {
@@ -120,9 +181,97 @@
     }
   }
 
+  var FMT = function (v, unit) {
+    if (unit === 'text') return v;
+    if (unit === 'bool') return v ? 'yes' : 'no';
+    if (isNaN(v)) return '—';
+    if (!isFinite(v)) return '∞';
+    if (unit === 'int') return Math.round(v).toLocaleString('en-US');
+    var s;
+    if (unit === '%') s = (Math.abs(v) < 1 ? v.toFixed(2) : v.toFixed(1));
+    else if (Math.abs(v) >= 1000) s = Math.round(v).toLocaleString('en-US');
+    else if (Math.abs(v) >= 100) s = v.toFixed(0);
+    else if (Math.abs(v) >= 10) s = v.toFixed(1);
+    else s = v.toFixed(2);
+    return s + (unit || '');
+  };
+
+  var NS = 'http://www.w3.org/2000/svg';
+
+  /* Two lines on a shared scale. Drawn rather than described because the whole
+   * point is the moment they part company; the readouts underneath carry the
+   * same numbers for anyone who cannot see it. */
+  function draw(box, series, ids) {
+    while (box.firstChild) box.removeChild(box.firstChild);
+    var W = 600, H = 190, pad = 6;
+    var all = [];
+    for (var k = 0; k < ids.length; k++) all = all.concat(series[ids[k]]);
+    var lo = Math.min.apply(null, all), hi = Math.max.apply(null, all);
+    if (hi === lo) hi = lo + 1;
+    // Headroom, so a line that never moves does not sit flush on the frame
+    // edge underneath the starting-level marker.
+    var slack = (hi - lo) * 0.09;
+    lo -= slack; hi += slack;
+    var n = series[ids[0]].length;
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.setAttribute('preserveAspectRatio', 'none');
+    svg.setAttribute('class', 'ix-svg');
+    var base = document.createElementNS(NS, 'line');
+    var y0 = H - pad - (100 - lo) / (hi - lo) * (H - 2 * pad);
+    base.setAttribute('x1', 0); base.setAttribute('x2', W);
+    base.setAttribute('y1', y0); base.setAttribute('y2', y0);
+    base.setAttribute('class', 'ix-base');
+    svg.appendChild(base);
+    for (k = 0; k < ids.length; k++) {
+      var pts = [], d = series[ids[k]];
+      for (var i = 0; i < n; i++) {
+        var x = pad + i / (n - 1) * (W - 2 * pad);
+        var y = H - pad - (d[i] - lo) / (hi - lo) * (H - 2 * pad);
+        pts.push(x.toFixed(1) + ',' + y.toFixed(1));
+      }
+      var pl = document.createElementNS(NS, 'polyline');
+      pl.setAttribute('points', pts.join(' '));
+      pl.setAttribute('class', 'ix-line');
+      pl.setAttribute('data-series', k);
+      svg.appendChild(pl);
+    }
+    box.appendChild(svg);
+  }
+
+  function wireSim(root) {
+    var slug = root.getAttribute('data-interactive');
+    var run = ENGINES[slug];
+    if (!run) return;
+    var ranges = root.querySelectorAll('input[type=range][data-ix]');
+    var box = root.querySelector('[data-ix-chart]');
+
+    function go() {
+      var vals = {}, i;
+      for (i = 0; i < ranges.length; i++) {
+        var el = ranges[i], val = parseFloat(el.value);
+        vals[el.getAttribute('data-ix')] = val;
+        var o = root.querySelector('[data-ixout="' + el.getAttribute('data-ix') + '"]');
+        if (o) o.textContent = FMT(val, el.getAttribute('data-unit') || '');
+      }
+      var res;
+      try { res = run(vals); } catch (e) { return; }
+      for (var key in res.out) {
+        if (!Object.prototype.hasOwnProperty.call(res.out, key)) continue;
+        var cell = root.querySelector('[data-ixres="' + key + '"]');
+        if (cell) cell.textContent = FMT(res.out[key], cell.getAttribute('data-unit') || '');
+      }
+      if (box) draw(box, res.series, Object.keys(res.series));
+    }
+
+    for (var i = 0; i < ranges.length; i++) ranges[i].addEventListener('input', go);
+    go();
+  }
+
   function wire(root) {
     var slug = root.getAttribute('data-interactive');
     if (root.className.indexOf('ix-spot') !== -1) return wireSpot(root);
+    if (root.className.indexOf('ix-sim') !== -1) return wireSim(root);
     var run = ENGINES[slug];
     if (!run) return;
     var fields = root.querySelectorAll('input[data-ix]');
