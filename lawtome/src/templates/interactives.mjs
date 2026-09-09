@@ -309,6 +309,67 @@ const INTERACTIVES = {
     verdict: 'Parfit’s conclusion is that the question has no determinate answer, and that this is not a gap in our knowledge but a fact about identity. What matters, he argues, is psychological continuity and connectedness, and identity is not what matters.',
     note: 'From Reasons and Persons, 1984. The branching version is the one that does the real work, because it makes the answer depend on a distant event that changes nothing locally.',
   },
+
+  // ---- kind: demo. Something the reader looks at. ----
+  //
+  // These three are the clearest case in the corpus for an interaction: they
+  // are perceptual facts, and prose can only assert them. A reader who sees
+  // two lights become one moving light has learned the phenomenon; a reader
+  // told that this happens has learned a sentence.
+  //
+  // The stimuli are small and start paused. Anything flashing is kept well
+  // under the WCAG general flash threshold by area, and nothing animates until
+  // the reader presses play or if they have asked for reduced motion.
+  'the-phi-phenomenon': {
+    kind: 'demo',
+    title: 'See it',
+    lede: 'Two lights, alternating. Nothing moves and nothing exists between them. Above about ten flashes a second you will see one light travelling back and forth anyway.',
+    stage: 'phi',
+    play: true,
+    fields: [
+      { id: 'gap', label: 'Time between flashes', min: 20, max: 700, step: 10, value: 60, unit: ' ms' },
+      { id: 'sep', label: 'Distance apart', min: 20, max: 90, step: 1, value: 60, unit: '%' },
+    ],
+    readouts: [
+      { id: 'rate', label: 'Flashes per second', fmt: '' },
+      { id: 'sees', label: 'What most people report', fmt: 'text' },
+    ],
+    caption: 'Press play, then look at the space between the two dots rather than at either one.',
+    note: 'Wertheimer used this in 1912 to argue that perception is not built from the parts of a scene, because the motion you see is in neither frame. It became the founding demonstration of Gestalt psychology. Slow it past roughly 200 milliseconds and the illusion breaks into two blinking lights.',
+  },
+  'the-purkinje-effect': {
+    kind: 'demo',
+    title: 'See it',
+    lede: 'In daylight the red is the brighter of the two. As the light falls, the eye hands over from cones to rods, and the blue overtakes it without either patch changing colour.',
+    stage: 'purkinje',
+    fields: [
+      { id: 'lum', label: 'Ambient light', min: -3, max: 1, step: 0.05, value: 1, unit: ' log cd/m2' },
+    ],
+    readouts: [
+      { id: 'cond', label: 'Which system is doing the seeing', fmt: 'text' },
+      { id: 'ratio', label: 'Blue brightness against red', fmt: 'x' },
+      { id: 'peak', label: 'Wavelength the eye is most sensitive to', fmt: ' nm' },
+    ],
+    caption: 'The two patches keep the same hue throughout. Only their relative brightness changes.',
+    note: 'The rendered brightness of each patch is computed from the standard photopic and scotopic luminous efficiency curves at 650 and 450 nanometres, blended across the mesopic range. The shift is why red flowers look black at dusk while blue ones stay vivid, and why darkrooms and cockpit instruments are lit red.',
+  },
+  'simultaneous-contrast': {
+    kind: 'demo',
+    title: 'See it',
+    lede: 'The two inner squares are the same grey. They are emitting identical light from identical pixels, and they will not look it.',
+    stage: 'contrast',
+    fields: [
+      { id: 'sep', label: 'Difference between the backgrounds', min: 0, max: 100, step: 1, value: 70, unit: '%' },
+      { id: 'mid', label: 'Grey of both squares', min: 20, max: 80, step: 1, value: 50, unit: '%' },
+    ],
+    readouts: [
+      { id: 'same', label: 'Colour of the left square', fmt: 'text' },
+      { id: 'same2', label: 'Colour of the right square', fmt: 'text' },
+      { id: 'diff', label: 'Difference between them', fmt: 'text' },
+    ],
+    caption: 'Drag the background difference to zero and the two squares visibly become what they always were.',
+    note: 'The eye reports contrast with the surround rather than absolute luminance, because that is the quantity that stays constant as the light changes. The illusion is the price of that design, and both readouts below are read back from the rendered elements rather than asserted.',
+  },
 };
 
 export function interactiveSlugs() {
@@ -410,11 +471,53 @@ ${outs}
         </div>`;
 }
 
+/* kind: demo. A stage the reader looks at, sliders that drive it through CSS
+ * custom properties, and readouts. The stage markup is static and server
+ * rendered; the script only sets variables on it. */
+const STAGES = {
+  phi: `            <span class="phi-dot" data-dot="0"></span>
+            <span class="phi-dot" data-dot="1"></span>`,
+  purkinje: `            <span class="pk-patch" data-patch="red"></span>
+            <span class="pk-patch" data-patch="blue"></span>`,
+  contrast: `            <span class="sc-field" data-field="lo"><span class="sc-chip"></span></span>
+            <span class="sc-field" data-field="hi"><span class="sc-chip"></span></span>`,
+};
+
+function demoBlock(slug, w) {
+  const fields = w.fields.map((f) => `            <label class="wg-in">
+              <span class="wg-lab">${esc(f.label)}</span>
+              <input type="range" min="${f.min}" max="${f.max}" step="${f.step}" value="${f.value}"
+                     data-ix="${esc(f.id)}" data-unit="${esc(f.unit || '')}" aria-label="${esc(f.label)}">
+              <output data-ixout="${esc(f.id)}">${f.value}${esc(f.unit || '')}</output>
+            </label>`).join('\n');
+  const outs = (w.readouts || []).map((o) => `            <div class="wg-res">
+              <span class="wg-res-lab">${esc(o.label)}</span>
+              <span class="wg-res-v" data-ixres="${esc(o.id)}" data-unit="${esc(o.fmt || '')}">—</span>
+            </div>`).join('\n');
+  // Anything that flashes starts stopped, and says so, rather than beginning
+  // to strobe the moment the section scrolls into view.
+  const play = w.play
+    ? `          <button type="button" class="ix-play" data-ix-play aria-pressed="false">Play</button>`
+    : '';
+  return `        <div class="interactive ix-demo" data-interactive="${esc(slug)}" data-stage="${esc(w.stage)}">
+          <p class="wg-lede">${esc(w.lede)}</p>
+          <div class="ix-stage" data-ix-stage data-stage="${esc(w.stage)}" aria-hidden="true">
+${STAGES[w.stage]}
+          </div>
+          <p class="ix-caption">${esc(w.caption)}</p>
+${play}
+${fields}
+${outs}
+          <p class="wg-note">${esc(w.note)}</p>
+        </div>`;
+}
+
 export function interactiveBlock(slug) {
   const w = interactiveFor(slug);
   if (!w) return '';
   if (w.kind === 'spot') return spotBlock(slug, w);
   if (w.kind === 'sim') return simBlock(slug, w);
+  if (w.kind === 'demo') return demoBlock(slug, w);
   const key = keyBlock(w);
   const fields = w.fields.map((f) => `            <label class="ix-f">
               <span class="ix-lab">${esc(f.label)}</span>

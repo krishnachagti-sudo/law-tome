@@ -284,9 +284,126 @@
     go();
   }
 
+  /* Demo stages. Each returns CSS custom properties to set on the stage, plus
+   * readouts. Nothing here asserts a perceptual claim in prose: the numbers
+   * come from the same values that drive the pixels. */
+  var STAGE = {
+    phi: function (v) {
+      var cycle = v.gap * 2;
+      return {
+        css: { '--phi-t': cycle + 'ms', '--phi-sep': v.sep + '%' },
+        out: {
+          rate: 1000 / v.gap,
+          sees: v.gap <= 100 ? 'one light moving'
+              : (v.gap <= 200 ? 'movement, but you can tell there are two'
+                              : 'two lights blinking'),
+        },
+      };
+    },
+    purkinje: function (v) {
+      // CIE luminous efficiency at the two patch wavelengths. Photopic V is
+      // the cone curve peaking at 555 nm; scotopic V' is the rod curve peaking
+      // at 507 nm. Red loses almost everything when the rods take over.
+      var Vred = 0.107, Vblue = 0.038;        // photopic, 650 and 450 nm
+      var Sred = 0.0003, Sblue = 0.455;       // scotopic, same wavelengths
+      // The mesopic band, where both systems contribute, runs from about
+      // 0.003 to 5 cd/m2. Outside it the answer saturates, which is the
+      // physics rather than a dead slider.
+      var x = (v.lum - (-2.5)) / (0.7 - (-2.5));
+      if (x < 0) x = 0; if (x > 1) x = 1;
+      var red = x * Vred + (1 - x) * Sred;
+      var blue = x * Vblue + (1 - x) * Sblue;
+      var top = Math.max(red, blue);
+      return {
+        css: {
+          '--pk-red': (red / top).toFixed(3),
+          '--pk-blue': (blue / top).toFixed(3),
+        },
+        out: {
+          cond: x >= 0.95 ? 'cones alone (photopic)'
+              : (x <= 0.05 ? 'rods alone (scotopic)' : 'both, handing over (mesopic)'),
+          ratio: blue / red,
+          peak: 555 * x + 507 * (1 - x),
+        },
+      };
+    },
+    contrast: function (v) {
+      var mid = Math.round(v.mid * 255 / 100);
+      var half = v.sep / 2;
+      var lo = Math.round(Math.max(0, v.mid - half) * 255 / 100);
+      var hi = Math.round(Math.min(100, v.mid + half) * 255 / 100);
+      var hex = function (n) {
+        var h = n.toString(16); if (h.length < 2) h = '0' + h;
+        return '#' + h + h + h;
+      };
+      return {
+        css: { '--sc-lo': hex(lo), '--sc-hi': hex(hi), '--sc-mid': hex(mid) },
+        out: { same: hex(mid), same2: hex(mid), diff: 'none' },
+      };
+    },
+  };
+
+  function wireDemo(root) {
+    var stage = root.querySelector('[data-ix-stage]');
+    var kind = root.getAttribute('data-stage');
+    var run = STAGE[kind];
+    if (!run || !stage) return;
+    var ranges = root.querySelectorAll('input[type=range][data-ix]');
+    var playBtn = root.querySelector('[data-ix-play]');
+
+    function go() {
+      var vals = {}, i;
+      for (i = 0; i < ranges.length; i++) {
+        var el = ranges[i], val = parseFloat(el.value);
+        vals[el.getAttribute('data-ix')] = val;
+        var o = root.querySelector('[data-ixout="' + el.getAttribute('data-ix') + '"]');
+        if (o) o.textContent = FMT(val, el.getAttribute('data-unit') || '');
+      }
+      var res;
+      try { res = run(vals); } catch (e) { return; }
+      for (var k in res.css) {
+        if (Object.prototype.hasOwnProperty.call(res.css, k)) stage.style.setProperty(k, res.css[k]);
+      }
+      for (var key in res.out) {
+        if (!Object.prototype.hasOwnProperty.call(res.out, key)) continue;
+        var cell = root.querySelector('[data-ixres="' + key + '"]');
+        if (cell) cell.textContent = FMT(res.out[key], cell.getAttribute('data-unit') || '');
+      }
+      // Read the rendered colours back off the elements rather than trusting
+      // the same numbers that set them. If these ever disagree the claim that
+      // the two squares are identical would be false, and it should show.
+      if (kind === 'contrast') {
+        var chips = stage.querySelectorAll('.sc-chip');
+        if (chips.length === 2) {
+          var a = getComputedStyle(chips[0]).backgroundColor;
+          var b = getComputedStyle(chips[1]).backgroundColor;
+          var cellA = root.querySelector('[data-ixres="same"]');
+          var cellB = root.querySelector('[data-ixres="same2"]');
+          var cellD = root.querySelector('[data-ixres="diff"]');
+          if (cellA) cellA.textContent = a;
+          if (cellB) cellB.textContent = b;
+          if (cellD) cellD.textContent = (a === b) ? 'none, they are the same colour' : 'they differ';
+        }
+      }
+    }
+
+    if (playBtn) {
+      playBtn.addEventListener('click', function () {
+        var on = stage.getAttribute('data-playing') === '1';
+        if (on) { stage.removeAttribute('data-playing'); playBtn.textContent = 'Play'; }
+        else { stage.setAttribute('data-playing', '1'); playBtn.textContent = 'Stop'; }
+        playBtn.setAttribute('aria-pressed', on ? 'false' : 'true');
+      });
+    }
+
+    for (var i = 0; i < ranges.length; i++) ranges[i].addEventListener('input', go);
+    go();
+  }
+
   function wire(root) {
     var slug = root.getAttribute('data-interactive');
     if (root.className.indexOf('ix-spot') !== -1) return wireSpot(root);
+    if (root.className.indexOf('ix-demo') !== -1) return wireDemo(root);
     if (root.className.indexOf('ix-sim') !== -1) return wireSim(root);
     var run = ENGINES[slug];
     if (!run) return;

@@ -1525,6 +1525,48 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 /* ---- playable laws --------------------------------------------------------- */
 .widget{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 22px 16px}
 .wg-lede{margin:0 0 16px;font-size:14.5px;color:var(--read)}
+/* kind: demo. The stimulus itself. Kept small: the phi dots are a few hundred
+   square pixels between them, far under the WCAG general flash threshold, and
+   nothing animates until the reader presses play. */
+.ix-stage{position:relative;height:150px;margin:0 0 8px;border:1px solid var(--line);
+  border-radius:3px;background:var(--bg);overflow:hidden;min-width:0}
+.ix-caption{margin:0 0 14px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.ix-play{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;padding:6px 18px;
+  margin:0 0 16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);
+  border-radius:3px;cursor:pointer}
+.ix-play:hover{border-color:var(--accent);color:var(--accent)}
+.ix-play[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
+
+/* Phi. Two dots, opposite phase, paused until asked. */
+.ix-stage[data-stage=phi] .phi-dot{position:absolute;top:50%;width:26px;height:26px;
+  margin:-13px 0 0 -13px;border-radius:50%;background:var(--accent);opacity:0}
+.ix-stage[data-stage=phi] .phi-dot[data-dot="0"]{left:calc(50% - var(--phi-sep,60%) / 2)}
+.ix-stage[data-stage=phi] .phi-dot[data-dot="1"]{left:calc(50% + var(--phi-sep,60%) / 2)}
+.ix-stage[data-stage=phi][data-playing] .phi-dot{animation:phiA var(--phi-t,120ms) steps(1,end) infinite}
+.ix-stage[data-stage=phi][data-playing] .phi-dot[data-dot="1"]{animation-name:phiB}
+.ix-stage[data-stage=phi]:not([data-playing]) .phi-dot{opacity:.85}
+@keyframes phiA{0%,49.999%{opacity:.95}50%,100%{opacity:0}}
+@keyframes phiB{0%,49.999%{opacity:0}50%,100%{opacity:.95}}
+
+/* Purkinje. Two patches whose rendered brightness is set from the luminous
+   efficiency curves; the hue never changes. */
+.ix-stage[data-stage=purkinje]{display:flex;background:#000}
+.ix-stage[data-stage=purkinje] .pk-patch{flex:1}
+.ix-stage[data-stage=purkinje] .pk-patch[data-patch=red]{
+  background:rgb(calc(255 * var(--pk-red,1)) 0 0)}
+.ix-stage[data-stage=purkinje] .pk-patch[data-patch=blue]{
+  background:rgb(0 0 calc(255 * var(--pk-blue,1)))}
+
+/* Simultaneous contrast. Two identical chips, two different grounds. */
+.ix-stage[data-stage=contrast]{display:flex}
+.ix-stage[data-stage=contrast] .sc-field{flex:1;display:flex;align-items:center;justify-content:center}
+.ix-stage[data-stage=contrast] .sc-field[data-field=lo]{background:var(--sc-lo,#222)}
+.ix-stage[data-stage=contrast] .sc-field[data-field=hi]{background:var(--sc-hi,#ddd)}
+.ix-stage[data-stage=contrast] .sc-chip{width:64px;height:64px;background:var(--sc-mid,#808080)}
+
+@media (prefers-reduced-motion: reduce){
+  .ix-stage[data-stage=phi][data-playing] .phi-dot{animation:none;opacity:.85}
+}
 /* kind: sim. Reuses the widget slider styling so the two read as one family. */
 .ix-sim .wg-in{display:grid;grid-template-columns:1fr 84px;grid-template-areas:"lab out" "rng rng";
   gap:4px 12px;align-items:center;margin-bottom:14px;min-width:0}

@@ -19,15 +19,16 @@ const body = src.slice(src.indexOf('  function gcd'), src.indexOf('  function wi
 // The engines close over gcd and inverse, so the whole body is evaluated as
 // one function and asked for its table. A bare eval would not leak `var` out
 // of ESM strict mode.
-const ENGINES = eval(`(function () { ${body} return ENGINES; })()`);
+const { ENGINES, STAGE } = eval(`(function () { ${body} return { ENGINES: ENGINES, STAGE: STAGE }; })()`);
 
 const solvers = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'solver');
 const spots = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'spot');
 const sims = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'sim');
+const demos = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'demo');
 
 test('every spec names a kind this build understands', () => {
   for (const slug of interactiveSlugs()) {
-    assert.ok(['solver', 'spot', 'sim'].includes(interactiveFor(slug).kind),
+    assert.ok(['solver', 'spot', 'sim', 'demo'].includes(interactiveFor(slug).kind),
       `${slug}: unknown kind "${interactiveFor(slug).kind}"`);
   }
 });
@@ -285,4 +286,94 @@ test('a derivation really is one, so the exemption cannot be borrowed', () => {
       `${slug}: a derivation must end in the open question it was building towards`);
     assert.ok(w.verdict, `${slug}: a derivation must state what it derived`);
   }
+});
+
+/* The demo kind shows the reader a stimulus. The tests check that the numbers
+ * driving the pixels reproduce the perceptual claim the law makes. */
+const demoDefaults = (slug) =>
+  Object.fromEntries(interactiveFor(slug).fields.map((f) => [f.id, f.value]));
+
+test('every demo has a stage function and renders its stage markup', () => {
+  for (const slug of demos) {
+    const w = interactiveFor(slug);
+    assert.ok(STAGE[w.stage], `${slug}: no stage function for "${w.stage}"`);
+    const html = interactiveBlock(slug);
+    assert.ok(html.includes(`data-stage="${w.stage}"`), `${slug}: stage not marked`);
+    assert.ok(html.includes('data-ix-stage'), `${slug}: no stage element`);
+    assert.ok(html.includes('ix-caption'), `${slug}: no caption telling the reader what to look at`);
+  }
+});
+
+test('demos compute every readout they declare, and nothing spare', () => {
+  for (const slug of demos) {
+    const w = interactiveFor(slug);
+    const res = STAGE[w.stage](demoDefaults(slug));
+    for (const o of w.readouts) {
+      assert.ok(o.id in res.out, `${slug}: readout ${o.id} never computed`);
+      if (o.fmt !== 'text') assert.ok(Number.isFinite(res.out[o.id]), `${slug}: ${o.id} is not finite`);
+    }
+    for (const k of Object.keys(res.out)) {
+      assert.ok(w.readouts.some((o) => o.id === k), `${slug}: computes ${k} with nowhere to show it`);
+    }
+    assert.ok(Object.keys(res.css).length > 0, `${slug}: sets no CSS, so the stage cannot change`);
+  }
+});
+
+test('anything that flashes starts stopped', () => {
+  for (const slug of demos) {
+    const w = interactiveFor(slug);
+    if (!w.play) continue;
+    const html = interactiveBlock(slug);
+    assert.ok(html.includes('aria-pressed="false"'), `${slug}: play control not in the off state`);
+    assert.ok(!html.includes('data-playing'), `${slug}: stage is animating on load`);
+  }
+});
+
+test('phi: the flash rate is the reciprocal of the gap, and the report changes with it', () => {
+  assert.equal(STAGE.phi({ gap: 100, sep: 60 }).out.rate, 10);
+  assert.equal(STAGE.phi({ gap: 500, sep: 60 }).out.rate, 2);
+  assert.match(STAGE.phi({ gap: 60, sep: 60 }).out.sees, /one light moving/);
+  assert.match(STAGE.phi({ gap: 600, sep: 60 }).out.sees, /two lights blinking/);
+  // The cycle is two gaps, because each dot is lit for one of them.
+  assert.equal(STAGE.phi({ gap: 60, sep: 60 }).css['--phi-t'], '120ms');
+});
+
+test('Purkinje: red leads in daylight, blue leads in the dark, and they cross once', () => {
+  const at = (lum) => STAGE.purkinje({ lum });
+  const bright = at(1), dark = at(-3);
+  assert.ok(bright.out.ratio < 1, 'red must be the brighter patch in daylight');
+  assert.ok(dark.out.ratio > 100, 'red must all but vanish under rods alone');
+  assert.ok(Number(bright.css['--pk-red']) === 1, 'the brighter patch renders at full');
+  assert.ok(Number(dark.css['--pk-red']) < 0.01, 'red should be nearly black at scotopic levels');
+  // Monotone, so there is exactly one crossover rather than a wobble.
+  let prev = -Infinity, crossings = 0;
+  for (let l = 1; l >= -3; l -= 0.05) {
+    const r = at(l).out.ratio;
+    assert.ok(r >= prev - 1e-9, `ratio fell as the light dimmed at ${l.toFixed(2)}`);
+    if (prev < 1 && r >= 1) crossings++;
+    prev = r;
+  }
+  assert.equal(crossings, 1, 'the two patches should swap places exactly once');
+});
+
+test('Purkinje: the sensitivity peak shifts from 555 nm to 507 nm', () => {
+  assert.equal(Math.round(STAGE.purkinje({ lum: 1 }).out.peak), 555);
+  assert.equal(Math.round(STAGE.purkinje({ lum: -3 }).out.peak), 507);
+});
+
+test('simultaneous contrast: the two chips are the same colour at every setting', () => {
+  for (let sep = 0; sep <= 100; sep += 5) {
+    for (let mid = 20; mid <= 80; mid += 10) {
+      const r = STAGE.contrast({ sep, mid });
+      assert.equal(r.out.same, r.out.same2, `chips differ at sep=${sep} mid=${mid}`);
+      assert.equal(r.css['--sc-lo'] === r.css['--sc-hi'], sep === 0,
+        `grounds should differ unless separation is zero (sep=${sep})`);
+    }
+  }
+});
+
+test('simultaneous contrast: the chip colour does not depend on the backgrounds', () => {
+  const a = STAGE.contrast({ sep: 0, mid: 50 }).css['--sc-mid'];
+  const b = STAGE.contrast({ sep: 100, mid: 50 }).css['--sc-mid'];
+  assert.equal(a, b, 'the whole claim is that the chip never changes');
 });
