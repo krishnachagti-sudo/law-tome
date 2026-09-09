@@ -16,7 +16,7 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE, DESC_MAX } from './partials.mjs';
 import { hostOf } from '../../build/surfaces.mjs';
 import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
 import { LASTMOD_TOKEN } from '../../build/lastmod.mjs';
@@ -175,7 +175,23 @@ export function lawPage(law, ctx = {}) {
   // Ranking pages for named laws title as "<Law>: Definition, Examples & Facts".
   // Mirror that: front-load the law name (the primary keyword), then only the
   // content facets this entry actually has — never claim examples/origin we lack.
-  const facets = ['Meaning'];
+  // A page carrying a calculator or a solver says so where the searcher reads.
+  // Two reasons from Search Console: pages titled as definitions convert at
+  // 0.19% against 0.98% for tool pages on the same property, and at positions
+  // four to ten the snippet is the whole decision (top three converts at 3.85%,
+  // four to ten at 0.48%). "<Law> Calculator" is also the exact phrase behind
+  // the "<law> calculator" queries the site ranks for and never targeted.
+  //
+  // Where no such noun query exists, the invitation leads the facet list
+  // instead. Everything here is gated on the page ACTUALLY having the thing.
+  const ixSpec = interactiveFor(law.slug);
+  const toolNoun = widgetFor(law.slug) ? 'Calculator'
+    : (ixSpec && ixSpec.kind === 'solver' ? 'Solver' : '');
+  const INVITE = { spot: 'Test Yourself', sim: 'Run the Model', demo: 'See It', probe: 'Try It' };
+  const invite = (!toolNoun && ixSpec) ? (INVITE[ixSpec.kind] || '') : '';
+  const facets = [];
+  if (invite) facets.push(invite);
+  facets.push('Meaning');
   if (firstExample) facets.push('Examples');
   if (law.origin) facets.push('Origin');
   const facetList = facets.length > 1
@@ -184,18 +200,53 @@ export function lawPage(law, ctx = {}) {
   // Longest facet list that still fits the result slot. A long entry name spends
   // the budget the facets would have used, and losing "& Origin" is far cheaper
   // than having the name itself cut — the name is what the searcher typed.
-  const pageTitle = fitTitle(law.name, [
+  // The tool noun joins the protected core, because "Amdahl's Law Calculator"
+  // is the phrase being searched for and must not be the part that gets cut.
+  const titleCore = toolNoun ? `${law.name} ${toolNoun}` : law.name;
+  const pageTitle = fitTitle(titleCore, [
     `: ${facetList} | The Law Tome`,
     `: ${facetList}`,
     ...(facets.length > 2 ? [`: ${facets.slice(0, 2).join(' & ')}`] : []),
+    ...(invite ? [`: ${invite}`] : []),
     ': Meaning',
     ' | The Law Tome',
     '',
   ]);
   // Meta description leads with the one-line statement (the featured-snippet
   // payload), then the facets and a trust signal. Falls back to the answer.
+  // The description closes on what the page LETS YOU DO, when it lets you do
+  // anything. One sentence per kind, and each is literally true of the page.
+  // clampDescription cuts at 158 characters, so a tail appended after the
+  // facet list never survives to the SERP. On a page that has a tool, the tool
+  // REPLACES the facet tail rather than following it, which keeps the one
+  // differentiating clause inside the window a searcher actually sees.
+  const TOOL_TAIL = {
+    calculator: 'with a live calculator for the formula.',
+    solver: 'with a solver that checks its own working.',
+    spot: 'with worked cases to test yourself against.',
+    sim: 'with a model of the mechanism you can run.',
+    demo: 'and the effect shown rather than described.',
+    probe: 'with a short exercise using your own answers.',
+  };
+  const toolTail = widgetFor(law.slug) ? TOOL_TAIL.calculator
+    : (ixSpec ? TOOL_TAIL[ixSpec.kind] : '');
+  // A long statement can still eat the whole 158, taking the tool clause with
+  // it. Where there is a tool, the QUOTE gives way rather than the clause: the
+  // quote is available in full on the page, and the clause is the only part of
+  // the snippet that says this page differs from a dictionary entry.
+  const toolDescription = () => {
+    const lead = `${law.name}: “`;          // not `head`: that is the imported page-head helper
+    const mid = '” — what it means, ';
+    const room = DESC_MAX - lead.length - mid.length - toolTail.length;
+    let st = law.statement;
+    if (room < 24) return `${law.name}: what it means, ${toolTail}`;
+    if (st.length > room) st = st.slice(0, room - 1).replace(/\s+\S*$/, '') + '…';
+    return lead + st + mid + toolTail;
+  };
   const metaDescription = law.statement
-    ? `${law.name}: “${law.statement}” — what it means${firstExample ? ', real examples' : ''}${law.origin ? ', and where it came from' : ''}. Clearly explained, cross-linked, and sourced.`
+    ? (toolTail
+        ? toolDescription()
+        : `${law.name}: “${law.statement}” — what it means${firstExample ? ', real examples' : ''}${law.origin ? ', and where it came from' : ''}. Clearly explained, cross-linked, and sourced.`)
     : answer;
 
   // ---- entry section ----------------------------------------------------
@@ -1137,6 +1188,39 @@ document.getElementById('copy').onclick=function(){
 })();
 </script>`;
 
+  // A page carrying a calculator or a solver IS a web application, and the 119
+  // tool pages on conyso.com already declare themselves as one and convert at
+  // 0.98% against 0.19% for definition pages. These declare nothing.
+  //
+  // Every field below is checkable against the page. It is free, it runs in the
+  // browser, and nothing is sent anywhere, which is true because the arithmetic
+  // is in assets/widget.js and assets/interactive.js and neither makes a
+  // request. Gated on the page actually having the thing, so the markup cannot
+  // outrun the page the way a title can.
+  const APP_CATEGORY = {
+    calculator: 'EducationalApplication',
+    solver: 'EducationalApplication',
+    spot: 'EducationalApplication',
+    sim: 'EducationalApplication',
+    demo: 'EducationalApplication',
+    probe: 'EducationalApplication',
+  };
+  const appKind = widgetFor(law.slug) ? 'calculator' : (ixSpec ? ixSpec.kind : '');
+  const webApp = appKind ? {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: toolNoun ? `${law.name} ${toolNoun}` : `${law.name}: ${invite || 'interactive'}`,
+    url: canonical,
+    applicationCategory: APP_CATEGORY[appKind],
+    operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript',
+    description: metaDescription,
+    isAccessibleForFree: true,
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
+    publisher,
+  } : null;
+
   return (
     head({
       title: pageTitle,
@@ -1146,9 +1230,9 @@ document.getElementById('copy').onclick=function(){
       path: `laws/${law.slug}/`,
       canonical,
       modified: LASTMOD_TOKEN,
-      og: { title: `${law.name}: ${facetList}`, description: ogDescription, image: `${base}og/${law.slug}.png`, type: 'article' },
+      og: { title: `${titleCore}: ${facetList}`, description: ogDescription, image: `${base}og/${law.slug}.png`, type: 'article' },
       alternates: [{ type: 'text/markdown', title: `${law.name} (Markdown)`, href: `${canonical}index.md` }],
-      jsonld: [definedTerm, article, breadcrumb, ...(faqPage ? [faqPage] : [])],
+      jsonld: [definedTerm, article, breadcrumb, ...(webApp ? [webApp] : []), ...(faqPage ? [faqPage] : [])],
     }) +
     sprite() +
     '<div class="progress" id="progress" aria-hidden="true"></div>\n' +
