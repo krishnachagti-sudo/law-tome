@@ -9,6 +9,13 @@
 (function () {
   'use strict';
 
+  // Superscript exponents, so 1e-4 reads as 10\u207b\u2074 rather than as 'e-4'.
+  var SUP = function (n) {
+    var map = { '0':'\u2070','1':'\u00b9','2':'\u00b2','3':'\u00b3','4':'\u2074',
+                '5':'\u2075','6':'\u2076','7':'\u2077','8':'\u2078','9':'\u2079','-':'\u207b' };
+    return String(n).split('').map(function (c) { return map[c] || c; }).join('');
+  };
+
   var FMT = function (v, unit) {
     // NaN and Infinity are different answers and must not print the same.
     // Infinity is a real result (Amdahl's ceiling when everything parallelises).
@@ -25,6 +32,18 @@
     if (unit === 'int') return Math.round(v).toLocaleString('en-US');
     var s;
     if (unit === '%') s = (v < 1 ? v.toFixed(2) : v.toFixed(1));
+    // Fixed decimals lie about magnitude at the extremes. A diffusion flux of
+    // 1e-4 and a drag force of 1.9e-7 both printed '0.00', which reads as the
+    // law returning nothing rather than returning a small number. Anything
+    // below a hundredth, or above a billion, switches to powers of ten.
+    else if (v !== 0 && (Math.abs(v) < 0.01 || Math.abs(v) >= 1e9)) {
+      var ex = Math.floor(Math.log(Math.abs(v)) / Math.LN10);
+      var mant = v / Math.pow(10, ex);
+      // Check AFTER rounding: 0.0099999 has mantissa 9.9999, which toFixed(3)
+      // carries to 10.000 and would print as 10.000\u00d710\u207b\u00b3.
+      if (Math.abs(Number(mant.toFixed(3))) >= 10) { mant /= 10; ex += 1; }
+      return mant.toFixed(3) + '\u00d7' + '10' + SUP(ex) + (unit || '');
+    }
     else if (Math.abs(v) >= 1000) s = Math.round(v).toLocaleString('en-US');
     else if (Math.abs(v) >= 100) s = v.toFixed(0);
     else if (Math.abs(v) >= 10) s = v.toFixed(1);
@@ -270,6 +289,282 @@
       var rb = ab * (e + edge) + (1 - ab) * (h + edge);
       return { ra: ra * 100, rb: rb * 100, rev: rb < ra ? 1 : 0 };
     },
+    // ---- wave 5a: core physics ----
+    'ohms-law': function (v) { var i=v.v/v.r; return { i:i, pw:v.v*i }; },
+    'hookes-law': function (v) { return { f:v.k*v.x, e:0.5*v.k*v.x*v.x }; },
+    'coulombs-law': function (v) {
+      var q1=v.q1*1e-6, q2=v.q2*1e-6;
+      return { f: Math.abs(8.9875517873681764e9*q1*q2/(v.r*v.r)), dir: (q1*q2)<0 ? 1 : 0 };
+    },
+    'newtons-law-of-universal-gravitation': function (v) {
+      return { f: 6.67430e-11*v.m1*v.m2/(v.r*v.r) };
+    },
+    'mass-energy-equivalence': function (v) {
+      var c=299792458, e=v.m*c*c;
+      return { e:e, tnt: e/4.184e9 };   // 1 tonne TNT = 4.184e9 J
+    },
+    'stefan-boltzmann-law': function (v) {
+      var j=5.670374419e-8*Math.pow(v.t,4);
+      return { j:j, p:j*v.a };
+    },
+    'maluss-law': function (v) {
+      var c=Math.cos(v.th*Math.PI/180); return { i: c*c*100 };
+    },
+    'torricellis-law': function (v) {
+      var sp=Math.sqrt(2*9.80665*v.h);
+      return { v:sp, q: sp*v.a*1000 };
+    },
+    'stokes-law': function (v) { return { f: 6*Math.PI*v.eta*v.r*v.v }; },
+    'reynolds-number': function (v) {
+      var re=v.rho*v.v*v.l/v.eta;
+      return { re:re, reg: re>4000 ? 1 : 0 };
+    },
+    'the-hagen-poiseuille-equation': function (v) {
+      var r=v.r/1000;
+      return { q: Math.PI*v.dp*Math.pow(r,4)/(8*v.eta*v.l)*1000 };
+    },
+    'the-carnot-theorem': function (v) {
+      return { eff: v.th>0 ? (1 - v.tc/v.th)*100 : NaN };
+    },
+    'the-photoelectric-effect': function (v) {
+      var hc=1239.841984;                 // eV.nm
+      var e=hc/v.lam;
+      return { ke: Math.max(0, e-v.phi), emit: e>v.phi ? 1 : 0, thr: hc/v.phi };
+    },
+    'the-bohr-model': function (v) {
+      var n1=Math.round(v.n1), n2=Math.round(v.n2);
+      var de=13.605693*(1/(n2*n2) - 1/(n1*n1));   // positive when n1 > n2
+      return { de: de, lam: de>0 ? 1239.841984/de : NaN };
+    },
+    'the-rydberg-formula': function (v) {
+      var n1=Math.round(v.n1), n2=Math.round(v.n2);
+      if (n2<=n1) return { lam: NaN, series: 0 };
+      var inv=1.0973731568e7*(1/(n1*n1) - 1/(n2*n2));
+      var lam=1/inv*1e9;
+      return { lam: lam, series: (lam>=380 && lam<=750) ? 1 : 0 };
+    },
+    'heisenbergs-uncertainty-principle': function (v) {
+      var dp=1.054571817e-34/(2*v.dx*1e-9);
+      return { dp: dp, dv: dp/9.1093837015e-31 };
+    },
+    'the-law-of-laplace': function (v) {
+      var r=v.r/1000;
+      return { dp: 2*v.g/r, dpb: 4*v.g/r };
+    },
+    'ficks-laws-of-diffusion': function (v) {
+      return { j: v.d*v.dc/v.dx, time: v.dx*v.dx/(2*v.d) };
+    },
+    'the-ideal-gas-law': function (v) {
+      var vm = v.v / 1000;                       // L -> m3
+      var p = v.n * 8.314462618 * v.t / vm;      // Pa
+      return { p: p / 1000, atm: p / 101325, mv: v.v / v.n };
+    },
+    'charles-law': function (v) {
+      var t1 = v.t1 + 273.15, t2 = v.t2 + 273.15;
+      if (t1 <= 0) return { v2: NaN, ch: NaN };
+      var v2 = v.v1 * t2 / t1;
+      return { v2: v2, ch: (v2 / v.v1 - 1) * 100 };
+    },
+    'gay-lussacs-law': function (v) {
+      var t1 = v.t1 + 273.15, t2 = v.t2 + 273.15;
+      if (t1 <= 0) return { p2: NaN, ch: NaN };
+      var p2 = v.p1 * t2 / t1;
+      return { p2: p2, ch: (p2 / v.p1 - 1) * 100 };
+    },
+    'avogadros-law': function (v) {
+      var v2 = v.v1 * v.n2 / v.n1;
+      return { v2: v2, mv: v.v1 / v.n1, mol: (v.n2 - v.n1) * 6.02214076e23 };
+    },
+    'daltons-law': function (v) {
+      var t = v.p1 + v.p2 + v.p3;
+      return { tot: t, f1: t ? v.p1 / t * 100 : NaN };
+    },
+    'arrhenius-equation': function (v) {
+      var R = 8.314462618, t = v.t + 273.15, ea = v.ea * 1000;
+      if (t <= 0) return { k: NaN, q10: NaN };
+      return { k: v.a * Math.exp(-ea / (R * t)),
+               q10: Math.exp((ea / R) * (1 / t - 1 / (t + 10))) };
+    },
+    'nernst-equation': function (v) {
+      var n = Math.round(v.n), rtf = 8.314462618 * 298.15 / 96485.332;  // 0.025693 V
+      return { e: v.e0 - (rtf / n) * Math.log(v.q), dec: rtf * Math.LN10 / n * 1000 };
+    },
+    'grahams-law-of-effusion': function (v) {
+      var r = Math.sqrt(v.m2 / v.m1);
+      return { r: r, t: r };
+    },
+    'the-gibbs-phase-rule': function (v) {
+      var f = Math.round(v.c) - Math.round(v.p) + 2;
+      return { f: f, over: f < 0 ? 1 : 0 };
+    },
+    'the-pythagorean-theorem': function (v) {
+      var a = Math.round(v.a), b = Math.round(v.b), c = Math.sqrt(a * a + b * b);
+      return { c: c, ar: a * b / 2, trip: Math.abs(c - Math.round(c)) < 1e-9 ? 1 : 0 };
+    },
+    'eulers-polyhedron-formula': function (v) {
+      var V = Math.round(v.v), E = Math.round(v.e), F = 2 - V + E;
+      // A convex polyhedron needs at least 4 of each, and every face has at
+      // least 3 edges with each edge shared by two, so 2E >= 3F and 2E >= 3V.
+      var ok = (F >= 4 && V >= 4 && 2 * E >= 3 * F && 2 * E >= 3 * V) ? 1 : 0;
+      return { f: F, ok: ok };
+    },
+    'the-binomial-theorem': function (v) {
+      var n = Math.round(v.n), k = Math.round(v.k);
+      if (k > n || k < 0) return { c: NaN, sh: NaN };
+      var c = 1;
+      for (var i = 0; i < k; i++) c = c * (n - i) / (i + 1);
+      c = Math.round(c);
+      return { c: c, sh: c / Math.pow(2, n) * 100 };
+    },
+    'wilsons-theorem': function (v) {
+      var n = Math.round(v.n), r = 1;
+      // (n-1)! reduced at every step: 60! overflows a double, 60! mod 60 does not.
+      for (var i = 2; i < n; i++) r = (r * i) % n;
+      return { r: r, w: r === n - 1 ? 1 : 0 };
+    },
+    'the-prime-number-theorem': function (v) {
+      var l = Math.log(v.x);
+      return { p1: v.x / l, p2: l > 1 ? v.x / (l - 1) : NaN, d: l };
+    },
+    'benfords-law': function (v) {
+      var d = Math.round(v.d), p = Math.log(1 + 1 / d) / Math.LN10;
+      return { p: p * 100, c: p * v.n, v: v.n / 9 };
+    },
+    'chebyshevs-inequality': function (v) {
+      var b = 1 / (v.k * v.k);
+      if (b > 1) b = 1;                     // the bound is vacuous below k = 1
+      return { out: b * 100, inn: (1 - b) * 100 };
+    },
+    'markovs-inequality': function (v) {
+      var b = v.mu / v.a;
+      return { p: (b > 1 ? 1 : b) * 100, r: v.a / v.mu };
+    },
+    'bessels-correction': function (v) {
+      var n = Math.round(v.n);
+      if (n < 2) return { sc: NaN, up: NaN, uv: NaN };
+      var f = Math.sqrt(n / (n - 1));
+      return { sc: v.sd * f, up: (f - 1) * 100, uv: 100 / n };
+    },
+    'the-bonferroni-correction': function (v) {
+      var m = Math.round(v.m), a = v.a / 100;
+      return { pe: a / m * 100, un: (1 - Math.pow(1 - a, m)) * 100 };
+    },
+    'the-monty-hall-problem': function (v) {
+      var n = Math.round(v.n), k = Math.round(v.k);
+      if (k > n - 2) return { st: NaN, sw: NaN, r: NaN };   // host must leave one shut
+      var st = 1 / n, sw = (1 - st) / (n - 1 - k);
+      return { st: st * 100, sw: sw * 100, r: sw / st };
+    },
+    'the-german-tank-problem': function (v) {
+      var m = Math.round(v.m), k = Math.round(v.k);
+      if (k > m) return { n: NaN, gap: NaN };               // cannot see more than exist
+      var n = m * (1 + 1 / k) - 1;
+      return { n: n, gap: n - m };
+    },
+    'number-needed-to-treat': function (v) {
+      var arr = (v.cer - v.eer) / 100;
+      return { arr: arr * 100,
+               rrr: v.cer ? (v.cer - v.eer) / v.cer * 100 : NaN,
+               nnt: arr > 0 ? 1 / arr : NaN };
+    },
+    'central-limit-theorem': function (v) {
+      var n = Math.round(v.n), se = v.sd / Math.sqrt(n);
+      return { se: se, moe: 1.959964 * se, n2: n * 4 };
+    },
+    'the-secretary-problem': function (v) {
+      var n = Math.round(v.n), k = Math.max(1, Math.round(n / Math.E)), s = 0;
+      for (var i = k; i < n; i++) s += 1 / i;
+      var p = (k / n) * s;
+      return { k: k, p: p * 100, g: p * n };
+    },
+    'hubbles-law': function (v) {
+      var vel = v.h * v.d;                      // km/s
+      // 1/H0 with H0 in km/s/Mpc, expressed in billions of years
+      return { v: vel, c: vel / 299792.458 * 100, t: 977.792 / v.h };
+    },
+    'drake-equation': function (v) {
+      var base = v.r * v.fp * v.ne * v.fl * v.fi * v.fc;
+      // L is the only term with no upper bound in evidence, and it multiplies
+      // everything else. Showing the same product at a million years is the
+      // cheapest way to see that the answer is a statement about longevity.
+      return { n: base * v.l, nl: base * 1e6 };
+    },
+    'the-schwarzschild-radius': function (v) {
+      var M = v.m * 1.98892e30;
+      var rs = 2 * 6.67430e-11 * M / (299792458 * 299792458);
+      return { rs: rs / 1000, rho: M / (4 / 3 * Math.PI * rs * rs * rs) };
+    },
+    'the-roche-limit': function (v) {
+      var d = 2.44 * v.r * Math.pow(v.rm / v.rs, 1 / 3);
+      return { d: d, rr: d / v.r };
+    },
+    'the-hill-sphere': function (v) {
+      var AU = 1.495978707e8;                   // km
+      var r = v.a * (1 - v.e) * Math.pow(v.q / 3, 1 / 3);
+      return { km: r * AU, pc: r / v.a * 100 };
+    },
+    'the-chandrasekhar-limit': function (v) {
+      var lim = 1.456 * Math.pow(2 / v.mu, 2);
+      return { lim: lim, over: v.m > lim ? 1 : 0, head: lim - v.m };
+    },
+    'the-doppler-effect': function (v) {
+      var c = 343;                              // speed of sound, 20 C dry air
+      if (v.vs >= c) return { f2: NaN, sh: NaN, boom: 1 };
+      var f2 = v.f * (c + v.vo) / (c - v.vs);
+      return { f2: f2, sh: (f2 / v.f - 1) * 100, boom: 0 };
+    },
+    'the-kelly-criterion': function (v) {
+      var p = v.p / 100, q = 1 - p, b = v.b;
+      var f = (b * p - q) / b;
+      // Growth is the log-utility rate. Negative edge means the honest answer
+      // is a negative stake, i.e. do not take the bet; growth is reported at
+      // the clamped stake of zero so the number stays meaningful.
+      var g = function (x) {
+        if (x <= 0) return 0;
+        if (x >= 1) return -Infinity;
+        return p * Math.log(1 + b * x) + q * Math.log(1 - x);
+      };
+      return { f: f * 100, g: g(f) * 100, gd: g(f * 2) * 100 };
+    },
+    'the-gini-coefficient': function (v) {
+      var x = v.x / 100, y = v.y / 100;
+      // Two-segment Lorenz curve through (0,0), (1-x, 1-y), (1,1).
+      var area = 0.5 * ((1 - x) * (1 - y) + x * ((1 - y) + 1));
+      var bottomHalf = (0.5 <= 1 - x)
+        ? 0.5 * (1 - y) / (1 - x)
+        : (1 - y) + (0.5 - (1 - x)) * y / x;
+      return { g: 1 - 2 * area, b: bottomHalf * 100, rat: (y / x) / ((1 - y) / (1 - x)) };
+    },
+    'the-herfindahl-hirschman-index': function (v) {
+      var h = v.a * v.a + v.b * v.b + v.c * v.c + v.d * v.d;
+      return { h: h, eq: h > 0 ? 10000 / h : Infinity, con: h > 2500 ? 1 : 0 };
+    },
+    'okuns-law': function (v) {
+      var gap = -v.c * (v.u - v.un);
+      return { gap: gap, lost: gap / 100 * 20000 };   // $20tn, in billions
+    },
+    'the-quantity-theory-of-money': function (v) {
+      var p = v.m + v.v - v.q;
+      return { p: p, yr: p > 0 ? Math.log(2) / Math.log(1 + p / 100) : Infinity };
+    },
+    'the-poisson-distribution': function (v) {
+      var l = v.l, k = Math.round(v.k);
+      // Terms built forward from e^-lambda so no factorial is ever formed.
+      var term = Math.exp(-l), cum = term;
+      for (var i = 1; i <= k; i++) { term = term * l / i; cum += term; }
+      return { p: term * 100, ge: (1 - (cum - term)) * 100, z: Math.exp(-l) * 100 };
+    },
+    'the-nyquist-shannon-sampling-theorem': function (v) {
+      var req = 2 * v.f;
+      if (v.fs >= req) return { req: req, ok: 1, al: v.f };
+      // Under-sampled: the component folds back about the nearest multiple.
+      var al = Math.abs(v.f - v.fs * Math.round(v.f / v.fs));
+      return { req: req, ok: 0, al: al };
+    },
+    'gauss-law': function (v) {
+      var q = v.q * 1e-9, eps = 8.8541878128e-12;
+      return { e: q / (4 * Math.PI * eps * v.r * v.r), fl: q / eps };
+    },
     'bayes-theorem': function (v) {
       var pr = v.prior / 100, se = v.sens / 100, sp = v.spec / 100;
       var tp = pr * se, fp = (1 - pr) * (1 - sp);
@@ -286,10 +581,17 @@
     function readOne(el) {
       var raw = parseFloat(el.value);
       if (el.getAttribute('data-log')) {
-        // the slider carries a 0..1000 POSITION; the real range is in data-min/max
+        // Untouched, a slider means exactly the default the spec asked for.
+        // Rounding a default to the nearest of 10,000 positions and reading it
+        // back drifts it: Drake's 0.01 came back as 0.009998 and printed as
+        // 9.998e-3 beside an identical slider reading 0.01. While el.value
+        // still equals the server-rendered attribute, nobody has moved it.
+        var init = el.getAttribute('data-init');
+        if (init !== null && el.value === el.getAttribute('value')) return parseFloat(init);
+        // the slider carries a 0..10000 POSITION; the real range is in data-min/max
         var lo = parseFloat(el.getAttribute('data-min'));
         var hi = parseFloat(el.getAttribute('data-max'));
-        var t = raw / 1000;
+        var t = raw / 10000;
         raw = Math.exp(Math.log(lo) + t * (Math.log(hi) - Math.log(lo)));
       }
       return raw;
