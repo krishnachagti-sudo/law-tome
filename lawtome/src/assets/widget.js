@@ -16,8 +16,13 @@
     // critical angle going into a denser medium, and no Bragg angle when the
     // wavelength cannot fit the spacing. Printing '∞' there claimed an
     // infinite angle, which is nonsense rather than merely unhelpful.
+    if (unit === 'bool') return v ? 'yes' : 'no';
     if (isNaN(v)) return '—';
     if (!isFinite(v)) return '∞';
+    // Counts and remainders are integers. Printing "1.00" for a remainder, or
+    // "1.00" for a yes/no, reads as a measurement with two decimals of
+    // precision rather than as the exact answer it is.
+    if (unit === 'int') return Math.round(v).toLocaleString('en-US');
     var s;
     if (unit === '%') s = (v < 1 ? v.toFixed(2) : v.toFixed(1));
     else if (Math.abs(v) >= 1000) s = Math.round(v).toLocaleString('en-US');
@@ -150,6 +155,67 @@
     },
     'capillary-action': function (v) {
       return { h: 2 * v.g * Math.cos(v.th * Math.PI / 180) / (v.rho * 9.80665 * v.r) * 1000 };
+    },
+    // ---- wave 3, 2026-09-09 ----
+    'the-van-t-hoff-equation': function (v) {
+      var R = 8.314462618;
+      var k2 = v.k1 * Math.exp(-(v.dh * 1000 / R) * (1 / v.t2 - 1 / v.t1));
+      return { k2: k2, fold: k2 / v.k1 };
+    },
+    'the-eyring-equation': function (v) {
+      var kB = 1.380649e-23, h = 6.62607015e-34, R = 8.314462618;
+      var k = (kB * v.t / h) * Math.exp(-(v.dg * 1000) / (R * v.t));
+      return { k: k, half: Math.LN2 / k };
+    },
+    'fermats-little-theorem': function (v) {
+      var a = Math.round(v.a), p = Math.round(v.p);
+      // modpow keeps every intermediate under p^2, so Number stays exact here.
+      function modpow(b, e, m) {
+        var r = 1; b %= m;
+        while (e > 0) { if (e & 1) r = (r * b) % m; b = (b * b) % m; e >>= 1; }
+        return r;
+      }
+      function isPrime(n) {
+        if (n < 2) return 0;
+        for (var i = 2; i * i <= n; i++) if (n % i === 0) return 0;
+        return 1;
+      }
+      return { r: (p > 1 && a % p !== 0) ? modpow(a, p - 1, p) : NaN, prime: isPrime(p) };
+    },
+    'helmholtz-resonance': function (v) {
+      // cm -> m: A/1e4, V/1e6, L/100
+      var A = v.a / 1e4, V = v.v / 1e6, L = v.l / 100;
+      return { f: (343 / (2 * Math.PI)) * Math.sqrt(A / (V * L)) };
+    },
+    'the-clausius-clapeyron-relation': function (v) {
+      var R = 8.314462618;
+      return { p2: v.p1 * Math.exp(-(v.dh * 1000 / R) * (1 / v.t2 - 1 / v.t1)) };
+    },
+    'henrys-law': function (v) { return { c: v.kh * v.p }; },
+    'the-henderson-hasselbalch-equation': function (v) {
+      return { ph: v.pka + Math.log(v.ratio) / Math.LN10 };
+    },
+    'the-hall-petch-relationship': function (v) {
+      return { sy: v.s0 + v.k / Math.sqrt(v.d) };
+    },
+    'escape-velocity': function (v) {
+      var G = 6.67430e-11, ME = 5.9722e24, RE = 6.371e6;
+      return { v: Math.sqrt(2 * G * (v.m * ME) / (v.r * RE)) / 1000 };
+    },
+    'wiens-displacement-law': function (v) {
+      return { lam: 2.897771955e-3 / v.t * 1e9 };
+    },
+    'the-coupon-collectors-problem': function (v) {
+      var n = Math.round(v.n), H = 0;
+      for (var i = 1; i <= n; i++) H += 1 / i;
+      return { e: n * H, per: H };
+    },
+    'the-square-cube-law': function (v) {
+      var s = v.s;
+      return { a: s * s, v: s * s * s, load: s };
+    },
+    'the-wiedemann-franz-law': function (v) {
+      return { kap: 2.44e-8 * v.t * (v.sig * 1e6) };
     },
     'bayes-theorem': function (v) {
       var pr = v.prior / 100, se = v.sens / 100, sp = v.spec / 100;
