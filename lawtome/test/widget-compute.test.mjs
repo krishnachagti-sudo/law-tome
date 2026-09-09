@@ -176,6 +176,33 @@ const KNOWN = [
   ['heaps-law', { n: 1e6, k: 44, b: 0.49 }, 'gain', 209.0295, 0.001],
   ['the-bus-factor', { n: 10, k: 2, p: 15 }, 'ps', 45.570, 0.001],
   ['the-jeans-instability', { t: 10, n: 1e4, mu: 2.33 }, 'mj', 5.375, 0.02],
+  ['the-ski-rental-problem', { r: 50, b: 500, d: 200 }, 'ra', 1.9],
+  ['the-ski-rental-problem', { r: 50, b: 500, d: 5 }, 'ra', 1],
+  ['the-pigeonhole-principle', { n: 367, m: 365 }, 'g', 2],
+  ['the-intermediate-value-theorem', { k: 2, c: 2, a: 0, b: 2 }, 'rt', 1.414214],
+  ['the-intermediate-value-theorem', { k: 2, c: 2, a: 2, b: 3 }, 'sc', 0],
+  ['brevity-law', { f: 10000 }, 'bits', 6.643856, 0.001],
+  ['the-gamblers-fallacy', { p: 50, k: 10 }, 'nx', 50],
+  ['the-gamblers-fallacy', { p: 50, k: 10 }, 'run', 0.0976563, 0.001],
+  ['self-organized-criticality', { tau: 2, n: 1e4 }, 'big', 10000],
+  ['the-coastline-paradox', { d: 1, f: 10 }, 'm', 1],
+  ['lanchesters-laws', { a: 100, b: 70, e: 1 }, 'sq', 71.4143, 0.001],
+  ['lanchesters-laws', { a: 100, b: 70, e: 1 }, 'li', 30],
+  ['terminal-velocity', { m: 80, a: 0.5, cd: 1 }, 'v', 50.61, 0.01],
+  ['the-gutenberg-richter-law', { a: 5, b: 1, m: 6 }, 'n', 0.1],
+  ['sarnoffs-law', { n: 100 }, 'r', 1.2676506e30, 0.001],
+  // Textbook at-the-money value; the A&S normal CDF is good to ~7.5e-8.
+  ['the-black-scholes-model', { s: 100, k: 100, t: 1, r: 5, v: 20 }, 'c', 10.4506, 0.002],
+  ['the-black-scholes-model', { s: 100, k: 100, t: 1, r: 5, v: 20 }, 'p', 5.5735, 0.002],
+  ['equal-temperament', { n: 7 }, 'e', -1.955, 0.01],
+  ['equal-temperament', { n: 12 }, 'e', 0],
+  ['color-temperature', { t: 5778 }, 'l', 501.52, 0.001],
+  ['huckels-rule', { e: 6 }, 'ar', 1],
+  ['huckels-rule', { e: 8 }, 'anti', 1],
+  ['farrs-law', { tp: 60, t: 80 }, 'end', 120],
+  ['the-error-catastrophe', { mu: 1e-4, l: 1e4 }, 'clean', 36.7861, 0.001],
+  ['fishers-principle', { m: 40 }, 'r', 1.5],
+  ['the-ninety-ninety-rule', { e: 100, f: 90 }, 'a', 180],
 ];
 
 test('known values, checked against the literature', () => {
@@ -199,15 +226,22 @@ test('every slider actually moves something', () => {
   for (const [slug, w] of specs) {
     const base = LAWS[slug](defaults(w));
     for (const i of w.inputs) {
-      const probe = defaults(w);
-      // Nudge within the declared range, away from whichever end we sit on.
-      const span = i.max - i.min;
-      probe[i.id] = i.value + (i.value + span * 0.37 <= i.max ? span * 0.37 : -span * 0.37);
-      const after = LAWS[slug](probe);
-      const moved = w.outputs.some((o) => {
-        const a = base[o.id], b = after[o.id];
-        if (Number.isNaN(a) && Number.isNaN(b)) return false;
-        return a !== b;
+      // Several probes, not one. A single sample can land in a region where
+      // the law is legitimately flat (past ski rental's break-even every cost
+      // is capped) and report a live slider as dead.
+      const probes = [0.1, 0.3, 0.6, 0.9]
+        .flatMap((f) => [i.min + (i.max - i.min) * f, i.value + (i.max - i.value) * f,
+                         i.value - (i.value - i.min) * f])
+        .filter((x) => x >= i.min && x <= i.max && x !== i.value);
+      const moved = probes.some((x) => {
+        const probe = defaults(w);
+        probe[i.id] = x;
+        const after = LAWS[slug](probe);
+        return w.outputs.some((o) => {
+          const a = base[o.id], b = after[o.id];
+          if (Number.isNaN(a) && Number.isNaN(b)) return false;
+          return a !== b;
+        });
       });
       if (FROZEN_ON_PURPOSE.has(`${slug}:${i.id}`)) {
         assert.ok(!moved, `${slug}: "${i.id}" now moves an output, so the allowlist entry is stale`);

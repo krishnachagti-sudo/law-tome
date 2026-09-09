@@ -30,6 +30,10 @@
     // "1.00" for a yes/no, reads as a measurement with two decimals of
     // precision rather than as the exact answer it is.
     if (unit === 'int') return Math.round(v).toLocaleString('en-US');
+    // Some laws live in the fourth decimal. The equal-tempered fifth is
+    // 1.4983 against a pure 1.5, and at two decimals both print "1.50", which
+    // hides the very gap the readout beside it is measuring.
+    if (unit === 'fine') return v.toFixed(4);
     var s;
     if (unit === '%') s = (v < 1 ? v.toFixed(2) : v.toFixed(1));
     // Fixed decimals lie about magnitude at the extremes. A diffusion flux of
@@ -769,6 +773,128 @@
       var cs = Math.sqrt(5 * k * v.t / (3 * v.mu * mH));
       var lj = cs * Math.sqrt(Math.PI / (G * rho));
       return { mj: mj / 1.98892e30, lj: lj / 3.0857e16 };
+    },
+    'the-ski-rental-problem': function (v) {
+      var be = v.b / v.r, d = Math.round(v.d);
+      // Rent while cumulative rent is below the purchase price, then buy.
+      var days = Math.ceil(be) - 1;
+      var st = d <= days ? d * v.r : days * v.r + v.b;
+      var op = Math.min(d * v.r, v.b);
+      return { be: be, rent: d * v.r, st: st, op: op, ra: op > 0 ? st / op : NaN };
+    },
+    'the-pigeonhole-principle': function (v) {
+      var n = Math.round(v.n), m = Math.round(v.m);
+      return { g: Math.ceil(n / m), sure: n > m ? 1 : 0, sp: Math.max(0, m - n) };
+    },
+    'the-intermediate-value-theorem': function (v) {
+      var k = Math.round(v.k);
+      var f = function (x) { return Math.pow(x, k) - v.c; };
+      var fa = f(v.a), fb = f(v.b);
+      var sc = (fa < 0 && fb > 0) || (fa > 0 && fb < 0);
+      return { fa: fa, fb: fb, sc: sc ? 1 : 0,
+               rt: sc ? Math.pow(v.c, 1 / k) : NaN,
+               it: sc ? Math.log((v.b - v.a) / 1e-9) / Math.LN2 : NaN };
+    },
+    'menzeraths-law': function (v) {
+      var r = Math.pow(v.x2 / v.x1, -v.b);
+      return { r: r, sh: (1 - r) * 100 };
+    },
+    'brevity-law': function (v) {
+      var p = v.f / 1e6;
+      var bits = -Math.log(p) / Math.LN2;
+      return { bits: bits, ch: bits / 4.7, p: p * 100 };
+    },
+    'the-gamblers-fallacy': function (v) {
+      var p = v.p / 100, k = Math.round(v.k);
+      // The run is unlikely BEFORE it starts and irrelevant once it has.
+      return { nx: v.p, run: Math.pow(p, k) * 100, more: Math.pow(p, k + 1) * 100 };
+    },
+    'self-organized-criticality': function (v) {
+      var e = v.tau - 1;
+      return { big: Math.pow(v.n, 1 / e),
+               p100: Math.pow(100, -e) * 100,
+               x10: Math.pow(10, 1 / e) };
+    },
+    'the-coastline-paradox': function (v) {
+      var m = Math.pow(v.f, v.d - 1);
+      return { m: m, pc: (m - 1) * 100, sm: 1 };
+    },
+    'lanchesters-laws': function (v) {
+      var sq = v.a * v.a - v.e * v.b * v.b;
+      return { sq: sq > 0 ? Math.sqrt(sq) : 0,
+               li: Math.max(0, v.a - v.e * v.b),
+               w: sq > 0 ? 1 : 0 };
+    },
+    'terminal-velocity': function (v) {
+      var g = 9.80665, rho = 1.225;
+      var vt = Math.sqrt(2 * v.m * g / (rho * v.a * v.cd));
+      // v(t) = vt tanh(gt/vt), so nine tenths is reached at atanh(0.9) vt/g.
+      return { v: vt, kmh: vt * 3.6, t: Math.atanh(0.9) * vt / g };
+    },
+    'the-gutenberg-richter-law': function (v) {
+      var n = Math.pow(10, v.a - v.b * v.m);
+      return { n: n, yr: n > 0 ? 1 / n : Infinity, st: Math.pow(10, v.b) };
+    },
+    'sarnoffs-law': function (v) {
+      var n = Math.round(v.n);
+      return { s: n, m: n * n, r: Math.pow(2, n) };
+    },
+    'the-black-scholes-model': function (v) {
+      // Abramowitz and Stegun 26.2.17, good to about 7.5e-8.
+      function N(x) {
+        var s = x < 0 ? -1 : 1; x = Math.abs(x) / Math.SQRT2;
+        var t = 1 / (1 + 0.3275911 * x);
+        var y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t
+                  - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
+        return 0.5 * (1 + s * y);
+      }
+      var r = v.r / 100, sig = v.v / 100;
+      var d1 = (Math.log(v.s / v.k) + (r + sig * sig / 2) * v.t) / (sig * Math.sqrt(v.t));
+      var d2 = d1 - sig * Math.sqrt(v.t);
+      var disc = v.k * Math.exp(-r * v.t);
+      var c = v.s * N(d1) - disc * N(d2);
+      return { c: c, p: c - v.s + disc, d: N(d2) * 100 };
+    },
+    'equal-temperament': function (v) {
+      var n = Math.round(v.n);
+      var r = Math.pow(2, n / 12);
+      // Nearest small-integer ratio, which is what the ear is listening for.
+      var best = 1, err = Infinity;
+      for (var d = 1; d <= 16; d++) {
+        for (var num = d; num <= 4 * d; num++) {
+          var cand = num / d;
+          if (Math.abs(1200 * Math.log(r / cand) / Math.LN2) < Math.abs(err)) {
+            err = 1200 * Math.log(r / cand) / Math.LN2; best = cand;
+          }
+        }
+      }
+      return { r: r, pu: best, e: err };
+    },
+    'color-temperature': function (v) {
+      var l = 2.897771955e-3 / v.t * 1e9;
+      return { l: l, p: Math.pow(v.t / 5778, 4), vis: (l >= 380 && l <= 750) ? 1 : 0 };
+    },
+    'huckels-rule': function (v) {
+      var e = Math.round(v.e);
+      return { n: (e - 2) / 4, ar: (e - 2) % 4 === 0 ? 1 : 0, anti: e % 4 === 0 ? 1 : 0 };
+    },
+    'farrs-law': function (v) {
+      var tp = Math.round(v.tp), t = Math.round(v.t), end = 2 * tp;
+      return { end: end, left: Math.max(0, end - t), done: Math.min(100, t / end * 100) };
+    },
+    'the-error-catastrophe': function (v) {
+      return { max: 1 / v.mu,
+               clean: Math.pow(1 - v.mu, v.l) * 100,
+               over: v.mu * v.l > 1 ? 1 : 0 };
+    },
+    'fishers-principle': function (v) {
+      var m = v.m / 100;
+      return { r: (1 - m) / m, push: m < 0.5 ? 100 : (m > 0.5 ? -100 : 0),
+               eq: Math.abs(m - 0.5) < 1e-9 ? 1 : 0 };
+    },
+    'the-ninety-ninety-rule': function (v) {
+      var a = v.e * (90 + v.f) / 100;
+      return { a: a, o: (a / v.e - 1) * 100, s: a - v.e * 0.9 };
     },
     'bayes-theorem': function (v) {
       var pr = v.prior / 100, se = v.sens / 100, sp = v.spec / 100;
