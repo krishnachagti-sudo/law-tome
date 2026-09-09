@@ -64,7 +64,7 @@ test('homepage credits the creator and the publisher, on-page and in JSON-LD', (
   // page. Three Person nodes with drifting contents read to a crawler as
   // several people who share a name, which is the opposite of what an entity
   // graph is for.
-  assert.match(html, /"founder":\{"@type":"Person","@id":"[^"]*#krishna-chagti"/);
+  assert.match(html, /"founder":\{"@type":"Person","@id":"https:\/\/conyso\.com\/founder\/#person"/);
   // The title alone, with the employer as a related entity — not a job title
   // that happens to contain a comma and a company name.
   assert.match(html, /"jobTitle":"Founder & CEO"/);
@@ -74,7 +74,7 @@ test('homepage credits the creator and the publisher, on-page and in JSON-LD', (
   // corroboration is the only thing a knowledge graph acts on.
   assert.match(html, /"worksFor":\{"@id":"https:\/\/conyso\.com\/#organization"\}/);
   assert.match(html, /"founderOf":\{"@id":"https:\/\/conyso\.com\/#organization"\}/);
-  assert.match(html, /"@id":"https:\/\/conyso\.com\/#organization","name":"Conyso"[^}]*"founder":\{"@id":"[^"]*#krishna-chagti"\}/);
+  assert.match(html, /"@id":"https:\/\/conyso\.com\/#organization","name":"Conyso"[^}]*"founder":\{"@id":"https:\/\/conyso\.com\/founder\/#person"\}/);
   // Every sameAs is a profile that can be fetched and checked back. ORCID is
   // the one that proves the name refers to one specific human.
   assert.match(html, /"sameAs":\["https:\/\/conyso\.com\/founder\/","https:\/\/www\.linkedin\.com\/in\/krishna-chagti"/);

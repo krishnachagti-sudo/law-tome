@@ -84,17 +84,46 @@ const FOUNDER = {
   // back to conyso.com. But it is no longer the first thing in the list, and
   // the founder relationship is now asserted structurally below rather than
   // left implicit in a job-title string.
+  // Every entry is personal, resolves, and points back — the bar set in
+  // docs/ENTITY.md. Each was re-checked on 2026-08-01: the GitHub profile now
+  // carries the name and a conyso.com/founder/ website link, Peerlist and
+  // Connectively both name Conyso, and OpenAlex is bound to the same ORCID.
+  //
+  // This list is duplicated verbatim on conyso.com. Identical means identical —
+  // two properties listing overlapping-but-different identifier sets is weaker
+  // evidence than either alone, because it reads as two similar people. Change
+  // one, change the other in the same commit.
+  //
+  // Deliberately absent: the two Zenodo record URLs conyso.com used to carry.
+  // Those identify *papers*, not the person, so they belong in a work's
+  // citation rather than in an identity's sameAs.
   sameAs: [
     'https://conyso.com/founder/',
     'https://www.linkedin.com/in/krishna-chagti',
     'https://github.com/krishnachagti-sudo',
     'https://orcid.org/0009-0003-6401-1788',
+    'https://scholar.google.com/citations?user=PMzF_lYAAAAJ',
+    'https://iitm.academia.edu/KrishnaChagti',
+    'https://openalex.org/A5139032279',
+    'https://peerlist.io/krishnachagti',
+    'https://www.connectively.us/p/krishna-chagti-lssbb-psm-ii',
   ],
 };
 
-/** The canonical node id for the creator, stable across every page. */
-export function founderId(origin = '', base = '/') {
-  return `${origin}${base}about/#krishna-chagti`;
+/**
+ * The canonical node id for the creator, stable across every page.
+ *
+ * It points at the founder microsite, not at this project's /about/ page. The
+ * identity is described most fully at conyso.com/founder/ — image, credentials,
+ * education, mainEntityOfPage — and that is the canonical home for it, so the
+ * node id belongs there. Anchoring a person to one project's about page means
+ * the identifier for the person breaks if the project ever moves or retires.
+ *
+ * Law Tome therefore *references* the entity rather than owning it. The
+ * arguments are kept so every call site stays unchanged.
+ */
+export function founderId(_origin = '', _base = '/') {
+  return 'https://conyso.com/founder/#person';
 }
 
 /**
