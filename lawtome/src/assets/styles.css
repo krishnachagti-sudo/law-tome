@@ -1525,6 +1525,17 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 /* ---- playable laws --------------------------------------------------------- */
 .widget{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 22px 16px}
 .wg-lede{margin:0 0 16px;font-size:14.5px;color:var(--read)}
+/* kind: probe. Steps are visible in the served HTML and hidden by the script,
+   so a reader without JavaScript sees the whole experiment described. */
+.ix-step-item{padding:0 0 14px}
+.ix-step-item[hidden]{display:none}
+.ix-probe .wg-in{display:grid;grid-template-columns:1fr 92px;grid-template-areas:"lab out" "rng rng";
+  gap:4px 12px;align-items:center;margin:0 0 12px;min-width:0}
+.ix-probe .wg-in input[type=range]{grid-area:rng;width:100%;accent-color:var(--accent);cursor:pointer}
+.ix-probe .wg-in input[type=range]:disabled{opacity:.5}
+.ix-probe .wg-in output{grid-area:out;justify-self:end;font-family:var(--mono);font-size:13px;color:var(--accent)}
+.ix-probe .wg-lab{grid-area:lab;font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--muted)}
+.ix-probe .ix-verdict p{font-family:var(--mono);font-size:15px;color:var(--ink)}
 /* kind: demo. The stimulus itself. Kept small: the phi dots are a few hundred
    square pixels between them, far under the WCAG general flash threshold, and
    nothing animates until the reader presses play. */

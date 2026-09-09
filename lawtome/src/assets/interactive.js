@@ -63,6 +63,60 @@
     };
   }
 
+  /* Probe verdicts. Each is computed from the reader's own answers. Nothing
+   * here reports what "most people" do as though it were measured on them. */
+  var PROBES = {
+    'the-ellsberg-paradox': function (a) {
+      var first = a.first, second = a.second;
+      // Bet on red over black says you rank P(red) above P(black).
+      // Bet on black-or-yellow over red-or-yellow says the reverse, because
+      // yellow is on both sides and cancels.
+      var says1 = first === 'red' ? 'P(red) > P(black)' : 'P(black) > P(red)';
+      var says2 = second === 'by' ? 'P(black) > P(red)' : 'P(red) > P(black)';
+      var inconsistent = says1 !== says2;
+      var classic = (first === 'red' && second === 'by');
+      var work = [
+        'First bet: you preferred ' + (first === 'red' ? 'RED' : 'BLACK') + ', which says ' + says1 + '.',
+        'Second bet: you preferred ' + (second === 'by' ? 'BLACK or YELLOW' : 'RED or YELLOW')
+          + '. Yellow appears on both sides and cancels, so this says ' + says2 + '.',
+      ];
+      if (inconsistent) {
+        work.push('Those two cannot both hold. No assignment of probabilities to black and yellow makes both of your choices the better bet.');
+      } else {
+        work.push('Those agree, so a single probability assignment can account for both of your choices.');
+      }
+      return {
+        result: inconsistent
+          ? (classic
+              ? 'You made the classic pair, and it is inconsistent.'
+              : 'Your two choices are inconsistent with each other.')
+          : 'Your two choices are consistent.',
+        work: work,
+      };
+    },
+    'the-planning-fallacy': function (a) {
+      var est = a.est, past = (a.h1 + a.h2) / 2;
+      var ratio = est > 0 ? past / est : NaN;
+      var work = [
+        'Your estimate for the next one: ' + est + ' days.',
+        'What the last two actually took: ' + a.h1 + ' and ' + a.h2 + ' days, averaging ' + past.toFixed(1) + '.',
+      ];
+      var res;
+      if (past > est) {
+        work.push('Your own history says ' + ratio.toFixed(2) + ' times your estimate.');
+        work.push('The outside view, applied to your number: ' + (est * ratio).toFixed(1) + ' days.');
+        res = 'Your history runs ' + ratio.toFixed(2) + 'x your estimate.';
+      } else if (past < est) {
+        work.push('Your estimate is ABOVE your own history, which is not the fallacy. Either you have already corrected for it, or this task is genuinely larger than the last two.');
+        res = 'No gap here: you estimated above your own record.';
+      } else {
+        work.push('Your estimate matches your history exactly.');
+        res = 'Your estimate matches your own record.';
+      }
+      return { result: res, work: work };
+    },
+  };
+
   var ENGINES = {
     'goodharts-law': function (v) {
       var r = metricGaming(v, 0);
@@ -400,8 +454,86 @@
     go();
   }
 
+  function wireProbe(root) {
+    var slug = root.getAttribute('data-interactive');
+    var verdict = PROBES[slug];
+    if (!verdict) return;
+    var steps = root.querySelectorAll('[data-ix-step]');
+    var outRes = root.querySelector('[data-ix-out="result"]');
+    var outWork = root.querySelector('[data-ix-out="work"]');
+    var answers = {}, at = 0;
+
+    function show(i) {
+      for (var k = 0; k < steps.length; k++) {
+        steps[k].hidden = k > i;
+      }
+    }
+
+    function finish() {
+      var res = verdict(answers);
+      outRes.textContent = '';
+      var p = document.createElement('p');
+      p.textContent = res.result;
+      outRes.appendChild(p);
+      outRes.hidden = false;
+      outWork.textContent = '';
+      for (var i = 0; i < res.work.length; i++) {
+        var el = document.createElement('p');
+        el.className = 'ix-step';
+        el.textContent = res.work[i];
+        outWork.appendChild(el);
+      }
+    }
+
+    function advance() {
+      at++;
+      if (at >= steps.length) finish();
+      else show(at);
+    }
+
+    for (var i = 0; i < steps.length; i++) {
+      (function (li) {
+        var id = li.getAttribute('data-ix-step');
+        if (li.getAttribute('data-type') === 'choice') {
+          var opts = li.querySelectorAll('[data-ix-opt]');
+          for (var j = 0; j < opts.length; j++) {
+            (function (b) {
+              b.addEventListener('click', function () {
+                if (li.getAttribute('data-ix-done')) return;
+                li.setAttribute('data-ix-done', '1');
+                b.setAttribute('data-ix-picked', '1');
+                for (var m = 0; m < opts.length; m++) opts[m].disabled = true;
+                answers[stepId(li)] = b.getAttribute('data-ix-opt');
+                advance();
+              });
+            }(opts[j]));
+          }
+        } else {
+          var range = li.querySelector('input[type=range]');
+          var out = li.querySelector('[data-ixout]');
+          range.addEventListener('input', function () {
+            out.textContent = FMT(parseFloat(range.value), range.getAttribute('data-unit') || '');
+          });
+          li.querySelector('[data-ix-next]').addEventListener('click', function () {
+            if (li.getAttribute('data-ix-done')) return;
+            li.setAttribute('data-ix-done', '1');
+            range.disabled = true;
+            li.querySelector('[data-ix-next]').disabled = true;
+            answers[stepId(li)] = parseFloat(range.value);
+            advance();
+          });
+        }
+      }(steps[i]));
+    }
+
+    function stepId(li) { return li.getAttribute('data-step-id'); }
+
+    show(0);
+  }
+
   function wire(root) {
     var slug = root.getAttribute('data-interactive');
+    if (root.className.indexOf('ix-probe') !== -1) return wireProbe(root);
     if (root.className.indexOf('ix-spot') !== -1) return wireSpot(root);
     if (root.className.indexOf('ix-demo') !== -1) return wireDemo(root);
     if (root.className.indexOf('ix-sim') !== -1) return wireSim(root);

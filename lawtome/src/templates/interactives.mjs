@@ -370,6 +370,47 @@ const INTERACTIVES = {
     caption: 'Drag the background difference to zero and the two squares visibly become what they always were.',
     note: 'The eye reports contrast with the surround rather than absolute luminance, because that is the quantity that stays constant as the light changes. The illusion is the price of that design, and both readouts below are read back from the rendered elements rather than asserted.',
   },
+
+  // ---- kind: probe. One question at a time, and the verdict is computed from
+  // the reader's own answers rather than from anything asserted. ----
+  //
+  // Sequencing is the mechanism, not decoration. Show both questions at once
+  // and the reader reconciles them before answering; that is precisely what
+  // these two laws say people fail to do in the wild.
+  'the-ellsberg-paradox': {
+    kind: 'probe',
+    title: 'Take the bets',
+    lede: 'An urn holds ninety balls. Thirty are red. The other sixty are black and yellow in an unknown proportion, anywhere from all black to all yellow. You draw one ball.',
+    steps: [
+      { id: 'first', type: 'choice',
+        text: 'Two bets, each paying the same if you win. Which do you want?',
+        options: [
+          { id: 'red', label: 'Win if the ball is RED' },
+          { id: 'black', label: 'Win if the ball is BLACK' },
+        ] },
+      { id: 'second', type: 'choice',
+        text: 'Same urn, same ball, two more bets. Which now?',
+        options: [
+          { id: 'ry', label: 'Win if the ball is RED or YELLOW' },
+          { id: 'by', label: 'Win if the ball is BLACK or YELLOW' },
+        ] },
+    ],
+    note: 'Ellsberg ran this in 1961. The usual pattern is not a mistake in arithmetic. It is a preference for a known risk over an unknown one, which no single probability assignment can represent, and which is why ambiguity aversion is treated as its own thing.',
+  },
+  'the-planning-fallacy': {
+    kind: 'probe',
+    title: 'Check yourself',
+    lede: 'Kahneman and Tversky’s claim is not that people are bad at estimating. It is that they estimate from the plan in front of them rather than from what happened last time, and that the two answers differ reliably in one direction.',
+    steps: [
+      { id: 'est', type: 'number', text: 'Think of a piece of work you are putting off. Picture doing it. How many days will it take?',
+        min: 0.5, max: 400, step: 0.5, value: 5, unit: ' days' },
+      { id: 'h1', type: 'number', text: 'Now do not think about that one. How many days did the LAST comparable piece of work actually take, start to finish?',
+        min: 0.5, max: 400, step: 0.5, value: 8, unit: ' days' },
+      { id: 'h2', type: 'number', text: 'And the one before that?',
+        min: 0.5, max: 400, step: 0.5, value: 12, unit: ' days' },
+    ],
+    note: 'The first question invites the inside view: you simulate the work and add up the steps, and the simulation contains no interruptions, because you cannot picture the ones you have not had yet. The last two invite the outside view, which already contains every interruption that actually occurred. The gap between your own two answers is the fallacy, measured on you.',
+  },
 };
 
 export function interactiveSlugs() {
@@ -512,12 +553,46 @@ ${outs}
         </div>`;
 }
 
+/* kind: probe. Each step is revealed only when the one before it is answered,
+ * because seeing the later question first is exactly what stops these effects
+ * appearing. With no script every step is visible and the page reads as a
+ * description of the experiment, which is the honest fallback. */
+function probeBlock(slug, w) {
+  const steps = w.steps.map((st, i) => {
+    const body = st.type === 'choice'
+      ? `                <div class="ix-choices">
+${st.options.map((o) => `                  <button type="button" class="ix-choice" data-ix-opt="${esc(o.id)}">${esc(o.label)}</button>`).join('\n')}
+                </div>`
+      : `                <label class="wg-in">
+                  <span class="wg-lab">${esc(st.unit ? st.unit.trim() : 'value')}</span>
+                  <input type="range" min="${st.min}" max="${st.max}" step="${st.step}" value="${st.value}"
+                         data-ix="${esc(st.id)}" data-unit="${esc(st.unit || '')}" aria-label="${esc(st.text)}">
+                  <output data-ixout="${esc(st.id)}">${st.value}${esc(st.unit || '')}</output>
+                </label>
+                <button type="button" class="ix-choice" data-ix-next>That is my answer</button>`;
+    return `            <li class="ix-step-item" data-ix-step="${i}" data-step-id="${esc(st.id)}" data-type="${esc(st.type)}">
+              <p class="ix-case-text">${esc(st.text)}</p>
+${body}
+            </li>`;
+  }).join('\n');
+  return `        <div class="interactive ix-probe" data-interactive="${esc(slug)}">
+          <p class="wg-lede">${esc(w.lede)}</p>
+          <ol class="ix-cases">
+${steps}
+          </ol>
+          <div class="ix-verdict" data-ix-out="result" hidden></div>
+          <div class="ix-work" data-ix-out="work"></div>
+          <p class="wg-note">${esc(w.note)}</p>
+        </div>`;
+}
+
 export function interactiveBlock(slug) {
   const w = interactiveFor(slug);
   if (!w) return '';
   if (w.kind === 'spot') return spotBlock(slug, w);
   if (w.kind === 'sim') return simBlock(slug, w);
   if (w.kind === 'demo') return demoBlock(slug, w);
+  if (w.kind === 'probe') return probeBlock(slug, w);
   const key = keyBlock(w);
   const fields = w.fields.map((f) => `            <label class="ix-f">
               <span class="ix-lab">${esc(f.label)}</span>

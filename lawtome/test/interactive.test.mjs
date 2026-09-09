@@ -19,16 +19,18 @@ const body = src.slice(src.indexOf('  function gcd'), src.indexOf('  function wi
 // The engines close over gcd and inverse, so the whole body is evaluated as
 // one function and asked for its table. A bare eval would not leak `var` out
 // of ESM strict mode.
-const { ENGINES, STAGE } = eval(`(function () { ${body} return { ENGINES: ENGINES, STAGE: STAGE }; })()`);
+const { ENGINES, STAGE, PROBES } = eval(
+  `(function () { ${body} return { ENGINES: ENGINES, STAGE: STAGE, PROBES: PROBES }; })()`);
 
 const solvers = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'solver');
 const spots = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'spot');
 const sims = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'sim');
 const demos = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'demo');
+const probes = interactiveSlugs().filter((s) => interactiveFor(s).kind === 'probe');
 
 test('every spec names a kind this build understands', () => {
   for (const slug of interactiveSlugs()) {
-    assert.ok(['solver', 'spot', 'sim', 'demo'].includes(interactiveFor(slug).kind),
+    assert.ok(['solver', 'spot', 'sim', 'demo', 'probe'].includes(interactiveFor(slug).kind),
       `${slug}: unknown kind "${interactiveFor(slug).kind}"`);
   }
 });
@@ -376,4 +378,78 @@ test('simultaneous contrast: the chip colour does not depend on the backgrounds'
   const a = STAGE.contrast({ sep: 0, mid: 50 }).css['--sc-mid'];
   const b = STAGE.contrast({ sep: 100, mid: 50 }).css['--sc-mid'];
   assert.equal(a, b, 'the whole claim is that the chip never changes');
+});
+
+/* The probe kind asks one question at a time and computes a verdict from the
+ * reader's own answers. It must never report what "most people" do as though
+ * it had measured it on them, and it must be willing to say the effect did
+ * not show up. */
+test('every probe has a verdict function and well-formed steps', () => {
+  for (const slug of probes) {
+    const w = interactiveFor(slug);
+    assert.ok(PROBES[slug], `${slug}: no verdict function`);
+    assert.ok(w.steps.length >= 2, `${slug}: a probe needs at least two steps`);
+    const ids = new Set();
+    for (const st of w.steps) {
+      assert.ok(st.id && !ids.has(st.id), `${slug}: duplicate or missing step id`);
+      ids.add(st.id);
+      assert.ok(['choice', 'number'].includes(st.type), `${slug}: bad step type`);
+      assert.ok(st.text && st.text.length > 20, `${slug}: step has no real question`);
+      if (st.type === 'choice') {
+        assert.ok(st.options.length >= 2, `${slug}: a choice needs options`);
+        for (const o of st.options) assert.ok(o.id && o.label, `${slug}: malformed option`);
+      } else {
+        assert.ok(st.min < st.max && st.value >= st.min && st.value <= st.max,
+          `${slug}: numeric step range is wrong`);
+      }
+    }
+    const html = interactiveBlock(slug);
+    // Every step is served visible; the script hides them.
+    assert.equal((html.match(/ix-step-item/g) || []).length, w.steps.length);
+    assert.ok(!/data-ix-step="1" hidden/.test(html), `${slug}: steps hidden server-side`);
+    for (const st of w.steps) {
+      assert.ok(html.includes(`data-step-id="${st.id}"`), `${slug}: step ${st.id} has no id in the markup`);
+    }
+  }
+});
+
+test('Ellsberg: every combination of the two bets is judged correctly', () => {
+  const P = PROBES['the-ellsberg-paradox'];
+  // Yellow is on both sides of the second bet and cancels, so the second
+  // choice is a statement about black against red, exactly like the first.
+  const cases = [
+    ['red', 'by', true, 'the classic pair'],
+    ['black', 'ry', true, 'the mirror-image pair, equally incoherent'],
+    ['red', 'ry', false, 'consistent: red preferred both times'],
+    ['black', 'by', false, 'consistent: black preferred both times'],
+  ];
+  for (const [first, second, shouldClash, label] of cases) {
+    const r = P({ first, second });
+    const clashed = /inconsistent/.test(r.result);
+    assert.equal(clashed, shouldClash, `${label}: got "${r.result}"`);
+    assert.equal(r.work.length, 3, `${label}: should show both readings and the conclusion`);
+  }
+  assert.match(P({ first: 'red', second: 'by' }).result, /classic/,
+    'the famous pair should be named as such');
+});
+
+test('Ellsberg names the cancellation rather than asserting the result', () => {
+  const r = PROBES['the-ellsberg-paradox']({ first: 'red', second: 'by' });
+  assert.match(r.work[1], /cancels/, 'the reader should be shown why yellow drops out');
+});
+
+test('the planning fallacy reports the reader, not a population', () => {
+  const P = PROBES['the-planning-fallacy'];
+  const under = P({ est: 5, h1: 8, h2: 12 });
+  assert.match(under.result, /2\.00x/, 'should quote the ratio from their own numbers');
+  // The honest branch: the effect is not forced on a reader who does not show it.
+  const over = P({ est: 20, h1: 8, h2: 10 });
+  assert.match(over.result, /No gap/);
+  assert.ok(!/fallacy/i.test(over.result), 'must not accuse a reader whose estimate was high');
+  const same = P({ est: 10, h1: 10, h2: 10 });
+  assert.match(same.result, /matches/);
+  for (const r of [under, over, same]) {
+    assert.ok(!/most people|typically|studies show/i.test(r.result + r.work.join(' ')),
+      'a probe must not report a population finding as though it measured the reader');
+  }
 });
