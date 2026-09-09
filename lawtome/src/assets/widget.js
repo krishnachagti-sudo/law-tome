@@ -50,6 +50,37 @@
       for (var i = 0; i < n; i++) q *= (365 - i) / 365;
       return { p: (1 - q) * 100 };
     },
+    // ---- added 2026-09-09: the highest-impression ranking pages ----
+    'the-cauchy-schwarz-inequality': function (v) {
+      var dot = Math.abs(v.ux * v.vx + v.uy * v.vy);
+      var prod = Math.sqrt(v.ux * v.ux + v.uy * v.uy) * Math.sqrt(v.vx * v.vx + v.vy * v.vy);
+      return { dot: dot, prod: prod, slack: prod - dot };
+    },
+    'jensens-inequality': function (v) {
+      var w = v.w / 100;
+      var mean = w * v.x1 + (1 - w) * v.x2;
+      var fmean = mean * mean;
+      var meanf = w * v.x1 * v.x1 + (1 - w) * v.x2 * v.x2;
+      return { fmean: fmean, meanf: meanf, gap: meanf - fmean };
+    },
+    'the-law-of-truly-large-numbers': function (v) {
+      var p = 1 / v.odds, n = Math.round(v.n);
+      // (1-p)^n directly loses all precision for tiny p, so go through log1p.
+      var none = Math.exp(n * Math.log1p(-p));
+      return { p: (1 - none) * 100, exp: n * p };
+    },
+    'beer-lambert-law': function (v) {
+      var a = v.e * v.l * v.c;
+      return { a: a, t: Math.pow(10, -a) * 100 };
+    },
+    'boyles-law': function (v) {
+      return { p2: v.p1 * v.v1 / v.v2, ratio: v.v1 / v.v2 };
+    },
+    'galileos-inclined-plane': function (v) {
+      var a = 9.80665 * Math.sin(v.ang * Math.PI / 180);
+      var t = Math.sqrt(2 * v.len / a);
+      return { acc: a, time: t, vel: a * t };
+    },
     'bayes-theorem': function (v) {
       var pr = v.prior / 100, se = v.sens / 100, sp = v.spec / 100;
       var tp = pr * se, fp = (1 - pr) * (1 - sp);

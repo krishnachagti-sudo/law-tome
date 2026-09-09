@@ -97,6 +97,100 @@ const WIDGETS = {
       { id: 'fp', label: 'False positives per true positive', fmt: '' },
     ],
   },
+  // ---- added 2026-09-09, chosen from Search Console rather than by instinct ----
+  // These six are the highest-impression law pages that already rank and whose
+  // defining formula is unambiguous. Each computes the law's own arithmetic.
+  'the-cauchy-schwarz-inequality': {
+    title: 'Try it',
+    lede: 'Move two vectors and watch the inner product stay under the product of their lengths.',
+    identity: '|<u,v>| <= ||u|| ||v||',
+    inputs: [
+      { id: 'ux', label: 'u, x component', min: -10, max: 10, step: 0.1, value: 3 },
+      { id: 'uy', label: 'u, y component', min: -10, max: 10, step: 0.1, value: 4 },
+      { id: 'vx', label: 'v, x component', min: -10, max: 10, step: 0.1, value: 2 },
+      { id: 'vy', label: 'v, y component', min: -10, max: 10, step: 0.1, value: 6 },
+    ],
+    outputs: [
+      { id: 'dot', label: 'Inner product |<u,v>|' },
+      { id: 'prod', label: 'Product of lengths ||u|| ||v||' },
+      { id: 'slack', label: 'Slack between them' },
+    ],
+  },
+  'jensens-inequality': {
+    title: 'Try it',
+    lede: 'For the convex function x squared, the function of the average never exceeds the average of the function.',
+    identity: 'f(E[X]) <= E[f(X)],  f(x) = x^2',
+    inputs: [
+      { id: 'x1', label: 'First value', min: -10, max: 10, step: 0.1, value: -4 },
+      { id: 'x2', label: 'Second value', min: -10, max: 10, step: 0.1, value: 6 },
+      { id: 'w', label: 'Weight on the first', min: 0, max: 100, step: 1, value: 50, unit: '%' },
+    ],
+    outputs: [
+      { id: 'fmean', label: 'f of the average' },
+      { id: 'meanf', label: 'Average of f' },
+      { id: 'gap', label: 'Jensen gap' },
+    ],
+  },
+  'the-law-of-truly-large-numbers': {
+    title: 'Try it',
+    lede: 'How quickly a one-in-a-million event becomes near certain once there are enough chances.',
+    identity: 'P(at least one) = 1 - (1 - p)^n',
+    inputs: [
+      { id: 'odds', label: 'Odds of one chance', min: 10, max: 10000000, step: 1, value: 1000000, unit: '', log: true },
+      { id: 'n', label: 'Number of chances', min: 1, max: 10000000, step: 1, value: 1000000, unit: '', log: true },
+    ],
+    outputs: [
+      { id: 'p', label: 'Chance it happens at least once', fmt: '%' },
+      { id: 'exp', label: 'Expected number of times', fmt: '' },
+    ],
+  },
+  'beer-lambert-law': {
+    title: 'Try it',
+    lede: 'Absorbance rises in proportion to concentration and path length; transmitted light falls away as a power of ten.',
+    identity: 'A = e l c,  T = 10^(-A)',
+    inputs: [
+      { id: 'e', label: 'Molar absorptivity e', min: 1, max: 100000, step: 1, value: 10000, unit: '', log: true },
+      { id: 'l', label: 'Path length l', min: 0.1, max: 10, step: 0.1, value: 1, unit: ' cm' },
+      { id: 'c', label: 'Concentration c', min: 0.000001, max: 0.001, step: 0.000001, value: 0.00005, unit: ' M' },
+    ],
+    outputs: [
+      { id: 'a', label: 'Absorbance A' },
+      { id: 't', label: 'Transmittance T', fmt: '%' },
+    ],
+  },
+  'boyles-law': {
+    title: 'Try it',
+    lede: 'Squeeze a fixed amount of gas at constant temperature and the pressure rises in exact inverse proportion.',
+    identity: 'P1 V1 = P2 V2',
+    inputs: [
+      { id: 'p1', label: 'Starting pressure P1', min: 0.1, max: 20, step: 0.1, value: 1, unit: ' atm' },
+      { id: 'v1', label: 'Starting volume V1', min: 0.1, max: 20, step: 0.1, value: 10, unit: ' L' },
+      { id: 'v2', label: 'New volume V2', min: 0.1, max: 20, step: 0.1, value: 2, unit: ' L' },
+    ],
+    outputs: [
+      { id: 'p2', label: 'New pressure P2', fmt: ' atm' },
+      { id: 'ratio', label: 'Compression ratio', fmt: 'x' },
+    ],
+  },
+  'galileos-inclined-plane': {
+    title: 'Try it',
+    lede: 'Tilt the ramp. The ball accelerates at g sin theta, and the distance it covers grows as the square of the time.',
+    identity: 'a = g sin(theta),  s = (1/2) a t^2',
+    inputs: [
+      { id: 'ang', label: 'Ramp angle', min: 1, max: 90, step: 1, value: 30, unit: ' deg' },
+      { id: 'len', label: 'Ramp length', min: 0.1, max: 20, step: 0.1, value: 2, unit: ' m' },
+    ],
+    outputs: [
+      { id: 'acc', label: 'Acceleration along the ramp', fmt: ' m/s2' },
+      { id: 'time', label: 'Time to the bottom', fmt: ' s' },
+      { id: 'vel', label: 'Speed at the bottom', fmt: ' m/s' },
+    ],
+  },
+  // Deliberately absent: the Chinese Remainder Theorem is the highest-impression
+  // page without a widget, but its inputs must be pairwise coprime moduli. A
+  // slider that silently produces invalid input would teach the reader the
+  // wrong thing about the theorem, so it stays prose.
+  'the-chinese-remainder-theorem': null,
   'the-second-law-of-thermodynamics': null, // no single closed form — deliberately absent
 };
 
