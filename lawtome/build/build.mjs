@@ -73,6 +73,7 @@ import { quoteCardSvg, renderPng, siteCardSvg, scoreCardSvg, findingCardSvg } fr
 import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
 import { buildFeed } from './feed.mjs';
+import { widgetSlugs } from '../src/templates/widgets.mjs';
 
 /**
  * Every page the build produces, held until the end.
@@ -169,6 +170,19 @@ export async function buildSite(opts) {
 
   const errs = validateCorpus(laws, categories);
   if (errs.length) throw new Error('validation failed:\n' + errs.join('\n'));
+
+  // A widget keyed to a slug that does not exist renders nothing, reports
+  // nothing, and looks exactly like a law that was never given one. The Pareto
+  // principle sat like that: keyed 'the-pareto-principle' against a corpus slug
+  // of 'pareto-principle', so its calculator had never once appeared. Fail the
+  // build rather than ship another silent no-op.
+  {
+    const slugs = new Set(laws.map((l) => l.slug));
+    const orphans = widgetSlugs().filter((k) => !slugs.has(k));
+    if (orphans.length) {
+      throw new Error('widget spec keyed to unknown slug(s): ' + orphans.join(', '));
+    }
+  }
 
   // Content-hash the mutable assets BEFORE any page renders, so every emitted
   // reference carries ?v=<hash>. Without this a returning visitor can be served a
