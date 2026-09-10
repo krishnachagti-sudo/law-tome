@@ -672,8 +672,82 @@
     show(0);
   }
 
+  /* kind: match, on the comparison pages. Each question offers two readings,
+   * already in the HTML with their explanations. Answering reveals the one you
+   * chose and tallies which entry's stated conditions your answers matched.
+   *
+   * It reports a match and stops. It never says which one to use: that needs
+   * facts about the reader's case which this page does not have, and a tally
+   * dressed as advice would be the fabrication the comparison pages have always
+   * refused. A split result says so plainly rather than rounding to a winner.
+   */
+  function wireMatch(root) {
+    var nameA = root.getAttribute('data-a'), nameB = root.getAttribute('data-b');
+    var cases = root.querySelectorAll('[data-ix-case]');
+    var tally = root.querySelector('[data-ix-tally]');
+    var score = { a: 0, b: 0, both: 0, neither: 0 };
+    var answered = 0;
+
+    function report() {
+      tally.hidden = false;
+      tally.textContent = '';
+      var p = document.createElement('p');
+      if (answered < cases.length) {
+        p.textContent = 'So far: ' + score.a + ' matching ' + nameA
+          + ', ' + score.b + ' matching ' + nameB + '.';
+      } else if (score.a > score.b) {
+        p.textContent = 'Your answers matched ' + nameA + '’s stated conditions '
+          + score.a + ' times and ' + nameB + '’s ' + score.b + '. That is what your '
+          + 'answers describe, not a recommendation: whether your case is really one '
+          + 'of these is yours to judge.';
+      } else if (score.b > score.a) {
+        p.textContent = 'Your answers matched ' + nameB + '’s stated conditions '
+          + score.b + ' times and ' + nameA + '’s ' + score.a + '. That is what your '
+          + 'answers describe, not a recommendation: whether your case is really one '
+          + 'of these is yours to judge.';
+      } else {
+        p.textContent = 'Your answers split evenly between the two, ' + score.a + ' each. '
+          + 'That is a real result rather than a failure to decide: these pairs are '
+          + 'compared precisely because cases fall between them.';
+      }
+      tally.appendChild(p);
+    }
+
+    for (var i = 0; i < cases.length; i++) {
+      (function (li) {
+        var whys = li.querySelectorAll('[data-ix-why]');
+        var bar = document.createElement('div');
+        bar.className = 'ix-choices';
+        for (var j = 0; j < whys.length; j++) {
+          (function (why) {
+            why.hidden = true;
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'ix-choice';
+            b.textContent = why.getAttribute('data-ix-opt');
+            b.addEventListener('click', function () {
+              if (li.getAttribute('data-ix-done')) return;
+              li.setAttribute('data-ix-done', '1');
+              b.setAttribute('data-ix-picked', '1');
+              var all = bar.querySelectorAll('button');
+              for (var k = 0; k < all.length; k++) all[k].disabled = true;
+              why.hidden = false;
+              var m = why.getAttribute('data-matches');
+              if (m in score) score[m]++;
+              answered++;
+              report();
+            });
+            bar.appendChild(b);
+          }(whys[j]));
+        }
+        li.insertBefore(bar, whys[0]);
+      }(cases[i]));
+    }
+  }
+
   function wire(root) {
     var slug = root.getAttribute('data-interactive');
+    if (root.className.indexOf('ix-match') !== -1) return wireMatch(root);
     if (root.className.indexOf('ix-probe') !== -1) return wireProbe(root);
     if (root.className.indexOf('ix-spot') !== -1) return wireSpot(root);
     if (root.className.indexOf('ix-demo') !== -1) return wireDemo(root);

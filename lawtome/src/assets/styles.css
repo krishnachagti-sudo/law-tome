@@ -1596,6 +1596,12 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .ix-line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;
   vector-effect:non-scaling-stroke}
 .ix-line[data-series="1"]{stroke:var(--muted);stroke-dasharray:5 4}
+/* The authored difference on a comparison page, and its matcher. */
+.cmp-difference{margin:0 0 20px;padding:14px 16px;border-left:3px solid var(--accent);background:var(--surface)}
+.cmp-diff-h{margin:0 0 8px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--muted);font-weight:400}
+.cmp-difference p{margin:0;font-size:15px;line-height:1.6;color:var(--ink)}
+.ix-match{margin:0 0 24px}
 /* kind: spot. Rendered as a plain numbered list of cases with their
    explanations; the script hides the explanations and adds the buttons. With
    no JavaScript this stays a readable argument rather than an empty box. */
