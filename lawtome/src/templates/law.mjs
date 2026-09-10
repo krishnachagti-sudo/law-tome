@@ -1205,6 +1205,43 @@ document.getElementById('copy').onclick=function(){
     demo: 'EducationalApplication',
     probe: 'EducationalApplication',
   };
+  // Practice problems (Google's Quiz rich result). A spot page is a set of
+  // questions each with one right answer and a written explanation, which is
+  // exactly what the type is for.
+  //
+  // Only SCORED cases go in. An open case has no accepted answer by design —
+  // it is where a thought experiment asks something with two defensible
+  // replies — and marking one as accepted would assert a right answer the page
+  // deliberately refuses to give. The compare matchers are excluded for the
+  // same reason: they report which conditions your case meets, not which
+  // answer is correct.
+  const quiz = (ixSpec && ixSpec.kind === 'spot' && ixSpec.cases.some((c) => !c.open)) ? {
+    '@context': 'https://schema.org',
+    '@type': 'Quiz',
+    name: `${law.name}: ${ixSpec.title}`,
+    url: canonical,
+    about: { '@type': 'Thing', name: law.name },
+    educationalLevel: 'beginner',
+    assesses: ixSpec.prompt,
+    isAccessibleForFree: true,
+    hasPart: ixSpec.cases.filter((c) => !c.open).map((c) => ({
+      '@type': 'Question',
+      eduQuestionType: 'Multiple choice',
+      learningResourceType: 'Practice problem',
+      name: c.text,
+      text: c.text,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `${c.yes ? ixSpec.yesLabel : ixSpec.noLabel}. ${c.why}`,
+      },
+      suggestedAnswer: [{
+        '@type': 'Answer',
+        text: c.yes ? ixSpec.noLabel : ixSpec.yesLabel,
+        position: 0,
+      }],
+    })),
+  } : null;
+
   const appKind = widgetFor(law.slug) ? 'calculator' : (ixSpec ? ixSpec.kind : '');
   const webApp = appKind ? {
     '@context': 'https://schema.org',
@@ -1232,7 +1269,7 @@ document.getElementById('copy').onclick=function(){
       modified: LASTMOD_TOKEN,
       og: { title: `${titleCore}: ${facetList}`, description: ogDescription, image: `${base}og/${law.slug}.png`, type: 'article' },
       alternates: [{ type: 'text/markdown', title: `${law.name} (Markdown)`, href: `${canonical}index.md` }],
-      jsonld: [definedTerm, article, breadcrumb, ...(webApp ? [webApp] : []), ...(faqPage ? [faqPage] : [])],
+      jsonld: [definedTerm, article, breadcrumb, ...(webApp ? [webApp] : []), ...(quiz ? [quiz] : []), ...(faqPage ? [faqPage] : [])],
     }) +
     sprite() +
     '<div class="progress" id="progress" aria-hidden="true"></div>\n' +

@@ -163,3 +163,71 @@ test('the shipped stylesheet is lean but intact', () => {
   }
   assert.ok(shipped.length < source.length * 0.85, 'strip did not actually save anything');
 });
+
+/* Practice problems (Google's Quiz rich result).
+ *
+ * The Datasets enhancement on the sibling property reports 53 invalid items and
+ * zero valid, which is what a structured-data type looks like when nobody is
+ * checking it. These tests exist so this type does not go the same way, and
+ * above all so it never asserts a right answer where the page refuses to give
+ * one.
+ */
+const jsonld = (slug) => {
+  const h = fs.readFileSync(path.join(dist, slug, 'index.html'), 'utf8');
+  const out = [];
+  for (const m of h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    try {
+      const d = JSON.parse(m[1]);
+      for (const x of (Array.isArray(d) ? d : [d])) out.push(x);
+    } catch { out.push({ '@type': 'PARSE ERROR' }); }
+  }
+  return out;
+};
+
+test('spot pages publish their scored cases as practice problems', () => {
+  for (const [slug, kind] of withIx) {
+    if (kind !== 'spot') continue;
+    const spec = interactiveFor(slug);
+    const scored = spec.cases.filter((c) => !c.open);
+    const quiz = jsonld(slug).find((x) => x['@type'] === 'Quiz');
+    if (!scored.length) { assert.ok(!quiz, `${slug}: quiz with no scored cases`); continue; }
+    assert.ok(quiz, `${slug}: no Quiz markup`);
+    assert.equal(quiz.hasPart.length, scored.length,
+      `${slug}: ${quiz.hasPart.length} questions marked up against ${scored.length} scored cases`);
+    for (const q of quiz.hasPart) {
+      assert.equal(q.learningResourceType, 'Practice problem');
+      assert.ok(q.text && q.acceptedAnswer && q.acceptedAnswer.text,
+        `${slug}: a question has no accepted answer`);
+      assert.ok(q.suggestedAnswer && q.suggestedAnswer.length,
+        `${slug}: a question offers no alternative`);
+    }
+  }
+});
+
+/* The line. An open case exists because the law has two defensible answers.
+ * Marking one accepted would assert in machine-readable form the very verdict
+ * the page declines to give in prose. */
+test('open cases are never published as having a right answer', () => {
+  for (const [slug, kind] of withIx) {
+    if (kind !== 'spot') continue;
+    const spec = interactiveFor(slug);
+    const open = spec.cases.filter((c) => c.open);
+    if (!open.length) continue;
+    const quiz = jsonld(slug).find((x) => x['@type'] === 'Quiz');
+    if (!quiz) continue;
+    const marked = new Set(quiz.hasPart.map((q) => q.text));
+    for (const c of open) {
+      assert.ok(!marked.has(c.text),
+        `${slug}: open question published with an accepted answer — "${c.text.slice(0, 50)}…"`);
+    }
+  }
+});
+
+test('no page publishes a Quiz it has no questions for', () => {
+  for (const slug of all) {
+    const kind = withIx.get(slug);
+    if (kind === 'spot') continue;
+    assert.ok(!jsonld(slug).some((x) => x['@type'] === 'Quiz'),
+      `${slug}: publishes Quiz markup without being a quiz`);
+  }
+});
