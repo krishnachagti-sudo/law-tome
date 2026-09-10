@@ -771,6 +771,48 @@ export function portrait(img, { base = '/', small = false, alt = '' } = {}) {
 }
 
 /** The credit line a licence obliges us to show: who made it, under what, and where. */
+/**
+ * An ImageObject for a real content image, carrying its OWN licence.
+ *
+ * The 2,420 ImageObject nodes on this site were all the logo, repeated in the
+ * publisher block. The 1,026 figures and portraits — the images a reader
+ * actually looks at, and the ones somebody else owns — carried none.
+ *
+ * Every field comes from images.json, which records the artist, licence,
+ * licence URL and Commons source per image. That matters more than the search
+ * feature: these run across fifteen different licences, from CC0 to CC BY-SA
+ * 4.0 to public domain, and a blanket claim of the site's own CC BY 4.0 across
+ * all of them would be false about most and a licence violation for the
+ * share-alike ones. So `license` is per image, and it is omitted rather than
+ * guessed where the record has no URL.
+ *
+ * `acquireLicensePage` points at the Commons file page, which is genuinely
+ * where a reader goes to license the image, not at a page of ours.
+ */
+export function imageObject(img, { url, caption } = {}) {
+  if (!img || !url) return null;
+  const node = {
+    '@type': 'ImageObject',
+    url,
+    contentUrl: url,
+    ...(img.width ? { width: img.width } : {}),
+    ...(img.height ? { height: img.height } : {}),
+    ...(caption ? { caption } : {}),
+  };
+  // Public-domain records carry no licence URL, and inventing one would assert
+  // a licence nobody granted. The credit line still names the artist.
+  if (img.licenceUrl) node.license = img.licenceUrl;
+  if (img.source) node.acquireLicensePage = img.source;
+  if (img.artist) {
+    node.creator = { '@type': 'Person', name: img.artist };
+    node.creditText = img.licence ? `${img.artist} · ${img.licence}` : img.artist;
+    node.copyrightNotice = img.licence === 'Public domain'
+      ? `${img.artist} — public domain`
+      : `${img.artist} — licensed ${img.licence || 'see source'}`;
+  }
+  return node;
+}
+
 export function imageCredit(img) {
   if (!img) return '';
   const licence = img.licenceUrl

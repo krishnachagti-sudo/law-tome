@@ -16,7 +16,7 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE, DESC_MAX } from './partials.mjs';
+import { head, sprite, imageObject, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE, DESC_MAX } from './partials.mjs';
 import { hostOf } from '../../build/surfaces.mjs';
 import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
 import { LASTMOD_TOKEN } from '../../build/lastmod.mjs';
@@ -1242,6 +1242,20 @@ document.getElementById('copy').onclick=function(){
     })),
   } : null;
 
+  // The figure and the portrait, each with its own licence. These are the only
+  // images on the page somebody else owns, and until now the structured data
+  // said nothing about either.
+  const imageNodes = [
+    imageObject(figureImg, {
+      url: `${origin}${base}assets/img/figures/${law.slug}.webp`,
+      caption: `Figure illustrating ${law.name}`,
+    }),
+    imageObject(namesakeImg, {
+      url: namesakeImg ? `${origin}${base}assets/img/people/${namesakeImg.slug}.webp` : '',
+      caption: law.namedAfter ? `${law.namedAfter}, who ${law.name} is named after` : '',
+    }),
+  ].filter(Boolean).map((n) => ({ '@context': 'https://schema.org', ...n }));
+
   const appKind = widgetFor(law.slug) ? 'calculator' : (ixSpec ? ixSpec.kind : '');
   const webApp = appKind ? {
     '@context': 'https://schema.org',
@@ -1269,7 +1283,7 @@ document.getElementById('copy').onclick=function(){
       modified: LASTMOD_TOKEN,
       og: { title: `${titleCore}: ${facetList}`, description: ogDescription, image: `${base}og/${law.slug}.png`, type: 'article' },
       alternates: [{ type: 'text/markdown', title: `${law.name} (Markdown)`, href: `${canonical}index.md` }],
-      jsonld: [definedTerm, article, breadcrumb, ...(webApp ? [webApp] : []), ...(quiz ? [quiz] : []), ...(faqPage ? [faqPage] : [])],
+      jsonld: [definedTerm, article, breadcrumb, ...imageNodes, ...(webApp ? [webApp] : []), ...(quiz ? [quiz] : []), ...(faqPage ? [faqPage] : [])],
     }) +
     sprite() +
     '<div class="progress" id="progress" aria-hidden="true"></div>\n' +

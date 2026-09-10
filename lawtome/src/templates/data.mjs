@@ -91,7 +91,28 @@ ${faq.html}${hubNav('', { base })}  </div>
     description,
     url: `${origin}${base}data/`,
     license: 'https://creativecommons.org/licenses/by/4.0/',
-    creator: { '@type': 'Organization', name: 'The Law Tome', url: `${origin}${base}` },
+    // Self-contained, with an @id. The sibling property's 53 Dataset items are
+    // all invalid in Search Console for exactly this: creator was a bare @id
+    // reference to a node defined in a different script block, which Google
+    // does not reliably resolve. Publisher is a recommended field and was
+    // simply absent.
+    creator: {
+      '@type': 'Organization',
+      '@id': `${origin}${base}#organization`,
+      name: 'The Law Tome',
+      url: `${origin}${base}`,
+    },
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${origin}${base}#organization`,
+      name: 'The Law Tome',
+      url: `${origin}${base}`,
+    },
+    isAccessibleForFree: true,
+    // The whole corpus is the coverage, stated so a dataset index can size it
+    // without downloading.
+    ...(count ? { size: `${count} entries` } : {}),
+    keywords: 'named laws, principles, effects, razors, paradoxes, heuristics, reliability ratings',
     ...(generated ? { dateModified: generated } : {}),
     distribution: [
       { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: `${origin}${base}data/lawtome.json` },
