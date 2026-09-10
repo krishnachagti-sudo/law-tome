@@ -1596,6 +1596,23 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .ix-line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;
   vector-effect:non-scaling-stroke}
 .ix-line[data-series="1"]{stroke:var(--muted);stroke-dasharray:5 4}
+/* /calculators/ — the entries that do something. Grouped by what they do,
+   because "a calculator" and "a demonstration you look at" are different
+   promises and a reader arriving from search wants to know which. */
+.cx-sec{margin:0 0 40px}
+.cx-h2{font-family:var(--serif);font-size:22px;color:var(--ink);margin:0 0 5px;display:flex;
+  align-items:baseline;gap:10px}
+.cx-n{font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:400}
+.cx-gloss{margin:0 0 16px;font-size:14px;line-height:1.55;color:var(--muted);max-width:62ch}
+.cx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.cx-i{display:flex;flex-direction:column;gap:3px;padding:12px 14px;background:var(--surface);
+  border:1px solid var(--line);border-radius:3px;text-decoration:none;min-width:0}
+.cx-i:hover{border-color:var(--accent)}
+.cx-nm{font-size:14.5px;line-height:1.35;color:var(--ink)}
+.cx-fd{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--muted)}
+.cx-eq{font-family:var(--mono);font-size:11px;line-height:1.45;color:var(--accent);margin-top:4px;
+  overflow-x:auto;white-space:nowrap;max-width:100%;min-width:0}
 /* The quiz's server-rendered round. Not a fallback that disappears when the
    script loads: it stays, because it is readable content in its own right and
    because a practice-problem result has to point at a question the reader will

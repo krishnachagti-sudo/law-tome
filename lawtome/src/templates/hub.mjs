@@ -81,6 +81,7 @@ export const HUBS = [
   ['best-known/', 'The best-known', 'ranked by how often each name actually appears in print'],
   ['quotes/', 'The statements', 'every named law in the form it actually gets quoted'],
   ['also-known-as/', 'Also known as', 'the other names these ideas travel under, cross-referenced'],
+  ['calculators/', 'Calculators', 'the entries that compute, solve or demonstrate the thing they define, rather than only stating it'],
   ['kinds/', 'By kind', 'the razors, the paradoxes, the theorems, the fallacies, grouped by what kind of thing they are'],
   ['collections/', 'Collections', 'hand-picked sets that cut across fields'],
   ['for/', 'Find your laws', 'curated ways in for engineers, writers, decision-makers'],

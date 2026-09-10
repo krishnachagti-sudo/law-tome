@@ -153,7 +153,10 @@ const PROBLEM_COUNT = problems(Array.isArray(RAW_SIT) ? RAW_SIT : RAW_SIT.situat
 // Verdicts: one "is X real?" per entry that is well known, softly rated, and the
 // kind of claim that can turn out not to hold.
 const VERDICT_COUNT = verdicts(PARSED, bestKnown(PARSED, FACTS), { kindOf }).length;
-const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + NAMESAKE_COUNT + (1 + AUD_COUNT + 1 + 1) + 1 + 1 + (1 + NAMES_LANG_COUNT) + PERIOD_COUNT + COUNTRY_COUNT
+// The trailing + 1 is /calculators/, the index of entries that compute, solve
+// or demonstrate rather than only stating. Adding a page class to the sitemap
+// has to be declared here, which is the point of counting it this way.
+const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT + 1 + TIER_COUNT + 1 + COLL_COUNT + 1 + 1 + 3 + NAMESAKE_COUNT + (1 + AUD_COUNT + 1 + 1) + 1 + 1 + (1 + NAMES_LANG_COUNT) + PERIOD_COUNT + COUNTRY_COUNT + 1
   // + /equations/, /pronunciation/, /sources/, /is-it-real/, /misattributed/,
   // /diagnose/, /embed/. (/print/ and the per-entry cards are noindex, and the
   // .json records are data files, so none of those are listed.)

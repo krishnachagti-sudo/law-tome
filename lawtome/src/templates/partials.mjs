@@ -714,7 +714,7 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
       <p class="foot-conyso">Created by <a href="https://conyso.com/founder/" rel="author">Krishna Chagti</a> · an initiative by <a href="https://conyso.com">Conyso</a>.</p>
       <p class="foot-motto">Sapere aude.</p>
     </div>
-${col('Browse', [['browse/', 'All laws'], ['best-known/', 'The best-known'], ['sheets/', 'Cheat sheets'], ['kinds/', 'By kind'], ['quotes/', 'The statements'], ['also-known-as/', 'Also known as'], ['for/', 'Find your laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['origins/', 'Where they came from'], ['reliability/', 'By reliability']])}
+${col('Browse', [['browse/', 'All laws'], ['calculators/', 'Calculators'], ['best-known/', 'The best-known'], ['sheets/', 'Cheat sheets'], ['kinds/', 'By kind'], ['quotes/', 'The statements'], ['also-known-as/', 'Also known as'], ['for/', 'Find your laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['origins/', 'Where they came from'], ['reliability/', 'By reliability']])}
 ${col('Discover', [['how-solid/', 'How solid is any of this?'], ['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['compare/', 'Compare laws'], ['tension/', 'Laws in tension'], ['features/', 'Features'], ['quiz/', 'Name that law'], ['saved/', 'Saved laws']])}
 ${col('The project', [['about/', 'About & method'], ['manifesto/', 'Why name a law?'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['feed.xml', 'Subscribe (RSS)'], ['credits/', 'Image credits'], ['privacy/', 'Privacy']])}
   </div>

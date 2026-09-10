@@ -25,6 +25,7 @@ import { tensionPairs, comparePairs } from './relations.mjs';
 import { reliabilityHubPage } from '../src/templates/reliability.mjs';
 import { kinds, kindPath, kindOf } from './kinds.mjs';
 import { kindsHubPage, kindPage } from '../src/templates/kinds.mjs';
+import { calculatorsPage } from '../src/templates/calculators.mjs';
 import { akaPage, quotesPage } from '../src/templates/lookup.mjs';
 import { bestKnown, bestKnownPage } from '../src/templates/bestknown.mjs';
 import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, setBuildDate, personSlug } from '../src/templates/partials.mjs';
@@ -477,6 +478,12 @@ export async function buildSite(opts) {
   // (which fetches the search index). A learning/return loop, not a "law page".
   writes.push(writePage(join(out, 'quiz', 'index.html'), quizPage({ base, origin, count: publishedCount, categories, laws })));
 
+  // /calculators/ — the 187 entries that do something, collected. Nothing else
+  // on the site distinguishes them from the other 929, so a reader who used one
+  // had no route to the rest.
+  writes.push(writePage(join(out, 'calculators', 'index.html'),
+    calculatorsPage(laws, { base, origin, count: publishedCount, categories })));
+
   // A finished round is shareable — but a score pasted into a chat is a bare
   // number until it carries a link, and a link is ignored until it unfurls into
   // a picture. So: eleven landing pages, one per possible score, each naming its
@@ -750,6 +757,7 @@ export async function buildSite(opts) {
     'collections/',                           // curated-collections hub
     ...collections.map((c) => `collections/${c.slug}/`),
     'quiz/',                                  // law of the day + quiz
+    'calculators/',                           // the entries that compute, solve or demonstrate
     'situations/',                            // reverse lookup: problem -> law
     ...problemThemes.map((t) => problemPath(t)), // …and one page per problem theme
     ...allVerdicts.map((v) => verdictPath(v)), // "is X real?", one per well-known soft entry
