@@ -20,8 +20,14 @@ const DIST = 'dist';
 // This is not a nicety. CI passes --base/--origin from repository variables and
 // falls back to the github.io project path when they are unset, so a preflight
 // that read site.config.json alone would compare a /law-tome/ build against the
-// lawtome.conyso.com origin, call all 40,000 internal links dead, and block the
-// very deploy it exists to protect.
+// production origin, call all 40,000 internal links dead, and block the very
+// deploy it exists to protect.
+//
+// Production is conyso.com/lawtome/, served by nginx on the host that also
+// serves conyso.com itself. The subdomain this site was originally configured
+// for, lawtome.conyso.com, was never created — it is NXDOMAIN — so every
+// canonical, sitemap entry and Markdown twin pointed at a host that does not
+// resolve until site.config.json was corrected.
 const cfg = JSON.parse(readFileSync('site.config.json', 'utf8'));
 const arg = (n) => (process.argv.find((a) => a.startsWith(`--${n}=`)) || '').split('=')[1];
 const BASE = (arg('base') || cfg.base || '/').replace(/\/*$/, '/');
