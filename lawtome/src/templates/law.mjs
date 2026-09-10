@@ -1256,6 +1256,51 @@ document.getElementById('copy').onclick=function(){
     }),
   ].filter(Boolean).map((n) => ({ '@context': 'https://schema.org', ...n }));
 
+  // MathSolver, on the two pages where the input genuinely IS a mathematical
+  // expression and the page genuinely solves it.
+  //
+  // Google's spec describes a URL template that accepts the problem. That claim
+  // was false until this session, because the solvers read nothing from the
+  // query string; now they do, so a link carrying the problem really does open
+  // the page with it loaded and solved.
+  //
+  // Deliberately not on the 163 calculators: their inputs are numbers on
+  // sliders, not an expression, and math_expression_string would be a lie about
+  // the shape of the thing. Deliberately not on Lamport either — it solves a
+  // real mathematical relation, but its input is a description of processes and
+  // messages rather than an expression, and stretching the type to fit is how
+  // markup stops meaning anything.
+  //
+  // Not the Chinese Remainder Theorem either, though it is the most obviously
+  // mathematical solver here. Its input is six numeric fields, not one
+  // expression, so mathExpression-input has nothing to bind to: the template
+  // would advertise ?f= on a page that reads r0, m0, r1, m1, r2 and m2 and
+  // ignores f entirely. Those fields ARE addressable by URL, so the page is
+  // still linkable — it just is not what this type describes.
+  const MATH_SOLVERS = {
+    'the-cook-levin-theorem': {
+      method: 'https://schema.org/AlgebraicMethod',
+      asks: 'Boolean satisfiability',
+      field: 'f',
+    },
+  };
+  const solverSpec = MATH_SOLVERS[law.slug];
+  const mathSolver = (solverSpec && ixSpec && ixSpec.kind === 'solver') ? {
+    '@context': 'https://schema.org',
+    '@type': 'MathSolver',
+    name: `${law.name} solver`,
+    url: canonical,
+    description: ixSpec.lede,
+    usesMathSolvingMethod: solverSpec.method,
+    isAccessibleForFree: true,
+    potentialAction: {
+      '@type': 'SolveMathAction',
+      target: `${canonical}?${solverSpec.field}={math_expression_string}`,
+      'mathExpression-input': 'required name=math_expression_string',
+      eduQuestionType: solverSpec.asks,
+    },
+  } : null;
+
   const appKind = widgetFor(law.slug) ? 'calculator' : (ixSpec ? ixSpec.kind : '');
   const webApp = appKind ? {
     '@context': 'https://schema.org',
@@ -1283,7 +1328,7 @@ document.getElementById('copy').onclick=function(){
       modified: LASTMOD_TOKEN,
       og: { title: `${titleCore}: ${facetList}`, description: ogDescription, image: `${base}og/${law.slug}.png`, type: 'article' },
       alternates: [{ type: 'text/markdown', title: `${law.name} (Markdown)`, href: `${canonical}index.md` }],
-      jsonld: [definedTerm, article, breadcrumb, ...imageNodes, ...(webApp ? [webApp] : []), ...(quiz ? [quiz] : []), ...(faqPage ? [faqPage] : [])],
+      jsonld: [definedTerm, article, breadcrumb, ...imageNodes, ...(webApp ? [webApp] : []), ...(mathSolver ? [mathSolver] : []), ...(quiz ? [quiz] : []), ...(faqPage ? [faqPage] : [])],
     }) +
     sprite() +
     '<div class="progress" id="progress" aria-hidden="true"></div>\n' +

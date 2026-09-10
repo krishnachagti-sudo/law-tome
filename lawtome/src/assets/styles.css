@@ -1596,6 +1596,25 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .ix-line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;
   vector-effect:non-scaling-stroke}
 .ix-line[data-series="1"]{stroke:var(--muted);stroke-dasharray:5 4}
+/* The quiz's server-rendered round. Not a fallback that disappears when the
+   script loads: it stays, because it is readable content in its own right and
+   because a practice-problem result has to point at a question the reader will
+   actually find when they arrive. Answers sit behind a disclosure so it does
+   not spoil the live round above it. */
+.quiz-static{margin:34px 0 0;padding-top:26px;border-top:1px solid var(--line)}
+.qs-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:20px}
+.qs-q{padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:3px}
+.qs-kind{margin:0 0 7px;font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted)}
+.qs-ask{margin:0 0 9px;font-size:15.5px;line-height:1.5;color:var(--ink)}
+.qs-quote{margin:0 0 11px;padding-left:12px;border-left:2px solid var(--accent);
+  font-size:14.5px;line-height:1.55;color:var(--read)}
+.qs-opts{list-style:none;margin:0 0 11px;padding:0;display:grid;gap:6px}
+.qs-opts li{padding:7px 11px;background:var(--bg);border:1px solid var(--line);
+  border-radius:3px;font-size:13.5px;line-height:1.45;color:var(--read)}
+.qs-ans summary{cursor:pointer;font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;
+  color:var(--accent)}
+.qs-ans p{margin:9px 0 0;font-size:14px;color:var(--ink)}
 /* The authored difference on a comparison page, and its matcher. */
 .cmp-difference{margin:0 0 20px;padding:14px 16px;border-left:3px solid var(--accent);background:var(--surface)}
 .cmp-diff-h{margin:0 0 8px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;

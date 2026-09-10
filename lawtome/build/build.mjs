@@ -475,7 +475,7 @@ export async function buildSite(opts) {
 
   // Law of the day + name-that-law quiz: a static shell filled by assets/quiz.js
   // (which fetches the search index). A learning/return loop, not a "law page".
-  writes.push(writePage(join(out, 'quiz', 'index.html'), quizPage({ base, origin, count: publishedCount, categories })));
+  writes.push(writePage(join(out, 'quiz', 'index.html'), quizPage({ base, origin, count: publishedCount, categories, laws })));
 
   // A finished round is shareable — but a score pasted into a chat is a bare
   // number until it carries a link, and a link is ignored until it unfurls into

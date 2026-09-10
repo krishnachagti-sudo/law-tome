@@ -745,6 +745,45 @@
     }
   }
 
+  /* Read a solver's inputs out of the query string, so a worked example can be
+   * linked to. This is also the precondition for Google's MathSolver markup,
+   * which describes a URL template that accepts the problem — a claim that
+   * would have been false before this existed.
+   *
+   * Values are read with URLSearchParams and written with .value, never
+   * evaluated and never inserted as markup, so a crafted link can only ever
+   * prefill a field the reader can see and change.
+   */
+  function applyQuery(root, fields) {
+    var q;
+    try { q = new URLSearchParams(location.search); } catch (e) { return false; }
+    var used = false;
+    for (var i = 0; i < fields.length; i++) {
+      var el = fields[i];
+      var key = el.getAttribute('data-ix');
+      if (!q.has(key)) continue;
+      var v = q.get(key);
+      if (el.tagName === 'TEXTAREA') { el.value = v; used = true; continue; }
+      var n = parseFloat(v);
+      if (isFinite(n)) { el.value = String(n); used = true; }
+    }
+    return used;
+  }
+
+  /* Keep the address bar in step with the fields, so the link in it always
+   * describes what is on screen. replaceState rather than pushState: dragging a
+   * slider should not fill the back button with a hundred history entries. */
+  function syncQuery(root, fields) {
+    var q;
+    try { q = new URLSearchParams(); } catch (e) { return; }
+    for (var i = 0; i < fields.length; i++) {
+      q.set(fields[i].getAttribute('data-ix'), fields[i].value);
+    }
+    try {
+      history.replaceState(null, '', location.pathname + '?' + q.toString());
+    } catch (e) { /* file:// and some sandboxes refuse this; harmless */ }
+  }
+
   function wire(root) {
     var slug = root.getAttribute('data-interactive');
     if (root.className.indexOf('ix-match') !== -1) return wireMatch(root);
@@ -794,7 +833,9 @@
     for (var i = 0; i < fields.length; i++) {
       fields[i].addEventListener('input', go);
       fields[i].addEventListener('change', go);
+      fields[i].addEventListener('change', function () { syncQuery(root, fields); });
     }
+    applyQuery(root, fields);
     go();
   }
 

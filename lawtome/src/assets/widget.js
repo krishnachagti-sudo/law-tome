@@ -947,9 +947,65 @@
       }
     }
 
+    /* A calculator's settings belong in the URL: it is the difference between
+     * "look at Amdahl's law" and "look at what Amdahl's law says about YOUR
+     * workload". Values are read with URLSearchParams and assigned to .value —
+     * never evaluated, never inserted as markup — so a crafted link can only
+     * prefill a control the reader can see and move.
+     *
+     * A log slider carries a POSITION, so a shared link stores the real value
+     * and is converted back on arrival; storing the position would make the
+     * link meaningless if the range ever changed. */
+    function fromQuery() {
+      var q;
+      try { q = new URLSearchParams(location.search); } catch (e) { return; }
+      for (var i = 0; i < ranges.length; i++) {
+        var el = ranges[i], key = el.getAttribute('data-w');
+        if (!q.has(key)) continue;
+        var v = parseFloat(q.get(key));
+        if (!isFinite(v)) continue;
+        if (el.getAttribute('data-log')) {
+          var lo = parseFloat(el.getAttribute('data-min'));
+          var hi = parseFloat(el.getAttribute('data-max'));
+          if (v < lo) v = lo; if (v > hi) v = hi;
+          el.value = String(Math.round(10000 * (Math.log(v) - Math.log(lo))
+            / (Math.log(hi) - Math.log(lo))));
+        } else {
+          el.value = String(v);
+        }
+      }
+    }
+
+    /* A log slider carries an integer position, so converting it back to a
+     * value lands on 1023.7161262699157 rather than 1024. That is correct
+     * arithmetic and a terrible link: it is ugly to share and it does not
+     * survive a round trip, because reloading it picks the nearest position
+     * again. Four significant figures is finer than any slider step and reads
+     * like a number a person chose. */
+    function tidy(v) {
+      if (!isFinite(v) || v === 0) return v;
+      var mag = Math.pow(10, 3 - Math.floor(Math.log(Math.abs(v)) / Math.LN10));
+      return Math.round(v * mag) / mag;
+    }
+
+    function toQuery() {
+      var q;
+      try { q = new URLSearchParams(); } catch (e) { return; }
+      for (var i = 0; i < ranges.length; i++) {
+        var el = ranges[i];
+        var v = readOne(el);
+        q.set(el.getAttribute('data-w'),
+          String(el.getAttribute('data-log') ? tidy(v) : v));
+      }
+      try { history.replaceState(null, '', location.pathname + '?' + q.toString()); }
+      catch (e) { /* refused in some sandboxes; the calculator still works */ }
+    }
+
     for (var i = 0; i < ranges.length; i++) {
       ranges[i].addEventListener('input', run);
+      ranges[i].addEventListener('change', toQuery);
     }
+    fromQuery();
     run();
   }
 
