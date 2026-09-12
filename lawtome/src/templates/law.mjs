@@ -234,19 +234,39 @@ export function lawPage(law, ctx = {}) {
   // it. Where there is a tool, the QUOTE gives way rather than the clause: the
   // quote is available in full on the page, and the clause is the only part of
   // the snippet that says this page differs from a dictionary entry.
+  // Order matters more than content here. The quote used to lead, which put the
+  // one clause that says this page is not a dictionary entry at characters 118
+  // to 155 — inside the desktop window, past the ~120 Google shows on mobile.
+  // Mobile is where this property converts at 0.62% against desktop's 0.21%,
+  // so the differentiator now comes first and the statement follows it.
+  // GSC, 28 days to 2026-09-06: 139 law pages at positions 4 to 10 converting
+  // at 0.32%, and 47 pages with 150+ impressions and no clicks at all.
   const toolDescription = () => {
-    const lead = `${law.name}: “`;          // not `head`: that is the imported page-head helper
-    const mid = '” — what it means, ';
-    const room = DESC_MAX - lead.length - mid.length - toolTail.length;
+    const lead = `${law.name}: what it means, ${toolTail}`;
+    const open = ' “';
+    const room = DESC_MAX - lead.length - open.length - 1;
     let st = law.statement;
-    if (room < 24) return `${law.name}: what it means, ${toolTail}`;
+    if (room < 24) return lead;
     if (st.length > room) st = st.slice(0, room - 1).replace(/\s+\S*$/, '') + '…';
-    return lead + st + mid + toolTail;
+    return `${lead}${open}${st}”`;
+  };
+  const plainDescription = () => {
+    const facets = ['what it means'];
+    if (firstExample) facets.push('real examples');
+    if (law.origin) facets.push('where it came from');
+    const tail = facets.length > 1
+      ? facets.slice(0, -1).join(', ') + ', and ' + facets[facets.length - 1]
+      : facets[0];
+    const lead = `${law.name}: ${tail}.`;
+    const open = ' “';
+    const room = DESC_MAX - lead.length - open.length - 1;
+    let st = law.statement;
+    if (room < 24) return lead;
+    if (st.length > room) st = st.slice(0, room - 1).replace(/\s+\S*$/, '') + '…';
+    return `${lead}${open}${st}”`;
   };
   const metaDescription = law.statement
-    ? (toolTail
-        ? toolDescription()
-        : `${law.name}: “${law.statement}” — what it means${firstExample ? ', real examples' : ''}${law.origin ? ', and where it came from' : ''}. Clearly explained, cross-linked, and sourced.`)
+    ? (toolTail ? toolDescription() : plainDescription())
     : answer;
 
   // ---- entry section ----------------------------------------------------
