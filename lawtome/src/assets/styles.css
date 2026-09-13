@@ -916,6 +916,22 @@ a.stat--link .s-k::after{content:" →";letter-spacing:0;opacity:.55}
 .src-trust{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-family:var(--sans);font-size:12.5px;line-height:1.55;color:var(--faint)}
 .src-trust a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
 .src-trust a:hover{color:var(--accent)}
+
+/* "What we checked" — the shared Conyso proof device, markup from src/proof.mjs
+   and identical to the one proof.py renders on the Labs dataset pages and the
+   founder site. Class names are shared; only the skin is local, so it is built
+   from this site's tokens (mono label, serif figure, amber accent) and follows
+   both themes without a single literal colour. It sits inside .lawmain but is
+   not a .block, so it carries its own bottom margin and gets no section number
+   from the counter — it describes the tome, not this entry. */
+.cy-proof{margin-bottom:60px}
+.cy-proof-h{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;display:flex;align-items:center;gap:12px}
+.cy-proof-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.cy-proof-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.cy-proof-list li{background:var(--surface);padding:17px 18px}
+.cy-proof-list b{display:block;font-family:var(--serif);font-weight:600;line-height:1;font-size:clamp(23px,2.4vw,29px);letter-spacing:-.02em;color:var(--accent)}
+.cy-proof-list span{display:block;margin-top:9px;font-size:13.5px;line-height:1.4;color:var(--ink)}
+.cy-proof-list em{display:block;margin-top:8px;font-style:normal;font-size:12px;line-height:1.5;color:var(--faint)}
 /* related laws as cards (replaces the row list) */
 .rel-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 @media(max-width:640px){.rel-cards{grid-template-columns:1fr}}
