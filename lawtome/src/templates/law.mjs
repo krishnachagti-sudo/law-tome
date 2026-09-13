@@ -27,6 +27,51 @@ import { formulaBlock, diffusionBlock, pronunciation, otherNames, otherNamesText
 import { kindOf, KINDS, kindPath } from '../../build/kinds.mjs';
 import { widgetBlock, widgetFor } from './widgets.mjs';
 import { interactiveBlock, interactiveFor } from './interactives.mjs';
+import { render as proofRender, assertRendered as proofAssert } from '../proof.mjs';
+import { readdirSync, readFileSync } from 'node:fs';
+
+/**
+ * The "What we checked" figures for the tome, counted from src/data/laws.
+ *
+ * A callable, not a table of numbers, because proof.mjs refuses a literal: a
+ * proof device whose figures are typed is the exact failure it exists to stop
+ * (the founder site shipped a hand-typed strip with a wrong figure in it). The
+ * count is memoised because it is the same for all 1,116 pages and reading the
+ * corpus once per page would read it 1.2 million times.
+ *
+ * Counted off the JSON files rather than the loaded corpus so the figures
+ * describe what is in the repository, reproducible by anyone with a checkout,
+ * and independent of any filtering the build does downstream.
+ *
+ * The second row is a separate count on purpose. Today every entry carries a
+ * source and the two numbers are equal; if that ever stops being true the device
+ * says so, instead of the first row quietly implying it.
+ */
+let PROOF_ROWS = null;
+function tomeProof() {
+  if (PROOF_ROWS) return PROOF_ROWS;
+  const dir = new URL('../data/laws/', import.meta.url);
+  let entries = 0;
+  let sourced = 0;
+  let refs = 0;
+  for (const f of readdirSync(dir).filter((name) => name.endsWith('.json'))) {
+    const raw = JSON.parse(readFileSync(new URL(f, dir), 'utf8'));
+    for (const it of (Array.isArray(raw) ? raw : [raw])) {
+      entries += 1;
+      const s = it.sources || it.source || it.citations;
+      if (s && (!Array.isArray(s) || s.length)) {
+        sourced += 1;
+        refs += Array.isArray(s) ? s.length : 1;
+      }
+    }
+  }
+  PROOF_ROWS = [
+    [entries, 'entries in the tome', 'Listed one by one on the browse page.'],
+    [sourced, 'of them citing a source', 'Open any entry: its sources sit at the foot of the page.'],
+    [refs, 'source references in all', 'Each is named, and linked wherever the source is online.'],
+  ];
+  return PROOF_ROWS;
+}
 
 /**
  * Trim to at most `max` characters, ending on a sentence boundary where one is
@@ -715,6 +760,24 @@ ${items}
     // anchor text says what the page is rather than gesturing at it.
     const srcTrust = `        <p class="src-trust">${provenance} Nothing is written from memory, and <a href="${base}about/">the method is written down</a>. Spot an error or a better source? <a href="${base}coin/">Suggest a fix.</a></p>`;
     blocks.push(block('Sources', `        <ol class="sources-list">\n${items}\n        </ol>\n${srcTrust}`, true, `Sources & further reading`));
+  }
+
+  // The shared Conyso "What we checked" device (src/proof.mjs; proof.py renders
+  // the same markup on the Labs dataset pages and the founder site). It follows
+  // the entry's own sources because that is where the reader is already asking
+  // what the page stands on: this entry's citations, then the figures for the
+  // corpus those citations are part of.
+  //
+  // On every entry, including the coined ones that have no Sources block of
+  // their own — the figures describe the tome, not the law, and a reader who
+  // landed on a coined entry is owed the same account of the whole.
+  //
+  // assertRendered recomputes the figures and checks each one actually reached
+  // the markup: verifying the input is not verifying the page.
+  {
+    const proofMarkup = proofRender(tomeProof);
+    proofAssert(proofMarkup, tomeProof, `laws/${law.slug}/`);
+    blocks.push(`      ${proofMarkup}`);
   }
 
   if (Array.isArray(law.confusedWith) && law.confusedWith.length) {
