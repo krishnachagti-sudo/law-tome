@@ -27,7 +27,11 @@
      off the page at 1.25:1, border reads at 1.40:1) and warmed toward the ink-on-
      paper character the light theme already has. */
   --bg:#000000; --surface:#292725; --surface-2:#383634;
-  --ink:#f0ece2; --muted:#a8a293; --faint:#97958c; --read:#d6d1c4;
+  /* --faint was #97958c, which clears AA on the page ground and on --surface
+     but lands at 4.01 on --surface-2, the raised panel the metadata cards and
+     the footer use. Lifted to the lowest value that clears 4.5 on all three:
+     8.02 on bg, 5.68 on surface, 4.59 on surface-2. */
+  --ink:#f0ece2; --muted:#a8a293; --faint:#a2a098; --read:#d6d1c4;
   --line:#403e3c; --line-strong:#63615f;
   --accent:#e0a43f; --accent-ink:#f3cb84; --accent-soft:#332811;
   --gold:#caa153; --gold-soft:#2b2413;
@@ -2228,6 +2232,10 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .verdict-basis{font-size:13px;color:var(--muted);margin:0}
 .opp-list{margin:12px 0;padding-left:18px;display:flex;flex-direction:column;gap:7px;font-size:15px}
 .opp-list li{list-style:disc}
+/* These are standalone links in a list, not links inside a sentence, so the
+   24px target minimum applies and they measured 15px. The negative margin
+   keeps the 7px gap the list was set with. */
+.opp-list a{display:inline-block;padding:5px 0;margin:-5px 0;min-height:24px}
 .vr-group{margin-top:34px}
 .vr-group-h{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .vr-group-n{font-family:var(--mono);font-size:11px;color:var(--faint)}
