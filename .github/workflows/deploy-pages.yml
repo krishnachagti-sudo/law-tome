@@ -26,11 +26,6 @@ jobs:
         with:
           node-version: '22'
       - run: npm install
-      - run: npm test
-      # The house-style gate, on the two things in docs/VOICE.md that are rules
-      # rather than signals: a banned word, or an entry over the one-em-dash
-      # limit. Cheap, and it stops the voice drifting back one commit at a time.
-      - run: npm run style -- --strict
       # Build for the host that ACTUALLY serves this artifact.
       #
       # The target is lawtome.conyso.com — its own hostname, served at the root.
@@ -56,7 +51,15 @@ jobs:
       # ~40 useful HTML fetches a day against a sitemap of 1,104 URLs, already
       # leaves roughly two thirds of that site undiscovered. Adding 1,785 URLs
       # to that queue would slow both. See docs/market.md.
+      # The build runs BEFORE the tests: 18 test files assert against dist/,
+      # which is gitignored, so CI never had one and 20 tests failed on every
+      # push. They passed locally only because a previous build left dist/ behind.
       - run: npm run build -- --base=${{ vars.SITE_BASE || format('/{0}/', github.event.repository.name) }} --origin=${{ vars.SITE_ORIGIN || format('https://{0}.github.io', github.repository_owner) }}
+      - run: npm test
+      # The house-style gate, on the two things in docs/VOICE.md that are rules
+      # rather than signals: a banned word, or an entry over the one-em-dash
+      # limit. Cheap, and it stops the voice drifting back one commit at a time.
+      - run: npm run style -- --strict
       # Whole-site checks on the assembled output, run against the SAME base and
       # origin the artifact was built with. This is what catches a canonical
       # still pointing at the old host, a sitemap listing a noindex page, or a
