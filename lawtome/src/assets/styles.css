@@ -1644,6 +1644,14 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .rel-ex a{display:inline-block;padding:5px 11px;background:var(--surface);border:1px solid var(--line);border-radius:2px;
   font-size:13px;color:var(--ink);text-decoration:none;transition:border-color .16s,color .16s}
 .rel-ex a:hover{border-color:var(--accent);color:var(--accent)}
+/* The sister-index panel. Quieter than the rest of the rail on purpose: it
+   points off-site, and an off-site link dressed like this site's own
+   navigation is a small deception about where a click goes. */
+.panel--atlas{border-left:2px solid var(--gold)}
+.at-note{font-size:13px;line-height:1.6;color:var(--muted);margin:0 0 12px}
+.at-go{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--gold);text-decoration:none;
+  border-bottom:1px solid color-mix(in srgb,var(--gold) 45%,transparent)}
+.at-go:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .rel-sec-more{margin:16px 0 0}
 
 /* ---- hub cards ------------------------------------------------------------

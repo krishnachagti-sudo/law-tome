@@ -14,6 +14,7 @@
     "test": "node --test \"test/**/*.test.mjs\"",
     "pdf": "node scripts/make-pdf.mjs",
     "style": "node build/style-check.mjs",
+    "atlas": "node build/atlas.mjs > src/data/atlas.json",
     "preflight": "node build/preflight.mjs"
   },
   "dependencies": {

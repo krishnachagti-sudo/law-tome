@@ -26,6 +26,7 @@ import { personId } from './eponyms.mjs';
 import { formulaBlock, diffusionBlock, pronunciation, otherNames, otherNamesText } from './facts.mjs';
 import { kindOf, KINDS, kindPath } from '../../build/kinds.mjs';
 import { widgetBlock, widgetFor } from './widgets.mjs';
+import { ATLAS_BASE } from '../../build/atlas.mjs';
 
 /**
  * Trim to at most `max` characters, ending on a sentence boundary where one is
@@ -150,7 +151,7 @@ function glanceRow(k, v) {
 }
 
 export function lawPage(law, ctx = {}) {
-  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, images, facts = {}, periodSlugs, replication } = ctx;
+  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, images, facts = {}, periodSlugs, replication, atlas = null } = ctx;
   const coined = law.provenance === 'coined';
   const catLabel = categories[law.category] || law.category || '';
   const canonical = `${origin}${base}laws/${law.slug}/`;
@@ -850,8 +851,28 @@ ${shareRow({
         </div>
       </div>\n`;
 
+  // The same idea in the Bias Atlas, where 131 of these laws also appear.
+  //
+  // Not a rival and not a duplicate: the two ask different questions of one
+  // idea. This index asks whether a named principle is dependable and answers
+  // on the reliability scale; the Atlas asks what happened when the experiments
+  // behind the claim were repeated and answers with a replication verdict.
+  // Dunning-Kruger is Contested here and Mixed there, and those are not two
+  // answers to one question — they are answers to two.
+  //
+  // What is NOT here is the Atlas's verdict. Quoting it would put a figure on
+  // this page that this page cannot check, and it would go stale silently the
+  // moment the Atlas revises an entry. The link is the honest depth.
+  const atlasPanel = atlas
+    ? `      <div class="panel panel--atlas">
+        <h3>Also in the Bias Atlas</h3>
+        <p class="at-note">A sister index of cognitive biases. This page asks how far ${escapeHtml(law.name)} can be trusted; that one asks what happened when the experiments behind it were repeated.</p>
+        <a class="at-go" href="${ATLAS_BASE}bias/${escapeHtml(atlas.atlas.slug)}/" rel="noopener">See what replicated &rarr;</a>
+      </div>\n`
+    : '';
+
   const aside = `    <aside class="aside">
-${saveBtn}${namesakePanel}${mapPanel}${comparePanel}${sharePanel}      <div class="panel">
+${saveBtn}${namesakePanel}${mapPanel}${comparePanel}${sharePanel}${atlasPanel}      <div class="panel">
         <h3>Cite this entry</h3>
         <div class="cite-box" id="cite">${citeText}</div>
         <button class="btn" id="copy" type="button"><i class="ti ti-copy" aria-hidden="true"></i> <span id="copy-t">Copy citation</span></button>

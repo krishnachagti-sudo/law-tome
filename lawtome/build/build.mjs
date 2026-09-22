@@ -119,6 +119,13 @@ export async function buildSite(opts) {
   PAGES = new Map();
 
   const [laws, categories] = await Promise.all([loadCorpus(dataDir), loadCategories(catFile)]);
+  // Laws that also have an entry in the Bias Atlas. Committed data, inverted
+  // from the Atlas's own crosswalk so the two sites cannot disagree about which
+  // pages are paired. Regenerate with `npm run atlas`.
+  const ATLAS_PAIRS = new Map(
+    JSON.parse(await readFile(new URL('../src/data/atlas.json', import.meta.url), 'utf8'))
+      .pairs.map((p) => [p.slug, p]),
+  );
 
   // Curated image manifest (src/data/images.json), produced by build/fetch-images.py.
   // Optional: an absent or unreadable manifest just means the site renders without
@@ -278,7 +285,7 @@ export async function buildSite(opts) {
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
-    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, images, facts, periodSlugs, replication });
+    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, images, facts, periodSlugs, replication, atlas: ATLAS_PAIRS.get(laws[i].slug) || null });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
     // Clean Markdown twin at /laws/<slug>/index.md — a fetch-friendly plain-text
     // representation for LLMs/agents (GEO). Linked from the page via rel=alternate.
