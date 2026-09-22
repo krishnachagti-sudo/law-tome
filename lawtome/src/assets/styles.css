@@ -1067,6 +1067,19 @@ a.prose-law:hover,a.prose-law:focus-visible{color:var(--accent);border-bottom-co
 .anim [data-reveal="left"]{transform:translateX(-32px)}
 .anim [data-reveal="right"]{transform:translateX(32px)}
 .anim [data-reveal="scale"]{transform:scale(.93)}
+/* The sideways reveals come off on narrow screens, and this is not a taste
+   call. `translateX(32px)` places an element 32px past the right edge while it
+   waits to animate in. On a desktop the page has slack and nothing shows; on a
+   phone there is none, so the document itself widens and the browser zooms the
+   whole page out to fit — and the zoom PERSISTS after the animation ends,
+   because the viewport was resized, not the element. /features/ opens twelve
+   of these and rendered at 405px inside a 390px phone, permanently, with every
+   word on it shrunk to pay for an effect that had already finished. The
+   vertical rise says the same thing and has somewhere to go. */
+@media(max-width:860px){
+  .anim [data-reveal="left"],
+  .anim [data-reveal="right"]{transform:translateY(24px)}
+}
 .anim [data-reveal="blur"]{filter:blur(10px)}
 .anim [data-reveal="fade"]{transform:none}
 /* per-child stagger on the law page's fixed grids (kept from the original) */
@@ -1424,7 +1437,13 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
    inverts their contrast and makes the lines vanish. */
 .lawfig{margin:0 0 60px;background:#f2efe6;border:1px solid var(--line);border-radius:3px;padding:18px}
 .lawfig img{display:block;width:100%;height:auto;border-radius:2px}
-.lawfig figcaption{margin-top:12px;font-family:var(--mono);font-size:10px;line-height:1.5;letter-spacing:.02em;color:#5c574c}
+/* `overflow-wrap:anywhere` because the credit carries the source URL as text,
+   and a Wikimedia Commons permalink is one 252px token with nothing in it a
+   line may break at. Inside an 18px-padded figure that set a 290px floor for
+   the whole entry-layout grid on a 320px phone, so the document widened and
+   the browser zoomed the page out — on the 1,026 law pages that carry an
+   image. The caption is the only thing that needed to bend. */
+.lawfig figcaption{margin-top:12px;font-family:var(--mono);font-size:10px;line-height:1.5;letter-spacing:.02em;color:#5c574c;overflow-wrap:anywhere}
 .lawfig figcaption .img-credit{display:inline;margin:0;color:inherit}
 .lawfig figcaption a{color:#7a5a12}
 
