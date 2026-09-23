@@ -27,7 +27,7 @@ export function centuryLabelForYear(year) {
   return `${c}${suffix} century`;
 }
 
-export function timelinePage(eras = [], { base = '/', origin = '', count, images, periodSlugs } = {}) {
+export function timelinePage(eras = [], { base = '/', origin = '', count, images, periodSlugs, rate = '' } = {}) {
   // A century with a page of its own gets its heading linked. The undated
   // bucket never does, and neither does a century whose page the build chose
   // not to write — a heading that links nowhere is worse than a plain one.
@@ -118,7 +118,7 @@ ${hubHead({
       ...(undated > 0 ? [[undated, 'undated']] : []),
     ],
     base,
-  })}${body}
+  })}${rate}${body}
 ${faq.html}${hubNav('timeline/', { base })}  </div>
 </section>
 `;

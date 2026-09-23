@@ -27,6 +27,7 @@ import { kinds, kindPath, kindOf } from './kinds.mjs';
 import { kindsHubPage, kindPage } from '../src/templates/kinds.mjs';
 import { calculatorsPage } from '../src/templates/calculators.mjs';
 import { akaPage, quotesPage, quoteFieldPage, quoteFields, quotePath } from '../src/templates/lookup.mjs';
+import { decadeChart } from '../src/templates/charts.mjs';
 import { bestKnown, bestKnownPage, bandPage, banded, bandPath, bandOf } from '../src/templates/bestknown.mjs';
 import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, setBuildDate, personSlug } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
@@ -698,7 +699,7 @@ export async function buildSite(opts) {
     sourcesPage(bibliography(laws), { base, origin, count: publishedCount, total: publishedCount })));
   // Image credits — the attribution the CC licences require, in one auditable list.
   writes.push(writePage(join(out, 'credits', 'index.html'), creditsPage(images, { base, origin, count: publishedCount })));
-  writes.push(writePage(join(out, 'timeline', 'index.html'), timelinePage(eraGroups(laws), { base, origin, count: publishedCount, images, periodSlugs })));
+  writes.push(writePage(join(out, 'timeline', 'index.html'), timelinePage(eraGroups(laws), { base, origin, count: publishedCount, images, periodSlugs, rate: decadeChart(laws, categories, { base }) })));
   // One page per century, and one per decade with enough entries to be worth a
   // page (see build/periods.mjs) — both hang off /timeline/.
   for (const p of periodList) {

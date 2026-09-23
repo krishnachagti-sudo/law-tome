@@ -2973,3 +2973,12 @@ footer { padding-bottom: env(safe-area-inset-bottom); }
 .qtc-t{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink)}
 .qtc-q{font-family:var(--serif);font-style:italic;font-size:14px;line-height:1.5;color:var(--muted)}
 .qtc-n{font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--faint)}
+/* /timeline/ rate chart and per-field table (B5). */
+.chart--decades{margin:26px 0 8px}
+.dec-h{margin-top:30px}
+.dec-lede{margin:0 0 8px}
+.dec-t{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0 36px}
+.dec-t th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:400;padding:6px 8px;border-bottom:1px solid var(--line-strong)}
+.dec-t td{padding:7px 8px;border-bottom:1px solid var(--line);color:var(--muted);font-variant-numeric:tabular-nums}
+.dec-t td:first-child{color:var(--ink)}
+@media(max-width:560px){.dec-t th:nth-child(2),.dec-t td:nth-child(2){display:none}}

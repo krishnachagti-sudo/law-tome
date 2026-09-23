@@ -154,7 +154,13 @@ be a browse axis nobody else can offer, because nobody else has the graph.
 Walkable chains ("this causes that, which causes the other") are a genuinely
 novel view and the data is already directional.
 
-### B5. Per-decade "what was named when" — **S, derive**
+### B5. Per-decade "what was named when" — **done, 23 September 2026**
+
+> On /timeline/: a column per decade from the 1600s to the 2010s (836 dated
+> entries; the 280 undated are counted in the note, not placed), and a table
+> of each field's median naming year and busiest decade, oldest first. The
+> note says why the right edge falls rather than letting it read as decline.
+
 `coinedYear` on 836 entries. `/timeline/` exists; a *rate* view — how many named
 ideas per decade, by field — is a chart nobody else can draw. It also visibly
 answers "is this an old idea or a new one".
