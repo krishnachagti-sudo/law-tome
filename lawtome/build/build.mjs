@@ -27,7 +27,7 @@ import { kinds, kindPath, kindOf } from './kinds.mjs';
 import { kindsHubPage, kindPage } from '../src/templates/kinds.mjs';
 import { calculatorsPage } from '../src/templates/calculators.mjs';
 import { akaPage, quotesPage } from '../src/templates/lookup.mjs';
-import { bestKnown, bestKnownPage } from '../src/templates/bestknown.mjs';
+import { bestKnown, bestKnownPage, bandPage, banded, bandPath, bandOf } from '../src/templates/bestknown.mjs';
 import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, setBuildDate, personSlug } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
 import { resolveCollections } from './collections.mjs';
@@ -284,7 +284,9 @@ export async function buildSite(opts) {
   const allVerdicts = verdicts(laws, ranked, { kindOf });
   // For each law page's "Is it real?" section: its print-frequency rank where
   // one was measured, and whether it has a verdict page to link to.
-  const FAME = new Map(ranked.map((r, i) => [r.law.slug, { rank: i + 1, of: ranked.length }]));
+  // The band, not the rank: see BANDS in bestknown.mjs (backlog B11).
+  const bandCount = new Map(banded(ranked).map((g) => [g.band.slug, g.rows.length]));
+  const FAME = new Map(ranked.map((r) => { const b = bandOf(r.peak); return [r.law.slug, { band: b, inBand: bandCount.get(b.slug), of: ranked.length }]; }));
   const HAS_VERDICT = new Set(allVerdicts.map((v) => v.slug));
 
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
@@ -420,6 +422,13 @@ export async function buildSite(opts) {
     bestKnownPage(ranked, {
       base, origin, count: publishedCount, categories, corpusTotal: laws.length,
     })));
+  // One page per band (backlog B9): every measured name is listed somewhere,
+  // where the single page used to stop at 250.
+  const BAND_GROUPS = banded(ranked);
+  for (const g of BAND_GROUPS) {
+    writes.push(writePage(join(out, bandPath(g.band), 'index.html'),
+      bandPage(g, { base, origin, count: publishedCount, categories, measured: ranked.length, groups: BAND_GROUPS })));
+  }
 
   // What kind of thing is it — /kinds/ and one page per kind.
   //
@@ -761,6 +770,7 @@ export async function buildSite(opts) {
     'reliability/',                           // veracity facet hub
     ...presentTiers.map((v) => `reliability/${reliabilitySlug(v)}/`),
     'best-known/',                            // ranked by printed frequency
+    ...banded(ranked).map((g) => bandPath(g.band)), // one page per frequency band
     'also-known-as/',                         // every alias, cross-referenced
     'quotes/',                                // every statement, as it is quoted
     'kinds/',                                 // the index by kind of named thing

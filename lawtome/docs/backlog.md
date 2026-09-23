@@ -192,7 +192,13 @@ below the eight-entry floor. Either lower the floor to six (management is next a
 that the field exists and why it has no sheet. Currently it is silently absent,
 which is the one option that misleads.
 
-### B9. `/quotes/` and `/best-known/` are 763 KB and 112 KB gzipped — **M, derive**
+### B9. `/quotes/` and `/best-known/` are 763 KB and 112 KB gzipped — **/best-known/ done; /quotes/ below**
+
+> /best-known/ is now a band hub (79 KB, 17 KB gzipped, from 745 KB) with the
+> top two bands in full and one page per band, so all 903 measured names are
+> listed where the old page stopped at 250. Sparklines are downsampled from 220
+> points to 46 per 92px chart, keeping each bucket's maximum.
+
 Same disease `/situations/` had. Pagination or segmentation, with the same
 benefit: real landing pages instead of one enormous one.
 
@@ -201,7 +207,18 @@ benefit: real landing pages instead of one enormous one.
 tracking — git history over `src/data/laws/*.json` — would make the feed mean
 what it says, and make "we update when the evidence updates" checkable.
 
-### B11. Confidence-interval view of the ranking — **S, derive**
+### B11. Confidence-interval view of the ranking — **done, 23 September 2026**
+
+> Seven bands in steps of about three in printed frequency, a ratio because
+> phrase-count error scales with the count. Within a band the order is shown
+> and called rough; no rank number is printed anywhere on the site any more,
+> on /best-known/, the law pages' figures or the verdict pages. Doing this
+> surfaced a live error: `(r / K Selection Theory)` was an Ngram *ratio*, read
+> as 1.0 and ranked #1 at a million per million, pushing every other rank down
+> one. Readings from Ngram expressions, and any peak above 0.01% of all words,
+> are now refused in one place (`isPhraseReading`), which also stops the law
+> page charting that ratio as the name's life in print.
+
 `/best-known/` presents a ranked list as though the ranking were precise. Print
 frequency is noisy; adjacent ranks are not meaningfully different. Saying so, or
 banding the ranking, would be consistent with the honesty the rest of the site

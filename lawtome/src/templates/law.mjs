@@ -663,8 +663,10 @@ ${h2}${inner}
       const fTotal = counts.fields.get(fKey) || 0;
       const fSame = counts.fieldTiers.get(`${fKey}|${law.reliability}`) || 0;
       const cells = [];
-      if (fame && fame.rank) {
-        cells.push(`          <div class="vd-c"><span class="vd-cn">#${fame.rank.toLocaleString('en-GB')}</span><span class="vd-cl">of ${fame.of.toLocaleString('en-GB')} measurable names, by how often it appears in printed books</span></div>`);
+      // A band, not a rank: see BANDS in bestknown.mjs. "#43 of 903" claimed a
+      // precision a phrase count does not have.
+      if (fame && fame.band) {
+        cells.push(`          <div class="vd-c"><span class="vd-cn">${escapeHtml(fame.band.label)}</span><span class="vd-cl">in printed books: one of <a href="${base}best-known/${escapeHtml(fame.band.slug)}/">${fame.inBand.toLocaleString('en-GB')} names</a> in its band, of ${fame.of.toLocaleString('en-GB')} measured</span></div>`);
       }
       if (fTotal > 1) {
         cells.push(`          <div class="vd-c"><span class="vd-cn">${fSame} of ${fTotal}</span><span class="vd-cl">entries in <a href="${base}category/${escapeHtml(fKey)}/">${escapeHtml(String(catLabel).toLowerCase())}</a> carry the same rating</span></div>`);

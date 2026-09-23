@@ -17,6 +17,7 @@ import {
   shareRow, RELIABILITY_NOTE,
 } from './partials.mjs';
 import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
+import { bandOf } from './bestknown.mjs';
 import { verdictPath, verdictLine } from '../../build/verdicts.mjs';
 import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
 
@@ -28,7 +29,9 @@ const pc = (a, b) => (b ? `${Math.round((a / b) * 100)}%` : '—');
  * @param {object} v a row from build/verdicts.verdicts()
  */
 export function verdictPage(v, { base = '/', origin = '', count, categories = {}, replication } = {}) {
-  const { law, rank, rankOf, fieldSoft, fieldTotal, corpusSoft, corpusTotal } = v;
+  const { law, rankOf, peak, fieldSoft, fieldTotal, corpusSoft, corpusTotal } = v;
+  // The band, not the ordinal: see BANDS in bestknown.mjs (backlog B11).
+  const band = bandOf(peak || 0);
   const path = verdictPath(v);
   const fieldName = categories[v.field] || v.field;
   const line = verdictLine(law);
@@ -38,14 +41,14 @@ export function verdictPage(v, { base = '/', origin = '', count, categories = {}
   // the rating means in longer form, and printing both gave the Contested pages
   // the word "disputed" three times in two sentences. The note still appears
   // once, on the badge below.
-  const answer = `${line} ${escapeHtml(law.name)} is rated <b>${escapeHtml(tier)}</b> in this index. It is the ${num(rank)}${rank === 1 ? 'st' : rank === 2 ? 'nd' : rank === 3 ? 'rd' : 'th'} most-printed name of the ${num(rankOf)} whose print frequency can be measured, so this is a question people are actually asking.`;
+  const answer = `${line} ${escapeHtml(law.name)} is rated <b>${escapeHtml(tier)}</b> in this index. Its name is ${escapeHtml(band.label.toLowerCase())} in English books, among the ${num(rankOf)} whose print frequency can be measured, so this is a question people are actually asking.`;
 
   // The three comparisons. This is the part of the page the entry cannot carry,
   // so it goes above the entry's own text rather than below it.
   const compare = `    <div class="vd-cmp">
       <div class="vd-c">
-        <span class="vd-cn">#${num(rank)}</span>
-        <span class="vd-cl">of ${num(rankOf)} measurable names, by how often it appears in printed books</span>
+        <span class="vd-cn">${escapeHtml(band.label)}</span>
+        <span class="vd-cl">in printed books, of ${num(rankOf)} measured names. <a href="${base}best-known/${escapeHtml(band.slug)}/">The others in this band</a></span>
       </div>
       <div class="vd-c">
         <span class="vd-cn">${num(fieldSoft)} of ${num(fieldTotal)}</span>
