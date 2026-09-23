@@ -2965,3 +2965,11 @@ footer { padding-bottom: env(safe-area-inset-bottom); }
    whole list exactly as before. The intrinsic size is the card's own
    min-height, so the scrollbar does not jump as cards come into view. */
 .grid > .card{content-visibility:auto;contain-intrinsic-size:auto 186px}
+
+/* /quotes/ hub (B9): one card per field, with two of its statements. */
+.qt-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:14px;margin:18px 0 40px}
+.qt-card{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border:1px solid var(--line);border-radius:4px;background:var(--surface);text-decoration:none}
+.qt-card:hover{border-color:var(--accent)}
+.qtc-t{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink)}
+.qtc-q{font-family:var(--serif);font-style:italic;font-size:14px;line-height:1.5;color:var(--muted)}
+.qtc-n{font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--faint)}

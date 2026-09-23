@@ -192,7 +192,12 @@ below the eight-entry floor. Either lower the floor to six (management is next a
 that the field exists and why it has no sheet. Currently it is silently absent,
 which is the one option that misleads.
 
-### B9. `/quotes/` and `/best-known/` are 763 KB and 112 KB gzipped — **/best-known/ done; /quotes/ below**
+### B9. `/quotes/` and `/best-known/` are 763 KB and 112 KB gzipped — **done, 23 September 2026**
+
+> /quotes/ is now a hub of 20 field cards (40 KB, from 614 KB) and one
+> statements page per field (largest 118 KB), all 1,116 statements on exactly
+> one. Finding a half-remembered line across fields moves to the site search,
+> which ranks statement text; the FAQ says so.
 
 > /best-known/ is now a band hub (79 KB, 17 KB gzipped, from 745 KB) with the
 > top two bands in full and one page per band, so all 903 measured names are

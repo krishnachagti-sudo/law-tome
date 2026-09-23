@@ -88,6 +88,7 @@ import { readFile, writeFile, mkdtemp, rm, cp } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { buildSite } from '../build/build.mjs';
+import { quoteFields } from '../src/templates/lookup.mjs';
 import { comparePairs } from '../build/relations.mjs';
 import { eponymGroups } from '../build/eponyms.mjs';
 import { namesakesWithPages } from '../src/templates/namesake.mjs';
@@ -155,6 +156,8 @@ const PROBLEM_COUNT = problems(Array.isArray(RAW_SIT) ? RAW_SIT : RAW_SIT.situat
 const VERDICT_COUNT = verdicts(PARSED, bestKnown(PARSED, FACTS), { kindOf }).length;
 // One page per band of printed frequency under /best-known/ (backlog B9).
 const BAND_COUNT = banded(bestKnown(PARSED, FACTS)).length;
+// One statements page per field under /quotes/ (backlog B9).
+const QUOTE_FIELD_COUNT = quoteFields(PARSED, JSON.parse(readFileSync('src/data/categories.json', 'utf8'))).length;
 // The trailing + 1 is /calculators/, the index of entries that compute, solve
 // or demonstrate rather than only stating. Adding a page class to the sitemap
 // has to be declared here, which is the point of counting it this way.
@@ -176,7 +179,9 @@ const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT 
   // (/situations/ itself is already counted among the seven hubs above.)
   + PROBLEM_COUNT + VERDICT_COUNT
   // + one page per band of /best-known/.
-  + BAND_COUNT;
+  + BAND_COUNT
+  // + one statements page per field under /quotes/.
+  + QUOTE_FIELD_COUNT;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));

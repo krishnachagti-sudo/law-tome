@@ -26,7 +26,7 @@ import { reliabilityHubPage } from '../src/templates/reliability.mjs';
 import { kinds, kindPath, kindOf } from './kinds.mjs';
 import { kindsHubPage, kindPage } from '../src/templates/kinds.mjs';
 import { calculatorsPage } from '../src/templates/calculators.mjs';
-import { akaPage, quotesPage } from '../src/templates/lookup.mjs';
+import { akaPage, quotesPage, quoteFieldPage, quoteFields, quotePath } from '../src/templates/lookup.mjs';
 import { bestKnown, bestKnownPage, bandPage, banded, bandPath, bandOf } from '../src/templates/bestknown.mjs';
 import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, setBuildDate, personSlug } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
@@ -414,6 +414,12 @@ export async function buildSite(opts) {
     akaPage(laws, { base, origin, count: publishedCount, categories })));
   writes.push(writePage(join(out, 'quotes', 'index.html'),
     quotesPage(laws, { base, origin, count: publishedCount, categories })));
+  // One page of statements per field (backlog B9); /quotes/ is their hub.
+  const QUOTE_FIELDS = quoteFields(laws, categories);
+  for (const f of QUOTE_FIELDS) {
+    writes.push(writePage(join(out, quotePath(f.key), 'index.html'),
+      quoteFieldPage(f, { base, origin, count: publishedCount, fields: QUOTE_FIELDS })));
+  }
 
   // The one honest answer to "what are the most famous?": somebody else's
   // measurement of how often each name is printed, with the counted phrase
@@ -773,6 +779,7 @@ export async function buildSite(opts) {
     ...banded(ranked).map((g) => bandPath(g.band)), // one page per frequency band
     'also-known-as/',                         // every alias, cross-referenced
     'quotes/',                                // every statement, as it is quoted
+    ...quoteFields(laws, categories).map((f) => quotePath(f.key)), // …one page per field
     'kinds/',                                 // the index by kind of named thing
     ...kindGroups.map((g) => kindPath(g)),    // one per kind above the floor
     'collections/',                           // curated-collections hub
