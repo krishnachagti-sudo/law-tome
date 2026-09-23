@@ -474,7 +474,15 @@ The standard recurring hook in this space; Untools has 19,500 subscribers off 30
 tools. `today.json` already generates the content. The cost is the commitment: an
 abandoned newsletter is worse than none.
 
-### D6. Retire the "sameAs is a single string" limitation — **M, derive**
+### D6. Retire the "sameAs is a single string" limitation — **done, 23 September 2026**
+
+> `sameAs` takes a URL or a list. Every reader (validator, source check,
+> dataset, JSON-LD) goes through build/same-as.mjs. Pages emit a string for
+> one URL, exactly as before, and a list for several; the dataset always
+> publishes a list and declares `schemaVersion: 2` because the field's shape
+> changed. No entry's data was rewritten: adding second identifiers means
+> verifying each one, which is C1/C2's work.
+
 `sameAs` holds one URL. An entry can legitimately be the same as a Wikipedia
 article *and* a Wikidata item *and* a Stanford Encyclopedia entry. Making it an
 array improves the published dataset and the JSON-LD that answer engines read.

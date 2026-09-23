@@ -98,7 +98,7 @@ one invented citation destroys it. These rules are not negotiable.
 | `popularYear` | number | Year it took its famous form or reached wide currency, where meaningfully later than `coinedYear`. |
 | `namedAfter` | string | Who or what the law is named for. May name more than one (`"David Dunning and Justin Kruger"`). Usually a person, but not always — the Hawthorne Effect is named for a factory. Omit when the law is named after nothing in particular (`cobra-effect`). Never present on coined entries. |
 | `namesakeKind` | string | What kind of thing `namedAfter` is: `person`, `group`, `place`, `work`, `fictional`, `event`, `animal`. **Absent means not established, never `person`.** Established per namesake from Wikidata's P31 by `build/fetch-namesake-kind.py`, which records the QID it matched in `src/data/namesake-kinds.json`; do not hand-write it. Requires `namedAfter`. |
-| `sameAs` | string | Wikipedia/Wikidata URL, used for schema.org disambiguation. |
+| `sameAs` | string or string[] | Wikipedia/Wikidata/SEP URL(s) naming the same thing, used for schema.org disambiguation. One URL may stay a string; several are a list. Read everywhere through `build/same-as.mjs`, published as a list in the dataset, emitted as a string when there is one and a list when there are several. Every URL must be http(s). |
 | `related` | array | `{slug, kind}`. 2–4 where genuinely apt — fewer is fine, padding is not. Subject to closure. |
 | `confusedWith` | string[] | Slugs people genuinely mix this one up with. Distinct from `related`. Omit if none. Subject to closure. |
 

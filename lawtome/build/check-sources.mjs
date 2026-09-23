@@ -7,6 +7,7 @@
 // are a soft enrichment backlog, surfaced only under { requireUrl: true }; an
 // optional online pass can later verify each URL actually resolves.
 
+import { sameAsList } from './same-as.mjs';
 const URL_RE = /^https?:\/\/[^\s"<>]+$/;
 const MIN_CITATION = 12; // chars of text that count as a real citation
 
@@ -38,7 +39,7 @@ export function checkSources(laws, { requireUrl = false, requirePrimaryForCanon 
       if (s.type !== 'primary' && s.type !== 'secondary') problems.push(`${at} has invalid type: ${s.type}`);
       if (s.type === 'primary') hasPrimary = true;
     });
-    if (l.sameAs != null && !URL_RE.test(String(l.sameAs).trim())) problems.push(`${where}: malformed sameAs: ${l.sameAs}`);
+    for (const u of sameAsList(l.sameAs)) if (!URL_RE.test(u)) problems.push(`${where}: malformed sameAs: ${u}`);
     if (requirePrimaryForCanon && (l.reliability === 'Canon' || l.provenance === 'canon') && !hasPrimary) {
       problems.push(`${where}: Canon entry with no primary source`);
     }

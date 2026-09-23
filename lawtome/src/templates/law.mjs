@@ -20,6 +20,7 @@ import { head, sprite, imageObject, header, footer, escapeHtml, reliabilityClass
 import { hostOf } from '../../build/surfaces.mjs';
 import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
 import { LASTMOD_TOKEN } from '../../build/lastmod.mjs';
+import { sameAsLd } from '../../build/same-as.mjs';
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
@@ -1115,7 +1116,7 @@ ${prevnext}</div>
     description: answer,
     ...(law.no ? { termCode: law.no } : {}),
     inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'The Law Tome', url: `${origin}${base}browse/` },
-    ...(law.sameAs ? { sameAs: law.sameAs } : {}),
+    ...(sameAsLd(law.sameAs) ? { sameAs: sameAsLd(law.sameAs) } : {}),
     ...(coined ? { additionalType: 'coined', disambiguatingDescription: 'Original law coined for The Law Tome — credited and clearly marked.' } : {}),
   };
 
@@ -1128,7 +1129,7 @@ ${prevnext}</div>
     description: answer,
     image: `${origin}${base}og/${law.slug}.png`,
     keywords,
-    about: { '@type': 'Thing', name: law.name, ...(law.sameAs ? { sameAs: law.sameAs } : {}) },
+    about: { '@type': 'Thing', name: law.name, ...(sameAsLd(law.sameAs) ? { sameAs: sameAsLd(law.sameAs) } : {}) },
     inLanguage: 'en',
     isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
     mainEntityOfPage: canonical,
