@@ -157,7 +157,13 @@ most of that 484 is unharvested rather than unmeasurable, and a page about "the
 ideas too obscure to count" that opens with Benford's Law would be a lie told by
 a gap in our own pipeline.
 
-### B7. Entry-level "how solid" mini-panel — **S, derive**
+### B7. Entry-level "how solid" mini-panel — **done, 23 September 2026**
+
+> Every law's "Is it real?" section now carries its field's same-rating
+> count and, for the 904 measured names, its print-frequency rank, with a link
+> to /how-solid/ and, on the 155 that have one, to its verdict page. Worded
+> "carry the same rating" so it reads correctly on Empirical entries too.
+
 `/how-solid/` computes corpus-level statistics. The same three numbers now
 appear on 104 verdict pages. Putting a compact version on **every** entry page
 would carry the argument to where the traffic lands.

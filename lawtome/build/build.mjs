@@ -282,6 +282,10 @@ export async function buildSite(opts) {
   // Hoisted with the rest: the /is-it-real/ hub links these, each page is built
   // from them, and the sitemap lists them, so they must be computed once.
   const allVerdicts = verdicts(laws, ranked, { kindOf });
+  // For each law page's "Is it real?" section: its print-frequency rank where
+  // one was measured, and whether it has a verdict page to link to.
+  const FAME = new Map(ranked.map((r, i) => [r.law.slug, { rank: i + 1, of: ranked.length }]));
+  const HAS_VERDICT = new Set(allVerdicts.map((v) => v.slug));
 
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
@@ -301,7 +305,7 @@ export async function buildSite(opts) {
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
-    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, images, facts, periodSlugs, replication, atlas: ATLAS_PAIRS.get(laws[i].slug) || null });
+    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, images, facts, periodSlugs, replication, atlas: ATLAS_PAIRS.get(laws[i].slug) || null, fame: FAME.get(laws[i].slug) || null, hasVerdict: HAS_VERDICT.has(laws[i].slug) });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
     // Clean Markdown twin at /laws/<slug>/index.md — a fetch-friendly plain-text
     // representation for LLMs/agents (GEO). Linked from the page via rel=alternate.

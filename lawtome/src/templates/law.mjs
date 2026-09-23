@@ -173,11 +173,14 @@ const TIER_COUNT_CACHE = new WeakMap();
 function tierCounts(byslug) {
   let c = TIER_COUNT_CACHE.get(byslug);
   if (c) return c;
-  c = { total: 0, tiers: new Map() };
+  c = { total: 0, tiers: new Map(), fields: new Map(), fieldTiers: new Map() };
   for (const l of Object.values(byslug || {})) {
     if (!l || !l.slug) continue;
     c.total++;
     if (l.reliability) c.tiers.set(l.reliability, (c.tiers.get(l.reliability) || 0) + 1);
+    const f = l.category || 'other';
+    c.fields.set(f, (c.fields.get(f) || 0) + 1);
+    if (l.reliability) c.fieldTiers.set(`${f}|${l.reliability}`, (c.fieldTiers.get(`${f}|${l.reliability}`) || 0) + 1);
   }
   TIER_COUNT_CACHE.set(byslug, c);
   return c;
@@ -197,7 +200,7 @@ function glanceRow(k, v) {
 }
 
 export function lawPage(law, ctx = {}) {
-  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, images, facts = {}, periodSlugs, replication, atlas = null } = ctx;
+  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, images, facts = {}, periodSlugs, replication, atlas = null, fame = null, hasVerdict = false } = ctx;
   const coined = law.provenance === 'coined';
   const catLabel = categories[law.category] || law.category || '';
   const canonical = `${origin}${base}laws/${law.slug}/`;
@@ -648,12 +651,34 @@ ${h2}${inner}
       if (tierN) {
         basisParts.push(`<a href="${base}reliability/${reliabilitySlug(law.reliability)}/">${tierN} of the ${TOTAL_LAWS(byslug)} entries</a> carry this rating`);
       }
+      // How this rating sits in its field and in the canon (backlog B7). The
+      // /is-it-real/ verdict pages carried these comparisons for 104 laws; the
+      // traffic lands on the law pages, so every one now carries them too.
+      // "Share this rating" rather than the verdict pages' "rest on something
+      // other than measurement", because this runs on Empirical entries as
+      // well, where that phrasing would be backwards. The fame rank appears
+      // only where print frequency was actually measured; nothing is estimated.
+      const counts = tierCounts(byslug);
+      const fKey = law.category || 'other';
+      const fTotal = counts.fields.get(fKey) || 0;
+      const fSame = counts.fieldTiers.get(`${fKey}|${law.reliability}`) || 0;
+      const cells = [];
+      if (fame && fame.rank) {
+        cells.push(`          <div class="vd-c"><span class="vd-cn">#${fame.rank.toLocaleString('en-GB')}</span><span class="vd-cl">of ${fame.of.toLocaleString('en-GB')} measurable names, by how often it appears in printed books</span></div>`);
+      }
+      if (fTotal > 1) {
+        cells.push(`          <div class="vd-c"><span class="vd-cn">${fSame} of ${fTotal}</span><span class="vd-cl">entries in <a href="${base}category/${escapeHtml(fKey)}/">${escapeHtml(String(catLabel).toLowerCase())}</a> carry the same rating</span></div>`);
+      }
+      const solid = cells.length
+        ? `        <div class="vd-cmp vd-cmp--law">\n${cells.join('\n')}\n        </div>\n        <p class="verdict-basis"><a href="${base}how-solid/">The best-known laws are the least likely to rest on measurement</a>${hasVerdict ? `; <a href="${base}is-it-real/${escapeHtml(law.slug)}/">the full verdict on ${escapeHtml(law.name)}</a>` : ''}.</p>`
+        : '';
       const inner = [
         `        <p class="verdict">${v}</p>`,
         repLine.replace(/\n$/, ''),
         basisParts.length
           ? `        <p class="verdict-basis">${basisParts.join('. ')}. <a href="${base}reliability/">How the scale works</a>.</p>`
           : '',
+        solid,
       ].filter(Boolean).join('\n');
       // The structured answer gets the verdict plus the entry's own caveat, so a
       // machine quoting it quotes the qualification too — and the replication
