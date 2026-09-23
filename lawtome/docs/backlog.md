@@ -230,7 +230,23 @@ pages that rank in the organic top ten, **citation is the goal and traffic is a
 lagging proxy for it.** Two items in this section were written before that
 research and are corrected in place below.
 
-### D1. The custom domain — **S, none, blocking, decided**
+### D1. The custom domain — **superseded, see the note first**
+
+> **Status, 23 September 2026.** The subdomain below was never set up — it is
+> NXDOMAIN — and main moved the build to where the site is actually served:
+> `base /lawtome/`, `origin https://conyso.com` (commit c88b531, 10 September),
+> where all of its search impressions are. The plan below is kept for its
+> reasoning, not as a to-do.
+>
+> **What deploys the live site.** conyso.com/lawtome/ is served by nginx from
+> its own copy on the conyso.com server, not proxied to GitHub Pages: checked
+> 23 September, the two answer with different ETags, sizes and dates (server
+> 21 September, Pages 17 September). So a merge to main updates only the Pages
+> copy. The live site changes when a fresh build of this repo is uploaded to
+> the server by hand, the same way conyso.com itself is (conyso-site's
+> HANDOFF.md, rsync). Worth automating, or at least writing down where the
+> upload step lives, because nothing in either repository records it.
+
 **Target: `lawtome.conyso.com`** — its own hostname, served at the root. Decided
 2026-08-04 against Search Console data for conyso.com; the reasoning is in
 [market.md §3b](market.md). Short version: conyso.com cannot crawl the 1,104
@@ -255,7 +271,18 @@ production base and origin.
 Then `INDEXNOW_ENABLED = true` (D3c), which only works once the key file is at a
 host root — which it now is.
 
-### D2. Author and Organization schema — **S, author**
+### D2. Author and Organization schema — **done, 23 September 2026**
+
+> One Person node across conyso.com, this site and the Bias Atlas, identical on
+> @id, name, jobTitle, description, url, all nine sameAs, worksFor and
+> founderOf, diffed against the live conyso.com. Conyso referenced by
+> `https://conyso.com/#organization` everywhere and never restated; this
+> site's Organization has `conyso.com/lawtome/#organization` on every page, and
+> conyso.com lists it as a subOrganization (branch
+> `claude/entity-sub-organisations` in conyso-site). `test/identity.test.mjs`
+> fails the build on drift. Still open from the original item: a Wikidata
+> item, which is C1.
+
 Cited-source credibility signals. We have `DefinedTerm`, `CollectionPage`,
 `FAQPage`, `BreadcrumbList`. Explicit Organization and Author markup is what
 answer engines use to decide a source is real.
