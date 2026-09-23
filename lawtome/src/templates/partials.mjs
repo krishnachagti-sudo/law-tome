@@ -74,7 +74,11 @@ const FOUNDER = {
   // at a named organisation. Separating them states the relationship instead of
   // spelling it.
   jobTitle: 'Founder & CEO',
-  description: 'Founder and CEO of Conyso; creator of The Law Tome.',
+  // Verbatim from conyso.com/founder/, the entity home, as of 23 September
+  // 2026. It said "Founder and CEO of Conyso; creator of The Law Tome." — true,
+  // and different: one @id carrying two descriptions from two properties the
+  // same person controls. Same rule as sameAs below: change both together.
+  description: 'Founder of Conyso. Operator and independent researcher publishing on organizational scaling, signalling economics, and cybernetics.',
   url: 'https://conyso.com/founder/',
   // Ordered deliberately. A knowledge graph weighs the registries it already
   // trusts, and ORCID is a registry OF RESEARCHERS — so an identity described

@@ -477,6 +477,8 @@ const BASE=${JSON.stringify(base)};
   const organization = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    // The same id data.mjs gives it, so every mention is one entity.
+    '@id': `${homeUrl}#organization`,
     name: 'The Law Tome',
     url: homeUrl,
     description: 'A living, sourced index of named laws, principles, and effects.',
@@ -485,11 +487,13 @@ const BASE=${JSON.stringify(base)};
     publishingPrinciples: `${homeUrl}about/`,
     correctionsPolicy: `${homeUrl}about/`,
     // The Law Tome is an initiative by Conyso, its publisher.
-    parentOrganization: {
-      ...conysoOrg(homeUrl, ''),
-      slogan: 'Building and backing companies, run with operating discipline.',
-      description: 'A holding company that builds and backs companies run with operating discipline — strategy, education, software, and ventures under one roof.',
-    },
+    //
+    // Conyso by reference only. This used to restate Conyso's slogan and
+    // description, and by September they no longer matched what conyso.com
+    // says about itself: two descriptions of one @id, from two properties the
+    // same person controls. conyso.com is the entity home; it describes Conyso
+    // and everything else points at it.
+    parentOrganization: conysoOrg(homeUrl, ''),
     // Creator. The home page carries the full description because it is the
     // page most likely to be fetched first; everywhere else references it.
     founder: founderNode(homeUrl, ''),

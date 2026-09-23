@@ -16,7 +16,7 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
-import { head, sprite, imageObject, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE, DESC_MAX } from './partials.mjs';
+import { head, sprite, imageObject, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE, DESC_MAX, CONYSO_ID } from './partials.mjs';
 import { hostOf } from '../../build/surfaces.mjs';
 import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
 import { LASTMOD_TOKEN } from '../../build/lastmod.mjs';
@@ -1063,11 +1063,13 @@ ${prevnext}</div>
   // ---- JSON-LD stack ----------------------------------------------------
   const publisher = {
     '@type': 'Organization',
+    '@id': `${origin}${base}#organization`,
     name: 'The Law Tome',
     url: `${origin}${base}`,
     logo: { '@type': 'ImageObject', url: `${origin}${base}assets/logo.svg`, width: 512, height: 512 },
-    // Published as an initiative by Conyso.
-    parentOrganization: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
+    // Published as an initiative by Conyso — referenced by the @id conyso.com
+    // declares, not as an anonymous node a graph has to match by name.
+    parentOrganization: { '@type': 'Organization', '@id': CONYSO_ID, name: 'Conyso', url: 'https://conyso.com' },
     // E-E-A-T signals: the editorial method and how to report an error both live
     // on the About page, which states the anti-fabrication sourcing standard.
     publishingPrinciples: `${origin}${base}about/`,
