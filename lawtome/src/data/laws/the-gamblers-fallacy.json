@@ -1,83 +1,84 @@
 {
-  "no": "179",
-  "slug": "the-gamblers-fallacy",
-  "name": "The Gambler's Fallacy",
-  "aliases": [
-    "The Monte Carlo fallacy"
-  ],
-  "statement": "Believing a run of one outcome makes the opposite 'due' in independent trials.",
-  "statementAccent": "makes the opposite 'due'",
-  "meaning": "The mistaken belief that if an independent, equally likely outcome has come up more than expected lately, the other becomes more likely next. That after a run of black, red is 'due'. It is wrong: the wheel has no memory, and each spin keeps its original odds regardless of what came before.",
-  "mechanism": "It comes from misapplying the law of large numbers to short runs. That law says the proportion of outcomes converges over very many trials; it does not say short sequences must balance out. Believers effectively hold a false 'law of small numbers', expecting a handful of trials to be representative of the long run, when in truth there is no corrective force — early deviations are diluted by volume, not cancelled.",
-  "examples": [
-    {
-      "tag": "Monte Carlo, 1913",
-      "text": "At the Monte Carlo Casino on 18 August 1913 the roulette ball landed on black 26 times in a row; as the streak grew, gamblers bet ever more heavily on red, wrongly sure the imbalance had to correct, and lost heavily."
-    },
-    {
-      "tag": "Lottery numbers",
-      "text": "Avoiding numbers that just won, or expecting a die face that has been scarce lately: each draw or roll keeps its fixed odds, untouched by the past."
-    },
-    {
-      "tag": "'Due' for a boy",
-      "text": "'We've had three girls, so the next must be a boy' misreads roughly independent births as if past children shifted the odds of the next."
-    }
-  ],
-  "variants": [
-    {
-      "name": "The hot-hand fallacy",
-      "text": "The inverse error of expecting a streak to continue rather than reverse, though Miller and Sanjurjo's 2018 work found a selection bias in the classic study, suggesting the hot hand may be partly real."
-    },
-    {
-      "name": "The law of averages",
-      "text": "The colloquial misconception behind it: the belief in a balancing force that makes outcomes even out in the short run, which is not a real mathematical law."
-    }
-  ],
-  "whyItMatters": "It is one of the best-documented reasoning errors about randomness, costly at the roulette table and in every domain where people expect chance to self-correct. Understanding it is understanding that independent events have no memory: the single most common misconception about probability.",
-  "working": [
-    {
-      "lead": "Treat independent trials as memoryless",
-      "text": "for genuinely independent events, keep the odds fixed regardless of recent runs; nothing is ever 'due'."
-    },
-    {
-      "lead": "Check whether events are actually independent",
-      "text": "the fallacy applies only to independent trials; for dependent ones like cards dealt without replacement, adjusting expectations is rational."
-    },
-    {
-      "lead": "Distrust the balancing feeling",
-      "text": "resist the sense that a streak must reverse to even things out. That is the false law of averages, not the law of large numbers."
-    }
-  ],
-  "limits": "It is a genuine, well-documented cognitive bias, robust in experiments and in real behaviour. Its crucial scope condition is independence: the error is specifically applying 'it's due' reasoning to memoryless independent trials. When events are not independent (sampling without replacement, for instance) adjusting expectations from past outcomes is rational, not fallacious. Its old twin, belief in the hot hand, was itself complicated in 2018 by the discovery of a streak-selection bias, which does not rehabilitate the gambler's fallacy for independent events but unsettles the once-symmetric treatment of the two.",
-  "misreadings": "It is not a claim that streaks never mean anything: for dependent events, or when a run makes you suspect a biased wheel, updating your expectations can be perfectly rational. The fallacy is strictly the belief that independent, memoryless trials must correct past deviations.",
-  "origin": "A long-recognised reasoning error, also called the Monte Carlo fallacy after the 1913 roulette run, and studied by Amos Tversky and Daniel Kahneman as a consequence of the representativeness heuristic.",
-  "category": "psychology",
-  "reliability": "Empirical",
-  "provenance": "canon",
-  "coinedYear": 1913,
-  "namedAfter": "The Monte Carlo Casino",
-  "namesakeKind": "place",
-  "sources": [
-    {
-      "text": "Gambler's fallacy, Wikipedia. — the definition, the 1913 Monte Carlo event, the law-of-large-numbers misapplication, and the independence condition.",
-      "url": "https://en.wikipedia.org/wiki/Gambler%27s_fallacy",
-      "type": "secondary"
-    },
-    {
-      "text": "Miller, J.B. & Sanjurjo, A. (2018). \"Surprised by the Hot Hand Fallacy? A Truth in the Law of Small Numbers.\" Econometrica, 86(6), 2019–2047.",
-      "url": "https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA14943",
-      "type": "primary"
-    }
-  ],
-  "sameAs": "https://en.wikipedia.org/wiki/Gambler%27s_fallacy",
-  "related": [
-    {
-      "slug": "law-of-large-numbers",
-      "kind": "tension"
-    },
-    {
-      "slug": "regression-to-the-mean",
-      "kind": "kindred"
-    }
-  ]
+ "no": "179",
+ "slug": "the-gamblers-fallacy",
+ "name": "The Gambler's Fallacy",
+ "aliases": [
+  "The Monte Carlo fallacy",
+  "The law of averages"
+ ],
+ "statement": "Believing a run of one outcome makes the opposite 'due' in independent trials.",
+ "statementAccent": "makes the opposite 'due'",
+ "meaning": "The mistaken belief that if an independent, equally likely outcome has come up more than expected lately, the other becomes more likely next. That after a run of black, red is 'due'. It is wrong: the wheel has no memory, and each spin keeps its original odds regardless of what came before.",
+ "mechanism": "It comes from misapplying the law of large numbers to short runs. That law says the proportion of outcomes converges over very many trials; it does not say short sequences must balance out. Believers effectively hold a false 'law of small numbers', expecting a handful of trials to be representative of the long run, when in truth there is no corrective force — early deviations are diluted by volume, not cancelled.",
+ "examples": [
+  {
+   "tag": "Monte Carlo, 1913",
+   "text": "At the Monte Carlo Casino on 18 August 1913 the roulette ball landed on black 26 times in a row; as the streak grew, gamblers bet ever more heavily on red, wrongly sure the imbalance had to correct, and lost heavily."
+  },
+  {
+   "tag": "Lottery numbers",
+   "text": "Avoiding numbers that just won, or expecting a die face that has been scarce lately: each draw or roll keeps its fixed odds, untouched by the past."
+  },
+  {
+   "tag": "'Due' for a boy",
+   "text": "'We've had three girls, so the next must be a boy' misreads roughly independent births as if past children shifted the odds of the next."
+  }
+ ],
+ "variants": [
+  {
+   "name": "The hot-hand fallacy",
+   "text": "The inverse error of expecting a streak to continue rather than reverse, though Miller and Sanjurjo's 2018 work found a selection bias in the classic study, suggesting the hot hand may be partly real."
+  },
+  {
+   "name": "The law of averages",
+   "text": "The colloquial misconception behind it: the belief in a balancing force that makes outcomes even out in the short run, which is not a real mathematical law."
+  }
+ ],
+ "whyItMatters": "It is one of the best-documented reasoning errors about randomness, costly at the roulette table and in every domain where people expect chance to self-correct. Understanding it is understanding that independent events have no memory: the single most common misconception about probability.",
+ "working": [
+  {
+   "lead": "Treat independent trials as memoryless",
+   "text": "for genuinely independent events, keep the odds fixed regardless of recent runs; nothing is ever 'due'."
+  },
+  {
+   "lead": "Check whether events are actually independent",
+   "text": "the fallacy applies only to independent trials; for dependent ones like cards dealt without replacement, adjusting expectations is rational."
+  },
+  {
+   "lead": "Distrust the balancing feeling",
+   "text": "resist the sense that a streak must reverse to even things out. That is the false law of averages, not the law of large numbers."
+  }
+ ],
+ "limits": "It is a genuine, well-documented cognitive bias, robust in experiments and in real behaviour. Its crucial scope condition is independence: the error is specifically applying 'it's due' reasoning to memoryless independent trials. When events are not independent (sampling without replacement, for instance) adjusting expectations from past outcomes is rational, not fallacious. Its old twin, belief in the hot hand, was itself complicated in 2018 by the discovery of a streak-selection bias, which does not rehabilitate the gambler's fallacy for independent events but unsettles the once-symmetric treatment of the two.",
+ "misreadings": "It is not a claim that streaks never mean anything: for dependent events, or when a run makes you suspect a biased wheel, updating your expectations can be perfectly rational. The fallacy is strictly the belief that independent, memoryless trials must correct past deviations.",
+ "origin": "A long-recognised reasoning error, also called the Monte Carlo fallacy after the 1913 roulette run, and studied by Amos Tversky and Daniel Kahneman as a consequence of the representativeness heuristic.",
+ "category": "psychology",
+ "reliability": "Empirical",
+ "provenance": "canon",
+ "coinedYear": 1913,
+ "namedAfter": "The Monte Carlo Casino",
+ "namesakeKind": "place",
+ "sources": [
+  {
+   "text": "Gambler's fallacy, Wikipedia. — the definition, the 1913 Monte Carlo event, the law-of-large-numbers misapplication, and the independence condition.",
+   "url": "https://en.wikipedia.org/wiki/Gambler%27s_fallacy",
+   "type": "secondary"
+  },
+  {
+   "text": "Miller, J.B. & Sanjurjo, A. (2018). \"Surprised by the Hot Hand Fallacy? A Truth in the Law of Small Numbers.\" Econometrica, 86(6), 2019–2047.",
+   "url": "https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA14943",
+   "type": "primary"
+  }
+ ],
+ "sameAs": "https://en.wikipedia.org/wiki/Gambler%27s_fallacy",
+ "related": [
+  {
+   "slug": "law-of-large-numbers",
+   "kind": "tension"
+  },
+  {
+   "slug": "regression-to-the-mean",
+   "kind": "kindred"
+  }
+ ]
 }

@@ -28,9 +28,8 @@ researcher one.
 
 ## What this site now asserts
 
-One entity, described once at `/about/#krishna-chagti` and referenced from
-everywhere else. Previously three Person nodes were emitted with different
-contents — one with a job title, employer and three `sameAs` links, one with
+One entity, described once and referenced from everywhere else. Previously three
+Person nodes were emitted with different contents — one with a job title, employer and three `sameAs` links, one with
 only a name and URL. To a crawler that is not one person described twice; it is
 two people who share a name.
 
@@ -48,10 +47,18 @@ assertion. Claimed from both and agreeing, it is corroboration — and
 corroboration is the only thing that moves a knowledge graph, which cannot be
 told what to say.
 
-**`sameAs` is short and every entry is checkable.** Four identifiers that
-resolve and agree beat a dozen that cannot be verified. A `sameAs` pointing at
+**`sameAs` is checkable, not long.** Nine identifiers, each personal,
+resolvable and reciprocal — re-verified 2026-08-01. A `sameAs` pointing at
 something unverifiable is the one way this markup could actively mislead rather
-than merely fail.
+than merely fail, so the bar is evidence, not count. The two Zenodo record URLs
+conyso.com used to carry were dropped: they identify *papers*, not the person.
+
+**The `@id` lives at conyso.com/founder/, not here.** Updated 2026-08-01. It was
+`/about/#krishna-chagti`, which anchored the identity to one project's about
+page — if Law Tome ever moves or retires, the identifier for the person breaks.
+conyso.com/founder/ is where the identity is described most fully (image,
+credentials, education, `mainEntityOfPage`) and, as noted below, is its
+canonical home. Law Tome now *references* the entity rather than owning it.
 
 ## What has to happen off-site
 
@@ -68,7 +75,7 @@ likely coming from.
 This is a five-minute edit at orcid.org and it is worth more than everything
 else on this list combined.
 
-### 2. Make conyso.com assert the same two facts
+### 2. Make conyso.com assert the same two facts — DONE 2026-08-01
 
 conyso.com is the canonical home for this identity, and its markup has to agree
 with what is here or the two cancel out. It needs:
@@ -82,6 +89,14 @@ with what is here or the two cancel out. It needs:
 Identical means identical: same URLs, same forms, no trailing-slash drift. Two
 properties listing overlapping-but-different identifier sets is weaker evidence
 than either alone, because it reads as two similar people.
+
+Both now emit a byte-identical Person node — same `@id`, `jobTitle`, `worksFor`,
+`founderOf` and `sameAs` — verified by diffing the built output of each. On
+conyso.com the pairing is enforced in `build.py`: `ORG_LD` holds the canonical
+block and an `entity_ids()` pass stamps the canonical `@id` on any Person named
+"Krishna Chagti" or Organization named "Conyso" that a generator emitted without
+one. **The two lists are duplicated source, not shared code. Change one, change
+the other in the same commit.**
 
 ### 3. Get into a registry that is about founders
 

@@ -27,7 +27,11 @@
      off the page at 1.25:1, border reads at 1.40:1) and warmed toward the ink-on-
      paper character the light theme already has. */
   --bg:#000000; --surface:#292725; --surface-2:#383634;
-  --ink:#f0ece2; --muted:#a8a293; --faint:#97958c; --read:#d6d1c4;
+  /* --faint was #97958c, which clears AA on the page ground and on --surface
+     but lands at 4.01 on --surface-2, the raised panel the metadata cards and
+     the footer use. Lifted to the lowest value that clears 4.5 on all three:
+     8.02 on bg, 5.68 on surface, 4.59 on surface-2. */
+  --ink:#f0ece2; --muted:#a8a293; --faint:#a2a098; --read:#d6d1c4;
   --line:#403e3c; --line-strong:#63615f;
   --accent:#e0a43f; --accent-ink:#f3cb84; --accent-soft:#332811;
   --gold:#caa153; --gold-soft:#2b2413;
@@ -992,6 +996,22 @@ a.stat--link .s-k::after{content:" →";letter-spacing:0;opacity:.55}
 .src-trust{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-family:var(--sans);font-size:12.5px;line-height:1.55;color:var(--faint)}
 .src-trust a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
 .src-trust a:hover{color:var(--accent)}
+
+/* "What we checked" — the shared Conyso proof device, markup from src/proof.mjs
+   and identical to the one proof.py renders on the Labs dataset pages and the
+   founder site. Class names are shared; only the skin is local, so it is built
+   from this site's tokens (mono label, serif figure, amber accent) and follows
+   both themes without a single literal colour. It sits inside .lawmain but is
+   not a .block, so it carries its own bottom margin and gets no section number
+   from the counter — it describes the tome, not this entry. */
+.cy-proof{margin-bottom:60px}
+.cy-proof-h{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;display:flex;align-items:center;gap:12px}
+.cy-proof-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.cy-proof-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.cy-proof-list li{background:var(--surface);padding:17px 18px}
+.cy-proof-list b{display:block;font-family:var(--serif);font-weight:600;line-height:1;font-size:clamp(23px,2.4vw,29px);letter-spacing:-.02em;color:var(--accent)}
+.cy-proof-list span{display:block;margin-top:9px;font-size:13.5px;line-height:1.4;color:var(--ink)}
+.cy-proof-list em{display:block;margin-top:8px;font-style:normal;font-size:12px;line-height:1.5;color:var(--faint)}
 /* related laws as cards (replaces the row list) */
 .rel-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 @media(max-width:640px){.rel-cards{grid-template-columns:1fr}}
@@ -1015,7 +1035,11 @@ a.stat--link .s-k::after{content:" →";letter-spacing:0;opacity:.55}
 .block-h:last-child{margin-bottom:0}
 .lbl::after{content:"";flex:1;height:1px;background:var(--line)}
 /* numbered section labels give the long article visible structure */
-.entry-layout .lawmain{counter-reset:sec}
+/* A grid item defaults to min-width:auto, so it refuses to shrink below its
+   content's min-content width and pushes the whole page sideways instead of
+   letting a wide child scroll. Nothing here demanded that until the solver's
+   work-steps, which are deliberately unwrapped single lines. */
+.entry-layout .lawmain{counter-reset:sec;min-width:0}
 .entry-layout .lawmain .block>.lbl::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);font-size:10px;letter-spacing:.04em;color:var(--faint);border:1px solid var(--line-strong);border-radius:3px;padding:3px 7px}
 /* jumped-to sections must clear the sticky header (72px desktop / 62px mobile) */
 /* +--jump-h so a section landed from the rail clears the rail itself. It is 0
@@ -1620,6 +1644,192 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 /* ---- playable laws --------------------------------------------------------- */
 .widget{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 22px 16px}
 .wg-lede{margin:0 0 16px;font-size:14.5px;color:var(--read)}
+/* kind: probe. Steps are visible in the served HTML and hidden by the script,
+   so a reader without JavaScript sees the whole experiment described. */
+.ix-step-item{padding:0 0 14px}
+.ix-step-item[hidden]{display:none}
+.ix-probe .wg-in{display:grid;grid-template-columns:1fr 92px;grid-template-areas:"lab out" "rng rng";
+  gap:4px 12px;align-items:center;margin:0 0 12px;min-width:0}
+.ix-probe .wg-in input[type=range]{grid-area:rng;width:100%;accent-color:var(--accent);cursor:pointer}
+.ix-probe .wg-in input[type=range]:disabled{opacity:.5}
+.ix-probe .wg-in output{grid-area:out;justify-self:end;font-family:var(--mono);font-size:13px;color:var(--accent)}
+.ix-probe .wg-lab{grid-area:lab;font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--muted)}
+.ix-probe .ix-verdict p{font-family:var(--mono);font-size:15px;color:var(--ink)}
+/* kind: demo. The stimulus itself. Kept small: the phi dots are a few hundred
+   square pixels between them, far under the WCAG general flash threshold, and
+   nothing animates until the reader presses play. */
+.ix-stage{position:relative;height:150px;margin:0 0 8px;border:1px solid var(--line);
+  border-radius:3px;background:var(--bg);overflow:hidden;min-width:0}
+.ix-caption{margin:0 0 14px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.ix-play{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;padding:6px 18px;
+  margin:0 0 16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);
+  border-radius:3px;cursor:pointer}
+.ix-play:hover{border-color:var(--accent);color:var(--accent)}
+.ix-play[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
+
+/* Phi. Two dots, opposite phase, paused until asked. */
+.ix-stage[data-stage=phi] .phi-dot{position:absolute;top:50%;width:26px;height:26px;
+  margin:-13px 0 0 -13px;border-radius:50%;background:var(--accent);opacity:0}
+.ix-stage[data-stage=phi] .phi-dot[data-dot="0"]{left:calc(50% - var(--phi-sep,60%) / 2)}
+.ix-stage[data-stage=phi] .phi-dot[data-dot="1"]{left:calc(50% + var(--phi-sep,60%) / 2)}
+.ix-stage[data-stage=phi][data-playing] .phi-dot{animation:phiA var(--phi-t,120ms) steps(1,end) infinite}
+.ix-stage[data-stage=phi][data-playing] .phi-dot[data-dot="1"]{animation-name:phiB}
+.ix-stage[data-stage=phi]:not([data-playing]) .phi-dot{opacity:.85}
+@keyframes phiA{0%,49.999%{opacity:.95}50%,100%{opacity:0}}
+@keyframes phiB{0%,49.999%{opacity:0}50%,100%{opacity:.95}}
+
+/* Purkinje. Two patches whose rendered brightness is set from the luminous
+   efficiency curves; the hue never changes. */
+.ix-stage[data-stage=purkinje]{display:flex;background:#000}
+.ix-stage[data-stage=purkinje] .pk-patch{flex:1}
+.ix-stage[data-stage=purkinje] .pk-patch[data-patch=red]{
+  background:rgb(calc(255 * var(--pk-red,1)) 0 0)}
+.ix-stage[data-stage=purkinje] .pk-patch[data-patch=blue]{
+  background:rgb(0 0 calc(255 * var(--pk-blue,1)))}
+
+/* Simultaneous contrast. Two identical chips, two different grounds. */
+.ix-stage[data-stage=contrast]{display:flex}
+.ix-stage[data-stage=contrast] .sc-field{flex:1;display:flex;align-items:center;justify-content:center}
+.ix-stage[data-stage=contrast] .sc-field[data-field=lo]{background:var(--sc-lo,#222)}
+.ix-stage[data-stage=contrast] .sc-field[data-field=hi]{background:var(--sc-hi,#ddd)}
+.ix-stage[data-stage=contrast] .sc-chip{width:64px;height:64px;background:var(--sc-mid,#808080)}
+
+@media (prefers-reduced-motion: reduce){
+  .ix-stage[data-stage=phi][data-playing] .phi-dot{animation:none;opacity:.85}
+}
+/* kind: sim. Reuses the widget slider styling so the two read as one family. */
+.ix-sim .wg-in{display:grid;grid-template-columns:1fr 84px;grid-template-areas:"lab out" "rng rng";
+  gap:4px 12px;align-items:center;margin-bottom:14px;min-width:0}
+.ix-sim .wg-in input[type=range]{grid-area:rng;width:100%;accent-color:var(--accent);cursor:pointer}
+.ix-sim .wg-in output{grid-area:out;justify-self:end;font-family:var(--mono);font-size:13px;color:var(--accent)}
+.ix-legend{display:flex;flex-wrap:wrap;gap:16px;margin:4px 0 8px}
+.ix-key{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--muted);
+  display:inline-flex;align-items:center;gap:7px}
+.ix-key::before{content:"";width:16px;height:2px;background:var(--accent)}
+.ix-key[data-series="1"]::before{background:var(--muted);height:0;border-top:2px dashed var(--muted)}
+.ix-chart{margin:0 0 14px;background:var(--bg);border:1px solid var(--line);border-radius:3px;
+  padding:8px;min-width:0}
+.ix-chart:empty{display:none}
+.ix-svg{display:block;width:100%;height:150px}
+.ix-base{stroke:var(--line);stroke-width:1;stroke-dasharray:2 4}
+.ix-line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;
+  vector-effect:non-scaling-stroke}
+.ix-line[data-series="1"]{stroke:var(--muted);stroke-dasharray:5 4}
+/* /calculators/ — the entries that do something. Grouped by what they do,
+   because "a calculator" and "a demonstration you look at" are different
+   promises and a reader arriving from search wants to know which. */
+.cx-sec{margin:0 0 40px}
+.cx-h2{font-family:var(--serif);font-size:22px;color:var(--ink);margin:0 0 5px;display:flex;
+  align-items:baseline;gap:10px}
+.cx-n{font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:400}
+.cx-gloss{margin:0 0 16px;font-size:14px;line-height:1.55;color:var(--muted);max-width:62ch}
+.cx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.cx-i{display:flex;flex-direction:column;gap:3px;padding:12px 14px;background:var(--surface);
+  border:1px solid var(--line);border-radius:3px;text-decoration:none;min-width:0}
+.cx-i:hover{border-color:var(--accent)}
+.cx-nm{font-size:14.5px;line-height:1.35;color:var(--ink)}
+.cx-fd{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--muted)}
+.cx-eq{font-family:var(--mono);font-size:11px;line-height:1.45;color:var(--accent);margin-top:4px;
+  overflow-x:auto;white-space:nowrap;max-width:100%;min-width:0}
+/* The quiz's server-rendered round. Not a fallback that disappears when the
+   script loads: it stays, because it is readable content in its own right and
+   because a practice-problem result has to point at a question the reader will
+   actually find when they arrive. Answers sit behind a disclosure so it does
+   not spoil the live round above it. */
+.quiz-static{margin:34px 0 0;padding-top:26px;border-top:1px solid var(--line)}
+.qs-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:20px}
+.qs-q{padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:3px}
+.qs-kind{margin:0 0 7px;font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted)}
+.qs-ask{margin:0 0 9px;font-size:15.5px;line-height:1.5;color:var(--ink)}
+.qs-quote{margin:0 0 11px;padding-left:12px;border-left:2px solid var(--accent);
+  font-size:14.5px;line-height:1.55;color:var(--read)}
+.qs-opts{list-style:none;margin:0 0 11px;padding:0;display:grid;gap:6px}
+.qs-opts li{padding:7px 11px;background:var(--bg);border:1px solid var(--line);
+  border-radius:3px;font-size:13.5px;line-height:1.45;color:var(--read)}
+.qs-ans summary{cursor:pointer;font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;
+  color:var(--accent)}
+.qs-ans p{margin:9px 0 0;font-size:14px;color:var(--ink)}
+/* The authored difference on a comparison page, and its matcher. */
+.cmp-difference{margin:0 0 20px;padding:14px 16px;border-left:3px solid var(--accent);background:var(--surface)}
+.cmp-diff-h{margin:0 0 8px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--muted);font-weight:400}
+.cmp-difference p{margin:0;font-size:15px;line-height:1.6;color:var(--ink)}
+.ix-match{margin:0 0 24px}
+/* kind: spot. Rendered as a plain numbered list of cases with their
+   explanations; the script hides the explanations and adds the buttons. With
+   no JavaScript this stays a readable argument rather than an empty box. */
+.ix-scene{margin:0 0 16px;padding:12px 14px;background:var(--bg);border:1px solid var(--line);border-radius:3px}
+.ix-scene-p{margin:0 0 9px;font-size:14px;line-height:1.6;color:var(--read)}
+.ix-scene-p:last-child{margin-bottom:0}
+.ix-verdict{margin:16px 0 0;padding:12px 14px;border-left:2px solid var(--accent);background:var(--bg)}
+.ix-verdict[hidden]{display:none}
+.ix-verdict p{margin:0;font-size:13.5px;line-height:1.6;color:var(--read)}
+.ix-case[data-ix-verdict=open] .ix-case-why{border-left-color:var(--accent)}
+.ix-prompt{margin:0 0 14px;font-family:var(--mono);font-size:11px;letter-spacing:.03em;
+  text-transform:uppercase;color:var(--muted)}
+.ix-cases{margin:0;padding:0 0 0 1.4em;display:grid;gap:16px}
+.ix-case{padding:0 0 14px;border-bottom:1px solid var(--line)}
+.ix-case:last-child{border-bottom:0;padding-bottom:0}
+.ix-case-text{margin:0 0 10px;font-size:14.5px;line-height:1.55;color:var(--ink)}
+.ix-choices{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.ix-choice{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;padding:6px 13px;
+  color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:3px;cursor:pointer}
+.ix-choice:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.ix-choice:disabled{cursor:default;opacity:.5}
+.ix-choice[data-ix-picked]{opacity:1;border-color:var(--accent);color:var(--accent)}
+.ix-case-why{font-size:13px;line-height:1.6;color:var(--read);padding-left:11px;
+  border-left:2px solid var(--line)}
+.ix-case-why[hidden]{display:none}
+.ix-case-why p{margin:0}
+.ix-case[data-ix-verdict=right] .ix-case-why{border-left-color:var(--accent)}
+.ix-case[data-ix-verdict=wrong] .ix-case-why{border-left-color:var(--ink)}
+.ix-score{margin:16px 0 0;font-family:var(--mono);font-size:12px;color:var(--accent)}
+.ix-score[hidden]{display:none}
+/* Interactions that are not calculators: typed input, validated, with the
+   construction shown. Shares the widget's surface and type so the two read as
+   one family rather than two features. */
+.interactive{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px 22px 16px;min-width:0}
+/* min() lets the track collapse to one column on a narrow screen. A bare
+   minmax(190px,1fr) keeps two columns and pushes the whole page sideways,
+   which is what it did at 375px. */
+.ix-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:10px 16px;margin:0 0 14px;min-width:0}
+.ix-f{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:10px;align-items:center;min-width:0}
+.ix-lab{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--muted);min-width:0;overflow-wrap:anywhere}
+.ix-f-wide{grid-template-columns:1fr;gap:6px}
+/* cols defaults to 20 characters, which sets an intrinsic min-width and
+   pushes the page sideways below about 300px. */
+.ix-f textarea{width:100%;min-width:0;padding:8px 9px;font-family:var(--mono);font-size:12.5px;line-height:1.6;
+  color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:3px;resize:vertical}
+.ix-f textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.ix-f input{width:100%;padding:6px 8px;font-family:var(--mono);font-size:14px;color:var(--ink);
+  background:var(--bg);border:1px solid var(--line);border-radius:3px}
+.ix-f input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.ix-msg{margin:0 0 12px;padding:9px 11px;border-left:2px solid var(--accent);background:var(--bg);
+  font-size:12.5px;line-height:1.5;color:var(--read)}
+.ix-msg[hidden]{display:none}
+.ix-result{font-family:var(--mono);font-size:19px;color:var(--ink);padding:9px 0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  max-width:100%;overflow-x:auto;overflow-wrap:anywhere}
+.ix-result:empty{display:none}
+.ix-work{margin:12px 0 0;min-width:0}
+/* The steps are long single lines and must scroll inside their own box.
+   Without max-width they set a min-content width on every ancestor instead. */
+.ix-step{margin:0 0 5px;font-family:var(--mono);font-size:11.5px;line-height:1.55;color:var(--muted);
+  overflow-x:auto;white-space:nowrap;max-width:100%;min-width:0}
+/* The formula key. Added with the symbols renderer but never styled, so on
+   every widget page the identity and its symbols rendered as a bare stacked
+   dt/dd list in body serif. The dl is a two-column grid and .wg-sym is
+   display:contents so each dt/dd pair lands in one row. */
+.wg-formula{margin:0 0 18px;padding:12px 14px;border:1px solid var(--line);border-radius:3px;background:var(--bg)}
+.wg-eq{margin:0 0 11px}
+.wg-eq code{font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--accent);word-break:break-word}
+.wg-syms{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0}
+.wg-sym{display:contents}
+.wg-syms dt{font-family:var(--mono);font-size:12px;color:var(--ink);white-space:nowrap}
+.wg-syms dd{margin:0;font-size:12.5px;line-height:1.45;color:var(--muted)}
+.wg-unit{font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap}
 .wg-in{display:grid;grid-template-columns:1fr 84px;grid-template-areas:"lab out" "rng rng";gap:4px 12px;align-items:center;margin-bottom:14px}
 .wg-lab{grid-area:lab;font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--muted)}
 .wg-in output{grid-area:out;justify-self:end;font-family:var(--mono);font-size:13px;color:var(--accent)}
@@ -2129,6 +2339,10 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .verdict-basis{font-size:13px;color:var(--muted);margin:0}
 .opp-list{margin:12px 0;padding-left:18px;display:flex;flex-direction:column;gap:7px;font-size:15px}
 .opp-list li{list-style:disc}
+/* These are standalone links in a list, not links inside a sentence, so the
+   24px target minimum applies and they measured 15px. The negative margin
+   keeps the 7px gap the list was set with. */
+.opp-list a{display:inline-block;padding:5px 0;margin:-5px 0;min-height:24px}
 .vr-group{margin-top:34px}
 .vr-group-h{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .vr-group-n{font-family:var(--mono);font-size:11px;color:var(--faint)}

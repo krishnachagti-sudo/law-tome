@@ -5,11 +5,23 @@
 //
 // ANTI-FABRICATION: a compare page invents nothing. It recombines each law's
 // own verified fields (statement, meaning, reliability, coined year, eponym)
-// and lets the two sit side by side. We deliberately do NOT author a "here's
-// the difference" sentence — that would be fabrication. The honest presentation
-// is both claims, laid out, for the reader to weigh.
+// and lets the two sit side by side.
+//
+// This file used to refuse to author a "here's the difference" sentence at all,
+// on the grounds that it would be fabrication. That conflated two things. The
+// VERDICT — which of the two your case needs — genuinely cannot be written
+// here, because it depends on facts about the reader this page does not have,
+// and it is still refused everywhere. The DIFFERENCE — what the two disagree
+// ABOUT — is a fact about the entries, derivable from claims both already make,
+// and of the same kind as "the corpus records them as opposed", which these
+// pages have always asserted.
+//
+// So a pair may carry an authored difference and a condition-matcher, both in
+// comparisons.mjs, and both are hand-written per pair rather than generated.
+// A pair with no entry there renders exactly as before.
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, personSlug, listFilter, fitTitle } from './partials.mjs';
+import { head, asset, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, personSlug, listFilter, fitTitle } from './partials.mjs';
+import { comparisonFor } from './comparisons.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId, monogram } from './eponyms.mjs';
 import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
@@ -17,11 +29,11 @@ import { hubHead, hubNav, hubFaq, hubJsonLd } from './hub.mjs';
 const FRAMING = {
   'near-twin': {
     eyebrow: 'Often confused',
-    lede: 'These two are easy to mix up. Here is what each one actually claims, side by side, so you can tell them apart.',
+    lede: 'These two are routinely mistaken for each other. Here is what separates them, and what each actually claims, field by field.',
   },
   tension: {
     eyebrow: 'In tension',
-    lede: 'These two pull in opposite directions: one law’s advice is the other’s warning. Both claims are laid out side by side, so which one your situation calls for is yours to judge.',
+    lede: 'These two pull in opposite directions: what one recommends, the other warns against. Here is what each actually claims, field by field.',
   },
 };
 
@@ -39,6 +51,35 @@ function provenanceLabel(p) {
  * @param {object} [o.categories] category key -> label map.
  * @param {number|string} [o.count] published-law count for the masthead.
  */
+
+/* The pair's own difference and its condition-matcher, where one is written.
+ * Every question and every reading is served in the HTML: with no JavaScript
+ * this reads as a set of considerations with both answers explained, which is
+ * a worse experience than the quiz and a better one than a blank box. */
+function renderDifference(slug, a, b) {
+  const cmp = comparisonFor(slug);
+  if (!cmp) return '';
+  const qs = cmp.questions.map((q, i) => `            <li class="ix-case" data-ix-case="${i}">
+              <p class="ix-case-text">${escapeHtml(q.text)}</p>
+${q.options.map((o) => `              <div class="ix-case-why" data-ix-why data-ix-opt="${escapeHtml(o.label)}" data-matches="${escapeHtml(o.matches)}">
+                <p>${escapeHtml(o.why)}</p>
+              </div>`).join('\n')}
+            </li>`).join('\n');
+  return `<div class="cmp-difference">
+        <h2 class="cmp-diff-h">What they disagree about</h2>
+        <p>${escapeHtml(cmp.difference)}</p>
+      </div>
+      <div class="interactive ix-match" data-interactive="${escapeHtml(slug)}"
+           data-a="${escapeHtml(a.name)}" data-b="${escapeHtml(b.name)}">
+        <p class="ix-prompt">${escapeHtml(cmp.prompt)}</p>
+        <ol class="ix-cases">
+${qs}
+        </ol>
+        <div class="ix-verdict" data-ix-tally hidden></div>
+        <p class="wg-note">This reports which entry's stated conditions your answers match. Which one your case actually needs is still yours to decide.</p>
+      </div>`;
+}
+
 export function comparePage(pair, { base = '/', origin = '', categories = {}, count, images, byslug = {}, allPairs = [] } = {}) {
   const { a, b, relation, slug } = pair;
   const people = (images && images.people) || {};
@@ -230,6 +271,7 @@ ${row('Type', typeCell(a), typeCell(b))}
       <span class="cmp-eyebrow">${frame.eyebrow}</span>
       <h1>${escapeHtml(a.name)} <span class="cmp-vs">vs</span> ${escapeHtml(b.name)}</h1>
       <p class="cmp-lede">${frame.lede}</p>
+      ${renderDifference(slug, a, b)}
     </div>
     <div class="cmp-cols">
 ${panel(a)}
@@ -245,8 +287,14 @@ ${substance}    <div class="cmp-foot">
 </section>
 `;
 
-  const description =
-    `${a.name} vs ${b.name}: how the two compare — what each one claims, who coined it, and how reliable it is, side by side. From The Law Tome.`;
+  // Where a difference is written, it IS the description. A searcher typing
+  // "X vs Y" asked one question, and a snippet promising a side-by-side table
+  // answers a different one. There is nothing to protect here: these pages take
+  // nine clicks from 3,179 impressions at a median position of 8.8.
+  const authored = comparisonFor(slug);
+  const description = authored
+    ? `${a.name} vs ${b.name}: ${authored.difference}`
+    : `${a.name} vs ${b.name}: how the two compare — what each one claims, who coined it, and how reliable it is, side by side. From The Law Tome.`;
   const abs = (s) => `${origin}${base}laws/${s}/`;
 
   const jsonld = [
@@ -293,7 +341,10 @@ ${substance}    <div class="cmp-foot">
     sprite() +
     header({ base, active: 'browse', count }) +
     section +
-    footer({ base })
+    // interactive.js only where this pair actually has a matcher: 224 of the
+    // 234 comparison pages should not pay for a script they never use.
+    footer({ base, scripts: comparisonFor(slug)
+      ? `<script defer src="${asset(base, 'assets/interactive.js')}"></script>` : '' })
   );
 }
 

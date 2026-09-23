@@ -1,79 +1,83 @@
 {
-  "no": "148",
-  "slug": "archimedes-principle",
-  "name": "Archimedes' Principle",
-  "statement": "A body in a fluid is buoyed up by the weight of the fluid it displaces.",
-  "statementAccent": "buoyed up by the weight of the fluid it displaces",
-  "meaning": "Put something in a fluid and it feels an upward push equal to the weight of the fluid it shoves out of the way. If that push matches the object's own weight, it floats; a floating body settles until it displaces exactly its own weight of fluid.",
-  "mechanism": "Fluid pressure increases with depth, so the upward pressure on the bottom of a submerged body exceeds the downward pressure on its top. Integrating that pressure difference over the whole surface gives a net upward force, and that force equals the weight of the displaced fluid: the buoyant force.",
-  "examples": [
-    {
-      "tag": "Ships",
-      "text": "A steel hull floats because it sinks only until the water it displaces weighs as much as the whole ship: the enclosed volume displaces enough water to balance the weight."
-    },
-    {
-      "tag": "Feeling light in water",
-      "text": "In a pool the buoyant force offsets most of your weight, because your body's density is close to water's, so you feel far lighter than on land."
-    },
-    {
-      "tag": "Balloons",
-      "text": "Buoyancy acts in gases too: a helium or hot-air balloon rises when it displaces a weight of air greater than the balloon and its contents."
-    }
-  ],
-  "variants": [
-    {
-      "name": "The law of flotation",
-      "text": "The corollary for floating bodies: a floating object displaces exactly its own weight of fluid, settling at the depth where buoyancy equals weight."
-    },
-    {
-      "name": "Density and specific gravity",
-      "text": "The deciding factor: whether an object floats or sinks depends on its density relative to the fluid's, which hydrometers exploit to read a liquid's density directly."
-    }
-  ],
-  "whyItMatters": "It is the founding law of buoyancy, explaining flotation, ship design, submarines, balloons, and density measurement: one of the oldest quantitative results in physics and still exact within its assumptions. Its dramatic origin story, by contrast, is a good lesson in separating a sound principle from an embellished anecdote.",
-  "working": [
-    {
-      "lead": "Compare buoyant force to weight",
-      "text": "an object floats when the weight of fluid it can displace equals or exceeds its own weight, and sinks otherwise."
-    },
-    {
-      "lead": "Think in densities",
-      "text": "predict flotation from density relative to the fluid; less dense floats, denser sinks, matched hovers."
-    },
-    {
-      "lead": "Watch the no-fluid-underneath case",
-      "text": "a body sealed flat against the bottom with no fluid beneath it loses the upward pressure and may feel no buoyancy at all."
-    }
-  ],
-  "limits": "The principle assumes a fluid in static equilibrium in a uniform gravitational field; accelerating fluids or bodies change the effective buoyancy. A notable edge case: if a body rests flat against the container's bottom with no fluid seeping underneath, the upward pressure on its base is removed, the pressure symmetry is broken, and it can experience no buoyant force, and may even be held down. Within its assumptions it is exact and derivable from hydrostatics.",
-  "misreadings": "The famous 'Eureka!' bath-and-crown story is almost certainly embellished: it comes from Vitruvius, writing some two centuries later, and the crude water-displacement method he describes is too imprecise to have worked (Archimedes more likely used hydrostatic weighing). The physical principle is solid; the anecdote is not evidence for it.",
-  "origin": "Stated by Archimedes of Syracuse around 250 BC in his treatise On Floating Bodies, whose Proposition 5 gives the flotation corollary. The 'Eureka' crown story is a later, apocryphal embellishment first told by Vitruvius.",
-  "category": "physics",
-  "reliability": "Empirical",
-  "provenance": "canon",
-  "namedAfter": "Archimedes of Syracuse",
-  "namesakeKind": "person",
-  "sources": [
-    {
-      "text": "Archimedes' principle, Wikipedia. — the statement, the pressure-with-depth mechanism, and the no-fluid-underneath edge case.",
-      "url": "https://en.wikipedia.org/wiki/Archimedes'_principle",
-      "type": "secondary"
-    },
-    {
-      "text": "\"Fact or Fiction?: Archimedes Coined the Term 'Eureka!' in the Bath,\" Scientific American. — the apocryphal origin story and Vitruvius as its source.",
-      "url": "https://www.scientificamerican.com/article/fact-or-fiction-archimede/",
-      "type": "secondary"
-    }
-  ],
-  "sameAs": "https://en.wikipedia.org/wiki/Archimedes'_principle",
-  "related": [
-    {
-      "slug": "pascals-law",
-      "kind": "kindred"
-    },
-    {
-      "slug": "bernoullis-principle",
-      "kind": "kindred"
-    }
-  ]
+ "no": "148",
+ "slug": "archimedes-principle",
+ "name": "Archimedes' Principle",
+ "statement": "A body in a fluid is buoyed up by the weight of the fluid it displaces.",
+ "statementAccent": "buoyed up by the weight of the fluid it displaces",
+ "meaning": "Put something in a fluid and it feels an upward push equal to the weight of the fluid it shoves out of the way. If that push matches the object's own weight, it floats; a floating body settles until it displaces exactly its own weight of fluid.",
+ "mechanism": "Fluid pressure increases with depth, so the upward pressure on the bottom of a submerged body exceeds the downward pressure on its top. Integrating that pressure difference over the whole surface gives a net upward force, and that force equals the weight of the displaced fluid: the buoyant force.",
+ "examples": [
+  {
+   "tag": "Ships",
+   "text": "A steel hull floats because it sinks only until the water it displaces weighs as much as the whole ship: the enclosed volume displaces enough water to balance the weight."
+  },
+  {
+   "tag": "Feeling light in water",
+   "text": "In a pool the buoyant force offsets most of your weight, because your body's density is close to water's, so you feel far lighter than on land."
+  },
+  {
+   "tag": "Balloons",
+   "text": "Buoyancy acts in gases too: a helium or hot-air balloon rises when it displaces a weight of air greater than the balloon and its contents."
+  }
+ ],
+ "variants": [
+  {
+   "name": "The law of flotation",
+   "text": "The corollary for floating bodies: a floating object displaces exactly its own weight of fluid, settling at the depth where buoyancy equals weight."
+  },
+  {
+   "name": "Density and specific gravity",
+   "text": "The deciding factor: whether an object floats or sinks depends on its density relative to the fluid's, which hydrometers exploit to read a liquid's density directly."
+  }
+ ],
+ "whyItMatters": "It is the founding law of buoyancy, explaining flotation, ship design, submarines, balloons, and density measurement: one of the oldest quantitative results in physics and still exact within its assumptions. Its dramatic origin story, by contrast, is a good lesson in separating a sound principle from an embellished anecdote.",
+ "working": [
+  {
+   "lead": "Compare buoyant force to weight",
+   "text": "an object floats when the weight of fluid it can displace equals or exceeds its own weight, and sinks otherwise."
+  },
+  {
+   "lead": "Think in densities",
+   "text": "predict flotation from density relative to the fluid; less dense floats, denser sinks, matched hovers."
+  },
+  {
+   "lead": "Watch the no-fluid-underneath case",
+   "text": "a body sealed flat against the bottom with no fluid beneath it loses the upward pressure and may feel no buoyancy at all."
+  }
+ ],
+ "limits": "The principle assumes a fluid in static equilibrium in a uniform gravitational field; accelerating fluids or bodies change the effective buoyancy. A notable edge case: if a body rests flat against the container's bottom with no fluid seeping underneath, the upward pressure on its base is removed, the pressure symmetry is broken, and it can experience no buoyant force, and may even be held down. Within its assumptions it is exact and derivable from hydrostatics.",
+ "misreadings": "The famous 'Eureka!' bath-and-crown story is almost certainly embellished: it comes from Vitruvius, writing some two centuries later, and the crude water-displacement method he describes is too imprecise to have worked (Archimedes more likely used hydrostatic weighing). The physical principle is solid; the anecdote is not evidence for it.",
+ "origin": "Stated by Archimedes of Syracuse around 250 BC in his treatise On Floating Bodies, whose Proposition 5 gives the flotation corollary. The 'Eureka' crown story is a later, apocryphal embellishment first told by Vitruvius.",
+ "category": "physics",
+ "reliability": "Empirical",
+ "provenance": "canon",
+ "namedAfter": "Archimedes of Syracuse",
+ "namesakeKind": "person",
+ "sources": [
+  {
+   "text": "Archimedes' principle, Wikipedia. — the statement, the pressure-with-depth mechanism, and the no-fluid-underneath edge case.",
+   "url": "https://en.wikipedia.org/wiki/Archimedes'_principle",
+   "type": "secondary"
+  },
+  {
+   "text": "\"Fact or Fiction?: Archimedes Coined the Term 'Eureka!' in the Bath,\" Scientific American. — the apocryphal origin story and Vitruvius as its source.",
+   "url": "https://www.scientificamerican.com/article/fact-or-fiction-archimede/",
+   "type": "secondary"
+  }
+ ],
+ "sameAs": "https://en.wikipedia.org/wiki/Archimedes'_principle",
+ "related": [
+  {
+   "slug": "pascals-law",
+   "kind": "kindred"
+  },
+  {
+   "slug": "bernoullis-principle",
+   "kind": "kindred"
+  }
+ ],
+ "aliases": [
+  "Archimedes' law",
+  "The law of buoyancy"
+ ]
 }

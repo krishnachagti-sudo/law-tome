@@ -16,7 +16,7 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
-import { head, sprite, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE } from './partials.mjs';
+import { head, sprite, imageObject, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE, DESC_MAX } from './partials.mjs';
 import { hostOf } from '../../build/surfaces.mjs';
 import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
 import { LASTMOD_TOKEN } from '../../build/lastmod.mjs';
@@ -27,6 +27,52 @@ import { formulaBlock, diffusionBlock, pronunciation, otherNames, otherNamesText
 import { kindOf, KINDS, kindPath } from '../../build/kinds.mjs';
 import { widgetBlock, widgetFor } from './widgets.mjs';
 import { ATLAS_BASE } from '../../build/atlas.mjs';
+import { interactiveBlock, interactiveFor } from './interactives.mjs';
+import { render as proofRender, assertRendered as proofAssert } from '../proof.mjs';
+import { readdirSync, readFileSync } from 'node:fs';
+
+/**
+ * The "What we checked" figures for the tome, counted from src/data/laws.
+ *
+ * A callable, not a table of numbers, because proof.mjs refuses a literal: a
+ * proof device whose figures are typed is the exact failure it exists to stop
+ * (the founder site shipped a hand-typed strip with a wrong figure in it). The
+ * count is memoised because it is the same for all 1,116 pages and reading the
+ * corpus once per page would read it 1.2 million times.
+ *
+ * Counted off the JSON files rather than the loaded corpus so the figures
+ * describe what is in the repository, reproducible by anyone with a checkout,
+ * and independent of any filtering the build does downstream.
+ *
+ * The second row is a separate count on purpose. Today every entry carries a
+ * source and the two numbers are equal; if that ever stops being true the device
+ * says so, instead of the first row quietly implying it.
+ */
+let PROOF_ROWS = null;
+function tomeProof() {
+  if (PROOF_ROWS) return PROOF_ROWS;
+  const dir = new URL('../data/laws/', import.meta.url);
+  let entries = 0;
+  let sourced = 0;
+  let refs = 0;
+  for (const f of readdirSync(dir).filter((name) => name.endsWith('.json'))) {
+    const raw = JSON.parse(readFileSync(new URL(f, dir), 'utf8'));
+    for (const it of (Array.isArray(raw) ? raw : [raw])) {
+      entries += 1;
+      const s = it.sources || it.source || it.citations;
+      if (s && (!Array.isArray(s) || s.length)) {
+        sourced += 1;
+        refs += Array.isArray(s) ? s.length : 1;
+      }
+    }
+  }
+  PROOF_ROWS = [
+    [entries, 'entries in the tome', 'Listed one by one on the browse page.'],
+    [sourced, 'of them citing a source', 'Open any entry: its sources sit at the foot of the page.'],
+    [refs, 'source references in all', 'Each is named, and linked wherever the source is online.'],
+  ];
+  return PROOF_ROWS;
+}
 
 /**
  * Trim to at most `max` characters, ending on a sentence boundary where one is
@@ -175,7 +221,23 @@ export function lawPage(law, ctx = {}) {
   // Ranking pages for named laws title as "<Law>: Definition, Examples & Facts".
   // Mirror that: front-load the law name (the primary keyword), then only the
   // content facets this entry actually has — never claim examples/origin we lack.
-  const facets = ['Meaning'];
+  // A page carrying a calculator or a solver says so where the searcher reads.
+  // Two reasons from Search Console: pages titled as definitions convert at
+  // 0.19% against 0.98% for tool pages on the same property, and at positions
+  // four to ten the snippet is the whole decision (top three converts at 3.85%,
+  // four to ten at 0.48%). "<Law> Calculator" is also the exact phrase behind
+  // the "<law> calculator" queries the site ranks for and never targeted.
+  //
+  // Where no such noun query exists, the invitation leads the facet list
+  // instead. Everything here is gated on the page ACTUALLY having the thing.
+  const ixSpec = interactiveFor(law.slug);
+  const toolNoun = widgetFor(law.slug) ? 'Calculator'
+    : (ixSpec && ixSpec.kind === 'solver' ? 'Solver' : '');
+  const INVITE = { spot: 'Test Yourself', sim: 'Run the Model', demo: 'See It', probe: 'Try It' };
+  const invite = (!toolNoun && ixSpec) ? (INVITE[ixSpec.kind] || '') : '';
+  const facets = [];
+  if (invite) facets.push(invite);
+  facets.push('Meaning');
   if (firstExample) facets.push('Examples');
   if (law.origin) facets.push('Origin');
   const facetList = facets.length > 1
@@ -184,18 +246,73 @@ export function lawPage(law, ctx = {}) {
   // Longest facet list that still fits the result slot. A long entry name spends
   // the budget the facets would have used, and losing "& Origin" is far cheaper
   // than having the name itself cut — the name is what the searcher typed.
-  const pageTitle = fitTitle(law.name, [
+  // The tool noun joins the protected core, because "Amdahl's Law Calculator"
+  // is the phrase being searched for and must not be the part that gets cut.
+  const titleCore = toolNoun ? `${law.name} ${toolNoun}` : law.name;
+  const pageTitle = fitTitle(titleCore, [
     `: ${facetList} | The Law Tome`,
     `: ${facetList}`,
     ...(facets.length > 2 ? [`: ${facets.slice(0, 2).join(' & ')}`] : []),
+    ...(invite ? [`: ${invite}`] : []),
     ': Meaning',
     ' | The Law Tome',
     '',
   ]);
   // Meta description leads with the one-line statement (the featured-snippet
   // payload), then the facets and a trust signal. Falls back to the answer.
+  // The description closes on what the page LETS YOU DO, when it lets you do
+  // anything. One sentence per kind, and each is literally true of the page.
+  // clampDescription cuts at 158 characters, so a tail appended after the
+  // facet list never survives to the SERP. On a page that has a tool, the tool
+  // REPLACES the facet tail rather than following it, which keeps the one
+  // differentiating clause inside the window a searcher actually sees.
+  const TOOL_TAIL = {
+    calculator: 'with a live calculator for the formula.',
+    solver: 'with a solver that checks its own working.',
+    spot: 'with worked cases to test yourself against.',
+    sim: 'with a model of the mechanism you can run.',
+    demo: 'and the effect shown rather than described.',
+    probe: 'with a short exercise using your own answers.',
+  };
+  const toolTail = widgetFor(law.slug) ? TOOL_TAIL.calculator
+    : (ixSpec ? TOOL_TAIL[ixSpec.kind] : '');
+  // A long statement can still eat the whole 158, taking the tool clause with
+  // it. Where there is a tool, the QUOTE gives way rather than the clause: the
+  // quote is available in full on the page, and the clause is the only part of
+  // the snippet that says this page differs from a dictionary entry.
+  // Order matters more than content here. The quote used to lead, which put the
+  // one clause that says this page is not a dictionary entry at characters 118
+  // to 155 — inside the desktop window, past the ~120 Google shows on mobile.
+  // Mobile is where this property converts at 0.62% against desktop's 0.21%,
+  // so the differentiator now comes first and the statement follows it.
+  // GSC, 28 days to 2026-09-06: 139 law pages at positions 4 to 10 converting
+  // at 0.32%, and 47 pages with 150+ impressions and no clicks at all.
+  const toolDescription = () => {
+    const lead = `${law.name}: what it means, ${toolTail}`;
+    const open = ' “';
+    const room = DESC_MAX - lead.length - open.length - 1;
+    let st = law.statement;
+    if (room < 24) return lead;
+    if (st.length > room) st = st.slice(0, room - 1).replace(/\s+\S*$/, '') + '…';
+    return `${lead}${open}${st}”`;
+  };
+  const plainDescription = () => {
+    const facets = ['what it means'];
+    if (firstExample) facets.push('real examples');
+    if (law.origin) facets.push('where it came from');
+    const tail = facets.length > 1
+      ? facets.slice(0, -1).join(', ') + ', and ' + facets[facets.length - 1]
+      : facets[0];
+    const lead = `${law.name}: ${tail}.`;
+    const open = ' “';
+    const room = DESC_MAX - lead.length - open.length - 1;
+    let st = law.statement;
+    if (room < 24) return lead;
+    if (st.length > room) st = st.slice(0, room - 1).replace(/\s+\S*$/, '') + '…';
+    return `${lead}${open}${st}”`;
+  };
   const metaDescription = law.statement
-    ? `${law.name}: “${law.statement}” — what it means${firstExample ? ', real examples' : ''}${law.origin ? ', and where it came from' : ''}. Clearly explained, cross-linked, and sourced.`
+    ? (toolTail ? toolDescription() : plainDescription())
     : answer;
 
   // ---- entry section ----------------------------------------------------
@@ -341,6 +458,11 @@ ${h2}${inner}
     // identity and then move it.
     const wg = widgetBlock(law.slug);
     if (wg) blocks.push(block('Run the numbers', wg, true, `${L} calculator`));
+    // Laws with no closed form can still be DONE rather than read: a solver
+    // with validated input, a mechanism you run, a case you judge. Same slot,
+    // different engine.
+    const ix = interactiveBlock(law.slug);
+    if (ix) blocks.push(block(interactiveFor(law.slug).title, ix, true, `${L} solver`));
   }
 
   // ---- infographic card: reliability meter + lineage timeline. Both use only
@@ -620,20 +742,43 @@ ${items}
       : hosts.length === 1
         ? (n === 1 ? escapeHtml(hosts[0]) : `${numWord(n)} pages on ${escapeHtml(hosts[0])}`)
         : `${hosts.slice(0, -1).map((h) => escapeHtml(h)).join(', ')} and ${escapeHtml(hosts[hosts.length - 1])}`;
-    // The count is already in `where` when the sources share a host ("two pages
-    // on en.wikipedia.org"), so the second half must not repeat it.
-    const counted = hosts.length === 1 && n > 1;
+    // True whenever `where` has already said how many there are -- "two pages on
+    // en.wikipedia.org" and "the four sources listed" both do. This was only
+    // checking the shared-host case, so entries with more than three distinct
+    // hosts shipped "the four sources listed, four sources in all". Found by
+    // reading the deployed page rather than the template.
+    const counted = (hosts.length === 1 && n > 1) || hosts.length === 0 || hosts.length > 3;
     const provenance = nPrim === 0
       ? `Everything above traces to ${where}: ${n === 1 ? 'a secondary source, an account' : `${counted ? 'both' : numWord(n)} secondary${counted ? '' : ' sources'}, accounts`} of the original rather than the original itself, which has not been located for this entry.`
       : nPrim === n
         ? `Everything above traces to ${where}: the ${plural(n, 'publication')} ${n === 1 ? 'itself' : 'themselves'}, not ${n === 1 ? 'an account' : 'accounts'} of ${n === 1 ? 'it' : 'them'}.`
-        : `Everything above traces to ${where}${counted ? '' : `, ${numWord(n)} sources in all`}, ${numWord(nPrim)} of them the original ${plural(nPrim, 'publication')} rather than ${nPrim === 1 ? 'an account' : 'accounts'} of it.`;
+        // "the original publications rather than accounts of it" was a plural
+        // head with a singular tail. Both halves now agree with nPrim.
+        : `Everything above traces to ${where}${counted ? '' : `, ${numWord(n)} sources in all`}, ${numWord(nPrim)} of them the original ${plural(nPrim, 'publication')} rather than ${nPrim === 1 ? 'an account of it' : 'accounts of them'}.`;
     // The link to /about/ is not decoration. It is the target of this site's
     // publishingPrinciples and correctionsPolicy in JSON-LD, and dropping it
     // from this line took it from 1,116 contextual in-links to seven. The
     // anchor text says what the page is rather than gesturing at it.
     const srcTrust = `        <p class="src-trust">${provenance} Nothing is written from memory, and <a href="${base}about/">the method is written down</a>. Spot an error or a better source? <a href="${base}coin/">Suggest a fix.</a></p>`;
     blocks.push(block('Sources', `        <ol class="sources-list">\n${items}\n        </ol>\n${srcTrust}`, true, `Sources & further reading`));
+  }
+
+  // The shared Conyso "What we checked" device (src/proof.mjs; proof.py renders
+  // the same markup on the Labs dataset pages and the founder site). It follows
+  // the entry's own sources because that is where the reader is already asking
+  // what the page stands on: this entry's citations, then the figures for the
+  // corpus those citations are part of.
+  //
+  // On every entry, including the coined ones that have no Sources block of
+  // their own — the figures describe the tome, not the law, and a reader who
+  // landed on a coined entry is owed the same account of the whole.
+  //
+  // assertRendered recomputes the figures and checks each one actually reached
+  // the markup: verifying the input is not verifying the page.
+  {
+    const proofMarkup = proofRender(tomeProof);
+    proofAssert(proofMarkup, tomeProof, `laws/${law.slug}/`);
+    blocks.push(`      ${proofMarkup}`);
   }
 
   if (Array.isArray(law.confusedWith) && law.confusedWith.length) {
@@ -1189,6 +1334,135 @@ document.getElementById('copy').onclick=function(){
 })();
 </script>`;
 
+  // A page carrying a calculator or a solver IS a web application, and the 119
+  // tool pages on conyso.com already declare themselves as one and convert at
+  // 0.98% against 0.19% for definition pages. These declare nothing.
+  //
+  // Every field below is checkable against the page. It is free, it runs in the
+  // browser, and nothing is sent anywhere, which is true because the arithmetic
+  // is in assets/widget.js and assets/interactive.js and neither makes a
+  // request. Gated on the page actually having the thing, so the markup cannot
+  // outrun the page the way a title can.
+  const APP_CATEGORY = {
+    calculator: 'EducationalApplication',
+    solver: 'EducationalApplication',
+    spot: 'EducationalApplication',
+    sim: 'EducationalApplication',
+    demo: 'EducationalApplication',
+    probe: 'EducationalApplication',
+  };
+  // Practice problems (Google's Quiz rich result). A spot page is a set of
+  // questions each with one right answer and a written explanation, which is
+  // exactly what the type is for.
+  //
+  // Only SCORED cases go in. An open case has no accepted answer by design —
+  // it is where a thought experiment asks something with two defensible
+  // replies — and marking one as accepted would assert a right answer the page
+  // deliberately refuses to give. The compare matchers are excluded for the
+  // same reason: they report which conditions your case meets, not which
+  // answer is correct.
+  const quiz = (ixSpec && ixSpec.kind === 'spot' && ixSpec.cases.some((c) => !c.open)) ? {
+    '@context': 'https://schema.org',
+    '@type': 'Quiz',
+    name: `${law.name}: ${ixSpec.title}`,
+    url: canonical,
+    about: { '@type': 'Thing', name: law.name },
+    educationalLevel: 'beginner',
+    assesses: ixSpec.prompt,
+    isAccessibleForFree: true,
+    hasPart: ixSpec.cases.filter((c) => !c.open).map((c) => ({
+      '@type': 'Question',
+      eduQuestionType: 'Multiple choice',
+      learningResourceType: 'Practice problem',
+      name: c.text,
+      text: c.text,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `${c.yes ? ixSpec.yesLabel : ixSpec.noLabel}. ${c.why}`,
+      },
+      suggestedAnswer: [{
+        '@type': 'Answer',
+        text: c.yes ? ixSpec.noLabel : ixSpec.yesLabel,
+        position: 0,
+      }],
+    })),
+  } : null;
+
+  // The figure and the portrait, each with its own licence. These are the only
+  // images on the page somebody else owns, and until now the structured data
+  // said nothing about either.
+  const imageNodes = [
+    imageObject(figureImg, {
+      url: `${origin}${base}assets/img/figures/${law.slug}.webp`,
+      caption: `Figure illustrating ${law.name}`,
+    }),
+    imageObject(namesakeImg, {
+      url: namesakeImg ? `${origin}${base}assets/img/people/${namesakeImg.slug}.webp` : '',
+      caption: law.namedAfter ? `${law.namedAfter}, who ${law.name} is named after` : '',
+    }),
+  ].filter(Boolean).map((n) => ({ '@context': 'https://schema.org', ...n }));
+
+  // MathSolver, on the two pages where the input genuinely IS a mathematical
+  // expression and the page genuinely solves it.
+  //
+  // Google's spec describes a URL template that accepts the problem. That claim
+  // was false until this session, because the solvers read nothing from the
+  // query string; now they do, so a link carrying the problem really does open
+  // the page with it loaded and solved.
+  //
+  // Deliberately not on the 163 calculators: their inputs are numbers on
+  // sliders, not an expression, and math_expression_string would be a lie about
+  // the shape of the thing. Deliberately not on Lamport either — it solves a
+  // real mathematical relation, but its input is a description of processes and
+  // messages rather than an expression, and stretching the type to fit is how
+  // markup stops meaning anything.
+  //
+  // Not the Chinese Remainder Theorem either, though it is the most obviously
+  // mathematical solver here. Its input is six numeric fields, not one
+  // expression, so mathExpression-input has nothing to bind to: the template
+  // would advertise ?f= on a page that reads r0, m0, r1, m1, r2 and m2 and
+  // ignores f entirely. Those fields ARE addressable by URL, so the page is
+  // still linkable — it just is not what this type describes.
+  const MATH_SOLVERS = {
+    'the-cook-levin-theorem': {
+      method: 'https://schema.org/AlgebraicMethod',
+      asks: 'Boolean satisfiability',
+      field: 'f',
+    },
+  };
+  const solverSpec = MATH_SOLVERS[law.slug];
+  const mathSolver = (solverSpec && ixSpec && ixSpec.kind === 'solver') ? {
+    '@context': 'https://schema.org',
+    '@type': 'MathSolver',
+    name: `${law.name} solver`,
+    url: canonical,
+    description: ixSpec.lede,
+    usesMathSolvingMethod: solverSpec.method,
+    isAccessibleForFree: true,
+    potentialAction: {
+      '@type': 'SolveMathAction',
+      target: `${canonical}?${solverSpec.field}={math_expression_string}`,
+      'mathExpression-input': 'required name=math_expression_string',
+      eduQuestionType: solverSpec.asks,
+    },
+  } : null;
+
+  const appKind = widgetFor(law.slug) ? 'calculator' : (ixSpec ? ixSpec.kind : '');
+  const webApp = appKind ? {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: toolNoun ? `${law.name} ${toolNoun}` : `${law.name}: ${invite || 'interactive'}`,
+    url: canonical,
+    applicationCategory: APP_CATEGORY[appKind],
+    operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript',
+    description: metaDescription,
+    isAccessibleForFree: true,
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
+    publisher,
+  } : null;
+
   return (
     head({
       title: pageTitle,
@@ -1198,9 +1472,9 @@ document.getElementById('copy').onclick=function(){
       path: `laws/${law.slug}/`,
       canonical,
       modified: LASTMOD_TOKEN,
-      og: { title: `${law.name}: ${facetList}`, description: ogDescription, image: `${base}og/${law.slug}.png`, type: 'article' },
+      og: { title: `${titleCore}: ${facetList}`, description: ogDescription, image: `${base}og/${law.slug}.png`, type: 'article' },
       alternates: [{ type: 'text/markdown', title: `${law.name} (Markdown)`, href: `${canonical}index.md` }],
-      jsonld: [definedTerm, article, breadcrumb, ...(faqPage ? [faqPage] : [])],
+      jsonld: [definedTerm, article, breadcrumb, ...imageNodes, ...(webApp ? [webApp] : []), ...(mathSolver ? [mathSolver] : []), ...(quiz ? [quiz] : []), ...(faqPage ? [faqPage] : [])],
     }) +
     sprite() +
     '<div class="progress" id="progress" aria-hidden="true"></div>\n' +
@@ -1211,6 +1485,7 @@ document.getElementById('copy').onclick=function(){
     footer({ base, scripts: `${scripts}\n<script defer src="${asset(base, 'assets/saved.js')}"></script>`
       // widget.js only where there IS a widget: nine laws should not cost the
       // other 1,096 an extra request.
-      + (widgetFor(law.slug) ? `\n<script defer src="${asset(base, 'assets/widget.js')}"></script>` : '') })
+      + (widgetFor(law.slug) ? `\n<script defer src="${asset(base, 'assets/widget.js')}"></script>` : '')
+      + (interactiveFor(law.slug) ? `\n<script defer src="${asset(base, 'assets/interactive.js')}"></script>` : '') })
   );
 }

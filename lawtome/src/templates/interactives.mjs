@@ -1,0 +1,787 @@
+/* Interactions that are not calculators.
+ *
+ * widgets.mjs answers "what number does this law give for these inputs" with
+ * sliders. Most of the corpus cannot be asked that question: an impossibility
+ * proof has no closed form, a fallacy has no dial, a thought experiment is a
+ * choice rather than a quantity. Those laws still have something a reader can
+ * DO, and Search Console says doing beats reading by roughly five to one.
+ *
+ * Each spec names a `kind`, which selects an engine in assets/interactive.js.
+ * The arithmetic and the validation stay in the engine; this file is content.
+ */
+
+const INTERACTIVES = {
+  // ---- kind: solver. Typed inputs, validated, with the construction shown. ----
+  //
+  // This law was recorded for several weeks as permanently prose, on the
+  // grounds that its moduli must be pairwise coprime and a slider producing
+  // invalid input would teach the wrong thing. That objection was about
+  // SLIDERS. It is the highest-impression page on the site without an
+  // interaction: 914 impressions at position 8.1, and no clicks at all.
+  // A typed input that checks coprimality and refuses to pretend is exactly
+  // what the theorem's own precondition asks for.
+  'the-chinese-remainder-theorem': {
+    kind: 'solver',
+    title: 'Solve one',
+    lede: 'Give the remainders and the moduli. If the moduli are pairwise coprime there is exactly one answer below their product, and the construction finds it.',
+    identity: 'x = sum(ri Ni yi) mod N,  N = product of the mi',
+    symbols: [
+      { sym: 'ri', means: 'The remainder you want' },
+      { sym: 'mi', means: 'The modulus, pairwise coprime with the others' },
+      { sym: 'N', means: 'Product of all the moduli' },
+    ],
+    // The classical Sun Tzu problem, third century: things of unknown number,
+    // counted in threes, fives and sevens.
+    fields: [
+      { id: 'r0', label: 'x leaves remainder', value: 2, min: 0, max: 100000 },
+      { id: 'm0', label: 'on division by', value: 3, min: 2, max: 100000 },
+      { id: 'r1', label: 'and remainder', value: 3, min: 0, max: 100000 },
+      { id: 'm1', label: 'on division by', value: 5, min: 2, max: 100000 },
+      { id: 'r2', label: 'and remainder', value: 2, min: 0, max: 100000 },
+      { id: 'm2', label: 'on division by', value: 7, min: 2, max: 100000 },
+    ],
+    note: 'The moduli must be pairwise coprime. When they are not, the theorem does not apply and this says so rather than returning a number.',
+  },
+
+  // ---- kind: spot. The reader judges cases and finds out. ----
+  'rices-theorem': {
+    kind: 'spot',
+    title: 'Judge the cases',
+    lede: 'Rice’s theorem is about SEMANTIC properties, meaning what a program does rather than how it is written, and about NON-TRIVIAL ones, meaning true of some programs and false of others. Every property meeting both conditions is undecidable.',
+    prompt: 'For each question about an arbitrary program, decide whether a program could always answer it.',
+    yesLabel: 'Decidable',
+    noLabel: 'Undecidable',
+    cases: [
+      { text: 'Does the source code contain the word "goto"?', yes: true,
+        why: 'A property of the text, not of the behaviour. Rice’s theorem says nothing about syntax, and you can just read the file.' },
+      { text: 'Does this program ever print the number 7?', yes: false,
+        why: 'Semantic, and true of some programs and false of others. That is exactly the pair of conditions Rice rules out.' },
+      { text: 'Does this program halt on every input?', yes: false,
+        why: 'The halting problem in its general form. Semantic and non-trivial, so undecidable.' },
+      { text: 'Does this program stop within a thousand steps on input x?', yes: true,
+        why: 'Semantic, but bounded. Run it for a thousand steps and look. The theorem needs the property to be about behaviour on unbounded runs.' },
+      { text: 'Does this program compute the same function as some fixed program P?', yes: false,
+        why: 'Program equivalence. Semantic, non-trivial, and undecidable, which is why no compiler can verify that an optimisation preserved meaning in general.' },
+      { text: 'Is this a syntactically valid program at all?', yes: true,
+        why: 'A parser answers it. Syntax again, so outside the theorem entirely.' },
+      { text: 'Does this program compute SOME function?', yes: true,
+        why: 'Trivially true of every program, so trivial in Rice’s sense. A property true of all programs, or of none, is decidable by answering the same way every time.' },
+    ],
+    note: 'Both conditions have to hold. Drop "semantic" and you get syntax, which is easy. Drop "non-trivial" and the answer is constant.',
+  },
+  'the-intentional-fallacy': {
+    kind: 'spot',
+    title: 'Judge the readings',
+    lede: 'Wimsatt and Beardsley argued that what the author meant to do is neither available nor decisive. The evidence for a reading has to be in the work.',
+    prompt: 'For each claim about a work, decide whether it rests on the author’s intention or on the work itself.',
+    yesLabel: 'Appeals to intention',
+    noLabel: 'Argues from the work',
+    cases: [
+      { text: 'The poem must be about grief, because the poet’s brother died the year before he wrote it.', yes: true,
+        why: 'Biography standing in for evidence. The date of a death tells you what the writer may have felt, not what the poem says.' },
+      { text: 'The poem is about grief: it returns four times to burial, and every door in it closes.', yes: false,
+        why: 'The claim is checkable against the text by anyone, without knowing a thing about the poet.' },
+      { text: 'The author said in an interview that the ending is a dream, so the ending is a dream.', yes: true,
+        why: 'The strongest form of the fallacy, because the testimony feels authoritative. An author is a reader of their own work like anyone else, and can be wrong about it.' },
+      { text: 'The ending is ambiguous: the final shot withholds the reverse angle that every earlier scene supplies.', yes: false,
+        why: 'A structural fact about the film, and a reader who disagrees has to point at the film to do it.' },
+      { text: 'Tolkien denied that the Ring is the atomic bomb, so that reading is wrong.', yes: true,
+        why: 'A denial of intent settles what he meant, not what the work supports. Wimsatt and Beardsley would say the question is what is in the book.' },
+      { text: 'The narrator is unreliable: chapters 2 and 9 give incompatible accounts of the same afternoon.', yes: false,
+        why: 'Internal contradiction, cited precisely, and independent of anything the novelist intended.' },
+    ],
+    note: 'The fallacy is not "authors never say useful things". It is treating what they say as the evidence, when the work is what the claim is about.',
+  },
+  'the-no-true-scotsman': {
+    kind: 'spot',
+    title: 'Judge the moves',
+    lede: 'The fallacy is redefining a group AFTER a counterexample, purely to expel the counterexample. Tightening a definition is not automatically the fallacy: it depends on whether the criterion existed beforehand.',
+    prompt: 'For each exchange, decide whether the reply commits the fallacy.',
+    yesLabel: 'Commits the fallacy',
+    noLabel: 'Legitimate',
+    cases: [
+      { text: '"No Scotsman puts sugar on his porridge." "My uncle Angus does." "Well, no TRUE Scotsman does."', yes: true,
+        why: 'The original example. The criterion appears only once the counterexample does, and it exists solely to remove it.' },
+      { text: '"No licensed physician would prescribe that." "Dr Hale did." "Hale was struck off in 2019, so he was not licensed."', yes: false,
+        why: 'Licensure is a prior, public, checkable criterion. The reply is a fact about the case, not a redefinition invented to escape it.' },
+      { text: '"No real fan would boo the team." "Thousands booed on Saturday." "Then they were never real fans."', yes: true,
+        why: '"Real fan" is doing no work except excluding whoever disagrees, so the claim can never be wrong. That is the tell.' },
+      { text: '"No prime is even." "Two is." "Two is the exception; every OTHER prime is odd."', yes: false,
+        why: 'A correction of an overstated claim to the true one, and the amended claim is still falsifiable. Nothing has been defined out of existence.' },
+      { text: '"Our method never fails." "It failed at the Leeds site." "They did not apply it properly."', yes: true,
+        why: 'The fallacy in industrial dress. If any failure counts as misapplication, no evidence could ever count against the method.' },
+    ],
+    note: 'The test is not whether the definition narrowed. It is whether the new criterion was available before the counterexample, and whether the claim could still be shown false afterwards.',
+  },
+  'the-steel-man': {
+    kind: 'spot',
+    title: 'Judge the restatements',
+    lede: 'A steel man is the strongest version of the opposing case, stated so its holder would accept it. A straw man is a version chosen because it is easy to knock over.',
+    prompt: 'For each restatement of an opponent’s position, decide which it is.',
+    yesLabel: 'Steel man',
+    noLabel: 'Straw man',
+    cases: [
+      { text: 'They argue for a speed limit here because they think drivers cannot be trusted with any freedom at all.', yes: false,
+        why: 'A local claim about one road is inflated into a general contempt for drivers, which is easier to attack and is not what was said.' },
+      { text: 'They argue for a speed limit here because sightlines at the bend are short and the cost of being wrong is a death.', yes: true,
+        why: 'States the actual reasoning, including the strongest part of it, in terms the other side would sign.' },
+      { text: 'Opponents of the merger just want to protect their own jobs.', yes: false,
+        why: 'Replaces the argument with a motive. Even if the motive is real, it is not the case that was made, and answering it leaves the case standing.' },
+      { text: 'Opponents of the merger accept the savings are real, and argue the combined firm would face no competitor able to discipline its prices.', yes: true,
+        why: 'Concedes the strongest point on your own side and then states theirs precisely, which is what makes a rebuttal worth reading.' },
+      { text: 'They want open borders.', yes: false,
+        why: 'A position almost nobody holds, substituted for whatever was actually proposed. The give-away is that the restatement is shorter and more extreme than the original.' },
+    ],
+    note: 'The working test: would the person you are describing read your restatement and say yes, that is what I think, you have put it better than I did.',
+  },
+
+  // ---- kind: sim. Run the stated mechanism forward and watch it diverge. ----
+  //
+  // These two laws are usually quoted as aphorisms and left there. Both make a
+  // mechanical claim that can be run: effort moves to whichever route raises
+  // the measured number per unit of cost, and if gaming is cheaper than doing
+  // the work, the number keeps climbing while the thing it measured does not.
+  //
+  // This is a MODEL of the mechanism, not data. It is stated as such on the
+  // page, and every number in it comes from the reader's own sliders.
+  'goodharts-law': {
+    kind: 'sim',
+    title: 'Run it',
+    lede: 'A measure works while nobody is optimising it. Put a target on it and effort moves to whichever route raises the number more cheaply, which is usually not the work.',
+    identity: 'effort goes to min(cost of the work, cost of gaming / (1 - scrutiny))',
+    symbols: [
+      { sym: 'cq', means: 'Cost of one point of the real thing' },
+      { sym: 'cg', means: 'Cost of one point of gaming' },
+      { sym: 'd', means: 'Share of gaming that gets caught and reversed', unit: '%' },
+    ],
+    fields: [
+      { id: 'cq', label: 'Cost of doing the work', min: 1, max: 40, step: 1, value: 10 },
+      { id: 'cg', label: 'Cost of gaming the measure', min: 1, max: 40, step: 1, value: 3 },
+      { id: 'd', label: 'Gaming caught and reversed', min: 0, max: 95, step: 1, value: 20, unit: '%' },
+      { id: 'n', label: 'Rounds under the target', min: 2, max: 40, step: 1, value: 20 },
+    ],
+    series: [
+      { id: 'p', label: 'The measure' },
+      { id: 'q', label: 'What it was measuring' },
+    ],
+    outputs: [
+      { id: 'p', label: 'The measure now reads', fmt: '' },
+      { id: 'q', label: 'The real thing is at', fmt: '' },
+      { id: 'share', label: 'Share of the measure that is gaming', fmt: '%' },
+      { id: 'route', label: 'Where the effort goes', fmt: 'text' },
+    ],
+    note: 'A model of the stated mechanism, not measured data. Raise scrutiny until gaming costs more than the work and the two lines rejoin, which is the only fix the mechanism admits.',
+  },
+  'campbells-law': {
+    kind: 'sim',
+    title: 'Run it',
+    lede: 'Campbell goes further than Goodhart. The indicator does not merely stop tracking the thing: the effort spent on the indicator is taken from the thing, so it actively degrades what it was watching.',
+    identity: 'gaming both inflates the indicator and displaces the work',
+    symbols: [
+      { sym: 'cq', means: 'Cost of one point of the real outcome' },
+      { sym: 'cg', means: 'Cost of one point of indicator-only gain' },
+      { sym: 'displacement', means: 'Real outcome lost per point of gaming', unit: '%' },
+    ],
+    fields: [
+      { id: 'cq', label: 'Cost of the real outcome', min: 1, max: 40, step: 1, value: 10 },
+      { id: 'cg', label: 'Cost of lifting the indicator alone', min: 1, max: 40, step: 1, value: 3 },
+      { id: 'd', label: 'Gaming caught and reversed', min: 0, max: 95, step: 1, value: 10, unit: '%' },
+      { id: 'disp', label: 'Real outcome displaced per point gamed', min: 0, max: 100, step: 1, value: 20, unit: '%' },
+      // Twelve rounds at 20% displacement lands the outcome around a quarter of
+      // where it started. Longer or harsher and it floors at zero, which is a
+      // true consequence of the model but reads like the model breaking.
+      { id: 'n', label: 'Rounds under the indicator', min: 2, max: 40, step: 1, value: 12 },
+    ],
+    series: [
+      { id: 'p', label: 'The indicator' },
+      { id: 'q', label: 'The outcome it was meant to track' },
+    ],
+    outputs: [
+      { id: 'p', label: 'The indicator now reads', fmt: '' },
+      { id: 'q', label: 'The outcome is at', fmt: '' },
+      { id: 'drop', label: 'Change in the real outcome', fmt: '%' },
+      { id: 'route', label: 'Where the effort goes', fmt: 'text' },
+    ],
+    note: 'A model of the stated mechanism, not measured data. Set displacement to zero and this reduces to Goodhart: the indicator decouples but does no harm. Campbell is the claim that displacement is not zero.',
+  },
+
+  // ---- kind: spot, in scenario form. A scene, then questions, some of which
+  // have no right answer. An open case explains what each reply commits you
+  // to instead of marking it. ----
+  'the-gettier-problem': {
+    kind: 'spot',
+    title: 'Work the case',
+    lede: 'For two thousand years knowledge was justified true belief. Gettier ended that in three pages, with cases like this one.',
+    scene: [
+      'Smith has excellent evidence that Jones owns a Ford: he has ridden in it, Jones has produced the papers, Jones has driven it for years.',
+      'From this Smith infers something more general: someone in the office owns a Ford.',
+      'Unknown to Smith, Jones sold the Ford last week and now drives a rental. But Brown, who also works in the office and whom Smith has never discussed cars with, happens to own one.',
+    ],
+    prompt: 'Take the claim "someone in the office owns a Ford", as Smith holds it.',
+    yesLabel: 'Yes',
+    noLabel: 'No',
+    cases: [
+      { text: 'Is the claim true?', yes: true,
+        why: 'Brown owns a Ford, so someone in the office does. It is true, though not for the reason Smith thinks.' },
+      { text: 'Does Smith believe it?', yes: true,
+        why: 'He inferred it deliberately from evidence he trusts, which is belief in the fullest sense.' },
+      { text: 'Is Smith justified in believing it?', yes: true,
+        why: 'His evidence about Jones was as good as evidence gets, and the inference from it is valid. Being justified does not require being right about why.' },
+      { text: 'Does Smith KNOW that someone in the office owns a Ford?', open: true,
+        whyYes: 'A defensible answer, and it costs you something: if this is knowledge, then knowledge can rest entirely on a false premise and be rescued by luck. Most people who say yes here revise when the luck is made explicit.',
+        whyNo: 'The common answer, and it is fatal to the classical definition. You have just agreed the belief is justified, true, and held, and then denied it is knowledge. The three conditions cannot be sufficient.' },
+    ],
+    verdict: 'If you answered yes, yes, yes, no, you have reconstructed Gettier’s argument yourself. Justified true belief is not enough, because the justification can be disconnected from what makes the belief true. Sixty years of epistemology have gone into repairing this and no repair commands agreement.',
+    note: 'Gettier’s 1963 paper is three pages long and contains two cases. This is the first of them, lightly retold.',
+  },
+  'chestertons-fence': {
+    kind: 'spot',
+    title: 'Decide the cases',
+    lede: 'Chesterton’s rule is not "never remove anything". It is that the burden falls on the remover to find out why it is there first. The interesting question is when that burden has been met.',
+    prompt: 'For each, decide whether Chesterton’s rule permits removing it now.',
+    yesLabel: 'Go ahead',
+    noLabel: 'Find out first',
+    cases: [
+      { text: 'A gate across a farm track. Nobody currently working the farm knows why it is there. It is inconvenient.', yes: false,
+        why: 'The exact case Chesterton describes. Nobody knowing the reason is not evidence there was none, it is evidence you have not looked.' },
+      { text: 'A deployment step whose commit message reads "workaround for the 2019 load balancer, remove after migration". The migration completed last year.', yes: true,
+        why: 'The reason was recorded and has expired. Chesterton asks you to learn why the fence was put up, and you have. That is the rule satisfied, not defied.' },
+      { text: 'A rule nobody can explain, in a system where the person who wrote it still works down the corridor.', yes: false,
+        why: 'The cheapest possible investigation has not been done. Chesterton’s objection is to removal in ignorance, and here ignorance is a five-minute walk away.' },
+      { text: 'A safety interlock that is currently injuring people, whose purpose is unknown, and the next incident is expected within days.', open: true,
+        whyYes: 'Defensible, and worth being explicit about: you are saying the expected harm from waiting exceeds the expected harm from removing something you do not understand. That is a real trade-off, not an exemption from the rule.',
+        whyNo: 'Also defensible, and the harder discipline. Interlocks are exactly the class of thing that looks pointless because it is working, and the injuries may be the symptom of a different fault.' },
+      { text: 'A validation check with no comment, no history, and no test covering it, in code you are rewriting entirely.', yes: false,
+        why: 'The absence of documentation is the reason to investigate, not permission to skip it. An uncommented check is the fence at its most Chestertonian.' },
+    ],
+    verdict: 'The rule is procedural rather than conservative. It does not say the fence is good; it says find out, and then decide. Most of the disagreement about it comes from people arguing as though it said the first thing.',
+    note: 'From Chesterton’s The Thing, 1929. He was writing about institutions, and the argument transfers to code without much strain.',
+  },
+  'the-duhem-quine-thesis': {
+    kind: 'spot',
+    title: 'Assign the blame',
+    lede: 'A hypothesis never faces the evidence alone. It goes into the test bundled with assumptions about the instruments, the sample, the background theory, and the arithmetic. When the result comes back wrong, the logic tells you the bundle is wrong. It does not tell you which part.',
+    scene: [
+      'You predict that a new compound absorbs light at 340 nanometres. You run the spectrometer. Nothing appears at 340.',
+      'The prediction failed. Something in what you assumed is false.',
+    ],
+    prompt: 'For each response, decide whether it is logically available to you.',
+    yesLabel: 'Logically available',
+    noLabel: 'Ruled out',
+    cases: [
+      { text: 'Conclude the compound does not absorb at 340, and abandon the hypothesis.', yes: true,
+        why: 'Available, and usually the honest reading. But notice it is a choice, not something the failure forced on you.' },
+      { text: 'Conclude the spectrometer is miscalibrated, and keep the hypothesis.', yes: true,
+        why: 'Equally available. Instruments do drift, and this is a routine and legitimate response. Duhem’s point is that logic cannot tell you it is the wrong one.' },
+      { text: 'Conclude the sample was contaminated, and keep the hypothesis.', yes: true,
+        why: 'Available again. Any auxiliary assumption can absorb the failure, which is why a determined researcher can always save a hypothesis.' },
+      { text: 'Conclude that the failure proves the hypothesis false, with no further assumption required.', yes: false,
+        why: 'This is the one thing the failure does NOT establish. The test was of a conjunction, so its falsity licenses only the claim that at least one conjunct is false.' },
+      { text: 'Given that any of these is available, is choosing between them therefore arbitrary?', open: true,
+        whyYes: 'The strong Quinean reading, and it leads somewhere uncomfortable: if theory choice is not settled by evidence, something else settles it, and Kuhn and the sociology of science follow.',
+        whyNo: 'The common working answer, and the one most scientists hold: the choice is underdetermined by logic but not by judgement. Calibrating the instrument is cheap and testable; that is a good reason, just not a deductive one.' },
+    ],
+    verdict: 'The thesis is not that science cannot decide. It is that the deciding is done by something other than the logic of falsification, which means the something else deserves examination rather than assumption.',
+    note: 'Duhem argued it for physics in 1906; Quine generalised it to all of knowledge in 1951. The strong and weak readings are genuinely different claims and are often conflated.',
+  },
+  'the-teletransportation-paradox': {
+    kind: 'spot',
+    title: 'Decide who steps out',
+    lede: 'Parfit uses this to argue that personal identity is not what matters, and that our confidence in it does not survive being asked carefully.',
+    scene: [
+      'A machine on Earth scans every cell of your body, records the exact state, and destroys the original. A machine on Mars builds a copy from local matter to that specification. The copy wakes with all your memories, continuous in every psychological respect.',
+    ],
+    prompt: 'Work through the versions. The first questions have answers; the later ones are the argument.',
+    yesLabel: 'Yes',
+    noLabel: 'No',
+    cases: [
+      { text: 'Does the person on Mars remember your childhood, hold your commitments, and continue your projects?', yes: true,
+        why: 'By construction, yes. Every psychological connection that normally holds between you yesterday and you today holds here too.' },
+      { text: 'Is any physical atom of the original transported to Mars?', yes: false,
+        why: 'None. The Martian body is built from Martian matter. Any account resting on material continuity has to say this is a different person.' },
+      { text: 'Is the person who steps out on Mars you?', open: true,
+        whyYes: 'Then identity travels with the pattern rather than the substance. Accept it and ordinary survival looks the same in kind: the atoms in you now are largely not the ones from ten years ago either.',
+        whyNo: 'Then you have just been killed and replaced by a very convincing stranger, and everyone who loves them is mistaken. Consistency then requires saying what physical thread does the work, and every candidate is replaced gradually in ordinary life.' },
+      { text: 'Now suppose the Earth scanner malfunctions and does NOT destroy the original, so both of you exist. Is the one on Mars still you?', open: true,
+        whyYes: 'Then you are in two places, and the two immediately diverge into different people. Identity cannot be one-to-many, so something has to give.',
+        whyNo: 'The usual answer. But nothing about the Martian changed: the same scan, the same matter, the same memories. Whether they are you now depends on an event on another planet, which is Parfit’s point.' },
+    ],
+    verdict: 'Parfit’s conclusion is that the question has no determinate answer, and that this is not a gap in our knowledge but a fact about identity. What matters, he argues, is psychological continuity and connectedness, and identity is not what matters.',
+    note: 'From Reasons and Persons, 1984. The branching version is the one that does the real work, because it makes the answer depend on a distant event that changes nothing locally.',
+  },
+
+  // ---- kind: demo. Something the reader looks at. ----
+  //
+  // These three are the clearest case in the corpus for an interaction: they
+  // are perceptual facts, and prose can only assert them. A reader who sees
+  // two lights become one moving light has learned the phenomenon; a reader
+  // told that this happens has learned a sentence.
+  //
+  // The stimuli are small and start paused. Anything flashing is kept well
+  // under the WCAG general flash threshold by area, and nothing animates until
+  // the reader presses play or if they have asked for reduced motion.
+  'the-phi-phenomenon': {
+    kind: 'demo',
+    title: 'See it',
+    lede: 'Two lights, alternating. Nothing moves and nothing exists between them. Above about ten flashes a second you will see one light travelling back and forth anyway.',
+    stage: 'phi',
+    play: true,
+    fields: [
+      { id: 'gap', label: 'Time between flashes', min: 20, max: 700, step: 10, value: 60, unit: ' ms' },
+      { id: 'sep', label: 'Distance apart', min: 20, max: 90, step: 1, value: 60, unit: '%' },
+    ],
+    readouts: [
+      { id: 'rate', label: 'Flashes per second', fmt: '' },
+      { id: 'sees', label: 'What most people report', fmt: 'text' },
+    ],
+    caption: 'Press play, then look at the space between the two dots rather than at either one.',
+    note: 'Wertheimer used this in 1912 to argue that perception is not built from the parts of a scene, because the motion you see is in neither frame. It became the founding demonstration of Gestalt psychology. Slow it past roughly 200 milliseconds and the illusion breaks into two blinking lights.',
+  },
+  'the-purkinje-effect': {
+    kind: 'demo',
+    title: 'See it',
+    lede: 'In daylight the red is the brighter of the two. As the light falls, the eye hands over from cones to rods, and the blue overtakes it without either patch changing colour.',
+    stage: 'purkinje',
+    fields: [
+      { id: 'lum', label: 'Ambient light', min: -3, max: 1, step: 0.05, value: 1, unit: ' log cd/m2' },
+    ],
+    readouts: [
+      { id: 'cond', label: 'Which system is doing the seeing', fmt: 'text' },
+      { id: 'ratio', label: 'Blue brightness against red', fmt: 'x' },
+      { id: 'peak', label: 'Wavelength the eye is most sensitive to', fmt: ' nm' },
+    ],
+    caption: 'The two patches keep the same hue throughout. Only their relative brightness changes.',
+    note: 'The rendered brightness of each patch is computed from the standard photopic and scotopic luminous efficiency curves at 650 and 450 nanometres, blended across the mesopic range. The shift is why red flowers look black at dusk while blue ones stay vivid, and why darkrooms and cockpit instruments are lit red.',
+  },
+  'simultaneous-contrast': {
+    kind: 'demo',
+    title: 'See it',
+    lede: 'The two inner squares are the same grey. They are emitting identical light from identical pixels, and they will not look it.',
+    stage: 'contrast',
+    fields: [
+      { id: 'sep', label: 'Difference between the backgrounds', min: 0, max: 100, step: 1, value: 70, unit: '%' },
+      { id: 'mid', label: 'Grey of both squares', min: 20, max: 80, step: 1, value: 50, unit: '%' },
+    ],
+    readouts: [
+      { id: 'same', label: 'Colour of the left square', fmt: 'text' },
+      { id: 'same2', label: 'Colour of the right square', fmt: 'text' },
+      { id: 'diff', label: 'Difference between them', fmt: 'text' },
+    ],
+    caption: 'Drag the background difference to zero and the two squares visibly become what they always were.',
+    note: 'The eye reports contrast with the surround rather than absolute luminance, because that is the quantity that stays constant as the light changes. The illusion is the price of that design, and both readouts below are read back from the rendered elements rather than asserted.',
+  },
+
+  // ---- kind: probe. One question at a time, and the verdict is computed from
+  // the reader's own answers rather than from anything asserted. ----
+  //
+  // Sequencing is the mechanism, not decoration. Show both questions at once
+  // and the reader reconciles them before answering; that is precisely what
+  // these two laws say people fail to do in the wild.
+  'the-ellsberg-paradox': {
+    kind: 'probe',
+    title: 'Take the bets',
+    lede: 'An urn holds ninety balls. Thirty are red. The other sixty are black and yellow in an unknown proportion, anywhere from all black to all yellow. You draw one ball.',
+    steps: [
+      { id: 'first', type: 'choice',
+        text: 'Two bets, each paying the same if you win. Which do you want?',
+        options: [
+          { id: 'red', label: 'Win if the ball is RED' },
+          { id: 'black', label: 'Win if the ball is BLACK' },
+        ] },
+      { id: 'second', type: 'choice',
+        text: 'Same urn, same ball, two more bets. Which now?',
+        options: [
+          { id: 'ry', label: 'Win if the ball is RED or YELLOW' },
+          { id: 'by', label: 'Win if the ball is BLACK or YELLOW' },
+        ] },
+    ],
+    note: 'Ellsberg ran this in 1961. The usual pattern is not a mistake in arithmetic. It is a preference for a known risk over an unknown one, which no single probability assignment can represent, and which is why ambiguity aversion is treated as its own thing.',
+  },
+  'the-planning-fallacy': {
+    kind: 'probe',
+    title: 'Check yourself',
+    lede: 'Kahneman and Tversky’s claim is not that people are bad at estimating. It is that they estimate from the plan in front of them rather than from what happened last time, and that the two answers differ reliably in one direction.',
+    steps: [
+      { id: 'est', type: 'number', text: 'Think of a piece of work you are putting off. Picture doing it. How many days will it take?',
+        min: 0.5, max: 400, step: 0.5, value: 5, unit: ' days' },
+      { id: 'h1', type: 'number', text: 'Now do not think about that one. How many days did the LAST comparable piece of work actually take, start to finish?',
+        min: 0.5, max: 400, step: 0.5, value: 8, unit: ' days' },
+      { id: 'h2', type: 'number', text: 'And the one before that?',
+        min: 0.5, max: 400, step: 0.5, value: 12, unit: ' days' },
+    ],
+    note: 'The first question invites the inside view: you simulate the work and add up the steps, and the simulation contains no interruptions, because you cannot picture the ones you have not had yet. The last two invite the outside view, which already contains every interruption that actually occurred. The gap between your own two answers is the fallacy, measured on you.',
+  },
+
+  'the-cook-levin-theorem': {
+    kind: 'solver',
+    title: 'Solve one',
+    lede: 'Satisfiability was the first problem proved NP-complete, which means every problem whose answer is quick to CHECK can be rewritten as one of these. Type a formula and watch the asymmetry: verifying an assignment is one substitution, finding one is a search.',
+    identity: 'SAT is NP-complete: easy to check, no known way to find',
+    symbols: [
+      { sym: '&', means: 'AND, between clauses' },
+      { sym: '|', means: 'OR, inside a clause' },
+      { sym: '!', means: 'NOT, before a variable' },
+    ],
+    fields: [
+      { id: 'f', type: 'text', rows: 4, label: 'A formula in conjunctive normal form',
+        value: '(a | b | !c) & (!a | c) & (!b | !c) & (a | !b)' },
+    ],
+    note: 'Brute force over every assignment, which is the honest method: no solver known to anyone does essentially better in the worst case, and whether one can is the P versus NP question. Capped at sixteen variables, because 2^16 is the point where a page should stop pretending.',
+  },
+  'lamports-happened-before-relation': {
+    kind: 'solver',
+    title: 'Build one',
+    lede: 'Without a shared clock, "before" is not a total order. Two events can be genuinely incomparable, and the relation tells you exactly which. Describe the processes and the messages between them.',
+    identity: 'a -> b if same process and earlier, or a is a send and b its receive, or by transitivity',
+    symbols: [
+      { sym: 'P1: a b c', means: 'A process and its events, in local order' },
+      { sym: 'b->d', means: 'Event b sends a message received at d' },
+    ],
+    fields: [
+      { id: 'f', type: 'text', rows: 5, label: 'Processes, one per line, then the messages',
+        value: 'P1: a b c\nP2: d e f\nP3: g h\nb->d\ne->c\ng->e' },
+    ],
+    note: 'Everything the relation can know comes from local order and message passing. Any pair it leaves unordered is concurrent, and no observer inside the system can say which happened first. Lamport built vector clocks to carry exactly this information.',
+  },
+
+  'the-motte-and-bailey': {
+    kind: 'spot',
+    title: 'Judge the retreats',
+    lede: 'The bailey is the claim someone wants: interesting, contested, hard to defend. The motte is the one they retreat to under fire: modest, obvious, nearly unarguable. The fallacy is treating a successful defence of the motte as a defence of the bailey.',
+    prompt: 'For each exchange, decide whether the retreat is the fallacy or a legitimate move.',
+    yesLabel: 'Motte and bailey',
+    noLabel: 'Legitimate',
+    cases: [
+      { text: '"Everything is a social construct." "Gravity?" "I only mean that our CONCEPTS are shaped by society." Later, back to the original claim, unchanged.', yes: true,
+        why: 'The tell is the return. Retreating under fire is fine; retreating, being granted the modest claim, and then re-advancing the strong one as though it had been established is the fallacy.' },
+      { text: '"Everything is a social construct." "Gravity?" "You are right, that was too broad. I mean our concepts are shaped by society." The strong claim is not used again.', yes: false,
+        why: 'This is just conceding. The claim was narrowed and the narrow one is what gets defended from here. That is what argument is supposed to look like.' },
+      { text: '"This policy is genocide." "That is a legal term with a definition." "I mean it causes serious harm to a group." Then the original word is used in the next paragraph.', yes: true,
+        why: 'The strong word does rhetorical work the weak paraphrase cannot, which is exactly why the speaker goes back to it.' },
+      { text: '"The study is flawed." "Which part?" "The sampling: they recruited from one clinic and generalised to the population."', yes: false,
+        why: 'No retreat at all. A general claim was made specific on request, and the specific version is the whole claim now.' },
+      { text: '"I am just asking questions." Said after forty minutes of asserting answers.', yes: true,
+        why: 'The motte here is an activity rather than a proposition, and it is unassailable, because nobody can object to a question. The bailey was everything asserted before the retreat.' },
+    ],
+    note: 'Shackel named it in 2005 after the medieval fortification: you live in the bailey because it is where the good land is, and you run to the motte only when raiders come.',
+  },
+  'hitchens-razor': {
+    kind: 'spot',
+    title: 'Judge the dismissals',
+    lede: 'What can be asserted without evidence can be dismissed without evidence. The razor is about who owes what, and it is easy to overreach with.',
+    prompt: 'For each, decide whether the razor licenses dismissing the claim without offering a counter-argument.',
+    yesLabel: 'Dismissable',
+    noLabel: 'You have to engage',
+    cases: [
+      { text: 'A bare assertion, offered with nothing behind it, that a rival product corrupts data.', yes: true,
+        why: 'Nothing was staked, so nothing needs to be answered. Dismissal here costs you nothing and concedes nothing.' },
+      { text: 'A claim supported by one small study with a real methodology, which you think is weak.', yes: false,
+        why: 'Evidence was offered. Weak evidence is still evidence, and the honest reply is about the study rather than about the burden of proof.' },
+      { text: '"You cannot prove that it does not happen."', yes: true,
+        why: 'An attempt to convert absence of disproof into support. The razor is precisely the tool for this move.' },
+      { text: 'A claim you find implausible, supported by an argument you have not read.', yes: false,
+        why: 'The razor applies to what was ASSERTED without evidence, not to what you have not looked at. Using it here makes it a licence for laziness.' },
+      { text: 'An anecdote presented as a general rule, with no suggestion that it generalises.', yes: true,
+        why: 'The anecdote may be true and the general claim still unsupported. You can grant the story and dismiss the rule without contradiction.' },
+    ],
+    note: 'Hitchens put it this way in 2003, though the principle is older and appears in Euclid and in Latin as quod gratis asseritur. The common failure is applying it to claims that DID come with evidence you happen to dislike.',
+  },
+  'the-principle-of-charity': {
+    kind: 'spot',
+    title: 'Choose the reading',
+    lede: 'Where a statement admits several readings, take the strongest one its words will bear. Not the kindest, and not the one you can beat.',
+    prompt: 'For each, decide whether the proposed reading is the charitable one.',
+    yesLabel: 'Charitable',
+    noLabel: 'Not charitable',
+    cases: [
+      { text: '"People are basically selfish." Read as: most people weigh their own interests heavily in most decisions.', yes: true,
+        why: 'The strongest reading the words will bear, and the one worth arguing with. It is also probably what was meant.' },
+      { text: '"People are basically selfish." Read as: no human being has ever acted from any other motive.', yes: false,
+        why: 'A reading chosen because it is refutable by a single counterexample. Winning against it tells you nothing about the view.' },
+      { text: '"We should tax carbon." Read as: a carbon price is a better instrument than the alternatives for this purpose.', yes: true,
+        why: 'Supplies the strongest available version of the argument, including the comparison the speaker probably intended.' },
+      { text: '"The deadline slipped because of the API change." Read as: a claim that the API change was the sole and sufficient cause.', yes: false,
+        why: 'Causal statements in ordinary speech are rarely claims of sole sufficiency. Reading one that way manufactures a claim to knock down.' },
+      { text: 'A colleague writes "this will never work". Read as: they have an objection worth hearing, badly expressed.', yes: true,
+        why: 'Charity applies to form as well as content. The strongest reading of a blunt sentence is usually that it compresses a real point.' },
+      { text: 'A text that explicitly rules out the generous reading. Read generously anyway.', yes: false,
+        why: 'Charity has a limit, and this is it. The principle says take the strongest reading THE WORDS WILL BEAR, not the strongest reading imaginable.' },
+    ],
+    note: 'Associated with Wilson and Quine and developed by Davidson, who argued it is not politeness but a precondition of interpretation: you cannot understand someone you assume to be mostly wrong.',
+  },
+  'the-burden-of-proof': {
+    kind: 'spot',
+    title: 'Assign the burden',
+    lede: 'The burden sits with whoever is asking for a change in what is believed. It is not a fixed property of a claim, and it moves as evidence accumulates.',
+    prompt: 'For each exchange, decide whether the burden has been placed correctly.',
+    yesLabel: 'Correctly placed',
+    noLabel: 'Improperly shifted',
+    cases: [
+      { text: '"There is a new species in this valley." "What is your evidence?"', yes: true,
+        why: 'A positive existential claim, and the person making it carries the burden. Nothing unusual here.' },
+      { text: '"There is a new species in this valley." "Prove there is not."', yes: false,
+        why: 'The classic reversal. Being unable to rule something out is not support for it, or every unfalsifiable claim would be established.' },
+      { text: 'A drug has passed three large trials. A critic says it does not work and is asked for their grounds.', yes: true,
+        why: 'The burden moved. It sat with the manufacturer until the evidence accumulated, and now sits with whoever wants that conclusion overturned.' },
+      { text: '"This change is safe to deploy." "How do you know?" "Nobody has shown it is not."', yes: false,
+        why: 'Absence of a demonstrated failure is not a demonstration of safety, particularly where nobody has looked.' },
+      { text: 'A defendant is presumed innocent and the prosecution must prove guilt.', yes: true,
+        why: 'A deliberate asymmetry rather than a neutral one: the burden is placed where the cost of error is judged worse, which is a moral choice made in advance.' },
+    ],
+    note: 'The burden is not decided by logic alone. Where it starts is a judgement about which error is worse to make, which is why the criminal standard and the civil standard differ.',
+  },
+  'the-texas-sharpshooter-fallacy': {
+    kind: 'spot',
+    title: 'Judge the findings',
+    lede: 'Fire at the barn, then paint the target around the tightest cluster. The fallacy is choosing the hypothesis after seeing where the data landed, and reporting it as though it had been chosen first.',
+    prompt: 'For each, decide whether the finding is being reported honestly.',
+    yesLabel: 'Honest',
+    noLabel: 'Target painted afterwards',
+    cases: [
+      { text: 'A registered hypothesis about one outcome, tested once, reported with its result.', yes: true,
+        why: 'The target was painted before the shot. This is the whole purpose of pre-registration.' },
+      { text: 'Twenty subgroups analysed, one significant at p < 0.05, and that one reported as the finding.', yes: false,
+        why: 'At that threshold you expect roughly one in twenty by chance alone. The finding is the cluster, and the target went on afterwards.' },
+      { text: 'The same twenty subgroups, all twenty reported, with the one result flagged as exploratory and needing replication.', yes: true,
+        why: 'The identical analysis, reported so a reader can see the search that produced it. What makes the fallacy is the concealment, not the looking.' },
+      { text: 'A cancer cluster identified by drawing the boundary around the affected houses after the cases were known.', yes: false,
+        why: 'The original barn. Any sufficiently irregular boundary can enclose a cluster, and the boundary here was chosen to do exactly that.' },
+      { text: 'A pattern noticed in old data, then stated as a prediction and confirmed in a fresh dataset.', yes: true,
+        why: 'Noticing the pattern was exploratory and legitimate. The second dataset had not been seen when the target was painted, which is what makes it a test.' },
+    ],
+    note: 'The fallacy is not looking at data before forming a hypothesis, which is how most science starts. It is failing to say that is what happened, so the reader cannot discount for the search.',
+  },
+  'moving-the-goalposts': {
+    kind: 'spot',
+    title: 'Judge the standards',
+    lede: 'Someone sets a standard of evidence, it is met, and a new one appears. Raising a standard is not automatically the fallacy: what matters is whether the first was actually met and whether the new one was available all along.',
+    prompt: 'For each, decide whether the goalposts moved.',
+    yesLabel: 'Goalposts moved',
+    noLabel: 'Legitimate',
+    cases: [
+      { text: '"Show me one replication." A replication is produced. "One is not enough."', yes: true,
+        why: 'The original standard was set by the person now rejecting it. If one was never going to be enough, it should not have been the asked-for standard.' },
+      { text: '"Show me one replication." A failed replication is produced. "That does not support your claim."', yes: false,
+        why: 'The standard was not met. Pointing that out is not moving anything.' },
+      { text: '"No court has ruled on this." A court rules. "That court is not senior enough."', yes: true,
+        why: 'The seniority requirement existed before and was not stated, which is what makes its late appearance a retreat rather than a refinement.' },
+      { text: '"I need to see the raw data." The raw data is provided. "Now I have looked, the sampling has a problem I could not see before."', yes: false,
+        why: 'A new objection arising FROM the evidence just supplied is the process working. The goalposts did not move; the field became visible.' },
+      { text: '"If it ships by Friday I will be satisfied." It ships Friday. "I meant shipped and adopted."', yes: true,
+        why: 'The extra condition is doing work it was not doing when the bargain was struck, and could have been stated then.' },
+    ],
+    note: 'The honest version is to state the full standard in advance, and to say plainly when a new objection comes from evidence that did not exist before.',
+  },
+};
+
+export function interactiveSlugs() {
+  return Object.keys(INTERACTIVES);
+}
+
+export function interactiveFor(slug) {
+  return INTERACTIVES[slug] || null;
+}
+
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+/** The formula key, shared with widgets.mjs. */
+function keyBlock(w) {
+  if (!w.symbols || !w.symbols.length) return '';
+  const symbols = w.symbols.map((y) => `            <div class="wg-sym">
+              <dt>${esc(y.sym)}</dt>
+              <dd>${esc(y.means)}${y.unit ? ` <span class="wg-unit">${esc(y.unit)}</span>` : ''}</dd>
+            </div>`).join('\n');
+  return `          <div class="wg-formula">
+            <p class="wg-eq"><code>${esc(w.identity)}</code></p>
+            <dl class="wg-syms">
+${symbols}
+            </dl>
+          </div>`;
+}
+
+/* Every case and every explanation is rendered into the HTML, visible with no
+ * JavaScript at all. The script turns that list into a quiz; without it the
+ * reader still gets the whole argument, and a crawler still indexes it. The
+ * alternative, holding the cases in a script and injecting them, would have
+ * made the page empty to both. */
+function spotBlock(slug, w) {
+  // An OPEN case has no right answer. A thought experiment's interesting
+  // question is usually of this shape: both replies are defensible and each
+  // commits you to something, so the page explains the commitment rather than
+  // marking you. Open cases are not scored.
+  const cases = w.cases.map((c, i) => {
+    if (c.open) {
+      return `            <li class="ix-case" data-ix-case="${i}" data-open="1">
+              <p class="ix-case-text">${esc(c.text)}</p>
+              <div class="ix-case-why" data-ix-why data-why-yes>
+                <p><strong>${esc(w.yesLabel)}.</strong> ${esc(c.whyYes)}</p>
+              </div>
+              <div class="ix-case-why" data-ix-why data-why-no>
+                <p><strong>${esc(w.noLabel)}.</strong> ${esc(c.whyNo)}</p>
+              </div>
+            </li>`;
+    }
+    return `            <li class="ix-case" data-ix-case="${i}" data-answer="${c.yes ? '1' : '0'}">
+              <p class="ix-case-text">${esc(c.text)}</p>
+              <div class="ix-case-why" data-ix-why>
+                <p><strong>${esc(c.yes ? w.yesLabel : w.noLabel)}.</strong> ${esc(c.why)}</p>
+              </div>
+            </li>`;
+  }).join('\n');
+  const scene = (w.scene || []).map((p) => `          <p class="ix-scene-p">${esc(p)}</p>`).join('\n');
+  return `        <div class="interactive ix-spot" data-interactive="${esc(slug)}"
+             data-yes="${esc(w.yesLabel)}" data-no="${esc(w.noLabel)}">
+          <p class="wg-lede">${esc(w.lede)}</p>
+${scene ? `          <div class="ix-scene">\n${scene}\n          </div>` : ''}
+          <p class="ix-prompt">${esc(w.prompt)}</p>
+          <ol class="ix-cases">
+${cases}
+          </ol>
+          <p class="ix-score" data-ix-score hidden></p>
+${w.verdict ? `          <div class="ix-verdict" data-ix-verdict-box hidden><p>${esc(w.verdict)}</p></div>` : ''}
+          <p class="wg-note">${esc(w.note)}</p>
+        </div>`;
+}
+
+/* kind: sim. Sliders, an SVG the engine draws, and numeric readouts. The
+ * chart is drawn client-side because it depends entirely on the reader's
+ * settings; the numbers beside it carry the same information for anyone
+ * without scripts, so nothing is only in the picture. */
+function simBlock(slug, w) {
+  const fields = w.fields.map((f) => `            <label class="wg-in">
+              <span class="wg-lab">${esc(f.label)}</span>
+              <input type="range" min="${f.min}" max="${f.max}" step="${f.step}" value="${f.value}"
+                     data-ix="${esc(f.id)}" data-unit="${esc(f.unit || '')}" aria-label="${esc(f.label)}">
+              <output data-ixout="${esc(f.id)}">${f.value}${esc(f.unit || '')}</output>
+            </label>`).join('\n');
+  const legend = w.series.map((y, i) => `            <span class="ix-key" data-series="${i}">${esc(y.label)}</span>`).join('\n');
+  const outs = w.outputs.map((o) => `            <div class="wg-res">
+              <span class="wg-res-lab">${esc(o.label)}</span>
+              <span class="wg-res-v" data-ixres="${esc(o.id)}" data-unit="${esc(o.fmt || '')}">—</span>
+            </div>`).join('\n');
+  return `        <div class="interactive ix-sim" data-interactive="${esc(slug)}">
+          <p class="wg-lede">${esc(w.lede)}</p>
+${keyBlock(w)}
+${fields}
+          <div class="ix-legend">
+${legend}
+          </div>
+          <div class="ix-chart" data-ix-chart aria-hidden="true"></div>
+${outs}
+          <p class="wg-note">${esc(w.note)}</p>
+        </div>`;
+}
+
+/* kind: demo. A stage the reader looks at, sliders that drive it through CSS
+ * custom properties, and readouts. The stage markup is static and server
+ * rendered; the script only sets variables on it. */
+const STAGES = {
+  phi: `            <span class="phi-dot" data-dot="0"></span>
+            <span class="phi-dot" data-dot="1"></span>`,
+  purkinje: `            <span class="pk-patch" data-patch="red"></span>
+            <span class="pk-patch" data-patch="blue"></span>`,
+  contrast: `            <span class="sc-field" data-field="lo"><span class="sc-chip"></span></span>
+            <span class="sc-field" data-field="hi"><span class="sc-chip"></span></span>`,
+};
+
+function demoBlock(slug, w) {
+  const fields = w.fields.map((f) => `            <label class="wg-in">
+              <span class="wg-lab">${esc(f.label)}</span>
+              <input type="range" min="${f.min}" max="${f.max}" step="${f.step}" value="${f.value}"
+                     data-ix="${esc(f.id)}" data-unit="${esc(f.unit || '')}" aria-label="${esc(f.label)}">
+              <output data-ixout="${esc(f.id)}">${f.value}${esc(f.unit || '')}</output>
+            </label>`).join('\n');
+  const outs = (w.readouts || []).map((o) => `            <div class="wg-res">
+              <span class="wg-res-lab">${esc(o.label)}</span>
+              <span class="wg-res-v" data-ixres="${esc(o.id)}" data-unit="${esc(o.fmt || '')}">—</span>
+            </div>`).join('\n');
+  // Anything that flashes starts stopped, and says so, rather than beginning
+  // to strobe the moment the section scrolls into view.
+  const play = w.play
+    ? `          <button type="button" class="ix-play" data-ix-play aria-pressed="false">Play</button>`
+    : '';
+  return `        <div class="interactive ix-demo" data-interactive="${esc(slug)}" data-stage="${esc(w.stage)}">
+          <p class="wg-lede">${esc(w.lede)}</p>
+          <div class="ix-stage" data-ix-stage data-stage="${esc(w.stage)}" aria-hidden="true">
+${STAGES[w.stage]}
+          </div>
+          <p class="ix-caption">${esc(w.caption)}</p>
+${play}
+${fields}
+${outs}
+          <p class="wg-note">${esc(w.note)}</p>
+        </div>`;
+}
+
+/* kind: probe. Each step is revealed only when the one before it is answered,
+ * because seeing the later question first is exactly what stops these effects
+ * appearing. With no script every step is visible and the page reads as a
+ * description of the experiment, which is the honest fallback. */
+function probeBlock(slug, w) {
+  const steps = w.steps.map((st, i) => {
+    const body = st.type === 'choice'
+      ? `                <div class="ix-choices">
+${st.options.map((o) => `                  <button type="button" class="ix-choice" data-ix-opt="${esc(o.id)}">${esc(o.label)}</button>`).join('\n')}
+                </div>`
+      : `                <label class="wg-in">
+                  <span class="wg-lab">${esc(st.unit ? st.unit.trim() : 'value')}</span>
+                  <input type="range" min="${st.min}" max="${st.max}" step="${st.step}" value="${st.value}"
+                         data-ix="${esc(st.id)}" data-unit="${esc(st.unit || '')}" aria-label="${esc(st.text)}">
+                  <output data-ixout="${esc(st.id)}">${st.value}${esc(st.unit || '')}</output>
+                </label>
+                <button type="button" class="ix-choice" data-ix-next>That is my answer</button>`;
+    return `            <li class="ix-step-item" data-ix-step="${i}" data-step-id="${esc(st.id)}" data-type="${esc(st.type)}">
+              <p class="ix-case-text">${esc(st.text)}</p>
+${body}
+            </li>`;
+  }).join('\n');
+  return `        <div class="interactive ix-probe" data-interactive="${esc(slug)}">
+          <p class="wg-lede">${esc(w.lede)}</p>
+          <ol class="ix-cases">
+${steps}
+          </ol>
+          <div class="ix-verdict" data-ix-out="result" hidden></div>
+          <div class="ix-work" data-ix-out="work"></div>
+          <p class="wg-note">${esc(w.note)}</p>
+        </div>`;
+}
+
+export function interactiveBlock(slug) {
+  const w = interactiveFor(slug);
+  if (!w) return '';
+  if (w.kind === 'spot') return spotBlock(slug, w);
+  if (w.kind === 'sim') return simBlock(slug, w);
+  if (w.kind === 'demo') return demoBlock(slug, w);
+  if (w.kind === 'probe') return probeBlock(slug, w);
+  const key = keyBlock(w);
+  const fields = w.fields.map((f) => {
+    // A text field is for input with structure a number cannot carry: a
+    // boolean formula, a set of events and the messages between them. It is
+    // parsed and validated by the engine, which refuses rather than guesses.
+    if (f.type === 'text') {
+      return `            <label class="ix-f ix-f-wide">
+              <span class="ix-lab">${esc(f.label)}</span>
+              <textarea data-ix="${esc(f.id)}" rows="${f.rows || 3}" spellcheck="false"
+                        aria-label="${esc(f.label)}">${esc(f.value)}</textarea>
+            </label>`;
+    }
+    return `            <label class="ix-f">
+              <span class="ix-lab">${esc(f.label)}</span>
+              <input type="number" inputmode="numeric" data-ix="${esc(f.id)}"
+                     value="${f.value}" min="${f.min}" max="${f.max}" step="1"
+                     aria-label="${esc(f.label)}">
+            </label>`;
+  }).join('\n');
+  return `        <div class="interactive" data-interactive="${esc(slug)}">
+          <p class="wg-lede">${esc(w.lede)}</p>
+${key}
+          <div class="ix-fields">
+${fields}
+          </div>
+          <p class="ix-msg" data-ix-msg role="status"></p>
+          <div class="ix-result" data-ix-out="result"></div>
+          <div class="ix-work" data-ix-out="work"></div>
+          <p class="wg-note">${esc(w.note)}</p>
+        </div>`;
+}

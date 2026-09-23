@@ -84,17 +84,46 @@ const FOUNDER = {
   // back to conyso.com. But it is no longer the first thing in the list, and
   // the founder relationship is now asserted structurally below rather than
   // left implicit in a job-title string.
+  // Every entry is personal, resolves, and points back — the bar set in
+  // docs/ENTITY.md. Each was re-checked on 2026-08-01: the GitHub profile now
+  // carries the name and a conyso.com/founder/ website link, Peerlist and
+  // Connectively both name Conyso, and OpenAlex is bound to the same ORCID.
+  //
+  // This list is duplicated verbatim on conyso.com. Identical means identical —
+  // two properties listing overlapping-but-different identifier sets is weaker
+  // evidence than either alone, because it reads as two similar people. Change
+  // one, change the other in the same commit.
+  //
+  // Deliberately absent: the two Zenodo record URLs conyso.com used to carry.
+  // Those identify *papers*, not the person, so they belong in a work's
+  // citation rather than in an identity's sameAs.
   sameAs: [
     'https://conyso.com/founder/',
     'https://www.linkedin.com/in/krishna-chagti',
     'https://github.com/krishnachagti-sudo',
     'https://orcid.org/0009-0003-6401-1788',
+    'https://scholar.google.com/citations?user=PMzF_lYAAAAJ',
+    'https://iitm.academia.edu/KrishnaChagti',
+    'https://openalex.org/A5139032279',
+    'https://peerlist.io/krishnachagti',
+    'https://www.connectively.us/p/krishna-chagti-lssbb-psm-ii',
   ],
 };
 
-/** The canonical node id for the creator, stable across every page. */
-export function founderId(origin = '', base = '/') {
-  return `${origin}${base}about/#krishna-chagti`;
+/**
+ * The canonical node id for the creator, stable across every page.
+ *
+ * It points at the founder microsite, not at this project's /about/ page. The
+ * identity is described most fully at conyso.com/founder/ — image, credentials,
+ * education, mainEntityOfPage — and that is the canonical home for it, so the
+ * node id belongs there. Anchoring a person to one project's about page means
+ * the identifier for the person breaks if the project ever moves or retires.
+ *
+ * Law Tome therefore *references* the entity rather than owning it. The
+ * arguments are kept so every call site stays unchanged.
+ */
+export function founderId(_origin = '', _base = '/') {
+  return 'https://conyso.com/founder/#person';
 }
 
 /**
@@ -690,7 +719,7 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
       <p class="foot-conyso">Created by <a href="https://conyso.com/founder/" rel="author">Krishna Chagti</a> · an initiative by <a href="https://conyso.com">Conyso</a>.</p>
       <p class="foot-motto">Sapere aude.</p>
     </div>
-${col('Browse', [['browse/', 'All laws'], ['best-known/', 'The best-known'], ['sheets/', 'Cheat sheets'], ['kinds/', 'By kind'], ['quotes/', 'The statements'], ['also-known-as/', 'Also known as'], ['for/', 'Find your laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['origins/', 'Where they came from'], ['reliability/', 'By reliability']])}
+${col('Browse', [['browse/', 'All laws'], ['calculators/', 'Calculators'], ['best-known/', 'The best-known'], ['sheets/', 'Cheat sheets'], ['kinds/', 'By kind'], ['quotes/', 'The statements'], ['also-known-as/', 'Also known as'], ['for/', 'Find your laws'], ['collections/', 'Collections'], ['timeline/', 'Timeline'], ['named-after/', 'By namesake'], ['origins/', 'Where they came from'], ['reliability/', 'By reliability']])}
 ${col('Discover', [['how-solid/', 'How solid is any of this?'], ['situations/', "What's the law for…?"], ['graph/', 'The graph'], ['compare/', 'Compare laws'], ['tension/', 'Laws in tension'], ['features/', 'Features'], ['quiz/', 'Name that law'], ['saved/', 'Saved laws']])}
 ${col('The project', [['about/', 'About & method'], ['manifesto/', 'Why name a law?'], ['data/', 'Download the data'], ['coin/', 'Coin a law'], ['coined/', 'The Coined wing'], ['feed.xml', 'Subscribe (RSS)'], ['credits/', 'Image credits'], ['privacy/', 'Privacy']])}
   </div>
@@ -748,6 +777,48 @@ export function portrait(img, { base = '/', small = false, alt = '' } = {}) {
 }
 
 /** The credit line a licence obliges us to show: who made it, under what, and where. */
+/**
+ * An ImageObject for a real content image, carrying its OWN licence.
+ *
+ * The 2,420 ImageObject nodes on this site were all the logo, repeated in the
+ * publisher block. The 1,026 figures and portraits — the images a reader
+ * actually looks at, and the ones somebody else owns — carried none.
+ *
+ * Every field comes from images.json, which records the artist, licence,
+ * licence URL and Commons source per image. That matters more than the search
+ * feature: these run across fifteen different licences, from CC0 to CC BY-SA
+ * 4.0 to public domain, and a blanket claim of the site's own CC BY 4.0 across
+ * all of them would be false about most and a licence violation for the
+ * share-alike ones. So `license` is per image, and it is omitted rather than
+ * guessed where the record has no URL.
+ *
+ * `acquireLicensePage` points at the Commons file page, which is genuinely
+ * where a reader goes to license the image, not at a page of ours.
+ */
+export function imageObject(img, { url, caption } = {}) {
+  if (!img || !url) return null;
+  const node = {
+    '@type': 'ImageObject',
+    url,
+    contentUrl: url,
+    ...(img.width ? { width: img.width } : {}),
+    ...(img.height ? { height: img.height } : {}),
+    ...(caption ? { caption } : {}),
+  };
+  // Public-domain records carry no licence URL, and inventing one would assert
+  // a licence nobody granted. The credit line still names the artist.
+  if (img.licenceUrl) node.license = img.licenceUrl;
+  if (img.source) node.acquireLicensePage = img.source;
+  if (img.artist) {
+    node.creator = { '@type': 'Person', name: img.artist };
+    node.creditText = img.licence ? `${img.artist} · ${img.licence}` : img.artist;
+    node.copyrightNotice = img.licence === 'Public domain'
+      ? `${img.artist} — public domain`
+      : `${img.artist} — licensed ${img.licence || 'see source'}`;
+  }
+  return node;
+}
+
 export function imageCredit(img) {
   if (!img) return '';
   const licence = img.licenceUrl

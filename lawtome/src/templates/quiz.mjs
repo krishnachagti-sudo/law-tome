@@ -27,7 +27,89 @@ const MODES = [
   ['How reliable?', 'Empirical, Heuristic, Folk-adage or Contested — say how far this one can be trusted.'],
 ];
 
-export function quizPage({ base = '/', origin = '', count, categories = {} } = {}) {
+
+/** A stable shuffle from a fixed seed, so a given build always yields the same
+ *  round. Nothing about the round should depend on when the page is rendered. */
+function seeded(seed) {
+  let a = seed >>> 0;
+  return () => {
+    a += 0x6D2B79F5;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+const TIERS = ['Empirical', 'Heuristic', 'Folk-adage', 'Contested'];
+
+/** Ten questions by the same four rules quiz.js uses, built from corpus fields
+ *  only. Returns [] when the corpus is too small, and the page then renders as
+ *  it did before. */
+function buildStarterRound(laws, categories, n = 10) {
+  const rows = laws.filter((l) => l && l.name && l.statement && l.category && l.reliability);
+  if (rows.length < 12) return [];
+  const rnd = seeded(20260910);
+  const shuffle = (arr) => {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(rnd() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+  const fieldName = (c) => categories[c] || c;
+  const pool = shuffle(rows);
+  const cats = [...new Set(rows.map((l) => l.category))];
+  const modes = ['name', 'says', 'field', 'tier'];
+  const out = [];
+  for (let i = 0; i < n && i < pool.length; i++) {
+    const answer = pool[i];
+    const mode = modes[i % modes.length];
+    // Distractors come from the same field where possible, which is what makes
+    // the question worth asking rather than a vocabulary check.
+    const others = shuffle(rows.filter((l) => l.slug !== answer.slug
+      && l.category === answer.category)).concat(shuffle(rows.filter((l) => l.slug !== answer.slug)));
+    const wrong = [];
+    for (const o of others) {
+      if (wrong.length >= 3) break;
+      if (!wrong.some((w) => w.slug === o.slug)) wrong.push(o);
+    }
+    if (wrong.length < 3) continue;
+
+    if (mode === 'name') {
+      out.push({ kind: 'Name that law', ask: 'Which law says this?', quote: answer.statement,
+        options: shuffle([...wrong.map((w) => w.name), answer.name]), correct: answer.name, law: answer });
+    } else if (mode === 'says') {
+      out.push({ kind: 'What does it say?', ask: `What does ${answer.name} actually state?`, quote: '',
+        options: shuffle([...wrong.map((w) => w.statement), answer.statement]), correct: answer.statement, law: answer });
+    } else if (mode === 'field') {
+      const other = shuffle(cats.filter((c) => c !== answer.category)).slice(0, 3).map(fieldName);
+      if (other.length < 3) continue;
+      out.push({ kind: 'Which field?', ask: `Which field does ${answer.name} come from?`, quote: answer.statement,
+        options: shuffle([...other, fieldName(answer.category)]), correct: fieldName(answer.category), law: answer });
+    } else {
+      out.push({ kind: 'How reliable?', ask: `How far can ${answer.name} be trusted?`, quote: answer.statement,
+        options: TIERS.slice(), correct: answer.reliability, law: answer });
+    }
+  }
+  return out;
+}
+
+export function quizPage({ base = '/', origin = '', count, categories = {}, laws = [] } = {}) {
+  // A fixed starter round, rendered server-side.
+  //
+  // Two reasons, and the search feature is the second of them. Without
+  // JavaScript this page was a sentence apologising for itself, and a crawler
+  // saw the same. Now it serves ten real questions with their answers, which is
+  // a page either can read.
+  //
+  // The set is DETERMINISTIC — same build, same ten — because it has to be in
+  // the HTML for both of those to work. The script still draws its own random
+  // round on top; this is the floor, not the game. Questions are built by the
+  // same four rules as quiz.js (name, says, field, tier) from the same corpus
+  // fields, so nothing here is invented that the live quiz would not also ask.
+  const starter = buildStarterRound(laws, categories);
   const nf = new Intl.NumberFormat('en');
   const n = count == null ? null : nf.format(count);
 
@@ -119,7 +201,24 @@ export function quizPage({ base = '/', origin = '', count, categories = {} } = {
     </div>
 
     <p class="quiz-boot" id="quiz-boot">Loading the index… <a href="${base}browse/">browse it</a> in the meantime.</p>
-    <noscript><p class="sec-lede">The quiz needs JavaScript. You can still <a href="${base}browse/">browse every law</a>, or read <a href="${base}reliability/">how each one is rated</a>.</p></noscript>
+${starter.length ? `    <section class="quiz-static" id="quiz-static">
+      <h2>This build's round</h2>
+      <p class="sec-lede">Ten questions, the same for everyone on this build. The live quiz above draws a fresh random ten instead; this round is here so the page still works without scripts, and so the questions can be read rather than only played. Answers are one click away, not on show.</p>
+      <ol class="qs-list">
+${starter.map((q, i) => `        <li class="qs-q">
+          <p class="qs-kind">${escapeHtml(q.kind)}</p>
+          <p class="qs-ask">${escapeHtml(q.ask)}</p>
+${q.quote ? `          <blockquote class="qs-quote">${escapeHtml(q.quote)}</blockquote>` : ''}
+          <ul class="qs-opts">
+${q.options.map((o) => `            <li>${escapeHtml(o)}</li>`).join('\n')}
+          </ul>
+          <details class="qs-ans">
+            <summary>Show the answer</summary>
+            <p><b>${escapeHtml(q.correct)}</b> — <a href="${base}laws/${escapeHtml(q.law.slug)}/">${escapeHtml(q.law.name)}</a></p>
+          </details>
+        </li>`).join('\n')}
+      </ol>
+    </section>` : `    <noscript><p class="sec-lede">The quiz needs JavaScript. You can still <a href="${base}browse/">browse every law</a>, or read <a href="${base}reliability/">how each one is rated</a>.</p></noscript>`}
 
     <section class="quiz-modes">
       <h2>The four kinds of question</h2>
@@ -145,6 +244,22 @@ ${faq.html}  </div>
       learningResourceType: 'Quiz',
       isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
       about: { '@type': 'Thing', name: 'Named laws, principles and effects' },
+      // hasPart carries the round that is actually ON the page. The random ten
+      // the script draws are not here and must not be described as if they
+      // were: Google's practice-problem result shows the question to a reader,
+      // and it has to be a question they will find when they arrive.
+      ...(starter.length ? {
+        hasPart: starter.map((q) => ({
+          '@type': 'Question',
+          eduQuestionType: 'Multiple choice',
+          learningResourceType: 'Practice problem',
+          name: q.ask,
+          text: q.quote ? `${q.ask} “${q.quote}”` : q.ask,
+          acceptedAnswer: { '@type': 'Answer', text: q.correct },
+          suggestedAnswer: q.options.filter((o) => o !== q.correct)
+            .map((o, i) => ({ '@type': 'Answer', text: o, position: i })),
+        })),
+      } : {}),
     },
     {
       '@context': 'https://schema.org',

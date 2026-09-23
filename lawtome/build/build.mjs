@@ -25,6 +25,7 @@ import { tensionPairs, comparePairs } from './relations.mjs';
 import { reliabilityHubPage } from '../src/templates/reliability.mjs';
 import { kinds, kindPath, kindOf } from './kinds.mjs';
 import { kindsHubPage, kindPage } from '../src/templates/kinds.mjs';
+import { calculatorsPage } from '../src/templates/calculators.mjs';
 import { akaPage, quotesPage } from '../src/templates/lookup.mjs';
 import { bestKnown, bestKnownPage } from '../src/templates/bestknown.mjs';
 import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, setBuildDate, personSlug } from '../src/templates/partials.mjs';
@@ -73,6 +74,8 @@ import { quoteCardSvg, renderPng, siteCardSvg, scoreCardSvg, findingCardSvg } fr
 import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
 import { buildFeed } from './feed.mjs';
+import { widgetSlugs } from '../src/templates/widgets.mjs';
+import { interactiveSlugs } from '../src/templates/interactives.mjs';
 
 /**
  * Every page the build produces, held until the end.
@@ -176,6 +179,19 @@ export async function buildSite(opts) {
 
   const errs = validateCorpus(laws, categories);
   if (errs.length) throw new Error('validation failed:\n' + errs.join('\n'));
+
+  // A widget keyed to a slug that does not exist renders nothing, reports
+  // nothing, and looks exactly like a law that was never given one. The Pareto
+  // principle sat like that: keyed 'the-pareto-principle' against a corpus slug
+  // of 'pareto-principle', so its calculator had never once appeared. Fail the
+  // build rather than ship another silent no-op.
+  {
+    const slugs = new Set(laws.map((l) => l.slug));
+    const orphans = widgetSlugs().concat(interactiveSlugs()).filter((k) => !slugs.has(k));
+    if (orphans.length) {
+      throw new Error('widget spec keyed to unknown slug(s): ' + orphans.join(', '));
+    }
+  }
 
   // Content-hash the mutable assets BEFORE any page renders, so every emitted
   // reference carries ?v=<hash>. Without this a returning visitor can be served a
@@ -467,7 +483,13 @@ export async function buildSite(opts) {
 
   // Law of the day + name-that-law quiz: a static shell filled by assets/quiz.js
   // (which fetches the search index). A learning/return loop, not a "law page".
-  writes.push(writePage(join(out, 'quiz', 'index.html'), quizPage({ base, origin, count: publishedCount, categories })));
+  writes.push(writePage(join(out, 'quiz', 'index.html'), quizPage({ base, origin, count: publishedCount, categories, laws })));
+
+  // /calculators/ — the 187 entries that do something, collected. Nothing else
+  // on the site distinguishes them from the other 929, so a reader who used one
+  // had no route to the rest.
+  writes.push(writePage(join(out, 'calculators', 'index.html'),
+    calculatorsPage(laws, { base, origin, count: publishedCount, categories })));
 
   // A finished round is shareable — but a score pasted into a chat is a bare
   // number until it carries a link, and a link is ignored until it unfurls into
@@ -742,6 +764,7 @@ export async function buildSite(opts) {
     'collections/',                           // curated-collections hub
     ...collections.map((c) => `collections/${c.slug}/`),
     'quiz/',                                  // law of the day + quiz
+    'calculators/',                           // the entries that compute, solve or demonstrate
     'situations/',                            // reverse lookup: problem -> law
     ...problemThemes.map((t) => problemPath(t)), // …and one page per problem theme
     ...allVerdicts.map((v) => verdictPath(v)), // "is X real?", one per well-known soft entry
@@ -1129,6 +1152,32 @@ export async function buildSite(opts) {
   }
 
   await cp(assetsDir, join(out, 'assets'), { recursive: true });
+
+  // Ship the stylesheet without its comments.
+  //
+  // styles.css is 204 kB, of which 106 kB is commentary, and it is a
+  // render-blocking request on all 1,785 pages. Stripping comments takes the
+  // gzipped payload from 48.6 kB to 28.6 kB, which is nearly everything a full
+  // minifier would win, at a fraction of the risk: no whitespace collapsing, no
+  // selector rewriting, nothing that can change what a rule matches.
+  //
+  // The SOURCE keeps every comment. They explain why rules exist and are worth
+  // more than the bytes; they are simply not worth sending to a browser.
+  //
+  // The hash is computed from the source above, so it still changes whenever
+  // the source does. It is not a digest of the shipped bytes and does not need
+  // to be — it only has to invalidate when the styles change.
+  for (const rel of ['styles.css', 'icons/tabler.css']) {
+    const f = join(out, 'assets', rel);
+    try {
+      const css = await readFile(f, 'utf8');
+      const lean = css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n[ \t]*\n+/g, '\n');
+      // Balanced braces after the strip, or something was eaten that should not
+      // have been. Better a fat stylesheet than a broken one.
+      const bal = (t) => (t.match(/\{/g) || []).length === (t.match(/\}/g) || []).length;
+      if (bal(lean) && lean.length < css.length) await writeFile(f, lean);
+    } catch { /* asset absent in this build */ }
+  }
 
   // `pages` counts home + one page per law (unchanged semantics). Browse and
   // per-category listings are reported in `listings`; the graph explorer is a

@@ -9,6 +9,8 @@
 // so every link is an absolute, crawlable URL, exactly as the sitemap does.
 
 import { HUBS } from '../src/templates/hub.mjs';
+import { widgetFor } from '../src/templates/widgets.mjs';
+import { interactiveFor } from '../src/templates/interactives.mjs';
 
 // What the four reliability marks mean, in the file itself.
 //
@@ -110,6 +112,30 @@ export function buildLlmsIndex(laws, categories, { baseUrl = '/', siteName = 'Th
   );
   out.push('');
 
+  // What a share of these entries DO, stated as a fact a model can quote and
+  // act on. An answer engine that knows an entry computes the thing can send a
+  // reader to it as a tool rather than paraphrasing the definition and stopping.
+  {
+    const byKind = new Map();
+    for (const law of laws) {
+      const line = interactionLine(law);
+      if (line) byKind.set(line, (byKind.get(line) || 0) + 1);
+    }
+    const total = [...byKind.values()].reduce((a, b) => a + b, 0);
+    if (total) {
+      out.push(`${total} of these entries are interactive rather than only descriptive: `
+        + `the page computes, solves or demonstrates the thing it defines, free and in the `
+        + `browser, sending nothing anywhere. Each such entry says so under a "Try it" `
+        + `heading in its Markdown twin at /laws/<slug>/index.md, with the identity and its `
+        + `symbols in plain text.`);
+      out.push('');
+      for (const [line, n] of [...byKind.entries()].sort((a, b) => b[1] - a[1])) {
+        out.push(`- ${n} with ${line}.`);
+      }
+      out.push('');
+    }
+  }
+
   // The reliability split, stated as a fact a model can quote. This is the one
   // thing about the corpus that a generative engine most often gets wrong about
   // collections like this — assuming every "law" is a scientific finding.
@@ -177,6 +203,24 @@ export function buildLlmsIndex(laws, categories, { baseUrl = '/', siteName = 'Th
  * @param {object} [opts.byslug] slug -> law map, to name related entries.
  * @returns {string} Markdown document.
  */
+/** What a law's interaction is, in one clause, or '' when it has none. Shared
+ *  by the per-law Markdown twin and the full corpus dump so the two cannot
+ *  drift into saying different things about the same page. */
+export function interactionLine(law) {
+  const w = widgetFor(law.slug);
+  const ix = interactiveFor(law.slug);
+  if (!w && !ix) return '';
+  const KIND = {
+    calculator: 'a live calculator',
+    solver: 'a solver that shows and checks its own working',
+    spot: 'a set of worked cases to test yourself against',
+    sim: 'a runnable model of the mechanism',
+    demo: 'the effect itself, shown rather than described',
+    probe: 'a short exercise that uses your own answers',
+  };
+  return KIND[w ? 'calculator' : ix.kind] || '';
+}
+
 export function buildLawMarkdown(law, { baseUrl = '/', categoryLabel = '', byslug = {} } = {}) {
   const url = `${baseUrl}laws/${law.slug}/`;
   const out = [];
@@ -205,6 +249,48 @@ export function buildLawMarkdown(law, { baseUrl = '/', categoryLabel = '', byslu
       if (text) out.push(`- ${tag ? `**${tag}:** ` : ''}${text}`);
     }
   } else if (law.example) { section('Example', law.example); }
+  // The interaction, in the surface answer engines actually read.
+  //
+  // 84% of this property's AI-feature impressions land on law pages, and the
+  // markdown twin is what an answer engine fetches. Until now it described a
+  // definition and gave no sign that 187 of these pages compute, solve or
+  // demonstrate anything, so the one thing that makes the page worth opening
+  // was invisible to exactly the systems that increasingly decide whether it
+  // gets opened. The formula and its symbols go here in plain text too:
+  // Search Console shows these pages ranking for queries about their own
+  // symbols and units, which is an answer-engine-shaped question.
+  {
+    const w = widgetFor(law.slug);
+    const ix = interactiveFor(law.slug);
+    const spec = w || ix;
+    if (spec) {
+      const KIND = {
+        calculator: 'a live calculator',
+        solver: 'a solver that shows and checks its own working',
+        spot: 'a set of worked cases to test yourself against',
+        sim: 'a runnable model of the mechanism',
+        demo: 'the effect itself, shown rather than described',
+        probe: 'a short exercise that uses your own answers',
+      };
+      const kind = w ? 'calculator' : ix.kind;
+      out.push(''); out.push('## Try it');
+      out.push('');
+      out.push(`This entry is interactive: ${KIND[kind]}.`);
+      out.push(`Open it at ${url} — free, runs in the browser, sends nothing anywhere.`);
+      if (spec.identity) {
+        out.push(''); out.push('```');
+        out.push(oneLine(spec.identity));
+        out.push('```');
+      }
+      const syms = Array.isArray(spec.symbols) ? spec.symbols : [];
+      if (syms.length) {
+        out.push('');
+        for (const y of syms) {
+          out.push(`- \`${oneLine(y.sym)}\` — ${oneLine(y.means)}${y.unit ? ` (${oneLine(y.unit)})` : ''}`);
+        }
+      }
+    }
+  }
   section('Why it matters', law.whyItMatters);
   section('Where it breaks down', law.limits);
   section('Common misreadings', law.misreadings);
@@ -278,6 +364,15 @@ export function buildLlmsFull(laws, categories, { baseUrl = '/', siteName = 'The
       // version of itself, and reproducing that is the failure mode this whole
       // index exists to avoid.
       if (law.limits) { out.push(''); out.push(`Limits: ${oneLine(law.limits)}`); }
+      // What the page DOES, not only what it says. An answer engine that knows
+      // this entry computes the thing can point a reader at it as a tool.
+      const inter = interactionLine(law);
+      if (inter) {
+        const spec = widgetFor(law.slug) || interactiveFor(law.slug);
+        out.push('');
+        out.push(`Interactive: ${inter}, free and in the browser.`);
+        if (spec && spec.identity) out.push(`Identity: ${oneLine(spec.identity)}`);
+      }
       const urls = Array.isArray(law.sources) ? law.sources.map(s => s && s.url).filter(Boolean) : [];
       if (urls.length) { out.push(''); out.push(`Sources: ${urls.join(', ')}`); }
       out.push('');
