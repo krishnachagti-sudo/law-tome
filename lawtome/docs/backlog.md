@@ -123,7 +123,16 @@ leaving a reader to assume the index is smaller than it is.
 
 No harvesting, no authoring. These are pure derivations of the existing corpus.
 
-### B1. Question-shaped titles — **M, derive, high value**
+### B1. Question-shaped titles — **done for field hubs; law pages deliberately not**
+
+> 23 September 2026. The 20 field hubs now ask ("What Are the Laws of
+> Economics & Incentives? 111 Explained"), all within 60 characters. Law
+> pages keep "<Name>: Meaning, Examples & Origin": law.mjs records Search
+> Console evidence behind name-first titles and tool nouns, and 1,116 title
+> changes against a site with live impressions should be measured, not
+> assumed. The question shape already lives on those pages in every section
+> heading and the FAQPage. Revisit with query data.
+
 The Decision Lab titles every bias as a question ("Why do we prefer doing
 something to doing nothing?") because that is how people search. Our entry pages
 and field hubs describe instead. The problem-theme pages already ask; extending
