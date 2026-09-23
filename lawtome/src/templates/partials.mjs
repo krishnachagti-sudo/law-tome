@@ -331,6 +331,11 @@ export function head({ title, description, base = '/', origin = '', path, canoni
     // styles.css — without that, landscape content slides under the notch. The
     // two belong together and neither should be removed alone.
     '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
+    // iOS Safari turns anything shaped like a phone number into a tap-to-call
+    // link, and every entry here is full of them: page ranges ("1124-1131"),
+    // ISSNs ("1864-9335"), sample sizes. In a citation that is wrong, and on a
+    // phone it is a live trap for a mis-tap. No page here has a phone number.
+    '<meta name="format-detection" content="telephone=no">',
     `<title>${escapeHtml(serpTitle)}</title>`,
   ];
   if (serpDescription) out.push(`<meta name="description" content="${escapeHtml(serpDescription)}">`);
@@ -698,6 +703,7 @@ ${shareRow({ live: true, compact: true, label: 'Share this page' }).trimEnd()}
     <span>Corpus licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a>.</span>
   </div>
 </footer>
+<a class="totop" href="#main-content" aria-label="Back to top" hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 ${scripts ? scripts + '\n' : ''}</body>
 </html>
 `;

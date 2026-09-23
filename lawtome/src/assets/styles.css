@@ -310,7 +310,15 @@ html[data-theme="dark"] .hero-mark{color:var(--gold);opacity:.07}
 .ten-say{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--muted);line-height:1.5;margin:0}
 .ten-vs{display:flex;align-items:center;justify-content:center;padding:0 6px;border-left:1px solid var(--line);border-right:1px solid var(--line);background:var(--surface-2)}
 .ten-vs span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+/* "vs" and "compare" are two spans in a flex box with no gap, which rendered
+   as one word, VSCOMPARE, on every linked pair. Stacked in the narrow divider
+   column between the two cards; side by side once the cards stack. The call
+   to action is quieter than the "vs" it follows. */
+.ten-vs--link{flex-direction:column;gap:4px;text-decoration:none}
+.ten-vs .ten-vs-cta{color:var(--muted);letter-spacing:.08em}
+.ten-vs--link:hover .ten-vs-cta{color:var(--accent)}
 @media(max-width:640px){
+  .ten-vs--link{flex-direction:row;gap:10px}
   .ten-pair{grid-template-columns:1fr}
   .ten-vs{border-left:0;border-right:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 0}
 }
@@ -2621,3 +2629,66 @@ footer { padding-bottom: env(safe-area-inset-bottom); }
   .sc-row{grid-template-columns:minmax(0,1fr) auto;gap:4px 12px}
   .sc-bar{grid-column:1/-1;order:3}
 }
+
+/* ============ touch targets ============
+   Measured at 390px on ten page types: every link under 24px that is not in
+   running prose (WCAG 2.2's inline exemption). The footer's licence link was
+   the one on every page, at 16px.
+
+   An invisible ::after reaching 10px above and below takes the tap; the
+   link's own box is untouched, so nothing moves. The Bias Atlas tried padding
+   first and it moved every entry page twice over: its breadcrumb links are
+   inline-block on a phone, and negative margins overwrote paddings links
+   already had. This is the version that diffs clean there.
+
+   Left out on purpose: the SVG map dots on /origins/ (a pseudo-element cannot
+   hang off SVG, and the same laws are listed as text below the map), and the
+   comma-separated runs of law names, which are sentences and are already
+   spaced for touch by section 6 above. Coarse pointers only. */
+@media (pointer:coarse){
+  footer a[rel="license"],.hub-faq-a a,.stmt-meta a.cat,.attrib a.who,.pb-more,.stext > a,
+  .pron-credit a,.img-credit a,h2 > a,.ms-who a,.graph-focus-link{position:relative}
+  footer a[rel="license"]::after,.hub-faq-a a::after,.stmt-meta a.cat::after,.attrib a.who::after,.pb-more::after,.stext > a::after,
+  .pron-credit a::after,.img-credit a::after,h2 > a::after,.ms-who a::after,.graph-focus-link::after{
+    content:"";position:absolute;inset:-10px -2px}
+}
+
+/* ============ back to top ============
+   Phones only (the script shows it at 860px and under), bottom right where a
+   thumb already is, and clear of the home indicator on a notched phone. Above
+   the sticky rails, below the masthead and its open menu. */
+.totop{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom, 0px));z-index:15;
+  display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;
+  background:var(--surface);color:var(--ink);border:1px solid var(--line-strong);
+  box-shadow:0 2px 10px rgba(0,0,0,.12);text-decoration:none}
+.totop[hidden]{display:none}
+.totop:hover{color:var(--accent);border-color:var(--accent)}
+@media print{.totop{display:none}}
+
+/* ============ the A–Z / by-group jump bar on a phone ============
+   It wrapped. That is fine for twenty-six letters on a desktop and wrong on a
+   phone, where the bar is sticky: the Atlas A–Z held three rows, a quarter of
+   the screen, for the whole length of the page, and the Tome's /tension/
+   bar, whose chips are field names, stacked sixteen of them into a column
+   that covered the ENTIRE viewport — the page could not be read at all.
+
+   Below 720px it becomes one row that scrolls sideways, the same shape as the
+   section rails, full bleed under the masthead. The scroll-spy marks the group
+   in view and keeps its chip on screen. */
+@media(max-width:720px){
+  .az-nav{
+    flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;max-height:none;
+    overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+    top:var(--header-h);gap:0;padding:0 8px;border-radius:0;border-inline:0;
+    margin-inline:calc(50% - 50vw);
+    scroll-padding-inline:16px;
+  }
+  .az-nav::-webkit-scrollbar{display:none}
+  .az-nav a,.az-nav span{flex:none;white-space:nowrap;min-height:44px;min-width:36px;padding:0 10px;
+    border-radius:0;border-bottom:2px solid transparent}
+}
+/* In view: a tint on a desktop, where the chips have no border to colour
+   and adding one would nudge the row by 2px; the accent underline on a phone,
+   where every chip already carries a transparent one. */
+.az-nav a.on{color:var(--ink);font-weight:700;background:var(--surface-2)}
+@media(max-width:720px){.az-nav a.on{background:transparent;border-bottom-color:var(--accent)}}

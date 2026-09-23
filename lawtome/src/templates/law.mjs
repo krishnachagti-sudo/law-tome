@@ -1124,7 +1124,14 @@ document.getElementById('copy').onclick=function(){
     // Each section claims the space from its own top to the NEXT section's top,
     // so the figures and infographic cards that sit between blocks count toward
     // the section they follow instead of belonging to nobody.
-    var HEADER=92;
+    // What is stuck to the top: the masthead, plus the rail once it has become
+    // a strip. This was a constant 92px, the desktop masthead, which put the
+    // line in the wrong place on a phone. The header sync publishes both.
+    var rootStyle=getComputedStyle(document.documentElement);
+    var covered=function(){
+      return (parseFloat(rootStyle.getPropertyValue('--header-h'))||92)
+        +(parseFloat(rootStyle.getPropertyValue('--jump-h'))||0);
+    };
     var apply=function(){
       ticking=false;
       if(lock){ if(Date.now()<lockT){mark(lock);return;} lock=null; }
@@ -1138,6 +1145,7 @@ document.getElementById('copy').onclick=function(){
       // Switching only when the NEXT heading passes the line is not a lag; it
       // is the definition of which section you are reading.
       var vh=window.innerHeight;
+      var HEADER=covered();
       var line=HEADER+0.30*(vh-HEADER);
       var best=null;
       for(var i=0;i<secs.length;i++){

@@ -268,7 +268,131 @@
     });
   }
 
-  function wire() { wireTheme(); wireNav(); wireMotion(); wireCoinForm(); }
+  // ---- back to top -----------------------------------------------------------
+  // For phones, where the pages that need it are dozens of screens long and
+  // the masthead is the only way back to navigation. It appears once the reader
+  // is two screens down, and only on pages long enough for that to be far. It
+  // ships `hidden`, so without this script there is simply no button.
+  function wireToTop() {
+    var btn = document.querySelector('.totop');
+    if (!btn) return;
+    var mq = window.matchMedia ? matchMedia('(max-width:860px)') : null;
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var long = document.documentElement.scrollHeight > window.innerHeight * 4;
+      var show = (!mq || mq.matches) && long && window.scrollY > window.innerHeight * 2;
+      if (show === !btn.hidden) return;
+      btn.hidden = !show;
+    }
+    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    addEventListener('resize', update);
+    // Lands on #main-content, which is focusable, so keyboard and screen-reader
+    // users arrive at the start of the content, not an unfocused document.
+    btn.addEventListener('click', function (e) {
+      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      var main = document.getElementById('main-content');
+      if (main) main.focus({ preventScroll: true });
+    });
+    update();
+  }
+
+  // ---- scroll-spy for the jump bars ------------------------------------------
+  // Ported from the Bias Atlas, where it drives the entry rail, the list-page
+  // rail and the A–Z bar. Here it drives the A–Z / by-group bar only: the law
+  // page's section rail keeps its own inline spy in law.mjs, and wiring it
+  // twice would have two scripts fighting over the same highlight.
+  // Drives both rails: the entry page's section rail (.toc) and the jump rail
+  // on long list pages (.jumprail). Same spy, same click lock, same
+  // keep-the-chip-in-view behaviour; only the container differs.
+  function wireToc(sel) {
+    var toc = document.querySelector(sel || '.toc');
+    if (!toc) return;
+    var links = [].slice.call(toc.querySelectorAll('a'));
+    var secs = links
+      .map(function (a) { return { a: a, el: document.getElementById(a.getAttribute('href').slice(1)) }; })
+      .filter(function (o) { return o.el; });
+    if (!secs.length) return;
+
+    var ticking = false, lock = null, lockT = 0;
+    // Below 1240px the same rail is a horizontal strip under the masthead, and
+    // a highlight on a chip that has scrolled off the end of it is no use at
+    // all — on a 390px screen about three of seven are in view. So when it is
+    // horizontal the rail scrolls itself to keep the active chip visible, and
+    // the vertical fill indicator is skipped because it has nothing to fill.
+    function isRail() { return getComputedStyle(toc).flexDirection === 'row'; }
+    function mark(a) {
+      for (var j = 0; j < links.length; j++) links[j].classList.remove('on');
+      if (!a) return;
+      a.classList.add('on');
+      if (isRail()) {
+        var want = a.offsetLeft - (toc.clientWidth - a.offsetWidth) / 2;
+        var max = toc.scrollWidth - toc.clientWidth;
+        want = Math.max(0, Math.min(want, max));
+        // Only when it would actually move: a scroll call per frame while the
+        // reader is scrolling the page fights their own sideways swipe.
+        if (Math.abs(toc.scrollLeft - want) > 6) {
+          if (toc.scrollTo) toc.scrollTo({ left: want, behavior: 'smooth' });
+          else toc.scrollLeft = want;
+        }
+        return;
+      }
+      // Fill runs to the CENTRE of the active item, so the indicator points at
+      // the section name rather than at raw scroll position.
+      toc.style.setProperty('--fill', (a.offsetTop + a.offsetHeight / 2) + 'px');
+    }
+
+    // The active section is the one owning the reading line, a third of the way
+    // down the content area — not the one whose heading last crossed the top, and
+    // not the one covering the most pixels. Largest-area hands the win to the next
+    // section the moment it claims half the screen, which runs ahead of the reader.
+    //
+    // "The content area" starts under whatever is stuck to the top: the
+    // masthead, plus the rail itself once it has turned into a strip. That was
+    // a constant 92px, the desktop masthead, which put the line in the wrong
+    // place on a phone (a shorter masthead, and a strip under it) — so the
+    // live heights the header sync already publishes are read instead.
+    var rootStyle = getComputedStyle(document.documentElement);
+    function covered() {
+      var h = parseFloat(rootStyle.getPropertyValue('--header-h')) || 92;
+      var j = parseFloat(rootStyle.getPropertyValue('--jump-h')) || 0;
+      return h + j;
+    }
+    function apply() {
+      ticking = false;
+      if (lock) { if (Date.now() < lockT) { mark(lock); return; } lock = null; }
+      var top = covered();
+      var line = top + 0.30 * (window.innerHeight - top);
+      var best = null;
+      for (var i = 0; i < secs.length; i++) {
+        if (secs[i].el.getBoundingClientRect().top <= line) best = secs[i];
+      }
+      if (!best) best = secs[0];
+      // The closing sections are often too short to ever reach the line, so at the
+      // foot of the page nothing past the penultimate one would light up.
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) best = secs[secs.length - 1];
+      mark(best ? best.a : null);
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(apply); } }
+
+    // A click wins over the spy while the smooth scroll is still travelling;
+    // otherwise the intermediate positions repaint the highlight onto whatever
+    // section is being passed through and it settles on the wrong one.
+    for (var k = 0; k < links.length; k++) {
+      links[k].addEventListener('click', function () { lock = this; lockT = Date.now() + 1400; mark(this); });
+    }
+    function release() { if (lock) { lock = null; onScroll(); } }
+    addEventListener('wheel', release, { passive: true });
+    addEventListener('touchstart', release, { passive: true });
+    addEventListener('keydown', release);
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll);
+    apply();
+  }
+
+  function wire() { wireTheme(); wireNav(); wireMotion(); wireCoinForm(); wireToTop(); wireToc('.az-nav'); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
   else wire();
 })();
