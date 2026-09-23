@@ -75,6 +75,7 @@ import { quoteCardSvg, renderPng, siteCardSvg, scoreCardSvg, findingCardSvg } fr
 import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
 import { buildFeed } from './feed.mjs';
+import { changeDates } from './changes.mjs';
 import { widgetSlugs } from '../src/templates/widgets.mjs';
 import { interactiveSlugs } from '../src/templates/interactives.mjs';
 
@@ -977,7 +978,11 @@ export async function buildSite(opts) {
   // brand logo, and a web-app manifest). All crawler/OS-facing, not "pages".
   const feedStamp = `${buildDate}T00:00:00Z`;
   const baseHref = `${origin}${base}`;
-  writes.push(writePage(join(out, 'feed.xml'), buildFeed(laws, { baseUrl: baseHref, updated: feedStamp, siteName: 'The Law Tome' })));
+  // When each entry's data last changed, from git (backlog B10); null in a
+  // shallow clone, in which case the feeds keep entry-number order.
+  const CHANGED = changeDates(dataDir);
+  if (!CHANGED) console.warn('feed: history is shallow or unavailable, so the feeds are ordered by entry number, not by change');
+  writes.push(writePage(join(out, 'feed.xml'), buildFeed(laws, { baseUrl: baseHref, updated: feedStamp, siteName: 'The Law Tome', changed: CHANGED })));
 
   // …and one feed per field. A single site-wide feed makes a reader who cares
   // about linguistics subscribe to 1,116 entries to get eleven of them, which is
@@ -991,6 +996,7 @@ export async function buildSite(opts) {
       updated: feedStamp,
       path: `category/${slug}/feed.xml`,
       link: `${baseHref}category/${slug}/`,
+      changed: CHANGED,
       title: `The Law Tome — ${title}`,
       subtitle: `Named laws, principles and effects in ${title.toLowerCase()} — defined, sourced, and rated for how far the evidence goes.`,
     })));

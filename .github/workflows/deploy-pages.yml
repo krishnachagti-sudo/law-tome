@@ -22,6 +22,12 @@ jobs:
         working-directory: lawtome
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history: the feeds are ordered by when each entry's data last
+          # changed, read from git (lawtome/build/changes.mjs). A shallow
+          # checkout would make every entry look changed in the one commit
+          # present, so the build refuses it and falls back to entry order.
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

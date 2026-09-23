@@ -213,7 +213,16 @@ which is the one option that misleads.
 Same disease `/situations/` had. Pagination or segmentation, with the same
 benefit: real landing pages instead of one enormous one.
 
-### B10. A "recently changed" feed — **M, derive**
+### B10. A "recently changed" feed — **done, 23 September 2026**
+
+> build/changes.mjs reads when each entry's data file last changed from git
+> (one file is one entry). The site feed and the twenty field feeds are now
+> "latest changes", each entry stamped with its own date. Not the lastmod
+> manifest, which tracks rendered pages and re-dates everything on a template
+> edit. A shallow clone returns nothing rather than one false date for all, so
+> the feeds fall back to entry order and the build says so; the Pages workflow
+> now checks out full history for this.
+
 `feed.xml` is ordered by entry number as a proxy for recency. Actual change
 tracking — git history over `src/data/laws/*.json` — would make the feed mean
 what it says, and make "we update when the evidence updates" checkable.
