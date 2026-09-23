@@ -144,12 +144,26 @@ reciprocal pairs, and all 134 already have a comparison page among the 234.
 There is no gap here. Recorded rather than deleted so nobody proposes it again —
 including me.
 
-### B3. The 1,645 kindred edges are unexploited — **M, derive**
+### B3. The 1,645 kindred edges are unexploited — **done, 23 September 2026**
+
+> /clusters/: 92 groups of four or more (660 entries) by deterministic label
+> propagation over the kindred links, each named after its best-connected
+> member, never titled by hand. One hub page, not 92 thin ones. The page says
+> clusters are computed and that strays across fields are expected.
+
 Six relation kinds exist; `kindred` is 63% of all edges and does the least work.
 "Ideas that travel together" — clusters computed from the kindred graph — would
 be a browse axis nobody else can offer, because nobody else has the graph.
 
-### B4. Cause-and-consequence chains — **M, derive**
+### B4. Cause-and-consequence chains — **done, 23 September 2026**
+
+> /chains/: 15 walkable chains of three or four steps from 154 directed links.
+> Direction read as: `cause` on A points into A, `consequence` on A points out;
+> the schema does not say, so it was checked against a sample. Steps read
+> "leads to", not "causes". Eight pairs are labelled both ways, which is the
+> corpus contradicting itself; they are left out of every chain and named in
+> the page's FAQ so they can be fixed.
+
 128 `cause` and 89 `consequence` edges form directed chains through the corpus.
 Walkable chains ("this causes that, which causes the other") are a genuinely
 novel view and the data is already directional.

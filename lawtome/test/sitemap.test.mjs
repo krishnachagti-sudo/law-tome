@@ -181,7 +181,9 @@ const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT 
   // + one page per band of /best-known/.
   + BAND_COUNT
   // + one statements page per field under /quotes/.
-  + QUOTE_FIELD_COUNT;
+  + QUOTE_FIELD_COUNT
+  // + /chains/ and /clusters/, the two views of the relation graph.
+  + 2;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));
