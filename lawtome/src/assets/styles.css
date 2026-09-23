@@ -863,6 +863,29 @@ a.badge{text-decoration:none;display:inline-block}
 .stat{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:13px 15px;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,transform .2s}
 .stat .s-k{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint)}
 .stat .s-v{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--ink);line-height:1.12;letter-spacing:-.01em}
+/* On a phone the eight tiles were eight separate cards, two to a row: about
+   340px of chrome before the page said what the law means, and on every law
+   measured the definition started below the first screen (974 to 1,043px
+   down an 844px viewport). The same facts in one ruled box, two columns of
+   compact label-over-value cells, keep the clinical look at half the height.
+   Every tile keeps its link. An odd last tile spans the row rather than
+   leaving a hole. */
+@media(max-width:560px){
+  .dash{grid-template-columns:1fr 1fr;gap:0;margin:16px 0 2px;
+    background:var(--surface);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .dash .stat{background:transparent;border:0;border-radius:0;padding:9px 12px;gap:3px;min-height:44px;justify-content:center}
+  /* Tiles repeating a link from the meta row are hidden here (see law.mjs).
+     The ruling below counts only the tiles that remain, so it is written
+     against :not(.stat--dup) positions, which CSS cannot do: the dividers
+     are drawn by the grid gap on the box background instead. */
+  .dash .stat--dup{display:none}
+  .dash{gap:1px;background:var(--line)}
+  .dash .stat{background:var(--surface)}
+  .dash .stat--span-m{grid-column:1/-1}
+  .dash .stat .s-v{font-size:15px;line-height:1.2}
+  /* the desktop hover lift would jump a cell out of a ruled box */
+  .dash .stat--link:hover{transform:none;background:var(--surface-2)}
+}
 /* tiles that lead somewhere (a tier, a century, the eponym index) get real link
    affordance; the plain informational tiles stay inert. */
 a.stat--link{text-decoration:none}
@@ -2692,3 +2715,30 @@ footer { padding-bottom: env(safe-area-inset-bottom); }
    where every chip already carries a transparent one. */
 .az-nav a.on{color:var(--ink);font-weight:700;background:var(--surface-2)}
 @media(max-width:720px){.az-nav a.on{background:transparent;border-bottom-color:var(--accent)}}
+
+/* The space between the sticky section rail and the first section, on a
+   phone. 30px of layout padding plus a 34px grid gap put more than a
+   thumb's width of empty page between the last fact and "What it means",
+   on the screen where the definition was already fighting for room. */
+@media(max-width:560px){
+  .entry-layout{padding-top:12px;gap:22px}
+}
+/* On a phone the breadcrumb's last step — this law's own name, unlinked — is
+   the heading directly below it, and on long names it wrapped the trail onto
+   a second line. Hidden there; the trail still says where the page sits, and
+   the BreadcrumbList markup keeps all three steps. With the meta row's
+   margins trimmed, this is what brought the definition onto the first screen
+   for the laws with long names. */
+@media(max-width:560px){
+  .entry .crumb-here{display:none}
+  .entry .crumb{padding-top:14px}
+  /* !important only because the template sets this margin inline */
+  .entry .entry-meta{margin-top:12px !important;margin-bottom:10px}
+}
+
+/* An index card below the viewport is laid out and painted only when it is
+   about to scroll into view. /browse/ holds 1,116 of them; every one stays in
+   the HTML, so crawlers, readers without JavaScript and find-in-page see the
+   whole list exactly as before. The intrinsic size is the card's own
+   min-height, so the scrollbar does not jump as cards come into view. */
+.grid > .card{content-visibility:auto;contain-intrinsic-size:auto 186px}

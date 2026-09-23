@@ -232,6 +232,8 @@
       return base;
     }
 
+    // Incremented by every render, so batches from an older one stop drawing.
+    var renderToken = 0;
     function render() {
       if (!grid) return;
       var list = filtered();
@@ -243,20 +245,24 @@
       if (activeSort !== 'no') list = applySort(list); // 'no' keeps natural/relevance order
       grid.textContent = ''; // clear without innerHTML
       if (list.length) {
-        var frag = document.createDocumentFragment();
+        // The cards to show, in order, as builders rather than nodes, so only
+        // the ones actually drawn this frame are ever constructed.
+        var jobs = [];
         if (grouped) {
           // Grouped view: a full-width tier heading, then that tier's cards, in
           // Empirical → Heuristic → Folk-adage → Contested order (rows keep their
           // current sort within each group). A trailing "Other" holds any card
           // whose reliability isn't one of the four (e.g. a coined law).
           var seen = {};
-          function groupBlock(label, members) {
-            var h = document.createElement('h2'); h.className = 'grid-group-h';
-            h.appendChild(document.createTextNode(label));
-            var n = document.createElement('span'); n.className = 'grid-group-n'; n.textContent = members.length;
-            h.appendChild(n); frag.appendChild(h);
-            for (var m = 0; m < members.length; m++) frag.appendChild(buildCard(members[m]));
-          }
+          var groupBlock = function (label, members) {
+            jobs.push(function () {
+              var h = document.createElement('h2'); h.className = 'grid-group-h';
+              h.appendChild(document.createTextNode(label));
+              var n = document.createElement('span'); n.className = 'grid-group-n'; n.textContent = members.length;
+              h.appendChild(n); return h;
+            });
+            members.forEach(function (m) { jobs.push(function () { return buildCard(m); }); });
+          };
           for (var t = 0; t < TIER_ORDER.length; t++) {
             var tier = TIER_ORDER[t], members = [];
             for (var g = 0; g < list.length; g++) if (list[g].reliability === tier) members.push(list[g]);
@@ -266,9 +272,31 @@
           for (var r2 = 0; r2 < list.length; r2++) if (!seen[list[r2].reliability]) rest.push(list[r2]);
           if (rest.length) groupBlock('Other', rest);
         } else {
-          for (var i = 0; i < list.length; i++) frag.appendChild(buildCard(list[i]));
+          list.forEach(function (row) { jobs.push(function () { return buildCard(row); }); });
         }
-        grid.appendChild(frag);
+        // Draw what a reader can see now, and the rest in the frames after.
+        //
+        // This rebuilt all 1,116 cards synchronously on every keystroke. On a
+        // phone-class CPU (Chromium at 4x throttle) that measured 1.1 to 1.3
+        // SECONDS per letter — against Google's 200ms for a good INP, and 500ms
+        // for a poor one. The first FIRST cards cover more than a phone screen
+        // and a desktop viewport, so the keystroke paints what is visible; the
+        // remainder follows in batches, and a newer keystroke cancels any batch
+        // still pending, so a fast typist never waits on results already stale.
+        var FIRST = 24, BATCH = 150, token = ++renderToken;
+        var drawn = 0;
+        var draw = function (upto) {
+          var frag = document.createDocumentFragment();
+          for (; drawn < upto && drawn < jobs.length; drawn++) frag.appendChild(jobs[drawn]());
+          grid.appendChild(frag);
+        };
+        draw(FIRST);
+        var more = function () {
+          if (token !== renderToken || drawn >= jobs.length) return;
+          draw(drawn + BATCH);
+          if (drawn < jobs.length) setTimeout(more, 0);
+        };
+        if (drawn < jobs.length) setTimeout(more, 0);
       } else {
         // Only HTML-string path — echoed query is escaped first. BASE is derived
         // from this script's own src (safe), not user input.

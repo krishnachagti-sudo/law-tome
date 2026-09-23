@@ -236,7 +236,7 @@ export function lawPage(law, ctx = {}) {
   const entry = `<section class="entry">
   <svg class="entry-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
   <div class="wrap-wide">
-    <nav class="crumb" aria-label="Breadcrumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}category/${escapeHtml(law.category)}/">${escapeHtml(catLabel)}</a><span class="sep">/</span>${escapeHtml(law.name)}</nav>
+    <nav class="crumb" aria-label="Breadcrumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}category/${escapeHtml(law.category)}/">${escapeHtml(catLabel)}</a><span class="crumb-here"><span class="sep">/</span>${escapeHtml(law.name)}</span></nav>
     <div class="entry-meta" style="margin-top:18px">
       ${meta.join('\n      ')}
     </div>
@@ -677,11 +677,18 @@ ${items}
   // (reliability tier, century, eponym index, field). These are the corpus's most
   // natural internal links: without them the facet hubs are reachable only from the
   // footer, while the 1,100+ law pages that *have* the facet link nowhere.
+  // A tile whose link the meta row above the title already carries is marked
+  // `stat--dup`, and hidden on a phone. There the two sit a few centimetres
+  // apart, and the grid was what pushed the definition below the first screen
+  // on every law measured. Decided by comparing the actual hrefs rather than
+  // by naming tiles, so if the meta row ever stops carrying a link, the tile
+  // stops being a duplicate and comes back by itself.
+  const metaHrefs = new Set([...meta.join(' ').matchAll(/href="([^"]+)"/g)].map((m) => m[1]));
   const statTile = (k, v, href) => {
     if (v == null || v === '') return '';
     const inner = `<span class="s-k">${escapeHtml(k)}</span><span class="s-v">${escapeHtml(v)}</span>`;
     return href
-      ? `      <a class="stat stat--link" href="${href}">${inner}</a>`
+      ? `      <a class="stat stat--link${metaHrefs.has(href) ? ' stat--dup' : ''}" href="${href}">${inner}</a>`
       : `      <div class="stat">${inner}</div>`;
   };
   const relCount = Array.isArray(law.related) ? law.related.length : 0;
@@ -703,7 +710,16 @@ ${items}
     })(),
     relCount ? statTile('Related', String(relCount), '#sec-related-laws') : '',
     srcCount ? statTile('Sources', String(srcCount), '#sec-sources') : '',
-  ].filter(Boolean).join('\n');
+  ].filter(Boolean)
+    // With the duplicates hidden on a phone, an odd number of tiles left over
+    // would leave a hole in the two-column box. CSS cannot count only the
+    // visible ones, so the last visible tile is told to span the row here.
+    .map((t, i, all) => {
+      const kept = all.filter((x) => !x.includes('stat--dup'));
+      return kept.length % 2 && t === kept[kept.length - 1]
+        ? t.replace('class="stat', 'class="stat stat--span-m') : t;
+    })
+    .join('\n');
   const dash = dashTiles
     ? `<div class="wrap-wide"><div class="dash" data-reveal>\n${dashTiles}\n</div></div>\n`
     : '';
