@@ -311,8 +311,17 @@
     var header = document.querySelector('header');
     if (!header) return;
     /* The jump bar sticks directly under the header, so an anchor has to clear
-       both or it lands behind the bar. */
-    var jump = document.querySelector('.az-nav');
+       both or it lands behind the bar.
+
+       On a law page below 1240px the SECTION RAIL is that bar: the element
+       that is a tall column beside the article on a desktop becomes a strip
+       under the masthead on a phone. Asking the element which way it is
+       pointing is exact; a width test would repeat the breakpoint here and go
+       stale the first time the stylesheet moved it. */
+    var jump = document.querySelector('.az-nav') || document.querySelector('.toc');
+    var horizontal = function (el) {
+      return !!el && getComputedStyle(el).flexDirection === 'row';
+    };
     var last = 0, lastJump = -1;
     var sync = function () {
       var h = Math.round(header.getBoundingClientRect().height);
@@ -320,7 +329,8 @@
         last = h;
         document.documentElement.style.setProperty('--header-h', h + 'px');
       }
-      var j = jump ? Math.round(jump.getBoundingClientRect().height) : 0;
+      var j = jump && (jump.className.indexOf('toc') < 0 || horizontal(jump))
+        ? Math.round(jump.getBoundingClientRect().height) : 0;
       if (j !== lastJump) {
         lastJump = j;
         document.documentElement.style.setProperty('--jump-h', j + 'px');

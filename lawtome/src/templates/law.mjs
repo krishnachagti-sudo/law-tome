@@ -1084,10 +1084,28 @@ document.getElementById('copy').onclick=function(){
   var secs=links.map(function(a){return {a:a,el:document.getElementById(a.getAttribute('href').slice(1))};}).filter(function(o){return o.el;});
   if(secs.length){
     var ticking=false,lock=null,lockT=0;
+    // Below 1240px the same rail is a horizontal strip under the masthead, and
+    // a highlight on a chip that has scrolled off the end of it is no use at
+    // all: this rail carries twelve to fifteen sections and a 390px screen
+    // shows about three. So when it is horizontal the rail scrolls itself to
+    // keep the active chip in view, and the vertical fill is skipped because
+    // it has nothing to fill.
+    var isRail=function(){return toc&&getComputedStyle(toc).flexDirection==='row';};
     var mark=function(a){
       for(var j=0;j<links.length;j++)links[j].classList.remove('on');
       if(!a)return;
       a.classList.add('on');
+      if(isRail()){
+        var want=a.offsetLeft-(toc.clientWidth-a.offsetWidth)/2;
+        want=Math.max(0,Math.min(want,toc.scrollWidth-toc.clientWidth));
+        // Only when it would actually move: a scroll call per frame while the
+        // reader is scrolling fights their own sideways swipe.
+        if(Math.abs(toc.scrollLeft-want)>6){
+          if(toc.scrollTo)toc.scrollTo({left:want,behavior:'smooth'});
+          else toc.scrollLeft=want;
+        }
+        return;
+      }
       // run the rail fill down to the centre of the active item
       if(toc)toc.style.setProperty('--fill',(a.offsetTop+a.offsetHeight/2)+'px');
     };
