@@ -31,7 +31,7 @@
 import { readFileSync } from 'node:fs';
 
 /** Where the Atlas is served. */
-export const ATLAS_BASE = 'https://krishnachagti-sudo.github.io/biases/';
+export const ATLAS_BASE = 'https://conyso.com/biases/';
 
 /**
  * Invert the Atlas's crosswalk into a map keyed by THIS site's slug.
