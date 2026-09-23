@@ -2613,6 +2613,7 @@ html[data-theme="light"] .chip.on{background:var(--accent);border-color:var(--ac
 .sk-other-n{font-family:var(--mono);font-size:10px;color:var(--faint)}
 
 .sk-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr));gap:14px;margin:0 0 44px}
+.sk-small{margin:-24px 0 40px;font-size:13.5px;line-height:1.6;color:var(--muted)}
 .sk-card{display:block;padding:18px;border:1px solid var(--line-strong);border-radius:4px;
   text-decoration:none;background:var(--surface);transition:border-color .2s}
 .sk-card:hover{border-color:var(--accent)}

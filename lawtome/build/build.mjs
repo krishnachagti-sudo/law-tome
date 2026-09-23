@@ -54,7 +54,7 @@ import { verdictPage } from '../src/templates/verdict.mjs';
 import { verdicts, verdictPath } from './verdicts.mjs';
 import { replicationSummary } from './replication.mjs';
 import { findings } from './findings.mjs';
-import { sheets, sheetPath } from './sheets.mjs';
+import { sheets, sheetPath, smallFields } from './sheets.mjs';
 import { sheetsHubPage, sheetPage } from '../src/templates/sheets.mjs';
 import { findingsPage } from '../src/templates/findings.mjs';
 import { misattributed } from './attribution.mjs';
@@ -660,7 +660,7 @@ export async function buildSite(opts) {
   // entry and all 1,116 of them.
   const allSheets = sheets(laws, ranked, categories);
   writes.push(writePage(join(out, 'sheets', 'index.html'),
-    sheetsHubPage(allSheets, { base, origin, count: publishedCount })));
+    sheetsHubPage(allSheets, { base, origin, count: publishedCount, small: smallFields(laws, categories) })));
   for (const sh of allSheets) {
     writes.push(writePage(join(out, 'sheets', sh.slug, 'index.html'),
       sheetPage(sh, { base, origin, count: publishedCount, siblings: allSheets })));

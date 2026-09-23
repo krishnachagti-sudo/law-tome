@@ -26,3 +26,16 @@ test('law pages keep the name first', (t) => {
   const title = unescape(readFileSync('dist/laws/parkinsons-law/index.html', 'utf8').match(/<title>([^<]*)/)[1]);
   assert.match(title, /^Parkinson's Law/);
 });
+
+// B8: a field too small for a sheet is named on the sheets hub, with its field
+// page, so a reader looking for it is not left at a dead end.
+import { smallFields, SHEET_MIN } from '../build/sheets.mjs';
+test('fields below the sheet floor are listed, with their size', () => {
+  const laws = [...Array(SHEET_MIN).keys()].map((i) => ({ slug: `a${i}`, category: 'big' }))
+    .concat([{ slug: 'b1', category: 'tiny' }, { slug: 'b2', category: 'tiny' }]);
+  assert.deepEqual(smallFields(laws, { tiny: 'Tiny field' }), [{ slug: 'tiny', count: 2, title: 'Tiny field' }]);
+});
+test('the built sheets hub names the missing field', (t) => {
+  if (!existsSync('dist/sheets/index.html')) return t.skip('no dist/');
+  assert.match(readFileSync('dist/sheets/index.html', 'utf8'), /<p class="sk-small"><a href="[^"]*category\/linguistics\/">/);
+});

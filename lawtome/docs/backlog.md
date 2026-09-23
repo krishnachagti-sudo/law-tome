@@ -177,7 +177,15 @@ a gap in our own pipeline.
 appear on 104 verdict pages. Putting a compact version on **every** entry page
 would carry the argument to where the traffic lands.
 
-### B8. Linguistics has no sheet — **S, derive**
+### B8. Linguistics has no sheet — **done, 23 September 2026**
+
+> Took the third option. The eight-entry floor stays for the reason
+> build/sheets.mjs gives (a shorter sheet is mostly white space and the field
+> page already shows every entry); the sheets hub now names any field below it,
+> with its size and its field page, so nobody looking for linguistics hits a
+> dead end. `smallFields()` computes it, so a field that grows past the floor
+> gets a sheet and drops off the note by itself.
+
 19 sheets from 20 fields. The missing one is **linguistics, with 6 entries**,
 below the eight-entry floor. Either lower the floor to six (management is next at
 9, so nothing else changes), fold it into a combined sheet, or say on `/sheets/`

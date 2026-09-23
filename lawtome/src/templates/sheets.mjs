@@ -170,7 +170,7 @@ ${nav}${faq.html}${hubNav('sheets/', { base })}  </div>
 }
 
 /** The hub: every sheet, with what is on it. */
-export function sheetsHubPage(all = [], { base = '/', origin = '', count } = {}) {
+export function sheetsHubPage(all = [], { base = '/', origin = '', count, small = [] } = {}) {
   const totalOn = all.reduce((n, s) => n + s.count, 0);
 
   const answer = `${all.length} printable cheat sheets, one per field — ${num(totalOn)} named laws, principles and effects in all. Each sheet carries the ${SHEET_SIZE} best-known entries in its field with the statement each is usually quoted in and a rating for how far the evidence goes, sized to print on paper and licensed CC BY 4.0 so you can hand it round.`;
@@ -209,7 +209,7 @@ ${all.map((s) => `      <a class="sk-card" href="${base}${sheetPath(s)}">
         <span class="skc-l">${s.laws.slice(0, 3).map((l) => escapeHtml(l.name)).join(' · ')}…</span>
       </a>`).join('\n')}
     </div>
-${faq.html}${hubNav('sheets/', { base })}  </div>
+${small.length ? `    <p class="sk-small">${small.map((f) => `<a href="${base}category/${escapeHtml(f.slug)}/">${escapeHtml(f.title)}</a> has ${num(f.count)} ${f.count === 1 ? 'entry' : 'entries'}`).join('; ')}, too few for a sheet of ${small.length === 1 ? 'its' : 'their'} own: a sheet that short is mostly white space, and ${small.length === 1 ? 'its field page shows every one' : 'each field page shows every one'}.</p>\n` : ''}${faq.html}${hubNav('sheets/', { base })}  </div>
 </section>
 `;
 
