@@ -30,9 +30,7 @@ could not read is marked "not verified".
   - CompTIA objects to AI-generated study material.
 - **Distribution:** through instructors, associations and each exam's own
   community.
-- **Next step:** a ranked list of candidate certifications, including CFA and
-  PMP, scored on demand, existing supply, sources, rules, churn, partnerships
-  and search.
+- **Candidate list:** `CANDIDATES.md` ranks about 110 certifications from the five area reports in `candidates/`.
 
 ## Reports
 
