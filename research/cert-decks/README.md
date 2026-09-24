@@ -30,6 +30,7 @@ could not read is marked "not verified".
   - CompTIA objects to AI-generated study material.
 - **Distribution:** through instructors, associations and each exam's own
   community.
+- **Learning science:** `LEARNING-SCIENCE.md` synthesises six sourced reports in `learning-science/`.
 - **Card standard:** `CARD-STANDARD.md`, covering how every card is written, structured,
   checked and released.
 - **Content policy:** `CONTENT-POLICY.md`, covering allowed sources, how exams are named,
