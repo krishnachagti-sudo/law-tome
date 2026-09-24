@@ -4,7 +4,7 @@ How every card on the site is written, structured, checked and released. It
 applies to every deck, from the first to the last. A deck that does not meet it
 does not ship.
 
-Draft 1, 24 September 2026. The evidence behind each rule is in
+Draft 2, 24 September 2026 (adds foundations-first and primer cards). The evidence behind each rule is in
 `flashcards-general/legal-design.md` §5, and the Anki mechanics are in
 `flashcards-general/tech.md`. Both give their sources.
 
@@ -37,46 +37,56 @@ below are built to narrow that gap, not to deny it.
    rule 1, "Do not learn if you do not understand", and rule 2, "Learn before
    you memorize" **[P]**. The Anki manual says shared decks lack "background
    information or explanations" **[M]**.
-2. **One idea per card.** A card asks for one fact, one distinction or one
+2. **Foundations first, inside the deck itself.** A deck must never assume
+   knowledge it hasn't taught. This was the main failure of the owner's own
+   earlier deck: its cards treated concepts as already understood and never
+   explained them at the start. The deck page (principle 1) is not enough,
+   because learners study in the app and skip the page. So every topic opens
+   with **primer cards** (§2a) that introduce the idea before any detail
+   card tests it. And **no card may use a term that has not been introduced
+   earlier in the deck**, or in a prerequisite deck it names. Wozniak rule 3,
+   "Build upon the basics" **[P]**; the card checker enforces the term rule
+   (§5) **[H]**.
+3. **One idea per card.** A card asks for one fact, one distinction or one
    step. Sources: Wozniak rule 4, the minimum information principle; Nielsen,
    "as atomic as possible"; Matuschak, "focus on one detail at a time"
    **[P]**.
-3. **Recall, not recognition.** The default card asks a question with a
+4. **Recall, not recognition.** The default card asks a question with a
    short, typed-in-your-head answer. Short-answer retrieval improved retention
    of the targeted information (Endres et al. 2020) **[E]**.
-4. **Cloze only on fresh sentences.** Matuschak warns that cloze deletions
+5. **Cloze only on fresh sentences.** Matuschak warns that cloze deletions
    "seem particularly susceptible" to pattern matching, "especially when
    created by copying and editing passages from texts" **[P]**. So a cloze card
    is written as its own sentence, never cut from a source passage. Wozniak
    finds cloze "easy and effective" (rule 5) **[P]**.
-5. **Precise and consistent.** Each prompt has exactly one correct answer, the
+6. **Precise and consistent.** Each prompt has exactly one correct answer, the
    same every time. Matuschak: precise, consistent, tractable, effortful
    **[P]**.
-6. **No sets, no long lists.** Wozniak rules 9 and 10, "Avoid sets" and
+7. **No sets, no long lists.** Wozniak rules 9 and 10, "Avoid sets" and
    "Avoid enumerations" **[P]**. A list answer has at most 3 items **[H]**.
    Anything longer is split into cards, or taught as an ordered sequence with
    one card per step.
-7. **Contrast what gets confused.** Where two terms are commonly mixed up,
+8. **Contrast what gets confused.** Where two terms are commonly mixed up,
    add a card that asks for the difference. Wozniak rule 11, "Combat
    interference" **[P]**.
-8. **Context on the front.** The front shows the deck and topic (for example
+9. **Context on the front.** The front shows the deck and topic (for example
    "Kubernetes › Scheduling"), so the prompt can stay short. Wozniak rule 16
    **[P]**.
-9. **An example where it helps.** Every card that tests a concept has an
+10. **An example where it helps.** Every card that tests a concept has an
    example field. Wozniak rule 14, "Personalize and provide examples" **[P]**.
-10. **Make it yours.** Every card has an empty "My note" field, and every
+11. **Make it yours.** Every card has an empty "My note" field, and every
     deck page invites learners to rewrite, add and suspend cards. This is
     our response to the finding that self-made cards win **[E]**. Whether it
     closes the gap is untested, and we don't claim it does **[H]**.
-11. **Source every card.** Wozniak rule 18, "Provide sources" **[P]**.
+12. **Source every card.** Wozniak rule 18, "Provide sources" **[P]**.
     For us it's mandatory (§3).
-12. **Date what can change.** Wozniak rule 19: "time stamping is useful for
+13. **Date what can change.** Wozniak rule 19: "time stamping is useful for
     volatile knowledge that changes in time" **[P]**. Any fact that depends
     on an exam version, a law, a rule or a product release carries a "valid as
     of" date **[H]**.
-13. **Core first.** Cards are tagged `core` or `extra`, so a learner short of
+14. **Core first.** Cards are tagged `core` or `extra`, so a learner short of
     time can study the core only. Wozniak rule 20, "Prioritize" **[P]**.
-14. **Images only when they teach, and only when licensed.** Wozniak rule 6,
+15. **Images only when they teach, and only when licensed.** Wozniak rule 6,
     "Use imagery" **[P]**. Every image carries its licence and source
     **[H]**.
 
@@ -104,10 +114,48 @@ every field that might ever be needed exists from version 1, even if empty.
 | `Priority` | yes | `core` or `extra` |
 | `MyNote` | yes, always empty | For the learner |
 | `PageURL` | yes | The deck page section the card drills |
+| `Kind` | yes | `primer`, `detail` or `contrast` (§2a) |
+| `Introduces` | primers | The terms this card teaches for the first time |
+| `Uses` | yes | Every technical term the card relies on (prompt or answer) |
+| `Order` | yes | The card's position in the deck's teaching sequence |
 
 The **Deck** is identified by the family and the exam or subject, e.g.
 `Scrum::PSM I`. **Tags** give the family, the topic, the priority, and
 `valid-as-of-<year>` where relevant.
+
+## 2a. Primer cards and teaching order
+
+This fixes the failure the owner met in their own earlier deck: cards that
+assumed the concept was already known (principle 2).
+
+**A primer card introduces a concept before anything tests it.** It asks the
+most basic question about the idea, and its back gives:
+- a plain-language answer of one or two sentences;
+- the `Explanation` of why the idea matters;
+- an `Example`.
+
+Typical primer prompts:
+- "What is a Sprint, in one sentence?"
+- "What problem does a Kubernetes Pod solve?"
+- "What does 'suitability' mean in securities rules?"
+
+**Every topic starts with its primers.** A topic opens with one primer for
+each core concept it introduces, before any `detail` or `contrast` card that
+uses those concepts.
+
+**Order is part of the deck.** Every card has an `Order` value. The deck
+ships so that new cards appear in that order: foundations, then details, then
+contrasts. Import options are the learner's choice, so the deck page also
+tells them to study new cards in order. **To verify:** which Anki deck-option
+settings an .apkg can carry, and how they import. The research did not cover
+this.
+
+**Terms are tracked, not assumed.** Every card lists the terms it `Uses`;
+primers list the terms they `Introduce`. A term counts as introduced when a
+primer with a lower `Order` introduces it, either in this deck or in a
+prerequisite deck the deck page names. The deck page also has a short "Start
+here" section listing the prerequisites, and the terms the deck assumes (the
+fewer the better).
 
 ## 3. IDs, and the rules that keep updates from wiping progress
 
@@ -156,7 +204,12 @@ A card fails if it has any of these:
 - an `ExamRefs` value on a deck whose body is not cleared for exam mapping in
   the content policy;
 - any exam logo or image not on the licensed-image list;
-- a change to a note type's fields since the last release.
+- a change to a note type's fields since the last release;
+- a term in `Uses` that no primer with a lower `Order` introduces, in this
+  deck or a named prerequisite deck (the no-assumed-knowledge rule);
+- a `detail` or `contrast` card placed before the primers of its topic;
+- a primer without `Explanation` and `Example`;
+- a missing or duplicate `Order` value.
 
 A deck also fails if:
 - its page does not exist;
