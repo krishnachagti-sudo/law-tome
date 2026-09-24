@@ -30,6 +30,11 @@ could not read is marked "not verified".
   - CompTIA objects to AI-generated study material.
 - **Distribution:** through instructors, associations and each exam's own
   community.
+- **Card standard:** `CARD-STANDARD.md`, covering how every card is written, structured,
+  checked and released.
+- **Content policy:** `CONTENT-POLICY.md`, covering allowed sources, how exams are named,
+  the bodies we don't name yet, and how AI is used.
+- **Hosting:** a conyso.com subpath (decided 24 September 2026).
 - **Candidate list:** `CANDIDATES.md` ranks about 110 certifications from the five area reports in `candidates/`.
 
 ## Reports
