@@ -1,5 +1,8 @@
 # Candidate certifications: the ranked list
 
+> **Superseded.** This first-pass ranking (about 110 exams) is kept for its reasoning. The full ranking of every exam from both passes is in `MASTER-LIST.md` and `master-list.csv`.
+
+
 Merged from five area reports in `candidates/`, researched 24 September 2026:
 cloud, security, finance, project and business, and data, actuarial and
 health. About 110 certifications were scored. Each report gives the evidence,

@@ -36,7 +36,7 @@ could not read is marked "not verified".
 - **Content policy:** `CONTENT-POLICY.md`, covering allowed sources, how exams are named,
   the bodies we don't name yet, and how AI is used.
 - **Hosting:** a conyso.com subpath (decided 24 September 2026).
-- **Candidate list:** `CANDIDATES.md` ranks about 110 certifications from the five area reports in `candidates/`.
+- **Master list:** `MASTER-LIST.md` and `master-list.csv` rank every scored exam from both passes (first pass in `candidates/`, long tail in `candidates-longtail/`). `CANDIDATES.md` is the first-pass ranking, kept for its reasoning.
 
 ## Reports
 
