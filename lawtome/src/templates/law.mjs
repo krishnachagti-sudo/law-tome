@@ -47,6 +47,30 @@ import { readdirSync, readFileSync } from 'node:fs';
  * source and the two numbers are equal; if that ever stops being true the device
  * says so, instead of the first row quietly implying it.
  */
+// law slug -> its Bias Atlas twin (scripts/bias-twins.mjs writes this from the
+// Atlas's own law links). The Atlas links here; this is the link back.
+let BIAS_TWINS = null;
+function biasTwin(slug) {
+  if (!BIAS_TWINS) {
+    try { BIAS_TWINS = JSON.parse(readFileSync(new URL('../data/bias-twins.json', import.meta.url), 'utf8')); }
+    catch { BIAS_TWINS = {}; }
+  }
+  return BIAS_TWINS[slug] || null;
+}
+
+// Randomised title test (src/data/title-test.json, assigned 2026-10-30): pages in
+// `treatment` get a question-led title, `control` pages keep the default. Matched
+// pairs on impressions; read out with the GSC analysis scripts after 28 days.
+// Remove the file (or empty `treatment`) to end the test.
+let TITLE_TEST = null;
+function inTitleTest(slug) {
+  if (!TITLE_TEST) {
+    try { TITLE_TEST = new Set(JSON.parse(readFileSync(new URL('../data/title-test.json', import.meta.url), 'utf8')).treatment || []); }
+    catch { TITLE_TEST = new Set(); }
+  }
+  return TITLE_TEST.has(slug);
+}
+
 let PROOF_ROWS = null;
 function tomeProof() {
   if (PROOF_ROWS) return PROOF_ROWS;
@@ -248,7 +272,11 @@ export function lawPage(law, ctx = {}) {
   // The tool noun joins the protected core, because "Amdahl's Law Calculator"
   // is the phrase being searched for and must not be the part that gets cut.
   const titleCore = toolNoun ? `${law.name} ${toolNoun}` : law.name;
-  const pageTitle = fitTitle(titleCore, [
+  const qName = law.name.replace(/^The /, 'the ');
+  const pageTitle = (!toolNoun && !invite && inTitleTest(law.slug)) ? fitTitle(`What Is ${qName}?`, [
+    ` ${facets.includes('Examples') ? 'Meaning & Examples' : 'Meaning'}`,
+    '',
+  ]) : fitTitle(titleCore, [
     `: ${facetList} | The Law Tome`,
     `: ${facetList}`,
     ...(facets.length > 2 ? [`: ${facets.slice(0, 2).join(' & ')}`] : []),
@@ -814,6 +842,14 @@ ${items}
       blocks.push(block('In tension with',
         `        <div class="rel-cards against">\n${against.map((r) => relCard(r, true)).join('\n')}\n        </div>`, false, `Laws in tension with ${L}`));
     }
+  }
+
+  // The same idea as a cognitive bias, with the Atlas's evidence audit.
+  const twin = biasTwin(law.slug);
+  if (twin) {
+    blocks.push(block('In the Bias Atlas',
+      `        <div class="confused">\n          <a href="${escapeHtml(twin.url)}"><i class="ti ti-arrow-right" aria-hidden="true"></i> ${escapeHtml(twin.name)}: the evidence, as a cognitive bias</a>\n        </div>`,
+      true, `${L} in the Bias Atlas`));
   }
 
   // ---- dashboard stat strip (under the hero) ----------------------------
