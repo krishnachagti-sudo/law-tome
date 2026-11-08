@@ -5,3 +5,10 @@ node_modules/
 # Python bytecode from build/fetch-images.py
 __pycache__/
 *.pyc
+
+# Wave detector reports (scripts/wave-detect.mjs)
+waves/out/
+.env.wave
+
+# Private wave data (decisions) lives in the private law-tome-waves repo
+waves/decisions.json
