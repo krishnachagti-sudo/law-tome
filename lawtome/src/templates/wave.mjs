@@ -37,6 +37,20 @@ export function takeoverInner(wave, { base = '/' } = {}) {
         </div>`;
 }
 
+// The event itself, embedded, never copied. A click-to-load facade: no request
+// goes to YouTube until the reader taps play, which keeps the page fast and the
+// site's no-tracking promise. Then YouTube's privacy-enhanced player loads.
+function mediaBlock(media = []) {
+  return media.filter((m) => m.type === 'youtube').map((m) => `<figure class="wave-video">
+          <button type="button" class="wave-video-play" data-yt="${e(m.id)}" data-yt-title="${e(m.title)}" aria-label="Play ${e(m.title)} (loads YouTube)">
+            <span class="wave-video-icon" aria-hidden="true">&#9658;</span>
+            <span class="wave-video-title">${e(m.title)}</span>
+            <span class="wave-video-by">${e(m.channel)} on YouTube · tap to play (loads YouTube's player)</span>
+          </button>
+          <figcaption>The original video, by <a href="${e(m.channelUrl)}" rel="noopener">${e(m.channel)}</a>. <a href="https://www.youtube.com/watch?v=${e(m.id)}" rel="noopener">Watch on YouTube</a>.</figcaption>
+        </figure>`).join('\n');
+}
+
 function shareRow(title) {
   return `<div class="wave-share">
           <button type="button" class="btn wave-share-btn" data-wave-share data-title="${e(title)}"><i class="ti ti-copy" aria-hidden="true"></i> Share this</button>
@@ -81,9 +95,89 @@ document.addEventListener('click',function(ev){var o=ev.target.closest('[data-op
 var ok=+o.dataset.opt===+box.dataset.answer;document.querySelectorAll('[data-opt]').forEach(function(b){b.disabled=true;b.classList.toggle('is-right',+b.dataset.opt===+box.dataset.answer)});
 box.querySelector('[data-verdict]').textContent=ok?'Right.':'Not quite.';box.hidden=false;var cv=box.querySelector('[data-plot]'),r=box.querySelector('[data-dist]'),out=box.querySelector('[data-dist-out]');
 draw(cv,+r.value);r.addEventListener('input',function(){out.textContent=r.value+' m';draw(cv,+r.value)});return}
+var y=ev.target.closest('[data-yt]');if(y){var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+y.dataset.yt+'?autoplay=1';f.title=y.dataset.ytTitle;f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.className='wave-video-frame';y.replaceWith(f);return}
 var s=ev.target.closest('[data-wave-share]');if(s){var u=location.href.split('#')[0];if(navigator.share){navigator.share({title:s.dataset.title,url:u}).catch(function(){})}
 else if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){var k=document.querySelector('[data-wave-share-ok]');if(k){k.hidden=false;setTimeout(function(){k.hidden=true},2000)}})}}});
 })();`;
+
+
+// ---- in-page figures -------------------------------------------------------------
+// Inline SVG drawn from the same maths as the interactive, so every picture on
+// the page is exact and ours to license. Colours come from CSS (currentColor and
+// the .wf-* classes in wave.css), so they follow the light and dark themes.
+
+function figure(svg, caption, label) {
+  return `<figure class="wave-fig">
+        ${svg.replace('<svg ', `<svg role="img" aria-label="${e(label)}" `)}
+        <figcaption>${e(caption)}</figcaption>
+      </figure>`;
+}
+
+/** Wavefronts bunching ahead of a moving source (the hero). */
+export function heroFigure() {
+  const rings = [];
+  for (let i = 0; i < 7; i++) {
+    const r = 18 + i * 15, cx = 330 - i * 10;
+    rings.push(`<circle class="wf-acc" cx="${cx}" cy="140" r="${r}" fill="none" stroke-width="1.6" opacity="${(1 - i * 0.11).toFixed(2)}"/>`);
+  }
+  const svg = `<svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg">
+          ${rings.join('')}
+          <path class="wf-ink-fill" d="M328 140 l20 -5 l-20 -5 z"/>
+          <text class="wf-lab" x="470" y="124">waves bunch up ahead:</text><text class="wf-lab" x="470" y="140">higher pitch</text>
+          <text class="wf-lab" x="16" y="124">waves stretch out</text><text class="wf-lab" x="16" y="140">behind: lower pitch</text>
+        </svg>`;
+  return figure(svg, 'Each wave leaves from a little further along than the last, so the waves bunch up ahead of the plane and spread out behind it.', 'Diagram of sound waves bunched ahead of a moving plane and spread out behind it');
+}
+
+/** A plane passing a listener, with the distance that matters marked. */
+export function flybyFigure() {
+  const svg = `<svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg">
+          <line class="wf-line" x1="30" y1="50" x2="530" y2="50" stroke-width="1.5" stroke-dasharray="6 5"/>
+          <text class="wf-lab" x="30" y="38">flight path</text>
+          <path class="wf-ink-fill" d="M120 50 l22 -6 l-22 -6 z"/><path class="wf-ink-fill" d="M120 50 l22 6 l-22 6 z" opacity="0.55"/>
+          <line class="wf-acc" x1="280" y1="50" x2="280" y2="160" stroke-width="2"/>
+          <text class="wf-acc-fill wf-lab" x="290" y="110">d, the closest it comes</text>
+          <circle class="wf-acc-fill" cx="280" cy="164" r="7"/>
+          <text class="wf-lab" x="300" y="170">you (or the microphone)</text>
+          <path class="wf-line" d="M142 50 L272 158" stroke-width="1" stroke-dasharray="3 4" fill="none"/>
+          <text class="wf-lab" x="60" y="120">approaching: pitch above normal</text>
+        </svg>`;
+  return figure(svg, 'The pitch falls fastest at the moment the plane is closest. How fast it falls there depends on that distance, d, and on the plane\'s speed.', 'Diagram of a plane flying past a microphone, with the closest distance d marked');
+}
+
+/** The two curves as a static chart, readable with no JavaScript. */
+export function curvesFigure() {
+  const c = 343, f0 = 100, v = 60, T = 90, lo = 80, hi = 125, X0 = 60, W = 470, Y0 = 20, H = 170;
+  const px = (t) => X0 + (t + T) / (2 * T) * W, py = (fr) => Y0 + H - (fr - lo) / (hi - lo) * H;
+  const path = (d) => { const pts = []; for (let t = -T; t <= T; t += 1) { const x = v * t; pts.push(`${px(t).toFixed(1)},${py(f0 * c / (c + v * x / Math.hypot(x, d))).toFixed(1)}`); } return `M${pts.join(' L')}`; };
+  const svg = `<svg viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg">
+          <line class="wf-line" x1="${X0}" y1="${Y0}" x2="${X0}" y2="${Y0 + H}" stroke-width="1"/>
+          <line class="wf-line" x1="${X0}" y1="${Y0 + H}" x2="${X0 + W}" y2="${Y0 + H}" stroke-width="1"/>
+          <text class="wf-lab" x="6" y="${py(121.2) + 4}">121 Hz</text><text class="wf-lab" x="10" y="${py(85.1) + 4}">85 Hz</text>
+          <path class="wf-line" d="${path(1000)}" fill="none" stroke-width="2"/>
+          <path class="wf-acc" d="${path(300)}" fill="none" stroke-width="3.2"/>
+          <text class="wf-acc-fill wf-lab" x="${px(4)}" y="${py(110)}">300 m away: steep</text>
+          <text class="wf-lab" x="${px(22)}" y="${py(98)}">1 km away: gentle</text>
+          <text class="wf-lab" x="${X0 + W}" y="${Y0 + H + 22}" text-anchor="end">time, closest approach in the middle</text>
+        </svg>`;
+  return figure(svg, 'Same plane, same speed. The drop is the same size, 121 Hz to 85 Hz; only its steepness changes with distance. Illustrative: 100 Hz tone, 60 m/s, still air.', 'Chart of two pitch curves: a steep drop for a plane 300 m away and a gentle drop for one 1 km away');
+}
+
+/** Two planes, two distances, one place. */
+export function fixFigure() {
+  const svg = `<svg viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg">
+          <line class="wf-line" x1="20" y1="40" x2="540" y2="110" stroke-width="1.5" stroke-dasharray="6 5"/>
+          <line class="wf-line" x1="60" y1="215" x2="420" y2="10" stroke-width="1.5" stroke-dasharray="6 5"/>
+          <text class="wf-lab" x="350" y="76">plane A's track (ADS-B)</text>
+          <text class="wf-lab" x="330" y="30">plane B's track</text>
+          <path class="wf-acc" d="M20 92 L540 162" stroke-width="10" opacity="0.22"/>
+          <path class="wf-acc" d="M110 230 L470 25" stroke-width="10" opacity="0.22"/>
+          <circle class="wf-acc-fill" cx="300" cy="133" r="8"/>
+          <text class="wf-lab" x="314" y="150">the only spot that fits both curves</text>
+          <text class="wf-lab" x="24" y="122">plane A's distance band</text>
+        </svg>`;
+  return figure(svg, 'Each plane\'s curve gives a distance from its known track, a band on the map. Where the bands cross is where the recording was made.', 'Map diagram: two flight tracks with distance bands that cross at one point');
+}
 
 /**
  * The standalone wave page.
@@ -91,7 +185,7 @@ else if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){va
  * @param {object} law   the law it belongs to
  * @param {object} o     { base, origin, count, categoryLabel, follow }
  */
-export function wavePage(wave, law, { base = '/', origin = '', count, categoryLabel = '', follow = null } = {}) {
+export function wavePage(wave, law, { base = '/', origin = '', count, categoryLabel = '', follow = null, portrait = null } = {}) {
   const path = `wild/${wave.slug}/`;
   const url = `${origin}${base}${path}`;
   const lawUrl = `${base}laws/${law.slug}/`;
@@ -154,12 +248,14 @@ export function wavePage(wave, law, { base = '/', origin = '', count, categoryLa
       <span>Updated <time datetime="${e(wave.updatedAt)}">${e(fmtDate(wave.updatedAt))}</time></span>
       <span>${wave.sources.length} sources, each opened and read</span>
     </div>
+    ${heroFigure()}
     ${shareRow(wave.h1)}
 
     <section class="wave-sec" aria-labelledby="w-what">
       <p class="lbl">What happened</p>
       <h2 class="block-h" id="w-what">The story so far</h2>
-      <p>${e(wave.artefact.text)} <a href="${e(wave.artefact.url)}" rel="noopener">See the report</a>.</p>
+      <p>${e(wave.artefact.text)} <a href="${e(wave.artefact.url)}" rel="noopener">Read Gizmodo's report</a>.</p>
+      ${mediaBlock(wave.media)}
       <ol class="wave-timeline">
 ${wave.timeline.map((t) => `        <li><time datetime="${e(t.date)}">${e(fmtDate(t.date))}</time><span>${e(t.text)} <a class="wave-src" href="${e(src(t.source).url)}" rel="noopener">source</a></span></li>`).join('\n')}
       </ol>
@@ -171,7 +267,7 @@ ${wave.timeline.map((t) => `        <li><time datetime="${e(t.date)}">${e(fmtDat
       <p class="lbl">How it works</p>
       <h2 class="block-h" id="w-how">From a hum to a place on the map</h2>
       <ol class="wave-steps">
-${wave.mechanism.map((m, i) => `        <li><span class="wave-n">${String(i + 1).padStart(2, '0')}</span><div><h3>${e(m.h)}</h3><p>${e(m.text)}</p></div></li>`).join('\n')}
+${wave.mechanism.map((m, i) => `        <li><span class="wave-n">${String(i + 1).padStart(2, '0')}</span><div><h3>${e(m.h)}</h3><p>${e(m.text)}</p>${i === 2 ? flybyFigure() : i === 4 ? fixFigure() : ''}</div></li>`).join('\n')}
       </ol>
       <p class="wave-name">The name for step 2 is <a href="${lawUrl}">${e(law.name)}</a>: ${e(law.statement)}</p>
     </section>
@@ -179,6 +275,7 @@ ${wave.mechanism.map((m, i) => `        <li><span class="wave-n">${String(i + 1)
     <section class="wave-sec" aria-labelledby="w-calc">
       <p class="lbl">Our worked example</p>
       <h2 class="block-h" id="w-calc">Why the curve gives you away</h2>
+      ${curvesFigure()}
       <ul class="wave-calc">
 ${wave.calc.points.map((p) => `        <li>${e(p)}</li>`).join('\n')}
       </ul>
@@ -225,6 +322,7 @@ ${wave.sources.map((s) => `        <li><a href="${e(s.url)}" rel="noopener">${e(
 
     <aside class="wave-law">
       <p class="lbl">The law behind it</p>
+      ${portrait ? `<figure class="wave-portrait"><img src="${base}assets/img/people/${e(portrait.slug)}-sm.webp" alt="${e(portrait.person)}" width="96" height="123" loading="lazy" decoding="async"><figcaption>${e(portrait.person)}. ${e(portrait.licence)}, <a href="${e(portrait.source)}" rel="noopener">source</a>.</figcaption></figure>` : ''}
       <p><a href="${lawUrl}"><strong>${e(law.name)}</strong></a>: ${e(law.statement)}</p>
       <p class="wave-fine">${e(law.origin || '')}</p>
     </aside>

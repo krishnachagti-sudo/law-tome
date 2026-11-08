@@ -62,3 +62,8 @@ test('the law page leads with the takeover only when a wave is passed', () => {
   assert.ok(!without.includes(wave.question));
   assert.ok(takeoverInner(wave, { base: '/lawtome/' }).includes('/lawtome/wild/plane-audio-video-location-doppler-effect/'));
 });
+
+test('the page tells the story, never our process: no detector, no internal measurement', () => {
+  // A reader shared the page for the event, not for how we spotted it.
+  assert.doesNotMatch(html, /wave detector|our detector|Law Tome measurement/i);
+});

@@ -58,11 +58,17 @@ export function changedUrls(manifest, today, baseUrl) {
  * one source of truth beats two that can disagree.
  */
 export function payload(baseUrl, key, urls) {
-  const { host, origin } = new URL(baseUrl);
+  const { host, href } = new URL(baseUrl);
   return {
     host,
     key,
-    keyLocation: `${origin}/${key}.txt`,
+    // The key file sits wherever the build puts it: the site's base. IndexNow
+    // accepts a key file in a subfolder for URLs under that folder ("a key file
+    // in /catalog/ can cover URLs under /catalog/", indexnow.org/documentation),
+    // which is exactly the case for conyso.com/lawtome/. Pointing at the domain
+    // root, as this used to, named a file conyso.com does not serve, so every
+    // submission would have failed verification.
+    keyLocation: `${href.replace(/\/?$/, '/')}${key}.txt`,
     urlList: urls,
   };
 }

@@ -55,16 +55,18 @@ test('host is derived from the URLs, never passed separately', () => {
   // it removes the only way those two can drift apart.
   const p = payload(BASE, KEY, [`${BASE}laws/a/`]);
   assert.equal(p.host, 'example.test');
-  assert.equal(p.keyLocation, `https://example.test/${KEY}.txt`);
+  assert.equal(p.keyLocation, `${BASE}${KEY}.txt`);
   assert.equal(p.key, KEY);
   assert.deepEqual(p.urlList, [`${BASE}laws/a/`]);
 });
 
-test('keyLocation sits at the domain root even when the site is in a subpath', () => {
-  // The key file proves control of the HOST. A key served from /lawtome/ would
-  // not, and the submission would be rejected — this is the mistake worth a test.
+test('keyLocation is the key file the build actually serves, under the site base', () => {
+  // The build writes <key>.txt at the site's base, so for conyso.com/lawtome/ the
+  // file is /lawtome/<key>.txt. IndexNow accepts a key in a subfolder for URLs
+  // under it (indexnow.org/documentation). The old root location named a file
+  // the host never served, so verification would have failed.
   assert.equal(payload('https://example.test/deep/path/', KEY, []).keyLocation,
-    `https://example.test/${KEY}.txt`);
+    `https://example.test/deep/path/${KEY}.txt`);
 });
 
 test('submissions are split at the protocol limit', () => {

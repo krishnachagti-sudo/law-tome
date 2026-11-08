@@ -326,7 +326,7 @@ export async function buildSite(opts) {
   for (const w of waves) {
     const law = byslug[w.law];
     if (!law) throw new Error(`wave ${w.slug}: unknown law ${w.law}`);
-    writes.push(writePage(join(out, 'wild', w.slug, 'index.html'), wavePage(w, law, { base, origin, count: publishedCount, categoryLabel: categories[law.category] || law.category, follow: opts.follow || null })));
+    writes.push(writePage(join(out, 'wild', w.slug, 'index.html'), wavePage(w, law, { base, origin, count: publishedCount, categoryLabel: categories[law.category] || law.category, follow: opts.follow || null, portrait: law.namedAfter ? ((images && images.people) || {})[personSlug(law.namedAfter)] || null : null })));
     writes.push(writePage(join(out, 'og', 'wild', `${w.slug}.png`), renderPng(waveCardSvg(w, law))));
     writes.push(writePage(join(out, 'og', 'wild', `${w.slug}-16x9.png`), renderPng(waveHeroSvg())));
   }

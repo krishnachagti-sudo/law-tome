@@ -59,3 +59,28 @@
 .wave-take-more{margin:0;font-family:var(--mono);font-size:12.5px}
 @media (max-width:560px){.wave-timeline li{grid-template-columns:1fr;gap:4px}.wave-follow-row{flex-direction:column}}
 .wave-sec p a,.wave-sec li a:not(.wave-src),.wave-follow a,.wave-law a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+
+/* In-page figures: inline SVG, coloured by theme. */
+.wave-fig{margin:22px 0;padding:14px;background:var(--surface);border:1px solid var(--line);border-radius:3px}
+.wave-fig svg{width:100%;height:auto;display:block;color:var(--ink)}
+.wave-fig figcaption{font-size:13.5px;line-height:1.55;color:var(--muted);margin-top:10px}
+.wave-steps .wave-fig{margin:14px 0 4px}
+.wf-acc{stroke:var(--accent)}
+.wf-acc-fill{fill:var(--accent)}
+.wf-ink-fill{fill:var(--ink)}
+.wf-line{stroke:var(--muted)}
+.wf-lab{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+text.wf-acc-fill{fill:var(--accent)}
+.wave-portrait{float:right;margin:0 0 10px 16px;width:96px}
+.wave-portrait img{width:96px;height:auto;border-radius:2px;display:block}
+.wave-portrait figcaption{font-size:11px;line-height:1.4;color:var(--muted);margin-top:6px}
+/* The event's own video: a facade until tapped, then YouTube's nocookie player. */
+.wave-video{margin:20px 0}
+.wave-video-play,.wave-video-frame{display:flex;flex-direction:column;justify-content:flex-end;gap:6px;width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:3px;background:radial-gradient(600px 300px at 30% 30%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%),var(--surface);color:var(--ink);text-align:left;padding:22px;cursor:pointer;position:relative}
+.wave-video-frame{padding:0;border:0}
+.wave-video-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font-size:26px;padding-left:5px}
+.wave-video-play:hover .wave-video-icon{transform:translate(-50%,-50%) scale(1.06)}
+.wave-video-title{font-family:var(--serif);font-size:clamp(17px,2.4vw,22px);line-height:1.25}
+.wave-video-by{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.wave-video figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
+.wave-fig figcaption a,.wave-video figcaption a,.wave-portrait figcaption a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px}

@@ -8,27 +8,55 @@
   "detectedAt": "2026-11-06",
   "publishedAt": "2026-11-09",
   "updatedAt": "2026-11-09",
-  "author": { "name": "Krishna Chagti", "url": "https://conyso.com/founder/" },
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
   "title": "How a Plane Overhead Can Reveal Where You Filmed",
   "h1": "How a plane overhead can give away where a video was filmed",
   "question": "Can the sound of a plane overhead reveal where a video was filmed?",
   "answer": "Sometimes, yes. In November 2026 a YouTuber, Colsto, showed that the faint hum of passing propeller planes in a video's audio can be matched against public flight-tracking data. Each plane's pitch falls as it passes, and the shape of that fall depends on where you were standing. The name for this is the Doppler effect.",
-  "event": { "name": "Colsto's aircraft-audio geolocation demonstration", "date": "2026-11-05" },
+  "event": {
+    "name": "Colsto's aircraft-audio geolocation demonstration",
+    "date": "2026-11-05"
+  },
   "artefact": {
-    "text": "Colsto's video demonstration, as reported by Gizmodo, which ran the method on a real recording and narrowed it to one location.",
+    "text": "Colsto's own video walks through the method on a real recording and narrows it to one location. Gizmodo's report covers it in detail.",
     "url": "https://gizmodo.com/a-youtuber-figured-out-how-to-find-almost-anyone-using-airplane-sounds-2000835861"
   },
   "timeline": [
-    { "date": "2026-11-05", "text": "Gizmodo reports Colsto's method: match the Doppler curves of passing aircraft in a recording to ADS-B flight data.", "source": 0 },
-    { "date": "2026-11-06", "text": "Bruce Schneier picks it up on Schneier on Security.", "source": 1 },
-    { "date": "2026-11-06", "text": "The Law Tome's wave detector measures the wave: posts naming the Doppler effect across 15 subreddits in 48 hours, and Wikipedia's Doppler effect article at 1,002 views on 4 November against a normal 577.", "source": 2 }
+    {
+      "date": "2026-11-05",
+      "text": "Gizmodo reports Colsto's method: match the Doppler curves of passing aircraft in a recording to ADS-B flight data.",
+      "source": 0
+    },
+    {
+      "date": "2026-11-06",
+      "text": "Bruce Schneier picks it up on Schneier on Security.",
+      "source": 1
+    }
   ],
   "mechanism": [
-    { "h": "A plane hums at a steady pitch", "text": "A propeller aircraft gives off a tone that, from the cockpit, doesn't change." },
-    { "h": "On the ground, the pitch slides", "text": "As the plane approaches, each sound wave leaves from a little closer to you than the last, so the waves bunch up and the pitch is higher. As it flies away they stretch out and the pitch drops. That is the Doppler effect." },
-    { "h": "The slide has a shape", "text": "The drop isn't instant. It is an S-shaped curve centred on the moment the plane is closest to you, and its shape depends on how fast the plane is going and how close it passes." },
-    { "h": "Planes say where they are", "text": "Aircraft with ADS-B broadcast their position, and public archives keep those tracks, so for any moment you can know which planes were in the sky and where." },
-    { "h": "Search the ground", "text": "For each candidate spot, predict the curve every logged plane would have made there, and keep the spots where the predictions match the recording. In Gizmodo's account, about 70,000 candidate locations fell to about 15,000 on timing and coverage checks, then curve-fitting picked a single location." }
+    {
+      "h": "A plane hums at a steady pitch",
+      "text": "A propeller aircraft gives off a tone that, from the cockpit, doesn't change."
+    },
+    {
+      "h": "On the ground, the pitch slides",
+      "text": "As the plane approaches, each sound wave leaves from a little closer to you than the last, so the waves bunch up and the pitch is higher. As it flies away they stretch out and the pitch drops. That is the Doppler effect."
+    },
+    {
+      "h": "The slide has a shape",
+      "text": "The drop isn't instant. It is an S-shaped curve centred on the moment the plane is closest to you, and its shape depends on how fast the plane is going and how close it passes."
+    },
+    {
+      "h": "Planes say where they are",
+      "text": "Aircraft with ADS-B broadcast their position, and public archives keep those tracks, so for any moment you can know which planes were in the sky and where."
+    },
+    {
+      "h": "Search the ground",
+      "text": "For each candidate spot, predict the curve every logged plane would have made there, and keep the spots where the predictions match the recording. In Gizmodo's account, about 70,000 candidate locations fell to about 15,000 on timing and coverage checks, then curve-fitting picked a single location."
+    }
   ],
   "calc": {
     "assumptions": "Illustrative numbers, not Colsto's: a 100 Hz engine tone, a plane at 60 m/s, sound at 343 m/s, still air, and the sound's travel time ignored.",
@@ -41,12 +69,20 @@
   },
   "predict": {
     "q": "The same plane, at the same speed, passes you twice: once 300 m away and once 1 km away. Which recording has the steeper drop in pitch?",
-    "options": ["The 300 m pass", "The 1 km pass", "They're the same"],
+    "options": [
+      "The 300 m pass",
+      "The 1 km pass",
+      "They're the same"
+    ],
     "answer": 0,
     "reveal": "The 300 m pass, by about 3.3 times. The total drop is identical; only its steepness changes. That difference is what lets the recording place you."
   },
   "predictions": [
-    { "text": "Video-privacy advice will start treating background audio like metadata: something to strip before posting, alongside faces and GPS tags.", "checkBy": "2027-02-01", "status": "open" }
+    {
+      "text": "Video-privacy advice will start treating background audio like metadata: something to strip before posting, alongside faces and GPS tags.",
+      "checkBy": "2027-02-01",
+      "status": "open"
+    }
   ],
   "limits": [
     "It needs aircraft loud enough to pick out of the audio, and flight logs for that place and time.",
@@ -54,14 +90,46 @@
     "Removing the audio track removes the curves this method reads."
   ],
   "faqs": [
-    { "q": "Can a plane's sound reveal where a video was filmed?", "a": "In some cases. The pitch of each passing plane falls in a curve whose shape depends on where you stood. Matching those curves to public flight-tracking data can narrow a recording to a location, as Colsto demonstrated in November 2026." },
-    { "q": "What is a Doppler curve?", "a": "A plot of how a moving source's pitch changes over time as heard by someone standing still. For a passing plane it is an S-shaped fall, centred on the moment of closest approach." },
-    { "q": "What is ADS-B?", "a": "A system in which equipped aircraft broadcast their own position. Public archives record those broadcasts, which is what lets a recording's aircraft be matched to real flights." },
-    { "q": "Would muting the video stop this?", "a": "Removing the audio track removes the curves this method reads. Visual clues are a separate matter." }
+    {
+      "q": "Can a plane's sound reveal where a video was filmed?",
+      "a": "In some cases. The pitch of each passing plane falls in a curve whose shape depends on where you stood. Matching those curves to public flight-tracking data can narrow a recording to a location, as Colsto demonstrated in November 2026."
+    },
+    {
+      "q": "What is a Doppler curve?",
+      "a": "A plot of how a moving source's pitch changes over time as heard by someone standing still. For a passing plane it is an S-shaped fall, centred on the moment of closest approach."
+    },
+    {
+      "q": "What is ADS-B?",
+      "a": "A system in which equipped aircraft broadcast their own position. Public archives record those broadcasts, which is what lets a recording's aircraft be matched to real flights."
+    },
+    {
+      "q": "Would muting the video stop this?",
+      "a": "Removing the audio track removes the curves this method reads. Visual clues are a separate matter."
+    }
   ],
   "sources": [
-    { "text": "Tom Hawking, \"A YouTuber figured out how to find almost anyone using airplane sounds\", Gizmodo, 5 Nov 2026", "url": "https://gizmodo.com/a-youtuber-figured-out-how-to-find-almost-anyone-using-airplane-sounds-2000835861", "checked": "2026-11-08", "supports": "Colsto's method, the ADS-B matching, the 70,000 to 15,000 narrowing and single location, and the need to narrow the flight data first" },
-    { "text": "Bruce Schneier, \"Pinpointing Location of Videos from Background Airplane Sounds\", Schneier on Security, 6 Nov 2026", "url": "https://www.schneier.com/blog/archives/2026/11/pinpointing-location-of-videos-from-background-airplane-sounds.html", "checked": "2026-11-08", "supports": "the pickup on 6 November" },
-    { "text": "The Law Tome wave detector, run of 6 Nov 2026, using the Wikimedia pageviews API and Reddit search", "url": "https://pageviews.wmcloud.org/?pages=Doppler_effect&project=en.wikipedia.org", "checked": "2026-11-06", "supports": "the subreddit count and the Wikipedia views" }
+    {
+      "text": "Tom Hawking, \"A YouTuber figured out how to find almost anyone using airplane sounds\", Gizmodo, 5 Nov 2026",
+      "url": "https://gizmodo.com/a-youtuber-figured-out-how-to-find-almost-anyone-using-airplane-sounds-2000835861",
+      "checked": "2026-11-08",
+      "supports": "Colsto's method, the ADS-B matching, the 70,000 to 15,000 narrowing and single location, and the need to narrow the flight data first"
+    },
+    {
+      "text": "Bruce Schneier, \"Pinpointing Location of Videos from Background Airplane Sounds\", Schneier on Security, 6 Nov 2026",
+      "url": "https://www.schneier.com/blog/archives/2026/11/pinpointing-location-of-videos-from-background-airplane-sounds.html",
+      "checked": "2026-11-08",
+      "supports": "the pickup on 6 November"
+    }
+  ],
+  "media": [
+    {
+      "type": "youtube",
+      "id": "UytYrhYLOKI",
+      "title": "I discovered a sound that leaks your exact location (and it's everywhere)",
+      "channel": "colsto",
+      "channelUrl": "https://www.youtube.com/@colsto",
+      "checked": "2026-11-09",
+      "note": "Colsto's original video, embedded with YouTube's player (embedding allowed by the creator). Confirmed via YouTube oEmbed; the same video Gizmodo embeds."
+    }
   ]
 }

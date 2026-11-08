@@ -1,0 +1,100 @@
+name: Deploy Law Tome to conyso.com
+
+# Builds the Law Tome and uploads it to conyso.com/lawtome/ on the DigitalOcean
+# box, so a merge to main goes live in minutes instead of waiting on a hand
+# upload. Also runs daily, because some pages change with the date: a wave's
+# takeover on its law page switches itself off after its end date, but only
+# when the site is rebuilt.
+#
+# OFF until the owner switches it on. Nothing runs without:
+#   secrets  DEPLOY_SSH_KEY       private half of the deploy key
+#            DEPLOY_KNOWN_HOSTS   the host key line (ssh-keyscan -t ed25519 conyso.com)
+#   vars     DEPLOY_USER          the deploy user Rohit creates
+#            DEPLOY_ROOT          the docroot, e.g. /var/www/conyso (lawtome/ is added below)
+#            PROD_DEPLOY_ENABLED  true
+# Optional:  PROD_DEPLOY_DRY_RUN  true = list what would change, upload nothing
+#            INDEXNOW_PROD        true = tell Bing which pages changed
+#
+# Never uploads with --delete: Law Tome URLs are permanent, and a bad build must
+# never be able to take live pages down.
+
+on:
+  push:
+    branches: [main]
+    paths: ['lawtome/**', '.github/workflows/deploy-prod.yml']
+  schedule:
+    - cron: '30 0 * * *'   # 06:00 IST
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # to commit the lastmod manifest back, so dates stay honest
+
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: vars.PROD_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lawtome
+    env:
+      BASE: /lawtome/
+      ORIGIN: https://conyso.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      # site.config.json is the production config (base /lawtome/, origin
+      # https://conyso.com), so a plain build is the production build.
+      - run: npm run build
+      - run: npm test
+      - run: npm run style -- --strict
+      - run: npm run preflight -- --base=$BASE --origin=$ORIGIN
+
+      - name: Set up SSH
+        env:
+          KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          printf '%s\n' "$KNOWN" > ~/.ssh/known_hosts
+          # Only the pinned host is trusted: the job cannot be pointed at an impostor.
+          printf 'Host conyso.com\n  User %s\n  IdentityFile ~/.ssh/deploy\n  StrictHostKeyChecking yes\n' "${{ vars.DEPLOY_USER }}" > ~/.ssh/config
+
+      - name: Upload (no --delete)
+        run: |
+          DRY=""
+          if [ "${{ vars.PROD_DEPLOY_DRY_RUN }}" = "true" ]; then DRY="--dry-run"; echo "DRY RUN: nothing is uploaded"; fi
+          rsync -az --itemize-changes $DRY dist/ "conyso.com:${{ vars.DEPLOY_ROOT }}/lawtome/"
+
+      - name: Smoke check
+        if: vars.PROD_DEPLOY_DRY_RUN != 'true'
+        run: |
+          for p in "" "laws/the-doppler-effect/" "sitemap.xml"; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$ORIGIN$BASE$p")
+            echo "$code $ORIGIN$BASE$p"
+            [ "$code" = "200" ] || { echo "::error::$ORIGIN$BASE$p returned $code"; exit 1; }
+          done
+
+      - name: Tell Bing what changed
+        if: vars.INDEXNOW_PROD == 'true' && vars.PROD_DEPLOY_DRY_RUN != 'true'
+        run: node build/indexnow.mjs --base=$BASE --origin=$ORIGIN
+
+      # The build re-dates only pages whose content changed, against this file.
+      # Committing it back is what stops tomorrow's run re-dating the same pages.
+      - name: Save the lastmod manifest
+        if: vars.PROD_DEPLOY_DRY_RUN != 'true'
+        run: |
+          git config user.name 'law-tome-deploy'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/data/lastmod.json
+          if git diff --cached --quiet; then echo 'manifest unchanged'; exit 0; fi
+          git commit -q -m 'lastmod: dates from the production build [skip ci]'
+          git push -q
