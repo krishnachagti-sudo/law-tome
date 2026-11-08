@@ -84,3 +84,12 @@ text.wf-acc-fill{fill:var(--accent)}
 .wave-video-by{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
 .wave-video figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
 .wave-fig figcaption a,.wave-video figcaption a,.wave-portrait figcaption a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px}
+/* Who's behind it, what to do, why it matters: the panel's top three asks. */
+.wave-publisher{font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 18px}
+.wave-publisher a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px}
+.wave-do{border:1px solid color-mix(in srgb,var(--ok) 45%,var(--line));background:var(--surface);border-radius:3px;padding:16px 20px;margin:0 0 22px}
+.wave-do .lbl{margin-bottom:8px}
+.wave-do ul{margin:0;padding-left:20px}
+.wave-do li{font-size:15.5px;line-height:1.6;color:var(--read);margin-bottom:6px}
+.wave-why{background:var(--surface);border-left:3px solid var(--line-strong);padding:12px 16px;margin-top:20px}
+.wave-small .wave-pred{margin-top:16px}

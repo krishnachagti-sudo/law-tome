@@ -33,7 +33,7 @@
     {
       "date": "2026-11-06",
       "text": "Bruce Schneier picks it up on Schneier on Security.",
-      "source": 1
+      "source": 2
     }
   ],
   "mechanism": [
@@ -61,11 +61,11 @@
   "calc": {
     "assumptions": "Illustrative numbers, not Colsto's: a 100 Hz engine tone, a plane at 60 m/s, sound at 343 m/s, still air, and the sound's travel time ignored.",
     "points": [
-      "The pitch falls from 121.2 Hz on approach to 85.1 Hz going away, a drop of 36.1 Hz. That total drop depends only on the plane's speed, not on where you stand.",
-      "Where you stand sets how steep the drop is. At 300 m from the flight path it falls at 3.5 Hz per second at its steepest; at 1 km, 1.05 Hz per second. The same plane takes about 3.3 times as long to make the drop.",
-      "So the size of the drop gives the speed, and the steepness gives the distance. Two planes on known tracks, each giving a distance, narrow you down to a few points on the map."
+      "The pitch falls from 121.2 Hz on approach to 85.1 Hz going away. The ratio of the two, about 1.42, depends only on the plane's speed, so it gives the speed without knowing the engine's tone: 60 m/s here.",
+      "Where you stand sets how steep the fall is. At 300 m from the flight path it falls at 3.5 Hz per second at its steepest; at 1 km, 1.05 Hz per second. The same plane takes about 3.3 times as long to make the drop.",
+      "So the high-to-low ratio gives the speed, and the steepness gives the distance. Two planes on known tracks, each giving a distance, narrow you down to a few points on the map."
     ],
-    "formula": "f(t) = f0 · c / (c + v·x / √(x² + d²)), with x = v·t; steepest slope = f0·v² / (c·d)"
+    "formula": "f(t) = f0 · c / (c + v·x / √(x² + d²)), with x = v·t; high/low = (c + v)/(c − v); steepest slope = f0·v² / (c·d)"
   },
   "predict": {
     "q": "The same plane, at the same speed, passes you twice: once 300 m away and once 1 km away. Which recording has the steeper drop in pitch?",
@@ -75,7 +75,7 @@
       "They're the same"
     ],
     "answer": 0,
-    "reveal": "The 300 m pass, by about 3.3 times. The total drop is identical; only its steepness changes. That difference is what lets the recording place you."
+    "reveal": "The 300 m pass, by about 3.3 times. The high-to-low ratio is the same for both; only the steepness changes. That difference is what lets the recording place you."
   },
   "predictions": [
     {
@@ -85,9 +85,12 @@
     }
   ],
   "limits": [
-    "It needs aircraft loud enough to pick out of the audio, and flight logs for that place and time.",
-    "Gizmodo notes it needs a way to narrow the flight data first; sound alone is a needle in a haystack.",
-    "Removing the audio track removes the curves this method reads."
+    "Gizmodo's account describes one demonstration narrowed to a single location. It gives no error margin, and we haven't seen one published.",
+    "It needs aircraft loud enough to pick out of the audio, and flight logs for that place and time. Gizmodo notes the flight data has to be narrowed first; sound alone is a needle in a haystack.",
+    "Not every aircraft broadcasts ADS-B, and public receivers don't cover everywhere, so some skies can't be matched at all.",
+    "Real engines aren't a single steady tone: the pitch drifts with engine speed and comes with harmonics, and wind shifts the curve. Each of these blurs the fit.",
+    "Our worked example ignores the sound's travel time (about 3 seconds from 1 km away) and the plane's height. A real fit has to include both, which is part of why it takes careful work.",
+    "Removing or replacing the audio track removes the curves this method reads."
   ],
   "faqs": [
     {
@@ -115,6 +118,12 @@
       "supports": "Colsto's method, the ADS-B matching, the 70,000 to 15,000 narrowing and single location, and the need to narrow the flight data first"
     },
     {
+      "text": "Colsto, \"I discovered a sound that leaks your exact location (and it's everywhere)\", YouTube, Nov 2026",
+      "url": "https://www.youtube.com/watch?v=UytYrhYLOKI",
+      "checked": "2026-11-09",
+      "supports": "the creator's own demonstration (title and channel confirmed via YouTube; the same video Gizmodo embeds)"
+    },
+    {
       "text": "Bruce Schneier, \"Pinpointing Location of Videos from Background Airplane Sounds\", Schneier on Security, 6 Nov 2026",
       "url": "https://www.schneier.com/blog/archives/2026/11/pinpointing-location-of-videos-from-background-airplane-sounds.html",
       "checked": "2026-11-08",
@@ -131,5 +140,12 @@
       "checked": "2026-11-09",
       "note": "Colsto's original video, embedded with YouTube's player (embedding allowed by the creator). Confirmed via YouTube oEmbed; the same video Gizmodo embeds."
     }
-  ]
+  ],
+  "actions": [
+    "For a video where location matters, remove or replace the audio before posting. This method reads nothing but sound.",
+    "Shorter clips catch fewer passing planes, and fewer planes means fewer curves to match.",
+    "It matters most for quiet recordings with planes overhead. Indoor clips and busy street noise give it little to work with."
+  ],
+  "whyItMatters": "The same method can cut both ways. It can help an investigator check where a piece of footage was really filmed, and it could help someone find where a person records at home. The physics dates from 1842; what's new is pairing it with public flight data.",
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no tracking, nothing for sale on this page."
 }

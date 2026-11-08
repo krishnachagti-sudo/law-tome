@@ -71,7 +71,7 @@ import { buildDataset, datasetCsv, lawRecord, apiIndex } from './dataset.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng, siteCardSvg, scoreCardSvg, findingCardSvg } from './quotecard.mjs';
-import { wavePage, waveCardSvg, waveHeroSvg, takeoverActive } from '../src/templates/wave.mjs';
+import { wavePage, waveCardSvg, waveHeroSvg, waveTallSvg, takeoverActive } from '../src/templates/wave.mjs';
 import { readdirSync, existsSync } from 'node:fs';
 import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
@@ -329,6 +329,7 @@ export async function buildSite(opts) {
     writes.push(writePage(join(out, 'wild', w.slug, 'index.html'), wavePage(w, law, { base, origin, count: publishedCount, categoryLabel: categories[law.category] || law.category, follow: opts.follow || null, portrait: law.namedAfter ? ((images && images.people) || {})[personSlug(law.namedAfter)] || null : null })));
     writes.push(writePage(join(out, 'og', 'wild', `${w.slug}.png`), renderPng(waveCardSvg(w, law))));
     writes.push(writePage(join(out, 'og', 'wild', `${w.slug}-16x9.png`), renderPng(waveHeroSvg())));
+    writes.push(writePage(join(out, 'og', 'wild', `${w.slug}-tall.png`), renderPng(waveTallSvg(w, law))));
   }
 
   // …and one card for the site, used by every page that is not a single entry.

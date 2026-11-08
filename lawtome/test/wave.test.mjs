@@ -67,3 +67,30 @@ test('the page tells the story, never our process: no detector, no internal meas
   // A reader shared the page for the event, not for how we spotted it.
   assert.doesNotMatch(html, /wave detector|our detector|Law Tome measurement/i);
 });
+
+test('speed comes from the high-to-low ratio, never from the size of the drop', () => {
+  // Persona panel 2026-11-09: the drop in Hz depends on the engine's tone, which a recording doesn't give.
+  assert.match(html, /ratio of the two, about 1\.42/);
+  assert.doesNotMatch(html, /size of the drop gives the speed/);
+  assert.equal(((343 + 60) / (343 - 60)).toFixed(2), '1.42');
+});
+
+test('the citation names the date once', () => {
+  assert.match(html, /Chagti, K\. \(2026, November 9\)\./);
+  assert.doesNotMatch(html, /\(2026, 9 Nov 2026\)/);
+});
+
+test('who is behind it and what you can do sit above the story', () => {
+  const pub = html.indexOf('class="wave-publisher"'), doBox = html.indexOf('class="wave-do"'), video = html.indexOf('class="wave-video"'), story = html.indexOf('id="w-what"');
+  assert.ok(pub > 0 && pub < doBox && doBox < video && video < story);
+  assert.match(html, /No ads, no tracking/);
+});
+
+test('the creator\'s own video is listed as a source', () => {
+  assert.ok(wave.sources.some((s) => s.url.includes('UytYrhYLOKI')));
+});
+
+test('the takeover link says how it works, not "the maths"', () => {
+  assert.match(takeoverInner(wave, { base: '/' }), /how it works/);
+  assert.doesNotMatch(takeoverInner(wave, { base: '/' }), /maths/);
+});

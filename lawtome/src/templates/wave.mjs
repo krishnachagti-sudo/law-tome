@@ -33,7 +33,7 @@ export function takeoverInner(wave, { base = '/' } = {}) {
         <div class="wave-take">
           <p class="wave-take-tag"><span class="wave-dot" aria-hidden="true"></span>${e(monthYear(wave.publishedAt))}${wave.status === 'developing' ? ' · developing' : ''}</p>
           <p class="lead">${e(wave.answer)}</p>
-          <p class="wave-take-more"><a href="${url}">The full story, with the maths that does it →</a></p>
+          <p class="wave-take-more"><a href="${url}">The full story: how it works →</a></p>
         </div>`;
 }
 
@@ -191,7 +191,10 @@ export function wavePage(wave, law, { base = '/', origin = '', count, categoryLa
   const lawUrl = `${base}laws/${law.slug}/`;
   const src = (i) => wave.sources[i];
   const tz = '+05:30';
-  const cite = `${wave.author.name.split(' ').reverse().join(', ').replace(/, (\w)\w*$/, ', $1.')} (${wave.publishedAt.slice(0, 4)}, ${fmtDate(wave.publishedAt)}). ${wave.h1}. The Law Tome. ${url}`;
+  // APA-style: Surname, I. (Year, Month Day). Title. Site. URL
+  const [first, ...rest] = wave.author.name.split(' ');
+  const longDate = new Date(`${wave.publishedAt}T00:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'UTC' });
+  const cite = `${rest.join(' ')}, ${first[0]}. (${wave.publishedAt.slice(0, 4)}, ${longDate}). ${wave.h1}. The Law Tome. ${url}`;
 
   const jsonld = [
     {
@@ -248,17 +251,26 @@ export function wavePage(wave, law, { base = '/', origin = '', count, categoryLa
       <span>Updated <time datetime="${e(wave.updatedAt)}">${e(fmtDate(wave.updatedAt))}</time></span>
       <span>${wave.sources.length} sources, each opened and read</span>
     </div>
-    ${heroFigure()}
+    <p class="wave-publisher">${e(wave.publisher)} <a href="${base}about/">About the Tome</a></p>
+
+    <aside class="wave-do" aria-labelledby="w-do">
+      <p class="lbl" id="w-do">What you can do</p>
+      <ul>
+${wave.actions.map((x) => `        <li>${e(x)}</li>`).join('\n')}
+      </ul>
+    </aside>
+
+    ${mediaBlock(wave.media)}
     ${shareRow(wave.h1)}
 
     <section class="wave-sec" aria-labelledby="w-what">
       <p class="lbl">What happened</p>
       <h2 class="block-h" id="w-what">The story so far</h2>
       <p>${e(wave.artefact.text)} <a href="${e(wave.artefact.url)}" rel="noopener">Read Gizmodo's report</a>.</p>
-      ${mediaBlock(wave.media)}
       <ol class="wave-timeline">
 ${wave.timeline.map((t) => `        <li><time datetime="${e(t.date)}">${e(fmtDate(t.date))}</time><span>${e(t.text)} <a class="wave-src" href="${e(src(t.source).url)}" rel="noopener">source</a></span></li>`).join('\n')}
       </ol>
+      <p class="wave-why"><strong>Why it matters.</strong> ${e(wave.whyItMatters)}</p>
     </section>
 
     ${predictBlock(wave.predict)}
@@ -266,6 +278,7 @@ ${wave.timeline.map((t) => `        <li><time datetime="${e(t.date)}">${e(fmtDat
     <section class="wave-sec" aria-labelledby="w-how">
       <p class="lbl">How it works</p>
       <h2 class="block-h" id="w-how">From a hum to a place on the map</h2>
+      ${heroFigure()}
       <ol class="wave-steps">
 ${wave.mechanism.map((m, i) => `        <li><span class="wave-n">${String(i + 1).padStart(2, '0')}</span><div><h3>${e(m.h)}</h3><p>${e(m.text)}</p>${i === 2 ? flybyFigure() : i === 4 ? fixFigure() : ''}</div></li>`).join('\n')}
       </ol>
@@ -290,10 +303,13 @@ ${wave.limits.map((l) => `        <li>${e(l)}</li>`).join('\n')}
       </ul>
     </section>
 
-    <section class="wave-sec" aria-labelledby="w-next">
-      <p class="lbl">What happens next</p>
-      <h2 class="block-h" id="w-next">Our prediction</h2>
-${wave.predictions.map((p) => `      <p class="wave-pred">${e(p.text)} <span class="wave-fine">Our reading, not a finding. We'll check it by ${e(fmtDate(p.checkBy))} and say here whether it held.</span></p>`).join('\n')}
+    <section class="wave-sec wave-how" aria-labelledby="w-know">
+      <p class="lbl">How we know this</p>
+      <h2 class="block-h" id="w-know">Sources, each opened and read</h2>
+      <ol class="wave-sources">
+${wave.sources.map((s) => `        <li><a href="${e(s.url)}" rel="noopener">${e(s.text)}</a><span>Supports: ${e(s.supports)}. Checked ${e(fmtDate(s.checked))}.</span></li>`).join('\n')}
+      </ol>
+      <p class="wave-fine">Written by ${e(wave.author.name)}. Published ${e(fmtDate(wave.publishedAt))}, updated ${e(fmtDate(wave.updatedAt))}. The worked example and the limits on physics are our own reasoning on the stated assumptions.</p>
     </section>
 
     <section class="wave-sec" aria-labelledby="w-faq">
@@ -302,20 +318,12 @@ ${wave.predictions.map((p) => `      <p class="wave-pred">${e(p.text)} <span cla
 ${wave.faqs.map((f) => `      <details class="wave-faq"><summary>${e(f.q)}</summary><p>${e(f.a)}</p></details>`).join('\n')}
     </section>
 
-    <section class="wave-sec wave-how" aria-labelledby="w-know">
-      <p class="lbl">How we know this</p>
-      <h2 class="block-h" id="w-know">Sources, each opened and read</h2>
-      <ol class="wave-sources">
-${wave.sources.map((s) => `        <li><a href="${e(s.url)}" rel="noopener">${e(s.text)}</a><span>Supports: ${e(s.supports)}. Checked ${e(fmtDate(s.checked))}.</span></li>`).join('\n')}
-      </ol>
-      <p class="wave-fine">Written by ${e(wave.author.name)}. Published ${e(fmtDate(wave.publishedAt))}, updated ${e(fmtDate(wave.updatedAt))}. The worked example is our own arithmetic on the stated assumptions.</p>
-    </section>
-
-    <section class="wave-sec" aria-labelledby="w-cite">
+    <section class="wave-sec wave-small" aria-labelledby="w-cite">
       <p class="lbl">Use this</p>
-      <h2 class="block-h" id="w-cite">Cite or embed</h2>
+      <h2 class="block-h" id="w-cite">Cite, embed or share the picture</h2>
       <pre class="wave-cite">${e(cite)}</pre>
-      <p class="wave-fine">The diagram and curve on this page are free to reuse under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>, credited to "The Law Tome" with a link to this page. <a href="${base}og/wild/${e(wave.slug)}-16x9.png">Download the diagram</a>.</p>
+      <p class="wave-fine">The diagrams on this page are free to reuse under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>, credited to "The Law Tome" with a link to this page. <a href="${base}og/wild/${e(wave.slug)}-tall.png">Download the share image (1080×1350)</a> · <a href="${base}og/wild/${e(wave.slug)}-16x9.png">the wide diagram</a>.</p>
+${wave.predictions.map((p) => `      <p class="wave-pred"><strong>Our prediction:</strong> ${e(p.text)} <span class="wave-fine">Our reading, not a finding. We'll check it by ${e(fmtDate(p.checkBy))} and say here whether it held.</span></p>`).join('\n')}
     </section>
 
     ${followHtml}
@@ -365,6 +373,26 @@ ${lines.map((l, i) => `  <text x="72" y="${178 + i * 66}" font-family="Fraunces"
   <path d="${curvePath(640, 360, 480, 170, 300)}" fill="none" stroke="${C.gold}" stroke-width="6"/>
   <text x="72" y="560" font-family="Fraunces" font-size="30" fill="${C.ink}">${e(law.name)}</text>
   <text x="1128" y="560" text-anchor="end" font-family="Space Mono" font-size="20" fill="${C.muted}">conyso.com/lawtome</text>
+</svg>`;
+}
+
+/** 1080x1350 portrait share image: the one idea that travels, with the curve
+ * and the source line, sized for a LinkedIn or Instagram post where people
+ * share a picture rather than a link. */
+export function waveTallSvg(wave, law) {
+  const head = wrap(wave.h1, 24).slice(0, 4);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <rect width="1080" height="1350" fill="${C.bg}"/>
+  <text x="80" y="130" font-family="Space Mono" font-size="26" letter-spacing="3" fill="${C.gold}">IN THE WILD · ${e(monthYear(wave.publishedAt).toUpperCase())}</text>
+${head.map((l, i) => `  <text x="80" y="${230 + i * 76}" font-family="Fraunces" font-size="64" fill="${C.ink}">${e(l)}</text>`).join('\n')}
+  <path d="${curvePath(80, 640, 920, 300, 1000)}" fill="none" stroke="${C.muted}" stroke-width="4" opacity="0.6"/>
+  <path d="${curvePath(80, 640, 920, 300, 300)}" fill="none" stroke="${C.gold}" stroke-width="8"/>
+  <text x="80" y="1000" font-family="Space Mono" font-size="24" fill="${C.gold}">plane 300 m away: steep drop</text>
+  <text x="80" y="1036" font-family="Space Mono" font-size="24" fill="${C.muted}">plane 1 km away: gentle drop</text>
+  <text x="80" y="1110" font-family="Fraunces" font-size="34" fill="${C.ink}">The steepness gives your distance.</text>
+  <text x="80" y="1156" font-family="Fraunces" font-size="34" fill="${C.ink}">Two planes put you on the map.</text>
+  <text x="80" y="1262" font-family="Fraunces" font-size="32" fill="${C.ink}">${e(law.name)}</text>
+  <text x="1000" y="1262" text-anchor="end" font-family="Space Mono" font-size="22" fill="${C.muted}">conyso.com/lawtome</text>
 </svg>`;
 }
 
