@@ -16,6 +16,7 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
+import { takeoverInner } from './wave.mjs';
 import { head, sprite, imageObject, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE, DESC_MAX } from './partials.mjs';
 import { hostOf } from '../../build/surfaces.mjs';
 import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
@@ -473,6 +474,9 @@ ${h2}${inner}
   ].filter(Boolean));
   const prose = (text) => linkLawNames(escapeHtml(text), { byslug, base, skip: proseSkip });
 
+  // A live wave takes the top of the page: the question people arrive with,
+  // answered first, linking to the full story at /wild/ (src/templates/wave.mjs).
+  if (ctx.wave) blocks.push(block('In the news', takeoverInner(ctx.wave, { base }), false, ctx.wave.question, ctx.wave.answer));
   if (law.meaning) blocks.push(block('In plain English', `        <p class="lead">${prose(law.meaning)}</p>`, true, `What does ${L} mean?`));
 
   // The law written as itself, where one exists. Placed right after the plain

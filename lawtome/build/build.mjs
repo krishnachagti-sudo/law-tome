@@ -71,6 +71,8 @@ import { buildDataset, datasetCsv, lawRecord, apiIndex } from './dataset.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng, siteCardSvg, scoreCardSvg, findingCardSvg } from './quotecard.mjs';
+import { wavePage, waveCardSvg, waveHeroSvg, takeoverActive } from '../src/templates/wave.mjs';
+import { readdirSync, existsSync } from 'node:fs';
 import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
 import { buildFeed } from './feed.mjs';
@@ -193,6 +195,7 @@ export async function buildSite(opts) {
   const VERSIONED = [
     'assets/styles.css', 'assets/icons/tabler.css', 'assets/common.js',
     'assets/search.js', 'assets/graph.js', 'assets/quiz.js', 'assets/saved.js',
+    'assets/wave.css',
   ];
   const versions = {};
   await Promise.all(VERSIONED.map(async (rel) => {
@@ -232,6 +235,13 @@ export async function buildSite(opts) {
   // when the page was last generated. Overridable so a reproducible build can
   // pin it. ISO 8601 (date only keeps it stable across a day's rebuilds).
   const buildDate = opts.buildDate ?? new Date().toISOString().slice(0, 10);
+  // Wave pages (src/data/waves/*.json), one per judged viral moment. Each one
+  // whose takeover is live also takes the top of its law's page.
+  const wavesDir = join(dirname(dataDir), 'waves');
+  const waves = existsSync(wavesDir)
+    ? await Promise.all(readdirSync(wavesDir).filter((f) => f.endsWith('.json')).sort().map(async (f) => JSON.parse(await readFile(join(wavesDir, f), 'utf8'))))
+    : [];
+  const liveWave = new Map(waves.filter((w) => takeoverActive(w, buildDate)).map((w) => [w.law, w]));
   // Register it once so every hub's CollectionPage can declare dateModified
   // without fifteen call sites having to remember to pass it.
   setBuildDate(buildDate);
@@ -294,7 +304,7 @@ export async function buildSite(opts) {
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
-    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, images, facts, periodSlugs, replication });
+    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, images, facts, periodSlugs, replication, wave: liveWave.get(laws[i].slug) });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
     // Clean Markdown twin at /laws/<slug>/index.md — a fetch-friendly plain-text
     // representation for LLMs/agents (GEO). Linked from the page via rel=alternate.
@@ -309,6 +319,16 @@ export async function buildSite(opts) {
   for (const law of laws) {
     const png = renderPng(quoteCardSvg(law, { origin, base }));
     writes.push(writePage(join(out, 'og', `${law.slug}.png`), png));
+  }
+
+  // Wave pages and their two images: a text card for social previews and a
+  // 16:9 picture without text for Discover and the article's schema image.
+  for (const w of waves) {
+    const law = byslug[w.law];
+    if (!law) throw new Error(`wave ${w.slug}: unknown law ${w.law}`);
+    writes.push(writePage(join(out, 'wild', w.slug, 'index.html'), wavePage(w, law, { base, origin, count: publishedCount, categoryLabel: categories[law.category] || law.category, follow: opts.follow || null })));
+    writes.push(writePage(join(out, 'og', 'wild', `${w.slug}.png`), renderPng(waveCardSvg(w, law))));
+    writes.push(writePage(join(out, 'og', 'wild', `${w.slug}-16x9.png`), renderPng(waveHeroSvg())));
   }
 
   // …and one card for the site, used by every page that is not a single entry.
@@ -745,6 +765,7 @@ export async function buildSite(opts) {
     'coined/',
     'privacy/',
     'tension/',                               // cross-corpus opposing-pairs view
+    ...waves.map((w) => `wild/${w.slug}/`),     // wave pages
     'compare/',                               // "X vs Y" comparison hub
     ...compares.map((p) => `compare/${p.slug}/`), // one per compared pair
     'reliability/',                           // veracity facet hub

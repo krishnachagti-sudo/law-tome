@@ -138,6 +138,8 @@ const FIELD_PERIOD_COUNT = fieldPeriods(PARSED).length;
 // Countries: one page per country with enough entries born in it.
 const COUNTRY_COUNT = countriesWithPages(countryGroups(PARSED, FACTS)).length;
 const COMPARE_COUNT = comparePairs(PARSED).length;
+// Wave pages: one per sourced viral-moment file.
+const WAVE_COUNT = readdirSync(new URL('../src/data/waves/', import.meta.url)).filter((f) => f.endsWith('.json')).length;
 const NAMESAKE_COUNT = namesakesWithPages(eponymGroups(PARSED)).length;
 // Kinds: the /kinds/ hub + one page per kind of named thing above the floor —
 // razors, paradoxes, theorems, fallacies, read off the entries' own names.
@@ -172,7 +174,9 @@ const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT 
   + (1 + SHEET_COUNT)
   // + one page per problem theme, and one verdict page per testable entry.
   // (/situations/ itself is already counted among the seven hubs above.)
-  + PROBLEM_COUNT + VERDICT_COUNT;
+  + PROBLEM_COUNT + VERDICT_COUNT
+  // + one /wild/ page per wave in src/data/waves/.
+  + WAVE_COUNT;
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));
