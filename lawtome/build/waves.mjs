@@ -439,3 +439,37 @@ export function hitRateBy(decisions, candidates, dim) {
   }
   return by;
 }
+
+// ---- wider viral sources (all keyless) ----------------------------------------
+// More places to see what's big today, so more real waves get a chance to be
+// caught. None of these attaches a law by itself: they feed the viral pool, the
+// mechanism shortlist and the law-name matching.
+
+/** Wikimedia's featured feed: yesterday's most-read English Wikipedia articles. */
+export function parseMostRead(json) {
+  return (json?.mostread?.articles || []).map((a) => ({
+    title: (a.normalizedtitle || a.titles?.normalized || a.title || '').replace(/_/g, ' '),
+    views: a.views, description: a.description || '',
+  })).filter((a) => a.title);
+}
+
+/** Mastodon's trending links (one big instance's view of the fediverse). */
+export function parseMastodonLinks(json) {
+  return (Array.isArray(json) ? json : []).map((l) => ({
+    title: l.title || '', url: l.url, uses: (l.history || []).reduce((n, h) => n + Number(h.uses || 0), 0),
+  })).filter((l) => l.title);
+}
+
+/** Lobsters hottest stories. */
+export function parseLobsters(json) {
+  return (Array.isArray(json) ? json : []).map((s) => ({
+    title: s.title, score: s.score, comments: s.comment_count, url: s.short_id_url || s.url, tags: s.tags || [],
+  })).filter((s) => s.title);
+}
+
+/** A law whose own Wikipedia article is in the most-read list is a law in the news. */
+export function mostReadLawHits(mostRead, laws, wikiTitleOf) {
+  const byTitle = new Map(laws.map((l) => [((wikiTitleOf(l) || '').replace(/_/g, ' ')).toLowerCase(), l.slug]).filter(([t]) => t));
+  return mostRead.filter((a) => byTitle.has(a.title.toLowerCase()))
+    .map((a) => ({ trend: `${a.title} (Wikipedia most-read, ${a.views} views)`, slug: byTitle.get(a.title.toLowerCase()), specific: true }));
+}

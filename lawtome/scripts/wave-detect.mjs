@@ -31,6 +31,7 @@ import {
   alignDaily, sensitiveTerms, hubs, upcoming,
   deviceMix, route, missingLaws, hitRate, recentlyDecided, crowded, hitRateBy,
   parseTrendsRss, parseNewsRss, parseRedditFeed, parseRedditApi,
+  parseMostRead, parseMastodonLinks, parseLobsters, mostReadLawHits,
 } from '../build/waves.mjs';
 
 const args = process.argv.slice(2);
@@ -183,7 +184,8 @@ const hn = skipHn ? [] : await pool(laws, Number(process.env.WAVES_HN_CONCURRENC
 const hnRetried = skipHn ? 0 : await retryFailed(hn, hnFor);
 
 // ---- the viral pool -----------------------------------------------------------
-const GEOS = ['US', 'GB', 'IN'];
+// English-language markets first; India is where the Tome's click rate is best.
+const GEOS = ['US', 'GB', 'IN', 'CA', 'AU', 'IE', 'NZ', 'SG', 'ZA', 'NG', 'PH'];
 const trends = (await Promise.all(GEOS.map(async (g) => ok(await get(`https://trends.google.com/trending/rss?geo=${g}`, 'text')))))
   .flatMap((xml, i) => parseTrendsRss(xml || '', GEOS[i]));
 const front = (await get('https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=30'))?.hits?.map((h) => ({
@@ -196,7 +198,26 @@ for (let back = 1; back <= 3 && !wikiTop.length; back++) {
   wikiTopAll = j?.items?.[0]?.articles || [];
   wikiTop = wikiTopAll.filter((a) => !/^(Main_Page|Special:|Wikipedia:|Portal:|File:|-$)/.test(a.article)).slice(0, 30).map((a) => ({ title: a.article.replace(/_/g, ' '), views: a.views }));
 }
-const trendHits = trendingLawHits([...trends.map((t) => t.title), ...wikiTop.map((a) => a.title)], laws);
+// Wider net (all keyless): Wikipedia's most-read list, Google News top stories
+// in the big markets, Reddit's r/popular top of the day, HN's top stories of
+// the day, Lobsters, and Mastodon's trending links.
+const ymdSlash = (d) => `${d.getUTCFullYear()}/${String(d.getUTCMonth() + 1).padStart(2, '0')}/${String(d.getUTCDate()).padStart(2, '0')}`;
+let mostRead = [];
+for (let back = 1; back <= 3 && !mostRead.length; back++) {
+  mostRead = parseMostRead(ok(await get(`https://api.wikimedia.org/feed/v1/wikipedia/en/featured/${ymdSlash(new Date(now - back * day))}`)));
+}
+const NEWS_GEOS = [['US', 'en-US'], ['IN', 'en-IN'], ['GB', 'en-GB']];
+const topNews = (await Promise.all(NEWS_GEOS.map(async ([g, hl]) => parseNewsRss(ok(await get(`https://news.google.com/rss?hl=${hl}&gl=${g}&ceid=${g}:en`, 'text')) || '')
+  .map((n) => ({ ...n, geo: g }))))).flat();
+const popular = (parseRedditFeed(ok(await get('https://www.reddit.com/r/popular/top/.rss?t=day&limit=50', 'text', 1))) || []).map(({ title, sub, url }) => ({ title, sub, url }));
+const hnTop = (ok(await get(`https://hn.algolia.com/api/v1/search?tags=story&hitsPerPage=50&numericFilters=${encodeURIComponent(`points>150,created_at_i>${nowS - 86400}`)}`))?.hits || [])
+  .map((h) => ({ id: String(h.objectID), title: h.title, points: h.points, comments: h.num_comments, url: `https://news.ycombinator.com/item?id=${h.objectID}` }));
+const lobsters = parseLobsters(ok(await get('https://lobste.rs/hottest.json')));
+const mastodon = parseMastodonLinks(ok(await get('https://mastodon.social/api/v1/trends/links?limit=20')));
+
+const poolTitles = [...trends.map((t) => t.title), ...wikiTop.map((a) => a.title), ...mostRead.map((a) => a.title),
+  ...topNews.map((n) => n.title), ...popular.map((p) => p.title), ...hnTop.map((h) => h.title), ...lobsters.map((x) => x.title), ...mastodon.map((m) => m.title)];
+const trendHits = [...mostReadLawHits(mostRead, laws, wikiTitle), ...trendingLawHits(poolTitles, laws)];
 
 // ---- deep pass: Google News + Reddit on the shortlist -----------------------
 // Candidates are anything with a pulse in the wide pass, a looser bar than the
@@ -287,7 +308,10 @@ for (const { i } of prelim.slice(0, redditN)) {
 }
 
 // ---- coined laws the Tome does not hold yet -----------------------------------
-const known = laws.flatMap((l) => [l.name, ...(l.aliases || []), ...(l.variants || []).map((v) => v.name || v).filter((v) => typeof v === 'string')]);
+// Always the whole corpus, even when --limit trims the laws being checked:
+// otherwise a limited run reports laws the Tome already has as 'new terms'.
+const allLaws = readdirSync(lawDir).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(new URL(f, lawDir), 'utf8')));
+const known = allLaws.flatMap((l) => [l.name, ...(l.aliases || []), ...(l.variants || []).map((v) => v.name || v).filter((v) => typeof v === 'string')]);
 const coined = new Map();
 const addCoined = (text, author, url) => {
   for (const name of coinedCandidates(text, known)) {
@@ -308,6 +332,11 @@ if (!skipHn) {
 for (const n of news) for (const h of n?.headlines || []) addCoined(h.title, `news:${h.title.split(' - ').at(-1)}`, h.title);
 for (const r of reddit) for (const p of r?.posts || []) addCoined(p.title, `reddit:${p.url}`, p.url);
 for (const f of front) addCoined(f.title, `hnfront:${f.id}`, f.url);
+for (const h of hnTop) addCoined(h.title, `hntop:${h.id}`, h.url);
+for (const n of topNews) addCoined(n.title, `news:${n.title.split(' - ').at(-1)}`, n.title);
+for (const p of popular) addCoined(p.title, `reddit:${p.url}`, p.url);
+for (const x of lobsters) addCoined(x.title, `lobsters:${x.url}`, x.url);
+for (const m of mastodon) addCoined(m.title, `mastodon:${m.url}`, m.url);
 // One Trends story is one source however many headlines it carries: counting each
 // headline as its own "person" let a single story pass the three-source bar.
 for (const t of trends) addCoined(t.news.join(' \n '), `trends:${t.title}`, `trends:${t.title}`);
@@ -382,13 +411,23 @@ const pool2 = [
   ...trends.map((t) => ({ from: `Trends ${t.geo}`, topic: t.title, size: t.traffic, context: t.news })),
   ...front.map((s) => ({ from: 'HN front', topic: s.title, size: `${s.points}pts/${s.comments}c`, context: [], url: s.url })),
   ...wikiTop.map((a) => ({ from: 'Wikipedia top', topic: a.title, size: `${a.views} views`, context: [] })),
+  ...mostRead.map((a) => ({ from: 'Wikipedia most-read', topic: a.title, size: `${a.views} views`, context: a.description ? [a.description] : [] })),
+  ...topNews.map((n) => ({ from: `News top ${n.geo}`, topic: n.title, size: '', context: [] })),
+  ...popular.map((p) => ({ from: `Reddit r/${p.sub || 'popular'}`, topic: p.title, size: '', context: [], url: p.url })),
+  ...hnTop.map((h) => ({ from: 'HN top of day', topic: h.title, size: `${h.points}pts/${h.comments}c`, context: [], url: h.url })),
+  ...lobsters.map((x) => ({ from: 'Lobsters', topic: x.title, size: `${x.score}pts`, context: x.tags, url: x.url })),
+  ...mastodon.map((m) => ({ from: 'Mastodon trending', topic: m.title, size: `${m.uses} shares`, context: [], url: m.url })),
 ].map((p) => ({ ...p, testAgainst: shortlist([p.topic, ...p.context].join(' '), index) }));
+const poolBySource = pool2.reduce((m, p) => { const k = p.from.replace(/ [A-Z]{2}$/, '').replace(/^Reddit .*/, 'Reddit r/popular'); m[k] = (m[k] || 0) + 1; return m; }, {});
 
 // A source that returned nothing at all is broken or blocked, not quiet.
 const health = [
   ['Wikipedia pageviews', wiki.filter((w) => w && !w.failed).length, laws.filter(wikiTitle).length],
   ['Google Trends', trends.length, null], ['HN front page', front.length, null], ['Wikipedia top', wikiTop.length, null],
   ['Google News', news.filter(Boolean).length, prelim.length],
+  ['Wikipedia most-read', mostRead.length, null], ['Google News top stories', topNews.length, null],
+  ['Reddit r/popular', popular.length, null], ['HN top of day', hnTop.length, null],
+  ['Lobsters', lobsters.length, null], ['Mastodon trending', mastodon.length, null],
 ].filter(([, got, of]) => got === 0 && of !== 0).map(([name]) => name);
 const report = {
   date, dataThrough: keyToIso(newest), test: isTest || undefined, failures, down: health,
@@ -445,8 +484,11 @@ const md = [`# Waves, ${date}${isTest ? ' (test run)' : ''}`, '',
   ...(coinedList.length ? coinedList.map((c) => `- **${c.name}** · ${c.people} sources, ${c.mentions} mentions · ${c.where.join(' ')}`) : ['_None with three or more sources._']),
   '', '## Viral pool', '',
   'No law is attached to these. "Test against" is a retrieval shortlist for the mechanism test in JUDGE.md, not a match; most should be rejected.', '',
-  ...pool2.map((p) => `- [${p.from}] **${p.topic}** (${p.size || '?'})${p.context.length ? ` · ${p.context.join(' · ')}` : ''}${p.url ? ` ${p.url}` : ''}`
-    + (p.testAgainst.length ? `\n  - Test against: ${p.testAgainst.map((s) => `${s.name} (${s.shared.join(', ')})`).join('; ')}` : '')),
+  `${pool2.length} topics from ${Object.entries(poolBySource).map(([k, n]) => `${k} ${n}`).join(', ')}. Topics with a shortlist come first; the rest are capped at 8 per source.`, '',
+  ...[...pool2.filter((p) => p.testAgainst.length),
+    ...Object.values(pool2.filter((p) => !p.testAgainst.length).reduce((m, p) => { const k = p.from.replace(/ [A-Z]{2}$/, '').replace(/^Reddit .*/, 'Reddit r/popular'); (m[k] ||= []).push(p); return m; }, {})).flatMap((g) => g.slice(0, 8))]
+    .map((p) => `- [${p.from}] **${p.topic}**${p.size ? ` (${p.size})` : ''}${p.context.length ? ` · ${p.context.join(' · ')}` : ''}${p.url ? ` ${p.url}` : ''}`
+      + (p.testAgainst.length ? `\n  - Test against: ${p.testAgainst.map((s) => `${s.name} (${s.shared.join(', ')})`).join('; ')}` : '')),
   '', '## Hit rate so far', '',
   'From waves/decisions.json. Log every judged wave there (date, slug, tier, decision: page | update | reply | skip, reason); this is what tunes the thresholds.', '',
   ...(decisions.length ? ['tier', 'confidence', 'device', 'route'].flatMap((dim) => [`By ${dim}:`, ...Object.entries(hitRateBy(decisions, candidates, dim)).map(([k, b]) => `- ${k}: ${b.acted} acted on of ${b.judged} judged`)]) : ['_No decisions logged yet._']),

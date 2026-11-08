@@ -5,6 +5,7 @@ import {
   trajectory, streakStart, buildLawIndex, shortlist, countSince,
   alignDaily, sensitiveTerms, hubs, upcoming,
   parseTrendsRss, parseNewsRss, parseRedditFeed, parseRedditApi,
+  parseMostRead, parseMastodonLinks, parseLobsters, mostReadLawHits,
   deviceMix, route, missingLaws, hitRate, recentlyDecided, crowded, hitRateBy,
 } from '../build/waves.mjs';
 
@@ -300,4 +301,22 @@ test('hit rate can be split by the signals a wave had when flagged', () => {
   const candidates = [{ slug: 'a', date: '2026-11-08', device: 'mobile' }, { slug: 'b', date: '2026-11-08', device: 'desktop' }];
   const decisions = [{ slug: 'a', date: '2026-11-08', decision: 'update' }, { slug: 'b', date: '2026-11-08', decision: 'skip' }];
   assert.deepEqual(hitRateBy(decisions, candidates, 'device'), { mobile: { judged: 1, acted: 1 }, desktop: { judged: 1, acted: 0 } });
+});
+
+test('wider sources: most-read, Mastodon trending links, Lobsters', () => {
+  assert.deepEqual(parseMostRead({ mostread: { articles: [{ normalizedtitle: 'Doppler effect', views: 50000, description: 'Change in frequency' }] } }),
+    [{ title: 'Doppler effect', views: 50000, description: 'Change in frequency' }]);
+  assert.deepEqual(parseMostRead(null), []);
+  assert.deepEqual(parseMastodonLinks([{ title: 'A story', url: 'u', history: [{ uses: '3' }, { uses: '4' }] }]), [{ title: 'A story', url: 'u', uses: 7 }]);
+  assert.deepEqual(parseLobsters([{ title: 'systemd loves Rust', score: 29, comment_count: 12, short_id_url: 's', tags: ['linux'] }]),
+    [{ title: 'systemd loves Rust', score: 29, comments: 12, url: 's', tags: ['linux'] }]);
+});
+
+test('a law whose own Wikipedia article is most-read today counts as trending, and specifically', () => {
+  const laws = [{ slug: 'the-doppler-effect', sameAs: 'https://en.wikipedia.org/wiki/Doppler_effect' }];
+  const title = (l) => l.sameAs.split('/wiki/')[1];
+  const hits = mostReadLawHits([{ title: 'Doppler effect', views: 50000 }, { title: 'Taylor Swift', views: 9 }], laws, title);
+  assert.equal(hits.length, 1);
+  assert.equal(hits[0].slug, 'the-doppler-effect');
+  assert.equal(hits[0].specific, true);
 });
