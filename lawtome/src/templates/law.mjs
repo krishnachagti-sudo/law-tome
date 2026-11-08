@@ -563,7 +563,12 @@ ${h2}${inner}
     const cards = exItems.map((e) => {
       const text = typeof e === 'string' ? e : (e && e.text) || '';
       const tag = (e && typeof e === 'object' && e.tag) ? e.tag : 'In practice';
-      return `          <div class="example" data-reveal><span class="ex-tag">${escapeHtml(tag)}</span> ${escapeHtml(text)}</div>`;
+      // A dated "in the wild" example (a wave case) carries its own source, so a
+      // news claim on an evergreen page is as checkable as the law's own sources.
+      const src = (e && typeof e === 'object' && e.source && e.source.url)
+        ? ` <a class="ex-src" href="${escapeHtml(e.source.url)}" rel="noopener">${escapeHtml(e.source.text || 'Source')}</a>`
+        : '';
+      return `          <div class="example" data-reveal><span class="ex-tag">${escapeHtml(tag)}</span> ${escapeHtml(text)}${src}</div>`;
     }).join('\n');
     const grid = `        <div class="examples-grid">\n${cards}\n        </div>`;
     const exAnswer = exItems.map((e) => {
