@@ -72,7 +72,10 @@ async function get(url, as = 'json', tries = 3) {
     try {
       const r = await fetch(url, { headers: UA, signal: AbortSignal.timeout(20000) });
       if (r.status === 404) return null;
-      if (r.status === 429 || r.status >= 500) { why = String(r.status); await sleep(3000 * 2 ** i); continue; }
+      // Algolia (HN) answers a burst with 403, not 429; from cloud IPs it does
+      // so hundreds of times a run. Both mean "slow down", so both are retried.
+      const throttled = r.status === 429 || r.status >= 500 || (r.status === 403 && url.includes('algolia.com'));
+      if (throttled) { why = String(r.status); await sleep(3000 * 2 ** i); continue; }
       if (!r.ok) return fail(url, String(r.status));
       return as === 'json' ? await r.json() : await r.text();
     } catch (e) { why = e.name || 'error'; await sleep(1000 * 2 ** i); }
@@ -131,12 +134,18 @@ const wikiFor = async (law) => {
     ...(sp.onsetDaysAgo != null && !sp.stale ? { signalOnset: keyToIso(dayKeys[dayKeys.length - 1 - sp.onsetDaysAgo]) } : {}),
   };
 };
+// Up to three slower rounds: from GitHub's runners HN refused 583 requests in
+// one run and a single 10s retry left 165 laws unchecked.
 const retryFailed = async (results, fn) => {
-  const again = results.map((r, i) => (r?.failed ? i : -1)).filter((i) => i >= 0);
-  if (!again.length) return 0;
-  await sleep(10000);
-  await pool(again, 2, async (i) => { results[i] = await fn(laws[i]); });
-  return again.length;
+  let first = 0;
+  for (const [wait, n] of [[10000, 2], [30000, 1], [60000, 1]]) {
+    const again = results.map((r, i) => (r?.failed ? i : -1)).filter((i) => i >= 0);
+    if (!again.length) break;
+    first ||= again.length;
+    await sleep(wait);
+    await pool(again, n, async (i) => { results[i] = await fn(laws[i]); });
+  }
+  return first;
 };
 const wiki = await pool(laws, 8, wikiFor);
 const wikiRetried = await retryFailed(wiki, wikiFor);
@@ -169,7 +178,8 @@ const hnFor = async (law) => {
 };
 // 4 at a time: at 6, Algolia answered 183-277 requests a run with 403 (all
 // recovered on the slow retry, but that is the API saying slow down).
-const hn = skipHn ? [] : await pool(laws, 4, hnFor);
+// WAVES_HN_CONCURRENCY lets the cloud run go slower than the laptop.
+const hn = skipHn ? [] : await pool(laws, Number(process.env.WAVES_HN_CONCURRENCY) || 4, hnFor);
 const hnRetried = skipHn ? 0 : await retryFailed(hn, hnFor);
 
 // ---- the viral pool -----------------------------------------------------------
