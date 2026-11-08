@@ -16,7 +16,7 @@
 // EVERY corpus string interpolated into markup goes through escapeHtml. The
 // statement accent is injected AFTER escaping (see renderStatement).
 
-import { takeoverInner } from './wave.mjs';
+import { takeoverInner, lawWildInner } from './wave.mjs';
 import { head, sprite, imageObject, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE, DESC_MAX } from './partials.mjs';
 import { hostOf } from '../../build/surfaces.mjs';
 import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
@@ -581,6 +581,11 @@ ${h2}${inner}
       return tag ? `${tag}: ${text}` : text;
     }).filter(Boolean).join(' ');
     blocks.push(block(exItems.length > 1 ? "Where you'll see it" : 'An example', grid, false, `What are examples of ${L}?`, exAnswer));
+  }
+  // Once a wave's takeover has ended, its page stays linked from here for good,
+  // so a wave page never becomes an orphan reachable only from the sitemap.
+  if (!ctx.wave && Array.isArray(ctx.lawWaves) && ctx.lawWaves.length) {
+    blocks.push(block('In the wild', lawWildInner(ctx.lawWaves, { base }), false));
   }
 
   // Variants: named sub-forms / corollaries ({name, text}) — e.g. the four types of Goodhart.

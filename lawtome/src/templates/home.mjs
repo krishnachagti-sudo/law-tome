@@ -40,7 +40,7 @@ function renderStatement(statement, accent) {
     escapeHtml(statement.slice(i + accent.length));
 }
 
-export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '', images, eponymSlugs, lawOfTheDay, found, comparison } = {}) {
+export function homePage(featuredLaws = [], { publishedCount, base = '/', origin = '', images, eponymSlugs, lawOfTheDay, found, comparison, wildHtml = '' } = {}) {
   const nf = new Intl.NumberFormat('en');
   const count = publishedCount == null ? '—' : nf.format(publishedCount);
 
@@ -543,6 +543,7 @@ ${faces.slice(0, 28).map((img) => `      <a class="pb-face" href="${base}named-a
     sprite() +
     header({ base, active: 'browse', count }) +
     hero +
+    wildHtml +
     marquee +
     lotd +
     trust +

@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { wavePage, takeoverInner, takeoverActive, waveCardSvg, waveHeroSvg } from '../src/templates/wave.mjs';
+import { wavePage, takeoverInner, takeoverActive, waveCardSvg, waveHeroSvg, wildHubPage, wildFeed, waveMarkdown, wildLlms, wildStrip, lawWildInner } from '../src/templates/wave.mjs';
 import { lawPage } from '../src/templates/law.mjs';
 
 const wave = JSON.parse(readFileSync(new URL('../src/data/waves/plane-audio-video-location-doppler-effect.json', import.meta.url)));
@@ -17,7 +17,7 @@ test('the takeover runs while developing and until its end date, then stops', ()
 });
 
 test('the answer is the first thing after the headline', () => {
-  const h1 = html.indexOf('<h1'), answer = html.indexOf('wave-answer'), story = html.indexOf('w-what');
+  const h1 = html.indexOf('<h1'), answer = html.indexOf('class="wave-answer"'), story = html.indexOf('id="w-what"');
   assert.ok(h1 > 0 && h1 < answer && answer < story);
 });
 
@@ -93,4 +93,45 @@ test('the creator\'s own video is listed as a source', () => {
 test('the takeover link says how it works, not "the maths"', () => {
   assert.match(takeoverInner(wave, { base: '/' }), /how it works/);
   assert.doesNotMatch(takeoverInner(wave, { base: '/' }), /maths/);
+});
+
+// ---- search, answer-engine and AI-citation basics every wave page must have ----
+
+test('section headings are questions, which answer engines and People Also Ask pick up', () => {
+  const h2 = [...html.matchAll(/<h2 class="block-h"[^>]*>(.*?)<\/h2>/g)].map((m) => m[1]);
+  assert.ok(h2.filter((h) => h.trim().endsWith('?')).length >= 4, h2.join(' | '));
+});
+
+test('the title fits a result slot and says what people search for', () => {
+  const t = html.match(/<title>(.*?)<\/title>/)[1];
+  assert.ok(t.length <= 60, t);
+  assert.match(t, /plane sounds?/i);
+});
+
+test('the article is speakable and links its Markdown twin and the wave feed', () => {
+  const art = ld.find((b) => b['@type'] === 'AnalysisNewsArticle');
+  assert.deepEqual(art.speakable.cssSelector, ['.wave-h1', '.wave-answer']);
+  assert.match(html, /rel="alternate" type="text\/markdown"[^>]*href="\/lawtome\/wild\/plane-audio-video-location-doppler-effect\/index\.md"/);
+  assert.match(html, /application\/atom\+xml[^>]*wild\/feed\.xml/);
+});
+
+test('a wave page is never an orphan: hub, feed, home strip, llms and the law page all point at it', () => {
+  const byslug = { [law.slug]: law };
+  const url = 'wild/plane-audio-video-location-doppler-effect/';
+  assert.ok(wildHubPage([wave], byslug, { base: '/lawtome/' }).includes(url));
+  assert.ok(wildFeed([wave], byslug, { base: '/lawtome/', origin: 'https://conyso.com' }).includes(`https://conyso.com/lawtome/${url}`));
+  assert.ok(wildStrip([wave], byslug, { base: '/lawtome/' }).includes(url));
+  assert.ok(wildLlms([wave], byslug, { base: '/lawtome/', origin: 'https://conyso.com' }).includes(`${url}index.md`));
+  // After the takeover ends, the law page keeps a permanent link.
+  const ctx = { base: '/lawtome/', origin: 'https://conyso.com', byslug };
+  const after = lawPage(law, { ...ctx, lawWaves: [wave] });
+  assert.ok(after.includes(`/lawtome/${url}`));
+  assert.ok(lawWildInner([wave], { base: '/lawtome/' }).includes(url));
+});
+
+test('the Markdown twin carries the answer, the sources and the labelled worked example', () => {
+  const md = waveMarkdown(wave, law, { base: '/lawtome/', origin: 'https://conyso.com' });
+  assert.ok(md.startsWith(`# ${wave.h1}`));
+  for (const s of wave.sources) assert.ok(md.includes(s.url));
+  assert.match(md, /Worked example \(ours, illustrative\)/);
 });

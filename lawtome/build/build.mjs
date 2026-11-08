@@ -71,7 +71,7 @@ import { buildDataset, datasetCsv, lawRecord, apiIndex } from './dataset.mjs';
 import { buildSearchIndex } from './search-index.mjs';
 import { buildGraph } from './graph-data.mjs';
 import { quoteCardSvg, renderPng, siteCardSvg, scoreCardSvg, findingCardSvg } from './quotecard.mjs';
-import { wavePage, waveCardSvg, waveHeroSvg, waveTallSvg, takeoverActive } from '../src/templates/wave.mjs';
+import { wavePage, waveCardSvg, waveHeroSvg, waveTallSvg, takeoverActive, wildHubPage, wildFeed, waveMarkdown, wildLlms, wildStrip } from '../src/templates/wave.mjs';
 import { readdirSync, existsSync } from 'node:fs';
 import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
@@ -289,7 +289,7 @@ export async function buildSite(opts) {
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
     // Home: first 12 laws as the featured rotation, plus the law of the day.
-    writePage(join(out, 'index.html'), homePage(laws.slice(0, 18), { publishedCount, base, origin, images, eponymSlugs, lawOfTheDay, found, comparison })),
+    writePage(join(out, 'index.html'), homePage(laws.slice(0, 18), { publishedCount, base, origin, images, eponymSlugs, lawOfTheDay, found, comparison, wildHtml: wildStrip(waves, byslug, { base }) })),
     // Prebuilt client-search index (a DATA file, not a "page"): fetched by
     // src/assets/search.js. Curated situation phrasing is folded in so a typed
     // problem description surfaces the mapped law. In the concurrent writes[] so
@@ -304,7 +304,7 @@ export async function buildSite(opts) {
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
-    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, images, facts, periodSlugs, replication, wave: liveWave.get(laws[i].slug) });
+    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, images, facts, periodSlugs, replication, wave: liveWave.get(laws[i].slug), lawWaves: waves.filter((w) => w.law === laws[i].slug) });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
     // Clean Markdown twin at /laws/<slug>/index.md — a fetch-friendly plain-text
     // representation for LLMs/agents (GEO). Linked from the page via rel=alternate.
@@ -330,6 +330,11 @@ export async function buildSite(opts) {
     writes.push(writePage(join(out, 'og', 'wild', `${w.slug}.png`), renderPng(waveCardSvg(w, law))));
     writes.push(writePage(join(out, 'og', 'wild', `${w.slug}-16x9.png`), renderPng(waveHeroSvg())));
     writes.push(writePage(join(out, 'og', 'wild', `${w.slug}-tall.png`), renderPng(waveTallSvg(w, law))));
+    writes.push(writePage(join(out, 'wild', w.slug, 'index.md'), waveMarkdown(w, law, { base, origin })));
+  }
+  if (waves.length) {
+    writes.push(writePage(join(out, 'wild', 'index.html'), wildHubPage(waves, byslug, { base, origin, count: publishedCount })));
+    writes.push(writePage(join(out, 'wild', 'feed.xml'), wildFeed(waves, byslug, { base, origin })));
   }
 
   // …and one card for the site, used by every page that is not a single entry.
@@ -766,6 +771,7 @@ export async function buildSite(opts) {
     'coined/',
     'privacy/',
     'tension/',                               // cross-corpus opposing-pairs view
+    ...(waves.length ? ['wild/'] : []),         // the wave hub
     ...waves.map((w) => `wild/${w.slug}/`),     // wave pages
     'compare/',                               // "X vs Y" comparison hub
     ...compares.map((p) => `compare/${p.slug}/`), // one per compared pair
@@ -963,8 +969,8 @@ export async function buildSite(opts) {
         + ` No other collection comes close: the next-biggest carries ${rivalTop} entries and rates none of them (counted ${comparison.checkedOn}).`,
     } : {}),
   };
-  writes.push(writePage(join(out, 'llms.txt'), buildLlmsIndex(laws, categories, llmsOpts)));
-  writes.push(writePage(join(out, 'llms-full.txt'), buildLlmsFull(laws, categories, llmsOpts)));
+  writes.push(writePage(join(out, 'llms.txt'), buildLlmsIndex(laws, categories, llmsOpts) + wildLlms(waves, byslug, { base, origin })));
+  writes.push(writePage(join(out, 'llms-full.txt'), buildLlmsFull(laws, categories, llmsOpts) + wildLlms(waves, byslug, { base, origin }, true)));
 
   // Atom feed of the newest entries + site identity (favicon PNG derived from the
   // brand logo, and a web-app manifest). All crawler/OS-facing, not "pages".

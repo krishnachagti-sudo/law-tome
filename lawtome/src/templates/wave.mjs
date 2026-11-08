@@ -187,6 +187,13 @@ export function fixFigure() {
  */
 export function wavePage(wave, law, { base = '/', origin = '', count, categoryLabel = '', follow = null, portrait = null } = {}) {
   const path = `wild/${wave.slug}/`;
+  // Section headings are questions by default: answer engines and People Also
+  // Ask pick up question-shaped headings. A wave can override any of them.
+  const H = {
+    what: 'What happened?', how: `How does ${law.name.replace(/^The /, 'the ')} explain it?`,
+    calc: 'What does the worked example show?', limits: 'When does it stop working?', faq: 'What else are people asking?',
+    ...(wave.headings || {}),
+  };
   const url = `${origin}${base}${path}`;
   const lawUrl = `${base}laws/${law.slug}/`;
   const src = (i) => wave.sources[i];
@@ -207,6 +214,8 @@ export function wavePage(wave, law, { base = '/', origin = '', count, categoryLa
       about: { '@type': 'DefinedTerm', name: law.name, url: `${origin}${lawUrl}`, ...(law.sameAs ? { sameAs: law.sameAs } : {}) },
       citation: wave.sources.map((s) => ({ '@type': 'CreativeWork', name: s.text, url: s.url })),
       isAccessibleForFree: true,
+      // The headline and the answer are what a voice assistant should read out.
+      speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.wave-h1', '.wave-answer'] },
     },
     {
       '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -239,6 +248,10 @@ export function wavePage(wave, law, { base = '/', origin = '', count, categoryLa
     og: { type: 'article', title: wave.h1, description: wave.answer, image: `${base}og/wild/${wave.slug}.png` },
     published: `${wave.publishedAt}T09:00:00${tz}`, modified: `${wave.updatedAt}T09:00:00${tz}`,
     jsonld,
+    alternates: [
+      { type: 'text/markdown', title: 'Markdown version', href: `${base}${path}index.md` },
+      { type: 'application/atom+xml', title: 'The Law Tome: in the wild', href: `${base}wild/feed.xml` },
+    ],
   }) + sprite() + header({ base, count }) + `
   ${waveCss(base)}
   <article class="wrap wave">
@@ -265,7 +278,7 @@ ${wave.actions.map((x) => `        <li>${e(x)}</li>`).join('\n')}
 
     <section class="wave-sec" aria-labelledby="w-what">
       <p class="lbl">What happened</p>
-      <h2 class="block-h" id="w-what">The story so far</h2>
+      <h2 class="block-h" id="w-what">${e(H.what)}</h2>
       <p>${e(wave.artefact.text)} <a href="${e(wave.artefact.url)}" rel="noopener">Read Gizmodo's report</a>.</p>
       <ol class="wave-timeline">
 ${wave.timeline.map((t) => `        <li><time datetime="${e(t.date)}">${e(fmtDate(t.date))}</time><span>${e(t.text)} <a class="wave-src" href="${e(src(t.source).url)}" rel="noopener">source</a></span></li>`).join('\n')}
@@ -277,7 +290,7 @@ ${wave.timeline.map((t) => `        <li><time datetime="${e(t.date)}">${e(fmtDat
 
     <section class="wave-sec" aria-labelledby="w-how">
       <p class="lbl">How it works</p>
-      <h2 class="block-h" id="w-how">From a hum to a place on the map</h2>
+      <h2 class="block-h" id="w-how">${e(H.how)}</h2>
       ${heroFigure()}
       <ol class="wave-steps">
 ${wave.mechanism.map((m, i) => `        <li><span class="wave-n">${String(i + 1).padStart(2, '0')}</span><div><h3>${e(m.h)}</h3><p>${e(m.text)}</p>${i === 2 ? flybyFigure() : i === 4 ? fixFigure() : ''}</div></li>`).join('\n')}
@@ -287,7 +300,7 @@ ${wave.mechanism.map((m, i) => `        <li><span class="wave-n">${String(i + 1)
 
     <section class="wave-sec" aria-labelledby="w-calc">
       <p class="lbl">Our worked example</p>
-      <h2 class="block-h" id="w-calc">Why the curve gives you away</h2>
+      <h2 class="block-h" id="w-calc">${e(H.calc)}</h2>
       ${curvesFigure()}
       <ul class="wave-calc">
 ${wave.calc.points.map((p) => `        <li>${e(p)}</li>`).join('\n')}
@@ -297,7 +310,7 @@ ${wave.calc.points.map((p) => `        <li>${e(p)}</li>`).join('\n')}
 
     <section class="wave-sec" aria-labelledby="w-limits">
       <p class="lbl">Where it stops working</p>
-      <h2 class="block-h" id="w-limits">The limits</h2>
+      <h2 class="block-h" id="w-limits">${e(H.limits)}</h2>
       <ul class="wave-calc">
 ${wave.limits.map((l) => `        <li>${e(l)}</li>`).join('\n')}
       </ul>
@@ -314,7 +327,7 @@ ${wave.sources.map((s) => `        <li><a href="${e(s.url)}" rel="noopener">${e(
 
     <section class="wave-sec" aria-labelledby="w-faq">
       <p class="lbl">Questions</p>
-      <h2 class="block-h" id="w-faq">Questions people are asking</h2>
+      <h2 class="block-h" id="w-faq">${e(H.faq)}</h2>
 ${wave.faqs.map((f) => `      <details class="wave-faq"><summary>${e(f.q)}</summary><p>${e(f.a)}</p></details>`).join('\n')}
     </section>
 
@@ -409,4 +422,118 @@ export function waveHeroSvg() {
   <path d="M800 430 l70 -16 l-70 -16 z" fill="${C.ink}"/>
   <path d="${curvePath(200, 690, 1200, 160, 300)}" fill="none" stroke="${C.ink}" stroke-width="5" opacity="0.85"/>
 </svg>`;
+}
+
+// ---- everything that points at wave pages ------------------------------------
+// A wave page must never be an orphan: the takeover on its law page ends, so it
+// also gets a permanent link on that page, a place on the /wild/ hub, a home-page
+// strip, an Atom feed, a Markdown twin and an llms.txt line.
+
+const newestFirst = (waves) => [...waves].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+
+/** Permanent "In the wild" list for a law page once its takeover has ended. */
+export function lawWildInner(waves, { base = '/' } = {}) {
+  return `        ${waveCss(base)}
+        <ul class="wave-wild-list">
+${newestFirst(waves).map((w) => `          <li><a href="${base}wild/${e(w.slug)}/">${e(w.h1)}</a> <span class="wave-fine">${e(monthYear(w.publishedAt))}</span></li>`).join('\n')}
+        </ul>`;
+}
+
+/** Home-page strip: the latest wave, so the newest page is one click from the front door. */
+export function wildStrip(waves, byslug, { base = '/' } = {}) {
+  const [w] = newestFirst(waves);
+  if (!w) return '';
+  const law = byslug[w.law];
+  return `<section class="sec home-wild">
+  ${waveCss(base)}
+  <div class="wrap">
+    <a class="wave-strip" href="${base}wild/${e(w.slug)}/">
+      <span class="wave-take-tag"><span class="wave-dot" aria-hidden="true"></span>In the wild · ${e(monthYear(w.publishedAt))}</span>
+      <span class="wave-strip-h">${e(w.h1)}</span>
+      <span class="wave-fine">${e(law ? law.name : '')} · <span>all waves at /wild/ →</span></span>
+    </a>
+  </div>
+</section>
+`;
+}
+
+/** The /wild/ hub: every wave, newest first. */
+export function wildHubPage(waves, byslug, { base = '/', origin = '', count } = {}) {
+  const list = newestFirst(waves);
+  const url = `${origin}${base}wild/`;
+  const jsonld = [{
+    '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'In the wild', url,
+    description: 'Named laws caught in the news: each viral moment explained by the law behind it, with sources.',
+    hasPart: list.map((w) => ({ '@type': 'AnalysisNewsArticle', headline: w.h1, url: `${origin}${base}wild/${w.slug}/`, datePublished: w.publishedAt })),
+  }];
+  return head({
+    title: 'In the Wild: Named Laws Caught in the News',
+    description: 'Viral moments explained by the named law behind them, each with its sources, a worked example and its limits.',
+    base, origin, path: 'wild/', jsonld,
+    alternates: [{ type: 'application/atom+xml', title: 'The Law Tome: in the wild', href: `${base}wild/feed.xml` }],
+  }) + sprite() + header({ base, count }) + `
+  ${waveCss(base)}
+  <article class="wrap wave">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="${base}">Home</a> / In the wild</nav>
+    <h1 class="wave-h1">In the wild</h1>
+    <p class="wave-answer">When a named law turns up in the news, this is where it gets explained: what happened, how the law accounts for it, where the explanation stops working, and every source.</p>
+    <ul class="wave-hub">
+${list.map((w) => `      <li><a href="${base}wild/${e(w.slug)}/"><span class="wave-take-tag"><span class="wave-dot" aria-hidden="true"></span>${e(fmtDate(w.publishedAt))}${w.status === 'developing' ? ' · developing' : ''}</span><strong>${e(w.h1)}</strong><span class="wave-fine">${e(byslug[w.law] ? byslug[w.law].name : '')}</span></a></li>`).join('\n')}
+    </ul>
+    <p class="wave-fine"><a href="${base}wild/feed.xml">Follow new waves by RSS</a>.</p>
+  </article>
+` + footer({ base });
+}
+
+const xml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+/** Atom feed of wave pages. */
+export function wildFeed(waves, byslug, { base = '/', origin = '', updated } = {}) {
+  const list = newestFirst(waves);
+  const self = `${origin}${base}wild/feed.xml`;
+  return `<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>The Law Tome: in the wild</title>
+  <subtitle>Named laws caught in the news, with sources.</subtitle>
+  <link rel="self" href="${xml(self)}"/>
+  <link rel="alternate" href="${xml(`${origin}${base}wild/`)}"/>
+  <id>${xml(self)}</id>
+  <updated>${xml(updated || `${(list[0] && list[0].updatedAt) || '1970-01-01'}T00:00:00Z`)}</updated>
+${list.map((w) => `  <entry>
+    <title>${xml(w.h1)}</title>
+    <link href="${xml(`${origin}${base}wild/${w.slug}/`)}"/>
+    <id>${xml(`${origin}${base}wild/${w.slug}/`)}</id>
+    <published>${xml(w.publishedAt)}T09:00:00+05:30</published>
+    <updated>${xml(w.updatedAt)}T09:00:00+05:30</updated>
+    <author><name>${xml(w.author.name)}</name></author>
+    <summary>${xml(w.answer)}</summary>
+    <category term="${xml(byslug[w.law] ? byslug[w.law].name : w.law)}"/>
+  </entry>`).join('\n')}
+</feed>
+`;
+}
+
+/** Markdown twin: the page's substance for agents and anyone who wants plain text. */
+export function waveMarkdown(wave, law, { base = '/', origin = '' } = {}) {
+  const url = `${origin}${base}wild/${wave.slug}/`;
+  const L = [];
+  L.push(`# ${wave.h1}`, '', `${wave.answer}`, '', `By ${wave.author.name}. Published ${wave.publishedAt}, updated ${wave.updatedAt}. Canonical: ${url}`, '');
+  L.push('## What you can do', '', ...wave.actions.map((x) => `- ${x}`), '');
+  L.push('## What happened', '', wave.artefact.text, '', ...wave.timeline.map((t) => `- ${t.date}: ${t.text} [${wave.sources[t.source].url}]`), '', `Why it matters: ${wave.whyItMatters}`, '');
+  L.push(`## How it works`, '', ...wave.mechanism.map((m, i) => `${i + 1}. **${m.h}.** ${m.text}`), '', `The law: [${law.name}](${origin}${base}laws/${law.slug}/): ${law.statement}`, '');
+  L.push('## Worked example (ours, illustrative)', '', ...wave.calc.points.map((p) => `- ${p}`), '', `${wave.calc.assumptions} Formula: ${wave.calc.formula}`, '');
+  L.push('## Limits', '', ...wave.limits.map((x) => `- ${x}`), '');
+  L.push('## Questions', '', ...wave.faqs.flatMap((f) => [`**${f.q}** ${f.a}`, '']));
+  L.push('## Sources', '', ...wave.sources.map((s) => `- [${s.text}](${s.url}). Supports: ${s.supports}. Checked ${s.checked}.`), '');
+  L.push(...wave.predictions.map((p) => `Our prediction (our reading, not a finding; checked by ${p.checkBy}): ${p.text}`), '');
+  return L.join('\n');
+}
+
+/** The "In the wild" section appended to llms.txt (short) and llms-full.txt (full). */
+export function wildLlms(waves, byslug, { base = '/', origin = '' } = {}, full = false) {
+  const list = newestFirst(waves);
+  if (!list.length) return '';
+  return `\n## In the wild\n\nNamed laws caught in the news, each with sources, a worked example and limits.\n\n${list.map((w) => full
+    ? waveMarkdown(w, byslug[w.law], { base, origin })
+    : `- [${w.h1}](${origin}${base}wild/${w.slug}/index.md): ${w.answer}`).join('\n')}\n`;
 }

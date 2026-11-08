@@ -176,7 +176,7 @@ const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT 
   // (/situations/ itself is already counted among the seven hubs above.)
   + PROBLEM_COUNT + VERDICT_COUNT
   // + one /wild/ page per wave in src/data/waves/.
-  + WAVE_COUNT;
+  + WAVE_COUNT + (WAVE_COUNT ? 1 : 0); // + the /wild/ hub when there are waves
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));

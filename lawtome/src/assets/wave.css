@@ -93,3 +93,13 @@ text.wf-acc-fill{fill:var(--accent)}
 .wave-do li{font-size:15.5px;line-height:1.6;color:var(--read);margin-bottom:6px}
 .wave-why{background:var(--surface);border-left:3px solid var(--line-strong);padding:12px 16px;margin-top:20px}
 .wave-small .wave-pred{margin-top:16px}
+/* The hub, the home strip and the law page's permanent list. */
+.wave-hub{list-style:none;padding:0;margin:26px 0}
+.wave-hub li a{display:flex;flex-direction:column;gap:6px;padding:18px 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none}
+.wave-hub strong{font-family:var(--serif);font-size:22px;font-weight:600}
+.wave-strip{display:flex;flex-direction:column;gap:6px;border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));background:var(--surface);border-radius:3px;padding:18px 22px;text-decoration:none;color:var(--ink)}
+.wave-strip-h{font-family:var(--serif);font-size:clamp(19px,2.4vw,24px);font-weight:600}
+.home-wild{padding-top:18px;padding-bottom:6px}
+.wave-wild-list{padding-left:20px}
+.wave-wild-list li{margin-bottom:8px}
+.wave-wild-list a{color:var(--accent-ink)}
