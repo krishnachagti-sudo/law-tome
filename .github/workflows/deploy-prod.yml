@@ -1,19 +1,25 @@
 name: Deploy Law Tome to conyso.com
 
-# Builds the Law Tome and uploads it to conyso.com/lawtome/ on the DigitalOcean
-# box, so a merge to main goes live in minutes instead of waiting on a hand
+# Builds the Law Tome and uploads it to conyso.com/lawtome/ on the conyso server
+# (Cloudways, behind Cloudflare), so a merge to main goes live in minutes instead of waiting on a hand
 # upload. Also runs daily, because some pages change with the date: a wave's
 # takeover on its law page switches itself off after its end date, but only
 # when the site is rebuilt.
 #
 # OFF until the owner switches it on. Nothing runs without:
 #   secrets  DEPLOY_SSH_KEY       private half of the deploy key
-#            DEPLOY_KNOWN_HOSTS   the host key line (ssh-keyscan -t ed25519 conyso.com)
-#   vars     DEPLOY_USER          the deploy user Rohit creates
-#            DEPLOY_ROOT          the docroot, e.g. /var/www/conyso (lawtome/ is added below)
+#            DEPLOY_KNOWN_HOSTS   the server's host key line (ssh-keyscan -t ed25519 <server IP>)
+#   vars     DEPLOY_HOST          the server's own IP or a DNS-only hostname, NOT conyso.com:
+#                                 conyso.com sits behind Cloudflare's proxy, which does not
+#                                 carry SSH, so connecting to it would reach Cloudflare
+#            DEPLOY_PORT          SSH port (22 if unset)
+#            DEPLOY_USER          the deploy user (a Cloudways application login works)
+#            DEPLOY_ROOT          the folder that contains lawtome/ (lawtome/ is added below)
 #            PROD_DEPLOY_ENABLED  true
 # Optional:  PROD_DEPLOY_DRY_RUN  true = list what would change, upload nothing
 #            INDEXNOW_PROD        true = tell Bing which pages changed
+#            CF_ZONE_ID + secret CF_API_TOKEN (Zone.Cache Purge only) = purge
+#                                 Cloudflare's cache for the pages this deploy changed
 #
 # Never uploads with --delete: Law Tome URLs are permanent, and a bad build must
 # never be able to take live pages down.
@@ -66,19 +72,33 @@ jobs:
           printf '%s\n' "$KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
           printf '%s\n' "$KNOWN" > ~/.ssh/known_hosts
           # Only the pinned host is trusted: the job cannot be pointed at an impostor.
-          printf 'Host conyso.com\n  User %s\n  IdentityFile ~/.ssh/deploy\n  StrictHostKeyChecking yes\n' "${{ vars.DEPLOY_USER }}" > ~/.ssh/config
+          printf 'Host deploy\n  HostName %s\n  Port %s\n  User %s\n  IdentityFile ~/.ssh/deploy\n  StrictHostKeyChecking yes\n' \
+            "${{ vars.DEPLOY_HOST }}" "${{ vars.DEPLOY_PORT || '22' }}" "${{ vars.DEPLOY_USER }}" > ~/.ssh/config
 
       - name: Upload (no --delete)
         run: |
           DRY=""
           if [ "${{ vars.PROD_DEPLOY_DRY_RUN }}" = "true" ]; then DRY="--dry-run"; echo "DRY RUN: nothing is uploaded"; fi
-          rsync -az --itemize-changes $DRY dist/ "conyso.com:${{ vars.DEPLOY_ROOT }}/lawtome/"
+          rsync -az --itemize-changes $DRY dist/ "deploy:${{ vars.DEPLOY_ROOT }}/lawtome/"
+
+      # Cloudflare sits in front of conyso.com. Purge what this deploy changed, so
+      # readers and the smoke check see the new pages, not a cached copy.
+      - name: Purge Cloudflare's cache for changed pages
+        if: vars.PROD_DEPLOY_DRY_RUN != 'true' && vars.CF_ZONE_ID != ''
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          urls=$(node -e "import('./build/indexnow.mjs').then(async m=>{const {readFile}=await import('node:fs/promises');const man=JSON.parse(await readFile('src/data/lastmod.json','utf8'));const u=m.changedUrls(man,new Date().toISOString().slice(0,10),'$ORIGIN$BASE').concat(['$ORIGIN${BASE}sitemap.xml']).slice(0,30);console.log(JSON.stringify(u))})")
+          curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${{ vars.CF_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
+            --data "{\"files\":$urls}" | head -c 300
 
       - name: Smoke check
         if: vars.PROD_DEPLOY_DRY_RUN != 'true'
         run: |
+          # The query string skips any cached copy at Cloudflare.
           for p in "" "laws/the-doppler-effect/" "sitemap.xml"; do
-            code=$(curl -s -o /dev/null -w '%{http_code}' "$ORIGIN$BASE$p")
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$ORIGIN$BASE$p?deploy=${{ github.run_id }}")
             echo "$code $ORIGIN$BASE$p"
             [ "$code" = "200" ] || { echo "::error::$ORIGIN$BASE$p returned $code"; exit 1; }
           done
