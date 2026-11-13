@@ -13,35 +13,30 @@ The workflow is `.github/workflows/deploy-prod.yml`. It builds, runs every test 
 - **conyso.com is behind Cloudflare now** (nameservers moved 11 Nov). Cloudflare's proxy doesn't carry SSH, so the deploy connects to the **server's own IP address**, not to conyso.com.
 - **The server is managed in Cloudways,** and Rohit doesn't have panel access, so the server step is with **Kamaldeep**.
 
-## 1. Kamaldeep, in Cloudways (one time)
+## 1. Kamaldeep, in Cloudways: mostly done (13 Nov)
 
-1. **Create a login limited to the Law Tome's folder.** Cloudways application credentials do this: SFTP/SSH access to one application only.
-   - It must be able to write to the folder that contains `lawtome/`.
-   - It must not have master or root access.
-2. **Attach this public key** to that login. It's the public half, so it's safe to share:
+- **Done:** an application-level login, `lawtome-deploy`, on the conyso.com app, with no master access.
+- **Server:** `162.243.170.201`, port `22`.
+- **Host key:** the `ssh-keyscan -t ed25519 162.243.170.201` line is in the Google Chat thread with Kamaldeep. It isn't secret.
+- **Deploy key:** Cloudways rejected the ed25519 key ("use 1024 bits or higher RSA/DSA"), so the deploy key is now **RSA 4096**: `~/.ssh/lawtome_deploy_rsa` on Krishna's Mac. Its public half, sent to Kamaldeep, is:
 
-   ```
-   ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILe1QaHPKli6CYghlviwc/HiA4Wo7Bcf0Ajftfcis5W7 law-tome deploy (GitHub Actions)
-   ```
+  ```
+  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDNo6V7kOWgMiIh5C7s2ARB8ofFhdb4fzB2WBiCbVi6ESNoDc62CGTvJK6TI7milYCqqewZ+PH3Yu6uKiXOFzs9AS6eHyw34QhBOaT5cHKpGUpIsI1U4FKGa7GUhg0ZPkYggPgVDK/4ykS0MzSL2re2q/oulr4pTelLJv0kmZucDLStZVqey5znD19pIw5XN8n6JC1Hs8/6wW3gZdUaj/KssweoQ+Dt2yLk5bH8A3ljdXciSbwf4b8WpQ5sprFma72sJCf9ikhf9ndDGcfGKi43cZkt7NJsJs3Pfjl0mMyC+cBIJ81GzK3mdWsP2O+3F39OqgHP7F8w9FNkLt4oz1qsC3FiorDEuu/qNV1MiLKhiwMbHIAzHziVBnm4RXmv+Jjr0ImeRk8HqJ2cvnB18C5TQjQUze1meLL6fo3tsKl2Za4aUr8R9Z8vmvw2CY+PnuhMkHKTDWoHgsApQ28yksDmlrNLFfSOiL/Ou8+Q8mSzjHZmT3LDLSp6Mefge+eIDz8Xcq8jnj+23ZkNEcAOd/ab+auAcEgxMTh7efCFJWTcfePg6PV/vwd6j1Cu0v1jDsduc1995TfJXIGgLkPx0JBxvDNqU3m6Reuo5eps5VHC6jNMLZp8duoY3vRqOIiBDsH9B4oquJv4m7Jj75GSfH3WL6gN3VmJ4J3+5Cz2BfBb7Q== law-tome deploy (GitHub Actions)
+  ```
 
-   If Cloudways won't take a key on an application login, tell Krishna before creating anything else.
-3. **Send Krishna five things.** None of them is secret:
-   - the server's public IP address (from Cloudways, not a DNS lookup of conyso.com, which now returns Cloudflare's IPs);
-   - the SSH port;
-   - the username;
-   - the full path of the folder that contains `lawtome/` (Cloudways paths usually look like `/home/master/applications/<app>/public_html`);
-   - the output of `ssh-keyscan -t ed25519 <server IP>`.
+  The old ed25519 key (`~/.ssh/lawtome_deploy`) isn't used.
+- **Still to come from Kamaldeep:** the full path of the folder that contains `lawtome/`, usually `/home/master/applications/<app>/public_html` on Cloudways.
 
 ## 2. Krishna, on GitHub (one time)
 
 Only the repo owner can set these:
 
 ```bash
-gh secret set DEPLOY_SSH_KEY --repo krishnachagti-sudo/law-tome < ~/.ssh/lawtome_deploy
-gh secret set DEPLOY_KNOWN_HOSTS --repo krishnachagti-sudo/law-tome --body "<the ssh-keyscan line>"
-gh variable set DEPLOY_HOST --repo krishnachagti-sudo/law-tome --body "<server IP>"
-gh variable set DEPLOY_PORT --repo krishnachagti-sudo/law-tome --body "<SSH port>"
-gh variable set DEPLOY_USER --repo krishnachagti-sudo/law-tome --body "<username>"
+gh secret set DEPLOY_SSH_KEY --repo krishnachagti-sudo/law-tome < ~/.ssh/lawtome_deploy_rsa
+gh secret set DEPLOY_KNOWN_HOSTS --repo krishnachagti-sudo/law-tome --body "<the ssh-keyscan line from the chat, starting 162.243.170.201 ssh-ed25519>"
+gh variable set DEPLOY_HOST --repo krishnachagti-sudo/law-tome --body "162.243.170.201"
+gh variable set DEPLOY_PORT --repo krishnachagti-sudo/law-tome --body "22"
+gh variable set DEPLOY_USER --repo krishnachagti-sudo/law-tome --body "lawtome-deploy"
 gh variable set DEPLOY_ROOT --repo krishnachagti-sudo/law-tome --body "<folder that contains lawtome/>"
 gh variable set PROD_DEPLOY_DRY_RUN --repo krishnachagti-sudo/law-tome --body true
 gh variable set PROD_DEPLOY_ENABLED --repo krishnachagti-sudo/law-tome --body true
