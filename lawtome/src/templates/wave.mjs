@@ -40,10 +40,13 @@ export function takeoverInner(wave, { base = '/' } = {}) {
 // The event itself, embedded, never copied. A click-to-load facade: no request
 // goes to YouTube until the reader taps play, which keeps the page fast and the
 // site's no-tracking promise. Then YouTube's privacy-enhanced player loads.
-function mediaBlock(media = []) {
+// The cover is the video's own thumbnail, saved into the site (src/assets/img/wild/)
+// so the page makes no request to YouTube until the reader taps play.
+function mediaBlock(media = [], base = '/') {
   return media.filter((m) => m.type === 'youtube').map((m) => `<figure class="wave-video">
-          <button type="button" class="wave-video-play" data-yt="${e(m.id)}" data-yt-title="${e(m.title)}" aria-label="Play ${e(m.title)} (loads YouTube)">
-            <span class="wave-video-icon" aria-hidden="true">&#9658;</span>
+          <button type="button" class="wave-video-play${m.cover ? ' has-cover' : ''}" data-yt="${e(m.id)}" data-yt-title="${e(m.title)}" aria-label="Play ${e(m.title)} (loads YouTube)">
+${m.cover ? `            <img class="wave-video-cover" src="${e(asset(base, m.cover))}" alt="" width="1280" height="720" loading="lazy" decoding="async">
+` : ''}            <span class="wave-video-icon" aria-hidden="true">&#9658;</span>
             <span class="wave-video-title">${e(m.title)}</span>
             <span class="wave-video-by">${e(m.channel)} on YouTube · tap to play (loads YouTube's player)</span>
           </button>
@@ -273,7 +276,7 @@ ${wave.actions.map((x) => `        <li>${e(x)}</li>`).join('\n')}
       </ul>
     </aside>
 
-    ${mediaBlock(wave.media)}
+    ${mediaBlock(wave.media, base)}
     ${shareRow(wave.h1)}
 
     <section class="wave-sec" aria-labelledby="w-what">
