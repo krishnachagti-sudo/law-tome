@@ -100,6 +100,8 @@ export function verdicts(laws = [], ranked = [], { kindOf } = {}) {
       law,
       rank: i + 1,
       rankOf: list.length,
+      // For the band the page states in place of the rank (bestknown.mjs).
+      peak: r.peak,
       field: k,
       fieldSoft: fieldSoft.get(k) || 0,
       fieldTotal: fieldTotal.get(k) || 0,

@@ -10,7 +10,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { akaPage, quotesPage } from '../src/templates/lookup.mjs';
+import { akaPage, quotesPage, quoteFieldPage, quoteFields } from '../src/templates/lookup.mjs';
 
 const CORPUS = readdirSync('src/data/laws').filter((f) => f.endsWith('.json'))
   .map((f) => JSON.parse(readFileSync(join('src/data/laws', f), 'utf8')));
@@ -59,16 +59,24 @@ test('the alias index carries the real corpus and never a dead link', () => {
   for (const s of hrefs) assert.ok(slugs.has(s), `alias points at a missing entry: ${s}`);
 });
 
-test('the statements page quotes the corpus and attributes every line', () => {
-  const html = quotesPage([
+test("a field's statements page quotes the corpus and attributes every line", () => {
+  // /quotes/ is a hub now; the statements live one field to a page (B9).
+  const laws = [
     L('a', { name: 'Alpha Law', statement: 'What can go wrong will go wrong.', category: 'logic' }),
+    L('c', { name: 'Charlie Law', statement: 'Third thing.', category: 'logic' }),
     L('b', { name: 'Bravo Law', statement: 'Second thing.', category: 'economics' }),
-  ], { base: '/', origin: '', categories: { logic: 'Logic', economics: 'Economics' } });
+  ];
+  const fields = quoteFields(laws, { logic: 'Logic', economics: 'Economics' });
+  const html = quoteFieldPage(fields.find((f) => f.key === 'logic'), { base: '/', origin: '', fields });
   assert.match(html, /<blockquote class="qt-q">What can go wrong will go wrong\.<\/blockquote>/);
   // Every quotation is inside a figure whose caption links to its entry.
   assert.equal((html.match(/<figure class="qt"/g) || []).length, 2);
   assert.match(html, /<figcaption class="qt-c"><a href="\/laws\/a\/">Alpha Law<\/a>/);
   assert.match(html, /id="qt-logic"/);
+  // The hub links every field's page.
+  const hub = quotesPage(laws, { base: '/', origin: '', categories: { logic: 'Logic', economics: 'Economics' } });
+  assert.match(hub, /href="\/quotes\/logic\/"/);
+  assert.match(hub, /href="\/quotes\/economics\/"/);
 });
 
 test('a statement with markup in it is quoted, not executed', () => {
@@ -78,14 +86,20 @@ test('a statement with markup in it is quoted, not executed', () => {
   assert.match(html, /&lt;script&gt;bad\(\)&lt;\/script&gt; &amp; &quot;quoted&quot;/);
 });
 
-test('every statement in the corpus reaches the page exactly once', () => {
-  const html = quotesPage(CORPUS, { base: '/', origin: '', categories: {} });
+test('every statement in the corpus reaches exactly one field page', () => {
+  const fields = quoteFields(CORPUS, {});
   const withStatement = CORPUS.filter((l) => l.statement).length;
-  assert.equal((html.match(/<figure class="qt"/g) || []).length, withStatement);
-  // Grouped by field, largest first — the biggest field heading comes first.
-  const heads = [...html.matchAll(/<h3 class="qt-h">[^<]*<span class="qt-hn">([\d,]+)</g)]
-    .map((m) => Number(m[1].replace(/,/g, '')));
-  assert.deepEqual(heads, [...heads].sort((a, b) => b - a));
+  let figures = 0;
+  const seen = new Set();
+  for (const f of fields) {
+    const html = quoteFieldPage(f, { base: '/', origin: '', fields });
+    figures += (html.match(/<figure class="qt"/g) || []).length;
+    for (const l of f.list) { assert.ok(!seen.has(l.slug), `${l.slug} is on two pages`); seen.add(l.slug); }
+  }
+  assert.equal(figures, withStatement);
+  // Fields biggest first, as the hub lists them.
+  const sizes = fields.map((f) => f.list.length);
+  assert.deepEqual(sizes, [...sizes].sort((a, b) => b - a));
 });
 
 test('both pages declare what they are and neither invents a claim', () => {

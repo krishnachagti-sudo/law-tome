@@ -154,41 +154,63 @@ ${faq.html}${hubNav('browse/', { base })}  </div>
  * phrasings is browsing a subject, and because an alphabet of quotations
  * sorted by the first word of the quote is an alphabet of "A", "The" and "When".
  */
-export function quotesPage(laws = [], { base = '/', origin = '', count, categories = {} } = {}) {
-  const rows = Array.isArray(laws) ? laws : [];
+/**
+ * The statements grouped by field, biggest first, each field in corpus order.
+ * Shared by the hub and the per-field pages so they cannot disagree.
+ */
+export function quoteFields(laws = [], categories = {}) {
   const byField = new Map();
-  for (const l of rows) {
+  for (const l of Array.isArray(laws) ? laws : []) {
     if (!l.statement) continue;
     const k = l.category || 'other';
     if (!byField.has(k)) byField.set(k, []);
     byField.get(k).push(l);
   }
-  const fields = [...byField.entries()]
-    .sort((a, b) => b[1].length - a[1].length || String(a[0]).localeCompare(String(b[0])));
-  for (const [, list] of fields) list.sort((a, b) => (Number(a.no) || 0) - (Number(b.no) || 0));
-  const total = [...byField.values()].reduce((n, l) => n + l.length, 0);
+  return [...byField.entries()]
+    .sort((a, b) => b[1].length - a[1].length || String(a[0]).localeCompare(String(b[0])))
+    .map(([key, list]) => ({
+      key,
+      title: categories[key] || key,
+      list: list.slice().sort((a, b) => (Number(a.no) || 0) - (Number(b.no) || 0)),
+    }));
+}
 
-  const quoted = (l) => `        <figure class="qt" data-filter-row data-filter-text="${escapeHtml(`${l.statement} ${l.name} ${(l.aliases || []).join(' ')}`)}">
+/** Base-relative path of a field's statements page. */
+export const quotePath = (key) => `quotes/${key}/`;
+
+const quoted = (l, base) => `        <figure class="qt" data-filter-row data-filter-text="${escapeHtml(`${l.statement} ${l.name} ${(l.aliases || []).join(' ')}`)}">
           <blockquote class="qt-q">${escapeHtml(l.statement)}</blockquote>
           <figcaption class="qt-c"><a href="${base}laws/${escapeHtml(l.slug)}/">${escapeHtml(l.name)}</a><span class="qt-n">№ ${escapeHtml(String(l.no ?? ''))}</span></figcaption>
         </figure>`;
 
-  const html = fields.map(([key, list]) => `      <section class="qt-grp" data-filter-group id="qt-${escapeHtml(key)}">
-        <h3 class="qt-h">${escapeHtml(categories[key] || key)}<span class="qt-hn">${num(list.length)}</span></h3>
-        <div class="qt-list">
-${list.map(quoted).join('\n')}
-        </div>
-      </section>`).join('\n');
+const LEDE = 'Most people meet a named law as a sentence, not as a name. They remember "what can go wrong will go wrong" and not that it is Murphy\'s; they remember "when a measure becomes a target, it ceases to be a good measure" and not that it is Goodhart\'s. These pages are the sentences. Recognise one, follow it to the entry, and find out whether it is true.';
 
-  const answer = `${num(total)} named laws, principles and effects in the form they are usually quoted — every statement in the index on one page, each attributed to its entry, grouped by field.`;
+/**
+ * /quotes/ — a hub, one card per field with a few of its statements.
+ *
+ * It used to be all 1,116 statements on one page, 614 KB (backlog B9). Each
+ * field now has its own page, which is also a landing page a search can
+ * arrive at. The one job the single page did that no field page can, finding
+ * a line you half-remember without knowing its field, is done by the site
+ * search, which ranks statement text (build/search-index.mjs), and the FAQ
+ * sends readers there.
+ */
+export function quotesPage(laws = [], { base = '/', origin = '', count, categories = {} } = {}) {
+  const fields = quoteFields(laws, categories);
+  const total = fields.reduce((n, f) => n + f.list.length, 0);
 
-  const lede = 'Most people meet a named law as a sentence, not as a name. They remember "what can go wrong will go wrong" and not that it is Murphy\'s; they remember "when a measure becomes a target, it ceases to be a good measure" and not that it is Goodhart\'s. This page is the sentences. Recognise one, follow it to the entry, and find out whether it is true.';
+  const cards = fields.map((f) => `      <a class="qt-card" href="${base}${quotePath(f.key)}">
+        <span class="qtc-t">${escapeHtml(f.title)}<span class="qt-hn">${num(f.list.length)}</span></span>
+${f.list.slice(0, 2).map((l) => `        <span class="qtc-q">“${escapeHtml(l.statement)}” <span class="qtc-n">${escapeHtml(l.name)}</span></span>`).join('\n')}
+      </a>`).join('\n');
+
+  const answer = `${num(total)} named laws, principles and effects in the form they are usually quoted, each attributed to its entry, in ${fields.length} fields with a page each.`;
 
   const faq = hubFaq([
     { q: 'Are these exact quotations?', a: `They are the statements in the form the idea is conventionally quoted, which is not always the form its originator wrote — many of these were sharpened by other people over decades, and several were never said by their namesake at all. The entry behind each one gives the wording's actual history, and <a href="${base}misattributed/">the misattribution list</a> gathers the entries whose name credits the wrong person.` },
     { q: 'Can I quote these?', a: `Yes. The corpus is licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a> — copy, print and redistribute them, including commercially, as long as the attribution travels with them. Every entry page carries a ready-made citation and a quote-card image.` },
     { q: 'Does a good line mean a true claim?', a: `No, and the two are close to unrelated — a memorable phrasing is evidence about the phrasing. This index rates every entry separately on the evidence behind it, from <a href="${base}reliability/empirical/">measured</a> down to <a href="${base}reliability/folk-adage/">folklore</a>, and some of the most quotable lines here sit at the bottom of that scale.` },
-    { q: 'I remember the wording but not the name.', a: `Then this page is the one you want — filter it by any phrase you remember. <a href="${base}browse/">The search</a> also matches statement text, and <a href="${base}diagnose/">the problem-first door</a> works from a description rather than a quotation.` },
+    { q: 'I remember the wording but not the name.', a: `Then <a href="${base}browse/">the search</a> is the place: it matches statement text across all ${num(total)} entries, not only names. Each field page below can also be filtered, and <a href="${base}diagnose/">the problem-first door</a> works from a description rather than a quotation.` },
   ]);
 
   const section = `<section class="sec" id="index">
@@ -197,32 +219,66 @@ ${hubHead({
     title: 'The statements',
     sub: `${num(total)} quotations`,
     answer,
-    lede,
+    lede: LEDE,
     stats: [[num(total), 'statements'], [fields.length, 'fields'], ['CC BY 4.0', 'licensed']],
     base,
     crumbs: [['browse/', 'Browse']],
-  })}${listFilter({ target: 'qt-all', label: `Filter ${num(total)} statements`, placeholder: 'Type any part of a line you remember…', noun: 'statements' })}    <div id="qt-all">
-${html}
+  })}    <div class="qt-cards">
+${cards}
     </div>
 ${faq.html}${hubNav('browse/', { base })}  </div>
 </section>
 `;
 
-  const description = `Every named law in the index in the form it is usually quoted — ${num(total)} statements, attributed, grouped by field, and licensed CC BY 4.0.`;
+  const description = `Every named law in the index in the form it is usually quoted — ${num(total)} statements, attributed, in ${fields.length} fields, and licensed CC BY 4.0.`;
 
   return head({
     title: `The Statements — ${num(total)} Named Laws, as They Are Quoted | The Law Tome`,
     description, base, origin, path: 'quotes/',
     jsonld: [
       ...hubJsonLd({
-        name: 'The statements',
-        description,
-        path: 'quotes/',
-        items: rows.slice(0, 100).map((l) => ({ name: l.name, url: `${origin}${base}laws/${l.slug}/` })),
-        origin,
-        base,
+        name: 'The statements', description, path: 'quotes/', origin, base,
+        items: fields.map((f) => ({ name: f.title, url: `${origin}${base}${quotePath(f.key)}` })),
       }),
       ...(faq.jsonld ? [faq.jsonld] : []),
     ],
+  }) + sprite() + header({ base, active: 'browse', count }) + section + footer({ base });
+}
+
+/** One field's statements, as they are quoted (backlog B9). */
+export function quoteFieldPage(field, { base = '/', origin = '', count, fields = [] } = {}) {
+  const { key, title, list } = field;
+  const path = quotePath(key);
+  const answer = `${num(list.length)} named laws in ${escapeHtml(title.toLowerCase())}, in the form each is usually quoted and attributed to its entry — among them “${escapeHtml(list[0].statement)}” (${escapeHtml(list[0].name)}).`;
+  const others = fields.filter((f) => f.key !== key).map((f) => `<a href="${base}${quotePath(f.key)}">${escapeHtml(f.title.toLowerCase())}</a>`).join(', ');
+  const section = `<section class="sec" id="index">
+  <div class="wrap">
+${hubHead({
+    title: `${title}, as quoted`,
+    sub: `${num(list.length)} statements`,
+    answer,
+    lede: LEDE,
+    base,
+    crumbs: [['browse/', 'Browse'], ['quotes/', 'The statements']],
+  })}${listFilter({ target: 'qt-all', label: `Filter ${num(list.length)} statements`, placeholder: 'Type any part of a line you remember…', noun: 'statements' })}    <div id="qt-all">
+      <section class="qt-grp" data-filter-group id="qt-${escapeHtml(key)}">
+        <div class="qt-list">
+${list.map((l) => quoted(l, base)).join('\n')}
+        </div>
+      </section>
+    </div>
+    <p class="bk-note">The other fields: ${others}. Or <a href="${base}category/${escapeHtml(key)}/">every entry in ${escapeHtml(title.toLowerCase())}</a> in full.</p>
+${hubNav('browse/', { base })}  </div>
+</section>
+`;
+  const description = `${num(list.length)} named laws in ${title.toLowerCase()} in the form they are usually quoted — each attributed to its entry, and licensed CC BY 4.0.`;
+  return head({
+    title: `${title} Laws, as They Are Quoted — ${num(list.length)} Statements | The Law Tome`,
+    description, base, origin, path,
+    jsonld: hubJsonLd({
+      name: `${title}, as quoted`, description, path, origin, base,
+      crumbs: [['browse/', 'Browse'], ['quotes/', 'The statements']],
+      items: list.slice(0, 100).map((l) => ({ name: l.name, url: `${origin}${base}laws/${l.slug}/` })),
+    }),
   }) + sprite() + header({ base, active: 'browse', count }) + section + footer({ base });
 }

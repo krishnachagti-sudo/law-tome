@@ -79,3 +79,78 @@ ${barChart(catRows, { title: 'What the index is about', base,
     </div>
 `;
 }
+
+/**
+ * How many named laws were coined per decade (backlog B5), and when each field
+ * did its naming.
+ *
+ * /timeline/ lists entries by era; this is the rate — a picture nobody else
+ * can draw, because nobody else has a dated index of named laws. Every column
+ * is a count of entries whose `coinedYear` falls in that decade. Entries with
+ * no year are left out and counted in the note, not placed by guess.
+ *
+ * The right edge falls, and the note says why rather than letting it read as
+ * a decline in naming: a name needs time to be taken up and written down
+ * before an index like this one can find it, and the Ngram-era corpora this
+ * draws on stop in 2019.
+ */
+export function decadeChart(laws = [], categories = {}, { base = '/' } = {}) {
+  const dated = (Array.isArray(laws) ? laws : [])
+    .map((l) => ({ l, y: Number(l.coinedYear) }))
+    .filter((d) => Number.isFinite(d.y) && d.y > 0);
+  if (dated.length < 10) return '';
+  const undated = (Array.isArray(laws) ? laws.length : 0) - dated.length;
+  const first = Math.floor(Math.min(...dated.map((d) => d.y)) / 10) * 10;
+  const last = Math.floor(Math.max(...dated.map((d) => d.y)) / 10) * 10;
+  const counts = new Map();
+  for (let d = first; d <= last; d += 10) counts.set(d, 0);
+  for (const d of dated) counts.set(Math.floor(d.y / 10) * 10, counts.get(Math.floor(d.y / 10) * 10) + 1);
+  const cols = [...counts.entries()];
+  const max = Math.max(...cols.map(([, n]) => n));
+  const H = 190, top = 14, bottom = 26, left = 30;
+  const colW = (W - left - 8) / cols.length;
+  const plotH = H - top - bottom;
+  const bars = cols.map(([dec, n], i) => {
+    const h = n ? Math.max(2, Math.round((plotH * n) / max)) : 0;
+    const x = left + i * colW;
+    const y = top + plotH - h;
+    const label = dec % 50 === 0 ? `<text class="ch-lab" x="${(x + colW / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle">${dec}</text>` : '';
+    return `<g class="ch-row"><title>${dec}s: ${n} ${n === 1 ? 'law' : 'laws'} named</title>${h ? `<rect class="ch-bar" x="${(x + 1).toFixed(1)}" y="${y}" width="${Math.max(1, colW - 2).toFixed(1)}" height="${h}" rx="1"/>` : ''}</g>${label}`;
+  }).join('');
+  const axis = `<text class="ch-n" x="${left - 6}" y="${top + 9}" text-anchor="end">${max}</text><text class="ch-n" x="${left - 6}" y="${top + plotH}" text-anchor="end">0</text>`;
+  const peak = cols.reduce((a, b) => (b[1] > a[1] ? b : a));
+
+  // Per field: the median year and the busiest decade, biggest fields first.
+  const byField = new Map();
+  for (const d of dated) {
+    const k = d.l.category || 'other';
+    if (!byField.has(k)) byField.set(k, []);
+    byField.get(k).push(d.y);
+  }
+  const rows = [...byField.entries()].filter(([, ys]) => ys.length >= 5)
+    .map(([k, ys]) => {
+      const s = ys.slice().sort((a, b) => a - b);
+      const median = s[Math.floor((s.length - 1) / 2)];
+      const dc = new Map();
+      for (const y of s) dc.set(Math.floor(y / 10) * 10, (dc.get(Math.floor(y / 10) * 10) || 0) + 1);
+      const busiest = [...dc.entries()].sort((a, b) => b[1] - a[1] || a[0] - b[0])[0];
+      return { k, n: s.length, median, busiest };
+    })
+    .sort((a, b) => a.median - b.median);
+  const table = `        <table class="dec-t">
+          <thead><tr><th>Field</th><th>Dated entries</th><th>Median year named</th><th>Busiest decade</th></tr></thead>
+          <tbody>
+${rows.map((r) => `            <tr><td><a href="${base}category/${escapeHtml(r.k)}/">${escapeHtml(categories[r.k] || r.k)}</a></td><td>${r.n}</td><td>${r.median}</td><td>${r.busiest[0]}s (${r.busiest[1]})</td></tr>`).join('\n')}
+          </tbody>
+        </table>`;
+
+  return `      <figure class="chart chart--decades" id="per-decade">
+        <figcaption class="chart-h">Named laws per decade, ${first}s to ${last}s</figcaption>
+        <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Named laws per decade, from ${first} to ${last + 9}. The busiest decade is the ${peak[0]}s, with ${peak[1]}.">${axis}${bars}</svg>
+        <p class="chart-note">Each column counts the entries whose name was coined in that decade: ${dated.length.toLocaleString('en-US')} of them. ${undated.toLocaleString('en-US')} ${undated === 1 ? 'entry has' : 'entries have'} no year and ${undated === 1 ? 'is' : 'are'} left out rather than placed by guess. The busiest decade is the ${peak[0]}s, with ${peak[1]}. The fall at the right is not a decline in naming: a name needs years of use before an index can find it written down.</p>
+      </figure>
+      <h2 class="vd-h dec-h">When each field did its naming</h2>
+      <p class="sec-lede dec-lede">Fields ordered from the oldest naming to the newest, by the median year their entries were named. Only fields with five or more dated entries.</p>
+${table}
+`;
+}

@@ -52,9 +52,39 @@ function gapNote(coined, firstYear) {
  * than the phrase "Occam's razor" — so the caption says so outright rather than
  * letting a rising line imply the idea was invented when the words caught on.
  */
+/**
+ * Characters that make a Ngram Viewer query an EXPRESSION rather than a phrase.
+ * In its query language `/` divides, `+` adds, `*` is a wildcard, parentheses
+ * group, `_TAG_` and `:` select parts of speech and corpora. A reading taken
+ * from such a query is not how often a name was printed. `(r / K Selection
+ * Theory)` was harvested that way, came back as the ratio of "r" to "K
+ * Selection Theory" — 1.0 in 1800 — and sat at #1 on this page for weeks as
+ * a million per million, above Habeas Corpus, which the page's own text says
+ * leads by a factor of ten. Every other rank on the site was off by one.
+ */
+const NGRAM_OPERATOR = /[\/()+*:]|_[A-Z]+_/;
+/**
+ * A backstop for any reading that is not a phrase count, whatever produced
+ * it: no multi-word name reaches 0.01% of all printed English words. The
+ * real #1, Habeas Corpus, peaks at about 0.0006%.
+ */
+const PEAK_CEILING = 1e-4;
+
+/**
+ * Is this Ngram reading a count of how often a phrase was printed? Used by the
+ * /best-known/ ranking and by the law page's "How the name spread" chart, which
+ * read the same series; checked in one place so the two cannot disagree.
+ */
+export function isPhraseReading(ng) {
+  return !!(ng && ng.phrase && ng.peak) && !NGRAM_OPERATOR.test(String(ng.phrase)) && ng.peak < PEAK_CEILING;
+}
+
 export function diffusionBlock(fact, law, { base = '/' } = {}) {
   const g = fact && fact.ngram;
   if (!g || !Array.isArray(g.series) || g.series.length < 40) return '';
+  // A ratio or other expression plotted as a phrase's life in print would be a
+  // chart of nothing: see isPhraseReading().
+  if (!isPhraseReading(g)) return '';
   const s = g.series;
   const W = 640, H = 120, pad = 4;
   const step = (W - pad * 2) / (s.length - 1);

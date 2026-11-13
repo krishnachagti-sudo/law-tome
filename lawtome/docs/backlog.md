@@ -123,7 +123,16 @@ leaving a reader to assume the index is smaller than it is.
 
 No harvesting, no authoring. These are pure derivations of the existing corpus.
 
-### B1. Question-shaped titles — **M, derive, high value**
+### B1. Question-shaped titles — **done for field hubs; law pages deliberately not**
+
+> 23 September 2026. The 20 field hubs now ask ("What Are the Laws of
+> Economics & Incentives? 111 Explained"), all within 60 characters. Law
+> pages keep "<Name>: Meaning, Examples & Origin": law.mjs records Search
+> Console evidence behind name-first titles and tool nouns, and 1,116 title
+> changes against a site with live impressions should be measured, not
+> assumed. The question shape already lives on those pages in every section
+> heading and the FAQPage. Revisit with query data.
+
 The Decision Lab titles every bias as a question ("Why do we prefer doing
 something to doing nothing?") because that is how people search. Our entry pages
 and field hubs describe instead. The problem-theme pages already ask; extending
@@ -135,17 +144,37 @@ reciprocal pairs, and all 134 already have a comparison page among the 234.
 There is no gap here. Recorded rather than deleted so nobody proposes it again —
 including me.
 
-### B3. The 1,645 kindred edges are unexploited — **M, derive**
+### B3. The 1,645 kindred edges are unexploited — **done, 23 September 2026**
+
+> /clusters/: 92 groups of four or more (660 entries) by deterministic label
+> propagation over the kindred links, each named after its best-connected
+> member, never titled by hand. One hub page, not 92 thin ones. The page says
+> clusters are computed and that strays across fields are expected.
+
 Six relation kinds exist; `kindred` is 63% of all edges and does the least work.
 "Ideas that travel together" — clusters computed from the kindred graph — would
 be a browse axis nobody else can offer, because nobody else has the graph.
 
-### B4. Cause-and-consequence chains — **M, derive**
+### B4. Cause-and-consequence chains — **done, 23 September 2026**
+
+> /chains/: 15 walkable chains of three or four steps from 154 directed links.
+> Direction read as: `cause` on A points into A, `consequence` on A points out;
+> the schema does not say, so it was checked against a sample. Steps read
+> "leads to", not "causes". Eight pairs are labelled both ways, which is the
+> corpus contradicting itself; they are left out of every chain and named in
+> the page's FAQ so they can be fixed.
+
 128 `cause` and 89 `consequence` edges form directed chains through the corpus.
 Walkable chains ("this causes that, which causes the other") are a genuinely
 novel view and the data is already directional.
 
-### B5. Per-decade "what was named when" — **S, derive**
+### B5. Per-decade "what was named when" — **done, 23 September 2026**
+
+> On /timeline/: a column per decade from the 1600s to the 2010s (836 dated
+> entries; the 280 undated are counted in the note, not placed), and a table
+> of each field's median naming year and busiest decade, oldest first. The
+> note says why the right edge falls rather than letting it read as decline.
+
 `coinedYear` on 836 entries. `/timeline/` exists; a *rate* view — how many named
 ideas per decade, by field — is a chart nobody else can draw. It also visibly
 answers "is this an old idea or a new one".
@@ -157,28 +186,73 @@ most of that 484 is unharvested rather than unmeasurable, and a page about "the
 ideas too obscure to count" that opens with Benford's Law would be a lie told by
 a gap in our own pipeline.
 
-### B7. Entry-level "how solid" mini-panel — **S, derive**
+### B7. Entry-level "how solid" mini-panel — **done, 23 September 2026**
+
+> Every law's "Is it real?" section now carries its field's same-rating
+> count and, for the 904 measured names, its print-frequency rank, with a link
+> to /how-solid/ and, on the 155 that have one, to its verdict page. Worded
+> "carry the same rating" so it reads correctly on Empirical entries too.
+
 `/how-solid/` computes corpus-level statistics. The same three numbers now
 appear on 104 verdict pages. Putting a compact version on **every** entry page
 would carry the argument to where the traffic lands.
 
-### B8. Linguistics has no sheet — **S, derive**
+### B8. Linguistics has no sheet — **done, 23 September 2026**
+
+> Took the third option. The eight-entry floor stays for the reason
+> build/sheets.mjs gives (a shorter sheet is mostly white space and the field
+> page already shows every entry); the sheets hub now names any field below it,
+> with its size and its field page, so nobody looking for linguistics hits a
+> dead end. `smallFields()` computes it, so a field that grows past the floor
+> gets a sheet and drops off the note by itself.
+
 19 sheets from 20 fields. The missing one is **linguistics, with 6 entries**,
 below the eight-entry floor. Either lower the floor to six (management is next at
 9, so nothing else changes), fold it into a combined sheet, or say on `/sheets/`
 that the field exists and why it has no sheet. Currently it is silently absent,
 which is the one option that misleads.
 
-### B9. `/quotes/` and `/best-known/` are 763 KB and 112 KB gzipped — **M, derive**
+### B9. `/quotes/` and `/best-known/` are 763 KB and 112 KB gzipped — **done, 23 September 2026**
+
+> /quotes/ is now a hub of 20 field cards (40 KB, from 614 KB) and one
+> statements page per field (largest 118 KB), all 1,116 statements on exactly
+> one. Finding a half-remembered line across fields moves to the site search,
+> which ranks statement text; the FAQ says so.
+
+> /best-known/ is now a band hub (79 KB, 17 KB gzipped, from 745 KB) with the
+> top two bands in full and one page per band, so all 903 measured names are
+> listed where the old page stopped at 250. Sparklines are downsampled from 220
+> points to 46 per 92px chart, keeping each bucket's maximum.
+
 Same disease `/situations/` had. Pagination or segmentation, with the same
 benefit: real landing pages instead of one enormous one.
 
-### B10. A "recently changed" feed — **M, derive**
+### B10. A "recently changed" feed — **done, 23 September 2026**
+
+> build/changes.mjs reads when each entry's data file last changed from git
+> (one file is one entry). The site feed and the twenty field feeds are now
+> "latest changes", each entry stamped with its own date. Not the lastmod
+> manifest, which tracks rendered pages and re-dates everything on a template
+> edit. A shallow clone returns nothing rather than one false date for all, so
+> the feeds fall back to entry order and the build says so; the Pages workflow
+> now checks out full history for this.
+
 `feed.xml` is ordered by entry number as a proxy for recency. Actual change
 tracking — git history over `src/data/laws/*.json` — would make the feed mean
 what it says, and make "we update when the evidence updates" checkable.
 
-### B11. Confidence-interval view of the ranking — **S, derive**
+### B11. Confidence-interval view of the ranking — **done, 23 September 2026**
+
+> Seven bands in steps of about three in printed frequency, a ratio because
+> phrase-count error scales with the count. Within a band the order is shown
+> and called rough; no rank number is printed anywhere on the site any more,
+> on /best-known/, the law pages' figures or the verdict pages. Doing this
+> surfaced a live error: `(r / K Selection Theory)` was an Ngram *ratio*, read
+> as 1.0 and ranked #1 at a million per million, pushing every other rank down
+> one. Readings from Ngram expressions, and any peak above 0.01% of all words,
+> are now refused in one place (`isPhraseReading`), which also stops the law
+> page charting that ratio as the name's life in print.
+
 `/best-known/` presents a ranked list as though the ranking were precise. Print
 frequency is noisy; adjacent ranks are not meaningfully different. Saying so, or
 banding the ranking, would be consistent with the honesty the rest of the site
@@ -230,7 +304,23 @@ pages that rank in the organic top ten, **citation is the goal and traffic is a
 lagging proxy for it.** Two items in this section were written before that
 research and are corrected in place below.
 
-### D1. The custom domain — **S, none, blocking, decided**
+### D1. The custom domain — **superseded, see the note first**
+
+> **Status, 23 September 2026.** The subdomain below was never set up — it is
+> NXDOMAIN — and main moved the build to where the site is actually served:
+> `base /lawtome/`, `origin https://conyso.com` (commit c88b531, 10 September),
+> where all of its search impressions are. The plan below is kept for its
+> reasoning, not as a to-do.
+>
+> **What deploys the live site.** conyso.com/lawtome/ is served by nginx from
+> its own copy on the conyso.com server, not proxied to GitHub Pages: checked
+> 23 September, the two answer with different ETags, sizes and dates (server
+> 21 September, Pages 17 September). So a merge to main updates only the Pages
+> copy. The live site changes when a fresh build of this repo is uploaded to
+> the server by hand, the same way conyso.com itself is (conyso-site's
+> HANDOFF.md, rsync). Worth automating, or at least writing down where the
+> upload step lives, because nothing in either repository records it.
+
 **Target: `lawtome.conyso.com`** — its own hostname, served at the root. Decided
 2026-08-04 against Search Console data for conyso.com; the reasoning is in
 [market.md §3b](market.md). Short version: conyso.com cannot crawl the 1,104
@@ -255,7 +345,18 @@ production base and origin.
 Then `INDEXNOW_ENABLED = true` (D3c), which only works once the key file is at a
 host root — which it now is.
 
-### D2. Author and Organization schema — **S, author**
+### D2. Author and Organization schema — **done, 23 September 2026**
+
+> One Person node across conyso.com, this site and the Bias Atlas, identical on
+> @id, name, jobTitle, description, url, all nine sameAs, worksFor and
+> founderOf, diffed against the live conyso.com. Conyso referenced by
+> `https://conyso.com/#organization` everywhere and never restated; this
+> site's Organization has `conyso.com/lawtome/#organization` on every page, and
+> conyso.com lists it as a subOrganization (branch
+> `claude/entity-sub-organisations` in conyso-site). `test/identity.test.mjs`
+> fails the build on drift. Still open from the original item: a Wikidata
+> item, which is C1.
+
 Cited-source credibility signals. We have `DefinedTerm`, `CollectionPage`,
 `FAQPage`, `BreadcrumbList`. Explicit Organization and Author markup is what
 answer engines use to decide a source is real.
@@ -387,7 +488,15 @@ The standard recurring hook in this space; Untools has 19,500 subscribers off 30
 tools. `today.json` already generates the content. The cost is the commitment: an
 abandoned newsletter is worse than none.
 
-### D6. Retire the "sameAs is a single string" limitation — **M, derive**
+### D6. Retire the "sameAs is a single string" limitation — **done, 23 September 2026**
+
+> `sameAs` takes a URL or a list. Every reader (validator, source check,
+> dataset, JSON-LD) goes through build/same-as.mjs. Pages emit a string for
+> one URL, exactly as before, and a list for several; the dataset always
+> publishes a list and declares `schemaVersion: 2` because the field's shape
+> changed. No entry's data was rewritten: adding second identifiers means
+> verifying each one, which is C1/C2's work.
+
 `sameAs` holds one URL. An entry can legitimately be the same as a Wikipedia
 article *and* a Wikidata item *and* a Stanford Encyclopedia entry. Making it an
 array improves the published dataset and the JSON-LD that answer engines read.

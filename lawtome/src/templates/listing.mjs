@@ -26,6 +26,17 @@ import { hubNav, hubFaq, fieldShape, setTensions, setAdjacent } from './hub.mjs'
  * @param {string} [o.active] nav key to mark active (defaults to 'browse')
  * @param {string} [o.origin=''] absolute-URL origin for JSON-LD (optional; degrades to base-relative)
  */
+/**
+ * Title case for a field label inside a title-cased question: field labels are
+ * sentence case ("Economics & incentives"), which reads as a typo once it
+ * follows "What Are the Laws of". Short joining words stay lower case.
+ */
+const SMALL = new Set(['and', 'of', 'the', 'in', 'on', 'for', 'to', 'a', 'an']);
+function titleCase(s) {
+  return String(s).split(' ').map((w, i) => (i > 0 && SMALL.has(w.toLowerCase())) || w === '&'
+    ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
 export function listingPage(laws = [], { title, base = '/', kind = 'browse', active = 'browse', origin = '', categoryKey = '', reliabilityKey = '', count, categories = {}, images, byslug = {}, compareSlugs = {}, periodCrosses = [] } = {}) {
   const rows = Array.isArray(laws) ? laws : [];
   // A reliability-tier page (kind='reliability') is a faceted-browse view: the
@@ -261,12 +272,17 @@ ${fieldHub}${fieldMore}${browseMore}  </div>
       '',
     ])
     : kind === 'category'
-      ? fitTitle(title, [
-        ' Laws & Principles — Meaning & Examples | The Law Tome',
-        ' Laws & Principles — Meaning & Examples',
-        ' Laws & Principles | The Law Tome',
-        ' — Named Laws & Principles',
-        ' — Named Laws',
+      // Asked, not labelled (backlog B1). "Economics & incentives Laws &
+      // Principles" was a label nobody types; "what are the laws of
+      // economics" is a query people do type. The field name stays in the
+      // first five words, the count is the page's own, and the fallbacks drop
+      // the trimmings whole rather than cut the field name — which is still
+      // the query. Law pages are deliberately NOT changed: their name-first
+      // titles rest on Search Console evidence recorded in law.mjs.
+      ? fitTitle(`What Are the Laws of ${titleCase(title)}?`, [
+        ` ${rows.length.toLocaleString('en-GB')} Explained | The Law Tome`,
+        ` ${rows.length.toLocaleString('en-GB')} Explained`,
+        ' | The Law Tome',
         '',
       ])
       : 'All Named Laws, Principles & Effects | The Law Tome';

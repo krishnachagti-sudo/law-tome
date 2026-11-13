@@ -74,7 +74,11 @@ const FOUNDER = {
   // at a named organisation. Separating them states the relationship instead of
   // spelling it.
   jobTitle: 'Founder & CEO',
-  description: 'Founder and CEO of Conyso; creator of The Law Tome.',
+  // Verbatim from conyso.com/founder/, the entity home, as of 23 September
+  // 2026. It said "Founder and CEO of Conyso; creator of The Law Tome." — true,
+  // and different: one @id carrying two descriptions from two properties the
+  // same person controls. Same rule as sameAs below: change both together.
+  description: 'Founder of Conyso. Operator and independent researcher publishing on organizational scaling, signalling economics, and cybernetics.',
   url: 'https://conyso.com/founder/',
   // Ordered deliberately. A knowledge graph weighs the registries it already
   // trusts, and ORCID is a registry OF RESEARCHERS — so an identity described
@@ -360,6 +364,11 @@ export function head({ title, description, base = '/', origin = '', path, canoni
     // styles.css — without that, landscape content slides under the notch. The
     // two belong together and neither should be removed alone.
     '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
+    // iOS Safari turns anything shaped like a phone number into a tap-to-call
+    // link, and every entry here is full of them: page ranges ("1124-1131"),
+    // ISSNs ("1864-9335"), sample sizes. In a citation that is wrong, and on a
+    // phone it is a live trap for a mis-tap. No page here has a phone number.
+    '<meta name="format-detection" content="telephone=no">',
     `<title>${escapeHtml(serpTitle)}</title>`,
   ];
   if (serpDescription) out.push(`<meta name="description" content="${escapeHtml(serpDescription)}">`);
@@ -727,6 +736,7 @@ ${shareRow({ live: true, compact: true, label: 'Share this page' }).trimEnd()}
     <span>Corpus licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a>.</span>
   </div>
 </footer>
+<a class="totop" href="#main-content" aria-label="Back to top" hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 ${scripts ? scripts + '\n' : ''}</body>
 </html>
 `;

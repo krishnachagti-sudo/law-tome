@@ -29,14 +29,23 @@ export function buildFeed(laws, {
   // own path — twenty feeds all claiming to be /feed.xml is one feed as far as a
   // reader is concerned, and the last one wins.
   path = 'feed.xml',
-  title = `${siteName} — latest entries`,
+  title,
   subtitle = 'Named laws, principles, effects, razors, and paradoxes — defined and sourced.',
   link,
+  // slug -> ISO date the entry's data last changed (build/changes.mjs). When
+  // given, the feed is "latest changes" ordered by it and each entry carries
+  // its own date; when null (a shallow clone), the old entry-number order and
+  // build stamp stand, rather than dates that would be false.
+  changed = null,
 } = {}) {
+  const feedTitle = title || (changed ? `${siteName} — latest changes` : `${siteName} — latest entries`);
   const selfHref = `${baseUrl}${path}`;
   const homeHref = link || baseUrl;
   const stamp = updated || '1970-01-01T00:00:00Z';
-  const recent = [...laws].sort((a, b) => numNo(b) - numNo(a)).slice(0, limit);
+  const when = (l) => (changed && changed.get(l.slug)) || '';
+  const recent = [...laws]
+    .sort((a, b) => (changed ? String(when(b)).localeCompare(String(when(a))) : 0) || numNo(b) - numNo(a))
+    .slice(0, limit);
   const entries = recent.map((l) => {
     const url = `${baseUrl}laws/${l.slug}/`;
     const summary = l.statement || l.meaning || '';
@@ -44,18 +53,18 @@ export function buildFeed(laws, {
     <title>${xmlEscape(l.name)}</title>
     <link href="${xmlEscape(url)}"/>
     <id>${xmlEscape(url)}</id>
-    <updated>${xmlEscape(stamp)}</updated>
+    <updated>${xmlEscape(when(l) || stamp)}</updated>
     <summary>${xmlEscape(summary)}</summary>
   </entry>`;
   }).join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>${xmlEscape(title)}</title>
+  <title>${xmlEscape(feedTitle)}</title>
   <subtitle>${xmlEscape(subtitle)}</subtitle>
   <link href="${xmlEscape(homeHref)}"/>
   <link rel="self" href="${xmlEscape(selfHref)}"/>
   <id>${xmlEscape(selfHref)}</id>
-  <updated>${xmlEscape(stamp)}</updated>
+  <updated>${xmlEscape((changed && recent.length && when(recent[0])) || stamp)}</updated>
 ${entries}
 </feed>
 `;

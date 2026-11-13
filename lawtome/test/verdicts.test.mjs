@@ -83,7 +83,9 @@ const PAGE = () => verdictPage(verdicts(LAWS, RANKED, { kindOf })[0], {
 
 test('the page carries the three numbers the entry page cannot', () => {
   const h = PAGE();
-  assert.match(h, /#1/, 'the print rank is missing');
+  // A band of printed frequency, not an ordinal: see BANDS in bestknown.mjs.
+  assert.match(h, /<span class="vd-cn">(Printed everywhere|[A-Z][a-z]+(?: widely)? printed)<\/span>/, 'the print band is missing');
+  assert.doesNotMatch(h, /<span class="vd-cn">#\d/, 'a precise rank came back');
   assert.match(h, /entries in psychology &amp; the mind rest on something other than measurement/);
   assert.match(h, /of all 6 entries in the index are rated the same way/);
 });

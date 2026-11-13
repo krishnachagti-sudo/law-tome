@@ -9,7 +9,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { bestKnown, bestKnownPage, phraseWords } from '../src/templates/bestknown.mjs';
+import { bestKnown, bestKnownPage, bandPage, banded, BANDS, bandOf, phraseWords } from '../src/templates/bestknown.mjs';
 
 const CORPUS = readdirSync('src/data/laws').filter((f) => f.endsWith('.json'))
   .map((f) => JSON.parse(readFileSync(join('src/data/laws', f), 'utf8')));
@@ -31,8 +31,8 @@ test('single-word phrases are excluded, because they measure the ordinary word',
     { slug: 'b', name: 'Moore\'s Law', no: '2' },
   ];
   const facts = {
-    a: { ngram: { phrase: 'Substance', peak: 9, from: 1800, series: [1, 9] } },
-    b: { ngram: { phrase: "Moore 's Law", peak: 1, from: 1800, series: [1, 1] } },
+    a: { ngram: { phrase: 'Substance', peak: 9e-6, from: 1800, series: [1, 9] } },
+    b: { ngram: { phrase: "Moore 's Law", peak: 1e-6, from: 1800, series: [1, 1] } },
   };
   const ranked = bestKnown(laws, facts);
   assert.equal(ranked.length, 1);
@@ -44,8 +44,8 @@ test('single-word phrases are excluded, because they measure the ordinary word',
 test('ranking is by peak, and the peak year is read off the series', () => {
   const laws = [{ slug: 'a', name: 'A B', no: '1' }, { slug: 'b', name: 'C D', no: '2' }];
   const facts = {
-    a: { ngram: { phrase: 'A B', peak: 0.5, from: 1900, series: [1, 5, 2] } },
-    b: { ngram: { phrase: 'C D', peak: 0.9, from: 1900, series: [4, 1, 1] } },
+    a: { ngram: { phrase: 'A B', peak: 5e-7, from: 1900, series: [1, 5, 2] } },
+    b: { ngram: { phrase: 'C D', peak: 9e-7, from: 1900, series: [4, 1, 1] } },
   };
   const ranked = bestKnown(laws, facts);
   assert.deepEqual(ranked.map((r) => r.law.slug), ['b', 'a']);
@@ -55,21 +55,52 @@ test('ranking is by peak, and the peak year is read off the series', () => {
 
 test('an entry with no reading is absent rather than ranked at zero', () => {
   const laws = [{ slug: 'a', name: 'A B', no: '1' }, { slug: 'b', name: 'C D', no: '2' }];
-  const ranked = bestKnown(laws, { a: { ngram: { phrase: 'A B', peak: 0.5, from: 1800, series: [1] } }, b: {} });
+  const ranked = bestKnown(laws, { a: { ngram: { phrase: 'A B', peak: 5e-7, from: 1800, series: [1] } }, b: {} });
   assert.deepEqual(ranked.map((r) => r.law.slug), ['a']);
 });
 
-test('every row shows the phrase that was actually counted', () => {
+test('every row shows the phrase that was actually counted, and every measured name has a row', () => {
   const ranked = bestKnown(CORPUS, FACTS);
   assert.ok(ranked.length > 500, `only ${ranked.length} measured`);
-  const html = bestKnownPage(ranked, { base: '/', origin: 'https://e.com', corpusTotal: CORPUS.length, limit: 40 });
-  const shown = (html.match(/counted as “/g) || []).length;
-  assert.equal(shown, 40, 'a row went out without its phrase');
-  for (const r of ranked.slice(0, 40)) assert.match(html, new RegExp(`href="/laws/${r.law.slug}/"`));
+  // The hub lists the top bands in full; every band has its own page. Between
+  // them, all measured names appear, each with its phrase — the single page
+  // used to stop at 250.
+  const groups = banded(ranked);
+  const seen = new Set();
+  for (const g of groups) {
+    const html = bandPage(g, { base: '/', origin: 'https://e.com', measured: ranked.length, groups });
+    assert.equal((html.match(/counted as “/g) || []).length, g.rows.length, `${g.band.slug}: a row went out without its phrase`);
+    for (const r of g.rows) { assert.match(html, new RegExp(`href="/laws/${r.law.slug}/"`)); seen.add(r.law.slug); }
+  }
+  assert.equal(seen.size, ranked.length, 'a measured name is on no band page');
+});
+
+test('no reading taken from an Ngram expression is ranked', () => {
+  // `(r / K Selection Theory)` is a ratio in Ngram's query language. It came
+  // back as 1.0 in 1800 and sat at #1 as a million per million.
+  const laws = [{ slug: 'a', name: 'A B', no: '1' }, { slug: 'b', name: 'r/K', no: '2' }, { slug: 'c', name: 'C D', no: '3' }];
+  const facts = {
+    a: { ngram: { phrase: 'A B', peak: 6e-6, from: 1800, series: [1] } },
+    b: { ngram: { phrase: '(r / K Selection Theory)', peak: 1, from: 1800, series: [1] } },
+    c: { ngram: { phrase: 'C D', peak: 0.5, from: 1800, series: [1] } }, // implausible: half of all words
+  };
+  assert.deepEqual(bestKnown(laws, facts).map((r) => r.law.slug), ['a']);
+  const real = bestKnown(CORPUS, FACTS);
+  assert.ok(real[0].peak < 1e-4, `the top reading is ${real[0].peak}, not a phrase count`);
+});
+
+test('bands step by about three, and a peak lands in exactly one', () => {
+  for (let i = 1; i < BANDS.length - 1; i += 1) {
+    const r = BANDS[i - 1].lo / BANDS[i].lo;
+    assert.ok(r > 2.5 && r < 3.5, `${BANDS[i].slug} steps by ${r}`);
+  }
+  assert.equal(bandOf(6.4e-6).slug, 'everywhere');
+  assert.equal(bandOf(5e-8).slug, 'widely');
+  assert.equal(bandOf(0).slug, 'seldom');
 });
 
 test('the page refuses to claim it is measuring importance', () => {
-  const html = bestKnownPage(bestKnown(CORPUS, FACTS), { base: '/', origin: '', corpusTotal: CORPUS.length, limit: 20 });
+  const html = bestKnownPage(bestKnown(CORPUS, FACTS), { base: '/', origin: '', corpusTotal: CORPUS.length });
   assert.match(html, /not a measure of how important, how useful, or how true/);
   assert.match(html, /Google Books Ngrams/);
   // …and it owns the exclusion rather than hiding it.
@@ -82,7 +113,7 @@ test('the page refuses to claim it is measuring importance', () => {
 
 test('the sparkline is real data, scaled to its own maximum', () => {
   const laws = [{ slug: 'a', name: 'A B', no: '1', reliability: 'Heuristic' }];
-  const facts = { a: { ngram: { phrase: 'A B', peak: 1, from: 1800, series: [0, 5, 10, 5, 0, 0, 0, 0] } } };
+  const facts = { a: { ngram: { phrase: 'A B', peak: 1e-6, from: 1800, series: [0, 5, 10, 5, 0, 0, 0, 0] } } };
   const html = bestKnownPage(bestKnown(laws, facts), { base: '/', origin: '', corpusTotal: 1 });
   const m = /<polyline points="([^"]+)"/.exec(html);
   assert.ok(m, 'no sparkline');

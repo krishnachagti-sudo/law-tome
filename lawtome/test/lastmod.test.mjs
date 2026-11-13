@@ -1,5 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import {
   LASTMOD_TOKEN, pageHash, resolve, stamp, manifestFile,
 } from '../build/lastmod.mjs';
@@ -146,6 +147,54 @@ test('resolve reports which pages changed, so a build can say so', () => {
   const prev = { pages: { same: { hash: pageHash(page('a')), date: '2026-01-01' }, diff: { hash: 'x', date: '2026-01-01' } } };
   const { changed } = resolve({ same: page('a'), diff: page('b'), fresh: page('c') }, prev, TODAY);
   assert.deepEqual(changed.sort(), ['diff', 'fresh']);
+});
+
+// ---- asset fingerprints, and migrating the rule that ignores them ------------
+
+test('a stylesheet edit does not mark every page as changed', () => {
+  // Every page links the stylesheet as `styles.css?v=<hash of the stylesheet>`,
+  // so before this the bytes of all 2,969 pages moved whenever the CSS did, and
+  // the sitemap told Google that 1,116 untouched entries had all been rewritten
+  // on the morning of a restyle. That is the same false signal as the build
+  // date, which is the bug this module was written to remove.
+  const at = (v) => page(`<link rel="stylesheet" href="/s/styles.css?v=${v}"><p>Goodhart</p>`);
+  assert.equal(pageHash(at('a1b2c3d4')), pageHash(at('99887766')));
+  // The prose still decides. A fingerprint is not a licence to ignore content.
+  assert.notEqual(pageHash(at('a1b2c3d4')), pageHash(page('<link rel="stylesheet" href="/s/styles.css?v=a1b2c3d4"><p>Campbell</p>')));
+});
+
+test('a v1 manifest is migrated in place, keeping the dates it earned', () => {
+  // Changing what pageHash normalises changes every hash at once. Taken at face
+  // value that dates the whole site to today — the identical false signal, paid
+  // once instead of every time. So a page that matches under the OLD rule keeps
+  // its date and gets the new hash written.
+  const html = page('<link rel="stylesheet" href="/s/styles.css?v=deadbeef">a');
+  const v1 = { pages: { 'x/': { hash: pageHash(html, [], { assets: false }), date: '2026-03-01' } } };
+  const { dates, manifest, changed } = resolve({ 'x/': html }, v1, TODAY);
+  assert.equal(dates['x/'], '2026-03-01', 'an untouched page must not be redated by a rule change');
+  assert.deepEqual(changed, []);
+  assert.equal(manifest.v, 2, 'the migrated manifest records the rule it was written under');
+  assert.equal(manifest.pages['x/'].hash, pageHash(html), 'and stores the NEW hash, so it migrates once');
+});
+
+test('the legacy match is not a way for a changed page to keep its date', () => {
+  const v1 = { pages: { 'x/': { hash: pageHash(page('old'), [], { assets: false }), date: '2026-03-01' } } };
+  const { dates } = resolve({ 'x/': page('new') }, v1, TODAY);
+  assert.equal(dates['x/'], TODAY);
+});
+
+test('a manifest already at the current version is not re-checked against the old rule', () => {
+  // Once every committed manifest carries v2 the legacy path is dead weight,
+  // and it must not quietly rescue a page whose old-rule hash happens to match.
+  const html = page('<link rel="stylesheet" href="/s/styles.css?v=deadbeef">a');
+  const v2 = { v: 2, pages: { 'x/': { hash: pageHash(html, [], { assets: false }), date: '2026-03-01' } } };
+  const { dates } = resolve({ 'x/': html }, v2, TODAY);
+  assert.equal(dates['x/'], TODAY);
+});
+
+test('the shipped manifest carries the version, so the next rule change can migrate it', () => {
+  const doc = JSON.parse(readFileSync(manifestFile, 'utf8'));
+  assert.equal(doc.v, 2);
 });
 
 // ---- the shipped manifest ----------------------------------------------------

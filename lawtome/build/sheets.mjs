@@ -17,6 +17,19 @@
 export const SHEET_SIZE = 24;
 
 /**
+ * Fields too small for a sheet, so the hub can say so rather than leave a
+ * reader wondering where linguistics went (backlog B8). Each carries its size
+ * and its field page, which already shows every entry it has.
+ */
+export function smallFields(laws = [], categories = {}, { min = SHEET_MIN } = {}) {
+  const n = new Map();
+  for (const l of Array.isArray(laws) ? laws : []) if (l && l.category) n.set(l.category, (n.get(l.category) || 0) + 1);
+  return [...n.entries()].filter(([, c]) => c < min)
+    .map(([slug, count]) => ({ slug, count, title: categories[slug] || slug }))
+    .sort((a, b) => a.title.localeCompare(b.title, 'en'));
+}
+
+/**
  * The smallest field worth its own sheet. Below this the sheet is mostly white
  * space and the field page already shows every entry it has, so a sheet adds a
  * URL and nothing else.

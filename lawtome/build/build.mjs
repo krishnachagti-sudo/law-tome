@@ -26,8 +26,11 @@ import { reliabilityHubPage } from '../src/templates/reliability.mjs';
 import { kinds, kindPath, kindOf } from './kinds.mjs';
 import { kindsHubPage, kindPage } from '../src/templates/kinds.mjs';
 import { calculatorsPage } from '../src/templates/calculators.mjs';
-import { akaPage, quotesPage } from '../src/templates/lookup.mjs';
-import { bestKnown, bestKnownPage } from '../src/templates/bestknown.mjs';
+import { akaPage, quotesPage, quoteFieldPage, quoteFields, quotePath } from '../src/templates/lookup.mjs';
+import { decadeChart } from '../src/templates/charts.mjs';
+import { causalChains, kindredClusters } from './lineage.mjs';
+import { chainsPage, clustersPage } from '../src/templates/lineage.mjs';
+import { bestKnown, bestKnownPage, bandPage, banded, bandPath, bandOf } from '../src/templates/bestknown.mjs';
 import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, setBuildDate, personSlug } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
 import { resolveCollections } from './collections.mjs';
@@ -54,7 +57,7 @@ import { verdictPage } from '../src/templates/verdict.mjs';
 import { verdicts, verdictPath } from './verdicts.mjs';
 import { replicationSummary } from './replication.mjs';
 import { findings } from './findings.mjs';
-import { sheets, sheetPath } from './sheets.mjs';
+import { sheets, sheetPath, smallFields } from './sheets.mjs';
 import { sheetsHubPage, sheetPage } from '../src/templates/sheets.mjs';
 import { findingsPage } from '../src/templates/findings.mjs';
 import { misattributed } from './attribution.mjs';
@@ -76,6 +79,7 @@ import { readdirSync, existsSync } from 'node:fs';
 import { buildSitemap } from './sitemap.mjs';
 import { buildLlmsIndex, buildLlmsFull, buildLawMarkdown } from './llms.mjs';
 import { buildFeed } from './feed.mjs';
+import { changeDates } from './changes.mjs';
 import { widgetSlugs } from '../src/templates/widgets.mjs';
 import { interactiveSlugs } from '../src/templates/interactives.mjs';
 
@@ -124,6 +128,13 @@ export async function buildSite(opts) {
   PAGES = new Map();
 
   const [laws, categories] = await Promise.all([loadCorpus(dataDir), loadCategories(catFile)]);
+  // Laws that also have an entry in the Bias Atlas. Committed data, inverted
+  // from the Atlas's own crosswalk so the two sites cannot disagree about which
+  // pages are paired. Regenerate with `npm run atlas`.
+  const ATLAS_PAIRS = new Map(
+    JSON.parse(await readFile(new URL('../src/data/atlas.json', import.meta.url), 'utf8'))
+      .pairs.map((p) => [p.slug, p]),
+  );
 
   // Curated image manifest (src/data/images.json), produced by build/fetch-images.py.
   // Optional: an absent or unreadable manifest just means the site renders without
@@ -285,6 +296,12 @@ export async function buildSite(opts) {
   // Hoisted with the rest: the /is-it-real/ hub links these, each page is built
   // from them, and the sitemap lists them, so they must be computed once.
   const allVerdicts = verdicts(laws, ranked, { kindOf });
+  // For each law page's "Is it real?" section: its print-frequency rank where
+  // one was measured, and whether it has a verdict page to link to.
+  // The band, not the rank: see BANDS in bestknown.mjs (backlog B11).
+  const bandCount = new Map(banded(ranked).map((g) => [g.band.slug, g.rows.length]));
+  const FAME = new Map(ranked.map((r) => { const b = bandOf(r.peak); return [r.law.slug, { band: b, inBand: bandCount.get(b.slug), of: ranked.length }]; }));
+  const HAS_VERDICT = new Set(allVerdicts.map((v) => v.slug));
 
   // Render synchronously, then write concurrently (matters at ~1,400-law scale).
   const writes = [
@@ -304,7 +321,7 @@ export async function buildSite(opts) {
   ];
   // One page per law. prev/next come from CORPUS ORDER (laws already sorted by `no`).
   for (let i = 0; i < laws.length; i++) {
-    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, images, facts, periodSlugs, replication, wave: liveWave.get(laws[i].slug), lawWaves: waves.filter((w) => w.law === laws[i].slug) });
+    const html = lawPage(laws[i], { byslug, categories, base, origin, prev: laws[i - 1], next: laws[i + 1], publishedCount, images, facts, periodSlugs, replication, atlas: ATLAS_PAIRS.get(laws[i].slug) || null, fame: FAME.get(laws[i].slug) || null, hasVerdict: HAS_VERDICT.has(laws[i].slug), wave: liveWave.get(laws[i].slug), lawWaves: waves.filter((w) => w.law === laws[i].slug) });
     writes.push(writePage(join(out, 'laws', laws[i].slug, 'index.html'), html));
     // Clean Markdown twin at /laws/<slug>/index.md — a fetch-friendly plain-text
     // representation for LLMs/agents (GEO). Linked from the page via rel=alternate.
@@ -427,6 +444,12 @@ export async function buildSite(opts) {
     akaPage(laws, { base, origin, count: publishedCount, categories })));
   writes.push(writePage(join(out, 'quotes', 'index.html'),
     quotesPage(laws, { base, origin, count: publishedCount, categories })));
+  // One page of statements per field (backlog B9); /quotes/ is their hub.
+  const QUOTE_FIELDS = quoteFields(laws, categories);
+  for (const f of QUOTE_FIELDS) {
+    writes.push(writePage(join(out, quotePath(f.key), 'index.html'),
+      quoteFieldPage(f, { base, origin, count: publishedCount, fields: QUOTE_FIELDS })));
+  }
 
   // The one honest answer to "what are the most famous?": somebody else's
   // measurement of how often each name is printed, with the counted phrase
@@ -435,6 +458,19 @@ export async function buildSite(opts) {
     bestKnownPage(ranked, {
       base, origin, count: publishedCount, categories, corpusTotal: laws.length,
     })));
+  // Two views of the relation graph (backlog B4, B3), computed from the
+  // entries' own `related` labels.
+  writes.push(writePage(join(out, 'chains', 'index.html'),
+    chainsPage(causalChains(laws), { base, origin, count: publishedCount, byslug })));
+  writes.push(writePage(join(out, 'clusters', 'index.html'),
+    clustersPage(kindredClusters(laws), { base, origin, count: publishedCount, byslug, categories })));
+  // One page per band (backlog B9): every measured name is listed somewhere,
+  // where the single page used to stop at 250.
+  const BAND_GROUPS = banded(ranked);
+  for (const g of BAND_GROUPS) {
+    writes.push(writePage(join(out, bandPath(g.band), 'index.html'),
+      bandPage(g, { base, origin, count: publishedCount, categories, measured: ranked.length, groups: BAND_GROUPS })));
+  }
 
   // What kind of thing is it — /kinds/ and one page per kind.
   //
@@ -675,7 +711,7 @@ export async function buildSite(opts) {
   // entry and all 1,116 of them.
   const allSheets = sheets(laws, ranked, categories);
   writes.push(writePage(join(out, 'sheets', 'index.html'),
-    sheetsHubPage(allSheets, { base, origin, count: publishedCount })));
+    sheetsHubPage(allSheets, { base, origin, count: publishedCount, small: smallFields(laws, categories) })));
   for (const sh of allSheets) {
     writes.push(writePage(join(out, 'sheets', sh.slug, 'index.html'),
       sheetPage(sh, { base, origin, count: publishedCount, siblings: allSheets })));
@@ -698,7 +734,7 @@ export async function buildSite(opts) {
     sourcesPage(bibliography(laws), { base, origin, count: publishedCount, total: publishedCount })));
   // Image credits — the attribution the CC licences require, in one auditable list.
   writes.push(writePage(join(out, 'credits', 'index.html'), creditsPage(images, { base, origin, count: publishedCount })));
-  writes.push(writePage(join(out, 'timeline', 'index.html'), timelinePage(eraGroups(laws), { base, origin, count: publishedCount, images, periodSlugs })));
+  writes.push(writePage(join(out, 'timeline', 'index.html'), timelinePage(eraGroups(laws), { base, origin, count: publishedCount, images, periodSlugs, rate: decadeChart(laws, categories, { base }) })));
   // One page per century, and one per decade with enough entries to be worth a
   // page (see build/periods.mjs) — both hang off /timeline/.
   for (const p of periodList) {
@@ -778,8 +814,12 @@ export async function buildSite(opts) {
     'reliability/',                           // veracity facet hub
     ...presentTiers.map((v) => `reliability/${reliabilitySlug(v)}/`),
     'best-known/',                            // ranked by printed frequency
+    'chains/',                                // what leads to what (B4)
+    'clusters/',                              // ideas that travel together (B3)
+    ...banded(ranked).map((g) => bandPath(g.band)), // one page per frequency band
     'also-known-as/',                         // every alias, cross-referenced
     'quotes/',                                // every statement, as it is quoted
+    ...quoteFields(laws, categories).map((f) => quotePath(f.key)), // …one page per field
     'kinds/',                                 // the index by kind of named thing
     ...kindGroups.map((g) => kindPath(g)),    // one per kind above the floor
     'collections/',                           // curated-collections hub
@@ -976,7 +1016,11 @@ export async function buildSite(opts) {
   // brand logo, and a web-app manifest). All crawler/OS-facing, not "pages".
   const feedStamp = `${buildDate}T00:00:00Z`;
   const baseHref = `${origin}${base}`;
-  writes.push(writePage(join(out, 'feed.xml'), buildFeed(laws, { baseUrl: baseHref, updated: feedStamp, siteName: 'The Law Tome' })));
+  // When each entry's data last changed, from git (backlog B10); null in a
+  // shallow clone, in which case the feeds keep entry-number order.
+  const CHANGED = changeDates(dataDir);
+  if (!CHANGED) console.warn('feed: history is shallow or unavailable, so the feeds are ordered by entry number, not by change');
+  writes.push(writePage(join(out, 'feed.xml'), buildFeed(laws, { baseUrl: baseHref, updated: feedStamp, siteName: 'The Law Tome', changed: CHANGED })));
 
   // …and one feed per field. A single site-wide feed makes a reader who cares
   // about linguistics subscribe to 1,116 entries to get eleven of them, which is
@@ -990,6 +1034,7 @@ export async function buildSite(opts) {
       updated: feedStamp,
       path: `category/${slug}/feed.xml`,
       link: `${baseHref}category/${slug}/`,
+      changed: CHANGED,
       title: `The Law Tome — ${title}`,
       subtitle: `Named laws, principles and effects in ${title.toLowerCase()} — defined, sourced, and rated for how far the evidence goes.`,
     })));

@@ -17,16 +17,18 @@
 // statement accent is injected AFTER escaping (see renderStatement).
 
 import { takeoverInner, lawWildInner } from './wave.mjs';
-import { head, sprite, imageObject, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE, DESC_MAX } from './partials.mjs';
+import { head, sprite, imageObject, header, footer, escapeHtml, reliabilityClass, reliabilitySlug, asset, personImage, portrait, imageCredit, shareRow, personSlug, fitTitle, RELIABILITY_NOTE, DESC_MAX, CONYSO_ID } from './partials.mjs';
 import { hostOf } from '../../build/surfaces.mjs';
 import { replicationFor, replicationLine, contradictsRating } from '../../build/replication.mjs';
 import { LASTMOD_TOKEN } from '../../build/lastmod.mjs';
+import { sameAsLd } from '../../build/same-as.mjs';
 import { schematicFigure, schematicForLaw } from './schematics.mjs';
 import { eraId, centuryLabelForYear } from './timeline.mjs';
 import { personId } from './eponyms.mjs';
 import { formulaBlock, diffusionBlock, pronunciation, otherNames, otherNamesText } from './facts.mjs';
 import { kindOf, KINDS, kindPath } from '../../build/kinds.mjs';
 import { widgetBlock, widgetFor } from './widgets.mjs';
+import { ATLAS_BASE } from '../../build/atlas.mjs';
 import { interactiveBlock, interactiveFor } from './interactives.mjs';
 import { render as proofRender, assertRendered as proofAssert } from '../proof.mjs';
 import { readdirSync, readFileSync } from 'node:fs';
@@ -197,11 +199,14 @@ const TIER_COUNT_CACHE = new WeakMap();
 function tierCounts(byslug) {
   let c = TIER_COUNT_CACHE.get(byslug);
   if (c) return c;
-  c = { total: 0, tiers: new Map() };
+  c = { total: 0, tiers: new Map(), fields: new Map(), fieldTiers: new Map() };
   for (const l of Object.values(byslug || {})) {
     if (!l || !l.slug) continue;
     c.total++;
     if (l.reliability) c.tiers.set(l.reliability, (c.tiers.get(l.reliability) || 0) + 1);
+    const f = l.category || 'other';
+    c.fields.set(f, (c.fields.get(f) || 0) + 1);
+    if (l.reliability) c.fieldTiers.set(`${f}|${l.reliability}`, (c.fieldTiers.get(`${f}|${l.reliability}`) || 0) + 1);
   }
   TIER_COUNT_CACHE.set(byslug, c);
   return c;
@@ -221,7 +226,7 @@ function glanceRow(k, v) {
 }
 
 export function lawPage(law, ctx = {}) {
-  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, images, facts = {}, periodSlugs, replication } = ctx;
+  const { byslug = {}, categories = {}, base = '/', origin = '', prev, next, images, facts = {}, periodSlugs, replication, atlas = null, fame = null, hasVerdict = false } = ctx;
   const coined = law.provenance === 'coined';
   const catLabel = categories[law.category] || law.category || '';
   const canonical = `${origin}${base}laws/${law.slug}/`;
@@ -381,7 +386,7 @@ export function lawPage(law, ctx = {}) {
   const entry = `<section class="entry">
   <svg class="entry-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
   <div class="wrap-wide">
-    <nav class="crumb" aria-label="Breadcrumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}category/${escapeHtml(law.category)}/">${escapeHtml(catLabel)}</a><span class="sep">/</span>${escapeHtml(law.name)}</nav>
+    <nav class="crumb" aria-label="Breadcrumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}category/${escapeHtml(law.category)}/">${escapeHtml(catLabel)}</a><span class="crumb-here"><span class="sep">/</span>${escapeHtml(law.name)}</span></nav>
     <div class="entry-meta" style="margin-top:18px">
       ${meta.join('\n      ')}
     </div>
@@ -689,12 +694,36 @@ ${h2}${inner}
       if (tierN) {
         basisParts.push(`<a href="${base}reliability/${reliabilitySlug(law.reliability)}/">${tierN} of the ${TOTAL_LAWS(byslug)} entries</a> carry this rating`);
       }
+      // How this rating sits in its field and in the canon (backlog B7). The
+      // /is-it-real/ verdict pages carried these comparisons for 104 laws; the
+      // traffic lands on the law pages, so every one now carries them too.
+      // "Share this rating" rather than the verdict pages' "rest on something
+      // other than measurement", because this runs on Empirical entries as
+      // well, where that phrasing would be backwards. The fame rank appears
+      // only where print frequency was actually measured; nothing is estimated.
+      const counts = tierCounts(byslug);
+      const fKey = law.category || 'other';
+      const fTotal = counts.fields.get(fKey) || 0;
+      const fSame = counts.fieldTiers.get(`${fKey}|${law.reliability}`) || 0;
+      const cells = [];
+      // A band, not a rank: see BANDS in bestknown.mjs. "#43 of 903" claimed a
+      // precision a phrase count does not have.
+      if (fame && fame.band) {
+        cells.push(`          <div class="vd-c"><span class="vd-cn">${escapeHtml(fame.band.label)}</span><span class="vd-cl">in printed books: one of <a href="${base}best-known/${escapeHtml(fame.band.slug)}/">${fame.inBand.toLocaleString('en-GB')} names</a> in its band, of ${fame.of.toLocaleString('en-GB')} measured</span></div>`);
+      }
+      if (fTotal > 1) {
+        cells.push(`          <div class="vd-c"><span class="vd-cn">${fSame} of ${fTotal}</span><span class="vd-cl">entries in <a href="${base}category/${escapeHtml(fKey)}/">${escapeHtml(String(catLabel).toLowerCase())}</a> carry the same rating</span></div>`);
+      }
+      const solid = cells.length
+        ? `        <div class="vd-cmp vd-cmp--law">\n${cells.join('\n')}\n        </div>\n        <p class="verdict-basis"><a href="${base}how-solid/">The best-known laws are the least likely to rest on measurement</a>${hasVerdict ? `; <a href="${base}is-it-real/${escapeHtml(law.slug)}/">the full verdict on ${escapeHtml(law.name)}</a>` : ''}.</p>`
+        : '';
       const inner = [
         `        <p class="verdict">${v}</p>`,
         repLine.replace(/\n$/, ''),
         basisParts.length
           ? `        <p class="verdict-basis">${basisParts.join('. ')}. <a href="${base}reliability/">How the scale works</a>.</p>`
           : '',
+        solid,
       ].filter(Boolean).join('\n');
       // The structured answer gets the verdict plus the entry's own caveat, so a
       // machine quoting it quotes the qualification too — and the replication
@@ -871,11 +900,18 @@ ${items}
   // (reliability tier, century, eponym index, field). These are the corpus's most
   // natural internal links: without them the facet hubs are reachable only from the
   // footer, while the 1,100+ law pages that *have* the facet link nowhere.
+  // A tile whose link the meta row above the title already carries is marked
+  // `stat--dup`, and hidden on a phone. There the two sit a few centimetres
+  // apart, and the grid was what pushed the definition below the first screen
+  // on every law measured. Decided by comparing the actual hrefs rather than
+  // by naming tiles, so if the meta row ever stops carrying a link, the tile
+  // stops being a duplicate and comes back by itself.
+  const metaHrefs = new Set([...meta.join(' ').matchAll(/href="([^"]+)"/g)].map((m) => m[1]));
   const statTile = (k, v, href) => {
     if (v == null || v === '') return '';
     const inner = `<span class="s-k">${escapeHtml(k)}</span><span class="s-v">${escapeHtml(v)}</span>`;
     return href
-      ? `      <a class="stat stat--link" href="${href}">${inner}</a>`
+      ? `      <a class="stat stat--link${metaHrefs.has(href) ? ' stat--dup' : ''}" href="${href}">${inner}</a>`
       : `      <div class="stat">${inner}</div>`;
   };
   const relCount = Array.isArray(law.related) ? law.related.length : 0;
@@ -897,7 +933,16 @@ ${items}
     })(),
     relCount ? statTile('Related', String(relCount), '#sec-related-laws') : '',
     srcCount ? statTile('Sources', String(srcCount), '#sec-sources') : '',
-  ].filter(Boolean).join('\n');
+  ].filter(Boolean)
+    // With the duplicates hidden on a phone, an odd number of tiles left over
+    // would leave a hole in the two-column box. CSS cannot count only the
+    // visible ones, so the last visible tile is told to span the row here.
+    .map((t, i, all) => {
+      const kept = all.filter((x) => !x.includes('stat--dup'));
+      return kept.length % 2 && t === kept[kept.length - 1]
+        ? t.replace('class="stat', 'class="stat stat--span-m') : t;
+    })
+    .join('\n');
   const dash = dashTiles
     ? `<div class="wrap-wide"><div class="dash" data-reveal>\n${dashTiles}\n</div></div>\n`
     : '';
@@ -1045,8 +1090,28 @@ ${shareRow({
         </div>
       </div>\n`;
 
+  // The same idea in the Bias Atlas, where 131 of these laws also appear.
+  //
+  // Not a rival and not a duplicate: the two ask different questions of one
+  // idea. This index asks whether a named principle is dependable and answers
+  // on the reliability scale; the Atlas asks what happened when the experiments
+  // behind the claim were repeated and answers with a replication verdict.
+  // Dunning-Kruger is Contested here and Mixed there, and those are not two
+  // answers to one question — they are answers to two.
+  //
+  // What is NOT here is the Atlas's verdict. Quoting it would put a figure on
+  // this page that this page cannot check, and it would go stale silently the
+  // moment the Atlas revises an entry. The link is the honest depth.
+  const atlasPanel = atlas
+    ? `      <div class="panel panel--atlas">
+        <h3>Also in the Bias Atlas</h3>
+        <p class="at-note">A sister index of cognitive biases. This page asks how far ${escapeHtml(law.name)} can be trusted; that one asks what happened when the experiments behind it were repeated.</p>
+        <a class="at-go" href="${ATLAS_BASE}bias/${escapeHtml(atlas.atlas.slug)}/" rel="noopener">See what replicated &rarr;</a>
+      </div>\n`
+    : '';
+
   const aside = `    <aside class="aside">
-${saveBtn}${namesakePanel}${mapPanel}${comparePanel}${sharePanel}      <div class="panel">
+${saveBtn}${namesakePanel}${mapPanel}${comparePanel}${sharePanel}${atlasPanel}      <div class="panel">
         <h3>Cite this entry</h3>
         <div class="cite-box" id="cite">${citeText}</div>
         <button class="btn" id="copy" type="button"><i class="ti ti-copy" aria-hidden="true"></i> <span id="copy-t">Copy citation</span></button>
@@ -1076,11 +1141,13 @@ ${prevnext}</div>
   // ---- JSON-LD stack ----------------------------------------------------
   const publisher = {
     '@type': 'Organization',
+    '@id': `${origin}${base}#organization`,
     name: 'The Law Tome',
     url: `${origin}${base}`,
     logo: { '@type': 'ImageObject', url: `${origin}${base}assets/logo.svg`, width: 512, height: 512 },
-    // Published as an initiative by Conyso.
-    parentOrganization: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
+    // Published as an initiative by Conyso — referenced by the @id conyso.com
+    // declares, not as an anonymous node a graph has to match by name.
+    parentOrganization: { '@type': 'Organization', '@id': CONYSO_ID, name: 'Conyso', url: 'https://conyso.com' },
     // E-E-A-T signals: the editorial method and how to report an error both live
     // on the About page, which states the anti-fabrication sourcing standard.
     publishingPrinciples: `${origin}${base}about/`,
@@ -1099,7 +1166,7 @@ ${prevnext}</div>
     description: answer,
     ...(law.no ? { termCode: law.no } : {}),
     inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'The Law Tome', url: `${origin}${base}browse/` },
-    ...(law.sameAs ? { sameAs: law.sameAs } : {}),
+    ...(sameAsLd(law.sameAs) ? { sameAs: sameAsLd(law.sameAs) } : {}),
     ...(coined ? { additionalType: 'coined', disambiguatingDescription: 'Original law coined for The Law Tome — credited and clearly marked.' } : {}),
   };
 
@@ -1112,7 +1179,7 @@ ${prevnext}</div>
     description: answer,
     image: `${origin}${base}og/${law.slug}.png`,
     keywords,
-    about: { '@type': 'Thing', name: law.name, ...(law.sameAs ? { sameAs: law.sameAs } : {}) },
+    about: { '@type': 'Thing', name: law.name, ...(sameAsLd(law.sameAs) ? { sameAs: sameAsLd(law.sameAs) } : {}) },
     inLanguage: 'en',
     isPartOf: { '@type': 'WebSite', name: 'The Law Tome', url: `${origin}${base}` },
     mainEntityOfPage: canonical,
@@ -1258,10 +1325,28 @@ document.getElementById('copy').onclick=function(){
   var secs=links.map(function(a){return {a:a,el:document.getElementById(a.getAttribute('href').slice(1))};}).filter(function(o){return o.el;});
   if(secs.length){
     var ticking=false,lock=null,lockT=0;
+    // Below 1240px the same rail is a horizontal strip under the masthead, and
+    // a highlight on a chip that has scrolled off the end of it is no use at
+    // all: this rail carries twelve to fifteen sections and a 390px screen
+    // shows about three. So when it is horizontal the rail scrolls itself to
+    // keep the active chip in view, and the vertical fill is skipped because
+    // it has nothing to fill.
+    var isRail=function(){return toc&&getComputedStyle(toc).flexDirection==='row';};
     var mark=function(a){
       for(var j=0;j<links.length;j++)links[j].classList.remove('on');
       if(!a)return;
       a.classList.add('on');
+      if(isRail()){
+        var want=a.offsetLeft-(toc.clientWidth-a.offsetWidth)/2;
+        want=Math.max(0,Math.min(want,toc.scrollWidth-toc.clientWidth));
+        // Only when it would actually move: a scroll call per frame while the
+        // reader is scrolling fights their own sideways swipe.
+        if(Math.abs(toc.scrollLeft-want)>6){
+          if(toc.scrollTo)toc.scrollTo({left:want,behavior:'smooth'});
+          else toc.scrollLeft=want;
+        }
+        return;
+      }
       // run the rail fill down to the centre of the active item
       if(toc)toc.style.setProperty('--fill',(a.offsetTop+a.offsetHeight/2)+'px');
     };
@@ -1280,7 +1365,14 @@ document.getElementById('copy').onclick=function(){
     // Each section claims the space from its own top to the NEXT section's top,
     // so the figures and infographic cards that sit between blocks count toward
     // the section they follow instead of belonging to nobody.
-    var HEADER=92;
+    // What is stuck to the top: the masthead, plus the rail once it has become
+    // a strip. This was a constant 92px, the desktop masthead, which put the
+    // line in the wrong place on a phone. The header sync publishes both.
+    var rootStyle=getComputedStyle(document.documentElement);
+    var covered=function(){
+      return (parseFloat(rootStyle.getPropertyValue('--header-h'))||92)
+        +(parseFloat(rootStyle.getPropertyValue('--jump-h'))||0);
+    };
     var apply=function(){
       ticking=false;
       if(lock){ if(Date.now()<lockT){mark(lock);return;} lock=null; }
@@ -1294,6 +1386,7 @@ document.getElementById('copy').onclick=function(){
       // Switching only when the NEXT heading passes the line is not a lag; it
       // is the definition of which section you are reading.
       var vh=window.innerHeight;
+      var HEADER=covered();
       var line=HEADER+0.30*(vh-HEADER);
       var best=null;
       for(var i=0;i<secs.length;i++){

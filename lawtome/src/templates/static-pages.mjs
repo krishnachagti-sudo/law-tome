@@ -259,14 +259,12 @@ ${faq.html}  </div>
     description,
     mainEntity: {
       '@type': 'Organization',
+      '@id': `${origin}${base}#organization`,
       name: 'The Law Tome',
       url: `${origin}${base}`,
       founder: founderRef(origin, base),
-      parentOrganization: {
-        ...conysoOrg(origin, base),
-        slogan: 'Building and backing companies, run with operating discipline.',
-        description: 'A holding company that builds and backs companies run with operating discipline — strategy, education, software, and ventures under one roof.',
-      },
+      // By reference: conyso.com describes Conyso (see home.mjs).
+      parentOrganization: conysoOrg(origin, base),
     },
   };
 

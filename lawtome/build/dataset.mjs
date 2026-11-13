@@ -8,7 +8,8 @@
 // to its page for the full explanation. So a researcher gets a genuinely useful
 // dataset, but nobody can reconstruct the finished, explained directory from it.
 
-const CANONICAL_FIELDS = 'no, slug, name, aliases, category, reliability, statement, coinedYear, namedAfter, sameAs, sources, related (graph edges), url';
+import { sameAsList } from './same-as.mjs';
+const CANONICAL_FIELDS = 'no, slug, name, aliases, category, reliability, statement, coinedYear, namedAfter, sameAs (a list of URLs), sources, related (graph edges), url';
 
 /** One metadata record for a law (no long-form prose). */
 function record(l, baseUrl) {
@@ -22,7 +23,8 @@ function record(l, baseUrl) {
     statement: l.statement ?? null,
     coinedYear: l.coinedYear ?? null,
     namedAfter: l.namedAfter ?? null,
-    sameAs: l.sameAs ?? null,
+    // Always a list in the published dataset, whatever the entry file holds (D6).
+    sameAs: sameAsList(l.sameAs),
     sources: (Array.isArray(l.sources) ? l.sources : []).map((s) => ({ text: s.text ?? null, url: s.url ?? null, type: s.type ?? null })),
     related: (Array.isArray(l.related) ? l.related : []).map((r) => ({ slug: r.slug, kind: r.kind ?? null })),
     url: `${baseUrl}laws/${l.slug}/`,
@@ -40,6 +42,10 @@ export function buildDataset(laws = [], { baseUrl = '/', generated } = {}) {
       name: 'The Law Tome',
       description: 'Index metadata for every named law, principle, and effect in The Law Tome. Metadata only — the full explanations live on each law\'s page (see each record\'s url).',
       fields: CANONICAL_FIELDS,
+      // 2 since 23 September 2026: `sameAs` is always a list of URLs, where it
+      // was a single URL or null (backlog D6). Stated here because the shape of
+      // a field changed under anyone already parsing this file.
+      schemaVersion: 2,
       url: baseUrl,
       license: 'CC BY 4.0',
       licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',

@@ -12,7 +12,7 @@
 // stated, illustrative assumptions and is labelled as such. Predictions are our
 // reading, dated, and get scored later.
 
-import { head, sprite, header, footer, escapeHtml, fitTitle, clampDescription, asset } from './partials.mjs';
+import { head, sprite, header, footer, escapeHtml, fitTitle, clampDescription, asset, founderId } from './partials.mjs';
 
 // Pages that show a wave link this stylesheet themselves (see wave.css for why).
 export const waveCss = (base) => `<link rel="stylesheet" href="${asset(base, 'assets/wave.css')}">`;
@@ -208,7 +208,7 @@ export function wavePage(wave, law, { base = '/', origin = '', count, categoryLa
       '@context': 'https://schema.org', '@type': 'AnalysisNewsArticle',
       headline: wave.h1, description: wave.answer, url,
       datePublished: `${wave.publishedAt}T09:00:00${tz}`, dateModified: `${wave.updatedAt}T09:00:00${tz}`,
-      author: { '@type': 'Person', name: wave.author.name, url: wave.author.url },
+      author: { '@type': 'Person', '@id': founderId(), name: wave.author.name, url: wave.author.url },
       publisher: { '@type': 'Organization', name: 'The Law Tome', url: `${origin}${base}` },
       image: [`${origin}${base}og/wild/${wave.slug}-16x9.png`, `${origin}${base}og/wild/${wave.slug}.png`],
       about: { '@type': 'DefinedTerm', name: law.name, url: `${origin}${lawUrl}`, ...(law.sameAs ? { sameAs: law.sameAs } : {}) },

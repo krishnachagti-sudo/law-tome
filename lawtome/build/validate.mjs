@@ -5,6 +5,8 @@
 // validateCorpus returns a flat array of human-readable error strings; the Task 8
 // build throws when it is non-empty, so a corpus that violates any rule never
 // ships a page.
+import { sameAsList } from './same-as.mjs';
+
 const RELIABILITY = new Set(['Empirical', 'Heuristic', 'Folk-adage', 'Contested']);
 const PROVENANCE = new Set(['canon', 'coined']);
 // What kind of thing a law is named after. Most are people, but not all: the
@@ -123,8 +125,9 @@ export function validateCorpus(laws, categories) {
       if (s && s.url != null && String(s.url).trim() !== '' && !/^https?:\/\//i.test(String(s.url).trim()))
         errs.push(`${id}: source url is not http(s): "${s.url}"`);
     }
-    if (l.sameAs != null && String(l.sameAs).trim() !== '' && !/^https?:\/\//i.test(String(l.sameAs).trim()))
-      errs.push(`${id}: sameAs is not http(s): "${l.sameAs}"`);
+    if (l.sameAs != null && typeof l.sameAs !== 'string' && !Array.isArray(l.sameAs))
+      errs.push(`${id}: sameAs must be a URL or a list of URLs`);
+    for (const u of sameAsList(l.sameAs)) if (!/^https?:\/\//i.test(u)) errs.push(`${id}: sameAs is not http(s): "${u}"`);
   }
   return errs;
 }

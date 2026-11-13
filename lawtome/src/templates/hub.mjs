@@ -13,7 +13,7 @@
 //   3. A footer of the other hubs, because the ways into 1,100 laws are the
 //      most useful thing the site has and each one was a dead end.
 
-import { escapeHtml, personSlug } from './partials.mjs';
+import { escapeHtml, personSlug, CONYSO_ID } from './partials.mjs';
 import { LASTMOD_TOKEN } from '../../build/lastmod.mjs';
 
 /**
@@ -97,6 +97,8 @@ export const HUBS = [
   ['tension/', 'Laws in tension', 'the pairs that contradict each other'],
   ['compare/', 'Compare', 'two laws side by side, for the ones people mix up'],
   ['graph/', 'The graph', 'walk the web of what echoes and contradicts what'],
+  ['chains/', 'What leads to what', 'chains of ideas, each step one the entries themselves call a cause'],
+  ['clusters/', 'Ideas that travel together', 'groups the entries point at each other from, computed not curated'],
 ];
 
 /**
@@ -456,9 +458,12 @@ export function hubJsonLd({
     // how to report an error — stopped at the entry level.
     publisher: {
       '@type': 'Organization',
+      '@id': `${origin}${base}#organization`,
       name: 'The Law Tome',
       url: `${origin}${base}`,
-      parentOrganization: { '@type': 'Organization', name: 'Conyso', url: 'https://conyso.com' },
+      // With its @id. Without one, each of these was an anonymous "Conyso"
+      // node a graph had to guess was the Conyso conyso.com declares.
+      parentOrganization: { '@type': 'Organization', '@id': CONYSO_ID, name: 'Conyso', url: 'https://conyso.com' },
       publishingPrinciples: `${origin}${base}about/`,
       correctionsPolicy: `${origin}${base}about/`,
     },

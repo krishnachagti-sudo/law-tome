@@ -88,6 +88,7 @@ import { readFile, writeFile, mkdtemp, rm, cp } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { buildSite } from '../build/build.mjs';
+import { quoteFields } from '../src/templates/lookup.mjs';
 import { comparePairs } from '../build/relations.mjs';
 import { eponymGroups } from '../build/eponyms.mjs';
 import { namesakesWithPages } from '../src/templates/namesake.mjs';
@@ -98,7 +99,7 @@ import { kinds, kindOf } from '../build/kinds.mjs';
 import { sheets } from '../build/sheets.mjs';
 import { problems } from '../build/problems.mjs';
 import { verdicts } from '../build/verdicts.mjs';
-import { bestKnown } from '../src/templates/bestknown.mjs';
+import { banded, bestKnown } from '../src/templates/bestknown.mjs';
 
 // Corpus-relative sitemap expectations, so adding a law (or a law in a new
 // category / reliability tier) never breaks the count. Locs = home + one per law
@@ -155,6 +156,10 @@ const PROBLEM_COUNT = problems(Array.isArray(RAW_SIT) ? RAW_SIT : RAW_SIT.situat
 // Verdicts: one "is X real?" per entry that is well known, softly rated, and the
 // kind of claim that can turn out not to hold.
 const VERDICT_COUNT = verdicts(PARSED, bestKnown(PARSED, FACTS), { kindOf }).length;
+// One page per band of printed frequency under /best-known/ (backlog B9).
+const BAND_COUNT = banded(bestKnown(PARSED, FACTS)).length;
+// One statements page per field under /quotes/ (backlog B9).
+const QUOTE_FIELD_COUNT = quoteFields(PARSED, JSON.parse(readFileSync('src/data/categories.json', 'utf8'))).length;
 // The trailing + 1 is /calculators/, the index of entries that compute, solve
 // or demonstrate rather than only stating. Adding a page class to the sitemap
 // has to be declared here, which is the point of counting it this way.
@@ -175,8 +180,14 @@ const EXPECTED_LOCS = 1 + LAW_COUNT + 1 + CAT_COUNT + 1 + 5 + 1 + COMPARE_COUNT 
   // + one page per problem theme, and one verdict page per testable entry.
   // (/situations/ itself is already counted among the seven hubs above.)
   + PROBLEM_COUNT + VERDICT_COUNT
-  // + one /wild/ page per wave in src/data/waves/.
-  + WAVE_COUNT + (WAVE_COUNT ? 1 : 0); // + the /wild/ hub when there are waves
+  // + one page per band of /best-known/.
+  + BAND_COUNT
+  // + one statements page per field under /quotes/.
+  + QUOTE_FIELD_COUNT
+  // + /chains/ and /clusters/, the two views of the relation graph.
+  + 2
+  // + one /wild/ page per wave in src/data/waves/, plus the /wild/ hub when there are waves.
+  + WAVE_COUNT + (WAVE_COUNT ? 1 : 0);
 
 test('build emits a well-formed sitemap.xml listing crawlable pages only', async () => {
   const out = await mkdtemp(join(tmpdir(), 'lt-sm-'));
