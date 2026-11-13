@@ -233,7 +233,7 @@ ${tierRow}
     </div>
 
     <h2 class="about-h2">Open by design</h2>
-    <p class="about-p">The corpus is licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a> — reuse it, remix it, build on it, just credit The Law Tome. You can <a href="${base}data/">download the dataset</a> as JSON or CSV. No ads, and no tracking of what you read.</p>
+    <p class="about-p">The corpus is licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC&nbsp;BY&nbsp;4.0</a> — reuse it, remix it, build on it, just credit The Law Tome. You can <a href="${base}data/">download the dataset</a> as JSON or CSV. No ads and no account.</p>
 
     <h2 class="about-h2">Who’s behind it</h2>
     <p class="about-p">The Law Tome is created and maintained by <b><a href="https://conyso.com/founder/" rel="author">Krishna Chagti</a></b> — founder and CEO of <a href="${origin || 'https://conyso.com'}">Conyso</a>, a student at IIT Madras and IIM Sirmaur, a Lean Six Sigma Black Belt, and a published researcher. He builds in the open, on the principle that the work is the marketing. Find him on <a href="https://www.linkedin.com/in/krishna-chagti">LinkedIn</a> or <a href="https://github.com/krishnachagti-sudo">GitHub</a>.</p>
@@ -393,16 +393,16 @@ ${faq.html}${hubNav('', { base })}  </div>
  */
 export function privacyPage({ base = '/', origin = '', count } = {}) {
   const description =
-    'The Law Tome privacy notice: what a coin submission collects, the consent basis for publishing it, and our no-tracking posture.';
+    'The Law Tome privacy notice: what a coin submission collects, the consent basis for publishing it, and how visits are counted.';
 
   const faq = hubFaq([
     {
       q: 'Does The Law Tome use cookies?',
-      a: 'It sets none. The two things the site remembers — your light or dark theme, and <a href="' + base + 'saved/">your saved shortlist</a> — are kept in your browser\'s own local storage, which is never transmitted with a request the way a cookie is. Clearing site data clears both.',
+      a: 'Only Google Analytics does: it sets its own first-party cookies (<code>_ga</code>) to count visits. Visitors in the EU, the EEA, the UK and Switzerland are counted without cookies. The two things the site itself remembers, your light or dark theme and <a href="' + base + 'saved/">your saved shortlist</a>, are kept in your browser\'s local storage and never sent anywhere.',
     },
     {
       q: 'Do you know which laws I read?',
-      a: 'No. There is no analytics script on any page, no pixel, no third-party embed, and no server-side log we consult. The site is static files; the only record of a visit is whatever the host keeps to serve it.',
+      a: 'In aggregate, yes. Google Analytics reports which pages are opened, roughly where from (country and city) and which site sent the reader. It does not give us your name or email. Advertising storage and ad personalisation are switched off on every page, so the counting is not used for ads. A content blocker, or blocking googletagmanager.com, turns it off entirely.',
     },
     {
       q: 'What happens to a submission I make?',
@@ -422,27 +422,27 @@ export function privacyPage({ base = '/', origin = '', count } = {}) {
   <div class="wrap narrow">
 ${hubHead({
     title: 'Privacy',
-    answer: 'The Law Tome sets no cookies, runs no analytics, and keeps no record of which laws you read. The only personal data it ever holds is what you deliberately type into the coin form, which is used to review and — with your consent — publish and credit your submission.',
-    lede: 'A reference project, not a business with a funnel. There are <b>no ads and no tracking</b> — no analytics cookies, no reading profile, no third-party scripts on any page.',
+    answer: 'The Law Tome counts visits with Google Analytics, so we can see which pages are read. It shows no ads, has no accounts and builds no advertising profile. The only personal data you can give it directly is what you type into the coin form, which is used to review and, with your consent, publish and credit your submission.',
+    lede: 'A reference project, not a business with a funnel. There are <b>no ads and no accounts</b>. The one third-party script is Google Analytics, with its advertising features off.',
     crumbs: [['about/', 'About']],
     base,
   })}    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
 
     <h2>What we collect</h2>
-    <p>Only what you type into the <a href="${base}coin/">coin form</a> when you choose to submit a law: the name you give for credit, the law's title and statement, your chosen mode (coin or suggest), and any sources you provide. Browsing the rest of the site collects nothing about you.</p>
+    <p>Only what you type into the <a href="${base}coin/">coin form</a> when you choose to submit a law: the name you give for credit, the law's title and statement, your chosen mode (coin or suggest), and any sources you provide. Browsing the rest of the site sends Google Analytics a record of each page opened, with the usual technical details a browser shares: rough location, device type, the site that sent you. In the EU, the EEA, the UK and Switzerland this happens without cookies.</p>
 
     <h2>The basis for using it</h2>
     <p>We use a submission on the basis of the <b>consent</b> you give — the required checkbox on the form — together with the CC BY licence grant it carries. If a coined law is published, the name you supplied is shown as its credit. You can ask us to correct or remove your submission at any time.</p>
 
     <h2>What we don't do</h2>
-    <p>We don't sell your data, we don't build advertising profiles, and we don't track which laws you read. Submission data is used only to review and, if it clears verification, publish your entry.</p>
+    <p>We don't sell your data, we don't show ads, and we don't use Analytics data for advertising. Submission data is used only to review and, if it clears verification, publish your entry.</p>
 ${faq.html}  </div>
 </section>
 `;
 
   return (
     head({
-      title: 'Privacy — No Ads, No Tracking, No Account | The Law Tome',
+      title: 'Privacy — No Ads, No Account | The Law Tome',
       description, base, origin, path: 'privacy/',
       jsonld: [
         {

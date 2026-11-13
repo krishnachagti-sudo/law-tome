@@ -22,7 +22,7 @@ export function savedPage({ base = '/', origin = '', count } = {}) {
     },
     {
       q: 'Where is my list actually stored?',
-      a: 'In your browser, in its <code>localStorage</code>, under this site\'s own origin. It is never transmitted: The Law Tome has no accounts, no user database, and no analytics that could carry it away. Nobody but you — including us — can see what you have saved.',
+      a: 'In your browser, in its <code>localStorage</code>, under this site\'s own origin. It is never transmitted: The Law Tome has no accounts and no user database, and the visit counter (Google Analytics) records pages opened, not what you save. Nobody but you — including us — can see what you have saved.',
     },
     {
       q: 'Will it follow me to another device?',

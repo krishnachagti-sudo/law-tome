@@ -39,7 +39,7 @@ export function takeoverInner(wave, { base = '/' } = {}) {
 
 // The event itself, embedded, never copied. A click-to-load facade: no request
 // goes to YouTube until the reader taps play, which keeps the page fast and the
-// site's no-tracking promise. Then YouTube's privacy-enhanced player loads.
+// site's privacy promise. Then YouTube's privacy-enhanced player loads.
 // The cover is the video's own thumbnail, saved into the site (src/assets/img/wild/)
 // so the page makes no request to YouTube until the reader taps play.
 function mediaBlock(media = [], base = '/') {
@@ -61,7 +61,7 @@ function shareRow(title) {
         </div>`;
 }
 
-function predictBlock(p) {
+function predictBlock(p, doppler = false) {
   return `<section class="wave-sec wave-predict" aria-labelledby="w-predict">
         <p class="lbl">Before you read on</p>
         <h2 class="block-h" id="w-predict">Make a guess</h2>
@@ -72,13 +72,13 @@ ${p.options.map((o, i) => `          <button type="button" class="wave-opt" data
         <div class="wave-reveal" data-reveal-box hidden data-answer="${p.answer}">
           <p class="wave-verdict" data-verdict></p>
           <p>${e(p.reveal)}</p>
-          <figure class="wave-plot">
+${doppler ? `          <figure class="wave-plot">
             <canvas width="720" height="300" aria-label="Pitch over time for a plane passing 300 m away and 1 km away" data-plot></canvas>
             <label class="wave-slider">Distance from the flight path: <strong data-dist-out>300 m</strong>
               <input type="range" min="100" max="2000" step="50" value="300" data-dist></label>
             <figcaption>Pitch heard on the ground as the plane passes (illustrative: 100 Hz tone, 60 m/s, still air). Drag to move yourself.</figcaption>
           </figure>
-        </div>
+` : ''}        </div>
       </section>`;
 }
 
@@ -198,6 +198,9 @@ export function wavePage(wave, law, { base = '/', origin = '', count, categoryLa
     ...(wave.headings || {}),
   };
   const url = `${origin}${base}${path}`;
+  // The diagrams, the interactive plot and the share pictures were drawn for the
+  // Doppler wave. Any other wave gets text-led versions until it has its own.
+  const doppler = wave.visuals === 'doppler';
   const lawUrl = `${base}laws/${law.slug}/`;
   const src = (i) => wave.sources[i];
   const tz = '+05:30';
@@ -282,34 +285,34 @@ ${wave.actions.map((x) => `        <li>${e(x)}</li>`).join('\n')}
     <section class="wave-sec" aria-labelledby="w-what">
       <p class="lbl">What happened</p>
       <h2 class="block-h" id="w-what">${e(H.what)}</h2>
-      <p>${e(wave.artefact.text)} <a href="${e(wave.artefact.url)}" rel="noopener">Read Gizmodo's report</a>.</p>
+      <p>${e(wave.artefact.text)} <a href="${e(wave.artefact.url)}" rel="noopener">${e(wave.artefact.label || 'Read the original report')}</a>.</p>
       <ol class="wave-timeline">
 ${wave.timeline.map((t) => `        <li><time datetime="${e(t.date)}">${e(fmtDate(t.date))}</time><span>${e(t.text)} <a class="wave-src" href="${e(src(t.source).url)}" rel="noopener">source</a></span></li>`).join('\n')}
       </ol>
       <p class="wave-why"><strong>Why it matters.</strong> ${e(wave.whyItMatters)}</p>
     </section>
 
-    ${predictBlock(wave.predict)}
+    ${wave.predict ? predictBlock(wave.predict, doppler) : ''}
 
     <section class="wave-sec" aria-labelledby="w-how">
       <p class="lbl">How it works</p>
       <h2 class="block-h" id="w-how">${e(H.how)}</h2>
-      ${heroFigure()}
+      ${doppler ? heroFigure() : ''}
       <ol class="wave-steps">
-${wave.mechanism.map((m, i) => `        <li><span class="wave-n">${String(i + 1).padStart(2, '0')}</span><div><h3>${e(m.h)}</h3><p>${e(m.text)}</p>${i === 2 ? flybyFigure() : i === 4 ? fixFigure() : ''}</div></li>`).join('\n')}
+${wave.mechanism.map((m, i) => `        <li><span class="wave-n">${String(i + 1).padStart(2, '0')}</span><div><h3>${e(m.h)}</h3><p>${e(m.text)}</p>${doppler ? (i === 2 ? flybyFigure() : i === 4 ? fixFigure() : '') : ''}</div></li>`).join('\n')}
       </ol>
-      <p class="wave-name">The name for step 2 is <a href="${lawUrl}">${e(law.name)}</a>: ${e(law.statement)}</p>
+      <p class="wave-name">The name for ${wave.lawStep ? `step ${wave.lawStep}` : 'this'} is <a href="${lawUrl}">${e(law.name)}</a>: ${e(law.statement)}</p>
     </section>
 
-    <section class="wave-sec" aria-labelledby="w-calc">
+    ${wave.calc ? `<section class="wave-sec" aria-labelledby="w-calc">
       <p class="lbl">Our worked example</p>
       <h2 class="block-h" id="w-calc">${e(H.calc)}</h2>
-      ${curvesFigure()}
+      ${doppler ? curvesFigure() : ''}
       <ul class="wave-calc">
 ${wave.calc.points.map((p) => `        <li>${e(p)}</li>`).join('\n')}
       </ul>
-      <p class="wave-fine">${e(wave.calc.assumptions)} <code>${e(wave.calc.formula)}</code></p>
-    </section>
+      <p class="wave-fine">${e(wave.calc.assumptions)}${wave.calc.formula ? ` <code>${e(wave.calc.formula)}</code>` : ''}</p>
+    </section>` : ''}
 
     <section class="wave-sec" aria-labelledby="w-limits">
       <p class="lbl">Where it stops working</p>
@@ -325,7 +328,7 @@ ${wave.limits.map((l) => `        <li>${e(l)}</li>`).join('\n')}
       <ol class="wave-sources">
 ${wave.sources.map((s) => `        <li><a href="${e(s.url)}" rel="noopener">${e(s.text)}</a><span>Supports: ${e(s.supports)}. Checked ${e(fmtDate(s.checked))}.</span></li>`).join('\n')}
       </ol>
-      <p class="wave-fine">Written by ${e(wave.author.name)}. Published ${e(fmtDate(wave.publishedAt))}, updated ${e(fmtDate(wave.updatedAt))}. The worked example and the limits on physics are our own reasoning on the stated assumptions.</p>
+      <p class="wave-fine">Written by ${e(wave.author.name)}. Published ${e(fmtDate(wave.publishedAt))}, updated ${e(fmtDate(wave.updatedAt))}. ${wave.calc ? 'The worked example and the limits are our own reasoning on the stated assumptions.' : 'The limits are our own reasoning.'}</p>
     </section>
 
     <section class="wave-sec" aria-labelledby="w-faq">
@@ -385,9 +388,10 @@ export function waveCardSvg(wave, law) {
   <rect width="1200" height="630" fill="${C.bg}"/>
   <text x="72" y="96" font-family="Space Mono" font-size="22" letter-spacing="3" fill="${C.gold}">IN THE WILD · ${e(monthYear(wave.publishedAt).toUpperCase())}</text>
 ${lines.map((l, i) => `  <text x="72" y="${178 + i * 66}" font-family="Fraunces" font-size="56" fill="${C.ink}">${e(l)}</text>`).join('\n')}
-  <path d="${curvePath(640, 360, 480, 170, 1000)}" fill="none" stroke="${C.muted}" stroke-width="3" opacity="0.6"/>
+${wave.visuals === 'doppler' ? `  <path d="${curvePath(640, 360, 480, 170, 1000)}" fill="none" stroke="${C.muted}" stroke-width="3" opacity="0.6"/>
   <path d="${curvePath(640, 360, 480, 170, 300)}" fill="none" stroke="${C.gold}" stroke-width="6"/>
-  <text x="72" y="560" font-family="Fraunces" font-size="30" fill="${C.ink}">${e(law.name)}</text>
+  <text x="72" y="560" font-family="Fraunces" font-size="30" fill="${C.ink}">${e(law.name)}</text>` : `  <line x1="72" y1="480" x2="240" y2="480" stroke="${C.gold}" stroke-width="4"/>
+  <text x="72" y="560" font-family="Fraunces" font-size="40" fill="${C.gold}">${e(law.name)}</text>`}
   <text x="1128" y="560" text-anchor="end" font-family="Space Mono" font-size="20" fill="${C.muted}">conyso.com/lawtome</text>
 </svg>`;
 }
@@ -401,19 +405,30 @@ export function waveTallSvg(wave, law) {
   <rect width="1080" height="1350" fill="${C.bg}"/>
   <text x="80" y="130" font-family="Space Mono" font-size="26" letter-spacing="3" fill="${C.gold}">IN THE WILD · ${e(monthYear(wave.publishedAt).toUpperCase())}</text>
 ${head.map((l, i) => `  <text x="80" y="${230 + i * 76}" font-family="Fraunces" font-size="64" fill="${C.ink}">${e(l)}</text>`).join('\n')}
-  <path d="${curvePath(80, 640, 920, 300, 1000)}" fill="none" stroke="${C.muted}" stroke-width="4" opacity="0.6"/>
+${wave.visuals === 'doppler' ? `  <path d="${curvePath(80, 640, 920, 300, 1000)}" fill="none" stroke="${C.muted}" stroke-width="4" opacity="0.6"/>
   <path d="${curvePath(80, 640, 920, 300, 300)}" fill="none" stroke="${C.gold}" stroke-width="8"/>
   <text x="80" y="1000" font-family="Space Mono" font-size="24" fill="${C.gold}">plane 300 m away: steep drop</text>
   <text x="80" y="1036" font-family="Space Mono" font-size="24" fill="${C.muted}">plane 1 km away: gentle drop</text>
   <text x="80" y="1110" font-family="Fraunces" font-size="34" fill="${C.ink}">The steepness gives your distance.</text>
   <text x="80" y="1156" font-family="Fraunces" font-size="34" fill="${C.ink}">Two planes put you on the map.</text>
-  <text x="80" y="1262" font-family="Fraunces" font-size="32" fill="${C.ink}">${e(law.name)}</text>
+` : `  <line x1="80" y1="${230 + head.length * 76 + 40}" x2="300" y2="${230 + head.length * 76 + 40}" stroke="${C.gold}" stroke-width="5"/>
+${wrap(wave.answer, 44).slice(0, 7).map((l, i) => `  <text x="80" y="${230 + head.length * 76 + 120 + i * 50}" font-family="Fraunces" font-size="34" fill="${C.ink}">${e(l)}</text>`).join('\n')}
+`}  <text x="80" y="1262" font-family="Fraunces" font-size="32" fill="${C.ink}">${e(law.name)}</text>
   <text x="1000" y="1262" text-anchor="end" font-family="Space Mono" font-size="22" fill="${C.muted}">conyso.com/lawtome</text>
 </svg>`;
 }
 
 /** 1600x900 image with no text, for Discover and the article's schema image: wavefronts bunching ahead of a moving source, and the curve. */
-export function waveHeroSvg() {
+export function waveHeroSvg(wave = { visuals: 'doppler' }) {
+  // Other waves: ripples spreading from one point, no text (Discover crops it).
+  if (wave.visuals !== 'doppler') {
+    const ripples = Array.from({ length: 9 }, (_, i) => `<circle cx="800" cy="450" r="${60 + i * 70}" fill="none" stroke="${C.gold}" stroke-width="3" opacity="${(0.9 - i * 0.09).toFixed(2)}"/>`);
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="${C.bg}"/>
+  ${ripples.join('\n  ')}
+  <circle cx="800" cy="450" r="14" fill="${C.ink}"/>
+</svg>`;
+  }
   const rings = [];
   for (let i = 0; i < 9; i++) {
     const r = 70 + i * 62, cx = 820 - i * 34;

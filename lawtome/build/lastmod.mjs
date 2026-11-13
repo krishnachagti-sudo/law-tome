@@ -115,6 +115,10 @@ export function pageHash(html, prefixes = [], { assets = true } = {}) {
   // stylesheet. A page whose prose, markup and links are identical did not
   // change because its styling did.
   if (assets) s = s.replace(/\?v=[0-9a-f]{6,}/gi, '?v= ASSET ');
+  // Site-wide chrome marked <!--nohash--> (the analytics tag, the header and
+  // footer taglines) is the same on every page, so a change to it is a change to
+  // the site, not to any entry. Same reasoning as the asset fingerprints above.
+  s = s.replace(/<!--nohash-->[\s\S]*?<!--\/nohash-->/g, '');
   return createHash('sha256').update(s, 'utf8').digest('hex').slice(0, 16);
 }
 

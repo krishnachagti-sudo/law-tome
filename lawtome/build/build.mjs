@@ -31,7 +31,7 @@ import { decadeChart } from '../src/templates/charts.mjs';
 import { causalChains, kindredClusters } from './lineage.mjs';
 import { chainsPage, clustersPage } from '../src/templates/lineage.mjs';
 import { bestKnown, bestKnownPage, bandPage, banded, bandPath, bandOf } from '../src/templates/bestknown.mjs';
-import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, setBuildDate, personSlug } from '../src/templates/partials.mjs';
+import { RELIABILITY_TIERS, reliabilitySlug, setAssetVersions, setBuildDate, personSlug, setAnalytics } from '../src/templates/partials.mjs';
 import { collectionsIndexPage, collectionPage } from '../src/templates/collections.mjs';
 import { resolveCollections } from './collections.mjs';
 import { quizPage, scorePage } from '../src/templates/quiz.mjs';
@@ -120,6 +120,8 @@ function urlKey(absPath, out) {
 
 export async function buildSite(opts) {
   const { dataDir, catFile, assetsDir, out, base = '/', origin = '' } = opts;
+  // Off unless the config names a GA4 stream (test builds never do).
+  setAnalytics(opts.ga4Id);
   // Persisting the manifest is opt-in, and the CLI is the only caller that asks.
   // The integration suites run full builds into temp directories; if those
   // rewrote the committed manifest, a test run would leave the working tree
@@ -345,7 +347,7 @@ export async function buildSite(opts) {
     if (!law) throw new Error(`wave ${w.slug}: unknown law ${w.law}`);
     writes.push(writePage(join(out, 'wild', w.slug, 'index.html'), wavePage(w, law, { base, origin, count: publishedCount, categoryLabel: categories[law.category] || law.category, follow: opts.follow || null, portrait: law.namedAfter ? ((images && images.people) || {})[personSlug(law.namedAfter)] || null : null })));
     writes.push(writePage(join(out, 'og', 'wild', `${w.slug}.png`), renderPng(waveCardSvg(w, law))));
-    writes.push(writePage(join(out, 'og', 'wild', `${w.slug}-16x9.png`), renderPng(waveHeroSvg())));
+    writes.push(writePage(join(out, 'og', 'wild', `${w.slug}-16x9.png`), renderPng(waveHeroSvg(w))));
     writes.push(writePage(join(out, 'og', 'wild', `${w.slug}-tall.png`), renderPng(waveTallSvg(w, law))));
     writes.push(writePage(join(out, 'wild', w.slug, 'index.md'), waveMarkdown(w, law, { base, origin })));
   }
@@ -1123,7 +1125,8 @@ export async function buildSite(opts) {
   // The CSP is deliberately not `script-src 'self'` alone: the theme-init and the
   // law page's scroll-spy are inline <script> blocks (they must run before first
   // paint), so 'unsafe-inline' is required until those are externalised. Everything
-  // else is locked to same-origin — the site loads zero third-party resources.
+  // else is same-origin, except Google Analytics (opt-in via ga4Id) and the
+  // YouTube player a reader starts on a wave page.
   const headersBody = [
     '# Netlify / Cloudflare Pages headers. No effect on GitHub Pages.',
     '/*',
@@ -1131,7 +1134,7 @@ export async function buildSite(opts) {
     '  Referrer-Policy: strict-origin-when-cross-origin',
     '  X-Frame-Options: DENY',
     '  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()',
-    "  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self' https://github.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'",
+    "  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube-nocookie.com; form-action 'self' https://github.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'",
     '',
     '# Hashed by ?v=<contenthash>, so a changed file is always a new URL.',
     '/assets/*',

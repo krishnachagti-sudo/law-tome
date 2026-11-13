@@ -346,6 +346,21 @@ export function clampDescription(text, max = DESC_MAX) {
  * @param {string} [o.robots]     robots directive (defaults to a permissive, rich-preview policy)
  * @param {object[]} [o.jsonld]   array of JSON-LD objects; each emitted via jsonLd()
  */
+// Google Analytics 4. Set once by the build from site.config.json (ga4Id); empty
+// means off. The tag runs only on the production host, so local builds and
+// previews never send hits. Ad storage and ad personalisation are denied
+// everywhere; in the EEA, the UK and Switzerland analytics storage is denied
+// too, so visitors there are counted without cookies (Consent Mode). The block
+// sits between <!--nohash--> markers: it is not content, and pageHash leaves it
+// out so turning analytics on or off never re-dates the whole sitemap.
+let GA_ID = null;
+const GA_NO_COOKIE_REGIONS = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'];
+export function setAnalytics(id) { GA_ID = typeof id === 'string' && /^G-[A-Z0-9]{6,}$/.test(id) ? id : null; }
+export function analyticsTag(host = 'conyso.com') {
+  if (!GA_ID) return '';
+  return `<!--nohash--><script>(function(){if(location.hostname!==${JSON.stringify(host)})return;var w=window;w.dataLayer=w.dataLayer||[];function g(){w.dataLayer.push(arguments)}w.gtag=g;g('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});g('consent','default',{analytics_storage:'denied',region:${JSON.stringify(GA_NO_COOKIE_REGIONS)}});g('js',new Date());g('config','${GA_ID}');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_ID}';document.head.appendChild(s)})();</script><!--/nohash-->`;
+}
+
 export function head({ title, description, base = '/', origin = '', path, canonical, og, jsonld, siteName = 'The Law Tome', robots, modified, published, alternates } = {}) {
   const canon = canonical || (path != null ? `${origin}${base}${path}` : undefined);
   // Clamped here so no generator can ship a truncated result slot. The OG and
@@ -442,6 +457,8 @@ export function head({ title, description, base = '/', origin = '', path, canoni
   out.push(`<script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('lt-theme')}catch(e){}if(t)d.setAttribute('data-theme',t);else if(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)d.setAttribute('data-theme','light');try{if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)d.classList.add('anim')}catch(e){}})();</script>`);
   out.push(`<script defer src="${asset(base, 'assets/common.js')}"></script>`);
   if (Array.isArray(jsonld)) for (const block of jsonld) out.push(jsonLd(block));
+  const ga = analyticsTag();
+  if (ga) out.push(ga);
   out.push('</head>');
   out.push('<body>');
   return out.join('\n') + '\n';
@@ -583,7 +600,7 @@ ${MORE.map(([path, label, blurb]) => `            <a class="nm-item" href="${bas
   //
   // Google picks a page's snippet from anywhere in the served HTML, and on this
   // site the same forty words of chrome — "Vol. I", "a living index of named
-  // laws", "no ads · no tracking", and the twenty-odd links behind "More" —
+  // laws", "no ads · no account", and the twenty-odd links behind "More" —
   // appear on all 1,785 pages. That is exactly the shape of text that gets
   // chosen when the real answer is further down, and it is identical on every
   // page, so when it is chosen the result is 1,785 pages with interchangeable
@@ -598,7 +615,7 @@ ${MORE.map(([path, label, blurb]) => `            <a class="nm-item" href="${bas
   <div class="kicker"><div class="wrap kick-in">
     <span class="k-l">Vol.&nbsp;I</span>
     <span class="k-c">a living index of named laws · est.&nbsp;mmxxvi</span>
-    <span class="k-r">no ads · no tracking</span>
+    <span class="k-r"><!--nohash-->no ads · no account<!--/nohash--></span>
   </div></div>
   <div class="wrap bar">
     <a class="brand" href="${base}" aria-label="The Law Tome — home">
@@ -719,7 +736,7 @@ ${links.map(([path, label]) => `        <a href="${base}${path}">${escapeHtml(la
         <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
         <span class="brand-name">The Law Tome</span>
       </a>
-      <p class="foot-blurb">A living, sourced index of named laws, principles, and effects — every entry traced to its origin and cited. No ads, no tracking of what you read.</p>
+      <p class="foot-blurb">A living, sourced index of named laws, principles, and effects — every entry traced to its origin and cited. <!--nohash-->No ads, no account, no ad profiles.<!--/nohash--></p>
       <p class="foot-conyso">Created by <a href="https://conyso.com/founder/" rel="author">Krishna Chagti</a> · an initiative by <a href="https://conyso.com">Conyso</a>.</p>
       <p class="foot-motto">Sapere aude.</p>
     </div>

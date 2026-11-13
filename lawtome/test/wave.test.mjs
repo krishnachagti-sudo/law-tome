@@ -83,7 +83,7 @@ test('the citation names the date once', () => {
 test('who is behind it and what you can do sit above the story', () => {
   const pub = html.indexOf('class="wave-publisher"'), doBox = html.indexOf('class="wave-do"'), video = html.indexOf('class="wave-video"'), story = html.indexOf('id="w-what"');
   assert.ok(pub > 0 && pub < doBox && doBox < video && video < story);
-  assert.match(html, /No ads, no tracking/);
+  assert.match(html, /No ads, no account/);
 });
 
 test('the creator\'s own video is listed as a source', () => {
@@ -134,4 +134,15 @@ test('the Markdown twin carries the answer, the sources and the labelled worked 
   assert.ok(md.startsWith(`# ${wave.h1}`));
   for (const s of wave.sources) assert.ok(md.includes(s.url));
   assert.match(md, /Worked example \(ours, illustrative\)/);
+});
+
+test('a wave that is not the Doppler one gets no Doppler diagrams, plot or curves', () => {
+  const goodhart = JSON.parse(readFileSync(new URL('../src/data/laws/goodharts-law.json', import.meta.url)));
+  const { visuals, lawStep, calc, media, predict, ...rest } = wave;
+  const other = { ...rest, slug: 'test-other-wave', law: 'goodharts-law', media: [], artefact: { text: 'A report.', url: 'https://example.com/r' } };
+  const page = wavePage(other, goodhart, { base: '/lawtome/', origin: 'https://conyso.com', count: 1116 });
+  assert.doesNotMatch(page, /<canvas|class="wave-fig"|Read Gizmodo|id="w-calc"|The name for step/);
+  assert.match(page, /The name for this is <a href="\/lawtome\/laws\/goodharts-law\/">/);
+  assert.match(page, /Read the original report/);
+  for (const svg of [waveCardSvg(other, goodhart), waveHeroSvg(other)]) assert.doesNotMatch(svg, /<path d="M/);
 });

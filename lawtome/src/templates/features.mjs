@@ -55,7 +55,7 @@ const FEATURES = [
   { href: 'data/', cta: 'Download the data',
     icon: svg('<path d="M12 3v11"/><path d="M8 11l4 3 4-3"/><path d="M4 20h16"/>'),
     title: 'Sourced, and open',
-    body: 'Every entry is traced to its origin and cited — nothing invented. The index metadata is free to download and build on under CC BY, in JSON and CSV. No ads, and no tracking of what you read.' },
+    body: 'Every entry is traced to its origin and cited — nothing invented. The index metadata is free to download and build on under CC BY, in JSON and CSV. No ads and no account.' },
   { href: 'coin/', cta: 'Coin a law',
     icon: svg('<path d="M20 4L9 15"/><path d="M20 4l-3 8-4 1-2-2 1-4z"/><path d="M9 15l-4 4"/>'),
     title: 'Coin your own',
@@ -96,7 +96,7 @@ export function featuresPage({ base = '/', origin = '', count, imagery = {}, com
   const faq = hubFaq([
     {
       q: 'Is The Law Tome free?',
-      a: `Yes — free to read, with no advertising, no account, and no tracking of what you read. The index metadata is also <a href="${base}data/">downloadable under CC BY</a> in JSON and CSV.`,
+      a: `Yes — free to read, with no advertising and no account. We count visits with Google Analytics, with ad features switched off. The index metadata is also <a href="${base}data/">downloadable under CC BY</a> in JSON and CSV.`,
     },
     {
       q: 'How is this different from a list of laws?',

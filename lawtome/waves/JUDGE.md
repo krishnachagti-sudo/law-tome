@@ -24,9 +24,11 @@ and recrawled often. So:
   ahead.
 - **Your call:** anything on human hold.
 
-The cap is a hard limit, not a target: at most one standalone page a day and
-five a week. Law Tome shares conyso.com with every other Conyso microsite, so
-a scaled-content problem would hit all of them.
+The caps are hard limits, not targets. A day publishes at most **3 law-page
+examples** and **2 standalone wave pages**, and a week at most **8 standalone
+pages**. Law Tome shares conyso.com with every other Conyso microsite, so a
+scaled-content problem would hit all of them. Two strong pages beat ten thin
+ones. Most days should publish fewer than the cap.
 
 ## Before judging: who is driving it
 
@@ -132,5 +134,9 @@ verification pipeline, not as wave pages.
 
 Every claim is cited, and every citation is opened and read to confirm it says
 what we claim (two of the first eleven seed laws failed this). A story still
-moving is labelled developing and updated. Krishna approves each page by
-merging it.
+moving is labelled developing and updated.
+
+Krishna has delegated publishing to the daily run (14 Nov 2026), within the
+caps above and only while `autopublish.json` in the private law-tome-waves repo
+says `"enabled": true`. Anything on human hold still waits for him. A wave that
+fails any rule here is skipped, not softened until it passes.

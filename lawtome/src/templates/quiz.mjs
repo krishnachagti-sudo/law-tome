@@ -132,7 +132,7 @@ export function quizPage({ base = '/', origin = '', count, categories = {}, laws
     },
     {
       q: 'Is my score saved anywhere?',
-      a: 'Today’s result and your best streak are kept in your own browser and never leave it. There is no account, no server and no tracking — the same as the rest of the site. Clearing your site data clears them, and a second browser will not know you have played.',
+      a: 'Today’s result and your best streak are kept in your own browser and never leave it. There is no account and no server behind the quiz; the site\u2019s visit counter sees that a page was opened, not how you answered. Clearing your site data clears them, and a second browser will not know you have played.',
     },
     {
       q: 'What is the difference between the daily round and endless mode?',
