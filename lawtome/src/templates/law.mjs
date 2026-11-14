@@ -383,7 +383,21 @@ export function lawPage(law, ctx = {}) {
     ? `\n    <div class="aka">also known as — ${law.aliases.map(escapeHtml).join(', ')}</div>`
     : '';
 
-  const entry = `<section class="entry">
+  // Commissioned engravings: a hero under the statement, a scene mid-page, and
+  // a faint category plate behind the entry. Labelled as illustrations.
+  const plates = (images && images.plates) || {};
+  const plate = (plates.laws || {})[law.slug] || null;
+  const catPlate = Array.isArray(plates.categories) && plates.categories.includes(law.category);
+  const plateFig = (kind, cls, eager = false) => {
+    const p = plate && plate[kind];
+    if (!p) return '';
+    return `<figure class="${cls}">
+      <img src="${base}assets/img/plates/${escapeHtml(law.slug)}-${kind}.webp" srcset="${base}assets/img/plates/${escapeHtml(law.slug)}-${kind}-800.webp 800w, ${base}assets/img/plates/${escapeHtml(law.slug)}-${kind}.webp 1400w" sizes="(max-width: 900px) 100vw, 860px" width="${p.width || 1400}" height="${p.height || 788}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" alt="${escapeHtml(p.alt)}">
+      <figcaption>${p.caption ? escapeHtml(p.caption) + ' · ' : ''}Illustration for the Law Tome</figcaption>
+    </figure>`;
+  };
+  const entryPlate = catPlate ? ` has-plate" style="--plate:url('${base}assets/img/plates/bg-${escapeHtml(law.category)}.webp')` : '';
+  const entry = `<section class="entry${entryPlate}">
   <svg class="entry-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
   <div class="wrap-wide">
     <nav class="crumb" aria-label="Breadcrumb"><a href="${base}">Home</a><span class="sep">/</span><a href="${base}category/${escapeHtml(law.category)}/">${escapeHtml(catLabel)}</a><span class="crumb-here"><span class="sep">/</span>${escapeHtml(law.name)}</span></nav>
@@ -391,7 +405,7 @@ export function lawPage(law, ctx = {}) {
       ${meta.join('\n      ')}
     </div>
     <h1 class="law-title">${escapeHtml(law.name)}</h1>${aka}
-    <blockquote class="entry-stmt">"${renderStatement(law)}"</blockquote>
+    <blockquote class="entry-stmt">"${renderStatement(law)}"</blockquote>${plate && plate.hero ? '\n    ' + plateFig('hero', 'plate-hero', true) : ''}
   </div>
 </section>
 `;
@@ -586,6 +600,7 @@ ${h2}${inner}
       return tag ? `${tag}: ${text}` : text;
     }).filter(Boolean).join(' ');
     blocks.push(block(exItems.length > 1 ? "Where you'll see it" : 'An example', grid, false, `What are examples of ${L}?`, exAnswer));
+    if (plate && plate.scene) blocks.push(`      ${plateFig('scene', 'plate-scene')}`);
   }
   // Once a wave's takeover has ended, its page stays linked from here for good,
   // so a wave page never becomes an orphan reachable only from the sitemap.
@@ -1177,7 +1192,7 @@ ${prevnext}</div>
     ...(Array.isArray(law.aliases) && law.aliases.length ? { alternativeHeadline: law.aliases[0] } : {}),
     name: law.name,
     description: answer,
-    image: `${origin}${base}og/${law.slug}.png`,
+    image: plate && plate.hero ? [`${origin}${base}assets/img/plates/${law.slug}-hero.jpg`, `${origin}${base}og/${law.slug}.png`] : `${origin}${base}og/${law.slug}.png`,
     keywords,
     about: { '@type': 'Thing', name: law.name, ...(sameAsLd(law.sameAs) ? { sameAs: sameAsLd(law.sameAs) } : {}) },
     inLanguage: 'en',
@@ -1480,6 +1495,15 @@ document.getElementById('copy').onclick=function(){
       url: namesakeImg ? `${origin}${base}assets/img/people/${namesakeImg.slug}.webp` : '',
       caption: law.namedAfter ? `${law.namedAfter}, who ${law.name} is named after` : '',
     }),
+    ...['hero', 'scene'].map((k) => (plate && plate[k] ? {
+      '@type': 'ImageObject',
+      url: `${origin}${base}assets/img/plates/${law.slug}-${k}.webp`,
+      contentUrl: `${origin}${base}assets/img/plates/${law.slug}-${k}.webp`,
+      width: plate[k].width || 1400, height: plate[k].height || 788,
+      caption: plate[k].alt,
+      creditText: 'Law Tome (Conyso), illustration',
+      creator: { '@id': CONYSO_ID },
+    } : null)),
   ].filter(Boolean).map((n) => ({ '@context': 'https://schema.org', ...n }));
 
   // MathSolver, on the two pages where the input genuinely IS a mathematical
@@ -1552,7 +1576,7 @@ document.getElementById('copy').onclick=function(){
       path: `laws/${law.slug}/`,
       canonical,
       modified: LASTMOD_TOKEN,
-      og: { title: `${titleCore}: ${facetList}`, description: ogDescription, image: `${base}og/${law.slug}.png`, type: 'article' },
+      og: { title: `${titleCore}: ${facetList}`, description: ogDescription, image: plate && plate.hero ? `${base}assets/img/plates/${law.slug}-hero.jpg` : `${base}og/${law.slug}.png`, type: 'article' },
       alternates: [{ type: 'text/markdown', title: `${law.name} (Markdown)`, href: `${canonical}index.md` }],
       jsonld: [definedTerm, article, breadcrumb, ...imageNodes, ...(webApp ? [webApp] : []), ...(mathSolver ? [mathSolver] : []), ...(quiz ? [quiz] : []), ...(faqPage ? [faqPage] : [])],
     }) +

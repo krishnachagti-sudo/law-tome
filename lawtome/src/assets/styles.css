@@ -2992,3 +2992,14 @@ footer { padding-bottom: env(safe-area-inset-bottom); }
 .cl-h{font-family:var(--serif);font-size:19px;margin:0 0 4px}
 .cl-n{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--faint);font-weight:400;margin-left:6px}
 .cl-list{font-size:14px;line-height:1.75;color:var(--muted);margin:0}
+
+/* Commissioned engravings: hero under the statement, a scene mid-page, a faint
+   category plate behind the entry. */
+.entry.has-plate::before{content:"";position:absolute;inset:0;background:var(--plate) center/cover no-repeat;opacity:.55;z-index:0;pointer-events:none}
+html[data-theme="dark"] .entry.has-plate::before{opacity:.08;filter:invert(1) sepia(.3)}
+.entry.has-plate>.wrap-wide{position:relative;z-index:1}
+.plate-hero,.plate-scene{margin:22px 0 8px}
+.plate-hero img,.plate-scene img{display:block;width:100%;height:auto;border-radius:6px;border:1px solid var(--line);box-shadow:0 10px 30px -18px rgba(40,25,10,.45)}
+.plate-hero figcaption,.plate-scene figcaption{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.03em;margin-top:8px}
+.plate-scene{margin:34px 0}
+html[data-theme="dark"] .plate-hero img,html[data-theme="dark"] .plate-scene img{filter:brightness(.92)}

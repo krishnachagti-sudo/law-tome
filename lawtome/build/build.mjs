@@ -148,6 +148,11 @@ export async function buildSite(opts) {
     images = JSON.parse(await readFile('src/data/images.json', 'utf8'));
     images.people = images.people || {};
   } catch { /* no manifest yet */ }
+  // Commissioned engravings (src/data/plates.json, files in assets/img/plates/):
+  // a hero and a scene per law, made for the Tome. Optional like the rest.
+  try {
+    images.plates = JSON.parse(await readFile('src/data/plates.json', 'utf8'));
+  } catch { images.plates = { laws: {}, categories: [] }; }
 
   // Non-image facts (src/data/facts.json) from build/fetch-facts.py: each law's
   // defining formula, the frequency of its name in print, the names it goes by
@@ -878,6 +883,14 @@ export async function buildSite(opts) {
       title: l.name,
       caption: imgCaption(fig),
     });
+    const pl = ((images.plates || {}).laws || {})[l.slug];
+    for (const kind of ['hero', 'scene']) {
+      if (pl && pl[kind]) pushImg(p, {
+        loc: `${origin}${base}assets/img/plates/${l.slug}-${kind}.webp`,
+        title: `${l.name}, an illustration`,
+        caption: pl[kind].alt,
+      });
+    }
     const por = l.namedAfter ? (images.people || {})[personSlug(l.namedAfter)] : null;
     if (por) pushImg(p, {
       loc: `${origin}${base}assets/img/people/${por.slug}.webp`,
