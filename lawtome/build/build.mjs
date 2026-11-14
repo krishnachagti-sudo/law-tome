@@ -1162,6 +1162,11 @@ export async function buildSite(opts) {
   ].join('\n');
   writes.push(writePage(join(out, '_headers'), headersBody));
 
+  // .htaccess: production is Apache (Cloudways) behind Cloudflare, which ignores
+  // _redirects/_headers. Without this a missing URL got the server's bare
+  // "404 Not Found" instead of our own 404 page.
+  writes.push(writePage(join(out, '.htaccess'), `ErrorDocument 404 ${base}404.html\n`));
+
   // ---- flush -----------------------------------------------------------------
   //
   // Everything above buffered its output. Now: work out what actually changed
