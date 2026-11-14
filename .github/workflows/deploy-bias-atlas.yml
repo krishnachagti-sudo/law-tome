@@ -1,0 +1,108 @@
+name: Deploy Bias Atlas to conyso.com
+
+# Builds krishnachagti-sudo/bias-atlas (public) and uploads it to
+# conyso.com/biases/. It lives here, not in bias-atlas, because this repo
+# already holds the conyso server's deploy key: one key, one place.
+#
+# Runs every hour, so the Bias Atlas daily wave run's examples go live within
+# the hour of being pushed, and on demand. rsync only sends what changed, so a
+# run with nothing new uploads nothing.
+#
+# Uses this repo's DEPLOY_* secrets and variables (see deploy-prod.yml), plus:
+#   ATLAS_DEPLOY_ENABLED  true, or nothing runs
+#   ATLAS_DEPLOY_DRY_RUN  true = list what would change, upload nothing
+#
+# The Atlas's lastmod manifest is kept in the Actions cache here, because this
+# workflow cannot push to bias-atlas. Never uploads with --delete.
+
+on:
+  schedule:
+    - cron: '40 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-bias-atlas
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: vars.ATLAS_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      BASE: /biases/
+      ORIGIN: https://conyso.com
+    defaults:
+      run:
+        working-directory: atlas
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: krishnachagti-sudo/bias-atlas
+          path: atlas
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+
+      - uses: actions/cache@v4
+        with:
+          path: atlas/.cache/og
+          key: atlas-og-${{ hashFiles('atlas/src/data/biases/*.json', 'atlas/build/cards.mjs') }}
+          restore-keys: atlas-og-
+      # The newest saved manifest, so a page is re-dated only when it changes.
+      - name: Restore the lastmod manifest
+        uses: actions/cache/restore@v4
+        with:
+          path: atlas/.lastmod-saved.json
+          key: atlas-lastmod-${{ github.run_id }}
+          restore-keys: atlas-lastmod-
+      - run: if [ -f .lastmod-saved.json ]; then cp .lastmod-saved.json src/data/lastmod.json; fi
+
+      - run: npm run build -- --base=$BASE --origin=$ORIGIN
+      - run: npm test
+      - run: npm run style -- --strict
+      - run: npm run preflight -- --base=$BASE --origin=$ORIGIN
+
+      - name: Set up SSH
+        env:
+          KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          printf '%s\n' "$KNOWN" > ~/.ssh/known_hosts
+          printf 'Host deploy\n  HostName %s\n  Port %s\n  User %s\n  IdentityFile ~/.ssh/deploy\n  StrictHostKeyChecking yes\n' \
+            "${{ vars.DEPLOY_HOST }}" "${{ vars.DEPLOY_PORT || '22' }}" "${{ vars.DEPLOY_USER }}" > ~/.ssh/config
+
+      - name: Upload (no --delete)
+        run: |
+          DRY=""
+          if [ "${{ vars.ATLAS_DEPLOY_DRY_RUN }}" = "true" ]; then DRY="--dry-run"; echo "DRY RUN: nothing is uploaded"; fi
+          rsync -az --itemize-changes $DRY dist/ "deploy:${{ vars.DEPLOY_ROOT }}/biases/" | tee ../rsync.log | tail -40
+          echo "files that would change or did change: $(grep -c '^[<>c]f' ../rsync.log || true)"
+
+      - name: Smoke check
+        if: vars.ATLAS_DEPLOY_DRY_RUN != 'true'
+        run: |
+          for p in "" "bias/confirmation-bias/" "sitemap.xml"; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$ORIGIN$BASE$p?deploy=${{ github.run_id }}")
+            echo "$code $ORIGIN$BASE$p"
+            [ "$code" = "200" ] || { echo "::error::$ORIGIN$BASE$p returned $code"; exit 1; }
+          done
+
+      - name: Tell Bing what changed
+        if: vars.INDEXNOW_PROD == 'true' && vars.ATLAS_DEPLOY_DRY_RUN != 'true'
+        run: node build/indexnow.mjs --base=$BASE --origin=$ORIGIN
+
+      - name: Keep the manifest for the next run
+        if: vars.ATLAS_DEPLOY_DRY_RUN != 'true'
+        run: cp src/data/lastmod.json .lastmod-saved.json
+      - if: vars.ATLAS_DEPLOY_DRY_RUN != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: atlas/.lastmod-saved.json
+          key: atlas-lastmod-${{ github.run_id }}
