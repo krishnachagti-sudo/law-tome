@@ -117,7 +117,11 @@ export function homePage(featuredLaws = [], { publishedCount, base = '/', origin
   <div class="wrap">
     <div class="eyebrow">${eyebrow}</div>
     <h1 class="lede">Everyone quotes these. <b>Nobody checks them.</b> So we rated all ${escapeHtml(count)} for how much evidence is actually behind each one.</h1>
-${hook}    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
+${hook}    <figure class="lib-hero" aria-hidden="true">
+      <img class="lib-art" src="${base}assets/img/librarian/walk.webp" width="260" height="377" alt="" loading="lazy" decoding="async">
+      <div class="lib-card">"Says who?" Every card in here names its source.<span>The Librarian</span></div>
+    </figure>
+    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
     <div class="stmt-wrap">
       <div class="stmt-meta"><span id="m-no">${heroNo}</span><span class="dot"></span><a class="cat" id="m-cat" href="${heroCatHref}">${heroCat}</a></div>
       <div class="stmt" id="stmt">${heroStmt}</div>

@@ -64,7 +64,7 @@ ${people.map(row).join('\n')}
   const faq = hubFaq([
     {
       q: 'Is any of this AI-generated?',
-      a: 'None of it. Every file is an existing photograph, engraving or painted portrait of the person it appears beside, fetched from Wikimedia Commons with its licence metadata intact. A generated likeness of a real person would be a fabricated fact with a face on it — the same thing this project refuses to do in prose.',
+      a: 'None of the images on this page. Every portrait and figure listed here is an existing photograph, engraving or painting, fetched from Wikimedia Commons with its licence metadata intact. A generated likeness of a real person would be a fabricated fact with a face on it — the same thing this project refuses to do in prose. Two things elsewhere on the site are AI-generated, and labelled: the illustrations captioned "Illustration for the Law Tome", and the Librarian, the Tome\'s cartoon host. Neither ever depicts a real person.',
     },
     {
       q: 'How do you know the photo shows the right person?',

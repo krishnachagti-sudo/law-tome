@@ -160,6 +160,10 @@ export function quizPage({ base = '/', origin = '', count, categories = {}, laws
     </div>
 
     <div class="quiz" id="quiz" hidden>
+      <figure class="lib-quiz" id="lib-quiz" aria-hidden="true" data-look="${base}assets/img/librarian/look.webp" data-stamp="${base}assets/img/librarian/stamp.webp" data-hm="${base}assets/img/librarian/hm.webp">
+        <div class="lib-card" id="lib-quiz-say">Guess first. Then I'll show you the card.</div>
+        <img class="lib-art" id="lib-quiz-img" src="${base}assets/img/librarian/look.webp" width="360" height="360" alt="" decoding="async">
+      </figure>
       <div class="quiz-hud">
         <div class="quiz-prog" aria-hidden="true"><span class="quiz-prog-bar" id="quiz-prog"></span></div>
         <div class="quiz-hud-row">

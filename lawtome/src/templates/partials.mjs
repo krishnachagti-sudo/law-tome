@@ -619,7 +619,7 @@ ${MORE.map(([path, label, blurb]) => `            <a class="nm-item" href="${bas
   </div></div>
   <div class="wrap bar">
     <a class="brand" href="${base}" aria-label="The Law Tome — home">
-      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
+      <!--nohash--><img class="mark lib-mark lib-art" src="${base}assets/img/librarian/head.webp" width="34" height="34" alt=""><!--/nohash--><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal"/></svg>
       <span class="brand-txt"><span class="brand-name">The Law Tome</span><span class="brand-sub">index of named laws</span></span>
     </a>
     <nav class="links" id="primary-nav" aria-label="Primary">

@@ -341,6 +341,7 @@
       if (!q) return finish();
       qNo = asked + 1;
       answered = false;
+      librarian(false);
       if (afterEl) { afterEl.hidden = true; afterEl.textContent = ''; }
       if (askEl) askEl.textContent = q.ask;
       if (stmtEl) {
@@ -361,6 +362,18 @@
       if (nextBtn) nextBtn.disabled = true;
     }
 
+    // The Librarian: peers over her glasses while you guess, stamps the answer.
+    function librarian(revealed, right) {
+      var fig = document.getElementById('lib-quiz');
+      if (!fig) return;
+      if (!fig._warm) { fig._warm = 1; ['data-stamp', 'data-hm'].forEach(function (a) { var w = new Image(); w.src = fig.getAttribute(a); }); }
+      var img = document.getElementById('lib-quiz-img');
+      var say = document.getElementById('lib-quiz-say');
+      if (img) img.src = fig.getAttribute(!revealed ? 'data-look' : right ? 'data-stamp' : 'data-hm');
+      if (say) say.textContent = !revealed ? "Guess first. Then I'll show you the card."
+        : right ? 'Stamped. You had the card.' : 'Hm. The card says otherwise.';
+    }
+
     function answer(opt, btn) {
       if (answered) return;
       answered = true;
@@ -376,6 +389,7 @@
         if (q.options[i] && q.options[i].right) kids[i].classList.add('correct');
       }
       if (!right) btn.classList.add('wrong');
+      librarian(true, right);
 
       // The reveal is the teaching moment, so it carries the reason rather than
       // just a tick: what the rating means, or which field it really came from.

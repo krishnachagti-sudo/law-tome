@@ -405,7 +405,8 @@ export function lawPage(law, ctx = {}) {
       ${meta.join('\n      ')}
     </div>
     <h1 class="law-title">${escapeHtml(law.name)}</h1>${aka}
-    <blockquote class="entry-stmt">"${renderStatement(law)}"</blockquote>${plate && plate.hero ? '\n    ' + plateFig('hero', 'plate-hero', true) : ''}
+    <blockquote class="entry-stmt">"${renderStatement(law)}"</blockquote><!--nohash-->
+    <p class="lib-byline"><img class="lib-art" src="${base}assets/img/librarian/head.webp" width="40" height="40" alt="" loading="lazy" decoding="async"><span>From the Librarian's <a href="#sec-sources">card index</a>. <b>No source, no stamp.</b></span></p><!--/nohash-->${plate && plate.hero ? '\n    ' + plateFig('hero', 'plate-hero', true) : ''}
   </div>
 </section>
 `;

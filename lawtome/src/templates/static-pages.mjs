@@ -527,7 +527,10 @@ export function notFoundPage({ base = '/', origin = '', count } = {}) {
   <div class="wrap narrow">
     <div class="sec-head"><h1>Lost the plot</h1></div>
     <p class="lede">There's no law at this address. It may have moved, or never existed — much like the Dartmouth paper Campbell's Law was misattributed to.</p>
-    <svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><use href="#orn"/></svg>
+    <figure class="lib-404" aria-hidden="true">
+      <img class="lib-art" src="${base}assets/img/librarian/cat-asleep.webp" width="360" height="305" alt="" decoding="async">
+      <figcaption>Hearsay, the Librarian's cat, asleep on the sources again.</figcaption>
+    </figure>
     <p>Try one of these instead:</p>
     <ul class="method">
       <li><a href="${base}">The front page</a> — start over.</li>

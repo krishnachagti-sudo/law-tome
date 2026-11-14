@@ -3003,3 +3003,32 @@ html[data-theme="dark"] .entry.has-plate::before{opacity:.08;filter:invert(1) se
 .plate-hero figcaption,.plate-scene figcaption{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.03em;margin-top:8px}
 .plate-scene{margin:34px 0}
 html[data-theme="dark"] .plate-hero img,html[data-theme="dark"] .plate-scene img{filter:brightness(.92)}
+
+/* The Librarian (AI-generated house character, black and grey line art on white).
+   Multiply drops the white paper in light mode; dark mode inverts her to chalk lines. */
+.lib-art{display:block}
+html[data-theme="dark"] .lib-art{filter:invert(.9)}
+.brand .lib-mark+svg.mark{display:none}
+.brand .lib-mark{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1.5px solid currentColor;background:#fff}
+html[data-theme="dark"] .brand .lib-mark{background:#000}
+.lib-byline{display:flex;align-items:center;gap:10px;margin:14px 0 0;font-family:var(--mono);font-size:12px;line-height:1.35;color:var(--faint);letter-spacing:.02em}
+.lib-byline img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid var(--line);flex:none}
+.lib-byline a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.lib-byline b{color:var(--ink);font-weight:600}
+.lib-card{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:9px 13px;font:italic 15px/1.35 var(--serif,Georgia,serif);color:var(--ink);text-align:left;transform:rotate(-1.5deg);box-shadow:0 6px 18px -12px rgba(0,0,0,.35);position:relative;z-index:1}
+.lib-card span{display:block;margin-top:6px;font:600 10px/1 var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.lib-hero{display:flex;align-items:flex-end;gap:14px;margin:18px 0 6px;max-width:520px}
+.lib-hero img{width:120px;height:auto;flex:none}
+.lib-hero .lib-card{margin-bottom:22px}
+.quiz{position:relative}
+.lib-quiz{position:absolute;left:calc(100% + 44px);top:0;width:220px;margin:0;text-align:center;pointer-events:none}
+.lib-quiz img{width:190px;height:auto;display:block;margin:-2px auto 0}
+@media (max-width:1180px){
+  .lib-hero img{width:92px}
+  .lib-quiz{position:static;display:flex;align-items:flex-end;gap:12px;width:auto;margin:0 0 14px}
+  .lib-quiz img{width:72px;margin:0;order:-1}
+  .lib-quiz .lib-card{margin-bottom:12px}
+}
+.lib-404{margin:18px 0 8px;display:flex;align-items:flex-end;gap:14px}
+.lib-404 img{width:170px;height:auto;flex:none}
+.lib-404 figcaption{font:italic 15px/1.4 var(--serif,Georgia,serif);color:var(--faint);margin-bottom:14px}
