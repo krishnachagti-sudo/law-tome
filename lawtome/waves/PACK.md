@@ -24,7 +24,15 @@ write the pack with recommendations only, as drafts. The caps in it
 (`maxExamplesPerDay`, `maxPagesPerDay`, `maxPagesPerWeek`) override JUDGE.md
 only if they are lower. Count this week's pages from `decisions.json`.
 
-## For each law wave in the queue (top 8 by score)
+## Carried over: publish what earlier packs already verified
+
+Before today's queue, read the last 7 packs in `out/packs/`. Any `update`
+recommended there that isn't on the law page yet: re-open its source, check the
+quote still holds, and publish it today (within the cap) unless the event has
+since gone on human hold or been corrected. Don't leave verified examples
+waiting.
+
+## For each law wave in the queue (top 12 by score)
 
 1. **Find the cause.** Use the evidence lines first, then web search: news,
    X, LinkedIn, YouTube, Reddit. For a phone-led wave, look for the original
@@ -114,7 +122,10 @@ As before, and in the pack:
   JUDGE.md's four tests, with the refute pass written out. Publish one only if
   it clears step 4 above.
 - **The calendar:** for events within 48 hours, prepare the law-page example and
-  publish it when the event happens.
+  publish it when the event happens. Also search for scheduled events in the
+  next 14 days that work the way a Tome law describes (rulings, launches,
+  summits, rate decisions, eclipses) and add them to `lawtome/waves/calendar.json`
+  with a source link, so future runs have something prepared.
 - **Emerging terms and missing laws:** report only. Never publish these.
 
 ## Output

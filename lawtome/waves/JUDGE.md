@@ -24,11 +24,16 @@ and recrawled often. So:
   ahead.
 - **Your call:** anything on human hold.
 
-The caps are hard limits, not targets. A day publishes at most **3 law-page
+The caps are limits, not targets. A day publishes at most **5 law-page
 examples** and **2 standalone wave pages**, and a week at most **8 standalone
 pages**. Law Tome shares conyso.com with every other Conyso microsite, so a
-scaled-content problem would hit all of them. Two strong pages beat ten thin
-ones. Most days should publish fewer than the cap.
+scaled-content problem would hit all of them. That risk is about thin new pages,
+not about sourced examples on pages that already exist, so be generous with
+examples and strict with new pages.
+
+Being too cautious is a failure too. A sourced, verified example that sits in a
+pack for days is a missed wave. If the cause is found, quoted, about the law
+itself and not on human hold, publish it the same day.
 
 ## Before judging: who is driving it
 
@@ -43,7 +48,7 @@ wave is a law-page example at most; big publishers will own the new-page slot.
 ## Human hold first
 
 A wave marked **⚠ HUMAN HOLD** touches death, disaster, attack, illness, abuse
-or a named private person. It is never drafted automatically. Krishna decides
+or a named private person. It is never published automatically. Krishna decides
 whether it is a page at all. If it is, it carries no promotion or call to
 action, and any scheduled social post about it has a kill switch. The
 newsjacking failures on record (Kenneth Cole on Cairo, Epicurious on Boston,
@@ -63,8 +68,9 @@ the Hurricane Sandy posts) were all tragedy pairings.
 A single HN front-page or large Reddit thread naming a law is listed even when
 it is not a wave. Reach is almost all one broadcast (Goel et al. 2016), and an
 HN story stays on the front page for about half a day. Reply in the thread the
-same day: a full answer in the comment itself, one link at most. No page unless
-it becomes a wave. On HN, never ask for votes. On Reddit, follow the
+same day: a full answer in the comment itself, one link at most. No standalone
+page unless it becomes a wave, but if the thread's event has a confirmed cause
+that works the way the law describes, add it as a law-page example too. On HN, never ask for votes. On Reddit, follow the
 subreddit's own rules; fact subreddits such as r/todayilearned reject recent
 or self-hosted sources.
 
