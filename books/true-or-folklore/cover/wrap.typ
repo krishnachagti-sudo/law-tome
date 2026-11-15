@@ -20,15 +20,15 @@
 #let mono = "Space Mono"
 #let serif = ("LT Text", "LT Text Ext")
 
-#set page(width: 2 * trim-w + spine + 2 * bleed, height: trim-h + 2 * bleed, margin: 0pt, fill: verm)
-#set text(font: serif, fill: paper)
+#set page(width: 2 * trim-w + spine + 2 * bleed, height: trim-h + 2 * bleed, margin: 0pt, fill: paper)
+#set text(font: serif, fill: ink)
 
 #let stamp(word, color, size: 30pt, angle: -8deg, fill: none) = rotate(angle, reflow: true,
   box(stroke: 5pt + color, radius: 6pt, inset: 6pt, fill: fill,
     box(stroke: 1.5pt + color, radius: 3pt, inset: (x: 16pt, y: 8pt),
       text(font: mono, size: size, weight: "bold", tracking: 0.16em, fill: color, word))))
 #let mini-boxes = grid(columns: 3, column-gutter: 4pt, ..("TRUE", "FOLKLORE", "DISPUTED").map(w =>
-  box(stroke: 1pt + paper, radius: 2pt, inset: (x: 5pt, y: 3pt), text(font: mono, size: 6.5pt, tracking: 0.08em, [☐ #w]))))
+  box(stroke: 1pt + ink, radius: 2pt, inset: (x: 5pt, y: 3pt), text(font: mono, size: 6.5pt, tracking: 0.08em, [☐ #w]))))
 
 // Panels, measured from the left edge of the bleed.
 #let back-x = bleed
@@ -50,7 +50,7 @@
   text(size: 10.5pt)[Everyone has heard these stories. Fewer people know which ones happened. *True or Folklore?* puts 100 famous stories from science, history, money and the mind to the test. Guess first: true, folklore or disputed. Then turn the page for the verdict, the real story, why the myth spread and the source that settles it.]
   v(0.16in)
   // "Can you guess?" strip: three real questions from the book, answers inside.
-  box(width: 100%, stroke: 1.2pt + paper, radius: 4pt, inset: 10pt, {
+  box(width: 100%, stroke: 1.2pt + ink, radius: 4pt, inset: 10pt, {
     text(font: mono, size: 7.5pt, tracking: 0.18em)[CAN YOU GUESS? ANSWERS INSIDE]
     v(6pt)
     for q in ([Did Churchill promise "blood, sweat and tears"?], [Is the "Mount Stupid" curve in the Dunning–Kruger paper?], [Did roulette land on black 26 times in a row at Monte Carlo?]) {
@@ -63,10 +63,9 @@
   v(0.06in)
   text(size: 8.5pt, style: "italic")[Every verdict is checked against the record, with the source named on the page. Eighteen stories are still genuinely disputed, and the book says so.]
 }))
-// The Librarian, cream on vermillion (art/librarian/final/back-cover-cover.png, made by
-// prep-librarian.py), in the gap between the text block and the footer, left of the barcode zone.
+// The Librarian, ink on cream (art/librarian/final/back-cover-oncream.png), in the gap between the text block and the footer, left of the barcode zone.
 #place(top + left, dx: back-x + safe, dy: bleed + trim-h - safe - 0.2in - 0.14in - 1.35in,
-  image("/art/librarian/final/back-cover-cover.png", width: 1.35in))
+  image("/art/librarian/final/back-cover-oncream.png", width: 1.35in))
 // Footer to the left of the barcode zone.
 #place(top + left, dx: back-x + safe, dy: bleed + trim-h - safe - 0.2in,
   text(font: mono, size: 8pt, tracking: 0.14em)[CONYSO PUBLISHING · CONYSO.COM/LAWTOME])
@@ -82,18 +81,23 @@
       text(font: mono, size: 7pt, tracking: 0.18em, fill: paper)[THE LAW TOME · CONYSO PUBLISHING])
   })))))
 
-// ---------- FRONT (cover D1) ----------
-#place(top + left, dx: front-x + 0.55in, dy: bleed + 0.6in, box(width: trim-w - 1.1in, height: trim-h - 1.1in, {
-  text(font: mono, size: 9pt, tracking: 0.2em)[THE LAW TOME SERIES]
-  v(0.2in)
-  block(text(font: display, size: 60pt, hyphenate: false, { set par(leading: 0.35em); [True or Folklore?] }))
-  v(0.08in)
-  text(size: 16pt, style: "italic")[100 famous stories you've been told wrong]
+// ---------- FRONT (cover B, picked by Krishna 16 Nov 2026) ----------
+// Cream, an ink frame, the Newton cartoon with the vermillion FOLKLORE stamp slammed on it.
+#place(top + left, dx: front-x + 0.32in, dy: bleed + 0.32in, rect(width: trim-w - 0.64in, height: trim-h - 0.64in, stroke: 3pt + ink))
+#place(top + left, dx: front-x + 0.6in, dy: bleed + 0.7in, box(width: trim-w - 1.2in, height: trim-h - 1.3in, {
+  set par(spacing: 0pt)
+  align(center, text(font: mono, size: 9pt, tracking: 0.2em)[THE LAW TOME SERIES])
+  v(0.3in)
+  align(center, block(text(font: display, size: 62pt, hyphenate: false, { set par(leading: 0.3em); [True or Folklore?] })))
+  v(0.22in)
+  align(center, text(size: 15pt, style: "italic")[100 famous stories you've been told wrong])
   v(1fr)
-  box(width: 100%, {
-    box(width: 100%, fill: paper, stroke: 3pt + ink, radius: 6pt, inset: 10pt, align(center, image("/art/final/002.png", height: 3.05in, fit: "contain")))
-    place(bottom + right, dx: 0.18in, dy: 0.22in, stamp("FOLKLORE", ink, size: 24pt, angle: -11deg, fill: paper))
+  box(width: 100%, height: 3.7in, {
+    align(center + horizon, image("/cover/002-oncream.png", height: 3.5in, fit: "contain"))
+    place(bottom + right, dx: 0.05in, dy: -0.15in, stamp("FOLKLORE", verm, size: 22pt, angle: -12deg, fill: paper))
   })
-  v(0.35in)
-  text(font: mono, size: 8.5pt, tracking: 0.12em)[THE MYTH-BUSTING QUIZ FOR CURIOUS MINDS]
+  v(1fr)
+  align(center, text(font: mono, size: 9pt, tracking: 0.14em)[THE MYTH-BUSTING QUIZ FOR CURIOUS MINDS])
+  v(0.1in)
+  align(center, text(font: mono, size: 9pt, tracking: 0.14em)[ED. KRISHNA CHAGTI])
 }))
