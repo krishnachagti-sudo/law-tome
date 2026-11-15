@@ -167,3 +167,13 @@ test('an example that is the same story as a wave page is not listed twice', () 
   const hub = wildHubPage([wave], { [law.slug]: sameStory }, { base: '/lawtome/' });
   assert.ok(!hub.includes('On the law pages'));
 });
+
+test('the feed and llms.txt carry law-page examples too', () => {
+  const other = { slug: 'cascading-failure', name: 'Cascading Failure', examples: [{ tag: 'In the wild · Nov 2026', date: '2099-01-02', text: 'One router failed.', source: { text: 'Example News', url: 'https://example.com/a', checked: '2099-01-02' } }] };
+  const byslug = { [law.slug]: law, [other.slug]: other };
+  const feed = wildFeed([wave], byslug, { base: '/lawtome/', origin: 'https://conyso.com' });
+  assert.ok(feed.includes('<title>Cascading Failure: in the wild</title>'));
+  assert.ok(feed.includes('<updated>2099-01-02T00:00:00Z</updated>'));
+  const llms = wildLlms([wave], byslug, { base: '/lawtome/', origin: 'https://conyso.com' });
+  assert.ok(llms.includes('### On the law pages') && llms.includes('[Cascading Failure](https://conyso.com/lawtome/laws/cascading-failure/)'));
+});

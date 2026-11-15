@@ -543,9 +543,11 @@ ${exList.map(({ law, ex }) => `      <li><a href="${exHref(law, base)}"><span cl
 
 const xml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-/** Atom feed of wave pages. */
+/** Atom feed: wave pages, and the dated examples added to law pages. */
 export function wildFeed(waves, byslug, { base = '/', origin = '', updated } = {}) {
   const list = newestFirst(waves);
+  const exList = wildExamples(byslug, waves).slice(0, 40);
+  const newest = [list[0] && list[0].updatedAt, exList[0] && exList[0].ex.date].filter(Boolean).sort().pop();
   const self = `${origin}${base}wild/feed.xml`;
   return `<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -554,7 +556,7 @@ export function wildFeed(waves, byslug, { base = '/', origin = '', updated } = {
   <link rel="self" href="${xml(self)}"/>
   <link rel="alternate" href="${xml(`${origin}${base}wild/`)}"/>
   <id>${xml(self)}</id>
-  <updated>${xml(updated || `${(list[0] && list[0].updatedAt) || '1970-01-01'}T00:00:00Z`)}</updated>
+  <updated>${xml(updated || `${newest || '1970-01-01'}T00:00:00Z`)}</updated>
 ${list.map((w) => `  <entry>
     <title>${xml(w.h1)}</title>
     <link href="${xml(`${origin}${base}wild/${w.slug}/`)}"/>
@@ -564,6 +566,15 @@ ${list.map((w) => `  <entry>
     <author><name>${xml(w.author.name)}</name></author>
     <summary>${xml(w.answer)}</summary>
     <category term="${xml(byslug[w.law] ? byslug[w.law].name : w.law)}"/>
+  </entry>`).join('\n')}${exList.length ? '\n' : ''}${exList.map(({ law, ex }) => `  <entry>
+    <title>${xml(law.name)}: in the wild</title>
+    <link href="${xml(origin + exHref(law, base))}"/>
+    <id>${xml(`${origin}${base}laws/${law.slug}/#wild-${ex.date}`)}</id>
+    <published>${xml(ex.date)}T09:00:00+05:30</published>
+    <updated>${xml((ex.source && ex.source.checked) || ex.date)}T09:00:00+05:30</updated>
+    <author><name>The Law Tome</name></author>
+    <summary>${xml(ex.text)}${ex.source && ex.source.text ? xml(` Source: ${ex.source.text}.`) : ''}</summary>
+    <category term="${xml(law.name)}"/>
   </entry>`).join('\n')}
 </feed>
 `;
@@ -588,8 +599,11 @@ export function waveMarkdown(wave, law, { base = '/', origin = '' } = {}) {
 /** The "In the wild" section appended to llms.txt (short) and llms-full.txt (full). */
 export function wildLlms(waves, byslug, { base = '/', origin = '' } = {}, full = false) {
   const list = newestFirst(waves);
-  if (!list.length) return '';
-  return `\n## In the wild\n\nNamed laws caught in the news, each with sources, a worked example and limits.\n\n${list.map((w) => full
+  const exList = wildExamples(byslug, waves).slice(0, 40);
+  if (!list.length && !exList.length) return '';
+  const pages = list.map((w) => full
     ? waveMarkdown(w, byslug[w.law], { base, origin })
-    : `- [${w.h1}](${origin}${base}wild/${w.slug}/index.md): ${w.answer}`).join('\n')}\n`;
+    : `- [${w.h1}](${origin}${base}wild/${w.slug}/index.md): ${w.answer}`).join('\n');
+  const exs = exList.map(({ law, ex }) => `- ${ex.date}, [${law.name}](${origin}${base}laws/${law.slug}/): ${ex.text}${ex.source && ex.source.url ? ` Source: [${ex.source.text || ex.source.url}](${ex.source.url}).` : ''}`).join('\n');
+  return `\n## In the wild\n\nNamed laws caught in the news, each with sources, a worked example and limits.\n\n${pages}\n${exs ? `\n### On the law pages\n\nDated, sourced examples added to a law's own page.\n\n${exs}\n` : ''}`;
 }
