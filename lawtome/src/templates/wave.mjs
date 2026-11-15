@@ -457,19 +457,51 @@ ${newestFirst(waves).map((w) => `          <li><a href="${base}wild/${e(w.slug)}
         </ul>`;
 }
 
-/** Home-page strip: the latest wave, so the newest page is one click from the front door. */
+/** Dated "In the wild" examples on law pages, newest first: { law, ex }. */
+export function wildExamples(byslug, waves = []) {
+  // An example that is the same story as a wave page (same law, within a week) is
+  // already covered by that page, so it is not listed twice.
+  const days = (a, b) => Math.abs(Date.parse(a) - Date.parse(b)) / 864e5;
+  const dupe = (law, ex) => waves.some((w) => w.law === law.slug && days(w.publishedAt.slice(0, 10), ex.date) <= 7);
+  const out = [];
+  for (const law of Object.values(byslug || {})) {
+    for (const ex of Array.isArray(law.examples) ? law.examples : []) {
+      if (ex && typeof ex === 'object' && /^In the wild/.test(ex.tag || '') && /^\d{4}-\d{2}-\d{2}$/.test(ex.date || '') && !dupe(law, ex)) out.push({ law, ex });
+    }
+  }
+  return out.sort((a, b) => b.ex.date.localeCompare(a.ex.date) || a.law.slug.localeCompare(b.law.slug));
+}
+
+const exHref = (law, base) => `${base}laws/${e(law.slug)}/#sec-${law.examples.length > 1 ? 'where-you-ll-see-it' : 'an-example'}`;
+
+const firstSentence = (s, max = 150) => {
+  const m = String(s || '').match(/^.*?[.!?](\s|$)/);
+  const one = (m ? m[0] : String(s || '')).trim();
+  return one.length > max ? one.slice(0, max - 1).replace(/\s+\S*$/, '') + '…' : one;
+};
+
+/** Home-page strip: the newest thing in the wild, wave page or dated law-page
+ *  example, headed by the law's name for an example, plus the next few. */
 export function wildStrip(waves, byslug, { base = '/' } = {}) {
-  const [w] = newestFirst(waves);
-  if (!w) return '';
-  const law = byslug[w.law];
+  const items = [
+    ...waves.map((w) => ({ date: w.publishedAt.slice(0, 10), page: 1, href: `${base}wild/${e(w.slug)}/`,
+      head: w.h1, sub: `${byslug[w.law] ? byslug[w.law].name : ''} · all waves at /wild/ →`, name: byslug[w.law] ? byslug[w.law].name : w.h1 })),
+    ...wildExamples(byslug, waves).map(({ law, ex }) => ({ date: ex.date, page: 0,
+      href: exHref(law, base),
+      head: law.name, sub: firstSentence(ex.text), name: law.name })),
+  ].sort((a, b) => b.date.localeCompare(a.date) || b.page - a.page);
+  const [top, ...rest] = items;
+  if (!top) return '';
+  const more = rest.slice(0, 4);
   return `<section class="sec home-wild">
   ${waveCss(base)}
   <div class="wrap">
-    <a class="wave-strip" href="${base}wild/${e(w.slug)}/">
-      <span class="wave-take-tag"><span class="wave-dot" aria-hidden="true"></span>In the wild · ${e(monthYear(w.publishedAt))}</span>
-      <span class="wave-strip-h">${e(w.h1)}</span>
-      <span class="wave-fine">${e(law ? law.name : '')} · <span>all waves at /wild/ →</span></span>
-    </a>
+    <a class="wave-strip" href="${top.href}">
+      <span class="wave-take-tag"><span class="wave-dot" aria-hidden="true"></span>In the wild · ${e(monthYear(top.date))}</span>
+      <span class="wave-strip-h">${e(top.head)}</span>
+      <span class="wave-fine">${e(top.sub)}</span>
+    </a>${more.length ? `
+    <p class="wave-more"><span>Also in the wild:</span> ${more.map((m) => `<a href="${m.href}">${e(m.name)}</a>`).join(' · ')} · <a href="${base}wild/">all waves</a></p>` : ''}
   </div>
 </section>
 `;
@@ -478,6 +510,7 @@ export function wildStrip(waves, byslug, { base = '/' } = {}) {
 /** The /wild/ hub: every wave, newest first. */
 export function wildHubPage(waves, byslug, { base = '/', origin = '', count } = {}) {
   const list = newestFirst(waves);
+  const exList = wildExamples(byslug, waves).slice(0, 60);
   const url = `${origin}${base}wild/`;
   const jsonld = [{
     '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'In the wild', url,
@@ -497,7 +530,12 @@ export function wildHubPage(waves, byslug, { base = '/', origin = '', count } = 
     <p class="wave-answer">When a named law turns up in the news, this is where it gets explained: what happened, how the law accounts for it, where the explanation stops working, and every source.</p>
     <ul class="wave-hub">
 ${list.map((w) => `      <li><a href="${base}wild/${e(w.slug)}/"><span class="wave-take-tag"><span class="wave-dot" aria-hidden="true"></span>${e(fmtDate(w.publishedAt))}${w.status === 'developing' ? ' · developing' : ''}</span><strong>${e(w.h1)}</strong><span class="wave-fine">${e(byslug[w.law] ? byslug[w.law].name : '')}</span></a></li>`).join('\n')}
-    </ul>
+    </ul>${exList.length ? `
+    <h2 class="wave-h2" id="examples">On the law pages</h2>
+    <p class="wave-fine">Smaller catches: a dated, sourced example added to the law's own page, newest first.</p>
+    <ul class="wave-hub">
+${exList.map(({ law, ex }) => `      <li><a href="${exHref(law, base)}"><span class="wave-take-tag"><span class="wave-dot" aria-hidden="true"></span>${e(fmtDate(ex.date))}</span><strong>${e(law.name)}</strong><span class="wave-fine">${e(firstSentence(ex.text, 200))}${ex.source && ex.source.text ? ` (${e(ex.source.text)})` : ''}</span></a></li>`).join('\n')}
+    </ul>` : ''}
     <p class="wave-fine"><a href="${base}wild/feed.xml">Follow new waves by RSS</a>.</p>
   </article>
 ` + footer({ base });

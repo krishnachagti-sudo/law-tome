@@ -146,3 +146,24 @@ test('a wave that is not the Doppler one gets no Doppler diagrams, plot or curve
   assert.match(page, /Read the original report/);
   for (const svg of [waveCardSvg(other, goodhart), waveHeroSvg(other)]) assert.doesNotMatch(svg, /<path d="M/);
 });
+
+test('a dated law-page example newer than the last wave heads the home strip, by law name, and is on the hub', () => {
+  const other = { slug: 'cascading-failure', name: 'Cascading Failure', examples: [
+    { kind: 'documented', tag: 'In the wild · Nov 2026', date: '2099-01-02', text: 'One router failed and the network went down. More detail follows.', source: { text: 'Example News, 2 Jan 2099', url: 'https://example.com', checked: '2099-01-02' } },
+    { text: 'An older plain example.' },
+  ] };
+  const byslug = { [law.slug]: law, [other.slug]: other };
+  const strip = wildStrip([wave], byslug, { base: '/lawtome/' });
+  assert.match(strip, /<span class="wave-strip-h">Cascading Failure<\/span>/);
+  assert.ok(strip.includes('/lawtome/laws/cascading-failure/#sec-where-you-ll-see-it'));
+  assert.ok(strip.includes('One router failed and the network went down.'));
+  assert.ok(strip.includes('wild/plane-audio-video-location-doppler-effect/'), 'the wave page stays one click away');
+  const hub = wildHubPage([wave], byslug, { base: '/lawtome/' });
+  assert.ok(hub.includes('On the law pages') && hub.includes('<strong>Cascading Failure</strong>'));
+});
+
+test('an example that is the same story as a wave page is not listed twice', () => {
+  const sameStory = { ...law, examples: [{ tag: 'In the wild · Nov 2026', date: wave.publishedAt.slice(0, 10), text: 'Same story.' }] };
+  const hub = wildHubPage([wave], { [law.slug]: sameStory }, { base: '/lawtome/' });
+  assert.ok(!hub.includes('On the law pages'));
+});
