@@ -2,8 +2,158 @@
   "note": "Commissioned engravings for law pages, made with ChatGPT in one house style (copperplate engraving, cream paper, one oxblood accent). Files: assets/img/plates/<slug>-hero|scene(.webp, -800.webp; hero also .jpg for sharing). Import with scripts/plate-import.sh. categories lists the bg-<category>.webp plates that exist.",
   "laws": {
     "goodharts-law": {
-      "hero": { "alt": "Engraving of factory workers cheering as they pour a mountain of tiny nails toward a quota gauge, while a top-hatted manager studies the gauge instead of the nails", "caption": "The gauge says the quota is met", "width": 1400, "height": 788 },
-      "scene": { "alt": "Engraving of a Victorian schoolroom where pupils recite memorised answers to an inspector with a checklist while real books gather dust on the shelves", "caption": "Teaching to the test", "width": 1400, "height": 788 }
+      "hero": {
+        "alt": "Engraving of factory workers cheering as they pour a mountain of tiny nails toward a quota gauge, while a top-hatted manager studies the gauge instead of the nails",
+        "caption": "The gauge says the quota is met",
+        "width": 1400,
+        "height": 788
+      },
+      "scene": {
+        "alt": "Engraving of a Victorian schoolroom where pupils recite memorised answers to an inspector with a checklist while real books gather dust on the shelves",
+        "caption": "Teaching to the test",
+        "width": 1400,
+        "height": 788
+      }
+    },
+    "habeas-corpus": {
+      "hero": {
+        "alt": "Engraving of a Georgian courtroom where a jailer brings a shackled prisoner before the bench and the judge reaches out for the warrant that holds him",
+        "caption": "Show me why this man is held",
+        "width": 1400,
+        "height": 788
+      },
+      "scene": {
+        "alt": "Engraving of a lawyer in a top hat hurrying up prison steps at dawn to hand a sealed writ to the gatekeeper, a face watching from a barred window above",
+        "caption": "The writ arrives at the prison gate",
+        "width": 1400,
+        "height": 788
+      }
+    },
+    "the-golden-rule": {
+      "hero": {
+        "alt": "Engraving of two travellers on a mountain ledge, one reaching down to pull the other up, joined by a single red rope",
+        "caption": "Each one the other's lifeline",
+        "width": 1400,
+        "height": 788
+      },
+      "scene": {
+        "alt": "Engraving of a busy market where a man runs to hand back a red purse that fell from a woman's basket",
+        "caption": "Returning what you would want returned",
+        "width": 1400,
+        "height": 788
+      }
+    },
+    "the-division-of-labor": {
+      "hero": {
+        "alt": "Engraving of a workshop bench where a row of workers each does one step of pin-making, passing the work down the line to a red box of finished pins",
+        "caption": "One step each, many pins between them",
+        "width": 1400,
+        "height": 788
+      },
+      "scene": {
+        "alt": "Engraving of a village square where a baker, a smith, a weaver and a farmer trade bread, horseshoes, cloth and grain",
+        "caption": "Every trade depends on the others",
+        "width": 1400,
+        "height": 788
+      }
+    },
+    "the-social-contract": {
+      "hero": {
+        "alt": "Engraving of a crowd of ordinary people in a field all reaching up to touch one large blank parchment with a red seal",
+        "caption": "Consent of the governed",
+        "width": 1400,
+        "height": 788
+      },
+      "scene": {
+        "alt": "Engraving of townspeople passing stones hand to hand to build their town wall while their chosen gatekeeper stands at the gate",
+        "caption": "A wall they build and a keeper they choose",
+        "width": 1400,
+        "height": 788
+      }
+    },
+    "social-capital": {
+      "hero": {
+        "alt": "Engraving of a barn raising where dozens of neighbours haul on ropes to lift a timber frame while children carry pegs",
+        "caption": "Raising a barn no family could raise alone",
+        "width": 1400,
+        "height": 788
+      },
+      "scene": {
+        "alt": "Engraving of cottage gardens where neighbours pass a ladder, a saw and a basket of red apples over their fences",
+        "caption": "Borrowed tools, shared harvest",
+        "width": 1400,
+        "height": 788
+      }
+    },
+    "the-burden-of-proof": {
+      "hero": {
+        "alt": "Engraving of a courtroom with a great balance: the accuser strains to lift a heavy red weight onto his pan while the accused sits calmly on the other",
+        "caption": "The weight falls on the one who claims",
+        "width": 1400,
+        "height": 788
+      },
+      "scene": {
+        "alt": "Engraving of a traveller in a red scarf pointing at an empty sky while villagers wait with folded arms for him to show them something",
+        "caption": "Show us, then",
+        "width": 1400,
+        "height": 788
+      }
+    },
+    "free-will": {
+      "hero": {
+        "alt": "Engraving of a lone walker in a red cloak where three roads split across a moor, huge clockwork gears turning in the clouds above",
+        "caption": "Three roads under a clockwork sky",
+        "width": 1400,
+        "height": 788
+      },
+      "scene": {
+        "alt": "Engraving of a chess player at a candlelit table about to move a red piece, shadows of gears and pendulums on the wall behind",
+        "caption": "Chosen, or already set in motion?",
+        "width": 1400,
+        "height": 788
+      }
+    },
+    "double-jeopardy": {
+      "hero": {
+        "alt": "Engraving of an acquitted man stepping out of a courtroom into daylight while an iron gate shuts in front of a prosecutor holding up the same case papers",
+        "caption": "The gate closes behind an acquittal",
+        "width": 1400,
+        "height": 788
+      },
+      "scene": {
+        "alt": "Engraving of a court archive where a clerk places a case file tied with red ribbon on a shelf behind a locked iron grille",
+        "caption": "Closed, and locked away",
+        "width": 1400,
+        "height": 788
+      }
+    },
+    "reynolds-number": {
+      "hero": {
+        "alt": "Engraving of a river flowing in smooth layers on one side and breaking into swirling eddies below a weir on the other, a red leaf riding the water",
+        "caption": "Smooth until it isn't",
+        "width": 1400,
+        "height": 788
+      },
+      "scene": {
+        "alt": "Engraving of a Victorian laboratory where red dye runs straight through a long glass pipe and then breaks into turbulent swirls",
+        "caption": "Dye in a pipe: smooth, then turbulent",
+        "width": 1400,
+        "height": 788
+      }
+    },
+    "the-rule-of-three": {
+      "hero": {
+        "alt": "Engraving of a traveller with a lantern facing three tall doors in a stone corridor, the third door painted red",
+        "caption": "Three doors, and the third one counts",
+        "width": 1400,
+        "height": 788
+      },
+      "scene": {
+        "alt": "Engraving of three actors taking a bow together on a small theatre stage before an applauding audience, under red curtains",
+        "caption": "Three take the bow",
+        "width": 1400,
+        "height": 788
+      }
     }
   },
   "categories": []
