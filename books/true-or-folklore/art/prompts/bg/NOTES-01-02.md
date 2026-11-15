@@ -1,0 +1,22 @@
+# Answer-page backgrounds, rounds 1–2 (001–020)
+
+- 001 · FOLKLORE · Vitruvius, two centuries later, writes the bath story on a scroll while a calm Archimedes weighs a crown on a balance; dry empty tub. Brief's example scene.
+- 002 · FOLKLORE · Newton seated, watching an apple land on the grass in front of him, not on his head (Stukeley's account). No tree, so nothing rises above 40%.
+- 003 · TRUE · Newton tells Stukeley the apple story over tea in 1726, pointing at an apple on the table. Kept distinct from 002 (two figures at a table vs one figure watching).
+- 004 · FOLKLORE · Galileo's long, near-flat grooved ramp with a ball rolling and a water clock dripping onto a scale. No tower.
+- 005 · FOLKLORE · Babylonian scribe working a blank clay tablet; Pythagoras, a millennium later, crouched and puzzled; knotted 3-4-5 rope on the ground. Tablet kept blank (no-numbers rule).
+- 006 · FOLKLORE · Einstein watches a glowing lamp on a balance pan rise as it radiates: the paper's idea (a radiating body loses mass), no formula drawn.
+- 007 · TRUE · Einstein crouched by a bench as a sideways lamp beam knocks happy electrons off a metal plate; medal lies flat at the end. Beam kept horizontal.
+- 008 · FOLKLORE · Gordon Moore laying out chips in doubling groups at a steady pace; empty chair with a stopwatch stands for the 18 months. David House may be living: not drawn. Moore died 2023: drawn as a friendly caricature (props and dress only).
+- 009 · FOLKLORE · Churchill holds up four fingers to a listener holding up three; a spade (toil, the dropped word) leans on the table. Hands kept at chest height.
+- 010 · DISPUTED · Generic researcher weighs two equal piles of blank papers on a level scale; toy rocket sled and a backwards sensor part nearby. Weighing-piles pattern from the brief.
+- 011 · FOLKLORE · John Punch (1639) writes the crisp line; Ockham sits on his own books, puzzled. Misattributed-quote pattern.
+- 012 · FOLKLORE · Hebb watches neurons laid like dominoes, one helping fire the next (causal, not simultaneous); closed 1990s magazine on a stool. Carla Shatz, Löwel and Singer may be living: not drawn.
+- 013 · FOLKLORE · Abraham Kaplan writing while a small boy pounds everything with a toy hammer (Kaplan's own image); Twain on a stool, puzzled. Objects changed from the question page (no teacup, watch, cake, cat).
+- 014 · FOLKLORE · No people: 1975 paper with coins and piggy bank (monetary point) beside 1997 journal with mortarboard and a tape measure coiled into a target with an arrow. Goodhart and Strathern may be living: not drawn.
+- 015 · DISPUTED · Generic librarian weighs a 1980 paperback (with mailing envelope) against a 1941 pulp magazine on a level scale; empty chair. Robert J. Hanlon's status unconfirmed and Arthur Bloch may be living: neither drawn. Heinlein not drawn here to keep 015 distinct from 016.
+- 016 · FOLKLORE · Goethe (1774) with a quill and Heinlein (1941) at a typewriter, both writing a version; Napoleon small between them, shrugging. Bloch (1980 first printing) may be living: not drawn.
+- 017 · FOLKLORE · A long fanfold printout (long argument) snakes from a 1990 computer; three anonymous users tape an extra sheet on the end (the later loser rule). Mike Godwin is living: not drawn.
+- 018 · FOLKLORE · Sturgeon at a convention table picks out the best magazines into a proud stack while a critic frowns at one tatty pulp: his defence of judging a field by its best. Avoided the question page's bin-and-shelf sweep. The crud-vs-crap wording itself can't be drawn (no text).
+- 019 · FOLKLORE · Navigator with three chronometers, taps the odd one out (take one or three). Blank-faced 1930 newspaper on a stool. Lee Segall's status unknown: not drawn. Clock faces have hands, no numerals.
+- 020 · FOLKLORE · (swapped in 15 Nov 2026: impostor phenomenon) Three generic professionals on the floor, each hugging a trophy and realizing the others feel the same; a stethoscope lies unused on a closed doctor's bag; a 1970s typewriter with a blank page. The experience is common and not a diagnosis. Living-person rule: Clance and Imes not drawn.

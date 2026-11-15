@@ -1,0 +1,22 @@
+# Answer-page backgrounds, rounds 09–10 (081–100)
+
+- 081 TRUE. Gosling (doctoral student) sets up the camera, Franklin supervises with her fibre: two names on Photo 51. Gosling d. 2015, Franklin d. 1958. Question page (Franklin alone holding the photo) not repeated.
+- 082 DISPUTED. Balance scale, level: Photo 51 on one pan, Franklin's reports and the helix model on the other. No people: Watson's death (Nov 2025) rests on unopened obituaries in the QA notes, and Wilkins/Crick dates unchecked; Cobb and Comfort may be living.
+- 083 TRUE. Foot (d. 2010) with a toy tram and forked track; Thomson (d. 2020) adds the footbridge. No one on the tracks.
+- 084 FOLKLORE. Ortelius (1596) notices the fit on a globe; Wegener sits with fossils, coal and rock, his real contribution. No jigsaw cut-outs (question page).
+- 085 TRUE. Ikeda boils kombu broth down to glutamate crystals and tastes them. Question page's bowl and chopsticks avoided.
+- 086 FOLKLORE. Newlands, Mendeleev and Lothar Meyer each lay out near-identical card grids; Mendeleev leaves gaps. All dead.
+- 087 DISPUTED. Mendel picks peas on the left; Fisher (d. 1962) weighs peas against blank papers, beam unsettled. Not accusatory.
+- 088 TRUE. Teenage Gauss on the floor tracing prime tables whose dots thin out left to right. Greene, Erdős etc. not drawn.
+- 089 TRUE. Hooke, finger to lips, beside scattered blank type blocks (the anagram, with no letters drawn) and a sealed letter; a generic puzzled gentleman.
+- 090 DISPUTED. Eddington between a crate of sharp plates and a crate of blurred plates, setting a blurred one aside. Indoors, no eclipse (question page).
+- 091 FOLKLORE. No people, no snakes: a chain of books each leaning on the last, ending at one thin 1873 newspaper, beside an empty closed basket. Siebert (d. 2009) and the living reviewers not drawn.
+- 092 TRUE. A generic rat-catcher releases a tailless rat into a drain, tails in a basket. Vann (living) not drawn. Respectful-depiction constraint added.
+- 093 TRUE. Small efficient engine, then ever-wider coal heaps; Jevons sits on a lump of coal. Kept the 093 question-page fix (no top hat, no handlebar moustache).
+- 094 FOLKLORE. No people: blighted potatoes and an empty basket beside a rice sack and bowl. Jensen and Miller (living) not drawn; famine kept calm, not comic.
+- 095 DISPUTED. Five toy city blocks with the same new windows, only one with the police cap and ladder; a generic researcher compares them. Bratton and Giuliani (living) not drawn; Zimbardo car smash skipped.
+- 096 TRUE. Nixon and Haldeman (both dead) on the beach walk from Haldeman's memoir. No nuclear imagery.
+- 097 DISPUTED. The Alsop brothers (d. 1989, 1974) at a typewriter; dominoes run from their desk to a press-conference microphone: the phrase predates Eisenhower. No Eisenhower or lectern (question page).
+- 098 TRUE. No people: small architect's model on a tiny coin stack; finished low, wide shell-roofed building on a big coin mound, cut ribbon. Queen Elizabeth II and Utzon not drawn.
+- 099 TRUE. A managed common: a hayward at the gate turns back one extra cow, plenty of grass. Reverses the question page's crammed green.
+- 100 FOLKLORE. Lloyd (1833) writes his pamphlet beside a toy pasture; Hardin (d. 2003) reads it and nods across. No lectern or projector (question page).

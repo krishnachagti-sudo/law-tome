@@ -1,0 +1,22 @@
+# Answer-page background prompts, rounds 07–08 (061–080)
+
+- 061 FOLKLORE (red herring): Cobbett writing the figurative phrase in 1807, a hound asleep at his feet, no fish anywhere. Cobbett d. 1835. Quinion (possibly living) not drawn.
+- 062 FOLKLORE (invisible hand): Smith with one book, approving a mason's footbridge and a schoolchild's desk (public works, education). No glove.
+- 063 TRUE (Streisand effect, swapped in 15 Nov 2026): gavel and legal folder on the floor beside an early-2000s computer, a long row of seated people craning at its blank screen. **Streisand living: not drawn**; no house, cliff or music cues.
+- 064 FOLKLORE (habeas corpus): three clerks from the 1100s, Tudor era and 1679 passing a growing scroll that ends as a bound book. Writ grew over centuries; no Magna Carta.
+- 065 FOLKLORE (noble savage): a Victorian gentleman sticking a blank tag on Rousseau's back ("pinned on him later"). Gentleman left unnamed, since the entry body does not name Crawfurd. No indigenous people drawn.
+- 066 FOLKLORE (fog of war): Clausewitz writing by candle beside a later, unnamed translator whose pen leaks low fog. The imagery is his, the word "fog" comes from translators.
+- 067 TRUE (MAD): a critic (Brennan, d. 1980) typing wryly while McNamara (d. 2009) looks on puzzled holding his report. No acronym shown.
+- 068 TRUE (prisoner's dilemma, swapped in 15 Nov 2026): two 1950s mathematicians with blank cards over a blank four-square grid; a third chalks a small barred window on a slate as an afterthought. Generic types, not likenesses; no prisoners drawn.
+- 069 DISPUTED (Thucydides trap, swapped in 15 Nov 2026): a scholar sorting blank folders into two piles while two others tug and push one folder (which cases count); a Greek helmet and scroll at the edge. **Allison living: not drawn**; generic scholars only.
+- 070 TRUE (meme): empty 1970s desk, typewriter, flat double helix, a small blob "hatched" in the paper tray. **Dawkins living: not drawn.**
+- 071 TRUE (Parkinson's law): Parkinson writing beside one tiny warship dwarfed by a heap of files and two clerks (fleet shrank, Admiralty grew). Parkinson d. 1993.
+- 072 TRUE (Peter Principle): Peter (d. 1990) and Hull (d. 1985), educator and playwright, laughing as they write, toy ladder on the desk. Scott Adams and Putt not drawn.
+- 073 FOLKLORE (bike shed): Parkinson alone on the floor arranging a toy committee, reactor and bike shed: the committee never met. **Kamp living: not drawn.**
+- 074 TRUE (Brooks's law): Brooks (d. 2022) drawing one straight line beside a huge tangle of string ("Oversimplifying outrageously").
+- 075 TRUE (Clarke's laws): Clarke (d. 2008) adding a shiny third block beside two cobwebbed ones (Third Law came years later). Niven (living) not drawn.
+- 076 TRUE (toast): no people; toast shown falling a half-turn, landing butter-down, closed notebook nearby. **Matthews and Dawkins living: not drawn.**
+- 077 TRUE (Conway/HBR): no people; returned manuscript and blank stamp on the left, modest open trade magazine on the right. **Conway (b. 1932) treated as possibly living: not drawn.** MacCormack, Baldwin, Rusnak, LeRoy, Simons not drawn.
+- 078 FOLKLORE (Fermat's margin, swapped in 15 Nov 2026): Fermat on the floor by a tiny blank margin, beside an enormously long low row of modern paper stacks and an empty office chair. **Wiles and Taylor living: not drawn.**
+- 079 DISPUTED (KISS): both versions side by side; Johnson (d. 1990) shrugging between a 1930s newsboy with a newspaper (1938) and a 1960 Navy sailor with a folder.
+- 080 TRUE (Fermi): Fermi and two colleagues at lunch, Fermi pointing his fork at a row of empty chairs ("Where is everybody?"). Teller, Konopinski, York all dead; colleagues left generic.

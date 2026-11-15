@@ -1,0 +1,22 @@
+# Answer-page backgrounds, rounds 3 and 4 (021–040)
+
+- 021 FOLKLORE (Kitty Genovese). Shows the Philpot et al. 2020 CCTV finding: strangers step in to help, intervention is the norm. Victim rule: Genovese never drawn, no 1960s street, no crime or night; generic modern passers-by helping an unhurt stranger who tripped. Robert Mozer not drawn (status unknown).
+- 022 FOLKLORE (Stanford prison). Archival tapes of the guards' instructions: reel-to-reel recorder, blank instruction sheets, whistle, cap. No people: warden David Jaffe and participants may be living; Le Texier is living. Zimbardo (d. 2024) could be drawn but left out to avoid showing a named person coaching abuse.
+- 023 FOLKLORE (Hawthorne). The lost lighting records rediscovered: archive boxes, open ledger, a bulb lying beside the point. Levitt and List living, not drawn.
+- 024 DISPUTED (Milgram 65%). Milgram (d. 1984) kneeling over a row of folder piles of very different heights: obedience varied across the 23 conditions. Gina Perry living, not drawn; no learner, no shocks.
+- 025 FOLKLORE (small world). Milgram holding the one folder that arrived while a long trail of dropped folders shows most chains never finished. Kleinfeld (status unknown) not drawn.
+- 026 FOLKLORE (Asch). A student calmly giving his own answer with one dissenting ally nodding: independence on two-thirds of trials, one ally cuts conformity. Generic unidentifiable students; Asch not drawn.
+- 027 DISPUTED (marshmallow). A seesaw: one marshmallow lifted by a small family house weighing down the other end, family background explains most of the link; a generic child shrugs. Watts, Duncan and Quan living, not drawn; no rich/poor contrast.
+- 028 TRUE (Robbers Cave). The failed 1953 pilot: two boys find a staff notebook and grin knowingly at a sheepish counsellor. Generic children and staff; Perry living, not drawn; Sherifs not drawn.
+- 029 TRUE (Ebbinghaus). Ebbinghaus (d. 1909) alone testing himself, the chair opposite empty: one subject.
+- 030 DISPUTED (Little Albert). Two identical closed blank folders side by side with a magnifying glass: two rival candidates, no answer. Victim rule: no infant, no baby items, no rat or hammer; Watson and Rayner not drawn; no people at all.
+- 031 FOLKLORE (Mount Stupid). The journal's plain dot chart versus a crumpled mountain-line sheet beside a laptop: the curve came later, online. Kruger and Dunning possibly living, not drawn.
+- 032 DISPUTED (Dunning–Kruger). A level balance: blank papers against dice, real effect or random noise. All researchers living, no people.
+- 033 FOLKLORE (Yerkes–Dodson). Yerkes (d. 1956) and Dodson (d. 1955) with dancing mice choosing a black or white doorway: mice, not stress, not humans. No shock shown.
+- 034 FOLKLORE (Maslow's pyramid). Maslow (d. 1970) writing his loose list on a long scroll, puzzled at a toy pyramid someone else made. McDermid (status unknown) not drawn.
+- 035 FOLKLORE (Wald's plane drawing). Wald (d. 1950) with blank memos and a calculator, glancing puzzled at an empty modern desk with a laptop and sketchbook. Cameron Moll living, shown only as an empty chair; no dotted plane (copyright and repeat of the question page).
+- 036 TRUE (Wald's armour reasoning). Wald sorting returned model planes beside dashed outlines of the missing ones: the planes that never came back are the data.
+- 037 FOLKLORE (Pareto). Misattribution layout: Juran (d. 2008) sorting defects into the vital few, Pareto (d. 1923) looking on puzzled with a closed ledger.
+- 038 TRUE (Benford). Newcomb (d. 1909) at the worn first pages, Benford (d. 1948) decades later counting heaps of slips.
+- 039 DISPUTED (Monte Carlo). A 1950s writer typing beside a toy roulette wheel, next to a spread of blank old newspapers: earliest account is a 1959 book, no 1913 record. Writer drawn as a generic figure, not a likeness of Huff or Geis (both dead); Robin Quinn living, not drawn.
+- 040 TRUE (Monty Hall). An avalanche of letters, many with tiny mortarboards (the doctorates), beside three cups and a toy goat and an empty chair. Marilyn vos Savant living, never drawn.

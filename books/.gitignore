@@ -1,0 +1,26 @@
+# Lean repo: keep what rebuilds the book (text, prompts, logs, scripts, fonts,
+# finished art). Raw generations, unfaded backgrounds and build output stay on
+# disk only (back them up elsewhere).
+build/
+*/art/raw/
+*/art/bg/
+*/art/drafts/
+*/art/hand/
+*/art/style-tests/*.png
+!*/art/style-tests/B-bold-cartoon.png
+*/art/icon-test/
+*/art/mascot/raw/
+*/art/openers/raw/*
+!*/art/openers/raw/r01-linocut.png
+*/art/librarian/raw/
+*/art/extras/raw/*
+!*/art/extras/raw/J1-lib.png
+*/art/extras/flip-src/
+*/art/extras/flipbook-preview.gif
+*/art/contact-*.png
+*/listing/pages/
+*/listing/a*.png
+scripts/tools/*.png
+_series/mascot/raw/*
+!_series/mascot/raw/model-*.png
+.DS_Store
