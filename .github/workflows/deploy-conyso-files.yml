@@ -1,0 +1,106 @@
+name: Upload Conyso site files to conyso.com
+
+# Uploads named files from the conyso-site repo (private) to the conyso.com
+# docroot, using this repo's deploy key: the same server folder that holds
+# lawtome/ and biases/. One click, only the files you list, never --delete.
+#
+# Run it from the Actions tab (or `gh workflow run deploy-conyso-files.yml
+# -f ref=<branch> -f files="a.html b.css"`). It refuses anything under
+# lawtome/ or biases/ (those come from their own repos), any path with "..",
+# and the build tooling the site never serves (*.py, data/, docs/, .git).
+#
+# Needs, beyond the DEPLOY_* secrets and variables in deploy-prod.yml:
+#   secret CONYSO_SITE_TOKEN   a fine-grained GitHub token with read-only
+#                              Contents access to krishnachagti-sudo/conyso-site
+# Optional: dry_run=true lists what would change and uploads nothing.
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Branch or commit of conyso-site to upload from
+        required: true
+        default: main
+      files:
+        description: Space-separated paths, relative to the site root
+        required: true
+      dry_run:
+        description: List the changes only, upload nothing
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-conyso-files
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: krishnachagti-sudo/conyso-site
+          ref: ${{ inputs.ref }}
+          token: ${{ secrets.CONYSO_SITE_TOKEN }}
+          path: site
+          fetch-depth: 1
+
+      - name: Check the file list
+        working-directory: site
+        env:
+          FILES: ${{ inputs.files }}
+        run: |
+          : > ../files.txt
+          for f in $FILES; do
+            case "$f" in
+              /*|*..*|lawtome/*|biases/*|.git*|*.py|data/*|docs/*|dist/*|tools/*|deploy/*)
+                echo "::error::refusing $f"; exit 1;;
+            esac
+            [ -f "$f" ] || { echo "::error::$f is not a file at ${{ inputs.ref }}"; exit 1; }
+            echo "$f" >> ../files.txt
+          done
+          [ -s ../files.txt ] || { echo "::error::no files given"; exit 1; }
+          echo "Uploading $(wc -l < ../files.txt) files from ${{ inputs.ref }}:"; cat ../files.txt
+
+      - name: Set up SSH
+        env:
+          KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          printf '%s\n' "$KNOWN" > ~/.ssh/known_hosts
+          printf 'Host deploy\n  HostName %s\n  Port %s\n  User %s\n  IdentityFile ~/.ssh/deploy\n  StrictHostKeyChecking yes\n' \
+            "${{ vars.DEPLOY_HOST }}" "${{ vars.DEPLOY_PORT || '22' }}" "${{ vars.DEPLOY_USER }}" > ~/.ssh/config
+
+      - name: Upload (only the listed files, no --delete)
+        working-directory: site
+        run: |
+          DRY=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then DRY="--dry-run"; echo "DRY RUN: nothing is uploaded"; fi
+          rsync -az --itemize-changes $DRY --files-from=../files.txt ./ "deploy:${{ vars.DEPLOY_ROOT }}/"
+
+      - name: Purge Cloudflare's cache for these files
+        if: inputs.dry_run != true && vars.CF_ZONE_ID != ''
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          [ -n "$CF_API_TOKEN" ] || { echo "no CF_API_TOKEN, skipping"; exit 0; }
+          urls=$(python3 -c 'import json,sys; fs=[l.strip() for l in open("../files.txt") if l.strip()]; u=["https://conyso.com/"+f for f in fs]+["https://conyso.com/"+f[:-len("index.html")] for f in fs if f.endswith("index.html")]; print(json.dumps({"files": u[:30]}))')
+          curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${{ vars.CF_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer $CF_API_TOKEN" -H 'Content-Type: application/json' --data "$urls" | head -c 300; echo
+
+      - name: Smoke check
+        if: inputs.dry_run != true
+        run: |
+          fail=0
+          while read -r f; do
+            url="https://conyso.com/$f"
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$url?deploy=${{ github.run_id }}")
+            echo "$code $url"; [ "$code" = "200" ] || fail=1
+          done < files.txt
+          [ $fail -eq 0 ] || { echo "::error::a file did not come back 200"; exit 1; }
