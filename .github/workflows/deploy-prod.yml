@@ -117,4 +117,6 @@ jobs:
           git add src/data/lastmod.json
           if git diff --cached --quiet; then echo 'manifest unchanged'; exit 0; fi
           git commit -q -m 'lastmod: dates from the production build [skip ci]'
-          git push -q
+          # Another push (a wave run, say) can land while this job runs; rebase onto it.
+          for i in 1 2 3; do git pull -q --rebase && git push -q && exit 0; sleep 5; done
+          exit 1
