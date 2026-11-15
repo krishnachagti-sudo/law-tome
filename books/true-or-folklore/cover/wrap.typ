@@ -66,6 +66,9 @@
 // The Librarian, ink on cream (art/librarian/final/back-cover-oncream.png), in the gap between the text block and the footer, left of the barcode zone.
 #place(top + left, dx: back-x + safe, dy: bleed + trim-h - safe - 0.2in - 0.14in - 1.35in,
   image("/art/librarian/final/back-cover-oncream.png", width: 1.35in))
+// Her name, to the right of the drawing, still left of the barcode zone.
+#place(top + left, dx: back-x + safe + 1.5in, dy: bleed + trim-h - safe - 0.2in - 0.14in - 0.62in,
+  box(width: 1.1in, text(size: 8pt, style: "italic", hyphenate: false)[Your host, Ida Verity. No source, no stamp.]))
 // Footer to the left of the barcode zone.
 #place(top + left, dx: back-x + safe, dy: bleed + trim-h - safe - 0.2in,
   text(font: mono, size: 8pt, tracking: 0.14em)[CONYSO PUBLISHING · CONYSO.COM/LAWTOME])

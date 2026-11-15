@@ -4,7 +4,7 @@ One character across every Law Tome book. Chosen by Krishna on 14 Nov 2026,
 from option 2 of three mascot designs. Fixed reference images: `_series/mascot/model-*.png`.
 Every image of her in every book uploads those sheets as references.
 
-Name: **not decided yet, and Krishna's call.** Candidates are at the end. Until then the files call her "the Librarian".
+Name: **Ida Verity**, picked by Krishna on 16 Nov 2026. "Verity" is truth; with her cat Hearsay the pair is truth and rumour under one roof. The art files still say "librarian". She is introduced on the How to play page of True or Folklore?
 
 ---
 
@@ -112,8 +112,6 @@ the stamp in one hand.
 
 ---
 
-## Name candidates (Krishna decides)
+## Name (decided)
 
-1. **Edith Sourcewell:** sounds like a real person, and the "source" in it is a quiet joke.
-2. **Mabel Ibid:** "ibid." is what you write when the source is the same one again. A bookish wink.
-3. **Agatha Index:** the most obvious, and the easiest to remember.
+**Ida Verity** (A), chosen 16 Nov 2026 over Edith Sourcewell, Mabel Ibid, Winifred Footnote, Agatha Index and Mrs Sayswho. A web search that day found no existing character of that name.

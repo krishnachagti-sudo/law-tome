@@ -28,4 +28,6 @@ The book runs in ten rounds of ten. Each round opens with its best-known story a
 
 Every answer ends with a **Tell someone** line: the one fact worth repeating at dinner. Game-night rules, team play and classroom ideas are at the back.
 
+Your host is **Ida Verity**, forty years at the reference desk of a big public library and still asking "says who?" She never stamps a verdict without the source in her hand. Her cat, Hearsay, believes every word.
+
 ---
