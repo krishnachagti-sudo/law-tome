@@ -90,7 +90,7 @@ jobs:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: |
           [ -n "$CF_API_TOKEN" ] || { echo "no CF_API_TOKEN, skipping"; exit 0; }
-          urls=$(python3 -c 'import json,sys; fs=[l.strip() for l in open("../files.txt") if l.strip()]; u=["https://conyso.com/"+f for f in fs]+["https://conyso.com/"+f[:-len("index.html")] for f in fs if f.endswith("index.html")]; print(json.dumps({"files": u[:30]}))')
+          urls=$(python3 -c 'import json,sys; fs=[l.strip() for l in open("files.txt") if l.strip()]; u=["https://conyso.com/"+f for f in fs]+["https://conyso.com/"+f[:-len("index.html")] for f in fs if f.endswith("index.html")]; print(json.dumps({"files": u[:30]}))')
           curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${{ vars.CF_ZONE_ID }}/purge_cache" \
             -H "Authorization: Bearer $CF_API_TOKEN" -H 'Content-Type: application/json' --data "$urls" | head -c 300; echo
 
