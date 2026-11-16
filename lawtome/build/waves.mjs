@@ -373,11 +373,16 @@ export function deviceMix(desktop, mobile, baselineDays = 28) {
 // after a 1.7-day wave has passed (Google: crawling takes "a few days to a few
 // weeks"), so the default is the fast path: a dated, sourced example on the law
 // page Google already crawls, plus a reply in the live thread. A standalone
-// page is only for waves that are broad, big and still building.
+// page is for waves that are broad, big and still building, or (loosened
+// 2026-11-16, Krishna) broad and carried by the news while not yet fading: the
+// FAA ground stop on cascading failure had two sources and national coverage
+// but no Wikipedia spike on the law, and the strict bar missed it.
 export function route(w) {
   if (w.hold) return { action: 'decide', why: 'touches a sensitive subject; Krishna decides whether it is anything at all' };
   const lasting = w.wiki?.trajectory === 'building' || w.wiki?.trajectory === 'starting' || w.scheduled;
   if (w.confidence === 'strong' && w.major && lasting) return { action: 'page', why: 'strong, major and still building: worth a standalone page' };
+  const inNews = (w.sources || []).includes('news') && !w.news?.capped;
+  if (w.confidence === 'strong' && inNews && w.wiki?.trajectory !== 'fading') return { action: 'page', why: 'two sources and in the news, not fading: a standalone page if the cause is confirmed today' };
   if (w.hubs?.length) return { action: 'update+reply', why: 'one big thread: reply there today, add the example to the law page' };
   // Desktop-led with nobody talking about it: the usual causes are a course
   // reading, a bot, or a work tool linking the page, not a wave (Filter Bubble,

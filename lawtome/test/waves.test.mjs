@@ -259,6 +259,11 @@ test('routing: the fast path is the default, a standalone page is earned', () =>
   assert.equal(route({ confidence: 'strong', major: true, wiki: { trajectory: 'fading' } }).action, 'update');
   assert.equal(route({ confidence: 'strong', hubs: [{}] }).action, 'update+reply');
   assert.equal(route({ hold: ['died'], confidence: 'strong', major: true }).action, 'decide');
+  // Loosened 2026-11-16: two sources with the news among them is a page, with no Wikipedia spike needed.
+  assert.equal(route({ confidence: 'strong', sources: ['news', 'reddit'] }).action, 'page');
+  assert.equal(route({ confidence: 'strong', sources: ['news', 'reddit'], wiki: { trajectory: 'fading' } }).action, 'update');
+  assert.equal(route({ confidence: 'strong', sources: ['news', 'hn'], news: { capped: true } }).action, 'update');
+  assert.equal(route({ confidence: 'single-source', sources: ['news'] }).action, 'update');
 });
 
 test('law-like trending articles missing from the Tome are found; syndromes are not', () => {

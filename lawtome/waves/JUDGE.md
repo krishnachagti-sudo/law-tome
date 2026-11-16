@@ -19,9 +19,17 @@ and recrawled often. So:
 - **Law-page example** (default): add a dated, sourced entry to the law's
   `examples` ("In the wild, Nov 2026: …"), plus a reply in the live thread if
   there is one. Small, fast, and it improves a page that already ranks.
-- **Standalone wave page:** only when the wave is strong (two or more sources),
-  major (clears p > 10) and still building, or is a scheduled event you drafted
-  ahead.
+- **Standalone wave page:** when the wave is strong (two or more sources) and
+  either
+  - major (clears p > 10) and still building, or
+  - in the news (news is one of the sources, the feed isn't at its cap) and not
+    fading, with the cause confirmed and quoted the same day you publish. No
+    Wikipedia spike on the law is needed. Loosened on 16 Nov 2026: the FAA
+    ground stop on cascading failure had two sources and national coverage and
+    the strict bar missed it.
+
+  Or it's a scheduled event you drafted ahead. If the cause is only confirmed
+  after the story has peaked, it's a law-page example, not a page.
 - **Your call:** anything on human hold.
 
 The caps are limits, not targets. A day publishes at most **5 law-page
