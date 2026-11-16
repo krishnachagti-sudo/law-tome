@@ -12,8 +12,9 @@ can switch publishing off at any time (see "The switch").
   non-test report. If the newest is not from today, say so at the top of the
   pack and work from it anyway.
 - `out/news-latest.md`: laws named in the news in the last 36 hours, with the
-  stories. The morning queue has the same hits as "fired: named"; the evening
-  run refreshes this file first (`node scripts/wave-news.mjs`).
+  stories. The morning queue has the same hits as "fired: named"; the midday
+  (12:30 IST, news only, both sites) and evening runs refresh this file first
+  (`node scripts/wave-news.mjs`). The daily caps cover all three runs together.
 - `out/hourly-latest.md`: same-day alerts.
 - The rules: `lawtome/waves/JUDGE.md` in law-tome. Follow them exactly.
 - `decisions.json` in law-tome-waves: skip any law judged in the last 7 days.
