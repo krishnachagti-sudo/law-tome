@@ -62,6 +62,34 @@ action, and any scheduled social post about it has a kill switch. The
 newsjacking failures on record (Kenneth Cole on Cairo, Epicurious on Boston,
 the Hurricane Sandy posts) were all tragedy pairings.
 
+## News first: a law named in today's stories (fired: named)
+
+Judge these before anything else. Since 17 Nov 2026 the detector reads the news
+first (`scripts/wave-news.mjs`): science, tech and general feeds, Google News
+top stories, Hacker News, and a Bing News search for every law name, keeping
+stories from the last 36 hours. In the first week of spike-first judging every
+cause found was a news story naming the law, found 2 to 6 days late; this
+catches the same stories on day 0.
+
+1. The story is the cause, already attached. Open it and quote it.
+2. It must be about the law's mechanism, not a passing use of the phrase
+   ("the golden rule of hiring" is not the Golden Rule).
+3. Explainers ("What is the Diderot effect?") and personal blogs or reposted
+   videos are listed but marked "not counted". They never trigger anything.
+4. A fresh science or news result about the law (a new experiment, a proof, a
+   ruling, an incident that works the way the law describes) is a law-page
+   example the same day. Two outlets reporting it, not fading, is a page
+   candidate (see above).
+5. Same-day matters more than polish: publish the example in this run.
+
+## Fresh views: the last 24 hours
+
+The daily Wikipedia numbers end 1.5 to 5 days before the run. Each wave line
+now also shows "last 24 h" from the hourly dumps, about 3 hours old, and the
+fresh trajectory replaces the daily one when it exists. A spike that shows only
+in the last 24 hours is today's wave; one that shows only in the daily numbers
+may already be over.
+
 ## Tier 1 and 2: a law already moving (spike, invoked, rising)
 
 1. Find why. The report lists news, Reddit and HN evidence; if it says no

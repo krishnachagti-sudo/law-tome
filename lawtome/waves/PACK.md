@@ -11,6 +11,9 @@ can switch publishing off at any time (see "The switch").
 - Today's queue: `out/YYYY-MM-DD.md` and `.json` in law-tome-waves, the newest
   non-test report. If the newest is not from today, say so at the top of the
   pack and work from it anyway.
+- `out/news-latest.md`: laws named in the news in the last 36 hours, with the
+  stories. The morning queue has the same hits as "fired: named"; the evening
+  run refreshes this file first (`node scripts/wave-news.mjs`).
 - `out/hourly-latest.md`: same-day alerts.
 - The rules: `lawtome/waves/JUDGE.md` in law-tome. Follow them exactly.
 - `decisions.json` in law-tome-waves: skip any law judged in the last 7 days.
@@ -34,7 +37,11 @@ waiting.
 
 ## For each law wave in the queue (top 12 by score)
 
-1. **Find the cause.** Use the evidence lines first, then web search: news,
+The queue is ranked news first. Waves that fired `named` come first and carry
+their stories: the cause is the story, so step 1 is opening it, not hunting.
+
+1. **Find the cause.** Use the evidence lines first (a "Story:" line is the
+   cause to check), then web search: news,
    X, LinkedIn, YouTube, Reddit. For a phone-led wave, look for the original
    viral post.
 2. **Name the cause in one line, with its source URL,** or write "No cause
