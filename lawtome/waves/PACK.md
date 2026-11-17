@@ -106,6 +106,21 @@ with these differences:
 - `publisher`: copy the Doppler page's sentence.
 - Never put the detector's own measurements (pageview counts, scores) on the
   public page.
+- `image`: leave it out. The cloud runs can't reach ChatGPT, so a case page
+  ships without its engraving. Engravings are made afterwards from Krishna's
+  Chrome (ChatGPT, the Law Tome house style, `style-ref.png`), imported with
+  `scripts/plate-import.sh <png> wild-<slug>-hero`, and the page gets
+  `"image": { "alt", "caption", "width": 1400, "height": 788 }`. List every new
+  case page in the report email under "Needs you: engraving + Google indexing",
+  so they can be done in one sitting.
+
+## After deploy: indexing
+
+The deploy itself tells Bing and the other IndexNow engines about every changed
+URL (`build/indexnow.mjs`, the "Tell Bing what changed" step). Google has no
+API for this: new case pages are requested by hand in Search Console from
+Krishna's Chrome (the gsc-index-submit skill), new case pages first, about 10 a
+day. The runs can't do either step themselves; they list the URLs.
 
 ## Checks, then push
 

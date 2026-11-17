@@ -224,3 +224,13 @@ test('every case page renders as HTML and Markdown, with or without optional par
   const { calc, artefact, actions, ...bare } = wave;
   assert.ok(waveMarkdown(bare, law, { base: '/lawtome/' }).includes(bare.h1));
 });
+
+test('a case page with an engraving shows it after the answer and offers it as the schema image', async () => {
+  const { casePlate } = await import('../src/templates/wave.mjs');
+  const w = { ...wave, slug: 'x-case', image: { alt: 'Engraving of a signal box', caption: 'One relay, every line', width: 1400, height: 788 } };
+  const out = wavePage(w, law, { base: '/lawtome/', origin: 'https://conyso.com', count: 1116 });
+  assert.ok(out.indexOf('wild-x-case-hero.webp') > out.indexOf('class="wave-answer"'));
+  assert.ok(out.includes('alt="Engraving of a signal box"'));
+  assert.ok(out.includes('https://conyso.com/lawtome/assets/img/plates/wild-x-case-hero.jpg'));
+  assert.equal(casePlate({ ...wave, image: undefined }), '');
+});

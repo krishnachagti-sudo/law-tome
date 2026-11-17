@@ -188,6 +188,20 @@ export function fixFigure() {
  * @param {object} law   the law it belongs to
  * @param {object} o     { base, origin, count, categoryLabel, follow }
  */
+// A case page's engraving, in the same house style as the law pages' plates
+// (assets/img/plates/wild-<slug>-hero.webp, -800.webp and .jpg, made with
+// scripts/plate-import.sh <png> wild-<slug>-hero). `image` in the wave JSON
+// holds its alt text, caption and size; no image, no figure.
+export function casePlate(wave, base = '/') {
+  const p = wave.image;
+  if (!p || !p.alt) return '';
+  const f = `${base}assets/img/plates/wild-${e(wave.slug)}-hero`;
+  return `    <figure class="plate-hero">
+      <img src="${f}.webp" srcset="${f}-800.webp 800w, ${f}.webp 1400w" sizes="(max-width: 900px) 100vw, 860px" width="${p.width || 1400}" height="${p.height || 788}" fetchpriority="high" decoding="async" alt="${e(p.alt)}">
+      <figcaption>${p.caption ? e(p.caption) + ' · ' : ''}Illustration for the Law Tome</figcaption>
+    </figure>`;
+}
+
 export function wavePage(wave, law, { base = '/', origin = '', count, categoryLabel = '', follow = null, portrait = null } = {}) {
   const path = `wild/${wave.slug}/`;
   // Section headings are questions by default: answer engines and People Also
@@ -216,7 +230,7 @@ export function wavePage(wave, law, { base = '/', origin = '', count, categoryLa
       datePublished: `${wave.publishedAt}T09:00:00${tz}`, dateModified: `${wave.updatedAt}T09:00:00${tz}`,
       author: { '@type': 'Person', '@id': founderId(), name: wave.author.name, url: wave.author.url },
       publisher: { '@type': 'Organization', name: 'The Law Tome', url: `${origin}${base}` },
-      image: [`${origin}${base}og/wild/${wave.slug}-16x9.png`, `${origin}${base}og/wild/${wave.slug}.png`],
+      image: [...(wave.image ? [`${origin}${base}assets/img/plates/wild-${wave.slug}-hero.jpg`] : []), `${origin}${base}og/wild/${wave.slug}-16x9.png`, `${origin}${base}og/wild/${wave.slug}.png`],
       about: { '@type': 'DefinedTerm', name: law.name, url: `${origin}${lawUrl}`, ...(law.sameAs ? { sameAs: law.sameAs } : {}) },
       citation: wave.sources.map((s) => ({ '@type': 'CreativeWork', name: s.text, url: s.url })),
       isAccessibleForFree: true,
@@ -271,6 +285,7 @@ export function wavePage(wave, law, { base = '/', origin = '', count, categoryLa
       <span>${wave.sources.length} sources, each opened and read</span>
     </div>
     <p class="wave-publisher">${e(wave.publisher)} <a href="${base}about/">About the Tome</a></p>
+${casePlate(wave, base)}
 
     <aside class="wave-do" aria-labelledby="w-do">
       <p class="lbl" id="w-do">What you can do</p>
