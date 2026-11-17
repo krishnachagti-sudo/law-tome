@@ -384,7 +384,13 @@ export function deviceMix(desktop, mobile, baselineDays = 28) {
 // FAA ground stop on cascading failure had two sources and national coverage
 // but no Wikipedia spike on the law, and the strict bar missed it.
 export function route(w) {
-  if (w.hold) return { action: 'decide', why: 'touches a sensitive subject; Krishna decides whether it is anything at all' };
+  // No human hold since 17 Nov 2026 (Krishna): a sensitive wave is routed like any
+  // other and judged under JUDGE.md's sensitive-story rules; the report flags it.
+  const sens = w.hold ? ' (sensitive: apply the sensitive-story rules, floor first)' : '';
+  const r = routeInner(w);
+  return sens ? { ...r, why: r.why + sens } : r;
+}
+function routeInner(w) {
   const lasting = w.wiki?.trajectory === 'building' || w.wiki?.trajectory === 'starting' || w.scheduled;
   if (w.confidence === 'strong' && w.major && lasting) return { action: 'page', why: 'strong, major and still building: a case page with the takeover' };
   const inNews = ((w.sources || []).includes('news') || (w.named?.outlets >= 2)) && !w.news?.capped;

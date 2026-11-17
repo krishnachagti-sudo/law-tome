@@ -39,7 +39,7 @@ nothing, not the number of pages. So the bar is substance:
   ahead. Those pages get `status: developing` and `takeoverUntil` = publish
   date + 10 days. Every other case page gets `status: settled` and no
   `takeoverUntil`.
-- **Your call:** anything on human hold.
+- **Sensitive stories:** published under the rules in "Sensitive stories" below; nothing waits for Krishna.
 
 The caps are limits, not targets: at most **5 catches a day** (each one an
 example plus its case page) and **30 case pages a week**, across the morning,
@@ -47,7 +47,7 @@ midday and evening runs together. `autopublish.json` wins if lower.
 
 Being too cautious is a failure too. A sourced, verified example that sits in a
 pack for days is a missed wave. If the cause is found, quoted, about the law
-itself and not on human hold, publish it the same day.
+itself and passes the sensitive-story rules, publish it the same day.
 
 ## Before judging: who is driving it
 
@@ -59,14 +59,27 @@ page. Find the cause before acting on a desktop-led spike.
 "Already covered: N news items" tells you how crowded the wave is. A crowded
 wave is a law-page example at most; big publishers will own the new-page slot.
 
-## Human hold first
+## Sensitive stories (no human hold since 17 Nov 2026)
 
-A wave marked **⚠ HUMAN HOLD** touches death, disaster, attack, illness, abuse
-or a named private person. It is never published automatically. Krishna decides
-whether it is a page at all. If it is, it carries no promotion or call to
-action, and any scheduled social post about it has a kill switch. The
-newsjacking failures on record (Kenneth Cole on Cairo, Epicurious on Boston,
-the Hurricane Sandy posts) were all tragedy pairings.
+Krishna removed the human hold on 17 Nov 2026. A wave the detector marks
+**⚠ SENSITIVE** touches death, disaster, attack, illness or abuse. It is judged
+and published like any other, under these rules, which are not optional:
+
+- **The floor:** never a page or example centred on a named private person's
+  death, suicide, abuse or illness, and never pair a law with a suicide, named
+  or not. The private victim is never the subject. Institutions, systems and
+  public figures acting in office are fine.
+- **Facts first:** for a disaster, attack or outage that hurt people, publish
+  only once the cause is on the record (an official statement, or two outlets
+  reporting it). Early speculation about cause is not published.
+- **Tone:** say plainly who was harmed, then explain the mechanism of the
+  failure (systems, organisations, decisions), never the victims' choices. No
+  promotion, no call to action, no "fun fact" framing, no share prompts on the
+  page, and any scheduled social post about it has a kill switch. The
+  newsjacking failures on record (Kenneth Cole on Cairo, Epicurious on Boston,
+  the Hurricane Sandy posts) were all tragedy pairings done for attention:
+  that is the line not to cross.
+- Political neutrality, mechanism not topic and the refute pass still apply.
 
 ## News first: a law named in today's stories (fired: named)
 
@@ -186,5 +199,5 @@ moving is labelled developing and updated.
 
 Krishna has delegated publishing to the daily run (14 Nov 2026), within the
 caps above and only while `autopublish.json` in the private law-tome-waves repo
-says `"enabled": true`. Anything on human hold still waits for him. A wave that
+says `"enabled": true`. Nothing waits for him any more (no human hold since 17 Nov 2026), but the sensitive-story floor always holds. A wave that
 fails any rule here is skipped, not softened until it passes.

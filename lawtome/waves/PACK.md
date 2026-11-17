@@ -33,7 +33,7 @@ only if they are lower. Count this week's pages from `decisions.json`.
 Before today's queue, read the last 7 packs in `out/packs/`. Any `update`
 recommended there that isn't on the law page yet: re-open its source, check the
 quote still holds, and publish it today (within the cap) unless the event has
-since gone on human hold or been corrected. Don't leave verified examples
+since been corrected. Don't leave verified examples
 waiting.
 
 Then the backfill (from 17 Nov 2026): any "In the wild" example on a law page
@@ -55,12 +55,12 @@ their stories: the cause is the story, so step 1 is opening it, not hunting.
    found". Open every source you cite and quote the sentence that supports the
    claim. Never cite a page you haven't opened. Never repeat a number your
    source doesn't state.
-3. **Apply JUDGE.md:** human hold, desktop-led with no cause, political
+3. **Apply JUDGE.md:** the sensitive-story rules, desktop-led with no cause, political
    neutrality, crowdedness, the four tests for an unspoken link. Decide
    `update`, `page`, `reply` or `skip`, with one line of why.
 4. **Publish only when every one of these holds:**
    - the cause is found and its source is opened and quoted;
-   - the wave is not on human hold, and is not a political story where the law
+   - it passes JUDGE.md's sensitive-story rules, and is not a political story where the law
      only fits by taking a side;
    - the link between the event and the law is the mechanism, not the topic,
      and it survives your written refute pass;
@@ -152,6 +152,6 @@ As before, and in the pack:
 Write `out/packs/YYYY-MM-DD.md` in law-tome-waves. Start with a 3-line summary:
 - what was published, with URLs;
 - what was skipped or held, and why;
-- anything Krishna must decide (human holds).
+- anything you couldn't decide (there is no human hold any more).
 
 Commit the pack and `decisions.json` together.
