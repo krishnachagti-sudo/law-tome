@@ -1,0 +1,64 @@
+{
+  "id": "india-02",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "card_quote": "Price-led; buys Rs 150-300 Indian paperbacks or reads free content online; default answer to a foreign-priced fact book: no. / Myth exposure: knows science-history stories from school; Western pop-psychology and US history myths less familiar.",
+  "how_read": "Borrowed a copy from a friend. Read the how-to-play page and Round 1 properly because those are school science stories, tried Round 2 and got lost in the foreign names, then used the contents to find the Delhi cobra story and read that and the rat-tail page next to it. Stopped there, with exams coming up. Would not read it cover to cover.",
+  "stopped_at": "P220",
+  "w1_friction": [
+    {"page": "P005", "type": "confused", "note": "The example question on the how-to-play page is about Newton getting hit by an apple, but the real question 1 is Archimedes. Which one is the real one?", "quote": "Did Newton get hit by an apple?"},
+    {"page": "P016", "type": "too-dense", "note": "I only wanted to know about the bath. Proposition 5, corollary, it feels like a physics textbook.", "quote": "Proposition 5 gives the corollary for floating bodies"},
+    {"page": "P018", "type": "confused", "note": "Apple is folklore here and then next quiz says Newton told it himself, true. I am confused which answer to say in a quiz.", "quote": "does not hit him on the head."},
+    {"page": "P024", "type": "other", "note": "Nice that the Indian Sulba Sutras are mentioned, but just one line. I wanted more about it.", "quote": "The relation also appears in the Indian Sulba Sutras"},
+    {"page": "P028", "type": "bored", "note": "We did the photoelectric effect in class 12. No new things for me here.", "quote": "the law of the photoelectric effect"},
+    {"page": "P030", "type": "too-dense", "note": "Dennard scaling, Fairchild, Electronics magazine. Too many details for a quick read.", "quote": "Dennard scaling broke down around 2005 to 2006"},
+    {"page": "P038", "type": "too-dense", "note": "Latin sentences and a Scottish friar. I don't know anyone who would read these out at a quiz.", "quote": "Pluralitas non est ponenda sine necessitate"},
+    {"page": "P040", "type": "too-dense", "note": "Neuroscience words I haven't seen. I skipped the middle part.", "quote": "spike-timing-dependent plasticity"},
+    {"page": "P044", "type": "confused", "note": "Lucas critique? Anthropologist, audit culture, British universities. Nothing here that I know.", "quote": "a monetary cousin of the Lucas critique"},
+    {"page": "P046", "type": "confused", "note": "Who is Hanlon, who is Bloch, what is Murphy's Law Book Two? Not known in India.", "quote": "Murphy’s Law Book Two"},
+    {"page": "P050", "type": "confused", "note": "I don't know what Usenet was. The whole page assumes you do.", "quote": "chiefly Usenet"},
+    {"page": "P218", "type": "doubt-verdict", "note": "Delhi cobras were told to us as a real story, and now a society I never heard of says it was Madras. I want to see this source before I tell my friends.", "quote": "Friends of Snakes Society"}
+  ],
+  "w1_best": [
+    {"no": 1, "why": "Archimedes in the bath is the first story I know from school, and finding out it's from Vitruvius is a nice twist."},
+    {"no": 4, "why": "Galileo and the tower. I thought it was true. The ramp and water clock is cooler."},
+    {"no": 5, "why": "Pythagoras with the Babylonian tablet and the Sulba Sutras. A story from our side of the world."},
+    {"no": 91, "why": "The Delhi cobra story. I know it from social media, and learning that the source says Madras and 'it was alleged' is a surprise."},
+    {"no": 92, "why": "The rat tails in Hanoi. Short, funny and a real case. I'd tell it to my friends."}
+  ],
+  "w1_flat": [
+    {"no": 11, "why": "Ockham's razor. Latin and a friar, nothing I would repeat."},
+    {"no": 12, "why": "Hebb and neurons. Too technical."},
+    {"no": 14, "why": "Goodhart. I can't even say what the saying is for."},
+    {"no": 15, "why": "Hanlon's razor. Foreign names and a joke book from 1980."},
+    {"no": 17, "why": "Godwin's law. Needs Usenet and Hitler arguments online, not my world."}
+  ],
+  "w1_juster": 3,
+  "w1_review": {
+    "headline": "Good stories, but written for someone in the West",
+    "body": "The school science stories (Archimedes, Galileo, Pythagoras) and the cobra and rat bounty pages are fun and quick. But Round 2 is full of foreign names and Latin that I didn't know, and for some pages I felt I needed to Google the background. I would borrow it, not buy it, unless the price is like Rs 250. Bottom line: a nice quiz book, but I'd rather read free quiz pages on Instagram."
+  },
+  "w2_review_first": "Dekho, stories mast hain, khaas kar jo school wali science ki hain. Par bahut saare naam aur references firang hain, jaise Hanlon aur Godwin, jo mujhe pehle se pata nahi the. Dost ko bolungi ki library ya friend se le lo, khareedne se pehle price dekh lo.",
+  "w2_lost": [
+    {"page": "P038", "why": "Round 2 me Latin aur friar wala page padhte hi mann hat gaya, kuch samajh hi nahi aaya."},
+    {"page": "P046", "why": "Hanlon aur Bloch ka page, kaun hai ye log? Maine skip kar diya."},
+    {"page": "P050", "why": "Godwin ka law Usenet ke bare me hai, mujhe uska kuch pata nahi."},
+    {"page": "P030", "why": "Moore ke law me chips aur Dennard scaling, thoda bohot technical ho gaya."}
+  ],
+  "w2_read_aloud": [
+    {"no": 91, "why": "Delhi ka cobra wala, sab ne social media pe suna hoga. Aur answer me Madras nikalta hai, toh sab chaunk jayenge."},
+    {"no": 5, "why": "Pythagoras ko lekar Babylon aur apne Sulba Sutras ka bhi naam aata hai, school wale dost maze se sunenge."},
+    {"no": 85, "why": "Umami ka seaweed broth wala. Maggi aur ajinomoto ke bare me sab ko jaanna hai."},
+    {"no": 57, "why": "Garam paani pehle jamta hai ya nahi, ispe toh sab ki bahes hogi hostel me."},
+    {"no": 52, "why": "Sink me paani ghumne wala Coriolis, class me teacher ne bola tha, ab pata chala ki galat hai."}
+  ],
+  "w2_cut": [
+    {"no": 17, "why": "Godwin ka law, internet ki purani ladai ke bare me hai, humare liye kuch nahi."},
+    {"no": 15, "why": "Hanlon ka razor, ek joke book se aaya naam, mujhe kaun jaanta hai."},
+    {"no": 14, "why": "Goodhart ka saying, samajh hi nahi aaya ki kab use karte hain."},
+    {"no": 46, "why": "Laffer ka napkin, US ki tax politics hai."},
+    {"no": 95, "why": "Nixon ka madman theory, ek US president ke bare me, India me kisi ko interest nahi."}
+  ],
+  "w2_juster": 4,
+  "w2_book2": "Agar dusri book me bhi yehi foreign naam aur Latin ho aur price Rs 300 se upar ho, toh nahi lungi, Instagram pe free mil jata hai."
+}

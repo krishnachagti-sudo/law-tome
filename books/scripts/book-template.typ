@@ -101,7 +101,7 @@
   [ 100 Famous Stories You've Been Told Wrong: The Myth-Busting Quiz for Curious Minds \ The Law Tome series, book 1]
   par[Copyright © 2026 Krishna Chagti. Published by Conyso Publishing, conyso.com. First edition, 2026.]
   par[ISBN #box(fill: luma(88%), inset: (x: 2pt))[TO ADD FROM KDP] (paperback)]
-  par[All rights reserved. No part of this book may be reproduced without written permission, except for short quotations in reviews. The score table and team scoresheet may be copied for personal and classroom use.]
+  par[All rights reserved. No part of this book may be reproduced without written permission, except for short quotations in reviews. The score table and team scoresheet may be copied for personal and classroom use, and teachers may copy single question-and-answer spreads for their own classes.]
   par[Parts of the text adapt records from the Law Tome (conyso.com/lawtome), which are published under the Creative Commons Attribution 4.0 license (CC BY 4.0, creativecommons.org/licenses/by/4.0).]
   par[How this book was made: the entries were drafted with AI tools from the Law Tome's sourced records and checked against the sources named on each page. The illustrations were made with AI image tools.]
   par[This book is for entertainment and education. Each verdict reflects the evidence available when it was written. If the evidence changes, or we got one wrong, the correction goes up at conyso.com/lawtome/errata.]
@@ -182,7 +182,7 @@
   v(-0.5in)
   [#label-mono[Round #n of 10] #label("round-" + str(n))]
   v(0.15in)
-  text(font: display, size: 30pt, weight: 400, name)
+  { set par(justify: false); text(font: display, size: 30pt, weight: 400, hyphenate: false, name) }
   v(0.12in)
   text(style: "italic", size: 11.5pt, blurb)
   v(0.25in)
@@ -290,27 +290,40 @@
   // "What really happened": a pale scene behind the answer, strongest at the
   // foot of the page and fading out upward so the top of the text stays clean.
   // The answer page is always a left-hand page, so the outside margin is on the left.
-  if bg != none {
-    place(top + left, dx: -0.55in, dy: -0.72in, box(width: 6in, height: 9in,
-      align(center + bottom, pad(bottom: 0.2in, image(bg, width: 5.8in)))))
-  }
   // The answer. Long answers step down so each fits on its one page.
   set text(size: if wc > 445 { 8.5pt } else if wc > 425 { 8.7pt } else if wc > 405 { 8.9pt } else if wc > 400 { 9pt } else if wc > 380 { 9.2pt } else if wc > 360 { 9.45pt } else if wc > 340 { 9.7pt } else if wc > 315 { 9.95pt } else { 10.25pt })
-  [#label-mono[№ #n · #question] #label("ans-" + str(n))]
-  v(0.08in)
-  stamp(verdict)
-  v(0.1in)
-  for (i, p) in paras.enumerate() { if i == 0 { p } else { h(1.1em); p }; parbreak() }
-  if share != none { tell(share) }
-  line(length: 30%, stroke: 0.5pt + rule-gray)
-  set par(first-line-indent: 0pt, justify: false)
-  text(size: 8pt, style: "italic")[Sources: #sources]
-  if next != none {
-    v(0.6em)
-    // The confident miss is the story people retell, so the score line asks for it by number.
-    align(right, label-mono[Round score: #box(width: 22pt, height: 7pt, stroke: (bottom: 0.5pt + ink)) / 10 #h(8pt) Most confident miss: № #box(width: 18pt, height: 7pt, stroke: (bottom: 0.5pt + ink))])
-    v(3pt)
-    align(right, label-mono[Next → #next])
+  let body = {
+    [#label-mono[№ #n · #question] #label("ans-" + str(n))]
+    v(0.08in)
+    stamp(verdict)
+    v(0.1in)
+    for (i, p) in paras.enumerate() { if i == 0 { p } else { h(1.1em); p }; parbreak() }
+    if share != none { tell(share) }
+    line(length: 30%, stroke: 0.5pt + rule-gray)
+    set par(first-line-indent: 0pt, justify: false)
+    text(size: 8pt, style: "italic")[Sources: #sources]
+    if next != none {
+      v(0.6em)
+      // The confident miss is the story people retell, so the score line asks for it by number.
+      align(right, label-mono[Round score: #box(width: 22pt, height: 7pt, stroke: (bottom: 0.5pt + ink)) / 10 #h(8pt) Most confident miss: № #box(width: 18pt, height: 7pt, stroke: (bottom: 0.5pt + ink))])
+      v(3pt)
+      align(right, label-mono[Next → #next])
+    }
+  }
+  // "What really happened": a pale scene at the foot of the answer page. It is sized to the
+  // space the text leaves (measured first) and drawn behind it, so it never runs under any
+  // words (art audit, 17 Nov 2026). It may run into the bottom margin, as before, and is left
+  // out when there is no real room for it.
+  context {
+    if bg != none {
+      let used = measure(block(width: 4.75in, body)).height
+      let nat = measure(image(bg, width: 5.8in)).height
+      let h = calc.min(nat, 7.5in - used + 0.58in - 0.18in)
+      if h > 0.9in {
+        place(top + left, dx: -0.55in, dy: 7.5in + 0.58in - h, box(width: 6in, align(center + top, image(bg, height: h))))
+      }
+    }
+    body
   }
 }
 
@@ -322,7 +335,7 @@
   pagebreak(to: "odd", weak: true)
   set par(first-line-indent: 0pt, justify: false)
   heading(level: 1)[The 10 biggest surprises]
-  text(style: "italic")[The stories that fooled the most people, ranked. Answers on the pages shown.]
+  text(style: "italic")[Our pick of the ten most likely to fool you. Answers on the pages shown.]
   v(0.1in)
   ornament()
   v(0.12in)
@@ -373,9 +386,13 @@
         line(length: 100%, stroke: 0.5pt + ink)
         v(3pt)
         set text(size: 8.3pt)
+        // Number | title with leaders | page: the page number keeps its own column, so it never wraps onto a line by itself.
         for q in r.qs {
-          [#text(font: mono, size: 6.5pt, str(q.n)) #h(5pt) #q.question #leaders #text(font: mono, size: 6.5pt, context { str(counter(page).at(label("q-" + str(q.n))).first()) })]
-          linebreak()
+          grid(columns: (14pt, 1fr, 16pt), align: (left + top, left + top, right + bottom),
+            text(font: mono, size: 6.5pt, str(q.n)),
+            { set text(hyphenate: false); set par(leading: 0.5em); [#q.question #leaders] },
+            text(font: mono, size: 6.5pt, context { str(counter(page).at(label("q-" + str(q.n))).first()) }))
+          v(4.2pt, weak: true)
         }
       },
       if r.art != none { align(top, box(stroke: 0.6pt + ink, radius: 3pt, inset: 3pt, image(r.art, width: 100%))) },
@@ -406,8 +423,8 @@
   v(6pt)
   align(center, grid(columns: 5, column-gutter: 6pt, align: horizon,
     mini-page({
-      text(font: mono, size: 5pt)[ROUND 1 · № 1]
-      v(2pt); text(font: display, size: 9pt)[Did Newton get hit by an apple?]
+      text(font: mono, size: 5pt)[ROUND 1 · № 2]
+      v(2pt); text(font: display, size: 9pt)[Did an apple fall on Newton’s head?]
       v(1fr)
       grid(columns: 3, column-gutter: 2pt, ..("T", "F", "D").map(w => box(width: 100%, stroke: 0.5pt + ink, inset: 2pt, align(center, text(font: mono, size: 5pt, w)))))
     }),
@@ -435,7 +452,7 @@
   align(center, [#image("/art/librarian/final/band-" + art + ".png", width: 1in) #v(-2pt) #text(font: display, size: 11pt, hyphenate: false, title) #linebreak() #text(font: mono, size: 7pt, range)]))
 #let bands() = grid(columns: 4, column-gutter: 5pt,
   badge([Myth Buster], [85–100], true, "myth-buster"), badge([Fact Checker], [70–84], true, "fact-checker"),
-  badge([Healthy Skeptic], [50–69], false, "healthy-skeptic"), badge([Easily Fooled], [0–49], false, "easily-fooled"))
+  badge([Healthy Skeptic], [55–69], false, "healthy-skeptic"), badge([Easily Fooled], [0–54], false, "easily-fooled"))
 
 // A spot illustration of the Librarian in the back matter: {{spot:name}} in the markdown.
 // Widths match SIZES in prep-librarian.py, which checks line weight at these sizes.

@@ -1,0 +1,62 @@
+{
+  "id": "curious-02",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "card_quote": "I dislike books without sources and check Wikipedia when a claim surprises me. I've met the Stanford prison experiment and Milgram in pop books and probably not the critiques.",
+  "how_read": "Cover to cover, in order, over two weekends on the couch. Rounds 1 to 4 on the first Saturday, the next five the following week. I kept score for the first three rounds and then stopped. I checked the sources on the surprising ones. Round 10 is still waiting.",
+  "stopped_at": "P214",
+  "w1_friction": [
+    {"page": "P002", "type": "doubt-verdict", "note": "Drafted with AI and checked by one editor. That line decides how much I trust everything else.", "quote": "the entries were drafted with AI tools"},
+    {"page": "P016", "type": "doubt-verdict", "note": "A Wikipedia entry sitting in the sources of a book that says it is checked. Not what I'd cite.", "quote": "“Archimedes’ principle, ” Wikipedia"},
+    {"page": "P062", "type": "doubt-verdict", "note": "FOLKLORE rests on one scholar's reading. I'd have said DISPUTED. Interesting, but 'coached' is one interpretation.", "quote": "the abuse was substantially coached rather than spontaneous"},
+    {"page": "P083", "type": "looks-wrong", "note": "A second question 31, labelled Discovery stories while I'm in Charts and numbers. It reads like a stray page.", "quote": "Did Benjamin Franklin fly a kite in a thunderstorm?"},
+    {"page": "P084", "type": "looks-wrong", "note": "Verdict TRUE, text says he never did it, and the only source is Wikipedia. I checked and the verdict is the wrong way round.", "quote": "Franklin never flew a kite in a thunderstorm"},
+    {"page": "P086", "type": "doubt-verdict", "note": "A 2026 paper carrying the headline. I'd want a replication before I tell anyone it inverts.", "quote": "In 2026 Dawson and de Meza went further in Psychological Review."},
+    {"page": "P094", "type": "bored", "note": "Wald again right after the bomber page. It's the same idea twice.", "quote": "armor belongs where returning planes had the fewest bullet holes"},
+    {"page": "P118", "type": "bored", "note": "A second Laffer page. The first one already had the point.", "quote": "Arthur Laffer has disclaimed originality for the curve that bears his name."},
+    {"page": "P173", "type": "looks-wrong", "note": "Another number 71 and it is under Names that mislead in the middle of Round 8.", "quote": "Do goldfish have a three-second memory?"},
+    {"page": "P174", "type": "looks-wrong", "note": "The voice changes completely, it reads like a lab report, and the source line is just a shrug.", "quote": "Sources: various laboratory studies."}
+  ],
+  "w1_best": [
+    {"no": 24, "why": "65 percent came from one condition and Perry questions the belief in the shocks. I'd only had the pop version."},
+    {"no": 26, "why": "A third conformed, two-thirds didn't. The textbook version was the opposite of the data."},
+    {"no": 39, "why": "Ten thousand letters, nearly a thousand with doctorates. Great dinner story."},
+    {"no": 87, "why": "Too good to be true, and it's actually a live argument, not a verdict."},
+    {"no": 89, "why": "A real result and a messy data choice at the same time. That's honest."}
+  ],
+  "w1_flat": [
+    {"no": 16, "why": "Hanlon's page again with Napoleon's name on."},
+    {"no": 36, "why": "Second Wald page, nothing new."},
+    {"no": 47, "why": "Second Laffer page."},
+    {"no": 78, "why": "KISS, disputed, with no payoff."},
+    {"no": 66, "why": "Fog of war: a page on translators and a fog metaphor, thin for the space."}
+  ],
+  "w1_juster": 8,
+  "w1_review": {
+    "headline": "The psychology rounds are worth the price on their own",
+    "body": "Rounds 3 and 4 gave me corrections to Milgram, Stanford and Dunning-Kruger that I had never met, with sources I could follow up. Some pages are padded with a second story on the same subject and a couple, like the goldfish and Franklin pages, look like they came from somewhere else with a verdict that contradicts the text. The sources lean on Wikipedia more than I'd like in a book that says it's checked. Bottom line: strong content with some sloppy proofing, I'd still recommend it to anyone who likes pop psychology."
+  },
+  "w2_review_first": "If a friend asked, I'd say it's a good book for people who like finding out their pop-science facts were wrong, especially the psychology chapters. I'd add that the proofing is patchy and the sources need checking.",
+  "w2_lost": [
+    {"page": "P094", "why": "Wald for the second time, I skimmed it."},
+    {"page": "P116", "why": "Laffer, two pages in a row."},
+    {"page": "P178", "why": "Bike shed, too much detail on an invented example."},
+    {"page": "P188", "why": "KISS and the comma. Long to read for not much."}
+  ],
+  "w2_read_aloud": [
+    {"no": 39, "why": "People argue about the doors, so it's a great table puzzle."},
+    {"no": 21, "why": "38 silent witnesses. Everyone has been told it."},
+    {"no": 29, "why": "Nobody knows who Little Albert was, and two candidates exist."},
+    {"no": 90, "why": "A law published as an anagram. Nobody guesses it."},
+    {"no": 26, "why": "Everyone knows the line experiment and gets the numbers wrong."}
+  ],
+  "w2_cut": [
+    {"no": 16, "why": "Repeats Hanlon."},
+    {"no": 36, "why": "Repeats Wald."},
+    {"no": 47, "why": "Repeats Laffer."},
+    {"no": 31, "why": "The Franklin page, with a verdict that fights the text."},
+    {"no": 15, "why": "Disputed with no real story."}
+  ],
+  "w2_juster": 7,
+  "w2_book2": "If the sources stay thin or Wikipedia-heavy and the proofing stays patchy, like the Franklin page and the goldfish page."
+}

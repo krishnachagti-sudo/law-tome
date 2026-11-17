@@ -1,0 +1,72 @@
+{
+  "expert": "Non-fiction editor (trivia and popular science)",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "first_impression": "The idea is strong and the research is unusually careful for a trivia book. But after twenty answers I could write the next one myself: the same seven moves, the same phrases, and a voice that belongs to a database and not to the librarian on the cover.",
+  "findings": [
+    {
+      "page": "16, 20, 24, 30, 44, throughout",
+      "issue": "Every answer runs the same template: stamp with a lede; 'The popular version is...'; 'The record...'; extra science; 'The X spread because...'; and a closing paragraph that begins 'So...' or 'The safe statement...' and restates the verdict. The reader gets the same fact three times (lede, closing paragraph, Tell someone line), and by about entry 20 skims all of it except the stamp.",
+      "why_it_matters": "A repeated shape trains readers to skip the body, so the interesting detail (Galileo's water clock, Vitruvius's story) goes unread.",
+      "fix": "Cut the closing 'So...' paragraph from every answer, or keep it only where it adds a new sentence (a caveat or open question). Vary the order in about a third of the entries, for example opening with the date or the source, or the surprise, and let some answers be shorter than others.",
+      "severity": 3
+    },
+    {
+      "page": "16, 26, 32, 46, throughout",
+      "issue": "'The record' is the subject of most sentences ('The record is clear', 'The record calls this second-hand', 'The record notes...', 'The record does not say when...'). It is never defined for the reader, and it is the Law Tome database speaking, not a person. Ida Verity, the host sold on the cover and p. 5, never speaks in the answers at all.",
+      "why_it_matters": "It gives the book a committee voice and wastes its best asset, a host with a catchphrase ('says who?') that the entries could use.",
+      "fix": "Define 'the record' once on p. 5 as 'the sources named at the foot of each answer'. In the body, replace most uses with the named source ('Manning, Levine and Collins found...'). Give Ida one short aside per answer, in italics, in the Tell someone box ('Ida's note: ...') or drop it into three to five answers a round.",
+      "severity": 3
+    },
+    {
+      "page": "cover, 5, 233; answers throughout",
+      "issue": "The promise on the cover and in the title is '100 famous stories you've been told wrong', but 34 of the 100 verdicts are TRUE and 18 are DISPUTED. Several TRUE entries are not stories people tell wrongly at all, such as № 90 (Hooke's anagram), № 70 (the prisoner's dilemma story added later) and № 75 (Clarke's third law added in 1973). They read as pleasant facts, not busted myths.",
+      "why_it_matters": "Some readers will feel baited, and the myth-busting identity is blurred when a third of the book confirms the story.",
+      "fix": "Either swap about eight of the weakest TRUE entries for real myths, or change the promise to match: '100 famous stories: which are true?' and add a line on p. 5 that TRUE and DISPUTED are part of the surprise.",
+      "severity": 2
+    },
+    {
+      "page": "34, 126, 28",
+      "issue": "Several answers go on to answer a second question the reader did not ask. The Churchill answer (p. 34) spends four of its six paragraphs on the rule of three, omne trium perfectum, tricolon, Caesar, the Declaration and Lincoln. The Eskimo answer (p. 126) spends half its space on Sapir-Whorf, Russian blues and Guugu Yimithirr. The Nobel answer (p. 28) adds a long Millikan paragraph.",
+      "why_it_matters": "Digressions are where readers drop out, and the entry's own surprise gets buried.",
+      "fix": "Cut p. 34 to: what he said, which word went missing, why the trimmed version won, with one sentence on the rule of three. Cut the Whorf material on p. 126 to two sentences and move the rest to the Law Tome page.",
+      "severity": 2
+    },
+    {
+      "page": "57-78, 79-100",
+      "issue": "Rounds 3 and 4 give twenty entries in a row about psychology and statistics, and entries 21 to 27 (Genovese, Stanford prison, Hawthorne, Milgram, handshakes, Asch, marshmallow) all deliver the same moral, 'the famous number lost its conditions'. The openers promise that each round 'gets harder as it goes' while the stars do not rise.",
+      "why_it_matters": "A reader who gets the lesson in entry 21 reads the next six as repeats, and the round's momentum flattens.",
+      "fix": "Break the run by moving two or three lighter entries from other rounds into Round 3 (for example the toast entry from p. 187), reorder so no two entries with the same lesson are adjacent, and delete the 'harder as it goes' promise from p. 5 and the round openers.",
+      "severity": 2
+    },
+    {
+      "page": "18, 20, 60",
+      "issue": "Many answer ledes stack hedges and attribution before the news: 'The tower drop is likely a legend' (p. 22), 'There is an apple in Newton's own account of his thinking about gravity' (p. 18). Tell someone lines start 'According to Britannica,' (p. 18, p. 20). The hedges are accurate, but together they make the verdicts sound unsure, while the stamp says otherwise.",
+      "why_it_matters": "Readers are told the verdict firmly by the stamp and then softly by the text, so the entry sounds unsure.",
+      "fix": "Lead each lede with the fact in plain words ('Newton never said an apple hit him'), then put the hedge in the second sentence. Reserve 'likely' and 'almost certainly' for cases where the stamp is DISPUTED.",
+      "severity": 2
+    },
+    {
+      "page": "2, 237, 245",
+      "issue": "The book makes three slightly different claims about how it was made: p. 2 says the entries were 'checked against the sources named on each page', p. 237 says 'Krishna Chagti, the editor, then read and checked them', and p. 245 introduces the editor as someone who 'starts a lot of things... Not all of it works.' The first two promise different things, and the third undercuts authority at the point where the book most needs it.",
+      "why_it_matters": "A reader who reads all three cannot tell what 'checked' means, and for a book about 'says who?' the answer to 'who checked this?' should be crisp.",
+      "fix": "Write one sentence and use it on p. 2 and p. 237: 'Drafted with AI from the Law Tome's sourced records; every verdict re-checked by the editor against the sources named on the page.' On p. 245 keep the voice but add one line on method and drop 'Not all of it works'.",
+      "severity": 2
+    },
+    {
+      "page": "244",
+      "issue": "The People index is sorted by first name (Abraham Maslow, Adam Smith, Albert Einstein, Albert Tucker, Alfred Wegener...) so a reader looking for Einstein or Tucker must scan the A's. Combined entries ('Abraham Kaplan and Abraham Maslow 41', 'Edward Sapir and Benjamin Lee Whorf') are filed under the first name only.",
+      "why_it_matters": "A reference book's index that does not follow surname convention fails the exact reader who flips to it.",
+      "fix": "Re-sort by surname ('Einstein, Albert 25, 27'), split combined entries so each person has a line, and add cross-references for Hanlon and Heinlein.",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "The opening of each round, with its one-sentence promise and short framing paragraph.",
+    "The best Tell someone lines (p. 26 'Look for E = mc² in Einstein's 1905 paper and it isn't there'; p. 54 'Neither Twain nor Einstein said it').",
+    "The honesty of DISPUTED and the careful hedges that survive from the sources.",
+    "The 'why it spread' paragraph, which turns each entry into a small lesson about how stories travel."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "The research and the structure are good; the book needs its templates loosened, its voice put in a person's mouth, and about a third of its repeated content cut."
+}

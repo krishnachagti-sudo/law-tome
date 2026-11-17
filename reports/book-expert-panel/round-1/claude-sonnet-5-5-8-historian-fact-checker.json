@@ -1,0 +1,79 @@
+{
+  "expert": "Historian of science and fact checker",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "first_impression": "Better than most: it hedges where the evidence is thin, names primary dates, and keeps DISPUTED honest. A specialist will still find a handful of places where the verdict is firmer than the cited source, where the citation does not carry the claim, and one rule (absence of evidence) that is applied differently on different pages.",
+  "findings": [
+    {
+      "page": "17-20 (№ 2 and № 3)",
+      "issue": "Both answers say the apple story 'traces back to Newton's own later recollection', 'Newton's own account', and № 3 stamps TRUE on 'Did Newton himself tell the apple story?', citing Encyclopaedia Britannica. No account written by Newton survives. The story reaches us through William Stukeley, who recorded a conversation of 1726 in a memoir written in 1752, and John Conduitt's memoir of 1726 to 1727; Voltaire printed a version in the 1720s. Stukeley is in the source line but the text credits Newton's 'own' account.",
+      "why_it_matters": "Newton scholars will call 'Newton's own account' wrong at once, and it sits in a Tell someone line and in an A+ banner.",
+      "fix": "Say: 'Newton told Stukeley in 1726 that the fall of an apple set him thinking about gravity; Stukeley wrote it down in 1752, and Conduitt's memoir agrees. Nothing in Newton's own papers mentions it.' Keep TRUE for № 3 but name Stukeley and Conduitt in the lede and the Tell someone line, and cite them first, Britannica second.",
+      "severity": 3
+    },
+    {
+      "page": "93-94 (№ 37), 95-96 (№ 38), 213-214 (№ 91)",
+      "issue": "The three 'no record found' stories get different verdicts. № 38 (the 26 blacks at Monte Carlo) is 'unverified' and stamped DISPUTED; № 37 (Pareto's 20 percent holding 80 percent of Italy's land, 'has not been traced to his text') and № 91 (no record that anyone bred cobras in Delhi) are stamped FOLKLORE. № 37 also only searched the 1896 Cours; the land figure is commonly traced to Pareto's 1906 Manuale, which the page does not mention. The last sentence of № 37 is also garbled ('The 80 percent of Italy's land has not been found...').",
+      "why_it_matters": "A reviewer can show the book contradicts its own rule, and a Pareto specialist can show the search was incomplete.",
+      "fix": "Put one rule on p. 5: 'FOLKLORE includes claims for which no source has been found after a search; DISPUTED is for claims with real evidence on both sides.' Then restamp № 38 FOLKLORE (or the other two DISPUTED), check the Manuale 1906 for № 37 and say 'not found in the Cours or the Manuale' (or report what is there), and fix the garbled sentence.",
+      "severity": 3
+    },
+    {
+      "page": "16, 18, 22, 64, 74, 126 and about 90 of the 100 answers",
+      "issue": "Wikipedia appears on the source line of nearly every answer (94 lines in the text), alongside Simply Psychology, Military.com, Gizmodo and Quote Investigator. On p. 237 the book says 'the book names the ones each verdict rests on', and for many verdicts the named source is a general reference. For example, the Newton claim rests on Britannica, and the Genovese claim on Wikipedia as well as the primary paper.",
+      "why_it_matters": "A reader who checks the source lines sees an encyclopaedia where the book promises evidence, and the reviewer who finds one weak citation will tar all 100.",
+      "fix": "For every answer print at least one primary document or peer-reviewed source as the first source and drop Wikipedia and general websites from the printed line (keep them on the web page). Where only a secondary source exists, say so ('secondary source: ...').",
+      "severity": 3
+    },
+    {
+      "page": "91-92 (№ 36), 89-90 (№ 35)",
+      "issue": "№ 36 is stamped TRUE for 'Did Wald really tell the military to armor where returning planes weren't hit?', but the page supports a narrower claim: Wald's 1943 memoranda estimated aircraft vulnerability while allowing for planes that did not return. The memoranda are a statistical method, and the 'armor the clean areas' instruction in those words is the retelling; the cited rejoinder by Wallis (1980) is a defence of the Statistical Research Group, and the page quotes no instruction to the military. The page never quotes the memorandum making that recommendation, so the reader cannot tell whether the instruction is Wald's or a later gloss.",
+      "why_it_matters": "The page itself calls the anecdote 'partly embellished', which does not match a flat TRUE on 'told the military'.",
+      "fix": "Either restamp DISPUTED, or retitle the question 'Was Wald's reasoning about the planes that never returned real?' (TRUE), and keep the narrower sentence in the Tell someone line. Name the memorandum's own conclusion if it can be quoted.",
+      "severity": 2
+    },
+    {
+      "page": "15-16 (№ 1)",
+      "issue": "The Archimedes answer states as fact that Vitruvius's method 'is crude, and too imprecise to have worked', and that 'Archimedes more likely used hydrostatic weighing'. The second is a modern conjecture (Galileo proposed the hydrostatic balance in 1586), not a source; the first is a judgment about precision that physicists dispute, since displacement works in principle and the limit was measurement. The treatise date 'around 250 BC' is a convention, not a date.",
+      "why_it_matters": "A classicist or historian of mechanics will call the page confident where the ancient evidence is silent.",
+      "fix": "Write: 'Vitruvius's method works in principle but would be hard to measure well enough for a goldsmith's crown; a balance method is a later guess, proposed by Galileo.' Say 'the treatise is undated; c. 250 BC is the usual estimate'.",
+      "severity": 2
+    },
+    {
+      "page": "21-22 (№ 4)",
+      "issue": "The answer is right that Viviani's tower story is not in Galileo's writings, but it omits that actual drop experiments are on record: Simon Stevin and Jan de Groot dropped lead balls in Delft in 1586, and Riccioli's later tests with pendulums and tower drops are documented. It also says the ramp acceleration was 'the same whatever the ball's weight' without noting that a rolling ball is slowed by its rotation (the standard 5/7 factor), which Galileo did not account for.",
+      "why_it_matters": "The page leaves the impression that nobody dropped weights and that the ramp tested free fall directly, both of which a specialist will correct.",
+      "fix": "Add one sentence: 'Real drops are on record: Stevin and de Groot in Delft in 1586.' Add 'Rolling slows the ball by a constant factor, so the ramp shows the pattern, not the exact rate of free fall.'",
+      "severity": 2
+    },
+    {
+      "page": "61-62 (№ 22)",
+      "issue": "The Stanford prison entry stamps FOLKLORE on 'turn cruel on their own', but the case is built on one scholar's archival reading (Le Texier 2019), and the Tell someone line says 'which Le Texier argues'. The claim that the advertisement 'attracted people higher in aggression and authoritarianism' is attributed to 'the sources' without naming Carnahan and McFarland (2007), and Zimbardo's published reply to Le Texier is not cited.",
+      "why_it_matters": "The stamp is firmer than the evidence in the text; a social psychologist will say the verdict is 'strongly contested' and ask for the citations.",
+      "fix": "Cite Carnahan and McFarland (2007) and Zimbardo's reply, and either keep FOLKLORE with the sentence 'most researchers now reject the situation-alone reading' or restamp DISPUTED.",
+      "severity": 2
+    },
+    {
+      "page": "83-84 (№ 32)",
+      "issue": "The Tell someone line and the stamp lean on a 2026 reanalysis (Dawson and de Meza, Psychological Review) that 'reports that the pattern disappears and then inverts', which is a single, very recent paper that other researchers have not yet assessed. The settled part (random-number simulations in 2016, Gignac and Zajenkowski in 2020) is in the body.",
+      "why_it_matters": "The most quotable line in the entry rests on the least-tested source, and if it is challenged the whole entry looks overreaching.",
+      "fix": "Make the Tell someone line 'Since 2016, researchers have shown that random numbers can produce the Dunning–Kruger picture'. Move the 2026 paper to the body and mark it 'a new reanalysis, not yet widely tested'. Check the DOI before print.",
+      "severity": 2
+    },
+    {
+      "page": "25-26 (№ 6)",
+      "issue": "The answer says 'Einstein was the first to state the relation as a general principle that applies to all energy' without a hedge. Historians of physics note that Planck (1907) and others extended and argued over the generalisation, and the page's last line says 'the record does not say when the compact form first appeared in print' without saying the question is open or who might know.",
+      "why_it_matters": "'First' is the word historians of physics attack, and an honest 'we don't know' is stronger if it is tied to a named search.",
+      "fix": "Say 'Einstein made the strongest early claim that mass and energy are generally equivalent; Planck extended it in 1907' and 'The earliest print of the compact E = mc² has not been pinned down here'.",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "DISPUTED used honestly for Murphy, Hanlon, Milgram, the marshmallow test and Little Albert.",
+    "Hedges retained from sources ('likely', 'almost certainly', 'reportedly') and the 'earliest dated source' close to each entry.",
+    "Narrow-claim endings such as № 6 ('the statement survives the check; the typography does not') and № 98.",
+    "The errata promise and the p. 237 note that the verdict is only as strong as its evidence."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "Most verdicts would survive an expert reader, but the Newton line, the inconsistent 'no record' rule and the Wikipedia-heavy source lines must be fixed before print."
+}

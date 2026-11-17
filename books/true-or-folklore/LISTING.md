@@ -32,7 +32,7 @@ recipient (what they'll still use in March).
 <ul>
 <li><b>100 stories in 10 ready-made quiz rounds</b> for game nights, with a two-team scoresheet</li>
 <li><b>Two minutes per story</b>, so it works for a commute or a coffee break</li>
-<li><b>Every verdict checked against the record</b>, with the source named on the page. Eighteen stories are still genuinely disputed, and the book says so</li>
+<li><b>Every verdict checked against the record</b>, with the source named on the page. Seventeen stories are still genuinely disputed, and the book says so</li>
 <li>A page of ideas for using it in class</li>
 </ul>
 <p>Part of <i>The Law Tome</i> series, built from a free, sourced directory of more than a thousand named laws, effects and principles.</p>

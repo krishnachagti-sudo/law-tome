@@ -103,6 +103,19 @@ rounds.forEach((f, ri) => {
     const peak = movable.reduce((best, i) => (entries[i].surprise >= entries[best].surprise ? i : best), movable[0]);
     entries.push(...entries.splice(peak, 1));
   }
+  // Two stories about the same law read as a repeat when they sit back to back (simulated
+  // reader panel, 17 Nov 2026), so the second of a pair moves three slots on. A story the
+  // previous answer points to ("the next question in this round") stays where it is, and the
+  // round's last story (the peak) is never displaced.
+  const moved = new Set();
+  for (let i = 1; i < entries.length - 1; i++) {
+    const x = entries[i];
+    if (moved.has(x) || x.slug !== entries[i - 1].slug || /next question/.test(entries[i - 1].e)) continue;
+    moved.add(x);
+    entries.splice(i, 1);
+    entries.splice(Math.min(i + 3, entries.length - 1), 0, x);
+    i--;
+  }
   entries.forEach((x, i) => {
     n++;
     const e = x.e;

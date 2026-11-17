@@ -17,7 +17,7 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version explains the phrase with a scene from the hunting field. Hunters, it says, dragged a strong-smelling smoked fish across a trail, either to train their hounds or to throw them off a scent. A red herring, on this account, is whatever pulls the dogs away from the trail they should be following.
 
-The record does not support the practice. Michael Quinion's article "The Lure of the Red Herring" traces the figurative usage to Cobbett in 1807 and treats the hound-training practice as dubious. The phrase's documented history starts with a writer using it as a figure of speech, not with any recorded kennel routine. The record's hedge matters here: it calls the fish story likely a myth, not a proven fabrication.
+The evidence does not support the practice. Michael Quinion's article "The Lure of the Red Herring" traces the figurative usage to Cobbett in 1807 and treats the hound-training practice as dubious. The phrase's documented history starts with a writer using it as a figure of speech, not with any recorded kennel routine. The record's hedge matters here: it calls the fish story likely a myth, not a proven fabrication.
 
 The meaning the phrase settled into is precise. A red herring is something brought in to distract from the question at hand. Its fault is irrelevance, not falsehood: a true point that leads a discussion away from the issue is still a red herring. Logicians file it among the fallacies of relevance, close to the Latin *ignoratio elenchi*, the irrelevant conclusion. Writers of mysteries use the same term for a deliberate false clue that steers readers toward the wrong suspect, a legitimate device rather than a fault.
 
@@ -25,7 +25,7 @@ The hunting story spread because it fits the meaning so neatly. An odd phrase in
 
 What can be stated with confidence is narrower than the legend. The figurative "red herring" is traceable to Cobbett in 1807. The hounds and the smoked fish are, on the record's evidence, likely a myth.
 
-**Tell someone:** The hound-training story is likely a myth; the figurative "red herring" traces to the journalist William Cobbett in 1807.
+**Tell someone:** The figurative "red herring" traces to the journalist William Cobbett in 1807; the hound-training story is likely a myth.
 
 *Sources:* Quinion, "The Lure of the Red Herring," World Wide Words (2008). "Red herring," Wikipedia. Full list: conyso.com/lawtome/laws/the-red-herring/
 
@@ -81,7 +81,7 @@ The story spread because it is a near-perfect fable: a picture almost nobody had
 
 So the core is documented. A 2003 suit over one frame in a coastal survey, six downloads before it, more than 420,000 visitors in the month after, and a name coined by Masnick in 2005.
 
-**Tell someone:** Before Barbra Streisand's 2003 lawsuit, the photo of her house had been downloaded six times, two of them by her lawyers; afterward, more than 420,000 people visited the site in a month.
+**Tell someone:** Barbra Streisand's house photo had six downloads, two by her lawyers, before her 2003 lawsuit; then over 420,000 people visited the site in a month.
 
 *Sources:* California Coastal Records Project, Streisand v. Adelman lawsuit page. Masnick, "Since When Is It Illegal To Just Mention A Trademark Online?" Techdirt (5 January 2005). "Streisand effect," Wikipedia. Full list: conyso.com/lawtome/laws/streisand-effect/
 
@@ -111,7 +111,7 @@ The record's account is less neat and better supported. The writ's roots are old
 
 **Tell someone:** Habeas corpus has roots older than Magna Carta; it grew through English common law and was codified by the Habeas Corpus Act of 1679.
 
-*Sources:* "Habeas corpus," Wikipedia. "Habeas corpus," Legal Information Institute, Cornell Law School. Full list: conyso.com/lawtome/laws/habeas-corpus/
+*Sources:* "Habeas corpus," Legal Information Institute, Cornell Law School. "Habeas corpus," Wikipedia. Full list: conyso.com/lawtome/laws/habeas-corpus/
 
 > **QA notes.** 356 words after the page turn by wc, including the source line (341 without it). The verdict rests on the claim that the writ predates 1215, but the record gives no dated pre-1215 instance and both sources are secondary. Add a primary or authoritative legal-history source with an early dated use before print. The year 1215 comes from the record's misreadings field. No living person named.
 > **Source check 2026-11-12:** FIXED. Wikipedia traces the foundations to the Assize of Clarendon (1166) under Henry II and says writs "with the same effect" issued in the twelfth century, but Blackstone dates the first recorded use of *habeas corpus ad subjiciendum* itself to 1305, after Magna Carta; so "the writ predates the charter" became "its roots predate the charter" in the body and Tell someone line. The 1679 codification is confirmed. Still secondary: find the 1166 Assize text or a legal history before print. Checked: "Habeas corpus," Wikipedia (https://en.wikipedia.org/wiki/Habeas_corpus).
@@ -133,13 +133,13 @@ The record shows why the label was easy to attach, and why it is still wrong. Ro
 
 That is close to the label, but it is not the same thing. Rousseau treated the state of nature as a conjecture, a condition that perhaps never existed, not as a report on any real people. The record says that attaching the exact phrase to him distorts his more qualified view. The words themselves are not his.
 
-The label spread because it compresses. Set beside Hobbes's brutish war, Rousseau's picture of good natural humans is easy to reduce to a two-word tag, and a tag can stand in for a long argument. Once it circulated with his name beside it, repetition gave it the look of a quotation. The record does not say who first pinned it on him, or when.
+The label spread because it compresses. Set beside Hobbes's brutish war, Rousseau's picture of good natural humans is easy to reduce to a two-word tag, and a tag can stand in for a long argument. Once it circulated with his name beside it, repetition gave it the look of a quotation. The phrase itself is older than Rousseau: its first known English use is in John Dryden's play *The Conquest of Granada* (1672). In the 1860s the anthropologist John Crawfurd ascribed its coinage to Rousseau.
 
 The fact is short. Rousseau wrote about natural goodness and the corrupting effect of society, and he hedged it as a thought experiment. "Noble savage" is a phrase other people used about him, not one he used himself.
 
-**Tell someone:** The phrase "noble savage" appears nowhere in Rousseau's writings; it was pinned on him later, and he hedged his view as a thought experiment.
+**Tell someone:** "Noble savage" appears nowhere in Rousseau's writings; Dryden used it in 1672, and John Crawfurd pinned it on Rousseau in the 1860s.
 
-*Sources:* "State of nature," *Encyclopaedia Britannica*. "Noble savage," Wikipedia. Full list: conyso.com/lawtome/laws/the-state-of-nature/
+*Sources:* Dryden, *The Conquest of Granada* (1672). "State of nature," *Encyclopaedia Britannica*. "Noble savage," Wikipedia. Full list: conyso.com/lawtome/laws/the-state-of-nature/
 
 > **QA notes.** 314 words after the page turn by wc, including the source line (302 without it). The record supports only about 300 words; the entry is not padded beyond it. The verdict rests on a single Wikipedia source ("Noble savage"); confirm the absence of the phrase against Rousseau's own texts before print. The record names none of Rousseau's works and gives no date or person for the later misattribution, so the entry names neither. No living person named.
 > **Source check 2026-11-12:** CONFIRMED. Wikipedia states the term "never appears in Jean-Jacques Rousseau's writing," gives its first English use as Dryden's *The Conquest of Granada* (1672), and says John Crawfurd, in the 1860s, deliberately ascribed its coinage to Rousseau; that answers the open "who and when" if the editor wants it added. Rousseau's texts were not searched directly. Checked: "Noble savage," Wikipedia (https://en.wikipedia.org/wiki/Noble_savage).
@@ -153,7 +153,7 @@ TRUE · FOLKLORE · DISPUTED?
 
 *(turn the page)*
 
-**FOLKLORE.** Carl von Clausewitz did not coin "the fog of war." In *On War* (1832) he conveyed the uncertainty of war through images of fog, twilight and moonlight. The crisp phrase is a later paraphrase, prominent partly because a twentieth-century translation chose the word "fog."
+**FOLKLORE.** Carl von Clausewitz did not coin "the fog of war." In *On War* (1832) he conveyed the uncertainty of war through images of fog, twilight and moonlight. The crisp phrase came later: its first known explicit use is by the British officer Lonsdale Hale in 1896, and a twentieth-century translation made the word "fog" prominent.
 
 The popular version presents "the fog of war" as a phrase lifted straight from *On War*, the Prussian theorist's own coinage.
 
@@ -163,11 +163,11 @@ The concept he described is distinct from his other famous idea. Fog is the unce
 
 The phrase became Clausewitz's because a label is easier to cite than a paragraph of metaphors. Once a translation set the image in a short, memorable form, it could be quoted without the surrounding text, and his name gave it authority. Each citation pinned it more firmly to him.
 
-The accurate statement keeps both parts. The metaphors of fog, twilight and moonlight are Clausewitz's, from *On War* (1832). The crisp phrase "the fog of war" is a later paraphrase by translators and interpreters.
+The accurate statement keeps both parts. The metaphors of fog, twilight and moonlight are Clausewitz's, from *On War* (1832). The crisp phrase "the fog of war" is first known from Lonsdale Hale in 1896.
 
-**Tell someone:** Clausewitz wrote of fog, twilight and moonlight in *On War*, but the tidy phrase "the fog of war" came later from translators and interpreters.
+**Tell someone:** Clausewitz wrote of fog, twilight and moonlight in *On War* (1832); the phrase "the fog of war" is first known from Lonsdale Hale in 1896.
 
-*Sources:* Clausewitz, *On War*, Book 1, Chapter 3 and Book 2, Chapter 2 (Graham translation, 1873). "Fog of war," Wikipedia. Full list: conyso.com/lawtome/laws/the-fog-of-war/
+*Sources:* Clausewitz, *On War*, Book 1, Chapter 3 and Book 2, Chapter 2 (Graham translation, 1873). Hale, *The Fog of War* (1896). "Fog of war," Wikipedia. Full list: conyso.com/lawtome/laws/the-fog-of-war/
 
 > **QA notes.** 329 words after the page turn by wc, including the source line (312 without it). The coinage verdict rests on Wikipedia ("the coinage flag"). The record says a "twentieth-century translation" made the word prominent but does not name it; identify it before print. The record's primary source is the Graham translation, which itself uses English imagery; check the "wrapped in fog" passage in that translation and the German original. The record's `coinedYear` field is 1832, which sits awkwardly with the verdict; flag for the corpus editor. No living person named.
 > **Source check 2026-11-12:** FIXED (Sources line only). In the Graham translation, Book 1, Chapter 3 says three-fourths of the factors are "hidden more or less in the clouds of great uncertainty" (clouds, not fog) and mentions twilight and "guesses at truth"; the fog and moonlight image ("like the effect of a fog or moonshine") is in Book 2, Chapter 2, so the Sources line now cites both chapters. The "wrapped in a fog" wording quoted by Wikipedia is a later translation of the German *Nebel*, which fits the entry; the German original could not be fetched (projekt-gutenberg.org returned a bot check). On `coinedYear`: Wikipedia gives the first explicit "fog of war" as Lonsdale Hale's 1896 book *The Fog of War*, so 1832 dates the imagery, not the phrase; corpus editor should change it to 1896 or relabel. Checked: *On War*, Graham translation, Project Gutenberg (https://www.gutenberg.org/cache/epub/1946/pg1946.txt); "Fog of war," Wikipedia (https://en.wikipedia.org/wiki/Fog_of_war).
@@ -185,7 +185,7 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version holds that MAD was the Pentagon's own acronym, a name the planners gave their strategy.
 
-The record separates the policy from the name. The doctrine is rooted in Bernard Brodie's 1946 statement of nuclear deterrence and took shape in the 1960s under McNamara, then US Secretary of Defense. McNamara promoted assured destruction as a policy criterion. In his "Mutual Deterrence" speech in San Francisco on 18 September 1967, he defined the assured second-strike capability at its heart: the power to retaliate devastatingly even after absorbing a first strike. If both sides hold it, neither has a rational incentive to attack. Submarines at sea, hardened silos and dispersible bombers keep that threat alive. The 1972 ABM Treaty limited missile defenses on purpose, to preserve mutual vulnerability.
+The policy and the name have different sources. The doctrine is rooted in Bernard Brodie's 1946 statement of nuclear deterrence and took shape in the 1960s under McNamara, then US Secretary of Defense. McNamara promoted assured destruction as a policy criterion. In his "Mutual Deterrence" speech in San Francisco on 18 September 1967, he defined the assured second-strike capability at its heart: the power to retaliate devastatingly even after absorbing a first strike. If both sides hold it, neither has a rational incentive to attack. Submarines at sea, hardened silos and dispersible bombers keep that threat alive. The 1972 ABM Treaty limited missile defenses on purpose, to preserve mutual vulnerability.
 
 Brennan's acronym turned the policy's own words against it. The initials spell the charge. The record also notes that MAD was never a single formally adopted doctrine, since actual targeting policy shifted over time, and that critics argue it is immoral, holding whole civilian populations hostage.
 
@@ -195,7 +195,7 @@ The fact holds, with the record's hedge. McNamara's term was "assured destructio
 
 **Tell someone:** McNamara called it "assured destruction"; the acronym MAD is attributed to Donald Brennan, a critic who used it derisively, so the initials spell the charge.
 
-*Sources:* "Mutual assured destruction," *Encyclopaedia Britannica*. McNamara, "Mutual Deterrence" speech, San Francisco, 18 September 1967 (Atomic Archive text). Full list: conyso.com/lawtome/laws/mutual-assured-destruction/
+*Sources:* McNamara, "Mutual Deterrence" speech, San Francisco, 18 September 1967 (Atomic Archive text). "Mutual assured destruction," *Encyclopaedia Britannica*. Full list: conyso.com/lawtome/laws/mutual-assured-destruction/
 
 > **QA notes.** 317 words after the page turn by wc, including the source line (299 without it). Title changed from "coined by a critic as a joke": the record says "derisively" and "ironic," not "joke." The Brennan attribution rests on a single secondary source (Britannica) and the record gives no year or publication for his coinage; find Brennan's own use before print. The verdict is TRUE only at the strength of "is attributed to"; the entry keeps that hedge. Brennan, McNamara and Brodie: the record does not say whether they are living; believed deceased, confirm. The finding about Brennan (that he mocked the policy) is not unflattering to him.
 > **Source check 2026-11-12:** CONFIRMED. The speech text is dated 18 September 1967, San Francisco, and defines "our assured-destruction capability" as the power to inflict unacceptable damage even after absorbing a surprise first strike. Wikipedia says Brennan of the Hudson Institute coined the acronym in 1962 to call the policy irrational; *Air & Space Forces Magazine* instead says Brennan added the "mutual" M to an existing term. Both credit Brennan, so the hedged "is attributed to" stands; the year is unsettled. Britannica returned 403 and was not read. Checked: McNamara speech, Atomic Archive (https://www.atomicarchive.com/Docs/Deterrence/Deterrence.shtml); "Mutual assured destruction," Wikipedia (https://en.wikipedia.org/wiki/Mutual_assured_destruction); "The Making of MAD," Air & Space Forces Magazine (https://www.airandspaceforces.com/article/the-making-of-mad/).
@@ -223,7 +223,7 @@ The story spread because it is easier to retell than a table. Two suspects, a ba
 
 So the order is documented. The game came from Flood and Dresher at RAND in 1950, and the prisoners arrived afterward, as Tucker's way of explaining it.
 
-**Tell someone:** The prisoner's dilemma began in 1950 as a RAND payoff game by Flood and Dresher; Albert Tucker added the prisoners later that year to explain it.
+**Tell someone:** The prisoner's dilemma began in 1950 as a RAND payoff game by Flood and Dresher; Tucker added the prisoners later that year to explain it.
 
 *Sources:* "Prisoner's Dilemma," *Stanford Encyclopedia of Philosophy*. "Prisoner's dilemma," Wikipedia. Full list: conyso.com/lawtome/laws/the-prisoners-dilemma/
 
@@ -233,7 +233,7 @@ So the order is documented. The game came from Flood and Dresher at RAND in 1950
 ---
 
 <!-- slug: the-thucydides-trap | candidate: 63 | verdict: DISPUTED | difficulty: 3 | surprise: 3 -->
-## Did 12 of 16 rising-power rivalries end in war, as the "Thucydides trap" holds?
+## Does the "Thucydides trap" show that a rising power and a ruling power usually go to war?
 
 TRUE · FOLKLORE · DISPUTED?
 
@@ -253,7 +253,7 @@ The figure spread because a clean ratio under an ancient name sounds measured. A
 
 So the count is accurate as a count. Whether twelve of sixteen is evidence of a trap is still argued over.
 
-**Tell someone:** The "Thucydides trap" rests on a Harvard count of 12 wars in 16 rising-power rivalries; the count is accurate, but which cases belong in it is disputed.
+**Tell someone:** The "Thucydides trap" rests on a Harvard count of 12 wars in 16 rivalries; the count is accurate, but which cases belong is disputed.
 
 *Sources:* Allison, "The Thucydides Trap: Are the U.S. and China Headed for War?" *The Atlantic* (2015). Thucydides's Trap Case File, Harvard Belfer Center. Full list: conyso.com/lawtome/laws/the-thucydides-trap/
 

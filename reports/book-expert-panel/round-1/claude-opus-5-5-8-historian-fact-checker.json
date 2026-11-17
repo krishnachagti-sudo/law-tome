@@ -1,0 +1,79 @@
+{
+  "expert": "Historian of science and fact checker",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-17",
+  "first_impression": "Better than most of its genre: it keeps hedges, dates its claims, and lands correctly on the cases specialists care about (Le Texier on Stanford, Levitt and List on Hawthorne, Bridgman et al. on Maslow's pyramid, Heaviside on Maxwell). Where a specialist reviewer will pounce is consistency: the bar for each verdict moves from entry to entry, a few verdicts contradict their own text, and some entries stop short of well-known answers or rest on Wikipedia alone.",
+  "findings": [
+    {
+      "page": "66 (No. 24), 162 (No. 68)",
+      "issue": "The verdict contradicts the entry's own findings. No. 24 asks whether 65% gave the maximum shock and the text confirms 'about 65 percent... in one baseline condition', yet the verdict is DISPUTED. No. 68 asks whether 12 of 16 rivalries ended in war, the text says 'the count is accurate', and the verdict is DISPUTED. In both, what is disputed is the interpretation, not the claim asked.",
+      "why_it_matters": "A reviewer who knows Milgram's 1963 paper will quote the book against itself.",
+      "fix": "Either change both verdicts to TRUE with the interpretive caveat in the body, or reword the questions so the disputed interpretation is what is asked (e.g. No. 24 'Do Milgram's results show most people will obey to the end?').",
+      "severity": 3
+    },
+    {
+      "page": "96 (No. 38) vs 214 (No. 91), 22 (No. 4), 148 (No. 61)",
+      "issue": "The evidence bar for each verdict is inconsistent. Monte Carlo 1913 has no record before a 1959 popular book and the cited researcher suspects it was invented, yet it is DISPUTED. The Delhi cobras have an 1873 report that breeding 'was alleged', yet they are FOLKLORE. Galileo's tower drop and the red-herring hounds are FOLKLORE although the text calls each only 'likely' a legend or myth.",
+      "why_it_matters": "Specialists judge a myth-busting book on whether its standard is applied evenly; uneven grading invites the charge that verdicts were chosen for effect.",
+      "fix": "Print a short verdict rule on p.5 or p.237 (e.g. FOLKLORE: no contemporary evidence for the popular version; DISPUTED: credible evidence on both sides) and regrade against it. Under that rule Monte Carlo becomes FOLKLORE, and the Galileo entry should note that historians are divided, since Viviani was Galileo's pupil and assistant.",
+      "severity": 3
+    },
+    {
+      "page": "92 (No. 36)",
+      "issue": "TRUE for 'Did Wald really tell the military to armor where returning planes weren't hit?' The 1943 memoranda estimate vulnerability statistically; the text gives no document in which Wald recommends where to put armor. That recommendation is the anecdote, which the entry itself calls 'partly embellished'.",
+      "why_it_matters": "Statisticians who know the Wald memoranda (and Mangel and Samaniego's 1984 commentary) will say the book confirmed the embellished part.",
+      "fix": "Reword to 'Did Wald's own work account for the planes that never came back?' (TRUE), or keep the question and change the verdict to DISPUTED with one sentence on what the memoranda do and do not say.",
+      "severity": 2
+    },
+    {
+      "page": "22, 114, 134, 18, 20; throughout",
+      "issue": "84 of the 100 source lists cite Wikipedia. No. 4 (Galileo) and No. 46 (Laffer napkin) cite only Wikipedia plus the Law Tome page; No. 55 cites Wikipedia 'drawing on Billah and Scanlan'. Nos. 2 and 3 put 'according to Britannica' into the Tell someone line, though the primary source (Stukeley's memoir of 1752, which reports Newton's own telling in 1726) is already in their source list.",
+      "why_it_matters": "'No source, no stamp' is the book's brand; a specialist reviewer will check the sources first and find tertiary ones carrying verdicts.",
+      "fix": "Before print, give Nos. 4, 46 and 55 at least one scholarly or primary source (Viviani's Racconto istorico for No. 4; Billah and Scanlan, American Journal of Physics 1991, cited directly for No. 55), and rewrite Nos. 2 and 3 to cite Stukeley rather than Britannica. Over time, move Wikipedia to 'further reading' and lead each list with the primary source.",
+      "severity": 2
+    },
+    {
+      "page": "156 (No. 65)",
+      "issue": "The entry says 'The record does not say who first pinned it on him, or when.' The phrase 'noble savage' is well known to predate Rousseau in English (Dryden, The Conquest of Granada, 1672), and Ter Ellingson's The Myth of the Noble Savage (2001) traces the attribution to Rousseau to the nineteenth century.",
+      "why_it_matters": "Leaving out the best-known fact on a 'who coined it' question is the sort of gap a historian puts in a review.",
+      "fix": "Add: the English phrase appears in Dryden in 1672, before Rousseau was born, and Ellingson (2001) traces its attachment to Rousseau to later writers. Delete the 'record does not say' sentence and add Ellingson to the sources.",
+      "severity": 2
+    },
+    {
+      "page": "158 (No. 66)",
+      "issue": "The entry says the phrase became prominent 'partly because a twentieth-century translation chose the word fog'. But the English phrase 'the fog of war' was already in print in the 1890s (Lonsdale Hale's lecture 'The Fog of War', 1896), before any twentieth-century translation.",
+      "why_it_matters": "A military historian will catch the dating at once, and the error sits in the lead paragraph.",
+      "fix": "Replace the translation claim with: 'The English phrase is in print by 1896, in a lecture by Lonsdale Hale; later translations then used fog for Clausewitz's Nebel.' Add Hale to the sources after checking the citation.",
+      "severity": 2
+    },
+    {
+      "page": "140 (No. 58)",
+      "issue": "Verdict FOLKLORE with 'There is no evidence... that a healed fracture becomes stronger'. One of the entry's own sources is titled 'Broken Bones Grow Back Stronger... Sort Of' (McGill Office for Science and Society), reflecting that the healing callus can for a time be thicker and stronger at the break before it remodels.",
+      "why_it_matters": "An orthopaedic reader will point out that the book's own source hedges where the book does not.",
+      "fix": "Keep FOLKLORE for 'stronger than before, permanently', but add: 'At the break the healing callus can for a while be bulkier and stiffer than the bone around it; over months it remodels back to normal.' Change the lead from 'no evidence' to 'no evidence that a healed bone ends up stronger than it was'.",
+      "severity": 2
+    },
+    {
+      "page": "84 (No. 32)",
+      "issue": "The Tell someone line headlines a single 2026 paper (Dawson and de Meza, Psychological Review) reporting that the Dunning-Kruger pattern inverts. The paper is weeks to months old, with no replication or published reply yet.",
+      "why_it_matters": "Putting the newest, least-tested result in the one line readers repeat is exactly the 'vivid finding outruns evidence' error the book warns about elsewhere.",
+      "fix": "Lead the Tell someone line with the older, better-established critique: 'Since 2016 statisticians have shown much of the Dunning-Kruger pattern can arise from noise alone.' Keep the 2026 paper in the body as 'one recent reanalysis reports...'.",
+      "severity": 2
+    },
+    {
+      "page": "5, 16 (No. 1), 206 (No. 88)",
+      "issue": "Small overstatements of certainty: the How to play diagram says 'The apple fell. It never hit him.', when the entry's evidence is only that no account includes the hit; No. 1 states 'Archimedes more likely used hydrostatic weighing', which is Galileo's later conjecture (La Bilancetta), not a record; No. 88 is TRUE on the strength of Gauss's own letter of 1849, written half a century after the fact.",
+      "why_it_matters": "Each is minor, but a book about hedges should hedge its own claims the same way.",
+      "fix": "p.5: 'The apple fell. No account has it hitting him.' No. 1: 'Galileo later suggested he used hydrostatic weighing.' No. 88: add 'by his own account, written in 1849'.",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "Keeping the source's hedges ('likely', 'almost certainly', 'reportedly') instead of rounding them up to certainty.",
+    "Earliest-source dating in each entry, which is the right discipline for attribution myths.",
+    "The DISPUTED category itself, and honest DISPUTED calls such as No. 82 (Franklin) and No. 89 (the 1919 eclipse).",
+    "The public errata page promise on p.2, p.237 and p.245."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "Fix the two self-contradicting verdicts and apply one verdict rule evenly before print; the rest are fixes a specialist reviewer would otherwise make in public."
+}

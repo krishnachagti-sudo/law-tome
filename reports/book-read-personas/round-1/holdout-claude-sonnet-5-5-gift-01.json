@@ -1,0 +1,57 @@
+{
+  "id": "gift-01",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "card_quote": "Buys the gift, not the book; judges by the cover, the back blurb and whether it looks like it is for him. Wants something he can pick up for two minutes.",
+  "how_read": "Flips through it at the kitchen table before wrapping it. Reads the dedication page and the how-to-play page, then works through the first round to see if Dave would actually sit with it. Skims a few more pages, decides it is giftable, and wraps it. Does not read it cover to cover.",
+  "stopped_at": "P034",
+  "w1_friction": [
+    {"page": "P005", "type": "too-dense", "note": "A whole page of rules before the fun starts. Dave will not read this, he will just flip to a question.", "quote": "Decide before turning over: TRUE, FOLKLORE or DISPUTED"},
+    {"page": "P016", "type": "too-dense", "note": "The answer is a full page of small print. That is not a two-minute pick-up, that is homework.", "quote": "The popular version is a single moment."},
+    {"page": "P020", "type": "confused", "note": "Wait, the last page said the apple thing was folklore and now it is TRUE? I had to read it twice.", "quote": "Newton told of an apple; nobody needed to invent it"},
+    {"page": "P026", "type": "too-dense", "note": "Lost me at the formula. I did science in 1983.", "quote": "its mass diminishes by L/V²"},
+    {"page": "P032", "type": "doubt-verdict", "note": "DISPUTED feels like a cop-out. If you are a quiz book, give me an answer.", "quote": "Who first said it, and in what words, is not settled."},
+    {"page": "P034", "type": "doubt-verdict", "note": "Everybody says blood, sweat and tears. Calling that folklore over one extra word feels picky.", "quote": "That is four items, not three"}
+  ],
+  "w1_best": [
+    {"no": 2, "why": "Everyone knows the apple on the head. Fun to hear it is not quite so."},
+    {"no": 1, "why": "The bath and Eureka, I thought that was gospel. Good one to read to him at dinner."},
+    {"no": 7, "why": "Never knew Einstein's prize was not for relativity. That is a good party fact."},
+    {"no": 10, "why": "I have quoted that line my whole life. Now I know about the toil."},
+    {"no": 4, "why": "Galileo and the tower was a school story. Short enough that I finished it."}
+  ],
+  "w1_flat": [
+    {"no": 6, "why": "A formula and a lot of names. Dave would put it down."},
+    {"no": 8, "why": "Chips and 18 months, no picture in my head, not a story."},
+    {"no": 3, "why": "Confusing after the apple one, felt like the same question again."},
+    {"no": 5, "why": "Babylonian tablets and triples. School math, not a dinner fact."},
+    {"no": 9, "why": "A lot of words to end on disputed."}
+  ],
+  "w1_juster": 5,
+  "w1_review": {
+    "headline": "Looks like a good stocking gift, reads a bit like homework",
+    "body": "The cover and the idea are clever and the guess-then-turn-the-page thing is a nice way to get a non-reader to try one. But the answer pages are a lot of small print for a man who gives a book two minutes at a time. I would give it as a gift if the price is right, and I would not expect him to read all of it. Bottom line: nice present, thin on easy fun."
+  },
+  "w2_review_first": "It is a quiz book where you guess if famous stories are true. It is a fun idea and it looks good for someone who likes trivia, but I would say the answers go on a bit. I would give it to a person who likes facts, not to my husband to read cover to cover.",
+  "w2_lost": [
+    {"page": "P016", "why": "The first answer was already so long I thought, this is going to be like this all through."},
+    {"page": "P026", "why": "The Einstein formula page, I just skipped to the bottom line."},
+    {"page": "P032", "why": "Murphy's law disputed, a page of back and forth with no answer."}
+  ],
+  "w2_read_aloud": [
+    {"no": 1, "why": "Everyone has heard of the bath and Eureka, a good opener."},
+    {"no": 2, "why": "The apple on the head, you can ask the whole table."},
+    {"no": 63, "why": "Streisand's house, I remember that being in the news, would be fun."},
+    {"no": 92, "why": "Rat tails in Hanoi sounds funny and strange, people would lean in."},
+    {"no": 80, "why": "Buttered toast, everyone has dropped toast, easy to laugh at."}
+  ],
+  "w2_cut": [
+    {"no": 77, "why": "Fermat and a margin, I do not even know what that is about."},
+    {"no": 88, "why": "Prime number theorem sounds like a math class."},
+    {"no": 37, "why": "Pareto and Italian land, nobody at my table cares."},
+    {"no": 53, "why": "Uncertainty principle, too hard to read out loud."},
+    {"no": 68, "why": "Thucydides trap, sounds like a lecture."}
+  ],
+  "w2_juster": 4,
+  "w2_book2": "If it is the same format with just as much small print on every answer page and the price creeps up."
+}

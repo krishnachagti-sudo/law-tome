@@ -1,0 +1,63 @@
+{
+  "id": "india-01",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "card_quote": "Hosts a monthly office quiz; collects 'connect' questions. An imported-price paperback feels expensive next to Indian editions.",
+  "how_read": "Reads it like a question bank: goes round by round looking for stories he can turn into quiz questions, fast on the science and origin ones, skimming the US politics and policy pages. Jumps to the cobra story because it mentions Delhi. Marks pages with sticky notes for the next office quiz.",
+  "stopped_at": "P236",
+  "w1_friction": [
+    {"page": "P005", "type": "other", "note": "DISPUTED is a problem for a quiz host. Nobody can win points on 'the evidence is real but still argued over'. I would have to throw those out.", "quote": "the evidence is real but still argued over"},
+    {"page": "P020", "type": "confused", "note": "One page says the apple story is folklore and the next says it is true. I had to read the tell-someone line to get it.", "quote": "Newton told of an apple; nobody needed to invent it"},
+    {"page": "P024", "type": "other", "note": "Nice to see the Sulba Sutras, but it is one line. Baudhayana is not even named, which I would expect for the Indian source.", "quote": "the Indian Sulba Sutras and the Chinese Zhoubi Suanjing"},
+    {"page": "P032", "type": "bored", "note": "Murphy disputed. Every quizzer knows this, nothing for a connect round.", "quote": "Who first said it, and in what words, is not settled."},
+    {"page": "P048", "type": "bored", "note": "Second razor in two pages. Hanlon and Napoleon is one question for me.", "quote": "The earliest known printing of the razor is from 1980."},
+    {"page": "P060", "type": "other", "note": "Kitty Genovese is very American. My office will not get the context, so not for my quiz.", "quote": "At least one witness shouted at her attacker."},
+    {"page": "P084", "type": "looks-wrong", "note": "Franklin kite page: stamp says TRUE, paragraph says it never happened, and it is a second number 31. Quizzers will pounce on this.", "quote": "Franklin never flew a kite in a thunderstorm"},
+    {"page": "P116", "type": "confused", "note": "Cheney, Rumsfeld, Wanniski on a napkin. I do not know these people, and it is not clear why it matters.", "quote": "sketches a curve on a napkin for Dick Cheney"},
+    {"page": "P174", "type": "looks-wrong", "note": "The goldfish page is full of Latin names and jargon, no real source. Looks copy-pasted from a different book.", "quote": "Carassius auratus exhibits retention intervals"},
+    {"page": "P226", "type": "bored", "note": "US presidents and memoirs, not for a quiz in Bengaluru.", "quote": "Nixon did put the strategy into practice"},
+    {"page": "P234", "type": "bored", "note": "Hardin twice. I will take one of them.", "quote": "The overgrazed-pasture parable came from William Forster Lloyd"}
+  ],
+  "w1_best": [
+    {"no": 5, "why": "Pythagoras and the Sulba Sutras and the Babylonian tablet. A ready connect question: three civilisations, one theorem."},
+    {"no": 90, "why": "Hooke's law as an anagram, ceiiinosssttuu. It is an ideal quiz question."},
+    {"no": 91, "why": "The Delhi cobra bounty is not from Delhi at all, it is from a Madras report. I will use this one next month."},
+    {"no": 100, "why": "The textbook Giffen good is Irish potatoes and the real case is rice in Hunan. Strong question."},
+    {"no": 85, "why": "Umami from kombu broth and the Japanese chemist Ikeda. Good chain of facts."}
+  ],
+  "w1_flat": [
+    {"no": 94, "why": "Broken windows in New York, a policy argument with no clean question in it."},
+    {"no": 95, "why": "Nixon's madman theory, memoir stuff I can't turn into a question."},
+    {"no": 46, "why": "Laffer's napkin, disputed and American."},
+    {"no": 16, "why": "Napoleon and malice, a repeat of Hanlon with a name change."},
+    {"no": 96, "why": "Domino theory, Cold War politics I would skip."}
+  ],
+  "w1_juster": 6,
+  "w1_review": {
+    "headline": "A good question bank, if the price is Indian",
+    "body": "I found about a dozen origin stories I can turn into quiz questions, and the Pythagoras and cobra pages are exactly the sort of surprise a quiz crowd likes. The book leans American in places, the DISPUTED verdicts are not quizzable, and I spotted a Franklin page where the stamp contradicts the text. If the price is in line with Indian trivia paperbacks I would buy it, and at an imported price I would wait. Bottom line: useful for a quiz host, not a must-have."
+  },
+  "w2_review_first": "It is a decent set of myth-busting questions, like a collection of connect questions with proper answers. Good for quizzers, but check the page on Franklin because it contradicts itself, and I would not pay an imported price.",
+  "w2_lost": [
+    {"page": "P116", "why": "The Laffer napkin with the American politicians, I scrolled past it."},
+    {"page": "P226", "why": "Nixon, no interest at all."},
+    {"page": "P048", "why": "The second razor page, because I had just read the first one."},
+    {"page": "P234", "why": "Hardin's second page."}
+  ],
+  "w2_read_aloud": [
+    {"no": 90, "why": "A law hidden as an anagram and a Latin phrase, it makes the whole room guess."},
+    {"no": 91, "why": "The cobras of Delhi were never bred in Delhi, a Madras report. People will argue."},
+    {"no": 92, "why": "Rat tails in Hanoi, the true version of the cobra story."},
+    {"no": 5, "why": "Pythagoras did not discover it, a Babylonian tablet did, and the Indian Sulba Sutras. Makes the room proud."},
+    {"no": 80, "why": "Falling toast has a paper and an Ig Nobel. Funny and true."}
+  ],
+  "w2_cut": [
+    {"no": 94, "why": "Policy debate about New York, no clear answer."},
+    {"no": 96, "why": "Cold War politics, too regional for my crowd."},
+    {"no": 95, "why": "A memoir quote, no hard fact to hang a question on."},
+    {"no": 47, "why": "Laffer second entry, one page on this curve is enough."},
+    {"no": 38, "why": "Roulette and Monte Carlo, disputed with no source, hard to use as a quiz question."}
+  ],
+  "w2_juster": 7,
+  "w2_book2": "If it is priced like an import and leans even more on US politics and law."
+}

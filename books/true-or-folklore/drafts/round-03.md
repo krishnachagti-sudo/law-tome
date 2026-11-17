@@ -17,7 +17,7 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version is short and bleak. Kitty Genovese was murdered in 1964 while 38 people watched, and not one of them acted. It is often told as proof that a crowd will leave a person to die.
 
-The record does not support it. In a 2007 paper in *American Psychologist*, Manning, Levine and Collins documented the exaggerations in the account of her murder. The number 38 has no basis, and at least one witness shouted at the attacker. Kitty Genovese's death was real. The image of a silent crowd watching it is not supported by the evidence.
+In a 2007 paper in *American Psychologist*, Manning, Levine and Collins documented the exaggerations in the account of her murder. The number 38 has no basis, and at least one witness shouted at the attacker. Kitty Genovese's death was real. The image of a silent crowd watching it is not supported by the evidence.
 
 The case, as misreported, did prompt real research. In two experiments in 1968, John Darley and Bibb Latané formalized what became known as the bystander effect. People who believed they alone could hear someone having a seizure over an intercom almost all responded quickly. Those who thought several others were listening responded less often and more slowly. The effect holds in the laboratory under narrow conditions: ambiguous, non-dangerous emergencies among strangers.
 
@@ -25,9 +25,9 @@ Outside the laboratory the picture is kinder. A 2020 analysis by Philpot and col
 
 The false version spread because it was vivid and because it became attached to a real finding. A single shocking case with a precise number is easy to remember and easy to repeat, and each retelling of the science carried the anecdote along with it. The effect even acquired a colloquial name, the Genovese syndrome, which tied her name to a partly mythologized event. Once a story becomes the standard illustration of a result, few people go back to check it.
 
-The bystander effect is real in narrow laboratory conditions, and in real public conflicts intervention is the norm. The earliest source in the record to set out the corrections to the Genovese story is Manning, Levine and Collins, 2007. The record, drawing on it, finds no basis for the 38, and at least one witness acted.
+The bystander effect is real in narrow laboratory conditions, and in real public conflicts intervention is the norm. The earliest source in the record to set out the corrections to the Genovese story is Manning, Levine and Collins, 2007. Their paper finds no basis for the 38, and at least one witness acted.
 
-**Tell someone:** The record finds no basis for 38 silent witnesses to Kitty Genovese's murder, and at least one witness shouted at her attacker.
+**Tell someone:** At least one witness shouted at Kitty Genovese's attacker, and there is no basis for the story of 38 silent witnesses.
 
 *Sources:* Manning, Levine & Collins, "The Kitty Genovese murder and the social psychology of helping," *American Psychologist* 62(6) (2007). Philpot et al., "Would I be helped? Cross-national CCTV footage shows that intervention is the norm in public conflicts," *American Psychologist* (2020). "Bystander effect," Wikipedia. Full list: conyso.com/lawtome/laws/the-bystander-effect/
 
@@ -55,9 +55,9 @@ The popular version spread because it offered a simple, dramatic answer to a har
 
 The defensible statement is narrower than the legend. The study did end early amid abuse and distress. The claim that the guards' cruelty arose from the situation alone is Zimbardo's interpretation, and the record pairs it with archival evidence that the guards were coached.
 
-**Tell someone:** Archival recordings show the Stanford prison guards were instructed and pressured to be tough, which Thibault Le Texier argues made the abuse substantially coached.
+**Tell someone:** The Stanford prison guards were instructed and pressured to be tough, archival recordings show; Thibault Le Texier argues the abuse was substantially coached.
 
-*Sources:* Le Texier, "Debunking the Stanford Prison Experiment," *American Psychologist* 74(7) (2019). "Stanford prison experiment," Wikipedia. "Stanford Prison Experiment," *Encyclopaedia Britannica*. Full list: conyso.com/lawtome/laws/the-stanford-prison-experiment/
+*Sources:* Le Texier, "Debunking the Stanford Prison Experiment," *American Psychologist* 74(7) (2019). "Stanford Prison Experiment," *Encyclopaedia Britannica*. "Stanford prison experiment," Wikipedia. Full list: conyso.com/lawtome/laws/the-stanford-prison-experiment/
 
 > **QA notes.** 368 words after the page turn by wc (verdict line through last body paragraph, excluding the sources line). LEGAL REVIEW: names Philip Zimbardo in a negative verdict; the record does not say whether he is living. Every negative finding is attributed to "archival recordings and later scholarship" (Le Texier) or to the participants' own later statements, never to Zimbardo's motives. The record itself uses "faked" for the prisoner's breakdown; the entry instead reports that the prisoner "later said his breakdown was acting", which is how the record's mechanism field puts it. Both sources are secondary (Wikipedia, Britannica). Before print: cite Le Texier's work directly with its date (the record gives none, so no earliest dated source for the verdict is named on the page); trace the advertisement wording, the prisoner's statement and the guards' statements to primary sources; confirm "never subjected to normal peer review" against a primary or Le Texier.
 > **Source check 2026-11-12:** FIXED. Le Texier (American Psychologist, 2019; book *Histoire d'un mensonge*, 2018) reports from the archives and 15 participant interviews that "the guards received precise instructions regarding the treatment of the prisoners", which supports the verdict; 24 selected from 75 applicants, warden David Jaffe, end on day 6, Korpi's 2017 statement that his breakdown was faked, and Carnahan & McFarland (2007) on the "prison life" advertisement all check out. The flat claim "never subjected to normal peer review" is contested (first reports appeared in *Naval Research Reviews* and an invited IJCP article; Zimbardo said the later *American Psychologist* paper was peer reviewed), so it is now attributed to critics with Zimbardo's denial. Zimbardo died on 14 October 2024 (reported by Stanford), so he is no longer living. Checked: Le Texier 2019 abstract via Europe PMC (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1037/amp0000401); "Stanford prison experiment," Wikipedia (https://en.wikipedia.org/wiki/Stanford_prison_experiment); death date from search-result snippets of Stanford Report and NPR obituaries (the Stanford page itself returned 403).
@@ -83,7 +83,7 @@ The paradox spread because it was memorable and, for decades, unchecked. With th
 
 The general idea survives. People who know they are being watched can change their behavior, which is why researchers use blinding and control groups. The founding factory data, reopened by Levitt and List in 2009, do not show the famous pattern.
 
-**Tell someone:** When Levitt and List reopened the original Hawthorne lighting records, they called the famous output patterns "entirely fictional".
+**Tell someone:** The famous Hawthorne output patterns are "entirely fictional", said Levitt and List after reopening the original lighting records.
 
 *Sources:* Levitt & List, "Was There Really a Hawthorne Effect at the Hawthorne Plant?" *American Economic Journal: Applied Economics* 3(1) (2011; NBER w15016, 2009). "Hawthorne effect," Wikipedia. "Hawthorne Effect," Simply Psychology. Full list: conyso.com/lawtome/laws/hawthorne-effect/
 
@@ -93,7 +93,7 @@ The general idea survives. People who know they are being watched can change the
 ---
 
 <!-- slug: the-milgram-experiment | candidate: 20 | verdict: DISPUTED | difficulty: 2 | surprise: 3 -->
-## Did 65% of Milgram's volunteers give the maximum shock?
+## Did Milgram show that two-thirds of people will give a lethal shock when ordered to?
 
 TRUE · FOLKLORE · DISPUTED?
 
@@ -113,7 +113,7 @@ The checked statement is this. In the baseline condition about 65 percent of par
 
 **Tell someone:** Milgram's famous 65 percent came from one baseline condition, obedience varied widely across his variants, and how many believed the shocks were real is disputed.
 
-*Sources:* Milgram, "Behavioral Study of Obedience," *Journal of Abnormal and Social Psychology* (1963). Perry, *Behind the Shock Machine* (2012). Haslam, Loughnan & Perry, "Meta-Milgram," *PLOS ONE* (2014). "Milgram experiment," Wikipedia. "Milgram experiment," *Encyclopaedia Britannica*. Full list: conyso.com/lawtome/laws/the-milgram-experiment/
+*Sources:* Milgram, "Behavioral Study of Obedience," *Journal of Abnormal and Social Psychology* (1963). Perry, *Behind the Shock Machine* (2012). Haslam, Loughnan & Perry, "Meta-Milgram," *PLOS ONE* (2014). "Milgram experiment," *Encyclopaedia Britannica*. "Milgram experiment," Wikipedia. Full list: conyso.com/lawtome/laws/the-milgram-experiment/
 
 > **QA notes.** 371 words after the page turn by wc (verdict line through last body paragraph, excluding the sources line). LEGAL REVIEW: Perry's archival claims (script deviations, selective presentation) reflect on Milgram's team. They are attributed to Perry as arguments ("has argued", "may have been"), never stated as findings, and nothing is said about anyone's motives. The record does not say whether Perry or any of Milgram's team are living. Both sources are secondary; the record does not list Milgram's 1963 paper or Perry's book as sources. Before print: cite Milgram (1963) directly for the 65 percent baseline and the prods; cite Perry's work with its date; check "more than twenty conditions" and "expected only a tiny fraction". Verdict note: the narrow question (did 65 percent go to the maximum in the baseline?) could fairly be scored TRUE; DISPUTED rests on the generalization and on Perry's argument about belief in the shocks. The verdict line says this; consider whether the question should be reworded to "Would two-thirds of people give a lethal shock if told to?" so the verdict fits it cleanly.
 > **Source check 2026-11-12:** FIXED. Start in August 1961, the 1963 *Journal of Abnormal and Social Psychology* paper, 65 percent to 450 volts, the four prods and the "Danger: Severe Shock"/"XXX" labels all match; Haslam, Loughnan & Perry (2014) count 23 conditions, with obedience to the maximum averaging 43.6 percent across the 21 comparable ones, which supports "more than twenty" and "varied widely". Perry's claims (about half fully believed; departures from the published account) are hers, from *Behind the Shock Machine* (2012). "Milgram had expected only a tiny fraction" was not supported for Milgram himself; the documented prediction is the poll of 14 Yale psychology seniors (average 1.2 percent), so the sentence now says that. The question-wording point in the notes above still stands. Checked: "Milgram experiment," Wikipedia (https://en.wikipedia.org/wiki/Milgram_experiment); Haslam, Loughnan & Perry 2014 abstract via Europe PMC (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1371/journal.pone.0093927).
@@ -143,7 +143,7 @@ What Milgram showed is narrower. Short paths exist between some pairs of people,
 
 **Tell someone:** Most of the chains in Milgram's small-world experiment never reached their target, and the famous six is a median of the minority that did.
 
-*Sources:* Karinthy, "Chains" (1929). Milgram, "The Small World Problem," *Psychology Today* (May 1967). Travers & Milgram, "An Experimental Study of the Small World Problem," *Sociometry* 32 (1969). Kleinfeld, "The Small World Problem," *Society* 39(2) (2002). Watts & Strogatz, *Nature* 393 (1998). "Small-world experiment," Wikipedia. Backstrom et al., "Four Degrees of Separation" (2012), arXiv:1111.4570. Full list: conyso.com/lawtome/laws/the-small-world-phenomenon/
+*Sources:* Karinthy, "Chains" (1929). Milgram, "The Small World Problem," *Psychology Today* (May 1967). Travers & Milgram, "An Experimental Study of the Small World Problem," *Sociometry* 32 (1969). Kleinfeld, "The Small World Problem," *Society* 39(2) (2002). Watts & Strogatz, *Nature* 393 (1998). Backstrom et al., "Four Degrees of Separation" (2012), arXiv:1111.4570. "Small-world experiment," Wikipedia. Full list: conyso.com/lawtome/laws/the-small-world-phenomenon/
 
 > **QA notes.** 397 words after the page turn by wc (verdict line through last body paragraph, excluding the sources line). The core of the verdict (most chains failed; median five to six over completed chains; Kleinfeld's critique) reaches the record only through Wikipedia. Before print: cite Milgram's 1967 paper and Kleinfeld's re-examination directly, with dates (the record gives no date for Kleinfeld). Karinthy 1929 and Guare 1990 also come via Wikipedia. Watts & Strogatz (1998, *Nature*) is named in the record's origin but not listed as a source; add it. The Facebook figure (721 million users, about 4.7 hops) is primary (arXiv). No living person is criticized; Kleinfeld's critique concerns Milgram's data, not his conduct.
 > **Source check 2026-11-12:** FIXED (date added). Kleinfeld (*Society*, Jan/Feb 2002) quotes Milgram's 1967 report that completed chains "varied from two to 10 intermediate acquaintances, with the median at five" (Nebraska starters, target who lived in Sharon and worked in Boston), says "the vast majority of chains" in multi-city studies never completed (5 percent in an unpublished first study, roughly 30 percent in others), and raises selection bias; Wikipedia gives 64 of 296 letters completed in the main study. The constant-dropout argument is not stated by Kleinfeld; it is general reasoning in the entry and is not attributed to her. Karinthy 1929 (at most five intermediaries), Guare 1990, Watts & Strogatz 1998 and Facebook's 721 million users at 4.74 confirmed. Checked: Kleinfeld 2002 PDF (https://www.csc2.ncsu.edu/faculty/mpsingh/local/Social/f25/wrap/readings/Kleinfeld-2002-18673541.pdf); "Small-world experiment," Wikipedia (https://en.wikipedia.org/wiki/Small-world_experiment); "Six degrees of separation," Wikipedia (https://en.wikipedia.org/wiki/Six_degrees_of_separation); Travers & Milgram 1969 via Crossref (https://api.crossref.org/works/10.2307/2786545).
@@ -203,7 +203,7 @@ The checked statement is modest. Waiting for a second marshmallow was associated
 
 **Tell someone:** Waiting for a second marshmallow tracked later achievement in small early samples, but a larger 2018 study found the link largely explained by family background.
 
-*Sources:* Shoda, Mischel & Peake, *Developmental Psychology* (1990). Watts, Duncan & Quan, "Revisiting the Marshmallow Test," *Psychological Science* 29(7) (2018). "Stanford marshmallow experiment," Wikipedia. "Marshmallow test," *Encyclopaedia Britannica*. Full list: conyso.com/lawtome/laws/the-marshmallow-test/
+*Sources:* Shoda, Mischel & Peake, *Developmental Psychology* (1990). Watts, Duncan & Quan, "Revisiting the Marshmallow Test," *Psychological Science* 29(7) (2018). "Marshmallow test," *Encyclopaedia Britannica*. "Stanford marshmallow experiment," Wikipedia. Full list: conyso.com/lawtome/laws/the-marshmallow-test/
 
 > **QA notes.** 352 words after the page turn by wc (verdict line through last body paragraph, excluding the sources line). LEGAL REVIEW (requested for this round): names Walter Mischel, Shoda, Peake, Watts, Duncan and Quan; the record does not say whether any are living. No misconduct is alleged; the weaker result is attributed to the 2018 replication and the sample limits to the record, and nothing is said about anyone's motives. Both sources are secondary. Before print: cite Shoda, Mischel & Peake (1990) and Watts, Duncan & Quan (2018) directly; check "about 900 children" and "shrank substantially" against the 2018 paper. "Around 1970" is the record's own hedge. "Most of that association reflected family background" restates the record's "largely explained by"; keep that wording if the 2018 paper does not support "most".
 > **Source check 2026-11-12:** CONFIRMED. The 2018 abstract says the bivariate correlation was "only half the size" of the original and "reduced by two thirds" with controls for family background, early cognitive ability and home environment, which supports "much weaker" and "most of that association"; the total sample was 918, though the headline estimates are for the 552 children whose mothers had not completed college. Mischel & Ebbesen 1970 / Mischel, Ebbesen & Zeiss 1972, ages about 3½ to 5½ and the roughly 15-minute wait match Wikipedia. The dispute is live: Michaelson & Munakata (*Psychological Science*, 2020) reanalyzed the same data and reported that preschool delay did predict some later outcomes. Checked: Watts, Duncan & Quan 2018 abstract via Europe PMC (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1177/0956797618761661); sample sizes from Conversable Economist (https://conversableeconomist.com/2018/06/04/the-not-so-triumphant-return-of-the-marshmallow-test/); "Stanford marshmallow experiment," Wikipedia (https://en.wikipedia.org/wiki/Stanford_marshmallow_experiment); Michaelson & Munakata 2020 (https://escholarship.org/uc/item/73c9d031).
@@ -229,7 +229,7 @@ The tidy version spread because it has the shape of a good lesson: conflict, the
 
 The record is clear on the sequence. The study that became famous in 1954 followed a 1953 attempt in which the boys resisted the induced hostility, and that first attempt belongs in the evidence.
 
-**Tell someone:** Before the famous 1954 Robbers Cave camp, a 1953 pilot failed when the boys resisted the induced hostility and suspected the staff.
+**Tell someone:** A 1953 Robbers Cave pilot failed when the boys resisted the induced hostility and suspected the staff, before the famous 1954 camp.
 
 *Sources:* Sherif, Harvey, White, Hood & Sherif, *Intergroup Conflict and Cooperation: The Robbers Cave Experiment* (1961). Perry, *The Psychologist* (26 November 2014), and *The Lost Boys* (2018). "Realistic conflict theory," Wikipedia. "Robbers Cave experiment," Simply Psychology. Full list: conyso.com/lawtome/laws/the-robbers-cave-experiment/
 
@@ -269,7 +269,7 @@ The record is plain on the point. The forgetting curve's shape has held up twice
 ---
 
 <!-- slug: the-little-albert-experiment | candidate: 126 | verdict: DISPUTED | difficulty: 2 | surprise: 3 -->
-## Do we know what became of Little Albert?
+## Has Little Albert been identified as Douglas Merritte?
 
 TRUE · FOLKLORE · DISPUTED?
 

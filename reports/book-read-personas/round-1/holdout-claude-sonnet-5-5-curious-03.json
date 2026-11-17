@@ -1,0 +1,64 @@
+{
+  "id": "curious-03",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "card_quote": "Likes stories with real people in them more than lists of facts. Small print and dense layout put her off.",
+  "how_read": "Reads in order in the evenings with a cup of tea, one round a night, glad of the school stories and the people. Gets tired when it turns to charts and names she does not know, and by the fifth round is mostly skimming. Puts it on the shelf for the grandchildren's visit and does not get to the physics.",
+  "stopped_at": "P124",
+  "w1_friction": [
+    {"page": "P016", "type": "too-dense", "note": "A whole page of small print for one answer. I had to get my glasses.", "quote": "The popular version is a single moment."},
+    {"page": "P020", "type": "confused", "note": "I just read that the apple story was folklore and now it is true. Which is it?", "quote": "Newton told of an apple; nobody needed to invent it"},
+    {"page": "P026", "type": "too-dense", "note": "I skipped this one, the formula and the names.", "quote": "its mass diminishes by L/V²"},
+    {"page": "P038", "type": "bored", "note": "Latin sentences and a friar I have never heard of.", "quote": "Pluralitas non est ponenda sine necessitate"},
+    {"page": "P046", "type": "bored", "note": "Who is Hanlon? I could not care less who wrote it.", "quote": "The book did not say who Hanlon was."},
+    {"page": "P050", "type": "confused", "note": "Usenet and memetics, I do not know what any of that is.", "quote": "chiefly Usenet"},
+    {"page": "P060", "type": "doubt-verdict", "note": "I remember the newspaper saying thirty-eight people watched. It is hard to believe it was not true, but I read on, it sounds sad and fair.", "quote": "at least one witness shouted at her attacker"},
+    {"page": "P068", "type": "too-dense", "note": "Medians and Facebook graphs, I lost interest halfway.", "quote": "a median over the minority that did"},
+    {"page": "P084", "type": "looks-wrong", "note": "This says TRUE at the top and then says Franklin never did it. It is also numbered 31 for the second time. As a secretary I would have caught that.", "quote": "Franklin never flew a kite in a thunderstorm"},
+    {"page": "P086", "type": "too-dense", "note": "Too many statisticians and 'regression to the mean'. I wanted the story.", "quote": "regression to the mean"},
+    {"page": "P096", "type": "too-dense", "note": "Percent of people holding percent of land and Juran. I gave up on this one.", "quote": "Eighty and twenty measure different things"},
+    {"page": "P108", "type": "too-dense", "note": "Equations and Heaviside. Not for me.", "quote": "Maxwell’s own 1865 paper contained twenty equations."}
+  ],
+  "w1_best": [
+    {"no": 21, "why": "I really thought thirty-eight people watched. Kitty Genovese was a person, and the real story is kinder."},
+    {"no": 28, "why": "The boys at the camp with the Rattlers and Eagles, real boys, and the failed first camp is a good detail."},
+    {"no": 2, "why": "The apple on the head, a school story I could tell my granddaughter."},
+    {"no": 10, "why": "I always said blood, sweat and tears. Nice to learn what Churchill really said."},
+    {"no": 50, "why": "A law that is spelled wrong on purpose made me smile."}
+  ],
+  "w1_flat": [
+    {"no": 11, "why": "A friar and Latin, no thank you."},
+    {"no": 14, "why": "Economists and audit culture, it read like a textbook."},
+    {"no": 17, "why": "Internet arguments, I do not use any of that."},
+    {"no": 33, "why": "Mice and electric shocks, I did not want to read about that."},
+    {"no": 37, "why": "Percent of land, I skipped to the bottom line."}
+  ],
+  "w1_juster": 6,
+  "w1_review": {
+    "headline": "Lovely idea, but the print is small and the facts get dry",
+    "body": "I liked the stories with real people in them, the apple, Churchill, the boys at the camp, and the guessing makes you pay attention. When it turned to economists and formulas I stopped enjoying it, and the pages are very full of small print. One page said TRUE and then said he never did it, which made me trust it a little less. Bottom line: a nice gift for a grandchild who likes facts, not a book to read all in one go."
+  },
+  "w2_review_first": "I would say it is fun, a guessing game about stories you thought you knew, like the apple and the Genovese case. But some pages are heavy going and the print is small, so read it a bit at a time.",
+  "w2_lost": [
+    {"page": "P026", "why": "The Einstein formula page, all letters and no people."},
+    {"page": "P068", "why": "Handshakes and graphs, I lost the thread."},
+    {"page": "P096", "why": "Pareto and the land, numbers on numbers."},
+    {"page": "P108", "why": "Maxwell and the twenty equations."}
+  ],
+  "w2_read_aloud": [
+    {"no": 1, "why": "Archimedes in the bath, the grandchildren will like the bath part."},
+    {"no": 2, "why": "An apple on the head is a story everyone knows, fun to be told it is not quite so."},
+    {"no": 10, "why": "Churchill and his words, I can read it with feeling."},
+    {"no": 50, "why": "Muphry's law spelled wrong on purpose, the table will smile."},
+    {"no": 92, "why": "Rats and their tails sounds funny, even if I have not got to it."}
+  ],
+  "w2_cut": [
+    {"no": 43, "why": "A name I do not know and a talk I have not heard of."},
+    {"no": 68, "why": "Rising powers and war, sounds like a political lecture."},
+    {"no": 53, "why": "The uncertainty principle, too hard to read aloud."},
+    {"no": 11, "why": "The Latin one with the friar."},
+    {"no": 14, "why": "Goodhart and measures, too abstract."}
+  ],
+  "w2_juster": 5,
+  "w2_book2": "If the print stays this small and the pages stay this dense, I would buy something else for the grandchildren."
+}

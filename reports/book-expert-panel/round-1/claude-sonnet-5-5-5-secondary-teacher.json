@@ -1,0 +1,65 @@
+{
+  "expert": "Secondary-school teacher",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "first_impression": "The 'what evidence would settle it?' habit is exactly what I want students to practise, and DISPUTED is a gift for lessons. But the classroom page is a paragraph, not a lesson, several entries need a content note, and a head of department will ask why a book about checking sources cites Wikipedia.",
+  "findings": [
+    {
+      "page": "236, aplus-4",
+      "issue": "'Using this book in class' is one paragraph of four steps and a subject map. There are no learning objectives, no curriculum links, no worksheet, no vote slip, and no assessment idea. The subject map names rounds 1, 6, 9 (science), 2 and 7 (history, English), 3 and 4 (psychology, statistics) and leaves Rounds 5, 8 and 10 unassigned. The A+ banner promises 'a lesson plan in the back'.",
+      "why_it_matters": "A teacher buying for a class set needs a page they can photocopy, and an A+ claim of a lesson plan that turns out to be one paragraph will cost reviews.",
+      "fix": "Replace p. 236 with a two-page spread: objectives (evaluate a claim, find the earliest source, separate a fact from its retelling), a 15-minute plan, three source-evaluation questions, a copyable one-page 'Evidence slip' (vote, one reason, source needed), and a map of all ten rounds to subjects. Extend the copy licence on p. 2 to these pages and change the A+ line to match.",
+      "severity": 3
+    },
+    {
+      "page": "16, 64, 74, 126 (sources on nearly every answer page)",
+      "issue": "Almost every answer lists Wikipedia as a source, and others list Simply Psychology, Military.com, Gizmodo and Quote Investigator next to primary documents (p. 74, p. 126, p. 48). A head of department teaching source evaluation will point out that the book models the opposite of what we tell students: an encyclopaedia and a general website as the evidence for a verdict.",
+      "why_it_matters": "It hands students a counter-example to the lesson and gives sceptical staff a reason to reject the book.",
+      "fix": "In print, list primary and peer-reviewed sources first, drop Wikipedia from the printed lines, and keep the full list (with Wikipedia if wanted) at the conyso.com page. Add a one-line key on p. 237: 'Primary source / scholarly paper / reference work.'",
+      "severity": 2
+    },
+    {
+      "page": "7, 9, 51, 125; 50, 60, 66, 76",
+      "issue": "Content flags a school would want to know about: 'crap' is in the question title of № 18 (contents p. 7, p. 51); 'Eskimo' appears in the title of № 51 (contents p. 9, p. 125) with no note that the word is considered offensive in some places; and Round 3 and Godwin's law (p. 50) cover a murder (Genovese), abuse (Stanford prison), shocks to a screaming stranger (Milgram), an infant conditioned to fear (Little Albert), Hitler comparisons, swastikas and Charlottesville. There is no age guide.",
+      "why_it_matters": "A teacher can use these but needs to know before the lesson, and a parent who finds the word 'crap' in a title will say so.",
+      "fix": "Print 'Suggested ages 14 and over' on the back cover and p. 5. Add a short content note on p. 236 naming Round 3, № 17 and № 51. Retitle № 51 'Do Inuit and Yupik languages have far more words for snow than English?' and keep 'Eskimo' inside the answer in quotation marks. For № 18, print 'crud' as the question's focus or put a classroom-safe version on p. 236.",
+      "severity": 2
+    },
+    {
+      "page": "30, 40, 62, 84, 126",
+      "issue": "The answers read at university-prep level for Year 10 or Grade 9 students: undefined terms such as 'tricolon', 'corollary', 'omne trium perfectum' (p. 34), 'Dennard scaling' (p. 30), 'spike-timing-dependent plasticity' (p. 40), 'regression to the mean' (p. 84), 'confounds' and 'Reynolds number'; 30-plus-word sentences; and 300-plus-word answers. EAL students and weaker readers would be shut out.",
+      "why_it_matters": "A book that only the strongest readers can use will be a shelf copy, not a class set.",
+      "fix": "Add a mini glossary strip at the foot of each answer that has one hard term, or mark 'class-ready' answers (short, plain) with a small icon and list them on p. 236. Aim for a 'Tell someone' line under 20 words that every student can read.",
+      "severity": 2
+    },
+    {
+      "page": "236, 237, 243",
+      "issue": "Teachers want to teach the pattern across stories, and the book names the 'mistake or motive' in each answer but does not label it. There is no tag such as 'misattribution', 'lost conditions', 'tidy ending', 'later name', so a unit on 'why myths spread' or 'attribution drift' has to be built by rereading all 100 pages.",
+      "why_it_matters": "Labels are what let a teacher turn 100 stories into six or seven reusable ideas and write a unit around them.",
+      "fix": "Add a small tag line under the stamp ('WHY IT SPREAD: a famous name', 'a round number', 'a tidy ending', 'a later label'), and an index by tag on p. 243 so a teacher can pull every 'famous name' story.",
+      "severity": 2
+    },
+    {
+      "page": "2, 237",
+      "issue": "The disclosure that the entries were drafted with AI and the illustrations made with AI is honest and appears twice, but a head of department will ask who, other than the editor, checked the science and history. The page names no subject reviewer, and the promised errata page (conyso.com/lawtome/errata) is the only safety net.",
+      "why_it_matters": "School book committees and librarians increasingly ask who the experts were; 'the editor read them' will not satisfy all of them.",
+      "fix": "If a subject reviewer exists, name them on p. 237. If not, say so plainly and commit to a dated errata page that is live before the book ships, with a version number on p. 2.",
+      "severity": 2
+    },
+    {
+      "page": "24, 30, 38",
+      "issue": "Spelling and date style are mixed: American spelling ('armor', 'labeled', 'Pythagorean theorem') appears next to day-month-year dates ('19 April 1965') and British book-title conventions. A UK department will notice, and the book is sold for the UK first.",
+      "why_it_matters": "A mixed house style looks careless in a book that is about care with detail.",
+      "fix": "Choose US or UK and run a consistency pass; if it stays US, state it on p. 2 so UK teachers know what to expect.",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "Step 2 of the lesson, 'What evidence would settle it: who would have to have written what, and when?'.",
+    "DISPUTED as a category, which teaches that unsettled is an answer.",
+    "'Why it spread' in every entry, which turns facts into a lesson about reasoning.",
+    "The short Tell someone line, which works as a plenary."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "I would use it with a better lesson page, cleaner source lines and content notes; as printed I would use selected pages only."
+}

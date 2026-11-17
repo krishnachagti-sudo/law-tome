@@ -67,3 +67,5 @@ All finals made with scratchpad mock.py prep(): grayscale, near-white clamp, 1-b
 - Flipbook: one 110-frame story, one frame per right-hand page from p15 to p233 (Krishna: "there are like 250 pages, so it has to go on").
   Acts: J3-wake 22, J4-spot 20, J1-chase x3 cycles 24, J5-tumble 20, J6-sleep 24 -> final/flip-001..110.png
   Built with books/scripts/tools/extras.py flipbook; preview art/extras/flipbook-preview.gif
+- 17 Nov 2026: A1b-lino-drawer (ChatGPT edit of A1-lino: kite and key replaced by a card-index drawer, expert panel found no kite story in the book) -> final/frontispiece.png; old one kept as unused-frontispiece-kite.png
+- 17 Nov 2026: tail-r03 redrawn from D3-r03-lino.png as raw/D3-r03-lino-v2.png (Pavlov's bell and bowl replaced by a shock-generator panel; stopwatch and marshmallow kept), prepped bw; old final in extras/raw-replaced/.

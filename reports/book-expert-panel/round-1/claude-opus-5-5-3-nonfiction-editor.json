@@ -1,0 +1,65 @@
+{
+  "expert": "Non-fiction editor (trivia and popular science)",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-17",
+  "first_impression": "The selection is strong and the 'why it spread' paragraph is the book's real contribution; most trivia books never ask it. The prose is careful and clean, but every one of the hundred answers is built on the same frame in the same order with the same phrases, and a reader will notice it by entry five and start skimming by Round 3.",
+  "findings": [
+    {
+      "page": "throughout (16-232)",
+      "issue": "One template for all 100 answers: verdict lead, 'The popular version...' (96 times), 'The record...' (210 uses of 'the record'), a mechanism paragraph, '...spread because...' (61 times), then a closer starting 'So the...' or 'The safe/checked statement...' (about 40 times).",
+      "why_it_matters": "Readers stop reading prose they can predict; the rhythm turns 100 stories into one story told 100 times.",
+      "fix": "Keep the content but break the frame. Allow four or five opening moves (a scene, a quotation, a number, the source document, a question), cap 'The popular version' at one entry in three, and cut 'the record' to fewer than 40 uses by naming the actual source ('Vitruvius', 'Levitt and List', 'Hansard').",
+      "severity": 3
+    },
+    {
+      "page": "26, 52, 136, 156, 210",
+      "issue": "Entries admit gaps in the house database instead of answering: 'The record does not say when the compact form first appeared in print' (No. 6), 'when crap replaced crud' (No. 18), 'why the upper air speeds up' (No. 56), 'who first pinned it on him, or when' (No. 65), and 'Any reason offered here would be invented, so none is' (No. 90).",
+      "why_it_matters": "A curious reader wants the answer, and these lines read as a drafting pipeline talking to itself; in No. 65 the answer (Dryden, 1672) is well known.",
+      "fix": "For each of the five, either research and add the answer from a cited source or delete the sentence. Never print 'the record does not say' as content.",
+      "severity": 2
+    },
+    {
+      "page": "throughout; e.g. 34, 130, 156, 228",
+      "issue": "Each answer states its verdict three times: in the lead paragraph, in a closing summary paragraph, and in the Tell someone line, often in nearly the same words (No. 10's lead and Tell someone line are almost identical).",
+      "why_it_matters": "About 50-70 words per entry, roughly 6,000 across the book, repeat what the reader read a minute earlier, and that is the padding readers skim.",
+      "fix": "Delete the closing summary paragraph in most entries and let the Tell someone line be the ending; keep a closing paragraph only where it adds a date or a source not given earlier.",
+      "severity": 2
+    },
+    {
+      "page": "106, 128, 130, 136, 144, 210",
+      "issue": "Several entries spend most of their length teaching the law rather than telling the story: No. 56 gives a full paragraph to deriving Bernoulli's principle; No. 42 explains each of Maxwell's four equations; No. 52 defines the Coriolis effect at length; No. 60 explains wave crests; No. 90 explains stress, strain and Young's modulus.",
+      "why_it_matters": "This is the directory the entries were drafted from showing through, and it is exactly the part a quiz-book reader skims.",
+      "fix": "Cap the 'how the law works' material at three sentences an entry; move anything longer to the Law Tome web page already linked in the sources.",
+      "severity": 2
+    },
+    {
+      "page": "42, 48, 54 (Round 2)",
+      "issue": "The same explanation appears three times in one round: 'A line with no obvious author tends to settle on a famous wit' (No. 13), 'Lines without owners drift toward famous names' (No. 16), 'anonymous wit looks for an owner' (No. 19).",
+      "why_it_matters": "Within one round the insight goes from interesting to stale.",
+      "fix": "State the drift-to-fame idea once, in the Round 2 opener on p.35, and give each entry its own specific reason (Twain's reputation as a quipster; Napoleon's for epigrams; Einstein's pull on any line about time).",
+      "severity": 2
+    },
+    {
+      "page": "5, 237, 3, 234 vs 16-232",
+      "issue": "Ida Verity is introduced as host on p.5, appears on the cover and in the back matter, but never speaks in any of the 100 entries. The voice of the answers is a neutral 'record'.",
+      "why_it_matters": "A host who vanishes for 220 pages is a missed chance to give the book personality and a reason to read the next entry.",
+      "fix": "Give Ida one line per round, not per entry: a short aside at each ROUND SCORE line ('Hearsay got nine of these wrong. Ida got one, and she is still annoyed about No. 7.'). Ten lines total.",
+      "severity": 2
+    },
+    {
+      "page": "35, 101, 189 (round openers)",
+      "issue": "Round openers describe the round in the abstract ('This round tests how often it is one'); they do not tease a single specific story.",
+      "why_it_matters": "The opener is the moment to pull a browsing reader into the next ten pages.",
+      "fix": "End each opener with one concrete teaser drawn from the round, e.g. Round 5: 'One law was named by a newspaper reader in Minnesota.'",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "The 'why it spread' paragraph in every entry, which is the book's distinct idea.",
+    "Keeping the source's own hedges ('likely', 'almost certainly') rather than inflating to certainty.",
+    "Strong individual pieces: No. 63 Streisand (six downloads, two by her lawyers), No. 73 the bike shed, No. 92 the Hanoi rats.",
+    "The round titles, which are clear and browsable."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "The material is good; a variation pass on the template and cutting the 'record does not say' lines would lift it from competent to readable cover to cover."
+}

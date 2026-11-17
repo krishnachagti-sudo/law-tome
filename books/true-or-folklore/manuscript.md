@@ -68,21 +68,21 @@ TRUE · FOLKLORE · DISPUTED?
 
 *(turn the page)*
 
-**FOLKLORE.** There is an apple in Newton's own account of his thinking about gravity. It does not hit him on the head. That detail is a later embellishment.
+**FOLKLORE.** There is an apple in the earliest account of Newton's thinking about gravity. It does not hit him on the head. That detail is a later embellishment.
 
 The popular version is a piece of slapstick. An apple dropped onto Newton's head, and the idea of gravity arrived with the bump.
 
 The record is plainer. Newton published his law of universal gravitation in *Philosophiae Naturalis Principia Mathematica* in 1687, a book whose printing Edmond Halley paid for. The law says that any two particles of matter attract each other with a force that grows with the product of their masses and falls with the square of the distance between them. Robert Hooke had suggested an inverse-square attraction in letters, but he could not derive the orbits of the planets from it. The mathematical derivation was Newton's own.
 
-The apple story itself, according to *Encyclopaedia Britannica*, traces back to Newton's own later recollection. That recollection includes an apple. It does not include an apple striking him.
+The earliest written account of the apple is in William Stukeley's memoir of Newton, published in 1752. It includes an apple. It does not include an apple striking him.
 
 The bump spread because it improves the story as a story. A falling apple seen from a distance is a thought. An apple landing on a scientist's head is an event, with a victim and a punchline, and it makes discovery look like something that happens to a person by accident. Each retelling had a reason to keep the joke and none to check it.
 
 The apple is also a fair symbol of what the law did. Newton's rule covers an apple falling to the ground and the Moon orbiting the Earth with the same mathematics, which is why the law is often called the first great unification in physics. The symbol worked without any help from a bruise.
 
-So the fruit belongs to Newton and the bump belongs to his retellers. The law is in the *Principia* of 1687. The apple comes from Newton's own later account, and in that account it stays off his head.
+So the fruit belongs to Newton and the bump belongs to his retellers. The law is in the *Principia* of 1687. The apple comes from the earliest account, and in that account it stays off his head.
 
-**Tell someone:** According to *Britannica*, Newton's own recollection includes an apple but no bump; the hit on the head was a later embellishment.
+**Tell someone:** In the earliest account of Newton's apple, published in 1752, the apple falls but never hits him; the bump came later.
 
 *Sources:* Stukeley, *Memoirs of Sir Isaac Newton's Life* (1752). "Newton's law of gravitation," *Encyclopaedia Britannica*. "Newton's law of universal gravitation," Wikipedia. Full list: conyso.com/lawtome/laws/newtons-law-of-universal-gravitation/
 
@@ -94,19 +94,19 @@ TRUE · FOLKLORE · DISPUTED?
 
 *(turn the page)*
 
-**TRUE.** The apple story is not a fable invented by Newton's admirers. According to *Encyclopaedia Britannica*, it traces back to Newton's own later recollection. Only the apple hitting his head was added afterward.
+**TRUE.** The apple story is not a fable invented by Newton's admirers. It traces back to Newton himself: William Stukeley recorded Newton telling it to him in 1726. Only the apple hitting his head was added afterward.
 
 The popular version here is a skeptic's one. The apple, it says, is pure myth: a tidy tale invented by later admirers to dress his work in a moment of genius.
 
 The record does not support the skeptic. The account of an apple comes from Newton himself, in his own later recollection. What the record marks as embellishment is narrower: the detail of the apple striking him. That detail is not in Newton's account.
 
-The law the apple is attached to is fully documented. Newton published it in 1687, in *Philosophiae Naturalis Principia Mathematica*. It states that every mass attracts every other mass, with a force that scales with the product of the masses and falls with the square of the distance between them. Newton showed that this rule, combined with his laws of motion, produces Kepler's three laws of planetary motion. Later work kept testing it. Galle found Neptune in 1846 within about a degree of where Le Verrier's Newtonian prediction placed it.
+The witness is William Stukeley. His memoir of Newton records Newton telling him the apple story on 15 April 1726, the year before Newton died. In Stukeley's account the apple falls; it does not hit anyone. Stukeley is a second-hand witness, so "Newton's own word" here means Newton as Stukeley reported him, but it is a dated report from someone who heard the story from Newton himself.
 
 The myth of a wholly invented apple spread for a reason that runs opposite to most myths in this book. The head-bump is so plainly comic that it invites suspicion, and people who rightly doubted the bump threw out the apple with it. A debunking can overshoot. Once "the apple story is a myth" became a known correction, it traveled as easily as the original, and with as little checking.
 
-The safe statement keeps both halves. Newton told of an apple; nobody needed to invent it for him. The bump on the head is the later addition. The law itself rests on the earliest dated source in the record, the *Principia* of 1687, and the apple rests on Newton's own word.
+The safe statement keeps both halves. Newton told of an apple; nobody needed to invent it for him. The bump on the head is the later addition. The apple rests on Newton's own word, as Stukeley recorded it in 1726.
 
-**Tell someone:** Newton himself told of the apple, according to *Britannica*; only the bump on the head was added later.
+**Tell someone:** Newton himself told William Stukeley about the falling apple in 1726; only the bump on the head was added later.
 
 *Sources:* Stukeley, *Memoirs of Sir Isaac Newton's Life* (1752). "Newton's law of gravitation," *Encyclopaedia Britannica*. "Newton's law of universal gravitation," Wikipedia. Full list: conyso.com/lawtome/laws/newtons-law-of-universal-gravitation/
 
@@ -428,17 +428,17 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version attaches the warning against blaming malice for what stupidity explains to Napoleon.
 
-The record dates the saying. Its first known appearance in print is Arthur Bloch's *Murphy's Law Book Two* (1980), page 52, under the title "Hanlon's razor." Before that come antecedents. The closest is in Robert A. Heinlein's 1941 novella "Logic of Empire": "You have attributed conditions to villainy that simply result from stupidity." The sentiment is older still, with a version in Goethe in 1774 and others. Quote Investigator's 2016 timeline runs from Hume to Hanlon, and Napoleon is the attribution it rejects.
+Quote Investigator went looking for Napoleon and found no substantive support. The attribution first surfaces in Usenet posts of 1997 and 1998, long after the saying itself was in print. Its timeline of the idea runs from Hume in 1757 and Goethe in 1774 to the razor's first known printing in 1980, and Napoleon appears nowhere in it.
 
 The idea has also been put in other words by other people. Sir Bernard Ingham, press secretary to Margaret Thatcher, called it the cock-up theory of government, set against the conspiracy theory. A later twist known as Grey's law runs: "Any sufficiently advanced incompetence is indistinguishable from malice." All of them treat the razor as a first guess, not as proof that malice never happens.
 
 The Napoleon credit spread for the usual reason a saying acquires a grand author. A sentiment held by many people, in many wordings, over two centuries, has no single owner. Lines without owners drift toward famous names, and a remark about malice and incompetence sounds weightier from a famous historical figure. The attribution gave a modern adage an air of age and authority that its real history, a 1980 humor book, does not.
 
-The record is clear on what is known. The razor's first known printing is 1980, in Bloch's book. Heinlein had a close version in 1941 and Goethe a version in 1774. Napoleon is not in the chain.
+The record is clear on what is known. The saying is older than its 1980 printing and has many owners, from Goethe onward. Napoleon is not one of them; his name was attached in the late 1990s.
 
-**Tell someone:** The line is not Napoleon's: the razor's first known printing is Arthur Bloch's 1980 book, with a close version in Heinlein from 1941.
+**Tell someone:** Nobody has found the line in Napoleon; his name was first attached to it in Usenet posts of the late 1990s.
 
-*Sources:* Quote Investigator, "Never Attribute to Malice That Which Is Adequately Explained by Stupidity" (2016). Bloch, *Murphy's Law Book Two* (1980), p. 52. Heinlein, "Logic of Empire" (1941). Full list: conyso.com/lawtome/laws/hanlons-razor/
+*Sources:* Quote Investigator, "Never Attribute to Malice That Which Is Adequately Explained by Stupidity" (2016). Bloch, *Murphy's Law Book Two* (1980), p. 52. Full list: conyso.com/lawtome/laws/hanlons-razor/
 
 ---
 
@@ -622,7 +622,7 @@ The general idea survives. People who know they are being watched can change the
 
 ---
 
-## Did 65% of Milgram's volunteers give the maximum shock?
+## Did Milgram show that two-thirds of people will give a lethal shock when ordered to?
 
 TRUE · FOLKLORE · DISPUTED?
 
@@ -942,7 +942,6 @@ The story is so neat that it is easy to doubt. A statistician looks at bombers r
 
 The record treats the anecdote as partly embellished but its core as genuine. In the Second World War, Abraham Wald reasoned that armor should go where returning planes had the fewest bullet holes, not the most, since planes hit in those places did not come back. He made that reasoning rigorous in his 1943 memoranda, which the Center for Naval Analyses reprinted in 1980 as "A Method of Estimating Plane Vulnerability Based on Damage of Survivors". It was rigorous statistics, not a slogan. It accounted for the downed planes rather than treating the survivors as a fair sample.
 
-The embellishments are the picture and the label. The red-dotted airplane was drawn decades later. The name "survivorship bias", and its attachment to Wald, also came later.
 
 The idea Wald formalized now reaches well beyond aircraft. Survivorship bias is the error of studying only what came through a selection process while the failures drop out of view. Funds that perform badly are closed and dropped from databases, so the surviving set overstates average returns, by about 0.9 percent a year in one 1996 study. People admire old buildings and conclude they were built to last, forgetting the flimsy ones long since demolished.
 
@@ -950,7 +949,7 @@ Doubt about the story spread for a fair reason: parts of it were embellished. Wh
 
 The reasoning behind the story is on record, dated 1943 and reprinted in 1980. Wald's method rested on the planes that never came back.
 
-**Tell someone:** Wald did reason that armor belongs where returning planes had the fewest bullet holes, since planes hit there did not come back.
+**Tell someone:** Wald's 1943 method pointed armor toward the places where returning planes had the fewest bullet holes, since planes hit there did not come back.
 
 *Sources:* Wald, "A Method of Estimating Plane Vulnerability Based on Damage of Survivors" (1943; Center for Naval Analyses reprint, 1980). Wallis, "The Statistical Research Group, 1942–1945: Rejoinder," *Journal of the American Statistical Association* 75 (1980). Elton, Gruber & Blake, "Survivorship Bias and Mutual Fund Performance," *Review of Financial Studies* 9(4) (1996). "Survivorship bias," Wikipedia. Full list: conyso.com/lawtome/laws/survivorship-bias/
 
@@ -1000,7 +999,7 @@ Newcomb set out the observation in "Note on the Frequency of Use of the Differen
 
 The physicist Frank Benford rediscovered the pattern in his 1938 paper "The Law of Anomalous Numbers". He tested it across more than twenty thousand values, among them river surface areas, populations, physical constants and molecular weights, and their leading digits followed the curve. The law was named after him.
 
-Benford's name stuck because his paper did the work that makes a law famous. It gathered thousands of numbers from unrelated sources, all obeying one curve. A short note about worn pages in a book of tables is easier to overlook. The record calls the case a classic instance of Stigler's law of eponymy, which has its own entry in Round 5.
+Benford's name stuck because his paper did the work that makes a law famous. It gathered thousands of numbers from unrelated sources, all obeying one curve. A short note about worn pages in a book of tables is easier to overlook. The record calls the case a classic instance of Stigler's law of eponymy: discoveries are seldom named after the people who made them.
 
 The law now has a working use and a notorious misuse. Auditors, following Mark Nigrini, screen ledgers and tax figures for sharp deviations that can flag fabricated entries for a closer look. It is also wrongly applied to election vote counts, where precinct totals sit in a narrow range and the law is not expected to hold. Deviation is a prompt to look closer, never proof of manipulation.
 
@@ -1210,7 +1209,7 @@ So the napkin evening rests on accounts that disagree, and the man at the center
 
 **Tell someone:** Eyewitness accounts of the Laffer napkin disagree, Arthur Laffer says he does not remember the details, and the firm dated anchor is Jude Wanniski's 1978 article.
 
-*Sources:* "Laffer curve," Wikipedia (the napkin story). Full list: conyso.com/lawtome/laws/the-laffer-curve/
+*Sources:* Wanniski, "Taxes, Revenues, and the 'Laffer Curve'," *The Public Interest* 50 (1978). Graboyes, "Birth of the Laffer Curve" (Turner's account). "From a napkin to a White House medal," NPR (2019). "Laffer curve," Wikipedia. Full list: conyso.com/lawtome/laws/the-laffer-curve/
 
 ---
 
@@ -1224,13 +1223,13 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version makes Laffer the inventor of the idea that cutting taxes can raise revenue.
 
-The record says otherwise on both counts. The curve is named after Laffer and was popularized under that name by the journalist Jude Wanniski in a 1978 article. Laffer himself points to precedents, among them Ibn Khaldun six centuries earlier and Keynes. The idea is an inverted U. Revenue is zero at a tax rate of zero and zero again at 100%, so some rate between them raises the most. The engine is how people respond. As the marginal rate rises, they shift away from taxed work, investment and reported income toward leisure, avoidance, evasion or relocation, and the tax base shrinks. How strongly reported income reacts to the after-tax rate, the elasticity of taxable income, sets the curve's shape.
+The record says otherwise on both counts. Laffer himself points to precedents, among them Ibn Khaldun six centuries earlier and Keynes. The engine of the curve is how people respond. As the marginal rate rises, they shift away from taxed work, investment and reported income toward leisure, avoidance, evasion or relocation, and the tax base shrinks. How strongly reported income reacts to the after-tax rate, the elasticity of taxable income, sets the curve's shape.
 
 The popular version also runs two claims together. That a peak exists is, in the record's words, nearly uncontroversial. Where it lies, and which side of it an economy is on, is fiercely contested. Most economists place developed economies on the upward side, where cuts typically lose revenue. In a 2012 survey of leading economists by the IGM panel, none agreed that a US income-tax cut would raise revenue within five years. George H. W. Bush called the claim that cuts pay for themselves "voodoo economics" in 1980.
 
 The single-inventor story spread with the policy. The curve was the intellectual centerpiece of 1980s supply-side policy, used to justify cutting the top US income-tax rate from 70% to 28%. A name attached to a famous policy argument travels with it, while the disclaimers and precedents do not.
 
-So the curve carries Laffer's name through Wanniski, and Laffer himself credits Ibn Khaldun and Keynes with the idea. The geometry is sound. The claim that cuts raise revenue in today's rich economies is the part the evidence disputes.
+So the curve carries Laffer's name, and Laffer himself credits Ibn Khaldun and Keynes with the idea. The geometry is sound. The claim that cuts raise revenue in today's rich economies is the part the evidence disputes.
 
 **Tell someone:** Arthur Laffer has disclaimed originality for the Laffer curve, crediting earlier sources including Ibn Khaldun in the fourteenth century and John Maynard Keynes.
 
@@ -1550,7 +1549,7 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular assumption is that the trumpeters belong in a textbook, not a railway timetable: the scene sounds like an illustration invented to explain a passing siren, not an experiment anyone ran.
 
-The record says it was run. Doppler, an Austrian physicist, predicted the effect in 1842. Buys Ballot confirmed it for sound in 1845 with his railway experiment, and Hippolyte Fizeau described the effect independently for light in 1848. The record gives no further detail of the experiment, and this entry adds none.
+The record says it was run. Doppler, an Austrian physicist, predicted the effect in 1842. Buys Ballot confirmed it for sound in 1845 with his railway experiment, and Hippolyte Fizeau described the effect independently for light in 1848.
 
 The effect is a change in the frequency an observer detects when source and observer move relative to each other. Approaching, the observed frequency is higher than the emitted one; receding, it is lower. The source's own output never changes. As a source approaches, each wave cycle starts from a point a little closer to the observer than the last, so the crests bunch up ahead and spread out behind. For sound, which travels in a medium, the effect depends separately on how the source, the observer and the air are moving, so a moving source is not equivalent to a moving observer.
 

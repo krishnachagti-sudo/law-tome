@@ -1,0 +1,72 @@
+{
+  "expert": "Amazon listing and KDP conversion specialist",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "first_impression": "A clean, distinctive cover: the red FOLKLORE stamp on a cartoon Newton is a genuine hook and survives at small size. The weak points are what a browser sees in the first three seconds (is it a quiz or a folk-tale book?), a Look Inside that spends twelve pages before the first question, and A+ banners that show page thumbnails nobody can read.",
+  "findings": [
+    {
+      "page": "cover",
+      "issue": "At thumbnail size (about 160 px wide) the title and the red stamp read, but nothing says 'quiz' or 'game': the only wording that does ('THE MYTH-BUSTING QUIZ FOR CURIOUS MINDS') is a 7 to 8 pt mono line at the foot, and '100 famous stories you've been told wrong' is a small italic. The cream ground also sits close to Amazon's white page colour, with only the thin black frame to separate it.",
+      "why_it_matters": "A shopper who sees 'True or Folklore?' and a cartoon may take it for a fairy-tale or children's folklore book; the quiz and gift use only appears at full size.",
+      "fix": "Add a bold red or black ribbon across the lower art reading 'THE MYTH-BUSTING QUIZ BOOK' (or 'A TRIVIA QUIZ FOR GROWN-UPS'), at least twice the current size, and enlarge '100 stories' to roughly the weight of the stamp. Make the background slightly deeper cream or add a darker border so it stands out on a white results page.",
+      "severity": 3
+    },
+    {
+      "page": "cover, 1, 2",
+      "issue": "The title and subtitle strings differ across the cover ('100 famous stories you've been told wrong'), the title page ('100 famous stories you've been told wrong: the myth-busting quiz for curious minds') and the KDP long title ('...The Myth-Busting Quiz for Curious Minds'). The search-facing wording has no 'trivia', 'quiz book', 'for adults', 'gift' or 'facts', and 'folklore' will pull in fairy-tale shoppers.",
+      "why_it_matters": "The title and subtitle are the main search and click signals on Amazon, and a mismatch with the cover causes distrust at the product page.",
+      "fix": "Pick one exact string and use it everywhere, with the quiz and audience words in the subtitle, for example 'True or Folklore? 100 Famous Stories You've Been Told Wrong: A Myth-Busting Trivia Quiz Book for Curious Adults and Teens'. Put 'trivia', 'quiz book', 'gift' and 'game night' in the seven backend keywords and test two subtitle variants.",
+      "severity": 3
+    },
+    {
+      "page": "1-14",
+      "issue": "Look Inside shows title page, copyright page, gift page, dedication, How to play, a plate, five pages of contents (p. 7 to 11), another plate, the round opener and a frontispiece: the first question is on p. 15 and the first answer on p. 16, and a ten-percent sample (about 25 pages) barely reaches question 3. The ISBN placeholder is on p. 2 (known).",
+      "why_it_matters": "The sample is the sales page: a browser who has not seen a question and an answer in the sample does not see what the book does.",
+      "fix": "Cut the contents to two pages (set the long questions in short form or give the round titles with the ten question numbers) or move it to the back, move How to play to p. 3, and delete the dedication or move it to the back. That puts questions 1 to 5 inside the sample.",
+      "severity": 3
+    },
+    {
+      "page": "aplus-5, 6",
+      "issue": "The A+ banner 'Ten rounds. One hundred stories.' and the frontispiece on p. 6 both show Benjamin Franklin's kite, but no kite story is in the book (the 100 entries are listed on pp. 7 to 11). The banner also shows no round names, so 'ten rounds' is just a claim.",
+      "why_it_matters": "Showing a story the book does not contain is a promise mismatch, and it can attract a one-star 'it's not in here'.",
+      "fix": "Replace the kite on aplus-5 and p. 6 with an in-book story (Hooke's anagram, Wald's plane, the Hanoi rats) and put the ten round names under the art as ten small labels.",
+      "severity": 3
+    },
+    {
+      "page": "aplus-1, aplus-2",
+      "issue": "The hero banner and the 'How it works' banner use page thumbnails at about 4 to 5 px type, so no reader can read the question or the answer; the headline repeats the cover; and there is no reason-to-buy line such as ages, number of pages or what is inside. 'How it works' shows the same Archimedes page as the hero.",
+      "why_it_matters": "A+ modules are only valuable if they can be read on a phone, where most browsing happens.",
+      "fix": "Rebuild the hero as three large question-and-stamp pairs in 28 to 32 px type ('Did an apple hit Newton? FOLKLORE', 'Did Churchill promise blood, sweat and tears? FOLKLORE', 'Did Hawthorne factory output rise whatever the lighting? FOLKLORE'), and make 'How it works' a three-step diagram with 20 px captions and no page thumbnails.",
+      "severity": 2
+    },
+    {
+      "page": "aplus-4",
+      "issue": "'Who it's for' uses four small vignettes with 12 to 14 px captions, and the Classrooms card promises 'a lesson plan in the back', where p. 236 has a single paragraph. 'Quiz hosts' and 'Game night' say nearly the same thing.",
+      "why_it_matters": "Gift, game night and classroom are the three buying reasons, and the module that names them is both unreadable on a phone and over-promising.",
+      "fix": "Enlarge the captions, merge Game night and Quiz hosts, and rename the classroom claim to 'classroom ideas' until the lesson spread on p. 236 is built.",
+      "severity": 2
+    },
+    {
+      "page": "cover (back)",
+      "issue": "The back cover gives three tidy sample questions, which is the best selling device in the package, but then closes with 'Every verdict is checked against the record' and 'Eighteen stories are still genuinely disputed, and the book says so.' The first invites an expert to find an error, and the second is a negative. The blurb has no line about pages, ages, rounds or what is included (score sheets, certificate), and the author line reads 'Ed. Krishna Chagti' with no credential.",
+      "why_it_matters": "The back cover is the last thing read before buying; it should lead with reader benefit and avoid an accuracy promise that every one-star review will quote.",
+      "fix": "Replace the last two lines with 'Ten rounds. Score sheets, team play, and a certificate. For ages 14 and up.' and 'Some stories have no neat answer, and the book marks those DISPUTED.' Change 'checked against the record' to 'sources named on every page'.",
+      "severity": 2
+    },
+    {
+      "page": "2, 237",
+      "issue": "The copyright page, which is in the Look Inside sample, says in the second paragraph that the entries were drafted with AI tools and the illustrations were made with AI image tools. The disclosure is honest, and KDP requires an AI-generated-content declaration at upload, but its position in the sample can attract 'AI slop' reviews before the reader has seen the quality.",
+      "why_it_matters": "A reader who meets the AI line before any content may bounce, or leave a review about the process, not the book.",
+      "fix": "Keep the disclosure, but make p. 2 short ('Text and art were made with AI assistance and edited by a person; see p. 237') and move the full explanation to p. 237 where the checking method sits, so the sample leads with the product.",
+      "severity": 2
+    }
+  ],
+  "keep": [
+    "The red FOLKLORE stamp on the Newton cartoon, which explains the whole book in one image.",
+    "The 'CAN YOU GUESS?' sample box on the back cover.",
+    "aplus-3, 'One line worth repeating', which shows the product's best feature at readable size.",
+    "A clear series line and a consistent character (Ida Verity and Hearsay) for repeat purchase."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "Strong cover idea, but the quiz cue, title string, Look Inside order and A+ promises must be fixed before the listing goes live."
+}

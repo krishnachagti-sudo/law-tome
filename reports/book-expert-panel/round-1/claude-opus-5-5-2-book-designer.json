@@ -1,0 +1,72 @@
+{
+  "expert": "Book designer / typographer",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-17",
+  "first_impression": "A disciplined system: a serif text face, a monospace for labels, a recurring tick-cross-scale ornament, and question pages with real air. The answer pages are where it strains. A dense justified block sits on top of grey illustration, and that will not survive KDP's black-and-white press the way it looks on screen.",
+  "findings": [
+    {
+      "page": "16-232 (every answer page; clearly on 16, 18, 34, 66, 126)",
+      "issue": "The grey vignette at the foot of each answer page runs under the Tell someone line, the italic sources (about 7.5 pt) and, on round-end pages, the ROUND SCORE and NEXT lines (p.34: 'NEXT -> ROUND 2' sits on a figure's head; p.66: sources sit on the stacked-paper drawing).",
+      "why_it_matters": "KDP prints greys as a halftone screen on uncoated paper; small italic type over dots goes fuzzy and the round-score write-in line becomes hard to fill.",
+      "fix": "Clip every vignette so it starts below the last line of type (or knock out a white field behind the text block), and keep the art in the bottom margin only. If a page has no room, drop the art on that page rather than overlap.",
+      "severity": 3
+    },
+    {
+      "page": "6, 12, 14, 36 and every round-opener art page; 240",
+      "issue": "The full-page woodcuts have heavy solid black frames and large solid fills. On KDP's 50-55 lb interior stock those blacks will show through onto the backing page (p.14 backs the Round 1 opener text on p.13; p.36 backs the Round 2 opener on p.35).",
+      "why_it_matters": "Ghosted black shapes behind text read as a printing fault and are a common reason for 'poor print quality' reviews.",
+      "fix": "Cut solid black area to well under half of each image: drop the outer black frame, open the background to line hatching, and request a KDP proof copy to check show-through before release.",
+      "severity": 2
+    },
+    {
+      "page": "6, 12, 13, 14, 35, 36, 240 vs 15-232, 3, 234-241",
+      "issue": "Two illustration styles share the book: dense woodcut engraving (frontispiece, round openers, full-page art, certificate) and flat clean-line cartoon (question pages, Ida Verity, back matter). They meet face to face at every round start (p.14 woodcut opposite p.15 cartoon).",
+      "why_it_matters": "The switch reads as two different books stitched together and weakens Ida as the single host.",
+      "fix": "Pick one register for the narrative art. Cheapest route: keep woodcuts only for round openers and the certificate, framed as 'the legend' style, and add a one-line caption under each full-page woodcut ('The legend, as usually told') so the contrast looks deliberate.",
+      "severity": 2
+    },
+    {
+      "page": "57",
+      "issue": "The text layer shows the Round 3 opener title breaking as 'Famous experiments, re-/told': display type has been hyphenated.",
+      "why_it_matters": "A hyphen in a display heading is an obvious typesetting slip on a page every reader sees.",
+      "fix": "Turn hyphenation off for all display styles and break manually: 'Famous experiments,' / 'retold'.",
+      "severity": 2
+    },
+    {
+      "page": "16-232 (body text)",
+      "issue": "The answer measure runs about 70-78 characters a line, fully justified with frequent hyphenation, roughly 45 lines a page on fairly tight leading. Hyphenation also reaches the Tell someone line ('al-/most' on p.16, 'down-/loaded' on p.152).",
+      "why_it_matters": "Long justified lines with many breaks slow reading and make the page look heavier than its content.",
+      "fix": "Add 0.5-1 pt leading, set the Tell someone style to ragged right with hyphenation off, and limit consecutive hyphens to two in the body.",
+      "severity": 2
+    },
+    {
+      "page": "16-232 (verdict stamp)",
+      "issue": "The verdict stamp is an outlined mono word in a thin rule box, not much larger in visual weight than the running head above it. It is the single most important element on the page.",
+      "why_it_matters": "After the turn the eye should land on the verdict before anything else; at present it competes with the two header lines.",
+      "fix": "Double the stamp's cap height, use a heavier stroke and a slight rotation like the cover stamp, and drop the 'TRUE OR FOLKLORE?' verso running head on answer pages to free the space.",
+      "severity": 1
+    },
+    {
+      "page": "28, 38, 178 and other long-question answer headers",
+      "issue": "The answer-page header repeats the full question in tracked monospace caps, so long questions wrap to two lines and hyphenate in caps: 'INDIS-/TINGUISHABLE' on p.178.",
+      "why_it_matters": "Hyphenated tracked caps look accidental and add a crowded line above the stamp.",
+      "fix": "Use a short-title field for the header (e.g. 'No. 75 · CLARKE'S THIRD LAW') with a one-line limit.",
+      "severity": 1
+    },
+    {
+      "page": "243-244",
+      "issue": "Index glitches: 'Newton's Law of Universal Gravitation' pushes its page numbers '17, 19' onto a new flush-left line; 'Daniel Kahneman and Amos Tversky225' has no space; 'Bibb Latane' lacks the accent; 'Abraham Kaplan and Abraham Maslow' drops '41' to its own line.",
+      "why_it_matters": "Small but visible; an index is where careful readers check care.",
+      "fix": "Set the index with a hanging indent and right-aligned page numbers that wrap with a 1 em indent; fix the space and the accent (Latané).",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "The question-page layout: big question, one cartoon, a clear call box, lots of white space.",
+    "The type pairing of serif text with a monospace label face, and the tick-cross ornament as a section mark.",
+    "The red FOLKLORE stamp on the cover; it is the strongest single graphic in the book.",
+    "The large light-grey round numerals on the openers."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "Clear the grey art from under the type and order a printed proof to check show-through; everything else is polish."
+}

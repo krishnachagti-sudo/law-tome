@@ -1,0 +1,81 @@
+{'opus': 11, 'sonnet': 11, 'holdout': 5}
+rank agreement opus vs sonnet 0.59
+rank agreement dev vs holdout 0.67
+
+Top stories (dev net score, opus/sonnet): [(10, 15, 8, 7), (63, 12, 10, 2), (39, 9, 4, 5), (92, 9, 8, 1), (80, 9, 6, 3), (21, 6, 2, 4), (50, 6, 2, 4), (60, 5, 1, 4), (22, 5, 4, 1), (38, 5, 4, 1), (30, 4, 3, 1), (23, 4, 4, 0)]
+Bottom stories: [(49, 1, 1, 0), (25, 1, 1, 0), (64, 1, 0, 1), (1, 1, 0, 1), (33, 1, 0, 1), (40, 1, 1, 0), (56, 1, -1, 2), (98, 1, 1, 0), (43, 1, 0, 1), (77, 1, 0, 1), (61, 1, 0, 1), (100, 1, 0, 1), (28, 1, 0, 1), (35, 2, 2, 0), (24, 2, 0, 2)]
+
+Friction pages by number of personas (dev only), printed page in brackets:
+P084 [D1-A] personas=16 models=2 holdout=True {'looks-wrong': 15, 'doubt-verdict': 5, 'lost': 3}
+P020 [20] personas=12 models=2 holdout=True {'bored': 8, 'talked-down': 2, 'lost': 1, 'confused': 2}
+P016 [16] personas=12 models=2 holdout=True {'too-dense': 8, 'lost': 4, 'doubt-verdict': 2, 'bored': 1}
+P174 [D2-A] personas=11 models=2 holdout=True {'too-dense': 6, 'lost': 7, 'looks-wrong': 4, 'doubt-verdict': 2}
+P005 [5] personas=11 models=2 holdout=True {'confused': 3, 'other': 2, 'talked-down': 4, 'doubt-verdict': 2}
+P002 [2] personas=11 models=2 holdout=True {'looks-wrong': 5, 'doubt-verdict': 6, 'other': 6}
+P048 [48] personas=9 models=2 holdout=True {'bored': 9, 'lost': 3}
+P128 [126] personas=8 models=2 holdout=True {'other': 2, 'doubt-verdict': 3, 'too-dense': 2, 'confused': 1, 'lost': 1}
+P083 [D1-Q] personas=8 models=2 holdout=False {'looks-wrong': 6, 'confused': 2}
+P018 [18] personas=8 models=2 holdout=False {'bored': 4, 'doubt-verdict': 2, 'confused': 3}
+P146 [144] personas=7 models=2 holdout=False {'talked-down': 1, 'other': 3, 'looks-wrong': 3}
+P116 [114] personas=7 models=2 holdout=True {'doubt-verdict': 3, 'lost': 4}
+P173 [D2-Q] personas=6 models=2 holdout=False {'looks-wrong': 4, 'confused': 2}
+P118 [116] personas=6 models=2 holdout=True {'lost': 4, 'bored': 5}
+P094 [92] personas=6 models=2 holdout=True {'bored': 5, 'lost': 4}
+P086 [84] personas=6 models=2 holdout=True {'other': 2, 'too-dense': 1, 'doubt-verdict': 2, 'lost': 1, 'bored': 1}
+P046 [46] personas=6 models=2 holdout=True {'lost': 6, 'confused': 1}
+P032 [32] personas=6 models=2 holdout=True {'doubt-verdict': 6, 'lost': 1}
+P237 [233] personas=4 models=2 holdout=True {'doubt-verdict': 1, 'looks-wrong': 3, 'other': 1}
+P132 [130] personas=4 models=2 holdout=False {'lost': 4}
+P066 [66] personas=4 models=2 holdout=False {'doubt-verdict': 4}
+P038 [38] personas=4 models=2 holdout=True {'lost': 3, 'confused': 1, 'too-dense': 1}
+P034 [34] personas=4 models=2 holdout=True {'lost': 1, 'other': 1, 'bored': 2}
+P245 [241] personas=3 models=2 holdout=False {'other': 3}
+P241 [237] personas=3 models=2 holdout=True {'doubt-verdict': 3}
+P220 [216] personas=3 models=1 holdout=False {'confused': 2, 'doubt-verdict': 1}
+P164 [162] personas=3 models=1 holdout=False {'lost': 3}
+P138 [136] personas=3 models=2 holdout=False {'other': 3}
+P130 [128] personas=3 models=1 holdout=True {'other': 1, 'lost': 2}
+P062 [62] personas=3 models=1 holdout=True {'doubt-verdict': 2, 'other': 1}
+
+Decoy catches (D1 contradiction P083-P084, D2 jargon P173-P174):
+  opus D1: reached 8/11, flagged 8 ['curious-01', 'curious-02', 'quiz-01', 'quiz-02', 'sceptic-01', 'sceptic-02', 'teach-01', 'teach-03']
+  opus D2: reached 6/11, flagged 6 ['curious-02', 'quiz-01', 'quiz-02', 'sceptic-01', 'sceptic-02', 'teach-01']
+  sonnet D1: reached 9/11, flagged 8 ['curious-01', 'curious-02', 'quiz-01', 'quiz-02', 'sceptic-01', 'sceptic-02', 'teach-01', 'teach-03']
+  sonnet D2: reached 6/11, flagged 5 ['curious-02', 'quiz-01', 'sceptic-01', 'sceptic-02', 'teach-01']
+  holdout D1: reached 4/5, flagged 4 ['curious-03', 'india-01', 'quiz-03', 'teach-02']
+  holdout D2: reached 3/5, flagged 3 ['india-01', 'quiz-03', 'teach-02']
+
+Juster opus: w1 [5, 6, 4, 1, 2, 5, 6, 1, 1, 4, 3] mean 3.5 | w2 [4, 6, 4, 1, 2, 5, 5, 1, 2, 4, 3] mean 3.4
+    curious-01 5 4 P146 | Great myths, told a bit like a filing cabinet
+    curious-02 6 6 P250 | Smart, well-sourced myth-busting with some sloppy pages
+    gift-02 4 4 P040 | Clever stocking filler, but heavier than it looks
+    gift-03 1 1 P034 | Good idea, way too much reading
+    india-02 2 2 P078 | Fun for quiz people, but very Western and long
+    quiz-01 5 5 P250 | Good quiz fodder, but check it before you use it
+    quiz-02 6 5 P192 | Great questions, answers need a diet
+    sceptic-01 1 1 P192 | Better sourced than QI, and then it falls over twice
+    sceptic-02 1 2 P250 | Sources on every page, then two pages nobody checked
+    teach-01 4 4 P250 | A handy bank of bell ringers, but check the Franklin page first
+    teach-03 3 3 P146 | Good takedowns of the psych classics, padded with repeats
+
+Juster sonnet: w1 [7, 8, 6, 3, 3, 8, 7, 3, 4, 7, 5] mean 5.5 | w2 [6, 7, 5, 2, 4, 7, 7, 2, 3, 6, 4] mean 4.8
+    curious-01 7 6 P124 | Good commute fodder, but the same shape every page
+    curious-02 8 7 P214 | The psychology rounds are worth the price on their own
+    gift-02 6 5 P056 | Clever, but it's homework not a laugh
+    gift-03 3 2 P034 | Smart, but it's homework
+    india-02 3 4 P220 | Good stories, but written for someone in the West
+    quiz-01 8 7 P192 | Good for the notebook, the hedging aside
+    quiz-02 7 7 P146 | Great for trivia night, drier than I hoped
+    sceptic-01 3 2 P214 | Competent myth roundup, though I knew a third of it
+    sceptic-02 4 3 P250 | A nicely made list that isn't ready to be a reference
+    teach-01 7 6 P240 | Useful bell-ringers, but check it before you put it in front of a class
+    teach-03 5 4 P124 | Good for killing ten minutes before quiz night, but padded
+
+Juster holdout: w1 [6, 5, 6, 4, 7] mean 5.6 | w2 [5, 4, 7, 3, 6] mean 5.0
+    curious-03 6 5 P124 | Lovely idea, but the print is small and the facts get dry
+    gift-01 5 4 P034 | Looks like a good stocking gift, reads a bit like homework
+    india-01 6 7 P236 | A good question bank, if the price is Indian
+    quiz-03 4 3 P237 | Decent myth-buster with sloppy production
+    teach-02 7 6 P241 | Strong psychology rounds, uneven production
+
+w1 review vs w2 review word overlap (flag > 0.6): none

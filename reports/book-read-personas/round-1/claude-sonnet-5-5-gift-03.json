@@ -1,0 +1,57 @@
+{
+  "id": "gift-03",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "card_quote": "Default answer to 'would you buy this as a gift' is no. I think novelty books end up unread on a shelf, and I want the gift done in five minutes and not to be embarrassing.",
+  "how_read": "Kitchen counter, fifteen minutes. Read the How to play page, did the first four or five questions properly, then skimmed the rest of Round 1 on the answer pages. Didn't keep score. It's not a book I'd sit down with.",
+  "stopped_at": "P034",
+  "w1_friction": [
+    {"page": "P002", "type": "other", "note": "So AI wrote it and AI drew it. Okay. Why am I paying for it then.", "quote": "The illustrations were made with AI image tools."},
+    {"page": "P005", "type": "talked-down", "note": "A cat called Hearsay. I'm 29.", "quote": "Her cat, Hearsay, believes every word."},
+    {"page": "P016", "type": "too-dense", "note": "Four paragraphs on a bath. I just wanted yes or no and one line.", "quote": "how a writer two centuries later could know"},
+    {"page": "P020", "type": "confused", "note": "I said folklore for the apple and now it's TRUE for the apple. Which is it.", "quote": "Only the apple hitting his head was added afterward."},
+    {"page": "P026", "type": "too-dense", "note": "A page to tell me a formula isn't in a paper.", "quote": "That is not the compact formula now known everywhere."},
+    {"page": "P032", "type": "doubt-verdict", "note": "Disputed is a non-answer. Why is it even a choice.", "quote": "Who first said it, and in what words, is not settled."}
+  ],
+  "w1_best": [
+    {"no": 10, "why": "Blood, toil, tears and sweat. One line, I could say it at work."},
+    {"no": 8, "why": "Moore and the 18 months, I actually get that one from my job."},
+    {"no": 7, "why": "Einstein's Nobel wasn't for relativity. Good bar fact."},
+    {"no": 6, "why": "Looking for E = mc2 in the paper and it isn't there. Short and kind of funny."},
+    {"no": 2, "why": "Apple on the head. Everyone's heard it so it works."}
+  ],
+  "w1_flat": [
+    {"no": 9, "why": "Disputed, long, no real answer."},
+    {"no": 5, "why": "A triangle thing from school."},
+    {"no": 4, "why": "Ramps and water clocks. I stopped reading."},
+    {"no": 3, "why": "Same apple as the last page with the opposite answer. Annoying."},
+    {"no": 1, "why": "Bath, crown, Latin guy. Heard it, don't care."}
+  ],
+  "w1_juster": 3,
+  "w1_review": {
+    "headline": "Smart, but it's homework",
+    "body": "It's a nice idea but every answer is a wall of text when I just wanted the fact. I did ten questions in about fifteen minutes and was done. For a Secret Santa I'd get a gift card or a bottle of something. Bottom line: fine for someone who loves trivia, not for me to give a colleague."
+  },
+  "w2_review_first": "It's fine. The kind of thing you leave in the bathroom. If a friend asked I'd say sure it's clever, but for a gift I'd rather give a gift card.",
+  "w2_lost": [
+    {"page": "P016", "why": "First answer page and already four paragraphs, so I started skimming."},
+    {"page": "P026", "why": "Einstein paper, too many words to say a simple thing."},
+    {"page": "P032", "why": "Disputed one with a rocket sled and Air Force project. Lost me."}
+  ],
+  "w2_read_aloud": [
+    {"no": 10, "why": "Short, the four items thing lands instantly."},
+    {"no": 7, "why": "Most people guess relativity, so I get to be right."},
+    {"no": 8, "why": "People in tech say 18 months all the time, easy to correct them."},
+    {"no": 2, "why": "A familiar story with a twist, works at a table."},
+    {"no": 6, "why": "Tell them to go look for the formula in the paper. Makes people argue."}
+  ],
+  "w2_cut": [
+    {"no": 9, "why": "Disputed and tangled, no clean line."},
+    {"no": 5, "why": "School geometry, no one wants that at a party."},
+    {"no": 3, "why": "Contradicts the page before it, feels like a trick."},
+    {"no": 1, "why": "Everyone's heard Eureka, and the answer is two pages of Latin names."},
+    {"no": 4, "why": "Slow, with no punchline."}
+  ],
+  "w2_juster": 2,
+  "w2_book2": "If it's the same thing again with long answer pages. I probably wouldn't buy book one, never mind a second."
+}

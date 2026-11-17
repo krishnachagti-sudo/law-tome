@@ -1,0 +1,60 @@
+{
+  "id": "curious-01",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-17",
+  "card_quote": "Constraints: little reading time; dislikes repetition and padding (common complaint about fact books). / Narrative: Shares 'did you know' facts in her group chat; wants the surprising story behind the fact, not just the fact.",
+  "how_read": "Dipped in on the train, a few questions each way, mostly in order but skipping ones that didn't grab me from the question alone. Got through most of the first six rounds in a week of commutes before it started to feel samey.",
+  "stopped_at": "P146",
+  "w1_friction": [
+    {"page": "P018", "type": "bored", "note": "Every answer has the same skeleton: the popular version, the record, why it spread, so. By the third one I could feel the template.", "quote": "The popular version is a piece of slapstick."},
+    {"page": "P020", "type": "bored", "note": "The apple again, with half the same sentences. This is exactly the padding I can't stand.", "quote": "Newton himself told of the apple, according to Britannica"},
+    {"page": "P048", "type": "bored", "note": "Hanlon's razor again straight after Hanlon's razor. Same 1980 book, same page 52, same Heinlein line.", "quote": "Bloch’s Murphy’s Law Book Two  (1980), page 52"},
+    {"page": "P060", "type": "other", "note": "'The record' is on every page. Which record? It reads like a report written by a committee rather than someone telling me a story.", "quote": "The record finds no basis for the story that 38 witnesses"},
+    {"page": "P084", "type": "looks-wrong", "note": "Says TRUE in the stamp, then that he never did it. Also way shorter than every other answer, like a placeholder someone forgot to replace.", "quote": "Franklin never flew a kite in a thunderstorm"},
+    {"page": "P094", "type": "bored", "note": "Wald's plane, part two. The pairs are the book's weakest habit.", "quote": "The red-dotted airplane was drawn decades later."},
+    {"page": "P128", "type": "other", "note": "Knew the snow-words one from QI and the Fish podcast. Liked that it went further than the usual debunk, though.", "quote": "The answer depends on what counts as a word."},
+    {"page": "P130", "type": "other", "note": "Sink-drain myth, also very well-trodden. A few of these I'd already heard.", "quote": "Water drains both ways within the same hemisphere."},
+    {"page": "P146", "type": "talked-down", "note": "Odd and a bit prim, as if I'd accused it of making things up.", "quote": "The record gives no further detail of the experiment"}
+  ],
+  "w1_best": [
+    {"no": 30, "why": "The forgetting curve resting on one man and some nonsense syllables. Sent that to the group chat immediately."},
+    {"no": 39, "why": "Ten thousand letters, a thousand from PhDs, all wrong. Great story with a villain and a heroine."},
+    {"no": 35, "why": "The red-dot plane drawn by a designer in 2005. I've seen that image a hundred times and never wondered."},
+    {"no": 23, "why": "Hawthorne effect 'entirely fictional'. A proper surprise behind a thing I'd taken for granted."},
+    {"no": 60, "why": "Trumpeters on a train were real. Love a story that sounds made up and isn't."}
+  ],
+  "w1_flat": [
+    {"no": 3, "why": "Repeat of the apple question."},
+    {"no": 16, "why": "Repeat of the Hanlon question with Napoleon bolted on."},
+    {"no": 36, "why": "Repeat of the Wald question."},
+    {"no": 42, "why": "Twenty equations to four. Fine, but no story in it."},
+    {"no": 53, "why": "Uncertainty principle answer was a physics lesson, not a surprise."}
+  ],
+  "w1_juster": 5,
+  "w1_review": {
+    "headline": "Great myths, told a bit like a filing cabinet",
+    "body": "There are some genuinely brilliant finds here, the one-subject forgetting curve, the designer who drew Wald's plane, Hawthorne's missing data, and I like that every answer gives its sources. But each answer follows the same template and keeps saying 'the record', several questions come in pairs that repeat each other, and I'd heard a fair few from QI. Bottom line: a good dip-in book for a fact-lover, but it could lose a fifth of its length and be better for it."
+  },
+  "w2_review_first": "It's a myth quiz where you guess before you turn the page, and some of the reveals are really good. The writing is careful but flat, and it repeats itself. I'd lend it to you rather than tell you to buy it.",
+  "w2_lost": [
+    {"page": "P048", "why": "The second Hanlon's razor answer, I put it in my bag and looked out of the window."},
+    {"page": "P108", "why": "Round five started to feel like the same trick every time: the name's on it, the person didn't do it."},
+    {"page": "P132", "why": "Quantum stuff on a crowded train, no thank you."}
+  ],
+  "w2_read_aloud": [
+    {"no": 30, "why": "One man, nonsense syllables, and the whole of spaced repetition rests on it."},
+    {"no": 63, "why": "Six downloads, two of them her own lawyers. Perfect group-chat line."},
+    {"no": 35, "why": "The bullet-hole plane story, because everyone's seen the picture."},
+    {"no": 92, "why": "The rat-tail story is so neat it sounds invented, which is the fun of it."},
+    {"no": 49, "why": "Baader-Meinhof named by a newspaper reader who heard it twice. The origin is the effect."}
+  ],
+  "w2_cut": [
+    {"no": 3, "why": "Duplicate of the Newton apple question."},
+    {"no": 16, "why": "Duplicate of Hanlon's razor."},
+    {"no": 36, "why": "Duplicate of the Wald plane."},
+    {"no": 99, "why": "Sounds like a duplicate of the Hardin question next to it."},
+    {"no": 68, "why": "Twelve of sixteen rivalries, sounds like a politics essay, not a story."}
+  ],
+  "w2_juster": 4,
+  "w2_book2": "If book two used the same template on every page and padded itself out with paired questions again."
+}

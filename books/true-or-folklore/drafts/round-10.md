@@ -25,7 +25,7 @@ The idea itself holds up, and its best evidence is a bounty on rats paid in Fren
 
 So the Cobra Effect is real and the cobras are folklore. A reward tied to something people can produce will eventually be met by people producing it.
 
-**Tell someone:** The cobra-breeding story, usually set in Delhi, traces to an 1873 report on a Madras bounty saying only that it "was alleged," yet an economist named an effect after it.
+**Tell someone:** The Delhi cobra story traces to an 1873 Madras report saying only that breeding "was alleged"; an economist named an effect after it.
 
 *Sources:* Siebert, *Der Kobra-Effekt* (2001). Friends of Snakes Society review (2025), citing the *Morning Advertiser*, 23 September 1873. Davis, *Journal of Political Economy* 116 (2008). Full list: conyso.com/lawtome/laws/cobra-effect/
 
@@ -45,13 +45,13 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version is the same story, which is the surprise. Paying for tails produced rats without tails, and rats without tails went on producing rats. It sounds too neat to be true, and it shares a shape with the Delhi cobra story, which the record treats as folklore.
 
-The record backs the rat version. Vann's paper, "Of Rats, Rice, and Race: The Great Hanoi Rat Massacre, an Episode in French Colonial History," appeared in *French Colonial History* in 2003. The Law Tome record calls the Hanoi bounty the documented case behind the cobra effect. Rat-catchers cut the tails off live rats and released them, so the animals could breed and supply more tails to sell.
+The evidence backs the rat version. Vann's paper, "Of Rats, Rice, and Race: The Great Hanoi Rat Massacre, an Episode in French Colonial History," appeared in *French Colonial History* in 2003. The Law Tome record calls the Hanoi bounty the documented case behind the cobra effect. Rat-catchers cut the tails off live rats and released them, so the animals could breed and supply more tails to sell.
 
 The mechanism is plain once it is named. A bounty pays for a measurable result on the assumption that the result can only come from doing the wanted thing. Here the result was a tail, and a tail did not require a dead rat. When the thing being counted can be produced instead of removed, the reward funds its production.
 
 The same setup has recurred. Wells Fargo set aggressive cross-selling targets, and employees opened millions of accounts that customers never authorized; the bank paid US$185 million in penalties in 2016 and fired thousands of staff. DigitalOcean's 2020 Hacktoberfest rewarded a set number of GitHub pull requests, and after a viral how-to, maintainers were buried in spam submissions.
 
-The record is careful about limits. The effect is a warning about one design flaw, not a claim that incentives backfire in general; most work as intended. It needs a proxy that the people collecting the reward can manufacture, and a sponsor who does not control its supply. Schemes that pay for verified outcomes and check where the proof came from avoid it.
+The limits matter. The effect is a warning about one design flaw, not a claim that incentives backfire in general; most work as intended. It needs a proxy that the people collecting the reward can manufacture, and a sponsor who does not control its supply. Schemes that pay for verified outcomes and check where the proof came from avoid it.
 
 The rat story is less famous than the cobra because the cobra got the name. Siebert's 2001 book took its title from the snake story, so the better-sourced case became the footnote. Its resemblance to a famous piece of folklore then made it look like folklore too.
 
@@ -87,7 +87,7 @@ The efficiency assumption persists because it is true where people look. Per uni
 
 For coal in nineteenth-century Britain, the record supports Jevons. Better engines made coal cheaper to use, and the country burned more of it.
 
-**Tell someone:** Jevons observed in 1865 that more efficient steam engines made coal cheaper to use, so Britain found new uses and burned more of it.
+**Tell someone:** More efficient steam engines made coal cheaper to use, so Britain found new uses and burned more of it, as Jevons observed in 1865.
 
 *Sources:* Jevons, *The Coal Question* (1865). "Jevons paradox," Wikipedia. "Khazzoom–Brookes postulate," Wikipedia. Full list: conyso.com/lawtome/laws/jevons-paradox/
 
@@ -180,9 +180,9 @@ The Nixon story spread because it has an insider, a setting and an image. A chie
 
 The label "madman theory" rests on Haldeman's 1978 account, and Nixon said he did not remember using it. The strategy does not rest on the label. The logic came from Schelling, Kahn and Machiavelli, and Nixon tested it in October 1969, without success.
 
-**Tell someone:** Nixon did test a madman strategy, with a secret military readiness test in October 1969; only the label "madman theory" rests on Haldeman's memoir, and Nixon said he did not remember using it.
+**Tell someone:** Nixon tested a madman strategy with a secret military readiness test in October 1969; only the label "madman theory" rests on Haldeman's memoir.
 
-*Sources:* Burr and Kimball, "Nixon's Nuclear Ploy," National Security Archive Briefing Book 81 (2002). Hoff, *Nixon Reconsidered*. "Madman theory," Wikipedia. McManus, "Madman or Mad Genius? The International Benefits and Domestic Costs of the Madman Strategy," Belfer Center. Full list: conyso.com/lawtome/laws/the-madman-theory/
+*Sources:* Burr and Kimball, "Nixon's Nuclear Ploy," National Security Archive Briefing Book 81 (2002). Hoff, *Nixon Reconsidered*. McManus, "Madman or Mad Genius? The International Benefits and Domestic Costs of the Madman Strategy," Belfer Center. "Madman theory," Wikipedia. Full list: conyso.com/lawtome/laws/the-madman-theory/
 
 > **QA notes.** 385 words after the page turn (body only, sources line excluded; counted with wc). Both record sources are secondary. Haldeman's 1978 memoir is named in the record but not cited as a source; read *The Ends of Power* for the beach-walk passage before print. The record says Nixon "later disputed" the memoir (misreadings) and "later denied the term" (examples) but gives no date or source for either; find one. "Nixon's chief of staff" is from the record's origin field. The 1969 Duck Hook plan and nuclear alert reach the record through secondary sources, with no dates beyond 1969. Kissinger is named in connection with a plan judged to have failed, which is a policy judgment, not a conduct claim; the record does not state whether he is living, so include him in a light legal read. Haldeman's account is reported, not endorsed.
 > **Source check 2026-11-12:** FLAG. Only the label is single-sourced, and the reported "denial" is weak: per a summary of Hoff's *Nixon Reconsidered* (p. 177), Nixon told her he did not remember using the term with Haldeman (body and Tell someone line now say this; the verdict paragraph and closing still say "disputed"). Meanwhile Burr and Kimball's National Security Archive briefing book (2002) documents the secret JCS Readiness Test of October 1969, ending 30 October, as Nixon's test of the madman approach, citing Haldeman's diary for 17 October 1969 on Nixon's "signal-type activity going around the world to try to jar Soviets + NVN"; scholarship treats the strategy as real, so TRUE with a caveat on the name may fit better than DISPUTED. Verdict left unchanged. Machiavelli's chapter title (Discourses III.2, "on occasion it is wise to feign folly") is confirmed; Haldeman's memoir text and the Duck Hook details were not reached. Checked: National Security Archive EBB 81 (https://nsarchive2.gwu.edu/NSAEBB/NSAEBB81/index2.htm); blog summary of Hoff (https://jamesbradfordpate.blogspot.com/2013/08/nixon-reconsidered-5.html); "Madman theory," Wikipedia (https://en.wikipedia.org/wiki/Madman_theory); Machiavelli, *Discourses*, Project Gutenberg contents (https://www.gutenberg.org/files/10827/10827-h/10827-h.htm).
@@ -211,7 +211,7 @@ The single-birthday version spread because a president, a date and a vivid pictu
 
 The reasoning dates from 1947, and the name was apparently already current when Eisenhower spoke. What he supplied on April 7, 1954, was the image that made the phrase famous.
 
-**Tell someone:** Eisenhower made the falling-dominoes image famous on April 7, 1954, but he called it "what you would call the 'falling domino' principle," a sign the name was already around.
+**Tell someone:** Eisenhower popularized the falling-dominoes image on April 7, 1954, but his "what you would call" phrasing suggests the name already existed.
 
 *Sources:* "The President's News Conference," April 7, 1954, American Presidency Project. "Domino theory," *Encyclopaedia Britannica*. "Domino theory," Wikipedia. Full list: conyso.com/lawtome/laws/the-domino-theory/
 
@@ -240,11 +240,11 @@ Large projects show the same pattern in money. In 2002 Flyvbjerg, Holm and Buhl 
 
 The story spread because the building is famous and the gap is easy to state: a decade and a large multiple of the budget. The variation between sources is real, and it invites doubt. But it concerns the precise numbers, not the shape of the story.
 
-The record supports the popular version. Planned for 1963 at a few million pounds, the Sydney Opera House opened in scaled-down form in 1973 at A$102 million.
+The popular version holds. Planned for 1963 at a few million pounds, the Sydney Opera House opened in scaled-down form in 1973 at A$102 million.
 
 **Tell someone:** The Sydney Opera House opened a decade late, in 1973, scaled down and costing more than a hundred million, though exact figures vary by source.
 
-*Sources:* "Sydney Opera House facts," Sydney Opera House. Buehler, Griffin and Ross, *Journal of Personality and Social Psychology* 67(3) (1994). Flyvbjerg, Holm and Buhl, *Journal of the American Planning Association* (2002). "Planning fallacy," Wikipedia. Full list: conyso.com/lawtome/laws/the-planning-fallacy/
+*Sources:* Buehler, Griffin and Ross, *Journal of Personality and Social Psychology* 67(3) (1994). Flyvbjerg, Holm and Buhl, *Journal of the American Planning Association* (2002). "Sydney Opera House facts," Sydney Opera House. "Planning fallacy," Wikipedia. Full list: conyso.com/lawtome/laws/the-planning-fallacy/
 
 > **QA notes.** 378 words after the page turn (body only, sources line excluded; counted with wc). The Opera House figures appear in the record's examples field without a specific source; they most likely reach it through Wikipedia ("Planning fallacy"). The record's Flyvbjerg (2002) entry covers transport projects and does not say it includes the Opera House. Find a primary or official source for the 1963 estimate, the 1973 opening and both cost figures before print. The record does not state the currency of "more than a hundred million"; the entry follows its phrasing. The record does not say Buehler, Griffin and Ross's students were at any named university. Flyvbjerg, Buehler, Griffin and Ross may be living; the strategic-misrepresentation claim is attributed to Flyvbjerg and concerns megaprojects in general, not any named person.
 > **Source check 2026-11-12:** FIXED. The Sydney Opera House's own facts page gives an original estimate of $7 million, four years' construction from 1959 (so about 1963), a final cost of $102 million and opening by Queen Elizabeth II on 20 October 1973, so the end figure is now given as A$102 million (Australia used pounds until 1966, so the opening estimate in pounds stays); "scaled-down" is not on that page. Buehler, Griffin and Ross's Waterloo honors-thesis students predicted 33.9 days, 48.6 in the worst case, took 55.5, and 29.7 percent finished in time, so "around a third" became "fewer than a third." Flyvbjerg, Holm and Buhl confirm 258 projects, US$90 billion, a 28 percent average overrun and underestimates in "almost 9 out of 10"; the paper also cites the Opera House at about 15 times its projected cost. Checked: Sydney Opera House facts (https://sydneyoperahouse.com/our-story/sydney-opera-house-facts.html); Buehler et al. (1994) PDF (https://bear.warrington.ufl.edu/brenner/mar7588/Papers/buehler-et-al-1994.pdf); Flyvbjerg et al. (2002), arXiv (https://arxiv.org/abs/1303.6604).
@@ -264,7 +264,7 @@ The popular version treats the tragedy as an iron law: any resource held in comm
 
 The argument first appeared as "The Tragedy of the Commons" in *Science* in 1968, given as a presidential address to the Pacific Division of the AAAS. Its logic rests on herders sharing a pasture. Adding one more cow gives a herder its full benefit, while the cost of overgrazing is divided among everyone, so each private calculation favors adding more. That works where no one can be kept out and where one person's use leaves less for others.
 
-The record states the correction. Hardin himself later conceded that his error was omitting the word "unmanaged." Historical commons were in fact regulated by custom and law to prevent overgrazing. The model fits an open-access resource with no rules, which is a different thing.
+Hardin himself later conceded that his error was omitting the word "unmanaged." Historical commons were in fact regulated by custom and law to prevent overgrazing. The model fits an open-access resource with no rules, which is a different thing.
 
 Elinor Ostrom's fieldwork then showed what managed commons can do. In *Governing the Commons* (1990), she documented communities that govern shared resources successfully through their own institutions, without privatizing or nationalizing them. She won the 2009 Nobel Prize. The depletion mechanism is real where a resource is truly open: the record points to overfished cod on the Grand Banks and to the atmosphere as a sink for greenhouse gases. What the record rejects is the claim that ruin is inevitable.
 

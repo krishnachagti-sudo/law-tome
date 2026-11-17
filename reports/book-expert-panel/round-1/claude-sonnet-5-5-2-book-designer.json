@@ -1,0 +1,79 @@
+{
+  "expert": "Book designer / typographer",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "first_impression": "A confident system: one serif for text, one letter-spaced mono for furniture, thin rules, a stamp motif, and cartoon art that stays in its box. The weaknesses are all about what happens at print scale on KDP paper: the small mono type, grey tints under text, and solid black plates whose reverse sides carry text.",
+  "findings": [
+    {
+      "page": "16, 18, 66, 126 and every answer page",
+      "issue": "The pale ghost-art footer runs up behind the Sources paragraph and the last lines of the text. On p. 18 the armchair hatching sits right under 'conyso.com/lawtome/laws/...'; on p. 126 the web address line crosses the hatched book art; on p. 66 the stacked-paper art sits against the last source line. On KDP's B&W printing the grey fills become halftone dots, so 8 pt italic source lines sit on a textured field.",
+      "why_it_matters": "The source line is the book's credibility device, and it is the least legible text on the page.",
+      "fix": "Reserve a clean white band under the Sources paragraph (at least 6 mm) and start the ghost art below it. Lighten the footer art to 10 to 15 percent and keep it out from behind any text. Set Sources in 8.5 pt roman, not italic.",
+      "severity": 3
+    },
+    {
+      "page": "34, 56 and every round's last answer page",
+      "issue": "'ROUND SCORE: ___ / 10   MOST CONFIDENT MISS: № ___' and 'NEXT → ROUND 2: WHO REALLY SAID IT?' are set in about 6.5 pt letter-spaced mono caps over the grey figures; the NEXT line collides with the cartoon hands on p. 34. The blanks are about 10 mm wide.",
+      "why_it_matters": "It is the one place where the reader has to write, and it is the smallest, most crowded line in the book.",
+      "fix": "Make the round-end a rule-bounded box on white, 12 mm tall, with 9 pt labels and 25 mm write-in lines, and let the ghost art end above it.",
+      "severity": 3
+    },
+    {
+      "page": "13/14, 35/36, 239/240",
+      "issue": "Facing recto and verso pages are the two sides of the same leaf, and three of them pair a text page with a very heavy black plate: p. 13 (round-opener text) is backed by the black frontispiece p. 14, p. 35 by p. 36, and the scoresheet p. 239 by the black-bordered certificate p. 240. On 50 to 55 lb KDP stock, solid black fields show through as a grey cast behind the reverse side.",
+      "why_it_matters": "Show-through lowers contrast on the text and on the write-in boxes, and it makes the paper look cheap in the Look Inside and in hand.",
+      "fix": "Choose cream paper (more opaque), cut the plates' black coverage by opening up the border and cross-hatching, and where possible swap so each heavy plate backs a near-empty page (for example the round opener's art-only verso backing a page with only a short title).",
+      "severity": 3
+    },
+    {
+      "page": "15, 17, 33, 125 and all question pages; 233",
+      "issue": "Everything the reader has to use is set in tiny mono caps: 'SURE' and 'GUESSING' with 3 mm boxes, 'ANSWER OVERLEAF →', the star row, 'ROUND 1 · № 1', the page numbers (about 6 pt), and the 'p. 68' column on p. 233. The type floor is about 6 pt for the interactive parts.",
+      "why_it_matters": "At 6x9 trim the page is read at arm's length, in dim rooms, at a table; furniture below 7.5 pt will blur in print and is missed on a first read.",
+      "fix": "Set a type floor of 7.5 pt for furniture and 8.5 pt for anything that is actioned (tick labels, score labels). Enlarge the three vote boxes slightly and make the SURE / GUESSING boxes 4 mm.",
+      "severity": 2
+    },
+    {
+      "page": "16, 18, 126",
+      "issue": "Answer text is justified at about 9.5 pt on a 6 in trim with first-line indents and frequent hyphens: 'dif-ferent' (p. 5), 'judg-ing' (p. 16), 'embel-lishment', 'unifi-cation' (p. 18). Two or three hyphenated line-ends in a row occur on most pages, and wide word gaps show up in the justified lines.",
+      "why_it_matters": "Ladders of hyphens and uneven gaps slow reading and add visual noise to the page that has to carry the most text.",
+      "fix": "Turn off hyphenation for words under 9 letters and cap consecutive hyphens at two; add letter-spacing tolerance of plus or minus 1 percent, or set ragged-right. Check every page for rivers after the text is cut.",
+      "severity": 2
+    },
+    {
+      "page": "33",
+      "issue": "The question-page art is not consistently framed. On p. 33 (Churchill) the bench and jurors are cut off by a hard vertical edge at the right, as if the picture were cropped at the art box, while p. 15 and p. 17 are loose, centred and fully drawn. Cartoon sizes range from about 60 to 85 percent of the text width.",
+      "why_it_matters": "A cropped drawing reads as a production error and weakens the otherwise tidy grid.",
+      "fix": "Redraw or extend p. 33's bench to a natural end, and fix a single art frame (for example 80 percent of text width, 60 mm tall) so all 100 spreads sit on one baseline grid.",
+      "severity": 2
+    },
+    {
+      "page": "243, 244",
+      "issue": "The index sets two columns of about 7.5 pt mono-adjacent type with large gaps to the page numbers; 'Newton's Law of Universal Gravitation' wraps and drops '17, 19' to the next line without a hanging indent; the people list has 'Daniel Kahneman and Amos Tversky225' where the number runs into the name; and 'Abraham Kaplan and Abraham Maslow' is a combined entry.",
+      "why_it_matters": "The index is how a reference-minded reader returns to a story, and visible slips there look careless to the audience that checks sources.",
+      "fix": "Add a hanging indent and a minimum 3 mm gutter before page numbers, put 'Kahneman, Daniel, and Tversky, Amos 225' on its own entry, and split the Kaplan/Maslow line into two entries.",
+      "severity": 2
+    },
+    {
+      "page": "1, 2",
+      "issue": "Display lines are broken at hyphens and mid-word: the subtitle on p. 1 breaks as 'the myth- / busting quiz for curious minds', and the title on p. 2 breaks as 'Curi- / ous Minds'. The p. 1 subtitle also differs from the cover subtitle.",
+      "why_it_matters": "The first two pages a buyer sees in Look Inside show a broken title line.",
+      "fix": "Use a balanced, hyphenation-off setting for all display text, and set the p. 1 subtitle on two lines at 'the myth-busting quiz / for curious minds' to match the cover wording exactly.",
+      "severity": 2
+    },
+    {
+      "page": "cover",
+      "issue": "On the back cover the italic 'Every verdict is checked against the record...' line and the 'Your host, Ida Verity. No source, no stamp.' caption are about 7 to 8 pt, and the 'CAN YOU GUESS?' box labels are about 6 pt. The white box at lower right is the barcode area and is sized sensibly; the spine type is clear.",
+      "why_it_matters": "On a printed 6x9 back cover the small lines are the ones most likely to fill in or fade under printing tolerance.",
+      "fix": "Raise the small back-cover lines to at least 9 pt and give the three guess-box lines 8.5 pt, trimming the blurb if space is tight.",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "The two-typeface system (serif text, mono furniture) and the thin-rule vocabulary.",
+    "The stamp as the answer-page header: strong shape, readable in B&W.",
+    "The boxed, rule-edged Tell someone block with the small icon.",
+    "Round openers with a large grey numeral, a one-line promise, and a small vignette."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "The system is coherent; the small type, grey-under-text and heavy-plate show-through issues need fixing before files go to KDP."
+}

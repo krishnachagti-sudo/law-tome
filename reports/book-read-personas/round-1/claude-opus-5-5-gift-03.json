@@ -1,0 +1,56 @@
+{
+  "id": "gift-03",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-17",
+  "card_quote": "Default disposition: gives gift cards, food or drink; thinks novelty books end up unread on a shelf; default answer to 'would you buy this as a gift' is no. / Narrative: Wants the gift done in five minutes and not to be embarrassing.",
+  "how_read": "Honestly I'd look at the cover, read the how-to-play page and try the first round because you asked. I did round one on the couch with the game on. After that I'd flip the back pages to see if there's a scoresheet or anything. Wouldn't keep going on my own.",
+  "stopped_at": "P034",
+  "w1_friction": [
+    {"page": "P016", "type": "too-dense", "note": "I turn the page expecting 'FOLKLORE, here's why' in two lines and get a whole essay. Nobody at an office party is reading that.", "quote": "The record separates the principle from the anecdote."},
+    {"page": "P018", "type": "bored", "note": "Fine, the apple didn't hit him. Did that need six paragraphs?", "quote": "The bump spread because it improves the story as a story."},
+    {"page": "P020", "type": "talked-down", "note": "Same apple twice in a row, and now it's telling me the skeptic is the dummy. Felt like a gotcha.", "quote": "The popular version here is a skeptic’s one."},
+    {"page": "P026", "type": "other", "note": "This is the kind of answer where you're technically wrong and nobody cares. The idea was in there, just not the letters.", "quote": "The statement survives the check; the typography does not."},
+    {"page": "P032", "type": "doubt-verdict", "note": "'Disputed' is a cop-out answer for a quiz. Either it's true or it isn't.", "quote": "Who first said it, and in what words, is not settled."}
+  ],
+  "w1_best": [
+    {"no": 7, "why": "Einstein's Nobel for the photoelectric thing. Short version is a good bar fact."},
+    {"no": 10, "why": "I'd have said 'blood, sweat and tears' too. Fair catch."},
+    {"no": 8, "why": "I work around tech people and they all say 18 months. Good to know it's wrong."},
+    {"no": 4, "why": "Didn't know the tower thing was a legend. Ramps and water clocks, ok."},
+    {"no": 2, "why": "Easy one, but at least it's quick to get."}
+  ],
+  "w1_flat": [
+    {"no": 3, "why": "The apple again. Felt like a filler question."},
+    {"no": 9, "why": "Disputed. No payoff."},
+    {"no": 6, "why": "Splitting hairs over how a formula was written."},
+    {"no": 1, "why": "Too long for what it is, and it opens the book on a lecture."},
+    {"no": 5, "why": "Kind of figured nobody really 'discovers' a math rule alone. Wasn't surprised."}
+  ],
+  "w1_juster": 1,
+  "w1_review": {
+    "headline": "Good idea, way too much reading",
+    "body": "The guessing part is fun for about ten questions. Every answer is a page of dense text, so it's more of a book than a game, and some answers just say nobody knows. I could see one specific nerdy person liking it. Bottom line: not my kind of gift; I'll stick with a gift card."
+  },
+  "w2_review_first": "It's one of those 'everything you know is wrong' books, but long-winded. If you know someone who reads Wikipedia for fun, maybe. Otherwise skip it.",
+  "w2_lost": [
+    {"page": "P016", "why": "First answer was a wall of text and I checked my phone."},
+    {"page": "P020", "why": "Second apple question in a row, that's where I mentally checked out."},
+    {"page": "P034", "why": "Finished round one and had no reason to start round two."}
+  ],
+  "w2_read_aloud": [
+    {"no": 63, "why": "Streisand suing over her house photo is funny and everyone's heard of the Streisand thing."},
+    {"no": 80, "why": "Butter-side-down toast, people will argue about that."},
+    {"no": 39, "why": "Monty Hall always starts a fight. People get heated."},
+    {"no": 8, "why": "Work crowd would bite on the Moore's law one."},
+    {"no": 21, "why": "The Kitty Genovese 38 witnesses thing, I remember that from school. Would be good to know."}
+  ],
+  "w2_cut": [
+    {"no": 11, "why": "Latin quote from a monk. No."},
+    {"no": 12, "why": "Never heard of Hebb. Can't guess on something you've never heard of."},
+    {"no": 33, "why": "Yerkes and Dodson, no idea who that is."},
+    {"no": 59, "why": "Thomas Young and slits, too sciencey."},
+    {"no": 3, "why": "Duplicate of the other apple question."}
+  ],
+  "w2_juster": 1,
+  "w2_book2": "I wouldn't have bought the first one, so a second one is a no unless the answers got down to a few lines."
+}

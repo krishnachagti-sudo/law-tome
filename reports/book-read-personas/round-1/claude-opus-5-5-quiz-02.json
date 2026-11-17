@@ -1,0 +1,60 @@
+{
+  "id": "quiz-02",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-17",
+  "card_quote": "Social use: likes things that can be played out loud with friends. / Narrative: Joined a trivia team after moving cities to meet people; the team's specialist in science and 'weird facts'.",
+  "how_read": "Game night first: we played rounds one and six at my place with the trivia team, one person reading. Then I kept going on my own over the week, a round or two before bed, mostly the science and psych rounds. Ran out of steam around the end of round eight.",
+  "stopped_at": "P192",
+  "w1_friction": [
+    {"page": "P016", "type": "too-dense", "note": "Reading this out at game night was rough. My friend gave up two paragraphs in and just read the Tell someone line.", "quote": "its Proposition 5 gives the corollary for floating bodies"},
+    {"page": "P020", "type": "bored", "note": "Second apple question back to back. Everyone at the table groaned because question two kind of answers question one.", "quote": "Newton himself told of the apple, according to Britannica"},
+    {"page": "P084", "type": "looks-wrong", "note": "It says TRUE at the top and then says he never did it. I had to read it three times. That's just a mistake.", "quote": "Franklin never flew a kite in a thunderstorm"},
+    {"page": "P083", "type": "confused", "note": "Why is there a Discovery Stories question in round four, with the same number as the one before it?", "quote": "DISCOVERY STORIES ROUND 4 · № 31"},
+    {"page": "P138", "type": "other", "note": "As the team science nerd this annoyed me: it tells you the classic explanation is wrong and then won't tell you the right one. That's the bit I wanted.", "quote": "The record does not say why the upper air speeds up"},
+    {"page": "P128", "type": "too-dense", "note": "Snow words was fun until it turned into Russian blues and Guugu Yimithirr. Good stuff, but it wandered.", "quote": "Speakers of Guugu Yimithirr, which uses compass directions"},
+    {"page": "P174", "type": "too-dense", "note": "Goldfish memory is literally my kind of question and this page reads like it was written to be unreadable. Also 'various laboratory studies' is not a source.", "quote": "Under appetitive operant-conditioning paradigms, Carassius auratus exhibits retention intervals"},
+    {"page": "P173", "type": "looks-wrong", "note": "Another stray one, 'Names that mislead' header in the middle of the jokes round, number 71 twice.", "quote": "NAMES THAT MISLEAD ROUND 8 · № 71"},
+    {"page": "P146", "type": "other", "note": "Weird sentence. Sounds like the book talking to itself.", "quote": "this entry adds none"}
+  ],
+  "w1_best": [
+    {"no": 39, "why": "Monty Hall plus the letters from PhDs. Huge argument at the table, exactly what I want."},
+    {"no": 80, "why": "Toast actually has physics behind it. Weird-fact gold and it won an Ig Nobel."},
+    {"no": 57, "why": "Mpemba effect being genuinely unresolved. I liked that it didn't pretend to know."},
+    {"no": 52, "why": "The sink and Coriolis. Everyone at the table was sure, and everyone was wrong."},
+    {"no": 30, "why": "The forgetting curve is one guy memorizing nonsense syllables. Wild that my Anki app is built on that."}
+  ],
+  "w1_flat": [
+    {"no": 71, "why": "The goldfish page in round eight. Ruined a great question with jargon."},
+    {"no": 31, "why": "The Franklin kite page, contradicts itself."},
+    {"no": 53, "why": "Uncertainty principle. True, but nobody at a table can play it."},
+    {"no": 42, "why": "Maxwell's equations count. Too inside-baseball."},
+    {"no": 48, "why": "Overton window naming. Pretty dry."}
+  ],
+  "w1_juster": 6,
+  "w1_review": {
+    "headline": "Great questions, answers need a diet",
+    "body": "The questions themselves are really good, especially the psych and science ones, and our trivia team had a great night arguing over them. But the answers are long, academic, and hard to read aloud; we ended up reading just the verdict and the one-line summary. A couple of pages look like errors, including one that says TRUE and then says the opposite. Bottom line: four stars for the questions, two for the editing, would still bring it to game night."
+  },
+  "w2_review_first": "It's like a trivia night in a book: you vote true, folklore or disputed and then flip. The questions are great for a group, the answers are kind of a slog. Just read the last line out loud and you're fine.",
+  "w2_lost": [
+    {"page": "P150", "why": "Words and phrases round was mostly history and politics, not my thing, so I skimmed it."},
+    {"page": "P164", "why": "Thucydides trap was where I actually put it down for a couple of days."},
+    {"page": "P174", "why": "Goldfish page made me close it in annoyance."}
+  ],
+  "w2_read_aloud": [
+    {"no": 39, "why": "Monty Hall gets the table yelling every time."},
+    {"no": 80, "why": "Butter-side-down toast with real physics behind it."},
+    {"no": 52, "why": "Everyone has a sink-drain opinion."},
+    {"no": 92, "why": "Rat tails in Hanoi. Gross and great."},
+    {"no": 63, "why": "Streisand's six downloads, two by her own lawyers. Instant laugh."}
+  ],
+  "w2_cut": [
+    {"no": 71, "title": "Do goldfish have a three-second memory?", "why": "Rewrite it or cut it, it's the worst page in the book."},
+    {"no": 31, "title": "Did Benjamin Franklin fly a kite in a thunderstorm?", "why": "Its own verdict and text disagree."},
+    {"no": 68, "why": "More of an essay prompt than trivia."},
+    {"no": 64, "why": "Habeas corpus is a law-school question."},
+    {"no": 36, "why": "The second Wald plane question repeats the first one."}
+  ],
+  "w2_juster": 5,
+  "w2_book2": "If it was the same long answer pages with no quick version to read out loud, I'd stick to trivia apps."
+}

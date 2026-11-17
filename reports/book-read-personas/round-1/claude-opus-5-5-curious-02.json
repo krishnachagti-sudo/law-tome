@@ -1,0 +1,64 @@
+{
+  "id": "curious-02",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-17",
+  "card_quote": "Reading: popular science and psychology (Freakonomics/Gladwell-style); has met the Stanford prison experiment and Milgram in pop books and probably not the critiques. / Constraints: dislikes books without sources; checks Wikipedia when a claim surprises him.",
+  "how_read": "Cover to cover over two weekends, front matter included, because I always read the copyright page and the 'how this was made' stuff. Played along honestly, ticked sure or guessing, kept score per round. Read the source lines on most entries.",
+  "stopped_at": "P250",
+  "w1_friction": [
+    {"page": "P002", "type": "looks-wrong", "note": "There's a placeholder left in the copyright page. Not a great first impression for a book about getting details right.", "quote": "ISBN TO ADD FROM KDP"},
+    {"page": "P002", "type": "doubt-verdict", "note": "Appreciate the honesty, but knowing it was AI-drafted made me read every verdict a little more suspiciously.", "quote": "the entries were drafted with AI tools"},
+    {"page": "P020", "type": "bored", "note": "Back-to-back apple questions. The pairing trick shows up again and again and the second entry usually recycles the first.", "quote": "Newton himself told of the apple, according to Britannica"},
+    {"page": "P084", "type": "looks-wrong", "note": "The stamp says TRUE and the text says it's an embellishment and he never did it. Two lines apart. That's an editing failure, not a nuance.", "quote": "Franklin never flew a kite in a thunderstorm"},
+    {"page": "P084", "type": "doubt-verdict", "note": "One Wikipedia article as the whole source list, and the story isn't in the contents or index either.", "quote": "Sources: \"Benjamin Franklin,\" Wikipedia."},
+    {"page": "P086", "type": "other", "note": "A 2026 paper saying Dunning-Kruger inverts? That surprised me enough that I'd go look it up before repeating it.", "quote": "a 2026 reanalysis reports that it inverts"},
+    {"page": "P116", "type": "doubt-verdict", "note": "A whole disputed verdict on the napkin story resting on a single Wikipedia page. Thin compared to the other entries.", "quote": "“Laffer curve, ” Wikipedia (the napkin story)."},
+    {"page": "P174", "type": "too-dense", "note": "Jargon soup, wrong round header, duplicate number 71, and 'various laboratory studies' as the source. In a book that otherwise cites journals with volume numbers, this stands out badly.", "quote": "Sources: various laboratory studies."},
+    {"page": "P214", "type": "other", "note": "The 'any reason would be invented' line is principled, I guess, but it reads like the writer is reminding itself of a rule.", "quote": "Any reason offered here would be invented, so none is."},
+    {"page": "P220", "type": "confused", "note": "Who or what is the 'Law Tome record'? It's referred to everywhere as 'the record' and here it slips into an internal name.", "quote": "The Law Tome record calls the Hanoi bounty the documented case"},
+    {"page": "P237", "type": "doubt-verdict", "note": "Ranked by how many people they fooled, based on what data? And several of the page references point to the wrong pages.", "quote": "The stories that fooled the most people, ranked."},
+    {"page": "P241", "type": "doubt-verdict", "note": "Says every entry was read and checked. Then how did the Franklin and goldfish pages get through?", "quote": "then read and checked them."},
+    {"page": "P247", "type": "looks-wrong", "note": "Index sends me to 99 for Benford's law and it's actually two pages later. From round four on, the index and contents drift.", "quote": "Benford’s Law 99"}
+  ],
+  "w1_best": [
+    {"no": 22, "why": "Stanford prison guards were coached. I'd told that story at dinner as gospel. Genuinely changed my mind, with a real citation."},
+    {"no": 24, "why": "Milgram's 65 percent being one condition out of twenty-plus. Exactly the nuance my pop-psych books left out."},
+    {"no": 23, "why": "Levitt and List finding the Hawthorne data and calling it fictional. Great detective story."},
+    {"no": 27, "why": "Marshmallow test shrinking with a bigger, more diverse sample. Fair and well sourced."},
+    {"no": 93, "why": "Jevons paradox, with the actual 1865 quote. Smart and current."}
+  ],
+  "w1_flat": [
+    {"no": 71, "why": "The goldfish entry in round eight. Unreadable and unsourced."},
+    {"no": 31, "why": "The Franklin kite entry in round four. Contradicts itself."},
+    {"no": 69, "why": "Dawkins coined 'meme'. Too easy, and most of the answer is about the selfish gene instead."},
+    {"no": 47, "why": "Laffer part two, repeats part one."},
+    {"no": 60, "why": "The answer admits it has no detail on the experiment, so there's nothing there."}
+  ],
+  "w1_juster": 6,
+  "w1_review": {
+    "headline": "Smart, well-sourced myth-busting with some sloppy pages",
+    "body": "The psychology round alone is worth it: Stanford prison, Milgram, Hawthorne and the marshmallow test, each with the critiques my pop-science books skipped and real citations to check. The format of guessing first works, and I liked the honesty about disputed cases. But for a book about checking claims, there are too many slips: a leftover placeholder on the copyright page, a Franklin entry whose verdict contradicts its text, a jargon-filled goldfish entry with no real source, and an index that drifts. Bottom line: four stars for content, take a star off for editing."
+  },
+  "w2_review_first": "Best quick correction to the pop-psychology stories we all repeat that I've seen, and it tells you where each answer came from. A few pages are clearly unfinished, which is ironic for a fact-check book. I'd still recommend it to anyone who reads Gladwell.",
+  "w2_lost": [
+    {"page": "P164", "why": "Thucydides and MAD in round seven, I knew the general idea and the answers felt like summaries of articles."},
+    {"page": "P174", "why": "The goldfish page made me stop and flip back to see if I'd missed an explanation."},
+    {"page": "P118", "why": "Second Laffer entry right after the first, skimmed it."}
+  ],
+  "w2_read_aloud": [
+    {"no": 22, "why": "Stanford prison will start a real argument at dinner."},
+    {"no": 21, "why": "Kitty Genovese, because everyone knows the 38 witnesses and the CCTV study flips it."},
+    {"no": 93, "why": "Jevons paradox is the smartest thing to bring up when someone talks about efficiency."},
+    {"no": 39, "why": "Monty Hall and the PhD letters, a guaranteed table debate."},
+    {"no": 25, "why": "Six degrees being a median of the chains that finished. Neat statistical twist."}
+  ],
+  "w2_cut": [
+    {"no": 71, "title": "Do goldfish have a three-second memory?", "why": "Unsourced, unreadable, and it doesn't belong in that round."},
+    {"no": 31, "title": "Did Benjamin Franklin fly a kite in a thunderstorm?", "why": "Verdict contradicts the text; cut or redo it properly."},
+    {"no": 47, "why": "Overlaps the napkin question almost completely."},
+    {"no": 3, "why": "The second apple question isn't needed."},
+    {"no": 69, "why": "Too easy, and it's really an entry about a different book."}
+  ],
+  "w2_juster": 6,
+  "w2_book2": "Finding the same kind of contradictory or unsourced pages again; once is a slip, twice and I stop trusting the verdicts."
+}

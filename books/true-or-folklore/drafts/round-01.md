@@ -27,7 +27,7 @@ The physics stands on its own. Archimedes' principle is one of the oldest quanti
 
 **Tell someone:** Archimedes did state the law of buoyancy, but the bath and the "Eureka!" almost certainly come from Vitruvius, writing some two centuries later.
 
-*Sources:* Vitruvius, *De architectura*, book IX, preface. "Fact or Fiction?: Archimedes Coined the Term 'Eureka!' in the Bath," *Scientific American*. Rorres, "The Golden Crown," NYU. "Archimedes' principle," Wikipedia. Full list: conyso.com/lawtome/laws/archimedes-principle/
+*Sources:* Vitruvius, *De architectura*, book IX, preface. Rorres, "The Golden Crown," NYU. "Fact or Fiction?: Archimedes Coined the Term 'Eureka!' in the Bath," *Scientific American*. "Archimedes' principle," Wikipedia. Full list: conyso.com/lawtome/laws/archimedes-principle/
 
 > **QA notes.** 320 words after the page turn. Both sources are secondary. Vitruvius as first teller, the "two centuries" gap and the imprecise-method claim rest on *Scientific American*; check against Vitruvius, *De architectura*, before print. "Hydrostatic weighing" is the record's phrase and is not explained in it. The record gives no date for Vitruvius. No living person named.
 > **Source check 2026-11-12:** CONFIRMED. Vitruvius (book IX, preface) tells the crown, the bath, the overflowing vessel and the cry of "Eureka" in the first century BC, which *Scientific American* and Rorres put at roughly two centuries after Archimedes; both explain why the displacement method was too imprecise and a balance (Galileo's *La Bilancetta*) the likelier method. Proposition 5 of *On Floating Bodies* was not opened. Checked: Vitruvius, Gwilt translation, LacusCurtius (https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Vitruvius/9*.html); Scientific American (https://www.scientificamerican.com/article/fact-or-fiction-archimede/); Rorres, NYU (https://www.math.nyu.edu/~crorres/Archimedes/Crown/CrownIntro.html).
@@ -41,21 +41,21 @@ TRUE · FOLKLORE · DISPUTED?
 
 *(turn the page)*
 
-**FOLKLORE.** There is an apple in Newton's own account of his thinking about gravity. It does not hit him on the head. That detail is a later embellishment.
+**FOLKLORE.** There is an apple in the earliest account of Newton's thinking about gravity. It does not hit him on the head. That detail is a later embellishment.
 
 The popular version is a piece of slapstick. An apple dropped onto Newton's head, and the idea of gravity arrived with the bump.
 
 The record is plainer. Newton published his law of universal gravitation in *Philosophiae Naturalis Principia Mathematica* in 1687, a book whose printing Edmond Halley paid for. The law says that any two particles of matter attract each other with a force that grows with the product of their masses and falls with the square of the distance between them. Robert Hooke had suggested an inverse-square attraction in letters, but he could not derive the orbits of the planets from it. The mathematical derivation was Newton's own.
 
-The apple story itself, according to *Encyclopaedia Britannica*, traces back to Newton's own later recollection. That recollection includes an apple. It does not include an apple striking him.
+The earliest written account of the apple is in William Stukeley's memoir of Newton, published in 1752. It includes an apple. It does not include an apple striking him.
 
 The bump spread because it improves the story as a story. A falling apple seen from a distance is a thought. An apple landing on a scientist's head is an event, with a victim and a punchline, and it makes discovery look like something that happens to a person by accident. Each retelling had a reason to keep the joke and none to check it.
 
 The apple is also a fair symbol of what the law did. Newton's rule covers an apple falling to the ground and the Moon orbiting the Earth with the same mathematics, which is why the law is often called the first great unification in physics. The symbol worked without any help from a bruise.
 
-So the fruit belongs to Newton and the bump belongs to his retellers. The law is in the *Principia* of 1687. The apple comes from Newton's own later account, and in that account it stays off his head.
+So the fruit belongs to Newton and the bump belongs to his retellers. The law is in the *Principia* of 1687. The apple comes from the earliest account, and in that account it stays off his head.
 
-**Tell someone:** According to *Britannica*, Newton's own recollection includes an apple but no bump; the hit on the head was a later embellishment.
+**Tell someone:** Newton's apple falls but never hits him in the earliest account, published in 1752; the bump came later.
 
 *Sources:* Stukeley, *Memoirs of Sir Isaac Newton's Life* (1752). "Newton's law of gravitation," *Encyclopaedia Britannica*. "Newton's law of universal gravitation," Wikipedia. Full list: conyso.com/lawtome/laws/newtons-law-of-universal-gravitation/
 
@@ -71,19 +71,19 @@ TRUE · FOLKLORE · DISPUTED?
 
 *(turn the page)*
 
-**TRUE.** The apple story is not a fable invented by Newton's admirers. According to *Encyclopaedia Britannica*, it traces back to Newton's own later recollection. Only the apple hitting his head was added afterward.
+**TRUE.** The apple story is not a fable invented by Newton's admirers. It traces back to Newton himself: William Stukeley recorded Newton telling it to him in 1726. Only the apple hitting his head was added afterward.
 
 The popular version here is a skeptic's one. The apple, it says, is pure myth: a tidy tale invented by later admirers to dress his work in a moment of genius.
 
 The record does not support the skeptic. The account of an apple comes from Newton himself, in his own later recollection. What the record marks as embellishment is narrower: the detail of the apple striking him. That detail is not in Newton's account.
 
-The law the apple is attached to is fully documented. Newton published it in 1687, in *Philosophiae Naturalis Principia Mathematica*. It states that every mass attracts every other mass, with a force that scales with the product of the masses and falls with the square of the distance between them. Newton showed that this rule, combined with his laws of motion, produces Kepler's three laws of planetary motion. Later work kept testing it. Galle found Neptune in 1846 within about a degree of where Le Verrier's Newtonian prediction placed it.
+The witness is William Stukeley. His memoir of Newton records Newton telling him the apple story on 15 April 1726, the year before Newton died. In Stukeley's account the apple falls; it does not hit anyone. Stukeley is a second-hand witness, so "Newton's own word" here means Newton as Stukeley reported him, but it is a dated report from someone who heard the story from Newton himself.
 
 The myth of a wholly invented apple spread for a reason that runs opposite to most myths in this book. The head-bump is so plainly comic that it invites suspicion, and people who rightly doubted the bump threw out the apple with it. A debunking can overshoot. Once "the apple story is a myth" became a known correction, it traveled as easily as the original, and with as little checking.
 
-The safe statement keeps both halves. Newton told of an apple; nobody needed to invent it for him. The bump on the head is the later addition. The law itself rests on the earliest dated source in the record, the *Principia* of 1687, and the apple rests on Newton's own word.
+The safe statement keeps both halves. Newton told of an apple; nobody needed to invent it for him. The bump on the head is the later addition. The apple rests on Newton's own word, as Stukeley recorded it in 1726.
 
-**Tell someone:** Newton himself told of the apple, according to *Britannica*; only the bump on the head was added later.
+**Tell someone:** Newton himself told William Stukeley about the falling apple in 1726; only the bump on the head was added later.
 
 *Sources:* Stukeley, *Memoirs of Sir Isaac Newton's Life* (1752). "Newton's law of gravitation," *Encyclopaedia Britannica*. "Newton's law of universal gravitation," Wikipedia. Full list: conyso.com/lawtome/laws/newtons-law-of-universal-gravitation/
 
@@ -111,7 +111,7 @@ The tower story spread because it does in one afternoon what the real work did o
 
 The documented record is the ramp. Galileo's working notes date to around 1603 to 1604, and he published the results in *Two New Sciences* in 1638. That book, not the tower, is the earliest dated source for his law of falling bodies.
 
-**Tell someone:** The tower drop is likely a legend; Galileo's documented work on falling bodies rolled balls down ramps and timed them with a water clock.
+**Tell someone:** Galileo's documented work on falling bodies rolled balls down ramps, timed with a water clock; the tower drop is likely a legend.
 
 *Sources:* "Galileo's Leaning Tower of Pisa experiment," Wikipedia. "Two New Sciences," Wikipedia. Full list: conyso.com/lawtome/laws/galileos-inclined-plane/
 
@@ -131,9 +131,9 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version is simple. Pythagoras of Samos discovered that in a right triangle the square on the longest side equals the sum of the squares on the other two, and the theorem is named after him for that reason.
 
-The record puts the relation much earlier and in several places. Babylonian tablets such as Plimpton 322, from around 1800 BC, record Pythagorean triples. The relation also appears in the Indian *Sulba Sutras* and the Chinese *Zhoubi Suanjing*. Their dates are less certain: the *Sulba Sutras* are placed between the 8th and 5th centuries BC, and the surviving *Zhoubi Suanjing* dates from around the 1st century BC, though its contents are thought to be older. The simplest triple, three, four and five, has been used since antiquity to lay out right angles, and builders still check a corner that way.
+The relation came much earlier, and in several places. Babylonian tablets such as Plimpton 322, from around 1800 BC, record Pythagorean triples. The relation also appears in the Indian *Sulba Sutras* and the Chinese *Zhoubi Suanjing*. Their dates are less certain: the *Sulba Sutras* are placed between the 8th and 5th centuries BC, and the surviving *Zhoubi Suanjing* dates from around the 1st century BC, though its contents are thought to be older. The simplest triple, three, four and five, has been used since antiquity to lay out right angles, and builders still check a corner that way.
 
-As for Pythagoras himself, the record is cautious. *Encyclopaedia Britannica* calls the attribution to him uncertain, and the record adds that it is doubtful he personally proved the theorem.
+As for Pythagoras himself, *Encyclopaedia Britannica* calls the attribution to him uncertain, and the record adds that it is doubtful he personally proved the theorem.
 
 The myth spread because names on theorems work like labels, and labels get read as credits. Once a result is called "Pythagorean," the natural assumption is that Pythagoras found it. A name is repeated every time the theorem is taught; the older tablets and texts are not. Repetition turned a label into a history.
 
@@ -161,13 +161,13 @@ The popular version has Einstein setting down E = mc² in one short line in 1905
 
 The paper exists and can be read in translation. It is a short follow-up to his special relativity paper of the same year, titled "Does the Inertia of a Body Depend Upon Its Energy Content?" Einstein's derivation ends in a sentence about a body radiating energy and losing mass: if it gives off energy L, its mass diminishes by L/V², with V for the speed of light. That is not the compact formula now known everywhere.
 
-The record is clear that the idea was his in a way that mattered. Others before him, Poincaré and Hasenöhrl, had linked mass and energy only for electromagnetic cases. Einstein was the first to state the relation as a general principle that applies to all energy. A compressed spring, a heated object and a chemical reaction all change mass by their energy divided by the speed of light squared. The change is far too small to weigh. Nuclear reactions are where it becomes large enough to notice.
+The idea was still his in a way that mattered. Others before him, Poincaré and Hasenöhrl, had linked mass and energy only for electromagnetic cases. Einstein was the first to state the relation as a general principle that applies to all energy. A compressed spring, a heated object and a chemical reaction all change mass by their energy divided by the speed of light squared. The change is far too small to weigh. Nuclear reactions are where it becomes large enough to notice.
 
 The myth spread because the formula became an icon, and icons get read back into their origins. Readers who meet E = mc² everywhere assume it must appear in the founding document, much as people assume a famous quotation has a famous speaker. The popular tie to atomic bombs is a second misreading the record corrects: the equivalence is not specifically about nuclear physics at all.
 
 The statement survives the check; the typography does not. The earliest dated source is Einstein's 1905 paper, and in it the mass-energy relation is set out in a sentence, not as E = mc². The record does not say when the compact form first appeared in print.
 
-**Tell someone:** Look for E = mc² in Einstein's 1905 paper and it isn't there: he set out the mass-energy relation in a sentence.
+**Tell someone:** Einstein's 1905 paper has no E = mc²: it sets out the mass-energy relation in a sentence.
 
 *Sources:* Einstein, "Does the Inertia of a Body Depend Upon Its Energy Content?" (1905), English translation. "Mass-energy equivalence," Wikipedia. Full list: conyso.com/lawtome/laws/mass-energy-equivalence/
 
@@ -229,7 +229,7 @@ So the law is Moore's and the 18 months is House's. The earliest dated source is
 
 **Tell someone:** Gordon Moore predicted a doubling roughly every year in 1965 and every two years in 1975; the 18 months was David House's.
 
-*Sources:* Moore, "Cramming more components onto integrated circuits," *Electronics* 38(8) (19 April 1965). "Moore's law," Wikipedia. Computer History Museum, "1965: 'Moore's Law' Predicts the Future of Integrated Circuits." Full list: conyso.com/lawtome/laws/moores-law/
+*Sources:* Moore, "Cramming more components onto integrated circuits," *Electronics* 38(8) (19 April 1965). Computer History Museum, "1965: 'Moore's Law' Predicts the Future of Integrated Circuits." "Moore's law," Wikipedia. Full list: conyso.com/lawtome/laws/moores-law/
 
 > **QA notes.** 305 words after the page turn. The 1965 rate rests on a primary source in the record. The 1975 revision, the House attribution, "Moore said he never used the figure," and the Carver Mead naming all come via Wikipedia; find the 1975 paper and Moore's own statement about House before print. The record does not date House's projection. "Ending the free gains in clock speed" paraphrases the record's "ending 'free' clock-speed gains." Gordon Moore and David House: the record does not say whether either is living; nothing here is unflattering to either.
 > **Source check 2026-11-12:** CONFIRMED. The Computer History Museum confirms the *Electronics* article of 19 April 1965, Moore as Fairchild's Director of R&D, the yearly doubling, the 1975 IEDM revision to every two years and Carver Mead's naming; Wikipedia attributes the 18 months to House and cites CNET (2003) for Moore saying he never said 18 months, but the CNET page could not be fetched, so that line still needs its own check. Checked: Computer History Museum (https://www.computerhistory.org/siliconengine/moores-law-predicts-the-future-of-integrated-circuits/); "Moore's law," Wikipedia (https://en.wikipedia.org/wiki/Moore%27s_law).
@@ -253,7 +253,7 @@ Both belong to the rule of three, the principle that a trio of words, phrases or
 
 That is the most likely reason the misquote spread. Memory and retelling favor the shape that feels finished. Four items are one too many for the pattern the rule describes, so the phrase was trimmed to the form that sounds right. The record warns that a well-made group of three can lend an idea an unearned air of completeness. Here it did more: it rewrote a famous line to fit the pattern.
 
-The words on the record are Churchill's own. In May 1940 he promised "blood, toil, tears and sweat." The three-word version is what the rule of three made of them.
+The words in Hansard are Churchill's own. In May 1940 he promised "blood, toil, tears and sweat." The three-word version is what the rule of three made of them.
 
 **Tell someone:** Churchill offered "blood, toil, tears and sweat" in May 1940: four items, and "toil" is the word that dropped out.
 
@@ -285,7 +285,7 @@ The safe statement is narrower than the legend. A rule about failure came out of
 
 **Tell someone:** Who first said Murphy's law is disputed; its earliest firm printing under his name, in 1952, credits an unnamed physicist.
 
-*Sources:* Spark, *A History of Murphy's Law* (2006). "The Real-Life Murphy and How 'Murphy's Law' Came to Be," Military.com. Roe, *The Making of a Scientist* (1952). Full list: conyso.com/lawtome/laws/murphys-law/
+*Sources:* Spark, *A History of Murphy's Law* (2006). Roe, *The Making of a Scientist* (1952). "The Real-Life Murphy and How 'Murphy's Law' Came to Be," Military.com. Full list: conyso.com/lawtome/laws/murphys-law/
 
 > **QA notes.** 344 words after the page turn (measured; the approved sample's note said about 370). Copied from the approved sample; no US-spelling changes were needed. The title is the sample's; candidates.md words it "Did Edward Murphy coin 'If anything can go wrong, it will'?". The Roe 1952 attribution reaches the record through Wikipedia; check the book itself before print. Murphy, Stapp and Roe are not living. "Murphy's son and colleagues recalled different phrasings" comes from the record without naming them; trace to Spark (2006) before print.
 > **Source check 2026-11-12:** FIXED. The DISPUTED verdict holds, and Roe (1952) does quote an unnamed physicist on "Murphy's law": "If anything can go wrong, it will" (her papers later name him as H. P. Robertson). But Roe's is not the earliest printed version of the idea: Wikipedia cites Holt (1877), "anything that can go wrong at sea generally does go wrong sooner or later," and Maskelyne (1908), so the "earliest firm" claims are now limited to printings under Murphy's name. MX981 at Muroc (1948 to 1949), the backwards-wired sensors, Stapp's press conference, Robert Murphy's competing account and David Hand all match. Roe and Spark were not opened. Checked: "Murphy's law," Wikipedia (https://en.wikipedia.org/wiki/Murphy%27s_law).

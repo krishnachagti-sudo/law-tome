@@ -1,0 +1,58 @@
+{
+  "expert": "Design psychologist",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-17",
+  "first_impression": "The core loop is sound and unusually well grounded: commit on a right-hand page, physically turn, get the verdict in the first line. That is a generation-then-feedback cycle, and the line 'the confident misses are the ones that stick' is the hypercorrection effect stated in plain words. Where it leaks is the memory side: the myth gets the vivid picture, the correction gets a faint grey wash, and the confidence the reader records is never used again.",
+  "findings": [
+    {
+      "page": "throughout (Tell someone lines, e.g. 18, 20, 60, 126, 152, 222)",
+      "issue": "The group rule now makes the Tell someone line the only thing most players hear, but several lines open with an attribution or the myth rather than the fact: 'According to Britannica, Newton's own recollection...' (p.18), 'Newton himself told of the apple, according to Britannica' (p.20), 'The record finds no basis for 38 silent witnesses' (p.60). Three run past 33 words (No. 51 at 37, No. 63 at 34, No. 95 at 33), too long to hold in working memory after one hearing.",
+      "why_it_matters": "What gets repeated at dinner is the first clause; if that clause is a hedge or the myth, the myth is what travels.",
+      "fix": "Rewrite every Tell someone line fact-first in 25 words or fewer, naming the myth at most once and late: e.g. No. 2 'Newton told of an apple falling, never of one hitting him; the bump was added later.' Move attributions ('according to Britannica', 'the record') into the body.",
+      "severity": 3
+    },
+    {
+      "page": "15-232 (every question/answer spread)",
+      "issue": "The question page shows the myth as a large crisp cartoon (Archimedes in the bath with the crown, the apple hitting Newton, Churchill at the dispatch box). The answer page shows only a pale grey vignette behind the sources. The image the reader remembers is the false version.",
+      "why_it_matters": "Pictures are recalled far better than text, so the book is strengthening the visual memory of each myth while the correction lives only in words; weeks later readers recall the picture and misattribute it.",
+      "fix": "Give each answer page a small (about 30 mm) crisp line drawing of what the record shows, placed beside the verdict stamp: Galileo's ramp and water clock (No. 4), Vitruvius writing (No. 1), a banner reading 'toil' (No. 10), the RAND payoff table (No. 70). Keep the myth cartoon on the question page; it is the hook.",
+      "severity": 2
+    },
+    {
+      "page": "15 onward (SURE / GUESSING ticks), 34 etc. (round score line), 238",
+      "issue": "Readers mark Sure or Guessing on every question, and each round ends with 'MOST CONFIDENT MISS: No. __', but nothing ever asks them to go back to those misses, and the score table on p.238 drops confidence entirely.",
+      "why_it_matters": "The hypercorrection benefit comes from re-exposure to a high-confidence error; without a return prompt the book collects the data and throws it away.",
+      "fix": "Add a 'My confident misses' column to the score table (ten small number fields) and one line at the foot of p.238: 'Before you close the book, reread your confident misses.' Optionally let the certificate on p.240 record 'confident misses corrected'.",
+      "severity": 2
+    },
+    {
+      "page": "5 (How to play), 15 onward (stars)",
+      "issue": "Stars are shown before the guess, and three stars are defined as 'a story almost everyone repeats. Don't be the one at the table who repeats it.' That definition tells the player the popular version is wrong, so a three-star rating is a cue to answer against the familiar story.",
+      "why_it_matters": "A cue printed above the question turns judgement into pattern-reading and blunts the surprise the format depends on.",
+      "fix": "Define stars only as difficulty: one star 'most players get this', two 'about half do', three 'most players miss it', with no hint about which way the miss goes.",
+      "severity": 2
+    },
+    {
+      "page": "16-232 (answer pages)",
+      "issue": "After the verdict stamp the answer is about 430 words of continuous justified prose with no signposts. The same six moves recur (lead, popular version, the record, mechanism, why it spread, summary), but nothing on the page marks them, so a reader who wants only 'why it spread' has to read to find it.",
+      "why_it_matters": "Readers who cannot locate the part they want skim the whole page and retain less of any of it.",
+      "fix": "Add three bold run-in lead words in the body: 'What happened.' at the record paragraph, 'Why it spread.' at the spread paragraph, 'Source.' at the closing earliest-source sentence. No layout change needed.",
+      "severity": 2
+    },
+    {
+      "page": "15-231 (call box), 233, 238",
+      "issue": "The DISPUTED icon (a small balance glyph that reads as 'ōlō') is not recognisable at the size used in the call box and on the surprises page; TRUE and FOLKLORE use a clear tick and cross.",
+      "why_it_matters": "When one of three options has an unclear symbol, players take longer over it and choose it less, which skews the guessing.",
+      "fix": "Replace the glyph with a symbol that reads at 3 mm, such as a bold '?' or a drawn scale at twice the current size, and test it at print size.",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "The right-hand question, turn-over answer format: the page turn is a real commitment point.",
+    "The Sure / Guessing tick and the 'Most confident miss' line, which are the right mechanics and just need closing.",
+    "The verdict in the first line of every answer, so feedback comes immediately.",
+    "The kind failure band 'Easily Fooled (and in good company...)', which protects motivation on a deliberately hard book."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "The loop works. Fact-first Tell someone lines are a must before print; the rest makes the corrections last longer."
+}

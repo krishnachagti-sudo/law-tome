@@ -1,0 +1,72 @@
+{
+  "expert": "Game and quiz designer",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "first_impression": "A solid quiz skeleton: ten rounds of ten, a three-way call, a score table and bands, and a certificate as a finish line. But it plays like a solo book dressed as a party game, the answer pattern is learnable, and the confidence ticks have no rules behind them.",
+  "findings": [
+    {
+      "page": "5, 235, 238; rounds 2 and 8",
+      "issue": "The verdict mix is lopsided and learnable. Counting the answer pages: Round 2 is nine FOLKLORE, one DISPUTED and no TRUE; Round 8 is seven TRUE (it opens TRUE, TRUE, FOLKLORE, TRUE, TRUE, TRUE) and two FOLKLORE; across the book 48 are FOLKLORE, 34 TRUE, 18 DISPUTED. A player who says FOLKLORE every time scores 48 and scores two points under the Healthy Skeptic line; by Round 8 a player who says TRUE wins.",
+      "why_it_matters": "Once players spot the pattern the game becomes guess-the-pattern, and the group learns the book's habits and not the stories.",
+      "fix": "Rebalance every round to 3 to 5 of each verdict (Round 2 gains two or three TRUE or DISPUTED, Round 8 loses two or three TRUE), and break any run of three identical verdicts by reordering inside the round.",
+      "severity": 3
+    },
+    {
+      "page": "5, 235; 15 and every question page",
+      "issue": "The book is sold for game night, but the only voting aid is 'by hand or on paper', and the tick boxes in the book can be used once, by one person. Four players cannot all vote in one copy, a second play-through starts with marked-up boxes, and there is no printed vote slip or card.",
+      "why_it_matters": "'Everyone votes at once' is the heart of group play, and as printed the book does not give the group a way to do it.",
+      "fix": "Add a copyable page, 'Vote slips', with six T / F / D strips and a SURE / GUESSING row, extend the copy permission on p. 2 to it, and print a QR link to a downloadable card set. On p. 5 and p. 235 tell groups to vote on slips and to leave the book unmarked.",
+      "severity": 3
+    },
+    {
+      "page": "169-188 (Round 8), 189-232 (Rounds 9 and 10)",
+      "issue": "The question wording leaks the verdict. Questions that name a surprisingly specific act are almost always TRUE ('Did Brooks admit...', 'Did Clarke add... years later?', 'Did Harvard Business Review reject...', 'Did Hooke publish... as an anagram?', 'Did a French bounty... backfire?'), while vague big claims ('Did Mendeleev invent it alone?', 'Did Pythagoras discover...?') are FOLKLORE. Round 8's streak of TRUE answers follows the same tell.",
+      "why_it_matters": "Sharp players learn that detail means TRUE, and the quiz rewards reading style, not knowledge.",
+      "fix": "Rewrite the specific-act TRUE questions as the plain popular claim, and add at least two specific-sounding FOLKLORE and DISPUTED questions per round. Have someone not involved in the writing guess the verdicts from the question text alone and revise until they do no better than chance.",
+      "severity": 2
+    },
+    {
+      "page": "5, 15, 235, 238",
+      "issue": "The SURE / GUESSING row has no rules. Scoring on p. 5 is 'a point for each right call', and the team rules on p. 235 do not mention it; the only trace is a blank for 'most confident miss' at round end. The mechanic is built into every spread and does nothing.",
+      "why_it_matters": "A choice players make on every page with no consequence feels like homework and teaches them to ignore it.",
+      "fix": "Add to p. 5 an optional 'Stakes' rule: sure and right 2, guessing and right 1, wrong 0, sure and wrong minus 1. Add a tie-break to p. 235: highest count of sure-and-right calls wins.",
+      "severity": 2
+    },
+    {
+      "page": "235",
+      "issue": "The team rules are ambiguous. The reading team gets a bonus 'if the other team calls it wrong and the reader can explain why from the answer page', but the reader has to see the answer page to explain, so it is unclear who holds the book, whether the answer is visible to the other team when the page is turned, and who judges the explanation. There is no rule for ties, for DISPUTED, or for how long a round takes.",
+      "why_it_matters": "Rule gaps get argued out at the table and are the usual reason a game is put away after one round.",
+      "fix": "Specify: the reader holds the book facing themselves; the other team calls first; the reader checks the verdict, reads the Tell someone line, and scores the bonus without further proof. Add 'A round takes about 25 minutes with answers; for a quick game use five questions per team.'",
+      "severity": 2
+    },
+    {
+      "page": "238",
+      "issue": "The score bands do not account for the chance baseline. A random guess on a three-way call scores about 33, always-FOLKLORE scores 48, and 'Easily Fooled' starts at under 50. A player who plays honestly and avoids DISPUTED can land in the bottom band.",
+      "why_it_matters": "Players who feel the scale is stacked against them stop playing or stop sharing scores.",
+      "fix": "Re-base the bands on the real distribution after the verdict rebalance: for example Myth Buster 80 and over, Fact Checker 65 to 79, Healthy Skeptic 50 to 64, Curious Beginner under 50. Print 'Random guessing scores about 33' on p. 238.",
+      "severity": 2
+    },
+    {
+      "page": "15, 17, 5",
+      "issue": "Stars are printed on the question but are not worth anything. If they are a difficulty estimate, they should be points; if they are not, they are a cue towards the answer (a three-star story is one 'almost everyone repeats').",
+      "why_it_matters": "A visible difficulty marker with no payoff either distorts the guess or gets ignored.",
+      "fix": "Make stars the points on offer in the Stakes rule (a three-star story is worth 3), or move them to the answer page as 'how many people get this wrong' feedback.",
+      "severity": 2
+    },
+    {
+      "page": "241, 246, 233",
+      "issue": "Replay value is thin: once answers are known, the book has one more round by email and a page of 'coming next'. The 'ten biggest surprises' page is the only built-in second pass and shows the verdict next to each question.",
+      "why_it_matters": "A gift quiz is played once per recipient; extra modes are what turn a one-night book into a shelf book.",
+      "fix": "Add a half-page of variant modes: 'Stump the host' (the reader tells the verdict first and the table has to guess the Tell someone line), 'Bluff' (one player invents a plausible myth and the others vote), and 'Speed round' (Tell someone lines only). Print the surprises page without verdict symbols so it can be replayed.",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "Ten rounds of ten as a structure: a host can stop after any round.",
+    "The three-way call with DISPUTED as a real third option.",
+    "The Tell someone line as the reader-aloud payoff.",
+    "The team scoresheet, the score table and the certificate as the finish."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "The skeleton works; the verdict mix, question grammar and a voting aid for groups must be fixed or the game will be solved in an evening."
+}

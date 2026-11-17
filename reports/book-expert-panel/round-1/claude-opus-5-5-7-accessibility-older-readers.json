@@ -1,0 +1,65 @@
+{
+  "expert": "Accessibility reviewer for older readers (65+, reading glasses)",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-17",
+  "first_impression": "This is exactly the gift a grandchild buys a retired teacher, and the question pages are kind to tired eyes: one big question, a clear picture, plenty of white. The answer pages and the write-in parts are not. Small type, long lines, grey drawings under the smallest text and tick boxes the size of a grain of rice will lose readers over 65.",
+  "findings": [
+    {
+      "page": "16-232 (answer pages; e.g. 16, 18, 34, 66, 126)",
+      "issue": "The smallest text on the page, the italic sources (about 7.5 pt), and the Tell someone line sit on top of grey illustration; on round-end pages so does the ROUND SCORE write-in line.",
+      "why_it_matters": "Low-contrast text over a grey pattern is the hardest combination for ageing eyes and for anyone with early cataracts.",
+      "fix": "No art behind any text: move the vignettes below the type or remove them where space is short, and print sources at no less than 8.5 pt roman.",
+      "severity": 3
+    },
+    {
+      "page": "16-232 (body text)",
+      "issue": "Body text looks to be about 10 pt on a 70-78 character line, justified, with about 45 lines a page and close leading.",
+      "why_it_matters": "For readers with reading glasses, lines over about 65 characters cause lost-line errors at each return sweep, and 10 pt is at the low edge of comfortable.",
+      "fix": "Go to 11 pt on 14.5-15 pt leading with a 60-65 character measure (this adds pages; trimming the closing summary paragraphs recovers most of them), or publish a separate large-print edition at 14 pt and link the two on Amazon.",
+      "severity": 2
+    },
+    {
+      "page": "16-232 (Tell someone line)",
+      "issue": "The line the reader is told to read aloud is set in italic, at body size or a little under, beside a small grey megaphone.",
+      "why_it_matters": "Italic is noticeably harder to read for low-vision readers, and this is the line read aloud at the table, often in dimmer light.",
+      "fix": "Set Tell someone in roman, semibold, 1-2 pt larger than the body, with no hyphenation.",
+      "severity": 2
+    },
+    {
+      "page": "15-231 (call box), 33, 65, 125",
+      "issue": "The TRUE / FOLKLORE / DISPUTED boxes are tick squares of about 3 mm, and the SURE and GUESSING boxes are about 2 mm, labelled in light monospace of about 6-7 pt.",
+      "why_it_matters": "Older hands with a ballpoint cannot tick a 2 mm square cleanly, and the labels are below comfortable reading size.",
+      "fix": "Make every tick box at least 5-6 mm, set the labels at 9 pt in a medium weight, and give SURE and GUESSING the same box size as the verdict options.",
+      "severity": 2
+    },
+    {
+      "page": "238",
+      "issue": "The score table gives each round a row of ten tiny squares (about 3 mm) plus a small '/10' box in light monospace.",
+      "why_it_matters": "It is the page people return to most, and ten tiny boxes in a row are hard to count and fill.",
+      "fix": "Replace the ten squares with one large write-in box per round (at least 12 x 8 mm) and set '/10' at 10 pt.",
+      "severity": 2
+    },
+    {
+      "page": "throughout (labels)",
+      "issue": "Running heads, 'ROUND 1 · No. 1', 'YOUR CALL', 'ANSWER OVERLEAF', page numbers and the contents page numbers are all in a thin, widely tracked monospace at about 6.5-7.5 pt, and the page numbers sit beside a grey icon.",
+      "why_it_matters": "These labels are how readers find their way around the book; thin small mono loses contrast first as eyesight ages.",
+      "fix": "Raise all labels to 8.5 pt minimum in a regular or medium weight (not light), and set page numbers in the text face at 9 pt without the grey icon beside them.",
+      "severity": 1
+    },
+    {
+      "page": "239",
+      "issue": "The instruction says 'Write each team's name on the line, its score in the box', but there is no name line; the lines on the page belong to rounds R1-R10.",
+      "why_it_matters": "Instructions that do not match the form cause hesitation, especially for less confident players.",
+      "fix": "Add a clear write-in line under 'Team A' and 'Team B' labelled 'Team name', or change the instruction to match the page.",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "The question pages: large serif question, one picture and plenty of white space.",
+    "The gift page on p.3 with generous lines to write on.",
+    "Black text on white for the body, with no colour-dependent meaning anywhere in the interior.",
+    "The tick and cross symbols for TRUE and FOLKLORE, which are clear at any size."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "Clear the art from under text and enlarge the tick boxes before print; plan a large-print edition for the gift market."
+}

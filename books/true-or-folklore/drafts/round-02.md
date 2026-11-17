@@ -25,9 +25,9 @@ The misattribution spread because the sentence and the name fit together so neat
 
 None of this weakens the principle, which is a tie-breaker between explanations that both fit the facts: prefer the one that assumes less. It changes only the credit. Ockham's own wording is in the *Summa Logicae*. A close version of the famous Latin sentence first appears in Punch's commentary of 1639, and the name in Froidmont in 1649.
 
-**Tell someone:** The famous Latin line of Occam's razor is not in Ockham's works; John Punch wrote a close version in 1639, nearly three centuries after Ockham died.
+**Tell someone:** John Punch wrote a close version of the razor's famous Latin line in 1639, nearly three centuries after Ockham, whose works never use it.
 
-*Sources:* Ockham, *Summa Logicae*, part I, ch. 12. "Occam's razor," Wikipedia. Baker, "Simplicity," *Stanford Encyclopedia of Philosophy* (rev. 2022). Full list: conyso.com/lawtome/laws/occams-razor/
+*Sources:* Ockham, *Summa Logicae*, part I, ch. 12. Baker, "Simplicity," *Stanford Encyclopedia of Philosophy* (rev. 2022). "Occam's razor," Wikipedia. Full list: conyso.com/lawtome/laws/occams-razor/
 
 > **QA notes.** 307 words after the page turn. The verdict depends on the Punch (1639) and Froidmont (1649) dates, which reach the record through Wikipedia; check both primary texts before print. The record does not say whether the *Pluralitas* quotation is from *Summa Logicae* I.12 or elsewhere; the entry keeps them as separate statements. "Nearly three centuries" is arithmetic on the record's dates (1347, 1639). "Ten years later" is arithmetic (1639, 1649). No living person named.
 > **Source check 2026-11-12:** FIXED. SEP confirms the "entities" formulation "is nowhere to be found in his texts" and Ockham's dates (c. 1287 to 1347); Froidmont's *novacula occami* (1649) checks out. But Punch's 1639 wording, as quoted from Thorburn (*Mind*, 1918), is *non sunt multiplicanda entia sine necessitate*, not *praeter necessitatem*, so the entry now calls it a close version; Thorburn traced the exact famous form to Tennemann (1812). Also note for the editor: Wikipedia's image of *Pluralitas non est ponenda sine necessitate* is from a Scotus commentary, and the Ockham line it cites is *Numquam ponenda est pluralitas sine necessitate* (Sentences commentary, i, dist. 27, qu. 2); confirm the *Pluralitas* wording is Ockham's before print. Checked: "William of Ockham," SEP (https://plato.stanford.edu/entries/ockham/); "Who sharpened Occam's Razor?," Irish Philosophy, archived (https://web.archive.org/web/2022/https://www.irishphilosophy.com/2014/05/27/who-sharpened-occams-razor/); "Occam's razor," Wikipedia (https://en.wikipedia.org/wiki/Occam%27s_razor).
@@ -45,7 +45,7 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version puts the rhyme in Hebb's mouth, as his own summary of how learning works in the brain.
 
-The record goes back to the book. The Canadian psychologist Donald Hebb stated his rule in *The Organization of Behavior* in 1949. His version is careful and causal: when one neuron repeatedly or persistently takes part in firing another, the connection between them is strengthened. Hebb also proposed that this strengthening welds groups of neurons into working units, which he called cell assemblies.
+The Canadian psychologist Donald Hebb stated his rule in *The Organization of Behavior* in 1949. His version is careful and causal: when one neuron repeatedly or persistently takes part in firing another, the connection between them is strengthened. Hebb also proposed that this strengthening welds groups of neurons into working units, which he called cell assemblies.
 
 The slogan flattens that. "Fire together" suggests that firing at the same moment is enough. Hebb's wording is about one cell helping to fire the next. Later research backed the causal reading. Under spike-timing-dependent plasticity, a signal arriving shortly before the receiving cell fires strengthens the connection, and the reverse order weakens it.
 
@@ -75,15 +75,15 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version is a Twain quip about the habit of using the one tool a person knows for every job.
 
-The record traces a different line. Kaplan named and formalized the idea as the law of the instrument in *The Conduct of Inquiry* (1964), having aired it in a 1962 talk. His image was a small boy who, given a hammer, finds that everything he meets needs pounding. Two years later Abraham Maslow gave the most famous version in *The Psychology of Science* (1966). That is why the bias is often called Maslow's hammer. Maslow also imagined a machine built to wash cars that treats everything fed into it as a car to be washed.
+Quote Investigator traces a different line. Kaplan named and formalized the idea as the law of the instrument in *The Conduct of Inquiry* (1964), having aired it in a 1962 talk. His image was a small boy who, given a hammer, finds that everything he meets needs pounding. Two years later Abraham Maslow gave the most famous version in *The Psychology of Science* (1966). That is why the bias is often called Maslow's hammer. Maslow also imagined a machine built to wash cars that treats everything fed into it as a car to be washed.
 
 The record adds two cautions. First, Maslow did not coin the idea; "Maslow's hammer" credits his phrasing, not the invention. Second, the familiar line about hammers and nails is a paraphrase, not a word-for-word quotation from either man. The Twain attribution is the most common misattribution of all, and there is no evidence for it.
 
 The saying drifted to Twain for a reason that recurs throughout this round. A line with no obvious author tends to settle on a famous wit. The paraphrase helped: once the wording had moved away from Kaplan's and Maslow's own, nothing in the line itself pointed back to them. A quip that sounds like Twain gets credited to Twain.
 
-The point of the law survives the mix-up. It warns against applying a familiar method where it does not fit, not against reuse or expertise. The earliest dated source in the record is Kaplan's 1962 talk, set in print in 1964. Maslow's version followed in 1966. Twain has no place in the record.
+The point of the law survives the mix-up. It warns against applying a familiar method where it does not fit, not against reuse or expertise. The earliest dated source in the record is Kaplan's 1962 talk, set in print in 1964. Maslow's version followed in 1966. Twain appears nowhere.
 
-**Tell someone:** There is no evidence Twain said it: Abraham Kaplan named the law of the instrument in 1964, and Maslow's hammer-and-nail version followed in 1966.
+**Tell someone:** Abraham Kaplan named the law of the instrument in 1964, and Maslow's hammer-and-nail version followed in 1966; there is no evidence Twain said it.
 
 *Sources:* "If Your Only Tool Is a Hammer Then Every Problem Looks Like a Nail," Quote Investigator (2014). "Law of the instrument," Wikipedia. Full list: conyso.com/lawtome/laws/the-law-of-the-instrument/
 
@@ -133,7 +133,7 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version is that a man named Hanlon coined the line "Never attribute to malice that which is adequately explained by stupidity," and that the razor bears his name for that reason.
 
-The record starts with the first printing. The adage appeared in Arthur Bloch's *Murphy's Law Book Two*, published in 1980, on page 52. It was titled "Hanlon's razor." The book did not say who Hanlon was.
+The adage first appeared in Arthur Bloch's *Murphy's Law Book Two*, published in 1980, on page 52. It was titled "Hanlon's razor." The book did not say who Hanlon was.
 
 The rest of the attribution is reported rather than documented. Robert J. Hanlon is reported to have submitted the line to Bloch for that book. The record calls this biographical detail second-hand.
 
@@ -141,7 +141,7 @@ There is a rival theory. Nearly forty years earlier, in the March 1941 issue of 
 
 The doubt persists because the evidence comes in the wrong order. The firm document, Bloch's page 52, names Hanlon but says nothing about him. The details about him come from later, second-hand accounts. Meanwhile an older text by a famous writer contains a sentence close enough to invite a story. A name with no biography is an open invitation to explanation, and the Heinlein theory fills the gap neatly without proving anything.
 
-The record supports a narrow statement. The razor first appeared in print in 1980, on page 52 of Bloch's book, under Hanlon's name. Whether a real Robert J. Hanlon wrote it rests on second-hand reports. Heinlein had a similar line in 1941, and the sentiment is older still.
+The evidence supports a narrow statement. The razor first appeared in print in 1980, on page 52 of Bloch's book, under Hanlon's name. Whether a real Robert J. Hanlon wrote it rests on second-hand reports. Heinlein had a similar line in 1941, and the sentiment is older still.
 
 **Tell someone:** Hanlon's razor first appeared in print in a 1980 book, but the evidence that a real Robert J. Hanlon wrote it is second-hand.
 
@@ -163,17 +163,17 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version attaches the warning against blaming malice for what stupidity explains to Napoleon.
 
-The record dates the saying. Its first known appearance in print is Arthur Bloch's *Murphy's Law Book Two* (1980), page 52, under the title "Hanlon's razor." Before that come antecedents. The closest is in Robert A. Heinlein's 1941 novella "Logic of Empire": "You have attributed conditions to villainy that simply result from stupidity." The sentiment is older still, with a version in Goethe in 1774 and others. Quote Investigator's 2016 timeline runs from Hume to Hanlon, and Napoleon is the attribution it rejects.
+Quote Investigator went looking for Napoleon and found no substantive support. The attribution first surfaces in Usenet posts of 1997 and 1998, long after the saying itself was in print. Its timeline of the idea runs from Hume in 1757 and Goethe in 1774 to the razor's first known printing in 1980, and Napoleon appears nowhere in it.
 
 The idea has also been put in other words by other people. Sir Bernard Ingham, press secretary to Margaret Thatcher, called it the cock-up theory of government, set against the conspiracy theory. A later twist known as Grey's law runs: "Any sufficiently advanced incompetence is indistinguishable from malice." All of them treat the razor as a first guess, not as proof that malice never happens.
 
 The Napoleon credit spread for the usual reason a saying acquires a grand author. A sentiment held by many people, in many wordings, over two centuries, has no single owner. Lines without owners drift toward famous names, and a remark about malice and incompetence sounds weightier from a famous historical figure. The attribution gave a modern adage an air of age and authority that its real history, a 1980 humor book, does not.
 
-The record is clear on what is known. The razor's first known printing is 1980, in Bloch's book. Heinlein had a close version in 1941 and Goethe a version in 1774. Napoleon is not in the chain.
+The record is clear on what is known. The saying is older than its 1980 printing and has many owners, from Goethe onward. Napoleon is not one of them; his name was attached in the late 1990s.
 
-**Tell someone:** The line is not Napoleon's: the razor's first known printing is Arthur Bloch's 1980 book, with a close version in Heinlein from 1941.
+**Tell someone:** Nobody has found the line in Napoleon; his name was first attached to it in Usenet posts of the late 1990s.
 
-*Sources:* Quote Investigator, "Never Attribute to Malice That Which Is Adequately Explained by Stupidity" (2016). Bloch, *Murphy's Law Book Two* (1980), p. 52. Heinlein, "Logic of Empire" (1941). Full list: conyso.com/lawtome/laws/hanlons-razor/
+*Sources:* Quote Investigator, "Never Attribute to Malice That Which Is Adequately Explained by Stupidity" (2016). Bloch, *Murphy's Law Book Two* (1980), p. 52. Full list: conyso.com/lawtome/laws/hanlons-razor/
 
 > **QA notes.** 307 words after the page turn. Flagged in candidates.md: the verdict rests on a source annotation in the record ("debunks the Napoleon attribution"), not on body text. Read the Quote Investigator page and cite what it actually found before print. The record gives no wording for the Hume or Goethe versions; the entry quotes neither. "A 1980 humor book" describes *Murphy's Law Book Two* from its title; confirm. "Over two centuries" is arithmetic from Goethe (1774) to 1980. Bernard Ingham: the record quotes him at length; the entry paraphrases. Ingham may be living; nothing unflattering. No legal review needed.
 > **Source check 2026-11-12:** CONFIRMED. Quote Investigator found "no substantive support" for Napoleon: the attribution first surfaces in Usenet posts of 1997 and 1998. Its timeline runs from Hume (1757) and Goethe (1774) through Heinlein (1941) to Bloch's 1980 book, p. 52, the earliest close match. QI describes the book as a Murphy's Law compilation and does not call it humor, so "a 1980 humor book" is the entry's own description (defensible from the series, but confirm). Ingham and Grey's law were not checked beyond Wikipedia's Grey's law wording, which matches. Checked: Quote Investigator (https://quoteinvestigator.com/2016/12/30/not-malice/); "Hanlon's razor," Wikipedia (https://en.wikipedia.org/wiki/Hanlon%27s_razor).
@@ -191,7 +191,7 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version treats the "loser" rule as part of Godwin's law: whoever invokes Hitler ends the argument and loses it.
 
-The record goes back to 1990. Godwin, an American attorney, coined the law that year on early internet forums, chiefly Usenet. In its usual form it says that as an online discussion grows longer, the probability of a comparison to Hitler or the Nazis approaches one. Godwin has described it as a deliberate experiment in memetics: a counter-meme, seeded to discourage the reflexive Hitler comparisons he felt trivialized the Holocaust. He documented the method in a 1994 *Wired* article, "Meme, Counter-meme."
+Godwin, an American attorney, coined the law in 1990 on early internet forums, chiefly Usenet. In its usual form it says that as an online discussion grows longer, the probability of a comparison to Hitler or the Nazis approaches one. Godwin has described it as a deliberate experiment in memetics: a counter-meme, seeded to discourage the reflexive Hitler comparisons he felt trivialized the Holocaust. He documented the method in a 1994 *Wired* article, "Meme, Counter-meme."
 
 The loser rule came from the community that adopted the law. A Usenet tradition, recorded in the hacker Jargon File, added that once someone invokes the Nazis the thread is over and the person who made the comparison has lost. Godwin resists it. He has said the law should start a conversation, not end one, and that it was never meant to be predictive. After the 2017 rally in Charlottesville he publicly set the law aside for marchers carrying swastikas, saying that comparing them to Nazis was fair.
 
@@ -219,7 +219,7 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version quotes Sturgeon's law in a blunter word: "Ninety percent of everything is crap."
 
-The record has a timeline. Theodore Sturgeon, a science-fiction author, aired the idea in a lecture around 1951 and at the 1953 World Science Fiction Convention in Philadelphia. He first put it in print in his *Venture Science Fiction* book column in September 1957, and in March 1958 set it out formally, "Ninety percent of everything is crud," with two corollaries.
+Theodore Sturgeon, a science-fiction author, aired the idea in a lecture around 1951 and at the 1953 World Science Fiction Convention in Philadelphia. He first put it in print in his *Venture Science Fiction* book column in September 1957, and in March 1958 set it out formally, "Ninety percent of everything is crud," with two corollaries.
 
 The context was a defense. Critics were judging all of science fiction by its pulpiest work. Sturgeon's answer was that most science fiction is indeed poor, because most of every genre is, and that the best of it stands with the best writing anywhere. The saying was a case for judging a field by its finest work rather than its most abundant.
 
@@ -229,7 +229,7 @@ The record does not say when "crap" replaced "crud." The general pattern is fami
 
 The "90%" was never a measurement, as the record notes, and the word was never "crap." The earliest printing is Sturgeon's column of September 1957, and like the March 1958 version it says crud.
 
-**Tell someone:** In print in 1957 and 1958, Sturgeon wrote that ninety percent of everything is "crud," and he called it his Revelation.
+**Tell someone:** Sturgeon wrote in 1957 and 1958 that ninety percent of everything is "crud," and he called it his Revelation.
 
 *Sources:* Sturgeon, "On Hand: A Book," *Venture Science Fiction* (September 1957; March 1958). "Sturgeon's law," Wikipedia. Full list: conyso.com/lawtome/laws/sturgeons-law/
 
@@ -249,15 +249,15 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version credits the line about the man with one watch and the man with two to Twain or to Einstein.
 
-The record follows the line through three stages. It first appears, anonymously, in the *San Diego Union* in 1930: "a man with one watch knows what time it is, and a man with two watches could never be sure." In 1961 a newspaper columnist attributed it to Lee Segall, a broadcaster in Dallas. It then picked up the label "Segal's law," spelled with one l, through Arthur Bloch's *Murphy's Law* books. The record calls the eponym unidentified: no documented person named Segal is its author.
+The line went through three stages. It first appears, anonymously, in the *San Diego Union* in 1930: "a man with one watch knows what time it is, and a man with two watches could never be sure." In 1961 a newspaper columnist attributed it to Lee Segall, a broadcaster in Dallas. It then picked up the label "Segal's law," spelled with one l, through Arthur Bloch's *Murphy's Law* books. The record calls the eponym unidentified: no documented person named Segal is its author.
 
 The saying is also less true than it sounds. Two sources that disagree do leave a person unsure, but the remedy is not to go back to one. The sailor's version, quoted by Fred Brooks, is: "Never go to sea with two chronometers; take one or three." With three, a majority vote shows which one is wrong. Engineers build the same idea into aircraft and satellite navigation.
 
 The Twain and Einstein credits spread because anonymous wit looks for an owner. A sharp line with no author attached tends to be given one, and the owners it finds are the most quotable names available. Einstein adds a further pull for a saying about time and measurement. The "Segal" label shows the same process in miniature: a 1961 guess at an author became, through repetition in popular books, the name of a law.
 
-The record dates the line firmly. Its earliest source is the *San Diego Union* of 1930, where it ran with no author's name. Twain and Einstein do not appear in that record, and neither does a Segal who wrote it.
+The line's earliest source is the *San Diego Union* of 1930, where it ran with no author's name. Twain and Einstein do not appear in that record, and neither does a Segal who wrote it.
 
-**Tell someone:** Neither Twain nor Einstein said it: the one-watch line first ran, with no author's name, in the *San Diego Union* in 1930.
+**Tell someone:** The one-watch line first ran, with no author's name, in the *San Diego Union* in 1930; neither Twain nor Einstein said it.
 
 *Sources:* Quote Investigator (2022). "Segal's law," Wikipedia. Full list: conyso.com/lawtome/laws/segals-law/
 
@@ -277,7 +277,7 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version is that impostor syndrome is a recognized condition, described under that name by the researchers who first identified it.
 
-The record starts with the paper itself: "The Impostor Phenomenon in High Achieving Women: Dynamics and Therapeutic Intervention," published in *Psychotherapy: Theory, Research & Practice*. Clance and Imes drew on clinical work with high-achieving professional women who believed their success came from luck, timing or a fooled assessor, whatever their record showed. They described a loop. Over-prepare, or put the work off and then rush it; succeed either way; then credit the effort or the charm rather than the ability.
+The paper was "The Impostor Phenomenon in High Achieving Women: Dynamics and Therapeutic Intervention," published in *Psychotherapy: Theory, Research & Practice*. Clance and Imes drew on clinical work with high-achieving professional women who believed their success came from luck, timing or a fooled assessor, whatever their record showed. They described a loop. Over-prepare, or put the work off and then rush it; succeed either way; then credit the effort or the charm rather than the ability.
 
 The difference in wording matters. A phenomenon names an experience a person has; a syndrome suggests a disorder. The record keeps to the first. The experience is in neither DSM-5 nor ICD-11, so its prevalence and its best treatment are still unsettled, and a 2019 systematic review of 62 studies found that none had tested whether any treatment works. Later research also found the experience across genders and professions, not only among the women of the first study.
 

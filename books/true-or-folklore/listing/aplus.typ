@@ -42,7 +42,7 @@
   let card(t) = box(width: 205pt, height: 78pt, inset: 10pt, stroke: (left: 2pt + red), fill: white, [#kicker[Tell someone] #v(3pt) #text(size: 9pt, style: "italic", t)])
   place(center + horizon, dy: 16pt, grid(columns: 2, column-gutter: 12pt, row-gutter: 12pt,
     card[Archimedes did state the law of buoyancy, but the bath and the "Eureka!" almost certainly come from Vitruvius, writing some two centuries later.],
-    card[According to _Britannica_, Newton's own recollection includes an apple but no bump; the hit on the head was a later embellishment.],
+    card[In the earliest account of Newton's apple, published in 1752, the apple falls but never hits him; the bump came later.],
     card[Most of the chains in Milgram's small-world experiment never reached their target, and the famous six is a median of the minority that did.],
     card[Georges Lemaître derived Hubble's law in 1927, two years before Hubble's paper, and since 2018 the IAU recommends calling it the Hubble–Lemaître law.]))
 })
@@ -58,12 +58,12 @@
   place(center + horizon, dy: 18pt, grid(columns: 4, column-gutter: 10pt,
     tile("../art/librarian/final/gift.png", [A gift], [with a page to sign]),
     tile("../art/librarian/final/game-night.png", [Game night], [teams, a scoresheet, ten rounds]),
-    tile("../art/librarian/final/classroom.png", [Classrooms], [a lesson plan in the back]),
+    tile("../art/librarian/final/classroom.png", [Classrooms], [classroom ideas in the back]),
     tile(ex("host"), [Quiz hosts], [read the question, reveal the verdict])))
 })
 
 // 5. Art banner (linocut panorama), when it exists.
 #if ex("panorama") != none { page(fill: white, {
-  place(center + bottom, image(ex("panorama"), width: 100%, height: 100%, fit: "cover"))
+  place(center + bottom, dy: -6pt, image(ex("panorama"), height: 84%, fit: "contain"))
   place(top + center, dy: 20pt, block(fill: white, inset: (x: 10pt, y: 4pt), text(font: display, size: 22pt)[Ten rounds. One hundred stories.]))
 }) }

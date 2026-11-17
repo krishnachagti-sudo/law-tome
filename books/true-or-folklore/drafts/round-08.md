@@ -21,7 +21,7 @@ The record shows a satirist with a target. Parkinson's evidence was the British 
 
 The figures gave the satire the look of a study. Numbers, a named institution and a crisp general rule are the furniture of research, and satire that borrows them is easily read straight. The opening line also describes something most office workers recognize. An hour-long meeting fills the hour; a fifteen-minute slot covers the same ground. A law that matches daily experience does not need its source checked, and the satirical frame fell away in the retelling.
 
-Read as a serious rule, it also gets stretched. The record is careful about what it does not say. It is not proof that every deadline should be brutal or that rushed work is as good. Past a point, compression destroys quality, and creative or research work needs unpredictable slack. The useful reading is narrower: generous time is not free, because it quietly recruits busywork.
+Read as a serious rule, it also gets stretched. It is not proof that every deadline should be brutal or that rushed work is as good. Past a point, compression destroys quality, and creative or research work needs unpredictable slack. The useful reading is narrower: generous time is not free, because it quietly recruits busywork.
 
 The record is clear on the origin. Parkinson's law is a line from a satirical essay in *The Economist*, 19 November 1955, about an Admiralty that grew while its fleet got smaller.
 
@@ -49,7 +49,7 @@ The record shows a different pedigree. The book's subtitle was *Why Things Alway
 
 Others extended it in the same spirit. Scott Adams's Dilbert Principle, from the 1990s, held that companies deliberately promote their least competent workers into management, to limit the damage they can do to the product. Archibald Putt's version for technical organizations runs: "Technology is dominated by two types of people. Those who understand what they do not manage, and those who manage what they do not understand." A small literature of corollaries grew from a book meant to amuse.
 
-The satire was taken seriously because the mechanism is real. The record's examples are familiar: the best salesperson made sales manager, the strongest engineer moved into a job about politics and people, the gifted researcher buried in budgets. Where promotion rewards current performance and the next role differs in kind, the effect bites. A joke that describes a real failure mode is easy to read as a finding.
+The satire was taken seriously because the mechanism is real. The examples are familiar: the best salesperson made sales manager, the strongest engineer moved into a job about politics and people, the gifted researcher buried in budgets. Where promotion rewards current performance and the next role differs in kind, the effect bites. A joke that describes a real failure mode is easy to read as a finding.
 
 The record also marks its limits. It is a critique of one promotion mechanism, not a claim that everyone ends up incompetent. Plenty of people keep growing into larger roles, and organizations that promote on demonstrated fitness for the next job escape it.
 
@@ -75,7 +75,7 @@ TRUE · FOLKLORE · DISPUTED?
 
 The popular version reports it as something that happened: a committee approved a nuclear reactor in minutes and then argued for far longer about a bike shed.
 
-The record places the scene in an essay titled "High Finance, or the Point of Vanishing Interest." Parkinson's finance committee approves a £10 million atomic reactor in about two and a half minutes. It argues for three-quarters of an hour over a £350 bicycle shed. It then spends over an hour on a refreshment budget of £21 a year, the smallest sum drawing the longest fight. Everyone understands a shed, and no member wants to admit he cannot follow the reactor. From this Parkinson drew his law of triviality: the time a committee spends on an item is inversely proportional to the money involved.
+The scene comes from an essay titled "High Finance, or the Point of Vanishing Interest." Parkinson's finance committee approves a £10 million atomic reactor in about two and a half minutes. It argues for three-quarters of an hour over a £350 bicycle shed. It then spends over an hour on a refreshment budget of £21 a year, the smallest sum drawing the longest fight. Everyone understands a shed, and no member wants to admit he cannot follow the reactor. From this Parkinson drew his law of triviality: the time a committee spends on an item is inversely proportional to the money involved.
 
 Parkinson wrote as a satirist. The record calls the committee and its figures a fictional illustration rather than data, and the "inverse proportion" phrasing rhetorical. It is also a separate idea from his better-known law that work expands to fill the time available, though both come from the same book.
 
@@ -169,11 +169,11 @@ The toast is the exception. Matthews's paper is described in the record as tongu
 
 The assumption that nobody had studied it is understandable. The toast is the mascot of a law built on bias, so it is natural to assume it is bias too. A physics paper about breakfast also sounds like a joke, and this one was written tongue-in-cheek.
 
-The record holds both facts. Sod's law is mostly a trick of memory. Toast landing butter-side down is not, and a 1995 paper in the *European Journal of Physics* worked out why.
+Both facts hold. Sod's law is mostly a trick of memory. Toast landing butter-side down is not, and a 1995 paper in the *European Journal of Physics* worked out why.
 
-**Tell someone:** A 1995 physics paper argued that toast dropped from table height rotates only about half a turn, so it tends to land butter-side down.
+**Tell someone:** Toast dropped from table height rotates only about half a turn, so it tends to land butter-side down, a 1995 physics paper argued.
 
-*Sources:* Matthews, "Tumbling toast, Murphy's Law and the fundamental constants," *European Journal of Physics* 16(4): 172-176 (1995). Ig Nobel Prize, Physics (1996), improbable.com. "Buttered toast phenomenon," Wikipedia. "Sod's law," Wikipedia. "Sod's law," *Collins English Dictionary*. Full list: conyso.com/lawtome/laws/sods-law/
+*Sources:* Matthews, "Tumbling toast, Murphy's Law and the fundamental constants," *European Journal of Physics* 16(4): 172-176 (1995). Ig Nobel Prize, Physics (1996), improbable.com. "Sod's law," *Collins English Dictionary*. "Buttered toast phenomenon," Wikipedia. "Sod's law," Wikipedia. Full list: conyso.com/lawtome/laws/sods-law/
 
 > **QA notes.** 326 words after the page turn by wc, including the source line (310 without it). Every source is secondary, and the paper itself is not in the record's source list; cite Matthews (1995) directly with volume and pages, and the 1996 Ig Nobel citation, before print. Matthews and Dawkins are possibly living; nothing unflattering is said of either. No LEGAL REVIEW needed.
 > **Source check 2026-11-12:** CONFIRMED. The Ig Nobel list gives the 1996 Physics prize to Robert Matthews of Aston University "for his studies of Murphy's Law, and especially for demonstrating that toast often falls on the buttered side," citing the paper in *Eur. J. Phys.* 16(4): 172-6, 1995; Wikipedia confirms the half-turn from table height and Dawkins calling the idea "nonsense" because a coin is unaware of anyone's wish. Sources line now cites the paper and prize. Checked: Ig Nobel winners, improbable.com (https://improbable.com/ig/winners/); "Buttered toast phenomenon," Wikipedia (https://en.wikipedia.org/wiki/Buttered_toast_phenomenon); "Sod's law," Wikipedia (https://en.wikipedia.org/wiki/Sod%27s_law).
@@ -199,9 +199,9 @@ The law has since become a method. The "inverse Conway maneuver," coined by Jonn
 
 The prestigious-journal assumption reads a law's later fame back into its birth. Ideas that end up central tend to be imagined as having started at the center. This one started with a rejection.
 
-The record is plain on the facts. *Harvard Business Review* turned the paper down as unproved, *Datamation* published it in April 1968, and the evidence that it was right came decades later.
+The facts are plain. *Harvard Business Review* turned the paper down as unproved, *Datamation* published it in April 1968, and the evidence that it was right came decades later.
 
-**Tell someone:** By Melvin Conway's own account, *Harvard Business Review* rejected the paper behind his law as unproved; the evidence that it was right came decades later.
+**Tell someone:** *Harvard Business Review* rejected the paper behind Conway's law as unproved, by his own account; the evidence that it was right came decades later.
 
 *Sources:* Conway, "How Do Committees Invent?" *Datamation* 14(5) (1968). Conway, "Conway's Law," author's page. MacCormack, Baldwin & Rusnak, *Research Policy* 41(8) (2012). Full list: conyso.com/lawtome/laws/conways-law/
 
@@ -225,7 +225,7 @@ The note is documented. Fermat's claim was that no three positive whole numbers 
 
 The proof is not. Fermat did prove the case of the fourth power, by his method of infinite descent. He posed the cases of three and four as challenges to other mathematicians but never the general one, and he never mentioned the marvelous proof again. Leonhard Euler published a proof for the cube in his *Algebra* of 1770, and others extended the range case by case. No elementary proof has ever been found. Wiles announced his in 1993; a gap was found and repaired with Taylor, ending a search of 358 years.
 
-The margin story spread because it is the most famous aside in mathematics. A boast with a cliffhanger invites everyone to try, and a lost proof makes a better legend than a mistaken one. The record's reading is plainer: the method that finally worked, proving that certain curves are modular, was far beyond any tool Fermat had. The MacTutor history suggests he may well have realized his proof was wrong.
+The margin story spread because it is the most famous aside in mathematics. A boast with a cliffhanger invites everyone to try, and a lost proof makes a better legend than a mistaken one. The method that finally worked, proving that certain curves are modular, was far beyond any tool Fermat had. The MacTutor history suggests he may well have realized his proof was wrong.
 
 So the note is real, c. 1637, and the proof is not part of the result. The record says Fermat almost certainly did not have one.
 
@@ -261,7 +261,7 @@ The safe statement is the hedged one. KISS is attributed to Kelly Johnson, the N
 
 **Tell someone:** KISS is attributed to Kelly Johnson, but a 1938 newspaper already used "keep it short and simple," so who said it first is not settled.
 
-*Sources:* "KISS principle," Wikipedia. Rich, *Clarence Leonard (Kelly) Johnson 1910–1990: A Biographical Memoir*, National Academy of Sciences (1995). Full list: conyso.com/lawtome/laws/kiss-principle/
+*Sources:* Rich, *Clarence Leonard (Kelly) Johnson 1910–1990: A Biographical Memoir*, National Academy of Sciences (1995). "KISS principle," Wikipedia. Full list: conyso.com/lawtome/laws/kiss-principle/
 
 > **QA notes.** 354 words after the page turn by wc, including the source line (347 without it). The whole entry rests on one secondary source (Wikipedia): the Johnson attribution, the field-repair anecdote, the 1960 Navy record, the comma point and the 1938 *Minneapolis Star* article all need primary confirmation before print. The record gives no date or title for the 1938 article or for Johnson's own writing. The field-repair instruction is labeled "reported" because the record says only that the phrase is "associated with" it. Johnson: the record does not give his status; nothing unflattering. No LEGAL REVIEW needed.
 > **Source check 2026-11-12:** FIXED. Ben Rich's NAS memoir of Johnson quotes him: "Keep it simple, stupid—KISS—is our constant reminder," with a comma, which supports the Johnson link but cuts against the no-comma claim; that claim rests on Misra (2004) via Wikipedia, so the body now says "By one account." Wikipedia gives the 1960 Navy source as "Project KISS" under Rear Admiral Paul D. Stroop (*Chicago Daily Tribune*, 4 December 1960, p. 43) and the 1938 *Minneapolis Star* variant; neither newspaper was opened. Verdict DISPUTED stands. Checked: Rich, NAS memoir (https://www.nasonline.org/wp-content/uploads/2024/06/johnson-clarence.pdf); "KISS principle," Wikipedia (https://en.wikipedia.org/wiki/KISS_principle).
@@ -291,7 +291,7 @@ The record supports the lunch. Fermi raised the question at Los Alamos in 1950; 
 
 **Tell someone:** Fermi did raise the question over lunch at Los Alamos in 1950, though firsthand accounts differ on his exact words.
 
-*Sources:* Jones, "Where is everybody?" An account of Fermi's question, Los Alamos LA-10311-MS (1985). "Fermi paradox," Wikipedia. "Fermi paradox," *Encyclopaedia Britannica*. Full list: conyso.com/lawtome/laws/fermi-paradox/
+*Sources:* Jones, "Where is everybody?" An account of Fermi's question, Los Alamos LA-10311-MS (1985). "Fermi paradox," *Encyclopaedia Britannica*. "Fermi paradox," Wikipedia. Full list: conyso.com/lawtome/laws/fermi-paradox/
 
 > **QA notes.** 379 words after the page turn by wc, including the source line (368 without it). The lunch, its date and the differing recollections rest on Wikipedia; find the firsthand accounts before print. The record gives no date or title for Sagan's first printing, and no date for Tipler; the entry gives neither. Colleagues are named by surname only, as in the record. "Where is everybody?" is presented as the usual rendering, not Fermi's verified words, per the candidate flag. Hanson, Tipler and Hart are possibly living; nothing unflattering is said of them. No LEGAL REVIEW needed.
 > **Source check 2026-11-12:** CONFIRMED. Eric Jones's 1985 Los Alamos report collects the firsthand accounts of the 1950 luncheon with Konopinski, Teller and York; Wikipedia gives the three different recollections ("Where is everybody?" is Teller's), dates Sagan's first printing to a 1963 footnote, Hart to 1975 and Hanson's Great Filter to 1996. Checked: Jones, LA-10311-MS, OSTI (https://www.osti.gov/biblio/5746675); "Fermi paradox," Wikipedia (https://en.wikipedia.org/wiki/Fermi_paradox).

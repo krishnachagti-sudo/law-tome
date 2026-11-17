@@ -1,0 +1,58 @@
+{
+  "expert": "Secondary-school teacher who builds lessons from books like this",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-17",
+  "first_impression": "I would use this. 'Why did the myth spread?' is a ready-made source-evaluation lesson, and the stories fit psychology, science, history and Theory of Knowledge. But as printed I could not legally hand a story to a class, the classroom section is half a page, and my head of department would ask about a few word choices and about how the content was checked before approving a class set.",
+  "findings": [
+    {
+      "page": "2",
+      "issue": "The copyright page allows copying only of 'the score table and team scoresheet'. A teacher cannot photocopy a question and its answer for a class, which is the main way a book like this gets used in a lesson.",
+      "why_it_matters": "Without that permission the book is a teacher's personal read, not a classroom resource, and departments will not buy class sets.",
+      "fix": "Add to the copyright page: 'Teachers may photocopy individual question-and-answer spreads for use in their own classroom.' Say the same on p.236.",
+      "severity": 3
+    },
+    {
+      "page": "236, aplus-4",
+      "issue": "'Using this book in class' is four steps and a two-line subject map. The A+ banner promises 'a lesson plan in the back'. There are no learning objectives, no worksheet, no entry-by-subject list and no age guidance.",
+      "why_it_matters": "Teachers adopt resources that save planning time; half a page does not, and the A+ claim will draw a disappointed review from exactly the buyer it targets.",
+      "fix": "Expand to two pages: three learning objectives (identify a claim, find the earliest source, explain why a claim spreads); a photocopiable 'Claim check' sheet (Claim / Who supposedly said it / Earliest source / Verdict / Why it spread); and a list of entries by subject with a reading-level mark. Until then, change the A+ text to 'classroom ideas in the back'.",
+      "severity": 2
+    },
+    {
+      "page": "throughout; e.g. 130, 132, 116, 134",
+      "issue": "Reading level is adult: answers average about 430 words with terms like 'conjugate variables', 'Fourier transforms', 'reductio ad absurdum', 'elasticity of taxable income' and 'aeroelastic flutter'. Fine for ages 15-18; too hard for 11-14 without heavy support.",
+      "why_it_matters": "A teacher of younger classes who buys on the back-cover promise will find most entries unusable and say so.",
+      "fix": "State 'Suits ages 15 and up' on p.236 and in the listing, and mark in the subject list the 20 or so entries that work for younger classes (e.g. No. 2, 10, 52, 63, 80, 85, 92).",
+      "severity": 2
+    },
+    {
+      "page": "51-52, 7; 125-126, 9",
+      "issue": "Two items a head of department would query: Q18 prints 'crap' in the question and the contents; Q51 uses 'Eskimo languages' with an igloo cartoon. In Canada and for many Inuit, 'Eskimo' is considered offensive, though the myth itself uses the word.",
+      "why_it_matters": "One parent complaint about a class text costs more than the book is worth to the school, and the igloo stereotype will draw the most criticism.",
+      "fix": "Q51: ask 'Do Inuit and Yupik languages have far more words for snow than English?' and add one sentence explaining that the myth is usually told about 'Eskimo' languages and why that word is avoided; replace the igloo with a plain snowfield. Q18: keep the word (it is the point), but flag it in the teacher notes.",
+      "severity": 2
+    },
+    {
+      "page": "2, 237",
+      "issue": "The book says entries were 'drafted with AI' and 'read and checked' by the editor, with no description of the checking beyond that. 84 of the 100 source lists include Wikipedia.",
+      "why_it_matters": "A department that tells students not to cite Wikipedia, and has policies on AI-generated material, will hesitate to adopt a book about checking sources that leans on both.",
+      "fix": "Keep the AI disclosure. On p.237, say concretely what checking meant (for example, that each verdict was traced to the named primary or scholarly source), and in the teacher notes turn the Wikipedia citations into an exercise: 'Find the source Wikipedia cites and check it.'",
+      "severity": 2
+    },
+    {
+      "page": "236",
+      "issue": "The subject map leaves out the best fit: IB Theory of Knowledge, and media-literacy or critical-thinking courses (and CBSE/ICSE equivalents for the India release). It also maps whole rounds when single entries fit better (Round 6 includes a language entry and a medical one).",
+      "why_it_matters": "The buyers most likely to adopt this are TOK and critical-thinking teachers, and the page does not speak to them.",
+      "fix": "Add one line: 'Every entry works as a Theory of Knowledge or media-literacy starter.' Map entries rather than rounds in the expanded subject list.",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "The 'why it spread' paragraph: the best media-literacy material in the book.",
+    "Step 2 of the classroom page, 'Ask what evidence would settle it', which is the right question.",
+    "Sources printed on every answer, so students can be sent to check one.",
+    "DISPUTED as an answer, which teaches that 'we don't know yet' is a legitimate conclusion."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "Add the photocopy permission before print; with a two-page teacher section it becomes a class-set book."
+}

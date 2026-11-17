@@ -19,7 +19,7 @@ The popular version is a picture. Confidence is plotted against experience. It s
 
 The paper measured something else. Justin Kruger and David Dunning published "Unskilled and Unaware of It" in the *Journal of Personality and Social Psychology* in 1999. They tested people on grammar, logic and humor, then asked them to estimate how they ranked. Low performers systematically overestimated their rank. Students who scored in the bottom quarter, around the 12th percentile on average, estimated that they were around the 62nd. The paper's subject is self-estimated rank set against actual rank. Confidence over a learning career, the curve's axis, is not what the 1999 studies reported.
 
-The mountain is not in the paper at all. The record places it later and online, and no peak, valley or "experience" axis comes from the journal article.
+The mountain is not in the paper at all. It came later and online, and no peak, valley or "experience" axis comes from the journal article.
 
 The curve spread because it matches a feeling many people recognize. A little knowledge can feel like a lot: after one course or one article confidence can spike, and deeper study brings doubt back as the true size of a field comes into view. A shape that matches experience feels true, and a label like Mount Stupid is easy to share. It also makes a handy weapon in arguments. The record warns against that use: the effect is not a license to call people one disagrees with stupid.
 
@@ -83,7 +83,7 @@ The 1908 paper measured no stress and no humans. It reported how fast mice learn
 
 **Tell someone:** Yerkes and Dodson's 1908 paper measured no stress and no humans, only how fast forty mice learned under shocks of different strengths.
 
-*Sources:* Yerkes & Dodson, "The Relation of Strength of Stimulus to Rapidity of Habit-Formation," *Journal of Comparative Neurology and Psychology* 18 (1908). "Yerkes–Dodson law," Wikipedia. "Yerkes-Dodson: Lore, not Law," The Learning Scientists (2024). Full list: conyso.com/lawtome/laws/yerkes-dodson-law/
+*Sources:* Yerkes & Dodson, "The Relation of Strength of Stimulus to Rapidity of Habit-Formation," *Journal of Comparative Neurology and Psychology* 18 (1908). "Yerkes-Dodson: Lore, not Law," The Learning Scientists (2024). "Yerkes–Dodson law," Wikipedia. Full list: conyso.com/lawtome/laws/yerkes-dodson-law/
 
 > **QA notes.** 349 words after the page turn by wc (verdict line through last body paragraph, excluding the sources line). FIGURE: popular version marked POPULAR VERSION beside a faithful redraw. POPULAR VERSION: one smooth, symmetric inverted U; x-axis "arousal" or "stress", y-axis "performance", peak in the middle, no task distinction. Faithful redraw: x-axis "shock strength" (not arousal), y-axis "speed of learning" in mice; separate series by task difficulty, with the peak depending on difficulty; plotted as the paper's data points, not a smooth curve; annotated that a middle strength was best in two of three experiments (sets I and III) and that the easy task (set II) rose steadily, from forty mice. The record gives no values; take every point from the 1908 paper's tables (psychclassics.yorku.ca). The record's meaning field says harder tasks peak at lower arousal; confirm direction against the paper before drawing. Hebb (1955), the "handful of citations for half a century", and the chick and kitten replications reach the record through Wikipedia and The Learning Scientists; trace to primaries. No living person criticized.
 > **Source check 2026-11-12:** FIXED. The 1908 paper itself says "each of the forty mice experimented with" (sets of 12, 20 and 8), not "about a dozen" (The Learning Scientists' figure of 12 matches set I only); and a middle shock was best in set I (medium difficulty) and set III (hard, best near 195 units), while in the easy set II learning sped up to the strongest shock (420 units), so "clearly in only one of the three experiments" is replaced in body, closing paragraph, Tell someone line and figure note. The paper confirms harder discriminations favor weaker shocks. "A handful of times" matches Wikipedia's (via Corbett 2015) ten citations in fifty years; chick and kitten non-replications and the human-stress point are from The Learning Scientists (Cindy Nebel, 29 February 2024). Checked: Yerkes & Dodson 1908, Classics in the History of Psychology (https://psychclassics.yorku.ca/Yerkes/Law/); "Yerkes-Dodson: Lore, not Law" (https://learningscientists.org/blog/2024/2/29-1); "Yerkes–Dodson law," Wikipedia (https://en.wikipedia.org/wiki/Yerkes%E2%80%93Dodson_law).
@@ -113,7 +113,7 @@ The hierarchy is Maslow's and the pyramid is not. The earliest pyramid that Brid
 
 **Tell someone:** The hierarchy of needs is Maslow's, but the pyramid came from later authors, and his own ordering was less rigid than the shape.
 
-*Sources:* Maslow, "A Theory of Human Motivation," *Psychological Review* 50(4) (1943). "Maslow's Hierarchy of Needs," Simply Psychology. "Maslow's hierarchy of needs," EBSCO Research Starters. Bridgman, Cummings & Ballard, "Who Built Maslow's Pyramid?" *Academy of Management Learning & Education* 18(1) (2019). Wahba & Bridwell, "Maslow reconsidered," *Organizational Behavior and Human Performance* 15 (1976). Full list: conyso.com/lawtome/laws/maslows-hierarchy-of-needs/
+*Sources:* Maslow, "A Theory of Human Motivation," *Psychological Review* 50(4) (1943). Wahba & Bridwell, "Maslow reconsidered," *Organizational Behavior and Human Performance* 15 (1976). Bridgman, Cummings & Ballard, "Who Built Maslow's Pyramid?" *Academy of Management Learning & Education* 18(1) (2019). "Maslow's Hierarchy of Needs," Simply Psychology. "Maslow's hierarchy of needs," EBSCO Research Starters. Full list: conyso.com/lawtome/laws/maslows-hierarchy-of-needs/
 
 > **QA notes.** 368 words after the page turn by wc (verdict line through last body paragraph, excluding the sources line). FIGURE: popular version marked POPULAR VERSION beside a faithful redraw. POPULAR VERSION: a five-tier pyramid, physiological at the base, then safety, love and belonging, esteem, self-actualization at the tip. Faithful redraw: not a pyramid, since the record says Maslow drew none. Show the five levels as an ordered list of labeled bands, with a note that the order is not rigid and several needs can be pursued at once, and mark cognitive, aesthetic and self-transcendence as later additions in a different tone. Do not use any specific published alternative shape unless its source is cited. The "drawn by later authors" claim, the verdict itself, reaches the record only through Simply Psychology; the record names no first pyramid, author or date (flagged "source" in OUTLINE). Find the earliest printed pyramid before print and name it on the page; until then the verdict rests on a secondary source. Wahba & Bridwell (1976) is not in the source list; add it. Check "never fully satisfied" and the flexible-ordering point against Maslow (1943) or (1954). No living person criticized.
 > **Source check 2026-11-12:** FIXED. Bridgman, Cummings & Ballard (2019) searched Maslow's books, articles, diaries and archival papers and found no pyramid; they trace the first one to the consulting psychologist Charles McDermid, "How money motivates men," *Business Horizons* (1960), probably inspired by Keith Davis's 1957 stepped diagram. That earliest dated source now replaces "The record names no source or date for the first drawing", and the paper and Wahba & Bridwell (1976, confirmed) are added to the sources. Flexible ordering ("the order in which needs emerge is not fixed") and self-transcendence as Maslow's late pinnacle are supported; "never fully satisfied" is not directly confirmed (Kaufman reports only that Maslow saw needs as partly satisfied at once), so check it in Maslow 1954 or 1962. Checked: Scott Barry Kaufman, "Who Created Maslow's Iconic Pyramid?" *Scientific American* blog, 23 April 2019 (https://www.scientificamerican.com/blog/beautiful-minds/who-created-maslows-iconic-pyramid); Bridgman et al. and Wahba & Bridwell via Crossref (https://api.crossref.org/works/10.5465/amle.2017.0351; https://api.crossref.org/works/10.1016/0030-5073(76)90038-6).
@@ -161,7 +161,6 @@ The story is so neat that it is easy to doubt. A statistician looks at bombers r
 
 The record treats the anecdote as partly embellished but its core as genuine. In the Second World War, Abraham Wald reasoned that armor should go where returning planes had the fewest bullet holes, not the most, since planes hit in those places did not come back. He made that reasoning rigorous in his 1943 memoranda, which the Center for Naval Analyses reprinted in 1980 as "A Method of Estimating Plane Vulnerability Based on Damage of Survivors". It was rigorous statistics, not a slogan. It accounted for the downed planes rather than treating the survivors as a fair sample.
 
-The embellishments are the picture and the label. The red-dotted airplane was drawn decades later. The name "survivorship bias", and its attachment to Wald, also came later.
 
 The idea Wald formalized now reaches well beyond aircraft. Survivorship bias is the error of studying only what came through a selection process while the failures drop out of view. Funds that perform badly are closed and dropped from databases, so the surviving set overstates average returns, by about 0.9 percent a year in one 1996 study. People admire old buildings and conclude they were built to last, forgetting the flimsy ones long since demolished.
 
@@ -169,7 +168,7 @@ Doubt about the story spread for a fair reason: parts of it were embellished. Wh
 
 The reasoning behind the story is on record, dated 1943 and reprinted in 1980. Wald's method rested on the planes that never came back.
 
-**Tell someone:** Wald did reason that armor belongs where returning planes had the fewest bullet holes, since planes hit there did not come back.
+**Tell someone:** Wald's 1943 method pointed armor toward the places where returning planes had the fewest bullet holes, since planes hit there did not come back.
 
 *Sources:* Wald, "A Method of Estimating Plane Vulnerability Based on Damage of Survivors" (1943; Center for Naval Analyses reprint, 1980). Wallis, "The Statistical Research Group, 1942–1945: Rejoinder," *Journal of the American Statistical Association* 75 (1980). Elton, Gruber & Blake, "Survivorship Bias and Mutual Fund Performance," *Review of Financial Studies* 9(4) (1996). "Survivorship bias," Wikipedia. Full list: conyso.com/lawtome/laws/survivorship-bias/
 
@@ -201,7 +200,7 @@ The land story spread because it gives an abstract rule a concrete origin. A nam
 
 The 80 percent of Italy's land has not been found in Pareto's writing, and Juran later called the name his own mistake. What Pareto did document was the heavy concentration of income and wealth, the kind of skew the rule now describes.
 
-**Tell someone:** The famous 80/20 split of Italy's land has not been traced to Pareto's text; what he actually documented was the heavily unequal distribution of income and wealth.
+**Tell someone:** Pareto documented heavily unequal income and wealth; the famous 80/20 split of Italy's land has never been traced to his text.
 
 *Sources:* Pareto, *Cours d'économie politique* (1896). Juran, *Quality Control Handbook* (1951). Juran, "The Non-Pareto Principle; Mea Culpa" (1974; *Quality Progress*, 1975). Rooney, "Microsoft's CEO: 80-20 Rule Applies To Bugs, Not Just Features," CRN (3 October 2002). Full list: conyso.com/lawtome/laws/pareto-principle/
 
@@ -228,7 +227,7 @@ Newcomb set out the observation in "Note on the Frequency of Use of the Differen
 
 The physicist Frank Benford rediscovered the pattern in his 1938 paper "The Law of Anomalous Numbers". He tested it across more than twenty thousand values, among them river surface areas, populations, physical constants and molecular weights, and their leading digits followed the curve. The law was named after him.
 
-Benford's name stuck because his paper did the work that makes a law famous. It gathered thousands of numbers from unrelated sources, all obeying one curve. A short note about worn pages in a book of tables is easier to overlook. The record calls the case a classic instance of Stigler's law of eponymy, which has its own entry in Round 5.
+Benford's name stuck because his paper did the work that makes a law famous. It gathered thousands of numbers from unrelated sources, all obeying one curve. A short note about worn pages in a book of tables is easier to overlook. The record calls the case a classic instance of Stigler's law of eponymy: discoveries are seldom named after the people who made them.
 
 The law now has a working use and a notorious misuse. Auditors, following Mark Nigrini, screen ledgers and tax figures for sharp deviations that can flag fabricated entries for a closer look. It is also wrongly applied to election vote counts, where precinct totals sit in a narrow range and the law is not expected to hold. Deviation is a prompt to look closer, never proof of manipulation.
 
@@ -243,14 +242,14 @@ The law carries Benford's name and his 1938 evidence. The first observation was 
 
 ---
 
-<!-- slug: the-gamblers-fallacy | candidate: 110 | verdict: DISPUTED | difficulty: 2 | surprise: 4 -->
+<!-- slug: the-gamblers-fallacy | candidate: 110 | verdict: FOLKLORE | difficulty: 2 | surprise: 4 -->
 ## Did roulette land on black 26 times in a row at Monte Carlo?
 
 TRUE · FOLKLORE · DISPUTED?
 
 *(turn the page)*
 
-**DISPUTED.** The gambler's fallacy is real, but its most famous example is unverified. No 1913 record of a run of 26 blacks at Monte Carlo has been found; the earliest known account is a 1959 popular book on probability by Darrell Huff and Irving Geis.
+**FOLKLORE.** The gambler's fallacy is real, but nothing from the time supports its most famous example. No 1913 record of a run of 26 blacks at Monte Carlo has been found; the earliest known account is a 1959 popular book on probability by Darrell Huff and Irving Geis.
 
 The popular version is precise. On 18 August 1913, at the Monte Carlo Casino, the ball landed on black 26 times in a row, and with each black the gamblers grew surer that red was due, raised their bets on red, and lost heavily.
 
@@ -264,7 +263,7 @@ The story spread because it is the ideal illustration. A run of 26 feels as thou
 
 The 1913 run rests on nothing earlier than a 1959 book. The error it illustrates is real: each spin of a fair wheel, including one after 26 blacks, keeps the same odds as the first.
 
-**Tell someone:** The famous 1913 run of 26 blacks at Monte Carlo has no known record before a 1959 book, but the gambler's fallacy it illustrates is real: a fair wheel has no memory.
+**Tell someone:** Monte Carlo's 1913 run of 26 blacks has no record before a 1959 book; the fallacy is real, since a fair wheel has no memory.
 
 *Sources:* Huff & Geis, *How to Take a Chance* (1959), pp. 28–29 (earliest known account). Quinn, "Fake News or Fact?" (blog, 2017). "Gambler's fallacy," Wikipedia. Full list: conyso.com/lawtome/laws/the-gamblers-fallacy/
 
@@ -293,7 +292,7 @@ Two things fed the objections. Intuition says that two closed doors must be fift
 
 The storm of letters is on record, and so is the answer. Under the standard host rules, vos Savant was right: switching wins two-thirds of the time.
 
-**Tell someone:** By her own estimate, some ten thousand readers, close to a thousand with doctorates, wrote in to tell Marilyn vos Savant she was wrong, and she was right.
+**Tell someone:** Some ten thousand readers, close to a thousand with doctorates, told Marilyn vos Savant she was wrong, by her own estimate. She was right.
 
 *Sources:* Selvin, letters to *The American Statistician* (1975). Tierney, "Behind Monty Hall's Doors: Puzzle, Debate and Answer?" *The New York Times* (1991). "The Time Everyone 'Corrected' the World's Smartest Woman," Priceonomics. "Monty Hall problem," Wikipedia. Full list: conyso.com/lawtome/laws/the-monty-hall-problem/
 

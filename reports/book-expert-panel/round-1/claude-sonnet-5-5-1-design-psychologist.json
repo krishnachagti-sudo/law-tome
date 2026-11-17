@@ -1,0 +1,72 @@
+{
+  "expert": "Design psychologist",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "first_impression": "The guess-then-turn loop is the right engine for this material, because a committed wrong guess is what makes a correction stick. But the book promises that 'the confident misses are the ones that stick' and then never uses the confidence ticks it asks readers to make, and several small cues quietly leak the answer or blur the lesson.",
+  "findings": [
+    {
+      "page": "15 (every question page), 5, 34",
+      "issue": "The SURE / GUESSING ticks are collected but never used. Scoring is 'a point for each right call' (p. 5, p. 235), the round-end line only asks for 'MOST CONFIDENT MISS: №' in tiny type, and nothing tells the reader to look back at their sure-but-wrong calls. The hypercorrection effect (confident errors get corrected best) is the book's main memory promise and the design drops it at the last step.",
+      "why_it_matters": "Readers who tick SURE and miss get no prompt to dwell on that page, so the mechanic that should fix the memory is decorative.",
+      "fix": "Add one scoring line to p. 5 and the round-end area: 'Sure and right 2, guessing and right 1, sure and wrong minus 1.' On the round-end line replace the single blank with two boxes, 'Sure and wrong: №__ №__', and add 'Turn back to those pages and read the Tell someone line aloud.'",
+      "severity": 3
+    },
+    {
+      "page": "15, 17, 33, 125 and every question page; p. 5",
+      "issue": "Stars sit beside the question number before the guess, and p. 5 defines three stars as 'a story almost everyone repeats'. A reader who sees three stars learns that the popular version is probably the thing being busted, so the stars act as a hint towards FOLKLORE. Stars also mix two ideas, difficulty and fame, and the ratings do not rise within a round (p. 15 Eureka is two stars, p. 17 Newton's head one star).",
+      "why_it_matters": "A cue that shifts the guess before it is made weakens the surprise on which the whole learning effect depends.",
+      "fix": "Remove the stars from question pages and print them on the answer page instead as 'How many people get this wrong: ★★☆'. Rewrite p. 5 to define them that way and drop the claim that each round 'gets harder as it goes'.",
+      "severity": 3
+    },
+    {
+      "page": "19/20, 69/70, 73/74: № 3, 26, 28, 30, 100 and about a third of the book",
+      "issue": "The question flips polarity from entry to entry. Sometimes the question states the myth (№ 1 'Did Archimedes shout Eureka?', answer FOLKLORE). Sometimes it states the correction, so that TRUE means 'the debunking is right' (№ 3 'Did Newton himself tell the apple story?', № 28, № 30). Sometimes it is a negative-framed myth (№ 26 'On most trials, did Asch's subjects go along...?', FOLKLORE). Readers have to re-decide what TRUE refers to every time.",
+      "why_it_matters": "The extra inversion adds mental load unrelated to the fact being learned and produces wrong guesses that feel unfair, not instructive.",
+      "fix": "Pick one frame: every question states the story as people usually tell it, and the verdict says whether it holds. Rewrite № 3 as 'The apple story was made up by Newton's admirers', № 28 as 'Robbers Cave worked first time', № 26 as 'Asch's subjects usually went along with the wrong answer', and so on for the 30 or so affected entries.",
+      "severity": 2
+    },
+    {
+      "page": "34, 56 and each round's last answer page",
+      "issue": "The round-end moment has the strongest reflection value in the book, but it is staged as one line of 6-7 pt mono type over grey art ('ROUND SCORE: ___ / 10   MOST CONFIDENT MISS: № ___ / NEXT → ROUND 2'). There is no pause, no summary of what the round taught, and no reason to stop and look back.",
+      "why_it_matters": "Without a deliberate stop, rounds run into each other and the spaced review that would anchor the corrections never happens.",
+      "fix": "Give the round end its own boxed band on the last answer page: large blanks for score and sure-and-wrong, plus one prompt such as 'Cover the Tell someone lines and name one story from this round that fooled you.'",
+      "severity": 2
+    },
+    {
+      "page": "233, 234",
+      "issue": "'The 10 biggest surprises' is a perfect retrieval-practice page, but it prints the TRUE / FOLKLORE / DISPUTED symbol beside every question, so a reader cannot re-test themselves. The next page asks 'How many of the ten did you call right?' with no tick boxes or place to put a number.",
+      "why_it_matters": "A second pass at the hardest ten, weeks later, is the best chance to turn a one-off surprise into long-term memory, and the layout gives it away.",
+      "fix": "Print p. 233 with empty three-option tick boxes and put the verdicts in a small upside-down strip at the page foot. On p. 234 add a 'Surprises score ___ / 10' box beside Ida and Hearsay.",
+      "severity": 2
+    },
+    {
+      "page": "16, 18, 66 and every answer page",
+      "issue": "The answer opens with the verdict stamp and a one-line statement, then restates the myth in full ('The popular version is...') before reaching the correction, and the Tell someone line, the one thing to remember, comes last in small italic after about 300 words. The most memorable line sits at the point of lowest attention, and the wrong version gets a full paragraph of repeat exposure.",
+      "why_it_matters": "Re-reading a false claim at length can raise its familiarity, and a skimmer who stops reading before the end leaves with the myth and not the fix.",
+      "fix": "Move the boxed Tell someone line directly under the stamp, keep the stamp-plus-Tell-someone block as the two things read aloud, and shorten the 'popular version' paragraph to one sentence of no more than 25 words.",
+      "severity": 2
+    },
+    {
+      "page": "18, 20, 60, 32",
+      "issue": "Several Tell someone lines lead with a source or a hedge instead of the fact: 'According to Britannica, Newton's own recollection includes an apple but no bump' (p. 18), 'The record finds no basis for 38 silent witnesses' (p. 60). The best ones lead with a concrete, checkable surprise (p. 26: 'Look for E = mc² in Einstein's 1905 paper and it isn't there'; p. 54: 'Neither Twain nor Einstein said it').",
+      "why_it_matters": "A line that opens with an authority name or a hedge is a poor retrieval cue and is hard to repeat at dinner, which is the book's own stated test.",
+      "fix": "Rewrite every Tell someone line to under 20 words, fact first, source last, with a concrete image or number where one exists. Use p. 26 and p. 54 as the model and mark every line starting 'According to' or 'The record' for rewrite.",
+      "severity": 2
+    },
+    {
+      "page": "235, 238",
+      "issue": "The bands (85 and over Myth Buster, 50 to 69 Healthy Skeptic, under 50 Easily Fooled) put a first-time player in labels that sound like failure, and 48 of the 100 verdicts are FOLKLORE, so even always saying FOLKLORE scores just under the Easily Fooled line. A three-option quiz has a one-in-three chance baseline. Under 50 as 'Easily Fooled' will feel like an insult to a gift recipient who read the whole book.",
+      "why_it_matters": "A score band that makes the average player feel foolish lowers the wish to replay, to share the score, or to give the book on.",
+      "fix": "Rename the bottom two bands in a warm register ('Curious Beginner' under 40, 'Healthy Skeptic' 40 to 64, 'Fact Checker' 65 to 84, 'Myth Buster' 85 and over) and keep the 'good company' line from p. 235 on the score table page too.",
+      "severity": 2
+    }
+  ],
+  "keep": [
+    "The guess-then-turn structure with a verdict stamp that appears only on the answer page.",
+    "The Tell someone panel as a distinct, boxed, repeatable take-away.",
+    "Ghost-art on the answer pages that shows the corrected scene (p. 18 apple on the ground), not the myth.",
+    "The score table with named bands and a certificate as a finish line."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "The core mechanic is sound; it needs the confidence ticks put to work, the answer-giving cues removed from question pages, and a single consistent question frame."
+}

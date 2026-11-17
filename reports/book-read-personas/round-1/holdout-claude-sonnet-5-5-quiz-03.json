@@ -1,0 +1,67 @@
+{
+  "id": "quiz-03",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "card_quote": "Default disposition: 'I've heard all this before.' Enjoys catching books in errors.",
+  "how_read": "Library copy, pencil in hand, keeping his own tally against the book. Reads in order over about a week, quickly through the ones he already knows, slowly where something is new or wrong. Checks the contents page numbers and the surprises list against the book because he does that with everything. Skips the certificate and the sign-up pitch.",
+  "stopped_at": "P237",
+  "w1_friction": [
+    {"page": "P002", "type": "doubt-verdict", "note": "Drafted by AI, then somebody read it. That is a lot of trust for a book of corrections. We will see.", "quote": "entries were drafted with AI tools from the Law Tome’s"},
+    {"page": "P005", "type": "talked-down", "note": "There it is, the smug schoolmaster tone. I have been at this table for fifty years.", "quote": "Don’t be the one at the table who repeats it."},
+    {"page": "P016", "type": "bored", "note": "Archimedes and the crown, heard it, knew the bath was Vitruvius.", "quote": "The anecdote has a different author."},
+    {"page": "P020", "type": "doubt-verdict", "note": "The cited source is Stukeley 1752, a friend writing down an old man's memory. Calling that Newton telling it is generous.", "quote": "Newton’s own later recollection"},
+    {"page": "P034", "type": "bored", "note": "I know it is toil. The Latin rule of three tangent is padding.", "quote": "Four items are one too many for the pattern"},
+    {"page": "P048", "type": "bored", "note": "Same razor as two pages back with a different famous name. They are stretching to hit a hundred.", "quote": "The earliest known printing of the razor is from 1980."},
+    {"page": "P062", "type": "other", "note": "Fair enough on the coaching, but I would like to see who says the ad drew aggressive types.", "quote": "attracted people higher in aggression and authoritarianism"},
+    {"page": "P084", "type": "looks-wrong", "note": "Stamp says TRUE and the paragraph says he never flew the kite. Also this is a second number 31 and it sits in the wrong section. Somebody did not proofread.", "quote": "Franklin never flew a kite in a thunderstorm"},
+    {"page": "P086", "type": "doubt-verdict", "note": "One 2026 paper that says it inverts. I will wait for the replications before I rewrite my view.", "quote": "the pattern disappears and then inverts"},
+    {"page": "P094", "type": "talked-down", "note": "Page 92 says it was not Wald's picture, now page 94 says Wald did tell them. That is trick-question framing, one story in two halves to catch me out.", "quote": "The story is so neat that it is easy to doubt."},
+    {"page": "P118", "type": "bored", "note": "Laffer twice. Once was enough, and I knew the napkin was dodgy.", "quote": "Arthur Laffer has disclaimed originality for the curve"},
+    {"page": "P128", "type": "doubt-verdict", "note": "Disputed? Pullum showed the fifty words was a hoax. This hedges to avoid the answer.", "quote": "The inflated figures of fifty and a hundred are myth."},
+    {"page": "P174", "type": "looks-wrong", "note": "Goldfish. Suddenly written like a journal abstract, no real sources, 'various laboratory studies', and a duplicate number 71 under the wrong round heading. Looks like a different author or a glitch.", "quote": "Carassius auratus exhibits retention intervals"},
+    {"page": "P234", "type": "bored", "note": "Hardin again after the last page. Two pages for one essay.", "quote": "The overgrazed-pasture parable came from William Forster Lloyd"},
+    {"page": "P237", "type": "looks-wrong", "note": "I looked up the toast entry at the page it gives, 188, and it is on 192. Contents is off by two or more from Round 4 on, and I count 102 entries, not 100.", "quote": "been studied seriously? p. 188"}
+  ],
+  "w1_best": [
+    {"no": 35, "why": "The red-dotted bomber was drawn around 2005 by a designer. I had that picture in my head as Wald's own."},
+    {"no": 91, "why": "I believed the Delhi cobra breeding for forty years. It traces to one 'was alleged' in Madras. That one got me."},
+    {"no": 38, "why": "Twenty-six blacks at Monte Carlo has no record before Huff in 1959. Nice catch."},
+    {"no": 37, "why": "Juran owning up to naming it wrong in 1974 is the sort of detail I like."},
+    {"no": 100, "why": "Potato famine as the textbook Giffen good is discredited. My economics text taught it."}
+  ],
+  "w1_flat": [
+    {"no": 1, "why": "Everybody has heard that this is a Vitruvius story."},
+    {"no": 16, "why": "A repeat of Hanlon's razor with a new name on the front."},
+    {"no": 36, "why": "Second page on Wald to say the first page's lesson is true after all."},
+    {"no": 46, "why": "A napkin nobody remembers. Disputed, who cares."},
+    {"no": 69, "why": "Dawkins coined meme, a TRUE I could have given at age twelve."}
+  ],
+  "w1_juster": 4,
+  "w1_review": {
+    "headline": "Decent myth-buster with sloppy production",
+    "body": "I knew roughly a third of these and I learned a dozen things, like the red-dot plane and the Delhi cobras, and I like that it names its sources and keeps the hedges. But a book of corrections should not contradict its own stamp on the Franklin page, repeat entries to pad to a hundred, or print page references that are off by several pages. The AI-drafting note on page 2 does not inspire confidence either. Bottom line: borrow it from the library, do not buy the second one until they proofread."
+  },
+  "w2_review_first": "It is a myth-quiz with a good mix of stories, and I found maybe a dozen I had wrong. But it repeats itself and the editing is sloppy, a stamp contradicting its own paragraph on one page. Get it from the library.",
+  "w2_lost": [
+    {"page": "P048", "why": "Second Hanlon razor page, nothing new."},
+    {"page": "P094", "why": "Wald again, I read the heading and skipped to the Tell someone line."},
+    {"page": "P118", "why": "Laffer part two."},
+    {"page": "P234", "why": "Hardin part two. I was paging ahead."}
+  ],
+  "w2_read_aloud": [
+    {"no": 91, "why": "Nobody at the table will believe the cobras were never bred in Delhi."},
+    {"no": 35, "why": "Everyone has seen the red-dot bomber, nobody knows it was drawn in 2005."},
+    {"no": 38, "why": "Monte Carlo and 26 blacks, they will all say they have heard it."},
+    {"no": 63, "why": "Six downloads before the lawsuit is a good number to spring on people."},
+    {"no": 92, "why": "Rat tails, because it is the documented one after the cobra falls apart."}
+  ],
+  "w2_cut": [
+    {"no": 69, "why": "Too easy, a pop-quiz freebie."},
+    {"no": 47, "why": "Folds into the napkin page, one entry would do."},
+    {"no": 99, "why": "Same Hardin essay as the one before it."},
+    {"no": 72, "why": "Peter Principle as satire, everyone knows."},
+    {"no": 19, "why": "One watch or two, a smug line and a thin answer."}
+  ],
+  "w2_juster": 3,
+  "w2_book2": "More padding and more proofing errors, or any more trick-question framing where one story gets two pages to fool me."
+}

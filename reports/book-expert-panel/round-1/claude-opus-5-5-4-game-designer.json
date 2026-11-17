@@ -1,0 +1,65 @@
+{
+  "expert": "Game and quiz designer",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-17",
+  "first_impression": "A clean three-option format that a host can run straight from the book, with nice touches (most confident miss, a bonus point for explaining the answer). The problem is the answer key: it has a strong house bias and readable tells, so experienced players will beat it by strategy rather than knowledge, and a few questions have no clean right answer to argue from.",
+  "findings": [
+    {
+      "page": "throughout; rounds 1, 2 and 8",
+      "issue": "The verdict mix is 48 FOLKLORE, 34 TRUE, 18 DISPUTED, and it is lumpy by round: Round 2 is nine FOLKLORE and one DISPUTED; Rounds 1 and 2 together are 16 FOLKLORE of 20; Round 8 is seven TRUE of 10. A player who answers FOLKLORE every time scores 48 overall and 9/10 in Round 2.",
+      "why_it_matters": "Once a table spots the bias, the game becomes 'say FOLKLORE' and the scores stop meaning anything.",
+      "fix": "Reorder questions across rounds (or swap in reserve items) so no round has more than five of one verdict and every round has at least two TRUE and one DISPUTED. Then reset the score bands against the new always-one-answer baseline so that a single-answer strategy lands in the bottom band.",
+      "severity": 3
+    },
+    {
+      "page": "76 (No. 29), 66 (No. 24), 162 (No. 68)",
+      "issue": "Some questions do not map onto the three answers. 'Do we know what became of Little Albert?' expects DISPUTED, but the logical answer to 'Do we know?' is no. 'Did 65% of Milgram's volunteers give the maximum shock?' is DISPUTED although the entry confirms 65% in the baseline condition; 'Did 12 of 16 rivalries end in war?' is DISPUTED although the entry says 'the count is accurate'.",
+      "why_it_matters": "These are the questions that start arguments at a quiz night, and the player who knew the fact is marked wrong.",
+      "fix": "Reword so the claim being judged is the disputed part: No. 24 'Do Milgram's results show most people will obey to the end?'; No. 68 'Does the 12-in-16 count show rising powers usually go to war?'; No. 29 'Has Little Albert been identified?'",
+      "severity": 3
+    },
+    {
+      "page": "19, 115, 121, 143, 175, 179, 209, 227",
+      "issue": "Question wording leaks the answer. Oddly specific, 'too strange to invent' phrasings ('Did Newton himself...', 'Does Laffer himself say...', 'misspelled on purpose', 'trumpeters on a train', 'Did Brooks admit...', 'Did HBR reject...', 'as an anagram', 'Did Hardin later admit...') are almost always TRUE; the plain famous version is almost always FOLKLORE.",
+      "why_it_matters": "Regular quizzers read wording before content, so these questions test reading, not knowledge.",
+      "fix": "Write at least ten FOLKLORE questions in the oddly specific style (e.g. 'Did Galileo time his tower drop with a water clock?') and phrase some TRUE items as the plain famous claim, so specificity stops being a tell.",
+      "severity": 2
+    },
+    {
+      "page": "5, 15 onward",
+      "issue": "The star rules contradict the layout. How to play says each round 'opens with its best-known story and gets harder as it goes', but No. 1 has two stars and No. 2 one star. Three stars is defined as 'a story almost everyone repeats', which measures familiarity, not difficulty, and the most repeated story of all (Newton's apple) is one star.",
+      "why_it_matters": "Hosts use difficulty to pace a night; a rating that means two things cannot be used for that.",
+      "fix": "Define stars purely as expected miss rate (one star: most get it; three stars: most miss it), and either sort each round by stars or delete the 'gets harder as it goes' sentence.",
+      "severity": 2
+    },
+    {
+      "page": "15 onward (SURE / GUESSING), 235, 238",
+      "issue": "The Sure / Guessing tick has no effect on scoring in any mode.",
+      "why_it_matters": "A choice with no consequence gets skipped after a few questions, and the book's best idea (confident misses) never enters play.",
+      "fix": "Add an optional 'Confidence rules' paragraph to Game night: Sure and right 2 points, Guessing and right 1, Sure and wrong minus 1, Guessing and wrong 0. Add a 'Sure' tally column to the score table.",
+      "severity": 2
+    },
+    {
+      "page": "235, 239",
+      "issue": "Team play supports exactly two teams, and in the alternating rule each team answers only half the questions (50 each). A pub quiz or classroom usually has four to eight teams, and the scoresheet has no answer slip.",
+      "why_it_matters": "The 'quiz host' and 'classroom' uses on the back cover and A+ banner need a multi-team format to work.",
+      "fix": "Add a 'Quiz host' version: every team answers every question on a photocopiable slip (ten rows, T/F/D circles), with a six-team score grid on p.239. Keep the two-team alternating rule as 'Head to head'.",
+      "severity": 2
+    },
+    {
+      "page": "cover, 5, 233, aplus-3",
+      "issue": "Answers leak outside their spreads. No. 2's verdict is on the front cover stamp, the How to play diagram and A+ banner 3; the '10 biggest surprises' page prints a verdict icon next to each of ten questions, so anyone who browses there first loses ten answers.",
+      "why_it_matters": "Spoiled questions are dead questions, and No. 2 is the second question anyone plays.",
+      "fix": "Use an unscored practice question (numbered 0, not in any round) for How to play; on p.233 drop the verdict icons and keep the page references, or print the icons upside down at the foot.",
+      "severity": 2
+    }
+  ],
+  "keep": [
+    "Three options with DISPUTED as a real answer: it makes the game about evidence rather than coin flips.",
+    "Ten rounds of ten, each a ready-made pub round with a theme.",
+    "The reader's bonus for explaining a miss from the answer page.",
+    "The 'Most confident miss' line at the end of each round."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "Rebalance the answer key and fix the three unmappable questions before print, or experienced players will game it on the first night."
+}

@@ -1,0 +1,72 @@
+{
+  "expert": "Accessibility reviewer for older readers (65+)",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "first_impression": "The question pages are a pleasure: big serif question, a clear picture, black on white. Then I turn the leaf and the answer page, the tick labels and the write-in lines drop to a size I cannot read without my second pair of glasses.",
+  "findings": [
+    {
+      "page": "15, 17, 33, 65, 125 and every question page",
+      "issue": "The parts a reader must use are the smallest on the page: 'SURE' and 'GUESSING' are about 6 pt letter-spaced mono caps with boxes about 3 mm square, 'ANSWER OVERLEAF →' and 'ROUND 1 · № 1' are the same size, and the three vote boxes carry small icons (the DISPUTED scale icon prints as a tiny blob). The star row is smaller than a pea.",
+      "why_it_matters": "A 70-year-old with reading glasses and a pen cannot reliably tick a 3 mm box or read 6 pt caps, so the central action of the book is the hardest to do.",
+      "fix": "Make all tick boxes at least 5 mm square with a 9 pt label, drop the DISPUTED scale icon in favour of the word set in 10 pt, and set 'ANSWER OVERLEAF' at 9 pt. Increase the star row to 10 pt.",
+      "severity": 3
+    },
+    {
+      "page": "34, 56 and every round's last answer page",
+      "issue": "'ROUND SCORE: ___ / 10   MOST CONFIDENT MISS: № ___' is a single line of tiny mono caps printed over the grey cartoon at the foot of the page. The blanks are about 10 mm wide.",
+      "why_it_matters": "It is the one place a reader writes a number, and it is the line least likely to be found, read, or filled in with a shaky hand.",
+      "fix": "Put it in a bordered box on white, with 11 pt labels, 25 mm blanks, and a line of space above and below. Keep the cartoon out of the box.",
+      "severity": 3
+    },
+    {
+      "page": "16, 18, 66, 126 and every answer page",
+      "issue": "Answer text is about 9.5 pt serif, justified, with frequent hyphens ('dif-ferent', 'judg-ing', 'embel-lishment') and 22 or more lines per page. The Sources paragraph is about 8 pt italic and sits over the pale grey footer art on p. 16, p. 18 and p. 126.",
+      "why_it_matters": "Italic small type over a tint, with broken words and wide word gaps, is the hardest combination for ageing eyes and for readers with dyslexia.",
+      "fix": "Set the text at 10.5 to 11 pt, ragged-right, with no hyphenation, and the Sources at 9 pt roman on a clear white band. The page count will rise a little; the planned cuts to the answers should pay for it.",
+      "severity": 3
+    },
+    {
+      "page": "238, 239",
+      "issue": "The score table gives each round ten small boxes (about 3 mm) with a tiny '/10' beside them, and a total box; the team scoresheet labels 'R1' to 'R10' are about 6 pt, and the score boxes are about 8 mm. 'Write each team's name on the line, its score in the box' is in 8 pt italic.",
+      "why_it_matters": "Filling in a grid of ten tiny boxes with arthritic hands is slow and error-prone; the boxes get ticked wrongly or not at all.",
+      "fix": "Replace the ten small boxes with one large write-in box (15 mm by 25 mm) per round and put 'out of 10' in 10 pt. Set R1 to R10 at 9 pt bold and make the team boxes 12 mm.",
+      "severity": 2
+    },
+    {
+      "page": "16, 66, 126, 34",
+      "issue": "Contrast is lowered by the grey tint under the footer text and by grey running heads and numbers ('TRUE OR FOLKLORE?' at the top, 'FAMOUS SCENES', the large grey round numeral, the grey page numbers). The stamp has a hatched texture inside the letters.",
+      "why_it_matters": "Low-contrast greys are the first thing to fade for readers with cataracts, and print gain on KDP's grey fills can reduce it further.",
+      "fix": "Set all text, including running heads and page numbers, in pure black at 8 pt or larger. Keep grey for decoration only and keep it away from text. Make the stamp letters solid.",
+      "severity": 2
+    },
+    {
+      "page": "7, 8, 9, 10, 11",
+      "issue": "The contents run to five pages and use small entry numbers (about 6 pt), faint dot leaders and 8 pt page numbers; the right-hand art beside each round title competes with the page number 'p. 13'. Long questions wrap onto two lines with the leader on the second.",
+      "why_it_matters": "Older readers use the contents to find their place, and a faint leader across a long line makes it easy to read the wrong number (page numbers are also being fixed).",
+      "fix": "Set entries at 9.5 pt with bold numbers, shorten the question text in the contents, and move the page number to a clear column with a pale rule across each pair of rows.",
+      "severity": 2
+    },
+    {
+      "page": "240",
+      "issue": "The certificate has write-in lines for the name, the score, the rank, the date and the witness, but the fill-in line for the score ('called the evidence on ____ of 100') is about 15 mm wide, the 'DATE' and 'WITNESSED BY' captions are about 6 pt mono caps, and the black frame is dense.",
+      "why_it_matters": "The certificate is the reward and the gift keepsake; a write-in that is hard to complete spoils it.",
+      "fix": "Lengthen each line to at least 40 mm, set captions in 9 pt, and lighten the frame so pen shows clearly on the paper.",
+      "severity": 2
+    },
+    {
+      "page": "243, 244",
+      "issue": "The index is set in two columns at about 7.5 pt, the people list is alphabetised by first name, and the page numbers are in a different, tiny mono type separated by a wide gap, so the eye loses the line.",
+      "why_it_matters": "Readers who want to return to a story rely on the index, and a gap plus small type means a missed or misread number.",
+      "fix": "Set the index at 9 pt in a single column on 6x9, add a dotted leader or a light row rule, and sort the people list by surname.",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "The large serif question on every question page and the plain black-on-white contrast there.",
+    "The ✓ and ✗ symbols, which read clearly even at small sizes.",
+    "The bold lead-ins on 'Alone' and 'With others' on p. 5.",
+    "The comfortable line length of about 60 to 65 characters."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "The question pages work for my readers, but the tick boxes, score lines and answer text must grow before I would give it to my father."
+}

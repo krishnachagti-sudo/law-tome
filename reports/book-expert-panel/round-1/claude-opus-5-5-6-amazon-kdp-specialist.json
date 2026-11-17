@@ -1,0 +1,65 @@
+{
+  "expert": "Amazon listing and KDP conversion specialist",
+  "model": "claude-opus-5-5",
+  "date": "2026-11-17",
+  "first_impression": "The front cover has one good hook (Newton, apple, red FOLKLORE stamp) and the back cover sells the game well with three tick-box questions. At thumbnail size, though, nothing says 'quiz book', one A+ banner shows a story that is not in the book, and in a fact-checking book every factual slip becomes the headline of a one-star review.",
+  "findings": [
+    {
+      "page": "cover",
+      "issue": "At search-result size (about 150 px wide) only 'True or Folklore?' and the cartoon read. The subtitle is thin italic and 'THE MYTH-BUSTING QUIZ FOR CURIOUS MINDS' is small tracked monospace at the very bottom; neither is legible. The title alone can read as a folklore anthology.",
+      "why_it_matters": "Shoppers decide from the thumbnail in about a second; if the genre is not visible, quiz and gift buyers scroll past.",
+      "fix": "Add a bold band or badge readable at thumbnail, e.g. 'THE MYTH-BUSTING QUIZ BOOK' in heavy sans at least 1/12 of cover height directly under the title, and set the subtitle in a heavier weight about 1.5 times its current size (or shorten it to '100 famous stories. Can you spot the fakes?'). Check at 150 px before upload.",
+      "severity": 3
+    },
+    {
+      "page": "aplus-5",
+      "issue": "The 'Ten rounds. One hundred stories.' banner shows Benjamin Franklin flying a kite in a storm. There is no Franklin story in the book, and the kite experiment is itself a contested story.",
+      "why_it_matters": "Showing content the book does not contain is a reviews and A+ policy risk, and in a myth-busting book an unchecked myth in the marketing is an easy target.",
+      "fix": "Replace the kite figure with a scene from the book: Churchill at the dispatch box (No. 10), the toast falling (No. 80) or the bike shed committee (No. 73).",
+      "severity": 3
+    },
+    {
+      "page": "aplus-4",
+      "issue": "The 'Classrooms' card promises 'a lesson plan in the back'; p.236 is a half-page with four steps.",
+      "why_it_matters": "Teachers are a target buyer, and an overpromise in the listing is a common cause of 'not as described' reviews.",
+      "fix": "Change the card text to 'classroom ideas in the back' now; restore 'lesson plan' only if the teacher pages are expanded.",
+      "severity": 2
+    },
+    {
+      "page": "aplus-1, aplus-2",
+      "issue": "Both banners show whole book pages shrunk to postage-stamp size; on a phone (where most A+ is viewed) the question and the answer text are unreadable, so the 'how it works' story does not land.",
+      "why_it_matters": "A+ modules that cannot be read on mobile add scroll without adding conversion.",
+      "fix": "Replace the full-page mockups with two large crops: the question 'Did Archimedes shout Eureka! in the bath?' with the three boxes, and the FOLKLORE stamp with its Tell someone line, each at least half the banner height.",
+      "severity": 2
+    },
+    {
+      "page": "cover, metadata",
+      "issue": "Title and subtitle ('100 Famous Stories You've Been Told Wrong: The Myth-Busting Quiz for Curious Minds') carry no 'trivia', 'quiz book for adults' or 'gift' search terms; 'curious minds' is low-intent.",
+      "why_it_matters": "Buyers search 'trivia book for adults' and 'quiz book gift', and the title is the strongest ranking field.",
+      "fix": "Use the seven keyword slots for 'trivia book for adults', 'quiz book gift', 'myth busting', 'science history trivia', 'family game night', 'pub quiz questions', 'critical thinking'. If the subtitle changes, keep the cover subtitle identical to the metadata, as KDP requires.",
+      "severity": 2
+    },
+    {
+      "page": "1-14 (Look Inside)",
+      "issue": "Before the first question a browser passes the title, copyright, gift page, dedication, How to play, a frontispiece, five contents pages, a spot-art page, the round opener and a full-page illustration. The first playable question is p.15, and Look Inside may cut off around there.",
+      "why_it_matters": "Preview readers who never reach a question and its answer have not seen what they are buying.",
+      "fix": "Compress the contents to two pages (round titles and page ranges, with the full question list in the back), and move the frontispiece and dedication so that Q1 and its answer fall within the first 10-12 pages.",
+      "severity": 2
+    },
+    {
+      "page": "aplus-3",
+      "issue": "One of the four 'line worth repeating' examples is 'According to Britannica, Newton's own recollection includes an apple but no bump', the weakest line in the book, built on a citation rather than a fact.",
+      "why_it_matters": "A+ examples should be the most quotable lines, not a hedge.",
+      "fix": "Swap in No. 63 ('downloaded six times, two of them by her lawyers') or No. 10 ('toil' is the word that dropped out).",
+      "severity": 1
+    }
+  ],
+  "keep": [
+    "The back cover's three tick-box questions: they let a browser play before buying.",
+    "'Eighteen stories are still genuinely disputed, and the book says so': an honest, differentiating claim.",
+    "The review request on p.241 ('Honest reviews, good or bad'), which is compliant and well judged.",
+    "The red FOLKLORE stamp on Newton as the cover's main image."
+  ],
+  "sign_off": "yes with fixes",
+  "sign_off_reason": "Make 'quiz book' visible at thumbnail and take Franklin out of the A+ before launch."
+}

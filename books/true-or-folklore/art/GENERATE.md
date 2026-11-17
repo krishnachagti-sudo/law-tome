@@ -295,3 +295,10 @@ If ChatGPT says you've hit a limit, stop and report how many are done.
   further right in each pose").
 - With J1-lib.png as Image 5 the cat's scale and look held across all four strips; zoom each pose at full
   size (crop the strip band) because 400 px thumbs hide extra ears.
+
+## Learned on the art audit redraws (17 Nov 2026)
+- Never put a white knockout box behind small text on an answer page: it cut hard rectangles into the scenes (a head on p122). Measure the text first, then place the scene behind it in the space left, and skip the scene if that space is under 0.9 in.
+- Check every drawing against its story, not just its style: an earlier run let a straight turret stand in for Pisa, an Einstein lookalike stand in for ordinary readers, a European for Ikeda, an old man for teenage Gauss and a chest X-ray for Photo 51. Name the person's age, era, origin and the defining object in the prompt.
+- "Nothing may touch or be cut by any edge, clear white margin on every side" fixed every crop in one try; also say "no grey background box" or ChatGPT frames scenes in a grey slab.
+- Don't write "blank" for props that carry meaning (086's cards lost their pips); say what stays on them.
+- When a story is cut, re-check its opener and tailpiece art for leftovers (r07 kept goalposts, tail-r03 kept Pavlov's bell).

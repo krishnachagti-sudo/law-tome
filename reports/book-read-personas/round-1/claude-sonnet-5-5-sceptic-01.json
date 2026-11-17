@@ -1,0 +1,72 @@
+{
+  "id": "sceptic-01",
+  "model": "claude-sonnet-5-5",
+  "date": "2026-11-17",
+  "card_quote": "Default disposition: 'I've heard all this before.' Expects recycled QI material and has complained about errors and missing citations in fact books. / What would register with him: obscure or genuinely disputed cases, sources.",
+  "how_read": "Read the front matter and the 'how this book was checked' note first with some suspicion. Went through Rounds 1 to 4 in order with a pen, flicked through Round 5, read the physics round carefully, dipped into Round 8 for Fermat and the toast, and read Round 9 because it is science history. Did not bother with Round 10 beyond the contents.",
+  "stopped_at": "P214",
+  "w1_friction": [
+    {"page": "P002", "type": "doubt-verdict", "note": "Drafted with AI, then 'checked against the sources named on each page'. Checked by whom, and how? That is the claim I'd most like evidence for.", "quote": "drafted with AI tools from the Law Tome’s sourced"},
+    {"page": "P003", "type": "talked-down", "note": "A dedication to a 'certified know-it-all', written as if to me. Twee.", "quote": "CERTIFIED KNOW-IT-ALL"},
+    {"page": "P005", "type": "doubt-verdict", "note": "DISPUTED is used for two different things, a real live argument and 'too thin to settle'. Those aren't the same, and the book mixes them.", "quote": "or too thin to settle it"},
+    {"page": "P016", "type": "bored", "note": "Known since school. The first story in the book is the most hackneyed.", "quote": "almost certainly a later embellishment"},
+    {"page": "P018", "type": "doubt-verdict", "note": "The apple 'comes from Newton's own later recollection', which is actually Stukeley's 1752 biography, per the source line. The text cites Britannica for what Newton said. Second-hand twice over.", "quote": "traces back to Newton’s own later recollection"},
+    {"page": "P020", "type": "talked-down", "note": "Invents a 'skeptic's version' so that the answer can be TRUE. Nobody says that.", "quote": "The popular version here is a skeptic’s one."},
+    {"page": "P034", "type": "other", "note": "A detour through a made-up Latin motto in a Churchill answer. Filler.", "quote": "everything that comes in threes is perfect"},
+    {"page": "P040", "type": "bored", "note": "By Round 2 every entry has the same shape: popular version, the record, why it spread. I could write the next paragraph myself.", "quote": "The slogan spread because it was built to."},
+    {"page": "P048", "type": "bored", "note": "Napoleon page is the Hanlon page again. Two pages for one saying.", "quote": "Napoleon is not in the chain."},
+    {"page": "P066", "type": "doubt-verdict", "note": "Perry's arguments about Milgram get 'a live dispute'. Le Texier's about Stanford get FOLKLORE flat out. Same kind of evidence, different treatment.", "quote": "These are Perry’s arguments."},
+    {"page": "P084", "type": "looks-wrong", "note": "Stamped TRUE, text says Franklin never flew it. One source, Wikipedia. I half remember Priestley retelling it, and this page does not engage with that. Not in the contents either. Looks like an unedited draft.", "quote": "Franklin never flew a kite in a thunderstorm"},
+    {"page": "P086", "type": "doubt-verdict", "note": "A 2026 Psychological Review paper in the headline. I can't check it and 'inverts' is a big claim to rest a verdict on.", "quote": "a 2026 reanalysis reports that it inverts"},
+    {"page": "P088", "type": "doubt-verdict", "note": "Good page, but a blog is listed as a source.", "quote": "“Yerkes-Dodson: Lore, not Law, ” The Learning Scientists (2024)"},
+    {"page": "P098", "type": "doubt-verdict", "note": "DISPUTED when really it is 'unverified'. And the key evidence is somebody's blog search of newspaper archives.", "quote": "Quinn, “Fake News or Fact?” (blog, 2017)"},
+    {"page": "P102", "type": "looks-wrong", "note": "Says Stigler's law has its own entry in Round 5. I looked at the contents and it doesn't.", "quote": "which has its own entry in Round 5"},
+    {"page": "P128", "type": "doubt-verdict", "note": "The headline says the fifty and hundred words are myth, but the stamp is DISPUTED. And the answer switches between roots and words halfway.", "quote": "The inflated figures of fifty and a hundred are myth."},
+    {"page": "P138", "type": "other", "note": "Tells me the standard explanation is wrong and then doesn't say what the right one is. Half an answer.", "quote": "The record does not say why the upper air speeds up"},
+    {"page": "P142", "type": "looks-wrong", "note": "The source listed is titled 'Broken Bones Grow Back Stronger... Sort Of', which is a funny citation for 'no evidence'.", "quote": "Broken Bones Grow Back Stronger… Sort Of"},
+    {"page": "P146", "type": "other", "note": "A page that admits it has nothing to add. Why print it?", "quote": "gives no further detail of the experiment, and this entry adds none"},
+    {"page": "P173", "type": "confused", "note": "Number 71 again, and headed Names That Mislead inside Round 8. Neither is in the contents.", "quote": "NAMES THAT MISLEAD"},
+    {"page": "P174", "type": "doubt-verdict", "note": "Completely different voice: all jargon, with 'Sources: various laboratory studies'. It is the one page nobody edited, and it undercuts the claim that every entry was checked.", "quote": "Sources: various laboratory studies."}
+  ],
+  "w1_best": [
+    {"no": 33, "why": "Forty mice, shock strength and no measurement of arousal. The textbook curve is Hebb's, not Yerkes and Dodson's. I did not know that."},
+    {"no": 38, "why": "Twenty-six blacks at Monte Carlo traced back to a 1959 book, with the blog author who couldn't find it earlier. A genuinely unsettled one."},
+    {"no": 87, "why": "Fisher on Mendel is the kind of open question I'd actually want to read about."},
+    {"no": 89, "why": "The 1919 eclipse with the blurred plates. It admits the handling was contested and that the result has survived. Honest."},
+    {"no": 90, "why": "Hooke publishing the spring law as an anagram. New to me, and short."}
+  ],
+  "w1_flat": [
+    {"no": 1, "why": "Archimedes in the bath. Everyone knows it's an anecdote."},
+    {"no": 7, "why": "Einstein's Nobel was not for relativity. Pub-quiz staple."},
+    {"no": 16, "why": "Napoleon and malice and stupidity, a repeat of the Hanlon page."},
+    {"no": 52, "why": "Sink drain direction. Known to anyone who has done any physics."},
+    {"no": 71, "why": "The goldfish page. Written like a parody of a paper, and no real references."}
+  ],
+  "w1_juster": 3,
+  "w1_review": {
+    "headline": "Competent myth roundup, though I knew a third of it",
+    "body": "The better entries (Yerkes-Dodson, Monte Carlo, the 1919 plates) do show where a story comes from, and the book is willing to say DISPUTED. But the entries follow one template, the sources are often Wikipedia or a blog, and at least two pages (the Franklin kite and the goldfish) look unedited and contradict the claim that everything was checked. Bottom line: fine for a non-scientist's stocking, not for anyone who reads footnotes."
+  },
+  "w2_review_first": "It is QI with a scoring table. Most of what I checked from memory was about right, and a few entries taught me something, but the layout is repetitive and a couple of pages look like they escaped without being proofread. I'd not push it on a friend who cares about accuracy.",
+  "w2_lost": [
+    {"page": "P046", "why": "Hanlon, then Napoleon, then the same history in different words."},
+    {"page": "P174", "why": "The goldfish page. I stopped taking the book's checking seriously after that."},
+    {"page": "P056", "why": "Round 2 generally. Quotes with the wrong owner get samey after the fourth."}
+  ],
+  "w2_read_aloud": [
+    {"no": 57, "why": "Hot water freezing faster. At a table it will cause an actual argument, and the answer is honestly open."},
+    {"no": 80, "why": "Toast landing butter-side down turns out to have a physics paper. Good surprise."},
+    {"no": 90, "why": "The anagram is short and odd enough to read out in one go."},
+    {"no": 77, "why": "Fermat's margin, and that he probably had no proof, is a good deflation."},
+    {"no": 54, "why": "The cat was meant as an objection, not a claim. People get this backwards."}
+  ],
+  "w2_cut": [
+    {"no": 31, "why": "The Franklin page, which says TRUE and then says the opposite and is not even in the contents."},
+    {"no": 71, "why": "The goldfish entry, which reads as another author wrote it and cites 'various laboratory studies'."},
+    {"no": 16, "why": "Napoleon duplicates the Hanlon page."},
+    {"no": 36, "why": "A second Wald entry to say the first thing again."},
+    {"no": 47, "why": "A second Laffer entry."}
+  ],
+  "w2_juster": 2,
+  "w2_book2": "More pages that look unproofed, Wikipedia and blogs as the sources, and more myths I already know."
+}

@@ -8,9 +8,9 @@ It works wherever people already sit together: family dinners, road trips, pub q
 
 **Two teams.** Use the team scoresheet at the back. Teams take turns reading a question to the other side. The reading team gets a bonus point if the other team calls it wrong and the reader can explain why from the answer page.
 
-**Quiz host.** Each round is a ready-made quiz round of ten. Read the question, give everyone ten seconds, collect answers, then read the verdict and the Tell someone line.
+**Quiz host.** Each round is a ready-made quiz round of ten. Read the question, give everyone ten seconds, collect answers, then read the verdict and the Tell someone line. DISPUTED is a real answer, not a hedge: it scores only when the stamp says DISPUTED, and the answer page says what keeps the question open.
 
-**Scores.** Out of 100: 85 and over, Myth Buster. 70 to 84, Fact Checker. 50 to 69, Healthy Skeptic. Under 50, Easily Fooled (and in good company: these stories spread because they are convincing).
+**Scores.** Out of 100: 85 and over, Myth Buster. 70 to 84, Fact Checker. 55 to 69, Healthy Skeptic. Under 55, Easily Fooled (and in good company: these stories spread because they are convincing).
 
 {{spot:game-night}}
 
