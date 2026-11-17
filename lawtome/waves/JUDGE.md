@@ -12,32 +12,38 @@ of it.
 
 ## What to do with a wave (the "Do:" line)
 
-The default is the fast path, not a new page. A new page on a young domain is
-usually indexed after the wave has passed, but the law page is already indexed
-and recrawled often. So:
+Since 17 Nov 2026 (Krishna): **every catch that passes gets its own case page**,
+plus the dated example on the law's page. The page explains the case and keeps
+it: what happened, how the law explains it step by step, what it predicts, and
+where it might not fit. That is a case study, not a thin page, and it is what
+keeps the scaled-content risk away from conyso.com: the risk is pages that add
+nothing, not the number of pages. So the bar is substance:
 
-- **Law-page example** (default): add a dated, sourced entry to the law's
-  `examples` ("In the wild, Nov 2026: …"), plus a reply in the live thread if
-  there is one. Small, fast, and it improves a page that already ranks.
-- **Standalone wave page:** when the wave is strong (two or more sources) and
-  either
-  - major (clears p > 10) and still building, or
-  - in the news (news is one of the sources, the feed isn't at its cap) and not
-    fading, with the cause confirmed and quoted the same day you publish. No
-    Wikipedia spike on the law is needed. Loosened on 16 Nov 2026: the FAA
-    ground stop on cascading failure had two sources and national coverage and
-    the strict bar missed it.
-
-  Or it's a scheduled event you drafted ahead. If the cause is only confirmed
-  after the story has peaked, it's a law-page example, not a page.
+- **Case page + law-page example** (default for a catch that passes): write the
+  case page in `src/data/waves/` and add the example to the law's `examples`.
+  The case page must have, all from sources you opened and quoted:
+  - the event, dated, with a timeline of at least two dated steps;
+  - the mechanism in at least three steps, each tied to this event, not a
+    textbook recap of the law;
+  - at least two honest limits (what the sources don't show, where another
+    explanation fits);
+  - at least two FAQs a reader would actually ask;
+  - one prediction checkable by a date, saying what would show it wrong;
+  - every source listed and opened.
+  If you can't fill that honestly from what you opened, publish the example only
+  and say why in the pack. Never pad to reach the bar.
+- **Takeover** (the law page's banner and "developing" on the home strip): only
+  for strong waves, meaning two or more sources and either major (p > 10) and
+  still building, or in the news (two outlets naming it, or news a firing
+  source, feed not at its cap) and not fading, or a scheduled event drafted
+  ahead. Those pages get `status: developing` and `takeoverUntil` = publish
+  date + 10 days. Every other case page gets `status: settled` and no
+  `takeoverUntil`.
 - **Your call:** anything on human hold.
 
-The caps are limits, not targets. A day publishes at most **5 law-page
-examples** and **2 standalone wave pages**, and a week at most **8 standalone
-pages**. Law Tome shares conyso.com with every other Conyso microsite, so a
-scaled-content problem would hit all of them. That risk is about thin new pages,
-not about sourced examples on pages that already exist, so be generous with
-examples and strict with new pages.
+The caps are limits, not targets: at most **5 catches a day** (each one an
+example plus its case page) and **30 case pages a week**, across the morning,
+midday and evening runs together. `autopublish.json` wins if lower.
 
 Being too cautious is a failure too. A sourced, verified example that sits in a
 pack for days is a missed wave. If the cause is found, quoted, about the law
@@ -104,9 +110,9 @@ may already be over.
 A single HN front-page or large Reddit thread naming a law is listed even when
 it is not a wave. Reach is almost all one broadcast (Goel et al. 2016), and an
 HN story stays on the front page for about half a day. Reply in the thread the
-same day: a full answer in the comment itself, one link at most. No standalone
-page unless it becomes a wave, but if the thread's event has a confirmed cause
-that works the way the law describes, add it as a law-page example too. On HN, never ask for votes. On Reddit, follow the
+same day: a full answer in the comment itself, one link at most. A thread
+alone is not a catch, but if the thread's event has a confirmed cause that
+works the way the law describes, it is: publish the example and its case page. On HN, never ask for votes. On Reddit, follow the
 subreddit's own rules; fact subreddits such as r/todayilearned reject recent
 or self-hosted sources.
 

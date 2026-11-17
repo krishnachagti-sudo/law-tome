@@ -386,16 +386,16 @@ export function deviceMix(desktop, mobile, baselineDays = 28) {
 export function route(w) {
   if (w.hold) return { action: 'decide', why: 'touches a sensitive subject; Krishna decides whether it is anything at all' };
   const lasting = w.wiki?.trajectory === 'building' || w.wiki?.trajectory === 'starting' || w.scheduled;
-  if (w.confidence === 'strong' && w.major && lasting) return { action: 'page', why: 'strong, major and still building: worth a standalone page' };
+  if (w.confidence === 'strong' && w.major && lasting) return { action: 'page', why: 'strong, major and still building: a case page with the takeover' };
   const inNews = ((w.sources || []).includes('news') || (w.named?.outlets >= 2)) && !w.news?.capped;
-  if (w.confidence === 'strong' && inNews && w.wiki?.trajectory !== 'fading') return { action: 'page', why: 'two sources and in the news, not fading: a standalone page if the cause is confirmed today' };
+  if (w.confidence === 'strong' && inNews && w.wiki?.trajectory !== 'fading') return { action: 'page', why: 'two sources and in the news, not fading: a case page with the takeover if the cause is confirmed today' };
   if (w.hubs?.length) return { action: 'update+reply', why: 'one big thread: reply there today, add the example to the law page' };
   // Desktop-led with nobody talking about it: the usual causes are a course
   // reading, a bot, or a work tool linking the page, not a wave (Filter Bubble,
   // 2026-11: a college research guide).
   const talked = (w.news?.recent48h || 0) + (w.reddit?.recent48h || 0) + (w.hn?.recent48h || 0);
   if (w.device?.led === 'desktop' && !talked) return { action: 'check', why: 'desktop-led and nobody is discussing it: likely a course, a bot or a work tool; skip unless a cause turns up' };
-  return { action: 'update', why: 'add a dated, sourced example to the law page once the cause is confirmed' };
+  return { action: 'update', why: 'add a dated, sourced example to the law page and its case page once the cause is confirmed' };
 }
 
 // Crowded: the Google News feed for the name is at its cap, so big outlets are

@@ -512,7 +512,7 @@ const md = [`# Waves, ${date}${isTest ? ' (test run)' : ''}`, '',
     `### ${r.hold ? '⚠ HUMAN HOLD · ' : ''}${r.name} · ${r.tier}${r.major ? ' · major' : ''} · ${r.confidence} · ${r.status}${r.status === 'continuing' ? ` since ${r.firstSeen}` : ''} · score ${r.score}`,
     ...(r.hold ? [`_Touches ${r.hold.join(', ')}. No auto-draft, no promotion on the page; Krishna decides whether it is a page at all._`, ''] : []),
     ...(r.hubs?.length ? [`**Reply today:** ${r.hubs.map((h) => `${h.where}: ${h.title} ${h.url}`).join(' · ')}`, ''] : []),
-    `**Do:** ${{ page: 'standalone wave page', 'update+reply': 'reply in the thread + law-page example', update: 'law-page example', check: 'probably nothing', decide: 'your call' }[r.route.action]} (${r.route.why}).`
+    `**Do:** ${{ page: 'case page with takeover + law-page example', 'update+reply': 'reply in the thread + law-page example + case page', update: 'law-page example + case page', check: 'probably nothing', decide: 'your call' }[r.route.action]} (${r.route.why}).`
       + (r.device ? ` **Driven by:** ${r.device.led === 'mobile' ? 'phones, so likely shared' : r.device.led === 'desktop' ? 'desktops, so check for bots, a course or a work tool before judging' : 'both'} (mobile share ${r.device.mobileShareNow} vs ${r.device.mobileShareBase} normally).` : '')
       + (crowded(r) ? ' **Crowded:** the news feed for this name is at its cap; big outlets own the new-page slot.' : r.news?.recent48h ? ` **Already covered:** ${r.news.recent48h} news items named it in 48h.` : '')
       + (r.decided ? ` **Already judged ${r.decided.date}:** ${r.decided.decision}.` : ''),

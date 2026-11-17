@@ -36,6 +36,12 @@ quote still holds, and publish it today (within the cap) unless the event has
 since gone on human hold or been corrected. Don't leave verified examples
 waiting.
 
+Then the backfill (from 17 Nov 2026): any "In the wild" example on a law page
+from the last 14 days that has no case page in `src/data/waves/` gets one, at
+most **2 per run**, newest first, within the weekly cap. Re-open its sources
+first; if the case can't meet the substance bar in JUDGE.md, note it in the
+pack and leave it as an example.
+
 ## For each law wave in the queue (top 12 by score)
 
 The queue is ranked news first. Waves that fired `named` come first and carry
@@ -70,12 +76,17 @@ Add one entry to the front of the law's `examples` in
 `{ "tag": "In the wild · <Mon YYYY>", "text": "...", "date": "YYYY-MM-DD", "source": { "text": "<Outlet>, <d Mon YYYY>", "url": "...", "checked": "<today>" } }`
 
 Two sentences: the event, then how it shows the law's mechanism. Plain English,
-no hype, no em dashes. Touch nothing else in the file.
+no hype, no em dashes. Touch nothing else in the file. Every example now comes
+with its case page (next section), published in the same commit.
 
-## Publishing a standalone wave page (`page`)
+## Publishing a case page (every catch that meets the bar)
 
-Only when JUDGE.md's bar for a page is met: strong (two or more sources), major,
-and still building, or a calendar event you prepared for.
+Every catch that passes gets one, if it meets the substance bar in JUDGE.md
+("What to do with a wave"). Only strong waves get the takeover
+(`status: developing`, `takeoverUntil`); the rest are `status: settled` with no
+`takeoverUntil`. The slug describes the case, not the law (for example
+`faa-ground-stop-router-cascading-failure`). Title and h1 ask or answer the
+reader's question about the event.
 
 Write `lawtome/src/data/waves/<slug>.json`, using
 `plane-audio-video-location-doppler-effect.json` as the model for every field,
@@ -90,8 +101,8 @@ with these differences:
 - `media`: embed a YouTube video only if it is the event's own video and
   YouTube oEmbed confirms embedding is allowed. Otherwise leave it out.
 - `predictions` must be checkable by a date. Say what would show it was wrong.
-- `takeoverUntil`: publish date + 10 days.
-- `status`: `developing` if the story is still moving.
+- `takeoverUntil`: publish date + 10 days, strong waves only (see above).
+- `status`: `developing` for strong waves still moving, otherwise `settled`.
 - `publisher`: copy the Doppler page's sentence.
 - Never put the detector's own measurements (pageview counts, scores) on the
   public page.

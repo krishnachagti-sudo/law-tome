@@ -177,3 +177,40 @@ test('the feed and llms.txt carry law-page examples too', () => {
   const llms = wildLlms([wave], byslug, { base: '/lawtome/', origin: 'https://conyso.com' });
   assert.ok(llms.includes('### On the law pages') && llms.includes('[Cascading Failure](https://conyso.com/lawtome/laws/cascading-failure/)'));
 });
+
+// Every catch gets a case page since 17 Nov 2026, so the substance bar in
+// waves/JUDGE.md is enforced here for every file in src/data/waves/: a run
+// cannot push a page that only restates the law.
+import { readdirSync } from 'node:fs';
+const waveDir = new URL('../src/data/waves/', import.meta.url);
+const allWaves = readdirSync(waveDir).filter((f) => f.endsWith('.json')).map((f) => ({ f, w: JSON.parse(readFileSync(new URL(f, waveDir))) }));
+
+test('every case page meets the substance bar', () => {
+  for (const { f, w } of allWaves) {
+    const words = (s) => String(s || '').split(/\s+/).filter(Boolean).length;
+    assert.ok(w.law && existsLaw(w.law), `${f}: law ${w.law} not in the Tome`);
+    assert.ok(words(w.answer) >= 40 && words(w.answer) <= 60, `${f}: answer is ${words(w.answer)} words, needs 40-60`);
+    assert.ok(Array.isArray(w.timeline) && w.timeline.length >= 2, `${f}: needs a timeline of 2+ dated steps`);
+    for (const t of w.timeline) assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(t.date) && w.sources[t.source], `${f}: timeline step without a date or source`);
+    assert.ok(Array.isArray(w.mechanism) && w.mechanism.length >= 3, `${f}: mechanism needs 3+ steps`);
+    assert.ok(Array.isArray(w.limits) && w.limits.length >= 2, `${f}: needs 2+ limits`);
+    assert.ok(Array.isArray(w.faqs) && w.faqs.length >= 2, `${f}: needs 2+ FAQs`);
+    assert.ok(Array.isArray(w.predictions) && w.predictions.length >= 1 && w.predictions.every((p) => /^\d{4}-\d{2}-\d{2}$/.test(p.checkBy || '')), `${f}: needs a prediction with a checkBy date`);
+    assert.ok(Array.isArray(w.sources) && w.sources.length >= 1 && w.sources.every((s) => s.url && s.checked && s.supports), `${f}: every source needs url, checked and supports`);
+    if (w.status === 'developing') assert.ok(w.takeoverUntil, `${f}: a developing page needs takeoverUntil`);
+    assert.ok(['developing', 'settled'].includes(w.status), `${f}: status must be developing or settled`);
+  }
+});
+
+test('a settled case page renders without a takeover or the Doppler visuals', () => {
+  const { visuals, lawStep, takeoverUntil, ...rest } = wave;
+  const settled = { ...rest, slug: 'a-settled-case', status: 'settled', media: [] };
+  const out = wavePage(settled, law, { base: '/lawtome/', origin: 'https://conyso.com', count: 1116 });
+  assert.ok(out.includes(settled.h1));
+  assert.ok(!out.includes('· developing'));
+  assert.equal(takeoverActive(settled, '2026-11-10'), false);
+});
+
+function existsLaw(slug) {
+  try { readFileSync(new URL(`../src/data/laws/${slug}.json`, import.meta.url)); return true; } catch { return false; }
+}
