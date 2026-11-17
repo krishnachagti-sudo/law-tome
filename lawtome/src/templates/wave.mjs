@@ -285,7 +285,7 @@ ${wave.actions.map((x) => `        <li>${e(x)}</li>`).join('\n')}
     <section class="wave-sec" aria-labelledby="w-what">
       <p class="lbl">What happened</p>
       <h2 class="block-h" id="w-what">${e(H.what)}</h2>
-      <p>${e(wave.artefact.text)} <a href="${e(wave.artefact.url)}" rel="noopener">${e(wave.artefact.label || 'Read the original report')}</a>.</p>
+${wave.artefact ? `      <p>${e(wave.artefact.text)} <a href="${e(wave.artefact.url)}" rel="noopener">${e(wave.artefact.label || 'Read the original report')}</a>.</p>` : ''}
       <ol class="wave-timeline">
 ${wave.timeline.map((t) => `        <li><time datetime="${e(t.date)}">${e(fmtDate(t.date))}</time><span>${e(t.text)} <a class="wave-src" href="${e(src(t.source).url)}" rel="noopener">source</a></span></li>`).join('\n')}
       </ol>
@@ -585,10 +585,10 @@ export function waveMarkdown(wave, law, { base = '/', origin = '' } = {}) {
   const url = `${origin}${base}wild/${wave.slug}/`;
   const L = [];
   L.push(`# ${wave.h1}`, '', `${wave.answer}`, '', `By ${wave.author.name}. Published ${wave.publishedAt}, updated ${wave.updatedAt}. Canonical: ${url}`, '');
-  L.push('## What you can do', '', ...wave.actions.map((x) => `- ${x}`), '');
-  L.push('## What happened', '', wave.artefact.text, '', ...wave.timeline.map((t) => `- ${t.date}: ${t.text} [${wave.sources[t.source].url}]`), '', `Why it matters: ${wave.whyItMatters}`, '');
+  if (wave.actions?.length) L.push('## What you can do', '', ...wave.actions.map((x) => `- ${x}`), '');
+  L.push('## What happened', '', ...(wave.artefact ? [wave.artefact.text, ''] : []), ...wave.timeline.map((t) => `- ${t.date}: ${t.text} [${wave.sources[t.source].url}]`), '', `Why it matters: ${wave.whyItMatters}`, '');
   L.push(`## How it works`, '', ...wave.mechanism.map((m, i) => `${i + 1}. **${m.h}.** ${m.text}`), '', `The law: [${law.name}](${origin}${base}laws/${law.slug}/): ${law.statement}`, '');
-  L.push('## Worked example (ours, illustrative)', '', ...wave.calc.points.map((p) => `- ${p}`), '', `${wave.calc.assumptions} Formula: ${wave.calc.formula}`, '');
+  if (wave.calc?.points?.length) L.push('## Worked example (ours, illustrative)', '', ...wave.calc.points.map((p) => `- ${p}`), '', `${wave.calc.assumptions}${wave.calc.formula ? ` Formula: ${wave.calc.formula}` : ''}`, '');
   L.push('## Limits', '', ...wave.limits.map((x) => `- ${x}`), '');
   L.push('## Questions', '', ...wave.faqs.flatMap((f) => [`**${f.q}** ${f.a}`, '']));
   L.push('## Sources', '', ...wave.sources.map((s) => `- [${s.text}](${s.url}). Supports: ${s.supports}. Checked ${s.checked}.`), '');

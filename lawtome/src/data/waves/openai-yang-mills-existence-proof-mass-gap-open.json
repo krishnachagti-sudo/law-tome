@@ -1,0 +1,170 @@
+{
+  "slug": "openai-yang-mills-existence-proof-mass-gap-open",
+  "law": "the-yang-mills-mass-gap",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-11-10",
+  "detectedAt": "2026-11-10",
+  "publishedAt": "2026-11-17",
+  "updatedAt": "2026-11-17",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "Did AI Solve the Yang-Mills Mass Gap Problem?",
+  "h1": "Did AI solve the Yang-Mills problem, or only half of it?",
+  "question": "Did OpenAI's machine-checked proof solve the Yang-Mills existence and mass gap problem?",
+  "answer": "Not the whole problem. On 10 November 2026 a review group chaired by David Gross said OpenAI's machine-checked Lean proof constructs a four-dimensional quantum Yang-Mills theory. It also said the proof does not show a mass gap. The Millennium problem needs both, and the Clay Institute still lists it as unsolved.",
+  "event": {
+    "name": "The Yang-Mills group's assessment of OpenAI's Lean proof",
+    "date": "2026-11-10"
+  },
+  "artefact": {
+    "text": "The review group's own assessment sets out what the proof establishes, what it does not, and how the Lean code was checked. Its open questions section lists the mass gap.",
+    "url": "https://github.com/yang-mills-group/YM/blob/main/docs/assessment-1.pdf",
+    "label": "Read the group's assessment"
+  },
+  "timeline": [
+    {
+      "date": "2026-09-09",
+      "text": "According to OpenAI's account, as reported, its models produce a written proof that quantum Yang-Mills theory exists.",
+      "source": 0
+    },
+    {
+      "date": "2026-10-16",
+      "text": "OpenAI finishes a version of the proof in Lean, a language whose software checks every logical step, and contacts David Gross about reviewing it.",
+      "source": 3
+    },
+    {
+      "date": "2026-10-26",
+      "text": "OpenAI announces existence proofs for Yang-Mills theory and for quantum chromodynamics. A group led by Gross, with Michael Douglas, Arthur Jaffe, Igor Klebanov and Nikita Nekrasov, is named to review them.",
+      "source": 4
+    },
+    {
+      "date": "2026-10-28",
+      "text": "OpenAI submits its full Lean code to the group.",
+      "source": 1
+    },
+    {
+      "date": "2026-11-09",
+      "text": "The group's third statement says it will publish the Lean code and its validation the next day.",
+      "source": 1
+    },
+    {
+      "date": "2026-11-10",
+      "text": "The group's assessment says the submission constructs the theory, and does not prove that there is a mass gap.",
+      "source": 2
+    },
+    {
+      "date": "2026-11-12",
+      "text": "Dataconomy reports the verdict: existence established in the panel's view, mass gap still open, and no ruling on the Clay prize.",
+      "source": 0
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "The problem asks for two things",
+      "text": "The Clay problem, written by Arthur Jaffe and Edward Witten, asks for a quantum Yang-Mills theory that is built rigorously and meets the standard axioms, and then a proof that it has a mass gap. The review group's assessment lists four requirements from that statement. The first three are about building the right theory. The fourth is the mass gap."
+    },
+    {
+      "h": "The proof builds the theory from a grid",
+      "text": "The proof starts from Wilson lattice gauge theory, a version of Yang-Mills on a four-dimensional grid of points. It shrinks the grid spacing towards zero inside a fixed box, then lets the box grow. A known reconstruction theorem, also proved in the code, turns the result into a quantum field theory meeting the Wightman axioms. The group says this works for any simple compact gauge group."
+    },
+    {
+      "h": "A computer check confirms the logic, people check the question",
+      "text": "Lean confirms that each step follows from the stated definitions. It cannot confirm that the definitions match the real problem, so the group also reviewed the definitions by hand and used a tool called Comparator to test the code against a fixed statement. OpenAI told the group its original public target left out some links to the grid construction, so the group checked a stronger target of its own."
+    },
+    {
+      "h": "The mass gap is a separate claim about energy",
+      "text": "A mass gap means the lowest energy above the empty vacuum is some fixed amount greater than zero. Building a theory does not tell you that. The group writes that the construction gives no evidence either way on a mass gap, and lists a uniform mass gap among the open questions."
+    },
+    {
+      "h": "What is still missing",
+      "text": "The proof finds limits as the box grows by picking out sequences that converge, but does not show that the limit is unique. The group also lists the area law for Wilson loops and the particle spectrum as open. In the Tome's terms, the first part of the problem is now claimed and the part that explains why the strong force is short-ranged is still unproved."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "By 17 November 2027 the Clay Mathematics Institute's Yang-Mills page will still describe the problem as unsolved, because the mass gap part is open. This is wrong if Clay marks the problem solved, or publicly accepts a mass gap proof, before that date.",
+      "checkBy": "2027-11-17",
+      "status": "open"
+    }
+  ],
+  "limits": [
+    "The reviewers write that they do not claim to fully understand the proof yet. They used OpenAI's own Astra model to help digest the Lean code, and their review did not draw on OpenAI's separate written manuscript, which had not been released when Dataconomy reported.",
+    "Existence here is the group's judgment under the criterion it adopted. The proof does not show that the infinite-volume limit is unique, and the group says the work does not certify the full Jaffe and Witten problem.",
+    "The Clay Mathematics Institute has not said anything we could find. Its page still lists the problem as unsolved, and the group says it has no present connection to Clay, so this is not a ruling on the prize.",
+    "OpenAI approached Gross to take custody of the proof. The group says its only connection to OpenAI, besides accepting submissions, is using Astra. Wider review by other mathematicians is only starting now that the code is public.",
+    "A machine check is only as good as its target. OpenAI itself flagged that its first public target missed some links to the lattice construction, which shows how a valid proof could still prove a weaker statement."
+  ],
+  "faqs": [
+    {
+      "q": "Did OpenAI win the $1 million Millennium Prize?",
+      "a": "No. The problem has two parts and the review group says the proof covers only the first, building the theory. It does not prove a mass gap. The group says it has no connection to the Clay Institute, which still lists the problem as unsolved."
+    },
+    {
+      "q": "What is the mass gap?",
+      "a": "It is the claim that the lightest particle the theory predicts has a mass strictly above zero, so there is a gap between the vacuum and the next energy level. Experiments and lattice simulations support it, but no one has proved it."
+    },
+    {
+      "q": "If Lean checked the proof, why is anyone still unsure?",
+      "a": "Lean confirms the logic follows from the definitions written in the code. Whether those definitions say what the problem asks needs people to check. The reviewers did that by hand and with a separate tool, and they say they do not yet fully understand the proof."
+    },
+    {
+      "q": "Who reviewed it?",
+      "a": "A group chaired by the Nobel laureate David Gross, with Michael Douglas, Arthur Jaffe, Igor Klebanov and Nikita Nekrasov. Jaffe co-wrote the official Clay statement of the problem."
+    }
+  ],
+  "actions": [
+    "When a headline says AI solved a Millennium problem, ask which part. For Yang-Mills the answer is existence, not the mass gap.",
+    "For the official status, check the Clay Mathematics Institute's own page rather than press coverage.",
+    "To judge the claim yourself, read the open questions section of the group's assessment. It lists what the proof does not do."
+  ],
+  "whyItMatters": "Physics has used Yang-Mills theory for decades without a rigorous mathematical construction in four dimensions. If this one holds up under wider review, part of that gap closes. But the mass gap, the piece tied to why the strong force is short-ranged, is exactly the part this proof leaves open.",
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What did the review panel say about OpenAI's Yang-Mills proof?",
+    "how": "Why does building the theory not prove the mass gap?",
+    "calc": "What would a mass gap proof have to show?",
+    "limits": "What does the verdict not settle?",
+    "faq": "What else are people asking?"
+  },
+  "sources": [
+    {
+      "text": "Aytun Çelebi, \"Nobel panel validates OpenAI's Yang-Mills existence proof\", Dataconomy, 12 Nov 2026",
+      "url": "https://dataconomy.com/2026/11/12/nobel-panel-validates-openais-yang-mills-existence-proof/",
+      "checked": "2026-11-17",
+      "supports": "the panel's verdict on existence and the mass gap, the five members, the 9 September written proof, OpenAI asking Gross to take custody, the unreleased full proof, and that the finding is not a ruling on the Clay prize"
+    },
+    {
+      "text": "Douglas, Gross (chair), Jaffe, Klebanov and Nekrasov, \"Proof by OpenAI of the existence of Quantum Yang-Mills Theory: 3rd Statement by the Shepherding Committee\", KITP, 9 Nov 2026",
+      "url": "https://www.kitp.ucsb.edu/sites/default/files/3rd-Statement-About-Quantum-YangMills-Theory_Nov-9.pdf",
+      "checked": "2026-11-17",
+      "supports": "the committee members, the 28 October Lean submission, and the plan to publish the code and validation on 10 November"
+    },
+    {
+      "text": "Yang-Mills group, \"Validation of the OpenAI Yang-Mills construction\" (assessment 1), 10 Nov 2026, with the YM repository README",
+      "url": "https://github.com/yang-mills-group/YM/blob/main/docs/assessment-1.pdf",
+      "checked": "2026-11-17",
+      "supports": "what the proof constructs, the four Jaffe and Witten requirements, no evidence for or against a mass gap, non-unique infinite-volume limit, the open questions list, the Lean and Comparator checks, the weaker original target, use of Astra, not claiming to fully understand the proof, and no connection to Clay"
+    },
+    {
+      "text": "Diego Almada Lopez, \"Yang-Mills Working Group to publish OpenAI's Lean code for review\", Crypto Briefing, 9 Nov 2026",
+      "url": "https://cryptobriefing.com/yang-mills-group-publish-openai-lean-code/",
+      "checked": "2026-11-17",
+      "supports": "the 16 October Lean formalization and first contact with Gross"
+    },
+    {
+      "text": "Aamir Khollam, \"OpenAI's triple threat: New proofs challenge math, computing and quantum physics\", Interesting Engineering, 26 Oct 2026",
+      "url": "https://interestingengineering.com/ai-robotics/openai-proofs-math-computing-physics",
+      "checked": "2026-11-17",
+      "supports": "OpenAI's 26 October announcement covering pure Yang-Mills and QCD, and the Gross-led review group"
+    },
+    {
+      "text": "Clay Mathematics Institute, \"Yang-Mills and the Mass Gap\"",
+      "url": "https://www.claymath.org/millennium/yang-mills-the-maths-gap/",
+      "checked": "2026-11-17",
+      "supports": "the problem is still listed as unsolved and the page says nothing about OpenAI"
+    }
+  ]
+}

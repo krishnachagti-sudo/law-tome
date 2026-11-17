@@ -214,3 +214,13 @@ test('a settled case page renders without a takeover or the Doppler visuals', ()
 function existsLaw(slug) {
   try { readFileSync(new URL(`../src/data/laws/${slug}.json`, import.meta.url)); return true; } catch { return false; }
 }
+
+test('every case page renders as HTML and Markdown, with or without optional parts', () => {
+  for (const { f, w } of allWaves) {
+    const l = JSON.parse(readFileSync(new URL(`../src/data/laws/${w.law}.json`, import.meta.url)));
+    assert.ok(wavePage(w, l, { base: '/lawtome/', origin: 'https://conyso.com', count: 1116 }).includes(w.h1), f);
+    assert.ok(waveMarkdown(w, l, { base: '/lawtome/', origin: 'https://conyso.com' }).includes(w.h1), f);
+  }
+  const { calc, artefact, actions, ...bare } = wave;
+  assert.ok(waveMarkdown(bare, law, { base: '/lawtome/' }).includes(bare.h1));
+});

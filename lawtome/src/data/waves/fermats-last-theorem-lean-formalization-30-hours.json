@@ -1,0 +1,143 @@
+{
+  "slug": "fermats-last-theorem-lean-formalization-30-hours",
+  "law": "fermats-last-theorem",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-11-09",
+  "detectedAt": "2026-11-09",
+  "publishedAt": "2026-11-17",
+  "updatedAt": "2026-11-17",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "How AI Agents Machine-Checked Fermat's Last Theorem in 30 Hours",
+  "h1": "How did AI agents machine-check Fermat's Last Theorem in about 30 hours?",
+  "question": "How could 1,000 AI agents machine-check the proof of Fermat's Last Theorem in about 30 hours, when the first attempt took 11 days?",
+  "answer": "On 9 November 2026 Anthropic said 1,000 agents running an early version of Claude Fable 5.2 rewrote the proof in Lean, a language a computer checks line by line, in 28.7 hours. Its first run took 11 days. The theorem is one line long; its proof rests on decades of deep mathematics. These are the company's own figures.",
+  "event": {
+    "name": "Anthropic's 1,000-agent Lean formalization of Fermat's Last Theorem",
+    "date": "2026-11-09"
+  },
+  "artefact": {
+    "text": "Anthropic's own write-up of the run, by the team that ran it, with its timelapse, the agents' roles and what was and wasn't proved.",
+    "url": "https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/",
+    "label": "Read Anthropic's write-up"
+  },
+  "timeline": [
+    {
+      "date": "2026-09-04",
+      "text": "Anthropic publishes its first complete Lean proof of Fermat's Last Theorem: about 13 million lines, written by Claude over 11 days with a coordination platform called Prove2Me and occasional guidance from a researcher.",
+      "source": 2
+    },
+    {
+      "date": "2026-09-04",
+      "text": "Kevin Buzzard, who leads a funded human effort to formalize the theorem, compiles the code, runs a comparator on it and reports that it checks out.",
+      "source": 3
+    },
+    {
+      "date": "2026-11-09",
+      "text": "Anthropic announces that a team of 1,000 Fable 5.2 agents formalized the proof again, without Prove2Me or a researcher steering, finishing at hour 28.7 of a 30-hour run.",
+      "source": 1
+    },
+    {
+      "date": "2026-11-11",
+      "text": "Anthropic amends its launch post and adds a footnote to describe more accurately what the agents were given at the start.",
+      "source": 0
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "A one-line claim with a very long proof",
+      "text": "The theorem says a to the n plus b to the n never equals c to the n in whole numbers when n is above two. There is no short route. The accepted proof goes through elliptic curves and modular forms, and the agents followed the same classical route, which Anthropic's first formalization took from the Darmon, Diamond and Taylor account of Wiles's proof."
+    },
+    {
+      "h": "Lean checks every step, so nothing can be skipped",
+      "text": "Formalizing means rewriting the proof in Lean so a computer can check it step by step. A human paper can say a step is standard; Lean needs that step proved too, all the way down. That is why the first Lean proof ran to about 13 million lines, which Buzzard says takes nearly 20 times as long to compile as Lean's whole mathematics library."
+    },
+    {
+      "h": "Split the proof into checkable pieces",
+      "text": "The agents got 60 statements: the final theorem and 59 milestones on the way. Each started in Lean with a placeholder, and counted as proved only once Lean's checker accepted a finished proof. One lead agent split the work and assigned it to 999 helpers, so many pieces could be proved at once."
+    },
+    {
+      "h": "The hardest piece set the pace",
+      "text": "Around hour 18 only one statement was left: Langlands-Tunnell, a classical result Wiles's proof relies on. The lead moved about 750 helpers onto it and judged the odds low. It was proved at hour 28.4, and the final theorem followed at hour 28.7. In a proof like this, the slowest deep result decides the finish time."
+    },
+    {
+      "h": "Why the speed matters",
+      "text": "Nobody doubted the theorem. Buzzard was already 99.9% sure the proof was sound, and he says the September formalization told us essentially nothing new mathematically. What changes is the cost of checking. Anthropic's stated aim is to take the laborious checking off mathematicians so they can spend more time on new ideas."
+    }
+  ],
+  "limits": [
+    "All the figures for the 30-hour run come from Anthropic. The first, 11-day proof was compiled and checked by Buzzard and its code is public; we found no outside check of the second run, and the write-up does not say whether its code is public.",
+    "The agents did not start from nothing. They were given the 60 statements, a one-sentence sketch of the classical route, the definitions, and 47 proved lemmas from the first formalization. Anthropic amended its launch post on 11 November to say so more accurately.",
+    "\"30 hours\" is the length of the run, not one unbroken stretch. Activity stopped near hour 18 and the run was restarted from its last save with 12 more hours. The final theorem landed at hour 28.7.",
+    "The launch post says the theorem was fully formalized, but the write-up's count ends at 54 of 60 statements, because five alternative routes were no longer needed and one statement was dropped.",
+    "This is checking, not discovery. The mathematics is Wiles's, via the Darmon, Diamond and Taylor exposition, and the team calls the run a toy experiment."
+  ],
+  "faqs": [
+    {
+      "q": "Did AI prove Fermat's Last Theorem?",
+      "a": "No. Andrew Wiles, with Richard Taylor, proved it in work published in 1995. The agents rewrote a known proof in Lean so a computer could check every step. That is formalization, not a new proof."
+    },
+    {
+      "q": "What is Lean?",
+      "a": "A programming language for mathematics. You write a proof in it, and its checker accepts the proof only if every step follows from earlier ones and the axioms. Anthropic's first proof used only Lean's three standard axioms."
+    },
+    {
+      "q": "Why did the first formalization take 11 days and this one about 30 hours?",
+      "a": "Anthropic credits the newer model and a team of 1,000 agents working in parallel. The second team also started with 47 lemmas from the first proof and a list of 60 target statements, so the two runs did not start from the same place."
+    },
+    {
+      "q": "Has anyone outside Anthropic checked the 30-hour proof?",
+      "a": "Not that we could find as of 17 November 2026. The earlier 11-day proof was compiled and checked by Kevin Buzzard on the day it was published."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "The Lean code from the 1,000-agent run will be made public and compiled by someone outside Anthropic, as Buzzard did for the first proof. This is wrong if, by the check date, there is still no public repository for the run or no outside report of it compiling.",
+      "checkBy": "2027-05-31",
+      "status": "open"
+    }
+  ],
+  "actions": [
+    "Read the claim as checking speed, not new mathematics. The theorem's truth was not in question.",
+    "When a company reports a formalization, look for three things: public code, an outside compile, and a statement check against an agreed version of the theorem. The first proof had all three.",
+    "Compare runs only on what each was given at the start. Lemmas and target statements handed over in advance shorten the job."
+  ],
+  "whyItMatters": "Fermat's Last Theorem is easy to state and hard to prove, which makes it a clean test of machine checking. If a proof this deep can be checked in a day or so, checking long published proofs, and proofs written by AI, gets far cheaper. The open question is how much of that holds up outside the company's own report.",
+  "sources": [
+    {
+      "text": "Anthropic, \"Introducing Claude Fable 5.2 and Claude Mythos 5.2\", 9 Nov 2026 (edited 11 Nov 2026)",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "checked": "2026-11-17",
+      "supports": "the 30-hour and 11-day claims, 1,000 agents with minimal human intervention, one-third the action tokens and a proof seven times shorter, the footnote on what the agents were given, and the 11 November edit note"
+    },
+    {
+      "text": "Barry Zhang, Tianyi Peng, Elle Najt, Keller Scholl and Lance Martin, \"Safely scaling multi-agent teams with Claude Fable 5.2\", Claude blog, 9 Nov 2026",
+      "url": "https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/",
+      "checked": "2026-11-17",
+      "supports": "the 28.7-hour finish, one lead and 999 helpers, the 60 statements and 47 lemmas, Lean's checker as the bar, Langlands-Tunnell at hour 28.4 with about 750 helpers, the restart near hour 18, 54 of 60 statements, and the toy-experiment caveat"
+    },
+    {
+      "text": "Anthropic, \"Formalizing Fermat's Last Theorem\", 4 Sep 2026",
+      "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
+      "checked": "2026-11-17",
+      "supports": "the first formalization: 11 days, about 13 million lines of Lean, Prove2Me, the Darmon, Diamond and Taylor route, Lean's three standard axioms, the comparator check against Mathlib's statement, and the public code"
+    },
+    {
+      "text": "Kevin Buzzard, \"FLT: Anthropic has beaten me to it\", Xena Project blog, 4 Sep 2026",
+      "url": "https://xenaproject.wordpress.com/2026/09/04/flt-anthropic-has-beaten-me-to-it/",
+      "checked": "2026-11-17",
+      "supports": "his compile and comparator check of the first proof, its size and compile time, his view that it adds nothing mathematically, his 99.9% confidence in the proof, and his EPSRC-funded project"
+    }
+  ],
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What did Anthropic say its agents did with Fermat's Last Theorem?",
+    "how": "How do you machine-check a proof this long in about 30 hours?",
+    "calc": "How do the two runs compare?",
+    "limits": "What does the claim not show?",
+    "faq": "What else are people asking?"
+  }
+}

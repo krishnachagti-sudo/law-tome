@@ -1,0 +1,142 @@
+{
+  "slug": "faa-ground-stop-router-cascading-failure",
+  "law": "cascading-failure",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-11-13",
+  "detectedAt": "2026-11-13",
+  "publishedAt": "2026-11-17",
+  "updatedAt": "2026-11-17",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "How One Router Grounded Every Flight in the US",
+  "h1": "How one router at a remote FAA site stopped flights across the United States",
+  "question": "How could one router at one FAA site halt flights across the whole United States?",
+  "answer": "Officials say a router being swapped during copper-to-fiber work began flooding the routers connected to it. The overload spread through the network that links air traffic control centres, communications became unstable at 17 of 22 en route centres, and the FAA halted every flight for more than four hours. That spread is a cascading failure.",
+  "event": {
+    "name": "FAA nationwide ground stop after a telecommunications outage",
+    "date": "2026-11-13"
+  },
+  "artefact": {
+    "text": "FedScoop's report carries the FAA's first statement, Transportation Secretary Sean Duffy's account of the router, and the FAA's figures on flights lost.",
+    "url": "https://fedscoop.com/faa-nationwide-ground-stop-tech-telecommunications-issue/",
+    "label": "Read FedScoop's report"
+  },
+  "timeline": [
+    {
+      "date": "2026-11-13",
+      "text": "The FAA halts all flights at US airports, citing a temporary telecommunications outage affecting multiple Air Route Traffic Control Centers. FedScoop says the stop lasted nearly four hours and 40 minutes.",
+      "source": 1
+    },
+    {
+      "date": "2026-11-13",
+      "text": "The FAA lifts the ground stop in the evening. Fox 9 gives 8:19 p.m. ET from the FAA advisory and 8:25 p.m. ET from a video caption. Duffy says switches and routers got overloaded with data.",
+      "source": 2
+    },
+    {
+      "date": "2026-11-14",
+      "text": "Disruption carries into the weekend: FlightAware counts about 6,700 cancellations on Saturday after more than 9,000 on Friday.",
+      "source": 0
+    },
+    {
+      "date": "2026-11-15",
+      "text": "Officials trace the problem to routers in Arkansas and Texas, on a network run by the contractor L3Harris. The FAA says instability hit 17 of its 22 en route centres.",
+      "source": 0
+    },
+    {
+      "date": "2026-11-16",
+      "text": "An FAA team examines the router named as the likely cause at L3Harris's Florida lab, and Duffy asks the FBI to send investigators. The router's maker, Juniper Networks, says the device did not fail.",
+      "source": 0
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "A routine swap at one site",
+      "text": "L3Harris owns the FAA's copper network and has been moving it to fiber. Duffy said a router being replaced in that switch, at what the Department of Transportation called a remote location, was the starting point."
+    },
+    {
+      "h": "The router floods its neighbours",
+      "text": "Duffy said the router started flooding other routers in the air traffic control system, with more than 1,000 connection attempts every four to five seconds. Each router it reached had to handle that traffic as well as its own."
+    },
+    {
+      "h": "The overload passes along",
+      "text": "Routers have finite capacity. Duffy described switches and routers that got overloaded with data and began giving inconsistent data. A neighbour that is struggling passes the problem on to the routers linked to it, which is how a local fault travels."
+    },
+    {
+      "h": "Most of the national network goes unstable",
+      "text": "Because the en route centres share one connected network, the fault did not stay local. The FAA said 17 of its 22 en route centres saw instability, and the controllers' union said controllers lost communications with some planes."
+    },
+    {
+      "h": "The safe response stops everything",
+      "text": "FAA Administrator Bryan Bedford said the agency spent about 45 minutes trying to find the cause before halting all flights. Once the network was unreliable in most of the country, a nationwide stop was the safe choice, and the cancellations ran on through Sunday."
+    }
+  ],
+  "limits": [
+    "The cause is not settled. Duffy called the router the likely cause and said officials were still working out whether it was contractor error or faulty equipment. Juniper Networks says the device did not fail and worked as intended.",
+    "Accounts of where it started differ. The sources name El Dorado, Arkansas, Amarillo, Texas, routers in Arkansas and Texas, and a router at L3Harris's Florida lab. We have not seen an official report that reconciles them.",
+    "The textbook cascade is load moving off a failed part onto its neighbours. Here, on officials' account, a working router sent out too much traffic. The spread through connected routers fits the law, but the trigger is a flood rather than a classic overload-and-trip.",
+    "Most of what is known comes from officials' public statements in the first few days, not from a published technical investigation. Details may change once the FAA inquiry reports.",
+    "The sources give slightly different durations, from more than four hours to nearly four hours and 40 minutes, and two different lift times."
+  ],
+  "faqs": [
+    {
+      "q": "Was the FAA ground stop a cyberattack?",
+      "a": "Officials said there was no sign of one. Duffy and Bedford said it was not the result of a cyberattack, and Homeland Security Secretary Markwayne Mullin said there was no indication of a nefarious attack. Early reporting noted officials were still investigating."
+    },
+    {
+      "q": "Why did one router affect so many air traffic control centres?",
+      "a": "The centres share one connected telecommunications network. Officials say the faulty router flooded the routers linked to it, the overload spread, and 17 of 22 en route centres saw instability."
+    },
+    {
+      "q": "Who runs the FAA's telecommunications network?",
+      "a": "L3Harris. It owns the FAA's copper network and has been moving it to fiber, according to FedScoop. Officials have not said whether contractor error or faulty equipment caused the outage."
+    },
+    {
+      "q": "How many flights were cancelled?",
+      "a": "FlightAware counted more than 9,000 cancellations on Friday, 6,700 on Saturday and about 2,300 on Sunday. Flighty counted more than 17,000 from Friday to Sunday."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "By 17 May 2027 the FAA or the Department of Transportation will publish a finding on the root cause that describes one device's traffic spreading to other routers. It is wrong if no official cause is published by then, or if the finding puts the cause somewhere else, such as a single central failure or an attack.",
+      "checkBy": "2027-05-17",
+      "status": "open"
+    }
+  ],
+  "actions": [
+    "When a network shares one backbone, ask what stops a fault at one site from reaching the rest. Limits on how much traffic one device can send to its neighbours are one answer.",
+    "Treat maintenance on live, connected systems as a risk to the whole network, not just to the site doing the work.",
+    "For travellers: Yahoo's coverage notes that when a flight is cancelled and you choose not to travel, you are owed a refund."
+  ],
+  "whyItMatters": "Cascading failure is usually told through power grids. This case shows the same pattern in a data network: one site, one device, and a fault that reached most of the country because everything was connected. It also shows why the fix is not only newer equipment, but limits that stop one part from overwhelming the rest.",
+  "sources": [
+    {
+      "text": "Kate Murphy, Andrew Romano, Jack Brewster and others, \"FAA ground stop latest updates\", Yahoo News live coverage, 14 to 16 Nov 2026",
+      "url": "https://www.yahoo.com/news/us/live/faa-ground-stop-latest-updates-duffy-blames-contractor-l3harris-thousands-more-flights-canceled-saturday-no-sign-of-cyberattack-161329174.html",
+      "checked": "2026-11-17",
+      "supports": "the El Dorado router and Florida lab inspection, routers in Arkansas and Texas, L3Harris running the network, 17 of 22 en route centres, Juniper's statement, the FBI request, lost communications with some planes, the FlightAware and Flighty cancellation counts, and refund guidance"
+    },
+    {
+      "text": "\"FAA nationwide ground stop\", FedScoop, 13 Nov 2026, updated 16 Nov 2026",
+      "url": "https://fedscoop.com/faa-nationwide-ground-stop-tech-telecommunications-issue/",
+      "checked": "2026-11-17",
+      "supports": "the FAA's first statement, the duration of nearly four hours and 40 minutes, Duffy's account of the router being replaced in the copper-to-fiber switch and its connection attempts, L3Harris owning the copper network, the remote location, El Dorado and Amarillo, Bedford's 45 minutes and the no-cyberattack statements"
+    },
+    {
+      "text": "\"Live updates: FAA says nationwide ground stop due to 'temporary telecommunications outage'\", Fox 9, 13 Nov 2026",
+      "url": "https://www.fox9.com/news/faa-issues-nationwide-ground-stop-due-to-extraordinary-circumstances",
+      "checked": "2026-11-17",
+      "supports": "the stop lasting more than four hours, the lift time of 8:19 p.m. ET (8:25 p.m. in a caption), and Duffy saying switches and routers got overloaded with data"
+    }
+  ],
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What happened in the FAA ground stop?",
+    "how": "How did one router's fault spread across the country?",
+    "calc": "How big was the knock-on effect?",
+    "limits": "What don't we know yet?",
+    "faq": "What else are people asking?"
+  }
+}

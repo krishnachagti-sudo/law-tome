@@ -1,0 +1,143 @@
+{
+  "slug": "quantum-mpemba-effect-single-qubit-experiment",
+  "law": "mpemba-effect",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-10-22",
+  "detectedAt": "2026-11-09",
+  "publishedAt": "2026-11-17",
+  "updatedAt": "2026-11-17",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "How a Qubit Farther From Equilibrium Got There First",
+  "h1": "How a qubit that started farther from equilibrium got there first",
+  "question": "Did physicists show a quantum version of hot water freezing faster than cold?",
+  "answer": "In a narrow, well-defined sense, yes. A Southeast University team used a single photon to simulate a qubit settling into equilibrium. The state that started farther away arrived faster, because it had no coherence and so skipped the slowest way to relax. That is the Mpemba pattern. It says nothing direct about water.",
+  "event": {
+    "name": "Southeast University's optical demonstration of the strong Mpemba effect in a single qubit, Physical Review Letters",
+    "date": "2026-10-22"
+  },
+  "artefact": {
+    "text": "The paper is \"Genuine Quantum Strong Mpemba Effect by Eliminating Coherence\" by Xiang Zhan, Huixia Gao, Lei Xiao and Peng Xue, Physical Review Letters 137, 170403. Phys.org's report explains the setup in plain terms.",
+    "url": "https://journals.aps.org/prl/abstract/10.1103/z9t9-mwgv",
+    "label": "Read the paper's abstract"
+  },
+  "timeline": [
+    {
+      "date": "2024-10-08",
+      "text": "Phys.org reports a Trinity College Dublin theory paper in Physical Review Letters on producing a quantum Mpemba effect. Phys.org's 2026 report credits a 2024 model from Trinity and LMU Munich with showing that several decay modes can share the slowest rate.",
+      "source": 2
+    },
+    {
+      "date": "2026-02-18",
+      "text": "Physical Review Letters receives the Southeast University paper.",
+      "source": 1
+    },
+    {
+      "date": "2026-10-22",
+      "text": "The paper is published in Physical Review Letters, volume 137, article 170403.",
+      "source": 1
+    },
+    {
+      "date": "2026-11-09",
+      "text": "Phys.org reports the experiment, with comments from the senior author, Peng Xue.",
+      "source": 0
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "Two starting states, one farther away",
+      "text": "The team prepared a qubit in two ways. One was an energy eigenstate: a definite energy and no coherence. The other was a superposition of two energy levels, which carries coherence. They measured distance from equilibrium as nonequilibrium free energy, and the eigenstate started with more of it. In hot-water terms, the eigenstate is the hot cup."
+    },
+    {
+      "h": "Relaxing happens through decay modes",
+      "text": "A system settling into equilibrium loses its departure from equilibrium through several decay modes at once, and the slowest one sets the pace at the end. Xue's summary of the strong Mpemba effect is that relaxation speeds up exponentially when the starting state has no overlap with that slowest mode."
+    },
+    {
+      "h": "Here the slowest modes are all coherence",
+      "text": "The qubit's contact with its surroundings was modelled with the Davies map, a qubit weakly coupled to an environment at a fixed temperature. For this map the slowest modes are tied together and purely coherent. The eigenstate has no coherence, so it never touches them. The superposition does, so it is stuck waiting on the slow modes."
+    },
+    {
+      "h": "Built with one photon and wave plates",
+      "text": "The qubit was the photon's polarization, and the photon's different paths stood in for the environment. Temperature and elapsed time were set by wave-plate angles, so scanning the relaxation meant turning plates, not rebuilding the circuit. The state was read out with quantum state tomography, and the team checked that running the time-t step twice matched the time-2t step."
+    },
+    {
+      "h": "The farther state arrived first",
+      "text": "The eigenstate, which began farther from equilibrium, reached it faster than the superposition. That is the Mpemba claim in a form where both \"farther\" and \"arrived\" are defined exactly, and the cause is named: removing coherence. The hot-water version still has neither an agreed definition nor an agreed cause."
+    }
+  ],
+  "limits": [
+    "A qubit is not a cup of water. The result shows the Mpemba pattern can occur in a precisely defined quantum system. It does not show that hot water freezes faster than cold, which remains contested.",
+    "The relaxation was simulated, not lived through. Phys.org notes that evolution time was encoded in optical settings, so there were no real-time dynamics.",
+    "It is one qubit. Extending the result to larger or interacting systems is planned work, not done work.",
+    "Phys.org's report gives no figures for how much faster the eigenstate arrived, or for fidelities, free energies or temperatures. We read the abstract and the report, not the full paper, so this page relies on them for the details.",
+    "\"Farther\" here means more nonequilibrium free energy, as the paper defines it. The result is stated for that measure and for the Davies map."
+  ],
+  "faqs": [
+    {
+      "q": "Does this prove hot water freezes faster than cold?",
+      "a": "No. It shows a qubit that starts farther from equilibrium can reach it faster, for a stated reason. The hot-water claim depends on container, volume and what counts as frozen, and careful studies have failed to find a meaningful effect."
+    },
+    {
+      "q": "What is the strong Mpemba effect?",
+      "a": "The version where the faster arrival is exponential, not marginal, because the starting state has no overlap with the slowest decay mode. In this experiment that meant starting with no coherence."
+    },
+    {
+      "q": "Is this the first quantum Mpemba experiment?",
+      "a": "No. In a January 2024 preprint, a Weizmann Institute team reported the inverse effect on a single trapped-ion qubit, where a colder qubit reached its final steady state faster than a hotter one. The Southeast University work is a strong effect tied to removing coherence."
+    },
+    {
+      "q": "Why would anyone use this?",
+      "a": "The researchers suggest faster cooling, better ways to prepare quantum states, and thermal machines that exploit the effect. Those are proposals, not results."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "By 30 November 2027, an experiment reports the strong Mpemba effect from removing coherence in a system larger than one qubit, such as the high-dimensional systems Xue names. If no such paper or preprint appears by then, this was wrong.",
+      "checkBy": "2027-11-30",
+      "status": "open"
+    }
+  ],
+  "actions": [
+    "When someone cites quantum results as proof that hot water freezes faster, ask which system and which definition of \"faster\". These results are about well-defined abstract systems.",
+    "Treat the hot-water claim as contested and the qubit result as a clean, narrow demonstration. Both can be true at once.",
+    "Read \"farther from equilibrium\" carefully. In this work it is a measured quantity, not a temperature reading."
+  ],
+  "whyItMatters": "The Mpemba effect began as a kitchen observation that nobody could pin down. This experiment shows the same pattern where it can be defined and its cause traced, which is why physicists now study it in abstract systems. It sharpens the idea without settling the water.",
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What did the Southeast University team show?",
+    "how": "How can a qubit farther from equilibrium get there first?",
+    "calc": "Why does removing coherence speed it up?",
+    "limits": "What does this not show?",
+    "faq": "What else are people asking?"
+  },
+  "sources": [
+    {
+      "text": "Ingrid Fadelli, \"Optical experiment demonstrates the strong Mpemba effect in a single qubit\", Phys.org, 9 Nov 2026",
+      "url": "https://phys.org/news/2026-11-optical-strong-mpemba-effect-qubit.html",
+      "checked": "2026-11-17",
+      "supports": "the setup (photon polarization, paths as environment, wave plates, tomography, semigroup check), the two starting states and the result, Xue's description of the strong effect, the 2024 Trinity and LMU model, the simulated time caveat, and the proposed applications and future work"
+    },
+    {
+      "text": "Xiang Zhan, Huixia Gao, Lei Xiao and Peng Xue, \"Genuine Quantum Strong Mpemba Effect by Eliminating Coherence\", Physical Review Letters 137, 170403 (2026)",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/z9t9-mwgv",
+      "checked": "2026-11-17",
+      "supports": "the authors, Southeast University affiliation, received 18 Feb 2026 and published 22 Oct 2026, and the abstract's claim that the Davies map's slowest modes are degenerate and purely coherent"
+    },
+    {
+      "text": "Phys.org report on the Trinity College Dublin quantum Mpemba work, 8 Oct 2024, on Moroder et al., Physical Review Letters 133, 140404 (2024)",
+      "url": "https://phys.org/news/2024-10-physics-team-uncovers-quantum-mpemba.html",
+      "checked": "2026-11-17",
+      "supports": "the 2024 Trinity College Dublin theory work on a quantum Mpemba effect, and the note that the classical effect is still debated"
+    },
+    {
+      "text": "Shahaf Aharony Shapira and others, \"The inverse Mpemba effect demonstrated on a single trapped ion qubit\", arXiv 2401.05830",
+      "url": "https://ar5iv.labs.arxiv.org/html/2401.05830",
+      "checked": "2026-11-17",
+      "supports": "the earlier Weizmann Institute single-qubit experiment showing the inverse Mpemba effect"
+    }
+  ]
+}

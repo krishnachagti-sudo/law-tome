@@ -1,0 +1,154 @@
+{
+  "slug": "in-plane-hall-effect-tairte4-carnegie-mellon",
+  "law": "the-hall-effect",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-11-16",
+  "detectedAt": "2026-11-16",
+  "publishedAt": "2026-11-17",
+  "updatedAt": "2026-11-17",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "How a Hall Signal Appeared With the Magnetism Lying Flat",
+  "h1": "How Carnegie Mellon physicists got a Hall signal from magnetism lying in the plane of a film",
+  "question": "Can the Hall effect work when the magnetism lies flat in the plane of the material?",
+  "answer": "In one special device, yes. A Carnegie Mellon-led team stacked a few atomic layers of TaIrTe4 on the magnet Cr2Ge2Te6. They saw the usual sideways Hall signal plus a second one that follows magnetization lying in the plane of the film. Theory had predicted this, but nobody had shown it before. It works only at low temperatures so far.",
+  "event": {
+    "name": "Electronic Design reports the Carnegie Mellon-led in-plane anomalous Hall effect result in Nature Materials",
+    "date": "2026-11-16"
+  },
+  "artefact": {
+    "text": "Carnegie Mellon's own news story explains the device and names the team. The paper is in Nature Materials, with an open preprint on arXiv.",
+    "url": "https://www.cmu.edu/news/stories/archives/2026/august/cmu-physicists-take-hall-effect-in-a-new-direction",
+    "label": "Read Carnegie Mellon's story"
+  },
+  "timeline": [
+    {
+      "date": "2025-05-11",
+      "text": "The team posts a preprint on arXiv describing a Hall response in TaIrTe4 on Cr2Ge2Te6 that depends on in-plane magnetization, not only the out-of-plane part.",
+      "source": 3
+    },
+    {
+      "date": "2026-08-19",
+      "text": "Carnegie Mellon's physics department publishes its news story on the result, now in Nature Materials.",
+      "source": 2
+    },
+    {
+      "date": "2026-08-28",
+      "text": "The story runs on Carnegie Mellon's main news site, with quotes from Simranjeet Singh and Shubhayu Chatterjee.",
+      "source": 1
+    },
+    {
+      "date": "2026-09-03",
+      "text": "ScienceDaily republishes the university's release, citing the paper by I-Hsuan Kao and colleagues.",
+      "source": 4
+    },
+    {
+      "date": "2026-11-16",
+      "text": "Electronic Design covers it for engineers, framing it as a possible route to one sensor that reads fields along several axes.",
+      "source": 0
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "The usual geometry is a right angle",
+      "text": "In the textbook Hall effect, current runs along a strip and the magnetic field points straight through it. The sideways push on moving charges piles them up on one edge, and that pile-up is the Hall voltage. A field lying flat in the plane, along the current, gives no such sideways push in an ordinary film."
+    },
+    {
+      "h": "Magnets have their own Hall signal",
+      "text": "Magnetic materials add an extra Hall signal that follows their magnetization, called the anomalous Hall effect. As the preprint puts it, that signal normally depends only on the part of the magnetization pointing out of the film. Tilt the magnetization flat and the signal should vanish."
+    },
+    {
+      "h": "Low symmetry lets the flat part count",
+      "text": "TaIrTe4 has a low-symmetry crystal structure. Placed on Cr2Ge2Te6, the pair keeps only one mirror symmetry, according to the preprint. With so little symmetry left, nothing forbids the in-plane magnetization from pushing charges sideways too."
+    },
+    {
+      "h": "The magnet lends its magnetism",
+      "text": "TaIrTe4 is not magnetic by itself. Carnegie Mellon says magnetism leaks in from the Cr2Ge2Te6 next to it, so the thin film becomes magnetic while keeping its electronic character. Chatterjee's model ties the new signal to spin-orbit coupling at the interface between the two layers."
+    },
+    {
+      "h": "One device, two signals",
+      "text": "The team measured both the ordinary out-of-plane Hall signal and the new in-plane one in the same device. That is why Singh says one sensor could do multidimensional magnetic sensing, where reading two directions has usually needed two sensors."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "Carnegie Mellon's team or another group will report the in-plane anomalous Hall signal at room temperature, in this or another material pair. If no such report appears in a peer-reviewed journal or on arXiv by this date, the prediction was wrong.",
+      "checkBy": "2027-11-30",
+      "status": "open"
+    }
+  ],
+  "limits": [
+    "It has only been shown at low temperatures, where Cr2Ge2Te6 becomes ferromagnetic. The sources we opened give no exact temperature, and Carnegie Mellon says room-temperature behaviour is still being studied.",
+    "The exact mechanism is not settled. Chatterjee says a detailed characterization of few-layered TaIrTe4 is needed to pin it down.",
+    "The devices are nanometre-sized, a few atomic layers thick, and the materials are hard to find or make. Electronic Design notes this is still research-stage work. A working commercial sensor is a separate, later step.",
+    "None of the sources we opened give the size of the signal or how it compares with today's Hall sensors, so we can't say how sensitive such a sensor would be.",
+    "This is an anomalous Hall effect, driven by the material's magnetization, not the classic Hall effect from an outside field alone. It extends the family of Hall effects; it does not overturn the ordinary one."
+  ],
+  "faqs": [
+    {
+      "q": "What is new about this Hall effect?",
+      "a": "The Hall signal normally follows only the part of the field or magnetization pointing out of the film. Here a second signal follows magnetization lying flat in the film. Carnegie Mellon says this had been predicted in theory but never shown in an experiment."
+    },
+    {
+      "q": "What is the anomalous Hall effect?",
+      "a": "A Hall voltage in a magnetic material that comes from its own magnetization, on top of the ordinary Hall voltage from an outside field."
+    },
+    {
+      "q": "Why pair TaIrTe4 with Cr2Ge2Te6?",
+      "a": "TaIrTe4 has the low symmetry needed for an in-plane response but is not magnetic. The Cr2Ge2Te6 next to it lends it magnetism through proximity."
+    },
+    {
+      "q": "Will this be in my phone soon?",
+      "a": "Not soon. It works at low temperatures in nanometre-sized devices, and the team is still studying room-temperature behaviour and other materials."
+    }
+  ],
+  "sources": [
+    {
+      "text": "Bill Schweber, \"Hall Effect Literally Has a New Angle\", Electronic Design, 16 Nov 2026",
+      "url": "https://www.electronicdesign.com/technologies/analog/article/55419062/electronic-design-hall-effect-literally-has-a-new-angle",
+      "checked": "2026-11-17",
+      "supports": "the 16 November report, the TaIrTe4 and Cr2Ge2Te6 pairing, out-of-plane and in-plane signals in one device, the multi-axis sensing framing, and the research-stage caveats"
+    },
+    {
+      "text": "Amy Pavlak Laird, \"CMU Physicists Take Hall Effect in a New Direction\", Carnegie Mellon University News, 28 Aug 2026",
+      "url": "https://www.cmu.edu/news/stories/archives/2026/august/cmu-physicists-take-hall-effect-in-a-new-direction",
+      "checked": "2026-11-17",
+      "supports": "the team and roles, the proximity magnetism, the interface spin-orbit model, the quotes from Singh and Chatterjee, the low-temperature limit and room-temperature work"
+    },
+    {
+      "text": "Amy Pavlak Laird, \"CMU Physicists Take Hall Effect in a New Direction\", Carnegie Mellon Department of Physics, 19 Aug 2026",
+      "url": "https://www.cmu.edu/physics/news-events/2026/0819_hall-effect.html",
+      "checked": "2026-11-17",
+      "supports": "the physics department's release on 19 August and the Nature Materials DOI"
+    },
+    {
+      "text": "I-Hsuan Kao et al., \"Magnetization Dependent In-plane Anomalous Hall Effect in a Low-dimensional System\", arXiv:2505.06829, 11 May 2025",
+      "url": "https://arxiv.org/abs/2505.06829",
+      "checked": "2026-11-17",
+      "supports": "the preprint date, the 20 authors, that the anomalous Hall effect normally follows only out-of-plane magnetization, the single remaining mirror symmetry, and the interfacial spin-orbit model"
+    },
+    {
+      "text": "\"Scientists just overturned a century-old physics assumption\" (Carnegie Mellon release), ScienceDaily, 3 Sep 2026",
+      "url": "https://sciencedaily.com/releases/2026/09/260901010659.htm",
+      "checked": "2026-11-17",
+      "supports": "the republication on 3 September and the journal reference: Kao et al., Nature Materials, 2026, DOI 10.1038/s41563-026-02611-9"
+    }
+  ],
+  "actions": [
+    "If you design with Hall sensors, treat this as a lab result to watch, not a part to spec. The open question is room temperature.",
+    "Read the arXiv preprint for the measurements; the Nature Materials version is paywalled.",
+    "When a headline says the Hall effect was overturned, check which Hall effect. This one is the anomalous version, in a magnetic, low-symmetry material."
+  ],
+  "whyItMatters": "Hall sensors are everywhere, in cars, phones and motors, and each one reads the field in one direction. A thin film that reads in-plane and out-of-plane magnetism at once could shrink multi-axis sensing to a single device. That only matters if it works warm, which is the next thing to watch.",
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What did the Carnegie Mellon team find?",
+    "how": "How can magnetism lying flat produce a Hall signal?",
+    "calc": "What would the numbers look like?",
+    "limits": "What does this result not show yet?",
+    "faq": "What else are people asking?"
+  }
+}
