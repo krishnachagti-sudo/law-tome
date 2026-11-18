@@ -1,0 +1,138 @@
+{
+  "slug": "apple-outage-internal-update-hanlons-razor",
+  "law": "hanlons-razor",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-11-17",
+  "detectedAt": "2026-11-18",
+  "publishedAt": "2026-11-18",
+  "updatedAt": "2026-11-18",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "Was the Apple Outage a Cyberattack?",
+  "h1": "Was the 17 November Apple outage a cyberattack, or a mistake?",
+  "question": "Was the Apple outage on 17 November 2026 a cyberattack?",
+  "answer": "Apple says no. It said an internal update caused the outages that hit iCloud sign-in, the App Store and its retail stores. Coming days after failures at Microsoft, it looked like a pattern to some people online. Reading an attack into failures that ordinary error explains is what Hanlon's Razor warns against.",
+  "event": {
+    "name": "Apple services outage caused by an internal update",
+    "date": "2026-11-17"
+  },
+  "artefact": {
+    "text": "TechCrunch's report lists the services Apple's status page showed as down, quotes Apple's statement on the internal update, and notes that none of the week's outages had been attributed to cyberattacks.",
+    "url": "https://techcrunch.com/2026/11/17/apple-services-including-icloud-app-store-and-apple-music-hit-by-outage/",
+    "label": "Read TechCrunch's report"
+  },
+  "timeline": [
+    {
+      "date": "2026-11-17",
+      "text": "Problems begin around 11:45 a.m. ET, according to MacRumors. TIME says Downdetector reports began to spike around 11:40 a.m.",
+      "source": 1
+    },
+    {
+      "date": "2026-11-17",
+      "text": "Apple's status page shows iCloud Account and Sign In issues affecting all users, with the App Store, AppleCare on Device and Apple Music also having problems. Apple retail store systems go offline and customers in stores cannot complete purchases.",
+      "source": 0
+    },
+    {
+      "date": "2026-11-17",
+      "text": "Apple says an internal update caused the outages and that they were not a cyberattack. Its statement reads: \"Many of our systems are back up and running after an internal update caused some outages this morning.\"",
+      "source": 0
+    },
+    {
+      "date": "2026-11-17",
+      "text": "By 6 p.m. ET, Apple's status page shows all the outages resolved, according to TechCrunch.",
+      "source": 0
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "A bad week for big systems",
+      "text": "The Apple outage arrived, in TechCrunch's words, \"only days after technical failures at Microsoft\". MacRumors noted it followed other major outages over the last few days, including the FAA ground stop. Several large failures in one week is the setting in which people start looking for one hidden cause."
+    },
+    {
+      "h": "The cluster gets read as intent",
+      "text": "TechCrunch reported that users across social media had begun to speculate about the cause. In Hacker News's \"Apple Services Down\" thread, commenters argued over whether the outages were the result of cyberattacks, and one wrote that if they were all coincidental, \"we should be able to multiply the probabilities\". An attack would need a capable attacker, a shared target and coordination across companies."
+    },
+    {
+      "h": "The duller explanation is enough",
+      "text": "Apple's own account needs none of that. An internal update, a routine change that every large company ships, went wrong and took systems down with it. On Apple's account, that one ordinary error took down iCloud sign-in, the App Store and the retail tills on the same morning, with no attacker needed."
+    },
+    {
+      "h": "The record so far backs the dull reading",
+      "text": "TechCrunch noted that none of the outages in the past week had been attributed to cyberattacks, \"but rather to technical problems\". Hanlon's Razor is a rule about where to place your first bet, and in this case the bet on error rather than malice matches every official explanation given."
+    }
+  ],
+  "limits": [
+    "The denial is Apple's own statement. Apple has not said what the update was or what it changed, and we have not seen an independent technical account or a post-incident report.",
+    "Hanlon's Razor is a rule of thumb, not a proof. It says error is the better first bet, not that attacks never happen. If later evidence showed an attack, the razor would have been the wrong bet here, not a wrong law.",
+    "The razor speaks of stupidity, and that is too harsh for this case. A faulty update shipped by skilled engineers is error, not stupidity. The sources do not say who made the change or why it failed.",
+    "Occam's Razor gives the same answer here: one internal error is simpler than a coordinated attack. Hanlon's Razor is the narrower version, about malice against error, which is the question people were actually asking."
+  ],
+  "faqs": [
+    {
+      "q": "What caused the Apple outage on 17 November 2026?",
+      "a": "Apple said an internal update caused it. Its statement said many systems were \"back up and running after an internal update caused some outages this morning.\" Apple did not say what the update was."
+    },
+    {
+      "q": "Was the Apple outage linked to the Microsoft outage?",
+      "a": "No link has been reported. TIME wrote that \"The outages do not appear to be related,\" and TechCrunch said none of the week's outages had been attributed to cyberattacks."
+    },
+    {
+      "q": "Which Apple services went down?",
+      "a": "Apple's status page listed iCloud Account and Sign In for all users, the App Store, AppleCare on Device and Apple Music, according to TechCrunch. MacRumors reported that retail store systems were offline and customers could not complete purchases. TIME also names Apple Pay and Apple Support."
+    },
+    {
+      "q": "What does Hanlon's Razor say?",
+      "a": "Never attribute to malice that which is adequately explained by stupidity. In practice: when something fails, check for ordinary error before assuming someone did it on purpose."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "By 17 February 2027, neither Apple nor a credible outlet will report that the 17 November 2026 outage was caused by a cyberattack. It is wrong if Apple revises its account, or if a credible report attributes the outage to an attacker, by that date.",
+      "checkBy": "2027-02-17",
+      "status": "open"
+    }
+  ],
+  "actions": [
+    "When several systems fail in the same week, ask whether each failure has its own ordinary explanation before looking for one hidden cause.",
+    "Wait for the company's statement and, ideally, a post-incident report before reading intent into an outage.",
+    "Ask what an attack would need (a capable attacker, a shared target, coordination) and whether there is any evidence of those, rather than only of the failures."
+  ],
+  "whyItMatters": "Outages that land close together feel like a pattern, and a pattern invites a story about someone behind it. This week gave that story plenty of material. Hanlon's Razor is useful because it tells you where to start: with the boring explanation, which in this case is the one Apple gave.",
+  "sources": [
+    {
+      "text": "Sarah Perez, \"Apple services, including iCloud, App Store, Apple Music, and more, hit by outage\", TechCrunch, 17 Nov 2026",
+      "url": "https://techcrunch.com/2026/11/17/apple-services-including-icloud-app-store-and-apple-music-hit-by-outage/",
+      "checked": "2026-11-18",
+      "supports": "the services on Apple's status page, Apple's statement about an internal update, that it was not a cyberattack, social media speculation about the cause, the timing after Microsoft's failures, no week's outage attributed to cyberattacks, and everything resolved by 6 p.m. ET"
+    },
+    {
+      "text": "Juli Clover, \"Apple Blames Internal Update for Outage, Says It Wasn't a Cyberattack\", MacRumors, 17 Nov 2026",
+      "url": "https://www.macrumors.com/2026/11/17/apple-outage-internal-update/",
+      "checked": "2026-11-18",
+      "supports": "issues starting around 11:45 a.m. ET, retail store systems offline and customers unable to complete purchases, and the outage following other major outages including the FAA ground stop"
+    },
+    {
+      "text": "Connor Greene, \"What to Know About the Apple Outage\", TIME, 17 Nov 2026",
+      "url": "https://time.com/article/2026/11/17/apple-outage-down-update-issue/",
+      "checked": "2026-11-18",
+      "supports": "Downdetector reports spiking around 11:40 a.m., Apple Pay and Apple Support affected, the spokesperson's statement that it was not a cyber attack, and that the Apple and Microsoft outages do not appear to be related"
+    },
+    {
+      "text": "\"Apple Services Down\", Hacker News discussion, 17 Nov 2026",
+      "url": "https://news.ycombinator.com/item?id=50535238",
+      "checked": "2026-11-18",
+      "supports": "commenters debating whether the outages were cyberattacks, and the multiply-the-probabilities comment"
+    }
+  ],
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What happened in the Apple outage?",
+    "how": "Why did people suspect an attack, and why does the razor say otherwise?",
+    "calc": "How big was it?",
+    "limits": "What don't we know?",
+    "faq": "What else are people asking?"
+  }
+}
