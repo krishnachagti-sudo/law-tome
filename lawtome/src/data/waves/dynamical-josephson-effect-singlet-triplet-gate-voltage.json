@@ -1,0 +1,131 @@
+{
+  "slug": "dynamical-josephson-effect-singlet-triplet-gate-voltage",
+  "law": "the-josephson-effect",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-11-18",
+  "detectedAt": "2026-11-19",
+  "publishedAt": "2026-11-19",
+  "updatedAt": "2026-11-19",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "Can a Changing Voltage Rewrite Josephson Rules?",
+  "h1": "How a gate voltage that rises and falls could change which Josephson currents are allowed",
+  "question": "Can a changing gate voltage change the rules of the Josephson effect?",
+  "answer": "In theory, yes. A model by Morten Amundsen, Niladri Banerjee and Igor Žutić, now in Physical Review B, finds that a gate voltage that rises and falls between a spin-singlet and a spin-triplet superconductor changes which supercurrents can flow. A new cos φ component appears and vanishes when the gate is held steady. Nobody has measured it yet.",
+  "event": {
+    "name": "Physical Review B publishes the dynamical Josephson effect paper, reported by Quantum Zeitgeist",
+    "date": "2026-11-18"
+  },
+  "artefact": {
+    "text": "The authors' preprint on arXiv is free to read and carries the full abstract. The journal version in Physical Review B is paywalled.",
+    "url": "https://arxiv.org/abs/2606.02694",
+    "label": "Read the preprint"
+  },
+  "timeline": [
+    {
+      "date": "2026-06-01",
+      "text": "Amundsen, Banerjee and Žutić post the preprint \"Dynamical Josephson Effect Between a Singlet and a Triplet Superconductor\" on arXiv.",
+      "source": 1
+    },
+    {
+      "date": "2026-11-17",
+      "text": "The paper is accepted and published online in Physical Review B, according to its Crossref record.",
+      "source": 2
+    },
+    {
+      "date": "2026-11-18",
+      "text": "Quantum Zeitgeist reports the result, naming Amundsen of the Norwegian University of Science and Technology and colleagues.",
+      "source": 0
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "The usual rules come from symmetry",
+      "text": "In a Josephson junction, pairs of electrons tunnel between two superconductors through a thin barrier, and the current depends on the phase difference between them. The abstract says the selection rules for which currents can flow \"are generally determined by the symmetries of the constituent superconductors\". A spin-singlet on one side and a spin-triplet on the other is a mismatch that earlier studies used to rule some currents out."
+    },
+    {
+      "h": "A layer whose spin-orbit coupling a gate can tune",
+      "text": "The model puts a two-dimensional electron gas between the two superconductors. In that layer, a gate voltage controls the spin-orbit coupling, the link between an electron's motion and its spin. Changing the gate changes how a tunnelling pair's spin can turn on the way across."
+    },
+    {
+      "h": "Make the gate move, and the rules change",
+      "text": "With the gate held steady, nothing new happens. With a harmonic modulation, a gate voltage that rises and falls in a regular rhythm, the paper finds \"an oscillatory cos φ Josephson component which vanishes in the static limit\". Ordinary junctions follow a sine-shaped relation between current and phase, so a cosine term is a different kind of current."
+    },
+    {
+      "h": "Part of the current loses energy, most of it does not",
+      "text": "The abstract says the resulting charge current has a dissipationless part, the classic Josephson supercurrent, and a dissipative part. The dissipative part is \"strongly suppressed at low temperatures\", which is where such junctions are run."
+    },
+    {
+      "h": "Why the authors think it matters",
+      "text": "Josephson junctions are the working part of superconducting qubits. The authors say the effect could change how junctions are used in qubits, as sources of spin-triplet currents, and as platforms for proximity effects, and Quantum Zeitgeist reports they suggest using the tunable current-phase relation to switch junctions."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "An experimental group will report a gate-modulated cos φ Josephson component in a singlet-triplet junction, the effect this paper predicts. If no such measurement appears in a peer-reviewed journal or on arXiv by this date, the prediction was wrong.",
+      "checkBy": "2028-11-30",
+      "status": "open"
+    }
+  ],
+  "limits": [
+    "This is a theory result. The paper models a junction; none of the sources we opened report an experiment that has seen the cos φ component.",
+    "We could read the arXiv abstract and Quantum Zeitgeist's report, not the full journal paper, which is paywalled. Nothing here goes beyond what those two say.",
+    "The model works in the tunnelling limit, according to Quantum Zeitgeist. The authors suggest more transparent junctions and stronger spin-orbit coupling could change the size of the effect, so its size in a real device is open.",
+    "The setup needs a spin-triplet superconductor, induced by proximity or intrinsic to the material. Building a clean singlet-triplet junction with a gated electron gas in between is itself a hard experiment."
+  ],
+  "faqs": [
+    {
+      "q": "What is new in this Josephson effect?",
+      "a": "A current-phase term shaped like cos φ that appears only while the gate voltage oscillates and vanishes when it is held steady. Ordinary junctions follow a sine-shaped relation."
+    },
+    {
+      "q": "What is spin-orbit coupling?",
+      "a": "The link between how an electron moves and which way its spin points. In a thin electron gas, a gate voltage can tune how strong it is."
+    },
+    {
+      "q": "What is the difference between spin-singlet and spin-triplet superconductors?",
+      "a": "In a spin-singlet superconductor, like most ordinary ones, paired electrons have opposite spins. In a spin-triplet one the pair's spins can line up. The mismatch between them limits which Josephson currents can flow."
+    },
+    {
+      "q": "Does this mean better quantum computers soon?",
+      "a": "Not soon. It is a prediction from a model. Someone has to build the junction and measure the effect first."
+    }
+  ],
+  "sources": [
+    {
+      "text": "\"Spin-orbit coupling changes selection rules in a quantum Josephson junction\", Quantum Zeitgeist, 18 Nov 2026",
+      "url": "https://quantumzeitgeist.com/norwegian-science-spin-orbit-coupling-selection/",
+      "checked": "2026-11-19",
+      "supports": "the 18 November report, Amundsen's affiliation, the sine versus cosine current-phase relation, the tunnelling limit, and the suggested uses in qubits and switching"
+    },
+    {
+      "text": "Morten Amundsen, Niladri Banerjee and Igor Žutić, \"Dynamical Josephson Effect Between a Singlet and a Triplet Superconductor\", arXiv:2606.02694, 1 Jun 2026",
+      "url": "https://arxiv.org/abs/2606.02694",
+      "checked": "2026-11-19",
+      "supports": "the preprint date, the model, the gate-controlled spin-orbit coupling, the cos φ component that vanishes in the static limit, and the dissipationless and dissipative parts of the current"
+    },
+    {
+      "text": "Crossref record for DOI 10.1103/rmdg-m5jv, Physical Review B, 17 Nov 2026",
+      "url": "https://api.crossref.org/works/10.1103/rmdg-m5jv",
+      "checked": "2026-11-19",
+      "supports": "that the paper was accepted and published online in Physical Review B on 17 November 2026, with the three authors"
+    }
+  ],
+  "actions": [
+    "Read the abstract on arXiv for the claim in the authors' own words; the journal version is paywalled.",
+    "When a headline says the rules of a junction changed, check whether it is a measurement or a model. This one is a model.",
+    "If you work on superconducting qubits, the thing to watch is an experiment that sees the cos φ term."
+  ],
+  "whyItMatters": "Josephson junctions decide how superconducting qubits behave, and their rules are usually fixed by the materials. A knob that changes those rules while the device runs would be a new way to switch and tune them. Until someone measures it, it is a prediction to test.",
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What did the physicists find?",
+    "how": "How can a moving gate change which currents flow?",
+    "calc": "What would the numbers look like?",
+    "limits": "What does this result not show yet?",
+    "faq": "What else are people asking?"
+  }
+}
