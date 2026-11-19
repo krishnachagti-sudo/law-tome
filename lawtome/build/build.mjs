@@ -161,6 +161,11 @@ export async function buildSite(opts) {
   let facts = {};
   try { facts = JSON.parse(await readFile('src/data/facts.json', 'utf8')); }
   catch { /* not harvested yet */ }
+  // The True or Folklore? book (src/data/book.json): its rounds by law slug.
+  // Case pages show the round's question only once book.url is set.
+  let book = null;
+  try { book = JSON.parse(await readFile('src/data/book.json', 'utf8')); }
+  catch { /* no book data */ }
 
   // The coastline for the origins map — one pre-projected SVG path, generated
   // once by build/make-worldmap.py from public-domain Natural Earth data and
@@ -350,7 +355,7 @@ export async function buildSite(opts) {
   for (const w of waves) {
     const law = byslug[w.law];
     if (!law) throw new Error(`wave ${w.slug}: unknown law ${w.law}`);
-    writes.push(writePage(join(out, 'wild', w.slug, 'index.html'), wavePage(w, law, { base, origin, count: publishedCount, categoryLabel: categories[law.category] || law.category, follow: opts.follow || null, portrait: law.namedAfter ? ((images && images.people) || {})[personSlug(law.namedAfter)] || null : null })));
+    writes.push(writePage(join(out, 'wild', w.slug, 'index.html'), wavePage(w, law, { base, origin, count: publishedCount, categoryLabel: categories[law.category] || law.category, follow: opts.follow || null, portrait: law.namedAfter ? ((images && images.people) || {})[personSlug(law.namedAfter)] || null : null, book })));
     writes.push(writePage(join(out, 'og', 'wild', `${w.slug}.png`), renderPng(waveCardSvg(w, law))));
     writes.push(writePage(join(out, 'og', 'wild', `${w.slug}-16x9.png`), renderPng(waveHeroSvg(w))));
     writes.push(writePage(join(out, 'og', 'wild', `${w.slug}-tall.png`), renderPng(waveTallSvg(w, law))));

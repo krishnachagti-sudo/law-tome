@@ -235,3 +235,17 @@ test('a case page with an engraving shows it after the answer and offers it as t
   assert.ok(out.includes('https://conyso.com/lawtome/assets/img/plates/wild-x-case-hero.jpg'));
   assert.equal(casePlate({ ...wave, image: undefined }), '');
 });
+
+test('the book block stays off until the book has a url, then shows the round question and never the verdict', () => {
+  const book = JSON.parse(readFileSync(new URL('../src/data/book.json', import.meta.url)));
+  assert.ok(!html.includes('wave-book'), 'no book block without a url');
+  const q = book.rounds[wave.law];
+  assert.ok(q, 'the Doppler law is a round in the book');
+  const on = wavePage(wave, law, { base: '/lawtome/', origin: 'https://conyso.com', count: 1116, book: { ...book, url: 'https://example.com/book' } });
+  assert.ok(on.includes('class="wave-book"'));
+  assert.ok(on.includes('href="https://example.com/book"'));
+  const block = on.slice(on.indexOf('class="wave-book"'), on.indexOf('</aside>', on.indexOf('class="wave-book"')));
+  assert.ok(!/\b(TRUE|FOLKLORE|DISPUTED)\b/.test(block), 'no verdict word in the block');
+  const other = wavePage({ ...wave, law: 'not-in-the-book' }, law, { base: '/lawtome/', book: { ...book, url: 'https://example.com/book' } });
+  assert.ok(!other.includes('class="wave-book"'), 'no block when the law is not a round');
+});

@@ -202,7 +202,21 @@ export function casePlate(wave, base = '/') {
     </figure>`;
 }
 
-export function wavePage(wave, law, { base = '/', origin = '', count, categoryLabel = '', follow = null, portrait = null } = {}) {
+// The True or Folklore? book block. Shows only once the book has a live
+// url and the case page's law is one of its rounds; carries the round's
+// question, never its verdict.
+export function bookBlock(wave, law, book) {
+  const q = book && book.url && book.rounds && book.rounds[wave.law];
+  if (!q) return '';
+  return `
+    <aside class="wave-book" aria-labelledby="w-book">
+      <p class="lbl" id="w-book">From the book</p>
+      <p class="wave-book-q">${escapeHtml(q)}</p>
+      <p>${escapeHtml(law.name)} is one of the 100 stories in <a href="${escapeHtml(book.url)}" rel="noopener"><i>${escapeHtml(book.title)}</i></a>, a quiz book from the Law Tome. Guess true, folklore or disputed, then turn the page for the verdict.</p>
+    </aside>`;
+}
+
+export function wavePage(wave, law, { base = '/', origin = '', count, categoryLabel = '', follow = null, portrait = null, book = null } = {}) {
   const path = `wild/${wave.slug}/`;
   // Section headings are questions by default: answer engines and People Also
   // Ask pick up question-shaped headings. A wave can override any of them.
@@ -336,6 +350,8 @@ ${wave.calc.points.map((p) => `        <li>${e(p)}</li>`).join('\n')}
 ${wave.limits.map((l) => `        <li>${e(l)}</li>`).join('\n')}
       </ul>
     </section>
+
+${bookBlock(wave, law, book)}
 
     <section class="wave-sec wave-how" aria-labelledby="w-know">
       <p class="lbl">How we know this</p>
