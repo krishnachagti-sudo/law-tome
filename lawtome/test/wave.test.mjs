@@ -36,7 +36,8 @@ test('structured data: analysis article with a named author and dated with a tim
   const art = ld.find((b) => b['@type'] === 'AnalysisNewsArticle');
   assert.equal(art.author['@type'], 'Person');
   assert.match(art.datePublished, /T\d\d:\d\d:\d\d[+-]\d\d:\d\d$/);
-  assert.ok(art.image[0].endsWith('-16x9.png'), 'schema image is the 16:9 picture without text');
+  assert.ok(art.image.some((u) => u.endsWith('-16x9.png')), 'schema image includes the 16:9 picture without text');
+  if (wave.image) assert.ok(art.image[0].endsWith(`wild-${wave.slug}-hero.jpg`), 'the engraving leads the schema images when there is one');
   assert.ok(ld.some((b) => b['@type'] === 'BreadcrumbList'));
   const faq = ld.find((b) => b['@type'] === 'FAQPage');
   for (const q of faq.mainEntity) assert.ok(html.includes(q.name), 'every FAQ in the markup is visible on the page');
