@@ -48,18 +48,10 @@ jobs:
           node-version: '22'
       - run: npm ci
 
-      - uses: actions/cache@v4
-        with:
-          path: atlas/.cache/og
-          key: atlas-og-${{ hashFiles('atlas/src/data/biases/*.json', 'atlas/build/cards.mjs') }}
-          restore-keys: atlas-og-
-      # The newest saved manifest, so a page is re-dated only when it changes.
-      - name: Restore the lastmod manifest
-        uses: actions/cache/restore@v4
-        with:
-          path: atlas/.lastmod-saved.json
-          key: atlas-lastmod-${{ github.run_id }}
-          restore-keys: atlas-lastmod-
+      # (a step was removed here by site-engine onboarding: the engine gate blocks
+      # every PR while any workflow in this repo restores or saves a build cache)
+      # (a step was removed here by site-engine onboarding: the engine gate blocks
+      # every PR while any workflow in this repo restores or saves a build cache)
       - run: if [ -f .lastmod-saved.json ]; then cp .lastmod-saved.json src/data/lastmod.json; fi
 
       - run: npm run build -- --base=$BASE --origin=$ORIGIN
@@ -101,8 +93,5 @@ jobs:
       - name: Keep the manifest for the next run
         if: vars.ATLAS_DEPLOY_DRY_RUN != 'true'
         run: cp src/data/lastmod.json .lastmod-saved.json
-      - if: vars.ATLAS_DEPLOY_DRY_RUN != 'true'
-        uses: actions/cache/save@v4
-        with:
-          path: atlas/.lastmod-saved.json
-          key: atlas-lastmod-${{ github.run_id }}
+      # (a step was removed here by site-engine onboarding: the engine gate blocks
+      # every PR while any workflow in this repo restores or saves a build cache)
