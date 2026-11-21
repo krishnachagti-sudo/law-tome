@@ -1,0 +1,157 @@
+{
+  "slug": "riemann-hypothesis-proof-claims-alpoge-masullo",
+  "law": "the-riemann-hypothesis",
+  "kind": "news",
+  "status": "developing",
+  "takeoverUntil": "2026-12-01",
+  "signalOnset": "2026-11-20",
+  "detectedAt": "2026-11-21",
+  "publishedAt": "2026-11-21",
+  "updatedAt": "2026-11-21",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "Has the Riemann Hypothesis Been Proved?",
+  "h1": "Two proofs of the Riemann Hypothesis were announced on one day. Has it been proved?",
+  "question": "Has the Riemann Hypothesis been proved?",
+  "answer": "Not confirmed yet. On 20 November 2026 Levent Alpöge of Anthropic said he had found a proof with Claude, posted only as Lean code, and Ravi Vakil posted a separate, all-human draft by Alessandro Masullo. Mathematicians are still checking both. Clay's prize rules need publication, two years and general acceptance first.",
+  "event": {
+    "name": "Two proofs of the Generalized Riemann Hypothesis are claimed on the same day",
+    "date": "2026-11-20"
+  },
+  "artefact": {
+    "text": "Alpöge's two-page statement explains the claim in his own words and links the Lean files that hold the proof.",
+    "url": "https://alpo.ge/remark.pdf",
+    "label": "Read Alpöge's statement"
+  },
+  "timeline": [
+    {
+      "date": "2026-11-15",
+      "text": "Alpöge writes that the proof came together for him late on Sunday night, and that he then messaged Anthropic's chief executive to ask about announcing it.",
+      "source": 1
+    },
+    {
+      "date": "2026-11-20",
+      "text": "Ravi Vakil posts \"Alessandro Masullo has a proposed proof of GRH\", a draft he says is \"all human, with no AI\", which Brian Conrad has been reading for months.",
+      "source": 2
+    },
+    {
+      "date": "2026-11-20",
+      "text": "Alpöge posts a statement saying he has, working with Claude, discovered a proof of the Riemann Hypothesis and of the Generalized Riemann Hypothesis, presented only as Lean code.",
+      "source": 1
+    },
+    {
+      "date": "2026-11-20",
+      "text": "Scientific American and TechCrunch report both claims. TechCrunch reports that several mathematicians on the Lean Zulip chat, including MIT's Andrew Sutherland, say the Lean code compiles.",
+      "source": 0
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "What the hypothesis controls",
+      "text": "The hypothesis says every nontrivial zero of the zeta function lies on one line. Alpöge's statement puts the stakes plainly: it \"asks for optimal control on the count of prime numbers of a given size\". That is why a claimed proof drew this much attention in a day: it would settle how evenly the primes are spread."
+    },
+    {
+      "h": "Why the routes matter",
+      "text": "Terence Tao writes that \"the conventional wisdom has been that purely analytic methods are not sufficient to establish RH\", because it is too easy to perturb the zeta function and move a few zeros off the line. He says the AI-generated proof appears to use \"the full power of modern developments on the Langlands program\". He places Masullo's draft closer to Deninger's strategy than to Connes'."
+    },
+    {
+      "h": "A proof checked by machine before it is understood",
+      "text": "Alpöge chose to post Lean, a language in which a computer checks every logical step, and no human-readable paper. Lean can confirm the steps follow. It cannot by itself confirm that the statement at the top is the hypothesis as mathematicians mean it, or explain why the proof works. Tao expects \"the digestion process will take some time\"."
+    },
+    {
+      "h": "Why no prize soon either way",
+      "text": "The Clay Mathematics Institute will consider a solution only once it is published in a qualifying outlet, at least two years have passed since publication, and it has \"received general acceptance in the global mathematics community\". Even a correct proof posted this week sits outside that window until at least late 2028."
+    }
+  ],
+  "limits": [
+    "Neither claim is verified. Unite.AI reports that Alpöge released the Lean code \"without any independent validation of the argument\", and MIT's Andrew Sutherland told Scientific American that \"there is much work to be done to understand the mathematical details of the proof\".",
+    "Code that compiles is not the same as a proof everyone accepts. The open questions are whether the formal statement matches the hypothesis and whether anyone can explain the argument. Alpöge says the full argument runs past 250,000 pages and that he has not yet written it up properly.",
+    "Masullo's draft has not been formalized. TechCrunch notes that without a Lean version \"it is too early to say whether the proof checks out\". Vakil says only that Conrad's reading is \"so far looking good\".",
+    "Alpöge works at Anthropic, which makes Claude, and Alpöge himself raises the timing: he writes that there is \"an obvious cynical view, to do with the timing, but it is false\". Readers can weigh that; the proof stands or falls on the checking, not on who announced it."
+  ],
+  "faqs": [
+    {
+      "q": "Did AI prove the Riemann Hypothesis?",
+      "a": "Alpöge says he found the proof working with Claude, and that Claude \"far outpaced me near the finish line\". Mathematicians have not yet confirmed the proof. A second, separate claim by Alessandro Masullo is described by Ravi Vakil as all human, with no AI."
+    },
+    {
+      "q": "Will anyone win the $1 million Millennium Prize?",
+      "a": "Not soon. Clay's rules need the proof published in a qualifying outlet, two years to pass, and general acceptance by mathematicians before it will consider a prize. The two claims were posted on 20 November 2026."
+    },
+    {
+      "q": "What is the Generalized Riemann Hypothesis?",
+      "a": "The same claim, that the nontrivial zeros lie on the critical line, made for a whole family of related functions rather than the zeta function alone. Alpöge says his method \"easily extends\" from the original hypothesis to the generalized one."
+    },
+    {
+      "q": "Where can I follow the checking?",
+      "a": "Terence Tao points to the Lean community's Zulip chat as \"probably the best place to follow the efforts to verify the proof\". He also says it is very early days."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "By 31 December 2027, no qualifying journal will have published either proof in a form the Clay Mathematics Institute could start its two-year clock on, so no Millennium Prize decision on the Riemann Hypothesis will be possible before 2030. This is wrong if a peer-reviewed journal publishes Alpöge's or Masullo's proof by that date.",
+      "checkBy": "2027-12-31",
+      "status": "open"
+    }
+  ],
+  "actions": [
+    "When a headline says a famous problem is solved, check whether the proof has been verified or only announced.",
+    "For a Lean proof, ask two separate questions: does the code compile, and does the formal statement say what the headline says?",
+    "For the Millennium Prize, count from publication, not announcement: Clay waits at least two years."
+  ],
+  "whyItMatters": "The Riemann Hypothesis is one of the most famous open problems in mathematics and carries one of Clay's million-dollar bounties. This week it drew two rival claims in one day: one built by a mathematician with an AI model and checked mainly by machine, one that TechCrunch reports took Masullo 12 years. How mathematicians decide which, if either, is right will set the pattern for proofs made this way.",
+  "sources": [
+    {
+      "text": "Tim Fernholz, \"AI claimed a solution to the 167-year-old Riemann hypothesis, and a human did, too\", TechCrunch, 20 Nov 2026",
+      "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+      "checked": "2026-11-21",
+      "supports": "both claims, the Lean Zulip participants including Andrew Sutherland saying the code compiles, Vakil's \"all human, with no AI\", and that without Lean it is too early to say whether Masullo's proof checks out, and Masullo's 12 years of work"
+    },
+    {
+      "text": "Levent Alpöge, statement on the proof (remark.pdf), 20 Nov 2026",
+      "url": "https://alpo.ge/remark.pdf",
+      "checked": "2026-11-21",
+      "supports": "the claim made working with Claude, the extension to the Generalized Riemann Hypothesis, the Lean-only release, the 250,000+ pages, the late Sunday night timing, and his remark on the cynical view of the timing"
+    },
+    {
+      "text": "Ravi Vakil, \"Hurried announcement: Alessandro Masullo GRH\", 20 Nov 2026",
+      "url": "https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/",
+      "checked": "2026-11-21",
+      "supports": "Masullo's proposed proof of GRH, all human with no AI, and Brian Conrad's months of review, so far looking good"
+    },
+    {
+      "text": "Joseph Howlett, \"Anthropic mathematician claims to prove Riemann hypothesis, most famous problem in all of math\", Scientific American, 20 Nov 2026",
+      "url": "https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/",
+      "checked": "2026-11-21",
+      "supports": "the Lean release, Andrew Sutherland's quote on the work still to be done, and the Clay Mathematics Institute's $1 million bounty"
+    },
+    {
+      "text": "Terence Tao, \"Unforced Euler singularity, unforced Navier-Stokes singularity, and the Generalized Riemann Hypothesis\", What's new, 20 Nov 2026",
+      "url": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/",
+      "checked": "2026-11-21",
+      "supports": "the conventional wisdom on analytic methods, the proof's use of the Langlands program, the digestion process taking time, and the Zulip chat as the place to follow verification, and Masullo's draft being closer to Deninger's strategy than Connes'"
+    },
+    {
+      "text": "Jonas Reeve, \"Levent Alpöge's unverified Riemann claim puts Claude's Lean code in focus\", Unite.AI, 20 Nov 2026",
+      "url": "https://www.unite.ai/levent-alpoges-unverified-riemann-claim-puts-claudes-lean-code-in-focus/",
+      "checked": "2026-11-21",
+      "supports": "the release without any independent validation of the argument"
+    },
+    {
+      "text": "\"Millennium Prize Problems: Rules\", Clay Mathematics Institute",
+      "url": "https://www.claymath.org/millennium-problems/rules/",
+      "checked": "2026-11-21",
+      "supports": "publication in a qualifying outlet, at least two years since publication, and general acceptance before a solution is considered"
+    }
+  ],
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What was claimed on 20 November?",
+    "how": "How would a proof of the Riemann Hypothesis be checked?",
+    "calc": "The numbers",
+    "limits": "What don't we know?",
+    "faq": "What else are people asking?"
+  }
+}
