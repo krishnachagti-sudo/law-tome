@@ -1,0 +1,136 @@
+{
+  "slug": "unforced-navier-stokes-blow-up-alpoge-buckmaster",
+  "law": "the-navier-stokes-existence-and-smoothness",
+  "kind": "news",
+  "status": "developing",
+  "takeoverUntil": "2026-12-01",
+  "signalOnset": "2026-11-20",
+  "detectedAt": "2026-11-21",
+  "publishedAt": "2026-11-21",
+  "updatedAt": "2026-11-21",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "Has the Navier-Stokes Problem Been Solved Without a Force?",
+  "h1": "A new proof says fluid flow can blow up with no outside force. Is Navier-Stokes solved?",
+  "question": "Has the Navier-Stokes problem been solved without an outside force?",
+  "answer": "It is claimed, not yet checked. On 20 November 2026 Levent Alpöge and Tristan Buckmaster posted an AI-aided proof that the three-dimensional Navier-Stokes equations can blow up in finite time with no outside force. A key computer certificate has not been released, and Terence Tao says a properly written proof still needs work.",
+  "event": {
+    "name": "Alpöge and Buckmaster post a proof of unforced finite-time blow-up for Navier-Stokes",
+    "date": "2026-11-20"
+  },
+  "artefact": {
+    "text": "The authors' repository holds the 79-page paper (version of 20 November 2026) and its Lean files, and says what is still to come.",
+    "url": "https://github.com/tristanbuckmaster/navier-stokes",
+    "label": "See the repository"
+  },
+  "timeline": [
+    {
+      "date": "2026-09-08",
+      "text": "OpenAI announces a proof that \"an initially smooth fluid at rest can develop a singularity in a finite time\", with \"a smooth force applied to it\", and shares a Lean formalization. Scientific American later calls the force unrealistic and finely tuned.",
+      "source": 4
+    },
+    {
+      "date": "2026-11-20",
+      "text": "Alpöge and Buckmaster post \"Finite-time blow-up for the Navier-Stokes equations\", 79 pages, with Lean files and a promise to release the certificate behind its rigorous computation.",
+      "source": 2
+    },
+    {
+      "date": "2026-11-20",
+      "text": "Terence Tao writes that the pair, \"again with heavy AI usage\", have generated a proof of finite-time blow-up for the unforced incompressible equations in three dimensions, alongside an unforced Euler result formalized in Lean.",
+      "source": 1
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "The question: smooth forever, or blow up?",
+      "text": "The Navier-Stokes equations describe how a fluid such as water or air moves. The open problem asks whether a smooth flow in three dimensions always stays smooth, or whether some smooth start can develop a singularity, a point where the solution breaks down, in finite time. Alpöge and Buckmaster claim the second."
+    },
+    {
+      "h": "Why the force mattered",
+      "text": "Scientific American reports that OpenAI's September proof \"technically satisfied the conditions\" for Clay's prize, but left many experts unsatisfied because it relied on an outside force tuned to stir the liquid in just the right way, \"an approach many consider a loophole in the wording of the problem\". The new claim removes the force: the fluid breaks down on its own."
+    },
+    {
+      "h": "A computer-assisted step still to be shown",
+      "text": "The repository says the proof rests on \"a rigorous computation, involving interval arithmetic\" at 128 bits of precision, and that \"the certificate whose hash the paper gives is not in this repository; the paper says that it will be released\". Until it is, outsiders cannot rerun the step the proof depends on."
+    },
+    {
+      "h": "Readable, but not yet polished",
+      "text": "Tao writes that \"the paper is technically human-readable and the general strategy of proof is broadly clear\", but that \"more work needs to be done to create a proper, professionally written proof\". That is the stage at which mathematicians start checking, not the end of it."
+    }
+  ],
+  "limits": [
+    "The claim is not verified. The certificate for the key computation has not been released, and the repository says its patched Lean package \"was not rebuilt when this repository was assembled\".",
+    "Who did what is disputed. Scientific American reports that Buckmaster called OpenAI's earlier announcement \"a deliberate attempt\" to scoop his and Alpöge's progress, and that OpenAI denied foul play. Our sources do not settle that.",
+    "The AI's share of the work is not set out. Tao says the proof used heavy AI assistance; neither the repository nor Scientific American says which steps the model did.",
+    "Even if correct, no prize decision is near. Clay considers a solution only after publication in a qualifying outlet, two years, and general acceptance by mathematicians."
+  ],
+  "faqs": [
+    {
+      "q": "What is the difference between the forced and unforced problem?",
+      "a": "In the forced version an outside force keeps acting on the fluid; in the unforced version the fluid moves on its own from a smooth start. OpenAI's 8 September proof applied a smooth force, which Scientific American reports many experts saw as a loophole. The new claim uses none."
+    },
+    {
+      "q": "Does this win the $1 million Clay prize?",
+      "a": "Not yet, and not soon. Clay's rules require publication in a qualifying outlet, at least two years since publication, and general acceptance by the mathematics community before a solution is even considered."
+    },
+    {
+      "q": "Did AI solve Navier-Stokes?",
+      "a": "Terence Tao describes the proof as made \"with heavy AI usage\", and Scientific American calls it artificial-intelligence-aided. The authors are two mathematicians, Levent Alpöge and Tristan Buckmaster. How much of the argument the model produced is not stated."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "By 31 March 2027, the computational certificate whose hash the paper gives will be publicly released, as the paper promises. This is wrong if the repository or the authors have not released it by that date.",
+      "checkBy": "2027-03-31",
+      "status": "open"
+    }
+  ],
+  "actions": [
+    "When a proof says the Navier-Stokes equations blow up, ask whether it uses an outside force.",
+    "For a computer-assisted proof, check that the certificate or code behind the computation has been released.",
+    "Count Clay's prize clock from publication in a journal, not from the day a proof is posted."
+  ],
+  "whyItMatters": "The Navier-Stokes equations are used to model weather, ocean currents and air over a wing. Whether their solutions can break down on their own is one of Clay's seven Millennium problems. An unforced blow-up, if it holds, answers the version experts care about rather than one that leans on a tuned outside force.",
+  "sources": [
+    {
+      "text": "Peter Hall, \"AI just solved the 'real' Navier-Stokes problem\", Scientific American, 20 Nov 2026",
+      "url": "https://www.scientificamerican.com/article/ai-just-solved-the-real-navier-stokes-problem/",
+      "checked": "2026-11-21",
+      "supports": "OpenAI's September blow-up proof with a finely tuned force, it technically satisfying Clay's conditions, the loophole view, the AI-aided new proof, the unreleased certificate, and the scoop dispute and OpenAI's denial"
+    },
+    {
+      "text": "Terence Tao, \"Unforced Euler singularity, unforced Navier-Stokes singularity, and the Generalized Riemann Hypothesis\", What's new, 20 Nov 2026",
+      "url": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/",
+      "checked": "2026-11-21",
+      "supports": "unforced finite-time blow-up for the incompressible equations in three dimensions with heavy AI usage, the unforced Euler result formalized in Lean, and the paper being human-readable but needing a professionally written proof"
+    },
+    {
+      "text": "L. Alpöge and T. Buckmaster, \"Finite-time blow-up for the Navier-Stokes equations\", repository, version of 20 Nov 2026",
+      "url": "https://github.com/tristanbuckmaster/navier-stokes",
+      "checked": "2026-11-21",
+      "supports": "the 79-page paper, the interval-arithmetic computation at 128 bits, the certificate not yet released, and the patched Lean package not rebuilt"
+    },
+    {
+      "text": "\"Millennium Prize Problems: Rules\", Clay Mathematics Institute",
+      "url": "https://www.claymath.org/millennium-problems/rules/",
+      "checked": "2026-11-21",
+      "supports": "publication in a qualifying outlet, at least two years since publication, and general acceptance before a solution is considered"
+    },
+    {
+      "text": "\"Navier-Stokes solution\", OpenAI, 8 Sep 2026",
+      "url": "https://openai.com/index/navier-stokes-solution/",
+      "checked": "2026-11-21",
+      "supports": "the 8 September 2026 announcement, an initially smooth fluid at rest developing a singularity in finite time under a smooth applied force, and the Lean formalization"
+    }
+  ],
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What was posted on 20 November?",
+    "how": "How would unforced blow-up answer the Navier-Stokes problem?",
+    "calc": "The numbers",
+    "limits": "What don't we know?",
+    "faq": "What else are people asking?"
+  }
+}
