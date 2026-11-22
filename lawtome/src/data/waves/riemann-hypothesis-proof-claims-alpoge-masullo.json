@@ -43,6 +43,11 @@
     },
     {
       "date": "2026-11-20",
+      "text": "About eight hours after his post, Vakil adds an update: \"Several people have contacted me to report problems in the proposed proof, identified with the assistance of different AI models.\"",
+      "source": 2
+    },
+    {
+      "date": "2026-11-20",
       "text": "Scientific American and TechCrunch report both claims. TechCrunch reports that several mathematicians on the Lean Zulip chat, including MIT's Andrew Sutherland, say the Lean code compiles.",
       "source": 0
     },
@@ -53,8 +58,8 @@
     },
     {
       "date": "2026-11-21",
-      "text": "The Lean and Mathlib communities issue a joint statement, reported by Scientific American: \"We have full confidence that Alpöge's proof of the Riemann Hypothesis is correct.\"",
-      "source": 8
+      "text": "The Lean and Mathlib communities issue a joint statement, endorsed by the Lean FRO and the Mathlib Initiative: \"We have full confidence that Alpöge's proof of the Riemann Hypothesis is correct.\" It says two independent tools confirmed that the theorem proved is exactly Mathlib's statement of the hypothesis.",
+      "source": 9
     }
   ],
   "mechanism": [
@@ -76,10 +81,10 @@
     }
   ],
   "limits": [
-    "The checking so far is by machine. On 21 November the Lean and Mathlib communities said they have \"full confidence\" the Lean proof is correct, but MIT's Andrew Sutherland told Scientific American that \"there is much work to be done to understand the mathematical details of the proof\", and Imperial's Kevin Buzzard has asked whether the statement in the Lean code matches the theorem.",
+    "The checking so far is by machine. On 21 November the Lean and Mathlib communities said they have \"full confidence\" the Lean proof is correct, but MIT's Andrew Sutherland told Scientific American that \"there is much work to be done to understand the mathematical details of the proof\", and Imperial's Kevin Buzzard has asked whether the statement in the Lean code matches the theorem. The joint statement answers that the statement is Mathlib's, \"carefully vetted by experts in Lean and number theory\".",
     "The machine checks so far cover a narrower statement than the headline. Sutherland's page says the version of the Generalized Riemann Hypothesis that was checked is the one for Dirichlet L-functions, and that \"Dedekind zeta functions, Hecke L-functions and automorphic L-functions in general are not among the statements that were checked\". It also notes the result relies \"on Mathlib's definitions being what they are intended to be\".",
     "Code that compiles is not the same as a proof everyone accepts. The open questions are whether the formal statement matches the hypothesis and whether anyone can explain the argument. Alpöge says the full argument runs past 250,000 pages and that he has not yet written it up properly.",
-    "Masullo's draft has not been formalized. TechCrunch notes that without a Lean version \"it is too early to say whether the proof checks out\". Vakil says only that Conrad's reading is \"so far looking good\".",
+    "Masullo's draft has not been formalized. TechCrunch notes that without a Lean version \"it is too early to say whether the proof checks out\". Vakil said Conrad's reading was \"so far looking good\", then added that several people had reported problems in the proposed proof, and that \"all issues need to be resolved to the satisfaction of the community before this proof would be accepted as true\".",
     "Alpöge works at Anthropic, which makes Claude, and Alpöge himself raises the timing: he writes that there is \"an obvious cynical view, to do with the timing, but it is false\". Readers can weigh that; the proof stands or falls on the checking, not on who announced it."
   ],
   "faqs": [
@@ -129,8 +134,8 @@
     {
       "text": "Ravi Vakil, \"Hurried announcement: Alessandro Masullo GRH\", 20 Nov 2026",
       "url": "https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/",
-      "checked": "2026-11-21",
-      "supports": "Masullo's proposed proof of GRH, all human with no AI, and Brian Conrad's months of review, so far looking good"
+      "checked": "2026-11-22",
+      "supports": "Masullo's proposed proof of GRH, all human with no AI, and Brian Conrad's months of review, so far looking good, and the later update reporting problems found in the draft with AI models, which must be resolved before it is accepted"
     },
     {
       "text": "Joseph Howlett, \"Anthropic mathematician claims to prove Riemann hypothesis, most famous problem in all of math\", Scientific American, 20 Nov 2026",
@@ -167,6 +172,12 @@
       "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/",
       "checked": "2026-11-22",
       "supports": "the joint statement by the Lean and Mathlib communities, Sutherland's recheck with the Lean kernel and only the three standard axioms, and Kevin Buzzard's question about whether the Lean statement matches the theorem"
+    },
+    {
+      "text": "Lean and Mathlib communities, \"Lean verification of the Riemann Hypothesis\", Lean community blog, 21 Nov 2026",
+      "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+      "checked": "2026-11-22",
+      "supports": "the joint statement endorsed by the Lean FRO and the Mathlib Initiative, \"full confidence\" in the proof, the statement being Mathlib's and vetted by experts, and the two tools confirming the proved theorem matches it"
     }
   ],
   "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
