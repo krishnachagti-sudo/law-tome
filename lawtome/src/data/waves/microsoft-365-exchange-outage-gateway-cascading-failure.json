@@ -1,0 +1,141 @@
+{
+  "slug": "microsoft-365-exchange-outage-gateway-cascading-failure",
+  "law": "cascading-failure",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-11-12",
+  "detectedAt": "2026-11-16",
+  "publishedAt": "2026-11-22",
+  "updatedAt": "2026-11-22",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "Why Microsoft 365's Email Outage Spread Worldwide",
+  "h1": "How one dormant bug took Microsoft 365 email down around the world",
+  "question": "Why did one bug take down Microsoft 365 email worldwide?",
+  "answer": "Microsoft's final report says a defect from a July update made its gateway servers stop responding at peak load, after a Teams failover added traffic and maintenance removed capacity. Each failed server's traffic moved to the rest, which failed too, and overflow carried it to every region within about two hours.",
+  "event": {
+    "name": "Microsoft 365 and Exchange Online outage",
+    "date": "2026-11-12"
+  },
+  "artefact": {
+    "text": "The Register's report walks through Microsoft's preliminary findings and timeline, and calls it \"a classic cascading failure scenario\".",
+    "url": "https://www.theregister.com/saas/2026/11/16/microsoft-blames-monster-email-outage-on-software-defect-introduced-in-july-fix/5310026",
+    "label": "Read The Register's report"
+  },
+  "timeline": [
+    {
+      "date": "2026-11-12",
+      "text": "At 1:07 AM UTC a routing issue on Teams' own gateway in US East triggers an automatic failover that moves Teams traffic onto the gateway servers shared with Exchange Online. Services stay healthy for about 16 hours.",
+      "source": 0
+    },
+    {
+      "date": "2026-11-12",
+      "text": "Broad failures begin in North America at about 4:00 PM UTC as US traffic nears its daily peak. Microsoft's on-call engineers are alerted at 4:20 PM UTC, the incident's official start.",
+      "source": 0
+    },
+    {
+      "date": "2026-11-13",
+      "text": "At 7:20 AM UTC Microsoft applies an update that reverts the defective change. By 4:10 PM UTC customers are no longer seeing active impact.",
+      "source": 0
+    },
+    {
+      "date": "2026-11-16",
+      "text": "Coverage of Microsoft's preliminary report describes a cascading failure from server to server, with more than 80% of servers unresponsive at the lowest point.",
+      "source": 2
+    },
+    {
+      "date": "2026-11-20",
+      "text": "Microsoft dates its final post-incident report, which sets out four factors, how the failure spread between regions, and a list of fixes.",
+      "source": 0
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "A defect waits for the right load",
+      "text": "An update that began deploying in July caused lock contention inside a Windows process on the gateway servers, exhausting CPU and memory under certain loads. It hit newer servers with more cores, while Microsoft's load testing used older hardware with fewer cores, so it ran worldwide for more than three months without a problem."
+    },
+    {
+      "h": "Three ordinary conditions line up",
+      "text": "Nearly 14% of gateway capacity was out of service for routine deployment, Teams traffic had failed over onto the Exchange gateways, and US traffic was approaching its daily peak. Microsoft says these together would normally be within operating limits. With the defect present, they pushed servers over the edge."
+    },
+    {
+      "h": "Each failure loads the survivors",
+      "text": "When gateway servers stop responding, Microsoft's traffic management sends their traffic to healthy units, which is normally what keeps the service up. Here it made things worse: \"as servers became unresponsive, the same traffic load was distributed across fewer healthy servers, placing additional pressure on them\". In under two hours more than 80% of North American servers were unresponsive."
+    },
+    {
+      "h": "Overflow carries it across regions",
+      "text": "When a region runs short of healthy capacity, the system redirects traffic to other regions. Those regions had the same defect, so the redirected load triggered it there too. Microsoft says servers in every region were affected within about two hours of the North American failures."
+    },
+    {
+      "h": "Recovery restarts the cascade",
+      "text": "Servers brought back were \"immediately overwhelmed by queuing client traffic and became unresponsive again\". Microsoft disabled some automatic traffic redirection early on 13 November, and the fix needed each server taken out of service, restarted, patched, restarted again and returned."
+    }
+  ],
+  "limits": [
+    "Almost every detail comes from Microsoft's own report. We have not seen an independent investigation. The copy of the final report we read was posted by a researcher, Tianyin Xu, not on a public Microsoft page; the preliminary findings were reported by The Register and Network World.",
+    "This is not a cascade of healthy parts failing from overload alone. Every gateway server carried the same latent defect, which is a common-mode weakness, and Microsoft says the three conditions \"would not have caused a disruption without the underlying defect\". The cascade explains how it spread so fast and so far; the defect explains why servers broke.",
+    "Reports give different durations. The final report puts customer impact from 4:20 PM UTC on 12 November to 4:10 PM UTC on 13 November and declares the incident resolved at 4:15 AM UTC on 14 November.",
+    "Many of the fixes are still plans. Microsoft gives target quarters such as late 2026 or early 2027, and several are marked TBD, including smaller fault zones and gradual ramp-up when servers rejoin."
+  ],
+  "faqs": [
+    {
+      "q": "Was the Microsoft 365 outage a cyberattack?",
+      "a": "No, according to Microsoft. Its final report says the incident \"was confirmed not to be caused by a cyberattack\" and that it found no evidence of malicious activity. It also says the change was not caused by AI tooling."
+    },
+    {
+      "q": "Was any email lost?",
+      "a": "Microsoft says all queued enterprise messages were delivered and none were permanently lost, after it extended the retry window from 24 to 48 hours. Some delayed messages to consumer mailboxes inactive for more than 30 days expired and bounced."
+    },
+    {
+      "q": "Why did it take so long to fix?",
+      "a": "The defect came from a change made months earlier, so it took longer to trace. It could not be switched off like a recent change, and every server had to be restarted twice to apply the fix. Servers brought back too early were overwhelmed again by waiting traffic."
+    },
+    {
+      "q": "Why did a problem in North America reach other countries?",
+      "a": "Microsoft's system sends traffic to other regions when one runs short of healthy servers. Those regions had the same defect, so the extra load triggered it there as well."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "Microsoft's report lists fixing traffic distribution so failures no longer cascade to other regions as a late-2026 item. By 31 December 2027 there will be no Microsoft 365 outage whose official post-incident report describes a failure spreading from one region to all regions through traffic redirection. This is wrong if such a report is published by then.",
+      "checkBy": "2027-12-31",
+      "status": "open"
+    }
+  ],
+  "actions": [
+    "When failover moves load to the survivors, ask what happens if the survivors share the fault. Rerouting only helps when the backup is different.",
+    "Bring recovered servers back with a gradual ramp of traffic, as Microsoft now plans, or the queued demand knocks them over again.",
+    "Test under production-like load on the newest hardware, not only the oldest."
+  ],
+  "whyItMatters": "Automatic rerouting is what normally makes a service resilient, and here it was what spread the damage: from server to server, then region to region. The case shows the core of a cascading failure in modern software, where the safety mechanism becomes the transmission path when every part shares the same weakness.",
+  "sources": [
+    {
+      "text": "Microsoft, \"Post Incident Report for Microsoft 365\" (EX1550543 / MO1550821), report date 20 Nov 2026, copy posted by Tianyin Xu",
+      "url": "https://tianyin.github.io/misc/pir_microsoft_365_11-12-2026.pdf",
+      "checked": "2026-11-22",
+      "supports": "the four factors, the July change and lock contention, newer many-core hardware and older test hardware, nearly 14% capacity in maintenance, the Teams failover at 1:07 AM UTC, peak load from about 4:00 PM UTC, load spread across fewer healthy servers, more than 80% unresponsive, spread to every region within about two hours, servers re-overwhelmed on return, the five-step fix, the timeline, no cyberattack and not AI tooling, no enterprise mail lost, the retry window, and the next steps"
+    },
+    {
+      "text": "Richard Speed, \"Microsoft blames monster email outage on software defect introduced in July fix\", The Register, 16 Nov 2026",
+      "url": "https://www.theregister.com/saas/2026/11/16/microsoft-blames-monster-email-outage-on-software-defect-introduced-in-july-fix/5310026",
+      "checked": "2026-11-22",
+      "supports": "\"a classic cascading failure scenario\", traffic rerouted to the next endpoint with the same defect, and the preliminary timeline"
+    },
+    {
+      "text": "Evan Schuman, \"Microsoft outage: a cascading failure that started with an undetected bug\", Network World (first published by Computerworld), 16 Nov 2026",
+      "url": "https://www.networkworld.com/article/4249392/microsoft-outage-a-cascading-failure-that-started-with-an-undetected-bug-2.html",
+      "checked": "2026-11-22",
+      "supports": "the preliminary report's \"cascading failure from server to server\", more than 80% of servers unresponsive, the July fix, the Teams failover and nearly 14% of capacity out of service"
+    }
+  ],
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What happened to Microsoft 365?",
+    "how": "How did one bug spread to every region?",
+    "calc": "How far did it spread?",
+    "limits": "What don't we know?",
+    "faq": "What else are people asking?"
+  }
+}
