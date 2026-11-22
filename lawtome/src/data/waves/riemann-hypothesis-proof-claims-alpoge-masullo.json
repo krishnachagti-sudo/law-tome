@@ -15,7 +15,7 @@
   "title": "Has the Riemann Hypothesis Been Proved?",
   "h1": "Two proofs of the Riemann Hypothesis were announced on one day. Has it been proved?",
   "question": "Has the Riemann Hypothesis been proved?",
-  "answer": "Not confirmed yet. On 20 November 2026 Levent Alpöge of Anthropic said he had found a proof with Claude, posted only as Lean code, and Ravi Vakil posted a separate, all-human draft by Alessandro Masullo. Mathematicians are still checking both. Clay's prize rules need publication, two years and general acceptance first.",
+  "answer": "Machine-checked, not yet understood. On 20 November 2026 Levent Alpöge of Anthropic posted a Lean proof made with Claude, and on 21 November the Lean and Mathlib communities said they have full confidence it is correct. A separate all-human draft by Alessandro Masullo is still being read. Clay's prize needs publication, two years and acceptance.",
   "event": {
     "name": "Two proofs of the Generalized Riemann Hypothesis are claimed on the same day",
     "date": "2026-11-20"
@@ -50,6 +50,11 @@
       "date": "2026-11-21",
       "text": "MIT's Andrew Sutherland posts verification files. He reports that independent proof checkers (nanoda, con-leche and lean4lean) accepted the five theorems in the proof's Main.lean, which depend only on Lean's three standard axioms, with further checks still running.",
       "source": 7
+    },
+    {
+      "date": "2026-11-21",
+      "text": "The Lean and Mathlib communities issue a joint statement, reported by Scientific American: \"We have full confidence that Alpöge's proof of the Riemann Hypothesis is correct.\"",
+      "source": 8
     }
   ],
   "mechanism": [
@@ -71,7 +76,7 @@
     }
   ],
   "limits": [
-    "Neither claim is verified. Unite.AI reports that Alpöge released the Lean code \"without any independent validation of the argument\", and MIT's Andrew Sutherland told Scientific American that \"there is much work to be done to understand the mathematical details of the proof\".",
+    "The checking so far is by machine. On 21 November the Lean and Mathlib communities said they have \"full confidence\" the Lean proof is correct, but MIT's Andrew Sutherland told Scientific American that \"there is much work to be done to understand the mathematical details of the proof\", and Imperial's Kevin Buzzard has asked whether the statement in the Lean code matches the theorem.",
     "The machine checks so far cover a narrower statement than the headline. Sutherland's page says the version of the Generalized Riemann Hypothesis that was checked is the one for Dirichlet L-functions, and that \"Dedekind zeta functions, Hecke L-functions and automorphic L-functions in general are not among the statements that were checked\". It also notes the result relies \"on Mathlib's definitions being what they are intended to be\".",
     "Code that compiles is not the same as a proof everyone accepts. The open questions are whether the formal statement matches the hypothesis and whether anyone can explain the argument. Alpöge says the full argument runs past 250,000 pages and that he has not yet written it up properly.",
     "Masullo's draft has not been formalized. TechCrunch notes that without a Lean version \"it is too early to say whether the proof checks out\". Vakil says only that Conrad's reading is \"so far looking good\".",
@@ -80,7 +85,7 @@
   "faqs": [
     {
       "q": "Did AI prove the Riemann Hypothesis?",
-      "a": "Alpöge says he found the proof working with Claude, and that Claude \"far outpaced me near the finish line\". Mathematicians have not yet confirmed the proof. A second, separate claim by Alessandro Masullo is described by Ravi Vakil as all human, with no AI."
+      "a": "Alpöge says he found the proof working with Claude, and that Claude \"far outpaced me near the finish line\". On 21 November the Lean and Mathlib communities said they have full confidence the Lean proof is correct; understanding the argument itself will take longer. A second, separate claim by Alessandro Masullo is described by Ravi Vakil as all human, with no AI."
     },
     {
       "q": "Will anyone win the $1 million Millennium Prize?",
@@ -156,6 +161,12 @@
       "url": "https://math.mit.edu/~drew/grh/",
       "checked": "2026-11-22",
       "supports": "the independent kernel checks (nanoda, con-leche, lean4lean) of the five theorems in Main.lean, the three standard axioms, the headline statement about the zeros of zeta, the scope of GRH checked (Dirichlet L-functions only), and the reliance on Mathlib's definitions"
+    },
+    {
+      "text": "Joseph Howlett, \"The AI Riemann hypothesis proof is almost certainly true, independent mathematicians attest\", Scientific American, 20 Nov 2026, updated 21 Nov",
+      "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/",
+      "checked": "2026-11-22",
+      "supports": "the joint statement by the Lean and Mathlib communities, Sutherland's recheck with the Lean kernel and only the three standard axioms, and Kevin Buzzard's question about whether the Lean statement matches the theorem"
     }
   ],
   "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
