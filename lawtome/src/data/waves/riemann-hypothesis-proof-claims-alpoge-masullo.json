@@ -7,7 +7,7 @@
   "signalOnset": "2026-11-20",
   "detectedAt": "2026-11-21",
   "publishedAt": "2026-11-21",
-  "updatedAt": "2026-11-21",
+  "updatedAt": "2026-11-22",
   "author": {
     "name": "Krishna Chagti",
     "url": "https://conyso.com/founder/"
@@ -45,6 +45,11 @@
       "date": "2026-11-20",
       "text": "Scientific American and TechCrunch report both claims. TechCrunch reports that several mathematicians on the Lean Zulip chat, including MIT's Andrew Sutherland, say the Lean code compiles.",
       "source": 0
+    },
+    {
+      "date": "2026-11-21",
+      "text": "MIT's Andrew Sutherland posts verification files. He reports that independent proof checkers (nanoda, con-leche and lean4lean) accepted the five theorems in the proof's Main.lean, which depend only on Lean's three standard axioms, with further checks still running.",
+      "source": 7
     }
   ],
   "mechanism": [
@@ -67,6 +72,7 @@
   ],
   "limits": [
     "Neither claim is verified. Unite.AI reports that Alpöge released the Lean code \"without any independent validation of the argument\", and MIT's Andrew Sutherland told Scientific American that \"there is much work to be done to understand the mathematical details of the proof\".",
+    "The machine checks so far cover a narrower statement than the headline. Sutherland's page says the version of the Generalized Riemann Hypothesis that was checked is the one for Dirichlet L-functions, and that \"Dedekind zeta functions, Hecke L-functions and automorphic L-functions in general are not among the statements that were checked\". It also notes the result relies \"on Mathlib's definitions being what they are intended to be\".",
     "Code that compiles is not the same as a proof everyone accepts. The open questions are whether the formal statement matches the hypothesis and whether anyone can explain the argument. Alpöge says the full argument runs past 250,000 pages and that he has not yet written it up properly.",
     "Masullo's draft has not been formalized. TechCrunch notes that without a Lean version \"it is too early to say whether the proof checks out\". Vakil says only that Conrad's reading is \"so far looking good\".",
     "Alpöge works at Anthropic, which makes Claude, and Alpöge himself raises the timing: he writes that there is \"an obvious cynical view, to do with the timing, but it is false\". Readers can weigh that; the proof stands or falls on the checking, not on who announced it."
@@ -86,7 +92,7 @@
     },
     {
       "q": "Where can I follow the checking?",
-      "a": "Terence Tao points to the Lean community's Zulip chat as \"probably the best place to follow the efforts to verify the proof\". He also says it is very early days."
+      "a": "Terence Tao points to the Lean community's Zulip chat as \"probably the best place to follow the efforts to verify the proof\". He also says it is very early days. Andrew Sutherland at MIT keeps a public page of verification files and checker results for the Lean proof, updated as each check finishes."
     }
   ],
   "predictions": [
@@ -144,6 +150,12 @@
       "url": "https://www.claymath.org/millennium-problems/rules/",
       "checked": "2026-11-21",
       "supports": "publication in a qualifying outlet, at least two years since publication, and general acceptance before a solution is considered"
+    },
+    {
+      "text": "Andrew Sutherland, \"Verification files for the Lean proof of the Riemann Hypothesis\", MIT, last updated 21 Nov 2026",
+      "url": "https://math.mit.edu/~drew/grh/",
+      "checked": "2026-11-22",
+      "supports": "the independent kernel checks (nanoda, con-leche, lean4lean) of the five theorems in Main.lean, the three standard axioms, the headline statement about the zeros of zeta, the scope of GRH checked (Dirichlet L-functions only), and the reliance on Mathlib's definitions"
     }
   ],
   "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
