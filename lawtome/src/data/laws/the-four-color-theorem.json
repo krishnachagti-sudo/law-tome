@@ -8,6 +8,16 @@
   "mechanism": "Adjacency means sharing a boundary of non-zero length, not merely touching at a single corner where several regions meet: a distinction that is essential, since otherwise many regions could meet at a point and no bound would exist. Turn each region into a vertex and join two vertices whose regions share a border; the result is always a planar graph, so colouring the map becomes colouring a planar graph with four colours. The proof reduces the infinitude of maps to a finite set of configurations that every map must contain, then shows none can appear in a minimal counterexample.",
   "examples": [
     {
+      "tag": "In the wild · Nov 2026",
+      "text": "On 17 November 2026 the University of Copenhagen announced that Mikkel Thorup, Carsten Thomassen and colleagues had found a far faster way to four-colour any map: a FOCS 2026 paper that won the conference's Best Paper Award, and a follow-up preprint claiming linear time, where a map with ten times as many regions takes only about ten times as long. The theorem itself only promises that four colours always suffice; the speed-up comes from showing that maps contain far more reducible configurations, the pieces every proof of the theorem rests on, than experts had assumed, so the colouring can start from many places at once.",
+      "date": "2026-11-17",
+      "source": {
+        "text": "University of Copenhagen, 17 Nov 2026",
+        "url": "https://via.ritzau.dk/pressemeddelelse/15284557/breakthrough-danish-researchers-find-efficient-solution-to-famous-174-year-old-mathematical-headache?lang=en",
+        "checked": "2026-11-22"
+      }
+    },
+    {
       "tag": "Four mutually bordering regions",
       "text": "Whenever four regions each share a border with the other three, they need four distinct colours: the reason three colours cannot suffice in general and the bound is four."
     },

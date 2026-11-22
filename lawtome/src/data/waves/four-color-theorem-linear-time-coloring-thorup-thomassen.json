@@ -1,0 +1,122 @@
+{
+  "slug": "four-color-theorem-linear-time-coloring-thorup-thomassen",
+  "law": "the-four-color-theorem",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-11-18",
+  "detectedAt": "2026-11-22",
+  "publishedAt": "2026-11-22",
+  "updatedAt": "2026-11-22",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "Can Any Map Now Be Four-Coloured in Linear Time?",
+  "h1": "How mathematicians found a linear-time way to four-colour any map",
+  "question": "Has someone found a fast way to four-colour any map?",
+  "answer": "Yes, on the researchers' account. A team led by Mikkel Thorup and Carsten Thomassen found that maps contain far more reducible configurations than assumed, so colouring can start in many places at once. A follow-up preprint claims linear time: ten times the regions, about ten times the work. The theorem itself was already proved.",
+  "event": {
+    "name": "University of Copenhagen announces a linear-time four-colouring algorithm",
+    "date": "2026-11-17"
+  },
+  "artefact": {
+    "text": "The University of Copenhagen's release explains the result, names the team, and quotes Thorup and Thomassen.",
+    "url": "https://via.ritzau.dk/pressemeddelelse/15284557/breakthrough-danish-researchers-find-efficient-solution-to-famous-174-year-old-mathematical-headache?lang=en",
+    "label": "Read the university's release"
+  },
+  "timeline": [
+    {
+      "date": "2026-09-10",
+      "text": "Quanta Magazine reports a new proof of the Four Color Theorem by Thorup, Thomassen, Ken-ichi Kawarabayashi and Bojan Mohar, with Yuta Inoue and Atsuyuki Miyashita running much of the search. It rests on an unavoidable set of 8,202 configurations that can be reduced in parallel, and colours a map in n log n steps instead of the earlier recipe's n squared.",
+      "source": 2
+    },
+    {
+      "date": "2026-10-29",
+      "text": "The six authors post \"Four-Coloring Planar Graphs in Linear Time\" on arXiv, improving their O(n log n) algorithm to O(n), which they describe as optimal.",
+      "source": 1
+    },
+    {
+      "date": "2026-11-17",
+      "text": "The University of Copenhagen announces the result. It says the first paper was selected for FOCS 2026 and received the conference's Best Paper Award.",
+      "source": 0
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "The theorem promises, it doesn't find",
+      "text": "The Four Color Theorem says four colours always suffice. The university's release says earlier proofs showed a colouring always exists but were slow at actually finding one. Proving that an answer exists and computing it quickly are separate problems."
+    },
+    {
+      "h": "Reducible configurations are the handles",
+      "text": "Every proof of the theorem works by showing that any map must contain one of a fixed set of small patterns, each of which can be reduced. Thomassen puts it simply: \"Think of reducible configurations as handles you can grab hold on to start four colouring.\" The team's finding is that planar maps contain far more of these handles than experts had believed."
+    },
+    {
+      "h": "More handles, more places to start",
+      "text": "With handles all over the map, the colouring can begin in many places at once instead of one region at a time. Quanta reports that the new set of 8,202 configurations can be reduced in parallel, which cut the work from n squared steps to n log n."
+    },
+    {
+      "h": "Removing the last slow step",
+      "text": "The n log n version still needed about log n Kempe changes, swaps of two colours along a chain of regions, and each one could take time proportional to the whole map. The arXiv preprint preprocesses the map once so that all of those swaps together take linear time. In the release's words, \"if a map contains ten times as many regions, the computation only becomes about ten times slower.\""
+    }
+  ],
+  "limits": [
+    "It is still a computer proof. Quanta calls the September result \"yet another computer proof\", and Thomassen told Quanta: \"What I would like is a proof without the use of a computer.\" The old wish for a short proof a person can check by hand is not met.",
+    "The linear-time claim comes from a preprint. The FOCS award went to the first paper; the follow-up was posted on arXiv on 29 October 2026, and we have not seen it peer reviewed.",
+    "Most of what we know comes from the team's own university release, which calls the work a breakthrough. We did not find independent expert comment on the linear-time step.",
+    "Practical uses are not shown. The release suggests the approach may extend to surfaces with holes and could matter beyond the theorem, but it presents that as a possibility, not a result."
+  ],
+  "faqs": [
+    {
+      "q": "Wasn't the Four Color Theorem already proved?",
+      "a": "Yes. This work is about finding a colouring quickly, not about whether one exists. Along the way the team also produced a new proof of the theorem, which Quanta reported in September 2026."
+    },
+    {
+      "q": "What does linear time mean here?",
+      "a": "The time to colour the map grows in step with the map's size. The release puts it as ten times as many regions taking only about ten times as long. The older approach grew with the square of the size."
+    },
+    {
+      "q": "Does it still need a computer?",
+      "a": "Yes. According to Quanta, the search behind the 8,202 configurations took months of computing time, and Thomassen says he would still like a proof without a computer."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "By 31 December 2027 the preprint \"Four-Coloring Planar Graphs in Linear Time\" will be accepted at a peer-reviewed conference or journal. This is wrong if it has not appeared in a peer-reviewed venue by then, or if an error in the linear-time argument is reported.",
+      "checkBy": "2027-12-31",
+      "status": "open"
+    }
+  ],
+  "actions": [
+    "When a result says something always exists, ask separately how fast you can find it. The two can be decades apart.",
+    "Read \"linear time\" as a claim about how the work grows with the input, not as a promise that it runs fast on small maps."
+  ],
+  "whyItMatters": "The Four Color Theorem is usually told as a story about computers and proof. This case shows the other half: the same reducible configurations that prove four colours suffice also decide how fast you can find the colouring, and finding many more of them turned an existence proof into an efficient method.",
+  "sources": [
+    {
+      "text": "University of Copenhagen, \"Breakthrough: Danish researchers find efficient solution to famous 174-year-old mathematical headache\", via Ritzau, 17 Nov 2026",
+      "url": "https://via.ritzau.dk/pressemeddelelse/15284557/breakthrough-danish-researchers-find-efficient-solution-to-famous-174-year-old-mathematical-headache?lang=en",
+      "checked": "2026-11-22",
+      "supports": "the team and institutions, earlier proofs being slow at finding a colouring, far more reducible configurations than believed, colouring from many places at once, the ten-times sentence, the FOCS 2026 Best Paper Award, the follow-up linear-time paper, Thomassen's handles quote, and the possible extension to surfaces with holes"
+    },
+    {
+      "text": "Yuta Inoue, Ken-ichi Kawarabayashi, Atsuyuki Miyashita, Bojan Mohar, Carsten Thomassen and Mikkel Thorup, \"Four-Coloring Planar Graphs in Linear Time\", arXiv, 29 Oct 2026",
+      "url": "https://arxiv.org/abs/2610.39753",
+      "checked": "2026-11-22",
+      "supports": "the submission date, the improvement from O(n log n) to O(n), and implementing all O(log n) Kempe changes in O(n) total time"
+    },
+    {
+      "text": "Gregory Barber, \"The Four Color Theorem Gets a Rare New Proof\", Quanta Magazine, 10 Sep 2026",
+      "url": "https://www.quantamagazine.org/the-four-color-theorem-gets-a-rare-new-proof-20260910/",
+      "checked": "2026-11-22",
+      "supports": "the September proof and its authors, 8,202 configurations reducible in parallel, n squared versus n log n steps, months of computing, \"yet another computer proof\" and Thomassen's wish for a proof without a computer"
+    }
+  ],
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What did the team find?",
+    "how": "How do more configurations make colouring faster?",
+    "calc": "How much faster is it?",
+    "limits": "What doesn't this show?",
+    "faq": "What else are people asking?"
+  }
+}
