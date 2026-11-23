@@ -1,0 +1,132 @@
+{
+  "slug": "voltage-driven-hall-response-no-magnetic-field-rice",
+  "law": "the-hall-effect",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-11-20",
+  "detectedAt": "2026-11-21",
+  "publishedAt": "2026-11-23",
+  "updatedAt": "2026-11-23",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "Can a Hall Effect Happen With No Magnetic Field?",
+  "h1": "How a strong voltage made a Hall-like response with no magnetic field, in a Rice and TU Wien study",
+  "question": "Can you get a Hall effect without any magnetic field or magnetism at all?",
+  "answer": "Something that looks like one, yes. A Rice-led study in Physical Review Letters describes a sideways current in a topological semimetal with no outside field and no internal magnetism. At weak voltage it grows with the voltage squared. Push the voltage high enough and it grows in step with it, mimicking magnetism. It fades when the voltage drops.",
+  "event": {
+    "name": "Rice University reports the fully nonequilibrium Hall response, published in Physical Review Letters",
+    "date": "2026-11-20"
+  },
+  "artefact": {
+    "text": "Rice University's news story explains the two-stage response and quotes the first and corresponding authors. The open preprint is on arXiv.",
+    "url": "https://news.rice.edu/news/2026/no-magnets-needed-extreme-voltage-drives-completely-new-kind-hall-effect",
+    "label": "Read Rice University's story"
+  },
+  "timeline": [
+    {
+      "date": "2024-11-25",
+      "text": "Shouvik Sur, Lei Chen, Yiming Wang, Chandan Setty, Silke Paschen and Qimiao Si post the preprint \"Fully nonequilibrium Hall response from Berry curvature\" on arXiv.",
+      "source": 1
+    },
+    {
+      "date": "2025-05-20",
+      "text": "The third and current version of the preprint goes up on arXiv.",
+      "source": 1
+    },
+    {
+      "date": "2026-11-18",
+      "text": "The paper is published in Physical Review Letters, volume 137, article 216303.",
+      "source": 2
+    },
+    {
+      "date": "2026-11-20",
+      "text": "Rice University announces the result as a new variant of the Hall effect that needs no magnetic field.",
+      "source": 0
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "The classic effect needs a magnetic field",
+      "text": "In the textbook Hall effect, current runs through a metal sitting in a magnetic field, and a voltage appears across it, at right angles. Rice's story puts it in terms of symmetry: the magnetic field breaks time reversal symmetry, so the material no longer behaves the same if you run time backwards."
+    },
+    {
+      "h": "Magnets can stand in for the field",
+      "text": "In the quantum anomalous Hall effect there is no outside field. The material's own magnetism breaks time reversal symmetry instead. Either way, something magnetic is doing the work. The material in this study had neither, which is why its data was a puzzle."
+    },
+    {
+      "h": "The tell is how current scales with voltage",
+      "text": "Sur explains the test: if the sideways current is proportional to the voltage, that points to broken time reversal symmetry. If it goes with the square, the symmetry is intact. The team's data from the topological semimetal showed the proportional kind, with no magnetism present."
+    },
+    {
+      "h": "A strong voltage pushes the electrons out of balance",
+      "text": "The theory gives a two-stage response. At weak voltage the current goes with the voltage squared, as expected. At higher voltage the electrons temporarily gain extra momentum and the current becomes proportional to the voltage. The arXiv abstract says that strong-field response resembles that of systems that break time reversal symmetry."
+    },
+    {
+      "h": "It looks like magnetism, but it isn't",
+      "text": "The state lasts only while the voltage is high. When it drops, the material goes back to its earlier, symmetric state. Sur: \"it is not magnetism and it is not in an equilibrium system.\" Where the switch between stages happens depends on the material."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "Another group, outside the Rice and TU Wien team, will report the switch from a squared to a proportional Hall current with rising voltage in a non-magnetic material, in a peer-reviewed journal or on arXiv. If no such independent report appears by this date, the prediction was wrong.",
+      "checkBy": "2027-12-31",
+      "status": "open"
+    }
+  ],
+  "limits": [
+    "This is a Hall-like response, not the classic Hall effect. The sideways current comes from a strong electric field pushing the material out of equilibrium, not from a magnetic field bending moving charges. It extends the family of Hall effects; it does not replace the ordinary one.",
+    "The work is mainly theory, built to explain a puzzle in one set of measurements made with collaborators at the Technical University of Vienna. Rice's story doesn't name the material, and we didn't open the paywalled paper, so we can't say which material or how large the effect was.",
+    "Rice's story gives no voltage or temperature at which the second stage begins. It says only that the transition point depends on the material.",
+    "The sources we opened mention no device or application. Any use in sensors or electronics would be a separate, later step."
+  ],
+  "faqs": [
+    {
+      "q": "Is this a new kind of Hall effect?",
+      "a": "Rice calls it a new variant, the fully nonequilibrium response. It produces a current at right angles to the voltage, like the Hall effect, but without the magnetic field or magnetism the other versions need."
+    },
+    {
+      "q": "What is time reversal symmetry?",
+      "a": "The idea that the physics would look the same if time ran backwards. A magnetic field breaks it. Physicists use the shape of the Hall current, squared or proportional to the voltage, to tell whether it is broken."
+    },
+    {
+      "q": "Why does the voltage need to be strong?",
+      "a": "At weak voltage the material stays close to equilibrium and the current grows with the voltage squared. Only a strong voltage pushes the electrons far enough out of balance to give the proportional response that mimics magnetism."
+    }
+  ],
+  "sources": [
+    {
+      "text": "\"No magnets needed: Extreme voltage drives completely new kind of Hall effect\", Rice University News, 20 Nov 2026",
+      "url": "https://news.rice.edu/news/2026/no-magnets-needed-extreme-voltage-drives-completely-new-kind-hall-effect",
+      "checked": "2026-11-23",
+      "supports": "the 20 November announcement, the classical and quantum anomalous Hall effects in terms of time reversal symmetry, the TU Wien collaboration, the puzzle in the data, the two-stage response, the temporary state, the material-dependent transition, and the quotes from Si and Sur"
+    },
+    {
+      "text": "Shouvik Sur, Lei Chen, Yiming Wang, Chandan Setty, Silke Paschen and Qimiao Si, \"Fully nonequilibrium Hall response from Berry curvature\", arXiv:2411.16675, v1 25 Nov 2024, v3 20 May 2025",
+      "url": "https://arxiv.org/abs/2411.16675",
+      "checked": "2026-11-23",
+      "supports": "the authors, the preprint dates, and that the strong-field response resembles that of systems that break time reversal symmetry and is not controlled by the Berry curvature dipole"
+    },
+    {
+      "text": "Sur et al., \"Fully Nonequilibrium Hall Response from Berry Curvature\", Physical Review Letters 137, 216303, published 18 Nov 2026 (DOI 10.1103/cj8b-4sp4)",
+      "url": "https://doi.org/10.1103/cj8b-4sp4",
+      "checked": "2026-11-23",
+      "supports": "the journal, volume, article number and publication date"
+    }
+  ],
+  "actions": [
+    "Read the arXiv preprint for the theory; the Physical Review Letters version is paywalled.",
+    "When a headline says a Hall effect needs no magnet, check which kind: this one needs a strong voltage instead and lasts only while the voltage is on.",
+    "Watch for an independent measurement in another material. That is what would turn a fitted explanation into a general effect."
+  ],
+  "whyItMatters": "The Hall effect is one of the main ways physicists read what electrons are doing inside a material, and a proportional Hall current is usually taken as a sign of magnetism. This result says a strong voltage alone can fake that sign. Anyone reading Hall data from a material driven hard will need to rule it out.",
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What did the Rice team find?",
+    "how": "How can a voltage alone mimic a magnetic field?",
+    "calc": "What would the numbers look like?",
+    "limits": "What does this result not show yet?",
+    "faq": "What else are people asking?"
+  }
+}
