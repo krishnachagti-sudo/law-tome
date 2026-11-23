@@ -1,0 +1,132 @@
+{
+  "slug": "repulsive-oscillators-traveling-salesman-shortest-tour",
+  "law": "the-traveling-salesman-problem",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-11-22",
+  "detectedAt": "2026-11-23",
+  "publishedAt": "2026-11-23",
+  "updatedAt": "2026-11-23",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "Can Oscillators Find the Traveling Salesman's Route?",
+  "h1": "Can a set of repelling oscillators find the shortest traveling salesman tour on their own?",
+  "question": "Can oscillators that push each other apart find the shortest route through a set of cities?",
+  "answer": "For small or specially built maps, yes. A 2026 Biological Cybernetics study gave each city an oscillator that repels the others more strongly the farther apart their cities are. The order they settled into was often the shortest tour, even for one 50-city case. But it slowed as cities were added, and random 50-city maps did not settle.",
+  "event": {
+    "name": "Biological Cybernetics publishes Sakamoto, Ono, Kinugasa and Kinukawa's study of repelling Kuramoto oscillators on traveling salesman benchmarks",
+    "date": "2026-11-07"
+  },
+  "artefact": {
+    "text": "The paper is open access, with its methods, figures and the limits the authors list themselves.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13744533/",
+    "label": "Read the paper"
+  },
+  "timeline": [
+    {
+      "date": "2026-02-24",
+      "text": "Biological Cybernetics receives the paper from Kazuhiro Sakamoto and colleagues at Tohoku Medical and Pharmaceutical University and Tohoku University in Sendai.",
+      "source": 0
+    },
+    {
+      "date": "2026-09-28",
+      "text": "The paper is accepted.",
+      "source": 0
+    },
+    {
+      "date": "2026-11-07",
+      "text": "It is published open access, in volume 120 of Biological Cybernetics.",
+      "source": 1
+    },
+    {
+      "date": "2026-11-22",
+      "text": "Bioengineer.org covers it under the headline that repulsive oscillators \"spontaneously solve\" traveling salesman benchmarks.",
+      "source": 2
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "The problem is easy to state",
+      "text": "Visit every city once, come home, and keep the trip as short as possible. Checking every route works for a handful of cities, but the number of possible tours grows factorially. For 50 cities the paper puts it at about 3 × 10^62, far too many to check one by one."
+    },
+    {
+      "h": "Each city becomes an oscillator",
+      "text": "The authors mapped each city to one Kuramoto phase oscillator, a simple model of anything that repeats a cycle. Each pair pushes apart in phase, with a strength set by the distance between their cities. Nothing in the model searches; the oscillators just settle."
+    },
+    {
+      "h": "The settled order is read as the route",
+      "text": "Once the phases stop shifting, their order around the cycle is read as the order of cities in a tour. With four cities the phase gaps settled at 69, 69 and 111 degrees, matching the shortest tour. For cities spread around a circle, the settled order was the shortest tour."
+    },
+    {
+      "h": "On map-like layouts it found very good routes, not always the best",
+      "text": "For 8 and 9 cities placed on a flat plane, the order reached from every starting point was not always the shortest. The paper says those orders \"represented highly ranked tours\", in about the top 0.59% and 0.14% of all possible tours. Some runs got stuck in a two-cluster state instead."
+    },
+    {
+      "h": "The hardness shows up as the map grows",
+      "text": "The authors write that \"convergence became progressively slower as the number of oscillators increased.\" A 50-city case built so the shortest tour was unambiguous did converge to it. With more randomness in the distances, the paper says, convergence to the shortest tour \"was not observed within the simulation time examined.\" That is the problem's hard part, showing up where it should."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "No published study will show this repelling-oscillator method reliably finding the shortest tour on random instances of 50 or more cities. A peer-reviewed paper or preprint showing it, by these authors or anyone else, would prove this wrong.",
+      "checkBy": "2027-12-31",
+      "status": "open"
+    }
+  ],
+  "limits": [
+    "It is not a new traveling salesman solver. The authors say their objective is \"fundamentally different\" from oscillator-based Ising machines; they use the problem as a benchmark to study how biological oscillators might organise themselves.",
+    "The instances are small. By the paper's own count of (n−1)!/2 tours, 8 cities have 2,520 possible tours and 9 have 20,160, few enough to check one by one. The 50-city success was a special case built so the shortest tour was unambiguous, and random 50-city maps did not converge in the time simulated.",
+    "It is a simulation in MATLAB, not a physical device, so it says nothing yet about speed or energy use in hardware.",
+    "Two-cluster solutions, where the oscillators split into two groups instead of forming one route, appear for some distance sets. The authors list them as the first limitation and describe adding an extra distant oscillator as a partial fix. They also say a precise mathematical understanding of the dynamics is still to come."
+  ],
+  "faqs": [
+    {
+      "q": "Did oscillators solve the traveling salesman problem?",
+      "a": "Not in general. They found the shortest tour for small and specially built maps, and very good tours for small map-like ones. Random 50-city maps did not settle on the shortest tour in the time simulated."
+    },
+    {
+      "q": "What is a Kuramoto oscillator?",
+      "a": "A standard model of something that repeats a cycle, described only by where it is in that cycle, its phase. Coupled oscillators like these are a common way to study how rhythms interact. Here each pair was set to push apart rather than fall into step."
+    },
+    {
+      "q": "Why would biologists care about the traveling salesman problem?",
+      "a": "The authors use it as a test with a known best answer. Their abstract says oscillatory interactions may matter for information processing, control and communication in living systems, and the shortest tour is a clear check of whether oscillators can organise a globally coherent order."
+    }
+  ],
+  "sources": [
+    {
+      "text": "Kazuhiro Sakamoto, Futo Ono, Tomoaki Kinugasa and Kazumasa Kinukawa, \"Exclusive oscillator interactions generate globally coherent phase arrangements: insights from benchmark traveling salesman problems\", Biological Cybernetics, 2026 (PMC13744533)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13744533/",
+      "checked": "2026-11-23",
+      "supports": "the received and accepted dates, the affiliations, the oscillator mapping, the four-oscillator phase gaps, the circular and plane layouts, the top 0.59% and 0.14% ranks, two-cluster solutions, the 50-city special case and about 3 × 10^62 tours, slower convergence with more oscillators, random cases not converging, MATLAB, and the contrast with Ising machines"
+    },
+    {
+      "text": "Crossref record for DOI 10.1007/s00422-026-01067-z, Biological Cybernetics 120 (5-6), published 7 Nov 2026",
+      "url": "https://doi.org/10.1007/s00422-026-01067-z",
+      "checked": "2026-11-23",
+      "supports": "the journal, volume, publication date of 7 November and the open-access licence"
+    },
+    {
+      "text": "\"Repulsive Kuramoto Phase Oscillators Spontaneously Solve Traveling Salesman Problem Benchmarks\", Bioengineer.org, 22 Nov 2026",
+      "url": "https://bioengineer.org/repulsive-kuramoto-phase-oscillators-spontaneously-solve-traveling-salesman-problem-benchmarks/",
+      "checked": "2026-11-23",
+      "supports": "the 22 November coverage and its headline"
+    }
+  ],
+  "actions": [
+    "Read the paper's limitations section before sharing a headline that says oscillators solve the traveling salesman problem.",
+    "If you work on analog or oscillator-based optimisation, test the method on random instances, which is where it is weakest so far.",
+    "When a method claims to beat a famously hard problem, ask how big the instances were and whether they were random. That is where the hardness lives."
+  ],
+  "whyItMatters": "The traveling salesman problem is the classic case of a question that is simple to ask and slow to answer. Physical and analog systems that settle into answers are a recurring hope for getting around that. This study shows the promise and the catch together: easy and structured maps settle neatly, random ones do not.",
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What did the Sendai team find?",
+    "how": "How can oscillators trace a route through cities?",
+    "calc": "What would the numbers look like?",
+    "limits": "What does this study not show?",
+    "faq": "What else are people asking?"
+  }
+}
