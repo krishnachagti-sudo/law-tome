@@ -1,0 +1,132 @@
+{
+  "slug": "trapped-ion-multi-mpemba-effect-relaxation-crossings",
+  "law": "mpemba-effect",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-11-22",
+  "detectedAt": "2026-11-24",
+  "publishedAt": "2026-11-24",
+  "updatedAt": "2026-11-24",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "Why Two Quantum States Swapped Places Twice",
+  "h1": "Why two quantum states settling down swapped places twice",
+  "question": "Can the state that starts farther from equilibrium pull ahead and then fall behind again?",
+  "answer": "Yes, in this experiment. A team led from the National University of Defense Technology watched a trapped calcium ion relax from two starting states. The one that began farther away raced ahead, then slowed and was overtaken again, so the relaxation curves crossed twice. They call it a multi-Mpemba effect, and they trace each phase to a different decay mode.",
+  "event": {
+    "name": "A trapped-ion experiment on the quantum multi-Mpemba effect is published in Physical Review Research",
+    "date": "2026-11-22"
+  },
+  "artefact": {
+    "text": "The preprint is \"Observation of quantum multi-Mpemba effect in a trapped-ion system\" by Gang Xia and 11 co-authors. The published version in Physical Review Research is titled \"Transient relaxation speed and the multi-Mpemba effect in a trapped-ion system\".",
+    "url": "https://arxiv.org/abs/2604.21320",
+    "label": "Read the preprint"
+  },
+  "timeline": [
+    {
+      "date": "2026-04-23",
+      "text": "The team posts the preprint \"Observation of quantum multi-Mpemba effect in a trapped-ion system\" on arXiv.",
+      "source": 0
+    },
+    {
+      "date": "2026-11-22",
+      "text": "The work is published in Physical Review Research as \"Transient relaxation speed and the multi-Mpemba effect in a trapped-ion system\".",
+      "source": 1
+    },
+    {
+      "date": "2026-11-23",
+      "text": "Quantum Zeitgeist reports it: \"Experimental results using a trapped 40Ca+ ion demonstrated this multi-ME effect.\"",
+      "source": 2
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "Two starting states, one farther away",
+      "text": "The system was \"a qutrit system constructed by a trapped Ca+40 ion\": one ground level and two excited levels, joined by a 729 nm laser, with the decay back to the ground set by an 854 nm beam. The team prepared it in two starting states and measured each one's distance from its steady state with the Hilbert-Schmidt norm. One state began farther away. In hot-water terms, that is the hot cup."
+    },
+    {
+      "h": "The usual explanation, turned round",
+      "text": "A system settles through several decay modes at once, and the slowest one sets the pace at the end. The standard account of the Mpemba effect is that \"the farther initial state has a smaller overlap with the slowest decay mode\", so it skips the slow lane. This experiment picked the opposite case: the farther state had the larger overlap with the slowest mode."
+    },
+    {
+      "h": "Early on, the fastest mode sets the speed",
+      "text": "The paper's key idea is that \"the initial relaxation speed is governed by the fastest decay mode.\" The farther state had more weight in that mode, so it moved faster at the start: \"the speed of the initially farther state s=π is faster than that of the initially closer state s=0.85π, leading to the first overtaking.\" For a while the state that started farther away was the closer one."
+    },
+    {
+      "h": "In the middle, a different mode takes over",
+      "text": "At intermediate times the second-slowest mode governs the speed, and the farther state had less weight there. \"Later, however, it becomes slower than the state s=0.85π, resulting in a second crossing of the trajectories.\""
+    },
+    {
+      "h": "At the end, the slowest mode decides",
+      "text": "The slowest mode \"dictates the final ordering toward the steady state.\" Because the farther state had the larger overlap with it, the second crossing restored the original order. Two crossings, where earlier quantum Mpemba experiments saw curves that \"cross just once\", is what the team calls the multi-Mpemba effect."
+    }
+  ],
+  "limits": [
+    "The state that started farther away did not arrive first. It led for a stretch and then fell behind again. This is a transient version of the Mpemba pattern, not the classic claim that the hot cup finishes first.",
+    "We read the April preprint and the published record's title and date, not the published paper, which the publisher's site would not serve to us. The published version has a new title and may differ in detail from the preprint.",
+    "It is one ion with three levels and a decay set by a laser. It says nothing about whether hot water freezes faster than cold, which careful studies have failed to show.",
+    "Distance here is the Hilbert-Schmidt norm, as the paper defines it. The crossings are stated for that measure, and we found no comment on whether other measures order the curves the same way.",
+    "The only press coverage we found is Quantum Zeitgeist, which carries no comment from researchers outside the team."
+  ],
+  "faqs": [
+    {
+      "q": "So did the farther state win?",
+      "a": "Only for part of the race. It overtook the closer state early, then was overtaken back, and the original order held at the end because it had more weight in the slowest decay mode."
+    },
+    {
+      "q": "Why does a temporary lead matter?",
+      "a": "Because the usual explanation of the Mpemba effect looks only at the slowest decay mode, which settles the finish. This experiment shows the fastest and second-slowest modes decide what happens before then, so the slowest-mode rule alone cannot predict every crossing."
+    },
+    {
+      "q": "Does this tell us anything about water?",
+      "a": "No. It is about a precisely defined quantum system where \"farther\" and \"faster\" can be measured exactly. The hot-water claim still lacks an agreed definition and an agreed cause."
+    },
+    {
+      "q": "What could it be used for?",
+      "a": "The authors suggest it \"may benefit optimal engineering tasks, such as accelerating quantum battery charging.\" That is a proposal, not a result."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "By 30 November 2027, a group outside this team reports more than one crossing of relaxation curves, a multi-Mpemba effect, in an experiment on a platform other than a trapped ion. If no such paper or preprint appears by then, this was wrong.",
+      "checkBy": "2027-11-30",
+      "status": "open"
+    }
+  ],
+  "actions": [
+    "When you hear that something farther from its end state got there faster, ask at what time and by which measure. In this experiment the answer changed twice.",
+    "Read a single crossing of two curves as one moment, not a verdict. The lead can change again.",
+    "Treat the quantum results and the hot-water claim separately. One is measured cleanly, the other is still contested."
+  ],
+  "whyItMatters": "The Mpemba effect is usually told as a race with one overtaking. This experiment shows a race with two, and explains each change of lead by which decay mode is in charge at that moment. It makes the standard account more precise without saying anything new about water.",
+  "sources": [
+    {
+      "text": "Gang Xia, Yu-Jie Zheng, Jing Huang and others, \"Observation of quantum multi-Mpemba effect in a trapped-ion system\", arXiv 2604.21320, 23 Apr 2026",
+      "url": "https://arxiv.org/abs/2604.21320",
+      "checked": "2026-11-24",
+      "supports": "the setup (Ca-40 qutrit, 729 nm and 854 nm beams, Hilbert-Schmidt distance), the two crossings and their order, the roles of the fastest, second-slowest and slowest decay modes, the usual slowest-mode explanation, the quantum battery suggestion, and the National University of Defense Technology, Hefei National Laboratory and University of Nottingham affiliations"
+    },
+    {
+      "text": "Crossref record for \"Transient relaxation speed and the multi-Mpemba effect in a trapped-ion system\", Physical Review Research, DOI 10.1103/x26z-fd3j",
+      "url": "https://api.crossref.org/works/10.1103/x26z-fd3j",
+      "checked": "2026-11-24",
+      "supports": "the published title, journal, author list and publication date of 22 Nov 2026"
+    },
+    {
+      "text": "Ivy Delaney, \"Quantum systems can cross relaxation paths multiple times, experiment shows\", Quantum Zeitgeist, 23 Nov 2026",
+      "url": "https://quantumzeitgeist.com/defense-quantum-relaxation-paths-systems-cross/",
+      "checked": "2026-11-24",
+      "supports": "the press report of the experiment and its summary that the fastest and second-slowest decay modes govern the speed at the beginning and intermediate stages"
+    }
+  ],
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What did the trapped-ion team see?",
+    "how": "How can the lead change twice?",
+    "calc": "Which decay mode is in charge when?",
+    "limits": "What does this not show?",
+    "faq": "What else are people asking?"
+  }
+}
