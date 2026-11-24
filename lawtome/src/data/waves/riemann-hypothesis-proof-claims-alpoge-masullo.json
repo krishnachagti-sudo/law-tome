@@ -7,7 +7,7 @@
   "signalOnset": "2026-11-20",
   "detectedAt": "2026-11-21",
   "publishedAt": "2026-11-21",
-  "updatedAt": "2026-11-22",
+  "updatedAt": "2026-11-24",
   "author": {
     "name": "Krishna Chagti",
     "url": "https://conyso.com/founder/"
@@ -60,6 +60,11 @@
       "date": "2026-11-21",
       "text": "The Lean and Mathlib communities issue a joint statement, endorsed by the Lean FRO and the Mathlib Initiative: \"We have full confidence that Alpöge's proof of the Riemann Hypothesis is correct.\" It says two independent tools confirmed that the theorem proved is exactly Mathlib's statement of the hypothesis.",
       "source": 9
+    },
+    {
+      "date": "2026-11-23",
+      "text": "Alpöge posts that the widely repeated page count was not meant seriously: \"250,000+ pages was a joke guys!\" Interesting Engineering reports that he also accepted criticism of the Lean code's organization and quality, while the code still compiles.",
+      "source": 10
     }
   ],
   "mechanism": [
@@ -83,7 +88,7 @@
   "limits": [
     "The checking so far is by machine. On 21 November the Lean and Mathlib communities said they have \"full confidence\" the Lean proof is correct, but MIT's Andrew Sutherland told Scientific American that \"there is much work to be done to understand the mathematical details of the proof\", and Imperial's Kevin Buzzard has asked whether the statement in the Lean code matches the theorem. The joint statement answers that the statement is Mathlib's, \"carefully vetted by experts in Lean and number theory\".",
     "The machine checks so far cover a narrower statement than the headline. Sutherland's page says the version of the Generalized Riemann Hypothesis that was checked is the one for Dirichlet L-functions, and that \"Dedekind zeta functions, Hecke L-functions and automorphic L-functions in general are not among the statements that were checked\". It also notes the result relies \"on Mathlib's definitions being what they are intended to be\".",
-    "Code that compiles is not the same as a proof everyone accepts. The open questions are whether the formal statement matches the hypothesis and whether anyone can explain the argument. Alpöge says the full argument runs past 250,000 pages and that he has not yet written it up properly.",
+    "Code that compiles is not the same as a proof everyone accepts. The open questions are whether the formal statement matches the hypothesis and whether anyone can explain the argument. Alpöge writes that the argument is \"incredibly long at the moment\" and that he has not yet written it up properly. A footnote saying he \"hit 250,000+ pages\" was widely repeated as the proof's length; on 23 November he posted that \"250,000+ pages was a joke\".",
     "Masullo's draft has not been formalized. TechCrunch notes that without a Lean version \"it is too early to say whether the proof checks out\". Vakil said Conrad's reading was \"so far looking good\", then added that several people had reported problems in the proposed proof, and that \"all issues need to be resolved to the satisfaction of the community before this proof would be accepted as true\".",
     "Alpöge works at Anthropic, which makes Claude, and Alpöge himself raises the timing: he writes that there is \"an obvious cynical view, to do with the timing, but it is false\". Readers can weigh that; the proof stands or falls on the checking, not on who announced it."
   ],
@@ -129,7 +134,7 @@
       "text": "Levent Alpöge, statement on the proof (remark.pdf), 20 Nov 2026",
       "url": "https://alpo.ge/remark.pdf",
       "checked": "2026-11-21",
-      "supports": "the claim made working with Claude, the extension to the Generalized Riemann Hypothesis, the Lean-only release, the 250,000+ pages, the late Sunday night timing, and his remark on the cynical view of the timing"
+      "supports": "the claim made working with Claude, the extension to the Generalized Riemann Hypothesis, the Lean-only release, the \"incredibly long\" argument, the footnote about 250,000+ pages, the late Sunday night timing, and his remark on the cynical view of the timing"
     },
     {
       "text": "Ravi Vakil, \"Hurried announcement: Alessandro Masullo GRH\", 20 Nov 2026",
@@ -178,6 +183,12 @@
       "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
       "checked": "2026-11-22",
       "supports": "the joint statement endorsed by the Lean FRO and the Mathlib Initiative, \"full confidence\" in the proof, the statement being Mathlib's and vetted by experts, and the two tools confirming the proved theorem matches it"
+    },
+    {
+      "text": "Aamir Khollam, \"250,000-page Riemann Hypothesis proof 'was a joke,' Anthropic mathematician says\", Interesting Engineering, 23 Nov 2026",
+      "url": "https://interestingengineering.com/ai-robotics/anthropic-mathematician-riemann-proof-joke",
+      "checked": "2026-11-24",
+      "supports": "Alpöge's 23 Nov post that \"250,000+ pages was a joke\", and that he accepted criticism of the code's organization and quality"
     }
   ],
   "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
