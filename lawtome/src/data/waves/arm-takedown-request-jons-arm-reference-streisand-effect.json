@@ -1,0 +1,143 @@
+{
+  "slug": "arm-takedown-request-jons-arm-reference-streisand-effect",
+  "law": "streisand-effect",
+  "kind": "news",
+  "status": "settled",
+  "signalOnset": "2026-11-23",
+  "detectedAt": "2026-11-24",
+  "publishedAt": "2026-11-24",
+  "updatedAt": "2026-11-24",
+  "author": {
+    "name": "Krishna Chagti",
+    "url": "https://conyso.com/founder/"
+  },
+  "title": "Did Arm's Takedown Request Spread the Site It Targeted?",
+  "h1": "Did Arm's request to take down a documentation site make more people copy it?",
+  "question": "Did Arm's request to take down Jon's Arm Reference make the site spread?",
+  "answer": "Early on, yes. On 23 November 2026 the author of Jon's Arm Reference, an Arm documentation site, posted that Arm's lawyers had asked for it to be taken down and that it would close on 4 December. The notice reached the Hacker News front page, and readers began copying the site. The name for this is the Streisand effect.",
+  "event": {
+    "name": "Jon's Arm Reference announces its shutdown at Arm's request",
+    "date": "2026-11-23"
+  },
+  "artefact": {
+    "text": "The site's own front page carries the notice, in the author's words, above the search box that made the site popular.",
+    "url": "https://arm.jonpalmisc.com/",
+    "label": "Read the notice on the site"
+  },
+  "timeline": [
+    {
+      "date": "2026-11-23",
+      "text": "At 17:52 UTC the site's author posts on X: \"I am sad to announce that https://arm.jonpalmisc.com will be discontinued on 4 December, per request of Arm's legal team.\"",
+      "source": 1
+    },
+    {
+      "date": "2026-11-23",
+      "text": "The site's front page carries the notice: \"Arm's lawyers have notified me to take down this site or face legal action.\"",
+      "source": 0
+    },
+    {
+      "date": "2026-11-23",
+      "text": "At 19:17 UTC the notice is posted to Hacker News as \"Per Arm's request, this site will be discontinued on 4 December 2026 :(\". Within minutes one commenter writes \"I expect a dozen mirrors of this to exist by tomorrow morning\" and another \"Streisand-ing already at full pump.\"",
+      "source": 2
+    },
+    {
+      "date": "2026-11-23",
+      "text": "The author joins the thread: \"People have contacted me offering to host mirrors\". Commenters share commands for copying the whole site, and one later writes that they \"made a verified copy of the site with wget -m\".",
+      "source": 2
+    },
+    {
+      "date": "2026-11-24",
+      "text": "When we checked, the Hacker News post had 799 points and 161 comments, and the X post more than 43,000 views. We found no public statement from Arm.",
+      "source": 2
+    }
+  ],
+  "mechanism": [
+    {
+      "h": "A useful tool with a small audience",
+      "text": "The site republished Arm's AArch64 instruction and register reference in a faster form. In the author's words it is \"the ISA documentation, but with search and without all the popups and bloat.\" Its readers were the people who need those docs every day, a niche."
+    },
+    {
+      "h": "The request became the story",
+      "text": "The headline that reached the Hacker News front page was the shutdown notice itself. The author wrote that they \"didn't expect to see this here\" and addressed \"those unfamiliar with this site until now\". The request to remove the site is what put it in front of a much larger audience than its regular users."
+    },
+    {
+      "h": "Removal signals that something is worth keeping",
+      "text": "Readers who had never used the site read the notice as a reason to save it. Within minutes commenters were predicting mirrors, asking how to archive it, and posting commands to download every page. The author said people had offered to host mirrors."
+    },
+    {
+      "h": "Deleting one copy doesn't recall the others",
+      "text": "Once copies sit on many people's machines, closing the original on 4 December removes one copy, not all of them. That is the shape the Streisand effect describes: the effort to shrink the audience is what enlarged it, and it left more copies than there were before."
+    }
+  ],
+  "limits": [
+    "We only have the author's account of Arm's request. We found no public statement from Arm, and we have not seen the request itself, so we don't know its exact terms or deadline.",
+    "Nothing secret is spreading. The documentation is Arm's own; what people are copying is one person's searchable presentation of it. This is a mild case of the effect, about attention and copies, not leaked information.",
+    "The copies we can point to are ones commenters say they made for themselves. We have not found a public mirror online yet, so how far the material spreads beyond private copies is still open.",
+    "Some of the attention is goodwill toward a well-liked tool, which would draw readers to any shutdown notice. Commenters also disagree about whether Arm's complaint is about copyright or trademark. This page takes no view on the legal merits; Arm may well be within its rights."
+  ],
+  "faqs": [
+    {
+      "q": "Why is Jon's Arm Reference shutting down?",
+      "a": "Its author says Arm's lawyers asked for it to be taken down. The notice on the site reads: \"Arm's lawyers have notified me to take down this site or face legal action.\" On Hacker News the author added that Arm said the site was using its trademarks and IP by hosting its documentation."
+    },
+    {
+      "q": "When does the site go offline?",
+      "a": "The notice gives 4 December 2026. The author said they would look for a way to keep bookmarks and links working, and is considering other options people suggested."
+    },
+    {
+      "q": "Is it the Streisand effect if the documentation isn't secret?",
+      "a": "In a weaker form, yes. The effect is about an attempt to remove something drawing more attention to it. Here the removal notice brought the site a front-page audience and a wave of copying. What it doesn't show is hidden information getting out, because Arm publishes the documentation itself."
+    },
+    {
+      "q": "What is the Streisand effect?",
+      "a": "Trying to suppress information is often what makes it spread. It is named after Barbra Streisand's 2003 lawsuit over an aerial photo of her home, which drew far more visitors to the photo than it had before."
+    }
+  ],
+  "predictions": [
+    {
+      "text": "By 31 December 2026, a publicly reachable mirror of the site's pages, run by someone other than its author, will be online. It is wrong if no such public mirror can be found by that date.",
+      "checkBy": "2026-12-31",
+      "status": "open"
+    }
+  ],
+  "actions": [
+    "Before asking for something to be taken down, ask how many people know it exists now, and how many will know once the request becomes public.",
+    "Expect a removal request to become the headline, and plan for the copies that follow, not just the original.",
+    "When the goal is control over how material is presented, an offer to license or link to the official source can achieve it without the attention a takedown draws."
+  ],
+  "whyItMatters": "A takedown request is usually written for one reader, the person running the site. Online it rarely stays there. Here it reached a front page within hours of being announced, and the first reaction of many readers was to make a copy. That is the cost the Streisand effect warns about.",
+  "sources": [
+    {
+      "text": "\"Jon's Arm Reference\", front page and shutdown notice, seen 24 Nov 2026",
+      "url": "https://arm.jonpalmisc.com/",
+      "checked": "2026-11-24",
+      "supports": "the notice that the site will be discontinued on 4 December 2026 at Arm's request, that Arm's lawyers asked for the site to be taken down or face legal action, and what the site offers"
+    },
+    {
+      "text": "Jon's Arm Reference author, post on X, 23 Nov 2026",
+      "url": "https://x.com/jonpalmisc/status/2124924098057011629",
+      "checked": "2026-11-24",
+      "supports": "the announcement at 17:52 UTC that the site will be discontinued on 4 December per request of Arm's legal team, and its view count when checked"
+    },
+    {
+      "text": "\"Per Arm's request, this site will be discontinued on 4 December 2026 :(\", Hacker News discussion, 23 Nov 2026",
+      "url": "https://news.ycombinator.com/item?id=50617499",
+      "checked": "2026-11-24",
+      "supports": "the post time, points and comment count, the mirror and Streisand comments, the shared copying commands and the verified copy, and the author's comments on Arm's reasons, mirror offers, and readers unfamiliar with the site"
+    },
+    {
+      "text": "Marta Kowalska, \"Jon's Arm Reference to Shut Down Dec. 4 After Arm Legal Request\", news.lavx.hu, 23 Nov 2026",
+      "url": "https://news.lavx.hu/article/jon-s-arm-reference-to-shut-down-dec-4-after-arm-legal-request",
+      "checked": "2026-11-24",
+      "supports": "coverage of the shutdown on the day, reporting only the author's account and no statement from Arm"
+    }
+  ],
+  "publisher": "The Law Tome is an independent, sourced reference of named laws and effects, written by Krishna Chagti. No ads, no account, nothing for sale on this page.",
+  "headings": {
+    "what": "What happened to Jon's Arm Reference?",
+    "how": "How did a request to remove the site spread it?",
+    "calc": "How big was it?",
+    "limits": "What don't we know about this case?",
+    "faq": "What else are people asking?"
+  }
+}
